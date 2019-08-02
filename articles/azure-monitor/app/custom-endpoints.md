@@ -9,14 +9,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 07/24/2019
+ms.date: 07/26/2019
 ms.author: mbullwin
-ms.openlocfilehash: c086f94a161853cba3a9ed2b98f13ea17b90dd20
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 662594f3ef0e4d5598b52cb07006b513e7f3c35a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478805"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564967"
 ---
  # <a name="application-insights-overriding-default-endpoints"></a>Application Insights переопределение конечных точек по умолчанию
 
@@ -158,6 +158,14 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 | Azure для государственных организаций | Канал телеметрии |`https://dc.applicationinsights.us/v2/track` |
 | Azure для государственных организаций | Куиккпулсе (динамические метрики) |`https://quickpulse.applicationinsights.us/QuickPulseService.svc` |
 | Azure для государственных организаций | Запрос профиля |`https://dc.applicationinsights.us/api/profiles/{0}/appId` |
+
+Если в настоящее время используется [Application Insights REST API](https://dev.applicationinsights.io/
+) , доступ к которому обычно осуществляется через "API.applicationinsights.IO", необходимо использовать конечную точку, которая является локальной для вашего региона:
+
+|Район |  Имя конечной точки | Значение |
+|-----------------|:------------|:-------------|
+| Azure для Китая | REST API | `api.applicationinsights.azure.cn` |
+| Azure для государственных организаций | REST API | `api.applicationinsights.us`|
 
 > [!NOTE]
 > Мониторинг на основе модуля и агента без кода для служб приложений Azure **сейчас не поддерживается** в этих регионах. Как только эта функция станет доступна, эта статья будет обновлена.

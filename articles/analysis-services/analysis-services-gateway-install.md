@@ -1,25 +1,27 @@
 ---
-title: Установка локального шлюза данных | Документация Майкрософт
+title: Установка локального шлюза данных для Azure Analysis Services | Документация Майкрософт
 description: Узнайте, как установить и настроить локальный шлюз данных.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/08/2019
+ms.date: 07/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 55f68d777d291c7d12fcbae93884a5596b84c8ca
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e87a8221a4db4dfab132a91a31a9ba5b5602a3db
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67062243"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68678433"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
 
-Локальный шлюз данных является обязательным, когда один или несколько серверов Azure Analysis Services в том же регионе подключаются к локальным источникам данных. Дополнительные сведения о шлюзе см. в разделе [Установка локального шлюза](analysis-services-gateway.md).
+Локальный шлюз данных является обязательным, когда один или несколько серверов Azure Analysis Services в том же регионе подключаются к локальным источникам данных.  Хотя устанавливаемый Шлюз совпадает с используемыми другими службами, такими как Power BI, Power Apps и Logic Apps, при установке для Azure Analysis Services необходимо выполнить некоторые дополнительные действия. Эта статья об установке относится к **Azure Analysis Services**.
 
-## <a name="prerequisites"></a>Технические условия
+Дополнительные сведения о шлюзе и его использовании с помощью Azure Analysis Services см. в разделе [Подключение к локальным источникам данных](analysis-services-gateway.md).
+
+## <a name="prerequisites"></a>предварительные требования
 
 **Минимальные требования:**
 
@@ -47,11 +49,15 @@ ms.locfileid: "67062243"
 
 ## <a name="download"></a>Загрузка
 
- [Скачайте шлюз](https://aka.ms/azureasgateway).
+ [Скачайте шлюз](https://go.microsoft.com/fwlink/?LinkId=820925&clcid=0x409).
 
 ## <a name="install"></a>Установка
 
 1. Запустите программу установки.
+
+2. Выберите **локальный шлюз данных**.
+
+   ![Выбор](media/analysis-services-gateway-install/aas-gateway-installer-select.png)
 
 2. Выберите расположение, примите условия соглашения и нажмите кнопку **Установить**.
 
@@ -59,7 +65,7 @@ ms.locfileid: "67062243"
 
 3. Войдите в Azure. Учетная запись должна быть у вашего Azure Active Directory клиента. Эта учетная запись используется для администратора шлюза. Учетные записи Azure B2B (гостевые) не поддерживаются при установке и регистрации шлюза.
 
-   ![Вход в Azure](media/analysis-services-gateway-install/aas-gateway-installer-account.png)
+   ![Войдите в Azure](media/analysis-services-gateway-install/aas-gateway-installer-account.png)
 
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
@@ -70,21 +76,21 @@ ms.locfileid: "67062243"
 
 1.  Выберите **Регистрация нового шлюза на этом компьютере**.
 
-    ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-new.png)
+    ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
 2. Введите имя и ключ восстановления для шлюза. По умолчанию шлюз использует регион, установленный по умолчанию для вашей подписки. Если вам необходим другой регион, выберите **Смена региона**.
 
     > [!IMPORTANT]
     > Сохраните ключ восстановления в безопасном месте. Ключ восстановления требуется для перехвата, переноса или восстановления шлюза. 
 
-   ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-name.png)
+   ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
 ## <a name="create-resource"></a>Создание ресурса шлюза Azure
 
 После установки и регистрации шлюза необходимо создать ресурс шлюза в подписке Azure. Войдите в Azure с помощью учетной записи, использованной при регистрации шлюза.
 
-1. На портале Azure последовательно выберите **Создать ресурс** > **Интеграция** > **Локальный шлюз данных**.
+1. В портал Azure щелкните **создать ресурс**, а затем найдите **локальный шлюз данных**и нажмите кнопку **создать**.
 
    ![Создание ресурса шлюза](media/analysis-services-gateway-install/aas-gateway-new-azure-resource.png)
 
@@ -100,7 +106,7 @@ ms.locfileid: "67062243"
 
    * **Расположение.** Выберите регион, в котором зарегистрирован шлюз.
 
-   * **Имя установки.** Если установка шлюза еще не выбрана, выберите зарегистрированный ранее шлюз. 
+   * **Имя установки.** Если установка шлюза еще не выбрана, выберите шлюз, установленный на компьютере и зарегистрированный. 
 
      Когда все будет готово, нажмите **Создать**.
 
@@ -115,11 +121,16 @@ ms.locfileid: "67062243"
    ![Подключение сервера к ресурсу шлюза](media/analysis-services-gateway-install/aas-gateway-connect-resource.png)
 
     > [!NOTE]
-    > Если шлюз не отображается в списке, сервер, вероятно, находится не в том же районе, что и регионы, указанные при регистрации шлюза. 
+    > Если шлюз не отображается в списке, сервер, вероятно, находится не в том же районе, что и регионы, указанные при регистрации шлюза.
+
+    При успешном подключении сервера к ресурсу шлюза состояние будет отображаться как **подключено**.
+
+
+    ![Подключение сервера к ресурсу шлюза успешно выполнено](media/analysis-services-gateway-install/aas-gateway-connect-success.png)
 
 Вот и все. Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление службами Analysis Services](analysis-services-manage.md)   
 * [Получение данных из служб Azure Analysis Services](analysis-services-connect.md)   

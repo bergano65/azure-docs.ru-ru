@@ -12,20 +12,24 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/11/2019
+ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7c6f0a6371b38f0271237db0f7d80b831ecc145c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ccdd234f951327aeb5baa6aabcac4314b9de7b34
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127146"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68517102"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
 
 ![](./media/storsimple-virtual-array-deploy1-portal-prep/getstarted4.png)
+
+
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
 
 Это первая статья в серии руководств по развертыванию, необходимых для полного развертывания виртуального массива в качестве файлового сервера или сервера iSCSI с помощью модели Resource Manager. В этой статье описаны подготовительные работы для создания и настройки службы диспетчера устройств StorSimple, которая является необходимым компонентом для подготовки виртуального массива к работе. Кроме того, здесь представлены ссылки на контрольный список и предварительные требования для настройки развертывания.
 
@@ -55,7 +59,7 @@ ms.locfileid: "62127146"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -90,7 +94,7 @@ ms.locfileid: "62127146"
 
 Ниже приведены пошаговые инструкции для подготовки портала к использованию службы диспетчера устройств StorSimple.
 
-## <a name="step-1-create-a-new-service"></a>Шаг 1. Создание службы
+## <a name="step-1-create-a-new-service"></a>Шаг 1.: Создание службы
 
 Один экземпляр службы диспетчера устройств StorSimple может управлять несколькими виртуальными массивами StorSimple. Чтобы создать экземпляр службы диспетчера устройств StorSimple, выполните следующие действия. Если у вас уже есть служба диспетчера устройств, управляющая виртуальными массивами StorSimple, пропустите этот шаг и перейдите к разделу [Шаг 2. Получение ключа регистрации службы](#step-2-get-the-service-registration-key).
 
@@ -104,7 +108,7 @@ ms.locfileid: "62127146"
 > 
 > 
 
-## <a name="step-2-get-the-service-registration-key"></a>Шаг 2. Получение регистрационного ключа службы
+## <a name="step-2-get-the-service-registration-key"></a>Шаг 2.: Получение регистрационного ключа службы
 
 После запуска и настройки службы диспетчера устройств StorSimple вам необходимо будет получить ключ регистрации службы. Этот ключ используется для регистрации вашего устройства StorSimple в службе и подключения к ней.
 
@@ -152,7 +156,7 @@ ms.locfileid: "62127146"
 
 1. Найдите службу диспетчера устройств и щелкните ее дважды. Откроется колонка **Обзор**.
 2. В разделе **Конфигурация** выберите **Учетные данные для учетной записи хранения**.
-3. Щелкните **Добавить**.
+3. Нажмите кнопку **Добавить**.
 4. В колонке **добавления учетной записи хранения** выполните следующие действия.
    
    1. Для параметра **Подписка** выберите значение **Текущая**.
@@ -161,7 +165,7 @@ ms.locfileid: "62127146"
    
    3. Выберите **Включить**, чтобы создать безопасный канал для обмена данными между вашим устройством StorSimple и облаком. Если используется частное облако, выберите параметр **Отключить**.
    
-   4. Щелкните **Добавить**. Когда учетная запись хранения будет создана, вы получите уведомление.<br></br>
+   4. Нажмите кнопку **Добавить**. Когда учетная запись хранения будет создана, вы получите уведомление.<br></br>
    
       ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 

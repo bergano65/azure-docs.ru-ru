@@ -1,19 +1,18 @@
 ---
 title: Обзор моментальных снимков общих ресурсов для службы файлов Azure | Документация Майкрософт
 description: Моментальный снимок общих ресурсов — это версия общих файловых ресурсов Azure только для чтения на определенный момент времени, позволяющая создать резервную копию общих ресурсов.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d83cf20c856d37d337f4eb22c30ee9b6823d096b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f3cbf740016a4c162c63343be4cb9cd577f85935
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65235811"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699350"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
 Служба "Файлы Azure" предоставляет возможность создать моментальные снимки общих ресурсов для файловых ресурсов. В моментальные снимки общих ресурсов записывается состояние общего ресурса на определенный момент времени. В этой статье описаны возможности, предоставляемые моментальными снимками общих ресурсов, а также то, как можно воспользоваться их преимуществами в своих вариантах.
@@ -83,9 +82,9 @@ http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 
 Моментальные снимки файлового ресурса обеспечивают защиту только на уровне файлов. Они не защищают от неосторожных удалений файлов в файловом ресурсе или учетных записях хранения. Чтобы защитить учетную запись хранения от случайных удалений, можно заблокировать учетную запись хранения или группу ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Работа с моментальными снимками общих ресурсов с помощью:
     - [PowerShell](storage-how-to-use-files-powershell.md)
-    - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](storage-how-to-use-files-cli.md)
+    - [CLI](storage-how-to-use-files-cli.md)
     - [Windows](storage-how-to-use-files-windows.md#accessing-share-snapshots-from-windows)
     - [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)

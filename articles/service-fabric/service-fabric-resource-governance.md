@@ -3,7 +3,7 @@ title: Управление ресурсами Azure Service Fabric для ко�
 description: Azure Service Fabric позволяет указать ограничения ресурсов для служб, выполняемых внутри или вне контейнеров.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/9/2017
 ms.author: subramar
-ms.openlocfilehash: a2091ea1f8bf24468e41a88ba247a252c9445f2e
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: ed9ea8f9c340331fd9b8fcc014ab1af88e7b3bae
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612792"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599237"
 ---
 # <a name="resource-governance"></a>управление ресурсами;
 

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 2abdb330ef3a91b66a340cfb1717cfc31baf27e8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ecbfc8cee75da5bdf78bcc2d4ed426bc5193808c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762768"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566494"
 ---
 # <a name="create-and-manage-sql-database-servers-and-single-databases-in-azure-sql-database"></a>Создание серверов Базы данных SQL и отдельных баз данных в Базе данных SQL Azure и управление ими
 
@@ -59,14 +58,14 @@ ms.locfileid: "65762768"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Чтобы создать серверы Базы данных SQL Azure, отдельные и включенные в пулы базы данных, а также брандмауэры серверов Базы данных SQL и управлять ими с помощью Azure PowerShell, используйте указанные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!TIP]
 > Примеры сценариев PowerShell см. в статьях [Создание отдельной базы данных Azure SQL и настройка правила брандмауэра сервера Базы данных SQL с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md).
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase)|Создает базу данных. |
 |[Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase)|Получает одну или несколько баз данных.|
@@ -76,12 +75,12 @@ ms.locfileid: "65762768"
 |[New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver)|Создает сервер.|
 |[Get-AzSqlServer](/powershell/module/az.sql/get-azsqlserver)|Возвращает сведения о серверах.|
 |[Set-AzSqlServer](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserver)|Изменяет свойства сервера.|
-|[Remove-AzSqlServer](/powershell/module/az.sql/remove-azsqlserver)|Удаляет сервера.|
+|[Remove-Азсклсервер](/powershell/module/az.sql/remove-azsqlserver)|Удаляет сервера.|
 |[New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule)|Создает правило брандмауэра уровня сервера. |
 |[Get-AzSqlServerFirewallRule](/powershell/module/az.sql/get-azsqlserverfirewallrule)|Получает правила брандмауэра для сервера.|
 |[Set-AzSqlServerFirewallRule](/powershell/module/az.sql/set-azsqlserverfirewallrule)|Изменяет правило брандмауэра на сервере.|
-|[Remove-AzSqlServerFirewallRule](/powershell/module/az.sql/remove-azsqlserverfirewallrule)|Удаляет правило брандмауэра с сервера.|
-| Новый AzSqlServerVirtualNetworkRule | Создает [*правило виртуальной сети*](sql-database-vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
+|[Remove-Азсклсерверфиреваллруле](/powershell/module/az.sql/remove-azsqlserverfirewallrule)|Удаляет правило брандмауэра с сервера.|
+| New-Азсклсервервиртуалнетворкруле | Создает [*правило виртуальной сети*](sql-database-vnet-service-endpoint-rule-overview.md) на основе подсети, которая является конечной точкой службы для виртуальной сети. |
 
 ## <a name="azure-cli-manage-sql-database-servers-and-single-databases"></a>Azure CLI: Управление серверами Базы данных SQL и отдельными базами данных
 
@@ -91,7 +90,7 @@ ms.locfileid: "65762768"
 > Краткое руководство по Azure CLI приведено в статье [Примеры Azure CLI для базы данных SQL Azure](sql-database-cli-samples.md). Образцы сценариев Azure CLI см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью интерфейса командной строки](scripts/sql-database-create-and-configure-database-cli.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки](scripts/sql-database-monitor-and-scale-database-cli.md).
 >
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[az sql db create](/cli/azure/sql/db#az-sql-db-create) |Создает базу данных.|
 |[az sql db list](/cli/azure/sql/db#az-sql-db-list)|Выводит список всех баз данных и хранилищ данных на сервере или всех баз данных в эластичном пуле.|
@@ -122,7 +121,7 @@ ms.locfileid: "65762768"
 > [!IMPORTANT]
 > С помощью Transact-SQL невозможно создать или удалить сервер.
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current)|Создает базу отдельную данных. Для создания базы данных требуется подключение к базе данных master.|
 | [ALTER DATABASE (база данных SQL Azure)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных SQL Azure. |
@@ -143,7 +142,7 @@ ms.locfileid: "65762768"
 
 Для создания сервера Azure SQL Server, баз данных и брандмауэров и управления используются приведенные ниже запросы REST API.
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[Серверы: создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
 |[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|
@@ -162,7 +161,7 @@ ms.locfileid: "65762768"
 |[Правила брандмауэра: получение](https://docs.microsoft.com/rest/api/sql/firewallrules/get)|Получает правило брандмауэра.|
 |[Правила брандмауэра: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/firewallrules/listbyserver)|Возвращает список правил брандмауэра.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 - Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01a9cc4ec4788422337b77b285ed8ee440f6acd4
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 3ebeed3636ea6da77e05a9a790e51c7771ebe685
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68346889"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666282"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Развертывание защиты паролем Azure AD
 
@@ -31,6 +31,12 @@ ms.locfileid: "68346889"
 * Необходимо улучшить имеющиеся операционные процессы, чтобы использовать более безопасные пароли.
 * Пользователи часто используют небезопасные пароли.
 * Они должны информировать пользователей о предстоящем изменении в обеспечении безопасности, возможном влиянии на них и о том, как выбрать более безопасные пароли.
+
+Кроме того, более надежная проверка пароля может повлиять на существующую Active Directory автоматизации развертывания контроллера домена. Во время оценки периода аудита рекомендуется выполнять по крайней мере одно повышение роли контроллера домена и одно понижение контроллера домена, чтобы помочь устранить эти проблемы заранее.  Дополнительные сведения можно найти в разделе
+
+* [Программе Ntdsutil. exe не удается задать пароль режима восстановления слабых служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md##ntdsutilexe-fails-to-set-a-weak-dsrm-password)
+* [Сбой повышения реплики контроллера домена из-за ненадежного режима восстановления служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-replica-promotion-fails-because-of-a-weak-dsrm-password)
+* [Сбой понижения роли контроллера домена из-за ненадежного пароля локального администратора](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
 
 После того как компонент будет запущен в режиме аудита в течение разумного периода времени, можно переключить конфигурацию с режима *аудита* на *принудительное* требование более безопасных паролей. Детальный мониторинг в это время — хорошая идея.
 

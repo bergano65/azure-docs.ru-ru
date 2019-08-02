@@ -1,18 +1,19 @@
 ---
 title: 'Для восстановления данных с сервера Azure Backup Server сделайте следующее:'
 description: Восстановление данных, защищенных в службах восстановления Microsoft Azure, с любого сервера Azure Backup Server, зарегистрированного в этом хранилище.
-author: kasinh
-manager: vijayts
+ms.reviewer: kasinh
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.author: kasinh
-ms.openlocfilehash: aaa2efa706822bee85dc867ad35bc312f4c700a1
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: e3d38e9b5e1b9b9f827476acf7e2e2ecab632424
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466899"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688813"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Восстановление данных с сервера Azure Backup Server
 Вы можете использовать Azure Backup Server, чтобы восстановить данные, резервная копия которых была создана в хранилище служб восстановления. Это можно сделать с помощью интегрированной консоли управления Azure Backup Server. Сам процесс похож на процедуру восстановления других компонентов Microsoft Azure Backup.

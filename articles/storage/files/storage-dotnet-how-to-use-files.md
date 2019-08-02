@@ -1,7 +1,6 @@
 ---
 title: Разработка для службы файлов Azure с помощью .NET | Документация Майкрософт
 description: Узнайте, как разрабатывать приложения и службы .NET, использующие службу файлов Azure для хранения файлов данных.
-services: storage
 author: roygara
 ms.service: storage
 ms.devlang: dotnet
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/22/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 38bafdb4753b41a9c8acd599e6b7215e1777c6cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 35f29e425fc471e4df4a037ef312af0fd041dcd7
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65779463"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699785"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -40,7 +39,7 @@ ms.locfileid: "65779463"
 API | Сценарии использования | Примечания
 ----|-------------|------
 [System.IO](https://docs.microsoft.com/dotnet/api/system.io) | Требования вашего приложения: <ul><li>чтение и запись файлов по протоколу SMB;</li><li>выполнение на устройстве, которое получает доступ к учетной записи службы файлов Azure через порт 445;</li><li>не требуется управлять параметрами администрирования общей папки.</li></ul> | Программирование файлового ввода-вывода в службе файлов Azure по протоколу SMB ничем не отличается от программирования операций ввода-вывода в сетевой общей папке или на локальном устройстве хранения. Общие сведения о ряде функций в .NET, в том числе и об операциях ввода-вывода, см. в [этом руководстве](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter).
-[Microsoft.Azure.Storage.File](https://docs.microsoft.com/dotnet/api/overview/azure/storage#client-library) | Требования вашего приложения: <ul><li>отсутствует доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета;</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье приводится пример использования `Microsoft.Azure.Storage.File` для файлового ввода-вывода с помощью REST (вместо SMB) и управления общей папкой.
+[Microsoft. Azure. Storage. File](https://docs.microsoft.com/dotnet/api/overview/azure/storage#client-library) | Требования вашего приложения: <ul><li>отсутствует доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета;</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье приводится пример использования `Microsoft.Azure.Storage.File` для файлового ввода-вывода с помощью REST (вместо SMB) и управления общей папкой.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>Создание консольного приложения и получение сборки
 В Visual Studio создайте новое консольное приложение Windows. Ниже показано, как создать консольное приложение в Visual Studio 2017. Эти инструкции применимы и в других версиях Visual Studio.
@@ -53,13 +52,13 @@ API | Сценарии использования | Примечания
 
 Все примеры кода из этого руководства можно добавить в метод `Main()` в файле `Program.cs` консольного приложения.
 
-Можно использовать клиентскую библиотеку службы хранилища Azure в любой тип приложения .NET, включая Azure облачной службы или веб-приложение, и для настольных и мобильных приложений. Для упрощения в этом руководстве мы будем использовать консольное приложение.
+Клиентскую библиотеку службы хранилища Azure можно использовать в любом типе приложения .NET, включая облачную службу или веб-приложение Azure, а также настольные и мобильные приложения. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>Установка необходимых пакетов с помощью NuGet
 Для работы с этим руководством вам нужно указать в проекте два пакета:
 
-* [Общая библиотека службы хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): Этот пакет предоставляет программный доступ к общим ресурсам в вашей учетной записи хранения.
-* [Библиотека хранилища BLOB-объектов Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): Этот пакет предоставляет программный доступ к большим двоичным объектам в вашей учетной записи хранения.
+* [Служба хранилища Microsoft Azure общей библиотеки для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): Этот пакет обеспечивает программный доступ к общим ресурсам в вашей учетной записи хранения.
+* [Служба хранилища Microsoft Azure библиотеки больших двоичных объектов для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): Этот пакет обеспечивает программный доступ к ресурсам больших двоичных объектов в вашей учетной записи хранения.
 * [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/). Этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
 Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.
@@ -402,7 +401,7 @@ CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTim
 ## <a name="troubleshooting-azure-files-using-metrics"></a>Устранение неполадок службы файлов Azure с помощью метрик
 Аналитика службы хранилища Azure теперь поддерживает метрики для службы файлов Azure. Данные метрик позволяют отслеживать запросы и диагностировать проблемы.
 
-Вы можете включить метрики для службы файлов Azure из [портала Azure](https://portal.azure.com). Кроме того, вы можете включить метрики программным путем. Для этого используйте операцию Set File Service Properties через интерфейс REST API или любой ее аналог из имеющихся в клиентской библиотеке хранилища.
+Вы можете включить метрики для службы файлов Azure из [портал Azure](https://portal.azure.com). Кроме того, вы можете включить метрики программным путем. Для этого используйте операцию Set File Service Properties через интерфейс REST API или любой ее аналог из имеющихся в клиентской библиотеке хранилища.
 
 В следующем примере кода показано, как использовать клиентскую библиотеку хранилища для .NET, чтобы включить метрики для службы файлов Azure.
 
@@ -458,7 +457,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Кроме того, вы можете найти подробное руководство по устранению неполадок в статье [Troubleshooting Azure File storage problems](storage-troubleshoot-windows-file-connection-problems.md) (Устранение неполадок в хранилище файлов Azure).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительную информацию о службе файлов Azure см. по следующим ссылкам.
 
 ### <a name="conceptual-articles-and-videos"></a>Тематические статьи и видео
@@ -470,7 +469,7 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 * [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
 * [Устранение неполадок в работе хранилища файлов Azure в Linux](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Справочные материалы
+### <a name="reference"></a>Ссылка
 * [Справочник по клиентской библиотеке хранилища для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
 * [Справочник по REST API службы файлов](https://msdn.microsoft.com/library/azure/dn167006.aspx)
 

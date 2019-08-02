@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: glenga
-ms.openlocfilehash: 15fd8593f950e0f553d1b7ca34ee785692043cad
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: cfdc28486cf254c4dd808824ab167489818376ab
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304360"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619594"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "68304360"
 
 Вы видите, что обе страницы имеют **команду "выполнить" в Application Insights** ссылку на запрос Application Insights Analytics, который получает данные.
 
-![Выполнение в Application Insights](media/functions-monitoring/run-in-ai.png)
+![Запустить в Application Insights](media/functions-monitoring/run-in-ai.png)
 
 Отобразится следующий запрос. Вы видите, что список вызовов ограничен последними 30 днями. В списке отображается не более 20 строк (`where timestamp > ago(30d) | take 20`). Список сведений о вызовах находится за последние 30 дней без ограничений.
 
@@ -152,9 +152,9 @@ traces
 
 В средстве ведения журнала Функций Azure предусмотрена *категория* для каждого журнала. Категория указывает, какая часть кода среды выполнения или кода функции записывала данные в этот журнал. 
 
-Среда выполнения функций создает журналы с категорией, которая начинается с "Host". Журналы "функция запущена", "функция выполнена" и "функция завершена" имеют категорию "Host. выполнителя". 
+Среда выполнения функций создает журналы с категорией, которая начинается с "Host". В версии `function started`1. x журналы, `function executed`и `function completed` имеют категорию `Host.Executor`. Начиная с версии 2. x, эти журналы имеют категорию `Function.<YOUR_FUNCTION_NAME>`.
 
-При записи журналов в код функции их категория «функция».
+Если вы записываете журналы в код функции, категория будет `Function` находиться в версии 1. x среды выполнения функций. В версии 2. x категория имеет `Function.<YOUR_FUNCTION_NAME>.User`значение.
 
 ### <a name="log-levels"></a>Уровни журнала
 
@@ -168,7 +168,7 @@ traces
 |Предупреждение     | 3 |
 |Error       | 4 |
 |Critical    | 5 |
-|Нет        | 6 |
+|Отсутствуют        | 6 |
 
 Уровень ведения журнала `None` описан в следующем разделе. 
 
@@ -599,7 +599,7 @@ module.exports = function (context, req) {
 
 Можно написать пользовательский код для отображения зависимостей. Примеры см. в примере кода в [ C# разделе Custom телеметрии](#log-custom-telemetry-in-c-functions). Пример кода приводит к отображению *схемы приложения* в Application Insights, которая выглядит как на следующем рисунке:
 
-![Схема сопоставления приложений](./media/functions-monitoring/app-map.png)
+![Схема приложений](./media/functions-monitoring/app-map.png)
 
 ## <a name="report-issues"></a>Сообщение о проблемах
 
@@ -624,11 +624,11 @@ module.exports = function (context, req) {
 
 ![Просмотр журналов потоковой передачи на портале](./media/functions-monitoring/streaming-logs-window.png)
 
-### <a name="visual-studio-code"></a>Visual Studio Code
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [!INCLUDE [functions-enable-log-stream-vs-code](../../includes/functions-enable-log-stream-vs-code.md)]
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Вы можете включить журналы потоковой передачи с помощью [Azure CLI](/cli/azure/install-azure-cli). Используйте следующие команды для входа в систему, выбора подписки и потоковой передачи файлов журнала:
 

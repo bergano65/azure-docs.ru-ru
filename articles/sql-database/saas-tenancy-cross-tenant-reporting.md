@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewers: billgib,ayolubek
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 9562d0cd1ad97a459c3630456a6070ac2b6e63f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa8dbbbb09fbdc14049e168afe6eb4810ccc8254
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61484740"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570245"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Отчеты по всем клиентам с использованием распределенных запросов
 
@@ -93,7 +92,7 @@ ms.locfileid: "61484740"
 
 1. В **обозревателе объектов** разверните узел **contosoconcerthall** > **Представления**:
 
-   ![узел "Представления"](media/saas-tenancy-cross-tenant-reporting/views.png)
+   ![просмотры](media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Щелкните **dbo.Venues** правой кнопкой мыши.
 3. Выберите **Создать скрипт для представления** > **Используя CREATE** > **В новом окне редактора запросов**.
@@ -106,7 +105,7 @@ ms.locfileid: "61484740"
 
 1. В *интегрированной среде сценариев PowerShell* откройте сценарий \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReporting.ps1*. 
 
-1. Задайте **$DemoScenario = 2**, _развертывание Ad hoc, база данных отчетов_.
+1. Установите **$DemoScenario = 2**, _разверните базу данных_автоматизированной нерегламентированной отчетности.
 
 1. Нажмите клавишу **F5**, чтобы выполнить скрипт и создать базу данных *adhocreporting*.
 
@@ -148,7 +147,7 @@ ms.locfileid: "61484740"
 
 При проверке плана выполнения наведите указатель мыши на значки плана, чтобы получить дополнительные сведения. 
 
-Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)** , заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждое *VenueId* сопоставляется с отдельной базы данных, фильтрацию легко выполнять удаленно, возвращая только необходимые данные.
+Важно отметить, что параметр **DISTRIBUTION = SHARDED(VenueId)** , заданный при определении внешнего источника данных, повышает производительность во многих ситуациях. Так как каждый *VenueId* сопоставляется с отдельной базой данных, фильтрация легко выполняется удаленно, возвращая только необходимые данные.
 
 1. В SSMS откройте файл \\Learning Modules\\Operational Analytics\\Adhoc Reporting\\*Demo-AdhocReportingQueries.sql*.
 2. Убедитесь в наличии подключения к базе данных **adhocreporting**.
@@ -173,10 +172,10 @@ ms.locfileid: "61484740"
 
    Этот запрос выполняет более сложное соединение и агрегирование. Большая часть обработки происходит удаленно.  В головную базу данных будут возвращены только единичные строки, содержащие количество билетов, продаваемых в день по каждому месту проведения.
 
-   ![query](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
+   ![запрос](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 

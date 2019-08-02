@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3152dead04510078dd475b611afbfc30264e58f7
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: d500f6c74bb62322a5e14ce3c489e8dba11dc2f2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297651"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68555773"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
@@ -31,6 +31,10 @@ ms.locfileid: "68297651"
 Администратор, которому назначена роль администратора проверки подлинности, может потребовать от пользователей сбросить свой пароль, повторно зарегистрироваться для использования MFA или отозвать существующие сеансы MFA из своего объекта пользователя.
 
 ![Управление методами проверки подлинности из портал Azure](./media/howto-mfa-userdevicesettings/manage-authentication-methods.png)
+
+1. Сброс пароля приведет к сбросу пароля пользователя и назначению временного пароля, который необходимо изменить при следующем входе.
+2. Обязательное повторное регистрация MFA сделает это, чтобы при следующем входе пользователя в систему ему запросили настроить новый метод проверки подлинности MFA.
+3. Отозвать сеансы MFA очищают сохраненные сеансы MFA пользователя и требуют, чтобы они выполняли MFA в следующий раз, когда это необходимо для политики на устройстве.
 
 ## <a name="require-users-to-provide-contact-methods-again"></a>Параметр "Требовать у выбранных пользователей сообщать о способах связи еще раз"
 

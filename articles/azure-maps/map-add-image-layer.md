@@ -3,18 +3,18 @@ title: Добавление слоя изображений в Azure Maps | До
 description: Сведения о добавлении слоя изображений на карту JavaScript
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/3/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 5396fefca3a60dea7a503f8b4e84cc575753ea30
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ea0f37e307196af4b27fd3f8fb1aa0d42443dfa
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60769572"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638733"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 
@@ -63,7 +63,7 @@ ms.locfileid: "60769572"
 <iframe height='700' scrolling='no' title='Параметры слоя изображений' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>параметрами слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

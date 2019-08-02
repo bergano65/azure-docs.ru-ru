@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 57a58b008792130c82a86ff4a5801f4bb39aabad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5d9a67f0b413b624baec369a219547cf18e9dbd2
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387908"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705600"
 ---
 # <a name="wait-and-non-wait-actions"></a>Действия с ожиданием и без ожидания
 
@@ -30,12 +31,12 @@ ms.locfileid: "66387908"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 - Действие с ожиданием В этом режиме система останавливает выполнение действий и ожидает ввода от пользователя.
 - Действие без ожидания В этом режиме система сразу же выбирает следующее действие (не дожидаясь ввода от пользователя).
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-a-new-model"></a>Создание модели
 
@@ -82,7 +83,7 @@ ms.locfileid: "66387908"
 > [!NOTE]
 > Последовательность ответов бота при выполнении действий с ожиданием и без ожидания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Introduction to entities](./04-introduction-to-entities.md) (Основные сведения о сущностях)

@@ -1,33 +1,25 @@
 ---
 title: Расширение виртуальных жестких дисков виртуальной машины Linux в Azure | Документация Майкрософт
 description: Узнайте, как расширить виртуальные жесткие диски на виртуальной машине Linux с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
 author: roygara
-manager: gwallace
-editor: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: azurecli
-ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
+ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: cc61ad7fb6fb741c03fe8395b4cd460c3bd33c53
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: f892857d74150ee42cc2ea4b5c996feac3d1cfa2
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667824"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68695615"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
 
 В этой статье подробно описано, как расширить управляемые диски для виртуальной машины Linux с помощью Azure CLI. Вы можете [добавить диски данных](add-disk.md), чтобы предоставить дополнительное место для хранения, а также расширить существующий диск данных. Как правило, размер виртуального жесткого диска по умолчанию для операционной системы на виртуальной машине Linux в Azure составляет 30 ГБ. 
 
 > [!WARNING]
-> Всегда проверяйте, что вашей файловой системы в работоспособном состоянии, типа таблицы раздел диска будет поддерживать новый размер и убедитесь, что резервное копирование, прежде чем выполнять операции изменения размера диска. Дополнительные сведения см. в статье [Архивация виртуальных машин Linux в Azure](tutorial-backup-vms.md). 
+> Всегда убедитесь, что ваша файловая система находится в рабочем состоянии, тип таблицы разделов диска будет поддерживать новый размер и перед выполнением операций по изменению размера диска необходимо обеспечить резервное копирование данных. Дополнительные сведения см. в статье [Архивация виртуальных машин Linux в Azure](tutorial-backup-vms.md). 
 
 ## <a name="expand-an-azure-managed-disk"></a>Развертывание управляемого диска Azure
 Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
@@ -141,7 +133,7 @@ ms.locfileid: "67667824"
     sudo mount /dev/sdc1 /datadrive
     ```
 
-1. Чтобы проверить, изменился ли размер диска данных, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела ( */dev/sdc1*) составляет 200 ГБ:
+1. Чтобы проверить, был ли изменен размер диска данных, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела ( */dev/sdc1*) составляет 200 ГБ:
 
     ```bash
     Filesystem      Size   Used  Avail Use% Mounted on

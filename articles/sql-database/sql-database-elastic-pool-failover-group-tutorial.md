@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
-manager: jroth
 ms.date: 06/19/2019
-ms.openlocfilehash: a9c4fb43717788703184522109301e88d4c94f0e
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 0507b3cb64b4b12bac92cc6bc90120ab4ec56dee
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444816"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568737"
 ---
 # <a name="tutorial-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Учебник. Добавление эластичного пула базы данных SQL Azure в группу отработки отказа
 
@@ -108,13 +107,13 @@ ms.locfileid: "68444816"
    ![Выбор группы отработки отказа на портале](media/sql-database-single-database-create-failover-group-tutorial/select-failover-group.png)
 
 1. Проверьте, какой сервер является основным, а какой — сервером-получателем. 
-1. Выберите  отработка отказа в области задач для переключения группы отработки отказа, содержащей эластичный пул. 
+1. Выберите отработка отказа в области задач для переключения группы отработки отказа, содержащей эластичный пул. 
 1. Нажмите кнопку **Да** в предупреждении, уведомляющее о том, что сеансы TDS будут отключены. 
 
    ![Переключение группы отработки отказа, содержащей базу данных SQL](media/sql-database-single-database-create-failover-group-tutorial/failover-sql-db.png)
 
 1. Проверьте, какой сервер является основным, какой сервер является вторичным. Если отработка отказа прошла успешно, у двух серверов должны быть переключенные роли. 
-1. Снова  установите флажок отработка отказа, чтобы вернуть группу отработки отказа к исходным параметрам. 
+1. Снова установите флажок отработка отказа, чтобы вернуть группу отработки отказа к исходным параметрам. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 Очистите ресурсы, удалив группу ресурсов. 

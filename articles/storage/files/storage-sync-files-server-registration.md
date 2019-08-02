@@ -1,19 +1,18 @@
 ---
 title: Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, как зарегистрировать Windows Server или отменить его регистрацию в службе синхронизации хранилища службы синхронизации файлов Azure.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: ef6def9f03a880d9fc8d649fe226caf597ba0ad5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9bbeda33f25aec15124bacb605513a3c52c3f07e
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991821"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699271"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -25,7 +24,7 @@ ms.locfileid: "65991821"
 ## <a name="registerunregister-a-server-with-storage-sync-service"></a>Регистрация и отмена регистрации сервера в службе синхронизации хранилища
 Регистрация сервера в службе синхронизации файлов Azure устанавливает отношения доверия между Windows Server и Azure. На основе этой связи на сервере можно создать *конечные точки сервера*, которые представляют определенные папки, синхронизируемые с общим файловым ресурсом Azure (которые также называется *облачная конечная точка*). 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 Чтобы зарегистрировать сервер в службе синхронизации хранилища, для него должны быть выполнены все предварительные требования.
 
 * Сервер должен работать под управлением поддерживаемой версии Windows Server. Дополнительные сведения см. в разделе [Системные требования к службе "Синхронизация файлов Azure" и ее возможности взаимодействия](storage-sync-files-planning.md#azure-file-sync-system-requirements-and-interoperability).

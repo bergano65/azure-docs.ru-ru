@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 1c6e77f3afc90a8c018296db80253d8b9a22159e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 24b7f769be3f4db3c36412e162b5cda40e3ca959
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66234108"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568706"
 ---
 # <a name="building-scalable-cloud-databases"></a>Создание масштабируемых облачных баз данных
 
@@ -60,7 +59,7 @@ ms.locfileid: "66234108"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - **Скачайте** клиентскую библиотеку эластичной базы данных ([Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22), [.NET](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)).
 

@@ -13,21 +13,21 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 952a8aa2dbfdabfb7f0df198a7453b847c33f7e2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c636032766b90af78e7794b3d515b924fa31d6cd
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60486980"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596024"
 ---
 # <a name="azure-data-factory---customer-case-studies"></a>Фабрика данных Azure: примеры реальных клиентов
 Фабрика данных представляет собой облачную службу управления информацией, которая автоматизирует перемещение и преобразование данных. Клиенты из многих отраслей используют фабрику данных и другие службы Azure для построения аналитических конвейеров и решения проблем бизнеса.  Узнайте от самих клиентов, как и почему они используют фабрику данных.
 
 ## <a name="milliman"></a>Milliman
-[Лучшая страховая компания преобразует страховую индустрию](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20096)
+[Лучшая страховая компания преобразует страховую индустрию](https://customers.microsoft.com/en-us/story/732463-top-actuarial-firm-transforms-the-insurance-industry-w)
 
 ## <a name="rockwell-automation"></a>Rockwell Automation
-[Фирма, специализирующаяся на промышленной автоматизации, снижает затраты на 90 процентов благодаря решениям на основе больших данных](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18356)
+[Фирма, специализирующаяся на промышленной автоматизации, снижает затраты на 90 процентов благодаря решениям на основе больших данных](https://customers.microsoft.com/en-us/story/726192-industrial-automation-firm-cuts-costs-up-to-90-percent)
 
 ## <a name="ziosk"></a>Ziosk
 [С каким мясом вы хотите заказать гамбургер? Ziosk уже знает ответ.](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18294)

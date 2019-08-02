@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: ebdc1e1c100329e95bd19359408cb138d233b1c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: aaef6f5498e5a8da65d1c829feae8b3e85dba0fd
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66385444"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705297"
 ---
 # <a name="default-values-and-boundaries"></a>Значения и границы по умолчанию
 
@@ -47,7 +48,7 @@ API сеансов, максимальное число вызовов HTTP в �
 
 (*) После 5 последовательных действий без ожидания все действия без ожидания маскируются, и Conversation Learner будет выбирать действия из доступных действий с ожиданием.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Приступая к работе с Conversation Learner](./quickstart.md)

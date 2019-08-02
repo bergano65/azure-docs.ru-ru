@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: d2e628fb7fc502ef9ba81d20680d66f24fd7d138
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 69e701d6727e5410b71e6cf8fbe20a1cd038ddb0
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61339102"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705006"
 ---
 # <a name="evaluate-method"></a>Метод Evaluate
 
@@ -30,20 +31,20 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 
 ## <a name="request-parameters"></a>Параметры запроса  
 
-ИМЯ     | Значение | Обязательный?  | Описание
+Название     | Значение | Обязательный?  | Описание
 -----------|-----------|---------|--------
 **expr**       | Текстовая строка | Да | Выражение запроса, которое указывает, какие сущности должны быть возвращены.
 **model**      | Текстовая строка | Нет  | Имя модели, которую необходимо запросить.  В настоящее время значение по умолчанию соответствует *latest*.        
-**attributes** | Текстовая строка | Нет<br>значение по умолчанию: Идентификатор | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
-**count**        | Number | Нет<br>Значение по умолчанию: 10 | Количество результатов для возврата.
-**offset**     | Number |   Нет<br>Значение по умолчанию: 0    | Индекс первого результата для возврата.
+**attributes** | Текстовая строка | Нет<br>значение по умолчанию: Id | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
+**count**        | Number | Нет<br>По умолчанию: 10 | Количество результатов для возврата.
+**offset**     | Number |   Нет<br>По умолчанию: 0    | Индекс первого результата для возврата.
 **OrderBy** |   Текстовая строка | Нет<br>По умолчанию: по снижению | Имя атрибута, который используется для сортировки списка сущностей. При желании можно указать восходящий или нисходящий порядок. Недопустимый формат: *name:asc* или *name:desc*.
   
  <br>
 
 ## <a name="response-json"></a>Ответ (JSON)
 
-ИМЯ | Описание
+Название | Описание
 -------|-----   
 **expr** |  Параметр *expr* из запроса.
 **entities** |  Массив из 0 или более сущностей, которые соответствуют выражению запроса. Каждая сущность содержит значение натурального логарифма вероятности и значения других запрашиваемых атрибутов.
@@ -51,7 +52,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?
 
 <br>
 
-#### <a name="example"></a>Пример:
+#### <a name="example"></a>Пример
 ```
 https://westus.api.cognitive.microsoft.com/academic/v1.0/evaluate?expr=
 Composite(AA.AuN=='jaime teevan')&count=2&attributes=Ti,Y,CC,AA.AuN,AA.AuId

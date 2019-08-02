@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 0bf5b71a4b0f51a586febbdaeaf8caba03c5b25a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: c657025ce588363cf76ce10868d809a9aff69222
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387919"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705615"
 ---
 # <a name="introduction-to-training"></a>Введение в обучение
 
@@ -30,13 +31,13 @@ ms.locfileid: "66387919"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 - Действия: Ответ бота на введенные пользователем данные.
 - Обучение: способ научить бота реагировать на введенные пользователем данные.
 - Создание ветви: изменение вводимых пользователем данных в сохраненном обучающем диалоге для создания нового обучающего диалога, который начинается точно так же, как оригинал, но затем развивается в другом направлении.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-a-new-model"></a>Создание модели
 
@@ -97,7 +98,7 @@ ms.locfileid: "66387919"
 10. Обратите внимание на ответ бота — он показывает, что второе обучение работает.
 11. Нажмите кнопку Done Testing (Тестирование завершено).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Действия с ожиданием и без ожидания](./03-wait-vs-nonwait-actions.md)

@@ -1,18 +1,19 @@
 ---
 title: Модель данных журналов Azure Monitor для Azure Backup
 description: В этой статье рассказывается о Azure Monitor журналах подробные сведения о модели данных для Azure Backup данных.
-author: adigan
-manager: shivamg
+ms.reviewer: adigan
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.author: adigan
-ms.openlocfilehash: 6563eefffee0ed8d9ce94c3e0a1e24b0d32314f0
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 878e4e7508d82f78e82f1fd8bda69079d9468e9f
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466154"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689242"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
@@ -329,12 +330,12 @@ ms.locfileid: "68466154"
 
 |Поле  |Тип данных  | Описание  |
 |---------|---------|----------|
-|BackupManagmentServerName_s     |Текст         |Имя сервера управления архивацией        |
+|BackupManagementServerName_s     |Текст         |Имя сервера управления архивацией        |
 |AzureBackupAgentVersion_s     |Текст         |Версия агента Azure Backup на сервере управления архивацией          |
-|BackupManagmentServerVersion_s     |Текст         |Версия сервера управления архивацией|
-|BackupManagmentServerOSVersion_s     |Текст            |Версия ОС сервера управления архивацией|
+|BackupManagementServerVersion_s     |Текст         |Версия сервера управления архивацией|
+|BackupManagementServerOSVersion_s     |Текст            |Версия ОС сервера управления архивацией|
 |BackupManagementServerType_s     |Текст         |Тип сервера управления архивацией, например MABS, SC DPM|
-|BackupManagmentServerUniqueId_s     |Текст         |Поле для уникальной идентификации сервера управления архивацией       |
+|BackupManagementServerUniqueId_s     |Текст         |Поле для уникальной идентификации сервера управления архивацией       |
 
 ### <a name="preferredworkloadonvolume"></a>преферредворклоадонволуме
 

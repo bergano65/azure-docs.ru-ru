@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
-manager: craigg
 ms.date: 12/13/2018
-ms.openlocfilehash: 0d7920080fd61389741fbe785f5141003bef5251
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 920851e33255b0bcb5b085c541ae636c5988be72
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61314726"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567319"
 ---
 # <a name="sync-networking-configuration-for-azure-app-service-hosting-plan"></a>Синхронизация конфигурации сети для плана размещения Службы приложений Azure
 
@@ -45,6 +44,6 @@ ms.locfileid: "61314726"
 
 Теперь можно попробовать заново установить подключение к Управляемому экземпляру.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о настройке виртуальной сети Управляемого экземпляра см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md) и [Configure an existing VNet for Azure SQL Database Managed Instance](sql-database-managed-instance-configure-vnet-subnet.md) (Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure).

@@ -10,20 +10,19 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
-manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: 4c6799372f203f021a07ae52a1d7f591aae5afad
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2117a811f977230dd9c9eecf6ea09b9b7deda3be
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60339012"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568052"
 ---
 # <a name="how-to-use-a-single-database-in-azure-sql-database"></a>Использование отдельной базы данных в Базе данных SQL Azure
 
 В этом разделе можно найти различные руководства, сценарии и объяснения, которые помогут в управлении и настройке отдельной базы данных в Базе данных SQL Azure.
 
-## <a name="migrate"></a>Миграция
+## <a name="migrate"></a>Перенос
 
 - [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-single-database-migrate.md) — содержит информацию о рекомендуемом процессе миграции и средствах для миграции в управляемый экземпляр.
 - [Новый администратор базы данных в облаке — управление базой данных в службе "База данных SQL Azure"](sql-database-manage-after-migration.md).
@@ -42,7 +41,7 @@ ms.locfileid: "60339012"
 - [Включение автоматической настройки](sql-database-automatic-tuning-enable.md), чтобы База данных SQL Azure имела возможность оптимизировать производительность рабочей нагрузки.
 - [Включение уведомлений по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md), чтобы получать сведения о рекомендациях по настройке.
 - [Применение рекомендаций по производительности](sql-database-advisor-portal.md) и оптимизация своей базы данных.
-- [Создание оповещений](sql-database-insights-alerts-portal.md) для получения уведомлений из Базы данных SQL Azure.
+- [Создание оповещений](sql-database-insights-alerts-portal.md) для получения уведомлений от Базы данных SQL Azure.
 - [Устранение неполадок с подключением](sql-database-troubleshoot-common-connection-issues.md) при возникновении проблем с подключением между приложениями и базой данных. Вы также можете воспользоваться службой [Работоспособность ресурсов](sql-database-resource-health.md).
 - [Управление файловым пространством](sql-database-file-space-management.md), чтобы отслеживать использование хранилища в базе данных.
 
@@ -73,5 +72,5 @@ ms.locfileid: "60339012"
 - [Использование Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md) для запроса сегментированных данных.
 - [Использование платформы Dapper](sql-database-elastic-scale-working-with-dapper.md) для запроса сегментированных данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о руководствах по Управляемому экземпляру см. в [этой статье](sql-database-howto-managed-instance.md).

@@ -3,7 +3,7 @@ title: Развертывание приложения Azure Service Fabric | Д
 description: Развертывание и удаление приложений в Service Fabric с помощью PowerShell.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: b120ffbf-f1e3-4b26-a492-347c29f8f66b
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
-ms.author: aljo
-ms.openlocfilehash: f0f66cd32721e277cbd6e4578b0e58bb201ee966
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: 3cfebadf6dadeb81b1b57e671b19594b75645e31
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60393276"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599614"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "60393276"
 
 <br/>
 
-После [создания пакета приложения][10] его можно развернуть в кластере Azure Service Fabric. Развертывание включает следующие три шага:
+После [упаковки типа приложения][10]он готов к развертыванию в кластере Azure Service Fabric. Развертывание включает следующие три шага:
 
 1. Отправка пакета приложения в хранилище образов.
 2. Регистрация типа приложения с помощью относительного пути к хранилищу образов.
@@ -357,14 +357,14 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 
 ### <a name="deploy-large-application-package"></a>Развертывание пакета приложения большего размера
 
-Проблема [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) время ожидания для пакета большого приложения (несколько ГБ).
+Проблема: Время ожидания [копирования ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) истекает для большого пакета приложения (порядок ГБ).
 Попробуйте выполнить следующее.
 - Задайте большее время ожидания для команды [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) с помощью параметра `TimeoutSec`. По умолчанию время ожидания составляет 30 минут.
 - Проверьте сетевое подключение между исходным компьютером и кластером. Если подключение медленное, рассмотрите возможность использовать машину с лучшим сетевым соединением.
 Возможно, клиентский компьютер находится не в одном регионе с кластером, тогда перейдите на компьютер, который находится с ним в одном регионе или в регионе поблизости.
 - Проверьте, достигнуто ли внешнее регулирование. Например, если хранилище образов настроено для использования хранилища Аzure, загрузку можно регулировать.
 
-Проблема Отправка пакета завершена успешно, но [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) времени ожидания. Попробуйте выполнить следующее.
+Проблема: Передача пакета выполнена успешно, но время ожидания для [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) истекает. Попробуйте выполнить следующее.
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов.
 Сжатие уменьшает размер и число файлов, что, в свою очередь, снижает объем трафика и работу, которую необходимо выполнить Service Fabric. Операция загрузки может выполняться медленнее (особенно при выполнении сжатия), но регистрация и отмена регистрации типа приложения выполняются быстрее.
 - Задайте большее время ожидания для выполнения команды [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) с помощью параметра `TimeoutSec`.
@@ -383,7 +383,7 @@ DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 
 ### <a name="deploy-application-package-with-many-files"></a>Развертывание пакета приложения с несколькими файлами
 
-Проблема [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) время ожидания для пакета приложения с большим количеством файлов (несколько тысяч).
+Проблема: При использовании командлета [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) истекает время ожидания для пакета приложения с большим количеством файлов (в тысячах).
 Попробуйте выполнить следующее.
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов. Сжатие уменьшает количество файлов.
 - Задайте большее время ожидания для выполнения команды [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) с помощью параметра `TimeoutSec`.
@@ -401,7 +401,7 @@ Status                 : Available
 DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание пакета приложения](service-fabric-package-apps.md)
 

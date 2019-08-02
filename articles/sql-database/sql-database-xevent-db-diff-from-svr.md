@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 7f742b094575b78f453fb735b23cc5319a27fa7e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9af487e2eb35e7dc94e1b70945d5c03ffdde2ba
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65206650"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566077"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -35,11 +34,11 @@ ms.locfileid: "65206650"
 - [Краткое руководство. Расширенные события в SQL Server](https://msdn.microsoft.com/library/mt733217.aspx)
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В данной статье предполагается, чтобы вы уже ознакомились со следующими компонентами:
 
-- [Служба Базы данных SQL Azure](https://azure.microsoft.com/services/sql-database/);
+- [Служба "База данных SQL Azure"](https://azure.microsoft.com/services/sql-database/);
 - [Расширенные события](https://msdn.microsoft.com/library/bb630282.aspx) в Microsoft SQL Server.
 
 - Большинство документации о расширенных событиях относится и к SQL Server, и к Базе данных SQL.
@@ -171,8 +170,8 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 Маркер SAS, сформированный для вашего контейнера хранилища Azure, должен указывать **rwl** для разрешений. Значение **rwl** обеспечивает следующие разрешения:
 
 - Чтение
-- запись
-- список
+- Запись
+- List
 
 ## <a name="performance-considerations"></a>Рекомендации по производительности
 
@@ -183,7 +182,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 - уменьшить количество одновременно запущенных сеансов событий;
 - уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
 
-### <a name="network-latency"></a>Задержки сети
+### <a name="network-latency"></a>Сетевая задержка
 
 Целевой объект **Файл событий** может столкнуться с медленной работой или отказами сети при сохранении данных в большие двоичные объекты хранилища Azure. Другие события в Базе данных SQL могут откладываться до установки подключения к сети. Такая задержка может замедлить вашу работу.
 

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srinia
 ms.author: srinia
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 62efee57f3663f1dad0446da659de16d2800bf75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c5905716c0aada4a5070b9968c330eafaffb741
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61482964"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561332"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
@@ -76,7 +75,7 @@ ms.locfileid: "61482964"
 
 Чтобы ресурсы не перегружались при работе с базами данных в эластичном пуле SQL, задания можно настроить для ограничения количества баз данных, в которых может одновременно работать задание.
 
-Задать количество одновременных баз данных, задание выполняется, установив `sp_add_jobstep` хранимой процедуры `@max_parallelism` параметр в T-SQL, или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
+Задайте количество одновременных баз данных, на которых выполняется задание, задав `sp_add_jobstep` `@max_parallelism` параметр хранимой процедуры в T-SQL или `Add-AzSqlElasticJobStep -MaxParallelism` в PowerShell.
 
 ## <a name="best-practices-for-creating-jobs"></a>Рекомендации по созданию заданий
 
@@ -96,7 +95,7 @@ IF NOT EXIST (some_object)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

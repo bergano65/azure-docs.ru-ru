@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
-manager: jhubbard
 ms.date: 03/12/2019
-ms.openlocfilehash: c3e982c0fc46ea72692d5fa7f27e14b88c6383df
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 464ea73d9b3d7116205377600ffccee13a9e2dcb
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274266"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566045"
 ---
 # <a name="rotate-the-transparent-data-encryption-tde-protector-using-powershell"></a>Смена предохранителя TDE с помощью PowerShell
 
@@ -33,11 +32,11 @@ ms.locfileid: "67274266"
 > После смены **НЕ УДАЛЯЙТЕ** старую версию ключа.  При смене ключа обычно сохраняются данные, зашифрованные прежними версиями ключа, например резервные копии базы данных. 
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 - В этом практическом руководстве предполагается, что вы уже используете ключ из Azure Key Vault в качестве предохранителя TDE для базы данных SQL Azure или хранилища данных. Изучите статью о [прозрачном шифровании данных с поддержкой создания собственных ключей](transparent-data-encryption-byok-azure-sql.md).
 - Необходимо установить и запустить Azure PowerShell.
@@ -45,7 +44,7 @@ ms.locfileid: "67274266"
 
 ## <a name="manual-key-rotation"></a>Смена ключей вручную
 
-Вручную смены ключей использует [добавить AzKeyVaultKey](/powershell/module/az.keyvault/Add-AzKeyVaultKey), [добавить AzSqlServerKeyVaultKey](/powershell/module/az.sql/add-azsqlserverkeyvaultkey), и [AzSqlServerTransparentDataEncryptionProtector набора](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) командлеты для добавления совершенно нового ключа, который может иметь имя нового ключа или даже в другом хранилище ключей. Использование этого подхода поддерживает добавление аналогичного ключа в разные хранилища ключей для поддержки сценариев высокой доступности и географического аварийного восстановления.
+При смене ключей вручную используются командлеты [Add-азкэйваулткэй](/powershell/module/az.keyvault/Add-AzKeyVaultKey), [Add-азсклсерверкэйваулткэй](/powershell/module/az.sql/add-azsqlserverkeyvaultkey)и [Set-азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) для добавления совершенно нового ключа, который может быть под новым именем ключа или даже с другим ключом. хранилища. Использование этого подхода поддерживает добавление аналогичного ключа в разные хранилища ключей для поддержки сценариев высокой доступности и географического аварийного восстановления.
 
 >[!NOTE]
 >Общая длина имени хранилища ключей и имени ключа не может превышать 94 символа.
@@ -74,7 +73,7 @@ ms.locfileid: "67274266"
 
 ## <a name="other-useful-powershell-cmdlets"></a>Другие полезные командлеты PowerShell
 
-- Чтобы переключить средства защиты прозрачного шифрования данных из управляемых корпорацией Майкрософт в режим BYOK, используйте [AzSqlServerTransparentDataEncryptionProtector набора](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) командлета.
+- Чтобы переключить средство защиты TDE с управляемого Майкрософт на режим BYOK, используйте командлет [Set-азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) .
 
    ```powershell
    Set-AzSqlServerTransparentDataEncryptionProtector `
@@ -84,7 +83,7 @@ ms.locfileid: "67274266"
    -ResourceGroup <SQLDatabaseResourceGroupName>
    ```
 
-- Для переключения средства защиты TDE с BYOK режим для управляемых корпорацией Майкрософт, используйте [AzSqlServerTransparentDataEncryptionProtector набора](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) командлета.
+- Чтобы переключить средство защиты TDE из режима BYOK на управляемые корпорацией Майкрософт, используйте командлет [Set-азсклсервертранспарентдатаенкриптионпротектор](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) .
 
    ```powershell
    Set-AzSqlServerTransparentDataEncryptionProtector `
@@ -93,7 +92,7 @@ ms.locfileid: "67274266"
    -ResourceGroup <SQLDatabaseResourceGroupName> 
    ``` 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-azure-sql-remove-tde-protector.md). 
 

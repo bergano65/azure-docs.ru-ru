@@ -1,19 +1,20 @@
 ---
 title: Устранение неполадок службы Azure Backup. Состояние гостевого агента недоступно
 description: Симптомы, причины и способы устранения проблем в работе службы Azure Backup, связанных с агентом, расширением и дисками.
-author: saurabhsensharma
-manager: saurabhsensharma
+ms.reviewer: saurse
+author: dcurwin
+manager: carmonm
 keywords: Azure backup; VM agent; Network connectivity;
 ms.service: backup
 ms.topic: troubleshooting
 ms.date: 07/05/2019
-ms.author: saurse
-ms.openlocfilehash: e4337c9c89ca239bb664cbb7fb953ab9eedd3ac5
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 7fc288ad9e33088b1b5248c1b61ed439ac95a9c4
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465317"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688977"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -77,9 +78,9 @@ ms.locfileid: "68465317"
 **Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
 **Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
-## <a name="ExtentionOperationFailed-vmsnapshot-extension-operation-failed"></a>ExtentionOperationFailedForManagedDisks — операция расширения VMSnapshot завершилась сбоем.
+## <a name="ExtensionOperationFailed-vmsnapshot-extension-operation-failed"></a>Сбой операции расширения Екстенсионоператионфаиледформанажеддискс-VMSnapshot
 
-**Код ошибки** ExtentionOperationFailedForManagedDisks <br>
+**Код ошибки** ExtensionOperationFailedForManagedDisks <br>
 **Сообщение об ошибке** Не удалось выполнить операцию с расширением моментального снимка виртуальной машины<br>
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
@@ -106,7 +107,7 @@ ms.locfileid: "68465317"
 **Код ошибки** UserErrorUnsupportedDiskSize <br>
 **Сообщение об ошибке** В настоящее время Azure Backup не поддерживает размеры дисков больше 4095 ГБ <br>
 
-Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска больше 4095 ГБ. Поддержка больших дисков ожидается в ближайшее время.  
+Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска больше 4095 ГБ. Чтобы зарегистрироваться для использования закрытой предварительной версии Azure Backup поддержка больших дисков больше, чем 4 ТБ до 30TB, напишите нам AskAzureBackupTeam@microsoft.comобратно.
 
 ## <a name="usererrorbackupoperationinprogress---unable-to-initiate-backup-as-another-backup-operation-is-currently-in-progress"></a>UserErrorBackupOperationInProgress. Не удалось запустить резервное копирование, так как в настоящий момент выполняется другая операция резервного копирования.
 

@@ -4,7 +4,7 @@ description: Платформы данных и средства, поддерж
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 27e0deae9c35ad8fa00659e3e3e505cace6e9014
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: a0fe4ee33769a6d8cf14f60dcc0c4615bb00c5e8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60516501"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565296"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
@@ -43,7 +43,7 @@ ms.locfileid: "60516501"
 > Выпуск для разработчиков SQL Server 2016 предназначен только для разработки и тестирования. Для запуска в рабочей среде вам потребуется лицензия или одна из виртуальных машин SQL Server. 
 
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 Сервер базы данных уже предварительно настроен, и службы Windows, связанные с SQL Server (например, `SQL Server (MSSQLSERVER)`), настроены для автоматического запуска. Включить внутреннюю аналитику базы данных с использованием Microsoft R можно, только выполнив запуск вручную. Чтобы сделать это, выполните следующую команду как однократное действие в SQL Server Management Studio (SSMS) после входа в систему с правами администратора, откройте "Создать запрос" в среде SSMS, выберите базу данных `master`, а затем запустите: 
 
@@ -84,7 +84,7 @@ SQL Server устанавливается обычным образом. Его 
 
 
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 Перед запуском в контексте Spark на Microsoft R Server в версии DSVM для Ubuntu Linux необходимо выполнить одноразовую настройку для включения локального кластера Hadoop HDFS с одним узлом и экземпляра Yarn. По умолчанию на виртуальной машине для обработки и анализа данных службы Hadoop установлены, но отключены. Чтобы их включить, при первом использовании необходимо выполнить следующие команды в качестве корня:
 
     echo -e 'y\n' | ssh-keygen -t rsa -P '' -f ~hadoop/.ssh/id_rsa
@@ -99,7 +99,7 @@ SQL Server устанавливается обычным образом. Его 
 
 
 ### <a name="how-is-it-configured--installed-on-the-dsvm"></a>Настройка и установка на DSVM 
-|платформа|Размещение установки ($SPARK_HOME)|
+|Платформа|Размещение установки ($SPARK_HOME)|
 |:--------|:--------|
 |Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|

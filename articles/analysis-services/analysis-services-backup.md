@@ -5,17 +5,17 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 31e8e65b382a3a6bcad2998a0babdf9605dc4968
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 15d2d0a043271da18d7884b684ffe8cf5c1f4dc8
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61023949"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619208"
 ---
-# <a name="backup-and-restore"></a>Архивация и восстановление
+# <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
 Архивация баз данных табличной модели в Azure Analysis Services во многом аналогична процедуре для локальных служб Analysis Services. Основное различие заключается в расположении для хранения архивных файлов. Архивные файлы следует сохранять в контейнер в [учетной записи хранения Azure](../storage/common/storage-create-storage-account.md). Можно использовать уже имеющиеся учетную запись хранения и контейнер либо создать их при настройке параметров хранилища для сервера.
 
@@ -24,7 +24,7 @@ ms.locfileid: "61023949"
 > 
 > 
 
-Архивные копии сохраняются с расширение ABF. Для табличных моделей в памяти сохраняются как данные, так и метаданные модели. Для табличных моделей с прямым запросом (DirectQuery) сохраняются только метаданные моделей. В зависимости от выбранных вами параметров архивные копии могут быть сжаты и зашифрованы.
+Резервные копии сохраняются с расширением ABF. Для табличных моделей в памяти сохраняются как данные, так и метаданные модели. Для табличных моделей с прямым запросом (DirectQuery) сохраняются только метаданные моделей. В зависимости от выбранных вами параметров архивные копии могут быть сжаты и зашифрованы.
 
 
 ## <a name="configure-storage-settings"></a>Настройка параметров хранения
@@ -38,7 +38,7 @@ ms.locfileid: "61023949"
 
 2.  Щелкните **Включено**, а затем — **Параметры хранилища**.
 
-    ![Включение](./media/analysis-services-backup/aas-backup-enable.png)
+    ![Включить](./media/analysis-services-backup/aas-backup-enable.png)
 
 3. Выберите имеющуюся учетную запись хранения или создайте новую.
 
@@ -50,7 +50,7 @@ ms.locfileid: "61023949"
 
     ![Сохранение параметров архивации](./media/analysis-services-backup/aas-backup-save.png)
 
-## <a name="backup"></a>Azure Backup
+## <a name="backup"></a>Архивация
 
 ### <a name="to-backup-by-using-ssms"></a>Архивация с помощью SSMS
 
@@ -74,7 +74,7 @@ ms.locfileid: "61023949"
 ### <a name="powershell"></a>PowerShell
 Используйте командлет [Backup-ASDatabase](https://docs.microsoft.com/sql/analysis-services/powershell/backup-asdatabase-cmdlet).
 
-## <a name="restore"></a>восстановление;
+## <a name="restore"></a>Восстановление
 При восстановлении файл архивной копии должен находиться в учетной записи хранения, настроенной для вашего сервера. Если нужно переместить файл архивной копии из локального расположения в учетную запись хранилища, используйте [обозреватель хранилищ Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer) или служебную программу командной строки [AzCopy](../storage/common/storage-use-azcopy.md). 
 
 

@@ -4,7 +4,7 @@ description: Развертывание пулов виртуальных маш
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2018
-ms.author: gokuma
-ms.openlocfilehash: 5cce7f691204a0fd116627fadde1076a4505fcb2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: 44983de87ce2e774356bf506e3a868da922a3ba3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60502288"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558060"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Создание общего пула виртуальных машин для обработки и анализа данных
 
@@ -59,7 +59,7 @@ az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  -
 
 Масштабируемые наборы виртуальных машин поддерживают автомасштабирование. Вы можете задать правила, определяющие, когда следует создавать дополнительные экземпляры и когда нужно уменьшить их масштаб. Например, вы можете уменьшить масштаб до нуля экземпляров, чтобы сэкономить на использовании облачного оборудования, когда виртуальные машины простаивают. Подробное описание процедуры [автомасштабирования](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) приведено в документации по масштабируемым наборам виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка общего удостоверения](dsvm-common-identity.md)
 * [Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных](dsvm-secure-access-keys.md)

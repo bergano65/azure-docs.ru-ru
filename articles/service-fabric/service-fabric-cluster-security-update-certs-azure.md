@@ -3,7 +3,7 @@ title: Управление сертификатами в кластере Azure
 description: В этой статье рассказывается о том, как добавить новые, а также сменить или удалить имеющиеся сертификаты в кластере Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chakdan
 editor: ''
 ms.assetid: 91adc3d3-a4ca-46cf-ac5f-368fb6458d74
@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
-ms.author: aljo
-ms.openlocfilehash: f1998ec2fe82b9fd52547fbccb208542b22bc949
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: d84525e869d47fc609ee8aac7feb7feda36a5f23
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306915"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599951"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
 
-По умолчанию режим загрузки сертификата пакета SDK для Azure Service Fabrics заключается в развертывании и использовании определенного сертификата с датой срока истечения далеко в будущем, независимо от их первичного или вторичного определения конфигурации. Откат к классической поведение — это не рекомендуется использовать дополнительные действия и требуется задать значение параметра «UseSecondaryIfNewer» значение false в конфигурацию Fabric.Code.
+По умолчанию режим загрузки сертификата пакета SDK для Azure Service Fabrics заключается в развертывании и использовании определенного сертификата с датой срока истечения далеко в будущем, независимо от их первичного или вторичного определения конфигурации. Возврат к классическому поведению является нерекомендуемым расширенным действием и требует установки значения false для параметра "Усесекондарифневер" в структуре Fabric. Code.
 
 Service Fabric позволяет указать в дополнение к сертификатам клиента два сертификата кластера, основной и дополнительный. Сделать это можно при настройке сертификата безопасности во время создания кластера. Чтобы узнать больше об их настройке во время создания, ознакомьтесь с процедурой [создания кластера Azure с помощью портала](service-fabric-cluster-creation-via-portal.md) или [создания кластера Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md). Если во время создания указан только один сертификат кластера, то он используется в качестве основного сертификата. После создания кластера можно добавить новый сертификат в качестве дополнительного.
 
@@ -48,7 +48,7 @@ Service Fabric позволяет указать в дополнение к се
 
 ## <a name="add-a-secondary-certificate-using-resource-manager-powershell"></a>Добавление дополнительного сертификата с помощью PowerShell для Resource Manager
 > [!TIP]
-> Есть теперь проще и удобнее способ добавлять дополнительный сертификат, используя [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета. Остальные инструкции в этом разделе выполнять не обязательно.  Кроме того, вы не обязательно шаблона, который изначально использовался для создания и развертывания кластера при использовании [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета.
+> Теперь существует более простой способ добавления вторичного сертификата с помощью командлета [Add-азсервицефабрикклустерцертификате](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) . Остальные инструкции в этом разделе выполнять не обязательно.  Кроме того, шаблон, изначально используемый для создания и развертывания кластера при использовании командлета [Add-азсервицефабрикклустерцертификате](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) , не требуется.
 
 В этих инструкциях предполагается, что у вас есть опыт работы с Resource Manager, вы развернули хотя бы один кластер Service Fabric с помощью шаблона Resource Manager и у вас есть шаблон, который использовался для настройки этого кластера. Предполагается также, что вы уверенно используете JSON.
 
@@ -117,7 +117,7 @@ Service Fabric позволяет указать в дополнение к се
          }
     ``` 
 
-4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Перейдите к подразделу «publisher»: «Microsoft.Azure.ServiceFabric», в разделе «virtualMachineProfile».
+4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Прокрутите до "издатель": "Microsoft. Azure. ServiceFabric" в разделе "virtualMachineProfile".
 
     В списке параметров издателя Service Fabric должно отображаться примерно следующее.
     
@@ -195,7 +195,7 @@ Service Fabric позволяет указать в дополнение к се
 ### <a name="deploy-the-template-to-azure"></a>Развертывание шаблона в Azure
 
 - Теперь все готово к развертыванию шаблона в Azure. Откройте командную строку Azure PowerShell версии не ниже 1.
-- Войдите в учетную запись Azure и выберите конкретную подписку azure. Это важный шаг для пользователей, имеющих доступ к нескольким подпискам Azure.
+- Войдите в учетную запись Azure и выберите конкретную подписку Azure. Это важный шаг для пользователей, имеющих доступ к нескольким подпискам Azure.
 
 ```powershell
 Connect-AzAccount
@@ -210,7 +210,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName <Resource Group that your clus
 
 ```
 
-Разверните шаблон в группу ресурсов. Используйте группу ресурсов, в которой развернут кластер. Выполните команду New-AzResourceGroupDeployment. Не нужно указывать режим, так как по умолчанию используется **добавочный**режим.
+Разверните шаблон в группу ресурсов. Используйте группу ресурсов, в которой развернут кластер. Выполните команду New-Азресаурцеграупдеплоймент. Не нужно указывать режим, так как по умолчанию используется **добавочный**режим.
 
 > [!NOTE]
 > Если задан полный режим, то вы можете случайно удалить ресурсы, которые находятся не в шаблоне. Поэтому не используйте этот режим данном сценарии.
@@ -262,7 +262,7 @@ Connect-serviceFabricCluster -ConnectionEndpoint $ClusterName -KeepAliveInterval
 Get-ServiceFabricClusterHealth 
 ```
 
-## <a name="deploying-client-certificates-to-the-cluster"></a>Развертывание сертификатов клиента в кластере.
+## <a name="deploying-client-certificates-to-the-cluster"></a>Развертывание клиентских сертификатов в кластере.
 
 Для развертывания сертификатов из хранилища ключей в узлах можно выполнить те же действия, которые описаны на шаге 5 выше. Необходимо только определить и использовать другие параметры.
 
@@ -288,7 +288,7 @@ Get-ServiceFabricClusterHealth
 
 Чтобы дополнительный сертификат больше не использовался для обеспечения безопасности кластера, перейдите к разделу "Безопасность" и в контекстном меню соответствующего сертификата выберите параметр "Удалить".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)

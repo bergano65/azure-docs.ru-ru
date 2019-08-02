@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: dd2fb0c9ef157e3706ca3d902f7feebaf4c2f279
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: b2670ec844df192bb73e8b1e76b1ebf611b2539e
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478915"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619376"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -39,7 +39,6 @@ ms.locfileid: "68478915"
 * [ASP.NET](../../azure-monitor/app/asp-net.md)
 * [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 * [Android](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
-* [Android](https://github.com/Microsoft/ApplicationInsights-Android) (Центр приложений)
 * [iOS](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [Java EE](../../azure-monitor/app/java-get-started.md)
 * [Node.JS](https://www.npmjs.com/package/applicationinsights)
@@ -57,6 +56,5 @@ ms.locfileid: "68478915"
 * [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Stream Analytics](../../azure-monitor/app/export-power-bi.md)
 
-## <a name="unsupported-community-sdks"></a>Неподдерживаемые пакеты SDK сообщества
-
-Существует ряд Application Insightsных пакетов SDK для сообщества. Пакеты SDK сообщества официально не поддерживаются и не обслуживаются корпорацией Майкрософт. Не удалось предоставить поддержку для пакета SDK, который не входит в список официально поддерживаемых. 
+## <a name="unsupported-sdks"></a>Неподдерживаемые пакеты SDK
+Мы осведомлены о существовании нескольких других пакетов SDK, поддерживаемых сообществом, а также о некоторых из них. Однако Azure Monitor обеспечивает поддержку только при использовании поддерживаемых пакетов SDK, перечисленных на этой странице. Мы постоянно оцениваем возможности, чтобы расширить нашу поддержку для других языков, поэтому на странице [объявления GitHub](https://github.com/microsoft/ApplicationInsights-Announcements/issues) вы получите последние новости пакета SDK.

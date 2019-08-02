@@ -6,16 +6,18 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 04/26/2018
+ms.date: 07/30/2019
 ms.author: menchi
-ms.openlocfilehash: 428f13c1c70171404da4cbb6f731d95056813914
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 2c388ff86e782c916916bfb08c7a55ec5c845b13
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68402349"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667912"
 ---
-# <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-python-back-end-and-python-device"></a>Приступая к работе с удостоверением и двойником модуля Центра Интернета вещей с использованием серверной части и устройства Python
+# <a name="get-started-with-iot-hub-module-identity-and-module-twin-python"></a>Начало работы с удостоверениями модулей центра Интернета вещей и модулем двойника (Python)
+
+[!INCLUDE [iot-hub-selector-module-twin-getstarted](../../includes/iot-hub-selector-module-twin-getstarted.md)]
 
 > [!NOTE]
 > [Удостоверение и двойник модуля](iot-hub-devguide-module-twins.md) аналогичны удостоверению и двойнику устройства Центра Интернета вещей Azure, однако они предоставляют более высокую степень детализации. В то время как удостоверение и двойник устройства Центра Интернета вещей Azure позволяют серверному приложению настраивать устройство и отображать состояние устройства, удостоверение и двойник модуля предоставляют эти возможности для отдельных компонентов устройства. Благодаря этому можно изолировать конфигурацию и условия для каждого компонента на совместимых устройствах с несколькими компонентами, например устройствах на основе операционной системы или устройствах со встроенным ПО.
@@ -27,15 +29,11 @@ ms.locfileid: "68402349"
 
 * **UpdateModuleTwinReportedProperties** — отправляет обновленные сообщаемые свойства двойника модуля в Центр Интернета вещей.
 
-> [!NOTE]
-> Сведения о пакетах SDK Azure IoT, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения, см. в [этой статье](iot-hub-devguide-sdks.md).
->
+[!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-Для работы с этим учебником требуется:
+Ниже приведены инструкции по установке необходимых компонентов.
 
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
-
-* Установка последней версии [пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python).
+[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 

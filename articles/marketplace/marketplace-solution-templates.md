@@ -1,5 +1,5 @@
 ---
-title: Шаблон решения приложения Azure предлагают руководство по публикации | Azure Marketplace
+title: Рекомендации по публикации шаблона решения "приложения Azure" | Azure Marketplace
 description: В этой статье описываются требования к публикации шаблона приложения в Azure Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: ellacroi
@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/15/2018
 ms.author: ellacroi
-ms.openlocfilehash: c2393b6ea9f1a2c2b35be63272743e081f4ae240
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8d02d942fce7bd51a116cc4c19eac9faca0060ef
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937747"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561481"
 ---
 # <a name="azure-applications-solution-template-offer-publishing-guide"></a>Приложения Azure. Руководство по публикации предложения "Шаблон решения"
 
@@ -31,9 +31,9 @@ ms.locfileid: "64937747"
 |Выставление счетов и ценообразование    |  Ресурсы будут подготовлены в подписке Azure клиента. Транзакции, связанные с виртуальными машинами с оплатой по мере использования (PAYGO), будут проводиться через корпорацию Майкрософт, а выставление счетов будет осуществляться по подписке Azure клиента (PAYGO).  <br/> Хотя в случае использования собственной лицензии (BYOL) корпорация Майкрософт будет выставлять счета на расходы на инфраструктуру по подписке клиента, вы будете напрямую выставлять клиенту счета на лицензирование ПО.   |
 |Совместимый с Azure виртуальный жесткий диск (VHD)  |   Виртуальные машины должны быть созданы на платформе Windows или Linux.  См. дополнительные сведения о [создании совместимых с Azure виртуальных жестких дисков](./cloud-partner-portal/virtual-machine/cpp-create-vhd.md). |
 | Определение потребления услуг клиентами | Определение потребления услуг клиентами требуется включить для всех шаблонов решений, публикуемых в Azure Marketplace. См. дополнительные сведения об [определении потребления услуг клиентами партнеров Azure](./azure-partner-customer-usage-attribution.md).  |
-|  |  |
+| Использовать управляемые диски. | По умолчанию для сохраненных дисков виртуальных машин IaaS в Azure используется параметр [управляемые диски](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview) . В шаблонах решений необходимо использовать управляемые диски. <br> <br> 1. Следуйте [указаниям](https://docs.microsoft.com/azure/virtual-machines/windows/using-managed-disks-template-deployments) и [примерам](https://github.com/Azure/azure-quickstart-templates/blob/master/managed-disk-support-list.md) использования управляемых дисков в шаблонах Azure ARM для обновления шаблонов решений. <br> <br> 2. Выполните приведенные ниже инструкции, чтобы импортировать базовый виртуальный жесткий диск управляемых дисков в учетную запись хранения, чтобы опубликовать VHD как образ в Marketplace: <br> <ul> <li> [PowerShell](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-copy-managed-disks-vhd?toc=%2fpowershell%2fmodule%2ftoc.json) </li> <li> [CLI](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-vhd?toc=%2fcli%2fmodule%2ftoc.json) </li> </ul> |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если вы еще не сделали это, [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим, войдите на [Портал Cloud Partner](https://cloudpartner.azure.com), чтобы завершить процесс.

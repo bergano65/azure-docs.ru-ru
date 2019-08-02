@@ -10,12 +10,13 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: marossi
-ms.openlocfilehash: b5f8c853218a1db53f4dd23e7254b35990a7132b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: e6e8e7d0d5b969464ba9183ccae9080f58f786a0
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60829180"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707285"
 ---
 # <a name="experimentation"></a>Экспериментирование
 
@@ -52,7 +53,7 @@ ms.locfileid: "60829180"
 
 Более подробно приведенные выше аргументы рассмотрены в описании [аргументов командной строки Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/wiki/Command-line-arguments).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 - Vowpal Wabbit: установлен и указан в пути.
   - Windows: [используйте установщик `.msi`](https://github.com/eisber/vowpal_wabbit/releases).
   - Другие платформы: [получите исходный код](https://github.com/JohnLangford/vowpal_wabbit/releases).
@@ -77,10 +78,10 @@ python Experimentation.py [-h] -f FILE_PATH [-b BASE_COMMAND] [-p N_PROC]
 Журнал результатов добавляется в файл *mwt-ds/DataScience/experiments.csv*.
 
 ### <a name="parameters"></a>Параметры
-| Вход | Описание | значение по умолчанию |
+| Ввод | Описание | Значение по умолчанию |
 | --- | --- | --- |
 | `-h`, `--help` | Отображение справочного сообщения и выход. | |
-| `-f FILE_PATH`, `--file_path FILE_PATH` | Путь к файлу данных (в формате `.json` или `.json.gz`, каждая строка — `dsjson`). | Обязательно для заполнения |  
+| `-f FILE_PATH`, `--file_path FILE_PATH` | Путь к файлу данных (в формате `.json` или `.json.gz`, каждая строка — `dsjson`). | Обязательное значение |  
 | `-b BASE_COMMAND`, `--base_command BASE_COMMAND` | Базовая команда Vowpal Wabbit.  | `vw --cb_adf --dsjson -c` |  
 | `-p N_PROC`, `--n_proc N_PROC` | Количество используемых параллельных процессов. | Логические процессоры. |  
 | `-s SHARED_NAMESPACES, --shared_namespaces SHARED_NAMESPACES` | Общие пространства имен компонентов (например, `abc` означает пространства имен `a`, `b` и `c`).  | Автоматическое определение из файла данных. |  

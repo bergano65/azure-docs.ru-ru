@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: a228c5b90e47c9c24c5da70484a1a28f9a3054b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9e84b1ad37b3224ec5553d0a66ba0fc84bc88f55
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60498838"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705083"
 ---
 # <a name="calchistogram-method"></a>Метод CalcHistogram
 
@@ -30,18 +31,18 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-Name  |Значение | Обязательный?  |Описание
+Имя  |Значение | Обязательный?  |Описание
 -----------|----------|--------|----------
 **expr**    |Текстовая строка | Да  |Выражение запроса, которое указывает объекты, для которых вычисляется гистограмма.
 **model** |Текстовая строка | Нет |Имя модели, которую вы хотите запросить.  В настоящее время значение по умолчанию соответствует *latest*.
 **attributes** | Текстовая строка | Нет<br>значение по умолчанию: | Список разделительных запятых, который определяет значения атрибутов, которые включены в ответ. Имена атрибутов с учетом регистра.
-**count** |Number | Нет<br>Значение по умолчанию: 10 |Количество результатов для возврата.
-**offset**  |Number | Нет<br>Значение по умолчанию: 0 |Индекс первого результата для возврата.
-**timeout**  |Number | Нет<br>Значение по умолчанию: 1000 |Время ожидания в миллисекундах. Возвращаются только интерпретации, которые найденные до истечения время ожидания.
+**count** |Number | Нет<br>По умолчанию: 10 |Количество результатов для возврата.
+**offset**  |Number | Нет<br>По умолчанию: 0 |Индекс первого результата для возврата.
+**timeout**  |Number | Нет<br>По умолчанию: 1000 |Время ожидания в миллисекундах. Возвращаются только интерпретации, которые найденные до истечения время ожидания.
 
 ## <a name="response-json"></a>Ответ (JSON)
 
-ИМЯ | Описание
+Имя | Описание
 --------|---------
 **expr**  |Параметр expr из запроса.
 **num_entities** | Общее количество совпадающих сущностей.
@@ -56,7 +57,7 @@ Name  |Значение | Обязательный?  |Описание
 **aborted** | Если истекло время ожидания запроса, то значение true.
 
 
-#### <a name="example"></a>Пример:
+#### <a name="example"></a>Пример
 ```
 https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?expr=And(Composite(AA.AuN=='jaime teevan'),Y>2012)&attributes=Y,F.FN&count=4
 ```

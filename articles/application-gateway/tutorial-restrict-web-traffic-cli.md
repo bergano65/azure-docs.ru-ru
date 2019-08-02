@@ -4,16 +4,16 @@ description: Узнайте, как ограничить веб-трафик с 
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 5/20/2019
+ms.topic: article
+ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 1822fe032a7c7a6382dbae2cb9f7095d1d076008
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
-ms.translationtype: HT
+ms.openlocfilehash: 698191355ab9e014693b01cfb6546fb764a2b647
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955489"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688195"
 ---
 # <a name="enable-web-application-firewall-using-the-azure-cli"></a>Включение брандмауэра веб-приложения с помощью Azure CLI
 
@@ -35,9 +35,9 @@ ms.locfileid: "65955489"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя команду [az group create](/cli/azure/group#az-group-create).
 
@@ -47,7 +47,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Виртуальная сеть и подсети используются для предоставления сетевого подключения к шлюзу приложений и его связанным ресурсам. Создайте виртуальную сеть с именем *myVNet* и подсеть с именем *myAGSubnet*, используя команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) и [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create).
+Виртуальная сеть и подсети используются для предоставления сетевого подключения к шлюзу приложений и его связанным ресурсам. Создайте виртуальную сеть с именем *myVNet* и подсеть с именем *myAGSubnet*. Затем создайте общедоступный IP-адрес с именем *myAGPublicIPAddress*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -66,12 +66,14 @@ az network vnet subnet create \
 
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ## <a name="create-an-application-gateway-with-a-waf"></a>Создание шлюза приложений с WAF
 
-Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myAGPublicIPAddress*, созданным ранее.
+Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается *myAGSubnet* и *myAGPublicIPAddress*.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -81,7 +83,7 @@ az network application-gateway create \
   --vnet-name myVNet \
   --subnet myAGSubnet \
   --capacity 2 \
-  --sku WAF_Medium \
+  --sku WAF_v2 \
   --http-settings-cookie-based-affinity Disabled \
   --frontend-port 80 \
   --http-settings-port 80 \
@@ -140,7 +142,7 @@ az vmss extension set \
 
 В этой статье шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий. 
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+### <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
 Создайте учетную запись хранения с именем *myagstore1* с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
 
@@ -155,7 +157,7 @@ az storage account create \
 
 ### <a name="configure-diagnostics"></a>Настройка диагностики
 
-Настройте диагностику для записи данных в журналы ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog и ApplicationGatewayFirewallLog. Замените `<subscriptionId>` своим идентификатором подписки, а затем настройте диагностику с помощью команды [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create).
+Настройте диагностику для записи данных в журналы ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog и ApplicationGatewayFirewallLog. Замените `<subscriptionId>` идентификатором подписки, а затем настройте диагностику с помощью команды [AZ Monitor Diagnostic-Settings Create](/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create).
 
 ```azurecli-interactive
 appgwid=$(az network application-gateway show --name myAppGateway --resource-group myResourceGroupAG --query id -o tsv)
@@ -189,6 +191,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-cli.md)
+[Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-cli.md)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9f854e1771eec1d02fd14e040510688bf33c59c8
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 9465c1991418c7ebef8c4eed825affc7b1d93492
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442433"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68693342"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -23,11 +23,11 @@ ms.locfileid: "68442433"
 
 В этой статье описывается включение входа пользователей в Azure Active Directory (Azure AD) B2C из учетных записей LinkedIn с помощью [пользовательских политик](active-directory-b2c-overview-custom.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Учетная запись LinkedIn. Если у вас еще нет [учетной записи, создайте](https://www.linkedin.com/start/join)ее.
-- Страница LinkedIn. для связи с приложением LinkedIn, созданным в следующем разделе, требуется [страница LinkedIn](https://www.linkedin.com/company/setup/new/) .
+- Страница LinkedIn. для связи с приложением LinkedIn, созданным в следующем разделе, требуется [страница LinkedIn](https://www.linkedin.com/help/linkedin/answer/710/creating-a-linkedin-company-page) .
 
 ## <a name="create-an-application"></a>Создание приложения
 

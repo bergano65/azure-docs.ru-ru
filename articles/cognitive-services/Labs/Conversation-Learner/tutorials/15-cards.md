@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: d0b87597c506aca5c3b4f6f3815f58656203ac3c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 426d7c8de29abeb88833e94962a7291a641702ac
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389517"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703748"
 ---
 # <a name="how-to-use-cards-part-1-of-2"></a>Использование карт (часть 1 из 2)
 
@@ -33,7 +34,7 @@ ms.locfileid: "66389517"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 Карты — это элементы пользовательского интерфейса, которые позволяют пользователю выбрать вариант ответа в диалоге. 
 
@@ -94,7 +95,7 @@ ms.locfileid: "66389517"
 11. Нажмите кнопку "Оценить действия".
 12. Выберите ответ Right (Вправо).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Гибридные боты](./16-hybrid-bots.md)

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: cd2406bb4825ac295a6f9a3a18ba466cdc20c55d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 98c522f3d2718691e32b4e78180027b69f28289f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67120857"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568010"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
 
@@ -94,7 +93,7 @@ ms.locfileid: "67120857"
 - [Индексатор видео SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Безопасность приложений SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование Управляемого экземпляра](sql-database-howto-managed-instance.md).
 - [Использование отдельной базы данных](sql-database-howto-single-database.md).

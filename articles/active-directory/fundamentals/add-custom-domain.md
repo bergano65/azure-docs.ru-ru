@@ -2,26 +2,26 @@
 title: Добавление личного домена в Azure Active Directory | Документация Майкрософт
 description: Инструкции по добавлению личного домена с помощью Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb29fb5ef2e755ff456ad177b66349792b2fa21c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b3f90e594e69c58364b699299964273ce371e525
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248323"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561727"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
-Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавив имена личных доменов поможет вам создать имена пользователей, которые знакомы пользователям, такие как *Ален\@contoso.com*.
+Каждый новый клиент Azure AD получает исходное доменное имя в формате *имя_домена*.onmicrosoft.com. Вы не можете изменить или удалить исходное доменное имя, но можете добавить дополнительные имена, принадлежащие вашей организации. Добавление пользовательских доменных имен поможет вам создать имена пользователей, знакомых с пользователями, например *(Alain\@contoso.com*.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Прежде чем добавлять имя личного домена, его нужно создать с помощью регистратора доменных имен. Аккредитованные регистраторы перечислены [на этой странице](https://www.icann.org/registrar-reports/accredited-list.html).
@@ -31,7 +31,7 @@ ms.locfileid: "60248323"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) для нужного каталога с учетной записью **владельца** подписки, а затем выберите **Azure Active Directory**. Дополнительные сведения о ролях в подписке см. в статье [Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-rbac-roles).
 
-    ![Azure портала экрана с пунктом "" Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+    ![Экран портал Azure, отображающий параметр Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
 
     >[!TIP]
     > Если вы планируете создать федерацию локальной среды Windows Server AD с Azure AD, при запуске средства Azure AD Connect для синхронизации каталогов необходимо установить флажок **Я планирую настроить этот домен для единого входа с использованием локального каталога Active Directory**. Необходимо также зарегистрировать то же имя домена, выбранное для федерации с локальным каталогом на шаге **Домен Azure AD** мастера. Узнать, как выглядит этот шаг в мастере, можно [здесь](../hybrid/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). Если у вас нет средства Azure AD Connect, вы можете [скачать его здесь](https://go.microsoft.com/fwlink/?LinkId=615771).
@@ -46,7 +46,7 @@ ms.locfileid: "60248323"
 
 1. Выберите **Имена личных доменов** и щелкните **Добавить личный домен**.
 
-    ![Страница имена пользовательского домена, с помощью добавить личный домен показано](media/add-custom-domain/add-custom-domain.png)
+    ![Страница "пользовательские доменные имена" с отображаемым именем "добавить личный домен"](media/add-custom-domain/add-custom-domain.png)
 
 2. Введите новое значение в поле **имени личного домена** (например, _contoso.com_), а затем щелкните **Добавить домен**.
 
@@ -55,7 +55,7 @@ ms.locfileid: "60248323"
     >[!Important]
     >Чтобы все работало правильно, добавьте .com, .net или другое расширение верхнего уровня.
 
-    ![Страница имена пользовательского домена, с помощью страницы Добавление личного домена](media/add-custom-domain/add-custom-domain-blade.png)
+    ![Страница "пользовательские доменные имена" с страницей добавления пользовательского домена](media/add-custom-domain/add-custom-domain-blade.png)
 
 4. Скопируйте сведения DNS со страницы **Contoso**. Например, MS=ms64983159.
 
@@ -85,7 +85,7 @@ ms.locfileid: "60248323"
 
     ![Страница Contoso со сведениями о записях DNS и кнопкой "Проверить"](media/add-custom-domain/contoso-blade-with-dns-info-verify.png)
 
-После проверки имени личного домена, можно удалить файл TXT или MX проверки.
+Убедившись, что имя личного домена проверено, вы можете удалить его или файл MX.
 
 ## <a name="common-verification-issues"></a>Распространенные проблемы при проверке
 - Если Azure AD не сможет подтвердить имя личного домена, воспользуйтесь приведенными ниже рекомендациями.
@@ -99,7 +99,7 @@ ms.locfileid: "60248323"
 
 - **Убедитесь, что у вас нет неуправляемых клиентов Power BI.** Если пользователи активировали Power BI через функцию самостоятельной регистрации и создали неуправляемый клиент для организации, необходимо взять на себя управление в качестве внутреннего или внешнего администратора с помощью PowerShell. Дополнительные сведения о том, как взять под контроль неуправляемый каталог, см. в статье [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../users-groups-roles/domains-admin-takeover.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Добавьте в каталог еще одного глобального администратора. Дополнительные сведения см. в статье [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).
 

@@ -9,14 +9,16 @@ services: iot-hub
 ms.devlang: node
 ms.topic: conceptual
 ms.date: 04/26/2018
-ms.openlocfilehash: 4d11455914a285fa9557ae34565940f600db23e4
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 5c168de40aa76be7494e70875eb2ac6323c1130e
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404148"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68668328"
 ---
-# <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-nodejs-back-end-and-nodejs-device"></a>Приступая к работе с удостоверением и двойником модуля в Центре Интернета вещей с использованием серверной части и устройства Node.js
+# <a name="get-started-with-iot-hub-module-identity-and-module-twin-nodejs"></a>Приступая к работе с удостоверением модуля центра Интернета вещей и модулем двойника (Node. js)
+
+[!INCLUDE [iot-hub-selector-module-twin-getstarted](../../includes/iot-hub-selector-module-twin-getstarted.md)]
 
 > [!NOTE]
 > [Удостоверение и двойник модуля](iot-hub-devguide-module-twins.md) аналогичны удостоверению и двойнику устройства Центра Интернета вещей Azure, однако они предоставляют более высокую степень детализации. В то время как удостоверение и двойник устройства Центра Интернета вещей Azure позволяют серверному приложению настраивать устройство и отображать состояние устройства, удостоверение и двойник модуля предоставляют эти возможности для отдельных компонентов устройства. Благодаря этому можно изолировать конфигурацию и условия для каждого компонента на совместимых устройствах с несколькими компонентами, например устройствах на основе операционной системы или устройствах со встроенным ПО.

@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 07/17/2019
+ms.date: 07/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: a67f19f0823827dad74e7aba15a92d696fbf580b
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: c5e568dd073376295e4865994fba8ae5b5ac59a0
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304265"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640989"
 ---
 # <a name="azure-disk-encryption-overview"></a>Общие сведения о шифровании дисков Azure
 
@@ -72,6 +72,7 @@ ms.locfileid: "68304265"
 * служба файлов Azure (общая файловая система);
 * сетевая файловая система (NFS);
 * динамические тома;
+* Временные диски ОС.
 
 ## <a name="encryption-features"></a>Функции шифрования
 
@@ -153,10 +154,10 @@ ms.locfileid: "68304265"
 | Терминология | Определение |
 | --- | --- |
 | Azure AD | Учетная запись [Azure AD](https://azure.microsoft.com/documentation/services/active-directory/) используется для проверки подлинности, хранения секретов в хранилище ключей и извлечения их из него. |
-| Azure Key Vault | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в документации по [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
+| Хранилище Azure Key Vault | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в документации по [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
 | BitLocker |[BitLocker](https://technet.microsoft.com/library/hh831713.aspx) — это известная промышленным стандартам технология шифрования томов Windows, которая используется для включения шифрования дисков на виртуальных машинах Windows. |
 | BEK | Ключи шифрования BitLocker (BEK) используются для шифрования загрузочного тома ОС и томов данных. Ключи BitLocker хранятся в хранилище ключей в виде секретов. |
-| Инфраструктура CLI Azure | [Azure CLI](/cli/azure/install-azure-cli) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки.|
+| Azure CLI | [Azure CLI](/cli/azure/install-azure-cli) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки.|
 | DM-Crypt |[DM-](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) Encryption — это прозрачная подсистема шифрования дисков на основе Linux, которая используется для включения шифрования дисков на виртуальных машинах Linux. |
 | Ключ шифрования ключа (KEK) | Асимметричный ключ (RSA 2048), который можно использовать для защиты или перетекания секрета. Вы можете использовать защищенный HSM ключ или ключ с программной защитой. Дополнительные сведения см. в документации по [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |

@@ -2,7 +2,7 @@
 title: Назначение или удаление лицензий Azure Active Directory | Документация Майкрософт
 description: Инструкции по назначению или удалению лицензий Azure Active Directory для пользователей и групп.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.assetid: f8b932bc-8b4f-42b5-a2d3-f2c076234a78
 ms.service: active-directory
@@ -10,16 +10,16 @@ ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/05/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e7a3f80067adb3093bd27e34a45b3afd72b4993
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9f76e766d0aedae88eb11dd244f71f130f77c57e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60247645"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561655"
 ---
 # <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Назначение или удаление лицензий с помощью портала Azure Active Directory
 Многие службы Azure Active Directory (Azure AD) требуют активации продукта Azure AD и наличия лицензии для каждого пользователя или группы (и их участников). Только пользователи с действующими лицензиями могут использовать лицензированные службы Azure AD.
@@ -27,7 +27,7 @@ ms.locfileid: "60247645"
 ## <a name="available-product-editions"></a>Доступные выпуски продукта
 Существует несколько выпусков продукта Azure AD.
 
-- Azure AD уровня "Бесплатный"
+- Azure AD Free
 
 - Azure AD Basic
 
@@ -47,7 +47,7 @@ ms.locfileid: "60247645"
 
     Откроется страница **Лицензии**.
 
-    ![Лицензии на странице с числом приобретенных продуктов и назначенных лицензий](media/license-users-groups/license-details-blade.png)
+    ![Страница "лицензии" с числом приобретенных продуктов и назначенными лицензиями](media/license-users-groups/license-details-blade.png)
     
 3. Нажмите на ссылку **Приобретенные продукты**, чтобы открыть страницу **Продукты**, и просмотрите поля **Назначено**, **Доступно** и **Срок действия скоро истекает** для каждого выпуска продукта.
 
@@ -76,7 +76,7 @@ ms.locfileid: "60247645"
 
 4. Выберите **Варианты назначения**, включите нужные варианты лицензии и нажмите **OK**.
 
-    ![Страница "Лицензионное параметр", со всеми параметрами, которые доступны в выпуске](media/license-users-groups/license-option-blade-assignments.png)
+    ![Страница параметров лицензии со всеми параметрами, доступными в выпуске](media/license-users-groups/license-option-blade-assignments.png)
 
     Страница **Назначить лицензию** обновится, и вы увидите выбранного пользователя и настроенные назначения.
 
@@ -102,7 +102,7 @@ ms.locfileid: "60247645"
 
 4. Выберите **Варианты назначения**, включите нужные варианты лицензии и нажмите **OK**.
 
-    ![Страница "Лицензионное параметр", со всеми параметрами, которые доступны в выпуске](media/license-users-groups/license-option-blade-group-assignments.png)
+    ![Страница параметров лицензии со всеми параметрами, доступными в выпуске](media/license-users-groups/license-option-blade-group-assignments.png)
 
     Страница **Назначить лицензию** обновится, и вы увидите выбранного пользователя и настроенные назначения.
 
@@ -133,7 +133,7 @@ ms.locfileid: "60247645"
 >[!Important]
 >Лицензии, унаследованные пользователем от группы, невозможно удалить напрямую. Вместо этого нужно удалить пользователя из группы, от которой наследуется эта лицензия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После назначения лицензий можно выполнять следующие операции:
 
 - [Поиск и устранение проблем с назначением лицензий](../users-groups-roles/licensing-groups-resolve-problems.md)

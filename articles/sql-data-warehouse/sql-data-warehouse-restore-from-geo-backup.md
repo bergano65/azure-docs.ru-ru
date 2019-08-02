@@ -11,10 +11,10 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.openlocfilehash: 768646522c2589c302fd7a58031d4ebdb7fcdc12
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68426659"
 ---
 # <a name="geo-restore-azure-sql-data-warehouse"></a>Географическое восстановление хранилища данных SQL Azure
@@ -29,7 +29,7 @@ ms.locfileid: "68426659"
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
-Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп][Get-AzSqlDatabaseGeoBackup] and [Restore-AzSqlDatabase][Restore-AzSqlDatabase] .
+Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп][Get-AzSqlDatabaseGeoBackup] и RESTORE [-азсклдатабасе][Restore-AzSqlDatabase] .
 
 > [!NOTE]
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
@@ -79,7 +79,7 @@ $GeoRestoredDatabase.status
 1. Щелкните **+ создать ресурс** и найдите хранилище данных SQL и нажмите кнопку **создать**.
 
     ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
-1. Заполните сведения, запрошенные  на вкладке "основы **", и нажмите кнопку "Далее". Дополнительные параметры**.
+1. Заполните сведения, запрошенные на вкладке "основы **", и нажмите кнопку "Далее". Дополнительные параметры**.
 
     ![Основные сведения](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 1. Для параметра **использовать существующий параметр данных** выберите **резервное копирование** и выберите соответствующую резервную копию в параметрах прокрутки вниз. Щелкните **проверить и создать**.

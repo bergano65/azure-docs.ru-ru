@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/17/2019
 ms.author: danlep
 ms.openlocfilehash: 9cd62c378270da31079a38f89b040985105a4218
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68326035"
 ---
 # <a name="set-environment-variables-in-container-instances"></a>Установка переменных среды в экземплярах контейнеров
@@ -33,7 +33,7 @@ ms.locfileid: "68326035"
 
 ## <a name="azure-cli-example"></a>Пример для Azure CLI
 
-Чтобы просмотреть выходные данные по умолчанию команды [ACI-WordCount][aci-wordcount] container, run it first with this [az container create][az-container-create] (не указаны переменные среды):
+Чтобы просмотреть выходные данные по умолчанию для контейнера [ACI-WordCount][aci-wordcount] , сначала запустите его с помощью команды [AZ Container Create][az-container-create] (не указаны переменные среды):
 
 ```azurecli-interactive
 az container create \
@@ -54,7 +54,7 @@ az container create \
     --environment-variables 'NumWords'='5' 'MinLength'='8'
 ```
 
-Когда оба контейнера отображаются как завершенные  (для просмотра выходных данных используйте команду [AZ Container Показать][az-container-show] to check state), display their logs with [az container logs][az-container-logs] .
+Когда оба контейнера отображаются как завершенные (используйте команду [AZ Container Показать][az-container-show] для проверки состояния), выведите их журналы с помощью команды [AZ Container Logs][az-container-logs] , чтобы просмотреть выходные данные.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name mycontainer1
@@ -88,7 +88,7 @@ azureuser@Azure:~$ az container logs --resource-group myResourceGroup --name myc
 
 Установка переменных среды в PowerShell аналогична действиям в CLI, за исключением использования аргумента командной строки `-EnvironmentVariable`.
 
-Сначала запустите команду [ACI-WordCount][aci-wordcount] container in its default configuration with this [New-AzContainerGroup][new-Azcontainergroup] :
+Сначала запустите контейнер [ACI-WordCount][aci-wordcount] в конфигурации по умолчанию с помощью этой команды [New-азконтаинерграуп][new-Azcontainergroup] :
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
@@ -109,7 +109,7 @@ New-AzContainerGroup `
     -EnvironmentVariable $envVars
 ```
 
-После того как оба контейнера прерываются (используйте команду [Get-азконтаинеринстанцелог][azure-instance-log] для проверки состояния), вытяните свои журналы с помощью команды  [Get-азконтаинеринстанцелог][azure-instance-log] .
+После того как оба контейнера прерываются (используйте команду [Get-азконтаинеринстанцелог][azure-instance-log] для проверки состояния), вытяните свои журналы с помощью команды [Get-азконтаинеринстанцелог][azure-instance-log] .
 
 ```azurepowershell-interactive
 Get-AzContainerInstanceLog -ResourceGroupName myResourceGroup -ContainerGroupName mycontainer1

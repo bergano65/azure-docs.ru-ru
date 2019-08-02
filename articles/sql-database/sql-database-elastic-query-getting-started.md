@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: a73938c98ebaea310875f0db8b665d0f1aed55e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cc59d7cb1ce09aad834130818e5af533719e04c1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60556274"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568606"
 ---
 # <a name="report-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 
@@ -27,7 +26,7 @@ ms.locfileid: "60556274"
 
 Чтобы узнать, какие объекты SQL требуются для выполнения запросов, см. статью [Отчеты по масштабируемым облачным базам данных (предварительная версия)](sql-database-elastic-query-horizontal-partitioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Загрузите и запустите пример [Приступая к работе с инструментами эластичной базы данных](sql-database-elastic-scale-get-started.md).
 
@@ -124,12 +123,12 @@ ms.locfileid: "60556274"
 
 Теперь можно использовать мощные функции Excel по визуализации данных. Для подключения к эластичной базе данных своих инструментов бизнес-аналитики и интеграции данных можно использовать строку подключения с именем сервера, именем базы данных и учетными данными. Убедитесь, что в качестве источника данных для вашего инструмента поддерживается SQL Server. На запрос к эластичной базе данных и внешние таблицы можно ссылаться таким же образом, как и на любую другую базу данных SQL Server и таблицы SQL Server, которые вы хотите подключить с помощью своего инструмента.
 
-### <a name="cost"></a>Затраты
+### <a name="cost"></a>Стоимость
 За использование функции запросов к эластичной базе данных дополнительная плата отсутствует.
 
 Сведения о ценах см. на [странице с ценами на базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Общие сведения об эластичных запросах см. в разделе [Обзор эластичных запросов к базе данных SQL Azure (предварительная версия)](sql-database-elastic-query-overview.md).
 * Руководств по вертикальному секционированию см. в статье [Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)](sql-database-elastic-query-getting-started-vertical.md).

@@ -2,18 +2,18 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 07/12/2019
+ms.date: 07/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 5e251402a89f84a0aa67eee676c1794207dd24fb
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: f027f5b295d75c105e81360a10718239e5b08e4d
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869886"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698271"
 ---
 | Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups)на каждый тип ресурсов |800 |Зависит от типа ресурса |
+| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups)на каждый тип ресурсов |800 |Некоторые типы ресурсов могут превышать ограничение в 800. См. [ресурсы, не ограниченные 800 экземплярами на группу ресурсов](../articles/azure-resource-manager/resources-without-rg-limit.md). |
 | Развертываний на группу ресурсов в журнале развертывания |800<sup>1</sup> |800 |
 | Ресурсов в развертывании |800 |800 |
 | Блокировок управления на уникальную область |20 |20 |
@@ -30,7 +30,7 @@ ms.locfileid: "67869886"
 | Параметры |256 |256 |
 | Переменные |256 |256 |
 | Ресурсы (включая число копий) |800 |800 |
-| outputs |64 |64 |
+| Выходные данные |64 |64 |
 | Выражение шаблона |24 576 символов |24 576 символов |
 | Ресурсы в экспортированных шаблонах |200 |200 | 
 | Размер шаблона |4 МБ |4 МБ |

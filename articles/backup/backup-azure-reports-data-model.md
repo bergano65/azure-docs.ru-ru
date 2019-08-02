@@ -1,18 +1,19 @@
 ---
 title: Модель данных для Azure Backup
 description: В этой статье представлены сведения о модели данных Power BI для отчетов Azure Backup.
-author: adigan
-manager: shivamg
+ms.reviewer: adigan
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 06/26/2017
-ms.author: adigan
-ms.openlocfilehash: 66245a25af000d999ded87c58e3ba225b373b101
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 53051c88d5723f61fa08e431bdf7ab531e88123e
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465596"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689147"
 ---
 # <a name="data-model-for-azure-backup-reports"></a>Модель данных для отчетов Azure Backup
 В этой статье описывается модель данных Power BI, используемая для создания отчетов в Azure Backup. С ее помощью можно отфильтровать имеющиеся отчеты на основе соответствующих полей и, что важнее, создать собственные отчеты с использованием таблиц и полей в модели. 

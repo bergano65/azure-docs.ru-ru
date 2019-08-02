@@ -10,20 +10,19 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/19/2019
-ms.openlocfilehash: 5681b5aa46acc1192675da0b1cceee596dfa0105
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 325dda3695e796bc0814954d3bd69b9b340133b8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65799891"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567970"
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-sql-database"></a>Оптимизация производительности с помощью технологий обработки в оперативной памяти в базе данных SQL
 
 Технологии обработки в оперативной памяти в Базе данных SQL Azure позволяют повысить производительность приложений и уменьшить стоимость использования базы данных. 
 
-## <a name="when-to-use-in-memory-technologies"></a>Когда следует использовать технологии In-Memory
+## <a name="when-to-use-in-memory-technologies"></a>Когда следует использовать технологии в памяти
 
 С помощью технологий обработки в оперативной памяти в Базе данных SQL Azure вы можете добиться улучшения производительности с помощью различных рабочих нагрузок.
 
@@ -52,8 +51,8 @@ ms.locfileid: "65799891"
 - Используя выполняющуюся в памяти OLTP, [компания Quorum Business Solutions смогла вдвое увеличить свои рабочие нагрузки, при этом улучшив показатели DTU на 70 %](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database).
 
   - DTU означает *единицу передачи данных* и содержит оценку потребления ресурсов.
-- В следующем видеоролике на примере рабочей нагрузки показано, как достигается значительное улучшение показателей потребления ресурсов: [In-Memory OTLP in Azure SQL DB](https://channel9.msdn.com/Shows/Data-Exposed/In-Memory-OTLP-in-Azure-SQL-DB) (Выполняющаяся в памяти OLTP в базе данных SQL Azure).
-  - Дополнительные сведения см. в этой записи блога. [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в базе данных SQL Azure)
+- В следующем видеоролике на примере рабочей нагрузки показано, как достигается значительное улучшение показателей потребления ресурсов: [In-Memory OTLP in Azure SQL DB](https://channel9.msdn.com/Shows/Data-Exposed/In-Memory-OTLP-in-Azure-SQL-DB) (Выполняющаяся в памяти OLTP в Базе данных SQL Azure).
+  - Дополнительные сведения см. в этой записи блога. [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в Базе данных SQL Azure)
 
 > [!NOTE]  
 > Технологии в памяти доступны в базах данных Azure SQL классов "Премиум" и "Критически важный для бизнеса", а также в эластичных пулах класса "Премиум".
@@ -83,7 +82,7 @@ ms.locfileid: "65799891"
 
 - Формат **оптимизированных для памяти rowstore**, где каждая строка представляет собой отдельный объект в памяти. Это классический формат OLTP в памяти, оптимизированный для высокой производительности рабочих нагрузок OLTP. Существует два типа таблиц, оптимизированных для памяти, которые могут использоваться в формате rowstore, оптимизированных для памяти.
   - *Устойчивые таблицы* (SCHEMA_AND_DATA), где строки, помещенные в память, сохраняются после перезапуска сервера. Этот тип таблицы ведет себя как стандартная таблица rowstore, но дает дополнительные преимущества оптимизации в памяти.
-  - *Неустойчивые таблицы* (SCHEMA_ONLY) где строки не сохраняются после перезагрузки. Этот тип таблицы предназначен для временных данных (например, замены временных таблиц) или таблиц, когда необходимо быстро загрузить данные, прежде чем переместить их в сохраненную таблицу (так называемые промежуточные таблицы).
+  - *Неустойчивые таблицы* (SCHEMA_ONLY), где строки не сохраняются после перезапуска. Этот тип таблицы предназначен для временных данных (например, замены временных таблиц) или таблиц, когда необходимо быстро загрузить данные, прежде чем переместить их в сохраненную таблицу (так называемые промежуточные таблицы).
 - Формат **columnstore с оптимизацией памяти**, где данные организованы в виде столбцов. Эта структура предназначена для сценариев HTAP, где необходимо выполнять аналитические запросы над той же структурой данных, где выполняется рабочая нагрузка OLTP.
 
 > [!Note]
@@ -93,7 +92,7 @@ ms.locfileid: "65799891"
 
 Подробные видеоролики об этих технологиях:
 
-- Видеоролик [In-Memory in Azure SQL Database](https://channel9.msdn.com/Shows/Data-Exposed/In-Memory-OTLP-in-Azure-SQL-DB) (Выполняющаяся в памяти OLTP в базе данных SQL Azure), в котором демонстрируется повышение показателей производительности и описываются шаги для достижения таких же результатов.
+- Видеоролик [In-Memory in Azure SQL Database](https://channel9.msdn.com/Shows/Data-Exposed/In-Memory-OTLP-in-Azure-SQL-DB) (Выполняющаяся в памяти OLTP в Базе данных SQL Azure), в котором демонстрируется повышение показателей производительности и описываются шаги для достижения таких же результатов.
 - [Видео про OLTP в памяти: что это такое, когда и как ее использовать](https://blogs.msdn.microsoft.com/sqlserverstorageengine/20../../in-memory-oltp-video-what-it-is-and-whenhow-to-use-it/).
 
 Вы можете программным методом узнать, поддерживает ли база данных In-Memory OLTP. Для этого выполните следующий запрос Transact-SQL:
@@ -160,7 +159,7 @@ In-Memory OLTP включает оптимизированные для памя
 
 ### <a name="data-size-and-storage-for-columnstore-indexes"></a>Размер данных и хранилище для индексов сolumnstore
 
-Индексы сolumnstore не обязательно должны помещаться в памяти. Поэтому для размера индексов применяется только одно ограничение — на максимальный общий размер базы данных, который описан в статьях о моделях приобретения на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md).
+Индексы сolumnstore не обязательно должны помещаться в памяти. Поэтому для размера индексов применяется только одно ограничение — на максимальный общий размер базы данных. См. подробнее о моделях приобретения на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md).
 
 При использовании кластеризованных индексов сolumnstore для хранения базовых таблиц применяется сжатие по столбцам. Сжатие может значительно снизить объем хранимых пользовательских данных, позволяя разместить в базе данных больше информации. Этот эффект можно усилить, используя [архивное сжатие по столбцам](https://msdn.microsoft.com/library/cc280449.aspx#using-columnstore-and-columnstore-archive-compression). Степень сжатия, которой можно добиться, зависит от характера данных. Вполне можно достигнуть 10-кратного сжатия.
 
@@ -179,19 +178,19 @@ In-Memory OLTP включает оптимизированные для памя
 
 <a id="install_oltp_manuallink" name="install_oltp_manuallink"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Краткое руководство 1. Технологии выполнения OLTP в памяти для повышения производительности службы Transact-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 - [Мониторинг хранилища OLTP в памяти](sql-database-in-memory-oltp-monitoring.md)
-- [Изучение возможностей выполнения в памяти в базе данных SQL Azure](sql-database-in-memory-sample.md)
+- [Изучение возможностей выполнения в памяти в Базе данных SQL Azure](sql-database-in-memory-sample.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 ### <a name="deeper-information"></a>Подробные сведения
 
 - Узнайте, как [Quorum удваивает ключевую рабочую нагрузку на базу данных при одновременном сокращении DTU на 70 % благодаря использованию In-Memory OLTP для базы данных SQL](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database)
-- [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в базе данных SQL Azure)
+- [In-Memory OLTP in Azure SQL Database](https://azure.microsoft.com/blog/in-memory-oltp-in-azure-sql-database/) (Выполняющаяся в памяти OLTP в Базе данных SQL Azure)
 - [Learn about In-Memory OLTP](https://msdn.microsoft.com/library/dn133186.aspx) (Знакомство с In-Memory OLTP)
 - [Руководство по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
 - [Начало работы с Columnstore для получения операционной аналитики в реальном времени](https://msdn.microsoft.com/library/dn817827.aspx)
@@ -202,7 +201,7 @@ In-Memory OLTP включает оптимизированные для памя
 - [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
 - [Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP](sql-database-in-memory-oltp-migration.md)
 
-### <a name="tools"></a>Средства
+### <a name="tools"></a>Сервис
 
 - [портал Azure](https://portal.azure.com/)
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx)

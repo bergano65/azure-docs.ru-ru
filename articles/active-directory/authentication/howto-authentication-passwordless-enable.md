@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad2f25aac7f74c74eb63fd4666c5184ae751ec1f
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: cce5de98fe4914e18ee0154d4ac5f1af008d32a6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68499933"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561300"
 ---
 # <a name="enable-passwordless-sign-in-for-azure-ad-preview"></a>Включение входа без пароля для Azure AD (Предварительная версия)
 
@@ -109,7 +109,7 @@ ms.locfileid: "68499933"
 ### <a name="enable-new-passwordless-authentication-methods"></a>Включить новые методы проверки подлинности, не имеющие пароля
 
 1. Войдите на [портал Azure](https://portal.azure.com)
-1. Перейти к **Azure Active Directory** > **методы** > проверки подлинности проверка**политики метода аутентификации (Предварительная версия)**
+1. Перейдите к **Azure Active Directory** >  > **методы**проверки > подлинности безопасности**метод проверки подлинности (Предварительная версия)**
 1. В каждом **методе**выберите следующие параметры.
    1. **Включить** -да или нет
    1. **Target** — все пользователи или выбранные пользователи

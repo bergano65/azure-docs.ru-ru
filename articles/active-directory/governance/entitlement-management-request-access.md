@@ -16,12 +16,12 @@ ms.date: 04/19/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 578f78d1853194cad000aa2e54b40d1ac5003544
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 64a81a871d811c68f5e92822ca88446966be4d5c
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489047"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68678113"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Запрос доступа к пакету Access в управлении назначением Azure AD (Предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "68489047"
 
 1. Войдите на портал доступа.
 
-    Убедитесь, что используется учетная запись организации. Если вы не уверены, обратитесь к своему проекту или менеджеру по бизнесу.
+    Убедитесь, что используется организация (Рабочая или учебная). Если вы не уверены, обратитесь к своему проекту или менеджеру по бизнесу.
 
 ## <a name="request-an-access-package"></a>Запрос пакета Access
 
@@ -52,13 +52,16 @@ ms.locfileid: "68489047"
 
 **Требуемая роль:** Источник запроса
 
+1. Найдите пакет Access в списке.  При необходимости можно выполнить поиск, введя строку поиска, а затем выбрав **имя**, **Каталог**или фильтр **ресурсов** .
+
+    ![Мой портал доступа — Поиск ресурсов](./media/entitlement-management-request-access/elm-myaccess-resource-search.png)
 1. Установите флажок, чтобы выбрать пакет Access.
 
     ![Портал "Мой доступ" с пакетами для доступа](./media/entitlement-management-shared/my-access-access-packages.png)
 
 1. Щелкните **Запросить доступ**, чтобы открыть панель "Запрос доступа".
 
-1. Если отображается  поле "Деловое обоснование", введите обоснование для доступа.
+1. Если отображается поле "Деловое обоснование", введите обоснование для доступа.
 
 1. Если **запрос на определенный период** включен, выберите **Да** или **нет**.
 

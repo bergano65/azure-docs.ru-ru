@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/19/2018
 ms.author: kgremban
-ms.openlocfilehash: af1b331836cd025bbe15665aa03faee000e7c4f0
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 8c6013e5bda2bec1c8a09fd9f2434cdd477eed01
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404238"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68618523"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-ios"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (iOS)
 
@@ -37,7 +37,7 @@ ms.locfileid: "68404238"
 * **Пример — служба**, которая отправляет сообщение из облака на устройство в приложение имитации устройства через центр Интернета вещей, а затем получает подтверждение доставки.
 
 > [!NOTE]
-> В Центре Интернета вещей реализована поддержка для пакетов SDK для многих платформ устройств и языков (включая C, Java и Javascript). Эти пакеты работают на основе пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure](https://www.azure.com/develop/iot).
+> В центре Интернета вещей предусмотрена поддержка пакетов SDK для многих платформ и языков устройств (включая C, Java, Python и JavaScript) с помощью пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure](https://www.azure.com/develop/iot).
 
 Для работы с этим учебником требуется:
 

@@ -2,14 +2,14 @@
 author: larryfr
 ms.service: machine-learning
 ms.topic: include
-ms.date: 07/19/2019
+ms.date: 07/26/2019
 ms.author: larryfr
-ms.openlocfilehash: 31d20f4824b034230bc941858e8ecb20cc00b6b2
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
-ms.translationtype: MT
+ms.openlocfilehash: d59482c04c4875cb6b17ceb405e9d3ab97a741d6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348515"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565138"
 ---
 Записи в `deploymentconfig.json` документе соответствуют параметрам для [аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 

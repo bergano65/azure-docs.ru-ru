@@ -10,14 +10,15 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 15aa3a8346087908cf77f1f68db916cc2c184448
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 51eab34f32a20a86445da0ac44d94a31d6694b40
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389871"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703396"
 ---
-# <a name="demo-password-reset"></a>Демонстрация. Сброс паролей
+# <a name="demo-password-reset"></a>Демонстрация. Сброс пароля
 В этом руководстве показана простая программ-бот технической поддержки, которая может помочь ученику в процессе смены паролей на основе Conversation Learner. Модель бота может изучать нестандартные диалоговые потоки информации, сложные последовательности, включая классы за пределами домена. Задачу можно выполнить без кода или дополнительных сущностей.
 
 ## <a name="video"></a>Видео
@@ -78,7 +79,7 @@ ms.locfileid: "66389871"
 16. Нажмите кнопку "Создать".
 17. Нажмите кнопку "Сохранить как обучающий диалог".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Демонстрация. Заказ пиццы](./demo-pizza-order.md)

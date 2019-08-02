@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/01/2016
 ms.author: yaya
 ms.openlocfilehash: 9dd336ef973b603108aad62c90e4dab385d20317
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67873895"
 ---
 # <a name="download-the-azure-sdk-for-php"></a>Загрузка пакета Azure SDK для PHP
@@ -45,7 +45,7 @@ Azure SDK для PHP включает компоненты для разрабо
 
 Клиентские библиотеки PHP для Azure предоставляют интерфейс для доступа к возможностям Azure, например службам управления данными и облачным службам, из любой операционной системы. Эти библиотеки можно установить с помощью компоновщика.
 
-Сведения о том, как использовать клиентские библиотеки PHP для Azure, см. в статье [Использование службы][blob-service] , [How to Use the Table Service][table-service] BLOB-объектов и использование службы[очереди] [службы]очередей.
+Сведения о том, как использовать клиентские библиотеки PHP для Azure, см. в статьях [Использование службы BLOB-объектов][blob-service], [Использование службы таблиц][table-service] и [Использование службы очередей][queue-service].
 
 ### <a name="install-via-composer"></a>Установка через компоновщик
 
@@ -73,7 +73,7 @@ Azure PowerShell — это набор командлетов PowerShell для 
 
 Сведения об использовании Azure PowerShell см. [в разделе использование Azure PowerShell][powershell-tools].
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 CLI Azure — это набор команд для развертывания и управления службами Azure, например веб-сайтами Azure и виртуальными машинами Azure. Сведения об установке Azure CLI см. [здесь](cli-install-nodejs.md).
 

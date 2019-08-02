@@ -3,17 +3,18 @@ title: Экземпляры контейнеров Azure и оркестраци
 description: Узнайте, как Экземпляры контейнеров Azure взаимодействуют с оркестраторами контейнеров.
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: df9c3ecbec6dccd9ba8db2b375cfab3276005098
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c83648124f616670423b2ef459530c191d7e17e4
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072986"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68325756"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
 
@@ -60,11 +61,11 @@ ms.locfileid: "65072986"
 
 В настоящее время виртуальные узлы поддерживают экземпляры контейнеров Linux. Начните работать с виртуальными узлами с помощью [Azure CLI](https://go.microsoft.com/fwlink/?linkid=2047538) или [портала Azure](https://go.microsoft.com/fwlink/?linkid=2047545).
 
-Виртуальные узлы используют открытый код [Virtual Kubelet][aci-connector-k8s], чтобы имитировать Kubernetes [kubelet][kubelet-doc], регистрируя его как узел с неограниченной емкостью. Virtual Kubelet подготавливает создание объектов [pod][pod-doc] в качестве группы контейнеров в Экземплярах контейнеров Azure.
+Виртуальные узлы используют [Виртуальные Kubelet][aci-connector-k8s] с открытым исходным кодом для имитации Kubernetes [Kubelet][kubelet-doc] путем регистрации в качестве узла с неограниченной емкостью. Виртуальная Kubelet передает создание [модулей][pod-doc] Pod в виде групп контейнеров в службе "экземпляры контейнеров Azure".
 
 Для дополнительных примеров расширения Kubernetes API в бессерверные платформы контейнеров см. проект [Virtual Kubelet](https://github.com/virtual-kubelet/virtual-kubelet).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте свой первый контейнер с использованием службы "Экземпляры контейнеров Azure", используя [краткое руководство](container-instances-quickstart.md).
 

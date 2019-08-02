@@ -10,31 +10,32 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: 485775660ecfdf2291365ab98c9188295ea2cbde
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 596ce35a0d744691edd75d6071d4758691e0031b
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61340185"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705019"
 ---
 # <a name="entity-attributes"></a>Атрибуты сущностей
 
-Academic Graph содержит 7 типов сущностей. Все сущности будут иметь идентификатор сущности и типа сущности.
+Academic Graph содержит 7 типов сущностей. Все сущности будут иметь идентификатор сущности и тип сущности.
 
 ## <a name="common-entity-attributes"></a>Общие атрибуты сущностей
-ИМЯ    |Описание                |type       | Операции
+Название    |Описание                |Тип       | Операции
 ------- | ------------------------- | --------- | ----------------------------
-Идентификатор      |Идентификатор сущности                  |Int64      |Равно
+Id      |Идентификатор сущности                  |Int64      |Равно
 Ty      |Тип сущности                |enum   |Равно
 
 ## <a name="entity-type-enum"></a>Тип сущности enum
-Name                                                            |value
+Название                                                            |value
 ----------------------------------------------------------------|-----
 [Документ](PaperEntityAttributes.md)                               |0
 [Автор](AuthorEntityAttributes.md)                             |1
 [Журнал](JournalEntityAttributes.md)                           |2
 [Серия конференций](JournalEntityAttributes.md)                 |3
-[Экземпляр конференции](ConferenceInstanceEntityAttributes.md)    |4\.
+[Экземпляр конференции](ConferenceInstanceEntityAttributes.md)    |4
 [Принадлежность](AffiliationEntityAttributes.md)                   |5
 [Область исследований](FieldsOfStudyEntityAttributes.md)                      |6
 

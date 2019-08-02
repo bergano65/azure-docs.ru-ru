@@ -1,20 +1,18 @@
 ---
 title: Примеры для службы хранилища Azure с использованием .NET | Документация Майкрософт
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: dotnet
-ms.topic: article
-ms.date: 05/03/2019
 ms.author: mhopkins
+ms.date: 05/03/2019
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: df7c14f1ee83015303657f9a0babde3d60c92292
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: sample
+ms.openlocfilehash: cec6b0498adf55428fade7ae00db6550496a20bd
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209682"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721858"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -206,7 +204,7 @@ ms.locfileid: "65209682"
 * [Приступая к работе со службой таблиц Azure в .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md)
 * [Приступая к работе со службой файлов Azure в .NET](../storage-dotnet-how-to-use-files.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

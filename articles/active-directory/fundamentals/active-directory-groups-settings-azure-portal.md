@@ -2,23 +2,23 @@
 title: Изменение сведений о группе в Azure Active Directory | Документация Майкрософт
 description: Инструкции по изменению сведений о группе с помощью Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/27/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 691f705574050b15869a0ac8b7d128507e5aae10
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dc06abca08b2522ac57552e85f7c1bac3ef854af
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248833"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561881"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Изменение сведений о группе с помощью Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "60248833"
 
 4. Выберите группу **Политика управления мобильными устройствами — Запад**, а затем выберите **Свойства** в разделе **Управление**.
 
-    ![Общие сведения о странице группы с параметром члена и сведения, которые выделены](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
+    ![Страница "Обзор группы" с выделенным параметром-членом и сведениями](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
 
 5. Измените **Общие параметры** по необходимости, например:
 
@@ -55,7 +55,7 @@ ms.locfileid: "60248833"
     
     - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 - [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)

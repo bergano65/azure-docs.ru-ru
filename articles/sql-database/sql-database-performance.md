@@ -9,14 +9,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: adbccd5f9cfd5ddd1912e304f800f3ebe04912c7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 39a100c487588fb717c642036c7713150a95e047
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60584834"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567085"
 ---
 # <a name="monitor-and-improve-performance"></a>Мониторинг и повышение производительности
 
@@ -59,11 +58,11 @@ ms.locfileid: "60584834"
 
 Узнать, как найти и применить рекомендации по производительности, можно в статье [Поиск и применение рекомендаций по производительности](sql-database-advisor-portal.md).
 
-## <a name="automatic-tuning"></a>Автоматическая настройка
+## <a name="automatic-tuning"></a>Автонастройка
 
 Базы данных SQL Azure могут автоматически настраивать производительность, применяя [рекомендации по производительности](sql-database-advisor.md). Чтобы узнать больше, прочитайте статью [Автоматическая настройка](sql-database-automatic-tuning.md). Кроме того, вы можете узнать, [как включить автоматическую настройку](sql-database-automatic-tuning-enable.md).
 
-## <a name="query-performance-insight"></a>Сведения о производительности запросов
+## <a name="query-performance-insight"></a>Анализ производительности запросов
 
 [Анализ производительности запросов](sql-database-query-performance.md) позволяет тратить меньше времени на устранение неполадок с производительностью базы данных, предоставляя следующие возможности.
 
@@ -77,6 +76,6 @@ ms.locfileid: "60584834"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Руководство по производительности базы данных SQL Azure](sql-database-performance-guidance.md)
+* [Руководство по обеспечению производительности Базы данных SQL Azure для отдельных баз данных](sql-database-performance-guidance.md)
 * [Когда следует использовать эластичный пул?](sql-database-elastic-pool-guidance.md)
 
