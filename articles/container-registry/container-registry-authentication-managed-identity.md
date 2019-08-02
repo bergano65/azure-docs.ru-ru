@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 01/16/2019
 ms.author: danlep
 ms.openlocfilehash: 0672fb71ba4f56d0faf332df029100cb48741c8b
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68309889"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Аутентификация в реестре контейнеров Azure с помощью управляемого удостоверения Azure 
@@ -28,7 +28,7 @@ ms.locfileid: "68309889"
 
 Для создания ресурсов Azure с помощью инструкций из этой статьи требуется Azure CLI версии 2.0.55 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
-Чтобы настроить реестр контейнеров и отправить образ контейнера в него, необходимо также локально установить модуль Docker. DOCKER предоставляет пакеты, которые легко настраивают DOCKER в любой [macOS][docker-mac], [Windows][docker-windows]или системе [Linux][DOCKER-Linux] .
+Чтобы настроить реестр контейнеров и отправить образ контейнера в него, необходимо также локально установить модуль Docker. DOCKER предоставляет пакеты, которые легко настраивают DOCKER в любой системе [macOS][docker-mac], [Windows][docker-windows]или [Linux][docker-linux] .
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 

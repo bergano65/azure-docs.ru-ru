@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 99933fa36cc822598ec9c173a470f90264d06d54
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 5b48a41f025ef06c69e6de126e0a64ad359ce09a
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461256"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666364"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -24,11 +24,11 @@ ms.locfileid: "67461256"
 
 Эталонный набор данных — это коллекция элементов, которые дополняют события из вашего источника событий. Обработчик входящего трафика аналитики временных рядов соединяет каждое событие из вашего источника событий с соответствующей строкой данных в вашем эталонном наборе данных. Это дополненное событие становится доступным для запроса. Это соединение основано на столбцах первичного ключа, определенных в эталонном наборе данных.
 
-Ретроактивное объединение с эталонными данными не поддерживается. Таким образом только текущие и будущие входящие данные сопоставляются и присоединяются к эталонному набору, после настройки и загрузки.
+Ретроактивное объединение с эталонными данными не поддерживается. Таким же, только текущие и будущие входящие данные сопоставляются и соединяются со ссылочной датой после настройки и отправки.
 
 ## <a name="video"></a>Видео
 
-### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Дополнительные сведения о Time Series Insight модель ссылочных данных.</br>
+### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Сведения о модели ссылочных данных аналитики временных рядов.</br>
 
 > [!VIDEO https://www.youtube.com/embed/Z0NuWQUMv1o]
 
@@ -60,9 +60,9 @@ ms.locfileid: "67461256"
    - вставьте данные в текстовый редактор а затем нажмите кнопку **Проанализировать эталонные данные**;
    - нажмите кнопку **Выберите файл**, чтобы добавить данные из локального текстового файла.
 
-   Например, вставьте данные CSV-файла: [![Вставленные данные CSV-файла](media/add-reference-data-set/csv-data-pasted.png)](media/add-reference-data-set/csv-data-pasted.png#lightbox)
+   Например, вставьте данные CSV-файла: [![Вставленные данные CSV](media/add-reference-data-set/csv-data-pasted.png)](media/add-reference-data-set/csv-data-pasted.png#lightbox)
 
-   Например, вставьте данные массива JSON: [![Вставьте данные JSON](media/add-reference-data-set/json-data-pasted.png)](media/add-reference-data-set/json-data-pasted.png#lightbox)
+   Например, вставьте данные массива JSON: [![Вставка данных JSON](media/add-reference-data-set/json-data-pasted.png)](media/add-reference-data-set/json-data-pasted.png#lightbox)
 
    Если при анализе значений данных произойдет ошибка, она отобразится красным цветом в нижней части страницы, например таким образом: `CSV parsing error, no rows extracted`.
 
@@ -76,28 +76,28 @@ ms.locfileid: "67461256"
 
 1. При необходимости переименуйте заголовки столбцов. Имя ключевого столбца необходимо для присоединения к соответствующему свойству в источнике события. Убедитесь, что имя ключевого столбца эталонных данных точно совпадает с именем события для входящих данных, включая чувствительность к регистру. Имена столбцов, не являющихся ключевыми, используются для добавления входящих данных с соответствующими значениями эталонных данных.
 
-1. Выберите **добавить строку** или **добавить столбец** добавить больше значений эталонных данных, при необходимости.
+1. Выберите **Добавить строку** или **Добавить столбец** , чтобы добавить дополнительные значения ссылочных данных по мере необходимости.
 
 1. Введите значение в поле **Filter the rows...** (Отфильтровать строки...), чтобы при необходимости просмотреть отдельные строки. Фильтр используется для просмотра данных, но не применяется при их загрузке.
 
 1. Присвойте имя набору данных, заполнив поле **Имя набора данных** над сеткой данных.
 
-    [![Имя набора данных.](media/add-reference-data-set/name-reference-dataset.png)](media/add-reference-data-set/name-reference-dataset.png#lightbox)
+    [![Назовите набор данных.](media/add-reference-data-set/name-reference-dataset.png)](media/add-reference-data-set/name-reference-dataset.png#lightbox)
 
 1. Укажите столбец **первичного ключа** в наборе данных, выбрав раскрывающееся меню над сеткой данных.
 
-    [![Выбор столбца первичного ключа.](media/add-reference-data-set/set-primary-key.png)](media/add-reference-data-set/set-primary-key.png#lightbox)
+    [![Выберите ключевые столбцы.](media/add-reference-data-set/set-primary-key.png)](media/add-reference-data-set/set-primary-key.png#lightbox)
 
     При необходимости нажмите кнопку **+** , чтобы добавить столбец вторичного ключа как составной первичный ключ. Если нужно отменить выбор, выберите пустое значение из раскрывающегося списка, чтобы удалить вторичный ключ.
 
 1. Для передачи данных нажмите кнопку **передачи строк**.
 
-    [![Отправить](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
+    [![Дают](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
 
     На странице вы увидите подтверждение завершенной загрузки и сообщение **Набор данных успешно отправлен**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление эталонными данными](time-series-insights-manage-reference-data-csharp.md) программными средствами.
 
-* Полный справочник по API см. [здесь](/rest/api/time-series-insights/ga-reference-data-api).
+* Полный справочник по API см. [здесь](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

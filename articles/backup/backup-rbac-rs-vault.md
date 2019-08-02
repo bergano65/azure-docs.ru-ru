@@ -1,18 +1,19 @@
 ---
 title: Управление резервными копиями с помощью управления доступом на основе ролей
 description: Использование управления доступом на основе ролей для управления доступом к операциям управления резервными копиями в хранилище служб восстановления.
-author: utraghuv
-manager: vijayts
+ms.reviewer: utraghuv
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.author: utraghuv
-ms.openlocfilehash: 928c08862fdb8a447b6b7afdd7fc12317a201224
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: d0d2663fcf7be9662325b24f9f063a8f3def668a
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464959"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688521"
 ---
 # <a name="use-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Использование управления доступом на основе ролей для управления точками восстановления службы архивации Azure
 Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. С помощью RBAC вы можете распределить обязанности внутри команды и предоставить пользователям доступ на уровне, который им необходим для выполнения поставленных задач.

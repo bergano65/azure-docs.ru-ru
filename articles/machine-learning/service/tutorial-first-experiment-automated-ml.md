@@ -10,14 +10,14 @@ ms.author: tsikiksr
 author: tsikiksr
 ms.reviewer: nibaccam
 ms.date: 07/23/2019
-ms.openlocfilehash: 7c7d90d4ca1625edecc9d84e1ff7beec50032884
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 30dc731efdb6016f505b7a16860e0cb9c6480333
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444764"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716593"
 ---
-# <a name="tutorial-train-and-deploy-a-classification-model-with-automated-machine-learning-in-the-azure-portal-preview"></a>Учебник. Обучение и развертывание модели классификации с помощью автоматизированного машинного обучения в портал Azure (Предварительная версия)
+# <a name="tutorial-use-automated-machine-learning-to-train-and-deploy-your-first-classification-model-preview"></a>Учебник. Использование автоматического машинного обучения для обучения и развертывания первой модели классификации (Предварительная версия)
 
 В этом руководстве вы узнаете, как создать первый автоматический эксперимент машинного обучения на портал Azure. В этом примере создается модель классификации для прогнозирования того, будет ли клиент подписываться на термин депозита с банком. 
 

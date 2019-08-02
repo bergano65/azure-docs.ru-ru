@@ -11,10 +11,10 @@ ms.date: 07/23/2018
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.openlocfilehash: 4348a634fd5b2b33f36d8e79f28caf659b82ccf4
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67626155"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-june-2018"></a>Что нового в Хранилище данных SQL Azure? Июнь 2018 г.
@@ -25,7 +25,7 @@ ms.locfileid: "67626155"
 ## <a name="user-defined-restore-points"></a>Определяемые пользователем точки восстановления
 Хранилище данных SQL автоматически создает моментальные снимки хранилища данных каждые 8 часов, чтобы гарантировать 8-часовое значение целевой точки восстановления. Автоматизированное создание моментальных снимков упрощает ваши задачи по управлению хранилищем данных, но иногда нужно создавать дополнительные моментальные снимки в критические моменты в зависимости от потребностей вашего бизнеса. Например, моментальные снимки следует создавать перед загрузкой значительного объема данных или развертыванием новых скриптов в хранилище данных, чтобы получить точку восстановления непосредственно перед выполнением такой операции. 
 
-Хранилище данных SQL теперь поддерживает [точки восстановления, определяемые пользователем](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) через [New AzSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint) командлета.
+Хранилище данных SQL теперь поддерживает [определенные пользователем точки восстановления](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) с помощью командлета [New-азсклдатабасересторепоинт](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint) .
 
 ```powershell
 New-AzSqlDatabaseRestorePoint
@@ -111,7 +111,7 @@ start_time                | end_time                | command
 ```
 
 ## <a name="next-steps"></a>Следующие шаги
-Теперь, когда вы немного узнали о хранилище данных SQL, узнайте, как быстро [Создание хранилища данных SQL][create a SQL Data Warehouse] . If you are new to Azure, you may find the [Azure glossary][Azure glossary] полезных новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
+Теперь, когда вы уже знакомы с хранилищем данных SQL, Узнайте, как быстро [создать хранилище данных SQL][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий][Azure glossary] , чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
 * [Блоги]

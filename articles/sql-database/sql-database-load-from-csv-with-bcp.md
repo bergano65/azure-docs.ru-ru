@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 6c35d51c1029c0305c86cefd786e60b6547e0dee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b3dff4e100d3859978667ad0df7d895a24ca8a8d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65799884"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567830"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
 
@@ -25,7 +24,7 @@ ms.locfileid: "65799884"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Для выполнения задач из этой статьи необходимо следующее:
 
@@ -33,7 +32,7 @@ ms.locfileid: "65799884"
 * установленная служебная программа командной строки bcp;
 * установленная служебная программа командной строки sqlcmd.
 
-Вы можете скачать служебные программы bcp и sqlcmd в [Центре загрузки Майкрософт][Microsoft Download Center].
+Вы можете загрузить служебные программы bcp и sqlcmd в [Центре загрузки Майкрософт][Microsoft Download Center].
 
 ### <a name="data-in-ascii-or-utf-16-format"></a>Данные в формате ASCII или UTF-16
 
@@ -104,17 +103,17 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 | 20150101 |1 |3 |
 | 20150201 |1 |3 |
 | 20150301 |1 |3 |
-| 20150401 |2 |4\. |
-| 20150501 |2 |4\. |
-| 20150601 |2 |4\. |
+| 20150401 |2 |4 |
+| 20150501 |2 |4 |
+| 20150601 |2 |4 |
 | 20150701 |3 |1 |
 | 20150801 |3 |1 |
 | 20150801 |3 |1 |
-| 20151001 |4\. |2 |
-| 20151101 |4\. |2 |
-| 20151201 |4\. |2 |
+| 20151001 |4 |2 |
+| 20151101 |4 |2 |
+| 20151201 |4 |2 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Миграция базы данных SQL Server описана в статье [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 

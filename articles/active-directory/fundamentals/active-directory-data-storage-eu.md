@@ -2,9 +2,9 @@
 title: Хранение данных удостоверений клиентов из ЕС — Azure Active Directory | Документация Майкрософт
 description: Узнайте, где Azure Active Directory хранит данные, связанные с идентификаторами клиентов из ЕС.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
-ms.author: lizross
+ms.author: ajburnle
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
@@ -12,43 +12,45 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93ac5ef5f03f800a8f90259db3e382b3bc5c5e2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33704c3392726ccd12ca0fd74f26465a54697e11
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235165"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722143"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
-Azure AD хранит учетные данные в географическом расположении, по адресу, предоставляемую вашей организацией, при настройке подписки для службы Microsoft Online, например Office 365 и Azure. Сведения о которых хранятся данные удостоверений, можно использовать [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) разделе в центре управления безопасностью Майкрософт.
+Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на Microsoft Online Service, например Office 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
 
-Клиенты, адрес в Европе Azure AD хранит большинство данных удостоверений в европейских центрах обработки данных. Этот документ содержит сведения на основе любых данных, которые хранятся вне Европа службами Azure AD.
+Для клиентов, которые указали адрес в Европе, Azure AD хранит большую часть данных удостоверений в европейских центрах данных. В этом документе содержатся сведения о любых данных, хранящихся за пределами Европы службами Azure AD.
 
-## <a name="microsoft-azure-multi-factor-authentication-mfa"></a>Многофакторная Идентификация Microsoft Azure (MFA)
+## <a name="microsoft-azure-multi-factor-authentication-mfa"></a>Многофакторная проверка подлинности Microsoft Azure (MFA)
     
-- Все двухфакторной проверки подлинности, используют телефонные звонки или SMS берутся из центров обработки данных США, а также направляются глобального поставщиками.
-- Push-уведомлений с помощью Microsoft Authenticator, приложение исходят от НАС центров обработки данных. Кроме того устройство поставщика определенных служб также могут поступать в Google play и эти службы может быть вне Европа.
+- Вся двухфакторная проверка подлинности, использующая телефонные звонки или SMS-сообщения, поступает из центров обработки данных США и направляется глобальными поставщиками.
+- Push-уведомления, использующие приложение Microsoft Authenticator, берутся из центров обработки данных США. Кроме того, службы, связанные с поставщиками устройств, также могут играть в игру, а эти службы, возможно, вне Европы.
 - OATH-коды всегда проверяются в США. 
+
+Дополнительные сведения о том, какие сведения о пользователях собираются сервером многофакторной идентификации Azure (сервером MFA) и облачным Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
 
 ## <a name="microsoft-azure-active-directory-b2c-azure-ad-b2c"></a>Microsoft Azure Active Directory B2C (Azure AD B2C)
 
-Azure AD B2C политики конфигурации данных и контейнерами ключей хранятся в центрах обработки данных США. Они не содержат личных данных пользователя. Дополнительные сведения о конфигурациях политики см. в статье [Azure Active Directory B2C: встроенные политики](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies).
+Данные конфигурации политики Azure AD B2C и контейнеры ключей хранятся в центрах обработки данных США. Они не содержат персональных данных пользователя. Дополнительные сведения о конфигурациях политики см. в статье [Azure Active Directory B2C: встроенные политики](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies).
 
 ## <a name="microsoft-azure-active-directory-b2b-azure-ad-b2b"></a>Microsoft Azure Active Directory B2B (Azure AD B2B) 
     
-Приглашения в Azure AD B2B хранилищ с активировать связи и перенаправление информацию URL-адреса в центрах обработки данных США. Кроме того адрес электронной почты пользователей, которые могут отменить подписку на получение приглашений B2B также хранятся в центрах обработки данных США.
+Azure AD B2B хранит приглашения со ссылками для активации и URL-адресом перенаправления в центрах обработки данных США. Кроме того, адреса электронной почты пользователей, которые отменяют подписываться на получение приглашений B2B, также хранятся в центрах обработки данных США.
 
-## <a name="microsoft-azure-active-directory-domain-services-azure-ad-ds"></a>Microsoft Azure доменных служб Active Directory (Azure AD DS)
+## <a name="microsoft-azure-active-directory-domain-services-azure-ad-ds"></a>Доменные службы Microsoft Azure Active Directory (Azure AD DS)
 
 Azure AD DS хранит данные пользователей в том же расположении, где размещена виртуальная сеть Azure, выбранная клиентом. Таким образом, если сеть находится за пределами Европы, то данные реплицируются и хранятся за пределами Европы.
 
 ## <a name="other-considerations"></a>Дополнительные рекомендации
 
-Службы и приложения, которые интегрируются с Azure AD имеют доступ к данным удостоверений. Оцените все службы и приложения, которые позволяют определить порядок обработки учетных данных с этой конкретной службы и приложения, и соответствуют ли требования к хранилищу данных вашей компании.
+Службы и приложения, которые интегрируются с Azure AD, имеют доступ к данным удостоверений. Оцените каждую службу и приложение, используемые для определения того, как данные удостоверений обрабатываются этой конкретной службой и приложением, а также соответствуют ли они требованиям к хранению данных вашей компании.
 
 Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
 - [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
 

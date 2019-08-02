@@ -10,18 +10,17 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 01/03/2019
-ms.openlocfilehash: 1bab1ed9e2a24b0a84f4327d47a910934319b397
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cbc4985f032c228db7a9ddf719390bbf2d0166b9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475905"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568692"
 ---
 # <a name="using-the-recoverymanager-class-to-fix-shard-map-problems"></a>Устранение проблем сопоставления сегментов с помощью класса RecoveryManager
 
-[RecoveryManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager) предоставляет приложениям ADO.NET возможность легко обнаружить и исправить все несоответствия между глобальным сопоставлением сегментов (GSM) и локальным сопоставлением сегментов (LSM) в среде сегментированной базы данных.
+Класс [RecoveryManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager) предоставляет приложениям ADO.NET возможность легко обнаруживать и исправлять любые несоответствия между глобальным сопоставлением сегментов (GSM) и локальным сопоставлением сегментов (LSM) в сегментированной среде базы данных.
 
 GSM и LSM отслеживают сопоставление каждой базы данных в сегментированной среде. Иногда между GSM и LSM происходит разрыв. Для его обнаружения и устранения используйте класс RecoveryManager.
 
@@ -90,7 +89,7 @@ GSM и LSM могут рассинхронизироваться по следу
    ```
 
 * *Расположение* указывает имя сервера и имя базы данных.
-* В параметре *shardMapName* указано имя сопоставления сегментов. Он необходим, только если один и тот же диспетчер сопоставления сегментов управляет несколькими сопоставлениями сегментов. Необязательный элемент.
+* В параметре *shardMapName* указано имя сопоставления сегментов. Он необходим, только если один и тот же диспетчер сопоставления сегментов управляет несколькими сопоставлениями сегментов. Необязательный.
 
 ## <a name="to-resolve-mapping-differences"></a>Устранение различий сопоставления
 

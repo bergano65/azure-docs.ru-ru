@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: f57a83fb83152055692e6f614b7958d099b6c70d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48ebdca1b6abf57a84927e25bca1f85b023fa208
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60808916"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726172"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Копирование данных из Concur с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "60808916"
 
 Для связанной службы Concur поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Concur** | Да |
 | clientId | Свойство client_id приложения, предоставляемое средством управления приложением Concur.  | Да |
@@ -80,7 +80,7 @@ ms.locfileid: "60808916"
 
 Чтобы скопировать данные из Concur, установите свойство type набора данных **ConcurObject**. В этом типе набора данных нет дополнительных свойств для определенного типа. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **ConcurObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -93,11 +93,12 @@ ms.locfileid: "60808916"
     "name": "ConcurDataset",
     "properties": {
         "type": "ConcurObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Concur linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -110,10 +111,10 @@ ms.locfileid: "60808916"
 
 Чтобы скопировать данные из Concur, задайте тип источника **ConcurSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **ConcurSource** | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Opportunities where Id = xxx "`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Opportunities where Id = xxx "`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -147,5 +148,5 @@ ms.locfileid: "60808916"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

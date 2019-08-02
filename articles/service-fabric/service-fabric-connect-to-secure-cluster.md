@@ -3,7 +3,7 @@ title: Безопасное подключение к кластеру Azure Ser
 description: Сведения о способах проверки подлинности клиентского доступа к кластеру Service Fabric, а также об обеспечении безопасного обмена данными между клиентами и кластером.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: 759a539e-e5e6-4055-bff5-d38804656e10
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/29/2019
-ms.author: aljo
-ms.openlocfilehash: 703830778edb73781a263ae4d92529f7f79a0eb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: c350b53b2d0b235c5e34431386205f090f37b482
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306844"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599713"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
 
@@ -355,7 +355,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 `https://<your-cluster-endpoint>:19080/Explorer`
 
-Автоматически быть предлагается выполнить вход с использованием AAD.
+Вам будет автоматически предложено войти в систему с помощью AAD.
 
 ### <a name="connect-to-a-secure-cluster-using-a-client-certificate"></a>Подключение к защищенному кластеру с использованием сертификата клиента
 
@@ -389,7 +389,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 * Для компьютеров Mac. Дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)

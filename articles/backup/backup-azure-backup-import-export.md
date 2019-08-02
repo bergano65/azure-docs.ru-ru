@@ -1,18 +1,19 @@
 ---
 title: 'Azure Backup: автономное резервное копирование и начальное заполнение с помощью службы "Импорт и экспорт Azure"'
 description: Узнайте, как служба архивации Azure позволяет отправлять данные с помощью службы импорта и экспорта Azure без использования сети. В этой статье описывается автономное заполнение начальных резервных копий данных с помощью службы импорта и экспорта Azure.
-author: saurabhsensharma
-manager: shivamg
+ms.reviewer: saurse
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.author: saurse
-ms.openlocfilehash: e852e1595be5b564bd1a6326d41115496284506f
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 2c628b94879e54616f294e4c5f349f241fbbb98b
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466791"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689477"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в службе архивации Azure
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Служба Azure Backup может использовать диски для передачи автономных резервных копий данных в Azure в рамках автономного заполнения.

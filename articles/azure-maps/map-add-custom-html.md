@@ -3,18 +3,18 @@ title: Добавление маркера HTML в Azure Maps | Документ
 description: Как добавить на карту Javascript маркер HTML
 author: jingjing-z
 ms.author: jinzh
-ms.date: 05/07/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 1c812a77429e13ea39b2f4946043c13e10aaf097
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 65777a87cd042a4d8b3b14255dbf99241cd42e18
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60769674"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638750"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -75,7 +75,7 @@ ms.locfileid: "60769674"
 <iframe height='500' scrolling='no' title='Добавление событий мыши к маркерам HTML' src='//codepen.io/azuremaps/embed/RqOKRz/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/RqOKRz/'>Добавление событий мыши к маркерам HTML</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

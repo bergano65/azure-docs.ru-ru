@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Сведения о том, как выполнить несколько общих задач обработки и анализа данных с использованием виртуальной машины для обработки и анализа данных для глубокого обучения.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: 34ef0b10-9270-474f-8800-eecb183bbce4
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 0609cabd5a9898900580580d1f5f412722637bcf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: 20d5e603d54654b626722fd42e442a4e9c5e86b7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60407047"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68556823"
 ---
 # <a name="using-the-deep-learning-virtual-machine"></a>Использование виртуальной машины для глубокого обучения
 
@@ -42,6 +42,6 @@ ms.locfileid: "60407047"
 
 - [Классификация текстовых документов](https://github.com/anargyri/lstm_han). В этом пошаговом руководстве показано, как создать и обучить две разные архитектуры нейронных сетей: сеть, ориентированную на иерархию, и сеть долгой краткосрочной памяти (LSTM). Эти нейронные сети выполняют классификацию текстовых документов с помощью API Keras для глубокого обучения. Keras — это интерфейс для трех самых популярных платформ машинного обучения: Microsoft Cognitive Toolkit, TensorFlow и Theano.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Страница примеров](dsvm-samples-and-walkthroughs.md) содержит указатели на примеры кода, предварительно загруженные в виртуальную машину для каждой платформы, которые помогут быстро начать работу. 

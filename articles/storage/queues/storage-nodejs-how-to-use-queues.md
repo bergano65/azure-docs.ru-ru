@@ -1,21 +1,19 @@
 ---
-title: Как использовать хранилище очередей из Node.js — хранилища Azure
+title: Использование хранилища очередей из Node. js в службе хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
-services: storage
 author: mhopkins-msft
 ms.service: storage
-ms.devlang: nodejs
-ms.topic: article
-ms.date: 12/08/2016
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 12/08/2016
 ms.subservice: queues
-ms.openlocfilehash: 01afe1ab7b9028f3f77d52f7d6f8ced27f6a79c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: 13da3adc1a3f95f9fdb29eb181eb9759e175cffe
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65142709"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721282"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Использование хранилища очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -64,7 +62,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
 Модуль Azure считывает переменные среды AZURE\_STORAGE\_ACCOUNT и AZURE\_STORAGE\_ACCESS\_KEY или AZURE\_STORAGE\_CONNECTION\_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **createQueueService**необходимо указать сведения об учетной записи.
 
-## <a name="how-to-create-a-queue"></a>Как Создание очереди
+## <a name="how-to-create-a-queue"></a>Как Создать очередь
 Следующий пример кода создает объект **QueueService** , который позволяет работать с очередями.
 
 ```javascript
@@ -243,7 +241,7 @@ queueSvc.deleteQueue(queueName, function(error, response){
 
 Чтобы удалить все сообщения очереди без удаления самой очереди, используйте метод **clearMessages**.
 
-## <a name="how-to-work-with-shared-access-signatures"></a>Практическое руководство: Работа с подписанными URL-адресами
+## <a name="how-to-work-with-shared-access-signatures"></a>Практическое руководство. Работа с подписанными URL-адресами
 Подписи общего доступа (SAS) — безопасный способ предоставить детальный доступ к очередям без указания имени или ключей своей учетной записи хранения. SAS часто используется для предоставления ограниченного доступа к очередям, например, позволяет мобильному приложению отправлять сообщения.
 
 Надежное приложение, например, облачная служба, создает подпись SAS с помощью **generateSharedAccessSignature** службы **QueueService** и предоставляет ее ненадежному или полунадежному приложению. Например, мобильному приложению. Подпись SAS создается с использованием политики, которая описывает даты начала и окончания срока действия SAS, а также уровень доступа, который предоставляется держателю подписи SAS.
@@ -328,8 +326,8 @@ queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ## <a name="next-steps"></a>Следующие шаги
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [блог команды разработчиков для службы хранилища Azure][Azure Storage Team Blog].
-* Посетите репозиторий [пакета SDK службы хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
+* Посетите [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog].
+* Посетите репозиторий [Пакет SDK хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
 
 
 

@@ -10,12 +10,13 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: slivkins
-ms.openlocfilehash: 0e5c99aae61fb927ea7f101bab74d661a747f88b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: 08fbc1716d402c83bc2c33be82cba143c1737a55
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60511551"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707254"
 ---
 # <a name="call-api-from-an-app"></a>Вызов API из приложения
 
@@ -86,7 +87,7 @@ curl -v https://ds.microsoft.com/api/v2/<appId>/reward/<eventId> -X POST
 
 Здесь каждый элемент `<item>` верхнего уровня описывает одну статью. Элемент `<link>` является обязательным и используется Пользовательской службой принятия решений как идентификатор действия. Укажите `<date>` (в стандартном формате RSS) при наличии более чем 15 статей. Используются 15 последних статей. Элемент `<title>` необязателен и используется для создания связанных с текстом признаков статьи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите [руководство](custom-decision-service-tutorial-news.md) с более подробным примером.
 * Обратитесь к справочнику по [API](custom-decision-service-api-reference.md), чтобы получить дополнительные сведения о предоставляемых возможностях.

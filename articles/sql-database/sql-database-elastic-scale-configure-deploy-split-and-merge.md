@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 5aff7e93dcfaa5320be0d6f7d427abcdc88c69e4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a8c50f492c28bf1e009d15d6332e939959190a49
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60585514"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568505"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Развертывание службы разбиения и объединения, чтобы перемещать данные между сегментированными базами данных
 
@@ -33,7 +32,7 @@ ms.locfileid: "60585514"
 
 Файлы находятся в каталоге **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** , где *x.x.xxx.x* отражает номер версии. Файлы службы разбиения и объединения находятся в подкаталоге **content\splitmerge\service**, а скрипты разбиения и объединения PowerShell (и необходимые библиотеки DLL клиентов) — в подкаталоге **content\splitmerge\powershell**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 1. Создайте базу данных SQL Azure, которая будет использоваться в качестве базы данных состояния разбиения и объединения. Перейдите на [портал Azure](https://portal.azure.com). Создайте новую **Базу данных SQL**. Присвойте базе данных имя и создайте администратор и пароль. Обязательно запишите имя и пароль для последующего использования.
 2. Убедитесь, что сервер баз данных SQL Azure позволяет службам Azure подключиться к нему. На портале в колонке **Параметры брандмауэра** задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.** Щелкните значок «Сохранить».
 3. Создайте учетную запись хранения Azure для вывода диагностических данных.
@@ -163,7 +162,7 @@ ms.locfileid: "60585514"
    <table style="width:100%">
      <tr>
        <th>Файл PowerShell</th>
-       <th>Действия</th>
+       <th>Шаги</th>
      </tr>
      <tr>
        <th rowspan="5">SetupSampleSplitMergeEnvironment.ps1</th>
@@ -185,7 +184,7 @@ ms.locfileid: "60585514"
    <table style="width:100%">
      <tr>
        <th>Файл PowerShell</th>
-       <th>Действия</th>
+       <th>Шаги</th>
      </tr>
    <tr>
        <th rowspan="4">ExecuteSampleSplitMerge.ps1 </th>

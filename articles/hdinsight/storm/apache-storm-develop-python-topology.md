@@ -1,5 +1,5 @@
 ---
-title: Apache Storm с компонентами Python - Azure HDInsight
+title: Apache Storm с компонентами Python в Azure HDInsight
 description: Сведения о создании топологии Apache Storm, использующей компоненты Python.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3b808a12c7a669a272bf6a1bbb253ed6b4625288
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b9faf33734ba17e9912246fe9c5c2ac45c55ba44
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078213"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598480"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "67078213"
 
 Код для этого проекта можно найти по адресу [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Python 2.7 или выше;
 
@@ -33,7 +33,7 @@ ms.locfileid: "67078213"
 
 * [Apache Maven 3](https://maven.apache.org/download.cgi).
 
-* (Необязательно.) Локальная среда разработки Storm. Локальная среда разработки Storm требуется только в том случае, если вы хотите запускать топологию локально. Дополнительные сведения см. в разделе [Setting up a development environment](https://storm.apache.org/releases/1.1.2/Setting-up-development-environment.html) (Настройка среды разработки).
+* (Необязательно.) Локальная среда разработки Storm. Локальная среда разработки Storm требуется только в том случае, если вы хотите запускать топологию локально. Дополнительные сведения см. в разделе [Setting up a development environment](http://storm.apache.org/releases/current/Setting-up-development-environment.html) (Настройка среды разработки).
 
 ## <a name="storm-multi-language-support"></a>Многоязыковая поддержка Storm
 
@@ -143,7 +143,7 @@ storm jar WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux -l -R /topology.
 > * нажмите кнопку **Kill** (Завершить) в пользовательском интерфейсе Storm.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать о других способах использования Python с HDInsight, см. следующие документы.
 

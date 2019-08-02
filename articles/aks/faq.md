@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: mlearned
 ms.openlocfilehash: 7aff0fe47d1586b63157d5df7882fc338637f714
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68381962"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
@@ -25,7 +25,7 @@ ms.locfileid: "68381962"
 
 ## <a name="does-aks-support-node-autoscaling"></a>Поддерживает ли AKS автомасштабирование узла?
 
-Да, возможность автоматического масштабирования узлов агентов по горизонтали в AKS в настоящее время доступна в предварительной версии. См. раздел [Автоматическое масштабирование кластера в соответствии с потребностями приложений в AKS][aks-cluster-autoscaler] for instructions. AKS autoscaling is based on the [Kubernetes autoscaler][auto-scaler].
+Да, возможность автоматического масштабирования узлов агентов по горизонтали в AKS в настоящее время доступна в предварительной версии. Инструкции см. [в разделе Автоматическое масштабирование кластера в соответствии с потребностями приложений в AKS][aks-cluster-autoscaler] . Автомасштабирование AKS основано на автоматическом [масштабировании Kubernetes][auto-scaler].
 
 ## <a name="can-i-deploy-aks-into-my-existing-virtual-network"></a>Можно ли развернуть AKS в имеющейся виртуальной сети?
 
@@ -48,7 +48,7 @@ ms.locfileid: "68381962"
 Azure автоматически применяет исправления безопасности к узлам Linux в кластере в соответствии с расписанием по ночам. Однако вы несете ответственность за то, чтобы эти узлы Linux перезагрузились по мере необходимости. Существует несколько вариантов перезагрузки узлов.
 
 - Вручную на портале Azure или Azure CLI.
-- Обновив кластер AKS. Кластер обновляет automatically and then bring a new node online with the latest Ubuntu image and a new patch version or a minor Kubernetes version. For more information, see [Upgrade an AKS cluster][aks-upgrade] [узлы Cordon и стока][cordon-drain] .
+- Обновив кластер AKS. Кластер автоматически обновляет [узлы Cordon и сток][cordon-drain] , а затем переводит новый узел в оперативный режим с помощью последнего образа Ubuntu и новой версии исправления или вспомогательной версии Kubernetes. Дополнительные сведения см. в статье [Обновление кластера AKS][aks-upgrade].
 - С помощью [куред](https://github.com/weaveworks/kured)можно запустить управляющую программу с открытым исходным кодом для Kubernetes. Куред запускается как [демон](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) и отслеживает каждый узел на наличие файла, указывающего на необходимость перезагрузки. В кластере перезагрузки ОС управляются одним и тем же [Cordon и процессом очистки][cordon-drain] при обновлении кластера.
 
 Дополнительные сведения об использовании куред см. в статье [применение обновлений безопасности и ядра к узлам в AKS][node-updates-kured].

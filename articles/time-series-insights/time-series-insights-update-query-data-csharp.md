@@ -1,5 +1,5 @@
 ---
-title: Запрос данных из среды Azure время Series Insights Preview с помощью C# кода | Документация Майкрософт
+title: Запрос данных из среды предварительной версии службы "аналитика временных рядов C# Azure" с помощью кода | Документация Майкрософт
 description: Из этой статьи вы узнаете, как запрашивать данные из среды службы "Аналитика временных рядов Azure", создав код для пользовательского приложения на C# (c-sharp) .NET.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,16 +12,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: fc5f35aedd52e206433afb0f556bc1cde8296232
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8fdfd39527ccd298b78ef2c4c895d1f667d8d33b
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237475"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677614"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Запрос данных из среды Azure время Series Insights Preview с помощьюC#
+# <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Запрос данных из среды предварительной версии службы "аналитика временных рядов Azure" с помощьюC#
 
-Это C# примере показано, как запрашивать данные из среды Azure время Series Insights Preview.
+В C# этом примере показано, как запросить данные из среды предварительной версии службы "аналитика временных рядов Azure".
 
 В нем показано несколько простых способов использования API запроса:
 
@@ -31,17 +31,17 @@ ms.locfileid: "66237475"
 1. В качестве примера запроса веб-сокета для выбранной среды запрашиваются объединенные данные событий. Данные запрашиваются для всего диапазона времени доступности.
 
 > [!NOTE]
-> Этот пример кода также доступна в [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample).
+> Этот пример кода также доступен по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample).
 
 ## <a name="c-example"></a>Пример C#
 
 [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-preview-sample/DataPlaneClientSampleApp/Program.cs)]
 
 > [!NOTE]
-> В приведенном выше примере может выполняться без изменения среды значения по умолчанию.
+> Приведенный выше пример кода можно запустить без изменения значений среды по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о запросах к [Справочник по API запроса](/rest/api/time-series-insights/preview-query).
+- Дополнительные сведения о запросах см. в справочнике по [API запросов](https://docs.microsoft.com/rest/api/time-series-insights/preview-query).
 
-- Узнайте, как для [подключение одностраничного приложения JavaScript](tutorial-create-tsi-sample-spa.md) для Time Series Insights.
+- Узнайте, как [подключить одностраничное приложение JavaScript к службе](tutorial-create-tsi-sample-spa.md) "аналитика временных рядов".

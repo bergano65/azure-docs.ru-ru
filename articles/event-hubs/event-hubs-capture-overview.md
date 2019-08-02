@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 4ba3109460616be98b5330ec7175f161a6a3b750
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68326169"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
@@ -73,7 +73,7 @@ https://mystorageaccount.blob.core.windows.net/mycontainer/mynamespace/myeventhu
 
 ![Схема Avro][3]
 
-Простой способ просмотра файлов Avro заключается в использовании [средств][Avro Tools] jar from Apache. You can also use [Apache Drill][Apache Drill] Avro для упрощенного интерфейса на основе SQL или [Apache Spark][Apache Spark] для выполнения сложной распределенной обработки принимаемых данных. 
+Файлы Avro можно легко просмотреть с помощью [средств Avro][Avro Tools] (JAR-файл) из Apache. Можно также использовать [Apache][Apache Drill] для упрощения работы на основе SQL или [Apache Spark][Apache Spark] для выполнения сложной распределенной обработки принимаемых данных. 
 
 ### <a name="use-apache-drill"></a>Использование Apache Drill
 
@@ -129,7 +129,7 @@ java -jar avro-tools-1.8.2.jar getschema <name of capture file>
 
 Чтобы выполнить более расширенную обработку, скачайте и установите Avro для определенной платформы. На момент написания статьи средства Avro доступны для следующих платформ: C, C++, C\#, Java, NodeJS, Perl, PHP, Python и Ruby.
 
-Apache Avro содержит полный начало работы руководства по [Java][Java] and [Python][Python]. Дополнительные сведения см. в статье [Пошаговое руководство. Использование функции "Сбор" в Центрах событий с Python](event-hubs-capture-python.md).
+Apache Avro содержит полный начало работы руководства по [Java][Java] и [Python][Python]. Дополнительные сведения см. в статье [Пошаговое руководство. Использование функции "Сбор" в Центрах событий с Python](event-hubs-capture-python.md).
 
 ## <a name="how-event-hubs-capture-is-charged"></a>Выставление счета за использование функции "Сбор" в Центрах событий
 

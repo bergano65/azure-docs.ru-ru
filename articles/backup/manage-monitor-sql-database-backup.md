@@ -1,18 +1,18 @@
 ---
 title: Управление базами данных SQL Server и их мониторинг на виртуальной машине Azure, для которой создана резервная копия Azure Backup | Документация Майкрософт
 description: В этой статье описывается, как управлять и отслеживать SQL Server базы данных, работающие на виртуальной машине Azure.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 03/14/2018
-ms.author: raynew
-ms.openlocfilehash: 0a864382e54f5c8641aa6da2369eb914011c712c
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: c5f61c778849a57d9143580e0e1041c7fe992d52
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464863"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639592"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 
@@ -87,7 +87,7 @@ Azure Backup отображаются все задания, активиров�
 
     ![Сохраняйте или удаляйте данные в меню "Отмена архивации"](./media/backup-azure-sql-database/stop-backup-button.png)
 
-6. Выберите пункт прерывать архивацию.
+6. Выберитепункт прерывать архивацию.
 
 
 > [!NOTE]

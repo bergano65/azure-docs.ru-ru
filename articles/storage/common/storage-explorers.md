@@ -9,12 +9,12 @@ ms.date: 09/06/2017
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 6d80bc71c01d0f1c887d9161edee5516d6b0925b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 14cbc076f4c9eebd2647cd667acc856b393e4d93
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443699"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665736"
 ---
 # <a name="azure-storage-client-tools"></a>Клиентские инструменты службы хранилища Azure
 Пользователям службы хранилища Azure часто требуется просматривать свои данные или взаимодействовать с ними с помощью клиентского инструмента службы хранилища Azure. В приведенных ниже таблицах перечислен ряд инструментов, которые позволяют это сделать. Соответствующее поле содержит "X", если инструмент позволяет перечислить абстракцию данных и (или) предоставить к ней доступ. В таблице также показано, являются ли инструменты бесплатными. "Пробная версия" означает, что доступна бесплатная пробная версия, но полная версия продукта платная. "Да/нет" указывает, что есть как платная, так и бесплатная версии.
@@ -28,12 +28,12 @@ ms.locfileid: "67443699"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавление больших двоичных объектов</th>
+    <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>
     <th rowspan="2">Бесплатно</th>
-    <th colspan="4">платформа</th>
+    <th colspan="4">Платформа</th>
   </tr>
   <tr>
     <td>Интернет</td>
@@ -49,7 +49,7 @@ ms.locfileid: "67443699"
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td>Да</td>
+    <td>Y</td>
     <td>X</td>
     <td></td>
     <td></td>
@@ -63,7 +63,7 @@ ms.locfileid: "67443699"
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td>Да</td>
+    <td>Y</td>
     <td></td>
     <td>X</td>
     <td>X</td>
@@ -77,7 +77,7 @@ ms.locfileid: "67443699"
     <td>X</td>
     <td>X</td>
     <td></td>
-    <td>Да</td>
+    <td>Y</td>
     <td></td>
     <td>X</td>
     <td></td>
@@ -94,12 +94,12 @@ ms.locfileid: "67443699"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавление больших двоичных объектов</th>
+    <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>
     <th rowspan="2">Бесплатно</th>
-    <th colspan="4">платформа</th>
+    <th colspan="4">Платформа</th>
   </tr>
   <tr>
     <td>Интернет</td>
@@ -129,7 +129,7 @@ ms.locfileid: "67443699"
     <td></td>
     <td></td>
     <td></td>
-    <td>Да</td>
+    <td>Y</td>
     <td></td>
     <td>X</td>
     <td></td>
@@ -142,10 +142,10 @@ ms.locfileid: "67443699"
     <td></td>
     <td>X</td>
     <td>X</td>
-    <td></td>
-    <td>Да</td>
-    <td></td>
     <td>X</td>
+    <td>Y</td>
+    <td>X</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -185,7 +185,7 @@ ms.locfileid: "67443699"
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td>Да</td>
+    <td>Y</td>
     <td></td>
     <td>X</td>
     <td></td>

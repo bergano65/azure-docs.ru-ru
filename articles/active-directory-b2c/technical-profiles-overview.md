@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f3be6cebafb6d0f50b5ac9a9e40e5707202ea643
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: cdb1b49af5d3a85dc1853e5964c1cdfdd5c3a7cd
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849423"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716675"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -32,9 +32,9 @@ ms.locfileid: "67849423"
 - **Поставщик проверки по телефону**: многофакторная проверка подлинности.
 - [OAuth1](oauth1-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу OAuth 1.0.
 - [OAuth2](oauth2-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу OAuth 2.0.
-- [OpenIdConnect](openid-connect-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу OpenId Connect.
+- [OpenID Connect Connect](openid-connect-technical-profile.md) -Federation с любым поставщиком удостоверений протокола OpenID Connect Connect.
 - [Преобразование утверждений](claims-transformation-technical-profile.md): вызов преобразований исходящих утверждений для изменения значений утверждений, их проверки или установки значений по умолчанию для набора исходящих утверждений.
-- [Поставщик REST](restful-technical-profile.md): вызов служб REST API, например для проверки данных, вводимых пользователем, дополнения пользовательских данных или интеграции с бизнес-приложениями.
+- [Поставщик RESTful](restful-technical-profile.md) — вызов служб REST API Services, таких как проверка вводимых пользователем данных, обогащение пользовательской информации или интеграция с бизнес-приложениями.
 - [SAML2](saml-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу SAML.
 - [Самостоятельное подтверждение](self-asserted-technical-profile.md): взаимодействие с пользователем. Например, получение учетных данных пользователя для входа, а затем отображение страницы регистрации или сброса пароля.
 - **WsFed**: федерация с любым поставщиком удостоверений по протоколу WsFed.

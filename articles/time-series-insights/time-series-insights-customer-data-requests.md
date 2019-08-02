@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: f99a54f5623100e057e0c02249f5886f46656a21
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a67e716300254b7ae73cf5c608e4ab9177638456
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66355931"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677900"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -36,7 +36,7 @@ ms.locfileid: "66355931"
 
 Однако перед этим необходимо удалить клиентские политики доступа из среды "Аналитика временных рядов" в рамках портала Azure. Дополнительные сведения см. в статье [Предоставление доступа к данным для среды "Аналитика временных рядов" с помощью портала Azure](time-series-insights-data-access.md).
 
-Вы также можете выполнять операции удаления в политиках доступа с помощью REST API. Дополнительные сведения см. в статье [Access Policies - Delete](/rest/api/time-series-insights/management/accesspolicies/delete) (Удаление политик доступа).
+Вы также можете выполнять операции удаления в политиках доступа с помощью REST API. Дополнительные сведения см. в статье [Access Policies - Delete](https://docs.microsoft.com/rest/api/time-series-insights/management/accesspolicies/delete) (Удаление политик доступа).
 
 Служба "Аналитика временных рядов" интегрирована с колонкой "Политика" на портале Azure. Просматривать, экспортировать и удалять пользовательские данные, хранимые в службе, можно из обоих этих расположений. Данные пользователя, удаленные в колонке "Политика" на портале Azure, также удаляются в службе "Аналитика временных рядов". Например, если пользователь сохранил персональный запрос, этот запрос окончательно удаляется из обозревателя службы "Аналитика временных рядов". Если пользователь имеет общий запрос, этот запрос сохраняется, но информация о пользователе удаляется навсегда. Приведенное ниже примечание содержит инструкции о способах выполнения этих задач.
 
@@ -48,7 +48,7 @@ ms.locfileid: "66355931"
 
 Администратор клиента может просматривать политики доступа к данным в среде "Аналитика временных рядов" на портале Azure. Дополнительные сведения см. в статье [Предоставление доступа к данным для среды "Аналитика временных рядов" с помощью портала Azure](time-series-insights-data-access.md).
 
-Кроме того, операции экспорта в политиках доступа можно выполнять, используя операцию перечисления по средах в предоставленном REST API. Дополнительные сведения см. в статье [Access Policies - List By Environment](/rest/api/time-series-insights/management/accesspolicies/listbyenvironment) (Политики доступа. Перечисление по средам).
+Кроме того, операции экспорта в политиках доступа можно выполнять, используя операцию перечисления по средах в предоставленном REST API. Дополнительные сведения см. в статье [Access Policies - List By Environment](https://docs.microsoft.com/rest/api/time-series-insights/management/accesspolicies/listbyenvironment) (Политики доступа. Перечисление по средам).
 
 ## <a name="to-delete-data-stored-within-time-series-insights"></a>Удаление данных, хранимых в службе "Аналитика временных рядов"
 
@@ -66,10 +66,10 @@ ms.locfileid: "66355931"
 
 Дополнительные сведения см. в статье, посвященной [настройке периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-how-to-configure-retention.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о [предоставление доступа к данным в среде TSI](./time-series-insights-data-access.md).
+* Узнайте больше о [предоставлении доступа к данным в среде TSI](./time-series-insights-data-access.md).
 
-* Представление [обозреватель Azure Time Series Insights](time-series-insights-explorer.md).
+* Просмотр обозревателя службы " [аналитика временных рядов Azure](time-series-insights-explorer.md)".
 
-* Дополнительные сведения о [Настройка хранения данных в Time Series Insights](time-series-insights-how-to-configure-retention.md).
+* Узнайте, как [настроить хранение в Time Series Insights](time-series-insights-how-to-configure-retention.md).

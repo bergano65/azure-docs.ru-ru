@@ -1,5 +1,5 @@
 ---
-title: Как использовать теги версии с помощью модели диалога ученика — Azure Cognitive Services | Документация Майкрософт
+title: Использование тегов версий с Conversation Learner моделью Azure Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
 description: Узнайте, как использовать управление версиями и расстановку тегов в приложении Conversation Learner.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 4067c7fb43cc200b8f49dbc14151c69a188e4e8e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0279363c039e3ec3c2deac3bc7f71c32c547e9d1
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475703"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703381"
 ---
 # <a name="how-to-use-version-tagging"></a>Как использовать теги версии
 
@@ -28,13 +29,13 @@ ms.locfileid: "66475703"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 Помеченные версии модели являются статическими; их нельзя изменить. При изменении модели вы всегда редактируете главную версию. Когда вы добавляете новый тег, Conversation Learner записывает моментальный снимок модели в определенный момент времени. 
 
 Бот будет использовать версию модели, выбранную в качестве активной, но все имеющиеся диалоги можно будет просматривать, только если для тега редактирования установлена главная версия. Если для свойства "Тег редактирования" модели установлена другая версия (кроме главной), вы сможете просмотреть моментальный снимок модели, но не сможете его изменить.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="install-the-bot-framework-emulator"></a>Установка Bot Framework Emulator
 
@@ -57,7 +58,7 @@ ms.locfileid: "66475703"
     - `npm run tutorial-general`
 4. В Bot Framework Emulator создайте новую конфигурацию бота и установите в качестве URL-адреса конечной точки `http://localhost:3978/api/messages`
 
-### <a name="version-1"></a>версия 1
+### <a name="version-1"></a>Версия 1
 
 Мы создадим одно действие для версии 1.
 
@@ -77,7 +78,7 @@ ms.locfileid: "66475703"
 
 Теперь вы увидите "Версия 1" в таблице "Теги версии".
 
-### <a name="version-2"></a>версия 2
+### <a name="version-2"></a>Версия 2
 
 Теперь изменим нашу модель, чтобы она отличалась от версии 1.
 
@@ -106,7 +107,7 @@ ms.locfileid: "66475703"
 
 Теперь вы знаете, как работает управление версиями и как можно взаимодействовать с ботом с помощью Bot Framework Emulator.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Перечисление сущностей и укажите сущности действия](./tutorial-enum-set-entity.md)
+> [Перечислить сущности и задать действия сущностей](./tutorial-enum-set-entity.md)

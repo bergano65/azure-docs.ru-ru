@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/30/2019
-ms.openlocfilehash: 235d29c876616948516bbe4309ddd630bc3f6dca
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 1bb88d6f74ab4b93e226fe8630f07f0a96f4ba47
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852591"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567052"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Планирование событий обслуживания Azure в Базе данных SQL Azure
 
@@ -35,11 +34,11 @@ ms.locfileid: "67852591"
 
 Для любого клиентского приложения в рабочей среде, которое подключается к облачной службе базы данных, следует реализовать [надежную логику повторных попыток подключения](sql-database-connectivity-issues.md#retry-logic-for-transient-errors). Она поможет устранить такие ситуации и упрощает общий механизм определения ошибок для пользователя.
 
-## <a name="frequency"></a>Frequency
+## <a name="frequency"></a>Частота
 
 В среднем каждый месяц происходят 1,7 событий планового обслуживания.
 
-## <a name="resource-health"></a>Работоспособность ресурса
+## <a name="resource-health"></a>Работоспособность ресурсов
 
 Если в базе данных SQL возникли ошибки входа, на [портале Azure](https://portal.azure.com) просмотрите окно [Работоспособность ресурсов](../service-health/resource-health-overview.md#get-started), чтобы узнать текущее состояние. Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
 

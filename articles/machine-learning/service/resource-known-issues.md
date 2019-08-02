@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: 206a8d9ba45dcb948dfffff86bab17b58a33e464
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 7d1bce7575272b7df185c4e261685d989f49436c
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358611"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716531"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
 
@@ -151,3 +151,9 @@ displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.g
 ```
 
 Например, вы получите сообщение об ошибке, если попытаетесь создать или вложить целевой объект вычислений из конвейера Машинного обучения, который передается для удаленного выполнения.
+
+## <a name="overloaded-azurefile-storage"></a>Перегруженное хранилище Азурефиле
+
+Если появляется сообщение об ошибке "не удается отправить файлы проекта в рабочий каталог в Азурефиле, так как хранилище перегружено", используйте следующие обходные пути.
+
+Если вы используете общую папку для других рабочих нагрузок, таких как передача данных, рекомендуется использовать большие двоичные объекты, чтобы файловый ресурс можно было использовать для отправки запусков. Вы также можете разделить рабочую нагрузку между двумя разными рабочими областями.

@@ -3,18 +3,18 @@ title: Добавление слоя фрагментов карты в Azure Ma
 description: Сведения о добавлении слоя фрагментов карты на карту Javascript
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/3/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 3a773c24993d229f20df698113ff7535fea634ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e288e03b9e2c02ba963595f192dea7225c6d5762
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60769232"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638981"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
@@ -60,7 +60,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 <iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -73,4 +73,4 @@ URL-адрес фрагмента, передаваемый в слой фраг
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавить слой изображения](./map-add-image-layer.md)
+> [Добавление слоя изображения](./map-add-image-layer.md)

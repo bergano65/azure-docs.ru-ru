@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB — API-интерфейс, пакет SDK и ресурсы .NET для библиотеки Bulk Executor
+title: Azure Cosmos DB — API .NET для пакетного исполнителя, ресурсы SDK &
 description: Сведения об API и пакетах SDK .NET для библиотеки Bulk Executor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для Bulk Executor в Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 74eddadd7fd967daa1eebb9d7cb223fdc708025f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 098cc3d76fff69b6b213514ac85835e7474b6233
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66471422"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68637724"
 ---
-# <a name="net-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для .NET: информация о скачивании 
+# <a name="net-bulk-executor-library-download-information"></a>Библиотека NET выполнителя .NET: информация о скачивании 
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
@@ -28,12 +28,12 @@ ms.locfileid: "66471422"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Bulk Executor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [Bulk Executor — Java](sql-api-sdk-bulk-executor-java.md)
+> * [Групповой исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Групповой исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
 |---|---|
-| **Описание**| Библиотека Bulk Executor позволяет клиентским приложениям выполнять массовые операции в учетных записях Azure Cosmos DB. Библиотека Bulk Executor предоставляет пространства имен BulkImport, BulkUpdate и BulkDelete. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль BulkUpdate позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos DB в качестве исправлений. Модуль BulkDelete может оптимизировать массовое удаление документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции.|
+| **Описание**| Библиотека .NET NET выполнителя позволяет клиентским приложениям выполнять групповые операции с учетными записями Azure Cosmos DB. Эта библиотека предоставляет пространства имен Булкимпорт, Булкупдате и Булкделете. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль BulkUpdate позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos DB в качестве исправлений. Модуль BulkDelete может оптимизировать массовое удаление документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции.|
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Библиотека BulkExecutor в GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Документация по API**|[Справочная документация по API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
@@ -42,17 +42,17 @@ ms.locfileid: "66471422"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
+### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0 — preview2
 
-* Добавлена поддержка для исполнителя массового graph для принятия ttl на вершины и ребра
+* Добавлена поддержка многоисполнительного графа Graph для приема TTL на вершинах и краях.
 
-### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
+### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0 — preview2
 
-* Устранена проблема, которая вызвали исключения во время гибкое масштабирование Azure Cosmos DB при работе в режиме шлюза. Это исправление позволяет функционально эквивалентен 1.4.1 выпуска.
+* Исправлена проблема, которая привела к возникновению исключений во время эластичного масштабирования Azure Cosmos DB при работе в режиме шлюза. Это исправление функционально эквивалентно 1.4.1 выпуску.
 
-### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2:
+### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0 — preview2
 
-* Добавлена массового удаления поддержки учетных записей SQL API для приема ключ секции, кортежи идентификатор документа для удаления. Это изменение делает функционально эквивалентен 1.4.0 выпуска.
+* Добавлена поддержка Булкделете для учетных записей API SQL, чтобы принять ключ секции, кортежи идентификаторов документов для удаления. Это изменение делает его функционально эквивалентным выпуску 1.4.0.
 
 ### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
 
@@ -64,19 +64,19 @@ ms.locfileid: "66471422"
 
 ### <a name="a-name160160"></a><a name="1.6.0"/>1.6.0
 
-* Обновить массового исполнителя, чтобы использовать последнюю версию Azure Cosmos DB .NET SDK (версии 2.4.0)
+* Обновленный исполнитель теперь использует последнюю версию пакета SDK для Azure Cosmos DB .NET (2.4.0).
 
 ### <a name="a-name150150"></a><a name="1.5.0"/>1.5.0
 
-* Добавлена поддержка для исполнителя массового graph для принятия ttl на вершины и ребра
+* Добавлена поддержка многоисполнительного графа Graph для приема TTL на вершинах и краях.
 
 ### <a name="a-name141141"></a><a name="1.4.1"/>1.4.1
 
-* Устранена проблема, которая вызвали исключения во время гибкое масштабирование Azure Cosmos DB при работе в режиме шлюза.
+* Исправлена проблема, которая привела к возникновению исключений во время эластичного масштабирования Azure Cosmos DB при работе в режиме шлюза.
 
 ### <a name="a-name140140"></a><a name="1.4.0"/>1.4.0
 
-* Добавлена массового удаления поддержки учетных записей SQL API для приема ключ секции, кортежи идентификатор документа для удаления.
+* Добавлена поддержка Булкделете для учетных записей API SQL, чтобы принять ключ секции, кортежи идентификаторов документов для удаления.
 
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 
@@ -112,8 +112,8 @@ ms.locfileid: "66471422"
 
 * Добавлена поддержка операции BulkImport и BulkUpdate для учетных записей API Azure Cosmos DB SQL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о библиотеке Java Bulk Executor см. в следующей статье:
+Дополнительные сведения о библиотеке Java для неполного выполнителя см. в следующей статье:
 
-[Библиотека массового исполнителя Java — информация о скачивании](sql-api-sdk-bulk-executor-java.md)
+[Пакет SDK и сведения о выпуске библиотеки пакетного выполнителя Java](sql-api-sdk-bulk-executor-java.md)

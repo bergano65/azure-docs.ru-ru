@@ -1,19 +1,20 @@
 ---
 title: Заметки о выпуске Microsoft Azure Backup Server версии 3
 description: В этой статье представлены сведения об известных проблемах и их решениях для MABS версии 3.
-author: JYOTHIRMAISURI
-manager: vvithal
+ms.reviewer: v-jysur
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 11/22/2018
-ms.author: v-jysur
+ms.author: dacurwin
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: e0bcdeeda2f8517b85059817669c19d66c723902
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: a80a5ac64b58d93bb0d4e4b799cb7424805c9baa
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465064"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698371"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 В этой статье представлены известные проблемы и их решения для Microsoft Azure Backup Server (MABS) версии 3.
@@ -60,7 +61,7 @@ ms.locfileid: "68465064"
 1.  [Создайте резервную копию](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server?view=sql-server-2017#SSMSProcedure) базы данных SQL и удалите MABS версии 2 (выберите сохранение защищенных данных во время удаления).
 2.  Обновитесь до SQL 2017 (Enterprise) и удалите отчеты в рамках обновления.
 3. [Установите](https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services?view=sql-server-2017#install-your-report-server) SQL Server Reporting Services (SSRS).
-4.  [Установите](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms#download-ssms-181) SQL Server Management Studio (SSMS).
+4.  [Установите](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms#download-ssms-182) SQL Server Management Studio (SSMS).
 5.  Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](https://docs.microsoft.com/azure/backup/backup-azure-microsoft-azure-backup#upgrade-mabs).
 6.  [Установите](backup-azure-microsoft-azure-backup.md) MABS версии 3.
 7. [Восстановите](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms?view=sql-server-2017) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](https://docs.microsoft.com/previous-versions/system-center/data-protection-manager-2010/ff634215(v=technet.10)).

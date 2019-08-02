@@ -3,18 +3,18 @@ title: Отображение данных дорожного движения �
 description: Как отобразить данные дорожного движения на карте Javascript
 author: jingjing-z
 ms.author: jinzh
-ms.date: 11/10/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 7cd7c0dbb375dad78927183dbaffe574a0dc10c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 55bfc434082b2d5b7de193e969fc34f710657cdb
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60768841"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638637"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -29,7 +29,7 @@ ms.locfileid: "60768841"
 
 Во втором блоке кода используется функция [setTraffic](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) в рамках функции карты [event listener](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Она позволяет отобразить на карте данные дорожного движения и сведения о проблемах на дороге.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

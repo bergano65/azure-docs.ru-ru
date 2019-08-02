@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/20/2019
-ms.openlocfilehash: 0e4d87ee0d0d09a84e960d511ded87dc226515ea
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 84e39a727d5be842b356e5bd30333cb154df86aa
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762665"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568776"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе единиц DTU
 
@@ -30,9 +29,9 @@ ms.locfileid: "65762665"
 В следующих таблицах приведены доступные ресурсы и их объемы для отдельных баз данных на каждом уровне служб и объема вычислительных ресурсов. Уровень служб, объем вычислительных ресурсов и объем хранилища для отдельной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#manage-an-existing-sql-database-server), [Transact-SQL](sql-database-single-databases-manage.md#transact-sql-manage-sql-database-servers-and-single-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-sql-database-servers-and-single-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-sql-database-servers-and-single-databases).
 
 > [!IMPORTANT]
-> Масштабирование, инструкции и рекомендации, см. в разделе [масштабирование отдельной базы данных](sql-database-single-database-scale.md)
+> Рекомендации по масштабированию и рекомендации см. [в разделе масштабирование отдельной базы данных](sql-database-single-database-scale.md) .
 
-### <a name="basic-service-tier"></a>Уровень службы Basic
+### <a name="basic-service-tier"></a>Уровень служб "Базовый"
 
 | **Объем вычислительных ресурсов** | **базовая;** |
 | :--- | --: |
@@ -44,7 +43,7 @@ ms.locfileid: "65762665"
 | Максимальное количество параллельных сеансов | 300 |
 |||
 
-### <a name="standard-service-tier"></a>Уровень службы Standard
+### <a name="standard-service-tier"></a>Уровень служб "Стандартный"
 
 | **Объем вычислительных ресурсов** | **S0** | **S1** | **S2** | **S3** |
 | :--- |---:| ---:|---:|---:|
@@ -68,30 +67,30 @@ ms.locfileid: "65762665"
 | Максимальное количество параллельных сеансов |4800 | 9600 | 19 200 | 30 000 |30 000 |
 |||||||
 
-### <a name="premium-service-tier"></a>Уровень службы Premium
+### <a name="premium-service-tier"></a>Уровень служб "Премиум"
 
 | **Объем вычислительных ресурсов** | **P1** | **P2** | **P4** | **P6** | **P11** | **P15** |
 | :--- |---:|---:|---:|---:|---:|---:|
 | Максимальное количество DTU | 125 | 250 | 500 | 1000 | 1750 | 4000 |
-| Включенный объем хранилища (ГБ) | 500 | 500 | 500 | 500 | 4096* | 4096* |
-| Варианты максимального объема хранилища (ГБ) | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 4096* | 4096* |
-| Максимальное хранилище OLTP в памяти (ГБ) | 1 | 2 | 4\. | 8 | 14 | 32 |
+| Включенный объем хранилища (ГБ) | 500 | 500 | 500 | 500 | 4096 * | 4096 * |
+| Варианты максимального объема хранилища (ГБ) | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 500, 750, 1024 | 4096 * | 4096 * |
+| Максимальное хранилище OLTP в памяти (ГБ) | 1 | 2 | 4 | 8 | 14 | 32 |
 | Максимальное количество одновременных рабочих ролей (запросов)| 200 | 400 | 800 | 1600 | 2400 | 6400 |
 | Максимальное количество параллельных сеансов | 30 000 | 30 000 | 30 000 | 30 000 | 30 000 | 30 000 |
 |||||||
 
-\* От 1024 до 4096 ГБ с шагом в 256 ГБ
+\*С 1024 ГБ до 4096 ГБ с шагом в 256 ГБ
 
 > [!IMPORTANT]
-> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища класса Premium ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).  
+> В настоящее время на уровне Premium предоставляется более 1 ТБ хранилища, за исключением следующих регионов: Восточный Китай, Северный Китай, Центральная Германия, Северо-Восточная Германия, центрально-западная часть США, регионы US DoD и центральная часть для государственных организаций США. В этих регионах максимальный объем хранилища категории "Премиум" ограничен 1 ТБ.  Дополнительные сведения см. в разделе [о действующих ограничениях для P11-P15](sql-database-single-database-scale.md#p11-and-p15-constraints-when-max-size-greater-than-1-tb).  
 > [!NOTE]
-> Для `tempdb` ограничения, см. в разделе [ограничения tempdb](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database).
+> Ограничения см. в разделе [ограничения tempdb.](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database?view=sql-server-2017#tempdb-database-in-sql-database) `tempdb`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. подробнее об [ограничениях ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md).
-- [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md).
-- [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md).
+- Дополнительные сведения см. в статье [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
+- [Ограничения ресурсов для эластичных пулов в модели приобретения на основе единиц DTU](sql-database-dtu-resource-limits-elastic-pools.md).
 - [Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 - Сведения об ограничениях на уровнях сервера и подписки см. в статье [Ограничения ресурсов для сервера Базы данных SQL Azure](sql-database-resource-limits-database-server.md).

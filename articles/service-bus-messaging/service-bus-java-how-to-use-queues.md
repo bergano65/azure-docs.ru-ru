@@ -1,5 +1,5 @@
 ---
-title: Использование очередей служебной шины Azure с Java | Документация Майкрософт
+title: Использование очередей служебной шины Azure с Java
 description: Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на Java.
 services: service-bus-messaging
 documentationcenter: java
@@ -14,12 +14,13 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: a7e6e86be8b6fc901d9637c85794cdfe1f744fd4
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 4075ceae6c40a6be8ee2b9f6580a57fafb96e17e
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360812"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663424"
 ---
 # <a name="how-to-use-service-bus-queues-with-java"></a>Как использовать очереди служебной шины с Java
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -28,7 +29,7 @@ ms.locfileid: "68360812"
 > [!NOTE]
 > Примеры Java можно найти на сайте GitHub в [репозитории azure-service-bus](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Если у вас нет очереди для работы, выполните действия, описанные в статье [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) для создания очереди.
     1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 
@@ -39,7 +40,7 @@ ms.locfileid: "68360812"
 
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
-Убедитесь, что установлен [пакет Azure SDK для Java][Azure SDK for Java] before building this sample. If you are using Eclipse, you can install the [Azure Toolkit for Eclipse][Azure Toolkit for Eclipse] , включающий пакет Azure SDK для Java. Затем можно добавить **библиотеки Microsoft Azure для Java** в проект.
+Перед созданием этого образца убедитесь, что вы установили [пакет Azure SDK для Java][Azure SDK for Java]. При использовании Eclipse можно установить [набор средств Azure для Eclipse][Azure Toolkit for Eclipse], включающий в себя пакет Azure SDK для Java. Затем можно добавить **библиотеки Microsoft Azure для Java** в проект.
 
 ![Снимок экрана вкладки "библиотеки", где можно добавить библиотеки](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 

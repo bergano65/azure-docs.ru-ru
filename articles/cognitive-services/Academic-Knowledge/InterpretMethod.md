@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: b679f1da0ada3e61fca79cdb985a43dc445877ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: d960aff109e0eca70cb87463770620093e563f63
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61338458"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706675"
 ---
 # <a name="interpret-method"></a>Метод интерпретации
 
@@ -29,7 +30,7 @@ ms.locfileid: "61338458"
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-ИМЯ     | Значение | Обязательный?  | Описание
+Название     | Значение | Обязательный?  | Описание
 ---------|---------|---------|---------
 **query**    | Текстовая строка | Да | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания автозавершения запросов.        
 **model**    | Текстовая строка | Нет  | Имя модели, которую необходимо запросить.  В настоящее время значение по умолчанию соответствует *latest*.        
@@ -42,7 +43,7 @@ ms.locfileid: "61338458"
   
 ## <a name="response-json"></a>Ответ (JSON)
 
-Name     | Описание
+Название     | Описание
 ---------|---------
 **query** |Параметр *query* из запроса.
 **interpretations** |Массив из 0 или более разных способов сопоставления пользовательского ввода вопреки грамматике.
@@ -57,7 +58,7 @@ Name     | Описание
 
 <br>
 
-#### <a name="example"></a>Пример:
+#### <a name="example"></a>Пример
 ```
 https://westus.api.cognitive.microsoft.com/academic/v1.0/interpret?query=papers by jaime&complete=1&count=2
  ```

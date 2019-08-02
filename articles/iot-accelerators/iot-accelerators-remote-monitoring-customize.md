@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: aed63e332375be4f8ed939cf162545c9f366f329
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eb3d5fea68b5b1b6e648943cb3dbaab5857e9e07
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66143507"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608008"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решения для удаленного мониторинга
 
@@ -31,15 +31,15 @@ ms.locfileid: "66143507"
 
 1. Разверните **базовый** экземпляр акселератора решений с помощью CLI **PCS**. Запишите имя развертывания и учетные данные, указанные для виртуальной машины. Дополнительные сведения см. в статье [Развертывание предварительно настроенного решения для удаленного мониторинга с помощью интерфейса командной строки](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-1. Включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении с помощью портала Azure или Azure Cloud Shell. Например:
+1. Включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении с помощью портала Azure или Azure Cloud Shell. Пример:
 
     ```azurecli-interactive
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
 
-    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить после использования](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-virtual-machines).
+    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить после использования](../security/fundamentals/network-best-practices.md#disable-rdpssh-access-to-virtual-machines).
 
-1. Используя портал Azure или Azure Cloud Shell, найдите имя и общедоступный IP-адрес виртуальной машины. Например:
+1. Используя портал Azure или Azure Cloud Shell, найдите имя и общедоступный IP-адрес виртуальной машины. Пример:
 
     ```azurecli-interactive
     az resource list --resource-group {your solution name} -o table
@@ -73,7 +73,7 @@ ms.locfileid: "66143507"
     npm start
     ```
 
-1. Предыдущая команда выполняет пользовательский Интерфейс локально http-:\//localhost:3000 / панели мониторинга. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
+1. Предыдущая команда запускает пользовательский интерфейс локально по адресу\/http:/ЛОКАЛХОСТ: 3000/Dashboard. Вы можете изменить код во время работы сайта.Он будет обновляться динамически.
 
 ## <a name="customize-the-layout"></a>Настройка макета
 
@@ -492,15 +492,15 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 * [Микрослужба конфигурации для решений Интернета вещей Azure (Java)](https://github.com/Azure/remote-monitoring-services-java/tree/master/config)
 * [Веб-интерфейс для удаленного мониторинга Интернета вещей Azure PCS](https://github.com/Azure/pcs-remote-monitoring-webui)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга. Чтобы узнать больше о настройке пользовательского интерфейса, обратитесь к следующим статьям:
 
-* [Добавление пользовательской страницы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md)
-* [Добавление пользовательской службы в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
-* [Добавление пользовательской сетки в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
-* [Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-flyout.md)
-* [Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-panel.md)
+* [Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md)
+* [Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
+* [Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
+* [Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-flyout.md)
+* [Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-panel.md)
 
 Более подробные сведения об акселераторе решения для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 

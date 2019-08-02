@@ -4,12 +4,12 @@ ms.service: machine-learning
 ms.topic: include
 ms.date: 07/26/2019
 ms.author: larryfr
-ms.openlocfilehash: d59482c04c4875cb6b17ceb405e9d3ab97a741d6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
-ms.translationtype: HT
+ms.openlocfilehash: b8913836baffdad200c198afa11475d617fe5d50
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565138"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68729365"
 ---
 Записи в `deploymentconfig.json` документе соответствуют параметрам для [аксвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 
@@ -24,7 +24,8 @@ ms.locfileid: "68565138"
 | &emsp;&emsp;`targetUtilization` | `autoscale_target_utilization` | Целевая Загрузка (в процентах от 100), которую должен поддерживать Автомасштабирование для этой веб-службы. По умолчанию, `70`. |
 | `dataCollection` | Н/Д | Содержит элементы конфигурации для сбора данных. |
 | &emsp;&emsp;`storageEnabled` | `collect_model_data` | Указывает, следует ли включить сбор данных модели для веб-службы. По умолчанию, `False`. |
-| `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности для веб-службы. По умолчанию, `True`. |
+| `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности ключа для веб-службы. И не могут иметь`True`. `authEnabled` `tokenAuthEnabled` По умолчанию, `True`. |
+| `tokenAuthEnabled` | `token_auth_enabled` | Указывает, следует ли включить проверку подлинности на маркер для веб-службы. И не могут иметь`True`. `authEnabled` `tokenAuthEnabled` По умолчанию, `False`. |
 | `containerResourceRequirements` | Н/Д | Контейнер для сущностей ЦП и памяти. |
 | &emsp;&emsp;`cpu` | `cpu_cores` | Количество ядер ЦП, выделяемых для этой веб-службы. Значения по умолчанию`0.1` |
 | &emsp;&emsp;`memoryInGB` | `memory_gb` | Объем памяти (в ГБ), выделяемой для данной веб-службы. Параметры`0.5` |

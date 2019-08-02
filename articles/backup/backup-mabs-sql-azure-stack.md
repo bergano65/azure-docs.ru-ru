@@ -1,18 +1,19 @@
 ---
 title: Резервное копирование рабочих нагрузок SQL Server в Azure Stack
 description: Использование сервера Azure Backup Server для защиты рабочей нагрузки SQL Server в Azure Stack.
-author: adigan
-manager: shivamg
+ms.reviewer: adigan
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
-ms.author: adigan
-ms.openlocfilehash: 11d03a9c5cc81b915f48bc66f5a0e5ab034662ed
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 3b116e25635873429dd164288c2764fd76c8f7a7
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465159"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688999"
 ---
 # <a name="back-up-sql-server-on-stack"></a>Резервное копирование SQL Server в Stack
 Эта статья может помочь при настройке Microsoft Azure Backup Server (MABS) для защиты баз данных SQL Server в Azure Stack.

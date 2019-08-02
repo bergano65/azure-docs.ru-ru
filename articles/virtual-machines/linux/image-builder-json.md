@@ -3,16 +3,16 @@ title: Создание шаблона Azure Image Builder (Предварите
 description: Узнайте, как создать шаблон для использования с Azure Image Builder.
 author: cynthn
 ms.author: cynthn
-ms.date: 05/10/2019
+ms.date: 07/31/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 065962614d0b85c4c50f86bef0b610c9b3577e07
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: a623aa98cd26e1636e47cb0e2831eeced17935b9
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248155"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68695403"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Azure Image Builder 
 
@@ -56,10 +56,10 @@ ms.locfileid: "68248155"
 Расположение — это регион, в котором будет создан пользовательский образ. Для предварительной версии построителя образов поддерживаются следующие регионы:
 
 - East US
-- Восток США 2
-- Западно-центральная часть США
-- Запад США
-- Западный регион США 2
+- Восточная часть США 2
+- Центрально-западная часть США
+- Западная часть США
+- Западная часть США 2
 
 
 ```json
@@ -185,6 +185,19 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 
 Значение `imageVersionId` должно быть идентификатором ResourceId версии образа. Для вывода списка версий образа используйте команду [AZ SIG Image-Version List](/cli/azure/sig/image-version#az-sig-image-version-list) .
 
+## <a name="properties-buildtimeoutinminutes"></a>Свойства: Буилдтимеаутинминутес
+По умолчанию построитель образов будет выполняться в течение 240 минут. После этого он будет исполняться и останавливаться, независимо от того, завершена ли сборка образа. При достижении времени ожидания появится сообщение об ошибке следующего вида:
+
+```text
+[ERROR] Failed while waiting for packerizer: Timeout waiting for microservice to
+[ERROR] complete: 'context deadline exceeded'
+```
+
+Если не указать значение Буилдтимеаутинминутес или установить его в 0, будет использоваться значение по умолчанию. Вы можете увеличить или уменьшить значение до максимума, равного 960mins (16hrs). Для Windows не рекомендуется устанавливать этот параметр ниже 60 минут. Если вы обнаружите, что достигается время ожидания, просмотрите [журналы](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#collecting-and-reviewing-aib-image-build-logs), чтобы проверить, ожидает ли шаг настройки действия, подобные введенным пользователем. 
+
+Если вам требуется больше времени для завершения настройки, задайте для этого параметра значение, которое вы считаете необходимым, с небольшой нагрузкой. Но не задавайте слишком высокие значения, так как может потребоваться подождать, пока не будет выводится сообщение об ошибке. 
+
+
 ## <a name="properties-customize"></a>Свойства: Настройка
 
 
@@ -194,7 +207,6 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - Можно использовать несколько настраиваемых настроек, но они должны иметь уникальное `name`значение.
 - Настраиваемые шаблоны выполняются в порядке, указанном в шаблоне.
 - В случае сбоя одного из средств настройки происходит сбой всего компонента настройки и выводится сообщение об ошибке.
-- Определите, сколько времени потребуется для сборки образа, и настройте свойство "Буилдтимеаутинминутес", чтобы позволить Image Builder достаточно времени для выполнения.
 - Настоятельно рекомендуется тщательно протестировать сценарий, прежде чем использовать его в шаблоне. Отладка сценария на собственной виртуальной машине будет проще.
 - Не помещайте конфиденциальные данные в скрипты. 
 - Расположения сценариев должны быть общедоступными, если не используется [MSI](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage).

@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: cc071d59a387c8ae4982eacbce6812526f447788
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 7ab32fb421a2c0db72652d1bbf12d312bffd5d1e
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388769"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706540"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Использование Node.js для создания модели Conversation Learner
 
@@ -27,7 +28,7 @@ Conversation Learner упрощает создание ботов. Он обес
 
 Project Conversation Learner содержит пакет SDK, добавляемый в ваш бот, и облачную службу, к которой обращается пакет SDK для машинного обучения.  В настоящее для доступа к облачной службе Project Conversation Learner требуется приглашение.  Если вы еще не приглашены, [запросите приглашение](https://aka.ms/conversation-learner-request-invite).  Если вы не получили приглашение, то вы не сможете получить доступ к API облака.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Node 8.5.0 или более поздней версии и npm 5.3.0 или более поздней версии. Установить эти компоненты можно отсюда: [https://nodejs.org](https://nodejs.org).
   
@@ -137,7 +138,7 @@ Project Conversation Learner содержит пакет SDK, добавляем
 
 В VSCode для каждой демонстрационной версии имеются конфигурации запуска, как и для пустого бота в `cl-bot-01/src/app.ts`.  Откройте папку `cl-bot-01` в VSCode.
 
-## <a name="advanced-configuration"></a>Расширенная конфигурация
+## <a name="advanced-configuration"></a>Расширенная настройка
 
 Доступен файл шаблона `.env.example`, в котором показано, какие переменные среды можно задать для настройки примеров.
 
@@ -157,7 +158,7 @@ cp .env.example .env
 
 ## <a name="contributing"></a>Участие
 
-Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения:[вопросы и ответы по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу[opencode@microsoft.com](mailto:opencode@microsoft.com).
+Этот проект соответствует [правилам поведения Microsoft Open Source](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения:[вопросы и ответы по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу[opencode@microsoft.com](mailto:opencode@microsoft.com).
 
 ## <a name="source-repositories"></a>Исходные репозитории
 
@@ -167,7 +168,7 @@ Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](ht
 - [conversationlearner-ui](https://github.com/Microsoft/ConversationLearner-UI)
 - [conversationlearner-webchat](https://github.com/Microsoft/ConversationLearner-WebChat)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Hello world](./tutorials/01-hello-world.md)

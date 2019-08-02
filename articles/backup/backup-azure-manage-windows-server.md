@@ -1,18 +1,18 @@
 ---
 title: Управление хранилищами и серверами служб восстановления Azure
 description: Управление заданиями и оповещениями в хранилище Служб восстановления Azure.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/08/2019
-ms.author: raynew
-ms.openlocfilehash: 5876ce4a511617d8465cdf008ea0ce14b3ad15d4
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 4ce6ef67c24bd623a4162329442693ed1628dae2
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466354"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639880"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Управление хранилищами Служб восстановления и их мониторинг
 

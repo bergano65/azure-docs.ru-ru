@@ -5,141 +5,75 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 05/24/2019
+ms.date: 07/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 6ddd1b160110e7a751f54f89b387a62d94e9308e
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 748abc08c432518be4ce8698713b1df95077c3c1
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614481"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722464"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
-На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Можно получить доступ к узлам AKS с помощью SSH, в том числе на узлах Windows Server (в настоящее время в предварительной версии в AKS). Вы также можете [подключение к узлам Windows Server, с помощью протокола удаленного рабочего стола (RDP) подключений][aks-windows-rdp]. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
+На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Доступ к узлам AKS можно получить с помощью SSH, включая узлы Windows Server (в настоящее время это предварительная версия в AKS). Вы также можете [подключаться к узлам Windows Server с помощью подключений по протоколу удаленного рабочего стола (RDP)][aks-windows-rdp]. В целях безопасности узлы AKS не доступны в Интернете. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес.
 
 В этой статье показано, как создать SSH-подключение к узлу AKS с использованием его частного IP-адреса.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
-Вам также понадобится Azure CLI версии 2.0.64 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
+По умолчанию ключи SSH получаются или создаются, а затем добавляются в узлы при создании кластера AKS. В этой статье показано, как указать разные ключи SSH, отличные от ключей SSH, используемых при создании кластера AKS. В этой статье также показано, как определить частный IP-адрес узла и подключиться к нему с помощью SSH. Если не нужно указывать другой ключ SSH, вы можете пропустить шаг добавления открытого ключа SSH к узлу.
 
-## <a name="add-your-public-ssh-key"></a>Добавление открытого ключа SSH
+В этой статье также предполагается, что у вас есть ключ SSH. Ключ SSH можно создать с помощью [macOS или Linux][ssh-nix] или [Windows][ssh-windows]. Если для создания пары ключей используется выводимое значение Gen, сохраните пару ключей в формате OpenSSH, а не в формате закрытого ключа по умолчанию (PPK-файл).
 
-По умолчанию ключи SSH получен, или создан, а затем добавляются на узлы, при создании кластера AKS. Если вам нужно указать различные ключи SSH, которые используются при создании кластера AKS, добавьте открытый ключ SSH к узлам Linux AKS. При необходимости можно создать в SSH ключа с помощью [macOS или Linux][ssh-nix] or [Windows][ssh-windows]. При использовании общего PuTTY для создания пары ключей, сохранить пару ключей в OpenSSH формате вместо кодировки по умолчанию формате закрытого ключа PuTTy (ppk-файл).
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
-> [!NOTE]
-> Can ключи SSH в настоящее время добавляться только к узлам Linux с помощью Azure CLI. Если вы используете узлы Windows Server, использовать ключи SSH, указанные при создании кластера AKS и перейдите к шагу на [как получение адреса узла AKS](#get-the-aks-node-address). Или, [подключение к узлам Windows Server, с помощью протокола удаленного рабочего стола (RDP) подключений][aks-windows-rdp].
+## <a name="configure-virtual-machine-scale-set-based-aks-clusters-for-ssh-access"></a>Настройка кластеров AKS на основе масштабируемых наборов виртуальных машин для доступа по протоколу SSH
 
-Действия, чтобы получить частный IP-адрес из узлов AKS отличается на основе типа кластера AKS, при запуске:
+Чтобы настроить на основе масштабируемого набора виртуальных машин для доступа по протоколу SSH, найдите имя масштабируемого набора виртуальных машин кластера и добавьте открытый ключ SSH в этот масштабируемый набор.
 
-* Для большинства кластеров AKS, выполните действия, чтобы [получить IP-адрес для регулярного кластерах AKS](#add-ssh-keys-to-regular-aks-clusters).
-* Если вы используете любой функции предварительной версии в AKS, использовать масштабируемые наборы виртуальных машин, например несколько пулов узлов или поддержка контейнеров Windows Server, [выполните действия для виртуальной машины масштабируемого набора AKS кластерах](#add-ssh-keys-to-virtual-machine-scale-set-based-aks-clusters).
-
-### <a name="add-ssh-keys-to-regular-aks-clusters"></a>Добавление ключей SSH для регулярного кластерах AKS
-
-Чтобы добавить ключ SSH к узлу Linux AKS, выполните следующие действия.
-
-1. Получить имя группы ресурсов для ресурсов кластера AKS с помощью [az aks show][az-aks-show]. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*. Замените *myResourceGroup* с именем своей группы ресурсов, где вы кластера AKS находится:
-
-    ```azurecli-interactive
-    CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
-    ```
-
-1. Список виртуальных машин в AKS кластера группу ресурсов с помощью [список виртуальных машин az][az-vm-list] команды. Эти виртуальные машины и являются узлами AKS:
-
-    ```azurecli-interactive
-    az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
-    ```
-
-    В следующем примере выходных данных показаны узлы AKS:
-
-    ```
-    Name                      ResourceGroup                                  Location
-    ------------------------  ---------------------------------------------  ----------
-    aks-nodepool1-79590246-0  MC_myResourceGroupAKS_myAKSClusterRBAC_eastus  eastus
-    ```
-
-1. Чтобы добавить ключи SSH к узлу, используйте [aaz vm user update][az-vm-user-update] команды. Укажите имя группы ресурсов, а затем один из узлов AKS, полученных на предыдущем шаге. По умолчанию имя пользователя для узлов AKS — *azureuser*. Укажите расположение собственного открытого ключа SSH, например *~/.ssh/id_rsa.pub*, или вставьте содержимое открытого ключа SSH:
-
-    ```azurecli-interactive
-    az vm user update \
-      --resource-group $CLUSTER_RESOURCE_GROUP \
-      --name aks-nodepool1-79590246-0 \
-      --username azureuser \
-      --ssh-key-value ~/.ssh/id_rsa.pub
-    ```
-
-### <a name="add-ssh-keys-to-virtual-machine-scale-set-based-aks-clusters"></a>Добавление ключей SSH в кластерах AKS с использованием набора масштабирования виртуальной машины
-
-Чтобы добавить ключ SSH на узел Linux AKS, который является частью набора масштабирования виртуальных машин, выполните следующие действия.
-
-1. Получить имя группы ресурсов для ресурсов кластера AKS с помощью [az aks show][az-aks-show]. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*. Замените *myResourceGroup* с именем своей группы ресурсов, где вы кластера AKS находится:
-
-    ```azurecli-interactive
-    CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
-    ```
-
-1. Затем получите масштабируемый набор виртуальных машин для кластера AKS с помощью [az vmss list][az-vmss-list] команды. Имя виртуальной машины масштабируемого набора назначается переменной с именем *SCALE_SET_NAME*:
-
-    ```azurecli-interactive
-    SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
-    ```
-
-1. Чтобы добавить ключи SSH к узлам в масштабируемом наборе виртуальных машин, используйте [набора расширения az vmss][az-vmss-extension-set] команды. Группа ресурсов кластера и имя масштабируемого набора виртуальных машин предоставляются из предыдущей команды. По умолчанию имя пользователя для узлов AKS — *azureuser*. При необходимости обновите расположение собственные SSH открытого ключа, такие как *~/.ssh/id_rsa.pub*:
-
-    ```azurecli-interactive
-    az vmss extension set  \
-        --resource-group $CLUSTER_RESOURCE_GROUP \
-        --vmss-name $SCALE_SET_NAME \
-        --name VMAccessForLinux \
-        --publisher Microsoft.OSTCExtensions \
-        --version 1.4 \
-        --protected-settings "{\"username\":\"azureuser\", \"ssh_key\":\"$(cat ~/.ssh/id_rsa.pub)\"}"
-    ```
-
-1. Примените ключ SSH к узлам, с помощью [az vmss update-instances][az-vmss-update-instances] команды:
-
-    ```azurecli-interactive
-    az vmss update-instances --instance-ids '*' \
-        --resource-group $CLUSTER_RESOURCE_GROUP \
-        --name $SCALE_SET_NAME
-    ```
-
-## <a name="get-the-aks-node-address"></a>Получение адреса узла AKS
-
-Узлы AKS не являются общедоступными через Интернет. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес. На следующем шаге создается вспомогательный pod в кластере AKS, которая позволяет SSH это частный IP-адрес узла. Действия, чтобы получить частный IP-адрес из узлов AKS отличается на основе типа кластера AKS, при запуске:
-
-* Для большинства кластеров AKS, выполните действия, чтобы [получить IP-адрес для регулярного кластерах AKS](#ssh-to-regular-aks-clusters).
-* Если вы используете любой функции предварительной версии в AKS, использовать масштабируемые наборы виртуальных машин, например несколько пулов узлов или поддержка контейнеров Windows Server, [выполните действия для виртуальной машины масштабируемого набора AKS кластерах](#ssh-to-virtual-machine-scale-set-based-aks-clusters).
-
-### <a name="ssh-to-regular-aks-clusters"></a>SSH для регулярного кластерах AKS
-
-Просмотреть частный IP-адрес узла кластера AKS с помощью [az vm list-ip-addresses][az-vm-list-ip-addresses] command. Provide your own AKS cluster resource group name obtained in a previous [az-aks-show][az-aks-show] шаг:
+Используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя группы ресурсов кластера AKS, а затем команду [AZ vmss List][az-vmss-list] , чтобы получить имя масштабируемого набора.
 
 ```azurecli-interactive
-az vm list-ip-addresses --resource-group $CLUSTER_RESOURCE_GROUP -o table
+CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
+SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
 ```
 
-В следующем примере выходных данных показаны частные IP-адреса узлов AKS:
+В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *MyResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени масштабируемого набора и его присвоения *SCALE_SET_NAME*.  
 
+> [!NOTE]
+> В настоящее время ключи SSH можно добавлять только на узлы Linux с помощью Azure CLI. Если вы хотите подключиться к узлу Windows Server с помощью SSH, используйте ключи SSH, предоставленные при создании кластера AKS, и пропустите следующий набор команд для добавления открытого ключа SSH. Вам по-прежнему потребуется IP-адрес узла, для которого необходимо устранить неполадки, который показан в последней команде этого раздела. Кроме того, вы можете [подключиться к узлам Windows Server, используя подключения по протоколу RDP][aks-windows-rdp] , а не использовать SSH.
+
+Чтобы добавить ключи SSH к узлам в масштабируемом наборе виртуальных машин, используйте команды [AZ vmss Extension Set][az-vmss-extension-set] и [AZ vmss Update-Instances][az-vmss-update-instances] .
+
+```azurecli-interactive
+az vmss extension set  \
+    --resource-group $CLUSTER_RESOURCE_GROUP \
+    --vmss-name $SCALE_SET_NAME \
+    --name VMAccessForLinux \
+    --publisher Microsoft.OSTCExtensions \
+    --version 1.4 \
+    --protected-settings "{\"username\":\"azureuser\", \"ssh_key\":\"$(cat ~/.ssh/id_rsa.pub)\"}"
+
+az vmss update-instances --instance-ids '*' \
+    --resource-group $CLUSTER_RESOURCE_GROUP \
+    --name $SCALE_SET_NAME
 ```
-VirtualMachine            PrivateIPAddresses
-------------------------  --------------------
-aks-nodepool1-79590246-0  10.240.0.4
-```
 
-### <a name="ssh-to-virtual-machine-scale-set-based-aks-clusters"></a>SSH для виртуальной машины масштабируемого набора AKS кластерах
+В приведенном выше примере используются переменные *CLUSTER_RESOURCE_GROUP* и *SCALE_SET_NAME* из предыдущих команд. В приведенном выше примере в качестве расположения для открытого ключа SSH также используется значение *~/.ssh/id_rsa.pub* .
 
-Внутренний IP-адрес с помощью узлов [kubectl получить команду][kubectl-get]:
+> [!NOTE]
+> По умолчанию имя пользователя для узлов AKS — *azureuser*.
+
+После добавления открытого ключа SSH в масштабируемый набор можно выполнить подключение SSH к виртуальной машине узла в этом масштабируемом наборе, используя его IP-адрес. Просмотрите частные IP-адреса узлов кластера AKS с помощью [команды kubectl Get][kubectl-get].
 
 ```console
 kubectl get nodes -o wide
 ```
 
-В следующем примере выходных данных показаны внутренние IP-адреса всех узлов в кластере, включая узел Windows Server.
+В выходных данных примера ниже показаны внутренние IP-адреса всех узлов в кластере, включая узел Windows Server.
 
 ```console
 $ kubectl get nodes -o wide
@@ -149,7 +83,57 @@ aks-nodepool1-42485177-vmss000000   Ready    agent   18h   v1.12.7   10.240.0.4 
 aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67   <none>        Windows Server Datacenter   10.0.17763.437
 ```
 
-Запишите внутренний IP-адрес узла для устранения неполадок. Этот адрес используется на более позднем этапе.
+Запишите внутренний IP-адрес узла, который вы хотите устранить.
+
+Чтобы получить доступ к узлу по протоколу SSH, выполните действия, описанные в разделе [Создание SSH-подключения](#create-the-ssh-connection).
+
+## <a name="configure-virtual-machine-availability-set-based-aks-clusters-for-ssh-access"></a>Настройка кластеров AKS на основе наборов доступности виртуальных машин для доступа по протоколу SSH
+
+Чтобы настроить кластер AKS на основе набора доступности виртуальных машин для доступа по протоколу SSH, найдите имя узла Linux кластера и добавьте открытый ключ SSH в этот узел.
+
+Используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя группы ресурсов кластера AKS, а затем команду [AZ VM List][az-vm-list] , чтобы вывести имя виртуальной машины узла Linux в кластере.
+
+```azurecli-interactive
+CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
+az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
+```
+
+В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *MyResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени виртуальной машины. В примере выходных данных показано имя виртуальной машины: 
+
+```
+Name                      ResourceGroup                                  Location
+------------------------  ---------------------------------------------  ----------
+aks-nodepool1-79590246-0  MC_myResourceGroupAKS_myAKSClusterRBAC_eastus  eastus
+```
+
+Чтобы добавить ключи SSH на узел, используйте команду [AZ VM User Update][az-vm-user-update] .
+
+```azurecli-interactive
+az vm user update \
+    --resource-group $CLUSTER_RESOURCE_GROUP \
+    --name aks-nodepool1-79590246-0 \
+    --username azureuser \
+    --ssh-key-value ~/.ssh/id_rsa.pub
+```
+
+В приведенном выше примере используется переменная *CLUSTER_RESOURCE_GROUP* и имя виртуальной машины узла из предыдущих команд. В приведенном выше примере в качестве расположения для открытого ключа SSH также используется значение *~/.ssh/id_rsa.pub* . Вместо указания пути можно также использовать содержимое открытого ключа SSH.
+
+> [!NOTE]
+> По умолчанию имя пользователя для узлов AKS — *azureuser*.
+
+После добавления открытого ключа SSH к виртуальной машине узла можно выполнить подключение SSH к виртуальной машине по ее IP-адресу. Просмотрите частный IP-адрес узла кластера AKS с помощью команды [AZ VM List-IP-Addresses][az-vm-list-ip-addresses] .
+
+```azurecli-interactive
+az vm list-ip-addresses --resource-group $CLUSTER_RESOURCE_GROUP -o table
+```
+
+В приведенном выше примере используется переменная *CLUSTER_RESOURCE_GROUP* , заданная в предыдущих командах. В следующем примере выходных данных показаны частные IP-адреса узлов AKS:
+
+```
+VirtualMachine            PrivateIPAddresses
+------------------------  --------------------
+aks-nodepool1-79590246-0  10.240.0.4
+```
 
 ## <a name="create-the-ssh-connection"></a>Создание SSH-подключения
 
@@ -162,17 +146,17 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
     ```
 
     > [!TIP]
-    > При использовании узлов Windows Server (в настоящее время в предварительной версии в AKS), добавьте узел селектора команду, чтобы запланировать Debian контейнера на узле Linux следующим образом:
+    > Если вы используете узлы Windows Server (в настоящее время в предварительной версии в AKS), добавьте селектор узла в команду, чтобы запланировать контейнер Debian на узле Linux:
     >
     > `kubectl run -it --rm aks-ssh --image=debian --overrides='{"apiVersion":"apps/v1","spec":{"template":{"spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}}}'`
 
-1. Базовый образ Debian не включает компоненты SSH. После подключения сеанса терминала к контейнеру установите SSH-клиент, используя `apt-get` следующим образом:
+1. После подключения терминального сеанса к контейнеру установите SSH-клиент с помощью `apt-get`:
 
     ```console
     apt-get update && apt-get install openssh-client -y
     ```
 
-1. В новом окне терминала, не подключен к контейнеру, список модулей POD в кластере AKS с помощью [kubectl get pods][kubectl-get] команды. Модуль pod, созданный на предыдущем шаге, начинается с имени *aks-ssh*, как показано в следующем примере:
+1. Откройте новое окно терминала, не подключенное к контейнеру, и выведите список модулей Pod в кластере AKS с помощью команды [kubectl Get][kubectl-get] Pod. Модуль pod, созданный на предыдущем шаге, начинается с имени *aks-ssh*, как показано в следующем примере:
 
     ```
     $ kubectl get pods
@@ -181,7 +165,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
     aks-ssh-554b746bcf-kbwvf   1/1       Running   0          1m
     ```
 
-1. На первом шаге этой статьи вы добавили открытый ключ SSH в узел AKS. Теперь скопируйте закрытый ключ SSH в модуль pod. Этот закрытый ключ используется для установки подключения SSH к узлам AKS.
+1. На предыдущем шаге вы добавили открытый ключ SSH к узлу AKS, который вы хотите устранить. Теперь скопируйте закрытый ключ SSH в модуль поддержки. Этот закрытый ключ используется для создания SSH в узле AKS.
 
     Предоставьте имя своего модуля pod *aks-ssh*, полученное на предыдущем шаге. При необходимости измените *~/.ssh/id_rsa* на расположение закрытого ключа SSH:
 
@@ -189,13 +173,13 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
     kubectl cp ~/.ssh/id_rsa aks-ssh-554b746bcf-kbwvf:/id_rsa
     ```
 
-1. Вернитесь в сеанс терминала с контейнером, обновите разрешения для скопированного закрытого ключа SSH `id_rsa`, чтобы он был доступен только для чтения:
+1. Вернитесь в сеанс терминала к контейнеру, обновите разрешения для скопированного `id_rsa` закрытого ключа SSH так, чтобы он был доступен только для чтения.
 
     ```console
     chmod 0600 id_rsa
     ```
 
-1. Теперь создайте SSH-подключение к вашему узлу AKS. И снова по умолчанию имя пользователя для узлов AKS — *azureuser*. Примите приглашение продолжить подключение, так как ключ SSH является изначально доверенным. Затем предоставляется строка bash вашего узла AKS:
+1. Создайте SSH-подключение к узлу AKS. И снова по умолчанию имя пользователя для узлов AKS — *azureuser*. Примите приглашение продолжить подключение, так как ключ SSH является изначально доверенным. Затем предоставляется строка bash вашего узла AKS:
 
     ```console
     $ ssh -i id_rsa azureuser@10.240.0.4
@@ -224,7 +208,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Если вам нужны дополнительные данные об устранении неполадок, вы можете [просмотра журналов kubelet][view-kubelet-logs] or [view the Kubernetes master node logs][view-master-logs].
+Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы kubelet][view-kubelet-logs] или [Просмотреть журналы главного узла Kubernetes][view-master-logs].
 
 <!-- EXTERNAL LINKS -->
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get

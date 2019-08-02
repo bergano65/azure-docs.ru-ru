@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2019
 ms.author: aschhab
-ms.openlocfilehash: 79bc5e640498788ef805d07a26dd29e943117b58
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: afa2e6e46579d9ce2906e2686cf40adf4b65ab2b
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476977"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516593"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -108,7 +108,7 @@ while(true)
 
 ```
 <queue path>/$deadletterqueue
-<topic path>/Subscription/<subscription path>/$deadletterqueue
+<topic path>/Subscriptions/<subscription path>/$deadletterqueue
 ```
 
 Если вы используете пакет SDK для .NET, можно получить путь к очереди недоставленных сообщений с помощью метода SubscriptionClient. FormatDeadLetterPath (). Этот метод принимает имя раздела, имя подписки и суффиксы с **/$DeadLetterQueue**.

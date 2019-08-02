@@ -10,12 +10,13 @@ ms.subservice: url-preview
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: rosh
-ms.openlocfilehash: 43254db734a48f3e7aaa5a26a7fbf3981c9e9d87
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3ef5ebd4ec88deac8c49430f36956d3711c8c535
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592867"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706943"
 ---
 # <a name="project-url-preview-endpoint"></a>Конечная точка службы предварительного просмотра URL-адресов в проектах
 
@@ -31,10 +32,10 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=https://swiftk
 ```
 
 ### <a name="query-parameters"></a>Параметры запроса
-|ИМЯ|Значение|type|Обязательно для заполнения|  
+|Название|Значение|Тип|Обязательное значение|  
 |----------|-----------|----------|--------------|  
-|q|URL-адрес для предварительного просмотра|String |Да|
-|safeSearch|Недопустимое содержимое для взрослых или пиратское содержимое будет заблокировано с кодом ошибки 400, при этом флаг *isFamilyFriendly* не возвращается. <p>Ниже описано поведение, применяемое к разрешенному содержимому для взрослых. Возвращается код состояния 200, а флаг *isFamilyFriendly* имеет значение false.<ul><li>safeSearch=strict: не возвращаются заголовок, описание, URL-адрес и изображение.</li><li>safeSearch=moderate: возвращаются заголовок, URL-адрес и описание, но не изображение.</li><li>safeSearch=off: возвращаются все объекты и элементы ответа — заголовок, URL-адрес, описание и изображение.</li></ul> |String|Необязательно. </br> По умолчанию используется значение safeSearch=strict.| 
+|q|URL-адрес для предварительного просмотра|Строковое |Да|
+|safeSearch|Недопустимое содержимое для взрослых или пиратское содержимое будет заблокировано с кодом ошибки 400, при этом флаг *isFamilyFriendly* не возвращается. <p>Ниже описано поведение, применяемое к разрешенному содержимому для взрослых. Возвращается код состояния 200, а флаг *isFamilyFriendly* имеет значение false.<ul><li>safeSearch=strict: не возвращаются заголовок, описание, URL-адрес и изображение.</li><li>safeSearch=moderate: возвращаются заголовок, URL-адрес и описание, но не изображение.</li><li>safeSearch=off: возвращаются все объекты и элементы ответа — заголовок, URL-адрес, описание и изображение.</li></ul> |Строковое|Необязательно. </br> По умолчанию используется значение safeSearch=strict.| 
 
 ## <a name="response-object"></a>Объект ответа
 
@@ -59,7 +60,7 @@ X-MSEdge-Ref: Ref A: 15AFE52A97AA422F960433A94803F6CE Ref B: PAOEDGE0418 Ref C: 
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Краткое руководство для C#](csharp.md)
 - [Краткое руководство для Java](java-quickstart.md)
 - [Краткое руководство для JavaScript](javascript.md)

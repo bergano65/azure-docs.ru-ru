@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
 ms.openlocfilehash: 9c4a57111566248d3537cab0d9d85c0c3be874a1
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68335941"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-configuration-details"></a>Взаимодействие в функциях при подключении к серверной части в Azure. Сведения о конфигурации теста
@@ -188,7 +188,7 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Через центральную виртуальную сеть можно подключить друг к другу виртуальные сети филиалов из разных регионов и локальные сети. Обычно в Azure решением для этой конфигурации является VPN типа "сеть — сеть". Альтернативой может быть использование в центральной сети виртуального сетевого модуля (NVA) для маршрутизации.
 
-Дополнительные сведения см. в статье [что такое VPN-шлюз?][VPN] and [Deploy a highly available NVA][Deploy-NVA].
+Дополнительные сведения см. в статье [что такое VPN-шлюз?][VPN] и [развертывание NVA высокой доступности][Deploy-NVA].
 
 ## <a name="next-steps"></a>Следующие шаги
 

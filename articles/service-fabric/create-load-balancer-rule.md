@@ -3,7 +3,7 @@ title: Создание правила Azure Load Balancer для кластер
 description: Настройте Azure Load Balancer, чтобы открыть порты для кластера Azure Service Fabric.
 services: service-fabric
 documentationcenter: na
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
-ms.author: aljo
-ms.openlocfilehash: d95d2802398a61b948ff6c59fb3eab0e1ddddbc5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 440d5e37e03e58a39275e715ebce4fa07961cc84
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66147465"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598577"
 ---
 # <a name="open-ports-for-a-service-fabric-cluster"></a>Открытие портов для кластера Service Fabric
 
@@ -45,7 +45,7 @@ ms.locfileid: "66147465"
 - внешний порт;
 - внутренний порт.
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 Для создания правила подсистемы балансировки нагрузки требуется всего одна команда **Azure CLI**. Чтобы создать правило, необходимо знать имя подсистемы балансировки нагрузки и имя группы ресурсов.
 
 >[!NOTE]
@@ -109,6 +109,6 @@ $lb | Set-AzLoadBalancer
 >[!NOTE]
 >Дополнительные сведения о создании подсистемы балансировки нагрузки с помощью PowerShell см. в разделе [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](../load-balancer/load-balancer-get-started-internet-arm-ps.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [сети в Service Fabric](service-fabric-patterns-networking.md).rvice-fabric шаблоны networking.md).
+Дополнительные сведения о работе [в сети в Service Fabric](service-fabric-patterns-networking.md). rvice-Fabric-Patterns-Networking.md).

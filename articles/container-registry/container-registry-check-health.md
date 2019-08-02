@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 07/02/2019
 ms.author: danlep
 ms.openlocfilehash: 3511655d220ee85ce6b5744612e5d6fddafbe877
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68309731"
 ---
 # <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
 
 При использовании реестра контейнеров Azure иногда могут возникать проблемы. Например, вы не можете извлечь образ контейнера из-за проблемы с DOCKER в локальной среде. Или сетевая ошибка может препятствовать подключению к реестру. 
 
-В качестве первого шага диагностики выполните команду [AZ контролем учетных записей проверки работоспособности][az-acr-check-health] command to get information about the health of the environment and optionally access to a target registry. This command is available in Azure CLI version 2.0.67 or later. If you need to install or upgrade, see [Install Azure CLI][azure-cli].
+В качестве первого шага диагностики выполните команду [AZ контроля доступа проверки][az-acr-check-health] на работоспособность, чтобы получить сведения о работоспособности среды и при необходимости доступ к целевому реестру. Эта команда доступна в Azure CLI версии 2.0.67 или более поздней. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
 ## <a name="run-az-acr-check-health"></a>Выполните команду AZ контроля доступа (проверка работоспособности)
 

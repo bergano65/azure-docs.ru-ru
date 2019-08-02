@@ -3,34 +3,23 @@ title: Ограничение веб-трафика с помощью бранд
 description: Узнайте, как ограничить веб-трафик с помощью брандмауэра веб-приложения и Azure PowerShell.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-tags: azure-resource-manager
 ms.service: application-gateway
-ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 03/25/2019
+ms.topic: article
+ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: e962d76bc82edabf750af52c50ec45ed9ed76e17
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
-ms.translationtype: HT
+ms.openlocfilehash: 219c2a36d1a241db8361ae1f8f2f74b9a68780ca
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596836"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688259"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Включение брандмауэра веб-приложения с помощью Azure PowerShell
 
-> [!div class="op_single_selector"]
->
-> - [портал Azure](application-gateway-web-application-firewall-portal.md)
-> - [PowerShell](tutorial-restrict-web-traffic-powershell.md)
-> - [Интерфейс командной строки Azure](tutorial-restrict-web-traffic-cli.md)
->
-> 
-
 Вы можете ограничить трафик в [шлюзе приложений](overview.md) с помощью [брандмауэра веб-приложения](waf-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -40,7 +29,7 @@ ms.locfileid: "68596836"
 
 ![Пример брандмауэра веб-приложений](./media/tutorial-restrict-web-traffic-powershell/scenario-waf.png)
 
-При необходимости инструкции из этого руководства можно выполнить с помощью [Azure CLI](tutorial-restrict-web-traffic-cli.md).
+При желании эту статью можно выполнить с помощью [портал Azure](application-gateway-web-application-firewall-portal.md) или [Azure CLI](tutorial-restrict-web-traffic-cli.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -48,9 +37,9 @@ ms.locfileid: "68596836"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, то для работы с этим руководством вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Login-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).  
 
@@ -82,12 +71,13 @@ $pip = New-AzPublicIpAddress `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myAGPublicIPAddress `
-  -AllocationMethod Dynamic
+  -AllocationMethod Static `
+  -Sku Standard
 ```
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
-В этом разделе описано, как создать ресурсы с поддержкой шлюза приложений, а также сам шлюз приложений и WAF. Вы создадите следующие ресурсы:
+В этом разделе вы создадите ресурсы, поддерживающие шлюз приложений, а затем создадите его и WAF. Вы создадите следующие ресурсы:
 
 - *IP-конфигурации и интерфейсный порт* — используются для связывания созданной ранее подсети с шлюзом приложений и назначения порта для доступа к нему.
 - *Пул по умолчанию* — все шлюзы приложения должны иметь по крайней мере один внутренний пул серверов.
@@ -160,8 +150,8 @@ $frontendRule = New-AzApplicationGatewayRequestRoutingRule `
 
 ```azurepowershell-interactive
 $sku = New-AzApplicationGatewaySku `
-  -Name WAF_Medium `
-  -Tier WAF `
+  -Name WAF_v2 `
+  -Tier WAF_v2 `
   -Capacity 2
 
 $wafConfig = New-AzApplicationGatewayWebApplicationFirewallConfiguration `
@@ -256,9 +246,9 @@ Update-AzVmss `
   -VirtualMachineScaleSet $vmss
 ```
 
-## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики
+## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики.
 
-В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий.
+В этой статье шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий.
 
 ### <a name="create-the-storage-account"></a>Создание учетной записи хранения
 
@@ -312,15 +302,6 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений с включенным WAF.
-> * создавать масштабируемый набор виртуальных машин;
-> * Создание учетной записи хранения и настройка диагностики.
-
-> [!div class="nextstepaction"]
-> [Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-powershell.md)
+[Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-powershell.md)

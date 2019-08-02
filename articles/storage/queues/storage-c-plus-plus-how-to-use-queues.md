@@ -1,21 +1,19 @@
 ---
-title: Как использовать хранилище очередей (C++)-службы хранилища Azure
-description: Сведения об использовании службы хранилища очередей в Azure. Примеры написаны на C++.
-services: storage
+title: Использование хранилища очередей (C++) в службе хранилища Azure
+description: Узнайте, как использовать службу хранилища очередей в Azure. Примеры написаны на C++.
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: cpp
-ms.topic: article
-ms.date: 05/11/2017
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 05/11/2017
+ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: 440033233bbd60421cc3245a04544cd04caec6f4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: e268e30e8f8c512dd6efb5a50da45f173e526b62
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153122"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721639"
 ---
 # <a name="how-to-use-queue-storage-from-c"></a>Использование хранилища очередей из C++
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -83,7 +81,7 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 ```
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство: Создание очереди
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создать очередь
 Объект **cloud_queue_client** позволяет получать ссылки на очереди. Следующий код создает объект **cloud_queue_client**.
 
 ```cpp
@@ -104,7 +102,7 @@ azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sampl
  queue.create_if_not_exists();  
 ```
 
-## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство: Вставка сообщения в очередь
+## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
 Чтобы вставить сообщение в существующую очередь, сначала создайте новый объект **cloud_queue_message**. Затем вызовите метод **add_message**. Объект **cloud_queue_message** может быть создан из строки или массива **байтов**. Ниже приведен код, который создает очередь (если она отсутствует) и вставляет сообщение "Hello World".
 
 ```cpp
@@ -125,7 +123,7 @@ azure::storage::cloud_queue_message message1(U("Hello, World"));
 queue.add_message(message1);  
 ```
 
-## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство: Просмотр следующего сообщения
+## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
 Вы можете просмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод **peek_message**.
 
 ```cpp
@@ -145,7 +143,7 @@ azure::storage::cloud_queue_message peeked_message = queue.peek_message();
 std::wcout << U("Peeked message content: ") << peeked_message.content_as_string() << std::endl;
 ```
 
-## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство: Изменение содержимого сообщения в очереди
+## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство. Изменение содержимого сообщения в очереди
 Вы можете изменить содержимое сообщения непосредственно в очереди. Если сообщение представляет собой рабочую задачу, можно использовать эту функцию для обновления состояния рабочей задачи. Следующий код добавляет новое содержимое в очередь сообщений и продлевает время ожидания видимости еще на 60 секунд. Это сохраняет состояние работы, связанной с данным сообщением, и позволяет клиенту продолжить работу с сообщением на протяжении еще одной минуты. Этот метод можно использовать для отслеживания многошаговых рабочих процессов по сообщениям в очереди без необходимости начинать с самого начала в случае сбоя шага обработки в связи с ошибкой аппаратного или программного обеспечения. Обычно также сохраняется счетчик повторов; если количество повторов сообщения превысит n раз, его нужно удалить. Это обеспечивает защиту от сообщений, которые инициируют ошибку приложения при каждой попытке обработки.
 
 ```cpp
@@ -171,7 +169,7 @@ queue.update_message(changed_message, std::chrono::seconds(60), true);
 std::wcout << U("Changed message content: ") << changed_message.content_as_string() << std::endl;  
 ```
 
-## <a name="how-to-de-queue-the-next-message"></a>Практическое руководство: Удаление следующего сообщения из очереди
+## <a name="how-to-de-queue-the-next-message"></a>Практическое руководство. Удаление следующего сообщения из очереди
 Код удаляет сообщение из очереди в два этапа. При вызове **get_message** вы получаете следующее сообщение в очереди. Сообщение, возвращаемое методом **get_message**, становится невидимым для другого кода, считывающего сообщения из этой очереди. Чтобы завершить удаление сообщения из очереди, необходимо также вызвать метод **delete_message**. Этот двухэтапный процесс удаления сообщения позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку. Код вызывает метод **delete_message** сразу после обработки сообщения.
 
 ```cpp
@@ -192,7 +190,7 @@ std::wcout << U("Dequeued message: ") << dequeued_message.content_as_string() <<
 queue.delete_message(dequeued_message);
 ```
 
-## <a name="how-to-leverage-additional-options-for-de-queuing-messages"></a>Практическое руководство: Дополнительные параметры для удаления сообщений из очереди
+## <a name="how-to-leverage-additional-options-for-de-queuing-messages"></a>Практическое руководство. Дополнительные параметры для удаления сообщений из очереди
 Способ извлечения сообщения из очереди можно настроить двумя способами. Во-первых, можно получить пакет сообщений (до 32 сообщений). Во-вторых, можно задать более длительное или короткое время ожидания видимости, чтобы предоставить коду больше или меньше времени на полную обработку каждого сообщения. В следующем примере кода метод **get_messages** используется для получения 20 сообщений за один вызов. Затем он обрабатывает каждое сообщение с помощью цикла **for** . Он также задает время ожидания невидимости 5 минут для каждого сообщения. Обратите внимание, что пятиминутный период начинается для всех сообщений одновременно, поэтому по прошествии 5 минут с момента вызова **get_messages** все сообщения, которые не были удалены, снова становятся видимыми.
 
 ```cpp
@@ -220,7 +218,7 @@ for (auto it = messages.cbegin(); it != messages.cend(); ++it)
 }
 ```
 
-## <a name="how-to-get-the-queue-length"></a>Практическое руководство: Получение длины очереди
+## <a name="how-to-get-the-queue-length"></a>Практическое руководство. Получение длины очереди
 Вы можете узнать приблизительное количество сообщений в очереди. Метод **download_attributes** отправляет в службу очередей запрос на извлечение атрибутов очереди, включая количество сообщений. Метод **Approximate_message_count** возвращает приблизительное количество сообщений в очереди.
 
 ```cpp
@@ -243,7 +241,7 @@ int cachedMessageCount = queue.approximate_message_count();
 std::wcout << U("Number of messages in queue: ") << cachedMessageCount << std::endl;  
 ```
 
-## <a name="how-to-delete-a-queue"></a>Практическое руководство: Удаление очереди
+## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
 Для удаления очереди и всех сообщений в ней вызовите метод **delete_queue_if_exists** для объекта очереди.
 
 ```cpp
@@ -260,7 +258,7 @@ azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sampl
 queue.delete_queue_if_exists();  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы ознакомились с основными сведениями о хранилище очередей, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.
 
 * [Использование хранилища BLOB-объектов из C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)

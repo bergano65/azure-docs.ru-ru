@@ -10,12 +10,12 @@ ms.date: 06/02/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: ea7e4757aac0fccf60a44c70e9de6a63c1ec9498
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3338bed8cd8067d58eb2600854de6c0d8e34d1a3
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147006"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68668461"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -27,10 +27,12 @@ ms.locfileid: "65147006"
 
 [!INCLUDE [storage-cli-versions](../../../includes/storage-cli-versions.md)]
 
-## <a name="prerequisites"></a>Технические условия
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
+
+## <a name="prerequisites"></a>Предварительные требования
 В этом руководстве предполагается, что вам знакомы основные понятия службы хранилища Azure. Также предполагается, что вы можете выполнить требования для создания учетной записи и службы хранилища Azure. Эти требования перечислены ниже.
 
-### <a name="accounts"></a>Учетные записи
+### <a name="accounts"></a>Учет. записи
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 * **Учетная запись хранения**. См. статью [Создание учетной записи хранения](storage-quickstart-create-account.md) в документации [по учетным записям хранения Azure](storage-create-storage-account.md).
 
@@ -173,7 +175,7 @@ Done
 
 ## <a name="manage-storage-accounts"></a>Управление учетными записями хранения
 
-### <a name="create-a-new-storage-account"></a>Создание новой учетной записи хранения
+### <a name="create-a-new-storage-account"></a>Создание учетной записи хранения
 Для использования службы хранилища Azure вам потребуется учетная запись хранения. После настройки компьютера для подключения к подписке можно создать новую учетную запись хранения Azure.
 
 ```azurecli
@@ -234,7 +236,7 @@ export AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
 ## <a name="create-and-manage-blobs"></a>Создание больших двоичных объектов (BLOB-объектов) и управление ими
 Хранилище BLOB-объектов Azure — это служба хранения большого количества неструктурированных данных, таких как текстовые или бинарные файлы, к которым можно получить доступ практически из любой точки мира по протоколу HTTP или HTTPS. В этом разделе предполагается, что вы уже знакомы с понятиями службы хранилища BLOB-объектов Azure. Дополнительные сведения см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](/rest/api/storageservices/blob-service-concepts).
 
-### <a name="create-a-container"></a>Создание контейнера
+### <a name="create-a-container"></a>Создать контейнер
 Каждый BLOB-объект в хранилище Azure должен находиться в контейнере. Вы можете создать контейнер с помощью команды `az storage container create`:
 
 ```azurecli
@@ -244,8 +246,8 @@ az storage container create --name <container_name>
 Для нового контейнера можно задать один из трех уровней доступа на чтение с помощью необязательного аргумента `--public-access`.
 
 * `off` (значение по умолчанию): данные контейнера являются личными данными владельца учетной записи.
-* `blob`: общий доступ на чтение для больших двоичных объектов.
-* `container`: общий доступ на чтение и создание списков для всего контейнера.
+* `blob`. общий доступ на чтение для больших двоичных объектов.
+* `container`. общий доступ на чтение и создание списков для всего контейнера.
 
 Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md).
 
@@ -323,6 +325,17 @@ az storage blob copy start \
 
 ```azurecli
 az storage blob delete --container-name <container_name> --name <blob_name>
+```
+
+### <a name="set-the-content-type"></a>Определение типа содержимого
+
+Тип содержимого (или тип MIME) определяет формат данных в большом двоичном объекте. Браузеры и другое программное обеспечение используют тип содержимого, чтобы определять способы обработки данных. Например, тип содержимого для изображений PNG — `image/png`. Чтобы задать тип содержимого, используйте `blob update` команду:
+
+```azurecli
+az storage blob update
+    --container-name <container_name> 
+    --name <blob_name>
+    --content-type <content_type>
 ```
 
 ## <a name="create-and-manage-file-shares"></a>Создание общих папок и управление ими
@@ -519,7 +532,7 @@ az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с Azure CLI 2.0 доступны в следующих ресурсах: 
 
 * [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)

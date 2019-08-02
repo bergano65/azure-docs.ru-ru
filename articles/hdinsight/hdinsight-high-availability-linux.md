@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: hrasheed
 ms.openlocfilehash: 1828efb410849677e859d341e4e16e4f5d4ca681
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68405992"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
@@ -247,7 +247,7 @@ URL-адрес указывает, что сейчас служба работа
 
 Размер узла можно выбрать только во время создания кластера. Список различных размеров виртуальных машин, доступных для HDInsight, можно найти на [странице цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-При создании кластера можно указать размер узлов. Ниже приведены инструкции по указанию размера с помощью [портал Azure][preview-portal], [Azure PowerShell module Az][azure-powershell]и [Azure CLI][Azure-CLI]:
+При создании кластера можно указать размер узлов. Следующая информация содержит рекомендации по заданию размера с помощью [портал Azure][preview-portal], [Azure PowerShellого модуля AZ][azure-powershell]и [Azure CLI][azure-cli]:
 
 * **Портал Azure**: При создании кластера можно задать размер для узлов этого кластера:
 

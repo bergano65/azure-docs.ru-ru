@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: dimart
 ms.custom: mvc
-ms.openlocfilehash: fd502a308d6298dc2941461632a2832ac336c45c
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: fe24ab21a9a7d227d58e50c58f9aff2bd91e767f
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849867"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598554"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
 
@@ -251,6 +251,6 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о CI/CD в Azure DevOps см. на странице об [Azure Pipelines](https://www.visualstudio.com/docs/build/overview).
+* Дополнительные сведения о CI/CD с Azure DevOps см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .
 * Дополнительные сведения об обработчике ACS см. в [репозитории GitHub для обработчика ACS](https://github.com/Azure/acs-engine).
 * Дополнительные сведения о Docker Swarm Mode см. в [этой статье](https://docs.docker.com/engine/swarm/).

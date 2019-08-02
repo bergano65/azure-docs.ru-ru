@@ -8,14 +8,14 @@ ms.assetid: 0e3b103c-6e2a-4634-9e8c-8b85cf5e9c84
 ms.service: application-insights
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 07/24/2019
+ms.date: 07/31/2019
 ms.author: mbullwin
-ms.openlocfilehash: 4c60cb78c01d7e18801cbe43c8b767f622ef4b39
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 3a504fe4475cee8e2949ee121c632b792f349758
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473102"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68694292"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка географического расположения и IP-адресов
 
@@ -83,8 +83,8 @@ IP-адреса отправляются в Application Insights в состав
 
     ![Снимок экрана добавляет запятую после "Ибизааиекстенсион" и добавляет новую строку ниже с "Дисаблеипмаскинг": true](media/ip-collection/save.png)
 
-    > [!NOTE]
-    > Если возникнет сообщение об ошибке, которое говорит: _Группа ресурсов находится в расположении, которое не поддерживается одним или несколькими ресурсами в шаблоне. Выберите другую группу ресурсов._ Временно выберите из раскрывающегося списка другую группу ресурсов, а затем повторно выберите исходную группу ресурсов, чтобы устранить эту ошибку.
+    > [!WARNING]
+    > Если возникнет сообщение об ошибке, которое говорит: **_Группа ресурсов находится в расположении, которое не поддерживается одним или несколькими ресурсами в шаблоне. Выберите другую группу ресурсов._** Временно выберите из раскрывающегося списка другую группу ресурсов, а затем повторно выберите исходную группу ресурсов, чтобы устранить эту ошибку.
 
 5. Выберите **я согласен** > **приобрести**. 
 
@@ -92,7 +92,7 @@ IP-адреса отправляются в Application Insights в состав
 
     В этом случае не будет приобретено ничего нового, мы просто обновляем конфигурацию существующего ресурса Application Insights.
 
-6. После завершения развертывания новые данные телеметрии будут записаны первыми тремя октетами, заполненными IP-адресом, и последним октетом.
+6. После завершения развертывания будут записаны новые данные телеметрии с первыми тремя октетами, заполненными IP-адресом и последним октетом.
 
     Если вы снова выберете и измените шаблон, вы увидите только шаблон по умолчанию и не увидите вновь добавленное свойство и связанное с ним значение. Если вы не видите данные IP-адреса и хотите подтвердить, `"DisableIpMasking": true` что установлен. Выполните следующую команду PowerShell: (Замените `Fabrikam-dev` именем соответствующего ресурса и группы ресурсов.)
     
@@ -130,10 +130,11 @@ Content-Length: 54
 
 Если необходимо записать весь IP-адрес, а не только первые три октета, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) , чтобы скопировать IP-адрес в настраиваемое поле, которое не будет маскироваться.
 
-### <a name="aspnetaspnet-core"></a>Ядро ASP.NET/ASP.NET
+### <a name="aspnet--aspnet-core"></a>ASP.NET/ASP.NET Core
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
+using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 
 namespace MyWebApp
@@ -142,15 +143,20 @@ namespace MyWebApp
     {
         public void Initialize(ITelemetry telemetry)
         {
-            if(!string.IsNullOrEmpty(telemetry.Context.Location.Ip))
+            ISupportProperties propTelemetry = telemetry as ISupportProperties;
+
+            if (propTelemetry !=null && !propTelemetry.Properties.ContainsKey("client-ip"))
             {
-                telemetry.Context.Properties["client-ip"] = telemetry.Context.Location.Ip;
+                string clientIPValue = telemetry.Context.Location.Ip;
+                propTelemetry.Properties.Add("client-ip", clientIPValue);
             }
         }
-    }
-
+    } 
 }
 ```
+
+> [!NOTE]
+> Если вам не удается получить доступ `ISupportProperties`, проверьте и убедитесь, что вы используете последний стабильный выпуск пакета SDK для Application Insights. `ISupportProperties`предназначены для больших значений количества элементов, тогда как `GlobalProperties` более подходящие для значений низкого уровня кратности, таких как имя региона, имя среды и т. д. 
 
 ### <a name="enable-telemetry-initializer-for-aspnet"></a>Включите инициализатор телеметрии для. ASP.NET
 

@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 5522f762f3893f1d67cd3755b1e022f0118cc004
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 05fd83506aac26df33f18bec83dcadac8dee2d90
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66385314"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705286"
 ---
 # <a name="how-to-deploy-a-conversation-learner-bot"></a>Развертывание бота Conversation Learner
 
@@ -94,7 +95,7 @@ ms.locfileid: "66385314"
 
 Публикация бота Conversation Learner выполняется почти так же, как и для любого другого бота. Если коротко, то вам нужно лишь передать код на размещенный веб-сайт, задать необходимые значения конфигурации и зарегистрировать бот в нужных каналах. В этом видео представлены подробные инструкции по публикации бота с помощью службы Azure Bot.
 
-После развертывания программ-роботов и под управлением разных каналов к нему можно подключиться таких как Facebook, команд, Скайп д. с помощью программ-роботов канала регистрации Azure. Документация по этому процессу представлена по адресу: https://docs.microsoft.com/bot-framework/bot-service-quickstart-registration.
+После развертывания и запуска программы Bot можно подключить к ней различные каналы, такие как Facebook, группы, Skype и т. д. с помощью регистрации канала Azure Bot. Документация по этому процессу представлена по адресу: https://docs.microsoft.com/bot-framework/bot-service-quickstart-registration.
 
 Ниже приведены пошаговые инструкции по развертыванию бота Conversation Learner в Azure.  Эти инструкции предполагают, что исходный код вашего бота размещен в облачном источнике, таком как Azure DevOps Services, GitHub, BitBucket или OneDrive, и что бот будет настроен для непрерывного развертывания.
 

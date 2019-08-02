@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 383c063e1ba7a29986e4b1c48024072799234414
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 7416939db8d6552f79fba700b8432de2ad228846
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387932"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704212"
 ---
 # <a name="how-to-use-alternative-inputs"></a>Как использовать альтернативные входные данные
 
@@ -30,10 +31,10 @@ ms.locfileid: "66387932"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 Альтернативные входные данные — это другие, семантически эквивалентные речевые фрагменты, которые пользователь может произносить в определенной точке диалога обучения. Такие данные позволяют более компактно описать варианты речевых фрагментов, не используя каждый вариант в отдельном обучающем диалоге.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-the-model"></a>Создание модели
 
@@ -152,7 +153,7 @@ ms.locfileid: "66387932"
 
 ![](../media/T10_logdialog.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Запись диалогов](./11-log-dialogs.md)

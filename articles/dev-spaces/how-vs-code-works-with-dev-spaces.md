@@ -9,12 +9,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 description: Как Visual Studio Code работает с Azure Dev Spaces
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры
-ms.openlocfilehash: 0d80643b366b6d7313f24e73258056e492eb56fc
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 7809f0215137b0c473e13143404a031497906ebf
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297868"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725815"
 ---
 # <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Как Visual Studio Code работает с Azure Dev Spaces
 
@@ -41,7 +41,7 @@ Dockerfile, Helm диаграмма и `azds.yaml` файлы — это те ж
 
 Необходимо создать кластер AKS и включить Azure Dev Spaces в кластере вне Visual Studio Code. Например, для этой установки можно использовать Azure CLI или портал Azure. Можно повторно использовать существующие диаграммы файлы dockerfile, Helm и `azds.yaml` файлы, созданные за пределами Visual Studio Code, например ресурсы, созданные при выполнении. `azds prep` Если вы выполняете повторное использование ресурсов, созданных за пределами Visual Studio Code, `.vscode` вам по-прежнему нужен каталог. Этот `.vscode` каталог можно повторно создать с помощью Visual Studio Code и расширения Azure dev Spaces и не будет перезаписывать существующие ресурсы.
 
-Для проектов .NET Core необходимо установить [ C# расширение][csharp-extension] installed to run your .NET service from Visual Studio Code. Also for Java projects using Maven, you must have the [Java Debugger for Azure Dev Spaces extension][java-extension] , а также [Maven установленные и настроенные][Maven] для запуска службы Java из Visual Studio Code.
+Для проектов .NET Core необходимо установить [ C# расширение][csharp-extension] для запуска службы .NET из Visual Studio Code. Кроме того, для проектов Java, использующих Maven, необходимо установить [отладчик Java для Azure dev Spacesного расширения][java-extension] , а также [Maven, установленный и настроенный][maven] для запуска службы Java из Visual Studio Code.
 
 ## <a name="debug-your-service-in-aks"></a>Отладка службы в AKS
 
@@ -52,9 +52,9 @@ Dockerfile, Helm диаграмма и `azds.yaml` файлы — это те ж
 
 Visual Studio Code и расширение Azure Dev Spaces, работающее с Azure Dev Spaces, можно просмотреть в следующих кратких руководствах:
 
-* [Разработка с использованием Java][quickstart-java]
-* [Разработка с использованием .NET][quickstart-netcore]
-* [Разработка с помощью Node. js][quickstart-node]
+* [Быстрое перебор и отладка с помощью Visual Studio Code и Java][quickstart-java]
+* [Быстрое перебор и отладка с помощью Visual Studio Code и .NET][quickstart-netcore]
+* [Быстрое перебор и отладка с помощью Visual Studio Code и Node. js][quickstart-node]
 
 [azds-extension]: https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds
 [azds-yaml]: how-dev-spaces-works.md#prepare-your-code

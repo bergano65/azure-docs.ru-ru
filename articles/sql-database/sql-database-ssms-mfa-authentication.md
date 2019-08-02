@@ -1,5 +1,5 @@
 ---
-title: С помощью AAD многофакторной проверки подлинности базы данных SQL Azure и хранилище данных SQL Azure | Документация Майкрософт
+title: Использование многофакторной проверки подлинности AAD с базой данных SQL Azure и хранилищем данных SQL Azure | Документация Майкрософт
 description: База данных SQL Azure и хранилище данных SQL Azure поддерживают подключения из SQL Server Management Studio (SSMS) с использованием универсальной проверки подлинности Active Directory.
 services: sql-database
 ms.service: sql-database
@@ -10,36 +10,35 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-manager: craigg
 ms.date: 10/08/2018
-ms.openlocfilehash: ccb78e201b90dfc27f52523348e76da57087bcc8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7add55380f2f7b3ef70db0603fe2c26127db8a78
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60614182"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566449"
 ---
-# <a name="using-multi-factor-aad-authentication-with-azure-sql-database-and-azure-sql-data-warehouse-ssms-support-for-mfa"></a>С помощью AAD многофакторной проверки подлинности базы данных SQL Azure и хранилище данных SQL Azure (поддержка SSMS для MFA)
-База данных SQL Azure и хранилище данных SQL Azure поддерживают подключения из SQL Server Management Studio (SSMS) с использованием *универсальной проверки подлинности Active Directory*. В этой статье рассматриваются различия между различные параметры проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности. 
+# <a name="using-multi-factor-aad-authentication-with-azure-sql-database-and-azure-sql-data-warehouse-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с базой данных SQL Azure и хранилищем данных SQL Azure (поддержка SSMS для MFA)
+База данных SQL Azure и хранилище данных SQL Azure поддерживают подключения из SQL Server Management Studio (SSMS) с использованием *универсальной проверки подлинности Active Directory*. В этой статье обсуждаются различия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности. 
 
 **Скачивание последней версии SSMS.** Скачайте последнюю версию SSMS на клиентский компьютер, воспользовавшись страницей [Скачивание SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx). 
 
 
-Для всех функций, описанных в этой статье используйте по меньшей мере июля 2017 г., версии 17.2.  Последние диалогового окна соединения, должен выглядеть следующим образом:
+Для всех функций, описанных в этой статье, используйте версию 17,2 не ниже 2017 июля.  Диалоговое окно «Последнее подключение» должно выглядеть следующим образом:
  
   ![1mfa-universal-connect](./media/sql-database-ssms-mfa-auth/1mfa-universal-connect.png "Заполнение поля \"Имя пользователя\"").  
 
 ## <a name="the-five-authentication-options"></a>Пять параметров аутентификации  
 
-Универсальная аутентификация Active Directory поддерживает два метода с неинтерактивной проверкой подлинности:
-    - `Active Directory - Password` Проверка подлинности
-    - `Active Directory - Integrated` Проверка подлинности
+Active Directory универсальная проверка подлинности поддерживает два неинтерактивных метода проверки подлинности:
+    - `Active Directory - Password`идентификаци
+    - `Active Directory - Integrated`идентификаци
 
-Существуют две с неинтерактивной проверкой подлинности модели, которые могут использоваться во множестве различных приложений (ADO.NET, JDCB, ODC, и т.д.). Эти два метода в результате не всплывающие диалоговые окна: 
+Существуют две неинтерактивные модели проверки подлинности, которые можно использовать во многих разных приложениях (ADO.NET, ЖДКБ, ODC и т. д.). Эти два метода никогда не приводят к появлению всплывающих диалоговых окон: 
 - `Active Directory - Password` 
 - `Active Directory - Integrated` 
 
-Интерактивный метод, — которые также поддерживает Azure Multi-factor authentication (MFA) — 
+Интерактивный метод также поддерживает многофакторную идентификацию Azure (MFA): 
 - `Active Directory - Universal with MFA` 
 
 
@@ -54,7 +53,7 @@ Azure MFA помогает защитить доступ к данным и пр
    ![mfa-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-tenant-ssms.png)   
 
 ### <a name="azure-ad-business-to-business-support"></a>Поддержка Azure AD B2B   
-Пользователи Azure AD, поддерживаемые в качестве гостевых пользователей в сценариях Azure AD B2B (см. раздел [Что такое служба совместной работы Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)), могут подключиться к Базе данных SQL и хранилищу данных SQL только в составе группы, созданной в текущем каталоге Azure AD и вручную сопоставленной в заданной базе данных с помощью инструкции `CREATE USER` Transact-SQL. Например, если пользователь `steve@gmail.com` приглашен в Azure AD `contosotest` (с доменом Azure AD `contosotest.onmicrosoft.com`), то в каталоге Azure AD, который содержит участника `steve@gmail.com`, нужно создать группу Azure AD, например `usergroup`. Затем эту группу необходимо создать для конкретной базы данных (то есть MyDatabase), администратор Azure AD SQL или Azure AD DBO, выполнив Transact-SQL `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` инструкции. После создания пользователя базы данных пользователь `steve@gmail.com` сможет войти в `MyDatabase` с помощью параметра аутентификации SSMS `Active Directory – Universal with MFA support`. Группа пользователей по умолчанию имеет только разрешение на подключение, и дополнительные возможности доступа к данным потребуется предоставить обычным способом. Обратите внимание на то, что пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** SSMS. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
+Пользователи Azure AD, поддерживаемые в качестве гостевых пользователей в сценариях Azure AD B2B (см. раздел [Что такое служба совместной работы Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)), могут подключиться к Базе данных SQL и хранилищу данных SQL только в составе группы, созданной в текущем каталоге Azure AD и вручную сопоставленной в заданной базе данных с помощью инструкции `CREATE USER` Transact-SQL. Например, если пользователь `steve@gmail.com` приглашен в Azure AD `contosotest` (с доменом Azure AD `contosotest.onmicrosoft.com`), то в каталоге Azure AD, который содержит участника `steve@gmail.com`, нужно создать группу Azure AD, например `usergroup`. Затем эту группу необходимо создать для конкретной базы данных (то есть MyDatabase) с помощью администратора SQL Azure AD или Azure AD dbo, выполнив инструкцию Transact-SQL `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` . После создания пользователя базы данных пользователь `steve@gmail.com` сможет войти в `MyDatabase` с помощью параметра аутентификации SSMS `Active Directory – Universal with MFA support`. Группа пользователей по умолчанию имеет только разрешение на подключение, и дополнительные возможности доступа к данным потребуется предоставить обычным способом. Обратите внимание на то, что пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** SSMS. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
 
 ## <a name="universal-authentication-limitations-for-sql-database-and-sql-data-warehouse"></a>Ограничения универсальной аутентификации для базы данных SQL и хранилища данных SQL
 - SSMS и SqlPackage.exe — единственные инструменты, в настоящее время поддерживающее MFA с помощью универсальной аутентификации Active Directory.
@@ -66,7 +65,7 @@ Azure MFA помогает защитить доступ к данным и пр
 - Версия библиотеки аутентификации Active Directory (ADAL) для универсальной аутентификации была обновлена до последней выпущенной версии ADAL.dll — 3.13.9. Ознакомьтесь с [библиотекой аутентификации Active Directory версии 3.14.1](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Инструкции по настройке см. в разделе [Настройка многофакторной проверки подлинности в Базе данных SQL Azure для SQL Server Management Studio](sql-database-ssms-mfa-authentication-configure.md).
 - Предоставьте другим пользователям доступ к базе данных: [Контроль и предоставление доступа к Базе данных SQL и Хранилищу данных SQL](sql-database-manage-logins.md)  

@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: ed254ea3db1c8f0e680cba71185e9b4505d8f200
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3f6094da7b103f1c99e9bb3fa9313354fcb2a8bc
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387652"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703990"
 ---
 # <a name="how-to-use-entity-detection-callback"></a>Как использовать обратный вызов обнаружения сущностей
 
@@ -30,10 +31,10 @@ ms.locfileid: "66387652"
 
     npm run tutorial-entity-detection
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 Обратные вызовы обнаружения сущностей позволяют изменить поведение распознавания сущностей и управление сущностями с помощью кода. Мы продемонстрируем эту функцию путем разбора типичного шаблона обратного вызова обнаружения сущности. Например, мы можем разрешить "Большое яблоко" в "Нью-Йорк".
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-the-model"></a>Создание модели
 
@@ -101,7 +102,7 @@ ms.locfileid: "66387652"
 
 ![](../media/tutorial10_bigapple.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Обратные вызовы сеансов](./13-session-callbacks.md)

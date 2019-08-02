@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
-manager: craigg
 ms.date: 11/07/2019
-ms.openlocfilehash: 0fa65454702c67d4b0baeedc7f412ccec402ea46
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: 19a7f749ffb1af4f712d23abcd52d91653ad4544
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302309"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567379"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
 
@@ -110,7 +109,7 @@ ms.locfileid: "68302309"
 - Azure Database Migration Service — миграция выполняется практически без простоев.
 - Исходная `RESTORE DATABASE FROM URL` использует исходные резервные копии из SQL Server. Использование этого метода сопряжено с некоторым простоем.
 
-### <a name="azure-database-migration-service"></a>Azure Database Migration Service
+### <a name="azure-database-migration-service"></a>Служба миграции баз данных Azure
 
 [Azure Database Migration Service (DMS)](../dms/dms-overview.md) — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя. Эта служба упрощает выполнение задач, необходимых для перемещения имеющихся сторонних баз данных и баз данных SQL Server в Azure. Варианты развертывания в общедоступной предварительной версии включают базы данных SQL Azure и SQL Server на виртуальной машине Azure. DMS — это рекомендуемый метод переноса для корпоративных рабочих нагрузок.
 

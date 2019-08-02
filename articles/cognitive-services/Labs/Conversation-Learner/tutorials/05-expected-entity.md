@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 48a8abd401ff7191da4709c726042b566d140b78
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5fbe4f09d377b9f157368184ab26341782e9aed1
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387825"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707323"
 ---
 # <a name="how-to-use-the-expected-entity-property-of-actions"></a>Использование свойства "ожидаемые сущности" в действиях
 
@@ -30,7 +31,7 @@ ms.locfileid: "66387825"
 
     npm run tutorial-general
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 С помощью свойства действия "ожидаемая сущность" можно сохранить ответ пользователя на это действие в сущности.
 
 При добавлении сущностей в свойство действия "ожидаемая сущность" система делает следующее.
@@ -39,7 +40,7 @@ ms.locfileid: "66387825"
 2. Сохраняет полное высказывание пользователя в $entity, используя эвристический подход, если сущности не найдены.
 3. Вызывает `EntityDetectionCallback` и переходит к выбору действия.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="create-the-model"></a>Создание модели
 
@@ -109,7 +110,7 @@ ms.locfileid: "66387825"
 
 ![](../media/tutorial4_dialogs.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Отрицаемые сущности](./06-negatable-entities.md)

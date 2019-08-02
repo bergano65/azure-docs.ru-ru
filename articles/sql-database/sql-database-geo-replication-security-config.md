@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 8a2a2fffa9ed3a4dae3c0768291b7585be4bfc6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4d4939b7a0179216d11f594ce12f384276d15e05
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64690837"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568127"
 ---
 # <a name="configure-and-manage-azure-sql-database-security-for-geo-restore-or-failover"></a>Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа
 
@@ -95,7 +94,7 @@ ms.locfileid: "64690837"
 >
 > DISABLE не изменяет пароль, поэтому при любой необходимости можно вернуть ENABLE.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об управлении доступом к базе данных и управлении именами для входа см. в статье [Controlling and granting database access to SQL Database and SQL Data Warehouse ](sql-database-manage-logins.md) (Контроль и предоставление доступа к Базе данных SQL и Хранилищу данных SQL).
 * Дополнительные сведения о пользователях автономной базы данных см. в статье [Пользователи автономной базы данных — создание переносимой базы данных](https://msdn.microsoft.com/library/ff929188.aspx).

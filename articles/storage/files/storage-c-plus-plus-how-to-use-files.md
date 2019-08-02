@@ -1,19 +1,18 @@
 ---
 title: Разработка приложений службы файлов Azure с помощью C++ | Документация Майкрософт
 description: Сведения о разработке приложений и служб C++, хранящих файлы данных в службе файлов Azure.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 424db4435c569475f9463894b5364fc22190689a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97af40bd1f57acb5b26d3b6216984dfb8e3a5181
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64717916"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699799"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
 
@@ -186,7 +185,7 @@ for (auto it = directory.list_files_and_directories(); it != end_of_results; ++i
 }
 ```
 
-## <a name="upload-a-file"></a>Отправка файла
+## <a name="upload-a-file"></a>Отправить файл
 
 Общая папка Azure содержит по меньшей мере один каталог для размещения файлов (корневой каталог). В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
@@ -219,7 +218,7 @@ azure::storage::cloud_file file4 =
 file4.upload_from_file(_XPLATSTR("DataFile.txt"));
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачать файл
 
 Чтобы скачать файлы, сначала получите ссылку на файл, а затем вызовите метод **download_to_stream** для передачи содержимого файла в объект потока, который затем можно сохранить в локальном файле. Кроме того, можно использовать метод **download_to_file**, чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text**, чтобы скачать содержимое файла в виде текстовой строки.
 
@@ -364,7 +363,7 @@ if (share.exists())
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений о службе хранилища Azure изучите следующие ресурсы:
 

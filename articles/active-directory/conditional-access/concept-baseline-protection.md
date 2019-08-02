@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2fc552211ed55239259ce84d84584c451733d70
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 819b2f3c54d97639eceae9aed60fdd5da2e7b3ef
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68499858"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608185"
 ---
 # <a name="what-are-baseline-policies"></a>Что такое базовые политики?
 
@@ -77,7 +77,7 @@ ms.locfileid: "68499858"
 
 * портала Azure
 * Azure PowerShell
-* Azure CLI
+* Инфраструктура CLI Azure
 
 Использование любого из этих средств для управления ресурсами является действием с высоким уровнем привилегий. Эти средства могут изменять конфигурации на уровне подписки, такие как параметры службы и выставление счетов по подписке.
 
@@ -97,7 +97,7 @@ ms.locfileid: "68499858"
 
 Дополнительные сведения можно найти в разделе
 
-* [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
+* [Пять шагов по защите инфраструктуры удостоверений](../../security/fundamentals/steps-secure-identity.md)
 * [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
 * [Требовать MFA для администраторов (Предварительная версия)](howto-baseline-protect-administrators.md)
 * [Защита конечных пользователей (Предварительная версия)](howto-baseline-protect-end-users.md)

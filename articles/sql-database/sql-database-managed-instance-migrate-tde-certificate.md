@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
 ms.reviewer: carlrab, jovanpop
-manager: craigg
 ms.date: 04/25/2019
-ms.openlocfilehash: f54950ab96664b17aab056b468db0644216e8654
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6f9c1cefafdf6f7f33db3c5143e6b97b328fe699
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706099"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567416"
 ---
 # <a name="migrate-certificate-of-tde-protected-database-to-azure-sql-database-managed-instance"></a>Перенос сертификата защищенной TDE базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -31,20 +30,20 @@ ms.locfileid: "64706099"
 Альтернативный вариант — это использование полностью управляемой службы для плавной миграции как защищенной TDE базы данных, так и соответствующего сертификата. Дополнительные сведения см. в разделе [Перенос SQL Server в Управляемый экземпляр базы данных SQL Azure с помощью DMS](../dms/tutorial-sql-server-to-managed-instance.md).
 
 > [!IMPORTANT]
-> Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. Вскоре после завершения восстановления перенесенных сертификат заменяются разные средства защиты, управляемый службой сертификат или асимметричный ключ из хранилища ключей, в зависимости от типа прозрачного шифрования данных набора для экземпляра.
+> Перенесенный сертификат используется только для восстановления базы данных, защищенной TDE. Вскоре после восстановления перенесенный сертификат заменяется другим предохранителем, либо управляемым службой сертификатом, либо асимметричным ключом из хранилища ключей в зависимости от типа прозрачного шифрования данных, заданного для экземпляра.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 - Средство командной строки[Pvk2Pfx](https://docs.microsoft.com/windows-hardware/drivers/devtest/pvk2pfx), установленное на локальном сервере или другом компьютере с доступом к сертификату, экспортированному как файл. Средство Pvk2Pfx является частью [набора драйверов Windows Корпоративный](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk), изолированной автономной среды командной строки.
 - [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell) версии 5.0 или более поздней.
-- Модуль Azure PowerShell [устанавливается и обновляется](https://docs.microsoft.com/powershell/azure/install-az-ps).
-- [Модуль Az.Sql](https://www.powershellgallery.com/packages/Az.Sql).
+- Модуль Azure PowerShell [установлен и обновлен](https://docs.microsoft.com/powershell/azure/install-az-ps).
+- [AZ. SQL Module](https://www.powershellgallery.com/packages/Az.Sql).
   Выполните следующие команды в PowerShell, чтобы установить или обновить модуль PowerShell.
 
    ```powershell
@@ -142,7 +141,7 @@ ms.locfileid: "64706099"
 
 Теперь сертификат доступен для указанного управляемого экземпляра и резервная копия соответствующей базы данных, защищенной TDE, может быть успешно восстановлена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье описано, как перенести сертификат, защищающий ключ шифрования базы данных с помощью прозрачного шифрования данных, из локального или IaaS SQL Server в Управляемый экземпляр Базы данных SQL Azure.
 

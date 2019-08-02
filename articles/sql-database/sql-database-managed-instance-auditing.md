@@ -12,21 +12,20 @@ f1_keywords:
 author: vainolo
 ms.author: arib
 ms.reviewer: vanto
-manager: craigg
 ms.date: 04/08/2019
-ms.openlocfilehash: 6ada2a5e505bfe37f4f9a956570d8b6f38f55e55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5a613a2eb6499538199306872f2e415019552686
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60702933"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567721"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
 [Аудит управляемого экземпляра](sql-database-managed-instance.md) позволяет отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности:
 
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
-- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) где можно найти актуальный список сертификатов соответствия базы данных SQL.
+- Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) , где можно найти самый актуальный список сертификатов соответствия базы данных SQL.
 
 ## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure
 
@@ -74,7 +73,7 @@ ms.locfileid: "60702933"
 
         - Настройте SAS следующим образом.
 
-          - **Допустимые службы**: BLOB-объект
+          - **Допустимые службы**: Blob
 
           - **Дата начала**: чтобы избежать проблем, связанных с часовыми поясами, выберите вчерашний день.
 
@@ -131,11 +130,11 @@ ms.locfileid: "60702933"
 
      1. Войдите в учетную запись Azure (необязательно):
 
-        ![Вход в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
+        ![Войдите в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
 
      1. Выберите подписку, учетную запись хранения и контейнер больших двоичных объектов из раскрывающихся списков или создайте собственный контейнер, щелкнув **Создать**. Когда вы зададите все необходимые параметры, нажмите кнопку **ОК**:
 
-        ![Выберите подписку Azure, учетная запись хранения и контейнер больших двоичных объектов](./media/sql-managed-instance-auditing/13_mi_SSMS_select_subscription_account_container.png)
+        ![Выберите подписку Azure, учетную запись хранения и контейнер больших двоичных объектов.](./media/sql-managed-instance-auditing/13_mi_SSMS_select_subscription_account_container.png)
 
      1. Нажмите кнопку **ОК** в диалоговом окне "Создать аудит".
 
@@ -158,9 +157,9 @@ ms.locfileid: "60702933"
 - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
-## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита для сервера, чтобы журналы концентратора событий или Azure Monitor
+## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита сервера для концентратора событий или журналов Azure Monitor
 
-Журналы аудита из управляемого экземпляра могут отправляться в концентраторы, или журналы Azure Monitor. В этом разделе описывается, как это настроить.
+Журналы аудита из управляемого экземпляра можно отправлять в даже центры или журналы Azure Monitor. В этом разделе описывается, как это настроить.
 
 1. Откройте [портал Azure](https://portal.azure.com/) и перейдите к управляемому экземпляру.
 
@@ -170,9 +169,9 @@ ms.locfileid: "60702933"
 
 4. Выберите **SQLSecurityAuditEvents** из списка журналов.
 
-5. Выберите место назначения для событий аудита - концентратора событий и журналы Azure Monitor. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
+5. Выберите назначение для событий аудита — концентратор событий, журналы Azure Monitor или и то, и другое. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
 
-6. Выберите команду **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
     ![Настройка параметров диагностики](./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png)
 
@@ -190,7 +189,7 @@ ms.locfileid: "60702933"
    - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
    - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
 
-10. Включите аудит сервера, созданного на шаге 8:
+10. Включите аудит сервера, созданный на шаге 8.
  
     ```SQL
     ALTER SERVER AUDIT [<your_audit_name>] WITH (STATE=ON);
@@ -215,9 +214,9 @@ ms.locfileid: "60702933"
 
 ### <a name="consume-and-analyze-logs-stored-in-azure-monitor-logs"></a>Использование и анализ журналов, хранящихся в журналах Azure Monitor
 
-Если журналы аудита записываются в журналы Azure Monitor, они будут доступны в рабочей области Log Analytics, где можно запустить расширенного поиска в данных аудита. В качестве отправной точки, перейдите в рабочую область Log Analytics и в разделе *Общие* щелкните *журналы* и введите простой запрос, например: `search "SQLSecurityAuditEvents"` Просмотр Аудит журналов.  
+Если журналы аудита записываются в журналы Azure Monitor, они доступны в рабочей области Log Analytics, где можно выполнять расширенный поиск по данным аудита. В качестве отправной точки перейдите к рабочей области log Analytics и в разделе *Общие* щелкните *журналы* и введите простой запрос, например: `search "SQLSecurityAuditEvents"` для просмотра журналов аудита.  
 
-Журналы Azure Monitor позволяет в режиме реального времени оперативной аналитики, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительные полезные сведения о языке поиска журналов Azure Monitor и команды, см. в разделе [Azure Monitor входит Справочник по поиску](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
+Журналы Azure Monitor предоставляют оперативную аналитику в режиме реального времени с помощью встроенных средств поиска и настраиваемых панелей мониторинга для быстрого анализа миллионов записей во всех рабочих нагрузках и серверах. Дополнительные полезные сведения о языке и командах поиска журналов Azure Monitor см. в статье [Поиск по Azure Monitor журналов Справочник](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -234,15 +233,15 @@ ms.locfileid: "60702933"
 Основные различия в синтаксисе `CREATE AUDIT` для аудита в хранилище BLOB-объектов Azure:
 
 - Новый синтаксис `TO URL` позволяет указать URL-адрес контейнера в хранилище BLOB-объектов Azure, куда будут помещены файлы `.xel`.
-- Новый синтаксис `TO EXTERNAL MONITOR` предоставляется для обеспечения цели журналы даже концентратора и Azure Monitor.
+- Для включения даже `TO EXTERNAL MONITOR` центров и Azure Monitor журналов можно использовать новый синтаксис.
 - Синтаксис `TO FILE` **не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
 - Значение 0 для `queue_delay` **не поддерживается**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](sql-database-auditing.md).
-- Дополнительные сведения о Azure программ, поддерживающих проверку соблюдения стандартов, см. в разделе [Центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) где можно найти актуальный список сертификатов соответствия базы данных SQL.
+- Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) , где можно найти самый актуальный список сертификатов соответствия базы данных SQL.
 
 <!--Image references-->
 

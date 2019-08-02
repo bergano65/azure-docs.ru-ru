@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: ad927de0274d415ac268d3a29abf2c135ee22d52
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: fc7cb7f82fce4f7da02f39b0b423841ac270dcbd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480209"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564825"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -317,9 +317,9 @@ public void run(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
-|**direction** | Недоступно | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции. |
+|**type** | Н/Д | Нужно задать значение `blobTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
+|**direction** | Н/Д | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. Исключения приведены в этом [разделе](#trigger---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции. |
 |**path** | **BlobPath** |[Контейнер](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) для мониторинга.  Может быть [шаблоном имени большого двоичного объекта](#trigger---blob-name-patterns). |
 |**подключение** | **Connection** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
@@ -427,7 +427,7 @@ module.exports = function (context, myBlob) {
 * имя большого двоичного объекта;
 * ETag (идентификатор версии больших двоичных объектов, например 0x8D1DC6E70A277EF).
 
-Чтобы выполнить принудительную повторную обработку большого двоичного объекта, удалите уведомление о получении этого большого двоичного объекта из контейнера *azure-webjobs-hosts* вручную. Во время повторной обработки может происходить не сразу, гарантируется выполнение последующий момент времени.
+Чтобы выполнить принудительную повторную обработку большого двоичного объекта, удалите уведомление о получении этого большого двоичного объекта из контейнера *azure-webjobs-hosts* вручную. Хотя повторная обработка может не выполняться немедленно, она гарантированно будет выполняться в более поздний момент времени.
 
 ## <a name="trigger---poison-blobs"></a>Триггеры подозрительных больших двоичных объектов
 
@@ -451,7 +451,7 @@ module.exports = function (context, myBlob) {
 
 ## <a name="trigger---polling"></a>Триггер опроса
 
-Если отслеживаемый контейнер BLOB-объектов содержит более 10 000 больших двоичных объектов (со всех контейнеров), среда выполнения функций проверяет файлы журналов, чтобы найти новые или измененные большие двоичные объекты. Этот процесс может привести к задержкам. После создания большого двоичного объекта функция может не вызываться несколько минут или даже дольше.
+Если отслеживаемый контейнер больших двоичных объектов содержит более 10 000 больших двоичных объектов (во всех контейнерах), среда выполнения функций сканирует файлы журнала для отслеживания новых или измененных больших двоичных объектов. Этот процесс может привести к задержкам. После создания большого двоичного объекта функция может не вызываться несколько минут или даже дольше.
 
 > [!WARNING]
 > Кроме того, [журналы службы хранилища создаются по принципу лучшего из возможного](/rest/api/storageservices/About-Storage-Analytics-Logging), Регистрация всех событий не гарантируется. В некоторых случаях журналы могут пропускаться.
@@ -459,7 +459,7 @@ module.exports = function (context, myBlob) {
 > Если требуется повысить скорость или надежность обработки BLOB-объектов, при создании BLOB-объекта рекомендуем создать [сообщение очереди](../storage/queues/storage-dotnet-how-to-use-queues.md). Затем для обработки BLOB-объекта используйте [триггер очереди](functions-bindings-storage-queue.md) вместо триггера BLOB-объекта. Другой вариант — использовать службу "Сетка событий". Дополнительные сведения см. в руководстве [Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"](../event-grid/resize-images-on-storage-blob-upload-event.md).
 >
 
-## <a name="input"></a>Вход
+## <a name="input"></a>Ввод
 
 Для чтения больших двоичных объектов используйте входную привязку хранилища BLOB-объектов.
 
@@ -733,12 +733,12 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blob`. |
-|**direction** | Недоступно | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.|
+|**type** | Н/Д | Нужно задать значение `blob`. |
+|**direction** | Н/Д | Нужно задать значение `in`. Исключения приведены в этом [разделе](#input---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.|
 |**path** |**BlobPath** | Путь к BLOB-объекту. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего [строку подключения к службе хранилища](../storage/common/storage-configure-connection-string.md), используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -765,7 +765,7 @@ public static void Run(
 
 В JavaScript получите доступ к данным больших двоичных объектов с помощью `context.bindings.<name from function.json>`.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Вывод
 
 Используйте выходные привязки хранилища BLOB-объектов для записи больших двоичных объектов.
 
@@ -784,23 +784,40 @@ public static void Run(
 Ниже приведен пример [функции C#](functions-dotnet-class-library.md), которая использует триггер большого двоичного объекта и две выходные привязки больших двоичных объектов. Эта функция активируется путем создания большого двоичного объекта образа в контейнере *sample-images*. Она создает небольшие и средние копии большого двоичного объекта образа.
 
 ```csharp
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Azure.WebJobs;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+
 [FunctionName("ResizeImage")]
 public static void Run(
     [BlobTrigger("sample-images/{name}")] Stream image,
     [Blob("sample-images-sm/{name}", FileAccess.Write)] Stream imageSmall,
     [Blob("sample-images-md/{name}", FileAccess.Write)] Stream imageMedium)
 {
-    var imageBuilder = ImageResizer.ImageBuilder.Current;
-    var size = imageDimensionsTable[ImageSize.Small];
+    IImageFormat format;
 
-    imageBuilder.Build(image, imageSmall,
-        new ResizeSettings(size.Item1, size.Item2, FitMode.Max, null), false);
+    using (Image<Rgba32> input = Image.Load(image, out format))
+    {
+      ResizeImage(input, imageSmall, ImageSize.Small, format);
+    }
 
     image.Position = 0;
-    size = imageDimensionsTable[ImageSize.Medium];
+    using (Image<Rgba32> input = Image.Load(image, out format))
+    {
+      ResizeImage(input, imageMedium, ImageSize.Medium, format);
+    }
+}
 
-    imageBuilder.Build(image, imageMedium,
-        new ResizeSettings(size.Item1, size.Item2, FitMode.Max, null), false);
+public static void ResizeImage(Image<Rgba32> input, Stream output, ImageSize size, IImageFormat format)
+{
+    var dimensions = imageDimensionsTable[size];
+
+    input.Mutate(x => x.Resize(dimensions.Item1, dimensions.Item2));
+    input.Save(output, format);
 }
 
 public enum ImageSize { ExtraSmall, Small, Medium }
@@ -1068,12 +1085,12 @@ public static void Run(
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** | Недоступно | Нужно задать значение `blob`. |
-|**direction** | Недоступно | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
-|**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
+|**type** | Н/Д | Нужно задать значение `blob`. |
+|**direction** | Н/Д | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#output---usage). |
+|**name** | Н/Д | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**path** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
 |**подключение** |**Connection**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|Недоступно | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
+|Н/Д | **Access** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -1108,13 +1125,13 @@ public static void Run(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Справочные материалы |
+| Привязка |  Ссылка |
 |---|---|
-| BLOB-объект | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
+| Blob | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 

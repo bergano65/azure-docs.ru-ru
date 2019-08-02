@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: danlep
 ms.openlocfilehash: 05c227e7de078c6bb371049f16e191598b9ca4e5
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68310377"
 ---
 # <a name="upgrade-a-classic-container-registry"></a>Обновление реестра контейнеров уровня "Классический"
@@ -53,7 +53,7 @@ ms.locfileid: "68310377"
 
 ## <a name="how-to-upgrade"></a>Обновление
 
-Неуправляемый реестр уровня "Классический" можно обновить до одного из управляемых SKU несколькими способами. В следующих разделах описывается процесс использования [Azure CLI][azure-cli] and the [Azure portal][azure-portal].
+Неуправляемый реестр уровня "Классический" можно обновить до одного из управляемых SKU несколькими способами. В следующих разделах описывается процесс использования [Azure CLI][azure-cli] и [портал Azure][azure-portal].
 
 ## <a name="upgrade-in-azure-cli"></a>Обновление с помощью интерфейса командной строки Azure
 

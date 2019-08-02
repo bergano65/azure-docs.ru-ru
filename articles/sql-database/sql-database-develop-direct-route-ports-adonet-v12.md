@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 04/03/2019
-ms.openlocfilehash: d861ccb93de7aa0b84b20215afb5fddf49aa94c9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a39cfd1981041c807a91a08c198378d238f0846e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427965"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568917"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 
@@ -43,11 +42,11 @@ ms.locfileid: "67427965"
 
 1. ADO.NET 4.5 (или более поздней версии) инициирует краткое взаимодействие с облаком Azure и получает динамически указанный номер порта.
 
-   * Номер порта — в диапазоне от 11000 – 11999.
+   * Динамически идентифицируемый номер порта находится в диапазоне 11000-11999.
 2. Затем ADO.NET подключается к серверу Базы данных SQL напрямую, без промежуточного слоя.
 3. Запросы отправляются непосредственно в базу данных, а результаты возвращаются клиенту.
 
-Убедитесь, что диапазоны портов из 11000 – 11999 на клиентском компьютере Azure будут доступны для взаимодействия клиента ADO.NET 4.5 с базой данных SQL.
+Убедитесь, что диапазоны портов 11000-11999 на клиентском компьютере Azure доступны для взаимодействия клиента ADO.NET 4,5 с базой данных SQL.
 
 * В частности, порты в этом диапазоне должны оставаться свободными от других исходящих ошибок.
 * На виртуальной машине Azure параметрами порта управляет **брандмауэр Windows в режиме повышенной безопасности** .
@@ -83,7 +82,7 @@ ms.locfileid: "67427965"
 
 * [Список версий протокола TDS](https://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
-* [Брандмауэр базы данных SQL Azure](sql-database-firewall-configure.md)
+* [Брандмауэр Базы данных SQL Azure](sql-database-firewall-configure.md)
 * [Практическое руководство. Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)
 
 

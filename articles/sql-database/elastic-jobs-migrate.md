@@ -10,29 +10,28 @@ ms.topic: conceptual
 author: johnpaulkee
 ms.author: joke
 ms.reviewer: sstein
-manager: craigg
 ms.date: 03/13/2019
-ms.openlocfilehash: 627b29018afff2adb57b3b8b5c816bea9c421f68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9fa3444244cbd51c3f14abcfef5212a366cadbd2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236863"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68550565"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Миграция к новым заданиям обработки эластичных баз данных
 
 Доступна новая версия [задания обработки эластичных баз данных](elastic-jobs-overview.md).
 
-При наличии существующего клиента размещаются версию задания эластичной базы данных, миграции командлетов и скриптов, предоставленных для простому переносу до последней версии.
+Если у вас есть версия заданий обработки эластичных баз данных, размещенных в клиенте, то для быстрого перехода на последнюю версию предоставляются командлеты и сценарии миграции.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Новая версия задания обработки эластичных баз данных обладает новым набором командлетов PowerShell, которые можно использовать во время процесса миграции. С помощью новых командлетов будут перенесены все существующие учетные данные задания, объекты (базы данных, сервера, пользовательские коллекции), триггеры задания, расписания задания, содержимое задания на новый агент заданий обработки эластичных баз данных.
 
 ### <a name="install-the-latest-elastic-jobs-cmdlets"></a>Установка агента задания обработки эластичных баз данных
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом работы.
+Если у вас еще нет подписки Azure, [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 
 Установите модуль **Az.Sql** предварительной версии 1.1.1, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
@@ -89,11 +88,11 @@ Use-AzureSqlJobConnection -CurrentAzureSubscription -Credential (Get-Credential)
 
 
 
-## <a name="migration"></a>Миграция
+## <a name="migration"></a>Перенос
 
 Теперь когда обе версии (новая и старая) командлетов задания обработки эластичных баз данных инициализированы, можно выполнить миграцию учетных данных задания, и заданий в новую *базу данных заданий*.
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 ```powershell
 $ErrorActionPreference = "Stop";
@@ -628,7 +627,7 @@ $jobs | Start-AzSqlElasticJob
 $jobs | Set-AzSqlElasticJob -Enable
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

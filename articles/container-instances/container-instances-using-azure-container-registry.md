@@ -10,10 +10,10 @@ ms.date: 01/04/2019
 ms.author: danlep
 ms.custom: mvc
 ms.openlocfilehash: 502f178b66e7ba233552d7db4e095363c8bb8628
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68325561"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
@@ -32,7 +32,7 @@ ms.locfileid: "68325561"
 
 В следующем разделе вы создадите субъект-службу и сохраните его учетные данные в хранилище ключей Azure, которое также создается в этом разделе. 
 
-### <a name="create-key-vault"></a>Создание хранилища ключей
+### <a name="create-key-vault"></a>Создать хранилище ключей
 
 Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/key-vault-overview.md), создайте его с помощью Azure CLI, используя следующие команды.
 
@@ -50,7 +50,7 @@ az keyvault create -g $RES_GROUP -n $AKV_NAME
 
 Теперь вам нужно создать субъект-службу и сохранить его учетные данные в хранилище ключей.
 
-Следующая команда использует команду [AZ AD SP Create-for-RBAC][az-ad-sp-create-for-rbac] to create the service principal, and [az keyvault secret set][az-keyvault-secret-set] для хранения **пароля** субъекта-службы в хранилище.
+Следующая команда выдает команду [AZ AD SP Create-for-RBAC][az-ad-sp-create-for-rbac] для создания субъекта-службы и [AZ keyvault Secret Set][az-keyvault-secret-set] для хранения **пароля** субъекта-службы в хранилище.
 
 ```azurecli
 # Create service principal, store its password in AKV (the registry *password*)
@@ -94,7 +94,7 @@ az keyvault secret set \
 ACR_LOGIN_SERVER=$(az acr show --name $ACR_NAME --resource-group $RES_GROUP --query "loginServer" --output tsv)
 ```
 
-Выполните следующую команду [AZ Container Create][az-container-create] , чтобы развернуть экземпляр контейнера. Команда использует учетные данные субъекта-службы, хранящиеся в Azure Key Vault, для проверки подлинности в вашем реестре контейнеров и предполагает, что вы ранее отправили образ [aci-helloworld](container-instances-quickstart.md) в ваш реестр. Обновите значение `--image`, если вы хотите использовать другой образ из реестра.
+Выполните следующую команду [az container create][az-container-create], чтобы развернуть экземпляр контейнера. Команда использует учетные данные субъекта-службы, хранящиеся в Azure Key Vault, для проверки подлинности в вашем реестре контейнеров и предполагает, что вы ранее отправили образ [aci-helloworld](container-instances-quickstart.md) в ваш реестр. Обновите значение `--image`, если вы хотите использовать другой образ из реестра.
 
 ```azurecli
 az container create \

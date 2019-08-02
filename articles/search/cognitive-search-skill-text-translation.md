@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: cmacdo
 ms.custom: seodec2018
-ms.openlocfilehash: 0268a16ecc07d578e1e3dc2b15ad9208509c2a8c
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: c267d6b2b5a8606c8caaba15c9316a8dbcb989b9
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68351290"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698823"
 ---
-#   <a name="text-translation-cognitive-skill-preview"></a>Неприятный навык преобразования текста (Предварительная версия)
+#   <a name="text-translation-cognitive-skill"></a>Неприятный навык преобразования текста
 
-Навык **преобразования текста** оценивает текст и для каждой записи возвращает текст, преобразованный на указанный целевой язык. Этот навык использует [API перевода текстов v 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) , доступный в Cognitive Services.  Несмотря на то, что в настоящее время доступна последняя версия API службы поиска Azure, она считается доступной в предварительной версии и должна рассматриваться, пока объявлена как общедоступная.
+Навык **преобразования текста** оценивает текст, а для каждой записи возвращает текст, преобразованный на указанный целевой язык. Этот навык использует [API перевода текстов v 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) , доступный в Cognitive Services.
 
 Эта возможность полезна, если вы ожидаете, что документы могут находиться не на одном языке. в этом случае можно нормализовать текст на один язык перед индексированием для поиска путем его перевода.  Он также полезен для вариантов использования при локализации, где может потребоваться использовать копии одного и того же текста на нескольких языках.
 

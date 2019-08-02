@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: cherylmc
-ms.openlocfilehash: 0ba818ef3c24d0e88e662adf87b22cc938fe5fab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d076e2b0057f0ba666fa47ffd0b3d7d1fcc14631
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60391078"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725583"
 ---
 # <a name="about-zone-redundant-virtual-network-gateways-in-azure-availability-zones"></a>Избыточные между зонами шлюзы виртуальной сети в Зонах доступности Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "60391078"
 
 ### <a name="what-regions-are-available-for-me-to-use-the-new-skus"></a>В каких регионах доступны новые номера SKU?
 
-Новые номера SKU доступны в тех регионах Azure, в которых есть Зоны доступности Azure: центральная часть США, Центральная Франция, Северная Европа, Западная Европа и западная часть США 2. В будущем шлюзы, избыточные между зонами, будут доступны и в других общедоступных регионах Azure.
+Новые номера SKU доступны в регионах Azure с Зоны доступности Azure центральным регионом США, центральным, Северо-Восточная Европа, Западная Европа и Западная часть США 2, восточной части США, Восточная часть США 2, Юго-Восточная Азия, Восточная Япония, южная часть Соединенного Королевства. В будущем шлюзы, избыточные между зонами, будут доступны и в других общедоступных регионах Azure.
 
 ### <a name="can-i-changemigrateupgrade-my-existing-virtual-network-gateways-to-zone-redundant-or-zonal-gateways"></a>Можно ли обновить существующие шлюзы виртуальной сети до шлюзов, избыточных между зонами, или зональных шлюзов?
 
@@ -98,4 +98,4 @@ ms.locfileid: "60391078"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-[Создание шлюза виртуальной сети, избыточного между зонами](create-zone-redundant-vnet-gateway.md)
+[Создание избыточного между зонами шлюза виртуальной сети](create-zone-redundant-vnet-gateway.md)

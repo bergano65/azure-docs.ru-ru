@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
-manager: craigg
 ms.date: 06/03/2019
-ms.openlocfilehash: 0050745ea9d624adb6b7a28d5db91924d1c54b0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: df9390c00c34fce82de8cc17efb5cc3bce2e4e3d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479442"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569438"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
@@ -27,7 +26,7 @@ ms.locfileid: "66479442"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 ## <a name="automate-email-notifications-for-automatic-tuning-recommendations"></a>Автоматизация уведомлений по электронной почте о рекомендациях по автоматической настройке
 
@@ -59,9 +58,9 @@ ms.locfileid: "66479442"
 
 ## <a name="update-azure-automation-modules"></a>Обновление модулей службы автоматизации Azure
 
-Для получения рекомендаций по автоматической настройке сценарий PowerShell использует [Get-AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) команды для какой модуль Azure версии 4 и более поздней.
+Сценарий PowerShell для получения рекомендаций по автоматической настройке использует команды [Get-азресаурце](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get-азсклдатабасерекоммендедактион](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) , для которых требуется модуль Azure версии 4 и выше.
 
-- Если модули Azure необходимо обновить, см. в разделе [Az поддержка модуля в службе автоматизации Azure](../automation/az-modules.md).
+- Если вашим модулям Azure требуется обновление, см. статью [Поддержка модуля az в службе автоматизации Azure](../automation/az-modules.md).
 
 ## <a name="create-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -249,7 +248,7 @@ Write-Output $table
 
 Можно дополнительно настроить решение для создания уведомлений по электронной почте на основании определенного события настройки, отправляемых нескольким получателям, для нескольких подписок или баз данных. Это может зависеть от ваших конкретных сценариев.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о том, как автоматическая настройка может помочь повысить производительность базы данных, ознакомившись с разделом [Автоматическая настройка в Базе данных SQL Azure](sql-database-automatic-tuning.md).
 - Дополнительные сведения о том, как включить автоматическую настройку в базе данных SQL Azure, чтобы управлять рабочей нагрузкой, см. в статье [Включение автоматической настройки](sql-database-automatic-tuning-enable.md).

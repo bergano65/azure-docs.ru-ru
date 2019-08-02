@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 1c9894772f440a568cbc08890feb961471d84137
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b3ebd8b6f65ec86d338932579f5d4ccec6a90be3
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66480220"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704728"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -27,12 +27,16 @@ ms.locfileid: "66480220"
 |   |   |
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
-|**Пример**|[Пример .NET API таблицы Cosmos DB](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**Пример**|[Пример Cosmos DB API таблиц .NET](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
 |**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name104-preview104-preview"></a><a name="1.0.4-preview"/>1.0.4 — Предварительная версия
+* Исправления ошибок
+* Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
 ### <a name="a-name101101"></a><a name="1.0.1"/>1.0.1
 * Исправления ошибок
@@ -40,10 +44,10 @@ ms.locfileid: "66480220"
 ### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
 * Выпуск общедоступной версии
 
-### <a name="a-name0110-preview0110-preview"></a><a name="0.11.0-preview"/>0.11.0-Preview
-* Как могут настраиваться CloudTableClient были внесены изменения. Теперь принимает объект TableClientConfiguration во время построения. TableClientConfiguration предоставляют разные свойства для настройки поведения клиента в зависимости от того, является ли целевая конечная точка API таблиц Cosmos DB или API таблиц хранилища Azure.
-* Добавлена поддержка TableQuery результатов в отсортированном порядке по пользовательского столбца. Эта функция поддерживается только в конечных точках таблиц Cosmos DB.
-* Добавлена поддержка для предоставления RequestCharges на различными типами результатов. Эта функция поддерживается только в конечных точках таблиц Cosmos DB.
+### <a name="a-name0110-preview0110-preview"></a><a name="0.11.0-preview"/>0.11.0 — Предварительная версия
+* В то, как можно настроить CloudTableClient, были внесены изменения. Теперь он принимает объект Таблеклиентконфигуратион во время создания. Таблеклиентконфигуратион предоставляет различные свойства для настройки поведения клиента в зависимости от того, является ли Целевая конечная точка Cosmos DB API таблиц или API таблиц хранилища Azure.
+* Добавлена поддержка TableQuery, которая возвращает результаты в отсортированном порядке по пользовательскому столбцу. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
+* Добавлена поддержка предоставления Рекуестчаржес для различных типов результатов. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
 
 ### <a name="a-name0101-preview0101-preview"></a><a name="0.10.1-preview"/>0.10.1-preview
 * Добавлена поддержка для маркера SAS, операций TablePermissions, ServiceProperties и ServiceStats относительно конечных точек таблицы службы хранилища Azure. 
@@ -63,13 +67,15 @@ ms.locfileid: "66480220"
 ## <a name="release-and-retirement-dates"></a>Даты выпуска и вывода из эксплуатации
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-Эта библиотека .NET Standard кросс платформенные [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит библиотеки .NET Framework [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
+Эта кросс-платформенная библиотека .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит библиотеку .NET Framework [Microsoft. Azure. CosmosDB. Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |
+| 1.0.2-предварительная версия |2 мая 2019 г. |--- |
 | [1.0.1](#1.0.1) |19 апреля 2019 г. |--- |
 | [1.0.0](#1.0.0) |13 марта 2019 г. |--- |
-| [0.11.0-Preview](#0.11.0-preview) |5 марта 2019 г. |--- |
+| [0.11.0 — Предварительная версия](#0.11.0-preview) |5 марта 2019 г. |--- |
 | [0.10.1-preview](#0.10.1-preview) |22 января 2019 г. |--- |
 | [0.10.0-preview](#0.10.0-preview) |18 декабря 2018 г. |--- |
 | [0.9.1-preview](#0.9.1-preview) |18 октября 2018 г. |--- |

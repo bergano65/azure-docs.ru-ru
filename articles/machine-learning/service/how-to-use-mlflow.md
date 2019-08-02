@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2030365cd78480c25e224edfea9e395aafa6661c
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 55722c35dddcbf8a20f4f51958170938225e87e5
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227919"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68668389"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-service-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и службы Машинное обучение Azure (Предварительная версия)
 
@@ -36,13 +36,14 @@ ms.locfileid: "68227919"
 
  Отслеживание Млфлов предлагает функциональные возможности ведения журнала метрик и хранилища артефактов, которые доступны только в других случаях через [пакет SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
-| | Развертывание & отслеживания Млфлов | Машинное обучение Azure <br> Пакет SDK для Python |  Машинное обучение Azure <br> CLI | Портал Azure|
-|-|-|-|-|-|-|
+
+| | Развертывание & отслеживания Млфлов | Пакет SDK для Машинное обучение Azure Python |  Интерфейс командной строки службы "Машинное обучение Azure" | портала Azure|
+|---|---|---|---|---|
 | Управление рабочей областью |   | ✓ | ✓ | ✓ |
 | Использование хранилищ данных  |   | ✓ | ✓ | |
 | Метрики журнала      | ✓ | ✓ |   | |
 | Отправить артефакты | ✓ | ✓ |   | |
-| Просмотр метрик     | ✓ | ✓ | ✓ | ✓ |
+| Показать метрики     | ✓ | ✓ | ✓ | ✓ |
 | Управление вычислительными ресурсами   |   | ✓ | ✓ | ✓ |
 | Развертывание моделей    | ✓ | ✓ | ✓ | ✓ |
 |Мониторинг производительности модели||✓|  |   |

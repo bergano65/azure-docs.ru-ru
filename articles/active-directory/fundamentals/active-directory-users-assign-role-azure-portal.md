@@ -2,23 +2,23 @@
 title: Назначение ролей каталога пользователям в Azure Active Directory | Документация Майкрософт
 description: Инструкции по назначению ролей администратора и других ролей пользователям с помощью Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/06/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd26fa53c91c53893c7f326afda5158fa430be1e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2247b7678573594c4929bd33747fffb91203f457
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248142"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561797"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
 Если пользователю в вашей организации требуется разрешение на управление ресурсами Azure Active Directory (Azure AD), необходимо назначить пользователю соответствующую роль в Azure AD в зависимости от действий, которые пользователю нужно выполнять.
@@ -58,7 +58,7 @@ ms.locfileid: "60248142"
 
     Назначение роли удалено, она больше не отображается на странице **Ален Чарон — роль каталога**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
