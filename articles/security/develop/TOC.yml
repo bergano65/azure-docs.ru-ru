@@ -18,11 +18,10 @@
           href: secure-develop.md
         - name: Развертывание безопасных приложений
           href: secure-deploy.md
-- name: Решения
+- name: Ресурсы
   expanded: true
   items:
     - name: Анализ кода безопасности Майкрософт
-      expanded: true
       items:
         - name: Обзор
           href: security-code-analysis-overview.md
@@ -32,3 +31,49 @@
           href: security-code-analysis-customize.md
         - name: Часто задаваемые вопросы
           href: security-code-analysis-faq.md
+    - name: Microsoft Threat Modeling Tool
+      displayName: stride
+      href: threat-modeling-tool.md
+      items:
+        - name: Начало работы
+          href: threat-modeling-tool-getting-started.md
+        - name: Обзор возможностей
+          href: threat-modeling-tool-feature-overview.md
+        - name: Риски
+          href: threat-modeling-tool-threats.md
+        - name: Выпуски
+          href: threat-modeling-tool-releases.md
+          items:
+            - name: "Threat Modeling Tool, общедоступный выпуск\_7.1.5091.2 от 12.09.2018"
+              href: threat-modeling-tool-releases-71509112.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.51023.1 от 01.11.2018"
+              href: threat-modeling-tool-releases-71510231.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.60126.1 от 29.01.2019"
+              href: threat-modeling-tool-releases-71601261.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.60408.1 от 09.04.2019"
+              href: threat-modeling-tool-releases-71604081.md
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.60702.1 от 02.07.2019"
+              href: threat-modeling-tool-releases-71607021.md
+        - name: Устранение проблем
+          href: threat-modeling-tool-mitigations.md
+          items:
+            - name: Аудит и ведение журнала
+              href: threat-modeling-tool-auditing-and-logging.md
+            - name: Аутентификация
+              href: threat-modeling-tool-authentication.md
+            - name: Авторизация
+              href: threat-modeling-tool-authorization.md
+            - name: Безопасность обмена данными
+              href: threat-modeling-tool-communication-security.md
+            - name: Управление конфигурацией
+              href: threat-modeling-tool-configuration-management.md
+            - name: Шифрование
+              href: threat-modeling-tool-cryptography.md
+            - name: Управление исключениями
+              href: threat-modeling-tool-exception-management.md
+            - name: Проверка входных данных
+              href: threat-modeling-tool-input-validation.md
+            - name: Конфиденциальные данные
+              href: threat-modeling-tool-sensitive-data.md
+            - name: Управление сеансом
+              href: threat-modeling-tool-session-management.md

@@ -209,10 +209,6 @@
           href: /azure/active-directory/saas-apps/
     - name: Основные понятия
       items:
-        - name: Начальная синхронизация подготовки
-          href: user-provisioning.md
-        - name: Добавочная синхронизация подготовки
-          href: user-provisioning.md
         - name: Автоматизация подготовки для приложений с поддержкой SCIM
           href: use-scim-to-provision-users-and-groups.md
     - name: Руководства

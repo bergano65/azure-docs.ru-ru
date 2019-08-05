@@ -29,7 +29,7 @@
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
           href: whatis-azure-ad-connect.md
         - name: Выбор правильного метода аутентификации
-          href: 'https://docs.microsoft.com/azure/security/azure-ad-choose-authn'
+          href: 'https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn'
         - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
           href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
     - name: Синхронизация хэша паролей
