@@ -305,6 +305,8 @@
           href: logic-apps-enterprise-integration-accounts.md
         - name: Управление средами службы интеграции
           href: ise-manage-integration-service-environment.md
+        - name: Перемещение ресурсов приложения логики
+          href: move-logic-app-resources.md
         - name: Переход на последнюю схему
           href: ../connectors/connectors-schema-migration.md
     - name: Тест

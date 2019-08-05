@@ -43,6 +43,9 @@ sections:
       - type: list
         style: unordered
         items:
+          - html: 'Приступая к работе: <a href="tutorial-first-experiment-automated-ml">обучите и разверните</a> свою первую автоматизированную модель машинного обучения на портале Azure.'
+          - html: 'Приступая к работе: <a href="tutorial-1st-experiment-sdk-setup">настройте среду разработки</a> и <a href="tutorial-1st-experiment-sdk-train">обучите свою первую модель машинного обучения</a> с помощью записной книжки Jupyter (<b>руководство в двух частях</b>).'
+          - html: 'Приступая к работе: <a href="ui-tutorial-automobile-price-train-score">обучите</a> и <a href="ui-tutorial-automobile-price-deploy">разверните</a> свой первый эксперимент машинного обучения с помощью визуального интерфейса с поддержкой перетаскивания (<b>руководство в двух частях</b>).'
           - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).
           - html: <a href="tutorial-data-prep">Подготовка данных</a> и <a href="tutorial-auto-train-models">использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).
           - html: <a href="ui-tutorial-automobile-price-train-score">Прогнозирование стоимости автомобиля</a> с помощью визуального интерфейса и <a href="ui-tutorial-automobile-price-deploy">развертывание</a> модели регрессии.

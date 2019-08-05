@@ -43,7 +43,9 @@
       href: security-center-incident.md
     - name: Реагирование на инциденты
       href: security-center-incident-response.md
-- name: Практические руководства
+    - name: Управление в нескольких клиентах
+      href: security-center-cross-tenant-management.md
+- name: Руководства
   items:
     - name: Улучшение результатов оценки безопасности
       href: security-center-secure-score.md
@@ -81,6 +83,8 @@
       items:
         - name: Что такое рекомендации по безопасности
           href: security-center-recommendations.md
+        - name: Рекомендации по устранению проблем
+          href: security-center-remediate-recommendations.md
         - name: Повышение уровня безопасности
           href: security-center-monitoring.md
         - name: Защита компьютеров и приложений

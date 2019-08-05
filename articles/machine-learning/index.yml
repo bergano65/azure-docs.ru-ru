@@ -36,6 +36,26 @@ sections:
           - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
         style: unordered
         type: list
+      - text: '<b>Руководство. Обучение и развертывание первой автоматизированной модели машинного обучения на портале Azure:</b>'
+        type: paragraph
+      - items:
+          - html: <a href="service/tutorial-first-experiment-automated-ml">Использование автоматического машинного обучения для обучения и развертывания первой модели классификации</a>
+        style: unordered
+        type: list
+      - text: '<b>Руководство. Обучение первой модели машинного обучения с помощью пакета SDK:</b>'
+        type: paragraph
+      - items:
+          - html: Часть 1. <a href="service/tutorial-1st-experiment-sdk-setup">Настройка среды и рабочей области</a>
+          - html: Часть 2. <a href="service/tutorial-1st-experiment-sdk-train">Обучение первой модели</a>
+        style: unordered
+        type: list
+      - text: '<b>Руководство. Обучение и развертывание первого эксперимента с помощью визуального интерфейса:</b>'
+        type: paragraph
+      - items:
+          - html: Часть 1. <a href="service/ui-tutorial-automobile-price-train-score">Обучение регрессионной модели</a>
+          - html: Часть 2. <a href="service/ui-tutorial-automobile-price-deploy">Развертывание модели</a>
+        style: unordered
+        type: list
       - text: <b>Руководство. Классификация изображений данных MNIST с помощью пакета SDK</b>
         type: paragraph
       - items:

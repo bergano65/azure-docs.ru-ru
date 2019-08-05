@@ -87,6 +87,8 @@
       items:
         - name: Создание шаблона
           href: how-to-create-template.md
+        - name: Имя и тип дочернего ресурса
+          href: child-resource-name-type.md
         - name: Создание групп ресурсов и ресурсов в подписке
           displayName: subscription level deployment
           href: deploy-to-subscription.md

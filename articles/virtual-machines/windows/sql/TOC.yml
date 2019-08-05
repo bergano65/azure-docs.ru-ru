@@ -68,7 +68,9 @@
       items:
         - name: Перенос базы данных SQL Server
           href: virtual-machines-windows-migrate-sql.md
-    - name: Настройка высокой доступности
+        - name: Перемещение виртуальной машины в другой регион
+          href: virtual-machines-windows-sql-move-different-region.md
+    - name: Настройка высокого уровня доступности
       items:
         - name: Использование службы хранилища Azure для резервного копирования и восстановления
           href: virtual-machines-windows-use-storage-sql-server-backup-restore.md
