@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Настройка и создание виртуальной машины в Azure для обработки и анализа данных и машинного обучения.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: e1467c0f-497b-48f7-96a0-7f806a7bec0b
@@ -12,15 +12,15 @@ ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.workload: data-services
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/22/2019
-ms.author: gokuma
-ms.openlocfilehash: 57768fc463f5ea1d2f1ec386f3f0975758220013
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
-ms.translationtype: MT
+ms.author: vijetaj
+ms.openlocfilehash: dfb3e9f6390d4c80b8f3c37b87f2659c671fa823
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626385"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68591822"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "67626385"
 
 После создания и подготовки виртуальной машины вы можете подключиться к ней по протоколу удаленного рабочего стола, используя учетную запись администратора, настроенную в разделе **Основные сведения**. Теперь все готово к использованию установленных и настроенных на виртуальной машине средств. Ко многим средствам можно получить доступ через значки на рабочем столе и элементы в меню "Пуск".
 
-Также можно присоединить виртуальную Машину обработки и анализа данных для записных книжек Azure запускать записные книжки Jupyter на виртуальной Машине и обойти ограничения на уровне бесплатная служба. Дополнительные сведения см. в разделе [управление и Настройка проектов записные книжки - уровня вычислений](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
+Вы также можете подключить Виртуальную машину для обработки и анализа данных к службе "Записные книжки Azure", чтобы запускать записные книжки Jupyter на виртуальной машине и обходить ограничения бесплатного уровня служб. Дополнительные сведения см. в разделе об [уровне вычислений](../../notebooks/configure-manage-azure-notebooks-projects.md#compute-tier) в статье о настройке проектов и управлении ими.
 
 ## <a name="tools-installed-on-the-microsoft-data-science-virtual-machine"></a>Средства, установленные на виртуальной машине Майкрософт для обработки и анализа данных
 
@@ -224,7 +224,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 > [!NOTE]
 > В DSVM с выпусками Windows Server 2012 и Windows Server 2016, развернутых до марта 2018 г., по умолчанию используется среда Anaconda для Python 2.7. Среда Python 3.5 устанавливается в качестве дополнительной в папку **C:\Anaconda\envs\py35**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 * Изучите инструменты, включенные в Виртуальную машину для обработки и анализа данных, открыв меню **Пуск**.
 * Дополнительные сведения о службе машинного обучения Azure см. в статье [Что такое служба машинного обучения Azure?](../service/overview-what-is-azure-ml.md) и ознакомьтесь с доступными [краткими руководствами и учебниками](../service/index.yml).

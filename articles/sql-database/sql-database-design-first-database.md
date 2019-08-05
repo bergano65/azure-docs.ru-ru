@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: stevestein
 ms.author: sstein
 ms.reviewer: v-masebo
-ms.date: 02/08/2019
-ms.openlocfilehash: bbd009d127eecc4df357fc1073ba4055d13a8b2c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.date: 07/29/2019
+ms.openlocfilehash: c6ad1cd7af02f281c53ece23a018f8b5ec0c7da9
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569013"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640941"
 ---
 # <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-using-ssms"></a>Руководство по Проектирование отдельной реляционной базы данных в службе "База данных SQL Azure" с помощью SQL Server Management Studio
 
@@ -30,6 +30,8 @@ ms.locfileid: "68569013"
 
 \* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
+> [!TIP]
+> Следующий модуль Microsoft Learn поможет вам бесплатно научиться [разрабатывать и настраивать приложение ASP.NET, которое запрашивает базу данных SQL Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/), а также создавать простую базу данных.
 > [!NOTE]
 > В рамках этого руководства используется отдельная база данных. Но вы также можете использовать базу данных в составе эластичного пула или базу данных экземпляра в управляемом экземпляре. Чтобы подключиться к управляемому экземпляру, ознакомьтесь с руководствами по управляемому экземпляру: [Краткое руководство Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md) и [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
 

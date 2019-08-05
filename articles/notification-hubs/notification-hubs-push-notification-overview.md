@@ -15,12 +15,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 04/30/2019
 ms.author: jowargo
-ms.openlocfilehash: 03d4c269f76a89c43dec253367d07f3bf71a06d8
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1ee50603886f76b0a54cee940e7644c401804078
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141214"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610018"
 ---
 # <a name="what-is-azure-notification-hubs"></a>Что такое Центры уведомлений Azure?
 
@@ -86,7 +86,7 @@ Push-уведомления доставляются через инфрастр
   - Управление маркерами устройств выполняется централизованно.
 - **Поддержка различных серверных систем**
   - Облачные или локальные системы.
-  - .NET, Node.js, Java и т. д.
+  - .NET, Node.js, Java, Python и т. д.
 - **Широкий набор схем доставки**
   - Широковещательная передача на одну или несколько платформ. С помощью одного вызова API вы можете мгновенно передавать данные в широковещательном режиме на миллионы устройств под управлением различных платформ.
   - Отправка push-уведомления на устройство. Вы можете направлять уведомления на конкретные устройства.

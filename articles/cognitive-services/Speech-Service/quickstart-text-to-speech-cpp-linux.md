@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтезирование речи с помощью C++ (Linux) в службах "Речь"
+title: Краткое руководство. Синтезирование речи с помощью C++ (Linux) — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как синтезировать речь в Linux, используя C++ и пакет SDK служб "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: yinhew
-ms.openlocfilehash: fbc5f21bb97eabb234e2b3905796ae01877ed89f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: dbc9c2adc2663d3ba0ec3f9ea17b758ca2723441
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604939"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553703"
 ---
 # <a name="quickstart-synthesize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Синтезирование речи в приложении C++ для Linux с помощью пакета SDK для служб "Речь"
 

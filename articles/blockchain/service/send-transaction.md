@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: jackyhsu
 manager: femila
-ms.openlocfilehash: 9037c7b5498a5e0a37b05e5ee09891bf8066393d
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 3cfbbdc5b95d1607738b132980320d2ff7c99788
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417490"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698383"
 ---
 # <a name="tutorial-send-transactions-using-azure-blockchain-service"></a>Руководство по Отправка транзакций с помощью службы "Блокчейн Azure"
 
@@ -72,30 +72,17 @@ ms.locfileid: "66417490"
     cd truffledemo
     ```
 
-1. Запустите интерактивную консоль разработки Truffle.
+1. С помощью консоли Truffle подключитесь к узлу транзакций по умолчанию.
 
     ``` bash
-    truffle develop
+    truffle console --network defaultnode
     ```
 
-    Truffle создает блокчейн для локальной разработки и предоставляет интерактивную консоль.
+    Truffle подключается к узлу транзакции по умолчанию и предоставляет интерактивную консоль.
 
 ## <a name="create-ethereum-account"></a>Создание учетной записи Ethereum
 
-С помощью Web3 подключитесь к узлу транзакций по умолчанию и создайте учетную запись Ethereum. Вы можете получить строку подключения Web3 на портале Azure.
-
-1. На портале Azure перейдите к узлу транзакций по умолчанию и выберите **Узлы транзакций > Пример кода > Web3**.
-1. Скопируйте код JavaScript из раздела **HTTPS (ключ доступа 1)** ![Пример кода Web3](./media/send-transaction/web3-code.png)
-
-1. Вставьте код JavaScript Web3 для узла транзакций по умолчанию в интерактивной консоли разработки Truffle. С помощью кода создается объект web3, подключенный к узлу транзакций службы "Блокчейн Azure".
-
-    ```bash
-    truffle(develop)> var Web3 = require("Web3");
-    truffle(develop)> var provider = new Web3.providers.HttpProvider("https://myblockchainmember.blockchain.azure.com:3200/hy5FMu5TaPR0Zg8GxiPwned");
-    truffle(develop)> var web3 = new Web3(provider);
-    ```
-
-    Вы можете вызывать методы в объекте Web3 для взаимодействия с узлом транзакций.
+С помощью Web3 подключитесь к узлу транзакций по умолчанию и создайте учетную запись Ethereum. Вы можете вызывать методы в объекте Web3 для взаимодействия с узлом транзакций.
 
 1. Создайте новую учетную запись на узле транзакций по умолчанию. Замените пароль надежным паролем.
 
@@ -159,21 +146,21 @@ ms.locfileid: "66417490"
           })(),
     
           network_id: "*",
-          gas: 0,
           gasPrice: 0,
           from: myAccount
         },
         alpha: {
           provider: new Web3.providers.HttpProvider(alpha),
           network_id: "*",
-          gas: 0,
-          gasPrice: 0
         },
         beta: {
           provider: new Web3.providers.HttpProvider(beta),
           network_id: "*",
-          gas: 0,
-          gasPrice: 0
+        }
+      },
+      compilers: {
+        solc: {
+          evmVersion: "byzantium"
         }
       }
     }

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 10f559295ff0598dea26fb30b089f020e2985889
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 993b0249bdcc8e0e54dbe0c222aa2335c3bf8d4a
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840344"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68679145"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Подготовка виртуальных машин VMware к оценке и миграции в Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "67840344"
 1. В Azure AD глобальному администратору или администратору клиента нужно перейти в раздел **Azure Active Directory** > **Пользователи** > **Параметры пользователей**.
 2. Затем для параметра **Регистрация приложений** нужно выбрать вариант **Да**.
 
-    ![Разрешения Azure AD](./media/tutorial-prepare-vmware/aad.png)
+    ![Разрешения Azure AD](./media/tutorial-prepare-vmware/aad.png)
 
 > [!NOTE]
 > Это значение по умолчанию, которое разрешает выполнять регистрацию. [Узнайте больше](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance).
@@ -102,11 +102,11 @@ ms.locfileid: "67840344"
 
 ## <a name="prepare-for-vmware-vm-assessment"></a>Подготовка оценки виртуальных машин VMware
 
-Чтобы подготовиться к оценке VMware VM, необходимо проверить параметры хоста и виртуальной машины Hyper-V, а также параметры развертывания устройства.
+Чтобы подготовиться к оценке виртуальной машины VMware, необходимо проверить параметры хоста и виртуальной машины VMware, а также параметры развертывания устройства.
 
 ### <a name="verify-vmware-settings"></a>Проверка параметров VMware
 
-1. [Проверьте](migrate-support-matrix-vmware.md#assessment-vmware-server-requirements) соответствие требованиям сервера VMware для оценки виртуальных машин.
+1. [Проверьте](migrate-support-matrix-vmware.md#assessment-vcenter-server-requirements) соответствие требованиям сервера VMware для оценки виртуальных машин.
 2. [Убедитесь](migrate-support-matrix-vmware.md#assessment-port-requirements), то на серверах vCenter Server открыты необходимые порты.
 
 

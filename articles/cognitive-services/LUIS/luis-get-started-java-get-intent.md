@@ -1,6 +1,6 @@
 ---
-title: Получение намерения с использованием Java
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Получение намерения с помощью Java — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства по Java вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 author: diberry
 manager: nitinme
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 42240c7b45029684e51c25419eab7f4378785a4d
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 7a80aefd7a88727cf3a2261115c076853bd45b3f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276140"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563820"
 ---
 # <a name="quickstart-get-intent-using-java"></a>Краткое руководство. Получение намерения с использованием Java
 

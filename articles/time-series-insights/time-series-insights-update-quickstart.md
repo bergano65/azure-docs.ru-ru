@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Изучение демонстрационной среды службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
-description: Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" (предварительная версия).
+description: Краткое руководство по демонстрационной среде службы "Аналитика временных рядов Azure" (предварительная версия).
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
@@ -10,13 +10,13 @@ ms.reviewer: dpalled
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 04/22/2019
-ms.openlocfilehash: 547edb194ffdf52a805f573d338f61edff80623a
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.date: 07/29/2019
+ms.openlocfilehash: 3d098b1806e4fdf5b45030dfebf3dfe5959b7d5c
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164878"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677715"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-preview-demo-environment"></a>Краткое руководство. Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" (предварительная версия)
 
@@ -26,11 +26,12 @@ ms.locfileid: "67164878"
 
 В этом кратком руководстве описывается, как использовать Аналитику временных рядов, чтобы находить аналитические сведения для принятия решений в данных Contoso. Кроме того, вы выполните краткий анализ первопричин, чтобы точнее прогнозировать критические сбои и осуществлять техническое обслуживание.
 
+> [!IMPORTANT]
+> Если у вас нет учетной записи, создайте  [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) .
+
 ## <a name="explore-the-time-series-insights-explorer-in-a-demo-environment"></a>Изучение обозревателя службы "Аналитика временных рядов" в демонстрационной среде
 
 Обозреватель предварительной версии службы "Аналитика временных рядов" отображает анализ исторических данных и основных причин. Чтобы начать работу:
-
-1. Если у вас нет учетной записи, создайте  [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) .
 
 1. Перейдите в среду  [демонстрационной версии ветроэлектростанции Contoso](https://insights.timeseries.azure.com/preview/samples).  
 
@@ -73,10 +74,9 @@ ms.locfileid: "67164878"
 
 Благодаря Аналитике временных рядов и телеметрии датчиков мы обнаружили долгосрочную и проблемную тенденцию, скрытую в исторических данных. С помощью этих новых аналитических сведений мы можем выполнить следующее.
 
-> [!div class="checklist"]
-> * Понять, что произошло на самом деле.
-> * Исправить проблему.
-> * Установить более совершенные системы оповещения.
+* Понять, что произошло на самом деле.
+* Исправить проблему.
+* Установить более совершенные системы оповещения.
 
 ## <a name="root-cause-analysis"></a>Анализ первопричин
 
@@ -115,6 +115,13 @@ ms.locfileid: "67164878"
     * Обновите изображение, чтобы наложить значения всех датчиков **Generator System** (Система генерации) на одну и ту же шкалу диаграммы.
 
       [![Обновление изображения для отображения всего содержимого](media/v2-update-quickstart/quickstart-ten.png)](media/v2-update-quickstart/quickstart-ten.png#lightbox)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+После завершения работы с учебником удалите созданные ресурсы:
+
+1. На [портале Azure](https://portal.azure.com) в меню слева щелкните **Все ресурсы** и найдите группу ресурсов службы "Аналитика временных рядов Azure".
+1. Удалите всю группу ресурсов (и все содержащиеся в ней ресурсы), выбрав **Удалить**, или каждый ресурс по отдельности.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

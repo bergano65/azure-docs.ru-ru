@@ -1,7 +1,7 @@
 ---
-title: Изменение и обучение приложения с помощью Go
+title: Изменение и обучение приложения с помощью Go — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства для языка Go вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение.
-titleSuffix: Language Understanding - Microsoft Cognitive Services
 author: diberry
 manager: nitinme
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: diberry
-ms.openlocfilehash: 973323cd14d9472d9845f0709fc6d2924efc56f5
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 690ea26cb5c6effda71ec1d8236c6dabd02f02ee
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357150"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560556"
 ---
 # <a name="quickstart-change-model-using-go"></a>Краткое руководство. Изменение модели с помощью Go
 

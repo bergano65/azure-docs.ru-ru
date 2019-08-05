@@ -1,7 +1,7 @@
 ---
-title: Использование R для выполнения запросов к Базе данных SQL Azure
+title: Отправка запросов к службе "База данных SQL Azure" с помощью сценария R в Службах машинного обучения
 titleSuffix: Azure SQL Database Machine Learning Services (preview)
-description: В этой статье показано, как использовать сценарий R для подключения к Базе данных SQL Azure и выполнения запросов к ней с помощью инструкций Transact-SQL.
+description: В этой статье показано, как с помощью сценария R в Службах машинного обучения службы "База данных SQL Azure" подключиться к базе данных SQL Azure и отправлять к ней запросы, используя инструкции Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: machine-learning
@@ -13,16 +13,16 @@ ms.author: garye
 ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
-ms.openlocfilehash: 1d4b17cf1e0349bf877c676cb4e591fc20ad4113
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: ff38346a9b3bd14db51383c116240b030d3ee42a
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416359"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68514864"
 ---
-# <a name="quickstart-use-r-to-query-an-azure-sql-database-preview"></a>Краткое руководство. Использование R для выполнения запросов к Базе данных SQL Azure (предварительная версия)
+# <a name="quickstart-use-r-with-machine-learning-services-to-query-an-azure-sql-database-preview"></a>Краткое руководство. Отправка запросов к базе данных SQL Azure с помощью сценария R в Службах машинного обучения (предварительная версия)
 
- В этом кратком руководстве показано, как использовать [R](https://www.r-project.org/) и Службы машинного обучения для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Службы машинного обучения — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. в разделе [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с поддержкой R) в Базе данных SQL Azure (предварительная версия)).
+В этом кратком руководстве показано, как использовать [R](https://www.r-project.org/) и Службы машинного обучения для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Службы машинного обучения — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. в разделе [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с поддержкой R) в Базе данных SQL Azure (предварительная версия)).
 
 [!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 

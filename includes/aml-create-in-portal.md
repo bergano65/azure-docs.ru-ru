@@ -8,19 +8,17 @@ ms.author: sgilley
 manager: cgronlund
 ms.custom: include file
 ms.topic: include
-ms.date: 07/21/2019
-ms.openlocfilehash: 51bd3dfb33b1f445db8672e1b987ee6c6242e09c
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.date: 07/31/2019
+ms.openlocfilehash: 7be5b0dbe4bbfba30ea469eec662877c1ef56c7c
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68370828"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689602"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных для используемой подписки Azure. 
 
-1. Выберите **Создать ресурс** в левом верхнем углу портала.
-
-   ![Создание ресурса на портале Azure](./media/aml-create-in-portal/portal-create-a-resource-07-2019.png)
+1. В верхнем левом углу окна портала Azure щелкните **Создать ресурс**.
 
 1. С помощью строки поиска найдите ресурс **Рабочая область Службы машинного обучения**.
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Пользовательский виртуальный помощник по обработке голоса (предварительная версия), Java (Windows, Linux). Службы распознавания речи
+title: Краткое руководство. Пользовательский виртуальный помощник по обработке голоса (предварительная версия), Java (Windows, Linux) — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как использовать пакет средств разработки программного обеспечения (SDK) для службы "Речь" в Cognitive Services в консольном приложении Java. Вы узнаете, как подключить клиентское приложение к ранее созданному боту Bot Framework, настроенному для использования канала "Речь Direct Line", и включить функцию виртуального помощника по обработке голоса.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: bidishac
-ms.openlocfilehash: 78e80b276a13ee6e27fdf0515f2901fdeaa20c5d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b1be09a2af712277ccaad827b8e84e24ed9f5c5c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604926"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553256"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-java"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, Java
 

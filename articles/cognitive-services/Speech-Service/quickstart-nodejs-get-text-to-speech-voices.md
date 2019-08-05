@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Перечисление голосовых моделей для преобразований текста в речь на Node.js — службы распознавания речи
+title: Краткое руководство. Перечисление голосовых моделей для преобразований текста в речь с помощью Node.js — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Node.js. Список возвращается как JSON, а доступность голосовой модели зависит от региона.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: d64f59b6b4439d79d64ee92cf23676ab1275c45a
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 1044519110d8b0ae7b5a50860c8116d73b6b70bc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603001"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559372"
 ---
 # <a name="quickstart-get-the-list-of-text-to-speech-voices-using-nodejs"></a>Краткое руководство. Получение списка голосовых моделей для преобразований текста в речь с использованием Node.js
 
@@ -50,7 +50,7 @@ const fs = require('fs');
 
 REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Эта функция меняет ключ подписки служб распознавания речи на маркер доступа через конечную точку `issueToken`.
 
-В этом примере предполагается, что подписка службы распознавания речи размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписка служб "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 Скопируйте в проект следующий код:
 

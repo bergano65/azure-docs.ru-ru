@@ -1,5 +1,5 @@
 ---
-title: Что такое API анализа текста? - Возможности -
+title: Что такое API "Анализ текста"? - Возможности -
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать API Анализа текста в Azure Cognitive Services для анализа тональности, извлечения ключевых фраз, а также определения языка и распознаванием сущностей.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 04/03/2019
+ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: 89a1fa396ff8bc5b954e91e7b08e6d731a81559a
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: ee4551f6a31436ef2322fcea3a0c479b45036993
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657653"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697618"
 ---
-# <a name="what-is-text-analytics-api"></a>Что такое API анализа текста?
+# <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
 API Анализа текста — это облачная служба, которая предоставляет расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, определение языка и распознавание сущностей.
 
@@ -25,19 +25,19 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Understanding-Text-using-Cognitive-Services/player]
 
-Анализ текста может иметь различные значения, но Cognitive Services API анализа текста предоставляет четыре типа анализа, описанные ниже.
+Анализ текста может иметь различные значения, но Cognitive Services API анализа текста предоставляет четыре типа анализа, описанные ниже. Эти функции можно использовать с [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/) или с клиентской библиотекой для [.NET](quickstarts/csharp.md), [Python](quickstarts/python-sdk.md), [Node.js](quickstarts/nodejs-sdk.md), [Go](quickstarts/go-sdk.md) или [Ruby](quickstarts/ruby-sdk.md).
 
 ## <a name="sentiment-analysis"></a>Анализ тональности
-Используйте [анализ тональности высказываний](how-tos/text-analytics-how-to-sentiment-analysis.md), чтобы узнать, что клиенты думают о вашем бренде или торговой марке, анализируя необработанный текст для получения сведений о тональности выражений (положительная или отрицательная). Этот API возвращает оценку тональности (0 или 1) для каждого документа, где 1 означает положительную тональность.<br /> Модели анализа предварительно обучены с использованием обширного набора текстов и технологий естественного языка корпорации Майкрософт. Для [выбранных языков](text-analytics-supported-languages.md) API может анализировать и оценивать любой необработанный текст, напрямую возвращая результаты вызывающему приложению. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c9) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#create-the-visual-studio-solution-and-install-the-sdk) SDK.
+Используйте [анализ тональности высказываний](how-tos/text-analytics-how-to-sentiment-analysis.md), чтобы узнать, что клиенты думают о вашем бренде или торговой марке, анализируя необработанный текст для получения сведений о тональности выражений (положительная или отрицательная). Этот API возвращает оценку тональности (0 или 1) для каждого документа, где 1 означает положительную тональность.<br /> Модели анализа предварительно обучены с использованием обширного набора текстов и технологий естественного языка корпорации Майкрософт. Для [выбранных языков](text-analytics-supported-languages.md) API может анализировать и оценивать любой необработанный текст, напрямую возвращая результаты вызывающему приложению.
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевых фраз
-Автоматическое [извлечение ключевых фраз](how-tos/text-analytics-how-to-keyword-extraction.md) в тексте поможет быстро определить основные мысли. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал". Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#create-the-visual-studio-solution-and-install-the-sdk) SDK.
+Автоматическое [извлечение ключевых фраз](how-tos/text-analytics-how-to-keyword-extraction.md) в тексте поможет быстро определить основные мысли. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал".
 
 ## <a name="language-detection"></a>Распознавание языка
-Вы можете [определить, на каком языке написан входной текст](how-tos/text-analytics-how-to-language-detection.md), и сообщить единый код языка для каждого документа, представленного по запросу, на разных языках, диалектах и некоторых местных наречиях. Код языка сопряжен с показателем, указывающим степень оценки. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c7) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#create-the-visual-studio-solution-and-install-the-sdk) SDK.
+Вы можете [определить, на каком языке написан входной текст](how-tos/text-analytics-how-to-language-detection.md), и сообщить единый код языка для каждого документа, представленного по запросу, на разных языках, диалектах и некоторых местных наречиях. Код языка сопряжен с показателем, указывающим степень оценки.
 
 ## <a name="named-entity-recognition"></a>Распознавание именованных сущностей
-[Определение сущностей и их распределение по категориям](how-tos/text-analytics-how-to-entity-linking.md), таким как текст, люди, места, организации, дата и время, количество, проценты, валюта и многое другое. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/5ac4251d5b4ccd1554da7634) API.
+[Определение сущностей и их распределение по категориям](how-tos/text-analytics-how-to-entity-linking.md), таким как текст, люди, места, организации, дата и время, количество, проценты, валюта и многое другое. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете.
 
 ## <a name="use-containers"></a>Использование контейнеров
 
@@ -47,7 +47,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 Рабочий процесс прост: данные отправляются для анализа, а выходные данные обрабатываются в коде. Анализаторы используются как есть без дополнительной конфигурации или настройки.
 
-1. [Зарегистрируйтесь](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) для получения [ключа доступа](how-tos/text-analytics-how-to-access-key.md). Ключ должен передаваться по каждому запросу.
+1. [Создайте ресурс Azure](../cognitive-services-apis-create-account.md) для Анализа текста. После этого [получите ключ](../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), созданный для аутентификации ваших запросов.
 
 2. [Сформулируйте запрос](how-tos/text-analytics-how-to-call-api.md#json-schema), содержащий ваши данные как необработанный неструктурированный текст в формате JSON.
 
@@ -75,7 +75,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 ## <a name="supported-languages"></a>Поддерживаемые языки
 
-Этот раздел перемещен в отдельную статью, чтобы оптимизировать поиск информации. Соответствующее содержимое см. в статье [Supported languages in the Text Analytics API](text-analytics-supported-languages.md) (Поддерживаемые языки в API анализа текста).
+Этот раздел перемещен в отдельную статью, чтобы оптимизировать поиск информации. Соответствующее содержимое см. в статье [Language and region support for the Text Analytics API](text-analytics-supported-languages.md) (Поддержка языков и регионов для API "Анализ текста").
 
 <a name="data-limits"></a>
 
@@ -108,10 +108,12 @@ API анализа текста использует кодировку Юник
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-+ [Зарегистрируйтесь](how-tos/text-analytics-how-to-signup.md) для получения ключа доступа и просмотрите шаги для [вызова API](how-tos/text-analytics-how-to-call-api.md).
++ [Создайте ресурс Azure](../cognitive-services-apis-create-account.md) для Анализа текста, чтобы получить ключ и конечную точку для своих приложений.
 
 + Просмотрите [краткое руководство](quickstarts/csharp.md). Это пошаговое руководство по вызовам REST API на C#. Узнайте, как отправить текст, выбрать анализ и просмотреть результаты с минимальным объемом кода. При желании вы можете начать с [краткого руководства по Python](quickstarts/python.md).
 
++ Сведения о новых выпусках и возможностях см. в статье [What's new in the Text Analytics API?](whats-new.md) (Новые возможности API "Анализ текста").
+
 + Углубите свои знания с помощью [руководства по анализу тональности](https://docs.microsoft.com/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services), используя Azure Databricks.
 
-+ Ознакомьтесь со списком публикаций в блоге и другими видеороликами о том, как использовать API анализа текста с другими инструментами и технологиями на нашей [странице внешнего контента и контента сообщества](text-analytics-resource-external-community.md).
++ Ознакомьтесь со списком публикаций в блоге и другими видеороликами о том, как использовать API "Анализ текста" с другими инструментами и технологиями на нашей [странице внешнего контента и контента сообщества](text-analytics-resource-external-community.md).

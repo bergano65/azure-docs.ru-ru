@@ -1,5 +1,6 @@
 ---
-title: Анализ тональности с помощью REST API Анализа текста в Cognitive Services Azure | Документация Майкрософт
+title: Анализ тональности с помощью REST API Анализа текста в Cognitive Services Azure
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как определить тональность с помощью REST API анализа текста.
 services: cognitive-services
 author: aahill
@@ -7,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 02/26/2019
+ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: c3004dd3910dd5fdafc933efa213c9f097310e87
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 19654a4902ae64e5de63ffc93a8d143cc518e254
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68001710"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697731"
 ---
 # <a name="example-detect-sentiment-with-text-analytics"></a>Пример: Определение тональности в службе "Анализ текста"
 
@@ -41,7 +42,7 @@ ms.locfileid: "68001710"
 
 Размер документа должен быть менее 5120 символов. На каждую коллекцию может приходиться до 1000 элементов (ИД). Коллекция передается в тексте запроса. Ниже приведен пример содержимого, которое вы можете представить для анализа тональности.
 
-```
+```json
     {
         "documents": [
             {
@@ -63,7 +64,7 @@ ms.locfileid: "68001710"
                 "language": "en",
                 "id": "4",
                 "text": "It was foggy so we missed the spectacular views, but the trail was ok. Worth checking out if you are in the area."
-            },                
+            },
             {
                 "language": "en",
                 "id": "5",
@@ -81,7 +82,7 @@ ms.locfileid: "68001710"
 
 + Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или созданного при [установке и запуске контейнеров анализа текста](text-analytics-how-to-install-containers.md) экземпляра. Он должен включать в себя ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`.
 
-+ Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [How to find endpoints and access keys for the Text Analytics Cognitive Service](text-analytics-how-to-access-key.md) (Как найти конечные точки и ключи доступа для анализа текста в Cognitive Services).
++ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
@@ -104,41 +105,41 @@ ms.locfileid: "68001710"
 В следующем примере показан ответ для коллекции документов в этой статье.
 
 ```json
-{
-    "documents": [
-        {
-            "score": 0.9999237060546875,
-            "id": "1"
-        },
-        {
-            "score": 0.0000540316104888916,
-            "id": "2"
-        },
-        {
-            "score": 0.99990355968475342,
-            "id": "3"
-        },
-        {
-            "score": 0.980544924736023,
-            "id": "4"
-        },
-        {
-            "score": 0.99996328353881836,
-            "id": "5"
-        }
-    ],
-    "errors": []
-}
+    {
+        "documents": [
+            {
+                "score": 0.9999237060546875,
+                "id": "1"
+            },
+            {
+                "score": 0.0000540316104888916,
+                "id": "2"
+            },
+            {
+                "score": 0.99990355968475342,
+                "id": "3"
+            },
+            {
+                "score": 0.980544924736023,
+                "id": "4"
+            },
+            {
+                "score": 0.99996328353881836,
+                "id": "5"
+            }
+        ],
+        "errors": []
+    }
 ```
 
 ## <a name="sentiment-analysis-v3-public-preview"></a>Общедоступная предварительная версия 3 анализа тональности
 
-Теперь доступна общедоступная предварительная [следующая версия анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-preview/operations/56f30ceeeda5650db055a3c9). Это значительно улучшает точность и детализацию классификации и оценки текста API. 
+Теперь доступна общедоступная предварительная [следующая версия анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-preview/operations/56f30ceeeda5650db055a3c9). Это значительно улучшает точность и детализацию классификации и оценки текста API.
 
 > [!NOTE]
 > * Формат запроса и [ограничения данных](../overview.md#data-limits) для анализа тональности версии 3 по сравнению с предыдущей версией не изменились.
-> * Сейчас анализ тональности версии 3: 
->    * поддерживает только английский язык;  
+> * Сейчас анализ тональности версии 3:
+>    * поддерживает только английский язык;
 >    * доступен в следующих регионах: `Central US`, `Central Canada` и `East Asia`.
 
 |Функция |ОПИСАНИЕ  |
@@ -164,20 +165,20 @@ ms.locfileid: "68001710"
 Ниже приведен пример запроса в формате JSON на анализ тональности новой версии. Формат запроса остался таким же, как и в предыдущей версии:
 
 ```json
-{
-  "documents": [
     {
-      "language": "en",
-      "id": "1",
-      "text": "Hello world. This is some input text that I love."
-    },
-    {
-      "language": "en",
-      "id": "2",
-      "text": "It's incredibly sunny outside! I'm so happy."
+        "documents": [
+        {
+            "language": "en",
+            "id": "1",
+            "text": "Hello world. This is some input text that I love."
+        },
+        {
+            "language": "en",
+            "id": "2",
+            "text": "It's incredibly sunny outside! I'm so happy."
+        }
+        ],
     }
-  ]
-}
 ```
 
 ### <a name="sentiment-analysis-v3-example-response"></a>Пример ответа от API анализа тональности версии 3
@@ -185,73 +186,73 @@ ms.locfileid: "68001710"
 Хотя формат запроса по сравнению с предыдущей версией не изменился, формат ответа теперь другой. Ниже приведен пример ответа в формате JSON от новой версии API:
 
 ```json
-{
-    "documents": [
-        {
-            "id": "1",
-            "sentiment": "positive",
-            "documentScores": {
-                "positive": 0.98570585250854492,
-                "neutral": 0.0001625834556762,
-                "negative": 0.0141316400840878
-            },
-            "sentences": [
-                {
-                    "sentiment": "neutral",
-                    "sentenceScores": {
-                        "positive": 0.0785155147314072,
-                        "neutral": 0.89702343940734863,
-                        "negative": 0.0244610067456961
-                    },
-                    "offset": 0,
-                    "length": 12
+    {
+        "documents": [
+            {
+                "id": "1",
+                "sentiment": "positive",
+                "documentScores": {
+                    "positive": 0.98570585250854492,
+                    "neutral": 0.0001625834556762,
+                    "negative": 0.0141316400840878
                 },
-                {
-                    "sentiment": "positive",
-                    "sentenceScores": {
-                        "positive": 0.98570585250854492,
-                        "neutral": 0.0001625834556762,
-                        "negative": 0.0141316400840878
+                "sentences": [
+                    {
+                        "sentiment": "neutral",
+                        "sentenceScores": {
+                            "positive": 0.0785155147314072,
+                            "neutral": 0.89702343940734863,
+                            "negative": 0.0244610067456961
+                        },
+                        "offset": 0,
+                        "length": 12
                     },
-                    "offset": 13,
-                    "length": 36
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "sentiment": "positive",
-            "documentScores": {
-                "positive": 0.89198976755142212,
-                "neutral": 0.103382371366024,
-                "negative": 0.0046278294175863
+                    {
+                        "sentiment": "positive",
+                        "sentenceScores": {
+                            "positive": 0.98570585250854492,
+                            "neutral": 0.0001625834556762,
+                            "negative": 0.0141316400840878
+                        },
+                        "offset": 13,
+                        "length": 36
+                    }
+                ]
             },
-            "sentences": [
-                {
-                    "sentiment": "positive",
-                    "sentenceScores": {
-                        "positive": 0.78401315212249756,
-                        "neutral": 0.2067587077617645,
-                        "negative": 0.0092281140387058
-                    },
-                    "offset": 0,
-                    "length": 30
+            {
+                "id": "2",
+                "sentiment": "positive",
+                "documentScores": {
+                    "positive": 0.89198976755142212,
+                    "neutral": 0.103382371366024,
+                    "negative": 0.0046278294175863
                 },
-                {
-                    "sentiment": "positive",
-                    "sentenceScores": {
-                        "positive": 0.99996638298034668,
-                        "neutral": 0.0000060341349126,
-                        "negative": 0.0000275444017461
+                "sentences": [
+                    {
+                        "sentiment": "positive",
+                        "sentenceScores": {
+                            "positive": 0.78401315212249756,
+                            "neutral": 0.2067587077617645,
+                            "negative": 0.0092281140387058
+                        },
+                        "offset": 0,
+                        "length": 30
                     },
-                    "offset": 31,
-                    "length": 13
-                }
-            ]
-        }
-    ],
-    "errors": []
-}
+                    {
+                        "sentiment": "positive",
+                        "sentenceScores": {
+                            "positive": 0.99996638298034668,
+                            "neutral": 0.0000060341349126,
+                            "negative": 0.0000275444017461
+                        },
+                        "offset": 31,
+                        "length": 13
+                    }
+                ]
+            }
+        ],
+        "errors": []
+    }
 ```
 
 ### <a name="example-c-code"></a>Пример кода C#:
@@ -264,14 +265,13 @@ ms.locfileid: "68001710"
 
 + [API анализа тональности](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9) доступен для некоторых языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
-+ Запрос POST передается в конечную точку `/sentiment` используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
++ Запрос POST передается в конечную точку `/sentiment` используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Выходные данные ответа, состоящие из оценки тональности для каждого идентификатора документа, могут передаваться в любое приложение, принимающее JSON. Примеры приложений, среди прочих, включают в себя Excel и Power BI.
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
+ API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
+ [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

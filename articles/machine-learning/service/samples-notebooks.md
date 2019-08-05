@@ -9,34 +9,37 @@ ms.topic: sample
 author: sdgilley
 ms.author: sgilley
 ms.reviewer: sgilley
-ms.date: 05/29/2019
+ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea4d5a807c25ea0406b49dac8a83ef1a34e0e8b3
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 7fdf9c52df502bc94519ab6c65be2e9fb546ce48
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391778"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699133"
 ---
-# <a name="use-jupyter-notebooks-to-explore-azure-machine-learning-service"></a>Использование записных книжек Jupyter в Azure Machine Learning Workbench
+# <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Службе машинного обучения Azure
 
-[Репозиторий с записными книжками Машинного обучения Azure](https://github.com/azure/machinelearningnotebooks) включает последние примеры пакета SDK Машинного обучения Azure для Python. Эти записные книжки Juypter помогут вам изучить пакет SDK. Вы можете использовать их как модели для собственных проектов машинного обучения.
+[Репозиторий с записными книжками службы "Машинное обучение Azure"](https://github.com/azure/machinelearningnotebooks) включает последние примеры пакета SDK Машинного обучения Azure для Python. Эти записные книжки Juypter помогут вам изучить пакет SDK. Вы можете использовать их как модели для собственных проектов машинного обучения.
 
 В этой статье показано, как получить доступ к репозиторию из следующих сред:
 
-- [Виртуальная машина Notebook Машинного обучения Azure](#azure-machine-learning-notebook-vm)
-- [Сервер собственных записных книжек](#bring-your-own-jupyter-notebook-server)
-- [Виртуальные машины для обработки и анализа данных](#data-science-virtual-machine)
-- [Записные книжки Azure](#azure-notebooks)
+- [Виртуальная машина Notebook Машинного обучения Azure](#notebookvm)
+- [Сервер собственных записных книжек](#byo)
+- [Виртуальные машины для обработки и анализа данных](#dsvm)
+- [Записные книжки Azure](#aznb)
 
 > [!NOTE]
 > Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials**, а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
 
-## <a name="azure-machine-learning-notebook-vm"></a>Виртуальная машина Notebook Машинного обучения Azure
+<a name="notebookvm"></a>
+## <a name="get-samples-on-azure-machine-learning-notebook-vm"></a>Получение примеров на виртуальной машине записных книжек службы "Машинное обучение Azure"
 
 Самый простой способ приступить к работе с примерами, — пройти [краткое руководство по использованию облачных записных книжек](quickstart-run-cloud-notebook.md). После этого вы получите выделенный сервер записных книжек, предварительно загруженный с пакетом SDK, и репозиторий с примером. Скачивать или устанавливать что-либо вам не нужно.
 
-## <a name="bring-your-own-jupyter-notebook-server"></a>Использование собственного сервера Jupyter Notebook
+<a name="byo"></a>
+
+## <a name="get-samples-on-your-notebook-server"></a>Получение примеров на сервере записных книжек
 
 Если вы хотите использовать собственный сервер записных книжек для локальной разработки, сделайте следующее.
 
@@ -44,13 +47,15 @@ ms.locfileid: "66391778"
 
 Выполнив эти инструкции вы установите основные пакеты SDK, требуемые для работы с руководствами по использованию записных книжек. Другие примеры записных книжек могут потребовать установки дополнительных компонентов. См. подробнее об [установке пакета SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install).
 
-## <a name="data-science-virtual-machine"></a>Виртуальная машина для обработки и анализа данных
+<a name="dsvm"></a>
+## <a name="get-samples-on-dsvm"></a>Получение примеров в среде "Виртуальная машина для обработки и анализа данных"
 
 Виртуальная машина для анализа и обработки данных (DSVM) — это созданный и настроенный образ специализированной виртуальной машины. Если вы [создаете DSVM](how-to-configure-environment.md#dsvm), сервер с пакетом SDK и записными книжками устанавливается и настраивается автоматически. Но вас все равно нужно создать рабочую область и клонировать репозиторий с примером.
 
 [!INCLUDE [aml-dsvm-server](../../../includes/aml-dsvm-server.md)]
 
-## <a name="azure-notebooks"></a>Записные книжки Azure
+<a name="aznb"></a>
+## <a name="get-samples-on-azure-notebooks"></a>Получение примеров в службе "Записные книжки Azure"
 
 Для [Записных книжек Azure](https://notebooks.azure.com/) сервер с пакетом SDK и записными книжками устанавливается и настраивается автоматически. Записные книжки Azure предоставляет полностью управляемую упрощенную среду для работы с записными книжками.
 

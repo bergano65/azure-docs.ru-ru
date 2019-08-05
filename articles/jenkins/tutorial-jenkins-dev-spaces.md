@@ -1,18 +1,18 @@
 ---
 title: Использование подключаемого модуля Azure Dev Spaces для Jenkins со службой Azure Kubenetes
-description: Сведения об использовании подключаемого модуля Azure Dev Spaces в конвейере непрерывной интеграции.
+description: Из этой статьи вы узнаете, как использовать подключаемый модуль Azure Dev Spaces в конвейере непрерывной интеграции.
 author: tomarchermsft
 ms.author: tarcher
 ms.service: jenkins
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 06/18/2019
-ms.openlocfilehash: f5f74ebeb803a5c493f1dbedb6501adf3a88c215
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.date: 07/31/2019
+ms.openlocfilehash: 10ff8f4645ee1e7023c96174236243a3b85de938
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67785672"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68679123"
 ---
 <!-- GMinchAQ, 06/18/19 -->
 
@@ -171,11 +171,11 @@ Azure Dev Spaces позволяет тестировать и итеративн
 
 В этом разделе показано, как подготовить сервер Jenkins для выполнения примера конвейера непрерывной интеграции.
 
-* Установка подключаемых модулей
+* Установка подключаемых модулей.
 * Установка Helm и Kubernetes CLI
 * Добавление учетных данных
 
-### <a name="install-plugins"></a>Установка подключаемых модулей
+### <a name="install-plug-ins"></a>Установка подключаемых модулей.
 
 1. Выполните вход на сервер Jenkins. Выберите действие **Manage Jenkins (Управление Jenkins) > Manage Plugins (Управление подключаемыми модулями)** .
 2. На вкладке **Available** (Доступные) выберите такие подключаемые модули:

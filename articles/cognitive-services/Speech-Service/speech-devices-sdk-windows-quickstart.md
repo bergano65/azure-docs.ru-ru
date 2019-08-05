@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск пакета Speech Devices SDK для речевых устройств на Windows.
+title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Windows — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Предварительные требования и инструкции по началу работы с Windows Speech Devices SDK.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/10/2019
 ms.author: erhopf
-ms.openlocfilehash: ac0ed218aa27a36b3b8cd8ed8123e2baef6948c6
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: ad90a6443cc1c94bcdb730e783b82dfdd4798676
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723295"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553008"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-windows"></a>Краткое руководство. Запустите пример приложения Speech Devices SDK в Windows
 

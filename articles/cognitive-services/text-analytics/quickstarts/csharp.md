@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 07/18/2019
+ms.date: 07/30/2019
 ms.author: assafi
-ms.openlocfilehash: 09713528f51675f6e9d7f3073b6c81b095d23631
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 6bd3907392dad626c1eeb1823c929f1a35d544dd
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356965"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697672"
 ---
 # <a name="quickstart-use-the-net-sdk-and-c-to-call-the-text-analytics-service"></a>Краткое руководство. Вызов службы "Анализ текста" с помощью пакета SDK для .NET и C#
 <a name="HOLTop"></a>
@@ -23,18 +23,18 @@ ms.locfileid: "68356965"
 Это краткое руководство поможет научиться анализировать язык с помощью пакета Azure SDK для .NET и языка C#. Так как REST API [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759711) совместим с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения.
 
 > [!NOTE]
-> Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/samples/TextAnalytics).
+> В демонстрационном коде этой статьи для простоты используются синхронные методы пакета SDK .NET для Анализа текста. Но в приложениях для рабочей среды мы рекомендуем использовать пакетные асинхронные методы, чтобы обеспечить масштабируемость и высокую скорость отклика. Например, можно использовать `SentimentBatchAsync` вместо `Sentiment`.
+>
+> Пакетную асинхронную версию этого примера можно найти на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/samples/TextAnalytics).
 
 Технические подробности см. в [справочнике по пакету SDK службы "Анализ текста"](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-dotnet) для .NET.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017 или более поздней версии].
+* Любой выпуск Visual Studio 2017 или более поздней версии.
 * Пакет SDK Анализа текста [для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics).
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
-
-Кроме того, потребуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
 ## <a name="create-the-visual-studio-solution-and-install-the-sdk"></a>Создание решения Visual Studio и установка пакета SDK
 
@@ -89,6 +89,7 @@ ms.locfileid: "68356965"
     //You can get the resource location from Azure Portal -> your TA resource -> Overview
     private const string Endpoint = "enter-your-service-endpoint-here"; // For example: "https://<your-location>.api.cognitive.microsoft.com";
     ```
+
 > [!Tip]
 > Для повышения безопасности секретов в рабочих системах мы советуем использовать [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-net).
 >
@@ -108,10 +109,10 @@ ms.locfileid: "68356965"
 
         // Change the console encoding to display non-ASCII characters.
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        SentimentAnalysisExample(client).Wait();
-        // DetectLanguageExample(client).Wait();
-        // RecognizeEntitiesExample(client).Wait();
-        // KeyPhraseExtractionExample(client).Wait();
+        SentimentAnalysisExample(client);
+        // DetectLanguageExample(client);
+        // RecognizeEntitiesExample(client);
+        // KeyPhraseExtractionExample(client);
         Console.ReadLine();
     }
 ```
@@ -121,113 +122,58 @@ ms.locfileid: "68356965"
 ## <a name="perform-sentiment-analysis"></a>Анализ тональности
 
 1. Создайте функцию `SentimentAnalysisExample()`, которая принимает созданный ранее клиент.
-2. Создайте список объектов `MultiLanguageInput`, содержащих документы, которые необходимо проанализировать.
+2. В той же функции вызовите `client.Sentiment()` и получите результат. При успешном выполнении результат будет содержать тональность `Score`. В противном случае вернется `errorMessage`. Оценка, близкая к 0, указывает на негативную тональность, а близкая к 1 — на позитивную.
 
     ```csharp
-    public static async Task SentimentAnalysisExample(TextAnalyticsClient client)
-    {
-        // The documents to be analyzed. Add the language of the document. The ID can be any value.
-        var inputDocuments = new MultiLanguageBatchInput(
-            new List<MultiLanguageInput>
-            {
-                new MultiLanguageInput("en", "1", "I had the best day of my life.")
-            });
-        //...
-    }
-    ```
-
-3. В той же функции вызовите `client.SentimentAsync()` и получите результат. Затем выполните итерацию результатов. Выведите идентификатор каждого документа и оценку тональности. Оценка, близкая к 0, указывает на негативную тональность, а близкая к 1 — на позитивную.
-
-    ```csharp
-    var result = await client.SentimentAsync(false, inputDocuments);
+    var result = client.Sentiment("I had the best day of my life.", "en");
 
     // Printing sentiment results
-    foreach (var document in result.Documents)
-    {
-        Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
-    }
+    Console.WriteLine($"Sentiment Score: {result.Score:0.00}");
     ```
 
 ### <a name="output"></a>Выходные данные
 
 ```console
-Document ID: 1 , Sentiment Score: 0.87
+Sentiment Score: 0.87
 ```
 
 ## <a name="perform-language-detection"></a>Распознавание языка
 
 1. Создайте функцию `DetectLanguageExample()`, которая принимает созданный ранее клиент.
-2. Создайте список объектов `LanguageInput`, содержащих документы.
+2. В той же функции вызовите `client.DetectLanguage()` и получите результат. При успешном выполнении результат будет содержать список обнаруженных языков в `DetectedLanguages`. В противном случае вернется `errorMessage`. Затем выведите первый возвращенный язык.
 
     ```csharp
-    public static async Task DetectLanguageExample(TextAnalyticsClient client)
-    {
-
-        // The documents to be submitted for language detection. The ID can be any value.
-        var inputDocuments = new LanguageBatchInput(
-                new List<LanguageInput>
-                    {
-                        new LanguageInput(id: "1", text: "This is a document written in English.")
-                    });
-        //...
-    }
-    ```
-
-3. В той же функции вызовите `client.DetectLanguageAsync()` и получите результат. Затем выполните итерацию результатов. Выведите идентификатор каждого документа и первый возвращенный язык.
-
-    ```csharp
-    var langResults = await client.DetectLanguageAsync(false, inputDocuments);
+    var result = client.DetectLanguage("This is a document written in English.");
 
     // Printing detected languages
-    foreach (var document in langResults.Documents)
-    {
-        Console.WriteLine($"Document ID: {document.Id} , Language: {document.DetectedLanguages[0].Name}");
-    }
+    Console.WriteLine($"Language: {result.DetectedLanguages[0].Name}");
     ```
+
+> [!Tip]
+> В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны. По умолчанию API использует US в качестве значения countryHint по умолчанию.Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`.
 
 ### <a name="output"></a>Выходные данные
 
 ```console
-===== LANGUAGE EXTRACTION ======
-Document ID: 1 , Language: English
+Language: English
 ```
 
 ## <a name="perform-entity-recognition"></a>Распознавание сущностей
 
 1. Создайте функцию `RecognizeEntitiesExample()`, которая принимает созданный ранее клиент.
-2. Создайте список объектов `MultiLanguageBatchInput`, содержащих документы.
+2. В той же функции вызовите `client.Entities()` и получите результат. Затем выполните итерацию результатов. При успешном выполнении результат будет содержать список обнаруженных сущностей в `Entities`. В противном случае вернется `errorMessage`. Для каждой обнаруженной сущности выведите ее тип, подтип, имя в Википедии (если они есть), а также расположение в исходном тексте.
 
     ```csharp
-    public static async Task RecognizeEntitiesExample(TextAnalyticsClient client)
-    {
-        // The documents to be submitted for entity recognition. The ID can be any value.
-        var inputDocuments = new MultiLanguageBatchInput(
-            new List<MultiLanguageInput>
-            {
-                new MultiLanguageInput("en", "1", "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800.")
-            });
-        //...
-    }
-    ```
-
-3. В той же функции вызовите `client.EntitiesAsync()` и получите результат. Затем выполните итерацию результатов. Выведите идентификатор каждого документа. Для каждого обнаруженного объекта распечатайте его имя в Википедии, тип и подтипы (если они есть), а также расположение в исходном тексте.
-
-    ```csharp
-    var entitiesResult = await client.EntitiesAsync(false, inputDocuments);
+    var result = client.Entities("Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800.");
 
     // Printing recognized entities
-    foreach (var document in entitiesResult.Documents)
+    Console.WriteLine("Entities:");
+    foreach (var entity in result.Entities)
     {
-        Console.WriteLine($"Document ID: {document.Id} ");
-
-        Console.WriteLine("\t Entities:");
-        foreach (var entity in document.Entities)
+        Console.WriteLine($"\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
+        foreach (var match in entity.Matches)
         {
-            Console.WriteLine($"\t\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
-            foreach (var match in entity.Matches)
-            {
-                Console.WriteLine($"\t\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
-            }
+            Console.WriteLine($"\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
         }
     }
     ```
@@ -235,67 +181,46 @@ Document ID: 1 , Language: English
 ### <a name="output"></a>Выходные данные
 
 ```console
-Document ID: 1
-         Entities:
-                Name: Microsoft,        Type: Organization,     Sub-Type: N/A
-                        Offset: 0,      Length: 9,      Score: 1.000
-                Name: Bill Gates,       Type: Person,   Sub-Type: N/A
-                        Offset: 25,     Length: 10,     Score: 1.000
-                Name: Paul Allen,       Type: Person,   Sub-Type: N/A
-                        Offset: 40,     Length: 10,     Score: 0.999
-                Name: April 4,  Type: Other,    Sub-Type: N/A
-                        Offset: 54,     Length: 7,      Score: 0.800
-                Name: April 4, 1975,    Type: DateTime, Sub-Type: Date
-                        Offset: 54,     Length: 13,     Score: 0.800
-                Name: BASIC,    Type: Other,    Sub-Type: N/A
-                        Offset: 89,     Length: 5,      Score: 0.800
-                Name: Altair 8800,      Type: Other,    Sub-Type: N/A
-                        Offset: 116,    Length: 11,     Score: 0.800
+Entities:
+    Name: Microsoft,        Type: Organization,     Sub-Type: N/A
+        Offset: 0,      Length: 9,      Score: 1.000
+    Name: Bill Gates,       Type: Person,   Sub-Type: N/A
+        Offset: 25,     Length: 10,     Score: 1.000
+    Name: Paul Allen,       Type: Person,   Sub-Type: N/A
+        Offset: 40,     Length: 10,     Score: 0.999
+    Name: April 4,  Type: Other,    Sub-Type: N/A
+        Offset: 54,     Length: 7,      Score: 0.800
+    Name: April 4, 1975,    Type: DateTime, Sub-Type: Date
+        Offset: 54,     Length: 13,     Score: 0.800
+    Name: BASIC,    Type: Other,    Sub-Type: N/A
+        Offset: 89,     Length: 5,      Score: 0.800
+    Name: Altair 8800,      Type: Other,    Sub-Type: N/A
+        Offset: 116,    Length: 11,     Score: 0.800
 ```
 
 ## <a name="perform-key-phrase-extraction"></a>Извлечение ключевых фраз
 
 1. Создайте функцию `KeyPhraseExtractionExample()`, которая принимает созданный ранее клиент.
-2. Создайте список объектов `MultiLanguageBatchInput`, содержащих документы.
+2. В той же функции вызовите `client.KeyPhrases()` и получите результат. При успешном выполнении результат будет содержать список обнаруженных ключевых фраз в `KeyPhrases`. В противном случае вернется `errorMessage`. Затем выведите все обнаруженные ключевые фразы.
 
     ```csharp
-    public static async Task KeyPhraseExtractionExample(TextAnalyticsClient client)
+    var result = client.KeyPhrases("My cat might need to see a veterinarian.");
+
+    // Printing key phrases
+    Console.WriteLine("Key phrases:");
+
+    foreach (string keyphrase in result.KeyPhrases)
     {
-        var inputDocuments = new MultiLanguageBatchInput(
-                    new List<MultiLanguageInput>
-                    {
-                        new MultiLanguageInput("en", "1", "My cat might need to see a veterinarian.")
-                    });
-        //...
-    }
-    ```
-
-3. В той же функции вызовите `client.KeyPhrasesAsync()` и получите результат. Затем выполните итерацию результатов. Выведите идентификатор каждого документа и все обнаруженные ключевые фразы.
-
-    ```csharp
-    var kpResults = await client.KeyPhrasesAsync(false, inputDocuments);
-
-    // Printing keyphrases
-    foreach (var document in kpResults.Documents)
-    {
-        Console.WriteLine($"Document ID: {document.Id} ");
-
-        Console.WriteLine("\t Key phrases:");
-
-        foreach (string keyphrase in document.KeyPhrases)
-        {
-            Console.WriteLine($"\t\t{keyphrase}");
-        }
+        Console.WriteLine($"\t{keyphrase}");
     }
     ```
 
 ### <a name="output"></a>Выходные данные
 
 ```console
-Document ID: 1
-         Key phrases:
-                cat
-                veterinarian
+Key phrases:
+    cat
+    veterinarian
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

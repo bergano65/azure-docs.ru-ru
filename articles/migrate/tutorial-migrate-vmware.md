@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 885c877f219f59ab5049cf7b8e01243077d6d3eb
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 7fba9cbbaa15359e7e4dd95e66645dd5f4022431
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348389"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640767"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -41,7 +41,7 @@ ms.locfileid: "68348389"
 
 Чтобы решить, хотите ли вы использовать миграцию без агентов или на основе агента, просмотрите следующие статьи:
 
-- [Узнайте](server-migrate-overview.md), как работает безагентная миграция, и [ознакомьтесь с ограничениями](server-migrate-overview.md#agentless-migration-limitations).
+- [Узнайте](server-migrate-overview.md), как работает безагентная миграция, и [сравните методы миграции](server-migrate-overview.md#compare-migration-methods).
 - [Прочтите эту статью](tutorial-migrate-vmware-agent.md), если вы хотите использовать метод на основе агента.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -93,7 +93,7 @@ ms.locfileid: "68348389"
 
 Для переноса виртуальных машин с помощью Миграции Azure в Azure требуются некоторые изменения.
 
-- В некоторых [операционных системах](server-migrate-overview.md#agentless-migration-limitations) Миграция Azure вносит эти изменения автоматически.
+- В некоторых операционных системах Миграция Azure вносит эти изменения автоматически. [Подробнее](migrate-support-matrix-vmware.md#agentless-migration-vmware-vm-requirements)
 - Если вы выполняете миграцию виртуальной машины без одной из этих операционных систем, следуйте инструкциям для подготовки виртуальной машины.
 - Важно внести эти изменения до начала миграции. Если вы перенесете виртуальную машину до внесения изменений, она может не загрузиться в Azure.
 - Изменения конфигурации, которые вы вносите в локальные виртуальные машины, реплицируются в Azure после включения репликации для виртуальной машины. Чтобы обеспечить репликацию изменений, убедитесь, что точка восстановления, в которую вы выполняете перенос, имеет более позднюю дату, чем время, когда изменения конфигурации были сделаны локально.

@@ -8,14 +8,14 @@ ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
-ms.date: 02/08/2019
+ms.date: 07/29/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: ce9ba7c197bb604b9d71e2bf501ca67d32865f38
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9850285482db4f5981c183b51152ba1a3ac4975c
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566872"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640127"
 ---
 # <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство по Защита отдельной базы данных или базы данных в пуле
 
@@ -38,6 +38,9 @@ ms.locfileid: "68566872"
 > База данных SQL Azure в управляемом экземпляре защищена с помощью правил безопасности сети и частных конечных точек, как описано в статьях [Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-index.yml) и [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).
 
 Дополнительные сведения см. в статьях [Расширенные функции безопасности Базы данных SQL Azure](/azure/sql-database/sql-database-security-index) и [Обзор возможностей безопасности Базы данных SQL Azure](sql-database-security-overview.md).
+
+> [!TIP]
+> Следующий модуль Microsoft Learn поможет вам получить бесплатные сведения о [защите Базы данных SQL Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

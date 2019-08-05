@@ -1,32 +1,32 @@
 ---
-title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием пакета SDK Детектора аномалий для .NET
+title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием клиентской библиотеки Детектора аномалий для .NET
 titleSuffix: Azure Cognitive Services
-description: Запуск обнаружения аномалий в данных временных рядов с помощью службы Детектора аномалий.
+description: API Детектора аномалий используется для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 07/01/2019
+ms.date: 07/26/2019
 ms.author: aahi
-ms.openlocfilehash: a75196e035585a7501cdd842fb5b80ceff424dcc
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: c65b64608ade76a65dca42b72844d42ddc1b14fd
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721580"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639355"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для .NET
 
-Приступите к работе с клиентской библиотекой Детектора аномалий для .NET. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Служба Детектора аномалий позволяет находить отклонения в данных временных рядов, автоматически используя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
+Приступите к работе с клиентской библиотекой Детектора аномалий для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба Детектора аномалий позволяет находить отклонения в данных временных рядов, автоматически используя для них наиболее подходящие модели, независимо от отрасли, сценария или объема данных.
 
 Клиентскую библиотеку Детектора аномалий для .NET можно использовать для таких задач:
 
-* обнаружение аномальных действий в пакетном режиме;
-* обнаружение состояния аномалии последней точки данных.
+* Обнаружение аномалий в наборе данных временного ряда с использованием пакетного запроса.
+* Обнаружение состояния аномалии последней точки данных во временном ряду.
 
-[Справочная документация по API](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [примеры](https://github.com/Azure-Samples/anomalydetector)
+[Справочная документация по библиотеке](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [Примеры](https://github.com/Azure-Samples/anomalydetector)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,11 +39,13 @@ ms.locfileid: "67721580"
 
 [!INCLUDE [anomaly-detector-resource-creation](../../../../includes/cognitive-services-anomaly-detector-resource-cli.md)]
 
-### <a name="create-a-new-c-app"></a>Создание приложения C#
+После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа с именем `ANOMALY_DETECTOR_KEY`.
+
+### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
 Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе. 
 
-В окне консоли (cmd, PowerShell или Bash) выполните команду dotnet `new`, чтобы создать консольное приложение с именем `anomaly-detector-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs**. 
+В окне консоли (cmd, PowerShell или Bash) выполните команду dotnet `new`, чтобы создать консольное приложение с именем `anomaly-detector-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*. 
 
 ```console
 dotnet new console -n anomaly-detector-quickstart
@@ -64,6 +66,14 @@ Build succeeded.
  0 Error(s)
 ...
 ```
+
+В каталоге проекта откройте файл *program.cs* в предпочитаемом редакторе или интегрированной среде разработки. Добавьте следующие директивы (`directives`) using:
+
+[!code-csharp[using statements](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=usingStatements)]
+
+В методе приложения `main()` создайте переменную для расположения вашего ресурса в Azure и свой ключ в качестве переменной среды. Если вы создали переменную среды после запуска приложения, то для доступа к переменной следует закрыть и перезагрузить редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
+
+[!code-csharp[Main method](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=mainMethod)]
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
@@ -92,22 +102,6 @@ dotnet add package Microsoft.Azure.CognitiveServices.AnomalyDetector --version 0
 * [обнаружение аномалий во всем наборе данных](#detect-anomalies-in-the-entire-data-set); 
 * [обнаружение состояния аномалии последней точки данных](#detect-the-anomaly-status-of-the-latest-data-point).
 
-### <a name="add-the-main-method"></a>Добавление метода main
-
-Из каталога проекта:
-
-1. Откройте файл Program.cs в предпочитаемом редакторе или интегрированной среде разработки.
-2. Затем добавьте следующие директивы `using`.
-
-[!code-csharp[using statements](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=usingStatements)]
-
-> [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменную среды](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа Детектора аномалий с именем `ANOMALY_DETECTOR_KEY`.
-
-В методе приложения `main()` создайте переменную для расположения вашего ресурса в Azure и свой ключ в качестве переменной среды. Если вы создали переменную среды после запуска приложения, то для доступа к переменной следует закрыть и перезагрузить редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
-
-[!code-csharp[Main method](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=mainMethod)]
-
 ### <a name="authenticate-the-client"></a>Аутентификация клиента
 
 В новом методе создайте экземпляр клиента с использованием конечной точки и ключа. Создайте объект [ApiKeyServiceClientCredentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.apikeyserviceclientcredentials?view=azure-dotnet-preview) с помощью ключа и используйте его с конечной точкой, чтобы создать объект [AnomalyDetectorClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-dotnet-preview). 
@@ -117,8 +111,8 @@ dotnet add package Microsoft.Azure.CognitiveServices.AnomalyDetector --version 0
 ### <a name="load-time-series-data-from-a-file"></a>Загрузка данных временного ряда из файла
 
 Скачайте пример данных для этого краткого руководства с сайта [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/example-data/request-data.csv):
-1. В вашем браузере щелкните правой кнопкой мыши пункт **Без обработки**.
-2. Щелкните **Сохранить ссылку как**.
+1. В браузере щелкните правой кнопкой мыши пункт **Без обработки**.
+2. Выберите **Сохранить ссылку как**.
 3. Сохраните файл в формате CSV в каталоге вашего приложения.
 
 Данные временных рядов форматируются как CSV-файл и будут отправлены в API Детектора аномалий.

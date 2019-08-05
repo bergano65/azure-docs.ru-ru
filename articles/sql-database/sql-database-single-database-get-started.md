@@ -10,20 +10,19 @@ ms.topic: quickstart
 author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
-manager: craigg
-ms.date: 04/23/2019
-ms.openlocfilehash: 470dca235b9a3212c09052f7535fa90d076fe4d3
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.date: 07/29/2019
+ms.openlocfilehash: f9c2ed77075affdfdf464dbf8a468629fc2e610d
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444452"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640036"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure с помощью портала Azure, PowerShell и Azure CLI
 
 Создание [отдельной базы данных](sql-database-single-database.md) — это самый быстрый и простой вариант развертывания для создания базы данных в Базе данных SQL Azure. В этом кратком руководстве описано, как создать отдельную базу данных и отправить к ней запросы с помощью портала Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). 
 
 Для выполнения всех шагов в этом кратком руководстве войдите на [портал Azure](https://portal.azure.com/).
 
@@ -37,7 +36,7 @@ ms.locfileid: "68444452"
 При создании отдельной базы данных можете также определить [Сервер Базы данных SQL](sql-database-servers.md), чтобы управлять им и разместить его в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в указанном регионе.
 
 > [!NOTE]
-> В этом кратком руководстве используется [модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md) и уровень [бессерверных](sql-database-serverless.md) вычислений. [Модель приобретения на основе DTU](sql-database-service-tiers-DTU.md) также доступна.
+> В этом кратком руководстве используется [модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md). Также доступна [модель приобретения на основе единиц DTU](sql-database-service-tiers-DTU.md).
 
 Чтобы создать базу данных, содержащую образец данных AdventureWorksLT, выполните следующие действия.
 

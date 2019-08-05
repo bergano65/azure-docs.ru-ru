@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 6/24/2019
 ms.author: yinhew
-ms.openlocfilehash: 7b4a018e38ca625e38dc1658a95d3ce0e677f711
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: ccb6ec5b6f29c57a6136c571558d4126d0607710
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467196"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607678"
 ---
 # <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-net-core"></a>Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для .NET Core
 
 Также доступны краткие руководства по [распознаванию речи](quickstart-csharp-dotnetcore-windows.md) и [переводу речи](quickstart-translate-speech-dotnetcore-windows.md).
 
-Из этой статьи вы узнаете, как с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services создать консольное приложение C# для .NET Core в Windows. Вы синтезируете речь из текста в режиме реального времени через микрофон компьютера. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).
+Из этой статьи вы узнаете, как с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services создать консольное приложение C# для .NET Core в Windows. Вы синтезируете речь из текста в режиме реального времени через микрофон компьютера. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
 
 > [!NOTE]
 > .NET Core — это кроссплатформенная платформа .NET с открытым кодом, которая реализует спецификацию [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
@@ -33,7 +33,7 @@ ms.locfileid: "67467196"
 Для работы с этим кратким руководством вам понадобится:
 
 * [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio

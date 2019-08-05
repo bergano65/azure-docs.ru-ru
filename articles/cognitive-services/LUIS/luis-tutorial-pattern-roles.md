@@ -1,5 +1,5 @@
 ---
-title: Роли шаблонов
+title: Роли шаблонов — LUIS
 titleSuffix: Azure Cognitive Services
 description: Шаблоны используются для извлечения данных из хорошо отформатированных шаблонов речевых фрагментов. Высказывание шаблона использует простой объект и роли для извлечения связанных данных, таких как местоположение и место назначения.
 ms.custom: seodec18
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: c0e3ac1d53cda2afb2184b92b0fd0afd662101bb
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 7586a81eac95a2e4a08b045b3a2826132d9919f7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277501"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560032"
 ---
 # <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство по Извлечение контекстуально связанных шаблонов с использованием ролей
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск пакета SDK для речевых устройств в Linux. Службы речи
+title: Краткое руководство. Запуск пакета SDK для устройств, подключаемых к службе "Речь", в Linux — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Предварительные требования и инструкции по началу работы с пакетом SDK для речевых устройств в Linux.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/10/2019
 ms.author: erhopf
-ms.openlocfilehash: d755f3388466369ee1edc3d9ff1e353173babc10
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 3ee39f4cf0c78850b0128fc5e497f2b2aee57bbc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723303"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558970"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-linux"></a>Краткое руководство. Запуск примера приложения пакета SDK для речевых устройств в Linux
 
@@ -137,7 +137,7 @@ ms.locfileid: "67723303"
 
    ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/java-sample-app-linux.png)
 
-1. Попробуйте новую демоверсию **Транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демоверсию **транскрибирования бесед**. Запустите транскрибирование, выбрав **Session** (Сеанс) > **Start** (Запустить). По умолчанию все являются гостями. Тем не менее, если у вас есть голосовые подписи участников, вы можете добавить их в файл `participants.properties` в папке проекта **target/classes**. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](how-to-use-conversation-transcription-service.md).
 
    ![Демоверсия приложения транскрибирования бесед](media/speech-devices-sdk/cts-sample-app-linux.png)
 

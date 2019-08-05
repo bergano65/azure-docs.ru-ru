@@ -1,5 +1,6 @@
 ---
-title: Определение языка с помощью REST API "Анализ текста" | Документация Майкрософт
+title: Определение языка с помощью REST API "Анализ текста"
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как определить язык с помощью REST API "Анализ текста" из Azure Cognitive Services.
 services: cognitive-services
 author: aahill
@@ -7,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 02/26/2019
+ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: e1adeb34cf999f471bb183e4d7de9c65427252bb
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 361dc10aad6f65230e1e0f4c563534d44b45f902
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986508"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697812"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Пример: Определение языка с помощью API "Анализ текста"
 
@@ -35,7 +36,7 @@ ms.locfileid: "67986508"
 
 Размер документа не должен превышать 5120 символов. На каждую коллекцию может приходиться до 1000 элементов (ИД). Коллекция передается в тексте запроса. Ниже приведен пример содержимого, который вы можете предоставить для распознавания языка.
 
-   ```
+```json
     {
         "documents": [
             {
@@ -53,7 +54,7 @@ ms.locfileid: "67986508"
             {
                 "id": "4",
                 "text": "本文件为英文"
-            },                
+            },
             {
                 "id": "5",
                 "text": "Этот документ на английском языке."
@@ -70,7 +71,7 @@ ms.locfileid: "67986508"
 
 + Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). Он должен включать в себя ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`.
 
-+ Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [How to find endpoints and access keys for the Text Analytics Cognitive Service](text-analytics-how-to-access-key.md) (Как найти конечные точки и ключи доступа для анализа текста в Cognitive Services).
++ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
@@ -94,116 +95,172 @@ ms.locfileid: "67986508"
 
 Положительная оценка 1.0 выражает наивысший уровень достоверности анализа.
 
-
-
-```
-{
-    "documents": [
-        {
-            "id": "1",
-            "detectedLanguages": [
-                {
-                    "name": "English",
-                    "iso6391Name": "en",
-                    "score": 1
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "detectedLanguages": [
-                {
-                    "name": "Spanish",
-                    "iso6391Name": "es",
-                    "score": 1
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "detectedLanguages": [
-                {
-                    "name": "French",
-                    "iso6391Name": "fr",
-                    "score": 1
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "detectedLanguages": [
-                {
-                    "name": "Chinese_Simplified",
-                    "iso6391Name": "zh_chs",
-                    "score": 1
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "detectedLanguages": [
-                {
-                    "name": "Russian",
-                    "iso6391Name": "ru",
-                    "score": 1
-                }
-            ]
-        }
-    ],
+```json
+    {
+        "documents": [
+            {
+                "id": "1",
+                "detectedLanguages": [
+                    {
+                        "name": "English",
+                        "iso6391Name": "en",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "detectedLanguages": [
+                    {
+                        "name": "Spanish",
+                        "iso6391Name": "es",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "detectedLanguages": [
+                    {
+                        "name": "French",
+                        "iso6391Name": "fr",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "detectedLanguages": [
+                    {
+                        "name": "Chinese_Simplified",
+                        "iso6391Name": "zh_chs",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "detectedLanguages": [
+                    {
+                        "name": "Russian",
+                        "iso6391Name": "ru",
+                        "score": 1
+                    }
+                ]
+            }
+        ],
+        "errors": []
+    }
 ```
 
 ### <a name="ambiguous-content"></a>Неоднозначное содержимое
 
+В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны. По умолчанию API использует US в качестве значения countryHint по умолчанию.Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`.
+
+Например, слово "Impossible" часто встречается в английском и французском языках, и при ограниченном контексте ответ будет основан на указании "US". Если известно, что источник текста находится во Франции, такие данные можно использовать в качестве указания.
+
+**Входные данные**
+
+```json
+    {
+        "documents": [
+            {
+                "id": "1",
+                "text": "impossible"
+            },
+            {
+                "id": "2",
+                "text": "impossible",
+                "countryHint": "fr"
+            }
+        ]
+    }
+```
+
+Теперь служба имеет дополнительный контекст для принятия более взвешенного решения: 
+
+**Выходные данные**
+
+```json
+    {
+        "documents": [
+            {
+                "id": "1",
+                "detectedLanguages": [
+                    {
+                        "name": "English",
+                        "iso6391Name": "en",
+                        "score": 1
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "detectedLanguages": [
+                    {
+                        "name": "French",
+                        "iso6391Name": "fr",
+                        "score": 1
+                    }
+                ]
+            }
+        ],
+        "errors": []
+    }
+```
+
 Если анализатору не удается выполнить синтаксический анализ входных данных,он возвращается `(Unknown)`. Например, текстовый блок, состоящий исключительно из арабских цифр.
 
-```
+```json
     {
-      "id": "5",
-      "detectedLanguages": [
-        {
-          "name": "(Unknown)",
-          "iso6391Name": "(Unknown)",
-          "score": "NaN"
-        }
-      ]
+        "id": "5",
+        "detectedLanguages": [
+            {
+                "name": "(Unknown)",
+                "iso6391Name": "(Unknown)",
+                "score": "NaN"
+            }
+        ]
+    }
 ```
+
 ### <a name="mixed-language-content"></a>Содержание на разных языках
 
 Содержимое на разных языках в одном и том же документе возвращает язык с самым большим представлением в содержимом, но с более низкой положительным рейтингом. Рейтинг отражает предельную силу оценки. В следующем примере входные данные — сочетание английского, испанского и французского языков. Анализатор подсчитывает число знаков в каждом сегменте, чтобы определить преобладающий язык.
 
 **Входные данные**
 
-```
-{
-  "documents": [
+```json
     {
-      "id": "1",
-      "text": "Hello, I would like to take a class at your University. ¿Se ofrecen clases en español? Es mi primera lengua y más fácil para escribir. Que diriez-vous des cours en français?"
+      "documents": [
+        {
+          "id": "1",
+          "text": "Hello, I would like to take a class at your University. ¿Se ofrecen clases en español? Es mi primera lengua y más fácil para escribir. Que diriez-vous des cours en français?"
+        }
+      ]
     }
-  ]
-}
 ```
 
 **Выходные данные**
 
 Итоговые выходные данные состоят из преобладающего языка, с оценкой не менее 1.0, что указывает на менее надежный уровень достоверности.
 
-```
-{
-  "documents": [
+```json
     {
-      "id": "1",
-      "detectedLanguages": [
+      "documents": [
         {
-          "name": "Spanish",
-          "iso6391Name": "es",
-          "score": 0.9375
+          "id": "1",
+          "detectedLanguages": [
+            {
+              "name": "Spanish",
+              "iso6391Name": "es",
+              "score": 0.9375
+            }
+          ]
         }
-      ]
+      ],
+      "errors": []
     }
-  ],
-  "errors": []
-}
 ```
 
 ## <a name="summary"></a>Сводка
@@ -212,14 +269,13 @@ ms.locfileid: "67986508"
 
 + [Распознавание языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) доступно для широкого спектра языков, наречий, диалектов и некоторых региональных или национальных языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор и текст.
-+ Запрос POST передается в конечную точку `/languages` используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
++ Запрос POST передается в конечную точку `/languages` используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Выходные данные ответа состоят из идентификаторов языка для каждого ИД документа. Выходные данные можно передавать в любое приложение, принимающее JSON. Примеры приложений, среди прочих, включают в себя Excel и Power BI.
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
+ API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
+ [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи с помощью Python в службе "Речь"
+title: Краткое руководство. Распознавание речи с помощью Python — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве объясняется, как создать консольное приложение для преобразования речи в текст, использующее пакет SDK службы "Речь" для Python. После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: d6b7cc275fc50fefbe0057620d315d1484c47745
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 6cbe583ca59cb98ba233e58dc665c7e18c2a1f7f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603012"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559299"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-python"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Python
 

@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.topic: overview
 ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: 7cabedaec1190437aa9f225397afa8871cb06e88
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: f76f5d4dc84d1f8827248ab8399c1ae450a643a0
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306376"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68620154"
 ---
 # <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
@@ -38,7 +38,7 @@ Azure Red Hat OpenShift расширяет платформу [Kubernetes](https
 
 ## <a name="virtual-networks-and-ingress"></a>Виртуальные сети и входные данные
 
-Вы можете подключить кластер Azure Red Hat OpenShift к существующей виртуальной сети с помощью пирингового соединения. В такой конфигурации контейнеры pod могут подключаться к другим службам в пиринговой виртуальной сети, а также к локальным сетям через каналы [ExpressRoute](https://docs.microsoft.com/azure/expressroute/) и VPN-подключения типа "сеть — сеть".
+Вы можете [подключить кластер Azure Red Hat OpenShift к существующей виртуальной сети](https://docs.microsoft.com/azure/openshift/tutorial-create-cluster#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network) с помощью пирингового соединения. В этой конфигурации модули pod могут подключаться к другим службам в одноранговой виртуальной сети.
 
 Дополнительные сведения см. в разделе [Подключение виртуальной сети кластера к существующей виртуальной сети](tutorial-create-cluster.md#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network).
 

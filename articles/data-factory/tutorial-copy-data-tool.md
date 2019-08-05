@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: 553e87cacf407da2333da3105647719679feaabf
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: a4d5941091c3cf6516380c4d6384951d886e0e7f
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544211"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640329"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
-> [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы "Фабрика данных", которую вы используете:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](tutorial-copy-data-tool.md)
 
@@ -72,7 +72,7 @@ ms.locfileid: "57544211"
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
 
-2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** включен для Базы данных SQL. Этот параметр позволяет фабрике данных записывать данные в экземпляр базы данных. Чтобы проверить и при необходимости включить этот параметр, перейдите к серверу Azure SQL Server, выберите **Безопасность** > **Брандмауэры и виртуальные сети**, задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.**
+2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** включен для Базы данных SQL. Этот параметр позволяет фабрике данных записывать данные в экземпляр базы данных. Чтобы проверить и при необходимости включить этот параметр, перейдите к серверу Azure SQL Server, выберите "Обзор" > "Настройка брандмауэра для сервера", а затем задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл.**
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
@@ -87,7 +87,7 @@ ms.locfileid: "57544211"
     
     ![Сообщение об ошибке фабрики данных](./media/tutorial-copy-data-tool/name-not-available-error.png)
 
-    Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, _**ваше_имя**_**ADFTutorialDataFactory**. Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+    Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, _**ваше_имя**_ **ADFTutorialDataFactory**. Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
 1. Выберите **подписку** Azure, в которой нужно создать фабрику данных.
 1. Для **группы ресурсов** выполните одно из следующих действий:
     

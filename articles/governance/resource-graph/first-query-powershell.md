@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 76771a7dfcc323cca6ea52366195c895ee510701
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 6c58528aba29cbbc81694112815534a8fc525b8a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165595"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565390"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "67165595"
    Install-Module -Name Az.ResourceGraph
    ```
 
-1. Убедитесь, что модуль импортирован и имеет требуемую версию (0.7.1).
+1. Убедитесь, что модуль импортирован и имеет требуемую версию (0.7.3).
 
    ```azurepowershell-interactive
    # Get a list of commands for the imported Az.ResourceGraph module
@@ -91,7 +91,7 @@ ms.locfileid: "67165595"
 Когда окончательный запрос выполняется несколько раз при условии, что ничего в вашей среде не изменяется, возвращаемые результаты будут последовательны и ожидаемы — упорядочены по свойству **Имя** и ограничены пятью первыми результатами.
 
 > [!NOTE]
-> Если запрос не возвращает результаты из подписки, к которой у вас уже есть доступ, имейте ввиду, что командлет `Search-AzGraph` использует значения по умолчанию для подписок в контексте по умолчанию. Чтобы просмотреть список идентификаторов подписок, которые входят в контекст по умолчанию, выполните `(Get-AzContext).Account.ExtendedProperties.Subscriptions`. Если требуется выполнить поиск во всех подписках, к которым у вас есть доступ, можно задать PSDefaultParameterValues для командлета `Search-AzGraph`, выполнив команду `$PSDefaultParameterValues=@{"Search-AzGraph:Subscription"= $(Get-AzSubscription).ID }`.
+> Если запрос не возвращает результаты из подписки, к которой у вас уже есть доступ, имейте ввиду, что командлет `Search-AzGraph` использует значения по умолчанию для подписок в контексте по умолчанию. Чтобы просмотреть список идентификаторов подписок, которые входят в контекст по умолчанию, выполните `(Get-AzContext).Account.ExtendedProperties.Subscriptions`. Если требуется выполнить поиск во всех подписках, к которым у вас есть доступ, можно задать PSDefaultParameterValues для командлета `Search-AzGraph`, выполнив команду `$PSDefaultParameterValues=@{"Search-AzGraph:Subscription"= $(Get-AzSubscription).ID}`.
    
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

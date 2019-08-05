@@ -1,6 +1,6 @@
 ---
-title: Публикация базы знаний с использованием REST и C#
-titleSuffix: QnA Maker- Azure Cognitive Services
+title: Краткое руководство. Публикация базы знаний QnA Maker с использованием REST и C#
+titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как опубликовать базу знаний с использованием REST и C#. При этом последняя версия протестированной базы знаний будет передана в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 3460424a8d80baef92eb8b29a3be4de5686027c6
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 0ce0f3673a297964932f3b97dfd1d49d7c1e55e5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827576"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559794"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-c"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием C#
 

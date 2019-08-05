@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 642abfb99b40d67802b7194ad225ebcd2872a72b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 24a3424a73fb21530f3cde227aa9f05f16bd6ad0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "67135100"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562457"
 ---
 # <a name="quickstart-create-a-unity-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Unity с помощью Пространственных привязок Azure
 
@@ -24,7 +24,6 @@ ms.locfileid: "67135100"
 > [!div class="checklist"]
 > * создать учетную запись в службе "Пространственные привязки";
 > * настроить параметры сборки Unity;
-> * скачать и импортировать пакеты SDK с поддержкой ARCore для Unity;
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * экспортировать проект Android Studio;
 > * развертывать и запускать на устройстве Android.
@@ -35,11 +34,10 @@ ms.locfileid: "67135100"
 
 В рамках этого краткого руководства вам потребуются:
 
-- Компьютер под управлением macOS или Windows с <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2018.3+</a> и <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.3+</a>.
+- Компьютер под управлением macOS или Windows с <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2019.1+</a>, с модулями платформы Android Build Support, средств NDK и пакета SDK для Android, а также с <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.4+</a>.
   - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
   - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
-- Приложение должно использовать версию **1.7** пакета SDK ARCore для Unity.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -53,7 +51,7 @@ ms.locfileid: "67135100"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-В области **Project** (Проект) перейдите к `Assets/AzureSpatialAnchorsPlugin/Examples` и откройте файл сцены `AzureSpatialAnchorsBasicDemo.unity`.
+В области **Project** (Проект) перейдите к `Assets/AzureSpatialAnchors.Examples/Scenes` и откройте файл сцены `AzureSpatialAnchorsBasicDemo.unity`.
 
 [!INCLUDE [Configure Unity Scene](../../../includes/spatial-anchors-unity-configure-scene.md)]
 
@@ -63,12 +61,13 @@ ms.locfileid: "67135100"
 
 [!INCLUDE [Export Unity Project](../../../includes/spatial-anchors-unity-export-project-snip.md)]
 
-Убедитесь, что флажок **Export Project** (Экспорт проекта) не установлен. Щелкните **Build And Run** (Сборка и запуск). Вам будет предложено сохранить файл `.apk`, для которого можно выбрать любое имя.
+В окне **Run Device** (Запуск устройства) выберите свое устройство и щелкните **Сборка и запуск**. Вам будет предложено сохранить файл `.apk`, для которого можно выбрать любое имя.
 
 Следуйте инструкциям в программе для размещения и отзыва привязки.
 
-> [!NOTE]
-> Если во время запуска приложения вы не видите камеру как фон (к примеру, вы видите вместо этого пустой, синий фон или фон с другой текстурой), то вам нужно повторно импортировать файлы в Unity. Остановите приложение. В верхнем меню в Unity выберите **Assets -> Reimport all** (Ресурсы -> Повторно импортировать все). Затем снова запустите приложение.
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Если во время запуска приложения вы не видите камеру как фон (к примеру, вы видите вместо этого пустой, синий фон или фон с другой текстурой), то вам нужно повторно импортировать файлы в Unity. Остановите приложение. В верхнем меню в Unity выберите **Assets -> Reimport all** (Ресурсы -> Повторно импортировать все). Затем снова запустите приложение.
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

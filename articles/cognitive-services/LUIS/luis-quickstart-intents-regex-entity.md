@@ -1,5 +1,5 @@
 ---
-title: Сущность регулярного выражения
+title: Сущность регулярного выражения — LUIS
 titleSuffix: Azure Cognitive Services
 description: Извлечение согласованно отформатированных данных из высказывания с помощью сущности регулярного выражения.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 5e79de8dc8b4e81f427925b6e3d662bd4931804d
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 958d880829e9524389a25f029415786231644c04
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66497024"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563590"
 ---
 # <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство по Получение данных правильного формата из высказывания
 В этом руководстве создается приложение для извлечения согласованно отформатированных данных из фразы с помощью сущности **регулярного выражения**.

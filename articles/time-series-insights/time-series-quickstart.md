@@ -10,13 +10,13 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 04/22/2019
-ms.openlocfilehash: 415ce28a7cab77c538a7dfb8f387900ff515dd0e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.date: 07/29/2019
+ms.openlocfilehash: 0a91db15fcf77a936905a68c6b69b507d4e32a78
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164551"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677691"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Краткое руководство. Знакомство со службой "Аналитика временных рядов Azure"
 
@@ -28,9 +28,10 @@ ms.locfileid: "67164551"
 
 В этом кратком руководстве по обозревателю Аналитики временных рядов рассмотрены возможности общедоступной версии.
 
-## <a name="prepare-the-demo-environment"></a>Подготовка демонстрационной среды
+> [!IMPORTANT]
+> Создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), если у вас ее еще нет.
 
-1. Создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), если у вас ее еще нет.
+## <a name="prepare-the-demo-environment"></a>Подготовка демонстрационной среды
 
 1. В браузере перейдите к [общедоступной демонстрационной версии](https://insights.timeseries.azure.com/demo).
 
@@ -79,6 +80,13 @@ ms.locfileid: "67164551"
    [![Фильтр рядов](media/quickstart/quickstart9.png)](media/quickstart/quickstart9.png#lightbox)
 
 После завершения работы с кратким руководством можно поэкспериментировать с примером набора данных, создавая различные визуализации.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+После завершения работы с учебником удалите созданные ресурсы:
+
+1. На [портале Azure](https://portal.azure.com) в меню слева щелкните **Все ресурсы** и найдите группу ресурсов службы "Аналитика временных рядов Azure".
+1. Удалите всю группу ресурсов (и все содержащиеся в ней ресурсы), выбрав **Удалить**, или каждый ресурс по отдельности.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

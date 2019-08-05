@@ -6,15 +6,15 @@ author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 06/20/2019
+ms.date: 07/20/2019
 ms.author: mhopkins
 ms.subservice: blobs
-ms.openlocfilehash: 70afb39be696b660d3f85ae0c4b2c108bceb318c
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: a030aee18303d20ccf91c6939d349285c4a4bac4
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67625682"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565942"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
 
@@ -31,11 +31,13 @@ ms.locfileid: "67625682"
 
 [Справочная документация по API](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet) | [исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob) | [пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
+
+## <a name="required-before-you-begin"></a>Компоненты, требуемые перед началом работы
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
-* [Пакет SDK для .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core) или более поздней версии для вашей операционной системы.
+* [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) или более поздней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -43,15 +45,15 @@ ms.locfileid: "67625682"
 
 ### <a name="create-the-project"></a>Создание проекта
 
-Сначала создайте приложение .NET Core с именем **blob-quickstart**.
+Сначала создайте приложение .NET Core с именем *blob-quickstart*.
 
-1. В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем **blob-quickstart**. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: **Program.cs**.
+1. В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем *blob-quickstart*. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
 
    ```console
    dotnet new console -n blob-quickstart
    ```
 
-2. Перейдите в только что созданную папку **blob-quickstart**, скомпилируйте приложение и убедитесь, что все прошло правильно.
+2. Перейдите в только что созданную папку *blob-quickstart*, скомпилируйте приложение и убедитесь, что все прошло правильно.
 
    ```console
    cd blob-quickstart
@@ -90,11 +92,11 @@ dotnet add package Microsoft.Azure.Storage.Blob
 
 Из каталога проекта:
 
-1. Откройте файл Program.cs в редакторе.
-2. Удалите инструкцию **Console.WriteLine**.
-3. Добавьте директивы **using**.
-4. Создайте метода **ProcessAsync**, где будет размещаться основной код для примера.
-5. Выполните асинхронный вызов метода **ProcessAsync** из **Main**.
+1. Откройте файл *Program.cs* в редакторе.
+2. Удалите инструкцию `Console.WriteLine`.
+3. Добавьте директивы `using`.
+4. Создайте метод `ProcessAsync`, где будет размещаться основной код для примера.
+5. Выполните асинхронный вызов метода `ProcessAsync` из `Main`.
 
 Вот этот код:
 
@@ -142,25 +144,27 @@ namespace blob_quickstart
 
 После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения.
 
-После добавления переменной среды может потребоваться перезапустить все запущенные программы, которым может понадобиться считать переменную среды. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера.
-
 #### <a name="windows"></a>Windows
 
 ```cmd
-setx STORAGE_CONNECTION_STRING "<yourconnectionstring>"
+setx CONNECT_STR "<yourconnectionstring>"
 ```
+
+После добавления переменной среды в Windows вам необходимо запустить новый экземпляр командного окна.
 
 #### <a name="linux"></a>Linux
 
 ```bash
-export STORAGE_CONNECTION_STRING="<yourconnectionstring>"
+export CONNECT_STR="<yourconnectionstring>"
 ```
 
 #### <a name="macos"></a>MacOS
 
 ```bash
-export STORAGE_CONNECTION_STRING="<yourconnectionstring>"
+export CONNECT_STR="<yourconnectionstring>"
 ```
+
+После добавления переменной среды перезапустите все запущенные программы, которым может понадобиться считать переменную среды. Например, перезапустите среду разработки или редактор, прежде чем продолжить.
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -176,10 +180,10 @@ export STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 
 Используйте следующие классы .NET для взаимодействия с этими ресурсами:
 
-* [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount). Класс **CloudStorageAccount** представляет учетную запись хранения Azure. Этот класс используется для авторизации доступа к хранилищу BLOB-объектов с помощью ключей доступа к учетной записи.
-* [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient). Класс **CloudBlobClient** предоставляет точку доступа к службе BLOB-объектов в коде.
-* [CloudBlobContainer](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer). Класс **CloudBlobContainer** представляет контейнер больших двоичных объектов в коде.
-* [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob). Объект **CloudBlockBlob** представляет блочный BLOB-объект в коде. Блочные большие двоичные объекты состоят из блоков данных, которыми можно управлять отдельно.
+* [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount). Класс `CloudStorageAccount` представляет учетную запись хранения Azure. Этот класс используется для авторизации доступа к хранилищу BLOB-объектов с помощью ключей доступа к учетной записи.
+* [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient). Класс `CloudBlobClient` предоставляет точку доступа к службе BLOB-объектов в коде.
+* [CloudBlobContainer](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer). Класс `CloudBlobContainer` представляет контейнер больших двоичных объектов в коде.
+* [CloudBlockBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob). Объект `CloudBlockBlob` представляет блочный BLOB-объект в коде. Блочные большие двоичные объекты состоят из блоков данных, которыми можно управлять отдельно.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -195,18 +199,18 @@ export STORAGE_CONNECTION_STRING="<yourconnectionstring>"
 
 ### <a name="authenticate-the-client"></a>Аутентификация клиента
 
-В приведенном ниже коде проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount?view=azure-dotnet), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse?view=azure-dotnet). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
+В приведенном ниже коде проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.storage.cloudstorageaccount?view=azure-dotnet), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.storage.cloudstorageaccount.tryparse?view=azure-dotnet). Если результаты выполнения метода `TryParse` успешны, он инициализирует переменную `storageAccount` и возвращает значение `true`.
 
-Добавьте этот код в метод **ProcessAsync**:
+Добавьте этот код в метод `ProcessAsync`.
 
 ```csharp
 // Retrieve the connection string for use with the application. The storage 
 // connection string is stored in an environment variable on the machine 
-// running the application called STORAGE_CONNECTION_STRING. If the 
+// running the application called CONNECT_STR. If the 
 // environment variable is created after the application is launched in a 
 // console or with Visual Studio, the shell or application needs to be closed
 // and reloaded to take the environment variable into account.
-string storageConnectionString = Environment.GetEnvironmentVariable("STORAGE_CONNECTION_STRING");
+string storageConnectionString = Environment.GetEnvironmentVariable("CONNECT_STR");
 
 // Check whether the connection string can be parsed.
 CloudStorageAccount storageAccount;
@@ -221,7 +225,7 @@ else
     // Otherwise, let the user know that they need to define the environment variable.
     Console.WriteLine(
         "A connection string has not been defined in the system environment variables. " +
-        "Add an environment variable named 'STORAGE_CONNECTION_STRING' with your storage " +
+        "Add an environment variable named 'CONNECT_STR' with your storage " +
         "connection string as a value.");
     Console.WriteLine("Press any key to exit the application.");
     Console.ReadLine();
@@ -229,7 +233,7 @@ else
 ```
 
 > [!NOTE]
-> Чтобы выполнить все остальные операции в этой статье, замените **// ADD OTHER OPERATIONS HERE** в приведенном выше коде на фрагменты кода в следующих разделах:
+> Чтобы выполнить все остальные операции в этой статье, замените `// ADD OTHER OPERATIONS HERE` в приведенном выше коде на фрагменты кода в следующих разделах.
 
 ### <a name="create-a-container"></a>Создание контейнера
 
@@ -268,7 +272,7 @@ await cloudBlobContainer.SetPermissionsAsync(permissions);
 
 ### <a name="upload-blobs-to-a-container"></a>Отправка больших двоичных объектов в контейнер
 
-Следующий фрагмент кода получает ссылку на объект **CloudBlockBlob**, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает локальный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+Следующий фрагмент кода получает ссылку на объект `CloudBlockBlob`, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает локальный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
 
 ```csharp
 // Create a file in your local MyDocuments folder to upload to a blob.
@@ -291,7 +295,7 @@ await cloudBlockBlob.UploadFromFileAsync(sourceFile);
 
 Выведите список больших двоичных объектов в контейнере с помощью метода [ListBlobsSegmentedAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobssegmentedasync). В этом случае в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
 
-Если больших двоичных объектов для возвращения в одном вызове слишком много (по умолчанию свыше 5000), метод **ListBlobsSegmentedAsync** возвращает сегмент общего результирующего набора и маркер продолжения. Чтобы извлечь следующий сегмент больших двоичных объектов, укажите маркер продолжения, возвращенный предыдущим вызовом. Продолжайте делать это до тех пор, пока значение маркера не будет равно NULL. Маркер продолжения со значением NULL указывает на то, что все большие двоичные объекты были получены. Код показывает, как использовать маркер продолжения.
+Если больших двоичных объектов для возвращения в одном вызове слишком много (по умолчанию свыше 5000), метод `ListBlobsSegmentedAsync` возвращает сегмент общего результирующего набора и маркер продолжения. Чтобы извлечь следующий сегмент больших двоичных объектов, укажите маркер продолжения, возвращенный предыдущим вызовом. Продолжайте делать это до тех пор, пока значение маркера не будет равно NULL. Маркер продолжения со значением NULL указывает на то, что все большие двоичные объекты были получены. Код показывает, как использовать маркер продолжения.
 
 ```csharp
 // List the blobs in the container.
@@ -344,11 +348,9 @@ File.Delete(destinationFile);
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-В этом приложении тестовый файл создается в локальной папке **MyDocuments**, а затем отправляется в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы.
+В этом приложении тестовый файл создается в локальной папке *MyDocuments*, а затем отправляется в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы.
 
-Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска.
-
-Или перейдите к каталогу приложения, выполните его сборку и запустите его.
+Перейдите к каталогу приложения, выполните его сборку и запустите его.
 
 ```console
 dotnet build
@@ -380,7 +382,7 @@ Downloading blob to C:\Users\myusername\Documents\QuickStart_c5e7f24f-a7f8-4926
 Press any key to delete the example files and example container.
 ```
 
-Если нажать клавишу **ВВОД**, приложение удалит контейнер хранилища и файлы. Перед удалением проверьте наличие двух файлов в папке **MyDocuments**. Вы можете открыть их и убедиться, что они идентичны. Скопируйте URL-адрес большого двоичного объекта из окна консоли и вставьте его в адресную строку браузера, чтобы просмотреть содержимое большого двоичного объекта.
+Если нажать клавишу **ВВОД**, приложение удалит контейнер хранилища и файлы. Перед удалением проверьте наличие двух файлов в папке *MyDocuments*. Вы можете открыть их и убедиться, что они идентичны. Скопируйте URL-адрес большого двоичного объекта из окна консоли и вставьте его в адресную строку браузера, чтобы просмотреть содержимое большого двоичного объекта.
 
 После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов.
 

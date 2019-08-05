@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи с помощью C++ (macOS) в службах "Речь"
+title: Краткое руководство. Распознавание речи с помощью C++ (macOS) — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознавать речь в macOS, используя C++ и пакет SDK службы "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: de170955ced45040541565800fc9853edea322f5
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: d7d35c251848af5cfd5852080d01831085401227
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603061"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68554126"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для macOS с помощью пакета SDK для службы "Речь"
 

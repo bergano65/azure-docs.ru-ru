@@ -1,6 +1,6 @@
 ---
-title: Получение намерения с использованием C#
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Получение намерения (C#) — LUIS
+titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства по C# вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 73dba63c464ee31dd24fe0fdf97e948a5b6004fc
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 92f74174d35a58e54ae0078f146f86dbfc7aa709
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276270"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563844"
 ---
 # <a name="quickstart-get-intent-using-c"></a>Краткое руководство. Получение намерения с использованием C#
 

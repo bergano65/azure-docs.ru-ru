@@ -10,14 +10,13 @@ ms.topic: quickstart
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
-manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 7b52453bab661531461a2bec2f15f7659ec15a1c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 07/29/2019
+ms.openlocfilehash: 45b0b2bc7a2ef5c3cb6ca801668f7b5be7c8ac73
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441721"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639991"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Начало работы с отдельной базой данных в Базе данных SQL Azure
 
@@ -43,6 +42,14 @@ ms.locfileid: "67441721"
 ## <a name="migrating-to-a-single-database-with-minimal-downtime"></a>Перенос в отдельную базу данных с минимальным временем простоя
 
 Эти краткие руководства позволяют быстро создать или импортировать базу данных в Azure с использованием файла `.bacpac`. Однако файлы `.bacpac` и `.dacpac` предназначены для быстрого перемещения баз данных между различными версиями SQL Server и вариантами развертывания в Базе данных SQL Azure или для осуществления непрерывной интеграции в конвейер DevOps. Этот метод не обеспечивает перенос рабочих баз данных с минимальным временем простоя, так как вам потребуется остановить добавление новых данных, дождаться завершения экспортирования базы данных-источника в файл `.bacpac`, а затем — завершения его импорта в базу данных SQL Azure. Все это ожидание приведет к простою приложения, особенно для больших баз данных. Чтобы переместить свою рабочую базу данных, вам понадобится лучший способ переноса, который обеспечивает минимальный простой. Для переноса базы данных с минимальными простоями используйте [службу миграции данных (DMS)](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-azure-sql?toc=/azure/sql-database/toc.json), которая выполняет постепенную принудительную отправку изменений, внесенных в базу данных-источник, в отдельную восстанавливаемую базу данных. С ее помощью вы можете быстро перевести приложение с исходной базы данных на целевую с минимальным временем простоя.
+
+## <a name="hands-on-learning-modules"></a>Практические учебные модули
+
+С помощью приведенных ниже бесплатных модулей Microsoft Learn вы сможете получить сведения о службе "База данных SQL Azure".
+
+- [Подготовка базы данных SQL Azure для хранения данных приложения](https://docs.microsoft.com/learn/modules/provision-azure-sql-db/)
+- [Разработка и настройка приложения ASP.NET, обращающегося к Базе данных SQL Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/)
+- [Защита базы данных SQL Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

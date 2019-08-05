@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Преобразование речи, C# (UWP) — служба речи
+title: Краткое руководство. Перевод речи с помощью приложения C# для универсальной платформы Windows в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP) для записи речи пользователя, перевода ее на другой язык и вывода текста в командную строку. Это руководство предназначено для пользователей Windows.
 services: cognitive-services
@@ -9,29 +9,30 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.date: 07/23/2019
 ms.author: erhopf
-ms.openlocfilehash: 71f8ecfaa11538cf43284d2aafff61cbf9655c0e
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
-ms.translationtype: MT
+ms.topic: quickstart
+ms.openlocfilehash: 813edbea0548a5cac9532750a450de08bd238028
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607763"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640031"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c-uwp"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C# (UWP)
 
 Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md), [текста в речь](quickstart-text-to-speech-csharp-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
 
-В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP), которое записывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Это приложение предназначено для работы в 64-разрядной ОС Windows и построено с помощью [пакета NUGET SDK для распознавания речи](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 или более поздней версии.
+В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP), которое записывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше.
 
 Полный список языков для перевода речи см. в статье, посвященной [поддержке языков](language-support.md).
 
 > [!NOTE]
 > UWP позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройства.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
@@ -72,7 +73,7 @@ ms.locfileid: "68607763"
 
     ![Снимок экрана пользовательского интерфейса распознавания речи](media/sdk/qs-translate-csharp-uwp-ui-result.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Примеры для C# на сайте GitHub](https://aka.ms/csspeech/samples)

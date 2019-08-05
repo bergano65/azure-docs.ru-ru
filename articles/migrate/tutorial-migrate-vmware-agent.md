@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d222936f93f90573a46cd7f6216fbde8043332c7
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 1ea736b560e2e910ede203e8ce8c0b157ebbce71
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261416"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640870"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -56,7 +56,7 @@ ms.locfileid: "68261416"
 Чтобы решить, хотите ли вы использовать миграцию без агентов или на основе агента, просмотрите следующие статьи:
 
 - [Узнайте больше](server-migrate-overview.md) о возможностях миграции VMware.
-- [Просмотрите ограничения](server-migrate-overview.md#agentless-migration-limitations) для миграции без агента.
+- [Сравните способы миграции](server-migrate-overview.md#compare-migration-methods).
 - [Ознакомьтесь с этой](tutorial-migrate-vmware.md) статьей, чтобы попробовать миграцию без агента.
 
 

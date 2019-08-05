@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: ff577bc0fe7db05c71aab04f0aaa5525f30b255c
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 379087ca94eee6ce3d45bfd97b4771c5f08d6333
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602894"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607702"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C++
 
 Также доступны краткие руководства по [распознаванию речи](quickstart-cpp-windows.md) и [преобразованию текста в речь](quickstart-text-to-speech-cpp-windows.md).
 
-При работе с этим кратким руководством вы создадите простое приложение C++, которое записывает речь пользователя с микрофона компьютера, переводит речь и транскрибирует переведенный текст в командную строку в реальном времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
+При работе с этим кратким руководством вы создадите простое приложение C++, которое записывает речь пользователя с микрофона компьютера, переводит речь и транскрибирует переведенный текст в командную строку в реальном времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше.
 
 Полный список языков для перевода речи см. в статье, посвященной [поддержке языков](language-support.md).
 
@@ -29,7 +29,7 @@ ms.locfileid: "67602894"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio

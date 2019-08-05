@@ -1,6 +1,6 @@
 ---
-title: Изменение и обучение приложения с помощью C#
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Изменение и обучение приложения с помощью C# — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как добавить примеры фраз в приложение Home Automation и выполнить обучение этого приложения на C#.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: d44877e35687745ddba51d4d015729e62106c9ca
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 55251a553921e947e7c6522677e51e4eb1d3fa5b
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348448"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619953"
 ---
 # <a name="quickstart-change-model-using-c"></a>Краткое руководство. Изменение модели с помощью C#
 

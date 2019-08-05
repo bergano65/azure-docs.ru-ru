@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Настройте и создайте виртуальную машину для обработки и анализа данных для глубокого обучения в Azure.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: e1467c0f-497b-48f7-96a0-7f806a7bec0b
@@ -12,15 +12,15 @@ ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.workload: data-services
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 03/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 318df03c7c4447d051dfa396098462c0f8bbf423
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.author: vijetaj
+ms.openlocfilehash: b9d0f9aead6e2cedd3ca0884273bac0106a925a0
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65410438"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68591906"
 ---
 # <a name="provision-a-deep-learning-virtual-machine-on-azure"></a>Подготовка виртуальной машины для глубокого обучения в Azure 
 
@@ -68,7 +68,7 @@ ms.locfileid: "65410438"
 
 ### <a name="linux-edition"></a>Выпуск для Linux
 
-После создания виртуальной машины вы можете войти в нее с помощью протокола SSH. Использовать учетные данные учетной записи, созданные в [ **основы** ](#basics) разделе шаге 3 для интерфейса текстовой оболочки. Дополнительные сведения о SSH-подключения к виртуальным машинам Azure, см. в разделе [установить и настроить удаленный рабочий стол для подключения к виртуальной Машине Linux в Azure](/azure/virtual-machines/linux/use-remote-desktop). На клиенте Windows, можно загрузить средство клиента SSH, например [Putty](https://www.putty.org). Если вы предпочитаете графический рабочий стол (система X Windows), можете использовать перенаправление X11 в Putty или установить клиент X2Go. 
+После создания виртуальной машины вы можете войти в нее с помощью протокола SSH. Для входа с помощью интерфейса текстовой оболочки используйте учетную запись, созданную в разделе [**Основные сведения**](#basics) на шаге 3. Дополнительные сведения о SSH-подключениях к виртуальным машинам Azure см. в статье [Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure](../../virtual-machines/linux/use-remote-desktop.md). На клиентском компьютере Windows можно скачать клиент SSH, например [Putty](https://www.putty.org). Если вы предпочитаете графический рабочий стол (система X Windows), можете использовать перенаправление X11 в Putty или установить клиент X2Go. 
 
 > [!NOTE]
 > При тестировании клиент X2Go работал лучше по сравнению с перенаправлением X11. Мы рекомендуем клиент X2Go для графического интерфейса рабочего стола.

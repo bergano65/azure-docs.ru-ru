@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Перевод речи с помощью Java (Windows, Linux) в службе "Речь"
+title: Краткое руководство. Перевод речи с помощью Java (Windows, Linux) — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы создадите простое приложение Java для записи речи пользователя, его преобразования в другой язык и вывода текста в командную строку. Это руководство предназначено для пользователей Windows и Linux.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 68567e673cf6fb53b8d9b6f7b9ef96aee691ac3a
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: cbb86dd4b24cb325b8ea6708ebc2ffc89a697757
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604947"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553401"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для Java
 

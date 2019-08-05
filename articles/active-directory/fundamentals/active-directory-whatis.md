@@ -6,16 +6,16 @@ author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.topic: overview
-ms.date: 05/08/2019
+ms.date: 07/31/2019
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fafa7bd95801be46025727b2261fc95bc539988
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: c3087f0ac69126c6d509eee77abe15cc35319dfb
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67440537"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68693920"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Azure Active Directory
 
@@ -41,16 +41,14 @@ Azure AD могут использовать:
 
 В бизнес-службах Microsoft Online, например Office 365 или Microsoft Azure, для входа в систему и защиты идентификации используется Azure AD. Если вы подписаны на любую из бизнес-служб Microsoft Online, то вы автоматически получите Azure AD с доступом ко всем бесплатным возможностям.
 
-Чтобы улучшить реализацию Azure AD, можно также добавить платные возможности или воспользоваться обновлением до лицензий Azure Active Directory Basic, Premium P1 или Premium P2. Платные лицензии Azure Active Directory создаются на основе существующего бесплатного каталога, предоставляя самообслуживание, улучшенный мониторинг, отчеты о безопасности и безопасный доступ для мобильных пользователей.
+Чтобы улучшить реализацию Azure AD, можно также добавить платные возможности или воспользоваться обновлением до лицензий Azure Active Directory Premium P1 или Premium P2. Платные лицензии Azure Active Directory создаются на основе существующего бесплатного каталога, предоставляя самообслуживание, улучшенный мониторинг, отчеты о безопасности и безопасный доступ для мобильных пользователей.
 
 >[!Note]
 >Сведения о ценах для различных лицензий см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 >
->В настоящий момент выпуски Azure Active Directory Premium P1, Azure Active Directory Premium P2 и Azure Active Directory Basic не поддерживаются в Китае. Дополнительные сведения о ценах на Azure AD можно узнать на [форуме по Azure Active Directory](https://azure.microsoft.com/support/community/?product=active-directory).
+>В настоящий момент выпуски Azure Active Directory Premium P1 и Azure Active Directory Premium P2 не поддерживаются в Китае. Дополнительные сведения о ценах на Azure AD можно узнать на [форуме по Azure Active Directory](https://azure.microsoft.com/support/community/?product=active-directory).
 
 - **Azure Active Directory Free.** Предоставляет управление пользователями и группами, синхронизацию локальной службы каталогов, базовые отчеты, возможность самостоятельного изменения паролей для пользователей облака, единый вход в Azure, Office 365 и многие другие популярные приложения SaaS.
-
-- **Azure Active Directory Basic.** В дополнение к возможностям предложения Free, предложение Basic также предоставляет доступ к облачным приложениям, управление доступом на основе групп, самостоятельный сброс пароля облачных приложений и функцию Azure Active Directory Application Proxy, которая позволяет публиковать локальные веб-приложения с помощью Azure AD.
 
 - **Azure Active Directory Premium P1.** В дополнение к функциям предложений Free и Basic, P1 предоставляет пользователям гибридный доступ к локальным и облачным ресурсам. Он также поддерживает расширенные функции администрирования, такие как динамические группы, самостоятельное управление группами, Microsoft Identity Manager (средство для управления локальными удостоверениями и управления доступом) и возможности обратной записи в облаке, которые позволяют самостоятельно сбрасывать пароль для локальных пользователей.
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтез речи с помощью службы Unity — службы "Речь"
+title: Краткое руководство. Синтез речи с помощью службы Unity — служба "Речь"
 titleSuffix: Azure Cognitive Services
 description: Используйте данное руководство при создании приложения для преобразования речи в текст с помощью Unity и пакета Speech SDK для Unity (бета-версия). После завершения можно будет синтезировать речь из текста в режиме реального времени через микрофон устройства.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 6/26/2019
 ms.author: yinhew
-ms.openlocfilehash: 5240ea45097ce3c0ae7ccbc15a7f99b2f5990832
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 507ab9ef9bb3e482e5a33d2406424dfb9116de54
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467268"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553622"
 ---
 # <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Синтез речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
 

@@ -1,20 +1,20 @@
 ---
 title: Руководство по Создание среды Azure Time Series Insights | Документация Майкрософт
-description: Здесь описано, как создать среду службы "Аналитика временных рядов" и заполнить ее данными из имитированных устройств.
+description: Узнайте, как создать среду Аналитики временных рядов и заполнить ее данными из имитированных устройств.
 services: time-series-insights
 author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 06/18/2019
+ms.date: 07/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 06a450c47c7264bdecb663c9f71e3a9753df5e1e
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 921528c50bae03b67800bf3ccab8b5cd9bb704f6
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273533"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677753"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 
@@ -27,16 +27,18 @@ ms.locfileid: "67273533"
 > * Запуск имитации устройств для потоковой передачи данных в среду Аналитики временных рядов.
 > * Проверка имитированных данных телеметрии.
 
+> [!IMPORTANT]
+> Зарегистрируйтесь для [бесплатной подписки Azure](https://azure.microsoft.com/free/), если у вас ее еще нет.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Ваша учетная запись Azure должна быть участником роли **Владелец** для подписки. Дополнительные сведения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
+
 ## <a name="video"></a>Видео
 
 ### <a name="learn-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-and-get-started-with-time-series-insights-br"></a>Узнайте, как с помощью акселератора решений Интернета вещей Azure создать данные и приступить к работе с Аналитикой временных рядов. </br>
 
 > [!VIDEO https://www.youtube.com/embed/6ehNf6AJkFo]
-
-## <a name="prerequisites"></a>Предварительные требования
-
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Ваша учетная запись Azure должна быть участником роли **Владелец** для подписки. Дополнительные сведения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="overview"></a>Обзор
 

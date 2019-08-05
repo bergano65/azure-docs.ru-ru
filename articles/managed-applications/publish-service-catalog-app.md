@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: dc86943924cd0c47c465e9d3bac4ca91b73a3ff5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bf6ae32a61504dc344e140a0e27c5a17b5422073
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66171556"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609873"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
 
@@ -85,20 +85,20 @@ ms.locfileid: "66171556"
 
 Сохраните файл mainTemplate.json.
 
-## <a name="create-the-user-interface-definition"></a>Создание определения пользовательского интерфейса
+## <a name="defining-your-create-experience-using-createuidefinitionjson"></a>Определение процесса создания с помощью файла CreateUiDefinition.json
 
-На основе файла **createUiDefinition.json** портал Azure создает пользовательский интерфейс для пользователей, создающих управляемое приложение. Можно определить способ ввода каждого параметра пользователями. например раскрывающийся список, текстовое поле, поле ввода пароля или другие средства ввода. Чтобы узнать, как создать файл определения пользовательского интерфейса для управляемого приложения, изучите статью [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
+Как издатель вы определяете процесс создания с помощью файла **createUiDefinition.json**, который реализует интерфейс для пользователей, создающих управляемые приложения. Вы определяете, как пользователи вводят значения для каждого параметра, используя [элементы управления] (create-uidefinition-elements.md), в том числе раскрывающиеся списки, текстовые поля и поля пароли.
 
-Создайте файл с именем **createUiDefinition.json**. В имени следует учитывать регистр.
+Создайте файл с именем **createUiDefinition.json** (в этом имени учитывается регистр).
 
-Добавьте в файл следующий код JSON.
+Добавьте следующее содержимое JSON в файл и сохраните его.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
-    "handler": "Microsoft.Compute.MultiVm",
-    "version": "0.1.2-preview",
-    "parameters": {
+   "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+   "handler": "Microsoft.Azure.CreateUIDef",
+   "version": "0.1.2-preview",
+   "parameters": {
         "basics": [
             {}
         ],
@@ -139,10 +139,9 @@ ms.locfileid: "66171556"
             "location": "[location()]"
         }
     }
-}
 ```
 
-Сохраните файл createUiDefinition.json.
+Дополнительные сведения см. в статье [CreateUiDefitinion.json for Azure managed application's create experience](create-uidefinition-overview.md) (Файл CreateUiDefitinion.json для создания интерфейсов управляемых приложений Azure).
 
 ## <a name="package-the-files"></a>Упаковка файлов
 

@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 37856c0833ecde1478d4bd588b8e3122e8eac0ca
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: be478a3f77996276f248d9b385954af813ac0397
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "67135230"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562472"
 ---
 # <a name="quickstart-create-a-unity-ios-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения iOS в Unity с помощью Пространственных привязок Azure
 
@@ -24,7 +24,6 @@ ms.locfileid: "67135230"
 > [!div class="checklist"]
 > * создать учетную запись в службе "Пространственные привязки";
 > * настроить параметры сборки Unity;
-> * скачать и импортировать модуль Unity ARKit;
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * экспортировать проект Xcode;
 > * выполнить развертывание и запуск на устройстве iOS.
@@ -35,7 +34,7 @@ ms.locfileid: "67135230"
 
 В рамках этого краткого руководства вам потребуются:
 
-- Компьютер macOS с установленными компонентами <a href="https://unity3d.com/get-unity/download" target="_blank">Unity 2018.3 или более поздней версии</a>, <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode 10</a> и <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
+- Компьютер macOS с установленными компонентами <a href="https://unity3d.com/get-unity/download" target="_blank">Unity версии 2019.1 и выше</a>, <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode 10</a> и <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
 - Система Git, установленная с помощью HomeBrew. В терминале ведите такую команду в одну строку: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
 - Устройство для разработки на iOS, <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">совместимое с ARKit</a>.
 
@@ -51,7 +50,7 @@ ms.locfileid: "67135230"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-В области **Project** (Проект) перейдите к `Assets/AzureSpatialAnchorsPlugin/Examples` и откройте файл сцены `AzureSpatialAnchorsBasicDemo.unity`.
+В области **Project** (Проект) перейдите к `Assets/AzureSpatialAnchors.Examples/Scenes` и откройте файл сцены `AzureSpatialAnchorsBasicDemo.unity`.
 
 [!INCLUDE [Configure Unity Scene](../../../includes/spatial-anchors-unity-configure-scene.md)]
 
@@ -65,10 +64,11 @@ ms.locfileid: "67135230"
 
 Следуйте инструкциям в программе для размещения и отзыва привязки.
 
-> [!NOTE]
-> Если во время запуска приложения вы не видите камеру как фон (к примеру, вы видите вместо этого пустой, синий фон или фон с другой текстурой), то вам нужно повторно импортировать файлы в Unity. Остановите приложение. В верхнем меню в Unity выберите **Assets -> Re-import all** (Ресурсы -> Повторно импортировать все). Затем снова запустите приложение.
+По завершении остановите приложение, нажав в Xcode кнопку **Stop** (Остановить).
 
-В Xcode остановите приложение, нажав кнопку **Stop** (Остановить).
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Если во время запуска приложения вы не видите камеру как фон (к примеру, вы видите вместо этого пустой, синий фон или фон с другой текстурой), то вам нужно повторно импортировать файлы в Unity. Остановите приложение. В верхнем меню в Unity выберите **Assets -> Re-import all** (Ресурсы -> Повторно импортировать все). Затем снова запустите приложение.
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

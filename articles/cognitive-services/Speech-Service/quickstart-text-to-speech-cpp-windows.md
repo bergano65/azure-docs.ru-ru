@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Синтезирование речи с помощью C++ (Windows) в службах "Речь"
+title: Краткое руководство. Синтезирование речи с помощью C++ (Windows) в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как синтезировать речь в Windows, используя C++ и пакет SDK для служб "Речь"
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: yinhew
-ms.openlocfilehash: dfad425d6da2e3dabec138ef4f108957ebea7ee9
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: fdc5e540dd7e84d47aa139768fbfc2614f38b376
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602911"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607715"
 ---
 # <a name="quickstart-synthesize-speech-in-c-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Синтезирование речи в приложении C++ для Windows с помощью пакета SDK для служб "Речь"
 
 Также доступны краткие руководства по [распознаванию речи](quickstart-cpp-windows.md) и [переводу речи](quickstart-translate-speech-cpp-windows.md).
 
-В этой статье вы создадите консольное приложение C++ для Windows. Вы можете использовать [пакет SDK для служб "Речь"](speech-sdk.md) в Cognitive Services для синтезирования речи из текста в реальном времени и ее воспроизведения через динамики компьютера. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).
+В этой статье вы создадите консольное приложение C++ для Windows. Вы можете использовать [пакет SDK для служб "Речь"](speech-sdk.md) в Cognitive Services для синтезирования речи из текста в реальном времени и ее воспроизведения через динамики компьютера. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
 
 Компонент, описанный в этой статье, доступен в [пакете SDK 1.5.0 для службы "Речь"](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/1.5.0).
 

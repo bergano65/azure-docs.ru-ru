@@ -1,5 +1,5 @@
 ---
-title: Предварительно созданные намерения и сущности
+title: Предварительно созданные намерения и сущности — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве в приложение добавляются предварительно созданные намерения и сущности, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/16/2018
 ms.author: diberry
-ms.openlocfilehash: 189514c51451dedfaab7b07f28d79f674b32f83a
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 8c3fa2a68018e0eb45f37b54b16b6e7797cfa7c4
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277545"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560052"
 ---
 # <a name="tutorial-identify-common-intents-and-entities"></a>Руководство по Определение общих намерений и сущностей
 

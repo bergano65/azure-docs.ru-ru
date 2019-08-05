@@ -4,20 +4,20 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 11/27/2018
 ms.author: glenga
-ms.openlocfilehash: 880b9f2610117d40251e7d99690889d1356980e5
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 19b754b959a5c78ee2e4b78ced783e81b653b072
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185086"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669798"
 ---
-## <a name="install-the-azure-function-extension"></a>Установка расширения "Функции Azure"
+## <a name="install-the-azure-functions-extension"></a>Установка расширения "Функции Azure"
 
-Расширение "Функции Azure" предназначено для создания, тестирования и развертывания функций в Azure.
+Расширение "Функции Azure" позволяет создавать и тестировать функции, а затем развертывать их в Azure.
 
-1. В Visual Studio Code откройте **Extensions** (Расширения) и найдите `azure functions` или [перейдите по этой ссылке](vscode:extension/ms-azuretools.vscode-azurefunctions).
+1. В Visual Studio Code выберите **Расширения** и выполните поиск по запросу **Функции Azure** или [щелкните эту ссылку в Visual Studio Code](vscode:extension/ms-azuretools.vscode-azurefunctions).
 
-1. Выберите **Install** (Установить), чтобы установить расширение для Visual Studio Code.
+1. Выберите **Установить**, чтобы установить расширение для Visual Studio Code:
 
     ![Установка расширения "Функции Azure"](./media/functions-install-vs-code-extension/vscode-install-extension.png)
 
