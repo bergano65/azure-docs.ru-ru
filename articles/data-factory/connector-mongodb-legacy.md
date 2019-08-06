@@ -178,7 +178,7 @@ ms.locfileid: "61400480"
 |:--- |:--- |
 | Binary |Byte[] |
 | Boolean |Boolean |
-| Дата |DateTime |
+| Date |DateTime |
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
