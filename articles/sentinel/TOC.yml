@@ -13,7 +13,7 @@
   items:
     - name: Обнаружение потенциальных угроз
       href: tutorial-detect-threats.md
-    - name: Расследование инцидентов
+    - name: Изучение инцидентов
       href: tutorial-investigate-cases.md
     - name: Реагирование на угрозы
       href: tutorial-respond-threats-playbook.md

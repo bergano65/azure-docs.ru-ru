@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 06/11/2019
 ms.author: angrobe
-ms.openlocfilehash: d921e529140bc7446e3c9f97b33ba226431d7b91
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 7c41b09c35de7ef8694f9215b8f3dc271e243de2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67143511"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780497"
 ---
 # <a name="azure-security-documentation"></a>Документация по системе безопасности Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "67143511"
         </a>
     </li>
     <li style="list-style: none;">
-        <a href="/azure/security/azure-security-infrastructure">
+        <a href="/azure/security/fundamentals/infrastructure">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
@@ -135,7 +135,7 @@ ms.locfileid: "67143511"
         </a>
     </li>
     <li style="list-style: none;">
-        <a href="/azure/security/azure-security-encryption-atrest">
+        <a href="/azure/security/fundamentals/encryption-atrest">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
@@ -192,13 +192,13 @@ ms.locfileid: "67143511"
                                 <a class="barLink" href="https://aka.ms/SecurityResponsepaper">Реагирование на нарушения безопасности в облаке Azure</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-threat-detection">Расширенное обнаружение угроз Azure</a>
+                                <a class="barLink" href="/azure/security/fundamentals/threat-detection">Расширенное обнаружение угроз Azure</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/abstract-azure-network-security">Защита сети Azure</a>
+                                <a class="barLink" href="/azure/security/fundamentals/abstract-network-security>Azure network security"</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/abstract-develop-secure-apps">Разработка защищенных приложений в Azure</a>
+                                <a class="barLink" href="/azure/security/fundamentals/abstract-develop-secure-apps">Разработка защищенных приложений в Azure</a>
                             </li>
                         </ul>
                     </div>
@@ -218,25 +218,25 @@ ms.locfileid: "67143511"
                                 <a class="barLink" href="https://azure.microsoft.com/resources/security-best-practices-for-azure-solutions/">Рекомендации по обеспечению безопасности в Azure</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-network-security-best-practices">Защита сети</a>
+                                <a class="barLink" href="/azure/security/fundamentals/network-best-practices">Защита сети</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-data-encryption-best-practices">Защита данных</a>
+                                <a class="barLink" href="/azure/security/fundamentals/data-encryption-best-practices">Защита данных</a>
                             </li>
                             <li style="list-style: none;">
                                 <a class="barLink" href="/azure/security/azure-security-best-practices-vms">Защита виртуальных машин</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-identity-management-best-practices">Идентификация и доступ</a>
+                                <a class="barLink" href="/azure/security/fundamentals/identity-management-best-practices">Идентификация и доступ</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-iaas">Защита IaaS</a>
+                                <a class="barLink" href="/azure/security/fundamentals/iaas">Защита IaaS</a>
                             </li>
                             <li style="list-style: none;">
                                 <a class="barLink" href="/azure/security/security-paas-deployments">Обеспечение безопасности развертываний PaaS</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-global-admin">Защита учетных записей администратора Azure</a>
+                                <a class="barLink" href="/azure/security/fundamentals/global-admin">Защита учетных записей администратора Azure</a>
                             </li>
                         </ul>
                     </div>
@@ -257,7 +257,7 @@ ms.locfileid: "67143511"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h2 style="margin-top: 0">Соответствие требованиям</h2>
+                        <h2 style="margin-top: 0">Соответствие нормативным требованиям</h2>
                     </div>
                 </div>
             </div>
@@ -324,7 +324,7 @@ ms.locfileid: "67143511"
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
                         <div class="cardText">
-                            <p style="font-size: 1.12rem;">Для служебного пользования (Соединенное Королевство)</p>
+                            <p style="font-size: 1.12rem;">UK-OFFICIAL</p>
                         </div>
                     </div>
                 </div>
@@ -380,7 +380,7 @@ ms.locfileid: "67143511"
         </a>
     </li>
     <li style="list-style: none;">
-        <a href="/azure/security/azure-security-cyber-services">
+        <a href="/azure/security/fundamentals/cyber-services">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
@@ -393,7 +393,7 @@ ms.locfileid: "67143511"
         </a>
     </li>
     <li style="list-style: none;">
-        <a href="/azure/security/azure-security-pen-testing">
+        <a href="/azure/security/fundamentals/pen-testing">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
@@ -424,7 +424,7 @@ ms.locfileid: "67143511"
                 <div class="cardPadding">
                     <div class="card" style="min-height: 0;padding-bottom: 24px; text-align: center;">
                         <div class="cardText">
-                            <p style="font-size: 1.12rem;">Хранилище ключей Azure</p>
+                            <p style="font-size: 1.12rem;">Azure Key Vault</p>
                         </div>
                     </div>
                 </div>

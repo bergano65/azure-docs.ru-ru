@@ -64,6 +64,8 @@
           href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
         - name: Преобразование сертификата субъекта-службы
           href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
+        - name: Проблемы с пульсом Apache Ambari
+          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
 - name: Практическое руководство
   items:
     - name: Использование песочницы Apache Hadoop
