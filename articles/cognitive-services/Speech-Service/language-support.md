@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 031367a8a05defad475ae077f9b38b7294837460
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ac3cb1d637eae1b4ee0a7db59efe631c7eb1ac6f
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559405"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815255"
 ---
 # <a name="language-and-region-support-for-the-speech-services"></a>Поддержка языков и регионов для речевых служб
 
@@ -31,12 +31,12 @@ ms.locfileid: "68559405"
  ar-EG | арабский (Египет), современный стандартный | Нет | Да | Нет
  ca-ES | Каталанский | Нет | Нет | Нет
  da-DK | Датский (Дания) | Нет | Нет | Нет
- de-DE | Немецкий (Германия) | Да | Да | Нет
- en-AU | Английский (Австралия) | Нет | Да | Да
- en-CA | Английский (Канада) | Нет | Да | Да
- en-GB | Английский (Соединенное Королевство) | Нет | Да | Да
- en-IN | Английский (Индия) | Да | Да | Да
- en-NZ | Английский (Новая Зеландия) | Нет | Да | Да  
+ de-DE | Немецкий (Германия) | Да | Да | Да
+ en-AU | Английский (Австралия) | Нет | Да | Нет
+ en-CA | Английский (Канада) | Нет | Да | Нет
+ en-GB | Английский (Соединенное Королевство) | Нет | Да | Нет
+ en-IN | Английский (Индия) | Да | Да | Нет
+ en-NZ | Английский (Новая Зеландия) | Нет | Да | Нет 
  ru-RU | Английский (США) | Да | Да | Да
  es-ES | Испанский (Испания) | Да | Да | Нет
  es-MX | Испанский (Мексика) | Нет | Да | Нет
