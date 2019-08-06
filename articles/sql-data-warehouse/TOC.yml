@@ -287,8 +287,6 @@
       items:
         - name: Обновление до 2-го поколения
           href: upgrade-to-latest-generation.md
-        - name: Восстановление хранилища данных
-          href: sql-data-warehouse-restore.md
         - name: "Мониторинг рабочей нагрузки\_— портал"
           href: sql-data-warehouse-monitor-workload-portal.md
         - name: "Мониторинг рабочей нагрузки\_— динамические административные представления"

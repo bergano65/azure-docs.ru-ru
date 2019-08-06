@@ -99,7 +99,9 @@
           href: quickstarts-sdk/csharp-hand-text-sdk.md
     - name: С помощью пакета SDK для Python
       href: quickstarts-sdk/python-sdk.md
-- name: Руководства
+    - name: Использование пакета SDK для Java
+      href: quickstarts-sdk/java-sdk.md
+- name: Учебники
   items:
     - name: Создание метаданных для изображений
       href: Tutorials/storage-lab-tutorial.md
@@ -171,7 +173,7 @@
           href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/computervision?view=azure-python'
         - name: Go
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/computervision'
-        - name: Android (Java)
+        - name: Java
           href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/computervision?view=azure-java-stable'
         - name: Swift
           href: 'https://github.com/DanilaVladi/Microsoft-Cognitive-Services-Swift-SDK'

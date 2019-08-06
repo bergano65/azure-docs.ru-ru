@@ -53,13 +53,7 @@
     - name: Устранение неполадок
       items:
         - name: Исключение OutOfMemoryError
-          items:
-            - name: Недостаточно памяти для кучи
-              href: ./apache-spark-troubleshoot-outofmemory-heap.md
-            - name: Размер кучи Java
-              href: ./apache-spark-troubleshoot-outofmemory-heap-space.md
-            - name: Сбой при запуске сервера Livy
-              href: ./apache-spark-troubleshoot-outofmemory-native-thread.md
+          href: ./apache-spark-troubleshoot-outofmemory.md
         - name: "Не удается выполнить задание Apache Spark\_— NoClassDefFoundError"
           href: ./apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
         - name: "Не удается выполнить задание Apache Spark\_— InvalidClassException"

@@ -29,7 +29,7 @@ sections:
             image:
               src: ../media/index/i_overview.svg
             title: Что такое API Анализа текста?
-          - href: /azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-signup
+          - href: /azure/cognitive-services/cognitive-services-apis-create-account
             html: '<p>Узнайте, как зарегистрироваться для использования API Анализа текста.</p>'
             image:
               src: ../media/index/i_get-started.svg
