@@ -1,6 +1,6 @@
 ---
-title: Включить отладчик моментальных снимков для приложений .NET в Azure Service Fabric, облачной службы и виртуальные машины | Документация Майкрософт
-description: Включить отладчик моментальных снимков для приложений .NET в Azure Service Fabric, облачной службы и виртуальные машины
+title: Включение Snapshot Debugger для приложений .NET в Service Fabric, облачной службе и виртуальных машинах Azure | Документация Майкрософт
+description: Включение Snapshot Debugger для приложений .NET в Service Fabric, облачной службе и виртуальных машинах Azure
 services: application-insights
 documentationcenter: ''
 author: brahmnes
@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 03/07/2019
 ms.author: bfung
-ms.openlocfilehash: 5ac1d1339cb8a26cc86157d4d2aa664517418095
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 5a6cf763ae16b55806df2acaf2e03fd8c13d1e76
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617800"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359278"
 ---
-# <a name="enable-snapshot-debugger-for-net-apps-in-azure-service-fabric-cloud-service-and-virtual-machines"></a>Включить отладчик моментальных снимков для приложений .NET в Azure Service Fabric, облачной службы и виртуальные машины
+# <a name="enable-snapshot-debugger-for-net-apps-in-azure-service-fabric-cloud-service-and-virtual-machines"></a>Включение Snapshot Debugger для приложений .NET в Service Fabric, облачной службе и виртуальных машинах Azure
 
-Если ASP.NET или ASP.NET core приложения выполняется в службе приложений Azure, настоятельно рекомендуется для [включить странице на портале Application Insights Snapshot Debugger](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json). Тем не менее, если приложению требуется пользовательскую конфигурацию с отладчиком моментальных снимков или предварительную версию .NET core, затем эту инструкцию следует придерживаться ***кроме*** инструкции [включить его при помощи на странице портала Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
+Если приложение ASP.NET или ASP.NET Core работает в службе приложений Azure, настоятельно рекомендуется [включить snapshot Debugger на странице портала Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json). Однако, если для приложения требуется настроенная конфигурация Snapshot Debugger или предварительная версия .NET Core, следует выполнить эту инструкцию, а также инструкции по включению на [портале Application Insights. страница](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
 
-Если приложение выполняется в Azure Service Fabric, облачная служба, виртуальные машины, или локальных компьютеров, следует использовать приведенные ниже инструкции. 
+Если приложение выполняется в Service Fabric Azure, облачной службе, виртуальных машинах или локальных компьютерах, следует использовать следующие инструкции. 
     
 ## <a name="configure-snapshot-collection-for-aspnet-applications"></a>Настройка сбора моментальных снимков для приложений
 
@@ -31,7 +31,7 @@ ms.locfileid: "67617800"
 
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
-3. При необходимости, Настройка конфигурации отладчика моментальных снимков, добавляемый [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Конфигурация отладчика моментальных снимков по умолчанию практически пуст и все параметры являются необязательными. Ниже приведен пример, показывающий конфигурация соответствует конфигурации по умолчанию:
+3. При необходимости вы настроили конфигурацию Snapshot Debugger, добавленную в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Конфигурация Snapshot Debugger по умолчанию в основном пуста, и все параметры являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
 
     ```xml
     <TelemetryProcessors>
@@ -68,7 +68,7 @@ ms.locfileid: "67617800"
 4. Моментальные снимки собираются только для исключений, которые передаются в Application Insights. В некоторых случаях (например, в более старых версиях платформы .NET) может потребоваться [настроить сбор исключений](../../azure-monitor/app/asp-net-exceptions.md#exceptions), чтобы просматривать исключения с помощью моментальных снимков, которые отображаются на портале.
 
 
-## <a name="configure-snapshot-collection-for-applications-using-aspnet-core-20-or-above"></a>Настройка сбора моментальных снимков для приложений с помощью ASP.NET Core 2.0 или выше
+## <a name="configure-snapshot-collection-for-applications-using-aspnet-core-20-or-above"></a>Настройка сбора моментальных снимков для приложений, использующих ASP.NET Core 2,0 или более поздней версии
 
 1. [Включите Application Insights в веб-приложении ASP.NET Core](../../azure-monitor/app/asp-net-core.md), если вы еще не сделали это.
 
@@ -78,26 +78,18 @@ ms.locfileid: "67617800"
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
 3. Чтобы добавить и настроить обработчик телеметрии сборщика моментальных снимков, измените класс `Startup` своего приложения.
-    1. Если [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet версии 1.3.5 пакета или более поздней версии используется, а затем добавьте следующие операторы using в `Startup.cs`.
+    1. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.5 или выше, добавьте следующие операторы using в `Startup.cs`.
 
        ```csharp
             using Microsoft.ApplicationInsights.SnapshotCollector;
        ```
 
-       Добавьте следующий код в конце метода ConfigureServices в `Startup` в класс `Startup.cs`.
+       Добавьте следующий элемент в конец метода ConfigureServices в `Startup` классе в. `Startup.cs`
 
        ```csharp
-            services.AddSnapshotCollector((configuration) =>
-            {
-                IConfigurationSection section = Configuration.GetSection(nameof(SnapshotCollectorConfiguration));
-                if (section.Value != null)
-                {
-                    section.Bind(configuration);
-                }
-            });
-
+            services.AddSnapshotCollector((configuration) => Configuration.Bind(nameof(SnapshotCollectorConfiguration), configuration));
        ```
-    2. Если [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet версии 1.3.4 пакета или ниже используется, а затем добавьте следующие операторы using в `Startup.cs`.
+    2. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.4 или ниже, добавьте следующие операторы using в `Startup.cs`.
 
        ```csharp
        using Microsoft.ApplicationInsights.SnapshotCollector;
@@ -143,7 +135,7 @@ ms.locfileid: "67617800"
        }
        ```
 
-4. При необходимости настроить конфигурацию отладчика моментальных снимков, добавив раздел snapshotcollectorconfiguration в файл appsettings.json. Все параметры в конфигурации отладчика моментальных снимков являются необязательными. Ниже приведен пример, показывающий конфигурация соответствует конфигурации по умолчанию:
+4. При необходимости настроили конфигурацию Snapshot Debugger, добавив раздел Снапшотколлекторконфигуратион в appSettings. JSON. Все параметры в конфигурации Snapshot Debugger являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
 
    ```json
    {
@@ -191,6 +183,6 @@ ms.locfileid: "67617800"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Создайте трафик для приложения, которое может вызвать исключение. Подождите 10 – 15 минут для моментальных снимков, который должны отправляться экземпляра Application Insights.
-- См. в разделе [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) на портале Azure.
-- Устранении неполадок отладчик моментальных снимков, см. в разделе [Устранение неполадок Snapshot Debugger](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
+- Создание трафика для приложения, которое может вызвать исключение. Затем подождите 10 – 15 минут, чтобы моментальные снимки отправлялись на экземпляр Application Insights.
+- См. раздел [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) в портал Azure.
+- Справку по устранению неполадок Snapshot Debugger см. в разделе [snapshot Debugger устранение неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
