@@ -7,12 +7,12 @@ ms.service: blueprints
 ms.topic: sample
 ms.date: 06/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: ccee11a9b2e5505073bac9f5cb2e9d3efb8816e1
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: c5541eab6707bab12fb75f4d0eaf8bae1f025ebb
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249610"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816043"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -22,6 +22,7 @@ ms.locfileid: "68249610"
 
 |  |  |
 |---------|---------|
+| [ISO 27001](./iso27001/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
 | [NIST SP 800-53, ред. 4](./nist-sp-800-53-rev4/index.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |

@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 6/1/2019
 ms.author: victorh
-ms.openlocfilehash: dc3b9cceda10ae1ff648306236d5ac4868b5b426
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 5bfb3a093cd101f30daf4439dc8f58b5b4f693ca
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722159"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740883"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -101,7 +101,7 @@ ms.locfileid: "68722159"
 
 Подготовка новых развертываний номера SKU Шлюза приложений версии 1 может занять до 20 минут. Изменения размера или количества экземпляров не нарушаются, и шлюз остается активным в течение этого времени.
 
-В развертываниях, использующих SKU версии 2, инициализация может занять до 6 минут.
+В большинстве развертываний, использующих SKU версии 2, инициализация занимает около 6 минут. Однако это может занять больше времени в зависимости от типа развертывания. Например, развертывание в нескольких Зоны доступности с несколькими экземплярами может занять более 6 минут. 
 
 ### <a name="can-i-use-exchange-server-as-a-backend-with-application-gateway"></a>Можно ли использовать сервер Exchange Server в качестве серверного шлюза?
 
@@ -323,10 +323,6 @@ SKU шлюза приложений версии 1 поддерживает сц
 ### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
 
 Да. Дополнительные сведения см. в разделе [Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2](migrate-v1-v2.md).
-
-### <a name="does-waf-support-non-utf-8-encoding"></a>Поддерживает ли WAF кодировку не UTF-8?
-
-Нет. В настоящее время WAF поддерживает только кодировку UTF-8.
 
 ## <a name="diagnostics-and-logging"></a>Диагностика и ведение журнала
 

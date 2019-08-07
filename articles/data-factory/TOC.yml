@@ -203,7 +203,7 @@
         - name: База данных SQL Azure
           href: connector-azure-sql-database.md
         - name: Управляемый экземпляр Базы данных SQL Azure
-          href: connector-azure-sql-database-managed-insance.md
+          href: connector-azure-sql-database-managed-instance.md
         - name: "Хранилище данных SQL\_Azure"
           href: connector-azure-sql-data-warehouse.md
         - name: Хранилище таблиц Azure
@@ -592,6 +592,8 @@
       items:
         - name: Преимущества Фабрики данных Azure
           href: data-migration-guidance-overview.md
+        - name: "Перенос данных из AWS\_S3 в Azure"
+          href: data-migration-guidance-s3-azure-storage.md
 - name: Справочные материалы
   items:
     - name: .NET

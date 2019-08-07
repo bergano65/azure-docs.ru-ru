@@ -28,6 +28,10 @@
           items:
             - name: Превышено ограничение на накладные расходы при сборке мусора
               href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
+        - name: В представлении Apache Hive не отображается сообщение об ошибке
+          href: ./interactive-query-troubleshoot-error-message-hive-view.md
+        - name: Представление Apache Hive недоступно
+          href: ./interactive-query-troubleshoot-inaccessible-hive-view.md
         - name: "ZooKeeperHiveClientException\_— конфигурации HiveServer2"
           href: ./interactive-query-troubleshoot-zookeeperhiveclientexception-hiveserver-configs.md
         - name: Производительность запросов в LLAP Apache Hive

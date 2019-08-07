@@ -23,7 +23,7 @@
           href: azure-to-azure-tutorial-failover-failback.md
         - name: Запуск восстановления размещения
           href: azure-to-azure-tutorial-failback.md
-    - name: Перенос виртуальных машин Azure
+    - name: Move (Переместить)
       items:
         - name: Перенос виртуальных машин Azure в другой регион
           href: azure-to-azure-tutorial-migrate.md
@@ -31,6 +31,8 @@
           href: move-Azure-VMs-AVset-Azone.md
         - name: Перенос виртуальных машин Azure между общедоступными регионами и регионами для государственных организаций
           href: region-move-cross-geos.md
+        - name: Перемещение хранилища в другой регион
+          href: move-vaults-across-regions.md
     - name: Аварийное восстановление виртуальной машины VMware в Azure
       items:
         - name: Подготовка Azure
@@ -365,8 +367,6 @@
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
-            - name: Перемещение хранилища в другой регион
-              href: move-vaults-across-regions.md
     - name: Аварийное восстановление для приложений
       items:
         - name: Настройка аварийного восстановления в Azure для локальных приложений
@@ -441,6 +441,8 @@
       items:
         - name: Устранение неполадок с репликацией виртуальных машин Azure
           href: azure-to-azure-troubleshoot-errors.md
+        - name: Устранение неполадок с подключением виртуальной машины Azure
+          href: azure-to-azure-troubleshoot-network-connectivity.md
         - name: Устранение неполадок с текущей репликацией
           href: azure-to-azure-troubleshoot-replication.md
         - name: Устранение проблем со Службой мобильности

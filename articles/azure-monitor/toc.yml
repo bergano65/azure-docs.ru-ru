@@ -131,6 +131,8 @@
   items:
     - name: Управление Azure Monitor
       items:
+        - name: Проектирование развертывания рабочей области
+          href: platform/design-logs-deployment.md
         - name: 'Роли, разрешения и безопасность'
           href: platform/roles-permissions-security.md
         - name: IP-адреса

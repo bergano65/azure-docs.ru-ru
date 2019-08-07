@@ -9,15 +9,15 @@ ms.subservice: app-mgmt
 ms.topic: article
 ms.workload: identity
 ms.date: 05/08/2019
-ms.author: msmimart
+ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2d9035adb70ab4a5877f3e55dc4115a5ec1f7f5
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: cc1e26a3c7d284a60b830f6f66cdcecef97db4d6
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68426568"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68834611"
 ---
 # <a name="configure-linked-sign-on"></a>Настройка связанного единого входа
 
@@ -25,7 +25,7 @@ ms.locfileid: "68426568"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Если приложение не было добавлено в клиент Azure AD, см. статью [Добавление приложения коллекции](add-gallery-app.md) или Добавление приложения, [не относящегося к коллекции](add-non-gallery-app.md).
+Если приложение еще не добавлено в клиент Azure AD, ознакомьтесь со статьей о [добавлении приложения из коллекции](add-gallery-app.md) или [добавлении приложения не из коллекции](add-non-gallery-app.md).
 
 ### <a name="open-the-app-and-select-linked-sign-on"></a>Откройте приложение и выберите пункт "связанный вход".
 
@@ -35,7 +35,7 @@ ms.locfileid: "68426568"
 
 1. В меню **Тип приложения** выберите **Все приложения** и щелкните **Применить**.
 
-1. Введите имя приложения в поле поиска, а затем выберите приложение из результатов.
+1. В поле поиска введите имя приложения, а затем выберите нужное приложение на панели результатов.
 
 1. В разделе **Управление** щелкните **Единый вход**. 
 
@@ -49,5 +49,5 @@ ms.locfileid: "68426568"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Назначение пользователям или группам приложения](methods-for-assigning-users-and-groups.md)
-- [Настройка автоматической подготовки учетных записей пользователей](configure-automatic-user-provisioning-portal.md)
+- [Assign users and groups to an application in Azure Active Directory](methods-for-assigning-users-and-groups.md) (Назначение пользователей и групп для приложения в Azure Active Directory)
+- [Managing user account provisioning for enterprise apps in the Azure portal](configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)

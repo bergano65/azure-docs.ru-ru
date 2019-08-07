@@ -27,6 +27,8 @@
       href: ../hdinsight-version-release.md
     - name: Устранение неполадок
       items:
+        - name: REST Apache HBase не отвечает на запросы
+          href: ./hbase-troubleshoot-rest-not-spending.md
         - name: Чрезмерное использование ЦП сервером региона
           href: ./hbase-troubleshoot-pegged-cpu-region-server.md
         - name: Истечение времени ожидания при выполнении команды hbase hbck

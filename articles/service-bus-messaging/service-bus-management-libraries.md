@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/05/2019
 ms.author: aschhab
-ms.openlocfilehash: bd2a594bfd7fbac53deacc767ace3cd44484798e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: faf0a5893b7de276b9a411745500daef4d39da6b
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058105"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816080"
 ---
 # <a name="service-bus-management-libraries"></a>Библиотеки управления служебной шины
 
@@ -32,7 +32,7 @@ ms.locfileid: "67058105"
 * Создание, обновление, удаление раздела.
 * Создание, обновление, удаление подписки.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе с библиотеками управления служебной шины, нужно пройти аутентификацию в службе Azure Active Directory (Azure AD). Azure AD требует выполнять аутентификацию в качестве субъекта-службы, который предоставляет доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
@@ -50,7 +50,7 @@ ms.locfileid: "67058105"
    ```csharp
    var context = new AuthenticationContext($"https://login.microsoftonline.com/{tenantId}");
 
-   var result = await context.AcquireTokenAsync("https://management.core.windows.net/", new ClientCredential(clientId, clientSecret));
+   var result = await context.AcquireTokenAsync("https://management.azure.com/", new ClientCredential(clientId, clientSecret));
    ```
 2. Создайте объект `ServiceBusManagementClient`:
 
@@ -76,7 +76,7 @@ ms.locfileid: "67058105"
    await sbClient.Queues.CreateOrUpdateAsync(resourceGroupName, namespaceName, QueueName, queueParams);
    ```
 
-## <a name="complete-code-to-create-a-queue"></a>Полный код для создания очереди
+## <a name="complete-code-to-create-a-queue"></a>Завершение кода для создания очереди
 Ниже приведен полный код для создания очереди служебной шины. 
 
 ```csharp
@@ -139,7 +139,7 @@ namespace SBusADApp
                 var context = new AuthenticationContext($"https://login.microsoftonline.com/{tenantId}");
 
                 var result = await context.AcquireTokenAsync(
-                    "https://management.core.windows.net/",
+                    "https://management.azure.com/",
                     new ClientCredential(clientId, clientSecret)
                 );
 
@@ -164,7 +164,7 @@ namespace SBusADApp
 ```
 
 > [!IMPORTANT]
-> Полный пример см. в разделе [пример управления .NET на GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
+> Полный пример см. в [примере управления .NET на сайте GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Справочник по API Microsoft.Azure.Management.ServiceBus](/dotnet/api/Microsoft.Azure.Management.ServiceBus)

@@ -1,32 +1,32 @@
 ---
-title: Журналы использования Azure Monitor для мониторинга кластеров Azure HDInsight
+title: Использование журналов Azure Monitor для мониторинга кластеров Azure HDInsight
 description: Узнайте, как использовать журналы Azure Monitor для мониторинга заданий, выполняемых в кластере HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/03/2019
-ms.openlocfilehash: 16659a335ef6126e75f5a9a99784e71afa056bef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/05/2019
+ms.openlocfilehash: 7d015f485a51ae1f929e2ecaf1a05811d21594a2
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479265"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816028"
 ---
-# <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Журналы использования Azure Monitor для мониторинга кластеров HDInsight
+# <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Использование журналов Azure Monitor для мониторинга кластеров HDInsight
 
-Узнайте, как включить журналы Azure Monitor для мониторинга операций кластера Hadoop в HDInsight и как добавить решение для мониторинга HDInsight.
+Узнайте, как включить журналы Azure Monitor для мониторинга операций кластера Hadoop в HDInsight и добавить решение для мониторинга HDInsight.
 
-[Журналы Azure Monitor](../log-analytics/log-analytics-overview.md) — это служба в Azure Monitor, которая отслеживает облачные и локальные среды, чтобы поддерживать уровень их доступности и производительности. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников.
+[Azure Monitor журналы](../log-analytics/log-analytics-overview.md) — это служба в Azure Monitor, которая отслеживает облачные и локальные среды, чтобы поддерживать их доступность и производительность. Она собирает данные, формируемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга, и на их основе предоставляет аналитические сведения для нескольких источников.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Рабочая область Log Analytics**. Эта рабочая область можно считать уникальную среду журналы Azure Monitor с свой собственный репозиторий данных, источники данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
+* **Рабочая область Log Analytics**. Эту рабочую область можно рассматривать как уникальную Azure Monitor среду журналов с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
 
 * **Кластер Azure HDInsight**. В настоящее время журналы Azure Monitor можно использовать со следующими типами кластеров HDInsight:
 
@@ -39,16 +39,16 @@ ms.locfileid: "66479265"
 
   Инструкции по созданию кластера HDInsight см. в руководстве по [началу работы с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).  
 
-* **Модуль Azure PowerShell Az**.  См. в разделе [введение в новый модуль Azure PowerShell Az](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
+* **Azure PowerShell AZ Module**.  См. статью [Знакомство с новым модулем Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az).
 
 > [!NOTE]  
-> Для повышения производительности рекомендуется разместить кластер HDInsight и рабочую область Log Analytics в одном регионе. Журналы Azure Monitor доступна не во всех регионах Azure.
+> Для повышения производительности рекомендуется разместить кластер HDInsight и рабочую область Log Analytics в одном регионе. Журналы Azure Monitor недоступны во всех регионах Azure.
 
-## <a name="enable-azure-monitor-logs-by-using-the-portal"></a>Включить журналы Azure Monitor с помощью портала
+## <a name="enable-azure-monitor-logs-by-using-the-portal"></a>Включение журналов Azure Monitor с помощью портала
 
 В этом разделе мы настроим существующий кластер HDInsight Hadoop, чтобы использовать рабочую область Azure Log Analytics для мониторинга заданий, журналов отладки и пр.
 
-1. Из [портала Azure](https://portal.azure.com/), выберите свой кластер.  Инструкции см. в разделе [Отображение кластеров](./hdinsight-administer-use-portal-linux.md#showClusters). Кластер откроется на новой странице портала.
+1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [Отображение кластеров](./hdinsight-administer-use-portal-linux.md#showClusters). Кластер открывается на новой странице портала.
 
 1. Слева в разделе **Мониторинг** выберите **Operations Management Suite**.
 
@@ -60,9 +60,9 @@ ms.locfileid: "66479265"
 
     ![Включение мониторинга кластеров HDInsight](./media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-enable-monitoring.png "Включение мониторинга кластеров HDInsight")
 
-## <a name="enable-azure-monitor-logs-by-using-azure-powershell"></a>Включить журналы Azure Monitor с помощью Azure PowerShell
+## <a name="enable-azure-monitor-logs-by-using-azure-powershell"></a>Включение журналов Azure Monitor с помощью Azure PowerShell
 
-Вы можете включить журналы Azure Monitor с помощью модуля Azure PowerShell Az [Enable AzHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightoperationsmanagementsuite) командлета.
+Вы можете включить Azure Monitor журналов с помощью командлета Azure PowerShell AZ Module [Enable-аздинсигхтоператионсманажементсуите](https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightoperationsmanagementsuite) .
 
 ```powershell
 # Enter user information
@@ -81,7 +81,7 @@ $PrimaryKey = (Get-AzOperationalInsightsWorkspace -ResourceGroupName $resourceGr
 Enable-AzHDInsightOperationsManagementSuite -ResourceGroupName $resourceGroup -Name $cluster -WorkspaceId $WorkspaceId -PrimaryKey $PrimaryKey
 ```
 
-Чтобы отключить функцию [Disable AzHDInsightOperationsManagementSuite](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightoperationsmanagementsuite) командлета:
+Чтобы отключить, используйте командлет [Disable-аздинсигхтоператионсманажементсуите](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightoperationsmanagementsuite) :
 
 ```powershell
 Disable-AzHDInsightOperationsManagementSuite -Name "<your-cluster>"
@@ -89,23 +89,27 @@ Disable-AzHDInsightOperationsManagementSuite -Name "<your-cluster>"
 
 ## <a name="install-hdinsight-cluster-management-solutions"></a>Установка решений по управлению кластерами HDInsight
 
-HDInsight предоставляет решения по управлению для кластеров, которые можно добавить для журналов Azure Monitor. [Решения по управлению](../log-analytics/log-analytics-add-solutions.md) расширяют функциональные возможности журналы Azure Monitor, предоставляя дополнительные данные и средства анализа. Эти решения собирают важные метрики производительности из кластеров HDInsight и предоставляют средства для поиска метрик. Кроме того, они позволяют использовать визуализации и панели мониторинга для большинства типов кластеров, которые поддерживаются в HDInsight. На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения.
+HDInsight предоставляет решения по управлению кластерами, которые можно добавить для Azure Monitor журналов. [Решения](../log-analytics/log-analytics-add-solutions.md) по управлению добавляют функции в журналы Azure Monitor, предоставляя дополнительные инструменты для работы с данными и анализа. Эти решения собирают важные метрики производительности из кластеров HDInsight и предоставляют средства для поиска метрик. Кроме того, они позволяют использовать визуализации и панели мониторинга для большинства типов кластеров, которые поддерживаются в HDInsight. На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения.
 
 Вот доступные решения HDInsight:
 
 * Мониторинг HDInsight Hadoop
-* HDInsight HBase Monitoring
+* Мониторинг HDInsight HBase
 * мониторинг HDInsight Interactive Query;
 * Мониторинг Kafka HDInsight
 * Мониторинг HDInsight Spark
 * Мониторинг HDInsight Storm
 
-Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-monitoring-solution) разделе. Чтобы поэкспериментировать, установка решения мониторинга HDInsight Hadoop. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
+Инструкции по установке решения управления см. в [этом](../azure-monitor/insights/solutions.md#install-a-monitoring-solution) разделе. Чтобы поэкспериментировать, установите решение для мониторинга Hadoop в HDInsight. После установки вы увидите элемент **HDInsightHadoop** под разделом **сводки**. Выберите элемент **HDInsightHadoop**. Решение HDInsightHadoop будет выглядеть примерно следующим образом:
 
 ![Решение HDInsight для мониторинга](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
 
 Так как это новый кластер, в отчете не будут отображаться никакие действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="configuring-performance-counters"></a>Настройка счетчиков производительности
 
-* [Журналы запросов Azure Monitor для мониторинга кластеров HDInsight](hdinsight-hadoop-oms-log-analytics-use-queries.md)
+Azure Monitor также поддерживает сбор и анализ метрик производительности для узлов в кластере. Дополнительные сведения о включении и настройке этого компонента см. [в разделе источники данных о производительности Linux в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters#linux-performance-counters).
+
+## <a name="next-steps"></a>Следующие шаги
+
+* [Запрос журналов Azure Monitor для мониторинга кластеров HDInsight](hdinsight-hadoop-oms-log-analytics-use-queries.md)

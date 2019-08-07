@@ -128,8 +128,6 @@
           href: directory-assign-admin-roles.md
         - name: Просмотр и назначение ролей
           href: directory-manage-roles-portal.md
-        - name: Назначение настраиваемых ролей в API Graph
-          href: roles-assign-powershell.md
         - name: Предварительная версия настраиваемых ролей
           items:
             - name: Предварительная версия настраиваемых ролей
@@ -142,6 +140,8 @@
               href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
             - name: Назначение настраиваемых ролей в API Graph
               href: roles-assign-graph.md
+            - name: Назначение настраиваемых ролей в PowerShell
+              href: roles-assign-powershell.md
             - name: Разрешения на использование предварительной версии настраиваемой роли
               href: roles-custom-available-permissions.md
             - name: Делегирование разрешений администратора приложений

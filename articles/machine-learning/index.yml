@@ -27,64 +27,31 @@ sections:
         style: cards
         type: list
   - items:
-      - text: 'Начало работы со Службой машинного обучения Azure:'
+      - text: Начало работы со Службой машинного обучения Azure.
         type: paragraph
-      - text: <b>Краткие руководства</b>
-        type: paragraph
-      - items:
-          - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
-          - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
-        style: unordered
-        type: list
-      - text: '<b>Руководство. Обучение и развертывание первой автоматизированной модели машинного обучения на портале Azure:</b>'
+      - text: 'Обучайте, развертывайте и администрируйте модели ML с помощью портала Azure, простого интерфейса без использования кода:'
         type: paragraph
       - items:
+          - html: <a href="service/ui-tutorial-automobile-price-train-score">Обучение первого эксперимента в пользовательском интерфейсе перетаскивания визуального элемента</a>
           - html: <a href="service/tutorial-first-experiment-automated-ml">Использование автоматического машинного обучения для обучения и развертывания первой модели классификации</a>
         style: unordered
         type: list
-      - text: '<b>Руководство. Обучение первой модели машинного обучения с помощью пакета SDK:</b>'
+      - text: 'Обучайте, развертывайте и администрируйте модели ML с использованием пакета SDK для Python в скриптах и записных книжках:'
         type: paragraph
       - items:
-          - html: Часть 1. <a href="service/tutorial-1st-experiment-sdk-setup">Настройка среды и рабочей области</a>
-          - html: Часть 2. <a href="service/tutorial-1st-experiment-sdk-train">Обучение первой модели</a>
+          - html: <a href="service/tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
+          - html: <a href="service/tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
+          - html: <a href="service/tutorial-data-prep">Подготовка данных и использование автоматизированного машинного обучения для прогнозирования платы за такси</a>
         style: unordered
         type: list
-      - text: '<b>Руководство. Обучение и развертывание первого эксперимента с помощью визуального интерфейса:</b>'
-        type: paragraph
-      - items:
-          - html: Часть 1. <a href="service/ui-tutorial-automobile-price-train-score">Обучение регрессионной модели</a>
-          - html: Часть 2. <a href="service/ui-tutorial-automobile-price-deploy">Развертывание модели</a>
-        style: unordered
-        type: list
-      - text: <b>Руководство. Классификация изображений данных MNIST с помощью пакета SDK</b>
-        type: paragraph
-      - items:
-          - html: Часть 1. <a href="service/tutorial-train-models-with-aml">Обучение собственной модели</a>
-          - html: Часть 2. <a href="service/tutorial-deploy-models-with-aml">Развертывание этой модели</a>
-        style: unordered
-        type: list
-      - text: <b>Руководство. Прогнозирование стоимости поездки на такси с помощью пакета SDK</b>
-        type: paragraph
-      - items:
-          - html: Часть 1. <a href="service/tutorial-data-prep">Подготовка данных для создания модели</a>
-          - html: Часть 2. <a href="service/tutorial-auto-train-models">Автоматическое обучение моделей в службе "Машинное обучение"</a>
-        style: unordered
-        type: list
-      - text: <b>Руководство. Прогнозирование стоимости автомобиля с помощью визуального интерфейса</b>
-        type: paragraph
-      - items:
-          - html: Часть 1. <a href="service/ui-tutorial-automobile-price-train-score">Прогнозирование стоимости автомобиля</a>
-          - html: Часть 2. <a href="service/ui-tutorial-automobile-price-deploy">Развертывание модели регрессии</a>
-        style: unordered
-        type: list
-      - text: <b>Работа с собственными моделями</b>
+      - text: 'Использование моделей:'
         type: paragraph
       - items:
           - html: <a href="service/how-to-consume-web-service">Использование модели для запроса и получения данных</a>
           - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров Машинного обучения</a>
         style: unordered
         type: list
-    title: Краткие руководства
+    title: Пошаговые инструкции
   - items:
       - className: cardsM
         columns: 2

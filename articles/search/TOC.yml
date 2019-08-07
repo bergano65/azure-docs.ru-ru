@@ -53,15 +53,21 @@
           href: cognitive-search-tutorial-blob-python.md
 - name: Примеры
   items:
-    - name: Примеры кода Azure
-      href: 'https://azure.microsoft.com/resources/samples/?service=search'
+    - name: 'Примеры для C#'
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=csharp'
+    - name: Примеры для Java
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=java'
+    - name: Примеры для Python
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=python'
+    - name: Примеры REST
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=rest'
 - name: Обучение
   items:
-    - name: Вводной тренинг по расширению базы знаний
-      href: 'https://azure.github.io/LearnAI-KnowledgeMiningBootcamp/'
+    - name: Введение (Microsoft Learn)
+      href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
     - name: Добавление функции поиска в приложения (Pluralsight)
       href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
-    - name: Курс по Microsoft Azure для разработчиков (Pluralsight)
+    - name: Курс для разработчиков (Pluralsight)
       href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
 - name: Основные понятия
   items:

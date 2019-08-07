@@ -70,6 +70,8 @@
     - name: База знаний
       href: Concepts/knowledge-base.md
       displayName: 'metadata, pair'
+    - name: Использование LUIS и QnA Maker
+      href: ../luis/choose-natural-language-processing-service.md?toc=/azure/cognitive-services/qnamaker/toc.json
     - name: Жизненный цикл разработки базы знаний
       href: Concepts/development-lifecycle-knowledge-base.md
     - name: Рекомендации

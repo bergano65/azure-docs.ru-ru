@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: c28cf4326593897dcbc90902737fc4846356078d
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 4f2a34e63a870814c8d2a3ffe24c60083c9d7bb2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653386"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781105"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -34,28 +34,28 @@ ms.locfileid: "67653386"
 
 Чтобы приступить к работе, ознакомьтесь с [обзором шифрования дисков Azure](azure-security-disk-encryption-overview.md).
 
-## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры виртуальных Машин и операционные системы поддерживают шифрование дисков Azure?
+## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры виртуальных машин и операционные системы поддерживают шифрование дисков Azure?
 
-[Предварительных требованиях шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md) статьи списки [размеры виртуальных Машин](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes) и [операционных систем виртуальной Машины](azure-security-disk-encryption-prerequisites.md#supported-operating-systems) , которые поддерживают шифрование дисков Azure.
+В статье [Предварительные требования для шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md) перечислены [размеры виртуальных машин](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes) и [операционные системы виртуальных машин](azure-security-disk-encryption-prerequisites.md#supported-operating-systems) , поддерживающие шифрование дисков Azure.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
-Да, на виртуальных машинах IaaS под управлением Windows и Linux можно зашифровать как загрузочные тома, так и тома данных. Чтобы зашифровать данные на виртуальных машинах под управлением Windows, необходимо сначала зашифровать том операционной системы. На виртуальных машинах Linux можно зашифровать том данных без предварительного шифрования тома операционной системы. После шифрования тома операционной системы виртуальной машины IaaS под управлением Linux шифрование невозможно отключить. Для виртуальных машин Linux в масштабируемом наборе можно зашифровать том данных.
+Да, на виртуальных машинах IaaS под управлением Windows и Linux можно зашифровать как загрузочные тома, так и тома данных. Чтобы зашифровать данные на виртуальных машинах под управлением Windows, необходимо сначала зашифровать том операционной системы. На виртуальных машинах Linux можно зашифровать том данных без предварительного шифрования тома операционной системы. После шифрования тома операционной системы виртуальной машины IaaS под управлением Linux шифрование невозможно отключить. Для виртуальных машин Linux в масштабируемом наборе может быть зашифрован только том данных.
 
-## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно зашифровать том размонтирована с шифрованием дисков Azure?
+## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно ли зашифровать неподключенный том с помощью шифрования дисков Azure?
 
-Нет, шифрование дисков Azure шифрует только подключенных томов.
+Нет, шифрование дисков Azure шифрует только подключенные тома.
 
-## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Как смена секретов и ключей шифрования?
+## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Разделы справки поворачивать секреты или ключи шифрования?
 
-Чтобы сменить секреты, просто вызовите той же команды, которые использовались при шифровании дисков, указав в другом хранилище ключей. Для смены ключа шифрования ключей, вызовите ту же команду, которые использовались при шифровании дисков, указание нового ключа шифрования. 
+Для смены секретов просто вызовите ту же команду, которая использовалась изначально для включения шифрования диска, указав другой Key Vault. Чтобы повернуть ключ шифрования ключа, вызовите ту же команду, которая использовалась изначально для включения шифрования диска, указав новое шифрование ключа. 
 
 >[!WARNING]
-> - Если вы уже использовали [дискового шифрования Azure с помощью приложения Azure AD](azure-security-disk-encryption-prerequisites-aad.md) , указав учетные данные Azure AD для шифрования этой виртуальной Машины, необходимо будет по-прежнему использовать этот параметр для шифрования виртуальной Машины. На этой зашифрованной виртуальной машине нельзя использовать [шифрование дисков Azure](azure-security-disk-encryption-prerequisites.md), так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
+> - Если вы ранее использовали [Шифрование дисков Azure с приложением Azure AD](azure-security-disk-encryption-prerequisites-aad.md) , указав учетные данные Azure AD для шифрования этой виртуальной машины, вам потребуется продолжить использовать этот параметр для шифрования виртуальной машины. На этой зашифрованной виртуальной машине нельзя использовать [шифрование дисков Azure](azure-security-disk-encryption-prerequisites.md), так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
 
-## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Как добавить или удалить ключ шифрования ключей, если я не использую изначально один?
+## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Разделы справки добавить или удалить ключ шифрования ключа, если я не использовал его изначально?
 
-Чтобы добавить ключ шифрования ключей, вызовите команду enable, еще раз передавая параметр ключа шифрования ключа. Чтобы удалить ключ шифрования ключей, вызовите команду enable снова без параметра ключа шифрования ключей.
+Чтобы добавить ключ шифрования ключа, вызовите команду Enable еще раз, передав параметр ключа шифрования ключа. Чтобы удалить ключ шифрования ключа, вызовите команду Enable еще раз без параметра ключа шифрования ключа.
 
 ## <a name="does-azure-disk-encryption-allow-you-to-bring-your-own-key-byok"></a>Дает ли служба шифрования дисков Azure возможность создания собственных ключей (BYOK)?
 
@@ -88,9 +88,9 @@ ms.locfileid: "67653386"
 Для настройки шифрования дисков Azure используйте последнюю версию пакета SDK для Azure PowerShell. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases). Шифрование дисков Azure *не* поддерживается в пакете SDK для Azure версии 1.1.0.
 
 > [!NOTE]
-> Расширение предварительной версии шифрования диска Linux Azure «Microsoft.OSTCExtension.AzureDiskEncryptionForLinux» является устаревшим. Это расширение было опубликовано для предварительной версии шифрования дисков Azure. Не следует использовать предварительную версию расширения в тестирование или производственного развертывания.
+> Расширение "Microsoft. Остцекстенсион. AzureDiskEncryptionForLinux" для шифрования дисков Linux Azure не рекомендуется к использованию. Это расширение Опубликовано для предварительной версии шифрования дисков Azure. Не следует использовать предварительную версию расширения в тестовом или рабочем развертывании.
 
-> Для сценариев развертывания как Azure Resource Manager (ARM), где нет необходимости для развертывания расширения шифрования дисков Azure для виртуальной Машины Linux включить шифрование на виртуальной Машине IaaS Linux, необходимо использовать расширения производства поддерживается шифрование дисков Azure» Microsoft.Azure.Security.AzureDiskEncryptionForLinux».
+> Для сценариев развертывания, таких как Azure Resource Manager (ARM), где у вас есть необходимость развернуть расширение шифрования дисков Azure для виртуальной машины Linux, чтобы включить шифрование на виртуальной машине IaaS под управлением Linux, необходимо использовать поддерживаемое в производстве расширение "шифрование дисков Azure". Microsoft. Azure. Security. AzureDiskEncryptionForLinux ".
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Можно ли применять шифрование дисков Azure в пользовательском образе Linux?
 
@@ -98,7 +98,7 @@ ms.locfileid: "67653386"
 
 ## <a name="can-i-apply-updates-to-a-linux-red-hat-vm-that-uses-the-yum-update"></a>Можно ли применить обновления к виртуальной машине Linux Red Hat с использованием команды yum update?
 
-Да, можно выполнить обновление yum на виртуальной Машине Linux Red Hat.  Дополнительные сведения см. в разделе [управление пакетами Linux за брандмауэром](azure-security-disk-encryption-tsg.md#linux-package-management-behind-a-firewall).
+Да, можно выполнить обновление Yum на виртуальной машине Red Hat Linux.  Дополнительные сведения см. [в разделе Управление пакетами Linux за брандмауэром](azure-security-disk-encryption-tsg.md#linux-package-management-behind-a-firewall).
 
 ## <a name="what-is-the-recommended-azure-disk-encryption-workflow-for-linux"></a>Какие действия по шифрованию дисков Azure рекомендуется использовать для Linux?
 
@@ -110,7 +110,7 @@ ms.locfileid: "67653386"
 
 Если эти действия невозможно выполнить, в качестве альтернативы шифрованию всего диска с помощью dm-crypt можно воспользоваться [шифрованием службы хранилища](../storage/common/storage-service-encryption.md) (SSE) на уровне учетной записи хранения платформы.
 
-## <a name="what-is-the-disk-bek-volume-or-mntazurebekdisk"></a>Что такое том BEK или /mnt/azure_bek_disk?
+## <a name="what-is-the-disk-bek-volume-or-mntazure_bek_disk"></a>Что такое том BEK или /mnt/azure_bek_disk?
 
 Том Bek для Windows или /mnt/azure_bek_disk для Linux — это том локальных данных, который надежно хранит ключи шифрования для зашифрованных виртуальных машин IaaS Azure.
 > [!NOTE]
@@ -119,17 +119,17 @@ ms.locfileid: "67653386"
 
 ## <a name="what-encryption-method-does-azure-disk-encryption-use"></a>Какой метод шифрования используется в шифровании дисков Azure?
 
-В Windows ADE использует метод шифрования BitLocker AES256 (AES256WithDiffuser в версиях, предшествующих Windows Server 2012). В Linux ADE используется по умолчанию расшифровки aes-xts-plain64 с 256-разрядный тома главный ключ.
+В Windows ADE использует метод шифрования BitLocker AES256 (AES256WithDiffuser в версиях, предшествующих Windows Server 2012). В Linux ADE использует расшифровку по умолчанию AES-XTS-plain64 с главным ключом 256-разрядного тома.
 
 ## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Если используется параметр EncryptFormatAll и указаны все типы томов, удалятся ли данные из уже зашифрованных дисков?
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
 
-## <a name="is-xfs-filesystem-supported"></a>Файловая система XFS поддерживается?
-XFS тома поддерживаются для шифрования дисков данных только с EncryptFormatAll. Это будет переформатировать тома, стирание данных существует ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+## <a name="is-xfs-filesystem-supported"></a>Поддерживается ли файловая система XFS?
+Тома XFS поддерживаются для шифрования диска данных только с помощью Енкриптформаталл. Это приведет к переформатированию тома, а также к удалению всех данных, сохраненных ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
 
-## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли резервное копирование и восстановление зашифрованной виртуальной Машины? 
+## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли выполнять резервное копирование и восстановление зашифрованной виртуальной машины? 
 
-Служба архивации Azure предоставляет механизм резервного копирования и восстановления зашифрованных Виртуальных машин в пределах одной и той же подписке и регионе.  Инструкции см. в разделе [резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы архивации Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).  Восстановление зашифрованной виртуальной Машины в другом регионе в настоящее время не поддерживается.  
+Azure Backup предоставляет механизм резервного копирования и восстановления зашифрованных виртуальных машин в той же подписке и регионе.  Инструкции см. в статье [резервное копирование и восстановление зашифрованных виртуальных машин с помощью Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).  Восстановление зашифрованной виртуальной машины в другой регион в настоящее время не поддерживается.  
 
 ## <a name="where-can-i-go-to-ask-questions-or-provide-feedback"></a>Где можно задать вопрос или оставить отзыв?
 
@@ -140,4 +140,4 @@ XFS тома поддерживаются для шифрования диско
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)
+- [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)

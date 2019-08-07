@@ -292,6 +292,8 @@
               href: ../common/storage-account-manage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Обновление учетной записи хранения
               href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Получение сведений о типе учетной записи и имени SKU (.NET)
+              href: ../common/storage-account-get-info.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Создание контейнеров и управление ими
           items:
             - name: Создание или удаление контейнера (.NET)

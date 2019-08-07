@@ -27,6 +27,17 @@
     - name: Индекс
       displayName: 'list, examples'
       href: ./samples/index.md
+    - name: "ISO\_27001"
+      items:
+        - name: Обзор
+          displayName: 'standards, iso, 27001'
+          href: ./samples/iso27001/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, iso, 27001'
+          href: ./samples/iso27001/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, iso, 27001'
+          href: ./samples/iso27001/deploy.md
     - name: "ISO\_27001: общие службы"
       items:
         - name: Обзор
