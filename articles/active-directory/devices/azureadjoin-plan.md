@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e58762bd5bf4342804767a200c94b432dd152a0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e5dc1c3fb7ae12c36a8c1fe383290435c03ee0c4
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562223"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741372"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство. Планирование реализации присоединения к Azure AD
 
@@ -68,7 +68,11 @@ ms.locfileid: "68562223"
 У федеративной среды должен быть поставщик удостоверений, поддерживающий протоколы WS-Trust и WS-Fed:
 
 - **WS-Fed**. Этот протокол необходим для присоединения устройства к Azure AD.
-- **WS-Trust**. Этот протокол необходим для входа на присоединенное к Azure AD устройство. 
+- **WS-Trust**. Этот протокол необходим для входа на присоединенное к Azure AD устройство.
+При использовании AD FS необходимо включить следующие конечные точки WS-Trust:`/adfs/services/trust/2005/usernamemixed`
+ `/adfs/services/trust/13/usernamemixed`
+ `/adfs/services/trust/2005/certificatemixed`
+ `/adfs/services/trust/13/certificatemixed`
 
 Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). В настоящее время вход в систему является предварительной версией функции и не рекомендуется для рабочих развертываний.
 

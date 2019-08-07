@@ -6,12 +6,12 @@ ms.service: azure-australia
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: grgale
-ms.openlocfilehash: 827dffc1c7544d9373b5f8d4426ea8c448fa25ab
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1e4c4712312faf2274a4a0737c4fc1f7ce39f98e
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68571605"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824190"
 ---
 # <a name="secure-remote-administration-of-your-gateway-in-azure-australia"></a>Безопасное удаленное администрирование шлюза в Azure Австралии
 
@@ -33,7 +33,6 @@ ms.locfileid: "68571605"
 |Ведение журналов и аудит   |Автоматическое создание, сбор и анализ событий безопасности и администрирования, связанных с рабочими станциями, серверами, сетевыми устройствами и полями перехода, позволяет обнаруживать нарушения и попытки взлома. Автоматизация позволяет организациям быстрее реагировать на запросы, уменьшая последствия компрометации.|
 |Сегментация и разделение сети|Сегментирование сети на логические зоны, такие как разные домены безопасности, и дальнейшее разделение этих логических сетей за счет ограниченных типов данных, переходящих из одной зоны в другую, позволяет ограничить перемещение бокового смещения. Сегментация не позволяет злоумышленнику получить доступ к дополнительным ресурсам.|
 |Поля перехода|Поле перехода — это защищенный сервер удаленного доступа, который обычно используется по службы удаленных рабочих столов или Secure Shell (SSH) корпорации Майкрософт. Поля перехода действуют как пошаговые точки для администраторов, обращающихся к критическим системам со всеми административными действиями, выполненными с выделенного узла.|
-|
 
 Эта статья содержит справочную архитектуру, в которой можно использовать элементы, приведенные выше, для безопасного администрирования систем, развернутых в Azure.
 
@@ -77,7 +76,6 @@ ms.locfileid: "68571605"
 |Условный доступ |Политики условного доступа проверяют попытку проверки подлинности, чтобы убедиться, что она соответствует необходимым требованиям, таким как IP-адрес, с которого поступает подключение, членство в группе привилегированной учетной записи, а также состояние управления и соответствия требованиям привилегированная Рабочая станция, сообщаемая Intune. |
 |Управление привилегированными пользователями (PIM) |С помощью портал Azure администратор может активировать или запросить активацию для привилегированных ролей, для которых они авторизации через PIM. PIM гарантирует, что привилегированные учетные записи не имеют зафиксированных административных привилегий и что все запросы к привилегированному доступу выполняются только в течение времени, необходимого для выполнения административных задач. PIM также обеспечивает ведение журнала всех запросов и активаций в целях аудита. |
 |Управление удостоверениями и доступом|После того как привилегированная учетная запись была идентифицирована и активирована роль, администратор предоставляет доступ к подпискам Azure и ресурсам, которым им были назначены разрешения через Управление удостоверениями и доступом.|
-|
 
 После того как привилегированная учетная запись завершит действия по предоставлению административного доступа к портал Azure, можно настроить доступ к рабочим нагрузкам и установить административные подключения.
 
@@ -91,7 +89,6 @@ ms.locfileid: "68571605"
 |Сервер политики сети (NPS)|NPS получает запрос на проверку подлинности от шлюза удаленных рабочих столов и проверяет имя пользователя и пароль в Active Directory перед отправкой запроса на Azure Active Directory для активации запроса проверки подлинности Azure MFA.|
 |Azure MFA|Azure MFA отправляет запрос на проверку подлинности на зарегистрированное мобильное устройство привилегированной учетной записи. Мобильное устройство управляется Intune для обеспечения соответствия требованиям безопасности. Администратор должен сначала пройти проверку подлинности на мобильном устройстве, а затем в Microsoft Authenticator приложении с помощью ПИН-кода или биометрической системы, прежде чем попытка проверки подлинности будет выполнена в Azure MFA.|
 |Сервер переходов|После успешной проверки подлинности RDP-подключение шифруется с помощью протокола TLS, а затем отправляется через зашифрованный туннель IPSec в VPN-шлюз Azure через шлюз удаленных рабочих столов и на сервер переходов. С сервера переходов теперь администратор может выполнять RDP или SSH для рабочей нагрузки виртуальных машин, как указано в JIT-запросе.|
-|
 
 ## <a name="general-guidance"></a>Общие рекомендации
 
@@ -133,7 +130,6 @@ ms.locfileid: "68571605"
 |---|---|
 |Обзор архитектуры рабочих станций с привилегированным доступом|[https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)|
 |Защита справочных материалов по привилегированному доступу|[https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)|
-|
 
 ### <a name="mobile-device"></a>Мобильное устройство
 
@@ -143,7 +139,6 @@ ms.locfileid: "68571605"
 |---|---|
 |Методы аутентификация Azure AD|[https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)|
 |Использование приложения Microsoft Authenticator|[https://support.microsoft.com/help/4026727/microsoft-account-how-to-use-the-microsoft-authenticator-app](https://support.microsoft.com/help/4026727/microsoft-account-how-to-use-the-microsoft-authenticator-app)|
-|
 
 ### <a name="microsoft-intune"></a>Microsoft Intune
 
@@ -153,7 +148,6 @@ Intune — это компонент Enterprise Mobility + Security, котор�
 |---|---|
 |Документация по Microsoft Intune|[https://docs.microsoft.com/intune/](https://docs.microsoft.com/intune/)|
 |Приступая к работе с соответствием устройств в Intune|[https://docs.microsoft.com/intune/device-compliance-get-started](https://docs.microsoft.com/intune/device-compliance-get-started)|
-|
 
 ### <a name="group-policy"></a>Групповая политика
 
@@ -162,7 +156,6 @@ Intune — это компонент Enterprise Mobility + Security, котор�
 |Ресурсы|Ссылка|
 |---|---|
 |Разрешить локальный вход групповая политика параметра|[https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/allow-log-on-locally](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/allow-log-on-locally)|
-|
 
 ### <a name="jump-server--bastion-host"></a>Сервер переходов или узел бастиона
 
@@ -171,7 +164,6 @@ Intune — это компонент Enterprise Mobility + Security, котор�
 |Ресурсы|Ссылка|
 |---|---|
 |Реализация безопасных административных узлов|[https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/implementing-secure-administrative-hosts](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/implementing-secure-administrative-hosts)|
-|
 
 ### <a name="just-in-time-jit-access"></a>JIT-доступ
 
@@ -181,7 +173,6 @@ JIT — это функция центра безопасности Azure, ко�
 |---|---|
 |Управление JIT-доступом|[https://docs.microsoft.com/azure/security-center/security-center-just-in-time](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)|
 |Автоматизация JIT для доступа к виртуальным машинам Azure|[https://blogs.technet.microsoft.com/motiba/2018/06/24/automating-azure-just-in-time-vm-access](https://blogs.technet.microsoft.com/motiba/2018/06/24/automating-azure-just-in-time-vm-access)|
-|
 
 ## <a name="secure-communication"></a>Безопасная связь
 
@@ -194,7 +185,6 @@ JIT — это функция центра безопасности Azure, ко�
 |Ресурсы |Ссылка |
 |---|---|
 |Общие сведения о шифровании Azure — шифрование при передаче|[https://docs.microsoft.com/azure/security/security-azure-encryption-overview#encryption-of-data-in-transit](https://docs.microsoft.com/azure/security/security-azure-encryption-overview#encryption-of-data-in-transit)|
-|
 
 ### <a name="azure-vpn-gateway"></a>VPN-шлюз Azure
 
@@ -204,8 +194,7 @@ VPN-шлюз Azure обеспечивает безопасное зашифро�
 |---|---|
 |О подключениях "точка — сеть"|[https://docs.microsoft.com/azure/vpn-gateway/point-to-site-about](https://docs.microsoft.com/azure/vpn-gateway/point-to-site-about)|
 |Сведения о криптографии VPN-шлюза Azure|[https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-compliance-crypto](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-compliance-crypto)|
-|Конфигурация VPN-шлюза Azure|[https://aka.ms/AzGovAUSecurity](https://aka.ms/AzGovAUSecurity)|
-|
+|Конфигурация VPN-шлюза Azure|[Конфигурация VPN-шлюза Azure](vpn-gateway.md)|
 
 ### <a name="remote-desktop-rd-gateway"></a>Шлюз удаленный рабочий стол (RD)
 
@@ -214,7 +203,6 @@ VPN-шлюз Azure обеспечивает безопасное зашифро�
 |Ресурсы |Ссылка |
 |---|---|
 |Архитектура службы удаленных рабочих столов|[https://docs.microsoft.com/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture)|
-|
 
 ### <a name="network-security-groups-nsgs"></a>Группы безопасности сети (NSG)
 
@@ -224,7 +212,6 @@ VPN-шлюз Azure обеспечивает безопасное зашифро�
 |---|---|
 |Общие сведения о группах безопасности Azure|[https://docs.microsoft.com/azure/virtual-network/security-overview](https://docs.microsoft.com/azure/virtual-network/security-overview)|
 |Практическое руководство. Планирование виртуальных сетей|[https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm)|
-|
 
 ## <a name="strong-authentication"></a>Строгая проверка подлинности
 
@@ -237,7 +224,6 @@ VPN-шлюз Azure обеспечивает безопасное зашифро�
 |Ресурсы |Ссылка |
 |---|---|
 |Обзор служб домен Active Directory Services|[https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)|
-|
 
 ### <a name="azure-active-directory-azure-ad"></a>Azure Active Directory (Azure AD)
 
@@ -249,7 +235,6 @@ Azure AD — это служба проверки подлинности для 
 |---|---|
 |Документация Azure Active Directory|[https://docs.microsoft.com/azure/active-directory](https://docs.microsoft.com/azure/active-directory)|
 |Документация по гибридному удостоверению|[https://docs.microsoft.com/azure/active-directory/hybrid](https://docs.microsoft.com/azure/active-directory/hybrid)|
-|
 
 ### <a name="network-policy-server-nps"></a>Сервер политики сети (NPS)
 
@@ -258,7 +243,6 @@ NPS — это проверка подлинности и сервер поли�
 |Ресурсы |Ссылка |
 |---|---|
 |Документация по серверу политики сети|[https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top)|
-|
 
 ### <a name="azure-mfa"></a>Azure MFA
 
@@ -268,7 +252,6 @@ Azure MFA — это служба проверки подлинности, пр�
 |---|---|
 |Принцип работы. Многофакторная проверка подлинности Azure|[https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)|
 |Практическое руководство. Развертывание облачной многофакторной проверки подлинности Azure|[https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)|
-|
 
 ## <a name="strong-authorisation"></a>Strong авторизации
 
@@ -282,7 +265,6 @@ Azure MFA — это служба проверки подлинности, пр�
 |---|---|
 |Управление доступом на основе ролей Azure|[https://docs.microsoft.com/azure/role-based-access-control](https://docs.microsoft.com/azure/role-based-access-control)|
 |Общие сведения об определениях ролей|[https://docs.microsoft.com/azure/role-based-access-control/role-definitions](https://docs.microsoft.com/azure/role-based-access-control/role-definitions)|
-|
 
 ### <a name="privileged-identity-management-pim"></a>Управление привилегированными пользователями (PIM)
 
@@ -292,7 +274,6 @@ PIM — это Azure Active Directory компонент, который упр�
 |---|---|
 |Документация по управление привилегированными пользователями (PIM)|[https://docs.microsoft.com/azure/active-directory/privileged-identity-management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management)|
 |Начало работы с PIM|[https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-getting-started](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-getting-started)|
-|
 
 ### <a name="conditional-access"></a>Условный доступ
 
@@ -302,7 +283,6 @@ PIM — это Azure Active Directory компонент, который упр�
 |---|---|
 |Документация по условному доступу|[https://docs.microsoft.com/azure/active-directory/conditional-access](https://docs.microsoft.com/azure/active-directory/conditional-access)|
 |Практическое руководство. Требовать управляемые устройства для доступа к облачным приложениям с помощью условного доступа|[https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices)|
-|
 
 ## <a name="next-steps"></a>Следующие шаги
 

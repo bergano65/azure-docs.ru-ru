@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 93b26b2861c5603770a954943174d6436296ad07
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 10aee302377c4f71e47d93f5cd975043efcea375
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668377"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815904"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
 С помощью Машинного обучения Azure можно легко отправить скрипт обучения в [различные целевые объекты вычислений](how-to-set-up-training-targets.md#compute-targets-for-training), используя объекты [RunConfiguration](how-to-set-up-training-targets.md#whats-a-run-configuration) и [ScriptRunConfig](how-to-set-up-training-targets.md#submit). Этот шаблон обеспечивает высокую гибкость и максимальный контроль.
 
-Чтобы облегчить работу с моделью глубокого обучения, в пакете SDK Машинного обучения Azure для Python предоставляется альтернативная высокоуровневая абстракция — класс оценщика, который позволяет пользователям легко создавать конфигурации запуска. Вы можете создать и применять общий класс [Estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки скрипта обучения с помощью любой удобной платформы машинного обучения (например, scikit-learn) с целью его дальнейшего запуска в любом целевом объекте вычислений — на локальном компьютере, отдельной виртуальной машине в Azure или в кластере GPU в Azure. Для заданий PyTorch и TensorFlow и Chainer в Машинном обучении Azure также предусмотрены соответствующие оценщики [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) и [Chainer](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py), которые облегчают использование этих платформ.
+Чтобы облегчить работу с моделью глубокого обучения, в пакете SDK Машинного обучения Azure для Python предоставляется альтернативная высокоуровневая абстракция — класс оценщика, который позволяет пользователям легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценария обучения, используя любую выбранную платформу обучения (например, scikit-learning) на любом выбранном целевом объекте вычислений, будь то ваш локальный компьютер, одна виртуальная машина в Azure или кластер GPU в Azure. Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
 
 ## <a name="train-with-an-estimator"></a>Обучение с оценщиком
 
@@ -58,13 +58,13 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 Параметр | Описание
 --|--
-`source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс. 
-`script_params`| Словарь, указывающий аргументы командной строки для сценария `entry_script`обучения в `<command-line argument, value>` виде пар. Чтобы задать флаг verbose в `script_params`, используйте. `<command-line argument, "">`
-`compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться скрипт обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)). (Обратите внимание: даже если кластер AmlCompute чаще всего используется как целевой объект, вы можете выбрать другие типы целевых объектов вычислений, такие как виртуальные машины Azure или даже локальный компьютер.)
-`entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
+`source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленное вычисление.
+`script_params`| Словарь, указывающий аргументы командной строки для передачи в сценарий `entry_script`обучения в `<command-line argument, value>` виде пар. Чтобы задать флаг verbose в `script_params`, используйте. `<command-line argument, "">`
+`compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться скрипт обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)). (Примечание. Несмотря на то, что кластер Амлкомпуте является часто используемым целевым объектом, можно также выбрать другие типы целевых объектов вычислений, например виртуальные машины Azure или даже локальный компьютер.)
+`entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. Этот файл и все дополнительные файлы, от которых он зависит, должны находиться в этой папке.
 `conda_packages`| Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda.  
 
-У конструктора есть другой параметр с именем `pip_packages`. Его можно использовать для всех необходимых пакетов pip.
+Конструктор имеет другой параметр с именем `pip_packages` , который используется для всех необходимых пакетов PIP.
 
 Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment` [Эксперимента](concept-azure-machine-learning-architecture.md#experiments). 
 
@@ -112,7 +112,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 `custom_docker_image`| Имя используемого образа. Можно предоставлять только те образы, которые доступны в публичных хранилищах Docker (в данном случае в центре Docker). Чтобы выбрать образ из частного репозитория Docker, используйте параметр конструктора `environment_definition`. [Ознакомьтесь с примером ниже](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
 `node_count`| Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node`| Количество процессов (или рабочих ролей), запускаемых на каждом узле. В этом случае используется `2` графических процессора, доступных на каждом узле.| `1`
-`distributed_backend`| Серверная часть для запуска распределенного обучения, предлагаемая средством оценки с помощью MPI.  Чтобы выполнять параллельное или распределенное обучение (например, `node_count`> 1 ,или `process_count_per_node`> 1, или оба варианта), задайте `distributed_backend='mpi'`. Реализация MPI, используемая AML — [Open MPI](https://www.open-mpi.org/).| `None`
+`distributed_backend`| Серверная часть для запуска распределенного обучения, предлагаемая средством оценки с помощью MPI.  Чтобы выполнить параллельное или распределенное обучение (например, `node_count`> 1 или `process_count_per_node`> 1 или оба), задайте `distributed_backend='mpi'`. Реализация MPI, используемая AML — [Open MPI](https://www.open-mpi.org/).| `None`
 
 И наконец, отправьте задание обучения, выполнив такую команду.
 ```Python

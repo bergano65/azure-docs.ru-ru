@@ -7,12 +7,12 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: dcfdec0a746406296616456f6e6b8c0eabddf4b5
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 2499842eeb2dd5a8fa845ed364a6aea7418acc8b
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478583"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824414"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2
 
@@ -227,7 +227,7 @@ $condition2 = New-AzApplicationGatewayFirewallCondition `
             { 
               "matchVariable": "RemoteAddr", 
               "operator": "IPMatch", 
-              "negateCondition": true, 
+              "negateCondition": false, 
               "matchValues": [ 
                 "192.168.5.4/24" 
               ] 
@@ -251,7 +251,7 @@ $condition2 = New-AzApplicationGatewayFirewallCondition `
 
 ## <a name="example-4"></a>Пример 4
 
-В этом примере необходимо заблокировать, если запрос находится вне диапазона IP-адресов *192.168.5.4/24*или строка агента пользователя не является хромом (то есть пользователь  не использует браузер Chrome). Так как эта логика использует **или**, два условия находятся в отдельных правилах, как показано в следующем примере. *myrule1* и *myrule2* должны соответствовать друг другу для блокировки трафика.
+В этом примере необходимо заблокировать, если запрос находится вне диапазона IP-адресов *192.168.5.4/24*или строка агента пользователя не является хромом (то есть пользователь не использует браузер Chrome). Так как эта логика использует **или**, два условия находятся в отдельных правилах, как показано в следующем примере. *myrule1* и *myrule2* должны соответствовать друг другу для блокировки трафика.
 
 Logic: **Not** (p **и** q) = **Not** p **или not** q.
 

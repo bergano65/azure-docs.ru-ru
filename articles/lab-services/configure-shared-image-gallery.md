@@ -1,6 +1,6 @@
 ---
-title: Настройка коллекции общего образа в Azure DevTest Labs | Документация Майкрософт
-description: Сведения о настройке коллекции общего образа в Azure DevTest Labs
+title: Настройка коллекции общих образов в Azure DevTest Labs | Документация Майкрософт
+description: Узнайте, как настроить общую коллекцию образов в Azure DevTest Labs
 services: devtest-lab
 documentationcenter: na
 author: spelluru
@@ -12,147 +12,105 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 08/02/2019
 ms.author: spelluru
-ms.openlocfilehash: de857498aeb51c9b3711c90338d983e85b61cb70
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 80610168e0d293b65626da71ee349f25e456576b
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065433"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774568"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Настройка коллекции общих образов в Azure DevTest Labs
-DevTest Labs теперь поддерживает [коллекции образов Shared](../virtual-machines/windows/shared-image-galleries.md) функции. Благодаря этой функции пользователи лаборатории могут при создании ее ресурсов использовать образы из общего расположения. Кроме того, функция позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Коллекция изображений общего функция поддерживает:
+DevTest Labs теперь поддерживает функцию [коллекции общих образов](../virtual-machines/windows/shared-image-galleries.md) . Благодаря этой функции пользователи лаборатории могут при создании ее ресурсов использовать образы из общего расположения. Кроме того, функция позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Коллекция общих образов поддерживает следующие возможности.
 
 - Управляемая глобальная репликация образов.
 - Управление версиями и группировка образов для упрощения контроля.
 - Высокий уровень доступности образов благодаря использованию учетных записей хранилища, избыточного между зонами (ZRS), с поддержкой зон доступности. ZRS обеспечивает высокий уровень устойчивости против сбоев зон.
 - Использование образов из разных подписок и даже разных клиентов с управлением доступом на основе ролей (RBAC).
 
-Дополнительные сведения см. в разделе [документации коллекции образов Shared](../virtual-machines/windows/shared-image-galleries.md). 
+Дополнительные сведения см. в [документации по общей коллекции образов](../virtual-machines/windows/shared-image-galleries.md). 
  
 Если у вас есть большое количество управляемых образов, которые нужно сохранить и сделать доступными для всей компании, можно использовать коллекцию общих образов в качестве репозитория, что позволит легко обновлять и передавать образы. Владелец лаборатории можете подключить к ней существующую общедоступную коллекцию образов. После этого пользователи лаборатории смогут создавать машины на основе наиболее актуальных образов. Ключевое преимущество этой функции в том, что в DevTest Labs теперь можно совместно использовать образы в разных лабораториях, подписках и регионах. 
 
 ## <a name="considerations"></a>Рекомендации
-- Одна Галерея общего образа можно подключить только в лабораторию за раз. Если вы хотите подключить другой коллекции, необходимо будет существующий присоединение и отсоединение другой. 
-- DevTest Labs в настоящее время не поддерживает отправки образов в коллекции через лаборатории. 
-- При создании виртуальной машины, используя образ из коллекции общего образа, DevTest Labs всегда использует последнюю опубликованную версию этого образа.
-- Несмотря на то, что DevTest Labs автоматически выполняет максимально точного, чтобы убедиться, что коллекция изображений общего реплицирует образы в регионе, в которой существует лаборатории, это не всегда возможно. Чтобы пользователям не возникли проблемы при создании виртуальных машин на основе этих образов, убедитесь, что образы реплицированных лаборатории регион.»
+- В лабораторию можно одновременно подключить только одну коллекцию общих образов. Если вы хотите подключить другую галерею, необходимо отключить существующую и присоединить другую. 
+- В настоящее время DevTest Labs не поддерживает передачу изображений в коллекцию через лабораторию. 
+- При создании виртуальной машины с помощью общего образа коллекции образов DevTest Labs всегда использует последнюю опубликованную версию этого образа.
+- Несмотря на то что DevTest Labs автоматически делает наилучшую попытку обеспечить репликацию образов с помощью общей коллекции образов в регион, в котором существует Лаборатория, это не всегда возможно. Чтобы избежать проблем с созданием виртуальных машин на основе этих образов, убедитесь, что образы уже реплицированы в регион лаборатории.
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Выберите **все службы** в левом меню навигации.
+1. В меню навигации слева выберите **все службы** .
 1. Выберите **DevTest Labs** из списка.
-1. Из списка лабораторий выберите ваш **лаборатории**.
-1. Выберите **конфигурация и политики** в **параметры** раздел, в меню слева.
-1. Выберите **галерей изображений общего** под **базы виртуальных машин** в меню слева.
+1. В списке лабораторий выберите свою лабораторию.
+1. Выберите **Конфигурация и политики** в разделе **Параметры** в меню слева.
+1. В меню слева выберите **коллекции общих образов** в разделе **базовые виртуальные машины** .
 
-    ![Общее меню галерей изображений](./media/configure-shared-image-gallery/shared-image-galleries-menu.png)
-1. Присоединение существующей коллекцией общего образа в лаборатории, щелкнув **Attach** кнопку и выберите в раскрывающемся списке вашей коллекции.
+    ![Меню галереи общих образов](./media/configure-shared-image-gallery/shared-image-galleries-menu.png)
+1. Подключите имеющуюся коллекцию общих образов к своей лаборатории, нажав кнопку **присоединить** и выбрав коллекцию в раскрывающемся списке.
 
-    ![Attach](./media/configure-shared-image-gallery/attach-options.png)
-1. Перейдите к вложенные коллекции и настройте коллекции таким образом, чтобы **включить или отключить** общих образов для создания виртуальной Машины.
+    ![Подключить](./media/configure-shared-image-gallery/attach-options.png)
+1. Перейдите в присоединенную коллекцию и настройте коллекцию, чтобы **включить или отключить** общие образы для создания виртуальной машины. Выберите коллекцию образов из списка, чтобы настроить ее. 
 
-    ![Включение или отключение](./media/configure-shared-image-gallery/enable-disable.png)
-1. Пользователи лаборатории могут затем создать виртуальную машину, используя поддержкой образов, щелкнув **+ добавить** и поиск изображения в **выберите с основным** страницы.
+    По умолчанию параметр **Разрешить использование всех образов в качестве баз данных виртуальных машин** имеет значение **Да**. Это означает, что все образы, доступные в коллекции подключенных общих образов, будут доступны пользователю лаборатории при создании виртуальной машины лаборатории. Если доступ к определенным изображениям необходимо ограничить, измените параметр **Разрешить использование всех образов в качестве баз виртуальных машин** **без**изменений и выберите образы, которые нужно разрешить при создании виртуальных машин, а затем нажмите кнопку **сохранить** .
+
+    ![Включить или отключить](./media/configure-shared-image-gallery/enable-disable.png)
+1. Пользователи лаборатории могут создать виртуальную машину с помощью включенных образов. для этого щелкните **+ Добавить** и найдите образ на странице **Выбор базовой** страницы.
 
     ![Пользователи лаборатории](./media/configure-shared-image-gallery/lab-users.png)
 ## <a name="use-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 
-### <a name="attach-a-shared-image-gallery-to-your-lab"></a>Присоединение коллекции общего образа в лаборатории
-При использовании шаблона Azure Resource Manager для присоединения коллекции общего образа в лаборатории, необходимо добавить его в разделе resources шаблона Resource Manager, как показано в следующем примере:
+### <a name="attach-a-shared-image-gallery-to-your-lab"></a>Подключение коллекции общих образов к лаборатории
+Если вы используете шаблон Azure Resource Manager для подключения коллекции общих образов к лаборатории, необходимо добавить ее в раздел ресурсов шаблона диспетчер ресурсов, как показано в следующем примере:
 
 ```json
 "resources": [
 {
     "apiVersion": "2018-10-15-preview",
     "type": "Microsoft.DevTestLab/labs",
-    "name": "[parameters('newLabName')]",
-    "location": "[resourceGroup (). location]",
+    "name": "mylab",
+    "location": "eastus",
     "resources": [
-    {
-        "apiVersion": "2018-10-15-preview",
-        "name": "[variables('labVirtualNetworkName')]",
-        "type": "virtualNetworks",
-        "dependsOn": [
-            "[resourceId('Microsoft.DevTestLab/labs', parameters('newLabName'))]"
-        ]
-    },
     {
         "apiVersion":"2018-10-15-preview",
         "name":"myGallery",
         "type":"sharedGalleries",
         "properties": {
-            "galleryId":"[parameters('existingSharedGalleryId')]",
+            "galleryId":"/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/mySharedGalleryRg/providers/Microsoft.Compute/galleries/mySharedGallery",
             "allowAllImages": "Enabled"
-        },
-        "dependsOn":[
-            "[resourceId('Microsoft.DevTestLab/labs', parameters('newLabName'))]"
-        ]
-    }
-    ]
-} 
-
-```
-
-Полный пример шаблона Resource Manager см. в статье эти примеры шаблонов Resource Manager, в нашем общедоступном репозитории GitHub: [Настройка коллекции общего образа при создании лаборатории](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-lab-shared-gallery-configured).
-
-### <a name="create-a-vm-using-an-image-from-the-shared-image-gallery"></a>Создание виртуальной Машины с помощью образа из общей коллекции
-При использовании шаблона Azure Resource Manager, чтобы создать виртуальную машину, используя образ из коллекции общего образа, используйте следующий пример:
-
-```json
-
-"resources": [
-{
-    "apiVersion": "2018-10-15-preview",
-    "type": "Microsoft.DevTestLab/labs/virtualMachines",
-    "name": "[variables('resourceName')]",
-    "location": "[resourceGroup().location]",
-    "properties": {
-        "sharedImageId": "[parameters('existingSharedImageId')]",
-        "size": "[parameters('newVMSize')]",
-        "isAuthenticationWithSshKey": false,
-        "userName": "[parameters('userName')]",
-        "sshKey": "",
-        "password": "[parameters('password')]",
-        "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",
-        "labSubnetName": "[variables('labSubnetName')]"
-    }
-}
-],
-
-```
-
-Дополнительные сведения см. в статье эти примеры шаблонов Resource Manager на открытый GitHub.
-[Создайте виртуальную машину, используя образ из коллекции общего образа](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-vm-username-pwd-sharedimage).
-
-## <a name="use-api"></a>С помощью API
-
-- Используйте API версии 2018 г.-10-15-предварительной версии.
-- Для присоединения вашей коллекции, отправьте запрос, как показано в следующем фрагменте:
-    
-    ``` 
-    PUT [Lab Resource Id]/SharedGalleries/[newGalleryName]
-    Body: 
-    {
-        “properties”:{
-            “galleryId”: “[Shared Image Gallery resource Id]”,
-            “allowAllImages”:”Enabled”
         }
     }
-    ```
-- Чтобы просмотреть все изображения в галерее общего образа, можно перечислить все общие образы с идентификаторами ресурсов
+    ]
+}
+```
 
-    ```
-    GET [Lab Resource Id]/SharedGalleries/mySharedGallery/SharedImages
-    ````
-- Чтобы создать виртуальную Машину с помощью общие образы, можно сделать запрос PUT на виртуальных машинах и в свойствах виртуальной машины, передайте идентификатор общие образы, полученный из предыдущего вызова. Для свойства. SharedImageId
+Полный пример шаблона диспетчер ресурсов см. в разделе примеры шаблонов диспетчер ресурсов в нашем общедоступном репозитории GitHub: [Настройка общей коллекции образов при создании лаборатории](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-lab-shared-gallery-configured).
+
+## <a name="use-api"></a>Использовать API
+
+### <a name="shared-image-galleries---create-or-update"></a>Коллекции общих образов — создание или обновление
+
+```rest
+PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{name}?api-version= 2018-10-15-preview
+Body: 
+{
+    "properties":{
+        "galleryId": "[Shared Image Gallery resource Id]",
+        "allowAllImages": "Enabled"
+    }
+}
+
+```
+
+### <a name="shared-image-galleries-images---list"></a>Образы из общей галереи образов — список 
+
+```rest
+GET  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{name}/sharedimages?api-version= 2018-10-15-preview
+```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-На артефакты, ознакомьтесь со следующими статьями:
 
-- [Укажите обязательные артефакты для лаборатории](devtest-lab-mandatory-artifacts.md)
-- [Создание настраиваемых артефактов](devtest-lab-artifact-author.md)
-- [Добавить репозиторий артефактов в лабораторию](devtest-lab-artifact-author.md)
-- [Диагностика сбоев артефактов](devtest-lab-troubleshoot-artifact-failure.md)
+
+## <a name="next-steps"></a>Следующие шаги
+См. следующие статьи о создании виртуальной машины с помощью образа из коллекции подключенных общих образов. [Создание виртуальной машины с помощью общего образа из коллекции](add-vm-use-shared-image.md)

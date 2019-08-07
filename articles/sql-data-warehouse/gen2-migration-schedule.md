@@ -10,12 +10,12 @@ ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 07/22/2019
-ms.openlocfilehash: d4724672510d6ccbbc819691d621400cb00d8c9a
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: cd55e078e14ec34006df05096f161e7bdef39a03
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405444"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827230"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Обновление до хранилища данных 2-го поколения
 
@@ -88,7 +88,7 @@ ms.locfileid: "68405444"
 - [Обновление на месте](upgrade-to-latest-generation.md). При выборе этого варианта имеющееся хранилище данных 1-го поколения будет обновлено до 2-го поколения. Процесс обновления приведет к кратковременному сбросу подключения (приблизительно 5 минут), так как мы перезапускаем хранилище данных.  После перезапуска хранилище данных будет полностью доступно для использования. Если во время обновления возникают проблемы, отправьте запрос в [службу поддержки](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket) и в качестве возможной причины щелкните "Gen2 Upgrade".
 - [Обновления из точки восстановления](sql-data-warehouse-restore.md). При выборе этого варианта в текущем хранилище данных 1-го поколения создается определяемая пользователем точка восстановления, а затем выполняется восстановление напрямую в экземпляр 2-го поколения. Существующее хранилище данных 1-го поколения остается. После завершения восстановления хранилище данных 2-го поколения будет полностью доступно.  После выполнения всех процессов тестирования и проверки восстановленного экземпляра 2-го поколения первоначальный экземпляр 1-го поколения будет удален.
 
-   - Шаг 1.: [Создайте на портале Azure точку восстановления, определяемую пользователем](sql-data-warehouse-restore.md#create-a-user-defined-restore-point-using-the-azure-portal).
+   - Шаг 1.: [Создайте на портале Azure точку восстановления, определяемую пользователем](sql-data-warehouse-restore-active-paused-dw.md#restore-an-existing-data-warehouse-through-the-azure-portal).
    - Шаг 2.: При восстановлении из определяемой пользователем точки восстановления задайте для уровня производительности предпочтительный уровень 2-го поколения.
 
 Во время выполнения процесса обновления файлов данных в фоновом режиме вы можете столкнуться с временным снижением производительности. Общее время замедления зависит от размера файлов данных.
@@ -155,6 +155,6 @@ ms.locfileid: "68405444"
 - [Мониторинг работоспособности ресурсов](https://docs.microsoft.com/azure/service-health/resource-health-overview)
 - [что нужно знать перед началом миграции](upgrade-to-latest-generation.md#before-you-begin)
 - [Обновление на месте или обновление из точки восстановления](upgrade-to-latest-generation.md)
-- [Создание определяемой пользователем точки восстановления](sql-data-warehouse-restore.md#restore-through-the-azure-portal)
-- [Сведения о восстановлении до поколения 2](sql-data-warehouse-restore.md#restore-an-active-or-paused-database-using-the-azure-portal)
+- [Создание определяемой пользователем точки восстановления](sql-data-warehouse-restore-points.md)
+- [Сведения о восстановлении до поколения 2](sql-data-warehouse-restore-active-paused-dw.md#restore-an-existing-data-warehouse-through-the-azure-portal)
 - [Открытие запроса в службу поддержки касательно Хранилища данных SQL Azure](https://go.microsoft.com/fwlink/?linkid=857950)

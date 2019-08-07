@@ -8,14 +8,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: dacurwin
-ms.openlocfilehash: 22f43bf1d3ac8282c4de3349656a21f51e788942
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 7a19b97e36bc28e5e629391f799b69370cf0fa38
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689487"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737275"
 ---
-# <a name="back-up-a-sharepoint-farm-to-azure"></a>Архивация фермы SharePoint в Azure
+# <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 Резервное копирование SharePoint в Microsoft Azure с помощью Microsoft Azure Backup Server (MABS) во многом напоминает резервное копирование других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. Также она позволяет сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
 
 ## <a name="sharepoint-supported-versions-and-related-protection-scenarios"></a>Поддерживаемые версии SharePoint и соответствующие сценарии защиты
@@ -28,7 +28,7 @@ ms.locfileid: "68689487"
 ## <a name="before-you-start"></a>Перед началом
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 Прежде чем продолжить, [установили и подготовили Azure Backup Server](backup-azure-microsoft-azure-backup.md) для защиты рабочих нагрузок.
 
 ### <a name="protection-agent"></a>Агент защиты

@@ -15,12 +15,12 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 2695ee2751a2834466c42d224101af246b829aca
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: d50acc50880229626c847d41d9abe9a9e13d9c6e
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717620"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736117"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -228,7 +228,7 @@ ms.locfileid: "68717620"
 
 ### <a name="cron-expressions"></a>Выражения CRON
 
-Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#cron-expressions)по триггерам таймера.
+Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)по триггерам таймера.
 
 ### <a name="settingjob-reference"></a>Указание. ссылка на задание
 
@@ -238,7 +238,7 @@ ms.locfileid: "68717620"
 | ----------- | --------- | --------------- |
 | `is_in_place` | Все | Позволяет выполнять задание на месте без его первоначального копирования во временную папку. Дополнительные сведения см. в разделе [Рабочий каталог](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory)веб-заданий. |
 | `is_singleton` | Непрерывный | Запускайте веб-задания только в одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [Задание непрерывного задания как singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
-| `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#cron-expressions)по триггерам таймера. |
+| `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)по триггерам таймера. |
 | `stopping_wait_time`| Все | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в разделе [корректное завершение работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
 ## <a name="next-steps"></a>Следующие шаги

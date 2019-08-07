@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/19/2018
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: ee9f771483b0478ec4b7d1bf92095d9dd07f45ad
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 1081fa8c9c7cc64418515aabbb755ecf056196ca
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727233"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68826289"
 ---
 # <a name="azure-identity-management-security-overview"></a>Общие сведения о безопасности при управлении удостоверениями в Azure
 
@@ -164,7 +164,7 @@ Azure Active Directory B2C позволяет клиентам регистри�
 
 Дополнительные сведения:
 
-* [Защита идентификации Azure AD](/azure/active-directory/active-directory-identityprotection.md)
+* [Защита идентификации Azure AD](/azure/active-directory/identity-protection/overview)
 * [Channel 9: Azure AD and Identity Show: Identity Protection Preview](https://channel9.msdn.com/Series/Azure-AD-Identity/Azure-AD-and-Identity-Show-Identity-Protection-Preview) (Channel 9. Передача об идентификации в Azure AD. Общие сведения о защите идентификации)
 
 ## <a name="hybrid-identity-managementazure-ad-connect"></a>Управление гибридными удостоверениями и Azure AD Connect

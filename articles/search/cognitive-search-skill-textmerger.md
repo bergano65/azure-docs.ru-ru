@@ -10,13 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: bbf2e524d626ac17596ded61746c26f20a6caf1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: cognitive-search
+ms.openlocfilehash: 312caf2d514d630c5bc1fb7755b7ab7a6a3d443a
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65021827"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840912"
 ---
 #    <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
@@ -34,8 +34,8 @@ Microsoft.Skills.Text.MergeSkill
 
 | Имя параметра     | Описание |
 |--------------------|-------------|
-| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
-| insertPostTag | Строка, которая должна быть включена после каждой вставки. По умолчанию используется значение `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| insertPostTag | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
 
 
 ##  <a name="sample-input"></a>Пример ввода

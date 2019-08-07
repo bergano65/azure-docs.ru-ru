@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/25/2019
+ms.date: 08/02/2019
 ms.author: banders
-ms.openlocfilehash: 20ed2bcf793ab5c3913ccf66d338e71c1a99a003
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 36bc403c4000e58541f22c2cb44f77a28e81cb72
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478919"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779900"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 
@@ -84,7 +84,7 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 - Убедитесь, что виртуальные машины, создаваемые в вашей организации, соответствует размеру виртуальной машины, указанному для резервирования.
 - Убедитесь, что включена гибкость размера экземпляра. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
 - Измените область резервирования на общую, чтобы она применялась шире. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
-- Обменяйте неиспользуемое количество. Дополнительные сведения см. в разделе [Отмена и обмен](billing-manage-reserved-vm-instance.md#cancellations-and-exchanges).
+- Обменяйте неиспользуемое количество. Дополнительные сведения см. в разделе [Управление резервированиями](billing-manage-reserved-vm-instance.md).
 
 ## <a name="give-access-to-reservations"></a>Предоставление доступа к резервированиям
 

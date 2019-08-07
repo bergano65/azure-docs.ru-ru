@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae773bc1a4e1831dbe462149bb827c26b7e74b96
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: e0e33cf9fa1c4661dd71fc41cb667b0373c9e955
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722298"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774814"
 ---
-# <a name="create-a-custom-role-and-assign-a-resource-scope-in-azure-active-directory"></a>Создание настраиваемой роли и назначение области действия ресурса в Azure Active Directory
+# <a name="create-a-custom-role-and-assign-at-resource-scope-in-azure-active-directory"></a>Создание пользовательской роли и назначение ее в области действия ресурса в Azure Active Directory
 
-В этой статье описывается создание новых пользовательских ролей в Azure Active Directory (Azure AD). Пользовательские роли можно создать на вкладке **роли и администраторы** на странице Обзор Azure AD или [на странице регистрации приложения](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview). Роль может быть назначена либо в области уровня каталога, либо в контексте только регистраций приложений.
+В этой статье описывается создание новых пользовательских ролей в Azure Active Directory (Azure AD). Пользовательские роли можно создать на вкладке [роли и администраторы](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators) на странице Обзор Azure AD. Роль может быть назначена либо в области действия уровня каталога, либо в области действия ресурса регистрации приложения.
 
 Дополнительные сведения см. в статье [Общие сведения о пользовательских ролях](roles-custom-overview.md) .
 
@@ -35,33 +35,31 @@ ms.locfileid: "68722298"
 
    ![Создание или изменение ролей на странице "роли и Администраторы"](./media/roles-create-custom/new-custom-role.png)
 
-1. На вкладке **Основные сведения** укажите имя и описание роли.
+1. На вкладке **Основные сведения** укажите имя и описание роли, а затем нажмите кнопку **Далее**.
 
    ![Укажите имя и описание настраиваемой роли на вкладке "основы"](./media/roles-create-custom/basics-tab.png)
 
-1. Чтобы выбрать разрешения, необходимые для управления учетными данными регистрации приложений, и основные свойства, такие как имя:
-   1. В строке поиска введите "учетные данные" и выберите `microsoft.directory/applications/credentials/update` разрешение.
+1. На вкладке **разрешения** выберите разрешения, необходимые для управления основными свойствами и свойствами учетных данных для регистрации приложений. Подробное описание каждого разрешения см. в разделе [подтипы регистрации приложений и разрешения в Azure Active Directory](./roles-custom-available-permissions.md).
+   1. Сначала введите "учетные данные" в строке поиска и выберите `microsoft.directory/applications/credentials/update` разрешение.
 
       ![Выберите разрешения для пользовательской роли на вкладке разрешения.](./media/roles-create-custom/permissions-tab.png)
 
-   1. В строке поиска введите "Basic", выберите `microsoft.directory/applications/basic/update` разрешение и нажмите кнопку **Далее**.
+   1. Затем в строке поиска введите "Basic", выберите `microsoft.directory/applications/basic/update` разрешение и нажмите кнопку **Далее**.
 1. На вкладке " **Проверка и создание** " Проверьте разрешения и нажмите кнопку " **создать**".
 
 Ваша настраиваемая роль отобразится в списке доступных ролей для назначения.
 
 ## <a name="assign-a-role-scoped-to-a-resource"></a>Назначение роли, ограниченной для ресурса
 
-Как и встроенные роли, пользовательские роли можно назначить в области организации по умолчанию, чтобы предоставить доступ ко всем регистрациям приложений. Однако пользовательские роли также могут быть назначены в области объекта. Это позволяет предоставить уполномоченному пользователю разрешение на обновление учетных данных и основных свойств отдельного приложения без создания второй настраиваемой роли.
+Как и в случае со встроенными ролями, пользовательские роли можно назначить в области всей Организации, чтобы предоставить доступ ко всем регистрациям приложений. Но пользовательские роли также могут быть назначены в области действия ресурса. Это позволяет предоставить уполномоченному пользователю разрешение на обновление учетных данных и основных свойств отдельного приложения без создания второй настраиваемой роли.
 
-1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с разрешениями разработчика приложения в Организации Azure AD.
+1. Если это еще не сделано, войдите в [центр администрирования Azure AD](https://aad.portal.azure.com) с разрешениями разработчика приложения в Организации Azure AD.
 1. Щелкните **Регистрация приложений**.
 1. Выберите регистрацию приложения, к которой предоставляется доступ для управления. Может потребоваться выбрать **все приложения** , чтобы просмотреть полный список регистраций приложений в вашей организации Azure AD.
 
     ![Выберите регистрацию приложения в качестве области действия ресурса для назначения роли](./media/roles-create-custom/appreg-all-apps.png)
 
 1. В окне Регистрация приложения выберите **роли и администраторы**. Если вы еще не создали его, инструкции приведены в [предыдущей процедуре](#create-a-new-custom-role-to-grant-access-to-manage-app-registrations).
-
-    Если назначить эту роль из контекста открытой регистрации приложения, то у уполномоченного есть разрешения на регистрацию этого единого приложения. Назначаемая роль отображается в списке при каждой регистрации приложения. Эта модель доступа, в которой владелец может назначать разрешения для конкретных ресурсов Azure AD по ролям, аналогична модели, используемой в [Azure RBAC](../../role-based-access-control/overview.md) для контроля доступа к ресурсам Azure.
 
 1. Выберите роль, чтобы открыть страницу **назначения** .
 1. Выберите **добавить назначение** , чтобы добавить пользователя. Пользователю не будут предоставлены разрешения для любой регистрации приложения, кроме выбранного.
@@ -70,7 +68,7 @@ ms.locfileid: "68722298"
 
 ### <a name="prepare-powershell"></a>Подготовка PowerShell
 
-Во-первых, необходимо [скачать модуль Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
+Сначала необходимо [скачать модуль PowerShell для предварительной версии Azure AD](https://www.powershellgallery.com/packages/AzureADPreview).
 
 Чтобы установить модуль Azure AD PowerShell, выполните следующие команды:
 
@@ -82,10 +80,10 @@ import-module azureadpreview
 Чтобы проверить, готов ли модуль к использованию, выполните следующую команду:
 
 ``` PowerShell
-get-module azuread
+get-module azureadpreview
   ModuleType Version      Name                         ExportedCommands
   ---------- ---------    ----                         ----------------
-  Binary     2.0.0.115    azuread                      {Add-AzureADAdministrati...}
+  Binary     2.0.2.31     azuread                      {Add-AzureADAdministrati...}
 ```
 
 ### <a name="create-the-custom-role"></a>Создание настраиваемой роли
@@ -101,7 +99,6 @@ $templateId = (New-Guid).Guid
 # Set of permissions to grant
 $allowedResourceAction =
 @(
-    "microsoft.directory/applications/allProperties/read",
     "microsoft.directory/applications/basic/update",
     "microsoft.directory/applications/credentials/update"
 )
@@ -110,7 +107,24 @@ $rolePermission = @{'resourceActions' = $resourceActions}
 $rolePermissions = $rolePermission
 
 # Create new custom admin role
-$customAdmin = New-AzureAdRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
+$customAdmin = New-AzureADMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
+```
+
+### <a name="assign-the-custom-role-using-azure-ad-powershell"></a>Назначение настраиваемой роли с помощью Azure AD PowerShell
+
+Назначьте роль с помощью следующего скрипта PowerShell:
+
+``` PowerShell
+# Get the user and role definition you want to link
+$user = Get-AzureADUser -Filter "userPrincipalName eq 'cburl@f128.info'"
+$roleDefinition = Get-AzureADRoleDefinition -Filter "displayName eq ' Application Registration Creator'"
+
+# Get app registration and construct resource scope for assignment.
+$appRegistration = Get-AzureADApplication -Filter "displayName eq 'f/128 Filter Photos'"
+$resourceScopes = '/' + $appRegistration.objectId
+
+# Create a scoped role assignment
+$roleAssignment = New-AzureADRoleAssignment -ResourceScopes $resourceScopes -RoleDefinitionId $roleDefinition.objectId -PrincipalId $user.objectId
 ```
 
 ## <a name="create-a-custom-role-using-microsoft-graph-api"></a>Создание настраиваемой роли с помощью Microsoft Graph API
@@ -134,13 +148,8 @@ $customAdmin = New-AzureAdRoleDefinition -RolePermissions $rolePermissions -Disp
     "isEnabled":true,
     "rolePermissions":
     [
-        {
-            "allowedResourceActions": 
-            [
-                "microsoft.directory/applications/basic/read",
-                "microsoft.directory/applications/credentials/update"
-            ]
-        }
+        "microsoft.directory/applications/basic/update",
+        "microsoft.directory/applications/credentials/update"
     ]
     }
     ```
@@ -152,7 +161,7 @@ $customAdmin = New-AzureAdRoleDefinition -RolePermissions $rolePermissions -Disp
     ПОМЕСТИТЬ
 
     ``` HTTP
-    https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions/roleAssignments
+    https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
     ```
 
     Body

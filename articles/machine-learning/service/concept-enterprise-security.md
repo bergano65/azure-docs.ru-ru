@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/10/2019
-ms.openlocfilehash: f9fd9f88a0aa6af9cd4160bf5879b9b8f383dca1
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: f0fb6f0d2b2579679ee8a6ec43b3241377701d48
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720431"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780898"
 ---
 # <a name="enterprise-security-for-azure-machine-learning-service"></a>Корпоративная безопасность для службы Машинное обучение Azure
 
@@ -161,7 +161,7 @@ print(token)
 
 Диск операционной системы для каждого расчетного узла хранится в службе хранилища Azure с помощью управляемых ключей Майкрософт в учетных записях хранения служб Машинное обучение Azure. Этот расчет является эфемерным, и кластеры, как правило, масштабируются, если нет запущенных в очереди. Базовая виртуальная машина не подготовлена и диск ОС удален. Шифрование дисков Azure не поддерживается для диска операционной системы.
 Каждая виртуальная машина также имеет локальный временный диск для операций операционной системы. Этот диск можно также использовать для размещения обучающих данных. Этот диск не зашифрован.
-Дополнительные сведения о том, как работает шифрование при работе в Azure, см. в статье шифрование неактивных [данных](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)в Azure.
+Дополнительные сведения о том, как работает шифрование при работе в Azure, см. в статье шифрование неактивных [данных](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)в Azure.
 
 ### <a name="encryption-in-transit"></a>Шифрование при передаче
 

@@ -9,14 +9,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: dacurwin
-ms.openlocfilehash: f961f472c0b00932bf5ee6302af58f39fa8421ed
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 126e33d4bedb56eb479361f16c02e7e167e49392
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720446"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736697"
 ---
-# <a name="restore-azure-vms"></a>Восстановление виртуальных машин Azure
+# <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Как восстановить данные виртуальной машины Azure в портал Azure
 
 В этой статье описывается восстановление данных виртуальной машины Azure из точек восстановления, хранящихся в хранилищах Служб восстановления [Azure Backup](backup-overview.md).
 

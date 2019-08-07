@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: c4a04f55f4f69521f00ed450a2d3d1a80b56761c
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 7b3159b6b963cf422442ee7c04253b8172e8f3e9
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234084"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68773139"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CentOS к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CentOS в Azure к управляемому домену доменных служб Azure AD.
@@ -107,6 +107,8 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 
     > [!TIP]
     > Используйте ту же учетную запись пользователя, которую вы указали на предыдущем шаге (kinit).
+    >
+    > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
     sudo realm join --verbose CONTOSO100.COM -U 'bob@CONTOSO100.COM'

@@ -8,14 +8,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: dacurwin
-ms.openlocfilehash: 3b116e25635873429dd164288c2764fd76c8f7a7
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 3dcf2188fd4fed211c96d4cc5241044d32ab6577
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688999"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737172"
 ---
-# <a name="back-up-sql-server-on-stack"></a>Резервное копирование SQL Server в Stack
+# <a name="back-up-sql-server-on-azure-stack"></a>Резервное копирование SQL Server в Azure Stack
 Эта статья может помочь при настройке Microsoft Azure Backup Server (MABS) для защиты баз данных SQL Server в Azure Stack.
 
 Процесс управления резервным копированием и восстановлением базы данных SQL Server в Azure состоит из трех этапов.

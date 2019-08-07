@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: apimpm
-ms.openlocfilehash: ed3c5790dcb51d12a38b85aa95e9c9178b6f44cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6bafd5ed5f2d7080b0f2a2db71ac96e4f97a1f76
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65408858"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774946"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -29,7 +29,7 @@ ms.locfileid: "65408858"
 >[!NOTE]
 >В [этой статье](https://azure.microsoft.com/pricing/details/api-management/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) представлены примерные данные о производительности единиц для каждого уровня. Чтобы получить более точные сведения, изучите приближенный к реальному сценарий использования API. См. статью о [емкости экземпляра службы Azure "Управление API"](api-management-capacity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
@@ -54,7 +54,7 @@ ms.locfileid: "65408858"
 Вы всегда можете повысить или понизить уровень в любых комбинациях. Но при этом обратите внимание, что понижение уровня приводит к отключению некоторых возможностей. Например, при понижении уровня с "Премиум" до "Стандартный" или "Базовый" станут недоступны виртуальные сети или развертывание в нескольких регионах.
 
 >[!NOTE]
->Процесс обновления или масштабирования может занять от 15 до 45 минут. Вы получили уведомление, когда он выполняется.
+>Процесс обновления или масштабирования может занять от 15 до 45 минут. По завершении вы получите соответствующее извещение.
 
 ## <a name="use-the-azure-portal-to-upgrade-and-scale"></a>Использование портала Azure для обновления и масштабирования
 
@@ -67,7 +67,11 @@ ms.locfileid: "65408858"
     Если выбран уровень **Премиум**, следует также выбрать регион.
 5. Нажмите кнопку **Save**(Сохранить).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="downtime-during-scaling-up-and-down"></a>Время простоя при масштабировании вверх и вниз
+При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
+
+
+## <a name="next-steps"></a>Следующие шаги
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)

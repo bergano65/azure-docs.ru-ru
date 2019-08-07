@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: 5ca9bd4964cf190eaa2be6d66d57c7ada971d675
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: bd31d711c58a63b5c15712c1774d48433c62f18d
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442398"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774976"
 ---
 # <a name="api-management-authentication-policies"></a>Политики аутентификации в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -83,64 +83,73 @@ ms.locfileid: "68442398"
 <authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />
 ```
 В этом примере сертификат клиента идентифицируется по имени ресурса.
-```xml
-<authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />
+```xml  
+<authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />  
+```  
+
+### <a name="elements"></a>Элементы  
+  
+|Название|Описание|Обязательное значение|  
+|----------|-----------------|--------------|  
+|authentication-certificate|Корневой элемент.|Да|  
+  
+### <a name="attributes"></a>Атрибуты  
+  
+|Название|Описание|Обязательное значение|Значение по умолчанию|  
+|----------|-----------------|--------------|-------------|  
+|thumbprint|Отпечаток для сертификата клиента.|Должен присутствовать либо `thumbprint`. `certificate-id`|Н/Д|  
+|ИД сертификата|Имя ресурса сертификата.|Должен присутствовать либо `thumbprint`. `certificate-id`|Н/Д|  
+  
+### <a name="usage"></a>Использование  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+  
+-   **Разделы политики:** inbound.  
+  
+-   **Области политики:** все области.  
+
+##  <a name="ManagedIdentity"></a>Проверка подлинности с помощью управляемого удостоверения  
+ `authentication-managed-identity` Используйте политику для аутентификации в серверной службе с помощью управляемого удостоверения службы управления API. Эта политика по сути использует управляемое удостоверение для получения маркера доступа из Azure Active Directory для доступа к указанному ресурсу. После успешного получения маркера политика задаст значение маркера в `Authorization` заголовке `Bearer` с помощью схемы.
+  
+### <a name="policy-statement"></a>Правило политики  
+  
+```xml  
+<authentication-managed-identity resource="resource" output-token-variable-name="token-variable" ignore-error="true|false"/>  
+```  
+  
+### <a name="example"></a>Пример  
+#### <a name="use-managed-identity-to-authenticate-with-a-backend-service"></a>Использование управляемого удостоверения для проверки подлинности в серверной службе
+```xml  
+<authentication-managed-identity resource="https://graph.windows.net"/> 
+```
+  
+#### <a name="use-managed-identity-in-send-request-policy"></a>Использование управляемого удостоверения в политике отправки запросов
+```xml  
+<send-request mode="new" timeout="20" ignore-error="false">
+    <set-url>https://example.com/</set-url>
+    <set-method>GET</set-method>
+    <authentication-managed-identity resource="ResourceID"/>
+</send-request>
 ```
 
-### <a name="elements"></a>Элементы
-
-|Имя|Описание|Обязательное значение|
-|----------|-----------------|--------------|
-|authentication-certificate|Корневой элемент.|Да|
-
-### <a name="attributes"></a>Атрибуты
-
-|Название|Описание|Обязательное значение|Значение по умолчанию|
-|----------|-----------------|--------------|-------------|
-|thumbprint|Отпечаток для сертификата клиента.|Должен присутствовать либо `thumbprint`. `certificate-id`|Н/Д|
-|ИД сертификата|Имя ресурса сертификата.|Должен присутствовать либо `thumbprint`. `certificate-id`|Н/Д|
-
-### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
-
--   **Разделы политики:** inbound.
-
--   **Области политики:** все области.
-
-##  <a name="ManagedIdentity"></a>Проверка подлинности с помощью управляемого удостоверения
- `authentication-managed-identity` Используйте политику для аутентификации в серверной службе с помощью управляемого удостоверения службы управления API. Эта политика эффективно использует управляемое удостоверение для получения маркера доступа из Azure Active Directory для доступа к указанному ресурсу.
-
-### <a name="policy-statement"></a>Правило политики
-
-```xml
-<authentication-managed-identity resource="resource" output-token-variable-name="token-variable" ignore-error="true|false"/>
-```
-
-### <a name="example"></a>Пример
-
-```xml
-<authentication-managed-identity resource="https://graph.windows.net" output-token-variable-name="test-access-token" ignore-error="true" />
-```
-
-### <a name="elements"></a>Элементы
-
-|Название|Описание|Обязательное значение|
-|----------|-----------------|--------------|
-|Проверка подлинности — управляемое удостоверение |Корневой элемент.|Да|
-
-### <a name="attributes"></a>Атрибуты
-
-|Название|Описание|Обязательное значение|Значение по умолчанию|
-|----------|-----------------|--------------|-------------|
-|ресурс|Строка. URI идентификатора приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Н/Д|
-|Output-Token-переменная-имя|Строка. Имя переменной контекста, которая будет принимать значение токена в качестве типа `string`объекта.|Нет|Н/Д|
-|ignore-error|Логическое значение. Если задано `true`значение, конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|False|
-
-### <a name="usage"></a>Использование
- Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).
-
--   **Разделы политики:** inbound.
-
+### <a name="elements"></a>Элементы  
+  
+|Имя|Описание|Обязательное значение|  
+|----------|-----------------|--------------|  
+|Проверка подлинности — управляемое удостоверение |Корневой элемент.|Да|  
+  
+### <a name="attributes"></a>Атрибуты  
+  
+|Название|Описание|Обязательное значение|Значение по умолчанию|  
+|----------|-----------------|--------------|-------------|  
+|ресурс|Строка. URI идентификатора приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Н/Д|  
+|Output-Token-переменная-имя|Строка. Имя переменной контекста, которая будет принимать значение токена в качестве типа `string`объекта. |Нет|Н/Д|  
+|ignore-error|Логическое значение. Если задано `true`значение, конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|False|  
+  
+### <a name="usage"></a>Использование  
+ Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  
+  
+-   **Разделы политики:** inbound.  
+  
 -   **Области политики:** все области.
 
 ## <a name="next-steps"></a>Следующие шаги

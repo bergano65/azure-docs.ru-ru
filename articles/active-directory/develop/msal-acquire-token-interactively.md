@@ -9,7 +9,7 @@ editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
-ms.topic: overview
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/24/2019
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ca011ec7185b084de6d1d346556c1c270c7aee3
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
-ms.translationtype: HT
+ms.openlocfilehash: e6148f6f9d449dc5aa55da2f041119a8b706491b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546066"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835076"
 ---
 # <a name="acquiring-and-caching-tokens-using-msal"></a>Получение и кэширование токенов с помощью MSAL
 [Маркеры доступа](access-tokens.md) позволяют клиентам безопасно вызывать веб-API, защищенные платформой Azure. Получить токен с использованием библиотеки аутентификации Майкрософт (MSAL) можно многими способами. Для некоторых способов пользователю требуется выполнить действия в веб-браузере, а для других участие пользователя не требуется. Как правило, способ получения токена зависит от того, является ли клиентское приложение общедоступным (классическим или мобильным приложением) или конфиденциальным (веб-приложением, веб-API или управляющей программой, например службой Windows).
@@ -39,7 +39,7 @@ MSAL кэширует токен после его получения.  Снач
 В MSAL также можно получить доступ к ресурсам версии 1.0. Дополнительные сведения об областях для приложения версии 1.0 см. [здесь](msal-v1-app-scopes.md).
 
 ### <a name="request-specific-scopes-for-a-web-api"></a>Запрос конкретных областей для веб-API
-Когда приложению необходимо запросить токены с определенными разрешениями для API ресурса, вам следует передать области, содержащие URI идентификатора приложения API-интерфейса, в следующем формате: *&lt;URI идентификатора приложения&gt;/&lt;область&gt;*.
+Когда приложению необходимо запросить токены с определенными разрешениями для API ресурса, вам следует передать области, содержащие URI идентификатора приложения API-интерфейса, в следующем формате: *&lt;URI идентификатора приложения&gt;/&lt;область&gt;* .
 
 Например, области для API Microsoft Graph будут выглядеть как `https://graph.microsoft.com/User.Read`,
 

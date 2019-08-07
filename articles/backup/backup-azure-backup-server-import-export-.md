@@ -1,6 +1,6 @@
 ---
 title: Azure Backup. Автономное резервное копирование для DPM и Azure Backup Server
-description: Узнайте, как служба архивации Azure позволяет отправлять данные с помощью службы импорта и экспорта Azure без использования сети. В этой статье описывается автономное заполнение начальных резервных копий данных с помощью службы импорта и экспорта Azure.
+description: Azure Backup позволяет отправить данные из сети с помощью службы импорта и экспорта Azure. В этой статье описывается рабочий процесс автономного резервного копирования для DPM и Azure Backup Server (MABS).
 ms.reviewer: saurse
 author: dcurwin
 manager: carmonm
@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 5/8/2018
 ms.author: dacurwin
-ms.openlocfilehash: 4bc0421f16d56d34e3f3156700a7a141d38fd63d
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0f60fbf22541e5fdd003d0ab663b5905cd31adcd
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689380"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737239"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Автономное резервное копирование для DPM и Azure Backup Server
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Следовательно, для первой архивации требуется более высокая пропускная способность по сравнению с последующими операциями архивации, в ходе которых передаются только изменения или добавочные резервные копии. Служба архивации Azure сжимает начальные резервные копии, а также предоставляет механизм передачи сжатых копий данных в Azure с помощью дисков за счет процесса автономного заполнения.

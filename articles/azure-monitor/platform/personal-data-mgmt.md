@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: magoedte
-ms.openlocfilehash: 0cf5a80e3eedbe7efb8463162b5b3ed489ac08c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29c91f2dcff04a2d21973e79c5719c3f4d84181b
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61087287"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827373"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Руководство по хранению персональных данных в Log Analytics и Application Insights
 
@@ -88,9 +88,9 @@ Log Analytics — это масштабируемое хранилище, опи
 Для просмотра и экспорта запросов данных следует использовать [API запросов Log Analytics](https://dev.loganalytics.io/) или [API запросов Application Insights](https://dev.applicationinsights.io/quickstart). Вам необходимо самостоятельно создать логику преобразования данных в требуемый вид для предоставления пользователям. [Функции Azure](https://azure.microsoft.com/services/functions/) отлично подходят для размещения такой логики.
 
 > [!IMPORTANT]
->  Хотя большинство операций очистки может завершиться гораздо быстрее, чем соглашение об уровне ОБСЛУЖИВАНИЯ, **формальным соглашение об уровне ОБСЛУЖИВАНИЯ для выполнения операций очистки составляет 30 дней** из-за их высокой влияние на платформы данных. Это автоматизированный процесс; нет способа для запроса, что операции обрабатываться быстрее.
+>  Хотя подавляющее большинство операций очистки может завершиться гораздо быстрее, чем соглашение об уровне обслуживания, **формальное соглашение об уровне обслуживания для завершения операций очистки задается в течение 30 дней** из-за большого влияния на используемую платформу данных. Это автоматизированный процесс; невозможно запросить более быстрое выполнение операции.
 
-### <a name="delete"></a>Delete (Удалить)
+### <a name="delete"></a>Оператор delete
 
 > [!WARNING]
 > Операции удаления в Log Analytics являются разрушительными и необратимыми! Соблюдайте особую осторожность при их выполнении.
@@ -107,7 +107,7 @@ Log Analytics — это масштабируемое хранилище, опи
 * GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример:
 
     ```
-    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperatonalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
+    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperationalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
     ```
 
 > [!IMPORTANT]
@@ -125,6 +125,6 @@ Log Analytics — это масштабируемое хранилище, опи
 > [!IMPORTANT]
 >  Хотя большинство операций очистки будут выполняться намного быстрее, чем указано в соглашениях об уровне обслуживания, из-за сильного влияния таких операций на платформу данных, используемую Application Insights, в **соглашение об уровне обслуживания включается период 30 дней на завершение операций очистки**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о сборе, обработке и защите данных в Log Analytics см. в [этой статье](../../azure-monitor/platform/data-security.md).
 - Дополнительные сведения о сборе, обработке и защите данных в Application Insights см. в [этой статье](../../azure-monitor/app/data-retention-privacy.md).

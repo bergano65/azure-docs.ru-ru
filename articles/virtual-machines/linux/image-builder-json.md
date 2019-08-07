@@ -7,12 +7,12 @@ ms.date: 07/31/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: a623aa98cd26e1636e47cb0e2831eeced17935b9
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: abaf96b11abee0bf519a276f825b9c47cd333c1b
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695403"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816320"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Azure Image Builder 
 
@@ -65,7 +65,11 @@ ms.locfileid: "68695403"
 ```json
     "location": "<region>",
 ```
-    
+
+## <a name="tags"></a>Tags
+
+Это пары "ключ-значение", которые можно указать для создаваемого образа.
+
 ## <a name="depends-on-optional"></a>Зависит от (необязательно)
 
 Этот необязательный раздел можно использовать для обеспечения завершения зависимостей перед продолжением. 
@@ -344,7 +348,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
  
 Если при попытке загрузить файл или разместить его в указанном каталоге произошла ошибка, то настройка шага настройки завершится ошибкой, а это будет в файле настройки. log.
 
->> Метим! Настройка файлов подходит только для небольших Скачиваний файлов, < 20 МБ. Для загрузки больших файлов используйте сценарий или встроенную команду, используя код для загрузки файлов, таких как, Linux `wget` или `curl`, Windows, `Invoke-WebRequest`.
+> [!NOTE]
+> Настройка файлов подходит только для небольших Скачиваний файлов, < 20 МБ. Для загрузки больших файлов используйте сценарий или встроенную команду, используя код для загрузки файлов, таких как, Linux `wget` или `curl`, Windows, `Invoke-WebRequest`.
 
 Файлы в средстве настройки файлов можно скачать из службы хранилища Azure с помощью [MSI](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage).
 

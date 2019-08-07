@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 49e80c3fc8935064aceef8ef4e2bd3257c41e5e7
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 6916eea26f03d7b9cd0b3792fa65354619f97f74
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514198"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828507"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "67514198"
 Установка среды выполнения Service Fabric и пакета SDK в подсистеме Windows для Linux не поддерживается. Вы можете управлять сущностями Service Fabric, размещенными в другой сети в облачной или локальной среде, с помощью интерфейса командной строки Azure Service Fabric. Дополнительные сведения об установке интерфейса командной строки см. в [этой статье](./service-fabric-cli.md).
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для разработки поддерживаются следующие операционные системы.
 
@@ -106,8 +106,8 @@ sudo curl -s https://raw.githubusercontent.com/Azure/service-fabric-scripts-and-
 7. Добавьте ключ JDK Azul в набор ключей APT и настройте его репозиторий.
 
     ```bash
-    curl -fsSL https://repos.azul.com/azul-repo.key | sudo apt-key add -
-    sudo add-apt-repository 'deb http://repos.azulsystems.com/ubuntu stable main'
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
+    sudo apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main"
     ```
 
 8. Обновите списки пакетов, добавив в них новые репозитории.
@@ -176,7 +176,7 @@ sudo yum install servicefabricsdkcommon
 
 Среда выполнения Service Fabric, которая поставляется с установкой пакета SDK, содержит пакеты, перечисленные в следующей таблице. 
 
- | | DotNetCore | Java | Python | Node.js | 
+ | | DotNetCore | Java | Python | NodeJS | 
 --- | --- | --- | --- |---
 Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | latest |
 RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | latest |
@@ -272,7 +272,7 @@ Service Fabric предоставляет средства формирован�
 > 
 > В Ubuntu мы рекомендуем установить Eclipse непосредственно с сайта, а не с помощью установщика пакета (`apt` или `apt-get`). Так вы получите последнюю версию Eclipse. Можно установить среду разработки Eclipse для разработчиков Java или Java EE.
 
-1. Откройте Eclipse и проверьте, установлена ли у вас версия Eclipse Neon или выше и последняя версия Buildship (2.2.1 или выше). Проверьте версии установленных компонентов, щелкнув **Help** > **About Eclipse** > **Installation Details** (Справка > О программе Eclipse > Сведения об установке). Чтобы обновить Buildship, воспользуйтесь инструкциями на странице [Eclipse Buildship: Eclipse для Gradle подключаемые модули][buildship-update].
+1. Откройте Eclipse и проверьте, установлена ли у вас версия Eclipse Neon или выше и последняя версия Buildship (2.2.1 или выше). Проверьте версии установленных компонентов, щелкнув **Help** > **About Eclipse** > **Installation Details** (Справка > О программе Eclipse > Сведения об установке). Чтобы обновить Buildship, воспользуйтесь инструкциями на странице [Eclipse Buildship: Подключаемые модули Eclipse для Gradle][buildship-update].
 
 2. Чтобы установить подключаемый модуль Service Fabric, выберите **Help** > **Install New Software** (Справка > Установка нового программного обеспечения).
 
@@ -324,7 +324,7 @@ sudo apt-get install servicefabric servicefabricsdkcommon
     npm uninstall -g generator-azuresfguest
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание первого Java-приложения Service Fabric в Linux](service-fabric-create-your-first-linux-application-with-java.md)
 * [Подключаемый модуль Service Fabric для разработки приложений Eclipse на Java](service-fabric-get-started-eclipse.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: 7de085766ae700b5c76d9eca49c1127aabdddb9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1527dbd1df3e4a10a68a5949d9e0bca11628bdd2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703410"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781137"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -114,11 +114,11 @@ ms.locfileid: "60703410"
 * [Security Center REST API Documentation Page](https://msdn.microsoft.com/library/mt704034.aspx) (Документация по REST API центра безопасности)
 * [Azure Security Center frequently asked questions (FAQ)](https://docs.microsoft.com/azure/security-center/security-center-faq) (Центр безопасности Azure: часто задаваемые вопросы)
 * [Цены на центр безопасности](https://azure.microsoft.com/pricing/details/security-center/)
-* [Рекомендации по обеспечению безопасности удостоверений](https://docs.microsoft.com/azure/security/azure-security-identity-management-best-practices)
-* [Рекомендации по обеспечению сетевой безопасности](https://docs.microsoft.com/azure/security/azure-security-network-security-best-practices)
+* [Рекомендации по обеспечению безопасности удостоверений](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
+* [Рекомендации по обеспечению сетевой безопасности](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices)
 * [Рекомендации для PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments)
 * [Соответствие требованиям](https://www.microsoft.com/en-us/trustcenter/compliance/due-diligence-checklist)
-* [Клиенты log analytics теперь можно использовать Центр безопасности Azure для защиты своих гибридных облачных рабочих нагрузок](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
+* [Клиенты log Analytics теперь могут использовать центр безопасности Azure для защиты своих гибридных облачных рабочих нагрузок.](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
 
 ## <a name="community-resources"></a>Ресурсы сообщества
 
