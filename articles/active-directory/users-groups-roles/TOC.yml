@@ -138,8 +138,6 @@
               href: roles-view-assignments.md
             - name: "Назначение ролей в центре администрирования Azure\_AD"
               href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-            - name: Назначение настраиваемых ролей в API Graph
-              href: roles-assign-graph.md
             - name: Назначение настраиваемых ролей в PowerShell
               href: roles-assign-powershell.md
             - name: Разрешения на использование предварительной версии настраиваемой роли
