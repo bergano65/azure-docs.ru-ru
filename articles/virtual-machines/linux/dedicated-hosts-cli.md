@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/29/2019
 ms.author: cynthn
-ms.openlocfilehash: 7eda675ed7694e1ad7de90f89282bd7a3cc50ea1
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 0c060e2ab94c0a57d4d4dc897702e115cfabd9a0
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68700422"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827288"
 ---
 # <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-cli"></a>Предварительный просмотр: Развертывание виртуальных машин на выделенных узлах с помощью Azure CLI
  
@@ -53,7 +53,7 @@ az group create --name myDHResourceGroup --location eastus
 
 Также можно выбрать использование зон доступности и доменов сбоя. 
 
-В этом примере мы будем использовать команду [AZ VM Group Create](/cli/azure/vm#az-vm-host-group-create) для создания группы узлов с помощью зон доступности и доменов сбоя. 
+В этом примере мы будем использовать команду [AZ VM Group Create](/cli/azure/vm/host/group#az-vm-host-group-create) для создания группы узлов с помощью зон доступности и доменов сбоя. 
 
 ```bash
 az vm host group create \
@@ -65,7 +65,7 @@ az vm host group create \
 
 ### <a name="other-examples"></a>Другие примеры
 
-Чтобы создать группу узлов в зоне доступности 1 (без доменов сбоя), можно также использовать команду [AZ VM Group Create](/cli/azure/vm#az-vm-host-group-create) .
+Чтобы создать группу узлов в зоне доступности 1 (без доменов сбоя), можно также использовать команду [AZ VM Group Create](/cli/azure/vm/host/group#az-vm-host-group-create) .
 
 ```bash
 az vm host group create \
@@ -75,7 +75,7 @@ az vm host group create \
    --platform-fault-domain-count 1 
 ```
  
-В следующем примере демонстрируется [Создание](/cli/azure/vm#az-vm-host-group-create) группы узлов с использованием только доменов сбоя (для использования в регионах, где зоны доступности не поддерживаются). 
+В следующем примере демонстрируется [Создание](/cli/azure/vm/host/group#az-vm-host-group-create) группы узлов с использованием только доменов сбоя (для использования в регионах, где зоны доступности не поддерживаются). 
 
 ```bash
 az vm host group create \
@@ -91,7 +91,7 @@ az vm host group create \
 
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
 
-Чтобы создать узел, выполните команду [AZ VM Host Create](/cli/azure/vm#az-vm-host-create) . Если для группы узлов задано число доменов сбоя, вам будет предложено указать домен сбоя для узла.  
+Чтобы создать узел, выполните команду [AZ VM Host Create](/cli/azure/vm/host#az-vm-host-create) . Если для группы узлов задано число доменов сбоя, вам будет предложено указать домен сбоя для узла.  
 
 ```bash
 az vm host create \
@@ -126,7 +126,7 @@ az vm create \
 
 ## <a name="check-the-status-of-the-host"></a>Проверка состояния узла
 
-Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые можно развернуть на узле, с помощью команды [AZ VM узел Get-instance-View](/cli/azure/vm#az-vm-host-get-instance-view).
+Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые можно развернуть на узле, с помощью команды [AZ VM узел Get-instance-View](/cli/azure/vm/host#az-vm-host-get-instance-view).
 
 ```bash
 az vm host get-instance-view \
@@ -260,13 +260,13 @@ az group deployment create \
 az vm delete -n myVM -g myDHResourceGroup
 ```
 
-После удаления виртуальных машин можно удалить узел с помощью команды [AZ VM узел Delete](/cli/azure/vm#az-vm-host-delete).
+После удаления виртуальных машин можно удалить узел с помощью команды [AZ VM узел Delete](/cli/azure/vm/host#az-vm-host-delete).
 
 ```bash
 az vm host delete -g myDHResourceGroup --host-group myHostGroup --name myHost 
 ```
  
-После удаления всех узлов вы можете удалить группу узлов с помощью команды [AZ VM Ungroup Delete](/cli/azure/vm#az-vm-host-group-delete).  
+После удаления всех узлов вы можете удалить группу узлов с помощью команды [AZ VM Ungroup Delete](/cli/azure/vm/host/group#az-vm-host-group-delete).  
  
 ```bash
 az vm host group delete -g myDHResourceGroup --host-group myHostGroup  

@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: gwallace
-ms.openlocfilehash: 802ece106099e8a475b83c820130c3c238d330d2
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 3f2c60be29d679d0b0d30b6bf471f083c66ba93f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359209"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827657"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -514,7 +514,7 @@ var imagesQueue = queueClient.GetQueueReference("images");
 imagesQueue.CreateIfNotExists();
 ```
 
-### <a name="contosoadsweb---layoutcshtml"></a>ContosoAdsWeb — \_Layout.cshtml
+### <a name="contosoadsweb---_layoutcshtml"></a>ContosoAdsWeb — \_Layout.cshtml
 Файл *_Layout.cshtml* задает имя приложения в заголовке и нижнем колонтитуле и создает запись меню "Ads".
 
 ### <a name="contosoadsweb---viewshomeindexcshtml"></a>ContosoAdsWeb - Views\Home\Index.cshtml
@@ -696,7 +696,7 @@ public override void Run()
 }
 ```
 
-После каждой итерации цикла, если сообщение найдено в очереди, программа останавливается на секунду. Это защищает рабочую роль от создания ненужных затрат при использовании времени процессора и транзакций в хранилище. Команда Microsoft Customer Advisory рассказывала о разработчике, который забыл включить этот функционал, развернул код в рабочей среде и ушел в отпуск. Когда он вернулся, то выяснил, что забывчивость встала ему в копеечку.
+После каждой итерации цикла, если сообщение найдено в очереди, программа останавливается на секунду. Это защищает рабочую роль от создания ненужных затрат при использовании времени процессора и транзакций в хранилище. Команда Microsoft Customer Advisory рассказывала о разработчике, который забыл включить этот функционал, развернул код в рабочей среде и ушел в отпуск. Когда они возвращаются, стоимость их пересчета больше, чем отпуск.
 
 Иногда содержимое сообщения очереди вызывает ошибку при обработке. Это *ядовитое сообщение* — если ошибка только протоколируется и цикл будет перезапущен, то сообщение можно обрабатывать бесконечно.  Поэтому блок catch включает правило if, которое проверяет, сколько раз приложение пыталось обработать текущее сообщение. Если уже насчитано 5 раз, сообщение удаляется из очереди.
 

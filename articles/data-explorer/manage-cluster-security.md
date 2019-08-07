@@ -7,12 +7,12 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.openlocfilehash: fbc5b18de093b2c91b17fa310c08a5b02b113a22
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 86350f21f5c530a00560c92cc0ae2fd58c9a2c57
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406526"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780059"
 ---
 # <a name="secure-your-cluster-in-azure-data-explorer"></a>Защита кластера в Azure обозреватель данных
 
@@ -20,7 +20,7 @@ ms.locfileid: "68406526"
   
 ## <a name="enable-encryption-at-rest"></a>Включение шифрования при неактивных подключениях
   
-Включение [шифрования неактивных](/azure/security/azure-security-encryption-atrest) данных в кластере обеспечивает защиту хранящихся данных (неактивных). 
+Включение [шифрования неактивных](/azure/security/fundamentals/encryption-atrest) данных в кластере обеспечивает защиту хранящихся данных (неактивных). 
 
 1. В портал Azure перейдите к ресурсу кластера Azure обозреватель данных. Под заголовком **Параметры** выберите **Безопасность**. 
 

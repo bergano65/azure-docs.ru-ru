@@ -1,22 +1,20 @@
 ---
 title: Как подключаться к источникам данных в Каталоге данных Azure
 description: В статье описывается подключение к источникам данных, обнаруженных в каталоге данных Azure.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 4e6b27a5-cf75-4012-b88c-333c1fe638e8
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: c64340491dba11870364610a6c2ff62e25c1328a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: c91c09da31e4ecf42257b8f9c86f25c6ec39b9df
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001854"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68734638"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Подключение к источникам данных
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 **Каталог данных Microsoft Azure** — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных источников данных. Проще говоря, **каталог данных Azure** помогает пользователям обнаруживать, оценивать и использовать источники данных, что, в свою очередь, повышает для организаций ценность их существующей информации. Использование данных — ключевой аспект этого сценария. Когда пользователь обнаруживает источник данных и распознает его назначение, следующим шагом является подключение к источнику данных, обеспечивающее возможность использования этих данных.
 
 ## <a name="data-source-locations"></a>Расположение источника данных
@@ -41,7 +39,7 @@ ms.locfileid: "61001854"
 | Excel (первые 1000) |.odc |Excel 2010 или более поздней версии |
 | Power Query |.xlsx |Excel 2016 или Excel 2010 либо Excel 2013 с установленной надстройкой Power Query для Excel |
 | Power BI Desktop |.pbix |Power BI Desktop, июль 2016 г. или более поздней версии |
-| SQL Server Data Tools |vsweb:// |Visual Studio 2013 с обновлением 4 или более поздней версии с установленным инструментарием SQL Server |
+| Средства SQL Server Data Tools |vsweb:// |Visual Studio 2013 с обновлением 4 или более поздней версии с установленным инструментарием SQL Server |
 | Диспетчер отчетов |http:// |Ознакомьтесь с [требованиями к браузеру для SQL Server Reporting Services](https://technet.microsoft.com/library/ms156511.aspx) |
 
 ## <a name="your-data-your-tools"></a>Ваши данные — ваши средства

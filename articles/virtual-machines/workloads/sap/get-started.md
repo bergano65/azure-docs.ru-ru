@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/29/2019
+ms.date: 08/05/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 60474148d1eac6ca9d85fbc1d103ad612787aeae
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 4af30a24c5913abec1c2c2287e1b0f145470f42c
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607864"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828364"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -34,20 +34,8 @@ ms.locfileid: "68607864"
 
 Размещение сценариев рабочей нагрузки SAP в Azure также может привести к созданию требований интеграции удостоверений и единого входа. Такая ситуация может возникать, если вы используете Azure Active Directory (Azure AD) для подключения различных компонентов SAP и программного обеспечения SAP или платформы как услуги (PaaS). Список сценариев интеграции и единого входа с сущностями Azure AD и SAP описан в разделе "Интеграция AAD SAP и единый вход".
 
-## <a name="change-log"></a>Журнал изменений
-
-- Изменения в [кластере экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure](sap-high-availability-guide-wsfc-file-share.md) для отражения поддержки прямого дискового пространства службами Azure Site Recovery Services
-- Выпуск [групп размещения Azure с учетом расположения для оптимальной сетевой задержки с помощью приложений SAP](sap-proximity-placement-scenarios.md)
-- Выпуск нового руководством по [IBM DB2 HADR на сервере Red Hat Enterprise](high-availability-guide-rhel-ibm-db2-luw.md)
-- Выпуск [высокого уровня доступности SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](high-availability-guide-rhel-netapp-files.md)
-- Знакомство с быстрыми путями ExpressRoute и Global Reach для крупных экземпляров HANA в [SAP HANA (крупные экземпляры) сетевая архитектура](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture) и связанные документы
-- Выпуски [крупных экземпляров Azure Hana с помощью портал Azure](hana-li-portal.md)
-- Выпуск [высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](high-availability-guide-suse-netapp-files.md)
-- Выпуск [установки SAP NETWEAVER ASCS для SAP HANA в бета-версии Azure нетаппфилес (использовании)](lama-installation.md)
-
-
-
-
+## <a name="changes-to-the-sap-workload-section"></a>Изменения в разделе рабочей нагрузки SAP
+Изменения в документах в разделе "Рабочая нагрузка SAP в Azure" перечислены в конце этой статьи.
 
 
 ## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
@@ -132,5 +120,13 @@ ms.locfileid: "68607864"
 - [Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure](https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration)
 
 
+## <a name="change-log"></a>Журнал изменений
+
+- 08/01/2019: Изменения в [настройке Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker) для интеграции изменений, специально предназначенных для SLES 15 
+- 07/23/2019: Изменения в [кластере экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure](sap-high-availability-guide-wsfc-file-share.md) для отражения поддержки прямого дискового пространства службами Azure Site Recovery Services
+- 07/14/2019: Выпуск [групп размещения Azure с учетом расположения для оптимальной сетевой задержки с помощью приложений SAP](sap-proximity-placement-scenarios.md)
+- 07/11/2019: Изменения в различных документах, охватывающих крупные экземпляры HANA, для покрытия редакции 4 крупных экземпляров HANA
+- 07/09/2019: Выпуск нового руководством по [IBM DB2 HADR на сервере Red Hat Enterprise](high-availability-guide-rhel-ibm-db2-luw.md)
+- 06/13/2019: Выпуск [высокого уровня доступности SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](high-availability-guide-rhel-netapp-files.md)
 
 

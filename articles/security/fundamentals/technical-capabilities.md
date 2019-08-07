@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/31/2019
 ms.author: TomSh
-ms.openlocfilehash: 688492188bb8a29e33568011c2cf75439ca5f4af
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: fbce475e1f783595fb67e62e15d5a503a4c687ed
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726667"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780592"
 ---
 # <a name="azure-security-technical-capabilities"></a>Технические возможности обеспечения безопасности Azure
 В этой статье содержатся общие сведения о службах безопасности в Azure, которые помогут защитить данные, ресурсы и приложения в облаке и удовлетворить потребности системы безопасности вашего бизнеса.
@@ -331,7 +331,7 @@ Azure также предоставляет несколько простых ф
 
 - [Доступ к локальным ресурсам с помощью гибридных подключений в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
 
-Служба приложений Azure использует ту же антивредоносную программу, что и облачные службы Azure и виртуальные машины. Дополнительные сведения об этой программе см. в статье [Антивредоносное ПО Майкрософт для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/security/azure-security-antimalware).
+Служба приложений Azure использует ту же антивредоносную программу, что и облачные службы Azure и виртуальные машины. Дополнительные сведения об этой программе см. в статье [Антивредоносное ПО Майкрософт для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/security/fundamentals/antimalware).
 
 ## <a name="secure-your-network"></a>Защита вашей сети
 Microsoft Azure включает в себя надежную сетевую инфраструктуру для удовлетворения требований к взаимодействию приложений и служб. Сетевое взаимодействие возможно между ресурсами в Azure, между локальными и размещенными в Azure ресурсами, а также между Интернетом и службой Azure.
@@ -352,7 +352,7 @@ Azure поддерживает подключение к локальной се
 
 [Виртуальные машины Azure](https://docs.microsoft.com/azure/virtual-machines/) позволяют гибко развертывать самые разные вычислительные решения. Благодаря поддержке Microsoft Windows, Linux, Microsoft SQL Server, Oracle, IBM, SAP и служб Azure BizTalk вы можете развертывать любые рабочие нагрузки и любой язык практически в любой операционной системе.
 
-Azure предлагает [антивредоносное ПО](https://docs.microsoft.com/azure/security/azure-security-antimalware) таких поставщиков систем безопасности, как Майкрософт, Symantec, Trend Micro и Kaspersky, для защиты ваших виртуальных машин от вредоносных файлов, рекламного ПО и других угроз.
+Azure предлагает [антивредоносное ПО](https://docs.microsoft.com/azure/security/fundamentals/antimalware) таких поставщиков систем безопасности, как Майкрософт, Symantec, Trend Micro и Kaspersky, для защиты ваших виртуальных машин от вредоносных файлов, рекламного ПО и других угроз.
 
 Антивредоносное ПО Майкрософт для облачных служб и виртуальных машин предоставляет защиту в реальном времени, которая помогает обнаруживать и устранять вирусы, шпионское ПО и другие вредоносные программы. Антивредоносное ПО Майкрософт позволяет использовать настраиваемые предупреждения о попытках установки или запуска известных вредоносных или нежелательных программ в системе Azure.
 
@@ -382,7 +382,7 @@ Azure предлагает [антивредоносное ПО](https://docs.mi
 
 ## <a name="azure-infrastructure-and-application-security-validation"></a>Проверка безопасности инфраструктуры и приложений Azure
 
-Под [операционной безопасностью Azure](https://docs.microsoft.com/azure/security/azure-operational-security) понимаются службы, элементы управления и функции, которые пользователи могут использовать для защиты своих данных, приложений и других ресурсов в Microsoft Azure.
+[Операционная безопасность Azure] (https://docs.microsoft.com/azure/security/fundamentals/operational-security относится к службам, элементам управления и функциям, доступным пользователям для защиты своих данных, приложений и других ресурсов в Microsoft Azure.
 
 ![Проверка безопасности (обнаружение)](./media/technical-capabilities/azure-security-technical-capabilities-fig7.png)
 

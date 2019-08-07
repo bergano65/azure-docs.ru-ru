@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Salesforce для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Salesforce для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
@@ -12,21 +12,21 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/08/2018
+ms.date: 08/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 712cc5ce62225987f8cc3ea13b5e4fd10a7d5eaf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 64de004a1d9b3aa011c447fdded51658582586b0
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515766"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825776"
 ---
-# <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство по Настройка Salesforce для автоматической подготовки пользователей
+# <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Учебник. Настройка Salesforce для автоматической подготовки пользователей
 
 Цель этого учебника — показать, как в Salesforce и Azure AD необходимо выполнять автоматическую подготовку и отмену подготовки учетных записей пользователей из Azure AD в Salesforce.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -72,11 +72,11 @@ ms.locfileid: "60515766"
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
-    ![Подготовка](./media/salesforce-provisioning-tutorial/provisioning.png)
+    ![Идет подготовка](./media/salesforce-provisioning-tutorial/provisioning.png)
 
 5. В разделе **Учетные данные администратора** укажите следующие параметры конфигурации.
 
-    a. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
+    1\. В текстовом поле **Имя администратора** введите имя учетной записи Salesforce с профилем **системного администратора** в Salesforce.com.
 
     2\. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
@@ -111,6 +111,9 @@ ms.locfileid: "60515766"
 17. Чтобы включить службу подготовки Azure AD для Salesforce, измените значение параметра **Provisioning Status** (Статус подготовки) на **On** (Включено) в разделе "Настройки".
 
 18. Нажмите кнопку **Сохранить**.
+
+> [!NOTE]
+> После подготовки пользователей в приложении Salesforce администратору необходимо настроить для них параметры, относящиеся к языку. Дополнительные сведения о настройке языка см. в [этой](https://help.salesforce.com/articleView?id=setting_your_language.htm&type=5) статье.
 
 После этого начнется начальная синхронизация всех пользователей и групп, назначенная в Salesforce в разделе "Пользователи и группы". Обратите внимание, что начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра журналов действий, в которых зафиксированы все действия, выполняемые в приложении Salesforce службой подготовки.
 

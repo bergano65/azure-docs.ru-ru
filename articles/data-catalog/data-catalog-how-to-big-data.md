@@ -1,22 +1,20 @@
 ---
 title: Работа с источниками больших данных в Каталоге данных Azure
 description: Статья, описывающая подходы к использованию каталога данных Azure при работе с источниками больших данных, в том числе с хранилищем BLOB-объектов Azure, озером данных Azure и Hadoop HDFS.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 626d1568-0780-4726-bad1-9c5000c6b31a
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: b6b419d575e2164fc683b8e6b5020572db74d1b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 5b213ebabc2d849587590ba295498d24737dbde7
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001747"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68734653"
 ---
 # <a name="how-to-work-with-big-data-sources-in-azure-data-catalog"></a>Работа с источниками больших данных в каталоге данных Azure
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 **Каталог данных Microsoft Azure** — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных источников данных. Он помогает пользователям обнаруживать, оценивать и использовать источники данных, повышая ценность источников информации, в том числе источников больших данных, для организаций.
 
 **Каталог данных Azure** поддерживает регистрацию больших двоичных объектов и каталогов хранилища BLOB-объектов Azure, а также файлов и каталогов Hadoop HDFS. Эти источники данных являются частично структурированными, что обеспечивает большую гибкость. Однако это также означает, что для получения максимальной пользы от регистрации источников в **каталоге данных Azure** пользователям необходимо понимать и учитывать их структуру.

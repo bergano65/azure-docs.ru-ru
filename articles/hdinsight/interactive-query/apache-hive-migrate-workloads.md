@@ -7,12 +7,12 @@ ms.author: tacox
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: b9bf3b41bcd0a79027c5dd9a4f3df979fb0bd9f0
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: eb6b42a88e47e3fcb35700ec542c8ca642e17a6a
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68250152"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815811"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
 
@@ -30,7 +30,7 @@ ms.locfileid: "68250152"
 Одним из преимуществ Hive является возможность экспорта метаданных во внешнюю базу данных (хранилище метаданных Hive). **Хранилище метаданных Hive** отвечает за хранение статистики таблицы, включая расположение хранилища таблиц, имена столбцов и сведения об индексах таблиц. Схема базы данных хранилище метаданных различается в разных версиях Hive. Выполните следующие действия, чтобы обновить хранилище метаданных Hive HDInsight 3,6, чтобы он был совместим с HDInsight 4,0.
 
 1. Создайте новую копию внешнего хранилище метаданных. Для HDInsight 3,6 и HDInsight 4,0 требуются разные схемы хранилище метаданных и не могут совместно использовать один хранилище метаданных. Дополнительные сведения о подключении внешних хранилище метаданных к кластеру HDInsight см. в статье [использование внешних хранилищ метаданных в Azure hdinsight](../hdinsight-use-external-metadata-stores.md) . 
-2. Запустите действие сценария в кластере HDI 3,6 с "головными узлами" в качестве типа узла для выполнения. Вставьте следующий URI в текстовое поле, помеченное как "URI Bash script https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh":. В текстовом поле, помеченном как "аргументы", введите ServerName, базу данных, имя пользователя  и пароль для копируемого хранилище метаданных Hive, разделенные пробелами. Не включайте ". database.windows.net" при указании servername.
+2. Запустите действие сценария в кластере HDI 3,6 с "головными узлами" в качестве типа узла для выполнения. Вставьте следующий URI в текстовое поле, помеченное как "URI Bash script https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh":. В текстовом поле, помеченном как "аргументы", введите ServerName, базу данных, имя пользователя и пароль для копируемого хранилище метаданных Hive, разделенные пробелами. Не включайте ". database.windows.net" при указании servername.
 
 > [!Warning]
 > Обновление, преобразующее схему метаданных HDInsight 3,6 в схему HDInsight 4,0, не может быть отменено.
@@ -99,9 +99,7 @@ alter table myacidtable compact 'major';
 
 Запустите действие сценария в кластере с "головными узлами" в качестве типа узла для выполнения. Вставьте следующий URI в текстовое поле, помеченное как "URI Bash Script": https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh
 
-Для запуска Studio Analytics можно использовать URL-адрес:\<HTTPS://имя_кластера >. azurehdinsight. NET/Das/
-
-
+Подождите 5 – 10 минут, а затем запустите Data Analytics Studio с помощью этого URL-\<адреса: https://имя_кластера >. azurehdinsight. NET/Das/
 
 После установки DAS, если вы не видите запросы, которые вы выполняли в средстве просмотра запросов, выполните следующие действия.
 

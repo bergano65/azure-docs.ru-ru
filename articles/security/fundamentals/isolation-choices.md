@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 4115964533072e5d8f1760c8c5cdf0f20c9b7625
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 0c07cbd9fef865f3fc7b782210ef44094df9f629
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727139"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779834"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Изоляция в общедоступном облаке Azure
 ##  <a name="introduction"></a>Введение
@@ -240,7 +240,7 @@ Azure предлагает следующие типы шифрования дл
 -   [шифрование на стороне клиента](https://docs.microsoft.com/azure/storage/storage-security-guide#using-client-side-encryption-to-secure-data-that-you-send-to-storage), которое шифрует данные перед их передачей в хранилище и расшифровывает данные после получения из хранилища.
 
 #### <a name="encryption-at-rest"></a>Шифрование при хранении
-Для многих организаций [шифрование неактивных данных](https://docs.microsoft.com/azure/security/azure-isolation) является обязательным шагом для защиты данных, соблюдения стандартов и обеспечения конфиденциальности данных. В Azure есть три функции, обеспечивающие шифрование неактивных данных.
+Для многих организаций [шифрование неактивных данных](https://docs.microsoft.com/azure/security/fundamentals/isolation-choices) является обязательным шагом для защиты данных, соблюдения стандартов и обеспечения конфиденциальности данных. В Azure есть три функции, обеспечивающие шифрование неактивных данных.
 
 -   [Шифрование службы хранилища](https://docs.microsoft.com/azure/storage/storage-security-guide#encryption-at-rest) позволяет настроить автоматическое шифрование данных, записываемых в службу хранилища Azure.
 

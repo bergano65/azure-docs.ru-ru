@@ -10,39 +10,39 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: brahmnes
-ms.date: 03/07/2019
+ms.date: 08/06/2019
 ms.author: mbullwin
-ms.openlocfilehash: 4157285e8af67acd1dc3627bebc12076d7fe072c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02d72ab877577e97592dfdd763a58cb01b201d8b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65595556"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839363"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Отладочные моментальные снимки для исключений в приложениях .NET
 При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Отладчик моментальных снимков (предварительная версия) в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает телеметрию исключений, поступающую из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Добавьте [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) в приложение и, при необходимости, настройте параметры сбора в файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Моментальные снимки для [исключений](../../azure-monitor/app/asp-net-exceptions.md) отображаются на портале Application Insights.
 
-Вы можете просмотреть отладочные моментальные снимки на портале, чтобы изучить стек вызовов и проверить значения переменных в каждом кадре стека вызовов. Чтобы получить более мощными средствами отладки исходного кода, откройте моментальные снимки в Visual Studio Enterprise 2019 г. В Visual Studio можно также [настроить точки прикрепления для интерактивного создания моментальных снимков](https://aka.ms/snappoint) без ожидания исключения.
+Вы можете просмотреть отладочные моментальные снимки на портале, чтобы изучить стек вызовов и проверить значения переменных в каждом кадре стека вызовов. Чтобы получить более широкие возможности отладки с помощью исходного кода, откройте моментальные снимки с помощью Visual Studio 2019 Enterprise. В Visual Studio можно также [настроить точки прикрепления для интерактивного создания моментальных снимков](https://aka.ms/snappoint) без ожидания исключения.
 
 Моментальные снимки отладки хранятся в течение семи дней. Такая политика хранения задается для каждого приложения отдельно. Если нужно изменить этот параметр, вы можете запросить изменения, открыв окно Службы Поддержки на портале Microsoft Azure.
 
-## <a name="enable-application-insights-snapshot-debugger-for-your-application"></a>Включить отладчик моментальных снимков Application Insights для приложения
+## <a name="enable-application-insights-snapshot-debugger-for-your-application"></a>Включение Snapshot Debugger Application Insights для приложения
 Коллекция моментальных снимков доступна для:
 * .NET Framework и приложений ASP.NET выполняющихся с помощью .NET Framework 4.5 или более поздней версии.
 * .NET Core 2.0 и приложений ASP.NET Core 2.0 под управлением Windows.
 
 Поддерживаются следующие среды:
 
-* [службе приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
 * [Облачные службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением ОС семейства 4 или более поздней версии
-* [Службы Azure Service Fabric](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) на Windows Server 2012 R2 или более поздней версии
-* [Наборы масштабирования виртуальных машин и виртуальных машин Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением Windows Server 2012 R2 или более поздней версии
-* [Локальных виртуальных или физических машин](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением Windows Server 2012 R2 или более поздней версии
+* [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , работающие под Windows Server 2012 R2 или более поздней версии
+* [Виртуальные машины Azure и масштабируемые наборы виртуальных машин](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под Windows Server 2012 R2 или более поздней версии
+* [Локальные виртуальные или физические компьютеры](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением Windows Server 2012 R2 или более поздней версии
 
 > [!NOTE]
 > Клиентские приложения (например, WPF, Windows Forms или UWP) не поддерживаются.
 
-Если вы включили отладчик моментальных снимков, но не видите моментальные снимки, проверьте наших [руководство по устранению неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
+Если вы включили Snapshot Debugger но не видите моментальные снимки, ознакомьтесь с нашим [руководством по устранению неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
 
 ## <a name="grant-permissions"></a>Предоставление разрешений
 
@@ -66,11 +66,11 @@ ms.locfileid: "65595556"
 
 ## <a name="view-snapshots-in-the-portal"></a>Просмотр моментальных снимков на портале
 
-Возникло исключение в приложении, и был создан моментальный снимок, должна быть моментальные снимки для просмотра. Может занять 5 – 10 минут с исключением, сформированным к моментальному снимку готова и можно просмотреть на портале. Чтобы просмотреть моментальные снимки, в **сбоя** области выберите **операций** кнопку при просмотре **операций** , или откройте вкладку **исключения**кнопку при просмотре **исключения** вкладке:
+После возникновения исключения в приложении и создания моментального снимка должны быть моментальные снимки для просмотра. Создание моментального снимка и его просмотр на портале может занять от 5 до 10 минут. Чтобы просмотреть моментальные снимки, на панели **сбоя** нажмите кнопку **операции** при просмотре вкладки **операции** или нажмите кнопку **исключения** при просмотре вкладки **исключения** :
 
-![Страницы ошибок](./media/snapshot-debugger/failures-page.png)
+![Страница "ошибки"](./media/snapshot-debugger/failures-page.png)
 
-Выберите операцию или исключение в области справа, чтобы открыть **сведения о транзакциях End-to-End** области, а затем выберите событие исключения. Если моментальный снимок доступен для заданного исключения, **открыть моментальный снимок отладки** кнопка отображается на правой панели со сведениями для [исключение](../../azure-monitor/app/asp-net-exceptions.md).
+Выберите операцию или исключение на правой панели, чтобы открыть панель **подробных сведений о транзакциях** , а затем выберите событие исключения. Если для данного исключения доступен моментальный снимок, на правой панели появится кнопка **Открыть отладочный моментальный снимок** с подробными сведениями об [исключении](../../azure-monitor/app/asp-net-exceptions.md).
 
 ![Кнопка "Open Debug Snapshot" (Открыть отладочный моментальный снимок) для исключения](./media/snapshot-debugger/e2e-transaction-page.png)
 
@@ -81,9 +81,9 @@ ms.locfileid: "65595556"
 Моментальные снимки могут содержать конфиденциальные сведения и по умолчанию не отображаются. Для просмотра моментальных снимков вам должна быть назначена роль `Application Insights Snapshot Debugger`.
 
 ## <a name="view-snapshots-in-visual-studio-2017-enterprise-or-above"></a>Просмотр моментальных снимков в Visual Studio 2017 Enterprise или более поздней версии
-1. Нажмите кнопку **скачать моментальный снимок** кнопку, чтобы загрузить `.diagsession` файл, который можно открыть в Visual Studio Enterprise.
+1. Нажмите кнопку **скачать моментальный снимок** , чтобы `.diagsession` скачать файл, который можно открыть с помощью Visual Studio Enterprise.
 
-2. Чтобы открыть `.diagsession` файл, необходимо быть установлен компонент Visual Studio отладчик моментальных снимков. Компонент отладчика моментальных снимков — это необходимый компонент рабочая нагрузка ASP.net в Visual Studio и могут быть выбраны из списка отдельных компонентов в установщике Visual Studio. Если вы используете версию Visual Studio до Visual Studio 2017 версии 15.5, необходимо установить расширение из [Visual Studio Marketplace](https://aka.ms/snapshotdebugger).
+2. Чтобы открыть `.diagsession` файл, необходимо установить компонент snapshot Debugger Visual Studio. Компонент Snapshot Debugger является обязательным компонентом рабочей нагрузки ASP.net в Visual Studio и может быть выбран из списка отдельных компонентов в установщике Visual Studio. Если вы используете версию Visual Studio до Visual Studio 2017 версии 15,5, необходимо установить расширение из [Visual Studio Marketplace](https://aka.ms/snapshotdebugger).
 
 3. После открытия файла моментального снимка в Visual Studio появится страница мини-дампа отладки. Щелкните **Debug Managed Code** (Отладить управляемый код), чтобы начать отладку моментального снимка. Откроется строка кода, на которой было порождено исключение, и вы сможете выполнить отладку текущего состояния процесса.
 
@@ -112,7 +112,7 @@ ms.locfileid: "65595556"
 
 ## <a name="limitations"></a>Ограничения
 
-Срок хранения данных по умолчанию — 15 дней. Для каждого экземпляра Application Insights максимальное число 50 снимков допускается в день.
+Срок хранения данных по умолчанию составляет 15 дней. Для каждого экземпляра Application Insights максимально допустимое количество моментальных снимков 50 в день.
 
 ### <a name="publish-symbols"></a>Публикация символов
 Отладчику моментальных снимков требуется наличие файлов символов на рабочем сервере для декодирования переменных и обеспечения возможности отладки в Visual Studio.
@@ -124,6 +124,10 @@ ms.locfileid: "65595556"
 
 Для службы вычислений Azure и других типов служб файлы символов должны находиться в одной папке с DLL-файлом основного приложения (как правило, `wwwroot/bin`) или быть доступными по текущему пути.
 
+> [!NOTE]
+> Дополнительные сведения о различных доступных параметрах символов см. в [документации по](https://docs.microsoft.com/visualstudio/ide/reference/advanced-build-settings-dialog-box-csharp?view=vs-2019#output
+)Visual Studio. Для получения наилучших результатов рекомендуется использовать «Full», «Portable» или «Embedded».
+
 ### <a name="optimized-builds"></a>Оптимизированные сборки
 В некоторых случаях локальные переменные не могут отображаться в сборках выпуска из-за оптимизаций, примененных JIT-компиляторов.
 Однако в службах приложений Azure сборщик моментальных снимков может деоптимизировать методы создания исключений, которые являются частью плана сбора.
@@ -131,16 +135,16 @@ ms.locfileid: "65595556"
 > [!TIP]
 > Установите расширение сайта Application Insights в службе приложений для получения поддержки деоптимизации.
 
-## <a name="next-steps"></a>Дальнейшие действия
-Включите Application Insights Snapshot Debugger для вашего приложения:
+## <a name="next-steps"></a>Следующие шаги
+Включите Snapshot Debugger Application Insights для приложения:
 
-* [службе приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+* [Служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
 * [Облачные службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
-* [Службы Azure Service Fabric](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
-* [Локальных виртуальных или физических компьютеров](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+* [Локальные виртуальные или физические компьютеры](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 
-Помимо Application Insights Snapshot Debugger:
+Кроме Application Insights Snapshot Debugger:
  
 * [Установите в коде точки прикрепления](https://docs.microsoft.com/visualstudio/debugger/debug-live-azure-applications), чтобы получать моментальные снимки не ожидая исключений.
 * В статье [Диагностика исключений в веб-приложениях с помощью Application Insights](../../azure-monitor/app/asp-net-exceptions.md) объясняется, как отобразить дополнительные исключения в Application Insights.

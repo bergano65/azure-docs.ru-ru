@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 4888ea8473c50b8774add7a930612c585fc9cbde
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19ccd44888d64967baf82568c1cbb2540f3b3f68
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074346"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780339"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
-Дополнительные сведения о [рекомендациях по безопасности Azure](https://docs.microsoft.com/azure/security/) см. в [этой статье](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices).
+Дополнительные сведения о [рекомендациях по безопасности Azure](https://docs.microsoft.com/azure/security/) см. в [этой статье](https://docs.microsoft.com/azure/security/fundamentals/service-fabric-best-practices).
 
 ## <a name="key-vault"></a>Key Vault
 
@@ -188,7 +188,7 @@ principalid=$(az resource show --id /subscriptions/<YOUR SUBSCRIPTON>/resourceGr
 az role assignment create --assignee $principalid --role 'Contributor' --scope "/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/<PROVIDER NAME>/<RESOURCE TYPE>/<RESOURCE NAME>"
 ```
 
-В коде приложения Service Fabric [получить маркер доступа](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) для Azure Resource Manager, сделав REST все следующего вида:
+В коде приложения Service Fabric [Получите маркер доступа](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) для Azure Resource Manager, выполнив все остальные действия, аналогичные следующим:
 
 ```bash
 access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
@@ -201,20 +201,20 @@ access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-v
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
-## <a name="windows-security-baselines"></a>Базовые показатели системы безопасности Windows
-[Мы рекомендуем реализовать на стандартный конфигурацию, которая широко известные и хорошо протестированных, такие как базовые показатели системы безопасности Майкрософт, в отличие от самостоятельного создания базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); параметр для подготовки этих на виртуальной машине Масштабируемые наборы заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure, чтобы настроить виртуальные машины, так как они работают в оперативном режиме, поэтому они выполняются производственного программного обеспечения.
+## <a name="windows-security-baselines"></a>Базовые показатели безопасности Windows
+[Мы рекомендуем реализовать стандартную промышленную конфигурацию, которая широко известна и хорошо тестируется, например базовые планы безопасности Майкрософт, а не самостоятельное создание базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines). параметр для подготовки этих данных в масштабируемых наборах виртуальных машин заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure для настройки виртуальных машин в режиме «в сети», чтобы они выполняли рабочее программное обеспечение.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Брандмауэр Azure — это служба безопасности управляемой, облачной сети, которая защищает ваши ресурсы виртуальной сети Azure. Это полностью отслеживает состояние как встроенные функции высокой доступности и масштабируемости ограничено облачной службы. ](https://docs.microsoft.com/azure/firewall/overview); это дает возможность ограничить исходящий трафик HTTP/S, заданный список полные доменные имена (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Его рекомендуется использовать [FQDN брандмауэра Azure теги](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также поддерживать сетевой трафик к центру обновления Майкрософт Windows конечные точки могут передаваться через брандмауэр. [Развертывание брандмауэра Azure, с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) представлен пример определения шаблона Microsoft.Network/azureFirewalls ресурсов. Правила брандмауэра, общие для приложений Service Fabric является предоставление для виртуальной сети кластеры следующие:
+[Брандмауэр Azure — это управляемая облачная служба безопасности сети, которая защищает ресурсы виртуальной сети Azure. Это полностью работоспособный брандмауэр в качестве службы со встроенной высокой доступностью и масштабируемостью облака. ](https://docs.microsoft.com/azure/firewall/overview); это позволяет ограничить исходящий трафик HTTP/S указанным списком полных доменных имен (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Рекомендуется использовать [теги полного доменного имени брандмауэра Azure](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также включить сетевой трафик для конечных точек центр обновления Windows Майкрософт, которые могут проходить через брандмауэр. [Развертывание брандмауэра Azure с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) содержит образец для определения шаблона ресурсов Microsoft. Network/азурефиреваллс. Правила брандмауэра, общие для Service Fabric приложений, позволяют выполнять следующие действия для виртуальной сети кластеров:
 
-- *Download.Microsoft.com
-- *servicefabric.azure.com
+- \* download.microsoft.com
+- \* servicefabric.azure.com
 - *.core.windows.net
 
-Эти правила брандмауэра дополняют разрешенных исходящих группах безопасности сети, которая включает в себя ServiceFabric и хранилища, как разрешенных целевых объектов из виртуальной сети.
+Эти правила брандмауэра дополняют разрешенные исходящие группы безопасности сети, которые включают ServiceFabric и хранилище в качестве разрешенных целевых объектов из виртуальной сети.
 
-## <a name="tls-12"></a>TLS 1.2
-[ШЛЮЗА СЛУЖБ ТЕРМИНАЛОВ](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
+## <a name="tls-12"></a>TLS 1.2
+[ТСГ](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
 
 ## <a name="windows-defender"></a>Защитник Windows 
 
@@ -250,8 +250,8 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 > [!NOTE]
 > Если вы не используете Защитник Windows, обратитесь к документации по работе с антивредоносным ПО, чтобы ознакомиться с правилами настройки. Защитник Windows не поддерживается в Linux.
 
-## <a name="platform-isolation"></a>Платформа изоляции
-По умолчанию приложения Service Fabric имеют доступ к среде выполнения Service Fabric, которая проявляется в различных формах: [переменные среды](service-fabric-environment-variables-reference.md) указывает на пути к файлам на узле, соответствующее приложение и Структура файлов, конечной межпроцессного взаимодействия, которая принимает запросы от приложения и клиента сертификата которого Fabric ожидает, что приложению использовать для проверки подлинности. На случай, служба размещает сам ненадежного кода, рекомендуется отключить доступ к среде выполнения SF - Если это не требуется явным образом. Удаляется доступ к среде выполнения, используя следующее объявление в разделе "политики" манифеста приложения: 
+## <a name="platform-isolation"></a>Изоляция платформ
+По умолчанию Service Fabric приложениям предоставляется доступ к самой среде выполнения Service Fabric, которая сама по себе является манифестом в разных формах: [переменные среды](service-fabric-environment-variables-reference.md) , указывающие на пути к файлам на узле, соответствующем файлам приложения и структуры, межпроцессная конечная точка взаимодействия, принимающая запросы конкретного приложения, и сертификат клиента, который эта структура требует, чтобы приложение использовалось для проверки подлинности. В конечном итоге, если служба размещает недоверенный код, рекомендуется отключить этот доступ к среде выполнения SF, если это не требуется явным образом. Доступ к среде выполнения удаляется с помощью следующего объявления в разделе "политики" манифеста приложения: 
 
 ```xml
 <ServiceManifestImport>
@@ -262,7 +262,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md).

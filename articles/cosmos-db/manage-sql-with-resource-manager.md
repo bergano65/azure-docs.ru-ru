@@ -4,14 +4,14 @@ description: Использование шаблонов Azure Resource Manager 
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/25/2019
+ms.date: 08/05/2019
 ms.author: mjbrown
-ms.openlocfilehash: 4cd66c9da0650c9eb9de5b51ce82b48fe781c6f4
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: b4d121e0628512f7bbd6aedc0a9067b31d46d0ed
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68500506"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814970"
 ---
 # <a name="manage-azure-cosmos-db-sql-core-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами API Azure Cosmos DB SQL (Core) с помощью шаблонов Azure Resource Manager
 
@@ -23,6 +23,7 @@ ms.locfileid: "68500506"
 >
 > - В настоящее время нельзя развертывать определяемые пользователем функции, хранимые процедуры и триггеры с помощью шаблонов диспетчер ресурсов.
 > - Вы не можете одновременно добавлять или удалять расположения в учетной записи Azure Cosmos и изменять другие свойства. Они должны выполняться как отдельные операции.
+> - Имена учетных записей должны содержать строчные буквы и < 31 символ.
 
 [!code-json[create-cosmosdb-sql](~/quickstart-templates/101-cosmosdb-sql/azuredeploy.json)]
 

@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd41bdfb90e5e8428a747832c10fe23a2cac4560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6c7199cd8e5dbde1f6ff2f5cea56a4191211c853
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67109401"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779084"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active Directory Часто задаваемые вопросы
 
@@ -29,7 +29,7 @@ ms.locfileid: "67109401"
 
 ## <a name="which-of-the-methods-to-sign-in-to-azure-ad-pass-through-authentication-password-hash-synchronization-and-active-directory-federation-services-ad-fs-should-i-choose"></a>Какой из методов входа в Azure AD следует выбрать: сквозную аутентификацию, синхронизацию хэша паролей или службы федерации Active Directory (AD FS)?
 
-[В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
+[В этом руководстве](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ## <a name="is-pass-through-authentication-a-free-feature"></a>Функция сквозной проверки подлинности является бесплатной?
 
@@ -37,11 +37,11 @@ ms.locfileid: "67109401"
 
 ## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
-№ Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
+Нет. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
 
 ## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
 
-Да. Со сквозной аутентификацией работают все возможности условного доступа, включая многофакторную идентификацию Azure.
+Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
 
@@ -49,11 +49,11 @@ ms.locfileid: "67109401"
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
-№ Нет, сквозная аутентификация _не_ выполняет автоматический переход на синхронизацию хэшей паролей. Чтобы избежать ошибок входа пользователей, следует настроить [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability) сквозной проверки подлинности.
+Нет. Нет, сквозная аутентификация _не_ выполняет автоматический переход на синхронизацию хэшей паролей. Чтобы избежать ошибок входа пользователей, следует настроить [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability) сквозной проверки подлинности.
 
-## <a name="what-happens-when-i-switch-from-password-hash-synchronization-to-pass-through-authentication"></a>Что происходит при отключении синхронизации хэшированных паролей на сквозную проверку подлинности?
+## <a name="what-happens-when-i-switch-from-password-hash-synchronization-to-pass-through-authentication"></a>Что происходит при переключении с синхронизации хэша паролей на сквозную проверку подлинности?
 
-При использовании Azure AD Connect для переключения метод входа из синхронизации хэшированных паролей на сквозную проверку подлинности, сквозная проверка подлинности становится основной метод входа пользователей в управляемых доменах. Обратите внимание на то, что хэши паролей всех пользователей, которые ранее были синхронизированы с помощью синхронизации хэша паролей продолжают храниться в Azure AD.
+При использовании Azure AD Connect для переключения метода входа с синхронизации хэша паролей на сквозную аутентификацию сквозная проверка подлинности станет основным методом входа для пользователей в управляемых доменах. Обратите внимание, что для всех хэшей паролей пользователей, которые ранее были синхронизированы при синхронизации хэша паролей, сохраняются в Azure AD.
 
 ## <a name="can-i-install-an-azure-ad-application-proxymanage-appsapplication-proxymd-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
 
@@ -175,7 +175,7 @@ ms.locfileid: "67109401"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте, какие сценарии поддерживаются, а какие нет.
 - [Быстрый запуск](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.

@@ -1,26 +1,26 @@
 ---
-title: Краткое руководство. Запрос данных с помощью библиотеки Python в Azure Data Explorer
-description: В этом кратком руководстве вы узнаете, как запрашивать данные из обозревателя данных Azure с помощью библиотеки Python.
+title: Запрос данных с помощью библиотеки Python в Azure Data Explorer
+description: Из этой статьи вы узнаете, как запрашивать данные из Azure обозреватель данных с помощью Python.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 10/16/2018
-ms.openlocfilehash: 253629bab6b0985ab8f540c653f3671c49e6d278
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 08/05/2019
+ms.openlocfilehash: 2c32e67bb2b47a24036a341ea4e1b83037abbaee
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360235"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827527"
 ---
-# <a name="quickstart-query-data-using-the-azure-data-explorer-python-library"></a>Краткое руководство. Запрос данных с помощью библиотеки Python в Azure Data Explorer
+# <a name="query-data-using-the-azure-data-explorer-python-library"></a>Запрос данных с помощью библиотеки Python в Azure Data Explorer
 
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет [клиентскую библиотеку данных для Python](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Эта библиотека позволяет выполнять запросы данных из кода. В этом кратком руководстве вы подключитесь к таблице в *справочном кластере*, настроенном для упрощения обучения. Затем вы запросите таблицу в этом кластере и получите результаты.
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет [клиентскую библиотеку данных для Python](https://github.com/Azure/azure-kusto-python/tree/master/azure-kusto-data). Эта библиотека позволяет выполнять запросы данных из кода. В этой статье вы подключитесь к таблице в кластере *справки* , который мы настроили для помощи в обучении. Затем вы запросите таблицу в этом кластере и получите результаты.
 
-Это краткое руководство также доступно в виде [Azure Notebook](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueryKusto.ipynb).
+Эта статья также доступна в качестве [записной книжки Azure](https://notebooks.azure.com/ManojRaheja/libraries/KustoPythonSamples/html/QueryKusto.ipynb).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись электронной почты организации, которая входит в Azure Active Directory (AAD)
 
@@ -95,7 +95,7 @@ df
 
 Вы увидите десять самых первых результатов из таблицы StormEvents.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)
+> [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)

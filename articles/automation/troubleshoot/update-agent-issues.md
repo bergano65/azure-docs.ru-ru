@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 3555ec74b7e7c8a0f7606f24f8c6f2c4fe36b52d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: bbccb9beab374a4a514d527c22b3861f0752d5fd
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477101"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782383"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Общие сведения о результатах проверки агента Windows в службе "Управление обновлениями"
 
@@ -27,7 +27,7 @@ ms.locfileid: "67477101"
 * **Не настроено** — агент обновления не найден или еще выполняется подключение.
 
 > [!NOTE]
-> Возможно, существует небольшая задержка между на портале Azure отображаются и текущее состояние компьютера.
+> Между отображением портал Azure и текущим состоянием компьютера может возникнуть небольшая задержка.
 
 ## <a name="start-the-troubleshooter"></a>Запуск средства устранения неполадок
 
@@ -55,17 +55,17 @@ ms.locfileid: "67477101"
 |Операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008 R2 RTM, Windows Server 2008 | Поддерживает только оценки обновлений.         |
-|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855))<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
+|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4.6.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
 
-### <a name="net-451"></a>.NET 4.5.1
+### <a name="net-461"></a>.NET 4.6.1 +
 
-Проверка .NET Framework определяет, установлена ли в системе как минимум версия [.NET Framework 4.5.1](https://www.microsoft.com/download/details.aspx?id=30653).
+Проверка .NET Framework проверяет, установлен ли в системе минимум [.NET Framework 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49981) .
 
 ### <a name="wmf-51"></a>WMF 5.1
 
-Проверка WMF определяет, есть ли в системе требуемая версия платформы Windows Management Framework. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) является самой ранней поддерживаемой версией. Мы рекомендуем установить [Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616) для обеспечения повышенной надежности гибридной рабочей роли Runbook.
+Проверка WMF проверяет, что в системе установлена требуемая версия Windows Management Framework (WMF) — [Windows Management framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
-### <a name="tls-12"></a>TLS 1.2
+### <a name="tls-12"></a>TLS 1.2
 
 Эта проверка определяет, используете ли вы протокол TLS 1.2 для шифрования связи. Протокол TLS 1.0 больше не поддерживается платформой. Мы рекомендуем, чтобы клиенты использовали протокол TLS 1.2 для обмена данными со службой "Управление обновлениями".
 
@@ -144,7 +144,7 @@ RuleId                      : AutomationAgentServiceConnectivityCheck1
 RuleGroupId                 : connectivity
 RuleName                    : Registration endpoint
 RuleGroupName               : connectivity
-RuleDescription             : 
+RuleDescription             :
 CheckResult                 : Failed
 CheckResultMessage          : Unable to find Workspace registration information in registry
 CheckResultMessageId        : AutomationAgentServiceConnectivityCheck1.Failed.NoRegistrationFound
@@ -201,7 +201,7 @@ CheckResultMessageId        : TlsVersionCheck.Passed.EnabledByDefault
 CheckResultMessageArguments : {}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).
 

@@ -15,12 +15,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 4caa9e78d72df37bec2351fa86ae6e60630d6047
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 99b3b4b8d48ff04fc2ced686c01b2d4de12c6555
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68370763"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742134"
 ---
 # <a name="azure-event-hubs-metrics-in-azure-monitor"></a>Метрики Центров событий Azure в Azure Monitor
 
@@ -30,7 +30,7 @@ Azure Monitor предоставляет унифицированный поль
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 
-Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Operation Management Suite и Центры событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../azure-monitor/platform/data-platform.md).
+Azure Monitor предоставляет несколько способов доступа к метрикам. Вы можете использовать [портал Azure](https://portal.azure.com), интерфейсы API Azure Monitor (REST и .NET), а также решения для анализа, например Log Analytics и Центры событий. Дополнительные сведения см. в разделе [Мониторинг данных, собранных Azure Monitor](../azure-monitor/platform/data-platform.md).
 
 Метрики включены по умолчанию, и вы можете получить доступ к данным за последние 30 дней. Если необходимо хранить данные метрик в течение длительного периода времени, вы можете архивировать их в учетную запись хранения Azure. Для настройки используйте [параметры диагностики](../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) в Azure Monitor.
 

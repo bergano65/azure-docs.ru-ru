@@ -1,28 +1,29 @@
 ---
-title: Создание решения Azure VMware с CloudSimple - службы
-description: Описывает создание CloudSimple службы на портале Azure
+title: Создание решения VMware для Azure с помощью Клаудсимпле-Service
+description: Описание процесса создания службы Клаудсимпле в портал Azure
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 06/04/2019
 ms.topic: article
-ms.service: vmware
+ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a0ccce6f298270b2751307868fdf85697cb7e8ee
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 6986e0a7e6eee6dbbd43c72a415b01df7da7da51
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154967"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812444"
 ---
-# <a name="create-azure-vmware-solution-by-cloudsimple---service"></a>Создайте решение VMware в Azure с CloudSimple - службы
+# <a name="create-azure-vmware-solution-by-cloudsimple---service"></a>Создание решения VMware для Azure с помощью Клаудсимпле-Service
 
-Чтобы приступить к работе с решением Azure VMware, CloudSimple, создайте решение Azure VMware службой CloudSimple на портале Azure.
+Чтобы приступить к работе с решением VMware для Azure с помощью Клаудсимпле, создайте решение Azure VMware с помощью службы Клаудсимпле в портал Azure.
 
-> [!NOTE]
-> Перед созданием службы CloudSimple, необходимо зарегистрировать поставщик ресурсов Microsoft.VMwareCloudSimple в вашей подписке Azure. Выполните действия, описанные в [включить Microsoft.VMwareCloudSimple поставщика ресурсов в вашей подписке Azure](enable-cloudsimple-service.md).
+## <a name="before-you-begin"></a>Перед началом работы
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+Выделите блок/28 CIDR для подсети шлюза.  Для каждой службы Клаудсимпле требуется подсеть шлюза, которая является уникальной для региона, в котором она создана. Подсеть шлюза используется для сетевых служб пограничной сети и требует блока/28 CIDR. Адресное пространство подсети шлюза должно быть уникальным. Она не должна перекрываться с сетью, которая взаимодействует с средой Клаудсимпле.  Сети, взаимодействующие с Клаудсимпле, включают в себя локальные сети и виртуальные сети Azure.
+
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
@@ -30,31 +31,31 @@ ms.locfileid: "67154967"
 
 1. Выбор пункта **Все службы**.
 
-2. Поиск **CloudSimple служб**.
+2. Выполните поиск по запросу **Клаудсимпле Services**.
 
-    ![Служба поиска CloudSimple](media/create-cloudsimple-service-search.png)
+    ![Поиск службы Клаудсимпле](media/create-cloudsimple-service-search.png)
 
-3. Выберите **CloudSimple служб**.
+3. Выберите **Клаудсимпле Services (службы**).
 
-4. Нажмите кнопку **добавить** для создания новой службы.
+4. Нажмите кнопку **Добавить** , чтобы создать новую службу.
 
-    ![Добавление службы CloudSimple](media/create-cloudsimple-service-add.png)
+    ![Добавление службы Клаудсимпле](media/create-cloudsimple-service-add.png)
 
-5. Выберите подписку, где вы хотите создать службу CloudSimple.
+5. Выберите подписку, в которой вы хотите создать службу Клаудсимпле.
 
-6. Выберите группу ресурсов для службы. Чтобы добавить новую группу ресурсов, щелкните **Create New**.
+6. Выберите группу ресурсов для службы. Чтобы добавить новую группу ресурсов, щелкните **создать**.
 
-7. Введите имя для идентификации службы.
+7. Введите имя для идентификатора службы.
 
-8. Введите CIDR для службы шлюза. Укажите/28 подсети, которая не пересекается с любым из существующей подсети.  К ним относятся в локальной подсети, Azure, или любой запланированный CloudSimple подсетей. CIDR невозможно изменить после создания службы.
+8. Введите CIDR для шлюза службы. Укажите подсеть/28, которая не пересекается ни с одной из существующих подсетей.  К ним относятся локальные подсети, подсети Azure или любые запланированные подсети Клаудсимпле. После создания службы невозможно изменить CIDR.
 
-    ![Создание службы CloudSimple](media/create-cloudsimple-service.png)
+    ![Создание службы Клаудсимпле](media/create-cloudsimple-service.png)
 
-9. Последовательно выберите **ОК**.
+9. Нажмите кнопку **ОК**.
 
-Служба создается и добавляется в список служб.
+Служба будет создана и добавлена в список служб.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, как [Создание частного облака](https://docs.azure.cloudsimple.com/create-private-cloud/)
-* Узнайте, как [Настройка среды с частным облаком](quickstart-create-private-cloud.md)
+* Узнайте, как [создать частное облако](https://docs.azure.cloudsimple.com/create-private-cloud/)
+* Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

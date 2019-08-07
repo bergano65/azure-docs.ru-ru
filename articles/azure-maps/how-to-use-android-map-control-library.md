@@ -1,6 +1,6 @@
 ---
-title: Приступая к работе с элементом управления Android карты в "карты Azure" | Документация Майкрософт
-description: Элемент управления Android карты в "карты Azure".
+title: Начало работы с элементом управления картой Android в Azure Maps | Документация Майкрософт
+description: Элемент управления картой Android в Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -9,53 +9,53 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 9df5eb9fa4493f82c6efd4a8e30eee324e4eac2a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: a3423635ab226693e0b3b057e2c2cb441861ea1b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273836"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839406"
 ---
-# <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакета SDK для Android
+# <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакет SDK для Android
 
-Azure Maps Android SDK — это библиотека карты вектор для Android. В этой статье поможет выполнить процесс установки Android SDK для карты и загрузке карту.
+Azure Maps пакет SDK для Android — это библиотека векторных карт для Android. В этой статье описывается процесс установки Azure Maps пакет SDK для Android и загрузки карт.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure";
 
-Чтобы выполнить процедуры, описанные в этой статье, необходимо сначала [создать учетную запись Azure Maps](how-to-manage-account-keys.md) в ценовой категории S1.
+Для выполнения процедур, описанных в этой статье, необходимо сначала [создать учетную запись Azure Maps](how-to-manage-account-keys.md) в ценовой категории S1.
 
 ### <a name="download-android-studio"></a>Скачать Android Studio
 
-Необходимо скачать Android Studio и создайте проект с пустым действием, прежде чем устанавливать пакет Azure Maps Android SDK. Вы можете [скачать Android Studio](https://developer.android.com/studio/) бесплатно от Google. 
+Скачайте Android Studio и создайте проект с пустым действием, прежде чем устанавливать пакет SDK для Android Azure Maps. Вы можете [скачать Android Studio](https://developer.android.com/studio/) бесплатно из Google. 
 
 ## <a name="create-a-project-in-android-studio"></a>Создание проекта в Android Studio
 
-Во-первых необходимо создать новый проект с пустым действием. Выполните следующие действия, чтобы создать проект Android Studio.
+Сначала создайте новый проект с пустым действием. Выполните следующие действия, чтобы создать проект Android Studio.
 
-1. В разделе **выберите свой проект**выберите **телефонов и планшетов**. Приложение будет выполняться на этом форм-факторе.
-2. На **телефонов и планшетов** выберите **пустое действие**, а затем выберите **Далее**.
-3. В разделе **Configure your project** (Настройка проекта) выберите `API 21: Android 5.0.0 (Lollipop)` в качестве минимального пакета SDK. Это самая ранняя версия, поддерживаемая Azure Maps пакета SDK для Android.
-4. Примите имя по умолчанию `Activity Name` и `Layout Name` и выберите **Готово**.
+1. В разделе **Выбор проекта**выберите **Телефон и планшет**. Приложение будет выполняться на этом конструктивном коэффициенте.
+2. На вкладке **Телефон и планшет** выберите пустое **действие**, а затем нажмите кнопку **Далее**.
+3. В разделе **Configure your project** (Настройка проекта) выберите `API 21: Android 5.0.0 (Lollipop)` в качестве минимального пакета SDK. Это самая ранняя версия, поддерживаемая пакет SDK для Androidом Azure Maps.
+4. Примите значения по `Activity Name` умолчанию и `Layout Name` нажмите кнопку **Готово**.
 
-См. в разделе [документации Android Studio](https://developer.android.com/studio/intro/) дополнительную помощь с установки Android Studio и создания нового проекта.
+Дополнительные сведения об установке Android Studio и создании нового проекта см. в [документации по Android Studio](https://developer.android.com/studio/intro/) .
 
-![Создание проекта](./media/how-to-use-android-map-control-library/form-factor-android.png)
+![Создайте проект](./media/how-to-use-android-map-control-library/form-factor-android.png)
 
 ## <a name="set-up-a-virtual-device"></a>Настройка виртуального устройства
 
-Android Studio позволяет настроить виртуальное устройство Android на вашем компьютере. Это поможет вам протестировать приложения во время разработки. Чтобы настроить виртуальное устройство, щелкните значок диспетчера виртуальных устройств Android (AVD) в правом верхнем углу экрана проекта и выберите **Создание виртуального устройства**. Также можно получить в диспетчере AVD, выбрав **средства** > **Android** > **диспетчер AVD** на панели инструментов. В **телефоны** категорию **Nexus 5 X**, а затем выберите **Далее**.
+Android Studio позволяет настроить виртуальное устройство Android на вашем компьютере. Это позволит протестировать приложение во время разработки. Чтобы настроить виртуальное устройство, щелкните значок диспетчера виртуальных устройств Android (AVD) в правом верхнем углу экрана проекта, а затем выберите **создать виртуальное устройство**. Вы также можете перейти к AVD Manager, выбрав **инструменты** > **Android** > **AVD Manager** на панели инструментов. В категории **телефоны** выберите **5x хранилища**, а затем нажмите кнопку **Далее**.
 
-Дополнительные сведения о настройке в виртуальное устройство AVD [документации Android Studio](https://developer.android.com/studio/run/managing-avds).
+Дополнительные сведения о настройке AVD см. в [документации по Android Studio](https://developer.android.com/studio/run/managing-avds).
 
 ![Android Emulator](./media/how-to-use-android-map-control-library/android-emulator.png)
 
-## <a name="install-the-azure-maps-android-sdk"></a>Установите пакет SDK для Android Azure Maps
+## <a name="install-the-azure-maps-android-sdk"></a>Установка Azure Maps пакет SDK для Android
 
-Следующий шаг в создании приложения является установки Azure Maps Android SDK. Выполните следующие действия, чтобы установить пакет SDK.
+Следующим шагом при создании приложения является установка пакет SDK для Android Azure Maps. Выполните следующие действия, чтобы установить пакет SDK.
 
-1. Откройте верхнего уровня **build.gradle** файл и добавьте следующий код, чтобы **все проекты**, **репозиториев** блокировать раздел:
+1. Откройте файл **Build. gradle** верхнего уровня и добавьте следующий код в раздел **все проекты**, репозитории:
 
     ```
     maven {
@@ -63,9 +63,9 @@ Android Studio позволяет настроить виртуальное ус
     }
     ```
 
-2. Обновление вашей **app/build.gradle** и добавьте в него следующий код:
+2. Обновите **приложение/сборку. gradle** и добавьте в него следующий код:
     
-    1. Убедитесь, что ваш проект **minSdkVersion** API 21 или более поздней версии.
+    1. Убедитесь, что **minSdkVersion** проекта находится в API 21 или более поздней версии.
 
     2. Добавьте следующий код в раздел Android:
 
@@ -75,16 +75,16 @@ Android Studio позволяет настроить виртуальное ус
             targetCompatibility JavaVersion.VERSION_1_8
         }
         ```
-    3. Обновите свой блок зависимостей и добавьте новую строку реализации зависимостей для последней Azure Maps Android SDK:
+    3. Обновите блок зависимостей и добавьте новую строку зависимости реализации для последней Azure Maps пакет SDK для Android:
 
         ```
         implementation "com.microsoft.azure.maps:mapcontrol:0.2"
         ```
 
     > [!Note]
-    > Azure Maps пакета SDK для Android выполняется регулярно обновлены и улучшены. Вы увидите [Приступая к работе с элементом управления Android карты](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) документации, чтобы получить номер последней версии реализации службы карт Azure. Кроме того можно задать номер версии из «0,2» на «0 +», чтобы он всегда указывать до последней версии.
+    > Пакет SDK для Android Azure Maps регулярно обновляется и улучшается. Чтобы получить последнюю версию Azure Mapsной реализации, можно просмотреть документацию по [управлению картой Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) . Кроме того, можно задать номер версии от "0,2" до "0 +", чтобы он всегда указывал на последнюю версию.
 
-3. Изменить **res** > **макета** > **activity_main.xml** и замените его следующим:
+3. Измените > макетRES > **activity_main. XML** и замените его на код:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -103,15 +103,15 @@ Android Studio позволяет настроить виртуальное ус
     </FrameLayout>
     ```
 
-4. В **MainActivity.java** файл, вам потребуется:
+4. В файле **MainActivity. Java** потребуется следующее:
     
-    * добавить оператор imports для пакета SDK Azure Maps
-    * набор сведений для проверки подлинности службы карт Azure
-    * получить экземпляр элемента управления map в **onCreate** метод
+    * Добавление импорта для пакета SDK для Azure Maps
+    * Настройка сведений для проверки подлинности Azure Maps
+    * получение экземпляра элемента управления Map в методе **OnCreate**
 
-    Сведения о проверке подлинности в классе AzureMaps глобально с помощью методов setSubscriptionKey или setAadProperties становится его, вам не придется добавить сведений для проверки подлинности для каждого представления. Элемент управления map содержит собственные методы жизненного цикла для управления жизненным циклом Android OpenGL, который должен вызываться непосредственно из содержащего их действия. Чтобы приложение правильно, вызывать методы жизненного цикла элемента управления картой необходимо переопределите следующие методы жизненного цикла в действии, которое содержит элемент управления картой и вызвать метод управления соответствующей карты. 
+    Настройка сведений о проверке подлинности в классе Азуремапс глобально с помощью методов Сетсубскриптионкэй или Сетаадпропертиес делает его невозможным, поэтому вам не придется добавлять данные проверки подлинности в каждое представление. Элемент управления картой содержит собственные методы жизненного цикла для управления жизненным циклом OpenGL Android, который должен вызываться непосредственно из содержащего действия. Чтобы приложение было правильно, вызовите методы жизненного цикла элемента управления Map, переопределите следующие методы жизненного цикла в действии, содержащем элемент управления картой, и вызовите соответствующий метод управления картой. 
 
-    Изменить **MainActivity.java** файл следующим образом:
+    Измените файл **MainActivity. Java** следующим образом:
     
     ```java
     package com.example.myapplication;
@@ -183,31 +183,80 @@ Android Studio позволяет настроить виртуальное ус
 
     ```
 
-## <a name="import-classes"></a>Импортировать классы
+## <a name="import-classes"></a>Импорт классов
 
-После завершения предыдущих шагов, может появиться предупреждения из Android Studio о часть кода. Чтобы устранить эти предупреждения, импортировать классы, на которые ссылается `MainActivity.java`.
+После выполнения предыдущих шагов вы, вероятно, получите предупреждения от Android Studio о коде. Чтобы устранить эти предупреждения, импортируйте классы, на `MainActivity.java`которые имеются ссылки в.
 
-Вы можете автоматически импортировать эти классы, выбрав Alt + Ввод (параметр + результат на компьютере Mac).
+Вы можете автоматически импортировать эти классы, нажав сочетание клавиш ALT + ВВОД (параметр + вернуть на компьютере Mac).
 
-Выберите кнопку выполнения, как показано на следующем рисунка (или сочетание управления + R на компьютере Mac), для построения приложения.
+Нажмите кнопку выполнить, как показано на следующем рисунке (или нажмите клавиши Control + R на компьютере Mac), чтобы создать приложение.
 
 ![Нажмите кнопку "Выполнить"](./media/how-to-use-android-map-control-library/run-app.png)
 
-Android Studio займет несколько секунд для построения приложения. После завершения сборки необходимо протестировать приложение в Android эмулированного устройства. Вы должны увидеть карту следующего вида:
+Создание приложения Android Studio займет несколько секунд. После завершения сборки можно протестировать приложение на устройстве с эмуляцией Android. Вы должны увидеть такую карту:
 
 <center>
 
-![Android карты](./media/how-to-use-android-map-control-library/android-map.png)</center>
+![Схема Android](./media/how-to-use-android-map-control-library/android-map.png)</center>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="localizing-the-map"></a>Локализация схемы
 
-Сведения о добавлении данных наложения на карте:
+Azure Maps пакет SDK для Android предоставляет три различных способа настройки языка и регионального представления для отображения. В следующем коде показано, как задать для языка значение французский (fr-FR), а для региона — значение Auto. 
+
+Первый вариант заключается в том, чтобы передавать язык и просматривать региональные сведения в `AzureMaps` класс, используя глобально `setView` статические `setLanguage` методы и. Это позволит задать язык по умолчанию и региональные представления для всех элементов управления Azure Maps, загруженных в приложение.
+
+```Java
+static {
+    //Set your Azure Maps Key.
+    AzureMaps.setSubscriptionKey("<Your Azure Maps Key>");
+
+    //Set the language to be used by Azure Maps.
+    AzureMaps.setLanguage("fr-FR");
+
+    //Set the regional view to be used by Azure Maps.
+    AzureMaps.setView("auto");
+}
+```
+
+Вторым вариантом является передача языка и Просмотр сведений в XML-код элемента управления Map.
+
+```XML
+<com.microsoft.azure.maps.mapcontrol.MapControl
+    android:id="@+id/myMap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:mapcontrol_language="fr-FR"
+    app:mapcontrol_view="auto"
+    />
+```
+
+Третий вариант заключается в программном задании языка и регионального представления карты с помощью метода Maps `setStyle` . Это можно сделать в любое время, чтобы изменить язык и региональные представления на карте.
+
+```Java
+mapControl.onReady(map -> {
+    map.setStyle(StyleOptions.language("fr-FR"));
+    map.setStyle(StyleOptions.view("auto"));
+});
+```
+
+Ниже приведен пример Azure Maps с языком, для которого задано значение "fr-FR", а для регионального представления задано значение "Авто".
+
+<center>
+
+![Изображение схемы, показывающее метки на французском языке](./media/how-to-use-android-map-control-library/android-localization.png)
+</center>
+
+Полный список поддерживаемых языков и региональных представлений приведен [здесь](supported-languages.md).
+
+## <a name="next-steps"></a>Следующие шаги
+
+Узнайте, как добавить данные наложения на карту.
 
 > [!div class="nextstepaction"]
-> [Добавьте символ слой в карту Android](https://review.docs.microsoft.com/azure/azure-maps/how-to-add-symbol-to-android-map)
+> [Добавление слоя символов на карту Android](https://review.docs.microsoft.com/azure/azure-maps/how-to-add-symbol-to-android-map)
 
 > [!div class="nextstepaction"]
-> [Добавление фигур в Android карту](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
+> [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карт в Android maps](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
+> [Изменение стилей карты в картах Android](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)

@@ -5,14 +5,14 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 08/06/2019
 ms.author: danlep
-ms.openlocfilehash: 5100418651e24d74ad747e8c436ffce53c899a92
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4e41bcaff8faef2c4eaec9ae852955d4b7ce354b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68500894"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839907"
 ---
 # <a name="build-and-push-an-image-from-an-app-using-a-cloud-native-buildpack"></a>Сборка и отправка образа из приложения с помощью собственного облачного Буилдпакк
 
@@ -44,11 +44,13 @@ ms.locfileid: "68500894"
 az acr pack build \
     --registry myregistry \
     --image {{.Run.Registry}}/node-app:1.0 \
-    --builder cloudfoundry/cnb:bionic \
+    --pull --builder cloudfoundry/cnb:bionic \
     https://github.com/Azure-Samples/nodejs-docs-hello-world.git
 ```
 
 В этом примере `node-app` образ создается `1.0` с помощью тега и отправляется в реестр контейнеров *myregistry* . Здесь имя целевого реестра явно добавляется в начало имени образа. Если этот параметр не указан, URL-адрес реестра автоматически добавляется в начало имени образа.
+
+`--pull` Параметр указывает, что команда извлекает Последнее изображение построителя.
 
 Выходные данные команды показывают ход создания и отправки образа. 
 
@@ -80,7 +82,7 @@ az acr pack build \
 
 В этом примере выполняется `java-app` сборка образа, помеченного идентификатором запуска команды, и его отправка в реестр контейнеров *myregistry* .
 
-`--pull` Параметр указывает, что команда извлекает Последнее изображение построителя, которое необходимо, так как изображение построителя Heroku не кэшируется задачами контроля доступа.
+`--pull` Параметр указывает, что команда извлекает Последнее изображение построителя.
 
 Выходные данные команды показывают ход создания и отправки образа. 
 

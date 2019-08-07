@@ -12,18 +12,18 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed4e7559ff6c3b76bbdf49b538ffebf3ad09cc58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0aa63a8f06b71455b7f00d2ce5842f0da851789b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66001218"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835473"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) позволяет приложению исп
 ## <a name="assertion-format"></a>Формат утверждения
 Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
-### <a name="header"></a>Верхний колонтитул
+### <a name="header"></a>Header
 
 | Параметр |  Комментарий |
 | --- | --- |
@@ -98,10 +98,10 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **сертификаты и секреты**. 
-2. Щелкните **отправка сертификата** и выберите файл сертификата для отправки.
-3. Щелкните **Добавить**.
-  После отправки сертификата отпечаток, даты начала и окончания срока действия значения отображаются. 
+1. Выберите **Сертификаты и секреты**. 
+2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
+3. Нажмите кнопку **Добавить**.
+  После отправки сертификата отображаются отпечаток, Дата начала и срок действия. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
@@ -113,7 +113,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **манифеста** открыть манифест приложения.
+1. Выберите **Манифест** , чтобы открыть манифест приложения.
 2. Замените свойство *keyCredentials* данными нового сертификата, используя приведенную ниже схему.
 
    ```

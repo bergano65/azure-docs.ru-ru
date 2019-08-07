@@ -1,36 +1,51 @@
 ---
 title: Примеры для разработчиков, использующие Каталог данных Azure
 description: В этой статье рассматриваются доступные примеры разработчиков, использующие REST API каталога данных.
-services: data-catalog
+ms.service: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 0dc23edd-04d8-49fc-841e-d132fb109ce7
-ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: 1f62a5583b7beef2dc535065a6c0d3bcb34fe7b4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/01/2019
+ms.openlocfilehash: cdf90029d02680de4ce55e33b3ed0fe810d70b4c
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60582726"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775250"
 ---
-# <a name="data-catalog-developer-samples"></a>Примеры каталога данных для разработчиков
-Приступите к разработке приложений каталога данных с помощью REST API каталога данных. REST API каталога данных — это API на основе REST, который предоставляет программный доступ к ресурсам каталога данных для регистрации, аннотирования и поиска ресурсов-контейнеров данных программными средствами.
+# <a name="azure-data-catalog-developer-samples"></a>Примеры для разработчиков, использующие Каталог данных Azure
+
+Приступите к разработке приложений каталога данных Azure с помощью REST API каталога данных. REST API каталога данных — это API на основе REST, который предоставляет программный доступ к ресурсам каталога данных для регистрации, аннотирования и поиска ресурсов-контейнеров данных программными средствами.
 
 Ниже приведены примеры, доступные на сайте GitHub.
 
-* [Начало работы с каталогом данных Azure](https://azure.microsoft.com/resources/samples/data-catalog-dotnet-get-started/)
+* [Начало работы с Каталогом данных Azure](https://github.com/Azure-Samples/data-catalog-dotnet-get-started/)
   
-  Пример, демонстрирующий аутентификацию в Azure AD для регистрации, поиска и удаления ресурса-контейнера данных с помощью REST API каталога данных.
-* [Массовая регистрация и заметки](https://azure.microsoft.com/resources/samples/data-catalog-dotnet-excel-register-data-assets/)
+   В примере для начала работы показано, как пройти проверку подлинности в Azure AD для регистрации, поиска и удаления ресурса данных с помощью REST API каталога данных.
+   
+* [Приступая к работе с каталогом данных Azure с помощью субъекта-службы](https://github.com/Azure-Samples/data-catalog-dotnet-service-principal-get-started/)
+
+   В этом примере показано, как зарегистрировать, найти и удалить ресурс данных с помощью REST API каталога данных. В этом примере используется проверка подлинности субъекта-службы.
+
+* [Средство импорта и экспорта для каталога данных Azure](https://github.com/Azure-Samples/data-catalog-dotnet-import-export/)
+
+   В этом примере показано, как использовать каталог данных REST API для выборки ресурсов из каталога данных Azure и их сериализации в файл. Он также показывает, как взять набор ресурсов-контейнеров, сериализованный в формат JSON, и отправить его в каталог. Он поддерживает экспорт подмножества каталога с помощью поискового запроса.
+
+* [Полное регистрация и Добавление аннотаций в каталог данных Azure](https://github.com/Azure-Samples/data-catalog-dotnet-excel-register-data-assets/)
   
-  Пример, демонстрирующий массовую регистрацию ресурсов данных из книги Excel с помощью REST API каталога данных и Open XML.
-* [Средство импорта и экспорта](https://azure.microsoft.com/resources/samples/data-catalog-dotnet-import-export/)
+   В этом примере показано, как выполнить массовый регистрацию ресурсов данных из книги Excel с помощью REST API и Open XML.
   
-  Пример, показывающий, как использовать REST API каталога данных для извлечения ресурсов из каталога данных Azure и сериализации их в файл. Он также показывает, как взять набор ресурсов-контейнеров, сериализованный в формат JSON, и отправить его в каталог. Он поддерживает экспорт подмножества каталога с помощью поискового запроса.
+* [Групповое импорт терминов глоссария в каталог данных Azure](https://github.com/Azure-Samples/data-catalog-bulk-import-glossary/)
 
-* [Глоссарий терминов по массовому импорту](https://azure.microsoft.com/resources/samples/data-catalog-bulk-import-glossary/)
+   В этом примере показано, как импортировать термины глоссария из CSV-файлов в глоссарий ADC.
 
-    В этом примере показано, как импортировать термины глоссария из CSV-файлов в глоссарий ADC.
+* [Групповое импорт связей в каталог данных Azure](https://github.com/Azure-Samples/data-catalog-bulk-import-relationship/)
 
+   В этом примере показано, как программным способом импортировать сведения о связях из CSV-файла в каталог данных.
+
+* [Публикация отношений в каталоге данных Azure](https://github.com/Azure-Samples/data-catalog-dotnet-publish-relationships/)
+
+   В этом примере показано, как можно программно публиковать сведения о связях в каталоге данных.
+   
+## <a name="next-steps"></a>Следующие шаги
+[Справочник по REST API каталога данных Azure](/rest/api/datacatalog/)

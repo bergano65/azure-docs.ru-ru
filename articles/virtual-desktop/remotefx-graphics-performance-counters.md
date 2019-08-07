@@ -2,17 +2,17 @@
 title: Диагностика проблем производительности графики в удаленном рабочем столе — Azure
 description: В этой статье описывается, как использовать счетчики графики RemoteFX в сеансах протокола удаленного рабочего стола для диагностики проблем с производительностью графики в виртуальном рабочем столе Windows.
 services: virtual-desktop
-author: ChJenk
+author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 05/23/2019
-ms.author: v-chjenk
-ms.openlocfilehash: 8cd24861b9d7432a582d1b635b8ffcf0d8d2b9e6
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.author: helohr
+ms.openlocfilehash: de849701365438b21244d1e46ae657495d16c307
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233621"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816409"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Диагностика проблем производительности графики в удаленный рабочий стол
 
@@ -77,7 +77,7 @@ ms.locfileid: "68233621"
 
 Используйте счетчик качества кадров для диагностики проблем с качеством кадров. Этот счетчик выражает качество выходного кадра в процентах от качества исходного кадра. Потери качества могут быть вызваны RemoteFX или источником графики. Если RemoteFX привел к снижению качества, то проблемы могут быть недостаток сети или серверных ресурсов для отправки содержимого с высокой точностью.
 
-## <a name="mitigation"></a>Устранение
+## <a name="mitigation"></a>Предотвращение
 
 Если ресурсы сервера вызывают узкие места, попробуйте один из следующих подходов, чтобы повысить производительность.
 

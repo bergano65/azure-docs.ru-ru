@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/23/2019
-ms.openlocfilehash: f680a1cb15edf0141897c74da3b7c7afa01acae0
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 31a367fcde909f393efa4fea65b25716f95c56ee
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699122"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828436"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Просмотр и подготовка данных с помощью класса DataSet (Предварительная версия)
 
@@ -35,7 +35,7 @@ ms.locfileid: "68699122"
 
 * Пакет SDK Машинное обучение Azure для Python (версия 1.0.21 или более поздняя), включающий пакет azureml-DataSets. Чтобы установить или обновить последнюю версию пакета SDK, см. статью [Установка или обновление пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
-* Машинное обучение Azure пакет SDK для подготовки данных. Чтобы установить или обновить последнюю версию, см. статью [Установка или обновление пакета SDK для подготовки данных](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
+* Машинное обучение Azure пакет SDK для подготовки данных. Чтобы установить или обновить последнюю версию, см. статью [Установка или обновление пакета SDK для подготовки данных](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py).
 
 * Скачайте примеры файлов, чтобы перейти к следующим примерам: [преступления. csv](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv) и [City. JSON](https://dprepdata.blob.core.windows.net/dataset-sample-files/city.json).
 
@@ -256,7 +256,7 @@ ds_def = ds_def.assert_value('Longitude', (value <= 180) & (value >= -87), error
 ds_def.get_profile()
 ```
 
-||Type|Min|Max|Count|Отсутствующее количество|Присутствующее количество|Процент отсутствующих|Количество ошибок|Количество пустых|0,1 % квантилей|1 % квантилей|5 % квантилей|25 % квантилей|50 % квантилей|75 % квантилей|95 % квантилей|99 % квантилей|99,9 % квантилей|Среднее значение|Стандартное отклонение|Variance|Асимметрия|Эксцесс
+||Тип|Min|Max|Count|Отсутствующее количество|Присутствующее количество|Процент отсутствующих|Количество ошибок|Количество пустых|0,1 % квантилей|1 % квантилей|5 % квантилей|25 % квантилей|50 % квантилей|75 % квантилей|95 % квантилей|99 % квантилей|99,9 % квантилей|Среднее значение|Стандартное отклонение|Variance|Асимметрия|Эксцесс
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 id|FieldType. INTEGER|1.04986 e + 07|1.05351 e + 07|10,0|0,0|10,0|0,0|0,0|0,0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259e+07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358e+08|— 0,495701|— 1,02814
 Фикс.|FieldType. BOOLEAN|False|False|10,0|0,0|10,0|0,0|0,0|0,0||||||||||||||

@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7799b62b2c330610663e361bbb3930340b1ebdaf
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: a007e3adb72148cfde1590e996f7df9082159445
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726285"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840495"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -29,6 +29,9 @@ ms.locfileid: "68726285"
 1. Получение сведений о подключении с помощью пакета SDK.
 1. Определение типа данных запроса, которые используются моделью.
 1. Создание приложения, которое обращается к веб-службе.
+
+> [!TIP]
+> Примеры в этом документе создаются вручную без использования спецификаций OpenAPI (Swagger). Если вы включили спецификацию OpenAPI для развертывания, вы можете использовать такие средства, как [Swagger-CodeGen](https://github.com/swagger-api/swagger-codegen) , для создания клиентских библиотек для службы.
 
 ## <a name="connection-information"></a>Сведения о подключении
 

@@ -10,13 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: c7f5fda405ca0e5ba9cf1dd0ed44c47cd3ee74b1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: cognitive-search
+ms.openlocfilehash: 8fb7ff51507212dfb162c09fcee469d6f154f3c3
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65949861"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840901"
 ---
 #   <a name="text-split-cognitive-skill"></a>Когнитивный навык разделения текста
 
@@ -43,7 +43,7 @@ Microsoft.Skills.Text.SplitSkill
 
 | Имя параметра       | Описание      |
 |----------------------|------------------|
-| Text  | Текст, который будет разбит на подстроки. |
+| text  | Текст, который будет разбит на подстроки. |
 | languageCode  | (Необязательно.) Код языка документа.  |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка 

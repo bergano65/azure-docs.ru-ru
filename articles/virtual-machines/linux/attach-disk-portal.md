@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 162857ed1b22edf67b44cb4648607103cf733c7d
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: f4933369f20d7f39cc4718e367552bfe1d7574e8
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671853"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774341"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -100,6 +100,9 @@ dmesg | grep SCSI
 
 ### <a name="partition-a-new-disk"></a>Разбиение нового диска на разделы
 Если вы используете существующий диск, содержащий данные, перейдите к подключению диска. Если вы подключаете новый диск, разбейте его на разделы.
+
+> [!NOTE]
+> Рекомендуется использовать последние версии fdisk или частично, доступные для вашего дистрибутив.
 
 Создание разделы на диске с помощью `fdisk`. Если размер диска составляет 2 тебибайта (ТиБ) или более, необходимо использовать секционирование GPT. Его можно выполнить с помощью `parted`. Если размер диска менее 2 ТиБ, можно использовать секционирование MBR или GPT. Установите этот диск как основной диск для раздела 1 и примите остальные значения по умолчанию. В следующем примере запускается процесс `fdisk` в */dev/sdc*:
 

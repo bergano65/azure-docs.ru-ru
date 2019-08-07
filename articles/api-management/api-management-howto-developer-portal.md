@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: apimpm
-ms.openlocfilehash: d902a65c4e36ff698e486e2af899d055de1afca0
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 2756444db010e23f7114e99f474de9ce6614aaee
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638551"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68837917"
 ---
 # <a name="access-and-customize-the-new-developer-portal-in-azure-api-management"></a>Доступ и настройка нового портала разработчика в службе управления API Azure
 
@@ -77,6 +77,10 @@ ms.locfileid: "68638551"
 Цель общей доступности заключается в том, чтобы обеспечить соответствие функций на основе сценариев старому порталу. До этого момента в предварительной версии могут не быть выбраны реализованные функции.
 
 Исключениями являются *приложения* и *проблемы* со старого портала, которые не будут доступны на новом портале. Если вы используете *проблемы* на старом портале и потребуете их в новой, опубликуйте комментарий в [выделенной ошибке GitHub](https://github.com/Azure/api-management-developer-portal/issues/122).
+
+### <a name="ive-found-bugs-andor-id-like-to-request-a-feature"></a>Я нашел ошибки и (или) хотел запросить функцию.
+
+Отлично! Вы можете предоставить нам отзыв, отправить запрос на функцию или передать отчет об ошибке в [разделе проблем репозитория GitHub](https://github.com/Azure/api-management-developer-portal/issues). Мы также ценим ваши отзывы о проблемах, отмеченных `community` меткой.
 
 ### <a name="i-want-to-move-the-content-of-the-new-portal-between-environments-how-can-i-do-that-and-do-i-need-to-go-with-the-self-hosted-version"></a>Я хочу переместить содержимое нового портала между средами. Как это можно сделать и мне нужно использовать локальную версию?
 

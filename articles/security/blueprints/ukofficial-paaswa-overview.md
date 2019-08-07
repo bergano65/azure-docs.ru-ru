@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: e3ee5a0aa22d1231dca7d02a77d39e0a2b569314
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54bf4512785941ae1d09ae1436deefc032ec0037
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66753855"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780658"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -62,7 +62,7 @@ ms.locfileid: "66753855"
 - Azure Resource Manager
 - Центр безопасности Azure
 - База данных SQL Azure
-- Хранилище Azure
+- Служба хранилища Azure
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 
@@ -95,7 +95,7 @@ ms.locfileid: "66753855"
 
 [Azure Advisor](https://docs.microsoft.com/azure/advisor/advisor-overview) — это персонализированный облачный консультант, который поможет следовать рекомендациям по оптимизации развернутых служб Azure. Он анализирует конфигурацию ресурсов и данные телеметрии их использования и рекомендует решения, которые помогут повысить эффективность затрат, производительность, уровень доступности и безопасности ресурсов Azure.
 
-[Антивредоносное ПО Майкрософт](https://docs.microsoft.com/azure/security/azure-security-antimalware) предоставляет защиту в реальном времени, которая помогает обнаруживать и устранять вирусы, шпионское ПО и другие вредоносные программы. Это по умолчанию устанавливается на базовой инфраструктуре виртуальных машин PaaS и управляется фабрикой Azure прозрачно для клиента.
+[Антивредоносное ПО Майкрософт](https://docs.microsoft.com/azure/security/fundamentals/antimalware) предоставляет защиту в реальном времени, которая помогает обнаруживать и устранять вирусы, шпионское ПО и другие вредоносные программы. Это по умолчанию устанавливается в базовой инфраструктуре виртуальных машин PaaS и управляется структурой Azure прозрачно для клиента.
 
 ### <a name="paas-services-in-this-blueprint"></a>Службы PaaS, включенные в эту схему
 
@@ -125,7 +125,7 @@ ms.locfileid: "66753855"
 
 В экземпляре Базы данных Azure SQL используются следующие меры безопасности базы данных:
 
-- [правила брандмауэра уровня сервера и уровня базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) либо [конечные точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) с использованием [правил виртуальной сети](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview);
+- [правила брандмауэра уровня сервера и уровня базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) либо [конечные точки служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) с использованием [правил виртуальной сети](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview);
 - [прозрачное шифрование данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql) обеспечивает защиту Базы данных SQL Azure и хранилища данных Azure от вредоносных действий. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения.
 - [аутентификация Azure AD](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication) позволяет централизованно управлять удостоверениями пользователей базы данных и другими службами Майкрософт. Централизованное управление удостоверениями позволяет использовать единое расположение для управления пользователями и упрощает управление разрешениями.
 - использование Azure Active Directory для администрирования базы данных;
@@ -134,7 +134,7 @@ ms.locfileid: "66753855"
 - [обнаружение угроз SQL](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection);
 - [столбцы Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault);
 
-### <a name="azure-storage"></a>Хранилище Azure
+### <a name="azure-storage"></a>Служба хранилища Azure
 
 [Служба хранилища Microsoft Azure](https://azure.microsoft.com/services/storage/) является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure состоит из хранилища BLOB-объектов, хранилища файлов и хранилища очередей.
 
@@ -170,9 +170,9 @@ ms.locfileid: "66753855"
 
 #### <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-[Журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/) — это служба в Azure, которая помогает собирать и анализировать данные, создаваемые ресурсами в облачных и локальных средах.
+[Журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/) — это служба в Azure, которая помогает выполнять накопление и анализ данных, создаваемых ресурсами в облачных и локальных средах.
 
-#### <a name="azure-monitor-logs-in-this-blueprint"></a>Журналы Azure Monitor в рамках этой схемы
+#### <a name="azure-monitor-logs-in-this-blueprint"></a>Azure Monitor журналов в этом проекте
 
 - Оценка SQL
 - диагностика Key Vault;
@@ -243,7 +243,7 @@ ms.locfileid: "66753855"
 
 [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) можно реализовать как элемент управления, чтобы пользователи могли регистрировать общедоступные веб-приложения, создавать для них удостоверения, разрешать авторизацию и управлять доступом.
 
-## <a name="disclaimer"></a>Заявление об отказе
+## <a name="disclaimer"></a>Отказ от ответственности
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

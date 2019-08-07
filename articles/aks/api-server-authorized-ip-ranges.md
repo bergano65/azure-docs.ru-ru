@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 6516bbcb4ea879279812d61d9fe31f1ea4268280
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 7dcf962345a2453fca52825c4be33a439d25df54
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67616257"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740934"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительный просмотр — безопасный доступ к серверу API с помощью допустимых диапазонов IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -218,13 +218,13 @@ echo "Public IP address for the Azure Firewall instance that should be added to 
 
 Выполните команду [AZ AKS Update][az-aks-update] и укажите разрешения *--API-Server-Allowed-IP-ranges* . Эти диапазоны IP-адресов обычно являются диапазонами адресов, используемыми локальными сетями. Добавьте общедоступный IP-адрес собственного брандмауэра Azure, полученного на предыдущем шаге, например *20.42.25.196/32*.
 
-В следующем примере включается авторизация IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации: *20.42.25.196/32* (общедоступный IP-адрес брандмауэра Azure), затем *172.0.0.10/16* и *168.10.0.10/18*:
+В следующем примере включается авторизация IP-адресов сервера API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации: *20.42.25.196/32* (общедоступный IP-адрес брандмауэра Azure), затем *172.0.0.0/16* и *168.10.0.0/18*:
 
 ```azurecli-interactive
 az aks update \
     --resource-group myResourceGroup \
     --name myAKSCluster \
-    --api-server-authorized-ip-ranges 20.42.25.196/32,172.0.0.10/16,168.10.0.10/18
+    --api-server-authorized-ip-ranges 20.42.25.196/32,172.0.0.0/16,168.10.0.0/18
 ```
 
 ## <a name="update-or-disable-authorized-ip-ranges"></a>Обновление или отключение диапазонов IP-адресов с правом доступа

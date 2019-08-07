@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/31/2019
-ms.openlocfilehash: ea36f8a6a8c1db031de8f6ce2b4e3a88d73907e7
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 6c2e2c7395fcc45fe74c50beb3624eabb1d395c9
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68700331"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828028"
 ---
 # <a name="scenario-unable-to-add-nodes-to-azure-hdinsight-cluster"></a>Сценарий: Не удалось добавить узлы в кластер Azure HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "68700331"
 
 ## <a name="resolution"></a>Разрешение
 
-Используя функцию [Размер кластера](/hdinsight-scaling-best-practices.md) , вычислите количество дополнительных ядер, необходимых для кластера. Количество зависит от общего количества ядер в новых рабочих узлах. Затем выполните одно или несколько из следующих действий.
+Используя функцию [Размер кластера](../hdinsight-scaling-best-practices.md) , вычислите количество дополнительных ядер, необходимых для кластера. Количество зависит от общего количества ядер в новых рабочих узлах. Затем выполните одно или несколько из следующих действий.
 
 * Проверьте наличие доступных ядер в расположении кластера.
 

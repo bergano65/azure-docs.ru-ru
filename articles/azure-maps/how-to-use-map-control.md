@@ -1,6 +1,6 @@
 ---
-title: Приступая к работе с веб-элемента управления map в "карты Azure" | Документация Майкрософт
-description: Узнайте, как использовать клиентскую библиотеку Javascript Map Control в службе "Карты Azure".
+title: Начало работы с элементом управления Web Map в Azure Maps | Документация Майкрософт
+description: Узнайте, как использовать библиотеку JavaScript Azure Maps Map Control Client на стороне клиента.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 10/08/2018
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: aa923fa7e2d5e673e6a2db2b349e54d433d1817b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fdbd8092abcc51fc03e8b00106b7e25ec4be905
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65957270"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839375"
 ---
-# <a name="use-the-azure-maps-map-control"></a>Использование библиотеки Map Control в службе Azure Maps
+# <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
 Клиентская библиотека Javascript Map Control позволяет отображать карты и встроенные функциональные возможности службы "Карты Azure" в вашем мобильном или веб-приложении.
 
@@ -27,7 +27,7 @@ ms.locfileid: "65957270"
 
 2. Загрузите в веб-пакет SDK Azure Maps. Это можно сделать с помощью одного из двух параметров.
 
-    a. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
+    1\. Используйте размещенную на глобальном уровне версию CDN веб-пакета SDK Azure Maps, добавив конечные точки URL-адреса в таблицу стилей и источник сценария в элементе `<head>` файла.
 
     ```HTML
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
@@ -68,7 +68,7 @@ ms.locfileid: "65957270"
     </body>
     ```
 
-5. Для инициализации элемента управления картой определите новый раздел в тексте html и создайте сценарий. Передайте `id` карты `<div>` или `HTMLElement` (например, `document.getElementById('myMap')`) как первый параметр при создании экземпляра `Map` класса. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). Если вам нужно создать учетную запись или найти ключ, см. статью об [управлении учетной записью и ключами в Azure Maps](how-to-manage-account-keys.md). Параметр **language** задает язык, который используется для метки схемы и элементов управления. Полный список поддерживаемых языков см. в разделе [Поддерживаемые языки](supported-languages.md). Если используется ключ подписки для проверки подлинности.
+5. Для инициализации элемента управления картой определите новый раздел в тексте html и создайте сценарий. Передайте объект `id` `<div>` Map или `HTMLElement` (например `document.getElementById('myMap')` ,`Map` ) в качестве первого параметра при создании экземпляра класса. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). Если вам нужно создать учетную запись или найти ключ, см. статью об [управлении учетной записью и ключами в Azure Maps](how-to-manage-account-keys.md). Параметр **language** задает язык, который используется для метки схемы и элементов управления. Полный список поддерживаемых языков см. в разделе [Поддерживаемые языки](supported-languages.md). Если используется ключ подписки для проверки подлинности.
 
     ```HTML
     <script type="text/javascript">
@@ -102,7 +102,7 @@ ms.locfileid: "65957270"
     </script>
     ```
 
-    Дополнительные сведения см. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md) для получения дополнительных сведений.
+    Дополнительные сведения см. [в статье Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md) .
 
 6. При необходимости возможно добавление следующих элементов метатега в заголовок вашей страницы.
 
@@ -114,7 +114,7 @@ ms.locfileid: "65957270"
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     ```
 
-7. Окончательная сборка свой HTML-файл должен выглядеть примерно как следующий код:
+7. Все файлы HTML должны выглядеть примерно так, как в следующем коде:
 
     ```HTML
     <!DOCTYPE html>
@@ -164,12 +164,46 @@ ms.locfileid: "65957270"
     </html>
     ```
 
-8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть аналогично следующему коду:
+8. Откройте файл в веб-браузере и вы увидите готовую для просмотра карту. Он должен выглядеть, как в следующем коде:
 
-    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">См. в разделе пера <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>способ использования элемента управления картой</a> по "карты Azure" (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+    <iframe height="700" style="width: 100%;" scrolling="no" title="Использование элемента управления картой" src="//codepen.io/azuremaps/embed/yZpEYL/?height=557&theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">См. сведения <a href='https://codepen.io/azuremaps/pen/yZpEYL/'>об использовании элемента управления Map</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
     </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="localizing-the-map"></a>Локализация схемы
+
+Azure Maps предоставляет два разных способа настройки языкового и регионального представления для схемы. Первый вариант — Добавить эту информацию в глобальное `atlas` пространство имен, что приведет к тому, что все экземпляры элементов управления картой в приложении будут по умолчанию иметь эти параметры. Следующий пример устанавливает для языка значение французский (fr-FR) и региональное представление "Auto":
+
+```javascript
+atlas.setLanguage('fr-FR');
+atlas.setView('auto');
+```
+
+Второй вариант — передать эту информацию в параметры карты при загрузке карты следующим образом:
+
+```javascript
+map = new atlas.Map('myMap', {
+    language: 'fr-FR',
+    view: 'auto',
+
+    authOptions: {
+        authType: 'aad',
+        clientId: '<Your AAD Client Id>',
+        aadAppId: '<Your AAD App Id>',
+        aadTenant: 'msft.ccsctp.net'
+    }
+});
+```
+
+> [!Note]
+> С помощью веб-пакета SDK можно загрузить несколько экземпляров карт на одной странице с разными языками и региональными параметрами. Кроме того, эти параметры можно обновить после загрузки схемы с помощью `setStyle` функции Map. 
+
+Ниже приведен пример Azure Maps с языком, для которого задано значение "fr-FR", а для регионального представления задано значение "Авто".
+
+![Изображение схемы, показывающее метки на французском языке](./media/how-to-use-map-control/websdk-localization.png)
+
+Полный список поддерживаемых языков и региональных представлений приведен [здесь](supported-languages.md).
+
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как создавать и взаимодействовать с картой:
 

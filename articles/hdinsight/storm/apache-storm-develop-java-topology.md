@@ -9,32 +9,32 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 89cee70c9d7c5dffdb3078756cf4fa94d7cd1a9a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3cdf2255208069e20f5a230cc2acd82a628fdcfd
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078220"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840209"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
-Узнайте, как создать топологию на основе Java для [Apache Storm](https://storm.apache.org/). Здесь создать топологию Storm, реализующую приложение подсчета слов. Для сборки и упаковки проекта вы будете использовать [Apache Maven](https://maven.apache.org/). Затем вы узнаете, как определить топологию с помощью [Apache Storm Flux](https://storm.apache.org/releases/2.0.0/flux.html) framework.
+Узнайте, как создать топологию на основе Java для [Apache Storm](https://storm.apache.org/). Здесь создается топология, реализующая приложение подсчета слов. Для сборки и упаковки проекта вы будете использовать [Apache Maven](https://maven.apache.org/). Затем вы узнаете, как определить топологию с помощью платформы [Apache Storm Flux](https://storm.apache.org/releases/2.0.0/flux.html) .
 
 После выполнения действий, описанных в этом документе, вы сможете развернуть топологию в Apache Storm в HDInsight.
 
 > [!NOTE]  
 > Полная версия примеров топологии Storm, созданных в этом документе, доступна по адресу [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 
 * Средство [Apache Maven](https://maven.apache.org/download.cgi), [установленное](https://maven.apache.org/install.html) согласно инструкций Apache.  Maven — система сборки проектов Java.
 
 ## <a name="test-environment"></a>Тестовая среда
-Среда, используемая для этой статьи была на компьютере под управлением Windows 10.  Команды, которые выполнялись в командной строке, и различные файлы были изменены в блокноте.
+Среда, используемая для этой статьи, была компьютер под Windows 10.  Команды были выполнены в командной строке, а различные файлы были изменены с помощью блокнота.
 
-Из командной строки введите ниже команды для создания рабочей среды:
+В командной строке введите приведенные ниже команды, чтобы создать рабочую среду.
 
 ```cmd
 mkdir C:\HDI
@@ -52,15 +52,15 @@ cd WordCount
 mkdir resources
 ```
 
-Эта команда создает каталог с именем `WordCount` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет текущего рабочего каталога для `WordCount`. Третья команда создает новый каталог, `resources`, который будет использоваться позже.  Каталог `WordCount` содержит следующие элементы:
+Эта команда создает каталог с именем `WordCount` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет текущий рабочий каталог на `WordCount`. Третья команда создает новый каталог, `resources`который будет использоваться позже.  Каталог `WordCount` содержит следующие элементы:
 
-* `pom.xml`: содержит параметры для проекта Maven;
-* `src\main\java\com\microsoft\example`: содержит код приложения;
-* `src\test\java\com\microsoft\example`: содержит тесты для приложения.  
+* `pom.xml`. содержит параметры для проекта Maven;
+* `src\main\java\com\microsoft\example`. содержит код приложения;
+* `src\test\java\com\microsoft\example`. содержит тесты для приложения.  
 
 ### <a name="remove-the-generated-example-code"></a>Удаление созданного примера кода
 
-Удалить созданные тесты и файлы приложения `AppTest.java`, и `App.java` , введя следующую команду:
+Удалите созданные файлы `AppTest.java`тестов и приложений, а затем `App.java` введите приведенные ниже команды.
 
 ```cmd
 DEL src\main\java\com\microsoft\example\App.java
@@ -118,7 +118,7 @@ notepad pom.xml
 
 ## <a name="add-properties"></a>Добавление свойств
 
-Maven позволяет определить значения на уровне проекта, которые называются свойствами. В `pom.xml`, добавьте следующий текст после `</repositories>` строки:
+Maven позволяет определить значения на уровне проекта, которые называются свойствами. В `pom.xml`добавьте следующий текст `</repositories>` после строки:
 
 ```xml
 <properties>
@@ -134,7 +134,7 @@ Maven позволяет определить значения на уровне
 
 ## <a name="add-dependencies"></a>Добавление зависимостей
 
-Добавьте зависимость для компонентов Storm. В `pom.xml`, добавьте следующий текст в `<dependencies>` разделе:
+Добавьте зависимость для компонентов Storm. В `pom.xml`добавьте в `<dependencies>` раздел следующий текст:
 
 ```xml
 <dependency>
@@ -153,7 +153,7 @@ Maven позволяет определить значения на уровне
 
 ## <a name="build-configuration"></a>Конфигурация построения
 
-Подключаемые модули Maven позволяют настроить этапы сборки проекта. Например, способ компиляции проекта или его упаковки в JAR-файл. В `pom.xml`, добавьте следующий код непосредственно над `</project>` строки.
+Подключаемые модули Maven позволяют настроить этапы сборки проекта. Например, способ компиляции проекта или его упаковки в JAR-файл. В `pom.xml`добавьте следующий текст непосредственно `</project>` над строкой.
 
 ```xml
 <build>
@@ -164,7 +164,7 @@ Maven позволяет определить значения на уровне
 </build>
 ```
 
-Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки. Для получения полной справки по `pom.xml` файл, см. в разделе [ https://maven.apache.org/pom.html ](https://maven.apache.org/pom.html).
+Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки. Полную ссылку `pom.xml` на файл см. в разделе [https://maven.apache.org/pom.html](https://maven.apache.org/pom.html).
 
 ### <a name="add-plug-ins"></a>Добавление подключаемых модулей
 
@@ -195,9 +195,9 @@ Maven позволяет определить значения на уровне
     </plugin>
     ```
 
-* **Подключаемый модуль Apache Maven Compiler**
+* **Подключаемый модуль компилятора Apache Maven**
 
-    Другим полезным подключаемым модулем является  [Apache Maven Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/), который используется для изменения параметров компиляции. Измените версию Java, используемую Maven для исходной и целевой среды для вашего приложения.
+    Другим полезным подключаемым модулем является  [Apache Maven Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/), который используется для изменения параметров компиляции. Измените версию Java, используемую Maven для исходного и целевого приложения.
     
   * Для HDInsight __3.4 или более ранней версии__ задайте версию __1.7__ в качестве исходной и целевой версий Java.
     
@@ -219,7 +219,7 @@ Maven позволяет определить значения на уровне
 
 ### <a name="configure-resources"></a>Настройка ресурсов
 
-Раздел ресурсов позволяет включать не связанные с кодом ресурсы, такие как файлы конфигурации, необходимые для компонентов топологии. Например, добавьте следующий текст в `<resources>` раздел `pom.xml` файл.
+Раздел ресурсов позволяет включать не связанные с кодом ресурсы, такие как файлы конфигурации, необходимые для компонентов топологии. В этом примере добавьте следующий текст в `<resources>` раздел `pom.xml` файла.
 
 ```xml
 <resource>
@@ -253,7 +253,7 @@ Maven позволяет определить значения на уровне
 notepad src\main\java\com\microsoft\example\RandomSentenceSpout.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код java в новый файл.  Закройте файл.
+Затем скопируйте и вставьте приведенный ниже код Java в новый файл.  Затем закройте файл.
 
 ```java
 package com.microsoft.example;
@@ -341,7 +341,7 @@ public class RandomSentenceSpout extends BaseRichSpout {
 notepad src\main\java\com\microsoft\example\SplitSentence.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код java в новый файл.  Закройте файл.
+Затем скопируйте и вставьте приведенный ниже код Java в новый файл.  Затем закройте файл.
 
 ```java
 package com.microsoft.example;
@@ -398,7 +398,7 @@ public class SplitSentence extends BaseBasicBolt {
 notepad src\main\java\com\microsoft\example\WordCount.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код java в новый файл.  Закройте файл.
+Затем скопируйте и вставьте приведенный ниже код Java в новый файл.  Затем закройте файл.
 
 ```java
 package com.microsoft.example;
@@ -489,13 +489,13 @@ public class WordCount extends BaseBasicBolt {
 
 ![диаграмма, показывающая упорядочение воронок и сит](./media/apache-storm-develop-java-topology/wordcount-topology.png)
 
-Для реализации топологии, введите следующую команду, чтобы создать и открыть новый файл `WordCountTopology.java`:
+Чтобы реализовать топологию, введите следующую команду, чтобы создать и открыть новый файл `WordCountTopology.java`:
 
 ```cmd
 notepad src\main\java\com\microsoft\example\WordCountTopology.java
 ```
 
-Затем скопируйте и вставьте приведенный ниже код java в новый файл.  Закройте файл.
+Затем скопируйте и вставьте приведенный ниже код Java в новый файл.  Затем закройте файл.
 
 ```java
 package com.microsoft.example;
@@ -561,13 +561,13 @@ public class WordCountTopology {
 
 ### <a name="configure-logging"></a>Настройка журнала
 
-Storm использует [Apache Log4j 2](https://logging.apache.org/log4j/2.x/) для записи информации в журнал. Если не настроить ведение журналов, то топология будет выдавать диагностические сведения. Чтобы управлять записываемыми, создайте файл с именем `log4j2.xml` в `resources` каталог, введя следующую команду:
+Storm использует [Apache Log4j 2](https://logging.apache.org/log4j/2.x/) для записи информации в журнал. Если не настроить ведение журналов, то топология будет выдавать диагностические сведения. Чтобы управлять ведением журнала, создайте файл с именем `log4j2.xml` `resources` в каталоге, введя следующую команду:
 
 ```cmd
 notepad resources\log4j2.xml
 ```
 
-Затем скопируйте и вставьте приведенный ниже текст XML в новый файл.  Закройте файл.
+Затем скопируйте и вставьте приведенный ниже XML-текст в новый файл.  Затем закройте файл.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -625,12 +625,12 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
 Файл YAML определяет компоненты для топологии и поток данных между ними. Файл YAML можно добавить как часть JAR-файла или можно использовать внешний файл YAML.
 
-Дополнительные сведения о платформе Flux см. [здесь (https://storm.apache.org/releases/1.0.6/flux.html)](https://storm.apache.org/releases/1.0.6/flux.html).
+Дополнительные сведения о платформе Flux см. [здесь (https://storm.apache.org/releases/current/flux.html)](https://storm.apache.org/releases/current/flux.html).
 
 > [!WARNING]  
 > Из-за [ошибки (https://issues.apache.org/jira/browse/STORM-2055)](https://issues.apache.org/jira/browse/STORM-2055)в Storm 1.0.1 может потребоваться установить [среду разработки Storm ](https://storm.apache.org/releases/current/Setting-up-development-environment.html) для локального запуска топологий Flux.
 
-1. Ранее `WordCountTopology.java` определял топологию, но с Flux не нужен. Удалите файл с помощью следующей команды:
+1. Ранее была `WordCountTopology.java` определена топология, но она не требуется для Flux. Удалите файл с помощью следующей команды:
 
     ```cmd
     DEL src\main\java\com\microsoft\example\WordCountTopology.java
@@ -642,7 +642,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
     notepad resources\topology.yaml
     ```
 
-    Затем скопируйте и вставьте приведенный ниже текст в новый файл.  Закройте файл.
+    Затем скопируйте и вставьте приведенный ниже текст в новый файл.  Затем закройте файл.
 
     ```yaml
     name: "wordcount"       # friendly name for the topology
@@ -681,7 +681,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
         args: ["word"]           # field(s) to group on
     ```
 
-3. Введите следующую команду, чтобы открыть `pom.xml` чтобы внести описанные ниже изменения:
+3. Введите следующую команду для открытия `pom.xml` , чтобы внести описанные ниже изменения.
 
     ```cmd
     notepad pom.xml
@@ -739,9 +739,9 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
         </plugin>
         ```
 
-   * В **подключаемый модуль exec maven** `<configuration>` измените значение для `<mainClass>` из `${storm.topology}` для `org.apache.storm.flux.Flux`. Таким образом, Flux сможет обрабатывать выполнение топологии при ее локальном запуске в среде разработки.
+   * В разделе **exec-maven-plugin** `<configuration>` `<mainClass>` измените значение параметра с `${storm.topology}` на `org.apache.storm.flux.Flux`. Таким образом, Flux сможет обрабатывать выполнение топологии при ее локальном запуске в среде разработки.
 
-   * В `<resources>` разделе, добавьте следующий код в `<includes>`. Он включает файл YAML, который определяет топологию как часть проекта.
+   * В разделе добавьте следующий элемент в `<includes>`. `<resources>` Он включает файл YAML, который определяет топологию как часть проекта.
 
         ```xml
         <include>topology.yaml</include>
@@ -749,7 +749,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
 ## <a name="test-the-flux-topology-locally"></a>Локальная проверка топологии Flux
 
-1. Введите следующую команду, чтобы скомпилировать и выполните топологию Flux с помощью Maven:
+1. Введите следующую команду, чтобы скомпилировать и выполнить топологию Flux с помощью Maven:
 
     ```cmd
     mvn compile exec:java -Dexec.args="--local -R /topology.yaml"
@@ -778,15 +778,15 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
     Пакеты со сведениями журналов отправляются раз в 10 секунд.
 
-2. Создание новой топологии yaml-файл из проекта.
+2. Создайте новую топологию YAML из проекта.
  
-    a. Введите следующую команду, чтобы открыть `topology.xml`:
+    1\. Введите следующую команду, чтобы открыть `topology.xml`:
 
     ```cmd
     notepad resources\topology.yaml
     ```
 
-    2\. Найдите следующий раздел и измените значение свойства `10` для `5`. Это изменит интервал между отправкой пакетов с данными о количестве слов с 10 до 5 секунд.  
+    2\. Найдите следующий раздел и измените значение `10` на. `5` Это изменит интервал между отправкой пакетов с данными о количестве слов с 10 до 5 секунд.  
 
     ```yaml
     - id: "counter-bolt"
@@ -796,7 +796,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
       parallelism: 1  
     ```  
 
-    c. Сохраните файл как `newtopology.yaml`.
+    В. Сохранить файл как `newtopology.yaml`.
 
 3. Чтобы запустить топологию, введите следующую команду:
 
@@ -810,9 +810,9 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
     storm jar target/WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local resources/newtopology.yaml
     ```
 
-     Эта команда использует `newtopology.yaml` качестве определения топологии. Так как параметр `compile` не добавлен, Maven использует версию проекта, созданного на предыдущих шагах.
+     Эта команда использует в `newtopology.yaml` качестве определения топологии. Так как параметр `compile` не добавлен, Maven использует версию проекта, созданного на предыдущих шагах.
 
-    После запуска топологии вы должны заметить, что время между отправлением пакетов изменилось в соответствии с значением в `newtopology.yaml`. Таким образом, вы видите, что можно изменить конфигурацию в файле YAML, не выполняя повторную компиляцию топологии.
+    После запуска топологии следует заметить, что время между выпущенными пакетами изменилось, чтобы отразить значение в `newtopology.yaml`. Таким образом, вы видите, что можно изменить конфигурацию в файле YAML, не выполняя повторную компиляцию топологии.
 
 Дополнительные сведения об этих и других возможностях платформы Flux см. в статье, посвященной [Flux (https://storm.apache.org/releases/current/flux.html)](https://storm.apache.org/releases/current/flux.html).
 

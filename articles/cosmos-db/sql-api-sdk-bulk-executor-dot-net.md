@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB — API .NET для пакетного исполнителя, ресурсы SDK &
-description: Сведения об API и пакетах SDK .NET для библиотеки Bulk Executor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для Bulk Executor в Azure Cosmos DB.
+description: Сведения об API и пакетах SDK .NET для библиотеки BulkExecutor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для BulkExecutor в Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 098cc3d76fff69b6b213514ac85835e7474b6233
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 989d52e773ed01a8fd1f4d383c42d7628e196a60
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637724"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814718"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека NET выполнителя .NET: информация о скачивании 
 
@@ -37,7 +37,7 @@ ms.locfileid: "68637724"
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Библиотека BulkExecutor в GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Документация по API**|[Справочная документация по API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
-|**Начало работы**|[Начало работы с пакетом SDK для .NET для библиотеки Bulk Executor](bulk-executor-dot-net.md)|
+|**Начало работы**|[Начало работы с пакетом SDK для .NET для библиотеки массового исполнителя](bulk-executor-dot-net.md)|
 | **Текущая поддерживаемая платформа**| Microsoft .NET Framework 4.5.2, 4.6.1 и .NET Standard 2.0 |
 
 ## <a name="release-notes"></a>Заметки о выпуске

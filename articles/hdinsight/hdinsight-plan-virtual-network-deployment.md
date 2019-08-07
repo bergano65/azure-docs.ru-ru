@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 9906fe5de9c24f1b1a8c3f713fa772e56ed4e13f
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 135855ee33f783e85b398c7f9716c2c897633de9
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68441963"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779543"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -117,7 +117,7 @@ Azure предоставляет разрешение имен для служб
 
 * любые ресурсы, доступные в Интернете; например, microsoft.com, windowsupdate.com;
 
-* любой ресурс, который находится в той же виртуальной сети Azure, с помощью __внутреннего DNS-имени__ ресурса; например, если используется разрешение имен по умолчанию, ниже указаны примеры внутренних DNS-имен, которые назначаются рабочим узлам HDInsight:
+* любой ресурс, который находится в той же виртуальной сети Azure, с помощью __внутреннего DNS-имени__ ресурса; Например, при использовании разрешения имен по умолчанию ниже приведены примеры внутренних DNS-имен, назначенных рабочим узлам HDInsight.
 
   * wn0-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net;
   * wn2-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net.

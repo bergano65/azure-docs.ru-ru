@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
-ms.openlocfilehash: a7fcd4deb0446577af310ff5380ffddf05ba87be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2cf43f8a235b112cfcf1fc6c9dba626a5a0c9b7e
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64719823"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828403"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "64719823"
 5. Включите на гостевой виртуальной машине инструментарий управления Windows (WMI) и проверьте, что он доступен.
    - Узнайте о [базовом тестировании инструментария WMI](https://blogs.technet.microsoft.com/askperf/2007/06/22/basic-wmi-testing/).
    - Узнайте об [устранении неполадок с помощью инструментария WMI](https://aka.ms/WMiTshooting).
-   - [Устранение неполадок](https://technet.microsoft.com/library/ff406382.aspx#H22) неполадок сценариев WMI и служб.
+   - [Устранение](https://technet.microsoft.com/library/ff406382.aspx#H22) неполадок со сценариями и службами WMI.
 6. Проверьте, запущена ли на гостевой виртуальной машине последняя версия служб Integration Services.
     - [Убедитесь](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services), что у вас установлена последняя версия.
     - [Постоянно обновляйте](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services.
@@ -129,7 +129,7 @@ ms.locfileid: "64719823"
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно проверить из сеанса PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **et-VMIntegrationService - VMName\<VMName >-Name VSS** эту информацию можно также получить, войдя на гостевую виртуальную Машину. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Это можно сделать в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService\<-VMName VMName >-Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки

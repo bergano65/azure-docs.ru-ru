@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 02/28/2019
 ms.author: cshoe
-ms.openlocfilehash: 62d9319ae292c9f4ae22f8fcd83bdd8799dc6617
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: b4622321dc25025eb2f7752755490eb5bc105069
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480274"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741784"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
@@ -30,14 +30,14 @@ ms.locfileid: "67480274"
 
 ## <a name="packages---functions-2x"></a>Пакеты — Функции 2.x
 
-Служба SignalR привязки доступны в [Microsoft.Azure.WebJobs.Extensions.SignalRService](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SignalRService) пакет NuGet, версия 1.*. Исходный код для пакета находится в репозитории GitHub [azure-functions-signalrservice-extension](https://github.com/Azure/azure-functions-signalrservice-extension).
+Привязки службы SignalR предоставляются в пакете NuGet [Microsoft. Azure. веб-задания. Extensions. сигналрсервице](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SignalRService) , версия 1. *. Исходный код для пакета находится в репозитории GitHub [azure-functions-signalrservice-extension](https://github.com/Azure/azure-functions-signalrservice-extension).
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2-manual-portal.md)]
 
 
 ### <a name="java-annotations"></a>Заметки Java
 
-Использование SignalR службе заметок в функциях Java, необходимо добавить зависимость для *azure — функции java библиотека signalr* артефакта (версия 1.0 или более поздней версии) в pom.xml.
+Чтобы использовать заметки службы SignalR в функциях Java, необходимо добавить зависимость к артефакту *Azure-functions-Java-Library-SignalR* (версии 1,0 или более поздней) в файл POM. XML.
 
 ```xml
 <dependency>
@@ -50,9 +50,9 @@ ms.locfileid: "67480274"
 > [!NOTE]
 > Чтобы использовать привязку Службы SignalR в Java, версия основных инструментов службы "Функции Azure" должна быть 2.4.419 или более поздней (версия узла 2.0.12332).
 
-## <a name="using-signalr-service-with-azure-functions"></a>С помощью службы SignalR с помощью функций Azure
+## <a name="using-signalr-service-with-azure-functions"></a>Использование службы SignalR с функциями Azure
 
-Дополнительные сведения о том, как настроить и совместное использование службы SignalR и функций Azure см. [разработку функций Azure и конфигурации с помощью службы Azure SignalR](../azure-signalr/signalr-concept-serverless-development-config.md).
+Дополнительные сведения о настройке и использовании службы SignalR и функций Azure см. в статье [Разработка и Настройка функций Azure с помощью службы Azure SignalR](../azure-signalr/signalr-concept-serverless-development-config.md).
 
 ## <a name="signalr-connection-info-input-binding"></a>Входная привязка сведений о подключении SignalR
 
@@ -62,11 +62,11 @@ ms.locfileid: "67480274"
 
 * [2.x C#](#2x-c-input-examples)
 * [2.x JavaScript](#2x-javascript-input-examples)
-* [Java версии 2.x](#2x-java-input-examples)
+* [2. x Java](#2x-java-input-examples)
 
-Дополнительные сведения об использовании этой привязки для создания «согласование» функции, которые могут использоваться клиентом SignalR SDK см. в разделе [статье разработки и настройки функций Azure](../azure-signalr/signalr-concept-serverless-development-config.md) в основные понятия службы SignalR документация.
+Дополнительные сведения о том, как эта привязка используется для создания функции "Negotiate", которая может использоваться клиентским пакетом SDK для SignalR, см. в [статье о разработке и настройке функций Azure](../azure-signalr/signalr-concept-serverless-development-config.md) в документации по основным понятиям службы SignalR.
 
-### <a name="2x-c-input-examples"></a>2.x C# ввода примеры
+### <a name="2x-c-input-examples"></a>Примеры входных C# данных 2. x
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), получающая сведения о подключении SignalR с помощью входной привязки и возвращающая их по протоколу HTTP.
 
@@ -82,7 +82,7 @@ public static SignalRConnectionInfo Negotiate(
 
 #### <a name="authenticated-tokens"></a>Прошедшие проверку подлинности маркеры
 
-Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Можно легко добавить в приложение функцию с помощью проверки подлинности [проверку подлинности службы приложений](../app-service/overview-authentication-authorization.md).
+Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Вы можете легко добавить проверку подлинности в приложение-функцию с помощью [проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md).
 
 Проверка подлинности службы приложений задает заголовки HTTP `x-ms-client-principal-id` и `x-ms-client-principal-name`, содержащие имя и идентификатор субъекта клиента прошедшего проверку подлинности пользователя соответственно. В качестве значения свойства `UserId` привязки можно задать один из заголовков с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}`. 
 
@@ -99,7 +99,7 @@ public static SignalRConnectionInfo Negotiate(
 }
 ```
 
-### <a name="2x-javascript-input-examples"></a>примеры входных JavaScript 2.x
+### <a name="2x-javascript-input-examples"></a>Примеры входных данных JavaScript в 2. x
 
 В следующем примере показана входная привязка для сведений о подключении SignalR в файле *function.json* и [функция JavaScript](functions-reference-node.md), использующая привязку для возврата сведений о подключении.
 
@@ -127,7 +127,7 @@ module.exports = async function (context, req, connectionInfo) {
 
 #### <a name="authenticated-tokens"></a>Прошедшие проверку подлинности маркеры
 
-Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Можно легко добавить в приложение функцию с помощью проверки подлинности [проверку подлинности службы приложений](../app-service/overview-authentication-authorization.md).
+Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Вы можете легко добавить проверку подлинности в приложение-функцию с помощью [проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md).
 
 Проверка подлинности службы приложений задает заголовки HTTP `x-ms-client-principal-id` и `x-ms-client-principal-name`, содержащие имя и идентификатор субъекта клиента прошедшего проверку подлинности пользователя соответственно. В качестве значения свойства `userId` привязки можно задать один из заголовков с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}`. 
 
@@ -154,9 +154,9 @@ module.exports = async function (context, req, connectionInfo) {
 };
 ```
 
-### <a name="2x-java-input-examples"></a>примеры входных Java 2.x
+### <a name="2x-java-input-examples"></a>2. x входные Примеры Java
 
-В следующем примере показан [функции Java](functions-reference-java.md) , получает сведения о подключении SignalR с помощью входной привязки и возвращает его по протоколу HTTP.
+В следующем примере показана [функция Java](functions-reference-java.md) , которая получает сведения о соединении SignalR с помощью входной привязки и возвращает ее по протоколу HTTP.
 
 ```java
 @FunctionName("negotiate")
@@ -174,7 +174,7 @@ public SignalRConnectionInfo negotiate(
 
 #### <a name="authenticated-tokens"></a>Прошедшие проверку подлинности маркеры
 
-Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Можно легко добавить в приложение функцию с помощью проверки подлинности [проверку подлинности службы приложений](../app-service/overview-authentication-authorization.md).
+Если функцию активирует прошедший проверку подлинности клиент, вы можете добавить утверждение идентификатора пользователя для созданного маркера. Вы можете легко добавить проверку подлинности в приложение-функцию с помощью [проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md).
 
 Проверка подлинности службы приложений задает заголовки HTTP `x-ms-client-principal-id` и `x-ms-client-principal-name`, содержащие имя и идентификатор субъекта клиента прошедшего проверку подлинности пользователя соответственно. В качестве значения свойства `UserId` привязки можно задать один из заголовков с помощью [выражения привязки](./functions-bindings-expressions-patterns.md): `{headers.x-ms-client-principal-id}` или `{headers.x-ms-client-principal-name}`.
 
@@ -203,9 +203,9 @@ public SignalRConnectionInfo negotiate(
 
 * [2.x C#](#2x-c-send-message-output-examples)
 * [2.x JavaScript](#2x-javascript-send-message-output-examples)
-* [Java версии 2.x](#2x-java-send-message-output-examples)
+* [2. x Java](#2x-java-send-message-output-examples)
 
-### <a name="2x-c-send-message-output-examples"></a>2.x C# отправлять примеры выходных данных сообщений
+### <a name="2x-c-send-message-output-examples"></a>Примеры вывода сообщений C# 2. x для отправки
 
 #### <a name="broadcast-to-all-clients"></a>Широковещательная передача для всех клиентов
 
@@ -249,7 +249,7 @@ public static Task SendMessage(
 
 #### <a name="send-to-a-group"></a>Отправить в группу
 
-Сообщения можно отправлять только для подключений, которые были добавлены в группу, задав `GroupName` свойство сообщения SignalR.
+Сообщение можно отправить только для соединений, добавленных в группу путем задания `GroupName` свойства сообщения SignalR.
 
 ```cs
 [FunctionName("SendMessage")]
@@ -268,26 +268,27 @@ public static Task SendMessage(
 }
 ```
 
-### <a name="2x-c-group-management-output-examples"></a>2.x C# примеры выходные группы управления
+### <a name="2x-c-group-management-output-examples"></a>Примеры выходных данных C# управления группой 2. x
 
-Служба SignalR пользователи могут быть добавлены в группы. Затем, сообщения могут отправляться в группу. Можно использовать `SignalRGroupAction` класса `SignalR` выходная привязка для пользователя членства в группе управления.
+Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. Для управления членством `SignalRGroupAction` пользователя в группе `SignalR` можно использовать класс с выходной привязкой.
 
 #### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
 ```csharp
 [FunctionName("addToGroup")]
 public static Task AddToGroup(
     [HttpTrigger(AuthorizationLevel.Anonymous, "post")]HttpRequest req,
-    string userId,
+    ClaimsPrincipal claimsPrincipal,
     [SignalR(HubName = "chat")]
         IAsyncCollector<SignalRGroupAction> signalRGroupActions)
 {
+    var userIdClaim = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier);
     return signalRGroupActions.AddAsync(
         new SignalRGroupAction
         {
-            UserId = userId,
+            UserId = userIdClaim.Value,
             GroupName = "myGroup",
             Action = GroupAction.Add
         });
@@ -296,27 +297,31 @@ public static Task AddToGroup(
 
 #### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
 ```csharp
 [FunctionName("removeFromGroup")]
 public static Task RemoveFromGroup(
     [HttpTrigger(AuthorizationLevel.Anonymous, "post")]HttpRequest req,
-    string userId,
+    ClaimsPrincipal claimsPrincipal,
     [SignalR(HubName = "chat")]
         IAsyncCollector<SignalRGroupAction> signalRGroupActions)
 {
+    var userIdClaim = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier);
     return signalRGroupActions.AddAsync(
         new SignalRGroupAction
         {
-            UserId = userId,
+            UserId = userIdClaim.Value,
             GroupName = "myGroup",
             Action = GroupAction.Remove
         });
 }
 ```
 
-### <a name="2x-javascript-send-message-output-examples"></a>Примеры вывода сообщения для отправки 2.x JavaScript
+> [!NOTE]
+> Чтобы получить `ClaimsPrincipal` правильную привязку, необходимо настроить параметры проверки подлинности в функциях Azure.
+
+### <a name="2x-javascript-send-message-output-examples"></a>Примеры выходных данных сообщения об отправке для JavaScript 2. x
 
 #### <a name="broadcast-to-all-clients"></a>Широковещательная передача для всех клиентов
 
@@ -366,7 +371,7 @@ module.exports = async function (context, req) {
 
 #### <a name="send-to-a-group"></a>Отправить в группу
 
-Сообщения можно отправлять только для подключений, которые были добавлены в группу, задав `groupName` свойство сообщения SignalR.
+Сообщение можно отправить только для соединений, добавленных в группу путем задания `groupName` свойства сообщения SignalR.
 
 Файл *function.json* остается без изменений. Ниже показан код JavaScript.
 
@@ -381,15 +386,15 @@ module.exports = async function (context, req) {
 };
 ```
 
-### <a name="2x-javascript-group-management-output-examples"></a>Примеры вывода 2.x JavaScript группы управления
+### <a name="2x-javascript-group-management-output-examples"></a>2. x примеры выходных данных для управления группами JavaScript
 
-Служба SignalR пользователи могут быть добавлены в группы. Затем, сообщения могут отправляться в группу. Можно использовать `SignalR` выходная привязка для пользователя членства в группе управления.
+Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. `SignalR` Выходную привязку можно использовать для управления членством пользователя в группе.
 
 #### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
-*Файл Function.JSON*
+*Function. JSON*
 
 ```json
 {
@@ -434,9 +439,9 @@ module.exports = async function (context, req) {
 
 #### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
-*Файл Function.JSON*
+*Function. JSON*
 
 ```json
 {
@@ -479,11 +484,11 @@ module.exports = async function (context, req) {
 };
 ```
 
-### <a name="2x-java-send-message-output-examples"></a>Примеры вывода сообщения для отправки 2.x Java
+### <a name="2x-java-send-message-output-examples"></a>2. x. примеры выходных данных отправки сообщений Java
 
 #### <a name="broadcast-to-all-clients"></a>Широковещательная передача для всех клиентов
 
-В следующем примере показан [функции Java](functions-reference-java.md) , отправляет сообщения с помощью выходной привязки для всех подключенных клиентов. `target` — это имя метода, вызываемого для каждого клиента. Свойство `arguments` представляет собой пустой массив или массив с несколькими объектами, передаваемый в метод клиента.
+В следующем примере показана [функция Java](functions-reference-java.md) , которая отправляет сообщение, используя выходную привязку для всех подключенных клиентов. `target` — это имя метода, вызываемого для каждого клиента. Свойство `arguments` представляет собой пустой массив или массив с несколькими объектами, передаваемый в метод клиента.
 
 ```java
 @FunctionName("sendMessage")
@@ -524,7 +529,7 @@ public SignalRMessage sendMessage(
 
 #### <a name="send-to-a-group"></a>Отправить в группу
 
-Сообщения можно отправлять только для подключений, которые были добавлены в группу, задав `groupName` свойство сообщения SignalR.
+Сообщение можно отправить только для соединений, добавленных в группу путем задания `groupName` свойства сообщения SignalR.
 
 ```java
 @FunctionName("sendMessage")
@@ -543,13 +548,13 @@ public SignalRMessage sendMessage(
 }
 ```
 
-### <a name="2x-java-group-management-output-examples"></a>Примеры вывода 2.x Управление группами Java
+### <a name="2x-java-group-management-output-examples"></a>2. x. примеры выходных данных для управления группами Java
 
-Служба SignalR пользователи могут быть добавлены в группы. Затем, сообщения могут отправляться в группу. Можно использовать `SignalRGroupAction` класса `SignalROutput` выходная привязка для пользователя членства в группе управления.
+Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. Для управления членством `SignalRGroupAction` пользователя в группе `SignalROutput` можно использовать класс с выходной привязкой.
 
 #### <a name="add-user-to-a-group"></a>Добавление пользователя в группу
 
-Следующий пример добавляет пользователя в группу.
+В следующем примере пользователь добавляется в группу.
 
 ```java
 @FunctionName("addToGroup")
@@ -571,7 +576,7 @@ public SignalRGroupAction addToGroup(
 
 #### <a name="remove-user-from-a-group"></a>Удаление пользователя из группы
 
-Следующий пример удаляет пользователя из группы.
+В следующем примере пользователь удаляется из группы.
 
 ```java
 @FunctionName("removeFromGroup")
@@ -591,7 +596,7 @@ public SignalRGroupAction removeFromGroup(
 }
 ```
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 
@@ -620,7 +625,7 @@ public SignalRGroupAction removeFromGroup(
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

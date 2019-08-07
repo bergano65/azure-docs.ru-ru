@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: rajanaki
-ms.openlocfilehash: 305ff610c0f8962f2b50789d8af0a5f6e2fbf046
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: e06cd77a1d46208fe0f7aa166be3ccd3b9b7dbb4
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717378"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828601"
 ---
 # <a name="service-updates-in-site-recovery"></a>Обновления службы в Site Recovery
 
@@ -72,7 +72,7 @@ Site Recovery уведомляет вас о просроченных компо
 
 1. Перед обновлением операционных систем и версий ядра убедитесь, что Целевая версия поддерживается Site Recovery. 
 
-    - Поддержка [виртуальных машин Azure](/azure-to-azure-support-matrix.md#replicated-machine-operating-systems) .
+    - Поддержка [виртуальных машин Azure](azure-to-azure-support-matrix.md#replicated-machine-operating-systems) .
     - Поддержка [VMware или физического сервера](vmware-physical-azure-support-matrix.md#replicated-machines)
     - Поддержка [Hyper-V](hyper-v-azure-support-matrix.md#replicated-vms) .
 2. Ознакомьтесь с [доступными обновлениями](site-recovery-whats-new.md) , чтобы узнать, что нужно обновить.

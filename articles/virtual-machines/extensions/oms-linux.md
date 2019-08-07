@@ -13,67 +13,38 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/01/2019
+ms.date: 08/06/2019
 ms.author: roiyz
-ms.openlocfilehash: 7d8192a3b6ff732481a4d48f6e188b4bb3989cda
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a0c4b6333cc8348959a679a81343f2479078694b
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705934"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828165"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor для Linux
 
 ## <a name="overview"></a>Обзор
 
-Журналы Azure Monitor предоставляет возможности исправления наблюдения, оповещений и предупреждений для облачных и локальных ресурсов. Расширение виртуальной машины агента Log Analytics для Linux предоставляет и поддерживает корпорация Майкрософт. Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. В этом документе описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины Azure Monitor для Linux.
+Журналы Azure Monitor предоставляют возможности мониторинга, предупреждений и исправления оповещений в облачных и локальных ресурсах. Расширение виртуальной машины агента Log Analytics для Linux предоставляет и поддерживает корпорация Майкрософт. Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует виртуальные машины в существующей рабочей области Log Analytics. В этом документе описаны поддерживаемые платформы, конфигурации и варианты развертывания для Azure Monitor расширения виртуальной машины для Linux.
 
 >[!NOTE]
 >В рамках текущей передачи материалов из Microsoft Operations Management Suite (OMS) в Azure Monitor агент OMS для операционных систем будет называться агентом Log Analytics для Windows и Log Analytics для Linux.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента Log Analytics можно выполнять с использованием указанных ниже дистрибутивов Linux.
-
-| Дистрибутив | Version |
-|---|---|
-| CentOS Linux | 6 (x86 или x64) и 7 (x64) |
-| Amazon Linux | 2017.09 (x64) | 
-| Oracle Linux | 6 и 7 (x86/x64) |
-| Сервер Red Hat Enterprise Linux | 6 (x86 или x64) и 7 (x64) |
-| Debian GNU/Linux | 8 и 9 (x86/x64) |
-| Ubuntu | 14.04 LTS (x86/x64), 16.04 LTS (x86/x64) и 18.04 LTS (x64) |
-| SUSE Linux Enterprise Server | 12 (x 64) и 15 (x 64) |
-
->[!NOTE]
->OpenSSL ниже версии 1.x не поддерживается на любой платформе, а версия 1.10 поддерживается только на платформах x86_64 (64-разрядная версия).  
->
-
-### <a name="agent-prerequisites"></a>Предварительные требования к агенту
-
-В следующей таблице выделены пакеты, необходимые для поддерживаемых дистрибутивов Linux, которые агент будет устанавливаться на.
-
-|Требуемый пакет |Описание |Минимальная версия |
-|-----------------|------------|----------------|
-|Glibc |    Библиотека C GNU | 2.5-12 
-|Openssl    | Библиотеки OpenSSL | 1.0.x или 1.1.x |
-|Curl | Веб-клиент cURL | 7.15.5 |
-|Python-ctypes | | 
-|PAM | Подключаемые модули аутентификации | | 
-
->[!NOTE]
->Для сбора сообщений системного журнала требуется rsyslog или syslog-ng. Управляющая программа syslog по умолчанию не поддерживается для сбора событий системного журнала в Red Hat Enterprise Linux версии 5, CentOS и Oracle Linux (sysklog). Чтобы собирать данные системного журнала из дистрибутивов этих версий, требуется установить и настроить управляющую программу rsyslog, которая заменит sysklog.
+Дополнительные сведения о поддерживаемых дистрибутивах Linux см. в статье [Обзор агента log Analytics](../../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) .
 
 ### <a name="agent-and-vm-extension-version"></a>Версия агента и расширения виртуальной машины
-Следующая таблица предоставляет сопоставление версии расширения виртуальной Машины Azure Monitor и пакетов агента Log Analytics для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
+В следующей таблице представлено сопоставление версии Azure Monitor расширения ВМ и пакета Log Analytics агента для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
 
-| Версия расширения Azure Monitor виртуальной Машины Linux | Версия пакета агента Log Analytics | 
+| Версия расширения виртуальной машины Azure Monitor Linux | Версия пакета агента Log Analytics | 
 |--------------------------------|--------------------------|
-| 1.11.9 | [1.11.0-7](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.11.0-7) |
+| 1.11.15 | [1.11.0-9](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.11.0-9) |
 | 1.10.0 | [1.10.0-1](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.10.0-1) |
 | 1.9.1 | [1.9.0-0](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.9.0-0) |
 | 1.8.11 | [1.8.1-256](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.8.1.256)| 
@@ -133,7 +104,7 @@ ms.locfileid: "67705934"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример |
+| Название | Значение и пример |
 | ---- | ---- |
 | apiVersion | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
@@ -145,9 +116,9 @@ ms.locfileid: "67705934"
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания виртуальных машин, требующих настройки после развертывания, например подключения к журналам Azure Monitor. Пример шаблона Resource Manager, включающего в себя расширение виртуальной машины агента Log Analytics, можно найти в [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-oms-extension-ubuntu-vm). 
+Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, для которых требуется конфигурация после развертывания, например подключение к Azure Monitor журналам. Пример шаблона диспетчер ресурсов, включающий в себя расширение виртуальной машины агента Log Analytics, можно найти в коллекции быстрого запуска [Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-oms-extension-ubuntu-vm). 
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources). 
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/child-resource-name-type.md). 
 
 В следующем примере предполагается, что расширение виртуальной машины вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
@@ -209,8 +180,8 @@ az vm extension set \
   --vm-name myVM \
   --name OmsAgentForLinux \
   --publisher Microsoft.EnterpriseCloud.Monitoring \
-  --version 1.7 --protected-settings '{"workspaceKey": "omskey"}' \
-  --settings '{"workspaceId": "omsid"}'
+  --version 1.10.1 --protected-settings '{"workspaceKey":"omskey"}' \
+  --settings '{"workspaceId":"omsid"}'
 ```
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
@@ -240,7 +211,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 | 19 | Сбой установки пакета OMI | 
 | 20 | Сбой установки пакета SCX |
 | 51 | Это расширение не поддерживается в операционной системе виртуальной машины | |
-| 55 | Не удается подключиться к службе Azure Monitor или необходимые пакеты заблокирован отсутствует или dpkg диспетчера пакетов| Убедитесь, что система имеет доступ к Интернету или что предоставлен допустимый прокси-сервер HTTP. Кроме того проверьте правильность идентификатора рабочей области и убедитесь, что установлены служебные программы curl и tar. |
+| 55 | Не удается подключиться к Azure Monitor службе, или отсутствуют необходимые пакеты, или диспетчер пакетов dpkg заблокирован| Убедитесь, что система имеет доступ к Интернету или что предоставлен допустимый прокси-сервер HTTP. Кроме того проверьте правильность идентификатора рабочей области и убедитесь, что установлены служебные программы curl и tar. |
 
 Дополнительные сведения об устранении неполадок см. в [руководстве по устранению неполадок агента Log Analytics для Linux](../../azure-monitor/platform/vmext-troubleshoot.md).
 

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 7/26/2019
+ms.date: 8/2/2019
 ms.author: raiye
-ms.openlocfilehash: dd0adbe7cc27389e3b1d6533b038042824daea22
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
-ms.translationtype: HT
+ms.openlocfilehash: 534a77ad29338ca1cdba22a3adeb8113521a6246
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68592432"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780088"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для определенного [семейства][family-explain] , в котором они были представлены.
@@ -28,7 +28,6 @@ ms.locfileid: "68592432"
 | Категория продукта | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
 | --- | --- | --- | --- | --- |
 |  Rel 19-07   |  [4507434]  |  Internet Explorer   |  2,88, 3,75, 4,68  |  9 июля 2019 г.  |
-|  Rel 19-07   |  [4506621]  |  Безопасность Windows   |  2,88, 3,75, 4,68  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4506966]  |  Безопасность .NET 4.5.2   |  2,88  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4506976]  |  Безопасность .NET 3.5.1   |  2,88  |  9 июля 2019 г.  |
 |  Rel 19-07   |  [4507456]  |  Безопасность Windows   |  2,88  |  9 июля 2019 г.  |

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d2bad808d0bcbbd5dc8052db0f8fd32fc4c1180a
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 831c771da385ef6faeba194878ca53ede34ccc0a
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699478"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816639"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -33,8 +33,8 @@ ms.locfileid: "68699478"
 | Windows 7              | SMB 2.1     | Да                   | Нет                   |
 | Windows Server 2008 R2 | SMB 2.1     | Да                   | Нет                   |
 
-<sup>1</sup> Windows 10 версий 1507, 1607, 1703, 1709, 1803 и 1809.  
-<sup>3</sup> Windows Server версий 1709 и 1803.
+<sup>1</sup> Windows 10, версии 1507, 1607, 1703, 1709, 1803, 1809 и 1903.  
+<sup>2</sup> Windows Server, версии 1803, 1809 и 1903.
 
 > [!Note]  
 > Мы всегда рекомендуем использовать последнюю версию KB для своей версии Windows.
@@ -42,7 +42,7 @@ ms.locfileid: "68699478"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 * **Имя учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится имя учетной записи хранения.
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.

@@ -9,12 +9,12 @@ ms.service: iot-edge
 ms.custom: seodec18
 ms.reviewer: arduppal
 manager: mchad
-ms.openlocfilehash: 4511510dec6f488e1a6ea9a6842b771d2a298fec
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 86040020c8f9163a327b2029008e3648723b14ec
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640679"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839684"
 ---
 # <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Развертывание хранилища BLOB-объектов Azure в модуле IoT Edge на устройстве
 
@@ -168,7 +168,7 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
 
 1. Откройте *deployment.template.json* в рабочей области нового решения и найдите раздел **modules**. Внесите следующие изменения конфигурации.
 
-   1. Удалите модуль **tempSensor**, так как он не требуется для этого развертывания.
+   1. Удалите модуль **симулатедтемпературесенсор** , так как он не требуется для этого развертывания.
 
    1. Скопируйте и вставьте следующий код в `createOptions` поле:
 

@@ -12,18 +12,18 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/19/2017
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06fd36935c1f43cc14697748666eccd9e6d31168
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 66c509b1b901889241d6837611a2c373750fdb3a
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545964"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68834793"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -72,9 +72,9 @@ Azure AD отправляет `LogoutResponse` в ответ на элемент
 Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `LogoutResponse`. Он также задает для элемента `InResponseTo` значение, взятое из атрибута `ID` для `LogoutRequest`, который запрашивал ответ.
 
 ### <a name="issuer"></a>Издатель
-Azure AD устанавливает для него значение `https://login.microsoftonline.com/<TenantIdGUID>/` где \<TenantIdGUID > — это идентификатор клиента в клиенте Azure AD.
+Azure AD задает для `https://login.microsoftonline.com/<TenantIdGUID>/` этого параметра значение, где \<тенантидгуид > — идентификатор клиента клиента Azure AD.
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 
-### <a name="status"></a>Status
+### <a name="status"></a>Сообщение о состоянии
 Azure AD использует элемент `StatusCode`, содержащийся в элементе `Status`, чтобы указать, успешно ли выполнен выход. После неудачной попытки выхода элемент `StatusCode` может также содержать пользовательские сообщения об ошибках.

@@ -7,14 +7,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: dacurwin
-ms.openlocfilehash: 44bf85eafe3f5cfa801b6c845a51e3dcd5e1262a
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 3165183d4a5e0dcfecee62b128ee8cfa9d94209b
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466875"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736718"
 ---
-# <a name="azure-backup-architecture"></a>Архитектура службы Azure Backup
+# <a name="azure-backup-architecture-and-components"></a>Архитектура и компоненты Azure Backup
 
 Вы можете использовать [службу Azure Backup](backup-overview.md) для резервного копирования данных на облачную платформу Microsoft Azure. В этой статье описаны архитектура, компоненты и процессы Azure Backup. 
 

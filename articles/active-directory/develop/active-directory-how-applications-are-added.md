@@ -10,7 +10,7 @@ ms.assetid: 3321d130-f2a8-4e38-b35e-0959693f3576
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/04/2019
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: elisol, lenalepa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1b92b174d48c710a763857951d66d00956fa0f9
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 6bb3ef2a86c523d7cda5bc7da5d83ec4ac741abf
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483066"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835392"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "67483066"
 ## <a name="what-are-application-objects-and-where-do-they-come-from"></a>Что такое объекты приложений и откуда они берутся?
 Вы можете управлять [объектами приложения](app-objects-and-service-principals.md#application-object) на портале Azure в разделе [Регистрации приложений](https://aka.ms/appregistrations). Объекты приложений описывают приложение для Azure AD и могут считаться определением приложения, так как предоставляют службе сведения о том, как выдавать маркеры безопасности для приложения в соответствии с его параметрами. Объект приложения будет существовать только в своем домашнем каталоге, даже если это мультитенантное приложение, поддерживающее субъекты-службы в других каталогах. В объекте приложения могут содержаться любые из следующих сведений (а также дополнительные сведения, не упомянутые здесь):
 * имя, логотип и издатель;
-* URI перенаправления
+* URI-коды перенаправления
 * секретные ключи (симметричные и/или асимметричные ключи, применяемые для проверки подлинности приложения);
 * зависимости API (OAuth);
 * опубликованные API-интерфейсы, ресурсы, области (OAuth);
@@ -82,7 +82,7 @@ ms.locfileid: "67483066"
 
 В приложении один объект приложения находится в домашнем каталоге, на который ссылается один или несколько субъектов-служб в каждом из каталогов, в которых оно работает (включая домашний каталог приложения).
 
-![Показывает связь между объектами приложения и субъекты-службы][apps_service_principals_directory]
+![Показывает отношение между объектами приложения и субъектами-службами][apps_service_principals_directory]
 
 На предыдущей схеме показано, что корпорация Майкрософт поддерживает два внутренних каталога (слева), которые она использует для публикации приложений:
 

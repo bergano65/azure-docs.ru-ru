@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: dacurwin
-ms.openlocfilehash: 8948a620c27311f0371a557c91a971da37111cb9
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 078c8763a08df339b9291807102e2d187d2a882f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688596"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827585"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
@@ -64,14 +64,14 @@ ms.locfileid: "68688596"
 ### <a name="can-i-cancel-an-in-progress-backup-job"></a>Можно ли отменить выполняющееся задание резервного копирования?
 Да. Задание резервного копирования можно отменить, если оно находится в состоянии **Создание моментального снимка**. Невозможно отменить задание, если выполняется передача данных из моментального снимка.
 
-### <a name="i-enabled-lock-on-resource-group-created-by-azure-backup-service-ie-azurebackuprggeonumber-will-my-backups-continue-to-work"></a>Я включил блокировку для группы ресурсов, созданной службой Azure Backup (т. е. `AzureBackupRG_<geo>_<number>`), будут ли мои резервные копии продолжать работать?
+### <a name="i-enabled-lock-on-resource-group-created-by-azure-backup-service-ie-azurebackuprg_geo_number-will-my-backups-continue-to-work"></a>Я включил блокировку для группы ресурсов, созданной службой Azure Backup (т. е. `AzureBackupRG_<geo>_<number>`), будут ли мои резервные копии продолжать работать?
 Если заблокировать группу ресурсов, созданную службой Azure Backup, резервное копирование начнется сбоем, так как превышено максимальное ограничение в 18 точек восстановления.
 
 Пользователю необходимо снять блокировку и очистить коллекцию точек восстановления из этой группы ресурсов, чтобы сделать резервные копии в будущем успешными, и [выполнить следующие действия](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#clean-up-restore-point-collection-from-azure-portal) , чтобы удалить коллекцию точек восстановления.
 
 
 ### <a name="does-azure-backup-support-standard-ssd-managed-disk"></a>Поддерживает ли Azure Backup управляемые диски SSD ценовой категории "Стандартный"?
-Azure Backup поддерживает [управляемые диски SSD ценовой категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/). Диски, управляемые SSD, предоставляют новый тип долговременного хранилища для виртуальных машин Azure. Поддержка управляемых дисков SSD предоставляется при использовании [мгновенного восстановления](backup-instant-restore-capability.md).
+Да, Azure Backup поддерживает [стандартные управляемые диски SSD](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).
 
 ### <a name="can-we-back-up-a-vm-with-a-write-accelerator-wa-enabled-disk"></a>Можно ли создавать резервную копию виртуальной машины с диском с поддержкой ускорителя записи?
 Невозможно сделать моментальный снимок диска с поддержкой ускорителя записи. Но служба Azure Backup может исключить диск с поддержкой ускорителя записи из резервной копии.
@@ -119,7 +119,7 @@ Azure Backup поддерживает [управляемые диски SSD ц
 Для виртуальной машины Azure с управляемыми дисками восстановление в группе доступности обеспечивается с помощью шаблона при восстановлении в качестве управляемых дисков. Этот шаблон имеет входной параметр **Группы доступности**.
 
 ### <a name="how-do-we-get-faster-restore-performances"></a>Как увеличить производительность восстановления?
-Чтобы повысить производительность при восстановлении, мы переходим к использованию функции [мгновенного восстановления](backup-instant-restore-capability.md).
+Возможность [мгновенного восстановления](backup-instant-restore-capability.md) помогает ускорить резервное копирование и мгновенное восстановление из моментальных снимков.
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 

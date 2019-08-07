@@ -12,12 +12,12 @@ ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba63f9c04e062741eded9c39e44ba64281931387
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 6646217149cec48ca5fcee59b3dd9d850965c602
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311352"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779919"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "68311352"
 Get-MsolDomainFederationSettings -DomainName YourDomain.extention | fl *
 ```
 
-Пример:
+Пример
 
 ``` PowerShell
 Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
@@ -124,7 +124,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Перед преобразованием федеративных удостоверений в управляемые внимательно изучите сведения о текущем использовании служб AD FS для Azure AD, Office 365 и других приложений (отношения доверия проверяющих сторон). В частности, рассмотрите описанные в приведенной ниже таблице сценарии.
 
-| Если | То |
+| If | Then |
 |-|-|
 | Вы планируете продолжить использование AD FS с другими приложениями (не считая Azure AD и Office 365). | После преобразования доменов вы будете использовать одновременно AD FS и Azure AD. Необходимо учитывать взаимодействие с пользователем. В некоторых случаях пользователям потребуется дважды пройти проверку подлинности: один раз — для входа в Azure AD (после чего они смогут использовать единый вход в другие приложения, такие как Office 365), а второй раз — для входа в приложение, которое сохраняет отношения доверия проверяющей стороны с AD FS. |
 | Экземпляр AD FS поддерживает большое количество настроек и использует параметры из файла onload.js (возможно, вы изменяли в нем параметры входа в систему, чтобы пользователи могли ввести имя пользователя только в формате **SamAccountName** вместо формата имени участника-пользователя; или ваша организация использует на странице входа фирменную символику и оформление). Файл onload.js невозможно дублировать в Azure AD. | Прежде чем продолжать работу, проверьте, можно ли в Azure AD обеспечить соответствие вашим текущим требованиям к настройке. Дополнительные сведения и рекомендации см. в разделах о фирменной символике AD FS и настройке параметров AD FS.|
@@ -218,7 +218,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 * подготовка к использованию эффективного единого входа;
 * изменение метода входа на сквозную проверку подлинности и включение эффективного единого входа.
 
-### <a name="step-1-prepare-for-seamless-sso"></a>Шаг 1. Подготовка к использованию эффективного единого входа
+### <a name="step-1-prepare-for-seamless-sso"></a>Шаг 1.: Подготовка к использованию эффективного единого входа
 
 Чтобы устройства использовали эффективный единый вход, необходимо добавить URL-адрес Azure AD в параметры зоны интрасети пользователей с помощью групповой политики Active Directory.
 
@@ -229,7 +229,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 > [!IMPORTANT]
 > Эти изменения не повлияют на способ входа пользователей в Azure AD. Но очень важно применить эту конфигурацию ко всем устройствам, прежде чем продолжать работу. При входе с устройств, не получивших эту конфигурацию, пользователям нужно будет вводить имя пользователя и пароль для входа в Azure AD.
 
-### <a name="step-2-change-the-sign-in-method-to-pass-through-authentication-and-enable-seamless-sso"></a>Шаг 2. Изменение метода входа на сквозную проверку подлинности и включение эффективного единого входа.
+### <a name="step-2-change-the-sign-in-method-to-pass-through-authentication-and-enable-seamless-sso"></a>Шаг 2.: Изменение метода входа на сквозную проверку подлинности и включение эффективного единого входа.
 
 Вы можете изменить метод входа на сквозную проверку подлинности и включить эффективный единый вход двумя способами.
 
@@ -454,5 +454,5 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 ## <a name="next-steps"></a>Следующие шаги
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
-* Узнайте, как выбрать [правильный метод проверки подлинности](https://docs.microsoft.com/azure/security/azure-ad-choose-authn).
+* Узнайте, как выбрать [правильный метод проверки подлинности](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn).
 * Ознакомьтесь со сведениями о [поддерживаемых топологиях](plan-connect-design-concepts.md).

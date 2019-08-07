@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/15/2019
+ms.date: 08/06/2019
 ms.author: b-juche
-ms.openlocfilehash: 1563b60ef26ac5e4d40f45095d0109dd9dd71570
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9a56fb27fdf9e196291942041d68b249d7f16648
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61084945"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839240"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Метрики для Azure NetApp Files
 
@@ -27,25 +27,31 @@ ms.locfileid: "61084945"
 
 ## <a name="capacity_pools"></a>Использование метрик для пулов емкости
 
-- *Volume pool allocated size* (Выделенный размер пула для тома)  
-    Размер (ГиБ) выделенного пула емкости.  
+<!-- 
+- *Volume pool allocated size*  
+    This is the size (GiB) of the provisioned capacity pool.  
+--> 
 - *Volume pool allocated used* (Используемый размер выделенного пула для тома)  
     Общая квота тома (ГиБ) в полученном пуле емкости (общее количество предоставленных размеров томов в пуле емкости). Размер, выбранный в процессе создания тома.  
 - *Volume pool total logical size* (Общий логический размер пула для тома)  
     Общее логическое пространство (ГиБ), применяемое к томам в пуле емкости.  
-- *Volume pool total snapshot size* (Общий размер моментальных снимков пула для тома)  
-    Общее добавочное логическое пространство используемое в моментальных снимках.  
+<!-- 
+- *Volume pool total snapshot size*  
+    This is the total of incremental logical space used by the snapshots.  
+-->
 
 ## <a name="volumes"></a>Показатели использования для томов
 
-- *Volume allocated size*  (Выделенный объем тома)  
-    Размер тома (квота) предоставляемый в ГиБ.  
+<!-- 
+- *Volume allocated size*   
+    This is the volume size (quota) provisioned in GiB.  
+--> 
 - *Volume logical size*  (Логический размер тома)  
     Общее логическое пространство, используемое в томе (ГиБ). Сюда можно отнести логическое пространство используемое активными файлами системы и моментальными снимками.  
 - *Volume snapshot size*  (Размер моментальных снимков в томе)  
     Добавочное логическое пространство, используемое моментальными снимками в томе.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)

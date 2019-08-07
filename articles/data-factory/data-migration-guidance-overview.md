@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 7/30/2019
-ms.openlocfilehash: 780b9ae6e4664af86fa655c9136193bed58526d9
-ms.sourcegitcommit: 6ad03fa28a0f60cb6dce6144f728c2ceb56ff6e2
+ms.openlocfilehash: a61ddf57d4f01fcaf4a949add29c677aa94060a9
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68708502"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827848"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-your-data-lake-or-data-warehouse-to-azure"></a>Перенос данных из хранилища данных в Azure с помощью фабрики данных Azure 
 
@@ -26,7 +26,7 @@ ms.locfileid: "68708502"
 - Перенос рабочей нагрузки больших данных из AWS S3, локальной файловой системы Hadoop в Azure. 
 - EDW миграция из Oracle Ексадата, Netezza, Teradata, AWS RedShift в Azure. 
 
-Фабрика данных Azure может переместить уровень данных PBs для миграции Data Lake и десятки ТБ данных для переноса хранилища данных. 
+Фабрика данных Azure может перемещать PBs данных для миграции Data Lake и десятки ТБ данных для переноса хранилища данных. 
 
 ## <a name="why-azure-data-factory-can-be-used-for-data-migration"></a>Почему фабрика данных Azure может использоваться для переноса данных 
 
@@ -59,4 +59,4 @@ ms.locfileid: "68708502"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)
+- [Перенос данных из AWS S3 в Azure](data-migration-guidance-s3-azure-storage.md)
