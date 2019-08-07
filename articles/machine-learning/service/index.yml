@@ -27,28 +27,25 @@ abstract:
     href: 'https://channel9.msdn.com/Events/Connect/Microsoft-Connect--2018/D240/'
     width: 250
 sections:
-  - title: Пятиминутные краткие руководства
-    items:
-      - type: paragraph
-        text: "Когда вы\_ <a href=\"setup-create-workspace\">создадите рабочую область</a> для Службы машинного обучения Azure, вы можете начать работу с помощью этих кратких руководств:"
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
-          - html: <a href="quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
   - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Узнайте, как подготовить данные, настроить эксперименты, а также обучить и ввести в эксплуатацию модели машинного обучения:'
+        text: 'Узнайте, как подготовить данные, настроить эксперименты, а также обучить и ввести в эксплуатацию модели машинного обучения.'
+      - type: paragraph
+        text: '<b>Используйте для машинного обучения портал Azure</b>, простой интерфейс без применения кода:'
       - type: list
         style: unordered
         items:
-          - html: 'Приступая к работе: <a href="tutorial-first-experiment-automated-ml">обучите и разверните</a> свою первую автоматизированную модель машинного обучения на портале Azure.'
-          - html: 'Приступая к работе: <a href="tutorial-1st-experiment-sdk-setup">настройте среду разработки</a> и <a href="tutorial-1st-experiment-sdk-train">обучите свою первую модель машинного обучения</a> с помощью записной книжки Jupyter (<b>руководство в двух частях</b>).'
-          - html: 'Приступая к работе: <a href="ui-tutorial-automobile-price-train-score">обучите</a> и <a href="ui-tutorial-automobile-price-deploy">разверните</a> свой первый эксперимент машинного обучения с помощью визуального интерфейса с поддержкой перетаскивания (<b>руководство в двух частях</b>).'
-          - html: <a href="tutorial-train-models-with-aml">Обучение</a> и <a href="tutorial-deploy-models-with-aml">развертывание</a> моделей классификации изображений (<b>руководство в двух частях</b>).
-          - html: <a href="tutorial-data-prep">Подготовка данных</a> и <a href="tutorial-auto-train-models">использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).
-          - html: <a href="ui-tutorial-automobile-price-train-score">Прогнозирование стоимости автомобиля</a> с помощью визуального интерфейса и <a href="ui-tutorial-automobile-price-deploy">развертывание</a> модели регрессии.
+          - html: <a href="tutorial-first-experiment-automated-ml">Обучение первого эксперимента автоматического машинного обучения</a>
+          - html: <a href="ui-tutorial-automobile-price-train-score">Обучение первого эксперимента в пользовательском интерфейсе перетаскивания визуального элемента&quot;</a>
+      - type: paragraph
+        text: '<b>Использование для машинного обучения пакета SDK для Python</b> в скриптах и записных книжках:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
+          - html: <a href="tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
+          - html: <a href="tutorial-data-prep">Подготовка данных и автоматизированного машинного обучения к прогнозирования платы за такси</b></a>
   - title: Примеры
     items:
       - type: paragraph
