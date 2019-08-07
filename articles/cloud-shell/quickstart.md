@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по Bash в Azure Cloud Shell | Документация Майкрософт
-description: Краткое руководство по Bash в Cloud Shell
+title: Краткое руководство по Azure Cloud Shell | Документация Майкрософт
+description: Краткое руководство по Azure Cloud Shell
 services: ''
 documentationcenter: ''
 author: maertendMSFT
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
-ms.openlocfilehash: b8f96de7214a46c9e38182c141343a46c0e28139
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8151013f263c6cf2f90e89fa1c3b0b3025f2ea38
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60199623"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741988"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -56,7 +56,7 @@ az account set --subscription 'my-subscription-name'
 > [!TIP]
 > Подписка будет сохранена для последующих сеансов в файле `/home/<user>/.azure/azureProfile.json`.
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 Создайте группу ресурсов в западной части США с именем MyRG:
 ```azurecli-interactive
 az group create --location westus --name MyRG
@@ -98,7 +98,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    az group delete -n MyRG
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

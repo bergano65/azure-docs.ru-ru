@@ -6,12 +6,12 @@ ms.service: azure-australia
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: grgale
-ms.openlocfilehash: 0c575076439e3405d34fe0ef3beff0242a53a8c5
-ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
+ms.openlocfilehash: 48b4b71d80bcef1eaf3bf89c0b14c8033748684e
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601809"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779334"
 ---
 # <a name="additional-documentation-and-resources-by-focus-area"></a>Дополнительная документация и ресурсы по области фокуса
 
@@ -22,7 +22,7 @@ ms.locfileid: "68601809"
 * [Страница "Австралия" портала доверия служб Майкрософт](https://aka.ms/au-irap)
 * [Страница IRAP центра управления безопасностью Майкрософт](https://www.microsoft.com/trustcenter/compliance/ccsl)
 * [Схемы безопасности и соответствия требованиям Azure для защиты](https://aka.ms/au-protected)
-* [Изоляция клиентов в Microsoft Azure](https://docs.microsoft.com/azure/security/azure-isolation)
+* [Изоляция клиентов в Microsoft Azure](https://docs.microsoft.com/azure/security/fundamentals/isolation-choices)
 * [Руководство по информационной безопасности Австралии](https://www.cyber.gov.au/ism)
 * [Список сертифицированных облаков кибератак Security Center (ACSC)](https://www.cyber.gov.au/irap/asd-certified-cloud-services)
 
@@ -32,7 +32,7 @@ ms.locfileid: "68601809"
 * [Сведения о ключах, секретах и сертификатах](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)
 * [Настройка брандмауэров и виртуальных сетей Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-network-security)
 * [Безопасный доступ к хранилищу ключей](https://docs.microsoft.com/azure/key-vault/key-vault-secure-your-key-vault)
-* [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)
+* [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
 * [Использование Azure Key Vault с Azure Виртуальные машины Windows в .NET](https://docs.microsoft.com/azure/key-vault/tutorial-net-windows-virtual-machine)
 * [Управляемая учетная запись хранения Azure Key Vault — PowerShell](https://docs.microsoft.com/azure/key-vault/tutorial-net-windows-virtual-machine)
 * [Настройка смены ключей и аудита](https://docs.microsoft.com/azure/key-vault/key-vault-key-rotation-log-monitoring)
@@ -68,7 +68,7 @@ ms.locfileid: "68601809"
 * [Обзор Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 * [Общие сведения об управлении привилегированными пользователями Azure](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure)
 * [Обзор Группы управления Azure](https://docs.microsoft.com/azure/governance/management-groups/)
-* [Рекомендации по управлению удостоверениями и доступом Azure](https://docs.microsoft.com/azure/security/azure-security-identity-management-best-practices)
+* [Рекомендации по управлению удостоверениями и доступом Azure](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
 * [Управление группами Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)
 * [Гибридная идентификация](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [Пользовательские роли RBAC](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)

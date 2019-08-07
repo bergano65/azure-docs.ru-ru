@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martinco
-ms.openlocfilehash: 0ccd2ee8b2c9f542eabe7a297f4c99a3993a47e9
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: c5cdd12c3075d48ff32c40d686b32a650ec43d8e
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726744"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779778"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -74,7 +74,7 @@ ms.locfileid: "68726744"
 Если организация использует гибридное решение со сквозной проверкой подлинности или федерацией для удостоверений, необходимо включить синхронизацию хэшей паролей по следующим двум причинам.
 
 * Отчет [Пользователи с украденными учетными данными](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-risk-events) в службе управления Azure AD предупреждает о парах "имя пользователя-пароль", которые были раскрыты в так называемом "темном Интернете". Невероятное количество паролей пропадает в результате фишинга, применения вредоносного ПО и повторного использования паролей на сайтах сторонних производителей, которые через какое-то время подвергаются угрозам. Корпорация Майкрософт находит многие из украденных учетных данных и сообщает о них в этом отчете, если обнаруженные сведения совпадают с учетными данными в вашей организации, но только если вы [включите синхронизацию хэшей паролей](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-implement-password-hash-synchronization)!
-* В случае сбоя в локальной среде (например, при атаке программы-шантажиста) вы сможете перейти на [проверку подлинности в облаке, выполнив синхронизацию хэшей паролей](https://docs.microsoft.com/azure/security/azure-ad-choose-authn). Этот резервный метод проверки подлинности позволит продолжать обращаться к приложениям (включая Office 365), настроенным для проверки подлинности в Azure Active Directory. В этом случае ИТ-персоналу не нужно будет прибегать к личным учетным записям электронной почты для обмена данными до тех пор, пока не будет устранен локальный сбой.
+* В случае сбоя в локальной среде (например, при атаке программы-шантажиста) вы сможете перейти на [проверку подлинности в облаке, выполнив синхронизацию хэшей паролей](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn). Этот резервный метод проверки подлинности позволит продолжать обращаться к приложениям (включая Office 365), настроенным для проверки подлинности в Azure Active Directory. В этом случае ИТ-персоналу не нужно будет прибегать к личным учетным записям электронной почты для обмена данными до тех пор, пока не будет устранен локальный сбой.
 
 Узнайте больше о том, [как работает синхронизация хэшей паролей](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-implement-password-hash-synchronization).
 
@@ -146,7 +146,7 @@ ms.locfileid: "68726744"
 
 ### <a name="monitor-azure-ad"></a>Мониторинг Azure AD
 
-Службы и компоненты Microsoft Azure дают возможность настраивать параметры аудита и ведения журнала безопасности. Это поможет выявить недочеты в политиках и механизмах безопасности и устранить эти недочеты для предотвращения нарушений. Можно использовать функции [аудита и ведения журналов Azure](https://docs.microsoft.com/azure/security/azure-log-audit) и [отчеты о действиях аудита на портале Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs).
+Службы и компоненты Microsoft Azure дают возможность настраивать параметры аудита и ведения журнала безопасности. Это поможет выявить недочеты в политиках и механизмах безопасности и устранить эти недочеты для предотвращения нарушений. Можно использовать функции [аудита и ведения журналов Azure](https://docs.microsoft.com/azure/security/fundamentals/log-audit) и [отчеты о действиях аудита на портале Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-activity-audit-logs).
 
 ### <a name="monitor-azure-ad-connect-health-in-hybrid-environments"></a>Мониторинг Azure AD Connect Health в гибридных средах
 

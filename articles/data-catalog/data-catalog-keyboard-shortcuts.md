@@ -1,19 +1,17 @@
 ---
-title: Сочетания клавиш для каталога данных Azure
+title: Сочетания клавиш для Каталога данных Azure
 description: В этой статье представлены сочетания клавиш для каталога данных Azure.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 00b77c88-fbca-4e6f-a175-d40b5cbbf144
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: ed101df5cd3d6e5754b88c5f66807f9fda846cf4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 499067f33bddbede6510f61e2cb5da3fb33a5e7c
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60998808"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736302"
 ---
 # <a name="keyboard-shortcuts-for-azure-data-catalog"></a>Сочетания клавиш для каталога данных Azure
 ## <a name="keyboard-shortcuts-for-the-data-catalog-data-source-registration-tool"></a>Сочетания клавиш для инструмента регистрации источников данных в каталоге данных

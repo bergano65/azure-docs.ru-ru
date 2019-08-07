@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 7128413e48fdeef9b9284bc6db11649016a06153
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: ebcc8301fa3693880974e45b594be218905e8311
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722819"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775424"
 ---
 # <a name="download-a-windows-vhd-from-azure"></a>Скачивание виртуального жесткого диска Windows из Azure
 
@@ -52,11 +52,11 @@ VHD невозможно скачать из Azure, если он подключ
 Чтобы скачать VHD-файл, необходимо создать [подписанный URL-адрес (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Когда этот URL-адрес создан, ему назначается срок действия.
 
 1.  В меню колонки виртуальной машины щелкните **Диски**.
-2.  Выберите диск операционной системы для виртуальной машины и щелкните **Экспорт**.
+2.  Выберите диск операционной системы для виртуальной машины, а затем щелкните **Экспорт диска**.
 3.  Задайте срок действия URL-адреса *36000*.
 4.  Нажмите кнопку **Создать URL-адрес**.
 
-    ![Создание URL-адреса](./media/download-vhd/export-generate.png)
+    ![Создание URL-адреса](./media/download-vhd/export-generate-new.png)
 
 > [!NOTE]
 > Заданное по умолчанию значение срока действия увеличивается, чтобы предоставить достаточно времени на скачивание большого VHD-файл для операционной системы Windows Server. Скачивание VHD-файл, содержащего операционную систему Windows Server, может занять несколько часов в зависимости от качества подключения. Если вы скачиваете VHD для диска данных, то время, заданное по умолчанию, является достаточным. 

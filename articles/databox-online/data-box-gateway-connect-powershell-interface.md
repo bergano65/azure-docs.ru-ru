@@ -1,33 +1,32 @@
 ---
-title: Соединиться с устройства и управление им шлюз поле данных Microsoft Azure через интерфейс Windows PowerShell | Документация Майкрософт
-description: Описывает, как подключиться к и затем управлять шлюз поле данных через интерфейс Windows PowerShell.
+title: Подключение к устройству Microsoft Azure Шлюз Data Box и управление им с помощью интерфейса Windows PowerShell | Документация Майкрософт
+description: Описывает подключение к Шлюз Data Box и управление им с помощью интерфейса Windows PowerShell.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 08/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 67caaa2c6c9bd615d0b88bdd5de3442b46aa32cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 650777d849e172686e8b46502a84db8c519174e7
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64415164"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775194"
 ---
-# <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством шлюза поле данных Azure с помощью Windows PowerShell
+# <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством Шлюз Azure Data Box с помощью Windows PowerShell
 
-Решение Azure шлюз поле данных позволяет отправлять данные по сети в Azure. В этой статье описываются некоторые задачи конфигурации и управления для устройства шлюза поле данных. Можно использовать портал Azure, локального веб-интерфейса или в интерфейсе Windows PowerShell для управления устройством.
+Шлюз Azure Data Box решение позволяет передавать данные по сети в Azure. В этой статье описаны некоторые задачи по настройке и управлению для устройства Шлюз Data Box. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
 
-Эта статья посвящена задачи, которые можно сделать с помощью интерфейса PowerShell.
+В этой статье рассматриваются задачи, выполняемые с помощью интерфейса PowerShell.
 
-В этой статье описываются следующие процедуры:
+Эта статья содержит следующие процедуры.
 
 - Подключение к интерфейсу PowerShell
-- Запуск сеанса поддержки
 - Создать пакет поддержки.
-- Передача сертификата
-- Загружается в среде без DHCP
+- Отправка сертификата
+- Загрузка в среде без DHCP
 - Просмотр сведений об устройстве
 
 ## <a name="connect-to-the-powershell-interface"></a>Подключение к интерфейсу PowerShell
@@ -38,11 +37,11 @@ ms.locfileid: "64415164"
 
 [!INCLUDE [Create a support package](../../includes/data-box-edge-gateway-create-support-package.md)]
 
-## <a name="upload-certificate"></a>Передача сертификата
+## <a name="upload-certificate"></a>Отправка сертификата
 
 [!INCLUDE [Upload certificate](../../includes/data-box-edge-gateway-upload-certificate.md)]
 
-## <a name="boot-up-in-non-dhcp-environment"></a>Загружается в среде без DHCP
+## <a name="boot-up-in-non-dhcp-environment"></a>Загрузка в среде без DHCP
 
 [!INCLUDE [Boot up in non-DHCP environment](../../includes/data-box-edge-gateway-boot-non-dhcp.md)]
 
@@ -50,6 +49,6 @@ ms.locfileid: "64415164"
 
 [!INCLUDE [View device information](../../includes/data-box-edge-gateway-view-device-info.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Разверните [Шлюз Azure Data Box](data-box-gateway-deploy-prep.md) на портале Azure.

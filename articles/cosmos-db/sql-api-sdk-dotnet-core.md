@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: ce22efd6eccdc067b05697b8389c821c4c01a347
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 58db76401439befd476bc78c1a1a20eeed5c2342
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638592"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779165"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -45,13 +45,18 @@ ms.locfileid: "68638592"
 > [!NOTE]
 > Если вы используете .NET Core, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
 
+### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
+
+* Версия System .NET. HTTP пакета SDK теперь соответствует тому, что определено в пакете NuGet.
+* Разрешить запросы на запись в другой регион в случае сбоя исходного.
+* Добавьте политику повтора сеанса для запроса на запись.
+
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
 * Исправляет состояние отслеживания состояния гонки для запросов, вызвавших пустые страницы
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
-* Версия System .NET. HTTP пакета SDK соответствует тому, что определено в пакете NuGet.
 * Увеличенный размер десятичной точности для запросов LINQ.
 * Добавлены новые классы Компоситепас, Компоситепассортордер, Спатиалспек, Спатиалтипе и Партитионкэйдефинитионверсион
 * Добавлен Тиметоливепропертипас в коллекции documentcollection
@@ -250,6 +255,7 @@ ms.locfileid: "68638592"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |
 | [2.4.0](#2.4.0) |05 мая 2005 г., 2019 |--- |
 | [2.3.0](#2.3.0) |04, 2019 |--- |

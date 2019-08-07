@@ -16,12 +16,12 @@ ms.date: 10/21/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb5733f43a2b2800d5eb5031dddaaeb7d59aadc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 814c81b6092c4af3778617e165a0bdbce09d71d7
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67109418"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779108"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "67109418"
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Сквозная проверка подлинности является альтернативой [синхронизации хэшей паролей Azure AD](how-to-connect-password-hash-synchronization.md), которая также обеспечивает преимущество облачной проверки подлинности в организации. Тем не менее некоторые организации, желающие применить локальные политики безопасности и политики паролей Active Directory, могут вместо этого использовать сквозную аутентификацию. [В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
+Сквозная проверка подлинности является альтернативой [синхронизации хэшей паролей Azure AD](how-to-connect-password-hash-synchronization.md), которая также обеспечивает преимущество облачной проверки подлинности в организации. Тем не менее некоторые организации, желающие применить локальные политики безопасности и политики паролей Active Directory, могут вместо этого использовать сквозную аутентификацию. [В этом руководстве](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ![Сквозная аутентификация Azure AD](./media/how-to-connect-pta/pta1.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "67109418"
 
 - Поддерживает вход пользователей во все браузерные приложения и клиентские приложения Microsoft Office, которые используют [современную проверку подлинности](https://aka.ms/modernauthga).
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (известный как `Alternate ID`).
-- Эта функция взаимодействует с [условного доступа](../active-directory-conditional-access-azure-portal.md) функции например многофакторной проверки подлинности (MFA) для защиты пользователей.
+- Эта функция легко работает с функциями [условного доступа](../active-directory-conditional-access-azure-portal.md) , такими как многофакторная идентификация (MFA) для защиты пользователей.
 - Она интегрирована с [самостоятельным управлением паролями](../authentication/active-directory-passwords-overview.md) на основе облака, включая обратную запись паролей в локальный каталог Active Directory и защиту пароля с помощью запрета часто используемых паролей.
 - Среды с несколькими лесами поддерживаются, если между лесами AD существуют отношения доверия и правильно настроена маршрутизация по суффиксу имени.
 - Это бесплатная функция, и для ее использования не требуются платные выпуски Azure AD.
@@ -68,7 +68,7 @@ ms.locfileid: "67109418"
 - Установка нескольких агентов обеспечивает высокий уровень доступности запросов на вход.
 - Она [защищает](../authentication/howto-password-smart-lockout.md) локальные учетные записи от атак методом подбора пароля в облаке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Краткое руководство](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure AD.
 - [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx?raw=true). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.

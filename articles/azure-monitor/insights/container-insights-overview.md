@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/22/2019
+ms.date: 08/02/2019
 ms.author: magoedte
-ms.openlocfilehash: 96a312630c92048f36f79e3bec18f83ed5a445ff
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: e1fca1532352c4955f478df70f818ee3151053c1
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414128"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742202"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
 
@@ -40,9 +40,11 @@ Azure Monitor для контейнеров — это комплексный п
 * Настройте оповещения для упреждающего уведомления или записи, когда загрузка ЦП и памяти на узлах или контейнерах превышает пороговые значения.
 * Интегрируйтесь с [Prometheus](https://prometheus.io/docs/introduction/overview/) для просмотра метрик приложений и рабочих нагрузок, собираемых из узлов, и Kubernetes с помощью [запросов](container-insights-log-search.md) для создания настраиваемых оповещений, панелей мониторинга и подробного анализа.
 
->[!NOTE]
->В настоящее время поддержка Prometheus является функцией в общедоступной предварительной версии.
->
+    >[!NOTE]
+    >В настоящее время поддержка Prometheus является функцией в общедоступной предварительной версии.
+    >
+
+* Мониторинг рабочих нагрузок контейнера [, развернутых в AKS Engine](https://github.com/microsoft/OMS-docker/tree/aks-engine).
 
 Ознакомьтесь со следующим видео, в котором приведен подробный обзор промежуточного уровня, который поможет вам узнать о мониторинге кластера AKS с помощью Azure Monitor для контейнеров.
 

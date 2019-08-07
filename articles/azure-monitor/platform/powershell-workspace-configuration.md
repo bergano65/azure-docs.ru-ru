@@ -8,18 +8,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/19/2019
 ms.author: bwren
-ms.openlocfilehash: 4faa58536d6458b01adbb7dab60bfd10be18275b
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: ec72b0b9f2cdc932c7fb0c8a6fd8daecbc470c09
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234798"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779960"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
 [Командлеты PowerShell log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/) можно использовать для выполнения различных функций в log Analytics рабочей области в Azure Monitor из командной строки или в составе скрипта.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
-* Создание рабочей области
+* Создать рабочую область
 * Добавление или удаление решения
 * Импорт и экспорт сохраненных поисков
 * Создание группы компьютеров
@@ -45,7 +45,7 @@ ms.locfileid: "68234798"
 ## <a name="create-and-configure-a-log-analytics-workspace"></a>Создание и настройка рабочей области Log Analytics
 Этот пример сценария иллюстрирует следующие задачи.
 
-1. Создание рабочей области
+1. Создать рабочую область
 2. Вывод списка доступных решений
 3. Добавление решений в рабочую область
 4. Импорт сохраненных поисков
@@ -79,7 +79,7 @@ $ExportedSearches = @"
     {
         "Category":  "My Saved Searches",
         "DisplayName":  "Current Disk Queue Length",
-        "Query":  "Perf | where ObjectName == "LogicalDisk" and CounterName == "Current Disk Queue Length" and InstanceName == "C:",
+        "Query":  "Perf | where ObjectName == "LogicalDisk" and CounterName == "Current Disk Queue Length" and InstanceName == "C:"",
         "Version":  1
     }
 ]
@@ -134,7 +134,7 @@ try {
 New-AzOperationalInsightsWorkspace -Location $Location -Name $WorkspaceName -Sku Standard -ResourceGroupName $ResourceGroup
 
 # List all solutions and their installation status
-Get-AzOperationalInsightsIntelligencePacks -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
+Get-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
 
 # Add solutions
 foreach ($solution in $Solutions) {
@@ -142,7 +142,7 @@ foreach ($solution in $Solutions) {
 }
 
 # List enabled solutions
-(Get-AzOperationalInsightsIntelligencePacks -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName).Where({($_.enabled -eq $true)})
+(Get-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName).Where({($_.enabled -eq $true)})
 
 # Import Saved Searches
 foreach ($search in $ExportedSearches) {
@@ -197,7 +197,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 ## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Настройка Log Analytics для отправки системы диагностики Azure
 Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Этот подход отправляет данные непосредственно в рабочую область и не требует записи данных в учетную запись хранения. Ниже перечислены поддерживаемые ресурсы.
 
-| Тип ресурса | Журналы | metrics |
+| Тип ресурсов | Журналы | metrics |
 | --- | --- | --- |
 | Шлюзы приложений    | Да | Да |
 | Учетные записи службы автоматизации     | Да | |
@@ -206,12 +206,12 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 | Data Lake Store         | Да | |
 | пул эластичных баз данных SQL;        |     | Да |
 | пространство имен концентратора событий;     |     | Да |
-| Центры Интернета вещей;                |     | Да |
+| Центры Интернета вещей                |     | Да |
 | Key Vault               | Да | |
-| Балансировщики нагрузки          | Да | |
-| Logic Apps              | Да | Да |
+| Подсистемы балансировки нагрузки          | Да | |
+| Приложения логики              | Да | Да |
 | группы сетевой безопасности; | Да | |
-| Кэш Redis для Azure             |     | Да |
+| Кэш Azure для Redis             |     | Да |
 | Службы поиска         | Да | Да |
 | Пространство имен служебной шины   |     | Да |
 | SQL (версия 12)               |     | Да |

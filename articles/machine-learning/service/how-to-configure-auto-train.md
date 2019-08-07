@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3a316de54600d18f7ab839b8459bfe4eb0ff86e8
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 5dee966f8664bc14d81004e625ad9632066ffcb2
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479796"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742303"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -40,7 +40,7 @@ ms.locfileid: "68479796"
 
 Прежде чем начать эксперимент, следует определить тип задачи машинного обучения, которую необходимо решить. Автоматическое машинное обучение поддерживает задачи классификации, регрессии и прогнозирования.
 
-Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм. 
+Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
 Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
@@ -104,7 +104,7 @@ automl_config = AutoMLConfig(task="classification")
 ```python
     import pandas as pd
     from sklearn import datasets
-    
+
     data_train = datasets.load_digits()
 
     pd.DataFrame(data_train.data[100:,:]).to_csv("data/X_train.csv", index=False)
@@ -114,7 +114,7 @@ automl_config = AutoMLConfig(task="classification")
     ds.upload(src_dir='./data', target_path='digitsdata', overwrite=True, show_progress=True)
 ```
 
-### <a name="define-deprep-references"></a>Определение ссылок для деподготовки
+### <a name="define-dprep-references"></a>Определение ссылок dprep
 
 Определите X и y как ссылку на dprep, которая будет передана в автоматизированный `AutoMLConfig` объект машинного обучения, как показано ниже:
 
@@ -122,8 +122,8 @@ automl_config = AutoMLConfig(task="classification")
 
     X = dprep.auto_read_file(path=ds.path('digitsdata/X_train.csv'))
     y = dprep.auto_read_file(path=ds.path('digitsdata/y_train.csv'))
-    
-    
+
+
     automl_config = AutoMLConfig(task = 'classification',
                                  debug_log = 'automl_errors.log',
                                  path = project_folder,
@@ -253,9 +253,60 @@ automl_config = AutoMLConfig(task='forecasting',
                              **time_series_settings)
 ```
 
+### <a name="ensemble"></a>Конфигурация ансамблей
+
+Модели ансамблей включены по умолчанию и отображаются как окончательные итерации выполнения в автоматическом запуске машинного обучения. Поддерживаемые в настоящее время методы ансамблей — это голосование и стек. Голосование реализуется как мягкое голосование с помощью взвешенных средних значений, а реализация стека использует реализацию 2 уровня, где первый слой имеет те же модели, что и ансамблей голосования, а вторая модель слоев используется для поиска оптимального сочетания модели из первого слоя. Если используются модели ONNX **или** включено объяснение модели, то стек будет отключен и будут использоваться только голосование.
+
+Существует несколько аргументов по умолчанию, которые могут быть `kwargs` предоставлены `AutoMLConfig` как в объекте для изменения поведения ансамблей стека по умолчанию.
+
+* `stack_meta_learner_type`: мета-изучение — это модель, обученная на выходе отдельных моделей разнородных. Мета-знания по умолчанию `LogisticRegression` предназначены для задач классификации ( `LogisticRegressionCV` или если включена перекрестная проверка), а `ElasticNet` также для задач «регрессия» и « `ElasticNetCV` прогнозирование» (или при включенной перекрестной проверке). Этот параметр может быть одной из `LogisticRegression`следующих строк:, `LogisticRegressionCV`, `LightGBMClassifier`, `ElasticNet`, `ElasticNetCV` `LightGBMRegressor`, или `LinearRegression`.
+* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки), зарезервированного для обучения мета-знания. По умолчанию имеет значение `0.2`.
+* `stack_meta_learner_kwargs`: необязательные параметры для передачи в инициализатор мета-знания. Эти параметры и типы параметров отражаются на основе соответствующего конструктора модели и пересылаются конструктору модели.
+
+В следующем коде показан пример указания пользовательского поведения ансамблей в `AutoMLConfig` объекте.
+
+```python
+ensemble_settings = {
+    "stack_meta_learner_type": "LogisticRegressionCV",
+    "stack_meta_learner_train_percentage": 0.3,
+    "stack_meta_learner_kwargs": {
+        "refit": True,
+        "fit_intercept": False,
+        "class_weight": "balanced",
+        "multi_class": "auto",
+        "n_jobs": -1
+    }
+}
+
+automl_classifier = AutoMLConfig(
+        task='classification',
+        primary_metric='AUC_weighted',
+        iterations=20,
+        X=X_train,
+        y=y_train,
+        n_cross_validations=5,
+        **ensemble_settings
+        )
+```
+
+Обучение ансамблей включено по умолчанию, но его можно отключить с помощью `enable_voting_ensemble` логических параметров и. `enable_stack_ensemble`
+
+```python
+automl_classifier = AutoMLConfig(
+        task='classification',
+        primary_metric='AUC_weighted',
+        iterations=20,
+        X=X_train,
+        y=y_train,
+        n_cross_validations=5,
+        enable_voting_ensemble=False,
+        enable_stack_ensemble=False
+        )
+```
+
 ## <a name="run-experiment"></a>Выполнение эксперимента
 
-Для автоматического выполнения машинного обучения необходимо создать `Experiment` объект, который является именованным объектом в, `Workspace` используемом для запуска экспериментов.
+Для автоматического создания машинного обучения `Experiment` создается объект, который является именованным объектом в `Workspace` , используемом для выполнения экспериментов.
 
 ```python
 from azureml.core.experiment import Experiment

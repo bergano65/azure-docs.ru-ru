@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/01/2019
 ms.author: bwren
-ms.openlocfilehash: 3f4b0ad8b7aad01472a76db67f2c07e03e978e41
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: d50b3ab68b406db47a4cc8fec081b2fc076071d1
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67673042"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741658"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -25,11 +25,11 @@ ms.locfileid: "67673042"
 
 
 > [!NOTE]
-> Включение рекомендуемый метод для установки и настройки решения Office 365 [соединителя Office 365](../../sentinel/connect-office-365.md) в [Azure Sentinel](../../sentinel/overview.md) вместо, следуя инструкциям в этой статье. Это обновленная версия решения Office 365 с помощью средств улучшенной конфигурацией. Для подключения журналов Azure AD, можно использовать [Azure Sentinel Azure AD соединителя](../../sentinel/connect-azure-active-directory.md) или [настройки параметров диагностики в Azure AD](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md), который предоставляет более подробные данные журнала, чем журналы управления Office 365. 
+> Рекомендуемый способ установки и настройки решения Office 365 — включение [соединителя office 365](../../sentinel/connect-office-365.md) в [Azure Sentinel](../../sentinel/overview.md) вместо использования действий, описанных в этой статье. Это обновленная версия решения Office 365 с улучшенными возможностями настройки. Чтобы подключить журналы Azure AD, можно использовать либо соединитель Azure [AD Sentinel](../../sentinel/connect-azure-active-directory.md) , либо [настроить параметры диагностики Azure AD](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md), которые предоставляют более подробные данные журнала, чем журналы управления Office 365. 
 >
-> Когда вы [встроенного Sentinel Azure](../../sentinel/quickstart-onboard.md), укажите рабочую область Log Analytics, необходимо установить в решение Office 365. После включения соединителя решения будут доступны в рабочей области и использовать точно так же, как другие установленные мониторинга решения.
+> Когда вы подключите [метку Azure](../../sentinel/quickstart-onboard.md), укажите рабочую область log Analytics, в которой должно быть установлено решение Office 365. После включения соединителя решение будет доступно в рабочей области и использоваться точно так же, как и любые другие установленные решения мониторинга.
 >
-> Пользователи облака Azure для государственных организаций необходимо установить Office 365, используя шаги в этой статье, так как Azure Sentinel еще недоступна в облаке для государственных организаций.
+> Пользователи облака Azure для государственных организаций должны установить Office 365, выполнив действия, описанные в этой статье, так как Azure Sentinel еще недоступен в облаке для государственных организаций.
 
 Решение по управлению Office 365 позволяет выполнять мониторинг среды Office 365 в Azure Monitor.
 
@@ -42,7 +42,7 @@ ms.locfileid: "67673042"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
 
@@ -86,9 +86,9 @@ ms.locfileid: "67673042"
 1. Щелкните **Регистрация нового приложения**.
 
     ![Добавление регистрации приложений](media/solution-office-365/add-app-registration.png)
-1. Введите **имя** приложения и **URL-адрес входа**.  Имя должно быть описательным.  Используйте `http://localhost` для URL-адрес и продолжайте _веб-приложение или API_ для **тип приложения**
+1. Введите **имя** приложения и **URL-адрес входа**.  Имя должно быть описательным.  Использование `http://localhost` для URL-адреса и сохранения _веб-приложения или API_ для **типа приложения**
     
-    ![Создание приложения](media/solution-office-365/create-application.png)
+    ![Создать приложение](media/solution-office-365/create-application.png)
 1. Щелкните **Создать** и проверьте сведения о приложении.
 
     ![Зарегистрированное приложение](media/solution-office-365/registered-app.png)
@@ -103,14 +103,14 @@ ms.locfileid: "67673042"
 1. В меню **Параметры** выберите **Требуемые разрешения**, а затем щелкните **Добавить**.
 1. Щелкните **Select an API** (Выбор API), а затем — **Office 365 Management APIs** (Интерфейсы API управления Office 365). Выберите **Office 365 Management APIs** (Интерфейсы API управления Office 365). Нажмите кнопку **Выбрать**.
 
-    ![Выбор API](media/solution-office-365/select-api.png)
+    ![Выбрать API](media/solution-office-365/select-api.png)
 
 1. В разделе **Выберите разрешения** выберите следующие параметры в разделах **Разрешения приложений** и **Делегированные разрешения**:
    - чтение сведений о работоспособности служб в вашей организации;
    - чтение данных о действиях в организации;
-   - чтение отчетов о действиях для вашей организации.
+   - Чтение отчетов о действиях для вашей организации
 
-     ![Выбор API](media/solution-office-365/select-permissions.png)
+     ![Выбрать API](media/solution-office-365/select-permissions.png)
 
 1. Нажмите кнопку **Выбрать**, а затем — **Готово**.
 1. Щелкните **Предоставить разрешения**, а затем — **Да** при появлении запроса на проверку.
@@ -182,7 +182,7 @@ ms.locfileid: "67673042"
     .\office365_consent.ps1 -WorkspaceName <Workspace name> -ResourceGroupName <Resource group name> -SubscriptionId <Subscription ID>
     ```
 
-    Пример:
+    Пример
 
     ```
     .\office365_consent.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631- yyyyyyyyyyyy'
@@ -366,7 +366,7 @@ ms.locfileid: "67673042"
     .\office365_subscription.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeUsername <OfficeUsername> -OfficeTennantID <Tenant ID> -OfficeClientId <Client ID> -OfficeClientSecret <Client secret>
     ```
 
-    Пример:
+    Пример
 
     ```powershell
     .\office365_subscription.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeUsername 'admin@contoso.com' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx' -OfficeClientId 'f8f14c50-5438-4c51-8956-zzzzzzzzzzzz' -OfficeClientSecret 'y5Lrwthu6n5QgLOWlqhvKqtVUZXX0exrA2KRHmtHgQb='
@@ -397,7 +397,7 @@ At line:12 char:18
 
 ```
 
-## <a name="uninstall"></a>Удаление
+## <a name="uninstall"></a>Удалить
 
 Вы можете удалить решение по управлению Office 365 с помощью процесса, описанного в этом [разделе](solutions.md#remove-a-monitoring-solution). Однако это не остановит сбор данных в Office 365 и последующую их отправку в Azure Monitor. Выполните процедуру ниже, чтобы отменить подписку на Office 365 и прекратить сбор данных.
 
@@ -492,7 +492,7 @@ At line:12 char:18
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример:
+    Пример
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
@@ -521,7 +521,7 @@ At line:12 char:18
 
 Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице. Каждый столбец содержит десять ведущих оповещений с числом, показывающим соответствие оповещения критериям данного столбца, таким как область действия и диапазон времени. Можно выполнить поиск журналов, выводящий весь список, щелкнув элемент "Просмотреть все" внизу столбца или заголовок этого столбца.
 
-| столбец | Описание |
+| Столбец | Описание |
 |:--|:--|
 | Операции | Предоставляет сведения об активных пользователях из всех отслеживаемых подписок Office 365. Также можно просмотреть количество действий, выполненных за определенный период времени.
 | Exchange | Отображает разбивку по действиям Exchange Server, таким как Add-MailboxPermission (Добавление разрешения для почтового ящика) или Set-Mailbox (Настройка почтового ящика). |
@@ -550,7 +550,7 @@ At line:12 char:18
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>системный; |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Административная единица<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>Система |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
@@ -571,12 +571,12 @@ At line:12 char:18
 
 | Свойство | Описание |
 |:--- |:--- |
-| OfficeWorkload | AzureActiveDirectory |
-| RecordType     | AzureActiveDirectoryAccountLogon |
-| Приложение | Приложение, которое активирует событие входа в учетную запись, например Office 15. |
-| Клиент | Подробные сведения о клиентском устройстве, операционной системе устройства и браузере устройства, который использовался при событии входа в учетную запись. |
-| LoginStatus | Это свойство получается непосредственно из параметра OrgIdLogon.LoginStatus. Сопоставление различных неудачных попыток входа в систему можно выполнить с помощью алгоритмов оповещения. |
-| UserDomain | Сведения об идентификации клиента (TII). | 
+| `OfficeWorkload` | AzureActiveDirectory |
+| `RecordType`     | AzureActiveDirectoryAccountLogon |
+| `Application` | Приложение, которое активирует событие входа в учетную запись, например Office 15. |
+| `Client` | Подробные сведения о клиентском устройстве, операционной системе устройства и браузере устройства, который использовался при событии входа в учетную запись. |
+| `LoginStatus` | Это свойство получается непосредственно из параметра OrgIdLogon.LoginStatus. Сопоставление различных неудачных попыток входа в систему можно выполнить с помощью алгоритмов оповещения. |
+| `UserDomain` | Сведения об идентификации клиента (TII). | 
 
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
@@ -743,7 +743,7 @@ At line:12 char:18
 | Запрос | Описание |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
-|Использование сайтов SharePoint|OfficeActivity &#124; где OfficeWorkload = ~ «sharepoint» &#124; суммировать count() by SiteUrl \| sort by Count asc|
+|Использование сайтов SharePoint|Оффицеактивити &#124; , где оффицеворклоад = ~ "SharePoint &#124; " суммирует данные () by SiteUrl \| Сортировать по убыванию|
 |Операции доступа к файлам по типу пользователя|search in (OfficeActivity) OfficeWorkload =~ "azureactivedirectory" and "MyTest"|
 |Поиск по определенному ключевому слову|Type=OfficeActivity OfficeWorkload=azureactivedirectory "MyTest"|
 |Мониторинг внешних действий в отношении Exchange|OfficeActivity &#124; where OfficeWorkload =~ "exchange" and ExternalAccess == true|

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
-ms.openlocfilehash: 06532369efb802606eb13a4b38a8579a3528f999
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dacc4179483de5d5ef8a05fd836e4241c161deac
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60777039"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741264"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
@@ -31,14 +31,14 @@ ms.locfileid: "60777039"
 
 Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../../azure-monitor/platform/alerts-overview.md) или [импортированных из Nagios или Zabbix](../../azure-monitor/learn/quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Решение работает с любыми записями в репозитории Log Analytics, имеющими тип **Alert** (Оповещение), поэтому необходимо выполнить настройку, которая требуется для сбора этих записей.
 
 - Для оповещений Log Analytics [создайте правила генерации оповещений](../../azure-monitor/platform/alerts-overview.md), чтобы записи оповещений создавались непосредственно в репозитории.
 - Для оповещений Nagios и Zabbix [настройте соответствующие серверы](../../azure-monitor/learn/quick-collect-linux-computer.md) на отправку оповещений в Log Analytics.
 - Для оповещений System Center Operations Manager [подключите группу управления Operations Manager к рабочей области Log Analytics](../../azure-monitor/platform/om-agents.md).  Все оповещения, созданные в System Center Operations Manager, импортируются в Log Analytics.  
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Добавьте решение "Управление оповещениями" в рабочую область Log Analytics в соответствии с инструкциями по [добавлению решений](../../azure-monitor/insights/solutions.md). Дополнительная настройка не требуется.
 
 ## <a name="management-packs"></a>Пакеты управления
@@ -70,7 +70,7 @@ ms.locfileid: "60777039"
 
 Щелкните плитку **Управление оповещениями**, чтобы открыть панель мониторинга **Управление оповещениями**.  Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице.  Каждый столбец содержит десять самых частых оповещений, соответствующих выбранным критериям для данного столбца указанной области действия и за указанный период.  Можно выполнить поиск журналов, выводящий весь список, щелкнув элемент **Просмотреть все** внизу столбца или заголовок этого столбца.
 
-| столбец | Описание |
+| Столбец | Описание |
 |:--- |:--- |
 | критические оповещения; |Все оповещения с уровнем серьезности "Критическое" группируются по имени.  Щелкните имя оповещения, чтобы выполнить поиск журналов, возвращающий все записи для данного оповещения. |
 | предупреждающие оповещения; |Все оповещения с уровнем серьезности "Предупреждение" группируются по имени.  Щелкните имя оповещения, чтобы выполнить поиск журналов, возвращающий все записи для данного оповещения. |
@@ -87,28 +87,28 @@ ms.locfileid: "60777039"
 
 Решение импортирует оповещения из System Center Operations Manager и создает соответствующую запись для каждого оповещения, для которого указан тип **Alert**, а SourceSystem имеет значение **OpsManager**.  У этих записей есть свойства, приведенные в таблице ниже.  
 
-| Свойство | Description |
+| Свойство | Описание |
 |:--- |:--- |
-| type |*Предупреждение* |
-| SourceSystem |*OpsManager* |
-| AlertContext |Подробные сведения об элементе данных, вызвавшем создание оповещения в формате XML. |
-| AlertDescription |Подробное описание оповещения. |
-| AlertId |GUID оповещения. |
-| AlertName |Имя оповещения. |
-| AlertPriority |Приоритет оповещения. |
-| AlertSeverity |Серьезность оповещения. |
-| AlertState |Последнее состояние разрешения для предупреждения. |
-| LastModifiedBy |Имя последнего пользователя, изменившего оповещение. |
-| ManagementGroupName |Имя группы управления, где было создано оповещение. |
-| RepeatCount |Указывает, сколько раз было создано такое оповещение для того же отслеживаемого объекта с момента разрешения. |
-| ResolvedBy |Имя пользователя, разрешившего оповещение. Пусто, если оповещение пока не разрешено. |
-| SourceDisplayName |Отображаемое имя отслеживаемого объекта, сгенерировавшего оповещение. |
-| SourceFullName |Полное имя отслеживаемого объекта, сгенерировавшего оповещение. |
-| TicketId |Идентификатор запроса для предупреждения, если среда System Center Operations Manager дополнена процессом назначения запросов для оповещений.  Пустой, если идентификатор билета не назначен. |
-| TimeGenerated |Дата и время создания оповещения. |
-| TimeLastModified |Дата и время последнего изменения оповещения. |
-| TimeRaised |Дата и время генерации оповещения. |
-| TimeResolved |Дата и время разрешения оповещения. Пусто, если оповещение пока не разрешено. |
+| `Type` |*Предупреждение* |
+| `SourceSystem` |*OpsManager* |
+| `AlertContext` |Подробные сведения об элементе данных, вызвавшем создание оповещения в формате XML. |
+| `AlertDescription` |Подробное описание оповещения. |
+| `AlertId` |GUID оповещения. |
+| `AlertName` |Имя оповещения. |
+| `AlertPriority` |Приоритет оповещения. |
+| `AlertSeverity` |Серьезность оповещения. |
+| `AlertState` |Последнее состояние разрешения для предупреждения. |
+| `LastModifiedBy` |Имя последнего пользователя, изменившего оповещение. |
+| `ManagementGroupName` |Имя группы управления, где было создано оповещение. |
+| `RepeatCount` |Указывает, сколько раз было создано такое оповещение для того же отслеживаемого объекта с момента разрешения. |
+| `ResolvedBy` |Имя пользователя, разрешившего оповещение. Пусто, если оповещение пока не разрешено. |
+| `SourceDisplayName` |Отображаемое имя отслеживаемого объекта, сгенерировавшего оповещение. |
+| `SourceFullName` |Полное имя отслеживаемого объекта, сгенерировавшего оповещение. |
+| `TicketId` |Идентификатор запроса для предупреждения, если среда System Center Operations Manager дополнена процессом назначения запросов для оповещений.  Пустой, если идентификатор билета не назначен. |
+| `TimeGenerated` |Дата и время создания оповещения. |
+| `TimeLastModified` |Дата и время последнего изменения оповещения. |
+| `TimeRaised` |Дата и время генерации оповещения. |
+| `TimeResolved` |Дата и время разрешения оповещения. Пусто, если оповещение пока не разрешено. |
 
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 Следующая таблица содержит примеры поисков по журналам для получения записей оповещений, собранных этим решением. 
@@ -117,13 +117,13 @@ ms.locfileid: "60777039"
 |:---|:---|
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) |Критические оповещения, созданные за последние 24 часа. |
 | Alert &#124; where AlertSeverity == "warning" and TimeRaised > ago(24h) |Предупредительные оповещения, созданные за последние 24 часа. |
-| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными оповещениями, возникшие за последние 24 часа. |
+| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными предупреждениями, вызванными за последние 24 часа |
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) and AlertState != "Closed" |Все критические оповещения, созданные за последние 24 часа и остающиеся активными. |
 | Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(24h) and AlertState == "Closed" |Все критические оповещения, созданные за последние 24 часа и уже закрытые. |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Оповещения, созданные за последние 1 день и сгруппированные по уровню серьезности. |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Оповещения, созданные за последние 1 день и сгруппированные по числу повторений. |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Предупреждения, вызванные за последний день, сгруппированные по серьезности |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Предупреждения, вызванные за последний день, отсортированные по повторяющемуся значению счетчика |
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../../azure-monitor/platform/alerts-overview.md).

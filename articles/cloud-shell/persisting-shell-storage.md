@@ -1,6 +1,6 @@
 ---
-title: Сохранение файлов для Bash в Azure Cloud Shell | Документация Майкрософт
-description: Пошаговое руководство по сохранению файлов Bash в Azure Cloud Shell.
+title: Сохранять файлы в Azure Cloud Shell | Документация Майкрософт
+description: Пошаговое руководство по сохранению файлов в Azure Cloud Shell.
 services: azure
 documentationcenter: ''
 author: maertendMSFT
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: damaerte
-ms.openlocfilehash: 0aa00af543a3d21db9b8ad0ed808a8bff0b534e1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f60125123d019cbfa93bfc1b06da7ac90b54e311
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60200273"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742036"
 ---
 [!INCLUDE [PersistingStorage-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
@@ -70,7 +70,7 @@ clouddrive mount -s mySubscription -g myRG -n storageAccountName -f fileShareNam
 ![Выполнение команды clouddrive unmount](media/persisting-shell-storage/unmount-h.png)
 
 > [!WARNING]
-> Хотя при выполнении этой команды ресурсы не удаляются, ручное удаление группы ресурсов, учетной записи хранения или файлового ресурса, сопоставленного с Cloud Shell, приведет к удалению образа диска каталога `$Home` и всех файлов в файловом ресурсе. Это действие невозможно отменить.
+> Хотя при выполнении этой команды ресурсы не удаляются, ручное удаление группы ресурсов, учетной записи хранения или файлового ресурса, сопоставленного с Cloud Shell, приведет к удалению образа диска каталога `$Home` и всех файлов в файловом ресурсе. Это действие необратимо.
 
 ### <a name="list-clouddrive"></a>Вывод объектов `clouddrive`
 Чтобы узнать, какой файловый ресурс подключен как `clouddrive`, выполните команду `df`. 
@@ -104,7 +104,7 @@ justin@Azure:~$
 
 Примечание. Если вам нужно определить функцию в файле и вызвать ее с помощью командлетов PowerShell, необходимо добавить оператор "точка". Например: .\MyFunctions.ps1
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
 [Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
 [Сведения о хранилище файлов Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction) <br>

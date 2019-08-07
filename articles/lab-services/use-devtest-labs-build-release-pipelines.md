@@ -1,6 +1,6 @@
 ---
-title: Использование DevTest Labs в Azure DevOps сборка и выпуск конвейеров | Документация Майкрософт
-description: Узнайте, как использовать Azure DevTest Labs в конвейерах сборки и выпуска Azure DevOps.
+title: Использование DevTest Labs в Azure Pipelines конвейерах сборки и выпуска | Документация Майкрософт
+description: Узнайте, как использовать Azure DevTest Labs в конвейерах сборки и выпуска Azure Pipelines.
 services: devtest-lab, lab-services
 documentationcenter: na
 author: spelluru
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/29/2019
 ms.author: spelluru
-ms.openlocfilehash: 606563cd7d7adcdd79bf9561876eb0640fb68b21
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 032f598fed765b281d4a6a124f8855abc201ee94
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68620900"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774496"
 ---
-# <a name="use-devtest-labs-in-azure-devops-build-and-release-pipelines"></a>Использование DevTest Labs в конвейерах сборки и выпуска в Azure DevOps
-В этой статье содержатся сведения о том, как DevTest Labs можно использовать в конвейерах сборки и выпуска Azure DevOps. 
+# <a name="use-devtest-labs-in-azure-pipelines-build-and-release-pipelines"></a>Использование DevTest Labs в Azure Pipelines конвейерах сборки и выпуска
+Azure Pipelines в этой статье содержатся сведения о том, как DevTest Labs можно использовать в конвейерах сборки и выпуска. 
 
 ## <a name="overall-flow"></a>Общий поток
 Основной поток — создать **конвейер сборки** , который выполняет следующие задачи:
@@ -49,7 +49,7 @@ ms.locfileid: "68620900"
 Конвейер сборки создаст среду DevTest Labs и развернет код для тестирования.
 
 ## <a name="set-up-a-build-pipeline"></a>Настройка конвейера сборки
-В Azure DevOps создайте конвейер сборки, используя код из [учебника: Создание веб-приложения .NET Core и базы данных SQL в службе](../app-service/app-service-web-tutorial-dotnetcore-sqldb.md)приложений Azure. Используйте шаблон **ASP.NET Core** , который будет заполнять необходимую задачу для сборки, тестирования и публикации кода.
+В Azure pipelines создайте конвейер сборки, используя код из [учебника: Создание веб-приложения .NET Core и базы данных SQL в службе](../app-service/app-service-web-tutorial-dotnetcore-sqldb.md)приложений Azure. Используйте шаблон **ASP.NET Core** , который будет заполнять необходимую задачу для сборки, тестирования и публикации кода.
 
 ![Выбор шаблона ASP.NET](./media/use-devtest-labs-build-release-pipelines/select-asp-net.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "68620900"
 
 ![Задача развертывания службы приложений](./media/use-devtest-labs-build-release-pipelines/app-service-deploy.png)
 
-## <a name="setup-release-pipeline"></a>Настройка конвейера выпуска
+## <a name="set-up-release-pipeline"></a>Настройка конвейера выпуска
 Вы создадите конвейер выпуска с двумя задачами: **Развертывание Azure: Создайте или обновите группу** ресурсов и **разверните службу приложений Azure**. 
 
 Для первой задачи укажите имя и расположение группы ресурсов. Расположение шаблона — это связанный артефакт. Если шаблон диспетчер ресурсов содержит связанные шаблоны, необходимо реализовать пользовательское развертывание группы ресурсов. Шаблон находится в опубликованном Drop-артефакте. Переопределите параметры шаблона для шаблона диспетчер ресурсов. Остальные параметры можно оставить значениями по умолчанию. 
@@ -98,5 +98,5 @@ ms.locfileid: "68620900"
 ## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
-- [Интеграция Azure DevTest Labs в конвейер непрерывной интеграции и доставки Azure DevOps](devtest-lab-integrate-ci-cd-vsts.md)
-- [Интеграция сред в конвейеры CI/CD DevOps в Azure](integrate-environments-devops-pipeline.md)
+- [Интеграция Azure DevTest Labs в конвейер непрерывной интеграции и доставки Azure Pipelines](devtest-lab-integrate-ci-cd-vsts.md)
+- [Интегрируйте среды в конвейеры Azure Pipelines CI/CD](integrate-environments-devops-pipeline.md)

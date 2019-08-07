@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 66c43556e698063b95ce1c3787458e40c9d71504
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1545e2e7eba23b0bedbfe297c292fc94e1659ae3
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60365596"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775283"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 > [!div class="op_single_selector"]
@@ -95,7 +95,7 @@ ms.locfileid: "60365596"
 
 1. На странице ExpressRoute щелкните **Разрешения**, введите **имя** разрешения и щелкните **Сохранить**.
 
-   ![Authorizations](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
+   ![Авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authorization.png)
 2. После сохранения конфигурации скопируйте **идентификатор ресурса** и **ключ авторизации**.
 
    ![Ключ авторизации](./media/expressroute-howto-linkvnet-portal-resource-manager/authkey.png)
@@ -121,7 +121,7 @@ ms.locfileid: "60365596"
 
    ![Страница "Основные"](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection3.png)
 5. На странице **Параметры** выберите **Шлюз виртуальной сети** и установите флажок **Активировать авторизацию**.
-6. Введите значения **Ключ авторизации** и **Peer circuit URI** (URI однорангового канала) и присвойте подключению имя. Последовательно выберите **ОК**.
+6. Введите значения **Ключ авторизации** и **Peer circuit URI** (URI однорангового канала) и присвойте подключению имя. Нажмите кнопку **ОК**. **URI одноранговой цепи** — это идентификатор ресурса канала expressroute (который можно найти в области параметров свойства канала expressroute).
 
    ![Страница «Параметры»](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection4.png)
 7. Просмотрите сведения на странице **Сводка** и нажмите кнопку **ОК**.
@@ -134,5 +134,5 @@ ms.locfileid: "60365596"
 
 Можно удалить подключение и разорвать связь виртуальной сети с каналом ExpressRoute, выбрав значок **Удалить** на странице соответствующего подключения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

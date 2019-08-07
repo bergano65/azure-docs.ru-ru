@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: vijetaj
-ms.openlocfilehash: 81aac356f49f7bf8dc57f77054d10aa3e09d473f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 40b8f101d968514ac599b43a79b7e62b7fd837a4
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565263"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779481"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики. 
@@ -43,12 +43,12 @@ ms.locfileid: "68565263"
 
 В этой серии статей представлены указания и рекомендации по каждому из указанных выше аспектов. В ней не рассматриваются все рекомендации и требования, актуальные при развертывании DSVM на крупном предприятии. Ниже указаны другие документы Azure, сведения из которых можно применить при внедрении экземпляров DSVM на вашем предприятии: 
 
-* [Безопасность сети](https://docs.microsoft.com/azure/security/azure-network-security)
+* [Сетевая безопасность] (https://docs.microsoft.com/azure/security/fundamentals/network-security
 * [Мониторинг](https://docs.microsoft.com/azure/virtual-machines/windows/monitor) и [управление](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
-* [Ведение журналов и аудит](https://docs.microsoft.com/azure/security/azure-log-audit)
+* [Ведение журналов и аудит](https://docs.microsoft.com/azure/security/fundamentals/log-audit)
 * [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview)
 * [Настройка и применение политик](../../governance/policy/overview.md)
-* [Защита от вредоносных программ](https://docs.microsoft.com/azure/security/azure-security-antimalware)
+* [Защита от вредоносных программ](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 * [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/encrypt-disks)
 * [Обнаружение данных и управление ими](https://docs.microsoft.com/azure/data-catalog/)
 

@@ -7,14 +7,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.author: dacurwin
-ms.openlocfilehash: 7ee4cffea9c997e5fcd3631594d61e6d5383cb38
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 6b79b34b1db6c201a8f132e4c608e251edb3666a
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639474"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68735425"
 ---
-# <a name="azure-backup-support-matrix"></a>Таблица поддержки Azure Backup
+# <a name="support-matrix-for-azure-backup"></a>Матрица поддержки для Azure Backup
 
 [Azure Backup](backup-overview.md) можно использовать для резервного копирования данных на облачную платформу Microsoft Azure. В этой статье перечислены общие параметры поддержки и ограничения для Azure Backup сценариев и развертываний.
 

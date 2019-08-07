@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee3309bdd3629057d174866dde58ffd95e9e5ca8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 49f8d0e418f43648665b95f5bf1f672e9f9dae28
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562138"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779457"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -111,12 +111,18 @@ ms.locfileid: "68562138"
 
 ### <a name="federated-environment"></a>Федеративная среда
 
-В федеративной среде должен быть поставщик удостоверений, который поддерживает следующие требования:
+В федеративной среде должен быть поставщик удостоверений, который поддерживает следующие требования. При наличии Федеративной среды, использующей службы федерации Active Directory (AD FS) (AD FS), указанные ниже требования уже поддерживаются.
 
-- **Протокол WS-Trust:** Этот протокол необходим для проверки подлинности текущих гибридных присоединенных к Azure AD устройств в Azure AD.
 - **Утверждение WIAORMULTIAUTHN:** Это утверждение необходимо для того, чтобы выполнить гибридное присоединение к Azure AD для устройств Windows нижнего уровня.
+- **Протокол WS-Trust:** Этот протокол необходим для проверки подлинности текущих гибридных присоединенных к Azure AD устройств в Azure AD. При использовании AD FS необходимо включить следующие конечные точки WS-Trust:`/adfs/services/trust/2005/windowstransport`  
+`/adfs/services/trust/13/windowstransport`  
+  `/adfs/services/trust/2005/usernamemixed` 
+  `/adfs/services/trust/13/usernamemixed`
+  `/adfs/services/trust/2005/certificatemixed` 
+  `/adfs/services/trust/13/certificatemixed` 
 
-При наличии Федеративной среды, использующей службы федерации Active Directory (AD FS) (AD FS), указанные выше требования уже поддерживаются.
+> [!WARNING] 
+> **Службы ADFS/Services/Trust/2005/windowstransport** или **ADFS/Services/Trust/13/windowstransport** должны быть включены только в качестве конечных точек в интрасети и не должны предоставляться в качестве конечных точек с внешними экстрасетями через прокси-сервер приложения. Дополнительные сведения о том, как отключить WS-Trust конечные точки WIndows, см. в разделе [Отключение WS-Trust конечных точек Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
@@ -130,7 +136,7 @@ ms.locfileid: "68562138"
 
 ## <a name="review-on-premises-ad-upn-support-for-hybrid-azure-ad-join"></a>Проверка поддержки локального имени участника-пользователя AD для гибридного присоединение к Azure AD
 
-В некоторых случаях имена участников-пользователей локальной службы AD могут отличаться от имен участников-пользователей Azure Active Directory. В некоторых случаях присоединение к гибридной Azure Active Directory в Windows 10 обеспечивает ограниченную поддержку имен участников-пользователей локальной службы AD, которая определяется [методом проверки подлинности](https://docs.microsoft.com/azure/security/azure-ad-choose-authn), типом домена и версией Windows 10. Существуют два типа имен участников-пользователей локальной службы AD, которые могут существовать в вашей среде.
+В некоторых случаях имена участников-пользователей локальной службы AD могут отличаться от имен участников-пользователей Azure Active Directory. В некоторых случаях присоединение к гибридной Azure Active Directory в Windows 10 обеспечивает ограниченную поддержку имен участников-пользователей локальной службы AD, которая определяется [методом проверки подлинности](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn), типом домена и версией Windows 10. Существуют два типа имен участников-пользователей локальной службы AD, которые могут существовать в вашей среде.
 
 - Маршрутизируемое имя участника-пользователя. Оно использует допустимый проверенный домен, который зарегистрирован с помощью регистратора доменных имен. Например, если основным доменом является contoso.com в Azure Active Directory, то contoso.org является основным доменом в локальной службе AD, принадлежащим компании Contoso и [проверенным в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain).
 - Немаршрутизируемое имя участника-пользователя. Оно не использует проверенный домен. Эго возможно использовать только в частной сети вашей организации. Например, если основным доменом в Azure Active Directory является contoso.com, то contoso.local является основным доменом в локальной службе AD, но не является проверяемым доменом в Интернете и используется только в сети компании Contoso.
