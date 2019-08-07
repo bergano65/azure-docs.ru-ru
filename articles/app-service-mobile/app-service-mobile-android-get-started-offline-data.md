@@ -97,7 +97,7 @@ ms.locfileid: "67443575"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Автономная Синхронизация данных в мобильных приложениях Azure]
-* [Cloud Cover: Offline Sync in Azure Mobile Services] (Облачная среда: автономная синхронизация в мобильных службах Azure) \(примечание: видео рассказывает о мобильных службах, однако точно так же автономная синхронизация работает в мобильных службах Azure\).
+* [Cloud Cover: Облачная среда: автономная синхронизация в мобильных службах Azure]\(примечание: видео рассказывает о мобильных службах, однако точно так же автономная синхронизация работает в мобильных службах Azure\).
 
 <!-- URLs. -->
 
@@ -105,6 +105,6 @@ ms.locfileid: "67443575"
 
 [Создание приложения Android]: app-service-mobile-android-get-started.md
 
-[Cloud Cover: Offline Sync in Azure Mobile Services]: https://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri (Облачная среда: автономная синхронизация в мобильных службах Azure).
+[Cloud Cover: Облачная среда: автономная синхронизация в мобильных службах Azure]: https://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: https://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
