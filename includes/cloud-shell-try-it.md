@@ -4,12 +4,12 @@ ms.service: azure
 ms.topic: include
 ms.date: 06/13/2019
 ms.author: sttramer
-ms.openlocfilehash: 8b2a9561a0933e435649c81334706481531c9ce9
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bfefefc365f2725f9f3feacf1e6159d09cc43ba9
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67836940"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736201"
 ---
 ## <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
@@ -20,7 +20,7 @@ ms.locfileid: "67836940"
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
 | Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При нажатии кнопки **Попробовать** код не копируется в Cloud Shell автоматически. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | <a href="https://shell.azure.com" title="Запуск Azure Cloud Shell"><img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" /></a> |
+| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | [![Запуск Cloud Shell в новом окне](media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
 | На [портале Azure](https://portal.azure.com) в правом верхнем углу в строке меню нажмите кнопку **Cloud Shell**. | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
 
 Чтобы выполнить код из этой статьи в Azure Cloud Shell, сделайте вот что:
