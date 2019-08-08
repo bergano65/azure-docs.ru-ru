@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: cgronlun
+ms.author: nibaccam
 author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/02/2019
-ms.openlocfilehash: eb6ae11bb4ffb39d9e9bcc692f17559fa2cde674
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: a5db2c1c40c9c6f5c05205b9b2c652d2e23cf229
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720233"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848242"
 ---
 # <a name="create-explore-and-deploy-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>Создание, просмотр и развертывание автоматических экспериментов машинного обучения в портал Azure (Предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "68720233"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Рабочая область службы машинного обучения Azure. См. раздел [Создание рабочей области службы машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
+* Рабочая область службы машинного обучения Azure. См. раздел [Создание рабочей области службы машинное обучение Azure](how-to-manage-workspace.md).
 
 ## <a name="get-started"></a>Начало работы
 
@@ -112,7 +112,7 @@ ms.locfileid: "68720233"
 Компонент| Имя столбца, для которого выполняется суммирование.
 Профиль| Встроенная визуализация на основе выводимого типа. Например, строки, логические значения и даты будут иметь значения счетчиков, а в десятичных числах — приблизительных гистограмм. Это позволяет быстро получить представление о распределении данных.
 Распределение типов| Встроенное значение числа типов в столбце. Значения NULL имеют собственный тип, поэтому эта визуализация полезна для обнаружения нечетных или отсутствующих значений.
-Тип|Выводимый тип столбца. Возможные значения: Strings, Boolean, Date и Decimal.
+Type|Выводимый тип столбца. Возможные значения: Strings, Boolean, Date и Decimal.
 Min| Минимальное значение столбца. Пустые записи отображаются для компонентов, тип которых не является упорядоченным (например, логические значения).
 Max| Максимальное значение столбца. 
 Count| Общее число отсутствующих и не отсутствующих записей в столбце.

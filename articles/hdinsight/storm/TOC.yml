@@ -16,13 +16,13 @@
 - name: Основные понятия
   items:
     - name: Компоненты Apache Hadoop в HDInsight
-      href: ../hdinsight-component-versioning.md
+      href: ../hdinsight-component-versioning.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: "HDInsight\_4.0"
-      href: ../hdinsight-version-release.md
+      href: ../hdinsight-version-release.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Установка приложений HDInsight
-      href: ../hdinsight-apps-install-applications.md
+      href: ../hdinsight-apps-install-applications.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Планирование ресурсов
-      href: ../hdinsight-capacity-planning.md
+      href: ../hdinsight-capacity-planning.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
 - name: Руководства
   items:
     - name: Разработка топологий Apache Storm
@@ -42,7 +42,7 @@
     - name: Создание конвейеров потоковой передачи
       items:
         - name: Apache Kafka и Apache Storm (Java)
-          href: ../hdinsight-apache-storm-with-kafka.md
+          href: ../hdinsight-apache-storm-with-kafka.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: 'Концентратор событий, служба хранилища и Data Lake Storage (Java)'
           href: 'https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/'
         - name: 'Концентратор событий и Apache Storm (C# и Java)'
@@ -50,37 +50,37 @@
     - name: Расширение кластеров
       items:
         - name: Настройка кластеров с использованием начальной загрузки
-          href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
+          href: ../hdinsight-hadoop-customize-cluster-bootstrap.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Настройка кластеров с помощью действия скрипта
-          href: ../hdinsight-hadoop-customize-cluster-linux.md
+          href: ../hdinsight-hadoop-customize-cluster-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Разработка действий скрипта
-          href: ../hdinsight-hadoop-script-actions-linux.md
+          href: ../hdinsight-hadoop-script-actions-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Сборка приложений HDInsight
           items:
             - name: Установка пользовательских приложений
-              href: ../hdinsight-apps-install-custom-applications.md
+              href: ../hdinsight-apps-install-custom-applications.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Установка приложений с помощью REST
               href: 'https://msdn.microsoft.com/library/mt706515.aspx'
             - name: Публикация приложений HDInsight в Azure Marketplace
-              href: ../hdinsight-apps-publish-applications.md
+              href: ../hdinsight-apps-publish-applications.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Безопасность
       items:
         - name: Использование SSH с HDInsight
-          href: ../hdinsight-hadoop-linux-use-ssh-unix.md
+          href: ../hdinsight-hadoop-linux-use-ssh-unix.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Использование туннелирования SSH
-          href: ../hdinsight-linux-ambari-ssh-tunnel.md
+          href: ../hdinsight-linux-ambari-ssh-tunnel.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Ограничение доступа к данным
-          href: ../hdinsight-storage-sharedaccesssignature-permissions.md
+          href: ../hdinsight-storage-sharedaccesssignature-permissions.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Управление
       items:
         - name: Создание кластеров HDInsight
-          href: ../hdinsight-hadoop-provision-linux-clusters.md
+          href: ../hdinsight-hadoop-provision-linux-clusters.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
           items:
             - name: Использование портала Azure
-              href: ../hdinsight-hadoop-create-linux-clusters-portal.md
+              href: ../hdinsight-hadoop-create-linux-clusters-portal.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование шаблонов Azure Resource Manager
               displayName: 'resource manager template, arm template, resource manager group'
-              href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
+              href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование пакета SDK для .NET
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#create-a-cluster'
             - name: Использование пакета SDK для Python
@@ -88,15 +88,15 @@
             - name: Использование пакета SDK для Java
               href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster'
             - name: Использование Azure PowerShell
-              href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
+              href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование cURL и REST API Azure
-              href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
+              href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование Azure CLI
-              href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
+              href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Создание кластеров по запросу
-              href: ../hdinsight-hadoop-create-linux-clusters-adf.md
+              href: ../hdinsight-hadoop-create-linux-clusters-adf.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Управление кластерами HDInsight
-          href: ../hdinsight-administer-use-portal-linux.md
+          href: ../hdinsight-administer-use-portal-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
           items:
             - name: Использование пакета SDK для .NET
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#management'
@@ -107,68 +107,68 @@
             - name: Использование пакета SDK для Go (предварительная версия)
               href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
             - name: Использование Azure PowerShell
-              href: ../hdinsight-administer-use-powershell.md
+              href: ../hdinsight-administer-use-powershell.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование Azure CLI
-              href: ../hdinsight-administer-use-command-line.md
+              href: ../hdinsight-administer-use-command-line.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
-          href: ../hdinsight-hadoop-manage-ambari.md
+          href: ../hdinsight-hadoop-manage-ambari.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
           items:
             - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
-              href: ../hdinsight-changing-configs-via-ambari.md
+              href: ../hdinsight-changing-configs-via-ambari.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Использование REST API Apache Ambari
-              href: ../hdinsight-hadoop-manage-ambari-rest-api.md
+              href: ../hdinsight-hadoop-manage-ambari-rest-api.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Управление журналами для кластера HDInsight
-          href: ../hdinsight-log-management.md
+          href: ../hdinsight-log-management.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Добавление учетных записей хранения
-          href: ../hdinsight-hadoop-add-storage.md
+          href: ../hdinsight-hadoop-add-storage.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Отправка данных для заданий Apache Hadoop
-          href: ../hdinsight-upload-data.md
+          href: ../hdinsight-upload-data.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Использование нескольких кластеров HDInsight с Data Lake Storage
-          href: ../hdinsight-multiple-clusters-data-lake-store.md
+          href: ../hdinsight-multiple-clusters-data-lake-store.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Импорт и экспорт данных с помощью Apache Sqoop
-          href: ../hdinsight-use-sqoop.md
+          href: ../hdinsight-use-sqoop.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
           items:
             - name: Подключение по SSH
-              href: ../hdinsight-use-sqoop-mac-linux.md
+              href: ../hdinsight-use-sqoop-mac-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Запуск с помощью cURL
-              href: ../hdinsight-hadoop-use-sqoop-curl.md
+              href: ../hdinsight-hadoop-use-sqoop-curl.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Запуск с помощью пакета SDK для .NET
-              href: ../hdinsight-hadoop-use-sqoop-dotnet-sdk.md
+              href: ../hdinsight-hadoop-use-sqoop-dotnet-sdk.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Запуск с помощью Azure PowerShell
-              href: ../hdinsight-hadoop-use-sqoop-powershell.md
+              href: ../hdinsight-hadoop-use-sqoop-powershell.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Использование Apache Oozie для рабочих процессов
-          href: ../hdinsight-use-oozie-linux-mac.md
+          href: ../hdinsight-use-oozie-linux-mac.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Порты и универсальные коды ресурсов (URI) кластеров и служб
-          href: ../hdinsight-hadoop-port-settings-for-services.md
+          href: ../hdinsight-hadoop-port-settings-for-services.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Миграция в среду средств разработки Resource Manager
-          href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
+          href: ../hdinsight-hadoop-development-using-azure-resource-manager.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Доступность и надежность
-          href: ../hdinsight-high-availability-linux.md
+          href: ../hdinsight-high-availability-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Установка новой версии кластера HDInsight
-          href: ../hdinsight-upgrade-cluster.md
+          href: ../hdinsight-upgrade-cluster.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Обновление ОС путем частичной замены для кластера HDInsight
-          href: ../hdinsight-os-patching.md
+          href: ../hdinsight-os-patching.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Устранение неполадок
-      href: ../hdinsight-troubleshoot-guide.md
+      href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
       items:
         - name: Устранение задержки работы или сбоя кластера HDInsight
-          href: ../hdinsight-troubleshoot-failed-cluster.md
+          href: ../hdinsight-troubleshoot-failed-cluster.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Hadoop HDFS
-          href: ../hdinsight-troubleshoot-hdfs.md
+          href: ../hdinsight-troubleshoot-hdfs.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Storm
           href: apache-troubleshoot-storm.md
         - name: Устранение неполадок с Apache Hadoop YARN
-          href: ../hdinsight-troubleshoot-yarn.md
+          href: ../hdinsight-troubleshoot-yarn.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Ресурсы
           items:
             - name: Сведения об использовании HDInsight в Linux
-              href: ../hdinsight-hadoop-linux-information.md
+              href: ../hdinsight-hadoop-linux-information.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: 'Apache Hadoop: память и производительность'
-              href: ../hdinsight-hadoop-stack-trace-error-messages.md
+              href: ../hdinsight-hadoop-stack-trace-error-messages.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Доступ к журналам приложений YARN в Hadoop под управлением Linux
-              href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md
+              href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
             - name: Включение дампов кучи для служб Apache Hadoop
-              href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md
+              href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
 - name: Справочные материалы
   items:
     - name: Примеры кода
@@ -182,7 +182,7 @@
     - name: Пакет SDK для Java
       href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable'
     - name: Пакет SDK для Go
-      href: ../hdinsight-go-sdk-overview.md
+      href: ../hdinsight-go-sdk-overview.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: .NET (Apache HBase)
       href: 'https://www.nuget.org/packages/Microsoft.HBase.Client/'
     - name: REST
@@ -205,38 +205,38 @@
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Средства Windows для HDInsight
-      href: ../hdinsight-hadoop-windows-tools.md
+      href: ../hdinsight-hadoop-windows-tools.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Изменения в доступе к конфигурации кластера
-      href: ../hdinsight-migrate-granular-access-cluster-configurations.md
+      href: ../hdinsight-migrate-granular-access-cluster-configurations.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
 - name: Готовность к работе в масштабах предприятия
   items:
     - name: Защита данных
-      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Доступ к сети
       items:
         - name: Архитектура виртуальной сети HDInsight
-          href: ../hdinsight-virtual-network-architecture.md
+          href: ../hdinsight-virtual-network-architecture.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Планирование виртуальных сетей для HDInsight
-          href: ../hdinsight-plan-virtual-network-deployment.md
+          href: ../hdinsight-plan-virtual-network-deployment.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Создание виртуальных сетей для HDInsight
-          href: ../hdinsight-create-virtual-network.md
+          href: ../hdinsight-create-virtual-network.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
-          href: ../hdinsight-management-ip-addresses.md
+          href: ../hdinsight-management-ip-addresses.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Ограничение исходящего трафика с помощью брандмауэра
-          href: ../hdinsight-restrict-outbound-traffic.md
+          href: ../hdinsight-restrict-outbound-traffic.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Подключение HDInsight к локальной сети
-          href: ../connect-on-premises-network.md
+          href: ../connect-on-premises-network.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
     - name: Мониторинг с использованием журналов Azure Monitor
       items:
         - name: Использование журналов Azure Monitor
-          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
+          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Использование запросов с журналами Azure Monitor
-          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
+          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
         - name: Мониторинг производительности кластера
-          href: ../hdinsight-key-scenarios-to-monitor.md
+          href: ../hdinsight-key-scenarios-to-monitor.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json
 - name: Сопутствующие материалы
   items:
     - name: Кластеры Windows
       items:
         - name: Перенос решений .NET в кластеры Linux
-          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
+          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md?toc=/azure/hdinsight/storm/toc.json&bc=/azure/hdinsight/storm/breadcrumb/toc.json

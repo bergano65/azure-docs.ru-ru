@@ -1,7 +1,6 @@
 ---
 title: Отправка событий хранилища BLOB-объектов Azure в конечную веб-точку — Powershell | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
-services: storage,event-grid
 author: normesta
 ms.author: normesta
 ms.reviewer: dastanfo
@@ -9,13 +8,12 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.custom: seodec18
-ms.openlocfilehash: cf1b0ba5d70ed0934418a147c09791725b5465bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0dae5ae79234ea29e6b17627fc07abcb3b5dfcb
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65143362"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847153"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-powershell"></a>Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью PowerShell
 
@@ -27,13 +25,13 @@ ms.locfileid: "65143362"
 
 ![Просмотр результатов](./media/storage-blob-event-quickstart-powershell/view-results.png)
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Для работы с этой статьей требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -47,7 +45,7 @@ Connect-AzAccount
 $location = "westus2"
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Темами событий сетки являются ресурсы Azure, которые необходимо поместить в группу ресурсов Azure. Группа ресурсов Azure — это логическая коллекция, в которой выполняется развертывание и администрирование ресурсов Azure.
 
@@ -60,7 +58,7 @@ $resourceGroup = "gridResourceGroup"
 New-AzResourceGroup -Name $resourceGroup -Location $location
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
 События хранилища BLOB-объектов доступны в учетных записях хранения общего назначения версии 2 и учетных записях хранения BLOB-объектов. Учетные записи хранения **общего назначения версии 2** поддерживают все функции для всех служб хранилища, включая большие двоичные объекты, файлы, очереди и таблицы. **Учетные записи хранения BLOB-объектов** — это специализированные учетные записи хранения таких неструктурированных данных, как большие двоичные объекты, в службе хранилища Azure. Учетные записи хранилища BLOB-объектов похожи на учетные записи хранения общего назначения и обладают такими же функциями обеспечения устойчивости, надежности, масштабируемости и производительности, которые вы уже используете, а также отличаются полной согласованностью API в плане блочных BLOB-объектов и добавления больших двоичных объектов. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения Azure](../common/storage-account-overview.md).
 
@@ -170,7 +168,7 @@ Set-AzStorageBlobContent -File gridTestFile.txt -Container $containerName -Conte
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях хранилища BLOB-объектов и возможностях службы "Сетка событий":
 

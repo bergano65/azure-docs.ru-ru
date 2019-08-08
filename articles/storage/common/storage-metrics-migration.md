@@ -1,20 +1,19 @@
 ---
 title: Перенос метрик службы хранилища Azure | Документация Майкрософт
 description: Узнайте, как переносить старые метрики в новые, которые управляются службой Azure Monitor.
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/30/2018
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 58ac15c1aba715c9a5b67e723401b531e76608b2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 537369c9466b1083723642ec9e93fcdf25056c5e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153596"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855342"
 ---
 # <a name="azure-storage-metrics-migration"></a>Перенос метрик службы хранилища Azure
 
@@ -113,9 +112,9 @@ ms.locfileid: "65153596"
 
 ### <a name="is-new-metric-data-stored-in-the-same-storage-account-by-default"></a>Будет ли данные новых метрик по умолчанию сохраняться в ту же учетную запись хранения?
 
-№ Чтобы заархивировать данные метрик в учетную запись хранения, используйте [API настройки диагностики Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate).
+Нет. Чтобы заархивировать данные метрик в учетную запись хранения, используйте [API настройки диагностики Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure Monitor](../../monitoring-and-diagnostics/monitoring-overview.md)
 * [Метрики службы хранилища в Azure Monitor](./storage-metrics-in-azure-monitor.md)

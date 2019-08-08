@@ -56,7 +56,8 @@
     - name: Настройка пользовательского автозаполнения
       href: define-custom-suggestions.md
     - name: Обработка выделения совпадений
-      href: hit-highlighting.md
+      href: ../Bing-Web-Search/hit-highlighting.md
+      maintainContext: true
     - name: Просмотр результатов поиска веб-страниц
       href: page-webpages.md
 - name: Справочные материалы

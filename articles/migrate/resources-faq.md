@@ -4,14 +4,14 @@ description: В этой статье рассматриваются часто 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 08/07/2019
 ms.author: snehaa
-ms.openlocfilehash: 0708502087ae6880d9559cf17f0ba9982b2ba040
-ms.sourcegitcommit: 57a7d4f67635212f5bf0c56e58fd87c8ec366f2c
+ms.openlocfilehash: bf591306220b2c8c1e6c8166686836d96432fc7d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372488"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856278"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -71,7 +71,8 @@ ms.locfileid: "68372488"
 
 ### <a name="can-i-connect-the-same-appliance-to-multiple-vcenter-servers"></a>Можно ли подключить одно устройство к нескольким серверам vCenter?
 
-Да, можно использовать одно устройство миграции Azure для обнаружения нескольких серверов vCenter, но не параллельно. Необходимо выполнить обнаружение один за другим.
+Нет. Между устройством и vCenter Serverом существует однозначное сопоставление. Если необходимо обнаружить виртуальные машины на нескольких серверах vCenter Server, необходимо развернуть несколько устройств. 
+
 
 ### <a name="i-changed-my-machine-size-can-i-rerun-an-assessment"></a>Я изменил размер виртуальной машины. Можно ли повторно запустить оценку?
 

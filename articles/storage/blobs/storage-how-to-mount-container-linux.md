@@ -1,24 +1,23 @@
 ---
 title: Как подключить хранилище BLOB-объектов Azure в качестве файловой системы в Linux | Документация Майкрософт
 description: Подключение контейнера хранилища BLOB-объектов Azure с FUSE в Linux
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 2/1/2019
 ms.author: normesta
-ms.reviewer: seguler
-ms.openlocfilehash: d5077b75ff9e760917e9d5d02bea49dc4967a08b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.reviewer: dineshm
+ms.openlocfilehash: 88002999baacf38b4afd40b574686457c48546e4
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473450"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845023"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
 ## <a name="overview"></a>Обзор
-[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Blobfuse использует схему виртуального каталога с прямой косой черты «/» как разделитель.  
+[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Blobfuse использует схему виртуального каталога с косой чертой "/" в качестве разделителя.  
 
 В этом руководстве показано, как использовать blobfuse, подключить контейнер хранилища BLOB-объектов в Linux, а также получить доступ к данным. Дополнительные сведения о blobfuse см. в [репозитории blobfuse](https://github.com/Azure/azure-storage-fuse).
 
@@ -30,7 +29,7 @@ ms.locfileid: "66473450"
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
 Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
-Blobfuse поддерживает установку на Ubuntu 14.04, 16.04 и 18.04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+Blobfuse поддерживает установку на Ubuntu 14,04, 16,04 и 18,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
 lsb_release -a
 ```
@@ -52,11 +51,11 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-Аналогичным образом измените URL-адрес `.../ubuntu/16.04/...` или `.../ubuntu/18.04/...` для ссылки на другую версию Ubuntu.
+Аналогичным образом измените URL- `.../ubuntu/16.04/...` адрес `.../ubuntu/18.04/...` на или для ссылки на другую версию Ubuntu.
 
 ### <a name="install-blobfuse"></a>Установка blobfuse
 
-В дистрибутиве Ubuntu или Debian:
+В дистрибутиве Ubuntu/Debian:
 ```bash
 sudo apt-get install blobfuse
 ```
@@ -98,15 +97,15 @@ accountName myaccount
 accountKey storageaccesskey
 containerName mycontainer
 ```
-`accountName` — Префикс для вашей учетной записи хранения - не полный URL-адрес.
+`accountName` — Это префикс для учетной записи хранения, а не полный URL-адрес.
 
-Создайте этот файл с помощью:
+Создать этот файл с помощью:
 
 ```
 touch ~/fuse_connection.cfg
 ```
 
-Когда вы создадите и редактировать этот файл, убедитесь, что для ограничения доступа, чтобы другие пользователи не могли читать его.
+После создания и изменения этого файла необходимо ограничить доступ, чтобы другие пользователи не могли его читать.
 ```bash
 chmod 600 fuse_connection.cfg
 ```
@@ -140,7 +139,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
 * [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues) 

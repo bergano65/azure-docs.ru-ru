@@ -4,12 +4,12 @@ ms.service: virtual-machines-sql
 ms.topic: include
 ms.date: 05/13/2019
 ms.author: mathoma
-ms.openlocfilehash: 90c85b97f0d2de359f9debda3703e9a2f2d41112
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5a9feb559a73fa16ae3e711151102f2d02dba5b4
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075706"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846108"
 ---
   > [!NOTE]
-  > Следующие снимки экрана представляют среду из **виртуальные машины SQL** ресурс на портале Azure. Для [end-of-support (EOS)](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL server и виртуальных машин SQL Server, который не был зарегистрирован с [поставщика ресурсов виртуальной Машины SQL](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-ahb.md), использовать [вкладка "Конфигурация SQL Server"](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-manage-portal.md#access-sql-server-configuration-tab) для Вместо этого управление виртуальной Машине SQL Server. 
+  > Следующие снимки экрана относятся к ресурсу " **виртуальные машины SQL** " в портал Azure. Для виртуальных машин SQL Server в [конце поддержки (EOS)](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-server-2008-eos-extend-support.md) и SQL Server виртуальных машин, которые не зарегистрированы в поставщике [ресурсов виртуальной машины SQL](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-ahb.md), используйте [вкладку Конфигурация SQL Server](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-manage-portal.md#access-the-sql-server-configuration-tab) для управления виртуальной машиной SQL Server. 

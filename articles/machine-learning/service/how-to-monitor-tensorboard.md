@@ -5,16 +5,16 @@ description: Запустите TensorBoard для визуализации жу
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: article
+ms.topic: conceptual
 author: maxluk
 ms.author: maxluk
 ms.date: 06/28/2019
-ms.openlocfilehash: f65882cb851f8e35bb1d6c319d52fcfadb36ae91
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 2e4527ba167076935505b668a7879e5f1446b25e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68772712"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856074"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинное обучение Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "68772712"
 
 + Для экспериментов, которые не выводят нестандартно TensorBoard файлы, например Scikit-учиться или машинное обучение Azure, используйте [ `export_to_tensorboard()` метод](#export) для экспорта журналов выполнения в качестве TensorBoard и запуска TensorBoard из него. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Чтобы запустить TensorBoard и просмотреть журналы запуска экспериментов, в экспериментах необходимо включить ранее ведение журнала для контроля метрик и производительности.  
 
@@ -42,9 +42,9 @@ ms.locfileid: "68772712"
         * tensorboard. ipynb
 
     * Ваш собственный сервер записных книжек Жуптер
-      * Используйте [статью создание рабочей области](setup-create-workspace.md) для
           * [Установка пакета SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) с `tensorboard` дополнительными
-          * Создание рабочей области и ее файла конфигурации (config. JSON)
+          * [Создайте рабочую область Службы машинного обучения Azure](how-to-manage-workspace.md).  
+          * [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
   
 <a name="direct"></a>
 ## <a name="option-1-directly-view-run-history-in-tensorboard"></a>Вариант 1. Просмотр журнала выполнения непосредственно в TensorBoard

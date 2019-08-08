@@ -17,16 +17,16 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: ryanwi
 ms.reviewer: sureshja
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2ae83b655bfe607b1061168649ec74f02ab4064
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 85c3a1953ce34ab6bf60111715d9d8972a4682ba
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483183"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853391"
 ---
-# <a name="how-to-use-the-azure-ad-graph-api"></a>Практическое руководство: Использование API Graph Azure AD
+# <a name="how-to-use-the-azure-ad-graph-api"></a>Практическое руководство. Использование API Graph Azure AD
 
 API Graph Azure Active Directory (Azure AD) обеспечивает программный доступ к Azure AD через конечные точки REST API OData. Приложения могут использовать API Azure AD Graph для выполнения операций создания, чтения, обновления и удаления (CRUD) с данными и объектами каталогов. Например, можно использовать API Azure AD Graph для создания нового пользователя, просмотра или обновления свойств пользователя, изменения пароля пользователя, проверки членства в группе для доступа на основе ролей, а также отключения или удаления пользователя. Дополнительные сведения о функциях API Azure AD Graph и сценариях приложений см. в статьях [Azure AD Graph API reference](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) (Справочник по API Azure AD Graph) и [API Graph Azure Active Directory](https://msdn.microsoft.com/library/hh974476.aspx).
 
@@ -65,7 +65,7 @@ API Graph Azure Active Directory (Azure AD) обеспечивает прогр�
 
 Ниже показан снимок экрана результата, который отобразится, если войти в Azure AD Graph Explorer и ввести `https://graph.windows.net/GraphDir1.OnMicrosoft.com/users?api-version=1.6`, чтобы отобразить всех пользователей в каталоге пользователя, выполнившего вход.
 
-![Пример выходных данных в обозреватель API Graph Azure AD](./media/active-directory-graph-api-quickstart/graph_explorer.png)
+![Пример выходных данных в обозревателе API Graph Azure AD](./media/active-directory-graph-api-quickstart/graph_explorer.png)
 
 **Загрузка песочницы Azure AD Graph**. Чтобы загрузить этот инструмент, перейдите к [https://graphexplorer.azurewebsites.net/](https://graphexplorer.azurewebsites.net/). Выполните **вход** с использованием данных учетной записи Azure AD, чтобы запустить Azure AD Graph Explorer для работы с клиентом. При запуске Azure AD Graph Explorer для своего собственного клиента вам или вашему администратору потребуется предоставить согласие в процессе входа. Если у вас есть подписка Office 365, у вас также есть клиент Azure AD. Учетные данные, используемые для входа в Office 365, в действительности являются учетными записями Azure AD, и эти учетные данные можно использовать в Azure AD Graph Explorer.
 
@@ -124,7 +124,7 @@ API Graph Azure Active Directory (Azure AD) обеспечивает прогр�
 
 Дополнительные сведения о сущностях и типах Azure AD, доступ к которым можно получить с помощью Graph, а также сведения об операциях, которые можно с ними выполнять с помощью Graph, см. в [справочнике по Azure AD Graph REST API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о [API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 * Дополнительная информация: [Azure AD Graph API Permission Scopes](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)

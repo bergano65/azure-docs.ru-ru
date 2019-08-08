@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 12/12/2017
 ms.author: glenga
-ms.openlocfilehash: 3ac9d8d64e4f16a4d6268606e723b14e32d8c16e
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: e4460dd7131e35ee8b3f3112977099276da2d4ce
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261769"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68849427"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -206,10 +206,10 @@ public class Order
     public override String ToString()
     {
         return "\n{\n\torderId : " + orderId +
-                  "\n\tcustName : " + custName +             
-                  "\n\tcustAddress : " + custAddress +             
-                  "\n\tcustEmail : " + custEmail +             
-                  "\n\tcartId : " + cartId + "\n}";             
+                  "\n\tcustName : " + custName +
+                  "\n\tcustAddress : " + custAddress +
+                  "\n\tcustEmail : " + custEmail +
+                  "\n\tcartId : " + cartId + "\n}";
     }
 }
 ```
@@ -383,19 +383,19 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <PackageReference Include="Microsoft.ProjectOxford.Face" Version="1.1.0" />
     </ItemGroup>
 </Project>
 ```
 
-Чтобы использовать настраиваемые веб-каналы NuGet, укажите веб-канал в файле *Nuget.Config* в корне приложения-функции. Дополнительные сведения см. в статье [Configuring NuGet behavior](/nuget/consume-packages/configuring-nuget-behavior) (Настройка поведения NuGet). 
+Чтобы использовать настраиваемые веб-каналы NuGet, укажите веб-канал в файле *Nuget.Config* в корне приложения-функции. Дополнительные сведения см. в статье [Configuring NuGet behavior](/nuget/consume-packages/configuring-nuget-behavior) (Настройка поведения NuGet).
 
 > [!NOTE]
 > В функциях 1 C# . x ссылки на пакеты NuGet указываются в файле *Project. JSON* вместо файла *Function. proj* .
 
-Для функций 1. x используйте вместо него файл *Project. JSON* . Ниже приведен пример файла *Project. JSON* . 
+Для функций 1. x используйте вместо него файл *Project. JSON* . Ниже приведен пример файла *Project. JSON* .
 
 ```json
 {
@@ -446,7 +446,7 @@ public static string GetEnvironmentVariable(string name)
 }
 ```
 
-<a name="imperative-bindings"></a> 
+<a name="imperative-bindings"></a>
 
 ## <a name="binding-at-runtime"></a>Привязка во время выполнения
 
@@ -465,7 +465,7 @@ using (var output = await binder.BindAsync<T>(new BindingTypeAttribute(...)))
 }
 ```
 
-где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть типов выходных данных](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) для. `T`
+где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [\<ICollector T >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector<T>`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) для `T`.
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -497,7 +497,7 @@ using Microsoft.Azure.WebJobs.Host.Bindings.Runtime;
 public static async Task Run(string input, Binder binder)
 {
     var attributes = new Attribute[]
-    {    
+    {
         new BlobAttribute("samples-output/path"),
         new StorageAccountAttribute("MyStorageAccount")
     };
@@ -514,8 +514,8 @@ public static async Task Run(string input, Binder binder)
 > [!div class="mx-codeBreakAll"]
 > | Привязка | Атрибут | Ссылка, которую нужно добавить |
 > |------|------|------|
-> | Cosmos DB | [`Microsoft.Azure.WebJobs.DocumentDBAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.CosmosDB"` |
-> | Центры событий | [`Microsoft.Azure.WebJobs.ServiceBus.EventHubAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.Jobs.ServiceBus"` |
+> | Cosmos DB | [`Microsoft.Azure.WebJobs.DocumentDBAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.CosmosDB"` |
+> | Концентраторы событий | [`Microsoft.Azure.WebJobs.ServiceBus.EventHubAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.Jobs.ServiceBus"` |
 > | Мобильные приложения | [`Microsoft.Azure.WebJobs.MobileTableAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.MobileApps"` |
 > | Центры уведомлений | [`Microsoft.Azure.WebJobs.NotificationHubAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.NotificationHubs/NotificationHubAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.NotificationHubs"` |
 > | Служебная шина | [`Microsoft.Azure.WebJobs.ServiceBusAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.WebJobs.ServiceBus"` |

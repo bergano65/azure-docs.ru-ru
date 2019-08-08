@@ -47,7 +47,8 @@
 - name: Инструкции
   items:
     - name: Обработка выделения совпадений
-      href: hit-highlighting.md
+      href: ../Bing-Web-Search/hit-highlighting.md
+      maintainContext: true
     - name: Страницы новостей
       href: paging-news.md
     - name: Изменение размера и обрезка эскизов

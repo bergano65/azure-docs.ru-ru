@@ -1,19 +1,19 @@
 ---
 title: Сценарии работы с данными с использованием Azure Data Lake Storage 2-ого поколения | Документация Майкрософт
 description: Сведения о разных сценариях и средствах для приема, обработки, скачивания и визуализации данных в Data Lake Storage 2-ого поколения (прежнее название — Azure Data Lake Store)
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: normesta
-ms.openlocfilehash: 010b7bc38caf83c12dd0d8b8e731fdbad6e45256
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.reviewer: stewu
+ms.openlocfilehash: cafe761d2b566a7bddce503765c11bf9f8e00f2a
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68422878"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847453"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Использование Azure Data Lake Storage 2-ого поколения для обеспечения соответствия требованиям больших данных
 

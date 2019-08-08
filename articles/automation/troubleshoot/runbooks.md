@@ -8,14 +8,30 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: f732ab6ceb17dcd013c6d032ef3943f6ad9bef71
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 759422ea8c327ae67278354217dac4c60b32f7a9
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68782361"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850317"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
+
+В этой статье описаны распространенные проблемы с модулями Runbook и способы их устранения.
+
+## <a name="steps-to-troubleshoot-runbooks"></a>Действия по устранению неполадок модулей Runbook
+
+При возникновении ошибок при выполнении модулей Runbook в службе автоматизации Azure можно выполнить следующие действия, чтобы помочь в диагностике проблемы.
+
+1. **Убедитесь, что скрипт Runbook успешно выполнен на локальном компьютере:**  Справочные материалы по языку и учебным модулям см. в документации по [документам PowerShell](/powershell/scripting/overview) или документах [Python](https://docs.python.org/3/) .
+
+   Локальное выполнение скрипта может обнаружить и устранить распространенные ошибки, например:
+
+   - **Отсутствующие модули**
+   - **Синтаксические ошибки**
+   - **Логические ошибки**
+
+2. **Убедитесь, что узлы и Рабочая область автоматизации содержат необходимые модули:** Если модуль Runbook импортирует все модули, убедитесь, что они доступны в учетной записи службы автоматизации, выполнив действия, описанные в разделе [Импорт модулей](../shared-resources/modules.md#import-modules). Дополнительные сведения см. в разделе [Устранение неполадок модулей](shared-resources.md#modules).
 
 ## <a name="authentication-errors-when-working-with-azure-automation-runbooks"></a>Ошибки, связанные с аутентификацией, при работе с модулями Runbook службы автоматизации Azure
 

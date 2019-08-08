@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/01/2019
-ms.openlocfilehash: 11e8b26c81d3a8f672abbeafc153df73d063cb6e
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 84de9d53b19f5aa9b73570aa0d115d204e8b6596
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68612240"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848218"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 
@@ -32,9 +32,9 @@ ms.locfileid: "68612240"
 
 Дополнительные сведения о функциях, предоставляемых службой приложений Azure, см. в статье [Обзор службы приложений](/azure/app-service/overview).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](setup-create-workspace.md) .
+* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 * Обученная модель машинного обучения, зарегистрированная в вашей рабочей области. Если модель отсутствует, используйте [учебник по классификации образов: обучение модели](tutorial-train-models-with-aml.md) для обучения и регистрации.
 * Образ DOCKER, созданный из модели. Если у вас нет образа, создайте его с помощью [классификации образа: развертывание модели](tutorial-deploy-models-with-aml.md) .
 

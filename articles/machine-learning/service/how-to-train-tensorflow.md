@@ -10,12 +10,12 @@ ms.author: maxluk
 author: maxluk
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1f6aaa4f1b8f58f7cd6c1f02f424614d33863fc5
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a5d281598bc905914b71f40d556cfa0b16a46485
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815876"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847650"
 ---
 # <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Обучение и регистрация моделей TensorFlow в масштабе с помощью службы Машинное обучение Azure
 
@@ -25,7 +25,7 @@ TensorFlow — это вычислительная платформа с отк�
 
 Независимо от того, разрабатываете ли вы модель TensorFlow с нуля или используете [существующую модель](how-to-deploy-existing-model.md) в облаке, машинное обучение Azure служба может помочь вам создать готовые модели.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -36,8 +36,8 @@ TensorFlow — это вычислительная платформа с отк�
  
  - Собственный сервер Jupyter Notebook
 
-     - [Установка пакета SDK для Машинное обучение Azure для Python](setup-create-workspace.md#sdk)
-    - [Создание файла конфигурации рабочей области](setup-create-workspace.md#write-a-configuration-file)
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+    - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
     - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow) `mnist-tf.py` и`utils.py`
      
     Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow/train-hyperparameter-tune-deploy-with-tensorflow.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.

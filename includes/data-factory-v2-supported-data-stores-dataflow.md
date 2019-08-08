@@ -2,16 +2,16 @@
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 05/24/2019
+ms.date: 08/06/2019
 ms.author: jingwang
-ms.openlocfilehash: 70ffc91477d4a77619ba7df3b2ab121fea5f8bac
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: a2815961f6afb0032aa6011cce5d59ab37f81303
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509911"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68843313"
 ---
-| Category | Хранилище данных | Поддерживаются в качестве [действие копирования](../articles/data-factory/copy-activity-overview.md) источника | Поддерживаются в качестве [действие копирования](../articles/data-factory/copy-activity-overview.md) приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается [локальной IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) | Поддерживаемые [потока данных](../articles/data-factory/concepts-data-flow-overview.md)
+| Категория | Хранилище данных | Поддерживается в качестве источника [действия копирования](../articles/data-factory/copy-activity-overview.md) | Поддерживается в качестве приемника [действия копирования](../articles/data-factory/copy-activity-overview.md) | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается [локальной IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) | Поддерживается [потоком данных](../articles/data-factory/concepts-data-flow-overview.md)
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **Таблицы Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  | ✓ <br> <small>Поддерживаемые форматы: Текст с разделителями, Parquet</small> |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |✓ |✓ |✓ |✓  ||
@@ -24,7 +24,7 @@ ms.locfileid: "67509911"
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Хранилище файлов Azure](../articles/data-factory/connector-azure-file-storage.md) |✓ |✓ |✓ |✓  ||
 | &nbsp; |[база данных SQL Azure;](../articles/data-factory/connector-azure-sql-database.md) |✓ |✓ |✓ |✓  |✓  |
-| &nbsp; |[Управляемый экземпляр базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-insance.md) |✓ |✓ |✓ |✓  ||
+| &nbsp; |[Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |✓ |✓ |✓ |✓  ||
 | &nbsp; |[Хранилище данных Azure SQL](../articles/data-factory/connector-azure-sql-data-warehouse.md) |✓ |✓ |✓ |✓  |✓  |
 | &nbsp; |[Индекс службы поиска Azure](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  ||
 | &nbsp; |[хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  ||
@@ -36,9 +36,9 @@ ms.locfileid: "67509911"
 | &nbsp; |[HBase](../articles/data-factory/connector-hbase.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Hive](../articles/data-factory/connector-hive.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Apache Impala (предварительная версия)](../articles/data-factory/connector-impala.md) |✓ | |✓ |✓  ||
-| &nbsp; |[Informix](../articles/data-factory/connector-odbc.md#ibm-informix-source) |✓ | | |✓  ||
+| &nbsp; |[Informix](../articles/data-factory/connector-informix.md) |✓ | | |✓  ||
 | &nbsp; |[MariaDB](../articles/data-factory/connector-mariadb.md) |✓ | |✓ |✓  ||
-| &nbsp; |[Microsoft Access](../articles/data-factory/connector-odbc.md#microsoft-access-source) |✓ | | |✓  ||
+| &nbsp; |[Microsoft Access](../articles/data-factory/connector-microsoft-access.md) |✓ | | |✓  ||
 | &nbsp; |[MySQL](../articles/data-factory/connector-mysql.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Netezza](../articles/data-factory/connector-netezza.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Oracle](../articles/data-factory/connector-oracle.md) |✓ |✓ |✓ |✓  ||
@@ -58,7 +58,7 @@ ms.locfileid: "67509911"
 | &nbsp; |[Couchbase (предварительная версия)](../articles/data-factory/connector-couchbase.md) |✓ | |✓ |✓  ||
 | &nbsp; |[MongoDB](../articles/data-factory/connector-mongodb.md) |✓ | |✓ |✓  ||
 | **File** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |✓ | |✓ |✓  ||
-| &nbsp; |[Перемещение данных в локальную файловую систему или из нее с помощью фабрики данных Azure](../articles/data-factory/connector-file-system.md) |✓ |✓ |✓ |✓  ||
+| &nbsp; |[Файловая система](../articles/data-factory/connector-file-system.md) |✓ |✓ |✓ |✓  ||
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Google Cloud Storage](../articles/data-factory/connector-google-cloud-storage.md) |✓ | |✓ |✓  ||
 | &nbsp; |[HDFS](../articles/data-factory/connector-hdfs.md) |✓ | |✓ |✓  ||
@@ -85,7 +85,7 @@ ms.locfileid: "67509911"
 | &nbsp; |[Paypal (предварительная версия)](../articles/data-factory/connector-paypal.md) |✓ | |✓ |✓  ||
 | &nbsp; |[QuickBooks (предварительная версия)](../articles/data-factory/connector-quickbooks.md) |✓ | |✓ |✓  ||
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |✓ |✓ |✓ |✓  ||
-| &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce.md) |✓ |✓ |✓ |✓  ||
+| &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce-service-cloud.md) |✓ |✓ |✓ |✓  ||
 | &nbsp; |[Salesforce Marketing Cloud (предварительная версия)](../articles/data-factory/connector-salesforce-marketing-cloud.md) |✓ | |✓ |✓  ||
 | &nbsp; |[SAP Cloud for Customer (C4C)](../articles/data-factory/connector-sap-cloud-for-customer.md) |✓ |✓ |✓ |✓  ||
 | &nbsp; |[SAP ECC](../articles/data-factory/connector-sap-ecc.md) |✓ | |✓ |✓ ||
