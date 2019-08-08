@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
-ms.openlocfilehash: 79eae27becf0d2570132b3ad709414879140fd0f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d23fc94fba9a9b750f2977fd9c5d8297e4da8d5c
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086052"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825913"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-one"></a>Руководство по Интеграция Azure Active Directory с Zscaler One
 
@@ -112,7 +112,7 @@ ms.locfileid: "67086052"
     > [!NOTE]
     > Обновите значение на фактический URL-адрес входа. Для получения значения обратитесь к [группе поддержки клиентов Zscaler One](https://www.zscaler.com/company/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Zscaler One ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение Zscaler One ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -309,5 +309,5 @@ ms.locfileid: "67086052"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

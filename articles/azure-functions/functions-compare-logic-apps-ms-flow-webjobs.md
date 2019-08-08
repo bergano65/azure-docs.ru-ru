@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: d6abf266d4af5c79333819f5077009124fa28247
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 7bfe586294aec5938e2245c38fbe88aa5e57a66c
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348242"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839495"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>Что такое Microsoft Flow, Logic Apps, Функции и Веб-задания?
 
@@ -89,7 +89,7 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 |[Оплата по мере пользования](functions-scale.md#consumption-plan)|✔||
 |[Интеграция с Logic Apps](functions-twitter-email.md)|✔||
 | События триггера |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
-| Поддерживаемые языки  |C#<br>F#<br>JavaScript<br>Java (предварительная версия)<br>Python (предварительная версия) |C#<sup>1</sup>|
+| Поддерживаемые языки  |C#<br>F#<br>JavaScript<br>Java<br>Python (предварительная версия) |C#<sup>1</sup>|
 |Диспетчеры пакетов|NPM и NuGet|NuGet<sup>2</sup>|
 
 <sup>1</sup> Компонент "Веб-задания" (без пакета SDK для веб-заданий) поддерживает C#, Java, JavaScript, Bash, CMD-файлы, BAT-файлы, PowerShell, PHP, TypeScript, Python и т. д. Это не полный список. Веб-задания могут выполнять любые программы или скрипты, выполняемые в песочнице службы приложений.

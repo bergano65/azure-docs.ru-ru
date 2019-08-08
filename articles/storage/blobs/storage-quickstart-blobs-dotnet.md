@@ -1,20 +1,18 @@
 ---
 title: Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
 description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: quickstart
-ms.date: 07/20/2019
 ms.author: mhopkins
+ms.date: 07/20/2019
+ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: a030aee18303d20ccf91c6939d349285c4a4bac4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.topic: quickstart
+ms.openlocfilehash: 40ee855aa01a9b24e35fb9863221e3607786d407
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565942"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722019"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
 

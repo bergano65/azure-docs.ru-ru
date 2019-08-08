@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22421d88d5d0b426b641c04cd8797c26d216c502
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 47af0a43e4d081f50fedf685d46347f0f36233fd
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086693"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825626"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство по Интеграция Azure Active Directory с Wrike
 
@@ -104,7 +104,7 @@ ms.locfileid: "67086693"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если нужно настроить приложение в режиме, инициируемом  **поставщиком удостоверений** , пользователю нет необходимости совершать какие-либо действия в разделе **Базовая конфигурация SAML**, так как это приложение уже предварительно интегрировано в Azure.
+4. Если нужно настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то в разделе **Базовая конфигурация SAML** пользователю для этого не нужно ничего делать, так как это приложение уже предварительно интегрировано в Azure.
 
     ![Сведения о домене и URL-адресах единого входа приложения Wrike](common/preintegrated.png)
 
@@ -201,5 +201,5 @@ ms.locfileid: "67086693"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

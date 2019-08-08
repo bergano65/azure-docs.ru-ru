@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: tutorial
-ms.date: 04/08/2019
-ms.openlocfilehash: 91f7967915fd19ae47ca207913f979aa56fcd27f
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 08/01/2019
+ms.openlocfilehash: 6dcf29c1bb98d15daf652671f31ed1647d66a81b
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011713"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68735208"
 ---
 # <a name="tutorial-register-data-assets-in-azure-data-catalog"></a>Руководство по Регистрация ресурсов данных в Каталоге данных Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "60011713"
 
     2. Поочередно щелкните **Product**, **ProductCategory**, **ProductDescription** и **ProductModel**, удерживая клавишу CTRL.
 
-    3. Щелкните **стрелку перемещения выбранных элементов** (**>**). Так вы переместите все выбранные объекты Product в список **Объекты для регистрации** .
+    3. Щелкните **стрелку перемещения выбранных элементов** ( **>** ). Так вы переместите все выбранные объекты Product в список **Объекты для регистрации** .
 
           ![Руководство по каталогу данных Azure — поиск и выбор объектов](media/register-data-assets-tutorial/data-catalog-server-hierarchy.png)
 

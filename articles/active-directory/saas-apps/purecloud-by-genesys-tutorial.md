@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: ac476e2a66f7fd1d315adb37258917b3ff47373f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 92df57737b75ab2c9bb9992dd3f223f55dbc39bb
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67093466"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68826141"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство по Интеграция Azure Active Directory с PureCloud от Genesys
 
@@ -138,7 +138,7 @@ ms.locfileid: "67093466"
     | `https://login.mypurecloud.ie` |
     | `https://login.mypurecloud.com.au` |
 
-6. Приложение PureCloud от Genesys ожидает проверочные утверждения SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+6. Приложение PureCloud от Genesys ожидает проверочные утверждения SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -294,5 +294,5 @@ ms.locfileid: "67093466"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

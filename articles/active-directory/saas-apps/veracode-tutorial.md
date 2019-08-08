@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 1024f0c09d6ab67b412a8f65d8964f3ac9d43254
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67b4d4842bfa330e51244cee0d9ad8ad0ab6a24f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087788"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-veracode"></a>Руководство по Интеграция Azure Active Directory с Veracode
 
@@ -107,7 +107,7 @@ ms.locfileid: "67087788"
 
     ![Сведения о домене и URL-адресах единого входа для Veracode](common/preintegrated.png)
 
-5. Приложение Veracode ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение Veracode ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -260,5 +260,5 @@ ms.locfileid: "67087788"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

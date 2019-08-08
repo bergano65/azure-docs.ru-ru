@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: a6b1e4e1571e6ce3cee1658907efd35e9c73ca1a
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: 7ac87000a6bbe7515106b42f57f9184396ed4168
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54903406"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68735673"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
 
@@ -58,7 +58,7 @@ ms.locfileid: "54903406"
     | Параметр | Рекомендуемое значение | Описание |
     |---|---|---|
     | **Имя** | значение по умолчанию | Определяет имя функции, активируемой по таймеру. |
-    | **Расписание** | 0 \*/1 \* \* \* \* | [Выражение CRON](functions-bindings-timer.md#cron-expressions) с шестью полями, в котором запланировано ежеминутное выполнение функции. |
+    | **Расписание** | 0 \*/1 \* \* \* \* | [Выражение CRON](functions-bindings-timer.md#ncrontab-expressions) с шестью полями, в котором запланировано ежеминутное выполнение функции. |
 
 4. Нажмите кнопку **Создать**. Будет создана функция на выбранном вами языке, которая будет выполняться каждую минуту.
 

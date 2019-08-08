@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 07/30/2019
 ms.author: assafi
-ms.openlocfilehash: 6bd3907392dad626c1eeb1823c929f1a35d544dd
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: d12f6b400b270c6ef631d9f503980efef1ae8458
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697672"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840379"
 ---
 # <a name="quickstart-use-the-net-sdk-and-c-to-call-the-text-analytics-service"></a>Краткое руководство. Вызов службы "Анализ текста" с помощью пакета SDK для .NET и C#
 <a name="HOLTop"></a>
@@ -84,10 +84,16 @@ ms.locfileid: "68697672"
 3. Обновите класс `Program`. Добавьте один элемент-константу для ключа API службы "Анализ текста", а другой — для конечной точки службы. Не забудьте указать правильное расположение Azure для своего ресурса Анализа текста.
 
     ```csharp
-    //Enter your Text Analytics (TA) API Key (available in Azure Portal -> your TA resource -> Keys)
+    // Enter your Text Analytics (TA) API Key (available in Azure Portal -> your TA resource -> Keys)
     private const string ApiKey = "enter-your-textanalytics-api-key-here";
-    //You can get the resource location from Azure Portal -> your TA resource -> Overview
-    private const string Endpoint = "enter-your-service-endpoint-here"; // For example: "https://<your-location>.api.cognitive.microsoft.com";
+    // You can get the resource location from Azure Portal -> your TA resource -> Overview
+    // There are two acceptable formats for the endpoint, both
+    // require that you omit the `/text/analytics/<version>` suffix:
+    // 1. A location based endpoint URL -
+    //     "https://<your-location>.api.cognitive.microsoft.com";
+    // 2. A resource name based endpoint URL -
+    //     "https://<your-resource-name>.cognitiveservices.azure.com";
+    private const string Endpoint = "enter-your-base-resource-endpoint-here";
     ```
 
 > [!Tip]

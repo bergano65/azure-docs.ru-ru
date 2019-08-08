@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: ed8e63a49702e8ba951990f8d7ff19b8f058fa74
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9ef179c1a93d8b2f97c47eb4c68d0312d55d3d1
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67089404"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825986"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Руководство. Интеграция Azure Active Directory с Tableau Server
 
@@ -186,7 +186,7 @@ ms.locfileid: "67089404"
     h. Нажмите кнопку **Сохранить**
 
     > [!NOTE]
-    > Клиенту необходимо отправить любой сертификат во время настройки единого входа SAML Tableau Server, и этот сертификат будет проигнорирован в потоке единого входа. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://onlinehelp.tableau.com/v2018.2/server/en-us/saml_config_steps_tsm_ui.htm).
+    > Клиенту необходимо отправить любой сертификат во время настройки единого входа SAML Tableau Server, и этот сертификат будет проигнорирован в потоке единого входа. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://help.tableau.com/current/server/en-gb/saml_config_steps_tsm_ui.htm).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -260,5 +260,5 @@ ms.locfileid: "67089404"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

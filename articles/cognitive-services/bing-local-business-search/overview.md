@@ -6,21 +6,21 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
+ms.topic: overview
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 2078e4842f6b8af11fcf56760579ce1ec77dd23f
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
-ms.translationtype: MT
+ms.openlocfilehash: 6992c5c9a7ecc9cff5f56733b8b7e851d8cd7e42
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423364"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839924"
 ---
 # <a name="what-is-bing-local-business-search"></a>Что такое Bing Local Business Search?
 API Bing Local Business Search — это служба RESTful, которая позволяет приложениям находить сведения о местных компаниях на основе поисковых запросов. Например, `q=<business-name> in Redmond, Washington` или `q=Italian restaurants near me`. 
 
-## <a name="features"></a>Компоненты
-| Компонент | Описание |  
+## <a name="features"></a>Функции
+| Функция | ОПИСАНИЕ |  
 | -- | -- | 
 | [Поиск местных компаний и мест](quickstarts/local-quickstart.md) | API Bing Local Business Search получает локализованные результаты из запроса. Результаты включают в себя URL-адрес веб-сайта компании, и в них отображается текст, номер телефона и географическое положение, включая координаты GPS, город и улицу |  
 | [Фильтрация результатов местного поиска с помощью географических границ](specify-geographic-search.md) | В качестве параметров поиска добавьте координаты, чтобы ограничить результаты определенной географической областью, заданной круговой областью или ограничивающим прямоугольником. | 
@@ -39,7 +39,7 @@ API Bing Local Business Search — это служба RESTful, которая �
 > [!NOTE]
 > Сейчас Local Business Search не поддерживает автозаполнение. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Bing Local Business Search API v7 reference](local-search-reference.md) (Справочник по API Bing Local Business Search версии 7)

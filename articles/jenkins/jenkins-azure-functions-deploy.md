@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 02/23/2019
-ms.openlocfilehash: bd8fa10ca0a9809891efc67ff930ab01d502eda9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1ee5a8d5f55422c9f8a0f20f3c6eb039f080dc2d
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58117087"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815733"
 ---
 # <a name="deploy-to-azure-functions-using-the-jenkins-azure-functions-plugin"></a>Развертывание в Функциях Azure с помощью подключаемого модуля Jenkins для Функций Azure
 
@@ -49,12 +49,6 @@ ms.locfileid: "58117087"
 
     ```cli
     az functionapp create --resource-group <resource_group> --consumption-plan-location eastus --name <function_app> --storage-account <storage_account>
-    ```
-    
-1. Обновите среду выполнения до версии 2.x, заменив заполнители соответствующими значениями.
-
-    ```cli
-    az functionapp config appsettings set --name <function_app> --resource-group <resource_group> --settings FUNCTIONS_EXTENSION_VERSION=~2
     ```
 
 ## <a name="prepare-jenkins-server"></a>Подготовка сервера Jenkins

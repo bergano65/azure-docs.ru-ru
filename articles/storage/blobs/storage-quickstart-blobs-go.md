@@ -1,20 +1,18 @@
 ---
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Go | Документация Майкрософт
 description: В рамках этого краткого руководства вы создадите учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используете клиентскую библиотеку службы хранилища для языка Go, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: quickstart
-ms.date: 11/14/2018
 ms.author: mhopkins
-ms.reviewer: seguler
-ms.openlocfilehash: 5b5d0663166c6889d25c0fdd578aadbac3436931
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 11/14/2018
+ms.service: storage
+ms.subservice: blobs
+ms.topic: quickstart
+ms.openlocfilehash: f4016349e354c84e9e096ac6d5072a4870e9ef29
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152779"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726458"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Go
 
@@ -112,7 +110,7 @@ Press the enter key to delete the sample files, example container, and exit the 
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-В этом разделе показано, как создать контейнер. Контейнер называется **quickstartblobs-[произвольная_строка]**. 
+В этом разделе показано, как создать контейнер. Контейнер называется **quickstartblobs-[произвольная_строка]** . 
 
 ```go 
 // From the Azure portal, get your storage account name and key and set environment variables.
@@ -153,7 +151,7 @@ handleErrors(err)
 
 Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция ***UploadFileToBlockBlob*** одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
 
-В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs-[произвольная_строка]**.
+В приведенном ниже примере файл отправляется в контейнер с именем **quickstartblobs-[произвольная_строка]** .
 
 ```go
 // Create a file to test the upload and download.

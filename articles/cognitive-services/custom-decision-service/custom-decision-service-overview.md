@@ -1,5 +1,5 @@
 ---
-title: Что такое Пользовательская служба принятия решений?
+title: Что такое служба Custom Decision?
 titlesuffix: Azure Cognitive Services
 description: Эта статья содержит общие сведения о Пользовательской службе принятия решений.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.subservice: custom-decision-service
 ms.topic: overview
 ms.date: 05/08/2018
 ms.author: slivkins
-ms.openlocfilehash: f4a0f519fe83162e7e161c3fda2b78a94b1d4bd1
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ROBOTS: NOINDEX
+ms.openlocfilehash: 073b2bf6df21e05481cde043d8ddcfd49822e94f
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55863131"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704241"
 ---
-# <a name="what-is-custom-decision-service"></a>Что такое Пользовательская служба принятия решений?
+# <a name="what-is-custom-decision-service"></a>Что такое служба Custom Decision?
 
 Обычно титульная страница веб-приложения или мобильного приложения содержит ссылки на несколько статей или содержимое других типов. При загрузке титульная страница может запросить у Пользовательской службы принятия решений ранжирование отображенных на этой странице статей. Таким образом, когда пользователь выбирает статью щелчком, к Пользовательской службе принятия решений может быть отправлен второй запрос, который регистрирует результат решения этого пользователя.
 

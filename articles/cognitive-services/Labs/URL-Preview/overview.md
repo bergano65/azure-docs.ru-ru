@@ -1,5 +1,5 @@
 ---
-title: Предварительный просмотр URL-адресов в проектах
+title: Что такое Project URL Preview
 titlesuffix: Azure Cognitive Services
 description: Общие сведения о предварительном просмотре URL-адресов в проектах.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.subservice: url-preview
 ms.topic: overview
 ms.date: 03/16/2018
 ms.author: rosh
-ms.openlocfilehash: 7022c3b2d2f3618d55b0a70d2690abf1497ec6a6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ROBOTS: NOINDEX
+ms.openlocfilehash: 022fe002057f157d4d9fe6e6cad03fc79810888c
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "61473185"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706911"
 ---
 # <a name="what-is-project-url-preview"></a>Предварительный просмотр URL-адресов в проектах
 Конечная точка предварительного просмотра URL-адресов принимает параметр запроса URL-адреса и возвращает ответ JSON с именем целевого ресурса, кратким описанием и ссылкой на изображение для отображения в режиме предварительного просмотра. Также в ответ включается флаг [isFamilyFriendly](url-preview-reference.md#query-parameters), который указывает, содержит ли URL-адрес содержимое, предназначенное только для взрослых, а также пиратское или другое незаконное содержимое. 

@@ -1,20 +1,18 @@
 ---
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Python | Документация Майкрософт
 description: В рамках этого краткого руководства вы создадите учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используйте клиентскую библиотеку службы хранилища для языка Python, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: quickstart
-ms.date: 12/14/2018
 ms.author: mhopkins
-ms.reviewer: seguler
-ms.openlocfilehash: f96d1956fececbe00bf9f33bd146056836c2c4c0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.date: 12/14/2018
+ms.service: storage
+ms.subservice: blobs
+ms.topic: quickstart
+ms.openlocfilehash: 0eb4558b7c9c08fc6df964a7e45328a83c60352b
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564993"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721983"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Python
 

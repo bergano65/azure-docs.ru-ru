@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 08/05/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 5602298ffe60ad15d3daf52587c50357c310200c
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 6987c6f1191b0dfc7b78b14e77a5d6a0ab369f57
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480110"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782602"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Настройка аварийного восстановления для виртуальных машин Azure
 
@@ -196,4 +196,4 @@ Site Recovery создает параметры по умолчанию и по�
 В этом руководстве вы настроили аварийное восстановление для виртуальной машины Azure. Теперь вы можете инициировать аварийное восстановление, чтобы проверить, что отработка отказа работает правильно.
 
 > [!div class="nextstepaction"]
-> [Run a disaster recovery drill to Azure](azure-to-azure-tutorial-dr-drill.md) (Выполнение отработки аварийного восстановления в Azure)
+> [Выполнение отработки аварийного восстановления](azure-to-azure-tutorial-dr-drill.md)

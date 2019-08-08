@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/24/2019
+ms.date: 07/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f897653442a3e1b2d6098b3be60c85e75ca54f9a
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: f6640708905abc266b07b7b66f5da09aeb890f01
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551483"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823863"
 ---
-# <a name="tutorial-integrate-amazon-web-services-aws-with-azure-active-directory"></a>Руководство. Интеграция Azure Active Directory с Amazon Web Services (AWS)
+# <a name="tutorial-integrate-amazon-web-services-aws-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать Amazon Web Services (AWS) с Azure Active Directory (Azure AD). Интеграция Amazon Web Services (AWS) с Azure AD обеспечивает следующие возможности.
 
@@ -352,7 +352,7 @@ c. Вы можете назначить владельца приложения 
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 

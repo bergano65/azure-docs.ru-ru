@@ -5,16 +5,17 @@ manager: eladz
 author: MarkHeff
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: 2c77d509a0e66fd02bd949e481c5f0316fdd9afb
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 79e99e8311941e46c35c17472ed4833706834940
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672002"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840862"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по C#. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -98,7 +99,7 @@ ms.locfileid: "67672002"
 
 Установите пакет NuGet `Microsoft.Azure.Search` непосредственно из консоли диспетчера пакетов в Visual Studio. Чтобы открыть консоль диспетчера пакетов, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. Чтобы выполнить команду, перейдите к [странице пакета Microsoft.Azure.Search NuGet](https://www.nuget.org/packages/Microsoft.Azure.Search), выберите версию 9 и скопируйте команду диспетчера пакетов. Выполните эту команду консоли диспетчера пакетов.
 
-Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...**. Щелкните "Обзор" и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
+Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...** . Щелкните "Обзор" и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
 
 ## <a name="add-azure-search-service-information"></a>Добавление сведений о службе "Поиск Azure"
 
@@ -425,7 +426,7 @@ catch (Exception e)
 
 Поля для этого индекса определяются с помощью класса модели. Каждое свойство класса модели имеет атрибуты, которые определяют связанные с поиском характеристики соответствующего поля индекса. 
 
-Мы добавим класс модели в новый файл C#. Щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Новый элемент...**. Выберите "Класс", присвойте файлу имя `DemoIndex.cs`, а затем щелкните **Добавить**.
+Мы добавим класс модели в новый файл C#. Щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Новый элемент...** . Выберите "Класс", присвойте файлу имя `DemoIndex.cs`, а затем щелкните **Добавить**.
 
 Обязательно укажите, что нужно использовать типы из пространств имен `Microsoft.Azure.Search` и `Microsoft.Azure.Search.Models`.
 

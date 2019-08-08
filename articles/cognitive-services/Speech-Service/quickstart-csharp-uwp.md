@@ -3,20 +3,20 @@ title: Краткое руководство. Распознавание реч�
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы преобразуете речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2017.
 services: cognitive-services
-author: lisaweixu
+author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/23/2019
-ms.author: lisaweixu
+ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: b4c3c0979f3fea491ad8b04285973517423eaeeb
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 5ea75f1956b70b6bfebebcf29e27542eba0ca0cf
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607807"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839949"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении для универсальной платформы Windows с помощью пакета SDK службы "Речь"
 

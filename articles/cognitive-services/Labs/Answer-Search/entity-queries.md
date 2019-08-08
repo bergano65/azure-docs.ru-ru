@@ -10,12 +10,13 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/16/2018
 ms.author: rosh
-ms.openlocfilehash: c9f2a476353b1807bbb1c8c13dc8b8e2cdbb4ae4
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ROBOTS: NOINDEX
+ms.openlocfilehash: b1dbfcfe85a7847b593553bd06cbc22cc62d2e2e
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544466"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705466"
 ---
 # <a name="quickstart-query-for-entities"></a>Краткое руководство. Запрос для сущностей
 
@@ -29,7 +30,7 @@ ms.locfileid: "57544466"
 Чтобы определить сценарий запроса, используйте поле `queryScenario` объекта `entities`. Данные, которые включает в себя сущность, зависят от ее типа. Хотя сущности содержат общие основные сведения, некоторые из них, например достопримечательности или книги, включают в себя дополнительные свойства. Сущности, которые включают в себя дополнительные свойства, содержат поле `_type` с указанием, используемым сериализатором. Следующие сущности в себя включают дополнительные свойства: 
 -   Book 
 -   MusicRecording 
--   Person 
+-   Модель Person 
 -   Attraction 
  
 Чтобы определить тип сущности, содержащейся в ответе, используйте поле `entityTypeHints`, как показано в запросе "Bill Gates".

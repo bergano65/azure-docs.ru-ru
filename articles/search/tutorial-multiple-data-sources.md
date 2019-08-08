@@ -1,5 +1,5 @@
 ---
-title: Руководство по Индексирование нескольких источников данных (Поиск Azure)
+title: Руководство по C#. Индексирование нескольких источников данных (Поиск Azure)
 description: Узнайте, как импортировать данные из нескольких источников данных в один индекс Поиска Azure.
 author: RobDixon22
 manager: HeidiSteen
@@ -7,14 +7,13 @@ services: search
 ms.service: search
 ms.topic: tutorial
 ms.date: 06/21/2019
-ms.author: v-rodixo
-ms.custom: seodec2018
-ms.openlocfilehash: 8ce3c66432f3d2d0cb973886498aa46e7820698c
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.author: heidist
+ms.openlocfilehash: 2776bcd095c570be500fa6ddb2675820b2259716
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485268"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840679"
 ---
 # <a name="c-tutorial-combine-data-from-multiple-data-sources-in-one-azure-search-index"></a>Руководство по C#. Объединение данных из нескольких источников данных в один индекс Поиска Azure
 

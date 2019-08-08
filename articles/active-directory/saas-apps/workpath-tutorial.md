@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 39f62b82ed2716099a63e363c87fbac65d02ffb0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6d8d077dbc467dc06ebbe0d93001a363c624a1e1
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086811"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825998"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workpath"></a>Руководство по Интеграция Azure Active Directory с Workpath
 
@@ -120,7 +120,7 @@ ms.locfileid: "67086811"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Workpath](https://help.workpath.com/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение Workpath ожидает проверочные утверждения SAML в определенном формате, который требует добавления сопоставления настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+6. Приложение Workpath ожидает проверочные утверждения SAML в определенном формате, который требует добавления сопоставления настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -233,5 +233,5 @@ ms.locfileid: "67086811"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

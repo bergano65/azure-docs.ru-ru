@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: kumud
 ms.reviewer: tyao
-ms.openlocfilehash: 97a3d63f94ca7e60f57177703a98b60e3f6c42ec
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: e40e99aa57d10bd69143efc8db38ac0071d8952f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849189"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827768"
 ---
 # <a name="how-to-set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Руководство по настройке политики геофильтрации брандмауэра веб-приложения (WAF) для службы Front Door
 В этом руководстве показано, как с помощью Azure PowerShell создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door. Этот пример политики геофильтрации будет блокировать запросы от других стран или регионов, кроме США.
@@ -35,8 +35,8 @@ ms.locfileid: "67849189"
 
 #### <a name="connect-to-azure-with-an-interactive-dialog-for-sign-in"></a>Подключение к Azure с помощью интерактивного диалогового окна для входа
 ```
-Connect-AzAccount
 Install-Module -Name Az
+Connect-AzAccount
 ```
 Убедитесь, что у вас установлена текущая версия PowerShellGet. Выполните следующую команду и снова откройте PowerShell.
 

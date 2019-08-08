@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/23/2019
 ms.author: jowargo
-ms.openlocfilehash: cd6d22e7c689bce5c325863b914c5ee8abcbf40a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: ba392f69c0c5803768a04b94d9f9c0ed4f032fbf
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240782"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775020"
 ---
 # <a name="tutorial-push-notifications-to-xamarinios-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure
 
@@ -44,8 +44,8 @@ ms.locfileid: "66240782"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) Azure, прежде чем начинать работу.
-* последняя версия [Xcode][Install Xcode];
+* **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* последняя версия [Xcode][Install Xcode]
 * устройство под управлением iOS 10 (или более поздней версии);
 * [программе для разработчиков на платформе Apple](https://developer.apple.com/programs/) .
 * [Visual Studio для Mac]
@@ -56,25 +56,6 @@ ms.locfileid: "66240782"
 Изучение этого руководства важно для понимания всех других руководств, посвященных Центрам уведомлений для приложений Xamarin.iOS.
 
 [!INCLUDE [Notification Hubs Enable Apple Push Notifications](../../includes/notification-hubs-enable-apple-push-notifications.md)]
-
-## <a name="configure-your-notification-hub-for-ios-push-notifications"></a>настройка push-уведомлений iOS в центре уведомлений;
-
-В этом разделе описано, как создать концентратор уведомлений и настроить аутентификацию с помощью службы APNs, при которой используется раннее созданный вами сертификат push-уведомлений (файл с расширением **.р12**). Если вы хотите использовать уже созданный центр уведомлений, перейдите к шагу 5.
-
-[!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
-
-### <a name="configure-ios-settings-for-the-notification-hub"></a>Настройка параметров iOS для концентратора уведомлений
-
-1. Выберите **Apple (APN)** в группе **Параметры уведомлений**.
-2. Выберите вкладку **Сертификат**, щелкните значок **файла** и выберите файл **P12**, экспортированный ранее.
-3. Укажите **пароль** для сертификата.
-4. Выберите режим **Песочница**. Используйте режим **рабочей среды**, только если push-уведомления нужно отправлять пользователям, которые приобрели приложение в магазине.
-
-    ![Настройка APNs на портале Azure][6]
-
-    ![Настройка сертификации APNs на портале Azure][7]
-
-Концентратор уведомлений теперь подключен к службе APNs, и у вас есть строки подключения, с помощью которых вы сможете зарегистрировать свое приложение, чтобы отправлять push-уведомления.
 
 ## <a name="connect-your-app-to-the-notification-hub"></a>Подключение приложения к центру уведомлений
 
@@ -124,7 +105,7 @@ ms.locfileid: "66240782"
     {
         if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
         {
-            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound | UNAuthorizationOptions.Sound,
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
                                                                     (granted, error) =>
             {
                 if (granted)

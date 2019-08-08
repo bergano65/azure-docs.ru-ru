@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: b26133c64877bcac07d2e8ba10dbee05d4e36d34
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 762e5ae1782ee037b33156e16a0503ed1e7391ff
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67102262"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823725"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-floqast"></a>Руководство по Интеграция Azure Active Directory с FloQast
 
@@ -112,7 +112,7 @@ ms.locfileid: "67102262"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://go.floqast.com/login/sso`.
 
-6. Приложение FloQast ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок  **Изменить** , чтобы добавить атрибуты.
+6. Приложение FloQast ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы добавить атрибуты.
 
     ![image](common/edit-attribute.png)
 
@@ -223,7 +223,7 @@ ms.locfileid: "67102262"
 
 ### <a name="create-floqast-test-user"></a>Создание тестового пользователя FloQast
 
-В этом разделе описано, как создать пользователя Britta Simon в FloQast. Обратитесь к  [группе поддержки FloQast](mailto:support@floqast.com), чтобы добавить пользователей на платформу FloQast. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в FloQast. Обратитесь к [группе поддержки FloQast](mailto:support@floqast.com), чтобы добавить пользователей на платформу FloQast. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -237,5 +237,5 @@ ms.locfileid: "67102262"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

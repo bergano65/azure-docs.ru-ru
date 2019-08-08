@@ -10,12 +10,13 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 26a9fc60c90f536e4ef9f03e96545e493a60f206
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ROBOTS: NOINDEX
+ms.openlocfilehash: e28b86981eafdf353f4a0e1937e5731aa4e7d68e
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698092"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707135"
 ---
 # <a name="quickstart-project-answer-search-query-in-java"></a>Краткое руководство. Запрос к API поиска ответов в проектах на Java
 В этой статье с помощью Java демонстрируется API поиска ответов Bing, входящий в состав служб Microsoft Cognitive Services в Azure. API представляет собой веб-службу REST, совместимую с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.

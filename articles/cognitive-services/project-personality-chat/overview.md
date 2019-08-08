@@ -1,5 +1,5 @@
 ---
-title: Что такое индивидуальные чаты в проектах?
+title: Что такое Project Personality Chat?
 titlesuffix: Azure Cognitive Services
 description: В этой статье рассматривается Personality Chat в проектах Azure. Он является облачным API-интерфейсом, используемым для улучшения возможностей бота при общении.
 services: cognitive-services
@@ -11,14 +11,15 @@ ms.topic: overview
 ms.date: 05/07/2018
 ms.author: nolachar
 comment: As a bot developer, I want my bot to be able to handle small talk in a consistent tone so that my bot appears more complete and conversational.
-ms.openlocfilehash: c7f7a8c65717acd5a19e92b7e0437dc4b8628909
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ROBOTS: NOINDEX
+ms.openlocfilehash: d6b632d6d4c0762ffd20aaf57a329095e853915c
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "62103634"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704264"
 ---
-# <a name="what-is-project-personality-chat"></a>Что такое индивидуальные чаты в проектах?
+# <a name="what-is-project-personality-chat"></a>Что такое Project Personality Chat?
 
 Использование Personality Chat в проекте улучшает возможности ботов при общении путем формирования непринужденных реплик, соответствующих выбранной заранее личности. Для определения характера беседы и формирования ответов, соответствующих выбранной личности, в Personality Chat используются классификаторы намерений. В зависимости от оценок намерения и достоверности бот выбирает лучший ответ из проверенной тематической базы либо с помощью глубоких нейронных сетей (DNN) формирует ответ в режиме реального времени. Для бота можно выбрать одну из трех личностей. Возвращаемые моделью личности ответы будут зависеть от выбранной личности.
 

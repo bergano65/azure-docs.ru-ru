@@ -4,15 +4,15 @@ description: Используйте Azure Powershell для управления
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 07/09/2019
+ms.date: 08/05/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: b61c7bbc06d8d265e5dd5dddd31aceadce1f623b
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 79302fc0f9addc70461d21c03b02416d15a6fa6c
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67797054"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814938"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -52,7 +52,7 @@ ms.locfileid: "67797054"
 # Create an Azure Cosmos Account for Core (SQL) API
 $resourceGroupName = "myResourceGroup"
 $location = "West US 2"
-$accountName = "mycosmosaccount" # must be lower case.
+$accountName = "mycosmosaccount" # must be lowercase and < 31 characters .
 
 $locations = @(
     @{ "locationName"="West US 2"; "failoverPriority"=0 },

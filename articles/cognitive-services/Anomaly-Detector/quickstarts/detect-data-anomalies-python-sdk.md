@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 07/26/2019
+ms.date: 08/01/2019
 ms.author: aahi
-ms.openlocfilehash: b78d19841bdca100211378f71e45a41dd37aad28
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 59a4d79cc68c57faf54bde3d42370fb17a317325
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639342"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725560"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Детектора аномалий для Python
 
@@ -77,13 +77,13 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 * [обнаружение аномалий во всем наборе данных](#detect-anomalies-in-the-entire-data-set); 
 * [обнаружение состояния аномалии последней точки данных](#detect-the-anomaly-status-of-the-latest-data-point).
 
-### <a name="authenticate-the-client"></a>Аутентификация клиента
+## <a name="authenticate-the-client"></a>Аутентификация клиента
 
 Добавьте переменную расположения Azure в конечную точку и проверьте подлинность клиента с помощью ключа.
 
 [!code-python[Client authentication](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=client)]
 
-### <a name="load-time-series-data-from-a-file"></a>Загрузка данных временного ряда из файла
+## <a name="load-time-series-data-from-a-file"></a>Загрузка данных временного ряда из файла
 
 Скачайте пример данных для этого краткого руководства с сайта [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/example-data/request-data.csv):
 1. В браузере щелкните правой кнопкой мыши пункт **Без обработки**.
@@ -100,13 +100,13 @@ pip install --upgrade azure-cognitiveservices-anomalydetector
 
 [!code-python[Create the request object](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=request)]
 
-### <a name="detect-anomalies-in-the-entire-data-set"></a>Обнаружение аномалий во всем наборе данных 
+## <a name="detect-anomalies-in-the-entire-data-set"></a>Обнаружение аномалий во всем наборе данных 
 
 Вызовите API для обнаружения аномалий во всех данных временного ряда с помощью метода [entire_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#entire-detect-body--custom-headers-none--raw-false----operation-config-) клиента. Сохраните возвращенный объект [EntireDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.entiredetectresponse?view=azure-python). Выполните итерацию списка ответов `is_anomaly` и выведите индексы любых значений `true`. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
 [!code-python[Batch anomaly detection sample](~/samples-anomaly-detector/quickstarts/sdk/python-sdk-sample.py?name=detectAnomaliesBatch)]
 
-### <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояния аномалии последней точки данных
+## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояния аномалии последней точки данных
 
 Вызовите API Детектора аномалий, чтобы определить, является ли последняя точка данных аномальной, с помощью метода [last_detect()](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.anomalydetectorclient?view=azure-python#last-detect-body--custom-headers-none--raw-false----operation-config-) клиента и сохраните возвращенный объект [LastDetectResponse](https://docs.microsoft.com/python/api/azure-cognitiveservices-anomalydetector/azure.cognitiveservices.anomalydetector.models.lastdetectresponse?view=azure-python). Значение `is_anomaly` в ответе представляет собой логическое значение, указывающее состояние аномалий этой точки.  
 

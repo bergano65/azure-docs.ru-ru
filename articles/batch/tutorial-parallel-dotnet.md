@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 4350cc215c776317d3bde24c7561c317a31fb4c3
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 53f8742df0a03327069da083e6cb46a7c03118c1
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321869"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68773065"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
@@ -175,7 +175,7 @@ CreateContainerIfNotExistAsync(blobClient, outputContainerName);
 
 При загрузке файлов задействованы два метода из `Program.cs`.
 
-* `UploadResourceFilesToContainerAsync`: возвращает коллекцию объектов ResourceFile и выполняет внутренний вызов `UploadResourceFileToContainerAsync`, чтобы отправить каждый файл, переданный в параметре `inputFilePaths`.
+* `UploadFilesToContainerAsync`: возвращает коллекцию объектов ResourceFile и выполняет внутренний вызов `UploadResourceFileToContainerAsync`, чтобы отправить каждый файл, переданный в параметре `inputFilePaths`.
 * `UploadResourceFileToContainerAsync`: загружает каждый файл в качестве большого двоичного объекта в контейнер входных данных. После отправки файла метод получает подписанный URL-адрес (SAS) для большого двоичного объекта и возвращает объект ResourceFile, который его представляет.
 
 ```csharp
@@ -184,7 +184,7 @@ string inputPath = Path.Combine(Environment.CurrentDirectory, "InputFiles");
 List<string> inputFilePaths = new List<string>(Directory.GetFileSystemEntries(inputPath, "*.mp4",
     SearchOption.TopDirectoryOnly));
 
-List<ResourceFile> inputFiles = await UploadResourceFilesToContainerAsync(
+List<ResourceFile> inputFiles = await UploadFilesToContainerAsync(
   blobClient,
   inputContainerName,
   inputFilePaths);

@@ -3,8 +3,8 @@ title: Пример сценария Azure CLI. Перезапуск вирту�
 description: Пример сценария Azure CLI. Перезапуск виртуальных машин с использованием тега и идентификатора
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: allclark
-manager: douge
+author: cynthn
+manager: gwallace
 editor: tysonn
 tags: azure-service-management
 ms.assetid: ''
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/01/2017
-ms.author: douge
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ae036d02f0655d046de8b284bfd196eda92c45db
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 78e646887a0e595589b9d0cc794029dcd4be91ca
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875412"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841400"
 ---
 # <a name="restart-vms"></a>Перезапуск виртуальных машин
 

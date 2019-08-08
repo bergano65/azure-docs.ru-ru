@@ -3,7 +3,7 @@ title: Начало работы с Android и платформой удосто
 description: Получение маркера доступа для приложения Android и вызов API Microsoft Graph или API, которые требуют маркеры доступа от платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
-author: danieldobalian
+author: tylermsft
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5bd19b6094d68277130916b5cda565ba9e633c59
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 76547fd708f880bdf5167d71db121e69fc5b1d30
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334109"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823801"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Вход пользователей и вызов Microsoft Graph из приложения Android
 
