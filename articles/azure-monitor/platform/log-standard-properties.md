@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 07/18/2019
 ms.author: bwren
 ms.openlocfilehash: b9a4a0a18e120a2843e23d44b03c0fe53b0d84fc
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 08/08/2019
 ms.locfileid: "68370675"
 ---
 # <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналах Azure Monitor
@@ -51,7 +51,7 @@ exceptions
 | sort by timestamp asc 
 ```
 
-## <a name="timereceived"></a>\_тимерецеивед
+## <a name="_timereceived"></a>\_тимерецеивед
 Свойство тимерецеивед содержит дату и время получения записи Azure Monitor точкой приема в облаке Azure.  **\_** Это может быть полезно для выявления проблем задержки между источником данных и облаком. Примером может быть проблема с сетью, вызывающая задержку данных, отправляемых агентом. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .
 
 Следующий запрос возвращает среднюю задержку на час для записей событий агента. Сюда входит время от агента до облака и общее время, в течение которого запись будет доступна для запросов журнала.
@@ -77,11 +77,11 @@ search *
 | summarize count() by Type
 
 ```
-## <a name="itemid"></a>\_ItemId
+## <a name="_itemid"></a>\_ItemId
 Свойство ItemId содержит уникальный идентификатор записи.  **\_**
 
 
-## <a name="resourceid"></a>\_ResourceId
+## <a name="_resourceid"></a>\_ResourceId
 Свойство **\_ResourceId** содержит уникальный идентификатор для ресурса, с которым связана запись. Это стандартное свойство можно использовать, чтобы выполнить запрос только к записям из определенного ресурса или объединить связанные данные из нескольких таблиц.
 
 Для ресурсов Azure значением параметра **_ResourceId** будет [URL-адрес идентификатора ресурса Azure](../../azure-resource-manager/resource-group-template-functions-resource.md). Сейчас это свойство поддерживается только для ресурсов Azure, но в будущем оно будет доступно и для ресурсов за пределами Azure, например локальных компьютеров.
@@ -127,7 +127,7 @@ union withsource = tt *
 
 Используйте эти запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение.
 
-## <a name="isbillable"></a>\_IsBillable
+## <a name="_isbillable"></a>\_IsBillable
 Свойство **\_IsBillable** указывает, являются ли входящие данные оплачиваемыми. Данные, которые имеют свойство **\_IsBillable** равно значению _false_, собираются бесплатно и не оплачиваются в вашей учетной записи Azure.
 
 ### <a name="examples"></a>Примеры
@@ -154,7 +154,7 @@ union withsource = tt *
 | summarize dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc
 ```
 
-## <a name="billedsize"></a>\_BilledSize
+## <a name="_billedsize"></a>\_BilledSize
 Свойство **\_BilledSize** определяет размер данных в байтах, которые будут оплачиваться в вашей учетной записи Azure, если свойство **\_IsBillable** имеет значение true.
 
 

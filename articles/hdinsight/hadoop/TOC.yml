@@ -56,6 +56,8 @@
       maintainContext: true
     - name: Устранение неполадок
       items:
+        - name: Недостаточно места на диске
+          href: ./hdinsight-troubleshoot-out-disk-space.md
         - name: "Мягкая блокировка\_— ЦП"
           href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
         - name: "InvalidNetworkConfigurationErrorCode\_— сбой создания кластера"
@@ -72,6 +74,8 @@
           href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
         - name: Проблемы с пульсом Apache Ambari
           href: ./apache-ambari-troubleshoot-heartbeat-issues.md
+        - name: 'В Apache Ambari отображаются сведения о том, что узлы и службы не работают'
+          href: ./apache-ambari-troubleshoot-down-hosts-services.md
 - name: Практическое руководство
   items:
     - name: Использование песочницы Apache Hadoop
