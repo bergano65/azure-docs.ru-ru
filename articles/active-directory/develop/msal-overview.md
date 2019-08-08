@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 04/25/2019
 ms.author: ryanwi
 ms.reviewer: saeeda
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be24ad78ae8f8977284deac0f3d978b35c621bcd
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 897eff7eb77ce9f2a2795bfe534cc03076e59649
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834960"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853231"
 ---
 # <a name="overview-of-microsoft-authentication-library-msal"></a>Обзор библиотеки аутентификации Майкрософт (MSAL)
 Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам получать [маркеры](developer-glossary.md#security-token) из конечной точки платформы удостоверений Майкрософт, чтобы получить доступ к защищенным веб-API. Это могут быть веб-API Microsoft Graph, другие API Майкрософт, сторонние веб-API или ваши собственные веб-API. MSAL доступна для .NET, JavaScript, Android и iOS. Она поддерживает множество различных архитектур и платформ приложений.

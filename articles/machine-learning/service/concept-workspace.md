@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
-ms.date: 05/21/2019
-ms.openlocfilehash: fc3f88e627e0ce19195f6df947d4f11f5f8a73ae
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.date: 08/06/2019
+ms.openlocfilehash: cb1fd8e98a5eba350774ff6ccb8f86dcd3e4d734
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68772754"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856202"
 ---
 # <a name="what-is-an-azure-machine-learning-service-workspace"></a>Что такое Рабочая область службы Машинное обучение Azure?
 
@@ -65,6 +65,9 @@ ms.locfileid: "68772754"
 + Просмотр артефактов машинного обучения, таких как эксперименты, конвейеры, модели, развертывания.
 + Отслеживание и мониторинг моделей.
 
+
+
+
 ## <a name="workspace-management"></a>Управление рабочей областью
 
 Вы также можете выполнять следующие задачи по управлению рабочими областями:
@@ -76,7 +79,14 @@ ms.locfileid: "68772754"
 | Управление доступом к рабочей области    | **&check;**   | |  **&check;**    |
 | создали виртуальную машину записных книжек; | **&check;**   | |     |
 
-Начните работу со службой, [создав рабочую область](setup-create-workspace.md).
+### <a name='create-workspace'></a>Создание рабочей области
+
+Существует несколько способов создания рабочей области.
+
+* Используйте [портал Azure](how-to-manage-workspace.md) для интерфейса «точка-и щелчок», чтобы проанализировать каждый шаг.
+* Использование [пакета SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace) для создания рабочей области на лету из сценариев Python и записных книжек Юпитер
+* Используйте [шаблон Azure Resource Manager](how-to-create-workspace-template.md) или интерфейс [командной строки машинное обучение Azure](reference-azure-machine-learning-cli.md) , если необходимо автоматизировать или настроить создание с использованием корпоративных стандартов безопасности.
+* При работе в Visual Studio Code используйте [расширение VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 
 ## <a name="resources"></a>Связанные ресурсы
 
@@ -95,6 +105,6 @@ ms.locfileid: "68772754"
 Чтобы начать работу со Службой машинного обучения Azure, ознакомьтесь со следующими статьями:
 
 + [Общие сведения о службе Машинное обучение Azure](overview-what-is-azure-ml.md)
-+ [Создание рабочей области](setup-create-workspace.md)
++ [Создание рабочей области](how-to-manage-workspace.md)
 + [Управление рабочей областью](how-to-manage-workspace.md)
 + [Учебник. Обучение модели](tutorial-train-models-with-aml.md)
