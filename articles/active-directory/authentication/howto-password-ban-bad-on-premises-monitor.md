@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bd6d3abc6080c0ab1b6137511af719b23e5bcd4
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: a763f15b57bf7f23eeb52c81dd48de7f02adc5e4
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736838"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853558"
 ---
 # <a name="azure-ad-password-protection-monitoring-and-logging"></a>Мониторинг и ведение журнала защиты паролем Azure AD
 
@@ -269,7 +269,7 @@ HeartbeatUTC          : 2/16/2018 8:35:02 AM
 
 Если значение HeartbeatUTC становится устаревшим, это может быть симптомом того, что машина службы агента контроллера домена защиты паролем Azure AD не работает на контроллере домена, была удалена или была понижена уровнем и больше не является контроллером домена.
 
-Если значение PasswordPolicyDateUTC становится устаревшим, это может быть симптомом того, что машина службы агента контроллера домена защиты паролем Azure AD не работает должным образом.
+Если значение Пассвордполицидатеутк устарело, это может быть симптомом того, что агент контроллера домена для защиты паролей Azure AD на этом компьютере работает неправильно.
 
 ## <a name="dc-agent-newer-version-available"></a>Доступна более новая версия агента контроллера домена
 

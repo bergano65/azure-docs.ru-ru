@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 423fad943190232d9e5e674b98b62f4f0dffb8ae
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 2f7ad49fc56fc82955f79155838c69ff714aba2f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728754"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845862"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68728754"
 
 ## <a name="supported-vm-sizes"></a>Поддерживаемые размеры виртуальных машин
 
-Шифрование дисков Azure доступно на виртуальных машинах, отвечающих следующим минимальным требованиям к памяти:
+Шифрование дисков Azure недоступно на [виртуальных машинах серии A (Basic)](/pricing/details/virtual-machines/series/). Шифрование дисков Azure доступно на других виртуальных машинах, отвечающих следующим минимальным требованиям к памяти:
 
 | Виртуальная машина | Минимальные требования к памяти |
 |--|--|

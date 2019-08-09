@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/07/2019
 ms.author: b-juche
-ms.openlocfilehash: 9a56fb27fdf9e196291942041d68b249d7f16648
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 7cf382f511d2ba8452d77bf207f36b749cb31e94
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839240"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848794"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Метрики для Azure NetApp Files
 
@@ -29,27 +29,40 @@ ms.locfileid: "68839240"
 
 <!-- 
 - *Volume pool allocated size*  
-    This is the size (GiB) of the provisioned capacity pool.  
+    The size (GiB) of the provisioned capacity pool  
 --> 
 - *Volume pool allocated used* (Используемый размер выделенного пула для тома)  
-    Общая квота тома (ГиБ) в полученном пуле емкости (общее количество предоставленных размеров томов в пуле емкости). Размер, выбранный в процессе создания тома.  
+    Общая квота тома (гиб) в заданном пуле емкости (т. е. Общее количество подготовленных объемов томов в пуле емкости)  
+    Размер, выбранный в процессе создания тома.  
 - *Volume pool total logical size* (Общий логический размер пула для тома)  
-    Общее логическое пространство (ГиБ), применяемое к томам в пуле емкости.  
+    Общий объем логического пространства (гиб), используемого в томах в пуле емкости  
 <!-- 
 - *Volume pool total snapshot size*  
-    This is the total of incremental logical space used by the snapshots.  
+    The total of incremental logical space used by the snapshots  
 -->
 
 ## <a name="volumes"></a>Показатели использования для томов
 
 <!-- 
 - *Volume allocated size*   
-    This is the volume size (quota) provisioned in GiB.  
+    The volume size (quota) provisioned in GiB  
 --> 
 - *Volume logical size*  (Логический размер тома)  
-    Общее логическое пространство, используемое в томе (ГиБ). Сюда можно отнести логическое пространство используемое активными файлами системы и моментальными снимками.  
+    Общее логическое пространство, используемое в томе (гиб)  
+    Сюда можно отнести логическое пространство используемое активными файлами системы и моментальными снимками.  
 - *Volume snapshot size*  (Размер моментальных снимков в томе)  
-    Добавочное логическое пространство, используемое моментальными снимками в томе.  
+   Добавочное логическое пространство, используемое моментальными снимками в томе  
+
+## <a name="performance-metrics-for-volumes"></a>Метрики производительности для томов
+
+- *аверажереадлатенци*   
+    Среднее время чтения с тома (в миллисекундах)
+- *аверажеврителатенци*   
+    Среднее время записи с тома в миллисекундах
+- *реадиопс*   
+    Число операций чтения в томе в секунду
+- *вритеиопс*   
+    Число операций записи в том в секунду
 
 ## <a name="next-steps"></a>Следующие шаги
 

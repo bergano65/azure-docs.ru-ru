@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: da68c0ae1dc92f5b854c30c90b93856248c43281
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 105cbf173a9abe1adf0999f63740d47b3da51a29
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828356"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856286"
 ---
 # <a name="support-matrix-for-hyper-v-assessment-and-migration"></a>Таблица поддержки для оценки и переноса виртуальных машин Hyper-V
 
@@ -27,9 +27,9 @@ ms.locfileid: "68828356"
 **Развертывание** | **Дополнительно***
 --- | ---
 **Оценка локальных виртуальных машин Hyper-V** | [Настройте](tutorial-prepare-hyper-v.md) первую оценку.<br/><br/> [Выполните](scale-hyper-v-assessment.md) крупномасштабную оценку.
-**Перенос виртуальных машин Hyper-V в Azure.** | [Попробуйте выполнить](tutorial-migrate-hyper-v.md) миграцию в Azure.
+**Перенос виртуальных машин Hyper-V в Azure.** | [Попробуйте выполнить](tutorial-migrate-hyper-v.md) миграцию в Azure. 
 
-
+Миграция серверов Hyper-V, управляемых с помощью System Center Virtual Machine Manager (VMM), не поддерживается миграцией сервера "миграция Azure". 
 
 ## <a name="azure-migrate-projects"></a>Проекты службы "миграция Azure"
 

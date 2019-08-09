@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c4c9b2470960a3d0b2fa337f2d8d3542c1242d
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: ad3cd612200dc33fe37036146b00f52073403ecc
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834658"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68852041"
 ---
 # <a name="supported-account-types"></a>Поддерживаемые типы учетных записей
 
@@ -58,7 +58,7 @@ ms.locfileid: "68834658"
 
  С помощью приложений также можно войти в системы в [национальных облаках](authentication-national-cloud.md). Однако личные учетные записи Майкрософт в этих облаках не поддерживаются (определениями этих облаков). Вот почему поддерживаемые типы учетных записей для этих облаков настроены или для одной организации (для одного клиента) или многих организаций (приложения для нескольких клиентов).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - Подробнее об [аренде в Azure Active Directory](./single-and-multi-tenant-apps.md)
 - Подробнее о [национальных облаках](./authentication-national-cloud.md)

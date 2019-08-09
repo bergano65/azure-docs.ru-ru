@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 59ce6719c117db53b02ed6594de219010ee08ee6
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: e6f6c41e5de4f4a053748dfb08dc57e8acac32e5
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828233"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848239"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -236,5 +236,5 @@ Azure IoT Edge гарантирует, что модуль запущен и о�
 Чтобы начать работу со Службой машинного обучения Azure, ознакомьтесь со следующими статьями:
 
 * [Что такое Служба машинного обучения Azure](overview-what-is-azure-ml.md)
-* [Создание рабочей области службы Машинное обучение Azure](setup-create-workspace.md)
+* [Создание рабочей области службы Машинное обучение Azure](how-to-manage-workspace.md)
 * [Руководство (часть 1). Обучение модели](tutorial-train-models-with-aml.md)

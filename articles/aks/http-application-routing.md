@@ -6,34 +6,34 @@ author: lachie83
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 04/25/2018
+ms.date: 08/06/2019
 ms.author: laevenso
-ms.openlocfilehash: d6e1cc033416c90e27b5caf4bba310400e55b3a5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f0975d0a60081b66d3d5a513954deb0c4fa1b978
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60466332"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851552"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
-Решение маршрутизации приложений HTTP упрощает доступ к приложениям, развернутым в кластере Службы Azure Kubernetes (AKS). Если решение включено, то оно настраивает контроллер входящего трафика в кластере службы AKS. Когда приложения развернуты, решение также создает общедоступные DNS-имена для конечных точек приложений.
+Решение маршрутизации приложений HTTP упрощает доступ к приложениям, развернутым в кластере Службы Azure Kubernetes (AKS). Если решение включено, оно настраивает [входной контроллер](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) в кластере AKS. Когда приложения развернуты, решение также создает общедоступные DNS-имена для конечных точек приложений.
 
-При включении этой надстройки в подписке создается зона DNS. Дополнительные сведения о стоимости DNS см. [на этой странице][dns-pricing].
+При включении этой надстройки в подписке создается зона DNS. Дополнительные сведения о стоимости DNS см. в разделе [цены на DNS][dns-pricing].
 
 > [!CAUTION]
 > Надстройка маршрутизации приложения HTTP предназначена для быстрого создания входного контроллера и доступа к вашим приложениям. Мы не рекомендуем ее использовать для работы. Дополнительные сведения о готовых к развертыванию приложений, включающих несколько реплик и поддержку TLS, см. раздел [Создание входного контроллера HTTPS](https://docs.microsoft.com/azure/aks/ingress-tls).
 
 ## <a name="http-routing-solution-overview"></a>Обзор решения маршрутизации HTTP-трафика
 
-Надстройка развертывает два компонента: [контроллер входящего трафика Службы Azure Kubernetes][ingress] и контроллер [внешних DNS][external-dns].
+Надстройка развертывает два компонента: контроллер входящего трафика [Kubernetes][ingress] и контроллер [внешнего DNS][external-dns] .
 
-- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью службы Azure Kubernetes типа LoadBalancer. Контроллер входящего трафика отслеживает и реализует [ресурсы входящего трафика Службы Azure Kubernetes][ingress-resource], которые создают маршруты к конечным точкам приложения.
+- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью службы Azure Kubernetes типа LoadBalancer. Входной контроллер отслеживает и реализует Kubernetes входящие [ресурсы][ingress-resource], которые создают маршруты к конечным точкам приложения.
 - **Контроллер внешних DNS**. Отслеживает ресурсы входящего трафика службы Azure Kubernetes и создает DNS-записи A в зоне DNS определенного кластера.
 
-## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика Интерфейс командной строки
+## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика CLI
 
-Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [az aks create][az-aks-create] с аргументом `--enable-addons`.
+Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [AZ AKS Create][az-aks-create] с `--enable-addons` аргументом.
 
 ```azurecli
 az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addons http_application_routing
@@ -42,13 +42,13 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addo
 > [!TIP]
 > Если вы хотите включить несколько надстроек, укажите их в виде списка через запятую. Например, чтобы включить маршрутизацию и мониторинг приложений HTTP, используйте формат `--enable-addons http_application_routing,monitoring`.
 
-Можно также включить маршрутизацию HTTP для существующего кластера AKS с помощью команды [az aks enable-addons][az-aks-enable-addons]. Чтобы включить маршрутизацию HTTP в существующем кластере, добавьте параметр `--addons` и укажите *http_application_routing*, как показано в следующем примере.
+Можно также включить маршрутизацию HTTP в существующем кластере AKS с помощью команды [AZ AKS Enable-надстроек][az-aks-enable-addons] . Чтобы включить маршрутизацию HTTP в существующем кластере, добавьте параметр `--addons` и укажите *http_application_routing*, как показано в следующем примере.
 
 ```azurecli
 az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addons http_application_routing
 ```
 
-После развертывания или обновления кластера получите имя зоны DNS с помощью команды [az aks show][az-aks-show]. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
+После развертывания или обновления кластера используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя зоны DNS. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
 
 ```azurecli
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
@@ -136,7 +136,7 @@ spec:
         path: /
 ```
 
-Выполните команду [kubectl apply][kubectl-apply], чтобы создать ресурсы.
+Для создания ресурсов используйте команду [kubectl Apply][kubectl-apply] .
 
 ```bash
 $ kubectl apply -f samples-http-application-routing.yaml
@@ -179,7 +179,7 @@ az aks disable-addons --addons http_application_routing --name myAKSCluster --re
 
 При отключении надстройки маршрутизации приложений HTTP некоторые ресурсы Kubernetes могут оставаться в кластере. Эти ресурсы включают объекты *configMap* и *секреты* и создаются в пространстве имен *kube-system*. Чтобы поддерживать чистоту кластера, можно удалить эти ресурсы.
 
-Найдите ресурсы *addon-http-application-routing* с помощью следующих команд [kubectl get][kubectl-get].
+Найдите ресурсы " *надстройка — HTTP — маршрутизация приложений* " с помощью следующих команд [kubectl Get][kubectl-get] :
 
 ```console
 kubectl get deployments --namespace kube-system
@@ -199,7 +199,7 @@ kube-system   addon-http-application-routing-tcp-services                0      
 kube-system   addon-http-application-routing-udp-services                0      9m7s
 ```
 
-Чтобы удалить ресурсы, используйте команду [kubectl delete][kubectl-delete]. Укажите тип ресурса, имя ресурса и пространство имен. В следующем примере удаляется один из предыдущих объектов configmap.
+Чтобы удалить ресурсы, используйте команду [kubectl Delete][kubectl-delete] . Укажите тип ресурса, имя ресурса и пространство имен. В следующем примере удаляется один из предыдущих объектов configmap.
 
 ```console
 kubectl delete configmaps addon-http-application-routing-nginx-configuration --namespace kube-system
@@ -209,7 +209,7 @@ kubectl delete configmaps addon-http-application-routing-nginx-configuration --n
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-Выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы приложений для внешнего приложения DNS. В журналах должно быть указано, что записи A и TXT DNS успешно созданы.
+Используйте команду [kubectl logs][kubectl-logs] , чтобы просмотреть журналы приложений для приложения External-DNS. В журналах должно быть указано, что записи A и TXT DNS успешно созданы.
 
 ```
 $ kubectl logs -f deploy/addon-http-application-routing-external-dns -n kube-system
@@ -222,7 +222,7 @@ time="2018-04-26T20:36:21Z" level=info msg="Updating TXT record named 'party-cli
 
 ![Получение записей DNS](media/http-routing/clippy.png)
 
-Выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы приложений для контроллера входящего трафика NGINX. В журналах должно быть указано, что `CREATE` ресурса входящего трафика создан и контроллер перезагружен. Все действия по протоколу HTTP регистрируются в журнале.
+Используйте команду [kubectl logs][kubectl-logs] для просмотра журналов приложений для контроллера входящих данных nginx. В журналах должно быть указано, что `CREATE` ресурса входящего трафика создан и контроллер перезагружен. Все действия по протоколу HTTP регистрируются в журнале.
 
 ```bash
 $ kubectl logs -f deploy/addon-http-application-routing-nginx-ingress-controller -n kube-system
@@ -273,9 +273,9 @@ service "party-clippy" deleted
 ingress "party-clippy" deleted
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Сведения об установке контроллера защищенного входящего HTTPS-трафика в AKS см. в статье [Входящий трафик HTTPS в Службе Azure Kubernetes (AKS)][ingress-https].
+Сведения об установке контроллера входящего трафика HTTPS в AKS см. в статье входящий трафик [HTTPS в службе Kubernetes Azure (AKS)][ingress-https].
 
 <!-- LINKS - internal -->
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create

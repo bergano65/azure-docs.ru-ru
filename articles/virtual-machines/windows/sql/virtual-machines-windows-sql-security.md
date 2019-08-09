@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d5d10562a70b7d37908bc272bf555fd967831009
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5def34b4e3e7227daf96d952457869658bbce61e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076930"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855269"
 ---
 # <a name="security-considerations-for-sql-server-in-azure-virtual-machines"></a>Вопросы безопасности SQL Server на виртуальных машинах Azure
 
@@ -66,7 +66,7 @@ Azure соответствует ряду отраслевых норм и ст�
 
 Существуют два способа настроить его после подготовки.
 
-- Для виртуальных машин Resource Manager, можно выбрать **безопасности** из [ресурсов виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource). Это даст возможность изменить номер порта.
+- Для диспетчер ресурсов виртуальных машин можно выбрать **Безопасность** из ресурса " [виртуальные машины SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource)". Это даст возможность изменить номер порта.
 
   ![Изменение TCP-порта на портале](./media/virtual-machines-windows-sql-security/sql-vm-change-tcp-port.png)
 

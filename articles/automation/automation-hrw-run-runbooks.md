@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 88e3c0514861da0bd11acffd26cced54717e4418
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6f41263bfb930d3aab41fd8ace86cd6afb0ace26
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478491"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850572"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -271,7 +271,7 @@ sudo gpg --generate-key
 
 С помощью GPG вы сможете выполнить шаги по созданию пары ключей. Вам необходимо указать имя, адрес электронной почты, время окончания срока действия и парольную фразу, а затем дождаться объема энтропии, достаточного для создания ключа на компьютере.
 
-Так как каталог GPG был сформирован с использованием программы Sudo, вам необходимо изменить его владельца на `nxautomation`. 
+Так как каталог GPG был сформирован с использованием программы Sudo, вам необходимо изменить его владельца на `nxautomation`.
 
 Чтобы изменить владельца, выполните следующую команду.
 
@@ -307,8 +307,9 @@ gpg –-clear-sign <runbook name>
 
 Теперь подписанный модуль runbook можно отправить в службу автоматизации Azure и выполнять как обычный модуль runbook.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о разных методах запуска модуля см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Описание разных методов работы с модулями Runbook PowerShell в службе автоматизации Azure с использованием текстового редактора см. в статье [Изменение модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
 * Если модули Runbook выполняются с ошибками, см. раздел [Устранение неполадок с выполнением модулей Runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
+* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 5370b9b6d6a8bee82f8feca6dbcbcd78a4c12193
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 625a17156eaf199af0d51151c6fd37769b8f7b4a
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205608"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848751"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
 
@@ -23,8 +23,8 @@ ms.locfileid: "67205608"
 
 | Имя заголовка | Описание | Пример значения |
 | ----------- | ----------- | ------------ |
-| Авторизация | Основной токен | Bearer &lt;основной_токен&gt; |
-| x-ms-authorization-auxiliary | Вспомогательные токены | Bearer &lt;вспомогательный_токен1&gt;; EncryptedBearer &lt;вспомогательный_токен2&gt;; Bearer &lt;вспомогательный_токен3&gt; |
+| Authorization | Основной токен | Bearer &lt;основной_токен&gt; |
+| x-ms-authorization-auxiliary | Вспомогательные токены | &lt;&gt; &lt;A Bearer on-токен1&gt;, енкриптедбеарер токен2, Bearer "вспомогательный-token3" &lt;&gt; |
 
 Дополнительный заголовок может содержать до трех вспомогательных токенов. 
 
@@ -36,6 +36,6 @@ ms.locfileid: "67205608"
 
 Если запрос ссылается на ресурс из другого клиента, Resource Manager проверяет вспомогательные токены, чтобы определить, может ли запрос быть обработан. Все вспомогательные токены в заголовке должны быть допустимыми и действующими. Если срок действия токена истек, Resource Manager возвращает код отклика 401. Ответ включает идентификатор клиента и идентификатор арендатора токена, который недопустим. Если дополнительный заголовок содержит допустимый для клиента токен, запрос между клиентами обрабатывается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об отправке запросов на аутентификацию с помощью API Azure Resource Manager см. в статье [Использование API аутентификации Resource Manager для доступа к подпискам](resource-manager-api-authentication.md).
 * Дополнительные сведения о токенах см. в статье [Маркеры доступа в Azure Active Directory](/azure/active-directory/develop/access-tokens).

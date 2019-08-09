@@ -1,19 +1,19 @@
 ---
 title: Доступ с несколькими протоколами на Azure Data Lake Storage | Документация Майкрософт
 description: Используйте API больших двоичных объектов и приложения, использующие API больших двоичных объектов с Azure Data Lake Storage 2-го поколения.
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: normesta
-ms.openlocfilehash: f384fb738fe719b8e622e8d61502e6acba2bbf31
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.reviewer: stewu
+ms.openlocfilehash: cc0191a9484a09ed12e0ca0cde4d51681e44ec5f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314376"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855539"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Доступ с несколькими протоколами на Azure Data Lake Storage
 
@@ -28,7 +28,7 @@ ms.locfileid: "68314376"
 
 Если вы регистрируетесь в предварительной версии многопротокольного доступа на Data Lake Storage, вы можете работать со всеми данными с помощью всей экосистемы средств, приложений и служб. Сюда входят службы Azure, такие как [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-introduction), [центр интернета вещей](https://docs.microsoft.com/azure/iot-hub/), [Power BI](https://docs.microsoft.com/power-bi/desktop-data-sources)и многие другие. 
 
-Сюда также входят средства и приложения сторонних производителей. Можно указать учетные записи с иерархическим пространством имен, не изменяя их. Эти *приложения работают,* даже если они вызывают API больших двоичных объектов, так как API-интерфейсы больших двоичных объектов теперь могут работать с данными в учетных записях, имеющих иерархическое пространство имен.
+Сюда также входят средства и приложения сторонних производителей. Можно указать учетные записи с иерархическим пространством имен, не изменяя их. Эти приложения работают , даже если они вызывают API больших двоичных объектов, так как API-интерфейсы больших двоичных объектов теперь могут работать с данными в учетных записях, имеющих иерархическое пространство имен.
 
 > [!NOTE]
 > Чтобы просмотреть ограничения, см. статью [Известные проблемы](data-lake-storage-known-issues.md) .

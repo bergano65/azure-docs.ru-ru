@@ -1,20 +1,19 @@
 ---
-title: 'Управление данными в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure '
+title: Управление данными в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 description: В этом кратком руководстве описано, как использовать Обозреватель службы хранилища Azure для создания в учетной записи Azure Data Lake Storage 2-го поколения файловой системы, а также каталога и файла. Далее вы узнаете, как загружать файл на локальный компьютер и как просматривать все файлы в каталоге.
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
-ms.custom: mvc
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/19/2019
 ms.author: normesta
-ms.openlocfilehash: 38cc0533d3e993dd90a037ee6a504c2dcd575e6f
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.reviewer: stewu
+ms.openlocfilehash: 3450de26c12d91f4be00fe39bd5703564c786190
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360856"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855611"
 ---
 # <a name="use-azure-storage-explorer-to-manage-data-in-an-azure-data-lake-storage-gen2-account"></a>Управление данными в учетной записи Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 

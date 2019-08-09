@@ -16,12 +16,12 @@ ms.date: 10/16/2018
 ms.author: glenga
 ms.reviewer: msangapu;david.ebbo;suwatch;pbatum;naren.soni
 ms.custom: seodec18
-ms.openlocfilehash: 47a068ac6a7941c8ce71cf5c6745d2958c75fe74
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 55d040e96b92f73a632fd415220f9cf135335736
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736595"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851009"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Выполнение фоновых задач с помощью веб-заданий в службе приложений Azure
 
@@ -173,9 +173,9 @@ when making changes in one don't forget the other two.
 
    ![Список веб-заданий](./media/web-sites-create-web-jobs/listallwebjobs.png)
 
-## <a name="cron-expressions"></a>Выражения CRON
+## <a name="ncrontab-expressions"></a>Выражения НКРОНТАБ
 
-[Выражение CRON](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) можно ввести на портале или добавьте файл `settings.job` в корне *ZIP-файла* веб-задания, как показано в следующем примере:
+Можно ввести [выражение нкронраб](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) на портале или включить `settings.job` файл в корень *ZIP* -файла веб-задания, как показано в следующем примере:
 
 ```json
 {

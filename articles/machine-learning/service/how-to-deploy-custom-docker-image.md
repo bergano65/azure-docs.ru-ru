@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/11/2019
-ms.openlocfilehash: f51c6bdc6cb2e381d5d5b855bf2f87b07d7fc180
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 0025f488f6a9b0af4e05a8bdf3ddf36c089d4d9f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638420"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856122"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-image"></a>Развертывание модели с помощью пользовательского образа DOCKER
 
@@ -40,8 +40,8 @@ ms.locfileid: "68638420"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая группа служб Машинное обучение Azure. Дополнительные сведения см. в статье [Создание рабочей области](setup-create-workspace.md) .
-* Пакет SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе о пакете Python SDK статьи [Создание рабочей области](setup-create-workspace.md#sdk) .
+* Рабочая группа служб Машинное обучение Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
+* [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py). 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * [Расширение CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md).
 * [Реестр контейнеров Azure](/azure/container-registry) или другой реестр DOCKER, доступный в Интернете.

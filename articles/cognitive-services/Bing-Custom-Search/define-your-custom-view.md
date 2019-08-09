@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
-ms.openlocfilehash: e4ed781544d3cd11e8494e40589676adf57a9c75
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 1827bfdbebaf1ffa17c7c631a94aa8fc6471d13b
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405116"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854102"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Настройка режима пользовательского поиска Bing
 
@@ -159,5 +159,5 @@ URL-адреса в список **Активно** можно добавлят�
 
 - [Вызов API пользовательского поиска](./search-your-custom-view.md)
 - [Настройка размещенного на серверах пользовательского интерфейса](./hosted-ui.md)
-- [Use decoration markers to highlight text](./hit-highlighting.md) (Использование маркеров оформления для выделения текста)
+- [Use decoration markers to highlight text](../bing-web-search/hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Разбивка веб-страниц на страницы](./page-webpages.md)

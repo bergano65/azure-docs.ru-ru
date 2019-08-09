@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: edc0da77fc1c2813c2485fca18d50952e3060db8
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: f7cd0125de886eed4b3e5c31503fdd4b7cbb76dd
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68370472"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847823"
 ---
 # <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Метрики журнала во время обучения выполняются в Машинное обучение Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "68370472"
 ## <a name="set-up-the-workspace"></a>Настройка рабочей области
 Перед тем, как включать ведение журнала и отправлять эксперимент, необходимо настроить рабочую область.
 
-1. Загрузите рабочую область. Чтобы узнать больше о настройке конфигурации рабочей области, выполните действия, описанные в разделе [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md#sdk).
+1. Загрузите рабочую область. Дополнительные сведения о настройке конфигурации рабочей области см. в разделе [файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
 
    ```python
    from azureml.core import Experiment, Run, Workspace
@@ -58,7 +58,7 @@ ms.locfileid: "68370472"
    ws = Workspace.from_config()
    ```
   
-## <a name="option-1-use-startlogging"></a>Вариант 1. Использование start_logging
+## <a name="option-1-use-start_logging"></a>Вариант 1. Использование start_logging
 
 **start_logging** создает интерактивное выполнение для использования в таких сценариях, как записные книжки. Все метрики, записанные во время сеанса, добавляются в запись о выполнении эксперимента.
 

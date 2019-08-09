@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 316c5b6b52c30b51fb2f177a0ae2bd9758fc91d9
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 390c961eaa692e6ca5bf26e2954c0764207fc210
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442460"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853669"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа Azure Active Directory
 
@@ -110,25 +110,26 @@ ms.locfileid: "68442460"
 
 ### <a name="supported-browsers"></a>Поддерживаемые браузеры
 
-В политике условного доступа можно выбрать браузеры  как клиентское приложение.
+В политике условного доступа можно выбрать браузеры как клиентское приложение.
 
 ![Управление доступом поддерживаемых браузеров](./media/technical-reference/05.png)
 
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
-| OS                     | Браузеры                                      |
-| :--                    | :--                                           |
-| Windows 10             | Internet Explorer, Microsoft Edge     |
-| Windows 8, Windows 8.1        | Internet Explorer, Chrome                     |
-| Windows 7              | Internet Explorer, Chrome                     |
-| iOS                    | Safari, Microsoft Edge, Intune Managed Browser |
-| Android                | Chrome, Microsoft Edge, Intune Managed Browser |
-| Windows Phone          | Internet Explorer, Microsoft Edge             |
-| Windows Server 2016    | Internet Explorer, Microsoft Edge             |
-| Windows Server 2016    | Chrome                                        |
-| Windows Server 2012 R2 | Internet Explorer, Chrome                     |
-| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
-| macOS                  | Chrome, Safari                                |
+| OS                     | Браузеры                                        |
+| :--                    | :--                                             |
+| Windows 10             | Microsoft ребро, Internet Explorer, Chrome       |
+| Windows 8, Windows 8.1        | Internet Explorer, Chrome                       |
+| Windows 7              | Internet Explorer, Chrome                       |
+| iOS                    | Microsoft ребро, Intune Managed Browser, Safari  |
+| Android                | Microsoft ребро, Intune Managed Browser, Chrome  |
+| Windows Phone          | Microsoft ребро, Internet Explorer               |
+| Windows Server 2019    | Microsoft ребро, Internet Explorer, Chrome       |
+| Windows Server 2016    | Microsoft ребро, Internet Explorer               |
+| Windows Server 2012 R2 | Internet Explorer                       |
+| Windows Server 2008 R2 | Internet Explorer                       |
+| macOS                  | Chrome, Safari                                  |
+
 
 #### <a name="why-do-i-see-a-certificate-prompt-in-the-browser"></a>Почему в браузере отображается запрос на сертификат
 

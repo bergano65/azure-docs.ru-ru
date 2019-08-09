@@ -1,20 +1,19 @@
 ---
 title: Мониторинг, диагностика и устранение неполадок в работе службы хранилища Azure | Документация Майкрософт
 description: Воспользуйтесь такими функциями, как аналитика хранилища, вход на стороне клиента, и другими сторонними инструментами для выявления, диагностики и устранения проблем, связанных со службой хранилища Azure.
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/11/2017
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: ccafa3431e12b036346c4fd654b2978dc9021471
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08c19daa0af226834ea70db8847e1637c2373351
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65912372"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855349"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -247,7 +246,7 @@ ms.locfileid: "65912372"
 >
 
 ### <a name="server-request-id"></a>Идентификатор запроса сервера
-Служба хранилища автоматически генерирует идентификаторов запросов сервера.
+Служба хранилища автоматически создает идентификаторы запросов сервера.
 
 * В журнале хранилища на стороне сервера идентификатор запроса сервера отображается в столбце **Request ID header** (Заголовок идентификатора запроса).
 * В данных сетевой трассировки, например выполненной с помощью Fiddler, идентификатор запроса сервера можно увидеть в ответных сообщениях. Это значение заголовка HTTP **x-ms-request-id**.
@@ -426,7 +425,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 Метрика **PercentThrottlingError** часто увеличивается одновременно с увеличением числа запросов к хранилищу или при первоначальном нагрузочном тестировании приложения. Это также может проявляться в получении сообщений о состоянии HTTP 503 "Сервер занят" или 500 "Время ожидания операции истекло" в клиенте при операциях с хранилищем.
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Временное увеличение метрики PercentThrottlingError
-Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о том, как реализовать политики повтора с помощью клиентской библиотеки хранилища см. в разделе [пространства имен Microsoft.Azure.Storage.RetryPolicies](/dotnet/api/microsoft.azure.storage.retrypolicies).
+Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о реализации политик повтора с помощью клиентской библиотеки хранилища см. в разделе [пространство имен Microsoft. Azure. Storage. RetryPolicies](/dotnet/api/microsoft.azure.storage.retrypolicies).
 
 > [!NOTE]
 > В значении метрики **PercentThrottlingError** также могут наблюдаться пиковые скачки, не совпадающие с периодами высокой активности приложения. Наиболее вероятная причина в этом случае — перемещение секций службой хранилища для балансировки нагрузки.
@@ -467,17 +466,17 @@ queueServicePoint.UseNagleAlgorithm = false;
 ### <a name="the-client-is-receiving-403-messages"></a>Клиент получает сообщения «HTTP 403 (запрещено)»
 Если в клиентском приложении происходят ошибки HTTP 403 (Запрещено), наиболее вероятная причина заключается в использовании клиентом подписанного URL-адреса (SAS) с истекшим сроком действия при отправке запроса к хранилищу (хотя возможны и другие причины: рассинхронизация по времени, недействительные ключи и пустые заголовки). Если причина в просроченном ключе SAS, в журнале хранилища на стороне сервера не будет никаких записей об этом. В приведенной ниже таблице показан пример этой неполадки в журнале на стороне клиента, созданном клиентской библиотекой хранилища.
 
-| source | Уровень детализации | Verbosity | Идентификатор запроса клиента | Operation Text |
+| Source | Уровень детализации | Verbosity | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
-| Microsoft.Azure.Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
-| Microsoft.Azure.Storage |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
-| Microsoft.Azure.Storage |Ошибка |1 |85d077ab -… |Retry policy did not allow for a retry. Сбой с ошибкой The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Запуск синхронного запроса к<https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
+| Microsoft. Azure. Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
+| Microsoft. Azure. Storage |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft. Azure. Storage |Сведения |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
+| Microsoft. Azure. Storage |Error |1 |85d077ab -… |Retry policy did not allow for a retry. Сбой с ошибкой The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
 
 В этой ситуации вам нужно разобраться, почему срок действия маркера SAS истекает, до того как клиент отправит его серверу.
 
@@ -505,7 +504,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 В приведенном ниже журнале, сгенерированном клиентской библиотекой хранилища, показана проблема, связанная с тем, что клиент не может найти контейнер для создаваемого BLOB-объекта. Журнал содержит подробные данные о таких операциях хранилища:
 
-| Request ID (ИД запроса) | Операция |
+| Идентификатор запроса | Операция |
 | --- | --- |
 | 07b26a5d-... |**DeleteIfExists** для удаления контейнера BLOB-объектов. Обратите внимание, что эта операция включает в себя запрос **HEAD** , который проверяет существование контейнера. |
 | e2d06d78-… |**CreateIfNotExists** для создания контейнера BLOB-объектов. Обратите внимание: эта операция включает в себя запрос **HEAD** для проверки существования контейнера. **HEAD** возвращает сообщение 404, но работа не прерывается. |
@@ -521,7 +520,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | 07b26a5d-... |Response received. Status code = 200, Request ID = eeead849-...Content-MD5 = , ETag =    &quot;0x8D14D2DC63D059B&quot;. |
 | 07b26a5d-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | 07b26a5d-... |Downloading response body (Загружается тело ответа). |
-| 07b26a5d-... |Operation completed successfully (Операция выполнена успешно). |
+| 07b26a5d-... |Операция завершена успешно. |
 | 07b26a5d-... |Отправка синхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | 07b26a5d-... |StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12    GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | 07b26a5d-... |Waiting for response (Ожидание ответа). |
@@ -539,7 +538,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | e2d06d78-... |Response received. Status code = 404, Request ID = 353ae3bc-..., Content-MD5 = , ETag = . (Ответ получен. Код состояния = 404, ИД запроса = 353ae3bc-..., Content-MD5 = , ETag = .) |
 | e2d06d78-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | e2d06d78-... |Downloading response body (Загружается тело ответа). |
-| e2d06d78-... |Operation completed successfully (Операция выполнена успешно). |
+| e2d06d78-... |Операция завершена успешно. |
 | e2d06d78-... |Отправка асинхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | e2d06d78-... |StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | e2d06d78-... |Waiting for response (Ожидание ответа). |
@@ -561,7 +560,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 В этой таблице показан пример сообщения журнала на стороне сервера из файла журнала хранилища:
 
-| Name | Значение |
+| Название | Значение |
 | --- | --- |
 | Request start time (Время начала запроса) | 2014-05-30T06:17:48.4473697Z |
 | Operation type (Тип операции)     | GetBlobProperties            |
@@ -569,7 +568,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | HTTP status code (Код состояния HTTP)   | 404                          |
 | Authentication type (Тип проверки подлинности)| SAS                          |
 | Service type (Тип службы)       | BLOB-объект                         |
-| Request URL (URL-адрес запроса)        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
+| URL-адрес запроса        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
 | &nbsp;                 |   ?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&;api-version=2014-02-14 |
 | Request ID header (Заголовок идентификатора запроса)  | a1f348d5-8032-4912-93ef-b393e5252a3b |
 | Идентификатор запроса клиента  | 2d064953-8436-4ee0-aa0c-65cb874f7929 |
@@ -626,7 +625,7 @@ client.SetServiceProperties(sp);
 ### <a name="the-client-is-receiving-409-messages"></a>Клиент получает сообщения HTTP 409 (конфликт)
 В следующей таблице приведена выдержка из журнала на стороне сервера для двух операций клиента: **DeleteIfExists**, за которой сразу следует **CreateIfNotExists** с тем же именем контейнера больших двоичных объектов. Каждая клиентская операция приводит к отправке на сервер двух запросов: сначала отправляется запрос **GetContainerProperties** для проверки существования контейнера, а затем — **DeleteContainer** или **CreateContainer**.
 
-| Timestamp | Операция | Результат | Имя контейнера | Идентификатор запроса клиента |
+| Метка времени | Операция | Результат | Имя контейнера | Идентификатор запроса клиента |
 | --- | --- | --- | --- | --- |
 | 05:10:13.7167225 |GetContainerProperties |200 |mmcont |c9f52c89-… |
 | 05:10:13.8167325 |DeleteContainer |202 |mmcont |c9f52c89-… |
@@ -808,12 +807,12 @@ contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata
 
 Дополнительные сведения см. в статье [Что такое Azure Application Insights?](../../azure-monitor/app/app-insights-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения об аналитике в службе хранилища Azure ознакомьтесь со следующими ресурсами:
+Дополнительные сведения об аналитике в службе хранилища Azure см. в следующих ресурсах:
 
 * [Мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md)
-* [Аналитики хранилища](storage-analytics.md)
+* [Аналитика хранилища](storage-analytics.md)
 * [Метрики аналитики хранилища](storage-analytics-metrics.md)
 * [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema)
 * [Журналы аналитики хранилища](storage-analytics-logging.md)

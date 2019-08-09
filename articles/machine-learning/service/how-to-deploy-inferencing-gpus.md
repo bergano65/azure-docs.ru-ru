@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 07/24/2019
-ms.openlocfilehash: 06194537a0c0cce3a52510e6f426a9c2904387b2
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 9cf39230d6a2c615925222b6545a091a4be941ac
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68694339"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847984"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
@@ -29,11 +29,11 @@ ms.locfileid: "68694339"
 > [!NOTE]
 > Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md).
+* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](how-to-manage-workspace.md).
 
-* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе о [пакете Python SDK](setup-create-workspace.md#sdk) статьи Создание рабочей области.
+* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).  
 
 * Зарегистрированная модель, использующая GPU.
 
@@ -48,7 +48,7 @@ ms.locfileid: "68694339"
 Чтобы подключиться к существующей рабочей области, используйте следующий код:
 
 > [!IMPORTANT]
-> Этот фрагмент кода ждет, что конфигурация рабочей области будет сохранена в текущем или родительском каталоге. Дополнительные сведения о создании рабочей области и сохранении конфигурации в файле см. в разделе [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md).
+> Этот фрагмент кода ждет, что конфигурация рабочей области будет сохранена в текущем или родительском каталоге. Дополнительные сведения о создании рабочей области см. в статье [создание рабочих областей служб машинное обучение Azure и управление ими](how-to-manage-workspace.md).   Дополнительные сведения о сохранении конфигурации в файле см. в разделе [Создание файла конфигурации рабочей области](how-to-configure-environment.md#workspace).
 
 ```python
 from azureml.core import Workspace

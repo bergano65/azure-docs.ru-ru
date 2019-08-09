@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: c809077b0ec14240d231e9b281285080f68596b3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: b1aac19885e2b640063e4840f047916ad51e9656
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439510"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855745"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -30,7 +30,7 @@ ms.locfileid: "67439510"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Настройка DevKit по Wi-Fi и подготовить среду разработки, выполнив следующие шаги в разделе «Подготовка среды разработки» в [подключение IoT DevKit AZ3166 к центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
+* Настройте Wi-Fi для DevKit и подготовьте среду разработки, следуя указаниям в разделе "Подготовка среды разработки" статьи [Подключение к центру Интернета вещей Azure AZ3166](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment)в облаке.
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
 
@@ -79,7 +79,7 @@ ms.locfileid: "67439510"
 1. На портале Azure выберите панель **Обзор** службы подготовки устройств и запишите значения **глобальной конечной точки устройства** и **области идентификатора**.
   ![Глобальная конечная точка Службы подготовки устройств и область идентификатора](media/how-to-connect-mxchip-iot-devkit/dps-global-endpoint.png)
 
-1. Откройте **DeKitDPS.ino**. Найдите и замените значения `[Global Device Endpoint]` и `[ID Scope]` значениями, которые вы только что записали.
+1. Откройте файл **DevKitDPS.ino**. Найдите и замените значения `[Global Device Endpoint]` и `[ID Scope]` значениями, которые вы только что записали.
   ![Конечная точка службы подготовки устройств](media/how-to-connect-mxchip-iot-devkit/endpoint.png)
 
 1. Заполните переменную `registrationId` в коде. Допускаются только буквенно-цифровые символы, строчные буквы, и дефисы, не более 128 символов. Также запишите и это значение.
@@ -131,7 +131,7 @@ ms.locfileid: "67439510"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этого руководства вы узнали, как безопасно зарегистрировать устройство в Службе подготовки устройств с помощью обработчика композиций для удостоверения устройств, после чего устройство может автоматически зарегистрироваться в Центре Интернета вещей Azure. 
 

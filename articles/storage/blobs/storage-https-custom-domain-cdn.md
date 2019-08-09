@@ -1,20 +1,19 @@
 ---
 title: Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN
 description: Узнайте, как интегрировать Azure CDN с хранилищем BLOB-объектов для доступа к большим двоичным объектам с помощью личных доменов по HTTPS
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: normesta
-ms.reviewer: seguler
+ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: da3a6dcb0d125ac4666bc375e843c57cf12fb2fc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3ad599182191e41ea43d38260692a7ab46e1af6f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148409"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845002"
 ---
 # <a name="use-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN
 
@@ -25,7 +24,7 @@ Azure CDN помогает защитить конфиденциальность
 > [!NOTE]  
 > Помимо предоставления поддержки SSL для имен личных доменов Azure CDN помогает масштабировать приложение для доставки содержимого по сети с высокой пропускной способностью по всему миру. Дополнительные сведения см. в [обзоре Azure CDN](../../cdn/cdn-overview.md).
 
-## <a name="quickstart"></a>Краткое руководство
+## <a name="quickstart"></a>Быстрый старт
 
 Чтобы включить HTTPS для пользовательской конечной точки хранилища BLOB-объектов, сделайте следующее:
 
@@ -65,7 +64,7 @@ Azure CDN не учитывает ограничений, добавленных
 
 На [странице цен Azure CDN](https://azure.microsoft.com/pricing/details/cdn/) поддержка HTTPS для имен личных доменов доступна для Azure CDN только из продуктов Verizon цен. категорий "Стандартный" и "Премиум".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)

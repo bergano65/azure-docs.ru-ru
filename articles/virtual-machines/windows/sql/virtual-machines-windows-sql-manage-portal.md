@@ -1,6 +1,6 @@
 ---
-title: Управление виртуальных машин SQL Server в Azure с помощью портала Azure | Документация Майкрософт
-description: Узнайте, как доступ к ресурсу виртуальной машины SQL на портале Azure для виртуальной Машины SQL Server, размещенных в Azure.
+title: Управление виртуальными машинами SQL Server в Azure с помощью портал Azure | Документация Майкрософт
+description: Узнайте, как получить доступ к ресурсу виртуальной машины SQL в портал Azure для SQL Server виртуальной машины, размещенной в Azure.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -14,76 +14,74 @@ ms.workload: iaas-sql-server
 ms.date: 05/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 59a85e855c9fab9f2a3437c83c867b8076f55049
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 398eea4b968bb77017415e1dc259004c697b8dda
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67607213"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846173"
 ---
-# <a name="manage-sql-server-vms-in-azure-using-the-azure-portal"></a>Управление виртуальных машин SQL Server в Azure с помощью портала Azure
+# <a name="manage-sql-server-vms-in-azure-by-using-the-azure-portal"></a>Управление виртуальными машинами SQL Server в Azure с помощью портал Azure
 
-Нет новой точкой доступа для управления виртуальной Машине SQL Server в Azure с помощью [портала Azure](https://portal.azure.com). 
+В [портал Azure](https://portal.azure.com)ресурс **виртуальных машин SQL** является независимой службой управления. Его можно использовать для одновременного просмотра всех SQL Server виртуальных машин и изменения параметров, предназначенных для SQL Server: 
 
-**Виртуальные машины SQL** ресурсов теперь — это служба независимых управления, которая позволяет одновременно просмотреть все виртуальные машины SQL Server и изменить параметры, предназначенной для SQL Server: 
-
-![Ресурс виртуальной машины SQL](media/virtual-machines-windows-sql-manage-portal/sql-vm-manage.png)
+![Ресурс виртуальных машин SQL](media/virtual-machines-windows-sql-manage-portal/sql-vm-manage.png)
 
 
 ## <a name="remarks"></a>Примечания
 
-- **Виртуальные машины SQL** ресурсов рекомендуется использовать для просмотра и управления виртуальными машинами SQL Server. Тем не менее, в настоящее время **виртуальные машины SQL** ресурс не поддерживает управление [прекращение поддержки (EOS)](virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL Server. Чтобы управлять параметрами для виртуальных машин EOS SQL Server, использовать устаревший [вкладка "Конфигурация SQL Server"](#access-sql-server-configuration-tab) вместо этого. 
-- **Виртуальные машины SQL** ресурс доступен только для виртуальных машин SQL Server, имеют [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). 
+- Мы рекомендуем использовать ресурс " **виртуальные машины SQL** " для просмотра SQL Server виртуальных машин в Azure и управления ими. Но в настоящее время ресурс " **виртуальные машины SQL** " не поддерживает управление [окончанием поддержки](virtual-machines-windows-sql-server-2008-eos-extend-support.md) SQL Server виртуальных машин. Для управления параметрами прекращения поддержки SQL Server виртуальных машин используйте вместо нее вкладку нерекомендуемая [конфигурация SQL Server](#access-the-sql-server-configuration-tab) . 
+- Ресурс " **виртуальные машины SQL** " доступен только для SQL Server виртуальных машин, [зарегистрированных в ПОСТАВЩИКЕ ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). 
 
 
-## <a name="access-sql-virtual-machine-resource"></a>Ресурс виртуальной машины для доступа к SQL
-Чтобы получить доступ к ресурсу виртуальных машин SQL, сделайте следующее:
+## <a name="access-the-sql-virtual-machines-resource"></a>Доступ к ресурсу виртуальных машин SQL
+Чтобы получить доступ к ресурсу **виртуальных машин SQL** , выполните следующие действия.
 
 1. Откройте [портал Azure](https://portal.azure.com). 
 1. Выбор пункта **Все службы**. 
-1. Тип `SQL virtual machines` в поле поиска.
-1. (Необязательно): Выберите значок звездочки рядом с полем **виртуальные машины SQL** Чтобы добавить этот пункт меню "Избранное". 
+1. В поле поиска введите **виртуальные машины SQL** .
+1. (Необязательно): Щелкните звездочку рядом с параметром **виртуальные машины SQL** , чтобы добавить этот параметр в меню **Избранное** . 
 1. Выберите **виртуальные машины SQL**. 
 
-   ![Поиск виртуальных Машин SQL виртуальных машин во всех службах](media/virtual-machines-windows-sql-manage-portal/sql-vm-search.png)
+   ![Поиск SQL Server виртуальных машин во всех службах](media/virtual-machines-windows-sql-manage-portal/sql-vm-search.png)
 
-1. Появится список всех виртуальных машин SQL Server доступны в рамках подписки. Выберите тот, который вы хотите управлять запустить **виртуальные машины SQL** ресурсов. Используйте поле поиска, если виртуальной Машине SQL Server не очевидны. 
+1. На портале перечислены все SQL Server виртуальные машины, доступные в рамках подписки. Выберите ту, которой вы хотите управлять, чтобы открыть ресурс " **виртуальные машины SQL** ". Используйте поле поиска, если виртуальная машина SQL Server не отображается. 
 
-![Все доступные виртуальные машины SQL](media/virtual-machines-windows-sql-manage-portal/all-sql-vms.png)
+   ![Все доступные SQL Server виртуальные машины](media/virtual-machines-windows-sql-manage-portal/all-sql-vms.png)
 
-При выборе виртуальной Машины SQL Server откроется **виртуальные машины SQL** ресурсов: 
+   При выборе ВИРТУАЛЬНОЙ машины в SQL Server открывается ресурс " **виртуальные машины SQL** ": 
 
 
-![Ресурс виртуальной машины SQL](media/virtual-machines-windows-sql-manage-portal/sql-vm-resource.png)
+   ![Ресурс виртуальных машин SQL](media/virtual-machines-windows-sql-manage-portal/sql-vm-resource.png)
 
-  > [!TIP]
-  > **Виртуальные машины SQL** ресурс используется для специальных параметров SQL Server. Выберите имя виртуальной машины в **виртуальной машины** поля для перехода к параметрам, которые относятся к виртуальной Машине, но не является монопольной особенностью SQL Server. 
+> [!TIP]
+> Ресурс **виртуальных машин SQL** предназначен для выделенных параметров SQL Server. Выберите имя ВИРТУАЛЬНОЙ машины в поле виртуальная **машина** , чтобы открыть параметры, относящиеся к виртуальной машине, но не только SQL Server. 
 
-## <a name="access-sql-server-configuration-tab"></a>Вкладка конфигурации доступа к SQL Server
-На вкладке конфигурации SQL Server является устаревшим. В настоящее время он является единственным способом для управления [прекращение поддержки (EOS)](virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL Server и виртуальных машин SQL Server, которые не были [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).
+## <a name="access-the-sql-server-configuration-tab"></a>Доступ к вкладке "Конфигурация SQL Server"
+Вкладка " **конфигурация SQL Server** " устарела. В настоящее время это единственный способ управления [окончанием поддержки](virtual-machines-windows-sql-server-2008-eos-extend-support.md) SQL Server виртуальных машин и SQL Server виртуальных машин, которые не были зарегистрированы в поставщике [ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).
 
-Для доступа к вкладке устаревшие настройки SQL server, необходимо перейти к **виртуальных машин** ресурсов. Для этого выполните следующее.
+Чтобы открыть вкладку нерекомендуемая **конфигурация SQL Server** , перейдите к ресурсу **виртуальных машин** . Выполните следующие действия.
 
 1. Откройте [портал Azure](https://portal.azure.com). 
 1. Выбор пункта **Все службы**. 
-1. Тип `virtual machines` в поле поиска.
-1. (Необязательно): Выберите значок звездочки рядом с полем **виртуальных машин** Чтобы добавить этот пункт меню "Избранное". 
+1. Введите **виртуальные машины** в поле поиска.
+1. (Необязательно): Щелкните звездочку рядом с пунктом **виртуальные машины** , чтобы добавить этот параметр в меню **Избранное** . 
 1. Выберите **Виртуальные машины**. 
 
    ![Поиск виртуальных машин](media/virtual-machines-windows-sql-manage-portal/vm-search.png)
 
-1. Появится список всех виртуальных машин в подписке. Выберите тот, который вы хотите управлять запустить **виртуальной машины** ресурсов. Используйте поле поиска, если виртуальной Машине SQL Server не очевидны. 
-1. Выберите **конфигурации SQL Server** в **параметры** области для управления сервером SQL. 
+1. На портале выводится список всех виртуальных машин в подписке. Выберите ту, которой вы хотите управлять, чтобы открыть ресурс " **виртуальные машины** ". Используйте поле поиска, если виртуальная машина SQL Server не отображается. 
+1. Выберите **SQL Server конфигурация** в области **Параметры** для управления виртуальной машиной SQL Server. 
 
-![Конфигурация SQL Server](media/virtual-machines-windows-sql-manage-portal/sql-vm-configuration.png)
+   ![Конфигурация SQL Server](media/virtual-machines-windows-sql-manage-portal/sql-vm-configuration.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях: 
 
 * [Обзор SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-overview.md).
-* [Вопросы и ответы по SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-faq.md).
-* [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](virtual-machines-windows-sql-server-pricing-guidance.md)
-* [Заметки о выпуске SQL Server на виртуальных машинах Windows](virtual-machines-windows-sql-server-iaas-release-notes.md).
+* [Часто задаваемые вопросы о SQL Server на виртуальной машине Windows](virtual-machines-windows-sql-server-iaas-faq.md)
+* [Руководство по ценам для SQL Server на виртуальной машине Windows](virtual-machines-windows-sql-server-pricing-guidance.md)
+* [Заметки о выпуске для SQL Server на виртуальной машине Windows](virtual-machines-windows-sql-server-iaas-release-notes.md)
 
 

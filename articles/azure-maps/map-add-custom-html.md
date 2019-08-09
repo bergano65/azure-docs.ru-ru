@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 65777a87cd042a4d8b3b14255dbf99241cd42e18
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: f8777a3d0eb9b97fff6f492f181a432d98d9341c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638750"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68849308"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -47,6 +47,9 @@ ms.locfileid: "68638750"
 
 <iframe height='500' scrolling='no' title='Маркер HTML с пользовательским шаблоном SVG' src='//codepen.io/azuremaps/embed/LXqMWx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/LXqMWx/'>Маркер HTML с пользовательским шаблоном SVG</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+> [!TIP]
+> Веб-пакет SDK Azure Maps предоставляет несколько шаблонов изображений SVG, которые можно использовать с маркерами HTML. Дополнительные сведения см. в документе [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md) .
 
 ## <a name="add-a-css-styled-html-marker"></a>Добавление маркера HTML стиля CSS
 
@@ -89,6 +92,9 @@ ms.locfileid: "68638750"
 > [HtmlMarkerManager](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarkermanager?view=azure-iot-typescript-latest)
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
+
+> [!div class="nextstepaction"]
+> [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](./map-add-pin.md)

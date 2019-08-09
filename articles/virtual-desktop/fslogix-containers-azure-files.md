@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: c01e138c8afcdd59fcb0c87f189d98bec10e16d7
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 13f80b42ef6dfd0c70067a3ecf5f3e172527a63f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828139"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846535"
 ---
 # <a name="fslogix-profile-containers-and-azure-files"></a>Контейнеры профилей FSLogix и Файлы Azure
 
@@ -75,13 +75,13 @@ UPD требует [Локальные дисковые пространства
 
 С момента приобретения Корпорация Майкрософт приступила к замене существующих решений профилей пользователей, например UPD, на контейнеры профилей Фслогикс.
 
-## <a name="azure-files-integration-with-azure-active-directory"></a>Интеграция файлов Azure с Azure Active Directory
+## <a name="azure-files-integration-with-azure-active-directory-domain-service"></a>Интеграция файлов Azure с доменной службой Azure Active Directory
 
-Производительность и функции контейнеров профиля Фслогикс используют преимущества облака. В Сентябрь 24, 2018 Microsoft Azure файлы объявили общедоступную предварительную версию [файлов Azure, поддерживающих Azure Active Directoryную проверку](https://azure.microsoft.com/blog/azure-active-directory-integration-for-smb-access-now-in-public-preview/)подлинности. Устраняя расходы и расходы на администрирование, служба файлов Azure с проверкой подлинности Azure Active Directory — это решение Premium для профилей пользователей в новой службе виртуальных рабочих столов Windows.
+Производительность и функции контейнеров профилей Фслогикс используют преимущества облака. 7 августа 2019 Microsoft Azure файлы объявили о общедоступной версии [проверки подлинности службы файлов Azure с Azure Active Directoryной службой домена (AD DS)](/articles/storage/files/storage-files-active-directory-overview.md). Устраняя расходы и расходы на администрирование, служба файлов Azure с проверкой подлинности Azure AD DS — это решение Premium для профилей пользователей в службе виртуальных рабочих столов Windows.
 
 ## <a name="best-practices-for-windows-virtual-desktop"></a>Рекомендации для виртуальных рабочих столов Windows
 
-Виртуальные рабочие столы Windows обеспечивают полный контроль над размером, типом и числом виртуальных машин, используемых клиентами. Дополнительные сведения см. в статье [что такое предварительная версия виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/overview).
+Виртуальные рабочие столы Windows обеспечивают полный контроль над размером, типом и числом виртуальных машин, используемых клиентами. Дополнительные сведения см. в статье [что такое предварительная версия виртуальных рабочих столов Windows](overview.md).
 
 Чтобы обеспечить соблюдение рекомендаций в среде виртуальных рабочих столов Windows, выполните следующие действия.
 
@@ -94,11 +94,11 @@ UPD требует [Локальные дисковые пространства
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Используйте следующие инструкции для настройки среды виртуальных рабочих столов Windows.
+Используйте следующие руководства для настройки среды виртуальных рабочих столов Windows.
 
-- Чтобы приступить к созданию решения для виртуализации настольных систем, см. раздел [Создание клиента в виртуальном рабочем столе Windows](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory).
-- Сведения о создании пула узлов в клиенте виртуальных рабочих столов Windows см. в статье [Создание пула узлов с помощью Azure Marketplace](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-azure-marketplace).
-- Сведения о настройке полностью управляемых файловых ресурсов в облаке см. в разделе [Настройка общей папки службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-enable).
-- Сведения о настройке контейнеров профилей Фслогикс см. в разделе [Настройка общей папки профиля пользователя для пула узлов](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-user-profile).
-- Сведения о назначении пользователей в пул узлов см. в статье [Управление группами приложений для виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/manage-app-groups).
-- Сведения о доступе к ресурсам виртуальных рабочих столов Windows из веб-браузера см. в статье [Подключение к виртуальному рабочему столу Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-web).
+- Чтобы приступить к созданию решения для виртуализации настольных систем, см. раздел [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
+- Сведения о создании пула узлов в клиенте виртуальных рабочих столов Windows см. в статье [Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md).
+- Сведения о настройке полностью управляемых файловых ресурсов в облаке см. в разделе [Настройка общей папки службы файлов Azure](/articles/storage/files/storage-files-active-directory-enable.md).
+- Сведения о настройке контейнеров профилей Фслогикс см. в разделе [Настройка общей папки профиля пользователя для пула узлов](create-host-pools-user-profile.md).
+- Сведения о назначении пользователей в пул узлов см. в статье [Управление группами приложений для виртуальных рабочих столов Windows](manage-app-groups.md).
+- Сведения о доступе к ресурсам виртуальных рабочих столов Windows из веб-браузера см. в статье [Подключение к виртуальному рабочему столу Windows](connect-web.md).

@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2d30d044a26e6a092eba267f223be9b10c3a238b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5c9d2acf3e58d233bd789e335c585f61511b975d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075829"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846213"
 ---
 # <a name="automated-backup-for-sql-server-2014-virtual-machines-resource-manager"></a>Автоматическая архивация для виртуальных машин SQL Server 2014 (Resource Manager)
 
@@ -32,14 +32,14 @@ ms.locfileid: "67075829"
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической архивации необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
 
 - Windows Server 2012
 - Windows Server 2012 R2
-- Windows Server 2016
+- Windows Server 2016
 
 **Версия/выпуск SQL Server**
 
@@ -57,7 +57,7 @@ ms.locfileid: "67075829"
 > [!NOTE]
 > Автоматическая архивация зависит от расширения агента IaaS для SQL Server. В текущей коллекции образов виртуальных машин SQL это расширение присутствует по умолчанию. Дополнительные сведения см. в статье [SQL Server IaaS Agent Extension](virtual-machines-windows-sql-server-agent-extension.md) (Расширение агента SQL Server IaaS).
 
-## <a name="settings"></a>Параметры
+## <a name="settings"></a>Настройки
 
 В приведенной ниже таблице описаны параметры настройки автоматической архивации. Фактическая процедура настройки может варьироваться в зависимости от того, используете вы портал Azure или команды Azure Windows PowerShell.
 
@@ -77,7 +77,7 @@ ms.locfileid: "67075829"
 
 При создании новой виртуальной машины SQL Server 2014 с моделью развертывания с помощью Resource Manager настройте автоматическую архивацию, используя портал Azure.
 
-В **параметры SQL Server** вкладке, прокрутите вниз до раздела **Автоматическая архивация** и выберите **включить**. Кроме того, можно также указать срок хранения и учетная запись хранения, а также включения шифрования, резервное копирование системных баз данных и настройке расписания архивации.  На представленном ниже снимке экрана портала Azure показаны параметры **автоматического резервного копирования SQL**.
+На вкладке **параметры SQL Server** прокрутите вниз до пункта **Автоматическое резервное копирование** и выберите **включить**. Можно также указать срок хранения и учетную запись хранения, а также включить шифрование, резервное копирование системных баз данных и настройку расписания резервного копирования.  На представленном ниже снимке экрана портала Azure показаны параметры **автоматического резервного копирования SQL**.
 
 ![Настройка автоматической архивации SQL на портале Azure](./media/virtual-machines-windows-sql-automated-backup/azure-sql-arm-autobackup.png)
 
@@ -85,11 +85,11 @@ ms.locfileid: "67075829"
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Для существующих виртуальных машин SQL Server, перейдите к [ресурсов виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) , а затем выберите **резервные копии**. 
+Для существующих SQL Server виртуальных машин перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) и выберите резервные **копии**. 
 
 ![Автоматизированная архивация SQL для существующих виртуальных машин](./media/virtual-machines-windows-sql-automated-backup/azure-sql-rm-autobackup-existing-vms.png)
 
-Когда закончите, нажмите **применить** кнопки в нижней части **резервные копии** страницы, чтобы сохранить изменения.
+По завершении нажмите кнопку **Применить** в нижней части страницы резервные **копии** , чтобы сохранить изменения.
 
 Если автоматизированная архивация включается впервые, Azure настроит агент IaaS SQL Server в фоновом режиме. При этом портал Azure может не сообщать о том, что выполняется настройка автоматической архивации. Установка и настройка агента занимают несколько минут. После этого новые параметры отобразятся на портале Azure.
 
@@ -260,7 +260,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
     -VMName $vmname -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Отслеживание
 
 Для отслеживания автоматического резервного копирования в SQL Server 2014 имеются две основные возможности. Так как автоматическое резервное копирование использует функцию управляемого резервного копирования SQL Server, к обоим этим методам применяются одинаковые способы мониторинга.
 
@@ -277,7 +277,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 1. [Настройте почту агента SQL Server для использования компонента Database Mail](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-sql-server-agent-mail-to-use-database-mail).
 1. Убедитесь, что SMTP-порт открыт в локальном брандмауэре виртуальных машин и группе безопасности сети виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Автоматическая архивация настраивает управляемое резервное копирование на виртуальных машинах Azure. Поэтому очень важно [изучить документацию по управляемому резервному копированию в SQL Server 2014](https://msdn.microsoft.com/library/dn449497(v=sql.120).aspx).
 

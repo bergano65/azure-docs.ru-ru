@@ -10,16 +10,21 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: aahi
-ms.openlocfilehash: 7fc1ed9928bd988faca4537202ac57fee74b0b00
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 1aa4497b80b744476c83e459ab4ba41cbf7e5cc7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721426"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854131"
 ---
 # <a name="featured-user-generated-content-for-the-anomaly-detector-api"></a>Рекомендуемое создаваемое пользователем содержимое для API Детектора аномалий
 
 Из этой статьи можно узнать о размышлениях других клиентов об использовании API Детектора аномалий. Следующие ресурсы созданы сообществом пользователей Детектора аномалий. Они включают технические блоги, проекты с открытым кодом и другие материалы, созданные корпорацией Майкрософт и сторонними пользователями. Некоторые из следующих ссылок размещены на веб-сайтах, неподконтрольных корпорации Майкрософт, поэтому корпорация не несет ответственности за их содержимое. Используйте эти ресурсы с осторожностью.
+
+## <a name="demos"></a>Демонстрационные материалы
+
+* [Интерактивная демонстрация с анимацией](https://aka.ms/adDemo)
+* [Демонстрация записной книжки Azure](https://aka.ms/adNotebook)
 
 ## <a name="technical-blogs"></a>Технические блоги
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5dee966f8664bc14d81004e625ad9632066ffcb2
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: adca67152c33f4c6a3ec272b63c4c8157a777f36
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742303"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856188"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -215,6 +215,9 @@ automl_config = AutoMLConfig(task="classification")
 В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) , чтобы помочь алгоритмам эффективно работать.  Однако можно также включить дополнительную предварительную обработку или добавление признаков, например отсутствующие значения добавления отсутствующих, кодировки и преобразования. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess).
 
 Чтобы включить этот Добавление признаков, укажите `"preprocess": True` [ `AutoMLConfig` для класса](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
+
+> [!NOTE]
+> Этапы предварительной обработки автоматизированного машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовой и т. д.) становятся частью базовой модели. При использовании модели для прогнозов те же действия предварительной обработки, которые были применены во время обучения, автоматически применяются к входным данным.
 
 ### <a name="time-series-forecasting"></a>Прогнозирование временных рядов
 Для типа задачи прогнозирования временных рядов вы можете определить дополнительные параметры.

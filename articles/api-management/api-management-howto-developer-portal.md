@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 2756444db010e23f7114e99f474de9ce6614aaee
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 27d5dcc99db040036ba296911aa33d8a312bb23f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68837917"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851513"
 ---
 # <a name="access-and-customize-the-new-developer-portal-in-azure-api-management"></a>Доступ и настройка нового портала разработчика в службе управления API Azure
 
@@ -95,10 +95,6 @@ ms.locfileid: "68837917"
 ### <a name="why-doesnt-the-interactive-developer-console-work"></a>Почему Интерактивная консоль разработчиков не работает?
 
 Скорее всего, это связано с CORS. Интерактивная консоль выполняет клиентский запрос API из браузера. Проблему CORS можно устранить, добавив [политику CORS](https://docs.microsoft.com/azure/api-management/api-management-cross-domain-policies#CORS) в API-интерфейсы. Можно указать все параметры вручную (например, источник как https://contoso.com) или использовать подстановочное `*` значение).
-
-### <a name="where-can-i-file-bugs"></a>Где можно выполнить файл ошибок?
-
-[В репозитории GitHub](http://aka.ms/apimdevportal).
 
 ## <a name="next-steps"></a>Следующие шаги
 

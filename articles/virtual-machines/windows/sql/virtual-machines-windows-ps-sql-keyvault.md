@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 13d698cfbc0241248a77fd5f3b148a9393320c64
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7de54f7da8cef5942a8d8f41031eaf3e2565580
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076013"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846251"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-resource-manager"></a>Настройка интеграции Azure Key Vault для SQL Server на виртуальных машинах Azure (Resource Manager)
 
@@ -50,20 +50,20 @@ ms.locfileid: "67076013"
 
 ![Интеграция SQL с хранилищем ключей Azure](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
-Подробное пошаговое руководство по подготовке, см. в разделе [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
+Подробное пошаговое руководство по подготовке см. [в разделе подготовка SQL Server виртуальной машины в портал Azure](virtual-machines-windows-portal-sql-server-provision.md).
 
 ### <a name="existing-vms"></a>Существующие виртуальные машины
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Для существующих виртуальных машин SQL Server, откройте ваш [ресурсов виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) и выберите **безопасности** под **параметры**. Выберите **включить** для включения интеграции хранилища ключей Azure. 
+Для существующих SQL Server виртуальных машин откройте [ресурс виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) и в разделе **Параметры**выберите пункт **Безопасность** . Выберите **включить** , чтобы включить интеграцию Azure Key Vault. 
 
 ![Интеграция AKV SQL для существующих виртуальных машин](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-rm-akv-existing-vms.png)
 
-Когда закончите, нажмите **применить** кнопки в нижней части **безопасности** страницы, чтобы сохранить изменения.
+По завершении нажмите кнопку **Применить** в нижней части страницы **Безопасность** , чтобы сохранить изменения.
 
 > [!NOTE]
-> Имя учетных данных, который мы создали здесь будет сопоставлено имя входа SQL более поздней версии. С помощью этих данных для входа в SQL можно получить доступ к хранилищу ключей. 
+> Имя учетных данных, которое мы создали здесь, будет сопоставлено с именем входа SQL позже. С помощью этих данных для входа в SQL можно получить доступ к хранилищу ключей. 
 
 
 > [!NOTE]

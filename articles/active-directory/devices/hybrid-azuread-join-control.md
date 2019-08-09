@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5d8cd7799dd23dabc2cbb423e82b8c7203b7bed
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: c897d52c10efdb8824f676d7640dcc7275915a9e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834631"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851781"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Контролируемая проверка гибридного присоединения к Azure AD
 
@@ -72,7 +72,7 @@ ms.locfileid: "68834631"
       1. Путь к разделу: **софтваре\микрософт\виндовс\куррентверсион\кдж\аад**
       1. Имя значения: **TenantName**
       1. Тип значения: **REG_SZ**
-      1. Данные значения: Проверенное **доменное имя** , если используется Федеративная среда, например AD FS. Проверенное * * доменное имя "" или имя домена onmicrosoft.com, например, `contoso.onmicrosoft.com` при использовании управляемой среды
+      1. Данные значения: Проверенное **доменное имя** , если используется Федеративная среда, например AD FS. Имя проверенного **домена** или имя домена onmicrosoft.com, например, `contoso.onmicrosoft.com` если используется управляемая среда
    1. Щелкните **ОК**
 1. Закрыть редактор для вновь созданного объекта групповой политики
 1. Свяжите вновь созданный объект групповой политики с требуемым подразделением, содержащим компьютеры, присоединенные к домену, которые относятся к управляемому выборке.

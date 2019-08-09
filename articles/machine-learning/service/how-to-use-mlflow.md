@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 55722c35dddcbf8a20f4f51958170938225e87e5
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 2b59797e60585876764e8c9e1276e4fd36571b18
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668389"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856015"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-service-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и службы Машинное обучение Azure (Предварительная версия)
 
@@ -52,7 +52,9 @@ ms.locfileid: "68668389"
 ## <a name="prerequisites"></a>предварительные требования
 
 * [Установите Млфлов.](https://mlflow.org/docs/latest/quickstart.html)
-* [Установите пакет SDK для машинное обучение Azure Python на локальный компьютер и создайте Рабочая область машинного обучения Azure](setup-create-workspace.md#sdk). Пакет SDK обеспечивает подключение для Млфлов к рабочей области.
+* [Установка пакета sdk машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) на локальном компьютере. пакет SDK обеспечивает подключение для млфлов к рабочей области.
+* [Создайте Рабочая область машинного обучения Azure](how-to-manage-workspace.md).
+
 
 ## <a name="track-experiment-runs"></a>Мониторинг запусков экспериментов
 
@@ -154,7 +156,7 @@ run = exp.submit(src)
 
 После настройки кластера импортируйте записную книжку эксперимента, откройте ее и подключите к ней кластер.
 
-Следующий код должен находиться в записной книжке эксперимента. Это позволит получить сведения о подписке Azure для создания экземпляра рабочей области. Предполагается, что у вас есть группа ресурсов и Рабочая область Машинное обучение Azure. в противном случае ее можно [создать](setup-create-workspace.md#portal). 
+Следующий код должен находиться в записной книжке эксперимента. Это позволит получить сведения о подписке Azure для создания экземпляра рабочей области. Предполагается, что у вас есть группа ресурсов и Рабочая область Машинное обучение Azure. в противном случае ее можно [создать](how-to-manage-workspace.md). 
 
 ```python
 import mlflow

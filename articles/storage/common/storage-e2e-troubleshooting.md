@@ -1,21 +1,19 @@
 ---
 title: Устранение неполадок службы хранилища Azure с помощью диагностики и анализатора сообщений | Документация Майкрософт
 description: Учебник, демонстрирующий комплексное устранение неполадок с помощью аналитики хранилища Azure, AzCopy и анализатора сообщений Майкрософт
-services: storage
 author: normesta
 ms.service: storage
-ms.devlang: dotnet
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/15/2017
 ms.author: normesta
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 2707081adafa74237e3fb7730837f581e0c8b790
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ca81280bed52508c606a5a693fe0162837ac117
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65154222"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854629"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -80,7 +78,7 @@ ms.locfileid: "65154222"
 * **Журнал трассировки сети HTTP**, который собирает сведения о данных HTTP/HTTPS-запросов и ответов, в том числе для операций в хранилище Azure. В этом учебнике мы создадим трассировку сети через анализатор сообщений.
 
 ### <a name="configure-server-side-logging-and-metrics"></a>Настройка серверных журналов и метрик
-Во-первых необходимо настроить ведение журнала хранилища Azure и метрики, поэтому у нас есть данные на стороне службы для анализа. Ведение журнала и метрики можно настроить различными способами: через [портал Azure](https://portal.azure.com), с помощью PowerShell или программно. См. в разделе [включить метрики](storage-analytics-metrics.md#enable-metrics-using-the-azure-portal) и [включить ведение журнала](storage-analytics-logging.md#enable-storage-logging) подробные сведения о настройке ведения журнала и метрик.
+Сначала необходимо настроить ведение журнала и метрики службы хранилища Azure, чтобы анализировать данные со стороны служб для анализа. Ведение журнала и метрики можно настроить различными способами: через [портал Azure](https://portal.azure.com), с помощью PowerShell или программно. Дополнительные сведения о настройке ведения журнала и метрик см. в разделе [Включение метрик](storage-analytics-metrics.md#enable-metrics-using-the-azure-portal) и [Включение ведения журнала](storage-analytics-logging.md#enable-storage-logging) .
 
 ### <a name="configure-net-client-side-logging"></a>Настройка ведения журнала на стороне клиента .NET
 Чтобы настроить ведение журнала клиентского приложения .NET, включите диагностику .NET в файле конфигурации приложения (web.config или app.config). Подробные сведения см. в статьях [Клиентские ведения журнала с клиентской библиотеки хранилища .NET](https://msdn.microsoft.com/library/azure/dn782839.aspx) и [Ведение журнала на стороне клиента с помощью SDK хранилища Microsoft Azure для Java](https://msdn.microsoft.com/library/azure/dn782844.aspx) на сайте MSDN.
@@ -311,12 +309,12 @@ AzCopy можно скачать на странице [Загрузки Azure](
 | Общие проблемы авторизации подписи доступа (SAS) |AzureStorageLog.RequestStatus == "SASAuthorizationError" |Сеть |
 | Сообщения HTTP 409 (конфликт) |HTTP.Response.StatusCode == 409 |Сеть |
 | 409 (все) |*StatusCode == 409 |Все |
-| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |сервер; |
-| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |сервер; |
+| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |Сервер |
+| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |Сервер |
 | Диапазон времени в журналах сервера и сети |#Timestamp   >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 |Сервер, сеть |
 | Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |сервер; |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о сквозных сценариях устранения ошибок в службы хранилище Azure см. следующие ресурсы:
 
 * [Наблюдение, диагностика и устранение неисправностей хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)

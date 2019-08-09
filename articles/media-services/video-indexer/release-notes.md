@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 07/22/2019
 ms.author: juliako
-ms.openlocfilehash: fd67e867b5eac58838551ac29e1fca5e860b15ff
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: b627a78edef1c0b0fe6b3ed011678145aea397ae
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414215"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845882"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -27,6 +27,16 @@ ms.locfileid: "68414215"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции.
+
+## <a name="july-2019"></a>2019 июля
+
+### <a name="editor-as-a-widget"></a>Редактор как мини-приложение
+
+Теперь AI-редактор индексатора видео доступен в виде графического элемента для внедрения в приложения клиентов.
+
+### <a name="update-custom-language-model-from-closed-caption-file-from-the-portal"></a>Обновление пользовательской языковой модели из файла скрытых субтитров на портале
+
+Клиенты могут предоставлять форматы файлов ВТТ, SRT и TTML в качестве входных для языковых моделей на странице настройки портала.
 
 ## <a name="june-2019"></a>Июнь 2019 г.
 

@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/19/2019
-ms.openlocfilehash: 4534f7e5bba2e34316be3376e2627c15c20ba81f
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: cbbfd5f7beb7270bf55e952c818b4802d9d9ecab
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68694373"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847988"
 ---
 # <a name="use-an-existing-model-with-azure-machine-learning-service"></a>Использование существующей модели со службой Машинное обучение Azure
 
@@ -32,14 +32,14 @@ ms.locfileid: "68694373"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. [в разделе Создание рабочей области](setup-create-workspace.md).
+* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. [в разделе Создание рабочей области](how-to-manage-workspace.md).
 
     > [!TIP]
     > В примерах Python в этой статье предполагается `ws` , что для переменной задана рабочая область машинное обучение Azure службы.
     >
     > В примерах интерфейса командной строки используется `myworkspace` заполнитель и `myresourcegroup`. Замените их именем рабочей области и группой ресурсов, содержащей ее.
 
-* Пакет SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе о пакете SDK для Python статьи [Создание рабочей области](setup-create-workspace.md#sdk).
+* [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).  
 
 * [Расширение CLI](reference-azure-machine-learning-cli.md) [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и машинное обучение.
 

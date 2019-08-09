@@ -1,20 +1,19 @@
 ---
 title: Копирование данных в Azure Data Lake Storage 2-го поколения с помощью DistCp | Документация Майкрософт
 description: Использование средства DistCp для копирования данных из Azure Data Lake Storage 2-го поколения и обратно
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
-ms.reviewer: seguler
-ms.openlocfilehash: 0e85d2b2c7e9a3022e7fea2063ffa0aa915abb53
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.reviewer: stewu
+ms.openlocfilehash: d33518c7dc82f8af61fef02ecabb7ac7f42e28fb
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939056"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847092"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
@@ -22,7 +21,7 @@ ms.locfileid: "64939056"
 
 DistCp предоставляет различные параметры командной строки, поэтому мы настоятельно рекомендуем вам прочитать эту статью для того, чтобы использовать их оптимально. В этой статье описаны основные функциональные возможности этого средства и использование его для копирования данных в учетную запись с включенным иерархическим пространством имен.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)** .

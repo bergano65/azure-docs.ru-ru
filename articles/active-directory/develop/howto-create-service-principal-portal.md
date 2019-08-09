@@ -14,14 +14,14 @@ ms.workload: na
 ms.date: 05/17/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.custom: aaddev, seoapril2019
+ms.custom: aaddev, seoapril2019, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 825966fbb0db537aad8de39e69e17418e6432b44
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a28354f54978e8ba776d8b0da294652ff462a05f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324681"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853459"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -78,22 +78,22 @@ ms.locfileid: "68324681"
 1. В Azure Active Directory в разделе **Регистрация приложений** выберите нужное приложение.
 1. Скопируйте идентификатор каталога (клиента) и сохраните его в коде приложения.
 
-    ![Скопируйте каталог (идентификатор клиента) и сохраните его в коде приложения.](./media/howto-create-service-principal-portal/copy-tenant-id.png)
+    ![Скопируйте идентификатор каталога (клиента) и сохраните его в коде приложения](./media/howto-create-service-principal-portal/copy-tenant-id.png)
 
 1. Скопируйте **идентификатор приложения** и сохраните его в коде приложения.
 
-   ![Копирование идентификатора приложения (клиента)](./media/howto-create-service-principal-portal/copy-app-id.png)
+   ![Скопируйте идентификатор приложения (клиента)](./media/howto-create-service-principal-portal/copy-app-id.png)
 
 ## <a name="certificates-and-secrets"></a>Сертификаты и секреты
 Управляющие приложения могут использовать два вида учетных данных для аутентификации в Azure AD: сертификаты и секреты приложений.  Рекомендуется использовать сертификат, но можно также создать новый секрет приложения.
 
-### <a name="upload-a-certificate"></a>Загрузить сертификат
+### <a name="upload-a-certificate"></a>Отправить сертификат
 
 Вы можете использовать существующий сертификат, если он есть.  При необходимости можно создать самозаверяющий сертификат для целей тестирования. Откройте PowerShell и выполните команду [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) со следующими параметрами, чтобы создать самозаверяющий сертификат в хранилище сертификатов пользователя на компьютере: `$cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocation "Cert:\CurrentUser\My"  -KeyExportPolicy Exportable -KeySpec Signature`.  Экспортируйте этот сертификат с помощью оснастки MMC " [Управление сертификатом пользователя](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) ", доступной на панели управления Windows.
 
 Чтобы отправить сертификат, выполните следующие действия.
 
-1. Выберите **сертификаты & секреты**.
+1. Выберите **Сертификаты и секреты**.
 1. Выберите **отправить сертификат** и выберите сертификат (существующий сертификат или самозаверяющий сертификат, который вы экспортировали).
 
     ![Выберите отправить сертификат и выберите тот, который вы хотите добавить.](./media/howto-create-service-principal-portal/upload-cert.png)
@@ -102,17 +102,17 @@ ms.locfileid: "68324681"
 
 После регистрации сертификата в приложении на портале регистрации приложений необходимо включить код клиентского приложения для использования сертификата.
 
-### <a name="create-a-new-application-secret"></a>Создать новый секрет приложения
+### <a name="create-a-new-application-secret"></a>Создание секрета приложения
 
 Если вы решили не использовать сертификат, можно создать новый секрет приложения.
 
-1. Выберите **сертификаты & секреты**.
-1. Выберите **секреты клиента — > новый секрет клиента**.
-1. Введите описание секрета и длительность. Когда все будет готово, нажмите **Добавить**.
+1. Выберите **Сертификаты и секреты**.
+1. Выберите **Секреты клиента -> Новый секрет клиента**.
+1. Введите описание и срок действия секрета. Когда все будет готово, нажмите **Добавить**.
 
    После сохранения секрета клиента отображается значение секрета клиента. Это значение невозможно будет получить позже, поэтому скопируйте его сразу. Значение ключа необходимо предоставить вместе с идентификатором приложения для входа от имени приложения. Сохраните значение ключа, чтобы приложение могло получить к нему доступ.
 
-   ![Скопируйте значение секрета, так как его невозможно получить позже](./media/howto-create-service-principal-portal/copy-secret.png)
+   ![Скопируйте значение секрета, так как вы не сможете получить его позже](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 1c12007e04ff8cd08ddb7afdf9a3c2add9638de3
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: d8e80594e0c56f57527d1703b0cf1323571cf351
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277431"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855709"
 ---
 # <a name="monitor-performance-and-storage-metrics-in-azure-cosmos-db"></a>Мониторинг метрик производительности и хранения в Azure Cosmos DB
 
@@ -50,7 +50,7 @@ ms.locfileid: "68277431"
 ## <a name="set-up-alerts-in-the-portal"></a>Настройка оповещений на портале
 
 > [!NOTE]
-> Классические оповещения в Azure Monitor будут прекращены 31 августа 2019. Портал Azure предлагает [средство миграции](../azure-monitor/platform/alerts-using-migration-tool.md) для переноса классических правил генерации оповещений. Однако не все классические оповещения о метриках Azure Cosmos DB можно перенести, но есть некоторые исключения. список классических оповещений, которые невозможно перенести, см. в статье [Azure Monitor](../azure-monitor/platform/alerts-understand-migration.md#cosmos-db-metrics) . 
+> Классические оповещения в Azure Monitor будут прекращены в ближайшее время. Портал Azure предлагает [средство миграции](../azure-monitor/platform/alerts-using-migration-tool.md) для переноса классических правил генерации оповещений. Однако не все классические оповещения о метриках Azure Cosmos DB можно перенести, но есть некоторые исключения. список классических оповещений, которые невозможно перенести, см. в статье [Azure Monitor](../azure-monitor/platform/alerts-understand-migration.md#cosmos-db-metrics) . 
 
 1. На [портале Azure](https://portal.azure.com/) щелкните **Все службы**, **Azure Cosmos DB**, а затем выберите имя учетной записи Azure Cosmos DB, для которой требуется настроить оповещения метрик производительности.
 2. В меню ресурсов щелкните **Правила оповещения**, чтобы открыть соответствующую страницу.  

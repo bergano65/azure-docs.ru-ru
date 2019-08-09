@@ -9,33 +9,33 @@ ms.author: robreed
 ms.date: 03/20/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fcf48cfdb43473f99b139f0a0a07a5ace9a91642
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 5ef739a7053fffdd45c6d5e144ae736429597a4f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476966"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850495"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться сценариями, уже созданными корпорацией Майкрософт и сообществом.
 
-Вы можете получить модули Runbook PowerShell и [модули](#modules-in-powershell-gallery) из коллекции PowerShell и [модули Runbook Python](#python-runbooks) из коллекции Script Center. У вас также есть доступ в сообществе путем совместного использования сценариев, разработанных, см. в разделе Добавление модуля runbook в коллекции
+Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно получить из коллекции центра сценариев для модулей [Runbook](#python-runbooks) коллекция PowerShell и Python. Вы также можете участвовать в сообществе, разрабатывая сценарии, которые вы разрабатываете, см. статью Добавление модуля Runbook в коллекцию.
 
-## <a name="runbooks-in-powershell-gallery"></a>Модули Runbook в коллекции PowerShell
+## <a name="runbooks-in-powershell-gallery"></a>Модули Runbook в коллекция PowerShell
 
-[Коллекции PowerShell](https://www.powershellgallery.com/packages) предоставляет широкий набор модулей Runbook от корпорации Майкрософт и сообщества, которые можно импортировать в службу автоматизации Azure. Для использования, модуль runbook можно скачать из коллекции, или можно импортировать непосредственно из коллекции, или из учетной записи службы автоматизации на портале Azure.
+[Коллекция PowerShell](https://www.powershellgallery.com/packages) предоставляет разнообразные модули Runbook от Майкрософт и сообщества, которые можно импортировать в службу автоматизации Azure. Чтобы использовать его, скачайте модуль Runbook из коллекции или непосредственно импортируйте модули Runbook из коллекции или из учетной записи службы автоматизации в портал Azure.
 
-Можно импортировать только непосредственно из коллекции PowerShell с помощью портала Azure. Не поддерживает эту функцию, с помощью PowerShell.
+Импортировать можно только непосредственно из коллекция PowerShell с помощью портал Azure. Эту функцию нельзя выполнить с помощью PowerShell.
 
 > [!NOTE]
-> Обязательно проверяйте содержимое всех модулей Runbook, что вы получаете из коллекции PowerShell и соблюдайте предельную осторожность при их установке и запуске в рабочей среде.
+> Необходимо проверить содержимое всех модулей Runbook, получаемых из коллекция PowerShell, и при установке и запуске в рабочей среде с особой осторожностью соблюдать осторожность.
 
-### <a name="to-import-a-powershell-runbook-from-the-runbook-gallery-with-the-azure-portal"></a>Импорт модуля runbook PowerShell из коллекции Runbook с помощью портала Azure
+### <a name="to-import-a-powershell-runbook-from-the-runbook-gallery-with-the-azure-portal"></a>Импорт модуля Runbook PowerShell из коллекции Runbook с помощью портал Azure
 
 1. На портале Azure выберите свою учетную запись службы автоматизации.
 2. В разделе **Автоматизация процессов** выберите пункт **Коллекция модулей Runbook**.
-3. Выберите **источника: Коллекция PowerShell**.
+3. Выберите **источник: Коллекция PowerShell**.
 4. Найдите нужный элемент коллекции и выберите его, чтобы просмотреть сведения о нем. Слева вы можете ввести дополнительные параметры для издателя и типа.
 
    ![Обзор коллекции](media/automation-runbook-gallery/browse-gallery.png)
@@ -48,16 +48,16 @@ ms.locfileid: "67476966"
 7. Также для импорта модуля Runbook вы можете изменить его имя, а затем нажать кнопку **ОК** .
 8. Модуль runbook появится на вкладке **Модули runbook** учетной записи службы автоматизации.
 
-### <a name="adding-a-powershell-runbook-to-the-gallery"></a>Добавление модуля runbook PowerShell в коллекции
+### <a name="adding-a-powershell-runbook-to-the-gallery"></a>Добавление модуля Runbook PowerShell в коллекцию
 
-Корпорация Майкрософт рекомендует, чтобы добавить модули Runbook в коллекции PowerShell, которая будет полезна для других клиентов. Коллекция PowerShell принимает модули PowerShell и сценариев PowerShell. Можно добавить модуль runbook, [передачи их в коллекции PowerShell](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+Корпорация Майкрософт рекомендует добавлять модули Runbook в коллекция PowerShell, которые вы считаете полезными для других клиентов. Коллекция PowerShell принимает модули PowerShell и сценарии PowerShell. Модуль Runbook можно добавить, [загружая его в коллекция PowerShell](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
 > [!NOTE]
-> Графические модули Runbook не поддерживаются в коллекции PowerShell.
+> Графические модули Runbook не поддерживаются в коллекция PowerShell.
 
 ## <a name="modules-in-powershell-gallery"></a>Модули в коллекции PowerShell
 
-Модули PowerShell содержат командлеты, которые можно использовать в модулях Runbook, а в [коллекции PowerShell](https://www.powershellgallery.com) собраны готовые модули, которые можно установить в службе автоматизации Azure. Вы можете открыть эту коллекцию на портале Azure и установить модули из нее непосредственно в службе автоматизации Azure. Вы также можете скачать модули для установки вручную.  
+Модули PowerShell содержат командлеты, которые можно использовать в модулях Runbook, а в [коллекции PowerShell](https://www.powershellgallery.com) собраны готовые модули, которые можно установить в службе автоматизации Azure. Вы можете открыть эту коллекцию на портале Azure и установить модули из нее непосредственно в службе автоматизации Azure. Вы также можете скачать модули для установки вручную.
 
 ### <a name="to-import-a-module-from-the-automation-module-gallery-with-the-azure-portal"></a>Импорт модуля из коллекции модулей службы автоматизации с помощью портала Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "67476966"
    * Автор
    * Командлет или имя ресурса DSC
 
-5. Найдите интересующий вас модуль и выберите его, чтобы просмотреть сведения.  
+5. Найдите интересующий вас модуль и выберите его, чтобы просмотреть сведения.
 
    Во время подробного рассмотрения конкретного модуля просмотрите дополнительную информацию. Данная информация включает ссылку на коллекцию PowerShell, все необходимые зависимости и все командлеты или ресурсы DSC, которые содержит модуль.
 
@@ -91,16 +91,17 @@ ms.locfileid: "67476966"
 
 ## <a name="python-runbooks"></a>Модули runbook Python
 
-Модули runbook Python доступны в [ коллекции центра сценариев](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B1%5D.Type=ProgrammingLanguage&f%5B1%5D.Value=Python&f%5B1%5D.Text=Python&sortBy=Date&username=). У вас есть доступ модули Runbook Python в коллекции Script Center, щелкнув **загрузить публикацию**. При отправке материалов убедитесь, что вы добавили тег **Python**.
+Модули runbook Python доступны в [ коллекции центра сценариев](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=WindowsAzure&f%5B1%5D.Type=ProgrammingLanguage&f%5B1%5D.Value=Python&f%5B1%5D.Text=Python&sortBy=Date&username=). Вы можете добавить модули Runbook Python в коллекцию центра скриптов, щелкнув **Отправить публикацию**. При отправке материалов убедитесь, что вы добавили тег **Python**.
 
 > [!NOTE]
-> Чтобы отправить содержимое для [Script Center](https://gallery.technet.microsoft.com/scriptcenter) требуется не менее 100 точек. 
+> Для отправки содержимого в [центр сценариев](https://gallery.technet.microsoft.com/scriptcenter) требуется не менее 100 точек.
 
 ## <a name="requesting-a-runbook-or-module"></a>Запрос на создание модуля Runbook или другого модуля
 
 Свой запрос можно отправить на сайте [User Voice](https://feedback.azure.com/forums/246290-azure-automation/).  Если вам нужна помощь в написании модуля Runbook или освоении PowerShell, опубликуйте вопрос на нашем [форуме](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о том, как начать работу с модулями Runbook, см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 * Чтобы понять различия между PowerShell и рабочим процессом PowerShell с модулями Runbook, см. статью [Изучение рабочего процесса Windows PowerShell](automation-powershell-workflow.md).
+* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).

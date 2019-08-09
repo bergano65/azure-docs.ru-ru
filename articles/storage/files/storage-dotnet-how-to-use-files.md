@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/22/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 35f29e425fc471e4df4a037ef312af0fd041dcd7
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: da8e82652b5406cb4e5fe6438f721e3394a4cd96
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699785"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854590"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -55,10 +55,11 @@ API | Сценарии использования | Примечания
 Клиентскую библиотеку службы хранилища Azure можно использовать в любом типе приложения .NET, включая облачную службу или веб-приложение Azure, а также настольные и мобильные приложения. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>Установка необходимых пакетов с помощью NuGet
-Для работы с этим руководством вам нужно указать в проекте два пакета:
+Это пакеты, на которые необходимо ссылаться в проекте для выполнения этого учебника:
 
 * [Служба хранилища Microsoft Azure общей библиотеки для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): Этот пакет обеспечивает программный доступ к общим ресурсам в вашей учетной записи хранения.
 * [Служба хранилища Microsoft Azure библиотеки больших двоичных объектов для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): Этот пакет обеспечивает программный доступ к ресурсам больших двоичных объектов в вашей учетной записи хранения.
+* [Библиотека файлов служба хранилища Microsoft Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/): Этот пакет обеспечивает программный доступ к файловым ресурсам в вашей учетной записи хранения.
 * [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/). Этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
 Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.

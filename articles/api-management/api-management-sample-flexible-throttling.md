@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2018
 ms.author: apimpm
-ms.openlocfilehash: 0e7c6fe10467bb68417172dc95fef874d37fc97b
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: f0f89275006498c0ff4883f259d7e76f723b922b
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68696239"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851321"
 ---
 # <a name="advanced-request-throttling-with-azure-api-management"></a>Расширенное регулирование запросов с помощью API Management
 Возможность регулирования входящих запросов — ключевая роль службы управления Azure API. Контролируя частоту запросов или общий объем запросов либо передаваемых данных, служба управления API позволяет поставщикам API предотвращать злоупотребление API и предлагать различные уровни API.
@@ -29,7 +29,7 @@ ms.locfileid: "68696239"
 
 ## <a name="custom-key-based-throttling"></a>Регулирование запросов на основе настраиваемых ключей
 
-> ПРИМЕЧАНИЕ. `rate-limit-by-key` Политика недоступна, если используется уровень потребления службы управления API Azure. 
+> ПРИМЕЧАНИЕ. Политики `rate-limit-by-key` и`quota-by-key` недоступны, если используется уровень потребления службы управления API Azure. 
 
 Новые политики [rate-limit-by-key](/azure/api-management/api-management-access-restriction-policies#LimitCallRateByKey) и [quota-by-key](/azure/api-management/api-management-access-restriction-policies#SetUsageQuotaByKey) увеличивают гибкость управления трафиком. Они позволяют определять выражения для идентификации ключей, которые используются для контроля за объемом трафика. Принцип работы этих политик лучше всего демонстрирует пример. 
 

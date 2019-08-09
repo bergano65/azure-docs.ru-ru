@@ -11,12 +11,12 @@ ms.author: tedway
 author: tedway
 ms.date: 07/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: cec1a74938690a4f781ea7850fdd6d649550b3eb
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: 5e780c1a1d18954d0b3e9413e26f478e4ea3a8b1
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494909"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856108"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Развертывание модели как веб-службы в ППВМ с помощью Службы машинного обучения Azure
 
@@ -63,7 +63,7 @@ FPGA доступны в следующих регионах Azure:
 
     Если у вас нет квоты, отправьте запрос по адресу [https://aka.ms/accelerateAI](https://aka.ms/accelerateAI).
 
-- Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения см. [в разделе Создание рабочей области](setup-create-workspace.md).
+- Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения см. [в разделе Создание рабочей области](how-to-manage-workspace.md).
  
 - Пакет SDK для Python для моделей с аппаратным ускорением:
 
