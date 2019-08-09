@@ -1,8 +1,8 @@
 - name: Устранение неполадок с виртуальными машинами Azure
   href: index.md
-- name: Ошибки выделения ресурсов
+- name: Ошибки распределения ресурсов
   items:
-    - name: Ошибки выделения ресурсов
+    - name: Ошибки распределения ресурсов
       href: allocation-failure.md
     - name: Ошибки распределения для классических развертываний
       href: allocation-failure-classic.md
@@ -65,24 +65,30 @@
       href: detailed-troubleshoot-ssh-connection.md
 - name: Распространенные сообщения об ошибках
   href: error-messages.md
-- name: Проблемы с производительностью виртуальных машин Windows
+- name: Проблемы с производительностью виртуальных машин
   href: performance-diagnostics.md
   items:
-    - name: Как использовать PerfInsights
-      href: how-to-use-perfInsights.md
-    - name: Расширение для диагностики производительности
-      href: performance-diagnostics-vm-extension.md
+    - name: Windows
+      items:
+        - name: Как использовать PerfInsights
+          href: how-to-use-perfinsights.md
+        - name: Расширение для диагностики производительности
+          href: performance-diagnostics-vm-extension.md
+    - name: Linux
+      items:
+        - name: Как использовать PerfInsights
+          href: how-to-use-perfinsights-linux.md
 - name: Установка агента виртуальной машины Windows в автономном режиме
   href: install-vm-agent-offline.md
 - name: Повторное развертывание виртуальной машины
   items:
     - name: Linux
       href: redeploy-to-new-node-linux.md
-    - name: ' Windows'
+    - name: Windows
       href: redeploy-to-new-node-windows.md
 - name: Сброс пароля к виртуальной машине
   items:
-    - name: ' Windows'
+    - name: Windows
       href: reset-local-password-without-agent.md
     - name: Linux
       href: reset-password.md
@@ -120,19 +126,19 @@
   items:
     - name: Linux
       href: troubleshoot-deployment-new-vm-linux.md
-    - name: ' Windows'
+    - name: Windows
       href: troubleshoot-deployment-new-vm-windows.md
 - name: Устранение неполадок развертываний
   items:
     - name: Linux
       href: troubleshoot-deploy-vm-linux.md
-    - name: ' Windows'
+    - name: Windows
       href: troubleshoot-deploy-vm-windows.md
 - name: Изменение имен устройств
   href: troubleshoot-device-names-problems.md
-- name: Доступ к виртуальной машине восстановления
+- name: Доступ к восстановлению виртуальной машины
   items:
-    - name: ' Windows'
+    - name: Windows
       items:
         - name: PowerShell
           href: troubleshoot-recovery-disks-windows.md
@@ -140,7 +146,7 @@
           href: troubleshoot-recovery-disks-portal-windows.md
     - name: Linux
       items:
-        - name: Интерфейс командной строки
+        - name: CLI
           href: troubleshoot-recovery-disks-linux.md
         - name: Портал Azure
           href: troubleshoot-recovery-disks-portal-linux.md

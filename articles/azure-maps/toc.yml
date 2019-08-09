@@ -105,6 +105,8 @@
               href: clustering-point-data-web-sdk.md
             - name: Использование стилистических выражений на основе данных
               href: data-driven-style-expressions-web-sdk.md
+            - name: Использование шаблонов образов
+              href: how-to-use-image-templates-web-sdk.md
             - name: Наложение изображения
               href: map-add-image-layer.md
             - name: Добавление слоев фрагмента карты
