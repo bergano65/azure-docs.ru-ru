@@ -166,6 +166,8 @@
       items:
         - name: Визуальная разработка фабрик данных
           href: author-visually.md
+        - name: Система управления версиями
+          href: source-control.md
         - name: Непрерывная интеграция и поставка
           href: continuous-integration-deployment.md
         - name: Последовательная разработка и отладка

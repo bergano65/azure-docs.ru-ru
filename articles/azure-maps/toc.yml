@@ -133,12 +133,14 @@
       items:
         - name: Начало работы с элементами управления картой Android
           href: how-to-use-android-map-control-library.md
+        - name: Изменение стиля карты
+          href: set-android-map-styles.md
         - name: Добавление слоя символов
           href: how-to-add-symbol-to-android-map.md
         - name: Добавление фигур
           href: how-to-add-shapes-to-android-map.md
-        - name: Изменение стиля карты
-          href: set-android-map-styles.md
+        - name: Добавление слоя фрагментов
+          href: how-to-add-tile-layer-android-map.md
 - name: Справочные материалы
   items:
     - name: Расширения параметров и API

@@ -27,6 +27,14 @@
     - name: Индекс
       displayName: 'list, examples'
       href: ./samples/index.md
+    - name: IRS 1075
+      items:
+        - name: Обзор
+          displayName: 'standards, irs, 1075'
+          href: ./samples/irs-1075/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, irs, 1075'
+          href: ./samples/irs-1075/control-mapping.md
     - name: "ISO\_27001"
       items:
         - name: Обзор
