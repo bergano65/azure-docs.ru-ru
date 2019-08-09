@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4148d8a3b44336677ba028807aadbae424b7223
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: ba99001159277d9d221910cafa4f5165ae2bd812
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382503"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68880759"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
 
@@ -93,6 +93,8 @@ ms.locfileid: "68382503"
     ![Приложение Microsoft Authenticator на странице сканирования QR-кода](./media/user-help-auth-app-backup-recovery/backup-and-recovery-scan-qr-code.png)
 
     >[!NOTE]
+    >Если вы настраиваете приложение Microsoft Authenticator, вы можете получить запрос на разрешение приложению получить доступ к камере (iOS) или разрешить приложению принимать снимки и записывать видео (Android). Необходимо выбрать параметр **Разрешить** , чтобы приложение проверки подлинности мог получить доступ к камере, чтобы получить изображение QR-кода на следующем шаге. Если вы не разрешаете камеру, вы по-прежнему можете настроить приложение для проверки подлинности, но вам потребуется добавить сведения о коде вручную. Сведения о том, как добавить код вручную, см. в разделе [Добавление учетной записи в приложение вручную](user-help-auth-app-add-account-manual.md).
+    >
     >Дополнительные сведения о получении QR-кода см. в разделе [Добавление учетной записи в приложение](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install) или [Использование приложения Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app) (в зависимости от того, включил ли администратор сведения о безопасности).
 
 ## <a name="troubleshooting-backup-and-recovery-problems"></a>Устранение неполадок с резервным копированием и восстановлением

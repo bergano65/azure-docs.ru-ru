@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: iainfou
-ms.openlocfilehash: e94cd9ca049cfdfd2321ce046714506ed1f23390
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 923ecae9dc649b8f5cdcfd447b78fdec0805927a
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483280"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879154"
 ---
 # <a name="secure-your-azure-ad-domain-services-managed-domain"></a>Защита управляемого домена доменных служб Azure AD
 Эта статья поможет вам применить защиту управляемого домена. Можно отключить использование легко раскрываемых шифров наборов текстов и отключить хэш-синхронизацию учетных данных NTLM.
@@ -36,9 +36,12 @@ ms.locfileid: "67483280"
 
 ## <a name="disable-weak-cipher-suites-and-ntlm-credential-hash-synchronization"></a>Отключите легко раскрываемые шифры наборов текстов и синхронизацию хэшей учетных данных NTLM
 С помощью приведенного ниже сценария PowerShell можно сделать следующее:
+
 1. отключить поддержку NTLM v1 в управляемом домене;
 2. отключить синхронизацию хэшей паролей NTLM в локальном экземпляре Active Directory;
 3. отключить TLS v1 в управляемом домене.
+
+Если вы получаете сообщение об ошибке `Get-AzResource` с командой, которая не существует в ресурсе *Microsoft. AAD/DomainServices* , получите дополнительные права [на управление всеми подписками Azure и группами управления](../role-based-access-control/elevate-access-global-admin.md).
 
 ```powershell
 // Login to your Azure AD tenant
@@ -58,9 +61,9 @@ Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySetti
 ```
 
 > [!IMPORTANT]
-> Пользователи (и учетные записи служб) нельзя выполнить простой привязки LDAP, если вы отключили синхронизацию хэшей паролей NTLM экземпляр доменных служб Azure AD.  Дополнительные сведения об отключении синхронизации хэшей паролей NTLM [защиты управляемого домена доменных служб Azure AD](secure-your-domain.md).
+> Пользователи (и учетные записи служб) не могут выполнять простые привязки LDAP, если вы отключили синхронизацию хэша паролей NTLM в экземпляре доменных служб Azure AD.  Дополнительные сведения об отключении синхронизации хэшей паролей NTLM см. в статье [Защита управляемого домена доменных служб Azure AD](secure-your-domain.md).
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Синхронизация в управляемом домене доменных служб Azure AD](synchronization.md)

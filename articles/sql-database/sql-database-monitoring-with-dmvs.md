@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: 5bddcb89d26566bd2024cbde086b6e35ddaf94ef
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a630ceb1748f38dc169a4ebabcbb4e021de4273c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567181"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881559"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений
 
@@ -28,7 +28,7 @@ ms.locfileid: "68567181"
 - динамические представления управления, относящиеся к выполнению;
 - динамические представления управления, относящиеся к транзакциям.
 
-Подробные сведения о динамических административных представлениях см. в статье [Динамические административные представления и функции (Transact-SQL)](https://msdn.microsoft.com/library/ms188754.aspx) электронной документации по SQL Server.
+Подробные сведения о динамических административных представлениях см. в статье [Динамические административные представления и функции (Transact-SQL)](https://msdn.microsoft.com/library/ms188754.aspx) электронной документации по SQL Server. 
 
 ## <a name="permissions"></a>Разрешения
 
@@ -237,13 +237,13 @@ GO
 
 ## <a name="identify-tempdb-performance-issues"></a>Поиск проблем производительности `tempdb`
 
-При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. Чтобы получить дополнительные доказательства состязания `tempdb`, используйте [sys.dm_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) для подтверждения того, что значение wait_resource начинается с `2:x:y`, где `tempdb` — это идентификатор базы данных, `x` — идентификатор файла, а `y` — идентификатор страницы.  
+При определении проблем с производительностью операций ввода-вывода главные типы ожидания, связанные с проблемами `tempdb`, — `PAGELATCH_*` (не `PAGEIOLATCH_*`). Однако ожидания `PAGELATCH_*` не всегда означают состязание `tempdb`.  Этот тип ожидания может также указывать на состязание за страницы данных объекта пользователя из-за одновременных запросов к одной странице данных. `tempdb` Для дальнейшей проверки конфликтов используйте [sys. DM _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) , чтобы убедиться, что значение wait_resource начинается `2:x:y` с, где 2 — `tempdb` это идентификатор базы данных, `x` — идентификатор файла, а `y` — идентификатор страницы.  
 
 Для состязаний за tempdb рекомендуется сократить или повторно написать код приложения, который зависит от `tempdb`.  Распространенные области использования `tempdb`:
 
 - Временные таблицы
 - Переменные таблицы
-- Параметры табличных значений
+- Параметры, которые возвращают табличное значение
 - Использование хранилища версий (в частности, связанное с длительными транзакциями)
 - Запросы с планами запросов, которые используют сортировку, хэш-соединения и буферы
 
@@ -334,7 +334,7 @@ ORDER BY start_time ASC;
 
 Если основной тип ожидания — `RESOURCE_SEMAHPORE` и у вас нет проблем с загрузкой ЦП, у вас проблема с ожиданием временно предоставляемого буфера памяти.
 
-### <a name="determine-if-a-resourcesemahpore-wait-is-a-top-wait"></a>Определение типа ожидания `RESOURCE_SEMAHPORE` в качестве основного
+### <a name="determine-if-a-resource_semahpore-wait-is-a-top-wait"></a>Определение типа ожидания `RESOURCE_SEMAHPORE` в качестве основного
 
 Используйте следующий запрос для определения того, что тип ожидания `RESOURCE_SEMAHPORE` является основным
 
@@ -512,7 +512,7 @@ WHERE c.session_id = @@SPID;
 - [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx)
 - [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx)
 
-### <a name="sysdmdbresourcestats"></a>sys.dm_db_resource_stats
+### <a name="sysdm_db_resource_stats"></a>sys.dm_db_resource_stats
 
 Представление [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) можно использовать в каждой базе данных SQL. В представлении **sys.dm_db_resource_stats** отображаются последние данные использования ресурсов в соответствии с уровнем служб. Средний процент нагрузки ЦП, показатели операций ввода-вывода данных, записи в журнал и данные о памяти записываются каждые 15 секунд и хранятся 1 час.
 
@@ -533,7 +533,7 @@ FROM sys.dm_db_resource_stats;
 
 Примеры других запросов см. в [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx).
 
-### <a name="sysresourcestats"></a>sys.resource_stats
+### <a name="sysresource_stats"></a>sys.resource_stats
 
 Представление [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) в базе данных **master** предоставляет дополнительные сведения, с помощью которых можно контролировать производительность базы данных SQL в рамках конкретного уровня служб и объема вычислительных ресурсов. Данные собираются каждые 5 минут и хранятся приблизительно 14 дней. Это представление полезно для анализа использования ресурсов Базы данных SQL за более долгий период.
 

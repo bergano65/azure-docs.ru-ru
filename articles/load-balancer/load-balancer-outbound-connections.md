@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/02/2019
+ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: 833d0d0b17f7cc22b2ab37b4e225c1a8cce9c592
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 9dcc5fa201c08ca4b1e65b8aae88118731eba427
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385548"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881071"
 ---
 # <a name="outbound-connections-in-azure"></a>Исходящие подключения в Azure
 
@@ -133,6 +133,10 @@ Load Balancer (цен. категория "Стандартный") исполь
 
 Для управления портами SNAT UDP и SNAT TCP используются разные алгоритмы.  Load Balancer использует алгоритм, известный как "конусный NAT с ограниченным числом портов" для UDP.  Один порт SNAT используется для каждого потока независимо от порта IP-адреса назначения.
 
+#### <a name="snat-port-reuse"></a>Повторное использование порта SNAT
+
+После освобождения порта порт будет доступен для повторного использования по мере необходимости.  Порты SNAT можно рассматривать как последовательность от минимального к максимальному, доступному для данного сценария, и для новых подключений используется первый доступный порт SNAT. 
+ 
 #### <a name="exhaustion"></a>Исчерпание
 
 Если ресурс портов SNAT исчерпан, исходящие потоки прекращаются, пока имеющиеся потоки не освободят порты SNAT. Когда поток закрывается, подсистема балансировки нагрузки освобождает порты SNAT. Для их освобождения от простаивающих потоков используется [4-минутный период ожидания простоя](#idletimeout).

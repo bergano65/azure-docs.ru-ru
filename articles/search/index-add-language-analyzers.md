@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: deea16b8670623acd2ae92ba62f579f5474d12ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88d229d33f549755479d7e1c7cf012d0391bccbb
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65790902"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881509"
 ---
 # <a name="add-language-analyzers-to-an-azure-search-index"></a>Добавление анализатора языка в индекс Поиска Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "65790902"
 |Ирландский||ga.lucene|  
 |Итальянский|it.microsoft|it.lucene|  
 |Японский|ja.microsoft|ja.lucene|  
-|Каннада|KN.Microsoft||  
+|Каннада|kN. Microsoft||  
 |Корейский|ko.microsoft|ko.lucene|  
 |Латышский|lv.microsoft|lv.lucene|  
 |Литовский|lt.microsoft||  
@@ -100,7 +100,7 @@ ms.locfileid: "65790902"
 |Персидский||fa.lucene|  
 |Польский|pl.microsoft|pl.lucene|  
 |Португальский (Бразилия)|pt-Br.microsoft|pt-Br.lucene|  
-|Португальский (Португалия)|pt-Pt.microsoft|pt-Pt.lucene|  
+|португальский (Португалия)|pt-Pt.microsoft|pt-Pt.lucene|  
 |Панджаби|pa.microsoft||  
 |Румынский|ro.microsoft|ro.lucene|  
 |Русский|ru.microsoft|ru.lucene|  
@@ -118,7 +118,7 @@ ms.locfileid: "65790902"
 |Урду|ur.microsoft||  
 |Вьетнамский|vi.microsoft||  
 
- Все анализаторы, у которых в названии есть идентификатор **Lucene**, работают на базе [анализаторов языка Apache Lucene](https://lucene.apache.org/core/4_9_0/core/overview-summary.html ).
+ Все анализаторы, у которых в названии есть идентификатор **Lucene**, работают на базе [анализаторов языка Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 
 ## <a name="see-also"></a>См. также  
  [Create Index &#40;Azure Search Service REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API Службы поиска Azure))  

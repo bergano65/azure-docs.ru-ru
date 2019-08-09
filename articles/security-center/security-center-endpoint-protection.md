@@ -1,6 +1,6 @@
 ---
-title: ENDPOINT protection решения обнаружение и оценка работоспособности в центре безопасности Azure | Документация Майкрософт
-description: Принципы решения для защиты конечной точки обнаружения и определены как работоспособные.
+title: Обнаружение решений защиты конечных точек и оценка работоспособности в центре безопасности Azure | Документация Майкрософт
+description: Как обнаруживаются решения для защиты конечной точки и определяются как работоспособные.
 services: security-center
 documentationcenter: na
 author: monhaber
@@ -11,139 +11,175 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/23/2019
+ms.date: 08/08/2019
 ms.author: v-mohabe
-ms.openlocfilehash: b17e5f16b988bfa562b00bc6f5b9dfd34be4ca43
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4d3fc90a722b9f4043e891a14b542e6b90c94c55
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66247969"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881032"
 ---
-# <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка защиты конечной точки и рекомендации в центре безопасности Azure
+# <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
 
-Оценка защиты конечной точки и рекомендации в центре безопасности Azure обнаруживает и предоставляет оценку работоспособности [поддерживается](https://docs.microsoft.com/azure/security-center/security-center-os-coverage#supported-platforms-for-windows-computers-and-vms) версии решения для защиты конечной точки. В этом разделе объясняется, сценарии, которые создают следующие две рекомендации для решения для защиты конечной точки с помощью центра безопасности Azure.
+Оценка и рекомендации по защите конечных точек в центре безопасности Azure определяют и обеспечивают оценку работоспособности [поддерживаемых](https://docs.microsoft.com/azure/security-center/security-center-os-coverage#supported-platforms-for-windows-computers-and-vms) версий решений для защиты конечных точек. В этом разделе объясняются сценарии, которые создают следующие две рекомендации по использованию центра безопасности Azure для решений защиты конечных точек.
 
-* **Установка решения для защиты конечной точки на виртуальной машине**
-* **Устранения неполадок работоспособности endpoint protection на компьютерах**
+* **Установка решений для защиты конечных точек на виртуальной машине**
+* **Устранение проблем работоспособности Endpoint Protection на ваших компьютерах**
 
 ## <a name="windows-defender"></a>Защитник Windows
 
-* **«Установка решения для защиты конечной точки на виртуальной машине»** рекомендация создается при [Get-MpComputerStatus](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps) запусков и результатом является **AMServiceEnabled: значение false**
+* При запуске [Get-мпкомпутерстатус](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps) создается рекомендация  ****"установить решения Endpoint Protection на виртуальной машине"** , а результатом является амсервицеенаблед: IsFalse**
 
-* **«Устранение неполадок работоспособности endpoint protection на компьютерах»** рекомендация создается при [Get MpComputerStatus](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps) происходит запусков и одно или оба указанных ниже:
+* Рекомендации по **устранению проблем работоспособности Endpoint Protection на компьютерах** создаются при запуске [Get-мпкомпутерстатус](https://docs.microsoft.com/powershell/module/defender/get-mpcomputerstatus?view=win10-ps) и при выполнении одного или обоих следующих условий.
 
   * По крайней мере одно из следующих свойств имеет значение false:
 
-     **AMServiceEnabled**
+     **амсервицеенаблед**
 
-     **AntispywareEnabled**
+     **антиспиваринаблед**
 
-     **RealTimeProtectionEnabled**
+     **реалтимепротектионенаблед**
 
-     **BehaviorMonitorEnabled**
+     **бехавиормониторенаблед**
 
-     **IoavProtectionEnabled**
+     **иоавпротектионенаблед**
 
-     **OnAccessProtectionEnabled**
+     **онакцесспротектионенаблед**
 
-  * Если один или оба следующих свойства больше или равно 7.
+  * Если одно или оба из следующих свойств больше или равны 7.
 
-     **AntispywareSignatureAge**
+     **антиспиваресигнатуреаже**
 
-     **AntivirusSignatureAge**
+     **антивируссигнатуреаже**
 
-## <a name="microsoft-system-center-endpoint-protection"></a>Microsoft System Center endpoint protection
+## <a name="microsoft-system-center-endpoint-protection"></a>Microsoft System Center Endpoint Protection
 
-* **«Установка решения для защиты конечной точки на виртуальной машине»** рекомендация создается при импорте **SCEPMpModule («$env: Client\MpProvider\MpProvider.psd1 ProgramFiles\Microsoft безопасности»)** и запуск **Get-MProtComputerStatus** результатов для **AMServiceEnabled = false**
+* При импорте **сцепмпмодуле ("$env:P Рограмфилес\микрософт Security Client\MpProvider\MpProvider.PSD1")** создается рекомендация **"установить решения Endpoint Protection на виртуальной машине"** и выполняется  **Get-Мпроткомпутерстатус** Results WITH **амсервицеенаблед = false**
 
-* **«Устранение неполадок работоспособности endpoint protection на компьютерах»** рекомендация создается при **Get MprotComputerStatus** происходит запусков и одно или оба указанных ниже:
+* Рекомендации по **устранению проблем работоспособности Endpoint Protection на компьютерах** создаются при запуске **Get-мпроткомпутерстатус** и при выполнении одного или обоих следующих условий.
 
     * По крайней мере одно из следующих свойств имеет значение false:
 
-       **AMServiceEnabled**
+       **амсервицеенаблед**
     
-       **AntispywareEnabled**
+       **антиспиваринаблед**
     
-       **RealTimeProtectionEnabled**
+       **реалтимепротектионенаблед**
     
-       **BehaviorMonitorEnabled**
+       **бехавиормониторенаблед**
     
-       **IoavProtectionEnabled**
+       **иоавпротектионенаблед**
     
-       **OnAccessProtectionEnabled**
+       **онакцесспротектионенаблед**
           
-    * Если один или оба из следующих обновлений подписи больше или равно 7. 
+    * Если одно или оба из следующих обновлений сигнатуры больше или равны 7. 
 
-       **AntispywareSignatureAge**
+       **антиспиваресигнатуреаже**
     
-       **AntivirusSignatureAge**
+       **антивируссигнатуреаже**
 
 ## <a name="trend-micro"></a>Trend Micro
 
-* **«Установка решения для защиты конечной точки на виртуальной машине»** рекомендация создается в том случае, если один или несколько из следующих проверок не соблюдены:
-    * **Агент безопасности HKLM:\SOFTWARE\TrendMicro\Deep** существует
-    * **Agent\InstallationFolder безопасности HKLM:\SOFTWARE\TrendMicro\Deep** существует
-    * **Dsq_query.cmd** файл находится в папке установки
-    * Под управлением **dsa_query.cmd** результатов для **Component.AM.mode: на - тренда Micro Deep Security Agent обнаружил**
+* Если одна или несколько из следующих проверок не выполнены, будет создана рекомендация **"Установка решений для защиты конечной точки на виртуальной машине"** .
+    * **HKLM: \ Софтваре\трендмикро\дип агент безопасности** существует
+    * **HKLM: \ Софтваре\трендмикро\дип безопасности ажент\инсталлатионфолдер** существует
+    * Файл **dsq_query. cmd** находится в папке установки
+    * Выполнение **dsa_query. cmd** с **компонентом Component. am. mode: обнаружен агент Micro-глубокой безопасности на основе тенденций**
 
-## <a name="symantec-endpoint-protection"></a>Symantec endpoint protection
-**«Установка решения для защиты конечной точки на виртуальной машине»** рекомендация создается в том случае, если не выполняется одно из следующих проверок:
+## <a name="symantec-endpoint-protection"></a>Symantec Endpoint Protection
+Рекомендации по **установке решений для защиты конечных точек на виртуальной машине** создаются, если не выполнены какие-либо из следующих проверок:
 
-* **HKLM:\Software\Symantec\Symantec Endpoint Protection\CurrentVersion\PRODUCTNAME = "Symantec Endpoint Protection"**
+* **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 
 * **HKLM:\Software\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
 
-или
+Или
 
 * **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\PRODUCTNAME = "Symantec Endpoint Protection"**
 
 * **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
 
-**«Устранение неполадок работоспособности endpoint protection на компьютерах»** рекомендация создается в том случае, если не выполняется одно из следующих проверок:  
+Рекомендация по **устранению проблем работоспособности Endpoint Protection на ваших компьютерах** создается, если не выполнены какие-либо из следующих проверок:  
 
-* Проверьте версию Symantec > = 12:  Раздел реестра: **HKLM:\Software\Symantec\Symantec Endpoint Protection\CurrentVersion" -Value "PRODUCTVERSION"**
+* Проверьте версию Symantec > = 12:  Расположение реестра: **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион "-value" PRODUCTVERSION "**
 
-* Проверка состояния защиты в реальном времени: **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\AV\Storages\Filesystem\RealTimeScan\OnOff == 1**
+* Проверить состояние защиты в режиме реального времени: **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\AV\Storages\Filesystem\RealTimeScan\OnOff == 1**
 
-* Проверка состояния обновления подписи: **Конечная точка HKLM\Software\Symantec\Symantec Protection\CurrentVersion\public-opstate\LatestVirusDefsDate < = 7 дней**
+* Проверьте состояние обновления сигнатуры: **Хклм\софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\латествирусдефсдате < = 7 дней**
 
-* Проверьте состояние Full Scan. **Конечная точка HKLM:\Software\Symantec\Symantec Protection\CurrentVersion\public-opstate\LastSuccessfulScanDateTime < = 7 дней**
+* Проверить состояние полного сканирования: **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\ластсукцессфулскандатетиме < = 7 дней**
 
-* Найти номер версии подпись путь до версии подписи для Symantec 12: **Пути реестра + «CurrentVersion\SharedDefs»-значение «SRTSP»** 
+* Поиск номера версии сигнатуры путь к версии сигнатуры для Symantec 12: **Пути реестра + "Куррентверсион\шареддефс"-value "СРТСП"** 
 
-* Путь к версии подписи Symantec 14: **Пути реестра + «CurrentVersion\SharedDefs\SDSDefs»-значение «SRTSP»**
+* Путь к версии сигнатуры для Symantec 14: **Пути реестра + "Куррентверсион\шареддефс\сдсдефс"-value "СРТСП"**
 
-Пути в реестре:
+Пути реестра:
 
-**"HKLM:\Software\Symantec\Symantec Endpoint Protection" + $Path;** 
- **"HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection" + $Path**
+* **"HKLM: \ Софтваре\симантек\симантек Endpoint Protection" + $Path;**
+* **"HKLM: \ Software\Wow6432Node\Symantec\Symantec Endpoint Protection" + $Path**
 
-## <a name="mcafee-endpoint-protection-for-windows"></a>McAfee endpoint protection для Windows
+## <a name="mcafee-endpoint-protection-for-windows"></a>McAfee Endpoint Protection для Windows
 
-**«Установка решения для защиты конечной точки на виртуальной машине»** рекомендация создается в том случае, если не соблюдены следующие проверки:
+Если следующие проверки не выполнены, будет создана рекомендация **"Установка решений Endpoint Protection на виртуальной машине"** :
 
 * **HKLM:\SOFTWARE\McAfee\Endpoint\AV\ProductVersion** exists
 
-* **HKLM:\SOFTWARE\McAfee\AVSolution\MCSHIELDGLOBAL\GLOBAL\enableoas = 1**
+* **HKLM: \ Софтваре\мкафи\авсолутион\мкшиелдглобал\глобал\енаблеоас = 1**
 
-**«Устранение неполадок работоспособности endpoint protection на компьютерах»** рекомендация создается в том случае, если не соблюдены следующие проверки:
+Если следующие проверки не выполнены, будет создана рекомендация по **устранению проблем работоспособности Endpoint Protection на ваших компьютерах** :
 
-* McAfee версия: **HKLM:\SOFTWARE\McAfee\Endpoint\AV\ProductVersion >= 10**
+* Версия McAfee: **HKLM:\SOFTWARE\McAfee\Endpoint\AV\ProductVersion >= 10**
 
-* Найти версию подписи: **HKLM:\Software\McAfee\AVSolution\DS\DS -Value "dwContentMajorVersion"**
+* Найти версию сигнатуры: **HKLM:\Software\McAfee\AVSolution\DS\DS -Value "dwContentMajorVersion"**
 
-* Найти Дата подписи: **HKLM:\Software\McAfee\AVSolution\DS\DS -Value "szContentCreationDate" >= 7 days**
+* Найти дату подписи: **HKLM: \ Софтваре\мкафи\авсолутион\дс\дс-value "Сзконтенткреатиондате" > = 7 дней**
 
-* Найти даты сканирования: **HKLM:\Software\McAfee\Endpoint\AV\ODS-значение «LastFullScanOdsRunTime» > = 7 дней**
+* Поиск даты проверки: **HKLM: \ Софтваре\мкафи\ендпоинт\ав\одс-value "Ластфуллсканодсрунтиме" > = 7 дней**
+
+## <a name="mcafee-endpoint-security-for-linux-threat-prevention"></a>Безопасность конечных точек McAfee для предотвращения угроз в Linux 
+
+Рекомендации по **установке решений для защиты конечных точек в виртуальной машине** создаются, если не выполнены одна или обе следующие проверки:  
+
+- Выход из **/ОПТ/исек/ЕНС/среатпревентион/бин/исекав** файла 
+
+- выходные данные **"/опт/исек/ЕНС/среатпревентион/бин/исекав--Version"** : **McAfee Name = McAfee Endpoint Security для предотвращения угроз для Linux и McAfee версии > = 10**
+
+Рекомендация по **устранению проблем работоспособности Endpoint Protection на ваших компьютерах** создается, если не выполнены одна или несколько следующих проверок:
+
+- **"/опт/исек/ЕНС/среатпревентион/бин/исекав--листтаск"** возвращает **быструю проверку, полную проверку** и оба сканирования < = 7 дней
+
+- **"/опт/исек/ЕНС/среатпревентион/бин/исекав--листтаск"** возвращает **dat и время обновления ядра** и оба они < = 7 дней
+
+- **"/опт/исек/ЕНС/среатпревентион/бин/исекав--жетоасконфиг--Summary"** возвращает состояние **проверки доступа**
+
+## <a name="sophos-antivirus-for-linux"></a>Антивирусная программа Sophos для Linux 
+
+Рекомендации по **установке решений для защиты конечных точек в виртуальной машине** создаются, если не выполнены одна или обе следующие проверки:
+
+- Файл **/ОПТ/Софос-АВ/бин/савдстатус** завершает работу или выполняет поиск настроенного расположения **"реадлинк $ (савскан)"**
+
+- **"/опт/Софос-АВ/бин/савдстатус--Version"** возвращает Sophos Name = **Sophos Anti-Virus и Sophos Version > = 9**
+
+Рекомендация по **устранению проблем работоспособности Endpoint Protection на ваших компьютерах** создается, если не выполнены одна или несколько следующих проверок:
+
+- **"/опт/Софос-АВ/бин/савлог--maxAge = 7 | grep-i "запланированная проверка. \* завершено "| хвост-1"** , возвращает значение   
+
+- **"/опт/Софос-АВ/бин/савлог--maxAge = 7 | grep "сканирование завершено"** | хвост-1 ", возвращает значение   
+
+- **"/опт/Софос-АВ/бин/савдстатус--lastupdate"** возвращает lastupdate, который должен быть < = 7 дней 
+
+- **"/опт/Софос-АВ/бин/савдстатус-v"** равно **"выполняется сканирование при доступе"** 
+
+- возвращаемые **"/опт/Софос-АВ/бин/савконфиг Get ливепротектион"** включены  
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
 ### <a name="troubleshoot"></a>Устранение неполадок
 
-Журналы расширение защиты от вредоносных программ Майкрософт доступны по:  
-**%SystemDrive%\WindowsAzure\Logs\Plugins\Microsoft.Azure.Security.IaaSAntimalware (или PaaSAntimalware)\1.5.5.x (номер версии) \CommandExecution.log**
+Журналы расширений антивредоносного по Майкрософт доступны по адресу:  
+**%Системдриве%\виндовсазуре\логс\плугинс\микрософт.Азуре.секурити.иаасантималваре (или PaaSAntimalware) \1.5.5.x (версия #) \CommandExecution.log**
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Или вы можете отправить обращение за поддержкой Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Вы также можете зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

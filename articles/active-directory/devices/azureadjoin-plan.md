@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5dc1c3fb7ae12c36a8c1fe383290435c03ee0c4
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: 906ab4da941c6a0e1bc98f2f724141c719d04b89
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741372"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879426"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство. Планирование реализации присоединения к Azure AD
 
@@ -75,6 +75,10 @@ ms.locfileid: "68741372"
  `/adfs/services/trust/13/certificatemixed`
 
 Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). В настоящее время вход в систему является предварительной версией функции и не рекомендуется для рабочих развертываний.
+
+>[!NOTE]
+> Сейчас присоединение к Azure AD не работает с [AD FS 2019, настроенных с внешними поставщиками проверки подлинности в качестве основного метода проверки](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/additional-authentication-methods-ad-fs#enable-external-authentication-methods-as-primary)подлинности. Присоединение к Azure AD по умолчанию используется для проверки пароля в качестве основного метода, что приводит к сбоям проверки подлинности в этом сценарии.
+
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Смарт-карты и проверка подлинности на основе сертификатов
 

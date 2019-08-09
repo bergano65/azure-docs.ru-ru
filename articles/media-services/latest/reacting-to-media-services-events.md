@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/12/2019
+ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: cb5d6474a0c830933c712e1008015b5220617c96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 64bf8f5c8de5f56ee1140e91d0472a33b35570cf
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60996182"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68878800"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
 
@@ -24,7 +24,7 @@ ms.locfileid: "60996182"
 
 Доступность событий Служб мультимедиа привязывается к [доступности](../../event-grid/overview.md) службы "Сетка событий". Эта функция скоро станет доступной в других регионах вместе со службой "Сетка событий".  
 
-## <a name="media-services-events-and-schemas"></a>События служб мультимедиа и схемы
+## <a name="media-services-events-and-schemas"></a>События и схемы служб мультимедиа
 
 Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. События Служб мультимедиа содержат все сведения, необходимые для реагирования на изменения в данных. Событие Служб мультимедиа можно определить, так как свойство eventType начинается с Microsoft.Media.
 
@@ -39,6 +39,7 @@ ms.locfileid: "60996182"
 * Игнорируйте поля, которые вам непонятны.  Такой подход поможет обеспечить устойчивость к новым функциям, которые могут быть добавлены в будущем.
 * С помощью префикса и суффикса subject события можно ограничить до конкретного.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Route Azure Media Services events to a custom web endpoint using CLI](job-state-events-cli-how-to.md) (Маршрутизация событий Служб мультимедиа в пользовательскую конечную точку с помощью CLI)
+* [Мониторинг событий — портал](monitor-events-portal-how-to.md)
+* [События монитора — CLI](job-state-events-cli-how-to.md)

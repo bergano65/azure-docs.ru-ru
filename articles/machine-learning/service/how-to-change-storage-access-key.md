@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 05/17/2019
-ms.openlocfilehash: b23d54cb74bea7eaaea5f55bd491bed40381ee2b
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.date: 08/08/2019
+ms.openlocfilehash: bc9b6053e6e2f920b826b3c14c6820b71e129aef
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848186"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882818"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа для учетной записи хранения
 
@@ -23,7 +23,7 @@ ms.locfileid: "68848186"
 
 В целях безопасности может потребоваться изменить ключи доступа для учетной записи хранения Azure. При повторном создании ключа доступа Машинное обучение Azure необходимо обновить, чтобы использовать новый ключ. Машинное обучение Azure может использовать учетную запись хранения как для хранилища модели, так и для хранилища данных.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 

@@ -11,16 +11,20 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3f0b764b16c1b550c9afa4107449c1b02815e8d1
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 497c4d9708a7b67bf0b5433c455d90dd277297d7
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668500"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68873608"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
-В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://aka.ms/aml-sdk).  Эти конвейеры используются для создания рабочих процессов, объединяющих различные этапы машинного обучения. Каждый этап конвейера, например подготовка данных и обучение модели, может содержать один или несколько шагов.
+В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://aka.ms/aml-sdk).  Используйте **конвейеры машинного обучения** , чтобы создать рабочий процесс, объединяющий различные фазы машинного обучения, а затем опубликовать этот конвейер в машинное обучение Azure рабочей области, чтобы получить доступ к нему позже или поделиться с другими.  
+
+Хотя вы можете использовать [конвейер Azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/targets/azure-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=azure-devops&tabs=yaml) для автоматизации задач машинного обучения (CI/CD), но этот тип конвейера не хранится в рабочей области. [Сравните эти типы конвейеров](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
+
+Каждый этап конвейера, например подготовка данных и обучение модели, может содержать один или несколько шагов.
 
 Созданные вами конвейеры видны участникам вашей [рабочей области](how-to-manage-workspace.md) в Службе машинного обучения Azure. 
 

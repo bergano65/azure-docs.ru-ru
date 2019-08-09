@@ -1,19 +1,19 @@
 ---
 title: Заметки о выпуске Azure HDInsight
-description: Последние заметки о выпуске Azure HDInsight. Получите советы по разработке и сведения для Hadoop, Spark, R Server, Hive и многое другое.
+description: Последние заметки о выпуске Azure HDInsight. Получите советы по разработке и подробные сведения о Hadoop, Spark, R Server, Hive и других.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 04/15/2019
-ms.openlocfilehash: 1c8bdd0ca715b6dfd00dc9876a074c61711990af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/08/2019
+ms.openlocfilehash: b6e9a340a1fdcbe3ee24b8c81d171ade04c63139
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67117807"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68880036"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Заметки о выпуске Azure HDInsight
 
@@ -28,79 +28,79 @@ Azure HDInsight является одной из самых популярных
 
 ## <a name="new-features"></a>новые функции;
 
-Дополнительные сведения о важных изменениях, с помощью HDInsight 4.0., см. в разделе [новые возможности в HDI 4.0?](../hdinsight/hdinsight-version-release.md).
+Дополнительные сведения о важных изменениях в HDInsight 4,0 см. в статье [новые возможности в HDI 4,0](../hdinsight/hdinsight-version-release.md).
 
 ## <a name="component-versions"></a>Версии компонентов
 
-Ниже приведен официальной версии Apache все компоненты HDInsight 4.0. Компоненты, перечисленные являются версиях указанные самой последней стабильной версии.
+Официальные версии Apache всех компонентов HDInsight 4,0 приведены ниже. Перечисленные компоненты являются выпусками самых последних стабильных версий.
 
-- Apache Ambari 2.7.1
+- 2\.7.1 Apache Ambari
 - Apache Hadoop 3.1.1
 - Apache HBase 2.0.0
 - Apache Hive 3.1.0
-- Apache Kafka 1.1.1
+- Apache Kafka 1.1.1, 2.1.0
 - Apache Mahout 0.9.0+
 - Apache Oozie 4.2.0
 - Apache Phoenix 4.7.0
 - Apache Pig 0.16.0
 - Apache Ranger 0.7.0
 - Apache Slider 0.92.0
-- Apache Spark 2.3.2
-- Apache Sqoop 1.4.7
-- Apache TEZ 0.9.1
-- Apache Zeppelin 0.8.0
+- Apache Spark 2.3.1, 2.4.0
+- 1\.4.7 Apache Sqoop
+- 0\.9.1 Apache TEZ
+- 0\.8.0 Apache Zeppelin
 - Apache ZooKeeper 3.4.6
 
-Более поздние версии компонентов Apache иногда объединяются в распространении HDP, помимо версий, перечисленных выше. В этом случае эти более поздние версии приводятся в таблице технических предварительных версий и не должны заменять версии компонента Apache указанного выше списка в рабочей среде.
+Более поздние версии компонентов Apache иногда объединяются в дистрибутив HDP в дополнение к приведенным выше версиям. В этом случае эти более поздние версии приводятся в таблице технических предварительных версий и не должны заменять версии компонента Apache указанного выше списка в рабочей среде.
 
 ## <a name="apache-patch-information"></a>Сведения об исправлениях Apache
 
-Дополнительные сведения об исправлениях, доступные в HDInsight 4.0 см. в разделе исправление для каждого продукта в таблице ниже.
+Дополнительные сведения об исправлениях, доступных в HDInsight 4,0, см. в списке исправлений для каждого продукта в таблице ниже.
 
 | Название продукта | Сведения об исправлении |
 |---|---|
 | Ambari | [Сведения об исправлении Ambari](https://docs.hortonworks.com/HDPDocuments/Ambari-2.7.1.0/bk_ambari-release-notes/content/ambari_relnotes-2.7.1.0-patch-information.html) |
 | Hadoop | [Сведения об исправлении Hadoop](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_hadoop.html) |
-| HBase | [Сведения об исправлении HBase](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_hbase.html) |
-| Hive  | Этот выпуск предоставляет 3.1.0 с дополнительных исправлений, Apache Hive.  |
-| Kafka | Этот выпуск предоставляет 1.1.1 с без дополнительных обновлений Apache Kafka. |
-| Oozie, | [Сведения об исправлении Oozie](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_oozie.html) |
+| Hbase | [Сведения об исправлении HBase](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_hbase.html) |
+| Hive  | Этот выпуск предоставляет Hive 3.1.0 без дополнительных исправлений Apache.  |
+| Kafka | Этот выпуск предоставляет Kafka 1.1.1 без дополнительных исправлений Apache. |
+| Oozie | [Сведения об исправлении Oozie](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_oozie.html) |
 | Phoenix | [Сведения об исправлении Phoenix](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_phoenix.html) |
-| Pig, | [Сведения об исправлении pig](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_pig.html) |
-| Ranger | [Сведения об исправлении ranger](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_ranger.html) |
+| Pig | [Сведения об исправлении Pig](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_pig.html) |
+| Ranger | [Сведения об исправлении Ranger](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_ranger.html) |
 | Spark | [Сведения об исправлении Spark](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_spark.html) |
-| Sqoop | Этот выпуск предоставляет 1.4.7 с без дополнительных обновлений Apache Sqoop. |
-| Tez | Этот выпуск предоставляет 0.9.1 с без дополнительных обновлений Apache Tez. |
-| Zeppelin | Этот выпуск предоставляет 0.8.0 с без дополнительных обновлений Apache Zeppelin. |
-| Zookeeper | [Сведения об исправлении zookeeper](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_zookeeper.html) |
+| Sqoop | Этот выпуск предоставляет Sqoop 1.4.7 без дополнительных исправлений Apache. |
+| Tez | Этот выпуск предоставляет Tez 0.9.1 без дополнительных исправлений Apache. |
+| Zeppelin | Этот выпуск предоставляет Zeppelin 0.8.0 без дополнительных исправлений Apache. |
+| Zookeeper | [Сведения об исправлении Zookeeper](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/patch_zookeeper.html) |
 
 ## <a name="fixed-common-vulnerabilities-and-exposures"></a>Исправлены проблемы, связанные с распространенными уязвимостями и рисками
 
-Дополнительные сведения о безопасности проблем, устраненных в этом выпуске, см. в разделе Hortonworks [предопределенной присвоен для HDP 3.0.1](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/cve.html).
+Дополнительные сведения о проблемах безопасности, устраняемых в этом выпуске, см. в разделе Hortonworks " [Устранение распространенных уязвимостей и раскрытия для HDP 3.0.1](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.1/release-notes/content/cve.html).
 
 ## <a name="known-issues"></a>Известные проблемы
 
-### <a name="replication-is-broken-for-secure-hbase-with-default-installation"></a>Репликация не работает для защиты HBase с помощью установки по умолчанию
+### <a name="replication-is-broken-for-secure-hbase-with-default-installation"></a>Репликация не работает для защиты HBase с установкой по умолчанию
 
-Для HDInsight версии 4.0 выполните следующие действия:
+Для HDInsight 4,0 выполните следующие действия.
 
-1. Включите обмен данными между кластерами.
-1. Войдите в активном головном узле.
-1. Скачайте сценарий для включения репликации, выполнив следующую команду:
+1. Включить обмен данными между кластерами.
+1. Войдите в Active головного узла.
+1. Скачайте скрипт для включения репликации с помощью следующей команды:
 
     ```
     sudo wget https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh
     ```
 1. Введите команду `sudo kinit <domainuser>`.
-1. Введите следующую команду для запуска сценария:
+1. Введите следующую команду, чтобы выполнить скрипт:
 
     ```
     sudo bash hdi_enable_replication.sh -m <hn0> -s <srclusterdns> -d <dstclusterdns> -sp <srcclusterpasswd> -dp <dstclusterpasswd> -copydata
     ```
-Для HDInsight 3.6 выполните следующие действия.
+Для HDInsight 3,6 выполните следующие действия.
 
-1. Войдите в active HMaster ZK.
-1. Скачайте сценарий для включения репликации, выполнив следующую команду:
+1. Войдите в Active HMaster ZK.
+1. Скачайте скрипт для включения репликации с помощью следующей команды:
     ```
     sudo wget https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh
     ```
@@ -111,7 +111,7 @@ Azure HDInsight является одной из самых популярных
     sudo bash hdi_enable_replication.sh -s <srclusterdns> -d <dstclusterdns> -sp <srcclusterpasswd> -dp <dstclusterpasswd> -copydata
     ```
 
-### <a name="phoenix-sqlline-stops-working-after-migrating-hbase-cluster-to-hdinsight-40"></a>Phoenix Sqlline перестает работать после миграции кластера HBase HDInsight 4.0
+### <a name="phoenix-sqlline-stops-working-after-migrating-hbase-cluster-to-hdinsight-40"></a>Sqlline Phoenix перестает работать после переноса кластера HBase в HDInsight 4,0
 
 Сделайте следующее:
 
@@ -121,22 +121,22 @@ Azure HDInsight является одной из самых популярных
     1. `SYSTEM.STATS`
     1. `SYSTEM.MUTEX`
     1. `SYSTEM.CATALOG`
-1. Если не удается удалить любой таблицы, перезапустите HBase, чтобы очистить все подключения к таблицам.
-1. Еще раз запустите `sqlline.py`. Phoenix повторно создают все таблицы, которые были удалены на шаге 1.
-1. Повторное создание таблицы Phoenix и представления данных HBase.
+1. Если не удается удалить ни одну из таблиц, перезапустите HBase, чтобы очистить все соединения с таблицами.
+1. Еще раз запустите `sqlline.py`. Phoenix повторно создаст все таблицы, которые были удалены на шаге 1.
+1. Повторное создание таблиц и представлений Phoenix для данных HBase.
 
-### <a name="phoenix-sqlline-stops-working-after-replicating-hbase-phoenix-metadata-from-hdinsight-36-to-40"></a>Phoenix Sqlline перестает работать после репликации метаданных HBase Phoenix с HDInsight 3.6 в 4.0
+### <a name="phoenix-sqlline-stops-working-after-replicating-hbase-phoenix-metadata-from-hdinsight-36-to-40"></a>Sqlline Phoenix прекращает работу после репликации метаданных HBase Phoenix из HDInsight 3,6 в 4,0
 
 Сделайте следующее:
 
-1. Прежде чем выполнять репликацию, перейдите к кластеру назначения 4.0 и запустите программу `sqlline.py`. Эта команда создаст таблицы Phoenix, как `SYSTEM.MUTEX` и `SYSTEM.LOG` , существуют только в версии 4.0.
+1. Перед выполнением репликации перейдите в целевой кластер 4,0 и выполните `sqlline.py`. Эта команда создаст таблицы Phoenix, такие `SYSTEM.MUTEX` как `SYSTEM.LOG` и, которые существуют только в 4,0.
 1. Удалите следующие таблицы:
     1. `SYSTEM.FUNCTION`
     1. `SYSTEM.SEQUENCE`
     1. `SYSTEM.STATS`
     1. `SYSTEM.CATALOG`
-1. Запустить репликацию HBase
+1. Запуск репликации HBase
 
 ## <a name="deprecation"></a>Устаревшее
 
-Apache Storm и машинного Обучения службы недоступны в HDInsight 4.0.
+Службы Apache Storm и ML недоступны в HDInsight 4,0.

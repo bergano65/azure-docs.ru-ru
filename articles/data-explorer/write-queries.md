@@ -7,18 +7,18 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
-ms.openlocfilehash: b1a7e64cf6b85b517bc027d6541d63c9be729734
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80d3eaaf7e588766d62f5e5885d75e61c590970e
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60773984"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881180"
 ---
 # <a name="write-queries-for-azure-data-explorer"></a>Написание запросов для обозревателя данных Azure
 
 В этой статье вы узнаете, как использовать язык запросов в обозревателе данных Azure для выполнения простых запросов с наиболее распространенными операторами. Вы также познакомитесь с некоторыми более сложными функциями языка.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Запросы в этой статье можно выполнять одним из двух способов:
 
@@ -50,7 +50,7 @@ StormEvents
 
 В данном случае результат таков:
 
-|Количество|
+|Count|
 |-----|
 |   23|
 | |
@@ -69,7 +69,7 @@ StormEvents
 
 1. В верхней части приложения нажмите кнопку **Выполнить**.
 
-### <a name="count"></a>count
+### <a name="count"></a>количество
 
 [**count**](https://docs.microsoft.com/azure/kusto/query/countoperator): возвращает количество строк в таблице.
 
@@ -110,7 +110,7 @@ StormEvents
 | project StartTime, EndTime, State, EventType, DamageProperty, EpisodeNarrative
 ```
 
-### <a name="where"></a>где:
+### <a name="where"></a>где
 
 [**where**](https://docs.microsoft.com/azure/kusto/query/whereoperator): Отфильтровывает таблицу для подмножества строк, которые удовлетворяют предикату.
 
@@ -127,7 +127,7 @@ StormEvents
 
 ### <a name="sort"></a>sort
 
-[**sort**](https://docs.microsoft.com/azure/kusto/query/sortoperator): сортирует по порядку строки входной таблицы (по одному или нескольким столбцам).
+[**sort**](https://docs.microsoft.com/azure/kusto/query/sortoperator): Сортирует по порядку строки входной таблицы (по одному или нескольким столбцам).
 
 Следующий запрос сортирует данные в убывающем порядке по `DamageProperty`.
 
@@ -146,7 +146,7 @@ StormEvents
 
 ### <a name="top"></a>top
 
-[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): возвращает первые  *N*  записей, отсортированные по указанным столбцам.
+[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): Возвращает первые записи ( *N* ), отсортированные по указанным столбцам.
 
 Следующий запрос возвращает те же результаты, что приведенный выше запрос. При этом запрос содержит на один оператор меньше по сравнению с предыдущим.
 
@@ -270,7 +270,7 @@ StormEvents
 
 ### <a name="bin"></a>bin()
 
-[**bin()** ](https://docs.microsoft.com/azure/kusto/query/binfunction): округляет значения до целого числа, кратного указанному размеру группы.
+[**bin()** ](https://docs.microsoft.com/azure/kusto/query/binfunction): Округляет значения до целого, кратного указанному размеру группы.
 
 Следующий запрос вычисляет количество с размером контейнера в течение одного дня.
 
@@ -317,7 +317,7 @@ MyData
 
 В этом запросе используется оператор **let**, который связывает имя (в данном случае `MyData`) с выражением. До конца области, в которой появляется оператор **let** (глобальная область или область тела функции), имя может использоваться для ссылки на его связанное значение.
 
-### <a name="parsejson"></a>parse_json()
+### <a name="parse_json"></a>parse_json()
 
 [**parse_json()** ](https://docs.microsoft.com/azure/kusto/query/parsejsonfunction): интерпретирует строку как значение JSON и возвращает значение как динамическое. Этот метод предпочтительнее чем функция **extractjson()** , если необходимо извлечь более одного элемента из составного объекта JSON.
 
@@ -567,9 +567,9 @@ StormEvents
 | summarize Sources = dcountif(Source, DamageProperty < 5000) by State
 ```
 
-### <a name="dcounthll"></a>dcount_hll()
+### <a name="dcount_hll"></a>dcount_hll()
 
-[**dcount_hll()** ](https://docs.microsoft.com/azure/kusto/query/dcount-hllfunction): вычисляет  **dcount**  для результатов HyperLogLog (созданных [**hll**](https://docs.microsoft.com/azure/kusto/query/hll-aggfunction) или [**hll_merge**](https://docs.microsoft.com/azure/kusto/query/hll-merge-aggfunction).
+[**dcount_hll()** ](https://docs.microsoft.com/azure/kusto/query/dcount-hllfunction): Вычисляет **DCount** из результатов хиперлоглог (созданных с помощью [**ХЛЛ**](https://docs.microsoft.com/azure/kusto/query/hll-aggfunction) или [**hll_merge**](https://docs.microsoft.com/azure/kusto/query/hll-merge-aggfunction).
 
 Следующий запрос использует алгоритм HLL для получения количества.
 
@@ -582,7 +582,7 @@ StormEvents
 | project dcount_hll(hllMerged)
 ```
 
-### <a name="argmax"></a>arg_max()
+### <a name="arg_max"></a>arg_max()
 
 [**arg_max()** ](https://docs.microsoft.com/azure/kusto/query/arg-max-aggfunction): находит в группе строку, для которой выражение будет максимальным, и возвращает значение другого выражения (можно указать *, чтобы вернуть всю строку).
 
@@ -599,7 +599,7 @@ StormEvents
 
 ### <a name="makeset"></a>makeset()
 
-[**makeset()** ](https://docs.microsoft.com/azure/kusto/query/makeset-aggfunction): возвращает динамический массив (JSON) с набором различных значений, которые выражение принимает в группе.
+[**makeset()** ](https://docs.microsoft.com/azure/kusto/query/makeset-aggfunction): Возвращает динамический массив (JSON) набора уникальных значений, которые выражение принимает в группе.
 
 Следующий запрос возвращает все значения времени, в которые поступали сообщения о наводнении, для каждого штата, и создает массив из набора уникальных значений.
 
@@ -612,11 +612,11 @@ StormEvents
 | project State, FloodReports
 ```
 
-### <a name="mv-expand"></a>MV-разверните
+### <a name="mv-expand"></a>MV — развернуть
 
-[**MV-разверните**](https://docs.microsoft.com/azure/kusto/query/mvexpandoperator): расширяет коллекции с несколькими значениями из столбца динамического типа, так что каждое значение в коллекции получает отдельную строку. Все остальные столбцы в развернутой строке дублируются. Действие этого оператора противоположно действию оператора makelist.
+[**MV — расширение**](https://docs.microsoft.com/azure/kusto/query/mvexpandoperator): Развертывает коллекции с несколькими значениями из динамического типа, так что каждое значение в коллекции получает отдельную строку. Все остальные столбцы в развернутой строке дублируются. Действие этого оператора противоположно действию оператора makelist.
 
-Следующий запрос создает пример данных путем создания набора и использовав его для демонстрации **mv-разверните** возможности.
+Следующий запрос создает образец данных, создавая набор, а затем используя его для демонстрации возможностей **расширения MV** .
 
 **\[** [**Щелкните, чтобы выполнить запрос**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAEAFWOQQ6CQAxF9yTcoWGliTcws1MPIFygyk9EKTPpVBTj4Z2BjSz%2f738v7WF06r1vD2xcp%2bCoNq9yHDFYLIsvvW5Q0JybKYCco2omqnyNTxHW7oPFckbwajFZhB%2bIsE1trNZ0gi1dpuRmQ%2baC%2bjuuthS7Fbwvi%2f%2bP8lpGvAMP7Wr3A6BceSu7AAAA) **\]**
 
@@ -631,7 +631,7 @@ FloodDataSet
 
 ### <a name="percentiles"></a>percentiles()
 
-[**percentiles()** ](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): возвращает оценку указанного [**процентиля с ближайшим рангом**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) для популяции, определяемой выражением. Точность зависит от плотности заполнения области процентиля. Может использоваться только в контексте статистической обработки в операторе [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator).
+[**percentiles()** ](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction): Возвращает оценку для указанного значения, [**ближайшего**](https://docs.microsoft.com/azure/kusto/query/percentiles-aggfunction) к рангу Генеральной совокупности, определенной выражением. Точность зависит от плотности заполнения области процентиля. Может использоваться только в контексте статистической обработки в операторе [**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator).
 
 Следующий запрос вычисляет процентили для продолжительности шторма.
 
@@ -684,7 +684,7 @@ LightningStorms
 
 ### <a name="join"></a>соединение
 
-[**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
+[**join**](https://docs.microsoft.com/azure/kusto/query/joinoperator): объединение строк двух таблиц для формирования новой таблицы путем сопоставления значений указанных столбцов каждой таблицы. Kusto поддерживает весь диапазон типов объединения: **fullouter**, **inner**, **innerunique**, **leftanti**, **leftantisemi**, **leftouter**, **leftsemi**, **rightanti**, **rightantisemi**, **rightouter** и **rightsemi**.
 
 В следующем примере две таблицы соединяются с помощью внутреннего соединения.
 
@@ -727,7 +727,7 @@ StormEvents
 | extend row_number = row_number()
 ```
 
-Набор строк, также считается сериализации, если он является результатом: **сортировки**, **верхней**, или **диапазон** операторы, за которыми необязательно следует **проекта**, **project-away**, **расширить**, **где**, **проанализировать**, **mv-разверните**, или **занять** операторы.
+Набор строк также считается сериализованным, если результат операторов **сортировки**, **Top**или **Range** , при необходимости за которым следует **проект**, **проект-** отсоединение, **расширение**, **где**, **Parse**, **MV — развернуть.** или **возьмем** операторы.
 
 **\[** [**Щелкните, чтобы выполнить запрос**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAEAAsuyS%2fKdS1LzSsp5uWqUSguzc1NLMqsSlVIzi%2fNK9HQVEiqVAguSSxJBcvmF5XABRQSi5NBgqkVJal5KQpF%2beXxeaW5SalFCrZIHA1NAEGimf5iAAAA) **\]**
 
@@ -754,7 +754,7 @@ cluster("MyCluster").database("Wiki").PageViews
 
 Этот раздел включает элементы и запросы, которые показывают, как легко проанализировать поведение пользователей в Kusto.
 
-### <a name="activitycountsmetrics-plugin"></a>Подключаемый модуль activity_counts_metrics
+### <a name="activity_counts_metrics-plugin"></a>Подключаемый модуль activity_counts_metrics
 
 [**Подключаемый модуль activity_counts_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-counts-metrics-plugin): вычисляет полезные метрики действий (общее число значений, число различных значений, число различных новых значений и общее число различных значений). Метрики вычисляются для каждого временного окна, затем они сравниваются и агрегируются со всеми предыдущими временными окнами.
 
@@ -788,7 +788,7 @@ T
 window)
 ```
 
-### <a name="activityengagement-plugin"></a>Подключаемый модуль activity_engagement
+### <a name="activity_engagement-plugin"></a>Подключаемый модуль activity_engagement
 
 [**Подключаемый модуль activity_engagement**](https://docs.microsoft.com/azure/kusto/query/activity-engagement-plugin): вычисляет степень вовлеченности действия на основе идентификатора столбца по скользящей временной шкале. **Подключаемый модуль activity_engagement** может использоваться для вычисления показателей DAU, WAU и MAU (активных пользователей за день, неделю и месяц).
 
@@ -814,7 +814,7 @@ range _day from _start to _end step 1d
 > [!TIP]
 > При вычислении показателей DAU/MAU измените конечную дату и длительность скользящего окна (OuterActivityWindow).
 
-### <a name="activitymetrics-plugin"></a>Подключаемый модуль activity_metrics
+### <a name="activity_metrics-plugin"></a>Подключаемый модуль activity_metrics
 
 [**Подключаемый модуль activity_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-metrics-plugin): вычисляет полезные метрики действий (число различных значений, число различных новых значений, частоту удержания и скорость изменения) для окна текущего периода по сравнению с окном предыдущего периода.
 
@@ -839,9 +839,9 @@ range _day from _start to _end step 1d
 | render timechart
 ```
 
-### <a name="newactivitymetrics-plugin"></a>Подключаемый модуль new_activity_metrics
+### <a name="new_activity_metrics-plugin"></a>Подключаемый модуль new_activity_metrics
 
-[**Подключаемый модуль new_activity_metrics**](https://docs.microsoft.com/azure/kusto/query/new-activity-metrics-plugin): вычисляет полезные метрики действий (число различных значений, число различных новых значений, частоту удержания и скорость изменения) для когорты новых пользователей. Идея этого подключаемого модуля похожа на идею [**подключаемого модуля activity_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-metrics-plugin), но он сосредоточен на новых пользователях.
+[**Подключаемый модуль new_activity_metrics**](https://docs.microsoft.com/azure/kusto/query/new-activity-metrics-plugin): вычисляет полезные метрики действий (число различных значений, число различных новых значений, частоту удержания и скорость изменения) для когорты новых пользователей. Идея этого подключаемого модуля похожа на идею [**подключаемого модуля activity_metrics**](https://docs.microsoft.com/azure/kusto/query/activity-metrics-plugin), но он сосредоточен на новых пользователях.
 
 Следующий запрос вычисляет скорость изменения и частоту удержания для недельных окон для когорты новых пользователей (пользователей, которые появились на первой неделе).
 
@@ -861,7 +861,7 @@ range Day from _start to _end step 1d
 | project from_Day, to_Day, retention_rate, churn_rate
 ```
 
-### <a name="sessioncount-plugin"></a>Подключаемый модуль session_count
+### <a name="session_count-plugin"></a>Подключаемый модуль session_count
 
 [**Подключаемый модуль session_count**](https://docs.microsoft.com/azure/kusto/query/session-count-plugin): вычисляет количество сеансов на основе идентификатора столбца по временной шкале.
 
@@ -881,7 +881,7 @@ _data
 | render linechart
 ```
 
-### <a name="funnelsequence-plugin"></a>Подключаемый модуль funnel_sequence
+### <a name="funnel_sequence-plugin"></a>Подключаемый модуль funnel_sequence
 
 [**Подключаемый модуль funnel_sequence**](https://docs.microsoft.com/azure/kusto/query/funnel-sequence-plugin): вычисляет число уникальных пользователей, которые приняли последовательность состояний, отображает распределение предыдущего и следующего состояний, которые привели к последовательности или за которыми она возникла.
 
@@ -897,11 +897,11 @@ StormEvents
 | evaluate funnel_sequence(EpisodeId, StartTime, datetime(2007-01-01), datetime(2008-01-01), 1d,365d, EventType, dynamic(['Tornado']))
 ```
 
-### <a name="funnelsequencecompletion-plugin"></a>Подключаемый модуль funnel_sequence_completion
+### <a name="funnel_sequence_completion-plugin"></a>Подключаемый модуль funnel_sequence_completion
 
 [**Подключаемый модуль funnel_sequence_completion**](https://docs.microsoft.com/azure/kusto/query/funnel-sequence-completion-plugin): вычисляет воронку завершенных шагов последовательности для различных периодов времени.
 
-Следующий запрос проверяет завершение воронки последовательности: `Hail -> Tornado -> Thunderstorm -> Wind`  за "общее" время в один час, четыре часа и один день (`[1h, 4h, 1d]`).
+Следующий запрос проверяет завершение воронки последовательности: `Hail -> Tornado -> Thunderstorm -> Wind` за "общее" время в один час, четыре часа и один день (`[1h, 4h, 1d]`).
 
 **\[** [**Щелкните, чтобы выполнить запрос**](https://dataexplorer.azure.com/clusters/help/databases/Samples?query=H4sIAAAAAAAAA12QTYvCMBCG74L/YW6tkIV2XT9g8SjsnlvwICKhM9JAOqlJqrj4402CW0RIIB/PPLwzmjwcnZfWwwZQevKqo/yzKFYfRRnW7Hs60ZEhxjdi/UZcFaO5VuqPAjhfLvD/w9F5IG7iM95YdqrJ99mPVDoTkNXGskSTju3ASNZ5Y7t43wVhdhj9PVll0L1aylbAV9glJqyKldsLsXfTyR3oIvUQAsNpYCY95jg2puuDUhnOt71yBukXBVRxCnVoTjwnIlLX4rUzAUlf3/pEPYViDDd7AOyqowFQAQAA) **\]**
 
@@ -915,9 +915,9 @@ StormEvents
 | evaluate funnel_sequence_completion(EpisodeId, StartTime, _start, _end, _windowSize, EventType, _sequence, _periods)
 ```
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 
-В этом разделе рассматриваются [**функции**](https://docs.microsoft.com/azure/kusto/query/functions): многократно используемые запросы, которые хранятся на сервере. Функции могут вызываться запросами и другими функциями (рекурсивные функции не поддерживаются).
+В этом разделе рассматриваются [**функции**](https://docs.microsoft.com/azure/kusto/query/functions): многократно используемые запросы, которые хранятся на сервере. Функции могут вызываться запросами и другими функциями (рекурсивные функции не поддерживаются).
 
 > [!NOTE]
 > Создавать функции на учебном кластере, который доступен только для чтения, невозможно. Для этого используйте собственный тестовый кластер.
@@ -946,6 +946,6 @@ MyFunction ("Texas")
 .drop function MyFunction
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Справочник по языку запросов Kusto](https://aka.ms/kustolangref)

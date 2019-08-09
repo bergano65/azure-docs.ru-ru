@@ -7,15 +7,14 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 08/08/2019
 ms.author: jlembicz
-ms.custom: seodec2018
-ms.openlocfilehash: bc183cb8ac2155b8dd31dc603d70506ad3d5e20a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e54bc91ff60ce4f3c2340282410923225601df4
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65797482"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883912"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Как работает полнотекстовый поиск в службе поиска Azure
 
@@ -258,10 +257,10 @@ Spacious,||air-condition*+"Ocean view"
 | atman | 1 |
 | beach | 2 |
 | hotel | 1, 3 |
-| ocean | 4\.  |
+| ocean | 4  |
 | playa | 3 |
 | resort | 3 |
-| retreat | 4\. |
+| retreat | 4 |
 
 В поле заголовка только *hotel* встречается в двух документах — 1 и 3.
 
@@ -270,7 +269,7 @@ Spacious,||air-condition*+"Ocean view"
 | Термин | Список документов |
 |------|---------------|
 | air | 3
-| и | 4\.
+| и | 4
 | beach | 1
 | conditioned | 3
 | comfortable | 3
@@ -281,17 +280,17 @@ Spacious,||air-condition*+"Ocean view"
 | north | 2
 | ocean | 1, 2, 3
 | of | 2
-| on |2
-| quiet | 4\.
+| на |2
+| quiet | 4
 | rooms  | 1, 3
-| secluded | 4\.
+| secluded | 4
 | shore | 2
 | spacious | 1
 | the | 1, 2
-| до | 1
+| to | 1
 | view | 1, 2, 3
 | walking | 1
-| на | 3
+| с | 3
 
 
 **Соответствие терминов запроса индексированным терминам**
@@ -351,7 +350,7 @@ search=Spacious, air-condition* +"Ocean view"
 }
 ~~~~
 
-Документ 1 лучше всего соответствовал запросу, так как в его поле описания содержится и термин *spacious*, и обязательная фраза *ocean view*. Следующие два документа содержат только фразу *ocean view*. Наверное, неожиданно, что оценка релевантности для документов 2 и 3 различна, хотя они одинаковым образом соответствовали запросу. Так произошло из-за того, что формула оценки не ограничивается лишь компонентом TF-IDF. В этом случае документу 3 была присвоена оценка выше, так как его описание короче. Ознакомьтесь с [практической формулой оценки Lucene](https://lucene.apache.org/core/4_0_0/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html), чтобы узнать, как длина поля и другие факторы влияют на оценку релевантности.
+Документ 1 лучше всего соответствовал запросу, так как в его поле описания содержится и термин *spacious*, и обязательная фраза *ocean view*. Следующие два документа содержат только фразу *ocean view*. Наверное, неожиданно, что оценка релевантности для документов 2 и 3 различна, хотя они одинаковым образом соответствовали запросу. Так произошло из-за того, что формула оценки не ограничивается лишь компонентом TF-IDF. В этом случае документу 3 была присвоена оценка выше, так как его описание короче. Ознакомьтесь с [практической формулой оценки Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html), чтобы узнать, как длина поля и другие факторы влияют на оценку релевантности.
 
 Некоторые типы запросов (с подстановочными знаками, префиксом и регулярными выражениями) всегда присваивают постоянную оценку общей оценке документа. Это позволяет включить найденные с помощью расширения запроса совпадения в результаты, не влияя на приоритет. 
 
@@ -381,7 +380,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 В этой статье мы рассмотрели принцип работы полнотекстового поиска в контексте службы поиска Azure. Мы надеемся, вы достаточно хорошо разобрались с этим вопросом и сможете применить полученные знания для разрешения распространенных проблем запросов. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 + Создайте пример индекса, попробуйте выполнить различные запросы и проанализируйте результаты. Дополнительные сведения см. в разделе о [запросе индекса](search-get-started-portal.md#query-index).
 
@@ -397,7 +396,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure)) 
 
-[Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
+[Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
 
 [Lucene query syntax in Azure Search](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) (Синтаксис запросов Lucene в службе поиска Azure) 
 

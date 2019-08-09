@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/26/2019
-ms.openlocfilehash: d940cfa91890d26a48b682a6eb09410b3b7de045
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5fccf1ffc76c824c81f8b8b826f90bf8314ff1e3
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568084"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883343"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Глоссарий терминов для Базы данных SQL Azure
 
@@ -49,6 +49,6 @@ ms.locfileid: "68568084"
 ||Объем хранилища|Объем хранилища, доступный для отдельной базы данных, эластичного пула или управляемого экземпляра|
 ||Поколение вычислительных ресурсов|Поколение процессора на уровне служб|
 |Сервер базы данных: правила брандмауэра для IP-адресов|Правила брандмауэра для IP-адресов|[Правила брандмауэра для IP-адресов](sql-database-firewall-configure.md)|
-||Правила брандмауэра для IP-адресов на уровне сервера|[Правила брандмауэра для IP-адресов на уровне сервера](sql-database-firewall-configure.md#overview)|
-|| Правила брандмауэра для IP-адресов на уровне базы данных|[Правила брандмауэра для IP-адресов на уровне базы данных](sql-database-firewall-configure.md#overview)|
+||Правила брандмауэра для IP-адресов на уровне сервера|[Правила брандмауэра для IP-адресов на уровне сервера](sql-database-firewall-configure.md)|
+|| Правила брандмауэра для IP-адресов на уровне базы данных|[Правила брандмауэра для IP-адресов на уровне базы данных](sql-database-firewall-configure.md)|
 ||Конечные точки и правила виртуальной сети|[Конечные точки и правила виртуальной сети](sql-database-vnet-service-endpoint-rule-overview.md)|

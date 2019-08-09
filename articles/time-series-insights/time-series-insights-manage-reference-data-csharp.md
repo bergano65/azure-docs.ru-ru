@@ -10,20 +10,20 @@ ms.reviewer: jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/05/2019
+ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4f2bb4a6d10f9e45a27b8b5e082b3cbec475b531
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 2b9bd4b3516ee03ce78fcf255eba011f86f9c29c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677818"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883940"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье описан пример проекта C#, который вы можете компилировать, чтобы управлять эталонными данными для среды службы "Аналитика временных рядов Azure".
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 

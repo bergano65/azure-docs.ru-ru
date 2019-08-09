@@ -1,24 +1,23 @@
 ---
 title: Управление регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure | Документация Майкрософт
 description: Узнайте, как управлять регистрацией устройств в службе подготовки устройств к добавлению в Центр Интернета вещей с помощью пакетов SDK для служб.
-author: yzhong94
-ms.author: yizhon
+author: robinsh
+ms.author: robinsh
 ms.date: 04/04/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: arjmands
-ms.openlocfilehash: c73a40e46d86632732454ae16ea4f83e3ffa0281
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 438cb579180458fcdeb75516a7c98b3ab2886366
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60627275"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883376"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure
 При *регистрации устройства* создается запись одного устройства или группы устройств, которые можно в будущем зарегистрировать с помощью службы подготовки устройств. Запись регистрации содержит необходимую начальную конфигурацию устройств как часть регистрации, включая нужный Центр Интернета вещей. В этой статье показано, как управлять регистрацией устройств для подготовки службы программным способом с помощью пакетов SDK службы подготовки Интернета вещей Azure.  Пакеты SDK доступны в GitHub в том же хранилище, что и пакет SDK Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * Получите строку подключения из экземпляра службы подготовки устройств.
 * Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-security.md#attestation-mechanism).
     * [**Доверенный платформенный модуль(TPM)** ](/azure/iot-dps/concepts-security#trusted-platform-module).

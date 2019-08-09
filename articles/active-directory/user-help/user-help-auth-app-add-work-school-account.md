@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a73500d17a0dd5d55e60700f7c0b6dbe92a3f96b
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 3be2ee662a061cdcb6acc58e47eda5feda3b9eee
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382533"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68880797"
 ---
 # <a name="add-your-work-or-school-account"></a>Добавление рабочей или учебной учетной записи
 
@@ -40,6 +40,9 @@ ms.locfileid: "68382533"
     ![Окно с QR-кодом](./media/user-help-auth-app-download-install/auth-app-barcode.png)
 
 3. Откройте приложение Microsoft Authenticator, выберите **Добавить учетную запись** в меню значка **Customize and control** (Настройка и управление) в правом верхнем углу, а затем выберите **Рабочая или учебная учетная запись**.
+
+    >[!Note]
+    >Если вы настраиваете приложение Microsoft Authenticator, вы можете получить запрос на разрешение приложению получить доступ к камере (iOS) или разрешить приложению принимать снимки и записывать видео (Android). Необходимо выбрать параметр **Разрешить** , чтобы приложение проверки подлинности мог получить доступ к камере, чтобы получить изображение QR-кода на следующем шаге. Если вы не разрешаете камеру, вы по-прежнему можете настроить приложение для проверки подлинности, но вам потребуется добавить сведения о коде вручную. Сведения о том, как добавить код вручную, см. в разделе [Добавление учетной записи в приложение вручную](user-help-auth-app-add-account-manual.md).
 
 4. Используйте камеру телефона для сканирования QR-кода с экрана компьютера, описанную в разделе **Настроить мобильное приложение**, а затем выберите **Готово**.
 

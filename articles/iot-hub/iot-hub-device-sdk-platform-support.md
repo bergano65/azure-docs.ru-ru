@@ -1,18 +1,18 @@
 ---
 title: Поддержка платформы пакетов SDK для устройств Azure IoT | Документация Майкрософт
 description: Основные понятия — список платформ, поддерживаемых пакетами SDK для устройств Azure IoT.
-author: yzhong94
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.author: yizhon
-ms.openlocfilehash: 7bcc1bf6b734abe202c5fec5d515604f4bf8e4a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: robinsh
+ms.openlocfilehash: 356962c76bf942c56ace0798ac3cca3d815bc507
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60398711"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883104"
 ---
 # <a name="azure-iot-sdks-platform-support"></a>Поддержка платформ пакетов SDK для устройств Azure IoT
 
@@ -38,65 +38,65 @@ ms.locfileid: "60398711"
 
 ### <a name="c-sdk"></a>Пакет C SDK
 
-| ОС                  | Arch | Компилятор             | Библиотека TLS       |
+| OS                  | Arch | Компилятор             | Библиотека TLS       |
 |---------------------|------|----------------------|-------------------|
 | Ubuntu 16.04 LTS    | X64  | gcc-5.4.0            | openssl — 1.0.2g |
 | Ubuntu 18.04 LTS    | X64  | gcc-7.3              | WolfSSL — 1.13    |
 | Ubuntu 18.04 LTS    | X64  | Clang 6.0.X          | OpenSSL — 1.1.0g  |
 | OSX 10.13.4         | x64  | XCode 9.4.1          | Собственная библиотека OSX        |
-| Windows Server 2016 | x64  | Visual Studio 14.0.X | SChannel          |
-| Windows Server 2016 | x86  | Visual Studio 14.0.X | SChannel          |
+| Windows Server 2016 | x64  | Visual Studio 14.0.X | SChannel          |
+| Windows Server 2016 | x86  | Visual Studio 14.0.X | SChannel          |
 | Debian 9 Stretch    | x64  | gcc-7.3              | OpenSSL — 1.1.0f  |
 
 ### <a name="python-sdk"></a>Пакет SDK для Python
 
-| ОС                  | Arch | Компилятор   | Библиотека TLS |
+| OS                  | Arch | Компилятор   | Библиотека TLS |
 |---------------------|------|------------|-------------|
-| Windows Server 2016 | x86  | Python 2,7 | OpenSSL     |
-| Windows Server 2016 | x64  | Python 2,7 | OpenSSL     |
-| Windows Server 2016 | x86  | Python 3.5 | OpenSSL     |
-| Windows Server 2016 | x64  | Python 3.5 | OpenSSL     |
+| Windows Server 2016 | x86  | Python 2,7 | OpenSSL     |
+| Windows Server 2016 | x64  | Python 2,7 | OpenSSL     |
+| Windows Server 2016 | x86  | Python 3.5 | OpenSSL     |
+| Windows Server 2016 | x64  | Python 3.5 | OpenSSL     |
 | Ubuntu 18.04 LTS    | x86  | Python 2,7 | OpenSSL     |
 | Ubuntu 18.04 LTS    | x86  | Python 3.4 | OpenSSL     |
 | MacOS High Sierra   | x64  | Python 2,7 | OpenSSL     |
 
 ### <a name="net-sdk"></a>Пакет SDK для .NET
 
-| ОС                  | Arch | FRAMEWORK            | Стандартная          |
+| OS                  | Arch | FRAMEWORK            | Стандарт          |
 |---------------------|------|----------------------|-------------------|
 | Ubuntu 16.04 LTS    | X64  | .NET Core 2.1        | .NET standard 2.0 |
-| Windows Server 2016 | X64  | .NET Core 2.1        | .NET standard 2.0 |
-| Windows Server 2016 | X64  | .NET Framework 4.7   | .NET standard 2.0 |
-| Windows Server 2016 | X64  | .NET Framework 4.5.1 | Н/Д               |
+| Windows Server 2016 | X64  | .NET Core 2.1        | .NET standard 2.0 |
+| Windows Server 2016 | X64  | .NET Framework 4.7   | .NET standard 2.0 |
+| Windows Server 2016 | X64  | .NET Framework 4.5.1 | Н/Д               |
 
 ### <a name="nodejs-sdk"></a>Пакет SDK для Node.js
 
-| ОС                                           | Arch | Версия узла |
+| OS                                           | Arch | Версия узла |
 |----------------------------------------------|------|--------------|
 | Ubuntu 16.04 LTS (с использованием образа docker node 6) | X64  | Node 6       |
-| Windows Server 2016                          | X64  | Node 6       |
+| Windows Server 2016                          | X64  | Node 6       |
 
 ### <a name="java-sdk"></a>Пакет SDK для Java
 
-| ОС                  | Arch | Версия Java |
+| OS                  | Arch | Версия Java |
 |---------------------|------|--------------|
 | Ubuntu 16.04 LTS    | X64  | Java 8       |
-| Windows Server 2016 | X64  | Java 8       |
+| Windows Server 2016 | X64  | Java 8       |
 | API 28 для Android | X64  | Java 8       |
-| Android вещей | X64  | Java 8      |
+| Элементы Android | X64  | Java 8      |
 
 ## <a name="partner-supported-platforms"></a>Поддерживаемые платформы партнеров
 
 Клиенты могут расширять поддержку платформы путем переноса пакета C SDK Azure IoT, в частности, создавая уровень платформенной абстракции (PAL) пакета SDK. Корпорация Майкрософт сотрудничает с партнерами для предоставления расширенной поддержки. Список партнеров, которые выполняют перенос пакета SDK C на другие платформы и поддерживают PAL.
 
-| Партнер             | Устройства                            | Ссылка                     | Поддержка |
+| Партнер             | Устройств                            | Ссылка                     | Поддержка |
 |---------------------|------------------------------------|--------------------------|---------|
 | Espressif           | ESP32 <br/> ESP8266                              | [ESP-azure](https://github.com/espressif/esp-azure)                | [GitHub](https://github.com/espressif/esp-azure)  
 | Qualcomm            | Модем Qualcomm MDM9206 LTE IoT     | [Qualcomm LTE для пакета SDK IoT](https://developer.qualcomm.com/software/lte-iot-sdk) | [Форум](https://developer.qualcomm.com/forums/software/lte-iot-sdk)   |
 | ST Microelectronics | Серии STM32L4 <br/> Серии STM32F4 <br/>  Серии STM32F7 <br/>  Пакет обнаружения STM32L4 для узла Интернета вещей    | [X-CUBE-CLOUD](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-cloud.html) <br/> [X-CUBE-AZURE](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-azure.html) <br/> [P-NUCLEO AZURE](https://www.st.com/content/st_com/en/products/evaluation-tools/solution-evaluation-tools/communication-and-connectivity-solution-eval-boards/p-nucleo-azure1.html) <br/> [FP-CLD AZURE](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32-ode-function-pack-sw/fp-cld-azure1.html)            | [Поддержка](https://www.st.com/content/st_com/en/support/support-home.html)
 | Texas Instruments   | Панель запуска CC3220SF <br/> Панель запуска CC3220S <br/> Панель запуска MSP432E4      | [Run a simple C sample on a SimpleLink device](https://github.com/TexasInstruments/azure-iot-pal-simplelink) (Запуск простого примера C на устройстве SimpleLink) | [Форум TI E2E](https://e2e.ti.com) <br/> [Форум TI E2E для CC3220](https://e2e.ti.com/support/wireless_connectivity/simplelink_wifi_cc31xx_cc32xx/) <br/> [Форум TI E2E для MSP432E4](https://e2e.ti.com/support/microcontrollers/msp430/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пакеты SDK для устройств и служб](iot-hub-devguide-sdks.md)
 * [Руководство по переносу](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)

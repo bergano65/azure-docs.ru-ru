@@ -8,26 +8,26 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: d18f8f4808d5ca9dd7eca1561b1ee08c2073f5fa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cdcbe62fdba4f111233451680f95abc757e80ee3
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237545"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883324"
 ---
 # <a name="diagnose-and-troubleshoot"></a>Диагностирование и устранение неполадок
 
 В этой статье описаны распространенные проблемы, с которыми вы можете столкнуться при работе со средой службы "Аналитика временных рядов Azure" (предварительная версия). Здесь также описаны потенциальные причины и решения каждой проблемы.
 
-## <a name="problem-i-cant-find-my-environment-in-the-preview-explorer"></a>Проблема. Не удается найти моей среды в окне предварительного просмотра
+## <a name="problem-i-cant-find-my-environment-in-the-preview-explorer"></a>Проблема. Не удается найти среду в обозревателе предварительного просмотра
 
 Эта проблема может возникнуть, если у вас нет прав доступа к среде службы "Аналитика временных рядов". Для просмотра такой среды пользователям необходима роль доступа на уровне читателя. Чтобы проверить текущие уровни доступа и предоставить дополнительные разрешения на доступ, перейдите в раздел "Политики доступа к данным" ресурса "Аналитика временных рядов" на [портале Azure](https://portal.azure.com/).
 
-  [![Среды](media/v2-update-diagnose-and-troubleshoot/environment.png)](media/v2-update-diagnose-and-troubleshoot/environment.png#lightbox)
+  [![PXE](media/v2-update-diagnose-and-troubleshoot/environment.png)](media/v2-update-diagnose-and-troubleshoot/environment.png#lightbox)
 
-## <a name="problem-no-data-is-seen-in-the-preview-explorer"></a>Проблема: данные не поступают в окне предварительного просмотра
+## <a name="problem-no-data-is-seen-in-the-preview-explorer"></a>Проблема. в обозревателе предварительной версии данные не отображаются
 
 Существует несколько причин, по которым данные могут не отображаться в [обозревателе службы "Аналитика временных рядов Azure" (предварительная версия)](https://insights.timeseries.azure.com/preview).
 
@@ -35,7 +35,7 @@ ms.locfileid: "66237545"
 
     Убедитесь, что источник события, представляющий собой концентратор событий или центр Интернета вещей, получает данные из ваших тегов или экземпляров. Для этого перейдите к странице обзора вашего ресурса на портале Azure.
 
-    [![Восприятие информационной панели](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png)](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png#lightbox)
+    [![Панель мониторинга — аналитика](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png)](media/v2-update-diagnose-and-troubleshoot/dashboard-insights.png#lightbox)
 
 - Источник события не содержит данные в формате JSON.
 
@@ -50,7 +50,7 @@ ms.locfileid: "66237545"
   * Как показано на предыдущем рисунке, можно использовать политики **iothubowner** и **service**, так как обеим назначено разрешение на **подключение службы**.
   * Для концентратора событий необходимо указать ключ с разрешением на **прослушивание**.
   
-    [![Разрешения](media/v2-update-diagnose-and-troubleshoot/permissions.png)](media/v2-update-diagnose-and-troubleshoot/permissions.png#lightbox)
+    [![Чтение](media/v2-update-diagnose-and-troubleshoot/permissions.png)](media/v2-update-diagnose-and-troubleshoot/permissions.png#lightbox)
 
   * Как показано на предыдущем рисунке, можно использовать политики **read** и **manage**, так как обеим назначено разрешение на **прослушивание**.
 
@@ -62,7 +62,7 @@ ms.locfileid: "66237545"
 
     Эта проблема может возникнуть, если во время подготовки среды свойство идентификатора временного ряда настроено неправильно. Дополнительные сведения см. в статье [Лучшие методики при выборе идентификатора временного ряда](./time-series-insights-update-how-to-id.md). В настоящее время вы не можете обновить имеющуюся среду службы "Аналитика временных рядов", чтобы использовать другой идентификатор временного ряда.
 
-## <a name="problem-some-data-shows-but-some-is-missing"></a>Проблема: некоторые данные, но отображает некоторые отсутствует
+## <a name="problem-some-data-shows-but-some-is-missing"></a>Проблема. Некоторые данные отображаются, но некоторые отсутствуют
 
 Возможно, вы отправляете данные без идентификатора временного ряда.
 
@@ -73,7 +73,7 @@ ms.locfileid: "66237545"
     > [!NOTE]
     > В настоящее время служба "Аналитика временных рядов" поддерживает максимальную скорость приема данных 6 Мбит/с.
 
-## <a name="problem-my-event-sources-timestamp-property-name-doesnt-work"></a>Проблема: имя свойства метки времени источника события не работает
+## <a name="problem-my-event-sources-timestamp-property-name-doesnt-work"></a>Проблема. имя свойства метки времени источника событий не работает
 
 Убедитесь, что имя и значение соответствуют следующим правилам:
 
@@ -88,26 +88,26 @@ ms.locfileid: "66237545"
 
 Если свойство метки времени не указано явным образом, в качестве метки времени по умолчанию используется время постановки в очередь центра Интернета вещей или концентратора событий.
 
-## <a name="problem-i-cant-view-or-edit-my-time-series-model"></a>Проблема. Невозможно просмотреть или отредактировать моей модели временных рядов
+## <a name="problem-i-cant-view-or-edit-my-time-series-model"></a>Проблема. Не удается просмотреть или изменить модель временных рядов
 
 - Возможно, вы пытаетесь получить доступ к среде службы "Аналитика временных рядов" S1 или S2.
 
    Модели временных рядов поддерживаются только в средах PAYG. Дополнительные сведения о получении доступа к среде S1 или S2 из обозревателя службы "Аналитика временных рядов" (предварительная версия) см. в [этой статье](./time-series-insights-update-explorer.md).
 
-   [![Доступ](media/v2-update-diagnose-and-troubleshoot/access.png)](media/v2-update-diagnose-and-troubleshoot/access.png#lightbox)
+   [![Имеет](media/v2-update-diagnose-and-troubleshoot/access.png)](media/v2-update-diagnose-and-troubleshoot/access.png#lightbox)
 
 - Возможно, у вас нет прав на просмотр и изменение модели.
 
    Для изменения и просмотра модели временных рядов пользователям необходим доступ на уровне участника. Чтобы проверить текущие уровни доступа и предоставить дополнительные разрешения на доступ, перейдите в раздел "Политики доступа к данным" ресурса "Аналитика временных рядов" на портале Azure.
 
-## <a name="problem-all-my-instances-in-the-preview-explorer-lack-a-parent"></a>Проблема: Мои экземпляры в окне предварительного просмотра без родительского элемента
+## <a name="problem-all-my-instances-in-the-preview-explorer-lack-a-parent"></a>Проблема. у всех моих экземпляров в обозревателе предварительной версии нет родителя
 
 Эта проблема может возникнуть, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. в статье о [работе с моделями временных рядов](./time-series-insights-update-how-to-tsm.md).
 
   [![Модели временных рядов](media/v2-update-diagnose-and-troubleshoot/tsm.png)](media/v2-update-diagnose-and-troubleshoot/tsm.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Data modeling in Azure Time Series Insights Preview](./time-series-insights-update-how-to-tsm.md) (Моделирование данных в службе "Аналитика временных рядов Azure" (предварительная версия))
 
-- Дополнительные сведения о [поддерживаемые формы JSON](./how-to-shape-query-json.md).
+- Дополнительные сведения о [поддерживаемых фигурах JSON](./how-to-shape-query-json.md).

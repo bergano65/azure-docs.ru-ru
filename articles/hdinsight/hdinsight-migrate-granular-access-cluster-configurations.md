@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: ebb1723a9a2b2d069a1766d4f78151f2b684c5b9
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 797caae3caaca14c10481cb58654c45b4bed55ae
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464663"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884317"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -30,7 +30,7 @@ ms.locfileid: "68464663"
 | Читатель                                | — Доступ на чтение, включая секреты                                                                   | — Доступ на чтение, **исключение** секретов |           |   |   |
 | Оператор кластера HDInsight<br>(Новая роль) | Н/Д                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
 | Участник                           | — Доступ на чтение и запись, включая секреты<br>— Создание всех типов ресурсов Azure и управление ими.     | Без изменений |
-| имя владельца;                                 | — Доступ на чтение и запись, включая секреты<br>— Полный доступ ко всем ресурсам<br>-Делегирование доступа другим пользователям | Без изменений |
+| Ответственный                                 | — Доступ на чтение и запись, включая секреты<br>— Полный доступ ко всем ресурсам<br>-Делегирование доступа другим пользователям | Без изменений |
 
 Сведения о том, как добавить назначение роли оператора кластера HDInsight пользователю, чтобы предоставить им доступ для чтения и записи к секретам кластера, см. в разделе ниже, [добавьте назначение роли "оператор кластера hdinsight" пользователю](#add-the-hdinsight-cluster-operator-role-assignment-to-a-user).
 
@@ -155,14 +155,14 @@ ms.locfileid: "68464663"
 
 ## <a name="add-the-hdinsight-cluster-operator-role-assignment-to-a-user"></a>Добавление назначения роли оператора кластера HDInsight пользователю
 
-Пользователь с ролью " [участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) " или " [владелец](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) " может назначить роль " [оператор кластера hdinsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) " пользователям, которым требуется доступ на чтение и запись к конфиденциальным значениям конфигурации кластера hdinsight (например, учетные данные шлюза кластера). и ключи учетной записи хранения).
+Пользователь с ролью [владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) может назначить роль [оператора кластера hdinsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) пользователям, которым требуется доступ на чтение и запись к конфиденциальным значениям конфигурации кластера hdinsight (например, учетные данные шлюза кластера и ключи учетной записи хранения).
 
 ### <a name="using-the-azure-cli"></a>Использование Azure CLI
 
 Самый простой способ добавить это назначение роли — использовать `az role assignment create` команду в Azure CLI.
 
 > [!NOTE]
-> Эта команда должна выполняться пользователем с ролью участника или владельца, так как только они могут предоставлять эти разрешения. `--assignee` — Это адрес электронной почты пользователя, которому необходимо назначить роль оператора кластера HDInsight.
+> Эта команда должна выполняться пользователем с ролью владельца, так как только они могут предоставлять эти разрешения. `--assignee` — Это имя субъекта-службы или адрес электронной почты пользователя, которому необходимо назначить роль оператора кластера HDInsight. Если возникает ошибка "недостаточно разрешений", см. раздел часто задаваемые вопросы ниже.
 
 #### <a name="grant-role-at-the-resource-cluster-level"></a>Предоставление роли на уровне ресурсов (кластера)
 
@@ -185,3 +185,23 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
 Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию, [Управление доступом к ресурсам Azure с помощью RBAC и портал Azure — Добавление назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment).
+
+## <a name="faq"></a>Часто задаваемые вопросы
+
+### <a name="why-am-i-seeing-a-403-forbidden-response-after-updating-my-api-requests-andor-tool"></a>Почему я вижу ответ 403 (запрещено) после обновления запросов API и/или средства?
+
+Конфигурации кластера теперь находятся за детальным управлением доступом на основе ролей и должны `Microsoft.HDInsight/clusters/configurations/*` иметь разрешение на доступ к ним. Чтобы получить это разрешение, назначьте пользователю или субъекту-службе, пытающимся получить доступ к конфигурациям, роль "оператор кластера HDInsight", "участник" или "владелец".
+
+### <a name="why-do-i-see-insufficient-privileges-to-complete-the-operation-when-running-the-azure-cli-command-to-assign-the-hdinsight-cluster-operator-role-to-another-user-or-service-principal"></a>Почему я вижу «недостаточно прав для выполнения операции» при выполнении команды Azure CLI для назначения роли оператора кластера HDInsight другому пользователю или субъекту-службе?
+
+Кроме роли владельца, пользователь или субъект-служба, которые выполняют команду, должны иметь достаточные разрешения AAD для поиска идентификаторов объектов уполномоченного. Это сообщение указывает на недостаточные разрешения AAD. Попробуйте заменить `-–assignee` аргумент на `–assignee-object-id` и укажите идентификатор объекта уполномоченного в качестве параметра вместо имени (или идентификатора участника в случае управляемого удостоверения). Дополнительные сведения см. в разделе необязательные параметры раздела [AZ Role назначений](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) .
+
+Если это не поможет, обратитесь к администратору AAD, чтобы получить правильные разрешения.
+
+### <a name="what-will-happen-if-i-take-no-action"></a>Что произойдет, если не предпринимать никаких действий?
+
+И больше не будут`GET /configurations/{configurationName}` возвращать никаких сведений, и вызов больше не будет возвращать конфиденциальные параметры, такие как ключ учетной записи хранения или пароль кластера. `GET /configurations` `POST /configurations/gateway` То же самое относится к соответствующим методам SDK и командлетам PowerShell.
+
+Если вы используете более раннюю версию одного из средств для Visual Studio, VSCode, IntelliJ или Eclipse, упомянутых выше, они больше не будут работать до обновления.
+
+Более подробные сведения см. в соответствующем разделе этого документа для вашего сценария.

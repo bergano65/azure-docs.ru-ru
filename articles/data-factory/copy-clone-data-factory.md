@@ -11,12 +11,12 @@ ms.date: 01/09/2019
 author: sharonlo101
 ms.author: shlo
 manager: craigg
-ms.openlocfilehash: 96ea8142e2f7794d3c15c6efb436eafa585bc8fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e4d204e9bcf601bf968f06b5d9df3f36414bd5a5
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60780937"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884193"
 ---
 # <a name="copy-or-clone-a-data-factory-in-azure-data-factory"></a>Копирование или клонирование фабрики данных в службе "Фабрика данных Azure"
 
@@ -36,7 +36,7 @@ ms.locfileid: "60780937"
 
 1. Предварительно необходимо создать целевую фабрику данных на портале Azure.
 
-1. При наличии SelfHosted IntegrationRuntime в фабрике источника, необходимо предварительно создать его с тем же именем в целевой объект фабрики. Если вы хотите поделиться IRs SelfHosted между различные фабрики, можно использовать шаблон опубликован [здесь](author-visually.md#best-practices-for-git-integration).
+1. Если в исходной фабрике есть Интегратионрунтиме Селфхостед, необходимо предварительно создать ее с тем же именем в целевой фабрике. Если вы хотите предоставить общий доступ к Селфхостед IRs между различными фабриками, можно использовать шаблон, опубликованный [здесь](source-control.md#best-practices-for-git-integration).
 
 1. При работе в режиме GIT каждый раз, когда вы выполняете публикацию на портале, шаблон Resource Manager фабрики сохраняется в GIT в ветви adf_publish репозитория.
 
@@ -46,6 +46,6 @@ ms.locfileid: "60780937"
 
 1. По соображениям безопасности созданный шаблон Resource Manager не содержит каких-либо секретных сведений, например паролей связанных служб. Таким образом, вы должны предоставить эти пароли в качестве параметров развертывания. Если параметры нежелательны, необходимо получить строки подключения и пароли связанных служб из Azure Key Vault.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с руководством по созданию фабрики данных на портале Azure в статье [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md).

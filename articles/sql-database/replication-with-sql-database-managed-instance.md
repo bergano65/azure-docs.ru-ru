@@ -11,12 +11,12 @@ author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 ms.date: 02/07/2019
-ms.openlocfilehash: 96571b55158733f8189ddf87402fb634330ca80d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3b76dc546b46718378d9b22ad80e17849eaf532d
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570467"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884082"
 ---
 # <a name="configure-replication-in-an-azure-sql-database-managed-instance-database"></a>Настройка репликации в базе данных Управляемого экземпляра Базы данных SQL Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "68570467"
 Управляемый экземпляр в Базе данных SQL Azure не поддерживает следующие функции:
 
 - [Обновляемые подписки](/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication).
-- [Активную](sql-database-active-geo-replication.md) георепликацию и [группы автоматической](sql-database-auto-failover-group.md) отработки отказа не следует использовать, если настроена репликация транзакций.
+- [Активная](sql-database-active-geo-replication.md) Георепликация с репликацией транзакций. Вместо активной георепликации используйте [группы автоматической](sql-database-auto-failover-group.md)отработки отказа, но обратите внимание, что публикацию необходимо [вручную удалить](sql-database-managed-instance-transact-sql-information.md#replication) из основного управляемого экземпляра и создать повторно на дополнительном управляемом экземпляре после отработки отказа.  
  
 ## <a name="1---create-a-resource-group"></a>1\. Создание группы ресурсов
 

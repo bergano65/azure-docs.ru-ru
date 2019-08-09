@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: glenga
-ms.openlocfilehash: cfdc28486cf254c4dd808824ab167489818376ab
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 582e4d81851d570f99d25d626a1db8a9f5e98231
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619594"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881336"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -607,14 +607,21 @@ module.exports = function (context, req) {
 
 ## <a name="streaming-logs"></a>Журналы потоковой передачи
 
-При разработке приложения удобно видеть сведения о ведении журнала практически в режиме реального времени. Вы можете просмотреть поток файлов журнала, создаваемых функциями, либо в портал Azure, либо в сеансе командной строки на локальном компьютере.
+При разработке приложения часто требуется, чтобы записи записывались в журналы практически в реальном времени при работе в Azure.
 
-Это эквивалентно выходным данным, которые отображаются при отладке функций во время [локальной разработки](functions-develop-local.md). Дополнительные сведения см. в разделе [Практическое руководство. Потоковая передача журналов](../app-service/troubleshoot-diagnostic-logs.md#streamlogs).
+Существует два способа просмотра потока файлов журнала, создаваемых при выполнении функций.
 
-> [!NOTE]
-> Журналы потоковой передачи поддерживают только один экземпляр узла функций. Если функция масштабируется до нескольких экземпляров, данные из других экземпляров не отображаются в потоке журнала. [Live Metrics Stream](../azure-monitor/app/live-stream.md) в Application Insights поддерживается несколькими экземплярами. Кроме того, почти в реальном времени потоковая аналитика также основана на [данных выборки](#configure-sampling).
+* **Встроенная потоковая передача журналов**. платформа службы приложений позволяет просматривать поток файлов журнала приложения. Это эквивалентно выходным данным, которые отображаются при отладке функций во время [локальной разработки](functions-develop-local.md) , а также при использовании на портале вкладки " **тестирование** ". Отобразятся все данные на основе журнала. Дополнительные сведения см. в разделе [Практическое руководство. Потоковая передача журналов](../app-service/troubleshoot-diagnostic-logs.md#streamlogs). Этот потоковый метод поддерживает только один экземпляр и не может использоваться с приложением под управлением Linux в плане потребления.
+
+* **Live Metrics Stream**. Если приложение-функция [подключена к Application Insights](#enable-application-insights-integration), вы можете просматривать данные журнала и другие метрики практически в реальном времени в портал Azure с помощью [Live Metrics Stream](../azure-monitor/app/live-stream.md). Используйте этот метод при мониторинге функций, выполняемых в нескольких экземплярах или в Linux, в плане потребления. Этот метод использует [данные выборки](#configure-sampling).
+
+Потоки журнала можно просматривать как на портале, так и в большинстве локальных сред разработки. 
 
 ### <a name="portal"></a>Портал
+
+На портале можно просматривать оба типа потоков журналов.
+
+#### <a name="built-in-log-streaming"></a>Встроенная потоковая передача журналов
 
 Чтобы просмотреть журналы потоковой передачи на портале, выберите вкладку **функции платформы** в приложении функции. Затем в разделе **мониторинг**выберите **потоковая передача журнала**.
 
@@ -624,9 +631,21 @@ module.exports = function (context, req) {
 
 ![Просмотр журналов потоковой передачи на портале](./media/functions-monitoring/streaming-logs-window.png)
 
+#### <a name="live-metrics-stream"></a>Live Metrics Stream
+
+Чтобы просмотреть Live Metrics Stream для приложения, перейдите на вкладку **Обзор** приложения функции. При наличии Application Insights включается ссылка на **Application Insights** в разделе настроенные **компоненты**. Эта ссылка позволяет перейти на страницу Application Insights приложения.
+
+В Application Insights выберите **Live Metrics Stream**. [Записи журнала выборки](#configure-sampling) отображаются в разделе " **Пример телеметрии**".
+
+![Просмотр Live Metrics Stream на портале](./media/functions-monitoring/live-metrics-stream.png) 
+
 ### <a name="visual-studio-code"></a>Visual Studio Code
 
 [!INCLUDE [functions-enable-log-stream-vs-code](../../includes/functions-enable-log-stream-vs-code.md)]
+
+### <a name="core-tools"></a>Основные средства
+
+[!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
 ### <a name="azure-cli"></a>Azure CLI
 

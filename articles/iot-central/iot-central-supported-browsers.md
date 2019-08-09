@@ -3,17 +3,17 @@ title: Поддерживаемые браузеры для Azure IoT Central | 
 description: К Azure IoT Central можно обращаться с различных современных настольных компьютеров и планшетов, используя различные браузеры. В этой статье приводится список поддерживаемых браузеров.
 author: lmasieri
 ms.author: lmasieri
-ms.date: 04/24/2109
+ms.date: 04/24/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 66bff6dfbb355bd0cb62f2e68b2805b5ccebfe8b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7d9429507e39d975c5534e33052c56d77eeb3eb7
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720100"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68880009"
 ---
 # <a name="supported-browsers-for-azure-iot-central"></a>Поддерживаемые браузеры для Azure IoT Central
 

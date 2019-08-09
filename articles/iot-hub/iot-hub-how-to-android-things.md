@@ -1,18 +1,18 @@
 ---
 title: Разработка на платформе Android Things с помощью пакетов SDK для Центра Интернета вещей Azure | Документация Майкрософт
 description: Руководство для разработчиков. Дополнительные сведения о разработке на платформе Android Things с помощью пакетов SDK для Центра Интернета вещей Azure.
-author: yzhong94
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.author: yizhon
-ms.openlocfilehash: 8e36cee9857c00fcb618a8491595432fb0fd60fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: robinsh
+ms.openlocfilehash: 82f6da54aec7aee94c19fd75a06d2850ca0db8b6
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571248"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883136"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Разработка на платформе Android Things с помощью пакетов SDK для Интернета вещей Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "64571248"
 
 В этом руководстве описано, как создать приложение на стороне устройства на платформе Android Things при помощи пакета SDK Java для Центра Интернета вещей Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Оборудование, поддерживаемое платформой Android Things, под управлением операционной системы Android Things.  Чтобы выполнить инструкции по установке операционной системы Android Things, см. документацию по Android Things [здесь](https://developer.android.com/things/get-started/kits#flash-at).  Убедитесь, что устройство под управлением Android Things подключено к Интернету и подключены все необходимые дополнительные устройства, например, клавиатура, дисплей и мышь.  В этом руководстве используется Raspberry Pi 3.
 
@@ -49,7 +49,7 @@ ms.locfileid: "64571248"
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyAndroidThingsDevice
     ```
 
-2. Выполните следующие команды в Azure Cloud Shell, чтобы получить *строки подключения устройства* для зарегистрированного устройства. Замените `YourIoTHubName` под именем вы выберите для центра Интернета вещей.
+2. Выполните следующие команды в Azure Cloud Shell, чтобы получить *строку подключения устройства* для только что зарегистрированного устройства. Замените `YourIoTHubName` под именем, выбранным для центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidThingsDevice --output table
@@ -65,7 +65,7 @@ ms.locfileid: "64571248"
 
 1. Первым шагом в создании приложения Android Things является подключение к устройствам Android Things. Подключите устройство Android Things к дисплею, а затем настройте подключение к Интернету. Для Android Things предоставляется [документация](https://developer.android.com/things/get-started/kits) по подключению к Wi-Fi. После подключения к Интернету запишите IP-адрес, указанный в разделе Networks (Сети).
 
-2. Подключитесь к устройству Android Things с помощью средства [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) с использованием записанного ранее IP-адреса. Еще раз проверьте подключение, выполнив следующую команду в окне терминала. Вы должны увидеть ваши устройства, перечисленные как «подключено».
+2. Подключитесь к устройству Android Things с помощью средства [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) с использованием записанного ранее IP-адреса. Еще раз проверьте подключение, выполнив следующую команду в окне терминала. Устройства должны отображаться как подключенные.
 
    ```
    adb devices
@@ -99,7 +99,7 @@ az iot hub monitor-events --device-id MyAndroidThingsDevice --hub-name YourIoTHu
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о том, как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK центра Интернета вещей, см. в [этой статье](iot-hub-reliability-features-in-sdks.md).
 * Дополнительные сведения см. в статье [Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure](iot-hub-how-to-develop-for-mobile-devices.md).

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 08/07/2019
 ms.author: b-juche
-ms.openlocfilehash: fe8d46c897ef68563f2e0e5a1da106174ae504c5
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 763b3961bfd621f05ab5cd021526b0d6d109c020
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68424082"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881707"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
 
@@ -42,6 +42,7 @@ ms.locfileid: "68424082"
 |  Минимальный размер одного тома    |    100 ГиБ    |    Нет    |
 |  Максимальная назначенная квота для одного тома *   |   92 тиб   |    Нет   |
 |  Максимальный размер одного тома *     |    100 тиб    |    Нет       |
+|  Максимальное количество файлов (индексных дескрипторов) на том     |    50 000 000    |    Нет    |    
 
 \* Том можно создать вручную или изменить его размер для максимального 92 тиб. Однако том может увеличиваться до 100 Тиб в сценарии с повышенной. Дополнительные сведения о превышении емкости см. в статье [модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md) . 
 

@@ -8,18 +8,23 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9eb02f04b5873e5906782a27ce833a724ceecfe3
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 898b07d05abf3bfad644fb590d90c7a90c5a1c0d
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812379"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883227"
 ---
 # <a name="provision-nodes-for-vmware-solution-by-cloudsimple---azure"></a>Предоставление узлов для решения VMware с помощью Клаудсимпле — Azure
 
 Подготавливайте узлы в портал Azure. Затем можно настроить емкость с оплатой по мере использования для среды частного облака Клаудсимпле.
 
-## <a name="add-a-provisioned-node-to-your-cloudsimple-private-cloud"></a>Добавление подготовленного узла в частное облако Клаудсимпле
+## <a name="sign-in-to-azure"></a>Войдите в Azure
+
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+
+
+## <a name="add-a-node-to-your-cloudsimple-private-cloud"></a>Добавление узла в частное облако Клаудсимпле
 
 1. Выбор пункта **Все службы**.
 2. Выполните поиск **узлов клаудсимпле**.
@@ -44,4 +49,4 @@ ms.locfileid: "68812379"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Создание частного облака](https://docs.azure.cloudsimple.com/create-private-cloud/)
+* [Создание частного облака](create-private-cloud.md)

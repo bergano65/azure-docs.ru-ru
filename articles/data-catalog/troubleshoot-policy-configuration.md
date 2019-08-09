@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: troubleshooting
 ms.date: 08/01/2019
-ms.openlocfilehash: f37110138ae62272e56b155b7e8a9aac2f80cdf8
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 84bd14f8ae18527b4f6e9d8509a12555baec8771
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68734583"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879550"
 ---
 # <a name="troubleshooting-azure-data-catalog"></a>Устранение неполадок каталога данных Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "68734583"
 
 При использовании каталога данных Azure ограничены следующие функциональные возможности.
 
-- Учетные записи с типом **гостевой роли** не поддерживаются. Вы не можете добавлять гостевые учетные записи в качестве пользователей каталога данных Azure, а гостевые пользователи не могут использовать портал по адресу www.azuredatacatalog.com.
+- Учетные записи с типом **гостевой роли** не поддерживаются. Вы не можете добавлять гостевые учетные записи в качестве пользователей каталога данных Azure, а гостевые пользователи [https://www.azuredatacatalog.com](https://www.azuredatacatalog.com)не могут использовать портал по адресу.
 
 - Создание ресурсов каталога данных Azure с помощью шаблонов Azure Resource Manager или Azure PowerShell команд не поддерживается.
 

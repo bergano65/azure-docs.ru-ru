@@ -15,14 +15,14 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
-ms.openlocfilehash: bddc83d55c8909412f7f935a4324a6f316a82cd7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9751ae97f96d2041a4106a41bb782a80dd9c8ba9
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62129559"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884406"
 ---
-# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Настройка группы доступности AlwaysOn в виртуальных машинах Azure автоматически: Resource Manager
+# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Автоматическая настройка группы доступности Always On на виртуальных машинах Azure: Resource Manager
 
 В этом руководстве показано, как создать группу доступности SQL Server, в которую входят виртуальные машины Azure Resource Manager. Для настройки шаблона мы воспользуемся колонками на портале Azure. В ходе работы в сможете проверить параметры по умолчанию, ввести необходимые параметры, а затем обновить колонки на портале.
 
@@ -44,10 +44,10 @@ ms.locfileid: "62129559"
 
 * У вас уже есть учетная запись Azure. Если у вас ее нет, [зарегистрируйтесь, чтобы воспользоваться пробной учетной записью](https://azure.microsoft.com/pricing/free-trial/).
 * Вы уже умеете подготавливать виртуальную машину SQL Server из коллекции виртуальных машин через графический интерфейс пользователя. Дополнительные сведения см. в разделе [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
-* Теперь вы хорошо понимаете принцип работы групп доступности. Дополнительные сведения см. в разделе [Группы доступности AlwaysOn (SQL Server)](https://msdn.microsoft.com/library/hh510230.aspx).
+* Теперь вы хорошо понимаете принцип работы групп доступности. Дополнительные сведения см. в разделе [Группы доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server).
 
 > [!NOTE]
-> Если вы планируете использовать группы доступности с SharePoint, ознакомьтесь со статьей [Configure SQL Server 2012 Always On availability groups for SharePoint 2013](https://technet.microsoft.com/library/jj715261.aspx)(Настройка групп доступности AlwaysOn SQL Server 2012 для SharePoint 2013).
+> Если вы планируете использовать группы доступности с SharePoint, ознакомьтесь со статьей [Configure SQL Server 2012 Always On availability groups for SharePoint 2013](/SharePoint/administration/configure-an-alwayson-availability-group)(Настройка групп доступности AlwaysOn SQL Server 2012 для SharePoint 2013).
 >
 >
 
@@ -71,7 +71,7 @@ ms.locfileid: "62129559"
    ![Шаблон AlwaysOn](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/17-alwaysontemplate.png)
 5. В разделе **Выберите модель развертывания** щелкните **Resource Manager**.
 
-### <a name="basics"></a>Основы
+### <a name="basics"></a>Основные сведения
 Щелкните **Базовые** и настройте указанные ниже параметры.
 
 * **Имя администратора.** Укажите здесь учетную запись пользователя с правами администратора домена, входящую в предопределенную роль системного администратора (sysadmin) для сервера SQL Server на обоих экземплярах SQL Server. В этом руководстве мы будем использовать имя **DomainAdmin**.
@@ -82,9 +82,9 @@ ms.locfileid: "62129559"
 
 На следующем снимке экрана показана заполненная колонка **Базовые**.
 
-![Основы](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/1-basics.png)
+![Основные сведения](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/1-basics.png)
 
-Последовательно выберите **ОК**.
+Нажмите кнопку **ОК**.
 
 ### <a name="domain-and-network-settings"></a>Параметры домена и сети
 Этот шаблон из коллекции Azure создает домен и контроллеры домена. Он также создает сеть c двумя подсетями. Шаблон не может создавать серверы в существующем домене или виртуальной сети. На следующем шаге мы настроим параметры домена и сети.
@@ -117,7 +117,7 @@ ms.locfileid: "62129559"
 
 ![Параметры группы доступности](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/3-availabilitygroup.png)
 
-Последовательно выберите **ОК**.
+Нажмите кнопку **ОК**.
 
 ### <a name="virtual-machine-size-storage-settings"></a>Размер виртуальной машины и параметры хранилища
 В разделе **Размер виртуальной машины и параметры хранилища** выберите размер виртуальной машины SQL Server и проверьте другие параметры.
@@ -181,12 +181,12 @@ ms.locfileid: "62129559"
 >
 >
 
-![Параметры SQL Server](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/5-sql.png)
+![Настройки SQL Server](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/5-sql.png)
 
 Проверьте значения параметров и щелкните **ОК**.
 
 ### <a name="summary"></a>Сводка
-На странице сводных данных можно просмотреть параметры Azure, а также загрузить шаблон. Проверьте сводные данные. Последовательно выберите **ОК**.
+На странице сводных данных можно просмотреть параметры Azure, а также загрузить шаблон. Проверьте сводные данные. Нажмите кнопку **ОК**.
 
 ### <a name="buy"></a>Купить
 Эта последняя колонка содержит **условия использования** и **политику конфиденциальности**. Просмотрите эту информацию. Когда вы подготовите все необходимое для создания виртуальных машин в Azure, в том числе ресурсы для группы доступности, щелкните **Создать**.

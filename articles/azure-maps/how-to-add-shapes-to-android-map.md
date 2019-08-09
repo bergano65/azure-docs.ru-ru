@@ -1,6 +1,6 @@
 ---
-title: Добавление карты фигур для Android в Azure сопоставляет | Документация Майкрософт
-description: Добавление фигур в карту с помощью Azure Maps пакета SDK для Android
+title: Добавление фигур в карты Android в Azure Maps | Документация Майкрософт
+description: Добавление фигур в карту с помощью Azure Maps пакет SDK для Android
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -8,27 +8,27 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: c53a3e01d471f2ca9b0878c374b00ce83848ca28
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 53bc9f14b91bafd69d3c67745f6b981f4faea991
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64871007"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881667"
 ---
-# <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Добавление фигуры карты с помощью Azure Maps пакета SDK для Android
+# <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Добавление фигуры в карту с помощью Azure Maps пакет SDK для Android
 
-В этой статье показано, как для отрисовки фигур на карте с помощью Azure Maps Android SDK.
+В этой статье показано, как визуализировать фигуры на карте с помощью Azure Maps пакет SDK для Android.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы завершить процесс, в этой статье, необходимо установить [Azure Maps Android SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) загрузить карту.
+Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
 
-## <a name="add-a-line-to-the-map"></a>Добавить линию к схеме
+## <a name="add-a-line-to-the-map"></a>Добавление линии на карту
 
-Можно добавить строку в карте с помощью **слой линий**, выполните следующие действия, чтобы добавить строку на карте.
+Вы можете добавить линию на карту с помощью **слоя линий**, выполнив приведенные ниже шаги, чтобы добавить линию на карте.
 
-1. Изменить **res > макет > activity_main.xml** чтобы он выглядел, как показано ниже:
+1. Измените **разметку res > > activity_main. XML** , чтобы она выглядела так:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@ ms.locfileid: "64871007"
     </FrameLayout>
     ```
 
-2. Скопируйте следующий фрагмент кода ниже в **onCreate()** метод вашей `MainActivity.java` класса.
+2. Скопируйте приведенный ниже фрагмент кода в `MainActivity.java` метод **OnCreate ()** класса.
 
     ```Java
     mapControl.onReady(map -> {
@@ -76,12 +76,13 @@ ms.locfileid: "64871007"
 
     ```
     
-    Приведенный выше фрагмент кода сначала получает значение "карты Azure" карты управления экземпляров с помощью **onReady()** метод обратного вызова. Затем создается объект источника данных с помощью **DataSource** класса и добавляет его к схеме. Затем он создает список **точки** объектов. Объект **LineString** создается из списка точек и добавляется к источнику данных. Объект **слой линий** отображает строки объектов, заключены в источник данных на карте. Затем создается слой линий, и к ней добавляется источник данных.
+    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова onreading **()** . Затем он создает объект источника данных с помощью класса **DataSource** и добавляет его к сопоставлению. Затем создается список объектов **Point** . Объект **LineString** создается из списка точек и добавляется в источник данных. **Слой линий** отображает объекты линий, перенесенные в источник данных на карте. Затем создается слой линии, и к нему добавляется источник данных.
 
-    После добавления в приведенном выше фрагменте кода вашей `MainActivity.java` должен выглядеть, как показано ниже:
+    После добавления приведенного выше `MainActivity.java` фрагмента кода он должен выглядеть следующим образом:
     
     ```Java
     package com.example.myapplication;
+
     import android.app.Activity;
     import android.os.Bundle;
     import com.mapbox.geojson.LineString;
@@ -96,8 +97,7 @@ ms.locfileid: "64871007"
     import com.microsoft.azure.maps.mapcontrol.MapControl;
     import static com.microsoft.azure.maps.mapcontrol.options.LineLayerOptions.strokeColor;
     import static com.microsoft.azure.maps.mapcontrol.options.LineLayerOptions.strokeWidth;
-    
-    
+        
     public class MainActivity extends AppCompatActivity {
     
         static{
@@ -133,8 +133,7 @@ ms.locfileid: "64871007"
                 map.layers.add(new LineLayer(dataSource,
                     strokeColor("blue"),
                     strokeWidth(5f)));
-            });
-    
+            });    
         }
     
         @Override
@@ -171,23 +170,22 @@ ms.locfileid: "64871007"
         protected void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
             mapControl.onSaveInstanceState(outState);
-        }
-    
+        }    
     }
     ```
 
-Если вы запустите приложение сейчас, вы должны увидеть строку на карте, как показано ниже:
+Если запустить приложение сейчас, на карте отобразится строка, как показано ниже:
 
 <center>
 
-![Линии Android карты](./media/how-to-add-shapes-to-android-map/android-map-line.png)</center>
+![Линия с картой Android](./media/how-to-add-shapes-to-android-map/android-map-line.png)</center>
 
 
-## <a name="add-a-polygon-to-the-map"></a>Добавить многоугольника на карту
+## <a name="add-a-polygon-to-the-map"></a>Добавление многоугольника к сопоставлению
 
-**Слой многоугольников** позволяет отрисовывать площадь этого многоугольника на карту. Выполните следующие шаги для добавления многоугольника на карте.
+**Слой Polygon** позволяет визуализировать область многоугольника на карте. Выполните следующие действия, чтобы добавить многоугольник на карту.
 
-1. Изменить **res > макет > activity_main.xml** чтобы он выглядел, как показано ниже:
+1. Измените **разметку res > > activity_main. XML** , чтобы она выглядела так:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -210,7 +208,7 @@ ms.locfileid: "64871007"
     </FrameLayout>
     ```
 
-2. Скопируйте следующий фрагмент кода в **onCreate()** метод вашей `MainActivity.java` класса.
+2. Скопируйте следующий фрагмент кода в метод `MainActivity.java` OnCreate **()** класса.
 
     ```Java
     mapControl.onReady(map -> {
@@ -240,9 +238,9 @@ ms.locfileid: "64871007"
     });
     ```
 
-    Приведенный выше фрагмент кода сначала получает значение "карты Azure" карты управления экземпляров с помощью **onReady()** метод обратного вызова. Затем создается объект источника данных с помощью **DataSource** класса и добавляет его к схеме. Объект **многоугольника** затем создается объект из списка **точки** объектов и добавляется к источнику данных. Объект **слой многоугольников** отображает данные в источнике данных на карте. Затем создаются слой многоугольников для отображения области многоугольника и добавляет к нему источника данных. Объект **слой линий** отображает строки объектов в оболочку в источнике данных. Последняя часть фрагмента кода создает слой линий для отрисовки контура многоугольника и добавляет к нему источника данных.
+    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова onreading **()** . Затем он создает объект источника данных с помощью класса **DataSource** и добавляет его к сопоставлению. Затем объект **Polygon** создается из списка объектов **Point** и добавляется в источник данных. **Слой многоугольников** отображает данные, инкапсулированные в источнике данных на карте. Затем он создает слой многоугольников для отрисовки области многоугольника и добавляет к нему источник данных. **Слой линий** отображает объекты линий, инкапсулированные в источнике данных. Последняя часть фрагмента кода создает слой линий для отрисовки контура многоугольника и добавляет к нему источник данных.
 
-    После добавления в приведенном выше фрагменте кода вашей `MainActivity.java` должен выглядеть, как показано ниже:
+    После добавления приведенного выше `MainActivity.java` фрагмента кода он должен выглядеть следующим образом:
 
     ```Java
     package com.example.myapplication;
@@ -307,8 +305,7 @@ ms.locfileid: "64871007"
                 map.layers.add(new LineLayer(dataSource,
                     strokeColor("blue"),
                     strokeWidth(2f)));
-            });
-    
+            });    
         }
     
         @Override
@@ -345,21 +342,20 @@ ms.locfileid: "64871007"
         protected void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
             mapControl.onSaveInstanceState(outState);
-        }
-    
+        }    
     }
     ```
 
-Если вы запустите приложение сейчас, вы должны увидеть многоугольника на карте, как показано ниже:
+Если запустить приложение сейчас, на карте отобразится многоугольник, как показано ниже:
 
 <center>
 
-![Многоугольника карты Android](./media/how-to-add-shapes-to-android-map/android-map-polygon.png)</center>
+![Многоугольник на карте Android](./media/how-to-add-shapes-to-android-map/android-map-polygon.png)</center>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Ознакомьтесь со следующей статьей, чтобы узнать больше о способах установки стилей карты
+Дополнительные сведения о способах установки стилей карт см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Изменение стилей карт в Android maps](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
+> [Добавление слоя фрагментов](how-to-add-tile-layer-android-map.md)

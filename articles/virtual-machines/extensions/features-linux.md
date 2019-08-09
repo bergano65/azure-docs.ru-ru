@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 3f22da9eabc6f539ef37009f565f073b9de89319
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 8227aa366c8f5149d4212e6cdd00e2745db84814
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706747"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881952"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -84,9 +84,9 @@ az vm extension image list --location westus --output table
 
 Запустить расширение на имеющейся виртуальной машине можно несколькими способами.
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
-Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере запускается расширение пользовательских сценариев на виртуальной машине *myVM* в группе ресурсов *myResourceGroup*:
+Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и сценарий для запуска (https://raw.githubusercontent.com/me/project/hello.sh) с собственными данными. 
 
 ```azurecli
 az vm extension set `
@@ -106,7 +106,7 @@ info:    Executing command vm extension set
 info:    vm extension set command OK
 ```
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Расширения виртуальных машин можно устанавливать на имеющиеся виртуальные машины через портал Azure. Выберите на портале нужную виртуальную машину, затем щелкните **Расширения** и **Добавить**. Выберите нужное расширение из списка доступных расширений и следуйте инструкциям мастера.
 
@@ -222,7 +222,7 @@ info:    vm extension set command OK
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- расширения.
+- Расширения
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -337,7 +337,7 @@ INFO [Microsoft.OSTCExtensions.LinuxDiagnostic-2.3.9027] Launch command:diagnost
 
 1. Чтобы проверить журнал агента Linux, найдите в файле */var/log/waagent.log* действия, которые выполнялись при подготовке расширения.
 
-2. Дополнительные сведения в журналах фактическое расширение */var/входа/azure/\<extensionName >*
+2. Дополнительные сведения см. в журналах фактического расширения для *\</Вар/лог/Азуре/extensionName >*
 
 3. Коды ошибок, известные проблемы и другие данные для устранения неполадок вы найдете в документации по конкретному расширению.
 
@@ -404,7 +404,7 @@ az vm extension delete \
 
 ## <a name="common-vm-extension-reference"></a>Справочные материалы для всех расширений ВМ
 
-| Имя расширения | Описание | Дополнительные сведения |
+| Имя расширения | Описание | Дополнительная информация |
 | --- | --- | --- |
 | Расширение пользовательских сценариев для Linux |Выполняет сценарии на виртуальных машинах Azure. |[Расширение пользовательских сценариев для Linux](custom-script-linux.md) |
 | Расширение для доступа к виртуальной машине |Восстанавливает доступ к виртуальной машине Azure. |[Расширение для доступа к виртуальной машине](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |

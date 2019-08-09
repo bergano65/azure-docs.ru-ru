@@ -1,19 +1,19 @@
 ---
 title: Пакет SDK для устройств Azure IoT для C | Документация Майкрософт
 description: Начните работу с пакетом SDK для устройств Azure IoT для C и узнайте, как создавать приложения для устройств, взаимодействующие с Центром Интернета вещей.
-author: yzhong94
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: conceptual
 ms.date: 05/17/2019
-ms.author: yizhon
-ms.openlocfilehash: d758d761e560642de76e149c83fc6898aa78bafb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: robinsh
+ms.openlocfilehash: 1c1921391048fc59f03070d4753f422d9cfc5237
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65910331"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883485"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -111,7 +111,7 @@ ms.locfileid: "65910331"
 
 1. Если выбрать пункт **Copy connection string for selected device** (Копировать строку подключения для выбранного устройства), то строка подключения устройства будет скопирована в буфер обмена. Сохраните копию строки подключения устройства. Она потребуется вам при запуске примеров приложений, описанных в следующих разделах.
 
-Выполнив описанные выше действия, вы будете готовы к запуску кода. В большинстве примеров в верхней части основного исходного файла есть константа для ввода строки подключения. Например, соответствующая строка из **iothub_client\_примеры\_iothub_convenience_sample** приложения выглядит следующим образом.
+Выполнив описанные выше действия, вы будете готовы к запуску кода. В большинстве примеров в верхней части основного исходного файла есть константа для ввода строки подключения. Например, соответствующая строка из приложения **\_iothub_client Samples\_iothub_convenience_sample** выглядит следующим образом.
 
 ```c
 static const char* connectionString = "[device connection string]";
@@ -121,12 +121,12 @@ static const char* connectionString = "[device connection string]";
 
 В папке **iothub\_client** репозитория [azure-iot-sdk-c](https://github.com/azure/azure-iot-sdk-c) есть папка **samples**. Она содержит приложение с именем **iothub\_client\_sample\_mqtt**.
 
-Версии Windows **iothub_client\_примеры\_iothub_convenience_sample** приложений включает следующее решение Visual Studio:
+Версия приложения **\_iothub_client Samples\_iothub_convenience_sample** для Windows включает следующее решение Visual Studio:
 
   ![Обозреватель решений Visual Studio](./media/iot-hub-device-sdk-c-intro/iothub-client-sample-mqtt.png)
 
 > [!NOTE]
-> Если Visual Studio предлагает изменить целевую платформу проекта до последней версии, примите этот запрос.
+> Если Visual Studio предложит перенацелить проект на последнюю версию, примите приглашение.
 
 Это решение содержит один проект: В этом решении установлено четыре пакета NuGet:
 
@@ -137,7 +137,7 @@ static const char* connectionString = "[device connection string]";
 
 Для работы с пакетом SDK всегда необходим пакет **Microsoft.Azure.C.SharedUtility** . Так как этот пример использует протокол MQTT, вам также потребуются пакеты **Microsoft.Azure.umqtt** и **Microsoft.Azure.IoTHub.MqttTransport** (для AMQP и HTTP есть эквивалентные пакеты). Так как в рассматриваемом примере используется библиотека **IoTHubClient**, вам также нужно включить в решение пакет **Microsoft.Azure.IoTHub.IoTHubClient**.
 
-Реализацию для примера приложения вы можете найти **iothub_client\_примеры\_iothub_convenience_sample** исходный файл.
+Реализацию примера приложения можно найти в файле **\_iothub_client Samples\_iothub_convenience_sample** Source.
 
 На примере этого приложения мы покажем, что необходимо сделать для использования библиотеки **IoTHubClient**.
 
@@ -339,7 +339,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
   ![Решение Visual Studio для примера mqtt](./media/iot-hub-device-sdk-c-intro/simplesample_mqtt.png)
 
 > [!NOTE]
-> Если Visual Studio предлагает изменить целевую платформу проекта до последней версии, примите этот запрос.
+> Если Visual Studio предложит перенацелить проект на последнюю версию, примите приглашение.
 
 Этот пример, как и предыдущий, включает несколько пакетов NuGet:
 
@@ -351,7 +351,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
 
 Большинство из них мы видели в предыдущем примере, но **Microsoft.Azure.IoTHub.Serializer** — это новый пакет. Наличие этого пакета обязательно, если используется библиотека **serializer**.
 
-Реализацию примера приложения в вы можете найти **iothub_client\_примеры\_iothub_convenience_sample** файла.
+Реализацию примера приложения можно найти в файле **\_iothub_client Samples\_iothub_convenience_sample** .
 
 Следующие разделы содержат описание основных частей этого примера.
 
@@ -392,7 +392,7 @@ else
 
 ### <a name="define-the-model"></a>Определение модели
 
-Модель в библиотеке **serializer** определяет сообщения, которые ваше устройство может отправлять в Центр Интернета вещей, а также сообщения, которые оно может получать (на языке моделирования называются *действия*). Необходимо определить модель с помощью набора макросов c. в качестве **iothub_client\_примеры\_iothub_convenience_sample** пример приложения:
+Модель в библиотеке **serializer** определяет сообщения, которые ваше устройство может отправлять в Центр Интернета вещей, а также сообщения, которые оно может получать (на языке моделирования называются *действия*). Модель определяется с помощью набора макросов C, как в примере приложения **iothub_client\_Samples\_iothub_convenience_sample** :
 
 ```c
 BEGIN_NAMESPACE(WeatherStation);
@@ -414,7 +414,7 @@ END_NAMESPACE(WeatherStation);
 
 Данные и действия, определенные в модели, определяют поверхность API, которую можно использовать для отправки сообщений в Центр Интернета вещей и ответа на сообщения, отправленные устройству. Лучше всего это показать на примере.
 
-### <a name="send-messages"></a>Отправка сообщений
+### <a name="send-messages"></a>Отправить сообщения
 
 Модель определяет данные, которые вы можете отправить в Центр Интернета вещей. В нашем примере это один из двух элементов данных, определенных с помощью макроса **WITH_DATA**. Чтобы отправить в Центр Интернета вещей значения **DeviceId** и **WindSpeed**, необходимо выполнить несколько действий. Первое действие — определение данных для отправки.
 
@@ -483,7 +483,7 @@ void sendCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCal
 
 Это все, что требуется для отправки сообщений из устройства в облако. Единственное, о чем осталось рассказать, — это получение сообщений.
 
-### <a name="receive-messages"></a>Получение сообщений
+### <a name="receive-messages"></a>Получить сообщения
 
 Получение сообщений выполняется аналогично обработке сообщений в библиотеке **IoTHubClient** . Сначала вам нужно зарегистрировать функцию обратного вызова сообщения:
 

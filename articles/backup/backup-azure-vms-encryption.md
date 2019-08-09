@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 4/3/2019
 ms.author: dacurwin
-ms.openlocfilehash: 71a33b7263cd7a3b2f5e39ce9d24df11a7d6283c
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 5c6e3ef74ea2d77ba03526e05145fe6faa61c050
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688604"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882061"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Резервное копирование и восстановление зашифрованной виртуальной машины Azure
 
@@ -154,10 +154,11 @@ Azure Backup можете выполнять резервное копирова
 2. Затем выполните одно из следующих действий.
     - Используйте шаблон, созданный во время операции восстановления, чтобы настроить параметры виртуальной машины и активировать развертывание виртуальной машины. [Узнайте больше](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm).
     - Создайте новую виртуальную машину на основе восстановленных дисков с помощью PowerShell. [Узнайте больше](backup-azure-vms-automation.md#create-a-vm-from-restored-disks).
+    - Для виртуальных машин Linux сбросьте расширение ADE так, чтобы диски данных были открыты и подключены. 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Если возникнут проблемы, проверьте
+При возникновении проблем ознакомьтесь со следующими статьями:
 
 - [Распространенные ошибки](backup-azure-vms-troubleshoot.md) при резервном копировании и восстановлении зашифрованных виртуальных машин Azure.
 - Проблемы с [агентом виртуальной машины Azure или расширением резервного копирования](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md) .

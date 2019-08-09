@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 16e12021a65a09376293f28efe9a6e9ef74ef5c2
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: f0f00745f2f7781bda0e636167b1cf1a4045f7cd
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839566"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881371"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -446,11 +446,25 @@ func deploy
 
 ## <a name="monitoring-functions"></a>Мониторинг функций
 
-Чтобы отслеживать выполнение функций, рекомендуется выполнить интеграцию с Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
+Чтобы отслеживать выполнение функций, рекомендуется выполнить интеграцию с Azure Application Insights. Вы также можете выполнять потоковую передачу журналов выполнения на локальный компьютер. Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
+
+### <a name="enable-application-insights-integration"></a>Включение интеграции с Application Insights
+
+При создании приложения-функции в портал Azure интеграция Application Insights выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
 
 [!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
 
-Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
+### <a name="enable-streaming-logs"></a>Включить журналы потоковой передачи
+
+Вы можете просмотреть поток файлов журнала, создаваемых функциями в сеансе командной строки на локальном компьютере. 
+
+#### <a name="native-streaming-logs"></a>Собственные журналы потоковой передачи
+
+[!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
+
+Для этого типа журналов потоковой передачи необходимо [включить интеграцию Application Insights](#enable-application-insights-integration) для приложения функции.   
+
+
 ## <a name="next-steps"></a>Следующие шаги
 
 Основные инструменты службы "Функции Azure" [имеют открытый код и размещаются на GitHub](https://github.com/azure/azure-functions-cli).  

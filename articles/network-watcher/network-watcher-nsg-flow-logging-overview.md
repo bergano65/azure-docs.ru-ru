@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 5c156e30f4fa0270082cd1108958c3472130a460
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 1401e378daa0c0a9258858840653899e76c9421c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640818"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881780"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -57,7 +57,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
             * **flows** — набор потоков.
                 * **mac** — MAC-адрес сетевой карты виртуальной машины, в которой был получен поток.
                 * **flowTuples** — строка с разделителями-запятыми, содержащая несколько свойств кортежа потока.
-                    * **Time Stamp** — это значение представляет собой метку времени возникновения потока в формате UNIX EPOCH.
+                    * **Метка времени** . это значение представляет собой метку времени, когда поток помещается в формате ЭПОХи UNIX.
                     * **Source IP** — исходный IP-адрес.
                     * **Destination IP** — конечный IP-адрес.
                     * **Source Port** — исходный порт.

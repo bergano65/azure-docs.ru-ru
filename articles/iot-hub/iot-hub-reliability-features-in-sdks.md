@@ -2,17 +2,17 @@
 title: Управление возможностью подключения и надежным обменом сообщениями с помощью пакетов SDK для устройств Центра Интернета вещей Azure
 description: Узнайте, как улучшить связь с устройствами и обмен сообщениями при использовании пакетов SDK для устройств центра Интернета вещей Azure.
 services: iot-hub
-author: yzhong94
-ms.author: yizhon
+author: robinsh
+ms.author: robinsh
 ms.date: 07/07/2018
 ms.topic: article
 ms.service: iot-hub
-ms.openlocfilehash: 838d0cd4f40666bc3fced22a607b9f94f27b08d3
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: e881dffbd1f286047ffcff226eb3dede7a138a0c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67535502"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884340"
 ---
 # <a name="manage-connectivity-and-reliable-messaging-by-using-azure-iot-hub-device-sdks"></a>Управление возможностью подключения и надежным обменом сообщениями с помощью пакетов SDK для устройств Центра Интернета вещей Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "67535502"
 
 * [Пакет SDK для C, Python, iOS](https://github.com/azure/azure-iot-sdk-c)
 
-* [ПАКЕТ SDK .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/devdoc/requirements/retrypolicy.md)
+* [Пакет SDK для .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/devdoc/retrypolicy.md)
 
 * [пакет SDK для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md)
 
@@ -36,7 +36,7 @@ ms.locfileid: "67535502"
 
 ## <a name="designing-for-resiliency"></a>Проектирование для обеспечения устойчивости
 
-Устройства IoT часто используют непостоянные или нестабильные сетевые подключения, например сети GSM или спутниковую связь. Это означает, что могут возникать ошибки при взаимодействии устройств с облачными службами из-за временных сбоев на уровне доступности службы, инфраструктуры и т. д. Приложение, выполняющееся на устройстве должна управлять механизмы для соединения, соединения и логика повторных попыток для отправки и получения сообщений. Кроме того, требования к стратегии повторных попыток очень сильно меняются в зависимости от сценария, контекста и возможностей устройства Интернета вещей.
+Устройства IoT часто используют непостоянные или нестабильные сетевые подключения, например сети GSM или спутниковую связь. Это означает, что могут возникать ошибки при взаимодействии устройств с облачными службами из-за временных сбоев на уровне доступности службы, инфраструктуры и т. д. Приложение, выполняемое на устройстве, должно управлять механизмами подключения, повторного подключения и логикой повторных попыток для отправки и получения сообщений. Кроме того, требования к стратегии повторных попыток очень сильно меняются в зависимости от сценария, контекста и возможностей устройства Интернета вещей.
 
 Пакеты SDK для устройств Центра Интернета вещей Azure помогают упростить подключение и обмен данными в сценариях "из облака на устройство" и "с устройства в облако". Эти пакеты SDK предоставляют надежный способ подключения к Центру Интернета вещей Azure и широкий набор средств для отправки и получения сообщений. Разработчики также могут изменить существующую реализацию, чтобы внедрить стратегию повторных попыток в соответствии со сценарием.
 
@@ -44,7 +44,7 @@ ms.locfileid: "67535502"
 
 ## <a name="connection-and-retry"></a>Подключение и повторные попытки
 
-В этом разделе приводится обзор шаблонов повторное подключение и повторите попытку, доступных при управлении соединениями. Также приведены рекомендации по реализации разных политик повторных попыток в приложении устройства, а также перечислены соответствующие API из пакетов SDK для устройств.
+В этом разделе приводится обзор шаблонов повторного подключения и повторных попыток, доступных при управлении соединениями. Также приведены рекомендации по реализации разных политик повторных попыток в приложении устройства, а также перечислены соответствующие API из пакетов SDK для устройств.
 
 ### <a name="error-patterns"></a>Шаблоны ошибок
 
@@ -120,13 +120,13 @@ ms.locfileid: "67535502"
 
 * [Пакет SDK для C, Python, iOS](https://github.com/azure/azure-iot-sdk-c)
 
-* [ПАКЕТ SDK .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/devdoc/retrypolicy.md)
+* [Пакет SDK для .NET](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/devdoc/retrypolicy.md)
 
 * [пакет SDK для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md)
 
 * [Пакет SDK для Node](https://github.com/Azure/azure-iot-sdk-node/wiki/Connectivity-and-Retries#types-of-errors-and-how-to-detect-them)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование пакетов SDK для устройств и служб](./iot-hub-devguide-sdks.md)
 

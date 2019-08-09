@@ -5,28 +5,28 @@ author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: include
-ms.date: 11/02/2018
+ms.date: 08/07/2019
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: a752427d1e5873f0a27fd231872e3a13b234d9ed
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 3386cb51a8a728576f6615002d6154d89ca662c1
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68402342"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883751"
 ---
 <!-- This tells how to get the connection string for the registryReadWrite shared access policy of your IoT hub -->
 
 Чтобы получить строку подключения центра Интернета вещей для политики **registryReadWrite** , выполните следующие действия.
 
-1. Откройте центр Интернета вещей в [портал Azure](https://portal.azure.com).  Самый простой способ открыть центр Интернета вещей — выбрать **группы ресурсов**, выбрать группу ресурсов, в которой находится центр Интернета вещей, а затем выбрать центр Интернета вещей в списке ресурсов.
+1. В [портал Azure](https://portal.azure.com)выберите **группы ресурсов**. Выберите группу ресурсов, в которой находится центр, а затем выберите центр из списка ресурсов.
 
-2. В левой части центра Интернета вещей выберите **политики общего доступа**.
+2. В области слева в центре выберите **политики общего доступа**.
 
 3. В списке политик выберите политику **registryReadWrite** .
 
 4. В разделе **ключи общего доступа**выберите значок копирования для **строки подключения — первичный ключ** и сохраните значение.
 
-    ![Получение строки подключения](./media/iot-hub-include-find-registryrw-connection-string/iot-hub-get-connection-string.png)
+    ![Получение строки подключения](./media/iot-hub-include-find-registryrw-connection-string/iot-hub-get-connection-vs2019.png)
 
 Дополнительные сведения о политиках и разрешениях общего доступа центра Интернета вещей см. в разделе [Управление доступом и разрешения](../articles/iot-hub/iot-hub-devguide-security.md#access-control-and-permissions).

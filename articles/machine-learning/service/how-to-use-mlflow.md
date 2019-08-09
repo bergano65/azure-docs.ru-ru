@@ -1,7 +1,7 @@
 ---
-title: Использование Млфлов со службой Машинное обучение Azure
+title: Использование Млфлов с
 titleSuffix: Azure Machine Learning service
-description: Регистрировать метрики и артефакты и развертывать модели в рабочей среде с помощью Млфлов со службой Машинное обучение Azure.
+description: Настройте Млфлов с Машинное обучение Azure для записи метрик & артефактов и развертывания моделей из модуля данных, локальной среды или среды виртуальной машины.
 services: machine-learning
 author: rastala
 ms.author: roastala
@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: nibaccam
 ms.topic: conceptual
-ms.date: 07/15/2019
+ms.date: 08/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2b59797e60585876764e8c9e1276e4fd36571b18
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: dd451f4c7ada3c062862098d4cda5314152be0c0
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856015"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882000"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-service-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и службы Машинное обучение Azure (Предварительная версия)
 
@@ -49,18 +49,15 @@ ms.locfileid: "68856015"
 |Мониторинг производительности модели||✓|  |   |
 | Определение смещения данных |   | ✓ |   | ✓ |
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите Млфлов.](https://mlflow.org/docs/latest/quickstart.html)
 * [Установка пакета sdk машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) на локальном компьютере. пакет SDK обеспечивает подключение для млфлов к рабочей области.
 * [Создайте Рабочая область машинного обучения Azure](how-to-manage-workspace.md).
 
+## <a name="track-local-runs"></a>Следите за локальными запусками
 
-## <a name="track-experiment-runs"></a>Мониторинг запусков экспериментов
-
-Отслеживание Млфлов с помощью службы Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из локального и удаленного запуска в рабочей области Машинное обучение Azure.
-
-### <a name="local-runs"></a>Локальные запуски
+Отслеживание Млфлов с помощью службы Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из локальных запусков в рабочей области Машинное обучение Azure.
 
 `azureml-contrib-run` Установите пакет, чтобы использовать отслеживание млфлов с машинное обучение Azure на экспериментах, локально выполняемых в Jupyter Notebook или редакторе кода.
 
@@ -97,7 +94,9 @@ with mlflow.start_run():
     mlflow.log_metric('alpha', 0.03)
 ```
 
-### <a name="remote-runs"></a>Удаленные запуски
+## <a name="track-remote-runs"></a>Отслеживание удаленных запусков
+
+Отслеживание Млфлов с помощью службы Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из удаленных запусков в рабочей области Машинное обучение Azure.
 
 Удаленные запуски позволяют обучать модели с помощью более мощных вычислений, таких как виртуальные машины с поддержкой GPU или кластеры Вычислительная среда Машинного обучения. Дополнительные сведения о различных параметрах вычислений см. в разделе [Настройка целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md) .
 
@@ -138,11 +137,13 @@ with mlflow.start_run():
 run = exp.submit(src)
 ```
 
-### <a name="mlflow-with-azure-databricks-runs"></a>Млфлов с запуском Azure Databricks
+## <a name="track-azure-databricks-runs"></a>Отслеживание выполнений Azure Databricks
+
+Отслеживание Млфлов с помощью службы Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из модуля данных в рабочей области Машинное обучение Azure.
 
 Чтобы запустить эксперименты Млфлов с Azure Databricks, необходимо сначала создать [Azure Databricks рабочую область и кластер](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal). В кластере не забудьте установить библиотеку *azureml-млфлов* из PyPi, чтобы предоставить кластеру доступ к необходимым функциям и классам.
 
-#### <a name="install-libraries"></a>Установка библиотек
+### <a name="install-libraries"></a>Установка библиотек
 
 Чтобы установить библиотеки в кластере, перейдите на вкладку **библиотеки** и щелкните **установить новый** .
 
@@ -152,7 +153,7 @@ run = exp.submit(src)
 
  ![млфлов со схемой машинного обучения Azure](media/how-to-use-mlflow/install-libraries.png)
 
-#### <a name="notebook-and-workspace-set-up"></a>Настройка записной книжки и рабочей области
+### <a name="set-up-your-notebook-and-workspace"></a>Настройка записной книжки и рабочей области
 
 После настройки кластера импортируйте записную книжку эксперимента, откройте ее и подключите к ней кластер.
 
@@ -181,7 +182,7 @@ ws = Workspace.get(name=workspace_name,
                    resource_group=resource_group)
 
 ```
-#### <a name="set-mlflow-tracking-uri"></a>Задать URI отслеживания Млфлов
+### <a name="link-mlflow-tracking-to-your-workspace"></a>Связывание отслеживания Млфлов с рабочей областью
 После создания экземпляра рабочей области задайте универсальный код ресурса (URI) для отслеживания Млфлов. При этом отслеживание Млфлов связывается с рабочей областью Машинное обучение Azure. После этого все эксперименты будут находиться в управляемой службе отслеживания Машинное обучение Azure.
 
 ```python

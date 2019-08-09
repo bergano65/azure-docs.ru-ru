@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 05/16/2019
+ms.date: 08/08/2019
 ms.author: jonbeck
-ms.openlocfilehash: fdcfe2f78177dba7810c668d280f4f3f5127deb7
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 1ca122a9a160901aa27c53faa2ab1da7a1c740dd
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708823"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881604"
 ---
 # <a name="memory-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в памяти
 
@@ -43,4 +43,4 @@ ms.locfileid: "67708823"
 
 * Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 
-* Узнайте, как [Создание и управление виртуальными машинами Linux с помощью Azure CLI](tutorial-manage-vm.md)
+* Узнайте, как [создавать виртуальные машины Linux и управлять ими с помощью Azure CLI](tutorial-manage-vm.md)

@@ -6,21 +6,24 @@ author: asgang
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 08/08/2019
 ms.author: sutalasi
-ms.openlocfilehash: f00ad898ea45700b75607f89bc2c8e71288357c2
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 1bb94b70510be30d676ad707ab2fbfbbcbf50833
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847567"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884129"
 ---
 # <a name="replicate-azure-disk-encryption-enabled-virtual-machines-to-another-azure-region"></a>Репликация виртуальных машин с поддержкой шифрования дисков Azure в другой регион Azure
 
 В этой статье описывается, как реплицировать виртуальные машины с поддержкой шифрования дисков Azure из одного региона Azure в другой.
 
 >[!NOTE]
->В настоящее время Azure Site Recovery поддерживает только виртуальные машины с поддержкой шифрования дисков Azure, работающие под управлением ОС Windows.
+>В настоящее время Azure Site Recovery поддерживает только виртуальные машины с поддержкой шифрования дисков Azure, работающие под управлением ОС Windows. Виртуальные машины с поддержкой шифрования дисков Azure без приложения Azure AD поддерживаются только в том случае, если они используют управляемые диски. Виртуальные машины с неуправляемыми дисками не поддерживаются.
+
+>[!NOTE]
+>При переключении из ADE версии 1 (с приложением Azure AD) в ADE v2 (без приложения Azure AD) необходимо отключить репликацию и включить репликацию после включения ADE v2.
 
 ## <a id="required-user-permissions"></a>Необходимые разрешения пользователя
 Site Recovery требуется, чтобы пользователь имел разрешения на создание хранилища ключей в целевом регионе и копирование ключей из хранилища ключей исходного региона в хранилище ключей целевого региона.

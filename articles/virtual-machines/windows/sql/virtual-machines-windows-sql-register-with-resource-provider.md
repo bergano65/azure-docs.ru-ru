@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/24/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 87db36936ee4aee45b7e8d83e1512d22c2a49eee
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 552caf0f09dcfa291981ef73152cf4febfc4a840
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846138"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882380"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -33,7 +33,7 @@ ms.locfileid: "68846138"
 
 Чтобы использовать поставщик ресурсов виртуальной машины SQL, необходимо также зарегистрировать поставщик ресурсов виртуальной машины SQL в подписке. Это можно сделать с помощью портал Azure, Azure CLI или PowerShell. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы зарегистрировать виртуальную машину SQL Server с помощью поставщика ресурсов, вам потребуется следующее: 
 
@@ -41,9 +41,14 @@ ms.locfileid: "68846138"
 - [Виртуальная машина SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision). 
 - [Azure CLI](/cli/azure/install-azure-cli) и [PowerShell](/powershell/azure/new-azureps-module-az). 
 
-## <a name="register-with-the-sql-vm-resource-provider"></a>Регистрация в поставщике ресурсов виртуальной машины SQL
-Если [расширение агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md) уже установлено на виртуальной машине, то регистрация в поставщике ресурсов ВИРТУАЛЬНОЙ машины SQL просто создает ресурс метаданных типа Microsoft. Склвиртуалмачине/склвиртуалмачинес. 
 
+## <a name="register-with-sql-vm-resource-provider"></a>Регистрация с помощью поставщика ресурсов виртуальной машины SQL
+Если [расширение агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md) не установлено на виртуальной машине, можно зарегистрировать его с помощью поставщика ресурсов ВИРТУАЛЬНОЙ машины SQL, указав упрощенный режим управления SQL. В упрощенном режиме управления SQL поставщик ресурсов виртуальной машины SQL будет автоматическая установка расширения SQL IaaS в [упрощенном режиме](virtual-machines-windows-sql-server-agent-extension.md#install-in-lightweight-mode) и проверка метаданных экземпляра SQL Server. Это не приведет к перезапуску службы SQL Server. Необходимо указать тип SQL Server лицензии при регистрации с помощью поставщика ресурсов виртуальной машины SQL: "PAYG" или "AHUB".
+
+Регистрация в поставщике ресурсов виртуальной машины SQL в [упрощенном режиме](virtual-machines-windows-sql-server-agent-extension.md#install-in-lightweight-mode) обеспечит соответствие требованиям и обеспечивает гибкие возможности лицензирования, а также на месте SQL Server обновлений выпуска. Экземпляры отказоустойчивого кластера и развертывания с несколькими экземплярами могут быть зарегистрированы в поставщике ресурсов виртуальной машины SQL только в упрощенном режиме. Вы можете следовать инструкциям, приведенным на портал Azure, чтобы выполнить обновление до [полного режима](virtual-machines-windows-sql-server-agent-extension.md#install-in-full-mode) и обеспечить комплексный набор функций управления с SQL Server перезапуском в любое время. 
+
+
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 Используйте следующий фрагмент кода для регистрации в поставщике ресурсов виртуальной машины SQL, если расширение SQL Server IaaS уже установлено на виртуальной машине. Необходимо указать тип SQL Server лицензии при регистрации в поставщике ресурсов виртуальной машины SQL: с оплатой по мере использования (`PAYG`) или преимущество гибридного использования Azure (`AHUB`). 
 
 Зарегистрируйте SQL Server виртуальную машину с помощью следующего фрагмента кода PowerShell:
@@ -52,33 +57,49 @@ ms.locfileid: "68846138"
      # Get the existing compute VM
      $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
           
-     # Register with the SQL VM resource provider
-     New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
-        -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
-        -Properties @{virtualMachineResourceId=$vm.Id;SqlServerLicenseType='AHUB'}  
-  
-  ```
-
-Если расширение IaaS SQL Server не установлено на виртуальной машине, можно зарегистрироваться в поставщике ресурсов виртуальной машины SQL, указав режим упрощенного управления. В режиме упрощенного управления поставщик ресурсов виртуальной машины SQL автоматически устанавливает расширение SQL Server IaaS в упрощенном [режиме](virtual-machines-windows-sql-server-agent-extension.md#install-in-lightweight-mode) и проверяет метаданные экземпляра SQL Server. Это не приведет к перезапуску службы SQL Server. Необходимо указать тип SQL Server лицензии при регистрации в поставщике ресурсов виртуальной машины SQL: с оплатой по мере использования (`PAYG`) или преимущество гибридного использования Azure (`AHUB`). 
-
-Зарегистрируйте SQL Serverную виртуальную машину в режиме упрощенного управления, используя следующий фрагмент кода PowerShell:
-
-  ```powershell-interactive
-     # Get the existing compute VM
-     $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
-          
-     # Register the SQL VM with the lightweight SQL IaaS agent
+     # Register SQL VM with 'Lightweight' SQL IaaS agent
      New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
         -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
         -Properties @{virtualMachineResourceId=$vm.Id;SqlServerLicenseType='AHUB';sqlManagement='LightWeight'}  
   
   ```
 
-Регистрация в поставщике ресурсов виртуальной машины SQL в [упрощенном режиме](virtual-machines-windows-sql-server-agent-extension.md#install-in-lightweight-mode) обеспечит соответствие требованиям и обеспечивает гибкие возможности лицензирования, а также на месте SQL Server обновлений выпуска. Экземпляры отказоустойчивого кластера и развертывания с несколькими экземплярами могут быть зарегистрированы в поставщике ресурсов виртуальной машины SQL только в упрощенном режиме. В любое время можно следовать инструкциям, приведенным на портал Azure, чтобы выполнить обновление до [полного режима](virtual-machines-windows-sql-server-agent-extension.md#install-in-full-mode) и обеспечить комплексный набор функций управления с SQL Server перезапуском. 
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+
+Для платных выпусков (Enterprise или Standard):
+
+  ```azurecli-interactive
+  # Register Enterprise or Standard self-installed VM in Lightweight mode
+
+  az sql vm create --name <vm_name> --resource-group <resource_group_name> --location <vm_location> --license-type AHUB 
+
+  ```
+
+Для бесплатных выпусков (Developer, Web или Express):
+
+  ```azurecli-interactive
+  # Register Developer, Web, or Express self-installed VM in Lightweight mode
+
+  az sql vm create --name <vm_name> --resource-group <resource_group_name> --location <vm_location> --license-type PAYG 
+  ```
+---
+
+Если расширение IaaS для SQL уже установлено на виртуальной машине, то регистрация в поставщике ресурсов виртуальной машины SQL выполняется просто путем создания ресурса метаданных типа Microsoft. Склвиртуалмачине/Склвиртуалмачинес. Ниже приведен фрагмент кода для регистрации в поставщике ресурсов виртуальной машины SQL, если расширение IaaS для SQL уже установлено на виртуальной машине. Необходимо указать тип SQL Server лицензии при регистрации с помощью поставщика ресурсов виртуальной машины SQL: "PAYG" или "AHUB".
+
+  ```powershell-interactive
+  # Get the existing  Compute VM
+   $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
+        
+   # Register with SQL VM resource provider
+   New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
+      -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
+      -Properties @{virtualMachineResourceId=$vm.Id;SqlServerLicenseType='AHUB'}
+  ```
+
 
 ## <a name="register-sql-server-2008-or-2008-r2-on-windows-server-2008-vms"></a>Регистрация SQL Server 2008 или 2008 R2 на виртуальных машинах Windows Server 2008
 
-SQL Server 2008 и 2008 R2, установленные на Windows Server 2008, можно зарегистрировать в поставщике ресурсов виртуальной машины SQL в режиме ([без агента](virtual-machines-windows-sql-server-agent-extension.md)). Этот параметр обеспечивает соответствие требованиям и позволяет отслеживать SQL Serverную виртуальную машину в портал Azure с ограниченными функциональными возможностями.
+SQL Server 2008 и 2008 R2, установленные на Windows Server 2008, можно зарегистрировать в поставщике ресурсов виртуальной машины SQL в режиме [без агента](virtual-machines-windows-sql-server-agent-extension.md) . Этот параметр обеспечивает соответствие требованиям и позволяет отслеживать SQL Serverную виртуальную машину в портал Azure с ограниченными функциональными возможностями.
 
 В следующей таблице приведены допустимые значения параметров, указанных во время регистрации.
 
@@ -89,8 +110,9 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 | &nbsp;             | &nbsp;                                   |
 
 
-Чтобы зарегистрировать экземпляр SQL Server 2008 или 2008 R2 в Windows Server 2008, используйте следующий фрагмент кода PowerShell:  
+Чтобы зарегистрировать экземпляр SQL Server 2008 или 2008 R2 в экземпляре Windows Server 2008, используйте следующий фрагмент кода PowerShell или AZ CLI:  
 
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
   ```powershell-interactive
      # Get the existing compute VM
      $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
@@ -100,6 +122,16 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
       -Properties @{virtualMachineResourceId=$vm.Id;SqlServerLicenseType='AHUB'; `
        sqlManagement='NoAgent';sqlImageSku='Standard';sqlImageOffer='SQL2008R2-WS2008'}
   ```
+
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+
+  ```azurecli-interactive
+   az sql vm create -n sqlvm -g myresourcegroup -l eastus |
+   --license-type AHUB --sql-mgmt-type NoAgent 
+   --image-sku Enterprise --image-offer SQL2008-WS2008R2
+ ```
+
+---
 
 ## <a name="verify-registration-status"></a>Проверка состояния регистрации
 Вы можете проверить, зарегистрирована ли SQL Server виртуальная машина в поставщике ресурсов виртуальной машины SQL с помощью портал Azure, Azure CLI или PowerShell. 
@@ -111,21 +143,28 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 1. Выберите SQL Server виртуальную машину из списка. Если ваша SQL Server виртуальная машина не указана здесь, скорее всего, она не была зарегистрирована в поставщике ресурсов виртуальной машины SQL. 
 1. Просмотрите значение в разделе **состояние**. Если **состояние** — " **успешно**", SQL Server виртуальная машина успешно зарегистрирована в поставщике ресурсов виртуальной машины SQL. 
 
-    ![Проверка состояния с регистрацией SQL RP](media/virtual-machines-windows-sql-register-with-rp/verify-registration-status.png)
+![Проверка состояния с регистрацией SQL RP](media/virtual-machines-windows-sql-register-with-rp/verify-registration-status.png)
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="command-line"></a>Командная строка
+
+Проверьте текущее состояние регистрации виртуальной машины SQL Server с помощью команды AZ CLI или PowerShell. `ProvisioningState`Отобразится `Succeeded` , если регистрация прошла успешно. 
+
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+
 
   ```azurecli-interactive
   az sql vm show -n <vm_name> -g <resource_group>
-  ```
-`ProvisioningState`Отобразится `Succeeded` , если регистрация прошла успешно. 
+ ```
 
-### <a name="powershell"></a>PowerShell
+
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
   ```powershell-interactive
-  Get-AzResource -ResourceName <vm_name> -ResourceGroupName <resource_group> -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines
+  Get-AzResource -ResourceName <vm_name> -ResourceGroupName <resource_group> `
+  -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines
   ```
-`ProvisioningState`Отобразится `Succeeded` , если регистрация прошла успешно.
+
+---
 
 Ошибка указывает на то, что SQL Server виртуальная машина не зарегистрирована в поставщике ресурсов. 
 
@@ -143,25 +182,33 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 
 ![Изменение поставщика](media/virtual-machines-windows-sql-ahb/select-resource-provider-sql.png)
 
-### <a name="azure-cli"></a>Azure CLI
+
+### <a name="command-line"></a>Командная строка
+
+Зарегистрируйте поставщик ресурсов виртуальной машины SQL в подписке Azure, выполнив команду AZ CLI или PowerShell. 
+
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+В следующем фрагменте кода поставщик ресурсов виртуальной машины SQL будет зарегистрирован в подписке Azure. 
 
 ```azurecli-interactive
 # Register the new SQL VM resource provider to your subscription 
 az provider register --namespace Microsoft.SqlVirtualMachine 
 ```
 
-### <a name="powershell"></a>PowerShell
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell-interactive
 # Register the new SQL VM resource provider to your subscription
 Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 ```
+---
 
 ## <a name="remarks"></a>Примечания
 
 - Поставщик ресурсов виртуальной машины SQL поддерживает только SQL Server виртуальных машин, развернутых с помощью Azure Resource Manager. SQL Server виртуальные машины, развернутые с помощью классической модели, не поддерживаются. 
 - Поставщик ресурсов виртуальной машины SQL поддерживает только SQL Server виртуальных машин, развернутых в общедоступном облаке. Развертывания в частном или правительственном облаке не поддерживаются. 
  
+
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы 
 
 **Следует ли зарегистрировать виртуальную машину SQL Server, подготовленную из образа SQL Server в Azure Marketplace?**
@@ -188,7 +235,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 Да, вы можете зарегистрироваться в поставщике ресурсов виртуальной машины SQL в режиме упрощенного управления, если на виртуальной машине не установлено расширение SQL Server IaaS. В упрощенном режиме поставщик ресурсов виртуальной машины SQL будет использовать консольное приложение для проверки версии и выпуска экземпляра SQL Server. 
 
-Консольное приложение завершит свою работу после проверки того, что на виртуальной машине работает хотя бы один экземпляр SQL Server. Регистрация в поставщике ресурсов виртуальной машины SQL в упрощенном режиме не приведет к перезапуску SQL Server и не создаст агент на виртуальной машине.
+Режим управления SQL по умолчанию при регистрации в поставщике ресурсов виртуальной машины SQL _полон_. Если свойство управления SQL не задано при регистрации с помощью поставщика ресурсов виртуальной машины SQL, то режим будет установлен как полный управляемый. Наличие расширения SQL IaaS, установленного на виртуальной машине, является необходимым условием для регистрации в поставщике ресурсов виртуальной машины SQL в режиме полного управления.
 
 **Будет ли регистрация в поставщике ресурсов виртуальной машины SQL установить агент на виртуальной машине?**
 
