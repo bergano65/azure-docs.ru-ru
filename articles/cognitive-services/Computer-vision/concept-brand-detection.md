@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 04/17/2019
+ms.date: 08/08/2019
 ms.author: pafarley
-ms.openlocfilehash: d32beaa51471ccab19804122bfbcb33a6b1a5e3d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b4bcd07cf7549029d09f5acd58fdf8f92fffed74
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60203040"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945301"
 ---
-# <a name="detect-popular-brands-in-images"></a>Определение популярных торговых марках на изображениях
+# <a name="detect-popular-brands-in-images"></a>Обнаружение популярных торговых марок в изображениях
 
 Обнаружение торговых марок — это специализированный режим [обнаружения объектов](concept-object-detection.md), который использует базу данных тысяч международных логотипов для идентификации коммерческих торговых марок на изображениях или видео. Вы можете использовать эту функцию, например, чтобы узнать, какие торговые марки наиболее популярны в социальных сетях или наиболее распространены при размещении медиа-продуктов.
 
@@ -29,70 +29,52 @@ ms.locfileid: "60203040"
 
 В следующем ответе JSON демонстрируется ответ Компьютерного зрения при обнаружении торговых марок на примерах изображений.
 
-![Серый свитер с надписью и логотипом Майкрософт](./Images/gray-shirt-logo.jpg)
-
-```json
-{
-   "brands":[
-      {
-         "name":"Microsoft",
-         "confidence":0.706,
-         "rectangle":{
-            "x":470,
-            "y":862,
-            "w":338,
-            "h":327
-         }
-      }
-   ],
-   "requestId":"5fda6b40-3f60-4584-bf23-911a0042aa13",
-   "metadata":{
-      "width":2286,
-      "height":1715,
-      "format":"Jpeg"
-   }
-}
-```
-В некоторых случаях средство обнаружения торговых марок определяет изображение логотипа и стилизованное имя торговой марки как два отдельных логотипа.
-
 ![Красная рубашка с надписью и логотипом Майкрософт](./Images/red-shirt-logo.jpg)
 
 ```json
-{
-   "brands":[
-      {
-         "name":"Microsoft",
-         "confidence":0.657,
-         "rectangle":{
-            "x":436,
-            "y":473,
-            "w":568,
-            "h":267
-         }
-      },
-      {
-         "name":"Microsoft",
-         "confidence":0.85,
-         "rectangle":{
-            "x":101,
-            "y":561,
-            "w":273,
-            "h":263
-         }
+"brands":[  
+   {  
+      "name":"Microsoft",
+      "rectangle":{  
+         "x":20,
+         "y":97,
+         "w":62,
+         "h":52
       }
-   ],
-   "requestId":"10dcd2d6-0cf6-4a5e-9733-dc2e4b08ac8d",
-   "metadata":{
-      "width":1286,
-      "height":1715,
-      "format":"Jpeg"
    }
-}
+]
+```
+
+В некоторых случаях средство обнаружения торговых марок определяет изображение логотипа и стилизованное имя торговой марки как два отдельных логотипа.
+
+![Серый свитер с надписью и логотипом Майкрософт](./Images/gray-shirt-logo.jpg)
+
+```json
+"brands":[  
+   {  
+      "name":"Microsoft",
+      "rectangle":{  
+         "x":58,
+         "y":106,
+         "w":55,
+         "h":46
+      }
+   },
+   {  
+      "name":"Microsoft",
+      "rectangle":{  
+         "x":58,
+         "y":86,
+         "w":202,
+         "h":63
+      }
+   }
+]
 ```
 
 ## <a name="use-the-api"></a>Использование API
 
-Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включить `Brands` в **visualFeatures** параметр запроса. Затем, когда вы получаете полный ответ JSON, просто синтаксический анализ строки для содержимого `"brands"` раздел.
+Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Brands` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"brands"` раздела.
 
 * [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
 * [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)

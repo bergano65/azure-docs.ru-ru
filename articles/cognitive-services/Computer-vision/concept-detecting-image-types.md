@@ -1,5 +1,5 @@
 ---
-title: Определение типов изображений. Компьютерное зрение
+title: Обнаружение типа изображения — Компьютерное зрение
 titleSuffix: Azure Cognitive Services
 description: Понятия, связанные с функцией определения типа изображений API компьютерного зрения.
 services: cognitive-services
@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 37cdac16a51a30bdaf1ba0266bab7fdd1f2990f0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e89fd977129113fa88af1acccd6b05f0bbe90243
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368359"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945213"
 ---
 # <a name="detecting-image-types-with-computer-vision"></a>Определение типов изображений с помощью API компьютерного зрения
 
-С помощью [анализ изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) API, компьютерного анализа изображений, тип содержимого, указывающее, является ли изображение картинки или рисования линии.
+С помощью API [анализа изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) компьютерное зрение может анализировать тип содержимого изображений, указывая, является ли изображение картинкой или графиком.
 
 ## <a name="detecting-clip-art"></a>Определение картинки
 
@@ -113,6 +113,6 @@ ms.locfileid: "60368359"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-См. в разделе [анализ изображений](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) справочной документации, чтобы узнать, как определить типы изображений.
+Сведения об обнаружении типов изображений см. в справочной документации по [анализу образа](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) .
