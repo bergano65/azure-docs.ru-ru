@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: ab42ee29e508bfa62e2dba7a6e6a06baa0da2489
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2f67bf0951ef8928297c71e8fc9f924cf05c63f4
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560312"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932693"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
 API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) и [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) версии 2. 

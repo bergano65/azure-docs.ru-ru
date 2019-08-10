@@ -7,16 +7,16 @@ author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: diberry
 ms.service: cognitive-services
-ms.openlocfilehash: 84799c2866e7b887a7b509280b073814e7653638
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: eb90a902b8f7fe8b37b81c2825cbdfc25ef5dc0d
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638207"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932889"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
 
@@ -48,7 +48,7 @@ ms.locfileid: "68638207"
 
 Пример, utterance в намерении, может иметь ошибку прогнозирования намерений между намерениями, в которых в настоящее время находится utterance, и цель прогнозирования, определенная во время обучения. 
 
-Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметры **оценки** неверного и неясного **параметров в сочетании** с параметром **View** в **подробном представлении**. 
+Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметры **оценки** неверного и неясного параметров в сочетании с параметром **View** в **подробном представлении**. 
 
 ![Чтобы найти ошибки прогнозирования utterance и исправить их, используйте параметр фильтра.](./media/luis-how-to-add-intents/find-intent-prediction-errors.png)
 

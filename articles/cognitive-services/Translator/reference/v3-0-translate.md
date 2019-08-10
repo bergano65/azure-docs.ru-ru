@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 2b08ddb4241a9af7aee31bb51d75dd82ff8255d2
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 67d323d5a3574100760c78427db6983f6aff5ac8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839620"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933998"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перевод
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перенести
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -42,10 +42,10 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>from</td>
-    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>Необходимо использовать <code>from</code> параметра, а не автоматическое определение, при использовании <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> функции.</td>
+    <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <code>from</code> <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
   </tr>
   <tr>
-    <td>значение</td>
+    <td>to</td>
     <td><em>Обязательный параметр.</em><br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
   <tr>
@@ -54,7 +54,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>category</td>
-    <td><em>Необязательный параметр.</em><br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавить идентификатор категории из вашего пользовательского Translator <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">данные проекта</a> в этот параметр для использования развернутыми настройки системы. Значение по умолчанию: <code>general</code>.</td>
+    <td><em>Необязательный параметр.</em><br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавьте идентификатор категории из <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">сведений о проекте</a> пользовательского переводчика в этот параметр, чтобы использовать развернутую настроенную систему. Значение по умолчанию: <code>general</code>.</td>
   </tr>
   <tr>
     <td>profanityAction</td>
@@ -114,7 +114,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -201,7 +201,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -213,7 +213,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>
@@ -233,13 +233,9 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
 ```
-
----
 
 Текст ответа:
 
@@ -259,13 +255,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 В этом примере показано, как перевести одно предложение с английского языка на упрощенный китайский. В запросе не указан язык ввода. Вместо этого используется автоматическое определение исходного языка.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
 ```
-
----
 
 Текст ответа:
 
@@ -285,13 +277,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Давайте расширим предыдущий пример, добавив метод транслитерации. В следующем запросе используется китайский текст, написанный латинским алфавитом.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hans&toScript=Latn" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
 ```
-
----
 
 Текст ответа:
 
@@ -316,13 +304,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Одновременный перевод нескольких строк — это просто вопрос задания массива строк в тексте запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
 ```
-
----
 
 Текст ответа:
 
@@ -345,13 +329,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 В этом примере показано, как перевести одинаковый оригинальный текст на несколько языков в одном запросе.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'Hello, what is your name?'}]"
 ```
-
----
 
 Текст ответа:
 
@@ -403,14 +383,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Пример:
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a freaking good idea.'}]"
 ```
-
----
-
 Возвращаемые данные:
 
 ```
@@ -425,13 +400,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Сравнение:
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked&profanityMarker=Tag" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'This is a freaking good idea.'}]"
 ```
-
----
 
 Последний запрос возвращает:
 
@@ -456,13 +427,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Пример запроса приведен ниже.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans&textType=html" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'<div class=\"notranslate\">This will not be translated.</div><div>This will be translated.</div>'}]"
 ```
-
----
 
 Ответ:
 
@@ -480,13 +447,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Чтобы получить сведения о выравнивании, укажите параметр `includeAlignment=true` в строке запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeAlignment=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation.'}]"
 ```
-
----
 
 Ответ:
 
@@ -518,13 +481,9 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 Чтобы получать сведения о длине предложения в исходном тексте и переводе, укажите параметр `includeSentenceLength=true` в строке запроса.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=fr&includeSentenceLength=true" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The answer lies in machine translation. The best machine translation technology cannot always provide translations tailored to a site or users like a human. Simply copy and paste a code snippet anywhere.'}]"
 ```
-
----
 
 Ответ:
 
@@ -552,7 +511,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 <mstrans:dictionary translation=”translation of phrase”>phrase</mstrans:dictionary>
 ```
 
-Например, рассмотрим следующее русское предложение: "Слово "словоматик" — это словарная запись". Чтобы сохранить при переводе слово _словоматик_, необходимо отправить запрос:
+Например, рассмотрим следующее русское предложение: "Слово "словоматик" — это словарная запись". Чтобы сохранить при переводе слово _словоматик_ , необходимо отправить запрос:
 
 ```
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'The word <mstrans:dictionary translation=\"wordomatic\">word or phrase</mstrans:dictionary> is a dictionary entry.'}]"
@@ -571,9 +530,3 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 ```
 
 Эта возможность работает одинаково как с `textType=text`, так и с `textType=html`. Компонент должен использоваться только в случае необходимости. Соответствующий и гораздо лучший способ настройки перевода — это использование концентратора Custom Translator. Custom Translator обеспечивает полное использование контекста и статистические значения вероятности. Если вы имеете или можете позволить себе создавать учебные данные, которые показывают вашу работу или фразу в контексте, вы получите гораздо лучшие результаты. [Узнайте больше о Custom Translator](../customization.md).
- 
-
-
-
-
-

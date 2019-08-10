@@ -7,16 +7,16 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/24/2018
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 0a2040424aa70f30831e214ce0b05d21414ff45c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8c9afa618df468e038c80f72713b12c7f6ee226
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389393"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882290"
 ---
 # <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
@@ -207,6 +207,6 @@ class SearchResults{
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Краткое руководство для C#](quickstarts/csharp.md)
 - [Руководство по одностраничным веб-приложениям](tutorial-bing-image-search-single-page-app.md)

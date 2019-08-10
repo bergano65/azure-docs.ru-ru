@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: b3851b572dedde48540444873590f7a682a4853c
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 184677589b3aa777ec556215455f8018e0d71f3f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595211"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934051"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 
@@ -172,11 +172,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 В следующем примере демонстрируется получение границ для одного предложения. Язык предложения автоматически определяется службой.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'How are you? I am fine. What did you do today?'}]"
 ```
-
----
 

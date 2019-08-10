@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: ef5d812b1e55713f30928582d9aa9e61bba7c7a6
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
-ms.translationtype: HT
+ms.openlocfilehash: 893317b8f46415b1df540d67ebf28b65c5ba6d32
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423543"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883454"
 ---
 # <a name="sending-requests-to-the-bing-spell-check-api"></a>Отправка запросов к API "Проверка орфографии Bing"
 
@@ -121,7 +121,7 @@ BingAPIs-Market: en-US
 }  
 ```  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
 - [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

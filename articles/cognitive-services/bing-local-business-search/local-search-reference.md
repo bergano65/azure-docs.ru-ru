@@ -6,15 +6,15 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 36d87ee9db68c47ee96519cb6b04ff24478427d6
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: 9030d85ff5bc83bb54f4a67a9f319a1670a6c2ad
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423401"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881844"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Справочник по API Bing Local Business Search версии 7
 
@@ -70,7 +70,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 Запрос может включать следующие параметры запроса. В столбце "Обязательно" отмечены обязательные параметры. К параметрам запроса нужно применить кодировку URL.  
   
   
-|Имя|Значение|Тип|Обязательное значение|  
+|Название|Значение|Тип|Обязательное значение|  
 |----------|-----------|----------|--------------|
 |<a name="count" />count|Число возвращаемых результатов, начиная с индекса, заданного `offset` параметром.|Строковое|Нет|   
 |<a name="localCategories" />localCategories|Список параметров, которые определяют поиск по категории бизнеса.  См. [Search categories for the Bing Local Business Search API](local-categories.md) (Поиск категорий для API Bing Local Business Search)|Строковое|Нет|  
@@ -107,7 +107,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="errorresponse"></a>ErrorResponse  
 Объект верхнего уровня, который включается ответ при сбое обработки запроса.  
   
-|Название|Значение|Type|  
+|Название|Значение|Тип|  
 |----------|-----------|----------|  
 |_type|Указание типа.|Строковое|  
 |<a name="errors" />errors|Список ошибок, описывающих причины сбоя запроса.|[Ошибка](#error)[]|  
@@ -126,7 +126,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="link"></a>Ссылка  
 Определяет компоненты гиперссылки.  
   
-|Название|Значение|Type|  
+|Название|Значение|Тип|  
 |----------|-----------|----------|  
 |_type|Указание типа.|Строковое|  
 |text|Отображаемый текст.|Строковое|  
@@ -150,7 +150,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="place"></a>Место  
 Определяет сведения о местных бизнесах, например, ресторан или гостиница.  
   
-|Имя|Значение|Тип|  
+|Название|Значение|Type|  
 |----------|-----------|----------|  
 |_type|Тип указания, которому может быть присвоено одно из следующих имен:<br /><br /><ul><li>Hotel</li><li>LocalBusiness<br /></li><li>Ресторан</ul><li>|Строковое|  
 |адрес|Почтовый адрес расположения сущности.|PostalAddress|  
@@ -164,7 +164,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="querycontext"></a>QueryContext  
 Определяет содержимое запроса, который Bing использует для запроса.  
   
-|Элемент|Описание|Тип|  
+|Элемент|Описание|Type|  
 |-------------|-----------------|----------|  
 |adultIntent|Логическое значение, указывающее, есть ли в указанном запросе содержимое для взрослых. Значение равно **true**, если запрос имеет запрос на содержимое для взрослых, в противном случае — **false**.|логический|  
 |alterationOverrideQuery|Строка запроса для принудительного использования исходной строки в Bing. Например, если строка запроса *saling downwind*, строка запроса переопределения будет *+saling downwind*. Помните, что необходимо закодировать строку запроса, в результате чего будет получена строка *%2Bsaling+downwind*.<br /><br /> Это поле включается, только если исходная строка запроса содержит орфографическую ошибку.|Строковое|  
@@ -174,7 +174,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 
 ### <a name="identifiable"></a>Identifiable
 
-|Имя|Значение|Тип|  
+|Название|Значение|Тип|  
 |-------------|-----------------|----------|
 |id|Идентификатор ресурса|Строковое|
  
@@ -188,7 +188,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="rankingitem"></a>RankingItem
 Определяет элемент в результатах поиска для отображения.
 
-|Имя|Значение|Type|  
+|Название|Значение|Type|  
 |-------------|-----------------|----------|
 |resultIndex|Отсчитываемый от нуля индекс элемента в ответе для отображения. Если в элементе нет этого поля, в ответе могут отобразиться все элементы. Например, можно отобразить все статьи в ответе "Новости".|Целое число|
 |answerType|Ответ, содержащий элемент, который необходимо отобразить. Например, "Новости".<br /><br />Используйте этот тип, чтобы найти ответ в объекте SearchResponse. Тип — это имя поля SearchResponse.<br /><br /> Тем не менее используйте тип ответа, только если этот объект включает поле значения; в противном случае игнорируйте его.|Строковое|

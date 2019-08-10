@@ -8,22 +8,22 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: ce043e23a0384a74fd5d2c9dd514045578ef836d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6e701396191ec8bf66ece0e2858b9f32857e7b17
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563464"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933588"
 ---
 # <a name="prebuilt-domain-reference-for-your-luis-app"></a>Справочник по предварительно созданным доменам для приложения LUIS
 В этом справочнике представлены сведения о [предварительно созданных доменах](luis-how-to-use-prebuilt-domains.md), которые представляют собой предварительно созданные коллекции намерений и сущностей, предлагаемые приложением LUIS.
 
 [Пользовательские домены](luis-how-to-start-new-app.md), напротив, сначала не имеют намерений и моделей. Вы можете добавить любые намерения и сущности предварительно созданных доменов в пользовательскую модель.
 
-# <a name="supported-domains-across-cultures"></a>Поддерживаемые домены в разных культурах
+## <a name="supported-domains-across-cultures"></a>Поддерживаемые домены в разных культурах
 
 Единственным поддерживаемым языком и региональными параметрами является английский. 
 

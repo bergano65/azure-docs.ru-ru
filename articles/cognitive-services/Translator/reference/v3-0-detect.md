@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: ed4a57a791c88ae7df0337a0c1cc74dde14a13d8
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: ba73b75e30639dd3f5cf5523124c926ea3442fa1
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595089"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932021"
 ---
 # <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Обнаружить
 
@@ -176,10 +176,6 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 В следующем примере показано, как получить список языков, поддерживаемых для перевода текста.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/detect?api-version=3.0" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'What language is this text written in?'}]"
 ```
-
----

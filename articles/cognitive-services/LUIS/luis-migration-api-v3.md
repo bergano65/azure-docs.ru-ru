@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: diberry
-ms.openlocfilehash: a61f196a509c3e84b518fffb4eb78f5f7430cb28
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 82285b27822b6c93f8efc24579bb99c308649ac0
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667582"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932671"
 ---
 # <a name="preview-migrate-to-api-version-3x-for-luis-apps"></a>Предварительный просмотр: Переход на API версии 3. x для приложений LUIS
 
@@ -223,7 +223,7 @@ const associatedMetadata = entities.$instance.my_list_entity[item];
 ]
 ```
 
-В v3 сущность ссылается _ролью сущности_, если прогноз предназначен для роли:
+В v3 сущность ссылается _ролью сущности_ , если прогноз предназначен для роли:
 
 ```JSON
 "entities":{

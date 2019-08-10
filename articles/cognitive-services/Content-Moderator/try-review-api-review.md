@@ -7,25 +7,25 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: sajagtap
-ms.openlocfilehash: 581ab488337cfecae3f5dd97610c7f92c75af8b5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ec45f182e24f44c2222d64f18e2aa0aeea845727
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564348"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882345"
 ---
 # <a name="create-human-reviews-rest"></a>Создание пользовательских рецензий (остальное)
 
 [Проверяет](./review-api.md#reviews) хранение и отображение содержимого для оценки человеческим модератором. Когда пользователь завершает проверку, результаты отправляются в указанную конечную точку обратного вызова. В этом руководство вы узнаете, как настроить рецензии с помощью API-интерфейсов API-интерфейса RESTFUL через консоль. Когда вы понимаете структуру интерфейсов API, вы можете легко перенести эти вызовы на любую платформу, совместимую с остальными частями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
-## <a name="create-a-review"></a>Создание рецензии
+## <a name="create-a-review"></a>Создание проверки
 
 Чтобы создать рецензию, перейдите на страницу " **[Проверка-создание](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4)** справочника по API" и нажмите кнопку для своего региона. (это можно найти в URL-адресе конечной точки на странице "Проверка **учетных данных** " [средства проверки](https://contentmoderator.cognitive.microsoft.com/)). Запустится консоль API, где можно легко создавать и выполнять вызовы REST API.
 

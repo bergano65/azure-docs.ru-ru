@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 428756588152ff2c2deb2e3a123bcffc1cb605d7
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
-ms.translationtype: HT
+ms.openlocfilehash: cee4f68b734f0c2bec9fd629986ba7f6559f207e
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68517033"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882442"
 ---
 # <a name="suggesting-query-terms"></a>Предложение терминов запроса
 
@@ -55,6 +55,6 @@ Host: api.cognitive.microsoft.com
 
 Если пользователь выбирает из раскрывающегося списка предложенный запрос, используйте условие запроса из поля `query`, чтобы вызвать раздел [Документация по API Bing для поиска в Интернете](../../bing-web-search/search-the-web.md) и отобразить полученные результаты. Или вы можете использовать URL-адрес из поля `url`, чтобы переадресовать пользователя на страницу результатов поиска Bing.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
