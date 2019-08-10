@@ -211,14 +211,14 @@ ms.locfileid: "66256911"
 
 | Тип данных ABAP в SAP | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| C (строка) | String |
-| I (целое число) | Int32 |
-| F (с плавающей запятой) | Double |
-| D (дата) | String |
-| T (время) | String |
-| P (пакеты данных конфигурации загрузки, валюта, десятичное число, количество) | Decimal |
-| N (числовой символ) | String |
-| X (двоичные и необработанные данные) | String |
+| C (String) | String |
+| I (integer) | Int32 |
+| F (Float) | Double |
+| D (Date) | String |
+| T (Time) | String |
+| P (BCD Packed, Currency, Decimal, Qty) | Decimal |
+| N (Numc) | String |
+| X (Binary and Raw) | String |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
