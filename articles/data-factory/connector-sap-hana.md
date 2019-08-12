@@ -176,7 +176,7 @@ ms.locfileid: "68726001"
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type источника действия копирования необходимо задать значение **сафанасаурце** | Да |
-| запрос | Указывает SQL-запрос для чтения данных из экземпляра SAP HANA. | Да |
+| query | Указывает SQL-запрос для чтения данных из экземпляра SAP HANA. | Да |
 | packetSize | Указывает размер сетевого пакета (в килобайтах) для разбиения данных на несколько блоков. При наличии большого объема данных для копирования увеличение размера пакета может увеличить скорость чтения с SAP HANA в большинстве случаев. При изменении размера пакета рекомендуется использовать тестирование производительности. | Нет.<br>Значение по умолчанию — 2048 (2 МБ). |
 
 **Пример.**
@@ -219,31 +219,31 @@ ms.locfileid: "68726001"
 
 | Тип данных SAP HANA | Тип промежуточных данных фабрики данных |
 | ------------------ | ------------------------------ |
-| ALPHANUM           | Строковое                         |
+| ALPHANUM           | String                         |
 | BIGINT             | Int64                          |
-| ДВОИЧНЫЙ             | Byte[]                         |
-| БИНТЕКСТ            | Строковое                         |
+| BINARY             | Byte[]                         |
+| BINTEXT            | String                         |
 | BLOB               | Byte[]                         |
-| ЛОГИЧЕСКОМ               | Byte                           |
-| CLOB               | Строковое                         |
+| BOOL               | Byte                           |
+| CLOB               | String                         |
 | DATE               | DateTime                       |
-| DECIMAL            | Десятичное                        |
-| Double             | Double                         |
+| DECIMAL            | Decimal                        |
+| DOUBLE             | Double                         |
 | FLOAT              | Double                         |
 | INTEGER            | Int32                          |
-| NCLOB              | Строковое                         |
-| NVARCHAR           | Строковое                         |
-| REAL               | Единое                         |
+| NCLOB              | String                         |
+| NVARCHAR           | String                         |
+| REAL               | Single                         |
 | SECONDDATE         | DateTime                       |
-| ШОРТТЕКСТ          | Строковое                         |
-| SMALLDECIMAL       | Десятичное                        |
+| SHORTTEXT          | String                         |
+| SMALLDECIMAL       | Decimal                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
-| СТПОИНТТИПЕ        | Byte[]                         |
-| TEXT               | Строковое                         |
-| ВРЕМЯ               | TimeSpan                       |
+| STPOINTTYPE        | Byte[]                         |
+| TEXT               | String                         |
+| TIME               | TimeSpan                       |
 | TINYINT            | Byte                           |
-| VARCHAR            | Строковое                         |
+| VARCHAR            | String                         |
 | TIMESTAMP          | DateTime                       |
 | VARBINARY          | Byte[]                         |
 
