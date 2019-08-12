@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Аудит и обнаружение угроз для базы данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure PowerShell для настройки аудита и обнаружения угроз в базе данных SQL Azure.
+title: Использование примера скрипта PowerShell для настройки аудита и Расширенной защиты от угроз для Базы данных SQL Azure | Документация Майкрософт
+description: Использование примера скрипта Azure PowerShell для настройки аудита и Расширенная защита от угроз для Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -9,24 +9,24 @@ ms.devlang: PowerShell
 ms.topic: sample
 author: ronitr
 ms.author: ronitr
-ms.reviewer: carlrab
-ms.date: 03/12/2019
-ms.openlocfilehash: c0293cd8f06a1988d89e9a88d9b03f71f1181765
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.reviewer: carlrab, vanto
+ms.date: 08/05/2019
+ms.openlocfilehash: f9ef894f4c4d1d0ad0ab43b538c984f9cf5b2d01
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570028"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816687"
 ---
-# <a name="use-powershell-to-configure-sql-database-auditing-and-threat-detection"></a>Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell
+# <a name="use-powershell-to-configure-sql-database-auditing-and-advanced-threat-protection"></a>Узнайте, как настроить аудит и Расширенную защита от угроз для Базы данных SQL с помощью PowerShell.
 
-Этот пример сценария Azure PowerShell позволяет настроить аудит и обнаружение угроз для базы данных SQL.
+Этот пример скрипта PowerShell настраивает аудит и Расширенную защита от угроз для Базы данных SQL.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально, вам понадобится AZ PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -51,7 +51,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 | [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает отдельную базу данных или пул эластичных баз данных. |
 | [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount) | Создает учетную запись хранения. |
 | [Set-AzSqlDatabaseAuditing](/powershell/module/az.sql/set-azsqldatabaseauditing) | Задает политику аудита для базы данных. |
-| [Set-AzSqlDatabaseThreatDetectionPolicy](/powershell/module/az.sql/set-azsqldatabasethreatdetectionpolicy) | Задает политику обнаружения угроз для базы данных. |
+| [Set-AzSqlDatabaseThreatDetectionPolicy](/powershell/module/az.sql/set-azsqldatabasethreatdetectionpolicy) | Задает политику Расширенной защиты от угроз для базы данных. |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 

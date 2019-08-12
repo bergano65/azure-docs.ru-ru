@@ -1,5 +1,5 @@
 ---
-title: Разработка в .NET Core и AKS с помощью Azure Dev Spaces и Visual Studio
+title: Отладка и итерация с помощью Visual Studio, .NET Core и Azure Dev Spaces в AKS
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -12,14 +12,14 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: bb23de0dfe2d717ee2e41d69eec211f1fde26687
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: ece47c86fba6bc975a4146f596fa001014352a4f
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707189"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725844"
 ---
-# <a name="quickstart-develop-with-net-core-on-kubernetes-with-azure-dev-spaces-visual-studio"></a>Краткое руководство. Разработка в .NET Core и Kubernetes с помощью Azure Dev Spaces (Visual Studio)
+# <a name="quickstart-debug-and-iterate-with-visual-studio-and-net-core-on-kubernetes-with-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio, .NET Core и Azure Dev Spaces в Kubernetes
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -38,7 +38,7 @@ ms.locfileid: "67707189"
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 1. Выберите *+ Создать ресурс > Служба Kubernetes*. 
-1. Задайте значения в полях _Подписка_, _Группа ресурсов_, _Имя кластера Kubernetes_, _Регион_, _Версия Kubernetes_ и _Префикс DNS-имени_.
+1. Задайте значения в полях _Подписка_ , _Группа ресурсов_ , _Имя кластера Kubernetes_ , _Регион_ , _Версия Kubernetes_ и _Префикс DNS-имени_ .
 
     ![Создание кластера AKS на портале Azure](media/get-started-netcore-visualstudio/create-aks-portal.png)
 

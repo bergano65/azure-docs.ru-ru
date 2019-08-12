@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 29a842f7dfcf720f29fcff80d2e736893c824f5a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 9f7e0e23a04c6b141c6e0c5ff88b3d5ff2d76e1d
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949554"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840430"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -35,7 +35,7 @@ ms.locfileid: "65949554"
 * [учетные данные Azure](https://plugins.jenkins.io/azure-credentials) версии 1.2;
 * [службу приложений Azure](https://plugins.jenkins.io/azure-app-service) версии 0.1.
 
-Подключаемый модуль Jenkins можно использовать для развертывания веб-приложений на всех языках, поддерживаемых веб-приложениями, например C#, PHP, Java и Node.js. В этом руководстве мы используем [простое веб-приложение Java для Azure](https://github.com/azure-devops/javawebappsample). Чтобы создать разветвление репозитория для своей учетной записи GitHub, нажмите кнопку **Fork** (Разветвление) в правом верхнем углу интерфейса GitHub.  
+Подключаемый модуль Jenkins можно использовать для развертывания веб-приложений на всех языках, поддерживаемых веб-приложениями, включая C#, PHP, Python, Java и Node.js. В этом руководстве мы используем [простое веб-приложение Java для Azure](https://github.com/azure-devops/javawebappsample). Чтобы создать разветвление репозитория для своей учетной записи GitHub, нажмите кнопку **Fork** (Разветвление) в правом верхнем углу интерфейса GitHub.  
 
 > [!NOTE]
 > Для создания проекта Java требуются Java JDK и Maven. Установите эти компоненты в главном экземпляре Jenkins или агенте виртуальной машины при его использовании для обеспечения непрерывной интеграции. Если вы развертываете приложение Java SE, на сервере сборки также потребуется развертывание ZIP.

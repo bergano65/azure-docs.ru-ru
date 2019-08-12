@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: 8b89f5572ae94986590fe76096daeb0ad088fe59
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 66a0c625d300a74787e3640992675d5a3f31610c
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668581"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828563"
 ---
 # <a name="tutorial-train-your-first-model"></a>Руководство по Обучение первой модели
 
@@ -111,7 +111,7 @@ for alpha in alphas:
 experiment
 ```
 
-<table style="width:100%"><tr><th>ИМЯ</th><th>Рабочая область</th><th>Страница отчета</th><th>Страница документации</th></tr><tr><td>diabetes-experiment</td><td>имя_вашей_рабочей_области</td><td><a href="" target="_blank" rel="noopener">Ссылка на портал Azure</a></td><td><a href="" target="_blank" rel="noopener">Ссылка на документацию</a></td></tr></table>
+<table style="width:100%"><tr><th>ИМЯ</th><th>Рабочая область</th><th>Страница отчета</th><th>Страница документации</th></tr><tr><td>diabetes-experiment</td><td>имя_вашей_рабочей_области</td><td>Ссылка на портал Azure</td><td>Ссылка на документацию</td></tr></table>
 
 ## <a name="view-training-results-in-portal"></a>Просмотр результатов обучения на портале
 
@@ -181,7 +181,7 @@ best_run.download_file(name="model_alpha_0.1.pkl")
 
 1. Выберите в своей рабочей области **Виртуальные машины записных книжек**.
 
-   ![Остановка работы сервера виртуальной машины](./media/quickstart-run-cloud-notebook/stop-server.png)
+   ![Остановка работы сервера виртуальной машины](./media/tutorial-1st-experiment-sdk-setup/stop-server.png)
 
 1. Выберите пользователя из списка.
 

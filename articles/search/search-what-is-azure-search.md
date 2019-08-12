@@ -1,5 +1,5 @@
 ---
-title: Что такое служба "Поиск Azure" — Поиск Azure
+title: Общие сведения о Поиске Azure
 description: Поиск Azure — это полностью управляемая размещенная облачная служба поиска Майкрософт. Просмотрите описания функций, рабочий процесс разработки, сравнение с другими продуктами для поиска Майкрософт и инструкции по началу работы.
 manager: cgronlun
 author: HeidiSteen
@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 7ba653795791f0e6a2c3d3c73ff574a3ed31f314
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 7a12c9153332e9d6fc70512bc55fe0a53f7c78fc
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485233"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827152"
 ---
 # <a name="what-is-azure-search"></a>Что такое Поиск Azure?
 Поиск Azure — это облачное решение "поиск как услуга", которое предоставляет разработчикам API и средства для реализации расширенных возможностей при работе с конфиденциальным и разнородным содержимым веб-, мобильных и корпоративных приложений. Выполнение запроса осуществляется по пользовательскому индексу.

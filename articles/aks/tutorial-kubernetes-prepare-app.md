@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 2b4ba646a037b2f5561dabf97dee14454c07c573
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 3ff93d006b7599eaa3f97c33efb047ce480c301c
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614230"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740946"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство по Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -34,7 +34,7 @@ ms.locfileid: "67614230"
 
 Для выполнения действий, описанных в этом руководстве, необходимо базовое понимание основных понятий Docker, таких как контейнеры, образы контейнеров и команды `docker`. [Руководство по началу работы с Docker][docker-get-started] содержит базовые сведения о контейнерах.
 
-Для работы с этим руководством требуется локальная среда разработки Docker для выполнения контейнеров Linux. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или Linux[Linux][docker-for-linux].
+Для работы с этим руководством требуется локальная среда разработки Docker для выполнения контейнеров Linux. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
 
 Azure Cloud Shell не включает в себя компоненты Docker, необходимые для выполнения каждого шага этих руководств. Таким образом мы рекомендуем полную среду разработки Docker.
 
@@ -103,7 +103,7 @@ b68fed4b66b6        redis             "docker-entrypoint..."   57 seconds ago   
 docker-compose down
 ```
 
-При удалении локального приложения у вас остается образ Docker, содержащий приложение Azure для голосования, *azure-front-front*, которое используется в следующем руководстве.
+При удалении локального приложения у вас остается образ Docker, содержащий приложение Azure для голосования (*azure-vote-front*), которое используется в следующем руководстве.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

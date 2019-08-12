@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: fe19ea2d8946d645704139bbf2faa80f21e84039
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 4c55d3d92faf854952b609287bb16a30ed1e30ec
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708059"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717472"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
@@ -33,6 +33,8 @@ ms.locfileid: "67708059"
 > * Создание виртуальной машины из пользовательского образа
 > * Получение списка всех образов в подписке
 > * удалять образ.
+
+Мы предлагаем общедоступную предварительную версию службы [построителя образов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview). Просто опишите настройки в шаблоне, и он автоматически выполнит шаги по созданию образа, описанные в этой статье. [Попробуйте построитель образов Azure (предварительная версия)](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

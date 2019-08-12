@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6eb4ce8cbbfec58d9c7980954691fd6c71266d23
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 7eae1c9a42547c73cc42868bac1f1f484b6354fa
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67588040"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717398"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skytap"></a>Руководство по Интеграция Azure Active Directory с приложением Skytap
 
@@ -191,7 +191,7 @@ ms.locfileid: "67588040"
 
 ### <a name="create-skytap-test-user"></a>Создание тестового пользователя Skytap
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Skytap. Обратитесь в  [службу поддержки Skytap](mailto:support@skytap.com), чтобы добавить пользователей на платформу Skytap. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Skytap. Пользователей может создавать любой администратор или диспетчер пользователей с учетной записью Skytap. См. файлы справки Skytap: https://help.skytap.com/users-create.html.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -205,5 +205,5 @@ ms.locfileid: "67588040"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

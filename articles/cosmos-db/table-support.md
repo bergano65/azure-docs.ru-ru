@@ -4,16 +4,16 @@ description: Узнайте, как совместно использовать 
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: overview
-ms.date: 11/15/2017
+ms.date: 08/05/2019
 author: wmengmsft
 ms.author: wmeng
 ms.reviewer: sngun
-ms.openlocfilehash: c7c9caad6c454b90a6d50932450922a03bbc1944
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 71bc5d73a7b5bc83dc1ac835c80ac1b14d5113e9
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604179"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814699"
 ---
 # <a name="developing-with-azure-cosmos-db-table-api-and-azure-table-storage"></a>Разработка с использованием API таблиц Azure Cosmos DB и хранилища таблиц Azure
 
@@ -41,9 +41,9 @@ API таблиц Azure Cosmos DB и хранилище таблиц Azure исп
 Хранилище таблиц Azure содержит следующие пакеты SDK для разработки.
 
 - [Пакет SDK WindowsAzure.Storage .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Эта библиотека позволяет работать с хранилищем службы таблиц.
-- [Пакет SDK для Python](table-sdk-python.md). Пакет SDK таблиц Azure Cosmos DB для Python также поддерживает службу хранилища таблиц.
+- [Пакет SDK для Python](https://github.com/Azure/azure-cosmos-table-python). Пакет SDK таблиц Azure Cosmos DB для Python поддерживает Хранилище таблиц, так как Хранилище таблиц Azure и API таблиц Cosmos DB совместно используют одни и те же функции и компоненты. Поэтому, чтобы упростить разработку, мы рекомендуем использовать именно этот пакет SDK.
 - [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java). Этот пакет SDK хранилища Azure предоставляет клиентскую библиотеку Java для использования хранилища таблиц Azure.
-- [Пакет SDK для Node.js](table-sdk-nodejs.md). Этот пакет SDK содержит пакет Node.js и совместимую клиентскую библиотеку JavaScript для использования службы хранилища таблиц.
+- [Пакет SDK для Node.js](https://github.com/Azure/azure-storage-node). Этот пакет SDK содержит пакет Node.js и совместимую клиентскую библиотеку JavaScript для использования службы хранилища таблиц.
 - [Модуль AzureRmStorageTable PowerShell](https://www.powershellgallery.com/packages/AzureRmStorageTable). Этот модуль PowerShell содержит командлеты для работы с таблицами хранилища.
 - [Клиентская библиотека службы хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/). Эта библиотека позволяет создавать приложения для службы хранилища Azure.
 - [Клиентская библиотека таблиц хранилища Azure для Ruby](https://github.com/azure/azure-storage-ruby/tree/master/table). Этот проект содержит пакет Ruby, который упрощает доступ к службам таблиц хранилища Azure.

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 50056d4d05d2426ff644518aea04a2c9f4d817f3
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
-ms.translationtype: HT
+ms.openlocfilehash: 3aa3176b1d6d9e5665fd3a8988b71159a4fc20c0
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667168"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68735712"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -115,6 +115,15 @@ ms.locfileid: "68667168"
 |Ключ|Образец значения|
 |---|------------|
 |FUNCTIONS\_EXTENSION\_VERSION|~2|
+
+## <a name="functions_worker_process_count"></a>ЧИСЛО\_РАБОЧИХ\_ПРОЦЕССОВФУНКЦИЙ\_
+
+Указывает максимальное количество рабочих процессов на языке и значение `1`по умолчанию. Максимально допустимое значение — `10`. Вызовы функций равномерно распределяются между рабочими процессами языка. Рабочие процессы языка порождаются каждые 10 секунд, пока не будет достигнут Счетчик\_,\_заданный счетчиком рабочих процессов\_функций. Использование нескольких языковых рабочих процессов отличается от [масштабирования](functions-scale.md). Рекомендуется использовать этот параметр, если в рабочей нагрузке есть сочетание вызовов, привязанных к ЦП, и операций ввода-вывода, связанных с вводом-выводом. Этот параметр применяется ко всем non-.NET языкам.
+
+|Ключ|Образец значения|
+|---|------------|
+|ЧИСЛО\_РАБОЧИХ\_ПРОЦЕССОВФУНКЦИЙ\_|2|
+
 
 ## <a name="functions_worker_runtime"></a>FUNCTIONS\_WORKER\_RUNTIME
 

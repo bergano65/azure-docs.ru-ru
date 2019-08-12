@@ -1,5 +1,5 @@
 ---
-title: Скрипт Azure CLI. Масштабирование Базы данных Azure для PostgreSQL
+title: Скрипт Azure CLI. Масштабирование и мониторинг Базы данных Azure для PostgreSQL
 description: Здесь приведен пример скрипта Azure CLI, который масштабирует сервер базы данных Azure для PostgreSQL до нужного уровня производительности после выполнения запроса к метрикам.
 author: rachel-msft
 ms.author: raagyema
@@ -7,16 +7,16 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.custom: mvc
 ms.topic: sample
-ms.date: 04/05/2018
-ms.openlocfilehash: 65958eb1e2d7cc4492e0437b24db77f00ebc7eba
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 08/01/2019
+ms.openlocfilehash: 6e1b6e5b09a3b9f3da5760fc50c531ee524dc8d4
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66154523"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68728773"
 ---
 # <a name="monitor-and-scale-a-single-postgresql-server-using-azure-cli"></a>Мониторинг и масштабирование отдельного сервера PostgreSQL с помощью Azure CLI
-Этот пример скрипта CLI масштабирует отдельный сервер базы данных Azure для PostgreSQL до нужного уровня производительности после выполнения запроса к метрикам. 
+Этот пример скрипта CLI масштабирует вычислительные ресурсы и хранилище для отдельного сервера Базы данных Azure для PostgreSQL после выполнения запроса к метрикам. 
 
 [!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
 
@@ -36,11 +36,12 @@ ms.locfileid: "66154523"
 | **Команда** | **Примечания** |
 |---|---|
 | [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az postgres server create](/cli/azure/postgres/server) | Создает сервер PostgreSQL, на котором размещены базы данных. |
+| [az postgres server create](/cli/azure/postgres/server#az-postgres-server-create) | Создает сервер PostgreSQL, на котором размещены базы данных. |
+| [az postgres server update](/cli/azure/postgres/server#az-postgres-server-update) | Обновляет свойства сервера PostgreSQL. |
 | [az monitor metrics list](/cli/azure/monitor/metrics) | Выводит список значений метрики для ресурсов. |
 | [az group delete](/cli/azure/group) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
+- См. о [вычислительных ресурсах и хранилище Базы данных Azure для PostgreSQL](../concepts-pricing-tiers.md).
 - Дополнительные скрипты — [Примеры Azure CLI для базы данных Azure для PostgreSQL](../sample-scripts-azure-cli.md)
-- Дополнительные сведения о масштабировании см. в статье [Ценовые категории](../concepts-service-tiers.md) службы [База данных Azure для PostgreSQL](../concepts-compute-unit-and-storage.md).
+- См. об [Azure CLI](/cli/azure).

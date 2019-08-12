@@ -1,21 +1,22 @@
 ---
-title: Когнитивный поиск, извлечение данных, обработка естественной речи c помощью искусственного интеллекта в службе "Поиск Azure"
+title: Общие сведения об использовании Когнитивного поиска и обогащения ИИ в Поиске Azure
 description: Извлечение содержимого, обработка естественной речи и изображений для создания доступного для поиска содержимого при индексации в службе "Поиск Azure" с применением когнитивных навыков и алгоритмов искусственного интеллекта.
 manager: cgronlun
 author: HeidiSteen
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: overview
 ms.date: 05/28/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 60a7a141cfcec3beced9e57baddebbc26e753141
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: d1cb0b687b97ce83d47aa0635f8999ced8594226
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672156"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841326"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 

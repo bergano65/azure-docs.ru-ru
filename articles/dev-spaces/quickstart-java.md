@@ -1,5 +1,5 @@
 ---
-title: Разработка с помощью Java в Kubernetes с использованием Azure Dev Spaces
+title: Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -10,14 +10,14 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Java в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: b3e199f38f6f57cf10991f7e03757b8b603f74ad
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 146812a5553643d3cbe3b308d6b7d7bed1e66dad
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706863"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725859"
 ---
-# <a name="quickstart-develop-with-java-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Разработка с помощью Java в Kubernetes с использованием Azure Dev Spaces
+# <a name="quickstart-debug-and-iterate-with-visual-studio-code-and-java-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -79,7 +79,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и щелкните *Открыть*.
 
-Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки сгенерируйте активные диаграммы Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
+Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки создайте ресурсы диаграмм Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
 
 Чтобы открыть палитру команд в Visual Studio Code, щелкните *Представление*, а затем — *Палитра команд*. Начните вводить `Azure Dev Spaces` и щелкните `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
 

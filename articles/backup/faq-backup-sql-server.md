@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы о резервном копировании баз данных SQL Server на виртуальных машинах Azure с помощью Azure Backup
+title: Часто задаваемые вопросы. Резервное копирование SQL Server баз данных на виртуальных машинах Azure с помощью Azure Backup
 description: Найдите ответы на часто задаваемые вопросы о резервном копировании SQL Server баз данных на виртуальных машинах Azure с Azure Backup.
 ms.reviewer: vijayts
 author: dcurwin
@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: dacurwin
-ms.openlocfilehash: 23dda22a8350591d5cf87cefc1a2f15fd90f17c7
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
-ms.translationtype: HT
+ms.openlocfilehash: a600c50e97f0d069443112a59d529c0d6f6fecad
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688850"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737064"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 

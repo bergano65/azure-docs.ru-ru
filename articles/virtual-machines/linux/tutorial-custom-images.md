@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 080d1d68c2f2fb757bb51471b91a807b2f00fa2d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7fade5e73d7c571cea46c91cb952b590aca4b3c2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709526"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780311"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -51,6 +51,9 @@ ms.locfileid: "67709526"
 ### <a name="deprovision-the-vm"></a>Отзыв виртуальной машины 
 
 Отзыв обобщает виртуальную машину, удаляя относящиеся к ней сведения. Такое обобщение позволяет развернуть множество виртуальных машин из одного образа. Во время отзыва имя узла сбрасывается и принимает значение *localhost.localdomain*. Ключи узла SSH, конфигурации сервера доменных имен, пароль учетной записи root и кэшированные аренды DHCP также удаляются.
+
+> [!WARNING]
+> Если для виртуальной машины отменена подготовка, а сама она отмечена как универсальная, исходную виртуальную машину нельзя будет использовать и перезапустить. 
 
 Чтобы отозвать виртуальную машину, используйте агент виртуальной машины Azure (waagent). Агент виртуальной машины Azure устанавливается на виртуальной машине и управляет подготовкой и взаимодействием с контроллером структуры Azure. Дополнительные сведения см. в [руководстве пользователя агента Linux Azure](../extensions/agent-linux.md).
 

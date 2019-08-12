@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: cb2ca7229524cf8d84041140129c7b9ca6876ea3
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 87216317a965e85d83aede468163f43b1716c45a
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417806"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827234"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
 
@@ -55,7 +55,7 @@ ms.locfileid: "66417806"
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
 1. На портале Azure щелкните **+Создать ресурс**, а затем в Marketplace выполните поиск **Recovery**.
-2. Щелкните **Backup and Site Recovery (OMS)** и на соответствующей странице нажмите кнопку **Создать**. 
+2. Выберите **Backup и Site Recovery** и на соответствующей странице и щелкните **Создать**. 
 1. В поле **Хранилище служб восстановления** > **Имя** введите понятное имя для идентификации хранилища. В этой серии руководств используется имя **ContosoVMVault**.
 2. В разделе **Группа ресурсов** создайте группу ресурсов или выберите имеющуюся. При работе с этим руководством используется **contosoRG**.
 3. В поле **Расположение** выберите регион, в котором будет размещаться хранилище. выбираем значение **Западная Европа**.
@@ -79,7 +79,7 @@ ms.locfileid: "66417806"
 8. Мы сохраняем значения по умолчанию: базовые средства защиты от атак DDoS и отсутствие конечной точки службы в сети.
 9. Нажмите кнопку **Создать**.
 
-   ![Создать виртуальную сеть](media/tutorial-prepare-azure/create-network.png)
+   ![Создание виртуальной сети](media/tutorial-prepare-azure/create-network.png)
 
 Создание виртуальной сети занимает несколько секунд. После завершения этого процесса она отобразится на панели мониторинга портала Azure.
 

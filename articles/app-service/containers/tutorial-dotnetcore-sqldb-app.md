@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 03/27/2019
+ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 4837867188721b13b3f4cb64245ae85a1e32fe50
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: a4774431b6a6e37ee9e175e161813936a71cdee9
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67656622"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824708"
 ---
 # <a name="build-an-aspnet-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание веб-приложения ASP.NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
@@ -78,7 +78,7 @@ dotnet ef database update
 dotnet run
 ```
 
-Откройте браузер и перейдите по адресу `http://localhost:5000`. Щелкните ссылку **Создать**, чтобы создать несколько элементов _списка дел_.
+Откройте браузер и перейдите по адресу `http://localhost:5000`. Щелкните ссылку **Создать**, чтобы создать несколько элементов _списка дел_ .
 
 ![Успешное подключение к базе данных SQL](./media/tutorial-dotnetcore-sqldb-app/local-app-in-browser.png)
 
@@ -132,7 +132,7 @@ az sql server create --name <server-name> --resource-group myResourceGroup --loc
 Создайте [правило брандмауэра уровня сервера Базы данных SQL Azure](../../sql-database/sql-database-firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
 
 ```azurecli-interactive
-az sql server firewall-rule create --resource-group myResourceGroup --server <server-name> --name AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
+az sql server firewall-rule create --resource-group myResourceGroup --server <server-name> --name AllowAzureIps --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
 ### <a name="create-a-database"></a>Создание базы данных
@@ -169,7 +169,7 @@ Server=tcp:<server-name>.database.windows.net,1433;Database=coreDB;User ID=<db-u
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-dotnetcore-linux-no-h.md)] 
 
-### <a name="configure-an-environment-variable"></a>Настройка переменной среды
+### <a name="configure-connection-string"></a>Настройка строки подключения
 
 Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app-name>* . Также замените *\<connection-string>* строкой подключения, созданной ранее.
 
@@ -177,13 +177,21 @@ Server=tcp:<server-name>.database.windows.net,1433;Database=coreDB;User ID=<db-u
 az webapp config connection-string set --resource-group myResourceGroup --name <app name> --settings MyDbConnection='<connection-string>' --connection-string-type SQLServer
 ```
 
-Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_. Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а база данных SQL — для среды Azure.
+В ASP.NET Core можно использовать эту именованную строку подключения (`MyDbConnection`) со стандартным шаблоном, как и любую строку подключения, указанную в файле *appsettings.json*. В этом случае `MyDbConnection` также определяется в файле *appsettings.json*. Если вы работаете в Службе приложений, определенная в ней строка подключения имеет приоритет над строкой подключения, определенной в файле *appsettings.json*. Код использует значение, указанное в файле *appsettings.json*, во время локальной разработки, и тот же код использует значение Службы приложений при развертывании.
+
+Сведения о том, как в коде указывается ссылка на строку подключения, см. в разделе о [подключении к Базе данных SQL в рабочей среде](#connect-to-sql-database-in-production).
+
+### <a name="configure-environment-variable"></a>Настройка переменной среды
+
+Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_ . Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а База данных SQL — для среды Azure.
 
 В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app-name>* .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
 ```
+
+Сведения о том, как в коде указывается ссылка на переменную среды, см. в разделе о [подключении к Базе данных SQL в рабочей среде](#connect-to-sql-database-in-production).
 
 ### <a name="connect-to-sql-database-in-production"></a>Подключение к базе данных SQL в рабочей среде
 
@@ -209,7 +217,7 @@ else
 services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
 ```
 
-Если в коде определено использование рабочей среды (то есть среды Azure), в нем используется строка подключения, настроенная для подключения к базе данных SQL. См. подробнее о [доступе к переменным среды в Службе приложений](configure-language-dotnetcore.md#access-environment-variables).
+Если этот код определяет, что он выполняется в рабочей среде (что указывает на среду Azure), он использует строку подключения, настроенную для подключения к Базе данных SQL. См. подробнее о [доступе к переменным среды в Службе приложений](configure-language-dotnetcore.md#access-environment-variables).
 
 Вызов `Database.Migrate()` полезен при выполнении в среде Azure, так как он позволяет автоматически создавать базы данных, необходимые для приложения .NET Core, в зависимости от конфигурации миграции.
 
@@ -294,7 +302,7 @@ dotnet ef database update
 
 Внесите некоторые изменения в код, чтобы использовалось свойство `Done`. Для простоты мы изменим только представления `Index` и `Create`, чтобы просмотреть свойство в действии.
 
-Откройте файл _Controllers\TodosController.cs_.
+Откройте файл _Controllers\TodosController.cs_ .
 
 Найдите метод `Create()` и добавьте `Done` в список свойств атрибута `Bind`. Когда все будет готово, сигнатура метода `Create()` должна выглядеть следующим образом:
 
@@ -302,7 +310,7 @@ dotnet ef database update
 public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")] Todo todo)
 ```
 
-Откройте файл _Views\Todos\Create.cshtml_.
+Откройте файл _Views\Todos\Create.cshtml_ .
 
 В коде Razor вы должны увидеть элемент `<div class="form-group">` для `Description` и еще один элемент `<div class="form-group">` для `CreatedDate`. Сразу после этих двух элементов добавьте еще один элемент `<div class="form-group">` для `Done`:
 
@@ -316,7 +324,7 @@ public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")
 </div>
 ```
 
-Откройте файл _Views\Todos\Index.cshtml_.
+Откройте файл _Views\Todos\Index.cshtml_ .
 
 Найдите пустой элемент `<th></th>`. Добавьте следующий код Razor над этим элементом:
 
@@ -358,7 +366,7 @@ git push azure master
 
 ![Приложение Azure после включения Code First Migration](./media/tutorial-dotnetcore-sqldb-app/this-one-is-done.png)
 
-Все имеющиеся элементы списка дел по-прежнему отображаются. При повторной публикации приложения .NET Core существующие данные в базе данных SQL не теряются. Кроме того, Entity Framework Core Migrations изменяет только схему данных, оставляя существующие данные нетронутыми.
+Все имеющиеся элементы списка дел по-прежнему отображаются. При повторной публикации приложения .NET Core существующие данные в Базе данных SQL не теряются. Кроме того, Entity Framework Core Migrations изменяет только схему данных, оставляя существующие данные нетронутыми.
 
 ## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 

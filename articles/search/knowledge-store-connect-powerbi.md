@@ -4,16 +4,17 @@ description: Узнайте, как создать хранилище знани
 author: heidisteen
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: tutorial
 ms.date: 07/30/2019
 ms.author: heidist
-ms.openlocfilehash: 04b04e8080590aa6e9fe1c17369e83fa5bb6b894
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 518a96ae8ace5c9630d594fe70487635b6ec1d2c
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668228"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840841"
 ---
 # <a name="create-an-azure-search-knowledge-store-and-connect-using-power-bi"></a>Создание хранилища знаний Поиска Azure и подключение к нему с помощью Power BI
 
@@ -156,7 +157,7 @@ ms.locfileid: "68668228"
 
 1. Щелкните **Закрыть и применить** в левом углу на панели команд Power Query.
 
-1. Убедитесь, что Power BI распознает связи, созданные в данных хранилищем знаний. Щелкните плитку связей на панели навигации слева. Все три таблицы должны быть связаны.
+1. Убедитесь, что Power BI распознает связи, созданные в данных хранилищем знаний. Щелкните плитку связей на панели навигации слева. Все три таблицы должны быть связаны. Измените связи и убедитесь, что настроена двухсторонняя перекрестная фильтрация. Это обеспечит обновление всех визуальных элементов при применении фильтра.
 
    ![Проверка связей](media/knowledge-store-howto-powerbi/powerbi-relationships.png "Проверка связей")
 

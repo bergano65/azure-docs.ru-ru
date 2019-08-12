@@ -9,12 +9,12 @@ ms.date: 07/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 921528c50bae03b67800bf3ccab8b5cd9bb704f6
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 4c81daa1f55167fa868c69f3bff388dbaa4887cd
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677753"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725744"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство по Создание среды службы "Аналитика временных рядов Azure"
 
@@ -34,7 +34,7 @@ ms.locfileid: "68677753"
 
 * Ваша учетная запись Azure должна быть участником роли **Владелец** для подписки. Дополнительные сведения см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="video"></a>Видео
+## <a name="review-video"></a>Просмотр видео
 
 ### <a name="learn-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-and-get-started-with-time-series-insights-br"></a>Узнайте, как с помощью акселератора решений Интернета вещей Azure создать данные и приступить к работе с Аналитикой временных рядов. </br>
 
@@ -116,7 +116,7 @@ ms.locfileid: "68677753"
 
    [![Успешное развертывание среды Аналитики временных рядов](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png#lightbox)
 
-## <a name="run-device-simulation-to-stream-data"></a>Выполнение имитации устройства для потоковой передачи данных
+## <a name="run-device-simulation"></a>Запуск имитации устройства
 
 Теперь, когда развертывание и начальная настройка завершены, заполните среду Аналитики временных рядов примерами данных из [имитированных устройств, созданных акселератором](#create-a-device-simulation).
 

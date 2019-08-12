@@ -1,6 +1,6 @@
 ---
 title: Безопасное подключение к Базе данных SQL с использованием управляемого удостоверения — Служба приложений Azure | Документация Майкрософт
-description: Узнайте, как сделать подключение к базе данных более безопасным с использованием управляемого удостоверения, а также как применить это к другим службам Azure.
+description: Сведения об обеспечении безопасного подключения данных с использованием управляемого удостоверения, а также о применении этого к другим службам Azure.
 services: app-service\web
 documentationcenter: dotnet
 author: cephalin
@@ -11,25 +11,33 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 06/21/2019
+ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 31535642526c608ad0ae29e5c0e3c93368e184ad
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 2cf5e0f6da52670d383a1d1508dc7bcc7847831f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481016"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824551"
 ---
-# <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
+# <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
-[Служба приложений](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](overview-managed-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с [руководством по созданию приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
+[Служба приложений](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](overview-managed-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения, которое вы создали при работе с одним из следующих руководств: 
+
+- [Руководство. Создание приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
+- [Руководство. Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md)
+
+Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
 
 > [!NOTE]
-> Этот сценарий сейчас поддерживается только в .NET Framework версии 4.7.2 и новее. [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) поддерживает этот сценарий, но без включения в стандартные образы в Службе приложений. 
+> Шаги, описанные в этом руководстве, поддерживаются в следующих версиях:
+> 
+> - .NET Framework 4.7.2 и выше;
+> - .NET Core 2.2 и выше.
 >
 
-Вы узнаете, как выполнять следующие задачи:
+Освещаются следующие темы:
 
 > [!div class="checklist"]
 > * Включение управляемых удостоверений
@@ -44,9 +52,9 @@ ms.locfileid: "67481016"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Эта статья является продолжением статьи [Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Если вы еще этого не сделали, сначала ознакомьтесь с этим руководством. Кроме того, вы можете адаптировать шаги для своего собственного приложения ASP.NET с базой данных SQL.
+Эта статья является продолжением статьи [Руководство. Создание приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) или [Руководство по созданию приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md). Если вы еще не ознакомились с этими руководствами, сначала изучите одно из них. Кроме того, вы можете адаптировать шаги для своего собственного приложения .NET с Базой данных SQL.
 
-Чтобы отладить приложение, используя базу данных SQL в качестве серверного компонента, убедитесь, что вы [разрешили клиентские подключения со своего компьютера](app-service-web-tutorial-dotnet-sqldatabase.md#allow-client-connection-from-your-computer).
+Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../sql-database/sql-database-firewall-configure.md#manage-server-level-ip-firewall-rules-using-the-azure-portal).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -79,12 +87,19 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 
 Теперь вы готовы разрабатывать и отлаживать свое приложение с базой данных SQL в качестве серверной части, используя аутентификацию Azure AD.
 
-## <a name="modify-aspnet-project"></a>Изменение проекта ASP.NET
+## <a name="modify-your-project"></a>Изменение проекта
+
+Действия, которые необходимо выполнить для настройки проекта, зависят от типа самого проекта: ASP.NET или ASP.NET Core.
+
+- [Изменение ASP.NET](#modify-aspnet)
+- [Изменение ASP.NET Core](#modify-aspnet-core)
+
+### <a name="modify-aspnet"></a>Изменение ASP.NET
 
 В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.2.0
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
 ```
 
 Работая в верхней части файла в *Web.config*, внесите следующие изменения:
@@ -107,7 +122,57 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.2.0
 
 - Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и  _\<db-name>_ на имя вашего сервера и имя базы данных.
 
-Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных. Позже, когда вы развернете свои изменения в службе приложений, те же настройки будут работать с соединением удостоверения приложения.
+Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
+
+Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных из Visual Studio.
+
+### <a name="modify-aspnet-core"></a>Изменение ASP.NET Core
+
+В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
+
+```powershell
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
+```
+
+В [руководстве по созданию приложения ASP.NET Core и Базы данных SQL](app-service-web-tutorial-dotnetcore-sqldb.md) строка подключения `MyDbConnection` вообще не применяется, так как локальная среда разработки использует файл базы данных Sqlite, а производственная среда Azure — строку подключения из Службы приложений. При проверке подлинности Active Directory обе среды должны использовать одну и ту же строку подключения. В файле *appsettings.json* замените значение строки подключения `MyDbConnection` на следующий фрагмент кода:
+
+```json
+"Server=tcp:<server-name>.database.windows.net,1433;Database=<database-name>;"
+```
+
+В файле *Startup.cs* удалите фрагмент кода, который вы добавили ранее:
+
+```csharp
+// Use SQL Database if in Azure, otherwise, use SQLite
+if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+    services.AddDbContext<MyDatabaseContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+else
+    services.AddDbContext<MyDatabaseContext>(options =>
+            options.UseSqlite("Data Source=localdatabase.db"));
+
+// Automatically perform database migration
+services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
+```
+
+Замените его следующим кодом:
+
+```csharp
+services.AddDbContext<MyDatabaseContext>(options => {
+    options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection"));
+});
+```
+
+Затем предоставьте контекст базы данных Entity Framework с маркером доступа для Базы данных SQL. В файле *Data \ MyDatabaseContext.cs* добавьте следующий код в фигурные скобки пустого конструктора `MyDatabaseContext (DbContextOptions<MyDatabaseContext> options)`:
+
+```csharp
+var conn = (System.Data.SqlClient.SqlConnection)Database.GetDbConnection();
+conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net/").Result;
+```
+
+Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
+
+Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных из Visual Studio.
 
 ## <a name="use-managed-identity-connectivity"></a>Использование соединения управляемого удостоверения
 
@@ -134,7 +199,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 
 ### <a name="add-managed-identity-to-an-azure-ad-group"></a>Добавление управляемого удостоверения в группу Azure AD
 
-Чтобы предоставить идентификацию и доступ к базе данных SQL, необходимо добавить его в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). В Cloud Shell добавьте его в новую группу с именем _myAzureSQLDBAccessGroup_, показанную в следующем сценарии:
+Чтобы предоставить идентификацию и доступ к базе данных SQL, необходимо добавить его в [группу Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). В Cloud Shell добавьте его в новую группу с именем _myAzureSQLDBAccessGroup_ , показанную в следующем сценарии:
 
 ```azurecli-interactive
 groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
@@ -167,7 +232,7 @@ GO
 
 ### <a name="modify-connection-string"></a>Изменение строки подключения
 
-Помните, что те же изменения, которые вы внесли в `Web.config`, работают с управляемым удостоверением, поэтому единственное, что нужно сделать, — это удалить существующую строку подключения в вашем приложении, которую было создано Visual Studio во время первого развертывая вашего приложения. Используйте в следующих командах, но замените *\<app-name>* именем вашего приложения.
+Помните, что те же изменения, которые вы внесли в файл *Web.config* или *appsettings.json*, работают с управляемым удостоверением, поэтому единственное, что нужно сделать, — это удалить существующую строку подключения в Службе приложений, которую было создано Visual Studio во время первого развертывая вашего приложения. Используйте в следующих командах, но замените *\<app-name>* именем вашего приложения.
 
 ```azurecli-interactive
 az webapp config connection-string delete --resource-group myResourceGroup --name <app-name> --setting-names MyDbConnection
@@ -177,11 +242,20 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 Теперь требуется опубликовать изменения в Azure.
 
-В **обозревателе решений** щелкните правой кнопкой мыши проект **DotNetAppSqlDb** и выберите **Опубликовать**.
+**Если ранее вы изучали [руководство по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)** , опубликуйте изменения в Visual Studio. В **обозревателе решений** щелкните правой кнопкой мыши проект **DotNetAppSqlDb** и выберите **Опубликовать**.
 
 ![Публикация в обозревателе решений](./media/app-service-web-tutorial-dotnet-sqldatabase/solution-explorer-publish.png)
 
-На странице публикации щелкните **Опубликовать**. Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.
+На странице публикации щелкните **Опубликовать**. 
+
+**Если ранее вы изучали [руководство по созданию приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md)** , опубликуйте свои изменения с помощью Git, выполнив следующие команды:
+
+```bash
+git commit -am "configure managed identity"
+git push azure master
+```
+
+Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.
 
 ![Приложение Azure после включения Code First Migration](./media/app-service-web-tutorial-dotnet-sqldatabase/this-one-is-done.png)
 

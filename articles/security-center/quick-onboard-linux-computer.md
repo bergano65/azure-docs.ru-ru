@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
 ms.author: rkarlin
-ms.openlocfilehash: 9f4e001909fb739aa368e5201649e85cce9906d3
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 110dcb1531390b207ae741af07fe0ad18964aae1
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521926"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816138"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Краткое руководство. Подключение компьютеров Linux к Центру безопасности Azure
-После подключения подписок Azure можно включить центр безопасности для ресурсов под управлением Linux, работающих вне среды Azure, например в локальной среде или в других облаках, подготовив агент Linux.
+Когда вы подключите подписки Azure, можно включить Центр безопасности для ресурсов Linux, работающих за пределами среды Azure (например, в локальной среде или других облаках), подготовив агент Linux. Агент называется Microsoft Monitoring Agent (MMA) или агент OMS.
 
-В этом кратком руководстве показано, как установить агент Linux на компьютер под управлением Linux.
+В этом кратком руководстве описано, как установить агент на компьютер Linux.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для начала работы с Центром безопасности необходима подписка Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
@@ -57,7 +57,7 @@ ms.locfileid: "59521926"
 
    ![Установка агента.][5]
 
-Журналы агента Центра безопасности для Linux можно найти здесь: */var/opt/microsoft/omsagent/\<ИД_рабочей_области>/log/*
+Журналы для агента можно найти здесь: */var/opt/microsoft/omsagent/\<ИД_рабочей_области>/log/* .
 
   ![Журналы агента][6]
 
@@ -85,7 +85,7 @@ ms.locfileid: "59521926"
 В этом кратком руководстве вы подготовили агент на компьютере Linux. Дополнительные сведения об использовании центра безопасности см. в руководстве по настройке политики безопасности и оценке безопасности ресурсов.
 
 > [!div class="nextstepaction"]
-> [Руководство Определение и оценка политик безопасности](tutorial-security-policy.md)
+> [Руководство. Определение и оценка политик безопасности](tutorial-security-policy.md)
 
 <!--Image references-->
 [1]: ./media/quick-onboard-linux-computer/portal.png

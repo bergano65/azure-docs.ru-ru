@@ -7,16 +7,16 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
-ms.date: 11/28/2018
-ms.openlocfilehash: 3fed332846c835106cbd2b8876d93aff1a97b0a3
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.date: 08/01/2019
+ms.openlocfilehash: 99f85abe0c8f08bedb3e9808d2b740d4b7842257
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275008"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720360"
 ---
 # <a name="monitor-and-scale-an-azure-database-for-mariadb-server-using-azure-cli"></a>Мониторинг и масштабирование сервера Базы данных Azure для MariaDB с помощью Azure CLI
-Этот пример скрипта CLI масштабирует отдельный сервер Базы данных Azure для MariaDB до нужного уровня производительности после выполнения запроса к метрикам.
+Этот пример скрипта CLI масштабирует вычислительные ресурсы и хранилище для отдельного сервера Базы данных Azure для MariaDB после выполнения запроса к метрикам.
 
 [!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
 
@@ -37,10 +37,11 @@ ms.locfileid: "67275008"
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az mariadb server create](/cli/azure/mariadb/server#az-mariadb-server-create) | Создает сервер MariaDB, на котором размещены базы данных. |
+| [az mariadb server update](/cli/azure/mariadb/server#az-mariadb-server-update) | Обновляет свойства сервера MariaDB. |
 | [az monitor metrics list](/cli/azure/monitor/metrics#az-monitor-metrics-list) | Выводит список значений метрики для ресурсов. |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать дополнительные сценарии: [Примеры Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md)
-- Дополнительные сведения о масштабировании см. в статье о [ценовых категориях] (../concepts-pricing-tiers.md.
+- См. о [вычислительных ресурсах и хранилище Базы данных Azure для MariaDB](../concepts-pricing-tiers.md).
+- Дополнительные скрипты — [Примеры Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md)
+- См. об [Azure CLI](/cli/azure).

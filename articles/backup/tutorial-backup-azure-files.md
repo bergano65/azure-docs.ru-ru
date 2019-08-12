@@ -7,15 +7,15 @@ ms.date: 06/10/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: a06504438340f62d5b338165cb8b159459ae35dc
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: e63ad75effb03cf9dd5eb5c66b142cce629ea290
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467074"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736234"
 ---
-# <a name="back-up-azure-file-shares"></a>Резервное копирование файловых ресурсов Azure
-В этой статье описывается, как с помощью портала Azure создавать резервные копии и восстанавливать [файловые ресурсы Azure](../storage/files/storage-files-introduction.md).
+# <a name="back-up-azure-file-shares-in-the-azure-portal"></a>Резервное копирование общих папок Azure на портале Azure
+В этом руководстве описано, как с помощью портала Azure создавать резервные копии [файловых ресурсов Azure](../storage/files/storage-files-introduction.md).
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 > [!div class="checklist"]

@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 16c32fc14805ac8ae1412671b2bb400456b4ab7d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 4d03e5ee5faf39425e1bf927a3c0557b0ad01b82
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603643"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840104"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство по Создание и развертывание пользовательских модулей IoT Edge
 
@@ -92,11 +92,11 @@ ms.locfileid: "67603643"
        }
        ```
 
-     * **Модули**. Этот раздел содержит набор определяемых пользователем модулей, которые входят в это решение. Сейчас в нем определены два модуля: tempSensor и turbofanRulClassifier. TempSensor устанавливается из шаблона Visual Studio Code, но для этого решения он нам не нужен. Определение модуля tempSensor можно удалить из раздела модулей. Обратите внимание, что определение модуля turbofanRulClassifier указывает на образ, размещенный в реестре контейнеров. Здесь же будут появляться новые модули, которые мы постепенно добавим в решение.
+     * **Модули**. Этот раздел содержит набор определяемых пользователем модулей, которые входят в это решение. Сейчас в нем определены два модуля: SimulatedTemperatureSensor и turbofanRulClassifier. SimulatedTemperatureSensor устанавливается из шаблона Visual Studio Code, но для этого решения он не нужен. Определение модуля SimulatedTemperatureSensor можно удалить из раздела модулей. Обратите внимание, что определение модуля turbofanRulClassifier указывает на образ, размещенный в реестре контейнеров. Здесь же будут появляться новые модули, которые мы постепенно добавим в решение.
 
        ```json
        "modules": {
-         "tempSensor": {
+         "SimulatedTemperatureSensor": {
            "version": "1.0",
            "type": "docker",
            "status": "running",
@@ -119,7 +119,7 @@ ms.locfileid: "67603643"
        }
        ```
 
-     * **Маршруты**. В этом руководстве мы будем много работать с маршрутами. Они определяют, как взаимодействуют между собой модули. Два маршрута, определенные шаблоном, не подходят для наших задач. Первый маршрут отправляет все выходные данные из классификатора в Центр Интернета вещей ($upstream). Второй предназначен для tempSensor, который мы только что удалили. Удалите оба эти маршрута.
+     * **Маршруты**. В этом руководстве мы будем много работать с маршрутами. Они определяют, как взаимодействуют между собой модули. Два маршрута, определенные шаблоном, не подходят для наших задач. Первый маршрут отправляет все выходные данные из классификатора в Центр Интернета вещей ($upstream). Второй предназначен для SimulatedTemperatureSensor, который мы только что удалили. Удалите оба эти маршрута.
 
        ```json
        "$edgeHub": {
@@ -127,7 +127,7 @@ ms.locfileid: "67603643"
            "schemaVersion": "1.0",
            "routes": {
              "turbofanRulClassifierToIoTHub": "FROM /messages/modules/turbofanRulClassifier/outputs/\* INTO $upstream",
-             "sensorToturbofanRulClassifier": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\\"/modules/turbofanRulClassifier/inputs/input1\\")"
+             "sensorToturbofanRulClassifier": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\\"/modules/turbofanRulClassifier/inputs/input1\\")"
            },
            "storeAndForwardConfiguration": {
              "timeToLiveSecs": 7200

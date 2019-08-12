@@ -1,372 +1,136 @@
 ---
-title: Отправка транзакций с помощью службы "Блокчейн Azure"
-description: Узнайте, как использовать службу "Блокчейн Azure" для развертывания смарт-контрактов и отправки частных транзакций.
+title: Использование смарт-контрактов в службе "Блокчейн Azure"
+description: Руководство по использованию службы "Блокчейн Azure" для развертывания смарт-контракта и выполнения функции путем транзакции.
 services: azure-blockchain
-keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/29/2019
+ms.date: 07/31/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
-ms.reviewer: jackyhsu
-manager: femila
-ms.openlocfilehash: 3cfbbdc5b95d1607738b132980320d2ff7c99788
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.reviewer: chrisseg
+ms.openlocfilehash: 1843bd66e11a6686c9ae81fb8e30c7b030e889b7
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698383"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705135"
 ---
-# <a name="tutorial-send-transactions-using-azure-blockchain-service"></a>Руководство по Отправка транзакций с помощью службы "Блокчейн Azure"
+# <a name="tutorial-use-smart-contracts-on-azure-blockchain-service"></a>Руководство по Использование смарт-контрактов в службе "Блокчейн Azure"
 
-В этом руководстве описано, как создать узлы транзакций для тестирования конфиденциальности контракта и транзакций.  Вы воспользуетесь решением Truffle для создания локальной среды разработки, развертывания смарт-контракта и отправки частной транзакции.
+В этом руководстве описано, как использовать комплект SDK службы "Блокчейн Azure" для Ethereum, чтобы создать и развернуть смарт-контракт, а затем выполнить функцию смарт-контракта путем совершения транзакции в сети блокчейн-консорциума.
 
-Вы узнаете, как:
+С помощью комплекта SDK службы "Блокчейн Azure" для Ethereum выполняются такие задачи:
 
 > [!div class="checklist"]
-> * добавить узлы транзакций;
-> * использовать Truffle для развертывания смарт-контрактов;
-> * отправлять транзакции;
-> * проверять конфиденциальность транзакций.
+> * подключение к участнику блокчейн-консорциума службы "Блокчейн Azure";
+> * создание смарт-контракта;
+> * развертывание смарт-контракта;
+> * выполнение функции смарт-контракта путем транзакции;
+> * запрос состояния контракта.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* См. подробнее о [создании участника блокчейна на портале Azure](create-member.md).
-* См. подробнее об [использовании Truffle для подключения к сети консорциума](connect-truffle.md).
-* Установите [Truffle](https://github.com/trufflesuite/truffle). Для работы с Truffle нужно установить несколько инструментов, включая [Node.js](https://nodejs.org) и [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-* Установите [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Python требуется для Web3.
-* Установите [Visual Studio Code](https://code.visualstudio.com/Download).
-* Установите [расширение Solidity для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity).
+* См. подробнее об [использовании созданию участника блокчейна на портале Azure](create-member.md) и [руководство по созданию участника блокчейна службы "Блокчейн Azure" с помощью Azure CLI](create-member-cli.md);
+* [Visual Studio Code](https://code.visualstudio.com/Download)
+* [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
+* [Node.js](https://nodejs.org)
+* [Git](https://git-scm.com)
+* [Python](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Это необходимо для комплекта SDK службы "Блокчейн Azure".
+* [Truffle](https://www.trufflesuite.com/docs/truffle/getting-started/installation);
+* [Ganache CLI](https://github.com/trufflesuite/ganache-cli);
 
-## <a name="create-transaction-nodes"></a>Создание узлов транзакций
+### <a name="verify-azure-blockchain-development-kit-environment"></a>Проверка среды комплекта SDK службы "Блокчейн Azure"
 
-По умолчанию вам доступен один узел транзакций. Мы добавим еще два. Один из улов участвует в частной транзакции, а второй не будет включен в нее.
+Комплект SDK службы "Блокчейн Azure" проверяет, выполняются ли необходимые условия для среды разработки. Чтобы проверить среду разработки, выполните следующие действия:
 
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Перейдите к участнику Блокчейна Azure и выберите **Узлы транзакций > Добавить**.
-1. Настройте параметры для нового узла транзакций с именем `alpha`.
+В палитре команд VS Code выберите **Azure Blockchain: Show Welcome Page** (Блокчейн Azure. Показать страницу приветствия).
 
-    ![Создание узла транзакций](./media/send-transaction/create-node.png)
+Комплект SDK службы "Блокчейн Azure" запускает проверочный скрипт, выполнение которого займет около минуты. Чтобы просмотреть выходные данные, выберите **Терминал > Создать терминал**. В строке меню терминала выберите вкладку **Выходные данные**, а в раскрывающемся списке — **Блокчейн Azure**. При успешном завершении проверки отобразится следующий результат:
 
-    | Параметр | Значение | ОПИСАНИЕ |
-    |---------|-------|-------------|
-    | ИМЯ | `alpha` | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `alpha-mymanagedledger.blockchain.azure.com`. |
-    | Пароль | Надежный пароль | Пароль, используемый для доступа к конечной точке узла транзакций с обычной аутентификацией.
+![Допустимая среда разработки](./media/send-transaction/valid-environment.png)
 
-1. Нажмите кнопку **Создать**.
+ Если требуемое средство отсутствует, отобразится новая вкладка **Azure Blockchain Development Kit - Preview** (Комплект SDK службы "Блокчейн Azure" — предварительная версия) со списком приложений, которые нужно установить, и ссылками для их скачивания.
 
-    Подготовка нового узла транзакций занимает около 10 минут.
+![Приложения, необходимые для использования комплекта SDK](./media/send-transaction/required-apps.png)
 
-1. Повторите шаги 2–4, чтобы добавить узел транзакций с именем `beta`.
+## <a name="connect-to-consortium-member"></a>Подключение к участнику консорциума
 
-Во время подготовки узлов вы можете продолжить работу с этим руководством. После завершения подготовки станет доступно три узла транзакций.
+Подключиться к участникам консорциума можно с помощью расширения "Комплект SDK службы "Блокчейн Azure" для VS Code. После подключения к консорциуму вы можете создавать и развертывать смарт-контракты в участнике консорциума службы "Блокчейн Azure".
 
-## <a name="open-truffle-console"></a>Открытие консоли Truffle
+Если у вас нет доступа к участнику консорциума службы "Блокчейн Azure", выполните предварительные требования, изложенные в [руководстве по созданию участника блокчейна на портале Azure](create-member.md) и [руководство по созданию участника блокчейна службы "Блокчейн Azure" с помощью Azure CLI](create-member-cli.md).
 
-1. Откройте командную строку или оболочку Node.js.
-1. Измените путь к каталогу проекта Truffle, как описано в [кратком руководстве по использованию Truffle для подключения к сети консорциума](connect-truffle.md). Например,
+1. В области обозревателя Visual Studio Code (VS Code) разверните расширение **Блокчейн Azure**.
+1. Выберите **Connect to Consortium** (Подключиться к консорциуму).
 
-    ```bash
-    cd truffledemo
-    ```
+   ![Подключение к консорциуму](./media/send-transaction/connect-consortium.png)
 
-1. С помощью консоли Truffle подключитесь к узлу транзакций по умолчанию.
+    При появлении запроса на проверку подлинности Azure следуйте инструкциям, чтобы выполнить аутентификацию с помощью браузера.
+1. В раскрывающемся списке палитры команд выберите **Connect to Azure Blockchain Service consortium** (Подключиться к консорциуму службы "Блокчейн Azure").
+1. Выберите подписку и группу ресурсов, связанные с участником консорциума службы "Блокчейн Azure".
+1. Выберите свой консорциум из списка.
 
-    ``` bash
-    truffle console --network defaultnode
-    ```
+Консорциум и участники блокчейна отображаются на боковой панели проводника Visual Studio.
 
-    Truffle подключается к узлу транзакции по умолчанию и предоставляет интерактивную консоль.
+![Консорциум, отображаемый в проводнике](./media/send-transaction/consortium-node.png)
 
-## <a name="create-ethereum-account"></a>Создание учетной записи Ethereum
+## <a name="create-a-smart-contract"></a>Создание смарт-контракта
 
-С помощью Web3 подключитесь к узлу транзакций по умолчанию и создайте учетную запись Ethereum. Вы можете вызывать методы в объекте Web3 для взаимодействия с узлом транзакций.
+Комплект SDK службы "Блокчейн Azure" для Ethereum использует шаблоны проектов и средства Truffle для создания, сборки и развертывания контрактов.
 
-1. Создайте новую учетную запись на узле транзакций по умолчанию. Замените пароль надежным паролем.
+1. В палитре команд VS Code выберите **Azure Blockchain: Создать проект Solidity**.
+1. Выберите **Create basic project** (Создать базовый проект).
+1. Создайте папку с именем `HelloBlockchain` и выберите **Select new project path** (Выбрать путь к новому проекту).
 
-    ```bash
-    web3.eth.personal.newAccount("1@myStrongPassword");
-    ```
-
-    Сохраните полученный адрес учетной записи и пароль. Адрес и пароль учетной записи Ethereum понадобятся в следующем разделе.
-
-1. Закройте среду разработки Truffle.
-
-    ```bash
-    .exit
-    ```
-
-## <a name="configure-truffle-project"></a>Настройка проекта Truffle
-
-Для настройки проекта Truffle вам потребуется дополнительная информация об узле транзакций с портала Azure.
-
-### <a name="transaction-node-public-key"></a>Открытый ключ узла транзакций
-
-Каждый узел транзакций имеет открытый ключ. Открытый ключ позволяет отправлять частные транзакции на узел. Чтобы отправить транзакцию из узла транзакций по умолчанию на узел транзакций *alpha*, вам потребуется открытый ключ узла транзакций *alpha*.
-
-Вы можете получить открытый ключ из списка узлов транзакций. Скопируйте открытый ключ для узла alpha и сохраните значение для дальнейшего использования в этом руководстве.
-
-![Список узлов транзакций](./media/send-transaction/node-list.png)
-
-### <a name="transaction-node-endpoint-addresses"></a>Адреса конечных точек узлов транзакций
-
-1. На портале Azure перейдите к каждому узлу транзакций и выберите **Узлы транзакций > Строки подключений**.
-1. Скопируйте и сохраните URL-адрес конечной точки из раздела **HTTPS (ключ доступа 1)** для каждого узла транзакций. Вам потребуются адреса конечных точек для файла конфигурации смарт-контракта для дальнейшего использования в этом руководстве.
-
-    ![Адрес конечных точек транзакций](./media/send-transaction/endpoint.png)
-
-### <a name="edit-configuration-file"></a>Изменение файла конфигурации
-
-1. Запустите Visual Studio Code и откройте папку каталога проекта Truffle в меню **Файл > Открыть папку**.
-1. Откройте файл конфигурации Truffle `truffle-config.js`.
-1. Замените содержимое файла следующими данными о конфигурации. Добавьте переменные, содержащие адреса конечных точек и сведения об учетной записи. Замените фрагменты в угловых скобках значениями, которые были получены в предыдущих разделах.
-
-    ``` javascript
-    var defaultnode = "<default transaction node connection string>";
-    var alpha = "<alpha transaction node connection string>";
-    var beta = "<beta transaction node connection string>";
-    
-    var myAccount = "<Ethereum account address>";
-    var myPassword = "<Ethereum account password>";
-    
-    var Web3 = require("web3");
-    
-    module.exports = {
-      networks: {
-        defaultnode: {
-          provider:(() =>  {
-          const AzureBlockchainProvider = new Web3.providers.HttpProvider(defaultnode);
-    
-          const web3 = new Web3(AzureBlockchainProvider);
-          web3.eth.personal.unlockAccount(myAccount, myPassword);
-    
-          return AzureBlockchainProvider;
-          })(),
-    
-          network_id: "*",
-          gasPrice: 0,
-          from: myAccount
-        },
-        alpha: {
-          provider: new Web3.providers.HttpProvider(alpha),
-          network_id: "*",
-        },
-        beta: {
-          provider: new Web3.providers.HttpProvider(beta),
-          network_id: "*",
-        }
-      },
-      compilers: {
-        solc: {
-          evmVersion: "byzantium"
-        }
-      }
-    }
-    ```
-
-1. Сохраните изменения в `truffle-config.js`.
-
-## <a name="create-smart-contract"></a>Создание смарт-контракта
-
-1. В папке **contracts** создайте файл с именем `SimpleStorage.sol`. Добавьте следующий код.
-
-    ```solidity
-    pragma solidity >=0.4.21 <0.6.0;
-    
-    contract SimpleStorage {
-        string public storedData;
-    
-        constructor(string memory initVal) public {
-            storedData = initVal;
-        }
-    
-        function set(string memory x) public {
-            storedData = x;
-        }
-    
-        function get() view public returns (string memory retVal) {
-            return storedData;
-        }
-    }
-    ```
-    
-1. В папке **migrations** создайте файл с именем `2_deploy_simplestorage.js`. Добавьте следующий код.
-
-    ```solidity
-    var SimpleStorage = artifacts.require("SimpleStorage.sol");
-    
-    module.exports = function(deployer) {
-    
-      // Pass 42 to the contract as the first constructor parameter
-      deployer.deploy(SimpleStorage, "42", {privateFor: ["<alpha node public key>"], from:"<Ethereum account address>"})  
-    };
-    ```
-
-1. Замените значения в угловых скобках.
-
-    | Значение | ОПИСАНИЕ
-    |-------|-------------
-    | \<alpha node public key\> | Открытый ключ узла alpha
-    | \<Ethereum account address\> | Адрес учетной записи Ethereum, созданной в узле транзакций по умолчанию.
-
-    В этом примере начальное значение переменной **storeData** равно 42.
-
-    Переменная **privateFor** определяет узлы, которым доступен контракт. В этом примере учетная запись узла транзакций по умолчанию может передавать частную транзакцию узлу **alpha**. Вы добавляете открытые ключи для всех участников частной транзакции. Если не включить переменные **privateFor:** и **from:** , транзакции смарт-контракта станут общедоступными, и их смогут просматривать все участники консорциума.
-
-1. Сохраните все файлы, выбрав **Файл > Сохранить все**.
-
-## <a name="deploy-smart-contract"></a>Развертывание смарт-контракта
-
-С помощью Truffle разверните `SimpleStorage.sol` в сети узлов транзакций по умолчанию.
-
-```bash
-truffle migrate --network defaultnode
-```
-
-Truffle сначала компилирует, а затем развертывает смарт-контракт **SimpleStorage**.
-
-Выходные данные примера:
-
-```
-admin@desktop:/mnt/c/truffledemo$ truffle migrate --network defaultnode
-
-2_deploy_simplestorage.js
-=========================
-
-   Deploying 'SimpleStorage'
-   -------------------------
-   > transaction hash:    0x3f695ff225e7d11a0239ffcaaab0d5f72adb545912693a77fbfc11c0dbe7ba72
-   > Blocks: 2            Seconds: 12
-   > contract address:    0x0b15c15C739c1F3C1e041ef70E0011e641C9D763
-   > account:             0x1a0B9683B449A8FcAd294A01E881c90c734735C3
-   > balance:             0
-   > gas used:            0
-   > gas price:           0 gwei
-   > value sent:          0 ETH
-   > total cost:          0 ETH
-
-
-   > Saving migration to chain.
-   > Saving artifacts
-   -------------------------------------
-   > Total cost:                   0 ETH
-
-
-Summary
-=======
-> Total deployments:   2
-> Final cost:          0 ETH
-```
-
-## <a name="validate-contract-privacy"></a>Проверка конфиденциальности контракта
-
-Из-за конфиденциальной природы контракта его значения можно получить с помощью запросов только с узлов, которые объявлены в переменной **privateFor**. В этом примере мы можем отправить запрос узлу транзакций по умолчанию, так как учетная запись существует в таком узле. 
-
-1. С помощью консоли Truffle подключитесь к узлу транзакций по умолчанию.
-
-    ```bash
-    truffle console --network defaultnode
-    ```
-
-1. В консоли Truffle выполните код, который возвращает значение экземпляра контракта.
-
-    ```bash
-    SimpleStorage.deployed().then(function(instance){return instance.get();})
-    ```
-
-    При успешном выполнении запроса узла транзакций по умолчанию будет возвращено значение 42. Например:
-
-    ```
-    admin@desktop:/mnt/c/truffledemo$ truffle console --network defaultnode
-    truffle(defaultnode)> SimpleStorage.deployed().then(function(instance){return instance.get();})
-    '42'
-    ```
-
-1. Закройте консоль Truffle.
-
-    ```bash
-    .exit
-    ```
-
-Так как мы объявили открытый ключ узла **alpha** в переменной **privateFor**, мы можем отправить запрос узлу **alpha**.
-
-1. С помощью консоли Truffle подключитесь к узлу **alpha**.
-
-    ```bash
-    truffle console --network alpha
-    ```
-
-1. В консоли Truffle выполните код, который возвращает значение экземпляра контракта.
-
-    ```bash
-    SimpleStorage.deployed().then(function(instance){return instance.get();})
-    ```
-
-    При успешном выполнении запроса к узлу **alpha** будет возвращено значение 42. Например:
-
-    ```
-    admin@desktop:/mnt/c/truffledemo$ truffle console --network alpha
-    truffle(alpha)> SimpleStorage.deployed().then(function(instance){return instance.get();})
-    '42'
-    ```
-
-1. Закройте консоль Truffle.
-
-    ```bash
-    .exit
-    ```
-
-Так как мы не объявили открытый ключ узла **beta** в переменной **privateFor**, мы не сможем отправить запрос узлу **beta** из-за конфиденциальности контракта.
-
-1. С помощью консоли Truffle подключитесь к узлу **beta**.
-
-    ```bash
-    truffle console --network beta
-    ```
-
-1. Выполните код, который возвращает значение экземпляра контракта.
-
-    ```bash
-    SimpleStorage.deployed().then(function(instance){return instance.get();})
-    ```
-
-1. Выполнение запроса к узлу **beta** завершится ошибкой, так как контракт является частным. Например:
-
-    ```
-    admin@desktop:/mnt/c/truffledemo$ truffle console --network beta
-    truffle(beta)> SimpleStorage.deployed().then(function(instance){return instance.get();})
-    Thrown:
-    Error: Returned values aren't valid, did it run Out of Gas?
-        at XMLHttpRequest._onHttpResponseEnd (/mnt/c/truffledemo/node_modules/xhr2-cookies/xml-http-request.ts:345:8)
-        at XMLHttpRequest._setReadyState (/mnt/c/truffledemo/node_modules/xhr2-cookies/xml-http-request.ts:219:8)
-        at XMLHttpRequestEventTarget.dispatchEvent (/mnt/c/truffledemo/node_modules/xhr2-cookies/xml-http-request-event-target.ts:44:13)
-        at XMLHttpRequest.request.onreadystatechange (/mnt/c/truffledemo/node_modules/web3-providers-http/src/index.js:96:13)
-    ```
-
-1. Закройте консоль Truffle.
-
-    ```bash
-    .exit
-    ```
-    
-## <a name="send-a-transaction"></a>Отправка транзакции
-
-1. Создайте файл с именем `sampletx.js`. Сохраните его в корневом каталоге проекта.
-1. Следующий скрипт задает для переменной **storedData** значение 65. Добавьте код в новый файл.
+Комплект SDK службы "Блокчейн Azure" создаст и инициализирует проект Solidity. Базовый проект содержит пример смарт-контракта **HelloBlockchain** и все необходимые файлы для сборки и развертывания в участнике консорциума в службе "Блокчейн Azure". Создание проекта может занять несколько минут. Вы можете отслеживать ход выполнения на панели терминала VS Code, выбрав выходные данные для Azure Блокчейн.
+
+Структура проекта выглядит так, как показано в следующем примере.
+
+   ![Проект Solidity](./media/send-transaction/solidity-project.png)
+
+## <a name="build-a-smart-contract"></a>Сборка смарт-контракта
+
+Смарт-контракты находятся в каталоге проекта **contracts**. Нужно выполнить сборку смарт-контрактов перед их развертыванием в блокчейне. Используйте команду **Build Contracts** (Выполнить сборку контрактов), чтобы компилировать все смарт-контракты в проекте.
+
+1. В боковой панели обозревателя VS Code разверните папку **contracts** своего проекта.
+1. Щелкните правой кнопкой мыши файл **HelloBlockchain.sol** и в меню выберите пункт **Build Contracts** (Выполнить сборку контрактов).
+
+    ![Сборка контрактов](./media/send-transaction/build-contracts.png)
+
+Комплект SDK службы "Блокчейн Azure" использует Truffle для компиляции смарт-контрактов.
+
+![Выходные данные компиляции](./media/send-transaction/compile-output.png)
+
+## <a name="deploy-a-smart-contract"></a>Развертывание смарт-контракта
+
+Truffle использует скрипты миграции для развертывания контрактов в сети Ethereum. Скрипты миграции — это файлы JavaScript, которые находятся в каталоге проекта **migrations**.
+
+1. Чтобы развернуть смарт-контракт, щелкните правой кнопкой мыши файл **HelloBlockchain.sol** и в меню выберите пункт **Deploy Contracts** (Развернуть контракты).
+1. Выберите сеть консорциума службы "Блокчейн Azure"в разделе **From truffle-config.js** (Из truffle-config.js). Сеть блокчейн-консорциума добавлена в файл конфигурации проекта Truffle при создании проекта.
+1. Выберите **Generate mnemonic** (Создать мнемонический код). Задайте имя файлу с мнемоническим кодом и сохраните его в папке проекта. Например, `myblockchainmember.env`. Файл с мнемоническим кодом используется для создания закрытого ключа Ethereum для вашего участника блокчейна.
+
+Комплект SDK службы "Блокчейн Azure" использует Truffle, чтобы выполнить скрипт миграции для развертывания контрактов в блокчейне.
+
+![Успешное развертывание контракта](./media/send-transaction/deploy-contract.png)
+
+## <a name="call-a-contract-function"></a>Вызов функции контракта
+
+Функция **SendRequest** контракта **HelloBlockchain** изменяет переменную состояния **RequestMessage**. Изменение состояния сети блокчейна выполняется через транзакцию. Можно создать скрипт для выполнения функции **SendRequest** путем транзакции.
+
+1. В корне проекта Truffle создайте файл с именем `sendrequest.js`. Добавьте в файл следующий код Web3 JavaScript.
 
     ```javascript
-    var SimpleStorage = artifacts.require("SimpleStorage");
-    
+    var HelloBlockchain = artifacts.require("HelloBlockchain");
+        
     module.exports = function(done) {
-      console.log("Getting deployed version of SimpleStorage...")
-      SimpleStorage.deployed().then(function(instance) {
-        console.log("Setting value to 65...");
-        return instance.set("65", {privateFor: ["<alpha node public key>"], from:"<Ethereum account address>"});
+      console.log("Getting the deployed version of the HelloBlockchain smart contract")
+      HelloBlockchain.deployed().then(function(instance) {
+        console.log("Calling SendRequest function for contract ", instance.address);
+        return instance.SendRequest("Hello, blockchain!");
       }).then(function(result) {
-        console.log("Transaction:", result.tx);
-        console.log("Finished!");
+        console.log("Transaction hash: ", result.tx);
+        console.log("Request complete");
         done();
       }).catch(function(e) {
         console.log(e);
@@ -375,76 +139,85 @@ Summary
     };
     ```
 
-    Замените значения в угловых скобках, а затем сохраните файл.
+1. При создании проекта с помощью комплекта SDK службы "Блокчейн Azure" создается файл конфигурации Truffle со сведениями о конечной точке сети блокчейн-консорциума. Откройте в проекте файл **truffle-config.js**. В этом файле конфигурации указаны две сети — одна с именем development и вторая с именем консорциума.
+1. В терминале VS Code используйте Truffle, чтобы выполнить скрипт для своей сети блокчейн-консорциума. В строке меню терминала выберите вкладку **Терминал**, а в раскрывающемся списке — **PowerShell**.
 
-    | Значение | ОПИСАНИЕ
-    |-------|-------------
-    | \<alpha node public key\> | Открытый ключ узла alpha
-    | \<Ethereum account address\> | Адрес учетной записи Ethereum, созданной в узле транзакций по умолчанию.
-
-    Переменная **privateFor** определяет узлы, которым будет доступна транзакция. В этом примере учетная запись узла транзакций по умолчанию может передавать частную транзакцию узлу **alpha**. Вам нужно добавить открытые ключи для всех участников частной транзакции.
-
-1. С помощью Truffle выполните скрипт для узла транзакций по умолчанию.
-
-    ```bash
-    truffle exec sampletx.js --network defaultnode
+    ```PowerShell
+    truffle exec sendrequest.js --network <blockchain network>
     ```
 
-1. В консоли Truffle выполните код, который возвращает значение экземпляра контракта.
+    Замените \<blockchain network\> именем сети блокчейн, указанным в файле **truffle-config.js**.
 
-    ```bash
-    SimpleStorage.deployed().then(function(instance){return instance.get();})
+Truffle выполнит скрипт для сети блокчейн.
+
+![Выходные данные скрипта](./media/send-transaction/execute-transaction.png)
+
+При выполнении функции контракта через транзакцию транзакция не обрабатывается до тех пор, пока не будет создан блок. Функции, предназначенные для выполнения путем транзакции, вместо значения возвращают идентификатор транзакции.
+
+## <a name="query-contract-state"></a>Запрос состояния контракта
+
+Функции смарт-контракта могут возвращать текущее значение переменных состояния. Добавим функцию для возврата значения переменной состояния.
+
+1. В файле **HelloBlockchain.sol** добавьте функцию **getMessage** в смарт-контракт **HelloBlockchain**.
+
+    ``` solidity
+    function getMessage() public view returns (string memory)
+    {
+        if (State == StateType.Request)
+            return RequestMessage;
+        else
+            return ResponseMessage;
+    }
     ```
 
-    При успешном выполнении транзакции будет возвращено значение 65. Например:
+    Функция возвращает сообщение, хранящееся в переменной состояния, о текущем состоянии контракта.
+
+1. Щелкните правой кнопкой мыши файл **HelloBlockchain.sol** и в меню выберите **Build Contracts** (Выполнить сборку контрактов), чтобы внести изменения в смарт-контракт.
+1. Чтобы развернуть его, щелкните правой кнопкой мыши файл **HelloBlockchain.sol** и в меню выберите пункт **Deploy Contracts** (Развернуть контракты).
+1. Затем создайте скрипт, предназначенный для вызова функции **getMessage**. В корне проекта Truffle создайте файл с именем `getmessage.js`. Добавьте в файл следующий код Web3 JavaScript.
+
+    ```javascript
+    var HelloBlockchain = artifacts.require("HelloBlockchain");
     
+    module.exports = function(done) {
+      console.log("Getting the deployed version of the HelloBlockchain smart contract")
+      HelloBlockchain.deployed().then(function(instance) {
+        console.log("Calling getMessage function for contract ", instance.address);
+        return instance.getMessage();
+      }).then(function(result) {
+        console.log("Request message value: ", result);
+        console.log("Request complete");
+        done();
+      }).catch(function(e) {
+        console.log(e);
+        done();
+      });
+    };
     ```
-    Getting deployed version of SimpleStorage...
-    Setting value to 65...
-    Transaction: 0x864e67744c2502ce75ef6e5e09d1bfeb5cdfb7b880428fceca84bc8fd44e6ce0
-    Finished!
-    ```
 
-1. Закройте консоль Truffle.
-
-    ```bash
-    .exit
-    ```
-    
-## <a name="validate-transaction-privacy"></a>Проверка конфиденциальности транзакции
-
-Из-за конфиденциальности транзакций их можно выполнять только на тех узлах, которые были объявлены в переменной **privateFor**. В этом примере мы можем выполнить транзакции, так как мы объявили открытый ключ узла **alpha** в переменной **privateFor**. 
-
-1. С помощью Truffle выполните транзакцию на узле **alpha**.
-
-    ```bash
-    truffle exec sampletx.js --network alpha
-    ```
-    
-1. Выполните код, который возвращает значение экземпляра контракта.
+1. В терминале VS Code используйте Truffle, чтобы выполнить скрипт для своей сети блокчейн. В строке меню терминала выберите вкладку **Терминал**, а в раскрывающемся списке — **PowerShell**.
 
     ```bash
-    SimpleStorage.deployed().then(function(instance){return instance.get();})
+    truffle exec getmessage.js --network <blockchain network>
     ```
-    
-    При успешном выполнении транзакции будет возвращено значение 65. Например:
 
-    ```
-    Getting deployed version of SimpleStorage...
-    Setting value to 65...
-    Transaction: 0x864e67744c2502ce75ef6e5e09d1bfeb5cdfb7b880428fceca84bc8fd44e6ce0
-    Finished!
-    ```
-    
-1. Закройте консоль Truffle.
+    Замените \<blockchain network\> именем сети блокчейн, указанным в файле **truffle-config.js**.
 
-    ```bash
-    .exit
-    ```
+Скрипт выполняет запрос к смарт-контракту, вызывая функцию getMessage. Возвращается текущее значение переменной состояния **RequestMessage**.
+
+![Выходные данные скрипта](./media/send-transaction/execute-get.png)
+
+Обратите внимание, что возвращается не значение **Hello, blockchain!** , а заполнитель. При изменении и развертывании контракт получает новый адрес контракта, а переменным состояния присваиваются значения в конструкторе смарт-контрактов. Скрипт миграции Truffle **2_deploy_contracts.js** развертывает смарт-контракт и передает значение заполнителя в качестве аргумента. Конструктор задает для переменной состояния **RequestMessage** значение заполнителя, которое и возвращается.
+
+1. Чтобы задать значение для переменной состояния **RequestMessage** и запросить его, выполните еще раз скрипты **sendrequest.js** и **getmessage.js**.
+
+    ![Выходные данные скрипта](./media/send-transaction/execute-set-get.png)
+
+    Скрипт **sendrequest.js** задает переменной состояния **RequestMessage** значение **Hello, blockchain!** , а **getmessage.js** запрашивает значение переменной состояния контракта **RequestMessage** и возвращает **Hello, blockchain!** .
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы больше не нужны, вы можете удалить их. Для этого удалите группу ресурсов `myResourceGroup`, которую создали с помощью службы "Блокчейн Azure".
+Если ресурсы больше не нужны, вы можете удалить их. Для этого удалите группу ресурсов `myResourceGroup`, которую вы создали при выполнении предварительных требований *краткого руководства по созданию участника блокчейна*.
 
 Чтобы удалить группу ресурсов, сделайте следующее:
 
@@ -453,7 +226,7 @@ Summary
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве описано, как добавить два узла транзакций для демонстрации конфиденциальности контракта и транзакций. Вы использовали узел по умолчанию для развертывания частного смарт-контракта. Вы протестировали конфиденциальность, получив значения контракта с помощью запросов и выполнив транзакции в блокчейне.
+Из этого руководства вы узнали, как создать проект Solidity с помощью комплекта SDK службы "Блокчейн Azure". Вы создали и развернули смарт-контракт, а также вызывали функцию через транзакцию в сети блокчейн-консорциума, размещенной в службе "Блокчейн Azure".
 
 > [!div class="nextstepaction"]
 > [Разработка приложений блокчейна с помощью службы "Блокчейн Azure"](develop.md)

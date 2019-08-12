@@ -11,14 +11,14 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: b80be0db41ea8bd3996a7b8843c80f510289545f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 12e433a146d8dd8a6fb7e1d7c40acc72e023047b
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570049"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736217"
 ---
-# <a name="use-cli-to-move-an-azure-sql-database-in-a-sql-elastic-pool"></a>Перемещение базы данных Azure SQL в эластичном пуле SQL с помощью интерфейса командной строки
+# <a name="use-cli-to-add-an-azure-sql-database-single-database-into-a-failover-group"></a>Узнайте, как добавить отдельную базу данных в Базе данных SQL Azure в группу отработки отказа с помощью CLI.
 
 Этот пример скрипта PowerShell позволяет создать отдельную базу данных и группу отработки отказа, добавить в нее базу данных и выполнить тестовую отработку отказа. 
 

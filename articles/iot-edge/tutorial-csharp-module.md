@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 305804682ede9833619837807d6f174ec670560e
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 7fca5709a1c7c3ecae11a5fc7de2109f1b20645e
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414257"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839575"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Linux
 
@@ -293,7 +293,7 @@ ms.locfileid: "68414257"
 
 5. Выберите файл **deployment.json** в папке **config** и щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). Не используйте файл deployment.template.json. 
 
-6. Нажмите кнопку "Обновить". Вы должны увидеть новый модуль **CSharpModule**, работающий вместе с модулем **TempSensor**, а также **$edgeAgent** и **$edgeHub**.  
+6. Нажмите кнопку "Обновить". Появится новый запущенный модуль **CSharpFunction**, модуль **SimulatedTemperatureSensor**, а также **$edgeAgent** и **$edgeHub**.  
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 

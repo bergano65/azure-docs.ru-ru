@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/25/2019
 ms.author: rkarlin
-ms.openlocfilehash: cdfe22b67585221e2d7e17f47c6a09ba929d68ef
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: cd3288e308308729cf9b97e3c699d489857840a8
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599016"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780371"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel-preview"></a>Руководство по настройке автоматического реагирования на угрозы в предварительной версии Azure Sentinel
 
@@ -90,7 +90,7 @@ ms.locfileid: "68599016"
 
 Чтобы запустить сборник схем по запросу:
 
-1. На странице **Варианты** выберите вариант и щелкните **View full details** (Просмотр полных сведений).
+1. На странице **Инциденты** выберите инцидент и щелкните **Просмотреть полные сведения**.
 
 2. На вкладке **Оповещения** щелкните оповещение, для которого должен запускаться сборник схем, прокрутите до упора вправо, щелкните **Просмотреть сборники схем** и выберите сборник для **запуска** из списка доступных сборников в подписке. 
 

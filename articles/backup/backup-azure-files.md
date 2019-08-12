@@ -1,5 +1,5 @@
 ---
-title: Резервное копирование файловых ресурсов Azure
+title: Резервное копирование и восстановление общих папок Azure
 description: В этой статье описывается, как создавать резервные копии и восстанавливать файловые ресурсы Azure, а также объясняются задачи управления.
 author: dcurwin
 ms.author: dacurwin
@@ -7,14 +7,14 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: 9cb0150efcb4860af98b47aa5da4cfd24d2e9de9
-ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
+ms.openlocfilehash: c2e78f6925ae8ff72e7f603c886376b32e40cd94
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68602013"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737261"
 ---
-# <a name="back-up-azure-file-shares"></a>Резервное копирование файловых ресурсов Azure
+# <a name="back-up-and-restore-azure-file-shares"></a>Резервное копирование и восстановление файловых ресурсов Azure
 В этой статье описывается, как с помощью портала Azure создавать резервные копии и восстанавливать [файловые ресурсы Azure](../storage/files/storage-files-introduction.md).
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:

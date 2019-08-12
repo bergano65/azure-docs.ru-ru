@@ -9,12 +9,12 @@ ms.date: 04/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 95fab84fb6472339c9d6b847f8c09139b55e1466
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 1aebe97b27902d37587ec6ac7009a5076b732f0f
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66303832"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840128"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модуля IoT Edge на языке Java для устройств Linux
 
@@ -251,7 +251,7 @@ ms.locfileid: "66303832"
 
 3. Выберите файл **deployment.json** в папке **config** и щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). Не используйте файл deployment.template.json.
 
-4. Нажмите кнопку "Обновить". Появится новый работающий модуль **JavaModule**, а также модули **TempSensor**, **$edgeAgent** и **$edgeHub**.  
+4. Нажмите кнопку "Обновить". Появится новый запущенный модуль **JavaModule**, модуль **SimulatedTemperatureSensor**, а также **$edgeAgent** и **$edgeHub**.  
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 

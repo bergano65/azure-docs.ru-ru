@@ -4,8 +4,6 @@ description: Узнайте, как можно развернуть расшир
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: ''
 ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
@@ -13,12 +11,12 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5657ebb2a5b29e4ec5360480c1fef6cb92dad9c8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a6d0c3e9daba6f4f37778fabde161751944e174a
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60388546"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774876"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Руководство по Развертывание расширений виртуальной машины с помощью шаблонов Azure Resource Manager
 
@@ -108,7 +106,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 Дополнительные сведения об определении этого ресурса см. в [справочнике по расширению](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines/extensions). Ниже приведены некоторые важные элементы.
 
-* **name**. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. сведения в разделе [Дочерние ресурсы](./resource-group-authoring-templates.md#child-resources).
+* **name**. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md).
 * **dependsOn**. Создайте ресурс расширения после создания виртуальной машины.
 * **fileUris**. Это расположение, в котором хранятся файлы скриптов. Если вы решили не использовать указанное расположение, необходимо обновить значения.
 * **commandToExecute**. Эта команда запускает скрипт.  

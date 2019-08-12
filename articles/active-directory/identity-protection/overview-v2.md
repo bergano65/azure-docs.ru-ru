@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5d82f665cc837e5dbd2d7efbf16c7ae94e1b2b7
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 2987f8fb116bfcbb1698335c3aca6f1fd8eb633e
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333914"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717292"
 ---
 # <a name="what-is-azure-active-directory-identity-protection-refreshed"></a>Что такое Защита идентификации Azure Active Directory (обновленная)?
 
 Защита идентификации обновлена для обеспечения более надежной защиты удостоверений вашей организации. Это обновление предоставляет следующие возможности.
 
-- Переработанный интерфейс администратора, который теперь сосредоточен на наиболее важных рисках — пользователя и при входе.
+- Повторно спроектированный интерфейс администратора с фокусом на наиболее важных проблемах: рисках пользователя и рисках при входе.
 - Мощные функции анализа с поддержкой фильтрации, сортировки и интеллектуальных загрузок.
 - Улучшенный расчет рисков пользователей, который помогает уделить больше внимания пользователям, которые с наибольшей вероятностью могут быть скомпрометированы.
 - Поддержка нового API для программного доступа к данным рисков.

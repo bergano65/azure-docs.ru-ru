@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 6c94ca3a82095736ef7d242987d1fbf66a825950
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: f6304c554858a29e8c6c886bcdec3b51efd635b6
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306503"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840100"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Node.js и его развертыванию на устройствах Linux
 
@@ -108,7 +108,7 @@ ms.locfileid: "66306503"
 
 ### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
 
-Каждый шаблон содержит пример кода, который принимает имитируемые данные с датчиков модуля **tempSensor** и направляет их в Центр Интернета вещей. В этом разделе добавьте код, чтобы модуль NodeModule проанализировал сообщения перед отправкой. 
+Каждый шаблон содержит пример кода, который принимает имитируемые данные с датчиков модуля **SimulatedTemperatureSensor** и направляет их в Центр Интернета вещей. В этом разделе добавьте код, чтобы модуль NodeModule проанализировал сообщения перед отправкой. 
 
 1. В обозревателе VS Code выберите **modules** > **NodeModule** > **app.js**.
 
@@ -212,7 +212,7 @@ ms.locfileid: "66306503"
 
 3. Выберите файл **deployment.json** в папке **config** и щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). Не используйте файл deployment.template.json.
 
-4. Нажмите кнопку "Обновить". Вы должны увидеть новый модуль **NodeModule**, работающий вместе с модулем **TempSensor** и **$edgeAgent** и **$edgeHub**.
+4. Нажмите кнопку "Обновить". Появится новый запущенный модуль **NodeModule**, модуль **SimulatedTemperatureSensor**, а также **$edgeAgent** и **$edgeHub**.
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 

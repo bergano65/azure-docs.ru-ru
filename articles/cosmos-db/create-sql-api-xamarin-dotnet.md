@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/30/2018
 ms.author: masoucou
-ms.openlocfilehash: 079f25cf9333b7ca090b5a3390d193b757117c1c
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 3c2e9ad080c3b3f54040db9a57897847f4c5a52a
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986381"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828033"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
 
@@ -120,7 +120,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * Во все проекты необходимо добавить пакет NuGet [Microsoft.Azure.DocumentDb.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
 * Класс `ToDoItem` в папке azure-documentdb-dotnet/samples/xamarin/ToDoItems/ToDoItems.Core/Models позволяет моделировать документы в созданной ранее коллекции **Элементы**. Обратите внимание, что в именах свойств учитывается регистр.
 * Класс `CosmosDBService` в папке azure-documentdb-dotnet/samples/xamarin/ToDoItems/ToDoItems.Core/Services позволяет инкапсулировать данные о подключении к Azure Cosmos DB.
-* Класс `CosmosDBService` содержит переменную типа `DocumentClient`. Переменная `DocumentClient` используется для настройки и выполнения запросов к учетной записи Azure Cosmos DB. Ее экземпляр создается в строке 31:
+* Класс `CosmosDBService` содержит переменную типа `DocumentClient`. Переменная `DocumentClient` используется для настройки и выполнения запросов к учетной записи Azure Cosmos DB с созданием экземпляра:
 
     ```csharp
     docClient = new DocumentClient(new Uri(APIKeys.CosmosEndpointUrl), APIKeys.CosmosAuthKey);
@@ -128,26 +128,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 * Для запроса коллекции документов используется метод `DocumentClient.CreateDocumentQuery<T>`, как показано в строке функции `CosmosDBService.GetToDoItems`:
 
-    ```csharp
-    public async static Task<List<ToDoItem>> GetToDoItems()
-    {
-        var todos = new List<ToDoItem>();
-
-        var todoQuery = docClient.CreateDocumentQuery<ToDoItem>(
-                                UriFactory.CreateDocumentCollectionUri(databaseName, collectionName),
-                                .Where(todo => todo.Completed == false)
-                                .AsDocumentQuery();
-
-        while (todoQuery.HasMoreResults)
-        {
-            var queryResults = await todoQuery.ExecuteNextAsync<ToDoItem>();
-
-            todos.AddRange(queryResults);
-        }
-
-        return todos;
-    }
-    ```
+   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=GetToDoItems)] 
 
     `CreateDocumentQuery<T>` принимает код URI, указывающий на коллекцию, созданную в предыдущем разделе. Можно также указать операторы LINQ, такие как предложение `Where`. В этом случае возвращаются только незавершенные элементы списка дел.
 
@@ -158,46 +139,23 @@ Azure Cosmos DB — это глобально распределенная мн
 > [!TIP]
 > Некоторые функции, которые работают с коллекциями и документами Azure Cosmos DB, принимают URI в качестве параметра, указывающего на адрес коллекции или документа. Этот код URI создается с помощью класса `URIFactory`. Этот класс можно использовать для создания URI баз данных, коллекций и документов.
 
-* В строке 107 показано, как вставить новый документ с помощью функции `ComsmosDBService.InsertToDoItem`:
+* Функция `ComsmosDBService.InsertToDoItem` демонстрирует, как вставить новый документ:
 
-    ```csharp
-    public async static Task InsertToDoItem(ToDoItem item)
-    {
-        ...
-        await docClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseName, collectionName), item);
-        ...
-    }
-    ```
+   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=InsertToDoItem)] 
 
     Помимо элемента для вставки также указывается URI коллекции документов.
 
-* В строке 124 показано, как заменить существующий документ новым с помощью функции `CosmosDBService.UpdateToDoItem`:
+* Функция `CosmosDBService.UpdateToDoItem` демонстрирует, как заменить существующий документ новым:
 
-    ```csharp
-    public async static Task UpdateToDoItem(ToDoItem item)
-    {
-        ...
-        var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
-
-        await docClient.ReplaceDocumentAsync(docUri, item);
-    }
-    ```
+   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=UpdateToDoItem)] 
 
     В этом случае нужно указать новый URI для идентификации заменяемого документа. Чтобы получить URI, используйте функцию `UriFactory.CreateDocumentUri`, передайте ей имя базы данных и коллекции, а также идентификатор документа.
 
     Функция `DocumentClient.ReplaceDocumentAsync` заменяет документ, соответствующий URI, другим документом, указанным в параметре.
 
-* В строке 115 показано, как удалить элемент с помощью функции `CosmosDBService.DeleteToDoItem`:
+* Функция `CosmosDBService.DeleteToDoItem` демонстрирует, как удалить элемент:
 
-    ```csharp
-    public async static Task DeleteToDoItem(ToDoItem item)
-    {
-        ...
-        var docUri = UriFactory.CreateDocumentUri(databaseName, collectionName, item.Id);
-
-        await docClient.DeleteDocumentAsync(docUri);
-    }
-    ```
+   [!code-csharp[](~/samples-cosmosdb-xamarin/src/ToDoItems.Core/Services/CosmosDBService.cs?name=DeleteToDoItem)] 
 
     Снова обратите внимание на то, что для документа создается уникальный URI, который передается в функцию `DocumentClient.DeleteDocumentAsync`.
 

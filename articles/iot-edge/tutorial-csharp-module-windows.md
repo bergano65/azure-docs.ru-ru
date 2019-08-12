@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: d7ccce1f21b1caa2268317b7239617a80ddce10b
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 5a1e487b52cb6f146ccc7fd3208ecc90de9aa080
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485930"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840162"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -268,7 +268,7 @@ ms.locfileid: "67485930"
 
 8. Сохраните файл Program.cs.
 
-9. Откройте файл **deployment.template.json** в папке решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **CSharpModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними.
+9. Откройте файл **deployment.template.json** в папке решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания (в нашем примере это **SimulatedTemperatureSensor** и **CSharpModule**), а центру IoT Edge — на то, как направлять сообщения между ними.
 
 10. Добавьте двойник модуля **CSharpModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **modulesContent** после двойника модуля **$edgeHub**: 
 

@@ -1,5 +1,5 @@
 ---
-title: Резервное копирование баз данных SQL Server в Azure | Документация Майкрософт
+title: Руководство. Резервное копирование баз данных SQL Server в Azure
 description: Узнайте, как выполнить резервное копирование SQL Server в Azure.
 author: dcurwin
 manager: carmonm
@@ -7,18 +7,18 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 99e1e8194594d204a5080287794362dbe028a1f5
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 729eb0d77cee85356e359dc475f4e439b8236ebb
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688421"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736557"
 ---
-# <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
+# <a name="back-up-a-sql-server-database-in-an-azure-vm"></a>Резервное копирование Базы данных SQL Server на виртуальную машину Azure
 
 
 
-В этой статье показано, как создавать резервные копии базы данных SQL Server, запущенной на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup. В этой статье раскрываются следующие темы:
+В этом руководстве описано, как создавать резервные копии Базы данных SQL Server, запущенной на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup. В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * создание и настройка хранилища;

@@ -1,7 +1,7 @@
 ---
 title: Руководство по настройке среды и рабочей области.
 titleSuffix: Azure Machine Learning service
-description: В этом учебнике описан пошаговый стандартный процесс начала работы с пакетом SDK Машинного обучения Azure для Python, запущенным в Записных книжках Jupyter.
+description: В этой серии руководств описано, как начать работу с пакетом SDK Машинного обучения Azure для Python, запущенным в записных книжках Jupyter.  В первой части описано, как создать среду сервера рабочих книжек и рабочую область для управления экспериментами и моделями машинного обучения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: e17d9286453aeb5c7eac688555177c2c42faad21
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: b3fdcfbb9869c0199c91f5bbc6ca1f02fec996cf
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668601"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828671"
 ---
 # <a name="tutorial-setup-environment-and-workspace"></a>Руководство по настройке среды и рабочей области
 
@@ -25,7 +25,7 @@ ms.locfileid: "68668601"
 
 > [!div class="checklist"]
 > * создадите рабочую область машинного обучения для использования в следующем учебнике;
-> * создадите среду облачного сервера записных книжек.
+> * создадите виртуальную машину записных книжек, облачный сервер записных книжек Jupyter с предварительно установленным и настроенным пакетом SDK Машинного обучения Azure для Python.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -49,14 +49,12 @@ ms.locfileid: "68668601"
 
 1. Щелкните **+Создать**, чтобы создать виртуальную машину записной книжки.
 
-     ![Выберите "Создание виртуальной машины"](./media/quickstart-run-cloud-notebook/add-workstation.png)
+     ![Выберите "Создание виртуальной машины"](./media/tutorial-1st-experiment-sdk-setup/add-workstation.png)
 
 1. Задайте имя виртуальной машине. Щелкните **Создать**.
 
     > [!NOTE]
     > Длина виртуальной машины Notebook должна составлять от 2 до 16 символов. Допустимые символы: буквы, цифры и дефис.  Имя должно быть уникальным в подписке Azure.
-
-    ![Создание виртуальной машины](media/quickstart-run-cloud-notebook/create-new-workstation.png)
 
 1. Подождите, пока состояние не изменится на **Выполняется**.
 
@@ -66,7 +64,7 @@ ms.locfileid: "68668601"
 
 1. Выберите **Jupyter** для виртуальной машины в столбце **URI**.
 
-    ![Запуск сервера записных книжек Jupyter](./media/quickstart-run-cloud-notebook/start-server.png)
+    ![Запуск сервера записных книжек Jupyter](./media/tutorial-1st-experiment-sdk-setup/start-server.png)
 
     Ссылка запускает сервер записных книжек и открывает веб-страницу записных книжек Jupyter в новой вкладке браузера.  Эта ссылка будет работать только для пользователя, создавшего виртуальную машину. Каждый пользователь рабочей области должен создать собственную виртуальную машину.
 
@@ -87,7 +85,7 @@ ms.locfileid: "68668601"
 
 1. Выберите в своей рабочей области **Виртуальные машины записных книжек**.
 
-   ![Остановка работы сервера виртуальной машины](./media/quickstart-run-cloud-notebook/stop-server.png)
+   ![Остановка работы сервера виртуальной машины](./media/tutorial-1st-experiment-sdk-setup/stop-server.png)
 
 1. Выберите пользователя из списка.
 

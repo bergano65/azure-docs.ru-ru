@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b16d928e2e4fc4b5376d30b81eb39e5a46e54b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5b7cb8d6ab34a632e36ea2fd1c87005a038bc523
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67098027"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823713"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Elevate
 
@@ -120,11 +120,11 @@ ms.locfileid: "67098027"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.linkedin.com/checkpoint/enterprise/login/<AccountId>?application=elevate&applicationInstanceId=<InstanceId>`.
 
-6. Приложение LinkedIn Elevate ожидает утверждения SAML в определенном формате, а для этого вам нужно добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**. Приложение LinkedIn Elevate ожидает сопоставления nameidentifier с  **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок "Изменить" и изменив сопоставление атрибутов.
+6. Приложение LinkedIn Elevate ожидает утверждения SAML в определенном формате, а для этого вам нужно добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Для приложения LinkedIn Elevate требуется сопоставление nameidentifier с **user.mail**. поэтому вам нужно изменить сопоставление атрибутов (щелкните значок "Изменить").
 
     ![image](common/edit-attribute.png)
 
-7. В дополнение к описанному выше приложение LinkedIn Elevate ожидает несколько дополнительных атрибутов в ответе SAML. В разделе "Утверждения пользователя" диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
+7. В дополнение к описанному выше приложение LinkedIn Elevate ожидает несколько дополнительных атрибутов в ответе SAML. В разделе "Утверждения пользователя" диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
     | ИМЯ | Исходный атрибут|
     | -------| -------------|
@@ -254,4 +254,4 @@ ms.locfileid: "67098027"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

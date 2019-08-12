@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: tutorial
 ms.date: 07/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: b462f0c427020b1422b91fbd7ac34e3023e546b8
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 998471d99a785eeff39ef7c99e60e1d9b49e0d7a
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677865"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725836"
 ---
 # <a name="tutorial-set-up-an-azure-time-series-insights-preview-environment"></a>Руководство. Настройка среды "Аналитика временных рядов Azure" (предварительная версия)
 
@@ -62,7 +62,7 @@ ms.locfileid: "68677865"
 
     [![Создание страницы решения имитации устройства](media/v2-update-provision/device-two-create.png)](media/v2-update-provision/device-two-create.png#lightbox)
 
-## <a name="create-a-time-series-insights-preview-payg-environment"></a>Создание среды "Аналитика временных рядов" с оплатой по мере использования (предварительная версия)
+## <a name="create-a-preview-payg-environment"></a>Создание среды PAYG (предварительная версия)
 
 В этом разделе описано создание среды "Аналитика временных рядов Azure" (предварительная версия) и ее подключение к Центру Интернета вещей, созданному акселератором решений Интернета вещей, с помощью [портала Azure](https://portal.azure.com/).
 
@@ -130,7 +130,9 @@ ms.locfileid: "68677865"
 
    Если учетные данные не указаны, необходимо предоставить себе разрешение на доступ к среде. См. дополнительные сведения о [предоставлении доступа к данным](./time-series-insights-data-access.md).
 
-## <a name="stream-data-into-your-environment"></a>Передача данных в среду
+## <a name="stream-data"></a>Потоковая передача данных
+
+Теперь, когда среда Аналитики временных рядов развернута, выполните потоковую передачу данных для анализа.
 
 1. Вернитесь на [страницу акселераторов решений для Интернета вещей Azure](https://www.azureiotsolutions.com/Accelerators). На панели мониторинга акселератора решений найдите свое решение. Затем выберите **Запустить**.
 
@@ -158,7 +160,7 @@ ms.locfileid: "68677865"
 
     [![Панель мониторинга имитации Интернета вещей Azure](media/v2-update-provision/device-seven-dashboard.png)](media/v2-update-provision/device-seven-dashboard.png#lightbox)
 
-## <a name="analyze-data-in-your-environment"></a>Анализ данных в вашей среде
+## <a name="analyze-data"></a>Анализ данных
 
 В этом разделе будет выполнена базовая аналитика ваших данных временных рядов с использованием [обозревателя службы "Аналитика временных рядов Azure" (предварительная версия)](./time-series-insights-update-explorer.md).
 

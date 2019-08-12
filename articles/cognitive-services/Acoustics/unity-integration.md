@@ -3,20 +3,20 @@ title: Интеграция и развертывание Unity с акусти�
 titlesuffix: Azure Cognitive Services
 description: В этом разделе описывается интеграция подключаемого модуля Unity в проект Unity.
 services: cognitive-services
-author: kegodin
+author: NoelCross
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.author: kegodin
+ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1a90f6102d35dc1a3bb97c840f2955b54f35bbad
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
-ms.translationtype: HT
+ms.openlocfilehash: 54bc98e0ddba0292c6a5dbb07f2bbdfce6a1cb45
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68706645"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933142"
 ---
 # <a name="project-acoustics-unity-integration"></a>Интеграция проектов с акустическими характеристиками Unity
 В этом разделе описывается интеграция подключаемого модуля Unity в проект Unity.
@@ -32,6 +32,10 @@ ms.locfileid: "68706645"
     ![Снимок экрана: меню пакета импорта Unity](media/import-package.png)  
 
 * Выберите пакет **ProjectAcoustics.unitypackage**.
+
+* Нажмите кнопку " **Импорт** ", чтобы интегрировать пакет Unity в свой проект.  
+
+    ![Снимок экрана: диалоговое окно импорта пакета Unity](media/import-dialog.png)  
 
 Если вы импортируете подключаемый модуль в имеющийся проект, в его корне уже может присутствовать файл **mcs.rsp**, в котором указаны параметры для компилятора C#. Вам необходимо объединить содержимое этого файла с файлом mcs.rsp, входящим в состав подключаемого модуля Project Acoustics.
 
