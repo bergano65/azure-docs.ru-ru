@@ -182,7 +182,7 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n app-project2
 
 ## <a name="optional-deploy-example-application"></a>Необязательно: Развертывание примера приложения
 
-Все работает, но нет источников метрик. Перейдите на URL-адрес для Prometheus (https://prom-prometheus-project.apps. *случайный идентификатор*. *регион*.azmosa.io/). Его можно найти с помощью следующей команды:
+Все работает, но нет источников метрик. Перейдите на URL-адрес для Prometheus (https://prom-prometheus-project.apps.*случайный идентификатор*.*регион*.azmosa.io/). Его можно найти с помощью следующей команды:
 
 ```
 oc get route prom -n prometheus-project

@@ -306,7 +306,7 @@ ms.locfileid: "68720712"
 * **Пример SOQL**: `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
 * **Пример SQL**: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
 
-### <a name="error-of-malformedquerytruncated"></a>Ошибка MALFORMED_QUERY: усечено
+### <a name="error-of-malformed_querytruncated"></a>Ошибка MALFORMED_QUERY: усечено
 
 Если вы столкнулись с ошибкой "MALFORMED_QUERY: Усечено ", обычно это связано с тем, что у вас есть столбец типа Жунктионидлист в данных, и Salesforce имеет ограничение на поддержку таких данных с большим количеством строк. Чтобы устранить эту проблемы, попробуйте исключить столбец Жунктионидлист или ограничить число копируемых строк (можно разделить на несколько запусков действия копирования).
 
