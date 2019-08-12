@@ -41,31 +41,7 @@
       href: ../hdinsight-hadoop-compare-storage-options.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
     - name: Основные сведения об управляемых удостоверениях
       href: ../hdinsight-managed-identities.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
-    - name: Устранение неполадок
-      items:
-        - name: Сбои при создании кластера
-          href: ./hdinsight-troubleshoot-cluster-creation-fails.md
-        - name: Недостаточно места на диске
-          href: ./hdinsight-troubleshoot-out-disk-space.md
-        - name: "Мягкая блокировка\_— ЦП"
-          href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
-        - name: "InvalidNetworkConfigurationErrorCode\_— сбой создания кластера"
-          href: ./troubleshoot-invalidnetworkconfigurationerrorcode-cluster-creation-fails.md
-        - name: "InvalidNetworkSecurityGroupSecurityRules\_— сбой при создании кластера"
-          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
-        - name: Не удалось войти в кластер HDInsight
-          href: ./hdinsight-troubleshoot-unable-log-in-cluster.md
-        - name: Не удалось добавить узлы в кластер HDInsight
-          href: ./hdinsight-troubleshoot-unable-add-nodes.md
-        - name: Преобразование сертификата субъекта-службы
-          href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
-        - name: Локальная система HDFS перешла в безопасный режим и перестала отвечать на запросы
-          href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
-        - name: Проблемы с пульсом Apache Ambari
-          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
-        - name: 'В Apache Ambari отображаются сведения о том, что узлы и службы не работают'
-          href: ./apache-ambari-troubleshoot-down-hosts-services.md
-- name: Практическое руководство
+- name: Руководства
   items:
     - name: Использование песочницы Apache Hadoop
       href: apache-hadoop-emulator-get-started.md
@@ -310,6 +286,30 @@
     - name: Устранение неполадок
       href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
       items:
+        - name: Сбои при создании кластера
+          href: ./hdinsight-troubleshoot-cluster-creation-fails.md
+        - name: Недостаточно места на диске
+          href: ./hdinsight-troubleshoot-out-disk-space.md
+        - name: "Мягкая блокировка\_— ЦП"
+          href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
+        - name: "InvalidNetworkConfigurationErrorCode\_— сбой создания кластера"
+          href: ./troubleshoot-invalidnetworkconfigurationerrorcode-cluster-creation-fails.md
+        - name: "InvalidNetworkSecurityGroupSecurityRules\_— сбой при создании кластера"
+          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
+        - name: Не удалось войти в кластер HDInsight
+          href: ./hdinsight-troubleshoot-unable-log-in-cluster.md
+        - name: Не удалось добавить узлы в кластер HDInsight
+          href: ./hdinsight-troubleshoot-unable-add-nodes.md
+        - name: Преобразование сертификата субъекта-службы
+          href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
+        - name: Локальная система HDFS перешла в безопасный режим и перестала отвечать на запросы
+          href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
+        - name: Проблемы с пульсом Apache Ambari
+          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
+        - name: Ошибка 502 интерфейса Ambari
+          href: ./apache-ambari-troubleshoot-fivezerotwo-error.md
+        - name: 'В Apache Ambari отображаются сведения о том, что узлы и службы не работают'
+          href: ./apache-ambari-troubleshoot-down-hosts-services.md
         - name: Устранение задержки работы или сбоя кластера HDInsight
           href: ../hdinsight-troubleshoot-failed-cluster.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Hadoop HDFS

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.author: lagayhar
-ms.openlocfilehash: 030259f7773435760c09afd25ca674b63bb1b3ca
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 743f15c13a2e4fe7215229145b49fd87a32a1f18
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073240"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663283"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -35,7 +35,7 @@ Application Insights определяет [модель данных](../../azur
 
 Вы можете создать представление распределенной логической операции, используя `operation_Id`, `operation_parentId` и `request.id` с `dependency.id`. Эти поля также определяют причинно-следственную связь вызовов телеметрии.
 
-В среде микрослужб трассировки компонентов могут отправляться в разные хранилища. Каждый компонент может иметь собственный ключ инструментирования в Application Insights. Чтобы получать данные телеметрии для логической операции, UX Insights приложение запрашивает данные из каждого элемента хранилища. Если количество элементов для хранения очень велико, вам потребуется подсказка о том, где продолжить поиск. Модель данных Application Insights определяет два поля (`request.source` и `dependency.target`) для решения этой проблемы. Первое поле определяет компонент, который инициировал запрос зависимости, а второе — компонент, который вернул ответ вызова зависимостей.
+В среде микрослужб трассировки компонентов могут отправляться в разные хранилища. Каждый компонент может иметь собственный ключ инструментирования в Application Insights. Для получения данных телеметрии для логической операции Application Insights UX запрашивает данные из каждого элемента хранилища. Если количество элементов для хранения очень велико, вам потребуется подсказка о том, где продолжить поиск. Модель данных Application Insights определяет два поля (`request.source` и `dependency.target`) для решения этой проблемы. Первое поле определяет компонент, который инициировал запрос зависимости, а второе — компонент, который вернул ответ вызова зависимостей.
 
 ## <a name="example"></a>Пример
 
@@ -51,10 +51,10 @@ Application Insights определяет [модель данных](../../azur
 
 Обратите внимание, что в результатах все элементы телеметрии используют корневой `operation_Id`. При вызове AJAX, осуществляемом со страницы, телеметрии зависимостей присваивается личный идентификатор `qJSXU`, а в качестве `operation_ParentId` используется идентификатор pageView. Запрос сервера затем использует идентификатор Ajax как `operation_ParentId`.
 
-| itemType   | name                      | ИД           | operation_ParentId | operation_Id |
+| itemType   | name                      | id           | operation_ParentId | operation_Id |
 |------------|---------------------------|--------------|--------------------|--------------|
 | pageView   | Stock page                |              | STYz               | STYz         |
-| dependency | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
+| зависимость | GET /Home/Stock           | qJSXU        | STYz               | STYz         |
 | request    | GET Home/Stock            | KqKwlrSt9PA= | qJSXU              | STYz         |
 | dependency | GET /api/stock/value      | bBrf2L7mm2g= | KqKwlrSt9PA=       | STYz         |
 
@@ -64,8 +64,8 @@ Application Insights определяет [модель данных](../../azur
 
 Мы работаем над созданием предложения RFC для [протокола HTTP корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md). Это предложение определяет два заголовка:
 
-- `Request-Id`: Содержит глобальный уникальный идентификатор вызова.
-- `Correlation-Context`: Содержит коллекцию пар "имя — значение" свойств распределенной трассировки.
+- `Request-Id`. Содержит глобальный уникальный идентификатор вызова.
+- `Correlation-Context`. Содержит коллекцию пар "имя — значение" свойств распределенной трассировки.
 
 Стандарт также определяет две схемы создания `Request-Id` — неструктурированная и иерархическая. В неструктурированной схеме для коллекции `Correlation-Context` определяется хорошо известный ключ `Id`.
 
@@ -75,8 +75,8 @@ Application Insights определяет [модель данных](../../azur
 
 Мы переходим на [формат распределенной трассировки W3C](https://w3c.github.io/trace-context/). Он определяет следующее:
 
-- `traceparent`: Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
-- `tracestate`: Содержит специфический контекст трассировки системы.
+- `traceparent`. Содержит глобальный уникальный идентификатор операции и уникальный идентификатор вызова.
+- `tracestate`. Содержит специфический контекст трассировки системы.
 
 #### <a name="enable-w3c-distributed-tracing-support-for-classic-aspnet-apps"></a>Включение поддержки распределенной трассировки W3C для классических приложений ASP.NET
 
@@ -85,6 +85,14 @@ Application Insights определяет [модель данных](../../azur
 
 - В разделе `RequestTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersExtraction` со значением `true`.
 - В разделе `DependencyTrackingTelemetryModule` добавьте элемент `EnableW3CHeadersInjection` со значением `true`.
+- Добавьте `W3COperationCorrelationTelemetryInitializer` под тем `TelemetryInitializers` же 
+
+```xml
+<TelemetryInitializers>
+  <Add Type="Microsoft.ApplicationInsights.Extensibility.W3C.W3COperationCorrelationTelemetryInitializer, Microsoft.ApplicationInsights"/>
+   ...
+</TelemetryInitializers> 
+```
 
 #### <a name="enable-w3c-distributed-tracing-support-for-aspnet-core-apps"></a>Включение поддержки распределенной трассировки W3C для приложений ASP.NET Core
 
@@ -184,9 +192,9 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
 
 В настоящее время автоматическое распространение контекстной информации не поддерживается технологиями обмена сообщениями (например, Kafka, RabbitMQ, Служебная шина Azure). Тем не менее можно запрограммировать такие сценарии вручную с помощью API `trackDependency` и `trackRequest`. При этом телеметрия зависимостей представляет сообщение, поставленное в очередь поставщиком, а запрос представляет сообщение, обрабатываемое объектом-получателем. В этом случае и `operation_id`, и `operation_parentId` должны быть указаны в свойствах сообщений.
 
-### <a name="telemetry-correlation-in-asynchronous-java-application"></a>Корреляция данных телеметрии в асинхронных приложений Java
+### <a name="telemetry-correlation-in-asynchronous-java-application"></a>Корреляция телеметрии в асинхронном приложении Java
 
-Чтобы сопоставить данные телеметрии из приложения асинхронной Spring Boot, следуйте [это](https://github.com/Microsoft/ApplicationInsights-Java/wiki/Distributed-Tracing-in-Asynchronous-Java-Applications) подробной статьи. Он предоставляет рекомендации для инструментирования Spring [ThreadPoolTaskExecutor](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html) производительны [ThreadPoolTaskScheduler](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskScheduler.html). 
+Чтобы сопоставить данные телеметрии в приложении с асинхронной пружинной загрузкой, следуйте [этой](https://github.com/Microsoft/ApplicationInsights-Java/wiki/Distributed-Tracing-in-Asynchronous-Java-Applications) подробной статье. В нем содержатся рекомендации по инструментированию [Среадпултаскексекутор](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html) весны и [среадпултасксчедулер](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskScheduler.html). 
 
 
 <a name="java-role-name"></a>
@@ -214,7 +222,7 @@ ASP.NET Core 2.0 поддерживает извлечение заголовк
   telemetryClient.getContext().getCloud().setRole("My Component Name");
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Напишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md).
 - Узнайте об [установке свойства cloud_RoleName](../../azure-monitor/app/app-map.md#set-cloud-role-name) для других пакетов SDK.

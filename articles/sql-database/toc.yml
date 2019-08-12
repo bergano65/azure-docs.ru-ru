@@ -2,9 +2,9 @@
   href: index.yml
 - name: Службы Базы данных SQL
   items:
-    - name: Что такое База данных SQL
+    - name: Что такое база данных SQL?
       href: sql-database-technical-overview.md
-    - name: Выбор версии Azure SQL
+    - name: Какой вариант SQL следует выбрать?
       href: sql-database-paas-vs-sql-server-iaas.md
     - name: Заметки о выпуске
       href: sql-database-release-notes.md
@@ -280,14 +280,18 @@
               href: sql-vulnerability-assessment.md
             - name: Расширенная защита от угроз
               href: sql-database-threat-detection-overview.md
-        - name: Правила брандмауэра для IP-адресов на уровне сервера
+        - name: Безопасность сети
           items:
-            - name: Создание и управление
+            - name: Общие сведения об управлении доступом к сети
+              href: sql-database-networkaccess-overview.md
+            - name: Брандмауэр на основе IP-адреса
               href: sql-database-firewall-configure.md
-            - name: Конечные точки виртуальной сети
-              href: sql-database-vnet-service-endpoint-rule-overview.md
-            - name: Конечные точки виртуальной сети — PowerShell
-              href: sql-database-vnet-service-endpoint-rule-powershell.md
+            - name: Правила брандмауэра для виртуальной сети
+              items:
+                - name: Конечные точки виртуальной сети
+                  href: sql-database-vnet-service-endpoint-rule-overview.md
+                - name: Конечные точки виртуальной сети — PowerShell
+                  href: sql-database-vnet-service-endpoint-rule-powershell.md
         - name: Управление доступом
           items:
             - name: Управление доступом

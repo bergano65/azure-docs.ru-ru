@@ -107,7 +107,7 @@
       href: Tutorials/storage-lab-tutorial.md
 - name: Основные понятия
   items:
-    - name: Добавление тегов к изображениям
+    - name: Теги содержимого
       href: concept-tagging-images.md
     - name: Обнаружение объектов
       href: concept-object-detection.md
@@ -115,23 +115,23 @@
       href: concept-brand-detection.md
     - name: Классификация изображений
       href: concept-categorizing-images.md
-    - name: Описание изображений
+    - name: Описания изображений
       href: concept-describing-images.md
-    - name: Распознавание лиц
+    - name: Определение лиц
       href: concept-detecting-faces.md
-    - name: Определение типов изображений
+    - name: Обнаружение типов изображений
       href: concept-detecting-image-types.md
-    - name: 'Обнаружение содержимого, связанного с определенными предметными областями'
+    - name: 'Содержимое, связанное с доменами'
       href: concept-detecting-domain-content.md
-    - name: Определение цветовых схем
+    - name: Определение цветовой схемы
       href: concept-detecting-color-schemes.md
-    - name: Создание эскизов
+    - name: Эскизы со смарт-обрезанием
       href: concept-generating-thumbnails.md
     - name: Распознавание печатного и рукописного текста
       href: concept-recognizing-text.md
     - name: Обнаружение содержимого для взрослых и содержимого непристойного характера
       href: concept-detecting-adult-content.md
-- name: Инструкции
+- name: Руководства
   items:
     - name: Использование API Компьютерного зрения
       items:

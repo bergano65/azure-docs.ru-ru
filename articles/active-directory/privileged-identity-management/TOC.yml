@@ -16,11 +16,11 @@
       href: pim-how-to-require-mfa.md
     - name: Общие сведения о панелях мониторинга
       href: pim-resource-roles-overview-dashboards.md
-    - name: Уведомления по почте
+    - name: Уведомления по электронной почте
       href: pim-email-notifications.md
     - name: API-интерфейсы Microsoft Graph
       href: pim-apis.md
-- name: Практические руководства
+- name: Руководства
   expanded: true
   items:
     - name: Развертывание PIM
@@ -53,6 +53,16 @@
           href: pim-how-to-change-default-settings.md
         - name: Настройка оповещений
           href: pim-how-to-configure-security-alerts.md
+        - name: Предварительная версия настраиваемых ролей
+          items:
+            - name: Активация настраиваемой роли
+              href: azure-ad-custom-roles-activate.md
+            - name: Назначение настраиваемой роли
+              href: azure-ad-custom-roles-assign.md
+            - name: Удаление назначения ролей
+              href: azure-ad-custom-roles-update-remove.md
+            - name: Настройка пользовательских ролей
+              href: azure-ad-custom-roles-configure.md
         - name: Просмотр журнала аудита
           href: pim-how-to-use-audit-log.md
     - name: Управление ролями ресурсов Azure

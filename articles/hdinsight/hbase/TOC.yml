@@ -25,14 +25,6 @@
       href: ../hdinsight-component-versioning.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
-    - name: Устранение неполадок
-      items:
-        - name: REST Apache HBase не отвечает на запросы
-          href: ./hbase-troubleshoot-rest-not-spending.md
-        - name: Чрезмерное использование ЦП сервером региона
-          href: ./hbase-troubleshoot-pegged-cpu-region-server.md
-        - name: Истечение времени ожидания при выполнении команды hbase hbck
-          href: ./hbase-troubleshoot-timeouts-hbase-hbck.md
 - name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера
@@ -167,8 +159,25 @@
         - name: Обновление ОС путем частичной замены для кластера HDInsight
           href: ../hdinsight-os-patching.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
     - name: Устранение неполадок
-      href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
       items:
+        - name: Устранение неполадок с ресурсами
+          href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
+        - name: Данные в представлениях Apache Phoenix отсутствуют
+          href: ./hbase-troubleshoot-phoenix-no-data.md
+        - name: 'BindException: адрес уже используется'
+          href: ./hbase-troubleshoot-bindexception-address-use.md
+        - name: Не удается запустить Apache HBase
+          href: ./hbase-troubleshoot-start-fails.md
+        - name: Проблемы с региональными серверами
+          href: ./hbase-troubleshoot-unassigned-regions.md
+        - name: Проблемы с подключением к Apache Phoenix
+          href: ./hbase-troubleshoot-phoenix-connectivity.md
+        - name: REST Apache HBase не отвечает на запросы
+          href: ./hbase-troubleshoot-rest-not-spending.md
+        - name: Чрезмерное использование ЦП сервером региона
+          href: ./hbase-troubleshoot-pegged-cpu-region-server.md
+        - name: Истечение времени ожидания при выполнении команды hbase hbck
+          href: ./hbase-troubleshoot-timeouts-hbase-hbck.md
         - name: Устранение задержки работы или сбоя кластера HDInsight
           href: ../hdinsight-troubleshoot-failed-cluster.md?toc=/azure/hdinsight/hbase/toc.json&bc=/azure/hdinsight/hbase/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Hadoop HDFS

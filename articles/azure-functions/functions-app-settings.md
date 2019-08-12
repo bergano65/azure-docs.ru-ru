@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 62d359494050b188869d51d1e3975c823b9c0a76
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
-ms.translationtype: MT
+ms.openlocfilehash: 50056d4d05d2426ff644518aea04a2c9f4d817f3
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204936"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667168"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "67204936"
 
 В файле [host.json](functions-host-json.md) и в файле [local.settings.json](functions-run-local.md#local-settings-file) содержатся другие параметры глобальной конфигурации.
 
-## <a name="appinsightsinstrumentationkey"></a>APPINSIGHTS_INSTRUMENTATIONKEY
+## <a name="appinsights_instrumentationkey"></a>APPINSIGHTS_INSTRUMENTATIONKEY
 
 Ключ инструментирования Application Insights, если используется Application Insights. Дополнительные сведения см. в статье [Мониторинг функций Azure](functions-monitoring.md).
 
@@ -33,9 +33,9 @@ ms.locfileid: "67204936"
 |---|------------|
 |APPINSIGHTS_INSTRUMENTATIONKEY|5dbdd5e9-af77-484b-9032-64f83bb83bb|
 
-## <a name="azurefunctionsenvironment"></a>AZURE_FUNCTIONS_ENVIRONMENT
+## <a name="azure_functions_environment"></a>AZURE_FUNCTIONS_ENVIRONMENT
 
-В версии 2.x среды выполнения функций, настраивает поведение приложения в зависимости от среды выполнения. Это значение равно [чтения во время инициализации](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Можно задать `AZURE_FUNCTIONS_ENVIRONMENT` любое значение, но [три значения](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) поддерживаются: [Разработка](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [промежуточной](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging), и [рабочей](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Когда `AZURE_FUNCTIONS_ENVIRONMENT` не задана, по умолчанию используется `Production`. Этот параметр следует использовать вместо `ASPNETCORE_ENVIRONMENT` для установки среды выполнения. 
+В версии 2. x среды выполнения функций настраивает поведение приложения на основе среды выполнения. Это значение [считывается во время инициализации](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Можно задать `AZURE_FUNCTIONS_ENVIRONMENT` любое значение, но поддерживаются [три значения](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) : [Разработка](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [Промежуточная](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging)и [Рабочая среда](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Если `AZURE_FUNCTIONS_ENVIRONMENT` параметр не задан, по умолчанию `Development` используется значение в локальной среде `Production` и в Azure. Этот параметр следует использовать вместо `ASPNETCORE_ENVIRONMENT` установки среды выполнения. 
 
 ## <a name="azurewebjobsdashboard"></a>AzureWebJobsDashboard
 
@@ -54,7 +54,7 @@ ms.locfileid: "67204936"
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsDisableHomepage|Да|
+|AzureWebJobsDisableHomepage|true|
 
 Если пропустить этот параметр приложения или задать для него значение `false`, то в ответ на URL-адрес `<functionappname>.azurewebsites.net` отобразится страница, аналогичная приведенной ниже.
 
@@ -66,7 +66,7 @@ ms.locfileid: "67204936"
 
 |Ключ|Образец значения|
 |---|------------|
-|AzureWebJobsDotNetReleaseCompilation|Да|
+|AzureWebJobsDotNetReleaseCompilation|true|
 
 ## <a name="azurewebjobsfeatureflags"></a>AzureWebJobsFeatureFlags
 
@@ -92,7 +92,7 @@ ms.locfileid: "67204936"
 |---|------------|
 |AzureWebJobsStorage|DefaultEndpointsProtocol=https;AccountName=[name];AccountKey=[key]|
 
-## <a name="azurewebjobstypescriptpath"></a>AzureWebJobs_TypeScriptPath
+## <a name="azurewebjobs_typescriptpath"></a>AzureWebJobs_TypeScriptPath
 
 Путь к компилятору, который используется для TypeScript. Позволяет при необходимости переопределить значение по умолчанию.
 
@@ -100,15 +100,15 @@ ms.locfileid: "67204936"
 |---|------------|
 |AzureWebJobs_TypeScriptPath|%HOME%\typescript|
 
-## <a name="functionappeditmode"></a>FUNCTION\_APP\_EDIT\_MODE
+## <a name="function_app_edit_mode"></a>FUNCTION\_APP\_EDIT\_MODE
 
-Определяет, разрешено ли редактирование на портале Azure. Допустимые значения — "readwrite" и "readonly".
+Определяет, включен ли режим редактирования в портал Azure. Допустимые значения — "readwrite" и "readonly".
 
 |Ключ|Образец значения|
 |---|------------|
 |FUNCTION\_APP\_EDIT\_MODE|readonly|
 
-## <a name="functionsextensionversion"></a>FUNCTIONS\_EXTENSION\_VERSION
+## <a name="functions_extension_version"></a>FUNCTIONS\_EXTENSION\_VERSION
 
 Версия среды выполнения Функций, которая используется в этом приложении-функции. Тильда с основным номером версии означает использование последней версии этого основного номера версии (например, "~2"). Когда доступны новые версии для того же основного номера версии, они устанавливаются в приложении-функции автоматически. Чтобы закрепить для приложения определенную версию, используйте полный номер версии (например, "2.0.12345"). Значение по умолчанию: "~2". Значение `~1` позволяет закрепить для приложения версию 1.x среды выполнения.
 
@@ -116,31 +116,31 @@ ms.locfileid: "67204936"
 |---|------------|
 |FUNCTIONS\_EXTENSION\_VERSION|~2|
 
-## <a name="functionsworkerruntime"></a>FUNCTIONS\_WORKER\_RUNTIME
+## <a name="functions_worker_runtime"></a>FUNCTIONS\_WORKER\_RUNTIME
 
-Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения: `dotnet` (C#/F#), `node` (JavaScript/TypeScript), `java` (Java), `powershell` (PowerShell), и `python` (Python).
+Среда выполнения языка рабочей роли для загрузки в приложении-функции.  Она будет соответствовать языку, используемому в приложении (например, "dotnet"). Функции на нескольких языках потребуется опубликовать в нескольких приложениях с соответствующим значением среды выполнения рабочей роли.  Допустимые значения `dotnet` :C#(F#/) `node` , ( `powershell` JavaScript/TypeScript) `java` , (Java), (PowerShell) и `python` (Python).
 
 |Ключ|Образец значения|
 |---|------------|
 |FUNCTIONS\_WORKER\_RUNTIME|dotnet|
 
-## <a name="websitecontentazurefileconnectionstring"></a>WEBSITE_CONTENTAZUREFILECONNECTIONSTRING
+## <a name="website_contentazurefileconnectionstring"></a>WEBSITE_CONTENTAZUREFILECONNECTIONSTRING
 
-Только для планов потребления. Строка подключения для учетной записи хранения, где хранятся код и конфигурация приложения-функции. Ознакомьтесь с разделом [Создание приложения-функции](functions-infrastructure-as-code.md#create-a-function-app).
+Только для планов использования & Premium. Строка подключения для учетной записи хранения, где хранятся код и конфигурация приложения-функции. Ознакомьтесь с разделом [Создание приложения-функции](functions-infrastructure-as-code.md#create-a-function-app).
 
 |Ключ|Образец значения|
 |---|------------|
 |WEBSITE_CONTENTAZUREFILECONNECTIONSTRING|DefaultEndpointsProtocol=https;AccountName=[name];AccountKey=[key]|
 
-## <a name="websitecontentshare"></a>WEBSITE\_CONTENTSHARE
+## <a name="website_contentshare"></a>WEBSITE\_CONTENTSHARE
 
-Только для планов потребления. Путь к файлам c кодом и конфигурацией приложения-функции. Используется с WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. Значение по умолчанию — уникальная строка, которая начинается с имени приложения-функции. Ознакомьтесь с разделом [Создание приложения-функции](functions-infrastructure-as-code.md#create-a-function-app).
+Только для планов использования & Premium. Путь к файлам c кодом и конфигурацией приложения-функции. Используется с WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. Значение по умолчанию — уникальная строка, которая начинается с имени приложения-функции. Ознакомьтесь с разделом [Создание приложения-функции](functions-infrastructure-as-code.md#create-a-function-app).
 
 |Ключ|Образец значения|
 |---|------------|
 |WEBSITE_CONTENTSHARE|functionapp091999e2|
 
-## <a name="websitemaxdynamicapplicationscaleout"></a>WEBSITE\_MAX\_DYNAMIC\_APPLICATION\_SCALE\_OUT
+## <a name="website_max_dynamic_application_scale_out"></a>WEBSITE\_MAX\_DYNAMIC\_APPLICATION\_SCALE\_OUT
 
 Максимальное число экземпляров, до которого можно развернуть приложение-функцию. По умолчанию ограничение не установлено.
 
@@ -151,7 +151,7 @@ ms.locfileid: "67204936"
 |---|------------|
 |WEBSITE\_MAX\_DYNAMIC\_APPLICATION\_SCALE\_OUT|5|
 
-## <a name="websitenodedefaultversion"></a>WEBSITE\_NODE\_DEFAULT_VERSION
+## <a name="website_node_default_version"></a>WEBSITE\_NODE\_DEFAULT_VERSION
 
 Значение по умолчанию — "8.11.1".
 
@@ -159,7 +159,7 @@ ms.locfileid: "67204936"
 |---|------------|
 |WEBSITE\_NODE\_DEFAULT_VERSION|8.11.1|
 
-## <a name="websiterunfrompackage"></a>WEBSITE\_RUN\_FROM\_PACKAGE
+## <a name="website_run_from_package"></a>WEBSITE\_RUN\_FROM\_PACKAGE
 
 Позволяет приложению-функции запуск из файла подключенного пакета.
 
@@ -169,24 +169,24 @@ ms.locfileid: "67204936"
 
 Допустимые значения: или URL-адрес, который разрешается в путь файла пакета развертывания, или `1`. Если задано значение `1`, пакет должен быть в папке `d:\home\data\SitePackages`. При использовании развертывания из ZIP-файла с этим параметром пакет автоматически передается в это расположение. В предварительной версии этот параметр называется `WEBSITE_RUN_FROM_ZIP`. Дополнительные сведения см. в статье [Запуск Функций Azure из файла пакета](run-functions-from-deployment-package.md).
 
-## <a name="azurefunctionproxydisablelocalcall"></a>AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL
+## <a name="azure_function_proxy_disable_local_call"></a>AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL
 
 По умолчанию прокси-серверы Функций будут использовать команду для отправки вызовов API из них самих непосредственно в функции в одном приложении-функции, а не создавать новый HTTP-запрос. Этот параметр позволяет отключить такую реакцию на событие.
 
 |Ключ|Значение|Описание|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|Да|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|False|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
 
 
-## <a name="azurefunctionproxybackendurldecodeslashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
+## <a name="azure_function_proxy_backend_url_decode_slashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
 
 Этот параметр контролирует, декодируется ли сочетание знаков %2F как косая черта в параметрах маршрута, если оно вставлено в URL-адрес внутреннего сервера. 
 
 |Ключ|Значение|Описание|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|Да|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|False|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
 
 ### <a name="example"></a>Пример
 
@@ -205,13 +205,13 @@ ms.locfileid: "67204936"
     }
 }
 ```
-|Декодирование URL-адреса|Вход|Выход|
+|Декодирование URL-адреса|Ввод|Вывод|
 |-|-|-|
-|Да|myfunction.com/test%2fapi|example.com/test/api
-|false|myfunction.com/test%2fapi|example.com/test%2fapi|
+|true|myfunction.com/test%2fapi|example.com/test/api
+|False|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте, как обновлять параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings)
 

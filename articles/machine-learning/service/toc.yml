@@ -3,10 +3,10 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое служба машинного обучения Azure
+    - name: Что такое Машинное обучение Azure
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
-    - name: Как работает служба
+    - name: Архитектура и термины
       displayName: 'architecture, concepts, definitions, glossary'
       href: concept-azure-machine-learning-architecture.md
 - name: Учебники
@@ -216,6 +216,8 @@
         - name: Где и как развернуть
           displayName: 'publish, web, service, operationalize, aks, kubernetes, aci, container, cli, consume, docker'
           href: how-to-deploy-and-where.md
+        - name: Виртуальные машины записных книжек
+          href: how-to-deploy-local-container-notebook-vm.md
         - name: Экземпляры контейнеров Azure
           href: how-to-deploy-azure-container-instance.md
         - name: Служба Azure Kubernetes
@@ -256,9 +258,9 @@
     - name: Создание рабочих процессов для многоразового использования
       displayName: pipelines
       items:
-        - name: Создание ML-конвейера
+        - name: 'Конвейеры ML: пакетная обработка, вычисление, повторное использование, общий доступ'
           href: how-to-create-your-first-pipeline.md
-        - name: Использование CI/CD рабочих процессов ML с Azure Pipelines
+        - name: Конвейеры Azure для CI/CD
           displayName: 'continuous, integration, delivery'
           href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context
     - name: Управление квотами ресурсов

@@ -7,12 +7,12 @@ ms.service: blueprints
 ms.topic: sample
 ms.date: 06/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: c5541eab6707bab12fb75f4d0eaf8bae1f025ebb
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: e1bafdaa2883afb44aa3c609c0ccba0ce9d0a4ab
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816043"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934166"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -22,6 +22,7 @@ ms.locfileid: "68816043"
 
 |  |  |
 |---------|---------|
+|[IRS 1075](./irs-1075/index.md)| В этом документе описаны средства защиты для обеспечения соответствия требованиям IRS 1075.|
 | [ISO 27001](./iso27001/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |

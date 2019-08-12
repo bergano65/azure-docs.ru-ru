@@ -155,6 +155,8 @@
           items:
             - name: Подготовка сетей для аварийного восстановления виртуальных машин Azure
               href: azure-to-azure-about-networking.md
+            - name: Настройка сетевых конфигураций целевой виртуальной машины Azure
+              href: azure-to-azure-customize-networking.md
             - name: Настройка сетевого сопоставления и сохранение IP-адресов после отработки отказа
               href: azure-to-azure-network-mapping.md
             - name: Примеры для сохранения IP-адресов после отработки отказа

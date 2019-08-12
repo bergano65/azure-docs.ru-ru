@@ -159,6 +159,8 @@
     - name: Устранение неполадок
       href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/kafka/toc.json&bc=/azure/hdinsight/kafka/breadcrumb/toc.json
       items:
+        - name: Недостаточные домены сбоя
+          href: ./kafka-troubleshoot-insufficient-domains.md
         - name: Устранение задержки работы или сбоя кластера HDInsight
           href: ../hdinsight-troubleshoot-failed-cluster.md?toc=/azure/hdinsight/kafka/toc.json&bc=/azure/hdinsight/kafka/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Hadoop HDFS
