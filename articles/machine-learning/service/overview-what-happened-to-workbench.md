@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: a164276d41d182c5b439efc691d80693f1ac831e
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 2bc036fcde7ac541dbf7d8511f82080e52135777
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360128"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68772621"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -120,8 +120,8 @@ run = exp.submit(source_directory=script_folder,
 
 Сведения об [актуальной архитектуре Службы машинного обучения Azure](concept-azure-machine-learning-architecture.md). 
 
-Обзор службы см. в статье [Что такое служба машинного обучения Azure](overview-what-is-azure-ml.md).
+См. о [Службе машинного обучения Azure](overview-what-is-azure-ml.md).
 
-Сведения о том, как выполнить скрипт и просмотреть журнал выполнения скрипта с помощью последней версии службы "Машинное обучение Azure", см. в статье о [начале работы со службой "Машинное обучение Azure"](quickstart-run-cloud-notebook.md).
+Создайте свой первый эксперимент с помощью этого руководства из двух частей, чтобы [настроить среду и рабочую область](tutorial-1st-experiment-sdk-setup.md) и [обучить свою первую модель](tutorial-1st-experiment-sdk-train.md).
 
 Для более глубокого понимания этого рабочего процесса изучите [полное руководство](tutorial-train-models-with-aml.md), содержащее подробные инструкции для обучения и развертывания моделей с помощью Службы машинного обучения Azure. 

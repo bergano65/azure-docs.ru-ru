@@ -10,12 +10,12 @@ ms.date: 03/24/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d75e4c3e2b6f28dfbde670406854ac87790dd090
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 55cdb70a02aae62a69f4fc930f4c6ee385a24702
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850118"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839548"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
@@ -108,7 +108,7 @@ ms.locfileid: "67850118"
 
 ### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
 
-Каждый шаблон содержит пример кода, который принимает имитируемые данные с датчиков модуля **tempSensor** и направляет их в Центр Интернета вещей. В этом разделе добавьте код, который расширяет **PythonModule**, для анализа сообщений перед их отправкой. 
+Каждый шаблон содержит пример кода, который принимает имитируемые данные с датчиков модуля **SimulatedTemperatureSensor** и направляет их в Центр Интернета вещей. В этом разделе добавьте код, который расширяет **PythonModule**, для анализа сообщений перед их отправкой. 
 
 1. В обозревателе VS Code откройте **modules** > **PythonModule** > **main.py**.
 
@@ -168,7 +168,7 @@ ms.locfileid: "67850118"
         print ( "Total calls confirmed: %d\n" % TWIN_CALLBACKS )
     ```
 
-6. В класс **HubManager** добавьте новую строку в метод **__init__** для инициализации функции **module_twin_callback**, которую вы только что добавили:
+6. В класс **HubManager** добавьте новую строку в метод ** __** для инициализации функции **module_twin_callback**, которую вы только что добавили:
 
     ```python
     # Sets the callback when a module twin's desired properties are updated.
@@ -224,7 +224,7 @@ ms.locfileid: "67850118"
 
 3. Выберите файл **deployment.json** в папке **config** и щелкните **Select Edge Deployment Manifest** (Выбрать манифест развертывания Edge). Не используйте файл deployment.template.json.
 
-4. Нажмите кнопку "Обновить". Вы должны увидеть новый модуль **PythonModule**, работающий вместе с модулем **TempSensor**, а также **$edgeAgent** и **$edgeHub**. 
+4. Нажмите кнопку "Обновить". Появится новый запущенный модуль **PythonModule**, модуль **SimulatedTemperatureSensor**, а также **$edgeAgent** и **$edgeHub**. 
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 
