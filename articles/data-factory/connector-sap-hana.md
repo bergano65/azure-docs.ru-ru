@@ -235,7 +235,7 @@ ms.locfileid: "68726001"
 | NVARCHAR           | String                         |
 | REAL               | Единое                         |
 | SECONDDATE         | DateTime                       |
-| ШОРТТЕКСТ          | String                         |
+| SHORTTEXT          | String                         |
 | SMALLDECIMAL       | Десятичное                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
