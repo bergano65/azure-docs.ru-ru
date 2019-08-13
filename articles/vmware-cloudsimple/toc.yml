@@ -58,6 +58,8 @@
           href: create-cloudsimple-service.md
         - name: Доступ к порталу CloudSimple
           href: access-cloudsimple-portal.md
+        - name: Локальная конфигурация брандмауэра
+          href: on-premises-firewall-configuration.md
         - name: Управление узлами
           items:
             - name: Подготовка узлов

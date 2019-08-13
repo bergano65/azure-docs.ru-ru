@@ -197,6 +197,8 @@
       items:
         - name: Модель приложения
           href: service-fabric-application-model.md
+        - name: Создание шаблонов моделей приложений
+          href: service-fabric-concept-resource-model.md
         - name: Манифесты приложений и служб
           href: service-fabric-application-and-service-manifests.md
         - name: Примеры манифестов приложений и служб
@@ -350,6 +352,10 @@
           href: service-fabric-diagnostics-partners.md
     - name: Интеграция со службой управления API
       href: service-fabric-api-management-overview.md
+    - name: Модель ресурсов приложения
+      href: service-fabric-concept-resource-model.md
+    - name: Управляемое удостоверение
+      href: concepts-managed-identity.md
 - name: Руководства
   items:
     - name: Настройка среды разработки
@@ -741,6 +747,26 @@
           href: service-fabric-reverse-proxy-diagnostics.md
         - name: Устранение неполадок локального кластера
           href: service-fabric-troubleshoot-local-cluster-setup.md
+    - name: Использование управляемого удостоверения для приложений Service Fabric
+      items:
+        - name: Настройка кластера
+          items:
+            - name: Настройка существующего кластера с использованием управляемого удостоверения
+              href: configure-existing-cluster-enable-managed-identity-token-service.md
+            - name: Настройка нового кластера Azure Service Fabric с использованием управляемого удостоверения
+              href: configure-new-azure-service-fabric-enable-managed-identity.md
+        - name: Настройка приложения
+          items:
+            - name: Как развернуть приложение с использованием управляемого удостоверения
+              items:
+                - name: 'Как развернуть приложение с использованием управляемого удостоверения, назначенного системой'
+                  href: how-to-deploy-service-fabric-application-system-assigned-managed-identity.md
+                - name: 'Как развернуть приложение с использованием управляемого удостоверения, назначенного пользователем'
+                  href: how-to-deploy-service-fabric-application-user-assigned-managed-identity.md
+        - name: Использование MITS с кодом приложения Service Fabric
+          href: how-to-managed-identity-service-fabric-app-code.md
+        - name: Предоставление доступа другим ресурсам Azure
+          href: how-to-grant-access-other-resources.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

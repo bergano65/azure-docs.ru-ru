@@ -1,28 +1,33 @@
 - name: Документация по управлению приложениями
   href: index.yml
-- name: Управление приложениями и единый вход
+- name: Обзор
   expanded: true
   items:
-    - name: Обзор
-      expanded: true
-      items:
-        - name: Что такое управление приложениями?
-          href: what-is-application-management.md
-    - name: Краткие руководства
-      items:
-        - name: Добавление приложения из коллекции (портал)
-          href: add-application-portal.md
-        - name: Просмотр приложений клиента (портал)
-          href: view-applications-portal.md
-    - name: Учебники
-      items:
-        - name: Руководства по приложениям SaaS
-          href: /azure/active-directory/saas-apps/
-    - name: Основные понятия
+    - name: Что собой представляет управление облачными приложениями и единый вход?
+      href: what-is-application-management.md
+    - name: Что собой представляет автоматическая подготовка пользователей?
+      href: user-provisioning.md
+    - name: Что собой представляет прокси приложения для локальных приложений?
+      href: what-is-application-proxy.md
+- name: Краткие руководства
+  items:
+    - name: Добавление облачного приложения из коллекции
+      href: add-application-portal.md
+    - name: Просмотр корпоративных приложений
+      href: view-applications-portal.md
+- name: Учебники
+  items:
+    - name: Руководства по приложениям SaaS
+      href: /azure/active-directory/saas-apps/
+    - name: Добавление локального приложения с помощью прокси приложения
+      href: application-proxy-add-on-premises-application.md
+- name: Основные понятия
+  items:
+    - name: Облачные приложения и единый вход
       items:
         - name: Планирование интеграции облачных приложений
           items:
-            - name: Что происходит при добавлении приложения
+            - name: Начало работы с интеграцией приложений
               href: plan-an-application-integration.md
             - name: Рекомендации для разработчиков
               href: developer-guidance-for-integrating-applications.md
@@ -56,9 +61,34 @@
               href: tenant-restrictions.md
             - name: Настройка шифрования токенов SAML (предварительная версия)
               href: howto-saml-token-encryption.md
-        - name: Порталы пользователей
-          href: end-user-experiences.md
-    - name: Руководства
+            - name: Порталы пользователей
+              href: end-user-experiences.md
+    - name: Автоматическая подготовка пользователей
+      items:
+        - name: Автоматизация подготовки для приложений с поддержкой SCIM
+          href: use-scim-to-provision-users-and-groups.md
+    - name: Прокси приложения для локальных приложений
+      items:
+        - name: Прокси приложения
+          href: application-proxy.md
+        - name: Планирование развертывания прокси приложения
+          href: application-proxy-deployment-plan.md
+        - name: Соединители
+          href: application-proxy-connectors.md
+        - name: Группы соединителей
+          href: application-proxy-connector-groups.md
+        - name: Безопасность
+          href: application-proxy-security.md
+        - name: Топология сети
+          href: application-proxy-network-topology.md
+        - name: Высокий уровень доступности и балансировка нагрузки
+          href: application-proxy-high-availability-load-balancing.md
+        - name: Сравнение решений для удаленного доступа
+          href: application-proxy-migration.md
+- name: Руководства
+  expanded: true
+  items:
+    - name: Облачные приложения и единый вход
       items:
         - name: Добавление облачного приложения
           items:
@@ -182,36 +212,7 @@
                   href: access-panel-extension-problem-installing.md
                 - name: Ошибка при использовании самостоятельного доступа к приложению
                   href: access-panel-troubleshoot-self-service-access.md
-    - name: Ресурсы
-      items:
-        - name: Форум отзывов и предложений по Azure
-          href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/active-directory'
-        - name: Обновления службы
-          href: 'https://azure.microsoft.com/updates/?product=active-directory'
-        - name: Stack Overflow
-          href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
-        - name: Видео
-          href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'
-- name: Автоматическая подготовка пользователей
-  items:
-    - name: Обзор
-      expanded: true
-      items:
-        - name: Что собой представляет подготовка?
-          href: user-provisioning.md
-    - name: Учебники
-      items:
-        - name: Руководства по приложениям SaaS
-          href: /azure/active-directory/saas-apps/
-    - name: Основные понятия
-      items:
-        - name: Автоматизация подготовки для приложений с поддержкой SCIM
-          href: use-scim-to-provision-users-and-groups.md
-    - name: Руководства
+    - name: Автоматическая подготовка пользователей
       items:
         - name: Настроить подготовку учетных записей пользователей
           items:
@@ -223,8 +224,6 @@
               href: configure-automatic-user-provisioning-portal.md
             - name: Настройка атрибутов приложения
               href: Customize-application-attributes.md
-            - name: Написание выражений для сопоставления атрибутов
-              href: functions-for-customizing-application-data.md
             - name: Фильтры области
               href: define-conditional-rules-for-provisioning-user-accounts.md
             - name: Проверка состояния подготовки
@@ -245,50 +244,7 @@
               href: application-provisioning-config-problem-no-users-provisioned.md
             - name: Для приложения из коллекции подготовлены не те пользователи
               href: application-provisioning-config-problem-wrong-users-provisioned.md
-    - name: Ресурсы
-      items:
-        - name: Форум отзывов и предложений по Azure
-          href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/active-directory'
-        - name: Обновления службы
-          href: 'https://azure.microsoft.com/updates/?product=active-directory'
-        - name: Stack Overflow
-          href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
-        - name: Видео
-          href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'
-- name: Прокси приложения для локальных приложений
-  items:
-    - name: Обзор
-      expanded: true
-      items:
-        - name: Что такое Application Proxy?
-          href: what-is-application-proxy.md
-    - name: Учебники
-      items:
-        - name: Добавление локального приложения (портал)
-          href: application-proxy-add-on-premises-application.md
-    - name: Основные понятия
-      items:
-        - name: Прокси приложения
-          href: application-proxy.md
-        - name: Планирование развертывания прокси приложения
-          href: application-proxy-deployment-plan.md
-        - name: Соединители
-          href: application-proxy-connectors.md
-        - name: Группы соединителей
-          href: application-proxy-connector-groups.md
-        - name: Безопасность
-          href: application-proxy-security.md
-        - name: Топология сети
-          href: application-proxy-network-topology.md
-        - name: Высокий уровень доступности и балансировка нагрузки
-          href: application-proxy-high-availability-load-balancing.md
-        - name: Сравнение решений для удаленного доступа
-          href: application-proxy-migration.md
-    - name: Руководства
+    - name: Прокси приложения для локальных приложений
       items:
         - name: Настройка соединителей
           items:
@@ -376,21 +332,27 @@
               href: application-sign-in-problem-on-premises-application-proxy.md
             - name: Проблемы с CORS в прокси приложения
               href: application-proxy-understand-cors-issues.md
-    - name: Справочные материалы
+- name: Справочные материалы
+  items:
+    - name: Автоматическая подготовка пользователей
+      items:
+        - name: Написание выражений для сопоставления атрибутов
+          href: functions-for-customizing-application-data.md
+    - name: Прокси приложения для локальных приложений
       items:
         - name: Журнал версий прокси приложения
           href: application-proxy-release-version-history.md
-    - name: Ресурсы
-      items:
-        - name: Форум отзывов и предложений по Azure
-          href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/active-directory'
-        - name: Обновления службы
-          href: 'https://azure.microsoft.com/updates/?product=active-directory'
-        - name: Stack Overflow
-          href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
-        - name: Видео
-          href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'
+- name: Ресурсы
+  items:
+    - name: Форум отзывов и предложений по Azure
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=active-directory'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

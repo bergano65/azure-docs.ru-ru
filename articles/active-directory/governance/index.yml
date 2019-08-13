@@ -1,56 +1,69 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: "Документация по Azure\_AD Identity Governance"
+### YamlMime:Landing
+title: Документация по Azure Active Directory Identity Governance
+summary: Azure Active Directory (Azure AD) Identity Governance помогает защищать и отслеживать критически важные ресурсы, а также выполнять аудит доступа к критически важным ресурсам, сохраняя эффективность работы сотрудников.
 metadata:
-  document_id: null
-  title: "Документация по Azure Active Directory Identity Governance\_| Документация Майкрософт"
-  description: 'Узнайте о системе управления жизненным циклом удостоверений и доступа, а также о том, как обеспечить безопасное администрирование для сотрудников и партнеров.'
-  services: active-directory
   author: msaburnley
+  description: Узнайте, как защищать и отслеживать критически важные ресурсы, а также выполнять аудит доступа к критически важным ресурсам, сохраняя эффективность работы сотрудников.
   manager: daveba
-  ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
-  ms.topic: landing-page
-  ms.date: 04/18/2019
   ms.author: ajburnle
-abstract:
-  description: "С помощью Azure Active Directory (Azure\_AD) Identity Governance организации могут управлять жизненным циклом удостоверений и доступа, а также обеспечить безопасное администрирование для сотрудников и партнеров."
-  aside:
-    image:
-      alt: null
-      height: 112
-      src: media/index/video-thumb-identity-governance.png
-      width: 200
-    title: 'Управление доступом к ресурсам (1: 17:24)'
-    href: 'https://www.youtube.com/embed/aY7A0Br8u5M'
-    width: 200
-sections:
-  - title: Identity Governance
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/governance/identity-governance-overview">Общие сведения об Identity Governance</a>
-  - title: Управление правами (предварительная версия)
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: "<a href=\"/azure/active-directory/governance/entitlement-management-overview\">Общие сведения об управлении правами Azure\_AD</a>"
-          - html: <a href="/azure/active-directory/governance/entitlement-management-access-package-first">Руководство. Создание первого пакета для доступа</a>
-          - html: <a href="/azure/active-directory/governance/entitlement-management-access-package-edit">Изменение и администрирование существующего пакета для доступа</a>
-  - title: Проверки доступа
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: "<a href=\"/azure/active-directory/governance/access-reviews-overview\">Общие сведения о службе проверок доступа Azure\_AD</a>"
-          - html: <a href="/azure/active-directory/governance/create-access-review">Создание проверки доступа групп или приложений</a>
-          - html: <a href="/azure/active-directory/governance/perform-access-review">Проверка доступа к группам или приложениям</a>
-  - title: Условия использования
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/conditional-access/terms-of-use">Обязательное применение условий использования</a>
+  ms.collection: na
+  ms.date: 08/08/2019
+  ms.service: active-directory
+  ms.subservice: na
+  ms.topic: landing-page
+  services: active-directory
+  ms.openlocfilehash: fa7577ea7ef212242a903b20d44db80c22c55842
+  ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/12/2019
+  ms.locfileid: "68949547"
+landingContent:
+- title: Сведения об Identity Governance
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure AD Identity Governance?
+      url: identity-governance-overview.md
+  - linkListType: learn
+    links:
+    - text: Управление доступом к ресурсам
+      url: https://www.youtube.com/watch?v=bFfowdpApu4&list=PLQXpv_NQsPIBg3op2xONM9KgwlayFDue6
+- title: Управление жизненным циклом доступа к группам, приложениям и сайтам
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет управление правами Azure AD? (предварительная версия)
+      url: entitlement-management-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Создание первого пакета для доступа, который помогает пользователям запрашивать доступ
+      url: entitlement-management-access-package-first.md
+  - linkListType: how-to-guide
+    links:
+    - text: Изменение и администрирование существующего пакета для доступа
+      url: entitlement-management-access-package-edit.md
+- title: Повторная сертификация доступа к группам, приложениям и привилегированным ролям
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляют проверки доступа Azure AD?
+      url: access-reviews-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание проверки доступа для предотвращение получения пользователями чрезмерных прав доступа
+      url: create-access-review.md
+    - text: Проверка доступа к группам или приложениям
+      url: perform-access-review.md
+- title: Предоставление пользователям прав на использование привилегированных ролей
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure AD Privileged Identity Management?
+      url: ../privileged-identity-management/pim-configure.md
+- title: Обеспечение прочтения пользователями заявлений об отказе
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Запрос для пользователей на принятие условий использования приложения
+      url: ../conditional-access/terms-of-use.md

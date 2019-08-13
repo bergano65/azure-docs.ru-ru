@@ -11,7 +11,7 @@
       href: search-create-service-portal.md
     - name: Портал
       items:
-        - name: Загрузка индекса и отправка запросов к нему
+        - name: Создание и использование индекса
           href: search-get-started-portal.md
         - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
           href: cognitive-search-quickstart-blob.md

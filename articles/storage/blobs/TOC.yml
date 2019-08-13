@@ -137,6 +137,8 @@
           items:
             - name: Уровни доступа
               href: storage-blob-storage-tiers.md
+            - name: Восстановление данных из Архивного хранилища
+              href: storage-blob-rehydration.md
             - name: Управление жизненным циклом хранилища BLOB-объектов Azure
               href: storage-lifecycle-management-concepts.md
         - name: Производительность и масштабируемость

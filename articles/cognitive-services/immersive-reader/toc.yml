@@ -9,10 +9,14 @@
   items:
     - name: 'Использование C#'
       href: Quickstart.md
+    - name: Использование Swift (iOS)
+      href: ios-quickstart.md
 - name: Учебники
   items:
     - name: Запуск Иммерсивного средства чтения (Node.js)
       href: tutorial.md
+    - name: Изображение к Иммерсивному средству чтения (Swift)
+      href: ios-picture-immersive-reader-tutorial.md
 - name: Инструкции
   items:
     - name: Аутентификация Azure Active Directory
@@ -21,6 +25,8 @@
   items:
     - name: Справочник по пакету SDK
       href: reference.md
+    - name: Справочник по пакету SDK для iOS
+      href: ios-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
