@@ -63,8 +63,6 @@
       href: samples-resource-manager-templates.md
 - name: Основные понятия
   items:
-    - name: Принцип работы Службы приложений
-      href: app-service-how-works-readme.md
     - name: Планы службы приложений
       href: overview-hosting-plans.md
     - name: Функции ОС

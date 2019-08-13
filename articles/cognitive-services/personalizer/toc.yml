@@ -8,9 +8,12 @@
       displayName: 'loop, context, feature, action, rank, reward, developer, use case'
 - name: Краткие руководства
   items:
-    - name: Создание и использование цикла обратной связи
+    - name: 'Использование C#'
       href: csharp-quickstart-commandline-feedback-loop.md
       displayName: 'code, sample, quickstart, c#'
+    - name: Использование Python
+      href: python-quickstart-commandline-feedback-loop.md
+      displayName: 'code, sample, quickstart, python'
 - name: Основные понятия
   items:
     - name: Принцип работы Персонализатора

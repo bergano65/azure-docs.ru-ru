@@ -258,7 +258,7 @@
     - name: Создание рабочих процессов для многоразового использования
       displayName: pipelines
       items:
-        - name: 'Конвейеры ML: пакетная обработка, вычисление, повторное использование, общий доступ'
+        - name: Конвейеры Машинного обучения
           href: how-to-create-your-first-pipeline.md
         - name: Конвейеры Azure для CI/CD
           displayName: 'continuous, integration, delivery'
