@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
-ms.openlocfilehash: 754eb063f82344e72bece8fb0ac5708dbc8ab791
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 0da426a9302ce72b5359df15d3f8e244fc1766a0
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249133"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935360"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -133,10 +133,10 @@ HADR — это только функция репликации. Он не им
 | Определение виртуальной сети или подсети | Где развертываются виртуальные машины для IBM DB2 и Azure Load Balancer. Может быть существующим или вновь созданным. |
 | Виртуальные машины, на которых размещены IBM DB2 LUW | Размер виртуальной машины, хранилище, сеть, IP-адрес. |
 | Имя виртуального узла и виртуальный IP-адрес для базы данных IBM DB2| Виртуальный IP-адрес или имя узла, используемые для подключения серверов приложений SAP. **DB-virt-hostname**, **DB-virt-IP**. |
-| Ограждение Azure | Ограждение Azure или ограждение SBD (настоятельно рекомендуется). , Чтобы избежать ситуаций раздельного мозгового случая. |
+| Ограждение Azure | Ограждение Azure или ограждение SBD (настоятельно рекомендуется). , Чтобы избежать ситуаций с разделением. |
 | ВИРТУАЛЬНАЯ МАШИНА SBD | SBD размер виртуальной машины, хранилище, сеть. |
-| Azure Load Balancer | Использование уровня "базовый" или "Стандартный" (рекомендуется), порт пробы для базы данных DB2 (наш Совет 62500) **пробный порт**. |
-| Разрешение имен| Как работает разрешение имен в среде. Настоятельно рекомендуется использовать службу DNS. Можно использовать локальный файл hosts. |
+| Балансировщик нагрузки Azure | Использование уровня "базовый" или "Стандартный" (рекомендуется), порт пробы для базы данных DB2 (наш Совет 62500) **пробный порт**. |
+| Разрешение имени| Как работает разрешение имен в среде. Настоятельно рекомендуется использовать службу DNS. Можно использовать локальный файл hosts. |
     
 Дополнительные сведения о Pacemaker Linux в Azure см. в статье [Настройка Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker).
 
@@ -404,10 +404,10 @@ sudo crm configure property maintenance-mode=false</pre></code>
 # <a name="full-list-of-resources"></a>Полный список ресурсов:
 
 #  <a name="stonith-sbd----stonithexternalsbd-started-azibmdb02"></a>stonith-SBD (stonith: External/SBD): Запущенные azibmdb02
-#  <a name="resource-group-gipdb2ptrptr"></a>Группа ресурсов: g_ip_db2ptr_PTR
-#      <a name="rscipdb2ptrptr--ocfheartbeatipaddr2-------started-azibmdb02"></a>rsc_ip_db2ptr_PTR (ОКФ:: пульс: IPaddr2):       Запущенные azibmdb02
-#      <a name="rscncdb2ptrptr--ocfheartbeatanything------started-azibmdb02"></a>rsc_nc_db2ptr_PTR (ОКФ:: пульс: все):      Запущенные azibmdb02
-#  <a name="masterslave-set-msldb2db2ptrptr-rscdb2db2ptrptr"></a>Главный/ведомый набор: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
+#  <a name="resource-group-g_ip_db2ptr_ptr"></a>Группа ресурсов: g_ip_db2ptr_PTR
+#      <a name="rsc_ip_db2ptr_ptr--ocfheartbeatipaddr2-------started-azibmdb02"></a>rsc_ip_db2ptr_PTR (ОКФ:: пульс: IPaddr2):       Запущенные azibmdb02
+#      <a name="rsc_nc_db2ptr_ptr--ocfheartbeatanything------started-azibmdb02"></a>rsc_nc_db2ptr_PTR (ОКФ:: пульс: все):      Запущенные azibmdb02
+#  <a name="masterslave-set-msl_db2_db2ptr_ptr-rsc_db2_db2ptr_ptr"></a>Главный/ведомый набор: msl_Db2_db2ptr_PTR [rsc_Db2_db2ptr_PTR]
 #      <a name="masters--azibmdb02-"></a>Образцы: [azibmdb02]
 #      <a name="slaves--azibmdb01-"></a>Подчиненные: [azibmdb01]
 </pre>
@@ -425,7 +425,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    2\. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
-   В. Установите статическое **назначение** и введите IP-адрес **Virtual-IP** , определенный в начале.
+   В. Установите статическое **назначение** ивведите IP-адрес **Virtual-IP** , определенный в начале.
 
    Г. Нажмите кнопку **ОК**.
 

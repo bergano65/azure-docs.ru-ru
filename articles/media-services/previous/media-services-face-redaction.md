@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: juliako;
-ms.openlocfilehash: 1fe003ae13bc5f195932f4f140e17c4dc2791959
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.openlocfilehash: e350b6ed90324e7ed645d85c046fd74c0a089452
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61247400"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69016017"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
 ## <a name="overview"></a>Обзор
@@ -147,19 +147,19 @@ ms.locfileid: "61247400"
 
 #### <a name="low"></a>Низкий
 
-![Низкая](./media/media-services-face-redaction/blur1.png)
+![Низкий](./media/media-services-face-redaction/blur1.png)
  
 #### <a name="med"></a>Средний
 
 ![Средний](./media/media-services-face-redaction/blur2.png)
 
-#### <a name="high"></a>Высокая
+#### <a name="high"></a>Высокий
 
-![Высокая](./media/media-services-face-redaction/blur3.png)
+![Высокий](./media/media-services-face-redaction/blur3.png)
 
-#### <a name="box"></a>Box
+#### <a name="box"></a>Рамка
 
-![Box](./media/media-services-face-redaction/blur4.png)
+![Рамка](./media/media-services-face-redaction/blur4.png)
 
 #### <a name="black"></a>Черный
 
@@ -363,11 +363,11 @@ namespace FaceRedaction
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

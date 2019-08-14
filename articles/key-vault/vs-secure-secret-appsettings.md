@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: cawa
-ms.openlocfilehash: 9763a14e84d88be1d6f09fb9f16b6b7c9eeffd2d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3f5196c81550446221a4524330e355c595b65c6a
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506424"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934368"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -41,7 +41,7 @@ ms.locfileid: "65506424"
 
     ![Создание хранилища Azure Key Vault](./media/vs-secure-secret-appsettings/create-keyvault.PNG)
 
-2. Предоставьте членам своей команды доступ к хранилищу Key Vault. Если у вас большая команда разработчиков, можно создать [группу Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal) и предоставить этой группе безопасности доступ к хранилищу Key Vault. В разделе *Операции управления секретами* в раскрывающемся списке *Разрешения секретов* щелкните *Получить* и выберите *Список*.
+2. Предоставьте членам своей команды доступ к хранилищу Key Vault. Если у вас большая команда разработчиков, можно создать [группу Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md) и предоставить этой группе безопасности доступ к хранилищу Key Vault. В разделе *Операции управления секретами* в раскрывающемся списке *Разрешения секретов* щелкните *Получить* и выберите *Список*.
 
     ![Добавление политики доступа к хранилищу Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-access-policy.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "65506424"
     ![Добавление секрета Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-secret.png)
 
     > [!NOTE] 
-    > До Visual Studio 2017 V15.6 мы использовали рекомендуем установить расширение аутентификации служб Azure для Visual Studio. Но она устарела теперь элементарные интегрирован в Visual Studio. Поэтому если вы используете более старую версию visual Studio 2017, мы рекомендуем выполнить обновление до по крайней мере VS 2017 15.6 или вверх, чтобы могли использовать эту функцию в собственном коде и доступ к хранилищу ключей с использованием идентификатора входа в Visual Studio сама.
+    > До Visual Studio 2017 V 15.6 мы использовали, чтобы рекомендовать установить расширение проверки подлинности служб Azure для Visual Studio. Но теперь это не рекомендуется, так как фунЦионалити интегрирован в Visual Studio. Поэтому, если вы используете более раннюю версию Visual Studio 2017, мы рекомендуем вам обновить по крайней мере VS 2017 15,6 или выше, чтобы использовать эту функцию в собственном режиме и получить доступ к хранилищу ключей с помощью самой учетной записи входа Visual Studio.
     >
  
 4. Добавьте в проект следующие пакеты NuGet:

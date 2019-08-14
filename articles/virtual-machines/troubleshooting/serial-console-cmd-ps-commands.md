@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: f286881341e527d3f01e57768cd48405c85a9a69
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 77fe6f1ce416df049928697d2c166e2aba0abfe2
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710610"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935218"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
@@ -102,7 +102,7 @@ SAC позволяет подключаться к вашей операцион
 
 `dism /online /Enable-Feature /FeatureName:TelnetClient`
 
-Проверка подключения
+Тестирование подключения
 
 `telnet bing.com 80`
 
@@ -118,7 +118,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="disable-windows-firewall"></a>Отключение брандмауэра Windows
 `netsh advfirewall set allprofiles state off`
 
-Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующем перезапуске или при включении его с помощью следующей команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
+Вы можете использовать эту команду при устранении неполадок, чтобы временно исключить брандмауэр Windows. Он будет включен при следующей перезагрузке или при включении с помощью приведенной ниже команды. Не останавливайте службу брандмауэра Windows (MPSSVC) или службу "Базовый модуль фильтрации" (BFE), чтобы исключить брандмауэр Windows. Остановка служб MPSSVC или BFE приведет к блокировке всех подключений.
 ### <a name="enable-windows-firewall"></a>Включение брандмауэра Windows
 `netsh advfirewall set allprofiles state on`
 ## <a name="manage-users-and-groups"></a>Управление пользователями и группами
@@ -241,7 +241,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="detect-safe-mode-boot"></a>Определение загрузки в безопасном режиме
 `bcdedit /enum | find /i "safeboot"` 
 
-# <a name="windows-commands---powershell"></a>Команды Windows — PowerShell
+## <a name="windows-commands---powershell"></a>Команды Windows — PowerShell
 
 Чтобы запустить PowerShell в SAC, в командной строке введите:
 

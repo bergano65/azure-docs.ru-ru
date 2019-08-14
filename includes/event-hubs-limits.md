@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/22/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 928b0bcfb32d1a319c811d00fc84a37f85702895
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: c163e3cce862640d43f8696dca4eeef29f2ae12a
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68857479"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912478"
 ---
 В следующей таблице перечислены квоты и ограничения для [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/). См. сведения о [ценах на Центры событий](https://azure.microsoft.com/pricing/details/event-hubs/).
 
@@ -36,6 +36,8 @@ ms.locfileid: "68857479"
 | Число групп потребителей на концентратор событий |Сущность | - |1 |20 |
 | Число подключений AMQP на пространство имен |Пространство имен |Последующие запросы на дополнительные соединения отклоняются, и вызывающий код получает исключение. |100 |5 000|
 | Максимальный срок хранения данных о событиях |Сущность | - |1 день |1–7 дн. |
+|Пространство имен с включенным Apache Kafka|Пространство имен |Пространство имен концентраторов событий потоковое приложение с использованием протокола Kafka |Нет | Да |
+|Захват |Сущность | При включении микропакетов в том же потоке |Нет |Да |
 
 
 ### <a name="event-hubs-dedicated---quotas-and-limits"></a>Квоты и ограничения Центры событий (цен. категория "Выделенный")

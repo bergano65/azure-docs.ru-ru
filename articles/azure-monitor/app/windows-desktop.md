@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/15/2018
+ms.date: 08/09/2019
 ms.author: mbullwin
-ms.openlocfilehash: 567163a5d5ce37eeffb5ef2bc6f9adb7c5b027ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed6df8b4724dbb297a0c64fd869d3377545a7595
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66255723"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932335"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
@@ -37,10 +37,11 @@ ms.locfileid: "66255723"
    
     Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"** .
 5. [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки данных телеметрии.
-6. Запустите приложение и просмотреть данные телеметрии в ресурс, который вы создали на портале Azure.
+6. Запустите приложение и просмотрите данные телеметрии в ресурсе, созданном в портал Azure.
 
 ## <a name="telemetry"></a>Пример кода
 ```csharp
+using Microsoft.ApplicationInsights;
 
     public partial class Form1 : Form
     {
@@ -52,7 +53,6 @@ ms.locfileid: "66255723"
             tc.InstrumentationKey = "key copied from portal";
 
             // Set session data:
-            tc.Context.User.Id = Environment.UserName;
             tc.Context.Session.Id = Guid.NewGuid().ToString();
             tc.Context.Device.OperatingSystem = Environment.OSVersion.ToString();
 
@@ -61,9 +61,10 @@ ms.locfileid: "66255723"
             ...
         }
 
-        protected override void OnClosing(CancelEventArgs e)
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            stop = true;
+            e.Cancel = true;
+
             if (tc != null)
             {
                 tc.Flush(); // only for desktop apps
@@ -76,7 +77,7 @@ ms.locfileid: "66255723"
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)

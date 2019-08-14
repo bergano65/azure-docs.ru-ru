@@ -1,5 +1,5 @@
 ---
-title: Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями с помощью портала Azure | Документация Майкрософт
+title: Выполнение потоковой трансляции с помощью служб мультимедиа Azure для создания потоков с несколькими скоростями с помощью портал Azure | Документация Майкрософт
 description: В этом руководстве подробно описаны все этапы создания канала, который получает на вход динамический односкоростной поток данных и преобразует его в мультискоростной, с помощью портала Azure.
 services: media-services
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: daab3c3b2a5b756686a4867350478faaa1142279
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3217a2d5ba3d45a069eacdb67a8d69e9abc674b8
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64726861"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "69015207"
 ---
-# <a name="perform-live-streaming-using-media-services-to-create-multi-bitrate-streams-with-azure-portal"></a>Потоковая трансляция с использованием служб мультимедиа для создания потоков с разными скоростями с помощью портала Azure  
+# <a name="perform-live-streaming-using-media-services-to-create-multi-bitrate-streams-with-azure-portal"></a>Потоковая трансляция с помощью служб мультимедиа позволяет создавать потоки с несколькими скоростями с помощью портал Azure  
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-creating-live-encoder-enabled-channel.md)
 > * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
@@ -29,7 +29,7 @@ ms.locfileid: "64726861"
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 В этом руководстве подробно описаны все этапы создания **канала** , который получает на вход динамический односкоростной поток данных и преобразует его в мультискоростной.
 
@@ -39,11 +39,11 @@ ms.locfileid: "64726861"
 Ниже описываются основные этапы создания стандартных приложений, предназначенных для потоковой передачи в реальном времени.
 
 > [!NOTE]
-> Сейчас максимальная рекомендуемая продолжительность интерактивного события составляет 8 часов. Обратитесь по адресу amslived@microsoft.com, если необходимо запустить канал на более продолжительные отрезки времени.
+> Сейчас максимальная рекомендуемая продолжительность интерактивного события составляет 8 часов. Обратитесь по адресу amshelp@microsoft.com, если необходимо запустить канал на более продолжительные отрезки времени.
 
 1. Подключите видеокамеру к компьютеру. <br/>Чтобы установить оборудование, ознакомьтесь с записью блога [Simple and portable event video gear setup]( https://link.medium.com/KNTtiN6IeT) (Настройка простого портативного оборудования для сьемки).
 
-    Если у вас нет доступа к камере, средства, такие как [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) можно использовать создания динамического веб-канала из видеофайла.
+    Если у вас нет доступа к камере, можно использовать такие средства, как [Wirecast аудиопотока](https://www.telestream.net/wirecast/overview.htm) , для создания динамического канала из видеофайла.
 1. Запустите и настройте локальный динамический кодировщик, который может выводить односкоростной поток по одному из следующих протоколов: RTMP или Smooth Streaming. Дополнительные сведения см. в статье о [поддержке протокола RTMP в службах мультимедиа Azure и о динамических кодировщиках](https://go.microsoft.com/fwlink/?LinkId=532824). <br/>Ознакомьтесь также с записью блога [Live streaming production with OBS](https://link.medium.com/ttuwHpaJeT) (Потоковая трансляция с помощью OBS).
 
     Это действие также можно выполнить после создания канала.
@@ -61,7 +61,7 @@ ms.locfileid: "64726861"
 1. Чтобы остановить потоковую передачу и архивацию содержимого события, завершите работу события.
 1. Удалите событие (и при необходимости ресурс).   
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -70,13 +70,13 @@ ms.locfileid: "64726861"
 * Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Веб-камера и кодировщик, который передает динамический односкоростной поток данных.
 
-## <a name="create-a-channel"></a>Создание канала
+## <a name="create-a-channel"></a>Создать канал
 
 1. На [портале Azure](https://portal.azure.com/) щелкните "Службы мультимедиа", а затем — имя учетной записи служб мультимедиа.
 2. Выберите **Live Streaming**(Потоковая трансляция).
 3. Щелкните **Настраиваемое создание**. Этот параметр позволяет создать канал с поддержкой кодирования в реальном времени.
 
-    ![Создание канала](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel.png)
+    ![Создать канал](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel.png)
 4. Щелкните **Параметры**.
 
    1. Выберите тип канала с **кодированием в реальном времени**. Он указывает, что необходимо создать канал с поддержкой кодирования в режиме реального времени. Это означает, что входящий односкоростной поток отправляется в канал и преобразуется в мультискоростной поток на основе заданных параметров динамического кодировщика. Подробные сведения см. в статье [Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями](media-services-manage-live-encoder-enabled-channels.md). Нажмите кнопку ОК.
@@ -149,7 +149,7 @@ ms.locfileid: "64726861"
 
     Укажите название события и ресурса, окно архивирования и вариант кодирования.
 
-    ![Создание программы](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-program.png)
+    ![создать программу](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-program.png)
 
     Если оставить установленным флажок **Publish this live event now** (Опубликовать это динамическое событие), для события будут созданы URL-адреса публикации.
 
@@ -167,7 +167,7 @@ ms.locfileid: "64726861"
 ## <a name="watch-the-event"></a>Просмотр события
 Чтобы просмотреть событие, щелкните **Посмотреть** на портале Azure или скопируйте URL-адрес потоковой передачи и используйте проигрыватель по своему усмотрению. 
 
-![Создано](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
+![Дата создания](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
 
 После остановки интерактивное событие автоматически преобразуется в содержимое по требованию.
 
@@ -183,10 +183,10 @@ ms.locfileid: "64726861"
 
 Для управления ресурсами последовательно выберите **Параметры** и **Ресурсы**.
 
-![Активы](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-assets.png)
+![Ресурсы](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-assets.png)
 
 ## <a name="considerations"></a>Рекомендации
-* Сейчас максимальная рекомендуемая продолжительность интерактивного события составляет 8 часов. Обратитесь по адресу amslived@microsoft.com, если необходимо запустить канал на более продолжительные отрезки времени.
+* Сейчас максимальная рекомендуемая продолжительность интерактивного события составляет 8 часов. Обратитесь по адресу amshelp@microsoft.com, если необходимо запустить канал на более продолжительные отрезки времени.
 * Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Работает**.
 
 ## <a name="next-step"></a>Дальнейшие действия
@@ -194,6 +194,6 @@ ms.locfileid: "64726861"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

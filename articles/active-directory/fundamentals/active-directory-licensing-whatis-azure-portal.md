@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a89443062f7d5cc697e83cc4039d0f3a47ad3077
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a455f0e1959ad496a04f531cc0c3ece240c757ad
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561842"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987151"
 ---
 # <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензирование на основе групп в Azure Active Directory?
 
@@ -32,7 +32,7 @@ ms.locfileid: "68561842"
 ## <a name="licensing-requirements"></a>Требования к лицензированию
 Чтобы использовать групповое лицензирование, нужно наличие одной из следующих лицензий:
 
-- Платная или пробная подписка для Azure AD Basic и более поздних версий
+- Платная или пробная подписка для Azure AD Premium P1 и более поздних версий
 
 - Платная или пробная версия Office 365 Enterprise E3 или Office 365 a3 или Office 365 GCC G3 и выше
 

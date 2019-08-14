@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 05/08/2019
+ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: af540267e4afc1b248b66b1c6f4989b832c38b58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7057ce27cbbba8d70835493fc91a88ad823369bb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237578"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947201"
 ---
 # <a name="best-practices-for-choosing-a-time-series-id"></a>Лучшие методики при выборе идентификатора временного ряда
 
@@ -42,7 +42,7 @@ ms.locfileid: "66237578"
 
 В следующих сценариях описан выбор нескольких ключевых свойств в качестве вашего идентификатора временного ряда:  
 
-### <a name="scenario-one"></a>Сценарий 1
+### <a name="scenario-one"></a>Один из сценариев
 
 * У вас есть устаревший парк ресурсов, у каждого из которых есть уникальный ключ.
 * Например, один парк однозначно определяется свойством *deviceId*, а в другом уникальное свойство — *objectId*. Ни один парк не содержит уникальное свойство другого парка. В этом примере следует выбрать два ключа (deviceId и objectId) в качестве уникальных ключей.
@@ -55,7 +55,7 @@ ms.locfileid: "66237578"
 * Кроме того, в здании перекрываются номера этажей и комнат на различных площадках в свойстве *flrRm*, для которого заданы такие значения, как *1a*, *2b*, *3a* и т. д.
 * Наконец, у вас есть свойство *location*, содержащее такие значения, как *Redmond*, *Barcelona* и *Tokyo*. Чтобы обеспечить уникальность, необходимо назначить следующие три свойства ключей в качестве идентификатора временного ряда: *sensorId*, *flrRm* и *location*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [моделировании данных](./time-series-insights-update-tsm.md).
 

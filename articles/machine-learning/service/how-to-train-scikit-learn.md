@@ -10,12 +10,12 @@ ms.author: maxluk
 author: maxluk
 ms.date: 08/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: e76a747f7e1d7ca7056edf5b69df0677aeff96a1
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 5c44f4ed5cd6488520bf6dd99f502f33049b9b17
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856001"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68962998"
 ---
 # <a name="build-scikit-learn-models-at-scale-with-azure-machine-learning-service"></a>Создание scikit. изучение моделей в масштабе с помощью службы Машинное обучение Azure
 
@@ -192,12 +192,12 @@ model = run.register_model(model_name='sklearn-iris', model_path='model.joblib')
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы обучили и зарегистрировали машинное обучение, модель классификации с помощью scikit-Learning on Машинное обучение Azure Service.
 
-* Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
+В этой статье вы обучили и зарегистрировали модель keras в службе Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
 
-* [Настройка параметров](how-to-tune-hyperparameters.md).
-
-* [Следите за показателями запуска во время обучения](how-to-track-experiments.md).
-
-* Дополнительные сведения о [глубоком обучении и машинном](concept-deep-learning-vs-machine-learning.md)обучении.
+> [!div class="nextstepaction"]
+> [Как и где развертываются модели](how-to-deploy-and-where.md)
+* [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
+* [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
+* [Развертывание обученной модели](how-to-deploy-and-where.md)
+* [Эталонная архитектура для распределенного обучения глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

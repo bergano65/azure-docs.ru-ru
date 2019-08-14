@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 23c4d5ee5ac1de9522cbf89a6de39578cf65347e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2d6a24184cf02c88ede5a83ed47ae686ee670773
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073567"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "69014959"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Не новые компоненты или функциональные возможности добавляются в службы мультимедиа v2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >   
 
 ## <a name="overview"></a>Обзор
@@ -143,7 +143,7 @@ string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTem
 Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 ```
 
-Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://aka.ms/azuremediaplayer).
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
@@ -605,17 +605,17 @@ namespace DynamicEncryptionWithDRM
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также
 
 * [Использование CENC с несколькими подсистемами DRM и контролем доступа](media-services-cenc-with-multidrm-access-control.md)
 * [Настройка упаковки Widevine с использованием служб мультимедиа](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
-* [Начало работы с Java клиентский пакет SDK для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use)
+* [Приступая к работе с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use)
 * Чтобы скачать последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowsAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7). 
 

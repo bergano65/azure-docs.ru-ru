@@ -12,24 +12,25 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: juliako;anilmur
-ms.openlocfilehash: c862de2eec4e6c116218457a20b567dc02778685
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: anilmur
+ms.openlocfilehash: 8fd68269f73506c2d605c0cb4560e6a57e1a2128
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463741"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69016540"
 ---
-# <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки стандартного кодировщика служб мультимедиа
+# <a name="media-encoder-standard-formats-and-codecs"></a>Форматы и кодеки Media Encoder Standard
 
-> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, которую вы используете:"]
 > * [Версия 2](media-services-media-encoder-standard-formats.md)
 > * [Версия 3](../latest/media-encoder-standard-formats.md)
 
 Этот документ содержит список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать со стандартным кодировщиком служб мультимедиа.
 
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
-| Форматы файлов (расширения файлов) | Поддерживаются |
+| Форматы файлов (расширения файлов) | Поддерживается |
 | --- | --- |
 | FLV (с кодеками H.264 и AAC) (.flv) |Да |
 | MXF (.mxf) |Да |
@@ -53,12 +54,12 @@ ms.locfileid: "61463741"
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-или
+или диспетчер конфигурации служб
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
 ## <a name="input-video-codecs"></a>Входные видеокодеки
-| Входные видеокодеки | Поддерживаются |
+| Входные видеокодеки | Поддерживается |
 | --- | --- |
 | AVC 8-разрядный/10-разрядный, до 4:2:2, включая AVCIntra |8 бит 4:2:0 и 4:2:2 |
 | Avid DNxHD (в MXF) |Да |
@@ -81,7 +82,7 @@ ms.locfileid: "61463741"
 | HEVC/H.265| Профиль Main и Main 10 (&#42;)<br/>Поддержка профиля Main 10 предназначена для 8-битного содержимого в формате 4:2:0. |
 
 ## <a name="input-audio-codecs"></a>Входные аудиокодеки
-| Входные аудиокодеки | Поддерживаются |
+| Входные аудиокодеки | Поддерживается |
 | --- | --- |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Да |
 | MPEG Layer 2 |Да |
@@ -108,7 +109,7 @@ ms.locfileid: "61463741"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

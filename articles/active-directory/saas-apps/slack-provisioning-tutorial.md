@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 036112027fcf210f0ac2ff1e631c8b0bd4b5e9ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4a294254bd52db89179c5644ea7a0f0f04027f30
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964389"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932491"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство. Настройка Slack для автоматической подготовки пользователей
 
 Цель этого учебника — показать, как в Slack и Azure AD необходимо выполнять автоматическую подготовку и отмену подготовки учетных записей пользователей из Azure AD в Slack.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -120,7 +120,9 @@ ms.locfileid: "65964389"
   
   * Обновление выполняется, только если в рабочей области или организации Slack **включена синхронизации профиля** и указано, что **пользователи не могут изменять свои отображаемые имена**.
   
-  * Атрибут **userName** в Slack должен содержать до 21 символа и иметь уникальное значение.
+* Атрибут **userName** в Slack должен содержать до 21 символа и иметь уникальное значение.
+
+* Временной резерв допускает сопоставление только с атрибутами **username** и **Email**.  
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

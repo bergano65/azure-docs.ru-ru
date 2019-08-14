@@ -5,12 +5,12 @@ ms.subservice: single-database
 ms.topic: include
 ms.date: 06/19/2019
 ms.author: mathoma
-ms.openlocfilehash: dd511375c6b007222185f25610aecbd9931a742b
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: ffa48d55703347883edf96a0a27ee52d19189976
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640056"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935016"
 ---
 На этом этапе вы создадите группу ресурсов и отдельную базу данных в службе "База данных SQL Azure".
 
@@ -19,7 +19,7 @@ ms.locfileid: "68640056"
 >
 > Дополнительные сведения см. в статье [sp_set_database_firewall_rule (Azure SQL Database)](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) (sp_set_database_firewall_rule (база данных SQL Azure)). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье [Краткое руководство. Создание правила брандмауэра на уровне сервера для базы данных SQL с помощью портала Azure](../sql-database-server-level-firewall-rule.md).  
 
-# <a name="azure-portaltabazure-portal"></a>[портал Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Создайте группу ресурсов и отдельную базу данных с помощью портала Azure.
 
@@ -75,7 +75,7 @@ ms.locfileid: "68640056"
 
 9. В форме **База данных SQL** щелкните **Создать**, чтобы развернуть и подготовить группу ресурсов, сервер и базу данных.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -141,7 +141,7 @@ ms.locfileid: "68640056"
    $database
    ```
 
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 
 Создайте группу ресурсов и отдельную базу данных с помощью Azure CLI.
 

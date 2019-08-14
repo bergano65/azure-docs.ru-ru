@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: 336552c142e504ae7296314512f00688e30d032e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: willzhan
+ms.reviewer: kilroyh;yanmf;juliako
+ms.openlocfilehash: 6004e08f5f30c7f3c63bb87437147db15da5e335
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61466583"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69016768"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure 
 
@@ -214,10 +215,10 @@ ms.locfileid: "61466583"
 
     | **DRM** | **"Обзор"** | **Результат для соответствующего пользователя** | **Результат для не соответствующего пользователя** |
     | --- | --- | --- | --- |
-    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Fail; |
-    | **Widevine** |Chrome, Firefox, Opera |Успешно |Fail; |
-    | **FairPlay** |Safari в macOS      |Успешно |Fail; |
-    | **AES-128** |Большинство современных браузеров  |Успешно |Fail; |
+    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Ошибка |
+    | **Widevine** |Chrome, Firefox, Opera |Успешно |Ошибка |
+    | **FairPlay** |Safari в macOS      |Успешно |Ошибка |
+    | **AES-128** |Большинство современных браузеров  |Успешно |Ошибка |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 

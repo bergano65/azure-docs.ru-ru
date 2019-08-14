@@ -1,6 +1,6 @@
 ---
 title: Добавление слоя фрагментов карты в Azure Maps | Документация Майкрософт
-description: Сведения о добавлении слоя фрагментов карты на карту Javascript
+description: Добавление мозаичного слоя в веб-пакет SDK Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: d872cd78b3fd04512fcaee706e54bffa1cf9fcc1
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 3f047ec1aced55038384cbe29bd3a4b8a948dce9
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882088"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976454"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
@@ -40,16 +40,24 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 ## <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
- В этом примере показано, как создать слой фрагментов, который указывает на набор фрагментов, использующих систему фрагментов с x, y и увеличением. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). 
+ В этом примере показано, как создать слой фрагментов, который указывает на набор фрагментов, использующих систему фрагментов с x, y и увеличением. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). При просмотре лепестковых данных пользователи в идеале смогут ясно видеть метки городов по мере перехода на карту, что можно сделать, вставив мозаичный слой под `labels` слоем.
+
+```javascript
+//Create a tile layer and add it to the map below the label layer.
+//Weather radar tiles from Iowa Environmental Mesonet of Iowa State University.
+map.layers.add(new atlas.layer.TileLayer({
+    tileUrl: 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913/{z}/{x}/{y}.png',
+    opacity: 0.8,
+    tileSize: 256
+}), 'labels');
+```
+
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Слой фрагментов с X, Y и Z' src='//codepen.io/azuremaps/embed/BGEQjG/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/BGEQjG/'>Слой фрагментов с X, Y и Z</a> в Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
-В первом блоке приведенного выше кода создается объект карты. См. инструкции по [созданию карты](./map-create.md).
-
-Во втором блоке кода [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest) создается путем передачи отформатированного URL-адреса в службу фрагмента, размера фрагмента и уровня непрозрачности, чтобы сделать его полупрозрачным. Кроме того, при добавлении слоя фрагментов на карту, он добавляется под слой `labels`, чтобы метки по-прежнему были четко видны.
 
 ## <a name="customize-a-tile-layer"></a>Настройка слоя фрагментов
 

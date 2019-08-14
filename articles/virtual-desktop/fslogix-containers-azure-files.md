@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 13f80b42ef6dfd0c70067a3ecf5f3e172527a63f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 6bb3be3805243bba4d11037b180e7f8418a84014
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846535"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947221"
 ---
 # <a name="fslogix-profile-containers-and-azure-files"></a>Контейнеры профилей FSLogix и Файлы Azure
 
@@ -77,7 +77,7 @@ UPD требует [Локальные дисковые пространства
 
 ## <a name="azure-files-integration-with-azure-active-directory-domain-service"></a>Интеграция файлов Azure с доменной службой Azure Active Directory
 
-Производительность и функции контейнеров профилей Фслогикс используют преимущества облака. 7 августа 2019 Microsoft Azure файлы объявили о общедоступной версии [проверки подлинности службы файлов Azure с Azure Active Directoryной службой домена (AD DS)](/articles/storage/files/storage-files-active-directory-overview.md). Устраняя расходы и расходы на администрирование, служба файлов Azure с проверкой подлинности Azure AD DS — это решение Premium для профилей пользователей в службе виртуальных рабочих столов Windows.
+Производительность и функции контейнеров профилей Фслогикс используют преимущества облака. 7 августа 2019 Microsoft Azure файлы объявили о общедоступной версии [проверки подлинности службы файлов Azure с Azure Active Directoryной службой домена (AD DS)](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview). Устраняя расходы и расходы на администрирование, служба файлов Azure с проверкой подлинности Azure AD DS — это решение Premium для профилей пользователей в службе виртуальных рабочих столов Windows.
 
 ## <a name="best-practices-for-windows-virtual-desktop"></a>Рекомендации для виртуальных рабочих столов Windows
 

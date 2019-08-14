@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 08/03/2019
 ms.author: dacurwin
-ms.openlocfilehash: 0512facbdf5f2222aee1e9bb5d2be64e22bf1a69
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 00e37030417da97d2c57b0fb5872422e7048a2bc
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774628"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954450"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение неполадок резервного копирования баз данных SAP HANA в Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "68774628"
 
 Следите за входными данными при восстановлении одной базы данных контейнера (SDC) для HANA на другой компьютер SDC. Имя базы данных должно быть указано в нижнем регистре, а в скобках — "SDC". Экземпляр HANA будет отображаться прописными буквами.
 
-Предположим, что создается резервная копия экземпляра SDC HANA "H21". На странице архивные элементы отобразится имя элемента резервного копирования **"H21 (SDC)"** . При попытке восстановить эту базу данных на другой целевой SDC, скажем H11, необходимо предоставить следующие входные данные.
+Предположим, что создается резервная копия экземпляра SDC HANA "H21". На странице архивные элементы отобразится имя элемента резервного копирования **"H21 (SDC)"** . При попытке восстановления этой базы данных на другой целевой SDC, скажем H11, необходимо предоставить следующие входные данные.
 
 ![Входные данные для восстановления SDC](media/backup-azure-sap-hana-database/hana-sdc-restore.png)
 

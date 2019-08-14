@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: juliako;cenkd;anilmur
-ms.openlocfilehash: 6e09ce83296fccfbcb4a04913d55961e0da4de79
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: anilmur
+ms.openlocfilehash: 0e793a5aa7d619b0bb7a1d3efcdf665ea400c555
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720798"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "69016743"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
@@ -39,7 +40,7 @@ ms.locfileid: "64720798"
 >
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
@@ -52,7 +53,7 @@ ms.locfileid: "64720798"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создание канала
+## <a name="create-a-channel"></a>Создать канал
 
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
 
@@ -78,7 +79,7 @@ ms.locfileid: "64720798"
 >
 >
 
-## <a name="a-idconfiguretricasterrtmpconfigure-the-newtek-tricaster-encoder"></a><a id="configure_tricaster_rtmp"/>Настройка кодировщика NewTek TriCaster
+## <a name="a-idconfigure_tricaster_rtmpconfigure-the-newtek-tricaster-encoder"></a><a id="configure_tricaster_rtmp"/>Настройка кодировщика NewTek TriCaster
 
 В этом руководстве используются указанные ниже параметры вывода. В оставшейся части этого раздела этапы настройки описываются более подробно.
 
@@ -105,7 +106,7 @@ ms.locfileid: "64720798"
 3. Открыв меню, щелкните **New** (Создать) под заголовком «Connection» (Подключение). При появлении запроса для типа подключения выберите **Adobe Flash**.
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster4.png)
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
 5. Профиль FMLE теперь можно импортировать, щелкнув стрелку в раскрывающемся списке **Streaming Profile** (Профиль потоковой передачи) и выбрав пункт **Browse** (Обзор).
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster5.png)
@@ -172,6 +173,6 @@ ms.locfileid: "64720798"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

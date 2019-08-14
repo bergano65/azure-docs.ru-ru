@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: terrylan
-ms.openlocfilehash: 0683c065285a6ddf8d966bbd3d22e88c39b34d5c
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 640900458eccc36afe58cb148ffd7b94b43be879
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728801"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934920"
 ---
 # <a name="develop-a-secure-web-app"></a>Разработка безопасного веб-приложения
 
@@ -52,16 +52,16 @@ ms.locfileid: "68728801"
 
 Архитектура состоит из следующих компонентов:
 
-- [Шлюз приложений Azure.](https://docs.microsoft.com/azure/application-gateway/) Предоставляет шлюз и брандмауэр для нашей архитектуры приложения.
-- [Веб-приложения Azure на платформе Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro). Предоставляет среду выполнения контейнера для запуска приложения Python в среде Linux.
-- [Azure Key Vault.](https://docs.microsoft.com/azure/key-vault/) Сохраняет и шифрует секреты нашего приложения и управляет созданием политик доступа, связанных с ними.
+- [Шлюз приложений Azure.](../../application-gateway/index.yml) Предоставляет шлюз и брандмауэр для нашей архитектуры приложения.
+- [Веб-приложения Azure на платформе Linux](../../app-service/containers/app-service-linux-intro.md). Предоставляет среду выполнения контейнера для запуска приложения Python в среде Linux.
+- [Azure Key Vault.](../../key-vault/index.yml) Сохраняет и шифрует секреты нашего приложения и управляет созданием политик доступа, связанных с ними.
 - [База данных Azure для PostgreSQL](https://azure.microsoft.com/services/postgresql/). Обеспечивает безопасное хранение данных приложения.
-- [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/) и [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Обеспечивает мониторинг и оповещения для работы нашего приложения.
+- [Центр безопасности Azure](../../security-center/index.yml) и [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md). Обеспечивает мониторинг и оповещения для работы нашего приложения.
 
 ## <a name="threat-model"></a>Модель рисков
 Моделирование угроз — это процесс выявления потенциальных угроз безопасности для вашего бизнеса и приложения и последующего обеспечения надлежащего плана по устранению рисков.
 
-В этом примере используется [Microsoft Threat Modeling Tool](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) для реализации моделирования угроз для безопасного примера приложения. Благодаря диаграмме компонентов и потоков данных можно определить проблемы и угрозы на ранних этапах процесса разработки. Это экономит время и деньги позже.
+В этом примере используется [Microsoft Threat Modeling Tool](threat-modeling-tool.md) для реализации моделирования угроз для безопасного примера приложения. Благодаря диаграмме компонентов и потоков данных можно определить проблемы и угрозы на ранних этапах процесса разработки. Это экономит время и деньги позже.
 
 Это модель угроз для примера приложения:
 
@@ -130,7 +130,7 @@ ms.locfileid: "68728801"
 Чтобы развернуть ресурсы в примере приложения с помощью функций безопасности, необходимо заплатить за некоторые функции уровня "Премиум". По мере того как приложение масштабируется, а бесплатные уровни и пробные версии, предлагаемые Azure, должны быть обновлены в соответствии с требованиями приложения, ваши затраты могут увеличиться. Используйте [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/) Azure для оценки затрат.
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 Чтобы запустить приложение, необходимо установить следующие средства:
 
 - Редактор кода для изменения и просмотра кода приложения. [Visual Studio Code](https://code.visualstudio.com/) является параметром с открытым исходным кодом.
@@ -349,19 +349,19 @@ $$ LANGUAGE PLPGSQL;
 ```
 
 
-Дополнительные сведения о настройке SSL и проверки центра сертификации для PostgreSQL см. [в статье Настройка SSL-подключений в базе данных Azure для PostgreSQL](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security).
+Дополнительные сведения о настройке SSL и проверки центра сертификации для PostgreSQL см. [в статье Настройка SSL-подключений в базе данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/concepts-ssl-connection-security).
 
 Корневой сертификат входит в контейнер. Ниже приведены действия по получению сертификата.
 
 1. Скачайте файл сертификата из [центра сертификации](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt).
-2. [Скачайте и установите OpenSSL на своем компьютере](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security).
+2. [Скачайте и установите OpenSSL на своем компьютере](https://docs.microsoft.com/azure/postgresql/concepts-ssl-connection-security).
 3. Декодирование файла сертификата:
 
    ```powershell
    openssl x509 -inform DER -in BaltimoreCyberTrustRoot.crt -text -out root.crt
    ```
 
-Дополнительные сведения о настройке безопасности SSL для PostgreSQL см. в статье [Настройка безопасности SSL-соединений](https://docs.microsoft.com/en-gb/azure/postgresql/concepts-ssl-connection-security).
+Дополнительные сведения о настройке безопасности SSL для PostgreSQL см. в статье [Настройка безопасности SSL-соединений](https://docs.microsoft.com/azure/postgresql/concepts-ssl-connection-security).
 
 #### <a name="deploy-azure-web-apps-on-linux"></a>Развертывание веб-приложений Azure в Linux
 Вы можете легко создавать службы Linux поверх службы приложений Azure, так как Azure предоставляет набор готовых контейнеров и образов для широко используемых языков, таких как Python, Ruby C#, и Java. Azure также поддерживает пользовательские контейнеры, которые могут позволить практически всем языкам программирования работать на платформе службы приложений Azure.

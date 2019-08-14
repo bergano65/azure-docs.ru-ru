@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 748abc08c432518be4ce8698713b1df95077c3c1
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: e0b7154e3c4d6a6f493aac93ffcbcc424a67c300
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68722464"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932317"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
@@ -37,7 +37,7 @@ ms.locfileid: "68722464"
 Используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя группы ресурсов кластера AKS, а затем команду [AZ vmss List][az-vmss-list] , чтобы получить имя масштабируемого набора.
 
 ```azurecli-interactive
-CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
+$CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
 SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
 ```
 
@@ -94,7 +94,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 Используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя группы ресурсов кластера AKS, а затем команду [AZ VM List][az-vm-list] , чтобы вывести имя виртуальной машины узла Linux в кластере.
 
 ```azurecli-interactive
-CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
+$CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
 az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
 ```
 

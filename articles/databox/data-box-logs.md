@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 08/07/2019
+ms.date: 08/08/2019
 ms.author: alkohli
-ms.openlocfilehash: 309dc8e1fd15ae4088ed6ee87bdbb8aa4d636951
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8fecc00a970f0e706dc6240eaec593fd54968ff8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848571"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934223"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy
 
@@ -197,7 +197,7 @@ ms.locfileid: "68848571"
 
 Во время передачи данных в Azure создается журнал копирования.
 
-### <a name="copylog"></a>копилог
+### <a name="copy-log"></a>Журнал копирования
 
 Для каждого обрабатываемого заказа Data Box служба создает журнал копирования в связанной учетной записи хранения. В журнале копирования содержится общее число отправленных файлов, а также количество файлов, которые были вычислены во время копирования данных из Data Box в учетную запись хранения Azure.
 
@@ -252,6 +252,8 @@ ms.locfileid: "68848571"
 ### <a name="upload-completed-with-warnings"></a>Отправка завершена с предупреждениями
 
 Отправка в Azure завершается с предупреждениями, если в данных были имена контейнеров, BLOB-объектов и файлов, которые не соответствуют соглашениям об именовании Azure, а имена были изменены для отправки данных в Azure.
+
+![Путь к файлу копирования журнала в колонке обзора при завершении с предупреждениями](media/data-box-logs/copy-log-path-3.png)
 
 Ниже приведен пример журнала копирования, в котором контейнеры, которые не соответствуют соглашениям об именовании Azure, были переименованы во время передачи данных в Azure.
 

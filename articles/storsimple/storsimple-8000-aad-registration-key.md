@@ -14,14 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 01d36188c1684eae8303cb20ba0fd0c708ff91ba
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 88badf6de5e7181763dd72c7a51262d16697bffd
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60309876"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963486"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -94,7 +96,7 @@ ms.locfileid: "60309876"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)
 

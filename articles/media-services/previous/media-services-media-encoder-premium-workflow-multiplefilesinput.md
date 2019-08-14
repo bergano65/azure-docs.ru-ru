@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: xpouyat;anilmur;juliako
-ms.openlocfilehash: 608ca4bc3b58dd3c718d6239f90260154d2f6c3a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: xpouyat
+ms.reviewer: anilmur;juliako
+ms.openlocfilehash: 27bdf82d4515678e28eadf07fe325860fe5df063
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61465539"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69015453"
 ---
 # <a name="using-multiple-input-files-and-component-properties-with-premium-encoder"></a>Использование нескольких входных файлов и свойств компонентов в кодировщике Premium
 ## <a name="overview"></a>Обзор
@@ -82,7 +83,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 
 **setRuntimeProperties** используется для переопределения свойства в компонентах рабочего процесса.
 
-Пример:
+Пример
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -98,7 +99,7 @@ task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
 ### <a name="property-with-an-xml-value"></a>Свойство со значением XML
 Для задания свойства, которое ожидает значение XML, необходима инкапсуляция с использованием синтаксиса `<![CDATA[ and ]]>`.
 
-Пример:
+Пример
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -270,7 +271,7 @@ XML-файл со списком клипов можно указать в ра�
 
 ## <a name="example-1--overlay-an-image-on-top-of-the-video"></a>Пример 1. Наложение изображения поверх видео
 
-### <a name="presentation"></a>Уровень представления
+### <a name="presentation"></a>Презентация
 Рассмотрим пример, в котором необходимо наложить изображение логотипа на входное видео во время кодирования. В этом примере используются входной видеофайл Microsoft_HoloLens_Possibilities_816p24.mp4 и логотип logo.png. Нужно выполнить следующие действия.
 
 * Создайте ресурс рабочего процесса с файлом рабочего процесса (пример приведен ниже).

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 2d55af3e9ed3ad64f9ba7726799b31acb6b48580
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 11754e8e98e13cffefaf4a8c1fa08bc60d650105
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61465054"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "69016545"
 ---
 # <a name="get-started-with-delivering-content-on-demand-using-net-sdk"></a>Приступая к работе с доставкой содержимого по запросу с помощью пакета SDK для .NET  
 
@@ -27,7 +27,7 @@ ms.locfileid: "61465054"
 
 В этом руководстве описано, как реализовать простую службу доставки видео по запросу (VOD) с помощью приложения служб мультимедиа Azure (AMS) и пакета .NET SDK для служб мультимедиа Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -371,7 +371,7 @@ URL-адреса поэтапного скачивания (аудио и вид
     https://storagetestaccount001.blob.core.windows.net/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-Чтобы выполнить потоковую передачу видео, вставьте URL-адрес в соответствующее текстовое поле в [проигрывателе служб мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Чтобы выполнить потоковую передачу видео, вставьте URL-адрес в соответствующее текстовое поле в [проигрывателе служб мультимедиа Azure](https://aka.ms/azuremediaplayer).
 
 Чтобы протестировать поэтапное скачивание, вставьте URL-адрес в браузер (например, Internet Explorer, Chrome или Safari).
 
@@ -388,7 +388,7 @@ URL-адреса поэтапного скачивания (аудио и вид
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 

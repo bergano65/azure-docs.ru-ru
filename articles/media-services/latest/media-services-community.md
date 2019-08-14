@@ -1,6 +1,6 @@
 ---
 title: Обзор сообщества служб мультимедиа Azure | Документация Майкрософт
-description: На этой странице сообщества служб мультимедиа Azure описаны различные возможности, можно задать вопросы, отзыв и узнавайте о службах мультимедиа.
+description: На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -11,18 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 04/19/2019
+ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: 6a3c02c1f14c37317a03cb6ebe63bcddc92f3253
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8d3a26d015c129a04e54ba9633aa5d1ccfcacf8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64710166"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "69016106"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
 
-На этой странице сообщества служб мультимедиа Azure описаны различные возможности, можно задать вопросы, отзыв и узнавайте о службах мультимедиа.
+На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
 
 ## <a name="provide-feedback-and-make-suggestions"></a>Отзывы и предложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "64710166"
 
 ### <a name="twitter"></a>Twitter
 
-Можно использовать [ @MSFTAzureMedia ](https://twitter.com/MSFTAzureMedia) дескриптор twitter, свяжитесь с нами и отслеживания новостей в Twitter. Используйте [ @AzureSupport ](https://twitter.com/azuresupport) дескриптор twitter для запроса поддержки в Twitter.  
+Вы можете использовать [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) маркер Twitter, чтобы связаться с нами или следовать обновлениям в Twitter. Используйте маркер [@AzureSupport](https://twitter.com/azuresupport) Twitter для запроса поддержки в Twitter.  
 
 ### <a name="online-forums"></a>Интернет-форумы
 
@@ -48,17 +48,8 @@ ms.locfileid: "64710166"
 
 ## <a name="contact-the-team"></a>Связаться с командой
 
-Службы мультимедиа Azure, является основной поддержки по электронной почте: **amshelp\@microsoft.com**.
+Основной адрес электронной почты служб мультимедиа Azure: **амшелп\@Microsoft.com**.
 
-В следующей таблице перечислены адреса электронной почты подгрупп разработчиков различных функций.
+## <a name="next-steps"></a>Следующие шаги
 
-| Компонент | Email |
-| --- | --- |
-| Проигрыватель мультимедиа Azure |ampinfo@microsoft.com |
-| Обозреватель мультимедиа Azure |amse@microsoft.com |
-| Конструктор рабочих процессов |mepd@microsoft.com |
-| Потоковая трансляция и упаковка |amslived@microsoft.com |
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-[Обзор служб мультимедиа Azure](media-services-overview.md)
+[Общие сведения о службах мультимедиа Azure](media-services-overview.md)

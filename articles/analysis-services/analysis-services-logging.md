@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2303d385d3d688050a8d82c07e78a68588f41e88
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 357e7975b1c4fe44d86b7e29e96a9abb6ab63c35
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66142622"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932269"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -27,9 +27,9 @@ ms.locfileid: "66142622"
 
 Можно выбрать категории **Подсистема**, **Служба** и **Метрики**.
 
-### <a name="engine"></a>Двигатель
+### <a name="engine"></a>Подсистема
 
-При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](https://docs.microsoft.com/sql/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
+При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
 
 |Категории событий xEvent |Имя события  |
 |---------|---------|
@@ -43,18 +43,18 @@ ms.locfileid: "66142622"
 |Запросы     |   Query End      |
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
-|Ошибки и предупреждения     |   Ошибка      |
-|Поиск     |   Discover End      |
+|Ошибки и предупреждения     |   Error      |
+|Обзор     |   Discover End      |
 |Уведомление     |    Уведомление     |
 |Сеанс     |  Session Initialize       |
-|Блокировки    |  Deadlock       |
+|Блокировки    |  Взаимоблокировка       |
 |Обработка запросов     |   VertiPaq SE Query Begin      |
 |Обработка запросов     |   VertiPaq SE Query End      |
 |Обработка запросов     |   VertiPaq SE Query Cache Match      |
 |Обработка запросов     |   Direct Query Begin      |
 |Обработка запросов     |  Direct Query End       |
 
-### <a name="service"></a>Service
+### <a name="service"></a>Служба
 
 |Имя операции  |Когда выполняется  |
 |---------|---------|
@@ -71,7 +71,7 @@ ms.locfileid: "66142622"
 
 ## <a name="setup-diagnostics-logging"></a>Настройка ведения журнала диагностики
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 1. На [портале Azure](https://portal.azure.com) выберите сервер, в левой области навигации выберите **Журналы диагностики**, а затем — **Включить диагностику**.
 
@@ -83,13 +83,13 @@ ms.locfileid: "66142622"
 
     * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
     * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
-    * **Отправка в Azure Monitor (рабочее пространство Log Analytics)** . Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
+    * **Отправка в Azure Monitor (рабочую область Log Analytics)** . Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
 
     * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
     * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
     * **Метрики**. Выберите этот параметр, чтобы хранить подробные данные в разделе [Метрики](analysis-services-monitor.md#server-metrics). Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
 
-3. Выберите команду **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
     Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use Microsoft.Insights (Не удалось обновить данные диагностики для <имя_рабочей_области>. Подписку <идентификатор_подписки> не зарегистрировано для использования Microsoft.Insights), следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
@@ -188,9 +188,9 @@ window
 
 ## <a name="turn-on-logging-by-using-powershell"></a>Включение ведения журнала с помощью PowerShell
 
-В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. После этого использовать Set-AzDiagnosticSetting включить журнал ведения диагностики, отправляя выходные данные для учетной записи хранения.
+В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-Аздиагностиксеттинг включите ведение журнала диагностики, отправив выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).
@@ -242,9 +242,9 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 -ResourceName awsales -ResourceType "Microsoft.AnalysisServices/servers"
 ```
 
-### <a name="enable-logging"></a>Включение ведения журналов
+### <a name="enable-logging"></a>Включить ведение журнала
 
-Ведение журнала, используйте командлет Set-AzDiagnosticSetting вместе с переменными для новой учетной записи хранения, учетная запись сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
+Чтобы включить ведение журнала, используйте командлет Set-Аздиагностиксеттинг вместе с переменными для новой учетной записи хранения, учетной записи сервера и категории. Выполните следующую команду, задав для флага **-Enabled** значение **$true**:
 
 ```powershell
 Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine
@@ -299,8 +299,8 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
   -RetentionEnabled $true -RetentionInDays 90
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 
-См. в разделе [AzDiagnosticSetting набора](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.
+См. раздел [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.
