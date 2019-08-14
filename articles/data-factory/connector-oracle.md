@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 079a0721e77174215c7256eecbe9bc522256f0b8
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 142c99b2471a9010a00bf9b5d50549c5e84548f1
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881482"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966464"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -33,11 +33,13 @@ ms.locfileid: "68881482"
 В частности, этот соединитель Oracle поддерживает:
 
 - Следующие версии базы данных Oracle:
-  - Oracle 12c R1 (12.1)
-  - Oracle 11g R1, R2 (11.1, 11.2)
-  - Oracle 10g R1, R2 (10.1, 10.2)
-  - Oracle 9i R1, R2 (9.0.1, 9.2)
-  - Oracle 8i R3 (8.1.7)
+    - Oracle 18C R1 (18,1) и выше
+    - Oracle 12c R1 (12,1) и выше
+    - Oracle 11g R1 (11,1) и выше
+    - Oracle 10G R1 (10,1) и более поздних версий
+    - Oracle 9i R2 (9,2) и более поздние версии
+    - Oracle 8i R3 (8.1.7) и более поздние версии
+    - Служба Oracle Database Cloud Ексадата
 - Копирование данных с помощью проверки подлинности Basic или OID.
 - Параллельное копирование из источника Oracle. Дополнительные сведения см. в разделе [Параллельное копирование из Oracle](#parallel-copy-from-oracle) .
 
@@ -46,7 +48,9 @@ ms.locfileid: "68881482"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Чтобы скопировать данные из базы данных Oracle, которая не является общедоступной, и в нее, необходимо настроить локальную [среду выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции содержит встроенный драйвер Oracle. Поэтому вам не нужно вручную устанавливать драйвер при копировании данных из базы данных Oracle и в нее.
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)] 
+
+Среда выполнения интеграции содержит встроенный драйвер Oracle. Поэтому вам не нужно вручную устанавливать драйвер при копировании данных из базы данных Oracle и в нее.
 
 ## <a name="get-started"></a>Начало работы
 
@@ -62,7 +66,7 @@ ms.locfileid: "68881482"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Oracle**. | Да |
 | connectionString | Указывает сведения, необходимые для подключения к экземпляру базы данных Oracle. <br/>Пометьте это поле как `SecureString` , чтобы безопасно хранить его в фабрике данных. Можно также добавить пароль в Azure Key Vault и `password` извлечь конфигурацию из строки подключения. Ознакомьтесь со следующими примерами и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md) с дополнительными сведениями. <br><br>**Поддерживаемые типы подключений**: вы можете использовать **SID-идентификатор Oracle** или **имя службы Oracle** для идентификации базы данных.<br>— Если вы используете идентификатор безопасности, используйте этот код для подключения: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>— Если вы используете имя службы, используйте этот код: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;` | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных открыто в общедоступном виде). Если не указано, это свойство использует среду выполнения интеграции Azure по умолчанию. |Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 >[!TIP]
 >При возникновении ошибки "ORA-01025: Параметр УПИ вне допустимого диапазона ", а версия Oracle — 8i, добавьте `WireProtocolMode=1` в строку подключения. Затем повторите попытку.
@@ -191,11 +195,10 @@ ms.locfileid: "68881482"
 
 Этот раздел содержит список свойств, поддерживаемых источником и приемником Oracle. Полный список разделов и свойств, доступных для определения действий, см. в разделе [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). 
 
-### <a name="oracle-as-a-source-type"></a>Oracle в качестве источника данных
+### <a name="oracle-as-source"></a>Oracle в качестве источника
 
-> [!TIP]
->
-> Чтобы эффективно загружать данные из Oracle с помощью секционирования данных, см. раздел [параллельная копия из Oracle](#parallel-copy-from-oracle).
+>[!TIP]
+>Чтобы эффективно загружать данные из Oracle с помощью секционирования данных, см. раздел [параллельная копия из Oracle](#parallel-copy-from-oracle).
 
 Чтобы скопировать данные из Oracle, задайте тип источника в действии `OracleSource`копирования. В разделе **source** действия копирования поддерживаются следующие свойства.
 
@@ -242,7 +245,7 @@ ms.locfileid: "68881482"
 ]
 ```
 
-### <a name="oracle-as-a-sink-type"></a>Oracle в качестве приемника
+### <a name="oracle-as-sink"></a>Oracle в качестве приемника
 
 Чтобы скопировать данные в Oracle, задайте для `OracleSink`типа приемника в действии копирования значение. В разделе **sink** действия копирования поддерживаются следующие свойства.
 
@@ -341,7 +344,7 @@ ms.locfileid: "68881482"
 | BFILE |Byte[] |
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версий) |
 | CHAR |Строковое |
-| CLOB |Строковое |
+| CLOB |String |
 | DATE |DateTime |
 | FLOAT |Decimal, String (если точность больше 28) |
 | INTEGER |Decimal, String (если точность больше 28) |

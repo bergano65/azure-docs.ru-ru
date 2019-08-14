@@ -2,14 +2,14 @@
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 11/03/2016
+ms.date: 08/12/2019
 ms.author: cephalin
-ms.openlocfilehash: 7aa0d232cf53eef9bd28c36b66e8fdae22a28db9
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 4f3236c0a167a2b6f7586c6cb5fea8e30f55a86c
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185089"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954079"
 ---
 ## <a name="rest"></a>Развертывание ZIP-файла с помощью с REST API 
 
@@ -33,22 +33,21 @@ curl -u <deployment_user> https://<app_name>.scm.azurewebsites.net/api/deploymen
 
 ### <a name="with-powershell"></a>С помощью PowerShell
 
-В примере ниже для отправки запроса, содержащего ZIP-файл, используется [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod). Замените заполнители `<deployment_user>`, `<deployment_password>`, `<zip_file_path>` и `<app_name>`.
+В следующем примере используется [Публикация-азвебапп](/powershell/module/az.websites/publish-azwebapp) . Замените заполнители `<group-name>`, `<app-name>` и `<zip-file-path>`.
 
 ```powershell
-#PowerShell
-$username = "<deployment_user>"
-$password = "<deployment_password>"
-$filePath = "<zip_file_path>"
-$apiUrl = "https://<app_name>.scm.azurewebsites.net/api/zipdeploy"
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $password)))
-$userAgent = "powershell/1.0"
-Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method POST -InFile $filePath -ContentType "multipart/form-data"
+Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <zip-file-path>
 ```
 
-Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Замените заполнитель `<app_name>`.
+Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. 
+
+Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, замените `<deployment-user>`заполнители, `<app-name>` `<deployment-password>`и.
 
 ```bash
-$apiUrl = "https://<app_name>.scm.azurewebsites.net/api/deployments"
+$username = "<deployment-user>"
+$password = "<deployment-password>"
+$apiUrl = "https://<app-name>.scm.azurewebsites.net/api/deployments"
+$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $password)))
+$userAgent = "powershell/1.0"
 Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -UserAgent $userAgent -Method GET
 ```

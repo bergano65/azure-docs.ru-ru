@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: dacurwin
-ms.openlocfilehash: 379dd87edbbfa878a034cd61854ee15f215b0228
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: cca8cf3a222b71954e6727e184ff5d16839a6a68
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689114"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954559"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "68689114"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* **Резервная копия зашифрованных виртуальных машин** — выполнять резервное копирование зашифрованных виртуальных машин Azure нужно с помощью службы архивации Azure. Резервное копирование зашифрованных виртуальных машин Azure см. в статье [Manage backup and restore of Azure VMs using PowerShell](backup-azure-vms-automation.md) (Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell).
+* **Резервная копия зашифрованных виртуальных машин** — выполнять резервное копирование зашифрованных виртуальных машин Azure нужно с помощью службы архивации Azure. Дополнительные сведения о резервном копировании зашифрованных виртуальных машин Azure см. в статье [Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell](backup-azure-vms-automation.md) .
 * **Настроенное хранилище ключей Azure** — убедитесь, что хранилище ключей, в которое нужно восстановить ключи и секреты, существует. Управление хранилищами ключей описано в статье [Приступая к работе с хранилищем ключей Azure](../key-vault/key-vault-get-started.md).
 * **Восстановление диска** — убедитесь, что запущено задание восстановления дисков для зашифрованной виртуальной машины с помощью [PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm). Это связано с тем, что данное задание создает JSON-файл в учетной записи хранения, которая содержит ключи и секреты для восстанавливаемой зашифрованной виртуальной машины.
 
@@ -138,4 +138,4 @@ Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -
 
 ## <a name="next-steps"></a>Следующие шаги
 
-После восстановления ключа и секрета в хранилище ключей см. статью [Архивация виртуальных машин с помощью командлетов AzureRM.RecoveryServices.Backup](backup-azure-vms-automation.md#create-a-vm-from-restored-disks), в которой описано, как создать зашифрованные виртуальные машины, используя восстановленный диск, ключ и секрет.
+После восстановления ключа и секрета в хранилище ключей ознакомьтесь со статьей [Управление резервным копированием и восстановлением виртуальных машин Azure с помощью PowerShell](backup-azure-vms-automation.md#create-a-vm-from-restored-disks) для создания зашифрованных виртуальных машин из восстановленного диска, ключа и секрета.

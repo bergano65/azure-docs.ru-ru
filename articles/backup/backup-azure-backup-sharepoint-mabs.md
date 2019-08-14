@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: dacurwin
-ms.openlocfilehash: 7a19b97e36bc28e5e629391f799b69370cf0fa38
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: e31c875f31f118716feea0c73bc2ca70a4ecd9a5
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68737275"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954831"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 Резервное копирование SharePoint в Microsoft Azure с помощью Microsoft Azure Backup Server (MABS) во многом напоминает резервное копирование других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. Также она позволяет сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
@@ -43,7 +43,7 @@ Azure Backup Server работает под учетной записью LocalS
 Если в ферме SharePoint есть базы данных SQL Server, настроенные с псевдонимами SQL Server, установите клиентские компоненты SQL Server на интерфейсный веб-сервер, защищаемый MABS.
 
 ### <a name="sharepoint-server"></a>SharePoint Server
-Производительность системы зависит от многих факторов, включая размер фермы SharePoint. Как правило, для защиты фермы SharePoint объемом 25 ТБ используется один сервер MABS.
+Хотя производительность зависит от многих факторов, таких как размер фермы SharePoint, в качестве общего руководства одна MABS может защищать ферму SharePoint размером 25 ТБ.
 
 ### <a name="whats-not-supported"></a>Что не поддерживается
 * Защита фермы SharePoint с помощью MABS не охватывает индексы поиска или базы данных службы приложений. Защиту этих баз данных необходимо настраивать отдельно.

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: e43b8c951d8c7d5d60904fe49d8639efaba5c89f
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 529a8b6136a5d9c69b044df2614644bdbd4fd4f4
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775919"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012252"
 ---
 Коллекция общих образов — это служба, которая помогает создавать структуру и организацию для управляемых образов. В галереях общих образов предусмотрены следующие задачи:
 
@@ -73,7 +73,7 @@ ms.locfileid: "68775919"
 
 ## <a name="regional-support"></a>Поддержка в регионах
 
-Исходные регионы перечислены в следующей таблице. Все общедоступные регионы могут быть целевыми регионами, но для репликации в Центральная Австралия и Центральная Австралия 2 вам потребуется список разрешений подписки. Чтобы запросить список разрешений, перейдите к: https://azure.microsoft.com/en-au/global-infrastructure/australia/contact/
+Исходные регионы перечислены в следующей таблице. Все общедоступные регионы могут быть целевыми регионами, но для репликации в Центральная Австралия и Центральная Австралия 2 вам потребуется список разрешений подписки. Чтобы запросить список разрешений, перейдите к: https://azure.microsoft.com/global-infrastructure/australia/contact/
 
 
 | Исходные регионы |
@@ -179,7 +179,7 @@ ms.locfileid: "68775919"
 - [Java](https://docs.microsoft.com/java/azure/?view=azure-java-stable)
 - [Node.js](https://docs.microsoft.com/javascript/api/azure-arm-compute/?view=azure-node-latest)
 - [Python](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)
-- [GO](https://docs.microsoft.com/go/azure/)
+- [GO](https://docs.microsoft.com/azure/go/)
 
 ## <a name="templates"></a>Шаблоны
 
