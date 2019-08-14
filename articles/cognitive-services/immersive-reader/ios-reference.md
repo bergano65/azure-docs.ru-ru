@@ -9,12 +9,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 08/01/2019
 ms.author: t-meroa
-ms.openlocfilehash: 47c2d772a3428594c84d3fe5e18262b5e5ab86f4
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: acdaaf0bf08644053e86343ae4b002002fee6a84
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951016"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966599"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK для иммерсивного чтения
 
@@ -102,5 +102,5 @@ struct Error {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Изучите [пакет SDK для iOS для чтения на GitHub](https://github.com/microsoft/immersive-reader-sdk/iOS)
+* Изучите [пакет SDK для iOS для чтения на GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS)
 * [Краткое руководство Создание приложения для iOS, запускающего иммерсивное средство чтения (SWIFT)](./ios-quickstart.md)
