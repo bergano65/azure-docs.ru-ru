@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/17/2018
 ms.author: dacurwin
-ms.openlocfilehash: a59cff3b2edc4d5b94cc0a44472665c95652f868
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 1d3dc50d141a4e1d2864a56aff5c3adb3d2ca0b1
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736672"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954860"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в службе архивации Azure
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Служба Azure Backup может использовать диски для передачи автономных резервных копий данных в Azure в рамках автономного заполнения.
@@ -93,7 +93,7 @@ ms.locfileid: "68736672"
 
 4. На странице подтверждения в мастере нажмите кнопку **Создать резервную копию**. Начальная резервная копия записывается в промежуточное расположение в процессе установки.
 
-   ![Подтверждение готовности к резервному копированию](./media/backup-azure-backup-import-export/backupnow-confirmation.png)
+   ![Подтвердите, что будете готовы к архивации](./media/backup-azure-backup-import-export/backupnow-confirmation.png)
 
     После завершения операции промежуточное расположение можно использовать для подготовки дисков.
 

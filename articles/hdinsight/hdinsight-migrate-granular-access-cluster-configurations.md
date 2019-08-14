@@ -6,13 +6,13 @@ ms.author: tyfox
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/03/2019
-ms.openlocfilehash: 797caae3caaca14c10481cb58654c45b4bed55ae
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.date: 08/09/2019
+ms.openlocfilehash: 1e5eb1e363ac9e282a72a9c1430c3f80c825bb91
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884317"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945079"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -20,8 +20,9 @@ ms.locfileid: "68884317"
 
 ## <a name="what-is-changing"></a>Что изменяется?
 
-Ранее секретные данные можно было получить через API HDInsight для пользователей кластера, имеющих роли "владелец", "участник" или "читатель" ( [RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)), так как `*/read` они были доступны любому пользователю с разрешением.
-В `Microsoft.HDInsight/clusters/configurations/*` дальнейшем для доступа к этим секретам потребуется разрешение, означающее, что пользователи больше не могут быть доступны пользователям с ролью читателя. Секреты определяются как значения, которые можно использовать для получения более повышения уровня доступа, чем разрешено для роли пользователя. К ним относятся такие значения, как учетные данные HTTP для шлюза кластера, ключи учетной записи хранения и учетные данные базы данных.
+Ранее секретные данные можно было получить через API HDInsight для пользователей кластера, имеющих роли "владелец", "участник" или "читатель" ( [RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)), так как `*/read` они были доступны любому пользователю с разрешением. Секреты определяются как значения, которые можно использовать для получения более повышения уровня доступа, чем разрешено для роли пользователя. К ним относятся такие значения, как учетные данные HTTP для шлюза кластера, ключи учетной записи хранения и учетные данные базы данных.
+
+В `Microsoft.HDInsight/clusters/configurations/action` дальнейшем для доступа к этим секретам потребуется разрешение, означающее, что пользователи больше не могут быть доступны пользователям с ролью читателя. Роли, имеющие это разрешение, — участник, владелец и новая роль оператора кластера HDInsight (подробнее см. ниже).
 
 Мы также представляем новую роль [оператора кластера HDInsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) , которая сможет получать секреты без предоставления административных разрешений участнику или владельцу. Итог:
 
@@ -128,7 +129,7 @@ ms.locfileid: "68884317"
 
 ### <a name="sdk-for-java"></a>Пакет SDK для Java
 
-Обновление до [версии 1.0.0](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight/) или более поздней версии пакета SDK для HDInsight для Java. При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде:
+Обновление до [версии 1.0.0](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight/1.0.0/jar) или более поздней версии пакета SDK для HDInsight для Java. При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде:
 
 - [`ConfigurationsInner.get`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.get)**больше не будет возвращать конфиденциальные параметры** , такие как ключи хранилища (основной сайт) или учетные данные HTTP (шлюз).
     - Для получения всех конфигураций, включая конфиденциальные параметры [`ConfigurationsInner.list`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018_06_01_preview.implementation.configurationsinner.list?view=azure-java-stable) , используйте переход вперед.  Обратите внимание, что пользователи с ролью "читатель" не смогут использовать этот метод. Это позволяет детально контролировать, какие пользователи могут получать доступ к конфиденциальной информации для кластера. 

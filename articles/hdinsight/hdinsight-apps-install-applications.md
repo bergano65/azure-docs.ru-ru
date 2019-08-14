@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 9d25996db9c13a12781d369327f2b43a41fb4115
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 38b37b45964dd724b18f22a478be0d85a7036ce7
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67786522"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946970"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -23,24 +23,23 @@ ms.locfileid: "67786522"
 
 Опубликованные приложения представлены в следующем списке:
 
-|Приложение |Типы кластера | Описание |
+|Приложение |Типы кластеров | Описание |
 |---|---|---|
-|[AtScale Intelligence Platform](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/atscale.atscale) |Hadoop |AtScale включает кластера HDInsight в горизонтально масштабируемый сервер OLAP, позволяя запроса миллиарды строк данных в интерактивном режиме с помощью средств бизнес-Аналитики, вы уже знаете, владельцем и предпочитаете, — из Microsoft Excel, Power BI, Tableau Software для QlikView. |
-|[CDAP для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cask.cdap-for-hdinsight) |HBase |CDAP является первая унифицированная Интеграционная платформа для больших объемов данных, ускорения значение времени для Hadoop и позволяет ИТ для предоставления данных самообслуживания. Открытым исходным кодом и расширяемой, CDAP удаляет препятствий для инноваций. Требования: 4 региона узлов, min D3 v2. |
-|[Datameer](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/datameer.datameer) |Hadoop |Datameer масштабируемая платформа самообслуживания для подготовки, исследование и данные для аналитики, управляющие ускоряет превращение сложных несколькими источниками данных в ценные сведения корпоративного уровня, предоставления быстрее и эффективнее, insights в масштабе предприятия. |
-|[Dataiku DSS в HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dss-on-hdi) |Hadoop, Spark |Dataiku DSS в корпоративной платформы обработки и анализа данных, позволяющий данных по обработке и анализу данных совместно работать для разработки и выполнения новых данных продуктов и служб более эффективно, превратив необработанные данные в эффективные прогнозы. |
-|[Приложение WANdisco Fusion HDI App](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/wandisco.fusion-hdi-app) |Hadoop, Spark, HBase, Storm, Kafka |Поддержание соответствия в распределенной среде данных является сложной задачей операции данных. Приложение WANdisco Fusion, это платформа корпоративного класса программного обеспечения, решает эту проблему, позволяя согласованности неструктурированных данных в любой среде. |
-|[H2O-SparklingWater для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/h2o-ai.h2o-sparklingwater) |Spark |H2O Sparkling Water поддерживает следующие распределенные алгоритмы: GLM, упрощенный алгоритм Байеса, распределенный случайный лес, машины градиентного Бустинга, глубокие Нейронные сети, глубокое обучение, K-средних, PCA, обобщенные модели Низкорангового, обнаружение аномалий и Автокодировщики. |
-|[Striim для интеграции данных в реальном времени для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/striim.hdinsightintegration) |Hadoop, HBase, Storm, Spark, Kafka |Striim (произносится «поток») является end-to-end потоковую передачу, интеграции данных + платформы аналитики, включение непрерывного приема, обработки и анализа потоков данных. |
-|[Ускорение Enterprise Jumbune BigData Analytics](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/impetus-infotech-india-pvt-ltd.impetus_jumbune) |Hadoop, Spark |На высоком уровне Jumbune помогает предприятиям на 1. Ускорение Tez, MapReduce и Spark ядра на основе Hive, Java, Scala производительность рабочей нагрузки. 2. Мониторинг, 3 упреждающего кластера Hadoop. Установка управления качеством данных в распределенной файловой системе. |
-|[Kyligence Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/kyligence.kyligence) |Hadoop, HBase, Spark |На платформе Apache Kylin, Kyligence Enterprise позволяет бизнес-Аналитики на основе больших данных. Как ядро OLAP enterprise на Hadoop Kyligence Enterprise позволяет бизнес-аналитик проектирования бизнес-Аналитики в Hadoop с хранилищем данных стандартные для отрасли и методологии бизнес-Аналитики. |
-|[Сервер заданий Spark для KNIME Spark Executor](https://azuremarketplace.microsoft.com/marketplace/apps/knime.spark-job-server-for-knime-spark-executor) |Spark |Сервер заданий Spark для KNIME Spark Executor используется для подключения платформы KNIME Analytics Platform к кластерам HDInsight. |
-|[Звезда с Presto для Azure HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/starburst.starburst-presto) |Hadoop |Presto быстрых и масштабируемых распределенных обработчик SQL-запросов. Разработанная для разделения хранилища и вычислений Presto идеально подходит для выполнения запросов к данным в Azure Data Lake Storage, хранилищах BLOB-объектов Azure, базах данных SQL и NoSQL и других источниках данных. |
-|[Сборщик данных StreamSets для облака HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop, HBase, Spark, Kafka |Сборщик данных StreamSets – это упрощенный, мощный механизм, выводит данные в режиме реального времени. Используйте сборщик данных для маршрута и обработка данных в потоки данных. Он поставляется с лицензией на пробную версию в течение 30 дней. |
-|[Trifacta Wrangler Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifacta.tr01) |Hadoop, Spark, HBase |Enterprise Wrangler Trifacta для HDInsight поддерживает структурирование для любого масштаба данных корпоративного уровня данных. Стоимость выполнения Trifacta в Azure представляет собой сочетание Trifacta затраты на подписку, а также затраты на инфраструктуру Azure для виртуальных машин. |
-|[Платформа данных Unifi](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-catalog) |Hadoop, HBase, Storm или Spark |Платформа данных Unifi — это набор интегрированных средств самостоятельного данных расширить возможности бизнес-пользователь к решению данных проблем, добавочное доходы, снижать затраты или сложность эксплуатации. |
-|[Unraveldata APM](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Обнаружить приложение данных для кластера HDInsight Spark. |
-|[Каталог данных, управляемых искусственным Интеллектом waterline](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/waterline_data.waterline_data) |Spark |Waterline каталоги, упорядочивает и управляет данных с помощью искусственного Интеллекта для данных автоматически тег с бизнес-терминологией. Каталог грамотного бизнеса Waterline —это чрезвычайно важный компонент успешного проведения самостоятельной аналитики, обеспечения соответствия требованиям и системы управления, а также инициатив в области управления ИТ. |
+|[Платформа AtScale Intelligence](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/atscale.atscale) |Hadoop |AtScale превращает ваш кластер HDInsight в масштабируемый OLAP-сервер, позволяя запрашивать миллиарды строк данных в интерактивном режиме с помощью средств бизнес-аналитики, которые уже знакомы, владеют и любовь — от Microsoft Excel, Power BI, Tableau Software to QlikView. |
+|[CDAP для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cask.cdap-for-hdinsight) |Hbase |CDAP — это первая унифицированная платформа интеграции для больших данных, которая ускоряет время до значения Hadoop и позволяет ему предоставлять данные самообслуживания. С открытым кодом и расширяемым CDAP устраняет барьеры для инноваций. Требования: 4 узла регионов, min D3 v2. |
+|[Datameer](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/datameer.datameer) |Hadoop |Datameerная платформа самообслуживания для подготовки, исследования и регулирования данных для аналитики ускоряет процесс преобразования сложных данных с несколькими источниками в ценные сведения, готовые для бизнеса, обеспечивая более быструю и эффективную аналитику в масштабах предприятия. |
+|[Dataiku DSS в HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dss-on-hdi) |Hadoop, Spark |Dataiku DSS в корпоративной платформе для обработки и анализа данных, которая позволяет специалистам по обработке и анализу данных совместно создавать и запускать новые продукты и службы данных, преобразуя необработанные данные в затронутые прогнозы. |
+|[Приложение HDI Fusion Вандиско](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/wandisco.fusion-hdi-app) |Hadoop, Spark, HBase, Kafka |Обеспечение единообразия данных в распределенной среде — задача массовых операций с данными. Вандиско Fusion, платформа программного обеспечения корпоративного класса, решает эту проблему, обеспечивая согласованность неструктурированных данных в любой среде. |
+|[H2O Спарклингватер для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/h2o-ai.h2o-sparklingwater) |Spark |Вода H2O Sparkling поддерживает следующие распределенные алгоритмы: GLM, упрощенный алгоритм Байеса, распределенный случайный лес, высокопроизводительный компьютер с градиентом, глубокие нейронные сети, глубокое обучение, K-средние, PCA, обобщенные модели с низким рангом, обнаружение аномалий, автокодировщики. |
+|[Стриим для интеграции данных в режиме реального времени с HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/striim.hdinsightintegration) |Hadoop, HBase, г., Spark, Kafka |Стриим (произносится как "поток") — это комплексная платформа интеграции данных потоковой передачи, обеспечивающая непрерывное получение, обработку и анализ разнородных потоков данных. |
+|[Жумбуне Enterprise-Accelerator Бигдата Analytics](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/impetus-infotech-india-pvt-ltd.impetus_jumbune) |Hadoop, Spark |На высоком уровне Жумбуне помогает предприятиям, 1. Ускорение Tez, MapReduce & Hive на основе ядра Spark, Java, Scala производительность рабочей нагрузки. 2. Упреждающий мониторинг кластера Hadoop, 3. Установка управления качествами данных в распределенной файловой системе. |
+|[Kyligence Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/kyligence.kyligence) |Hadoop, HBase, Spark |На платформе Apache Kylin Kyligence Enterprise позволяет бизнес-аналитику создавать большие данные. Как модуль OLAP Enterprise в Hadoop, Kyligence Enterprise предоставляет бизнес-аналитику архитектор BI в Hadoop с использованием стандартного хранилища данных и методологии бизнес-аналитики. |
+|[Звезда Presto для Azure HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/starburst.starburst-presto) |Hadoop |Presto — это быстрый и масштабируемый механизм распределенных запросов SQL. Разработанная для разделения хранилища и вычислений Presto идеально подходит для выполнения запросов к данным в Azure Data Lake Storage, хранилищах BLOB-объектов Azure, базах данных SQL и NoSQL и других источниках данных. |
+|[Сборщик данных StreamSets для HDInsight Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop, HBase, Spark, Kafka |Сборщик данных StreamSets — это упрощенная, мощная система, которая осуществляет потоковую передачу данных в режиме реального времени. Используйте сборщик данных для маршрутизации и обработки данных в потоках данных. Он поставляется с лицензией на 30 дней. |
+|[Трифакта Вранглер Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifacta.tr01) |Hadoop, Spark, HBase |Трифакта Вранглер Enterprise для HDInsight поддерживает структурирование данных уровня предприятия для любого масштаба данных. Стоимость запуска Трифакта в Azure — это сочетание затрат на подписку Трифакта, а также затраты на инфраструктуру Azure для виртуальных машин. |
+|[Платформа данных унифицированной платформы](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-catalog) |Hadoop, HBase, в Spark |Платформа данных унифицированных структур — это простой интегрированный набор средств самостоятельного управления данными, позволяющий бизнес-пользователю решать проблемы с данными, которые повышают прибыль, сокращая затраты или эксплуатационную сложность. |
+|[Унравелдата APM](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Приложение данных обнаружить для кластера HDInsight Spark. |
+|[Каталог данных ватерлине на основе искусственного интеллекта](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/waterline_data.waterline_data) |Spark |Ватерлине каталоги, упорядочивает и управляет данными с помощью AI для автоматического тега данных с бизнес-терминами. Каталог грамотного бизнеса Waterline —это чрезвычайно важный компонент успешного проведения самостоятельной аналитики, обеспечения соответствия требованиям и системы управления, а также инициатив в области управления ИТ. |
 
 В этой статье используется портал Azure. Вы можете экспортировать шаблон Azure Resource Manager с портала или получить его копию у поставщиков, а затем развернуть его с помощью Azure PowerShell и классического интерфейса командной строки Azure.  Ознакомьтесь со статьей [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
@@ -53,20 +52,20 @@ ms.locfileid: "67786522"
 **Установка приложения HDInsight**
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. В меню слева, перейдите к **все службы** > **Analytics** > **кластеры HDInsight**.
-3. Выберите кластер HDInsight в списке.  Если у вас нет кластера, сначала его необходимо создать.  См. [этот раздел](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).
-4. В разделе **параметры** категорию **приложений**. Отобразится список установленных приложений, в главном окне. 
+2. В меню слева перейдите к разделу **все службы** > **аналитика** > **кластеры HDInsight**.
+3. Выберите кластер HDInsight из списка.  Если у вас нет кластера, сначала его необходимо создать.  См. [этот раздел](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).
+4. В категории **Параметры** выберите **приложения**. Список установленных приложений можно просмотреть в главном окне. 
    
     ![Меню портала для приложений HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png)
-5. Выберите **+ добавить** в меню. Отобразится список доступных приложений.  Если **+ добавить** неактивна, что означает, что являются приложения для этой версии кластера HDInsight отсутствуют.
+5. В меню выберите пункт **+ Добавить** . Можно просмотреть список доступных приложений.  Если **+ Добавить** неактивно, это означает, что для этой версии кластера HDInsight нет приложений.
    
     ![Доступные приложения HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-list.png)
-6. Выберите один из доступных приложений и следуйте инструкциям, чтобы принять условия.
+6. Выберите одно из доступных приложений, а затем следуйте инструкциям, чтобы принять условия лицензионного соглашения.
 
-Вы увидите состояние установки в уведомлениях портала (выберите значок колокольчика в верхней части портала). После установки приложение отобразится в списке "Установленные приложения".
+Состояние установки можно увидеть в уведомлениях портала (щелкните значок колокольчика в верхней части портала). После установки приложение отобразится в списке "Установленные приложения".
 
 ## <a name="install-applications-during-cluster-creation"></a>Установка приложения во время создания кластера
-Вы также можете установить приложения HDInsight во время создания кластера. Их установка осуществляется после создания и запуска кластера. Чтобы установить приложения во время создания кластера с помощью портала Azure, используйте **Custom** параметр вместо значения по умолчанию **быстрое создание** параметр.
+Вы также можете установить приложения HDInsight во время создания кластера. Их установка осуществляется после создания и запуска кластера. Чтобы установить приложения во время создания кластера с помощью портал Azure, используйте параметр **Custom** вместо параметра **Быстрое создание** по умолчанию.
 
 ## <a name="list-installed-hdinsight-apps-and-properties"></a>Отображение списка установленных приложений HDInsight и их свойств
 На портале содержится список установленных приложений HDInsight для кластера и их свойств.
@@ -74,17 +73,17 @@ ms.locfileid: "67786522"
 **Список приложений HDInsight и их свойств**
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. В меню слева, перейдите к **все службы** > **Analytics** > **кластеры HDInsight**.
-3. Выберите кластер HDInsight в списке.
-4. В разделе **параметры** категорию **приложений**. Отобразится список установленных приложений, в главном окне. 
+2. В меню слева перейдите к разделу **все службы** > **аналитика** > **кластеры HDInsight**.
+3. Выберите кластер HDInsight из списка.
+4. В категории **Параметры** выберите **приложения**. Список установленных приложений можно просмотреть в главном окне. 
    
     ![Установленные приложения HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png)
-5. Выберите один из установленных приложений для отображения свойства. В свойствах указано следующее:
+5. Выберите одно из установленных приложений, чтобы отобразить свойство. В свойствах указано следующее:
 
     |Свойство | Описание |
     |---|---|
-    |Имя приложения. |Имя приложения. |
-    |Status |Состояние приложения. |
+    |Имя приложения |Имя приложения. |
+    |Сообщение о состоянии |Состояние приложения. |
     |Веб-страница |URL-адрес веб-приложения, развернутого на граничном узле. В качестве учетных данных используются учетные данные пользователя HTTP, настроенные для кластера. |
     |Конечная точка SSH |К граничному узлу можно подключиться с помощью SSH. В качестве учетных данных SSH используются учетные данные пользователя SSH, настроенные для кластера. См. дополнительные сведения об [использовании SSH в HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md). |
     |Описание | Описание приложения. |

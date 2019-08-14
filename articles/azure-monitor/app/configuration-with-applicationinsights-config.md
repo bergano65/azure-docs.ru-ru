@@ -13,17 +13,17 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: fe71f4e89fb7e1b6ff3e4f59894a933fbb011692
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 02ad74e5b1f8b86a0072b413db2a572f8ed92781
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881417"
+ms.locfileid: "68932149"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
 Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. Настроив файл конфигурации, можно включить или отключить модули телеметрии и инициализаторы, а также задать параметры для некоторых из них.
 
-Имя файла конфигурации – `ApplicationInsights.config` или `ApplicationInsights.xml` в зависимости от типа приложения. Он автоматически добавляется в проект при [установке большинства версий пакета SDK][start]. Пакет SDK создает `ApplicationInsights.config` файл в корневой папке проекта, а при его выполнении копируется в папку bin. Он также добавляется в веб-приложение с [Монитор состояния на сервере IIS][redfield]. Файл конфигурации не учитывается, если используется [расширение для веб-сайта](azure-web-apps.md) или [расширения Azure для виртуальной машины Azure и масштабируемого набора виртуальных машин](azure-vm-vmss-apps.md) .
+Имя файла конфигурации – `ApplicationInsights.config` или `ApplicationInsights.xml` в зависимости от типа приложения. Он автоматически добавляется в проект при [установке большинства версий пакета SDK][start]. По умолчанию при использовании автоматизированного интерфейса проектов шаблонов Visual Studio, поддерживающих **добавление > телеметрия Application Insights**, файл ApplicationInsights. config создается в корневой папке проекта, а при его выполнении копируется в папка bin. Он также добавляется в веб-приложение с [Монитор состояния на сервере IIS][redfield]. Файл конфигурации не учитывается, если используется [расширение для веб-сайта](azure-web-apps.md) или [расширения Azure для виртуальной машины Azure и масштабируемого набора виртуальных машин](azure-vm-vmss-apps.md) .
 
 Нет эквивалентного файла для управления пакетом [SDK на веб-странице][client].
 

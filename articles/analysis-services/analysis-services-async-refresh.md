@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 63b64df457af5b7d3d2bd5901f73d89ccd3c913a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82e40f756e0d8e0b5627b7c8856bd25fa98adbcb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506972"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932294"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
 Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
 
-Обновление данных может занимать некоторое время в зависимости от ряда факторов, в том числе объема данных и уровня оптимизации с использованием секций и т. п. Эти операции обычно вызывают имеющимися методами, например, используя [табличную модель объектов](https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), командлеты [PowerShell](https://docs.microsoft.com/sql/analysis-services/powershell/analysis-services-powershell-reference) или язык [TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference) (Tabular Model Scripting Language). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
+Обновление данных может занимать некоторое время в зависимости от ряда факторов, в том числе объема данных и уровня оптимизации с использованием секций и т. п. Эти операции обычно вызывают имеющимися методами, например, используя [табличную модель объектов](https://docs.microsoft.com/bi-reference/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), командлеты [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) или язык [TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (Tabular Model Scripting Language). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
 
 REST API для Azure Analysis Services позволяет выполнять обновления данных асинхронно. REST API устраняет необходимость в длительных подключениях через клиентские приложения. Кроме того, здесь предусмотрены другие возможности, обеспечивающие надежность работы, такие как выполнение повторных попыток и пакетных фиксаций.
 
@@ -57,7 +57,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/
 https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes
 ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 Все вызовы должны проходить проверку подлинности, для чего нужен допустимый токен Azure Active Directory (OAuth 2) в заголовке авторизации, и соответствовать следующим требованиям:
 
@@ -98,12 +98,12 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| ИМЯ             | Тип  | Описание  |значение по умолчанию  |
+| Название             | Тип  | Описание  |Значение по умолчанию  |
 |------------------|-------|--------------|---------|
-| `Type`           | Enum  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `Type`           | Enum  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
 | `CommitMode`     | Enum  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
-| `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/sequence-command-tmsl) или другими способами.       | 10        |
-| `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
+| `MaxParallelism` | int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/bi-reference/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
+| `RetryCount`     | int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
 | `Objects`        | Array | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
 
 Значение CommitMode — partialBatch. Оно используется при начальной загрузке для больших наборов данных, что может занять несколько часов. Если обновление завершится сбоем после успешной фиксации одного или нескольких пакетов, эти пакеты останутся зафиксированными (т. е. для них не будет выполнен откат).
@@ -201,7 +201,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
 2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
-В примере кода используется [субъекта-службы](#service-principal) проверки подлинности.
+В примере кода используется проверка подлинности субъекта- [службы](#service-principal) .
 
 ### <a name="service-principal"></a>Субъект-служба
 

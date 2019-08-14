@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 2c206d42e220534225cfef0415a65c1f9494f761
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67f3fd8f3166abac987e8fefbbf4a020f165c8bf
+ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64569793"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68951871"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
@@ -77,9 +77,19 @@ ms.locfileid: "64569793"
 
 Состояние сеанса, хранящееся в очереди или подписке, учитывается при подсчете квоты хранилища этой сущности. Поэтому, когда приложение завершает работу с сеансом, рекомендуется очищать его сохраненное состояние, чтобы избежать затрат на внешнее управление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="impact-of-delivery-count"></a>Влияние счетчика доставки
 
-- См. в статье [примеры Microsoft.Azure.ServiceBus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) или [Microsoft.ServiceBus.Messaging примеры](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) пример, использующий клиент .NET Framework для обработки сообщений с поддержкой сеанса. 
+Определение числа доставок для каждого сообщения в контексте сеансов немного отличается от определения в абсенсе сеансов. Ниже приведена таблица, в которой приводится сводка по увеличению числа доставок.
+
+| Сценарий | Увеличивается счетчик доставки сообщений |
+|----------|---------------------------------------------|
+| Сеанс принят, но блокировка сеанса истекает (из-за истечения времени ожидания) | Да |
+| Сеанс принят, сообщения в сеансе не завершены (даже если они заблокированы) и сеанс закрыт. | Нет |
+| Сеанс принят, сообщения завершаются, а затем сеанс явным образом закрывается | Н/д (это стандартный поток. Здесь сообщения удаляются из сеанса. |
+
+## <a name="next-steps"></a>Следующие шаги
+
+- Пример использования клиента .NET Framework для обработки сообщений, поддерживающих сеанс, см. в [статье примеры Microsoft. Azure. servicebus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) или [Microsoft. servicebus. Messaging](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) . 
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

@@ -9,30 +9,30 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 6/10/2018
 ms.author: atsenthi
-ms.openlocfilehash: 36a3bb385064009f25a585ea299558d54714fc27
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: eb45dda9886450d217355d876ae35af954d99845
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599699"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68955595"
 ---
-# <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
-Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https:///azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Его целью является предоставление томов на основе файлов Azure для других Service Fabric приложений-контейнеров, развернутых в кластере.
+# <a name="service-fabric-azure-files-volume-driver"></a>Драйвер тома Service Fabric файлов Azure
+Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Его целью является предоставление томов на основе файлов Azure для других Service Fabric приложений-контейнеров, развернутых в кластере.
 
 > [!NOTE]
 > Версия подключаемого модуля тома файлов Azure версии 6.5.516.9494 — это предварительная версия, доступная в этом документе. Как и любой предварительный выпуск, эта версия **не** предназначена для рабочих сред.
 >
 
 ## <a name="prerequisites"></a>предварительные требования
-* Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https:///windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
+* Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
 
 * Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
 
 * Подключаемый модуль тома службы файлов Azure работает с Service Fabric версии 6.2 и новее.
 
-* Следуйте инструкциям в [документации по службе файлов Azure](https:///azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
+* Следуйте инструкциям в [документации по службе файлов Azure](/azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
 
-* Вам потребуется установить [PowerShell с модулем Service Fabric](https:///azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
+* Вам потребуется установить [PowerShell с модулем Service Fabric](/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
 
 * Если вы используете контейнеры Hyper-V, необходимо добавить следующие фрагменты в раздел ClusterManifest (локальный кластер) или fabricSettings в шаблоне Azure Resource Manager (кластер Azure) или ClusterConfig. JSON (изолированный кластер).
 
@@ -78,12 +78,12 @@ ms.locfileid: "68599699"
 .\DeployAzureFilesVolumeDriver.ps1 -subscriptionId [subscriptionId] -resourceGroupName [resourceGroupName] -clusterName [clusterName] -linux
 ```
 
-После успешного выполнения скрипта можно перейти к [разделу Настройка приложения.](https:////azure/service-fabric/service-fabric-containers-volume-logging-drivers#configure-your-applications-to-use-the-volume)
+После успешного выполнения скрипта можно перейти к [разделу Настройка приложения.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#configure-your-applications-to-use-the-volume)
 
 
 ### <a name="manual-deployment-for-standalone-clusters"></a>Ручное развертывание автономных кластеров
 
-Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с [сайта Service Fabric скачивания](https://sfazfilevd.blob.core.windows.net/sfazfilevd/AzureFilesVolumePlugin.6.5.516.9494.zip). Это приложение можно развернуть в кластере с помощью [PowerShell](https:///azure/service-fabric/service-fabric-deploy-remove-applications), [интерфейса командной строки](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-lifecycle-sfctl) или [интерфейсов API FabricClient](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-remove-applications-fabricclient).
+Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с [сайта Service Fabric скачивания](https://sfazfilevd.blob.core.windows.net/sfazfilevd/AzureFilesVolumePlugin.6.5.516.9494.zip). Это приложение можно развернуть в кластере с помощью [PowerShell](./service-fabric-deploy-remove-applications.md), [интерфейса командной строки](./service-fabric-application-lifecycle-sfctl.md) или [интерфейсов API FabricClient](./service-fabric-deploy-remove-applications-fabricclient.md).
 
 1. С помощью командной строки перейдите в корневой каталог скачанного пакета приложения.
 
@@ -128,10 +128,10 @@ ms.locfileid: "68599699"
 
 > [!NOTE]
 > 
-> Windows Server 2016 Datacenter не поддерживает сопоставление подключений SMB с контейнерами ([поддерживается только в Windows Server версии 1709](https:///virtualization/windowscontainers/manage-containers/container-storage)). Это ограничение предотвращает сопоставление сетевых томов и использование драйверов томов службы файлов Azure в версиях, предшествующих версии 1709.
+> Windows Server 2016 Datacenter не поддерживает сопоставление подключений SMB с контейнерами ([поддерживается только в Windows Server версии 1709](/virtualization/windowscontainers/manage-containers/container-storage)). Это ограничение предотвращает сопоставление сетевых томов и использование драйверов томов службы файлов Azure в версиях, предшествующих версии 1709.
 
 #### <a name="deploy-the-application-on-a-local-development-cluster"></a>Развертывание приложения в локальном кластере разработки
-Выполните шаги 1-3 из [приведенного выше.](https:////azure/service-fabric/service-fabric-containers-volume-logging-drivers#manual-deployment-for-standalone-clusters)
+Выполните шаги 1-3 из [приведенного выше.](/azure/service-fabric/service-fabric-containers-volume-logging-drivers#manual-deployment-for-standalone-clusters)
 
  Число экземпляров службы по умолчанию для приложения подключаемого модуля тома службы файлов Azure равно –1. Это означает, что экземпляр службы развернут на каждом узле в кластере. Тем не менее при развертывании приложения подключаемого модуля тома службы файлов Azure в локальном кластере разработки нужно указать число экземпляров, равное 1. Это можно сделать с помощью параметра приложения **InstanceCount**. Поэтому команда для создания приложения подключаемого модуля тома файлов Azure в локальном кластере разработки:
 
@@ -204,7 +204,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
     ```
 
 ## <a name="using-your-own-volume-or-logging-driver"></a>Использование драйвера собственного тома или ведения журнала
-Service Fabric дает возможность использовать драйверы пользовательских [томов](https://docs.docker.com/engine/extend/plugins_volume/) и драйверы [ведения журналов](https://docs.docker.com/engine/admin/logging/overview/). Если в кластере не установлен драйвер тома или ведения журнала Docker, его можно установить вручную с помощью протоколов RDP и SSH. Используя эти протоколы, можно выполнить установку с помощью [скрипта запуска масштабируемого набора виртуальных машин](https://azure.microsoft.com/resources/templates/201-vmss-custom-script-windows/) или [скрипта SetupEntryPoint](https:///azure/service-fabric/service-fabric-application-model).
+Service Fabric дает возможность использовать драйверы пользовательских [томов](https://docs.docker.com/engine/extend/plugins_volume/) и драйверы [ведения журналов](https://docs.docker.com/engine/admin/logging/overview/). Если в кластере не установлен драйвер тома или ведения журнала Docker, его можно установить вручную с помощью протоколов RDP и SSH. Используя эти протоколы, можно выполнить установку с помощью [скрипта запуска масштабируемого набора виртуальных машин](https://azure.microsoft.com/resources/templates/201-vmss-custom-script-windows/) или [скрипта SetupEntryPoint](/azure/service-fabric/service-fabric-application-model).
 
 Пример скрипта установки [драйвера тома Docker для Azure](https://docs.docker.com/docker-for-azure/persistent-data-volumes/):
 

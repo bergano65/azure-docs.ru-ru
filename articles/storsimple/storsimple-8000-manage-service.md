@@ -14,14 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
-ms.openlocfilehash: eb1fe69a7fb99949ac95291c33e76c1a32bf5439
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1e75acc03209fdd7e613801c9152f24aaecfa6de
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60506693"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965455"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>Развертывание службы диспетчера устройств StorSimple для устройств StorSimple серии 8000
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Обзор
 
@@ -127,7 +129,7 @@ ms.locfileid: "60506693"
 2. С помощью Windows PowerShell для StorSimple инициируйте изменение ключа шифрования данных службы.
 3. Если у вас более одного устройства StorSimple, обновите ключ шифрования данных службы на других устройствах.
 
-### <a name="step-1-use-windows-powershell-script-to-authorize-a-device-to-change-the-service-data-encryption-key"></a>Шаг 1. Использование скрипта Windows PowerShell для авторизации изменения ключа шифрования данных службы на устройстве
+### <a name="step-1-use-windows-powershell-script-to-authorize-a-device-to-change-the-service-data-encryption-key"></a>Шаг 1.: Использование скрипта Windows PowerShell для авторизации изменения ключа шифрования данных службы на устройстве
 Как правило, администратор устройства отправляет администратору службы запрос на авторизацию устройство, чтобы изменить ключи шифрования данных службы. Администратор службы авторизует устройство для изменения ключа.
 
 Этот шаг выполняется с помощью скрипта на основе Azure Resource Manager. Администратор служб может выбрать устройство для авторизации. Устройство авторизуется для начала изменения ключа шифрования данных службы. 
@@ -143,7 +145,7 @@ ms.locfileid: "60506693"
 * Невозможно авторизовать устройство во время смены ключа шифрования данных службы.
 * Можно авторизовать устройство, если некоторые из зарегистрированных в службе устройств изменили шифрование, а другие — нет. 
 
-### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаг 2. Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
+### <a name="step-2-use-windows-powershell-for-storsimple-to-initiate-the-service-data-encryption-key-change"></a>Шаг 2.: Использование Windows PowerShell для StorSimple для изменения ключа шифрования данных службы
 Этот шаг выполняется в интерфейсе Windows PowerShell для StorSimple на авторизованном устройстве StorSimple.
 
 > [!NOTE]
@@ -187,7 +189,7 @@ ms.locfileid: "60506693"
 ## <a name="supported-operations-on-devices-running-versions-prior-to-update-50"></a>Поддерживаемые операции на устройствах под управлением версий, предшествующих обновлению 5.0
 На портале Azure поддерживаются только устройства StorSimple с обновлениями 5.0 и более поздних версий. Устройства под управлением более старых версий имеют ограниченную поддержку. В следующей таблице указаны операции, которые будут поддерживаться на устройствах с обновлением ниже версии 5.0 после переноса на портал Azure.
 
-| Операция                                                                                                                       | Поддерживаются      |
+| Операция                                                                                                                       | Поддерживается      |
 |---------------------------------------------------------------------------------------------------------------------------------|----------------|
 | Регистрация устройства                                                                                                               | Да            |
 | Настройка параметров устройства (например, общие параметры, сети и безопасность)                                                                | Да            |
@@ -209,7 +211,7 @@ ms.locfileid: "60506693"
 | Включение и выключение контроллеров устройства                                                                                              | Да            |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о [процессе развертывания StorSimple](storsimple-8000-deployment-walkthrough-u2.md).
 * Узнайте больше об [управлении учетной записью хранения StorSimple](storsimple-8000-manage-storage-accounts.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

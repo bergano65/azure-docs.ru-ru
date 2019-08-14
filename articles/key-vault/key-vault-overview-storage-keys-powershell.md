@@ -7,17 +7,17 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: 9b6089aa828b5667f100c1a8cbff3e69345e4512
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 708c34347966eee7817ca04e0552dcba233765cb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66150424"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934511"
 ---
 # <a name="azure-key-vault-managed-storage-account---powershell"></a>PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault
 
 > [!NOTE]
-> [Интеграция хранилища Azure с Azure Active Directory (Azure AD) теперь доступна в предварительной версии](https://docs.microsoft.com/azure/storage/common/storage-auth-aad). Рекомендуем использовать Azure AD для аутентификации и авторизации, которые обеспечивают доступ на базе токенов OAuth2 к службе хранилища Azure, как и Azure Key Vault. Это позволяет следующее:
+> [Интеграция хранилища Azure с Azure Active Directory (Azure AD) теперь доступна в предварительной версии](../storage/common/storage-auth-aad.md). Рекомендуем использовать Azure AD для аутентификации и авторизации, которые обеспечивают доступ на базе токенов OAuth2 к службе хранилища Azure, как и Azure Key Vault. Это позволяет следующее:
 > - Проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. 
 > - Использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения полностью устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 > - Для управления авторизацией, которая также поддерживается с помощью Key Vault, используйте управление доступом на основе ролей (RBAC).
@@ -153,7 +153,7 @@ Updated             : 11/19/2018 11:54:47 PM
 Tags                : 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Примеры ключей управляемой учетной записи хранения](https://github.com/Azure-Samples?utf8=%E2%9C%93&q=key+vault+storage&type=&language=)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)

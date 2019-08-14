@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 498fe63964e44de8f9e1bc06c1740f1a9ef9b392
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: a5b0d236424803056530eed81d9821fbafa14309
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67654170"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952845"
 ---
 # <a name="set-up-sign-in-with-a-google-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Google с использованием пользовательских политик
 
@@ -48,7 +48,7 @@ ms.locfileid: "67654170"
 Вам необходимо сохранить секрет клиента, который ранее был записан в клиенте Azure AD B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -81,7 +81,7 @@ ms.locfileid: "67654170"
             <Item Key="authorization_endpoint">https://accounts.google.com/o/oauth2/auth</Item>
             <Item Key="AccessTokenEndpoint">https://accounts.google.com/o/oauth2/token</Item>
             <Item Key="ClaimsEndpoint">https://www.googleapis.com/oauth2/v1/userinfo</Item>
-            <Item Key="scope">email</Item>
+            <Item Key="scope">email profile</Item>
             <Item Key="HttpBinding">POST</Item>
             <Item Key="UsePolicyInRedirectUri">0</Item>
             <Item Key="client_id">Your Google application ID</Item>
@@ -147,7 +147,7 @@ ms.locfileid: "67654170"
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью Google для получения токена.
 
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий **ClaimsExchange** элемент, что необходимо использовать то же значение для идентификатора, который использовался для **TargetClaimsExchangeId**:
+2. Добавьте следующий элемент **ClaimsExchange** , убедившись, что используется то же значение идентификатора, которое использовалось для **таржетклаимсексчанжеид**:
 
     ```XML
     <ClaimsExchange Id="GoogleExchange" TechnicalProfileReferenceId="Google-OAuth" />
@@ -162,7 +162,7 @@ ms.locfileid: "67654170"
 Связь с Azure AD B2C осуществляется с помощью приложения, созданного в вашем клиенте. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Задайте имя для приложения, например *testapp1*.

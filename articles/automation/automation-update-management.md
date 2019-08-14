@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1bb437511ed89de626489516ce5b06664ace6fba
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: 51ef55247d3262d8707403ed09cc8643403dda23
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741856"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952981"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -84,6 +84,7 @@ ms.locfileid: "68741856"
 
 > [!NOTE]
 > Для управления масштабируемыми наборами виртуальных машин Azure можно использовать Управление обновлениями. Управление обновлениями работает с самими экземплярами, а не с базовым образом. Необходимо запланировать обновления в пошаговом процессе, чтобы не обновлять все экземпляры виртуальных машин одновременно.
+> Узлы VMSS можно добавить, выполнив действия, описанные в подразделе [онбаорд a, не являющегося машиной Azure](automation-tutorial-installed-software.md#onboard-a-non-azure-machine).
 
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 
@@ -93,6 +94,7 @@ ms.locfileid: "68741856"
 |---------|---------|
 |Клиент Windows     | Клиентские операционные системы (например, Windows 7 и Windows 10) не поддерживаются.        |
 |Nano Server Windows Server 2016     | Не поддерживается.       |
+|Узлы службы Kubernetes Azure | Не поддерживается. Используйте процесс исправления, описанный в статьи [применение обновлений безопасности и ядра для узлов Linux в службе Kubernetes Azure (AKS)](../aks/node-updates-kured.md) .|
 
 ### <a name="client-requirements"></a>Требования к клиенту
 
@@ -359,6 +361,10 @@ $ServiceManager.AddService2($ServiceId,7,"")
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 |*.azure-automation.net|*.azure-automation.us|
+
+Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список необходимых ендоинтс можно найти в [вопросах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в ключе [WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
+
+Для компьютеров с Red Hat Linux обратитесь к IP-адресам [серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
 
 Дополнительные сведения о портах, которым необходима гибридная рабочая роль Runbook, см. в статье [Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-worker-role).
 

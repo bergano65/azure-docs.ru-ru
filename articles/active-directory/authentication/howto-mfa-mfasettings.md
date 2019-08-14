@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7011025a1d94a5c99bf2338d9f80c683c2fd7b35
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 12fd08fa301cb22857470e3c81d7f4f7c1f04de9
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68514971"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68948878"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Настройка параметров Многофакторной идентификации Azure
 
@@ -389,8 +389,7 @@ Azure AD поддерживает федерацию (или единый вхо
 >[!IMPORTANT]
 >Если учетная запись или устройство скомпрометированы, запоминание данных MFA для доверенных устройств может повлиять на безопасность. В случае потери доверенного устройства или компрометации учетной записи организации следует [восстановить Многофакторную идентификацию на всех устройствах](howto-mfa-userdevicesettings.md#restore-mfa-on-all-remembered-devices-for-a-user).
 >
->Действие восстановления отменяет статус всех доверенных устройств, и пользователю необходимо будет снова выполнить двухфакторную проверку подлинности. Вы также можете сообщить пользователям о необходимости восстановления MFA на их устройствах, используя указания в разделе [Повторное выполнение двухфакторной проверки подлинности устройства, помеченного как доверенное](../user-help/multi-factor-authentication-end-user-manage-settings.md#require-two-step-verification-again-on-a-device-youve-marked-as-trusted).
->
+>Действие восстановления отменяет статус всех доверенных устройств, и пользователю необходимо будет снова выполнить двухфакторную проверку подлинности. Вы также можете сообщить пользователям о необходимости восстановления MFA на их устройствах, используя указания в разделе [Повторное выполнение двухфакторной проверки подлинности устройства, помеченного как доверенное](../user-help/multi-factor-authentication-end-user-manage-settings.md#turn-on-two-factor-verification-prompts-on-a-trusted-device).
 
 ### <a name="how-the-feature-works"></a>Как работает функция
 

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: c2f3d882ac01427ea017d4f9b81edc3c64cc932d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c2d2f56f2a0686b23a3a907686dcee0760d37365
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64728716"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947072"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -44,7 +44,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
     
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-spark-scala-kafka-cosmosdb%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="https://azuredeploy.net/deploybutton.png"/>
+    <img src="https://azuredeploy.net/deploybutton.png" alt="Deploy to Azure"/>
     </a>
 
     Шаблон Azure Resource Manager находится в репозитории GitHub для этого проекта ([https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb)).
@@ -202,7 +202,7 @@ curl -u admin -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUST
 
 На домашней странице [Jupyter Notebook](https://jupyter.org/) выберите запись __Stream-data-from-Kafka-to-Cosmos-DB.ipynb__. Следуйте инструкциям в записной книжке, чтобы выполнить потоковую передачу данных из Kafka в Azure Cosmos DB с помощью структурированной потоковой передачи Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать структурированную потоковую передачу Apache Spark, перейдите к следующим документам для углубленного изучения работы с Apache Spark, Apache Kafka и Azure Cosmos DB.
 

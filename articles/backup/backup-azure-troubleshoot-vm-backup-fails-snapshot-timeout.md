@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: 7fc288ad9e33088b1b5248c1b61ed439ac95a9c4
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: f47afd450350226aa944287e756b73f61b15b32d
+ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688977"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952046"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -29,12 +29,10 @@ ms.locfileid: "68688977"
 **Код ошибки** UserErrorGuestAgentStatusUnavailable <br>
 **Сообщение об ошибке** Агенту виртуальной машины не удается установить связь со службой Azure Backup<br>
 
-После регистрации виртуальной машины в службе Backup и добавления ее в расписание служба Backup инициирует задание, взаимодействуя с агентом виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:<br>
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**     
-**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
-**Причина 5. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
+Возможно, агент виртуальной машины Azure остановлен, устарел, находится в нестабильном состоянии или не установлен, а служба Azure Backup не может активировать моментальные снимки.  
+    
+- Если агент виртуальной машины остановлен или находится в нестабильном состоянии, **перезапустите агент** и повторите операцию резервного копирования (попробуйте выполнить прямое резервное копирование). Действия по перезапуску агента см. в статье [виртуальные машины Windows](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) или [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent). 
+- Если агент виртуальной машины не установлен или устарел, установите или обновите агент виртуальной машины и повторите операцию резервного копирования. Инструкции по установке и обновлению агента см. в статье [виртуальные машины Windows](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) или [виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent).  
 
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
 
@@ -44,7 +42,8 @@ ms.locfileid: "68688977"
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
 **Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**  
 **Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
+**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**     
+**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)** 
 
 ## <a name="usererrorrpcollectionlimitreached---the-restore-point-collection-max-limit-has-reached"></a>UserErrorRpCollectionLimitReached — достигнуто максимальное количество точек восстановления в коллекции
 
@@ -107,7 +106,7 @@ ms.locfileid: "68688977"
 **Код ошибки** UserErrorUnsupportedDiskSize <br>
 **Сообщение об ошибке** В настоящее время Azure Backup не поддерживает размеры дисков больше 4095 ГБ <br>
 
-Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска больше 4095 ГБ. Чтобы зарегистрироваться для использования закрытой предварительной версии Azure Backup поддержка больших дисков больше, чем 4 ТБ до 30TB, напишите нам AskAzureBackupTeam@microsoft.comобратно.
+Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска более 4 095 ГБ. Чтобы зарегистрироваться для получения ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков объемом более 4 ТБ и размером до 30 ТБ, ознакомьтесь [с обзором резервного копирования виртуальных машин Azure](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 
 ## <a name="usererrorbackupoperationinprogress---unable-to-initiate-backup-as-another-backup-operation-is-currently-in-progress"></a>UserErrorBackupOperationInProgress. Не удалось запустить резервное копирование, так как в настоящий момент выполняется другая операция резервного копирования.
 

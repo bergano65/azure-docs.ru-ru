@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 5dcbb2c25511277eaf46d6c9f4afc007a180f8a6
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
-ms.translationtype: HT
+ms.openlocfilehash: f5ddd9928194c477d8f8b6f4c9569a8fe58f39d3
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827871"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967376"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -44,7 +44,7 @@ ms.locfileid: "68827871"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Чтобы использовать копирование данных из базы данных SQL Server, которая не является общедоступной, необходимо настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции предоставляет встроенный драйвер SQL Server базы данных. Вам не нужно вручную устанавливать драйверы при копировании данных из SQL Server базу данных или в нее.
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
 ## <a name="get-started"></a>Начало работы
 
@@ -62,7 +62,7 @@ ms.locfileid: "68827871"
 | connectionString |Укажите сведения о **ConnectionString** , необходимые для подключения к SQL Server базе данных с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, `password` вытяните конфигурацию из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | userName |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет |
 | password |Укажите пароль для учетной записи пользователя, указанной для имени пользователя. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Или можно сослаться на [секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
-| connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure, если хранилище данных открыто в общедоступном виде. Если значение не указано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
+| connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если значение не указано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
 >[!TIP]
 >Если вы столкнулись с ошибкой с кодом "UserErrorFailedToConnectToSqlServer" и сообщением, например "ограничение сеанса для базы данных равно XXX и достигнут," добавьте `Pooling=false` в строку подключения и повторите попытку.

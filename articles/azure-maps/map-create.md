@@ -1,6 +1,6 @@
 ---
 title: Создание карты с помощью службы "Карты Azure" | Документация Майкрософт
-description: Создание карты на JavaScript
+description: Как создать карту с помощью веб-пакета SDK для Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/26/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 9f1188fcf2aa24791ca5181f5c94a1b0f6b15dc1
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 932c244ff41e757413a05cde019ee7ee1a82232d
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882066"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976123"
 ---
 # <a name="create-a-map"></a>Создание карты
 
@@ -22,7 +22,7 @@ ms.locfileid: "68882066"
 
 ## <a name="loading-a-map"></a>Загрузка схемы
 
-Чтобы загрузить карту, создайте новый экземпляр [класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). При инициализации сопоставьте идентификатор элемента DIV для отрисовки Map и набор параметров, используемых при загрузке схемы. Если в `atlas` пространстве имен не указаны сведения для проверки подлинности по умолчанию, эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините `ready` событие или `load` к карте, а затем добавьте дополнительный код, который взаимодействует с картой в этом обработчике событий. `ready` Событие срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. `load` Событие срабатывает после полного завершения загрузки представления первоначальной таблицы. 
+Чтобы загрузить карту, создайте новый экземпляр [класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). При инициализации Map идентификатор элемента DIV для отрисовки Map и набор параметров, используемых при загрузке схемы. Если в `atlas` пространстве имен не указаны сведения для проверки подлинности по умолчанию, эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините `ready` событие или `load` к карте, а затем добавьте дополнительный код, который взаимодействует с картой в этом обработчике событий. `ready` Событие срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. `load` Событие срабатывает после полного завершения загрузки представления первоначальной таблицы. 
 
 <br/>
 
@@ -51,7 +51,7 @@ ms.locfileid: "68882066"
 
 ### <a name="set-the-camera"></a>Настройка камеры
 
-В следующем коде создается [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как центрирование и масштаб, являются частью [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions).
+В следующем коде создается [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как центр и масштаб, являются частью [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions).
 
 <br/>
 
@@ -104,3 +104,6 @@ ms.locfileid: "68882066"
 
 > [!div class="nextstepaction"]
 > [Добавление элементов управления на карту](map-add-controls.md)
+
+> [!div class="nextstepaction"]
+> [Примеры кода](https://docs.microsoft.com/samples/browse/?products=azure-maps)

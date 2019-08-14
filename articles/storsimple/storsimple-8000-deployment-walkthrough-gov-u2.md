@@ -14,14 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/22/2017
 ms.author: alkohli
-ms.openlocfilehash: 4f093251ce3c711cc060369abb27770157024d91
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22084f9c59070c2efaa112ebfbb0c5ecc647145e
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61488962"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965883"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-in-the-government-portal"></a>Развертывание локального устройства StorSimple на портале для государственных организаций
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Обзор
 Добро пожаловать в раздел развертывания устройств StorSimple в Microsoft Azure. Эти руководства по развертыванию посвящены устройствам серии StorSimple 8000 под управлением программного обеспечения с обновлением 3 или более поздних версий на портале Azure для государственных организаций. В этой серии учебников описывается контрольный список настройки, список предварительных требований к конфигурации и подробное пошаговое руководство по настройке устройства StorSimple.
@@ -49,12 +51,12 @@ ms.locfileid: "61488962"
 | **ПОШАГОВОЕ РАЗВЕРТЫВАНИЕ** |Эти шаги обязательны для развертывания устройства StorSimple в производственной среде. |
 | [Шаг 1. Создание новой службы](#step-1-create-a-new-service) |Настройте облачное управление и хранение для устройства StorSimple. *При наличии существующей службы для других устройств StorSimple пропустите этот шаг*. |
 | [Шаг 2. Получение регистрационного ключа службы](#step-2-get-the-service-registration-key) |С помощью этого ключа зарегистрируйте и подключите устройство StorSimple к службе управления. |
-| [Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple](#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |Подключите устройство к сети и зарегистрируйте его в Azure, чтобы завершить установку с помощью службы управления. |
-| [Шаг 4. Выполнение минимальной настройки устройства](#step-4-complete-minimum-device-setup) </br>Необязательно: Обновление устройства StorSimple. |С помощью службы управления завершите настройку устройства и включите на нем возможность хранения данных. |
+| [Шаг 3. Настройка и регистрация устройства с помощью Windows PowerShell для StorSimple](#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |Подключите устройство к сети и зарегистрируйте его в Azure, чтобы завершить установку с помощью службы управления. |
+| [Шаг 4. Выполнение минимальной настройки устройства](#step-4-complete-minimum-device-setup) </br>Необязательно: Обновите устройство StorSimple. |С помощью службы управления завершите настройку устройства и включите на нем возможность хранения данных. |
 | [Шаг 5. Создание контейнера томов](#step-5-create-a-volume-container) |Создайте контейнер для подготовки томов. У контейнера томов имеется учетная запись хранения, пропускная способность и параметры шифрования для всех томов, которые в нем содержатся. |
 | [Шаг 6. Создание тома](#step-6-create-a-volume) |Подготовьте один или несколько томов хранения данных на устройстве StorSimple для ваших серверов. |
 | [Шаг 7. Подключение, инициализация и форматирование тома](#step-7-mount-initialize-and-format-a-volume) </br>Необязательно: Настройте MPIO. |Подключите серверы к хранилищу iSCSI, предоставляемому устройством. При необходимости настройте MPIO, чтобы обеспечить устойчивость серверов к сбоям канала связи, сети и интерфейса. |
-| [Шаг 8. Создайте резервную копию](#step-8-take-a-backup) |Настройте политику резервного копирования для защиты данных. |
+| [Шаг 8. Создание резервной копии](#step-8-take-a-backup) |Настройте политику резервного копирования для защиты данных. |
 |  | |
 | **ПРОЧИЕ ПРОЦЕДУРЫ** |При развертывании решения может возникнуть необходимость обратиться к этим процедурам. |
 | [Настройка новой учетной записи хранения для службы](#configure-a-new-storage-account-for-the-service) | |
@@ -96,7 +98,7 @@ ms.locfileid: "61488962"
 ## <a name="step-by-step-deployment"></a>ПОШАГОВОЕ РАЗВЕРТЫВАНИЕ
 Следующие пошаговые инструкции позволяют развернуть устройство StorSimple в центре обработки данных.
 
-## <a name="step-1-create-a-new-service"></a>Шаг 1. Создание службы
+## <a name="step-1-create-a-new-service"></a>Шаг 1.: Создание службы
 Служба диспетчера устройств StorSimple может управлять несколькими устройствами StorSimple. Чтобы создать экземпляр службы диспетчера устройств StorSimple, сделайте следующее.
 
 [!INCLUDE [storsimple-8000-create-new-service-gov](../../includes/storsimple-8000-create-new-service-gov.md)]
@@ -108,19 +110,19 @@ ms.locfileid: "61488962"
 > * Если вы включили автоматическое создание учетной записи хранения, перейдите к разделу [Шаг 2. Получение ключа регистрации службы](#step-2-get-the-service-registration-key).
 
 
-## <a name="step-2-get-the-service-registration-key"></a>Шаг 2. Получение регистрационного ключа службы
+## <a name="step-2-get-the-service-registration-key"></a>Шаг 2.: Получение регистрационного ключа службы
 После запуска и настройки службы диспетчера устройств StorSimple вам необходимо будет получить ключ регистрации службы. Этот ключ используется для регистрации вашего устройства StorSimple в службе и подключения к ней.
 
 Выполните следующие шаги на портале для государственных организаций.
 
 [!INCLUDE [storsimple-8000-get-service-registration-key](../../includes/storsimple-8000-get-service-registration-key.md)]
 
-## <a name="step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple"></a>Шаг 3. Настройка и регистрация устройства средствами Windows PowerShell для StorSimple
+## <a name="step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple"></a>Шаг 3. Настройка и регистрация устройства с помощью Windows PowerShell для StorSimple
 Используйте Windows PowerShell для StorSimple, чтобы завершить первоначальную настройку устройства StorSimple, как описано в следующей процедуре. Для выполнения этого действия вам необходимо будет использовать программное обеспечение для эмуляции терминала. Дополнительные сведения см. в разделе [Использование PuTTY для подключения к последовательной консоли устройства](#use-putty-to-connect-to-the-device-serial-console).
 
 [!INCLUDE [storsimple-8000-configure-and-register-device-gov](../../includes/storsimple-8000-configure-and-register-device-gov-u2.md)]
 
-## <a name="step-4-complete-minimum-device-setup"></a>Шаг 4. Выполнение минимальной настройки устройства
+## <a name="step-4-complete-minimum-device-setup"></a>Шаг 4. Минимальная Настройка устройства
 Для минимальной настройки устройства StorSimple выполните следующие действия.
 
 * Укажите понятное имя для устройства.
@@ -158,7 +160,7 @@ ms.locfileid: "61488962"
 
 [!INCLUDE [storsimple-mount-initialize-format-volume](../../includes/storsimple-mount-initialize-format-volume.md)]
 
-## <a name="step-8-take-a-backup"></a>Шаг 8. Создайте резервную копию
+## <a name="step-8-take-a-backup"></a>Шаг 8. Создание резервной копии
 Резервные копии обеспечивают защиту состояния томов до определенной точки во времени и улучают возможности восстановления, одновременно снижая время восстановления. Устройство StorSimple позволяет создавать резервные копии двух типов: локальные и облачные моментальные снимки. Каждый из этих типов резервных копий может создаваться **по расписанию** или **вручную**.
 
 Чтобы выполнить запланированное резервное копирование, на портале для государственных организаций сделайте следующее.
@@ -194,7 +196,7 @@ ms.locfileid: "61488962"
 
 [!INCLUDE [Create a manual backup](../../includes/storsimple-8000-create-manual-backup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Настройте [виртуальное устройство](storsimple-8000-cloud-appliance-u2.md).
 * Для управления устройством StorSimple используется [служба диспетчера устройств StorSimple](storsimple-8000-manager-service-administration.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Создание, запуск и отслеживание конвейеров машинного обучения
 titleSuffix: Azure Machine Learning service
-description: Создание и запуск конвейера машинного обучения с помощью пакета SDK Машинного обучения Azure для Python. Конвейеры используются для создания рабочих процессов, которые совмещают этапы машинного обучения, и управления ими. Эти этапы включают подготовку данных, обучение модели, развертывание модели и выведение/оценка.
+description: Создание и запуск конвейера машинного обучения с помощью пакета SDK Машинного обучения Azure для Python. Используйте конвейеры машинного обучения для создания рабочих процессов и управления ими, которые объединяют фазы машинного обучения (ML). Эти этапы включают подготовку данных, обучение модели, развертывание модели и выведение/оценка.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,49 +9,48 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.author: sanpil
 author: sanpil
-ms.date: 05/02/2019
+ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 497c4d9708a7b67bf0b5433c455d90dd277297d7
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 1e68f60880e09dfeb46641f40eca12e1fc0560bc
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68873608"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950428"
 ---
-# <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
+# <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
-В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://aka.ms/aml-sdk).  Используйте **конвейеры машинного обучения** , чтобы создать рабочий процесс, объединяющий различные фазы машинного обучения, а затем опубликовать этот конвейер в машинное обучение Azure рабочей области, чтобы получить доступ к нему позже или поделиться с другими.  
+В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://aka.ms/aml-sdk).  Используйте **конвейеры машинного обучения** , чтобы создать рабочий процесс, объединяющий различные фазы машинного обучения, а затем опубликовать этот конвейер в машинное обучение Azure рабочей области, чтобы получить доступ к нему позже или поделиться с другими.  Конвейеры машинного обучения идеально подходят для сценариев пакетной оценки с использованием различных вычислений, повторного использования действий вместо их перезапуска, а также совместного использования рабочих процессов машинного обучения с другими пользователями. 
 
-Хотя вы можете использовать [конвейер Azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/targets/azure-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=azure-devops&tabs=yaml) для автоматизации задач машинного обучения (CI/CD), но этот тип конвейера не хранится в рабочей области. [Сравните эти типы конвейеров](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
+Хотя можно использовать другой тип конвейера, называемый [конвейером Azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/targets/azure-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=azure-devops&tabs=yaml) для автоматизации задач ML в CI/CD, этот тип конвейера никогда не хранится в рабочей области. [Сравните эти разные конвейеры](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
 
-Каждый этап конвейера, например подготовка данных и обучение модели, может содержать один или несколько шагов.
+Каждый этап конвейера МАШИНного обучения, например подготовка данных и обучение модели, может включать один или несколько шагов.
 
-Созданные вами конвейеры видны участникам вашей [рабочей области](how-to-manage-workspace.md) в Службе машинного обучения Azure. 
+Создаваемые конвейеры машинного обучения видимы для членов [рабочей области](how-to-manage-workspace.md)службы машинное обучение Azure. 
 
-Конвейер использует удаленные целевые объекты вычислений для вычисления и хранения промежуточных и конечных данных, связанных с данным конвейером. Конвейеры могут выполнять чтение и запись данных в поддерживаемых расположениях [службы хранилища Azure](https://docs.microsoft.com/azure/storage/).
+Конвейеры машинного обучения используют удаленные целевые объекты вычислений для вычислений и хранения промежуточных и окончательных данных, связанных с этим конвейером. Они могут читать и записывать данные в поддерживаемые расположения [хранилища Azure](https://docs.microsoft.com/azure/storage/) и из них.
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
+* Создайте [рабочую область Машинного обучения Azure](how-to-manage-workspace.md) для хранения всех ресурсов конвейера.
 
-* Создайте [рабочую область Машинного обучения Azure](how-to-configure-environment.md#workspace) для хранения всех ресурсов конвейера. 
+* [Настройте среду разработки](how-to-configure-environment.md) для установки пакета sdk для машинное обучение Azure или используйте виртуальную [машину записной книжки](tutorial-1st-experiment-sdk-setup.md#azure) с уже установленным пакетом SDK.
 
-  ```python
-  from azureml.core import Workspace
-  
-  ws = Workspace.create(
-     name = '<workspace-name>',
-     subscription_id = '<subscription-id>',
-     resource_group = '<resource-group>',
-     location = '<workspace_region>',
-     exist_ok = True)
-  ```
+Начните с подключения рабочей области:
+
+```Python
+import azureml.core
+from azureml.core import Workspace, Datastore
+
+ws = Workspace.from_config()
+```
+
 
 ## <a name="set-up-machine-learning-resources"></a>Настройка ресурсов машинного обучения
 
-Создайте ресурсы, необходимые для запуска конвейера.
+Создайте ресурсы, необходимые для запуска конвейера машинного обучения.
 
 * Настройте хранилище данных для хранения данных, необходимых для выполнения шагов конвейера.
 
@@ -60,22 +59,24 @@ ms.locfileid: "68873608"
 * Настройте [целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-targets) для выполнения шагов вашего конвейера.
 
 ### <a name="set-up-a-datastore"></a>Настройка хранилища данных
+
 Хранилище данных содержит данные, которые использует конвейер. У каждой рабочей области есть хранилище данных по умолчанию. Вы можете зарегистрировать дополнительные хранилища данных. 
 
 При создании рабочей области [файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) присоединяются к рабочей области. Для подключения к хранилищу BLOB-объектов Azure регистрируется хранилище данных по умолчанию. Дополнительные сведения см. в статье [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks). 
 
 ```python
-# Default datastore (Azure blob storage)
+# Default datastore 
 def_data_store = ws.get_default_datastore()
 
-# The above call is equivalent to this
-def_data_store = Datastore(ws, "workspaceblobstore")
+# Get the blob storage associated with the workspace
+def_blob_store = Datastore(ws, "workspaceblobstore")
 
 # Get file storage associated with the workspace
 def_file_store = Datastore(ws, "workspacefilestore")
+
 ```
 
-Передайте файлы данных или каталоги в хранилище данных, чтобы они были доступны из конвейеров. В этом примере используется хранилище BLOB-объектов.
+Передайте файлы данных или каталоги в хранилище данных, чтобы они были доступны из конвейеров. В этом примере используется хранилище BLOB-объектов в качестве хранилища данных:
 
 ```python
 def_blob_store.upload_files(
@@ -119,7 +120,7 @@ output_data1 = PipelineData(
 * Azure Databricks 
 * Azure Data Lake Analytics
 
-### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure;
+### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure
 
 Для выполнения шагов конвейера можно создать вычислительную среду Машинного обучения Azure.
 
@@ -337,19 +338,21 @@ pipeline_run1.wait_for_completion()
 
 Дополнительные сведения см. в справочнике по [классу эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) .
 
+
+
 ## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
 
 При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Например, текущий идентификатор фиксации для репозитория регистрируется как часть журнала.
 
 ## <a name="publish-a-pipeline"></a>Публикация конвейера
 
-Вы можете опубликовать конвейера для последующего запуска с другими входными данными. Чтобы конечная точка REST опубликованного конвейера могла принимать параметры, перед публикацией конвейер нужно параметризовать. 
+Вы можете опубликовать конвейера для последующего запуска с другими входными данными. Чтобы конечная точка REST опубликованного конвейера могла принимать параметры, перед публикацией конвейер нужно параметризовать.
 
 1. Чтобы создать параметр конвейера, используйте объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
 
    ```python
    pipeline_param = PipelineParameter(
-     name="pipeline_arg", 
+     name="pipeline_arg",
      default_value=10)
    ```
 
@@ -360,20 +363,21 @@ pipeline_run1.wait_for_completion()
      script_name="compare.py",
      arguments=["--comp_data1", comp_data1, "--comp_data2", comp_data2, "--output_data", out_data3, "--param1", pipeline_param],
      inputs=[ comp_data1, comp_data2],
-     outputs=[out_data3],    
-     target=compute_target, 
+     outputs=[out_data3],
+     target=compute_target,
      source_directory=project_folder)
    ```
 
 3. Опубликуйте этот конвейер, который будет принимать параметр при вызове.
 
    ```python
-   published_pipeline1 = pipeline1.publish(
-       name="My_Published_Pipeline", 
-       description="My Published Pipeline Description")
+   published_pipeline1 = pipeline_run1.publish_pipeline(
+        name="My_Published_Pipeline",
+        description="My Published Pipeline Description",
+        version="1.0")
    ```
 
-## <a name="run-a-published-pipeline"></a>Запустите опубликованный конвейер.
+### <a name="run-a-published-pipeline"></a>Запустите опубликованный конвейер.
 
 Все опубликованные конвейеры используют конечную точку REST. Она вызывает запуск конвейера из внешних систем, таких как клиенты не на платформе Python. Эта конечная точка обеспечивает управляемую повторяемость для сценариев пакетной оценки и переобучения.
 
@@ -386,15 +390,28 @@ response = requests.post(published_pipeline1.endpoint,
                                "ParameterAssignments": {"pipeline_arg": 20}})
 ```
 
-## <a name="view-results"></a>Просмотр результатов
+### <a name="view-results-of-a-published-pipeline"></a>Просмотр результатов опубликованного конвейера
 
-Просмотрите список всех конвейеров и подробные сведения об их запуске.
+Просмотрите список всех опубликованных конвейеров и сведения о их выполнении:
 1. Войдите на [портале Azure](https://portal.azure.com/).  
 
 1. [Просмотрите рабочую область](how-to-manage-workspace.md#view), чтобы найти список конвейеров.
  ![Список конвейеров машинного обучения](./media/how-to-create-your-first-pipeline/list_of_pipelines.png)
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
+
+### <a name="disable-a-published-pipeline"></a>Отключение опубликованного конвейера
+
+Чтобы скрыть конвейер из списка опубликованных конвейеров, отключите его.
+
+```
+# Get the pipeline by using its ID in the Azure portal
+p = PublishedPipeline.get(ws, id="068f4885-7088-424b-8ce2-eeb9ba5381a6")
+p.disable()
+```
+
+Его можно включить снова с помощью `p.enable()`.
+
 
 ## <a name="caching--reuse"></a>Повторное использование кэширования &  
 
@@ -416,6 +433,7 @@ step = PythonScriptStep(name="Hello World",
  
 
 ## <a name="next-steps"></a>Следующие шаги
+
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.
 - Прочитайте справочные материалы по пакету SDK для пакетов [azureml-pipelines-core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и [azureml-pipelines-steps](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py).
 

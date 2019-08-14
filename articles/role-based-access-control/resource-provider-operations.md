@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/11/2019
+ms.date: 08/08/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ce4765a512b81d13f735a05ad4fba5408284a607
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 2d3a303cb00bab6f67abbc6354ca785880759e4d
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501413"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945529"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -589,6 +589,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.AzureStack/registrations/getActivationKey/action | Получение последнего созданного ключа активации Azure Stack. |
 > | Action | Microsoft.AzureStack/registrations/products/listDetails/action | Возвращает подробные сведения о продукте из Azure Stack Marketplace. |
 > | Action | Microsoft.AzureStack/registrations/products/read | Получает свойства продукта из Azure Stack Marketplace. |
+> | Action | Microsoft. AzureStack/регистрация/продукты/Уплоадпродуктлог/действие | Состояние операции продукта "запись Azure Stack Marketplace" и метка времени |
 > | Action | Microsoft.AzureStack/registrations/read | Получает свойства регистрации Azure Stack. |
 > | Action | Microsoft.AzureStack/registrations/write | Создание или обновление регистрации в Azure Stack. |
 
@@ -640,13 +641,18 @@ ms.locfileid: "68501413"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
-> | Action | Microsoft.Billing/billingAccounts/departments/read | Вывод списка всех отделов, относящихся к учетной записи выставления счетов. |
-> | Action | Microsoft.Billing/billingAccounts/enrollmentAccounts/read | Вывод списка всех учетных записей регистрации, относящихся к учетной записи выставления счетов. |
-> | Action | Microsoft.Billing/billingAccounts/read | Вывод списка всех учетных записей выставления счетов, к которым пользователь имеет доступ. |
-> | Action | Microsoft.Billing/billingPeriods/read | Вывод списка доступных интервалов выставления счетов. |
-> | Action | Microsoft.Billing/departments/read | Вывод списка всех отделов, к которым пользователь имеет доступ. |
-> | Action | Microsoft.Billing/invoices/read | Выводит список доступных счетов. |
-> | Action | Microsoft.Billing/register/action | Регистрация подписки в поставщике ресурсов Microsoft.Billing. |
+> | Action | Microsoft. Billing/Биллингаккаунтс/соглашения/чтение |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Биллингпермиссионс/Read |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/счета/прайс-лист/Загрузка/действие |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс/Read |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/прайс-лист/действие |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Биллингпрофилес/Read |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Customers/Read |  |
+> | Action | Microsoft.Billing/billingAccounts/departments/read |  |
+> | Action | Microsoft.Billing/billingAccounts/enrollmentAccounts/read |  |
+> | Action | Microsoft. Billing/Биллингаккаунтс/Products/Read |  |
+> | Action | Microsoft.Billing/billingAccounts/read |  |
+> | Action | Microsoft.Billing/departments/read |  |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 
@@ -1174,6 +1180,7 @@ ms.locfileid: "68501413"
 > | DataAction | Microsoft. CognitiveServices/Accounts/Face/персонграупс/Train/Read | Чтобы проверить состояние обучения группы лиц завершено или по-прежнему текущее. Персонграупное обучение — это асинхронная операция, активируемая |
 > | DataAction | Microsoft. CognitiveServices/Accounts/Face, персонграупс/Write | Создайте новую группу Person с указанными Персонграупид, именем и предоставленным пользователем userData. Обновите имя существующей группы людей и userData. Свойства сохраняются без изменений, если они не находятся в тексте запроса. |
 > | DataAction | Microsoft. CognitiveServices/Accounts/Face, проверка/действие | Проверьте, принадлежат ли два лица одному человеку или принадлежит ли одна из них пользователю. |
+> | DataAction | Microsoft. CognitiveServices/Accounts/Иммерсивереадер/жетконтентмоделфорреадер/Action | Создает иммерсивное сеанс чтения |
 > | Action | Microsoft.CognitiveServices/accounts/listKeys/action | Список ключей |
 > | DataAction | Microsoft. CognitiveServices/Accounts/LUIS/Predict/Action | Возвращает прогноз опубликованной конечной точки для данного запроса. |
 > | Action | Microsoft.CognitiveServices/accounts/read | Считывание учетных записей API. |
@@ -1470,15 +1477,17 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.ContainerService/managedClusters/accessProfiles/read | Получить профиль доступа управляемого кластера по имени роли |
 > | Action | Microsoft. ContainerService/Манажедклустерс/Ажентпулс/Delete | Удаляет пул агентов. |
 > | Action | Microsoft. ContainerService/Манажедклустерс/Ажентпулс/Read | Возвращает Пул агентов |
+> | Action | Microsoft. ContainerService/Манажедклустерс/Ажентпулс/Упградепрофилес/Read | Возвращает профиль обновления пула агентов. |
 > | Action | Microsoft. ContainerService/Манажедклустерс/Ажентпулс/запись | Создает новый пул агентов или обновляет существующий. |
 > | Action | Microsoft.ContainerService/managedClusters/delete | Удаляет управляемый кластер |
 > | Action | Microsoft. ContainerService/Манажедклустерс/детекторы/чтение | Получить средство обнаружения управляемого кластера |
 > | Action | Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action | Перечислить учетные данные clusterAdmin управляемого кластера |
 > | Action | Microsoft.ContainerService/managedClusters/listClusterUserCredential/action | Перечислить учетные данные clusterUser управляемого кластера |
+> | Action | Microsoft. ContainerService/Манажедклустерс/Приватиндпоинтконнектионсаппровал/Action | Определяет, разрешено ли пользователю утверждать подключение частной конечной точки |
 > | Action | Microsoft.ContainerService/managedClusters/read | Получить управляемый кластер |
 > | Action | Microsoft.ContainerService/managedClusters/resetAADProfile/action | Сброс профиля AAD управляемого кластера. |
 > | Action | Microsoft.ContainerService/managedClusters/resetServicePrincipalProfile/action | Сброс профиля субъекта-службы управляемого кластера. |
-> | Action | Microsoft.ContainerService/managedClusters/upgradeprofiles/read | Возвращает профиль обновления для кластера |
+> | Action | Microsoft. ContainerService/Манажедклустерс/Упградепрофилес/Read | Возвращает профиль обновления для кластера |
 > | Action | Microsoft.ContainerService/managedClusters/write | Создает управляемый кластер или изменяет существущий |
 > | Action | Microsoft.ContainerService/openShiftClusters/delete | Удаление кластера с открытым сдвигом |
 > | Action | Microsoft.ContainerService/openShiftClusters/read | Получение кластера с открытым сдвигом |
@@ -1530,111 +1539,6 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.CostManagement/reports/read | Планирование создания отчетов о данных об использовании в области. |
 > | Action | Microsoft. Костманажемент/клиенты/регистрация/действие | Регистрация действия для области действия Microsoft. Костманажемент клиентом. |
 
-## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
-
-> [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | Описание |
-> | --- | --- | --- |
-> | Action | Microsoft.CustomerInsights/hubs/adobemetadata/action | Создание или обновление метаданных Adobe для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/adobemetadata/read | Чтение метаданных Adobe для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/authorizationPolicies/delete | Удаляет политику подписанного URL-адреса Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/authorizationPolicies/read | Считывает политику подписанного URL-адреса Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/authorizationPolicies/regeneratePrimaryKey/action | Повторно создает первичный ключ политики подписанного URL-адреса Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/authorizationPolicies/regenerateSecondaryKey/action | Повторно создает вторичный ключ политики подписанного URL-адреса Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/authorizationPolicies/write | Создает или обновляет политику подписанного URL-адреса Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/activate/action | Активация соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/activate/action | Активация соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/delete | Удаляет соединитель Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/getruntimestatus/action | Получение состояния выполнения соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/mappings/activate/action | Активация сопоставления соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/mappings/delete | Удаляет сопоставление соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/mappings/operations/read | Чтение результата операции сопоставления соединителя для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/mappings/read | Считывает сопоставление соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/mappings/write | Создает или обновляет сопоставление соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/operations/read | Чтение результата операции соединителя для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/read | Считывает соединитель Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/saveauthinfo/action | Создание или обновление данных аутентификации соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/update/action | Обновление соединителя Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/connectors/write | Создает или обновляет соединитель Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/crmmetadata/action | Создание или обновление метаданных CRM для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/crmmetadata/read | Чтение метаданных CRM для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/delete | Удаляет концентратор Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/gdpr/delete | Удаление GDPR Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/gdpr/read | Чтение GDPR Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/gdpr/write | Создание или обновление GDPR Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/getbillingcredits/read | Получение данных о кредитах на концентратор Azure Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/getbillinghistory/read | Получение журнала выставленных счетов за использование концентратора Azure Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/images/delete | Удаление образа Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/images/read | Чтение образа Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/images/write | Создание или обновление образа Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/interactions/delete | Удаление взаимодействий Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/interactions/operations/read | Чтение результата операции взаимодействия для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/interactions/read | Считывает взаимодействие Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/interactions/suggestrelationshiplinks/action | Предложение ссылок связи для взаимодействий Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/interactions/write | Создает или обновляет взаимодействие Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/kpi/delete | Удаляет ключевой показатель эффективности Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/kpi/operations/read | Чтение результата операции получения ключевых показателей эффективности для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/kpi/read | Считывает ключевой показатель эффективности Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/kpi/reprocess/action | Повторная обработка ключевых показателей эффективности Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/kpi/write | Создает или обновляет ключевой показатель эффективности Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/links/delete | Удаление ссылок Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/links/operations/read | Чтение результата операции связей соединителя для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/links/read | Чтение ссылок Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/links/write | Создание или обновление ссылок Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/msemetadata/action | Создание или обновление метаданных MSE для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/msemetadata/read | Чтение метаданных MSE для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/operationresults/read | Получение результатов операции концентратора для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictions/delete | Удаление прогнозов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictions/operations/read | Чтение результата операции получения прогнозов для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictions/read | Чтение прогнозов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictions/write | Создание или обновление прогнозов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictivematchpolicies/delete | Удаление политик прогнозного сопоставления Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictivematchpolicies/operations/read | Чтение результата операции политик прогнозного сопоставления для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictivematchpolicies/read | Чтение политик прогнозного сопоставления Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/predictivematchpolicies/write | Создание или обновление политик прогнозного сопоставления Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/profiles/delete | Удаление профиля Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/profiles/operations/read | Чтение результата операции профиля для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/profiles/read | Считывает профиль Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/profiles/write | Записывает профиль Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/providers/Microsoft.Insights/diagnosticSettings/read | Получает настройку диагностики для ресурса |
-> | Action | Microsoft.CustomerInsights/hubs/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет настройку диагностики для ресурса |
-> | Action | Microsoft.CustomerInsights/hubs/providers/Microsoft.Insights/logDefinitions/read | Возвращает доступные журналы для ресурса. |
-> | Action | Microsoft.CustomerInsights/hubs/providers/Microsoft.Insights/metricDefinitions/read | Возвращает доступные метрики для ресурса. |
-> | Action | Microsoft.CustomerInsights/hubs/read | Считывает концентратор Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationshiplinks/delete | Удаление ссылок связи Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationshiplinks/operations/read | Чтение результата операции ссылок связи для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationshiplinks/read | Чтение ссылок связи Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationshiplinks/write | Создание или обновление ссылок связи Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationships/delete | Удаление связей Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationships/operations/read | Чтение результата операции связей для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationships/read | Чтение связей Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/relationships/write | Создание или обновление связей Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/roleAssignments/delete | Удаляет назначение RBAC для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/roleAssignments/operations/read | Чтение результатов операции назначения RBAC для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/roleAssignments/read | Считывает назначение RBAC для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/roleAssignments/write | Создает или обновляет назначение RBAC для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/roles/read | Чтение ролей RBAC для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/salesforcemetadata/action | Создание или обновление метаданных SalesForce для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/salesforcemetadata/read | Чтение метаданных SalesForce для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/segments/delete | Удаление сегментов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/segments/dynamic/action | Управление динамическими сегментами Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/segments/read | Чтение сегментов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/segments/static/action | Управление статическими сегментами Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/segments/write | Создание или обновление сегментов Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/sqlconnectionstrings/delete | Удаление строк подключения SQL для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/sqlconnectionstrings/read | Чтение строк подключения SQL для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/sqlconnectionstrings/write | Создание или обновление строк подключения SQL для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/suggesttypeschema/action | Создание предложения схемы типа из примера данных. |
-> | Action | Microsoft.CustomerInsights/hubs/tenantmanagement/read | Управление параметрами концентратора Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/views/delete | Удаляет представление приложений Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/views/read | Считывает представление приложений Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/views/write | Создает или обновляет представление приложений Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/widgettypes/read | Чтение типов мини-приложений приложения Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/hubs/write | Создает или обновляет концентратор Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/operations/read | Чтение метаданных API для Azure Customer Insights. |
-> | Action | Microsoft.CustomerInsights/register/action | Регистрация подписки для поставщика ресурсов Customer Insights и разрешение создания ресурсов Customer Insights. |
-> | Action | Microsoft.CustomerInsights/unregister/action | Отмена регистрации подписки для поставщика ресурсов Customer Insights. |
-
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 
 > [!div class="mx-tdCol2BreakAll"]
@@ -1649,9 +1553,14 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DataBox/locations/availableSkus/action | Этот метод возвращает список доступных номеров SKU. |
 > | Action | Microsoft. Датабокс/Locations/Аваилаблескус/Read | Перечисление или получение доступных номеров SKU |
 > | Action | Microsoft.DataBox/locations/operationResults/read | Вывод списка или получение результатов операции. |
+> | Action | Microsoft. Датабокс/Locations/Регионконфигуратион/Action | Этот метод возвращает конфигурации для региона. |
 > | Action | Microsoft.DataBox/locations/validateAddress/action | Проверяет адрес доставки и предлагает альтернативные адреса, если они доступны. |
-> | Action | Microsoft. Датабокс/Locations/Валидатеинпутс/Action |  |
-> | Action | Microsoft.DataBox/register/action | Регистрация поставщика Microsoft.Databox. |
+> | Action | Microsoft. Датабокс/Locations/Валидатеинпутс/Action | Этот метод выполняет все типы проверок. |
+> | Action | Microsoft. Датабокс/providers/Operations/Read | Перечисление или получение операций |
+> | Action | Microsoft.DataBox/register/action | Зарегистрировать поставщик Microsoft.Databox |
+> | Action | Microsoft. Датабокс/Subscriptions/resourceGroups/Мовересаурцес/Action |  |
+> | Action | Microsoft. Датабокс/Subscriptions/resourceGroups/Валидатемовересаурцес/Action |  |
+> | Action | Microsoft. Датабокс/отменить регистрацию или действие | Отмена регистрации поставщика Microsoft. Датабокс |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 
@@ -1720,6 +1629,7 @@ ms.locfileid: "68501413"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
+> | Action | Microsoft. кирпичы/расположения/ЖетнетворкполиЦиес/действие | Получение политик намерения сети для подсети в зависимости от расположения, используемого NRP |
 > | Action | Microsoft.Databricks/register/action | Регистрация в Databricks. |
 > | Action | Microsoft.Databricks/workspaces/delete | Удаляет рабочую область Databricks. |
 > | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/read | Задает доступные параметры диагностики для рабочей области Databricks |
@@ -1783,6 +1693,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DataFactory/datafactories/tables/write | Создает или обновляет набор данных. |
 > | Action | Microsoft.DataFactory/datafactories/write | Создает или обновляет фабрику данных. |
 > | Action | Microsoft.DataFactory/factories/cancelpipelinerun/action | Отменяет запуск конвейера, указанный идентификатором запуска. |
+> | Action | Microsoft. канцелсандбокспипелинерун/фабрики//действие | Отменяет запуск отладки для конвейера. |
 > | Action | Microsoft. креатедатафловдебугсессион/фабрики//действие | Создает сеанс отладки потока данных. |
 > | Action | Microsoft. DataFlow/фабрики/поток данных/удаление | Удаляет поток данных. |
 > | Action | Microsoft. DataFlow/фабрики/поток данных/чтение | Считывает поток данных. |
@@ -1790,6 +1701,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DataFactory/factories/datasets/delete | Удаляет набор данных. |
 > | Action | Microsoft.DataFactory/factories/datasets/read | Считывает набор данных. |
 > | Action | Microsoft.DataFactory/factories/datasets/write | Создает или обновляет набор данных. |
+> | Action | Microsoft. дебугпипелинерунс/фабрики//отмена/действие | Отменяет запуск отладки для конвейера. |
 > | Action | Microsoft.DataFactory/factories/delete | Удаляет фабрику данных. |
 > | Action | Microsoft. делетедатафловдебугсессион/фабрики//действие | Удаляет сеанс отладки потока данных. |
 > | Action | Microsoft. жетдатапланеакцесс/фабрики//действие | Получает доступ к службе DataPlane ADF. |
@@ -1830,6 +1742,9 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DataFactory/factories/pipelines/pipelineruns/activityruns/progress/read | Возвращает ход выполнения действий. |
 > | Action | Microsoft.DataFactory/factories/pipelines/pipelineruns/read | Считывает выполнение конвейера. |
 > | Action | Microsoft.DataFactory/factories/pipelines/read | Считывает конвейер. |
+> | Action | Microsoft. в-принципе, фабрики, конвейеры, песочница/действие | Создает среду выполнения отладки для конвейера. |
+> | Action | Microsoft., фабрики, конвейеры, "песочница", "Создание/действие" | Создает среду выполнения отладки для конвейера. |
+> | Action | Microsoft., фабрики, конвейеры, "песочница"/"Запуск/действие" | Создает запуск отладки для конвейера. |
 > | Action | Microsoft.DataFactory/factories/pipelines/write | Создает или обновляет конвейер. |
 > | Action | Microsoft.DataFactory/factories/querydebugpipelineruns/action | Запрашивает данные о выполнении конвейера отладки. |
 > | Action | Microsoft.DataFactory/factories/querypipelineruns/action | Запрашивает выполнения конвейера. |
@@ -1837,6 +1752,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DataFactory/factories/querytriggerruns/action | Запрашивает выполнения триггеров. |
 > | Action | Microsoft.DataFactory/factories/querytriggerruns/read | Считывает результат запусков триггера. |
 > | Action | Microsoft.DataFactory/factories/read | Считывает фабрику данных. |
+> | Action | Microsoft. сандбокспипелинерунс/фабрики//Сандбоксактивитирунс/чтение | Возвращает сведения о запуске отладки для действия. |
 > | Action | Microsoft. стартдатафловдебугсессион/фабрики//действие | Запускает сеанс отладки потока данных. |
 > | Action | Microsoft.DataFactory/factories/triggerruns/read | Считывает выполнения триггеров. |
 > | Action | Microsoft.DataFactory/factories/triggers/delete | Удаляет триггер. |
@@ -2112,6 +2028,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. Дбфорпостгрескл/Servers/Приватиндпоинтконнектионс/Delete | Удаляет существующее подключение к частной конечной точке |
 > | Action | Microsoft. Дбфорпостгрескл/Servers/Приватиндпоинтконнектионс/Read | Возвращает список подключений к частным конечным точкам или возвращает свойства для указанного подключения к частной конечной точке. |
 > | Action | Microsoft. Дбфорпостгрескл/Servers/Приватиндпоинтконнектионс/Write | Утверждает или отклоняет существующее подключение к частной конечной точке |
+> | Action | Microsoft. Дбфорпостгрескл/Servers/Привателинкресаурцес/Read | Получение ресурсов частной ссылки для соответствующего сервера PostgreSQL |
 > | Action | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
 > | Action | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет настройку диагностики для ресурса |
 > | Action | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы серверов Postgres. |
@@ -2275,15 +2192,12 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.DevTestLab/labs/formulas/write | Добавляет или изменяет формулы. |
 > | Action | Microsoft.DevTestLab/labs/galleryImages/read | Считывает образы из коллекции. |
 > | Action | Microsoft.DevTestLab/labs/GenerateUploadUri/action | Создает универсальный код ресурса (URI) для передачи настраиваемых образов дисков в лабораторию. |
-> | Action | Microsoft. DevTestLab/Labs/Идлешутдовнс/удаление | Удаление бездействующих завершений. |
-> | Action | Microsoft. DevTestLab/Labs/Идлешутдовнс/чтение | Чтение бездействующих завершений. |
-> | Action | Microsoft. DevTestLab/Labs/Идлешутдовнс/запись | Добавление или изменение бездействующих завершений. |
 > | Action | Microsoft.DevTestLab/labs/ImportVirtualMachine/action | Импорт виртуальной машины в другую лабораторию. |
 > | Action | Microsoft.DevTestLab/labs/ListVhds/action | Выводит список образов дисков, доступных для создания пользовательского образа. |
-> | Action | Microsoft.DevTestLab/labs/notificationChannels/delete | Удаляет каналы уведомлений. |
+> | Action | Microsoft.DevTestLab/labs/notificationChannels/delete | Удаление каналов уведомления. |
 > | Action | Microsoft.DevTestLab/labs/notificationChannels/Notify/action | Отправляет уведомление в указанный канал. |
-> | Action | Microsoft.DevTestLab/labs/notificationChannels/read | Считывает каналы уведомлений. |
-> | Action | Microsoft.DevTestLab/labs/notificationChannels/write | Добавляет или изменяет каналы уведомлений. |
+> | Action | Microsoft.DevTestLab/labs/notificationChannels/read | Чтение каналов уведомлений. |
+> | Action | Microsoft.DevTestLab/labs/notificationChannels/write | Добавление или изменение каналов уведомления. |
 > | Action | Microsoft.DevTestLab/labs/policySets/EvaluatePolicies/action | Оценивает политику лаборатории. |
 > | Action | Microsoft.DevTestLab/labs/policySets/policies/delete | Удаляет политики. |
 > | Action | Microsoft.DevTestLab/labs/policySets/policies/read | Считывает политики. |
@@ -2502,7 +2416,9 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.EventGrid/domains/providers/Microsoft.Insights/metricDefinitions/read | Получает доступные метрики для доменов |
 > | Action | Microsoft.EventGrid/domains/read | Чтение домена |
 > | Action | Microsoft.EventGrid/domains/regenerateKey/action | Повторное создание ключа для домена |
+> | Action | Microsoft. EventGrid/Domains/Topics/Delete | Удалить раздел домена |
 > | Action | Microsoft.EventGrid/domains/topics/read | Чтение раздела домена |
+> | Action | Microsoft. EventGrid/Domains/Topics/Write | Создание или обновление раздела предметной области |
 > | Action | Microsoft.EventGrid/domains/write | Создание или обновление домена |
 > | Action | Microsoft.EventGrid/eventSubscriptions/delete | Удаление подписки |
 > | Action | Microsoft.EventGrid/eventSubscriptions/getFullUrl/action | Получение полного URL-адреса подписки на события. |
@@ -2644,6 +2560,9 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.HDInsight/clusters/configurations/action | Возвращает конфигурации кластеров HDInsight. |
 > | Action | Microsoft.HDInsight/clusters/configurations/read | Возвращает конфигурации кластеров HDInsight. |
 > | Action | Microsoft.HDInsight/clusters/delete | Удаляет кластер HDInsight. |
+> | Action | Microsoft. HDInsight/кластеры/расширения/удаление | Удаление расширения кластера для кластера HDInsight |
+> | Action | Microsoft. HDInsight/кластеры/расширения/чтение | Получение расширения кластера для кластера HDInsight |
+> | Action | Microsoft. HDInsight/кластеры/расширения/запись | Создание расширения кластера для кластера HDInsight |
 > | Action | Microsoft. HDInsight/Clusters/Жетгатевайсеттингс/действие | Получение параметров шлюза для кластера HDInsight |
 > | Action | Microsoft.HDInsight/clusters/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса кластера HDInsight. |
 > | Action | Microsoft.HDInsight/clusters/providers/Microsoft.Insights/diagnosticSettings/write | Создание или обновление параметра диагностики для ресурса кластера HDInsight. |
@@ -2654,6 +2573,8 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.HDInsight/clusters/write | Создает или обновляет кластер HDInsight. |
 > | Action | Microsoft.HDInsight/locations/capabilities/read | Возвращает возможности подписки. |
 > | Action | Microsoft.HDInsight/locations/checkNameAvailability/read | Проверить доступность имени |
+> | Action | Microsoft. HDInsight, регистрация/действие | Регистрация поставщика ресурсов HDInsight для подписки |
+> | Action | Microsoft. HDInsight, отмена регистрации или действие | Отмена регистрации поставщика ресурсов HDInsight для подписки |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
@@ -3042,6 +2963,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. Kusto/Locations/Чеккнамеаваилабилити/Action | Проверяет доступность имени ресурса. |
 > | Action | Microsoft.Kusto/locations/operationresults/read | Чтение ресурсов операций |
 > | Action | Microsoft.Kusto/Operations/read | Чтение ресурсов операций |
+> | Action | Microsoft. Kusto/Register/действие | Действие регистрации подписки |
 > | Action | Microsoft. Kusto/Register/действие | Регистрирует подписку в поставщике ресурсов Kusto. |
 > | Action | Microsoft. Kusto/SKU/чтение | Считывает ресурс номера SKU. |
 > | Action | Microsoft. Kusto/отменить регистрацию или действие | Отменяет регистрацию подписки на поставщик ресурсов Kusto. |
@@ -3062,9 +2984,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. Лабсервицес/Лабаккаунтс/Идлешутдовнс/запись | Добавьте или измените идлешутдовнс. |
 > | Action | Microsoft.LabServices/labAccounts/labs/AddUsers/action | Добавление пользователей в лабораторию |
 > | Action | Microsoft.LabServices/labAccounts/labs/delete | Удаляет лаборатории. |
-> | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/ClaimAny/action | Утверждение случайной среды пользователя в параметрах среды. |
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/delete | Удаление параметра среды. |
-> | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/environments/Claim/action | Утверждение среды и назначение ее пользователю. |
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/environments/delete | Удаляет среды. |
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/environments/read | Считывает среды. |
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/environments/ResetPassword/action | Сброс пароля пользователя в среде |
@@ -3082,7 +3002,6 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/Stop/action | Останавливает шаблон путем остановки всех ресурсов внутри него. |
 > | Action | Microsoft.LabServices/labAccounts/labs/environmentSettings/write | Добавление или изменение параметра среды. |
 > | Action | Microsoft.LabServices/labAccounts/labs/read | Считывает лаборатории. |
-> | Action | Microsoft.LabServices/labAccounts/labs/Register/action | Регистрация в управляемой лаборатории. |
 > | Action | Microsoft.LabServices/labAccounts/labs/SendEmail/action | Отправка электронного письма со ссылкой для регистрации в лаборатории. |
 > | Action | Microsoft.LabServices/labAccounts/labs/users/delete | Удаление пользователей. |
 > | Action | Microsoft.LabServices/labAccounts/labs/users/read | Чтение пользователей. |
@@ -3098,13 +3017,10 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.LabServices/labAccounts/write | Добавление или изменение учетных записей лабораторий. |
 > | Action | Microsoft.LabServices/locations/operations/read | Считывает операции. |
 > | Action | Microsoft.LabServices/register/action | Регистрация подписки |
-> | Action | Microsoft.LabServices/users/GetEnvironment/action | Получает сведения о виртуальных машинах. |
 > | Action | Microsoft.LabServices/users/GetOperationBatchStatus/action | Получает состояние пакетной операции. |
 > | Action | Microsoft.LabServices/users/GetOperationStatus/action | Получение состояния длительной операции. |
 > | Action | Microsoft.LabServices/users/GetPersonalPreferences/action | Получение личных настроек для пользователя |
 > | Action | Microsoft. Лабсервицес/Users/Листалленвиронментс/Action | Список всех сред для пользователя |
-> | Action | Microsoft.LabServices/users/ListEnvironments/action | Перечисление сред для пользователя. |
-> | Action | Microsoft.LabServices/users/ListLabs/action | Перечисление лабораторий для пользователя. |
 > | Action | Microsoft.LabServices/users/Register/action | Регистрация пользователя в управляемой лаборатории. |
 > | Action | Microsoft.LabServices/users/ResetPassword/action | Сброс пароля пользователя в среде |
 > | Action | Microsoft.LabServices/users/StartEnvironment/action | Запускает среду, запустив все ресурсы в ней. |
@@ -3250,6 +3166,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.MachineLearningServices/workspaces/computes/read | Получает вычислительные ресурсы в рабочих областях служб машинного обучения. |
 > | Action | Microsoft.MachineLearningServices/workspaces/computes/write | Создает или обновляет вычислительные ресурсы в рабочих областях служб машинного обучения. |
 > | Action | Microsoft.MachineLearningServices/workspaces/delete | Удаляет рабочие области служб машинного обучения. |
+> | DataAction | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/чтение | Получение экспериментов в Службы машинного обучения рабочих областях |
 > | DataAction | Microsoft. Мачинелеарнингсервицес/рабочие области/эксперименты/запись | Создает или обновляет эксперименты в Службы машинного обучения рабочих областях |
 > | Action | Microsoft.MachineLearningServices/workspaces/listKeys/action | Выводит список секретов для рабочей области служб машинного обучения. |
 > | Action | Microsoft.MachineLearningServices/workspaces/read | Получает рабочие области служб машинного обучения. |
@@ -3453,6 +3370,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. Migrate/мигратепрожектс/Мигративентс/удаление | Удаляет событие миграции. |
 > | Action | Microsoft. Migrate/мигратепрожектс/Мигративентс/чтение | Возвращает свойства событий миграции. |
 > | Action | Microsoft.Migrate/migrateprojects/read | Возвращает свойства проекта "миграция" |
+> | Action | Microsoft. Migrate/мигратепрожектс/Рефрешсуммари/действие | Обновляет сводку проекта по миграции |
 > | Action | Microsoft. Migrate/мигратепрожектс/Регистертул/действие | Регистрация средства в проекте миграции |
 > | Action | Microsoft. Migrate/мигратепрожектс/Solutions/Клеанупдата/Action | Очистка данных решения "миграция проекта" |
 > | Action | Microsoft. Migrate/мигратепрожектс/Solutions/Delete | Удаляет решение "миграция проекта" |
@@ -3499,6 +3417,8 @@ ms.locfileid: "68501413"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
+> | Action | Microsoft. NetApp/Locations/чеккфилепасаваилабилити/Action | Проверьте, доступен ли путь к файлу |
+> | Action | Microsoft. NetApp/Locations/чеккнамеаваилабилити/Action | Проверьте, доступно ли имя ресурса |
 > | Action | Microsoft.NetApp/locations/operationresults/read | Чтение ресурса результата операции. |
 > | Action | Microsoft.NetApp/locations/read | Чтение ресурса проверки доступности. |
 > | Action | Microsoft.NetApp/netAppAccounts/capacityPools/delete | Удаление пула ресурсов. |
@@ -3515,6 +3435,8 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.NetApp/netAppAccounts/read | Чтение ресурса учетной записи. |
 > | Action | Microsoft.NetApp/netAppAccounts/write | Запись ресурса учетной записи. |
 > | Action | Microsoft.NetApp/Operations/read | Чтение ресурсов операций. |
+> | Action | Microsoft. NetApp/Register/действие | Регистрирует подписку с помощью поставщика ресурсов Microsoft. NetApp. |
+> | Action | Microsoft. NetApp/отменить регистрацию или действие | Отмена регистрации подписки с помощью поставщика ресурсов Microsoft. NetApp. |
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
@@ -3530,6 +3452,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.Network/applicationGateways/backendAddressPools/join/action | Присоединяет внутренний пул адресов шлюза приложений. Не оповещать. |
 > | Action | Microsoft.Network/applicationGateways/backendhealth/action | Возвращает сведения о работоспособности серверной части шлюза приложений. |
 > | Action | Microsoft.Network/applicationGateways/delete | Удаляет шлюз приложений. |
+> | Action | Microsoft. Network/Аппликатионгатевайс/Жетбаккендхеалсондеманд/действие | Возвращает сведения о работоспособности серверной части шлюза приложений по запросу для указанного параметра HTTP и внутреннего пула. |
 > | Action | Microsoft.Network/applicationGateways/read | Возвращает шлюз приложений. |
 > | Action | Microsoft.Network/applicationGateways/start/action | Запускает шлюз приложений. |
 > | Action | Microsoft.Network/applicationGateways/stop/action | Останавливает шлюз приложений. |
@@ -3609,26 +3532,26 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.Network/expressRouteCircuits/authorizations/write | Создает новые данные авторизации канала ExpressRoute или обновляет существующие. |
 > | Action | Microsoft.Network/expressRouteCircuits/delete | Удаляет канал ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/join/action | Присоединяет канал Express Route. Не оповещать. |
-> | Action | Microsoft.Network/expressRouteCircuits/peerings/arpTables/action | Возвращает таблицу ARP для пиринга канала ExpressRoute. |
+> | Action | Microsoft. Network/ЕкспрессраутеЦиркуитс/пиринг/Арптаблес/Read | Возвращает таблицу ARP для пиринга канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/connections/delete | Удаление подключения канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/connections/read | Получение подключения канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/connections/write | Создание нового ресурса подключения канала ExpressRoute или обновление существующего. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/delete | Удаляет пиринг канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/peerConnections/read | Получает пиринговое подключение канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/read | Возвращает пиринг канала ExpressRoute. |
-> | Action | Microsoft.Network/expressRouteCircuits/peerings/routeTables/action | Возвращает таблицу маршрутов для пиринга канала ExpressRoute. |
-> | Action | Microsoft.Network/expressRouteCircuits/peerings/routeTablesSummary/action | Возвращает сводку по таблице маршрутов для пиринга канала ExpressRoute. |
+> | Action | Microsoft. Network/ЕкспрессраутеЦиркуитс/пиринг/Раутетаблес/Read | Возвращает таблицу маршрутов для пиринга канала ExpressRoute. |
+> | Action | Microsoft. Network/ЕкспрессраутеЦиркуитс/пиринг/Раутетаблессуммари/Read | Возвращает сводку по таблице маршрутов для пиринга канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/stats/read | Возвращает статистику пиринга канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/peerings/write | Создает новый пиринг канала ExpressRoute или обновляет существующий. |
 > | Action | Microsoft.Network/expressRouteCircuits/read | Возвращает канал ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/stats/read | Возвращает статистику канала ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCircuits/write | Создает новый канал ExpressRoute или обновляет существующий. |
 > | Action | Microsoft.Network/expressRouteCrossConnections/join/action | Присоединяет перекрестное подключение Express Route. Не оповещать. |
-> | Action | Microsoft.Network/expressRouteCrossConnections/peerings/arpTables/action | Получение таблицы ARP перекрестного пирингового подключения ExpressRoute. |
+> | Action | Microsoft. Network/Експрессраутекроссконнектионс/пиринг/Арптаблес/Read | Получение таблицы ARP перекрестного пирингового подключения ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCrossConnections/peerings/delete | Удаление перекрестного пирингового подключения ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCrossConnections/peerings/read | Получение перекрестного пирингового подключения ExpressRoute. |
-> | Action | Microsoft.Network/expressRouteCrossConnections/peerings/routeTables/action | Получение таблицы маршрутов перекрестного пирингового подключения ExpressRoute. |
-> | Action | Microsoft.Network/expressRouteCrossConnections/peerings/routeTableSummary/action | Получение сводки таблицы маршрутов перекрестного пирингового подключения ExpressRoute. |
+> | Action | Microsoft. Network/Експрессраутекроссконнектионс/пиринг/Раутетаблес/Read | Получение таблицы маршрутов перекрестного пирингового подключения ExpressRoute. |
+> | Action | Microsoft. Network/Експрессраутекроссконнектионс/пиринг/Раутетаблесуммари/Read | Получение сводки таблицы маршрутов перекрестного пирингового подключения ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteCrossConnections/peerings/write | Создание перекрестного пирингового подключения ExpressRoute или обновление существующего. |
 > | Action | Microsoft.Network/expressRouteCrossConnections/read | Получение перекрестного подключения ExpressRoute. |
 > | Action | Microsoft.Network/expressRouteGateways/expressRouteConnections/delete | Удаляет подключение Express Route. |
@@ -3940,10 +3863,12 @@ ms.locfileid: "68501413"
 > | Action | microsoft.network/vpngateways/reset/action | Выполняет сброс VpnGateway |
 > | Action | microsoft.network/vpnGateways/vpnConnections/delete | Удаляет VpnConnection. |
 > | Action | microsoft.network/vpnGateways/vpnConnections/read | Получение VPN-подключения. |
+> | Action | Microsoft. Network/Впнгатевайс/Впнконнектионс/Впнлинкконнектионс/чтение | Возвращает подключение VPN-канала. |
 > | Action | microsoft.network/vpnGateways/vpnConnections/write | Установка VPN-подключения. |
 > | Action | Microsoft.Network/vpnGateways/write | Установка VPN-шлюза. |
 > | Action | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Action | Microsoft.Network/vpnsites/read | Получение ресурса сети VPN. |
+> | Action | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 > | Action | Microsoft.Network/vpnsites/write | Создание или обновление ресурса сети VPN. |
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
@@ -3987,12 +3912,11 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.OffAzure/HyperVSites/clusters/read | Получает свойства кластера Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/clusters/write | Создает или обновляет кластер Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/delete | Удаляет сайт Hyper-V. |
+> | Action | Microsoft. Оффазуре/Хипервситес/хеалссуммари/Read | Получение сводки работоспособности для ресурса Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/hosts/read | Получает свойства узла Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/hosts/write | Создает или обновляет узел Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/jobs/read | Получает свойства заданий Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/machines/read | Получает свойства компьютеров Hyper-V. |
-> | Action | Microsoft.OffAzure/HyperVSites/machines/start/action | Запускает компьютеры Hyper-V. |
-> | Action | Microsoft.OffAzure/HyperVSites/machines/stop/action | Останавливает компьютеры Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/operationsstatus/read | Получает свойства состояния операции Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/read | Получает свойства сайта Hyper-V. |
 > | Action | Microsoft.OffAzure/HyperVSites/refresh/action | Обновляет объекты в пределах сайта Hyper-V. |
@@ -4002,6 +3926,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.OffAzure/Operations/read | Чтение предоставленных операций. |
 > | Action | Microsoft.OffAzure/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.OffAzure. |
 > | Action | Microsoft.OffAzure/VMwareSites/delete | Удаляет сайт VMware. |
+> | Action | Microsoft. Оффазуре/Вмвареситес/хеалссуммари/Read | Возвращает сводку по работоспособности для ресурса VMware. |
 > | Action | Microsoft.OffAzure/VMwareSites/jobs/read | Получает свойства заданий VMware. |
 > | Action | Microsoft.OffAzure/VMwareSites/machines/read | Получает свойства компьютеров VMware. |
 > | Action | Microsoft.OffAzure/VMwareSites/machines/start/action | Запускает компьютеры VMware. |
@@ -4061,6 +3986,11 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Ааддомаинсервицеспривилежеусе/чтение | Чтение данных из таблицы Ааддомаинсервицеспривилежеусе |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Ааддомаинсервицессистемсекурити/чтение | Чтение данных из таблицы Ааддомаинсервицессистемсекурити |
 > | Action | Microsoft.OperationalInsights/workspaces/query/ADAssessmentRecommendation/read | Чтение данных из таблицы ADAssessmentRecommendation |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Аддоназуребаккупалертс/чтение | Чтение данных из таблицы Аддоназуребаккупалертс |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Аддоназуребаккупжобс/чтение | Чтение данных из таблицы Аддоназуребаккупжобс |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Аддоназуребаккупполици/чтение | Чтение данных из таблицы Аддоназуребаккупполици |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Аддоназуребаккуппротектединстанце/чтение | Чтение данных из таблицы Аддоназуребаккуппротектединстанце |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Аддоназуребаккупстораже/чтение | Чтение данных из таблицы Аддоназуребаккупстораже |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Адфактивитирун/чтение | Чтение данных из таблицы Адфактивитирун |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Адфпипелинерун/чтение | Чтение данных из таблицы Адфпипелинерун |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Адфтригжеррун/чтение | Чтение данных из таблицы Адфтригжеррун |
@@ -4068,6 +3998,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.OperationalInsights/workspaces/query/ADSecurityAssessmentRecommendation/read | Чтение данных из таблицы ADSecurityAssessmentRecommendation |
 > | Action | Microsoft.OperationalInsights/workspaces/query/Alert/read | Чтение данных из таблицы Alert |
 > | Action | Microsoft.OperationalInsights/workspaces/query/AlertHistory/read | Чтение данных из таблицы AlertHistory |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Апиманажементгатевайлогс/чтение | Чтение данных из таблицы Апиманажементгатевайлогс |
 > | Action | Microsoft.OperationalInsights/workspaces/query/AppCenterError/read | Чтение данных из таблицы AppCenterError |
 > | Action | Microsoft.OperationalInsights/workspaces/query/ApplicationInsights/read | Чтение данных из таблицы ApplicationInsights |
 > | Action | Microsoft.OperationalInsights/workspaces/query/AuditLogs/read | Чтение данных из таблицы AuditLogs |
@@ -4088,7 +4019,10 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.OperationalInsights/workspaces/query/ContainerInventory/read | Чтение данных из таблицы ContainerInventory |
 > | Action | Microsoft.OperationalInsights/workspaces/query/ContainerLog/read | Чтение данных из таблицы ContainerLog |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Контаинернодеинвентори/чтение | Чтение данных из таблицы Контаинернодеинвентори |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Контаинеррегистрилогиневентс/чтение | Чтение данных из таблицы Контаинеррегистрилогиневентс |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Контаинеррегистрирепоситоревентс/чтение | Чтение данных из таблицы Контаинеррегистрирепоситоревентс |
 > | Action | Microsoft.OperationalInsights/workspaces/query/ContainerServiceLog/read | Чтение данных из таблицы ContainerServiceLog |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Кореазуребаккуп/чтение | Чтение данных из таблицы Кореазуребаккуп |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Датабрикксаккаунтс/чтение | Чтение данных из таблицы Датабрикксаккаунтс |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Датабрикксклустерс/чтение | Чтение данных из таблицы Датабрикксклустерс |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Датабрикксдбфс/чтение | Чтение данных из таблицы Датабрикксдбфс |
@@ -4190,6 +4124,9 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.OperationalInsights/workspaces/query/MAWindowsDeploymentStatus/read | Чтение данных из таблицы MAWindowsDeploymentStatus |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Мавиндовсдеплойментстатуснрт/чтение | Чтение данных из таблицы Мавиндовсдеплойментстатуснрт |
 > | Action | Microsoft.OperationalInsights/workspaces/query/MAWindowsSysReqInstanceReadiness/read | Чтение данных из таблицы MAWindowsSysReqInstanceReadiness |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Мкасшадовитрепортинг/чтение | Чтение данных из таблицы Мкасшадовитрепортинг |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Microservices4SpringApplicationLogs/чтение | Чтение данных из таблицы Microservices4SpringApplicationLogs |
+> | Action | Microsoft. OperationalInsights/рабочие области/запрос/Микрософтинсигхтсазуреактивитилог/чтение | Чтение данных из таблицы Микрософтинсигхтсазуреактивитилог |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Микрософтвебаппликатионлог/чтение | Чтение данных из таблицы Микрософтвебаппликатионлог |
 > | Action | Microsoft. OperationalInsights/рабочие области/запрос/Микрософтвебфунктионексекутионлогс/чтение | Чтение данных из таблицы Микрософтвебфунктионексекутионлогс |
 > | Action | Microsoft.OperationalInsights/workspaces/query/MicrosoftWebStdOutStdErrLog/read | Чтение данных из таблицы Микрософтвебстдаутстдеррлог |
@@ -4381,11 +4318,13 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Баккуппротектионинтент/чтение | Получение цели защиты для резервного копирования. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Баккуппротектионинтент/запись | Создание цели защиты для резервной копии. |
 > | Action | microsoft.recoveryservices/Vaults/backupFabrics/operationResults/read | Возвращает состояние операции |
+> | Action | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Оператионсстатус/чтение | Возвращает состояние операции |
 > | Action | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Протектаблеконтаинерс/чтение | Получение всех защищаемых контейнеров. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/удалить | Удаление зарегистрированного контейнера. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/запрос/действие | Запрос рабочих нагрузок в контейнере. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/элементы/чтение | Получение всех элементов в контейнере. |
 > | Action | microsoft.recoveryservices/Vaults/backupFabrics/protectionContainers/operationResults/read | Получение результата операции с контейнером защиты. |
+> | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Оператионсстатус/чтение | Возвращает состояние операции, выполненной с контейнером защиты. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/резервное копирование/действие | Выполнение архивации для защищенного элемента. |
 > | Action | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Delete | Удаляет защищенный элемент. |
 > | Action | microsoft.recoveryservices/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read | Получение результата операций с защищенными элементами. |
@@ -4401,6 +4340,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft. recoveryservices/Vault/Баккупфабрикс/Рефрешконтаинерс/действие | Обновляет список контейнеров. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупжобс/отмена/действие | Отменяет задание. |
 > | Action | Microsoft. recoveryservices/хранилища/Баккупжобс/Оператионресултс/чтение | Возврат результата для операции задания. |
+> | Action | Microsoft. recoveryservices/хранилища/Баккупжобс/Оператионсстатус/чтение | Возвращает состояние операции задания. |
 > | Action | Microsoft. recoveryservices/хранилища/Баккупжобс/чтение | Возвращает все объекты заданий. |
 > | Action | Microsoft. recoveryservices/Vault/Баккупжобсекспорт/действие | Экспорт заданий |
 > | Action | Microsoft. recoveryservices/хранилища/Баккупоператионресултс/чтение | Возврат результата архивации для хранилища служб восстановления. |
@@ -4440,6 +4380,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/delete | Удаление структуры |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/deployProcessServerImage/action | Развертывает образ сервера обработки. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/migratetoaad/action | Перенос Fabric в AAD |
+> | Action | Microsoft. RecoveryServices/хранилища/Репликатионфабрикс/оператионресултс/чтение | Отслеживание результатов асинхронной операции в структурах ресурсов |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывание структуры |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/reassociateGateway/action | Повторно задает связь шлюза. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/remove/action | Удаляет структуру. |
@@ -4450,11 +4391,13 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/write | Создание или обновление сетевых сопоставлений |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/discoverProtectableItem/action | Обнаруживает защищаемый элемент. |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/оператионресултс/чтение | Отследите результаты асинхронной операции с контейнерами защиты ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывание контейнеров защиты |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/remove/action | Удаляет контейнер защиты. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/delete | Удаление любых элементов миграции. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/migrate/action | Перенос элемента. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/migrationRecoveryPoints/read | Чтение любых точек восстановления для миграции. |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионмигратионитемс/оператионресултс/чтение | Отследите результаты асинхронной операции с элементами миграции ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/read | Чтение любых элементов миграции. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/testMigrate/action | Тестирование миграции. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems/testMigrateCleanup/action | Очистка тестовой миграции. |
@@ -4464,6 +4407,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/applyRecoveryPoint/action | Применяет точку восстановления. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/delete | Удаление защищенных элементов |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/failoverCommit/action | Выполняет отработку отказа с фиксацией. |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/оператионресултс/чтение | Отследите результаты асинхронной операции с защищенными элементами ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/plannedFailover/action | Плановая отработка отказа |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывание защищенных элементов |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
@@ -4480,25 +4424,30 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/updateMobilityService/action | Обновить службу мобильности |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/write | Создание или обновление защищенных элементов |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/delete | Удаление сопоставлений контейнера защиты |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектионконтаинермаппингс/operationresults/чтение | Отследите результаты асинхронной операции с сопоставлениями контейнеров защиты ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/remove/action | Удаляет сопоставление контейнера защиты. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/write | Создание или обновление сопоставлений контейнера защиты |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/switchprotection/action | Переключает контейнер защиты. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/write | Создание или обновление контейнеры защиты |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/delete | Удаление поставщиков службы восстановления |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионрековерисервицеспровидерс/оператионресултс/чтение | Отследите результаты асинхронной операции с поставщиками служб восстановления ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/refreshProvider/action | Обновляет поставщик. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/remove/action | Удаляет поставщик служб восстановления. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/write | Создание или обновление поставщиков служб восстановления |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывание классификации хранилища |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/delete | Удаление сопоставлений классификаций хранилища |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионсторажеклассификатионс/Репликатионсторажеклассификатионмаппингс/operationresults/чтение | Отследите результаты асинхронной операции с сопоставлениями классификации хранилища ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/write | Создание или обновление сопоставлений классификаций хранилища |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/delete | Удаление vCenter |
+> | Action | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионвцентерс/оператионресултс/чтение | Отслеживание результатов асинхронной операции в ресурсах vCenters |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Чтение vCenter |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/write | Создание или обновление vCenter |
 > | Action | Microsoft.RecoveryServices/vaults/replicationFabrics/write | Создание или обновление Fabrics |
 > | Action | Microsoft.RecoveryServices/vaults/replicationJobs/cancel/action | Отменить задание |
+> | Action | Microsoft. RecoveryServices/хранилища/Репликатионжобс/оператионресултс/чтение | Отследите результаты асинхронной операции с заданиями ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationJobs/read | Считывание задания |
 > | Action | Microsoft.RecoveryServices/vaults/replicationJobs/restart/action | Перезапускает задание. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationJobs/resume/action | Возобновляет выполнение задания. |
@@ -4506,6 +4455,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
 > | Action | Microsoft.RecoveryServices/vaults/replicationNetworks/read | Считывание сети |
 > | Action | Microsoft.RecoveryServices/vaults/replicationPolicies/delete | Удаление политики |
+> | Action | Microsoft. RecoveryServices/хранилища/РепликатионполиЦиес/оператионресултс/чтение | Отследите результаты асинхронной операции с политиками ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
 > | Action | Microsoft.RecoveryServices/vaults/replicationPolicies/write | Создание или обновление политики |
 > | Action | Microsoft.RecoveryServices/vaults/replicationProtectedItems/read | Считывание защищенных элементов |
@@ -4513,6 +4463,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationProtectionContainers/read | Считывание контейнеров защиты |
 > | Action | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/delete | Удаление планов восстановления |
 > | Action | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/failoverCommit/action | Выполняет отработку отказа с фиксацией для плана восстановления. |
+> | Action | Microsoft. RecoveryServices/хранилища/Репликатионрековерипланс/оператионресултс/чтение | Отследите результаты асинхронной операции с планами восстановления ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/plannedFailover/action | Выполняет плановую отработку отказа для плана восстановления. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Action | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/reProtect/action | Повторно защищает план восстановления. |
@@ -4525,6 +4476,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.RecoveryServices/vaults/replicationStorageClassifications/read | Считывание классификации хранилища |
 > | Action | Microsoft.RecoveryServices/vaults/replicationSupportedOperatingSystems/read | Чтение любого элемента.  |
 > | Action | Microsoft.RecoveryServices/vaults/replicationUsages/read | Чтение данных об использовании хранилищ репликации |
+> | Action | Microsoft. RecoveryServices/хранилища/Репликатионваулсеалс/оператионресултс/чтение | Отследите результаты асинхронной операции с работоспособностью репликации хранилища ресурсов. |
 > | Action | Microsoft.RecoveryServices/vaults/replicationVaultHealth/read | Считывание всех сведений о работоспособности репликации хранилища |
 > | Action | Microsoft.RecoveryServices/vaults/replicationVaultHealth/refresh/action | Обновление сведений о работоспособности хранилища |
 > | Action | Microsoft. RecoveryServices/хранилища/Репликатионваултсеттингс/чтение | Чтение любого элемента.  |
@@ -4569,6 +4521,9 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.Relay/namespaces/messagingPlan/read | Получение плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Action | Microsoft.Relay/namespaces/messagingPlan/write | Обновление плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Action | Microsoft.Relay/namespaces/operationresults/read | Получение состояния операции пространства имен |
+> | Action | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/чтение | Возвращает список описаний параметров диагностики пространства имен. |
+> | Action | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/diagnosticSettings/запись | Возвращает список описаний параметров диагностики пространства имен. |
+> | Action | Microsoft. Relay/пространства имен/поставщики/Microsoft. Insights/Логдефинитионс/чтение | Возвращает список описаний ресурсов журналов пространства имен. |
 > | Action | Microsoft.Relay/namespaces/providers/Microsoft.Insights/metricDefinitions/read | Возвращает список описаний ресурсов метрик пространства имен. |
 > | Action | Microsoft.Relay/namespaces/read | Получить список описаний ресурса пространства имен |
 > | Action | Microsoft.Relay/namespaces/removeAcsNamepsace/action | Удаление пространства имен ACS |
@@ -4681,6 +4636,7 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.Search/searchServices/delete | Удаляет службу поиска. |
 > | Action | Microsoft.Search/searchServices/deleteQueryKey/delete | Удаляет ключ запроса. |
 > | Action | Microsoft.Search/searchServices/listAdminKeys/action | Считывает ключи администратора. |
+> | Action | Microsoft. Search/Сеарчсервицес/Листкуерикэйс/действие | Возвращает список ключей API запроса для данной службы поиска Azure. |
 > | Action | Microsoft.Search/searchServices/listQueryKeys/read | Возвращает список ключей API запроса для данной службы поиска Azure. |
 > | Action | Microsoft.Search/searchServices/read | Считывает службу поиска. |
 > | Action | Microsoft.Search/searchServices/regenerateAdminKey/action | Повторно создает ключ администратора. |
@@ -4783,12 +4739,8 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.ServiceBus/namespaces/ipFilterRules/delete | Удалить ресурс IP-фильтра |
 > | Action | Microsoft.ServiceBus/namespaces/ipFilterRules/read | Получить ресурс IP-фильтра |
 > | Action | Microsoft.ServiceBus/namespaces/ipFilterRules/write | Создать ресурс фильтра IP-адресов |
-> | DataAction | Microsoft. ServiceBus/пространства имен/сообщения/обзор/действие | Обзор мессжес |
-> | DataAction | Microsoft. ServiceBus/Namespaces/messages/отсрочка/действие | Отложить сообщения |
 > | DataAction | Microsoft. ServiceBus/пространства имен/сообщения/получение/действие | Получить сообщения |
-> | DataAction | Microsoft. ServiceBus/пространства имен/сообщения/расписание/действие | Сообщения расписание |
 > | DataAction | Microsoft. ServiceBus/пространства имен/сообщения/Отправка/действие | Отправить сообщения |
-> | DataAction | Microsoft. ServiceBus/пространства имен/сообщения/SetState/действие | Задать состояние сеанса |
 > | Action | Microsoft.ServiceBus/namespaces/messagingPlan/read | Получение плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Action | Microsoft.ServiceBus/namespaces/messagingPlan/write | Обновление плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Action | Microsoft.ServiceBus/namespaces/migrate/action | Операция переноса пространства имен |
@@ -5298,6 +5250,7 @@ ms.locfileid: "68501413"
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/deleteAutomaticSnapshot/action | Возвращает результат удаления автоматического моментального снимка |
 > | DataAction | Microsoft. Storage/storageAccounts/Блобсервицес/Containers/blobs/Filter/действие | Возвращает список больших двоичных объектов в учетной записи с соответствующими фильтру тегами |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/runAsSuperUser/action | Возвращает результат выполнения команды для BLOB-объекта |
 > | DataAction | Microsoft. Storage/storageAccounts/Блобсервицес/контейнеры/BLOB-объекты/Теги/чтение | Возвращает результат чтения тегов большого двоичного объекта |
 > | DataAction | Microsoft. Storage/storageAccounts/Блобсервицес/Containers/blobs/Tags/запись | Возвращает результат записи тегов большого двоичного объекта |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращает результат записи BLOB-объекта |
@@ -5320,7 +5273,18 @@ ms.locfileid: "68501413"
 > | Action | Microsoft.Storage/storageAccounts/blobServices/write | Возвращает результат свойств размещения службы BLOB-объектов |
 > | Action | Microsoft.Storage/storageAccounts/delete | Удаляет существующую учетную запись хранения. |
 > | Action | Microsoft. Storage, storageAccounts, отработка отказа или действие | Клиент может управлять отработкой отказа в случае проблем доступности |
+> | DataAction | Microsoft. Storage/storageAccounts/Филесервицес/общие папки/Files/актассуперусер/Action |  |
+> | DataAction | Microsoft. Storage/storageAccounts/Филесервицес/общие папки/Files/Delete | Возвращает результат удаления файла или папки |
+> | DataAction | Microsoft. Storage/storageAccounts/Филесервицес/общие папки/Files/модифипермиссионс/Action | Возвращает результат изменения разрешения для файла или папки |
+> | DataAction | Microsoft. Storage/storageAccounts/Филесервицес/общие папки/файлы/чтение | Возвращает файл или папку или список файлов и папок. |
+> | DataAction | Microsoft. Storage/storageAccounts/Филесервицес/общие папки/файлы/запись | Возвращает результат записи файла или создания папки. |
+> | Action | Microsoft. Storage, storageAccounts/Филесервицес/Read |  |
 > | Action | Microsoft. Storage, storageAccounts/Филесервицес/Read | Получить свойства службы файлов |
+> | Action | Microsoft. Storage/storageAccounts/Филесервицес/shares/Delete |  |
+> | Action | Microsoft. Storage/storageAccounts/Филесервицес/shares/Read |  |
+> | Action | Microsoft. Storage/storageAccounts/Филесервицес/shares/Read |  |
+> | Action | Microsoft. Storage/storageAccounts/Филесервицес/shares/Write |  |
+> | Action | Microsoft. Storage/storageAccounts/Филесервицес/запись |  |
 > | Action | Microsoft.Storage/storageAccounts/listAccountSas/action | Возвращает маркер SAS учетной записи для указанной учетной записи хранения. |
 > | Action | Microsoft.Storage/storageAccounts/listkeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Action | Microsoft.Storage/storageAccounts/listServiceSas/action | Возвращает маркер SAS службы для указанной учетной записи хранения. |
@@ -5767,6 +5731,8 @@ ms.locfileid: "68501413"
 > | Action | microsoft.web/locations/managedapis/apioperations/read | Получение операций с управляемыми API для расположений. |
 > | Action | Microsoft.Web/locations/managedapis/Join/Action | Присоединение управляемого API. |
 > | Action | microsoft.web/locations/managedapis/read | Возвращает расположения управляемых интерфейсов API. |
+> | Action | Microsoft. Web/Locations/Оператионресултс/Read | Возвращает операции. |
+> | Action | Microsoft. Web/Locations/Operations/Read | Возвращает операции. |
 > | Action | microsoft.web/operations/read | Возвращает операции. |
 > | Action | microsoft.web/publishingusers/read | Возвращает публикующих пользователей. |
 > | Action | microsoft.web/publishingusers/write | Обновляет публикующих пользователей. |

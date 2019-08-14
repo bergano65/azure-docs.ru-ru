@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 1e14e9819f4b3344d0f0155ac5c15337a45952dc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
-ms.translationtype: HT
+ms.openlocfilehash: c739a6e79cab14ecc8e5a4be23c551d2774cbbd8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828049"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933981"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API Cassandra с помощью Стриим
 
 Образ Стриим в Azure Marketplace обеспечивает непрерывное перемещение данных из хранилищ и баз данных в Azure в режиме реального времени. При перемещении данных можно выполнить встроенную денормализацию, преобразование данных, включить аналитику в реальном времени и сценарии создания отчетов с данными. Вы можете легко приступить к работе с Стриим, чтобы постоянно перемещать корпоративные данные в Azure Cosmos DB API Cassandra. Azure предоставляет предложение Marketplace, которое упрощает развертывание Стриим и перенос данных в Azure Cosmos DB. 
 
-В этой статье показано, как использовать Стриим для переноса данных из **базы данных Oracle** в **учетную запись Azure Cosmos DB касснадра API**.
+В этой статье показано, как использовать Стриим для переноса данных из **базы данных Oracle** в **учетную запись API Cassandra Azure Cosmos DB**.
 
 ## <a name="prerequisites"></a>предварительные требования
 

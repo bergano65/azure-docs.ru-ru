@@ -16,12 +16,12 @@ ms.date: 07/10/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4e21fdef5be09148f001ab6f66f87dd270ccf54
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 4430e2115e4282ba7bb618184139a845547a06ed
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618264"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967097"
 ---
 # <a name="delegate-tasks-in-azure-ad-entitlement-management-preview"></a>Делегирование задач в управлении назначениями Azure AD (Предварительная версия)
 
@@ -86,7 +86,7 @@ ms.locfileid: "68618264"
 | [Добавление владельца каталога или диспетчера пакетов Access в каталог](#add-a-catalog-owner-or-an-access-package-manager) |  | :heavy_check_mark: |  |  |
 | [Создание нового пакета Access в каталоге](entitlement-management-access-package-create.md) |  | :heavy_check_mark:  | :heavy_check_mark:  |  |
 | [Управление ролями ресурсов в пакете Access](entitlement-management-access-package-edit.md) |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Укажите, кто может запрашивать пакет Access](entitlement-management-access-package-edit.md#add-a-new-policy) |  | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Создание и изменение политик](entitlement-management-access-package-edit.md#add-a-new-policy) |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Напрямую назначить пользователя пакету Access](entitlement-management-access-package-edit.md#directly-assign-a-user) |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Просмотр пользователей, которым назначен доступ к пакету Access](entitlement-management-access-package-edit.md#view-who-has-an-assignment) |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Просмотр запросов пакета доступа](entitlement-management-access-package-edit.md#view-requests) |  | :heavy_check_mark: | :heavy_check_mark: |  |
@@ -100,7 +100,7 @@ ms.locfileid: "68618264"
 
 Глобальный администратор может добавлять или удалять любые группы (созданные в облаке группы безопасности или группы Office 365, созданные в облаке), приложения или сайты SharePoint Online в каталоге. Администратор пользователей может добавлять или удалять любые группы или приложения в каталоге.
 
-Для пользователя, который не является глобальным администратором или администратором, для добавления групп, приложений или сайтов SharePoint Online в каталог этот пользователь *должен иметь роль* каталога Azure AD и права управления правами владельца каталога. В следующей таблице перечислены сочетания ролей, необходимые для добавления ресурсов в каталог. Чтобы удалить ресурсы из каталога, необходимо иметь одни и те же роли.
+Для пользователя, который не является глобальным администратором или администратором, для добавления групп, приложений или сайтов SharePoint Online в каталог этот пользователь должен иметь роль каталога Azure AD и права управления правами владельца каталога. В следующей таблице перечислены сочетания ролей, необходимые для добавления ресурсов в каталог. Чтобы удалить ресурсы из каталога, необходимо иметь одни и те же роли.
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Office 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |

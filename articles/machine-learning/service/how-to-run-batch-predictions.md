@@ -1,5 +1,5 @@
 ---
-title: Выполнение пакетного прогнозирования на больших объемах данных
+title: Выполнение пакетных прогнозов для больших данных с помощью конвейеров
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как асинхронно выполнять пакетное прогнозирование на больших объемах данных с помощью Службы машинного обучения Azure.
 services: machine-learning
@@ -10,16 +10,16 @@ ms.reviewer: jmartens, garye
 ms.author: jordane
 author: jpe316
 ms.date: 07/12/2019
-ms.openlocfilehash: 689ee003e0923a65d3ca3f2d13c1a2d05c299dbd
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 97b66bff0e6413b7774a054a01a0dc73649c9cce
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358725"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68962985"
 ---
-# <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-service"></a>Пакетное прогнозирование на больших наборах данных с помощью Службы машинного обучения Azure
+# <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-pipelines"></a>Выполнение пакетных прогнозов в больших наборах данных с помощью конвейеров Машинное обучение Azure
 
-Из этой статьи вы узнаете, как асинхронно создавать прогнозы для больших объемов данных с помощью службы Машинное обучение Azure.
+Из этой статьи вы узнаете, как асинхронно создавать прогнозы на основе больших объемов данных с помощью конвейеров машинного обучения со службой Машинное обучение Azure.
 
 Пакетное прогнозирование (или пакетная оценка) обеспечивает экономичное получение выводов с непревзойденной пропускной способностью для асинхронных приложений. Конвейеры пакетного прогнозирования могут масштабировать свои ресурсы, чтобы получать выводы на основе терабайтов рабочих данных. Пакетное прогнозирование оптимизировано для обеспечения высокой пропускной способности и получения мгновенных прогнозов для большой коллекции данных.
 
@@ -358,7 +358,4 @@ RunDetails(published_pipeline_run).show()
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Чтобы увидеть, как это работает от начала до конца, опробуйте записную книжку пакетной оценки на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines).
-
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
-
+Чтобы просмотреть этот рабочий комплекс, попробуйте использовать записную книжку пакетной оценки в [GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines)или перейдите в [центр архитектуры Azure](/azure/architecture/reference-architectures/ai/batch-scoring-python) , чтобы просмотреть пример архитектуры решения.

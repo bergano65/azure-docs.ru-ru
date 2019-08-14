@@ -8,15 +8,15 @@ ms.service: batch
 ms.devlang: multiple
 ms.topic: article
 ms.workload: na
-ms.date: 11/19/2018
+ms.date: 08/09/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: edf4ce2be451672ecbd4f732c3110617dc122ca0
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a7de2ba66ccfb5e3f3bce688e68698d90fe2eaf6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323582"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68941339"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Выполнение контейнерных приложений в пакетной службе Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68323582"
 
 Использование контейнеров предоставляет простой способ запуска задач пакетной службы без необходимости управлять средой и зависимостями. В контейнерах приложения развертываются в качестве упрощенных переносимых самодостаточных единиц, которые могут выполняться в нескольких разных средах. Например, создайте и протестируйте контейнер локально, а затем отправьте образ контейнера в реестр в Azure или другое расположение. Модель развертывания контейнера гарантирует, что среда выполнения приложения всегда правильно установлена и настроена, независимо от того, где размещено приложение. Для решения контейнерных задач в пакетной службе также можно воспользоваться преимуществами функций неконтейнерных задач, включая пакеты приложений и управление файлами ресурсов и выходными файлами. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * **Версии SDK**. Пакеты SDK для пакетной службы поддерживают образы контейнеров в таких версиях:
     * REST API пакетной службы версии 2017-09-01.6.0;
@@ -228,7 +228,7 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 
 Чтобы выполнить контейнерную задачу в пуле с поддержкой контейнеров, укажите параметры нужного контейнера. Эти параметры включают используемый образ, реестр и параметры выполнения контейнера.
 
-* Используйте свойство `ContainerSettings` в классах задач для настройки параметров конкретного контейнера. Эти параметры определяются классом [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings).
+* Используйте свойство `ContainerSettings` в классах задач для настройки параметров конкретного контейнера. Эти параметры определяются классом [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings). Обратите внимание `--rm` , что параметр Container не требует `--runtime` дополнительного параметра, так как он позаботится пакетной службой. 
 
 * При запуске задач на образах контейнеров для [задач облака](/dotnet/api/microsoft.azure.batch.cloudtask) и [диспетчера заданий](/dotnet/api/microsoft.azure.batch.cloudjob.jobmanagertask) требуются параметры контейнера. Тем не менее [задача запуска](/dotnet/api/microsoft.azure.batch.starttask), [задача подготовки задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobpreparationtask) и [задача снятия задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobreleasetask) не требуют параметров контейнера (то есть их можно выполнить в контексте контейнера или напрямую на узле).
 

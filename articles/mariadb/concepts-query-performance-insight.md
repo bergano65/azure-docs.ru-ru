@@ -6,18 +6,18 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: cb12d80756c88c8e24dbec41a31c15c2133615ec
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 709428d420c7d5f725d1b7df85e4860aec765b48
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882578"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950658"
 ---
 # <a name="query-performance-insight-in-azure-database-for-mariadb"></a>анализ производительности запросов в базе данных Azure для MariaDB
 
 **Область применения** База данных Azure для MariaDB 10,2
 
-> [!NOTE]
+> [!IMPORTANT]
 > Анализ производительности запросов находится на этапе предварительной версии.
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.

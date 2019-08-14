@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: lagayhar
-ms.openlocfilehash: d3edfa1ca63560f447d2c9ea3da3588e069b7af1
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 27610280bafa6d8e9e33f84af2d3e9f6c2c9ea5c
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226827"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967820"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Приступая к работе с Application Insights в веб-проекте Java
 
@@ -91,7 +91,7 @@ ms.locfileid: "68226827"
 ```
 
 #### <a name="if-youre-using-eclipse-to-create-a-dynamic-web-project-"></a>Если вы используете Eclipse для создания динамического веб-проекта
-Используйте [Application Insights SDK для подключаемого модуля Java][eclipse]. Примечание. Хотя с помощью этого подключаемого модуля и Application Insights настройка и запуск выполняются быстрее (при условии, что вы не используете Maven или Gradle), это не система управления зависимостями. Таким образом, при обновлении подключаемого модуля библиотеки Application Insights в проекте не будут обновляться автоматически.
+Используйте Application Insights SDK для подключаемого модуля Java. Примечание. Хотя с помощью этого подключаемого модуля и Application Insights настройка и запуск выполняются быстрее (при условии, что вы не используете Maven или Gradle), это не система управления зависимостями. Таким образом, при обновлении подключаемого модуля библиотеки Application Insights в проекте не будут обновляться автоматически.
 
 * *Ошибки проверки сборки или контрольной суммы?* Попробуйте указать конкретную версию, например `version:'2.0.n'`. Сведения о последней версии см. в [заметках о выпуске пакета SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes) или в [артефактах репозитория Maven](https://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
 * *Для обновления до последней версии пакета SDK* обновите зависимости проекта.
@@ -456,7 +456,7 @@ Application Insights может тестировать ваш веб-сайт ч
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Вопросы? Проблемы?
+## <a name="questions-problems"></a>Есть вопрос? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
 ## <a name="next-steps"></a>Следующие шаги
@@ -473,7 +473,6 @@ Application Insights может тестировать ваш веб-сайт ч
 [apiexceptions]: ../../azure-monitor/app/api-custom-events-metrics.md#trackexception
 [availability]: ../../azure-monitor/app/monitor-web-app-availability.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
-[eclipse]: ../../azure-monitor/learn/java-quick-start.md
 [javalogs]: java-trace-logs.md
 [metrics]: ../../azure-monitor/app/metrics-explorer.md
 [usage]: javascript.md

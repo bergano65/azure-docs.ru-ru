@@ -1,6 +1,6 @@
 ---
 title: Отображение результатов поиска с помощью службы "Карты Azure" | Документация Майкрософт
-description: Как выполнять поисковой запрос с помощью службы Azure Maps и выводить результаты на карту в Javascript
+description: Как выполнить запрос поиска с Azure Maps затем отобразить результаты в веб-пакете SDK для Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 22b677ef4b21d3869e39d600910c271c935934ca
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 7c4c78e1d21754d42391a3762e9f7ed199a7376b
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638653"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68975969"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 

@@ -1,38 +1,38 @@
 ---
-title: Обучение и регистрация моделей TensorFlow
+title: Обучение нейронной сети для глубокого обучения с помощью TensorFlow
 titleSuffix: Azure Machine Learning service
-description: В этой статье показано, как обучить и зарегистрировать модель TensorFlow с помощью службы Машинное обучение Azure.
+description: Узнайте, как запускать скрипты обучения TensorFlow в масштабе с помощью службы Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: maxluk
 author: maxluk
-ms.date: 06/10/2019
+ms.date: 08/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: a5d281598bc905914b71f40d556cfa0b16a46485
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 41ebca7bd4ea299bda7e2d7a95edced583866527
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847650"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966792"
 ---
-# <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Обучение и регистрация моделей TensorFlow в масштабе с помощью службы Машинное обучение Azure
+# <a name="build-a-tensorflow-deep-learning-model-at-scale-with-azure-machine-learning"></a>Создание модели глубокого обучения TensorFlow в масштабе с помощью Машинное обучение Azure
 
-В этой статье показано, как обучить и зарегистрировать модель TensorFlow с помощью службы Машинное обучение Azure. Он использует популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети, созданной с помощью [библиотеки TensorFlow Python](https://www.tensorflow.org/overview).
+В этой статье показано, как выполнять сценарии обучения [TensorFlow](https://www.tensorflow.org/overview) в масштабе с помощью класса средства [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) для машинное обучение Azure. В этом примере производится обучение и регистрация модели TensorFlow для классификации рукописных цифр с помощью глубокой нейронной сети (DNN).
 
-TensorFlow — это вычислительная платформа с открытым исходным кодом, которая обычно используется для создания глубоких нейронных сетей (DNN). С Машинное обучение Azureной службой можно быстро масштабировать задания обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы также можете отвестись к обучающим запускам, моделям версий, развертыванию моделей и т. д.
+Независимо от того, разрабатываете ли вы модель TensorFlow с нуля или используете [существующую модель](how-to-deploy-existing-model.md) в облаке, вы можете использовать машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом для создания, развертывания, версии и мониторинга моделей производственного уровня. .
 
-Независимо от того, разрабатываете ли вы модель TensorFlow с нуля или используете [существующую модель](how-to-deploy-existing-model.md) в облаке, машинное обучение Azure служба может помочь вам создать готовые модели.
+Дополнительные сведения о [глубоком обучении и машинном](concept-deep-learning-vs-machine-learning.md)обучении.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Запустите этот код в любой из этих сред:
 
  - Машинное обучение Azure виртуальной машины записной книжки — Загрузка или установка не требуется
 
      - Пройдите [руководство по Настройте среду и рабочую](tutorial-1st-experiment-sdk-setup.md) область, чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    - В папке Samples на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > обучающие материалы с-глубокими обучениями > Train-i Parameter-Настройка-Deploy-with-tensorflow** . 
+    - В папке с примерами глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя к этому каталогу: **практические советы по использованию azureml > Обучение с помощью-глубоко-learning > Обучение-параметрам-Настройка-Deploy-with-tensorflow** . Folder. 
  
  - Собственный сервер Jupyter Notebook
 
@@ -73,7 +73,7 @@ from azureml.core.compute_target import ComputeTargetException
 ws = Workspace.from_config()
 ```
 
-### <a name="create-an-experiment"></a>Создание эксперимента
+### <a name="create-a-deep-learning-experiment"></a>Создание эксперимента глубокого обучения
 
 Создайте эксперимент и папку для хранения сценариев обучения. В этом примере Создайте эксперимент с именем "TF-mnist".
 
@@ -292,5 +292,9 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 
 В этой статье вы обучили и зарегистрировали модель TensorFlow. Чтобы узнать, как развернуть модель в кластере с поддержкой GPU, перейдите к нашей статье о развертывании модели GPU.
 
-[Как выполнить развертывание](how-to-deploy-inferencing-gpus.md)
-с помощью графических процессоров,[как отслеживать с помощью Tensorboard](how-to-monitor-tensorboard.md)
+> [!div class="nextstepaction"]
+> [Как и где развертываются модели](how-to-deploy-and-where.md)
+* [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
+* [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
+* [Развертывание обученной модели](how-to-deploy-and-where.md)
+* [Эталонная архитектура для распределенного обучения глубокого обучения в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

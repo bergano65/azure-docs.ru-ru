@@ -3,7 +3,7 @@ title: Развертывание и обновление приложений �
 description: Узнайте, как развертывать приложения и службы в кластере Service Fabric с помощью шаблона Azure Resource Manager.
 services: service-fabric
 documentationcenter: .net
-author: dkkapur
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
-ms.author: dekapur
-ms.openlocfilehash: db515454c68fe3a7eb1a4616c3278d9fc93ddb2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 3810afa7ad00aa731751aa1f0bfe38d503de5850
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258666"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68953220"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Управление приложениями и службами как ресурсами Azure Resource Manager
 
@@ -28,33 +28,33 @@ ms.locfileid: "66258666"
 Это рекомендуемый способ развертывания любых приложений установки, систем управления или приложений управления кластером, требуемых в кластере. К ним относятся [приложение для управления исправлениями](service-fabric-patch-orchestration-application.md), модули наблюдения и любые приложения, которые нужно запустить в кластере перед развертыванием других приложений или служб. 
 
 Если это возможно, следует управлять приложениями как ресурсами Resource Manager, чтобы улучшить:
-* Журнал аудита. Диспетчер ресурсов аудит каждой операции и хранит подробный *журнал действий* , помогут вам отслеживать все изменения, внесенные в эти приложения и в кластере.
-* Контроль доступа на основе ролей (RBAC). Управление доступом к кластерам, а также приложений, развернутых в кластере может осуществляться через один и тот же шаблон Resource Manager.
+* Журнал аудита: Диспетчер ресурсов выполняет аудит каждой операции и хранит подробный *Журнал действий* , который поможет отслеживать любые изменения, внесенные в эти приложения и кластер.
+* Управление доступом на основе ролей (RBAC): Управление доступом к кластерам, а также приложениям, развернутым в кластере, можно выполнить с помощью одного шаблона диспетчер ресурсов.
 * Azure Resource Manager (посредством портала Azure) становится единым центром управления кластером и развертываниями важных приложений.
 
 В следующем фрагменте кода показаны различные ресурсы, которыми можно управлять с помощью шаблона.
 
 ```json
 {
-    "apiVersion": "2017-07-01-preview",
+    "apiVersion": "2019-03-01",
     "type": "Microsoft.ServiceFabric/clusters/applicationTypes",
     "name": "[concat(parameters('clusterName'), '/', parameters('applicationTypeName'))]",
     "location": "[variables('clusterLocation')]",
 },
 {
-    "apiVersion": "2017-07-01-preview",
+    "apiVersion": "2019-03-01",
     "type": "Microsoft.ServiceFabric/clusters/applicationTypes/versions",
     "name": "[concat(parameters('clusterName'), '/', parameters('applicationTypeName'), '/', parameters('applicationTypeVersion'))]",
     "location": "[variables('clusterLocation')]",
 },
 {
-    "apiVersion": "2017-07-01-preview",
+    "apiVersion": "2019-03-01",
     "type": "Microsoft.ServiceFabric/clusters/applications",
     "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'))]",
     "location": "[variables('clusterLocation')]",
 },
 {
-    "apiVersion": "2017-07-01-preview",
+    "apiVersion": "2019-03-01",
     "type": "Microsoft.ServiceFabric/clusters/applications/services",
     "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'), '/', parameters('serviceName'))]",
     "location": "[variables('clusterLocation')]"
@@ -142,7 +142,7 @@ ms.locfileid: "66258666"
     },
     "resources": [
       {
-        "apiVersion": "2017-07-01-preview",
+        "apiVersion": "2019-03-01",
         "type": "Microsoft.ServiceFabric/clusters/applicationTypes",
         "name": "[concat(parameters('clusterName'), '/', parameters('applicationTypeName'))]",
         "location": "[variables('clusterLocation')]",
@@ -152,7 +152,7 @@ ms.locfileid: "66258666"
         }
       },
       {
-        "apiVersion": "2017-07-01-preview",
+        "apiVersion": "2019-03-01",
         "type": "Microsoft.ServiceFabric/clusters/applicationTypes/versions",
         "name": "[concat(parameters('clusterName'), '/', parameters('applicationTypeName'), '/', parameters('applicationTypeVersion'))]",
         "location": "[variables('clusterLocation')]",
@@ -165,7 +165,7 @@ ms.locfileid: "66258666"
         }
       },
       {
-        "apiVersion": "2017-07-01-preview",
+        "apiVersion": "2019-03-01",
         "type": "Microsoft.ServiceFabric/clusters/applications",
         "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'))]",
         "location": "[variables('clusterLocation')]",
@@ -200,7 +200,7 @@ ms.locfileid: "66258666"
         }
       },
       {
-        "apiVersion": "2017-07-01-preview",
+        "apiVersion": "2019-03-01",
         "type": "Microsoft.ServiceFabric/clusters/applications/services",
         "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'), '/', parameters('serviceName'))]",
         "location": "[variables('clusterLocation')]",
@@ -221,7 +221,7 @@ ms.locfileid: "66258666"
         }
       },
       {
-        "apiVersion": "2017-07-01-preview",
+        "apiVersion": "2019-03-01",
         "type": "Microsoft.ServiceFabric/clusters/applications/services",
         "name": "[concat(parameters('clusterName'), '/', parameters('applicationName'), '/', parameters('serviceName2'))]",
         "location": "[variables('clusterLocation')]",
@@ -255,19 +255,19 @@ ms.locfileid: "66258666"
    ```
 
    > [!NOTE] 
-   > Свойству *ApiVersion* нужно присвоить значение `"2017-07-01-preview"`. Этот шаблон также можно развертывать независимо от кластера, если кластер уже развернут.
+   > Свойству *ApiVersion* нужно присвоить значение `"2019-03-01"`. Этот шаблон также можно развертывать независимо от кластера, если кластер уже развернут.
 
 5. Разверните шаблон. 
 
-## <a name="remove-service-fabric-resource-provider-application-resource"></a>Удалить ресурс приложения поставщика ресурсов Service Fabric
-Ниже будет активировать приложение пакета будут неподготовленным из кластера, и это приведет к очистке используемое место на диске:
+## <a name="remove-service-fabric-resource-provider-application-resource"></a>Удаление ресурса приложения поставщика ресурсов Service Fabric
+Следующий триггер приведет к отмене подготовки пакета приложения из кластера, что приведет к очистке используемого места на диске:
 ```powershell
-Get-AzureRmResource -ResourceId /subscriptions/{sid}/resourceGroups/{rg}/providers/Microsoft.ServiceFabric/clusters/{cluster}/applicationTypes/{apptType}/versions/{version} -ApiVersion "2017-07-01-preview" | Remove-AzureRmResource -Force -ApiVersion "2017-07-01-preview"
+Get-AzureRmResource -ResourceId /subscriptions/{sid}/resourceGroups/{rg}/providers/Microsoft.ServiceFabric/clusters/{cluster}/applicationTypes/{apptType}/versions/{version} -ApiVersion "2019-03-01" | Remove-AzureRmResource -Force -ApiVersion "2017-07-01-preview"
 ```
-Удаление Microsoft.ServiceFabric/clusters/application с помощью шаблона ARM не отменяет подготовку приложения
+Простое удаление Microsoft. ServiceFabric/Clusters/Application из шаблона ARM не приведет к отмене подготовки приложения.
 
 >[!NOTE]
-> После завершения удаления вы не увидите версию пакета в SFX или ARM больше. Не удается удалить ресурс версии типа приложения, что приложение работает с; Это предотвратит ARM/SFRP. При попытке отменить подготовку выполнение пакета, но среда выполнения не его.
+> После завершения удаления не следует видеть версию пакета в SFX или ARM. Нельзя удалить ресурс версии типа приложения, с которым выполняется приложение; ARM/SFRP сделает это невозможным. Если вы попытаетесь отменить подготовку выполняющегося пакета, то среда выполнения будет препятствовать этому.
 
 
 ## <a name="manage-an-existing-application-via-resource-manager"></a>Управление существующим приложением с помощью Resource Manager
@@ -275,9 +275,9 @@ Get-AzureRmResource -ResourceId /subscriptions/{sid}/resourceGroups/{rg}/provide
 Если кластер уже запущен и в нем развернуто несколько приложений, которыми требуется управлять как ресурсами Resource Manager, то вместо удаления этих приложений и их повторного развертывания можно использовать вызов PUT с использованием тех же интерфейсов API, чтобы эти приложения были подтверждены как ресурсы Resource Manager. 
 
 > [!NOTE]
-> Чтобы разрешить обновление кластера до игнорировать неработоспособных приложений клиента можно указать «maxPercentUnhealthyApplications: 100" в разделе «upgradeDescription/healthPolicy»; Подробное описание всех параметров находятся в [обновление политики для REST API службы структуры кластера документации](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-clusterupgradepolicy).
+> Чтобы разрешить обновление кластера для пропуска неработоспособных приложений, клиент может указать "maxPercentUnhealthyApplications: 100 "в разделе" Упградедескриптион/Хеалсполици "; Подробное описание всех параметров находится в [структурах служб REST API документации по политике обновления кластера](https://docs.microsoft.com/rest/api/servicefabric/sfrp-model-clusterupgradepolicy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Используйте [интерфейс командной строки Service Fabric](service-fabric-cli.md) или [PowerShell](service-fabric-deploy-remove-applications.md) для развертывания других приложений в кластере. 
 * [Обновите кластер Service Fabric](service-fabric-cluster-upgrade.md).

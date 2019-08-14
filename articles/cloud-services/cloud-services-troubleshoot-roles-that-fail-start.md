@@ -9,18 +9,17 @@ editor: ''
 tags: top-support-issue
 ms.assetid: 674b2faf-26d7-4f54-99ea-a9e02ef0eb2f
 ms.service: cloud-services
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9e1ae9ca6106a6a55e0cfc933ad47a5944ed5abb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60653393"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945399"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
 Ниже приведены некоторые распространенные проблемы и решения на случай, если роли облачной службы Azure не запускаются.
@@ -75,8 +74,8 @@ ms.locfileid: "60653393"
 Если перейти на веб-сайт, отобразятся более точные сообщения об ошибках.
 
 * Ошибка сервера в приложении «/».
-* Описание: Произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
-* Сведения об исключении: System.IO.FIleNotFoundException: Не удалось загрузить файл или сборку "Microsoft.WindowsAzure.StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35" или одну из ее зависимостей. Системе не удается найти указанный файл.
+* Описание: Во время выполнения текущего веб-запроса произошло необработанное исключение. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
+* Сведения об исключении: System. IO. FIleNotFoundException: Не удалось загрузить файл или сборку "Microsoft. WindowsAzure. StorageClient, Version = 1.1.0.0, Culture = Neutral, PublicKeyToken = 31bf856ad364e35" или одну из его зависимостей. Системе не удается найти указанный файл.
 
 Пример:
 
@@ -122,7 +121,7 @@ ms.locfileid: "60653393"
 
 Убедившись, что все ошибки исправлены, вы можете развернуть службу, не устанавливая флажок **Включить IntelliTrace для ролей .NET 4** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите дополнительные [статьи об устранении неполадок](https://azure.microsoft.com/documentation/articles/?tag=top-support-issue&product=cloud-services) в облачных службах.
 
 Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](https://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).

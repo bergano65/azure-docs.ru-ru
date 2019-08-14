@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 371de877d266af19eebdbd886ada6fed842cb15c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 308b32d07f1304a8aa52ca68e1bd5d9db242ab97
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848459"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950065"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -123,7 +123,7 @@ ms.locfileid: "68848459"
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Поддерживается |Поддерживается |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Ньюпорт (Уэльс), Сан-Паулу, Сингапур, Сиэтл, Чикаго |
 | **LG CNS** |Поддерживается |Поддерживается |Пусан, Сеул |
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
-| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Москва, Чикаго, Далласе, Денвер, Дублин, Гонконг, САР, Лас-Анджелес, Лондон, Лос-Йорк, Мельбурн, Майами, Нью-Йорке, Перт, Квебек, штат San Сан Антонио, Сиэтл, Silicon впадина, Сингапур, Сингапур 2, Сидней, Торонто, Вашингтон (округ Колумбия) |
+| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, Москва, Чикаго, Далласе, Денвер, Дублин, Гонконг, Лас-деньги, Лондон, Лос-Анджелес, Мельбурн, Майами, Монреаль, Нью-Йорк, Перт, Квебек City, San Сан Антонио, Сиэтл, Silicon впадина, Сингапур, Сингапур 2, Сидней, Торонто, штат Вашингтон Постоянный |
 | **[MTN](https://www.mtnbusiness.com/en/enterprise/Pages/microsoft-express-route.aspx)** |Поддерживается |Поддерживается |Лондон |
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживается |Поддерживается |Далласе, Лос-Анджелес, Майами, Сан-Паулу, Вашингтон (округ Колумбия) |
 | **[Next Generation Data](https://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |
@@ -132,7 +132,7 @@ ms.locfileid: "68848459"
 | **[NTT EAST](https://flets.com/cloudgateway/crossconnect/)** |Поддерживается |Поддерживается |Токио |
 | **[NTT SmartConnect](https://cloud.nttsmc.com/cxc/azure.html)** |Поддерживается |Поддерживается |Осака |
 | **[Optus](https://www.optus.com.au/enterprise/networking/network-connectivity/express-link)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
-| **[Orange](https://www.orange-business.com/en/products/business-vpn-galerie)** |Поддерживается |Поддерживается |Амстердам, Гонконг, САР, Лондон, Париж, Сан-Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
+| **[Orange](https://www.orange-business.com/en/products/business-vpn-galerie)** |Поддерживается |Поддерживается |Амстердам, Франкфурт, Гонконг, САР, Лондон, Париж, Сан-Паулу, Silicon впадина, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[орикском](https://www.orixcom.com/cloud-solutions/)** | Поддерживается | Поддерживается | Dubai2 |
 | **[PacketFabric](https://www.packetfabric.com/packetcor/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Поддерживается |Поддерживается |Чикаго, САР Гонконг, Лондон |

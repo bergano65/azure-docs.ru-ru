@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: bwren
-ms.openlocfilehash: 1b86bc015b187fe75e79ba04df60a6bc5257a9b8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ab633ca47f684688019b1313de61571252760a20
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60497426"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967746"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -34,7 +34,7 @@ ms.locfileid: "60497426"
 - [Azure DevOps Projects](../devops-project/overview.md) предоставляет вам упрощенный интерфейс с подключением существующего кода и репозитория Git. Или можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
 - [Непрерывный мониторинг в вашем конвейере выпуска DevOps](../azure-monitor/app/continuous-monitoring.md) позволяет вам контролировать или откатывать развертывание на основе данных мониторинга.
 - [Монитор состояния](../azure-monitor/app/monitor-performance-live-website-now.md) позволяет вживую использовать приложение .NET в Windows с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода.
-- Если у вас есть доступ к коду для вашего приложения, включите полный мониторинг с помощью [Application Insights](../azure-monitor/app/app-insights-overview.md), установив пакет SDK Azure Monitor Application Insights для [.NET](../azure-monitor/learn/quick-monitor-portal.md), [Java](../azure-monitor/learn/java-quick-start.md), [Node.js](../azure-monitor/learn/nodejs-quick-start.md) или [любых других языков программирования](../azure-monitor/app/platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
+- Если у вас есть доступ к коду для вашего приложения, включите полный мониторинг с помощью [Application Insights](../azure-monitor/app/app-insights-overview.md), установив пакет SDK Azure Monitor Application Insights для [.NET](../azure-monitor/learn/quick-monitor-portal.md), [Java](../azure-monitor/app/java-get-started.md), [Node.js](../azure-monitor/learn/nodejs-quick-start.md) или [любых других языков программирования](../azure-monitor/app/platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
 
 
 
@@ -89,7 +89,7 @@ ms.locfileid: "60497426"
 - Используйте [анализ влияния](../azure-monitor/app/usage-impact.md), чтобы расставить приоритеты, на каких сферах сосредоточиться для достижения важных ключевых показателей эффективности.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о различных компонентах см. в статье [Общие сведения о службе Azure Monitor](overview.md).
 - [Добавьте постоянный мониторинг](../azure-monitor/app/continuous-monitoring.md) к конвейеру выпуска.

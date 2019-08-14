@@ -10,28 +10,31 @@ ms.topic: conceptual
 ms.date: 01/28/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 4d70fe3f3f19723cd37080ae09dce97bfd8f3d34
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 080c1933f88d9e824969a42212de2eacd0f62e14
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511691"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68927281"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
 В процессе настройки поставщика удостоверений для регистрации и входа в приложение Azure Active Directory (Azure AD) B2C, вам потребуется указать URL-адрес переадресации. В прошлом использовался login.microsoftonline.com, а сейчас вместо него следует использовать b2clogin.com.
+
+> [!NOTE]
+> Вы можете использовать код на стороне клиента JavaScript (в настоящее время находится на этапе предварительной версии) в b2clogin.com. При использовании login.microsoftonline.com код JavaScript будет удален из настраиваемой страницы. К login.microsoftonline.com также применяются дополнительные ограничения безопасности, например удаление HTML-элементов формы с пользовательской страницы. 
 
 Использование b2clogin.com дает следующие преимущества:
 
 - Пространство, используемое службами Майкрософт в заголовке файлов cookie, уменьшается.
 - URL-адреса больше не содержат ссылку на корпорацию Майкрософт. Например, `https://your-tenant-name.b2clogin.com/tenant-id/oauth2/authresp`.
 
->[!NOTE]
-> Имя клиента и идентификатор GUID клиента можно использовать следующим образом:
-> * `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com` (которая по-прежнему относится к `onmicrosoft.com`)
-> * `https://your-tenant-name.b2clogin.com/your-tenant-guid` (в этом случае нет ссылки в корпорацию Майкрософт на всех)
+> [!NOTE]
+> Вы можете использовать как имя клиента, так и GUID клиента следующим образом:
+> * `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`(по-прежнему ссылается `onmicrosoft.com`на)
+> * `https://your-tenant-name.b2clogin.com/your-tenant-guid`(в этом случае ссылка на корпорацию Майкрософт отсутствует)
 >
-> Тем не менее, нельзя использовать _личного домена_ для Azure клиента Active Directory B2C, например `https://your-tenant-name.b2clogin.com/your-custom-domain-name` бы _не_ работать.
+> Однако нельзя использовать _личный домен_ для клиента Azure Active Directory B2C, например `https://your-tenant-name.b2clogin.com/your-custom-domain-name` , _не_ будет работать.
 
 Рассмотрите следующие параметры, которые может понадобиться изменить при использовании b2clogin.com:
 

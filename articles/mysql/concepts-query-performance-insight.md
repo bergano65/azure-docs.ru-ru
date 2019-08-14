@@ -6,18 +6,18 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: 05d6de31dbc3ff5bbf9365098ceae4c840bf116b
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: f6c74582760d77ae4318739c74f77d0bcd0501fe
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882793"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950361"
 ---
 # <a name="query-performance-insight-in-azure-database-for-mysql"></a>анализ производительности запросов в базе данных Azure для MySQL
 
 **Область применения** База данных Azure для MySQL 5,7
 
-> [!NOTE]
+> [!IMPORTANT]
 > Анализ производительности запросов находится на этапе предварительной версии.
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
@@ -38,7 +38,7 @@ ms.locfileid: "68882793"
 
 Чтобы просматривать текст запросов в анализе производительности запросов, требуются разрешения **Владельца** или **Участника**. **Модуль чтения** может просматривать графики и таблицы, но не текст запросов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы компонент "Анализ производительности запросов" работал, данные должны находиться в [хранилище запросов](concepts-query-store.md).
 

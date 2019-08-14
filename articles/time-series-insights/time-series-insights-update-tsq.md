@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: bbf682df2df7a8cdc9fedb36aa4244fc5c0e9488
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29418345aaa8042e50b1297541cac3af0a3c1504
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244005"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935209"
 ---
 # <a name="data-querying"></a>Запрашивание данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "66244005"
 
 Поддерживаются следующие основные программные интерфейсы.
 
-[![Общие сведения о времени запроса рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
+[![Общие сведения о запросе временных рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
 
 ## <a name="environment-apis"></a>Программные интерфейсы среды
 
@@ -73,10 +73,10 @@ ms.locfileid: "66244005"
 
   Поддерживаемые типы статистических выражений: `Min`, `Max`, `Sum`, `Count`, `Average`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о [хранилища и входящих данных](./time-series-insights-update-storage-ingress.md) предварительной версии Azure время Series Insights.
+- Узнайте больше о [хранении и](./time-series-insights-update-storage-ingress.md) входе в предварительной версии службы "аналитика временных рядов Azure".
 
-- Чтение предварительного просмотра Insights рядов во время [моделирование данных](./time-series-insights-update-tsm.md) статьи.
+- Прочтите статью анализ [данных](./time-series-insights-update-tsm.md) о моделировании временных рядов в предварительной версии.
 
-- Обнаружение [советы и рекомендации при выборе идентификатор ряда времени](./time-series-insights-update-how-to-id.md).
+- Ознакомьтесь [с рекомендациями по выбору идентификатора временного ряда](./time-series-insights-update-how-to-id.md).

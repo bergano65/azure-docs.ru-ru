@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: dacurwin
-ms.openlocfilehash: 4ce6ef67c24bd623a4162329442693ed1628dae2
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 7e7312f942103125217c1f61ae8fe8007a49529b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639880"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954764"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Управление хранилищами Служб восстановления и их мониторинг
 
@@ -175,7 +175,7 @@ ms.locfileid: "68639880"
 
 На плитке **Задания резервного копирования** на панели мониторинга хранилища отображается количество заданий, выполняемых в текущий момент и (или) завершившихся сбоем за последние 24 часа. Также эта плитка содержит урезанную версию меню "Задания резервного копирования".
 
-![Архивируемые элементы из параметров](./media/backup-azure-manage-windows-server/backup-jobs-tile.png)
+![Резервное копирование элементов из параметров](./media/backup-azure-manage-windows-server/backup-jobs-tile.png)
 
 Чтобы просмотреть дополнительные сведения о заданиях, щелкните элемент **Выполняется** или **Сбой**. Откроется меню заданий резервного копирования, отфильтрованное по выбранному состоянию.
 
@@ -185,11 +185,11 @@ ms.locfileid: "68639880"
 
 Чтобы открыть меню заданий резервного копирования, щелкните **Задания резервного копирования** в главном меню для хранилища.
 
-![Архивируемые элементы из параметров](./media/backup-azure-manage-windows-server/backup-jobs-menu-item.png)
+![Резервное копирование элементов из параметров](./media/backup-azure-manage-windows-server/backup-jobs-menu-item.png)
 
 Откроется список заданий резервного копирования.
 
-![Архивируемые элементы из параметров](./media/backup-azure-manage-windows-server/backup-jobs-list.png)
+![Резервное копирование элементов из параметров](./media/backup-azure-manage-windows-server/backup-jobs-list.png)
 
 В меню заданий резервного копирования отображаются сведения о состоянии всех операций для всех типов резервного копирования за последние 24 часа. Элемент **Фильтр** позволяет изменить настройку фильтров. Работа фильтров разъясняется в следующих разделах.
 
@@ -197,11 +197,11 @@ ms.locfileid: "68639880"
 
 1. В меню заданий резервного копирования для хранилища щелкните **Фильтр**.
 
-   ![Архивируемые элементы из параметров](./media/backup-azure-manage-windows-server/vault-backup-job-menu-filter.png)
+   ![Резервное копирование элементов из параметров](./media/backup-azure-manage-windows-server/vault-backup-job-menu-filter.png)
 
     Появится меню фильтра.
 
-   ![Архивируемые элементы из параметров](./media/backup-azure-manage-windows-server/filter-menu-backup-jobs.png)
+   ![Резервное копирование элементов из параметров](./media/backup-azure-manage-windows-server/filter-menu-backup-jobs.png)
 
 2. Выберите нужные параметры фильтра и щелкните **Готово**. Отфильтрованный список обновится с учетом новых параметров.
 

@@ -9,12 +9,12 @@ ms.date: 02/11/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 51e0379607c49019590a99c9fb7304f28be2afe5
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: d94f6297f27eb3ea130b443ccf94052d391eb46d
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305742"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985326"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "68305742"
 
 После повторного включения GRS для учетной записи хранения Microsoft начинает репликацию данных в вашей учетной записи в новый вторичный регион. Время репликации зависит от объема реплицируемых данных.  
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>портала Azure
 
 Чтобы начать отработку отказа учетной записи на портале Azure, выполните следующие действия.
 
@@ -68,12 +68,13 @@ ms.locfileid: "68305742"
 
     - Удалите все предыдущие установки Azure PowerShell из Windows с помощью параметра **Apps & features** (Приложения и компоненты) в разделе **Параметры**.
     - Удалите все модули **Azure** из `%Program Files%\WindowsPowerShell\Modules`.
-    
+
 1. Убедитесь, что у вас установлена последняя версия PowerShellGet. Откройте окно Windows PowerShell и выполните следующую команду, чтобы установить последнюю версию:
- 
+
     ```powershell
     Install-Module PowerShellGet –Repository PSGallery –Force
     ```
+
 1. После установки PowerShellGet закройте и снова откройте окно PowerShell. 
 
 1. Установите Azure PowerShell последней версии:
@@ -82,21 +83,21 @@ ms.locfileid: "68305742"
     Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Установите модуль службы хранилища Azure, используемый в режиме предварительной версии, который поддерживает Azure AD.
-   
+1. Установите модуль предварительной версии службы хранилища Azure, поддерживающий отработку отказа учетной записи.
+
     ```powershell
     Install-Module Az.Storage –Repository PSGallery -RequiredVersion 1.1.1-preview –AllowPrerelease –AllowClobber –Force 
     ```
+
 1. Закройте и снова откройте окно PowerShell.
  
-
 Чтобы инициировать отработку отказа учетной записи с помощью PowerShell, выполните следующую команду.
 
 ```powershell
 Invoke-AzStorageAccountFailover -ResourceGroupName <resource-group-name> -Name <account-name> 
 ```
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Для отработки отказа с помощью интерфейса командной строки Azure выполните следующие команды.
 

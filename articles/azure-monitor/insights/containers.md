@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 98b7e99e5e9d25c6708b92b02e609ad38a971054
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 5f48b1b1c8568c4f60d012797634b844a276b1bb
+ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381580"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68951960"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -202,11 +202,11 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 2. Выполните следующие команды, чтобы создать проект для Azure Monitor и задать учетную запись пользователя.
 
     ```
-    oadm new-project omslogging --node-selector='zone=default'
+    oc adm new-project omslogging --node-selector='zone=default'
     oc project omslogging  
     oc create serviceaccount omsagent  
-    oadm policy add-cluster-role-to-user cluster-reader   system:serviceaccount:omslogging:omsagent  
-    oadm policy add-scc-to-user privileged system:serviceaccount:omslogging:omsagent  
+    oc adm policy add-cluster-role-to-user cluster-reader   system:serviceaccount:omslogging:omsagent  
+    oc adm policy add-scc-to-user privileged system:serviceaccount:omslogging:omsagent  
     ```
 
 3. Чтобы развернуть набор daemon-set, выполните следующую команду:
@@ -241,11 +241,11 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 2. Выполните следующие команды, чтобы создать проект для Azure Monitor и задать учетную запись пользователя. Сценарий создания секретов запросит ввести идентификатор рабочей области Log Analytics `<WSID>` и первичный ключ `<KEY>`, после чего создаст файл ocp-secret.yaml.  
 
     ```
-    oadm new-project omslogging --node-selector='zone=default'  
+    oc adm new-project omslogging --node-selector='zone=default'  
     oc project omslogging  
     oc create serviceaccount omsagent  
-    oadm policy add-cluster-role-to-user cluster-reader   system:serviceaccount:omslogging:omsagent  
-    oadm policy add-scc-to-user privileged system:serviceaccount:omslogging:omsagent  
+    oc adm policy add-cluster-role-to-user cluster-reader   system:serviceaccount:omslogging:omsagent  
+    oc adm policy add-scc-to-user privileged system:serviceaccount:omslogging:omsagent  
     ```
 
 3. Разверните файл секретов, выполнив следующую команду:
@@ -557,7 +557,7 @@ Start-Service docker
 Метки, добавленные в типы данных *PodLabel* — это ваши метки. Например, приведенные в таблице метки PodLabel. Таким образом, `PodLabel_deployment_s`, `PodLabel_deploymentconfig_s`, `PodLabel_docker_registry_s` будут отличаться в наборе данных вашей среды и должны выглядеть примерно так: `PodLabel_yourlabel_s`.
 
 ## <a name="monitor-containers"></a>Мониторинг контейнеров
-После включения решения в портал Azure на плитке контейнеры отображаются  сводные сведения о узлах контейнеров и контейнерах, запущенных на узлах.
+После включения решения в портал Azure на плитке контейнеры отображаются сводные сведения о узлах контейнеров и контейнерах, запущенных на узлах.
 
 ![Плитка "Контейнеры"](./media/containers/containers-title.png)
 

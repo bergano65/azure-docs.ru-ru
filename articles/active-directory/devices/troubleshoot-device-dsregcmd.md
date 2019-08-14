@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 189e4f280e8aba28c4d1af449aa8a3428e303911
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 4aa8f9a7c6807a2f9505559ea13fb0b4f410346d
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68298416"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987174"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Устранение неполадок устройств с помощью команды dsregcmd
 
@@ -28,8 +28,8 @@ ms.locfileid: "68298416"
 
 | AzureAdJoined | ентерприсежоинед | домаинжоинед | Состояние устройства |
 | ---   | ---   | ---   | ---   |
-| да | НЕТ | НЕТ | Присоединение к Azure AD |
-| НЕТ | НЕТ | да | Присоединен к домену |
+| да | НЕТ | НЕТ | Присоединено к Azure AD |
+| НЕТ | НЕТ | да | Присоединено к домену |
 | да | НЕТ | да | Гибридное присоединение к AD |
 | НЕТ | да | да | Локальная DRS присоединена |
 
@@ -295,6 +295,9 @@ ms.locfileid: "68298416"
 ## <a name="ngc-prerequisite-check"></a>Проверка готовности NGC
 
 В этом разделе выполняется проверка изначальных для подготовки ключа NGC. 
+
+> [!NOTE]
+> Если пользователь уже успешно настроил учетные данные NGC, вы можете увидеть сведения о предварительных требованиях NGC в dsregcmd/Status.
 
 ### <a name="sample-ngc-prerequisite-check-output"></a>Пример выходных данных проверки готовности к установке NGC
 

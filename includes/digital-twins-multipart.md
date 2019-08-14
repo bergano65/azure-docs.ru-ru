@@ -5,15 +5,15 @@ services: digital-twins
 author: kingdomofends
 ms.service: digital-twins
 ms.topic: include
-ms.date: 01/11/2019
-ms.author: adgera
+ms.date: 08/12/2019
+ms.author: v-adgera
 ms.custom: include file
-ms.openlocfilehash: ac6b008597b6d6e557a0cc412c00c2202231bc3d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f9b1b32775393196a77bef3aa2257f6fb66afdcb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185927"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012258"
 ---
 > [!NOTE]
 > Для составных запросов обычно требуются три компонента:

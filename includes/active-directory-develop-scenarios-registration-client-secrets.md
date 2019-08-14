@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/18/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: cd37880be6d518105e880b93a0bd748f7c729d88
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 8f98808aa0f8a2c32e2117447824114747091a82
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68286207"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912474"
 ---
 ## <a name="registration-of-secrets-or-certificates"></a>Регистрация секретов или сертификатов
 
@@ -29,7 +29,7 @@ ms.locfileid: "68286207"
 
 Управление учетными данными клиента происходит на странице **сертификаты & секреты** для приложения:
 
-![image](../articles/active-directory/develop/media/quickstart-update-azure-ad-app-preview/credentials-certificates-secrets-expanded.png)
+![image](../articles/active-directory/develop/media/quickstart-update-azure-ad-app-preview/credentials-certificates-secrets.png)
 
 - Секрет приложения (также называется секретом клиента) создается Azure AD во время регистрации конфиденциального клиентского приложения. Это поколение происходит при выборе **нового секрета клиента**. На этом этапе необходимо скопировать строку секрета в буфер обмена для использования в приложении перед нажатием кнопки **сохранить**. Эта строка больше не будет представлена.
 - сертификат отправляется в регистрации приложения с помощью кнопки **отправить сертификат** . Azure AD поддерживает только сертификаты, которые непосредственно зарегистрированы в приложении, и не подчиняются цепочкам сертификатов.

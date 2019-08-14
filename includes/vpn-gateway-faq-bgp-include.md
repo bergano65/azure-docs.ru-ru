@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 23386139364a72b0275936cdc458c8cd2a5771c9
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 0e3f996ab2a42057198368759c75f10e911d5f54
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386960"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68936886"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>VPN-шлюзы Azure поддерживают BGP для всех классов SKU?
 Нет, BGP поддерживается в VPN-шлюзах Azure класса **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** и **HighPerformance**. **Basic** не поддерживается.
@@ -39,6 +39,13 @@ ms.locfileid: "68386960"
 Да, следующие ASN [зарезервированы IANA](http://www.iana.org/assignments/iana-as-numbers-special-registry/iana-as-numbers-special-registry.xhtml) и не могут быть настроены в VPN-шлюзе Azure:
 
 23456, 64496-64511, 65535-65551 и 429496729.
+
+### <a name="what-private-asns-can-i-use"></a>Какие частные ASN можно использовать?
+Допустимый диапазон частных ASN, который можно использовать:
+
+* 64512-65514, 65521-65534
+
+Эти ASN не зарезервированы IANA или Azure для использования, поэтому их можно использовать для назначения VPN-шлюзу Azure.
 
 ### <a name="can-i-use-the-same-asn-for-both-on-premises-vpn-networks-and-azure-vnets"></a>Можно ли использовать один номер ASN одновременно для локальных VPN-сетей и виртуальных сетей Azure?
 Нет, следует назначить различные ASN для локальных сетей и виртуальных сетей Azure, если они обмениваются данными с использованием BGP. VPN-шлюзы Azure по умолчанию получают значение ASN 65515, независимо от использования BGP для подключений между локальными сетями. Вы можете переопределить это значение по умолчанию, назначив другой номер ASN при создании VPN-шлюза или изменив его после создания шлюза. Номер ASN, который используется для локальной сети, нужно будет назначить соответствующему локальному сетевому шлюзу Azure.
