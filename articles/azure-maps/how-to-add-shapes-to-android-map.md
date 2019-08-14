@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 53bc9f14b91bafd69d3c67745f6b981f4faea991
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: c8e3f16b939d05a4c055fba3a9f1ab5e47e54070
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881667"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976599"
 ---
 # <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Добавление фигуры в карту с помощью Azure Maps пакет SDK для Android
 
@@ -355,7 +355,13 @@ ms.locfileid: "68881667"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о способах установки стилей карт см. в следующей статье.
+Чтобы добавить дополнительные данные на карту, выполните следующие действия.
+
+> [!div class="nextstepaction"]
+> [Добавление слоя символов](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя фрагментов](how-to-add-tile-layer-android-map.md)
+
+> [!div class="nextstepaction"]
+> [Отображение сведений о характеристиках](display-feature-information-android.md)

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: d0e8881607fe4dc84a7d533855dc2b9c48e5366d
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: b42313a83be413a9c34a45fca946ea165f8fc9a3
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726182"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967041"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -40,7 +40,9 @@ ms.locfileid: "68726182"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-Чтобы копировать данные из базы данных Cassandra, которая не является общедоступной, необходимо настроить локальную среду IR. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md). Среда выполнения интеграции предоставляет встроенный драйвер Cassandra, поэтому при копировании данных из Cassandra вам не потребуется устанавливать драйвер вручную.
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
+
+Среда выполнения интеграции предоставляет встроенный драйвер Cassandra, поэтому при копировании данных из Cassandra вам не потребуется устанавливать драйвер вручную.
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -60,7 +62,7 @@ ms.locfileid: "68726182"
 | authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Cassandra.<br/>Допустимые значения: **Basic** (обычная) и **Anonymous** (анонимная). |Да |
 | username |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | password |Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да (если для свойства authenticationType задано значение Basic) |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 >[!NOTE]
 >В настоящее время подключение к Cassandra по протоколу SSL не поддерживается.
@@ -133,7 +135,7 @@ ms.locfileid: "68726182"
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type источника действия копирования необходимо задать значение **CassandraSource** | Да |
-| запрос |Используйте пользовательский запрос для чтения данных. Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
+| query |Используйте пользовательский запрос для чтения данных. Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
 | consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных Дополнительные сведения см. в статье [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных).<br/><br/>Допустимые значения: **ONE**, **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM** и **LOCAL_ONE**. |Нет (значение по умолчанию — `ONE`) |
 
 **Пример.**

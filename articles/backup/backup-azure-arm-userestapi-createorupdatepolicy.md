@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: dacurwin
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: d81d8aa299333890de61cf0c8ee75be76ca31bf2
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 8b812ea053cb8e9da7cd3ef021ab6b74196d36ca
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688743"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954968"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
@@ -36,7 +36,7 @@ ms.locfileid: "68688743"
 - Период хранения можно определить для ежедневных, еженедельных, ежемесячных и ежегодных точек резервного копирования.
 - "Еженедельно" относиться к резервному копированию в определенный день недели, "Ежемесячно" — к резервному копированию в определенный день месяца, а "Ежегодно" — к резервному копированию в определенный день года.
 - Период хранения для ежемесячных и ежегодных точек резервного копирования называется LongTermRetention.
-- При создании хранилища также создается политика для резервного копирования виртуальных машин Azure с именем DefaultPolicy, которую можно использовать для резервного копирования виртуальных машин Azure.
+- При создании хранилища также создается политика для резервных копий виртуальных машин Azure с именем "DefaultPolicy", которую можно использовать для резервного копирования виртуальных машин Azure.
 
 Для создания или обновления политики Azure Backup используйте следующую операцию *PUT*.
 
@@ -158,7 +158,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Тип  |Описание  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  OK       |
 |202 — принято     |         |     Принято    |

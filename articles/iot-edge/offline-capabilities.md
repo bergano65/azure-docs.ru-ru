@@ -2,19 +2,18 @@
 title: Автономная работа устройств — Azure IoT Edge | Документация Майкрософт
 description: Узнайте, как устройства и модули IoT Edge могут работать в течение долгого периода времени без подключения к Интернету и как с помощью IoT Edge можно обеспечить автономную работу обычных устройств Интернета вещей.
 author: kgremban
-manager: philmea
 ms.author: kgremban
-ms.date: 06/04/2019
+ms.date: 08/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 4a46128d3b0e77ff7921e1f4875c318a95309769
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 6d82b353f8b485b4441853b7ff8e70e7d69f4d6a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598600"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986989"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Общие сведения о расширенных возможностях автономного режима для IoT Edge устройств, модулей и дочерних устройств
 
@@ -137,43 +136,71 @@ az iot hub device-identity add-children \
 }
 ```
 
-### <a name="additional-offline-storage"></a>Дополнительное хранилище в автономном режиме
+### <a name="host-storage-for-system-modules"></a>Хранилище узлов для системных модулей
 
-По умолчанию сообщения хранятся в файловой системе контейнера центра IoT Edge. Если этого объема недостаточно для ваших потребностей, вы можете выделить локальное хранилище на устройстве IoT Edge. Создайте переменную среды для центра IoT Edge, которая указывает на папку хранения в контейнере. Затем используйте параметры создания для привязки этой папки хранения к папке на хост-компьютере. 
+Сообщения и сведения о состоянии модуля хранятся в локальной файловой системе контейнера IoT Edge по умолчанию. Для повышения надежности, особенно при работе в автономном режиме, можно также выделить хранилище на узле IoT Edge устройстве.
 
-Вы можете настроить переменные среды и параметры создания для модуля центра IoT Edge на портале Azure в разделе **Настройка дополнительных параметров среды выполнения Edge**. Или вы можете указать эти значения непосредственно в манифесте развертывания. 
+Чтобы настроить хранилище в основной системе, создайте переменные среды для центра IoT Edge и агента IoT Edge, которые указывают на папку хранилища в контейнере. Затем используйте параметры создания для привязки этой папки хранения к папке на хост-компьютере. 
+
+Вы можете настроить переменные среды и параметры создания для модуля центра IoT Edge на портале Azure в разделе **Настройка дополнительных параметров среды выполнения Edge**. 
+
+1. Как для IoT Edge концентратора, так и для агента IoT Edge добавьте переменную среды с именем **сторажефолдер** , указывающую на каталог в модуле.
+1. Как для IoT Edge концентратора, так и для IoT Edge агента добавьте привязки, чтобы подключить локальный каталог на хост-компьютере к каталогу в модуле. Пример: 
+
+   ![Добавление параметров создания и переменных среды для локального хранилища](./media/offline-capabilities/offline-storage.png)
+
+Кроме того, локальное хранилище можно настроить непосредственно в манифесте развертывания. Пример: 
 
 ```json
-"edgeHub": {
-    "type": "docker",
-    "settings": {
-        "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
-        "createOptions": {
-            "HostConfig": {
-                "Binds": ["<HostStoragePath>:<ModuleStoragePath>"],
-                "PortBindings": {
-                    "8883/tcp": [{"HostPort":"8883"}],
-                    "443/tcp": [{"HostPort":"443"}],
-                    "5671/tcp": [{"HostPort":"5671"}]
+"systemModules": {
+    "edgeAgent": {
+        "settings": {
+            "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+            "createOptions": {
+                "HostConfig": {
+                    "Binds":["<HostStoragePath>:<ModuleStoragePath>"]
                 }
+            }
+        },
+        "type": "docker",
+        "env": {
+            "storageFolder": {
+                "value": "<ModuleStoragePath>"
             }
         }
     },
-    "env": {
-        "storageFolder": {
-            "value": "<ModuleStoragePath>"
-        }
-    },
-    "status": "running",
-    "restartPolicy": "always"
+    "edgeHub": {
+        "settings": {
+            "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+            "createOptions": {
+                "HostConfig": {
+                    "Binds":["<HostStoragePath>:<ModuleStoragePath"],
+                    "PortBindings":{"5671/tcp":[{"HostPort":"5671"}],"8883/tcp":[{"HostPort":"8883"}],"443/tcp":[{"HostPort":"443"}]}}}
+        },
+        "type": "docker",
+        "env": {
+            "storageFolder": {
+                "value": "<ModuleStoragePath>"
+            }
+        },
+        "status": "running",
+        "restartPolicy": "always"
+    }
 }
 ```
 
-Замените `<HostStoragePath>` и `<ModuleStoragePath>` путями к хранилищу узла и модуля соответственно; это должны быть абсолютные пути. В параметрах создания свяжите пути к хранилищу узла и модуля. Затем создайте переменную среды, которая указывает путь к хранилищу модуля.  
+Замените `<HostStoragePath>` и`<ModuleStoragePath>` на путь к хранилищу узла и модуля; оба значения должны быть абсолютным путем. 
 
 Например, `"Binds":["/etc/iotedge/storage/:/iotedge/storage/"]` означает, что каталог **/etc/iotedge/storage** в хост-системе сопоставляется с каталогом **/iotedge/storage/** в контейнере. Вот еще один пример для систем Windows: `"Binds":["C:\\temp:C:\\contemp"]` означает, что каталог **C:\\temp** в хост-системе сопоставляется с каталогом **C:\\contemp** в контейнере. 
 
-Кроме того, дополнительные сведения о параметрах создания можно найти в [документации Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate).
+На устройствах Linux убедитесь, что профиль пользователя центра IoT Edge (UID 1000) имеет разрешения на чтение, запись и выполнение для каталога главной системы. Эти разрешения необходимы для того, чтобы центр IoT Edge мог хранить сообщения в каталоге и получать их позже. (Агент IoT Edge работает как корень, поэтому не требует дополнительных разрешений.) Существует несколько способов управления разрешениями каталога в системах Linux, включая использование `chown` для изменения владельца каталога `chmod` и изменения разрешений. Пример:
+
+```bash
+sudo chown 1000 <HostStoragePath>
+sudo chmod 700 <HostStoragePath>
+```
+
+Дополнительные сведения о параметрах создания можно найти в документации по [DOCKER](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate).
 
 ## <a name="next-steps"></a>Следующие шаги
 

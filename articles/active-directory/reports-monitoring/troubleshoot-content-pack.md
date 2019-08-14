@@ -3,7 +3,7 @@ title: Устранение ошибок пакетов содержимого, 
 description: Содержит список сообщений об ошибках пакета содержимого действий Azure Active Directory и инструкции по их исправлению.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: ffce7eb1-99da-4ea7-9c4d-2322b755c8ce
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 06/07/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ee49ae56122fe596a4490914677d91d2f0348f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54a0a5b5306414eb50a1928ec8a1854f56055681
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66807527"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987901"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Устранение ошибок пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory 
 
@@ -39,7 +39,7 @@ ms.locfileid: "66807527"
 
 Данная статья содержит сведения о возможных причинах и способах устранения этих ошибок.
  
-## <a name="refresh-failed"></a>"Сбой обновления" 
+## <a name="refresh-failed"></a>Сбой обновления 
  
 **Как отображается эта ошибка**: электронное сообщение от Power BI или состояние ошибки в журнале обновлений. 
 
@@ -47,7 +47,7 @@ ms.locfileid: "66807527"
 | Причина: | Как устранить |
 | ---   | ---        |
 | Сбои обновления могут возникнуть, если учетные данные пользователей, подключающихся к пакету содержимого, были сброшены, но не обновлены в параметрах подключения пакета содержимого. | В Power BI найдите набор данных, соответствующий панели мониторинга журналов действий Azure Active Directory (**журналы действий Azure Active Directory**), выберите "Запланировать обновление" и введите учетные данные AAD. |
-| Обновление может завершиться ошибкой из-за больших наборов данных. | В настоящее время пакета содержимого Azure AD с помощью Power BI может поддерживать только небольшие наборы данных (меньше 500,00 строк) из-за некоторых ограничений по времени ожидания в службе Power BI. При возникновении ошибки регулирования или при сбое обновления из-за проблемы с временем ожидания, возможно, вы пытаетесь получить большой набор данных. Сократите период времени, в запросе и повторите попытку.|
+| Обновление может завершиться ошибкой из-за больших наборов данных. | В настоящее время пакет содержимого Azure AD с Power BI может поддерживать только небольшие наборы данных (менее 500, 00 строк) из-за ограничений, связанных с временем ожидания в службе Power BI. Если возникли ошибки регулирования или обновление завершилось сбоем из-за проблем с временем ожидания, это может быть вызвано попыткой получить большой набор данных. Сократите период времени в запросе и повторите попытку.|
  
  
 ## <a name="failed-to-update-data-source-credentials"></a>"Не удалось обновить учетные данные источников данных" 
@@ -69,8 +69,8 @@ ms.locfileid: "66807527"
 | ---   | ---        |
 | В зависимости от размера клиента шаг может длиться от нескольких минут до получаса. | Если в течение часа сообщение не исчезнет и не отобразится панель мониторинга, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Установить пакет содержимого Power BI для отчетов Azure AD](quickstart-install-power-bi-content-pack.md).
+* [Установите пакет содержимого Power BI для отчетов Azure AD](quickstart-install-power-bi-content-pack.md).
 * [Как использовать пакет содержимого Azure Active Directory Power BI](howto-power-bi-content-pack.md)
 * [Как получить поддержку для Azure Active Directory](../fundamentals/active-directory-troubleshooting-support-howto.md)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 8aaaa6465b501cee83f4c2d8cb60729282651967
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: e44acfc66a8faf76068af9c31233e89c45ee02f7
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68384855"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68953164"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -33,8 +33,8 @@ ms.locfileid: "68384855"
 | **Azure для государственных организаций** | Azure для государственных организаций                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P | Май 2014<sup>1</sup> |
 | **Соглашение Enterprise (EA)** | Enterprise — разработка и тестирование                                                        | MSDNDevTest_2014-09-01 | MS-AZR-0148P | Май 2014<sup>1</sup> |
 | **Соглашение Enterprise (EA)** | [Microsoft Azure Enterprise](https://azure.microsoft.com/offers/enterprise-agreement-support-upgrade) | EnterpriseAgreement_2014-09-01 | MS-AZR-0017P | Май 2014<sup>1</sup> |
-| **Соглашение клиента Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д | Мар 2019<sup>3</sup> |
-| **Соглашение клиента Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g) | MSDNDevTest_2014-09-01 | Н/Д | Мар 2019<sup>3</sup> |
+| **Соглашение клиента Майкрософт** | [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g) | EnterpriseAgreement_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
+| **Соглашение клиента Майкрософт** | [План Microsoft Azure для разработки и тестирования](https://azure.microsoft.com/offers/ms-azr-0148g) | MSDNDevTest_2014-09-01 | Н/Д | 2019 марта,<sup>3</sup> |
 | **Microsoft Developer Network (MSDN)** | [MSDN Platforms](https://azure.microsoft.com/offers/ms-azr-0062p) <sup>4</sup> | MSDN_2014-09-01 | MS-AZR-0062P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p)                  | PayAsYouGo_2014-09-01 | MS-AZR-0003P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p)         | MSDNDevTest_2014-09-01 | MS-AZR-0023P | 2 октября, 2018<sup>2</sup> |
@@ -53,7 +53,7 @@ _<sup>**1**</sup> для данных до 2014 мая посетите [пор�
 
 _<sup>**2**</sup> для данных до 2 октября 2018 см. [центр управления учетной записью Azure](https://account.azure.com/subscriptions)._
 
-_<sup>**3**</sup> соглашения с клиентами Майкрософт, запущенные в Mar 2019 и не имеющие исторических данных до этой точки._
+_<sup>**3**</sup> соглашения с клиентами Майкрософт, запущенные в марте 2019 и не имеющие исторических данных до этой точки._
 
 _<sup>**4**</sup> исторические данные для подписок, основанных на кредитах и выплат, могут не соответствовать счету. См. статью [исторические данные могут не соответствовать счетам](#historical-data-might-not-match-invoice) ниже._
 

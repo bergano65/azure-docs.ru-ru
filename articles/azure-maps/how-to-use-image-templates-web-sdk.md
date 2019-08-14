@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 1ca29fafae1269b21f4e39a9d2594f84af035d25
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b9b1543ca37c636f4a82ff9ada3dfe212fa9b8d0
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856693"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976669"
 ---
-# <a name="how-to-use-image-templates"></a>Использование шаблонов изображений
+# <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
 В веб-пакете SDK для Azure Maps можно использовать маркеры HTML и различные слои:
 
@@ -203,7 +203,10 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 > [Добавление слоя символов](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавление фигуры](map-add-shape.md)
+> [Добавить слой линий](map-add-line-layer.md)
+
+> [!div class="nextstepaction"]
+> [Добавление слоя многоугольников](map-add-shape.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя пузырьков на карту](map-add-bubble-layer.md)

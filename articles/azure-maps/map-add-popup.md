@@ -1,6 +1,6 @@
 ---
 title: Добавление всплывающего окна с помощью службы "Карты Azure" | Документация Майкрософт
-description: Как добавить всплывающее окно на карту в JavaScript
+description: Добавление всплывающего окна в веб-пакет SDK Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: caf661faf00d1d32664b7958a14a8719a37ab36e
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: cde6c745034d0963bd372e36e6e5a046113c202b
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882111"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976551"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -22,9 +22,61 @@ ms.locfileid: "68882111"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-<a id="addAPopup"></a>
-
 Следующий код добавляет функцию Point, которая имеет `name` свойства и `description` , в карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна при наведении указателя мыши на маркер символа. При наведении указателя мыши `position` свойство всплывающего окна обновляется с указанием позиции маркера, `content` а параметр обновляется с помощью HTML-кода, который заключает в `name` оболочку свойства `description` и функции точки, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
+
+```javascript
+//Define an HTML template for a custom popup content laypout.
+var popupTemplate = '<div class="customInfobox"><div class="name">{name}</div>{description}</div>';
+
+//Create a data source and add it to the map.
+var dataSource = new atlas.source.DataSource();
+map.sources.add(dataSource);
+
+dataSource.add(new atlas.data.Feature(new atlas.data.Point([-122.1333, 47.63]), {
+  name: 'Microsoft Building 41', 
+  description: '15571 NE 31st St, Redmond, WA 98052'
+}));
+
+//Create a layer to render point data.
+var symbolLayer = new atlas.layer.SymbolLayer(dataSource);
+
+//Add the polygon and line the symbol layer to the map.
+map.layers.add(symbolLayer);
+
+//Create a popup but leave it closed so we can update it and display it later.
+popup = new atlas.Popup({
+  pixelOffset: [0, -18],
+  closeButton: false
+});
+
+//Add a hover event to the symbol layer.
+map.events.add('mouseover', symbolLayer, function (e) {
+  //Make sure that the point exists.
+  if (e.shapes && e.shapes.length > 0) {
+    var content, coordinate;
+    var properties = e.shapes[0].getProperties();
+    content = popupTemplate.replace(/{name}/g, properties.name).replace(/{description}/g, properties.description);
+    coordinate = e.shapes[0].getCoordinates();
+
+    popup.setOptions({
+      //Update the content of the popup.
+      content: content,
+
+      //Update the popup's position with the symbol's coordinate.
+      position: coordinate
+
+    });
+    //Open the popup.
+    popup.open(map);
+  }
+});
+
+map.events.add('mouseleave', symbolLayer, function (){
+  popup.close();
+});
+```
+
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
@@ -33,7 +85,7 @@ ms.locfileid: "68882111"
 
 ## <a name="reusing-a-popup-with-multiple-points"></a>Повторное использование всплывающего окна с несколькими точками
 
-При наличии большого количества точек и последующего отображения только одного всплывающего окна лучшим подходом является создание одного всплывающего окна и его повторное использование вместо создания всплывающего окна для каждой функции точки. При повторном использовании всплывающего окна количество элементов DOM, созданных приложением, значительно сокращается, что может повысить производительность. В следующем примере создаются три функции точек. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
+При наличии большого количества точек и последующего отображения только одного всплывающего окна лучшим подходом является создание одного всплывающего окна и его повторное использование вместо создания всплывающего окна для каждой функции точки. При повторном использовании всплывающего окна количество элементов DOM, созданных приложением, значительно сокращается, что может повысить производительность. В следующем примере создаются 3-точечные функции. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
 
 <br/>
 
@@ -79,4 +131,7 @@ ms.locfileid: "68882111"
 > [Добавление маркера HTML](./map-add-custom-html.md)
 
 > [!div class="nextstepaction"]
-> [Добавление фигуры](./map-add-shape.md)
+> [Добавить слой линий](map-add-line-layer.md)
+
+> [!div class="nextstepaction"]
+> [Добавление слоя многоугольников](map-add-shape.md)

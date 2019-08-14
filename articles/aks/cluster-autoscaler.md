@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: mlearned
-ms.openlocfilehash: 09610782f211b4cfb80a1291b73ab543328376a3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ef3e9a9c68ca524b7f7f86c92130a10952a9f065
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68424183"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949603"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Предварительная версия. Автоматическое масштабирование кластера в соответствии с потребностями приложений в службе Kubernetes Azure (AKS)
 
@@ -102,7 +102,7 @@ az provider register --namespace Microsoft.ContainerService
 > [!IMPORTANT]
 > Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе [можно ли изменить ресурсы AKS в группе ресурсов узла?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group)
 
-В следующем примере создается кластер AKS с масштабируемым набором виртуальных машин. Он также включает Автомасштабирование кластера в пуле узлов для кластера и задает минимум *1* и максимум *3* узла:
+В следующем примере создается кластер AKS с одним пулом узлов, поддерживаемым масштабируемым набором виртуальных машин. Он также включает Автомасштабирование кластера в пуле узлов для кластера и задает минимум *1* и максимум *3* узла:
 
 ```azurecli-interactive
 # First create a resource group
@@ -124,9 +124,24 @@ az aks create \
 
 Создание кластера и настройка параметров автомасштабирования кластера занимает несколько минут.
 
-### <a name="enable-the-cluster-autoscaler-on-an-existing-node-pool-in-an-aks-cluster"></a>Включение автомасштабирования кластера в существующем пуле узлов в кластере AKS
+### <a name="update-the-cluster-autoscaler-on-an-existing-node-pool-in-a-cluster-with-a-single-node-pool"></a>Обновление автомасштабирования кластера в существующем пуле узлов в кластере с одним пулом узлов
 
-Вы можете включить Автомасштабирование кластера в пуле узлов в кластере AKS, который соответствует требованиям, описанным в предыдущем разделе [перед началом](#before-you-begin) . Используйте команду [AZ AKS нодепул Update][az-aks-nodepool-update] , чтобы включить Автомасштабирование кластера в пуле узлов.
+Вы можете обновить предыдущие параметры автомасштабирования кластера в кластере, удовлетворяющем требованиям, описанным в предыдущем разделе [перед началом](#before-you-begin) . Используйте команду [AZ AKS Update][az-aks-update] , чтобы включить в кластере Автомасштабирование кластера с *одним* пулом узлов.
+
+```azurecli-interactive
+az aks update \
+  --resource-group myResourceGroup \
+  --name myAKSCluster \
+  --update-cluster-autoscaler \
+  --min-count 1 \
+  --max-count 5
+```
+
+Впоследствии можно включить или отключить Автомасштабирование кластера с помощью `az aks update --enable-cluster-autoscaler` команд или. `az aks update --disable-cluster-autoscaler`
+
+### <a name="enable-the-cluster-autoscaler-on-an-existing-node-pool-in-a-cluster-with-multiple-node-pools"></a>Включение автомасштабирования кластера в существующем пуле узлов в кластере с несколькими пулами узлов
+
+Автоматическое масштабирование кластера также можно использовать с включенной [функцией предварительной версии пулов нескольких узлов](use-multiple-node-pools.md) . Вы можете включить Автомасштабирование кластера для отдельных пулов узлов в кластере AKS, который содержит несколько пулов узлов, и соответствует требованиям, описанным в предыдущем разделе [перед началом](#before-you-begin) . Используйте команду [AZ AKS нодепул Update][az-aks-nodepool-update] , чтобы включить Автомасштабирование кластера в отдельном пуле узлов.
 
 ```azurecli-interactive
 az aks nodepool update \
@@ -138,7 +153,7 @@ az aks nodepool update \
   --max-count 3
 ```
 
-Приведенный выше пример включает Автомасштабирование кластера в пуле узлов *минодепул* в *myAKSCluster* и задает не менее *1* и не более *3* узлов. Если минимальное число узлов больше, чем существующее число узлов в пуле узлов, создание дополнительных узлов займет несколько минут.
+Впоследствии можно включить или отключить Автомасштабирование кластера с помощью `az aks nodepool update --enable-cluster-autoscaler` команд или. `az aks nodepool update --disable-cluster-autoscaler`
 
 ## <a name="change-the-cluster-autoscaler-settings"></a>Изменение параметров средства автомасштабирования кластера
 

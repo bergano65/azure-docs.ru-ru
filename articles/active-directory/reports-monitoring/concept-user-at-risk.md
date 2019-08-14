@@ -2,7 +2,7 @@
 title: Отчет системы безопасности о пользователях под угрозой на портале Azure Active Directory | Документация Майкрософт
 description: Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory
 services: active-directory
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: addd60fe-d5ac-4b8b-983c-0736c80ace02
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 01/17/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 463f5c2d03cd96089342aa9b22ef85ebc05aa909
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 950d0dc2f4a1a88e0c317b3398c7492cc6c52e2a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438136"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989835"
 ---
 # <a name="users-flagged-for-risk-report-in-the-azure-portal"></a>Описание отчета о пользователях под угрозой на портале Azure
 
@@ -98,7 +98,7 @@ Azure Active Directory (Azure AD) обнаруживает подозрител�
 ![события входа, представляющие риск.](./media/concept-user-at-risk/325.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка политики риска пользователя](../identity-protection/howto-user-risk-policy.md)
 - [Настройка политики снижения рисков при входе](../identity-protection/howto-user-risk-policy.md)

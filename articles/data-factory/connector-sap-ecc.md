@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: c92c1b87de1b728fd79c1ef02b32135463c7124f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 6fd7c4ffafa54acb7ff67bd2e595f0b3c02a0e5a
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720686"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967415"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -50,6 +50,10 @@ ms.locfileid: "68720686"
 
 - **Активируйте и настройте службу SAP OData**. Вы можете активировать службу OData через ТКОДЕ СИКФ за считаные секунды. Также можно настроить, какие объекты должны быть предоставлены. Дополнительные сведения см. в разделе Пошаговое [руководство](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/).
 
+## <a name="prerequisites"></a>предварительные требования
+
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
+
 ## <a name="get-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
@@ -66,7 +70,7 @@ ms.locfileid: "68720686"
 | `url` | URL-адрес службы SAP ECC OData. | Да |
 | `username` | Имя пользователя, используемое для подключения к SAP ECC. | Нет |
 | `password` | Пароль в формате обычного текста, используемый для подключения к SAP ECC. | Нет |
-| `connectVia` | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных открыто в общедоступном виде). Если не указать среду выполнения, `connectVia` использует среду выполнения интеграции Azure по умолчанию. | Нет |
+| `connectVia` | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указать среду выполнения, используется среда выполнения интеграции Azure по умолчанию. | Нет |
 
 ### <a name="example"></a>Пример
 

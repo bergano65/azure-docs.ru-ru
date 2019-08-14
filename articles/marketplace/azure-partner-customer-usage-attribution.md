@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: pabutler
-ms.openlocfilehash: fa0a88ce3f74c20ab36931a6a78f8265bdb9d8be
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 98d33dd1aad726d4da8499006166dfd2c043378f
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876239"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977157"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -99,7 +99,7 @@ ms.locfileid: "67876239"
 > [!Note]
 > Важно соблюдать формат строки. Без префикса **pid-** вы не сможете получить нужные данные. Разные пакеты SDK выполняют отслеживание по-разному. Чтобы реализовать этот метод, изучите сведения о поддержке и процессах отслеживания для выбранного пакета SDK Azure.
 
-#### <a name="example-the-python-sdk"></a>Пример: Пакет SDK для Python
+#### <a name="example-the-python-sdk"></a>Пример Пакет SDK для Python
 
 В Python используется атрибут **config**. Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
 
@@ -123,7 +123,7 @@ ms.locfileid: "67876239"
 ```
 export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 ```
-Дополнительные сведения см. в разделе [Azure SDK для Go](https://docs.microsoft.com/go/azure/).
+Дополнительные сведения см. в разделе [Azure SDK для Go](https://docs.microsoft.com/azure/go/).
 
 ## <a name="use-terraform"></a>Использование terraform
 
@@ -245,7 +245,7 @@ foreach ($deployment in $deployments){
 }
 ```
 
-## <a name="report"></a>Отчет
+## <a name="report"></a>Сообщить
 
 Отчет о соотношении использования клиентов можно найти в информационной панели анализ центра партнеров. ([https://partner.microsoft.com/en-us/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Чтобы просмотреть отчет, необходимо использовать учетные данные центра партнеров для входа. При возникновении проблем с отчетом или входом создайте запрос в службу поддержки, следуя инструкциям в разделе Получение поддержки.
 
@@ -265,7 +265,7 @@ foreach ($deployment in $deployments){
 
 Когда вы развертываете программное обеспечение \<PARTNER>, корпорация Майкрософт сопоставляет установку программного обеспечения \<PARTNER> с развернутыми ресурсами Azure. Корпорация Майкрософт может отслеживать ресурсы Azure, используемые для работы этого программного обеспечения. Корпорация Майкрософт собирает эти сведения, чтобы максимально повысить качество использования своих продуктов и делового сотрудничества. Эти данные собираются и используются с соблюдением политик конфиденциальности корпорации Майкрософт, которые можно найти по адресу https://www.microsoft.com/trustcenter.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 В зависимости от ваших проблем существует два канала поддержки.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/10/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 6812ad879427a814206ef1400fcff5f3c4af0e75
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: e0197d59cdadd5e9462daf879d915ac2520bc149
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68235032"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985660"
 ---
 # <a name="list-blob-containers-with-net"></a>Вывод списка контейнеров больших двоичных объектов с помощью .NET
 
@@ -44,7 +44,7 @@ ms.locfileid: "68235032"
 
 Чтобы вернуть метаданные контейнера с результатами, укажите значение **метаданных** для перечисления [контаинерлистдетаилс](/dotnet/api/microsoft.azure.storage.blob.containerlistingdetails) . Служба хранилища Azure включает метаданные с каждым возвращенным контейнером, поэтому вам не нужно также вызывать один из методов **FetchAttributes** для получения метаданных контейнера.
 
-## <a name="example-list-containers"></a>Пример: Перечисление контейнеров
+## <a name="example-list-containers"></a>Пример Перечисление контейнеров
 
 В следующем примере асинхронно перечисляются контейнеры в учетной записи хранения, которые начинаются с указанного префикса. В примере перечисляются контейнеры с шагом в 5 результатов за раз и используется токен продолжения для получения следующего сегмента результатов. В примере также возвращаются метаданные контейнера с результатами.
 
@@ -95,7 +95,7 @@ private static async Task ListContainersWithPrefixAsync(CloudBlobClient blobClie
 }
 ```
 
-[!INCLUDE [storage-blob-dotnet-resources](../../../includes/storage-blob-dotnet-resources.md)]
+[!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
 ## <a name="see-also"></a>См. также
 

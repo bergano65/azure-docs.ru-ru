@@ -1,6 +1,6 @@
 ---
 title: Добавление маркера HTML в Azure Maps | Документация Майкрософт
-description: Как добавить на карту Javascript маркер HTML
+description: Добавление маркера HTML в Azure Maps веб-пакет SDK.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: f8777a3d0eb9b97fff6f492f181a432d98d9341c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ff18b8646a3845d029e9826c0895b9d3eb16bdde
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68849308"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976208"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -28,16 +28,36 @@ ms.locfileid: "68849308"
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
-Класс HtmlMarker имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стиль по умолчанию класса HtmlMarker — это шаблон SVG с заполнителем цвета и текста. Задайте свойства цвета и текста в параметрах HtmlMarker для быстрой настройки. 
+Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, который имеет `{color}` заполнитель и `{text}` . Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
+
+Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру и `click` событию применяется всплывающее окно, которое позволяет переключать видимость всплывающего окна.
+
+```javascript
+//Create a HTML marker and add it to the map.
+var marker = new atlas.HtmlMarker({
+    color: 'DodgerBlue',
+    text: '10',
+    position: [0, 0],
+    popup: new atlas.Popup({
+        content: '<div style="padding:10px">Hello World</div>',
+        pixelOffset: [0, -30]
+    })
+});
+
+map.markers.add(marker);
+
+//Add a click event to toggle the popup.
+map.events.add('click',marker, () => {
+    marker.togglePopup();
+});
+```
+
+Ниже приведен полный пример выполнения кода описанной выше функциональности.
 
 <br/>
 
 <iframe height='500' scrolling='no' title='Добавление на карту маркера HTML' src='//codepen.io/azuremaps/embed/MVoeVw/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/MVoeVw/'>Добавление маркера HTML на карту</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
-В первом блоке приведенного выше кода создается объект карты. См. инструкции по [созданию карты](./map-create.md).
-
-Во втором блоке кода на карту добавляется [HtmlMarker](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) с использованием свойства [markers](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#markers) класса [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). HtmlMarker добавляется на карту с помощью функции [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Это обеспечивает отображение только после полной загрузки карты.
 
 ## <a name="create-svg-templated-html-marker"></a>Создание маркера HTML шаблона SVG
 
@@ -62,7 +82,7 @@ ms.locfileid: "68849308"
 
 ## <a name="draggable-html-markers"></a>Перетаскиваемые маркеры HTML
 
-В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают события `drag`, `dragstart` и `dragend`.
+В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`события `dragstart`, и `dragend` .
 
 <br/>
 

@@ -1,27 +1,24 @@
 ---
 title: Модульное тестирование устойчивых функций Azure
 description: Информация о модульном тестировании устойчивых функций.
-services: functions
-author: kadimitr
-manager: jeconnoc
-keywords: ''
+author: ggailey777
+manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.author: kadimitr
-ms.openlocfilehash: 69cf91f1448e36353f83de7a271abb3b53858bb0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: glenga
+ms.openlocfilehash: 0080365853e7a9c74d3ba0e5efb06ce5a3af2a21
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60648471"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967103"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
 
 Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах описывается модульное тестирование трех типов функций — клиента оркестрации, оркестратора и действий.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -91,11 +88,11 @@ ms.locfileid: "60648471"
         });
 ```
 
-`TraceWriter` также имитируется.
+`ILogger` также имитируется.
 
 ```csharp
-    // Mock TraceWriter
-    var traceWriterMock = new Mock<TraceWriter>(TraceLevel.Info);
+    // Mock ILogger
+    var loggerMock = new Mock<ILogger>();
 
 ```  
 
@@ -111,7 +108,7 @@ ms.locfileid: "60648471"
         },
         durableOrchestrationClientBaseMock.Object,
         functionName,
-        traceWriterMock.Object);
+        loggerMock.Object);
  ```
 
  На последнем шаге происходит сравнение вывода с ожидаемым значением.
@@ -181,7 +178,7 @@ ms.locfileid: "60648471"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)

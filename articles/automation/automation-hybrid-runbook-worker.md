@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 04/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fceeed47ee77207e00ebfc619226ecbb5956bc3d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 015318b1695f76121662b82e94b37de1ddb63b1b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478529"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952935"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -98,11 +98,11 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Для гибридной рабочей роли Runbook для подключения и регистрации в службе автоматизации Azure он должен иметь доступ к портам и URL-адреса, описанные в этом разделе. Этот доступ — сверху, чтобы [порты и URL-адреса, необходимые для Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) для подключения к журналам Azure Monitor.
+Чтобы Гибридная Рабочая роль Runbook подключались к службе автоматизации Azure и зарегистрировалась ею, она должна иметь доступ к номеру порта и URL-адресам, описанным в этом разделе. Этот доступ расположен поверх [портов и URL-адресов, необходимых для Microsoft Monitoring Agent](../azure-monitor/platform/agent-windows.md) подключения к журналам Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Если вы используете прокси-сервер для обмена данными между агентом и службой автоматизации Azure, убедитесь, что соответствующие ресурсы доступны. Время ожидания для запросов из гибридной рабочей роли Runbook и службами автоматизации составляет 30 секунд. После 3 попыток запрос завершится ошибкой. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway).
+Если для обмена данными между агентом и службой автоматизации Azure используется прокси-сервер, убедитесь, что соответствующие ресурсы доступны. Время ожидания запросов от гибридной рабочей роли Runbook и служб автоматизации составляет 30 секунд. После 3 попыток запрос завершится ошибкой. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в разделе [Настройка поддержки гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/azure/log-analytics/log-analytics-oms-gateway).
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 
@@ -111,26 +111,26 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
 
-При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
+При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/en-us/download/details.aspx?id=56519). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
 
 При наличии учетной записи службы автоматизации, определенной для конкретного региона, можно ограничить обмен данными с таким региональным центром обработки данных. В таблице ниже содержатся записи DNS для каждого региона.
 
 | **Регион** | **Запись DNS** |
 | --- | --- |
-| Западно-центральная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
+| Центрально-западная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
-| Восток США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
-| Западный регион США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
+| Восточная часть США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
+| Западная часть США 2 |wus2-jobruntimedata-prod-su1.azure-automation.net</br>wus2-agentservice-prod-su1.azure-automation.net |
 | Центральная Канада |cc-jobruntimedata-prod-su1.azure-automation.net</br>cc-agentservice-prod-1.azure-automation.net |
 | Западная Европа |we-jobruntimedata-prod-su1.azure-automation.net</br>we-agentservice-prod-1.azure-automation.net |
 | Северная Европа |ne-jobruntimedata-prod-su1.azure-automation.net</br>ne-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Азия |sea-jobruntimedata-prod-su1.azure-automation.net</br>sea-agentservice-prod-1.azure-automation.net|
 | Центральная Индия |cid-jobruntimedata-prod-su1.azure-automation.net</br>cid-agentservice-prod-1.azure-automation.net |
-| Восточная часть Японии |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
-| Восточная часть Австралии |ae-jobruntimedata-prod-su1.azure-automation.net</br>ae-agentservice-prod-1.azure-automation.net |
+| Восточная Япония |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
+| Восточная Австралия |ae-jobruntimedata-prod-su1.azure-automation.net</br>ae-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Австралия |ase-jobruntimedata-prod-su1.azure-automation.net</br>ase-agentservice-prod-1.azure-automation.net |
-| Южная часть Великобритании | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
-| Правительство штата Вирджиния | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
+| Южная часть Соединенного Королевства | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
+| US Gov (Вирджиния) | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
 
 Для списка IP-адресов региона вместо его имен скачайте XML-файл [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) из Центра загрузки Майкрософт и ознакомьтесь с ним.
 
@@ -145,13 +145,13 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 В дополнение к стандартным адресам и портам, которые требуются гибридной рабочей роли Runbook, для Управления обновлениями необходимы следующие адреса. Взаимодействие с этими адресами выполняется через порт 443.
 
-|Azure Public  |Azure Government  |
+|Azure Public  |Azure для государственных организаций  |
 |---------|---------|
 |*.ods.opinsights.azure.com     |*.ods.opinsights.azure.us         |
 |*.oms.opinsights.azure.com     | *.oms.opinsights.azure.us        |
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Дополнительные сведения об устранении неполадок с гибридными рабочими ролями Runbook см. в разделе [Troubleshooting Hybrid Runbook Workers](troubleshoot/hybrid-runbook-worker.md#general) (Поиск и устранение неисправностей гибридных рабочих ролей Runbook).

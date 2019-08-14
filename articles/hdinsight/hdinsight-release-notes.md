@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.openlocfilehash: b6e9a340a1fdcbe3ee24b8c81d171ade04c63139
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 7c31520efd881e8e0b5ed309f62d273bac59c0e3
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68880036"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945027"
 ---
-# <a name="release-notes-for-azure-hdinsight"></a>Заметки о выпуске Azure HDInsight
+# <a name="release-notes"></a>Заметки о выпуске
 
 Эта статья содержит сведения о **последних** обновлениях выпуска Azure HDInsight. Дополнительные сведения о предыдущих выпусках см. в статье [Заметки о выпуске для компонентов Hadoop в Azure HDInsight (архив)](hdinsight-release-notes-archive.md).
 

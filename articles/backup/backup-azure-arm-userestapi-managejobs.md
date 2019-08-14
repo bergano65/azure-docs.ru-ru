@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: dacurwin
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
-ms.openlocfilehash: a8ba5727dea214343e7696ff3193aba13922be03
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: b10283c2946d01101b941d53b6bf03be3a12e99e
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689450"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954908"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
-Служба Azure Backup активирует задания, которые можно запустить в фоне в различных сценариях, таких как активация резервного копирования, операции восстановления, отключение резервного копирования. Эти задания можно отслеживать с помощью идентификаторов.
+Azure Backup служба активирует задания, выполняемые в фоновом режиме, в различных сценариях, таких как запуск резервного копирования, операции восстановления, отключение резервного копирования. Эти задания можно отслеживать с помощью идентификаторов.
 
 ## <a name="fetch-job-information-from-operations"></a>Получение информации о задании из операций
 

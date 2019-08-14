@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 3ad599182191e41ea43d38260692a7ab46e1af6f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f3386d04cd3316b38a094524d0d5d4f3c5ab36bb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845002"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986836"
 ---
 # <a name="use-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN
 
@@ -40,7 +40,7 @@ Azure CDN помогает защитить конфиденциальность
 
 ## <a name="shared-access-signatures"></a>Подписанные URL-адреса
 
-По умолчанию конечные точки хранилища BLOB-объектов запрещают анонимный доступ на чтение. Если для вашей конечной точки хранилища BLOB-объектов настроен запрет анонимного доступа на чтение, указывайте токен [подписанного URL-адреса](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) в каждом запросе к личному домену. Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](storage-manage-access-to-resources.md).
+По умолчанию конечные точки хранилища BLOB-объектов запрещают анонимный доступ на чтение. Если для вашей конечной точки хранилища BLOB-объектов настроен запрет анонимного доступа на чтение, указывайте токен [подписанного URL-адреса](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) в каждом запросе к личному домену. Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](storage-manage-access-to-resources.md).
 
 Azure CDN не учитывает ограничений, добавленных к токену подписанного URL-адреса. Например, срок всех токенов подписанного URL-адреса истекает. Вы по-прежнему можете получить доступ к содержимому с просроченным подписанным URL-адресом до того, как оно удалится с граничных узлов Azure CDN. Вы можете контролировать срок хранения данных в кэше Azure CDN, задавая заголовок ответа кэша. Дополнительные сведения об этом см. в статье [Управление сроком действия хранилища BLOB-объектов Azure в Azure CDN](../../cdn/cdn-manage-expiration-of-blob-content.md).
 

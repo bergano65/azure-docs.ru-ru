@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: bacb677b8354c0b0e219ce7483a1446a96c28288
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 369069ef9a9c562ef6ba88a46dc0ef82c4debba1
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855533"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950682"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -100,7 +100,7 @@ API-интерфейсы RESTFUL для больших двоичных объе
 | **Blobfuse** |Еще не поддерживается|
 | **Личные домены** |Еще не поддерживается|
 | **Обозреватель файловой системы** | Ограниченная поддержка |
-| **Журнал ведения диагностики** |Журналы диагностики поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzureStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Обязательно укажите `Blob` в качестве значения `-ServiceType` параметра, как показано в этом примере. 
+| **Журнал ведения диагностики** |Журналы диагностики поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Обязательно укажите `Blob` в качестве значения `-ServiceType` параметра, как показано в этом примере. 
 | **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в черве [(запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
 | **Уровни уровня объектов** |Уровни "крутой" и "архивный" поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br> Все остальные уровни доступа пока не поддерживаются.|
 | **Поддержка PowerShell и интерфейса командной строки** | Ограниченная функциональность <br><br>Поддерживаются такие операции управления, как создание учетной записи. Операции с плоскостью данных, такие как отправка и скачивание файлов, доступны в общедоступной предварительной версии в рамках многопротокольного [доступа к Data Lake Storage](data-lake-storage-multi-protocol-access.md). Работа с каталогами и Настройка списков управления доступом (ACL) пока не поддерживаются. |

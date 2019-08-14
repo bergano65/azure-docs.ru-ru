@@ -1,58 +1,58 @@
 ---
-title: Настроить свойства протокола удаленного рабочего СТОЛА с помощью PowerShell, Azure
-description: Способы настройки протокола удаленного рабочего СТОЛА свойства для Windows виртуальному рабочему столу с помощью командлетов PowerShell.
+title: Настройка свойств RDP с помощью PowerShell — Azure
+description: Настройка свойств RDP для виртуальных рабочих столов Windows с помощью командлетов PowerShell.
 services: virtual-desktop
-author: v-hevem
+author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.author: v-hevem
-ms.openlocfilehash: ce14f990272fa1e70d07c0f4a1f18025b536eccc
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.author: helohr
+ms.openlocfilehash: 624edaea9a0fb56e34eb83f033dfdab64985bd5c
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67618865"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950712"
 ---
-# <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настроить свойства протокола удаленного рабочего стола для кластера узлов
+# <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
 
-Настройка свойств протокола удаленного рабочего стола (RDP) пула узла, например несколькими мониторами более удобной и перенаправление звука, предоставляющее нужные оптимальной работы для пользователей под свои нужды. Можно настроить свойства протокола удаленного рабочего СТОЛА в виртуальный рабочий стол Windows с помощью **- CustomRdpProperty** параметр в **RdsHostPool набора** командлета.
+Настройка свойств протокол удаленного рабочего стола пула узлов (RDP), таких как использование нескольких мониторов и перенаправление звука, позволяет обеспечить оптимальную работу пользователей в зависимости от их потребностей. Свойства RDP можно настроить в виртуальном рабочем столе Windows с помощью параметра **-кустомрдппроперти** в командлете **Set-рдшостпул** .
 
-См. в разделе [параметры файла удаленного рабочего СТОЛА](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files) полный список поддерживаемых свойств и их значения по умолчанию.
+Полный список поддерживаемых свойств и их значений по умолчанию см. в разделе [параметры удаленный рабочий стол RDP-файла](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files) .
 
 Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
 
-## <a name="add-or-edit-a-single-custom-rdp-property"></a>Добавление или изменение одного пользовательского свойства протокола удаленного рабочего СТОЛА
+## <a name="add-or-edit-a-single-custom-rdp-property"></a>Добавление или изменение одного настраиваемого свойства RDP
 
-Чтобы добавить или изменить одного пользовательского свойства протокола удаленного рабочего СТОЛА, выполните следующий командлет PowerShell:
+Чтобы добавить или изменить одно настраиваемое свойство RDP, выполните следующий командлет PowerShell:
 
 ```powershell
 Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty "<property>"
 ```
-![Снимок экрана PowerShell командлет Get-RDSRemoteApp с именем и FriendlyName выделены.](media/singlecustomrdpproperty.png)
+![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](media/singlecustomrdpproperty.png)
 
-## <a name="add-or-edit-multiple-custom-rdp-properties"></a>Добавить или изменить несколько настраиваемых свойств протокола удаленного рабочего СТОЛА
+## <a name="add-or-edit-multiple-custom-rdp-properties"></a>Добавление или изменение нескольких настраиваемых свойств RDP
 
-Чтобы добавить или изменить несколько настраиваемых свойств протокола удаленного рабочего СТОЛА, выполните следующие командлеты PowerShell, предоставляя пользовательские свойства протокола удаленного рабочего СТОЛА, как строка разделенных точкой с запятой:
+Чтобы добавить или изменить несколько настраиваемых свойств RDP, выполните следующие командлеты PowerShell, предоставив настраиваемые свойства RDP в виде строки с разделителями-запятыми:
 
 ```powershell
 $properties="<property1>;<property2>;<property3>"
 Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty $properties
 ```
-![Снимок экрана PowerShell командлет Get-RDSRemoteApp с именем и FriendlyName выделены.](media/multiplecustomrdpproperty.png)
+![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](media/multiplecustomrdpproperty.png)
 
-## <a name="reset-all-custom-rdp-properties"></a>Сброс всех настраиваемых свойств протокола удаленного рабочего СТОЛА
+## <a name="reset-all-custom-rdp-properties"></a>Сброс всех настраиваемых свойств RDP
 
-Вы можете сбросить отдельные пользовательские свойства протокола удаленного рабочего СТОЛА к значениям по умолчанию, следуя инструкциям в [Добавление или изменение одного пользовательского свойства протокола удаленного рабочего СТОЛА](#add-or-edit-a-single-custom-rdp-property), или вы можете сбросить все пользовательские свойства протокола удаленного рабочего СТОЛА для кластера узлов, выполнив следующую Командлет PowerShell:
+Можно восстановить значения по умолчанию для отдельных настраиваемых свойств RDP, следуя инструкциям в разделе [Добавление или изменение одного настраиваемого](#add-or-edit-a-single-custom-rdp-property)свойства RDP или сброс всех настраиваемых свойств RDP для пула узлов, выполнив следующий командлет PowerShell:
 
 ```powershell
 Set-RdsHostPool -TenantName <tenantname> -Name <hostpoolname> -CustomRdpProperty ""
 ```
-![Снимок экрана PowerShell командлет Get-RDSRemoteApp с именем и FriendlyName выделены.](media/resetcustomrdpproperty.png)
+![Снимок экрана командлета PowerShell Get-Рдсремотеапп с выделенным именем и FriendlyName.](media/resetcustomrdpproperty.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы настроили свойства протокола удаленного рабочего СТОЛА для данного узла пула, вы войти в клиент виртуального рабочего стола Windows для проверки их в рамках сеанса пользователя. Чтобы сделать это, перейдите к подключения виртуальный рабочий стол инструкции Windows:
+Теперь, когда вы настроили свойства протокола удаленного рабочего стола для определенного пула узлов, вы можете войти в клиент виртуальных рабочих столов Windows, чтобы протестировать их в рамках сеанса пользователя. Для этого перейдите к инструкциям по подключению к виртуальному рабочему столу Windows.
 
 - [Подключение из Windows 10 и Windows 7](connect-windows-7-and-10.md)
 - [Подключение из веб-браузера](connect-web.md)

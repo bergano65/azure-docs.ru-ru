@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 07/15/2019
+ms.date: 07/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 2d0697567bfd2fcf95a1fe6ebf246646af5650c3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 0f1c66126a1aa9a6ebf6f78ac6fb1ba37ba41829
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564885"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985414"
 ---
 # <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure
 
@@ -50,17 +50,7 @@ ms.locfileid: "68564885"
 
 В примере кода показано, как получить маркер OAuth 2,0 из Azure AD и использовать его для авторизации запроса на создание блочного BLOB-объекта. Чтобы получить этот пример, сначала выполните действия, описанные в предыдущих разделах.
 
-Клиентская библиотека [проверки Подлинности Microsoft Azure приложений](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) для .NET (Предварительная версия) упрощает процесс получения и обновления маркера из кода. Клиентская библиотека проверки подлинности приложений управляет проверкой подлинности автоматически. Библиотека использует учетные данные разработчика для проверки подлинности во время локальной разработки. Использовать учетные данные разработчика во время локального развертывания более безопасно, так как вам не нужно создавать учетные данные Azure AD или совместно использовать учетные данные с другими разработчиками. При последующем развертывании решения в Azure библиотека автоматически переключается на использование учетных данных приложения.
-
-### <a name="install-packages"></a>Установка пакетов
-
-Чтобы использовать библиотеку проверки подлинности приложений в приложении службы хранилища Azure, установите последнюю предварительную версию пакета из [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), а также последнюю версии [общей клиентской библиотеки службы хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/) и [клиентской библиотеки хранилища BLOB-объектов Azure. для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/). Добавьте в код следующие операторы **using** :
-
-```csharp
-using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.Azure.Storage.Auth;
-using Microsoft.Azure.Storage.Blob;
-```
+[!INCLUDE [storage-app-auth-lib-include](../../../includes/storage-app-auth-lib-include.md)]
 
 ### <a name="add-the-callback-method"></a>Добавление метода обратного вызова
 

@@ -1,9 +1,9 @@
 ---
-title: Как интегрировать Azure Active Directory журналы с ArcSight, с помощью Azure Monitor | Документация Майкрософт
-description: Узнайте, как интегрировать Azure Active Directory журналы с ArcSight, с помощью Azure Monitor
+title: Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor | Документация Майкрософт
+description: Узнайте, как интегрировать журналы Azure Active Directory с ArcSight с помощью Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: b37bef0d-982e-4e28-86b2-6c61ca524ae1
@@ -14,23 +14,23 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/19/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08a265637274f396497da37706391bf44e0c9107
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6e4f0f81c5f135e885fe06d4fb4fa67514e8781b
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437028"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988157"
 ---
-# <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight, с помощью Azure Monitor
+# <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor
 
 [Micro Focus ArcSight](https://software.microfocus.com/products/siem-security-information-event-management/overview) — это решение SIEM (управление событиями и информацией в сфере безопасности) помогает обнаруживать угрозы безопасности на любой платформе и реагировать на них. Теперь вы можете направлять журналы Azure Active Directory (Azure AD) в ArcSight с помощью Azure Monitor и соединителя ArcSight для Azure AD. Эта функция позволяет отслеживать нарушения безопасности в клиенте с помощью ArcSight.  
 
 В этой статье вы узнаете, как перенаправлять журналы Azure AD в ArcSight с помощью Azure Monitor. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
@@ -57,6 +57,6 @@ ms.locfileid: "60437028"
 
 5. В руководстве по настройке также объясняется, как настроить свойства соединителя в Azure, а также обновить и удалить соединитель. Кроме того, имеется раздел о производительности, в котором говорится о переходе к [плану потребления Azure](https://azure.microsoft.com/pricing/details/functions) и настройке ArcSight Load Balancer, если объем нагрузки событий больше, чем тот, с которым может справиться Syslog NG Daemon SmartConnector.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.softwaregrp.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/2/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf)

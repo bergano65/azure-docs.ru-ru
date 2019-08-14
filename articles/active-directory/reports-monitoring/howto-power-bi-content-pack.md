@@ -2,7 +2,7 @@
 title: Как использовать пакет содержимого Azure Active Directory Power BI | Документация Майкрософт
 description: Узнайте, как использовать пакет содержимого Azure Active Directory Power BI
 services: active-directory
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: addd60fe-d5ac-4b8b-983c-0736c80ace02
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 934562147fedcc81b16fd1ad2534af5662ef4b78
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d56802e96028b6b01b6be749405c56df2648161
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437701"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988233"
 ---
 # <a name="how-to-use-the-azure-active-directory-power-bi-content-pack"></a>Как использовать пакет содержимого Azure Active Directory Power BI
 
@@ -31,7 +31,7 @@ ms.locfileid: "60437701"
 
 Пакет содержимого Power BI для Azure Active Directory (Azure AD) содержит предварительно созданные отчеты, которые помогут понять, как ваши пользователи внедряют и используют функции Azure AD. Это позволяет получить представление обо всех действиях в каталоге, используя разные средства визуализации в Power BI. Кроме того, вы можете создавать собственные информационные панели и предоставлять к ним доступ любому пользователю в организации. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для использования пакета содержимого требуется лицензия Azure AD Premium (P1 или P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
 
@@ -59,8 +59,8 @@ ms.locfileid: "60437701"
 
 - Имя пользователя
 - IP-адрес
-- Расположение 
-- состояние входа. 
+- Местоположение 
+- Состояние входа 
 
 **Воронка SSPR**. С помощью этого отчета вы узнаете, как в организации используется средство SSPR. Вы можете просмотреть данные о том, сколько попыток сброса пароля предпринято с помощью средства SSPR и сколько из них были успешными. Получите подробную информацию о сбоях во время сброса пароля, чтобы проанализировать причины конкретных сбоев. 
 
@@ -112,7 +112,7 @@ ms.locfileid: "60437701"
 
 Общие сведения о Power BI см. в [справочных статьях](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 
-### <a name="refresh-failed"></a>"Сбой обновления" 
+### <a name="refresh-failed"></a>Сбой обновления 
  
 **Как отображается эта ошибка**: электронное сообщение от Power BI или состояние ошибки в журнале обновлений. 
 
@@ -140,7 +140,7 @@ ms.locfileid: "60437701"
 | ---   | ---        |
 | В зависимости от размера клиента шаг может длиться от нескольких минут до получаса. | Если в течение часа сообщение не исчезнет и не отобразится панель мониторинга, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство. Установка пакета содержимого Power BI для Azure Active Directory](quickstart-install-power-bi-content-pack.md).
 * [Что такое отчеты в Azure Active Directory](overview-reports.md).

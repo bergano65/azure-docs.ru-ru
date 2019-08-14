@@ -3,7 +3,7 @@ title: Анализ журналов действий Azure Active Directory с 
 description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 4535ae65-8591-41ba-9a7d-b7f00c574426
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4145ea2162cdd56deb8bbdcfa81d5a90a2ed9382
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 77eb03089d956d0fb32ef0463b3d1cdb49ff0dbb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67611573"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989814"
 ---
-# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD анализировать журналы действий с помощью журналов Azure Monitor
+# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor
 
 После [интеграции журналов действий Azure AD с журналами Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности журналов Azure Monitor, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления анализа журналов для журналов действий Azure AD ](howto-install-use-log-analytics-views.md), чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашу среду.
 
@@ -32,7 +32,7 @@ ms.locfileid: "67611573"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Для работы вам потребуется следующее:
 

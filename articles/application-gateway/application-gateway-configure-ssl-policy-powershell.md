@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 12/3/2018
 ms.author: victorh
-ms.openlocfilehash: e6ba429d3e94f43cf21e6b76b7ef3644ca28fb19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e154b830df6b49855414563be8c740bfe513c85a
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66136044"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967888"
 ---
 # <a name="configure-ssl-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики SSL и комплектов шифров на шлюзе приложений
 
@@ -117,7 +117,6 @@ CipherSuites:
 
 > [!IMPORTANT]
 > При настройке пользовательской политики SSL необходимо выбрать хотя бы один комплект шифров из следующего списка. Для управления серверной частью шлюз приложений использует комплекты шифров RSA SHA256.
-> * TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
 > * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 > * TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 > * TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
@@ -222,6 +221,6 @@ $AppGw = get-Azapplicationgateway -Name $AppGWname -ResourceGroupName $RG
 $SetGW = Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о перенаправлении трафика HTTP на конечную точку HTTPS см. в статье [Общие сведения о перенаправлении для шлюза приложений](application-gateway-redirect-overview.md).

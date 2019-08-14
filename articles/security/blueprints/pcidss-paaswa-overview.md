@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/03/2018
 ms.author: meladie
-ms.openlocfilehash: 231e3f8a43f2c1fc9e798acebbe24d6635d9f6d8
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 9b588a536b89c6c3780c36e8b18da375fda811f7
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68781002"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946609"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-for-pci-dss"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для PCI DSS
 
@@ -82,8 +82,8 @@ ms.locfileid: "68781002"
 
 Это решение создает виртуальную машину в виде присоединенного к домену узла-бастиона со следующими настройками:
 -   [расширение защиты от вредоносных программ](https://docs.microsoft.com/azure/security/fundamentals/antimalware);
--   [Расширение системы диагностики Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
--   [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) с помощью хранилища ключей Azure Key Vault;
+-   [Расширение системы диагностики Azure](../../virtual-machines/windows/extensions-diagnostics-template.md)
+-   [шифрование дисков Azure](../azure-security-disk-encryption-overview.md) с помощью хранилища ключей Azure Key Vault;
 -   [политика автоматического завершения работы](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) для уменьшения степени использования ресурсов виртуальной машины во время простоя.
 -   функция [Credential Guard в Защитнике Windows](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard) должна быть включена, чтобы учетные данные и другие секретные сведения обрабатывались в защищенной среде, изолированной от работающей операционной системы.
 
@@ -95,12 +95,12 @@ ms.locfileid: "68781002"
 
 - размещение внутри защищенной виртуальной сети Azure и использование правил безопасности сети;
 - самозаверяющий сертификат ILB для подключений HTTPS;
-- [внутренняя балансировка нагрузки](https://docs.microsoft.com/azure/app-service-web/app-service-environment-with-internal-load-balancer);
-- отключение [TLS 1.0](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
-- изменение [шифров TLS](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-custom-settings);
-- управление [портами N/W для входящего трафика](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-control-inbound-traffic);
-- [Брандмауэр веб-приложения — ограничения доступа к данным](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-web-application-firewall).
-- разрешение [трафика Базы данных SQL Azure](https://docs.microsoft.com/azure/app-service-web/app-service-app-service-environment-network-architecture-overview).
+- [внутренняя балансировка нагрузки](../../app-service/environment/app-service-environment-with-internal-load-balancer.md);
+- отключение [TLS 1.0](../../app-service/environment/app-service-app-service-environment-custom-settings.md);
+- изменение [шифров TLS](../../app-service/environment/app-service-app-service-environment-custom-settings.md);
+- управление [портами N/W для входящего трафика](../../app-service/environment/app-service-app-service-environment-control-inbound-traffic.md);
+- [Брандмауэр веб-приложения — ограничения доступа к данным](../../app-service/environment/app-service-app-service-environment-web-application-firewall.md).
+- разрешение [трафика Базы данных SQL Azure](../../app-service/environment/app-service-app-service-environment-network-architecture-overview.md).
 
 **Веб-приложение Azure**. [Служба приложений Azure](https://docs.microsoft.com/azure/app-service/) позволяет клиентам создавать и размещать веб-приложения на любых языках без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git.
 
@@ -108,7 +108,7 @@ ms.locfileid: "68781002"
 
 Архитектура определяет частную виртуальную сеть с пространством адресов 10.200.0.0/16.
 
-**Группы безопасности сети**. [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) содержат списки управления доступом (ACL), которые разрешают или запрещают трафик в виртуальной сети. Группы безопасности сети можно использовать для защиты трафика на уровне подсети или отдельной виртуальной машины. Существуют следующие группы безопасности сети:
+**Группы безопасности сети**. [Группы безопасности сети](../../virtual-network/virtual-network-vnet-plan-design-arm.md) содержат списки управления доступом (ACL), которые разрешают или запрещают трафик в виртуальной сети. Группы безопасности сети можно использовать для защиты трафика на уровне подсети или отдельной виртуальной машины. Существуют следующие группы безопасности сети:
 
 - 1 группа безопасности сети для шлюза приложений;
 - 1 группа безопасности сети для среды службы приложений;
@@ -134,17 +134,17 @@ Azure по умолчанию шифрует весь обмен данными 
 
 Архитектура защищает неактивные данные, используя шифрование, аудит базы данных и другие меры.
 
-**Служба хранилища Azure**. Для выполнения требований шифрования неактивных данных все [службы хранилища Azure](https://azure.microsoft.com/services/storage/) используют [Шифрование службы хранилища](https://docs.microsoft.com/azure/storage/storage-service-encryption). Это помогает защищать и охранять данные держателей карт в рамках обязательств по безопасности организаций и соответствия требованиям, определенным в PCI DSS 3.2.
+**Служба хранилища Azure**. Для выполнения требований шифрования неактивных данных все [службы хранилища Azure](https://azure.microsoft.com/services/storage/) используют [Шифрование службы хранилища](../../storage/common/storage-service-encryption.md). Это помогает защищать и охранять данные держателей карт в рамках обязательств по безопасности организаций и соответствия требованиям, определенным в PCI DSS 3.2.
 
-**Шифрование дисков Azure**. Служба [Шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) использует компонент BitLocker в Windows, чтобы обеспечить шифрование томов для дисков данных. Решение интегрируется с Azure Key Vault, что помогает управлять ключами шифрования дисков.
+**Шифрование дисков Azure**. Служба [Шифрование дисков Azure](../azure-security-disk-encryption-overview.md) использует компонент BitLocker в Windows, чтобы обеспечить шифрование томов для дисков данных. Решение интегрируется с Azure Key Vault, что помогает управлять ключами шифрования дисков.
 
 **База данных SQL Azure**. В экземпляре Базы данных Azure SQL используются следующие меры безопасности базы данных:
 
 - [Использование Active Directory для аутентификации и авторизации](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication) обеспечивает централизованное управление удостоверениями для пользователей баз данных и других служб Майкрософт.
-- [Аудит базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing-get-started) позволяет отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.
+- [Аудит базы данных SQL](../../sql-database/sql-database-auditing.md) позволяет отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.
 - В Базе данных SQL Azure настроено [прозрачное шифрование данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql), которое обеспечивает шифрование и расшифровку базы данных, связанных резервных копий и файлов журналов транзакций в реальном времени для защиты неактивных данных. Прозрачное шифрование данных позволяет защитить сохраненные данные от несанкционированного доступа.
 - [Правила брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) предотвращают любой доступ к серверам баз данных без надлежащих разрешений. Брандмауэр предоставляет доступ к базам данным на основе исходного IP-адреса каждого запроса.
-- [Обнаружение угроз SQL](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-get-started) позволяет немедленно выявлять потенциальные угрозы и реагировать на них. При этом поступают оповещения системы безопасности о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных шаблонах доступа к базам данных.
+- [Обнаружение угроз SQL](../../sql-database/sql-database-threat-detection.md) позволяет немедленно выявлять потенциальные угрозы и реагировать на них. При этом поступают оповещения системы безопасности о подозрительных действиях с базами данных, потенциальных уязвимостях, атаках путем внедрения кода SQL и аномальных шаблонах доступа к базам данных.
 - [Зашифрованные столбцы](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) гарантируют, что конфиденциальные данные никогда не отобразятся как открытый текст внутри системы баз данных. После включения шифрования данных получить доступ к данным в виде открытого текста смогут только клиентские приложения и серверы приложений, у которых есть доступ к ключам.
 - [Динамическое маскирование данных Базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started) ограничивает возможность раскрытия конфиденциальных данных, маскируя их для непривилегированных пользователей или приложений. Динамическое маскирование данных может автоматически обнаруживать потенциально конфиденциальные данные и предлагать применение соответствующих масок. Это помогает определить и сократить доступ к данным таким образом, чтобы они не извлекались из базы данных с помощью несанкционированного доступа. Клиенты несут ответственность за настройку параметров динамического маскирования данных в соответствии со своей схемой базы данных.
 
@@ -153,10 +153,10 @@ Azure по умолчанию шифрует весь обмен данными 
 Следующие технологии обеспечивают возможности управления доступом к данным держателей карт в среде Azure:
 
 - [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. Все пользователи этого решения создаются в Azure Active Directory, включая пользователей, обращающихся к Базе данных SQL Azure.
-- Аутентификация приложения выполняется с использованием Azure Active Directory. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications). Кроме того, при шифровании столбцов базы данных используется Azure Active Directory для проверки подлинности приложения в Базе данных Azure SQL. Дополнительные сведения см. в статье о [защите конфиденциальных данных в Базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault).
-- [Управление доступом на основе ролей Azure](https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure) позволяет администраторам определять детальные разрешения доступа, предоставляя его ровно в той мере, которая необходима пользователям для выполнения работы. Вместо предоставления каждому пользователю неограниченных разрешений на ресурсы Azure администраторы могут разрешить только определенные действия для доступа к данным держателей карт. Доступ к подписке есть только у администратора подписки.
-- [Azure Active Directory Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-getting-started) позволяет клиентам свести к минимуму число пользователей, имеющих доступ к определенной информации, например данным держателей карт. Администраторы могут использовать Azure Active Directory Privileged Identity Management для обнаружения, ограничения и отслеживания привилегированных удостоверений, а также их доступа к ресурсам. Эту функцию можно также задействовать для получения административного JIT-доступа по требованию, когда это необходимо.
-- [Защита идентификации Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) выявляет потенциальные уязвимости, затрагивающие удостоверения организации, настраивает автоматическое реагирование на обнаруженные подозрительные действия, связанные с удостоверениями организации, и исследует подозрительные инциденты для принятия соответствующих мер по их устранению.
+- Аутентификация приложения выполняется с использованием Azure Active Directory. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md). Кроме того, при шифровании столбцов базы данных используется Azure Active Directory для проверки подлинности приложения в Базе данных Azure SQL. Дополнительные сведения см. в статье о [защите конфиденциальных данных в Базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault).
+- [Управление доступом на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md) позволяет администраторам определять детальные разрешения доступа, предоставляя его ровно в той мере, которая необходима пользователям для выполнения работы. Вместо предоставления каждому пользователю неограниченных разрешений на ресурсы Azure администраторы могут разрешить только определенные действия для доступа к данным держателей карт. Доступ к подписке есть только у администратора подписки.
+- [Azure Active Directory Privileged Identity Management](../../active-directory/privileged-identity-management/pim-getting-started.md) позволяет клиентам свести к минимуму число пользователей, имеющих доступ к определенной информации, например данным держателей карт. Администраторы могут использовать Azure Active Directory Privileged Identity Management для обнаружения, ограничения и отслеживания привилегированных удостоверений, а также их доступа к ресурсам. Эту функцию можно также задействовать для получения административного JIT-доступа по требованию, когда это необходимо.
+- [Защита идентификации Azure Active Directory](../../active-directory/identity-protection/overview.md) выявляет потенциальные уязвимости, затрагивающие удостоверения организации, настраивает автоматическое реагирование на обнаруженные подозрительные действия, связанные с удостоверениями организации, и исследует подозрительные инциденты для принятия соответствующих мер по их устранению.
 
 ### <a name="security"></a>Безопасность
 
@@ -179,33 +179,33 @@ Azure по умолчанию шифрует весь обмен данными 
 **Шлюз приложений Azure**. Архитектура снижает риск уязвимостей безопасности с помощью шлюза приложений Azure с настроенным брандмауэром веб-приложения и включенным набором правил OWASP. Доступны следующие дополнительные возможности:
 
 - [сквозное SSL-подключение](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell);
-- включение [разгрузки SSL](https://docs.microsoft.com/azure/application-gateway/application-gateway-ssl-portal);
+- включение [разгрузки SSL](../../application-gateway/create-ssl-portal.md);
 - отключение [TLS версий 1.0 и 1.1](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell);
-- [брандмауэр веб-приложения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-overview) (режим предотвращения);
+- [брандмауэр веб-приложения](../../application-gateway/waf-overview.md) (режим предотвращения);
 - [режим предотвращения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-portal) с набором правил OWASP 3.0.
 - включение [ведения журналов диагностики](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics);
-- [пользовательские пробы работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal);
+- [пользовательские пробы работоспособности](../../application-gateway/quick-create-portal.md);
 - [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
 
 ### <a name="logging-and-auditing"></a>Ведение журналов и аудит
 
 Службы Azure обеспечивают детальную запись системных и пользовательских действий, а также сведений о работоспособности системы.
-- **Журналы действий**. [Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) предоставляют информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
-- **Журналы диагностики**. [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) включают все журналы, создаваемые ресурсами. К этим журналам относятся системные журналы событий Windows, журналы службы хранилища Azure, журналы аудита Key Vault, а также журналы брандмауэра и доступа к шлюзу приложений. Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней.
+- **Журналы действий**. [Журналы действий](../../azure-monitor/platform/activity-logs-overview.md) предоставляют информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий помогают определить инициатора операции, время события и состояние.
+- **Журналы диагностики**. [Журналы диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md) включают все журналы, создаваемые ресурсами. К этим журналам относятся системные журналы событий Windows, журналы службы хранилища Azure, журналы аудита Key Vault, а также журналы брандмауэра и доступа к шлюзу приложений. Все журналы диагностики обеспечивают запись данных в централизованную и зашифрованную учетную запись Azure для архивирования. В соответствии с требованиями конкретной организации пользователь может настроить срок хранения до 730 дней.
 
 **Журналы Azure Monitor**. Эти журналы консолидируются в [журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/) для обработки, хранения и создания отчетов на панели мониторинга. Собранные данные объединяются в отдельные таблицы для каждого типа данных в рабочих областях Log Analytics, что позволяет анализировать все данные независимо от первичного источника. Кроме того, центр безопасности Azure интегрируется с журналами Azure Monitor, что позволяет клиентам использовать запросы Kusto для доступа к данным событий безопасности и объединения их с данными из других служб.
 
-В состав этой архитектуры входят следующие [решения мониторинга](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions) Azure:
--   [Оценка Active Directory](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment). Решение "Проверка работоспособности Active Directory" регулярно оценивает риски и работоспособность серверных сред и предоставляет список рекомендаций, относящихся к развернутой серверной инфраструктуре, в порядке приоритета.
-- [Оценка SQL](https://docs.microsoft.com/azure/log-analytics/log-analytics-sql-assessment). Решение "Проверка работоспособности SQL" регулярно оценивает риски и работоспособность серверных сред и предоставляет клиентам список рекомендаций, относящихся к развернутой серверной инфраструктуре и перечисленных в порядке приоритета.
-- [Работоспособность агентов](https://docs.microsoft.com/azure/operations-management-suite/oms-solution-agenthealth). Решение "Работоспособность агентов" сообщает количество развернутых агентов, их географическое распределение, а также количество агентов, которые перестают отвечать на запросы, и агентов, которые отправляют операционные данные.
--   [Аналитика журнала действий](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity). Решение Azure Activity Log Analytics помогает анализировать журналы действий Azure во всех подписках Azure для клиента.
+В состав этой архитектуры входят следующие [решения мониторинга](../../monitoring/monitoring-solutions.md) Azure:
+-   [Оценка Active Directory](../../azure-monitor/insights/ad-assessment.md). Решение "Проверка работоспособности Active Directory" регулярно оценивает риски и работоспособность серверных сред и предоставляет список рекомендаций, относящихся к развернутой серверной инфраструктуре, в порядке приоритета.
+- [Оценка SQL](../../azure-monitor/insights/sql-assessment.md). Решение "Проверка работоспособности SQL" регулярно оценивает риски и работоспособность серверных сред и предоставляет клиентам список рекомендаций, относящихся к развернутой серверной инфраструктуре и перечисленных в порядке приоритета.
+- [Работоспособность агентов](../../monitoring/monitoring-solution-agenthealth.md). Решение "Работоспособность агентов" сообщает количество развернутых агентов, их географическое распределение, а также количество агентов, которые перестают отвечать на запросы, и агентов, которые отправляют операционные данные.
+-   [Аналитика журнала действий](../../azure-monitor/platform/collect-activity-logs.md). Решение Azure Activity Log Analytics помогает анализировать журналы действий Azure во всех подписках Azure для клиента.
 
-**Служба автоматизации Azure**. [Служба автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker) обеспечивает хранение и выполнение модулей runbook, а также управление ими. В этом решении модули runbook помогают собирать журналы из Базы данных SQL Azure. Решение [Отслеживание изменений](https://docs.microsoft.com/azure/automation/automation-change-tracking) службы автоматизации позволяет клиентам легко определять изменения в среде.
+**Служба автоматизации Azure**. [Служба автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker) обеспечивает хранение и выполнение модулей runbook, а также управление ими. В этом решении модули runbook помогают собирать журналы из Базы данных SQL Azure. Решение [Отслеживание изменений](../../automation/change-tracking.md) службы автоматизации позволяет клиентам легко определять изменения в среде.
 
 **Azure Monitor**. [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) помогает пользователям отслеживать производительность, поддерживать безопасность и выявлять тенденции, предоставляя организациям возможность аудита, создания оповещений и архивации данных, включая отслеживание вызовов API в ресурсах Azure.
 
-**Application Insights**. [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) — это расширяемая служба управления производительностью приложений для веб-разработчиков на нескольких платформах. Application Insights обнаруживает аномалии производительности и может использоваться клиентами для мониторинга динамического веб-приложения. Эта служба содержит мощные аналитические средства, которые помогают клиентам диагностировать проблемы и понять, что пользователи фактически делают в их приложении. Эта служба помогает клиентам постоянно улучшать производительность и удобство использования.
+**Application Insights**. [Application Insights](../../azure-monitor/app/app-insights-overview.md) — это расширяемая служба управления производительностью приложений для веб-разработчиков на нескольких платформах. Application Insights обнаруживает аномалии производительности и может использоваться клиентами для мониторинга динамического веб-приложения. Эта служба содержит мощные аналитические средства, которые помогают клиентам диагностировать проблемы и понять, что пользователи фактически делают в их приложении. Эта служба помогает клиентам постоянно улучшать производительность и удобство использования.
 
 ## <a name="threat-model"></a>Модель рисков
 

@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 12/19/2018
+ms.date: 8/12/2019
 ms.author: atsenthi
-ms.openlocfilehash: e5fb28b176ce14a9b871b2a6a775e0017fcc993d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a5e452bf3dc9f35c345a5f27af829904b4839ece
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052670"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977124"
 ---
 # <a name="service-fabric-application-and-service-manifests"></a>Манифесты службы и приложения Service Fabric
 В этой статье описывается, как с помощью файлов ApplicationManifest.xml и ServiceManifest.xml определяются приложения и службы Service Fabric и выполняется управление их версиями.  Более подробные примеры см. [здесь](service-fabric-manifest-examples.md).  Сведения о схеме XML для этих файлов манифеста см. в статье [Документация по схеме ServiceFabricServiceModel.xsd](service-fabric-service-model-schema.md).
@@ -96,8 +96,12 @@ ms.locfileid: "67052670"
 </Settings>
 ```
 
-Служба Service Fabric **конечной точки** является примером ресурсы структуры службы. Ресурс Service Fabric можно объявлять и изменять без изменения скомпилированного кода. Доступ к ресурсам Service Fabric, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента **SecurityGroup**. Если ресурс конечной точки определен в манифесте службы, Service Fabric назначает порты из диапазона зарезервированных портов приложений, если порт не указан явным образом. Дополнительные сведения см. в статье [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md).
+Примером Service Fabric ресурса является **Конечная точка** службы Service Fabric. Ресурс Service Fabric может быть объявлен или изменен без изменения скомпилированного кода. Доступ к ресурсам Service Fabric, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента **SecurityGroup**. Если ресурс конечной точки определен в манифесте службы, Service Fabric назначает порты из диапазона зарезервированных портов приложений, если порт не указан явным образом. Дополнительные сведения см. в статье [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md).
 
+ 
+> [!WARNING]
+> При проектировании статические порты не должны пересекаться с диапазоном портов приложений, указанным в ClusterManifest. Если указан статический порт, назначьте его за пределами диапазона портов приложения, в противном случае это приведет к конфликтам портов. При использовании выпуска 6.5 CU2 мы выпустим **предупреждение о работоспособности** , когда обнаружите такой конфликт, но разрешите, что развертывание продолжит синхронизироваться с поставленным поведением 6,5. Однако мы можем не допустить развертывания приложения из следующих основных выпусков.
+>
 
 <!--
 For more information about other features supported by service manifests, refer to the following articles:
@@ -147,6 +151,7 @@ For more information about other features supported by service manifests, refer 
     <Service Name="VotingWeb" ServicePackageActivationMode="ExclusiveProcess">
       <StatelessService ServiceTypeName="VotingWebType" InstanceCount="[VotingWeb_InstanceCount]">
         <SingletonPartition />
+         <PlacementConstraints>(NodeType==NodeType0)</PlacementConstraints
       </StatelessService>
     </Service>
   </DefaultServices>
@@ -163,10 +168,12 @@ For more information about other features supported by service manifests, refer 
 
 **Сертификаты** (не задано в предыдущем примере). Объявляет сертификаты, используемые для [установки конечных точек HTTPS](service-fabric-service-manifest-resources.md#example-specifying-an-https-endpoint-for-your-service) или[ для шифрования секретов в манифесте приложения](service-fabric-application-secret-management.md).
 
-**Политики** (не задан в предыдущем примере). описывает сбор журналов, [запуска от имени по умолчанию](service-fabric-application-runas-security.md), [работоспособности](service-fabric-health-introduction.md#health-policies), и [безопасности access](service-fabric-application-runas-security.md) политики, задаваемые в уровень приложения, включая ли службы имеют доступ к среде выполнения Service Fabric.
+**Ограничения на размещение** — это инструкции, определяющие, где должны выполняться службы. Эти инструкции присоединяются к отдельным службам, выбранным для одного или нескольких свойств узла. Дополнительные сведения см. в разделе [ограничения размещения и синтаксис свойства Node](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#placement-constraints-and-node-property-syntax) .
+
+**Политики** (не задано в предыдущем примере) описывает сбор журналов, [Запуск по умолчанию](service-fabric-application-runas-security.md), [работоспособность](service-fabric-health-introduction.md#health-policies)и политики [безопасности](service-fabric-application-runas-security.md) для установки на уровне приложения, включая доступность служб для доступа к Service Fabric среде выполнения.
 
 > [!NOTE] 
-> По умолчанию приложения Service Fabric имеют доступ к среде выполнения Service Fabric, в виде конечной точки, принимая запросы от приложения и переменные среды, указывающие на пути к файлам на узле, содержащие структуры и файлы приложения . Рекомендуется отключить такой доступ, если приложения размещены ненадежного кода (т. е. код которого provenance неизвестно, или который знает, владелец приложения не следует безопасен для исполнения). Дополнительные сведения см. в разделе [рекомендации по обеспечению безопасности в Service Fabric](service-fabric-best-practices-security.md#platform-isolation). 
+> По умолчанию Service Fabric приложения имеют доступ к среде выполнения Service Fabric, в форме конечной точки, принимающей запросы конкретного приложения, и переменные среды, указывающие на пути к файлам на узле, содержащем файлы структуры и приложения. . Рекомендуется отключить этот доступ, когда приложение размещает ненадежный код (т. е. код, проверенное состояние которого неизвестно, или что владелец приложения не может быть надежным для выполнения). Дополнительные сведения см. в разделе рекомендации по [обеспечению безопасности в Service Fabric](service-fabric-best-practices-security.md#platform-isolation). 
 >
 
 **Субъекты** (не задано в предыдущем примере). Описывает субъекты безопасности (пользователи и группы), необходимые для [запуска служб и защиты ресурсов служб](service-fabric-application-runas-security.md).  На субъекты можно ссылаться в разделах **политики**.
@@ -184,7 +191,7 @@ For more information about other features supported by application manifests, re
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Создайте пакет приложения](service-fabric-package-apps.md) и подготовьте его к развертыванию.
 - [Развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md).
 - [Управление приложениями для использования в нескольких средах](service-fabric-manage-multiple-environment-app-configuration.md).

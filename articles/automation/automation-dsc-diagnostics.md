@@ -1,6 +1,6 @@
 ---
-title: Пересылать настройки состояния службы автоматизации Azure, данные отчетов журналов Azure Monitor
-description: В этой статье описана процедура отправки Desired State Configuration (DSC) данные из настройки состояния службы автоматизации Azure в Azure Monitor журналы отчетов для получения дополнительных сведений и управления.
+title: Пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor
+description: В этой статье показано, как отправить данные отчетов о настройке требуемого состояния (DSC) из конфигурации состояния службы автоматизации Azure в журналы Azure Monitor для предоставления дополнительных сведений и управления.
 services: automation
 ms.service: automation
 ms.subservice: dsc
@@ -9,19 +9,19 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 50779f8a37713bda8b27c1cfd2ca37eed4edbd11
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6b7feb1b980054ba224173d5054907879a88cdd5
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67054713"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952878"
 ---
-# <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылать настройки состояния службы автоматизации Azure, данные отчетов журналов Azure Monitor
+# <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor
 
-Настройки состояния службы автоматизации Azure хранит данные о состоянии узла в течение 30 дней.
-В рабочую область Log Analytics можно отправить данные о состоянии узла, если вы хотите сохранить эти данные на более длительное время.
+В конфигурации состояния службы автоматизации Azure данные о состоянии узла сосохранены в течение 30 дней.
+Вы можете отправить данные о состоянии узла в рабочую область Log Analytics, если вы предпочитаете хранить эти данные в течение более длительного периода.
 Сведения о состоянии соответствий узлов и отдельных ресурсов DSC в конфигурации узла можно просмотреть на портале Azure или с помощью PowerShell.
-С помощью журналов Azure Monitor вы можете:
+С помощью журналов Azure Monitor можно:
 
 - получать сведения о соответствии требованиям для управляемых узлов и отдельных ресурсов;
 - активировать сообщение электронной почты или предупреждение (в зависимости от состояния соответствия);
@@ -31,18 +31,19 @@ ms.locfileid: "67054713"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы начать отправку отчетов настройки состояния службы автоматизации в журналы Azure Monitor, вам потребуется:
+Чтобы начать отправку отчетов о конфигурации состояния автоматизации в журналы Azure Monitor, вам потребуется:
 
 - Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](/powershell/azure/overview) (вер. 2.3.0).
 - Учетная запись службы автоматизации Azure. Дополнительные сведения см. в статье [Приступая к работе со службой автоматизации Azure](automation-offering-get-started.md)
-- Рабочая область Log Analytics с предложением службы **Автоматизация и управление**. Дополнительные сведения см. в разделе [приступить к работе с журналами Azure Monitor](../log-analytics/log-analytics-get-started.md).
+- Рабочая область Log Analytics с предложением службы **Автоматизация и управление**. Дополнительные сведения см. в статье [Приступая к работе с журналами Azure Monitor](../log-analytics/log-analytics-get-started.md).
 - Как минимум один узел службы "Настройка состояния службы автоматизации Azure". Дополнительные сведения см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).
+- Модуль [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0) версии 2.7.0.0 или более поздней. Инструкции по установке см. [в разделе Просмотр журналов DSC на узле](./troubleshoot/desired-state-configuration.md#steps-to-troubleshoot-desired-state-configuration-dsc).
 
-## <a name="set-up-integration-with-azure-monitor-logs"></a>Настройка интеграции журналов Azure Monitor
+## <a name="set-up-integration-with-azure-monitor-logs"></a>Настройка интеграции с журналами Azure Monitor
 
-Чтобы начать импорт данных из Azure Automation DSC в журналы Azure Monitor, выполните следующие действия:
+Чтобы начать импорт данных из Automation DSC Azure в журналы Azure Monitor, выполните следующие действия.
 
 1. Войдите в свою учетную запись Azure в PowerShell. См. статью [Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 1. Получите идентификатор _ResourceId_ для учетной записи службы автоматизации, выполнив следующую команду PowerShell (при наличии нескольких учетных записей службы автоматизации выберите _ResourceID_ для учетной записи, которую требуется настроить):
@@ -65,7 +66,7 @@ ms.locfileid: "67054713"
    Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $true -Category 'DscNodeStatus'
    ```
 
-Если вы хотите остановить импорт данных из настройки состояния службы автоматизации Azure в Azure Monitor журналы, выполните следующую команду PowerShell:
+Если вы хотите отключить импорт данных из конфигурации состояния службы автоматизации Azure в журналы Azure Monitor, выполните следующую команду PowerShell:
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $false -Category 'DscNodeStatus'
@@ -73,7 +74,7 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 ## <a name="view-the-state-configuration-logs"></a>Просмотр журналов State Configuration
 
-После настройки интеграции с журналами Azure Monitor для данных настройки состояния службы автоматизации, **поиска по журналам** кнопки будут отображаться на **узлов DSC** колонке учетной записи службы автоматизации. Нажмите кнопку **Поиск по журналам**, чтобы просмотреть журналы для данных узла DSC.
+После настройки интеграции с журналами Azure Monitor для данных конфигурации состояния службы автоматизации в колонке **узлы DSC** учетной записи службы автоматизации появится кнопка **поиска** по журналам. Нажмите кнопку **Поиск по журналам**, чтобы просмотреть журналы для данных узла DSC.
 
 ![Кнопка поиска по журналам](media/automation-dsc-diagnostics/log-search-button.png)
 
@@ -95,33 +96,33 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 Чтобы создать правило генерации оповещений, начните с создания поиска журналов для записей отчетов State Configuration, которые должны вызывать оповещение. Щелкните кнопку **+ Новое правило генерации оповещений**, чтобы создать и настроить правило генерации оповещений.
 
-1. На странице обзора рабочей области Log Analytics, щелкните **журналы**.
+1. На странице обзора рабочей области Log Analytics щелкните **журналы**.
 1. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `Type=AzureDiagnostics Category='DscNodeStatus' NodeName_s='DSCTEST1' OperationName='DscNodeStatusData' ResultType='Failed'`
 
-   Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации.  
-   Имя учетной записи службы автоматизации можно получить из поля "Ресурс" для поискового запроса DscNodeStatusData.  
-1. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах для настройки оповещения см. в разделе [создать правило генерации оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
+   Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации.
+   Имя учетной записи службы автоматизации можно получить из поля "Ресурс" для поискового запроса DscNodeStatusData.
+1. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки предупреждения см. в разделе [Создание правила генерации оповещений](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
 
 ### <a name="find-failed-dsc-resources-across-all-nodes"></a>Поиск ресурсов DSC со сбоями по всем узлам
 
-Одно из преимуществ с помощью журналов Azure Monitor является возможность поиска проверок со сбоями по узлам.
+Одним из преимуществ использования журналов Azure Monitor является то, что можно выполнять поиск непройденных проверок на разных узлах.
 Чтобы найти все экземпляры ресурсов DSC со сбоями, выполните следующие действия:
 
-1. На странице обзора рабочей области Log Analytics, щелкните **журналы**.
+1. На странице обзора рабочей области Log Analytics щелкните **журналы**.
 1. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `Type=AzureDiagnostics Category='DscNodeStatus' OperationName='DscResourceStatusData' ResultType='Failed'`
 
 ### <a name="view-historical-dsc-node-status"></a>Просмотр состояния узла DSC за предыдущие периоды
 
-Наконец, вам может понадобиться визуализировать изменение состояния узла DSC с течением времени.  
+Наконец, вам может понадобиться визуализировать изменение состояния узла DSC с течением времени.
 Для поиска состояния узла DSC за предыдущие периоды можно использовать следующий запрос:
 
-`Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category=DscNodeStatus NOT(ResultType="started") | measure Count() by ResultType interval 1hour`  
+`Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category=DscNodeStatus NOT(ResultType="started") | measure Count() by ResultType interval 1hour`
 
 При этом отобразится диаграмма состояния узла с течением времени.
 
-## <a name="azure-monitor-logs-records"></a>Azure Monitor регистрирует записи
+## <a name="azure-monitor-logs-records"></a>Записи журналов Azure Monitor
 
-При диагностике из службы автоматизации Azure создаются записи двух категорий в журналах Azure Monitor.
+Диагностика из службы автоматизации Azure создает две категории записей в журналах Azure Monitor.
 
 ### <a name="dscnodestatusdata"></a>DscNodeStatusData
 
@@ -137,7 +138,7 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | HostName_s | Имя управляемого узла. |
 | IPAddress | Адрес IPv4 управляемого узла. |
 | Категория | DscNodeStatus |
-| Ресурс | Имя учетной записи службы автоматизации Azure. |
+| Resource | Имя учетной записи службы автоматизации Azure. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | NodeId_g |Идентификатор GUID для определения управляемого узла. |
 | DscReportId_g |Идентификатор GUID для определения отчета. |
@@ -145,11 +146,11 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | ReportStartTime_t |Дата и время начала отчета. |
 | ReportEndTime_t |Дата и время завершения отчета. |
 | NumberOfResources_d |Количество ресурсов DSC, которые вызывались в примененной к узлу конфигурации. |
-| SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
+| SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResourceId |Указывает учетную запись службы автоматизации Azure. |
 | ResultDescription | Описание для этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
-| ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
+| Группа ресурсов | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
 | ResourceType | AUTOMATIONACCOUNTS |
 | CorrelationId |Идентификатор GUID для корреляции отчета о соответствии. |
@@ -163,7 +164,7 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | ResultType |Подтверждено ли соответствие ресурса. |
 | NodeName_s |Имя управляемого узла. |
 | Категория | DscNodeStatus |
-| Ресурс | Имя учетной записи службы автоматизации Azure. |
+| Resource | Имя учетной записи службы автоматизации Azure. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | NodeId_g |Идентификатор GUID для определения управляемого узла. |
 | DscReportId_g |Идентификатор GUID для определения отчета. |
@@ -176,25 +177,25 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | ErrorCode_s | Код ошибки при сбое ресурса. |
 | ErrorMessage_s |Сообщение об ошибке при сбое ресурса. |
 | DscResourceDuration_d |Период выполнения ресурса DSC в секундах. |
-| SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
+| SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResourceId |Указывает учетную запись службы автоматизации Azure. |
 | ResultDescription | Описание для этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
-| ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
+| Группа ресурсов | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
 | ResourceType | AUTOMATIONACCOUNTS |
 | CorrelationId |Идентификатор GUID для корреляции отчета о соответствии. |
 
 ## <a name="summary"></a>Сводка
 
-Отправляя данные конфигурации состояния службы автоматизации в Azure Monitor журналы, вы можете получить лучше понять состояние узлов путем настройки состояния службы автоматизации:
+Отправляя данные конфигурации состояния автоматизации в журналы Azure Monitor, вы сможете получить более подробные сведения о состоянии узлов конфигурации состояния автоматизации, выполнив следующие действия.
 
 - настроить оповещения, уведомляющие вас о проблемах;
-- с помощью пользовательских представлений и поисковых запросов визуализировать результаты модуля Runbook, состояние задания Runbook и другие связанные ключевые индикаторы или метрики.  
+- с помощью пользовательских представлений и поисковых запросов визуализировать результаты модуля Runbook, состояние задания Runbook и другие связанные ключевые индикаторы или метрики.
 
-Журналы Azure Monitor предоставляет больший оперативный контроль над данные конфигурации состояния службы автоматизации и может помочь быстрее устранять инциденты.
+Журналы Azure Monitor обеспечивают более высокую оперативную видимость данных конфигурации состояния службы автоматизации и позволяют быстрее решать инциденты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения см. в статье с [обзором "Настройка состояния службы автоматизации Azure"](automation-dsc-overview.md).
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
@@ -202,5 +203,5 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 - Справочник по командлетам PowerShell для службы "Настройка состояния службы автоматизации Azure" см. в [этой статье](/powershell/module/azurerm.automation/#automation).
 - Сведения о ценах см. на странице [с ценами на службу "Настройка состояния службы автоматизации Azure"](https://azure.microsoft.com/pricing/details/automation/).
 - Пример использования службы "Настройка состояния службы автоматизации Azure" и Chocolatey в конвейере непрерывного развертывания см. в [этой статье](automation-dsc-cd-chocolatey.md).
-- Дополнительные сведения о том, как создавать различные поисковые запросы и просматривать журналы настройки состояния службы автоматизации с помощью журналов Azure Monitor, см. в разделе [при поиске по журналам в журналах Azure Monitor](../log-analytics/log-analytics-log-searches.md)
-- Дополнительные сведения о журналах Azure Monitor и источниках собираемых данных см. в разделе [Обзор записывает данные в хранилище Azure, сбор в Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md)
+- Дополнительные сведения о том, как создавать различные поисковые запросы и просматривать журналы конфигурации состояния автоматизации с помощью журналов Azure Monitor, см. [в разделе Поиск по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-searches.md) .
+- Дополнительные сведения о Azure Monitor журналах и источниках сбора данных см. [в разделе Сбор данных службы хранилища Azure в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md) .

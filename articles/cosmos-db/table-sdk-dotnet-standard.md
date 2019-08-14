@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: b3ebd8b6f65ec86d338932579f5d4ccec6a90be3
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: e92c2e58122556f90b25f070fff9e6e6616b0257
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704728"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976847"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -31,8 +31,13 @@ ms.locfileid: "68704728"
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
 |**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
+|**Сообщить о проблемах**|[Сообщить о проблемах](https://github.com/Azure/azure-cosmos-table-dotnet/issues)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name104104"></a><a name="1.0.4"/>1.0.4
+* Исправления ошибок
+* Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
 ### <a name="a-name104-preview104-preview"></a><a name="1.0.4-preview"/>1.0.4 — Предварительная версия
 * Исправления ошибок
@@ -71,6 +76,7 @@ ms.locfileid: "68704728"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.0.4](#1.0.4) |Аугуест 12, 2019 |--- |
 | [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |
 | 1.0.2-предварительная версия |2 мая 2019 г. |--- |
 | [1.0.1](#1.0.1) |19 апреля 2019 г. |--- |
@@ -86,4 +92,4 @@ ms.locfileid: "68704728"
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также
-Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md). 
+Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md).

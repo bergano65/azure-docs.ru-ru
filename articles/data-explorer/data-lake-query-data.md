@@ -7,12 +7,12 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: cd53e1386d9d6f2a38beb1661554c8cc9116169d
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: ef4dfc4370c71eac1978a6f3535b571a5e6009b5
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494862"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950141"
 ---
 # <a name="query-data-in-azure-data-lake-using-azure-data-explorer-preview"></a>Запрос данных в Azure Data Lake с помощью обозреватель данных Azure (Предварительная версия)
 
@@ -45,8 +45,11 @@ Azure обозреватель данных интегрируется с хра
     dataformat=csv (h@'http://storageaccount.blob.core.windows.net/container1;secretKey') 
     with (compressed = true)  
     ```
-
-    Этот запрос создает ежедневные разделы *container1/гггг/мм/дд/all_exported_blobs. csv*. При более детализированном секционировании ожидается повышение производительности. Например, запросы к внешним таблицам с ежедневными секциями, например приведенными выше, будут иметь лучшую производительность, чем запросы с месячными секционированными таблицами.
+    
+    > [!NOTE]
+    > * При более детализированном секционировании ожидается повышение производительности. Например, запросы к внешним таблицам с ежедневными секциями будут иметь лучшую производительность, чем запросы с месячными секционированными таблицами.
+    > * При определении внешней таблицы с секциями структура хранения должна быть идентичной.
+Например, если таблица определена с Секцией даты в формате гггг/мм/дд (по умолчанию), то путь к файлу хранилища URI должен быть *container1/гггг/мм/дд/all_exported_blobs*. 
 
 1. Внешняя таблица отображается в левой области веб-интерфейса.
 
@@ -195,7 +198,7 @@ T1 | join T on ProductId | take 10
 
 ### <a name="query-taxirides-external-table-data"></a>Запрос данных внешней таблицы *таксиридес* 
 
-Войдите в, чтобы  [выполнитьзапросквнешнейтаблице https://dataexplorer.azure.com/clusters/help/databases/Samples](https://dataexplorer.azure.com/clusters/help/databases/Samples) таксиридес. 
+Войдите в, чтобы [выполнитьзапросквнешнейтаблице https://dataexplorer.azure.com/clusters/help/databases/Samples](https://dataexplorer.azure.com/clusters/help/databases/Samples) таксиридес. 
 
 #### <a name="query-taxirides-external-table-without-partitioning"></a>Запрос внешней таблицы *таксиридес* без секционирования
 

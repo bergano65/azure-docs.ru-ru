@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 6ecb481245484332221e45b8f27c776291ea532d
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 1065abecb1f0ef57eb13b1ec3f194f07ae01eaee
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736415"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976790"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>Настройка бизнес-глоссария для регулируемого добавления тегов
 
@@ -36,11 +36,11 @@ ms.locfileid: "68736415"
 
 Доступ к бизнес-глоссарию можно получить с помощью параметра **Глоссарий** в меню навигации портала каталога данных.  
 
-![Обращение к бизнес-глоссарию](./media/data-catalog-how-to-business-glossary/01-portal-menu.png)
+![Каталог данных — доступ к бизнес-глоссарию](./media/data-catalog-how-to-business-glossary/01-portal-menu.png)
 
 Создавать, изменять и удалять термины в бизнес-глоссарии могут администраторы каталога данных и участники роли администраторов глоссария. Все пользователи каталога данных могут просматривать определения терминов и помечать ресурсы терминами глоссария.
 
-![Добавление нового термина глоссария](./media/data-catalog-how-to-business-glossary/02-new-term.png)
+![Каталог данных — Добавление нового термина глоссария](./media/data-catalog-how-to-business-glossary/02-new-term.png)
 
 ## <a name="creating-glossary-terms"></a>Создание терминов глоссария
 

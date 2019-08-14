@@ -4,17 +4,17 @@ description: Узнайте, в каких операционных систем
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 07/22/2019
+ms.date: 08/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 9b9acac829fd128a66e3ceea603bb804adf2a88b
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: fdecc34b49b853c34624cabf4688e0387c303a16
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598585"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985802"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -67,7 +67,7 @@ Azure IoT Edge работает в большинстве операционны
 | Windows 10 IoT Корпоративная, сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | Windows Server 2019, сборка 17763 | ![Windows Server 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | Windows Server IoT 2019, сборка 17763 | ![Windows Server IoT 2019 и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows 10 IoT базовая, сборка 17763 | Общедоступная предварительная версия |  |  |
+| Windows 10 IoT базовая, сборка 17763 | ![Windows IoT базовая и AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 
 
 Перечисленные выше операционные системы Windows являются требованиями для устройств, которые работают с контейнерами Windows в Windows. Эта конфигурация является единственной поддерживаемой конфигурацией для рабочей среды. Пакеты установки Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows. Однако эта конфигурация предназначена только для разработки и тестирования. Контейнеры Linux в Windows не поддерживаются в рабочей среде. Для этого сценария разработки подойдет любая версия Windows 10 сборки 14393 или более поздней и Windows Server 2016 или более поздней версии.

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 1fdaef319235b90d05dc6ddc6d8eb1c5bb7ba294
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 1374f2f819c0c5704ecf01f4d8412fd78c8560c3
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720704"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966954"
 ---
 # <a name="copy-data-from-mariadb-using-azure-data-factory"></a>Копирование данных из MariaDB с помощью фабрики данных Azure
 
@@ -30,6 +30,10 @@ ms.locfileid: "68720704"
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
 Сейчас этот соединитель поддерживает MariaDB версий 10.0 — 10.2.
+
+## <a name="prerequisites"></a>предварительные требования
+
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -45,7 +49,7 @@ ms.locfileid: "68720704"
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **MariaDB** | Да |
 | connectionString | Строка для подключения к MariaDB через интерфейс ODBC. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример.**
 

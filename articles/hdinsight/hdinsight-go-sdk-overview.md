@@ -1,28 +1,28 @@
 ---
-title: Azure HDInsight пакета SDK для Go
-description: Справочник по Azure HDInsight пакета SDK для Go
+title: Пакет Azure HDInsight SDK для Go
+description: Справочник по Azure HDInsight SDK для Go
 author: tylerfox
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/8/2019
 ms.author: tyfox
 ms.custom: seodec18
-ms.openlocfilehash: 113948d77d87a34822f81f020b03f6628b9c5e84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 299e99d291e593ec01d2951c62541a7666565528
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65466223"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977048"
 ---
-# <a name="hdinsight-sdk-for-go-preview"></a>HDInsight SDK для Go (Предварительная версия)
+# <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
 
 ## <a name="overview"></a>Обзор
-Пакет SDK HDInsight для Go предоставляет классы и функции, которые дают возможность управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
+Пакет SDK для HDInsight для Go предоставляет классы и функции, позволяющие управлять кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
 
 > [!NOTE]  
 >Справочные материалы GoDoc для этого пакета SDK также можно найти [здесь](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись Azure. Если у вас ее нет, [получите бесплатную пробную версию](https://azure.microsoft.com/free/).
 * [Перейти](https://golang.org/dl/).
@@ -31,12 +31,12 @@ ms.locfileid: "65466223"
 
 Из расположения GOPATH запустите следующий файл: `go get github.com/Azure/azure-sdk-for-go/tree/master/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight`
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого вы получите экземпляр `ClustersClient`, в котором доступны различные функции (описанные далее) операций управления.
 
 > [!NOTE]  
-> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/go/azure/azure-sdk-go-authorization).
+> Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/azure/go/azure-sdk-go-authorization).
 
 ### <a name="authentication-example-using-a-service-principal"></a>Пример аутентификации с помощью субъекта-службы
 
@@ -70,7 +70,7 @@ az account set -s <name or ID of subscription>
 ```
 
 > [!IMPORTANT]  
-> Если вы еще не зарегистрировали поставщик ресурсов HDInsight другой функцией (например, создав кластер HDInsight на портале Azure), вам нужно сделать однократно перед можно выполнить проверку подлинности. Это можно сделать с помощью [Azure Cloud Shell](https://shell.azure.com/bash), выполнив такую команду:
+> Если вы еще не зарегистрировали поставщик ресурсов HDInsight с помощью другой функции (например, создав кластер HDInsight с помощью портал Azure), это необходимо сделать, прежде чем можно будет пройти проверку подлинности. Это можно сделать с помощью [Azure Cloud Shell](https://shell.azure.com/bash), выполнив такую команду:
 >```azurecli-interactive
 >az provider register --namespace Microsoft.HDInsight
 >```
@@ -375,7 +375,7 @@ extClient.GetMonitoringStatus(context.Background(), "<Resource Group Name", "Clu
 extClient.DisableMonitoring(context.Background(), "<Resource Group Name", "Cluster Name")
 ```
 
-## <a name="script-actions"></a>Действия сценария
+## <a name="script-actions"></a>Действия скрипта
 
 В кластерах HDInsight поддерживается функция конфигурации с использованием действий сценариев, которая вызывает пользовательские сценарии настройки кластера.
 
@@ -475,6 +475,6 @@ for (page.NotDone()) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Просмотрите [справочные материалы GoDoc](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight). GoDocs предоставляет справочную документацию по всем функциям в пакете SDK.

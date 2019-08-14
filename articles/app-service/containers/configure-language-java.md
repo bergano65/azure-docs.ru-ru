@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 1488dbdcc042b29880560e7255de96b8d0409779
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 825379c04c22b3f13e651455c490a58ad47169d8
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498504"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967164"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -243,9 +243,6 @@ public int getServerPort()
 
 В этом разделе показано, как подключить приложения Java, развернутые в службе приложений Azure на платформе Linux, с помощью платформ мониторинга производительности приложений NewRelic и AppDynamics (APM).
 
-[Настройка нового Relic](#configure-new-relic)
-[Настройка AppDynamics](#configure-appdynamics)
-
 ### <a name="configure-new-relic"></a>Настройка New Relic
 
 1. Создайте учетную запись NewRelic на сайте [NewRelic.com](https://newrelic.com/signup)
@@ -258,7 +255,6 @@ public int getServerPort()
     - Если приложение использует **Java SE**, создайте переменную среды `JAVA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar`.
     - Если вы используете **Tomcat**, создайте переменную среды `CATALINA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar`.
     - Если вы используете **вилдфли**, ознакомьтесь с новой документацией Relic [здесь](https://docs.newrelic.com/docs/agents/java-agent/additional-installation/wildfly-version-11-installation-java) , чтобы получить рекомендации по установке агента Java и конфигурации JBoss.
-    - Если у вас уже есть переменная среды `JAVA_OPTS` или `CATALINA_OPTS`, добавьте параметр `javaagent` в конец текущего значения.
 
 ### <a name="configure-appdynamics"></a>Настройка AppDynamics
 
@@ -270,6 +266,8 @@ public int getServerPort()
     - Если вы используете **Java SE**, создайте переменную среды `JAVA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>`, где `<app-name>` — имя службы приложений.
     - Если вы используете **Tomcat**, создайте переменную среды `CATALINA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>`, где `<app-name>` — имя службы приложений.
     - Если вы используете **вилдфли**, см. документацию AppDynamics [здесь](https://docs.appdynamics.com/display/PRO45/JBoss+and+Wildfly+Startup+Settings) , чтобы получить рекомендации по установке агента Java и конфигурации JBoss.
+
+>  Если у вас уже есть переменная среды `JAVA_OPTS` или `CATALINA_OPTS`, добавьте параметр `-javaagent:/...` в конец текущего значения.
 
 ## <a name="configure-jar-applications"></a>Настройка JAR-приложений
 

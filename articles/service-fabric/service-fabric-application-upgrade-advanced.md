@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 3cdddac74552b56dfe3567adf30f1a05b6eb8e24
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a3d0d6077da4df9a7f0d1b246c9752d38488a175
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60616540"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963818"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложений Service Fabric: дополнительные разделы
 ## <a name="adding-or-removing-service-types-during-an-application-upgrade"></a>Добавление или удаление типов служб во время обновления приложения
@@ -86,6 +86,44 @@ app1/
 
 Другими словами, создайте полный пакет приложения, а затем удалите все папки пакета кода, конфигурации или данных, для которых версия не изменилась.
 
+## <a name="upgrade-application-parameters-independently-of-version"></a>Обновить параметры приложения независимо от версии
+
+Иногда желательно изменить параметры Service Fabric приложения, не изменяя версию манифеста. Это можно сделать с помощью флага **-аппликатионпараметер** с командлетом **Start-ServiceFabricApplicationUpgrade** Azure Service Fabric PowerShell. Предположим, что Service Fabric приложение со следующими свойствами:
+
+```PowerShell
+PS C:\> Get-ServiceFabricApplication -ApplicationName fabric:/Application1
+
+ApplicationName        : fabric:/Application1
+ApplicationTypeName    : Application1Type
+ApplicationTypeVersion : 1.0.0
+ApplicationStatus      : Ready
+HealthState            : Ok
+ApplicationParameters  : { "ImportantParameter" = "1"; "NewParameter" = "testBefore" }
+```
+
+Теперь обновите приложение с помощью командлета **Start-ServiceFabricApplicationUpgrade** . В этом примере показано отслеживаемое обновление, но можно также использовать Неотслеживаемое обновление. Полное описание флагов, принятых этим командлетом, см. в [справочнике по модулю PowerShell для Service Fabric Azure](/powershell/module/servicefabric/start-servicefabricapplicationupgrade?view=azureservicefabricps#parameters) .
+
+```PowerShell
+PS C:\> $appParams = @{ "ImportantParameter" = "2"; "NewParameter" = "testAfter"}
+
+PS C:\> Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/Application1 -ApplicationTypeVers
+ion 1.0.0 -ApplicationParameter $appParams -Monitored
+
+```
+
+После обновления убедитесь, что приложение имеет обновленные параметры и ту же версию:
+
+```PowerShell
+PS C:\> Get-ServiceFabricApplication -ApplicationName fabric:/Application1
+
+ApplicationName        : fabric:/Application1
+ApplicationTypeName    : Application1Type
+ApplicationTypeVersion : 1.0.0
+ApplicationStatus      : Ready
+HealthState            : Ok
+ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAfter" }
+```
+
 ## <a name="rolling-back-application-upgrades"></a>Откат обновлений приложений
 
 Хотя обновления можно выполнить в одном из трех режимов (*Monitored*, *UnmonitoredAuto* или *UnmonitoredManual*), откатить их можно только в режиме *UnmonitoredAuto* или *UnmonitoredManual*. Откат в режиме *UnmonitoredAuto* работает так же, как накат. Единственное исключение: другое значение по умолчанию *UpgradeReplicaSetCheckTimeout* (см. статью [Параметры обновления приложений](service-fabric-application-upgrade-parameters.md)). Откат в режиме *UnmonitoredManual* работает так же, как и накат. Он приостанавливается после завершения работы с каждым доменом обновления. Возобновить его можно с помощью командлета [ Resume-ServiceFabricApplicationUpgrade ](https://docs.microsoft.com/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps).
@@ -94,7 +132,7 @@ app1/
 
 Во время отката все еще можно изменить значение *UpgradeReplicaSetCheckTimeout*. Режим также можно изменить в любое время с помощью командлета [Update-ServiceFabricApplicationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/update-servicefabricapplicationupgrade?view=azureservicefabricps).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.

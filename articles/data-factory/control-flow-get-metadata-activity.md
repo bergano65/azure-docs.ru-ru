@@ -11,14 +11,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: b819a990b9f607aaf70bf2e16a5857de3f7306cc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 320e92e45f319e394b5a38b3f1e8ef3f314920b8
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827491"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966346"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Действие получения метаданных в фабрике данных Azure
 
@@ -138,8 +138,8 @@ ms.locfileid: "68827491"
 -------- | ----------- | --------
 fieldList | Содержит типы необходимых сведений о метаданных. Сведения о поддерживаемых метаданных см. в разделе [Параметры метаданных](#metadata-options). | Да 
 dataset | Эталонный набор данных, действие которого требуется получить с помощью действия GetMetadata. Сведения о поддерживаемых соединителях см. в разделе [Поддерживаемые соединители](#supported-capabilities); сведения о синтаксисе набора данных см. в разделе о соединителях. | Да
-форматсеттингс | Применяется при использовании набора данных типа Format (Parquet, DelimitedText). | Нет
-сторесеттингс | Применяется при использовании набора данных типа Format (Parquet, DelimitedText). | Нет
+форматсеттингс | Применяется при использовании набора данных типа Format. | Нет
+сторесеттингс | Применяется при использовании набора данных типа Format. | Нет
 
 ## <a name="sample-output"></a>Пример выходных данных
 

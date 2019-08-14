@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 7/9/2019
 ms.author: b-juche
-ms.openlocfilehash: 6e425eba3159f8840e1a7960f6a6c3171b1ba163
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 9409beea3f22fd7ff09fe49838a37d9ff0b485f6
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850422"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68975915"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -40,7 +40,7 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
 * На соответствующем сервере Windows Active Directory (AD) должны быть открыты правильные порты.  
     Ниже приведены необходимые порты. 
 
-    |     Service           |     Порт     |     Протокол     |
+    |     Служба           |     Порт     |     Протокол     |
     |-----------------------|--------------|------------------|
     |    Веб-службы Active Directory    |    9389      |    TCP           |
     |    DNS                |    53        |    TCP           |
@@ -62,7 +62,7 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
 
 ## <a name="create-an-active-directory-connection"></a>Создание подключения Active Directory
 
-1. В учетной записи NetApp щелкните **Active Directory подключения**, а затем нажмите кнопку присоединиться.  
+1. В учетной записи NetApp щелкните **Active Directory подключения**, а затемнажмите кнопку присоединиться.  
 
     ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections.png)
 
@@ -85,7 +85,7 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
         Это путь LDAP для подразделения, в котором будут созданы учетные записи компьютера сервера SMB. То есть OU = второго уровня, OU = First. 
     * Учетные данные, включая **имя пользователя** и **пароль**
 
-    ![Присоединение Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
+    ![Присоединение каталога Active Directory.](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
 
 3. Щелкните **Соединить**.  
 
@@ -148,4 +148,6 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
 
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
+* [Часто задаваемые вопросы по SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs)
 * [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Установка нового Active Directory леса с помощью Azure CLI](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)

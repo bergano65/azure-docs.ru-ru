@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/10/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: fbeb6dc425709d26768a6185828b900a37c88fb6
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 99773b83f15ea4b386c1078eed510fc233322f0f
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68235045"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985687"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Создание или удаление контейнера в службе хранилища Azure с помощью .NET
 
@@ -31,7 +31,7 @@ ms.locfileid: "68235045"
 
 `https://myaccount.blob.core.windows.net/mycontainer`
 
-## <a name="create-a-container"></a>Создание контейнера
+## <a name="create-a-container"></a>Создать контейнер
 
 Чтобы создать контейнер, вызовите один из следующих методов.
 
@@ -183,7 +183,7 @@ private static async Task DeleteContainersWithPrefixAsync(CloudBlobClient blobCl
 }
 ```
 
-[!INCLUDE [storage-blob-dotnet-resources](../../../includes/storage-blob-dotnet-resources.md)]
+[!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
 ## <a name="see-also"></a>См. также
 

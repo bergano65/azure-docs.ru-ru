@@ -2,7 +2,7 @@
 title: Отчет о событиях входа, представляющих риск, на портале Azure Active Directory | Документация Майкрософт
 description: Описание отчета о событиях входа, представляющих риск, на портале Azure Active Directory.
 services: active-directory
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: 7728fcd7-3dd5-4b99-a0e4-949c69788c0f
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e125f8e1e7909c5866a03c0571f49ec42d690a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 629e7bf8ee7100b5927483ecfd4efa1d9223c151
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60287528"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989919"
 ---
 # <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Отчет о событиях входа, представляющих риск, на портале Azure Active Directory
 
@@ -43,7 +43,7 @@ Azure Active Directory (AAD) обнаруживает подозрительны
 Отчеты о рискованные входы в систему доступны для пользователей в следующих ролях.
 
 - Администратор безопасности
-- глобального администратора;
+- Глобальный администратор
 - Читатель сведений о безопасности
 
 Дополнительные сведения см. в руководстве по [просмотру и назначению ролей администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-manage-roles-portal).
@@ -128,7 +128,7 @@ Azure Active Directory (AAD) обнаруживает подозрительны
 
 ![события входа, представляющие риск.](./media/concept-risky-sign-ins/325.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка политики риска пользователя](../identity-protection/howto-user-risk-policy.md)
 - [Настройка политики снижения рисков при входе](../identity-protection/howto-user-risk-policy.md)

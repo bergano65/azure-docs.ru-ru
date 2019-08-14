@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/05/2019
+ms.date: 08/09/2019
 ms.author: v-adgera
-ms.openlocfilehash: cd67f1065f47b758f2a7e0e5be3c60169c30273e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ceb36d818c84642461372f0df70c8088908550c
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116566"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965814"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -39,11 +39,11 @@ ms.locfileid: "67116566"
 
 1. В разделе **Необходимые разрешения** выберите **Добавить** и введите **Azure Digital Twins** в разделе **Добавить доступ через API**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **Предоставление разрешений > Делегированные разрешения** и нажмите **Готово**.
 
-    [![Регистрация приложений для Azure Active Directory добавьте api](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
+    [![Добавление API Azure Active Directory регистрации приложений](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
-1. Выберите **манифеста** открыть манифест приложения для вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
+1. Выберите **Манифест** , чтобы открыть манифест приложения для приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
 
-    [![Неявный поток Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
+    [![Azure Active Directory неявный поток](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
 1. В качестве **URL-адреса ответа** укажите `https://www.getpostman.com/oauth2/callback`.
 
@@ -62,7 +62,7 @@ ms.locfileid: "67116566"
     https://login.microsoftonline.com/YOUR_AZURE_TENANT.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0
     ```
 
-    | Name  | Заменить на | Пример |
+    | Название  | Заменить на | Пример |
     |---------|---------|---------|
     | YOUR_AZURE_TENANT | Имя вашего клиента или название организации | `microsoft` |
 
@@ -75,12 +75,12 @@ ms.locfileid: "67116566"
     | URL-адрес аутентификации | Использование **URL-адреса авторизации** из шага 2 |
     | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
     | `Scope` | Не указывайте |
-    | Состояние | Не указывайте |
-    | Аутентификация клиента | `Send as Basic Auth header` |
+    | Область | Не указывайте |
+    | Проверка подлинности клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-    [![Пример клиента postman](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
+    [![Пример клиента POST](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
 
@@ -98,22 +98,22 @@ ms.locfileid: "67116566"
 
 1. На вкладке **Верхний колонтитул** добавьте ключ заголовка HTTP-запроса **Content-Type** со значением `multipart/mixed`.
 
-   [![Тип содержимого multipart/mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
+   [![Тип содержимого multipart/Mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
 1. На вкладке **Основной текст** добавьте каждый файл с присвоенным именем **key**, выбрав `file` или `text`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   [![Пример клиента postman](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
+   [![Пример клиента POST](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.
    > * Необходимо указать эти заголовки для каждой части.
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
-1. Наконец, выберите **отправки** Чтобы отправить составной запрос HTTP POST.
+1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об API управления Digital Twins и их использовании см. в статье [How to use Azure Digital Twins management APIs](how-to-navigate-apis.md) (Как использовать API управления Azure Digital Twins).
 
