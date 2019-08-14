@@ -295,6 +295,8 @@
               href: v2-oauth2-device-code.md
             - name: "Предоставление учетных данных владельца ресурса OAuth\_2.0"
               href: v2-oauth-ropc.md
+            - name: "Поток утверждения носителя в OAuth\_2.0 SAML"
+              href: v2-saml-bearer-assertion.md
             - name: Смена ключей подписывания
               href: active-directory-signing-key-rollover.md
             - name: Маркеры идентификации

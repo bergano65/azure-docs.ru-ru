@@ -45,7 +45,7 @@ sections:
     items:
       - type: paragraph
         text: |
-          Пакет SDK для службы "Речь" (<a href="releasenotes.md">заметки о выпуске</a>) можно использовать для добавления в приложения следующих возможностей (и многого другого)&colon;. 
+          Пакет SDK для службы "Речь" (<a href="releasenotes.md">заметки о выпуске</a>) можно использовать для добавления в приложения следующих возможностей (и многого другого)&colon;.
           <div class="row"><div class="column"><ul>
           <li><b><a href="speech-to-text.md">Преобразование речи в текст</a></b> (speech-recognition/SR)</li>
           <li><b><a href="speech-devices-sdk-create-kws.md">Настраиваемое слово для активации</a></b> (keyword-spotter/KWS)</li>
@@ -253,10 +253,9 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: <a href="speech-to-text-sample.md">Преобразование речи в текст</a><br/>
-          - html: <a href="intent.md">Распознавание намерений говорящего</a><br/>
-          - html: <a href="translation.md">Перевод</a>
-          - html: <a href="quickstart-text-to-speech-dotnet-windows.md">Преобразование текста в речь</a><br/>
+          - html: '<a href="how-to-recognize-intents-from-speech-csharp.md">Распознавание намерений в речи с помощью LUIS (C#)</a><br/>'
+          - html: '<a href="tutorial-voice-enable-your-bot-speech-sdk.md">Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#</a><br/>'
+          - html: <a href="../translator/tutorial-build-flask-app-translation-synthesis.md?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json">Создание приложения Flask для перевода текста и синтеза речи (REST)</a><br/>
   - title: Примеры
     items:
       - type: paragraph

@@ -22,7 +22,7 @@ sections:
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Щелкните ссылку в виде стрелки, чтобы узнать, каким образом Azure API для FHIR (предварительная версия) может улучшить взаимодействие на платформе Azure в сфере здравоохранения. <img src="media/index/link.jpg" height="15" width="15"></img>.'
+        text: 'Щелкните ссылку в виде стрелки, чтобы узнать, каким образом Azure API для FHIR (предварительная версия) может улучшить взаимодействие на платформе Azure в сфере здравоохранения <img src="media/index/link.jpg" height="15" width="15"></img>.'
       - type: table
         style: dataMatrix
         columns:

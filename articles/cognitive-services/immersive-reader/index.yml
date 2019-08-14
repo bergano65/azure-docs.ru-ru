@@ -44,14 +44,16 @@ sections:
             text: 'C#'
             alt: 'Логотип C#'
             href: quickstart
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как разрабатывать приложения с использованием Иммерсивного средства чтения:'
       - type: list
         style: unordered
         items:
-          - html: <a href="tutorial.md">Запуск Иммерсивного средства чтения с помощью Node.js</a>
+          - html: <a href="tutorial-nodejs.md">Запуск Иммерсивного средства чтения с помощью Node.js</a>
+          - html: <a href="tutorial-python.md">Запуск иммерсивного средства чтения с помощью Python</a>
+          - html: <a href="tutorial-ios-picture-immersive-reader.md">Запуск иммерсивного средства чтения с помощью Swift</a>
   - title: Справочные материалы
     items:
       - type: list

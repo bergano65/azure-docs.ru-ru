@@ -98,9 +98,6 @@
     - name: Интерпретируемость модели
       displayName: explainability
       href: machine-learning-interpretability-explainability.md
-    - name: 'Сравнение FPGA и ЦП, GPU, ASIC'
-      displayName: 'field, programmable, arrays'
-      href: concept-accelerate-with-fpgas.md
     - name: ONNX
       href: concept-onnx.md
     - name: Безопасность
@@ -260,7 +257,7 @@
       items:
         - name: Конвейеры Машинного обучения
           href: how-to-create-your-first-pipeline.md
-        - name: Конвейеры Azure для CI/CD
+        - name: Azure Pipelines для CI/CD
           displayName: 'continuous, integration, delivery'
           href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context
     - name: Управление квотами ресурсов

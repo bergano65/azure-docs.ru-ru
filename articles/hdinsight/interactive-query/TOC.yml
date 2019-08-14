@@ -191,6 +191,12 @@
     - name: Устранение неполадок
       href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/interactive-query/toc.json&bc=/azure/hdinsight/interactive-query/breadcrumb/toc.json
       items:
+        - name: Зависание приложения Apache Tez
+          href: ./interactive-query-troubleshoot-tez-hangs.md
+        - name: Производительность запросов в LLAP Apache Hive
+          href: ./interactive-query-troubleshoot-query-performance.md
+        - name: Медленная работа средства редукции
+          href: ./interactive-query-troubleshoot-slow-reducer.md
         - name: Истечение времени ожидания Apache Hive View
           href: ./interactive-query-troubleshoot-view-time-out.md
         - name: Проблема с разрешениями при создании таблицы

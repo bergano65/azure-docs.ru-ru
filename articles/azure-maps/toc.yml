@@ -91,23 +91,27 @@
               href: choose-map-style.md
             - name: Добавление элементов управления на карту
               href: map-add-controls.md
+            - name: Создание источника данных
+              href: create-data-source-web-sdk.md
             - name: Добавление слоя символов
               href: map-add-pin.md
-            - name: Добавление контекстного меню
-              href: map-add-popup.md
             - name: Добавление слоя пузырьков
               href: map-add-bubble-layer.md
-            - name: Добавление фигур
+            - name: Добавление слоя линий
+              href: map-add-line-layer.md
+            - name: Добавление слоя многоугольников
               href: map-add-shape.md
             - name: Добавление слоя тепловой карты
               href: map-add-heat-map-layer.md
+            - name: Добавление контекстного меню
+              href: map-add-popup.md
             - name: Данные точек кластера
               href: clustering-point-data-web-sdk.md
             - name: Использование стилистических выражений на основе данных
               href: data-driven-style-expressions-web-sdk.md
             - name: Использование шаблонов образов
               href: how-to-use-image-templates-web-sdk.md
-            - name: Наложение изображения
+            - name: Добавление слоя изображений
               href: map-add-image-layer.md
             - name: Добавление слоев фрагмента карты
               href: map-add-tile-layer.md
@@ -139,6 +143,8 @@
           href: how-to-add-symbol-to-android-map.md
         - name: Добавление фигур
           href: how-to-add-shapes-to-android-map.md
+        - name: Отображение сведений о компоненте
+          href: display-feature-information-android.md
         - name: Добавление слоя фрагментов
           href: how-to-add-tile-layer-android-map.md
 - name: Справочные материалы

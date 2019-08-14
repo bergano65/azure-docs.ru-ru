@@ -14,9 +14,11 @@
 - name: Учебники
   items:
     - name: Запуск Иммерсивного средства чтения (Node.js)
-      href: tutorial.md
+      href: tutorial-nodejs.md
+    - name: Запуск иммерсивного средства чтения (Python)
+      href: tutorial-python.md
     - name: Изображение к Иммерсивному средству чтения (Swift)
-      href: ios-picture-immersive-reader-tutorial.md
+      href: tutorial-ios-picture-immersive-reader.md
 - name: Инструкции
   items:
     - name: Аутентификация Azure Active Directory
