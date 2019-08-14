@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: juliako;mingfeiy
-ms.openlocfilehash: 744887a3b23518a5b970a3fda94bf990806bd2d8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.openlocfilehash: a2d978a68f6f654e3bdeea07c931cd7103f5850c
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61230276"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "69015533"
 ---
 # <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: Настройка политики авторизации ключей содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
@@ -429,9 +429,9 @@ ms.locfileid: "61230276"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда политика авторизации для ключа содержимого настроена, перейдите к статье о [настройке политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md).
 

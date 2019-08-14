@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: Mingfeiy;willzhan;Juliako
-ms.openlocfilehash: dfb82e91b0f65b85d34b7e20d57ed9929469321f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: Juliako
+ms.reviewer: willzhan
+ms.openlocfilehash: 9c61fad333037074f392b019ae61c161673e4008
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61232586"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "69016693"
 ---
 # <a name="using-castlabs-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование castLabs для доставки лицензий Widevine для служб мультимедиа Azure 
 > [!div class="op_single_selector"]
@@ -32,7 +33,7 @@ ms.locfileid: "61232586"
 
 В этой статье описывается использование служб мультимедиа Azure (AMS) для доставки потока, который зашифрован динамически службой AMS, с помощью лицензий DRM PlayReady и Widevine. Лицензию PlayReady выдает сервер лицензирования служб мультимедиа PlayReady, а лицензию Widevine — сервер лицензирования **castLabs** .
 
-Чтобы воспроизвести потоковое содержимое, защищенное с помощью CENC (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html). Подробные сведения см. в [документе по AMP](https://amp.azure.net/libs/amp/latest/docs/).
+Чтобы воспроизвести потоковое содержимое, защищенное с помощью CENC (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://aka.ms/azuremediaplayer). Подробные сведения см. в [документе по AMP](https://amp.azure.net/libs/amp/latest/docs/).
 
 На схеме показана высокоуровневая архитектура служб мультимедиа Azure и интеграция castLabs.
 
@@ -58,7 +59,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 | Издатель | Строка издателя из выбранной службы маркеров безопасности |
 | --- | --- |
 | Аудитория |Строка аудитории из используемой службы маркеров безопасности |
-| Claims |Набор утверждений |
+| Претензии |Набор утверждений |
 | NotBefore |Начало действия маркера |
 | Expires |Конец действия маркера |
 | SigningCredentials |Общий ключ для сервера лицензирования PlayReady, castLabs и службы маркеров безопасности. Он может быть симметричным или асимметричным. |
@@ -67,7 +68,7 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 В приведенной ниже таблице описан маркер JWT в castLabs. 
 
-| Name | Описание |
+| Название | Описание |
 | --- | --- |
 | optData |Строка JSON со сведениями о вас. |
 | crt |Строка JSON со сведениями о файле, лицензии на него и правах на его воспроизведение. |
@@ -101,10 +102,10 @@ CastLabs и AMS поддерживают формат маркера JWT (веб
 
 ## <a name="playing-back-a-video"></a>Воспроизведение видео
 
-Чтобы воспроизвести видео со стандартным шифрованием (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html). При запуске консольного приложения выводится идентификатор ключа содержимого и URL-адрес манифеста.
+Чтобы воспроизвести видео со стандартным шифрованием (PlayReady или Widevine), используйте [Проигрыватель мультимедиа Azure](https://aka.ms/azuremediaplayer). При запуске консольного приложения выводится идентификатор ключа содержимого и URL-адрес манифеста.
 
 1. Откройте новую вкладку и запустите службу маркеров безопасности: http://[имя_службы_маркеров_безопасности].azurewebsites.net/api/token/assetid/[ваш_AssetId_в_CastLabs]/contentkeyid/[идентификатор_ключа_содержимого].
-2. Перейдите к [Проигрывателю мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
+2. Перейдите к [Проигрывателю мультимедиа Azure](https://aka.ms/azuremediaplayer).
 3. Вставьте URL-адрес для потоковой передачи.
 4. Установите флажок **Дополнительные параметры** .
 5. В раскрывающемся списке **Защита** выберите PlayReady и/или Widevine.

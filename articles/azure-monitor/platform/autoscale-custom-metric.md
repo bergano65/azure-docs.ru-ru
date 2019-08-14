@@ -9,10 +9,10 @@ ms.date: 05/07/2017
 ms.author: ancav
 ms.subservice: autoscale
 ms.openlocfilehash: e6423f2ce3659fd3dd738dcc8a990261bc7bf60c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "60334376"
 ---
 # <a name="get-started-with-auto-scale-by-custom-metric-in-azure"></a>Начало работы с автомасштабированием на основе пользовательской метрики в Azure
@@ -21,9 +21,9 @@ ms.locfileid: "60334376"
 Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
 
 ## <a name="lets-get-started"></a>Начало работы
-В данной статье предполагается, что у вас есть веб-приложение, для которого настроена среда Application Insights. Если у вас его нет, вы можете [установить Application Insights для веб-сайта ASP.NET][1].
+В данной статье предполагается, что у вас есть веб-приложение, для которого настроена среда Application Insights. Если вы еще не сделали этого, вы можете [настроить Application Insights для веб-сайта ASP.NET][1] .
 
-- Откройте [портал Azure][2].
+- Открыть [портал Azure][2]
 - В левой области навигации щелкните значок Azure Monitor.
   ![Запуск Azure Monitor][3]
 - Выберите параметр "Автомасштабирование" для просмотра всех ресурсов, к которым применяется автомасштабирование, а также его текущего состояния. ![Обнаружение автомасштабирования в Azure Monitor][4]

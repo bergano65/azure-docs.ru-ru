@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: c96710d6dcca9f5ef99b3a02a0bc875d433f814d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0da8ce396ce07b7c9859fcfccb5cb524c0ce21c1
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463423"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "69015297"
 ---
 # <a name="playing-your-content-with-existing-players"></a>Воспроизведение содержимого с помощью существующих проигрывателей
 Службы мультимедиа Azure поддерживают многие популярные форматы потоковой передачи, например Smooth Streaming, HTTP Live Streaming и MPEG-Dash. В этой статье описываются имеющиеся проигрыватели, которые можно использовать для тестирования потоков.
@@ -31,12 +31,13 @@ ms.locfileid: "61463423"
 
 Важные особенности
 
-* **ПРОИГРЫВАТЕЛЬ КОНТЕНТА СЛУЖБ МУЛЬТИМЕДИА** выполняет воспроизведение из конечной точки потоковой передачи по умолчанию. Если требуется воспроизвести из конечной точке потоковой передачи не по умолчанию, используйте другой проигрыватель. Например, [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
+* **ПРОИГРЫВАТЕЛЬ КОНТЕНТА СЛУЖБ МУЛЬТИМЕДИА** выполняет воспроизведение из конечной точки потоковой передачи по умолчанию. Если требуется воспроизвести из конечной точке потоковой передачи не по умолчанию, используйте другой проигрыватель. Например, [Проигрыватель мультимедиа Azure](https://aka.ms/azuremediaplayer).
 
 ![AMSPlayer][AMSPlayer]
 
 ### <a name="azure-media-player"></a>Проигрыватель мультимедиа Azure
-Используйте [Проигрыватель мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html) для воспроизведения содержимого (незашифрованного или защищенного) в любом из следующих форматов:
+
+Используйте [Проигрыватель мультимедиа Azure](https://aka.ms/azuremediaplayer) для воспроизведения содержимого (незашифрованного или защищенного) в любом из следующих форматов:
 
 * Smooth Streaming
 * MPEG DASH
@@ -44,20 +45,22 @@ ms.locfileid: "61463423"
 * Последовательный MP4
 
 ### <a name="flash-player"></a>Flash Player
+
 #### <a name="aes-encrypted-with-token"></a>Шифрование AES с маркером
+
 [https://aestoken.azurewebsites.net](https://aestoken.azurewebsites.net)
 
-### <a name="silverlight-players"></a>Проигрыватели Silverlight
-
 #### <a name="playready-with-token"></a>PlayReady с маркером
+
 [https://sltoken.azurewebsites.net](https://sltoken.azurewebsites.net)
 
 ### <a name="dash-players"></a>Проигрыватели DASH
+
 [https://dashplayer.azurewebsites.net](https://dashplayer.azurewebsites.net)
 
 [https://dashif.org](https://dashif.org)
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другой
 Для проверки URL-адресов HLS также можно использовать:
 
 * **Safari** на устройстве iOS или

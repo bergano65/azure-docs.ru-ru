@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: milanga;juliako;johndeu
-ms.openlocfilehash: ceaf4d3db71d99c3e87157f9847312fdf4000026
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: milanga; johndeu
+ms.openlocfilehash: d8470ad759d983f25f8f68b93d58f89f23eeb578
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991790"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69015398"
 ---
 # <a name="media-analytics-on-the-media-services-platform"></a>Медиа-аналитика на платформе служб мультимедиа 
 
@@ -64,7 +65,7 @@ Azure Content Moderator позволяет использовать машинн
 
 ### <a name="mp-names"></a>Названия обработчиков мультимедиа
 * Azure Media Indexer 2 (предварительная версия)
-* Azure Media Indexer
+* Индексатор службы мультимедиа Azure
 * Azure Media Face Detector
 * Azure Media Motion Detector
 * Azure Media Video Thumbnails
@@ -124,7 +125,7 @@ Azure Content Moderator позволяет использовать машинн
 ## <a name="demos"></a>Демонстрационные материалы
 Просмотрите [ролики о медиа-аналитике Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html).
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-articles"></a>Связанные статьи
@@ -134,7 +135,7 @@ Azure Content Moderator позволяет использовать машинн
 
 [overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

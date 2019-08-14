@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: juliako;johndeu;anilmur
-ms.openlocfilehash: 0ade52d3ae9714f2b370308253e455bcde7ac7a5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: anilmur
+ms.reviewer: juliako;johndeu
+ms.openlocfilehash: 246a1461973dba129a5b1d12be8a09703eb99267
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60825138"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69015974"
 ---
 # <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>Создание рабочих процессов расширенной кодировки с помощью конструктора рабочих процессов  
 ## <a name="overview"></a>Обзор
@@ -83,7 +84,7 @@ ms.locfileid: "60825138"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 Если вам необходима поддержка или ответы на вопросы по созданию пользовательских рабочих процессов в конструкторе, обращайтесь по следующему адресу электронной почты: mepd@microsoft.com.

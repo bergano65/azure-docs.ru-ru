@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: TomSh
-ms.openlocfilehash: dc4c36735ade8a094acbf897ee040a239a1bed48
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 9053866b76ec1cc409c3f00d0af59bf3761d3936
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727411"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68927982"
 ---
 # <a name="azure-database-security-overview"></a>Общие сведения о защите базы данных Azure
 
@@ -206,7 +206,7 @@ Always Encrypted разделяет пользователей на владел
 
 [Центр безопасности Azure](https://azure.microsoft.com/documentation/services/security-center/) позволяет предотвращать, обнаруживать угрозы и реагировать на них. Он включает в себя встроенные функции мониторинга безопасности и управления политиками для подписок Azure. Он помогает обнаруживать угрозы, которые в противном случае могут остаться незамеченными, и работает с широким спектром решений по обеспечению безопасности.
 
-[Центр безопасности](https://docs.microsoft.com/azure/security-center/security-center-sql-database) помогает защитить данные в базе данных SQL, обеспечивая представление безопасности всех серверов и баз данных. Ниже перечислены возможности центра безопасности:
+[Центр безопасности](../../security-center/security-center-sql-database.md) помогает защитить данные в базе данных SQL, обеспечивая представление безопасности всех серверов и баз данных. Ниже перечислены возможности центра безопасности:
 
 - определение политик для шифрования и аудита базы данных SQL;
 - мониторинг безопасности ресурсов базы данных SQL во всех ваших подписках;

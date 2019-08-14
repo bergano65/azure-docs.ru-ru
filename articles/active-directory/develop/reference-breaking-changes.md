@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 747b279b38ec3b73f19194825195f1b3450d4514
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 38383685f74020f5208d42df4428f896931fbe2a
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834856"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68931788"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "68834856"
 
 **Дата вступления в силу**: 26 июля 2019 г.
 
-**Затронутые конечные точки**: [V 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) и [v 2.0](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow)
+**Затронутые конечные точки**: [V 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) и [v 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow)
 
 **Затронутый протокол**: [Учетные данные клиента (токены только для приложений)](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
 
@@ -69,7 +69,7 @@ ms.locfileid: "68834856"
 
 ### <a name="redirect-uris-can-now-contain-query-string-parameters"></a>URI перенаправления теперь могут содержать параметры строки запроса
 
-**Дата вступления в силу**: 22 июля 2019 г.
+**Дата вступления в силу**: 22 июля 2019 г.
 
 **Затронутые конечные точки**: версии 1.0 и 2.0.
 
@@ -82,7 +82,7 @@ ms.locfileid: "68834856"
 Обратите внимание, что в настоящее время (окончание июля 2019) пользовательский интерфейс регистрации приложений в портал Azure все еще блокирует параметры запроса.  Однако можно изменить манифест приложения вручную, чтобы добавить параметры запроса и проверить это в приложении.  
 
 
-## <a name="march-2019"></a>Март 2019
+## <a name="march-2019"></a>Март 2019 г.
 
 ### <a name="looping-clients-will-be-interrupted"></a>Циклическое выполнение клиентов будет прервано
 

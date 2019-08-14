@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: d488189596fac4ae8fada3899d0b9c1bbe7900c6
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 62859dde7cd4f2335b696eedb2cdfbd1daad9456
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855298"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934946"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Перенос данных с помощью AzCopy и хранилища BLOB-объектов
 
@@ -151,7 +151,7 @@ AzCopy можно использовать для копирования BLOB-о
 > [!NOTE]
 > В настоящее время этот сценарий поддерживается только для учетных записей, у которых нет иерархического пространства имен. 
 
-AzCopy использует [API](https://docs.microsoft.com/en-us/rest/api/storageservices/put-page-from-url)" [сервер-сервер](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) ", поэтому данные копируются непосредственно между серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера.
+AzCopy использует [API](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)" [сервер-сервер](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) ", поэтому данные копируются непосредственно между серверами хранилища. Эти операции копирования не используют пропускную способность сети компьютера.
 
 В этом разделе содержатся следующие примеры:
 

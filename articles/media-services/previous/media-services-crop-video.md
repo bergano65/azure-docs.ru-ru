@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: anilmur;juliako;
-ms.openlocfilehash: 9a81050fca935f688f2ff58cb04a148bf676f04b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: anilmur
+ms.reviewer: juliako
+ms.openlocfilehash: 03d68cc3a60abba8b7189a9d03fbc21d7606f736
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61217220"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "69016611"
 ---
 # <a name="crop-videos-with-media-encoder-standard"></a>Обрезка видео с помощью стандартного кодировщика мультимедиа  
 
@@ -136,7 +137,7 @@ ms.locfileid: "61217220"
 3. Обрезка применяется к видео, записанному в альбомном режиме (т. е. она не применяется к видео, которое записано с использованием смартфона, повернутого вертикально или настроенного на книжный режим).
 4. Рекомендуется применять к прогрессивному видео, которое записывается в пикселях широкоформатного кадра.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="next-step"></a>Дальнейшие действия

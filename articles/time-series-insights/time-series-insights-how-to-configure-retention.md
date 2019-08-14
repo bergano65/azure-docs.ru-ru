@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3235844c8750003d08e996f5065fcef256c2d244
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e5cc1489af1dce3a9a57b96a3240c63e0395c33a
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165665"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947231"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 
@@ -33,7 +33,7 @@ ms.locfileid: "67165665"
 
 Дополнительные сведения об этих параметрах см. в статье, посвященной [обзору периода удержания в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).  
 
-## <a name="configure-data-retention"></a>Настройка времени хранения данных
+## <a name="configure-data-retention"></a>Настройка срока хранения данных
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
@@ -49,6 +49,6 @@ ms.locfileid: "67165665"
 
 1. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статье, посвященной [обзору периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).

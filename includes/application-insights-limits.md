@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: mbullwin
 ms.custom: include file
-ms.openlocfilehash: dd678fb784fa7587912f113a7c00bebca76efce8
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 7bf9c338315f5013be815625b06d633567a801a0
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68857481"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912476"
 ---
 Существует ряд ограничений на количество метрик и событий для каждого приложения, то есть ключа инструментирования. Ограничения зависят от выбранного [ценового плана](https://azure.microsoft.com/pricing/details/application-insights/).
 
@@ -23,7 +23,8 @@ ms.locfileid: "68857481"
 | Регулирование | 32 000 событий в секунду | Ограничение измеряется каждую минуту.
 | Хранение данных | 90 дней | Этот ресурс используется для [поиска](../articles/azure-monitor/app/diagnostic-search.md), [аналитики](../articles/azure-monitor/app/analytics.md) и [обозревателя метрик](../articles/azure-monitor/app/metrics-explorer.md).
 | Хранение подробных результатов [многошагового теста доступности](../articles/azure-monitor/app/availability-multistep.md) | 90 дней | Этот ресурс предоставляет подробные результаты каждого шага.
-| Максимальный размер события | 64 000 |
+| Максимальный размер элемента телеметрии | 64 КБ |
+| Максимальное число элементов телеметрии в пакете | 64 000 |
 | Длина имен свойств и метрик | 150 | См. [схемы типов](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).
 | Длина строки значения свойства | 8192  | См. [схемы типов](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).
 | Длина сообщения трассировки и исключения | 32 768  | См. [схемы типов](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).

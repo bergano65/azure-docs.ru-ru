@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 6f76d6aed8dc5eed3dbf673b265c404f27b0536d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2b96d968cb1ad2ec903dbf9788e1fbae22bd2b7d
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60557192"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "69014973"
 ---
 # <a name="use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Использование динамического шифрования AES-128 и службы доставки ключей
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "60557192"
 >  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Службы мультимедиа можно использовать для доставки содержимого HTTP Live Streaming (HLS) и Smooth Streaming, зашифрованного с помощью 128-битных ключей шифрования AES. Они также включают в себя службу доставки ключей, которая доставляет ключи шифрования авторизованным пользователям. Если нужно зашифровать ресурс-контейнер с помощью служб мультимедиа, то свяжите с ним ключ шифрования и настройте политики авторизации для ключа. Когда поток запрашивается проигрывателем, службы мультимедиа используют указанный ключ для динамического шифрования содержимого с помощью AES. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
@@ -135,7 +135,7 @@ ms.locfileid: "60557192"
     Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 ```
 
-Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://amsplayer.azurewebsites.net/azuremediaplayer.html).
+Для проверки потока можно использовать [проигрыватель служб мультимедиа Azure](https://aka.ms/azuremediaplayer).
 
 ## <a id="client_request"></a>Отправка запроса клиента на получение ключа в службе доставки ключей
 На предыдущем этапе вы создали URL-адрес, указывающий на файл манифеста. Чтобы отправить запрос в службу доставки ключей, клиент должен извлечь необходимые сведения из файлов манифеста потоковой передачи.
@@ -159,7 +159,7 @@ ms.locfileid: "60557192"
 
 При использовании протокола HLS корневой манифест разбивается на файлы сегментов. 
 
-Например, является корневой манифест: http:\//test001.origin.mediaservices.windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl). Он содержит список имен файлов сегментов.
+Например, корневой манифест: http:\//test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/MANIFEST (Format = m3u8-AAPL). Он содержит список имен файлов сегментов.
 
     . . . 
     #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
@@ -168,7 +168,7 @@ ms.locfileid: "60557192"
     QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
     …
 
-Если открыть один из файлов сегментов в текстовом редакторе (например, http:\//test001.origin.mediaservices.windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl), он содержит #EXT-X-KEY, который указывает, что файл зашифрован.
+Если вы откроете один из файлов сегментов в текстовом редакторе (например, http:\//test001.Origin.mediaservices.Windows.NET/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ISM/QualityLevels (514369)/MANIFEST (видео, Format = m3u8-AAPL), Он содержит #EXT-X-KEY, который указывает, что файл зашифрован.
 
     #EXTM3U
     #EXT-X-VERSION:4

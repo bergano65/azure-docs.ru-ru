@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33704c3392726ccd12ca0fd74f26465a54697e11
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 178f81cf42e5c57be4a0b69ada6560d46951a3a3
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722143"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68942846"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
 Данные удостоверений хранятся в службе Azure AD в географическом расположении на основе адреса, предоставленного вашей организацией, при подписке на Microsoft Online Service, например Office 365 и Azure. Сведения о том, где хранятся данные удостоверений, можно найти в разделе [где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) центра управления безопасностью Майкрософт.
@@ -43,6 +43,15 @@ Azure AD B2B хранит приглашения со ссылками для а
 ## <a name="microsoft-azure-active-directory-domain-services-azure-ad-ds"></a>Доменные службы Microsoft Azure Active Directory (Azure AD DS)
 
 Azure AD DS хранит данные пользователей в том же расположении, где размещена виртуальная сеть Azure, выбранная клиентом. Таким образом, если сеть находится за пределами Европы, то данные реплицируются и хранятся за пределами Европы.
+
+## <a name="federation-in-microsoft-exchange-server-2013"></a>Федерация в Microsoft Exchange Server 2013
+    
+- Идентификатор приложения (AppID) — уникальный номер, созданный системой проверки подлинности Azure Active Directory для идентификации организаций Exchange.
+- Список утвержденных федеративных доменов для приложения
+- Открытый ключ подписи маркера приложения 
+
+Дополнительные сведения о Федерации в Microsoft Exchange Server см. в [разделе Федерация: Справочная статья](https://docs.microsoft.com/exchange/federation-exchange-2013-help) по Exchange 2013.
+
 
 ## <a name="other-considerations"></a>Дополнительные рекомендации
 

@@ -13,15 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: willzhan;juliako
-ms.openlocfilehash: 5c86a49cd9dc26f724de12ed2e5e77e645e4ab53
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: willzhan
+ms.reviewer: juliako
+ms.openlocfilehash: d15bfcfbae3b24e1a9b29dc74f9b41a979e63ae9
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61466601"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69014689"
 ---
-# <a name="hybrid-design-of-drm-subsystems"></a>Гибридная структура подсистем DRM 
+# <a name="hybrid-design-of-drm-subsystems"></a>Гибридный дизайн подсистем DRM 
 
 Здесь рассматривается гибридная структура подсистем управления цифровыми правами (DRM) с использованием служб мультимедиа Azure.
 
@@ -130,11 +131,11 @@ ms.locfileid: "61466601"
 
 Таким образом, компоненты DRM служб мультимедиа Azure являются гибкими. Их можно использовать в гибридных сценариях при правильной настройке ключа содержимого и политики доставки ресурсов, как описано в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Оставить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

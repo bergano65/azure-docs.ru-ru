@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 1347e28fe36ffe9595516252aea102d817a705a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8070d0cc302e0c0745216cdd40c9cbbf34e2bf58
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61245127"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "69016635"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
 
@@ -56,16 +56,8 @@ ms.locfileid: "61245127"
 
 ## <a name="contact-the-team"></a>Связаться с командой
 
-Службы мультимедиа Azure, является основной поддержки по электронной почте: **amshelp\@microsoft.com**.
+Основной адрес электронной почты службы поддержки Служб мультимедиа Azure: **amshelp@microsoft.com** .
 
-В следующей таблице перечислены адреса электронной почты подгрупп разработчиков различных функций.
+## <a name="next-steps"></a>Следующие шаги
 
-| Компонент | Email |
-| --- | --- |
-| Аналитика мультимедиа Azure |amsanalytics@microsoft.com |
-| Проигрыватель мультимедиа Azure |ampinfo@microsoft.com |
-| Обозреватель мультимедиа Azure |amse@microsoft.com |
-| Конструктор рабочих процессов |mepd@microsoft.com |
-| Потоковая передача и упаковка файлов |amsstreaming@microsoft.com |
-| Потоковая трансляция и упаковка |amslived@microsoft.com |
-
+[Обзор](media-services-overview.md)

@@ -15,32 +15,32 @@ ms.workload: NA
 ms.date: 6/28/2019
 ms.author: atsenthi
 ms.openlocfilehash: 6c195357c4a037534307571a53589b2ae861d88b
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67486020"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
 Для кластеров, работающих в Azure, рекомендуется использовать Azure Active Directory (Azure AD), чтобы обеспечить безопасность доступа к конечным точкам управления.  В этой статье описывается, как настроить Azure AD для проверки подлинности клиентов для кластера Service Fabric и что нужно сделать перед [созданием кластера](service-fabric-cluster-creation-via-arm.md).  Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. Приложения можно разделить на две группы: те, в которых есть пользовательский веб-интерфейс входа в систему, и те, в которых вход выполняется с помощью собственного клиентского приложения. 
 
-Кластер Service Fabric предлагают несколько точек входа для управления функциями, включая веб интерфейс [Service Fabric Explorer][service-fabric-visualizing-your-cluster] and [Visual Studio][service-fabric-manage-application-in-visual-studio]. В итоге вы создаете два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение.  Создав приложения, сопоставьте пользователей с ролями, разрешающими доступ только для чтения и администрирования.
+Кластеры Service Fabric предлагают несколько точек входа для управления функциями кластеров, включая веб-интерфейс [Service Fabric Explorer][service-fabric-visualizing-your-cluster] и [Visual Studio][service-fabric-manage-application-in-visual-studio]. В итоге вы создаете два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение.  Создав приложения, сопоставьте пользователей с ролями, разрешающими доступ только для чтения и администрирования.
 
 > [!NOTE]
 > Перед созданием кластера необходимо выполнить следующие действия. Поскольку в сценариях предварительно заданы имена кластеров и конечные точки, эти имена нужно выбрать заблаговременно, при этом они должны отличаться от созданных ранее имен.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Краткое руководство. Настройка среды разработки][active-directory-howto-tenant].
 
 Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор сценариев Windows PowerShell.
 
-1. [Клонируйте репозиторий](https://github.com/Azure-Samples/service-fabric-aad-helpers) к компьютеру.
-2. [Убедитесь, что у вас есть все необходимые компоненты](https://github.com/Azure-Samples/service-fabric-aad-helpers#getting-started) для сценариев установки.
+1. [Клонировать репозиторий](https://github.com/Azure-Samples/service-fabric-aad-helpers) на компьютер.
+2. Убедитесь, что для установленных скриптов установлены [все необходимые компоненты](https://github.com/Azure-Samples/service-fabric-aad-helpers#getting-started) .
 
 ## <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
 
-Мы будем использовать скрипты, чтобы создать два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. После создания приложения, представляющие кластер, вы создадите пользователей для [ролями, поддерживаемыми Service Fabric](service-fabric-cluster-security-roles.md): только для чтения и администратора.
+Мы будем использовать эти сценарии для создания двух приложений Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения для представления кластера, вы создадите пользователей для [ролей, поддерживаемых Service Fabric](service-fabric-cluster-security-roles.md): только для чтения и для администратора.
 
 Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей. Пример:
 
@@ -85,7 +85,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ![Диалоговое окно сертификата SFX][sfx-select-certificate-dialog]
 
-#### <a name="reason"></a>`Reason`
+#### <a name="reason"></a>Причина
 Пользователю не назначена роль в приложении кластера Azure AD. Таким образом, аутентификация Azure AD в кластере Service Fabric завершается ошибкой. Service Fabric Explorer воспользуется проверкой подлинности на основе сертификата.
 
 #### <a name="solution"></a>Решение
@@ -104,7 +104,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ![Несовпадение адреса ответа в Service Fabric Explorer][sfx-reply-address-not-match]
 
-#### <a name="reason"></a>`Reason`
+#### <a name="reason"></a>Причина
 Приложение кластера (веб-приложение), представляющее Service Fabric Explorer, пытается выполнить аутентификацию в Azure AD и в составе запроса предоставляет URL-адрес ответа для перенаправления. URL-адрес не указан в списке **URL-АДРЕС ОТВЕТА** приложения Azure AD.
 
 #### <a name="solution"></a>Решение
@@ -125,9 +125,9 @@ Connect-ServiceFabricCluster -ConnectionEndpoint <endpoint> -KeepAliveIntervalIn
 Да. Не забудьте добавить URL-адрес Service Fabric Explorer в (веб-)приложение кластера. В противном случае — Service Fabric Explorer не работает.
 
 ### <a name="why-do-i-still-need-a-server-certificate-while-azure-ad-is-enabled"></a>Почему мне все еще нужен сертификат сервера при включенном Azure AD?
-FabricClient и FabricGateway выполняют взаимную аутентификацию. Во время аутентификации Azure AD интеграция Azure AD предоставляет удостоверение клиента серверу и для аутентификации сервера используется сертификат сервера. Дополнительные сведения о сертификатах Service Fabric, см. в разделе [сертификаты X.509 и Service Fabric][x509-certificates-and-service-fabric].
+FabricClient и FabricGateway выполняют взаимную аутентификацию. Во время аутентификации Azure AD интеграция Azure AD предоставляет удостоверение клиента серверу и для аутентификации сервера используется сертификат сервера. Дополнительные сведения о Service Fabric сертификатах см. в разделе [сертификаты X. 509 и Service Fabric][x509-certificates-and-service-fabric].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После настройки приложений Azure Active Directory и ролей для пользователей [настройте и разверните кластер](service-fabric-cluster-creation-via-arm.md).
 
 

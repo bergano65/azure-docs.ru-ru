@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: dbe3526444bc35815dd4323a3a5290696619e3f9
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 986bed758229d639bb40d0803f7be4a89a0f6e49
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728353"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934810"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение рисков 
 | Продукт или служба | Статья |
@@ -563,7 +563,7 @@ public void ConfigureServices(IServiceCollection services)
 | **Этап SDL**               | Построить |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Выбор шлюза: Центр Интернета вещей Azure |
-| **Справочные материалы**              | [Общие сведения об управлении устройствами с помощью Центра Интернета вещей](https://azure.microsoft.com/documentation/articles/iot-hub-device-management-overview/), [сведения об обновлении встроенного ПО устройства](https://docs.microsoft.com/azure/iot-hub/tutorial-firmware-update) |
+| **Справочные материалы**              | [Общие сведения об управлении устройствами с помощью Центра Интернета вещей](https://azure.microsoft.com/documentation/articles/iot-hub-device-management-overview/), [сведения об обновлении встроенного ПО устройства](../../iot-hub/tutorial-firmware-update.md) |
 | **Действия** | LWM2M — это протокол управления устройствами Интернета вещей, предоставленный международной организацией по разработке открытых стандартов для мобильных телефонов (Open Mobile Alliance, OMA). Управление устройствами Azure IoT позволяет взаимодействовать с физическими устройствами, используя задания устройств. Убедитесь, что облачный шлюз регулярно обновляет устройство и данные конфигурации с помощью функции управления устройствами с помощью Центра Интернета вещей Azure. |
 
 ## <a id="controls-policies"></a>Настройте элементы управления безопасностью конечных точек устройства в соответствии с политиками организации

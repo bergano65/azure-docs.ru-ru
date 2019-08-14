@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b9740d74a25964286ea92b4238684db81a64c9e2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2811685df678730b90f2fdb28d472f8fa268ec6a
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60497511"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932453"
 ---
 # <a name="deploy-a-model-from-visual-studio"></a>Развертывание модели из Visual Studio
 
 После создания сервера в подписке Azure все готово к развертыванию на нем базы данных табличной модели. Для создания и развертывания проекта табличной модели, над которым вы работаете, можно использовать средства SQL Server Data Tools (SSDT). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 
 * **Сервер Analysis Services** в Azure. См. дополнительные сведения о [создании сервера Azure Analysis Services](analysis-services-create-server.md).
-* **Проект табличной модели** в SSDT или существующая табличная модель на уровне совместимости 1200 и выше. Не создавали такую модель ранее? Обратитесь к [руководству по табличному моделированию продаж в Интернете Adventure Works](/sql/analysis-services/tabular-modeling-adventure-works-tutorial).
+* **Проект табличной модели** в SSDT или существующая табличная модель на уровне совместимости 1200 и выше. Не создавали такую модель ранее? Обратитесь к [руководству по табличному моделированию продаж в Интернете Adventure Works](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial).
 * **Локальный шлюз**. Если один или несколько источников данных находятся в локальной сети вашей организации, необходимо установить [локальный шлюз данных](analysis-services-gateway.md). Этот шлюз необходим для подключения сервера в облаке к локальным источникам данных для обработки и обновления данных в модели.
 
 > [!TIP]
@@ -60,7 +60,7 @@ ms.locfileid: "60497511"
 
 Если возникает сбой развертывания на таблице, скорее всего, причина в том, что серверу не удалось подключиться к источнику данных. Если источник данных является локальным в сети организации, не забудьте установить [Локальный шлюз данных](analysis-services-gateway.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После развертывания табличной модели на сервере к нему можно подключиться. Чтобы управлять сервером, вы можете [подключиться к нему с помощью SSMS](analysis-services-manage.md). Также вы можете [подключиться к серверу с помощью клиентского средства](analysis-services-connect.md), например Power BI, Power BI Desktop или Excel, и начать создавать отчеты.
 
