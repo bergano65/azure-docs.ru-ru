@@ -19,10 +19,6 @@
 - name: Основные понятия
   expanded: false
   items:
-    - name: Включение условного доступа
-      href: howto-conditional-access-adoption-kit.md
-    - name: Базовые политики защиты
-      href: concept-baseline-protection.md
     - name: Условия
       href: conditions.md
     - name: Условия расположения
@@ -33,6 +29,8 @@
       href: service-dependencies.md
     - name: Средство "Что если"
       href: what-if-tool.md
+    - name: Базовые политики защиты
+      href: concept-baseline-protection.md
 - name: Руководства
   expanded: true
   items:
@@ -40,16 +38,6 @@
       href: plan-conditional-access.md
     - name: Рекомендации
       href: best-practices.md
-    - name: Базовые политики
-      items:
-        - name: Обязательная многофакторная проверка подлинности для администраторов
-          href: howto-baseline-protect-administrators.md
-        - name: Защита конечных пользователей
-          href: howto-baseline-protect-end-users.md
-        - name: Блокировка устаревших методов проверки подлинности
-          href: howto-baseline-protect-legacy-auth.md
-        - name: Запрашивание MFA для управления службами
-          href: howto-baseline-protect-azure.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
     - name: Условный доступ для регистрации MFA
@@ -68,6 +56,18 @@
       href: howto-conditional-access-session-lifetime.md
     - name: Перенос классических политик
       href: policy-migration.md
+    - name: Базовые политики
+      items:
+        - name: Обязательная многофакторная проверка подлинности для администраторов
+          href: howto-baseline-protect-administrators.md
+        - name: Защита конечных пользователей
+          href: howto-baseline-protect-end-users.md
+        - name: Блокировка устаревших методов проверки подлинности
+          href: howto-baseline-protect-legacy-auth.md
+        - name: Запрашивание MFA для управления службами
+          href: howto-baseline-protect-azure.md
+    - name: Включение условного доступа
+      href: howto-conditional-access-adoption-kit.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок с помощью средства What If

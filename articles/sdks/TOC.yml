@@ -1,7 +1,7 @@
 - name: Пакеты Azure SDK
   href: index.yml
   items:
-    - name: ПАКЕТ SDK .NET
+    - name: Пакет SDK для .NET
       href: /dotnet/azure/?view=azure-dotnet
     - name: Пакет SDK для Java
       href: /java/azure/
@@ -16,4 +16,4 @@
     - name: Xamarin
       href: 'https://azure.microsoft.com/features/xamarin'
     - name: Go
-      href: /go/azure/
+      href: /azure/go/

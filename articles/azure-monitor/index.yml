@@ -25,7 +25,7 @@ sections:
         items:
           - html: <a href="/azure/azure-monitor/azure-monitor-log-hub">Служба Log Analytics</a>
           - html: <a href="/azure/azure-monitor/azure-monitor-app-hub">Application Insights</a>
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как собирать и анализировать метрики и журналы, собранные из ресурсов Azure.'
@@ -74,10 +74,6 @@ sections:
             text: Node.js
             href: /azure/application-insights/app-insights-nodejs-quick-start
           - image:
-              src: 'https://docs.microsoft.com/media/common/java.svg'
-            text: Java
-            href: /azure/application-insights/app-insights-java-quick-start
-          - image:
               src: /azure/application-insights/media/index/mobile-center.png
             text: Мобильные приложения
             href: /azure/application-insights/app-insights-mobile-center-quickstart
@@ -85,17 +81,17 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_web-color.svg'
             text: Веб-сайт
             href: /azure/application-insights/app-insights-website-monitoring
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как анализировать, визуализировать и обрабатывать собранные данные.'
       - type: list
         style: ordered
         items:
-          - html: <a href="/azure/log-analytics/log-analytics-tutorial-viewdata">View or analyze data collected with Log Analytics log search</a> (Просмотр или анализ собранных данных с помощью поиска по журналам Log Analytics)
-          - html: <a href="/azure/log-analytics/log-analytics-tutorial-dashboards">Create and share dashboards of Log Analytics data</a> (Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним)
-          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule">Create an Autoscale Setting for Azure resources based on performance data or a schedule</a> (Создание автоматического масштабирования для ресурсов Azure на основе данных производительности или по расписанию)
-          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data">Archive Azure monitoring data</a> (Архивирование данных мониторинга Azure)
+          - html: <a href="/azure/log-analytics/log-analytics-tutorial-viewdata">Просмотр или анализ собранных данных</a>
+          - html: <a href="/azure/log-analytics/log-analytics-tutorial-dashboards">Создание панелей мониторинга и предоставление общего доступа к ним</a>
+          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule">Автомасштабирование на основе данных производительности или по расписанию</a>
+          - html: <a href="/azure/monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data">Архивирование данных мониторинга</a>
       - type: paragraph
         text: 'Узнайте, как непрерывно повышать производительность и оптимизировать использование своих веб-приложений.'
       - type: list
@@ -103,9 +99,9 @@ sections:
         items:
           - html: <a href="/azure/application-insights/app-insights-tutorial-runtime-exceptions">Поиск и диагностика исключений во время выполнения</a>
           - html: <a href="/azure/application-insights/app-insights-tutorial-performance">Поиск и диагностика проблем производительности</a>
-          - html: <a href="/azure/application-insights/app-insights-tutorial-alert">Мониторинг работоспособности приложения и оповещение о ней</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-alert">Мониторинг работоспособности приложения и соответствующие оповещение</a>
           - html: <a href="/azure/application-insights/app-insights-tutorial-users">Анализ данных об использовании и информации о клиенте</a>
-          - html: <a href="/azure/application-insights/app-insights-tutorial-dashboards">Создание настраиваемых панелей мониторинга ключевых показателей эффективности</a>
+          - html: <a href="/azure/application-insights/app-insights-tutorial-dashboards">Создание настраиваемых панелей мониторинга с ключевыми показателями эффективности</a>
   - title: Бесплатные видеоуроки PluralSight
     items:
       - type: list
@@ -135,4 +131,4 @@ sections:
           - title: Командная строка
             html: <p><a href="/powershell/module/az.operationalinsights">Azure PowerShell</a></p>
           - title: REST
-            html: <p><a href="/rest/api/loganalytics">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/loganalytics">Справочник по REST API</a></p>

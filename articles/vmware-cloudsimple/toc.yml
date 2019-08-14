@@ -83,7 +83,7 @@
             - name: Удаление частного облака
               href: delete-private-cloud.md
         - name: Мониторинг действия CloudSimple
-          href: 'https://docs.azure.cloudsimple.com/activity/'
+          href: monitor-activity.md
         - name: Настройка сети для частного облака
           items:
             - name: Создание и администрирование виртуальных локальных сетей и подсетей
