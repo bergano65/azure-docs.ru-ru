@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: dacurwin
-ms.openlocfilehash: c78a0a001e617b4db50f717fdf58f91a53d7fe10
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 6ca07a6ba96aa271241271dcba264c1ea2ceefbb
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735527"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018808"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -112,7 +112,7 @@ ms.locfileid: "68735527"
 
 Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте командлет `Move-AzureRMResource`. Для `Move-AzureRMResource` требуется указать имя и тип ресурса. Эти данные можно получить, выполнив командлет `Get-AzureRmRecoveryServicesVault`.
 
-```
+```powershell
 $destinationRG = "<destinationResourceGroupName>"
 $vault = Get-AzureRmRecoveryServicesVault -Name <vaultname> -ResourceGroupName <vaultRGname>
 Move-AzureRmResource -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
@@ -120,7 +120,7 @@ Move-AzureRmResource -DestinationResourceGroupName $destinationRG -ResourceId $v
 
 Чтобы переместить ресурсы в другую подписку, добавьте параметр `-DestinationSubscriptionId`.
 
-```
+```powershell
 Move-AzureRmResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vault.ID
 ```
 
@@ -130,7 +130,7 @@ Move-AzureRmResource -DestinationSubscriptionId "<destinationSubscriptionID>" -D
 
 Чтобы переместить хранилище Служб восстановления в другую группу ресурсов, используйте следующий командлет:
 
-```
+```azurecli
 az resource move --destination-group <destinationResourceGroupName> --ids <VaultResourceID>
 ```
 

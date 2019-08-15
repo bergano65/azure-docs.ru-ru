@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 561c4458f942dc524f7de8df5b4385a1eaa1f6a8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80eb3d60eb4c40e726d53d5fb876a6a118d119cb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67106285"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944940"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-betterworks"></a>Руководство по Интеграция Azure Active Directory с BetterWorks
 
@@ -119,7 +119,7 @@ ms.locfileid: "67106285"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов BetterWorks](mailto:support@betterworks.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение BetterWorks ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+6. Приложение BetterWorks ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -217,7 +217,7 @@ ms.locfileid: "67106285"
 
 ### <a name="create-betterworks-test-user"></a>Создание тестового пользователя BetterWorks
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении BetterWorks. Обратитесь к  [группе поддержки BetterWorks](mailto:support@betterworks.com), чтобы добавить пользователей на платформу BetterWorks. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении BetterWorks. Обратитесь к [группе поддержки BetterWorks](mailto:support@betterworks.com), чтобы добавить пользователей на платформу BetterWorks. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -231,4 +231,4 @@ ms.locfileid: "67106285"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

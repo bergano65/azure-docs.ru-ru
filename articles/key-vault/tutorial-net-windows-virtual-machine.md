@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 3bb4647b39a276e2dd54260c17eca1d700d5ba16
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: e2e730c623b6ee802938b930c4874f6c4920cc64
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874985"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934405"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows в .NET
 
@@ -105,9 +105,9 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 ### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Создайте виртуальную машину одним из следующих способов.
 
-* [CLI Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
-* [PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
-* [Портал Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+* [CLI Azure.](../virtual-machines/windows/quick-create-cli.md)
+* [PowerShell](../virtual-machines/windows/quick-create-powershell.md)
+* [Портал Azure](../virtual-machines/windows/quick-create-portal.md)
 
 ### <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
 Создайте назначаемое системой удостоверение для виртуальной машины с помощью команды [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign):
@@ -134,7 +134,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ### <a name="sign-in-to-the-virtual-machine"></a>Вход в виртуальную машину
 
-Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [How to connect and sign on to an Azure virtual machine running Windows](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon) (Как подключиться к виртуальной машине Azure под управлением Windows и войти в нее).
+Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [How to connect and sign on to an Azure virtual machine running Windows](../virtual-machines/windows/connect-logon.md) (Как подключиться к виртуальной машине Azure под управлением Windows и войти в нее).
 
 ## <a name="set-up-the-console-app"></a>Настройка консольного приложения
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 2f6dcbba8da314798b2e8de12a9fc5bf55f67a4a
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 3dece2d2bffc7bd2b9e0a3c2931b2038ebc3c77e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55750279"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850648"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "55750279"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в Azure (https://portal.azure.com).
+Войдите в Azure (https://portal.azure.com ).
 
 ## <a name="create-runbook"></a>Создание модуля Runbook
 
@@ -45,7 +45,7 @@ ms.locfileid: "55750279"
     ![Создание скрипта PowerShell в редакторе runbook](./media/automation-quickstart-create-runbook/automation-edit-runbook-empty.png)
 
 1. Наберите следующий код в панели редактирования или скопируйте и вставьте его туда. Этот код создает необязательный входной параметр с именем Name и значением по умолчанию World и выводит строку, содержащую значение этого входного параметра:
-   
+
    ```powershell-interactive
    param
    (
@@ -102,4 +102,3 @@ ms.locfileid: "55750279"
 
 > [!div class="nextstepaction"]
 > [Automation How To - Runbook Types](./automation-runbook-types.md) (Типы модулей Runbook в службе автоматизации Azure)
-

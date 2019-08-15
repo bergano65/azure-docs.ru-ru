@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/06/2019
+ms.date: 08/12/2019
 ms.author: roiyz
-ms.openlocfilehash: 43da116753723470efddc92bffc11038a80a35fb
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 700d8c6ea1527598591aa4300a977f80085e04b0
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827050"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990364"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -41,7 +41,7 @@ ms.locfileid: "68827050"
 |--------------------------------|--------------------------|--------------------------|--------------------------|
 | 10.20.18011 | 1.0.18011 | 2019 июля | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Увеличено Максекспрессиондепс до 10000 </li></ul> |
 | 10.20.18001 | 1.0.18001 | Июнь 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию при создании прокси-соединения (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH). </li></ul>|
-| 10.19.13515 | 1.0.13515 | Март 2019 | <ul><li>Незначительные исправления стабилизации </li></ul> |
+| 10.19.13515 | 1.0.13515 | Март 2019 г. | <ul><li>Незначительные исправления стабилизации </li></ul> |
 | 10.19.10006 | Н/Д | Dec 2018 | <ul><li> Незначительные исправления стабилизации </li></ul> | 
 | 8.0.11136 | Н/Д | Сентябрь 2018 |  <ul><li> Добавлена поддержка обнаружения изменения идентификатора ресурса при перемещении виртуальной машины. </li><li> Добавлена поддержка для идентификатора ресурса отчетов при использовании установки без расширения. </li></ul>| 
 | 8.0.11103 | Н/Д |  Апрель 2018 г. | |
@@ -166,7 +166,7 @@ JSON для расширения виртуальной машины можно 
 $PublicSettings = @{"workspaceId" = "myWorkspaceId"}
 $ProtectedSettings = @{"workspaceKey" = "myWorkspaceKey"}
 
-Set-AzVMExtension -ExtensionName "Microsoft.EnterpriseCloud.Monitoring" `
+Set-AzVMExtension -ExtensionName "MicrosoftMonitoringAgent" `
     -ResourceGroupName "myResourceGroup" `
     -VMName "myVM" `
     -Publisher "Microsoft.EnterpriseCloud.Monitoring" `

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7f253b71271787f7f2ef722134862ca72e0159df
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: bd0ed971b84baae3b85badfcc669bbad657d1551
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855770"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018952"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -99,7 +99,7 @@ ms.locfileid: "68855770"
 | **Дубаи** | Етисалат ОАЭ | Северная часть ОАЭ | Етисалат ОАЭ |
 | **Dubai2** | Du датамена | Северная часть ОАЭ | Du датамена, Орикском |
 | **Дублин** | Equinix | Северная Европа | Colt, eir, Equinix, Interxion, Megaport |
-| **Франкфурт** | Interxion | Н/Д | DE-ЦИКС, Interxion |
+| **Франкфурт** | Interxion | Н/Д | DE-ЦИКС, Interxion, оранжевый |
 | **Гонконг, САР** | Equinix | Восточная Азия | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata обмен данными, Телиа, Verizon |
 | **Йоханнесбург** | Teraco | северная часть ЮАР | Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, Терако |
 | **Куала-Лумпур** | TIME dotCom | Н/Д | TIME dotCom |
@@ -110,7 +110,7 @@ ms.locfileid: "68855770"
 | **Марсель** |Interxion | Южная Франция | DE-ЦИКС, Interxion, Жагуар Network |
 | **Мельбурн** | NextDC | Юго-восточная Австралия | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
 | **Майами** | Equinix | Н/Д | C3ntro+, Equinix, Megaport, Neutrona Networks |
-| **Монреаль** | Cologix | Н/Д | Bell Canada, Cologix, Telus, Zayo |
+| **Монреаль** | Cologix | Н/Д | Bell для Канады, Кологикс, Orange, Телус, Zayo |
 | **Мумбай** | Tata Communications | Западная Индия | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | Западная Индия | Airtel, Sify, Vodafone Idea |
 | **Нью-Йорк** | Equinix | Н/Д | CenturyLink Cloud Connect, Коресите, Equinix, recloud, Orange, пакет, Zayo |
@@ -123,7 +123,7 @@ ms.locfileid: "68855770"
 | **Сан-Паулу** | Equinix | Южная Бразилия | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
 | **Сиэтл;** | Equinix | Западная часть США 2 | Aryaka сети, Equinix, связь уровня 3, Orange, Телус, Zayo |
 | **Сеул** | KINX | Центральная Корея | KINX, LG CNS, Sejong Telecom |
-| **Кремниевая долина** | Equinix | Западная часть США | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Comcast, Коресите, Equinix, в облаке, IX REACH, пакет, Паккетфабрик, связь уровня 3, Orange, оранжевый, спринт, Tata Communications, Телиа, Verizon, Zayo |
+| **Кремниевая долина** | Equinix | Западная часть США | Aryaka сети, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Comcast, Коресите, Equinix, в облаке, Internet2, IX REACH, пакет, Паккетфабрик, связь уровня 3, Orange, оранжевый, спринт, Tata Communications, Телиа. Verizon, Zayo |
 | **Полупроводниковая Valley2** | Coresite | Западная часть США | Coresite | 
 | **Сингапур** | Equinix | Юго-Восточная Азия | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
 | **Сингапур 2** | Global Switch | Юго-Восточная Азия | Colt, Эпсилон Global Communications, Orange, SingTel |

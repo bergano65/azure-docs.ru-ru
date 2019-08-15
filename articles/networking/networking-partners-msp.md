@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sukishen
-ms.openlocfilehash: 62f73f17d598cb2a22ef57d3ec0bcf91b8852298
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 77f04b9688be2a7b7343bac05b24a3fcd4e0fcde
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728784"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019705"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -24,9 +24,11 @@ Azure Networking MSP — это специализированный набор 
 
 Клиенты могут покупать в Azure Marketplace предложения служб, управляемых MSP, или напрямую из MSP. MSP может развертывать сетевые ресурсы Azure и управлять ими в подписках и группах ресурсов клиентов с помощью Azure Лигхсаусе.
 
-## <a name="msp"></a>Партнеры MSP
+## <a name="msp"></a>Партнеры по сети Azure для сетей MSP
 
 Используйте ссылки в этом разделе для получения дополнительных сведений об управляемых облачных сетевых службах, предоставляемых партнерами MSP в сети Azure. Если партнер по облачным сетевым службам не указан в разделе ниже, обратитесь к нам с поставщиком. Он может обратиться к нам, отправив сообщение по адресу ManagedVirtualWAN@microsoft.com. 
+
+[Группа ANS UK](https://www.ans.co.uk/)
 
 [Aryaka сети](https://www.aryaka.com/)
 
@@ -43,6 +45,8 @@ Azure Networking MSP — это специализированный набор 
 [иксреач](https://www.ixreach.com/)
 
 [Megaport](https://www.megaport.com/)
+
+[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)
 
 [Tata связь](https://www.tatacommunications.com/)
 

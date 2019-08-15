@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 0d57b3ce4e378a366148b5c3eef6bc4d5d9eb96d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 69c5d30632e187efe36655a17a91c9e373062955
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088542"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943185"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-timeoffmanager"></a>Руководство по Интеграция Azure Active Directory с TimeOffManager
 
@@ -112,7 +112,7 @@ ms.locfileid: "67088542"
     > [!NOTE]
     > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Получить это значение можно **на странице параметров единого входа**, как описано далее в руководстве. Кроме того, можно обратиться к [группе поддержки TimeOffManager](https://www.purelyhr.com/contact-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение TimeOffManager ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение TimeOffManager ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -256,5 +256,5 @@ ms.locfileid: "67088542"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

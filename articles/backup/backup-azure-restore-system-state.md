@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/18/2017
 ms.author: dacurwin
-ms.openlocfilehash: 70cd7a1e77e6154b6406c82344b82f230eeb7b3c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 83c4d8a90bf9ae348026c14beaec4975636b29b5
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954642"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018804"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
@@ -124,9 +124,9 @@ ms.locfileid: "68954642"
 
 1. Используйте следующие команды для перезагрузки сервера в *режиме восстановления служб каталогов*. В командной строке с повышенными привилегиями:
 
-    ```
-    PS C:\> Bcdedit /set safeboot dsrepair
-    PS C:\> Shutdown /r /t 0
+    ```cmd
+    Bcdedit /set safeboot dsrepair
+    Shutdown /r /t 0
     ```
 
 2. После перезагрузки откройте оснастку системы архивации данных Windows Server. Если вы не знаете, куда была установлена оснастка, найдите на компьютере или сервере **систему архивации данных Windows Server**.
@@ -189,14 +189,14 @@ ms.locfileid: "68954642"
 
 5. При открытии командной строки с правами администратора выполните следующую команду, чтобы получить версии резервного копирования состояния системы.
 
-    ```
+    ```cmd
     Wbadmin get versions -backuptarget:<Volume where WindowsImageBackup folder is copied>:
     ```
     ![Получение версий резервного копирования состояния системы](./media/backup-azure-restore-system-state/winre-4.png)
 
 6. Выполните следующую команду, чтобы получить все тома, которые доступны в резервной копии.
 
-    ```
+    ```cmd
     Wbadmin get items -version:<copy version from above step> -backuptarget:<Backup volume>
     ```
 
@@ -204,7 +204,7 @@ ms.locfileid: "68954642"
 
 7. Следующая команда восстанавливает все тома, которые являются частью резервной копии состояния системы. Обратите внимание, что этот шаг восстанавливает только критические тома, которые являются частью состояния системы. Все несистемные данные удаляются.
 
-    ```
+    ```cmd
     Wbadmin start recovery -items:C: -itemtype:Volume -version:<Backupversion> -backuptarget:<backup target volume>
     ```
      ![Получение версий резервного копирования состояния системы](./media/backup-azure-restore-system-state/winre-6.png)

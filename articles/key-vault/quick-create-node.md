@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 5e8c29e033d895e24047754e686420fb4db86142
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 5ca6289b1af02a54d8c66d5a9835e24f61c58559
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236642"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934456"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
 
@@ -24,7 +24,7 @@ ms.locfileid: "65236642"
 * сохранение секрета в хранилище ключей;
 * получение секрета из хранилища ключей;
 * создание веб-приложения Azure;
-* включение [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview) для веб-приложения;
+* включение [управляемого удостоверения](../active-directory/managed-service-identity/overview.md) для веб-приложения;
 * предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
 
 Прежде чем продолжить, убедитесь, что вы ознакомлены с [основными понятиями Key Vault](key-vault-whatis.md#basic-concepts).

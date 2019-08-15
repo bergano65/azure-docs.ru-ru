@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: peterlu
 ms.date: 06/01/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 710d64b445953ae3124830931c8cbb9315d32b83
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 3594d9670e8fb94b053479352fb88997caa16db6
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875709"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016477"
 ---
 # <a name="execute-r-script"></a>Выполнение сценария R
 
@@ -76,8 +76,7 @@ azureml_main <- function(dataframe1, dataframe2){
 
 1.  Добавьте модуль **выполнить сценарий R** в эксперимент.
 
-    > [!NOTE]
-    > Все данные, передаваемые в модуль **выполнить сценарий R** , преобразуются `data.frame` в формат R.
+  
 
 1. Подключите любые входные данные, необходимые для скрипта. Входные значения необязательны и могут включать данные и дополнительный код R.
 
@@ -90,10 +89,33 @@ azureml_main <- function(dataframe1, dataframe2){
 1. В текстовом поле **Скрипт r** введите или вставьте допустимый скрипт R.
 
     Чтобы помочь вам приступить к работе, в текстовом поле « **Скрипт R** » предварительно заполняется образец кода, который можно изменить или заменить.
+    
+```R
+# R version: 3.5.1
+# The script MUST contain a function named azureml_main
+# which is the entry point for this module.
 
-    * Скрипт должен содержать функцию с именем `azureml_main`, которая является точкой входа для этого модуля.
+# The entry point function can contain up to two input arguments:
+#   Param<dataframe1>: a R DataFrame
+#   Param<dataframe2>: a R DataFrame
+azureml_main <- function(dataframe1, dataframe2){
+  print("R script run.")
 
-    * Функция точки входа может содержать до двух входных аргументов: `Param<dataframe1>` и`Param<dataframe2>`
+  # If a zip file is connected to the third input port, it is
+  # unzipped under "./Script Bundle". This directory is added
+  # to sys.path.
+
+  # Return datasets as a Named List
+  return(list(dataset1=dataframe1, dataset2=dataframe2))
+}
+```
+
+ * Скрипт должен содержать функцию с именем `azureml_main`, которая является точкой входа для этого модуля.
+
+ * Функция точки входа может содержать до двух входных аргументов: `Param<dataframe1>` и`Param<dataframe2>`
+ 
+   > [!NOTE]
+    > Данные, передаваемые в модуль **выполнить сценарий R** , указываются `dataframe1` как `dataframe2`и, что отличается от машинное обучение Azure Studio (Справочник по Studio `dataset1`как `dataset2`,). Убедитесь, что входные данные правильно рефернецед в скрипте.  
  
     > [!NOTE]
     >  Для запуска существующего кода R в эксперименте с визуальным интерфейсом может потребоваться внести небольшие изменения. Например, входные данные, которые вы предоставляете в формате CSV, должны быть явно преобразованы в набор данных, прежде чем их можно будет использовать в коде. Типы данных и столбцов, используемые в языке R, также отличаются некоторыми способами от типов данных и столбцов, используемых в визуальном интерфейсе.
@@ -234,7 +256,7 @@ azureml_main <- function(dataframe1, dataframe2){
 |              |            | 
 |--------------|------------| 
 | Пакет      | Version    | 
-| аскпасс      | 1,1        | 
+| аскпасс      | 1.1        | 
 | ассертсат   | 0.2.1      | 
 | бэкпортированным    | 1.1.4      | 
 | из         | 3.5.1      | 
@@ -243,16 +265,16 @@ azureml_main <- function(dataframe1, dataframe2){
 | Связыватель        | 0.1.1      | 
 | биндркпп     | 0.2.2      | 
 | битопс       | 1.0 – 6      | 
-| boot         | 1.3 – 22     | 
+| загрузка         | 1.3 – 22     | 
 | брум        | 0.5.2      | 
 | вызывающий объект        | 3.2.0      | 
 | курсор        | 6.0 – 84     | 
 | катулс      | 1.17.1.2   | 
 | целлранжер   | 1.1.0      | 
-| class        | 7.3 – 15     | 
+| класс        | 7.3 – 15     | 
 | CLI          | 1.1.0      | 
 | Коллекция        | 0.6.0      | 
-| cluster      | 2.0.7-1    | 
+| кластер      | 2.0.7-1    | 
 | кодетулс    | 0,2-16     | 
 | колорспаце   | 1.4 – 1      | 
 | компилятора     | 3.5.1      | 
@@ -280,7 +302,7 @@ azureml_main <- function(dataframe1, dataframe2){
 | гплотс       | 3.0.1.1    | 
 | рисунка     | 3.5.1      | 
 | грдевицес    | 3.5.1      | 
-| сетки         | 3.5.1      | 
+| Сетка         | 3.5.1      | 
 | гтабле       | 0.3.0      | 
 | гтулс       | 3.8.1      | 
 | не задан        | 2.1.0      | 
@@ -302,7 +324,7 @@ azureml_main <- function(dataframe1, dataframe2){
 | Markdown     | 1          | 
 | ДОБАВЛЕНИИ         | 7.3 — 51.4   | 
 | Таблицу       | 1.2 – 17     | 
-| Метод      | 3.5.1      | 
+| метод      | 3.5.1      | 
 | мгкв         | 1,8 – 28     | 
 | формата         | 0,7        | 
 | моделметрикс | 1.2.2      | 

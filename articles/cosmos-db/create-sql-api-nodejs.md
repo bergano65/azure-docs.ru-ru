@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: dech
-ms.openlocfilehash: 19312e6c6aa71a81c3339e7d40de582490c4ffff
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: e6a04c840e0982947e1223abf82737e1cd9d4445
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986347"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854166"
 ---
 # <a name="quickstart-build-a-nodejs-app-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения Node.js с помощью учетной записи API SQL для Azure Cosmos DB
 
@@ -87,7 +87,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * Инициализация `CosmosClient`.
 
     ```javascript
-    const client = new CosmosClient({ endpoint: endpoint, auth: { masterKey: masterKey } });
+    const client = new CosmosClient({ endpoint, key });
     ```
 
 * Создание базы данных.
@@ -111,21 +111,25 @@ Azure Cosmos DB — это глобально распределенная мн
 * Выполнение запроса SQL через JSON.
 
     ```javascript
-    const querySpec = {
-        query: "SELECT VALUE r.children FROM root r WHERE r.lastName = @lastName",
+      const querySpec = {
+        query: 'SELECT VALUE r.children FROM root r WHERE r.lastName = @lastName',
         parameters: [
-            {
-                name: "@lastName",
-                value: "Andersen"
-            }
+          {
+            name: '@lastName',
+            value: 'Andersen'
+          }
         ]
-    };
+      }
 
-    const { result: results } = await client.database(databaseId).container(containerId).items.query(querySpec).toArray();
-    for (var queryResult of results) {
-        let resultString = JSON.stringify(queryResult);
-        console.log(`\tQuery returned ${resultString}\n`);
-    }
+      const { resources: results } = await client
+        .database(databaseId)
+        .container(containerId)
+        .items.query(querySpec)
+        .fetchAll()
+      for (var queryResult of results) {
+        let resultString = JSON.stringify(queryResult)
+        console.log(`\tQuery returned ${resultString}\n`)
+      }
     ```    
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
@@ -142,9 +146,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
     `config.endpoint = "https://FILLME.documents.azure.com"`
 
-4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения параметра `config.primaryKey` в файле `config.js`. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
+4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения параметра `config.key` в файле `config.js`. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
 
-    `config.primaryKey = "FILLME"`
+    `config.key = "FILLME"`
     
 ## <a name="run-the-app"></a>Запуск приложения
 1. В окне терминала запустите `npm install`, чтобы установить необходимые модули npm.

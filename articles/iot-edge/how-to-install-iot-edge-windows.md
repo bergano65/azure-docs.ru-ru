@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 1af6ed2743807f75e96bed0ae67d0070aa55c0ef
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 0122b76592ce9e1179a3d65f7db681679bda6f37
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677464"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988614"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -202,7 +202,7 @@ Get-Service iotedge
 . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
 ```
 
-Просмотрите список запущенных модулей. После новой установки единственным модулем, который вы должны увидеть, является **edgeAgent**. После [развертывания модулей IOT Edge](how-to-deploy-modules-portal.md)вы увидите другие. 
+Просмотрите список запущенных модулей. После новой установки единственным модулем, который вы должны увидеть, является **edgeAgent**. После первого [развертывания модулей IOT Edge](how-to-deploy-modules-portal.md) на устройстве будет запущен другой системный модуль **edgeHub**. 
 
 ```powershell
 iotedge list
@@ -262,6 +262,7 @@ Update-IoTEdge
 Если вы хотите удалить установку IoT Edge с устройства Windows, используйте следующую команду в окне администратора PowerShell. Эта команда удаляет среду выполнения IoT Edge вместе с существующей конфигурацией и данными подсистемы Moby. 
 
 ```powershell
+. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
 Uninstall-IoTEdge
 ```
 

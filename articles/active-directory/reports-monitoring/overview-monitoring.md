@@ -3,7 +3,7 @@ title: Мониторинг в Azure Active Directory | Документация
 description: Общие сведения о мониторинге в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: e2b3d8ce-708a-46e4-b474-123792f35526
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d63f8440ca527a746f73574bc156037d85fc3599
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 21102a52c6aa7ae97f3b1c2d671a341f19615a8e
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009048"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988207"
 ---
 # <a name="what-is-azure-active-directory-monitoring"></a>Мониторинг в Azure Active Directory
 

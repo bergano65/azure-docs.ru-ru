@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: 4c1a3f52c37dcaad4bc2f84d6d2fa04b61376cf1
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: b36541cde457b7faf8b3a020cdde01f049ceb652
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188782"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932212"
 ---
 # <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство. Настройка ролей администратора и пользователя сервера
 
- При работе с этим руководством вы с помощью SQL Server Management Studio (SSMS) подключитесь к серверу в Azure и настроите роли администратора сервера и шаблона базы данных. Также мы ознакомитесь с [языком TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200). Язык написания скриптов TMSL основывается на формате JSON и предназначен для табличных моделей на уровнях совместимости 1200 и выше. Он позволяет автоматизировать многие задачи табличного моделирования. TMSL часто используется с PowerShell, но в этом руководстве мы ограничимся редактором запросов XMLA в среде SSMS. При работе с этим руководством вы выполните следующие задачи: 
+ При работе с этим руководством вы с помощью SQL Server Management Studio (SSMS) подключитесь к серверу в Azure и настроите роли администратора сервера и шаблона базы данных. Также мы ознакомитесь с [языком TMSL](https://docs.microsoft.com/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200). Язык написания скриптов TMSL основывается на формате JSON и предназначен для табличных моделей на уровнях совместимости 1200 и выше. Он позволяет автоматизировать многие задачи табличного моделирования. TMSL часто используется с PowerShell, но в этом руководстве мы ограничимся редактором запросов XMLA в среде SSMS. При работе с этим руководством вы выполните следующие задачи: 
   
 > [!div class="checklist"]
 > * получение имени сервера с помощью портала;
@@ -83,7 +83,7 @@ ms.locfileid: "54188782"
 
 ## <a name="add-a-user-to-the-model-database-administrator-role"></a>Добавление пользователя к роли администратора шаблона базы данных
 
-На этом этапе вы добавите учетную запись пользователя или группы к роли Internet Sales Administrator, которая уже существует в модели. Эта роль предоставляет разрешения на полный доступ (права администратора) для шаблона базы данных из примера adventureworks. В этой задаче выполняется команда TMSL [CreateOrReplace](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/createorreplace-command-tmsl) в специально подготовленном скрипте.
+На этом этапе вы добавите учетную запись пользователя или группы к роли Internet Sales Administrator, которая уже существует в модели. Эта роль предоставляет разрешения на полный доступ (права администратора) для шаблона базы данных из примера adventureworks. В этой задаче выполняется команда TMSL [CreateOrReplace](https://docs.microsoft.com/bi-reference/tmsl/createorreplace-command-tmsl) в специально подготовленном скрипте.
 
 1. В **обозревателе объектов** разверните узлы **Базы данных** > **adventureworks** > **Роли**. 
 2. Щелкните правой кнопкой мыши элемент **Internet Sales Administrator**, выберите **Script Role as** (Выбрать роль скрипта) > **CREATE OR REPLACE To** (Создание или замена для...) > **Новое окно редактора запросов**.
@@ -99,7 +99,7 @@ ms.locfileid: "54188782"
 
 ## <a name="add-a-new-model-database-role-and-add-a-user-or-group"></a>Добавление новой роли шаблона базы данных и добавление пользователя или группы
 
-На этом этапе вы примените команду [Create](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/create-command-tmsl?view=sql-analysis-services-2017) в скрипте TMSL, чтобы создать роль Internet Sales Global, установите для нее права *на чтение* и добавите учетную запись пользователя или группы из Azure AD.
+На этом этапе вы примените команду [Create](https://docs.microsoft.com/bi-reference/tmsl/create-command-tmsl) в скрипте TMSL, чтобы создать роль Internet Sales Global, установите для нее права *на чтение* и добавите учетную запись пользователя или группы из Azure AD.
 
 1. В **обозревателе объектов** щелкните правой кнопкой мыши **adventureworks** и выберите **Новый запрос** > **XLMA**. 
 2. Скопируйте приведенный ниже скрипт TMSL и вставьте его в редактор запроса:

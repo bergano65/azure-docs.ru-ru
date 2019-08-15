@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: kumud
-ms.openlocfilehash: 7fbe36d9ee15ffbdaa2ba978aabf3cc4f5db3889
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82dd77e8ea36610244b97c1701209d5aa3be2869
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64694063"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69017773"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-rest-api"></a>Устранение неполадок подключений в службе "Наблюдатель за сетями Azure" с помощью Azure REST API
 
@@ -50,7 +50,7 @@ armclient login
 
 ## <a name="retrieve-a-virtual-machine"></a>Получение виртуальной машины
 
-Выполните следующий скрипт, чтобы получить сведения о виртуальной машине. Эти сведения потребуются для подключения. 
+Выполните следующий скрипт, чтобы получить сведения о виртуальной машине. Эти сведения потребуются для подключения.
 
 Выполните приведенный ниже код, указав в нем значения следующих переменных:
 
@@ -90,7 +90,7 @@ $subscriptionId = "00000000-0000-0000-0000-000000000000"
 $resourceGroupName = "NetworkWatcherRG"
 $networkWatcherName = "NetworkWatcher_westcentralus"
 $sourceResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0"
-$destinationAddress = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/Database0"
+$destinationResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/Database0"
 $destinationPort = "0"
 $requestBody = @"
 {
@@ -99,7 +99,7 @@ $requestBody = @"
     'port': 0
   },
   'destination': {
-    'resourceId': '${destinationAddress}',
+    'resourceId': '${destinationResourceId}',
     'port': ${destinationPort}
   }
 }
@@ -131,7 +131,7 @@ Date: Fri, 02 Jun 2017 20:21:16 GMT
 null
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Следующий ответ взят из предыдущего примера.  В этом ответе параметр `ConnectionStatus` имеет значение **Unreachable** (Недоступно). Как видите, все отправленные пробы завершились неудачей. Попытка подключения завершилась сбоем в виртуальном модуле из-за пользовательского правила `NetworkSecurityRule` с именем **UserRule_Port80**, настроенного на блокировку входящего трафика на порту 80. Эти сведения можно использовать для анализа проблем с подключением.
 
@@ -206,7 +206,7 @@ $subscriptionId = "00000000-0000-0000-0000-000000000000"
 $resourceGroupName = "NetworkWatcherRG"
 $networkWatcherName = "NetworkWatcher_westcentralus"
 $sourceResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0"
-$destinationAddress = "13.107.21.200"
+$destinationResourceId = "13.107.21.200"
 $destinationPort = "80"
 $requestBody = @"
 {
@@ -215,7 +215,7 @@ $requestBody = @"
     'port': 0
   },
   'destination': {
-    'address': '${destinationAddress}',
+    'address': '${destinationResourceId}',
     'port': ${destinationPort}
   }
 }
@@ -247,7 +247,7 @@ Date: Fri, 02 Jun 2017 20:26:05 GMT
 null
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В следующем примере состояние `connectionStatus` отображается как **Unreachable** (Недоступно). В блоке `hops` в разделе `issues` видно, что трафик заблокирован из-за `UserDefinedRoute`.
 
@@ -302,7 +302,7 @@ $subscriptionId = "00000000-0000-0000-0000-000000000000"
 $resourceGroupName = "NetworkWatcherRG"
 $networkWatcherName = "NetworkWatcher_westcentralus"
 $sourceResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0"
-$destinationAddress = "https://bing.com"
+$destinationResourceId = "https://bing.com"
 $destinationPort = "0"
 $requestBody = @"
 {
@@ -311,7 +311,7 @@ $requestBody = @"
     'port': 0
   },
   'destination': {
-    'address': '${destinationAddress}',
+    'address': '${destinationResourceId}',
     'port': ${destinationPort}
   }
 }
@@ -343,7 +343,7 @@ Date: Fri, 02 Jun 2017 20:31:00 GMT
 null
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 В следующем ответе видно, что параметр `connectionStatus` отображается со значением **Reachable** (Достижимо). Когда подключение будет установлено, отобразятся значения задержки.
 
@@ -389,7 +389,7 @@ $subscriptionId = "00000000-0000-0000-0000-000000000000"
 $resourceGroupName = "NetworkWatcherRG"
 $networkWatcherName = "NetworkWatcher_westcentralus"
 $sourceResourceId = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0"
-$destinationAddress = "https://build2017nwdiag360.blob.core.windows.net/"
+$destinationResourceId = "https://build2017nwdiag360.blob.core.windows.net/"
 $destinationPort = "0"
 $requestBody = @"
 {
@@ -398,7 +398,7 @@ $requestBody = @"
     'port': 0
   },
   'destination': {
-    'address': '${destinationAddress}',
+    'address': '${destinationResourceId}',
     'port': ${destinationPort}
   }
 }
@@ -430,7 +430,7 @@ Date: Fri, 02 Jun 2017 20:05:03 GMT
 null
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 Ниже представлен пример ответа на выполнение предыдущего вызова API. Так как проверка выполнена успешно, свойство `connectionStatus` отображается со значением **Reachable** (Достижимо).  Также отображаются сведения о числе прыжков, необходимых для доступа к BLOB-объекту в хранилище, а также о задержке.
 
@@ -465,22 +465,8 @@ null
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 
 Сведения о состоянии (разрешен или запрещен) входящего и исходящего трафика виртуальной машины см. в статье, посвященной [проверке потока IP-адресов](diagnose-vm-network-traffic-filtering-problem.md).
-
-
-
-
-
-
-
-
-
-
-
-
-
-

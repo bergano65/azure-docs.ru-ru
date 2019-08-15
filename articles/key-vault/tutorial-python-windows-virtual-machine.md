@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: cdc540f2f6fa834a97c4c405276414f29672e5c7
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: ae9aaea91f62a7e79835e65a5a9f9c76017afdb1
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876673"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934382"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows на языке Python
 
@@ -103,9 +103,9 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Вы можете создать виртуальную машину одним из следующих способов.
 
-* [CLI Azure.](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
-* [PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
-* [Портал Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+* [CLI Azure.](../virtual-machines/windows/quick-create-cli.md)
+* [PowerShell](../virtual-machines/windows/quick-create-powershell.md)
+* [Портал Azure](../virtual-machines/windows/quick-create-portal.md)
 
 ## <a name="assign-an-identity-to-the-vm"></a>Назначение удостоверения виртуальной машине
 На этом шаге вы создадите назначаемое системой удостоверение для виртуальной машины, выполнив следующую команду в Azure CLI.
@@ -132,7 +132,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ## <a name="log-on-to-the-virtual-machine"></a>Вход на виртуальную машину
 
-Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+Чтобы войти в виртуальную машину, следуйте инструкциям из статьи [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](../virtual-machines/windows/connect-logon.md).
 
 ## <a name="create-and-run-a-sample-python-app"></a>Создание и запуск примера приложения Python
 

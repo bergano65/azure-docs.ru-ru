@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 2ed58846b9e7816092f0fc0787204921071d75e9
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 4cf959c5218160a8fe341e6ffdfdf459c1a19247
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498556"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019168"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -36,26 +36,26 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --outpu
 ```
 
 > [!NOTE]
-> После обновления кластера AKS промежуточные версии Kubernetes невозможно пропустить. Например, Допускается обновление между *1.11. x* -> *1.12. x* или *1.12. x* -> *1.13. x* , однако *1.11. x* -> *1.13. x* — нет.
+> После обновления кластера AKS промежуточные версии Kubernetes невозможно пропустить. Например, Допускается обновление с параметром *1.12. x* -> *1.13. x* или *1.13. x* -> *1.14. x* , однако *1.12. x* -> *1.14. x* — нет.
 >
-> Для обновления с *1.11. x* -> *1.13. x*сначала выполните обновление с *1.11. x* -> *1.12. x*, а затем выполните обновление с *1.12. x* -> *1.13. x*.
+> Чтобы выполнить обновление, начиная с *1.12. x* -> *1.14. x*, сначала выполните обновление с *1.12. x* -> *1.13. x*, а затем выполните обновление с *1.13. x* -> *1.14. x*.
 
-В следующем примере выходных данных показано, что кластер можно обновить до версии *1.12.7* или *1.12.8*.
+В следующем примере выходных данных показано, что кластер можно обновить до версии *1.13.9*:
 
 ```console
-Name     ResourceGroup    MasterVersion  NodePoolVersion  Upgrades
--------  ---------------  -------------  ---------------  --------------
-default  myResourceGroup  1.11.9         1.11.9           1.12.7, 1.12.8
+Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
+-------  ---------------  ---------------  -----------------  --------------
+default  myResourceGroup  1.12.8           1.12.8             1.13.9
 ```
 
 ## <a name="upgrade-an-aks-cluster"></a>Обновление кластера AKS
 
 Чтобы обновить список доступных версий для кластера AKS, выполните команду [AZ AKS Upgrade][az-aks-upgrade] . В процессе обновления AKS добавляет в кластер новый узел, который запускает указанную версию Kubernetes, а затем аккуратно [Cordon и][kubernetes-drain] настраивает один из старых узлов, чтобы минимизировать перерывы в работе приложений. Когда новый узел будет подтвержден как работающий модули приложения, старый узел удаляется. Этот процесс повторяется до тех пор, пока не будут обновлены все узлы в кластере.
 
-В следующем примере производится обновление кластера до версии *1.12.8*.
+В следующем примере производится обновление кластера до версии *1.13.9*.
 
 ```azurecli-interactive
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.12.8
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.13.9
 ```
 
 Время, требуемое для выполнения обновления кластера, зависит от количества узлов.
@@ -66,12 +66,12 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных показано, что кластер теперь выполняет *1.12.8*:
+В следующем примере выходных данных показано, что кластер теперь выполняет *1.13.9*:
 
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ---------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.12.8               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.13.9               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: e9b654fc49a953f8fdbc9125c6f12486e0ab7b13
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: ffdb11420e239125ac3320964a7071c2ab2bdc7e
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68949486"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019121"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительная версия. Создание пулов нескольких узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -90,7 +90,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Чтобы приступить к работе, создайте кластер AKS с одним пулом узлов. В следующем примере используется команда [AZ Group Create][az-group-create] для создания группы ресурсов с именем *myResourceGroup* в регионе *eastus* . После этого кластер AKS с именем *myAKSCluster* создается с помощью команды [AZ AKS Create][az-aks-create] . A *--kubernetes-версия* *1.13.5* используется для демонстрации обновления пула узлов на следующем шаге. Можно указать любую [поддерживаемую версию Kubernetes][supported-versions].
+Чтобы приступить к работе, создайте кластер AKS с одним пулом узлов. В следующем примере используется команда [AZ Group Create][az-group-create] для создания группы ресурсов с именем *myResourceGroup* в регионе *eastus* . После этого кластер AKS с именем *myAKSCluster* создается с помощью команды [AZ AKS Create][az-aks-create] . A *--kubernetes-версия* *1.13.9* используется для демонстрации обновления пула узлов на следующем шаге. Можно указать любую [поддерживаемую версию Kubernetes][supported-versions].
 
 ```azurecli-interactive
 # Create a resource group in East US
@@ -103,7 +103,7 @@ az aks create \
     --enable-vmss \
     --node-count 1 \
     --generate-ssh-keys \
-    --kubernetes-version 1.13.5
+    --kubernetes-version 1.13.9
 ```
 
 Создание кластера занимает несколько минут.
@@ -124,56 +124,96 @@ az aks nodepool add \
     --cluster-name myAKSCluster \
     --name mynodepool \
     --node-count 3 \
-    --kubernetes-version 1.12.6
+    --kubernetes-version 1.12.7
 ```
 
 Чтобы просмотреть состояние пулов узлов, используйте команду [AZ AKS node Pool List][az-aks-nodepool-list] и укажите группу ресурсов и имя кластера:
 
 ```azurecli-interactive
-az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster -o table
+az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 ```
 
 В следующем примере выходных данных показано, что *минодепул* успешно создан с тремя узлами в пуле узлов. При создании кластера AKS на предыдущем шаге создается *nodepool1* по умолчанию с числом узлов, равным *1*.
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  3        110        mynodepool  1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 3,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.12.7",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 > [!TIP]
-> Если *орчестраторверсион* или *VmSize* не указаны при добавлении пула узлов, узлы создаются на основе значений по умолчанию для кластера AKS. В этом примере это был Kubernetes версии *1.13.5* и размером узла *Standard_DS2_v2*.
+> Если *орчестраторверсион* или *VmSize* не указаны при добавлении пула узлов, узлы создаются на основе значений по умолчанию для кластера AKS. В этом примере это был Kubernetes версии *1.13.9* и размером узла *Standard_DS2_v2*.
 
 ## <a name="upgrade-a-node-pool"></a>Обновление пула узлов
 
-Когда кластер AKS был создан на первом шаге, `--kubernetes-version` был указан параметр *1.13.5* . Это задает версию Kubernetes как для плоскости управления, так и для начального пула узлов. Существуют различные команды для обновления Kubernetes версии плоскости управления и пула узлов. Команда используется для обновления плоскости управления, `az aks nodepool upgrade` а используется для обновления пула отдельных узлов. `az aks upgrade`
+Когда кластер AKS был создан на первом шаге, `--kubernetes-version` был указан параметр *1.13.9* . Это задает версию Kubernetes как для плоскости управления, так и для начального пула узлов. Существуют различные команды для обновления Kubernetes версии плоскости управления и пула узлов. Команда используется для обновления плоскости управления, `az aks nodepool upgrade` а используется для обновления пула отдельных узлов. `az aks upgrade`
 
-Давайте выполним обновление *минодепул* до Kubernetes *1.13.7*. Используйте команду [AZ AKS node][az-aks-nodepool-upgrade] для обновления пула узлов, как показано в следующем примере:
+Давайте выполним обновление *минодепул* до Kubernetes *1.13.9*. Используйте команду [AZ AKS node][az-aks-nodepool-upgrade] для обновления пула узлов, как показано в следующем примере:
 
 ```azurecli-interactive
 az aks nodepool upgrade \
     --resource-group myResourceGroup \
     --cluster-name myAKSCluster \
     --name mynodepool \
-    --kubernetes-version 1.13.7 \
+    --kubernetes-version 1.13.9 \
     --no-wait
 ```
 
 > [!Tip]
-> Чтобы обновить плоскость управления до *1.13.7*, выполните команду `az aks upgrade -k 1.13.7`.
+> Чтобы обновить плоскость управления до *1.14.5*, выполните команду `az aks upgrade -k 1.14.5`.
 
-Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *обновления* до *1.13.7*:
+Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *обновления* до *1.13.9*:
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  3        110        mynodepool  1.13.7                 100             Linux     Upgrading            myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 3,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Upgrading",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Обновление узлов до указанной версии занимает несколько минут.
@@ -209,12 +249,34 @@ az aks nodepool scale \
 Снова перечислите состояние пулов узлов с помощью команды [AZ AKS node Pool List][az-aks-nodepool-list] . В следующем примере показано, что *минодепул* находится в состоянии *масштабирования* с новым числом узлов, равным *5* .
 
 ```console
-$ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  5        110        mynodepool  1.13.7                 100             Linux     Scaling              myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 5,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Scaling",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Выполнение операции масштабирования займет несколько минут.
@@ -237,12 +299,34 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name myn
 Следующий пример выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показывает, что *минодепул* находится в состоянии *удаления* :
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  5        110        mynodepool  1.13.7                 100             Linux     Deleting             myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 5,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Deleting",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Удаление узлов и пула узлов занимает несколько минут.
@@ -268,12 +352,34 @@ az aks nodepool add \
 В следующем примере выходных данных команды [AZ AKS node Pool List][az-aks-nodepool-list] показано, что *гпунодепул* *создает* узлы с указанным *VmSize*:
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name         OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  -----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  1        110        gpunodepool  1.13.5                 100             Linux     Creating             myResourceGroup  Standard_NC6
-VirtualMachineScaleSets  1        110        nodepool1    1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "gpunodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Creating",
+    ...
+    "vmSize": "Standard_NC6",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Для успешного создания *гпунодепул* потребуется несколько минут.
@@ -286,8 +392,8 @@ VirtualMachineScaleSets  1        110        nodepool1    1.13.5                
 $ kubectl get nodes
 
 NAME                                 STATUS   ROLES   AGE     VERSION
-aks-gpunodepool-28993262-vmss000000  Ready    agent   4m22s   v1.13.5
-aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.5
+aks-gpunodepool-28993262-vmss000000  Ready    agent   4m22s   v1.13.9
+aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.9
 ```
 
 Для ограничения рабочих нагрузок, которые могут выполняться на узлах, в планировщике Kubernetes используются параметры taint (отметка) и toleration (толерантность).
@@ -364,7 +470,7 @@ Events:
 Создайте шаблон, например `aks-agentpools.json` , и вставьте следующий пример манифеста. В этом примере шаблона настраиваются следующие параметры.
 
 * Обновляет пул агентов *Linux* с именем *мяжентпул* для запуска трех узлов.
-* Задает узлы в пуле узлов для запуска Kubernetes версии *1.13.5*.
+* Задает узлы в пуле узлов для запуска Kubernetes версии *1.13.9*.
 * Определяет размер узла как *Standard_DS2_v2*.
 
 Измените эти значения, чтобы обновить, добавить или удалить пулы узлов по мере необходимости:
@@ -429,7 +535,7 @@ Events:
             "storageProfile": "ManagedDisks",
       "type": "VirtualMachineScaleSets",
             "vnetSubnetID": "[variables('agentPoolProfiles').vnetSubnetId]",
-            "orchestratorVersion": "1.13.5"
+            "orchestratorVersion": "1.13.9"
       }
     }
   ]
@@ -454,7 +560,7 @@ az group deployment create \
 az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerService
 ```
 
-После успешной регистрации разверните шаблон Azure Resource Manager, следуя тем же инструкциям, что и [выше](##manage-node-pools-using-a-resource-manager-template) , и добавьте следующее логическое значение свойства "енабленодепублиЦип" в ажентпулпрофилес. Задайте для `true` этого параметра значение по умолчанию, `false` если оно не указано. Это свойство только для создания, для которого требуется минимальная версия API 2019-06-01. Это можно применить к пулам узлов Linux и Windows.
+После успешной регистрации разверните шаблон Azure Resource Manager, следуя тем же инструкциям, что и [выше](#manage-node-pools-using-a-resource-manager-template) , и добавьте следующее логическое значение свойства "енабленодепублиЦип" в ажентпулпрофилес. Задайте для `true` этого параметра значение по умолчанию, `false` если оно не указано. Это свойство только для создания, для которого требуется минимальная версия API 2019-06-01. Это можно применить к пулам узлов Linux и Windows.
 
 ```
 "agentPoolProfiles":[  
@@ -464,7 +570,7 @@ az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerSe
       "agentCount": 3,
       "agentVmSize": "Standard_DS2_v2",
       "osType": "Linux",
-      "vnetSubnetId": "[parameters('vnetSubnetId')]"
+      "vnetSubnetId": "[parameters('vnetSubnetId')]",
       "enableNodePublicIP":true
     }
 ```

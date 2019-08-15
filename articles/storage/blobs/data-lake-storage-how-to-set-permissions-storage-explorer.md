@@ -1,20 +1,19 @@
 ---
 title: Установка разрешений для Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 description: В этом пошаговом руководстве описывается, как с помощью Обозревателя службы хранилища Azure задавать разрешения для файлов и каталогов в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения.
-services: storage
 author: normesta
-ms.custom: mvc
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
 ms.date: 12/11/2018
 ms.author: normesta
-ms.openlocfilehash: 5f0211765c96cad668abaad7d42da87ec88298c3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.reviewer: stewu
+ms.openlocfilehash: 530e37400881ace2de603aed6875ed236e45f2c7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939314"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847419"
 ---
 # <a name="set-file-and-directory-level-permissions-using-azure-storage-explorer-with-azure-data-lake-storage-gen2"></a>Установка разрешений на уровне файлов и каталогов в Azure Data Lake Storage 2-го поколения с помощью Обозревателя службы хранилища Azure
 
@@ -43,7 +42,7 @@ ms.locfileid: "64939314"
 
 Введите соответствующую запись Azure Active Directory (AAD), которую необходимо добавить в список, а затем нажмите кнопку **Добавить**.
 
-После этого пользователь или группа будет отображаться в поле **Пользователи и группы:**, позволяя вам начать управление их разрешениями.
+После этого пользователь или группа будет отображаться в поле **Пользователи и группы:** , позволяя вам начать управление их разрешениями.
 
 > [!NOTE]
 > Это рекомендованный подход, и мы советуем создать группу безопасности в Azure Active Directory и назначать разрешения для группы, а не для отдельных пользователей. Дополнительные сведения об этой рекомендации, а также другие советы и рекомендации для Data Lake Storage 2-го поколения см. в [этой статье](data-lake-storage-best-practices.md).

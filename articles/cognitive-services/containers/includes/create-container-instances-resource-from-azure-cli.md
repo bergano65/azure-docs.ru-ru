@@ -1,7 +1,7 @@
 ---
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать ресурс экземпляра контейнеров Azure с помощью Azure CLI.
+description: Узнайте, как создать ресурс экземпляра контейнера Azure из Azure CLI.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: 5e7a3d849f726ae4dbbd559d541464404e427775
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2080d283c6cb7466dcb4847a81d76a4c3109217a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717077"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012264"
 ---
-## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Создайте ресурс экземпляра контейнера Azure с помощью Azure CLI
+## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Создание ресурса экземпляра контейнера Azure из Azure CLI
 
-Ниже YAML определяет ресурсов экземпляра контейнера Azure. Скопируйте и вставьте содержимое в новый файл с именем `my-aci.yaml` и замените комментарии значения собственными. См. в [формате шаблона] [шаблона форматированию] для допустимых YAML. Ссылаться на [репозиториев контейнера и образов][repositories-and-images] имена доступных образов и их соответствующие репозитории.
+YAML ниже определяет ресурс экземпляра контейнера Azure. Скопируйте и вставьте содержимое в новый файл с именем `my-aci.yaml` и замените значения комментария собственными. См. [Формат шаблона][template-format] для допустимого YAML. Сведения о доступных именах образов и соответствующих репозиториях см. в разделе [репозитории и образы контейнеров][repositories-and-images] .
 
 ```YAML
 apiVersion: 2018-10-01
@@ -58,18 +58,18 @@ type: Microsoft.ContainerInstance/containerGroups
 ```
 
 > [!NOTE]
-> Не все расположения иметь же доступность ресурсов ЦП и памяти. Ссылаться на [расположения и ресурсы][location-to-resource] таблицы для перечня доступных ресурсов для контейнеров на расположение и ОС.
+> Не все расположения имеют одинаковую доступность ЦП и памяти. Список доступных ресурсов для контейнеров в расположении и ОС см. в таблице " [расположение и ресурсы][location-to-resource] ".
 
-Мы полагаемся на yaml-файл, созданный для [ `az container create` ][azure-container-create] команды. С помощью Azure CLI выполните `az container create` команды, заменив `<resource-group>` на собственные. Кроме того, защита значений в YAML развертывания см. в разделе [защитить значения][secure-values].
+Мы будем полагаться на файл YAML, созданный для [`az container create`][azure-container-create] команды. В Azure CLI выполните `az container create` команду, `<resource-group>` заменив собственными. Кроме того, для защиты значений в развертывании YAML ссылаются на [защищенные значения][secure-values].
 
 ```azurecli
 az container create -g <resource-group> -f my-aci.yaml
 ```
 
-Выходные данные команды `Running...` Если допустимый, через некоторое время тип выходных данных изменился в строку JSON, представляющий только что созданный ресурс ACI. Образ контейнера — более чем вероятно, недоступен на некоторое время, но теперь развернут ресурс.
+Выходные данные команды являются `Running...` допустимыми, после того как выходные данные изменяются на строку JSON, представляющую созданный ресурс ACI. Образ контейнера, скорее всего, будет недоступен в течение определенного времени, но теперь ресурс развернут.
 
 > [!TIP]
-> Заслуживает внимания к местоположениям предложений Azure Cognitive Service общедоступной предварительной версии, при необходимости YAML будет необходимо настроить соответствующим образом, чтобы соответствовать расположению.
+> Обратите особое внимание на местоположения общедоступной предварительной версии предложения службы "Поиск в Azure", так как YAML потребуется соответствующим образом скорректировать их в соответствии с расположением.
 
 [azure-container-create]: https://docs.microsoft.com/cli/azure/container?view=azure-cli-latest#az-container-create
 [template-format]: https://docs.microsoft.com/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups#template-format

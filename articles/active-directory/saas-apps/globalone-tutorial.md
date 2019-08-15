@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с GlobalOne | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с GlobalOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в GlobalOne.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 06/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 193e76f79dd69eb10254ea72bda933e5b09630f3
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 14eac7240c183911fba763bf21c37077107cc275
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144599"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944920"
 ---
-# <a name="tutorial-integrate-globalone-with-azure-active-directory"></a>Руководство. Интеграция GlobalOne с Azure Active Directory
+# <a name="tutorial-integrate-globalone-with-azure-active-directory"></a>Руководство по Интеграция GlobalOne с Azure Active Directory
 
 В этом руководстве описано, как интегрировать GlobalOne с Azure Active Directory (Azure AD). Интеграция GlobalOne с Azure AD обеспечивает следующие возможности.
 
@@ -80,7 +80,7 @@ ms.locfileid: "67144599"
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
-1. Приложение GlobalOne ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+1. Приложение GlobalOne ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 

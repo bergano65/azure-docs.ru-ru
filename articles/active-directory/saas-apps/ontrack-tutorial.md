@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: c1da9ec6098864d4f17ac668db6411c1dd0e3afe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 371ad2a8530de7b20427327d939bf164d871ab74
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095656"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944038"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Руководство по Интеграция Azure Active Directory с OnTrack
 
@@ -120,7 +120,7 @@ ms.locfileid: "67095656"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов OnTrack](mailto:CustomerService@insigniagroup.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение OnTrack ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение OnTrack ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -223,7 +223,7 @@ ms.locfileid: "67095656"
 
 ### <a name="create-ontrack-test-user"></a>Создание тестового пользователя в OnTrack
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении OnTrack. Обратитесь к  [группе поддержки OnTrack](mailto:CustomerService@insigniagroup.com), чтобы добавить пользователей на платформу OnTrack. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении OnTrack. Обратитесь в [службу поддержки OnTrack](mailto:CustomerService@insigniagroup.com), чтобы добавить пользователей на платформу OnTrack. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -237,5 +237,5 @@ ms.locfileid: "67095656"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

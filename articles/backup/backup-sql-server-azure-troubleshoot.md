@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 323470adfe56ee20fe0fb64aeba38b6af4330351
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: c456dfec72f98dc4ae06f1d7d5d9fb461182d579
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827598"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018983"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Устранение неполадок SQL Server резервного копирования базы данных с помощью Azure Backup
 
@@ -163,7 +163,7 @@ ms.locfileid: "68827598"
 
 Общий размер строк файлов зависит не только от количества файлов, но и от их имен и путей. Для каждого файла базы данных получите логическое имя файла и физический путь. Этот запрос SQL можно использовать:
 
-```
+```sql
 SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files mf
                INNER JOIN sys.databases db ON db.database_id = mf.database_id
                WHERE db.name = N'<Database Name>'"
@@ -171,13 +171,13 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 
 Теперь расположите их в следующем формате:
 
-```
+```json
 [{"path":"<Location>","logicalName":"<LogicalName>","isDir":false},{"path":"<Location>","logicalName":"<LogicalName>","isDir":false}]}
 ```
 
 Ниже приведен пример:
 
-```
+```json
 [{"path":"F:\\Data\\TestDB12.mdf","logicalName":"TestDB12","isDir":false},{"path":"F:\\Log\\TestDB12_log.ldf","logicalName":"TestDB12_log","isDir":false}]}
 ```
 
@@ -188,7 +188,7 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 Путь к целевому файлу восстановления можно переопределить во время операции восстановления, разместив JSON-файл, содержащий сопоставление файла базы данных с целевым путем восстановления. Создайте файл и поместите его в расположение *C:\Program files\azure Multi Рабочая нагрузка баккуп\бин\плугинс\скл.* `database_name.json`
 
 Содержимое файла должно быть в следующем формате:
-```
+```json
 [
   {
     "Path": "<Restore_Path>",
@@ -205,7 +205,7 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 
 Ниже приведен пример:
 
-```
+```json
 [
   {
    "Path": "F:\\Data\\testdb2_1546408741449456.mdf",
@@ -222,7 +222,7 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 
 В предыдущем содержимом можно получить логическое имя файла базы данных с помощью следующего запроса SQL:
 
-```
+```sql
 SELECT mf.name AS LogicalName FROM sys.master_files mf
                 INNER JOIN sys.databases db ON db.database_id = mf.database_id
                 WHERE db.name = N'<Database Name>'"

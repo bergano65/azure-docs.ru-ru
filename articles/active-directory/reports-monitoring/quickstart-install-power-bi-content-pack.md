@@ -3,7 +3,7 @@ title: Установка пакета содержимого Power BI для Az
 description: Узнайте, как установить пакет содержимого Power BI для Azure AD.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: fd5604eb-1334-4bd8-bfb5-41280883e2b5
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69a69732d8cb42c248fa954ef9047e5876f40837
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: f088c8b49fa6485a21b630738149078b7ff45b7d
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58437430"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988104"
 ---
 # <a name="quickstart-install-azure-active-directory-power-bi-content-pack"></a>Краткое руководство. Установка пакета содержимого Azure Active Directory Power BI
 

@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 9b9a691cb2bce2357d184420912ab340aee534e8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 8840c85e35a371b8c7a0a76dbee6353a20b212be
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205307"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881114"
 ---
 # <a name="mock-api-responses"></a>Макетирование ответов API
 
@@ -79,7 +79,7 @@ ms.locfileid: "67205307"
 5. Из списка выберите **200 OK**.
 6. Справа от раздела **Представления** выберите **+ Add representation** (+ Добавить представление).
 7. В поле поиска введите "*application/json*" и выберите тип контента **application/json**.
-8. В текстовом поле **Образец** введите `{ 'sampleField' : 'test' }`.
+8. В текстовом поле **Образец** введите `{ "sampleField" : "test" }`.
 9. Нажмите кнопку **Создать**.
 
 ## <a name="enable-response-mocking"></a>включение макетирования ответа;

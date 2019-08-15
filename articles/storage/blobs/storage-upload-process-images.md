@@ -1,21 +1,19 @@
 ---
 title: Передача данных изображений в облако с помощью службы хранилища Azure | Документация Майкрософт
 description: Использование Хранилища BLOB-объектов Azure с веб-приложением для хранения данных приложения
-services: storage
 author: normesta
 ms.service: storage
-ms.devlang: dotnet
+ms.subservice: blobs
 ms.topic: tutorial
 ms.date: 11/26/2018
 ms.author: normesta
-ms.reviewer: seguler
-ms.custom: mvc
-ms.openlocfilehash: 612c0b48faac365623fe36d6d2435c1c79566d9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.reviewer: dineshm
+ms.openlocfilehash: 7185d118c9f4419713ebe1291dd55c44635f0c56
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071326"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844951"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
 

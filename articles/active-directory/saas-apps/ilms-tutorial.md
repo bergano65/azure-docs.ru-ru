@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b2e012a4ce8ac4a9a5afb895d545beb0a0b8946
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50097aec1c4a003d3494029e8f25bb13b564f207
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67100617"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944021"
 ---
 # <a name="tutorial-integrate-ilms-with-azure-active-directory"></a>Руководство по Интеграция iLMS с Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "67100617"
 
     В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса конечной точки**, которое необходимо скопировать в разделе параметров SAML **Service Provider** (Поставщик услуг) на портале администрирования iLMS, в виде `https://www.inspiredlms.com/Login/<instanceName>/consumer.aspx`.
 
-1. Чтобы включить JIT-подготовку, приложение iLMS ожидает предоставления проверочных утверждений SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+1. Чтобы включить JIT-подготовку, приложение iLMS ожидает предоставления проверочных утверждений SAML в определенном формате, поэтому вам требуется добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     > [!NOTE]
     > В iLMS необходимо установить флажок **Create Un-recognized User Account** (Создать учетную запись неопознанного пользователя) для сопоставления этих атрибутов. Следуйте указаниям, приведенным [здесь](https://support.inspiredelearning.com/help/adding-updating-and-managing-users#just-in-time-provisioning-with-saml-single-signon), чтобы получить представление о конфигурации атрибутов.
@@ -244,4 +244,4 @@ ms.locfileid: "67100617"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

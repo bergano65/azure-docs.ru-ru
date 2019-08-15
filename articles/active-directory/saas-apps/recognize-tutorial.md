@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 82d231eff4690dc060c01d41356933693d08c443
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0a513ad8fe772839813615d065616f2c911a031
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67093260"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943343"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по Интеграция Azure Active Directory с Recognize
 
@@ -101,7 +101,7 @@ ms.locfileid: "67093260"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если у вас есть  **файл метаданных поставщика служб**, выполните следующие действия в разделе  **Базовая конфигурация SAML** :
+4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
     >[!NOTE]
     >Вы получите **файл метаданных поставщика служб**, выполнив инструкции из раздела **Настройка единого входа в Recognize** этого руководства.
@@ -259,5 +259,5 @@ ms.locfileid: "67093260"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

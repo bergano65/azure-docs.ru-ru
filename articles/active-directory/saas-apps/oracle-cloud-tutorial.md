@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0725988ff88baea2458f0a5e459440874e66088
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 579a553f151cf34215af3188cfddada6da42e691
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596438"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943629"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство по интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
 
@@ -101,11 +101,11 @@ ms.locfileid: "68596438"
 
    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-1. Приложение Oracle Cloud Infrastructure Console ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+1. Приложение Oracle Cloud Infrastructure Console ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
    ![image](common/edit-attribute.png)
 
-1. В дополнение к описанному выше приложение Oracle Cloud Infrastructure Console ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)**  выполните следующие действия:
+1. В дополнение к описанному выше приложение Oracle Cloud Infrastructure Console ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
    1. Щелкните значок **пера** рядом со **значением идентификатора имени**.
 

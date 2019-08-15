@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: ab3d1e71515df80b5bdba1edf8cd16ba3ed6b0a9
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 786302b882fbd59932af17ccc6a390fa41b30ac9
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68500122"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932958"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и Node.js
 
@@ -75,7 +75,7 @@ ms.locfileid: "68500122"
        });
        ```
 
-# <a name="create-and-send-the-search-request"></a>Создание и отправка поискового запроса
+## <a name="create-and-send-the-search-request"></a>Создание и отправка поискового запроса
 
 1. Создание функции с именем `bing_video_search()`. Добавьте параметры для вашего запроса, включая имя узла и заголовки. Выполните кодирование условия поиска и добавьте его к параметру пути с помощью параметра `?q=`. Затем отправьте запрос с `req.end()`.
 

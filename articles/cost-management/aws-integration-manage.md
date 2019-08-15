@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
-ms.openlocfilehash: 05e2375998b3bce4320b2d66ab7fce44cd911dcc
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 6767644e037c6abb3e3044c8707e923a9137a01c
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479124"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019550"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление затратами и использованием AWS в Azure
 
@@ -138,7 +138,7 @@ _Перед началом_: Если вы не знакомы с анализо
 
 По умолчанию создателем соединителя AWS является владелец всех объектов, созданных соединителем. Включая Объединенную учетную запись AWS и связанную учетную запись AWS.
 
-Чтобы проверить параметры соединителя, потребуется по крайней мере роль Contribute, читатель не сможет проверить параметры соединителя.
+Чтобы проверить параметры соединителя, потребуется по крайней мере роль участника, средство чтения не может проверить параметры соединителя.
 
 ### <a name="collection-failed-with-assumerole"></a>Сбой сбора с Ассумероле
 

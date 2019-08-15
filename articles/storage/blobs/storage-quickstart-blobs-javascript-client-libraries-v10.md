@@ -11,12 +11,12 @@ ms.reviewer: seguler
 ms.date: 05/20/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: 742e270ae84604e8d5389c0b2982642f56105fcc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: ea5dfe2261be4512d4ba8edda1e7fbd5219a50c0
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828207"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986880"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -59,7 +59,7 @@ ms.locfileid: "68828207"
 
 ## <a name="create-a-shared-access-signature"></a>Создание подписанного URL-адреса
 
-Подписанный URL-адрес (SAS) используется кодом, запущенным в браузере, для авторизации запросов к хранилищу BLOB-объектов. Используя SAS, клиент может авторизовать доступ к ресурсам хранилища без ключа доступа к учетной записи или строки подключения. Дополнительные сведения см. в статье [Использование подписанных URL-адресов (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md).
+Подписанный URL-адрес (SAS) используется кодом, запущенным в браузере, для авторизации запросов к хранилищу BLOB-объектов. Используя SAS, клиент может авторизовать доступ к ресурсам хранилища без ключа доступа к учетной записи или строки подключения. Дополнительные сведения см. в статье [Использование подписанных URL-адресов (SAS)](../common/storage-sas-overview.md).
 
 Можно создать подписанный URL-адрес с помощью Azure CLI с использованием Azure Cloud Shell или с помощью портала Azure либо Обозревателя службы хранилища Azure. В таблице ниже описаны параметры, для которых необходимо указать значения, чтобы создать подписанный URL-адрес с помощью интерфейса командной строки.
 

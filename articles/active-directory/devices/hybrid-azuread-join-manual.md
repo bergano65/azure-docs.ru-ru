@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c9de4a9b72e446a7d2b6687af380ee910b58980
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: a56fcc45d4efb21c4904380d731d9e95584c39fd
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741290"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879413"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -71,6 +71,8 @@ Azure AD Connect выполняет следующие функции:
 Если вы используете устройства Windows 10 под управлением версии 1703 или более ранней и при этом вашей организации требуется доступ к Интернету через исходящий прокси-сервер, необходимо реализовать автоматическое обнаружение веб-прокси (WPAD), чтобы компьютеры Windows 10 можно было зарегистрировать в Azure AD.
 
 Начиная с Windows 10 версии 1803, если попытка гибридного присоединения к Azure AD для федеративного домена (такого как AD FS) завершается ошибкой, а в Azure AD Connect настроена синхронизация объекта-устройства или компьютера с Azure AD, устройство попытается выполнить это присоединение с помощью синхронизированного компьютера или устройства.
+
+Проверить, имеет ли устройство доступ к указанным выше ресурсам Майкрософт под системной учетной записью, можно с помощью [скрипта для проверки подключения при регистрации устройств](https://gallery.technet.microsoft.com/Test-Device-Registration-3dc944c0).
 
 ## <a name="verify-configuration-steps"></a>Проверка шагов конфигурации
 

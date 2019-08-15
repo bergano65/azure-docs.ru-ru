@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 10/24/2018
 ms.author: victorh
 ms.openlocfilehash: 393441e7ff620f3795e42c2cb376f99f8763f25b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59044867"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "60193210"
 ---
 # <a name="tutorial-monitor-azure-firewall-logs-and-metrics"></a>Руководство по Мониторинг журналов и метрик Брандмауэра Azure
 
@@ -71,11 +71,11 @@ ms.locfileid: "59044867"
 
 Чтобы включить ведение журналов диагностики, выполните следующие действия.
 
-1. Запишите или запомните ИД ресурса учетной записи хранения, где хранятся данные журнала, в формате: */subscriptions/\<идентификатор_подписки\>/resourceGroups/\<имя_группы_ресурсов\>/providers/Microsoft.Storage/storageAccounts/\<имя_учетной_записи_хранения\>*.
+1. Запишите или запомните ИД ресурса учетной записи хранения, где хранятся данные журнала, в формате: */subscriptions/\<идентификатор_подписки\>/resourceGroups/\<имя_группы_ресурсов\>/providers/Microsoft.Storage/storageAccounts/\<имя_учетной_записи_хранения\>* .
 
    Можно использовать любую учетную запись хранения в подписке. Получить эти сведения можно на портале Azure. Нужные сведения можно найти на странице **Свойство** ресурса.
 
-2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, в формате: */subscriptions/\<идентификатор_подписки\>/resourceGroups\</имя_группы_ресурсов\>/providers/Microsoft.Network/azureFirewalls/\<имя_брандмауэра\>*.
+2. Запишите или запомните идентификатор ресурса брандмауэра, для которого нужно включить ведение журнала, в формате: */subscriptions/\<идентификатор_подписки\>/resourceGroups\</имя_группы_ресурсов\>/providers/Microsoft.Network/azureFirewalls/\<имя_брандмауэра\>* .
 
    Получить эти сведения можно на портале.
 

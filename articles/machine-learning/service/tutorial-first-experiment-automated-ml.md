@@ -10,12 +10,12 @@ ms.author: tzvikei
 author: tsikiksr
 ms.reviewer: nibaccam
 ms.date: 07/23/2019
-ms.openlocfilehash: 1d2a0c9e1531ace16335ea57acaccedfe2c1a3c8
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 7ef19db472b30d82f14a5dd650cb8f4cb1f3ed3a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815892"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990078"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-train-and-deploy-your-first-classification-model-preview"></a>Учебник. Использование автоматического машинного обучения для обучения и развертывания первой модели классификации (Предварительная версия)
 
@@ -95,7 +95,7 @@ ms.locfileid: "68815892"
     Параллелизм| Выберите значение **5** для параметра Максимальное число одновременных итераций.
 
    >[!NOTE]
-   > В этом эксперименте не устанавливается пороговое значение метрики или максимального количества итераций. Мы также не будем блокировать тестирование алгоритмов.
+   > Для этого эксперимента не нужно задавать пороговую метрику или максимальное количество ядер на итерации. Мы также не будем блокировать тестирование алгоритмов.
 
 1. Нажмите кнопку **запустить** , чтобы запустить эксперимент.
 

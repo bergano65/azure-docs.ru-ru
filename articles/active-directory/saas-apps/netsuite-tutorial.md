@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2600989273d6ebfe4319a048cc65c8c3ff9ecdbc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e462197bac854004aaf2d2f0f96e121ed081581a
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67096323"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967241"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Руководство по Интеграция Azure Active Directory с NetSuite
 
@@ -122,7 +122,7 @@ ms.locfileid: "67096323"
     `https://<tenant-name>.na2.sandbox.NetSuite.com/saml2/acs`
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов NetSuite](http://www.netsuite.com/portal/services/support-services/suitesupport.shtml). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов NetSuite](https://www.netsuite.com/portal/services/support-services/suitesupport.shtml). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение NetSuite ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 

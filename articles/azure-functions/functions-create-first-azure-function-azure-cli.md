@@ -12,12 +12,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 625fcda4b612fdeda940f9219238ac79354dd056
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4e65abdb500d61aa72b142f598a17e4cb8fb05f8
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444662"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949999"
 ---
 # <a name="create-your-first-function-from-the-command-line"></a>Создание первой функции из командной строки
 
@@ -37,33 +37,7 @@ ms.locfileid: "67444662"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-the-local-function-app-project"></a>Создание локального проекта приложения-функции
-
-Выполните следующую команду из командной строки, чтобы создать проект приложения-функции в папке `MyFunctionProj` текущего локального каталога. Также в `MyFunctionProj` создается репозиторий GitHub.
-
-```bash
-func init MyFunctionProj
-```
-
-Когда появится запрос, выберите среду выполнения рабочей роли из следующих языков:
-
-+ `dotnet`. Создает проект библиотеки классов .NET (CSPROJ-файл).
-+ `node`. Создает проект JavaScript.
-
-При выполнении команды вы увидите выходные данные примерно следующего содержания.
-
-```output
-Writing .gitignore
-Writing host.json
-Writing local.settings.json
-Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
-```
-
-Чтобы перейти к новой папке проекта `MyFunctionProj`, используйте следующую команду.
-
-```bash
-cd MyFunctionProj
-```
+[!INCLUDE [functions-create-function-app-cli](../../includes/functions-create-function-app-cli.md)]
 
 ## <a name="enable-extension-bundles"></a>Включение пакетов расширений
 

@@ -1,7 +1,7 @@
 ---
 title: Основные понятия архитектуры &
 titleSuffix: Azure Machine Learning service
-description: Сведения об архитектуре, терминах, концепциях и рабочем процессе, которые составляют службу Машинное обучение Azure.
+description: Сведения об архитектуре, терминах, концепциях и рабочих процессах, составляющих службу Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: e6f6c41e5de4f4a053748dfb08dc57e8acac32e5
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ea5e476680b07a6a7ba2b57e94f1f0b99cc10987
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848239"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990087"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -49,12 +49,16 @@ ms.locfileid: "68848239"
 + Написание кода в Visual Studio Code с помощью [расширения Машинное обучение Azure VS Code](how-to-vscode-tools.md)
 + Используйте [визуальный интерфейс (Предварительная версия) для машинное обучение Azure службы](ui-concept-visual-interface.md) , чтобы выполнить шаги рабочего процесса без написания кода.
 
-## <a name="glossary-of-concepts"></a>Глоссарий понятий
+> [!NOTE]
+> Хотя в этой статье определяются термины и понятия, используемые Службой машинного обучения Azure, здесь не приводятся термины и понятия для платформы Azure. Дополнительные сведения о терминологии платформы Azure см. в статье [Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure](https://docs.microsoft.com/azure/azure-glossary-cloud-terminology).
+
+## <a name="glossary"></a>Глоссарий
 
 + <a href="#workspaces">Рабочей области</a>
 + <a href="#experiments">Эксперименты</a>
 + <a href="#models">Моделью</a>
 + <a href="#run-configurations">Конфигурация запуска</a>
++ [Интуицией](#estimators)
 + <a href="#datasets-and-datastores">DataSet & хранилища данных</a>
 + <a href="#compute-targets">Целевые объекты вычислений</a>
 + <a href="#training-scripts">Сценарий обучения</a>
@@ -69,19 +73,9 @@ ms.locfileid: "68848239"
 + <a href="#ml-pipelines">Конвейеры машинного обучения</a>
 + <a href="#logging">Logging</a>
 
-> [!NOTE]
-> Хотя в этой статье определяются термины и понятия, используемые Службой машинного обучения Azure, здесь не приводятся термины и понятия для платформы Azure. Дополнительные сведения о терминологии платформы Azure см. в статье [Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure](https://docs.microsoft.com/azure/azure-glossary-cloud-terminology).
-
-
 ### <a name="workspaces"></a>Рабочие области
 
-[Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы машинное обучение Azure. Она предоставляет централизованное расположение для работы со всеми артефактами, создаваемыми при использовании Службы машинного обучения Azure.
-
-Таксономия рабочей области показана на следующей схеме:
-
-[![Схема рабочей области](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
-
-Дополнительные сведения о рабочих областях см. [в разделе что такое Рабочая область машинное обучение Azure?](concept-workspace.md).
+[Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы машинное обучение Azure. Она предоставляет централизованное расположение для работы со всеми артефактами, создаваемыми при использовании Службы машинного обучения Azure. Вы можете предоставить общий доступ к рабочей области другим пользователям. Подробное описание рабочих областей см. в разделе [что такое Рабочая область машинное обучение Azure?](concept-workspace.md).
 
 ### <a name="experiments"></a>Эксперименты
 
@@ -97,7 +91,7 @@ ms.locfileid: "68848239"
 
 Служба машинного обучения Azure не зависит от платформы. При создании модели можно использовать любую популярную платформу машинного обучения, например Scikit-Learning, XGBoost, PyTorch, TensorFlow и Chain.
 
-Пример обучения модели см. в разделе [учебник. Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).
+Пример обучения модели с помощью Scikit — изучение и оценка см. в разделе [учебник. Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).
 
 **Реестр модели** отслеживает все модели в рабочей области службы машинное обучение Azure.
 
@@ -119,6 +113,19 @@ ms.locfileid: "68848239"
 Конфигурацию запуска можно сохранять в файл внутри каталога, содержащего сценарий обучения, или создать как объект в памяти и использовать для отправки запуска.
 
 Пример конфигураций запуска см. в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
+
+### <a name="estimators"></a>Интуицией
+
+Для упрощения обучения модели с помощью популярных платформ класс оценщик позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться).
+
+Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
+
+Дополнительные сведения см. в следующих статьях:
+
+* [Обучение моделей ml с помощью оценивающих](how-to-train-ml-models.md).
+* [Обучить модели глубокого обучения Pytorch в масштабе с помощью машинное обучение Azure](how-to-train-pytorch.md).
+* [Обучить и зарегистрируйте модели TensorFlow в масштабе с помощью службы машинное обучение Azure](how-to-train-tensorflow.md).
+* [Обучение и регистрация моделей цепочек в масштабе с помощью службы машинное обучение Azure](how-to-train-chainer.md).
 
 ### <a name="datasets-and-datastores"></a>Наборы данных и хранилища
 
@@ -152,7 +159,6 @@ ms.locfileid: "68848239"
 * моментальный снимок каталога, содержащего скрипты, до запуска;
 
 Вы создаете запуск при отправке сценария для обучения модели. Запуск может иметь ноль или более дочерних запусков. Например, запуск верхнего уровня может иметь два дочерних запуска, каждый из которых может иметь свои дочерние запуски.
-
 
 ### <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
 

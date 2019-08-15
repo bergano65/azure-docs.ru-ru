@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/09/2019
-ms.openlocfilehash: 9167757625347ba1857dc0d666ffdc6d25291a61
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 830e58e68ea84d70c581ea315ca15b2a03be59da
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990849"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019633"
 ---
 # <a name="authentication-issues-in-azure-hdinsight"></a>Проблемы проверки подлинности в Azure HDInsight
 
@@ -21,7 +21,9 @@ ms.locfileid: "68990849"
 
 При сбое проверки подлинности вам будет предложено ввести учетные данные. Если отменить это диалоговое окно, будет выведено сообщение об ошибке. Ниже приведены некоторые распространенные сообщения об ошибках.
 
-## <a name="issue-invalid_grant-or-unauthorized_client-50126"></a>Ошибка: invalid_grant или unauthorized_client, 50126
+## <a name="invalid_grant-or-unauthorized_client-50126"></a>invalid_grant или unauthorized_client, 50126
+
+### <a name="issue"></a>Проблемы
 
 Сбой входа для федеративных пользователей с кодом ошибки 50126 (вход выполнен успешно для пользователей облака). Сообщение об ошибке выглядит следующим образом:
 
@@ -39,7 +41,9 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-invalid_grant-or-unauthorized_client-50034"></a>Ошибка: invalid_grant или unauthorized_client, 50034
+## <a name="invalid_grant-or-unauthorized_client-50034"></a>invalid_grant или unauthorized_client, 50034
+
+### <a name="issue"></a>Проблемы
 
 Сбой входа с кодом ошибки 50034. Сообщение об ошибке выглядит следующим образом:
 
@@ -57,10 +61,9 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
+## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
 
-
-
-## <a name="issue-invalid_grant-or-unauthorized_client-50053"></a>Ошибка: invalid_grant или unauthorized_client, 50053
+### <a name="issue"></a>Проблемы
 
 Учетная запись пользователя заблокирована, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -78,7 +81,9 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-invalid_grant-or-unauthorized_client-50053"></a>Ошибка: invalid_grant или unauthorized_client, 50053
+## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant или unauthorized_client, 50053
+
+### <a name="issue"></a>Проблемы
 
 Срок действия пароля истек, код ошибки 50053. Сообщение об ошибке выглядит следующим образом:
 
@@ -96,7 +101,9 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-interaction_required"></a>Ошибка: interaction_required
+## <a name="interaction_required"></a>interaction_required
+
+### <a name="issue"></a>Проблемы
 
 Получение сообщения `interaction_required`об ошибке.
 
@@ -110,7 +117,9 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-sign-in-denied"></a>Проблема: Вход запрещен
+## <a name="sign-in-denied"></a>Вход запрещен
+
+### <a name="issue"></a>Проблемы
 
 Вход запрещен.
 
@@ -126,7 +135,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-kinit-fails"></a>Ошибка: сбой kinit
+## <a name="kinit-fails"></a>Сбой kinit
+
+### <a name="issue"></a>Проблемы
+
+Сбой kinit.
 
 ### <a name="cause"></a>Причина:
 
@@ -148,7 +161,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-kinit-fails-with-preauthentication-failure"></a>Проблема: сбой kinit с ошибкой предварительной проверки подлинности
+## <a name="kinit-fails-with-preauthentication-failure"></a>Сбой kinit с ошибкой предварительной проверки подлинности
+
+### <a name="issue"></a>Проблемы
+
+Kinit завершается `Preauthentication` сбоем с ошибкой.
 
 ### <a name="cause"></a>Причина:
 
@@ -160,7 +177,11 @@ Reason: Bad Request, Detailed Response: {"error":"invalid_grant","error_descript
 
 ---
 
-## <a name="issue-job--hdfs-command-fails-due-to-tokennotfoundexception"></a>Проблема: Сбой команды задания или HDFS из-за Токеннотфаундексцептион
+## <a name="job--hdfs-command-fails-due-to-tokennotfoundexception"></a>Сбой команды задания или HDFS из-за Токеннотфаундексцептион
+
+### <a name="issue"></a>Проблемы
+
+Сбой команды задания или HDFS из- `TokenNotFoundException`за ошибки.
 
 ### <a name="cause"></a>Причина:
 

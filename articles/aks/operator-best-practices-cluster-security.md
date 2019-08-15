@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mlearned
-ms.openlocfilehash: d4a77fc1756b0fa9decb6d3a84760beb1e700863
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 46e44804ddbabd8bf5620ad9516f1ca2d5017bfa
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67614894"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019307"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
@@ -188,7 +188,7 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
 Затем можно обновить кластер AKS с помощью команды [AZ AKS Upgrade][az-aks-upgrade] . Процесс обновления безопасно блокирует и очищает узел, устанавливает расписание для объектов pod на остальных узлах, а затем разворачивает новый узел, который работает под управлением последней версии ОС и Kubernetes.
 
 ```azurecli-interactive
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.8
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version KUBERNETES_VERSION
 ```
 
 Дополнительные сведения об обновлении в AKS см. в статье [Поддерживаемые версии Kubernetes в AKS][aks-supported-versions] и [Обновление кластера AKS][aks-upgrade].

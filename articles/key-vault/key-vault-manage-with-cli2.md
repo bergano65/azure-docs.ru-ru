@@ -2,19 +2,18 @@
 title: Управление Azure Key Vault с помощью интерфейса командной строки — Azure Key Vault | Документация Майкрософт
 description: Из этой статьи вы узнаете об автоматизации основных задач в Key Vault с использованием Azure CLI.
 services: key-vault
-author: barclayn
-manager: barbkess
-tags: azure-resource-manager
+author: msmbaldwin
+manager: rkarlin
 ms.service: key-vault
-ms.topic: conceptual
-ms.date: 01/10/2019
-ms.author: barclayn
-ms.openlocfilehash: d7d76458601b2afecafc1313e334215bf08b6545
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: tutorial
+ms.date: 08/12/2019
+ms.author: mbaldwin
+ms.openlocfilehash: 952126b76b00ff472181c72b1fd7b1a0e1b14e40
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64713834"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976348"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -39,7 +38,7 @@ ms.locfileid: "64713834"
 Общие сведения об Azure Key Vault см. в статье [Что такое хранилище ключей Azure?](key-vault-whatis.md)
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
@@ -321,7 +320,7 @@ az keyvault key delete --vault-name "ContosoKeyVault" --name "ContosoFirstKey"
 az keyvault secret delete --vault-name "ContosoKeyVault" --name "SQLPassword"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Полное описание команд Azure CLI для хранилища ключей доступно в [справочнике по интерфейсу командной строки Key Vault](/cli/azure/keyvault).
 

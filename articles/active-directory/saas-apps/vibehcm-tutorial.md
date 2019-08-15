@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 8d1f974b7fea72bede2ead2e9d971419d5e83cb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4267b75be72c1d162b4abaf7184afcdd02c38720
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087524"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943108"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по Интеграция Azure Active Directory с Vibe HCM
 
@@ -101,7 +101,7 @@ ms.locfileid: "67087524"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если нужно настроить приложение в режиме, инициируемом  **поставщиком удостоверений** , пользователю нет необходимости совершать какие-либо действия в разделе **Базовая конфигурация SAML**, так как это приложение уже предварительно интегрировано в Azure.
+4. Если нужно настроить приложение в режиме, инициируемом **поставщиком удостоверений**, то в разделе **Базовая конфигурация SAML** пользователю для этого не нужно ничего делать, так как это приложение уже предварительно интегрировано в Azure.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Vibe HCM](common/preintegrated.png)
 
@@ -174,7 +174,7 @@ ms.locfileid: "67087524"
 
 ### <a name="create-vibe-hcm-test-user"></a>Создание тестового пользователя Vibe HCM
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Vibe HCM. Обратитесь в  [службу поддержки Vibe HCM](mailto:support@vibehcm.com), чтобы добавить пользователей на платформу Vibe HCM. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Vibe HCM. Обратитесь в [службу поддержки Vibe HCM](mailto:support@vibehcm.com), чтобы добавить пользователей на платформу Vibe HCM. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -188,5 +188,5 @@ ms.locfileid: "67087524"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

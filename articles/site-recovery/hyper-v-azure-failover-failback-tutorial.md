@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 08/07/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: a4889d82ac1c837581771860f2aba86faf7650ee
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 4b9680b00905126d261562d7bec64bb931c1cda3
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399438"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845710"
 ---
 # <a name="fail-over-and-fail-back-hyper-v-vms-replicated-to-azure"></a>Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure
 
@@ -28,10 +28,10 @@ ms.locfileid: "66399438"
 
 Это пятое руководство в серии. В нем предполагается, что вы уже выполнили задачи из предыдущих руководств.    
 
-1. [Подготовка Azure](tutorial-prepare-azure.md).
+1. [Подготовка Azure](tutorial-prepare-azure.md)
 2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
 3. Настройка аварийного восстановления [виртуальных машин Hyper-V](tutorial-hyper-v-to-azure.md) или [виртуальных машин Hyper-V, управляемых в облаках VMM System Center](tutorial-hyper-v-vmm-to-azure.md).
-4. [Run a disaster recovery drill to Azure](tutorial-dr-drill-azure.md) (Выполнение отработки аварийного восстановления в Azure)
+4. [Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)
 
 ## <a name="prepare-for-failover-and-failback"></a>Подготовка к отработке отказа и восстановлению размещения
 

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 03/20/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5ef739a7053fffdd45c6d5e144ae736429597a4f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 5daa1cf04e04507174fa480c785bd15b656541a1
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850495"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019110"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 
@@ -99,6 +99,15 @@ Runbook и [модули](#modules-in-powershell-gallery) PowerShell можно 
 ## <a name="requesting-a-runbook-or-module"></a>Запрос на создание модуля Runbook или другого модуля
 
 Свой запрос можно отправить на сайте [User Voice](https://feedback.azure.com/forums/246290-azure-automation/).  Если вам нужна помощь в написании модуля Runbook или освоении PowerShell, опубликуйте вопрос на нашем [форуме](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
+
+## <a name="common-solutions-available-in-the-runbook-gallery"></a>Общие решения, доступные в коллекции модулей Runbook
+
+Список ниже содержит несколько модулей Runbook, предоставляющих решения для распространенных сценариев. Полный список модулей Runbook, созданных командой службы автоматизации Azure, см. в разделе [азуреаутоматионтеам Profile](https://www.powershellgallery.com/profiles/AzureAutomationTeam).
+
+* [Update-модулесинаутоматионтолатестверсион](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/) — импортирует последнюю версию на коллекция PowerShell всех модулей в учетной записи службы автоматизации.
+* [Enable-AzureDiagnostics](https://www.powershellgallery.com/packages/Enable-AzureDiagnostics/) — этот сценарий настраивает система диагностики Azure и log Analytics для получения журналов службы автоматизации Azure, содержащих состояние задания и потоки заданий.
+* [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemFromAzureVM/) — этот модуль Runbook копирует удаленный файл из виртуальной машины Windows Azure.
+* [Copy-итемфромазуревм](https://www.powershellgallery.com/packages/Copy-ItemToAzureVM/) — этот модуль Runbook копирует локальный файл на виртуальную машину Azure.
 
 ## <a name="next-steps"></a>Следующие шаги
 

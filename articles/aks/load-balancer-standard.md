@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: zarhoads
-ms.openlocfilehash: b5bbc2951e10e132b407e1651a2c146cf22184a5
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 4e234d3849e09bd8c57a8c33bb378ab801ce0f6d
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68949664"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019464"
 ---
 # <a name="preview---use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Предварительный просмотр. Использование балансировщика нагрузки "Стандартный" в службе Kubernetes Azure (AKS)
 
@@ -136,7 +136,6 @@ az aks create \
     --name myAKSCluster \
     --enable-vmss \
     --node-count 1 \
-    --kubernetes-version 1.14.0 \
     --load-balancer-sku standard \
     --generate-ssh-keys
 ```
@@ -167,7 +166,7 @@ kubectl get nodes
 
 ```
 NAME                       STATUS   ROLES   AGE     VERSION
-aks-nodepool1-31718369-0   Ready    agent   6m44s   v1.14.0
+aks-nodepool1-31718369-0   Ready    agent   6m44s   v1.13.9
 ```
 
 ## <a name="verify-your-cluster-uses-the-standard-sku"></a>Убедитесь, что в кластере используется SKU " *стандартный* "

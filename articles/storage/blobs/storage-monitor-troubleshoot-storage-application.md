@@ -1,20 +1,19 @@
 ---
 title: Мониторинг и устранение неполадок приложения облачного хранилища в Azure | Документация Майкрософт
 description: Мониторинг и устранение неполадок облачного приложения с помощью инструментов диагностики, метрик и оповещений.
-services: storage
 author: normesta
 ms.service: storage
+ms.subservice: blobs
 ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: normesta
 ms.reviewer: fryu
-ms.custom: mvc
-ms.openlocfilehash: 1383ccd570e23d80343ccdfd586d08ee25ebbc8d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 3a2381302a378e7b2635b84c32a87e844e4605a7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148246"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844878"
 ---
 # <a name="monitor-and-troubleshoot-a-cloud-storage-application"></a>Мониторинг и устранение неполадок приложения облачного хранилища
 
@@ -52,7 +51,7 @@ ms.locfileid: "65148246"
 
 ### <a name="navigate-to-the-storage-account-in-the-azure-portal"></a>Переход к учетной записи хранения на портале Azure
 
-В разделе **Мониторинг** выберите **Оповещения (классические)**.
+В разделе **Мониторинг** выберите **Оповещения (классические)** .
 
 Выберите **Добавить оповещение метрики (классическое)** и заполните форму **Добавление правила**, указав необходимые сведения. В раскрывающемся списке **Метрика** выберите `SASClientOtherError`. Чтобы оповещение срабатывало после первой ошибки, в раскрывающемся списке **Условие** выберите **Больше или равно**.
 

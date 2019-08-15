@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc, fasttrack-edit
 ms.devlang: javascript
 manager: jeconnoc
-ms.openlocfilehash: 857646bb1b9b317f1e51218d258616e775056b43
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 84e05b7afa2746587f2ea5008d493730ccbfad7e
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442287"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950035"
 ---
 # <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli-preview"></a>Создание первой функции, выполняемой в Linux, с помощью основных инструментов и Azure CLI (предварительная версия)
 
@@ -38,34 +38,7 @@ ms.locfileid: "67442287"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-the-local-function-app-project"></a>Создание локального проекта приложения-функции
-
-Выполните следующую команду из командной строки, чтобы создать проект приложения-функции в папке `MyFunctionProj` текущего локального каталога. Также в `MyFunctionProj` создается репозиторий GitHub.
-
-```bash
-func init MyFunctionProj
-```
-
-При появлении запроса с помощью клавиш со стрелками выберите время выполнения рабочей роли из приведенных ниже параметров языка.
-
-+ `dotnet`. Создает проект библиотеки классов .NET (CSPROJ-файл).
-+ `node`. Создает проект JavaScript или TypeScript. При появлении запроса выберите `JavaScript`.
-+ `python`. Создает проект Python. Сведения о функциях Python см. в см в статье о[ создании функций Python с помощью Azure Functions Core Tools и Azure CLI (предварительная версия)](functions-create-first-function-python.md).
-
-При выполнении команды вы увидите выходные данные примерно следующего содержания.
-
-```output
-Writing .gitignore
-Writing host.json
-Writing local.settings.json
-Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
-```
-
-Чтобы перейти к новой папке проекта `MyFunctionProj`, используйте следующую команду.
-
-```bash
-cd MyFunctionProj
-```
+[!INCLUDE [functions-create-function-app-cli](../../includes/functions-create-function-app-cli.md)]
 
 ## <a name="enable-extension-bundles"></a>Включение пакетов расширений
 

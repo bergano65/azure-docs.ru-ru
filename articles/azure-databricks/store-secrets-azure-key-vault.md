@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 07/19/2019
-ms.openlocfilehash: 4d80755cdf49246a8772cca82e2a71c6cccbf13a
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 45c5be8b203daf21697f3cb6dad4ecadb6449339
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68371394"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976514"
 ---
 # <a name="tutorial-access-azure-blob-storage-from-azure-databricks-using-azure-key-vault"></a>Руководство по Доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault
 
@@ -32,9 +32,13 @@ ms.locfileid: "68371394"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/). Инструкции из этого руководства нельзя выполнять с бесплатной пробной версией подписки. Прежде чем создавать кластер, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+Войдите на [портале Azure](https://portal.azure.com/).
 
-## <a name="create-a-storage-account-and-blob-container"></a>Создание контейнера BLOB-объектов и учетной записи хранения
+> [!Note]
+> Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
+> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#remove-the-spending-limit-in-account-center) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
+
+## <a name="create-a-storage-account-and-blob-container"></a>Создание контейнера BLOB-объектов и учетной записи хранения.
 
 1. Выберите **Создать ресурс** > **Хранилище** на портале Azure. Выберите **учетную запись хранения**.
 

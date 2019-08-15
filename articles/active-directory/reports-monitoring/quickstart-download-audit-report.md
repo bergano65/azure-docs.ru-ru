@@ -3,7 +3,7 @@ title: Краткое руководство по загрузке отчета 
 description: Узнайте, как загрузить отчет по аудиту с помощью портала Azure
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 4de121ea-f4aa-4c8a-aae4-700c2c5e97a2
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6cbea49fe39c92c8a2fc50e501cb4ef5cff74b1
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 2f3e5dd1c42537ce6ff419d7d81d69d824242ec4
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436682"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989678"
 ---
 # <a name="quickstart-download-an-audit-report-using-the-azure-portal"></a>Краткое руководство. Скачивание отчета об аудите с помощью портала Azure
 

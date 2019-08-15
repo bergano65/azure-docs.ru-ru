@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: mlearned
-ms.openlocfilehash: 305901007180cfb197cf5c0dfb338800449560a1
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: b96d933385c67600c9d553cc8755c4e734427a67
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68382032"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018872"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -134,7 +134,7 @@ az aks create \
     --name myAKSCluster \
     --node-count 1 \
     --enable-addons monitoring \
-    --kubernetes-version 1.14.1 \
+    --kubernetes-version 1.14.5 \
     --generate-ssh-keys \
     --windows-admin-password $PASSWORD_WIN \
     --windows-admin-username azureuser \
@@ -159,7 +159,7 @@ az aks nodepool add \
     --os-type Windows \
     --name npwin \
     --node-count 1 \
-    --kubernetes-version 1.14.1
+    --kubernetes-version 1.14.5
 ```
 
 Приведенная выше команда создает пул узлов с именем *нпвин* и добавляет его в *myAKSCluster*. При создании пула узлов для запуска контейнеров Windows Server по умолчанию для *node-VM-size* используется значение *Standard_D2s_v3*. Если вы решили задать параметр *node-VM-size* , просмотрите список [ограниченных размеров виртуальных машин][restricted-vm-sizes]. Минимальный рекомендуемый размер — *Standard_D2s_v3*. Приведенная выше команда также использует подсеть по умолчанию в виртуальной сети по `az aks create`умолчанию, создаваемой при запуске.
@@ -188,8 +188,8 @@ kubectl get nodes
 
 ```
 NAME                                STATUS   ROLES   AGE    VERSION
-aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.1
-aksnpwin987654                      Ready    agent   108s   v1.14.1
+aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.5
+aksnpwin987654                      Ready    agent   108s   v1.14.5
 ```
 
 ## <a name="run-the-application"></a>Выполнение приложения

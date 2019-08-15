@@ -3,20 +3,20 @@ title: Руководство по моделированию Project Acoustics 
 titlesuffix: Azure Cognitive Services
 description: В этом документе описывается процесс акустической обработки с помощью расширения редактора Unreal.
 services: cognitive-services
-author: kegodin
+author: NoelCross
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: tutorial
 ms.date: 03/20/2019
-ms.author: michem
+ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: 47946570db305ff3d54dfed9ea6f698e5deb7b72
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 7a868a5f9b06499e23710399733b0659d97f900d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704792"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854890"
 ---
 # <a name="project-acoustics-unreal-bake-tutorial"></a>Руководство по моделированию Project Acoustics в Unreal
 В этом документе описывается процесс акустической обработки с помощью расширения редактора Unreal.

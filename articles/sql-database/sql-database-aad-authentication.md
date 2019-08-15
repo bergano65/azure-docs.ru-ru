@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: eb49649e9c92416fc674c032b9dc6a613a34dd77
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b99dbd403de0de948527fbe74b7e1205316822c0
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569661"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019677"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -98,7 +98,7 @@ ms.locfileid: "68569661"
   - `SUSER_ID(<admin name>)`
   - `SUSER_SID(<admin name>)`
 
-### <a name="manage-instances"></a>Управление экземплярами
+### <a name="managed-instances"></a>Управляемые экземпляры
 
 - Субъекты сервера (имена для входа) и пользователи Azure AD поддерживаются в [Управляемых экземплярах](sql-database-managed-instance.md) в качестве предварительной версии функции.
 - Параметр субъектов сервера (имена для входа) Azure AD, сопоставленный с группой Azure AD в качестве владельца базы данных, не поддерживается в [Управляемых экземплярах](sql-database-managed-instance.md).

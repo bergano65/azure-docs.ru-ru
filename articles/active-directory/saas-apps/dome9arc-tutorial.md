@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Check Point CloudGuard Dome9 Arc | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Check Point CloudGuard Dome9 Arc | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Check Point CloudGuard Dome9 Arc.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 06/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdaaab8257d3a79130902e1ba0466f9cf15484f4
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 240d962d56e4a2dc0758f3170c51b343d22ef98d
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147128"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944578"
 ---
-# <a name="tutorial-integrate-check-point-cloudguard-dome9-arc-with-azure-active-directory"></a>Руководство. Интеграция Check Point CloudGuard Dome9 Arc и Azure Active Directory
+# <a name="tutorial-integrate-check-point-cloudguard-dome9-arc-with-azure-active-directory"></a>Руководство по Интеграция Check Point CloudGuard Dome9 Arc и Azure Active Directory
 
 В этом руководстве описано, как интегрировать Check Point CloudGuard Dome9 Arc с Azure Active Directory (Azure AD). Интеграция Check Point CloudGuard Dome9 Arc с Azure AD обеспечивает следующие возможности.
 
@@ -94,7 +94,7 @@ ms.locfileid: "67147128"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Check Point CloudGuard Dome9 Arc](mailto:Dome9@checkpoint.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение Check Point CloudGuard Dome9 Arc ожидает проверочные утверждения SAML в определенном формате, что требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+6. Приложение Check Point CloudGuard Dome9 Arc ожидает проверочные утверждения SAML в определенном формате, что требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 
@@ -182,7 +182,7 @@ ms.locfileid: "67147128"
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 

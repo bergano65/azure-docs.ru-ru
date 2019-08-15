@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 07/17/2019
+ms.date: 08/12/2019
 ms.author: diberry
-ms.openlocfilehash: 19eeb396536925d9667c8dddb09bea779de79555
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 11f40d99a36493272cb6cd51e4a339c19cd0358b
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707183"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966738"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-net"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для .NET
 
@@ -75,7 +75,7 @@ ms.locfileid: "68707183"
 В каталоге приложения установите клиентскую библиотеку для разработки LUIS для .NET с помощью следующей команды:
 
 ```console
-dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring -Version 3.0.0
+dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring --version 3.0.0
 ```
 
 Если вы используете интегрированную среду разработки Visual Studio, клиентская библиотека доступна в виде загружаемого пакета NuGet.

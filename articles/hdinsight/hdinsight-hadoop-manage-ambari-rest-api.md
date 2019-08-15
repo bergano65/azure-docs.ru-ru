@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: hrasheed
-ms.openlocfilehash: 301ad4f940e6bd4eedb3a4df64e4740d29effe03
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 5836dda186c7bd9baeafa193052b0b75d63e291b
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406220"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019618"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -42,6 +42,8 @@ ms.locfileid: "68406220"
 ## <a name="authentication"></a>Проверка подлинности
 
 Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin**) и пароль, указанные при создании кластера.
+
+Для корпоративный пакет безопасности кластеров вместо `admin`используйте полное имя пользователя, например. `username@domain.onmicrosoft.com`
 
 ## <a name="examples"></a>Примеры
 

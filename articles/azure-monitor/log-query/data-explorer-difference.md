@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/31/2018
+ms.date: 08/13/2019
 ms.author: bwren
-ms.openlocfilehash: 1185f3f96fd39f168d138d7dbf66e7780884b1fa
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9892b8884d901033a80fae4168f25da97edb5a68
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60589262"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990183"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
 
@@ -31,7 +31,7 @@ ms.locfileid: "60589262"
 
 ### <a name="statements-not-supported-in-azure-monitor"></a>Инструкции, которые не поддерживаются в Azure Monitor:
 
-* [псевдоним](/azure/kusto/query/aliasstatement);
+* [Alias](/azure/kusto/query/aliasstatement)
 * [параметры запроса](/azure/kusto/query/queryparametersstatement).
 
 ### <a name="functions-not-supported-in-azure-monitor"></a>Функции, которые не поддерживаются в Azure Monitor:
@@ -52,6 +52,7 @@ ms.locfileid: "60589262"
 
 ### <a name="plugins-not-supported-in-azure-monitor"></a>Подключаемые модули, которые не поддерживаются в Azure Monitor:
 
+* [Подключаемый модуль Python](/azure/kusto/query/pythonplugin)
 * [модуль sql_request](/azure/kusto/query/sqlrequestplugin).
 
 
@@ -61,7 +62,7 @@ ms.locfileid: "60589262"
 * [app()](app-expression.md);
 * [workspace()](workspace-expression.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).
