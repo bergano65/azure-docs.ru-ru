@@ -45,7 +45,7 @@ sections:
         items:
           - html: <a href="tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
           - html: <a href="tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
-          - html: <a href="tutorial-data-prep">Подготовка данных и использование автоматизированного Машинного обучения для прогнозирования платы за такси</b></a>
+          - html: <a href="tutorial-data-prep">Подготовка данных и использование автоматизированного машинного обучения для прогнозирования платы за такси</b></a>
           - html: <a href="how-to-run-batch-predictions">Пакетное прогнозирование для больших объемов данных с помощью конвейеров ML</b></a>
   - title: Примеры
     items:
@@ -56,10 +56,10 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: '<a href="https://aka.ms/aml-sdk">Основной пакет SDK для Python</a>: ключевые функции, автоматическое машинное обучение, конвейеры и многое другое'
-          - html: 'Пакет SDK для Python <a href="https://aka.ms/aml-monitoring-sdk">для мониторинга</a>: сбор данных о развернутых веб-службах'
-          - html: <a href="../algorithm-module-reference/module-reference.md">Справочник по алгоритмам и модулям</a> для графического интерфейса
-          - html: '<a href="https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest">Azure ML CLI</a>: расширение интерфейса командной строки машинного обучения'
+          - html: '<a href="https://aka.ms/aml-sdk">Основной пакет SDK для Python</a>: документация по ключевым функциям, автоматизированному машинному обучению, конвейерам и многому другому.'
+          - html: 'Пакет SDK для Python <a href="https://aka.ms/aml-monitoring-sdk">для мониторинга</a>: документация по сбору данных о развернутых веб-службах.'
+          - html: '<a href="../algorithm-module-reference/module-reference.md">Справочник по алгоритмам и модулям</a>: документация по модулям графического интерфейса.'
+          - html: '<a href="https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest">Azure ML CLI</a>: расширение интерфейса командной строки Машинного обучения.'
   - title: Другие технологии службы "Машинное обучение Azure"
     items:
       - type: list

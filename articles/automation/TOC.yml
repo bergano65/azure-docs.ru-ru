@@ -20,10 +20,14 @@
       displayName: RBAC
     - name: Перемещение учетной записи службы автоматизации в другую подписку
       href: how-to/move-account.md
+    - name: Автоматизация подключения служб автоматизации
+      href: /azure/architecture/cloud-adoption/operations/azure-server-management/onboarding-automation
 - name: Автоматизация процессов
   items:
     - name: Обзор гибридного компонента Runbook Worker
       href: automation-hybrid-runbook-worker.md
+    - name: Коллекция Runbook
+      href: automation-runbook-gallery.md
     - name: Основные понятия
       items:
         - name: Типы Runbook
@@ -297,8 +301,6 @@
   items:
     - name: Отправка сообщения электронной почты из runbook с помощью SendGrid
       href: automation-send-email.md
-    - name: Коллекция Runbook
-      href: automation-runbook-gallery.md
     - name: Мониторинг модулей runbook с помощью оповещений метрик
       href: automation-alert-metric.md
     - name: Запуск модуля runbook с помощью оповещений Azure
