@@ -1,5 +1,5 @@
 ---
-title: Обновлений Прогнозирование обновлений + стремления + Up — продажи
+title: 'Пример визуального интерфейса #5: Классификация для прогнозирования обновлений + стремления + Up — продажи'
 titleSuffix: Azure Machine Learning service
 description: В этом примере эксперимента с визуальным интерфейсом показана обработка двоичных классификаторов обновлений, типичная задача для управления отношениями с клиентами (CRM).
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: a0b3e3de604e7c59ea6a06bd59007964c98e0057
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: a2eabdd601fcf350d2076d33882e3d90255fee92
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845987"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016470"
 ---
 # <a name="sample-5---classification-predict-churn-appetency-and-up-selling"></a>Пример 5. Классификация: Прогнозирование обновлений, стремления и продаж 
 

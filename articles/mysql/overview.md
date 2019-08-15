@@ -6,17 +6,17 @@ author: ajlam
 ms.author: andrela
 ms.custom: mvc
 ms.topic: conceptual
-ms.date: 03/20/2019
-ms.openlocfilehash: 2852cab05fab8e15b7e60a22f54cc866d2f0f178
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/13/2019
+ms.openlocfilehash: 1299f82c28181d1c24f68a0d36ba13c6b40d21ee
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61226267"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013403"
 ---
 # <a name="what-is-azure-database-for-mysql"></a>Что такое база данных Azure для MySQL?
 
-База данных Azure для MySQL — это служба реляционной базы данных в Microsoft cloud на основе [MySQL Community Edition](https://www.mysql.com/products/community/) (доступна по лицензии GPLv2) компонент database engine, версии 5.6 и 5.7. База данных Azure для MySQL обеспечивает:
+База данных Azure для MySQL — это служба реляционной базы данных в облаке Майкрософт, основанная на выпуске [MySQL Community](https://www.mysql.com/products/community/) (доступна в рамках лицензии GPLv2), версии 5,6, 5,7 и 8,0. База данных Azure для MySQL обеспечивает:
 
 - Встроенный высокий уровень доступности без дополнительных затрат.
 - Прогнозируемую производительность с использованием модели оплаты по мере использования.
@@ -63,7 +63,7 @@ ms.locfileid: "61226267"
 - Чтобы устранить проблему, связанную с учетной записью, отправьте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) на портале Azure.
 - Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597982-azure-database-for-mysql).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После ознакомления с базовыми понятиями о базе данных Azure для MySQL и ответив на вопрос "Что такое база данных Azure для MySQL", вы можете перейти к следующим действиям.
 
 - Ознакомьтесь со страницей цен для сравнения цен и доступа к калькуляторам. [Цены](https://azure.microsoft.com/pricing/details/mysql/)

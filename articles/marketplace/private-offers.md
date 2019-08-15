@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/1/2018
 ms.author: pabutler
-ms.openlocfilehash: dcba2b40bdcf4558f7a06f7e14d0ce654a9c1ec1
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 35134d828098af0cff3d585dee600ee1808b00c4
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876077"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013636"
 ---
 # <a name="private-offers"></a>Частные предложения
 
@@ -49,9 +49,6 @@ ms.locfileid: "67876077"
 ![Частные предложения](./media/marketplace-publishers-guide/private-offer.png)
 
 Частные предложения будут также отображаться в результатах поиска. Просто найдите индикатор событий "Частный".
-
-> [!Note]
-> Частные предложения не поддерживаются для подписок, созданных через торгового посредника по программе поставщика облачных решений (CSP).
 
 ## <a name="next-steps"></a>Следующие шаги
 

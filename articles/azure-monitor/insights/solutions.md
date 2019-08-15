@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 12/07/2018
+ms.date: 08/13/2019
 ms.author: bwren
-ms.openlocfilehash: b66d9cf15aaeaca975b60f24601b8ad7f555f458
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6932f9f302bf1816842d78a662f01ebaafed8686
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110163"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989200"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 Решения мониторинга используют службы Azure, чтобы получить дополнительные сведения о работе конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке.
@@ -65,11 +65,11 @@ ms.locfileid: "62110163"
 ## <a name="install-a-monitoring-solution"></a>Установка решения для мониторинга
 В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения мониторинга, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
 
-1. В [списке решений в вашей подписке](#list-installed-monitoring-solutions) щелкните **Добавить**. 
-1. Справа от элемента **Решения для управления** щелкните **More** (Дополнительные). 
+1. В [списке решений в вашей подписке](#list-installed-monitoring-solutions) щелкните **Добавить**.
+1. Просмотр или поиск решения. Вы также можете просмотреть решения по [этой ссылке поиска](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/management-tools?page=1&subcategories=management-solutions).
 1. Найдите нужное решение для мониторинга и прочитайте его описание.
 1. Нажмите кнопку **Создать**, чтобы запустить процесс установки.
-1. Когда начнется процесс установки, вам будет предложено указать конфигурацию, параметры которой зависят от конкретного решения.
+1. При запуске процесса установки вам будет предложено указать рабочую область Log Analytics и предоставить необходимую конфигурацию для решения.
 
 ![Установка решения](media/solutions/install-solution.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "62110163"
 Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 

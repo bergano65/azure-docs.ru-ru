@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: iainfou
-ms.openlocfilehash: df0b3d27eec478280a33be831a2431eccdf05a74
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: cbc5bee0f4cc59f59af6e3f57219279cd8fcb030
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483386"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988584"
 ---
 # <a name="bind-to-an-azure-ad-domain-services-managed-domain-using-secure-ldap-ldaps"></a>Привязка к управляемому домену доменных служб Azure AD с помощью защищенного протокола LDAP (LDAPS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "67483386"
 Затем выполните привязку к управляемому домену. Щелкните **Подключение** и выберите в меню пункт **Привязка**. Укажите данные для входа в учетную запись пользователя, принадлежащего к группе "Администраторы контроллера домена AAD".
 
 > [!IMPORTANT]
-> Пользователи (и учетные записи служб) нельзя выполнить простой привязки LDAP, если вы отключили синхронизацию хэшей паролей NTLM экземпляр доменных служб Azure AD.  Дополнительные сведения об отключении синхронизации хэшей паролей NTLM [защиты управляемого домена доменных служб Azure AD](secure-your-domain.md).
+> Пользователи (и учетные записи служб) не могут выполнять простые привязки LDAP, если вы отключили синхронизацию хэша паролей NTLM в экземпляре доменных служб Azure AD.  Дополнительные сведения об отключении синхронизации хэшей паролей NTLM см. в статье [Защита управляемого домена доменных служб Azure AD](secure-your-domain.md).
 >
 >
 
@@ -70,9 +70,9 @@ ms.locfileid: "67483386"
 
 ## <a name="related-content"></a>Связанная информация
 * [Приступая к работе с доменными службами Azure AD](create-instance.md)
-* [Управление домен доменных служб Azure AD](manage-domain.md)
+* [Управление доменом доменных служб Azure AD](manage-domain.md)
 * [LDAP Query Basics](https://docs.microsoft.com/windows/desktop/ad/creating-a-query-filter) (Основы запроса LDAP)
-* [Управление групповой политики для доменных служб Azure AD](manage-group-policy.md)
+* [Управление групповая политика для доменных служб Azure AD](manage-group-policy.md)
 * [Группы безопасности сети](../virtual-network/security-overview.md)
 * [Создание группы безопасности сети](../virtual-network/tutorial-filter-network-traffic.md)
 

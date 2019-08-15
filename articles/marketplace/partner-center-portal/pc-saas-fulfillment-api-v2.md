@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: a8196370a93a6ce8eed83002397c2f09efbc777f
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 276699b9316a0c4fd428038f2c967bdf934f449c
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358585"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016046"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>API-интерфейсы выполнения SaaS, версия 2 
 
@@ -282,7 +282,7 @@ Response Body:
           "term": { //This gives the free trial term start and end date
             "startDate": "2019-05-31",
             "endDate": "2019-06-29",
-            "termUnit": "P1M"
+            "termUnit": "P1M" //where P1M: Monthly, P1Y: Yearly 
         },
 }
 ```
@@ -789,6 +789,8 @@ Response body:
 ## <a name="implementing-a-webhook-on-the-saas-service"></a>Реализация веб-перехватчика в службе SaaS
 
 Издатель должен реализовать веб-перехватчик в этой службе SaaS, чтобы заранее уведомлять пользователей об изменениях в своей службе. Служба SaaS должна вызывать API операций для проверки и авторизации перед выполнением действия в уведомлении веб-перехватчика.
+
+Чтобы обеспечить безопасную связь, корпорация Майкрософт включает в заголовок авторизации маркер JWT Azure Active Directory в рамках вызова. Поставщики SaaS рекомендуется проверить маркер JWT, как описано в статье [маркеры доступа платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) , чтобы обеспечить принятие только допустимых вызовов.
 
 ```json
 {

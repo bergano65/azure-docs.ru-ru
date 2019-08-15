@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: 6557649eb1b97ad4d88876906737f8249e18b958
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2877fae66584ec24fb6e62b20d66ded36157b824
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399801"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990349"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -39,7 +39,7 @@ ms.locfileid: "66399801"
 
 IP-адрес сервера управления ключами для глобального облака Azure — 23.102.135.246. Имя DNS — kms.core.windows.net. Если вы используете другие платформы Azure, например Azure для Германии, необходимо использовать IP-адрес соответствующего сервера управления ключами. Дополнительные сведения приведены в таблице ниже.
 
-|платформа| DNS СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|IP-АДРЕС СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|
+|Платформа| DNS СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|IP-АДРЕС СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|
 |------|-------|-------|
 |Azure (глобальный)|kms.core.windows.net|23.102.135.246|
 |Azure для Германии|kms.core.cloudapi.de|51.4.143.248|
@@ -52,6 +52,9 @@ IP-адрес сервера управления ключами для глоб
 ### <a name="for-resource-manager-vms"></a>Виртуальные машины Resource Manager
 
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
+
+> [!NOTE] 
+> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с исходящими [подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
 
 1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
@@ -107,7 +110,7 @@ IP-адрес сервера управления ключами для глоб
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Ключи установки клиента сервера управления ключами](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )

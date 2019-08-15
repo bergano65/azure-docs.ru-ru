@@ -8,22 +8,24 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/17/2019
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 ms.reviewer: maghan
 manager: craigg
-ms.openlocfilehash: 76962975705ff53a292f41a0a54e42c5f2991a2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c090d9a864bfb5218836627a5579cd3089387af8
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002582"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013898"
 ---
 # <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
+## <a name="overview"></a>Обзор
+
 Непрерывная интеграция — это способ автоматического тестирования каждого изменения, внесенного в базу кода. Непрерывная поставка следует за проверкой, которая выполняется во время непрерывной интеграции. Она передает изменения в промежуточную или рабочую систему.
 
-В Фабрике данных Azure под непрерывными интеграцией и поставкой подразумевается перемещение конвейеров Фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. Чтобы выполнить непрерывные интеграцию и поставку, можно использовать интеграцию через пользовательский интерфейс Фабрики данных с шаблонами Azure Resource Manager. Если выбрать вариант **Шаблон ARM**, пользовательский интерфейс фабрики данных создаст шаблон Resource Manager. При выборе варианта **Export ARM template** (Экспорт шаблона ARM) портал создает шаблон Resource Manager для фабрики данных и файл конфигурации, включающий все строки подключения, а также другие параметры. Затем необходимо создать один файл конфигурации для каждой среды (разработки, тестирования, рабочей). Главный файл шаблона Resource Manager одинаков для всех сред.
+В фабрике данных Azure непрерывная интеграция & доставки означает перемещение конвейеров фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. Чтобы выполнить непрерывную интеграцию & доставки, можно использовать интеграцию с интерфейсом UX фабрики данных с шаблонами Azure Resource Manager. РАЗРАБОТЧИК фабрики данных может создать шаблон диспетчер ресурсов из раскрывающегося списка **шаблонов ARM** . При выборе варианта **Export ARM template** (Экспорт шаблона ARM) портал создает шаблон Resource Manager для фабрики данных и файл конфигурации, включающий все строки подключения, а также другие параметры. Затем необходимо создать один файл конфигурации для каждой среды (разработка, тестирование, Рабочая среда). Главный файл шаблона Resource Manager одинаков для всех сред.
 
 Уделите 9 минут вашего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
 
@@ -31,106 +33,116 @@ ms.locfileid: "66002582"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
+## <a name="continuous-integration-lifecycle"></a>Жизненный цикл непрерывной интеграции
+
+Ниже приведен пример обзора жизненного цикла непрерывной интеграции и доставки в фабрике данных Azure, настроенной с помощью Azure Repos Git. Дополнительные сведения о настройке репозитория Git см. в статье [Управление версиями в фабрике данных Azure](source-control.md).
+
+1.  Фабрика данных разработки создается и настраивается с помощью Azure Repos Git, где все разработчики имеют разрешение на создание ресурсов фабрики данных, таких как конвейеры и DataSets.
+
+1.  Когда разработчики делают изменения в своей ветви компонентов, они выполняют отладку своих конвейеров с самыми последними изменениями. Дополнительные сведения об отладке выполнения конвейера см. в статье [Итеративная разработка и отладка с помощью фабрики данных Azure](iterative-development-debugging.md).
+
+1.  После того, как разработчики удовлетворяют своим изменениям, они создают запрос на вытягивание из ветви их компонентов в главную или коллективную ветвь для получения изменений, которые будут проверяться одноранговыми узлами.
+
+1.  После утверждения запроса на вытягивание и слияния изменений в главной ветви они могут публиковаться в фабрике разработки.
+
+1.  Когда команда готова к развертыванию изменений в фабрике тестов, а затем к производственной фабрике, они экспортируют шаблон диспетчер ресурсов из главной ветви.
+
+1.  Экспортированный шаблон диспетчер ресурсов развертывается с различными файлами параметров в фабрике тестирования и производственной фабрике.
+
 ## <a name="create-a-resource-manager-template-for-each-environment"></a>Создание шаблона Resource Manager для каждой среды
-Выберите **Export ARM template** (Экспорт шаблона ARM), чтобы экспортировать шаблон Resource Manager в фабрику данных в среде разработки.
+
+В раскрывающемся списке **шаблон ARM** выберите **Экспорт шаблона ARM** , чтобы экспортировать шаблон диспетчер ресурсов для фабрики данных в среде разработки.
 
 ![](media/continuous-integration-deployment/continuous-integration-image1.png)
 
-Затем перейдите к фабрикам данных в тестовой и рабочей средах и выберите **Import ARM template** (Импорт шаблона ARM).
+В фабриках тестов и рабочих данных выберите **Импорт шаблона ARM**. После этого вы перейдете на портал Azure, где сможете импортировать экспортированный шаблон. Выберите **создать собственный шаблон в редакторе** , чтобы открыть редактор шаблонов диспетчер ресурсов.
 
-![](media/continuous-integration-deployment/continuous-integration-image2.png)
+![](media/continuous-integration-deployment/continuous-integration-image3.png) 
 
-После этого вы перейдете на портал Azure, где сможете импортировать экспортированный шаблон. Выберите **Build your own template in the editor** (Создать собственный шаблон в редакторе), а затем — **Загрузить файл** и выберите созданный шаблон Resource Manager. Укажите параметры, и фабрика данных и весь конвейер импортируются в вашу рабочую среду.
-
-![](media/continuous-integration-deployment/continuous-integration-image3.png)
+Щелкните **загрузить файл** и выберите созданный шаблон диспетчер ресурсов.
 
 ![](media/continuous-integration-deployment/continuous-integration-image4.png)
 
-Нажмите кнопку **Загрузить файл**, выберите экспортированный шаблон Resource Manager и укажите все значения конфигурации (например, связанные службы).
+В области Параметры введите значения конфигурации, такие как учетные данные связанной службы. Когда все будет готово, щелкните **купить** , чтобы развернуть шаблон диспетчер ресурсов.
 
 ![](media/continuous-integration-deployment/continuous-integration-image5.png)
 
-**Строки подключения**. Можно найти сведения, необходимые для создания строки подключения, в статьях об отдельных соединителях. Дополнительные сведения о базе данных SQL Azure см. в статье [Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure](connector-azure-sql-database.md). Чтобы проверить правильную строку (например, для связанной службы), можно также открыть представление кода для ресурса в пользовательском интерфейсе Фабрики данных. Однако в представлении кода пароль или часть ключа учетной записи строки подключения удаляется. Чтобы открыть представление кода, щелкните значок, который выделен на следующем снимке экрана.
+### <a name="connection-strings"></a>Строки подключения
+
+Сведения о настройке строк подключения можно найти в статье, посвященной каждому соединителю. Дополнительные сведения о базе данных SQL Azure см. в статье [Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure](connector-azure-sql-database.md). Чтобы проверить строку подключения, можно открыть представление кода для ресурса в интерфейсе фабрики данных. В представлении кода часть пароля или ключа учетной записи в строке подключения удаляется. Чтобы открыть представление кода, щелкните значок, который выделен на следующем снимке экрана.
 
 ![Откройте представление кода, чтобы просмотреть строку подключения](media/continuous-integration-deployment/continuous-integration-codeview.png)
 
-## <a name="continuous-integration-lifecycle"></a>Жизненный цикл непрерывной интеграции
-Ниже приведен полный жизненный цикл для непрерывных интеграции и поставки, который можно использовать после включения интеграции Git Azure Repos в пользовательском интерфейсе Фабрики данных:
-
-1.  Настройте фабрику данных в среде разработки с Azure Repos, в которой все разработчики могут создавать ресурсы Фабрики данных, такие как конвейеры, наборы данных и т. д.
-
-1.  Затем разработчики могут изменить ресурсы (например, конвейеры). Во время этого процесса можно выбрать команду **Отладить**, чтобы увидеть, как работает конвейер с последними изменениями.
-
-1.  После того как разработчики внесут изменения, они могут создать запрос Pull из своей ветви в главную ветвь (или ветвь совместной работы), чтобы их коллеги могли просмотреть изменения.
-
-1.  Внесенные в главную ветвь изменения можно опубликовать в фабрике в среде разработки, выбрав **Опубликовать**.
-
-1.  Если команда готова применить изменения к фабрикам в тестовой и рабочей средах, можно экспортировать шаблон Resource Manager из главной ветви или любой другой, если главная поддерживает активную фабрику данных в среде разработки.
-
-1.  Экспортированный шаблон Resource Manager можно развернуть с файлами различных параметров в фабрики в тестовой и рабочей средах.
-
 ## <a name="automate-continuous-integration-with-azure-pipelines-releases"></a>Автоматизация непрерывной интеграции с помощью выпусков Azure Pipelines
 
-Ниже приведены шаги настройки выпуска Azure Pipelines для автоматизации развертывания фабрики данных в различные среды.
+Ниже приведено пошаговое инструкции по настройке выпуска Azure Pipelines, который автоматизирует развертывание фабрики данных в нескольких средах.
 
 ![Схема непрерывной интеграции с помощью Azure Pipelines](media/continuous-integration-deployment/continuous-integration-image12.png)
 
 ### <a name="requirements"></a>Требования
 
--   Подписка Azure, связанная с Team Foundation Server или Azure Repos и использующая  [*конечную точку службы Azure Resource Manager*](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+-   Подписка Azure, связанная с Team Foundation Server или Azure Repos с помощью [конечной точки службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
 
--   Фабрика данных с интеграцией Git Azure Repos настроена.
+-   Фабрика данных, настроенная с интеграцией Azure Repos Git.
 
--   Хранилище  [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), содержащее секреты.
+-    [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) , содержащий секреты для каждой среды.
 
 ### <a name="set-up-an-azure-pipelines-release"></a>Настройка выпуска Azure Pipelines
 
-1.  Перейдите на страницу Azure Repos в настроенный проект с Фабрикой данных.
+1.  В [пользовательском интерфейсе Azure DevOps](https://dev.azure.com/)откройте проект, настроенный с помощью фабрики данных.
 
-1.  В верхнем меню щелкните **Azure Pipelines** &gt; **Выпуски** &gt; **Создать определение выпуска**.
+1.  В левой части страницы щелкните конвейеры, а затем выберите выпуски.
 
     ![](media/continuous-integration-deployment/continuous-integration-image6.png)
 
-1.  Выберите шаблон **Пустой процесс**.
+1.  Выберите **Новый конвейер** или если у вас есть конвейеры, **новые**и новые конвейеры **выпуска**.
 
-1.  Введите имя своей среды.
+1.  Выберите **пустой шаблон задания** .
 
-1.  Добавьте артефакт Git и выберите настроенный репозиторий с фабрикой данных. Выберите `adf_publish` в качестве стандартной ветви с последней версией по умолчанию.
+    ![](media/continuous-integration-deployment/continuous-integration-image13.png)
+
+1.  В поле **имя этапа** введите имя среды.
+
+1.  Выберите **Добавить артефакт**и выберите тот же репозиторий, настроенный для фабрики данных. Выберите `adf_publish` в качестве стандартной ветви с последней версией по умолчанию.
 
     ![](media/continuous-integration-deployment/continuous-integration-image7.png)
 
 1.  Добавьте задачу развертывания Azure Resource Manager.
 
-    a.  Создайте новую задачу, найдите и добавьте **Развертывание группы ресурсов Azure**.
+    1\.  В представлении "этап" щелкните ссылку **просмотреть задачи этапа** .
 
-    2\.  В задаче "Развертывание" выберите подписку, группу ресурсов и расположение для целевой фабрики данных и при необходимости предоставьте учетные данные.
+    ![](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    c.  Выберите действие **Create or Update Resource Group** (Создание или изменение группы ресурсов).
+    2\.  Создайте новую задачу. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
 
-    d.  Выберите **…** в поле **Шаблон**. Найдите шаблон Resource Manager (*ARMTemplateForFactory.json*), созданный с помощью действия публикации на портале. Найдите этот файл в папке `<FactoryName>` в ветви `adf_publish`.
+    В.  В задаче "Развертывание" выберите подписку, группу ресурсов и расположение для целевой фабрики данных и при необходимости предоставьте учетные данные.
 
-    д.  Выполните те же действия для файла параметров. Выберите правильный файл. Выбор зависит от того, была ли создана копия или используется файл по умолчанию *ARMTemplateParametersForFactory.json*.
+    Г.  В раскрывающемся списке Действие выберите **создать или обновить группу ресурсов**.
 
-    Е.  Выберите **…** рядом с полем **Переопределить параметры шаблона** и заполните сведения для целевой фабрики данных. Для учетных данных, полученных из хранилища ключей, используйте одно и то же имя секрета в следующем формате: если имя секрета — `cred1`, введите `"$(cred1)"` (между кавычками).
+    Д.  Выберите **…** в поле **Шаблон**. Перейдите к шаблону Azure Resource Manager создать с помощью шага **Импорт шаблона ARM** в статье [Создание шаблона Resource Manager для каждой среды](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment). Найдите этот файл в папке `<FactoryName>` в ветви `adf_publish`.
+
+    f.  Выберите **…** в **поле Параметры шаблона.** для выбора файла параметров. Выберите правильный файл. Выбор зависит от того, была ли создана копия или используется файл по умолчанию *ARMTemplateParametersForFactory.json*.
+
+    ж.  Выберите **…** рядом с полем **Переопределить параметры шаблона** и заполните сведения для целевой фабрики данных. Для учетных данных, поступающих из хранилища ключей, введите имя секрета в двойные кавычки. Например, если имя секрета — `cred1`, введите `"$(cred1)"`для его значения.
 
     ![](media/continuous-integration-deployment/continuous-integration-image9.png)
 
-    ж. Выберите **добавочный** режим развертывания.
+    h. Выберите **добавочный** режим развертывания.
 
     > [!WARNING]
-    > При выборе **полного** режима развертывания существующие ресурсы могут быть удалены, в том числе ресурсы в целевой группе ресурсов, которые не определены в шаблоне Resource Manager.
+    > При выборе режима **завершить** развертывание существующие ресурсы могут быть удалены, включая все ресурсы в Целевой группе ресурсов, которые не определены в шаблоне диспетчер ресурсов.
 
 1.  Сохраните конвейер выпуска.
 
-1.  Создайте выпуск из этого конвейера выпуска.
+1. Чтобы запустить выпуск, нажмите кнопку " **создать выпуск** "
 
-    ![](media/continuous-integration-deployment/continuous-integration-image10.png)
+![](media/continuous-integration-deployment/continuous-integration-image10.png)
 
-### <a name="optional---get-the-secrets-from-azure-key-vault"></a>Получение секретов из Azure Key Vault (необязательно)
+### <a name="get-secrets-from-azure-key-vault"></a>Получение секретов от Azure Key Vault
 
-Если вам нужно передать секреты в шаблоне Azure Resource Manager, рекомендуем использовать Azure Key Vault с выпуском Azure Pipelines.
+Если у вас есть секреты для передачи шаблона Azure Resource Manager, рекомендуется использовать Azure Key Vault с Azure Pipelinesным выпуском.
 
-Обработать секреты можно двумя способами.
+Существует два способа управления секретами:
 
 1.  Добавьте секреты в файл параметров. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).
 
@@ -163,13 +175,15 @@ ms.locfileid: "66002582"
 
     ![](media/continuous-integration-deployment/continuous-integration-image8.png)
 
-### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Предоставление разрешений для агента Azure Pipelines
-Задача Azure Key Vault может завершиться ошибкой времени выполнения fIntegration с отказано в доступе. Загрузите журналы для выпуска и найдите файл `.ps1` с помощью команды для предоставления разрешений агенту Azure Pipelines. Вы можете выполнить команду напрямую или же скопировать идентификатор участника из файла и вручную добавить политику доступа на портале Azure. (*Get* и *List* — минимальные требуемые разрешения.)
+#### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Предоставление разрешений для агента Azure Pipelines
+
+Задача Azure Key Vault может завершиться с ошибкой отказа в доступе, если отсутствуют соответствующие разрешения. Загрузите журналы для выпуска и найдите файл `.ps1` с помощью команды для предоставления разрешений агенту Azure Pipelines. Вы можете выполнить команду напрямую или же скопировать идентификатор участника из файла и вручную добавить политику доступа на портале Azure. Для **получения** и **перечисления** требуются минимальные разрешения.
 
 ### <a name="update-active-triggers"></a>Обновление активных триггеров
-При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную остановить и запустить их после развертывания. Для этого можно добавить задачу Azure PowerShell, как показано в следующем примере.
 
-1.  На вкладке задач выпуска найдите и добавьте **Azure PowerShell**.
+При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную остановить и запустить их после развертывания. Это можно сделать с помощью задачи Azure PowerShell.
+
+1.  На вкладке задачи в выпуске добавьте задачу **Azure PowerShell** .
 
 1.  Выберите **Azure Resource Manager** в качестве типа подключения, а затем — свою подписку.
 
@@ -183,554 +197,14 @@ ms.locfileid: "66002582"
 
     ![](media/continuous-integration-deployment/continuous-integration-image11.png)
 
-Вы можете выполнить те же шаги и использовать аналогичный код (с функцией `Start-AzDataFactoryV2Trigger`), чтобы перезапустить триггеры после развертывания.
+Вы можете выполнить аналогичные действия (с `Start-AzDataFactoryV2Trigger` функцией), чтобы перезапустить триггеры после развертывания.
 
 > [!IMPORTANT]
 > В сценариях непрерывных интеграции и развертывания тип среды выполнения интеграции в разных средах должен совпадать. Например, если у вас есть *локальная* среда выполнения интеграции в среде разработки, ей необходим тип *Локальная* в других средах, таких как рабочая и тестовая. Аналогично, если вы совместно используете среды выполнения интеграции в нескольких средах, необходимо настроить их в качестве *связанных локальных сред* во всех средах (разработки, тестирования и рабочей).
 
-## <a name="sample-deployment-template"></a>Пример шаблона развертывания
+#### <a name="sample-prepostdeployment-script"></a>Пример скрипта, выполняемого перед развертыванием
 
-Ниже приведен пример шаблона развертывания, который можно импортировать в Azure Pipelines.
-
-```json
-{
-    "source": 2,
-    "id": 1,
-    "revision": 51,
-    "name": "Data Factory Prod Deployment",
-    "description": null,
-    "createdBy": {
-        "displayName": "Sample User",
-        "url": "https://pde14b1dc-d2c9-49e5-88cb-45ccd58d0335.codex.ms/vssps/_apis/Identities/c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "id": "c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "uniqueName": "sampleuser@microsoft.com",
-        "imageUrl": "https://sampleuser.visualstudio.com/_api/_common/identityImage?id=c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "descriptor": "aad.M2Y2N2JlZGUtMDViZC03ZWI3LTgxYWMtMDcwM2UyODMxNTBk"
-    },
-    "createdOn": "2018-03-01T22:57:25.660Z",
-    "modifiedBy": {
-        "displayName": "Sample User",
-        "url": "https://pde14b1dc-d2c9-49e5-88cb-45ccd58d0335.codex.ms/vssps/_apis/Identities/c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "id": "c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "uniqueName": "sampleuser@microsoft.com",
-        "imageUrl": "https://sampleuser.visualstudio.com/_api/_common/identityImage?id=c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-        "descriptor": "aad.M2Y2N2JlZGUtMDViZC03ZWI3LTgxYWMtMDcwM2UyODMxNTBk"
-    },
-    "modifiedOn": "2018-03-14T17:58:11.643Z",
-    "isDeleted": false,
-    "path": "\\",
-    "variables": {},
-    "variableGroups": [],
-    "environments": [{
-        "id": 1,
-        "name": "Prod",
-        "rank": 1,
-        "owner": {
-            "displayName": "Sample User",
-            "url": "https://pde14b1dc-d2c9-49e5-88cb-45ccd58d0335.codex.ms/vssps/_apis/Identities/c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "id": "c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "uniqueName": "sampleuser@microsoft.com",
-            "imageUrl": "https://sampleuser.visualstudio.com/_api/_common/identityImage?id=c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "descriptor": "aad.M2Y2N2JlZGUtMDViZC03ZWI3LTgxYWMtMDcwM2UyODMxNTBk"
-        },
-        "variables": {
-            "factoryName": {
-                "value": "sampleuserprod"
-            }
-        },
-        "variableGroups": [],
-        "preDeployApprovals": {
-            "approvals": [{
-                "rank": 1,
-                "isAutomated": true,
-                "isNotificationOn": false,
-                "id": 1
-            }],
-            "approvalOptions": {
-                "requiredApproverCount": null,
-                "releaseCreatorCanBeApprover": false,
-                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
-                "enforceIdentityRevalidation": false,
-                "timeoutInMinutes": 0,
-                "executionOrder": 1
-            }
-        },
-        "deployStep": {
-            "id": 2
-        },
-        "postDeployApprovals": {
-            "approvals": [{
-                "rank": 1,
-                "isAutomated": true,
-                "isNotificationOn": false,
-                "id": 3
-            }],
-            "approvalOptions": {
-                "requiredApproverCount": null,
-                "releaseCreatorCanBeApprover": false,
-                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
-                "enforceIdentityRevalidation": false,
-                "timeoutInMinutes": 0,
-                "executionOrder": 2
-            }
-        },
-        "deployPhases": [{
-            "deploymentInput": {
-                "parallelExecution": {
-                    "parallelExecutionType": "none"
-                },
-                "skipArtifactsDownload": false,
-                "artifactsDownloadInput": {
-                    "downloadInputs": []
-                },
-                "queueId": 19,
-                "demands": [],
-                "enableAccessToken": false,
-                "timeoutInMinutes": 0,
-                "jobCancelTimeoutInMinutes": 1,
-                "condition": "succeeded()",
-                "overrideInputs": {}
-            },
-            "rank": 1,
-            "phaseType": 1,
-            "name": "Run on agent",
-            "workflowTasks": [{
-                "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
-                "version": "2.*",
-                "name": "Azure PowerShell script: FilePath",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                    "ConnectedServiceName": "",
-                    "ConnectedServiceNameARM": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "ScriptType": "FilePath",
-                    "ScriptPath": "$(System.DefaultWorkingDirectory)/Dev/deployment.ps1",
-                    "Inline": "param\n(\n    [parameter(Mandatory = $false)] [String] $rootFolder=\"C:\\Users\\sampleuser\\Downloads\\arm_template\",\n    [parameter(Mandatory = $false)] [String] $armTemplate=\"$rootFolder\\arm_template.json\",\n    [parameter(Mandatory = $false)] [String] $armTemplateParameters=\"$rootFolder\\arm_template_parameters.json\",\n    [parameter(Mandatory = $false)] [String] $domain=\"microsoft.onmicrosoft.com\",\n    [parameter(Mandatory = $false)] [String] $TenantId=\"72f988bf-86f1-41af-91ab-2d7cd011db47\",\n    [parame",
-                    "ScriptArguments": "-rootFolder \"$(System.DefaultWorkingDirectory)/Dev/\" -DataFactoryName $(factoryname) -predeployment $true",
-                    "TargetAzurePs": "LatestVersion",
-                    "CustomTargetAzurePs": "5.*"
-                }
-            }, {
-                "taskId": "1e244d32-2dd4-4165-96fb-b7441ca9331e",
-                "version": "1.*",
-                "name": "Azure Key Vault: sampleuservault",
-                "refName": "secret1",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceName": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "KeyVaultName": "sampleuservault",
-                    "SecretsFilter": "*"
-                }
-            }, {
-                "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
-                "version": "2.*",
-                "name": "Azure Deployment:Create Or Update Resource Group action on sampleuser-datafactory",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceName": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "action": "Create Or Update Resource Group",
-                    "resourceGroupName": "sampleuser-datafactory",
-                    "location": "East US",
-                    "templateLocation": "Linked artifact",
-                    "csmFileLink": "",
-                    "csmParametersFileLink": "",
-                    "csmFile": "$(System.DefaultWorkingDirectory)/Dev/ARMTemplateForFactory.json",
-                    "csmParametersFile": "$(System.DefaultWorkingDirectory)/Dev/ARMTemplateParametersForFactory.json",
-                    "overrideParameters": "-factoryName \"$(factoryName)\" -linkedService1_connectionString \"$(linkedService1-connectionString)\" -linkedService2_connectionString \"$(linkedService2-connectionString)\"",
-                    "deploymentMode": "Incremental",
-                    "enableDeploymentPrerequisites": "None",
-                    "deploymentGroupEndpoint": "",
-                    "project": "",
-                    "deploymentGroupName": "",
-                    "copyAzureVMTags": "true",
-                    "outputVariable": "",
-                    "deploymentOutputs": ""
-                }
-            }, {
-                "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
-                "version": "2.*",
-                "name": "Azure PowerShell script: FilePath",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                    "ConnectedServiceName": "",
-                    "ConnectedServiceNameARM": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "ScriptType": "FilePath",
-                    "ScriptPath": "$(System.DefaultWorkingDirectory)/Dev/deployment.ps1",
-                    "Inline": "# You can write your azure powershell scripts inline here. \n# You can also pass predefined and custom variables to this script using arguments",
-                    "ScriptArguments": "-rootFolder \"$(System.DefaultWorkingDirectory)/Dev/\" -DataFactoryName $(factoryname) -predeployment $false",
-                    "TargetAzurePs": "LatestVersion",
-                    "CustomTargetAzurePs": ""
-                }
-            }]
-        }],
-        "environmentOptions": {
-            "emailNotificationType": "OnlyOnFailure",
-            "emailRecipients": "release.environment.owner;release.creator",
-            "skipArtifactsDownload": false,
-            "timeoutInMinutes": 0,
-            "enableAccessToken": false,
-            "publishDeploymentStatus": true,
-            "badgeEnabled": false,
-            "autoLinkWorkItems": false
-        },
-        "demands": [],
-        "conditions": [{
-            "name": "ReleaseStarted",
-            "conditionType": 1,
-            "value": ""
-        }],
-        "executionPolicy": {
-            "concurrencyCount": 1,
-            "queueDepthCount": 0
-        },
-        "schedules": [],
-        "retentionPolicy": {
-            "daysToKeep": 30,
-            "releasesToKeep": 3,
-            "retainBuild": true
-        },
-        "processParameters": {
-            "dataSourceBindings": [{
-                "dataSourceName": "AzureRMWebAppNamesByType",
-                "parameters": {
-                    "WebAppKind": "$(WebAppKind)"
-                },
-                "endpointId": "$(ConnectedServiceName)",
-                "target": "WebAppName"
-            }]
-        },
-        "properties": {},
-        "preDeploymentGates": {
-            "id": 0,
-            "gatesOptions": null,
-            "gates": []
-        },
-        "postDeploymentGates": {
-            "id": 0,
-            "gatesOptions": null,
-            "gates": []
-        },
-        "badgeUrl": "https://sampleuser.vsrm.visualstudio.com/_apis/public/Release/badge/19749ef3-2f42-49b5-9696-f28b49faebcb/1/1"
-    }, {
-        "id": 2,
-        "name": "Staging",
-        "rank": 2,
-        "owner": {
-            "displayName": "Sample User",
-            "url": "https://pde14b1dc-d2c9-49e5-88cb-45ccd58d0335.codex.ms/vssps/_apis/Identities/c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "id": "c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "uniqueName": "sampleuser@microsoft.com",
-            "imageUrl": "https://sampleuser.visualstudio.com/_api/_common/identityImage?id=c9f828d1-2dbb-4e39-b096-f1c53d82bc2c",
-            "descriptor": "aad.M2Y2N2JlZGUtMDViZC03ZWI3LTgxYWMtMDcwM2UyODMxNTBk"
-        },
-        "variables": {
-            "factoryName": {
-                "value": "sampleuserstaging"
-            }
-        },
-        "variableGroups": [],
-        "preDeployApprovals": {
-            "approvals": [{
-                "rank": 1,
-                "isAutomated": true,
-                "isNotificationOn": false,
-                "id": 4
-            }],
-            "approvalOptions": {
-                "requiredApproverCount": null,
-                "releaseCreatorCanBeApprover": false,
-                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
-                "enforceIdentityRevalidation": false,
-                "timeoutInMinutes": 0,
-                "executionOrder": 1
-            }
-        },
-        "deployStep": {
-            "id": 5
-        },
-        "postDeployApprovals": {
-            "approvals": [{
-                "rank": 1,
-                "isAutomated": true,
-                "isNotificationOn": false,
-                "id": 6
-            }],
-            "approvalOptions": {
-                "requiredApproverCount": null,
-                "releaseCreatorCanBeApprover": false,
-                "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
-                "enforceIdentityRevalidation": false,
-                "timeoutInMinutes": 0,
-                "executionOrder": 2
-            }
-        },
-        "deployPhases": [{
-            "deploymentInput": {
-                "parallelExecution": {
-                    "parallelExecutionType": "none"
-                },
-                "skipArtifactsDownload": false,
-                "artifactsDownloadInput": {
-                    "downloadInputs": []
-                },
-                "queueId": 19,
-                "demands": [],
-                "enableAccessToken": false,
-                "timeoutInMinutes": 0,
-                "jobCancelTimeoutInMinutes": 1,
-                "condition": "succeeded()",
-                "overrideInputs": {}
-            },
-            "rank": 1,
-            "phaseType": 1,
-            "name": "Run on agent",
-            "workflowTasks": [{
-                "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
-                "version": "2.*",
-                "name": "Azure PowerShell script: FilePath",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                    "ConnectedServiceName": "",
-                    "ConnectedServiceNameARM": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "ScriptType": "FilePath",
-                    "ScriptPath": "$(System.DefaultWorkingDirectory)/Dev/deployment.ps1",
-                    "Inline": "# You can write your azure powershell scripts inline here. \n# You can also pass predefined and custom variables to this script using arguments",
-                    "ScriptArguments": "-rootFolder \"$(System.DefaultWorkingDirectory)/Dev/\" -DataFactoryName $(factoryname) -predeployment $true",
-                    "TargetAzurePs": "LatestVersion",
-                    "CustomTargetAzurePs": ""
-                }
-            }, {
-                "taskId": "1e244d32-2dd4-4165-96fb-b7441ca9331e",
-                "version": "1.*",
-                "name": "Azure Key Vault: sampleuservault",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceName": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "KeyVaultName": "sampleuservault",
-                    "SecretsFilter": "*"
-                }
-            }, {
-                "taskId": "94a74903-f93f-4075-884f-dc11f34058b4",
-                "version": "2.*",
-                "name": "Azure Deployment:Create Or Update Resource Group action on sampleuser-datafactory",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceName": "e4e2ef4b-8289-41a6-ba7c-92ca469700aa",
-                    "action": "Create Or Update Resource Group",
-                    "resourceGroupName": "sampleuser-datafactory",
-                    "location": "East US",
-                    "templateLocation": "Linked artifact",
-                    "csmFileLink": "",
-                    "csmParametersFileLink": "",
-                    "csmFile": "$(System.DefaultWorkingDirectory)/Dev/ARMTemplateForFactory.json",
-                    "csmParametersFile": "$(System.DefaultWorkingDirectory)/Dev/ARMTemplateParametersForFactory.json",
-                    "overrideParameters": "-factoryName \"$(factoryName)\" -linkedService1_connectionString \"$(linkedService1-connectionString)\" -linkedService2_connectionString \"$(linkedService2-connectionString)\"",
-                    "deploymentMode": "Incremental",
-                    "enableDeploymentPrerequisites": "None",
-                    "deploymentGroupEndpoint": "",
-                    "project": "",
-                    "deploymentGroupName": "",
-                    "copyAzureVMTags": "true",
-                    "outputVariable": "",
-                    "deploymentOutputs": ""
-                }
-            }, {
-                "taskId": "72a1931b-effb-4d2e-8fd8-f8472a07cb62",
-                "version": "2.*",
-                "name": "Azure PowerShell script: FilePath",
-                "refName": "",
-                "enabled": true,
-                "alwaysRun": false,
-                "continueOnError": false,
-                "timeoutInMinutes": 0,
-                "definitionType": "task",
-                "overrideInputs": {},
-                "condition": "succeeded()",
-                "inputs": {
-                    "ConnectedServiceNameSelector": "ConnectedServiceNameARM",
-                    "ConnectedServiceName": "",
-                    "ConnectedServiceNameARM": "16a37943-8b58-4c2f-a3d6-052d6f032a07",
-                    "ScriptType": "FilePath",
-                    "ScriptPath": "$(System.DefaultWorkingDirectory)/Dev/deployment.ps1",
-                    "Inline": "param(\n$x,\n$y,\n$z)\nwrite-host \"----------\"\nwrite-host $x\nwrite-host $y\nwrite-host $z | ConvertTo-SecureString\nwrite-host \"----------\"",
-                    "ScriptArguments": "-rootFolder \"$(System.DefaultWorkingDirectory)/Dev/\" -DataFactoryName $(factoryname) -predeployment $false",
-                    "TargetAzurePs": "LatestVersion",
-                    "CustomTargetAzurePs": ""
-                }
-            }]
-        }],
-        "environmentOptions": {
-            "emailNotificationType": "OnlyOnFailure",
-            "emailRecipients": "release.environment.owner;release.creator",
-            "skipArtifactsDownload": false,
-            "timeoutInMinutes": 0,
-            "enableAccessToken": false,
-            "publishDeploymentStatus": true,
-            "badgeEnabled": false,
-            "autoLinkWorkItems": false
-        },
-        "demands": [],
-        "conditions": [{
-            "name": "ReleaseStarted",
-            "conditionType": 1,
-            "value": ""
-        }],
-        "executionPolicy": {
-            "concurrencyCount": 1,
-            "queueDepthCount": 0
-        },
-        "schedules": [],
-        "retentionPolicy": {
-            "daysToKeep": 30,
-            "releasesToKeep": 3,
-            "retainBuild": true
-        },
-        "processParameters": {
-            "dataSourceBindings": [{
-                "dataSourceName": "AzureRMWebAppNamesByType",
-                "parameters": {
-                    "WebAppKind": "$(WebAppKind)"
-                },
-                "endpointId": "$(ConnectedServiceName)",
-                "target": "WebAppName"
-            }]
-        },
-        "properties": {},
-        "preDeploymentGates": {
-            "id": 0,
-            "gatesOptions": null,
-            "gates": []
-        },
-        "postDeploymentGates": {
-            "id": 0,
-            "gatesOptions": null,
-            "gates": []
-        },
-        "badgeUrl": "https://sampleuser.vsrm.visualstudio.com/_apis/public/Release/badge/19749ef3-2f42-49b5-9696-f28b49faebcb/1/2"
-    }],
-    "artifacts": [{
-        "sourceId": "19749ef3-2f42-49b5-9696-f28b49faebcb:a6c88f30-5e1f-4de8-b24d-279bb209d85f",
-        "type": "Git",
-        "alias": "Dev",
-        "definitionReference": {
-            "branches": {
-                "id": "adf_publish",
-                "name": "adf_publish"
-            },
-            "checkoutSubmodules": {
-                "id": "",
-                "name": ""
-            },
-            "defaultVersionSpecific": {
-                "id": "",
-                "name": ""
-            },
-            "defaultVersionType": {
-                "id": "latestFromBranchType",
-                "name": "Latest from default branch"
-            },
-            "definition": {
-                "id": "a6c88f30-5e1f-4de8-b24d-279bb209d85f",
-                "name": "Dev"
-            },
-            "fetchDepth": {
-                "id": "",
-                "name": ""
-            },
-            "gitLfsSupport": {
-                "id": "",
-                "name": ""
-            },
-            "project": {
-                "id": "19749ef3-2f42-49b5-9696-f28b49faebcb",
-                "name": "Prod"
-            }
-        },
-        "isPrimary": true
-    }],
-    "triggers": [{
-        "schedule": {
-            "jobId": "b5ef09b6-8dfd-4b91-8b48-0709e3e67b2d",
-            "timeZoneId": "UTC",
-            "startHours": 3,
-            "startMinutes": 0,
-            "daysToRelease": 31
-        },
-        "triggerType": 2
-    }],
-    "releaseNameFormat": "Release-$(rev:r)",
-    "url": "https://sampleuser.vsrm.visualstudio.com/19749ef3-2f42-49b5-9696-f28b49faebcb/_apis/Release/definitions/1",
-    "_links": {
-        "self": {
-            "href": "https://sampleuser.vsrm.visualstudio.com/19749ef3-2f42-49b5-9696-f28b49faebcb/_apis/Release/definitions/1"
-        },
-        "web": {
-            "href": "https://sampleuser.visualstudio.com/19749ef3-2f42-49b5-9696-f28b49faebcb/_release?definitionId=1"
-        }
-    },
-    "tags": [],
-    "properties": {
-        "DefinitionCreationSource": {
-            "$type": "System.String",
-            "$value": "ReleaseNew"
-        }
-    }
-}
-```
-
-## <a name="sample-script-to-stop-and-restart-triggers-and-clean-up"></a>Пример сценария остановки и перезагрузки триггеров и очистки
-
-Ниже приведен пример скрипта для остановки триггеров перед развертыванием и их последующего перезапуска. Скрипт также содержит код для удаления ресурсов. Чтобы установить последнюю версию Azure PowerShell, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Ниже приведен пример скрипта для завершения триггеров перед развертыванием и перезапуска триггеров. Скрипт также содержит код для удаления ресурсов. Чтобы установить последнюю версию Azure PowerShell, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 ```powershell
 param
@@ -850,31 +324,33 @@ else {
 
 ## <a name="use-custom-parameters-with-the-resource-manager-template"></a>Использование пользовательских параметров с шаблоном Resource Manager
 
-Если вы находитесь в режиме GIT, можно переопределить свойства по умолчанию в шаблоне Resource Manager для установки свойств, параметризуются в шаблоне и свойства, которые являются фиксированными. Может потребоваться переопределить шаблон параметризации по умолчанию в следующих сценариях:
+Если вы находитесь в режиме GIT, можно переопределить свойства по умолчанию в шаблоне диспетчер ресурсов, чтобы задать свойства, параметризованные в шаблоне, и свойства, которые жестко запрограммированы. Может потребоваться переопределить шаблон параметризации по умолчанию в следующих сценариях:
 
-* Использовать автоматизированные CI/CD и вы хотите изменить некоторые свойства во время развертывания Resource Manager, но не параметризованные свойства по умолчанию.
-* Фабрикой настолько велико, что шаблон Resource Manager по умолчанию является недопустимым, так как она содержит более максимально допустимое параметров (256).
+* Вы используете автоматизированную CI/CD и хотите изменить некоторые свойства во время развертывания диспетчер ресурсов, но свойства не будут параметризованы по умолчанию.
+* Ваша фабрика настолько велика, что шаблон диспетчер ресурсов по умолчанию является недопустимым, так как он содержит больше максимально допустимых параметров (256).
 
-В этих условиях, чтобы переопределить параметризации шаблона по умолчанию, создайте файл с именем *arm шаблон параметров definition.json* в корневой папке репозитория. Имя файла должно совпадать. Фабрика данных пытается прочитать этот файл из любой ветви, в данный момент на портале фабрики данных Azure, а не только из ветви совместной работы. Можно создать или изменить его в закрытой ветке, где можно проверить изменения с помощью **шаблон экспорта ARM** в пользовательском Интерфейсе. Затем файл можно объединить в ветвь совместной работы. Если файл не найден, используется шаблон по умолчанию.
+В этих условиях для переопределения шаблона параметризации по умолчанию создайте файл с именем *ARM-Template-Parameters-Definition. JSON* в корневой папке репозитория. Имя файла должно точно совпадать. Фабрика данных пытается прочитать этот файл из любой ветви, на которой Вы находитесь на портале фабрики данных Azure, а не только из ветви совместной работы. Вы можете создать или изменить файл из частной ветви, где можно протестировать изменения с помощью **шаблона Export ARM** в пользовательском интерфейсе. Затем можно выполнить слияние файла в ветвь совместной работы. Если файл не найден, используется шаблон по умолчанию.
 
 
 ### <a name="syntax-of-a-custom-parameters-file"></a>Синтаксис пользовательского файла параметров
 
-Ниже приведены некоторые рекомендации для использования при создании файла пользовательских параметров. Этот файл состоит из раздела для каждого типа сущности: триггера, конвейера, linkedservice, dataset, integrationruntime и т. д.
-* Введите путь к свойству в типе соответствующие сущности.
-* Если задано имя свойства "\*'', указывают, что требуется параметризовать соответствующие все свойства в нем (только до уровня первого уровня, не рекурсивно). Можно также предоставить все исключения.
+Ниже приведены некоторые рекомендации, которые следует использовать при создании файла пользовательских параметров. Файл состоит из раздела для каждого типа сущности: триггера, конвейера, связанной службы, набора данных, среды выполнения интеграции и т. д.
+* Введите путь к свойству в соответствующем типе сущности.
+* Если задать для\*свойства имя "", вы указываете, что необходимо параметризовать все свойства под ним (только на первый уровень, но не рекурсивно). Кроме того, можно предоставить любые исключения.
 * При задании значения свойства в виде строки вы указываете, что хотите параметризовать свойство. Используйте формат `<action>:<name>:<stype>`.
-   *  `<action>` может принимать одно из следующих символов:
-      * `=` означает, что сохранение текущего значения как значение по умолчанию для параметра.
-      * `-` означает, что не следует хранить значение по умолчанию для параметра.
-      * `|` является особым случаем для секретов из хранилища ключей Azure для строки подключения или разделов.
-   * `<name>` — Имя параметра. Если поле пусто, он принимает имя свойства. Если значение начинается с `-` символа, имя сокращается. Например `AzureStorage1_properties_typeProperties_connectionString` бы быть сокращено до `AzureStorage1_connectionString`.
-   * `<stype>` Представляет тип параметра. Если `<stype>` является пустым, по умолчанию используется тип `string`. Поддерживаемые значения: `string`, `bool`, `number`, `object`, и `securestring`.
-* Когда вы можете указать массив в файле определения, вы можете указать, что соответствующее свойство в шаблоне является массивом. Фабрика данных выполняет итерацию всех объектов в массиве с помощью определения, указанного в объекте среды выполнения интеграции в массиве. Второй объект, строка, становится именем свойства, которое используется в качестве имени параметра для каждой итерации.
-* Определение, является вспомогательным инструментом для экземпляра ресурса невозможна. Любое определение применяется ко всем ресурсам этого типа.
-* По умолчанию все защищенные строки, такие как секретов Key Vault и защищенные строки, например строки подключения, ключи и маркеры, подлежащих параметризации.
+   *  `<action>` может иметь один из следующих символов:
+      * `=` означает, что текущее значение сохраняется как значение по умолчанию для параметра.
+      * `-` означает, что значение по умолчанию для параметра не сохраняется.
+      * `|` является особым случаем для секретов из Azure Key Vault для строк подключения или ключей.
+   * `<name>` имя параметра. Если оно пустое, оно принимает имя свойства. Если значение начинается с `-` символа, оно сокращается. Например, `AzureStorage1_properties_typeProperties_connectionString` сократится до `AzureStorage1_connectionString`.
+   * `<stype>` тип параметра. Если `<stype>`параметр пуст ,используетсятип`string`по умолчанию. Поддерживаемые значения: `string`, `bool`, `number`, `object`и .`securestring`
+* При указании массива в файле определения необходимо указать, что соответствующее свойство в шаблоне является массивом. Фабрика данных выполняет перебор всех объектов в массиве с помощью определения, указанного в объекте Integration Runtime массива. Второй объект, строка, становится именем свойства, которое используется в качестве имени параметра для каждой итерации.
+* Невозможно определить конкретное определение для экземпляра ресурса. Любое определение применяется ко всем ресурсам этого типа.
+* По умолчанию все защищенные строки, такие как Key Vault секреты и защищенные строки, такие как строки подключения, ключи и токены, являются параметризованными.
  
-## <a name="sample-parameterization-template"></a>Пример шаблона параметризации
+### <a name="sample-parameterization-template"></a>Пример шаблона параметризации
+
+Ниже приведен пример того, как может выглядеть шаблон параметризации:
 
 ```json
 {
@@ -935,35 +411,35 @@ else {
     }
 }
 ```
-
-### <a name="explanation"></a>Объяснение:
+Ниже приведено объяснение того, как создается указанный шаблон, разбитый по типу ресурса.
 
 #### <a name="pipelines"></a>Конвейеры
     
-* Любое свойство в пути действий/typeProperties/waitTimeInSeconds параметризован. Это означает, что любое действие в конвейере, имеющий свойство на уровне кода с именем `waitTimeInSeconds` (например, `Wait` действия) параметризован в виде числа, с именем по умолчанию. Но он не имеет значения по умолчанию в шаблоне Resource Manager. Он будет обязательный параметр во время развертывания Resource Manager.
-* Аналогичным образом, свойство, называемую `headers` (например, в `Web` действия) является параметризованным с типом `object` (JObject). Он имеет значение по умолчанию, которое имеет то же значение, как и в фабрику источника.
+* Любое свойство в действиях Path/typeProperties/Ваиттимеинсекондс является параметризованным. Любое действие в конвейере, которое имеет свойство уровня кода с именем `waitTimeInSeconds` (например `Wait` , действие), параметризовано как число с именем по умолчанию. Но в шаблоне диспетчер ресурсов не будет значения по умолчанию. Он будет обязательным входом во время развертывания диспетчер ресурсов.
+* Аналогично, свойство с `headers` именем (например, `Web` в действии) параметризовано с типом `object` (JObject). Он имеет значение по умолчанию, которое совпадает со значением в исходной фабрике.
 
-#### <a name="integrationruntimes"></a>IntegrationRuntimes
+#### <a name="integrationruntimes"></a>интегратионрунтимес
 
-* Только свойства, а все свойства, по пути `typeProperties` параметризуются вместе со значениями по умолчанию. Например, начиная с текущей схемы, имеется два свойства в разделе **IntegrationRuntimes** свойства типа: `computeProperties` и `ssisProperties`. Оба типа свойства создаются с помощью их значения по умолчанию и типы (объект).
+* Все свойства в пути `typeProperties` параметризованы с соответствующими значениями по умолчанию. Например, в разделе Свойства типа **интегратионрунтимес** есть два свойства: `computeProperties` и. `ssisProperties` Оба типа свойств создаются с соответствующими значениями по умолчанию и типами (Object).
 
 #### <a name="triggers"></a>Триггеры
 
-* В разделе `typeProperties`, параметризуются два свойства. Первый из них — `maxConcurrency`, которое указывается должен иметь значение по умолчанию и будет иметь тип `string`. Он имеет имя параметра по умолчанию `<entityName>_properties_typeProperties_maxConcurrency`.
-* `recurrence` Свойство также является параметризованным. В нем параметризовать как строки со значениями по умолчанию и имена параметров указаны все свойства, на этом уровне. Исключением является `interval` свойство, которое является параметризованным в качестве числовой тип и с именем параметра суффиксом `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Аналогичным образом `freq` свойство представляет собой строку и параметризован в виде строки. Тем не менее `freq` свойство записывается в параметрической без значения по умолчанию. Имя является сокращено и суффикс. Например, `<entityName>_freq`.
+* В `typeProperties`разделе два свойства являются параметризованными. Первый из них — `maxConcurrency`, для которого задано значение по умолчанию и тип.`string` Он имеет имя `<entityName>_properties_typeProperties_maxConcurrency`параметра по умолчанию.
+* `recurrence` Свойство также является параметризованным. В нем все свойства на этом уровне указываются для параметризации в виде строк, значения по умолчанию и имена параметров. Исключением является `interval` свойство, параметризованное как тип числа, с именем параметра с суффиксом `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Аналогично, `freq` свойство является строкой и параметризовано как строка. `freq` Однако свойство является параметризованным без значения по умолчанию. Имя сокращено и суффиксы. Например, `<entityName>_freq`.
 
 #### <a name="linkedservices"></a>LinkedServices
 
-* Связанные службы является уникальным. Так как связанные службы и наборы данных могут быть несколько типов, можно указать настройки определенного типа. Например, может сказать, что для всех связанных служб типа `AzureDataLakeStore`, определенного шаблона будет применен и для всех остальных (через \*) применяется другой шаблон.
-* В приведенном выше примере `connectionString` свойство, будет параметризовано как `securestring` значение, он не имеет значения по умолчанию, и будет иметь параметр сокращенное имя, которое имеет суффикс `connectionString`.
-* Свойство `secretAccessKey`, тем не менее, может быть `AzureKeyVaultSecret` (например, `AmazonS3` связанная служба). Таким образом он автоматически параметризован как секрет хранилища ключей Azure, и он извлекается из хранилища ключей, настроенные в фабрику источника. Также можно параметризовать хранилища ключей, сам.
+* Связанные службы являются уникальными. Так как связанные службы и наборы данных имеют широкий спектр типов, можно указать настройку для конкретного типа. В этом примере будут применены все связанные службы `AzureDataLakeStore`типа, заданный шаблон, а для всех остальных (Via \*) будет применен другой шаблон.
+* Свойство будет параметризовано `securestring` как значение, оно не будет иметь значения по умолчанию, и оно получит сокращенное имя параметра с `connectionString`суффиксом. `connectionString`
+* Свойство является `secretAccessKey` свойством `AzureKeyVaultSecret` (например, в `AmazonS3` связанной службе). Он автоматически параметризован как Azure Key Vault секрет и получен из настроенного хранилища ключей. Вы также можете параметризовать само хранилище ключей.
 
 #### <a name="datasets"></a>Наборы данных
 
-* Несмотря на то, что настройка определенного типа недоступна для наборов данных, конфигурации можно указать без необходимости явно \*-настройки на уровне. В приведенном выше примере все свойства набора данных в группе `typeProperties` параметризуются.
+* Хотя настройка для наборов данных доступна для конкретного типа, конфигурацию можно предоставить без явного указания конфигурации на \*уровне. В приведенном выше примере все свойства набора данных `typeProperties` в разделе являются параметризованными.
 
-Параметризация шаблона по умолчанию можно изменить, но это текущего шаблона. Это будет полезно в том случае, если необходимо добавить одно дополнительное свойство как параметр, а также если вы не хотите потерять существующие параметризации и необходимо повторно создать их.
+### <a name="default-parameterization-template"></a>Шаблон параметризации по умолчанию
 
+Ниже приведен текущий шаблон параметризации по умолчанию. Если необходимо добавить только один или несколько параметров, это может оказаться полезным, так как в этом случае существующая структура параметризации не будет потеряна.
 
 ```json
 {
@@ -1070,9 +546,9 @@ else {
 }
 ```
 
-**Пример**: Добавление интерактивных Databricks идентификатора кластера (из связанной службы Databricks) к файлу параметров:
+Ниже приведен пример добавления одного значения в шаблон параметризации по умолчанию. Мы хотим добавить в файл параметров только существующий идентификатор интерактивного кластера "кирпичные сведения" для связанной службы "кирпичы". Обратите внимание, что приведенный ниже файл совпадает с файлом, `existingClusterId` который указан выше, за исключением `Microsoft.DataFactory/factories/linkedServices`поля, включенного в поле свойства.
 
-```
+```json
 {
     "Microsoft.DataFactory/factories/pipelines": {
     },
@@ -1178,36 +654,59 @@ else {
 }
 ```
 
-
 ## <a name="linked-resource-manager-templates"></a>Связанные шаблоны Resource Manager
 
-Если вы настроили непрерывную интеграцию и развертывание (CI/CD) для своих фабрик данных, вы можете заметить, что при увеличении размера фабрики станут актуальны ограничения шаблона Resource Manager, такие как максимальное число ресурсов или максимальное количество полезных данных в ресурсе. Для таких случаев, а также создания полного шаблона Resource Manager для фабрики фабрика данных теперь также создает связанные шаблоны Resource Manager. Таким образом, полезные данные всей фабрики можно разбить на несколько файлов, чтобы не превысить упомянутые ограничения.
+Если вы настроили непрерывную интеграцию и развертывание (CI/CD) для фабрик данных, вы можете столкнуться с ограничениями Azure Resource Manager шаблонов по мере роста фабрики. Пример ограничения — это максимальное число ресурсов в шаблоне диспетчер ресурсов. Для размещения больших фабрик, а также создания полного шаблона диспетчер ресурсов для фабрики, фабрика данных теперь создает связанные шаблоны диспетчер ресурсов. С помощью этой функции все полезные данные фабрики разбиваются на несколько файлов, чтобы не предельно использовать ограничения.
 
-Если у вас настроен Git, связанные шаблоны создаются и сохраняются вместе с полными шаблонами Resource Manager в ветви `adf_publish` в новой папке с именем `linkedTemplates`.
+Если вы настроили Git, связанные шаблоны создаются и сохраняются вместе с полными диспетчер ресурсов шаблонами в `adf_publish` ветви в новой папке с `linkedTemplates`именем.
 
 ![Папка связанных шаблонов Resource Manager](media/continuous-integration-deployment/linked-resource-manager-templates.png)
 
-Связанные шаблоны Resource Manager обычно имеют главный шаблон и набор дочерних шаблонов, связанных с главным. Родительский шаблон называется `ArmTemplate_master.json`, а дочерние шаблоны именуются по образцу: `ArmTemplate_0.json`, `ArmTemplate_1.json` и т. д. Для перехода с использования полного шаблона Resource Manager на использование связанных шаблонов обновите вашу задачу CI/CD, чтобы она указывала `ArmTemplate_master.json` вместо `ArmTemplateForFactory.json` (то есть полного шаблона Resource Manager). Resource Manager также требует отправлять связанные шаблоны в учетную запись хранения, чтобы они были доступны в Azure во время развертывания. Дополнительные сведения см. в разделе [Развертывание связанных шаблонов ARM с помощью VSTS](https://blogs.msdn.microsoft.com/najib/2018/04/22/deploying-linked-arm-templates-with-vsts/).
+Связанные шаблоны Resource Manager обычно имеют главный шаблон и набор дочерних шаблонов, связанных с главным. Родительский шаблон называется `ArmTemplate_master.json`, а дочерние шаблоны именуются по образцу: `ArmTemplate_0.json`, `ArmTemplate_1.json` и т. д. Чтобы использовать связанные шаблоны вместо полного диспетчер ресурсов шаблона, обновите задачу CI/CD, чтобы она указывала `ArmTemplate_master.json` на `ArmTemplateForFactory.json` вместо (полный шаблон диспетчер ресурсов). Resource Manager также требует отправлять связанные шаблоны в учетную запись хранения, чтобы они были доступны в Azure во время развертывания. Дополнительные сведения см. в разделе [Развертывание связанных шаблонов ARM с помощью VSTS](https://blogs.msdn.microsoft.com/najib/2018/04/22/deploying-linked-arm-templates-with-vsts/).
 
 Не забудьте добавить сценарии фабрики данных в конвейер CI/CD до и после завершения развертывания.
 
 Если у вас не настроен Git, связанные шаблоны доступны с помощью жеста **экспорта шаблона ARM**.
 
+## <a name="hot-fix-production-branch"></a>Рабочая ветвь "горячее исправление"
+
+Если вы развертываете фабрику в рабочей среде и понимаете, что есть ошибка, которую необходимо исправить немедленно, но вы не можете развернуть текущую ветвь совместной работы, может потребоваться развернуть горячее исправление.
+
+1.  В Azure DevOps перейдите к выпуску, развернутому в рабочей среде, и найдите последнюю развернутую фиксацию.
+
+2.  В сообщении о фиксации получите идентификатор фиксации ветви совместной работы.
+
+3.  Создайте новую ветвь с горячим исправлением из этой фиксации.
+
+4.  Перейдите в службу "Фабрика данных Azure" и переключитесь в эту ветвь.
+
+5.  Исправьте ошибку с помощью UX фабрики данных Azure. Проверьте изменения.
+
+6.  После проверки исправления щелкните **Экспорт шаблона ARM** , чтобы получить шаблон "горячее исправление" Диспетчер ресурсов.
+
+7.  Вручную верните эту сборку в ветвь adf_publish.
+
+8.  Если вы настроили конвейер выпуска для автоматического запуска на основе возвратов adf_publish, автоматически начнется новый выпуск. В противном случае выпуск выставится в очередь вручную.
+
+9.  Разверните выпуск с горячим исправлением на фабриках тестирования и производства. Этот выпуск содержит предыдущие рабочие нагрузки, а также исправление, выполненное на шаге 5.
+
+10. Добавьте изменения из ветви "горячее исправление" в "Разработка", чтобы последующие выпуски не запускались в одной и той же ошибке.
+
 ## <a name="best-practices-for-cicd"></a>Рекомендации для CI/CD
 
 Если вы используете интеграцию Git с фабрикой данных и у вас есть конвейер CI/CD, перемещающий изменения из рабочей среды в тестовую, а затем в рабочую, рекомендуем следующее:
 
--   **Интеграция Git**. Достаточно настроить интеграцию Git для своей фабрики данных для разработки. Изменения в тестовую и рабочую среду развертываются в рамках процесса CI/CD, и им не требуется интеграция Git.
+-   **Интеграция Git**. Настройка фабрики данных разработки необходима только для интеграции с Git. Изменения в тестовых и рабочих средах развертываются с помощью CI/CD и не требуют интеграции с Git.
 
--   **Сценарий CI/CD фабрики данных**. Перед шагом развертывания с помощью Resource Manager в CI/CD необходимо остановить триггеры и выполнить разные виды очистки фабрики. Мы советуем использовать [этот сценарий](#sample-script-to-stop-and-restart-triggers-and-clean-up), так как он выполняет все эти задачи. Запустите сценарий один раз перед развертыванием и один раз после, используя соответствующие флаги.
+-   **Сценарий CI/CD фабрики данных**. Перед этапом развертывания диспетчер ресурсов в CI/CD требуются некоторые задачи, такие как остановка и запуск триггеров и очистка. Рекомендуется использовать скрипты PowerShell до и после развертывания. Дополнительные сведения см. в разделе [Обновление активных триггеров](#update-active-triggers). 
 
--   **Среды выполнения интеграции и общий доступ.** Среды выполнения интеграции — это один из инфраструктурных компонентов в фабрике данных, которые реже подвергаются изменениям и похожи на всех этапах процесса CI/CD. Поэтому Фабрика данных ожидает, что имена и типы сред выполнения интеграции одинаковы на всех этапах CI/CD. Если вам требуется совместно использовать среды выполнения интеграции на всех этапах, например, локальные среды выполнения интеграции, один из способов реализовать это — разместить локальную среду IR в тернарной фабрике (только для хранения общих сред выполнения интеграции). Затем можно использовать их в среде разработки, тестирования и рабочей среде как связанные среды выполнения интеграции.
+-   **Среды выполнения интеграции и общий доступ.** Среды выполнения интеграции не меняются часто и похожи на все этапы в CI/CD. Поэтому Фабрика данных ожидает, что имена и типы сред выполнения интеграции одинаковы на всех этапах CI/CD. Если вы хотите совместно использовать среды выполнения интеграции на всех этапах, рассмотрите возможность использования фабрики ternary только для тех, которые содержат общие среды выполнения интеграции. Эту общую фабрику можно использовать во всех средах в качестве связанного типа среды выполнения интеграции.
 
--   **Key Vault**. При использовании рекомендуемых связанных служб на базе Azure Key Vault вы можете применять преимущества этого решения еще на одном уровне, потенциально используя отдельные хранилища ключей для рабочей среды, среды разработки и тестирования. Вы также можете настроить отдельные уровни разрешений для каждого из них. Возможно, вы не хотите, чтобы у участников вашей команды были разрешения на доступ к секретам рабочей среды. Мы также рекомендуем использовать одинаковые имена секретов на всех этапах. Если вы используете те же имена, вам не требуется менять свои шаблоны Resource Manager в рамках CI/CD, так как единственное, что необходимо изменить, — это имя хранилища ключей, которое является одним из параметров шаблона Resource Manager.
+-   **Key Vault**. При использовании связанных служб на основе Azure Key Vault можно использовать дополнительные преимущества, так как они позволяют хранить отдельные хранилища ключей для разных сред. Вы также можете настроить отдельные уровни разрешений для каждого из них. Например, вы не хотите, чтобы члены команды имели разрешения для рабочих секретов. При использовании этого подхода рекомендуется иметь одинаковые имена секретов на всех этапах. Если вы сохраняете одни и те же имена, вам не нужно изменять шаблоны диспетчер ресурсов в средах CI/CD, так как единственное, что изменяется, — это имя хранилища ключей, которое является одним из параметров шаблона диспетчер ресурсов.
 
 ## <a name="unsupported-features"></a>Неподдерживаемые функции
 
--   Вы не можете публиковать отдельные ресурсы, так как сущности фабрики данных зависят друг от друга. Например, триггеры зависят от конвейеров, конвейеры зависят от наборов данных и других конвейеров и т. д. Отслеживать меняющиеся зависимости непросто. Если бы можно было выбрать ресурсы для публикации вручную, вы могли бы выбрать только подмножество всего набора изменений, что могло бы привести к непредвиденному поведению после публикации.
+-   Вы не можете публиковать отдельные ресурсы. Сущности фабрики данных зависят друг от друга, и отслеживание изменяющихся зависимостей может быть трудной задачей и привести к непредвиденному поведению. Например, триггеры зависят от конвейеров, конвейеры зависят от наборов данных и других конвейеров, т. д. Если можно опубликовать только подмножество всего набора изменений, могут возникнуть некоторые непредвиденные ошибки.
 
 -   Вы не можете опубликовать из частных ветвей.
 

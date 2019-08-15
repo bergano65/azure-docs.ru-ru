@@ -10,14 +10,14 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/11/2019
-ms.openlocfilehash: 0025f488f6a9b0af4e05a8bdf3ddf36c089d4d9f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f41ccef7803366e63247e6862c59ddb983527d26
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856122"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990535"
 ---
-# <a name="deploy-a-model-using-a-custom-docker-image"></a>Развертывание модели с помощью пользовательского образа DOCKER
+# <a name="deploy-a-model-by-using-a-custom-docker-image"></a>Развертывание модели с помощью пользовательского образа DOCKER
 
 Узнайте, как использовать пользовательский образ DOCKER при развертывании обученных моделей в службе Машинное обучение Azure.
 
@@ -98,6 +98,8 @@ ms.locfileid: "68856122"
     ```azurecli-interactive
     az ml workspace show -w <myworkspace> -g <resourcegroup> --query containerRegistry
     ```
+
+    [!INCLUDE [install extension](../../../includes/machine-learning-service-install-extension.md)]
 
     Эта команда возвращает следующую информацию:
 

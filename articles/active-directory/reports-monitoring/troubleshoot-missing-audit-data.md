@@ -3,7 +3,7 @@ title: Устранение неполадок, связанных с отсут
 description: В этой статье описаны способы устранения неполадок, связанных с отсутствием данных в журналах действий.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 7cbe4337-bb77-4ee0-b254-3e368be06db7
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 01/15/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b25c09b140102c0788a939c48f48300242fc6ee
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a04de319a17255e3b61378cbd716828a237317b3
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60285057"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989521"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Устранение неполадок, связанных с отсутствием данных в журналах действий Azure Active Directory 
 
@@ -38,12 +38,12 @@ ms.locfileid: "60285057"
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Отчет | &nbsp; | Задержка (P95) | Задержка (P99) |
+| Сообщить | &nbsp; | Задержка (P95) | Задержка (P99) |
 |--------|--------|---------------|---------------|
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
-| Действия при входе | &nbsp; | 2 мин | 5 мин | 
+| Действия входа | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -59,12 +59,12 @@ ms.locfileid: "60285057"
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Отчет | &nbsp; | Задержка (P95) | Задержка (P99) |
+| Сообщить | &nbsp; | Задержка (P95) | Задержка (P99) |
 |--------|--------|---------------|---------------|
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
-| Действия при входе | &nbsp; | 2 мин | 5 мин | 
+| Действия входа | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -80,18 +80,18 @@ ms.locfileid: "60285057"
 
 В зависимости от типа лицензии Azure Active Directory сохраняет отчеты о действиях за такие периоды времени:
 
-| Отчет           | &nbsp; |  Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Сообщить           | &nbsp; |  Azure AD Free | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ----   |  ---           | ---                 | ---                 |
 | Аудит каталога  | &nbsp; |   7 дней     | 30 дней             | 30 дней             |
-| Действия при входе | &nbsp; | Недоступен. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
+| Действия при входе | &nbsp; | Недоступно. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
 
 Дополнительные сведения см. в статье [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).
 * [Задержки в отчетах Azure Active Directory](reference-reports-latencies.md).
