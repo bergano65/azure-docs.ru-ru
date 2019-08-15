@@ -10,20 +10,20 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
-ms.date: 04/23/2019
+ms.date: 08/13/2019
 ms.author: lahugh
-ms.openlocfilehash: 2b9d6832422b98c1064a4e9e99774c4788e801e5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4770c0bfd9c6fe6effa9cdf200d89ca7ff6eb768
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68323651"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036670"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Переменные среды среды выполнения пакетной службы Azure
 
 [Пакетная служба Azure](https://azure.microsoft.com/services/batch/) задает на вычислительных узлах указанные ниже переменные среды. Вы можете ссылаться на них в командных строках задач, а также в программах и сценариях, запускаемых этими командными строками.
 
-Дополнительные сведения об использовании переменных среды в пакетной службе см. в статье [Параметры среды для задач](https://docs.microsoft.com/azure/batch/batch-api-basics#environment-settings-for-tasks).
+Дополнительные сведения об использовании переменных среды с пакетной службой см. в разделе [Параметры среды для задач](https://docs.microsoft.com/azure/batch/batch-api-basics#environment-settings-for-tasks).
 
 ## <a name="environment-variable-visibility"></a>Видимость переменных среды
 
@@ -49,9 +49,9 @@ ms.locfileid: "68323651"
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |
-| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на местоположение, в которое был загружен пакет (папка). | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
+| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на расположение, в которое был загружен пакет (папка). | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
 | AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
-| AZ_BATCH_CERTIFICATES_DIR       | Каталог в рабочем [каталоге задачи][files_dirs] , в котором хранятся сертификаты для вычислений-узлов Linux. Обратите внимание, что эта переменная среды не применяется к вычислительным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
+| AZ_BATCH_CERTIFICATES_DIR       | Каталог в рабочем [каталоге задачи][files_dirs] , в котором хранятся сертификаты для вычислений-узлов Linux. Эта переменная среды не применяется к вычисленным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
 | AZ_BATCH_HOST_LIST              | Список узлов, выделенных задаче с [несколькими экземплярами][multi_instance] в формате `nodeIP,nodeIP`. | Основные задачи и подзадачи с несколькими экземплярами. | `10.0.0.4,10.0.0.5` |
 | AZ_BATCH_IS_CURRENT_NODE_MASTER | Указывает, является ли текущий узел главным узлом для задачи с [несколькими экземплярами][multi_instance]. Возможные значения: `true` и `false`.| Основные задачи и подзадачи с несколькими экземплярами. | `true` |
 | AZ_BATCH_JOB_ID                 | Идентификатор задания, к которому относится задача | Все задачи, кроме задачи запуска. | batchjob001 |
@@ -61,6 +61,7 @@ ms.locfileid: "68323651"
 | AZ_BATCH_NODE_ID                | Идентификатор узла, которому назначена задача. | Все задачи. | tvm-1219235766_3-20160919t172711z |
 | AZ_BATCH_NODE_IS_DEDICATED      | Если имеет значение `true`, то текущий узел является выделенным. Если имеет значение `false`, то это [низкоприоритетный узел](batch-low-pri-vms.md). | Все задачи. | `true` |
 | AZ_BATCH_NODE_LIST              | Список узлов, выделенных задаче с [несколькими экземплярами][multi_instance] в формате `nodeIP;nodeIP`. | Основные задачи и подзадачи с несколькими экземплярами. | `10.0.0.4;10.0.0.5` |
+| AZ_BATCH_NODE_MOUNTS_DIR        | Полный путь к расположению [файловой системы](virtual-file-mount.md) на уровне узла, где находятся все каталоги подключения. Файловые ресурсы Windows используют букву диска, поэтому для Windows диск подключения является частью устройств и дисков.  |  Все задачи, включая начальную задачу, имеют доступ к пользователю, учитывая, что у пользователя есть разрешения на подключение к подключенному каталогу. | Например, в Ubuntu расположение:`/mnt/batch/tasks/fsmounts` |
 | AZ_BATCH_NODE_ROOT_DIR          | Полный путь к корню всех [каталогов пакетной][files_dirs] службы на узле. | Все задачи. | C:\user\tasks |
 | AZ_BATCH_NODE_SHARED_DIR        | Полный путь к общему [каталогу][files_dirs] на узле. Все задачи, которые выполняются на узле, имеют доступ на чтение и запись для этого каталога. У задач, выполняемых на других узлах, нет удаленного доступа к этому каталогу (это не "общий" сетевой каталог). | Все задачи. | C:\user\tasks\shared |
 | AZ_BATCH_NODE_STARTUP_DIR       | Полный путь к каталогу [начальной задачи][files_dirs] на узле. | Все задачи. | C:\user\tasks\startup |

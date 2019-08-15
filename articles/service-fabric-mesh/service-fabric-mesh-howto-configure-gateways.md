@@ -8,19 +8,18 @@ manager: chakdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric-mesh
-ms.devlang: azure-cli
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/28/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 2e2502e35b3720ddbfe5950b89e2388de378f2ba
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b4fc6f91ee2429205974b9cb7ceb05b7cff53f15
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60583647"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034210"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
 
@@ -228,8 +227,8 @@ ms.locfileid: "60583647"
 ```
 
 Для этого шлюза настраивается приложение Linux "meshAppLinux", содержащее по меньшей мере две службы, helloWorldService и counterService, которые прослушивают порт 80. В зависимости от структуры URL-адреса входящего запроса этот шлюз перенаправит запрос к одной из этих служб. 
-* "\<IP-адрес >: 80/helloWorld/\<запроса\>" приведет к запрос не будет направляться в helloWorldService «helloWorldListener». 
-* "\<IP-адрес >: 80/счетчик/\<запроса\>" приведет к запрос не будет направляться в counterService «counterListener». 
+* "\<IPAddress >: 80/helloWorld/\<Request\>" приведет к тому, что запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
+* "\<IPAddress >: 80/Counter/\<Request\>" приведет к тому, что запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

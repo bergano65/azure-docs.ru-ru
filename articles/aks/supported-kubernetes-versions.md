@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/20/2019
 ms.author: saudas
-ms.openlocfilehash: a4726444e2103228cd26be3d3a6d516b31e315ee
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: bf86af16ce330be7119ecbeb24cedbcd31282735
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304330"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034041"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -98,7 +98,7 @@ New Supported Version List
 > [!NOTE]
 > Клиенты не должны закреплять создание кластера, CI или другие автоматические задания для конкретных выпусков исправлений. 
 
-### <a name="communications"></a>Связь
+### <a name="communications"></a>Взаимодействие
 
 * Для новых **вспомогательных** версий Kubernetes
   * Все пользователи получают уведомления о новой версии и о том, какая версия будет удалена.
@@ -144,13 +144,14 @@ az aks get-versions --location eastus --output table
 ```
 KubernetesVersion    Upgrades
 -------------------  ------------------------
-1.13.5               None available
-1.12.7               1.13.5
-1.12.6               1.12.7, 1.13.5
-1.11.9               1.12.6, 1.12.7
-1.11.8               1.11.9, 1.12.6, 1.12.7
-1.10.13              1.11.8, 1.11.9
-1.10.12              1.10.13, 1.11.8, 1.11.9
+1.14.5               None available
+1.13.9               1.14.5
+1.12.8               1.13.9
+1.12.7               1.12.8, 1.13.9
+1.11.10              1.12.7, 1.12.8
+1.11.9               1.11.10, 1.12.7, 1.12.8
+1.10.13              1.11.9, 1.11.10
+1.10.12              1.10.13, 1.11.9, 1.11.10
 ```
 
 ## <a name="faq"></a>Часто задаваемые вопросы

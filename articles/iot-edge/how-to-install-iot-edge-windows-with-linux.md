@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
-ms.openlocfilehash: 7d3586c571c2d70034f10cb3e1efd9242d6a1023
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 9e9028d0c9aeff19dc221b81defa5e2057927fa6
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986958"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034199"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Использование IoT Edge в Windows для запуска контейнеров Linux
 
@@ -24,15 +24,13 @@ ms.locfileid: "68986958"
 
 В этой статье перечислены действия по установке среды выполнения Azure IoT Edge с помощью контейнеров Linux в системе Windows x64 (AMD/Intel). Дополнительные сведения о программе установки среды выполнения IoT Edge, включая сведения обо всех параметрах установки, см. в разделе [Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом разделе можно посмотреть, поддерживает ли устройство Windows IoT Edge, а также подготовить его для подсистемы контейнеров перед установкой. 
 
 ### <a name="supported-windows-versions"></a>Поддерживаемые версии Windows
 
-Azure IoT Edge с контейнерами Linux могут работать в следующих версиях Windows: 
-* юбилейное обновление Windows 10 (сборка 14393) или более поздняя версия;
-* Windows Server 2016 или поздней версии.
+Azure IoT Edge с контейнерами Linux могут работать в любой версии Windows, удовлетворяющей [требованиям для настольных систем DOCKER](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) .
 
 Дополнительные сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Выпуски Azure IoT Edge](https://github.com/Azure/azure-iotedge/releases).
 

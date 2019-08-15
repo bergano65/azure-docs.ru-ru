@@ -16,12 +16,12 @@ ms.date: 04/19/2019
 ms.author: ajburnle
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d33b4751b421f5af1536af9a88d15e060ab59bdb
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 2420fc25795ec74939649fb8a17ead7c8cfdd1df
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489058"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032452"
 ---
 # <a name="view-reports-and-logs-in-azure-ad-entitlement-management-preview"></a>Просмотр отчетов и журналов в управлении назначениями Azure AD (Предварительная версия)
 
@@ -29,6 +29,12 @@ ms.locfileid: "68489058"
 > Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+В отчете о назначении пользователей и Azure Active Directory журнале аудита содержатся дополнительные сведения о пользователях в каталоге. Администратор может просматривать ресурсы, доступ к которым имеет пользователь, и просматривать журналы запросов для целей аудита или определять состояние запроса пользователя. В этой статье описывается, как использовать отчеты о назначениях пользователей и журналы аудита Azure AD.
+
+Просмотрите следующее видео, чтобы узнать, как использовать управление назначением для управления доступом пользователей в Azure Active Directory.
+
+>[!VIDEO https://www.youtube.com/embed/omtNJ7ySjS0]
 
 ## <a name="view-resources-a-user-has-access-to"></a>Просмотр ресурсов, к которым у пользователя есть доступ
 

@@ -8,28 +8,27 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: dc3dd06b5feac1f66598cd65fa79f447a1bbd9be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1664978110b7c700906cbf4e6c80806ac70f1f05
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837510"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036523"
 ---
 # <a name="sfctl-chaos-schedule"></a>Расписание sfctl chaos
 Получение и настройка расписания Chaos.
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Command|Описание|
 | --- | --- |
 | get | Получение расписания Chaos, определяющего, когда и как выполнять Chaos. |
-| set | Настройка используемого Chaos расписания. |
+| набора | Настройка используемого Chaos расписания. |
 
 ## <a name="sfctl-chaos-schedule-get"></a>sfctl chaos schedule get
 Получение расписания Chaos, определяющего, когда и как выполнять Chaos.
@@ -145,6 +144,6 @@ Chaos будет автоматически планировать запуск�
     ]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

@@ -2,19 +2,19 @@
 title: Управление секретами приложения "Сетка Azure Service Fabric" | Документация Майкрософт
 description: Управляйте секретами приложений, чтобы безопасно создать и развернуть приложение "Сетка Service Fabric".
 services: service-fabric-mesh
-keywords: секретные коды
-author: aljo-microsoft
-ms.author: aljo
+keywords: секреты
+author: athinanthny
+ms.author: atsenthi
 ms.date: 4/2/2019
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chackdan
-ms.openlocfilehash: c2548ea3cf892ebe1a56cbb0909bfa5d5e805acf
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: ef3f04437aca7b6ad9aab8806d54e65d00159d87
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503315"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036171"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
 Сетка Service Fabric поддерживает секреты в качестве ресурсов Azure. Секрет сетки Service Fabric может быть любой конфиденциальной текстовой информацией, например строками подключения к хранилищу, паролями или другими значениями, которые должны храниться и передаваться безопасно. В этой статье показано, как использовать службу Secure Store Service Fabric для развертывания и поддержки секретов.
@@ -24,14 +24,14 @@ ms.locfileid: "67503315"
 * Один или несколько ресурсов **Секреты** (или Значения), которые хранятся в контейнере ресурса **Секреты**. Каждый ресурс **Секреты/Значения** отличается номером версии. Изменить версию ресурса **Секреты/Значения** невозможно, можно только добавить новую версию.
 
 Управление секретами заключается в следующих действиях:
-1. Объявите сетки **секреты** ресурсов в файле YAML модели ресурсов Azure или JSON, используя тип inlinedValue и определения contentType SecretsStoreRef.
-2. Объявите сетки **значений Secrets/** ресурсы в файле YAML модели ресурсов Azure или JSON, которая будет храниться в **секреты** ресурсов (из шага 1).
+1. Объявите ресурс " **секреты** сети" в YAML или JSON-файле модели ресурсов Azure с помощью определений ContentType инлинедвалуе Kind и секретссторереф.
+2. Объявите ресурсы для секретов или **значений** сетки в файле модели ресурсов Azure YAML или JSON, которые будут храниться в **секретном** ресурсе (из шага 1).
 3. изменение приложения сетки для ссылки на значения секретов сетки;
 4. развертывание или последовательное обновление приложения сетки для использования значений секретов;
 5. использование команд Azure CLI "az" для управления жизненным циклом службы Secure Store.
 
 ## <a name="declare-a-mesh-secrets-resource"></a>Объявление ресурса секретов сетки
-Ресурс Mesh секреты объявляется в модели ресурсов Azure JSON или yaml-файл с помощью определения типа inlinedValue. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
+Ресурс секреты сетки объявляется в формате JSON или YAML в модели ресурсов Azure с помощью определения типа Инлинедвалуе. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
 >
 Ниже представлен пример объявления ресурсов сетки "Секреты" в файле JSON.
 
@@ -208,7 +208,7 @@ az mesh deployment create –-<template-file> or --<template-uri>
 
 Пример:
 - az mesh deployment create — c:\MyMeshTemplates\SecretTemplate1.txt
-- AZ сетки развертывания создайте--https:\//www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
+- AZ сетка развертывание Create--HTTPS:\//www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 
 ### <a name="show-a-secret"></a>Отображение секрета
 Возвращает описание секрета (но не его значение).
@@ -247,6 +247,6 @@ az mesh secretvalue show --Resource-group <myResourceGroup> --secret-name <mySec
 az mesh secretvalue delete --Resource-group <myResourceGroup> --secret-name <mySecret> --version <N>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)

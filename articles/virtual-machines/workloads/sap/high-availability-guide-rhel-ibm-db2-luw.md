@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/10/2019
 ms.author: juergent
-ms.openlocfilehash: 232468d9b3466759d7af2b7be68a1f553ced6e6d
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: c649b93284a48df705d389f4de728d83f793af04
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68348643"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036639"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -517,11 +517,11 @@ j2ee/dbhost = db-virt-hostname
 Используйте средство настройки J2EE для проверки или обновления URL-адреса JDBC. Поскольку средство настройки J2EE является графическим средством, необходимо установить X Server:
  
 1. Войдите на основной сервер приложений экземпляра J2EE и выполните:
-     <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>
+     <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>  
 1.В левом фрейме выберите **хранилище безопасности**.
 1.В правом фрейме выберите ключевые JDBC/Pool/\<SAPSID>/УРЛ.
 1.Измените имя узла в URL-адресе JDBC на имя виртуального узла.
-     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>
+     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>  
 1.Нажмите кнопку **Добавить**.
 1.Чтобы сохранить изменения, щелкните значок диска в левом верхнем углу.
 1.Закройте средство настройки.

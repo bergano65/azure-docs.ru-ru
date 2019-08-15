@@ -107,6 +107,8 @@
       items:
         - name: Онлайн-миграция с помощью DMS
           href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
+        - name: Добавление группы отработки отказа
+          href: sql-database-managed-instance-failover-group-tutorial.md
         - name: Настройка репликации транзакций
           href: replication-with-sql-database-managed-instance.md
     - name: Обеспечение безопасности данных в Базе данных SQL

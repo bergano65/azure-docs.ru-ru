@@ -8,25 +8,24 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: e6b484dabd77a142961db2d97242896790fa3d8b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b3f506b46ef563f47fc7c67b759d3fcd08b7509d
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836966"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035190"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Создание ресурсов службы "Сетка Service Fabric".
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Command|Описание|
 | --- | --- |
 | create | Создает развертывание ресурсов Сетки Service Fabric. |
 
@@ -73,6 +72,6 @@ sfctl mesh deployment create --input-yaml-files ./resources --parameters "{ 'my_
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

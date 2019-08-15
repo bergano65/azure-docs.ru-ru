@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/08/2019
-ms.openlocfilehash: 4a0aab2ca2f0bbcee07f09124e68c3623d16004d
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 6949f46345a5520ec3e09508b6d81994f9a7deb5
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848151"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036203"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 
@@ -212,12 +212,56 @@ az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json 
 
 Дополнительные сведения см. в справочнике по [развертыванию модели языка AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) . 
 
-## <a name="using-vs-code"></a>Использование VS Code
+### <a name="using-vs-code"></a>Использование VS Code
 
 Сведения об использовании VS Code см. в разделе [развертывание в AKS с помощью расширения VS Code](how-to-vscode-tools.md#deploy-and-manage-models).
 
 > [!IMPORTANT] 
 > Для развертывания с помощью VS Code необходимо заранее создать кластер AKS или подключить его к рабочей области.
+
+## <a name="web-service-authentication"></a>Проверка подлинности веб-службы
+
+При развертывании в службе Kubernetes Azure проверка подлинности __на основе ключей__ включена по умолчанию. Также можно включить проверку подлинности на маркере. Для аутентификации на маркере необходимо, чтобы клиенты использовали учетную запись Azure Active Directory для запроса маркера проверки подлинности, который используется для выполнения запросов к развернутой службе.
+
+Чтобы __Отключить__ проверку подлинности `auth_enabled=False` , задайте параметр при создании конфигурации развертывания. В следующем примере отключается проверка подлинности с помощью пакета SDK:
+
+```python
+deployment_config = AksWebservice.deploy_configuration(cpu_cores=1, memory_gb=1, auth_enabled=False)
+```
+
+Сведения о проверке подлинности в клиентском приложении см. в разделе Использование Машинное обучение Azureной модели, развернутой в [качестве веб-службы](how-to-consume-web-service.md).
+
+### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
+
+Если включена проверка подлинности ключа, можно использовать `get_keys` метод для получения первичного и вторичного ключа проверки подлинности:
+
+```python
+primary, secondary = service.get_keys()
+print(primary)
+```
+
+> [!IMPORTANT]
+> Если необходимо повторно создать ключ, используйте[`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py)
+
+### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
+
+Чтобы включить проверку подлинности на `token_auth_enabled=True` маркере, задайте параметр при создании или обновлении развертывания. В следующем примере активируется проверка подлинности на основе маркеров с помощью пакета SDK:
+
+```python
+deployment_config = AksWebservice.deploy_configuration(cpu_cores=1, memory_gb=1, token_auth_enabled=True)
+```
+
+Если включена проверка подлинности токенов, можно `get_token` использовать метод для получения маркера JWT и срока действия маркера:
+
+```python
+token, refresh_by = service.get_token()
+print(token)
+```
+
+> [!IMPORTANT]
+> После `refresh_by` времени маркера потребуется запросить новый токен.
+>
+> Корпорация Майкрософт настоятельно рекомендует создать рабочую область Машинное обучение Azure в том же регионе, что и кластер службы Azure Kubernetes. Для проверки подлинности с помощью маркера веб-служба выполнит вызов региона, в котором создана Рабочая область Машинное обучение Azure. Если регион рабочей области недоступен, вы не сможете получить маркер для веб-службы даже в том случае, если кластер находится в регионе, отличном от региона рабочей области. Это фактически приводит к недоступности аутентификация Azure AD, пока регион рабочей области не будет снова доступен. Кроме того, чем больше расстояние между регионом кластера и регионом рабочей области, тем дольше будет получена лексема.
 
 ## <a name="update-the-web-service"></a>Обновление веб-службы
 

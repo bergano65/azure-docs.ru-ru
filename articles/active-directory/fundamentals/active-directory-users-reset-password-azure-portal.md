@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 382ffab090613a2b14ce710a45be10b4c36e5222
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b4fdbbd4d71a9c97259678413cd9e59ee8aeae6b
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561744"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032675"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
 
@@ -43,7 +43,8 @@ ms.locfileid: "68561744"
 
 3. На странице **Сброс пароля** нажмите **Сбросить пароль**.
 
-    Будет автоматически сгенерирован новый пароль пользователя.
+    > [!Note]
+    > При использовании Azure Active Directory для пользователя автоматически создается временный пароль. При использовании Active Directory локальной среды вы создаете пароль для пользователя.
 
 4. Скопируйте пароль и передайте его пользователю. Пользователю потребуется изменить пароль во время следующего входа в систему.
 

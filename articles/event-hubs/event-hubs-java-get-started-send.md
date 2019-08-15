@@ -1,5 +1,5 @@
 ---
-title: Отправка и получение событий с помощью Java — концентраторов событий Azure | Документация Майкрософт
+title: Использование Java для отправки данных в концентраторы событий Azure и обратно
 description: В этой статье представлено пошаговое руководство по созданию приложения Java, которое отправляет события в концентраторы событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
@@ -7,15 +7,15 @@ manager: timlt
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.custom: seodec18
+ms.custom: seodec18, seo-java-august2019
 ms.date: 04/15/2019
 ms.author: shvija
-ms.openlocfilehash: 00107d99f69fcec086f9692a5ba31a9d9970d089
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: c85d69b823956a5cf5e7f9d6dfa3c39b918cd465
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848513"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034808"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-java"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью Java
 
@@ -26,7 +26,7 @@ ms.locfileid: "68848513"
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством вам потребуется:
 

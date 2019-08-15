@@ -1,5 +1,5 @@
 ---
-title: Что такое управление запасами в Azure AD? (Предварительная версия) — Azure Active Directory
+title: Что собой представляет управление правами Azure AD? (Предварительная версия) — Azure Active Directory
 description: Ознакомьтесь с обзором Azure Active Directory управления назначением и способов его использования для управления доступом к группам, приложениям и сайтам SharePoint Online для внутренних и внешних пользователей.
 services: active-directory
 documentationCenter: ''
@@ -16,14 +16,14 @@ ms.date: 07/10/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12452b4e9cc6caa64d4c81a310fbccb5d1717817
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: d93a20494886bb7d563439e2699f60bedb646dcd
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678159"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032552"
 ---
-# <a name="what-is-azure-ad-entitlement-management-preview"></a>Что такое управление запасами в Azure AD? (Предварительная версия)
+# <a name="what-is-azure-ad-entitlement-management-preview"></a>Что собой представляет управление правами Azure AD? (Предварительная версия)
 
 > [!IMPORTANT]
 > Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
@@ -33,6 +33,10 @@ ms.locfileid: "68678159"
 Сотрудникам в организациях требуется доступ к различным группам, приложениям и сайтам для выполнения своих задач. Управлять этим доступом сложно. В большинстве случаев нет упорядоченного списка всех ресурсов, необходимых пользователю для проекта. Руководитель проекта имеет хорошее представление о необходимых ресурсах, вовлеченных лицах и сроке, в течение которого проект будет последним. Однако у руководителя проекта обычно нет разрешений на утверждение или предоставление доступа другим пользователям. Этот сценарий становится более сложным при попытке работы с внешними сотрудниками или компаниями.
 
 Управление обслуживанием Azure Active Directory (Azure AD) помогает управлять доступом к группам, приложениям и сайтам SharePoint Online для внутренних пользователей, а также пользователей за пределами Организации.
+
+В этом видео представлен обзор управления назначением и его ценности для бизнеса:
+
+>[!VIDEO https://www.youtube.com/embed/_Lss6bFrnQ8]
 
 ## <a name="why-use-entitlement-management"></a>Зачем использовать управление назначениями?
 
@@ -138,5 +142,5 @@ ms.locfileid: "68678159"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Учебник. Создание первого пакета Access](entitlement-management-access-package-first.md)
+- [Руководство. Создание первого пакета Access](entitlement-management-access-package-first.md)
 - [Распространенные сценарии](entitlement-management-scenarios.md)

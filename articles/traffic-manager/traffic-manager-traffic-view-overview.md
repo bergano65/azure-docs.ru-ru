@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 39d6090b14a16f505413154df2a78d42b3fb3f3c
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 5b451378fcc14106cb8731a89bcf6ccf415d0a92
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333712"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035458"
 ---
 # <a name="traffic-manager-traffic-view"></a>Представление трафика в диспетчере трафика
 
@@ -44,6 +44,8 @@ ms.locfileid: "68333712"
 ## <a name="visual-overview"></a>Визуальное представление
 
 Открыв раздел **Представление трафика** на странице диспетчера трафика, вы увидите географическую карту с наложением аналитических сведений Представления трафика. На карте представлены сведения о базе пользователей и конечных точках из профиля диспетчера трафика.
+
+![Диспетчер трафика Представление трафика географическое представление][1]
 
 ### <a name="user-base-information"></a>Сведения о базе пользователей
 
@@ -94,3 +96,5 @@ ms.locfileid: "68333712"
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.
 - Узнайте, как [создать профиль диспетчера трафика](traffic-manager-create-profile.md)
 
+<!--Image references-->
+[1]: ./media/traffic-manager-traffic-view-overview/trafficview.png

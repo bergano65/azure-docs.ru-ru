@@ -8,18 +8,17 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: b584ec301f0f4841c8df8fbbafb410abf645c373
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 27178b2f26086bf693dc9cda342c66f7d47a34d7
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837357"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035094"
 ---
 # <a name="sfctl-chaos"></a>sfctl chaos
 Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе.
@@ -30,7 +29,7 @@ ms.locfileid: "60837357"
 | [schedule](service-fabric-sfctl-chaos-schedule.md) | Получение и настройка расписания Chaos. |
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Command|Описание|
 | --- | --- |
 | события | Получает следующий сегмент событий службы Chaos на основе маркера продолжения или диапазона времени. |
 | get | Получение состояния службы Chaos. |
@@ -138,6 +137,6 @@ ms.locfileid: "60837357"
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
 - Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).

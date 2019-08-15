@@ -1,18 +1,18 @@
 ---
 title: Создание нового предложения SaaS в коммерческом магазине
 description: Как создать предложение SaaS (программное обеспечение как услуга) для перечисления или продажи в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP), используя портал коммерческого рынка в центре партнеров Майкрософт.
-author: mattwojo
+author: qianw211
 manager: evansma
-ms.author: mattwoj
+ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 06/27/2019
-ms.openlocfilehash: 6bf22bce28972e1f3a43efea3b33446ab2a81761
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.date: 08/14/2019
+ms.openlocfilehash: 3d3fc1541fb99d8d1219392158c3b87cd6ff99aa
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019600"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69033534"
 ---
 # <a name="create-a-new-saas-offer"></a>Создание нового предложения SaaS
 
@@ -22,7 +22,7 @@ ms.locfileid: "69019600"
 
 Выберите + **создать предложение...** и выберите пункт меню **программное обеспечение как услуга** . 
 
-Если выбрать один из других типов предложений, вы будете перенаправлены на более старую [портал Cloud Partner](https://cloudpartner.azure.com/).  В настоящее время на портале коммерческого рынка в центре партнеров доступны только предложения SaaS. 
+Если выбрать другой тип предложения, возможно, вы будете перенаправлены на более старую [портал Cloud Partner](https://cloudpartner.azure.com/). В настоящее время на портале коммерческого рынка в центре партнеров доступны только предложения SaaS и Dynamics 365.
 
 ![Создание окна предложения в центре партнеров](./media/new-offer-click.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "69019600"
 
 <br>Пример Тестовое предложение 1&#8482;
 
-Нажмите кнопку **Создать**.  Для этого предложения создается страница **обзора предложения** .  
+Щелкните **Создать**.  Для этого предложения создается страница **обзора предложения** .  
 
 <!---
 ![Offer overview on Partner Center](./media/commercial-marketplace-offer-overview.png)

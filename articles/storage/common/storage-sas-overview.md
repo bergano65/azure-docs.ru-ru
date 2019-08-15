@@ -9,12 +9,12 @@ ms.date: 08/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7d94c3ba4eaf34a2229b7331599e7c59b5f1dee7
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 4cf4f87e42508c60cd9195cb8d1e4127134f64aa
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990979"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034907"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)
 
@@ -125,7 +125,7 @@ ms.locfileid: "68990979"
 
 - [Создание SAS учетной записи с помощью .NET](storage-account-sas-create-dotnet.md)
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
 - [Делегирование доступа с помощью подписанного URL-доступа (REST API)](/rest/api/storageservices/delegate-access-with-shared-access-signature)
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

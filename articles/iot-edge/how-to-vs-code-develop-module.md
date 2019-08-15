@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 08/07/2019
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 2efda0e506cf0525b1a8ea868acca48a929f8f41
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b63b68b7721dd848e6a72b3b7d9cfa38bf031b23
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848278"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035082"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
@@ -30,7 +30,7 @@ ms.locfileid: "68848278"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. Устройство IoT Edge может быть другим физическим устройством.
+Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install). 
 
 Сначала установите [Visual Studio Code](https://code.visualstudio.com/), а затем добавьте следующие расширения:
 

@@ -1,18 +1,18 @@
 ---
-title: Создание и установка файлов конфигурации VPN-клиента для подключений "точка — сеть" для аутентификации Azure на основе сертификата — Таблицы Azure
+title: Создание и установка файлов конфигурации VPN-клиента для подключений "точка — сеть" для аутентификации Azure на основе сертификата — Azure
 description: Создание и установка файлов конфигурации VPN-клиента Windows, Linux, Linux (strongSwan) и Mac OS X для использования аутентификации на основе сертификата для подключения "точка — сеть".
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 08/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: b590dabbe4b2c6526f2c602aeed64667348eefa9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 624c1648bc709e1ca6ee9c4120350a606df67df5
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113939"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035757"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -74,7 +74,7 @@ ms.locfileid: "66113939"
 
 ## <a name="installmac"></a>Mac (OS X)
 
- Необходимо вручную настроить VPN-клиент IKEv2 на каждом компьютере Mac, который будет подключаться к Azure. Azure не предоставляет файл mobileconfig для собственной аутентификации Azure на основе сертификата. В папке **Generic** содержатся все необходимые для конфигурации сведения. Если папки Generic нет в скачанных файлах, вполне вероятно, что IKEv2 не был выбран в качестве типа туннеля. Обратите внимание на то, что VPN-шлюз SKU "базовый" не поддерживает IKEv2. Выбрав IKEv2, создайте ZIP-файл еще раз для получения папки Generic.<br>Эта папка содержит следующие файлы:
+ Необходимо вручную настроить VPN-клиент IKEv2 на каждом компьютере Mac, который будет подключаться к Azure. Azure не предоставляет файл mobileconfig для собственной аутентификации Azure на основе сертификата. В папке **Generic** содержатся все необходимые для конфигурации сведения. Если папки Generic нет в скачанных файлах, вполне вероятно, что IKEv2 не был выбран в качестве типа туннеля. Обратите внимание, что базовый SKU VPN-шлюза не поддерживает IKEv2. Выбрав IKEv2, создайте ZIP-файл еще раз для получения папки Generic.<br>Эта папка содержит следующие файлы:
 
 * Файл **VpnSettings.xml** — содержит такие важные параметры, как адрес сервера и тип туннеля. 
 * Файл **VpnServerRoot.cer** — содержит корневой сертификат, который требуется для проверки VPN-шлюза Azure при настройке подключения типа "точка — сеть".
@@ -109,28 +109,20 @@ ms.locfileid: "66113939"
    ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
-   ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
+   ![применить](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) щелкните **Apply** (Применить), чтобы сохранить все изменения. Затем щелкните **Connect** (Подключиться), чтобы установить подключение типа "точка — сеть" к виртуальной сети Azure.
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)
 
-### <a name="extract-the-key-and-certificate"></a>Извлечение ключа и сертификата
+### <a name="installstrongswan"></a>Установка strongSwan
 
-Для strongSwan необходимо извлечь ключ и сертификат из сертификата клиента (PFX-файл) и сохранить их в отдельных PEM-файлах.
-Для этого сделайте вот что.
+[!INCLUDE [install strongSwan](../../includes/vpn-gateway-strongswan-install-include.md)]
 
-1. Скачайте и установите OpenSSL из [OpenSSL](https://www.openssl.org/source/).
-2. Откройте окно командной строки и перейдите в каталог, в котором установлен OpenSSL, например c:\OpenSLL-Win64\bin\'.
-3. С помощью следующей команды можно извлечь закрытый ключ из сертификата клиента и сохранить его в новый файл privatekey.pem:
+### <a name="genlinuxcerts"></a>Создание сертификатов
 
-   ```
-   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nocerts -out privatekey.pem -nodes
-   ```
-4. Теперь выполните следующую команду, чтобы извлечь открытый сертификат и сохранить его в новом файле:
+Если вы еще не создали сертификаты, выполните следующие действия.
 
-   ```
-   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nokeys -out publiccert.pem -nodes
-   ```
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
 ### <a name="install"></a>Установка и настройка
 
@@ -163,10 +155,13 @@ ms.locfileid: "66113939"
 
 ### <a name="install-strongswan"></a>Установка strongSwan
 
-Установить strongSwan можно с помощью приведенных ниже команд CLI или следуя указаниям в [графическом пользовательском интерфейсе](#install).
+[!INCLUDE [install strongSwan](../../includes/vpn-gateway-strongswan-install-include.md)]
 
-1. `apt-get install strongswan-ikev2 strongswan-plugin-eap-tls`
-2. `apt-get install libstrongswan-standard-plugins`
+### <a name="generate-certificates"></a>Создайте сертификаты.
+
+Если вы еще не создали сертификаты, выполните следующие действия.
+
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
 ### <a name="install-and-configure"></a>Установка и настройка
 
@@ -204,7 +199,7 @@ ms.locfileid: "66113939"
    # ipsec up azure
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](vpn-gateway-howto-point-to-site-rm-ps.md).
 

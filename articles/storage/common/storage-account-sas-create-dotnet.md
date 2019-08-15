@@ -9,12 +9,12 @@ ms.date: 08/06/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f75b472a49dfb360ccda21e73286880fcd506153
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: b8d627fd905741c76dd34eb4270f49d46b93abb1
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990771"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036109"
 ---
 # <a name="create-an-account-sas-with-net"></a>Создание SAS учетной записи с помощью .NET
 
@@ -94,7 +94,7 @@ static void UseAccountSAS(string sasToken)
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Следующие шаги
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](storage-sas-overview.md)
 - [Создание SAS учетной записи](/rest/api/storageservices/create-account-sas)
