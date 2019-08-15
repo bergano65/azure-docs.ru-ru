@@ -1,19 +1,19 @@
 ---
-title: Подготовка исходных компьютеров, чтобы установить службу Mobility с помощью принудительной установки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure | Документация Майкрософт
-description: Узнайте, как подготовить сервер для установки агента мобильности посредством принудительной установки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
+title: Подготовка исходных компьютеров к установке службы Mobility Service с помощью принудительной установки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure | Документация Майкрософт
+description: Узнайте, как подготовить сервер для установки агента мобильности с помощью принудительной установки для аварийного восстановления виртуальных машин VMware и физических серверов в Azure с помощью службы Azure Site Recovery.
 author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 628be573d03d42ec62a358071074facfe228852d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f1a96302d180f3b4b179f42013232f3b48d4e2b0
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318194"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016369"
 ---
-# <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера для принудительной установки агента мобильности
+# <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера к принудительной установке агента Mobility Service
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить [службу мобильности Site Recovery](vmware-physical-mobility-service-overview.md) на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery.
 
@@ -64,8 +64,8 @@ ms.locfileid: "60318194"
 
 Если на компьютерах, которые нужно реплицировать, запущено антивирусное ПО, обязательно исключите установочную папку службы Mobility в список исключений из антивирусной проверки (*C:\ProgramData\ASR\agent*). Это обеспечит правильную работу репликации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-После установки службы Mobility Service на портале Azure выберите **+ Репликация**, чтобы приступить к защите виртуальных машин. Дополнительные сведения о включении репликации для [виртуальных машин VMware (vmware-azure-enable-replication.md) и [физических серверов](physical-azure-disaster-recovery.md#enable-replication).
+После установки службы Mobility Service на портале Azure выберите **+ Репликация**, чтобы приступить к защите виртуальных машин. Дополнительные сведения о включении репликации для [виртуальных машин VMware](vmware-azure-enable-replication.md) и [физических серверов](physical-azure-disaster-recovery.md#enable-replication).
 
 

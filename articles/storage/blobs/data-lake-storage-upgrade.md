@@ -8,12 +8,12 @@ ms.date: 02/07/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: rugopala
-ms.openlocfilehash: 554a77b65b1baab980d765c69a5bffaeacb483d9
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 850d580d4eb1ca41932a28005d3375ced709db60
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855400"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016373"
 ---
 # <a name="upgrade-your-big-data-analytics-solutions-from-azure-data-lake-storage-gen1-to-azure-data-lake-storage-gen2"></a>Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения
 
@@ -82,7 +82,7 @@ ms.locfileid: "68855400"
 | |Оптимизированная производительность для параллельных рабочих нагрузок аналитики. Высокие показатели пропускной способности и операций ввода-вывода в секунду. | Оптимизированная производительность для параллельных рабочих нагрузок аналитики. Высокие показатели пропускной способности и операций ввода-вывода в секунду. | *Доступно сейчас* |
 | Поддержка виртуальной сети  | [Интеграция с виртуальной сетью](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-network-security)  | [Использование конечной точки службы для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) | *Доступно сейчас* |
 | Ограничения размера | Нет ограничений на размер учетных записей, размер и количество файлов | Нет ограничений на размер учетных записей и количество файлов. Максимальный размер файла ограничен 5 ТБ. | *Доступно сейчас*|
-| Геоизбыточность| Локально избыточное хранилище (LRS) | Локально избыточное хранилище (LRS), хранилище, избыточное между зонами (ZRS), геоизбыточное хранилище (GRS), геоизбыточное хранилище с доступом на чтение (RA-GRS). Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/storage/common/storage-redundancy)| *Доступно сейчас* |
+| Геоизбыточность| Локально избыточное хранилище (LRS) | Локально избыточная (LRS) зона избыточная (ZRS) геоизбыточное (GRS) геоизбыточное хранилище с доступом на чтение (RA-GRS) Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/storage/common/storage-redundancy) .| *Доступно сейчас* |
 | Доступность в регионах | Дополнительные сведения см. [здесь](https://azure.microsoft.com/regions/). | Все [регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)                                                                                                                                                                                                                                                                                                                                       | *Доступно сейчас*                                                                                                                           |
 | Цена                                       | Дополнительные сведения см. на [этой странице](https://azure.microsoft.com/pricing/details/data-lake-store/).                                                                            | Дополнительные сведения см. на [этой странице](https://azure.microsoft.com/pricing/details/storage/data-lake/).                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                           |
 | Соглашение об уровне обслуживания относительно доступности                            | [См. соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/data-lake-store/v1_0/)                                                                   | [См. соглашение об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/storage/v1_3/)                                                                                                                                                                                                                                                                                                                                                | *Доступно сейчас*                                                                                                                           |

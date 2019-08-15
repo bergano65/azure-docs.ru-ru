@@ -6,12 +6,12 @@ ms.service: azure-australia
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: grgale
-ms.openlocfilehash: 153b9d503dfece404455fbb7e8cb51c51686ec57
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: b7a9f28d06b5e921b5f1b8defa151641bb039940
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68824297"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990215"
 ---
 # <a name="gateway-logging-auditing-and-visibility-in-azure-australia"></a>Ведение журнала шлюза, аудит и видимость в Австралии Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "68824297"
 |---|---|
 |Документы о соответствии требованиям Австралии и политике|[https://aka.ms/au-irap](https://aka.ms/au-irap)|
 |Продукты Azure — австралийские регионы и не региональные|[https://azure.microsoft.com/global-infrastructure/services/?regions=non-regional, Австралия-Центральная, Австралия-Центральная-2, Австралия-Восток, Австралия — Юго-Восток](https://azure.microsoft.com/global-infrastructure/services/?regions=non-regional,australia-central,australia-central-2,australia-east,australia-southeast)|
-|Технический документ по управлению журналами Microsoft Azure Безопасность и аудит|[https://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf](http://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf)|
+|Технический документ по управлению журналами Microsoft Azure Безопасность и аудит|[https://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf](https://download.microsoft.com/download/B/6/C/B6C0A98B-D34A-417C-826E-3EA28CDFC9DD/AzureSecurityandAuditLogManagement_11132014.pdf)|
 |Конфигурация Microsoft Monitoring Agent|[https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent)|
 |
 

@@ -12,16 +12,20 @@ ms.date: 5/14/2019
 author: swinarko
 ms.author: sawinark
 manager: craigg
-ms.openlocfilehash: 1e55d1878b1a5616d467f2fa27b1b20132d5e77c
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 51f67667caa9e0e564709de40c145b107c619b59
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68517003"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016010"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
-В этой статье показано, как включить проверку подлинности Azure Active Directory (Azure AD) с помощью управляемого удостоверения для фабрики данных Azure (ADF) и использовать ее вместо проверки подлинности SQL, чтобы создать Integration Runtime Azure-SSIS (IR), который будет в свою очередь подготавливаться. База данных каталога SSIS (SSISDB) на сервере базы данных SQL Azure или Управляемый экземпляр от вашего имени.
+В этой статье показано, как включить проверку подлинности Azure Active Directory (Azure AD) с помощью управляемого удостоверения для фабрики данных Azure (ADF) и использовать его вместо обычных методов проверки подлинности (например, проверки подлинности SQL) в следующих целях:
+
+- Создайте Integration Runtime Azure SSIS (IR), который будет в свою очередь подготавливать базу данных каталога SSIS (SSISDB) на сервере базы данных SQL Azure или Управляемый экземпляр от вашего имени.
+
+- Подключайтесь к различным ресурсам Azure при запуске пакетов служб SSIS в Azure SSIS IR.
 
 Дополнительные сведения об управляемом удостоверении для ADF см. в статье [управляемые идентий для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
 
@@ -214,4 +218,14 @@ ms.locfileid: "68517003"
     Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                  -DataFactoryName $DataFactoryName `
                                                  -Name $AzureSSISName
-   ```
+    ```
+
+## <a name="run-ssis-packages-with-managed-identity-authentication"></a>Запуск пакетов SSIS с проверкой подлинности с помощью управляемого удостоверения
+
+При запуске пакетов служб SSIS в среде Azure SSIS IR можно использовать управляемую проверку подлинности для подключения к различным ресурсам Azure. Сейчас мы уже поддерживали аутентификацию управляемого удостоверения в следующих диспетчерах соединений.
+
+- [Диспетчер подключений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
+
+- [Диспетчер соединений ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
+
+- [Диспетчер подключений службы хранилища Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)

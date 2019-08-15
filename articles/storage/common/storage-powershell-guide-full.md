@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 082033cebc68fc97f7cff9ce80eb02acbbf5f4b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ac210a03f8b1a0a5f7fff07cbc68b4cd6bc98632
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65145883"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016346"
 ---
 # <a name="using-azure-powershell-with-azure-storage"></a>Использование Azure PowerShell со службой хранилища Azure
 
@@ -24,7 +24,7 @@ PowerShell используется для создания ресурсов Azu
 > [!div class="checklist"]
 > * Вывод списка учетных записей хранения.
 > * Получение ссылки на имеющуюся учетную запись хранения.
-> * Создание учетной записи хранения
+> * Создать учетную запись хранения
 > * Настройка свойств учетной записи хранения.
 > * Получение и повторное создание ключей доступа.
 > * Защита доступа к учетной записи хранения
@@ -42,7 +42,7 @@ PowerShell используется для создания ресурсов Azu
 
 Дополнительные сведения об учетных записях хранения см. в статьях [Введение в хранилище Microsoft Azure](storage-introduction.md) и [Об учетных записях хранения Azure](storage-create-storage-account.md).
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -76,7 +76,7 @@ $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroup `
 
 Теперь у вас есть переменная $storageAccount, указывающая на имеющуюся учетную запись хранения.
 
-### <a name="create-a-storage-account"></a>Создание учетной записи хранения
+### <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
 В следующем сценарии показано, как создать учетную запись хранения общего назначения с помощью команды [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). После создания учетной записи извлеките ее контекст, который можно использовать в последующих командах вместо указания аутентификации при каждом вызове.
 
@@ -131,7 +131,7 @@ $ctx = $storageAccount.Context
 
 * **Теги**, присвоенные учетной записи хранения. Теги часто используются для классификации ресурсов в целях выставления счетов.
 
-* **SKU** — это параметр репликации для учетной записи хранения (как, например, LRS для локально избыточного хранилища). Например, можно изменить Standard\_LRS на Standard\_GRS или Standard\_RAGRS. Обратите внимание, что невозможно изменить Standard\_ZRS или Premium\_LRS на другие SKU или заменить другие SKU этими.
+* **SKU** — это параметр репликации для учетной записи хранения (как, например, LRS для локально избыточного хранилища). Например, можно изменить Standard\_LRS на Standard\_GRS или Standard\_RAGRS. Обратите внимание, что нельзя\_изменить стандартные ZRS\_, Standard гзрс\_, Standard рагзрс или\_Premium LRS на другие номера SKU или изменить другие номера SKU.
 
 * **Уровень доступа** для учетных записей хранилища BLOB-объектов. Для уровня доступа задано значение **Горячий** или **Холодный**, что позволяет свести к минимуму затраты, выбрав уровень доступа, соответствующий использованию учетной записи хранения. Дополнительные сведения см. в статье [Хранилище BLOB-объектов Azure: "горячий", "холодный" и архивный (предварительная версия) уровни](../blobs/storage-blob-storage-tiers.md).
 
@@ -199,7 +199,7 @@ Remove-AzStorageAccount -ResourceGroup $resourceGroup -AccountName $storageAccou
 > Минутную аналитику можно включить с помощью PowerShell. Эта возможность недоступна на портале.
 >
 
-* Чтобы узнать, как включить и просмотреть метрики хранилища данных с помощью PowerShell, см. в разделе [метрики аналитики хранилища](storage-analytics-metrics.md).
+* Сведения о том, как включить и просмотреть данные метрик хранилища с помощью PowerShell, см. в разделе [метрики аналитики хранилища](storage-analytics-metrics.md).
 
 * Сведения о том, как включить и получить журнал хранилища данных с помощью PowerShell, см. в статьях [How to enable Storage Logging using PowerShell](/rest/api/storageservices/Enabling-Storage-Logging-and-Accessing-Log-Data) (Включение ведения журнала хранилища с помощью PowerShell) и [Finding your Storage Logging log data](/rest/api/storageservices/Enabling-Storage-Logging-and-Accessing-Log-Data) (Поиск данных журнала хранилища).
 
@@ -223,7 +223,7 @@ API таблицы Azure Cosmos DB предоставляет расширенн
 Большинство людей используют общедоступное облако Azure для глобального развертывания Azure. Но есть и независимые развертывания Microsoft Azure для обеспечения автономности и других целей. Такие независимые развертывания называются средами. Эти доступные среды включают:
 
 * [Облако Azure для государственных организаций](https://azure.microsoft.com/features/gov/).
-* [Облако Azure для Китая 21Vianet под управлением 21vianet в Китае](http://www.windowsazure.cn/)
+* [Облако Azure Китая 21Vianet, управляемое 21Vianet, в Китае](http://www.windowsazure.cn/)
 * [Облако Azure для Германии](../../germany/germany-welcome.md).
 
 Дополнительные сведения о доступе к эти облакам и связанным службам хранилища с помощью PowerShell см. в руководстве по [управлению службой хранилища в независимых облаках Azure с помощью PowerShell](storage-powershell-independent-clouds.md).
@@ -235,14 +235,14 @@ API таблицы Azure Cosmos DB предоставляет расширенн
 ```powershell
 Remove-AzResourceGroup -Name $resourceGroup
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом практическом руководстве описаны стандартные операции с использованием командлетов уровня управления для учетных записей хранения. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Вывод списка учетных записей хранения.
 > * Получение ссылки на имеющуюся учетную запись хранения.
-> * Создание учетной записи хранения
+> * Создать учетную запись хранения
 > * Настройка свойств учетной записи хранения.
 > * Получение и повторное создание ключей доступа.
 > * Защита доступа к учетной записи хранения

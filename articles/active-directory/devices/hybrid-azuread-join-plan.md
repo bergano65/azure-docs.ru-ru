@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49f8d0e418f43648665b95f5bf1f672e9f9dae28
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: cad2568702909274030d3c7c6469a7e4cbf670c4
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779457"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989256"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -101,7 +101,7 @@ ms.locfileid: "68779457"
 
 ## <a name="select-your-scenario-based-on-your-identity-infrastructure"></a>Выбор сценария на основе инфраструктуры идентификации
 
-Гибридное присоединение к Azure AD работает как с управляемыми, так и с федеративными средами.  
+Гибридное присоединение к Azure AD работает как с управляемыми, так и с федеративными средами в зависимости от того, поддерживает ли UPN возможность маршрутизации или без маршрутизации. Список поддерживаемых сценариев см. в нижней части страницы.  
 
 ### <a name="managed-environment"></a>Управляемая среда
 
@@ -111,10 +111,10 @@ ms.locfileid: "68779457"
 
 ### <a name="federated-environment"></a>Федеративная среда
 
-В федеративной среде должен быть поставщик удостоверений, который поддерживает следующие требования. При наличии Федеративной среды, использующей службы федерации Active Directory (AD FS) (AD FS), указанные ниже требования уже поддерживаются.
+В федеративной среде должен быть поставщик удостоверений, поддерживающий следующие требования. Это не относится к федеративной среде, в которой используются службы федерации Active Directory (AD FS).
 
-- **Утверждение WIAORMULTIAUTHN:** Это утверждение необходимо для того, чтобы выполнить гибридное присоединение к Azure AD для устройств Windows нижнего уровня.
-- **Протокол WS-Trust:** Этот протокол необходим для проверки подлинности текущих гибридных присоединенных к Azure AD устройств в Azure AD. При использовании AD FS необходимо включить следующие конечные точки WS-Trust:`/adfs/services/trust/2005/windowstransport`  
+- **Утверждение WIAORMULTIAUTHN:** это утверждение требуется для гибридного присоединения к Azure AD устройств Windows нижнего уровня.
+- **Протокол WS-Trust:** этот протокол требуется для аутентификации в Azure AD устройств Windows с текущим гибридным присоединением к Azure AD. При использовании AD FS нужно включить следующие конечные точки WS-Trust: `/adfs/services/trust/2005/windowstransport`  
 `/adfs/services/trust/13/windowstransport`  
   `/adfs/services/trust/2005/usernamemixed` 
   `/adfs/services/trust/13/usernamemixed`
@@ -122,7 +122,7 @@ ms.locfileid: "68779457"
   `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> **Службы ADFS/Services/Trust/2005/windowstransport** или **ADFS/Services/Trust/13/windowstransport** должны быть включены только в качестве конечных точек в интрасети и не должны предоставляться в качестве конечных точек с внешними экстрасетями через прокси-сервер приложения. Дополнительные сведения о том, как отключить WS-Trust конечные точки WIndows, см. в разделе [Отключение WS-Trust конечных точек Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. См. об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
