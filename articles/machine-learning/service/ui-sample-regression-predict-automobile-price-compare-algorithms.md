@@ -1,5 +1,5 @@
 ---
-title: Регрессии Прогнозирование цен и сравнение алгоритмов
+title: 'Пример визуального интерфейса #3: регрессия для цены и сравнения алгоритмов'
 titleSuffix: Azure Machine Learning service
 description: В этой статье показано, как создать сложный эксперимент машинного обучения без написания единой строки кода с помощью визуального интерфейса. Узнайте, как обучить и сравнивать несколько моделей регрессии для прогнозирования цены автомобиля на основе технических характеристик.
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: 28af7b814a8d214c3529ecb12ffe25ede78b1cb6
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d05a601196ec4a5349a0acb4763098d9716c17f5
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855938"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990005"
 ---
 # <a name="sample-2---regression-predict-price-and-compare-algorithms"></a>Пример 2. регрессия: Прогнозирование цен и сравнение алгоритмов
 

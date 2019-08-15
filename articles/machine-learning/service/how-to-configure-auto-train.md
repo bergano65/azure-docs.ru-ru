@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: adca67152c33f4c6a3ec272b63c4c8157a777f36
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 6e29e0f89d9270a143d48cf6e85b479813e19d9d
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856188"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013642"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -72,6 +72,11 @@ automl_config = AutoMLConfig(task="classification")
 Автоматическое машинное обучение поддерживает данные, находящиеся на локальном компьютере или в облаке в хранилище BLOB-объектов Azure. Данные можно считать в поддерживаемых форматах данных scikit-learn. Можно считывать данные в:
 * массивы Numpy X (признаки) и Y (целевая переменная или метка);
 * Кадр данных Pandas
+
+>[!Important]
+> Требования к данным для обучения:
+>* Данные должны быть в табличной форме.
+>* Значение, которое необходимо спрогнозировать (целевой столбец), должно присутствовать в данных.
 
 Примеры:
 
