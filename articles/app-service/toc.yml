@@ -227,6 +227,8 @@
       href: '../azure-subscription-service-limits.md#app-service-limits'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=app-service'
+    - name: Руководства по использованию Помощника по миграции
+      href: 'https://github.com/Azure/App-Service-Migration-Assistant/tree/master/MigrationDocs'
     - name: Рекомендации
       href: app-service-best-practices.md
     - name: Примеры

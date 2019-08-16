@@ -13,7 +13,7 @@
       items:
         - name: Создание и использование индекса
           href: search-get-started-portal.md
-        - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
+        - name: Расширение возможностей с помощью Когнитивного поиска (ИИ)
           href: cognitive-search-quickstart-blob.md
     - name: 'C#'
       href: search-get-started-dotnet.md
@@ -59,6 +59,8 @@
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=csharp'
     - name: Примеры для Java
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=java'
+    - name: Примеры для JavaScript
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=javascript'
     - name: Примеры для Python
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-search&languages=python'
     - name: Примеры REST

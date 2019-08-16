@@ -66,7 +66,11 @@
         - name: Блокирование образов контейнеров
           href: container-registry-image-lock.md
         - name: Удаление образов контейнеров
-          href: container-registry-delete.md
+          items:
+            - name: Удаление данных образа с помощью CLI
+              href: container-registry-delete.md
+            - name: Автоматическая очистка тегов и манифестов (предварительная версия)
+              href: container-registry-auto-purge.md
         - name: Обновление классического реестра
           href: container-registry-upgrade.md
         - name: Использование веб-перехватчиков ACR

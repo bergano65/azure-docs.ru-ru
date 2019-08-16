@@ -439,20 +439,38 @@
           href: ./partner-center-portal/account-migration-from-cpp-to-pc.md
     - name: Создание нового предложения
       items:
-        - name: Контрольный список для создания предложений
-          href: ./partner-center-portal/offer-creation-checklist.md
-        - name: Создание предложения SaaS
-          href: ./partner-center-portal/create-new-saas-offer.md
-        - name: Контроль потребления с помощью SaaS
-          href: ./partner-center-portal/saas-metered-billing.md
+        - name: "Предложения для Dynamics\_365"
           items:
-            - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
-              href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
-            - name: API-интерфейсы службы из Marketplace для контроля потребления
-              href: ./partner-center-portal/marketplace-metering-service-apis.md
-        - name: API исполнения SaaS
-          href: ./partner-center-portal/pc-saas-fulfillment-apis.md
+            - name: "Создание предложения Dynamics\_365 for Customer Engagement & PowerApps"
+              href: ./partner-center-portal/create-new-customer-engagement-offer.md
+            - name: Создание предложения Dynamics 365 for Operations
+              href: ./partner-center-portal/create-new-operations-offer.md
+            - name: Создание предложения Dynamics 365 Business Central
+              href: ./partner-center-portal/create-new-business-central-offer.md
+        - name: Предложения SaaS
           items:
+            - name: Контрольный список для создания предложений SaaS
+              href: ./partner-center-portal/offer-creation-checklist.md
+            - name: Создание предложения SaaS
+              href: ./partner-center-portal/create-new-saas-offer.md
+            - name: Контроль потребления с помощью SaaS
+              href: ./partner-center-portal/saas-metered-billing.md
+              items:
+                - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
+                  href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
+                - name: API-интерфейсы службы из Marketplace для контроля потребления
+                  href: ./partner-center-portal/marketplace-metering-service-apis.md
+            - name: API исполнения SaaS
+              href: ./partner-center-portal/pc-saas-fulfillment-apis.md
+              items:
+                - name: Регистрация приложения SaaS
+                  href: ./partner-center-portal/pc-saas-registration.md
+                - name: "API исполнения SaaS версии\_2"
+                  href: ./partner-center-portal/pc-saas-fulfillment-api-v2.md
+                - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
+                  href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
+                - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
+                  href: ./partner-center-portal/saas-fulfillment-apis-faq.md
             - name: Регистрация приложения SaaS
               href: ./partner-center-portal/pc-saas-registration.md
             - name: "API исполнения SaaS версии\_2"

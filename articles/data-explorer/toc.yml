@@ -44,6 +44,8 @@
           href: ingest-data-event-hub.md
         - name: Сетка событий Azure
           href: ingest-data-event-grid.md
+        - name: Прием данных одним щелчком
+          href: ingest-data-one-click.md
         - name: Kafka
           href: ingest-data-kafka.md
         - name: Python

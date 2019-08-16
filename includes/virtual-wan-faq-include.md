@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: include
-ms.date: 07/22/2019
+ms.date: 08/06/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c46c11ead645b93d7710d1e11636037e4dcaf8e7
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 8a4bbe92cc1b34801abffa1e905d873d4382025a
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444571"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912480"
 ---
 ### <a name="what-is-the-difference-between-an-azure-virtual-network-gateway-vpn-gateway-and-an-azure-virtual-wan-vpngateway"></a>Какая разница между шлюзом Виртуальной сети Azure (VPN-шлюз) и Виртуальной глобальной сетью Azure vpngateway?
 
@@ -91,7 +91,7 @@ ms.locfileid: "68444571"
 
 Отправьте сообщение электронной почты по адресу azurevirtualwan@microsoft.com. У идеального партнера есть устройство, которое можно использовать для подключения к IKEv1 или IKEv2 IPsec.
 
-### <a name="what-if-a-device-i-am-using-is-not-in-the-virtual-wan-partner-list-can-i-still-use-it-to-connect-to-azure-virtual-wan-vpn"></a>Что, если устройство, которое я использую, отсутствует в списке партнеров Виртуальной глобальной сети? Можно ли по прежнему подключатся к VPN Виртуальной глобальной сети Azure?
+### <a name="what-if-a-device-i-am-using-is-not-in-the-virtual-wan-partner-list-can-i-still-use-it-to-connect-to-azure-virtual-wan-vpn"></a>Что, если используемое устройство отсутствует в списке партнеров Виртуальной глобальной сети? Можно ли по прежнему подключатся к VPN Виртуальной глобальной сети Azure?
 
 Да, до тех пор, пока устройство поддерживает IPsec IKEv1 или IKEv2. Партнеры Виртуальной глобальной сети автоматизируют подключение из устройства к конечным точкам VPN Azure. Это подразумевает шаги по автоматизации, такие как "передача информации ветви", "IPsec и конфигурация" и "подключение". Так как ваше устройство не является частью партнерской экосистемы Виртуальной глобальной сети, вам потребуется приложить усилия и вручную задать конфигурацию Azure, а также обновить свое устройство, чтоб настроить подключение IPsec. 
 
@@ -103,7 +103,7 @@ ms.locfileid: "68444571"
 
 Да, подключение типа "ветвь — ветвь" доступно в Виртуальной глобальной сети Azure для VPN и VPN для ExpressRoute. В то время как VPN типа "сеть — сеть" является общедоступной, ExpressRoute в настоящее время предоставляется в предварительной версии.
 
-### <a name="does-branch-to-branch-traffic-traverse-through-the-azure-virtual-wan"></a>Проходит ли трафик типа "ветвь — ветвь" через Виртуальную глобальную сеть Azure?
+### <a name="does-branch-to-branch-traffic-traverse-through-the-azure-virtual-wan"></a>Проходит ли трафик типа "ветвь — ветвь" через Виртуальную глобальную сеть Azure?
 
 Да.
 
@@ -122,6 +122,10 @@ ms.locfileid: "68444571"
 ### <a name="is-there-a-network-throughput-limit-when-using-azure-virtual-wan"></a>Есть ли предельное значение пропускной способности сети при использовании Виртуальной глобальной сети Azure?
 
 Количество ветвей ограничено 1000 подключений на концентратор или регион и общей скоростью 20 Гбит/с на концентраторе.
+
+### <a name="i-dont-see-the-20-gbps-setting-for-the-virtual-hub-in-the-portal-how-do-i-configure-that"></a>На портале не отображается вариант с 20 Гбит/с для виртуального концентратора. Что мне делать?
+
+Сейчас единицы масштабирования шлюза (20 Гбит/с) можно настроить с помощью командлета [Update-AzVpnGateway](https://docs.microsoft.com/powershell/module/az.network/update-azvpngateway). Мы планируем добавить этот вариант на портал.
 
 ### <a name="how-many-vpn-connections-does-a-virtual-wan-hub-support"></a>Сколько VPN-подключений поддерживает концентратор Виртуальной глобальной сети?
 

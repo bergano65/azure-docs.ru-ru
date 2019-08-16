@@ -2,6 +2,7 @@
   href: index.yml
   items: null
 - name: Обзор
+  expanded: true
   items:
     - name: Что такое Виртуальная машина для обработки и анализа данных?
       href: overview.md
@@ -20,7 +21,7 @@
       href: linux-dsvm-intro.md
     - name: Создание виртуальной машины для глубокого обучения
       href: provision-deep-learning-dsvm.md
-    - name: Создание виртуальной машины для обработки и анализа данных Geo AI
+    - name: Создание виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
   items:
@@ -28,20 +29,22 @@
       href: dsvm-tools-overview.md
     - name: Платформы глубокого обучения и искусственного интеллекта
       href: dsvm-deep-learning-ai-frameworks.md
-    - name: Машинное обучение и инструменты обработки и анализа данных
-      href: dsvm-ml-data-science-tools.md
-    - name: Языки
+    - name: Языки программирования
       href: dsvm-languages.md
     - name: Инструменты разработки
       href: dsvm-tools-development.md
-    - name: Инструменты приема данных
-      href: dsvm-tools-ingestion.md
-    - name: Инструменты исследования и визуализации данных
-      href: dsvm-tools-explore-and-visualize.md
+    - name: Машинное обучение и инструменты обработки и анализа данных
+      href: dsvm-ml-data-science-tools.md
     - name: Платформы данных
       href: dsvm-data-platforms.md
-    - name: Примеры и пошаговые руководства
-      href: dsvm-samples-and-walkthroughs.md
+    - name: Инструменты приема данных
+      href: dsvm-tools-ingestion.md
+    - name: Средства исследования и визуализации данных
+      href: dsvm-tools-explore-and-visualize.md
+    - name: Рекомендации для предприятий и корпоративная безопасность
+      href: dsvm-enterprise-overview.md
+- name: Примеры
+  href: dsvm-samples-and-walkthroughs.md
 - name: Руководства
   items:
     - name: Использование виртуальной машины Windows для обработки и анализа данных
@@ -50,23 +53,19 @@
       href: linux-dsvm-walkthrough.md
     - name: Использование виртуальной машины для глубокого обучения
       href: use-deep-learning-dsvm.md
-    - name: Использование виртуальной машины для обработки и анализа данных Geo AI
+    - name: Использование виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
       href: use-geo-ai-dsvm.md
-    - name: Руководство для предприятий
-      items:
-        - name: Обзор
-          href: dsvm-enterprise-overview.md
-        - name: Масштабирование
-          href: dsvm-pools.md
-        - name: Интеграция с Active Directory
-          href: dsvm-common-identity.md
-        - name: Защита учетных данных для доступа к ресурсам
-          href: dsvm-secure-access-keys.md
+    - name: Создание автомасштабируемого пула виртуальных машин для обработки и анализа данных
+      href: dsvm-pools.md
+    - name: Интеграция с Active Directory
+      href: dsvm-common-identity.md
+    - name: Защита учетных данных для доступа к ресурсам
+      href: dsvm-secure-access-keys.md
 - name: Ресурсы
   items:
-    - name: "Руководство по разработке на\_R"
-      href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
     - name: Форум MSDN
       href: 'https://social.microsoft.com/Forums/home?forum=dsvm'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=dsvm'
+    - name: "Руководство по разработке на\_R"
+      href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context

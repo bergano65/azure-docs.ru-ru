@@ -79,10 +79,12 @@
           href: batch-pool-vm-sizes.md
         - name: Настройка доступа к вычислительным узлам
           href: pool-endpoint-configuration.md
-        - name: Создание пула с помощью пользовательского образа
+        - name: Создание пула с использованием службы "Общая коллекция образов"
           href: batch-custom-images.md
         - name: Создание пула в виртуальной сети
           href: batch-virtual-network.md
+        - name: Подключение виртуальной файловой системы
+          href: virtual-file-mount.md
         - name: Подключение файлового ресурса Azure
           href: pool-file-shares.md
         - name: Использование экземпляров RDMA или GPU

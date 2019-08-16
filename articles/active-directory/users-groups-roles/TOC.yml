@@ -10,7 +10,7 @@
       href: /azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Назначение лицензий пользователям
       href: /azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
-    - name: Назначение роли с областью действия ресурса
+    - name: Предоставление разрешения на неограниченное количество регистраций приложений
       href: roles-quickstart-app-registration-limits.md
     - name: Настройка срока действия групп
       href: groups-quickstart-expiration.md

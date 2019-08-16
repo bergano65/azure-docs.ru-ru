@@ -478,7 +478,7 @@
           items:
             - name: Использование ускорителя записи
               href: how-to-enable-write-accelerator.md
-            - name: Включение дисков SSD (цен. категория "Ультра")
+            - name: Использование дисков (цен. категория "Ультра")
               href: disks-enable-ultra-ssd.md
             - name: Тест производительности диска
               href: disks-benchmarks.md

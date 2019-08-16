@@ -120,12 +120,8 @@
         - name: "Развертывание\_— REST API"
           displayName: 'deployment,rollback on error,redeploy'
           href: resource-group-template-deploy-rest.md
-        - name: Обеспечение защиты шаблонов с помощью маркера SAS
-          items:
-            - name: Использование Azure CLI
-              href: resource-manager-cli-sas-token.md
-            - name: Использование Azure PowerShell
-              href: resource-manager-powershell-sas-token.md
+        - name: Обеспечение защиты шаблона с помощью маркера SAS
+          href: secure-template-with-sas-token.md
         - name: Развертывание нескольких подписок или групп ресурсов
           href: resource-manager-cross-resource-group-deployment.md
     - name: CI/CD

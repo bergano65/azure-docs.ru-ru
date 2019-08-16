@@ -85,5 +85,7 @@
           href: how-to/dev-spaces-business-continuity.md
         - name: Взаимодействие с контейнерами Windows
           href: how-to/run-dev-spaces-windows-containers.md
+        - name: Использование traefik для пользовательского входящего трафика и HTTPS
+          href: how-to/ingress-https-traefik.md
     - name: Устранение неполадок
       href: troubleshooting.md
