@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3f6d15e67122afcbea3cc294c803a302e961bdbd
-ms.sourcegitcommit: 57a7d4f67635212f5bf0c56e58fd87c8ec366f2c
+ms.openlocfilehash: c192a994ac5398d41e28a35267b922ba98b721cc
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372547"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69513616"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -58,6 +58,8 @@ ms.locfileid: "68372547"
 - Windows 8.1
 - Windows 7
 
+SKU автономного продукта [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) не содержит реализацию требуемого состояния a, поэтому она не может управляться с помощью PowerShell DSC или конфигурации состояния службы автоматизации Azure.
+
 Для узлов под управлением Linux поддерживаются следующие дистрибутивов и версии:
 
 Расширение DSC для Linux поддерживает все дистрибутивы Linux, которые были [включены в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) , за исключением следующих:
@@ -77,7 +79,7 @@ Ubuntu  | 18,04
 
 Если узлы находятся в частной сети, для взаимодействия с автоматизацией требуется следующий порт и URL-адреса для настройки состояния (DSC):
 
-* Порт: только исходящий интернет-трафик через TCP-порт 443.
+* Port: только исходящий интернет-трафик через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net

@@ -12,23 +12,23 @@ ms.workload: infrastructure-services
 ms.date: 05/31/2019
 ms.author: kumud
 ms.reviewer: tyao
-ms.openlocfilehash: a610a2c01a1e935c55942b621e5b3799cb002fc0
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 025e45b86fa3a6020652ae9756ceace5b51daa55
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698650"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516204"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door-service"></a>Настройка правила ограничения IP-адресов с брандмауэром веб-приложения для службы "Передняя дверь" Azure
 В этой статье показано, как настроить правила ограничения IP-адресов в брандмауэре веб-приложения (WAF) для службы "Передняя дверь" Azure с помощью Azure CLI, Azure PowerShell или шаблона Azure Resource Manager.
 
 Правило управления доступом на основе IP-адресов — это настраиваемое правило WAF, которое позволяет управлять доступом к веб-приложениям. Для этого нужно указать список IP-адресов или диапазонов IP-адресов в формате междоменной маршрутизации (CIDR) без классов.
 
-По умолчанию веб-приложение доступно через Интернет. Если требуется ограничить доступ клиентов от списка известных IP-адресов или диапазонов IP-адресов, необходимо создать два правила сопоставления IP-адреса. Первое правило сопоставления IP-адреса содержит список IP-адресов в виде совпадающих значений и задает действие, которое следует **Разрешить**. Второй из них с более низким приоритетом блокирует все остальные IP-адреса с помощью оператора **ALL** и задавая действие **блокировать**. После применения правила ограничения IP-адресов запросы, поступающие за пределы этого списка разрешенных, получают ответ 403.  
+По умолчанию веб-приложение доступно через Интернет. Если требуется ограничить доступ клиентов из списка известных IP-адресов или диапазонов IP-адресов, можно создать правило сопоставления IP-адресов, содержащее список IP-адреса в качестве совпадающих значений и задать оператору значение "не" (отрицание имеет значение true) и действие для **блокировки**. После применения правила ограничения IP-адресов запросы, поступающие за пределы этого списка разрешенных, получают ответ 403.  
 
 ## <a name="configure-a-waf-policy-with-the-azure-cli"></a>Настройка политики WAF с помощью Azure CLI
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду CLI и создайте профиль службы передней дверцы Azure.
 
 #### <a name="set-up-the-azure-cli-environment"></a>Настройка среды Azure CLI
@@ -40,52 +40,51 @@ ms.locfileid: "68698650"
 
 ### <a name="create-a-waf-policy"></a>Создание политики WAF
 
-Создайте политику WAF с помощью команды [AZ Network WAF-Policy Create](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-create) . В следующем примере замените имя политики *ипалловполициексамплекли* на уникальное имя политики.
+Создайте политику WAF с помощью команды [AZ Network Front-дверь WAF-Policy Create](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-create) . В следующем примере замените имя политики *ипалловполициексамплекли* на уникальное имя политики.
 
 ```azurecli-interactive 
-az network waf-policy create \
+az network front-door waf-policy create \
   --resource-group <resource-group-name> \
   --subscription <subscription ID> \
   --name IPAllowPolicyExampleCLI
   ```
 ### <a name="add-a-custom-ip-access-control-rule"></a>Добавление настраиваемого правила контроля доступа IP-адресов
 
-Чтобы добавить настраиваемое правило контроля доступа IP-адресов для только что созданной политики WAF, используйте команду [AZ Network WAF-Policy Custom-Rule Create](/cli/azure/ext/front-door/network/front-door/waf-policy/rule?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-rule-create) .
+Чтобы добавить настраиваемое правило контроля доступа IP-адресов для только что созданной политики WAF, используйте команду [AZ Network Front-дверь WAF-Policy Custom-Rule Create](/cli/azure/ext/front-door/network/front-door/waf-policy/rule?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-rule-create) .
 
 В следующих примерах:
 -  Замените *ипалловполициексамплекли* своей уникальной политикой, созданной ранее.
 -  Замените *IP-Address-Range-1*, *IP-Address-Range-2* своим собственным диапазоном.
 
-Сначала создайте правило IP-разрешения для указанных адресов.
+Сначала создайте правило IP-разрешения для политики, созданной на предыдущем шаге. Примечание . параметр отсрочки необходим, так как правило должно иметь условие соответствия, которое будет добавлено на следующем шаге.
 
 ```azurecli
-az network waf-policy custom-rule create \
+az network front-door waf-policy rule create \
   --name IPAllowListRule \
   --priority 1 \
   --rule-type MatchRule \
-  --match-condition RemoteAddr IPMatch ("<ip-address-range-1>","<ip-address-range-2>") \
-  --action Allow \
-  --resource-group <resource-group-name> \
-  --policy-name IPAllowPolicyExampleCLI
-```
-Затем создайте правило **Блокировать все** правила с низким приоритетом, чем предыдущее правило **разрешения** . Опять же, замените *ипалловполициексамплекли* в следующем примере своей уникальной политикой, созданной ранее.
-
-```azurecli
-az network waf-policy custom-rule create \
-  --name IPDenyAllRule\
-  --priority 2 \
-  --rule-type MatchRule \
-  --match-condition RemoteAddr Any
   --action Block \
   --resource-group <resource-group-name> \
-  --policy-name IPAllowPolicyExampleCLI
+  --policy-name IPAllowPolicyExampleCLI --defer
 ```
-    
+Затем добавьте условие соответствия в правило:
+
+```azurecli
+az network front-door waf-policy rule match-condition add\
+--match-variable RemoteAddr \
+--operator IPMatch
+--values "ip-address-range-1" "ip-address-range-2"
+--negate true\
+--name IPAllowListRule\
+  --resource-group <resource-group-name> \
+  --policy-name IPAllowPolicyExampleCLI 
+  ```
+                                                   
 ### <a name="find-the-id-of-a-waf-policy"></a>Поиск идентификатора политики WAF 
-Найдите идентификатор политики WAF с помощью команды [AZ Network WAF-Policy показывать](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-show) . Замените *ипалловполициексамплекли* в следующем примере своей уникальной политикой, созданной ранее.
+Найдите идентификатор политики WAF с помощью команды [AZ Network Front-двери WAF-Policy показывать](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-show) . Замените *ипалловполициексамплекли* в следующем примере своей уникальной политикой, созданной ранее.
 
    ```azurecli
-   az network waf-policy show \
+   az network front-door  waf-policy show \
      --resource-group <resource-group-name> \
      --name IPAllowPolicyExampleCLI
    ```
@@ -106,7 +105,7 @@ az network waf-policy custom-rule create \
 
 ## <a name="configure-a-waf-policy-with-azure-powershell"></a>Настройка политики WAF с Azure PowerShell
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду PowerShell и создайте профиль службы передней дверцы Azure.
 
 #### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
@@ -140,43 +139,29 @@ $IPMatchCondition = New-AzFrontDoorWafMatchConditionObject `
 -MatchVariable  RemoteAddr `
 -OperatorProperty IPMatch `
 -MatchValue "ip-address-range-1", "ip-address-range-2"
+-NegateCondition 1
 ```
-Создайте условное правило *соответствия* IP-адресов с помощью следующей команды:
-```powershell
-$IPMatchALlCondition = New-AzFrontDoorWafMatchConditionObject `
--MatchVariable  RemoteAddr `
--OperatorProperty Any        
-  ```
-    
+     
 ### <a name="create-a-custom-ip-allow-rule"></a>Создание настраиваемого правила IP-адресов
 
-Используйте команду [New-азфронтдуркустомрулеобжект](/powershell/module/Az.FrontDoor/New-azfrontdoorwafcustomruleobject) , чтобы определить действие и задать приоритет. В следующем примере будут разрешены запросы от IP-адресов клиента, соответствующих списку.
+Используйте команду [New-азфронтдуркустомрулеобжект](/powershell/module/Az.FrontDoor/New-azfrontdoorwafcustomruleobject) , чтобы определить действие и задать приоритет. В следующем примере запросы, не являющиеся IP-адресами клиентов, которые соответствуют списку, будут заблокированы.
 
 ```powershell
 $IPAllowRule = New-AzFrontDoorCustomRuleObject `
 -Name "IPAllowRule" `
 -RuleType MatchRule `
 -MatchCondition $IPMatchCondition `
--Action Allow -Priority 1
-```
-Создайте правило **Блокировать все** правила с низким приоритетом, чем предыдущее **правило IP** -адресов.
-```powershell
-$IPBlockAll = New-AzFrontDoorCustomRuleObject `
--Name "IPDenyAll" `
--RuleType MatchRule `
--MatchCondition $IPMatchALlCondition `
--Action Block `
--Priority 2
+-Action Block -Priority 1
 ```
 
 ### <a name="configure-a-waf-policy"></a>Настройка политики WAF
-Найдите имя группы ресурсов, содержащей профиль службы "Передняя дверца Azure", с помощью `Get-AzResourceGroup`. Затем настройте политику WAF с помощью правила "IP- **Блокировка всех** ", используя [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
+Найдите имя группы ресурсов, содержащей профиль службы "Передняя дверца Azure", с помощью `Get-AzResourceGroup`. Затем настройте политику WAF с использованием правила IP-адресов с помощью [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
 
 ```powershell
   $IPAllowPolicyExamplePS = New-AzFrontDoorWafPolicy `
     -Name "IPRestrictionExamplePS" `
     -resourceGroupName <resource-group-name> `
-    -Customrule $IPAllowRule $IPBlockAll `
+    -Customrule $IPAllowRule`
     -Mode Prevention `
     -EnabledState Enabled
    ```

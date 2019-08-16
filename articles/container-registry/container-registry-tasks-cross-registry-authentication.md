@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: danlep
-ms.openlocfilehash: 8fac70e7e5125ae86b2b5ce13041bbf1fd067bbe
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 07fa7f3df5274ae88c93deac75093ead3f32f036
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642076"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509092"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестром в задаче контроля доступа с помощью удостоверения, управляемого Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "68642076"
 
 В реальной ситуации Организация может поддерживать набор базовых образов, используемых всеми группами разработчиков для создания приложений. Эти базовые образы хранятся в корпоративном реестре, и каждая группа разработчиков имеет только права на вытягивание. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье вам понадобятся два реестра контейнеров Azure:
 
@@ -76,7 +76,7 @@ steps:
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Контекст задачи является локальной системой, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр передает идентификатор ресурса назначенного пользователю удостоверения. 
+Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр передает идентификатор ресурса назначенного пользователю удостоверения. 
 
 ```azurecli
 az acr task create \
@@ -95,7 +95,7 @@ az acr task create \
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Контекст задачи является локальной системой, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр без значения активирует для задачи назначенное системой удостоверение. 
+Создайте задачу *хелловорлдтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `helloworldtask.yaml` в рабочем каталоге. `--assign-identity` Параметр без значения активирует для задачи назначенное системой удостоверение. 
 
 ```azurecli
 az acr task create \
@@ -208,7 +208,7 @@ Run ID: cf10 was successful after 32s
 az acr repository show-tags --name myregistry --repository hello-world --output tsv
 ```
 
-Выходные данные примера:
+Пример выходных данных:
 
 ```console
 cf10

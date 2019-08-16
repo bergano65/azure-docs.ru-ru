@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: b-juche
-ms.openlocfilehash: b9dd89e38f5cab6dceca36201695c068e0521943
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
-ms.translationtype: HT
+ms.openlocfilehash: 4ce40fdf36f7d66e60e15955318e43f1f24f275f
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/15/2019
-ms.locfileid: "69034859"
+ms.locfileid: "69515841"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
 
@@ -36,7 +36,7 @@ ms.locfileid: "69034859"
 |  Число томов на пул емкости     |    500   |    Да     |
 |  Число моментальных снимков на том       |    255     |    Нет        |
 |  Число подсетей, делегированных в Azure NetApp Files (Microsoft. NetApp/Volumes) на виртуальную сеть Azure    |   1   |    Нет    |
-|  Максимальное число IP-адресов, используемых в виртуальной сети (включая одноранговые виртуальных сетей) с Azure NetApp Files    |    1000   |    Нет   |
+|  Число одновременных IP-адресов в виртуальной сети (включая одноранговые виртуальных сетей), которые могут получить доступ к Azure NetApp Files   |    1000   |    Нет   |
 |  Минимальный размер одного пула емкости   |  4 ТиБ     |    Нет  |
 |  Максимальный размер одного пула емкости    |  500 ТиБ   |   Нет   |
 |  Минимальный размер одного тома    |    100 ГиБ    |    Нет    |

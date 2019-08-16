@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: b609a708a987194398c53bdf83f0d6e1f281808d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 08/15/2019
 ms.locfileid: "67185780"
 ---
 По умолчанию API-интерфейсы в серверной части мобильных приложений могут вызываться анонимно. Далее необходимо ограничить доступ всем клиентам, не прошедшим проверку подлинности.  
@@ -29,4 +29,4 @@ ms.locfileid: "67185780"
 
         table.access = 'authenticated';
 
-    Дополнительные сведения см. в разделе [как: Требовать проверку подлинности для доступа к таблицам](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Чтобы узнать, как загрузить проект быстрого запуска кода с веб-узла, см. в разделе [как: Загрузите проект код быстрого запуска серверной части Node.js, с помощью Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart).
+    Дополнительные сведения см. в [разделе как Требовать проверку подлинности для](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth)доступа к таблицам. Сведения о том, как скачать проект кода быстрого запуска с сайта, см [. в разделе как Скачайте проект кода краткого руководства по Node. js с](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart)помощью Git.

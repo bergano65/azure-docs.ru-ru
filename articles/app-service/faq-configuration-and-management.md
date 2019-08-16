@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 6f86a8465bcbd3d88ffb7909cac53c3fd38c3af6
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: f7fbfbe5ae5d2ba4148d94768a1109f566151170
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489436"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69513795"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -167,7 +167,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ## <a name="how-do-i-block-ports-in-an-app-service-web-app"></a>Как блокировать порты в веб-приложении службы приложений?
 
-В среде службы приложений с общим клиентом нельзя блокировать определенные порты из-за особенностей инфраструктуры. TCP-порты 4016, 4018 и 4020 также могут быть открыты для удаленной отладки Visual Studio.
+В среде службы приложений с общим клиентом нельзя блокировать определенные порты из-за особенностей инфраструктуры. TCP-порты 4020, 4022 и 4024 также могут быть открыты для удаленной отладки Visual Studio.
 
 В среде службы приложений можно полностью контролировать входящий и исходящий трафик. Для ограничения трафика в определенных портах или их блокировки можно использовать группы безопасности сети. Дополнительные сведения о среде службы приложений см. в записи блога [Introducing App Service Environment](https://azure.microsoft.com/blog/introducing-app-service-environment/) (Введение в среду службы приложения).
 
@@ -251,7 +251,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 ## <a name="how-do-i-perform-penetration-testing-for-my-app-service-app"></a>Как выполнить тест безопасности для приложения службы приложений?
 
-Чтобы выполнить тест безопасности, [отправьте запрос](https://portal.msrc.microsoft.com/en-us/engage/pentest).
+Чтобы выполнить тест безопасности, [отправьте запрос](https://portal.msrc.microsoft.com/engage/pentest).
 
 ## <a name="how-do-i-configure-a-custom-domain-name-for-an-app-service-web-app-that-uses-traffic-manager"></a>Как настроить имя пользовательского домена для веб-приложения службы приложений, использующего диспетчер трафика?
 

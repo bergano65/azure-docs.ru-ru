@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: danlep
-ms.openlocfilehash: 6237b8056262abe1f8cea28bebd6b3bad97e0f7e
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: a4a1099d90b619be383d440067a692c51a2430ac
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967586"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509068"
 ---
 # <a name="run-an-acr-task-on-a-defined-schedule"></a>Выполнение задачи записи контроля доступа по определенному расписанию
 
@@ -48,9 +48,9 @@ ms.locfileid: "68967586"
 az acr task create \
   --name mytask \
   --registry myregistry \
-  --context /dev/null \
   --cmd hello-world \
-  --schedule "0 21 * * *"
+  --schedule "0 21 * * *" \
+  --context /dev/null
 ```
 
 Выполните команду [AZ запись контроля][az-acr-task-show] доступа, чтобы увидеть, что триггер таймера настроен. По умолчанию также включен базовый триггер обновления образа.
@@ -133,7 +133,7 @@ az acr task timer update \
 az acr task timer list --name mytask --registry myregistry
 ```
 
-Выходные данные примера:
+Пример выходных данных:
 
 ```JSON
 [
@@ -176,11 +176,11 @@ az acr task timer remove \
 
 |Type  |Пример  |Когда активируется  |
 |---------|---------|---------|
-|Определенное значение |<nobr>"5 * * * *"</nobr>|Каждый час за 5 минут после часа|
-|Все значения (`*`)|<nobr>"* 5 * * *"</nobr>|каждую минуту начала часа, начиная с 5:00 UTC (60 раз в день)|
-|Диапазон (оператор `-`)|<nobr>"0 1-3 * *"</nobr>|3 раза в день, 1:00, 2:00 и 3:00 UTC|
-|Набор значений (оператор `,`)|<nobr>"20, 30, 40 * * * *"</nobr>|3 раза в час, 20 минут, 30 минут и 40 минут после часа|
-|Значение интервала (оператор `/`)|<nobr>*/10 * * * * *</nobr>|6 раз в час, 10 минут, 20 минут и т. д. за час
+|Определенное значение |<nobr>`"5 * * * *"`</nobr>|Каждый час за 5 минут после часа|
+|Все значения (`*`)|<nobr>`"* 5 * * *"`</nobr>|каждую минуту начала часа, начиная с 5:00 UTC (60 раз в день)|
+|Диапазон (оператор `-`)|<nobr>`"0 1-3 * * *"`</nobr>|3 раза в день, 1:00, 2:00 и 3:00 UTC|
+|Набор значений (оператор `,`)|<nobr>`"20,30,40 * * * *"`</nobr>|3 раза в час, 20 минут, 30 минут и 40 минут после часа|
+|Значение интервала (оператор `/`)|<nobr>`"*/10 * * * *"`</nobr>|6 раз в час, 10 минут, 20 минут и т. д. за час
 
 [!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
@@ -198,6 +198,8 @@ az acr task timer remove \
 
 
 ## <a name="next-steps"></a>Следующие шаги
+
+Пример использования запланированной задачи для очистки репозиториев в реестре см. в статье [Автоматическое удаление образов из реестра контейнеров Azure](container-registry-auto-purge.md).
 
 Примеры задач, активируемых фиксациями исходного кода или обновлениями базовых образов, см. в статье [руководство](container-registry-tutorial-quick-task.md)по задачам записи контроля доступа.
 

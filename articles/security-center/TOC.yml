@@ -181,10 +181,6 @@
           href: security-center-search.md
         - name: Планирование и эксплуатация
           href: security-center-planning-and-operations-guide.md
-        - name: Основные сведения об оповещениях системы безопасности
-          href: security-center-alerts-type.md
-        - name: Аналитика поведения пользователей и сущностей для ресурсов и пользователей Azure
-          href: security-center-ueba-mcas.md
         - name: Настройка конфигураций системы безопасности
           href: security-center-customize-os-security-config.md
 - name: Справочные материалы

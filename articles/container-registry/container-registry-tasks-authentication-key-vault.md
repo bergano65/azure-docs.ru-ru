@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/12/2019
 ms.author: danlep
-ms.openlocfilehash: 6aa729e4f32769ec50632bea582c8b69c7c0ce91
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: bcaf2918c92ec7b8223d394290a1d7c624fc451c
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642141"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509238"
 ---
 # <a name="external-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Внешняя проверка подлинности в задаче контроля доступа с помощью удостоверения, управляемого Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "68642141"
 
 В реальном сценарии компания может публиковать образы в частном репозитории в центре DOCKER в рамках процесса сборки. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам понадобится реестр контейнеров Azure, в котором выполняется задача. В этой статье этот реестр называется *myregistry*. Замените на собственное имя реестра в последующих шагах.
 
@@ -107,7 +107,7 @@ steps:
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *доккерхубтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Контекст задачи является локальной системой, а команда ссылается на файл `dockerhubtask.yaml` в рабочем каталоге. `--assign-identity` Параметр передает идентификатор ресурса назначенного пользователю удостоверения. 
+Создайте задачу *доккерхубтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `dockerhubtask.yaml` в рабочем каталоге. `--assign-identity` Параметр передает идентификатор ресурса назначенного пользователю удостоверения. 
 
 ```azurecli
 az acr task create \
@@ -126,7 +126,7 @@ az acr task create \
 
 ### <a name="create-task"></a>Создание задачи
 
-Создайте задачу *доккерхубтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Контекст задачи является локальной системой, а команда ссылается на файл `dockerhubtask.yaml` в рабочем каталоге.  `--assign-identity` Параметр без значения активирует для задачи назначенное системой удостоверение.  
+Создайте задачу *доккерхубтаск* , выполнив следующую команду [AZ контроля доступа Task Create][az-acr-task-create] . Задача выполняется без контекста исходного кода, а команда ссылается на файл `dockerhubtask.yaml` в рабочем каталоге. `--assign-identity` Параметр без значения активирует для задачи назначенное системой удостоверение.  
 
 ```azurecli
 az acr task create \
