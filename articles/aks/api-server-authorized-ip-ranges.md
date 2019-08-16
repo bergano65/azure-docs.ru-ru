@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 5049a35b943c68d1a05d1435113226d83dc5ecf4
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: fe0c9d7e870b56bf83b70845af9159ea0703c4ab
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69031758"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533628"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительный просмотр — безопасный доступ к серверу API с помощью допустимых диапазонов IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -108,6 +108,14 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 > [!WARNING]
 > Использование брандмауэра Azure может повлечь за собой значительные затраты в течение ежемесячного цикла выставления счетов. Требование использования брандмауэра Azure должно быть необходимым только в этом начальном периоде предварительной версии. Дополнительные сведения и планирование затрат см. в разделе [цены на брандмауэры Azure][azure-firewall-costs].
+>
+> Кроме того, если в кластере используется [балансировщик нагрузки "Стандартный][standard-sku-lb]", не нужно настраивать брандмауэр Azure в качестве исходящего шлюза. Используйте команду [AZ Network public-IP List][az-network-public-ip-list] и укажите группу ресурсов кластера AKS, которая обычно начинается с *MC_* . Отобразится общедоступный IP-адрес кластера, который можно список разрешений. Пример:
+>
+> ```azurecli-interactive
+> RG=$(az aks show --resource-group myResourceGroup --name myAKSClusterSLB --query nodeResourceGroup -o tsv)
+> SLB_PublicIP=$(az network public-ip list --resource-group $RG --query [].ipAddress -o tsv)
+> az aks update --api-server-authorized-ip-ranges $SLB_PublicIP --resource-group myResourceGroup --name myAKSClusterSLB
+> ```
 
 Сначала получите имя группы ресурсов *MC_* для кластера AKS и виртуальной сети. Затем создайте подсеть с помощью команды [AZ Network vnet подсети Create][az-network-vnet-subnet-create] . В следующем примере создается подсеть с именем *азурефиреваллсубнет* с диапазоном CIDR *10.200.0.0/16*:
 
@@ -259,11 +267,13 @@ az aks update \
 [operator-best-practices-cluster-security]: operator-best-practices-cluster-security.md
 [create-aks-sp]: kubernetes-service-principal.md#manually-create-a-service-principal
 [az-aks-create]: /cli/azure/aks#az-aks-create
+[az-aks-show]: /cli/azure/aks#az-aks-show
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-network-vnet-subnet-create]: /cli/azure/network/vnet/subnet#az-network-vnet-subnet-create
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-network-firewall-create]: /cli/azure/ext/azure-firewall/network/firewall#ext-azure-firewall-az-network-firewall-create
 [az-network-public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create
+[az-network-public-ip-list]: /cli/azure/network/public-ip#az-network-public-ip-list
 [az-network-firewall-ip-config-create]: /cli/azure/ext/azure-firewall/network/firewall/ip-config#ext-azure-firewall-az-network-firewall-ip-config-create
 [az-network-firewall-network-rule-create]: /cli/azure/ext/azure-firewall/network/firewall/network-rule#ext-azure-firewall-az-network-firewall-network-rule-create
 [az-network-route-table-route-create]: /cli/azure/network/route-table/route#az-network-route-table-route-create
@@ -271,3 +281,4 @@ az aks update \
 [aks-faq]: faq.md
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
+[standard-sku-lb]: load-balancer-standard.md

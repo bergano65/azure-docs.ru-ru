@@ -3,7 +3,7 @@ title: Ведение журналов в приложениях MSAL | Azure
 description: Сведения о ведении журналов в приложениях MSAL (библиотека аутентификации Майкрософт).
 services: active-directory
 documentationcenter: dev-center-name
-author: rwike77
+author: TylerMSFT
 manager: CelesteDG
 editor: ''
 ms.service: active-directory
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/22/2019
-ms.author: ryanwi
+ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 475b692a29edf5cdd05552e7b5c3dc5fde210275
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 2f52ca8062ed1ed196a67d25385b712451afe8ae
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512530"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532727"
 ---
 # <a name="logging"></a>Ведение журнала
 Приложения MSAL (библиотека аутентификации Майкрософт) используются для создания сообщений журнала, которые помогают диагностировать проблемы и позволяют получить дополнительные сведения. Для настройки ведения журнала в приложении требуется всего несколько строк кода. Также можно настроить пользовательский элемент управления уровнем детализации и указать, нужно ли регистрировать персональные данные или данные организации. Рекомендуется настроить обратный вызов при ведении журнала MSAL и обеспечить отправку журналов, когда у пользователей возникают проблемы с аутентификацией.

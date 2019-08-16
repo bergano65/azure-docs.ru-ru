@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afcd9c9d3191caeabe182f499b5fd80cd8e1d8dd
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 131d38f6154e7a6e2f3175838b084e47e17ec582
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68608136"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532929"
 ---
 # <a name="baseline-policy-end-user-protection-preview"></a>Базовая политика: Защита конечных пользователей (Предварительная версия)
 
@@ -64,11 +64,11 @@ ms.locfileid: "68608136"
 
 Чтобы включить эту политику и защитить пользователей:
 
-1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
+1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
 1. Перейдите к **Azure Active Directory** > **условному доступу**.
 1. В списке политик выберите **Базовая политика: Защита конечным пользователем (Предварительная версия)** .
 1. Установите **флажок Включить политику** для **немедленного использования политики**.
-1. Нажмите кнопку **сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="next-steps"></a>Следующие шаги
 

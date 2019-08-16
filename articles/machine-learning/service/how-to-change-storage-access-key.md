@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 08/08/2019
-ms.openlocfilehash: 7c6b85bd1f5935fb3722f82efcdfc921fc9cb2ec
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.date: 08/16/2019
+ms.openlocfilehash: e386e34a8326a51753631ee9ea4215d01ba7ceb3
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990539"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558226"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа для учетной записи хранения
 
@@ -23,7 +23,7 @@ ms.locfileid: "68990539"
 
 В целях безопасности может потребоваться изменить ключи доступа для учетной записи хранения Azure. При повторном создании ключа доступа Машинное обучение Azure необходимо обновить, чтобы использовать новый ключ. Машинное обучение Azure может использовать учетную запись хранения как для хранилища модели, так и для хранилища данных.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 
@@ -50,12 +50,15 @@ ws = Workspace.from_config()
 
 default_ds = ws.get_default_datastore()
 print("Default datstore: " + default_ds.name + ", storage account name: " +
-      default_ds.account_name + ", container name: " + ds.container_name)
+      default_ds.account_name + ", container name: " + default_ds.container_name)
 
 datastores = ws.datastores
 for name, ds in datastores.items():
-    if ds.datastore_type == "AzureBlob" or ds.datastore_type == "AzureFile":
-        print("datastore name: " + name + ", storage account name: " +
+    if ds.datastore_type == "AzureBlob":
+        print("Blob store - datastore name: " + name + ", storage account name: " +
+              ds.account_name + ", container name: " + ds.container_name)
+    if ds.datastore_type == "AzureFile":
+        print("File share - datastore name: " + name + ", storage account name: " +
               ds.account_name + ", container name: " + ds.container_name)
 ```
 
@@ -64,6 +67,8 @@ for name, ds in datastores.items():
 * Имя хранилища данных: Имя хранилища данных, в котором зарегистрирована учетная запись хранения.
 * Имя учетной записи хранения: Имя учетной записи хранения Azure.
 * Контейнера Контейнер в учетной записи хранения, используемой этой регистрацией.
+
+Оно также указывает, предназначено ли хранилище данных для большого двоичного объекта Azure или файлового ресурса Azure, так как существуют различные методы повторной регистрации каждого типа хранилища данных.
 
 Если для учетной записи хранения, в которой планируется повторное создание ключей доступа, существует запись, то сохраните имя хранилища данных, имя учетной записи хранения и имя контейнера.
 
@@ -97,12 +102,21 @@ for name, ds in datastores.items():
 1. Для повторной регистрации хранилищ данных, использующих учетную запись хранения, используйте значения из раздела [что необходимо обновить](#whattoupdate) и ключ из шага 1 в следующем коде:
 
     ```python
-    ds = Datastore.register_azure_blob_container(workspace=ws, 
-                                              datastore_name='your datastore name', 
+    # Re-register the blob container
+    ds_blob = Datastore.register_azure_blob_container(workspace=ws,
+                                              datastore_name='your datastore name',
                                               container_name='your container name',
-                                              account_name='your storage account name', 
+                                              account_name='your storage account name',
                                               account_key='new storage account key',
                                               overwrite=True)
+    # Re-register file shares
+    ds_file = Datastore.register_azure_file_share(workspace=ws,
+                                          datastore_name='your datastore name',
+                                          file_share_name='your container name',
+                                          account_name='your storage account name',
+                                          account_key='new storage account key',
+                                          overwrite=True)
+    
     ```
 
     Так `overwrite=True` как указан, этот код перезаписывает существующую регистрацию и обновляет ее для использования нового ключа.

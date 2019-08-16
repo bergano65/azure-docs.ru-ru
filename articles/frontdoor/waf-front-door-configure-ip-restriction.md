@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 05/31/2019
 ms.author: kumud
 ms.reviewer: tyao
-ms.openlocfilehash: 025e45b86fa3a6020652ae9756ceace5b51daa55
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: d2d52d2faf9122b7dc87f71ac7b1be53eaa99878
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69516204"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534986"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door-service"></a>Настройка правила ограничения IP-адресов с брандмауэром веб-приложения для службы "Передняя дверь" Azure
 В этой статье показано, как настроить правила ограничения IP-адресов в брандмауэре веб-приложения (WAF) для службы "Передняя дверь" Azure с помощью Azure CLI, Azure PowerShell или шаблона Azure Resource Manager.
@@ -56,7 +56,7 @@ az network front-door waf-policy create \
 -  Замените *ипалловполициексамплекли* своей уникальной политикой, созданной ранее.
 -  Замените *IP-Address-Range-1*, *IP-Address-Range-2* своим собственным диапазоном.
 
-Сначала создайте правило IP-разрешения для политики, созданной на предыдущем шаге. Примечание . параметр отсрочки необходим, так как правило должно иметь условие соответствия, которое будет добавлено на следующем шаге.
+Сначала создайте правило IP-разрешения для политики, созданной на предыдущем шаге. Примечание . требуется отсрочка, так как правило должно включать хотя бы одно условие соответствия. 
 
 ```azurecli
 az network front-door waf-policy rule create \

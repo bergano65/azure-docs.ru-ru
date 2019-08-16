@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 2c115bf0ad21e905e998692fbbc175f5aa52b86d
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 77d900844705bb86ce4bcfeda31d6ee765cb8d45
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014249"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69535011"
 ---
 # <a name="tutorial-using-azure-iot-hub-message-enrichments-preview"></a>Учебник. Использование дополнений сообщений в центре Интернета вещей Azure (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "69014249"
 > * Запустите приложение, которое имитирует устройство IoT, отправляющее сообщения в центр.
 > * Просмотр результатов и проверка правильности работы сообщений.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * У вас должна быть подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -84,7 +84,7 @@ ms.locfileid: "69014249"
 
 ```azurecli-interactive
 # This command retrieves the subscription id of the current Azure account.
-# This field is used when setting up the routing rules.
+# This field is used when setting up the routing queries.
 subscriptionID=$(az account show --query id -o tsv)
 
 # Concatenate this number onto the resources that have to be globally unique.
@@ -269,7 +269,7 @@ az iot hub route create \
 
 ## <a name="send-messages-to-the-iot-hub"></a>Отправка сообщений в центр Интернета вещей
 
-Теперь, когда для конечной точки настроены дополнения сообщений, запустите приложение имитации устройства, чтобы отправить сообщения в центр Интернета вещей. В концентраторе настроены правила, которые выполняют следующие действия:
+Теперь, когда для конечной точки настроены дополнения сообщений, запустите приложение имитации устройства, чтобы отправить сообщения в центр Интернета вещей. Для концентратора настроены параметры, которые выполняют следующие действия.
 
 * Сообщения, направляемые в конечную точку хранилища Контососторажеендпоинторигинал, не будут расширены и будут храниться в контейнере `original`хранилища.
 

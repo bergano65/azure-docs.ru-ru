@@ -19,9 +19,7 @@
       href: dsvm-ubuntu-intro.md
     - name: Создание виртуальной машины CentOS для обработки и анализа данных
       href: linux-dsvm-intro.md
-    - name: Создание виртуальной машины для глубокого обучения
-      href: provision-deep-learning-dsvm.md
-    - name: Создание виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
+    - name: Создание виртуальной машины для обработки и анализа данных Geo AI
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
   items:

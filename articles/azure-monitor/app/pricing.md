@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/13/2019
 ms.author: dalek
-ms.openlocfilehash: abf23eda2474ecbcfcaf0dadb26327225213a9a6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 4029a9e46b9c9bb7cbd677deff4a172d8fc982f8
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989230"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534590"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -92,7 +92,7 @@ E. Настройка ежедневного ограничения объема
 Ниже приведены рекомендации по снижению объема данных.
 
 * Используйте [выборку](../../azure-monitor/app/sampling.md). Эта технология снижает скорость передачи данных без искажения метрик. При этом сохраняется возможность перемещаться между связанными элементами при поиске. В серверных приложениях выборка включена автоматически.
-* [Ограничьте число вызовов Ajax, которые могут быть отображены](../../azure-monitor/app/javascript.md#detailed-configuration) на каждом представлении страницы, или отключите формирование отчетов Ajax.
+* [Ограничьте число вызовов Ajax, которые могут быть отображены](../../azure-monitor/app/javascript.md#configuration) на каждом представлении страницы, или отключите формирование отчетов Ajax.
 * Отключите модули сбора, которые вы не используете, [отредактировав файл ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Например, вы можете решить, что счетчики производительности или данные зависимостей не являются необходимыми.
 * Разделите данные телеметрии, чтобы разделить ключи инструментирования. 
 * Агрегируйте метрики заранее. Если в ваше приложение включены вызовы к TrackMetric, вы можете снизить объем трафика путем перегрузки, которая будет получать ваши вычисления среднего значения и стандартного отклонения пакета измерений. Кроме того, вы можете использовать [пакет предварительных статистических вычислений](https://www.myget.org/gallery/applicationinsights-sdk-labs).

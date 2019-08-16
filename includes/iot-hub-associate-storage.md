@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/22/2019
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: 8693c48905155ed757bb727e42f4180f36c015f1
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f88f6aa6daec342b24d165c4c4cc0a89a0805f7a
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185390"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558466"
 ---
 ## <a name="associate-an-azure-storage-account-to-iot-hub"></a>Связывание учетной записи хранения Azure с Центром Интернета вещей
 
@@ -21,4 +21,4 @@ ms.locfileid: "67185390"
 
 Следуйте инструкциям в статье [Настройка отправки файлов Центра Интернета вещей с помощью портала Azure](../articles/iot-hub/iot-hub-configure-file-upload.md). Убедитесь, что контейнер больших двоичных объектов связан с вашим Центром Интернета вещей и что уведомления файлов включены.
 
-![Включение уведомлений файлов на портале](./media/iot-hub-associate-storage/enable-file-notifications.png)
+![Включение уведомлений файлов на портале](./media/iot-hub-associate-storage/file-notifications-vs2019.png)

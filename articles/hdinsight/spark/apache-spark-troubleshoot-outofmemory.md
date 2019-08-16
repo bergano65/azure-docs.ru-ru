@@ -5,19 +5,19 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
-ms.date: 08/02/2019
-ms.openlocfilehash: a8351f13f015ca53e72bbff41152e46690fdc7bc
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.date: 08/15/2019
+ms.openlocfilehash: f6ff654b8e51dfaf2697df69c7f220d41346c2bc
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855728"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543483"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 
-## <a name="scenario-outofmemoryerror-exception-for-apache-spark"></a>Сценарий: Исключение OutOfMemoryError для Apache Spark
+## <a name="scenario-outofmemoryerror-exception-for-apache-spark"></a>Сценарий. Исключение OutOfMemoryError для Apache Spark
 
 ### <a name="issue"></a>Проблемы
 
@@ -53,13 +53,13 @@ java.lang.OutOfMemoryError
 
 ### <a name="cause"></a>Причина:
 
-Наиболее вероятной причиной этого исключения является нехватка памяти кучи. Приложению Spark требуется достаточно памяти кучи виртуальных машин Java (ВИРТУАЛЬНОЙ машины Java) при запуске в качестве исполнителей или драйверов.
+Наиболее вероятной причиной этого исключения является нехватка памяти кучи, выделенной для виртуальных машин Java. Эти виртуальных машин Java запускаются как исполнители или драйверы в составе приложения Apache Spark.
 
 ### <a name="resolution"></a>Разрешение
 
 1. Определите максимальный объем данных, которые будет обрабатывать приложение Spark. Оценка размера в зависимости от максимального размера входных данных — промежуточных данных, полученных путем преобразования входных данных и выходных данных, созданных для преобразования промежуточных данных. Если начальная оценка недостаточна, увеличьте размер и выполните итерацию до подчасти ошибок памяти.
 
-1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев в разделе Cluster Metrics (Метрики кластера) пользовательского интерфейса YARN кластера такие значения, как Memory Used (Используемая память) и Memory Total (Всего памяти), а также VCores Used (Используемые ядра VCore) и VCores Total (Всего ядер VCore).
+1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев раздел метрики кластера в пользовательском интерфейсе YARN в кластере для значений используемой **памяти** и **Общее использование памяти** и **виртуальных ядер** в сравнении с **VCores Total** (Всего ядер VCore).
 
     ![представление памяти Yarn Core](./media/apache-spark-ts-outofmemory/yarn-core-memory-view.png)
 
@@ -89,7 +89,7 @@ java.lang.OutOfMemoryError
 
 ---
 
-## <a name="scenario-java-heap-space-error-when-trying-to-open-apache-spark-history-server"></a>Сценарий: Ошибка пространства кучи Java при попытке открыть сервер журнала Apache Spark
+## <a name="scenario-java-heap-space-error-when-trying-to-open-apache-spark-history-server"></a>Сценарий. Ошибка пространства кучи Java при попытке открыть сервер журнала Apache Spark
 
 ### <a name="issue"></a>Проблемы
 
@@ -129,7 +129,7 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 
 ---
 
-## <a name="scenario-livy-server-fails-to-start-on-apache-spark-cluster"></a>Сценарий: Не удается запустить Livy Server в кластере Apache Spark
+## <a name="scenario-livy-server-fails-to-start-on-apache-spark-cluster"></a>Сценарий. Не удается запустить Livy Server в кластере Apache Spark
 
 ### <a name="issue"></a>Проблемы
 

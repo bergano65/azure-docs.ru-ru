@@ -3,17 +3,17 @@ title: Предоставление узлов для решения VMware с �
 description: Узнайте, как добавить узлы в VMWare с помощью развертывания Клаудсимпле
 author: dikamath
 ms.author: dikamath
-ms.date: 04/10/2019
+ms.date: 08/14/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 898b07d05abf3bfad644fb590d90c7a90c5a1c0d
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 2d5b2847109149701cb6453753e52fb671ba69d0
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883227"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533334"
 ---
 # <a name="provision-nodes-for-vmware-solution-by-cloudsimple---azure"></a>Предоставление узлов для решения VMware с помощью Клаудсимпле — Azure
 
@@ -22,7 +22,6 @@ ms.locfileid: "68883227"
 ## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-
 
 ## <a name="add-a-node-to-your-cloudsimple-private-cloud"></a>Добавление узла в частное облако Клаудсимпле
 

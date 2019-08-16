@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: f93b74c57d45ddfc7b47beff7852d183a93df00e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 81e1104d71706194ba1c54e42722b4508df09091
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856148"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534843"
 ---
 # <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Создание рабочих областей службы машинного обучения Azure и управление ими
 
@@ -27,6 +27,17 @@ ms.locfileid: "68856148"
 Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
+
+### <a name="download-a-configuration-file"></a>Скачать файл конфигурации
+
+1. Если вы будете создавать виртуальную [машину записной книжки](tutorial-1st-experiment-sdk-setup.md#azure), пропустите этот шаг.
+
+1. Если вы планируете использовать код в локальной среде, которая ссылается на эту рабочую область, выберите **Скачать config.json** в разделе **Обзор** рабочей области.  
+
+   ![Скачивание config.json](./media/how-to-manage-workspace/configure.png)
+   
+   Поместите файл в структуру каталогов со скриптами Python или приложениями Jupyter Notebook. Он может находиться в том же каталоге, подкаталоге с именем *.azureml* или родительском каталоге. При создании виртуальной машины записной книжки этот файл добавляется в правильный каталог на виртуальной машине.
+
 
 ## <a name="view"></a>Просмотр рабочей области
 

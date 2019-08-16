@@ -9,12 +9,12 @@ ms.date: 07/22/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 7296760a177b949d2f921e11b28105ca6eb67fee
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 892076954535d880f9081a269215cb7e2a0a8dce
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036295"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541864"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -99,19 +99,19 @@ ms.locfileid: "69036295"
 
    ![Создание проекта](./media/how-to-visual-studio-develop-csharp-module/create-new.png)
 
-1. В **C#** окне **Добавление IOT Edge приложения и модуля** выберите модуль или **модуль C** , а затем укажите имя модуля и репозиторий образа модуля. Visual Studio автоматически заполняет имя модуля значением **localhost:5000/<имя вашего модуля\>** . Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Сервер входа выглядит как   **_\<имя\>реестра_. azurecr.IO**. Замените только часть **localhost: 5000** строки, чтобы окончательный результат  **\<был похож на *имя*\>реестра. azurecr.IO/ _\<имя\>модуля_** . Имя модуля по умолчанию — **IoTEdgeModule1**.
+1. В **C#** окне **Добавление IOT Edge приложения и модуля** выберите модуль или **модуль C** , а затем укажите имя модуля и репозиторий образа модуля. Visual Studio автоматически заполняет имя модуля значением **localhost:5000/<имя вашего модуля\>** . Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Сервер входа выглядит как   **_\<имя\>реестра_. azurecr.IO**. Замените только часть **localhost: 5000** строки, чтобы окончательный результат  **\<был похож на *имя*\>реестра. azurecr.IO/ _\<имя\>модуля_** . Имя модуля по умолчанию — **IotEdgeModule1** .
 
    ![Добавление приложения и модуля](./media/how-to-visual-studio-develop-csharp-module/add-application-and-module.png)
 
 1. Нажмите кнопку **ОК** , чтобы создать Azure IOT EDGE решение с модулем, использующим C# или C.
 
-Теперь у вас есть проект **AzureIoTEdgeApp1. Linux. AMD64** или проект **AzureIoTEdgeApp1. Windows. AMD64** , а также проект **IoTEdgeModule1** в решении. Каждый проект **AzureIoTEdgeApp1** имеет `deployment.template.json` файл, который определяет модули, которые необходимо создать и развернуть для решения IOT EDGE, а также определяет маршруты между модулями. Решение по умолчанию содержит модуль **симулатедтемпературесенсор** и модуль **IoTEdgeModule1** . Модуль **симулатедтемпературесенсор** создает смоделированные данные в модуле **IoTEdgeModule1** , а код по умолчанию в модуле **IoTEdgeModule1** напрямую передает сообщения в центр Интернета вещей Azure.
+Теперь у вас есть проект **AzureIoTEdgeApp1. Linux. AMD64** или проект **AzureIoTEdgeApp1. Windows. AMD64** , а также проект **IotEdgeModule1** в решении. Каждый проект **AzureIoTEdgeApp1** имеет `deployment.template.json` файл, который определяет модули, которые необходимо создать и развернуть для решения IOT EDGE, а также определяет маршруты между модулями. Решение по умолчанию содержит модуль **tempSensor** и модуль **IotEdgeModule1** . Модуль **tempSensor** создает смоделированные данные в модуле **IotEdgeModule1** , а код по умолчанию в модуле **IotEdgeModule1** напрямую передает сообщения в центр Интернета вещей Azure.
 
-Проект **IoTEdgeModule1** является консольным приложением .net Core 2,1, если это C# модуль. Он содержит обязательные файлы Docker, необходимые для вашего устройства IoT Edge, работающего с контейнером Windows или Linux. В `module.json` файле описаны метаданные модуля. Фактический код модуля, который использует пакет SDK для устройств Azure IOT в качестве зависимости, находится в `Program.cs` файле `main.c` или.
+Проект **IotEdgeModule1** является консольным приложением .net Core 2,1, если это C# модуль. Он содержит обязательные файлы Docker, необходимые для вашего устройства IoT Edge, работающего с контейнером Windows или Linux. В `module.json` файле описаны метаданные модуля. Фактический код модуля, который использует пакет SDK для устройств Azure IOT в качестве зависимости, находится в `Program.cs` файле `main.c` или.
 
 ## <a name="develop-your-module"></a>Разработка модуля
 
-Код модуля по умолчанию, поставляемый вместе с решением, находится по адресу C# **IoTEdgeModule1** > **Program.CS** (для) или **Main. c** (c). Модуль и `deployment.template.json` файл настроены таким образом, чтобы вы могли создать решение, отправить его в реестр контейнеров и развернуть на устройстве, чтобы начать тестирование, не затрагивая код. Модуль создается для получения входных данных из источника (в данном случае это модуль **симулатедтемпературесенсор** , моделирующий данные) и передает его в центр Интернета вещей Azure.
+Код модуля по умолчанию, поставляемый вместе с решением, находится по адресу C# **IotEdgeModule1** > **Program.CS** (для) или **Main. c** (c). Модуль и `deployment.template.json` файл настроены таким образом, чтобы вы могли создать решение, отправить его в реестр контейнеров и развернуть на устройстве, чтобы начать тестирование, не затрагивая код. Модуль просто принимает входные данные из источника (в данном случае из модуля **tempSensor**, который имитирует данные) и передает их в Центр Интернета вещей Azure.
 
 Когда вы будете готовы к настройке шаблона модуля с помощью собственного кода, используйте [пакеты SDK для центра Интернета вещей Azure](../iot-hub/iot-hub-devguide-sdks.md) , чтобы создать модули, которые удовлетворяют ключевым потребностям для решений Интернета вещей, таких как безопасность, Управление устройствами и надежность.
 
@@ -134,7 +134,7 @@ ms.locfileid: "69036295"
 
 Как правило, нужно выполнить тестирование и отладку каждого модуля, прежде чем запустить его в рамках целого решения с несколькими модулями.
 
-1. Щелкните правой кнопкой мыши **IoTEdgeModule1** и в контекстном меню выберите **Назначить запускаемым проектом**.
+1. Щелкните правой кнопкой мыши **IotEdgeModule1** и выберите пункт **Назначить запускаемым проектом** в контекстном меню.
 
    ![Задание запускаемого проекта](./media/how-to-visual-studio-develop-csharp-module/module-start-up-project.png)
 
@@ -165,16 +165,16 @@ ms.locfileid: "69036295"
 
 После разработки единого модуля далее вы можете запустить и отладить все решение с несколькими модулями.
 
-1. Добавьте в решение второй модуль, щелкнув правой кнопкой мыши **AzureIoTEdgeApp1** и выбрав **Добавить** > **новый модуль IOT Edge**. Стандартное имя второго модуля — **IoTEdgeModule2**, и он будет выступать в качестве другого модуля канала.
+1. Добавьте в решение второй модуль, щелкнув правой кнопкой мыши **AzureIoTEdgeApp1** и выбрав **Добавить** > **новый модуль IOT Edge**. Имя второго модуля по умолчанию — **IotEdgeModule2** и будет работать в качестве другого модуля канала.
 
-1. Откройте файл`deployment.template.json`, и вы увидите модуль **IoTEdgeModule2**, добавленный в раздел **модулей**. Замените раздел **routes** следующим кодом: Если вы настроили имена модулей, обновите их таким образом, чтобы они совпадали.
+1. Откройте файл `deployment.template.json` , и вы увидите, что **IotEdgeModule2** добавлен в раздел modules ( **модули** ). Замените раздел **routes** следующим кодом: Если вы настроили имена модулей, обновите их таким образом, чтобы они совпадали.
 
     ```json
         "routes": {
-          "IoTEdgeModule1ToIoTHub": "FROM /messages/modules/IoTEdgeModule1/outputs/* INTO $upstream",
-          "sensorToIoTEdgeModule1": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/IoTEdgeModule1/inputs/input1\")",
-          "IoTEdgeModule2ToIoTHub": "FROM /messages/modules/IoTEdgeModule2/outputs/* INTO $upstream",
-          "sensorToIoTEdgeModule2": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/IoTEdgeModule2/inputs/input1\")"
+          "IotEdgeModule1ToIoTHub": "FROM /messages/modules/IotEdgeModule1/outputs/* INTO $upstream",
+          "sensorToIotEdgeModule1": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/IotEdgeModule1/inputs/input1\")",
+          "IotEdgeModule2ToIoTHub": "FROM /messages/modules/IotEdgeModule2/outputs/* INTO $upstream",
+          "sensorToIotEdgeModule2": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/IotEdgeModule2/inputs/input1\")"
         },
     ```
 
@@ -232,7 +232,7 @@ ms.locfileid: "69036295"
    > [!NOTE]
    > Не выбирайте `$AzureIoTEdgeAppSolutionDir\config\deployment_for_local_debug.json`.
 
-1. Нажмите кнопку обновить, чтобы просмотреть новые модули, работающие с модулем **симулатедтемпературесенсор** , а также **$edgeAgent** и **$edgeHub**.
+1. Нажмите кнопку обновить, чтобы просмотреть новые модули, работающие с модулем **tempSensor** , а также **$edgeAgent** и **$edgeHub**.
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 

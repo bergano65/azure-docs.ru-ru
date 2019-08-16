@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: f14403422e2c783d75634bb929d8c2130bd505b6
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: a8a75601daf36ca21ea56a5930219d7d467f0c85
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663877"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69557819"
 ---
 # <a name="how-to-analyze-your-learning-loop-with-an-offline-evaluation"></a>Как проанализировать цикл обучения, используя автономную оценку
 
@@ -30,7 +30,7 @@ ms.locfileid: "68663877"
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. Необходимо настроить цикл Персонализатора.
-1. Цикл Персонализатора должен содержать в журналах не менее 50 000 событий для значимых результатов оценки.
+1. Цикл персонализации должен иметь репрезентативный объем данных — как примерную мы рекоммменд по крайней мере 50 000 событий в своих журналах для осмысленных результатов оценки.
 
 При необходимости ранее экспортированные файлы _политики обучения_ можно сравнить и протестировать в одном и том же процессе оценивания.
 

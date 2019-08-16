@@ -6,8 +6,6 @@
       href: security-center-intro.md
     - name: Поддерживаемые платформы и функции в Центре безопасности
       href: security-center-os-coverage.md
-    - name: Оценка защиты конечной точки и рекомендации
-      href: security-center-endpoint-protection.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -45,6 +43,24 @@
       href: security-center-incident-response.md
     - name: Управление в нескольких клиентах
       href: security-center-cross-tenant-management.md
+    - name: Оповещения об обнаружении угроз
+      items:
+        - name: Общие сведения об оповещениях системы безопасности
+          href: security-center-alerts-overview.md
+        - name: Обнаружение угроз для виртуальных машин и серверов
+          href: security-center-alerts-iaas.md
+        - name: Обнаружение угроз для облачных собственных вычислений
+          href: security-center-alerts-compute.md
+        - name: Обнаружение угроз для служб обработки данных
+          href: security-center-alerts-data-services.md
+        - name: Обнаружение угроз для уровня служб Azure
+          href: security-center-alerts-service-layer.md
+        - name: Интеграция с системами и средствами безопасности Azure
+          href: security-center-alerts-integration.md
+        - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
+          href: security-center-alerts-cloud-smart.md
+        - name: Проверка оповещений (в тестовом файле EICAR)
+          href: security-center-alert-validation.md
 - name: Руководства
   items:
     - name: Улучшение результатов оценки безопасности
@@ -105,42 +121,16 @@
           href: security-center-file-integrity-monitoring.md
         - name: Адаптивная защита сети
           href: security-center-adaptive-network-hardening.md
-    - name: Оповещения об обнаружении угроз
-      items:
-        - name: Общие сведения об оповещениях системы безопасности
-          href: security-center-alerts-overview.md
-        - name: Обнаружение угроз для виртуальных машин и серверов
-          href: security-center-alerts-iaas.md
-        - name: Обнаружение угроз для облачных собственных вычислений
-          href: security-center-alerts-compute.md
-        - name: Обнаружение угроз для служб обработки данных
-          href: security-center-alerts-data-services.md
-        - name: Обнаружение угроз для уровня служб Azure
-          href: security-center-alerts-service-layer.md
-        - name: Интеграция с системами и средствами безопасности Azure
-          href: security-center-alerts-integration.md
-        - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
-          href: security-center-alerts-cloud-smart.md
-        - name: Проверка оповещений (в тестовом файле EICAR)
-          href: security-center-alert-validation.md
     - name: Архив
       items:
         - name: Применение шифрования дисков
           href: security-center-apply-disk-encryption.md
         - name: Применение обновлений системы
           href: security-center-apply-system-updates.md
-        - name: Включение шифрования для учетной записи хранения
-          href: security-center-enable-encryption-for-storage-account.md
-        - name: Включение агента виртуальной машины
-          href: security-center-enable-vm-agent.md
         - name: Установка Endpoint Protection
           href: security-center-install-endpoint-protection.md
         - name: Перезагрузка после завершения обновлений системы
           href: 'security-center-apply-system-updates.md#reboot-after-system-updates'
-        - name: Исправление конфигураций системы безопасности
-          href: security-center-remediate-os-vulnerabilities.md
-        - name: Обновление версии ОС
-          href: security-center-update-os-version.md
         - name: Решение для оценки уязвимостей не установлено
           href: security-center-vulnerability-assessment-recommendations.md
         - name: Добавление брандмауэра веб-приложения
@@ -191,6 +181,8 @@
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
       href: security-center-features-retirement-july2019.md
+    - name: Оценка защиты конечной точки и рекомендации
+      href: security-center-endpoint-protection.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.reviewer: mazhar
 ms.author: mbullwin
-ms.openlocfilehash: 6119f1116d255f7cd2a2bfc20e86eeca9e5dfe82
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 470f723782ca29409549e0df8e900edf86cd446e
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60523489"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534295"
 ---
 # <a name="walkthrough-enabling-telemetry-for-microsoft-dynamics-crm-online-using-application-insights"></a>Пошаговое руководство. Включение телеметрии для Microsoft Dynamics CRM Online с помощью Application Insights
 В этой статье показано, как получить данные телеметрии из службы [Microsoft Dynamics CRM Online](https://www.dynamics.com/) с помощью [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Мы рассмотрим весь процесс добавления сценария Application Insights в приложение, сбор данных и их визуализацию.
@@ -38,7 +38,7 @@ ms.locfileid: "60523489"
     ![Щелкните значок «+» и последовательно выберите «Службы для разработчиков», Application Insights.](./media/sample-mscrm/01.png)
 
     Выберите приложение ASP.NET в качестве типа приложения.
-3. Следуйте инструкциям для [получения скрипта SDK JavaScript для приложения](../../azure-monitor/app/javascript.md#set-up-application-insights-for-your-web-page), скопируйте фрагмент кода JavaScript и не забудьте заменить ключ инструментирования на правильное значение для вашего ресурса Application Insights.
+3. Следуйте инструкциям для [получения скрипта SDK JavaScript для приложения](../../azure-monitor/app/javascript.md), скопируйте фрагмент кода JavaScript и не забудьте заменить ключ инструментирования на правильное значение для вашего ресурса Application Insights.
 
 ### <a name="create-a-javascript-web-resource-in-microsoft-dynamics-crm"></a>Создание веб-ресурса JavaScript в Microsoft Dynamics CRM
 1. Откройте экземпляр CRM Online и войдите с правами администратора.
@@ -132,7 +132,7 @@ ms.locfileid: "60523489"
 ## <a name="sample-microsoft-dynamics-crm-solution"></a>Образец решения Microsoft Dynamics CRM
 [Ниже приведен простой пример решения, реализованного в Microsoft Dynamics CRM](https://dynamicsandappinsights.codeplex.com/).
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Подробнее...
 * [Что такое Azure Application Insights?](../../azure-monitor/app/app-insights-overview.md)
 * [Application Insights для веб-страниц](../../azure-monitor/app/javascript.md)
 * [Дополнительные примеры и пошаговые руководства](../../azure-monitor/app/app-insights-overview.md)

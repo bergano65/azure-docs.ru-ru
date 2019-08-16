@@ -1,9 +1,9 @@
 ---
-title: Очистить кэш маркеров с помощью библиотеки проверки подлинности Майкрософт для .NET в Azure
-description: Узнайте, как очистить кэш маркеров, с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
+title: Очистка кэша маркеров с помощью библиотеки проверки подлинности Майкрософт для .NET — Azure
+description: Узнайте, как очистить кэш маркеров с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
-author: rwike77
+author: TylerMSFT
 manager: CelesteDG
 editor: ''
 ms.service: active-directory
@@ -13,22 +13,22 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
-ms.author: ryanwi
+ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6763c6b2b1f9b4de7d8669a50a4979a7aac00c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1cee6443db0b019f79a80cf5b7c0e2a7a50240f2
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544119"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532660"
 ---
-# <a name="clear-the-token-cache-using-msalnet"></a>Очистить кэш маркеров, с помощью MSAL.NET
+# <a name="clear-the-token-cache-using-msalnet"></a>Очистка кэша маркеров с помощью MSAL.NET
 
-Когда вы [получения маркеров доступа](msal-acquire-cache-tokens.md) с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET), маркер кэшируется. Если приложение требует маркер, следует вначале вызвать `AcquireTokenSilent` метод на наличие допустимого маркера в кэше. 
+При [получении маркера доступа](msal-acquire-cache-tokens.md) с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET) маркер кэшируется. Когда приложению требуется токен, сначала необходимо вызвать `AcquireTokenSilent` метод, чтобы проверить, находится ли допустимый маркер в кэше. 
 
-Очистка кэша достигается за счет удаления учетные записи из кэша. Файл cookie сеанса, находящийся в браузере, не будет удален.  В следующем примере создается экземпляр общедоступного клиентского приложения, получает учетные записи для приложения и удаляет учетные записи.
+Очистка кэша достигается путем удаления учетных записей из кэша. Файл cookie сеанса, находящийся в браузере, не будет удален.  Следующий пример создает экземпляр общедоступного клиентского приложения, получает учетные записи для приложения и удаляет учетные записи.
 
 ```csharp
 private readonly IPublicClientApplication _app;
@@ -50,4 +50,4 @@ while (accounts.Any())
 
 ```
 
-Чтобы узнать о получении и кэширование маркеров, прочитайте [получения маркеров доступа](msal-acquire-cache-tokens.md).
+Дополнительные сведения о получении и кэшировании токенов см. в статье [Получение маркера доступа](msal-acquire-cache-tokens.md).

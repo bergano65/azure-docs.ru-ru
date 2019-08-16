@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: f0ccf0e480fa57e0ffdfc94ca35cfaceded37a0b
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: cd67f435ff390267e01acd99594b9063db4c4ee1
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663895"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559085"
 ---
 # <a name="personalizer-settings"></a>Параметры Персонализатора
 
@@ -86,6 +86,7 @@ ms.locfileid: "68663895"
 ## <a name="import-and-export-learning-policy"></a>Импорт и экспорт политики обучения
 
 В разделе "Управление ресурсами" для **Модели и политики** импортируйте новую политику обучения или экспортируйте текущую политику обучения.
+Вы можете получить файлы политики обучения из предыдущих экспортов или загрузить оптимизированные политики, обнаруженные в ходе автономной оценки. Внесение изменений в эти файлы вручную повлияет на производительность машинного обучения и точность автономных вычислений, и корпорация Майкрософт не может подтверждать точность машинного обучения и оценок, а также исключений служб, вызванных изменением политик вручную.
 
 ## <a name="next-steps"></a>Следующие шаги
 

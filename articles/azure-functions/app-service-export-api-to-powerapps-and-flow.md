@@ -11,18 +11,21 @@ ms.topic: conceptual
 ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
-ms.openlocfilehash: 9f4bbf91b09abeb917fd9f49482881e33bf788ec
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d7538d064e27e34c33fd92bc6dfcdaba7a1efc1
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60499635"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533552"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
 [PowerApps](https://powerapps.microsoft.com/guided-learning/learning-introducing-powerapps/) — это служба для создания и использования пользовательских бизнес-приложений, которые подключаются к данным и работают на различных платформах. [Microsoft Flow](https://flow.microsoft.com/guided-learning/learning-introducing-flow/) позволяет легко автоматизировать рабочие и бизнес-процессы между избранными приложениями и службами. PowerApps и Microsoft Flow содержат ряд встроенных соединителей для источников данных, таких как Office 365, Dynamics 365, Salesforce и т д. В некоторых случаях разработчикам приложений и потоков также нужно подключиться к источникам данных и API, созданным в их организации.
 
 Аналогичным образом разработчикам, которым необходимо расширить возможности совместного использования API внутри организации, может потребоваться предоставить доступ к своим API создателям приложений и потоков. В этой статье показано, как экспортировать API, созданный с помощью [Функций Azure](../azure-functions/functions-overview.md) или [службы приложений Azure](../app-service/overview.md). Экспортированный API становится *настраиваемым соединителем*, который используется в PowerApps и Microsoft Flow так же, как встроенный соединитель.
+
+> [!IMPORTANT]
+> Функциональные возможности определения API, приведенные в этой статье, поддерживаются только для [версии 1. x приложений среды выполнения функций Azure](functions-versions.md#creating-1x-apps) и служб приложений. Версия 2. x функций интегрируется со службой управления API для создания и сопровождения определений OpenAPI. Дополнительные сведения см. в статье [Создание определения OpenAPI для функции с помощью службы управления API Azure](functions-openapi-definition.md). 
 
 ## <a name="create-and-export-an-api-definition"></a>Создание и экспорт определения API
 Перед экспортом API нужно описать его с помощью определения OpenAPI (ранее называвшегося файлом [Swagger](https://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API. С помощью PowerApps и Microsoft Flow можно создать настраиваемые соединители для любого определения OpenAPI 2.0. Функции Azure и служба приложений Azure имеют встроенную поддержку создания и размещения определений OpenAPI, а также управления ими. Дополнительные сведения см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](../app-service/app-service-web-tutorial-rest-api.md).
@@ -68,15 +71,13 @@ ms.locfileid: "60499635"
 
     |Параметр|Описание|
     |--------|------------|
-    |**Environment**|Выберите среду, в которую нужно сохранить настраиваемый соединитель. Дополнительные сведения см. в статье [Обзор сред](https://powerapps.microsoft.com/tutorials/environments-overview/).|
+    |**Среда**|Выберите среду, в которую нужно сохранить настраиваемый соединитель. Дополнительные сведения см. в статье [Обзор сред](https://powerapps.microsoft.com/tutorials/environments-overview/).|
     |**Имя пользовательского API**|Введите имя, которое разработчики PowerApps and Microsoft Flow увидят в своих списках соединителей.|
     |**Подготовка конфигурации безопасности**|При необходимости предоставьте сведения о конфигурации системы безопасности, необходимые для предоставления пользователям доступа к вашему API. В этом примере показан ключ API. Дополнительные сведения см. в разделе [Указание типа проверки подлинности](#auth) ниже.|
  
     ![Экспресс-экспорт в PowerApps и Microsoft Flow](media/app-service-export-api-to-powerapps-and-flow/export-express.png)
 
-3. Последовательно выберите **ОК**. После этого будет создан настраиваемый соединитель, который затем будет добавлен в указанную среду.
-
-Пример использования **экспресс**-режима со службой "Функции Azure" см. в статье [Вызов функции из PowerApps](functions-powerapps-scenario.md) и [Вызов функции из Microsoft Flow](functions-flow-scenario.md).
+3. Нажмите кнопку **ОК**. После этого будет создан настраиваемый соединитель, который затем будет добавлен в указанную среду.
 
 <a name="manual"></a>
 ## <a name="use-manual-export"></a>Экспорт вручную

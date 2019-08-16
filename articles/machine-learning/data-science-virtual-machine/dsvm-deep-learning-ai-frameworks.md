@@ -14,30 +14,20 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/11/2017
+ms.date: 08/11/2019
 ms.author: vijetaj
-ms.openlocfilehash: 08a740ec898f1ac46ff66de9002e4241d918adc0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e2bcda25ed6897f8955d7e74981bc4f04a145c99
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558173"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534921"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
-[Виртуальная машина для обработки и анализа данных](https://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](https://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений с использованием функций искусственного интеллекта (AI), прогнозной аналитики и когнитивных возможностей, включая распознавание изображений и языка.
+Виртуальная машина для обработки и [анализа данных](https://aka.ms/dsvm) (DSVM) поддерживает несколько платформ глубокого обучения для создания приложений искусственного интеллекта (ии) с прогнозной аналитикой и функциями, такими как понимание изображений и языков.
 
 Ниже приведены сведения о всех платформах глубокого обучения, доступных на DSVM.
 
-## <a name="microsoft-cognitive-toolkit"></a>Microsoft Cognitive Toolkit
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows, Linux     |
-| Настройка и установка на DSVM  | Microsoft Cognitive Toolkit (CNTK) устанавливается с Python 3.5 на [Linux и Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а с Python 3.6 на [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition).   |
-| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter.     |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
-| Запуск и использование    | * В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [Jupyter](provision-vm.md#tools-installed-on-the-microsoft-data-science-virtual-machine) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов CNTK. |
 
 ## <a name="tensorflow"></a>TensorFlow
 
@@ -50,16 +40,16 @@ ms.locfileid: "68558173"
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
 | Запуск и использование    | * В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [Jupyter](provision-vm.md#tools-installed-on-the-microsoft-data-science-virtual-machine) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов TensorFlow.  |
 
-## <a name="horovod"></a>Horovod
+## <a name="pytorch"></a>PyTorch
 
 |    |           |
 | ------------- | ------------- |
-| Что это такое?   | Распределенная платформа глубокого обучения для TensorFlow      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
-| Настройка и установка на DSVM  | Horovod устанавливается с Python 3.5 на [Ubuntu](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
-| Ссылки на примеры      | [https://github.com/uber/horovod/tree/master/examples](https://github.com/uber/horovod/tree/master/examples)     |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | TensorFlow      |
-| Запуск и использование    | В окне терминала активируйте соответствующую среду и запустите Python. |
+| Что это такое?   | Платформа глубокого обучения      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Linux     |
+| Настройка и установка на DSVM  | PyTorch устанавливается на [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
+| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter, которые можно найти в папке /dsvm/samples/pytorch.      |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Torch      |
+| Запуск и использование |* В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
 
 ## <a name="keras"></a>Keras
 
@@ -111,6 +101,70 @@ jupyter notebook
 | Запуск и использование    | * В окне терминала активируйте [корневую среду Python](dsvm-languages.md#python-linux-and-windows-server-2012-edition), запустите Python и импортируйте Caffe2. <br/> * В JupyterHub подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), а затем перейдите в каталог Caffe2 к примерам записных книжек. Для некоторых записных книжек требуется корневой каталог Caffe2, чтобы их можно было задать в коде Python. Введите /opt/caffe2. |
 | Создание записных книжек | Caffe2 создается на основе источника данных в Linux и содержит CUDA, cuDNN и Intel MKL. Текущая контрольная сумма — 0d9c0d48c6f20143d6404b99cc568efd29d5a4be — выбрана для обеспечения стабильности всех графических процессоров и протестирована на образцах. |
 
+## <a name="torch"></a>Torch
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Платформа глубокого обучения      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
+| Настройка и установка на DSVM  | Torch устанавливается в `/dsvm/tools/torch`. PyTorch устанавливается в среде Python 2.7 (_корневая среда_), а также в Python 3.5 (_py35_).   |
+| Ссылки на примеры      | Примеры Torch находятся в `/dsvm/samples/torch`. Примеры PyTorch находятся в `/dsvm/samples/pytorch`.      |
+
+
+
+
+## <a name="mxnet-model-server"></a>Сервер модели MXNet
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Сервер для создания конечных точек HTTP для моделей MXNet и ONNX      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Linux     |
+| Настройка и установка на DSVM  | _mxnet-model-server_ доступен в терминале.   |
+| Ссылки на примеры      | Последние примеры можно найти на [странице сервера модели MXNet](https://github.com/awslabs/mxnet-model-server).    |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | MXNet      |
+
+
+## <a name="mxnet"></a>MXNet
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Платформа глубокого обучения      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows, Linux     |
+| Настройка и установка на DSVM  | MXNet устанавливается в `C:\dsvm\tools\mxnet` в Windows и `/dsvm/tools/mxnet` в Linux. Привязки Python устанавливаются с Python 3.5 на [Linux и Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а с Python 3.6 на [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition). Привязки R также устанавливаются в Ubuntu.   |
+| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter.    |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
+| Запуск и использование    | * В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [Jupyter](provision-vm.md#tools-installed-on-the-microsoft-data-science-virtual-machine) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов mxnet.  |
+ | Создание записных книжек | MXNet создается из источников данных в Linux. В эту сборку входят CUDA, cuDNN, NCCL и MKL. |
+
+
+
+
+
+
+## <a name="horovod"></a>Horovod
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Распределенная платформа глубокого обучения для TensorFlow      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
+| Настройка и установка на DSVM  | Horovod устанавливается с Python 3.5 на [Ubuntu](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
+| Ссылки на примеры      | [https://github.com/uber/horovod/tree/master/examples](https://github.com/uber/horovod/tree/master/examples)     |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | TensorFlow      |
+| Запуск и использование    | В окне терминала активируйте соответствующую среду и запустите Python. |
+
+
+
+## <a name="theano"></a>Theano
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Платформа глубокого обучения      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
+| Настройка и установка на DSVM  | Theano устанавливается в среде Python 2.7 (_корневая среда_), а также в Python 3.5 (_py35_).   |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
+| Запуск и использование    | * В терминале активируйте нужную версию Python (корневую или py35), запустите python, а затем импортируйте theano. <br/> * В Jupyter выберите ядро Python 2.7 или 3.5, а затем импортируйте theano.  <br/>Чтобы обойти недавно выявленную ошибку MKL, необходимо сначала установить потоковый уровень MKL.<br/><br/>_export MKL_THREADING_LAYER=GNU_|
+
+
 ## <a name="chainer"></a>Chainer
 
 |    |           |
@@ -146,17 +200,6 @@ export CUDA_ROOT=/usr/local/cuda-8.0
 * В окне терминала активируйте среду [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а затем запустите _python_. <br/>
 * В JupyterHub [подключитесь к JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем перейдите в каталог deep_water к примерам записных книжек.
 
-## <a name="mxnet"></a>MXNet
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows, Linux     |
-| Настройка и установка на DSVM  | MXNet устанавливается в `C:\dsvm\tools\mxnet` в Windows и `/dsvm/tools/mxnet` в Linux. Привязки Python устанавливаются с Python 3.5 на [Linux и Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а с Python 3.6 на [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition). Привязки R также устанавливаются в Ubuntu.   |
-| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter.    |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
-| Запуск и использование    | * В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [Jupyter](provision-vm.md#tools-installed-on-the-microsoft-data-science-virtual-machine) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов mxnet.  |
- | Создание записных книжек | MXNet создается из источников данных в Linux. В эту сборку входят CUDA, cuDNN, NCCL и MKL. |
 
 ## <a name="nvidia-digits"></a>NVIDIA DIGITS
 
@@ -187,48 +230,6 @@ export CUDA_ROOT=/usr/local/cuda-8.0
 
 
 
-## <a name="theano"></a>Theano
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
-| Настройка и установка на DSVM  | Theano устанавливается в среде Python 2.7 (_корневая среда_), а также в Python 3.5 (_py35_).   |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
-| Запуск и использование    | * В терминале активируйте нужную версию Python (корневую или py35), запустите python, а затем импортируйте theano. <br/> * В Jupyter выберите ядро Python 2.7 или 3.5, а затем импортируйте theano.  <br/>Чтобы обойти недавно выявленную ошибку MKL, необходимо сначала установить потоковый уровень MKL.<br/><br/>_export MKL_THREADING_LAYER=GNU_|
-
-
-
-## <a name="torch"></a>Torch
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Ubuntu     |
-| Настройка и установка на DSVM  | Torch устанавливается в `/dsvm/tools/torch`. PyTorch устанавливается в среде Python 2.7 (_корневая среда_), а также в Python 3.5 (_py35_).   |
-| Ссылки на примеры      | Примеры Torch находятся в `/dsvm/samples/torch`. Примеры PyTorch находятся в `/dsvm/samples/pytorch`.      |
-
-
-## <a name="pytorch"></a>PyTorch
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Linux     |
-| Настройка и установка на DSVM  | PyTorch устанавливается на [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
-| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter, которые можно найти в папке /dsvm/samples/pytorch.      |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Torch      |
-| Запуск и использование |* В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
-
-## <a name="mxnet-model-server"></a>Сервер модели MXNet
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Сервер для создания конечных точек HTTP для моделей MXNet и ONNX      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Linux     |
-| Настройка и установка на DSVM  | _mxnet-model-server_ доступен в терминале.   |
-| Ссылки на примеры      | Последние примеры можно найти на [странице сервера модели MXNet](https://github.com/awslabs/mxnet-model-server).    |
-| Дополнительные средства на виртуальной машине для обработки и анализа данных      | MXNet      |
 
 ## <a name="tensorflow-serving"></a>Сервер модели TensorFlow
 
@@ -251,4 +252,14 @@ export CUDA_ROOT=/usr/local/cuda-8.0
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | TensorFlow Serving, MXNet Model Server  |
 
 
+## <a name="microsoft-cognitive-toolkit"></a>Microsoft Cognitive Toolkit
+
+|    |           |
+| ------------- | ------------- |
+| Что это такое?   | Платформа глубокого обучения      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows, Linux     |
+| Настройка и установка на DSVM  | Microsoft Cognitive Toolkit (CNTK) устанавливается с Python 3.5 на [Linux и Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а с Python 3.6 на [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition).   |
+| Ссылки на примеры      | Сюда входят примеры записных книжек Jupyter.     |
+| Дополнительные средства на виртуальной машине для обработки и анализа данных      | Keras      |
+| Запуск и использование    | * В окне терминала активируйте нужную среду и запустите Python. <br/> * В Jupyter: подключитесь к [Jupyter](provision-vm.md#tools-installed-on-the-microsoft-data-science-virtual-machine) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов CNTK. |
 

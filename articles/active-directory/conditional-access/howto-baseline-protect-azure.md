@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aab2aa4415345747a0e87b90ef0a7ee770ef3465
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: e8095b4fa6e52b7c34cedaea35b129ab68dddc65
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68608119"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532955"
 ---
 # <a name="baseline-policy-require-mfa-for-service-management-preview"></a>Базовая политика: Требовать MFA для управления службами (Предварительная версия)
 
@@ -32,21 +32,21 @@ ms.locfileid: "68608119"
 
 После включения этой политики в клиенте все пользователи, входящие в ресурсы управления Azure, будут работать с многофакторной проверкой подлинности. Если пользователь не зарегистрирован для MFA, ему потребуется зарегистрироваться с помощью Microsoft Authenticator приложения, чтобы продолжать работу.
 
-Чтобы выполнить интерактивный вход с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps), используйте командлет [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+Чтобы выполнить интерактивный вход с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps), используйте командлет [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
 
 ```PowerShell
 Connect-AzAccount
 ```
 
-При запуске этот командлет представит строку токена. Чтобы войти в систему, скопируйте эту строку и вставьте ее [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin)  в браузер. Сеанс PowerShell пройдет аутентификацию для подключения к Azure.
+При запуске этот командлет представит строку токена. Чтобы войти в систему, скопируйте эту строку и вставьте ее [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin) в браузер. Сеанс PowerShell пройдет аутентификацию для подключения к Azure.
 
-Чтобы выполнить интерактивный вход с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
+Чтобы выполнить интерактивный вход с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
 
 ```azurecli
 az login
 ```
 
-Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае необходимо открыть страницу браузера и выполнить инструкции из командной строки, чтобы ввести код авторизации после перехода к [https://aka.ms/devicelogin](https://aka.ms/devicelogin) в браузере. Затем войдите в браузере, используя учетные данные своей учетной записи.
+Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае необходимо открыть страницу браузера и выполнить инструкции из командной строки, чтобы ввести код авторизации после перехода к [https://aka.ms/devicelogin](https://aka.ms/devicelogin) в браузере. Затем войдите в браузере, используя учетные данные своей учетной записи.
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
@@ -58,11 +58,11 @@ az login
 
 Чтобы включить эту политику и защитить администраторов, выполните следующие действия.
 
-1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
+1. Войдите в **портал Azure** в качестве глобального администратора, администратора безопасности или администратора условного доступа.
 1. Перейдите к **Azure Active Directory** > **условному доступу**.
 1. В списке политик выберите **Базовая политика: Требовать MFA для управления службами (Предварительная**версия).
 1. Установите **флажок Включить политику** для **немедленного использования политики**.
-1. Нажмите кнопку **сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -471,14 +471,6 @@
                   href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
                 - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
                   href: ./partner-center-portal/saas-fulfillment-apis-faq.md
-            - name: Регистрация приложения SaaS
-              href: ./partner-center-portal/pc-saas-registration.md
-            - name: "API исполнения SaaS версии\_2"
-              href: ./partner-center-portal/pc-saas-fulfillment-api-v2.md
-            - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
-              href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
-            - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
-              href: ./partner-center-portal/saas-fulfillment-apis-faq.md
         - name: Тестирование вашего предложения
           href: ./partner-center-portal/test-drive.md
     - name: Состояние публикации

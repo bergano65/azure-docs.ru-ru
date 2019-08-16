@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 624c1648bc709e1ca6ee9c4120350a606df67df5
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 79e7027d308d389aa672d164de91df61b1142e32
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035757"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534164"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -126,12 +126,12 @@ ms.locfileid: "69035757"
 
 ### <a name="install"></a>Установка и настройка
 
-Приведенные ниже инструкции были созданы с помощью strongSwan 5.5.1 в Ubuntu 17.0.4. Ubuntu 16.0.10 не поддерживает графический пользовательский интерфейс strongSwan. Использовать Ubuntu 16.0.10 можно только с помощью [командной строки](#linuxinstallcli). В зависимости от версии Linux и strongSwan указанные ниже примеры могут отличаться от экранов, которые вы видите.
+Следующие инструкции были созданы в Ubuntu 18.0.4. Ubuntu 16.0.10 не поддерживает графический пользовательский интерфейс strongSwan. Использовать Ubuntu 16.0.10 можно только с помощью [командной строки](#linuxinstallcli). В зависимости от версии Linux и strongSwan указанные ниже примеры могут отличаться от экранов, которые вы видите.
 
-1. Откройте приложение **Terminal**, чтобы установить **strongSwan** и его Network Manager, выполнив команду из примера. Если появляется сообщение об ошибке, связанной с *libcharon-extra-plugins*, замените этот параметр на strongswan-plugin-eap-mschapv2.
+1. Откройте приложение **Terminal**, чтобы установить **strongSwan** и его Network Manager, выполнив команду из примера.
 
    ```
-   sudo apt-get install strongswan libcharon-extra-plugins moreutils iptables-persistent network-manager-strongswan
+   sudo apt install network-manager-strongswan
    ```
 2. Щелкните значок **Network Manager** (Диспетчер сети) (стрелка вверх или стрелка вниз), а затем выберите **Edit Connections** (Изменить подключения).
 

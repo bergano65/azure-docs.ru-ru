@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: a357e403aba64a5d05e359bf1186b01f73146758
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 0f8942d92958ee8add9645239cc5664a4a96bb33
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934100"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533353"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -203,3 +203,5 @@ devices/{deviceId}
 * [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md)
 
 * [Сравнение маршрутизации сообщений со службой "Сетка событий" и без нее для Центра Интернета вещей](iot-hub-event-grid-routing-comparison.md)
+
+* [Узнайте, как использовать события телеметрии IoT для реализации пространственного анализа IoT с помощью Azure Maps (и маршрутизации сообщений центра Интернета вещей).](../azure-maps/tutorial-iot-hub-maps.md#filter-events-using-iot-hub-message-routing)

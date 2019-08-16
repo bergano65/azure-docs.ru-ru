@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: ae809dd4841d6df8caabebfaded263b52f386834
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2359befc05bff867a8f8b17943ed67d906ff4971
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845032"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534341"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Настройка имени личного домена для учетной записи хранения Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "68845032"
 > В настоящий момент в учетной записи хранения может быть только одно имя личного домена. Имя личного домена нельзя одновременно сопоставить с конечной точкой службы BLOB-объектов и веб-службы.
 > 
 > [!NOTE]
-> Сопоставление работает только для поддоменов (например, www\.contoso.com). Если вы хотите, чтобы конечная точка веб-сайта была доступна в корневом домене (например, contoso.com), необходимо [использовать Azure CDN с пользовательскими доменами](storage-https-custom-domain-cdn.md) .
+> Сопоставление работает только для поддоменов (например, www\.contoso.com). Если вы хотите, чтобы конечная точка веб-сайта была доступна в корневом домене (например, contoso.com), необходимо [Добавить личный домен в конечную точку Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-map-content-to-custom-domain).
 
 В следующей таблице приведено несколько примеров URL-адресов для данных больших двоичных объектов, расположенных в учетной записи хранения с именем *mystorageaccount*. Пользовательский поддомен, зарегистрированный для учетной записи хранения, — *www\.contoso.com*:
 

@@ -87,15 +87,15 @@
         - name: Настройка сети для частного облака
           items:
             - name: Создание и администрирование виртуальных локальных сетей и подсетей
-              href: 'https://docs.azure.cloudsimple.com/create-vlan-subnet/'
+              href: create-vlan-subnet.md
             - name: Настройка таблиц и правил брандмауэра
-              href: 'https://docs.azure.cloudsimple.com/firewall/'
+              href: firewall.md
             - name: Назначение общедоступных IP-адресов
-              href: 'https://docs.azure.cloudsimple.com/public-ips/'
+              href: public-ips.md
             - name: Настройка VPN-подключений
-              href: 'https://docs.azure.cloudsimple.com/vpn-gateway/'
+              href: vpn-gateway.md
             - name: Получение сведений о кэширующем узле для виртуального сетевого подключения к CloudSimple
-              href: 'https://docs.azure.cloudsimple.com/virtual-network-connection/'
+              href: virtual-network-connection.md
             - name: Доступ к привилегиям эскалации клиента vSphere для выполнения задач администрирования
               href: 'https://docs.azure.cloudsimple.com/vsphere-access/'
         - name: Управление учетными записями портала CloudSimple
@@ -127,17 +127,17 @@
         - name: Сети для частного облака
           items:
             - name: VPN-подключение между локальной средой и частным облаком
-              href: 'https://docs.azure.cloudsimple.com/set-up-vpn/'
+              href: set-up-vpn.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
               href: 'https://docs.azure.cloudsimple.com/on-premises-connection/'
             - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
-              href: 'https://docs.azure.cloudsimple.com/azure-expressroute-connection/'
+              href: azure-expressroute-connection.md
         - name: Платформа VMware
           items:
             - name: Обучение модели разрешений частного облака
               href: 'https://docs.azure.cloudsimple.com/learn-private-cloud-permissions/'
             - name: Источники удостоверений vCenter
-              href: 'https://docs.azure.cloudsimple.com/set-vcenter-identity/'
+              href: set-vcenter-identity.md
             - name: Использование Шлюза приложений Azure с виртуальными машинами VMware
               href: 'https://docs.azure.cloudsimple.com/azure-application-gateway/'
             - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
@@ -153,13 +153,13 @@
             - name: Руководство по решению VMware Horizon
               href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
             - name: Настройка шифрования vSAN для частного облака
-              href: 'https://docs.azure.cloudsimple.com/vsan-encryption/'
+              href: vsan-encryption.md
             - name: Развертывание Oracle RAC в частном облаке CloudSimple
               href: 'https://docs.azure.cloudsimple.com/oracle-rac/'
         - name: Интеграция основных компонентов Azure
           items:
             - name: "Использование источника удостоверений Azure\_AD в vCenter частного облака"
-              href: 'https://docs.azure.cloudsimple.com/azure-ad/'
+              href: azure-ad.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
               href: 'https://docs.azure.cloudsimple.com/on-premises-connection/'
             - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute

@@ -3,22 +3,22 @@ title: Образы Red Hat Enterprise Linux в Azure | Документац
 description: Дополнительные сведения об образах Red Hat Enterprise Linux в Microsoft Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: BorisB2015
-manager: gwallace
+author: asinn826
+manager: BorisB2015
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 6/6/2019
+ms.date: 8/14/2019
 ms.author: borisb
-ms.openlocfilehash: 7d34e480dd3cf90f1948e83ea1d18c04f1dcdce2
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 25b0ccfa5ed2b7b9ff031565fe7f14b1477769c4
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854441"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543845"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
@@ -99,13 +99,15 @@ RedHat:RHEL:7.4:7.4.2019041718
 
 >[!NOTE]
 > На момент написания статьи только RHEL 7,4 и более поздние версии имеют поддержку ЕУС. ЕУС больше не поддерживается для RHEL < = 7,3.
+>
+> Дополнительные сведения о доступности RHEL ЕУС можно найти [здесь](https://access.redhat.com/support/policy/updates/errata).
 
 Дополнительный номер версии |Пример образа ЕУС              |Состояние ЕУС                                                   |
 :-------------|:------------------------------|:------------------------------------------------------------|
 RHEL 7,4      |RedHat: RHEL: 7.4:7.4.2019041718 | Образы, опубликованные 2019 апреля и более поздних версий, будут ЕУС по умолчанию|
 RHEL 7.5      |RedHat: RHEL: 7.5:7.5.2019060305 | Образы, опубликованные 2019 июня и более поздних версий, будут ЕУС по умолчанию |
 RHEL 7,6      |RedHat: RHEL: 7.6:7.6.2019052206 | Опубликованные образы 2019 и более поздних версий будут ЕУС по умолчанию  |
-RHEL 8,0      |Н/Д                            | Сейчас нет доступных образов ЕУС                 |
+RHEL 8,0      |Н/Д                            | Нет ЕУС, доступных с Red Hat                               |
 
 
 ## <a name="list-of-rhel-images-available"></a>Список доступных образов RHEL

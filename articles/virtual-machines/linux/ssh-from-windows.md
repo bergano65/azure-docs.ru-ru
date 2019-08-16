@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: bd5eeb3bc3864dc0203c558228dce2f54dbaa79d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 157cc706da34281ec7bb36a9b9e16a4192b3bd96
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708800"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543859"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "67708800"
 * Чтобы использовать окно терминала для Cloud Shell в Visual Studio Code, установите [расширение для учетных записей Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 ## <a name="create-an-ssh-key-pair"></a>Создание пары ключей SSH
-В этом разделе ниже описано два способа создания пары ключей SSH в Windows. Вы можете использовать команду оболочки (`ssh-keygen`) или средство графического пользовательского инструмента (PuTTYgen).
+В этом разделе ниже описано два способа создания пары ключей SSH в Windows. Вы можете использовать команду оболочки (`ssh-keygen`) или средство графического пользовательского инструмента (PuTTYgen). Также обратите внимание, что при использовании PowerShell для создания ключа отправьте открытый ключ в формате SSH. com (СЕКШ). При использовании интерфейса командной строки перед отправкой преобразуйте ключ в формат OpenSSH. 
 
 ### <a name="create-ssh-keys-with-ssh-keygen"></a>Создание ключей SSH с помощью ssh-keygen
 

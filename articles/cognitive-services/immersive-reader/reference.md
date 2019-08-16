@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 1a616bce8c161825853b1966769d9505595d95de
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 1d9fc20055fe3adb571b5a77330cc6537998cb5f
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688313"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534468"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK для иммерсивного чтения
 
@@ -73,6 +73,7 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 | --------- | ----------- |
 | text/plain | Обычный текст. |
 | Application/масмл + XML | Язык математической разметки (Масмл). [Узнайте больше](https://developer.mozilla.org/en-US/docs/Web/MathML).
+| приложение/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Документ в формате Microsoft Word. docx.
 
 ### <a name="options"></a>Параметры
 
@@ -104,7 +105,8 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 | ---- | ----------- |
 | бадаргумент | Указан недопустимый аргумент, `message` см. Дополнительные сведения. |
 | Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
-| TokenExpired| Срок действия заданного маркера истек. |
+| TokenExpired | Срок действия заданного маркера истек. |
+| До значения | Превышено ограничение скорости вызовов. |
 
 ## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
 

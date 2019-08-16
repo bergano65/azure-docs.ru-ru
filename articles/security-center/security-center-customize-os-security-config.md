@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/20/2019
-ms.author: rkarlin
-ms.openlocfilehash: 8216aee1c27fd5bcb722648aa6380044e1431452
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.date: 08/15/2019
+ms.author: v-mohabe
+ms.openlocfilehash: df4f51f97798048b28c0193dbc61e07fc55c9adc
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662471"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69535074"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-retired"></a>Настройка конфигураций безопасности ОС в центре безопасности Azure (прекращено)
 
@@ -317,4 +317,4 @@ ms.locfileid: "68662471"
 
 - [Security Center common configuration identifiers and baseline rules](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) (Базовые правила и идентификаторы общей конфигурации центра безопасности).
 - Центр безопасности назначает уникальные идентификаторы правилам конфигурации на основе перечисления общей конфигурации (CCE). Дополнительные сведения см. [здесь](https://nvd.nist.gov/config/cce/index).
-- Сведения об устранении уязвимостей в случае, если конфигурация операционной системы не соответствует рекомендуемым правилам конфигурации безопасности, см. в статье [Remediate security configurations in Azure Security Center](security-center-remediate-os-vulnerabilities.md) (Исправление конфигураций безопасности в центре безопасности Azure).
+- Сведения об устранении уязвимостей в случае, если конфигурация операционной системы не соответствует рекомендуемым правилам конфигурации безопасности, см. в статье [Remediate security configurations in Azure Security Center](security-center-virtual-machine-protection.md) (Исправление конфигураций безопасности в центре безопасности Azure).

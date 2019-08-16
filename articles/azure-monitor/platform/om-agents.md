@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 08/13/2019
 ms.author: magoedte
-ms.openlocfilehash: 2ea17a4363218351eb6e5ba0678435f3707e4ab9
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: a559fe86850ee9c1378876bc5ed8f2d0ddfb2d99
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663736"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543047"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -40,7 +40,7 @@ ms.locfileid: "68663736"
 
 Если политики ИТ-безопасности запрещают подключение компьютеров в сети к Интернету, серверы управления можно настроить для подключения к шлюзу Log Analytics, чтобы получать сведения о конфигурации и отправлять собранные данные в зависимости от включенного решения. Дополнительные сведения и инструкции по настройке группы управления Operations Manager для связи через шлюз Log Analytics для Azure Monitor см. в разделе [Подключение компьютеров к Azure Monitor с помощью шлюза log Analytics](../../azure-monitor/platform/gateway.md).  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, ознакомьтесь со следующими требованиями.
 
@@ -65,14 +65,14 @@ ms.locfileid: "68663736"
 >[!NOTE]
 >Последние изменения в интерфейсах API Azure не позволят клиентам успешно настраивать интеграцию между группой управления и Azure Monitor в первый раз. Если вы уже интегрировали свою группу управления со службой, на вас это не воздействует, пока вам не потребуется перенастроить существующее подключение.  
 >Новый пакет управления был выпущен для следующих версий Operations Manager:
->  
->* для System Center Operations Manager 1801 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57173);  
->* для System Center Operations Manager 2016 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57172);  
->* для System Center Operations Manager 2012 R2 загрузите пакет управления [здесь](https://www.microsoft.com/download/details.aspx?id=57171).  
->
->Этот пакет обновления не применяется к System Center Operations Manager 1807. Это выпуск обновлений для версии 1801, а не полная сборка для продукта.   
+> - Для System Center Operations Manager 2019 пакет управления предоставляется вместе со сборкой Operations Manager.
+>- Пакет управления Operations Manager 1801 также применим для Operations Manager 1807.
+>- Для System Center Operations Manager 1801 Загрузите пакет управления [отсюда](https://www.microsoft.com/download/details.aspx?id=57173).
+>- Для System Center 2016-Operations Manager Скачайте пакет управления [отсюда](https://www.microsoft.com/download/details.aspx?id=57172).  
+>- Для System Center Operations Manager 2012 R2 Загрузите пакет управления [отсюда](https://www.microsoft.com/download/details.aspx?id=57171).  
 
-### <a name="network"></a>Сеть
+
+### <a name="network"></a>Network
 
 Ниже перечислены сведения о конфигурации прокси-сервера и брандмауэра, необходимые для взаимодействия агента Operations Manager, серверов управления и консоли Operations с Azure Monitor. Трафик от каждого компонента исходит из сети в Azure Monitor.   
 
