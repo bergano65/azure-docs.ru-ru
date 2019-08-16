@@ -33,8 +33,10 @@
   items:
     - name: Azure PowerShell
       href: powershell-samples.md
-    - name: Azure CLI
+    - name: Инфраструктура CLI Azure
       href: cli-samples.md
+    - name: Шаблоны Resource Manager
+      href: resource-manager-template-samples.md
 - name: Основные понятия
   items:
     - name: Основы
@@ -93,11 +95,8 @@
       items:
         - name: Azure PowerShell
           href: tutorial-manage-web-traffic-powershell.md
-        - name: Azure CLI
+        - name: Инфраструктура CLI Azure
           href: tutorial-manage-web-traffic-cli.md
-        - name: Шаблон
-          displayName: 'ARM, Resource Manager, template'
-          href: create-vmss-template.md
     - name: Настройка внутреннего балансировщика нагрузки
       items:
         - name: Портал Azure
