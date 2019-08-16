@@ -3,7 +3,7 @@ title: Приступая к работе с хранилищем очереде
 description: Как приступить к работе, используя хранилище очередей Azure в проекте ASP.NET в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: 94ca3413-5497-433f-abbe-836f83a9de72
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: 3f3a649308449a8ba4e1dbaebd4db4afbf731c5b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 19cf2dd912968d0a5df8743c1e720776b8a949f0
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110491"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515986"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем очередей Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -29,7 +29,7 @@ ms.locfileid: "62110491"
 
 В этом руководстве показано, как написать код ASP.NET для некоторых распространенных сценариев с использованием сущностей хранилища очередей Azure. Сюда относятся такие задачи, как создание очереди Azure, а также добавление, изменение, чтение и удаление сообщений очереди.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Учетная запись хранения Azure](../storage/common/storage-quickstart-create-account.md)
@@ -62,7 +62,7 @@ ms.locfileid: "62110491"
     using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Queue;
     ```
-   ## <a name="create-a-queue"></a>Создание очереди
+   ## <a name="create-a-queue"></a>Создать очередь
 
 Чтобы создать очередь, выполните приведенные ниже действия.
 
@@ -137,9 +137,9 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Create queue", "CreateQueue", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Создание очереди** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **создать очередь** , чтобы увидеть результаты, как на снимке экрана ниже.
   
-    ![Создание очереди](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
+    ![Создать очередь](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
 
     Как упоминалось ранее, метод **CloudQueue.CreateIfNotExists** возвращает значение **true**, только если создается не существовавшая ранее очередь. Если вы запустите приложение, когда очередь уже существует, метод вернет значение **false**. Чтобы запустить приложение несколько раз, вам нужно удалять очередь перед каждым повторным запуском приложения. Чтобы удалить очередь, используйте метод **CloudQueue.Delete**. Ее также можно удалить с помощью [портала Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) или в [обозревателе хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
 
@@ -226,7 +226,7 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Add message", "AddMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **добавить сообщение** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **Добавить сообщение** , чтобы увидеть результаты, как на снимке экрана ниже.
   
     ![Добавление сообщения](./media/vs-storage-aspnet-getting-started-queues/add-message-results.png)
 
@@ -278,7 +278,7 @@ ms.locfileid: "62110491"
     CloudQueueMessage message = queue.PeekMessage();
     ```
 
-1. Занесите в **ViewBag** два значения: имя очереди и прочитанное сообщение. **CloudQueueMessage** объект предоставляет два свойства для получения значения объекта: **CloudQueueMessage.AsBytes** и **CloudQueueMessage.AsString**. **AsString** (который используется в этом примере) возвращает строку, а **AsBytes** возвращает массив байтов.
+1. Занесите в **ViewBag** два значения: имя очереди и прочитанное сообщение. Объект **CloudQueueMessage** предоставляет два свойства для получения значения объекта: **CloudQueueMessage. AsBytes** и **CloudQueueMessage. AsString**. **AsString** (который используется в этом примере) возвращает строку, а **AsBytes** возвращает массив байтов.
 
     ```csharp
     ViewBag.QueueName = queue.Name; 
@@ -312,7 +312,7 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Peek message", "PeekMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **Просмотр сообщения** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **Просмотр сообщения** , чтобы увидеть результаты, как на снимке экрана ниже.
   
     ![Просмотр сообщения](./media/vs-storage-aspnet-getting-started-queues/peek-message-results.png)
 
@@ -403,7 +403,7 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Read/Delete message", "ReadMessage", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **чтение и удаление сообщения** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **чтение и удаление сообщения** , чтобы увидеть результаты, как на снимке экрана ниже.
   
     ![Чтение и удаление сообщения](./media/vs-storage-aspnet-getting-started-queues/read-message-results.png)
 
@@ -490,7 +490,7 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Get queue length", "GetQueueLength", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **получение длины очереди** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **получить длину очереди** , чтобы увидеть результаты, как на снимке экрана ниже.
   
     ![Получение длины очереди](./media/vs-storage-aspnet-getting-started-queues/get-queue-length-results.png)
 
@@ -570,11 +570,11 @@ ms.locfileid: "62110491"
     <li>@Html.ActionLink("Delete queue", "DeleteQueue", "Queues")</li>
     ```
 
-1. Запустите приложение и выберите **получение длины очереди** чтобы увидеть результаты, как на снимке экрана ниже:
+1. Запустите приложение и выберите **получить длину очереди** , чтобы увидеть результаты, как на снимке экрана ниже.
   
-    ![Удаление очереди.](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
+    ![Удалить очередь](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
 
   * [Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET)](../storage/vs-storage-aspnet-getting-started-blobs.md)

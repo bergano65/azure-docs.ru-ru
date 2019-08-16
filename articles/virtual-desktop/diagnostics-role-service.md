@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: f5869cbb51cf1c968ee8ca1e2286416fd263d647
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: d6cde04d122d20c4aad5920c29995d9d33165163
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68224633"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515520"
 ---
 # <a name="identify-issues-with-the-diagnostics-feature"></a>Выявление проблем с функцией диагностики
 
@@ -153,7 +153,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -Outcome Failure
 |8000|инвалидаусоризатионролескопе|Введенное имя роли не соответствует ни одному из существующих имен ролей. Проверьте имя роли на наличие опечаток и повторите попытку. |
 |8001|усернотфаунд |Введенное имя пользователя не соответствует ни одному из существующих имен пользователей. Проверьте имя для опечаток и повторите попытку.|
 |8005|усернотфаундинаад |Введенное имя пользователя не соответствует ни одному из существующих имен пользователей. Проверьте имя для опечаток и повторите попытку.|
-|8008|тенантконсентрекуиред|Следуйте приведенным [здесь](tenant-setup-azure-active-directory.md#grant-azure-active-directory-permissions-to-the-windows-virtual-desktop-preview-service) инструкциям, чтобы предоставить согласие для вашего клиента.|
+|8008|тенантконсентрекуиред|Следуйте приведенным [здесь](tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) инструкциям, чтобы предоставить согласие для вашего клиента.|
 
 ### <a name="external-connection-error-codes"></a>Коды ошибок внешних подключений
 

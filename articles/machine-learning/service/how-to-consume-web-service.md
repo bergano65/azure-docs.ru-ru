@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 07/10/2019
+ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 873f45a6cce85669581037c4c398a52b1ebd6d68
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 9b7157cd58abc7f1fecf288e72b0232c8a67b7ee
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966858"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69512587"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
 При развертывании модели Машинного обучения Azure в качестве веб-службы создается интерфейс REST API. Через этот API вы можете отправлять данные в модель и получать от нее прогнозы. В этом документе описано, как создать клиенты для работы с веб-службой на языках C#, Go, Java и Python.
 
-Веб-служба создается при развертывании образа в службе "экземпляры контейнеров Azure", "служба Kubernetes Azure" или в виде программируемых массивов шлюзов (FPGA). Образы создаются на основе зарегистрированных моделей и файлов оценки. URI для доступа к веб-службе можно получить с помощью [пакета SDK для Машинного обучения Azure](https://aka.ms/aml-sdk). Если включена проверка подлинности, с помощью пакета SDK вы можете получить и ключи проверки подлинности.
+Веб-служба создается при развертывании образа в службе "экземпляры контейнеров Azure", "служба Kubernetes Azure" или в виде программируемых массивов шлюзов (FPGA). Образы создаются на основе зарегистрированных моделей и файлов оценки. URI для доступа к веб-службе можно получить с помощью [пакета SDK для Машинного обучения Azure](https://aka.ms/aml-sdk). Если проверка подлинности включена, можно также использовать пакет SDK для получения ключей или маркеров проверки подлинности.
 
 Ниже приведен общий рабочий процесс создания клиента, который использует веб-службу Машинного обучения:
 
@@ -81,6 +81,8 @@ ms.locfileid: "68966858"
 |Ключ|Отключено по умолчанию| Включено по умолчанию|
 |Токен| Недоступен| Отключено по умолчанию |
 
+При отправке запроса к службе, защищенной с помощью ключа или токена, используйте заголовок __authorization__ для передачи ключа или маркера. Ключ или токен должен иметь формат `Bearer <key-or-token>`, где `<key-or-token>` — это значение ключа или токена.
+
 #### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
 
 При включении проверки подлинности для развертывания автоматически создаются ключи проверки подлинности.
@@ -112,7 +114,7 @@ print(primary)
 Если включена проверка подлинности на маркере, `get_token` можно использовать метод для получения токена носителя и срока действия маркеров:
 
 ```python
-token, refresh_by = service.get_tokens()
+token, refresh_by = service.get_token()
 print(token)
 ```
 
@@ -193,9 +195,9 @@ namespace MLWebServiceClient
     {
         static void Main(string[] args)
         {
-            // Set the scoring URI and authentication key
+            // Set the scoring URI and authentication key or token
             string scoringUri = "<your web service URI>";
-            string authKey = "<your key>";
+            string authKey = "<your key or token>";
 
             // Set the data to be sent to the service.
             // In this case, we are sending two sets of data to be scored.
@@ -309,8 +311,8 @@ var exampleData = []Features{
 
 // Set to the URI for your service
 var serviceUri string = "<your web service URI>"
-// Set to the authentication key (if any) for your service
-var authKey string = "<your key>"
+// Set to the authentication key or token (if any) for your service
+var authKey string = "<your key or token>"
 
 func main() {
     // Create the input data from example data
@@ -364,8 +366,8 @@ public class App {
     public static void sendRequest(String data) {
         // Replace with the scoring_uri of your service
         String uri = "<your web service URI>";
-        // If using authentication, replace with the auth key
-        String key = "<your key>";
+        // If using authentication, replace with the auth key or token
+        String key = "<your key or token>";
         try {
             // Create the request
             Content content = Request.Post(uri)
@@ -438,8 +440,8 @@ import json
 
 # URL for the web service
 scoring_uri = '<your web service URI>'
-# If the service is authenticated, set the key
-key = '<your key>'
+# If the service is authenticated, set the key or token
+key = '<your key or token>'
 
 # Two sets of data to score, so we get two results back
 data = {"data":

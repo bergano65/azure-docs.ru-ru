@@ -1,9 +1,9 @@
 ---
-title: Что произошло с моим проектом облачных служб? | Документация Майкрософт
+title: Что произошло с моим проектом облачных служб? | Документы Майкрософт
 description: Сведения о том, что происходит в проекте облачных служб после подключения к учетной записи хранения Azure с помощью подключенных служб Visual Studio
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: ca0ea68d-f417-4ce8-9413-40d76f69cdea
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: b0adceb42109f07658e56cebde3fbc4401478a1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d96e523b6e4e060eaef33de0f961e7020e5dfb57
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720458"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69510642"
 ---
 # <a name="what-happened-to-my-cloud-services-project-visual-studio-azure-storage-connected-service"></a>Что произошло с моим проектом облачных служб (подключенными к службе хранилища Azure службами Visual Studio)?
 ## <a name="references-added"></a>Добавлены ссылки

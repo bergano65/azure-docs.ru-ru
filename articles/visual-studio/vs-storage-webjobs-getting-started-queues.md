@@ -3,7 +3,7 @@ title: Приступая к работе с хранилищем очереде
 description: Как приступить к работе, используя хранилище очередей Azure в проекте веб-задания после подключения к учетной записи хранения с использованием подключенных служб Visual Studio.
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: 5c3ef267-2a67-44e9-ab4a-1edd7015034f
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: article
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: 44206f1826fc25407d9dec3f832b70881091e187
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 0afed158f5a19f3d82a3953f828f2b5566a6d5ff
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248958"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69510790"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-webjob-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)
 [!INCLUDE [storage-try-azure-tools-queues](../../includes/storage-try-azure-tools-queues.md)]
@@ -44,7 +44,7 @@ public static void ProcessQueueMessage([QueueTrigger("logqueue")] string logMess
 
 Помимо значения **string** возможными значениями этого параметра являются массив байтов, объект **CloudQueueMessage** или заданный вами объект POCO.
 
-### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplainoldclrobject-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplain_old_clr_object-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 В следующем примере сообщения очереди содержат JSON для объекта **BlobInformation**, который имеет свойство **BlobName**. Пакет SDK автоматически выполняет десериализацию объекта.
 
 ```csharp
@@ -201,7 +201,7 @@ public static void CreateQueueMessage(
 }
 ```
 
-### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplainoldclrobject-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplain_old_clr_object-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 Чтобы создать сообщение очереди, содержащее объект POCO, а не строку, передайте тип POCO в качестве выходного параметра конструктору атрибута **Queue** .
 
 ```csharp
@@ -296,7 +296,7 @@ public static void DeleteBlob(
 }
 ```
 
-### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplainoldclrobject-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+### <a name="poco-plain-old-clr-objecthttpsenwikipediaorgwikiplain_old_clr_object-queue-messages"></a>Сообщения очереди [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 Для объектов POCO, сохраненных в формате JSON в сообщении очереди, можно использовать заполнители, которые называют свойства объектов в параметре **blobPath** атрибута **Queue**. Можно также использовать имена свойства метаданных очереди в качестве заполнителей. Ознакомьтесь с разделом [Получение метаданных очереди или сообщения в очереди](#get-queue-or-queue-message-metadata).
 
 В следующем примере выполняется копирование большого двоичного объекта в новый большой двоичный объект с другим расширением. Сообщение очереди представляет собой объект **BlobInformation** со свойствами **BlobName** и **BlobNameWithoutExtension**. В качестве заполнителей в пути к большому двоичному объекту используются имена свойств для атрибутов **Blob** .

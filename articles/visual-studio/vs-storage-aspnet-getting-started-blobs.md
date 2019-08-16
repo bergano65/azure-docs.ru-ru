@@ -3,7 +3,7 @@ title: Приступая к работе с хранилищем BLOB-объе�
 description: Как приступить к работе, используя хранилище BLOB-объектов Azure в проекте ASP.NET в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
 ms.custom: vs-azure
@@ -11,12 +11,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: ghogen
-ms.openlocfilehash: 557b47aab5cdadef79427c4da9c18477daac0689
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7fede4a554fc2fd97b5b786a483f6da4f4336248
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123048"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69512363"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -30,7 +30,7 @@ ms.locfileid: "62123048"
 
 [!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 
@@ -55,7 +55,7 @@ ms.locfileid: "62123048"
 1. Добавьте в файл `BlobsController.cs` следующие директивы `using`.
 
     ```csharp
-    using Microsoft.Azure;
+    using Microsoft.WindowsAzure;
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
     ```
@@ -495,7 +495,7 @@ ms.locfileid: "62123048"
 
 1. Запустите приложение и выберите **Удалить большой двоичный объект**, чтобы удалить большой двоичный объект, указанный в вызове метода `CloudBlobContainer.GetBlockBlobReference`. В браузере должно отобразиться сообщение *success!* (Успешно выполнено) . Нажмите кнопку **Назад** в браузере и выберите **Список BLOB-объектов**, чтобы удостовериться, что большой двоичный объект отсутствует в контейнере.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как сохранять и извлекать большие двоичные объекты, а также выводить их список в службе хранилища Azure с помощью ASP.NET. Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
 

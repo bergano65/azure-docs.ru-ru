@@ -1,35 +1,32 @@
 ---
-title: Передача маркера доступа через поток пользователя в приложение — Azure Active Directory B2C | Документация Майкрософт
-description: Сведения о передаче маркера доступа для поставщиков удостоверений OAuth2.0 в качестве утверждения через поток пользователя в Azure Active Directory B2C.
+title: Передача маркера доступа через поток пользователя в приложение — Azure Active Directory B2C
+description: Узнайте, как передать маркер доступа для поставщиков удостоверений OAuth 2,0 в качестве утверждения в потоке пользователя в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 08/17/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8e9019699d8a81d31d2b20f674fd76fcb70021d6
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 66b3dc4aba5d1b29cc0c6190877fbd6b26a11f0c
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67846822"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69510099"
 ---
 # <a name="pass-an-access-token-through-a-user-flow-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью потока пользователя в приложение в Azure Active Directory B2C
 
-> [!NOTE]
-> Эта функция сейчас доступна в виде общедоступной предварительной версии.
-
-[Поток пользователя](active-directory-b2c-reference-policies.md) в Azure Active Directory (Azure AD) B2C предоставляет пользователям вашего приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Включите утверждение в свой поток пользователя, чтобы передать маркер через приложения, которые вы регистрируете в Azure AD B2C.
+[Пользовательский поток](active-directory-b2c-reference-policies.md) в Azure Active Directory B2C (Azure AD B2C) предоставляет пользователям приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Включите утверждение в свой поток пользователя, чтобы передать маркер через приложения, которые вы регистрируете в Azure AD B2C.
 
 В настоящее время Azure AD B2C поддерживает только передачу маркера доступа поставщиков удостоверений [OAuth 2.0](active-directory-b2c-reference-oauth-code.md), в том числе [Facebook](active-directory-b2c-setup-fb-app.md) и [Google](active-directory-b2c-setup-goog-app.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Приложение должно использовать [поток пользователя версии 2](user-flow-versions.md).
-- Ваш поток пользователя настроен с поставщиком удостоверений OAuth 2.0.
+* Приложение должно использовать [поток пользователя версии 2](user-flow-versions.md).
+* Ваш поток пользователя настроен с поставщиком удостоверений OAuth 2.0.
 
 ## <a name="enable-the-claim"></a>Включение утверждения
 

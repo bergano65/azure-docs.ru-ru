@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: cephalin
 ms.openlocfilehash: d64e054313ed83f6e96f877da088d1d02e9c7cef
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 08/15/2019
 ms.locfileid: "67203795"
 ---
 [План службы приложений](../articles/app-service/overview-hosting-plans.md) указывает расположение, размер и функции фермы веб-серверов, в которой размещается приложение. Вы можете сэкономить средства при размещении нескольких приложений, настроив совместное использование одного плана службы приложений в веб-приложениях.

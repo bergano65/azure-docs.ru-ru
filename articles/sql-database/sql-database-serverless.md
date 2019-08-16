@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 07/05/2019
-ms.openlocfilehash: 3b9a9f4ac1cf0722ab7d3838f0b0c4c12b47dc74
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 67e877609eec98e7100b34ab477dbab7c5577772
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566802"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515278"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Сервер базы данных SQL Azure (Предварительная версия)
 
@@ -281,7 +281,7 @@ Get-AzSqlDatabase `
 
 ## <a name="resource-limits"></a>Ограничения ресурсов
 
-См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier).
+Сведения об ограничениях ресурсов см. в разделе "бессерверный [уровень вычислений](sql-database-vCore-resource-limits-single-databases.md#general-purpose-service-tier-for-serverless-compute)".
 
 ## <a name="billing"></a>Выставление счетов
 
@@ -324,4 +324,4 @@ Get-AzSqlDatabase `
 ## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы начать работу, см. [краткое руководство по созданию отдельной базы данных в Базе данных SQL с помощью портала Azure](sql-database-single-database-get-started.md).
-- См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](sql-database-vCore-resource-limits-single-databases.md#serverless-compute-tier).
+- См. подробнее об [ограничениях ресурсов уровня бессерверных вычислений](sql-database-vCore-resource-limits-single-databases.md#general-purpose-service-tier-for-serverless-compute).

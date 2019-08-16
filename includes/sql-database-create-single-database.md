@@ -6,21 +6,21 @@ ms.topic: include
 ms.date: 06/19/2019
 ms.author: mathoma
 ms.openlocfilehash: eff121cfaf4473607110de4553a9bb8021990caf
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 08/15/2019
 ms.locfileid: "68444686"
 ---
-На этом шаге вы создадите группу ресурсов и отдельную базу данных SQL Azure. 
+На этом этапе вы создадите группу ресурсов и отдельную базу данных в службе "База данных SQL Azure". 
 
 > [!IMPORTANT]
-> Не забудьте настроить правила брандмауэра для использования общедоступного IP-адреса компьютера, на котором выполняются действия, описанные в этой статье. Правила брандмауэра уровня базы данных автоматически реплицируются на сервер-получатель.
+> Убедитесь, что правила брандмауэра настроены для использования общедоступного IP-адреса компьютера, на котором выполняются действия из этой статьи. Правила брандмауэра уровня базы данных автоматически реплицируются на сервер-получатель.
 >
 > Дополнительные сведения см. в статье [sp_set_database_firewall_rule (Azure SQL Database)](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) (sp_set_database_firewall_rule (база данных SQL Azure)). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье [Краткое руководство. Создание правила брандмауэра на уровне сервера для базы данных SQL с помощью портала Azure](../articles/sql-database/sql-database-server-level-firewall-rule.md).  
 
 # <a name="azure-portaltabazure-portal"></a>[портал Azure](#tab/azure-portal)
-Создайте группу ресурсов и одну базу данных с помощью портал Azure. 
+Создайте группу ресурсов и отдельную базу данных с помощью портала Azure. 
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выберите **Базы данных**, **База данных SQL**, чтобы открыть страницу **Создать базу данных SQL**.
@@ -80,7 +80,7 @@ ms.locfileid: "68444686"
 
 [!INCLUDE [updated-for-az](updated-for-az.md)]
 
-Создайте группу ресурсов и одну базу данных с помощью PowerShell. 
+Создайте группу ресурсов и отдельную базу данных с помощью PowerShell. 
 
    ```powershell-interactive
    # Set variables for your server and database
@@ -129,8 +129,8 @@ ms.locfileid: "68444686"
       -SampleName "AdventureWorksLT"
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
-Создайте группу ресурсов и одну базу данных с помощью команды AZ CLI. 
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+Создайте группу ресурсов и отдельную базу данных с помощью Azure CLI. 
 
 
    ```azurecli-interactive

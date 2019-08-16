@@ -3,8 +3,8 @@ title: Приступая к работе с хранилищем BLOB-объе�
 description: Как приступить к работе, используя хранилище BLOB-объектов Azure в проекте ASP.NET Core в Visual Studio после подключения к учетной записи хранения с помощью подключенных служб Visual Studio.
 services: storage
 documentationcenter: ''
-author: camsoper
-manager: wpickett
+author: ghogen
+manager: jillfra
 editor: ''
 ms.service: storage
 ms.workload: web
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vs-getting-started
 ms.devlang: na
 ms.topic: article
 ms.date: 12/07/2017
-ms.author: casoper
-ms.openlocfilehash: f8de7f7a263a087abb16ed48d05b2cae9834b4ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: ghogen
+ms.openlocfilehash: 8ae82548d4976e505dae055445c71a5c12cbf263
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110518"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516169"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet-core"></a>Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET Core)
 
@@ -33,7 +33,7 @@ ms.locfileid: "62110518"
 
 [!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 
@@ -511,7 +511,7 @@ ms.locfileid: "62110518"
 
 1. Запустите приложение и выберите **Удалить большой двоичный объект**, чтобы удалить большой двоичный объект, указанный в вызове метода `CloudBlobContainer.GetBlockBlobReference`. В браузере должно отобразиться сообщение *success!* (Успешно выполнено) . Нажмите кнопку **Назад** в браузере и выберите **Список BLOB-объектов**, чтобы удостовериться, что большой двоичный объект отсутствует в контейнере.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как сохранять и извлекать большие двоичные объекты, а также выводить их список в службе хранилища Azure с помощью ASP.NET Core. Просмотрите дополнительные руководства, чтобы изучить дополнительные возможности хранения данных в Azure.
 

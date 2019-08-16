@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/06/2019
-ms.openlocfilehash: 94894126be98f0d3d4d404d97d0a4a39fff2e665
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 951d5bb10fbeeac090a1edb510b7214855477eac
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847397"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515356"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -131,7 +131,7 @@ ms.locfileid: "68847397"
 
 ### <a name="can-i-provision-a-compute-with-extra-ram-for-my-memory-intensive-workload"></a>Можно ли подготовить вычислительный ресурс с дополнительной оперативной памятью для рабочей нагрузки с интенсивным использованием памяти
 
-Нет. Для увеличения объема ОЗУ необходимо использовать более высокий уровень объема вычислительных ресурсов. Дополнительные сведения см. в разделе [Уровень служб "Гипермасштабирование" (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier).
+Нет. Для увеличения объема ОЗУ необходимо использовать более высокий уровень объема вычислительных ресурсов. Дополнительные сведения см. в разделе [Уровень служб "Гипермасштабирование" (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier-for-provisioned-compute).
 
 ### <a name="can-i-provision-multiple-compute-nodes-of-different-sizes"></a>Можно ли подготовить несколько вычислительных узлов разного размера
 
