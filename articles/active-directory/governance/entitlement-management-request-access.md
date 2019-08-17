@@ -16,12 +16,12 @@ ms.date: 04/19/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64a81a871d811c68f5e92822ca88446966be4d5c
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 7b5be74b0734a27b02030e2c6995b43ef0c02162
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678113"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562178"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Запрос доступа к пакету Access в управлении назначением Azure AD (Предварительная версия)
 
@@ -29,6 +29,10 @@ ms.locfileid: "68678113"
 > Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+С помощью управления назначением Azure AD пакеты доступа обеспечивают однократную настройку ресурсов и политик, которые автоматически управляют доступом к пакету Access. 
+
+Диспетчер пакетов доступа может настраивать политики, чтобы требовать утверждения для пользователей, имеющих доступ к пакетам доступа. Пользователь, которому необходим доступ к пакету Access, может отправить запрос на получение доступа. В этой статье описывается, как отправить запрос на доступ.
 
 ## <a name="sign-in-to-the-my-access-portal"></a>Войдите на портал доступа
 

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 07/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: 359773dad53f333b2f052dd5b5481645c72746da
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 92978815af22e3ce1a549b9ca3e335befca8c918
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533931"
+ms.locfileid: "69563047"
 ---
 # <a name="reset-a-vpn-gateway"></a>Сброс VPN-шлюза
 
@@ -69,10 +69,12 @@ Reset-AzVirtualNetworkGateway -VirtualNetworkGateway $gw
 
 ### <a name="resetclassic"></a>Классическая модель развертывания
 
-Командлет сброса шлюза — **Reset-AzureVNetGateway**. Командлеты Azure PowerShell для управления службами должны быть установлены локально на рабочем столе. Нельзя использовать Azure Cloud Shell. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). В следующем примере выполняется сброс шлюза для виртуальной сети с именем ContosoVNet:
+Командлет сброса шлюза — **Reset-AzureVNetGateway**. Командлеты Azure PowerShell для управления службами должны быть установлены локально на рабочем столе. Нельзя использовать Azure Cloud Shell. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). При использовании этой команды убедитесь, что вы используете полное имя виртуальной сети. Классические виртуальных сетей, созданные с помощью портала, имеют длинное имя, необходимое для PowerShell. Полное имя можно просмотреть с помощью команды "Get-AzureVNetConfig-Експорттофиле К:\мифолдернаме\нетворкконфиг.ксмл".
+
+В следующем примере выполняется сброс шлюза для виртуальной сети с именем "Group TestRG1 TestVNet1" (на портале отображается как просто "TestVNet1"):
 
 ```powershell
-Reset-AzureVNetGateway –VnetName “ContosoVNet”
+Reset-AzureVNetGateway –VnetName 'Group TestRG1 TestVNet1'
 ```
 
 Результат:

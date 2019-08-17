@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 94ef85836ef524b34cd1c51e4eda83695bc70507
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 348cd0eccc66adb29a7564bbbeca99fffec28957
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68443954"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562860"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "68443954"
 | | План потребления | План "Премиум" | Выделенный план |
 |-|:----------------:|:------------:|:----------------:|
 | Windows | GA | предварительный просмотр | GA |
-| Linux | предварительный просмотр | предварительный просмотр | GA |
+| Linux | GA | предварительный просмотр | GA |
 
 ## <a name="consumption-plan"></a>План потребления
 

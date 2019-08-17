@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8ba2d2fd9c943fe55e82956d022f6ba9840a550f
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 00d49d763dedc5d86557dadd10f5d727e7893dbe
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69536603"
+ms.locfileid: "69563055"
 ---
 # <a name="connect-azure-virtual-network-to-cloudsimple-using-expressroute"></a>Подключение виртуальной сети Azure к Клаудсимпле с помощью ExpressRoute
 
@@ -24,7 +24,7 @@ ms.locfileid: "69536603"
 Для подключения ExpressRoute между частным облаком и виртуальной сетью Azure требуется ключ авторизации. Чтобы получить ключ, отправьте запрос в <a href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest" target="_blank">службу поддержки</a>.  Используйте следующие сведения в запросе:
 
 * Тип проблемы. **Технические требования**
-* Подписка: Выберите подписку, в которой развернута служба Клаудсимпле * *
+* Подписка: **Выберите подписку, в которой развернута служба Клаудсимпле**
 * Служба: **Решение VMware по Клаудсимпле**
 * Тип проблемы: **Запрос на обслуживание**
 * Подтип проблемы: **Ключ авторизации для подключения к виртуальной сети Azure**

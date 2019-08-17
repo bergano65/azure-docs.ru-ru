@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: ab4b283449ec6c0174f380b0231dd2e78dea419d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88173b24ecfca72e05d6f930b45d732aefad0e56
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64688046"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563419"
 ---
 # <a name="configuring-network-security-group-flow-logs-using-rest-api"></a>Настройка журналов потоков для групп безопасности сети с помощью REST API
 
@@ -217,7 +217,10 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+> [!IMPORTANT]
+> В настоящее время [журналы потоков группы безопасности сети (NSG)](network-watcher-nsg-flow-logging-overview.md) для наблюдателя за сетями не удаляются автоматически из хранилища BLOB-объектов в соответствии с параметрами политики хранения. Если у вас есть ненулевая политика хранения, рекомендуется периодически удалять большие двоичные объекты хранения, срок хранения которых истек, чтобы избежать каких-либо затрат. Дополнительные сведения о том, как удалить блог хранилища журналов потока NSG, см. в разделе [Удаление NSG потоков хранилища больших двоичных объектов](network-watcher-delete-nsg-flow-log-blobs.md).
+
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [визуализировать сведения журналов потоков группы безопасности сети с помощью PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
 

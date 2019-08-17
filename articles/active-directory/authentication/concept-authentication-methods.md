@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/17/2019
+ms.date: 08/16/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22c25c0a2b2f48baa3b57a8ad39ed4514c884826
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: d18c74e908f6d5c4c3d2eefb0518add380fa1324
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533141"
+ms.locfileid: "69561308"
 ---
 # <a name="what-are-authentication-methods"></a>Какие методы проверки подлинности доступны?
 
@@ -31,7 +31,7 @@ ms.locfileid: "69533141"
 | Пароль | MFA и SSPR |
 | Контрольные вопросы | Только SSPR |
 | Адрес электронной почты | Только SSPR |
-| Приложение Microsoft Authenticator | MFA и общедоступная предварительная версия SSPR |
+| Приложение Microsoft Authenticator | MFA и SSPR |
 | Токен оборудования OATH | Общедоступная предварительная версия MFA и SSPR |
 | SMS | MFA и SSPR |
 | Голосовой звонок | MFA и SSPR |
@@ -41,7 +41,7 @@ ms.locfileid: "69533141"
 
 |     |
 | --- |
-| Такие методы самостоятельного сброса пароля в Azure AD, как токены оборудования OATH для MFA и SSPR, уведомление мобильного приложения и код мобильного приложения, являются общедоступными предварительными версиями функций Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+| Токены оборудования OATH для MFA и SSPR — это общедоступная Предварительная версия функций Azure Active Directory. См. дополнительные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
 ## <a name="password"></a>Пароль

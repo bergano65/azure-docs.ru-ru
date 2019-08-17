@@ -8,27 +8,22 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a8e99da05f71cb01744111b41c301b11a0969057
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: eca3e316d866814f6727dd8ef2c3fa490a551383
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812705"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563168"
 ---
 # <a name="azure-network-connections-overview"></a>Общие сведения о сетевых подключениях Azure
 
 При создании службы Клаудсимпле в регионе она:
 
 * Создает канал Azure ExpressRoute и прикрепляет его к службе в этом регионе.
-* Разрешает подключение из сети региона Клаудсимпле к виртуальной сети Azure или локальной сети с помощью Azure ExpressRoute.
-* Предоставляет службы доступа, выполняющиеся в вашей подписке Azure или в локальной сети, из среды частного облака.
+* Подключает сеть Клаудсимпле Region к виртуальной сети Azure или локальной сети с помощью Azure ExpressRoute.
+* Предоставляет доступ к службам, работающим в вашей подписке Azure или локальной сети, из среды частного облака.
 
-Соединение:
-
-* Безопасность
-* Закрытый
-* Высокая пропускная способность
-* Низкая задержка
+Подключение ExpressRoute имеет высокую пропускную способность с низкой задержкой.
 
 ## <a name="benefits"></a>Преимущества
 
@@ -40,9 +35,9 @@ ms.locfileid: "68812705"
 
 ## <a name="azure-virtual-network-connection"></a>Подключение к виртуальной сети Azure
 
-Частные облака можно подключить к ресурсам Azure с помощью ExpressRoute.  Это подключение можно использовать для доступа к различным ресурсам, выполняемым в вашей подписке Azure, из частного облака.  Это подключение позволяет расширить сеть частного облака на виртуальную сеть Azure.
+Частные облака можно подключить к ресурсам Azure с помощью ExpressRoute.  Подключение ExpressRoute позволяет получить доступ к ресурсам, выполняемым в вашей подписке Azure, из частного облака.  Это подключение позволяет расширить сеть частного облака на виртуальную сеть Azure.
 
-![Подключение Azure ExpressRoute к виртуальной сети](media/cloudsimple-azure-network-connection.png)
+[![Подключение Azure ExpressRoute к виртуальной сети](media/cloudsimple-azure-network-connection.png)
 
 ## <a name="expressroute-connection-to-on-premises-network"></a>Подключение ExpressRoute к локальной сети
 
@@ -52,5 +47,5 @@ ms.locfileid: "68812705"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Получение сведений о пиринга для подключения виртуальной сети Azure к Клаудсимпле](https://docs.azure.cloudsimple.com/virtual-network-connection)
-* [Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute](https://docs.azure.cloudsimple.com/on-premises-connection)
+* [Подключение виртуальной сети Azure к Клаудсимпле с помощью ExpressRoute](virtual-network-connection.md)
+* [Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute](on-premises-connection.md)

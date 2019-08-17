@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d9fc39edfad18c756c2816f9eb0b3774d8bf882c
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a180e2ba6c1a610116271d5a9b6e3fdf562cecdf
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812678"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563194"
 ---
 # <a name="account-management-overview"></a>Общие сведения об управлении учетными записями
 
-При создании службы Клаудсимпле она создает учетную запись на Клаудсимпле.  Учетная запись связана с подпиской Azure, в которой находится служба.  Все пользователи с ролями **владельца** и **участника** в подписке имеют доступ к порталу клаудсимпле.  Идентификатор подписки Azure и идентификатор клиента, связанные со службой Клаудсимпле, находятся на [странице учетных записей](https://docs.azure.cloudsimple.com/account/).
+При создании службы Клаудсимпле она создает учетную запись на Клаудсимпле.  Учетная запись связана с подпиской Azure, в которой находится служба.  Все пользователи с ролями **владельца** и **участника** в подписке имеют доступ к порталу клаудсимпле.  Идентификатор подписки Azure и идентификатор клиента, связанные со службой Клаудсимпле, находятся на [странице учетных записей](account.md).
 
 ## <a name="additional-alert-emails"></a>Дополнительные оповещения по электронной почте
 
@@ -36,5 +36,5 @@ ms.locfileid: "68812678"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Просмотр сводки учетной записи](https://docs.azure.cloudsimple.com/account/)
-* [Просмотр списка пользователей](https://docs.azure.cloudsimple.com/users/)
+* [Просмотр сводки учетной записи](account.md)
+* [Просмотр списка пользователей](users.md)

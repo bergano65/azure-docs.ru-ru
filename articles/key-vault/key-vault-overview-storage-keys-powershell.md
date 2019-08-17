@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: 708c34347966eee7817ca04e0552dcba233765cb
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: df377b19d78a63b3cfc57347fff00345a9c63ead
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934511"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562530"
 ---
 # <a name="azure-key-vault-managed-storage-account---powershell"></a>PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault
 
@@ -43,6 +43,18 @@ ms.locfileid: "68934511"
 
 В следующем примере показано, как разрешить Key Vault управлять ключами учетной записи хранения.
 
+## <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
+
+Проверьте подлинность сеанса PowerShell с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) . 
+```azurepowershell-interactive
+Connect-AzAccount
+```
+Если у вас несколько подписок Azure, их можно перечислить с помощью командлета [Get-азсубскриптион](/powershell/module/az.accounts/get-azsubscription?view=azps-2.5.0) и указать подписку, которую вы хотите использовать с командлетом [Set-азконтекст](/powershell/module/az.accounts/set-azcontext?view=azps-2.5.0) . 
+
+```azurepowershell-interactive
+Set-AzContext -SubscriptionId <subscriptionId>
+```
+
 ## <a name="authorize-key-vault-to-access-to-your-storage-account"></a>Предоставление доступа Key Vault к учетной записи хранения
 
 > [!IMPORTANT]
@@ -62,8 +74,8 @@ $storageAccountKey = "key1"
 $keyVaultName = "kvContoso"
 $keyVaultSpAppId = "cfa8b339-82a2-471a-a3c9-0fc0be7a4093" # See "IMPORTANT" block above for information on Key Vault Application IDs
 
-# Authenticate your PowerShell session with Azure AD, for use with Azure Resource Manager cmdlets
-$azureProfile = Connect-AzAccount
+# Get your User Id for later commands
+$userId = (Get-AzContext).Account.Id
 
 # Get a reference to your Azure storage account
 $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -StorageAccountName $storageAccountName
@@ -98,7 +110,7 @@ CanDelegate        : False
 ```azurepowershell-interactive
 # Give your user principal access to all storage account permissions, on your Key Vault instance
 
-Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -UserPrincipalName $azureProfile.Context.Account.Id -PermissionsToStorage get, list, listsas, delete, set, update, regeneratekey, recover, backup, restore, purge
+Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -UserPrincipalName $userId -PermissionsToStorage get, list, listsas, delete, set, update, regeneratekey, recover, backup, restore, purge
 ```
 
 Обратите внимание, что разрешения для учетных записей хранения не доступны на странице "Политики доступа" учетной записи хранения на портале Azure.
