@@ -22,20 +22,6 @@
       href: release-notes-10-0-10106-0.md
     - name: График регионального обновления до 2-го поколения
       href: gen2-migration-schedule.md
-    - name: Архивные заметки о выпуске
-      items:
-        - name: "Сентябрь 2018\_г."
-          href: release-notes-september-2018.md
-        - name: "Август 2018\_г."
-          href: release-notes-august-2018.md
-        - name: "Июль 2018\_г."
-          href: release-notes-july-2018.md
-        - name: "Июнь 2018\_г."
-          href: release-notes-june-2018.md
-        - name: "Май 2018\_г."
-          href: release-notes-may-2018.md
-        - name: "Апрель 2018\_г."
-          href: release-notes-april-2018.md
 - name: Краткие руководства
   expanded: true
   items:
