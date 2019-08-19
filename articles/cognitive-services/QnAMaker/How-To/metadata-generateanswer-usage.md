@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: diberry
-ms.openlocfilehash: dbfa7aaccd513ffcf8ba3907911d8c49275b2ea6
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
-ms.translationtype: HT
+ms.openlocfilehash: 18b901b429ee675726ef0e36535f1f97f4cdd076
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967654"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69542997"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -228,6 +228,18 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
   "RankerType":"QuestionOnly"
 }
 ```
+
+## <a name="common-http-errors"></a>Распространенные ошибки HTTP
+
+|Код|Объяснение|
+|:--|--|
+|"2xx"|Success|
+|400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
+|400|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|
+|401|Недопустимый ключ|
+|403|Доступ запрещен. У вас нет необходимых разрешений|
+|404|База знаний не существует|
+|410|Этот API устарел и больше недоступен|
 
 ## <a name="next-steps"></a>Следующие шаги
 

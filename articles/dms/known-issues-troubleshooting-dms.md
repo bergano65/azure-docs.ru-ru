@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 06/18/2019
-ms.openlocfilehash: a35e0496c7e36d42e28a64fef438fe56713d3c78
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: HT
+ms.openlocfilehash: a72a0e26c2af34942faaa6a7e62feef86082e196
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855000"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034821"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных проблем и ошибок Azure Database Migration Service
 
@@ -98,9 +98,9 @@ ms.locfileid: "68855000"
 | ------------- | ------------- |
 | При использовании [ExpressRoute](https://azure.microsoft.com/services/expressroute/)Azure Database Migration Service [требуется](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) подготовка трех конечных точек службы в подсети виртуальной сети, связанной со службой:<br> --Конечная точка служебной шины<br> --Конечная точка хранилища<br> --Целевая конечная точка базы данных (например, конечная точка SQL, Cosmos DBная конечная точка)<br><br><br><br><br> | [Включите](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) необходимые конечные точки службы для подключения ExpressRoute между источником и Azure Database Migration Service. <br><br><br><br><br><br><br><br> |
 
-## <a name="timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Ошибка времени ожидания при переносе базы данных MySQL в Azure DB для MySQL
+## <a name="lock-wait-timeout-error-when-migrating-a-mysql-database-to-azure-db-for-mysql"></a>Ошибка времени ожидания блокировки при переносе базы данных MySQL в Azure DB для MySQL
 
-При переносе базы данных MySQL в экземпляр базы данных Azure для MySQL с помощью Azure Database Migration Service происходит сбой миграции со следующей ошибкой времени ожидания:
+При переносе базы данных MySQL в экземпляр базы данных Azure для MySQL с помощью Azure Database Migration Service происходит сбой миграции со следующей ошибкой ожидания блокировки:
 
 * **Ошибка**: Ошибка миграции базы данных-не удалось загрузить файл-не удалось запустить процесс загрузки для файла "n" Реткоде: SQL_ERROR SqlState: HY000 NativeError: 1205 сообщение: [MySQL] [драйвер ODBC] [в MySQL] превышено время ожидания блокировки. Попробуйте перезапустить транзакцию
 

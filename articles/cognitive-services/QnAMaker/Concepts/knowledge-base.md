@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 08/15/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 022b16669791b9b9cce066b3dd17c70b33569cc0
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
-ms.translationtype: HT
+ms.openlocfilehash: 8cd63913c0e96d496aa617369601c1dd121b4b46
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955236"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69542846"
 ---
 # <a name="what-is-a-qna-maker-knowledge-base"></a>Что представляет собой база знаний QnA Maker?
 
@@ -59,6 +59,70 @@ ms.locfileid: "68955236"
 
 Используемые функции включают в себя не только семантику на уровне Word, важность на уровне терминов в совокупности, так и семантические изученные семантики для определения сходства и релевантности между двумя текстовыми строками.
 
+## <a name="http-request-and-response-with-endpoint"></a>HTTP-запрос и ответ с конечной точкой
+При публикации базы знаний служба создает **конечную точку** HTTP на основе RESTful, которая может быть интегрирована в приложение, как правило, с помощью программы-робота Chat. 
+
+### <a name="the-user-query-request-to-generate-an-answer"></a>Запрос пользователя на создание ответа
+
+**Пользовательский запрос** — это вопрос, который пользователь запрашивает в базе знаний, например, `How do I add a collaborator to my app?`. Запрос часто выполняется в естественном языке или несколько ключевых слов, представляющих вопрос, например, `help with collaborators`. Запрос отправляется на ваш набор знаний из HTTP- **запроса** в клиентском приложении.
+
+```json
+{
+    "question": "qna maker and luis",
+    "top": 6,
+    "isTest": true,
+    "scoreThreshold": 20,
+    "strictFilters": [
+    {
+        "name": "category",
+        "value": "api"
+    }],
+    "userId": "sd53lsY="
+}
+```
+
+Вы управляете ответом, задавая такие свойства, как [скоресрешолд](./confidence-score.md#choose-a-score-threshold), [Top](../how-to/improve-knowledge-base.md#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers)и [стрингфилтерс](../how-to/metadata-generateanswer-usage.md#filter-results-with-strictfilters-for-metadata-tags).
+
+Используйте [содержимое диалога](../how-to/metadata-generateanswer-usage.md#use-question-and-answer-results-to-keep-conversation-context) с [функцией множественной переворачивания](../how-to/multiturn-conversation.md) , чтобы диалоговое обсуждение не обменяться вопросами и ответами, чтобы найти правильный и окончательный ответ.
+
+### <a name="the-response-from-a-call-to-generate-answer"></a>Ответ от вызова для создания ответа
+
+**Ответ** HTTP — это ответ, полученный из базы знаний, в зависимости от наилучшего соответствия для данного пользовательского запроса. Ответ включает ответ и оценку прогноза. Если вы запросили более одного первого ответа, со `top` свойством вы получаете более одного первого ответа, каждый из которых имеет оценку. 
+
+```json
+{
+    "answers": [
+        {
+            "questions": [
+                "What is the closing time?"
+            ],
+            "answer": "10.30 PM",
+            "score": 100,
+            "id": 1,
+            "source": "Editorial",
+            "metadata": [
+                {
+                    "name": "restaurant",
+                    "value": "paradise"
+                },
+                {
+                    "name": "location",
+                    "value": "secunderabad"
+                }
+            ]
+        }
+    ]
+}
+```
+
+### <a name="test-and-production-knowledge-base"></a>База знаний тестирования и рабочей базы
+База знаний является репозиторием вопросов и ответов, который создан, обслуживается и используется QnA Maker. Каждый уровень QnA Maker может использоваться для нескольких баз знаний.
+
+База знаний имеет два состояния: "Тестирование" и "Опубликованная". 
+
+**База знаний тестирования** — это версия, которая редактируется, сохраняется и проверяется на точность и полноту ответов. Изменения, внесенные в тестовую базу знаний, не влияют на конечного пользователя приложения или чат бота. База знаний теста называется `test` в HTTP-запросе. 
+
+**Опубликованная база знаний** — это версия, которая используется в роботе или приложении чата. Действие публикации перемещает содержимое базы знаний в состоянии "Тестирование" в базу знаний в состоянии "Опубликованная". Поскольку база знаний в состоянии "Опубликованная" является версией, которую использует приложение через конечную точку, следует убедиться в наличии правильного и хорошо проверенного содержимого. Опубликованная база знаний известна как `prod` в HTTP-запросе. 
 
 ## <a name="next-steps"></a>Следующие шаги
 
@@ -68,3 +132,11 @@ ms.locfileid: "68955236"
 ## <a name="see-also"></a>См. также
 
 [Общие сведения о QnA Maker](../Overview/overview.md)
+
+Создать и изменить базу знаний с помощью: 
+* [REST API](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/qnamaker/knowledgebase)
+* [Пакет SDK для .NET](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebase?view=azure-dotnet)
+
+Создать ответ с: 
+* [REST API](https://docs.microsoft.com/en-us/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer)
+* [Пакет SDK для .NET](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.runtime?view=azure-dotnet)

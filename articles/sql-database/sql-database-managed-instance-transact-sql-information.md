@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 1581a62f0999cf502feaad31d2c884f4d171e770
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
-ms.translationtype: HT
+ms.openlocfilehash: 44b98b55bfa2d0424831f6cf612f66dbcdc8a6d9
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019661"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543694"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -339,9 +339,9 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Недокументированные инструкции DBCC, включенные в SQL Server, не поддерживаются в управляемых экземплярах.
 
-- `Trace flags` не поддерживаются. См. раздел [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql).
-- `DBCC TRACEOFF` не поддерживается. См. статью [DBCC TRACEOFF (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql).
-- `DBCC TRACEON` не поддерживается. См. статью [DBCC TRACEON (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql).
+- Поддерживается только ограниченное число глобальных `Trace flags` . Уровень `Trace flags` сеанса не поддерживается. См. раздел [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql).
+- [DBCC TRACEOFF](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql) и [DBCC TRACEON](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql) работают с ограниченным числом глобальных флагов трассировки.
+- [Инструкция DBCC CHECKDB](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql) с параметрами REPAIR_ALLOW_DATA_LOSS, REPAIR_FAST и REPAIR_REBUILD не может быть использована, так как база данных `SINGLE_USER` не может быть задана в режиме. см. раздел [изменение различий базы данных](#alter-database-statement). Потенциальные повреждения базы данных обрабатываются группой поддержки Azure. Если вы увидите повреждение базы данных, которое следует исправить, обратитесь в службу поддержки Azure.
 
 ### <a name="distributed-transactions"></a>Распределенные транзакции
 
@@ -399,7 +399,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="replication"></a>Репликация
 
-- Поддерживаются моментальные снимки и типы двунаправленной репликации. Репликация слиянием, одноранговая репликация и обновляемые подписки не поддерживаются.
+- Поддерживаются типы моментальных снимков и двунаправленной репликации. Репликация слиянием, одноранговая репликация и обновляемые подписки не поддерживаются.
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) доступна для общедоступной предварительной версии управляемого экземпляра с некоторыми ограничениями:
     - Все типы участников репликации (издателя, распространителя, подписчик по запросу и издатель принудительной отправки) можно разместить на управляемых экземплярах, но издатель и распространитель нельзя разместить на разных экземплярах.
     - Управляемые экземпляры могут взаимодействовать с последними версиями SQL Server. Поддерживаемые версии см. [здесь](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems).

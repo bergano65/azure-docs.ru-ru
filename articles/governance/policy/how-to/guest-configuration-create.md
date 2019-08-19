@@ -7,16 +7,18 @@ ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 7dd053e3a9824ac0817db528b8b053666e1ded04
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
-ms.translationtype: HT
+ms.openlocfilehash: 131d6865c47a32bbefbfbd397a5f0f88dedc9c35
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881814"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543516"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
 Конфигурация гостя использует модуль ресурсов [DSC](/powershell/dsc), чтобы создать конфигурацию для аудита виртуальных машин Azure. Конфигурация DSC определяет условие, в котором должна находиться виртуальная машина. Если при вычислении конфигурации происходит сбой, активируется **Аудит** влияния политики, а виртуальная машина считается несоответствующим.
+
+[Гостевую конфигурацию политики Azure](/azure/governance/policy/concepts/guest-configuration) можно использовать только для аудита параметров внутри виртуальных машин. Исправление параметров в виртуальных машинах пока недоступно.
 
 Используйте следующие действия, чтобы создать собственную конфигурацию для проверки состояния виртуальной машины Azure.
 

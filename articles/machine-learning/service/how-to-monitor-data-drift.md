@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 07/08/2019
-ms.openlocfilehash: c5484c37d89cc9ae880bbe17987bb47f3114b8a4
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: HT
+ms.openlocfilehash: b9593a5802300da8baa1e518f14885637db2068f
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847896"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036181"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 
@@ -162,9 +162,9 @@ datadrift.disable_schedule()
 
 ![портал Azure настройки рассмещения данных](media/how-to-monitor-data-drift/drift_config.png)
 
-## <a name="view-results-in-azure-ml-workspace-ui"></a>Просмотр результатов в пользовательском интерфейсе рабочей области машинного обучения Azure
+## <a name="view-results-in-azure-portal"></a>Просмотр результатов в портал Azure
 
-Чтобы просмотреть результаты в пользовательском интерфейсе рабочей области машинного обучения Azure, перейдите на страницу модель. На вкладке сведения модели отображается конфигурация смещения данных. Вкладка "смещение данных (Предварительная версия)" теперь доступна для визуализации метрик смещения данных. 
+Чтобы просмотреть результаты в рабочей области в [портал Azure](https://portal.azure.com), перейдите на страницу модель. На вкладке сведения модели отображается конфигурация смещения данных. Вкладка "смещение данных (Предварительная версия)" теперь доступна для визуализации метрик смещения данных. 
 
 ![Смещение данных портал Azure](media/how-to-monitor-data-drift/drift_ui.png)
 
