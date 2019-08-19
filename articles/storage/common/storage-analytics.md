@@ -1,33 +1,33 @@
 ---
 title: Использование аналитики службы хранилища Azure для сбора данных журналов и метрик | Документация Майкрософт
 description: Аналитика хранилища позволяет отслеживать данные метрик для всех служб хранилища, а также для сбора журналов по хранилищам BLOB-объектов, очередей и таблиц.
-services: storage
 author: normesta
 ms.service: storage
-ms.devlang: dotnet
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/03/2017
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: b588ebe577e61014c6c2bbeaae751b2783dd6f80
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 04206a45a3322a1b0d28e3dfeed65225773e9038
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153918"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844848"
 ---
 # <a name="storage-analytics"></a>аналитики хранилища
 
 Аналитика хранилища Azure ведет журналы и предоставляет данные метрик для учетной записи хранения. Эти данные можно использовать для трассировки запросов, анализа тенденций использования и диагностики проблем учетной записи хранения.
 
-Для использования аналитики хранилища ее необходимо включить отдельно для каждой из отслеживаемых служб. Ее можно включить [портала Azure](https://portal.azure.com). Дополнительные сведения см. в разделе [мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Используйте [задание свойств службы BLOB-объектов](/rest/api/storageservices/set-blob-service-properties), [задание свойств службы очередей](/rest/api/storageservices/set-queue-service-properties), [задание свойств службы таблиц](/rest/api/storageservices/set-table-service-properties), и [задание свойств службы файл](/rest/api/storageservices/Get-File-Service-Properties)операции для включения аналитики хранилища для каждой службы.
+Для использования аналитики хранилища ее необходимо включить отдельно для каждой из отслеживаемых служб. Его можно включить из [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в разделе Мониторинг учетной записи хранения в портал Azure](storage-monitor-storage-account.md). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Используйте [Свойства службы Set BLOB](/rest/api/storageservices/set-blob-service-properties), [задайте свойства службы очередей](/rest/api/storageservices/set-queue-service-properties), [Задайте свойства службы таблиц](/rest/api/storageservices/set-table-service-properties), а также задайте операции по [настройке свойств службы файлов](/rest/api/storageservices/Get-File-Service-Properties), чтобы включить аналитика службы хранилища для каждой службы.
 
 Объединенные данные хранятся в известном большом двоичном объекте (для ведения журнала) и в известных таблицах (для метрик), доступ к которым можно получить с помощью API службы BLOB-объектов и службы таблиц.
 
 В аналитике хранилища установлено ограничение в 20 ТБ для объема хранимых данных, не зависящее от общего ограничения на вашу учетную запись хранения. Дополнительные сведения об ограничениях учетных записей хранения см. в разделе [Целевые показатели масштабируемости и производительности хранилища Azure](storage-scalability-targets.md).
 
 Дополнительные указания о функциях аналитики хранилища и других инструментах идентификации, диагностики и устранения неполадок, связанных со службой хранилища Azure, см. в статье [Мониторинг, диагностика и устранение неполадок службы хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md).
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="billing-for-storage-analytics"></a>Оплата аналитики хранилища
 
@@ -46,7 +46,7 @@ ms.locfileid: "65153918"
 
 При просмотре данных аналитики хранилища вы можете пользоваться таблицами из раздела [Операции с протоколированием и сообщения о состоянии аналитик хранилища](/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) , чтобы определить, какие запросы тарифицируются. Затем можно сверить данные журналов и метрик с сообщениями о состоянии, чтобы определить, тарифицировался ли отдельный запрос. Можно также воспользоваться таблицами из предыдущего раздела, чтобы определить доступность службы хранилища или отдельной операции API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md)
 * [Метрики Аналитики Службы хранилища](storage-analytics-metrics.md)
 * [Ведение журнала аналитики службы хранилища](storage-analytics-logging.md)

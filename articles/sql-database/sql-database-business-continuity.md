@@ -11,14 +11,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-manager: craigg
 ms.date: 06/25/2019
-ms.openlocfilehash: 26b31781ae0056999eb222981b2eea3eb4595041
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: e57427fbb7e0d3c67fc4fcbab1a50f14ef8c9501
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228047"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569332"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure
 
@@ -58,7 +57,23 @@ ms.locfileid: "68228047"
 
 Если максимальный поддерживаемый период хранения резервных копий для восстановления на момент времени (PITR) недостаточно для вашего приложения, его можно расширить, настроив политику долгосрочного хранения (LTR) для баз данных. Дополнительные сведения см. в разделе [Долгосрочное хранение резервных копий](sql-database-long-term-retention.md).
 
-## <a name="recover-a-database-to-another-azure-region"></a>Восстановление базы данных в другом регионе Azure
+## <a name="compare-geo-replication-with-failover-groups"></a>Сравнение георепликации с группами отработки отказа
+
+[Группы автоматической](sql-database-auto-failover-group.md#auto-failover-group-terminology-and-capabilities) отработки отказа упрощают развертывание и использование [георепликации](sql-database-active-geo-replication.md) и добавляют дополнительные возможности, как описано в следующей таблице.
+
+|                                              | Георепликация | Группы отработки отказа  |
+|:---------------------------------------------| :-------------- | :----------------|
+| Автоматический переход на другой ресурс                           |     Нет          |      Да         |
+| Одновременное отработка отказа нескольких баз данных  |     Нет          |      Да         |
+| Обновление строки подключения после отработки отказа      |     Да         |      Нет          |
+| Поддерживаемый управляемый экземпляр                   |     Нет          |      Да         |
+| Может находиться в том же регионе, что и первичный             |     Да         |      Нет          |
+| Несколько реплик                            |     Да         |      Нет          |
+| Поддерживает чтение и масштабирование                          |     Да         |      Да         |
+| &nbsp; | &nbsp; | &nbsp; |
+
+
+## <a name="recover-a-database-to-the-existing-server"></a>Восстановление базы данных на имеющемся сервере
 
 В редких случаях возможен сбой центра обработки данных Azure. Такой сбой вызывает нарушение работы компании, которое может длиться от считанных минут до нескольких часов.
 

@@ -2,7 +2,7 @@
 title: Применение представлений T-SQL в хранилище данных SQL Azure | Документация Майкрософт
 description: Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: e8d516cfd764f947bd2fe7fc25f6394c313c0d9a
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 8a770e66120e69271744942899186ece39b2a3c3
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595496"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479526"
 ---
 # <a name="views-in-azure-sql-data-warehouse"></a>Представления в хранилище данных SQL Azure
 Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений. 
@@ -25,7 +25,7 @@ ms.locfileid: "67595496"
 
 
 > [!IMPORTANT]
-> См. в разделе новый синтаксис материализованное представление в [Создание МАТЕРИАЛИЗОВАННОГО ПРЕДСТАВЛЕНИЯ AS SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest).  Дополнительные сведения см. в разделе [заметки о выпуске](/azure/sql-data-warehouse/release-notes-10-0-10106-0).
+> См. новый синтаксис материализованных представлений при [создании материализованных представлений в виде SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest).  Дополнительные сведения см. в [заметках о выпуске](/azure/sql-data-warehouse/release-notes-10-0-10106-0).
 >
 
 

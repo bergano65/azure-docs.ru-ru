@@ -7,26 +7,26 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
-ms.date: 01/23/2019
+ms.topic: reference
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 595a835018475ed3aa915971f5ff2b78981e7bdf
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 0bf7fe649a5a604c610307b9be0717dce01cb238
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560507"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638296"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
 
 ## <a name="active-version"></a>Активная версия
 
-Активная версия LUIS — это версия, которая принимает все изменения, вносимые в модель. Если на веб-сайте [LUIS](luis-reference-regions.md) вы хотите внести изменения в версию, которая не является активной, необходимо сначала задать эту версию в качестве активной.
+Активная версия LUIS — это версия, которая принимает все изменения, вносимые в модель. Если вы хотите внести изменения в версию, которая не является активной, на портале [Luis](luis-reference-regions.md) необходимо сначала задать эту версию как активную.
 
 ## <a name="authoring"></a>Разработка
 
-Разработка — это возможность создания, развертывания [приложения LUIS](#luis-app) и управления им с помощью веб-сайта [LUIS](luis-reference-regions.md) или [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087).
+Разработка — это возможность создания, управления и развертывания [приложения Luis](#luis-app)с помощью портала [Luis](luis-reference-regions.md) или [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087).
 
 ## <a name="authoring-key"></a>Ключ разработки
 
@@ -34,30 +34,12 @@ ms.locfileid: "68560507"
 
 ## <a name="batch-test-json-file"></a>Пакетный текстовый JSON-файл
 
-Пакетный файл является массивом JSON. Каждый элемент в массиве имеет три свойства: `text`, `intent` и `entities`. Свойство `entities` представляет собой массив. Массив может быть пустым. Если массив `entities` не пустой, он должен точно определять сущности.
+Пакетное тестирование — это возможность проверить модель текущего приложения LUIS с помощью единообразного и известного тестового набора пользователей фразы продолжительностью. Пакетный тест определяется в отформатированном [файле JSON](luis-concept-batch-test.md#batch-file-format).
 
-```JSON
-[
-    {
-        "text": "drive me home",
-        "intent": "None",
-        "entities": []
-    },
-    {
-        "text": "book a flight to orlando on the 25th",
-        "intent": "BookFlight",
-        "entities": [
-            {
-                "entity": "orlando",
-                "type": "Location",
-                "startIndex": 18,
-                "endIndex": 25
-            }
-        ]
-    }
-]
-
-```
+См. также: 
+* [Основные понятия](luis-concept-batch-test.md)
+* [Практические руководства](luis-how-to-batch-test.md)
+* [Учебник] Luis-Tutorial-Batch-testing.md)
 
 
 ## <a name="collaborator"></a>Участник совместной работы
@@ -114,7 +96,7 @@ ms.locfileid: "68560507"
 
 ## <a name="labeling"></a>Пометка
 
-Пометка — это процесс связывания слова или фразы в [высказывании](#utterance) намерения с [сущностью](#entity) (типом данных).
+Пометка или маркировка — это процесс связывания слова или фразы в [utterance](#utterance) намерений с [сущностью](#entity) (DataType).
 
 ## <a name="luis-app"></a>Приложение LUIS
 

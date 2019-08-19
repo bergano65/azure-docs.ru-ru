@@ -16,10 +16,10 @@ ms.date: 04/17/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: cc6a607da2227ecf9acd6209e31b7aa0ef1c62d8
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68323365"
 ---
 # <a name="run-tasks-concurrently-to-maximize-usage-of-batch-compute-nodes"></a>Параллельное выполнение задач для эффективного использования вычислительных узлов пакетной службы 
@@ -39,7 +39,7 @@ ms.locfileid: "68323365"
 Вместо узлов размера Standard\_D1, каждый из которых содержит одно ядро ЦП, вы можете использовать 16-ядерные узлы [Standard\_D14](../cloud-services/cloud-services-sizes-specs.md), включив на них параллельное выполнение задач. Таким образом, потребуется *в 16 раз меньше узлов* , то есть 63 узла вместо 1000. Кроме того, если каждому узлу требуются большие файлы приложений либо эталонные данные, время выполнения и эффективность будут улучшены, так как данные будут копироваться только на 63 узла.
 
 ## <a name="enable-parallel-task-execution"></a>Включение параллельного выполнения задач
-Настройка параллельного выполнения задач для вычислительных узлов выполняется на уровне пула. С помощью библиотеки .NET пакетной службы задайте элемент [CloudPool. MaxTasksPerComputeNode][maxtasks_net] property when you create a pool. If you are using the Batch REST API, set the [maxTasksPerNode][rest_addpool] в тексте запроса во время создания пула.
+Настройка параллельного выполнения задач для вычислительных узлов выполняется на уровне пула. При создании пула с помощью библиотеки .NET для пакетной службы задайте свойство [CloudPool. MaxTasksPerComputeNode][maxtasks_net] . Если вы используете пакетную REST API, задайте элемент [maxTasksPerNode][rest_addpool] в тексте запроса во время создания пула.
 
 Пакетная служба Azure позволяет устанавливать задачи на каждом узле вплоть до (4X) количества основных узлов. Например, если для пула настроены узлы размера "Большой" (четыре ядра), для параметра `maxTasksPerNode` можно задать значение 16. Однако независимо от того, сколько ядер имеет узел, у вас не может быть более 256 задач для каждого узла. Сведения о количестве ядер для каждого узла см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Дополнительные сведения об ограничениях службы см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
 
@@ -53,10 +53,10 @@ ms.locfileid: "68323365"
 
 С помощью свойства [CloudPool. TaskSchedulingPolicy][task_schedule] можно указать, что задачи должны быть равномерно назначены на всех узлах в пуле ("распространение"). Или можно указать, что перед переходом к следующему узлу необходимо назначить максимальное количество задач текущему узлу ("упаковка").
 
-В качестве примера того, как эта функция является полезной, следует рассмотреть пул [стандартных\_узлов D14](../cloud-services/cloud-services-sizes-specs.md) (в примере выше), настроенный с помощью [CloudPool. MaxTasksPerComputeNode][maxtasks_net] value of 16. If the [CloudPool.TaskSchedulingPolicy][task_schedule] , настроен с помощью [ Компутенодефиллтипе][Fill_type] of *Pack*, он позволит максимально эффективно использовать все 16 ядер каждого узла и позволить [пулу автомасштабирования](batch-automatic-scaling.md) удалять неиспользуемые узлы из пула (узлы без назначенных задач). Это снизит использование ресурсов и расходы на них.
+В качестве примера того, как эта функция ценна, рассмотрим пул [стандартных\_узлов D14](../cloud-services/cloud-services-sizes-specs.md) (в примере выше), для которого настроено значение [CloudPool. MaxTasksPerComputeNode][maxtasks_net] , равное 16. Если [CloudPool. TaskSchedulingPolicy][task_schedule] настроен с [компутенодефиллтипе][fill_type] *Pack*, он будет максимально использовать все 16 ядер каждого узла и позволить [пулу автомасштабирования](batch-automatic-scaling.md) удалять неиспользуемые узлы из пула (узлы без назначенные задачи). Это снизит использование ресурсов и расходы на них.
 
 ## <a name="batch-net-example"></a>Пример использования компонента .NET пакетной службы
-Этот [пакет .NET][api_net] API code snippet shows a request to create a pool that contains four nodes with a maximum of four tasks per node. It specifies a task scheduling policy that will fill each node with tasks prior to assigning tasks to another node in the pool. For more information on adding pools by using the Batch .NET API, see [BatchClient.PoolOperations.CreatePool][poolcreate_net].
+В этом фрагменте кода API [.NET пакетной][api_net] службы показан запрос на создание пула, который содержит четыре узла с максимум четырьмя задачами на один узел. Он задает политику планирования задач, при которой каждому узлу назначается максимальное количество задач перед переходом к следующему узлу пула. Дополнительные сведения о добавлении пулов с помощью API .NET пакетной службы см. в разделе [BatchClient. PoolOperations. CreatePool][poolcreate_net].
 
 ```csharp
 CloudPool pool =
@@ -72,7 +72,7 @@ pool.Commit();
 ```
 
 ## <a name="batch-rest-example"></a>Пример интерфейса REST API пакетной службы
-API snippet shows a request to create a pool that contains two large nodes with a maximum of four tasks per node. For more information on adding pools by using the REST API, see [Add a pool to an account][rest_addpool]Эта [оставшаяся партия пакета][api_rest] .
+В [Batch REST][api_rest] этом фрагменте кода API-интерфейса для пакетной службы содержится запрос на создание пула, который содержит два крупных узла с максимум четырьмя задачами на один узел. Дополнительные сведения о добавлении пулов с помощью REST API см. в разделе [Добавление пула в учетную запись][rest_addpool].
 
 ```json
 {
@@ -95,7 +95,7 @@ API snippet shows a request to create a pool that contains two large nodes with 
 >
 
 ## <a name="code-sample"></a>Пример кода
-Свойство [параллелнодетаскс][parallel_tasks_sample] project on GitHub illustrates the use of the [CloudPool.MaxTasksPerComputeNode][maxtasks_net] .
+Проект [параллелнодетаскс][parallel_tasks_sample] на сайте GitHub иллюстрирует использование свойства [CloudPool. MaxTasksPerComputeNode][maxtasks_net] .
 
 Это C# консольное приложение использует библиотеку [.NET пакетной][api_net] службы для создания пула с одним или несколькими узлами вычислений. Для имитации переменной нагрузки оно выполняет заданное количество задач на этих узлах. Вывод приложения указывает, на каких узлах выполнялась каждая задача. Приложение также предоставляет сводку параметров задания и времени его выполнения. Ниже приводится часть сводки выходных данных примера приложения по двум различным запускам.
 

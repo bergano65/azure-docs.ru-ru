@@ -1,35 +1,35 @@
 ---
-title: Параметры приложения
+title: Параметры приложения — LUIS
 titleSuffix: Azure Cognitive Services
-description: Понимаете, какие параметры приложения для приложений понимание языка.
+description: Общие сведения о параметрах приложений для определения языка приложения.
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 3682b9e0c38344be1522440290b46f8c10bd5607
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 6d516590b90efd937789fa0847b707d2521f6459
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275902"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932583"
 ---
 # <a name="application-settings"></a>Параметры приложения
 
-Эти параметры приложения хранятся в [экспортировать](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложения и [обновлены](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с REST API. Изменение параметров приложения версии сбрасывает состояние обучение приложения необученную.
+Эти параметры приложения хранятся в [экспортированном](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и [обновляются](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с помощью интерфейсов API. При изменении параметров версии приложения состояние обучения приложения сбрасывается на "не обучено".
 
 |Параметр|Значение по умолчанию|Примечания|
 |--|--|--|
-|NormalizePunctuation|True|Удаляет знаки препинания.|
+|нормализепунктуатион|True|Удаляет знаки препинания.|
 |NormalizeDiacritics|True|Удаляет диакритические знаки.|
 
-## <a name="diacritics-normalization"></a>Нормализация диакритические знаки 
+## <a name="diacritics-normalization"></a>Нормализация диакритических знаков 
 
-Включите нормализации utterance диакритических знаков в файл приложения LUIS JSON `settings` параметра.
+Включите нормализацию utterance для диакритических знаков в файле приложения Luis JSON в `settings` параметре.
 
 ```JSON
 "settings": [
@@ -37,18 +37,18 @@ ms.locfileid: "68275902"
 ] 
 ```
 
-Следующие фразы Показать, как диакритические знаки нормализации влияет на фразы:
+В следующем фразы продолжительностью показано, как нормализация диакритических знаков влияет на фразы продолжительностью:
 
-|С диакритическими знаками, значение false|Значение true диакритические знаки|
+|Если диакритические знаки имеют значение false|Если диакритические знаки имеют значение true|
 |--|--|
 |`quiero tomar una piña colada`|`quiero tomar una pina colada`|
 |||
 
-### <a name="language-support-for-diacritics"></a>Языковая поддержка диакритические знаки
+### <a name="language-support-for-diacritics"></a>Языковая поддержка диакритических знаков
 
-#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальский (Бразилия) `pt-br` диакритические знаки
+#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальская `pt-br` бразильская диакритические знаки
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
 |`á`|`a`|
 |`â`|`a`|
@@ -64,9 +64,9 @@ ms.locfileid: "68275902"
 |`ú`|`u`| 
 |||
 
-#### <a name="dutch-nl-nl-diacritics"></a>Нидерландский `nl-nl` диакритические знаки
+#### <a name="dutch-nl-nl-diacritics"></a>Голландская `nl-nl` диакритические знаки
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
 |`á`|`a`|
 |`à`|`a`|
@@ -81,11 +81,11 @@ ms.locfileid: "68275902"
 |`ü`|`u`|
 |||
 
-#### <a name="french-fr--diacritics"></a>Французский `fr-` диакритические знаки
+#### <a name="french-fr--diacritics"></a>Канадские `fr-` диакритические знаки
 
-Сюда входят языки и региональные параметры как французский "и" Канады.
+К ним относятся французские и канадские языки и региональные параметры.
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
 |`é`|`e`|
 |`à`|`a`|
@@ -102,17 +102,17 @@ ms.locfileid: "68275902"
 |`ü`|`u`| 
 |`ÿ`|`y`| 
 
-#### <a name="german-de-de-diacritics"></a>Немецкий `de-de` диакритические знаки
+#### <a name="german-de-de-diacritics"></a>Знаки `de-de` на немецком языке
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
 |`ä`|`a`|
 |`ö`|`o`| 
 |`ü`|`u`| 
 
-#### <a name="italian-it-it-diacritics"></a>Итальянский `it-it` диакритические знаки
+#### <a name="italian-it-it-diacritics"></a>Итальянские `it-it` диакритические знаки
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
 |`à`|`a`|
 |`è`|`e`|
@@ -125,11 +125,11 @@ ms.locfileid: "68275902"
 |`ù`|`u`|
 |`ú`|`u`|
 
-#### <a name="spanish-es--diacritics"></a>Испанский `es-` диакритические знаки
+#### <a name="spanish-es--diacritics"></a>Испанские `es-` диакритические знаки
 
-Сюда входят Мексика испанский и Канады.
+Сюда входит испанский и канадский Мексики.
 
-|Диакритические знаки, значение false|Диакритические знаки задано значение true|
+|Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
 |`á`|`a`|
 |`é`|`e`|
@@ -140,9 +140,9 @@ ms.locfileid: "68275902"
 |`ñ`|`u`|
 
 
-## <a name="punctuation-normalization"></a>Знаки препинания нормализации
+## <a name="punctuation-normalization"></a>Нормализация знаков препинания
 
-Включите utterance нормализации для знаков препинания в файл приложения LUIS JSON `settings` параметра.
+Включите нормализацию utterance для знаков препинания в файле приложения Luis JSON в `settings` параметре.
 
 ```JSON
 "settings": [
@@ -150,16 +150,16 @@ ms.locfileid: "68275902"
 ] 
 ```
 
-Следующие фразы Показать, как диакритические знаки влияет на фразы:
+В следующем фразы продолжительностью показано, как диакритические знаки влияют на фразы продолжительностью:
 
-|С диакритическими знаками, значение False|С диакритическими знаками, присвоено значение True|
+|Если диакритические знаки имеют значение false|Если диакритические знаки имеют значение true|
 |--|--|
 |`Hmm..... I will take the cappuccino`|`Hmm I will take the cappuccino`|
 |||
 
-### <a name="punctuation-removed"></a>Удаленными знаками пунктуации
+### <a name="punctuation-removed"></a>Пунктуация удалена
 
-Следующие знаки препинания удаляется с `NormalizePunctuation` задано значение true.
+Следующие знаки пунктуации удаляются `NormalizePunctuation` с параметром, установленным в значение true.
 
 |Пунктуация|
 |--|

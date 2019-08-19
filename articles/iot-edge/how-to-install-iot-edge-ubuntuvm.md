@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: gregman
-ms.openlocfilehash: 8275bceca1a18f49eb7eeece66a3866d77c47635
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: f4bab6ab837b746c6a569cc6de95a95023bf83f4
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67796162"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986992"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -41,7 +41,7 @@ ms.locfileid: "67796162"
     1.  Подождите несколько секунд и на экране отобразится сообщение об успешном выполнении, указывающее об успешной настройке строки подключения.
 
 
-## <a name="deploy-from-the-azure-portal"></a>Развертывание с помощью портала Azure
+## <a name="deploy-from-the-azure-portal"></a>Развертывание из портал Azure
 На портале Azure выполните поиск по запросу Azure IoT Edge и выберите **Ubuntu Server 16.04 LTS + Azure IoT Edge runtime**, чтобы начать создание виртуальной машины. После этого выполните шаги 3 и 4 из приведенного выше раздела "Развертывание из Azure Marketplace".
 
 ## <a name="deploy-from-azure-cli"></a>Развертывание с помощью Azure CLI
@@ -59,9 +59,9 @@ ms.locfileid: "67796162"
       az account list --output table
       ```
     
-   1. Скопируйте поле SubscriptionID подписки, которую вы хотите использовать.
+   1. Скопируйте поле SubscriptionID для подписки, которую вы хотите использовать.
 
-   1. Настройка рабочей подписки с Идентификатором, который был скопирован:
+   1. Задайте рабочую подписку с только что скопированным ИДЕНТИФИКАТОРом:
     
       ```azurecli-interactive 
       az account set -s {SubscriptionId}
@@ -73,7 +73,7 @@ ms.locfileid: "67796162"
    az group create --name IoTEdgeResources --location westus2
    ```
 
-1. Примите условия использования для виртуальной машины. Если вы хотите сначала ознакомьтесь с условиями, выполните действия, описанные в [развертывание из Azure Marketplace](#deploy-from-the-azure-marketplace).
+1. Примите условия использования виртуальной машины. Если вы хотите сначала ознакомиться с условиями, выполните действия, описанные в разделе [развертывание в Azure Marketplace](#deploy-from-the-azure-marketplace).
 
    ```azurecli-interactive
    az vm image accept-terms --urn microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest
@@ -98,6 +98,8 @@ ms.locfileid: "67796162"
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
-Если возникают проблемы со средой выполнения IoT Edge, установка должным образом, см. статью [Устранение неполадок](troubleshoot.md) страницы.
+Если при правильной установке среды выполнения IoT Edge возникли проблемы, ознакомьтесь со страницей [устранения неполадок](troubleshoot.md) .
 
 Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).
+
+Если вы хотите открыть порты для доступа к виртуальной машине через SSH или другие входящие подключения, см. документацию по виртуальной машине Azure, посвященную [открытию портов и конечных точек для виртуальной машины Linux](../virtual-machines/linux/nsg-quickstart.md) .

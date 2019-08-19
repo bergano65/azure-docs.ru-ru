@@ -1,33 +1,34 @@
 ---
 title: Хранение блочных BLOB-объектов на устройствах — Azure IoT Edge | Документация Майкрософт
 description: Общие сведения о распределении по уровням и срокам жизни см. в статье поддерживаемые операции с хранилищем BLOB-объектов и подключение к учетной записи хранилища BLOB-объектов.
-author: arduppal
+author: kgremban
 manager: mchad
-ms.author: arduppal
-ms.reviewer: arduppal
-ms.date: 06/19/2019
+ms.author: kgremban
+ms.reviewer: kgremban
+ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 5932d51ecaca3c827ae6de268711c7f4d1b28d0a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 861b5c3ee6d5661339788e7a27ba70557d0ea267
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640649"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947032"
 ---
-# <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge-preview"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия)
+# <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure на IoT Edge
 
 Хранилище BLOB-объектов Azure в IoT Edge предоставляет решение по хранению [блочных BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs) на пограничных устройствах. Модуль хранилища BLOB-объектов на устройстве IoT Edge ведет себя как служба блочного BLOB-объекта Azure, за исключением того, что блочные BLOB-объекты хранятся локально на устройстве IoT Edge. Вы можете получить доступ к BLOB-объектам с помощью тех же методов SDK службы хранилища Azure или вызовов API к блочным BLOB-объектам, к которым вы уже привыкли. В этой статье объясняются основные понятия, связанные с хранилищем BLOB-объектов Azure, в контейнере IoT Edge, где выполняется служба больших двоичных объектов на устройстве IoT Edge.
 
-Этот модуль полезен в сценариях, где данные должны храниться локально, пока их не удается обработать или передать в облако. Эти данные могут быть видео, изображениями, финансовыми данными, сведениями об больницы или любыми другими неструктурированными данными.
-
-> [!NOTE]
-> Хранилище BLOB-объектов в IoT Edge находится в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Этот модуль полезен в сценариях:
+* где данные должны храниться локально, пока их не удается обработать или передать в облако. Это могут быть видео, изображения, финансовые данные, сведения о больницы или любые другие неструктурированные данные.
+* Если устройства расположены в месте с ограниченным подключением.
+* Если вы хотите эффективно обрабатывать данные локально, чтобы получить доступ к данным с низкой задержкой, чтобы можно было как можно быстрее реагировать на экстренные действия.
+* Если вы хотите снизить затраты на пропускную способность и избежать переноса терабайтов данных в облако. Вы можете обрабатывать данные локально и передавать только обработанные данные в облако.
 
 Просмотрите видео, чтобы ознакомиться с краткими сведениями
-> [!VIDEO https://www.youtube.com/embed/QhCYCvu3tiM]
+> [!VIDEO https://www.youtube.com/embed/xbwgMNGB_3Y]
 
 Этот модуль поставляется с функциями **девицетоклаудуплоад** и **девицеаутоделете** .
 
@@ -60,16 +61,11 @@ ms.locfileid: "68640649"
 
 - Вы можете использовать компьютер разработки или виртуальную машину в качестве IoT Edge устройства, выполнив действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
-- Хранилище BLOB-объектов в модуле IoT Edge поддерживает следующие конфигурации устройств:
-
-  | Операционная система | AMD64 | ARM32v7 | ARM64 |
-  | ---------------- | ----- | ----- | ---- |
-  | Raspbian-stretch | Нет | Да | Нет |  
-  | Ubuntu Server 16.04 | Да | Нет | Да |
-  | Ubuntu Server 18.04 | Да | Нет | Да |
-  | Windows 10 IoT Корпоративная, сборка 17763 | Да | Нет | Нет |
-  | Windows Server 2019, сборка 17763 | Да | Нет | Нет |
-  
+- Список поддерживаемых операционных систем и архитектур см. в [Azure IOT Edge поддерживаемых системах](support.md#operating-systems) . Хранилище BLOB-объектов Azure в модуле IoT Edge поддерживает следующие архитектуры:
+    - Windows AMD64;
+    - Linux AMD64;
+    - Linux ARM32
+    - ARM64 Linux (Предварительная версия)
 
 Облачные ресурсы.
 
@@ -104,7 +100,10 @@ ms.locfileid: "68640649"
 
 ## <a name="using-smb-share-as-your-local-storage"></a>Использование общего ресурса SMB в качестве локального хранилища
 Вы можете указать общий ресурс SMB в качестве пути к локальному хранилищу при развертывании контейнера Windows для этого модуля на узле Windows.
-Вы можете выполнить `New-SmbGlobalMapping` команду PowerShell, чтобы локально подключить общую папку SMB на устройстве IOT под управлением Windows. Убедитесь, что устройство Интернета вещей может выполнять чтение и запись в удаленную общую папку SMB.
+
+Убедитесь, что общий ресурс SMB и устройство IoT находятся в доменах с взаимным доверием.
+
+Вы можете выполнить `New-SmbGlobalMapping` команду PowerShell, чтобы локально подключить общую папку SMB на устройстве IOT под управлением Windows.
 
 Ниже приведены этапы настройки.
 ```PowerShell
@@ -112,16 +111,48 @@ $creds = Get-Credential
 New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath <Any available drive letter>
 ```
 Пример <br>
-`$creds = Get-Credentials` <br>
+`$creds = Get-Credential` <br>
 `New-SmbGlobalMapping -RemotePath \\contosofileserver\share1 -Credential $creds -LocalPath G: `
 
 Эта команда будет использовать учетные данные для проверки подлинности на удаленном SMB Server. Затем сопоставьте путь к удаленной общей папке с буквой G: диск (может быть любая другая доступная буква диска). Теперь устройство IoT имеет том данных, сопоставленный с путем на диске G:. 
 
-Для развертывания значением `<storage directory bind>` может быть **G:/контаинердата: C:/блобрут**.
+Убедитесь, что пользователь на устройстве IoT может выполнять чтение и запись в удаленную общую папку SMB.
+
+Для развертывания значением `<storage mount>` может быть **G:/контаинердата: C:/блобрут**. 
+
+## <a name="granting-directory-access-to-container-user-on-linux"></a>Предоставление доступа к каталогу пользователю контейнера в Linux
+Если вы использовали [Подключение тома](https://docs.docker.com/storage/volumes/) для хранилища в параметрах создания для контейнеров Linux, вам не нужно выполнять никаких дополнительных действий, но если вы использовали привязку [BIND](https://docs.docker.com/storage/bind-mounts/) , то эти действия необходимы для правильной работы службы.
+
+Следуя принципу минимальных привилегий, чтобы ограничить права доступа для пользователей минимальными разрешениями, необходимыми для выполнения их работы, этот модуль включает пользователя (имя: абсие, идентификатор: 11000) и группа пользователей (имя: абсие, идентификатор: 11000). Если контейнер запускается в качестве **корневого** (пользователь по умолчанию является **корневым**), наша служба будет запущена как пользователь **абсие** с низким уровнем прав. 
+
+Это поведение делает настройку разрешений на путь к узлу привязывать важные данные для правильной работы службы, в противном случае произойдет сбой службы с ошибками отказа в доступе. Путь, используемый в привязке каталогов, должен быть доступен для пользователя контейнера (например, абсие 11000). Вы можете предоставить контейнеру доступ пользователя к каталогу, выполнив приведенные ниже команды на узле.
+
+```terminal
+sudo chown -R 11000:11000 <blob-dir> 
+sudo chmod -R 700 <blob-dir> 
+```
+
+Пример<br>
+`sudo chown -R 11000:11000 /srv/containerdata` <br>
+`sudo chmod -R 700 /srv/containerdata `
+
+
+Если необходимо запустить службу от имени пользователя, отличного от **абсие**, можно указать идентификатор настраиваемого пользователя в креатеоптионс в свойстве "пользователь" в манифесте развертывания. В этом случае необходимо использовать идентификатор `0`по умолчанию или корень группы.
+
+```json
+“createOptions”: { 
+  “User”: “<custom user ID>:0” 
+} 
+```
+Теперь предоставьте контейнеру доступ пользователя к каталогу.
+```terminal
+sudo chown -R <user ID>:<group ID> <blob-dir> 
+sudo chmod -R 700 <blob-dir> 
+```
 
 ## <a name="configure-log-files"></a>Настройка файлов журналов
 
-Дополнительные сведения о настройке файлов журналов для модуля [см. в](https://docs.microsoft.com/azure/iot-edge/production-checklist#set-up-logs-and-diagnostics)этих рекомендациях.
+Дополнительные сведения о настройке файлов журналов для модуля см. в этих [рекомендациях](https://docs.microsoft.com/azure/iot-edge/production-checklist#set-up-logs-and-diagnostics).
 
 ## <a name="connect-to-your-blob-storage-module"></a>Подключение к модулю хранилища BLOB-объектов
 
@@ -142,9 +173,9 @@ New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath
 В следующих примерах краткого руководства используются языки, которые также поддерживаются IoT Edge, поэтому их можно развернуть как IoT Edge модулей вместе с модулем хранилища BLOB-объектов:
 
 - [.NET](../storage/blobs/storage-quickstart-blobs-dotnet.md)
-- [Java](../storage/blobs/storage-quickstart-blobs-java.md)
+- [Java](../storage/blobs/storage-quickstart-blobs-java-v10.md)
 - [Python](../storage/blobs/storage-quickstart-blobs-python.md)
-- [Node.js](../storage/blobs/storage-quickstart-blobs-nodejs.md)
+- [Node.js](../storage/blobs/storage-quickstart-blobs-nodejs-v10.md)
 
 ## <a name="connect-to-your-local-storage-with-azure-storage-explorer"></a>Подключение к локальному хранилищу с помощью Обозреватель службы хранилища Azure
 
@@ -239,3 +270,5 @@ New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath
 ## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [развертывать хранилище BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)
+
+Оставайтесь в курсе последних обновлений и объявлений в [хранилище BLOB-объектов Azure в IOT Edge блоге](https://aka.ms/abs-iot-blogpost)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 91104b36b4821d8b1e0350d4eeb20d652de1242b
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 934300351c05b1709dc9df38909edb1bb4ae73ea
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406247"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779568"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Подключение к HDInsight (Apache Hadoop) с помощью SSH
 
@@ -52,7 +52,7 @@ Microsoft Windows не устанавливает клиенты SSH по умо
 
 * [Git](https://git-scm.com/).
 
-Существует также несколько графических SSH-клиентов, [таких как](https://www.chiark.greenend.org.uk/~sgtatham/putty/) выводимые и [MobaXterm](https://mobaxterm.mobatek.net/). Хотя эти клиенты можно использовать для подключения к HDInsight, процесс подключения отличается от использования служебной программы `ssh`. Дополнительные сведения см. в документации по используемому графическому клиенту.
+Существует также несколько графических SSH-клиентов, таких как [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) и [MobaXterm](https://mobaxterm.mobatek.net/). Хотя эти клиенты можно использовать для подключения к HDInsight, процесс подключения отличается от использования служебной программы `ssh`. Дополнительные сведения см. в документации по используемому графическому клиенту.
 
 ## <a id="sshkey"></a>Аутентификация. Ключи SSH
 
@@ -171,7 +171,9 @@ sudo service sshd restart
 
 2. После подключения по протоколу SSH используйте команду `ssh`, чтобы соединиться с рабочим узлом в кластере:
 
+        ```bash
         ssh sshuser@wn0-myhdi
+        ```
 
     Чтобы получить список имен узлов, обратитесь к разделу [Пример. Получение полного доменного имени для узлов кластера](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
 

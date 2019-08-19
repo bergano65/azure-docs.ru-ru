@@ -1,30 +1,31 @@
 ---
 title: Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Power BI | Документация Майкрософт
 description: Использование Power BI для анализа данных, хранящихся в Azure Data Lake Storage 2-го поколения
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.subservice: data-lake-storage-gen2
+ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: normesta
-ms.openlocfilehash: ea8ceddbcbc26b2dfad5ac0618b30cb8bdc052e7
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.reviewer: bensack
+ms.openlocfilehash: cb82d47be11570baf7865468c804162a20a7685f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68336469"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855470"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen2-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Power BI
 
 В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных, хранящихся в учетной записи хранения с иерархическим пространством имен (Azure Data Lake Storage 2-го поколения).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранения с иерархическим пространством имен. Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * Учетная запись хранения с иерархическим пространством имен. Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > В этой статье предполагается, что вы создали учетную запись с именем `myadlsg2`.
 > * Образец файла данных с именем `Drivers.txt` , который находится в вашей учетной записи хранения.
 > Вы можете скачать этот пример из [репозитория Git Azure Data Lake](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceDataDrivers.txt), а затем передать этот файл в учетную запись хранения.

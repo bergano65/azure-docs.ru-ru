@@ -1,6 +1,6 @@
 ---
-title: Azure v2 монитор состояния — Приступая к работе | Документация Майкрософт
-description: Краткое руководство для монитора состояния v2. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложений ASP.NET, размещенным на предприятиях, на виртуальных машинах или в Azure.
+title: Azure монитор состояния v2. Приступая к работе | Документация Майкрософт
+description: Краткое руководство по монитор состояния v2. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,29 +12,24 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 4da9d8e8efd5f70718f18b2e8e35ea6b5adf6757
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a0c836c8ef947e190a0090b3435eec1c53ded436
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734976"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326258"
 ---
-# <a name="get-started-with-status-monitor-v2"></a>Начало работы с v2 монитор состояния
+# <a name="get-started-with-status-monitor-v2"></a>Начало работы с монитор состояния v2
 
-Эта статья содержит примеры использования команд, должен работать для большинства сред.
-Инструкции зависят от коллекции PowerShell для распространения обновлений.
-Эти команды поддержки PowerShell `-Proxy` параметра.
+Эта статья содержит команды краткого руководства, которые должны работать в большинстве сред.
+Инструкции зависят от коллекция PowerShell распространения обновлений.
+Эти команды поддерживают параметр PowerShell `-Proxy` .
 
-Описание этих команд, инструкции по настройке и сведения об устранении неполадок, см. в разделе [подробные инструкции](status-monitor-v2-detailed-instructions.md).
+Описание этих команд, инструкции по настройке и сведения об устранении неполадок см. в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-> [!IMPORTANT]
-> Состояние монитора v2 в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем для рабочих нагрузок. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-## <a name="download-and-install-via-powershell-gallery"></a>Загрузить и установить с помощью коллекции PowerShell
+## <a name="download-and-install-via-powershell-gallery"></a>Загрузка и установка с помощью коллекция PowerShell
 
 ### <a name="install-prerequisites"></a>установить необходимые компоненты;
 Запустите PowerShell от имени администратора.
@@ -46,7 +41,7 @@ Install-Module -Name PowerShellGet -Force
 ``` 
 Закройте PowerShell.
 
-### <a name="install-status-monitor-v2"></a>Состояние установки отслеживать версии 2
+### <a name="install-status-monitor-v2"></a>Установка монитор состояния v2
 Запустите PowerShell от имени администратора.
 ```powershell   
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
@@ -60,11 +55,11 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 ```
     
         
-## <a name="download-and-install-manually-offline-option"></a>Скачать и установить вручную (параметр-offline)
-### <a name="download-the-module"></a>Загрузка модуля
-Вручную загрузить последнюю версию модуля [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor).
+## <a name="download-and-install-manually-offline-option"></a>Скачать и установить вручную (автономный режим)
+### <a name="download-the-module"></a>Скачать модуль
+Вручную Скачайте последнюю версию модуля из [коллекция PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor).
 
-### <a name="unzip-and-install-status-monitor-v2"></a>Распакуйте и установите монитор состояния v2
+### <a name="unzip-and-install-status-monitor-v2"></a>Распакуйте и установите монитор состояния версии 2
 ```powershell
 $pathToNupkg = "C:\Users\t\Desktop\Az.ApplicationMonitor.0.3.0-alpha.nupkg"
 $pathToZip = ([io.path]::ChangeExtension($pathToNupkg, "zip"))
@@ -79,22 +74,22 @@ Enable-ApplicationInsightsMonitoring -InstrumentationKey xxxxxxxx-xxxx-xxxx-xxxx
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Просмотр телеметрии:
 
-- [Изучение метрик](../../azure-monitor/app/metrics-explorer.md) для контроля производительности и использования.
+- [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- [Использование аналитики](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+- [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
  Добавление данных телеметрии:
 
-- [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.
-- [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и включить вызовы трассировки.
-- [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) чтобы можно было вставить трассировки и журналов вызовов.
+- [Создайте веб-тесты](monitor-web-app-availability.md) , чтобы убедиться, что ваш сайт остается активным.
+- [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
+- [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
 
-Новые возможности в версии 2 монитор состояния:
+Дополнительные возможности монитор состояния версии 2:
 
-- Просмотрите [подробные инструкции](status-monitor-v2-detailed-instructions.md) описание команды, см. здесь.
-- Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.
+- Ознакомьтесь с [подробными инструкциями](status-monitor-v2-detailed-instructions.md) для объяснения команд, найденных здесь.
+- Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.

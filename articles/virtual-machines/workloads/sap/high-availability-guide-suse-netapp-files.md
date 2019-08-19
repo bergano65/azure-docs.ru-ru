@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2019
 ms.author: radeltch
 ms.openlocfilehash: c8fcf4afa5a363d355f627be95dd7fe8131203ac
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
-ms.translationtype: MT
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67797967"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP
@@ -153,7 +153,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 4. Делегируйте подсеть в файлы Azure NetApp, как описано в [инструкциях делегирование подсети в Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
 
-5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной подсети Azure NetApp Files [](https://docs.microsoft.com/rest/api/virtualnetwork/subnets). Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. Например, sapmnt<b>Оценка качества</b>, усрсап<b>Оценка качества</b>и т. д. — это имена томов и sapmnt<b>Оценка качества, усрсап</b><b>Оценка качества</b>и т. д. — это пути к Azure NetApp Filesным томам.  
+5. Разверните Azure NetApp Files тома, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets) Azure NetApp Files. Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. Например, sapmnt<b>Оценка качества</b>, усрсап<b>Оценка качества</b>и т. д. — это имена томов<b></b>и sapmnt Оценка качества, усрсап<b>Оценка качества</b>и т. д. — это пути к Azure NetApp Filesным томам.  
 
    1. Volume sapmnt<b>Оценка качества</b> (NFS://10.1.0.4/sapmnt<b>Оценка качества</b>)
    2. Volume усрсап<b>Оценка качества</b> (NFS://10.1.0.4/usrsap<b>Оценка качества</b>)

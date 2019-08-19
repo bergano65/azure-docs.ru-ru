@@ -3,25 +3,25 @@ title: Подключение тома службы файлов Azure в слу
 description: Узнайте, как подключить том файлов Azure для сохранения состояния с помощью Экземпляров контейнеров Azure
 services: container-instances
 author: dlepow
-manager: jeconnoc
+manager: gwallace
 ms.service: container-instances
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: bc09aa500743d608c0a3a7a379fe9584c9c55e9b
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 25cac6a66baeb1587e4b5ba3f0923ca9c4394706
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657617"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68325485"
 ---
 # <a name="mount-an-azure-file-share-in-azure-container-instances"></a>Подключение общего файлового ресурса Azure с помощью службы "Экземпляры контейнеров Azure"
 
 По умолчанию в Экземплярах контейнеров Azure не отслеживается состояние. Если происходит сбой в контейнере или он завершает работу, все сведения о состоянии будут утеряны. Чтобы сохранить состояние после истечения времени существования контейнера, необходимо подключить том из внешнего хранилища. В этой статье показано, как подключить файловый ресурс Azure, созданный с помощью [файлов Azure](../storage/files/storage-files-introduction.md), для использования с Экземплярами контейнеров Azure. Служба файлов Azure предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. Использование файлового ресурса Azure с Экземплярами контейнеров Azure предоставляет функции обмена файлами, похожие на использование файлового ресурса Azure совместно с виртуальными машинами Azure.
 
 > [!NOTE]
-> Подключение общего ресурса службы файлов Azure сейчас поддерживается только для контейнеров Linux. Пока мы работаем, чтобы обеспечить все функции для контейнеров Windows, можно найти текущей платформы есть отличия в [Обзор](container-instances-overview.md#linux-and-windows-containers).
+> Подключение общего ресурса службы файлов Azure сейчас поддерживается только для контейнеров Linux. Пока мы работаем над переносом всех компонентов в контейнеры Windows, в [обзоре](container-instances-overview.md#linux-and-windows-containers) можно найти различия в текущих платформах.
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
@@ -62,9 +62,9 @@ STORAGE_KEY=$(az storage account keys list --resource-group $ACI_PERS_RESOURCE_G
 echo $STORAGE_KEY
 ```
 
-## <a name="deploy-container-and-mount-volume---cli"></a>Развертывание контейнера и подключение тома - CLI
+## <a name="deploy-container-and-mount-volume---cli"></a>Развертывание контейнера и подключение тома — CLI
 
-Чтобы подключить файловый ресурс Azure в качестве тома в контейнере с помощью Azure CLI, укажите общего ресурса и тома точку подключения при создании контейнера с [создать контейнер az][az-container-create]. Если вы выполнили предыдущие инструкции, можно подключить созданный ранее общий ресурс с помощью следующей команды для создания контейнера:
+Чтобы подключить общую папку Azure как том в контейнере с помощью Azure CLI, укажите общую папку и точку подключения тома при создании контейнера с помощью команды [AZ Container Create][az-container-create]. Если вы выполнили предыдущие инструкции, можно подключить созданный ранее общий ресурс с помощью следующей команды для создания контейнера:
 
 ```azurecli-interactive
 az container create \
@@ -79,25 +79,25 @@ az container create \
     --azure-file-volume-mount-path /aci/logs/
 ```
 
-`--dns-name-label` Значение должно быть уникальным в пределах региона Azure, где создается экземпляр контейнера. Если при выполнении команды появится сообщение об ошибке **Метка DNS-имени**, обновите значение в предыдущей команде.
+`--dns-name-label` Значение должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. Если при выполнении команды появится сообщение об ошибке **Метка DNS-имени**, обновите значение в предыдущей команде.
 
 ## <a name="manage-files-in-mounted-volume"></a>Управление файлами в подключенном томе
 
-После запуска контейнера, можно использовать простое веб-приложение, развернутое с помощью Microsoft [aci-hellofiles][aci-hellofiles] image to create small text files in the Azure file share at the mount path you specified. Obtain the web app's fully qualified domain name (FQDN) with the [az container show][az-container-show] команды:
+После запуска контейнера можно использовать простое веб-приложение, развернутое с помощью образа Microsoft [ACI-hellofiles][aci-hellofiles] , чтобы создать небольшие текстовые файлы в общей папке Azure по указанному пути подключения. Получите полное доменное имя веб-приложения (FQDN) с помощью команды [AZ Container показывать][az-container-show] :
 
 ```azurecli-interactive
 az container show --resource-group $ACI_PERS_RESOURCE_GROUP --name hellofiles --query ipAddress.fqdn --output tsv
 ```
 
-После сохранения текста, с помощью приложения, можно использовать [портала Azure][portal] or a tool like the [Microsoft Azure Storage Explorer][storage-explorer] для извлечения и проверить файл, записанный в файловый ресурс.
+После сохранения текста с помощью приложения можно использовать [портал Azure][portal] или средство, такое как [Обозреватель службы хранилища Microsoft Azure][storage-explorer] , для получения и проверки файла, записанного в общую папку.
 
-## <a name="deploy-container-and-mount-volume---yaml"></a>Развертывание контейнера и подключение тома - YAML
+## <a name="deploy-container-and-mount-volume---yaml"></a>Развертывание контейнера и подключение тома — YAML
 
-Также можно развернуть группу контейнеров и подключение тома в контейнере с помощью Azure CLI и [шаблона YAML](container-instances-multi-container-yaml.md). При развертывании группы контейнеров, состоящей из нескольких контейнеров, рекомендуется использовать шаблон YAML.
+Вы также можете развернуть группу контейнеров и подключить том в контейнере с помощью Azure CLI и [шаблона YAML](container-instances-multi-container-yaml.md). При развертывании группы контейнеров, состоящей из нескольких контейнеров, рекомендуется использовать шаблон YAML.
 
-Следующий шаблон YAML определяет группу контейнеров с помощью одного контейнера, созданных с помощью `aci-hellofiles` изображения. Контейнер монтирует общую папку Azure *acishare* созданную ранее в качестве тома. Там, где указано, введите имя и ключ учетной записи хранения, на котором размещается файловый ресурс. 
+Следующий шаблон YAML определяет группу контейнеров с одним контейнером, созданным с `aci-hellofiles` помощью образа. Контейнер подключает файловый ресурс Azure *acishare* , созданный ранее в качестве тома. Где указано, введите имя и ключ хранилища для учетной записи хранения, в которой размещена общая папка. 
 
-Как показано в примере CLI `dnsNameLabel` значение должно быть уникальным в пределах региона Azure, где создается экземпляр контейнера. Обновите значение в файле YAML, при необходимости.
+Как и в примере CLI, `dnsNameLabel` значение должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. При необходимости обновите значение в файле YAML.
 
 ```yaml
 apiVersion: '2018-10-01'
@@ -135,23 +135,23 @@ tags: {}
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-Для развертывания с помощью шаблона yaml-ФАЙЛ, сохраните выше yaml-ФАЙЛ в файл с именем `deploy-aci.yaml`, затем выполните [создать контейнер az][az-container-create] с `--file` параметр:
+Чтобы выполнить развертывание с помощью шаблона YAML, сохраните предыдущий YAML в файл с именем `deploy-aci.yaml`, а затем выполните команду [AZ Container Create][az-container-create] с `--file` параметром:
 
 ```azurecli
 # Deploy with YAML template
 az container create --resource-group myResourceGroup --file deploy-aci.yaml
 ```
-## <a name="deploy-container-and-mount-volume---resource-manager"></a>Развертывание контейнера и подключение тома — Resource Manager
+## <a name="deploy-container-and-mount-volume---resource-manager"></a>Развертывание контейнера и подключение тома — диспетчер ресурсов
 
-Помимо развертывания интерфейс командной строки и YAML, вы можете развернуть группу контейнеров и подключить том в контейнер с помощью Azure [шаблона Resource Manager](/azure/templates/microsoft.containerinstance/containergroups).
+В дополнение к развертыванию CLI и YAML можно развернуть группу контейнеров и подключить том в контейнере с помощью [шаблона Azure диспетчер ресурсов](/azure/templates/microsoft.containerinstance/containergroups).
 
 Сначала заполните массив `volumes` в разделе `properties` группы контейнеров шаблона. 
 
-Затем для каждого контейнера, в котором вы хотите подключить, заполнить `volumeMounts` массива в `properties` разделе определения контейнера.
+Затем для каждого контейнера, в котором вы хотите подключить том, заполните `volumeMounts` массив `properties` в разделе определения контейнера.
 
-Следующий шаблон Resource Manager определяет группу контейнеров с помощью одного контейнера, созданных с помощью `aci-hellofiles` изображения. Контейнер монтирует общую папку Azure *acishare* созданную ранее в качестве тома. Там, где указано, введите имя и ключ учетной записи хранения, на котором размещается файловый ресурс. 
+Следующий шаблон диспетчер ресурсов определяет группу контейнеров с одним контейнером, созданным с `aci-hellofiles` помощью образа. Контейнер подключает файловый ресурс Azure *acishare* , созданный ранее в качестве тома. Где указано, введите имя и ключ хранилища для учетной записи хранения, в которой размещена общая папка. 
 
-Как и в предыдущих примерах `dnsNameLabel` значение должно быть уникальным в пределах региона Azure, где создается экземпляр контейнера. Обновите значение в шаблоне, при необходимости.
+Как и в предыдущих примерах, `dnsNameLabel` значение должно быть уникальным в пределах региона Azure, в котором создается экземпляр контейнера. При необходимости обновите значение в шаблоне.
 
 ```JSON
 {
@@ -220,7 +220,7 @@ az container create --resource-group myResourceGroup --file deploy-aci.yaml
 }
 ```
 
-Чтобы развернуть с помощью шаблона Resource Manager, сохраните вышеупомянутого JSON-файла в файл с именем `deploy-aci.json`, затем выполните [Создание развертывания группы az][az-group-deployment-create] с `--template-file` параметр:
+Чтобы выполнить развертывание с помощью шаблона диспетчер ресурсов, сохраните предыдущий JSON в файл с именем `deploy-aci.json`, а затем выполните команду [AZ Group Deployment Create][az-group-deployment-create] с `--template-file` параметром:
 
 ```azurecli
 # Deploy with Resource Manager template
@@ -230,9 +230,9 @@ az group deployment create --resource-group myResourceGroup --template-file depl
 
 ## <a name="mount-multiple-volumes"></a>Подключение нескольких томов
 
-Чтобы подключить несколько томов в экземпляре контейнера, необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups) или yaml-файла. Чтобы использовать шаблон или файл YAML, предоставляют сведения о файловом ресурсе и определите тома, заполнив `volumes` массива в `properties` раздел шаблона. 
+Чтобы подключить несколько томов в экземпляре контейнера, необходимо выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups) или yaml-файла. Чтобы использовать шаблон или файл YAML, укажите сведения об общем ресурсе и определите тома, заполнив `volumes` массив `properties` в разделе шаблона. 
 
-Например, если вы создали два файловых ресурсах Azure с именем *share1* и *share2* в учетной записи хранения *myStorageAccount*, `volumes` массива в Resource Manager шаблон будет выглядеть следующим образом:
+Например, если вы создали две общие папки службы файлов Azure с именами *share1* и *share2* в учетной записи `volumes` хранения *myStorageAccount*, массив в шаблоне диспетчер ресурсов будет выглядеть следующим образом:
 
 ```JSON
 "volumes": [{

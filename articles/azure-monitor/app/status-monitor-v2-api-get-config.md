@@ -1,6 +1,6 @@
 ---
-title: 'Монитор состояния v2 Справочник по API Azure: Получить конфигурацию | Документация Майкрософт'
-description: Справочник по API v2 монитор состояния. Get-ApplicationInsightsMonitoringConfig. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложений ASP.NET, размещенным на предприятиях, на виртуальных машинах или в Azure.
+title: 'Справочник по API Azure монитор состояния v2: Получить конфигурацию | Документация Майкрософт'
+description: Справочник по API монитор состояния v2. Get-Аппликатионинсигхтсмониторингконфиг. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,25 +12,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 7eaaaa2dd7b22d138ea2f0a52d0bf0a1b2eab026
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 9e1b3242a96bfaadfe6f791e0ca9bf25262065e2
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807090"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326325"
 ---
-# <a name="status-monitor-v2-api-get-applicationinsightsmonitoringconfig-v040-alpha"></a>Состояние монитора v2 API: Get-ApplicationInsightsMonitoringConfig (v0.4.0-альфа-версия)
+# <a name="status-monitor-v2-api-get-applicationinsightsmonitoringconfig"></a>API монитор состояния v2: Get-Аппликатионинсигхтсмониторингконфиг
 
-В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
-
-> [!IMPORTANT]
-> Состояние монитора v2 в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем для рабочих нагрузок. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
 ## <a name="description"></a>Описание
 
-Получает файл конфигурации и печатает значения на консоль.
+Возвращает файл конфигурации и выводит значения на консоль.
 
 > [!IMPORTANT] 
 > Для этого командлета требуется сеанс PowerShell с разрешениями администратора.
@@ -43,12 +38,12 @@ PS C:\> Get-ApplicationInsightsMonitoringConfig
 
 ## <a name="parameters"></a>Параметры
 
-Нет необходимых параметров.
+Параметры не требуются.
 
 ## <a name="output"></a>Вывод
 
 
-#### <a name="example-output-from-reading-the-config-file"></a>Пример выходных данных из чтения файла конфигурации
+#### <a name="example-output-from-reading-the-config-file"></a>Пример выходных данных чтения файла конфигурации
 
 ```
 RedfieldConfiguration:
@@ -61,16 +56,16 @@ Filters:
 ## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
- - [Изучение метрик](../../azure-monitor/app/metrics-explorer.md) для контроля производительности и использования.
+ - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- Используйте [analytics](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+- Используйте [аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
  
  Добавление данных телеметрии:
- - [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.
-- [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и включить вызовы трассировки.
-- [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) чтобы можно было вставить трассировки и журналов вызовов.
+ - [Создайте веб-тесты](monitor-web-app-availability.md) , чтобы убедиться, что ваш сайт остается активным.
+- [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
+- [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
  
- Новые возможности в версии 2 монитор состояния:
- - Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.
- - Вносить изменения в файл конфигурации с помощью [Set config](status-monitor-v2-api-set-config.md) командлета.
+ Дополнительные возможности монитор состояния версии 2:
+ - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.
+ - Внесите изменения в конфигурацию с помощью командлета [set config](status-monitor-v2-api-set-config.md) .

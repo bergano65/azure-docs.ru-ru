@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 462625ce61f4538aa0769667648e07cc6307cbb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2a6c63c4ae58079c79a9d344f1e2550e4768088f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61023637"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932238"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -26,10 +26,10 @@ ms.locfileid: "61023637"
 *  **Процесс**. Пользователи могут подключаться к базе данных и выполнять операции обработки, а также анализировать данные шаблона базы данных.
 *  **Чтение**. Пользователи могут использовать клиентское приложение, чтобы подключиться к шаблону базы данных и анализировать его данные.
 
-При создании проекта табличной модели вы можете создать роли и добавить пользователей или группы в эти роли с помощью диспетчера ролей в SSDT. При развертывании на сервере вы можете использовать SSMS, [командлеты PowerShell для служб Analysis Services](/sql/analysis-services/powershell/analysis-services-powershell-reference) или [язык сценариев табличной модели](https://msdn.microsoft.com/library/mt614797.aspx) (TMSL), чтобы добавить или удалить роли и участников пользователей.
+При создании проекта табличной модели вы создаете роли и добавляете пользователей или группы к этим ролям с помощью диспетчера ролей в SQL Server Data Tools (SSDT). При развертывании на сервере вы используете SQL Server Management Studio (SSMS), [Analysis Services командлеты PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference)или [язык сценариев табличных моделей](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) для добавления и удаления ролей и членов пользователей.
 
-> [!NOTE]
-> У групп безопасности свойство `MailEnabled` должно иметь значение `True`.
+Для **групп безопасности** необходимо включить [поддержку почты](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups), если свойство `MailEnabled` имеет значение `True`. При указании группы по адресу электронной `obj:groupid@tenantid`почты используйте.
+
 
 ## <a name="to-add-or-manage-roles-and-users-in-ssdt"></a>Чтобы добавить роли и пользователей в SSDT или управлять ими, сделайте следующее:  
   
@@ -86,7 +86,7 @@ ms.locfileid: "61023637"
 
 ## <a name="to-add-roles-and-users-by-using-a-tmsl-script"></a>Добавление ролей и пользователей с помощью сценария TMSL
 
-Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-objects/roles-object-tmsl).
+Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/bi-reference/tmsl/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/bi-reference/tmsl/roles-object-tmsl).
 
 **Пример скрипта TMSL**
 
@@ -120,13 +120,13 @@ ms.locfileid: "61023637"
 
 ## <a name="to-add-roles-and-users-by-using-powershell"></a>Добавление ролей и пользователей с помощью PowerShell
 
-Модуль [SqlServer](/sql/analysis-services/powershell/analysis-services-powershell-reference) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
+Модуль [SqlServer](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
   
 |Командлет|Описание|
 |------------|-----------------| 
-|[Add-RoleMember](/sql/analysis-services/powershell/analysis-services-powershell-reference)|Добавление участника в роль базы данных.| 
-|[Remove-RoleMember](/sql/analysis-services/powershell/analysis-services-powershell-reference)|Удаление участника из роли базы данных.|   
-|[Invoke-ASCmd](/sql/analysis-services/powershell/analysis-services-powershell-reference)|Выполнение сценария TMSL.|
+|[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
+|[Remove-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/remove-rolemember)|Удаление участника из роли базы данных.|   
+|[Invoke-ASCmd](https://docs.microsoft.com/powershell/module/sqlserver/invoke-ascmd)|Выполнение сценария TMSL.|
 
 ## <a name="row-filters"></a>Фильтры строк  
 
@@ -140,7 +140,7 @@ ms.locfileid: "61023637"
   
 |Таблица|Выражение DAX|  
 |-----------|--------------------|  
-|Регион|=Region[Country]="USA"|  
+|Район|=Region[Country]="USA"|  
 |Категория продукта|=ProductCategory[Name]="Bicycles"|  
 |Транзакции|=Transactions[Year]=2016|  
   
@@ -148,9 +148,9 @@ ms.locfileid: "61023637"
   
  Вы можете использовать фильтр *=FALSE()* , чтобы запретить доступ ко всем строкам для всей таблицы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   [Управление администраторами сервера](analysis-services-server-admins.md)   
   [Управление службами Azure Analysis Services с помощью PowerShell](analysis-services-powershell.md)  
-  [Справочник по языку TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference)
+  [Справочник по языку TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference)
 

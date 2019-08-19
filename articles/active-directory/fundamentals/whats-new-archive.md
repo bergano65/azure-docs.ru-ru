@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/28/2019
+ms.date: 07/31/2019
 ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6935d2a89968b55dec1626d23b3f290261cf66f
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: b338ad90c01c109cc9b2e222f1d7bcaa09f20346
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67655447"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812954"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -31,6 +31,94 @@ ms.locfileid: "67655447"
 - Исправления ошибок
 - Нерекомендуемые функции.
 - Планы по изменениям.
+
+---
+
+## <a name="january-2019"></a>Январь 2019 г.
+
+### <a name="active-directory-b2b-collaboration-using-one-time-passcode-authentication-public-preview"></a>Совместная работа в службе Active Directory B2B с использованием аутентификации на основе одноразового секретного кода (общедоступная предварительная версия)
+
+**Тип:** Новая функция  
+**Категория службы:** B2B  
+**Возможности продукта:** B2B/B2C
+
+Мы реализовали функцию аутентификации на основе одноразового секретного кода (OTP) для гостевых пользователей B2B, которые не могут пройти аутентификацию с помощью других средств, таких как Azure AD, учетная запись Майкрософт (MSA) или федерация с Google. Этот новый метод аутентификации означает, что гостевым пользователям не нужно создавать новую учетную запись Майкрософт. Вместо этого при активации приглашения или доступе к общему ресурсу гостевой пользователь может запросить временный код, который будет отправлен на его адрес электронной почты. Гостевой пользователь может войти, используя этот временный код.
+
+Дополнительные сведения см. в статье [Проверка подлинности с отправкой одноразового секретного кода по почте (предварительная версия)](https://docs.microsoft.com/azure/active-directory/b2b/one-time-passcode) и в записи блога [Azure AD makes sharing and collaboration seamless for any user with any account](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-makes-sharing-and-collaboration-seamless-for-any-user/ba-p/325949) (Azure AD упрощает совместную работу для любого пользователя с любой учетной записью).
+
+### <a name="new-azure-ad-application-proxy-cookie-settings"></a>Новые параметры файлов cookie Azure Active Directory Application Proxy
+
+**Тип:** Новая функция  
+**Категория службы:** Прокси приложения  
+**Возможности продукта:** Контроль доступа
+
+Добавлено три новых параметра файлов cookie, доступных для приложений, которые опубликованы с помощью Application Proxy.
+
+- **Использовать cookie-файлы HTTP-Only.** Устанавливает флаг **HTTPOnly** для файлов cookie доступа и сеанса на Application Proxy. Применение этого параметра обеспечивает дополнительные преимущества безопасности, например, помогает предотвратить копирование или изменение файлов cookie с помощью написания скриптов на стороне клиента. Рекомендуется включить этот флаг (выберите **Да**) для дополнительных преимуществ.
+
+- **Использовать безопасный файл cookie.** Устанавливает флаг **Безопасный** для файлов cookie доступа и сеанса в прокси приложении. Применение этого параметра обеспечивает дополнительные преимущества безопасности, обеспечивая передачу файлов cookie только по безопасным каналам TLS, например HTTPS. Рекомендуется включить этот флаг (выберите **Да**) для дополнительных преимуществ.
+
+- **Сохранять файлы сookie.** Предотвращает файлы cookie доступа от истечения срока действия, когда веб-браузер закрыт. Эти файлы cookie действуют в течение времени существования маркера доступа. Тем не менее файлы cookie сбрасываются при достижении времени истечения срока действия, или если пользователь вручную удаляет файл cookie. Мы рекомендуем оставить по умолчанию параметр **Нет** и применять его только для более старых приложений, которые не отправляют файлы cookie между процессами.
+
+Дополнительные сведения о новых файлах cookie см. в разделе [Параметры файлов cookie для доступа к локальным приложениям в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-cookie-settings).
+
+---
+
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---january-2019"></a>Новые федеративные приложения доступные в коллекции приложений Azure AD — январь 2019
+
+**Тип:** Новая функция  
+**Категория службы:** корпоративные приложения  
+**Возможности продукта:** Интеграция сторонних продуктов
+ 
+В январе 2019 года мы добавили 35 новых приложений с поддержкой федерации в коллекцию приложений:
+
+[Firstbird](https://docs.microsoft.com/azure/active-directory/saas-apps/firstbird-tutorial), [Folloze](https://docs.microsoft.com/azure/active-directory/saas-apps/folloze-tutorial), [Talent Palette](https://docs.microsoft.com/azure/active-directory/saas-apps/talent-palette-tutorial), [Infor CloudSuite](https://docs.microsoft.com/azure/active-directory/saas-apps/infor-cloud-suite-tutorial), [Cisco Umbrella](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-umbrella-tutorial), [Zscaler Internet Access Administrator](https://docs.microsoft.com/azure/active-directory/saas-apps/zscaler-internet-access-administrator-tutorial), [Expiration Reminder](https://docs.microsoft.com/azure/active-directory/saas-apps/expiration-reminder-tutorial), [InstaVR Viewer](https://docs.microsoft.com/azure/active-directory/saas-apps/instavr-viewer-tutorial), [CorpTax](https://docs.microsoft.com/azure/active-directory/saas-apps/corptax-tutorial), [Verb](https://app.verb.net/login), [OpenLattice](https://openlattice.com/agora), [TheOrgWiki](https://www.theorgwiki.com/signup), [Pavaso Digital Close](https://docs.microsoft.com/azure/active-directory/saas-apps/pavaso-digital-close-tutorial), [GoodPractice Toolkit](https://docs.microsoft.com/azure/active-directory/saas-apps/goodpractice-toolkit-tutorial), [Cloud Service PICCO](https://docs.microsoft.com/azure/active-directory/saas-apps/cloud-service-picco-tutorial), [AuditBoard](https://docs.microsoft.com/azure/active-directory/saas-apps/auditboard-tutorial), [iProva](https://docs.microsoft.com/azure/active-directory/saas-apps/iprova-tutorial), [Workable](https://docs.microsoft.com/azure/active-directory/saas-apps/workable-tutorial), [CallPlease](https://webapp.callplease.com/create-account/create-account.html), [GTNexus SSO System](https://docs.microsoft.com/azure/active-directory/saas-apps/gtnexus-sso-module-tutorial), [CBRE ServiceInsight](https://docs.microsoft.com/azure/active-directory/saas-apps/cbre-serviceinsight-tutorial), [Deskradar](https://docs.microsoft.com/azure/active-directory/saas-apps/deskradar-tutorial), [Coralogixv](https://docs.microsoft.com/azure/active-directory/saas-apps/coralogix-tutorial), [Signagelive](https://docs.microsoft.com/azure/active-directory/saas-apps/signagelive-tutorial), [ARES for Enterprise](https://docs.microsoft.com/azure/active-directory/saas-apps/ares-for-enterprise-tutorial), [K2 for Office 365](https://www.k2.com/O365), [Xledger](https://www.xledger.net/), [iDiD Manager](https://docs.microsoft.com/azure/active-directory/saas-apps/idid-manager-tutorial), [HighGear](https://docs.microsoft.com/azure/active-directory/saas-apps/highgear-tutorial), [Visitly](https://docs.microsoft.com/azure/active-directory/saas-apps/visitly-tutorial), [Korn Ferry ALP](https://docs.microsoft.com/azure/active-directory/saas-apps/korn-ferry-alp-tutorial), [Acadia](https://docs.microsoft.com/azure/active-directory/saas-apps/acadia-tutorial), [Adoddle cSaas Platform](https://docs.microsoft.com/azure/active-directory/saas-apps/adoddle-csaas-platform-tutorial)<!-- , [CaféX Portal (Meetings)](https://docs.microsoft.com/azure/active-directory/saas-apps/cafexportal-meetings-tutorial), [MazeMap Link](https://docs.microsoft.com/azure/active-directory/saas-apps/mazemaplink-tutorial)-->  
+
+Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](https://aka.ms/appstutorial). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](https://aka.ms/azureadapprequest).
+
+---
+
+### <a name="new-azure-ad-identity-protection-enhancements-public-preview"></a>Новые улучшения защиты идентификации Azure AD (общедоступная предварительная версия)
+
+**Тип:** Измененная функция  
+**Категория службы:** Identity Protection  
+**Возможности продукта.** Защита удостоверений
+
+Рады сообщить, что мы добавили следующие усовершенствования для общедоступной предварительной версии Защиты идентификации Azure AD, включая:
+
+- обновленный и более интегрированный пользовательский интерфейс;
+
+- дополнительные программные интерфейсы;
+
+- улучшенная оценка риска с помощью машинного обучения;
+
+- выравнивание продукта для пользователей, представляющих риск и рискованные входы в систему.
+
+Дополнительные сведения об усовершенствованиях см. статью [Что такое Защита идентификации Azure Active Directory (обновленная)?](https://aka.ms/IdentityProtectionDocs), чтобы узнать больше и поделиться своими мыслями с помощью запросов внутри продукта.
+
+---
+
+### <a name="new-app-lock-feature-for-the-microsoft-authenticator-app-on-ios-and-android-devices"></a>Новая функция блокировки приложения для приложения Microsoft Authenticator на устройствах iOS и Android
+
+**Тип:** Новая функция  
+**Категория службы:** Приложение Microsoft Authenticator  
+**Возможности продукта:** Защита удостоверений
+
+Чтобы обеспечить большую безопасность ваших одноразовых секретных кодов, информации о приложении и параметров приложения, вы можете включить функцию "Блокировка приложения" в приложении Microsoft Authenticator. Если включить функцию "Блокировка приложения", то каждый раз, когда вы открываете приложение Microsoft Authenticator, вам будет предлагаться использовать PIN-код или биометрические данные для прохождения аутентификации.
+
+Дополнительные сведения можно найти в статье [Часто задаваемые вопросы о приложении Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/microsoft-authenticator-app-faq).
+
+---
+
+### <a name="enhanced-azure-ad-privileged-identity-management-pim-export-capabilities"></a>Улучшенные возможности экспорта Azure AD Privileged Identity Management
+
+**Тип:** Новая функция  
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
+
+Администраторы Azure AD Privileged Identity Management теперь могут экспортировать все активные и допустимые назначения ролей для определенного ресурса, включая назначения ролей для всех дочерних ресурсов. Ранее для администраторов возникали трудности при получении полного списка назначения ролей для подписки, и им было необходимо экспортировать назначения ролей для каждого конкретного ресурса.
+
+Дополнительные сведения см. в статье [Просмотр пользователей с ролями службы Azure в PIM](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/azure-pim-resource-rbac).
 
 ---
 
@@ -55,13 +143,13 @@ ms.locfileid: "67655447"
 
 - **Поэтапное крупномасштабное изменение ImmutableID для нескольких пользователей**
   
-  Например, вам необходимо выполнить длительную миграцию между лесами AD DS. Решение. Используйте Azure AD Connect для **настройки привязки к источнику** и по мере миграции пользователей копируйте существующие значения ImmutableID из Azure AD в атрибут ms-DS-Consistency-Guid локального пользователя AD DS в новом лесу. Дополнительные сведения см. в статье, посвященной [использованию ms-DS-ConsistencyGuid в качестве sourceAnchor](/azure/active-directory/hybrid/plan-connect-design-concepts#using-ms-ds-consistencyguid-as-sourceanchor).
+  Например, вам необходимо выполнить длительную миграцию между лесами AD DS. Решение: Используйте Azure AD Connect для **настройки привязки к источнику** и по мере миграции пользователей копируйте существующие значения ImmutableID из Azure AD в атрибут ms-DS-Consistency-Guid локального пользователя AD DS в новом лесу. Дополнительные сведения см. в статье, посвященной [использованию ms-DS-ConsistencyGuid в качестве sourceAnchor](/azure/active-directory/hybrid/plan-connect-design-concepts#using-ms-ds-consistencyguid-as-sourceanchor).
 
 - **Крупномасштабное изменение ImmutableID для нескольких пользователей за один раз**
 
-  Например, при реализации Azure AD Connect вы сделали ошибку и теперь необходимо изменить атрибут SourceAnchor. Решение. Отключите DirSync на уровне клиента и очистите все недопустимые значения ImmutableID. Дополнительные сведения см. в статье, посвященной [отключению синхронизации каталогов для Office 365](/office365/enterprise/turn-off-directory-synchronization).
+  Например, при реализации Azure AD Connect вы сделали ошибку и теперь необходимо изменить атрибут SourceAnchor. Решение: Отключите DirSync на уровне клиента и очистите все недопустимые значения ImmutableID. Дополнительные сведения см. в статье, посвященной [отключению синхронизации каталогов для Office 365](/office365/enterprise/turn-off-directory-synchronization).
 
-- **Повторное сопоставление локального пользователя с существующим пользователем в Azure AD**. Например, повторное создание пользователя AD DS приводит к появлению дубликата учетной записи Azure AD вместо его повторного сопоставления с существующей учетной записью Azure AD (потерянный объект). Решение. Используйте Azure AD Connect Health на портале Azure для повторного сопоставления источника привязки или атрибута ImmutableID. Дополнительные сведения см. в статье [Сценарий с потерянным объектом](/azure/active-directory/hybrid/how-to-connect-health-diagnose-sync-errors#orphaned-object-scenario).
+- **Повторное сопоставление локального пользователя с существующим пользователем в Azure AD**. Например, повторное создание пользователя AD DS приводит к появлению дубликата учетной записи Azure AD вместо его повторного сопоставления с существующей учетной записью Azure AD (потерянный объект). Решение: Используйте Azure AD Connect Health на портале Azure для повторного сопоставления источника привязки или атрибута ImmutableID. Дополнительные сведения см. в статье [Сценарий с потерянным объектом](/azure/active-directory/hybrid/how-to-connect-health-diagnose-sync-errors#orphaned-object-scenario).
 
 ### <a name="breaking-change-updates-to-the-audit-and-sign-in-logs-schema-through-azure-monitor"></a>Критическое изменение: обновления схемы журналов аудита и входа в систему для Azure Monitor
 
@@ -79,9 +167,9 @@ ms.locfileid: "67655447"
 
 |Имя поля|Изменения|Прежние значения|Новые значения|
 |----------|------------|----------|----------|
-|Категория|Это было поле **Service Name** (Имя службы). Теперь оно называется **Audit Categories** (Категории аудита). Поле **Service Name** (Имя службы) было переименовано в **loggedByService**.|<ul><li>"Account Provisioning" (Подготовка учетных записей).</li><li>"Core Directory" (Основной каталог);</li><li>"Self-service Password Reset" (Самостоятельный сброс пароля);</li></ul>|<ul><li>Управление пользователями</li><li>Управление группами</li><li>"App Management" (Управление приложениями).</li></ul>|
+|Категория|Это было поле **Service Name** (Имя службы). Теперь оно называется **Audit Categories** (Категории аудита). Поле **Service Name** (Имя службы) было переименовано в **loggedByService**.|<ul><li>Подготовка учетных записей</li><li>"Core Directory" (Основной каталог);</li><li>"Self-service Password Reset" (Самостоятельный сброс пароля);</li></ul>|<ul><li>Управление пользователями</li><li>Управление группами</li><li>"App Management" (Управление приложениями).</li></ul>|
 |targetResources|Включает в себя **TargetResourceType** на верхнем уровне.|&nbsp;|<ul><li>Политика</li><li>Приложение</li><li>пользователя</li><li>Группа</li></ul>|
-|loggedByService|Указывает имя службы, создавшей журнала аудита.|Null|<ul><li>"Account Provisioning" (Подготовка учетных записей).</li><li>"Core Directory" (Основной каталог);</li><li>Самостоятельный сброс пароля</li></ul>|
+|loggedByService|Указывает имя службы, создавшей журнала аудита.|NULL|<ul><li>Подготовка учетных записей</li><li>"Core Directory" (Основной каталог);</li><li>Самостоятельный сброс пароля</li></ul>|
 |Результат|Содержит результат журналов аудита. Ранее это значение перечислялось, но теперь отображается фактическое значение.|<ul><li>0</li><li>1</li></ul>|<ul><li>Success</li><li>Сбой</li></ul>|
 
 #### <a name="changed-fields-in-the-sign-in-schema"></a>Измененные поля в схеме входа в систему
@@ -90,8 +178,8 @@ ms.locfileid: "67655447"
 |Имя поля|Изменения|Прежние значения|Новые значения|
 |----------|------------|----------|----------|
 |appliedConditionalAccessPolicies|Ранее это поле называлось **conditionalaccessPolicies**. Теперь оно называется **conditionalaccessPolicies**.|Без изменения.|Без изменения.|
-|conditionalAccessStatus|Содержит результат состояния политики условного доступа при входе в систему. Ранее это значение перечислялось, но теперь отображается фактическое значение.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Success</li><li>Сбой</li><li>Неприменимо</li><li>Отключено</li></ul>|
-|appliedConditionalAccessPolicies: result|Содержит результат состояния отдельной политики условного доступа при входе в систему. Ранее это значение перечислялось, но теперь отображается фактическое значение.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Success</li><li>Сбой</li><li>Неприменимо</li><li>Отключено</li></ul>|
+|conditionalAccessStatus|Содержит результат состояния политики условного доступа при входе в систему. Ранее это значение перечислялось, но теперь отображается фактическое значение.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Success</li><li>Сбой</li><li>Неприменимо</li><li>отключено</li></ul>|
+|appliedConditionalAccessPolicies: result|Содержит результат состояния отдельной политики условного доступа при входе в систему. Ранее это значение перечислялось, но теперь отображается фактическое значение.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Success</li><li>Сбой</li><li>Неприменимо</li><li>отключено</li></ul>|
 
 Дополнительные сведения о схеме см. в разделе [Интерпретация схемы журналов аудита Azure AD в Azure Monitor (предварительная версия)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema).
 
@@ -100,7 +188,7 @@ ms.locfileid: "67655447"
 ### <a name="identity-protection-improvements-to-the-supervised-machine-learning-model-and-the-risk-score-engine"></a>Улучшения защиты идентификации для контролируемой модели машинного обучения и подсистемы оценки риска
 
 **Тип:** Измененная функция  
-**Категория службы:** Защита идентификации  
+**Категория службы:** Identity Protection  
 **Возможности продукта:** Оценка рисков
 
 Улучшения подсистемы оценки риска пользователя и риска при входе, связанные с защитой идентификации, могут повысить точность и охват при оценке риска пользователя. Администраторы могут заметить, что уровень риска пользователя больше не связан напрямую с уровнем риска определенных случаев обнаружения, а число и уровень рискованных событий входа в систему возросли.
@@ -113,7 +201,7 @@ ms.locfileid: "67655447"
 
 **Тип:** Измененная функция  
 **Категория службы:** Самостоятельный сброс пароля  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 Администраторы Azure AD теперь могут сбросить свой пароль с помощью уведомлений приложения Microsoft Authenticator, кода из любого мобильного приложения Authenticator или аппаратного токена. Чтобы сбросить свой пароль, администраторы теперь могут использовать два из следующих методов:
 
@@ -121,11 +209,11 @@ ms.locfileid: "67655447"
 
 - другое мобильное приложение Authenticator или код аппаратного токена;
 
-- Email
+- Адрес эл. почты
 
 - Телефонный звонок
 
-- Текстовое сообщение
+- SMS
 
 Дополнительные сведения об использовании приложения Microsoft Authenticator для сброса паролей см. в разделе [Мобильное приложение и SSPR (предварительная версия)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr-preview).
 
@@ -135,7 +223,7 @@ ms.locfileid: "67655447"
 
 **Тип:** Новая функция  
 **Категория службы:** регистрация устройств и управление ими  
-**Возможности продукта:** Управление доступом
+**Возможности продукта:** Контроль доступа
 
 Администраторы могут назначать пользователям новую роль "Администратор облачных устройств" для выполнения операций администрирования облачных устройств. Пользователи с этой ролью могут включать, отключать и удалять устройства в Azure AD, а также считывать ключи BitLocker в Windows 10 (при наличии) на портале Azure.
 
@@ -149,54 +237,54 @@ ms.locfileid: "67655447"
 **Категория службы:** регистрация устройств и управление ими  
 **Возможности продукта:** управление жизненным циклом устройств
 
-Мы понимаем, что со временем необходимо обновить и снятие с учета устройств вашей организации в Azure AD, чтобы избежать устаревших устройств в вашей среде. Чтобы упростить этот процесс, теперь служба Azure AD обновляет устройства с помощью новой метки времени действия, помогая управлять жизненным циклом устройств.
+Мы понимаем, что с течением времени необходимо обновить и снять с учета устройства вашей организации в Azure AD, чтобы избежать устаревших устройств в вашей среде. Чтобы упростить этот процесс, теперь служба Azure AD обновляет устройства с помощью новой метки времени действия, помогая управлять жизненным циклом устройств.
 
 Дополнительные сведения о том, как получить и использовать эту метку времени, см. в разделе [Практическое руководство. Управление устаревшими устройствами в Azure AD](https://docs.microsoft.com/azure/active-directory/devices/manage-stale-devices).
 
 ---
 
-### <a name="administrators-can-require-users-to-accept-a-terms-of-use-on-each-device"></a>Администраторы могут потребовать от пользователей принять условия использования на каждом устройстве
+### <a name="administrators-can-require-users-to-accept-a-terms-of-use-on-each-device"></a>Администраторы могут требовать от пользователей принять условия использования на каждом устройстве.
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
 **Возможности продукта:** Система управления
  
-Администраторы теперь могут включать **пользователям необходимо дать согласие на каждом устройстве** параметр, чтобы указать ваших пользователей принять условия использования для каждого устройства, они используют на клиенте.
+Теперь администраторы могут включить параметр **требовать согласие пользователей на каждое устройство** , чтобы требовать от пользователей принять условия использования на каждом устройстве, которое они используют в вашем клиенте.
 
-Дополнительные сведения см. в разделе [каждого устройства условия использования раздела условий Azure Active Directory используйте функцию](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
+Дополнительные сведения см. в [разделе условия использования для каждого устройства статьи Azure Active Directory условия использования](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
 
 ---
 
-### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-a-recurring-schedule"></a>Администраторы могут настроить условия использования, чтобы хранить согласно повторяющемуся расписанию
+### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-a-recurring-schedule"></a>Администраторы могут настроить условия использования для истечения срока действия с учетом повторяющегося расписания.
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
 **Возможности продукта:** Система управления
  
 
-Администраторы теперь могут включать **истекает согласие** параметр, определяющий условия использования, срока действия для всех пользователей на основе вашего указанного расписания повторения. Расписание может повторяться один раз в год, два раза в год, ежеквартально или ежемесячно. После истечения срока действия условия использования, пользователи должны повторно приняли.
+Теперь администраторы могут включить параметр **истечение срока действия** , чтобы срок действия условий использования истек для всех пользователей в зависимости от указанного повторяющегося расписания. Расписание может повторяться один раз в год, два раза в год, ежеквартально или ежемесячно. После истечения срока действия условий использования пользователи должны принять условия.
 
-Дополнительные сведения см. в разделе [Добавление условий использования раздела условий Azure Active Directory используйте функцию](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
+Дополнительные сведения см. в [разделе Добавление условий использования функции Azure Active Directory условий использования](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
 
 ---
 
-### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-each-users-schedule"></a>Администраторы могут настроить условия использования, срок действия на основе расписания для каждого пользователя
+### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-each-users-schedule"></a>Администраторы могут настроить условия использования для истечения срока действия в зависимости от расписания каждого пользователя.
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
 **Возможности продукта:** Система управления
 
-Администраторы теперь могут указать длительность этот пользователь должен повторно приняли условия использования. Например Администраторы могут указать, что пользователи должны повторно приняли условия использования каждые 90 дней.
+Теперь администраторы могут указать длительность, в течение которого пользователь должен снова принять условия использования. Например, администраторы могут указать, что пользователи должны снова принимать условия использования каждые 90 дней.
 
-Дополнительные сведения см. в разделе [Добавление условий использования раздела условий Azure Active Directory используйте функцию](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
+Дополнительные сведения см. в [разделе Добавление условий использования функции Azure Active Directory условий использования](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
  
 ---
 
-### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Новые электронные сообщения Azure AD Privileged Identity Management (PIM) для ролей Azure Active Directory
+### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Новые оповещения Azure AD Privileged Identity Management (PIM) по электронной почте для ролей Azure Active Directory
 
 **Тип:** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Клиенты, использующие Azure AD Privileged Identity Management (PIM), теперь могут получать еженедельные дайджесты по электронной почте, включая приведенные ниже сведения за последние семь дней:
 
@@ -217,7 +305,7 @@ ms.locfileid: "67655447"
 ### <a name="group-based-licensing-is-now-generally-available"></a>Выпущена общедоступная версия группового лицензирования
 
 **Тип:** Измененная функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** Каталог
 
 Период предоставления общедоступной предварительной версии группового лицензирования завершен, и теперь выпущена общедоступная версия этой функции. В рамках данного общедоступного выпуска мы сделали эту функцию более масштабируемой. Кроме того, мы добавили возможность повторной обработки назначений группового лицензирования для отдельного пользователя и возможность использовать групповое лицензирование с лицензиями E3 или A3 в Office 365.
@@ -242,7 +330,7 @@ ms.locfileid: "67655447"
 
 ## <a name="october-2018"></a>Октябрь 2018 г.
 
-### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Возможность работать с журналами Azure AD в Azure Log Analytics (предварительная версия)
+### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Журналы Azure AD теперь совместимы с Azure Log Analytics (общедоступная предварительная версия)
 
 **Тип:** Новая функция  
 **Категория службы:** Отчеты  
@@ -252,7 +340,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>В коллекции приложений Azure AD доступны новые федеративные приложения (октябрь 2018 г.)
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>Новые федеративные приложения, доступные в коллекции приложений Azure AD — октябрь 2018 г.
 
 **Тип:** Новая функция  
 **Категория службы:** корпоративные приложения  
@@ -266,11 +354,11 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="azure-ad-domain-services-email-notifications"></a>Уведомления по электронной почте для доменных служб Azure AD
+### <a name="azure-ad-domain-services-email-notifications"></a>Уведомления по электронной почте для доменных служб Azure AD
 
 **Тип:** Новая функция  
-**Категория службы:** Доменные службы Azure AD  
-**Возможности продукта:** Доменные службы Azure AD
+**Категория службы:** Доменные службы Azure AD  
+**Возможности продукта:** Доменные службы Azure AD
 
 Доменные службы Azure AD отображают на портале Azure оповещения об ошибках в настройках или проблемах с управляемым доменом. Эти оповещения содержат пошаговые инструкции, с помощью которых можно попытаться устранить проблемы без обращения в службу поддержки.
 
@@ -280,7 +368,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>Портал Azure AD поддерживает использование API управления доменами ForceDelete для удаления пользовательских доменов 
+### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>Портал Azure AD поддерживает использование API домена ForceDelete для удаления пользовательских доменов 
 
 **Тип:** Измененная функция  
 **Категория службы:** Управление каталогом  
@@ -296,17 +384,17 @@ ms.locfileid: "67655447"
 
 ## <a name="september-2018"></a>Сентябрь 2018 г.
  
-### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Обновление разрешений роли администратора для динамических групп
+### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Изменение разрешений роли администратора для динамических групп
 
 **Тип:** исправление  
 **Категория службы:** Управление группами  
-**Возможности продукта:** Совместная работа
+**Возможности продукта:** Взаимодействие
 
 Мы исправили проблему, которая не позволяла некоторым ролям администратора создавать и обновлять правила динамического членства, не являясь владельцем группы.
 
 Вот эти роли:
 
-- Глобальный администратор.
+- Глобальный администратор
 
 - Администратор Intune
 
@@ -316,7 +404,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Упрощенные параметры конфигурации единого входа (SSO) для некоторых сторонних приложений
+### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Упрощены параметры конфигурации единого входа (SSO) для некоторых сторонних приложений
 
 **Тип:** Новая функция  
 **Категория службы:** корпоративные приложения  
@@ -334,10 +422,10 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="azure-active-directory---where-is-your-data-located-page"></a>Страница "Azure Active Directory - Where is your data located?" (Azure Active Directory — где находятся ваши данные?)
+### <a name="azure-active-directory---where-is-your-data-located-page"></a>Страница "Azure Active Directory — где находятся ваши данные?"
 
 **Тип:** Новая функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** GoLocal
 
 Выберите регион вашей компании на странице **Azure Active Directory - Where is your data located** (Azure Active Directory — где находятся ваши данные?), чтобы узнать, в каком центре обработки данных Azure хранятся ваши данные Azure AD для каждой из служб Azure AD. Здесь вы можете применить фильтр по конкретным службам Azure AD для выбранного региона.
@@ -359,7 +447,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Новая вкладка "Устранение неполадок и поддержка" на странице журналов входов на портале Azure
+### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Новая вкладка "Устранение неполадок и поддержка" на странице журналов входа на портале Azure
 
 **Тип:** Новая функция  
 **Категория службы:** Отчеты  
@@ -367,15 +455,15 @@ ms.locfileid: "67655447"
 
 Новая вкладка **Устранение неполадок и поддержка** на странице **Входы в систему** портала Azure поможет администраторам и инженерам службы поддержки устранять неполадки, связанные с входами в систему AAD. Это новая вкладка содержит код ошибки, сообщение об ошибке и рекомендации по исправлению (при наличии), которые помогут устранить проблему. Если с проблемой не удастся справиться, здесь же можно создать запрос в службу поддержки с помощью новой функции **копирования в буфер обмена**, с помощью которой для файла журнала заполняются поля **Идентификатор запроса** и **Дата (UTC)** в запросе в службу поддержки.  
 
-![Журналы входа в систему, отображается на новой вкладке](media/whats-new/troubleshooting-and-support.png)
+![Журналы входа, отображающие новую вкладку](media/whats-new/troubleshooting-and-support.png)
 
 ---
 
-### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Улучшенная поддержка пользовательских свойств расширения, позволяющих создать правила динамического членства
+### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Расширенная поддержка свойств настраиваемых расширений, используемых для создания правил динамического членства
 
 **Тип:** Измененная функция  
 **Категория службы:** Управление группами  
-**Возможности продукта:** Совместная работа
+**Возможности продукта:** Взаимодействие
 
 После этого обновления вы сможете при создании динамического правила членства перейти по ссылке **Get custom extension properties** (Получить пользовательские свойства расширения) из конструктора динамических правил для пользовательских групп, ввести уникальный идентификатор приложения и получить полный список пользовательских свойств расширения. Этот список можно обновить, чтобы просмотреть новые пользовательские свойства расширения для выбранного приложения.
 
@@ -383,7 +471,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для Azure AD на основе приложений условного доступа
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для условного доступа на основе приложений Azure AD
 
 **Тип:** план изменений  
 **Категория службы:** Условный доступ  
@@ -393,7 +481,7 @@ ms.locfileid: "67655447"
 
 - Microsoft To-Do
 
-- Microsoft Stream;
+- Microsoft Stream
 
 Дополнительные сведения можно найти в разделе
 
@@ -401,11 +489,11 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Добавлена поддержка самостоятельного сброса пароля с экрана блокировки Windows 7, 8 и 8.1
+### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Поддержка новой возможности для самостоятельной смены пароля на экране блокировки Windows 7/8/8.1
 
 **Тип:** Новая функция  
 **Категория службы:** SSPR  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 Когда вы настроите эту новую функцию, для пользователей отобразится ссылка для сброса пароля на экране **блокировки** любого устройства под управлением Windows 7, Windows 8 или Windows 8.1. Щелкнув эту ссылку, пользователь пройдет тот же процесс сброса пароля, что и в веб-браузере.
 
@@ -417,7 +505,7 @@ ms.locfileid: "67655447"
 
 **Тип:** план изменений  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 С 15 ноября 2018 г. в Azure AD прекращается поддержка использованных кодов аутентификации для приложений. Это изменение системы безопасности помогает Azure AD соответствовать спецификации OAuth и будет применяться для конечных точек версии 1 и 2.
 
@@ -427,7 +515,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>В коллекции приложений Azure AD доступны новые федеративные приложения (сентябрь 2018 г.)
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>Новые федеративные приложения, доступные в коллекции приложений Azure AD — сентябрь 2018 г.
 
 **Тип:** Новая функция  
 **Категория службы:** корпоративные приложения  
@@ -441,7 +529,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="support-for-additional-claims-transformations-methods"></a>Поддержка дополнительных методов преобразования утверждений
+### <a name="support-for-additional-claims-transformations-methods"></a>Поддержка дополнительных методов преобразований утверждений
 
 **Тип:** Новая функция  
 **Категория службы:** корпоративные приложения  
@@ -453,7 +541,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="updated-saml-based-app-configuration-ui-preview"></a>Обновленный пользовательский интерфейс для настройки приложений на основе SAML (предварительная версия)
+### <a name="updated-saml-based-app-configuration-ui-preview"></a>Обновление пользовательского интерфейса настройки приложений на основе SAML (предварительная версия)
 
 **Тип:** Измененная функция  
 **Категория службы:** корпоративные приложения  
@@ -482,7 +570,7 @@ ms.locfileid: "67655447"
 ### <a name="changes-to-azure-active-directory-ip-address-ranges"></a>Изменения в диапазонах IP-адресов Azure Active Directory
 
 **Тип:** план изменений  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** Платформа
 
 Мы вводим большие диапазоны IP-адресов в Azure Active Directory, то есть, если вы настроили диапазоны IP-адресов Azure AD для брандмауэров, маршрутизаторов или групп безопасности сети, вам потребуется их обновить. Мы выполняем это обновление, поэтому вам не придется менять конфигурацию диапазона IP-адресов брандмауэра, маршрутизатора или сети безопасности, когда Azure Active Directory добавляет новые конечные точки. 
@@ -501,7 +589,7 @@ ms.locfileid: "67655447"
 
 **Тип:** план изменений  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 С 15 ноября 2018 г. в Azure AD прекращается поддержка использованных кодов аутентификации для приложений. Это изменение системы безопасности помогает Azure AD соответствовать спецификации OAuth и будет применяться для конечных точек версии 1 и 2.
 
@@ -511,11 +599,11 @@ ms.locfileid: "67655447"
  
 ---
 
-### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Конвергентное управление сведениями для защиты для самостоятельного сброса пароля (SSPR) и Многофакторной идентификации (MFA)
+### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Объединенное управление сведениями о безопасности для самостоятельного сброса пароля (SSPR) и многофакторной проверки подлинности (MFA)
 
 **Тип:** Новая функция  
 **Категория службы:** SSPR  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Эта новая функция позволяет пользователям управлять своими сведениями для защиты (например, номером телефона, мобильным приложением и т. д.) для SSPR и MFA в одном расположении и интерфейсе (ранее все выполнялось в двух разных расположениях).
 
@@ -525,7 +613,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Новый параметр "HTTP-Only cookies" в приложениях Azure AD Application Proxy
+### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Новый параметр для cookie-файлов HTTP-Only в приложениях Azure AD Application Proxy
 
 **Тип:** Новая функция  
 **Категория службы:** Прокси приложения  
@@ -539,11 +627,11 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>Управление привилегированными пользователями (PIM) для ресурсов Azure поддерживает типы ресурсов группы управления
+### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>Управление привилегированными пользователями (PIM) для ресурсов Azure поддерживает типы ресурсов групп управления
 
 **Тип:** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Теперь параметры активации и назначения JIT могут применяться к типам ресурсов группы управления так же, как для подписки, групп ресурсов и ресурсов (таких как виртуальные машины, службы приложений и т. д.). Кроме того, любой пользователь с ролью, которая предоставляет доступ с правами администратора к группе управления, может обнаружить этот ресурс и управлять им в PIM.
 
@@ -551,11 +639,11 @@ ms.locfileid: "67655447"
  
 ---
 
-### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>Функция доступа к приложениям (предварительная версия) обеспечивает более быстрый доступ к порталу Azure AD
+### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>Доступ к приложениям (предварительная версия) ускоряет доступ к порталу Azure AD
 
 **Тип:** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Сегодня при активации роли с помощью PIM может потребоваться более 10 минут, чтобы разрешения вступили в силу. Если вы решите использовать функцию доступа к приложениям, которая в настоящее время находится в режиме общедоступной предварительной версии, администраторы смогут получить доступ к порталу Azure AD, как только будет выполнен запрос активации.
 
@@ -563,7 +651,7 @@ ms.locfileid: "67655447"
  
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>В коллекции приложений Azure AD доступны новые федеративные приложения (август 2018 г.)
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>Новые федеративные приложения, доступные в коллекции приложений Azure AD — август 2018 г.
 
 **Тип:** Новая функция  
 **Категория службы:** корпоративные приложения  
@@ -577,7 +665,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>Теперь в Azure AD Application Proxy доступна собственная поддержка Tableau
+### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>Собственная поддержка Tableau теперь доступна в Azure AD Application Proxy
 
 **Тип:** Измененная функция  
 **Категория службы:** Прокси приложения  
@@ -589,7 +677,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Поддержка новой возможности: добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B в Azure Active Directory (предварительная версия)
+### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Поддержка новой возможности добавить Google в качестве поставщика удостоверений для гостевых пользователей B2B в Azure Active Directory (предварительная версия)
 
 **Тип:** Новая функция  
 **Категория службы:** B2B  
@@ -606,14 +694,14 @@ ms.locfileid: "67655447"
 ### <a name="improvements-to-azure-active-directory-email-notifications"></a>Усовершенствования уведомлений по электронной почте Azure Active Directory
 
 **Тип:** Измененная функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** управление жизненным циклом удостоверений
  
 В сообщениях электронной почты Azure Active Directory (Azure AD) теперь отображается обновленный дизайн, изменения адреса электронной почты отправителя и отображаемого имени отправителя при их отправке из следующих служб.
  
 - Проверки доступа Azure AD
 - Azure AD Connect Health 
-- Защита идентификации Azure AD 
+- Azure AD Identity Protection 
 - Azure AD Privileged Identity Management
 - Уведомления об истечении срока действия корпоративного приложения
 - Уведомления об подготовке к работе корпоративного приложения
@@ -621,7 +709,7 @@ ms.locfileid: "67655447"
 Уведомления будут отправляться по электронной почте со следующего адреса и отображаемого имени.
 
 - Адрес электронной почты: azure-noreply@microsoft.com
-- Отображаемое имя: Microsoft Azure.
+- Отображаемое имя: Microsoft Azure
  
 Примеры некоторых новых дизайнов писем и дополнительную информацию см. в разделе [Email notifications in Azure AD PIM](https://go.microsoft.com/fwlink/?linkid=2005832) (Уведомления по электронной почте в Azure AD PIM).
 
@@ -645,7 +733,7 @@ ms.locfileid: "67655447"
 
 ---
 
-### <a name="conditional-access-information-added-to-the-azure-ad-sign-ins-report"></a>Условный доступ к информации, добавить к отчету входы в систему Azure AD
+### <a name="conditional-access-information-added-to-the-azure-ad-sign-ins-report"></a>Сведения о условном доступе добавлены в отчет о входе в Azure AD
 
 **Тип:** Новая функция  
 **Категория службы:** Отчеты  
@@ -687,8 +775,6 @@ ms.locfileid: "67655447"
  
 Служба Azure AD предоставляет возможность автоматизировать создание, обслуживание и удаление удостоверений пользователей в приложениях SaaS, таких как Dropbox, Salesforce, ServiceNow и т. д. В июле 2018 года мы добавили поддержку подготовки пользователей в следующие приложения в коллекции приложений Azure AD:
 
-- [Cisco Spark](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-spark-provisioning-tutorial)
-
 - [Cisco WebEx](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial)
 
 - [Bonusly](https://docs.microsoft.com/azure/active-directory/saas-apps/bonusly-provisioning-tutorial)
@@ -719,7 +805,7 @@ Azure AD Connect Health предоставляет функцию самосто
 
 **Тип:** Измененная функция  
 **Категория службы:** Azure AD  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 Мы обновили пользовательский интерфейс для входа в веб-службы Майкрософт, такие как Office 365 и Azure. Благодаря этому изменению экраны стали менее загроможденными и более понятными. Дополнительные сведения об этом изменении см. в записи блога, посвященной [предстоящим улучшениям интерфейса входа Azure AD](https://cloudblogs.microsoft.com/enterprisemobility/2018/04/04/upcoming-improvements-to-the-azure-ad-sign-in-experience/).
 
@@ -743,7 +829,7 @@ Azure AD Connect Health предоставляет функцию самосто
 
 ---
 
-### <a name="updates-to-the-terms-of-use-end-user-ui"></a>Обновлений с условиями использования пользовательского интерфейса
+### <a name="updates-to-the-terms-of-use-end-user-ui"></a>Обновления условий использования пользовательского интерфейса для конечных пользователей
 
 **Тип:** Измененная функция  
 **Категория службы:** Условия использования  
@@ -761,7 +847,7 @@ Azure AD Connect Health предоставляет функцию самосто
 
 **Тип:** Измененная функция  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Сквозная проверка подлинности теперь поддерживает устаревшие протоколы и приложения. Теперь полностью поддерживаются следующие ограничения:
 
@@ -781,7 +867,7 @@ Azure AD Connect Health предоставляет функцию самосто
 
 **Тип:** Новая функция  
 **Категория службы:** SSPR  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 Эта новая функция позволяет пользователям управлять своими сведениями для защиты (например, номером телефона, адресом электронной почты, мобильным приложением и т. д.) для самостоятельного сброса пароля (SSPR) и Многофакторной идентификации (MFA) в одном интерфейсе. Пользователям больше не нужно регистрировать одни и те же сведения для защиты для SSPR и MFA в двух разных интерфейсах. Этот новый интерфейс также применяется к пользователям с SSPR или MFA.
 
@@ -795,7 +881,7 @@ Azure AD Connect Health предоставляет функцию самосто
 
 **Тип:** Измененная функция  
 **Категория службы:** SSPR  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
 
 Эта функция позволяет пользователям, не являющимся администраторами, подтвердить свою личность при сбросе пароля с помощью уведомления или кода от приложения Microsoft Authenticator (или любого другого приложения проверки подлинности). Когда администратор включит этот метод самостоятельного сброса пароля, пользователи, зарегистрировавшие мобильное приложение через aka.ms/mfasetup или aka.ms/setupsecurityinfo, смогут использовать свое мобильное приложение как метод проверки при сбросе пароля.
 
@@ -886,8 +972,8 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="azure-ad-password-protection-is-available-in-public-preview"></a>Защита паролей Azure AD доступна в общедоступной предварительной версии
 
 **Тип:** Новая функция  
-**Категория службы:** Защита идентификации  
-**Возможности продукта:** Аутентификация пользователей
+**Категория службы:** Identity Protection  
+**Возможности продукта:** Проверка подлинности пользователя
 
 Защиту паролей Azure AD можно использовать, чтобы исключить легко угадываемые пароли из вашей среды. Исключение этих паролей помогает снизить риск компрометации в случае атаки с подбором пароля.
 
@@ -901,25 +987,25 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 
 ---
 
-### <a name="new-all-guests-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Новое «всех гостей» условного доступа политики шаблон, созданный во время использования Создание
+### <a name="new-all-guests-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Новый шаблон политики условного доступа "все гости", созданный во время создания условий использования
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
 **Возможности продукта:** Система управления
 
-Во время создания ваши условия использования также создается новый шаблон политики условного доступа для «всех гостей» и «все приложения». Этот новый шаблон политики применяет только что созданные условия использования, упрощая создание и применение процесса для гостей.
+При создании условий использования также создается новый шаблон политики условного доступа для "всех гостей" и "все приложения". Этот новый шаблон политики применяет только что созданные условия использования, упрощая создание и применение процесса для гостей.
 
 Дополнительные сведения см. в статье [Функция "Условия использования Azure Active Directory" (предварительная версия)](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use).
 
 ---
 
-### <a name="new-custom-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Новый шаблон «custom» политики условного доступа, созданные во время использования Создание
+### <a name="new-custom-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Новый шаблон "настраиваемый" политики условного доступа, созданный во время создания условий использования
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
 **Возможности продукта:** Система управления
 
-Во время создания ваши условия использования также создается новый шаблон политики условного доступа «custom». Этот новый шаблон политики позволяет создавать условий использования и затем сразу перейти к колонке создания политики условного доступа без необходимости вручную перейти на портале.
+При создании условий использования также создается новый шаблон "Настраиваемая политика условного доступа". Этот новый шаблон политики позволяет создать условий использования, а затем сразу перейти в колонку создания политики условного доступа без необходимости вручную перемещаться по порталу.
 
 Дополнительные сведения см. в статье [Функция "Условия использования Azure Active Directory" (предварительная версия)](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use).
 
@@ -928,7 +1014,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="new-and-comprehensive-guidance-about-deploying-azure-multi-factor-authentication"></a>Новое комплексное руководство по развертыванию Многофакторной идентификации Azure
 
 **Тип:** Новая функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** безопасность и защита идентификации
  
 Мы выпустили новые пошаговые инструкции по развертываю Многофакторной идентификации Azure в организации.
@@ -987,9 +1073,9 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 
 **Тип.** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта:** Опыт разработчика
+**Возможности продукта:** Интерфейс разработчика
  
-Мы добавили API-интерфейсов Microsoft Graph для операции администрирования Azure AD условий использования. Имеется возможность создавать, обновлять, удалять условия использования объекта.
+Мы добавили Microsoft Graph API для администрирования условий использования Azure AD. Вы можете создавать, обновлять и удалять условия использования объекта.
 
 ---
 
@@ -1016,7 +1102,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="azure-active-directory---data-in-europe-for-europe-customers"></a>Azure Active Directory — данные в Европе для европейских клиентов
 
 **Тип.** Новая функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** GoLocal
 
 Для соблюдения законов о конфиденциальности и другого европейского законодательства данные клиентов из Европы должны оставаться в Европе и не реплицироваться за пределы европейских центров обработки данных. См. дополнительные сведения о том, [какая информация об удостоверениях будет храниться в Европе и за ее пределами](https://go.microsoft.com/fwlink/?linkid=872328). 
@@ -1094,10 +1180,10 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="new-step-by-step-deployment-guides-for-azure-active-directory"></a>Новое пошаговое руководство по развертыванию для Azure Active Directory
 
 **Тип.** Новая функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта:** Каталог
  
-Новый Пошаговое руководство о том, как развернуть Azure Active Directory (Azure AD), включая самостоятельный пароля reset (SSPR), единый вход (SSO), условного доступа (ЦС), прокси приложения, подготовки Active Directory Federation Services (ADFS) для пользователей. Сквозная аутентификация (PTA) и служб федерации Active Directory для синхронизации хэшей паролей (PHS).
+Новые, пошаговые инструкции по развертыванию Azure Active Directory (Azure AD), включая самостоятельный сброс пароля (SSPR), единый вход (SSO), условный доступ (ЦС), прокси приложения, подготовку пользователей службы федерации Active Directory (AD FS) (ADFS) для Сквозная проверка подлинности (PTA) и ADFS для синхронизации хэшей паролей (PHS).
 
 Чтобы просмотреть руководство по развертыванию, перейдите к репозиторию [Identity Deployment Guides](https://aka.ms/DeploymentPlans) в GitHub. Чтобы оставить отзыв о руководстве по развертыванию, используйте [форму обратной связи плана развертывания](https://aka.ms/deploymentplanfeedback). Если у вас возникли вопросы о руководствах по развертыванию, свяжитесь с нами на сайте [IDGitDeploy](mailto:idgitdeploy@microsoft.com).
 
@@ -1133,11 +1219,11 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 
 ---
 
-### <a name="id-tokens-can-no-longer-be-returned-using-the-query-responsemode-for-new-apps"></a>Маркеры идентификации теперь невозможно возвращать с помощью режима ответа query для новых приложений. 
+### <a name="id-tokens-can-no-longer-be-returned-using-the-query-response_mode-for-new-apps"></a>Маркеры идентификации теперь невозможно возвращать с помощью режима ответа query для новых приложений. 
 
-**Тип:** Измененная функция  
+**Тип.** Измененная функция  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Приложения, созданные 25 апреля 2018 года или позднее, больше не могут запрашивать значение для **id_token** с использованием режима ответа **query**.  Это обеспечивает соответствие Azure AD спецификациям OIDC и помогает снизить уязвимость ваших приложений перед атаками.  Приложения, созданные до 25 апреля 2018 года, могут использовать режим ответа **query** с типом запроса **id_token**.  При запросе значения id_token из AAD возвращается ошибка **AADSTS70007: query не является поддерживаемым значением для режима response_mode при запросе токена**.
 
@@ -1174,11 +1260,11 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 
 ---
  
-### <a name="azure-ad-terms-of-use-now-has-per-user-reporting"></a>AD условия использования Azure теперь имеет в течение отчетного пользователя
+### <a name="azure-ad-terms-of-use-now-has-per-user-reporting"></a>Условия использования Azure AD теперь имеют отчеты "на пользователя"
 
 **Тип:** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
  
 Администраторы теперь могут выбрать заданные условия использования и просмотреть список всех пользователей, которые приняли эти условия, а также дату и время этого события.
 
@@ -1189,7 +1275,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="azure-ad-connect-health-risky-ip-for-ad-fs-extranet-lockout-protection"></a>Azure AD Connect Health. Обнаружение ненадежных IP-адресов для защиты блокировки экстрасети AD FS 
 
 **Тип.** Новая функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта.** Мониторинг и создание отчетов
 
 Connect Health теперь поддерживает обнаружение IP-адресов, для которых превышается пороговое количество неудачных попыток входа с именем пользователя и паролем в час или в день. Эта функция предоставляет следующие возможности:
@@ -1220,10 +1306,10 @@ Connect Health теперь поддерживает обнаружение IP-�
 
 **Тип.** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
  
 
-Условия использования для Azure AD был перемещен из общедоступной предварительной версии в общедоступную.
+Условия использования Azure AD были переведены из общедоступной предварительной версии в общую версию.
 
 Дополнительные сведения см. в статье [Функция "Условия использования Azure Active Directory"](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use).
 
@@ -1240,7 +1326,7 @@ Connect Health теперь поддерживает обнаружение IP-�
 
 Это помогает контролировать доступ к ресурсам, обеспечивая при этом удобную работу для утвержденных пользователей.
 
-Эта функция совместной работы B2B доступны для всех клиентов Azure Active Directory и может использоваться в сочетании с функциями Azure AD Premium, таких как защита условного доступа и удостоверений для более детального управления когда и каким образом внешних бизнес-пользователям входить в и получить доступ.
+Эта функция совместной работы B2B доступна для всех Azure Active Directory клиентов и может использоваться в сочетании с функциями Azure AD Premium, такими как условный доступ и защита идентификации, для более точного контроля над тем, когда и как осуществляется вход внешних бизнес-пользователей. в и получите доступ.
 
 Дополнительные сведения см. в статье [Предоставление или отзыв приглашений пользователям B2B из отдельных организаций](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-allow-deny-list).
 
@@ -1277,7 +1363,7 @@ Criterion HCM, [FiscalNote](https://docs.microsoft.com/azure/active-directory/ac
 ### <a name="get-sso-integration-tutorials-from-the-azure-marketplace"></a>Получение руководств по интеграции единого входа из Azure Marketplace
 
 **Тип.** Измененная функция  
-**Категория службы:** Другие  
+**Категория службы:** Другой  
 **Возможности продукта.** Интеграция сторонних продуктов
 
 Если приложение, указанное в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1) поддерживает единый вход на основе SAML, то, щелкнув **Получить**, можно открыть руководство по интеграции, связанное с этим приложением. 
@@ -1304,7 +1390,7 @@ Criterion HCM, [FiscalNote](https://docs.microsoft.com/azure/active-directory/ac
 
 **Тип.** Измененная функция  
 **Категория службы:** Самостоятельный сброс пароля  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Мы обновили компонент Windows 10 SSPR, добавив поддержку компьютеров, присоединенных к гибридной среде Azure AD. Эта функция доступна в Windows 10 RS4 и дает пользователям возможность сбрасывать пароль с экрана блокировки на компьютере с Windows 10. Эту функцию могут применять пользователи, которые включены и зарегистрированы для самостоятельного сброса пароля.
 
@@ -1343,7 +1429,7 @@ Azure AD отправляет уведомление о сертификатах
  
 ---
 
-### <a name="restrict-browser-access-using-intune-managed-browser-with-azure-ad-application-based-conditional-access-for-ios-and-android"></a>Предоставление доступа через браузер, используя Intune Managed Browser с Azure AD приложения условного доступа для iOS и Android
+### <a name="restrict-browser-access-using-intune-managed-browser-with-azure-ad-application-based-conditional-access-for-ios-and-android"></a>Ограничение доступа к браузеру с помощью Intune Managed Browser с условным доступом на основе приложений Azure AD для iOS и Android
 
 **Тип:** Новая функция  
 **Категория службы.** Условный доступ  
@@ -1353,7 +1439,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Единый вход в Intune Managed Browser.** Ваши сотрудники могут использовать единый вход через собственные клиенты (например, Microsoft Outlook) и Intune Managed Browser для всех подключенных приложений Azure AD.
 
-**Поддержка условного доступа в Intune Managed Browser.** Теперь вы можете обязать сотрудников использовать Intune Managed browser, с помощью политик условного доступа на основе приложения.
+**Поддержка условного доступа в Intune Managed Browser.** Теперь вы можете требовать от сотрудников использовать управляемый браузер Intune с помощью политик условного доступа на основе приложений.
 
 Дополнительные сведения об этом см. в нашем [блоге](https://cloudblogs.microsoft.com/enterprisemobility/2018/03/15/the-intune-managed-browser-now-supports-azure-ad-sso-and-conditional-access/).
 
@@ -1381,7 +1467,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Пользователь, применяющий собственные клиенты Office 365 (версии 16.0.8730.xxxx и более поздней версии), может использовать автоматический вход с помощью простого единого входа. Поддержка этой возможности обеспечивается за счет добавления в Azure AD неинтерактивного протокола (WS-Trust).
 
@@ -1393,7 +1479,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Пользователи могут использовать автоматический вход с помощью простого единого входа, если приложение (например, `https://contoso.sharepoint.com`) отправляет запросы на вход на клиентские конечные точки Azure AD, т. е. `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>`, вместо обычной конечной точки Azure AD (`https://login.microsoftonline.com/common/<...>`).
 
@@ -1405,7 +1491,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Чтобы развернуть простой единый вход для пользователей, необходимо добавить только один URL-адрес Azure AD в параметры зоны интрасети пользователей с помощью групповой политики Active Directory: `https://autologon.microsoftazuread-sso.com`. Ранее клиентам требовалось добавить два URL-адреса.
 
@@ -1432,8 +1518,8 @@ Azure AD отправляет уведомление о сертификатах
 ### <a name="pim-for-azure-resources-is-generally-available"></a>Выпущена общедоступная версия PIM для ресурсов Azure
 
 **Тип.** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Теперь при использовании управления привилегированными пользователями Azure AD для ролей каталога можно применять возможности временного ограничения доступа и назначения для таких ролей ресурсов Azure, как подписки, группы ресурсов, виртуальные машины, а также любого другого ресурса, поддерживаемого Azure Resource Manager. Вы можете применять Многофакторную идентификацию при JIT-активации ролей и планировать активацию в соответствии с утвержденными периодами изменений. Кроме того, в этом выпуске добавлены усовершенствования, отсутствующие в общедоступной предварительной версии, включая обновленный пользовательский интерфейс, рабочие процессы утверждения и возможность расширения ролей с истекающим сроком действия и обновления ролей с истекшим сроком действия.
 
@@ -1445,7 +1531,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Теперь приложение Azure AD может запрашивать пользовательские или необязательные утверждения в токенах JWT или SAML.  Это утверждения о пользователе или клиенте, которые не включены по умолчанию в токен из-за ограничения размера или применимости.  В настоящий момент доступна общедоступная предварительная версия этой функции для приложений Azure AD в конечных точках версии 1.0 и версии 2.0.  Ознакомьтесь с соответствующей документацией, чтобы получить сведения о том, какие утверждения могут быть добавлены и как изменить манифест приложения, чтобы запросить их.  
 
@@ -1457,7 +1543,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Документация по Azure AD была обновлена с учетом поддержки PKCE, что обеспечивает более безопасную связь во время потока предоставления кода авторизации OAuth 2.0.  S256 и code_challenge без шифрования поддерживаются в конечных точках версии 1.0 и версии 2.0. 
 
@@ -1465,7 +1551,7 @@ Azure AD отправляет уведомление о сертификатах
  
 ---
  
-### <a name="support-for-provisioning-all-user-attribute-values-available-in-the-workday-getworkers-api"></a>Поддержка подготовки всех значений атрибутов пользователя, доступных в API Get_Workers Workday
+### <a name="support-for-provisioning-all-user-attribute-values-available-in-the-workday-get_workers-api"></a>Поддержка подготовки всех значений атрибутов пользователя, доступных в API Get_Workers Workday
 
 **Тип.** Новая функция  
 **Категория службы:** подготовка приложений  
@@ -1481,12 +1567,12 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы.** Управление группами  
-**Возможности продукта:** Совместная работа
+**Возможности продукта:** Взаимодействие
  
 Можно изменить способ управления членством в группе. Это удобно, если требуется сохранить имя и идентификатор группы в системе, чтобы все существующие ссылки на эту группу по-прежнему были действительны. При создании новой группы эти ссылки потребовалось бы обновить.
 Мы обновили центр администрирования Azure AD, чтобы поддержать эту функцию. Теперь клиенты могут изменять динамическое членство в существующих группах на статическое (и наоборот). Существующие командлеты PowerShell по-прежнему доступны.
 
-Дополнительные сведения см. в разделе [правила динамического членства для групп в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership)
+Дополнительные сведения см. [в разделе правила динамического членства для групп в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership)
 
 ---
 
@@ -1494,7 +1580,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Измененная функция  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта:** Аутентификация пользователей
+**Возможности продукта:** Проверка подлинности пользователя
  
 Ранее, если пользователи даже после явного выхода из приложения, защищенного Azure AD, пытались получить доступ к приложению Azure AD в своей корпоративной сети с собственных устройств, присоединенных к домену, они автоматически повторяли вход с помощью простого единого входа. Благодаря данному изменению поддерживается выход.  Это позволяет пользователям выбрать другую или ту же учетную запись Azure AD для входа вместо того, чтобы автоматически входить с помощью простого единого входа.
 
@@ -1583,7 +1669,7 @@ Azure AD отправляет уведомление о сертификатах
 
 **Тип.** Новая функция  
 **Категория службы:** Прокси приложения  
-**Возможности продукта.** Аутентификация пользователей
+**Возможности продукта.** Проверка подлинности пользователя
  
 Чтобы облегчить процесс развертывания приложений и сократить административные расходы, мы теперь поддерживаем возможность публикации приложений с использованием подстановочных знаков. Чтобы опубликовать приложение с подстановочным знаком, можно выполнить стандартный поток публикации приложения, но во внутренних и внешних URL-адресах использовать подстановочный знак.
 
@@ -1700,13 +1786,13 @@ Azure AD Connect предпочтительней использовать дл�
 
 ---
  
-### <a name="applications-supporting-intune-app-protection-policies-added-for-use-with-azure-ad-application-based-conditional-access"></a>Приложения, поддерживающие политики защиты приложений Intune для использования с Azure AD приложения условного доступа
+### <a name="applications-supporting-intune-app-protection-policies-added-for-use-with-azure-ad-application-based-conditional-access"></a>Приложения, поддерживающие политики Защита приложений Intune, добавленные для использования с условным доступом на основе приложений Azure AD
 
 **Тип:** Измененная функция  
 **Категория службы.** Условный доступ  
-**Возможности продукта.** безопасность и защита идентификации
+**Возможности продукта.** Защита удостоверений
 
-Мы добавили больше приложений, которые поддерживают условный доступ на основе приложений. Теперь вы можете получить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, с помощью этих клиентских приложений.
+Мы добавили дополнительные приложения, поддерживающие условный доступ на основе приложений. Теперь вы можете получить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, с помощью этих клиентских приложений.
 
 К концу февраля будут добавлены следующие приложения:
 
@@ -1723,11 +1809,11 @@ Azure AD Connect предпочтительней использовать дл�
 
 ---
 
-### <a name="terms-of-use-update-to-mobile-experience"></a>Условия обновления для использования на мобильных устройствах 
+### <a name="terms-of-use-update-to-mobile-experience"></a>Условия использования обновление в мобильном интерфейсе 
 
 **Тип:** Измененная функция  
 **Категория службы:** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
 
 При отображении условий использования необходимо щелкнуть **Проблемы с просмотром? Щелкните здесь**. При выборе этой ссылки условия использования откроются, адаптировавшись под ваше устройство. Независимо от размера шрифта в документе или размера экрана устройства, документ можно увеличить, чтобы прочитать нужный фрагмент. 
 
@@ -1754,7 +1840,7 @@ Azure AD Connect предпочтительней использовать дл�
 ### <a name="sign-in-with-additional-risk-detected"></a>Вход в систему с обнаруженным дополнительным риском
 
 **Тип.** Новая функция  
-**Категория службы:** Защита идентификации  
+**Категория службы:** Identity Protection  
 **Возможности продукта.** Безопасность и защита удостоверений
 
 Аналитические данные, которые вы получаете для обнаруженного события риска, привязаны к вашей подписке Azure AD. Выпуск Azure AD Premium P2 позволяет получать самые подробные сведения обо всех основных обнаружениях.
@@ -1796,7 +1882,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 ### <a name="azure-ad-administration-experience-in-azure-classic-portal-has-been-retired"></a>Интерфейс администрирования Azure AD на классическом портале Azure больше не поддерживается
 
-**Тип.** Не рекомендуется   
+**Тип.** Нерекомендуемые   
 **Категория службы.** Azure AD  
 **Возможности продукта.** Каталог
 
@@ -1806,7 +1892,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 ### <a name="the-phonefactor-web-portal-has-been-retired"></a>Начиная с 8 января 2018 года прекращена поддержка веб-портала.
 
-**Тип.** Не рекомендуется  
+**Тип.** Нерекомендуемые  
 **Категория службы.** Azure AD  
 **Возможности продукта.** Каталог
  
@@ -1818,7 +1904,7 @@ Azure AD Connect предпочтительней использовать дл�
  
 ### <a name="deprecate-azure-ad-reports"></a>Неподдерживаемые отчеты Azure AD
 
-**Тип.** Не рекомендуется  
+**Тип.** Нерекомендуемые  
 **Категория службы.** Отчеты  
 **Возможности продукта.** Управление жизненным циклом удостоверений  
 
@@ -1843,7 +1929,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
  
 Теперь можно перейти к панели доступа и просмотреть условия использования, которые были приняты ранее.
 
@@ -1865,7 +1951,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция  
 **Категория службы.** Azure AD  
-**Возможности продукта.** Аутентификация пользователей
+**Возможности продукта.** Проверка подлинности пользователя
  
 Пользовательские интерфейсы системы идентификации пользователей Azure AD и Майкрософт были перепроектированы таким образом, чтобы они имели единый внешний вид. Кроме того, страница входа в Azure AD сначала собирает имя пользователя, а затем учетные данные на втором экране.
 
@@ -1877,7 +1963,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция  
 **Категория службы.** Azure AD  
-**Возможности продукта.** Аутентификация пользователей
+**Возможности продукта.** Проверка подлинности пользователя
  
 Флажок **Оставаться в системе** на странице входа в Azure AD был заменен новым запросом, который появляется после прохождения проверки подлинности. 
 
@@ -1891,7 +1977,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
  
 Функция для администраторов, позволяющая требовать развертывания условий использования перед их принятием пользователем.
 
@@ -1904,8 +1990,8 @@ Azure AD Connect предпочтительней использовать дл�
 ### <a name="scoped-activation-for-eligible-role-assignments"></a>Активация только соответствующих назначений ролей
 
 **Тип.** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Вы можете использовать ограниченную активацию для активации подходящих назначений ролей ресурсов Azure с меньшей автономией, чем исходные настройки по умолчанию. Предположим, вы назначены владельцем подписки в своем клиенте. С помощью ограниченной активации вы можете активировать роль владельца для максимум пяти ресурсов, содержащихся в рамках подписки (например, группы ресурсов и виртуальные машины). Ограничение активации может снизить вероятность выполнения нежелательных изменений в критических ресурсах Azure.
 
@@ -1932,8 +2018,8 @@ Azure AD Connect предпочтительней использовать дл�
 ### <a name="approval-workflows-for-azure-ad-directory-roles"></a>Рабочий процесс утверждения ролей каталога Azure AD
 
 **Тип.** Измененная функция  
-**Категория службы.** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы.** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Рабочий процесс утверждения ролей каталога Azure AD доступен в общедоступной версии.
 
@@ -1945,7 +2031,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Измененная функция  
 **Категория службы:** аутентификация (вход)  
-**Возможности продукта.** Аутентификация пользователей
+**Возможности продукта.** Проверка подлинности пользователя
 
 Сквозная проверка подлинности теперь поддерживает вход пользователей в клиентские приложения Skype для бизнеса, которые поддерживают современную проверку подлинности, включая сетевые и гибридные топологии. 
 
@@ -1956,8 +2042,8 @@ Azure AD Connect предпочтительней использовать дл�
 ### <a name="updates-to-azure-ad-privileged-identity-management-for-azure-rbac-preview"></a>Обновления Azure AD Privileged Identity Management для Azure RBAC (предварительная версия)
 
 **Тип.** Измененная функция  
-**Категория службы.** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)
+**Категория службы.** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями
  
 Теперь, когда вышло обновление общедоступной предварительной версии Azure AD Privileged Identity Management (PIM) для управления доступом на основе ролей (RBAC) Azure, вы можете:
 
@@ -1989,7 +2075,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 Вы можете предоставлять доступ через браузер к Office 365 и другим облачным приложениям, подключенным к Azure AD, используя Intune Managed Browser в качестве утвержденного приложения. 
 
-Теперь можно настраивать следующее условие для условного доступа на основе приложений:
+Теперь можно настроить следующие условия для условного доступа на основе приложений.
 
 **Клиентские приложения.** Browser
 
@@ -1999,11 +2085,11 @@ Azure AD Connect предпочтительней использовать дл�
 
 Ищите сведения об этой возможности в предстоящих записях в блогах и заметках о выпуске. 
 
-Дополнительные сведения см. в разделе [условным доступом в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
+Дополнительные сведения см. [в статье условный доступ в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
  
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для Azure AD на основе приложений условного доступа
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для условного доступа на основе приложений Azure AD
 
 **Тип:** план изменений  
 **Категория службы:** Условный доступ  
@@ -2025,7 +2111,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция    
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям
+**Возможности продукта.** Соответствие
 
 Теперь администраторы могут создавать новые условия использования, содержащие несколько документов в формате PDF. Вы можете отметить эти документы соответствующими языками. Пользователям будут показаны PDF-файлы на том языке, который соответствует их предпочтениям. Если документа на их языке нет, отображается язык по умолчанию.
 
@@ -2035,7 +2121,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип.** Новая функция  
 **Категория службы.** Самостоятельный сброс пароля  
-**Возможности продукта.** Аутентификация пользователей
+**Возможности продукта.** Проверка подлинности пользователя
 
 Теперь вы можете просмотреть состояние обратной записи паролей клиента в локальной среде. Этот параметр доступен в разделе **Интеграция с локальной средой** на странице [Сброс пароля](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset). 
 
@@ -2054,11 +2140,11 @@ Azure AD Connect предпочтительней использовать дл�
 **Категория службы.** Azure AD  
 **Возможности продукта.** безопасность и защита идентификации
 
-Теперь вы можете ограничить доступ к Office 365 и других Azure AD облачным приложениям, подключенным к [утвержденных клиентских приложений](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement) , которые поддерживают политики защиты приложений Intune с помощью [Azure условного доступа на основе приложений AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
+Теперь вы можете ограничить доступ к Office 365 и другим облачным приложениям, подключенным к Azure AD, с [утвержденными клиентскими приложениями](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement) , поддерживающими политики защиты приложений Intune, с помощью [условного доступа на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Политики защиты приложений Intune используются для настройки и защиты данных компании в этих клиентских приложениях.
 
-Путем объединения [на базе приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) с [на основе устройств](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications) политики условного доступа, вы можете защитить данные для личного и устройствах организации.
+Объединив [приложения на основе приложений](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) с политиками условного доступа [на основе устройств](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications) , вы получаете гибкие возможности для защиты данных персональных и корпоративных устройств.
 
-Следующие условия и элементы управления теперь доступны для использования с условным доступом на основе приложений:
+Следующие условия и элементы управления теперь доступны для использования с условным доступом на основе приложений.
 
 **Условие поддерживаемой платформы**
 
@@ -2071,9 +2157,9 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Управление доступом**
 
-- Требование утвержденного клиентского приложения
+- Требовать утвержденное клиентское приложение
 
-Дополнительные сведения см. в разделе [Azure условного доступа на основе приложений AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
+Дополнительные сведения см. в статье [Условный доступ на основе приложений Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
  
 ---
 
@@ -2094,17 +2180,17 @@ Azure AD Connect предпочтительней использовать дл�
 
 ---
 
-### <a name="support-for-macos-as-a-device-platform-for-azure-ad-conditional-access"></a>Поддержка macOS в качестве платформы устройства для условного доступа Azure AD 
+### <a name="support-for-macos-as-a-device-platform-for-azure-ad-conditional-access"></a>Поддержка macOS в качестве платформы устройств для условного доступа Azure AD 
 
 **Тип:** Новая функция    
 **Категория службы.** Условный доступ  
 **Возможности продукта:** безопасность и защита идентификации 
 
-Теперь можно включить (или исключить) macOS в качестве условие платформы устройства в политике условного доступа Azure AD. Добавив macOS в качестве поддерживаемой платформы устройства, вы можете:
+Теперь вы можете включить (или исключить) macOS в качестве условия платформы устройства в политике условного доступа Azure AD. Добавив macOS в качестве поддерживаемой платформы устройства, вы можете:
 
 - **Регистрировать устройства macOS и управлять ими в Intune.** Подобно другим платформам, таким как iOS и Android, приложение корпоративного портала доступно для единой регистрации устройств macOS. Вы можете использовать новое приложение корпоративного портала для macOS, чтобы зарегистрировать устройство в Intune и Azure AD.
 - **Гарантировать соблюдение устройствами macOS политик соответствия вашей организации, определенных в Intune.** В Intune на портале Azure вы можете настроить соответствующие политики для устройств macOS. 
-- **Предоставлять доступ к приложениям Azure AD только совместимым устройствам macOS.** Создание политики условного доступа macOS имеет в качестве отдельный вариант платформы устройства. Теперь можно создавать политики условного доступа специфичны для macOS для целевого приложения, настроенного в Azure.
+- **Предоставлять доступ к приложениям Azure AD только совместимым устройствам macOS.** Создание политики условного доступа имеет macOS как отдельный параметр платформы устройства. Теперь вы можете создавать политики условного доступа, относящиеся к macOS, для набора целевых приложений в Azure.
 
 Дополнительные сведения можно найти в разделе
 
@@ -2116,8 +2202,8 @@ Azure AD Connect предпочтительней использовать дл�
 ### <a name="network-policy-server-extension-for-azure-multi-factor-authentication"></a>Расширение NPS для Многофакторной идентификации Azure 
 
 **Тип.** Новая функция    
-**Категория службы.**  Многофакторная Идентификация  
-**Возможности продукта.** Аутентификация пользователей
+**Категория службы.**  Многофакторная проверка подлинности  
+**Возможности продукта.** Проверка подлинности пользователя
 
 Расширение сервера политики сети для Многофакторной идентификации Azure добавляет в инфраструктуру проверки подлинности возможности Многофакторной идентификации на основе облака с использованием имеющихся серверов. Расширение NPS позволяет добавить телефонный звонок, текстовое сообщение или запрос на подтверждение в мобильном приложении в существующий процесс аутентификации. Можно обойтись без установки, настройки и поддержания новых серверов. 
 
@@ -2148,7 +2234,7 @@ Azure AD Connect предпочтительней использовать дл�
  
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для Azure AD на основе приложений условного доступа
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Новые утвержденные клиентские приложения для условного доступа на основе приложений Azure AD
  
 **Тип:** Измененная функция  
 **Категория службы.** Условный доступ  
@@ -2166,15 +2252,15 @@ Azure AD Connect предпочтительней использовать дл�
 
 ---
 
-### <a name="use-or-between-controls-in-a-conditional-access-policy"></a>Используйте «Или» между элементами управления в политике условного доступа 
+### <a name="use-or-between-controls-in-a-conditional-access-policy"></a>Использование "или" между элементами управления в политике условного доступа 
 
 **Тип:** Измененная функция    
 **Категория службы.** Условный доступ  
 **Возможности продукта:** безопасность и защита идентификации
  
-Теперь можно использовать «или» (требовать один из выбранных элементов управления) для элементов управления условного доступа. Эта функция позволяет создавать политики со значением "или" между элементами управления доступом. Например, эта функция позволяет создать политику, требующую от пользователя входа в систему с помощью Многофакторной идентификации или использования соответствующего устройства.
+Теперь можно использовать "или" (требуется один из выбранных элементов управления) для элементов управления условного доступа. Эта функция позволяет создавать политики со значением "или" между элементами управления доступом. Например, эта функция позволяет создать политику, требующую от пользователя входа в систему с помощью Многофакторной идентификации или использования соответствующего устройства.
 
-Дополнительные сведения см. в разделе [элементов управления условного доступа Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls).
+Дополнительные сведения см. [в разделе элементы управления условным доступом Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls).
  
 ---
 
@@ -2222,7 +2308,7 @@ Azure AD поддерживает автоматическое определе�
 ### <a name="new-multi-factor-authentication-features"></a>Новые возможности Многофакторной идентификации
 
 **Тип.** Новая функция  
-**Категория службы.** Многофакторная Идентификация  
+**Категория службы.** Многофакторная проверка подлинности  
 **Возможности продукта.** Безопасность и защита удостоверений  
 
 Многофакторная проверка подлинности (MFA) является важной частью процесса защиты организации. Чтобы сделать учетные данные более адаптивными, а работу — простой, были добавлены следующие возможности: 
@@ -2240,7 +2326,7 @@ Azure AD поддерживает автоматическое определе�
 
 **Тип.** Новая функция  
 **Категория службы.** Условия использования  
-**Возможности продукта.** Соответствие нормативным требованиям  
+**Возможности продукта.** Соответствие  
 
 Вы можете использовать условия использования Azure AD для предоставления пользователям такой информации, как соответствующие заявления об отказе для юридических требований и требования к соответствию.
 
@@ -2257,14 +2343,14 @@ Azure AD поддерживает автоматическое определе�
 ### <a name="enhancements-to-privileged-identity-management"></a>Улучшение управления привилегированными пользователями
 
 **Тип.** Новая функция  
-**Категория службы:** Управление привилегированными пользователями (PIM)  
-**Возможности продукта:** Управление привилегированными пользователями (PIM)  
+**Категория службы:** Управление привилегированными пользователями  
+**Возможности продукта:** Управление привилегированными пользователями  
 
 С помощью службы Azure AD Privileged Identity Management (PIM) можно администрировать, контролировать и отслеживать доступ к ресурсам Azure (предварительная версия) в пределах организации:
 
 - Подписки
 - Группы ресурсов
-- Виртуальные машины 
+- ВМ 
 
 Все ресурсы на портале Azure, который использует функции Azure RBAC, могут воспользоваться всеми преимуществами управления безопасностью и жизненным циклом, которые может предложить Azure AD Privileged Identity Management.
 
@@ -2274,16 +2360,16 @@ Azure AD поддерживает автоматическое определе�
 
 ### <a name="access-reviews"></a>Проверки доступа
 
-**Тип.** Новая функция  
+**Тип:** Новая функция  
 **Категория службы.** Проверки доступа  
-**Возможности продукта.** Соответствие нормативным требованиям  
+**Возможности продукта.** Соответствие  
 
 Проверки доступа (предварительная версия) позволяют организациям эффективно управлять членством в группе и доступом к корпоративным приложениям. 
 
 - Проверки доступа позволяют повторно оценивать, действительно ли гостевым пользователям нужен доступ к приложениям и членство в группах. Сведения, предоставляемые проверками доступа, позволяют рецензентам решать, нужен ли гостевым пользователям постоянный доступ.
 - С их помощью можно повторно подтвердить доступ сотрудников к приложениям и их членство в группах.
 
-Можно собирать элементы управления проверки доступа в программы, соответствующие вашей организации, чтобы отслеживать доступ для приложений, чувствительных к риску или нарушениям соответствия.
+Вы можете объединить элементы проверки доступа в подходящие для вашей организации программы. Это позволит отслеживать проверки доступа с точки зрения соответствия или для приложений, чувствительных к рискам.
 
 Дополнительные сведения см. в статье [Проверки доступа Azure AD (предварительная версия)](https://docs.microsoft.com/azure/active-directory/active-directory-azure-ad-controls-access-reviews-overview).
 

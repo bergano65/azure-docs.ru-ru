@@ -1,6 +1,6 @@
 ---
-title: Ключи подписки
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Ключи подписки — LUIS
+titleSuffix: Azure Cognitive Services
 description: Вам не нужно создавать ключи подписки для использования первых бесплатных 1000 запросов конечной точки. Если вы получили ошибку _израсходования квоты_ в форме HTTP 403 или 429, вам необходимо создать ключ и назначить его приложению.
 services: cognitive-services
 author: diberry
@@ -8,19 +8,19 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: diberry
-ms.openlocfilehash: dedc498ebc910b448b1684136c288b2045780e00
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 1f8b84722c881cee1fe196e5a614b58cf3c19031
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67797953"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932864"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
 
-При первом использовании Language Understanding (LUIS), создание ключей подписки не нужно. 1000 запросов конечная точка предоставляется с самого начала. 
+При первом использовании Language Understanding (LUIS) не нужно создавать ключи подписки. Вы получили запросы к конечной точке 1000, начиная с. 
 
 Бесплатная ценовая категория (F0) используется только для тестирования и создания прототипов. Для рабочих систем используется [платная](https://aka.ms/luis-price-tier) категория. Не используйте [ключ разработки](luis-concept-keys.md#authoring-key) для запросов конечных точек в рабочей среде.
 
@@ -28,11 +28,11 @@ ms.locfileid: "67797953"
 <a name="create-luis-service"></a>
 <a name="create-language-understanding-endpoint-key-in-the-azure-portal"/>
 
-## <a name="create-prediction-endpoint-runtime-resource-in-the-azure-portal"></a>Создание прогноза конечной точки среды выполнения ресурса на портале Azure
+## <a name="create-prediction-endpoint-runtime-resource-in-the-azure-portal"></a>Создание ресурса среды выполнения прогнозирующих точек на портал Azure
 
-Создании [ресурс конечной точки прогноза](get-started-portal-deploy-app.md#create-the-endpoint-resource) на портале Azure. Этот ресурс следует использовать только для запросов прогнозирования конечной точки. Не используйте этот ресурс для внесения изменений в приложение.
+Создайте ресурс « [прогнозная конечная точка](get-started-portal-deploy-app.md#create-the-endpoint-resource) » в портал Azure. Этот ресурс следует использовать только для запросов прогнозирования конечной точки. Не используйте этот ресурс для внесения изменений в приложение.
 
-Можно создать Language Understanding ресурса или ресурса Cognitive Services. При создании ресурса Language Understanding, хорошей практикой является postpend, тип ресурса в имя ресурса. 
+Можно создать Language Understanding ресурс или ресурс Cognitive Services. При создании Language Understanding ресурса рекомендуется постпенд тип ресурса в имя ресурса. 
 
 <a name="programmatic-key" ></a>
 <a name="authoring-key" ></a>
@@ -47,19 +47,19 @@ ms.locfileid: "67797953"
 <a name="assign-endpoint-key"></a>
 <a name="assign-resource"></a>
 
-### <a name="using-resource-from-luis-portal"></a>С помощью ресурса с портала LUIS
+### <a name="using-resource-from-luis-portal"></a>Использование ресурса из портала LUIS
 
-При использовании ресурсов на портале LUIS, необязательно знать ключ и расположение. Вместо этого вы должны знать клиента ресурса, подписки и имя ресурса.
+Если вы используете ресурс на портале LUIS, вам не нужно знать ключ и расположение. Вместо этого необходимо знать имя клиента ресурса, подписки и имени ресурса.
 
-Когда вы [назначить](#assign-resource-key-to-luis-app-in-luis-portal) ресурс для приложения LUIS в портале LUIS, ключ и расположения предоставляются как часть URL-адрес конечной точки запроса прогнозирования в разделе Управление **ключи и конечной точки параметры** страницы.
+Когда вы [назначите](#assign-resource-key-to-luis-app-in-luis-portal) ресурс для приложения Luis на портале Luis, ключ и расположение предоставляются как часть URL-адреса конечной точки прогнозирования запросов на странице "**ключи и параметры конечной точки**" раздела "Управление".
  
-### <a name="using-resource-from-rest-api-or-sdk"></a>С помощью ресурса из REST API или пакета SDK
+### <a name="using-resource-from-rest-api-or-sdk"></a>Использование ресурса из REST API или пакета SDK
 
-Если вы используете ресурс из REST API(s) или пакета SDK, вы должны знать, ключ и расположение. Эти сведения предоставляются как часть URL-адрес конечной точки запроса прогнозирования в разделе Управление **ключи и конечной точки параметры** страницы на портале Azure, на страницах Обзор и ключи ресурсов.
+Если вы используете ресурс из REST API или пакета SDK, необходимо знать ключ и расположение. Эти сведения предоставляются как часть URL-адреса конечной точки прогнозирования запросов в разделе " **ключи и параметры конечной точки** " раздела "Управление", а также в портал Azure на страницах "Обзор ресурсов" и "ключи".
 
 ## <a name="assign-resource-key-to-luis-app-in-luis-portal"></a>Назначение ключа ресурса для приложения LUIS на портале LUIS
 
-Каждый раз при создании нового ресурса для LUIS, вам потребуется [назначьте универсальный код ресурса для приложения LUIS](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal). После этого вам не нужно будет еще раз выполнять этот шаг до создания следующего ресурса. Вы можете создать ресурс для расширения регионов приложения или для поддержки большего количества запросов прогнозирования.
+Каждый раз при создании нового ресурса для LUIS необходимо [назначить ресурс для приложения Luis](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal). После этого вам не нужно будет еще раз выполнять этот шаг до создания следующего ресурса. Вы можете создать ресурс для расширения регионов приложения или для поддержки большего количества запросов прогнозирования.
 
 <!-- content moved to luis-reference-regions.md, need replacement links-->
 <a name="regions-and-keys"></a>
@@ -143,13 +143,13 @@ ms.locfileid: "67797953"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Тип|Параметр|Значение|
+    |Type|Параметр|Значение|
     |--|--|--|
     |Header|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
     |Header|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
     |Header|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS. 
-    |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
+    |Body||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 
     При успешном выполнении этого API возвращается состояние "201 - created". 
 
@@ -165,30 +165,30 @@ ms.locfileid: "67797953"
     ![Проверьте ценовую категорию LUIS](./media/luis-usage-tiers/updated.png)
 1. Не забудьте [назначить этот ключ конечной точки](#assign-endpoint-key) на странице **публикации** и использовать его во всех запросах конечной точки. 
 
-## <a name="fix-http-status-code-403-and-429"></a>Исправьте код состояния HTTP 403 и 429
+## <a name="fix-http-status-code-403-and-429"></a>Исправление кода состояния HTTP 403 и 429
 
-Вы получите ошибку 403 и 429 коды состояния при превышении транзакций в секунду или транзакций в месяц для используемого ценового уровня.
+Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории.
 
-### <a name="when-you-receive-an-http-403-error-status-code"></a>При появлении кода состояния HTTP 403
+### <a name="when-you-receive-an-http-403-error-status-code"></a>При получении кода состояния ошибки HTTP 403
 
-При вы используете все эти бесплатные 1000 конечной точки запросы или превышении месячной квоты транзакции ценовую категорию, вы получите код состояния ошибки HTTP 403. 
+При использовании всех этих бесплатных запросов к конечной точке 1000 или превышении квоты месячных транзакций для ценовой категории вы получаете код состояния ошибки HTTP 403. 
 
-Чтобы устранить эту ошибку, необходимо либо [перейти на ценовую](luis-how-to-azure-subscription.md#change-pricing-tier) до более высокого уровня или [создания ресурса](get-started-portal-deploy-app.md#create-the-endpoint-resource) и [назначить его приложению](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal).
+Чтобы устранить эту ошибку, необходимо либо [изменить ценовую](luis-how-to-azure-subscription.md#change-pricing-tier) категорию на более высокий уровень, либо [создать новый ресурс](get-started-portal-deploy-app.md#create-the-endpoint-resource) и [назначить его приложению](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal).
 
-Решения для этой ошибки включают в себя:
+Ниже приведены решения для этой ошибки.
 
-* В [портала Azure](https://portal.azure.com), на ваш язык, понимание ресурсов, на **управление ресурсами "->" Ценовая категория**, измените ценовую категорию до более высокого уровня транзакций в Секунду. Не нужно ничего делать на портале Language Understanding Если ресурс уже назначено приложение Language Understanding.
-*  Если Вы исчерпали самому высокому уровню цен, добавьте дополнительные ресурсы Language Understanding с балансировкой нагрузки перед их. [Контейнера Language Understanding](luis-container-howto.md) с Kubernetes или Docker Compose могут помочь в этом.
+* В [портал Azure](https://portal.azure.com)на ресурсе Language Understanding в **ценовой категории управление ресурсами — >** измените ценовую категорию на более высокий уровень технической спецификации. Вам не нужно ничего делать на портале Language Understanding, если ресурс уже назначен вашему Language Understanding приложению.
+*  Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
 
-### <a name="when-you-receive-an-http-429-error-status-code"></a>При появлении кода состояния HTTP 429
+### <a name="when-you-receive-an-http-429-error-status-code"></a>При получении кода состояния ошибки HTTP 429
 
-Этот код состояния возвращается, когда транзакций в секунду превышает ценовую категорию.  
+Этот код состояния возвращается, если количество транзакций в секунду превышает вашу ценовую категорию.  
 
-Решения, включают в себя:
+Решения включают:
 
-* Вы можете [повысить ценовую категорию](#change-pricing-tier), если вы не находитесь в самому высокому уровню.
-* Если Вы исчерпали самому высокому уровню цен, добавьте дополнительные ресурсы Language Understanding с балансировкой нагрузки перед их. [Контейнера Language Understanding](luis-container-howto.md) с Kubernetes или Docker Compose могут помочь в этом.
-* Можно шлюза свои запросы приложений клиента с [политика повтора](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) самостоятельно реализовать при получении этот код состояния. 
+* Вы можете [увеличить ценовую категорию](#change-pricing-tier), если вы не на самом высшем уровне.
+* Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
+* Вы можете настроить запрос клиентского приложения с помощью [политики повтора](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) , которая реализуется при получении этого кода состояния. 
 
 ## <a name="viewing-summary-usage"></a>Просмотр сводки использования
 Вы можете просмотреть сведения об использовании службы LUIS в Azure. На странице **Обзор** отображаются последние сводные сведения, включая вызовы и ошибки. При отправке запроса конечной точки LUIS сведения об использовании на **странице обзора** отображаются в течение пяти минут.

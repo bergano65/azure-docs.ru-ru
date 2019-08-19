@@ -1,7 +1,7 @@
 ---
 title: Получение пакета SDK для устройств, подключаемых к службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Служба "Речь" поддерживает широкий ряд устройств и источников звука. Теперь ваши речевые приложения могут стать еще эффективнее благодаря соответствующему оборудованию и программному обеспечению. В этой статье вы узнаете, как получить доступ к устройствам Speech SDK и приступить к разработке.
+description: Служба "Речь" поддерживает широкий ряд устройств и источников звука. Теперь ваши речевые приложения могут стать еще эффективнее благодаря соответствующему оборудованию и программному обеспечению. В этой статье вы узнаете, как получить доступ к пакету SDK для речевых устройств и приступить к разработке.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -10,29 +10,29 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: cff35398509c021a3d2ccf708e2705ab7e259d34
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: b60c8735833c3012523c5cc0d7eea6a50e9d10b6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719810"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559679"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Получение пакета SDK для речевых устройств в Cognitive Services
 
-Устройства Speech SDK представляет pretuned библиотека, предназначенная для работы с пакеты средств разработки специализированное и различающихся конфигурациях в массиве "микрофон".
+Пакет SDK для речевых устройств — это предварительно настроенная Библиотека, предназначенная для работы с готовыми комплектами разработки и различными конфигурациями массивов микрофона.
 
-## <a name="choose-a-development-kit"></a>Выберите пакет средств разработки
+## <a name="choose-a-development-kit"></a>Выбор набора средств разработки
 
-|Устройства|Спецификация|Описание|Сценарии|
+|Устройств|Спецификация|Описание|Сценарии|
 |--|--|--|--|
-|[Пакет средств разработки аудио Roobo Smart](https://ddk.roobo.com)</br>[Программа установки](speech-devices-sdk-roobo-v1.md) / [быстрого запуска](speech-devices-sdk-android-quickstart.md)![Roobo Smart аудио Dev Kit](media/speech-devices-sdk/device-roobo-v1.jpg)|Wi-Fi 7 массив mic, ARM SOC, аудио-сигнала, операций ввода-ВЫВОДА. </br>[Android](speech-devices-sdk-android-quickstart.md)|Первый Speech SDK устройств для адаптации массив Mic Microsoft и начала обработки пакета SDK для разработки сценариев высокого качества расшифровка дикторского текста и речи|Расшифровка дикторского текста для диалога, смарт-говорящего голоса агента, переносной|
-|[Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)</br>[Программа установки](https://docs.microsoft.com/azure/Kinect-dk/set-up-azure-kinect-dk) / [быстрого запуска](speech-devices-sdk-windows-quickstart.md)![Azure Kinect DK](media/speech-devices-sdk/device-azure-kinect-dk.jpg)|7 RGB массив mic и глубина камеры. </br>[Windows](speech-devices-sdk-windows-quickstart.md)/[Linux](speech-devices-sdk-linux-quickstart.md)|Комплект разработчика, с датчиками искусственного интеллекта (ИИ) для создания моделей речи и сложные компьютера. Он сочетает в себе лучшие в своем классе пространственных микрофона массива и глубина камеры с камеры и датчик ориентации — все это в одно небольшое устройство с несколько режимов, параметры и пакеты SDK в соответствии с изменениями ряда типы вычислений.|Диалог Транскрибирование, Робототехнике, интеллектуальных зданиях|
-|Roobo Smart пакет средств разработки аудио 2![Roobo Smart пакет средств разработки аудио 2](media/speech-devices-sdk/device-roobo-v2.jpg)|7 массив mic, ARM SOC, сети Wi-Fi, Bluetooth, операции ввода-ВЫВОДА. </br>Linux|2-го поколения Speech SDK устройств, обеспечивающая альтернативной ОС и дополнительные функции в экономически эффективные справочную структуру.|Расшифровка дикторского текста для диалога, смарт-говорящего голоса агента, переносной|
-|URbetter T11 Development Board![URbetter DDK](media/speech-devices-sdk/device-urbetter.jpg)|Wi-Fi 7 массив mic, ARM SOC, Ethernet, HDMI, камеры USB. </br>Linux|Уровень отрасли Speech SDK устройств, которая адаптируется массив Microsoft Mic и поддерживает расширенные операции ввода-вывода, например HDMI/Ethernet и Дополнительные периферийные устройства USB|Расшифровка дикторского текста для диалога, для образовательных учреждений, больницы, программ-роботов, OTT», вкладка «голосовой агент, диск до|
+|[Рубо Smart Audio Dev Kit](https://ddk.roobo.com)</br>[Установка](speech-devices-sdk-roobo-v1.md) / [Краткое руководство](speech-devices-sdk-android-quickstart.md)![Roobo Smart Audio Dev Kit](media/speech-devices-sdk/device-roobo-v1.jpg)|7\. массив MIC, ARM SOC, WIFI, выход из аудиоподсистемы, IO. </br>[Android](speech-devices-sdk-android-quickstart.md)|Первый пакет SDK для речевых устройств, предназначенный для адаптации Microsoft MIC Array и Front Processing SDK, предназначен для разработки речевых сценариев и речи с высоким качеством.|Запись беседы, смарт-динамик, агент передачи голоса, носимого пользователем|
+|[Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)</br>[Установка](https://docs.microsoft.com/azure/Kinect-dk/set-up-azure-kinect-dk) / [Краткое руководство](speech-devices-sdk-windows-quickstart.md)![Azure Kinect DK](media/speech-devices-sdk/device-azure-kinect-dk.jpg)|7 видеокамер и глубиной цвета массива MIC. </br>[Windows](speech-devices-sdk-windows-quickstart.md)/[Linux](speech-devices-sdk-linux-quickstart.md)|Комплект разработчика с усовершенствованными датчиками искусственного интеллекта (ии) для создания сложных моделей компьютерных концепций и речи. Он сочетает в себе высококлассный пространственный массив и фотокамеру с видеокамерой и датчиком ориентации — всего на одном маленьком устройстве с несколькими режимами, вариантами и пакетами SDK для размещения различных типов вычислений.|Транскрипция беседы, Robotics, интеллектуальное создание|
+|Рубо Smart Audio Dev Kit 2![Рубо Smart Audio Dev Kit 2](media/speech-devices-sdk/device-roobo-v2.jpg)|7\. массив MIC, ARM SOC, WIFI, Bluetooth, IO. </br>Linux|Пакет SDK для речевых устройств второго поколения, предоставляющий альтернативную ОС и дополнительные функции в экономичной справочной структуре.|Запись беседы, смарт-динамик, агент передачи голоса, носимого пользователем|
+|Доска разработки Урбеттер T11![Урбеттер DDK](media/speech-devices-sdk/device-urbetter.jpg)|7\. массив MIC, ARM SOC, WIFI, Ethernet, HDMI, USB-камера. </br>Linux|Пакет SDK для речевых устройств, который адаптирует микрофонный массив Майкрософт и поддерживает расширенные операции ввода-вывода, такие как HDMI/Ethernet и другие периферийные устройства USB.|Транскрипция беседы, образование, больницы, роботы, OTT Box, агент передачи голоса, диск|
 
 ## <a name="download-the-speech-devices-sdk"></a>Загрузка пакета SDK для речевых устройств
 
-Скачайте [речевых устройств SDK](https://aka.ms/sdsdk-download).
+Скачайте [пакет SDK для речевых устройств](https://aka.ms/sdsdk-download).
 
 ## <a name="next-steps"></a>Следующие шаги
 

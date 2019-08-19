@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
 ms.openlocfilehash: f18992be353d2d6cc739412d98ccd97d5e78d4c7
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67613860"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
@@ -22,21 +22,21 @@ ms.locfileid: "67613860"
 При использовании поставщика Virtual Kubelet для Экземпляров контейнеров Azure вы можете назначить контейнеры Linux и Windows на экземпляр контейнера, как если бы это был стандартный узел Kubernetes. Эта конфигурация позволяет воспользоваться преимуществами Kubernetes и возможностью управления стоимостью и затратами экземпляров контейнеров.
 
 > [!NOTE]
-> Теперь в AKS есть встроенная поддержка планирования контейнеров в ACI (*виртуальные узлы*). Сейчас эти виртуальные узлы поддерживают экземпляры контейнеров Linux. Если вам нужно запланировать экземпляры контейнеров Windows, вы можете продолжить работу с Virtual Kubelet. В противном случае следует использовать виртуальные узлы и не выполнять вручную инструкции Virtual Kubelet, указанные в данной статье. Вы можете начать работу с виртуальными узлами с помощью [Azure CLI][virtual-nodes-cli] or [Azure portal][virtual-nodes-portal].
+> Теперь в AKS есть встроенная поддержка планирования контейнеров в ACI (*виртуальные узлы*). Сейчас эти виртуальные узлы поддерживают экземпляры контейнеров Linux. Если вам нужно запланировать экземпляры контейнеров Windows, вы можете продолжить работу с Virtual Kubelet. В противном случае следует использовать виртуальные узлы и не выполнять вручную инструкции Virtual Kubelet, указанные в данной статье. Начать работу с виртуальными узлами можно с помощью [Azure CLI][virtual-nodes-cli] или [портал Azure][virtual-nodes-portal].
 >
-> Virtual Kubelet представляет собой экспериментальный открытый проект и должен использоваться таким образом. Для участия, проблемы с файлов и узнайте больше о виртуальных kubelet, см. в разделе [проекта GitHub виртуального Kubelet][vk-github].
+> Virtual Kubelet представляет собой экспериментальный открытый проект и должен использоваться таким образом. Сведения о том, как внести изменения в файл Virtual kubelet, см. в статье о [проекте Virtual Kubelet GitHub][vk-github].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Для выполнения этих инструкций у вас должен быть кластер AKS. Если вам нужен кластер AKS, см. в разделе [быстрого запуска Azure Kubernetes Service (AKS)][aks-quick-start].
+Для выполнения этих инструкций у вас должен быть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по [службе Kubernetes Azure (AKS)][aks-quick-start].
 
-Вам понадобится Azure CLI версии **2.0.65** или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Также требуется Azure CLI версии **2.0.65** или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Чтобы установить Virtual Kubelet, установите и настройте [Helm][aks-helm] в кластере AKS. Убедитесь, что ваш Tiller [настроен для использования с Kubernetes RBAC](#for-rbac-enabled-clusters), при необходимости.
+Чтобы установить Virtual Kubelet, установите и настройте [Helm][aks-helm] в кластере AKS. При необходимости убедитесь, что ваш кассовый ящик [настроен для использования с KUBERNETES RBAC](#for-rbac-enabled-clusters).
 
-### <a name="register-container-instances-feature-provider"></a>Зарегистрировать поставщик функций экземпляры контейнеров
+### <a name="register-container-instances-feature-provider"></a>Регистрация поставщика функций для экземпляров контейнеров
 
-Если вы не использовали ранее службы экземпляра контейнера Azure (ACI), необходимо зарегистрируйте поставщик служб с вашей подпиской. Можно проверить состояние регистрации поставщика ACI с помощью [список поставщиков az][az-provider-list] команды, как показано в следующем примере:
+Если вы ранее не использовали службу "экземпляр контейнера Azure" (ACI), зарегистрируйте поставщик службы в своей подписке. Состояние регистрации поставщика ACI можно проверить с помощью команды [AZ Provider List][az-provider-list] , как показано в следующем примере:
 
 ```azurecli-interactive
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
@@ -50,7 +50,7 @@ Namespace                    RegistrationState
 Microsoft.ContainerInstance  Registered
 ```
 
-Если поставщик отображается в том, что *NotRegistered*, зарегистрируйте поставщик с помощью [az provider register][az-provider-register] как показано в следующем примере:
+Если поставщик показан как *зарегистрировано*, зарегистрируйте поставщик с помощью команды [AZ Provider Register][az-provider-register] , как показано в следующем примере:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -58,7 +58,7 @@ az provider register --namespace Microsoft.ContainerInstance
 
 ### <a name="for-rbac-enabled-clusters"></a>Кластеры с поддержкой RBAC
 
-Если используется кластер AKS с поддержкой RBAC, необходимо создать учетную запись службы и привязку роли для использования с Tiller. Дополнительные сведения см. в разделе [управление доступом на основе ролей Helm][helm-rbac]. Чтобы создать учетную запись службы и привязку роли, создайте файл с именем *rbac-virtual-kubelet.yaml* и вставьте следующее определение.
+Если используется кластер AKS с поддержкой RBAC, необходимо создать учетную запись службы и привязку роли для использования с Tiller. Дополнительные сведения см. в статье [Helm управления доступом на основе ролей][helm-rbac]. Чтобы создать учетную запись службы и привязку роли, создайте файл с именем *rbac-virtual-kubelet.yaml* и вставьте следующее определение.
 
 ```yaml
 apiVersion: v1
@@ -81,7 +81,7 @@ subjects:
     namespace: kube-system
 ```
 
-Применение учетной записи службы и привязка с [применить kubectl][kubectl-apply] и укажите ваш *rbac виртуальной kubelet.yaml* файл, как показано в следующем примере:
+Примените учетную запись службы и привязку с помощью [kubectl Apply][kubectl-apply] и укажите файл *RBAC-Virtual-kubelet. YAML* , как показано в следующем примере:
 
 ```console
 $ kubectl apply -f rbac-virtual-kubelet.yaml
@@ -99,7 +99,7 @@ helm init --service-account tiller
 
 ## <a name="installation"></a>Установка
 
-Используйте [az aks install соединитель][aks-install-connector] команду, чтобы установить Virtual Kubelet. В следующем примере разворачиваются соединители как для Linux, так и для Windows.
+Чтобы установить Virtual Kubelet, выполните команду [AZ AKS Install-Connector][aks-install-connector] . В следующем примере разворачиваются соединители как для Linux, так и для Windows.
 
 ```azurecli-interactive
 az aks install-connector \
@@ -109,9 +109,9 @@ az aks install-connector \
     --os-type Both
 ```
 
-Эти аргументы доступны для [az aks install соединитель][aks-install-connector] команды.
+Эти аргументы доступны для команды [AZ AKS Install-Connector][aks-install-connector] .
 
-| Аргумент: | Описание | Обязательно для заполнения |
+| Аргумент: | Описание | Обязательное значение |
 |---|---|:---:|
 | `--connector-name` | Имя соединителя ACI.| Да |
 | `--name` `-n` | Имя управляемого кластера. | Да |
@@ -126,7 +126,7 @@ az aks install-connector \
 
 ## <a name="validate-virtual-kubelet"></a>Проверка Virtual Kubelet
 
-Чтобы проверить, что был установлен Virtual Kubelet, получения списка узлов Kubernetes с помощью [kubectl получить узлы][kubectl-get] команды:
+Чтобы проверить, установлена виртуальная Kubelet, возвращайте список узлов Kubernetes с помощью команды [kubectl Get Nodes][kubectl-get] :
 
 ```console
 $ kubectl get nodes
@@ -139,7 +139,7 @@ virtual-kubelet-virtual-kubelet-windows-eastus   Ready    agent   37s   v1.13.1-
 
 ## <a name="run-linux-container"></a>Запуск контейнера Linux
 
-Создайте файл `virtual-kubelet-linux.yaml` и скопируйте в него следующий код YAML. Обратите внимание, [nodeSelector][node-selector] and [toleration][toleration] используются для планирования контейнеров на узле.
+Создайте файл `virtual-kubelet-linux.yaml` и скопируйте в него следующий код YAML. Обратите внимание, что для планирования контейнера на узле используются [nodeSelector][node-selector] и [toleration][toleration].
 
 ```yaml
 apiVersion: apps/v1
@@ -172,13 +172,13 @@ spec:
         effect: NoSchedule
 ```
 
-Запускает приложение с [kubectl создать][kubectl-create] команды.
+Запустите приложение с помощью команды [kubectl Create][kubectl-create] .
 
 ```console
 kubectl create -f virtual-kubelet-linux.yaml
 ```
 
-Используйте [kubectl get pods][kubectl-get] с `-o wide` аргумент для вывода списка модулей с узлом запланированного. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-kubelet-virtual-kubelet-linux`.
+Используйте команду [kubectl Get][kubectl-get] Pod с `-o wide` аргументом для вывода списка модулей Pod с запланированным узлом. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-kubelet-virtual-kubelet-linux`.
 
 ```console
 $ kubectl get pods -o wide
@@ -189,7 +189,7 @@ aci-helloworld-7b9ffbf946-rx87g   1/1     Running   0          22s     52.224.14
 
 ## <a name="run-windows-container"></a>Запуск контейнера Windows
 
-Создайте файл `virtual-kubelet-windows.yaml` и скопируйте в него следующий код YAML. Обратите внимание, [nodeSelector][node-selector] and [toleration][toleration] используются для планирования контейнеров на узле.
+Создайте файл `virtual-kubelet-windows.yaml` и скопируйте в него следующий код YAML. Обратите внимание, что для планирования контейнера на узле используются [nodeSelector][node-selector] и [toleration][toleration].
 
 ```yaml
 apiVersion: apps/v1
@@ -222,13 +222,13 @@ spec:
         effect: NoSchedule
 ```
 
-Запускает приложение с [kubectl создать][kubectl-create] команды.
+Запустите приложение с помощью команды [kubectl Create][kubectl-create] .
 
 ```console
 kubectl create -f virtual-kubelet-windows.yaml
 ```
 
-Используйте [kubectl get pods][kubectl-get] с `-o wide` аргумент для вывода списка модулей с узлом запланированного. Обратите внимание, что pod `nanoserver-iis` был назначен на узел `virtual-kubelet-virtual-kubelet-windows`.
+Используйте команду [kubectl Get][kubectl-get] Pod с `-o wide` аргументом для вывода списка модулей Pod с запланированным узлом. Обратите внимание, что pod `nanoserver-iis` был назначен на узел `virtual-kubelet-virtual-kubelet-windows`.
 
 ```console
 $ kubectl get pods -o wide
@@ -239,7 +239,7 @@ nanoserver-iis-5d999b87d7-6h8s9   1/1     Running   0          47s     52.224.14
 
 ## <a name="remove-virtual-kubelet"></a>Удаление Virtual Kubelet
 
-Используйте [az aks remove-connector][aks-remove-connector] команду, чтобы удалить Virtual Kubelet. Замените значения аргументов на имя соединителя, кластера AKS и группы ресурсов кластера AKS.
+Чтобы удалить виртуальную Kubelet, используйте команду [AZ AKS Remove-Connector][aks-remove-connector] . Замените значения аргументов на имя соединителя, кластера AKS и группы ресурсов кластера AKS.
 
 ```azurecli-interactive
 az aks remove-connector \
@@ -254,9 +254,9 @@ az aks remove-connector \
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Возможные причины этой проблемы с Virtual Kubelet, см. в разделе [известные совместимости и обходные пути][vk-troubleshooting]. To report problems with the Virtual Kubelet, [open a GitHub issue][vk-issues].
+Сведения о возможных проблемах с виртуальным Kubelet см. в [статье известные проблемы и способы их решения][vk-troubleshooting]. Чтобы сообщить о проблемах с виртуальным Kubelet, [откройте проблему GitHub][vk-issues].
 
-Дополнительные сведения о Virtual Kubelet в [проекта GitHub виртуального Kubelet][vk-github].
+Дополнительные сведения о виртуальных Kubelet см. в статье о [проекте Virtual Kubelet GitHub][vk-github].
 
 <!-- LINKS - internal -->
 [aks-quick-start]: ./kubernetes-walkthrough.md

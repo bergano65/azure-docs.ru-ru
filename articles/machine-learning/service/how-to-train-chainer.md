@@ -1,7 +1,7 @@
 ---
-title: Обучение и регистрация моделей цепочек
+title: Обучение нейронной сети для глубокого обучения с помощью формирователя цепочки
 titleSuffix: Azure Machine Learning service
-description: В этой статье показано, как обучить и зарегистрировать модель цепочки с помощью службы Машинное обучение Azure.
+description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика цепочки Машинное обучение Azure.  Пример сценария классифицирует рукописные цифры для создания нейронной сети глубокого обучения с помощью библиотеки Python на основе NumPy.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,21 +9,21 @@ ms.topic: conceptual
 ms.author: maxluk
 author: maxluk
 ms.reviewer: sdgilley
-ms.date: 06/15/2019
-ms.openlocfilehash: 7cf5650708cd951e872e3df6ea533a62bde0389d
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.date: 08/02/2019
+ms.openlocfilehash: bc14ba2bcaa80236717c062abd1dc8a63b58305c
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618342"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966832"
 ---
 # <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning-service"></a>Обучение и регистрация моделей цепочек в масштабе с помощью службы Машинное обучение Azure
 
-В этой статье показано, как обучить и зарегистрировать модель цепочки с помощью службы Машинное обучение Azure. Он использует популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью [библиотеки Python](https://Chainer.org) , которая выполняется поверх [NumPy](https://www.numpy.org/).
+Из этой статьи вы узнаете, как выполнять сценарии обучения для программы [цепочка](https://chainer.org/) в масштабах предприятия с помощью класса [оценщика цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) машинное обучение Azure. В примере обучающего скрипта в этой статье используется популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью библиотеки Python, которая выполняется поверх [NumPy](https://www.numpy.org/).
 
-Формирователь цепочки — это высокоуровневый интерфейс API нейронной сети, который может выполняться на основе других популярных DNN платформ для упрощения разработки. Служба Машинное обучение Azure позволяет быстро масштабировать задания обучения с помощью эластичных облачных ресурсов. Вы также можете отвестись к обучающим запускам, моделям версий, развертыванию моделей и т. д.
+Независимо от того, обходите ли вы модель цепочки глубокого обучения с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-Независимо от того, разрабатываете ли вы модель цепочки с нуля или используете существующую модель в облаке, Машинное обучение Azure служба может помочь в создании моделей, готовых к работе.
+Дополнительные сведения о [глубоком обучении и машинном](concept-deep-learning-vs-machine-learning.md)обучении.
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -33,14 +33,14 @@ ms.locfileid: "68618342"
 
 - Машинное обучение Azure виртуальной машины записной книжки — Загрузка или установка не требуется
 
-    - Заполните [Краткое руководство](quickstart-run-cloud-notebook.md) по облачной записной книжке, чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
-    - В папке Samples на сервере записной книжки найдите готовую записную книжку и файлы в папке " **инструкции-azureml/Training-with-глубоко-Learning/учить-a-Настройка-deploy-с-Chain** ".  Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
+    - Пройдите [руководство по Настройте среду и рабочую](tutorial-1st-experiment-sdk-setup.md) область, чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
+    - В папке примеры глубокого обучения на сервере записной книжки найдите готовую записную книжку и файлы в папке " **инструкции-azureml/Training-with-глубокая/Learning-с параметром-"-redeploy-с-** ".  Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 - Собственный сервер Jupyter Notebook
 
-    - [Установка пакета SDK для Машинное обучение Azure для Python](setup-create-workspace.md#sdk)
-    - [Создание файла конфигурации рабочей области](setup-create-workspace.md#write-a-configuration-file)
-    - Скачайте пример файла скрипта [chainer_mnist. корректировки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/chainer_mnist.py)
+    - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+    - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
+    - Скачайте пример файла скрипта [chainer_mnist. корректировки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/chainer_mnist.py).
      - Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
 ## <a name="set-up-the-experiment"></a>Настройка эксперимента
@@ -94,7 +94,7 @@ import shutil
 shutil.copy('chainer_mnist.py', project_folder)
 ```
 
-### <a name="create-an-experiment"></a>Создание эксперимента
+### <a name="create-a-deep-learning-experiment"></a>Создание эксперимента глубокого обучения
 
 Создайте эксперимент. В этом примере Создайте эксперимент с именем "Chain-mnist".
 
@@ -209,10 +209,10 @@ for f in run.get_file_names():
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы обучили модель цепочки в службе Машинное обучение Azure. 
-
-* Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
+В этой статье вы обучили и зарегистрировали нейронную сеть для глубокого обучения, использующую цепочку Машинное обучение Azure службы. Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
 
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 
 * [Отслеживание метрик выполнения во время обучения](how-to-track-experiments.md)
+
+* [Ознакомьтесь с нашей справочной архитектурой по распределенному глубокому обучению в Azure](/azure/architecture/reference-architectures/ai/training-deep-learning)

@@ -1,6 +1,6 @@
 ---
-title: Настройка CoreDNS для службы Azure Kubernetes (AKS)
-description: Дополнительные сведения о настройке CoreDNS Добавление поддоменов или расширить пользовательские конечные точки DNS, с помощью службы Azure Kubernetes (AKS)
+title: Настройка Кореднс для службы Kubernetes Azure (AKS)
+description: Узнайте, как настроить Кореднс для добавления поддоменов или расширения пользовательских конечных точек DNS с помощью службы Kubernetes Azure (AKS).
 services: container-service
 author: jnoller
 ms.service: container-service
@@ -8,34 +8,34 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
 ms.openlocfilehash: 247665f58dd064565f0e9aebc9859e97ce0ab0c0
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
-ms.translationtype: MT
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67836981"
 ---
-# <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка CoreDNS со службой Azure Kubernetes
+# <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка Кореднс с помощью службы Kubernetes Azure
 
-Служба Azure Kubernetes (AKS) использует [CoreDNS][coredns] проекта для управления DNS кластера и разрешение со всеми *1.12.x* и более поздней версии кластеров. Ранее был использован проекта kube-dns. Этот проект kube-dns теперь является устаревшим. Дополнительные сведения о настройке CoreDNS и Kubernetes, см. в разделе [официальной документации вышестоящего][corednsk8s].
+Служба Azure Kubernetes Service (AKS) использует проект [кореднс][coredns] для управления DNS кластера и разрешения для всех кластеров *1.12. x* и более поздних версий. Ранее использовался проект KUBE-DNS. Этот проект KUBE-DNS теперь устарел. Дополнительные сведения о настройке Кореднс и Kubernetes см. в [официальной вышестоящей документации][corednsk8s].
 
-А AKS — это управляемая служба, нельзя изменить основной конфигурации для CoreDNS ( *CoreFile*). Вместо этого использовать Kubernetes *ConfigMap* переопределять параметры по умолчанию. Чтобы просмотреть AKS CoreDNS ConfigMaps по умолчанию, используйте `kubectl get configmaps coredns -o yaml` команды.
+Так как AKS является управляемой службой, вы не можете изменить основную конфигурацию Кореднс ( *корефиле*). Вместо этого используйте Kubernetes *ConfigMap* для переопределения параметров по умолчанию. Чтобы просмотреть AKS кореднс конфигмапс по умолчанию, используйте `kubectl get configmaps coredns -o yaml` команду.
 
-В этой статье показано, как использовать ConfigMaps базовой настройки параметров CoreDNS в AKS.
+В этой статье показано, как использовать Конфигмапс для базовых параметров настройки Кореднс в AKS.
 
 > [!NOTE]
-> `kube-dns` предлагаются различные [параметры настройки][kubednsblog] через карту конфигурации Kubernetes. — CoreDNS **не** обратную совместимость с kube-dns. Необходимо обновить все настройки, который использовался ранее для использования с CoreDNS.
+> `kube-dns`предложены различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
-## <a name="what-is-supportedunsupported"></a>Новые возможности, поддерживаемые и неподдерживаемые
+## <a name="what-is-supportedunsupported"></a>Поддерживаемые и неподдерживаемые
 
-Поддерживаются все встроенные подключаемые модули CoreDNS. Поддерживаются не add-on/сторонние подключаемые модули. 
+Поддерживаются все встроенные подключаемые модули Кореднс. Не поддерживаются надстройки и подключаемые модули сторонних производителей. 
 
-## <a name="rewrite-dns"></a>Перепишите DNS
+## <a name="rewrite-dns"></a>Перезапись DNS
 
-Один сценарий, к которым у вас есть — для выполнения операции перезаписи имя DNS в режиме реального времени. В следующем примере замените `<domain to be written>` собственным полным доменным именем. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Один из сценариев — выполнить перезапись DNS-имени на лету. В следующем примере замените `<domain to be written>` на собственное полное доменное имя. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -53,30 +53,30 @@ data:
     }
 ```
 
-Создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] команду и укажите имя yaml-ФАЙЛ манифеста:
+Создайте ConfigMap с помощью команды [kubectl Apply ConfigMap][kubectl-apply] и укажите имя манифеста YAML:
 
 ```console
 kubectl apply -f corednsms.yaml
 ```
 
-Чтобы проверить, были применены настройки, используйте [kubectl get configmaps][kubectl-get] и укажите ваш *coredns-custom* ConfigMap:
+Чтобы проверить, применены ли настройки, используйте [kubectl Get конфигмапс][kubectl-get] и укажите *кореднс-Custom* ConfigMap:
 
 ```
 kubectl get configmaps --namespace=kube-system coredns-custom -o yaml
 ```
 
-Теперь принудительно CoreDNS перезагрузить ConfigMap. [Kubectl удалить pod][kubectl delete] команда не уничтожения данных и не вызывает простоя. `kube-dns` Модулей будут удалены, а планировщик Kubernetes заново их. Эти новые модули содержат изменение значение срока ЖИЗНИ.
+Теперь принудительно перезагрузите ConfigMap Кореднс. Команда [kubectl Delete Pod][kubectl delete] не является обратимой и не приводит к простою. `kube-dns` Удаляются модули, а затем планировщик Kubernetes воссоздает их. Эти новые модули Pod содержат изменение значения TTL.
 
 ```console
 kubectl delete pod --namespace kube-system -l k8s-app=kube-dns
 ```
 
 > [!Note]
-> Приведенная выше команда является правильным. Хотя мы Меняем `coredns`, выполняется развертывание **kube-dns** имя.
+> Указанная выше команда верна. Пока мы изменим `coredns`, развертывание находится под именем **KUBE-DNS** .
 
-## <a name="custom-proxy-server"></a>Пользовательский прокси-сервер
+## <a name="custom-proxy-server"></a>Настраиваемый прокси-сервер
 
-Если вам нужно указать прокси-сервер для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите `proxy` имя и адрес со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Если необходимо указать прокси-сервер для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите `proxy` имя и адрес, указав значения для своей среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -91,7 +91,7 @@ data:
     }
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах, создайте ConfigMap с помощью команды [kubectl Apply ConfigMap][kubectl-apply] и укажите имя манифеста YAML. Затем принудительно Кореднс перезагрузите ConfigMap с помощью [kubectl Delete Pod][kubectl delete] , чтобы планировщик Kubernetes воссоздать их.
 
 ```console
 kubectl apply -f corednsms.yaml
@@ -100,9 +100,9 @@ kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 
 ## <a name="use-custom-domains"></a>Использовать личные домены
 
-Может потребоваться настройка личных доменов, которые можно разрешить только внутренним образом. Например, может потребоваться разрешить пользовательский домен *puglife.local*, который не является допустимым доменом верхнего уровня. Без личного домена ConfigMap в кластере AKS не удается разрешить адрес.
+Может потребоваться настроить пользовательские домены, которые могут разрешаться только внутри. Например, может потребоваться разрешить личный домен *пуглифе. local*, который не является допустимым доменом верхнего уровня. Без пользовательского домена ConfigMap кластер AKS не сможет разрешить адрес.
 
-В следующем примере обновление личного домена и IP-адрес передавать трафик со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+В следующем примере измените личный домен и IP-адрес, чтобы направить трафик на значения для вашей среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -119,16 +119,16 @@ data:
     }
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах, создайте ConfigMap с помощью команды [kubectl Apply ConfigMap][kubectl-apply] и укажите имя манифеста YAML. Затем принудительно Кореднс перезагрузите ConfigMap с помощью [kubectl Delete Pod][kubectl delete] , чтобы планировщик Kubernetes воссоздать их.
 
 ```console
 kubectl apply -f corednsms.yaml
 kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 ```
 
-## <a name="stub-domains"></a>Заглушки доменов
+## <a name="stub-domains"></a>Домены-заглушки
 
-CoreDNS также может использоваться для настройки доменов заглушки. В следующем примере обновление пользовательских доменов и IP-адресов со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Кореднс также можно использовать для настройки доменов-заглушек. В следующем примере обновите личные домены и IP-адреса, указав значения для своей среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -151,7 +151,7 @@ data:
 
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах, создайте ConfigMap с помощью команды [kubectl Apply ConfigMap][kubectl-apply] и укажите имя манифеста YAML. Затем принудительно Кореднс перезагрузите ConfigMap с помощью [kubectl Delete Pod][kubectl delete] , чтобы планировщик Kubernetes воссоздать их.
 
 ```console
 kubectl apply -f corednsms.yaml
@@ -160,7 +160,7 @@ kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 
 ## <a name="hosts-plugin"></a>Подключаемый модуль узлов
 
-Поддерживаются все встроенные подключаемые модули это означает, что CoreDNS [узлы][coredns hosts] подключаемый модуль доступен для настройки также:
+Так как поддерживаются все встроенные подключаемые модули, это означает, что CoreDNS [Hosts][coredns hosts] также можно настроить подключаемый модуль.
 
 ```yaml
 apiVersion: v1
@@ -178,9 +178,9 @@ data:
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье показано несколько примеров сценариев для настройки CoreDNS. Сведения о проекте CoreDNS, см. в разделе [страницы вышестоящего проекта CoreDNS][coredns].
+В этой статье показано несколько примеров сценариев для настройки Кореднс. Сведения о проекте Кореднс см. [на странице вышестоящего проекта кореднс][coredns].
 
-Дополнительные сведения об основных концепциях сети, см. в разделе [сети основные понятия для приложений в AKS][concepts-network].
+Дополнительные сведения о основных понятиях сети см. [в разделе Основные понятия сети для приложений в AKS][concepts-network].
 
 <!-- LINKS - external -->
 [kubednsblog]: https://www.danielstechblog.io/using-custom-dns-server-for-domain-specific-name-resolution-with-azure-kubernetes-service/
