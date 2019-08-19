@@ -187,10 +187,10 @@ ms.locfileid: "65150882"
 | sqlDwPolyBase | Если при копировании данных в хранилище данных SQL используется PolyBase. | Boolean |
 | redshiftUnload | Если при копировании данных из Redshift используется команда UNLOAD. | Boolean |
 | hdfsDistcp | Если при копировании данных из HDFS используется DistCp. | Boolean |
-| effectiveIntegrationRuntime | Показывает, какие среды Integration Runtime используются для выполнения действия, в формате `<IR name> (<region if it's Azure IR>)`. | Текст (string) |
+| effectiveIntegrationRuntime | Показывает, какие среды Integration Runtime используются для выполнения действия, в формате `<IR name> (<region if it's Azure IR>)`. | Text (string) |
 | usedDataIntegrationUnits | Единицы интеграции актуальных данных во время копирования. | Значение Int32 |
 | usedParallelCopies | Использованное количество параллельных процессов копирования. | Значение Int32|
-| redirectRowPath | Путь к журналу пропущенных несовместимых строк в хранилище BLOB-объектов, который настраивается в разделе redirectIncompatibleRowSettings. См. пример ниже. | Текст (string) |
+| redirectRowPath | Путь к журналу пропущенных несовместимых строк в хранилище BLOB-объектов, который настраивается в разделе redirectIncompatibleRowSettings. См. пример ниже. | Text (string) |
 | executionDetails | Дополнительные сведения о стадиях, которые проходит действие копирования, с указанием всех шагов, длительности, конфигураций и т. п. Не рекомендуем применять синтаксический анализ для этого раздела, поскольку его формат может изменяться. | Массив, |
 
 ```json
