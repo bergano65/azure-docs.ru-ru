@@ -193,6 +193,8 @@
       items:
         - name: Зависание приложения Apache Tez
           href: ./interactive-query-troubleshoot-tez-hangs.md
+        - name: Медленная загрузка представления Apache Ambari Tez
+          href: ./interactive-query-troubleshoot-tez-view-slow.md
         - name: Производительность запросов в LLAP Apache Hive
           href: ./interactive-query-troubleshoot-query-performance.md
         - name: Медленная работа средства редукции
@@ -203,24 +205,14 @@
           href: ./interactive-query-troubleshoot-permission-error-create-table.md
         - name: Превышено ограничение на накладные расходы при сборке мусора
           href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
-        - name: Медленная загрузка представления Apache Ambari Tez
-          href: ./interactive-query-troubleshoot-tez-view-slow.md
         - name: В представлении Apache Hive не отображается сообщение об ошибке
           href: ./interactive-query-troubleshoot-error-message-hive-view.md
         - name: Представление Apache Hive недоступно
           href: ./interactive-query-troubleshoot-inaccessible-hive-view.md
         - name: "ZooKeeperHiveClientException\_— конфигурации HiveServer2"
           href: ./interactive-query-troubleshoot-zookeeperhiveclientexception-hiveserver-configs.md
-        - name: Производительность запросов в LLAP Apache Hive
-          href: ./interactive-query-troubleshoot-query-performance.md
         - name: Устранение задержки работы или сбоя кластера HDInsight
           href: ../hdinsight-troubleshoot-failed-cluster.md
-        - name: Устранение неполадок с Apache Hadoop HDFS
-          href: ../hdinsight-troubleshoot-hdfs.md
-        - name: Устранение неполадок с Apache Hive
-          href: ../hdinsight-troubleshoot-hive.md
-        - name: Устранение неполадок с Apache Hadoop YARN
-          href: ../hdinsight-troubleshoot-yarn.md
         - name: Устранение неполадок с Apache Hadoop HDFS
           href: ../hdinsight-troubleshoot-hdfs.md?toc=/azure/hdinsight/interactive-query/toc.json&bc=/azure/hdinsight/interactive-query/breadcrumb/toc.json
         - name: Устранение неполадок с Apache Hive

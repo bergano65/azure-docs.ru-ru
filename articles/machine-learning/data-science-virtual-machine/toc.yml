@@ -6,8 +6,6 @@
   items:
     - name: Что такое Виртуальная машина для обработки и анализа данных?
       href: overview.md
-    - name: Что такое виртуальная машина для глубокого обучения?
-      href: deep-learning-dsvm-overview.md
     - name: Что такое Виртуальная машина для обработки и анализа данных Geo AI?
       href: geo-ai-dsvm-overview.md
 - name: Краткие руководства
@@ -23,8 +21,6 @@
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
   items:
-    - name: Обнаружение DSVM
-      href: dsvm-tools-overview.md
     - name: Платформы глубокого обучения и искусственного интеллекта
       href: dsvm-deep-learning-ai-frameworks.md
     - name: Языки программирования
@@ -49,8 +45,6 @@
       href: vm-do-ten-things.md
     - name: Использование виртуальной машины Linux для обработки и анализа данных
       href: linux-dsvm-walkthrough.md
-    - name: Использование виртуальной машины для глубокого обучения
-      href: use-deep-learning-dsvm.md
     - name: Использование виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
       href: use-geo-ai-dsvm.md
     - name: Создание автомасштабируемого пула виртуальных машин для обработки и анализа данных
