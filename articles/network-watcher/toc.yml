@@ -4,7 +4,7 @@
   items:
     - name: Сведения о Наблюдателе за сетями
       href: network-watcher-monitoring-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью портала
@@ -41,7 +41,7 @@
       href: network-watcher-security-group-view-overview.md
     - name: Разрешения на управление доступом на основе ролей
       href: required-rbac-permissions.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Настройка Наблюдателя за сетями
       href: network-watcher-create.md
@@ -57,7 +57,7 @@
           items:
             - name: Azure PowerShell
               href: diagnose-vm-network-routing-problem-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: diagnose-vm-network-routing-problem-cli.md
         - name: Диагностика проблем с исходящими подключениями
           items:
@@ -65,7 +65,7 @@
               href: network-watcher-connectivity-portal.md
             - name: Azure PowerShell
               href: network-watcher-connectivity-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: network-watcher-connectivity-cli.md
             - name: REST
               href: network-watcher-connectivity-rest.md
@@ -77,7 +77,7 @@
                   href: network-watcher-packet-capture-manage-portal.md
                 - name: Azure PowerShell
                   href: network-watcher-packet-capture-manage-powershell.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: network-watcher-packet-capture-manage-cli.md
                 - name: REST
                   href: network-watcher-packet-capture-manage-rest.md
@@ -97,10 +97,12 @@
           items:
             - name: Azure PowerShell
               href: network-watcher-nsg-flow-logging-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: network-watcher-nsg-flow-logging-cli.md
             - name: REST
               href: network-watcher-nsg-flow-logging-rest.md
+        - name: Удаление больших двоичных объектов хранилища журналов потоков NSG
+          href: network-watcher-delete-nsg-flow-log-blobs.md
         - name: Анализ журналов потоков NSG
           items:
             - name: Чтение журналов потоков NSG
@@ -124,7 +126,7 @@
           items:
             - name: Azure PowerShell
               href: network-watcher-security-group-view-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: network-watcher-security-group-view-cli.md
             - name: REST
               href: network-watcher-security-group-view-rest.md
@@ -136,7 +138,7 @@
           items:
             - name: Azure PowerShell
               href: network-watcher-troubleshoot-manage-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: network-watcher-troubleshoot-manage-cli.md
             - name: REST
               href: network-watcher-troubleshoot-manage-rest.md
@@ -152,7 +154,7 @@
       href: ../log-analytics/log-analytics-network-performance-monitor.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/watcher
     - name: Azure PowerShell
       href: '/powershell/module/az.network/#network_watcher'
@@ -180,5 +182,5 @@
       href: 'https://azure.microsoft.com/updates/?product=network-watcher'
     - name: Соглашение об уровне обслуживания
       href: 'https://azure.microsoft.com/support/legal/sla/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'http://stackoverflow.com/questions/tagged/network-watcher'

@@ -276,6 +276,22 @@
         - name: Устранение неполадок со State Configuration (DSC)
           href: troubleshoot/desired-state-configuration.md
           displayName: 'Desired State Configuration, troubleshoot'
+    - name: Справочные материалы
+      items:
+        - name: Решения сообщества
+          items:
+            - name: Использование данных конфигурации в нужном масштабе
+              href: automation-dsc-config-data-at-scale.md
+              displayName: 'DSC, Configuration Data, ConfigData'
+            - name: Создание конфигураций на серверах
+              href: automation-dsc-config-from-server.md
+              displayName: 'DSC, ReverseDSC'
+            - name: Использование конфигурации на основе STIG
+              href: automation-dsc-configuration-based-on-stig.md
+              displayName: 'DSC, Configuration'
+            - name: Преобразование конфигураций в составные ресурсы
+              href: automation-dsc-create-composite.md
+              displayName: 'DSC, composite'
 - name: Управление общими ресурсами
   items:
     - name: Сертификаты

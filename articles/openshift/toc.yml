@@ -27,6 +27,8 @@
           href: howto-aad-app-configuration.md
     - name: Развертывание изолированного экземпляра Prometheus в кластере Azure Red Hat OpenShift
       href: howto-deploy-prometheus.md
+    - name: Управление проектами в кластере Azure Red Hat OpenShift
+      href: howto-manage-projects.md
 - name: Справочные материалы
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift

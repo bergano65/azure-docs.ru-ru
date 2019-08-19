@@ -67,6 +67,8 @@
       href: overview-hosting-plans.md
     - name: Функции ОС
       href: operating-system-functionality.md
+    - name: Рекомендации по развертыванию
+      href: deploy-best-practices.md
     - name: Безопасность
       items:
         - name: Рекомендации
@@ -217,6 +219,8 @@
       href: /azure/templates/microsoft.web/allversions
 - name: Ресурсы
   items:
+    - name: 'Блог, посвященный Службе приложений'
+      href: 'https://aka.ms/appserviceblog'
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/
     - name: Стратегия развития Azure

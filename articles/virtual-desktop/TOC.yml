@@ -32,6 +32,8 @@
       href: create-host-pools-arm-template.md
     - name: Создание пула узлов с помощью PowerShell
       href: create-host-pools-powershell.md
+    - name: Применение лицензии Windows к узлам сеансов Виртуальных рабочих столов Windows
+      href: apply-windows-license.md
     - name: Настройка общей папки профиля пользователя в пуле узлов
       href: create-host-pools-user-profile.md
     - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
@@ -48,6 +50,8 @@
       href: customize-feed-for-virtual-desktop-users.md
     - name: Настройка свойств RDP
       href: customize-rdp-properties.md
+    - name: Развертывание средства диагностики
+      href: deploy-diagnostics.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows

@@ -509,6 +509,10 @@
                   href: insights/container-insights-troubleshoot.md
             - name: Мониторинг контейнеров Docker и Windows
               href: insights/containers.md
+        - name: Хранилище
+          items:
+            - name: Использование Azure Monitor для службы хранилища
+              href: insights/storage-insights-overview.md
         - name: Виртуальные машины
           items:
             - name: Агенты
@@ -1044,8 +1048,10 @@
               href: app/data-model-metric-telemetry.md
             - name: Контекст
               href: app/data-model-context.md
-    - name: Azure CLI
+    - name: Инфраструктура CLI Azure
       href: /cli/azure/monitor?view=azure-cli-latest
+    - name: Использование Azure CLI с Application Insights (предварительная версия)
+      href: 'https://docs.microsoft.com/cli/azure/ext/application-insights/monitor?view=azure-cli-latest'
     - name: Функции Azure
       href: app/azure-functions-supported-features.md
     - name: Azure PowerShell

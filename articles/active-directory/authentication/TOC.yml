@@ -25,7 +25,7 @@
       href: concept-authentication-methods.md
     - name: Проверка подлинности без пароля
       href: concept-authentication-passwordless.md
-    - name: Объединенная регистрация
+    - name: Регистрация сведений о безопасности
       href: concept-registration-mfa-sspr-combined.md
     - name: Сброс паролей
       items:
@@ -103,7 +103,7 @@
               href: howto-mfa-nps-extension-rdg.md
             - name: Виртуальная частная сеть
               href: howto-mfa-nps-extension-vpn.md
-    - name: Объединенная регистрация
+    - name: Регистрация сведений о безопасности
       items:
         - name: Включение объединенной регистрации
           href: howto-registration-mfa-sspr-combined.md

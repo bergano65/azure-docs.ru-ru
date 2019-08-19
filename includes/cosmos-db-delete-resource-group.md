@@ -4,12 +4,12 @@ ms.service: cosmos-db
 ms.topic: include
 ms.date: 03/23/2019
 ms.author: sngun
-ms.openlocfilehash: e7fc8f57c0fe290809354ce19fe92337178a84b6
-ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
+ms.openlocfilehash: 008177e28e99d09f384899141038c13a0e625519
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67185830"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541535"
 ---
 После завершения работы с веб-приложением и учетной записью Azure Cosmos DB можно удалить созданные ресурсы Azure, чтобы не нести дополнительные расходы. Удаление ресурсов:
 
@@ -23,5 +23,5 @@ ms.locfileid: "67185830"
 
    ![Метрики на портале Azure](./media/cosmos-db-delete-resource-group/delete-resources.png)   
 
-3. В следующем окне введите имя группы ресурсов, которую требуется удалить, и выберите **Удалить**.
+3. В следующем окне введите имя группы ресурсов, которую требуется удалить, и щелкните **Удалить**.
 

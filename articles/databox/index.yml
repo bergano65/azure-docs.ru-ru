@@ -1,46 +1,127 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Data Box. Автономная передача данных
+summary: Используйте устройства Azure Data Box для автономной передачи данных, если у вас есть ограничения по времени, сетевым ресурсам или средствам. В зависимости от размера данных выберите Диск Data Box, Data Box или Data Box Heavy.
 metadata:
   title: Документация по Azure Data Box. Автономная передача данных
-  description: 'Используйте устройства Data Box для автономной передачи данных в Azure, когда вы ограничены во времени, сетевых ресурсах или средствах.'
+  description: Используйте устройства Data Box для автономной передачи данных в Azure, если у вас есть ограничения по времени, сетевым ресурсам или средствам.
   services: databox
-  author: alkohli
-  manager: twooley
   ms.service: databox
   ms.subservice: pod
   ms.topic: landing-page
-  ms.date: 07/03/2019
+  ms.collection: collection
+  author: alkohli
   ms.author: alkohli
-abstract:
-  description: 'Семейство Azure Data Box позволяет передавать сотни терабайтов данных в Azure быстрым, недорогим и надежным способом. Используйте устройства Data Box для автономной передачи данных, когда вы ограничены во времени, сетевых ресурсах или средствах.<p>В зависимости от размера данных выберите Диск Data Box, Data Box или Data Box Heavy. Для каждого из устройств передача в Azure осуществляется за 4 простых шага: заказ, получение, копирование данных на устройство и возвращение устройства в Azure. Данные передаются в центр обработки данных Azure, а затем удаляются с носителя.</p><p>Узнайте, как использовать Data Box для автономной передачи данных, ознакомившись с нашими руководствами и краткими руководствами.</p>'
-sections:
-  - title: Краткое руководство
-    items:
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
-            text: Настройка Data Box на портале Azure
-            href: /azure/databox/data-box-quickstart-portal
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
-            text: Настройка Диска Data Box на портале Azure
-            href: /azure/databox/data-box-disk-quickstart-portal
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
-            text: Настройка Data Box Heavy на портале Azure
-            href: /azure/databox/data-box-heavy-quickstart-portal
-  - title: Учебники
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Для Data Box
-            html: <p><a href="/azure/databox/data-box-deploy-ordered">Заказ Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-set-up">Присоединение кабелей и подключение Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-copy-data">Копирование данных на Azure Data Box</a></p><p><a href="/azure/databox/data-box-deploy-picked-up">Возврат Azure Data Box и проверка переданных данных</a></p>
-          - title: Для Диска Data Box
-            html: '<p><a href="/azure/databox/data-box-disk-deploy-ordered">Заказ Диска Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-set-up">Распаковка, подключение и разблокирование Диска Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-copy-data">Копирование данных на Диск Azure Data Box</a></p><p><a href="/azure/databox/data-box-disk-deploy-picked-up">Возвращение Диска Azure Data Box и проверка переданных данных</a></p>'
-          - title: Data Box Heavy
-            html: <p><a href="/azure/databox/data-box-heavy-deploy-ordered">Заказ Azure Data Box Heavy</a></p><p><a href="/azure/databox/data-box-heavy-deploy-set-up">Присоединение кабелей и подключение Azure Data Box Heavy</a></p><p><a href="/azure/databox/data-box-heavy-deploy-copy-data">Копирование данных в Azure Data Box Heavy</a></p><p><a href="/azure/databox/data-box-heavy-deploy-picked-up">Возвращение Azure Data Box Heavy и проверка переданных данных</a></p>
+  ms.date: 08/14/2019
+  ms.openlocfilehash: 03de9ceffe4495b1c3a39dad6617cc72d022fbbd
+  ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/16/2019
+  ms.locfileid: "69557832"
+landingContent:
+- title: Сведения о семействе Data Box
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Data Box?
+      url: data-box-overview.md
+    - text: Что такое Data Box Disk?
+      url: data-box-disk-overview.md
+    - text: Что такое Data Box Heavy?
+      url: data-box-heavy-overview.md
+  - linkListType: architecture
+    links:
+    - text: Выбор вариантов передачи данных в Azure
+      url: /azure/storage/common/storage-choose-data-transfer-solution
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Настройка Data Box
+      url: data-box-quickstart-portal.md
+    - text: Настройка Диска Data Box
+      url: data-box-disk-quickstart-portal.md
+    - text: Настройка Data Box Heavy
+      url: data-box-heavy-quickstart-portal.md
+  - linkListType: learn
+    links:
+    - text: Импорт данных в автономном режиме с помощью Data Box
+      url: https://docs.microsoft.com/learn/modules/move-data-with-azure-data-box/
+- title: Просмотреть требования
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Для Data Box
+      url: data-box-system-requirements.md
+    - text: Для хранилища BLOB-объектов службы Data Box
+      url: data-box-system-requirements-rest.md
+    - text: Для Диска Data Box
+      url: data-box-disk-system-requirements.md
+    - text: Data Box Heavy
+      url: data-box-heavy-system-requirements.md
+- title: Развертывание Data Box
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Порядок
+      url: data-box-deploy-ordered.md
+    - text: Кабель
+      url: data-box-deploy-set-up.md
+    - text: Подключение и копирование данных через SMB
+      url: data-box-deploy-copy-data.md
+    - text: Возврат, отправка и проверка данных Azure
+      url: data-box-deploy-picked-up.md
+- title: Развертывание Диска Data Box
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Порядок
+      url: data-box-disk-deploy-ordered.md
+    - text: Разблокировка и подключение
+      url: data-box-disk-deploy-set-up.md
+    - text: Копирование и проверка данных
+      url: data-box-disk-deploy-copy-data.md
+    - text: Возврат, отправка и проверка данных Azure
+      url: data-box-disk-deploy-picked-up.md
+- title: Развертывание Data Box Heavy
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Порядок
+      url: data-box-heavy-deploy-ordered.md
+    - text: Кабель
+      url: data-box-heavy-deploy-set-up.md
+    - text: Подключение и копирование данных через SMB
+      url: data-box-heavy-deploy-copy-data.md
+    - text: Возврат, отправка и проверка данных Azure
+      url: data-box-heavy-deploy-picked-up.md
+- title: Управление устройством
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование Data Box и Data Box Heavy в Azure
+      url: data-box-portal-admin.md
+    - text: Использование Data Box и Data Box Heavy с помощью локального пользовательского интерфейса
+      url: data-box-local-web-ui-admin.md
+    - text: Использование Диска Data Box в Azure
+      url: data-box-portal-ui-admin.md
+- title: Часто задаваемые вопросы
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Вопросы и ответы о Data Box
+      url: data-box-faq.md
+    - text: Вопросы и ответы о Диске Data Box
+      url: data-box-disk-faq.md
+- title: Устранение неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование Data Box и Data Box Heavy
+      url: data-box-troubleshoot.md
+    - text: Хранилище BLOB-объектов службы Data Box
+      url: data-box-troubleshoot-rest.md
+    - text: Диск Data Box
+      url: data-box-disk-troubleshoot.md
+    - text: Открыть запрос в службу поддержки
+      url: data-box-disk-contact-microsoft-support.md
