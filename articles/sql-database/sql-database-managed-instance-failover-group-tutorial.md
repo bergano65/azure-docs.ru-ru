@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: sashan, carlrab
 manager: jroth
 ms.date: 06/27/2019
-ms.openlocfilehash: 5bf2ee68ff2cfde2846dff2d94f7478920a18760
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: e4b7de3931c0d3508e5af6aa6bf85dfa18641aee
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037116"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624984"
 ---
 # <a name="tutorial-add-a-sql-database-managed-instance-to-a-failover-group"></a>Учебник. Добавление управляемого экземпляра базы данных SQL в группу отработки отказа
 
@@ -151,7 +151,7 @@ ms.locfileid: "69037116"
     | **Тип шлюза** | Выберите **VPN**. |
     | **Тип VPN** | Выбор **на основе маршрута** |
     | **SKU**| Оставьте значение по `VpnGw1`умолчанию для. |
-    | **Location**| Расположение, где находится дополнительный управляемый экземпляр и вторичная виртуальная сеть.   |
+    | **Location**| Расположение, в котором находится основной управляемый экземпляр и первичная виртуальная сеть.   |
     | **Виртуальная сеть**| Выберите виртуальную сеть, созданную в разделе 2, например `vnet-sql-mi-primary`. |
     | **Общедоступный IP-адрес**| Выберите **Создать**. |
     | **Имя общедоступного IP-адреса**| Введите имя IP-адреса, например `primary-gateway-IP`. |

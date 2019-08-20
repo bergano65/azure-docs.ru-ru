@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: magoedte
-ms.openlocfilehash: c6fa4df1fb2fc7559f706d81621ea198f5ca7cdc
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 59e5bbaf8deccdd8218e9c5590266070ed3b5ebb
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881426"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624339"
 ---
 # <a name="manage-log-data-and-workspaces-in-azure-monitor"></a>Управление данными журнала и рабочими областями в Azure Monitor
 
@@ -44,12 +44,12 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 
 ### <a name="configure-from-the-azure-portal"></a>Настройка из портал Azure
 
-Текущий режим управления доступом к рабочей области можно просмотреть на странице **Обзор** рабочей области в меню **log Analytics Рабочая область** . 
+Текущий режим управления доступом к рабочей области можно просмотреть на странице **Обзор** рабочей области в меню **log Analytics Рабочая область** .
 
 ![Просмотр режима управления доступом к рабочей области](media/manage-access/view-access-control-mode.png)
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
-1. В портал Azure выберите Log Analytics рабочие области > рабочей области.  
+1. В портал Azure выберите Log Analytics рабочие области > рабочей области.
 
 Этот параметр можно изменить на странице **свойств** рабочей области. Изменение параметра будет отключено, если у вас нет разрешений на настройку рабочей области.
 
@@ -60,7 +60,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 Чтобы проверить режим управления доступом для всех рабочих областей в подписке, используйте следующую команду:
 
 ```powershell
-Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties | foreach {$_.Name + ": " + $_.Properties.features.enableLogAccessUsingOnlyResourcePermissions} 
+Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties | foreach {$_.Name + ": " + $_.Properties.features.enableLogAccessUsingOnlyResourcePermissions}
 ```
 
 Результат должен выглядеть так:
@@ -70,10 +70,10 @@ DefaultWorkspace38917: True
 DefaultWorkspace21532: False
 ```
 
-Значение `False` означает, что Рабочая область настроена с режимом доступа контекст рабочей области.  Значение `True` означает, что Рабочая область настроена с режимом доступа к контексту ресурса. 
+Значение `False` означает, что Рабочая область настроена с режимом доступа контекст рабочей области.  Значение `True` означает, что Рабочая область настроена с режимом доступа к контексту ресурса.
 
->[!NOTE]
->Если Рабочая область возвращается без логического значения и пуста, это также соответствует результатам `False` значения.
+> [!NOTE]
+> Если Рабочая область возвращается без логического значения и пуста, это также соответствует результатам `False` значения.
 >
 
 Используйте следующий скрипт, чтобы настроить режим управления доступом для конкретной рабочей области на разрешение контекста ресурса:
@@ -81,9 +81,9 @@ DefaultWorkspace21532: False
 ```powershell
 $WSName = "my-workspace"
 $Workspace = Get-AzResource -Name $WSName -ExpandProperties
-if ($Workspace.Properties.features.enableLogAccessUsingOnlyResourcePermissions -eq $null) 
+if ($Workspace.Properties.features.enableLogAccessUsingOnlyResourcePermissions -eq $null)
     { $Workspace.Properties.features | Add-Member enableLogAccessUsingOnlyResourcePermissions $true -Force }
-else 
+else
     { $Workspace.Properties.features.enableLogAccessUsingOnlyResourcePermissions = $true }
 Set-AzResource -ResourceId $Workspace.ResourceId -Properties $Workspace.Properties -Force
 ```
@@ -92,9 +92,9 @@ Set-AzResource -ResourceId $Workspace.ResourceId -Properties $Workspace.Properti
 
 ```powershell
 Get-AzResource -ResourceType Microsoft.OperationalInsights/workspaces -ExpandProperties | foreach {
-if ($_.Properties.features.enableLogAccessUsingOnlyResourcePermissions -eq $null) 
+if ($_.Properties.features.enableLogAccessUsingOnlyResourcePermissions -eq $null)
     { $_.Properties.features | Add-Member enableLogAccessUsingOnlyResourcePermissions $true -Force }
-else 
+else
     { $_.Properties.features.enableLogAccessUsingOnlyResourcePermissions = $true }
 Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 ```
@@ -159,10 +159,10 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 * Добавление и удаление решений по управлению
 
     > [!NOTE]
-    > Чтобы выполнять последние два действия, нужно предоставить разрешение на уровне группы ресурсов или подписки.  
+    > Чтобы выполнять последние два действия, нужно предоставить разрешение на уровне группы ресурсов или подписки.
 
 * чтение ключей учетной записи хранения;
-* настройка сбора журналов из службы хранилища Azure;  
+* настройка сбора журналов из службы хранилища Azure;
 * изменение параметров мониторинга ресурсов Azure, в том числе:
   * добавление расширения виртуальных машин на виртуальные машины;
   * настройка диагностики Azure на всех ресурсах Azure.
@@ -202,7 +202,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 | Разрешение | Описание |
 | ---------- | ----------- |
 | `Microsoft.Insights/logs/<tableName>/read`<br><br>Примеры:<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | Возможность просмотра всех данных журнала для ресурса.  |
-| `Microsoft.Insights/diagnosticSettings/write ` | Возможность настроить параметр диагностики, чтобы разрешить настройку журналов для этого ресурса. |
+| `Microsoft.Insights/diagnosticSettings/write` | Возможность настроить параметр диагностики, чтобы разрешить настройку журналов для этого ресурса. |
 
 `/read`разрешение обычно предоставляется из роли _\*_ , которая включает  _\*/Реад или_ разрешения, такие как встроенные роли [читателя](../../role-based-access-control/built-in-roles.md#reader) и [участника](../../role-based-access-control/built-in-roles.md#contributor) . Обратите внимание, что пользовательские роли, которые включают определенные действия или выделенные встроенные роли, могут не включать это разрешение.
 

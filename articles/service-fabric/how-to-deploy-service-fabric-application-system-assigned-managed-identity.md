@@ -7,14 +7,14 @@ ms.service: service-fabric
 ms.topic: article
 ms.date: 07/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: f9d7f87e9d7b1761c165e08e37cd6a3237c8212a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: c225971675557ba9bc98aafa25d17a3ef95a594a
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965530"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624949"
 ---
-# <a name="deploy-service-fabric-application-with-system-assigned-managed-identity"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным системой
+# <a name="deploy-service-fabric-application-with-system-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным системой (Предварительная версия)
 
 Чтобы получить доступ к функции управляемого удостоверения для приложений Azure Service Fabric, необходимо сначала включить службу токенов управляемого удостоверения в кластере. Эта служба отвечает за проверку подлинности Service Fabric приложений с помощью их управляемых удостоверений и получение маркеров доступа от их имени. Когда служба будет включена, ее можно увидеть в Service Fabric Explorer в разделе " **система** " в левой области, работающей под именем **Fabric:/System/манажедидентититокенсервице** рядом с другими системными службами.
 

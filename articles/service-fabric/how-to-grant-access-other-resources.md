@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: atsenthi
-ms.openlocfilehash: b6e1108ffee13f1583d920947404963a69616788
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 1facd85563a54de2b703bbc8c192976db92c30f7
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68958425"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624889"
 ---
-# <a name="granting-a-service-fabric-applications-managed-identity-access-to-azure-resources"></a>Предоставление управляемому удостоверению приложения Service Fabric доступ к ресурсам Azure
+# <a name="granting-a-service-fabric-applications-managed-identity-access-to-azure-resources-preview"></a>Предоставление управляемому удостоверению приложения Service Fabric доступ к ресурсам Azure (Предварительная версия)
 
 Прежде чем приложение сможет использовать управляемое удостоверение для доступа к другим ресурсам, необходимо предоставить этому удостоверению доступ к защищенному ресурсу Azure. Предоставление разрешений обычно является действием по управлению на плоскости управления службы Azure, владеющей защищенным ресурсом, находящимся через Azure Resource Manager, который обеспечивает все применимые проверки доступа на основе ролей.
 

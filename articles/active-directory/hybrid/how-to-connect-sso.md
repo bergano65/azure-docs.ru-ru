@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c34d8de3dfd06540dd50542ab19da0c1d9b1567
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 86895ab315784c49c2b240badb249dce57ae958a
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60242239"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622563"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -53,8 +53,8 @@ ms.locfileid: "60242239"
 
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (`Alternate ID`). Оба варианта использования работают, так как служба простого единого входа использует утверждение `securityIdentifier` в билете Kerberos для поиска соответствующего объекта-пользователя в Azure AD.
 - Простой единый вход — ситуативно-обусловленная функция. Если в ней происходит сбой, процедура входа выполняется стандартно, то есть пользователь, как и прежде, должен просто ввести пароль на странице входа.
-- Если приложение (например, `https://myapps.microsoft.com/contoso.com`) пересылает `domain_hint` (OpenID Connect) или `whr` (SAML) параметр - определяющий клиент, или `login_hint` параметр - Идентификация пользователя, в его Azure AD в запросе на вход, пользователи не автоматически входить в, не вводя имена пользователей и пароли.
-- Пользователи также могут использовать автоматический вход при приложения (например, `https://contoso.sharepoint.com`) отправляет запросы на вход в конечные точки Azure AD настроить как клиенты — то есть `https://login.microsoftonline.com/contoso.com/<..>` или `https://login.microsoftonline.com/<tenant_ID>/<..>` , вместо Azure AD общую конечную точку — то есть `https://login.microsoftonline.com/common/<...>` .
+- Если приложение `https://myapps.microsoft.com/contoso.com`(например,) перенаправляет `domain_hint` параметр (OpenID Connect Connect) или `whr` (SAML), определяющий клиента, или `login_hint` параметр, идентифицирующий пользователя в своем запросе на вход в Azure AD, пользователи будут Автоматический вход без ввода имен пользователей или паролей.
+- Пользователи также получают возможность автоматического входа в систему, `https://contoso.sharepoint.com`если приложение (например) отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, `https://login.microsoftonline.com/contoso.com/<..>` то есть или `https://login.microsoftonline.com/<tenant_ID>/<..>` -вместо общей конечной точки Azure `https://login.microsoftonline.com/common/<...>` AD, т. е. .
 - Поддерживается выход. Это позволяет пользователям выбрать другую учетную запись Azure AD для входа вместо того, чтобы автоматически входить с помощью простого единого входа.
 - Для поддержки клиентов Office 365 для 32-разрядной версии Windows (Outlook, Word, Excel и другие) версии 16.0.8730.xxxx и выше используется неинтерактивная процедура. Для OneDrive потребуется активировать [функцию автоматической настройки OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894), чтобы включить автоматический вход в систему.
 - Функцию можно включить с помощью Azure AD Connect.
@@ -80,10 +80,10 @@ ms.locfileid: "60242239"
 >[!NOTE]
 >Чтобы обеспечить максимальное удобство единого входа в Azure AD, мы рекомендуем использовать в Windows 10 функцию [присоединения к Azure AD](../active-directory-azureadjoin-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
-- [**План развертывания**](https://aka.ms/AuthenticationDeploymentPlan). Пошаговый план развертывания.
+- [**План развертывания**](https://aka.ms/deploymentplans/sso). Пошаговый план развертывания.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](how-to-connect-sso-how-it-works.md). Сведения о том, как работает эта функция.
 - [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md). Ответы на часто задаваемые вопросы.
 - [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.

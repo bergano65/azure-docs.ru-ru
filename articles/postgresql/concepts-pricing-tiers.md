@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.openlocfilehash: 2f6be256801983924cc794d6c8b8fa31e39959e1
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: f65bc0a9969ac713c2fb9f8629b97fbe522e9fe0
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967859"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624845"
 ---
 # <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Ценовые категории в базе данных Azure для PostgreSQL — один сервер
 
@@ -67,7 +67,7 @@ ms.locfileid: "68967859"
 |              | **Общего назначения** | **С оптимизацией для операций в памяти** |
 |:-------------|:--------------------|:---------------------|
 | Тип хранилища | Хранилище Azure класса Premium | Хранилище Azure класса Premium |
-| Размер хранилища | 32 ГБ до 16 ТБ| 32 – 16 ТБ |
+| Размер хранилища | 32 ГБ до 16 ТБ| 32 ГБ до 16 ТБ |
 | Шаг приращения хранилища | 1 ГБ | 1 ГБ |
 | Операций ввода-вывода в сек. | 3 операции ввода-вывода в секунду на ГБ<br/>Минимум 100 операций ввода-вывода в секунду<br/>Макс. 20 000 операций ввода-вывода | 3 операции ввода-вывода в секунду на ГБ<br/>Минимум 100 операций ввода-вывода в секунду<br/>Макс. 20 000 операций ввода-вывода |
 

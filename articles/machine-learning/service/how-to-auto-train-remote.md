@@ -11,12 +11,12 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 7/12/2019
-ms.openlocfilehash: 3af7e6bb9544ab0d255d4d4301b258f57b19b999
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
-ms.translationtype: HT
+ms.openlocfilehash: 3c3205b64803ac4ee67997ef546ffd64c89f23b4
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616388"
+ms.locfileid: "69624832"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -74,18 +74,25 @@ compute_target.wait_for_completion(
 
 ```python
 # Create a project_folder if it doesn't exist
+if not os.path.isdir('data'):
+    os.mkdir('data')
+    
 if not os.path.exists(project_folder):
     os.makedirs(project_folder)
 
 from sklearn import datasets
+from azureml.core.dataset import Dataset
 from scipy import sparse
 import numpy as np
 import pandas as pd
 
 data_train = datasets.load_digits()
 
-pd.DataFrame(data_train.data[100:,:]).to_csv(\'data/X_train.csv\', index=False)
-pd.DataFrame(data_train.target[100:]).to_csv(\'data/y_train.csv\', index=False)
+pd.DataFrame(data_train.data[100:,:]).to_csv("data/X_train.csv", index=False)
+pd.DataFrame(data_train.target[100:]).to_csv("data/y_train.csv", index=False)
+
+ds = ws.get_default_datastore()
+ds.upload(src_dir='./data', target_path='digitsdata', overwrite=True, show_progress=True)
 
 X = Dataset.Tabular.from_delimited_files(path=ds.path('digitsdata/X_train.csv'))
 y = Dataset.Tabular.from_delimited_files(path=ds.path('digitsdata/y_train.csv'))

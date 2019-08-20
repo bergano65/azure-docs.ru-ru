@@ -7,14 +7,14 @@ ms.service: service-fabric
 ms.topic: article
 ms.date: 08/09/2019
 ms.author: atsenthi
-ms.openlocfilehash: b99dbe3fd03b8854d7c1f54d17d5ced1f2534132
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: f8dfaa39f02aefbdda1f34afa5011ce5fadbae49
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68963877"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624917"
 ---
-# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным пользователем
+# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с помощью управляемого удостоверения, назначенного пользователем (Предварительная версия)
 
 Чтобы развернуть приложение Service Fabric с управляемым удостоверением, приложение должно быть развернуто с помощью Azure Resource Manager, обычно с шаблоном Azure Resource Manager. Дополнительные сведения о развертывании приложения Service Fabric с помощью Azure Resource Manager см. в статье [Управление приложениями и службами в качестве Azure Resource Managerных ресурсов](service-fabric-application-arm-resource.md).
 

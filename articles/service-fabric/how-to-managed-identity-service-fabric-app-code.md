@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 7/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: 528e1b0a353cdcd716f9bca63c423af7a6f12641
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d5593da4f874688fa099827e418b12e41363f4bd
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68958243"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624876"
 ---
-# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure
+# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure (Предварительная версия)
 
 Service Fabric приложения могут использовать управляемые удостоверения для доступа к другим ресурсам Azure, поддерживающим проверку подлинности на основе Azure Active Directory. Приложение может получить [маркер доступа](../active-directory/develop/developer-glossary.md#access-token) , представляющий удостоверение, которое может быть назначено системой или назначено пользователю, и использовать его в качестве токена носителя для проверки подлинности в другой службе, также называемой защищенным [сервером ресурсов](../active-directory/develop/developer-glossary.md#resource-server). Маркер представляет удостоверение, назначенное приложению Service Fabric, и будет выдаваться только ресурсам Azure (включая приложения SF), которые совместно используют это удостоверение. Подробное [описание управляемых удостоверений](../active-directory/managed-identities-azure-resources/overview.md), а также различие между назначенными системой и назначенными пользователем удостоверениями см. в документации по управляемым удостоверениям. В рамках этой статьи мы будем называть приложение Service Fabric с поддержкой управляемых удостоверений в качестве [клиентского приложения](../active-directory/develop/developer-glossary.md#client-application) .
 
