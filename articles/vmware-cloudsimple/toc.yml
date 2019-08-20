@@ -111,15 +111,19 @@
         - name: Настройка виртуальных машин VMware для частного облака
           items:
             - name: Создание виртуальной машины в Azure
-              href: 'https://docs.azure.cloudsimple.com/azure-create-vm/'
-    - name: Инструкции
+              href: azure-create-vm.md
+            - name: Управление виртуальными машинами в Azure
+              href: azure-manage-vm.md
+    - name: Руководства
       items:
         - name: Защита среды
           href: 'https://docs.azure.cloudsimple.com/private-cloud-secure/'
         - name: Управление частным облаком
           items:
+            - name: Эскалация привилегий в частном облаке
+              href: escalate-privileges.md
             - name: Настройка DNS и DHCP рабочей нагрузки
-              href: 'https://docs.azure.cloudsimple.com/dns-dhcp-setup/'
+              href: dns-dhcp-setup.md
             - name: "Использование VPN NSX уровня\_2 для миграции"
               href: 'https://docs.azure.cloudsimple.com/migrate-workloads/#migrating-vms-using-nsx-layer-2-vpn'
         - name: Сети для частного облака
@@ -133,11 +137,11 @@
         - name: Платформа VMware
           items:
             - name: Обучение модели разрешений частного облака
-              href: 'https://docs.azure.cloudsimple.com/learn-private-cloud-permissions/'
+              href: learn-private-cloud-permissions.md
             - name: Источники удостоверений vCenter
               href: set-vcenter-identity.md
             - name: Использование Шлюза приложений Azure с виртуальными машинами VMware
-              href: 'https://docs.azure.cloudsimple.com/azure-application-gateway/'
+              href: azure-application-gateway.md
             - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
               href: 'https://docs.azure.cloudsimple.com/configure-server-vra-endpoint/'
             - name: Перенос рабочей нагрузки виртуальных машин в частное облако
@@ -147,7 +151,7 @@
         - name: Экосистема VMware
           items:
             - name: Резервное копирование виртуальных машин рабочей нагрузки
-              href: 'https://docs.azure.cloudsimple.com/backup-workloads-veeam/'
+              href: backup-workloads-veeam.md
             - name: Руководство по решению VMware Horizon
               href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
             - name: Настройка шифрования vSAN для частного облака

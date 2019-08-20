@@ -273,6 +273,8 @@
       items:
         - name: Обновление до 2-го поколения
           href: upgrade-to-latest-generation.md
+        - name: Управление вычислительными ресурсами
+          href: manage-compute-with-azure-functions.md
         - name: "Мониторинг рабочей нагрузки\_— портал"
           href: sql-data-warehouse-monitor-workload-portal.md
         - name: "Мониторинг рабочей нагрузки\_— динамические административные представления"

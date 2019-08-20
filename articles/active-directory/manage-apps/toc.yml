@@ -29,6 +29,8 @@
           items:
             - name: Начало работы с интеграцией приложений
               href: plan-an-application-integration.md
+            - name: Планирование развертывания панели доступа
+              href: access-panel-deployment-plan.md
             - name: Рекомендации для разработчиков
               href: developer-guidance-for-integrating-applications.md
         - name: Единый вход

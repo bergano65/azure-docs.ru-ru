@@ -4,8 +4,16 @@
   items:
     - name: Обзор
       href: user-help-two-step-verification-overview.md
-    - name: Настройка учетной записи
-      href: multi-factor-authentication-end-user-first-time.md
+    - name: Настройка методов двухфакторной проверки подлинности
+      items:
+        - name: Обзор
+          href: multi-factor-authentication-end-user-first-time.md
+        - name: Настройка приложения Authenticator
+          href: multi-factor-authentication-setup-auth-app.md
+        - name: Настройка мобильного устройства
+          href: multi-factor-authentication-setup-phone-number.md
+        - name: Настройка рабочего телефона
+          href: multi-factor-authentication-setup-office-phone.md
     - name: Управление параметрами
       href: multi-factor-authentication-end-user-manage-settings.md
     - name: Получение справки

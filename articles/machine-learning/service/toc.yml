@@ -128,6 +128,9 @@
         - name: Настройка сред разработки
           displayName: 'local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB'
           href: how-to-configure-environment.md
+        - name: Управление программной средой
+          displayName: 'pip, Conda'
+          href: how-to-use-environments.md
         - name: Включение ведения журналов
           displayName: 'troubleshoot, log, files, tracing'
           href: how-to-enable-logging.md
