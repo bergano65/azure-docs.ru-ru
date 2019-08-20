@@ -117,7 +117,7 @@
     - name: Руководства
       items:
         - name: Защита среды
-          href: 'https://docs.azure.cloudsimple.com/private-cloud-secure/'
+          href: private-cloud-secure.md
         - name: Управление частным облаком
           items:
             - name: Эскалация привилегий в частном облаке
@@ -143,7 +143,7 @@
             - name: Использование Шлюза приложений Azure с виртуальными машинами VMware
               href: azure-application-gateway.md
             - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
-              href: 'https://docs.azure.cloudsimple.com/configure-server-vra-endpoint/'
+              href: configure-server-vrealize-automation-endpoint.md
             - name: Перенос рабочей нагрузки виртуальных машин в частное облако
               href: 'https://docs.azure.cloudsimple.com/migrate-workloads/'
             - name: Обеспечение высокой доступности приложения в VMware в Azure

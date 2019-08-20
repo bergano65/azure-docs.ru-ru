@@ -7,9 +7,8 @@ metadata:
   description: 'Узнайте, как создать корпоративное решение для поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев.'
   services: search
   author: HeidiSteen
-  manager: cgronlun
+  manager: nitinme
   ms.service: search
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 08/12/2019
   ms.author: heidist

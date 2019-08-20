@@ -170,7 +170,7 @@
     - name: Масштабирование приложения
       items:
         - name: Увеличение емкости сервера
-          href: web-sites-scale.md
+          href: manage-scale-up.md
         - name: Настройка уровня PremiumV2
           href: app-service-configure-premium-tier.md
         - name: Масштабирование на несколько экземпляров

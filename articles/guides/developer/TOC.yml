@@ -1,6 +1,6 @@
 - name: Обзор
   items:
-    - name: Руководство для разработчиков
+    - name: Руководство разработчика
       href: azure-developer-guide.md
     - name: Пакеты SDK и средства
       href: 'https://docs.microsoft.com/azure/index#pivot=sdkstools'
@@ -22,7 +22,7 @@
           href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-create-your-first-application-in-visual-studio'
         - name: Служба контейнеров
           href: 'https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment'
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание и развертывание веб-приложений
       items:
@@ -46,7 +46,7 @@
       href: 'https://docs.microsoft.com/azure/app-service/containers/quickstart-docker-go'
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       items:
         - name: Веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/samples-cli'
@@ -112,11 +112,11 @@
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm'
     - name: Хранение данных
       items:
-        - name: Большие двоичные объекты
+        - name: BLOB-объекты
           href: 'https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs'
-        - name: файловые ресурсы;
+        - name: Общие папки
           href: 'https://docs.microsoft.com/azure/storage/files/storage-dotnet-how-to-use-files'
-        - name: "Пары \"ключ\_— значение\""
+        - name: Пары "ключ-значение"
           href: 'https://docs.microsoft.com/azure/cosmos-db/create-table-dotnet'
         - name: Документы JSON
           href: 'https://docs.microsoft.com/azure/cosmos-db/create-sql-api-dotnet'
@@ -127,7 +127,7 @@
     - name: Масштабирование
       items:
         - name: Мобильные приложения и веб-приложения
-          href: 'https://docs.microsoft.com/azure/app-service/web-sites-scale'
+          href: 'https://docs.microsoft.com/azure/app-service/manage-scale-up'
         - name: Виртуальные машины
           href: 'https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview'
         - name: Приложения микрослужб
@@ -136,7 +136,7 @@
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl'
-    - name: Azure Backup
+    - name: Backup
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/manage-backup'
@@ -180,7 +180,7 @@
           href: 'https://github.com/Azure/azure-sdk-for-ruby/blob/master/README.md'
     - name: Интерфейсы командной строки
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: 'https://docs.microsoft.com/cli/azure/'
         - name: Azure PowerShell
           href: 'https://docs.microsoft.com/powershell/'

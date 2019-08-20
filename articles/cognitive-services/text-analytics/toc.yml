@@ -12,7 +12,19 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "REST\_API"
+    - name: Клиент
+      items:
+        - name: 'C#'
+          href: quickstarts/csharp.md
+        - name: Python
+          href: quickstarts/python-sdk.md
+        - name: Go
+          href: quickstarts/go-sdk.md
+        - name: Ruby
+          href: quickstarts/ruby-sdk.md
+        - name: Node.js
+          href: quickstarts/nodejs-sdk.md
+    - name: REST API
       items:
         - name: Go
           href: quickstarts/go.md
@@ -26,19 +38,7 @@
           href: quickstarts/python.md
         - name: Ruby
           href: quickstarts/ruby.md
-    - name: Клиент
-      items:
-        - name: 'C#'
-          href: quickstarts/csharp.md
-        - name: Python
-          href: quickstarts/python-sdk.md
-        - name: Go
-          href: quickstarts/go-sdk.md
-        - name: Ruby
-          href: quickstarts/ruby-sdk.md
-        - name: Node.js
-          href: quickstarts/nodejs-sdk.md
-- name: Учебники
+- name: Руководства
   items:
     - name: "Интеграция Power\_BI для анализа отзывов пользователей"
       href: Tutorials/tutorial-power-bi-key-phrases.md
