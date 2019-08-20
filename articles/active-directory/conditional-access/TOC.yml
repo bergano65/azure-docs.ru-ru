@@ -19,6 +19,10 @@
 - name: Основные понятия
   expanded: false
   items:
+    - name: Включение условного доступа
+      href: howto-conditional-access-adoption-kit.md
+    - name: Распространенные политики условного доступа
+      href: concept-conditional-access-policy-common.md
     - name: Условия
       href: conditions.md
     - name: Условия расположения
@@ -38,6 +42,22 @@
       href: plan-conditional-access.md
     - name: Рекомендации
       href: best-practices.md
+    - name: Распространенные шаблоны политик
+      items:
+        - name: Запрос на MFA для администраторов
+          href: howto-conditional-access-policy-admin-mfa.md
+        - name: Запрос на MFA для управления Azure
+          href: howto-conditional-access-policy-azure-management.md
+        - name: Блокировка устаревших методов проверки подлинности
+          href: howto-conditional-access-policy-block-legacy.md
+        - name: Условный доступ на основе рисков
+          href: howto-conditional-access-policy-risk.md
+        - name: Запрос на доверенное расположение для регистрации MFA
+          href: howto-conditional-access-policy-registration.md
+        - name: Блокирование доступа по расположению
+          href: howto-conditional-access-policy-location.md
+        - name: Требовать соответствующие устройства
+          href: howto-conditional-access-policy-compliant-device.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
     - name: Условный доступ для регистрации MFA

@@ -1,96 +1,100 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по доменным службам Azure AD
+summary: Узнайте, как использовать доменные службы Azure Active Directory, чтобы настроить аутентификацию Kerberos или NTLM для приложений или присоединение виртуальных машин Azure к управляемому домену.
 metadata:
   title: Документация по доменным службам Azure AD
-  description: 'Узнайте, как с помощью доменных служб Active Directory присоединять к домену виртуальные машины Azure, не используя контроллеры домена. В приведенных здесь руководствах и другой документации показано, как управлять виртуальными машинами с помощью групповых политик.'
-  keywords: 'Azure AD, Azure, domain join, group policy, LDAP, Kerberos, domain controller, DC, lift and shift'
+  description: Узнайте, как использовать доменные службы Azure Active Directory, чтобы настроить аутентификацию Kerberos или NTLM для приложений или присоединение виртуальных машин Azure к управляемому домену.
+  services: service
+  ms.service: active-directory
+  ms.subservice: domain-services
+  ms.topic: landing-page
+  ms.collection: collection
   author: iainfoulds
   ms.author: iainfou
   manager: daveba
-  ms.date: 05/22/2019
-  ms.topic: landing-page
-  ms.devlang: na
-  ms.service: active-directory
-  ms.subservice: domain-services
-sections:
-  - items:
-      - type: markdown
-        text: 'Узнайте, как с помощью доменных служб Active Directory присоединять к домену виртуальные машины Azure, не используя контроллеры домена. В приведенных здесь руководствах и другой документации показано, как управлять виртуальными машинами с помощью групповых политик.'
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 2
-        items:
-          - href: overview.md
-            html: <p>Узнайте о функциях доменных служб Azure AD.</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_investigate.svg'
-            title: Что такое доменные службы Azure AD?
-          - href: create-instance.md
-            html: <p>Создайте управляемый домен с помощью этого простого пошагового руководства.</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
-            title: Начало работы
-          - href: contact-us.md
-            html: '<p>Получите помощь, когда она необходима.</p>'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_support.svg'
-            title: Получение поддержки
-          - href: 'https://azure.microsoft.com/updates/?product=active-directory-ds'
-            html: <p>Узнайте о новых возможностях доменных служб Azure AD.</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
-            title: Новые возможности
-  - title: Видео
-    items:
-      - type: markdown
-        text: '>[!VIDEO https://www.youtube.com/embed/T1Nd9APNceQ]'
-  - title: Статьи о планировании
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="comparison.md">Будет ли служба полезна для вас?</a>
-          - html: <a href="active-directory-ds-features.md">Возможности доменных служб Azure AD</a>
-          - html: <a href="scenarios.md">Как будет использоваться служба?</a>
-          - html: <a href="synchronization.md">Как синхронизация работает с доменными службами Azure AD</a>
-          - html: '<a href="https://azure.microsoft.com/pricing/details/active-directory-ds/">Цены на доменные службы Azure AD</a>'
-  - title: Приложения и доменные службы Azure AD
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="deploy-azure-app-proxy.md">Развертывание Azure AD App Proxy</a>
-          - html: <a href="deploy-sp-profile-sync.md">Синхронизация профилей для сервера SharePoint</a>
-          - html: <a href="deploy-kcd.md">Настройка ограниченного делегирования Kerberos</a>
-  - title: Статьи с инструкциями
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="check-health.md">Проверка работоспособности управляемого домена</a>
-          - html: <a href="csp.md">Подписки Azure CSP и доменные службы Azure AD</a>
-          - html: <a href="manage-dns.md">Управление DNS</a>
-          - html: <a href="network-considerations.md">Выбор виртуальной сети</a>
-          - html: <a href="configure-ldaps.md">Настройка защищенного протокола LDAP</a>
-          - html: <a href="create-ou.md">Создание подразделения</a>
-          - html: <a href="manage-group-policy.md">Управление групповой политикой</a>
-  - title: Статьи по устранению неполадок
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="troubleshoot.md">Руководство по устранению неполадок</a>
-          - html: <a href="troubleshoot-alerts.md">Устранение неполадок с оповещениями в управляемом домене</a>
-          - html: <a href="faqs.md">Часто задаваемые вопросы</a>
-          - html: '<a href="https://azure.microsoft.com/support/options/">Получение поддержки</a>'
-  - title: Другие ресурсы
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://feedback.azure.com/forums/169401-azure-active-directory/">Отправить отзыв о доменных службах Azure AD на UserVoice</a>'
-          - html: '<a href="https://azure.microsoft.com/roadmap/?category=security-identity">Стратегия развития Azure</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-contact-us">Связаться с нами</a>'
+  ms.date: 08/01/2019
+  ms.openlocfilehash: 3c97b7bbb652fd26e5c8fdb6d20576a3c9e70421
+  ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/19/2019
+  ms.locfileid: "69612871"
+landingContent:
+- title: Узнайте о доменных службах Azure AD
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое доменные службы Azure AD?
+      url: overview.md
+    - text: Сравнение решений для работы с удостоверениями
+      url: compare-identity-solutions.md
+    - text: Как работает синхронизация?
+      url: synchronization.md
+    - text: Часто задаваемые вопросы
+      url: faqs.md
+- title: Начало работы
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Создание управляемого домена
+      url: tutorial-create-instance.md
+  - linkListType: tutorial
+    links:
+    - text: Присоединение виртуальной машины Windows Server к домену
+      url: join-windows-vm.md
+    - text: Установка средств управления
+      url: tutorial-create-management-vm.md
+- title: Настройка
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Настройка защищенного протокола LDAP
+      url: tutorial-configure-ldaps.md
+  - linkListType: how-to-guide
+    links:
+    - text: Включение синхронизации хэшированных паролей
+      url: active-directory-ds-getting-started-password-sync-synced-tenant.md
+    - text: Создание подразделения
+      url: create-ou.md
+    - text: Настройка ограниченного делегирования Kerberos
+      url: deploy-kcd.md
+    - text: Защита управляемого домена
+      url: secure-your-domain.md
+- title: Управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Администрирование групповой политики
+      url: manage-group-policy.md
+    - text: Управление DNS
+      url: manage-dns.md
+    - text: Проверка состояния работоспособности
+      url: check-health.md
+    - text: Настройка уведомлений по электронной почте
+      url: notifications.md
+    - text: Включение аудита системы безопасности
+      url: security-audit-events.md
+- title: Присоединенные к домену виртуальные машины
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Windows Server
+      url: join-windows-vm.md
+  - linkListType: how-to-guide
+    links:
+    - text: Сервер Ubuntu
+      url: join-ubuntu-linux-vm.md
+    - text: Red Hat Enterprise Linux
+      url: join-rhel-linux-vm.md
+- title: Устранение неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Распространенные проблемы
+      url: troubleshoot.md
+    - text: Распространенные предупреждающие сообщения
+      url: troubleshoot-alerts.md
+    - text: Проблемы с группой безопасности сети
+      url: alert-nsg.md
+    - text: Проблемы с защищенным протоколом LDAP
+      url: alert-ldaps.md
