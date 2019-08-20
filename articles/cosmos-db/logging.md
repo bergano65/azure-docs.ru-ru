@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 41fa5a859e738c2bb70e4885aa856f247e922492
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 3a2702abd39ecdf506d58b6bd8884f12607e29e8
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448994"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615302"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
-Когда вы начнете использовать одну или несколько баз данных Azure Cosmos DB, вам может потребоваться отследить, как и когда осуществляется доступ к вашим базам данных. В этой статье представлен обзор всех журналов, доступных на платформе Azure, Вы узнаете, как включить ведение журнала диагностики для мониторинга и отправки журналов для [хранилища Azure](https://azure.microsoft.com/services/storage/), как потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и как экспортировать журналы, чтобы [ЖурналыAzureMonitor](https://azure.microsoft.com/services/log-analytics/).
+После того как вы начнете использовать одну или несколько баз данных Azure Cosmos, вам может потребоваться отслеживать, как и когда осуществляется доступ к базам данных. В этой статье представлен обзор всех журналов, доступных на платформе Azure, Вы узнаете, как включить ведение журналов диагностики для мониторинга, чтобы отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), как выполнять потоковую передачу журналов в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать журналы в [журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/).
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -25,9 +25,9 @@ ms.locfileid: "67448994"
 
 ## <a name="logs-available-in-azure"></a>Журналы, доступные в Azure
 
-Прежде чем говорить о том, как отслеживать учетную запись Azure Cosmos DB, давайте ознакомимся с некоторыми сведениями о ведении журналов и мониторинге. На платформе Azure существуют различные типы журналов. Например, [журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs), [журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs), [метрики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics), события, мониторинг пульса, журналы операций и т. д. Существует множество журналов. Можно просмотреть полный список журналов в [журналы Azure Monitor](https://azure.microsoft.com/services/log-analytics/) на портале Azure. 
+Прежде чем говорить о том, как отслеживать учетную запись Azure Cosmos DB, давайте ознакомимся с некоторыми сведениями о ведении журналов и мониторинге. На платформе Azure существуют различные типы журналов. Например, [журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs), [журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs), [метрики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics), события, мониторинг пульса, журналы операций и т. д. Существует множество журналов. Полный список журналов можно просмотреть в [Azure Monitor журналов](https://azure.microsoft.com/services/log-analytics/) в портал Azure. 
 
-На следующем рисунке показана различные виды доступных журналов Azure:
+На следующем рисунке показаны различные доступные журналы Azure:
 
 ![Различные виды журналов Azure](./media/logging/azurelogging.png)
 
@@ -54,7 +54,7 @@ ms.locfileid: "67448994"
 
 ### <a name="azure-diagnostic-logs"></a>Журналы диагностики Azure
 
-Журналы диагностики Azure выдаются ресурсом. Они содержат подробные и своевременные данные о работе этого ресурса. Эти журналы собираются для каждого запроса. Содержимое этих журналов зависит от типа ресурса. Журналы диагностики уровня ресурса также отличаются от журналов диагностики уровня гостевой ОС. Журналы диагностики гостевой ОС собираются агентом, который работает внутри виртуальной машины или поддерживаемого ресурса другого типа. Для сбора журналов диагностики уровня ресурса не требуется агент. В них записываются данные ресурсов с платформы Azure. В журналы диагностики уровня гостевой ОС записываются данные из операционной системы и приложений, выполняющихся на виртуальной машине.
+Журналы диагностики Azure выдаются ресурсом. Они содержат подробные и своевременные данные о работе этого ресурса. Эти журналы фиксируются для каждого запроса. Содержимое этих журналов зависит от типа ресурса. Журналы диагностики уровня ресурса также отличаются от журналов диагностики уровня гостевой ОС. Журналы диагностики гостевой ОС собираются агентом, который работает внутри виртуальной машины или поддерживаемого ресурса другого типа. Для сбора журналов диагностики уровня ресурса не требуется агент. В них записываются данные ресурсов с платформы Azure. В журналы диагностики уровня гостевой ОС записываются данные из операционной системы и приложений, выполняющихся на виртуальной машине.
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/logging/azure-cosmos-db-logging-overview.png)
 
@@ -68,41 +68,41 @@ ms.locfileid: "67448994"
 <a id="#turn-on"></a>
 ## <a name="turn-on-logging-in-the-azure-portal"></a>Включение ведения журнала на портале Azure
 
-Следуйте инструкциям ниже, чтобы включить журнал ведения диагностики на портале Azure:
+Чтобы включить ведение журнала диагностики в портал Azure, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 
-1. Перейдите к своей учетной записи Azure Cosmos. Откройте **параметров диагностики** панели, а затем выберите **добавьте параметр диагностики** параметр.
+1. Перейдите к своей учетной записи Azure Cosmos. Откройте панель **параметры диагностики** и выберите пункт Добавить параметр **диагностики** .
 
     ![Включение журнала ведения диагностики для Azure Cosmos DB на портале Azure](./media/logging/turn-on-portal-logging.png)
 
-1. В **параметров диагностики** странице, заполните форму со следующими параметрами: 
+1. На странице **параметры диагностики** заполните форму следующими сведениями: 
 
     * **Имя.** Введите имя для создаваемых журналов.
 
-    * Можно сохранить журналы для следующих служб:
+    * Журналы можно хранить в следующих службах:
 
-      * **Архивировать в учетной записи хранения.** Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Чтобы создать учетную запись хранения на портале, см. в разделе [создать учетную запись хранилища](../storage/common/storage-create-storage-account.md) статьи. После этого вернитесь на панель параметров диагностики Azure Cosmos Db на портале, чтобы выбрать учетную запись хранения. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
+      * **Архивировать в учетной записи хранения**. Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Чтобы создать новую учетную запись хранения на портале, см. статью [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md) . Затем вернитесь в область параметры диагностики Azure Cosmos DB на портале, чтобы выбрать учетную запись хранения. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
 
-      * **Передать в концентратор событий.** Чтобы использовать этот параметр, вам понадобится пространство имен Центров событий и концентратор событий для подключения. Чтобы создать пространство имен Центров событий, ознакомьтесь со статьей [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). После этого вернитесь на эту страницу на портале, чтобы выбрать имя пространства имен и политики концентратора событий.
+      * **Передать в концентратор событий.** Чтобы использовать этот параметр, вам понадобится пространство имен Центров событий и концентратор событий для подключения. Чтобы создать пространство имен Центров событий, ознакомьтесь со статьей [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем вернитесь на эту страницу на портале, чтобы выбрать пространство имен концентратора событий и имя политики.
 
-      * **Отправить в Log Analytics.** Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или создайте рабочую область Log Analytics, следуя инструкциям в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace) на портале. 
+      * **Отправить в Log Analytics**. Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или создайте рабочую область Log Analytics, следуя инструкциям в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace) на портале. 
 
-   * Вы можете войти следующие данные:
+   * Можно вести журнал следующих данных:
 
-      * **DataPlaneRequests**: Выберите этот параметр для входа внутренние запросы ко всем API, которая включает учетные записи SQL, Graph, MongoDB, Cassandra и API таблиц Azure Cosmos DB. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически. Следующие данные JSON приведен пример выходных данных, журнал с помощью DataPlaneRequests. Ключевые свойства для Обратите внимание, являются: Requestcharge, statusCode, clientIPaddress и partitionID:
+      * **DataPlaneRequests**: Выберите этот параметр, чтобы регистрировать запросы серверной части для всех API-интерфейсов, в том числе учетные записи SQL, Graph, MongoDB, Cassandra и API таблиц в Azure Cosmos DB. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически. Следующие данные JSON представляют собой пример выходных данных, регистрируемых с помощью DataPlaneRequests. Ключевые свойства для заметок: Requestcharge, statusCode, clientIPaddress и partitionID:
 
        ```
        { "time": "2019-04-23T23:12:52.3814846Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "DataPlaneRequests", "operationName": "ReadFeed", "properties": {"activityId": "66a0c647-af38-4b8d-a92a-c48a805d6460","requestResourceType": "Database","requestResourceId": "","collectionRid": "","statusCode": "200","duration": "0","userAgent": "Microsoft.Azure.Documents.Common/2.2.0.0","clientIpAddress": "10.0.0.24","requestCharge": "1.000000","requestLength": "0","responseLength": "372","resourceTokenUserRid": "","region": "East US","partitionId": "062abe3e-de63-4aa5-b9de-4a77119c59f8","keyType": "PrimaryReadOnlyMasterKey","databaseName": "","collectionName": ""}}
        ```
 
-      * **MongoRequests**: Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для MongoDB. MongoDB запросы будут отображаться в MongoRequests, а также DataPlaneRequests. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически. Следующие данные JSON приведен пример выходных данных, журнал с помощью MongoRequests. Ключевые свойства для Обратите внимание, являются: Requestcharge, код операции:
+      * **MongoRequests**: Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для MongoDB. Запросы MongoDB будут отображаться в MongoRequests, а также в DataPlaneRequests. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов диагностики. По окончании периода хранения журналы удаляются автоматически. Следующие данные JSON представляют собой пример выходных данных, регистрируемых с помощью MongoRequests. Ключевые свойства для заметок: Requestcharge, код операции:
 
        ```
        { "time": "2019-04-10T15:10:46.7820998Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "MongoRequests", "operationName": "ping", "properties": {"activityId": "823cae64-0000-0000-0000-000000000000","opCode": "MongoOpCode_OP_QUERY","errorCode": "0","duration": "0","requestCharge": "0.000000","databaseName": "admin","collectionName": "$cmd","retryCount": "0"}}
        ```
 
-      * **QueryRuntimeStatistics**: Выберите этот параметр, чтобы регистрировать текст запроса, который был выполнен.  Следующие данные JSON приведен пример выходных данных, журнал с помощью QueryRuntimeStatistics:
+      * **Куерирунтиместатистикс**: Выберите этот параметр, чтобы регистрировать выполненный текст запроса.  Следующие данные JSON представляют собой пример выходных данных, регистрируемых с помощью Куерирунтиместатистикс:
 
        ```
        { "time": "2019-04-14T19:08:11.6353239Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "QueryRuntimeStatistics", "properties": {"activityId": "278b0661-7452-4df3-b992-8aa0864142cf","databasename": "Tasks","collectionname": "Items","partitionkeyrangeid": "0","querytext": "{"query":"SELECT *\nFROM c\nWHERE (c.p1__10 != true)","parameters":[]}"}}
@@ -112,7 +112,7 @@ ms.locfileid: "67448994"
 
 3. Щелкните **Сохранить**.
 
-    Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use microsoft.insights (Не удалось обновить данные диагностики для <имя рабочей области>. Подписку <ИД подписки> не зарегистрировано для использования Microsoft.Insights). Чтобы зарегистрировать учетную запись, а затем повторить процедуру, следуйте указаниям из статьи [Сбор журналов и метрик для служб Azure для использования в Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage).
+    Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id&gt; is not registered to use microsoft.insights (Не удалось обновить данные диагностики для &lt;имя рабочей области&gt;. Подписку &lt;ИД подписки&gt; не зарегистрировано для использования Microsoft.Insights). Чтобы зарегистрировать учетную запись, а затем повторить процедуру, следуйте указаниям из статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage).
 
     Если вы хотите изменить способ сохранения журналов диагностики в дальнейшем, вернитесь на эту страницу, чтобы изменить параметры журнала диагностики для своей учетной записи.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67448994"
    az monitor diagnostic-settings create --name DiagStorage --resource <resourceId> --storage-account <storageAccountName> --logs '[{"category": "QueryRuntimeStatistics", "enabled": true, "retentionPolicy": {"enabled": true, "days": 0}}]'
    ```
 
-   `resource` — это имя учетной записи Azure Cosmos DB. Ресурс находится в формате «/subscriptions/`<subscriptionId>`/resourceGroups/`<resource_group_name>`/providers/Microsoft.DocumentDB/databaseAccounts/ < Azure_Cosmos_account_name >» `storage-account` имя учетной записи хранения, для которого вы хотите отправить журналы. Вы можете войти другие журналы, обновляя значения параметра категории «MongoRequests» или «DataPlaneRequests». 
+   `resource` — это имя учетной записи Azure Cosmos DB. Ресурс имеет формат "/Subscriptions/`<subscriptionId>`/resourceGroups/`<resource_group_name>`/провидерс/Микрософт.документдб/датабасеаккаунтс/ `storage-account` < Azure_Cosmos_account_name >" — имя учетной записи хранения, в которую вы необходимо отправить журналы. Можно записать в журнал другие журналы, обновив значения параметров категории на "MongoRequests" или "DataPlaneRequests". 
 
 - Чтобы включить потоковую передачу журналов диагностики в концентратор событий, используйте следующую команду:
 
@@ -134,7 +134,7 @@ ms.locfileid: "67448994"
    az monitor diagnostic-settings create --name cdbdiagsett --resourceId <resourceId> --event-hub-rule <eventHubRuleID> --logs '[{"category":"QueryRuntimeStatistics","enabled":true,"retentionPolicy":{"days":6,"enabled":true}}]'
    ```
 
-   `resource` — это имя учетной записи Azure Cosmos DB. `event-hub-rule` Представляет собой идентификатор правила концентратора событий 
+   `resource` — это имя учетной записи Azure Cosmos DB. `event-hub-rule` — Это идентификатор правила концентратора событий. 
 
 - Чтобы включить отправку журналов диагностики в рабочую область Log Analytics, используйте следующую команду:
 
@@ -183,7 +183,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 ### <a id="storage"></a>Создание учетной записи хранения для журналов
 Хотя вы можете использовать и имеющуюся учетную запись хранения для журналов, в этом руководстве мы создадим учетную запись хранения, которая будет использоваться для журналов Azure Cosmos DB. Для удобства мы сохраним сведения об учетной записи хранения в переменной с именем **sa**.
 
-Чтобы упростить управление, в этом руководстве мы будем использовать ту же группу ресурсов, которая содержит базу данных Azure Cosmos DB. При необходимости замените значения **ContosoResourceGroup**, **contosocosmosdblogs** и **Центрально-северная часть США** своими:
+Чтобы упростить управление, в этом руководстве мы используем ту же группу ресурсов, которая содержит базу данных Azure Cosmos. При необходимости замените значения **ContosoResourceGroup**, **contosocosmosdblogs** и **Центрально-северная часть США** своими:
 
 ```powershell
 $sa = New-AzStorageAccount -ResourceGroupName ContosoResourceGroup `
@@ -251,7 +251,7 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 ```
 
 ### <a id="access"></a>Доступ к журналам
-Журналы Azure Cosmos DB для **DataPlaneRequests** категории хранятся в **insights журналы dataplanerequests** контейнер в учетной записи, которое вы указали. 
+Журналы Azure Cosmos DB для категории **DataPlaneRequests** хранятся в контейнере **Insights-Logs-DataPlaneRequests** в указанной учетной записи хранения. 
 
 Сначала создайте переменную для имени контейнера. Эта переменная будет использоваться по всему пошаговому руководству.
 
@@ -287,7 +287,7 @@ Name              : resourceId=/SUBSCRIPTIONS/<subscription-ID>/RESOURCEGROUPS/C
 
 Так как ту же учетную запись можно использовать при сборе журналов для нескольких ресурсов, вы можете использовать полный идентификатор ресурса в имени большого двоичного объекта для получения доступа к конкретным большим двоичным объектами и их загрузки. Перед тем как это сделать, мы рассмотрим загрузку всех больших двоичных объектов.
 
-Во-первых, создайте папку для загрузки BLOB-объектов. Например:
+Во-первых, создайте папку для загрузки BLOB-объектов. Пример:
 
 ```powershell
 New-Item -Path 'C:\Users\username\ContosoCosmosDBLogs'`
@@ -309,7 +309,7 @@ $blobs | Get-AzStorageBlobContent `
 
 При выполнении второй команды разделитель **/** в именах больших двоичных объектов используется для создания полной структуры папки в конечной папке. Эта структура папок будет использоваться для скачивания и хранения больших двоичных объектов в виде файлов.
 
-Для выборочной загрузки BLOB-объектов используйте подстановочные знаки. Например:
+Для выборочной загрузки BLOB-объектов используйте подстановочные знаки. Пример:
 
 * Если у вас есть несколько баз данных и вы хотите скачать журналы только для одной базы данных с именем **CONTOSOCOSMOSDB3**, используйте команду:
 
@@ -373,11 +373,11 @@ $blobs | Get-AzStorageBlobContent `
 <a id="#view-in-loganalytics"></a>
 ## <a name="view-logs-in-azure-monitor-logs"></a>Просмотр журналов в Azure Monitor
 
-Если вы выбрали **отправить в Log Analytics** параметр при включении ведения журнала диагностики, диагностические данные из контейнера, направляются к журналам Azure Monitor в течение двух часов. Если взглянуть на журналы Azure Monitor сразу после включения ведения журнала, вы не увидите все данные. Подождите два часа и повторите попытку. 
+Если вы выбрали параметр **отправить log Analytics** при включении ведения журнала диагностики, диагностические данные из контейнера перенаправляются в Azure Monitor журналы в течение двух часов. При просмотре Azure Monitor журналов сразу же после включения ведения журнала вы не увидите никаких данных. Подождите два часа и повторите попытку. 
 
-Перед просмотром журналов Проверьте и если рабочей области Log Analytics обновлена для использования нового языка запросов Kusto. Чтобы проверить, откройте [портала Azure](https://portal.azure.com)выберите **рабочих областей Log Analytics** расположенной слева, затем выберите имя рабочей области, как показано на рисунке ниже. Отобразится страница **Рабочая область Log Analytics**.
+Перед просмотром журналов проверьте, обновлена ли Рабочая область Log Analytics для использования нового языка запросов Kusto. Чтобы проверить, откройте [портал Azure](https://portal.azure.com), выберите **log Analytics рабочие области** слева, а затем выберите имя рабочей области, как показано на следующем рисунке. Отобразится страница **Рабочая область Log Analytics**.
 
-![Журналы Azure Monitor на портале Azure](./media/logging/azure-portal.png)
+![Azure Monitor журналов в портал Azure](./media/logging/azure-portal.png)
 
 >[!NOTE]
 >Рабочие области OMS теперь называются рабочими областями Log Analytics.  
@@ -386,7 +386,7 @@ $blobs | Get-AzStorageBlobContent `
 
 ![Сообщение об обновлении журналов Azure Monitor](./media/logging/upgrade-notification.png)
 
-Чтобы просмотреть данные диагностики в журналах Azure Monitor, откройте **поиска по журналам** страницу в меню слева или **управления** область страницы, как показано на следующем рисунке:
+Чтобы просмотреть данные диагностики в журналах Azure Monitor, откройте страницу **поиска** по журналам в меню слева или в области **управления** страницы, как показано на следующем рисунке:
 
 ![Параметры поиска по журналам на портале Azure](./media/logging/log-analytics-open-log-search.png)
 
@@ -397,7 +397,7 @@ $blobs | Get-AzStorageBlobContent `
 <a id="#queries"></a>
 ### <a name="queries"></a>Запросы
 
-Ниже приведены некоторые дополнительные запросы, которые можно ввести в поле **поиска по журналам**, чтобы выполнить мониторинг контейнеров Azure Cosmos DB. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md). 
+Ниже приведены некоторые дополнительные запросы, которые можно ввести в поле **поиска** по журналам, чтобы упростить мониторинг контейнеров Azure Cosmos. Эти запросы поддерживают [новый язык](../log-analytics/log-analytics-log-search-upgrade.md). 
 
 Дополнительные сведения о значении данных, возвращаемых каждым поиском по журналам, см. в разделе [Интерпретация журналов](#interpret).
 
@@ -451,24 +451,24 @@ $blobs | Get-AzStorageBlobContent `
     AzureDiagnostics | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | project TimeGenerated , toint(duration_s)/1000 | render timechart
     ```
 
-Дополнительные сведения об использовании нового языка поиска по журналам см. в разделе [общие принципы по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md). 
+Дополнительные сведения об использовании нового языка поиска по журналам см. в разделе [сведения о поиске по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-search-new.md). 
 
 ## <a id="interpret"></a>Интерпретация журналов
 
-Диагностические данные, хранящиеся в Azure журналы хранилища и Azure Monitor, используют схожую схему. 
+Диагностические данные, хранящиеся в службе хранилища Azure и в журналах Azure Monitor, используют аналогичную схему. 
 
 В следующей таблице описано содержимое каждой записи журнала.
 
-| Поле или свойство службы хранилища Azure | Azure Monitor регистрирует свойство | Описание |
+| Поле или свойство службы хранилища Azure | Свойство журналов Azure Monitor | Описание |
 | --- | --- | --- |
 | **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|
 | **category** | **Категория** | Для журналов Azure Cosmos DB единственным доступным значением является **DataPlaneRequests**. |
 | **operationName** | **OperationName** | Имя операции. В качестве значения можно использовать любую из следующих операций: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed или Upsert.   |
-| **properties** | Недоступно | Содержимое этого поля описано в строках, приведенных ниже. |
+| **properties** | Н/Д | Содержимое этого поля описано в строках, приведенных ниже. |
 | **activityId** | **activityId_g** | Уникальный идентификатор GUID регистрируемой операции. |
 | **userAgent** | **userAgent_s** | Строка, которая указывает агент пользователя клиента, выполняющий запрос. Формат: {имя_агента_пользователя} / {версия}.|
-| **requestResourceType** | **requestResourceType_s** | Тип доступного ресурса. В качестве значения можно использовать любой из следующих типов ресурсов: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction или Offer. |
+| **рекуестресаурцетипе** | **requestResourceType_s** | Тип доступного ресурса. В качестве значения можно использовать любой из следующих типов ресурсов: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction или Offer. |
 | **statusCode** | **statusCode_s** | Состояние ответа операции. |
 | **requestResourceId** | **ResourceId** | Идентификатор ресурса, который относится к запросу. В зависимости от выполняемой операции значение может указывать на databaseRid, collectionRid или documentRid.|
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
@@ -479,11 +479,11 @@ $blobs | Get-AzStorageBlobContent `
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы понять, как включать ведение журнала, и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со статьями [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) и [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 - Прочтите эти статьи, чтобы узнать о концентраторах событий:
    - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
    - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
 - Ознакомьтесь с разделом [скачивании метрик и журналов диагностики из службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-blobs).
-- Чтение [общие принципы по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md).
+- Прочитайте [сведения о поиске по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-search-new.md).

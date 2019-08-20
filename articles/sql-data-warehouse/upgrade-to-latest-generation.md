@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
-ms.openlocfilehash: a8bd260db7a141ce845ce7fb5b7e10f642907b82
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2864e3d29a0beccd2ef52732a85ea1495e1efab8
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60310371"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575285"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Оптимизация производительности путем обновления хранилища данных SQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "60310371"
 
 > [!VIDEO https://www.youtube.com/embed/9B2F0gLoyss]
 
-## <a name="applies-to"></a>Применимо к
+## <a name="applies-to"></a>Применение
 
 Это обновление применяется к хранилищам данных 1-го поколения ценовой категории "Оптимизировано для вычислений" в [поддерживаемых регионах](gen2-migration-schedule.md#automated-schedule-and-region-availability-table).
 
@@ -63,7 +63,7 @@ ms.locfileid: "60310371"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!NOTE]
-> Постоянной является миграция из поколение 1 2-го поколения на портале Azure. Не процесс для возвращения в поколение 1.  
+> Миграция с GEN1 на Gen2 с помощью портал Azure является постоянной. Не существует процесса для возврата в Gen1.  
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -185,7 +185,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-2. Перейдите в хранилище данных SQL, для которого вы хотите создать точку восстановления.
+2. Перейдите к хранилищу данных SQL, для которого необходимо создать точку восстановления.
 
 3. В верхней области колонки "Обзор" выберите **Новая точка восстановления**.
 
@@ -198,7 +198,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 ## <a name="restore-an-active-or-paused-database-using-the-azure-portal"></a>Восстановление активной или приостановленной базы данных с помощью портала Azure
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Перейдите в хранилище данных SQL, из которого требуется выполнить восстановление.
+2. Перейдите к хранилищу данных SQL, из которого требуется выполнить восстановление.
 3. В верхней области колонки "Обзор" выберите **Восстановление**.
 
     ![ Обзор восстановления](./media/sql-data-warehouse-restore-database-portal/restoring_0.png)
@@ -215,7 +215,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы восстановить базу данных, используйте [AzSqlDatabase восстановления](/powershell/module/az.sql/restore-azsqldatabase) командлета.
+Чтобы восстановить базу данных, используйте командлет [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase) .
 
 > [!NOTE]
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
@@ -250,6 +250,6 @@ $GeoRestoredDatabase.status
 
 Если с хранилищем данных возникнут проблемы, создайте [запрос в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md) и укажите в качестве возможной причины "Обновление до 2-го поколения".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ваше хранилище данных подключено к сети. Чтобы воспользоваться преимуществами новой, усовершенствованной архитектуры, см. [Классы ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md).

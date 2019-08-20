@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 128aa17c3f3d19f5551958fde488f803224d1cd5
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 08ace7170a982fbaa186b77b27e342f16349aadd
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68693370"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69613307"
 ---
 # <a name="azure-active-directory-b2c-user-migration"></a>Azure Active Directory B2C Миграция пользователей
 
@@ -43,7 +43,7 @@ ms.locfileid: "68693370"
 "passwordPolicies": "DisablePasswordExpiration, DisableStrongPassword"
 ```
 
-## <a name="step-1-use-azure-ad-graph-api-to-migrate-users"></a>Шаг 1.: Миграция пользователей с помощью Azure AD API Graph
+## <a name="step-1-use-azure-ad-graph-api-to-migrate-users"></a>Шаг 1. Миграция пользователей с помощью Azure AD API Graph
 
 Вы создадите учетную запись пользователя Azure AD B2C с помощью API Graph (с паролем или со случайным паролем). В этом разделе описывается процесс создания учетных записей пользователей в каталоге Azure AD B2C с помощью API Graph.
 
@@ -137,7 +137,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 
 Измените значение `$AppId` на свой **идентификатор приложения** Azure AD.
 
-## <a name="step-2-pre-migration-application-sample"></a>Шаг 2.: Пример приложения перед началом миграции
+## <a name="step-2-pre-migration-application-sample"></a>Шаг 2. Пример приложения перед началом миграции
 
 [Скачайте и запустите пример кода][UserMigrationSample]. Вы можете скачать его в виде ZIP-файла.
 
@@ -375,4 +375,4 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 [B2C-GraphQuickStart]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet
 [B2C-NavContext]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-navigate-to-b2c-context
 [Portal]: https://portal.azure.com/
-[UserMigrationSample]: https://github.com/yoelhor/Azure-AD-B2C-UserMigration
+[UserMigrationSample]: https://github.com/azure-ad-b2c/user-migration

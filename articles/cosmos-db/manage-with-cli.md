@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: mjbrown
-ms.openlocfilehash: 9ec049311fc158b13bba45deb2974d7cdd531f90
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: f9d8bf9161343e4b36a3c16209873962b69d8af5
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815037"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615207"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
@@ -21,7 +21,7 @@ ms.locfileid: "68815037"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-an-azure-cosmos-db-account"></a>Создайте учетную запись Azure Cosmos DB.
+## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
 Чтобы создать учетную запись Azure Cosmos DB с помощью API SQL, согласованность сеансов в восточной части США и западной части США, выполните следующую команду:
 
@@ -41,7 +41,7 @@ az cosmosdb create \
 
 ## <a name="create-a-database"></a>Создание базы данных
 
-Чтобы создать базу данных Cosmos DB, выполните следующую команду:
+Чтобы создать базу данных Cosmos, выполните следующую команду:
 
 ```azurecli-interactive
 az cosmosdb database create \
@@ -52,7 +52,7 @@ az cosmosdb database create \
 
 ## <a name="create-a-container"></a>Создать контейнер
 
-Чтобы создать контейнер Cosmos DB с единицами запросов в секунду 400 и ключом секции, выполните следующую команду:
+Чтобы создать контейнер Cosmos с единицами запросов в секунду (400) и ключом секции, выполните следующую команду:
 
 ```azurecli-interactive
 # Create a container
@@ -67,7 +67,7 @@ az cosmosdb collection create \
 
 ## <a name="change-the-throughput-of-a-container"></a>Изменение пропускной способности контейнера
 
-Чтобы изменить пропускную способность контейнера Cosmos DB на 1000 единиц запросов в секунду, выполните следующую команду:
+Чтобы изменить пропускную способность контейнера Cosmos на 1000 единиц запросов в секунду, выполните следующую команду:
 
 ```azurecli-interactive
 # Update container throughput

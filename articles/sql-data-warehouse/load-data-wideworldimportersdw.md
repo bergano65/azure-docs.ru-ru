@@ -10,12 +10,12 @@ ms.subservice: load-data
 ms.date: 07/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 30b4009b2f52f4949a380f0fc51b02f94c98d966
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: f81a19631b29954f9bd3da55a4b332e37746152e
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304292"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69574934"
 ---
 # <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Учебник. Загрузка данных в Хранилище данных SQL Azure
 
@@ -44,9 +44,9 @@ ms.locfileid: "68304292"
 
 ## <a name="create-a-blank-sql-data-warehouse"></a>Создание пустого хранилища данных SQL
 
-Хранилище данных SQL Azure создается с определенным набором [вычислительных ресурсов](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-features.md). 
+Хранилище данных SQL Azure создается с определенным набором [ресурсов вычислений](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-features.md). 
 
-Чтобы создать пустое хранилище данных SQL, выполните приведенные ниже действия. 
+Чтобы создать пустое хранилище данных SQL, выполните следующие действия. 
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 

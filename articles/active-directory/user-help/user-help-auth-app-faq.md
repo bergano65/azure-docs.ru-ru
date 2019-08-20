@@ -13,12 +13,12 @@ ms.date: 01/31/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8786a99f012124848b02eb3db0c2a2e32ff01594
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: c65192501f5cfa075ddb6a27369587de2952f38a
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382390"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616033"
 ---
 # <a name="microsoft-authenticator-app-faq"></a>Часто задаваемые вопросы о приложении Microsoft Authenticator
 
@@ -54,7 +54,7 @@ ms.locfileid: "68382390"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/en-us/help/12428/microsoft-account-security-info-verification-codes) .
+- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) .
 
 - Дополнительные сведения о двухфакторной проверке подлинности см. в статье [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md).
 

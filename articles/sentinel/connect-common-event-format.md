@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/31/2019
+ms.date: 08/19/2019
 ms.author: rkarlin
-ms.openlocfilehash: 1cc661509a28bb57bed0361b48cdeda5e6338e54
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 28def73926294a025d70844e535a0856153ae30a
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679309"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611934"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -55,7 +55,14 @@ ms.locfileid: "68679309"
 
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
-## <a name="step-1-configure-your-syslog-vm"></a>Шаг 1.: Настройка виртуальной машины системного журнала
+## <a name="security-considerations"></a>Замечания по безопасности
+
+Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/linux/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
+
+Чтобы использовать TLS-связь между решением безопасности и компьютером syslog, необходимо настроить управляющую программу системного журнала (rsyslog или системный журнал — NG) для взаимодействия в TLS: [Шифрование трафика syslog с помощью TLS-rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
+
+
+## <a name="step-1-configure-your-syslog-vm"></a>Шаг 1. Настройка виртуальной машины системного журнала
 
 Необходимо развернуть агент на выделенном компьютере Linux (виртуальную машину или локально) для поддержки обмена данными между устройством и Sentinel. 
 
@@ -88,7 +95,7 @@ ms.locfileid: "68679309"
 
 Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по `CommonSecurityLog`запросу.
 
-## <a name="step-2-forward-common-event-format-cef-logs-to-syslog-agent"></a>Шаг 2.: Пересылка журналов распространенных событий формата (CEF) в агент системного журнала
+## <a name="step-2-forward-common-event-format-cef-logs-to-syslog-agent"></a>Шаг 2. Пересылка журналов распространенных событий формата (CEF) в агент системного журнала
 
 Настройте решение безопасности для отправки сообщений системного журнала в формате CEF в агент системного журнала. Убедитесь, что используются те же параметры, которые отображаются в конфигурации агента. Обычно это:
 

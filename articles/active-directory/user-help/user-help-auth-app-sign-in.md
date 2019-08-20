@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d7ceb854f5f6f8d0bfb2d589f42fe6d022ec743
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 9af3549984bd29a6e896e498bf4a2e6c67d7e0e2
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68382475"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616014"
 ---
 # <a name="sign-in-to-your-accounts-using-the-microsoft-authenticator-app"></a>Вход в учетные записи с помощью приложения Microsoft Authenticator
 
@@ -32,7 +32,7 @@ ms.locfileid: "68382475"
   >[!Important]
   >Этот метод входа на телефоне работает только с вашей рабочей или учебной и личной учетной записью Майкрософт. Учетные записи, отличные от Майкрософт, требуют от вас использовать в процессе стандартную двухфакторную проверку подлинности.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать приложение Microsoft Authenticator, вам необходимо:
 
@@ -122,7 +122,7 @@ ms.locfileid: "68382475"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/en-us/help/12428/microsoft-account-security-info-verification-codes) .
+- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) .
 
 - Ответы на общие вопросы о приложении см. в статье [Часто задаваемые вопросы о приложении Microsoft Authenticator](user-help-auth-app-faq.md).
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 78afec75269876c309b2c324d8a5973fd5ebf9a8
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: c782629d422eb8846b209fed7ab6b5a5c015de25
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68773035"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69612295"
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Присоединение виртуальной машины Ubuntu к управляемому домену в Azure
 Из этой статьи вы узнаете, как присоединить виртуальную машину Ubuntu Linux к управляемому домену доменных служб Azure AD.
@@ -31,9 +31,9 @@ ms.locfileid: "68773035"
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:  
 1. Действующая **подписка Azure**.
 2. **Каталог Azure AD** — синхронизированный с локальным каталогом или каталогом только для облака.
-3. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](create-instance.md).
-4. Обязательно укажите IP-адреса управляемого домена в качестве DNS-серверов для виртуальной сети. Дополнительные сведения см. в статье об [изменении настроек DNS виртуальной сети Azure](active-directory-ds-getting-started-dns.md).
-5. Выполните шаги, необходимые для [синхронизации паролей с управляемым доменом доменных служб Azure AD](active-directory-ds-getting-started-password-sync.md).
+3. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](tutorial-create-instance.md).
+4. Обязательно укажите IP-адреса управляемого домена в качестве DNS-серверов для виртуальной сети. Дополнительные сведения см. в статье об [изменении настроек DNS виртуальной сети Azure](tutorial-create-instance.md#update-dns-settings-for-the-azure-virtual-network).
+5. Выполните шаги, необходимые для [синхронизации паролей с управляемым доменом доменных служб Azure AD](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).
 
 
 ## <a name="provision-an-ubuntu-linux-virtual-machine"></a>Подготовка виртуальной машины Ubuntu Linux
@@ -51,7 +51,7 @@ ms.locfileid: "68773035"
 ## <a name="connect-remotely-to-the-ubuntu-linux-virtual-machine"></a>Удаленное подключение к виртуальной машине Ubuntu Linux
 Вы подготовили виртуальную машину Ubuntu Linux в Azure. Следующая задача — установить удаленное подключение к виртуальной машине, используя учетную запись локального администратора, созданную при подготовке виртуальной машины.
 
-Выполните инструкции из статьи о[входе в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Следуйте инструкциям в статье [как войти в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 
 ## <a name="configure-the-hosts-file-on-the-linux-virtual-machine"></a>Настройка файла hosts на виртуальной машине Linux
@@ -64,10 +64,10 @@ sudo vi /etc/hosts
 Добавьте следующее значение в файл hosts:
 
 ```console
-127.0.0.1 contoso-ubuntu.contoso100.com contoso-ubuntu
+127.0.0.1 contoso-ubuntu.contoso.com contoso-ubuntu
 ```
 
-В этом примере contoso100.com — это DNS-имя управляемого домена, а contoso-ubuntu — это имя узла виртуальной машины Ubuntu, присоединяемой к управляемому домену.
+Здесь "contoso.com" — это доменное DNS-имя управляемого домена. contoso-ubuntu — это имя узла виртуальной машины Ubuntu, присоединяемой к управляемому домену.
 
 
 ## <a name="install-required-packages-on-the-linux-virtual-machine"></a>Установка требуемых пакетов на виртуальную машину Linux
@@ -88,7 +88,7 @@ sudo vi /etc/hosts
 3. Во время установки Kerberos экран будет розовым. При установке пакета krb5-user поступает запрос на имя области (ВСЕ символы названия должны быть в ВЕРХНЕМ РЕГИСТРЕ). В процессе установки разделы [realm] и [domain_realm] сохраняются в файл /etc/krb5.conf.
 
     > [!TIP]
-    > Например, если управляемый домен имеет имя contoso100.com, введите название области CONTOSO100.COM. Не забывайте, что имя должно быть в ВЕРХНЕМ РЕГИСТРЕ.
+    > Если имя управляемого домена — contoso.com, введите contoso.COM в качестве области. Не забывайте, что имя должно быть в ВЕРХНЕМ РЕГИСТРЕ.
 
 
 ## <a name="configure-the-ntp-network-time-protocol-settings-on-the-linux-virtual-machine"></a>Настройка параметров протокола NTP на виртуальной машине Linux
@@ -101,16 +101,16 @@ sudo vi /etc/ntp.conf
 Добавьте следующее значение в файл ntp.conf и сохраните этот файл:
 
 ```console
-server contoso100.com
+server contoso.com
 ```
 
-В этом примере contoso100.com — это DNS-имя управляемого домена.
+Здесь "contoso.com" — это доменное DNS-имя управляемого домена.
 
 Теперь на виртуальной машине Ubuntu выполните синхронизацию даты и времени с NTP-сервером, а затем запустите службу NTP.
 
 ```console
 sudo systemctl stop ntp
-sudo ntpdate contoso100.com
+sudo ntpdate contoso.com
 sudo systemctl start ntp
 ```
 
@@ -121,7 +121,7 @@ sudo systemctl start ntp
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
     ```console
-    sudo realm discover CONTOSO100.COM
+    sudo realm discover contoso.COM
     ```
 
    > [!NOTE]
@@ -133,12 +133,12 @@ sudo systemctl start ntp
 2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду:
 
     > [!TIP]
-    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD".
+    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD". При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md) .
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
     >
 
     ```console
-    kinit bob@CONTOSO100.COM
+    kinit bob@contoso.COM
     ```
 
 3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
@@ -149,7 +149,7 @@ sudo systemctl start ntp
     > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
-    sudo realm join --verbose CONTOSO100.COM -U 'bob@CONTOSO100.COM' --install=/
+    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM' --install=/
     ```
 
 Когда компьютер присоединится к управляемому домену, вы получите сообщение "Компьютер успешно зарегистрирован в realm" (Successfully enrolled machine in realm).
@@ -176,7 +176,7 @@ sudo systemctl start ntp
 
 
 ## <a name="configure-automatic-home-directory-creation"></a>Настройка автоматического создания домашнего каталога
-Чтобы включить автоматическое создание домашнего каталога при первом входе пользователя, введите следующие команды в окне терминала PuTTY:
+Чтобы включить автоматическое создание домашнего каталога после входа в систему пользователей, введите следующие команды в терминале вывода:
 
 ```console
 sudo vi /etc/pam.d/common-session
@@ -192,10 +192,10 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине Ubuntu, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
-1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине Ubuntu, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO100.COM).
+1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине Ubuntu, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@contoso.COM).
     
     ```console
-    ssh -l bob@CONTOSO100.COM contoso-ubuntu.contoso100.com
+    ssh -l bob@contoso.COM contoso-ubuntu.contoso.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:
@@ -214,7 +214,7 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 ## <a name="grant-the-aad-dc-administrators-group-sudo-privileges"></a>Предоставление привилегий суперпользователя группе "Администраторы контроллера домена AAD"
 Вы можете предоставить всем членам группы "Администраторы контроллера домена AAD" административные привилегии на виртуальной машине Ubuntu. Файл sudo хранится в файле /etc/sudoers. Члены групп AD, добавленных в этот файл, имеют право выполнять команду sudo.
 
-1. Убедитесь, что в терминале SSH вы имеете права суперпользователя. Для этого можно использовать учетную запись локального администратора, которую вы указали при создании виртуальной машины. Выполните следующую команду:
+1. Убедитесь, что в терминале SSH выполнен вход с правами суперпользователя. Для этого можно использовать учетную запись локального администратора, которую вы указали при создании виртуальной машины. Выполните следующую команду:
     
     ```console
     sudo vi /etc/sudoers
@@ -227,14 +227,14 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
     %AAD\ DC\ Administrators ALL=(ALL) NOPASSWD:ALL
     ```
 
-3. Теперь при входе от имени любого члена группы "Администраторы контроллера домена AAD" вы получите права администратора на этой виртуальной машине.
+3. Теперь вы можете войти в систему как член группы "Администраторы контроллера домена AAD" и иметь права администратора на виртуальной машине.
 
 
 ## <a name="troubleshooting-domain-join"></a>Устранение неполадок при присоединении к домену
-См. статью, посвященную [устранению неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-joining-a-domain).
+См. статью, посвященную [устранению неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 
 
 ## <a name="related-content"></a>См. также
-* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)
 * [Присоединение виртуальной машины Windows Server к управляемому домену](active-directory-ds-admin-guide-join-windows-vm.md)
 * [Как войти в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

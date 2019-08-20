@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: f47afd450350226aa944287e756b73f61b15b32d
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 54b83df4c0ad68c9bd6b39d39926657395c48f3e
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952046"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615876"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -106,7 +106,7 @@ ms.locfileid: "68952046"
 **Код ошибки** UserErrorUnsupportedDiskSize <br>
 **Сообщение об ошибке** В настоящее время Azure Backup не поддерживает размеры дисков больше 4095 ГБ <br>
 
-Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска более 4 095 ГБ. Чтобы зарегистрироваться для получения ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков объемом более 4 ТБ и размером до 30 ТБ, ознакомьтесь [с обзором резервного копирования виртуальных машин Azure](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
+Операция резервного копирования может завершиться ошибкой при резервном копировании виртуальной машины с размером диска более 4 095 ГБ. Чтобы зарегистрироваться для использования ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков объемом более 4 ТБ и размером до 30 ТБ, ознакомьтесь с этой [статьей](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 
 ## <a name="usererrorbackupoperationinprogress---unable-to-initiate-backup-as-another-backup-operation-is-currently-in-progress"></a>UserErrorBackupOperationInProgress. Не удалось запустить резервное копирование, так как в настоящий момент выполняется другая операция резервного копирования.
 

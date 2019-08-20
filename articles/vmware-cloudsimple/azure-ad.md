@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: fe80c6231f95ec7040bde5f1d7e74353b8bfff60
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: b9060ecbb9ca9e77d994a8f20378e2c53927586a
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544426"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617373"
 ---
 # <a name="use-azure-ad-as-an-identity-provider-for-vcenter-on-cloudsimple-private-cloud"></a>Использование Azure AD в качестве поставщика удостоверений для vCenter в частном облаке Клаудсимпле
 
@@ -64,16 +64,16 @@ Azure AD — это облачный каталог и служба управл
 3. Настройте группу администраторов для управления доменными службами Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/active-directory-ds-getting-started-admingroup.md).
 4. Обновите параметры DNS для доменных служб Azure AD, как описано в разделе [Включение доменных служб Azure Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-dns.md).  Если вы хотите подключиться к AD через Интернет, настройте запись DNS для общедоступного IP-адреса доменных служб Azure AD в доменное имя.
 5. Включите синхронизацию хэшей паролей для пользователей.  Этот шаг включает синхронизацию хэшей паролей, необходимых для проверки подлинности с помощью NT LAN Manager (NTLM) и Kerberos, в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации. См. раздел [Включение синхронизации хэшей паролей для Azure Active Directory доменных служб](../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md).
-    1. Если имеются только облачные пользователи, они должны изменить свой пароль с помощью <a href="http://myapps.microsoft.com/" target="_blank">панели доступа Azure AD</a> , чтобы сохранить хэши паролей в формате, ТРЕБУЕМом протоколом NTLM или Kerberos.  Следуйте инструкциям в разделе [Включение синхронизации хэшей паролей с управляемым доменом для облачных учетных записей пользователей](../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md#task-5-enable-password-hash-synchronization-to-your-managed-domain-for-cloud-only-user-accounts).  Этот шаг необходимо выполнить для отдельных пользователей и всех новых пользователей, созданных в каталоге Azure AD с помощью портал Azure или командлетов Azure AD PowerShell. Пользователям, которым требуется доступ к доменным службам Azure AD, необходимо использовать <a href="http://myapps.microsoft.com/" target="_blank">панель доступа Azure AD</a> и получить доступ к своим профилям для смены пароля.
+    1. Если имеются только облачные пользователи, они должны изменить свой пароль с помощью <a href="http://myapps.microsoft.com/" target="_blank">панели доступа Azure AD</a> , чтобы сохранить хэши паролей в формате, ТРЕБУЕМом протоколом NTLM или Kerberos.  Следуйте инструкциям в разделе [Включение синхронизации хэшей паролей с управляемым доменом для облачных учетных записей пользователей](../active-directory-domain-services/tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).  Этот шаг необходимо выполнить для отдельных пользователей и всех новых пользователей, созданных в каталоге Azure AD с помощью портал Azure или командлетов Azure AD PowerShell. Пользователям, которым требуется доступ к доменным службам Azure AD, необходимо использовать <a href="http://myapps.microsoft.com/" target="_blank">панель доступа Azure AD</a> и получить доступ к своим профилям для смены пароля.
 
         > [!NOTE]
         > Если в вашей организации есть облачные учетные записи пользователей, все пользователи, которым необходимо использовать доменные службы Azure Active Directory, должны изменить свои пароли. Облачная учетная запись пользователей — это учетная запись, созданная в каталоге Azure AD с помощью портала Azure или командлетов Azure AD PowerShell. Такие учетные записи пользователей не синхронизированы из локального каталога.
 
-    2. Если вы синхронизируете пароли из локальной службы Active Directory, выполните действия, описанные в [документации по Active Directory] (.. /активе-директори-домаин-сервицес/активе-директори-дс-жеттинг-стартед-пассворд-синк-синцед-тенант.мд.
+    2. Если вы синхронизируете пароли из локальной службы Active Directory, выполните действия, описанные в документации по [Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-password-sync-synced-tenant.md).
 
-6.  Настройте защищенный протокол LDAP для доменных служб Azure Active Directory, как описано в разделе [Настройка защищенных протоколов LDAP (LDAPS) для управляемого домена доменных служб Azure AD](../active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.md).
-    1. Отправьте сертификат для использования защищенным протоколом LDAP, как описано в разделе Azure [Получение сертификата для защищенного протокола LDAP](../active-directory-domain-services/configure-ldaps.md#task-1---obtain-a-certificate-for-secure-ldap).  Клаудсимпле рекомендует использовать подписанный сертификат, выданный центром сертификации, чтобы убедиться, что vCenter может доверять сертификату.
-    2. Включите защищенный протокол LDAP, как описано в разделе [Включение защищенных протоколов LDAP (LDAPS) для управляемого домена доменных служб Azure AD](../active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md).
+6.  Настройте защищенный протокол LDAP для доменных служб Azure Active Directory, как описано в разделе [Настройка защищенных протоколов LDAP (LDAPS) для управляемого домена доменных служб Azure AD](../active-directory-domain-services/tutorial-configure-ldaps.md).
+    1. Отправьте сертификат для использования защищенным протоколом LDAP, как описано в разделе Azure [Получение сертификата для защищенного протокола LDAP](../active-directory-domain-services/tutorial-configure-ldaps.md#create-a-certificate-for-secure-ldap).  Клаудсимпле рекомендует использовать подписанный сертификат, выданный центром сертификации, чтобы убедиться, что vCenter может доверять сертификату.
+    2. Включите защищенный протокол LDAP, как описано в разделе [Включение защищенных протоколов LDAP (LDAPS) для управляемого домена доменных служб Azure AD](../active-directory-domain-services/tutorial-configure-ldaps.md).
     3. Сохраните открытую часть сертификата (без закрытого ключа) в формате CER для использования с vCenter при настройке источника удостоверений.
     4. Если требуется доступ к доменным службам Azure AD через Интернет, включите параметр "разрешить безопасный доступ к LDAP через Интернет".
     5. Добавьте правило безопасности для входящего трафика для доменных служб Azure AD NSG для TCP-порта 636.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 1716bd64286f1882b9fc224712d227967d78058a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 8d2cb30e0f18485d500344e571b3ac5f2cde008f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637775"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615703"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  
@@ -36,7 +36,7 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
  
 * Эта библиотека позволяет выполнять массовый импорт данных размером больше терабайта в течение часа с помощью масштабируемой архитектуры.  
 
-* Библиотека позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos DB в качестве исправлений. 
+* Он может выполнять массовые обновления существующих данных в контейнерах Azure Cosmos в качестве исправлений. 
  
 ## <a name="how-does-the-bulk-executor-operate"></a>Как работает групповой исполнитель? 
 

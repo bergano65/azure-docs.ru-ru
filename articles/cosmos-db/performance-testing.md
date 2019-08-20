@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: a5842d590a4597253bac39c0b7a6f62e6acad908
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0ac257d4eb9fb9e26739f1a63049751f9298efb5
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243535"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616780"
 ---
 # <a name="performance-and-scale-testing-with-azure-cosmos-db"></a>Проверка производительности и масштабирования с помощью Azure Cosmos DB
 
@@ -42,7 +42,7 @@ ms.locfileid: "66243535"
 **Шаг 2**. Измените параметры EndpointUrl, AuthorizationKey, CollectionThroughput и DocumentTemplate (необязательно) в файле App.config.
 
 > [!NOTE]
-> Перед подготовкой коллекций с высокой пропускной способностью просмотрите [страницу цен](https://azure.microsoft.com/pricing/details/cosmos-db/), чтобы рассчитать затраты для каждой коллекции. В Azure Cosmos DB использование места на диске и пропускной способности тарифицируются независимо друг от друга на почасовой основе, поэтому вы сможете сэкономить, понизив или отключив пропускную способность для своих коллекций Azure Cosmos DB после тестирования.
+> Перед подготовкой коллекций с высокой пропускной способностью просмотрите [страницу цен](https://azure.microsoft.com/pricing/details/cosmos-db/), чтобы рассчитать затраты для каждой коллекции. В Azure Cosmos DB использование места на диске и пропускной способности тарифицируются независимо друг от друга на почасовой основе, Вы можете сэкономить затраты, удалив или снижая пропускную способность контейнеров Azure Cosmos после тестирования.
 > 
 > 
 
@@ -93,7 +93,7 @@ ms.locfileid: "66243535"
 
 После запуска приложения вы можете опробовать различные [политики индексирования](index-policy.md) и [уровни согласованности](consistency-levels.md), чтобы понять, как они влияют на пропускную способность и задержки. Вы также можете просмотреть исходный код и реализовывать аналогичные настройки в ваших тестовых наборах или приложениях в рабочей среде.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье мы рассмотрели способы тестирования производительности и масштабируемости с Azure Cosmos DB с помощью консольного приложения .NET. Дополнительные сведения см. в следующих статьях:
 
 * [Пример для тестирования производительности Azure Cosmos DB](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)

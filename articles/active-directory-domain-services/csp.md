@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/08/2017
 ms.author: iainfou
-ms.openlocfilehash: a0ea28f3b62e6560e4adf8ea6bcb1fe984a1dbe6
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: dc4ad7d8cf9f3267713fd066fa79a4d9d8ab733f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473558"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69612972"
 ---
 # <a name="azure-active-directory-ad-domain-services-for-azure-cloud-solution-providers-csp"></a>Доменные службы Azure Active Directory (AD) для поставщиков облачных решений Azure (Azure CSP)
 В этой статье описывается, как использовать доменные службы Azure AD в подписке Azure CSP.
@@ -86,8 +86,8 @@ Azure CSP — это программа для партнеров корпора
 * **Учетную запись пользователя, созданную для текущих задач администрирования, необходимо добавить в группу "Администраторы контроллера домена AAD".** Группа "Администраторы контроллера домена AAD" обладает правами на выполнение определенных делегированных задач администрирования в управляемом домене. Эти задачи включают в себя настройку DNS, создание подразделений, администрировании групповой политики и т. д. Чтобы партнер CSP мог выполнять такие задачи в управляемом домене, учетная запись пользователя должна быть создана внутри каталога Azure AD клиента. Учетные данные для этой учетной записи должны совместно использоваться агентами администрирования партнера CSP. Кроме того, эта учетная запись пользователя должна быть добавлена в группу "Администраторы AAD DC" для выполнения задач настройки в управляемом домене.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Зарегистрируйтесь в программе Azure CSP](https://docs.microsoft.com/partner-center/enrolling-in-the-csp-program) и приступите к формированию компании с помощью Azure CSP.
 * Просмотрите список [служб Azure, доступных в Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services).
 * [Включение доменных служб Azure AD с помощью PowerShell](powershell-create-instance.md)
-* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5fff27094881ffbada2bda7937fa714ffc07133
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 0e1be41c854e212a7b673d8c2dff42d7b9981fb4
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954351"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616127"
 ---
 # <a name="set-up-security-info-preview-to-use-an-authenticator-app"></a>Настройка использования приложения аутентификации в сведениях для защиты (предварительная версия)
 
@@ -145,6 +145,8 @@ ms.locfileid: "68954351"
     >Если некоторые из этих параметров отсутствуют, скорее всего, ваша организация не разрешает данные методы. Если это так, вам нужно выбрать доступный метод или обратиться за помощью к администратору.
 
 ## <a name="next-steps"></a>Следующие шаги
+
+- Выполните вход с помощью приложения Microsoft Authenticator, выполнив действия, описанные в разделе [Вход с использованием двухфакторной проверки подлинности или сведений о безопасности](security-info-setup-signin.md) .
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](user-help-reset-password.md).
 

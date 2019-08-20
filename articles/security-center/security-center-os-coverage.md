@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 6/03/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 9a11af7e2875c9af5cf4b08d459bc67b55dbdcf3
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 21a42b2986b52282fbab914fa702d8c4a323ed35
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515539"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611952"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Поддерживаемые платформы и возможности в центре безопасности Azure
 
@@ -30,8 +30,7 @@ ms.locfileid: "69515539"
 >
 
 ## <a name="platforms-that-support-the-data-collection-agent"></a>Платформы, которые поддерживают агент сбора данных 
-
-В этом разделе перечислены платформы, на которых можно запустить агент центра безопасности Azure и с которых он может собирать данные.
+В этом разделе перечислены платформы, на которых можно запустить агент Log Analytics, используемый центром безопасности Azure.
 
 ### <a name="supported-platforms-for-windows-computers-and-vms"></a>Поддерживаемые платформы для компьютеров и виртуальных машин Windows
 Поддерживаются перечисленные ниже операционные системы Windows.
@@ -53,7 +52,7 @@ ms.locfileid: "69515539"
 > [!NOTE]
 > Так как список поддерживаемых операционных систем Linux постоянно меняется, если вы предпочитаете, щелкните [здесь](https://github.com/microsoft/OMS-Agent-for-Linux#supported-linux-operating-systems) , чтобы просмотреть самый актуальный список поддерживаемых версий, на тот случай, если были внесены изменения с момента последней публикации этого раздела.
 
-64-разрядный
+64-разрядная
 * CentOS 6 и 7
 * Amazon Linux 2017.09
 * Oracle Linux 6 и 7
@@ -62,7 +61,7 @@ ms.locfileid: "69515539"
 * Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
 * SUSE Linux Enterprise Server 12
 
-32-разрядный
+32-битная
 * CentOS 6
 * Oracle Linux 6
 * Red Hat Enterprise Linux Server 6

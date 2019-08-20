@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
-ms.openlocfilehash: e321091f2abcff4c385b442ac6474c0592845e2e
-ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
+ms.openlocfilehash: f2e01e42a53f6f099191c03f45d6521668ea73a1
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68602035"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616668"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
 
@@ -105,7 +105,7 @@ Database database = await client.CreateDatabaseAsync(
 <a id="users"></a>
 
 ## <a name="users"></a>Пользователи
-Пользователи Cosmos DB связаны с базой данных Cosmos DB.  Каждая база данных может содержать несколько пользователей Cosmos DB или не содержать ни одного.  В следующем примере кода показано, как создать ресурс пользователя Cosmos DB.
+Cosmos DB пользователи связаны с базой данных Cosmos.  Каждая база данных может содержать несколько пользователей Cosmos DB или не содержать ни одного.  В следующем примере кода показано, как создать ресурс пользователя Cosmos DB.
 
 ```csharp
 //Create a user.
@@ -193,5 +193,5 @@ Azure Cosmos DB позволяет искать, выбирать, изменя�
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
 ## <a name="next-steps"></a>Следующие шаги
-* См. дополнительные сведения о [безопасности базы данных Cosmos DB](database-security.md).
+* Дополнительные сведения о безопасности базы данных Cosmos см. [в разделе Cosmos DB: базы данных Cosmos DB](database-security.md).
 * Сведения о создании маркеров проверки подлинности Azure Cosmos DB см. в статье [Access control in the DocumentDB API](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) (Управление доступом в API DocumentDB).

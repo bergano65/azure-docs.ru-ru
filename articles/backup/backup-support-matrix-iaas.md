@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dacurwin
-ms.openlocfilehash: 9b0cbe8126a01a64e35b2fcfeca400aed5aef0cc
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: df9e60c8d517c35029e425d50dba81a18c2f1114
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952033"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617363"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Матрица поддержки для резервного копирования виртуальных машин Azure
 Вы можете использовать [службу Azure Backup](backup-overview.md) для резервного копирования локальных компьютеров и рабочих нагрузок, а также виртуальных машин Azure. В этой статье перечислены параметры поддержки и ограничения при резервном копировании виртуальных машин Azure с помощью Azure Backup.
@@ -157,7 +157,7 @@ ms.locfileid: "68952033"
 
 **Компонент** | **Поддержка**
 --- | ---
-Диски данных виртуальной машины Azure | Резервное копирование виртуальной машины с 16 или меньшим количеством дисков данных. <br/><br/> Поддержка дисков размером до 4 ТБ.<br/><br/>Чтобы зарегистрироваться для получения ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков объемом более 4 ТБ и размером до 30 ТБ, ознакомьтесь [с обзором резервного копирования виртуальных машин Azure](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
+Диски данных виртуальной машины Azure | Резервное копирование виртуальной машины с 16 или меньшим количеством дисков данных. <br/><br/> Поддержка дисков размером до 4 ТБ.<br/><br/>Чтобы зарегистрироваться для использования ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков объемом более 4 ТБ и размером до 30 ТБ, ознакомьтесь с этой [статьей](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 Размер диска данных | Отдельный диск может быть размером до 4095 ГБ.<br/><br/>Чтобы зарегистрироваться для использования ограниченной общедоступной предварительной версии Azure Backup поддержка больших дисков больше, чем 4 ТБ до 30TB, ознакомьтесь с этой [статьей](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 Тип хранилища | HDD (цен. категория "Стандартный"), SSD (цен. категория "Стандартный"), SSD (цен. категория "Премиум").
 Управляемые диски | Поддерживается.

@@ -1,18 +1,18 @@
 ---
 title: Советы по повышению производительности для Azure Cosmos DB и Async Java
-description: Узнайте, как повысить производительность базы данных Azure Cosmos DB с помощью параметров конфигурации клиента
+description: Сведения о параметрах конфигурации клиента для повышения производительности базы данных Azure Cosmos
 author: SnehaGunda
 ms.service: cosmos-db
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: 2c2d776012e702469be4fd3217fb89be0ad419bf
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 7a470193110fda0bb675e56e17a8f5647ebda5ab
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261619"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614974"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-async-java"></a>Советы по повышению производительности для Azure Cosmos DB и Async Java
 
@@ -30,7 +30,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
    <a id="same-region"></a>
 1. **Повышение производительности за счет размещения клиентов в одном регионе Azure**
 
-    Если это возможно, размещайте приложения, выполняющие вызовы к Azure Cosmos DB, в том же регионе, в котором находится база данных Azure Cosmos DB. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
+    По возможности разместите все приложения, вызывающие Azure Cosmos DB, в том же регионе, что и база данных Azure Cosmos. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
 
     ![Пример политики подключения Azure Cosmos DB](./media/performance-tips/same-region.png)
 

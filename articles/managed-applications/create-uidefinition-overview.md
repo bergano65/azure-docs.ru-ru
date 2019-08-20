@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1ee6d9332a2be5ccb22b7571b348e2e0aae78fb2
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 783c4f5b1f5a7f2be748bc7173da2d068e1425f4
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69563558"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575649"
 ---
 # <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>CreateUiDefinition. JSON для процесса создания управляемого приложения Azure
 
@@ -52,13 +52,11 @@ CreateUiDefinition всегда содержит три свойства:
 
 Советуем также использовать параметр `$schema`, но это необязательно. При его использовании значение параметра `version` должно совпадать с версией в URI `$schema`.
 
-Можно использовать редактор JSON для создания определения пользовательского интерфейса, а затем проверить его в [песочнице определения пользовательского интерфейса](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade) , чтобы просмотреть его. Дополнительные сведения о песочнице см. в статье [тестирование интерфейса портала для управляемых приложений Azure](test-createuidefinition.md).
+С помощью редактора JSON можно создать createUiDefinition, а затем протестировать его в [песочнице createUiDefinition](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade) для предварительного просмотра. Дополнительные сведения о песочнице см. в статье [тестирование интерфейса портала для управляемых приложений Azure](test-createuidefinition.md).
 
 ## <a name="basics"></a>Основные сведения
 
 Основные принципы — это первый шаг, созданный при портал Azure синтаксического анализа файла. Помимо отображения элементов, указанных в `basics`, портал вводит элементы, чтобы пользователи выбрали подписку, группу ресурсов и местоположение для развертывания. По возможности элементы, которые запрашивают параметры уровня развертывания, такие как имя кластера или учетные данные администратора, должны быть в этом шаге.
-
-Если поведение элемента зависит от подписки пользователя, группы ресурсов или расположения, этот элемент нельзя использовать в качестве основы. Например, **Microsoft.Compute.SizeSelector** определяет список доступных размеров в зависимости от подписки пользователя и местоположения. Таким образом, **Microsoft.Compute.SizeSelector** может использоваться только в steps. Как правило, только элементы в пространстве имен **Microsoft.Common** могут использоваться в basics. Хотя некоторые элементы в других пространствах имен (например **, Microsoft. COMPUTE. Credentials**), которые не зависят от контекста пользователя, по-прежнему разрешены.
 
 ## <a name="steps"></a>Шаги
 

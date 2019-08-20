@@ -6,12 +6,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 08/07/2019
 ms.author: rogarana
-ms.openlocfilehash: addb97d71da1ceac8717ae77204c87a8197dac86
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 6cdee8f1ad59962822e9e0394547c395c13e4bd8
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935172"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611773"
 ---
 # <a name="overview-of-azure-files-azure-active-directory-domain-service-azure-ad-ds-authentication-support-for-smb-access"></a>Обзор поддержки проверки подлинности в службе "службы файлов Azure" Azure Active Directory (Azure AD DS) для доступа по протоколу SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "68935172"
 ### <a name="enable-azure-ad-domain-service-authentication-for-smb-access"></a>Включение проверки подлинности доменных служб Azure AD для доступа по протоколу SMB
 Вы можете включить проверку подлинности службы домена Azure AD для файлов Azure в новых и существующих учетных записях хранения, созданных после 24 сентября 2018 г. 
 
-Перед включением этой функции убедитесь, что доменные службы Azure AD развернуты для основного клиента Azure AD, с которым связана ваша учетная запись хранения. Если вы еще не настроили доменные службы Azure AD, следуйте пошаговым инструкциям, предоставленным в статье [Включение доменных служб Azure Active Directory на портале Azure](../../active-directory-domain-services/create-instance.md).
+Перед включением этой функции убедитесь, что доменные службы Azure AD развернуты для основного клиента Azure AD, с которым связана ваша учетная запись хранения. Если вы еще не настроили доменные службы Azure AD, следуйте пошаговым инструкциям, предоставленным в статье [Включение доменных служб Azure Active Directory на портале Azure](../../active-directory-domain-services/tutorial-create-instance.md).
 
 Развертывание доменных служб AD Azure обычно занимает 10–15 минут. После развертывания доменных служб Azure AD вы можете включить проверку подлинности Azure AD по протоколу SMB для файлов Azure. Дополнительные сведения см. в статье [Включение проверки подлинности Azure Active Directory службы домена в SMB для файлов Azure](storage-files-active-directory-enable.md). 
 

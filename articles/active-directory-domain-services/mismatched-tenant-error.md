@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 676efa155c85ab371ec41c49ad0c15eb2bd5a24a
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 4978f7b782271daff996807172a24103bd8d9860
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234006"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617292"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталога для существующих управляемых доменов доменных служб Azure AD
 У вас есть управляемый домен доменных служб Azure AD. При переходе на портал Azure и просмотре управляемого домена может появиться следующее сообщение об ошибке:
@@ -54,7 +54,7 @@ ms.locfileid: "68234006"
 - Управляемый домен доменных служб Azure AD можно включить в виртуальной сети, принадлежащей любой из подписок Azure в пределах одного и того же клиента Azure AD.
 
 
-## <a name="resolution"></a>Способы устранения:
+## <a name="resolution"></a>Разрешение
 Устранить ошибку несоответствия каталога можно двумя способами. Вы можете сделать следующее:
 
 - Нажмите кнопку **Удалить**, чтобы удалить существующий управляемый домен. Повторно создайте управляемый домен с помощью [портала Azure](https://portal.azure.com), чтобы управляемый домен и виртуальная сеть, в которой он доступен, находились в одном и том же каталоге Azure AD. Присоедините к только что созданному управляемому домену все компьютеры, которые были присоединены к удаленному домену.
@@ -63,5 +63,5 @@ ms.locfileid: "68234006"
 
 
 ## <a name="related-content"></a>Связанная информация
-* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)
 * [Руководство по устранению неполадок — доменные службы Azure AD](troubleshoot.md)

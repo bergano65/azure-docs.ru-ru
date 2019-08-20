@@ -6,12 +6,12 @@ ms.service: managed-applications
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 91dd661cf4900512390079751f400f6a9888c452
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 54eb2df06df56c33e1a3cd74e7a4a93c07aab682
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845919"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575664"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Тестирование интерфейса портала для управляемых приложений Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "68845919"
 
 Сценарий откроет новую вкладку в браузере. В ней отобразится портал с интерфейсом для создания управляемого приложения.
 
-Укажите значения для полей. По завершении вы увидите значения, переданные в шаблон.
+Укажите значения для полей. По завершении вы увидите значения, которые передаются в шаблон, который можно найти в консоли средств разработчика в браузере.
 
 ![Показать значения](./media/test-createuidefinition/show-json.png)
 

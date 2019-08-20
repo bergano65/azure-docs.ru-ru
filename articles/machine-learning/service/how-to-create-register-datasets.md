@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/21/2019
-ms.openlocfilehash: c5b423fca3e0ec116fceefb6867189f4f8413b96
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 67dda1ab56c6a706a9fdbef45fabdae9167ffe2b
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856087"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616339"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в Машинное обучение Azure
 
@@ -24,15 +24,13 @@ ms.locfileid: "68856087"
 
 С помощью Машинное обучение Azure наборов данных можно: 
 
-* **Сохранение одной копии данных в хранилище** , на которое ссылаются наборы данных
+* **Хранить одну копию данных в хранилище** , на которое ссылаются наборы DataSet. 
 
-* **Анализ данных** с помощью исследовательского анализа данных 
+* **Простой доступ к данным во время обучения модели** , не беспокоясь о строке подключения или пути к данным.
 
-* **Простой доступ к данным во время обучения модели** без беспокойства строки подключения или пути к данным
+* **Совместное использование данных & совместно** с другими пользователями.
 
-* **Совместное использование данных & совместно** с другими пользователями
-
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для создания наборов данных и работы с ними требуется:
 
@@ -45,46 +43,22 @@ ms.locfileid: "68856087"
 > [!Note]
 > Некоторые классы набора данных (Предварительная версия) имеют зависимости от пакета [azureml-](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах:  Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
-## <a name="data-formats"></a>Форматы данных
+## <a name="dataset-types"></a>Типы наборов данных
+Наборы данных подразделяются на различные типы в зависимости от того, как пользователи их используют в обучении. В настоящее время мы поддерживаем Табулардатасетс, которые представляют данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas. Табулардатасет можно создать из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей документации.
 
-Можно создать Машинное обучение Azure набор данных из следующих форматов:
-+ [с разделителями](/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-delimited-files-path--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---encoding--fileencoding-utf8--0---quoting-false--infer-column-types-true--skip-rows-0--skip-mode--skiplinesbehavior-no-rows--0---comment-none--include-path-false--archive-options-none--partition-format-none-)
-+ [json](/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-json-files-path--encoding--fileencoding-utf8--0---flatten-nested-arrays-false--include-path-false--partition-format-none-)
-+ [Excel](/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-excel-files-path--sheet-name-none--use-column-headers-false--skip-rows-0--include-path-false--infer-column-types-true--partition-format-none-)
-+ [Parquet](/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-parquet-files-path--include-path-false--partition-format-none-)
-+ [Кадр данных Pandas](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-pandas-dataframe-dataframe--path-none--in-memory-false-)
-+ [SQL query](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-sql-query-data-source--query-)
-+ [binary](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-binary-files-path-)
+Дополнительные сведения о предстоящих изменениях API см. в статье [что такое машинное обучение Azure служба?](https://aka.ms/tabular-dataset) 
 
 ## <a name="create-datasets"></a>Создание наборов данных 
 
 Создавая набор данных, вы создаете ссылку на расположение источника данных вместе с копией его метаданных. Данные остаются в существующем расположении, поэтому дополнительные затраты на хранение не взимается.
 
-### <a name="create-from-local-files"></a>Создать из локальных файлов
-
-Загрузите файлы с локального компьютера, указав путь к файлу или папке с [`auto_read_files()`](/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#auto-read-files-path--include-path-false--partition-format-none-) помощью метода `Dataset` из класса.  Этот метод выполняет следующие действия, не требуя указывать тип файла или аргументы синтаксического анализа:
-
-* Выведение и установка разделителя.
-* Пропуск пустых записей в верхней части файла.
-* Выведение и задание строки заголовка.
-* Выведение и преобразование типов данных столбцов.
-
-```Python
-from azureml.core.dataset import Dataset
-
-dataset = Dataset.auto_read_files('./data/crime.csv')
-```
-
-Кроме того, можно использовать функции для конкретного файла, чтобы явно управлять синтаксическим анализом файла. 
-
-
-### <a name="create-from-azure-datastores"></a>Создание из хранилищ данных Azure
+Чтобы данные были доступны службе Машинное обучение Azure, наборы данных должны быть созданы из путей в [хранилищах данных Azure](how-to-access-data.md) или общедоступных URL-адресах.
 
 Чтобы создать наборы данных из [хранилища данных Azure](how-to-access-data.md), сделайте следующее:
 
 * Убедитесь, что `contributor` вы `owner` или имеете доступ к зарегистрированному хранилищу данных Azure.
 
-* Создание набора данных путем ссылки на путь в хранилище данных 
+* Создайте набор данных, обратившись к пути в хранилище данных.
 
 ```Python
 from azureml.core.workspace import Workspace
@@ -97,54 +71,91 @@ datastore_name = 'your datastore name'
 workspace = Workspace.from_config()
 
 # retrieve an existing datastore in the workspace by name
-dstore = Datastore.get(workspace, datastore_name)
+datastore = Datastore.get(workspace, datastore_name)
 ```
+### <a name="create-tabulardatasets"></a>Создание Табулардатасетс
 
-Используйте метод, чтобы считать файлы с разделителями из [ссылки на](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py)объект и создать незарегистрированный набор данных. `from_delimited_files()`
+`from_delimited_files()` Используйте`TabularDatasetFactory` метод класса для чтения файлов в формате CSV или TSV и создания незарегистрированного табулардатасет. При чтении из нескольких файлов результаты будут объединены в одно табличное представление.
 
 ```Python
-# create an in-memory Dataset on your local machine
-dataset = Dataset.from_delimited_files(dstore.path('data/src/crime.csv'))
+# create a TabularDataset from multiple paths in datastore
+datastore_paths = [
+                  (datastore, 'weather/2018/11.csv'),
+                  (datastore, 'weather/2018/12.csv'),
+                  (datastore, 'weather/2019/*.csv')
+                 ]
+weather_ds = Dataset.Tabular.from_delimited_files(path=datastore_paths)
 
-# returns the first 5 rows of the Dataset as a pandas Dataframe.
-dataset.head(5)
+# create a TabularDataset from a delimited file behind a public web url
+web_path ='https://dprepdata.blob.core.windows.net/demo/Titanic.csv'
+titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
+
+# preview the first 3 rows of titanic_ds
+titanic_ds.take(3).to_pandas_dataframe()
 ```
+
+| |пассенжерид|Оставшихся|пкласс|Название|Пол|Время существования|сибсп|парч|Службу|FARE|кабин|Предпринимались
+-|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
+0|1|0|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
+1|2|1|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|В
+2|3|1|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 ## <a name="register-datasets"></a>Регистрация наборов данных
 
 Чтобы завершить процесс создания, зарегистрируйте наборы данных в рабочей области:
 
-[`register()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#register-workspace--name--description-none--tags-none--visible-true--exist-ok-false--update-if-exist-false-) Используйте метод для регистрации наборов данных в рабочей области, чтобы их можно было использовать совместно с другими пользователями в различных экспериментах.
+`register()` Используйте метод для регистрации наборов данных в рабочей области, чтобы их можно было использовать совместно с другими пользователями в различных экспериментах.
 
 ```Python
-dataset = dataset.register(workspace = workspace,
-                           name = 'dataset_crime',
-                           description = 'Training data',
-                           exist_ok = False
-                           )
+titanic_ds = titanic_ds.register(workspace = workspace,
+                                 name = 'titanic_ds',
+                                 description = 'titanic training data')
 ```
 
->[!NOTE]
-> Если `exist_ok = False` значение равно (по умолчанию) и вы пытаетесь зарегистрировать набор данных с тем же именем, что и другой, возникает ошибка. Задайте для значение, чтобы перезаписать существующий. `True`
+## <a name="version-datasets"></a>Наборы данных версий
 
-## <a name="access-data-in-datasets"></a>Доступ к данным в наборах данных
-
-Зарегистрированные наборы данных доступны локально и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Для доступа к зарегистрированному набору данных во всех экспериментах используйте следующий код, чтобы получить рабочую область и зарегистрированный набор данных по имени.
+Вы можете зарегистрировать новый набор данных с тем же именем, создав новую версию. Версия набора данных — это способ закладки состояния данных, чтобы можно было применить определенную версию набора данных для эксперимента или будущего воспроизведения. Типичные сценарии, которые следует учитывать при управлении версиями: 
+* Когда новые данные доступны для повторного обучения.
+* При применении различных подходов к подготовке данных или проектированию компонентов.
 
 ```Python
-workspace = Workspace.from_config()
+# create a TabularDataset from new Titanic training data
+web_paths = [
+            'https://dprepdata.blob.core.windows.net/demo/Titanic.csv',
+            'https://dprepdata.blob.core.windows.net/demo/Titanic2.csv'
+           ]          
+titanic_ds = Dataset.Tabular.from_delimited_files(path=web_paths)
 
-# See list of datasets registered in workspace.
-print(Dataset.list(workspace))
+# create a new version of titanic_ds
+titanic_ds = titanic_ds.register(workspace = workspace,
+                                 name = 'titanic_ds',
+                                 description = 'new titanic training data',
+                                 create_new_version = True)
+```
 
-# Get dataset by name
-dataset = Dataset.get(workspace, 'dataset_crime')
 
-# Load data into pandas DataFrame
-dataset.to_pandas_dataframe()
+## <a name="access-your-data-during-training"></a>Доступ к данным во время обучения
+
+Зарегистрированные наборы данных доступны локально и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Для доступа к зарегистрированному набору данных во всех экспериментах используйте следующий код, чтобы получить рабочую область и зарегистрированный набор данных по имени. `get_by_name` Метод`Dataset` класса по умолчанию возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
+
+```Python
+%%writefile $script_folder/train.py
+
+from azureml.core import Dataset, Run
+
+run = Run.get_context()
+workspace = run.experiment.workspace
+
+dataset_name = 'titanic_ds'
+
+# Get a dataset by name
+titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
+
+# Load a TabularDataset into pandas DataFrame
+df = titanic_ds.to_pandas_dataframe()
 ```
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Просмотр и подготовка наборов данных](how-to-explore-prepare-data.md).
-* Пример использования наборов данных см. в [примере записных книжек](https://aka.ms/dataset-tutorial).
+* Используйте автоматическое машинное обучение для [обучения с табулардатасетс](https://aka.ms/automl-dataset).
+* Дополнительные примеры обучения с наборами данных см. в [примерах записных книжек](https://aka.ms/dataset-tutorial).

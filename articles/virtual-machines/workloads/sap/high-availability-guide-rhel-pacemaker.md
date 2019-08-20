@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: bffb92e37ccddd43c2a64466282084bb6226c338
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 24e7e67145b789737484fcb594f48127c41eafe9
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570563"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575224"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -107,12 +107,16 @@ ms.locfileid: "68570563"
    > RHEL 7,6: фенце-ажентс-4.2.1 -11. el7 _ 6.8  
    > RHEL 7,5: фенце-ажентс-4.0.11 -86. el7 _ 5.8  
    > RHEL 7,4: фенце-ажентс-4.0.11 -66. el7 _ 4.12  
-   > Дополнительные сведения см. в разделе [Виртуальная машина Azure, работающая в качестве члена кластера высокой доступности RHEL, может занять очень много времени, или если не удается закрыть виртуальную машину](https://access.redhat.com/solutions/3408711) .
+   > Дополнительные сведения см. в разделе [Виртуальная машина Azure, работающая в качестве члена кластера высокой доступности RHEL, может занять очень много времени, а также не удается установить или уменьшить ограждение перед завершением работы виртуальной машины](https://access.redhat.com/solutions/3408711).
 
    Проверьте версию агента ограждения Azure. При необходимости обновите его до версии, равной или более поздней, чем указано выше.
+
    <pre><code># Check the version of the Azure Fence Agent
     sudo yum info fence-agents-azure-arm
    </code></pre>
+
+   > [!IMPORTANT]
+   > Если необходимо обновить агент ограждения Azure, а при использовании настраиваемой роли обязательно обновите настраиваемую роль, включив в нее действие **выключена**. Дополнительные сведения см. в статье [Создание пользовательской роли для агента ограждения](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker#1-create-a-custom-role-for-the-fence-agent).  
 
 1. **[A]** Установите разрешения имен.
 

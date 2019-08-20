@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 35211d6f832033a2bb16c495ebab839b7f740445
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 21693926bae681cf15d31dca06344dfa5d865e3b
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69031038"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69613013"
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси приложения Azure AD в управляемых доменах доменных служб Azure AD
 Прокси приложения Azure Active Directory помогает организовать удаленную работу сотрудников, публикуя локальные приложения для доступа через Интернет. С помощью доменных служб Azure AD теперь можно переносить устаревшие локальные приложения в службы инфраструктуры Azure. Затем эти приложения можно опубликовать с помощью прокси приложения Azure AD, чтобы обеспечить безопасный удаленный доступ для пользователей в вашей организации.
@@ -35,7 +35,7 @@ ms.locfileid: "69031038"
 1. Действующая **подписка Azure**.
 2. **Каталог Azure AD** — синхронизированный с локальным каталогом или каталогом только для облака.
 3. Для использования AD Application Proxy Azure требуется **Лицензия на Azure AD Premium** .
-4. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](create-instance.md).
+4. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](tutorial-create-instance.md).
 
 <br>
 
@@ -114,18 +114,18 @@ ms.locfileid: "69031038"
 
 Чтобы получить параметры для компьютера, на котором установлен соединитель прокси приложения Azure AD, используйте командлет PowerShell Get-ADComputer.
 ```powershell
-$ConnectorComputerAccount = Get-ADComputer -Identity contoso100-proxy.contoso100.com
+$ConnectorComputerAccount = Get-ADComputer -Identity contoso-proxy.contoso.com
 ```
 
 После этого используйте командлет Set-ADComputer для настройки ограниченного делегирования Kerberos на основе ресурсов для сервера ресурсов.
 ```powershell
-Set-ADComputer contoso100-resource.contoso100.com -PrincipalsAllowedToDelegateToAccount $ConnectorComputerAccount
+Set-ADComputer contoso-resource.contoso.com -PrincipalsAllowedToDelegateToAccount $ConnectorComputerAccount
 ```
 
 При развертывании нескольких соединителей прокси приложения в управляемом домене необходимо настроить ограниченное делегирование Kerberos на основе ресурсов для каждого такого экземпляра соединителя.
 
 
 ## <a name="related-content"></a>См. также
-* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)
 * [Настройка ограниченного делегирования Kerberos в управляемом домене](deploy-kcd.md)
 * [(Обзор ограниченного делегирования Kerberos)](https://technet.microsoft.com/library/jj553400.aspx)

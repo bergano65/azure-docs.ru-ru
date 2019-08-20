@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: 0cdd7f291b43f442b8471a19f515e4a2d12b4e74
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 637205bd4ad438d7efbee6fb304b0a934aefdfdf
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562877"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615896"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -315,14 +315,22 @@ pip install -r requirements.txt
 
 ## <a name="publishing-to-azure"></a>Публикация в Azure
 
-Когда все будет готово к публикации, убедитесь, что все зависимости перечислены в файле *требований. txt* , который находится в корне каталога проекта. Если вы используете пакет, для которого требуется компилятор и не поддерживается установка wheel из PyPI, совместимых с manylinux, публикация в Azure завершится ошибкой со следующим сообщением: 
+Когда все будет готово к публикации, убедитесь, что все зависимости перечислены в файле *требований. txt* , который находится в корне каталога проекта. Функции Azure могут [удаленно создавать](functions-deployment-technologies.md#remote-build) эти зависимости.
+
+Для развертывания в Azure и выполнения удаленной сборки используйте следующую команду:
+
+```bash
+func azure functionapp publish <app name> --build remote
+```
+
+Если вы не используете удаленную сборку и используете пакет, который требует компилятора и не поддерживает установку многих колес, совместимых с Linux, из PyPI, публикация в Azure без локального построения завершится со следующей ошибкой:
 
 ```
 There was an error restoring dependencies.ERROR: cannot install <package name - version> dependency: binary dependencies without wheels are not supported.  
 The terminal process terminated with exit code: 1
 ```
 
-Чтобы автоматически компилировать и настраивать требуемые двоичные файлы, [установите Docker](https://docs.docker.com/install/) на локальном компьютере и выполните следующую команду для публикации с помощью [Azure Functions Core Tools](functions-run-local.md#v2) (функция). Не забудьте заменить `<app name>` именем приложения-функции, размещенного в Azure. 
+Чтобы выполнить сборку локально и настроить необходимые двоичные файлы, [установите DOCKER](https://docs.docker.com/install/) на локальном компьютере и выполните следующую команду для публикации с помощью [Azure functions Core Tools](functions-run-local.md#v2) (Func). Не забудьте заменить `<app name>` именем приложения-функции, размещенного в Azure. 
 
 ```bash
 func azure functionapp publish <app name> --build-native-deps

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7acfa31434534eb3618b8a279ea6cff543fae076
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 9ed7d812a9c1cba356277a4454234531ce8d41ef
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68949807"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616141"
 ---
 # <a name="manage-your-two-factor-verification-method-settings"></a>Управление параметрами метода двухфакторной проверки подлинности
 
@@ -135,6 +135,10 @@ ms.locfileid: "68949807"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Получение советов по устранению неполадок и помощь в решении [проблем с двухфакторной проверкой](multi-factor-authentication-end-user-troubleshoot.md) подлинности
+После добавления или обновления параметров двухфакторной проверки можно управлять паролями приложений, войти в систему или получить справку по некоторым распространенным проблемам, связанным с проверкой подлинности.
 
 - [Управление паролями приложений для двухфакторной проверки](multi-factor-authentication-end-user-app-passwords.md) подлинности для любых приложений, которые не поддерживают двухфакторную проверку подлинности.
+
+- [Вход с использованием двухфакторной проверки подлинности](multi-factor-authentication-end-user-signin.md)
+
+- [Получить справку по двухфакторной проверке](multi-factor-authentication-end-user-troubleshoot.md)

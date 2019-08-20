@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 7b3159b6b963cf422442ee7c04253b8172e8f3e9
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: f28933623100ed18320df37741c7c1e82ccffa9f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68773139"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69612844"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CentOS к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CentOS в Azure к управляемому домену доменных служб Azure AD.
@@ -31,9 +31,9 @@ ms.locfileid: "68773139"
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:
 1. Действующая **подписка Azure**.
 2. **Каталог Azure AD** — синхронизированный с локальным каталогом или каталогом только для облака.
-3. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](create-instance.md).
-4. Обязательно укажите IP-адреса управляемого домена в качестве DNS-серверов для виртуальной сети. Дополнительные сведения см. в статье об [изменении настроек DNS виртуальной сети Azure](active-directory-ds-getting-started-dns.md).
-5. Выполните шаги, необходимые для [синхронизации паролей с управляемым доменом доменных служб Azure AD](active-directory-ds-getting-started-password-sync.md).
+3. **Доменные службы Azure AD** должны быть включены для каталога Azure AD. Если это еще не сделано, выполните все задачи, описанные в [руководстве по началу работы](tutorial-create-instance.md).
+4. Обязательно укажите IP-адреса управляемого домена в качестве DNS-серверов для виртуальной сети. Дополнительные сведения см. в статье об [изменении настроек DNS виртуальной сети Azure](tutorial-create-instance.md#update-dns-settings-for-the-azure-virtual-network).
+5. Выполните шаги, необходимые для [синхронизации паролей с управляемым доменом доменных служб Azure AD](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).
 
 
 ## <a name="provision-a-centos-linux-virtual-machine"></a>Подготовка виртуальной машины CentOS
@@ -51,7 +51,7 @@ ms.locfileid: "68773139"
 ## <a name="connect-remotely-to-the-newly-provisioned-linux-virtual-machine"></a>Удаленное подключение к только что подготовленной виртуальной машине Linux
 Вы подготовили виртуальную машину CentOS в Azure. Следующая задача — установить удаленное подключение к виртуальной машине, используя учетную запись локального администратора, созданную при подготовке виртуальной машины.
 
-Выполните инструкции из статьи о[входе в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Следуйте инструкциям в статье [как войти в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 
 ## <a name="configure-the-hosts-file-on-the-linux-virtual-machine"></a>Настройка файла hosts на виртуальной машине Linux
@@ -64,10 +64,10 @@ sudo vi /etc/hosts
 Добавьте следующее значение в файл hosts:
 
 ```console
-127.0.0.1 contoso-centos.contoso100.com contoso-centos
+127.0.0.1 contoso-centos.contoso.com contoso-centos
 ```
 
-В этом примере contoso100.com — это DNS-имя управляемого домена. contoso-centos — это имя узла виртуальной машины CentOS, присоединяемой к управляемому домену.
+Здесь "contoso.com" — это доменное DNS-имя управляемого домена. contoso-centos — это имя узла виртуальной машины CentOS, присоединяемой к управляемому домену.
 
 
 ## <a name="install-required-packages-on-the-linux-virtual-machine"></a>Установка требуемых пакетов на виртуальную машину Linux
@@ -84,7 +84,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
     ```console
-    sudo realm discover CONTOSO100.COM
+    sudo realm discover contoso.COM
     ```
 
    > [!NOTE]
@@ -96,11 +96,11 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду:
 
     > [!TIP]
-    > * Укажите пользователя, который принадлежит к группе администраторов доменных служб AAD.
+    > * Укажите пользователя, который принадлежит к группе администраторов доменных служб AAD. При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md) .
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
 
     ```console
-    kinit bob@CONTOSO100.COM
+    kinit bob@contoso.COM
     ```
 
 3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
@@ -111,7 +111,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
     > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
-    sudo realm join --verbose CONTOSO100.COM -U 'bob@CONTOSO100.COM'
+    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM'
     ```
 
 Когда компьютер присоединится к управляемому домену, вы получите сообщение "Компьютер успешно зарегистрирован в realm" (Successfully enrolled machine in realm).
@@ -120,10 +120,10 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине CentOS, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
-1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине CentOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO100.COM).
+1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине CentOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@contoso.COM).
     
     ```console
-    ssh -l bob@CONTOSO100.COM contoso-centos.contoso100.com
+    ssh -l bob@contoso.COM contoso-centos.contoso.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:
@@ -140,10 +140,10 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 
 
 ## <a name="troubleshooting-domain-join"></a>Устранение неполадок при присоединении к домену
-См. статью, посвященную [устранению неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-joining-a-domain).
+См. статью, посвященную [устранению неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 
 ## <a name="related-content"></a>См. также
-* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Приступая к работе с доменными службами Azure AD](tutorial-create-instance.md)
 * [Присоединение виртуальной машины Windows Server к управляемому домену](active-directory-ds-admin-guide-join-windows-vm.md)
 * [Как войти в виртуальную машину под управлением Linux](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * [Installing Kerberos (Установка Kerberos)](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/installing-kerberos.html)

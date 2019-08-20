@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 63f2e12b9b769e806f8bd052af5bc78aed6a1fe0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 5a8f3401de0dc452193efbcf79aef87a19aed081
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472307"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617092"
 ---
 # <a name="azure-ad-domain-services---troubleshoot-alerts"></a>Доменные службы Azure Active Directory. Устранение неполадок: предупреждения
 В этой статье содержатся руководства по устранению любых неполадок, возникающих в управляемом домене.
@@ -81,7 +81,7 @@ ms.locfileid: "67472307"
 
 1. [Удалите свой управляемый домен](delete-aadds.md) из имеющегося каталога Azure AD.
 2. Создайте каталог, который не является каталогом Azure AD B2C.
-3. Следуйте шагам, описанным в руководстве [Enable Azure Active Directory Domain Services using the Azure portal](create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен.
+3. Следуйте шагам, описанным в руководстве [Enable Azure Active Directory Domain Services using the Azure portal](tutorial-create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен.
 
 ## <a name="aadds103-address-is-in-a-public-ip-range"></a>AADDS103. Адрес находится в диапазоне общедоступных IP-адресов
 
@@ -110,7 +110,7 @@ ms.locfileid: "67472307"
    5. На панели навигации слева щелкните **Подсети**.
    6. Щелкните подсеть, которую нужно изменить в таблице.
    7. Обновите диапазон адресов и сохраните изменения.
-3. Следуйте руководству [Enable Azure Active Directory Domain Services using the Azure portal](create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен. Убедитесь, что выбрана виртуальная сеть с закрытым диапазоном IP-адресов.
+3. Следуйте руководству [Enable Azure Active Directory Domain Services using the Azure portal](tutorial-create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен. Убедитесь, что выбрана виртуальная сеть с закрытым диапазоном IP-адресов.
 4. Чтобы соединить виртуальные машины с доменом следуйте [этому руководству](join-windows-vm.md).
 8. Чтобы убедиться, что причина оповещения устранена, проверьте работоспособность домена через два часа.
 
@@ -124,9 +124,9 @@ ms.locfileid: "67472307"
 
 Чтобы доменные службы Azure AD работали правильно, им требуется активная подписка, которую нельзя изменять на другую. Вам потребуется повторно создать подписку Azure и доменные службы Azure AD, поскольку подписка Azure, связанная с управляемым доменом, была удалена.
 
-1. Создание подписки Azure.
+1. Создание подписки Azure
 2. [Удалите свой управляемый домен](delete-aadds.md) из имеющегося каталога Azure AD.
-3. Следуйте шагам, описанным в руководстве [Enable Azure Active Directory Domain Services using the Azure portal](create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен.
+3. Следуйте шагам, описанным в руководстве [Enable Azure Active Directory Domain Services using the Azure portal](tutorial-create-instance.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен.
 
 ## <a name="aadds107-your-azure-subscription-is-disabled"></a>AADDS107. Подписка Azure отключена
 
@@ -177,7 +177,7 @@ ms.locfileid: "67472307"
 
 **Способы устранения:**
 
-Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](create-instance.md).
+Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](tutorial-create-instance.md).
 
 ## <a name="aadds111-service-principal-unauthorized"></a>AADDS111. Субъект-службу не авторизовано
 
@@ -222,7 +222,7 @@ ms.locfileid: "67472307"
 
 **Способы устранения:**
 
-Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](create-instance.md).
+Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](tutorial-create-instance.md).
 
 ## <a name="aadds114-subnet-invalid"></a>AADDS114. Недопустимая подсеть
 
@@ -232,7 +232,7 @@ ms.locfileid: "67472307"
 
 **Способы устранения:**
 
-Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](create-instance.md).
+Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](delete-aadds.md) и [повторно его создать](tutorial-create-instance.md).
 
 ## <a name="aadds115-resources-are-locked"></a>AADDS115. Ресурсы заблокированы
 
@@ -270,7 +270,7 @@ ms.locfileid: "67472307"
 
 Ниже приведен ряд распространенных причин, из-за которых прекращается синхронизация в управляемых доменах.
 - Сетевое подключение блокируется в управляемом домене. Дополнительные сведения о проверке сети на наличие проблем см. в статьях об [устранении неполадок с группами безопасности сети](alert-nsg.md) и [сетевых требованиях для доменных служб Azure AD](network-considerations.md).
--  Синхронизация паролей не настроена или не завершена. Чтобы настроить синхронизацию паролей, см. [эту статью](active-directory-ds-getting-started-password-sync.md).
+-  Синхронизация паролей не настроена или не завершена. Чтобы настроить синхронизацию паролей, см. [эту статью](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).
 
 ## <a name="aadds501-a-backup-has-not-been-taken-in-a-while"></a>AADDS501. Резервная копия не создана спустя некоторое время
 
@@ -310,5 +310,5 @@ ms.locfileid: "67472307"
 [Проверьте работоспособность своего домена](check-health.md) для всех предупреждений, которые могут указывать на проблемы в конфигурации управляемого домена. Если вы можете разрешить какое-либо из этих предупреждений, сделайте это. Затем обратитесь в службу поддержки, чтобы снова включить подписку.
 
 
-## <a name="contact-us"></a>Свяжитесь с нами
+## <a name="contact-us"></a>Наши координаты
 Чтобы [оставить отзыв или обратиться за помощью](contact-us.md), свяжитесь с командой разработки продукта, отвечающей за доменные службы Azure Active Directory.

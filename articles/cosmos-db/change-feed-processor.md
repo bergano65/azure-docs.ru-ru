@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: e5142e9b4e7c2c79fd2b7e41123db4422334b730
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 0efd11ef4e9dda2c522e145bf5cb942998d59e53
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467794"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69573970"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB 
 
@@ -60,7 +60,7 @@ ms.locfileid: "68467794"
 1. Чтение веб-канала изменений.
 1. Если изменения отсутствуют, спящий режим для предопределенного времени (настраиваемый с помощью `WithPollInterval` в построителе) и переходит к #1.
 1. При наличии изменений отправьте их в **делегат**.
-1. Когда делегат завершит **обработку изменений,** обновите хранилище аренды с последней обработанной точкой во времени и перейдите к #1.
+1. Когда делегат завершит обработку изменений, обновите хранилище аренды с последней обработанной точкой во времени и перейдите к #1.
 
 ## <a name="error-handling"></a>Обработка ошибок
 
@@ -85,12 +85,13 @@ ms.locfileid: "68467794"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Пакет SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md)
+* [Примеры использования на GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/usage/changefeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
+Теперь вы можете перейти к дополнительным сведениям о обработчике веб-канала изменений в следующих статьях:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
-* [Чтение канала изменений Azure Cosmos DB](read-change-feed.md)
-* [Как использовать канал изменений Azure Cosmos DB с Функциями Azure](change-feed-functions.md)
+* [Использование средства оценки веб-канала изменений](how-to-use-change-feed-estimator.md)
+* [Время начала обработчика веб-канала изменений](how-to-configure-change-feed-start-time.md)

@@ -8,14 +8,14 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6e53d0d4f8f19a3cf81f1adb6c62b2797a50d146
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: b54f1d8c0705488c53925d097433e77aed3eac72
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812224"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617613"
 ---
-# <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Эскалация привилегий для частного облака vCenter на портале Клаудсимпле 
+# <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Эскалация привилегий для частного облака vCenter на портале Клаудсимпле
 
 Чтобы получить административный доступ к vCenter, вы можете временно эскалировать привилегии Клаудсимпле.  Используя повышенные привилегии, можно устанавливать решения VMware, добавлять источники удостоверений и управлять пользователями.
 
@@ -38,7 +38,7 @@ ms.locfileid: "68812224"
 
     ![Изменение привилегии vSphere](media/escalate-private-cloud-privilege.png)
 
-4. Выберите тип пользователя vSphere.  Только **CloudOwner@cloudsimple.local** локальный пользователь может быть расширен.
+4. Выберите тип пользователя vSphere.  Только `CloudOwner@cloudsimple.local` локальный пользователь может быть расширен.
 
 5. В раскрывающемся списке выберите интервал времени эскалации. Выберите кратчайший период, который позволит выполнить задачу.
 

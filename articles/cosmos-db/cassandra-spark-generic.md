@@ -8,18 +8,18 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 75d2930363b6ad1aeace22d7529df04f31deefe5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc28cf590a1fd2c3fdfe8651f136526188801c04
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60893643"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615647"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Подключитесь к API Cassandra для Azure Cosmos DB из оболочки Spark
 
 Эта статья — одна из серии об интеграции API Cassandra для Azure Cosmos DB из оболочки Spark. В статье речь идет о подключении, операциях языка описания данных, основных операциях языка обработки данных DML и расширенной интеграции API Cassandra для Azure Cosmos DB из оболочки Spark. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * [Создание учетной записи API Cassandra для Azure Cosmos DB.](create-cassandra-dotnet.md#create-a-database-account)
 
 * Предоставьте свой выбор среды Spark [[Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) | [Краткое руководство по созданию кластера Spark в HDInsight с помощью шаблона](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql) | Другое].
@@ -43,13 +43,13 @@ ms.locfileid: "60893643"
 | **Имя свойства** | **Значение по умолчанию** | **Описание** |
 |---------|---------|---------|
 | spark.cassandra.output.batch.size.rows |  1 |Количество строк в одном пакете. Задайте для параметра значение 1. Этот параметр используется для улучшения пропускной способности для больших рабочих нагрузок. |
-| spark.cassandra.connection.connections_per_executor_max  | Нет | Максимальное число подключений на узел для каждого исполнителя. 10*n равно 10 подключениям на узел для кластера Cassandra с n узлов. Итак, если вам требуется 5 подключений на узел для каждого исполнителя для кластера Cassandra с 5 узлами, то вы должны настроить эту конфигурацию на 25. Меняйте это значение в зависимости от степени параллелизма или количества исполнителей, для которых настроены ваши задания Spark.   |
+| spark.cassandra.connection.connections_per_executor_max  | Отсутствуют | Максимальное число подключений на узел для каждого исполнителя. 10*n равно 10 подключениям на узел для кластера Cassandra с n узлов. Итак, если вам требуется 5 подключений на узел для каждого исполнителя для кластера Cassandra с 5 узлами, то вы должны настроить эту конфигурацию на 25. Меняйте это значение в зависимости от степени параллелизма или количества исполнителей, для которых настроены ваши задания Spark.   |
 | spark.cassandra.output.concurrent.writes  |  100 | Определяет количество параллельных записей, которые могут происходить на каждом исполнителе. Поскольку "batch.size.rows" равно 1, убедитесь, что вы увеличили масштаб этого значения соответствующим образом. Меняйте это значение в зависимости от степени параллелизма или пропускной способности, которую вы хотите получить для рабочей нагрузки. |
 | spark.cassandra.concurrent.reads |  512 | Определяет количество параллельных процессов операций чтения, которые могут происходить на каждом исполнителе. Меняйте это значение в зависимости от степени параллелизма или пропускной способности, которую вы хотите получить для рабочей нагрузки  |
-| spark.cassandra.output.throughput_mb_per_sec  | Нет | Определяет общую пропускную способность записи для каждого исполнителя. Этот параметр может использоваться как верхнее ограничение пропускной способности задания Spark, так и как основа подготовленной пропускной способности коллекции Cosmos DB.   |
-| spark.cassandra.input.reads_per_sec| Нет   | Определяет общую пропускную способность чтения для каждого исполнителя. Этот параметр может использоваться как верхнее ограничение пропускной способности задания Spark, так и как основа подготовленной пропускной способности коллекции Cosmos DB.  |
+| spark.cassandra.output.throughput_mb_per_sec  | Отсутствуют | Определяет общую пропускную способность записи для каждого исполнителя. Этот параметр можно использовать в качестве верхнего предела пропускной способности задания Spark и основывать его на подготовленной пропускной способности контейнера Cosmos.   |
+| spark.cassandra.input.reads_per_sec| Отсутствуют   | Определяет общую пропускную способность чтения для каждого исполнителя. Этот параметр можно использовать в качестве верхнего предела пропускной способности задания Spark и основывать его на подготовленной пропускной способности контейнера Cosmos.  |
 | spark.cassandra.output.batch.grouping.buffer.size |  1000  | Определяет количество пакетов для одной задачи Spark, которая может сохраниться в памяти перед отправкой в API Cassandra |
-| spark.cassandra.connection.keep_alive_ms | 60 000 | Определяет период времени, до которого доступны соединения, которые не используются. | 
+| spark.cassandra.connection.keep_alive_ms | 60000 | Определяет период времени, до которого доступны соединения, которые не используются. | 
 
 Настройте пропускную способность и степень параллелизма этих параметров, учитывая ожидаемую рабочую нагрузку ваших заданий Spark и пропускную способность, которую вы предоставили для своей учетной записи Cosmos DB.
 
@@ -65,7 +65,7 @@ export SSL_VALIDATE=false
 cqlsh.py YOUR-COSMOSDB-ACCOUNT-NAME.cassandra.cosmosdb.azure.com 10350 -u YOUR-COSMOSDB-ACCOUNT-NAME -p YOUR-COSMOSDB-ACCOUNT-KEY --ssl
 ```
 
-### <a name="1--azure-databricks"></a>1.  Azure Databricks
+### <a name="1--azure-databricks"></a>1.  Azure Databricks
 В этой статье описывается создание кластеров Azure Databricks, конфигурация кластера для подключения к API Cassandra Azure Cosmos DB и несколько примеров записных книжек, которые охватывают операции DDL, DML и другое.<BR>
 [Работа с API Cassandra для Azure Cosmos DB из Azure Databricks](cassandra-spark-databricks.md)<BR>
   
@@ -113,7 +113,7 @@ spark.conf.set("spark.cassandra.output.batch.grouping.buffer.size", "1000")
 spark.conf.set("spark.cassandra.connection.keep_alive_ms", "600000000")
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующих статьях показано интеграцию Spark с помощью API Cassandra Azure Cosmos DB. 
  

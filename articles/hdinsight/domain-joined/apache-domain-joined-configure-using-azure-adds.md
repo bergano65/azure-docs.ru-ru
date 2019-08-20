@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 1ad3c446df2f2ce62024dfdda589669653f65ef4
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 300fd31632a6b3c9043c19dd9b47f40258080261
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488710"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614204"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "68488710"
 >
 > Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 
-Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/create-instance.md). 
+Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/tutorial-create-instance.md). 
 
 Если доменные службы Azure AD включены, все пользователи и объекты начинают синхронизацию из Azure Active Directory (AAD) в Azure AD DS по умолчанию. Продолжительность операции синхронизации зависит от числа объектов в Azure AD. Синхронизация сотен тысяч объектов может занять несколько дней. 
 
@@ -39,7 +39,7 @@ ms.locfileid: "68488710"
 
 Можно выбрать синхронизацию только тех групп, которым требуется доступ к кластерам HDInsight. Этот вариант синхронизации только определенных групп называется *синхронизацией определенных объектов*. Инструкции см. в статье [Configure Scoped Synchronization from Azure AD to your managed domain](../../active-directory-domain-services/scoped-synchronization.md) (Настройка синхронизации определенных объектов из Azure AD в управляемый домен).
 
-При включении защищенных протоколов LDAP укажите в сертификате доменное имя в качестве имени субъекта или альтернативного имени субъекта. Например, если ваше доменное имя — *contoso100.onmicrosoft.com*, убедитесь, что в сертификате существует такое же имя субъекта или альтернативное имя субъекта. Дополнительные сведения см. в разделе [Настройка защищенного протокола LDAP для управляемого домена Azure AD-DS](../../active-directory-domain-services/configure-ldaps.md). Ниже приведен пример создания самозаверяющего сертификата с именем домена (*contoso100.onmicrosoft.com*) в имени субъекта и DnsName (альтернативное имя субъекта).
+При включении защищенных протоколов LDAP укажите в сертификате доменное имя в качестве имени субъекта или альтернативного имени субъекта. Например, если ваше доменное имя — *contoso100.onmicrosoft.com*, убедитесь, что в сертификате существует такое же имя субъекта или альтернативное имя субъекта. Дополнительные сведения см. в разделе [Настройка защищенного протокола LDAP для управляемого домена Azure AD-DS](../../active-directory-domain-services/tutorial-configure-ldaps.md). Ниже приведен пример создания самозаверяющего сертификата с именем домена (*contoso100.onmicrosoft.com*) в имени субъекта и DnsName (альтернативное имя субъекта).
 
 ```powershell
 $lifetime=Get-Date
@@ -70,7 +70,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
 
 > [!NOTE]  
-> Azure AD-DS необходимо развертывать в виртуальной сети на базе Azure Resource Manager (ARM). Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в статье [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started-network.md).
+> Azure AD — DS необходимо развернуть в виртуальной сети на основе Azure Resource Manager. Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в статье [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/tutorial-create-instance.md#create-and-configure-the-virtual-network).
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
 
