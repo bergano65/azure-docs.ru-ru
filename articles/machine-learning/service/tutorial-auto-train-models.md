@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: nacharya1
 ms.author: nilesha
 ms.reviewer: trbye
-ms.date: 04/11/2019
+ms.date: 08/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: bbb9653173925e1443504aa3f2e9c5e6edbfc486
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 060257ef144309e37208db80c7731ed96b995b2c
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68371036"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990480"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -54,7 +54,7 @@ ms.locfileid: "68371036"
 
 Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
 
-* Использование [облачного сервера записных книжек в рабочей области](#azure) 
+* Использование [облачного сервера записных книжек в рабочей области](#azure)
 * Использование [собственного сервера записных книжек](#server)
 
 ### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
@@ -688,6 +688,9 @@ automated_ml_config = AutoMLConfig(task='regression',
                                    **automl_settings)
 ```
 
+> [!NOTE]
+> Этапы предварительной обработки автоматизированного машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовой формат и т. д.) становятся частью базовой модели. При использовании модели для прогнозирования эти этапы предварительной обработки, которые выполнялись во время обучения, автоматически выполняются для входных данных.
+
 ### <a name="train-the-automatic-regression-model"></a>Обучение модели автоматической регрессии
 
 Запустите эксперимент, чтобы выполнить его в локальной среде. Передайте в эксперимент определенный объект `automated_ml_config`. Настройте выход `True` для просмотра хода выполнения во время эксперимента:
@@ -764,7 +767,7 @@ RunDetails(local_run).show()
 ```
 local_run.get_portal_url()
 ```
-  
+
 
 ### <a name="option-2-get-and-examine-all-run-iterations-in-python"></a>Вариант 2. Получение и просмотр всех итераций запуска в Python
 

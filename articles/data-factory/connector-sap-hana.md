@@ -224,11 +224,11 @@ ms.locfileid: "68726001"
 | BINARY             | Byte[]                         |
 | БИНТЕКСТ            | String                         |
 | BLOB               | Byte[]                         |
-| ЛОГИЧЕСКОМ               | Byte                           |
+| BOOL               | Byte                           |
 | CLOB               | String                         |
 | DATE               | DateTime                       |
 | DECIMAL            | Decimal                        |
-| Double             | Double                         |
+| DOUBLE             | Double                         |
 | FLOAT              | Double                         |
 | INTEGER            | Int32                          |
 | NCLOB              | String                         |

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/30/2019
+ms.date: 08/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf5bf49538823ea50bca197a78ec54d4ddcae1ff
-ms.sourcegitcommit: 6ad03fa28a0f60cb6dce6144f728c2ceb56ff6e2
+ms.openlocfilehash: e078cb7daa787b9fe5e8bc996b36f0fef198f41c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68708447"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879670"
 ---
 # <a name="tutorial-integrate-carbonite-endpoint-backup-with-azure-active-directory"></a>Руководство по интеграции Carbonite Endpoint Backup с Azure Active Directory
 
@@ -125,27 +125,35 @@ ms.locfileid: "68708447"
 
 ### <a name="configure-carbonite-endpoint-backup-sso"></a>Настройка единого входа в Carbonite Endpoint Backup
 
-1. В другом окне веб-браузера войдите на свой корпоративный веб-сайт Carbonite Endpoint Backup в качестве администратора.
+1. Чтобы автоматизировать настройку Carbonite Endpoint Backup, необходимо установить **расширение браузера My Apps Secure Sign-in**, щелкнув **Установить расширение**.
 
-1. Щелкните **Company** (Компания) в левой области.
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. После добавления расширения в браузер, щелкнув **Настройка Carbonite Endpoint Backup**, вас будет перенаправлено в приложение конечной точки резервной копии Carbonite. В нем укажите учетные данные администратора для входа в Carbonite Endpoint Backup. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–7.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Carbonite Endpoint Backup вручную, откройте новое окно веб-браузера и войдите на свой корпоративный сайт Carbonite Endpoint Backup с правами администратора и выполните следующие действия.
+
+4. Щелкните **Company** (Компания) в левой области.
 
     ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure1.png)
 
-1. Щелкните **Single sign-on** (Единый вход).
+5. Щелкните **Single sign-on** (Единый вход).
 
     ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure2.png)
 
-1. Щелкните **Enable** (Включить), а затем выберите **Edit settings** (Изменить параметры), чтобы выполнить настройку.
+6. Щелкните **Enable** (Включить), а затем выберите **Edit settings** (Изменить параметры), чтобы выполнить настройку.
 
     ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure3.png)
 
-1. На странице параметров **единого входа** сделайте следующее:
+7. На странице параметров **единого входа** сделайте следующее:
 
     ![Настройка Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure4.png)
 
-    1. В текстовом поле **Identity provider name** (Имя поставщика удостоверений) введите имя поставщика, например **Microsoft Azure AD**.
+    1. В текстовое поле **Identity provider name** (Имя поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    1. В текстовое поле **Identity provider URL** (URL-адрес поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
+    1. В текстовое поле **Identity provider URL** (URL-адрес входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     1. Нажмите кнопку **Choose file** (Выбрать файл), чтобы передать **сертификат в формате Base64**, скачанный с портала Azure.
 

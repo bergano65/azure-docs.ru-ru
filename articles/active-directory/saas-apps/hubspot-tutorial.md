@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b2c765778fc2bdd8425cc3f375831c0d317e753
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c4b235426a7029abb9bb79ba56e582cccc3b14a6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67100889"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944446"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство по Интеграция Azure Active Directory с HubSpot
 
@@ -161,7 +161,7 @@ HubSpot поддерживает следующие функции:
 
     1. В HubSpot в поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    1. В Windows в Блокноте откройте скачанный файл сертификата в кодировке Base64. Выделите и скопируйте содержимое файла. Затем вставьте его в поле  **X.509 Certificate** (Сертификат X.509) в HubSpot.
+    1. В Блокноте Windows откройте скачанный файл сертификата формата Base64. Выделите и скопируйте содержимое файла. Затем в HubSpot вставьте его в поле **X.509 Certificate** (Сертификат X.509).
 
     1. Нажмите кнопку **Проверить**.
 

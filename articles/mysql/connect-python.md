@@ -7,13 +7,13 @@ ms.service: mysql
 ms.custom: mvc
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 02/28/2018
-ms.openlocfilehash: f1059fac4d44138a4e9bc04c858501234974dc43
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.date: 08/08/2019
+ms.openlocfilehash: 5d7414d13b3fb1390b12084f0480e0549a380264
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58350978"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68931621"
 ---
 # <a name="azure-database-for-mysql-use-python-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Python
 Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для MySQL. Здесь используются инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных из платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на языке Python и вы только начали работу с базой данных Azure для MySQL.
@@ -30,9 +30,9 @@ ms.locfileid: "58350978"
 > В этом кратком руководстве при подключении к MySQL для выполнения запросов используются простые SQL-запросы. Если вы применяете веб-платформу, используйте для нее рекомендуемый соединитель. Например, [mysqlclient](https://pypi.org/project/mysqlclient/) рекомендуется использовать с Django.
 >
 
-### <a name="windows"></a> Windows
-1. Скачайте и установите Python 2.7 с веб-сайта [python.org](https://www.python.org/downloads/windows/). 
-2. Проверьте установку Python, запустив командную строку. Выполните команду `C:\python27\python.exe -V`, используя параметр V в верхнем регистре, чтобы узнать номер версии.
+### <a name="windows"></a>Windows
+1. Скачайте и установите Python 3.7 с веб-сайта [python.org](https://www.python.org/downloads/windows/). 
+2. Проверьте установку Python, запустив командную строку. Выполните команду `C:\python37\python.exe -V`, используя параметр V в верхнем регистре, чтобы узнать номер версии.
 3. Установите соединитель Python для MySQL с веб-сайта [mysql.com](https://dev.mysql.com/downloads/connector/python/) в соответствии с версией Python.
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
@@ -128,7 +128,7 @@ else:
   print("Done.")
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
 Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
 
 В коде импортируется библиотека mysql.connector. Функция [connect()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysql-connector-connect.html) используется для подключения базы данных Azure для MySQL с помощью [аргументов подключения](https://dev.mysql.com/doc/connector-python/en/connector-python-connectargs.html) из коллекции конфигураций. Код использует курсор при подключении, а метод [cursor.execute()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html) выполняет инструкцию SQL для базы данных MySQL. Строки данных считываются с помощью метода [fetchall()](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-fetchall.html). Результирующий набор хранится в строке коллекции. Для циклического прохода по строкам используется итератор.

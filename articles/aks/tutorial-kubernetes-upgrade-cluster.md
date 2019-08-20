@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 90c5a4e18f72d9a8b048ef0f40a5c0b405a584f2
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 0986da64fda659b949d5d1e6cfae03df2daded19
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614149"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019159"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство по Обновление Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -40,12 +40,12 @@ ms.locfileid: "67614149"
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере текущей является версия *1.9.11*, а доступные для обновления представлены в колонке *Обновления*.
+В следующем примере текущей является версия *1.13.9*, а доступные версии представлены в колонке *Обновления*.
 
 ```
 Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
 -------  ---------------  ---------------  -----------------  --------------
-default  myResourceGroup  1.9.11           1.9.11             1.10.8, 1.10.9
+default  myResourceGroup  1.13.9           1.13.9             1.14.5
 ```
 
 ## <a name="upgrade-a-cluster"></a>Обновление кластера
@@ -58,16 +58,16 @@ default  myResourceGroup  1.9.11           1.9.11             1.10.8, 1.10.9
 1. Когда новый узел готов и присоединен к кластеру, планировщик Kubernetes начинает запускать модули pod на нем.
 1. Старый узел удаляется, а следующий узел в кластере начинает процесс блокировки и остановки.
 
-Для обновления кластера AKS используйте команду [az aks upgrade][]. В следующем примере кластер обновляется до версии Kubernetes *1.10.9*.
+Для обновления кластера AKS используйте команду [az aks upgrade][]. В следующем примере кластер обновляется до версии Kubernetes *1.14.5*.
 
 > [!NOTE]
-> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.9.11* до *1.10.9*, но невозможно напрямую обновить версию *1.9.6* до *1.11.x*. Чтобы обновить версию *1.9.11* до *1.11.x*, сначала обновите версию *1.9.11* до *1.10.x*, а затем выполните другое обновление с версии *1.10.x* до *1.11.x*.
+> Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.12.x* до *1.13.x*, но нельзя обновить версию *1.12.8* сразу до *1.14.x*. Чтобы обновить версию *1.12.x* до *1.14.x*, сначала обновите версию *1.12.x* до *1.13.x*, а затем выполните обновление с версии *1.13.x* до *1.14.x*.
 
 ```azurecli
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.10.9
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.14.5
 ```
 
-Ниже приведен краткий пример выходных данных, где в качестве *kubernetesVersion* показана версия *1.10.9*:
+Ниже приведен краткий пример выходных данных, где для *kubernetesVersion* указан номер *1.14.5*.
 
 ```json
 {
@@ -85,7 +85,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
   "enableRbac": false,
   "fqdn": "myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io",
   "id": "/subscriptions/<Subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster",
-  "kubernetesVersion": "1.10.9",
+  "kubernetesVersion": "1.14.5",
   "location": "eastus",
   "name": "myAKSCluster",
   "type": "Microsoft.ContainerService/ManagedClusters"
@@ -100,12 +100,12 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных показано, что кластер AKS выполняется на основе версии *Kubernetes 1.10.9*:
+В следующем примере выходных данных показано, что кластер AKS выполняется с помощью *KubernetesVersion 1.14.5*.
 
 ```
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ----------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.10.9               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.14.5               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="delete-the-cluster"></a>Удаление кластера

@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 04/26/2018
+ms.date: 08/14/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2c173da9bfb60f74b90a17f4f3c5ea6f930ca528
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a50a1183cb2e57e8e98f1940f1c14284e89088c3
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705838"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019255"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
@@ -56,7 +56,7 @@ ms.locfileid: "67705838"
 Для работы с этим руководством:
 
 * [Установка Git](https://git-scm.com/).
-* [установите .NET Core 2.0](https://www.microsoft.com/net/core/).
+* [Установите .NET Core](https://www.microsoft.com/net/core/).
 
 ## <a name="create-local-net-core-app"></a>Создание локального приложения .NET Core
 
@@ -86,70 +86,42 @@ dotnet run
 
 ### <a name="create-azure-resources"></a>Создание ресурсов Azure
 
-В Cloud Shell введите следующие команды, чтобы создать два приложения Службы приложений. Замените _&lt;front\_end\_app\_name>_ и _&lt;back\_end\_app\_name>_ на два глобально уникальных имени приложений (допустимые символы — `a-z`, `0-9` и `-`). Дополнительные сведения о каждой команде см. в статье [Создание приложения .NET Core в Службе приложений в Linux](quickstart-dotnetcore.md).
+В Cloud Shell введите следующие команды, чтобы создать два веб-приложения: Замените _\<front-end-app-name>_ и _\<back-end-app-name>_ на два глобально уникальных имени приложений (допустимые символы — `a-z`, `0-9` и `-`). Дополнительные сведения о каждой команде см. в статье [Создание приложения .NET Core в Службе приложений Azure в Linux](quickstart-dotnetcore.md).
 
 ```azurecli-interactive
 az group create --name myAuthResourceGroup --location "West Europe"
 az appservice plan create --name myAuthAppServicePlan --resource-group myAuthResourceGroup --sku B1 --is-linux
-az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePlan --name <front_end_app_name> --runtime "dotnetcore|2.0" --deployment-local-git --query deploymentLocalGitUrl
-az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePlan --name <back_end_app_name> --runtime "dotnetcore|2.0" --deployment-local-git --query deploymentLocalGitUrl
+az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePlan --name <front-end-app-name> --runtime "dotnetcore|2.0" --deployment-local-git --query deploymentLocalGitUrl
+az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePlan --name <back-end-app-name> --runtime "dotnetcore|2.0" --deployment-local-git --query deploymentLocalGitUrl
 ```
 
 > [!NOTE]
 > Сохраните URL-адреса удаленных элементов Git вашего интерфейсного и серверного приложения, которые отображаются в выходных данных `az webapp create`.
 >
 
-### <a name="configure-cors"></a>Настройка CORS
-
-Этот шаг не связан с проверкой подлинности и авторизацией. Тем не менее, это нужно для [вызова серверного API из кода внешнего браузера](#call-api-securely-from-browser-code), чтобы браузер разрешал междоменные вызовы API из приложения Angular.js. Служба приложений в Linux теперь поддерживает функции CORS, как и [ее аналог в Windows](../app-service-web-tutorial-rest-api.md#add-cors-functionality).
-
-В локальном репозитории откройте файл _Startup.cs_. Добавьте в метод `ConfigureServices(IServiceCollection services)` следующую строку кода:
-
-```csharp
-services.AddCors();
-```
-
-В начало метода `Configure(IApplicationBuilder app)` добавьте следующую строку кода, заменив *\<front_end_app_name>*:
-
-```csharp
-app.UseCors(builder =>
-    builder.WithOrigins("http://<front_end_app_name>.azurewebsites.net"));
-```
-
-Сохраните изменения. В _окне терминала на локальном компьютере_ выполните следующие команды, чтобы зафиксировать изменения в репозитории Git.
-
-```bash
-git add .
-git commit -m "add CORS to back end"
-```
-
-> [!NOTE]
-> Не беспокойтесь о том, что этот код совместно используется во серверном и интерфейсном и во приложении. Это никак не повлияет на работу механизма CORS во внешнем приложении.
-> 
-
 ### <a name="push-to-azure-from-git"></a>Публикация в Azure из Git
 
-В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _&lt;deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](../deploy-configure-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) (а не используемые для входа на портал Azure).
+В _окне терминала на локальном компьютере_ выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _\<deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](../deploy-configure-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) (а не используемые для входа на портал Azure).
 
 ```bash
 git remote add backend <deploymentLocalGitUrl-of-back-end-app>
 git push backend master
 ```
 
-В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение. Замените _&lt;deploymentLocalGitUrl-of-front-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources).
+В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение. Замените _\<deploymentLocalGitUrl-of-front-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources).
 
 ```bash
 git remote add frontend <deploymentLocalGitUrl-of-front-end-app>
 git push frontend master
 ```
 
-### <a name="browse-to-the-azure-apps"></a>Переход к приложениям Azure
+### <a name="browse-to-the-apps"></a>Переход к приложениям
 
 Перейдите по следующим URL-адресам в браузере и посмотрите, как работают два приложения.
 
 ```
-http://<back_end_app_name>.azurewebsites.net
-http://<front_end_app_name>.azurewebsites.net
+http://<back-end-app-name>.azurewebsites.net
+http://<front-end-app-name>.azurewebsites.net
 ```
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/azure-run.png)
@@ -165,11 +137,11 @@ http://<front_end_app_name>.azurewebsites.net
 
 ### <a name="modify-front-end-code"></a>Изменение интерфейсного кода
 
-В локальном репозитории откройте _Controllers/TodoController.cs_. В начале класса `TodoController` добавьте следующие строки и замените _&lt;back\_end\_app\_name>_ именем вашего серверного приложения:
+В локальном репозитории откройте _Controllers/TodoController.cs_. В начале класса `TodoController` добавьте следующие строки и замените _\<back-end-app-name>_ именем своего серверного приложения:
 
 ```cs
 private static readonly HttpClient _client = new HttpClient();
-private static readonly string _remoteUrl = "https://<back_end_app_name>.azurewebsites.net";
+private static readonly string _remoteUrl = "https://<back-end-app-name>.azurewebsites.net";
 ```
 
 Найдите метод `GetAll()` и замените код внутри фигурных скобок:
@@ -228,9 +200,9 @@ git push frontend master
 
 ### <a name="check-your-changes"></a>Проверка изменений
 
-Перейдите к `http://<front_end_app_name>.azurewebsites.net` и добавьте несколько элементов, например `from front end 1` и `from front end 2`.
+Перейдите к `http://<front-end-app-name>.azurewebsites.net` и добавьте несколько элементов, например `from front end 1` и `from front end 2`.
 
-Перейдите к `http://<back_end_app_name>.azurewebsites.net`, чтобы просмотреть элементы, добавленные из интерфейсного приложения. Кроме того, добавьте несколько элементов, например `from back end 1` и `from back end 2`, а затем обновите интерфейсное приложение, чтобы проверить изменения.
+Перейдите к `http://<back-end-app-name>.azurewebsites.net`, чтобы просмотреть элементы, добавленные из интерфейсного приложения. Кроме того, добавьте несколько элементов, например `from back end 1` и `from back end 2`, а затем обновите интерфейсное приложение, чтобы проверить изменения.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/remote-api-call-run.png)
 
@@ -242,7 +214,7 @@ Azure Active Directory используется в качестве постав
 
 ### <a name="enable-authentication-and-authorization-for-back-end-app"></a>Включение проверки подлинности и авторизации в серверном приложении
 
-На [портале Azure](https://portal.azure.com) откройте страницу управления серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** > _\<имя\_вашего\_серверного\_приложения>_.
+На [портале Azure](https://portal.azure.com) откройте страницу управления серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** >  **_\<back-end-app-name>_** .
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/portal-navigate-back-end.png)
 
@@ -258,19 +230,19 @@ Azure Active Directory используется в качестве постав
 
 На странице **Проверка подлинности/авторизация** нажмите кнопку **Сохранить**. 
 
-После того, как вы увидите уведомление с сообщением `Successfully saved the Auth Settings for <back_end_app_name> App`, обновите страницу.
+После того, как вы увидите уведомление с сообщением `Successfully saved the Auth Settings for <back-end-app-name> App`, обновите страницу.
 
-Щелкните **Azure Active Directory** еще раз, а затем щелкните **Управление приложением**.
+Щелкните **Azure Active Directory** еще раз, а затем выберите **Приложение Azure AD**.
 
-На странице управления приложением AD скопируйте в блокнот **идентификатор приложения**. Это значение понадобится позже.
+Скопируйте **Идентификатор клиента** приложения Azure AD в Блокнот. Это значение понадобится позже.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/get-application-id-back-end.png)
 
 ### <a name="enable-authentication-and-authorization-for-front-end-app"></a>Включение проверки подлинности и авторизации в интерфейсном приложении
 
-Выполните те же действия для внешнего приложения, но пропустите последний шаг. Для интерфейсного приложения **идентификатор приложения** не требуется. Не закрывайте страницу **Параметры Azure Active Directory**.
+Выполните те же действия для внешнего приложения, но пропустите последний шаг. Для интерфейсного приложения идентификатор клиента не требуется.
 
-При необходимости перейдите по ссылке `http://<front_end_app_name>.azurewebsites.net`. Теперь она должна направить вас на страницу входа. После выполнения входа вы по-прежнему не сможете получить доступ к данным из серверного приложения, потому что вам все еще нужно сделать три вещи:
+При необходимости перейдите по ссылке `http://<front-end-app-name>.azurewebsites.net`. Теперь она должна направить вас на защищенную страницу входа. После выполнения входа вы по-прежнему не сможете получить доступ к данным из серверного приложения, потому что вам все еще нужно сделать три вещи:
 
 - Предоставить доступ из интерфейсной части к серверной.
 - Настроить службу приложений, чтобы вернуть доступный токен.
@@ -283,32 +255,30 @@ Azure Active Directory используется в качестве постав
 
 Теперь, когда вы включили проверку подлинности и авторизацию для обоих ваших приложений, каждое из них поддерживается приложением AD. На этом шаге предоставьте разрешения интерфейсному приложению для доступа к серверной части от имени пользователя. (Технически вы предоставляете интерфейсному _приложению AD_ разрешения на доступ к серверному _приложению AD_ от имени пользователя).
 
-На этом этапе у вас должна быть открыта страница **параметров Azure Active Directory** внешнего приложения. Если нет, вернитесь на эту страницу. 
-
-Щелкните **Управление разрешениями** > **Добавить** > **Выбор API**.
+В меню слева на портале выберите**Azure Active Directory** > **Регистрации приложения** > **Собственные приложения** >  **\<front-end-app-name>**  > **Разрешения API**.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/add-api-access-front-end.png)
 
-На странице **Выбор API** введите имя приложения AD вашего серверного приложения, которое по умолчанию совпадает с именем серверного приложения. Выберите его в списке и нажмите кнопку**Выбрать**.
+Выберите **Добавить разрешение**, а затем   **— Мои API** >  **\<back-end-app-name>** .
 
-Установите флажок рядом с параметром **Access _&lt;AD\_application\_name>_** (Доступ к <имя_приложения_AD>). Последовательно щелкните **Выбрать** > **Готово**.
+На странице**Разрешения API запросов** для внутренних приложений выберите**Делегированные разрешения**  и **user_impersonation**, а затем — **Добавить разрешения**.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/select-permission-front-end.png)
 
 ### <a name="configure-app-service-to-return-a-usable-access-token"></a>Настройка службы приложений для возвращения используемых маркеров доступа
 
-Теперь интерфейсное приложение имеет необходимые разрешения. На этом шаге настройте проверку подлинности и авторизацию в службе приложений, чтобы получить доступный маркер доступа для доступа к серверной части. Для этого шага вам понадобится идентификатор серверного приложения, который вы скопировали на шаге [Включение проверки подлинности и авторизации в серверном приложении](#enable-authentication-and-authorization-for-back-end-app).
+Теперь интерфейсное приложение имеет необходимые разрешения для доступа к внутреннему приложению в качестве вошедшего в систему пользователя. На этом шаге настройте проверку подлинности и авторизацию в службе приложений, чтобы получить доступный маркер доступа для доступа к серверной части. Для этого шага вам понадобится идентификатор клиента внутреннего приложения, который вы скопировали на шаге [Включение проверки подлинности и авторизации в серверном приложении](#enable-authentication-and-authorization-for-back-end-app).
 
 Войдите в [обозреватель ресурсов Azure](https://resources.azure.com). В верхней части страницы щелкните **Чтение и запись**, чтобы внести изменения в обозревателе ресурсов Azure.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/resources-enable-write.png)
 
-В левой части браузера щелкните **subscriptions** > **_&lt;ваша\_подписка>_** > **resourceGroups** > **myAuthResourceGroup** > **providers** > **Microsoft.Web** > **sites** > **_\<имя\_\_интерфейсного\_приложения>_** > **config** > **authsettings**.
+В левой части браузера щелкните **subscriptions** >  **_\<ваша_подписка>_**  > **resourceGroups** > **myAuthResourceGroup** > **providers** > **Microsoft.Web** > **sites** >  **_\<имя_интерфейсного_приложения>_**  > **config** > **authsettings**.
 
-В представлении **authsettings** щелкните **Изменить**. Установите значение `additionalLoginParams` в следующую строку JSON, используя код приложения, который вы скопировали. 
+В представлении **authsettings** щелкните **Изменить**. Установите значение `additionalLoginParams` в следующую строку JSON, используя идентификатор клиента приложения, который вы скопировали. 
 
 ```json
-"additionalLoginParams": ["response_type=code id_token","resource=<back_end_application_id>"],
+"additionalLoginParams": ["response_type=code id_token","resource=<back-end-client-id>"],
 ```
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/additional-login-params-front-end.png)
@@ -317,13 +287,13 @@ Azure Active Directory используется в качестве постав
 
 Теперь приложение настроено. Теперь интерфейсная часть готова к доступу к серверной части с помощью соответствующего маркера доступа.
 
-Сведения о том, как настроить это в других поставщиках, см. в разделе об [обновлении маркеров доступа](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#refresh-identity-provider-tokens).
+Сведения о том, как настроить этот маркер доступа в других поставщиках, см. в разделе об [обновлении маркеров поставщиков удостоверений](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#refresh-identity-provider-tokens).
 
 ## <a name="call-api-securely-from-server-code"></a>Безопасный вызов API из кода сервера
 
 На этом шаге активируйте ранее измененный код сервера, чтобы выполнять аутентифицированные вызовы серверного API.
 
-Теперь ваше интерфейсное приложение имеет требуемое разрешение, а также добавляет идентификатор серверного приложения к параметрам входа. Таким образом, оно может получить маркер доступа для проверки подлинности в серверном приложении. Служба приложений поставляет этот токен в код сервера, внедряя заголовок `X-MS-TOKEN-AAD-ACCESS-TOKEN` в каждый аутентифицированный запрос (см. раздел об [извлечении токена в коде приложения](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#retrieve-tokens-in-app-code)).
+Теперь ваше интерфейсное приложение имеет требуемое разрешение, а также добавляет идентификатор клиента внутреннего приложения к параметрам входа. Таким образом, оно может получить маркер доступа для проверки подлинности в серверном приложении. Служба приложений поставляет этот токен в код сервера, внедряя заголовок `X-MS-TOKEN-AAD-ACCESS-TOKEN` в каждый аутентифицированный запрос (см. раздел об [извлечении токена в коде приложения](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#retrieve-tokens-in-app-code)).
 
 > [!NOTE]
 > Эти заголовки внедряются для всех поддерживаемых языков. Доступ к ним осуществляется с помощью стандартного шаблона для каждого соответствующего языка.
@@ -337,11 +307,11 @@ public override void OnActionExecuting(ActionExecutingContext context)
 
     _client.DefaultRequestHeaders.Accept.Clear();
     _client.DefaultRequestHeaders.Authorization =
-        new AuthenticationHeaderValue("Bearer", Request.Headers["x-ms-token-aad-access_token"]);
+        new AuthenticationHeaderValue("Bearer", Request.Headers["X-MS-TOKEN-AAD-ACCESS-TOKEN"]);
 }
 ```
 
-Этот код добавляет стандартный HTTP-заголовок `Authorization: Bearer <access_token>` ко всем удаленным вызовам API. В конвейере выполните запрос ASP.NET Core MVC. `OnActionExecuting` выполняется непосредственно перед соответствующим методом действия (например, `GetAll()`), поэтому каждый исходящий вызовов API теперь представляет маркер доступа.
+Этот код добавляет стандартный HTTP-заголовок `Authorization: Bearer <access-token>` ко всем удаленным вызовам API. В конвейере выполните запрос ASP.NET Core MVC. `OnActionExecuting` выполняется непосредственно перед соответствующим методом действия (например, `GetAll()`), поэтому каждый исходящий вызовов API теперь представляет маркер доступа.
 
 Сохраните все изменения. В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение.
 
@@ -351,7 +321,7 @@ git commit -m "add authorization header for server code"
 git push frontend master
 ```
 
-Войдите в `http://<front_end_app_name>.azurewebsites.net` еще раз. На странице соглашения об использовании пользовательских данных нажмите кнопку **Принять**.
+Войдите в `https://<front-end-app-name>.azurewebsites.net` еще раз. На странице соглашения об использовании пользовательских данных нажмите кнопку **Принять**.
 
 Теперь вы можете создавать, читать, обновлять и удалять данные из серверного приложения прямо в приложении. Единственное отличие теперь в том, что оба приложения защищены проверкой подлинности и авторизацией службы приложений, включая вызовы между службами.
 
@@ -367,11 +337,21 @@ git push frontend master
 > В этом разделе используются стандартные методы HTTP, чтобы продемонстрировать безопасные вызовы HTTP. Тем не менее, вы можете использовать [библиотеку проверки подлинности Active Directory (ADAL) для JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js), чтобы упростить шаблон приложения Angular.js.
 >
 
+### <a name="configure-cors"></a>Настройка CORS
+
+В Cloud Shell включите CORS для URL-адреса своего клиента с помощью команды [`az resource update`](/cli/azure/resource#az-resource-update). Замените заполнители _\<back-end-app-name>_ и _\<front-end-app-name>_ .
+
+```azurecli-interactive
+az resource update --name web --resource-group myAuthResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<back-end-app-name> --set properties.cors.allowedOrigins="['https://<front-end-app-name>.azurewebsites.net']" --api-version 2015-06-01
+```
+
+Этот шаг не связан с проверкой подлинности и авторизацией. Тем не менее, это нужно, чтобы ваш браузер разрешал использовать междоменные вызовы API из вашего приложения Angular.js. Дополнительные сведения см. в разделе [Добавление функциональных возможностей CORS](../app-service-web-tutorial-rest-api.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#add-cors-functionality).
+
 ### <a name="point-angularjs-app-to-back-end-api"></a>Указание серверного API для приложения Angular.js
 
 В локальном репозитории откройте _wwwroot/index.html_.
 
-В строке 51 задайте для переменной `apiEndpoint` URL-адрес серверного приложения (`http://<back_end_app_name>.azurewebsites.net`). Замените _\<имя\_приложения\_серверной\_части>_ именем своего приложения в службе приложений.
+В строке 51 задайте для переменной `apiEndpoint` URL-адрес серверного приложения (`https://<back-end-app-name>.azurewebsites.net`). Замените _\<back-end-app-name>_ именем своего приложения в Службе приложений.
 
 Откройте локальный репозиторий _wwwroot/app/scripts/todoListSvc.js_ и убедитесь, что `apiEndpoint` указан для всех вызовов API. Теперь приложение Angular.js вызывает серверные API-интерфейсы. 
 
@@ -425,9 +405,13 @@ git commit -m "add authorization header for Angular"
 git push frontend master
 ```
 
-Перейдите к `http://<front_end_app_name>.azurewebsites.net` еще раз. Теперь вы можете создавать, читать, обновлять и удалять данные с серверного приложения прямо в приложении Angular.js.
+Перейдите к `https://<front-end-app-name>.azurewebsites.net` еще раз. Теперь вы можете создавать, читать, обновлять и удалять данные с серверного приложения прямо в приложении Angular.js.
 
 Поздравляем! Код клиента теперь получает доступ к данным серверной части от имени пользователя, прошедшего проверку подлинности.
+
+## <a name="when-access-tokens-expire"></a>Когда истекает срок действия маркеров доступа
+
+Срок действия маркеров доступа истекает через некоторое время. Сведения об обновлении маркеров доступа без повторной проверки подлинности пользователей в приложении см. в разделе об [обновлении маркеров поставщиков удостоверений](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#refresh-identity-provider-tokens).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по управлению устройством из Центра Интернета вещей (Java) | Документация Майкрософт
+title: Краткое руководство. Управление устройством из Центра Интернета вещей Azure с помощью Java
 description: 'В этом кратком руководстве описано, как запустить два примера приложений Java: внутреннее приложение, которое может удаленно управлять подключенными к центру устройствами, и приложение, которое имитирует подключенное к центру устройство, которым можно управлять удаленно.'
 author: wesmc7777
 manager: philmea
@@ -8,14 +8,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, seo-java-august2019
 ms.date: 06/21/2019
-ms.openlocfilehash: 5cf7153b5370bd5e1002963027295f79ecfeb6db
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 977bf07c8383bb1086e7878bd10f2519cc2f40ad
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67330662"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68958642"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (Java)
 

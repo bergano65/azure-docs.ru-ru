@@ -3,20 +3,20 @@ title: Общие сведения о Project Acoustics
 titlesuffix: Azure Cognitive Services
 description: Project Acoustics — это акустическая подсистема для трехмерного интерактивного интерфейса, объединяющая физику смоделированных волн с интерактивными элементами управления для проектирования.
 services: cognitive-services
-author: kegodin
+author: NoelCross
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: overview
 ms.date: 03/20/2019
-ms.author: kegodin
+ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: a654dd966c40b5b079f92b910ade52f4eda10344
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: f0685b65ce9204221e93a1ea4aa47a5e09eaac9f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704755"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932980"
 ---
 # <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
 Project Acoustics — это подсистема волновой акустики для трехмерных интерактивных интерфейсов. Она моделирует волновые эффекты (дифракция, перемещение и реверберация) в сложных сценах, не требуя выполнения разметки зон вручную. Кроме того, она содержит игровой модуль и интеграцию аудио ПО промежуточного слоя. Философия Project Acoustics схожа со статическим освещением: моделирование детализированной физики в автономном режиме с целью обеспечения физической основы, а также использование упрощенной среды выполнения с выразительными элементами управления проектированием для реализации художественных целей.
@@ -40,11 +40,17 @@ Project Acoustics — это подсистема волновой акусти
 * **Моделирование.** Этап анализа запускается локально. Выполняется вокселизация и другие типы геометрического анализа сцены на основе указанных выше вариантов. Результаты визуализируются в редакторе для проверки настройки сцены. При отправке моделирования данные об объемных пикселях отправляются в Azure, а вы получаете игровой акустический ресурс.
 * **Среда выполнения.** Загрузите ресурс на свой уровень. Теперь вы сможете прослушать акустику на этом уровне. Проектируйте акустику в интерактивном режиме в редакторе, используя детальные элементы управления для каждого источника. Получить элементы управления можно из сценариев уровня.
 
-## <a name="platforms"></a>Платформы
+## <a name="runtime-platforms"></a>Платформы среды выполнения
 Подключаемые модули среды выполнения Project Acoustics в настоящее время можно развернуть на следующих платформах:
 * Windows
+* MacOS
 * Android
 * Xbox One
+
+## <a name="editor-platforms"></a>Платформы редактора
+Подключаемый модуль редактора Project Acoustics доступен для следующих платформ:
+* Windows
+* MacOS (только Unity)
 
 ## <a name="download"></a>Скачивание
 * [Подключаемый модуль Project Acoustics Unity с примерами](https://www.microsoft.com/en-us/download/details.aspx?id=57346)

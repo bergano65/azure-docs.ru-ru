@@ -11,14 +11,14 @@ ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 0be78b444c9af9c5c0a818d790982670d2b68ee8
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 2c01172bf22fb286f790543b02a4c1e482b05fe7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477601"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850565"
 ---
-# <a name="configure-a-linux-virtual-machine-with-desired-state-configuration"></a>Настройка требуемого состояния на виртуальной машине Linux
+# <a name="configure-a-virtual-machine-with-desired-state-configuration"></a>Настройка Desired State Configuration на виртуальной машине Linux
 
 Включив настройку требуемого состояния (DSC), вы сможете контролировать и отслеживать конфигурации серверов Windows и Linux. Она позволяет выявлять или автоматически исправлять конфигурации, которые отличаются от требуемой конфигурации. Это руководство описывает процедуру подключения виртуальной машины Linux и развертывания стека LAMP с поддержкой DSC.
 

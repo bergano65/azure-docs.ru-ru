@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 06/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd06eafca2c508bc73fa2b327235621797be417c
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: f558b33079821efcf56731eb95073e0170a72795
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274200"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943549"
 ---
 # <a name="tutorial-integrate-otsuka-shokai-with-azure-active-directory"></a>Руководство по Интеграция Otsuka Shokai с Azure Active Directory
 
@@ -80,7 +80,7 @@ ms.locfileid: "67274200"
 
 1. На странице **Настройка единого входа с помощью SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
-1. Приложение Otsuka Shokai ожидает проверочные утверждения SAML в определенном формате. Поэтому в вашу конфигурацию атрибутов токена SAML следует добавить сопоставления настраиваемых атрибутов. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**. Приложение Otsuka Shokai ожидает, что **nameidentifier** будет сопоставляться с **user.objectid**. Поэтому необходимо изменить сопоставление атрибутов. Для этого щелкните значок **Изменить** .
+1. Приложение Otsuka Shokai ожидает проверочные утверждения SAML в определенном формате. Поэтому в вашу конфигурацию атрибутов токена SAML следует добавить сопоставления настраиваемых атрибутов. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Otsuka Shokai ожидает, что **nameidentifier** будет сопоставляться с **user.objectid**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
     ![image](common/edit-attribute.png)
 
@@ -165,4 +165,4 @@ ms.locfileid: "67274200"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

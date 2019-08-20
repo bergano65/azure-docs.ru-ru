@@ -1,6 +1,5 @@
 ---
-title: Основные сведения.
-titleSuffix: Azure Machine Learning service
+title: Общие сведения о Службе машинного обучения Azure
 description: Общие сведения о Службе машинного обучения Azure — полнофункциональном интегрированном решении для специалистов по обработке и анализу данных, которое позволяет разрабатывать, проверять и развертывать приложения расширенной аналитики в масштабах облака.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 08/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5323c996b8d974c9db11a508503f767cfee80301
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 1dea5e174c66685f889595ab15b3edf57dd02493
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828106"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018229"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое Машинное обучение Azure
 
@@ -50,15 +49,15 @@ ms.locfileid: "68828106"
 
 Также с помощью пакета SDK можно [автоматизировать обучение и настройку модели](tutorial-auto-train-models.md).
 
-### <a name="code-free--low-code-experience"></a>Модель без кода / с небольшим количеством кода
+### <a name="ui-based-low-code-experience"></a>Решение с пользовательским интерфейсом и минимальным созданием кода
 
 Для модели без кода попробуйте:
 
-+ графический интерфейс для экспериментов с перетаскиванием и развертыванием
++ Создание [автоматических экспериментов Машинного обучения](tutorial-first-experiment-automated-ml.md) в удобном интерфейсе.
++ [Графический интерфейс для экспериментов с перетаскиванием](ui-tutorial-automobile-price-train-score.md).
+  ![Графический интерфейс для Службы машинного обучения Azure](media/overview-what-is-azure-ml/visual-interface.png)
 
-    ![графический интерфейс в Службе машинного обучения Azure](media/overview-what-is-azure-ml/visual-interface.png)
 
-+ портал Azure для экспериментов автоматического машинного обучения
 
 ### <a name="operationalization-mlops"></a>Практическое использование (MLOps)
 
@@ -106,7 +105,7 @@ ms.locfileid: "68828106"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Create a Machine Learning service workspace](setup-create-workspace.md) (Создание рабочей области Cлужбы машинного обучения Azure).
+- [Create a Machine Learning service workspace](how-to-manage-workspace.md) (Создание рабочей области Cлужбы машинного обучения Azure).
 
 - Исчерпывающие руководства:
   + [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md)

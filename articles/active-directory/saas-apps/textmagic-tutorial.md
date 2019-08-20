@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 1184e282c8dc52cb616bcc47068d96fe61651da9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 53711a80f35177c911b754a0ce3f189ac106adb2
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088878"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943301"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-textmagic"></a>Руководство. Интеграция Azure Active Directory с TextMagic
 
@@ -166,13 +166,13 @@ ms.locfileid: "67088878"
 
     ![Настройка TextMagic](./media/textmagic-tutorial/config2.png)
 
-    a. В поле  **Identity provider Entity ID:**   (Идентификатор сущности поставщика удостоверений) вставьте значение  **Идентификатора Azure AD**, скопированное на портале Azure.
+    a. В текстовое поле **Identity provider Entity ID:** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    b. В поле  **Identity provider SSO URL:**   (URL-адрес для единого входа поставщика удостоверений) вставьте значение  **URL-адреса входа**, скопированное на портале Azure.
+    b. В текстовое поле **Identity provider SSO URL:** (URL-адрес единого входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    c. В поле  **Identity provider SLO URL:**   (URL-адрес для единого входа поставщика удостоверений) вставьте значение  **URL-адреса выхода**, скопированное на портале Azure.
+    c. В текстовое поле **Identity provider SLO URL:** (URL-адрес единого выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    d. Откройте **сертификат в кодировке base-64** в блокноте, скачанном с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле  **Public x509 certificate:**   (Открытый сертификат x509).
+    d. Откройте в блокноте сертификат в кодировке **Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Public x509 certificate:** (Открытый сертификат x509).
 
     д. Выберите команду **Сохранить**.
 
@@ -243,4 +243,4 @@ ms.locfileid: "67088878"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

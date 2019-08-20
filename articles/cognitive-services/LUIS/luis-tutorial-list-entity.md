@@ -1,5 +1,5 @@
 ---
-title: Сущности екстакт Text Match-LUIS
+title: Сущности точного совпадения текста — LUIS
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как добавить сущность списка, чтобы помочь LUIS присвоить метки вариантам слов или фраз.
 services: cognitive-services
@@ -7,15 +7,15 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: da6e8e794520a737a96ba45f94459fb8c1a5ff18
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
-ms.translationtype: MT
+ms.openlocfilehash: 979cbe16653c09ea1b019310d820b070be4a5a91
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637833"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946064"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Использование сущности списка, чтобы увеличить обнаружение сущностей 
 В этом руководстве показано, как использовать [сущность списка](luis-concept-entity-types.md), чтобы увеличить обнаружение сущностей. Сущности списков не обязательно должны быть помечены как они точно соответствуют терминам.  
@@ -212,12 +212,12 @@ node train.js
 
 Попробуйте два других высказывания, чтобы увидеть, что они также возвращаются в качестве терморегулятора. 
 
-|#|высказывание|сущность|type|value|
+|#|высказывание|сущность|Тип|value|
 |--|--|--|--|--|
 |1|включить кондиционер| кондиционер | DevicesList | Терморегулятор|
 |2|подать тепло|тепло| DevicesList |Терморегулятор|
 |3|охладить|охладитель|DevicesList|Терморегулятор|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 Можно создать другую сущность списка для расширения расположения устройств в комнатах, этажах или зданиях. 

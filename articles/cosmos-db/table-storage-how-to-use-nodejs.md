@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 977b59c3344eaf2c4877f51afea176455d22ecc9
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 45925b1c4252b0ff0080a2c287e7ed2fae444168
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546693"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986285"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -68,7 +68,7 @@ var tableSvc = azure.createTableService('myaccount', 'myaccesskey');
 ```
 
 ## <a name="add-an-azure-cosmos-db-connection"></a>Добавление подключения к Azure Cosmos DB
-Чтобы добавить подключение к Azure Cosmos DB, создайте объект **TableService** и укажите имя учетной записи, первичный ключ и конечную точку. Эти значения можно скопировать из раздела **Параметры** > **Строка подключения** на портале Azure для вашей учетной записи Cosmos DB. Например: 
+Чтобы добавить подключение к Azure Cosmos DB, создайте объект **TableService** и укажите имя учетной записи, первичный ключ и конечную точку. Эти значения можно скопировать из раздела **Параметры** > **Строка подключения** на портале Azure для вашей учетной записи Cosmos DB. Например:
 
 ```javascript
 var tableSvc = azure.createTableService('myaccount', 'myprimarykey', 'myendpoint');
@@ -198,7 +198,7 @@ tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response)
 > По умолчанию обновление сущности не проверяет, были ли обновляемые данные ранее изменены другим процессом. Поддержка одновременных обновлений:
 >
 > 1. Получите ETag обновляемого объекта. Он возвращается в составе `response` для всех операций с сущностями и может быть извлечен с помощью `response['.metadata'].etag`.
-> 2. При выполнении операции обновления с сущностью предварительно добавьте информацию ETag, извлеченную для новой сущности. Например: 
+> 2. При выполнении операции обновления с сущностью предварительно добавьте информацию ETag, извлеченную для новой сущности. Например:
 >
 >       entity2['.metadata'].etag = currentEtag;
 > 3. Выполните операцию обновления. Если сущность была изменена с момента получения значения ETag, например, другим экземпляром вашего приложения, будет возвращена ошибка `error`, указывающая, что определенное в запросе условие обновления не выполнено.
@@ -394,7 +394,7 @@ var host = tableSvc.host;
 
 Обратите внимание, что также должна быть предоставлена информация об узле, так как она требуется владельцу SAS для совершения попыток доступа к таблице.
 
-Клиентское приложение далее использует подпись SAS с помощью **TableServiceWithSAS** для выполнения операций с таблицей. Следующий пример выполняет подключение к таблице и выполняет запрос. Сведения о формате tableSAS см. в статье об [использовании подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#examples-of-sas-uris). 
+Клиентское приложение далее использует подпись SAS с помощью **TableServiceWithSAS** для выполнения операций с таблицей. Следующий пример выполняет подключение к таблице и выполняет запрос. Дополнительные сведения о формате подписанных URL-адресов для таблиц см. в статье об [использование подписанных URL-адресов SAS в службе хранилища Azure](../storage/common/storage-sas-overview.md). 
 
 ```javascript
 // Note in the following command, host is in the format: `https://<your_storage_account_name>.table.core.windows.net` and the tableSAS is in the format: `sv=2018-03-28&si=saspolicy&tn=mytable&sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D`;

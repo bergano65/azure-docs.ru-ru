@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0d27eef8ee2c70449bacaced0de89bdc5e6989ff
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: b997451a25f8a093491a322376db95ea53165893
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357812"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989162"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
 
@@ -36,7 +36,7 @@ ms.locfileid: "66357812"
 > * Развертывание шаблона
 > * Очистка ресурсов
 
-В этом учебнике рассматривается только основной сценарий с использованием условий. Дополнительные сведения можно найти в разделе 
+В этом учебнике рассматривается только основной сценарий с использованием условий. Дополнительные сведения можно найти в разделе
 
 * [Структура файла шаблона: условие](./resource-group-authoring-templates.md#condition).
 * [Conditionally deploy a resource in an Azure Resource Manager template](/azure/architecture/building-blocks/extending-templates/conditional-deploy) (Условное развертывание ресурсов в шаблоне Azure Resource Manager).
@@ -86,7 +86,7 @@ ms.locfileid: "66357812"
 Внесите два изменения в имеющийся шаблон:
 
 * Добавьте параметр имени для учетной записи хранения. Пользователи могут указать имя новой или существующей учетной записи хранения.
-* Добавьте новый параметр с именем **newOrExisting**. Развертывание использует этот параметр, чтобы определить нужное действие: создавать новую учетную запись хранения или использовать имеющуюся.
+* Добавьте новый параметр с именем **newOrExisting**. Развертывание использует этот параметр для определения того, нужно ли создавать новую учетную запись хранения или использовать имеющуюся.
 
 Вот что нужно сделать, чтобы внести изменения:
 
@@ -138,7 +138,7 @@ ms.locfileid: "66357812"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Следуйте инструкциям в разделе о [развертывании шаблона](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template), чтобы открыть Cloud Shell и отправить измененный шаблон, а затем выполните сценарий PowerShell для развертывания шаблона.
+Следуйте инструкциям из раздела о [развертывании шаблона](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template), чтобы открыть Cloud Shell и отправить измененный шаблон, а затем выполните скрипт PowerShell для развертывания шаблона.
 
 ```azurepowershell
 $resourceGroupName = Read-Host -Prompt "Enter the resource group name"

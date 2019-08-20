@@ -11,10 +11,10 @@ ms.topic: quickstart
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.openlocfilehash: c03568ece97bdaad86f4564debf9f3b2fa14c6ed
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67786649"
 ---
 # <a name="azure-cognitive-services-computer-vision-sdk-for-python"></a>Пакет SDK Компьютерного зрения Cognitive Services Azure для Python
@@ -38,7 +38,7 @@ ms.locfileid: "67786649"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Python 3.6+][python]
-* Бесплатный клиентский объект and associated endpoint. You need these values when you create the instance of the [ComputerVisionClient][ref_computervisionclient] [ключа Компьютерного зрения][computervision_resource]. Получить справку можно с помощью одного из указанных ниже методов.
+* Бесплатный [ключ Компьютерного зрения][computervision_resource] и соответствующая конечная точка. Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов.
 
 ### <a name="if-you-dont-have-an-azure-subscription"></a>Если у вас нет подписки Azure
 
@@ -84,7 +84,7 @@ source cogsrv-vision-env/bin/activate
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
-Установите [пакет][pypi_computervision]with [pip][pip] SDK Компьютерного зрения Azure Cognitive Services для Python.
+Установите [пакет][pypi_computervision] SDK Компьютерного зрения Cognitive Services Azure для Python с помощью [pip][pip].
 
 ```Bash
 pip install azure-cognitiveservices-vision-computervision
@@ -154,7 +154,7 @@ client = ComputerVisionClient(endpoint, credentials)
 
 ### <a name="analyze-an-image"></a>Анализ изображения
 
-Вы можете анализировать изображение для определенных функций с помощью свойства [`analyze_image`][ref_computervisionclient_analyze_image]. Use the [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы анализа, выполняемого на изображении. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
+Изображение можно анализировать на определенные особенности с помощью [`analyze_image`][ref_computervisionclient_analyze_image]. Используйте свойство [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы анализа для изображения. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
 
 ```Python
 url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"
@@ -286,7 +286,7 @@ image.save('thumbnail.jpg')
 
 ### <a name="general"></a>Общие сведения
 
-При взаимодействии с [ComputerVisionClient][ref_computervisionclient] класс client object using the Python SDK, the [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] используется для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
+При взаимодействии с клиентским объектом [ComputerVisionClient][ref_computervisionclient] с помощью пакета SDK для Python используется класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
 
 Например, при попытке проанализировать изображение с неверным ключом будет возвращена ошибка `401`. В следующем фрагменте кода [ошибка][ref_httpfailure] корректно обрабатывается путем перехвата исключения и отображения дополнительной информации об этой ошибке.
 
@@ -312,7 +312,7 @@ except HTTPFailure as e:
 
 ### <a name="handle-transient-errors-with-retries"></a>Обработка временных ошибок с помощью повторных вызовов
 
-Во время работы с [ComputerVisionClient][ref_computervisionclient] client, you might encounter transient failures caused by [rate limits][computervision_request_units] навязывается службой или другими временными проблемами, такими как перебои в работе сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Retry pattern][azure_pattern_retry] в руководстве Cloud Design Patterns и соответствующим [шаблоном Circuit Breaker][azure_pattern_circuit_breaker].
+При работе с клиентом [ComputerVisionClient][ref_computervisionclient] вы можете столкнуться с временными сбоями, вызванными [ограничениями скорости][computervision_request_units], применяемыми службой, или другими временными проблемами, такими как отказ сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Шаблон повторов][azure_pattern_retry] в руководстве по конструктивным шаблонам облачных решений и соответствующим [шаблоном автоматического выключения][azure_pattern_circuit_breaker].
 
 ## <a name="next-steps"></a>Дополнительная информация
 

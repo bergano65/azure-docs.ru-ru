@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 1d722d7e2886008aa5aa3acff8095fcf35ac38d8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4ea6f04dbfd18a6e561a255988ba0465b9e017be
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68554171"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967613"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
-Службы речи Azure — это объединение технологий преобразования речи в текст, текста в речь и перевода речи в единой подписке Azure. Используя пакет [SDK для распознавания речи](speech-sdk-reference.md), [пакет SDK для речевых устройств](https://aka.ms/sdsdk-quickstart) или [REST API](rest-apis.md), можно легко добавлять в свои приложения, инструменты и устройства функции для работы с речью.
+Служба "Речь" — это средства преобразования речи в текст, текста в речь и перевода речи, предоставляемые в рамках одной подписки Azure. Используя пакет [SDK для распознавания речи](speech-sdk-reference.md), [пакет SDK для речевых устройств](https://aka.ms/sdsdk-quickstart) или [REST API](rest-apis.md), можно легко добавлять в свои приложения, инструменты и устройства функции для работы с речью.
 
 > [!IMPORTANT]
 > Службы речи заменили API распознавания речи Bing, Перевод речи и Пользовательское распознавание речи. Указания по миграции см. в разделе *Практические руководства > Миграция*.
@@ -41,14 +41,14 @@ ms.locfileid: "68554171"
 
 Узнайте о новых возможностях служб речи Azure.
 
+* Август 2019 г.
+  * **Новое руководство**. [Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)
 * Июнь 2019 г.
-    * Выпущен пакет SDK версии 1.6.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
+  * Выпущен пакет SDK версии 1.6.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
 * Май 2019 г. Доступна документация по [транскрибированию бесед](conversation-transcription-service.md), [транскрибированию обращений в центры обработки вызовов](call-center-transcription.md) и [виртуальным помощникам по обработке голоса](voice-first-virtual-assistants.md).
 * Май 2019 г.
-    * Выпущен пакет SDK версии 1.5.1 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-    * Выпущен пакет SDK версии 1.5.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-* В апреле 2019 года был выпущен пакет SDK для службы "Речь" версии 1.4.0 с поддержкой преобразования текста в речь (бета-версия) для C++, C# и Java в Windows и Linux. Кроме того, теперь пакет SDK поддерживает аудиоформаты MP3 и Opus/Ogg для C++ и C# в Linux. Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
-* В марте 2019 года стала доступна новая конечная точка для преобразования текста в речь, которая возвращает полный список доступных голосов в определенных регионах. Преобразование текста в речь теперь поддерживается в новых регионах. Дополнительные сведения см. в [справочнике по REST API Преобразования текста в речь](rest-text-to-speech.md).
+  * Выпущен пакет SDK версии 1.5.1 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
+  * Выпущен пакет SDK версии 1.5.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
 
 ## <a name="try-speech-services"></a>Воспользуйтесь службами речи
 
@@ -67,6 +67,7 @@ ms.locfileid: "68554171"
 После того, как у вас будет возможность использовать службы речи, просмотрите наше руководство, которое научит вас распознавать намерения из речи с помощью пакета SDK для распознавания речи и LUIS.
 
 * [Руководство. Распознавание намерений в речи с помощью пакета SDK для распознавания речи и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
+* [Руководство. Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)
 * [Руководство. Создание приложения Flask для перевода текста, анализа тональности и синтеза преобразованной из текста речи с использованием REST](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json&toc=%2Fen-us%2Fazure%2Fcognitive-services%2Fspeech-service%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
 
 ## <a name="get-sample-code"></a>Получение примера кода
@@ -76,6 +77,7 @@ ms.locfileid: "68554171"
 * [Примеры преобразования речи в текст, текста в речь и перевода речи (SDK)](https://github.com/Azure-Samples/cognitive-services-speech-sdk)
 * [Примеры транскрибирования с помощью Пакетной службы (REST)](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch)
 * [Примеры преобразования текста в речь (REST)](https://github.com/Azure-Samples/Cognitive-Speech-TTS)
+* [Примеры виртуального помощника по обработке голоса (пакет SDK)](https://aka.ms/csspeech/samples)
 
 ## <a name="customize-your-speech-experience"></a>Настройки работы речи
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07341c1ad30f1242bdff430826fdc82c45e09dac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07b0f8112f724c857ffb46378f7aa7ef605b9bbb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086071"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943291"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство по Интеграция Azure Active Directory с Zscaler Beta
 
@@ -112,7 +112,7 @@ ms.locfileid: "67086071"
     > [!NOTE]
     > Это значение приведено в качестве примера. Укажите фактическое значение URL-адреса для входа. Для получения значения обратитесь к [группе поддержки клиентов Zscaler Beta](https://www.zscaler.com/company/contact).
 
-5. Приложение Zscaler Beta ожидает утверждения SAML в определенном формате. Нужно добавить сопоставление настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Выберите  **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя** .
+5. Приложение Zscaler Beta ожидает утверждения SAML в определенном формате. Нужно добавить сопоставление настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Выберите **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![Диалоговое окно "Атрибуты пользователя"](common/edit-attribute.png)
 
@@ -295,7 +295,7 @@ ms.locfileid: "67086071"
 В этом разделе вы создадите в Zscaler Beta пользователя Britta Simon. Приложение Zscaler Beta поддерживает **JIT-подготовку пользователей**, которая включена по умолчанию. В этом разделе от вас не требуется никаких действий. Если пользователь еще не существует в Zscaler Beta, он создается после проверки подлинности.
 
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки Zscaler Beta](https://www.zscaler.com/company/contact).
+>Чтобы создать пользователя вручную, обратитесь в [службу поддержки Zscaler Beta](https://www.zscaler.com/company/contact).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -307,5 +307,5 @@ ms.locfileid: "67086071"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

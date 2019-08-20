@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 5a942aa10f36df55ac232defa610102700e3995b
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 9bccd826a37b66f7f89e70c57260a0db08342421
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614198"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019189"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
@@ -70,18 +70,19 @@ azure-vote-front-3309479140-qphz8   1/1       Running   0          3m
 
 ## <a name="autoscale-pods"></a>Автомасштабирование pod
 
-Kubernetes поддерживает [горизонтальное автомасштабирование модулей pod][kubernetes-hpa]. to adjust the number of pods in a deployment depending on CPU utilization or other select metrics. The [Metrics Server][metrics-server] используется для предоставления сведений об использовании ресурсов в Kubernetes. Он автоматически развертывается в кластерах AKS версии 1.10 и выше. Чтобы узнать версию кластера AKS, используйте команду [az aks show][az-aks-show], как показано в следующем примере:
+Kubernetes поддерживает [горизонтальное автомасштабирование pod][kubernetes-hpa] для изменения числа pod в развертывании в зависимости от использования ЦП или других выбранных метрик. [Сервер метрик][metrics-server] используется для предоставления сведений об использовании ресурсов в Kubernetes. Он автоматически развертывается в кластерах AKS версии 1.10 и последующих. Чтобы узнать версию кластера AKS, используйте команду [az aks show][az-aks-show], как показано в следующем примере:
 
 ```azurecli
 az aks show --resource-group myResourceGroup --name myAKSCluster --query kubernetesVersion
 ```
 
-Если версия кластера AKS ниже *1.10*, установите сервер метрик. В противном случае пропустите этот шаг. Чтобы установить его, клонируйте репозиторий GitHub `metrics-server` и установите примеры определений ресурсов. Чтобы просмотреть содержимое этих определений YAML, см. руководство по [использованию сервера метрик для Kuberenetes 1.8+][metrics-server-github].
-
-```console
-git clone https://github.com/kubernetes-incubator/metrics-server.git
-kubectl create -f metrics-server/deploy/1.8+/
-```
+> [!NOTE]
+> Если версия кластера AKS предшествует *1.10*, сервер метрик не устанавливается автоматически. Чтобы установить его, клонируйте репозиторий GitHub `metrics-server` и установите примеры определений ресурсов. Чтобы просмотреть содержимое этих определений YAML, см. руководство по [использованию сервера метрик для Kuberenetes 1.8+][metrics-server-github].
+> 
+> ```console
+> git clone https://github.com/kubernetes-incubator/metrics-server.git
+> kubectl create -f metrics-server/deploy/1.8+/
+> ```
 
 Чтобы использовать инструмент автомасштабирования, для всех контейнеров в группах pod и всех групп pod необходимо определить запросы и лимиты ресурсов ЦП. В развертывании `azure-vote-front` контейнер внешнего приложения уже запрашивает 0,25 ресурсов ЦП с лимитом в 0,5 ресурсов ЦП. Эти запросы и ограничения ресурсов определены, как показано в следующем фрагменте кода:
 

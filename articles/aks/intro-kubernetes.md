@@ -9,10 +9,10 @@ ms.date: 05/06/2019
 ms.author: mlearned
 ms.custom: mvc
 ms.openlocfilehash: 5515951a9bde596935f4c603ffd9e088f74dee45
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67615161"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
@@ -23,7 +23,7 @@ ms.locfileid: "67615161"
 
 Дополнительные сведения о Kubernetes см. в статье о [ключевых концепциях Kubernetes для службы Azure Kubernetes (AKS)][concepts-clusters-workloads].
 
-Для начала работы изучите краткое руководство по развертыванию Azure Kubernetes [с помощью портала][aks-portal] или or [with the Azure CLI][aks-cli] (с помощью CLI).
+Прежде чем начать работу, изучите [Краткое руководство по развертыванию кластера службы Azure Kubernetes (с помощью портала)][aks-portal] или [Краткое руководство по развертыванию кластера службы Azure Kubernetes (с помощью CLI)][aks-cli].
 
 ## <a name="access-security-and-monitoring"></a>Доступ, безопасность и мониторинг
 
@@ -57,7 +57,7 @@ ms.locfileid: "67615161"
 
 Служба Kubernetes Azure предлагает несколько версий Kubernetes. После того, как новая версия станет доступной в AKS, с помощью средств портала Azure или Azure CLI кластер можно обновить. Чтобы свести к минимуму время простоя работающих приложений, в процессе обновления узлы тщательно блокируются и останавливаются.
 
-Дополнительные сведения о версиях жизненного цикла см. в статье о [поддерживаемых версиях Kubernetes в AKS][aks-supported versions]. For steps on how to upgrade, see [Upgrade an Azure Kubernetes Service (AKS) cluster][aks-upgrade].
+Дополнительные сведения о версиях жизненного цикла см. в статье о [поддерживаемых версиях Kubernetes в AKS][aks-supported versions]. Сведения об обновлении см. в статье [Обновление кластера службы Azure Kubernetes (AKS)][aks-upgrade].
 
 ### <a name="gpu-enabled-nodes"></a>Узлы с графическим процессором
 
@@ -71,7 +71,7 @@ ms.locfileid: "67615161"
 
 Дополнительные сведения см. в статье о [возможности хранения данных приложений в AKS][concepts-storage].
 
-Для начала работы с динамическими постоянными томами см. статьи о [дисках Azure в AKS][azure-disk]и о or [Azure Files][azure-files]файлах Azure в AKS.
+Для начала работы с динамическими постоянными томами см. статьи о [дисках Azure в AKS][azure-disk] и о [файлах Azure в AKS][azure-files].
 
 ## <a name="virtual-networks-and-ingress"></a>Виртуальные сети и входные данные
 

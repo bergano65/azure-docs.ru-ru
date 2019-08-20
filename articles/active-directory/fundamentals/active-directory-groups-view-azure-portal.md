@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd3719e63b19066d61647b90ccae03ed841f3c6c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9b4f2f6e86ce076e7c0464609252b027499a8307
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561900"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68942882"
 ---
 <!--As a brand-new Azure AD administrator, I need to view my organization’s groups along with the assigned members, so I can manage permissions to apps and services for people in my organization-->
 
@@ -53,7 +53,7 @@ ms.locfileid: "68561900"
 3. Нажмите кнопку **Создать**.
 
 ## <a name="create-a-new-user"></a>Создание пользователя
-Создайте нового пользователя с именем _Alain Charon_. В качестве члена группы можно добавить только существующих пользователей. Дополнительные сведения о создании пользователей см. в [этой статье](add-users-azure-active-directory.md).
+Создайте нового пользователя с именем _Alain Charon_. В качестве члена группы можно добавить только существующих пользователей. Сначала перейдите на вкладку "Имена личных доменов", чтобы получить проверенное доменное имя, в котором нужно создать пользователей. Дополнительные сведения о создании пользователей см. в [этой статье](add-users-azure-active-directory.md).
 
 1. Выберите **Azure Active Directory**, затем **Пользователи** и щелкните **Новый пользователь**.
 

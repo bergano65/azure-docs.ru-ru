@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ удаленного изображения — REST, Java
+title: Краткое руководство. Анализ удаленно хранимого изображения с помощью REST API и Java
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Java.
 services: cognitive-services
@@ -10,13 +10,13 @@ ms.subservice: computer-vision
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.custom: seodec18
-ms.openlocfilehash: eadf3aca848f1b8ad24cd387e1988cdf8ea55580
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.custom: seodec18, seo-java-august2019
+ms.openlocfilehash: 69d14b3ce84ddd1fbd54ab8a0f6f0c9e24ebac1e
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604425"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946311"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Удаленный анализ изображения с помощью REST API компьютерного зрения и Java
 

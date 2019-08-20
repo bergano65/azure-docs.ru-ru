@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 52dee0ee60c111c56c42e0452f8f8750ea9ea4e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 117b6d53a3392e8a4f75d5d1966e3f48fb66d5ce
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66167499"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966413"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -56,7 +56,7 @@ ms.locfileid: "66167499"
 ## <a name="high-level-solution"></a>Общее решение
 В этом руководстве описано, как создать два конвейера, которые выполняют следующие две операции:  
 
-1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (база данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
+1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (База данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
 
     ![Полная загрузка данных](media/tutorial-incremental-copy-change-tracking-feature-powershell/full-load-flow-diagram.png)
 1.  **Добавочная загрузка** — вы создадите конвейер со следующими действиями для периодического выполнения: 
@@ -216,7 +216,7 @@ ms.locfileid: "66167499"
         }
     }
     ```
-2. В **Azure PowerShell** перейдите к папке **C:\ADFTutorials\IncCopyChgTrackingTutorial**.
+2. В **Azure PowerShell** перейдите к папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial**.
 3. Выполните командлет **Set-AzDataFactoryV2LinkedService**, чтобы создать связанную службу. **AzureStorageLinkedService**. В указанном ниже примере вы передадите значения для параметров **ResourceGroupName** и **DataFactoryName**. 
 
     ```powershell
@@ -235,7 +235,7 @@ ms.locfileid: "66167499"
 ### <a name="create-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных.
 
-1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений server, database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
+1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений **&lt;server&gt;, &lt;database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
 
     ```json
     {
@@ -370,7 +370,7 @@ ms.locfileid: "66167499"
     ```
 
     Таблица table_store_ChangeTracking_version создается как необходимый компонент.
-2.  Выполните командлет Set-AzDataFactoryV2Dataset, чтобы создать набор данных: WatermarkDataset.
+2.  Выполните командлет Set-AzDataFactoryV2Dataset, чтобы создать набор данных: ChangeTrackingDataset
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "ChangeTrackingDataset" -File ".\ChangeTrackingDataset.json"
@@ -495,7 +495,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 ``` 
 
 ## <a name="create-a-pipeline-for-the-delta-copy"></a>Создание конвейера для копирования разностных данных
-В этом шаге вы создадите конвейер со следующими действиями для периодического выполнения: **Действия поиска** получают старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передают их в действие копирования. **Действие копирования** копирует вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из базы данных SQL Azure в хранилище BLOB-объектов. **Действие хранимой процедуры** обновляет значение SYS_CHANGE_VERSION для запуска следующего конвейера.
+В этом шаге вы создадите конвейер со следующими действиями для периодического выполнения: **Действия поиска** получают старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передают их в действие копирования. **Действие копирования** копирует вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из Базы данных SQL Azure в хранилище BLOB-объектов. **Действие хранимой процедуры** обновляет значение SYS_CHANGE_VERSION для запуска следующего конвейера.
 
 1. Создайте файл JSON IncrementalCopyPipeline.json в той же папке со следующим содержимым. 
 

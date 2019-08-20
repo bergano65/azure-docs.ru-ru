@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 07/03/2019
+ms.date: 08/08/2019
 ms.author: sajagtap
-ms.openlocfilehash: 9bfe5f21da6418f82b2099a5da4ba8c3c32c25f3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2a4726357e35fa123355d9ba450f7c6d8624fe78
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564490"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946235"
 ---
 # <a name="quickstart-analyze-images-for-objectionable-content-in-c"></a>Краткое руководство. Анализ изображений на наличие нежелательного содержимого с помощью C#
 
@@ -49,22 +49,22 @@ ms.locfileid: "68564490"
 
 Добавьте следующие инструкции `using` в начало файла *Program.cs*.
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=1-8)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=1-7)]
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
 Добавьте следующий фрагмент кода в файл *Program.cs*, чтобы создать поставщик клиента Content Moderator для своей подписки. Добавьте код вместе с классом **Program** в то же пространство имен. Необходимо обновить поля **AzureRegion** и **CMSubscriptionKey** значениями идентификатора региона и ключа подписки.
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=84-107)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=83-106)]
 
 
 ### <a name="set-up-input-and-output-targets"></a>Настройка целевых файлов ввода-вывода
 
 Добавьте следующие статические поля в класс **Program** в файле _Program.cs_. В этих полях указываются файлы для входного содержимого изображения и выходного содержимого JSON.
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=49-53)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=48-52)]
 
-Вам нужно будет создать входной файл *_ImageFiles.txt* и обновить его путь соответствующим образом (относительные пути задаются относительно каталога выполнения). Откройте _ImageFiles.txt_ и добавьте URL-адрес изображений для модерации. В этом кратком руководстве в качестве примера входных данных используются следующие URL-адреса.
+Вам нужно будет создать входной файл *ImageFiles.txt* и обновить его путь соответствующим образом (относительные пути задаются относительно каталога выполнения). Откройте _ImageFiles.txt_ и добавьте URL-адрес изображений для модерации. В этом кратком руководстве в качестве примера входных данных используются следующие URL-адреса.
 
 ```
 https://moderatorsampleimages.blob.core.windows.net/samples/sample2.jpg
@@ -75,20 +75,20 @@ https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 
 Добавьте следующий код в *Program.cs* вместе с классом **Program** в том же пространстве имен. Используйте экземпляр этого класса для записи результатов модерации каждого проверенного изображения.
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=109-124)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=108-123)]
 
 
 ### <a name="define-the-image-evaluation-method"></a>Определение метода оценки изображений
 
 Добавьте следующий метод в класс **Program**. Этот метод оценивает отдельное изображение тремя различными способами и возвращает результаты оценки. Если вы хотите узнать больше о возможностях отдельных операций, перейдите по ссылке в раздел [Дополнительная информация](#next-steps).
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=55-81)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=54-80)]
 
 ### <a name="load-the-input-images"></a>Загрузка входных изображений
 
 Добавьте следующий код в метод **Main** в классе **Program**. Этот код настраивает программу для получения данных оценки для каждого URL-адреса изображения во входном файле. Затем он записывает эти данные в один выходной файл.
 
-[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=17-46)]
+[!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=16-45)]
 
 ## <a name="run-the-program"></a>Запуск программы
 

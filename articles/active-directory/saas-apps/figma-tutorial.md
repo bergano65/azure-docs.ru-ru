@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 6b91ab53ba7b5ce30c1dfa4a2bd90390875b8615
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1bcf3964fb289be9b7410938f9e2eac843e795d4
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67102696"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945198"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-figma"></a>Руководство по Интеграция Azure Active Directory с Figma
 
@@ -122,7 +122,7 @@ ms.locfileid: "67102696"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значение `TENANT ID` вы получите на шаге 11, выполнив инструкции из руководства Figma по [настройке процесс настройки единого входа Azure AD с помощью SAML](https://help.figma.com/article/243-configure-azure-active-directory-saml-sso).
 
-6. Приложение Figma ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**,чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+6. Приложение Figma ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -231,5 +231,5 @@ ms.locfileid: "67102696"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

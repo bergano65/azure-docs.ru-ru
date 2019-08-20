@@ -1,0 +1,83 @@
+---
+title: Присвоение настраиваемой роли AAD через Privileged Identity Management (PIM) | Документация Майкрософт
+description: Сведения о том, как назначать настраиваемую роль AAD через Privileged Identity Management (PIM)
+services: active-directory
+documentationcenter: ''
+author: curtand
+manager: mtillman
+ms.assetid: ''
+ms.service: role-based-access-control
+ms.devlang: na
+ms.topic: overview
+ms.tgt_pltfrm: na
+ms.workload: identity
+ms.date: 08/06/2019
+ms.author: curtand
+ms.custom: pim
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7a3f6eb815677133f3d7fe6ce07d6abf23db1f04
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947520"
+---
+# <a name="assign-an-azure-ad-custom-role-in-privileged-identity-management"></a>Присвоение настраиваемой роли AAD через Privileged Identity Management (PIM)
+
+В этой статье объясняется, как с помощью Privileged Identity Management (PIM) создать привязанные к задачам и ограниченные по времени назначения настраиваемых ролей, созданных для управления приложениями в административном интерфейсе Azure Active Directory (AAD).
+
+- Дополнительные сведения о создании настраиваемых ролей для делегирования управления приложениями в AAD см. в статье [о настраиваемых ролях администратора в Azure Active Directory (предварительная версия)](../users-groups-roles/roles-custom-overview.md).
+- Если вы еще не использовали управление привилегированными пользователями, получите дополнительные сведения в [этой статье](pim-getting-started.md).
+- Сведения о том, как предоставлять другим пользователям доступ с правами администратора для управления PIM, вы найдете [в этой статье](pim-how-to-give-access-to-pim.md).
+
+> [!NOTE]
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей.
+
+## <a name="assign-a-role"></a>Назначение роли
+
+Управление привилегированными пользователями позволяет управлять настраиваемыми ролями, которые вы создаете в интерфейсе управления приложениями в Azure Active Directory (AAD).  Следующие шаги создают допустимое назначение для настраиваемой роли каталога.
+
+1. Войдите в раздел [Privileged Identity Management](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart) на портале Azure с учетной записью пользователя, которому назначена роль "Администратор привилегированных ролей".
+1. Щелкните **Настраиваемые роли Azure AD (предварительная версия)** .
+
+    ![Выбор предварительной версии настраиваемых ролей AAD для просмотра доступных назначений ролей](./media/azure-ad-custom-roles-assign/view-custom.png)
+
+1. Выберите **Роли**, чтобы просмотреть список настраиваемых ролей для приложений AAD.
+
+    ![Выбор раздела "Роли" для просмотра списка допустимых назначений ролей](./media/azure-ad-custom-roles-assign/view-roles.png)
+
+1. Щелкните **Добавить участника**, чтобы открыть страницу назначения.
+1. Чтобы ограничить область назначения роли отдельным приложением, выберите область приложения в разделе **Область**.
+
+    ![Ограничение области допустимых назначений роли в AAD](./media/azure-ad-custom-roles-assign/set-scope.png)
+
+1. Щелкните **Выбрать роль**, чтобы открыть список **Выбор роли**.
+
+    ![Выбор допустимой роль для назначения пользователю](./media/azure-ad-custom-roles-assign/select-role.png)
+
+1. Выберите роль, которую вы намерены назначить, и щелкните **Выбрать**. Откроется список **Выберите участника**.
+
+    ![Выбор участника, которому назначается роль](./media/azure-ad-custom-roles-assign/select-member.png)
+
+1. Щелкните пользователя, которому вы намерены назначить роль, а затем щелкните **Выбрать**. Откроется список **Параметры членства**.
+
+    ![Выбор типа назначения роли: "Допустимое" или "Активное"](./media/azure-ad-custom-roles-assign/membership-settings.png)
+
+1. На странице **Параметры членства** выберите значение **Допустимое** или **Активное**.
+
+    - Назначение **допустимой** роли означает, что пользователь должен выполнить некоторое действие для использования этой роли. Это могут быть такие действия, как прохождение многофакторной проверки подлинности, предоставление коммерческого обоснования или запрос утверждения от назначенных утверждающих.
+    - Назначение **активной** роли не требует дополнительных действий для использования роли. Члены с активным назначением роли постоянно имеют все полномочия, присвоенные этой роли.
+
+1. Если флажок **Постоянный** доступен для просмотра и изменения (в зависимости от параметров роли), вы можете сделать назначение постоянным. Если назначение должно быть постоянно активным или постоянно допустимым, установите этот флажок. Снимите флажок, чтобы ограничить длительность назначения.
+1. Чтобы создать новое назначение роли, последовательно щелкните **Сохранить** и **Добавить**. Отображается уведомление о состоянии процесса назначения.
+
+Чтобы проверить назначение роли, последовательно выберите **Назначения** > **Назначение** в открытой роли и убедитесь, что назначение роли правильно указано как допустимое или активное.
+
+ ![Проверка, отображается ли назначение роли как допустимое или активное](./media/azure-ad-custom-roles-assign/verify-assignments.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
+- [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
+- [Configure Azure AD custom roles in Privileged Identity Management](azure-ad-custom-roles-configure.md) (Настройка настраиваемых ролей AAD в Privileged Identity Management)
+- [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)

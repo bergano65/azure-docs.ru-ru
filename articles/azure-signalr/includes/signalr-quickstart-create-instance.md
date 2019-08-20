@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 09/14/2018
 ms.author: antchu
 ms.custom: include file
-ms.openlocfilehash: 4e8bdc63daa7450a88c2fcf4b7e878e18cea260d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: ac77f0b6a1d90fd78db64618c1e03ade198a67c0
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185655"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882147"
 ---
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
 
@@ -34,6 +34,7 @@ ms.locfileid: "67185655"
     | **Местоположение.** | Запад США | Выберите ближайший [регион](https://azure.microsoft.com/regions/). |
     | **Ценовая категория** | Free | Поработайте со службой Azure SignalR бесплатно. |
     | **Число единиц** |  Не применяется | Число единиц определяет количество подключений, которые поддерживает ваш экземпляр службы SignalR. Это можно настроить только для цен. категории "Стандартный". |
+    | **Режим службы** |  Бессерверные приложения | Для использования с Функциями Azure или REST API. |
 
     ![Создание службы SignalR](../media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-create.png)
 

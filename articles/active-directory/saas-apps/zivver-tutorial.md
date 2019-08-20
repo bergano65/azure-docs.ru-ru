@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/22/2019
 ms.author: jeedes
-ms.openlocfilehash: e18c5dfe3649f74a9f84c605785ca99748298bea
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc78b08c25ada2bf1ed67f4c27246bc873823516
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086132"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943122"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Руководство по Интеграция Azure Active Directory с ZIVVER
 
@@ -107,7 +107,7 @@ ms.locfileid: "67086132"
 
     В текстовом поле **Идентификатор** введите URL-адрес: `https://app.zivver.com/SAML/Zivver`
 
-5. Приложение ZIVVER ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**. Приложение ZIVVER ожидает, что  **nameidentifier** будет сопоставляться с  **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок  **Изменить** .
+5. Приложение ZIVVER ожидает проверочные утверждения SAML в определенном формате, что требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение ZIVVER ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
     ![image](common/edit-attribute.png)
 
@@ -218,7 +218,7 @@ ms.locfileid: "67086132"
 
 ### <a name="create-zivver-test-user"></a>Создание тестового пользователя ZIVVER
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ZIVVER. Обратитесь к  [группе поддержки ZIVVER](https://support.zivver.com/), чтобы добавить пользователей на платформу ZIVVER. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ZIVVER. Обратитесь в [службу поддержки ZIVVER](https://support.zivver.com/), чтобы добавить пользователей на платформу ZIVVER. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -232,5 +232,5 @@ ms.locfileid: "67086132"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

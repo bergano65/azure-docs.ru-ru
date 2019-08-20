@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd8d4a4bd21e0f7a7f483e139beb1840b5c3cc7f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3a32548bdafa999fe72e8b2f8e3b80961ebe3c9a
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165084"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-braze"></a>Руководство по интеграции Azure Active Directory с Braze
 
@@ -115,7 +115,7 @@ ms.locfileid: "67165084"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.braze.com/sign_in`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки Braze](mailto:support@braze.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > В качестве поддомена используйте координирующий поддомен, указанный в URL-адресе экземпляра Braze. Например, если ваш экземпляр — US-01, ваш URL-адрес будет иметь значение https://dashboard-01.braze.com. Это означает, что ваш поддомен будет представлять собой панель мониторинга — 01.
 
 6. Приложение Braze ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "67165084"
 
 ### <a name="configure-braze-single-sign-on"></a>Настройка единого входа Braze
 
-Чтобы настроить единый вход на стороне **Braze**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Braze](mailto:support@braze.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Braze**, необходимо убедиться, что диспетчер учетных записей Braze включил единый вход SAML для вашей учетной записи. После включения можно перейти в раздел "Параметры компании > Параметры безопасности" и переключить параметр единого входа SAML в положение ВКЛ. В этом разделе необходимо скопировать и вставить скачанный **Сертификат (Base64)** вместе с добавлением имени SAML. 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -218,7 +218,7 @@ ms.locfileid: "67165084"
 
 ### <a name="create-braze-test-user"></a>Создание тестового пользователя Braze
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Braze. Обратитесь в [группу поддержки Braze](mailto:support@braze.com), чтобы добавить пользователей на платформу Braze. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Braze. Вы можете добавить пользователей на платформу Braze. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -232,4 +232,4 @@ ms.locfileid: "67165084"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

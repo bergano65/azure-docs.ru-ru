@@ -11,12 +11,12 @@ ms.author: sihhu
 ms.reviewer: trbye
 ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6692f64dc7e7fa2799f9095af39171a2ddc0e76d
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 241c84212132ee90e71291758e094cb4a115f2e2
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360916"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018081"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство по Подготовка данных для моделирования регрессии
 
@@ -56,7 +56,7 @@ ms.locfileid: "68360916"
 
 Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/regression-part1-data-prep.ipynb**.
 
-1. Чтобы создать среду Miniconda для службы "Машинное обучение Azure" с помощью Python и установить пакет SDK, выполните действия, описанные в [этом кратком руководстве](setup-create-workspace.md#sdk).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
+1. Выполните инструкции из руководства по [установке пакета SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 1. Пакет `azureml-dataprep` автоматически устанавливается при установке пакета SDK.
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
@@ -100,10 +100,11 @@ import azureml.dataprep as dprep
 
 ```python
 from IPython.display import display
-dataset_root = "https://dprepdata.blob.core.windows.net/demo"
 
-green_path = "/".join([dataset_root, "green-small/*"])
-yellow_path = "/".join([dataset_root, "yellow-small/*"])
+green_path = "https://dprepdata.blob.core.windows.net/demo/green-small/*"
+yellow_path = "https://dprepdata.blob.core.windows.net/demo/yellow-small/*"
+
+# (optional) Download and view a subset of the data: https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv
 
 green_df_raw = dprep.read_csv(
     path=green_path, header=dprep.PromoteHeadersMode.GROUPED)
@@ -113,9 +114,6 @@ yellow_df_raw = dprep.auto_read_file(path=yellow_path)
 display(green_df_raw.head(5))
 display(yellow_df_raw.head(5))
 ```
-
-> [!Note]
-> URL-адрес в этом примере не является полным URL-адресом. Он ссылается на пример папки с в большом двоичном объекте. Полный URL-адрес для некоторых данных: https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv.
 
 Объект `Dataflow` похож на кадр данных и представляет собой ряд неизменяемых операций с данными с отложенным вычислением. Операции могут быть добавлены путем вызова различных доступных методов преобразования и фильтрации. Результатом добавления операции к `Dataflow` всегда будет новый объект `Dataflow`.
 
@@ -156,7 +154,7 @@ green_df = (green_df_raw
                 "Trip_distance": "distance"
             })
             .keep_columns(columns=useful_columns))
-green_df.head(5)
+display(green_df.head(5))
 ```
 
 <div>
@@ -290,7 +288,7 @@ yellow_df = (yellow_df_raw
                  "trip_distance": "distance"
              })
              .keep_columns(columns=useful_columns))
-yellow_df.head(5)
+display(yellow_df.head(5))
 ```
 
 Вызовите функцию `append_rows()` для данных о зеленых такси, чтобы добавить данные о желтых такси. Создается новый объединенный кадр данных.

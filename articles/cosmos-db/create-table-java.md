@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование API таблиц с Java в Azure Cosmos DB
+title: Использование API таблиц и Java для создания приложения — Azure Cosmos DB
 description: В этом руководстве показано, как использовать API таблицы Azure Cosmos DB для создания приложения с помощью портала Azure и Java
 author: SnehaGunda
 ms.service: cosmos-db
@@ -8,12 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.openlocfilehash: 3610a5be356f306e4f92ea35d399a888f568d6d3
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: seo-java-august2019
+ms.openlocfilehash: d1eade1b5bdbbce2bc47c5e6177d21c7ff835936
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326195"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933954"
 ---
 # <a name="quickstart-build-a-table-api-app-with-java-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Java и Azure Cosmos DB
 
@@ -84,7 +85,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
    ![Просмотр и копирование необходимой информации строки подключения на панели строки подключения](./media/create-table-java/connection-string.png)
 

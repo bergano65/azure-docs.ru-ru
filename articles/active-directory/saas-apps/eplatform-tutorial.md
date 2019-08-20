@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 61946f77ddffe999e55acd09e3957d91c621492b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 557f07f3e99365bbfca7f0b0d70c0c0cd928c2e6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67103237"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944387"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-eplatform"></a>Руководство по Интеграция Azure Active Directory с ePlatform
 
@@ -117,7 +117,7 @@ ms.locfileid: "67103237"
 
     ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
 
-7. Приложение ePlatform ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+7. Приложение ePlatform ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -212,7 +212,7 @@ ms.locfileid: "67103237"
 
 ### <a name="create-eplatform-test-user"></a>Создание тестового пользователя ePlatform
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ePlatform. Обратитесь в  [группу поддержки ePlatform](https://help.eplatform.co/hc/en-us), чтобы добавить пользователей на платформу ePlatform. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ePlatform. Обратитесь в [службу поддержки ePlatform](https://help.eplatform.co/hc/en-us), чтобы добавить пользователей на платформу ePlatform. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -226,5 +226,5 @@ ms.locfileid: "67103237"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

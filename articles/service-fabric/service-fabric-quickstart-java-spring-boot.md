@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Spring Boot в Service Fabric в Azure | Документы Майкрософт
+title: Краткое руководство. Создание приложения Spring Boot в Azure Service Fabric
 description: В этом кратком руководстве вы развернете приложение Spring Boot для Azure Service Fabric, используя пример приложения Spring Boot.
 services: service-fabric
 documentationcenter: java
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
-ms.custom: mvc, devcenter
-ms.openlocfilehash: f7cf3f4cc0ceba89c031f5c36e90bbd6ef3dd20a
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: mvc, devcenter, seo-java-august2019
+ms.openlocfilehash: 403eec7bf4d45b5b210009588c783cc244d24387
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327160"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977087"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Service Fabric
 
@@ -149,7 +149,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     
     ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java-spring-boot/sfxlocalhost.png)
 
-1. Перейдите в папку `gs-spring-boot/SpringServiceFabric`.
+1. Откройте папку `gs-spring-boot/SpringServiceFabric`.
 1. Выполните следующую команду, чтобы подключиться к локальному кластеру.
 
     ```bash
@@ -176,13 +176,13 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 Для масштабирования службы веб-интерфейса сделайте следующее:
 
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
-1. Щелкните многоточие рядом с узлом **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и выберите **Масштабировать службу**.
+1. Щелкните многоточие ( **...** ) рядом с узлом **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и выберите **Масштабировать службу**.
 
     ![Масштабирование службы в Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/sfxscaleservicehowto.png)
 
     Теперь вы можете выбрать нужное количество экземпляров службы.
 
-1. Укажите здесь число **3** и щелкните **Масштабировать службу**.
+1. Измените количество на **3** и щелкните **Масштабировать службу**.
 
     Масштабирование службы можно настроить и с помощью командной строки, как описано ниже.
 
@@ -194,7 +194,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     sfctl service update --service-id 'SpringServiceFabric~SpringGettingStarted' --instance-count 3 --stateless 
     ``` 
 
-1. Щелкните узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).
+1. Выберите узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).
 
     ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java-spring-boot/sfxscaledservice.png)
 
@@ -207,7 +207,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 Чтобы продемонстрировать отработку отказа службы, с помощью Service Fabric Explorer моделируется перезагрузка узла. Убедитесь, что запущен только один экземпляр службы.
 
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
-1. Нажмите кнопку с многоточием рядом с узлом, на котором запущен экземпляр этой службы, и выберите команду перезапуска узла.
+1. Щелкните многоточие ( **...** ) рядом с узлом, на котором запущен экземпляр этой службы, и перезапустите узел.
 
     ![Service Fabric Explorer с командой перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/sfxhowtofailover.png)
 1. Этот экземпляр службы перемещается в другой узел без простоев в работе приложения.

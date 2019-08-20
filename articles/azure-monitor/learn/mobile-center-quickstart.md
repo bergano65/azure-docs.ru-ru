@@ -11,12 +11,12 @@ ms.reviewer: daviste
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: b8ce08c662e1615b62160e0c681a2fe8dbcb2be1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 40b3e0260e08ab5a8870c726042d06d80393fb15
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447040"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68849079"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
@@ -33,7 +33,7 @@ ms.locfileid: "67447040"
 
 ## <a name="onboard-to-app-center"></a>Знакомство с App Center
 
-Прежде чем использовать службу Application Insights в мобильном приложении, ее необходимо подключить к [App Center](https://docs.microsoft.com/mobile-center/). Application Insights не получает данные телеметрии из мобильного приложения напрямую. Вместо этого приложение отправляет данные телеметрии пользовательских событий в App Center. После этого App Center экспортирует копии этих пользовательских событий в Application Insights по мере их получения.
+Прежде чем использовать службу Application Insights в мобильном приложении, ее необходимо подключить к [App Center](https://docs.microsoft.com/mobile-center/). Application Insights не получает данные телеметрии из мобильного приложения напрямую. Вместо этого приложение отправляет данные телеметрии пользовательских событий в App Center. После этого App Center экспортирует копии этих пользовательских событий в Application Insights по мере их получения. (Это не относится к [пакету SDK Application Insights для JS](https://github.com/Microsoft/ApplicationInsights-JS) или [подключаемому модулю React Native](https://github.com/Microsoft/ApplicationInsights-JS/tree/master/vNext/extensions/applicationinsights-react-native), которые отправляют данные телеметрии непосредственно в Application Insights.)
 
 Чтобы подключить приложение, выполните действия из краткого руководства по App Center для каждой платформы, которую поддерживает ваше приложение. Создайте отдельные экземпляры App Center для каждой платформы:
 

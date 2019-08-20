@@ -1,5 +1,5 @@
 ---
-title: Импорт фразы продолжительностью с помощью Node. js-LUIS
+title: Импорт речевых фрагментов с использованием Node.js в LUIS
 titleSuffix: Azure Cognitive Services
 description: Сведения о создании приложения LUIS программным образом из существующих данных в формате CSV с помощью API разработки LUIS.
 services: cognitive-services
@@ -8,23 +8,23 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 79a372087e162fedc5b2e014a5cd4976df3cb2ce
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
-ms.translationtype: MT
+ms.openlocfilehash: 192c5c7a2d4c671aec0dcf72bef78abd1845b1ea
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637820"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946074"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
 Служба LUIS предоставляет программный API, выполняющий те же задачи, что и веб-сайт [LUIS](luis-reference-regions.md). Это позволит сэкономить время при уже имеющихся данных, поэтому создавать приложение LUIS программным способом можно быстрее, чем путем ввода информации вручную. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-* Войдите на веб-сайт [Luis](luis-reference-regions.md) и найдите свой [ключ разработки](luis-concept-keys.md#authoring-key) в разделе Параметры учетной записи. Этот ключ используется для вызова API разработки.
+* Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 * В этом руководстве используется CSV-файл для файлов журнала пользовательских запросов в вымышленной компании. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
 * Установите Node.js последней версии с NPM. Скачать эту версию можно [здесь](https://nodejs.org/en/download/).
@@ -35,24 +35,24 @@ ms.locfileid: "68637820"
 ## <a name="map-preexisting-data-to-intents-and-entities"></a>Сопоставление существующих данных с намерениями и сущностями
 Даже если у вас есть система, которая была создана без учета LUIS, и если она содержит текстовые данные, сопоставляемые с разными задачами, которые хотят выполнять пользователи, вы можете осуществлять сопоставления из существующих категорий пользовательского ввода с намерениями в LUIS. Если вы можете определить важные слова или фразы в речи пользователя, эти слова можно сопоставлять с сущностями.
 
-[`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv) Откройте файл. Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией. 
+Откройте файл [`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv). Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией. 
 
 ![CSV-файл уже имеющихся данных](./media/luis-tutorial-node-import-utterances-csv/csv.png) 
 
 Вы видите, что столбец **RequestType** может быть намерениями, а в столбце **Request** показан пример высказывания. Другие поля могут быть сущностями, если они встречаются в высказывании. Поскольку здесь есть намерения, сущности и примеры высказываний, вы выполнили требования к примеру простого приложения.
 
 ## <a name="steps-to-generate-a-luis-app-from-non-luis-data"></a>Действия по созданию приложения LUIS из данных, отличных от LUIS
-Чтобы создать новое приложение LUIS из CSV-файла, выполните следующие действия.
+Чтобы создать приложение LUIS из CSV-файла, сделайте следующее.
 
 * Проанализируйте данные из CSV-файла:
-    * Преобразуйте в формат, который можно передать в LUIS с помощью API-интерфейса разработки. 
-    * Из проанализированных данных Соберите сведения о случаях и сущностях. 
-* Создание вызовов API:
+    * Выполните преобразование в формат, который можно передать в LUIS с помощью API разработки. 
+    * Из проанализированных данных соберите сведения о намерениях и сущностях. 
+* Выполните вызовы API разработки:
     * Создайте приложение.
-    * Добавление целей и сущностей, собранных из проанализированных данных. 
+    * Добавьте намерения и сущности, собранные из проанализированных данных. 
     * После создания приложения LUIS можно добавить примеры высказываний из проанализированных данных. 
 
-Этот поток программы можно увидеть в последней части `index.js` файла. Скопируйте или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/index.js) этот код и сохраните его в `index.js`.
+Этот поток программы можно увидеть в последней части файла `index.js`. Скопируйте или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/index.js) этот код и сохраните его в `index.js`.
 
    [!code-javascript[Node.js code for calling the steps to build a LUIS app](~/samples-luis/examples/build-app-programmatically-csv/index.js)]
 
@@ -144,7 +144,7 @@ const LUIS_versionId = "0.1";
 > node index.js
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```console
 > npm start
@@ -179,12 +179,12 @@ upload done
 
 
 ## <a name="open-the-luis-app"></a>Открытие приложения LUIS
-После завершения сценария можно войти в [Luis](luis-reference-regions.md) и просмотреть приложение Luis, созданное в разделе **Мои приложения**. Вы также увидите высказывания, добавленные в намерения **TurnOn**, **TurnOff** и **None**.
+После выполнения скрипта вы сможете войти в [LUIS](luis-reference-regions.md) и увидеть созданное приложение LUIS в разделе **Мои приложения**. Вы также увидите высказывания, добавленные в намерения **TurnOn**, **TurnOff** и **None**.
 
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)

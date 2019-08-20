@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 279f6970c34acbfea645366f7e965c830873fdbf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: efd64830c0d9afa83838adef96cf1c103b4485e8
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67089180"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943276"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tas"></a>Руководство по интеграции Azure Active Directory с приложением TAS
 
@@ -150,7 +150,7 @@ ms.locfileid: "67089180"
 
     c. В текстовое поле **Введите URL-адрес** вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    d. В Блокноте откройте скачанный на портале Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле **Enter Certification** (Введите сертификат).
+    d. В Блокноте откройте скачанный на портале Azure сертификат формата Base64, скопируйте его содержимое и вставьте в поле**Enter Certification** (Введите сертификат).
 
     д. В текстовом поле **Enter New IP** (Введите новый IP-адрес) введите IP-адрес.
 
@@ -216,7 +216,7 @@ ms.locfileid: "67089180"
 
 ### <a name="create-tas-test-user"></a>Создание тестового пользователя в TAS
 
-В этом разделе описано создание пользователя Britta Simon в приложении TAS. Обратитесь в  [группу поддержки TAS](mailto:support@combtas.com), чтобы добавить пользователей на платформу TAS. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано создание пользователя Britta Simon в приложении TAS. Обратитесь в [службу поддержки TAS](mailto:support@combtas.com), чтобы добавить пользователей на платформу TAS. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -230,5 +230,5 @@ ms.locfileid: "67089180"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

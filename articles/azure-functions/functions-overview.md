@@ -1,7 +1,6 @@
 ---
 title: Обзор Функций Azure | Документация Майкрософт
 description: Узнайте, как использовать Функции Azure для оптимизации асинхронных рабочих нагрузок за считанные минуты.
-services: functions
 documentationcenter: na
 author: mattchenderson
 manager: jeconnoc
@@ -13,15 +12,15 @@ ms.topic: overview
 ms.date: 10/03/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 4fbe3a5d308559a4ac9e1a781f3a4f385c767f90
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 36dbfca577f69c3a7c49d03ef31bc18c71222f95
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348194"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881297"
 ---
 # <a name="an-introduction-to-azure-functions"></a>Общие сведения о Функциях Azure  
-Функции Azure — это решение для быстрого запуска фрагментов кода (функций) в облаке. Вы можете быстро написать код для решения своих задач, не беспокоясь о наличии приложения или инфраструктуры для его выполнения. Функции делают разработку более продуктивной. Кроме того, вы можете использовать любой язык программирования, например C#, Java, JavaScript, Python или PHP. Оплата взимается только один раз при выполнении кода, а масштабирование в Azure выполняется при необходимости. Функции Azure предоставляют возможность разрабатывать в Microsoft Azure [независимые от сервера](https://azure.microsoft.com/solutions/serverless/) приложения.
+Функции Azure — это решение для быстрого запуска фрагментов кода (функций) в облаке. Вы можете быстро написать код для решения своих задач, не беспокоясь о наличии приложения или инфраструктуры для его выполнения. Функции Azure повышают производительность при разработке. Кроме того, вы можете использовать такие языки программирования, как C#, Java, JavaScript, PowerShell и Python. Оплата взимается только один раз при выполнении кода, а масштабирование в Azure выполняется при необходимости. Функции Azure предоставляют возможность разрабатывать в Microsoft Azure [независимые от сервера](https://azure.microsoft.com/solutions/serverless/) приложения.
 
 В этой статье представлен общий обзор функций Azure. Чтобы приступить к работе с Функциями Azure сразу, [создайте первую функцию Azure](functions-create-first-azure-function.md). Дополнительные технические сведения о Функциях см. в статье [Справочник разработчика по функциям Azure](functions-reference.md).
 

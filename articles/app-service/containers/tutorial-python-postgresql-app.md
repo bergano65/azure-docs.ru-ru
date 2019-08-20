@@ -1,39 +1,38 @@
 ---
-title: Выполнение приложения Python (Django) с подключением к PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
-description: Узнайте, как запустить управляемое данными приложение Python в Azure с подключением к базе данных PostgreSQL. В этом руководстве используется Django.
+title: Запуск веб-приложения Python (Django) с подключением к PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
+description: Узнайте, как запустить управляемое данными веб-приложение Python (Django) в Azure с подключением к базе данных PostgreSQL.
 services: app-service\web
 documentationcenter: python
 author: cephalin
-manager: jeconnoc
+manager: gwallace
 ms.service: app-service-web
 ms.workload: web
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
-ms.reviewer: beverst
 ms.custom: seodec18
-ms.openlocfilehash: 3fbc9429da393f4df14ade57d6bd20219b5fcfa2
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 1cb9cd72908dc88ef2890764bc8d3fad88a82707
+ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617526"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68951907"
 ---
-# <a name="build-a-python-and-postgresql-app-in-azure-app-service"></a>Создание приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
+# <a name="build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать управляемое данными приложение Python, используя в качестве серверной части базу данных PostgreSQL. После выполнения всех действий у вас будет приложение Django, работающее в Службе приложений Azure с поддержкой Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Это руководство демонстрирует создание управляемого данными веб-приложения Python (Django), используя в качестве серверной части базу данных PostgreSQL. После выполнения всех действий у вас будет приложение Django, работающее в Azure в Linux.
 
-![Приложение Python Django в Службе приложений Azure под управлением Linux](./media/tutorial-python-postgresql-app/django-admin-azure.png)
+![Веб-приложение Python Django в Службе приложений Azure в Linux](./media/tutorial-python-postgresql-app/django-admin-azure.png)
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
-> * Подключение приложения Python к PostgreSQL
-> * Развертывание приложения в Azure
+> * подключение веб-приложения Python к PostgreSQL;
+> * развертывание веб-приложения Python в Azure;
 > * просмотр журналов диагностики;
-> * Управление приложением на портале Azure.
+> * управление веб-приложением Python на портале Azure.
 
 > [!NOTE]
 > Прежде чем создавать базу данных Azure для PostgreSQL, проверьте [поколения вычислительных ресурсов, доступные в вашем регионе](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#compute-generations-and-vcores).
@@ -93,7 +92,7 @@ git clone https://github.com/Azure-Samples/djangoapp.git
 cd djangoapp
 ```
 
-Этот пример репозитория содержит приложение [Django](https://www.djangoproject.com/). Точно такое управляемое данными приложение можно получить, следуя руководству по началу работы [в документации по Django](https://docs.djangoproject.com/en/2.1/intro/tutorial01/). Это руководство не обучает вас работе с Django, но в нем показано, как развертывать и запускать приложения Django (или другое управляемое данными приложение Python) в Службе приложений Azure.
+Этот пример репозитория содержит приложение [Django](https://www.djangoproject.com/). Точно такое управляемое данными приложение можно получить, следуя руководству по началу работы [в документации по Django](https://docs.djangoproject.com/en/2.1/intro/tutorial01/). Это руководство не обучает вас работе с Django, но в нем показано, как развертывать и запускать веб-приложение Django (или другое управляемое данными приложение Python) в Службе приложений Azure.
 
 ### <a name="configure-environment"></a>Настройка среды
 
@@ -129,7 +128,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-После полной загрузки приложения вы увидите следующее сообщение:
+После полной загрузки веб-приложения Django вы увидите следующее сообщение:
 
 ```bash
 Performing system checks...
@@ -216,7 +215,7 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 
 ## <a name="connect-python-app-to-production-database"></a>Подключение приложения Python к рабочей базе данных
 
-На этом шаге пример приложения Django подключается к серверу созданной базы данных Azure для PostgreSQL.
+На этом шаге веб-приложение Django подключается к серверу созданной базы данных Azure для PostgreSQL.
 
 ### <a name="create-empty-database-and-user-access"></a>Создание пустой базы данных и доступа пользователя
 
@@ -284,11 +283,10 @@ python manage.py runserver
 
 ### <a name="configure-repository"></a>Настройка репозитория
 
-Во входящих запросах Django проверяет заголовок `HTTP_HOST`. Чтобы приложение Django выполнялось в Службе приложений Azure, необходимо добавить полное доменное имя приложения для разрешенных узлов. Откройте _azuresite/settings.py_ и найдите параметр `ALLOWED_HOSTS`. Измените строку следующим образом:
+Во входящих запросах Django проверяет заголовок `HTTP_HOST`. Чтобы веб-приложение Django выполнялось в Службе приложений Azure, необходимо добавить полное доменное имя приложения для разрешенных узлов. Откройте _azuresite/settings.py_ и найдите параметр `ALLOWED_HOSTS`. Измените строку следующим образом:
 
 ```python
-ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net',
-                 '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
 ```
 
 Далее, Django не поддерживает [обработку статических файлов в рабочей среде](https://docs.djangoproject.com/en/2.1/howto/static-files/deployment/), поэтому необходимо включить эту функцию вручную. В этом учебнике используется [WhiteNoise](https://whitenoise.evans.io/en/stable/). Пакет WhiteNoise уже входит в _requirements.txt_. Чтобы использовать Django, его необходимо настроить. 
@@ -386,13 +384,13 @@ http://<app-name>.azurewebsites.net
 
 Вы должны увидеть созданный ранее вопрос опроса. 
 
-В репозитории Служба приложений Azure обнаруживает проект Django во время поиска _wsgi.py_ в каждом подкаталоге, который создается по умолчанию с помощью `manage.py startproject`. С помощью найденного файла загружается приложение Django. Дополнительные сведения о том, как загружаются приложения Python с помощью Службы приложений Azure, см. [здесь](how-to-configure-python.md).
+В репозитории Служба приложений Azure обнаруживает проект Django во время поиска _wsgi.py_ в каждом подкаталоге, который создается по умолчанию с помощью `manage.py startproject`. С помощью найденного файла загружается веб-приложение Django. Дополнительные сведения о том, как загружаются приложения Python с помощью Службы приложений Azure, см. [здесь](how-to-configure-python.md).
 
 Перейдите к `<app-name>.azurewebsites.net` и войдите под именем уже созданного администратора. При желании попробуйте создать некоторые дополнительные вопросы опроса.
 
 ![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-azure.png)
 
-**Поздравляем!** Вы запустили приложение Python в службе приложений для Linux.
+**Поздравляем!** Вы запустили веб-приложение Python (Django) в Службе приложений Azure для Linux.
 
 ## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 
@@ -418,10 +416,10 @@ http://<app-name>.azurewebsites.net
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
-> * Подключение приложения Python к PostgreSQL
-> * Развертывание приложения в Azure
+> * подключение веб-приложения Python к PostgreSQL;
+> * развертывание веб-приложения Python в Azure;
 > * просмотр журналов диагностики;
-> * Управление приложением на портале Azure.
+> * управление веб-приложением Python на портале Azure.
 
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 

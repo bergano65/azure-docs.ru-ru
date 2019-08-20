@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-table
 ms.topic: overview
 ms.date: 07/26/2019
 ms.author: sngun
-ms.openlocfilehash: be6a402673fd2d3ba01451c6ea04e723cbdfa292
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 5b2e2c51eaa878ba0ce8bc31c001575acebe6919
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68597506"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967546"
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство с Azure Cosmos DB. API таблиц
 
@@ -58,8 +58,8 @@ ms.locfileid: "68597506"
 * [Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET](tutorial-develop-table-dotnet.md)
 * [Запрос табличных данных в базе данных Azure Cosmos DB с помощью API таблицы (предварительная версия)](tutorial-query-table.md)
 * [Как настроить глобальное распределение Azure Cosmos DB с помощью API таблицы](tutorial-global-distribution-table.md)
-* [API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске](table-sdk-dotnet.md)
-* [API таблиц Azure Cosmos DB (Java)](table-sdk-java.md)
-* [API таблиц Azure Cosmos DB (Node.js)](table-sdk-nodejs.md)
+* [Пакет SDK таблиц Azure Cosmos DB для .NET Standard](table-sdk-dotnet-standard.md)
+* [Пакет SDK таблиц Azure Cosmos DB для .NET](table-sdk-dotnet.md)
+* [Пакет SDK таблиц Azure Cosmos DB для Java](table-sdk-java.md)
+* [Пакет SDK таблиц Azure Cosmos DB для Node.js](table-sdk-nodejs.md)
 * [Azure Cosmos DB Table API for Python: Release notes and resources](table-sdk-python.md) (API таблицы Python для базы данных Azure Cosmos DB. Заметки о выпуске и ресурсы)
-

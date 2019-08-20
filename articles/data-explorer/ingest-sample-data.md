@@ -5,23 +5,23 @@ author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: e80322cda671e2145cf3e65aa1457f1fa1827737
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: quickstart
+ms.date: 08/12/2019
+ms.openlocfilehash: c803de599f6be98512b15e927c6d15f1c7d95ff1
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60759287"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515743"
 ---
-# <a name="ingest-sample-data-into-azure-data-explorer"></a>Прием демонстрационных данных в обозреватель данных Azure
+# <a name="quickstart-ingest-sample-data-into-azure-data-explorer"></a>Краткое руководство. Прием демонстрационных данных в обозреватель данных Azure
 
 В этой статье показано, как принять (загрузить) демонстрационные данные в базу данных обозревателя данных Azure. Существует [несколько способов приема данных](ingest-data-overview.md). В этой статье описан базовый метод, который подходит для тестирования.
 
 > [!NOTE]
-> У вас уже есть эти данные, если вы выполнили инструкции из статьи [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md).
+> У вас должны быть эти данные, если вы выполнили инструкции из статьи о [приеме данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [Тестовый кластер и база данных](create-cluster-database-portal.md)
 
@@ -54,13 +54,8 @@ ms.locfileid: "60759287"
 
     ![Результаты запроса](media/ingest-sample-data/query-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
-
-> [!div class="nextstepaction"]
-> [Написание запросов](write-queries.md)
-
-> [!div class="nextstepaction"]
-> [Прием данных в обозреватель данных Azure](ingest-data-overview.md)
+* Дополнительные сведения о методах приема данных см. в [этой статье](ingest-data-overview.md).
+* [Краткое руководство по запросу данных в пользовательском веб-интерфейсе Azure Data Explorer](web-query-data.md).
+* [Написание запросов](write-queries.md) с помощью языка запросов Kusto.

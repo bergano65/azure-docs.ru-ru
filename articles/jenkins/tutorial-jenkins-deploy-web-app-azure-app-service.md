@@ -8,12 +8,13 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.openlocfilehash: 019c4a8f77f2664c68dcc6499fb2f27cc0d1447c
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: seo-java-august2019
+ms.openlocfilehash: 955ce9724d576e56766ab3d87a374a65e4ca5c0e
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326926"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967126"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
@@ -170,7 +171,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
    | **Идентификатор клиента** | <*yourAzureActiveDirectoryTenant-ID*> | Значение GUID `tenant` для клиента Azure Active Directory. | 
    | **Идентификатор** | <*yourAzureServicePrincipalName*> | Значение `displayName` для субъекта-службы Azure. | 
 
-1. Чтобы проверить, работает ли субъект-служба, выберите **Verify Service Principal** (Проверить субъект-службу). Когда все будет готово, нажмите кнопку **ОК**.
+1. Чтобы проверить, работает ли субъект-служба, выберите **Verify Service Principal** (Проверить субъект-службу). Закончив, нажмите кнопку **OK**.
 
 Теперь создайте конвейер Jenkins для сборки и развертывания приложения.
 
@@ -182,7 +183,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    ![Выбор пункта New Item (Создать элемент)](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-new-item.png)
 
-1. Укажите имя для задания конвейера, например My-Java-Web-App, и выберите **Pipeline** (Конвейер). В нижней части окна нажмите кнопку **ОК**.  
+1. Укажите имя для задания конвейера, например My-Java-Web-App, и выберите **Pipeline** (Конвейер). Нажмите кнопку **OK** внизу.  
 
    ![Выбор элемента Pipeline (Конвейер)](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-pipeline.png)
 
@@ -200,7 +201,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
       ![Выбор элемента Prepare an environment for the run (Подготовка среды для запуска) и указание переменных среды](media/tutorial-jenkins-deploy-web-app-azure-app-service/prepare-environment-for-run.png)
 
-1. Когда все будет готово, нажмите **Сохранить**.
+1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
 Теперь создайте скрипты сборки и развертывания для Jenkins.
 
@@ -273,7 +274,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    ![Указание скрипта для конвейера](media/tutorial-jenkins-deploy-web-app-azure-app-service/set-up-jenkins-github.png)
 
-1. Когда все будет готово, нажмите **Сохранить**.
+1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
 Теперь выполните сборку и разверните приложение в Службе приложений Azure. 
 

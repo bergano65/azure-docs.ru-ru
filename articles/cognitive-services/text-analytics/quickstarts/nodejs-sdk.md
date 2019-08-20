@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Вызов API анализа текста с использованием Node.js
+title: Краткое руководство. Клиентская библиотека Анализа текста для Node.js | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
 description: Информация и примеры кода, которые помогут вам приступить к работе с API анализа текста.
 services: cognitive-services
@@ -10,86 +10,124 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 07/30/2019
 ms.author: shthowse
-ms.openlocfilehash: 9b8a713d58d5753e04de050e0bc961b5e8388123
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 8590acbbd6001c1f214589298e454c1e75f93d67
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697480"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883538"
 ---
-# <a name="quickstart-using-nodejs-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Node.js для вызова API анализа текста Cognitive Services
+# <a name="quickstart-text-analytics-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека Анализа текста для .NET
 <a name="HOLTop"></a>
 
-В этом кратком руководстве содержатся сведения об анализе языка с помощью пакета SDK Анализа текста для Node.js. Так как REST API [Анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) совместим с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/textAnalytics.js).
+Начало работы с клиентской библиотекой Анализа текста для Node.js. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. 
 
-Техническую документацию по API-интерфейсам см. в разделе [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) (Определения API).
+Используйте клиентскую библиотеку Анализа текста для Node.js, чтобы выполнить следующие действия:
+
+* Анализ мнений
+* Определение языка
+* Распознавание сущностей
+* Извлечение ключевой фразы
+
+[Справочная документация](https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/textanalytics?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Node.js](https://nodejs.org/)
-* [Пакет SDK для Node.js](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) службы "Анализ текста". Пакет SDK можно установить с помощью следующей строки:
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Текущая версия [пакета SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
-    `npm install azure-cognitiveservices-textanalytics`
+## <a name="setting-up"></a>Настройка
 
-[!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
+### <a name="create-a-text-analytics-azure-resource"></a>Создание ресурса для Анализа текста в Azure
 
-Также требуются [конечная точка и ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), созданный автоматически во время регистрации.
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Анализа текста с помощью [портала Azure](../../cognitive-services-apis-create-account.md) или [Azure CLI](../../cognitive-services-apis-create-account-cli.md) на локальном компьютере. Также можно:
 
-## <a name="create-a-nodejs-application-and-install-the-sdk"></a>Создание приложения Node.js и установка пакета SDK
+* получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. (после регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/));  
+* Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
 
-После установки Node.js создайте проект узла. Создайте каталог для приложения и перейдите в этот каталог.
+После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `TEXTANALYTICS_SUBSCRIPTION_KEY`.
 
-```mkdir myapp && cd myapp```
+### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
 
-Запустите ```npm init```, чтобы создать приложение Node с помощью файла package.json. Установите пакеты NPM: `ms-rest-azure` и `azure-cognitiveservices-textanalytics`.
+В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
 
-```npm install azure-cognitiveservices-textanalytics ms-rest-azure```
+```console
+mkdir myapp && cd myapp
+```
 
-Файл package.json этого приложения будет дополнен зависимостями.
+Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`. 
 
-## <a name="authenticate-your-credentials"></a>Аутентификация учетных данных
+```console
+npm init
+```
 
-Создайте файл `index.js` в корне проекта и импортируйте установленные библиотеки.
+Создайте файл с именем `index.js` и импортируйте следующие библиотеки:
 
 ```javascript
 const CognitiveServicesCredentials = require("ms-rest-azure").CognitiveServicesCredentials;
 const TextAnalyticsAPIClient = require("azure-cognitiveservices-textanalytics");
 ```
 
-Создайте переменную для ключа подписки службы "Анализ текста".
+Создайте переменные для конечной точки Azure и ключа ресурса. Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена.
+
+[!INCLUDE [text-analytics-find-resource-information](../includes/find-azure-resource-info.md)]
 
 ```javascript
+// replace this endpoint with the correct one for your Azure resource. 
+let endpoint = "https://westus.api.cognitive.microsoft.com/";
+// This sample assumes you have created an environment variable for your key
+let key = var apiKey = process.env.TEXTANALYTICS_SUBSCRIPTION_KEY;
 let credentials = new CognitiveServicesCredentials(
-    "enter-your-key-here"
+    key
 );
 ```
 
-> [!Tip]
-> Для безопасного развертывания секретов в рабочих системах рекомендуем использовать [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-net).
->
+### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
-## <a name="create-a-text-analytics-client"></a>Создание клиента Анализа текста
+Установите пакеты NPM: `ms-rest-azure` и `azure-cognitiveservices-textanalytics`.
 
-Создайте объект `TextAnalyticsClient`, используя `credentials` в качестве параметра. Укажите правильный регион Azure для своей подписки Анализа текста.
+```console
+npm install azure-cognitiveservices-textanalytics ms-rest-azure
+```
+
+Файл `package.json` этого приложения будет дополнен зависимостями.
+
+## <a name="object-model"></a>Объектная модель
+
+Клиент Анализа текста — это объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest), который выполняет проверку подлинности в Azure с использованием ключа. Этот клиент предоставляет несколько методов для анализа текста по отдельным строкам или пакетам строк.
+
+Текст отправляется в API в формате списка `documents` объектов `dictionary`, содержащих комбинации атрибутов `id`, `text` и `language` в зависимости от используемого метода. Атрибут `text` содержит текст для анализа в источнике `language`, а `id` может иметь любое значение. 
+
+Объект в ответе — это список, содержащий аналитику по каждому документу. 
+
+## <a name="code-examples"></a>Примеры кода
+
+* [аутентификация клиента](#authenticate-the-client);
+* [Анализ тональности](#sentiment-analysis).
+* [Пример. Как определить язык с помощью Анализа текста](#language-detection)
+* [Распознавание сущностей](#entity-recognition)
+* [Пример. Как извлечь ключевые фразы с помощью Анализа текста](#key-phrase-extraction)
+
+
+## <a name="authenticate-the-client"></a>Аутентификация клиента
+
+Создайте объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/azure-cognitiveservices-textanalytics/textanalyticsclient?view=azure-node-latest), используя `credentials` и `endpoint` в качестве параметров.
 
 ```javascript
 //Replace 'westus' with the correct region for your Text Analytics subscription
 let client = new TextAnalyticsAPIClient(
     credentials,
-    "https://westus.api.cognitive.microsoft.com/"
+    endpoint
 );
 ```
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-Создайте список объектов, содержащих документы, которые необходимо проанализировать. Полезные данные этого API состоят из списка `documents`, которые содержат атрибут `id`, `language` и `text`. Атрибут `text` содержит текст для анализа, `language` — это язык документа, а атрибут `id` может иметь любое значение. 
+Создайте список объектов, содержащих документы, которые необходимо проанализировать.
 
 ```javascript
 const inputDocuments = {documents:[
-    {language:"en", id:"1", text:"I had the best day of my life."},
-    {language:"en", id:"2", text:"This was a waste of my time. The speaker put me to sleep."},
-    {language:"es", id:"3", text:"No tengo dinero ni nada que dar..."},
-    {language:"it", id:"4", text:"L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
+    {language:"en", id:"1", text:"I had the best day of my life."}
 ]}
 ```
 
@@ -111,23 +149,18 @@ operation
 ### <a name="output"></a>Выходные данные
 
 ```console
-[ { id: '1', score: 0.8723785877227783 },
-  { id: '2', score: 0.1059873104095459 },
-  { id: '3', score: 0.43635445833206177 },
-  { id: '4', score: 1 } ]
+[ { id: '1', score: 0.8723785877227783 } ]
 ```
 
 ## <a name="language-detection"></a>Определение языка
 
-Создайте список объектов, содержащих документы. Полезные данные этого API состоят из списка `documents`, которые содержат атрибут `id` и `text`. Атрибут `text` содержит текст для анализа, а параметр `id` может иметь любое значение.
+Создайте список объектов, содержащих документы.
 
 ```javascript
 // The documents to be submitted for language detection. The ID can be any value.
 const inputDocuments = {
     documents: [
-        { id: "1", text: "This is a document written in English." },
-        { id: "2", text: "Este es un document escrito en Español." },
-        { id: "3", text: "这是一个用中文写的文件" }
+        { id: "1", text: "This is a document written in English." }
     ]
     };
 ```
@@ -159,19 +192,16 @@ operation
 ```console
 ===== LANGUAGE EXTRACTION ======
 ID: 1 Language English
-ID: 2 Language Spanish
-ID: 3 Language Chinese_Simplified
 ```
 
 ## <a name="entity-recognition"></a>Распознавание сущностей
 
-Создайте список объектов, содержащих документы. Полезные данные этого API состоят из списка `documents`, которые содержат атрибут `id`, `language` и `text`. Атрибут `text` содержит текст для анализа, `language` — это язык документа, а атрибут `id` может иметь любое значение.
+Создайте список объектов, содержащих документы.
 
 ```javascript
 
     const inputDocuments = {documents:[
-        {language:"en", id:"1", text:"Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800"},
-        {language:"es", id:"2", text:"La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle."},
+        {language:"en", id:"1", text:"Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800"}
         ]}
 
 }
@@ -220,28 +250,16 @@ Document ID: 1
             Offset: 89 Length: 5 Score: 0.8
     Name: Altair 8800 Type: Other Sub Type: Other
             Offset: 116 Length: 11 Score: 0.8
-Document ID: 2
-    Name: Microsoft Type: Organization Sub Type: Organization
-            Offset: 21 Length: 9 Score: 0.999755859375
-    Name: Redmond (Washington) Type: Location Sub Type: Location
-            Offset: 60 Length: 7 Score: 0.9911284446716309
-    Name: 21 kilómetros Type: Quantity Sub Type: Quantity
-            Offset: 71 Length: 13 Score: 0.8
-    Name: Seattle Type: Location Sub Type: Location
-            Offset: 88 Length: 7 Score: 0.9998779296875
 ```
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
-Создайте список объектов, содержащих документы. Полезные данные этого API состоят из списка `documents`, которые содержат атрибут `id`, `language` и `text`. Атрибут `text` содержит текст для анализа, `language` — это язык документа, а атрибут `id` может иметь любое значение.
+Создайте список объектов, содержащих документы.
 
 ```javascript
     let inputLanguage = {
     documents: [
-        {language:"ja", id:"1", text:"猫は幸せ"},
-        {language:"de", id:"2", text:"Fahrt nach Stuttgart und dann zum Hotel zu Fu."},
-        {language:"en", id:"3", text:"My cat might need to see a veterinarian."},
-        {language:"es", id:"4", text:"A mi me encanta el fútbol!"}
+        {language:"en", id:"1", text:"My cat might need to see a veterinarian."}
     ]
     };
 ```
@@ -266,19 +284,35 @@ Document ID: 2
 ### <a name="output"></a>Выходные данные
 
 ```console
-[ 
-    { id: '1', keyPhrases: [ '幸せ' ] },
-    { id: '2', keyPhrases: [ 'Stuttgart', 'Hotel', 'Fahrt', 'Fu' ] },
-    { id: '3', keyPhrases: [ 'cat', 'veterinarian' ] },
-    { id: '4', keyPhrases: [ 'fútbol' ] } 
+[
+    { id: '1', keyPhrases: [ 'cat', 'veterinarian' ] }
 ]
 ```
+
+## <a name="run-the-application"></a>Выполнение приложения
+
+Запустите приложение, выполнив команду `node` для файла quickstart.
+
+```console
+node index.js
+```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
+
+* [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
+* [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
-## <a name="see-also"></a>См. также
 
- API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
+* [Пример. Как определить тональность с помощью Анализа текста](../how-tos/text-analytics-how-to-sentiment-analysis.md)
+* [Распознавание сущностей](../how-tos/text-analytics-how-to-entity-linking.md)
+* [Пример. Как определить язык с помощью Анализа текста](../how-tos/text-analytics-how-to-keyword-extraction.md)
+* [Распознавание языка](../how-tos/text-analytics-how-to-language-detection.md)
+* Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/blob/master/Samples/textAnalytics.js).

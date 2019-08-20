@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование API Cassandra с Java в Azure Cosmos DB
+title: Использование API Cassandra и Java для создания приложения — Azure Cosmos DB
 description: В этом руководстве показано, как использовать API Cassandra Azure Cosmos DB для создания приложения профиля с помощью портала Azure и Java.
 ms.service: cosmos-db
 author: SnehaGunda
@@ -8,12 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 968c43ed78c59e5c1f147aaaa5bb33484d95c7a9
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: seo-java-august2019
+ms.openlocfilehash: e8ca40ec86bc3af92fd23bb7acce3d6c39b082fb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325482"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933922"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-java-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB
 
@@ -203,7 +204,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Окно терминала отображает уведомления о создании пространства ключей и таблицы. Затем оно выбирает и отображает список всех пользователей в таблице, а затем выбирает строку по идентификатору и отображает значение.  
 
-    Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли.
+    Нажмите клавиши **CTRL+C**, чтобы остановить выполнение программы и закрыть окно консоли.
 
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 

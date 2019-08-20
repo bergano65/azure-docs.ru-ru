@@ -10,10 +10,10 @@ ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: f99b4ee6dd11a109d1c563c84debc2157cb03337
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68309494"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Краткое руководство. Создание частного реестра контейнеров Docker с помощью Azure PowerShell
@@ -26,7 +26,7 @@ ms.locfileid: "68309494"
 
 Для работы с этим быстрым началом требуется модуль Azure PowerShell. Выполните команду `Get-Module -ListAvailable Az`, чтобы определить установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
-Также необходим локально установленный модуль Docker. Docker предоставляет пакет для систем [macOS][docker-mac], [Windows][docker-windows] и [Linux][docker-linux].
+Также необходим локально установленный модуль Docker. Docker предоставляет пакеты для систем под управлением [macOS][docker-mac], [Windows][docker-windows] и [Linux][docker-linux].
 
 Та как в службе Azure Cloud Shell нет всех необходимых компонентов Docker (управляющая программа `dockerd`), ее нельзя использовать в этом руководстве.
 

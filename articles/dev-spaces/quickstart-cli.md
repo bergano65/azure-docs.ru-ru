@@ -11,10 +11,10 @@ description: Развертывание микрослужбы в AKS с пом�
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
 ms.openlocfilehash: 39fb7658140a2eda948cd0dc0e58d71b0b9a053b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67710677"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
@@ -72,7 +72,7 @@ cd dev-spaces/samples/nodejs/getting-started/webfrontend
 
 ## <a name="prepare-the-application"></a>Подготовка приложения
 
-Чтобы запустить приложение в Azure Dev Spaces, вам потребуется документ Dockerfile и диаграмма Helm. Клиентские средства Azure Dev Spaces могут создавать все требуемые ресурсы на таких языках, как [Java][java-quickstart], [.NET core][netcore-quickstart] и [Node.js][nodejs-quickstart]. Во многих языках, например Go, PHP и Python, клиентские средства могут создавать диаграмму Helm, если предоставляется допустимый документ Dockerfile.
+Чтобы запустить приложение в Azure Dev Spaces, вам потребуется документ Dockerfile и диаграмма Helm. Клиентские средства Azure Dev Spaces могут создавать все требуемые ресурсы на таких языках, как [Java][java-quickstart], [.NET Core][netcore-quickstart] и [Node.js][nodejs-quickstart]. Во многих языках, например Go, PHP и Python, клиентские средства могут создавать диаграмму Helm, если предоставляется допустимый документ Dockerfile.
 
 Создайте ресурсы диаграмм Docker и Helm для выполнения приложения в Kubernetes с помощью команды `azds prep`:
 

@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: quickstart
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 978b56f5c38a154c79544c7deb5d49396b1deff9
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0d67385975db13539c28745eede4fb288a0daedd
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688869"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989141"
 ---
 # <a name="quickstart-create-a-web-app-that-launches-the-immersive-reader-c"></a>Краткое руководство. Создание веб-приложения, которое запускает иммерсивное средство чтения (C#)
 
@@ -223,5 +223,7 @@ namespace QuickstartSampleWebApp.Controllers
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь с [учебником](./tutorial.md), чтобы узнать, что еще можно сделать с помощью пакета SDK иммерсивного средства чтения.
+* Ознакомьтесь с [руководством для разработчиков Node.js](./tutorial-nodejs.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Node.js.
+* Ознакомьтесь с [руководством для разработчиков Python](./tutorial-python.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Python.
+* Ознакомьтесь с [руководством для разработчиков iOS](./tutorial-ios-picture-immersive-reader.md), чтобы узнать другие возможности пакета SDK иммерсивного средства чтения при использовании Swift.
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).

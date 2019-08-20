@@ -1,17 +1,17 @@
 ---
 title: Создание Каталога данных Azure
-description: Краткое руководство по созданию Каталога данных Azure.
+description: В этом кратком руководстве описано, как создать Каталог данных Azure с помощью портала Azure.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
 ms.date: 08/01/2019
-ms.openlocfilehash: df2f536dc95dd74dbae1c8bda1a9934a73fd1fe0
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 854760ea0158d356cc5449c9f1fdab6161588640
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736498"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976861"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>Краткое руководство. Создание Каталога данных Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "68736498"
 
 1. Перейдите на [портал Azure](https://portal.azure.com) > , выберите **Создать ресурс** и **Каталог данных**.
 
-    ![Создание Каталога данных](media/data-catalog-get-started/data-catalog-create.png)
+    ![Кнопка создания Каталога данных Azure](media/data-catalog-get-started/data-catalog-create.png)
 
 2. Укажите **имя** каталога данных, **подписку**, которую необходимо использовать, **расположение**, в котором будет находиться каталог, и **ценовую категорию**. Щелкните **Создать**.
 

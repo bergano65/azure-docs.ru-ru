@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Java в Service Fabric в Azure | Документы Майкрософт
+title: Краткое руководство. Создание приложения Java в Azure Service Fabric
 description: В рамках этого краткого руководства вы создадите приложение Java для Azure, используя пример приложения надежных служб Service Fabric.
 services: service-fabric
 documentationcenter: java
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
-ms.custom: mvc, devcenter
-ms.openlocfilehash: ddd56b8479678b288424dd896baadea6a41a2aef
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.custom: mvc, devcenter, seo-java-august2019
+ms.openlocfilehash: a69590adc329361ac1c2191e7a984757af4f69af
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58008140"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977113"
 ---
 # <a name="quickstart-deploy-a-java-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб Java в Service Fabric
 
@@ -60,18 +60,18 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
     ```bash
     sudo /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh
     ```
-    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080**. Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает.
+    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает.
 
     ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java/localclusterup.png)
 
 2. Откройте Eclipse.
-3. Щелкните "Файл" -> "Импорт" -> "Gradle", выберите существующий проект Gradle и следуйте указаниям мастера.
-4. Щелкните каталог и выберите каталог `Voting` из папки `service-fabric-java-quickstart`, клонированной из GitHub. Нажмите кнопку Готово.
+3. Щелкните **File** > **Import** > **Gradle** > **Existing Gradle Project** (Файл > Импорт > Gradle > Существующий проект Gradle) и следуйте указаниям мастера.
+4. Щелкните **Каталог** и выберите каталог `Voting` в папке `service-fabric-java-quickstart`, клонированной из GitHub. Выберите **Готово**.
 
     ![Диалоговое окно Eclipse "Import" (Импорт)](./media/service-fabric-quickstart-java/eclipseimport.png)
 
 5. Теперь у вас имеется проект `Voting` в обозревателе пакетов для Eclipse.
-6. Щелкните правой кнопкой мыши проект и выберите **Publish Application...** (Опубликовать приложение...) в раскрывающемся списке **Service Fabric**. Выберите **PublishProfiles/Local.json** в качестве целевого профиля и нажмите кнопку Publish (Опубликовать).
+6. Щелкните правой кнопкой мыши проект и выберите **Publish Application** (Опубликовать приложение) в раскрывающемся списке **Service Fabric**. Выберите **PublishProfiles/Local.json** в качестве целевого профиля и нажмите кнопку **Publish** (Опубликовать).
 
     ![Диалоговое окно публикации локально](./media/service-fabric-quickstart-java/localjson.png)
 
@@ -90,14 +90,14 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 Для масштабирования службы веб-интерфейса сделайте следующее:
 
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `https://localhost:19080`).
-2. Щелкните многоточие рядом с узлом **fabric:/Voting/VotingWeb** в дереве и выберите **Масштабировать службу**.
+2. Щелкните многоточие ( **...** ) рядом с узлом **fabric:/Voting/VotingWeb** в дереве и выберите **Масштабировать службу**.
 
     ![Масштабирование службы в Service Fabric Explorer](./media/service-fabric-quickstart-java/scaleservicejavaquickstart.png)
 
     Теперь вы можете изменить количество экземпляров службы веб-интерфейса.
 
-3. Измените количество на **2** и нажмите кнопку **Масштабировать службу**.
-4. Щелкните узел **fabric:/Voting/VotingWeb** в дереве и разверните узел раздела (он отображается в виде идентификатора GUID).
+3. Измените количество на **2** и щелкните **Масштабировать службу**.
+4. Выберите узел **fabric:/Voting/VotingWeb** в дереве и разверните узел раздела (он отображается в виде идентификатора GUID).
 
     ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java/servicescaled.png)
 

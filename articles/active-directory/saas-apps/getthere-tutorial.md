@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 499b7f5761c97f6986ca0291af2242d694b609d2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a7c1a59e3b0650badd75a1170a4daaa6561bd23c
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67101736"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945065"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-getthere"></a>Руководство по Интеграция Azure Active Directory с GetThere
 
@@ -120,7 +120,7 @@ ms.locfileid: "67101736"
     | `https://gtx2-gcte2.getthere.net/login/saml/ssoaasvalidate.act` |
     | `https://wx1.getthere.net/login/saml/ssoaavalidate.act` |
 
-5. Приложение GetThere ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+5. Приложение GetThere ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 
@@ -220,7 +220,7 @@ ms.locfileid: "67101736"
 
 ### <a name="create-getthere-test-user"></a>Создание тестового пользователя GetThere
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении GetThere. Обратитесь к  [группе поддержки GetThere](mailto:dataintegration@sabre.com), чтобы добавить пользователей на платформу GetThere. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении GetThere. Обратитесь в [службу поддержки GetThere](mailto:dataintegration@sabre.com), чтобы добавить пользователей на платформу GetThere. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -234,5 +234,5 @@ ms.locfileid: "67101736"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

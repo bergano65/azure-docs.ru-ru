@@ -1,5 +1,5 @@
 ---
-title: Создание настраиваемого образа Docker в функции "Веб-приложение для контейнеров" Службы приложений Azure | Документация Майкрософт
+title: созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 description: Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
 keywords: служба приложений azure, веб-приложение, docker, контейнер
 services: app-service
@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: b48ec72a1f0a4178dad66ed31c544399e90c5293
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 6ef739b61c07dae1631a704a70a3a5543d9d8a3d
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484500"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69015604"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
@@ -292,20 +292,20 @@ SSH обеспечивает безопасный обмен данными ме
 
 * [Сценарий входа](https://github.com/Azure-Samples/docker-django-webapp-linux/blob/master/init.sh#L5) запускает сервер SSH.
 
-      ```bash
-      #!/bin/bash
-      service ssh start
+    ```bash
+    #!/bin/bash
+    service ssh start
     ```
 
-### Open SSH connection to container
+### <a name="open-ssh-connection-to-container"></a>Открытие SSH-подключения к контейнеру
 
-SSH connection is available only through the Kudu site, which is accessible at `https://<app-name>.scm.azurewebsites.net`.
+SSH-подключение можно использовать только на сайте Kudu, к которому можно перейти по адресу `https://<app-name>.scm.azurewebsites.net`.
 
-To connect, browse to `https://<app-name>.scm.azurewebsites.net/webssh/host` and sign in with your Azure account.
+Чтобы установить подключение, перейдите по ссылке `https://<app-name>.scm.azurewebsites.net/webssh/host` и войдите, используя учетную запись Azure.
 
-You are then redirected to a page displaying an interactive console.
+Затем вы будете перенаправлены на страницу с интерактивной консолью.
 
-You may wish to verify that certain applications are running in the container. To inspect the container and verify running processes, issue the `top` command at the prompt.
+Вы можете проверить выполнение некоторых приложений в контейнере. Чтобы просмотреть контейнер и проверить выполняющиеся процессы, выполните команду `top` в командной строке.
 
 ```bash
 top

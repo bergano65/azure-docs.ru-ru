@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 07/11/2019
 ms.author: heidist
-ms.openlocfilehash: 5ad1708475200475669c5de8f4fbd316f04ebd04
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: e3912e90762977bc801279fde481fc26516e51a6
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840783"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882642"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-postman-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в Postman с помощью REST API
 > [!div class="op_single_selector"]
@@ -80,7 +80,7 @@ URL-адрес дополняется именем индекса `hotels`.
 
 1. Измените команду на **PUT**.
 
-2. Скопируйте этот URL-адрес: `https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/hotels?api-version=2019-05-06`.
+2. Скопируйте этот URL-адрес: `https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/hotels-quickstart?api-version=2019-05-06`.
 
 3. Укажите в тексте запроса определение индекса (код для копирования приведен ниже).
 
@@ -298,6 +298,7 @@ https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes/hotels-quickstart/
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Клиенты REST являются очень полезными для незапланированного исследования, но теперь, когда вы знаете, как работают REST API, можно приступить к написанию кода. Следующие шаги см. в статье по следующей ссылке:
+Теперь, когда вы умеете выполнять основные задачи, вы можете изучить другие вызовы REST API для более сложных функций, таких как индексаторы или [настройка конвейера Когнитивного поиска](cognitive-search-tutorial-blob.md). Далее мы рекомендуем изучить следующие материалы:
 
-+ [Краткое руководство Создание индекса службы поиска Azure с помощью пакета SDK для .NET](search-get-started-dotnet.md)
+> [!div class="nextstepaction"]
+> [Руководство по использованию REST. Индексирование и поиск частично структурированных данных (больших двоичных объектов JSON) в службе "Поиск Azure"](search-semi-structured-data.md)

@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 5a1e487b52cb6f146ccc7fd3208ecc90de9aa080
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: eb2a6933b711804f957056353d7d609dbdbbe5d5
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840162"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036463"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -51,7 +51,7 @@ ms.locfileid: "68840162"
 * [Устройство с Windows, на котором выполняется Azure IoT Edge](quickstart.md).
 * реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
 * Настроенная среда [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
-* Приложение [Docker CE](https://docs.docker.com/install/), настроенное для запуска контейнеров Windows.
+* Приложение [Docker Desktop](https://docs.docker.com/docker-for-windows/install/), настроенное для запуска контейнеров Windows.
 
 > [!TIP]
 > Если вы используете Visual Studio 2017 (15.7 или более поздней версии), скачайте и установите [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual Studio 2017 из marketplace Visual Studio.

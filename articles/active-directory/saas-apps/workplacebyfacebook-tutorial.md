@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Workplace by Facebook | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/01/2019
+ms.date: 08/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4328c6b5b85050ae5caf30fd4d321e50428f10b9
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: fe02e9d6c3fa69e0ccd88057e10edb6ea1c6e0d0
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68825326"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986043"
 ---
-# <a name="tutorial-integrate-workplace-by-facebook-with-azure-active-directory"></a>Руководство по интеграции Azure Active Directory с Workplace by Facebook
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook
 
 В этом руководстве описано, как интегрировать Workplace by Facebook с Azure Active Directory (Azure AD). Интеграция Workplace by Facebook с Azure AD позволяет:
 
@@ -64,20 +64,20 @@ ms.locfileid: "68825326"
 1. Выберите **Workplace by Facebook** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+## <a name="configure-and-test-azure-ad-sso-for-workplace-by-facebook"></a>Настройка и проверка единого входа Azure AD для Workplace by Facebook
 
 Настройте и проверьте единый вход Azure AD в Workplace by Facebook с помощью тестового пользователя **B. Simon**. Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Workplace by Facebook.
 
 Чтобы настроить и проверить единый вход Azure AD в Workplace by Facebook, выполните действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Workplace by Facebook](#configure-workplace-by-facebook-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Workplace by Facebook](#create-workplace-by-facebook-test-user)** требуется для того, чтобы в Workplace by Facebook существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    1. **[Создание тестового пользователя Workplace by Facebook](#create-workplace-by-facebook-test-user)** требуется для того, чтобы в Workplace by Facebook существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
@@ -104,7 +104,37 @@ ms.locfileid: "68825326"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-### <a name="configure-workplace-by-facebook-sso"></a>Настройка единого входа в Workplace by Facebook
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Workplace by Facebook.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. Из списка приложений выберите **Workplace by Facebook**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-workplace-by-facebook-sso"></a>Настройка единого входа в Workplace by Facebook
 
 1. В другом окне веб-браузера войдите на свой корпоративный сайт Workplace by Facebook в качестве администратора.
   
@@ -152,36 +182,6 @@ ms.locfileid: "68825326"
 
 Вы также можете принудительно применить сброс SAML для всех пользователей, используя кнопку Require SAML authentication for all users now (Применить аутентификацию SAML для всех пользователей).
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-
-В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-1. В верхней части экрана выберите **Новый пользователь**.
-1. В разделе **Свойства пользователя** выполните следующие действия.
-   1. В поле **Имя** введите `B.Simon`.  
-   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
-   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
-
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Workplace by Facebook.
-
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. Из списка приложений выберите **Workplace by Facebook**.
-1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
 ### <a name="create-workplace-by-facebook-test-user"></a>Создание тестового пользователя Workplace by Facebook
 
 В этом разделе вы создадите в Workplace by Facebook пользователя с именем B. Simon. Workplace by Facebook поддерживает JIT-подготовку. Эта функция включена по умолчанию.
@@ -191,7 +191,7 @@ ms.locfileid: "68825326"
 >[!Note]
 >Если вам нужно создать пользователя вручную, обратитесь к [группе поддержки клиентов Workplace by Facebook](https://workplace.fb.com/faq/).
 
-### <a name="test-sso"></a>Проверка единого входа 
+## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -228,4 +228,6 @@ ms.locfileid: "68825326"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](workplacebyfacebook-provisioning-tutorial.md)
+
+- [Проверьте работу Workplace by Facebook с Azure Active Directory](https://aad.portal.azure.com)
 

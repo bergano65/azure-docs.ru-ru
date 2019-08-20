@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a29d20c434a7306b016fe9a549415242f5977a2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e00cc46385f5d60b28607bfc08b9ca9540f152c6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67101109"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944977"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Руководство по Интеграция Azure Active Directory с HeyBuddy
 
@@ -113,7 +113,7 @@ ms.locfileid: "67101109"
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором (идентификатор сущности). Идентификатор `Entity ID` в URL-адресе входа автоматически создается для каждой организации. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов HeyBuddy](mailto:support@heybuddy.com).
 
-5. Приложение HeyBuddy предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+5. Приложение HeyBuddy предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 
@@ -209,7 +209,7 @@ ms.locfileid: "67101109"
 В этом разделе вы создадите в HeyBuddy пользователя с именем Britta Simon. Приложение HeyBuddy поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в HeyBuddy, он создается после проверки подлинности.
 
 > [!Note]
-> Чтобы создать пользователя вручную, обратитесь к  [группе поддержки HeyBuddy](mailto:support@heybuddy.com).
+> Чтобы создать пользователя вручную, обратитесь в [службу поддержки HeyBuddy](mailto:support@heybuddy.com).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -223,4 +223,4 @@ ms.locfileid: "67101109"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1688651466ba6748e1254c9d33bb24435602868b
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 76ba284ec1a30322a24c762a1829b399f2583c6c
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489164"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032920"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management-preview"></a>Руководство по созданию пакета для доступа в управлении правами Azure AD (предварительная версия)
 
@@ -44,7 +44,9 @@ ms.locfileid: "68489164"
 > * Показывать, как внутренний пользователь может запрашивать пакет для доступа.
 > * Утверждать запрос на доступ.
 
-Если у вас нет лицензии Azure AD Premium P2 или Enterprise Mobility + Security E5, создайте бесплатную [пробную версию Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1).
+Пошаговую демонстрацию процесса развертывания функции управления правами Azure Active Directory и создания пакета для доступа см. в следующем видео.
+
+>[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,6 +54,8 @@ ms.locfileid: "68489164"
 
 - Azure AD Premium P2
 - лицензия Enterprise Mobility + Security (EMS) E5.
+
+Если у вас нет лицензии Azure AD Premium P2 или Enterprise Mobility + Security E5, создайте бесплатную [пробную версию Enterprise Mobility + Security E5](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1).
 
 ## <a name="step-1-set-up-users-and-group"></a>Шаг 1. Настройка колонки пользователей и групп
 

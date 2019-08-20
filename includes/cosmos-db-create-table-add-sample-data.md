@@ -8,20 +8,20 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 4341d06f09c60933bfc0512f54e024b35a19d8dd
-ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
+ms.openlocfilehash: 1ebd645b740ab0f454d006d003518fbb8cb5e9e7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67185829"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854675"
 ---
 Теперь вы можете добавить данные в созданную таблицу с помощью обозревателя данных.
 
-1. В обозревателе данных разверните **пример таблицы**, затем щелкните **Сущности** и нажмите кнопку **Добавление сущности**.
+1. В Data Explorer разверните **пример таблицы**, выберите **Сущности**, а затем — **Добавление сущности**.
 
    ![Создание сущностей в обозревателе данных на портале Azure](./media/cosmos-db-create-table-add-sample-data/azure-cosmosdb-data-explorer-new-document.png)
 
-2. Теперь добавьте данные в поля значений свойств PartitionKey и RowKey, а затем нажмите кнопку **Добавление сущности**.
+2. Теперь добавьте данные в поля значений PartitionKey и RowKey и щелкните **Добавление сущности**.
 
    ![Указание ключа секции и ключа строки для новой сущности](./media/cosmos-db-create-table-add-sample-data/azure-cosmosdb-data-explorer-new-entity.png)
   

@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 08/05/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 79302fc0f9addc70461d21c03b02416d15a6fa6c
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 45f5e21e05cf627d418cb66418cf305833a73891
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68814938"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965106"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -116,16 +116,15 @@ Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 * добавление или удаление регионов;
 * изменение политики согласованности по умолчанию;
-* изменение политики отработки отказа;
 * изменение фильтра диапазона IP-адресов;
 * изменение конфигурации виртуальной сети;
 * включение поддержки нескольких источников.
 
 > [!NOTE]
-> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа. Сведения об изменении приоритета при отработке отказа для учетной записи Azure Cosmos см. в [этом разделе](#modify-failover-priority).
+> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или изменять регионы с `failoverPriority=0`. Сведения об изменении приоритета при отработке отказа для учетной записи Azure Cosmos см. в [этом разделе](#modify-failover-priority).
 
 ```azurepowershell-interactive
-# Update an Azure Cosmos Account and set Consistency level to Session
+# Get an Azure Cosmos Account (assume it has two regions currently West US 2 and East US 2) and add a third region
 
 $resourceGroupName = "myResourceGroup"
 $accountName = "myaccountname"
@@ -133,9 +132,13 @@ $accountName = "myaccountname"
 $account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
 
-$consistencyPolicy = @{ "defaultConsistencyLevel"="Session" }
+$locations = @(
+    @{ "locationName"="West US 2"; "failoverPriority"=0 },
+    @{ "locationName"="East US 2"; "failoverPriority"=1 },
+    @{ "locationName"="South Central US"; "failoverPriority"=2 }
+)
 
-$account.Properties.consistencyPolicy = $consistencyPolicy
+$account.Properties.locations = $locations
 $CosmosDBProperties = $account.Properties
 
 Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
@@ -235,9 +238,9 @@ Select-Object $keys
 
 ### <a id="modify-failover-priority"></a> Изменение приоритета при отработке отказа
 
-Для учетных записей баз данных с поддержкой нескольких регионов можно изменить порядок повышения уровня вторичных реплик для чтения в учетной записи Cosmos в случае региональной отработки отказа в первичной реплике записи. При изменении региона с `failoverPriority=0` эту команду также можно использовать для инициации отработки аварийного восстановления, чтобы протестировать планирование аварийного восстановления.
+Для учетных записей баз данных с поддержкой нескольких регионов можно изменить порядок повышения уровня вторичных реплик для чтения в учетной записи Cosmos в случае региональной отработки отказа в первичной реплике записи. Изменение `failoverPriority=0` также можно использовать для инициации отработки аварийного восстановления, чтобы протестировать планирование аварийного восстановления.
 
-В примере ниже предполагается, что учетная запись имеет приоритет при отработке отказа westus=0 и eastus=1, а затем регионы меняются.
+В примере ниже предполагается, что учетная запись имеет приоритет `West US 2 = 0` и `East US 2 = 1` при отработке отказа, а затем регионы меняются.
 
 > [!CAUTION]
 > Если изменить свойство `locationName` для `failoverPriority=0`, для учетной записи Azure Cosmos активируется переход на другой ресурс вручную. Любые другие изменения приоритета не приведут к активации отработки отказа.
@@ -248,10 +251,14 @@ Select-Object $keys
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 
-$failoverPolicies = @(
-    @{ "locationName"="East US"; "failoverPriority"=0 },
-    @{ "locationName"="West US"; "failoverPriority"=1 }
+$failoverRegions = @(
+    @{ "locationName"="East US 2"; "failoverPriority"=0 },
+    @{ "locationName"="West US 2"; "failoverPriority"=1 }
 )
+
+$failoverPolicies = @{
+    "failoverPolicies"= $failoverRegions
+}
 
 Invoke-AzResourceAction -Action failoverPriorityChange `
     -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" `
