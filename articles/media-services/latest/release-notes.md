@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: juliako
-ms.openlocfilehash: b3e772ebb05f79abb70e58e63a93c3336a413e38
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: f4a859f1e63866a50167031569dca05de3e9af27
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542549"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856310"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,63 +34,79 @@ ms.locfileid: "67542549"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
+## <a name="august-2019"></a>2019 августа
+
+### <a name="south-africa-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Южно-Африканского языка 
+
+Теперь службы мультимедиа доступны в регионах Южной и Южной Африки.
+
+Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
+
+## <a name="july-2019"></a>2019 июля
+
+### <a name="content-protection"></a>Защита содержимого
+
+Если потоковая передача содержимого, защищенного с помощью ограничения маркера, конечным пользователям необходимо получить маркер, который отправляется как часть запроса на доставку ключа. Функция *предотвращения воспроизведения маркеров* позволяет клиентам служб мультимедиа устанавливать ограничения на то, сколько раз один и тот же маркер можно использовать для запроса ключа или лицензии. Дополнительные сведения см. в разделе [Предотвращение воспроизведения маркеров](content-protection-overview.md#token-replay-prevention).
+
+В настоящее время эта функция доступна в центральной части США и западной центральной части США.
+
 ## <a name="june-2019"></a>Июнь 2019 г.
 
-### <a name="video-subclipping"></a>Видео подклипов
+### <a name="video-subclipping"></a>Подрезка видео
 
-Теперь можно обрезать или субклипа видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). 
+Теперь можно обрезать или подрезать видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). 
 
-Эта функция работает с любым [преобразования](https://docs.microsoft.com/rest/api/media/transforms) , построенный с помощью [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) предустановки, или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) предустановок. 
+Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms), построенным с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
 
-См. Примеры:
+См. примеры:
 
-* [Субклип видео с помощью .NET](subclip-video-dotnet-howto.md)
-* [Субклип видео с помощью REST](subclip-video-rest-howto.md)
+* [Подклип видео с помощью .NET](subclip-video-dotnet-howto.md)
+* [Подрезать видео с помощью RESTFUL](subclip-video-rest-howto.md)
 
 ## <a name="may-2019"></a>Май 2019 г.
 
-### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Поддержка монитора Azure для журналов диагностики службы мультимедиа и метрик
+### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Поддержка Azure Monitor для журналов диагностики и метрик в службах мультимедиа
 
-Теперь можно использовать Azure Monitor для просмотра emmited данных телеметрии с помощью служб мультимедиа.
+Теперь вы можете использовать Azure Monitor для просмотра данных телеметрии, еммитед с помощью служб мультимедиа.
 
-* Использование журналов диагностики Azure Monitor для наблюдения за запросами доставки ключей служб мультимедиа конечной точкой. 
-* Мониторинг метрик, генерируемые службами мультимедиа [конечными точками потоковой передачи](streaming-endpoint-concept.md).   
+* Используйте журналы диагностики Azure Monitor, чтобы отслеживать запросы, отправленные конечной точкой доставки ключей служб мультимедиа. 
+* Отслеживать метрики, созданные [конечными точками потоковой передачи](streaming-endpoint-concept.md)служб мультимедиа.   
 
-Дополнительные сведения см. в разделе [служб мультимедиа монитор метрики и журналы диагностики](media-services-metrics-diagnostic-logs.md).
+Дополнительные сведения см. в статье [мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md).
 
-### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Поддержка нескольких звуковых дорожек в динамической упаковки 
+### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Поддержка нескольких звуковых дорожек в динамической упаковке 
 
-При потоковой передаче активом нескольких звуковых дорожек с несколькими кодеки и языков, [динамической упаковки](dynamic-packaging-overview.md) теперь поддерживает нескольких звуковых дорожек для вывода HLS (версии 4 или более поздней версии).
+При потоковой передаче ресурсов, имеющих несколько звуковых дорожек с несколькими кодеками и языков, [Динамическая упаковка](dynamic-packaging-overview.md) теперь поддерживает несколько звуковых дорожек для выходных данных HLS (версии 4 или более поздней).
 
-### <a name="korea-regional-pair-is-open-for-media-services"></a>Пары регионов Кореи открыт для служб мультимедиа 
+### <a name="korea-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Кореи 
 
-Службы мультимедиа теперь доступна в регионах центральная Корея и Юг Кореи. 
+Службы мультимедиа теперь доступны в центральных и Южной регионах Кореи. 
 
-Дополнительные сведения см. в разделе [облаков и регионы, в которой службы мультимедиа находится v3](azure-clouds-regions.md).
+Дополнительные сведения см. [в разделе облака и регионы, в которых существует версия 3 служб мультимедиа](azure-clouds-regions.md).
 
 ### <a name="performance-improvements"></a>Повышение производительности.
 
 Добавлены обновления, включающие улучшения производительности служб мультимедиа.
 
-* Максимальный размер файла поддерживается при обработке был обновлен. См. в разделе, [квоты и ограничения](limits-quotas-constraints.md).
-* [Улучшения скорости кодирования](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
+* Обновлен максимальный размер файла, поддерживаемый для обработки. См. раздел, [квоты и ограничения](limits-quotas-constraints.md).
+* [Улучшение скорости кодирования](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
 
 ## <a name="april-2019"></a>Апрель 2019 г.
 
 ### <a name="new-presets"></a>Новые предустановки
 
-* [FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен в анализатор встроенные стили.
-* [ContentAwareEncodingExperimental](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) был добавлен встроенный кодировщик предустановок. Дополнительные сведения см. в разделе [содержимого с поддержкой кодирования](cae-experimental.md). 
+* [Фацедетекторпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен во встроенные предустановки анализатора.
+* [Контентаваринкодинжекспериментал](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) был добавлен во встроенные предустановки кодировщика. Дополнительные сведения см. в разделе [кодировка с учетом содержимого](cae-experimental.md). 
 
-## <a name="march-2019"></a>Марта 2019 г.
+## <a name="march-2019"></a>Март 2019
 
-Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
+Динамическая упаковка теперь поддерживает Dolby атмос. Дополнительные сведения см. в разделе аудиокодеки, [Поддерживаемые динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
 
-Теперь можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. Дополнительные сведения см. в разделе [связать фильтры с указатель потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
+Теперь можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. Дополнительные сведения см. в разделе [связывание фильтров с указателем потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 
 ## <a name="february-2019"></a>Февраль 2019 г.
 
-Версии 3 службы мультимедиа теперь поддерживается в Национальное облако Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
+Службы мультимедиа версии 3 теперь поддерживаются в национальных облаках Azure. Некоторые возможности пока недоступны во всех облаках. Дополнительные сведения см. в разделе [Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3](azure-clouds-regions.md).
 
 Событие [Microsoft.Media.JobOutputProgress](media-services-event-schemas.md#monitoring-job-output-progress) для Служб мультимедиа добавлено в Сетку событий Azure.
 
@@ -236,7 +252,7 @@ ms.locfileid: "67542549"
 
 ### <a name="net-sdk"></a>Пакет SDK для .NET
 
-Следующие компоненты входят в пакет SDK для .NET:
+В пакете SDK для .NET имеются следующие возможности.
 
 * **Преобразования** и **задания**, позволяющие кодировать или анализировать мультимедийное содержимое. Примеры см. в руководстве по [потоковой передаче](stream-files-tutorial-with-api.md) и [анализе видео](analyze-videos-tutorial-with-api.md).
 * **Указатели потоковой передачи**, отвечающие за публикацию и потоковую передачу содержимого на устройства пользователей.
@@ -253,6 +269,6 @@ ms.locfileid: "67542549"
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Обзор набора средств Visual Studio для Unity](media-services-overview.md)
+[Обзор](media-services-overview.md)

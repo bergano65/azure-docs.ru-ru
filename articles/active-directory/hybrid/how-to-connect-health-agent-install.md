@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d1a8afdbad1878f4ce134edeeb95dad79e98a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dedb60a2a5d3681198fbc8a21af1dce1778e43eb
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65784815"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622653"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -45,13 +45,13 @@ ms.locfileid: "65784815"
 
 ### <a name="outbound-connectivity-to-the-azure-service-endpoints"></a>Исходящие подключения к конечным точкам службы Azure
 
- Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. При блокировке исходящего подключения с помощью брандмауэров убедитесь, что в список запрещенных не были по умолчанию добавлены указанные ниже URL-адреса. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте им разрешения такие же, как и интернет-трафику. Они разрешают обмен данными с конечными точками службы Azure AD Connect Health. Узнайте, как [проверке исходящего подключения с помощью командлета Test-AzureADConnectHealthConnectivity](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install#test-connectivity-to-azure-ad-connect-health-service).
+ Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. При блокировке исходящего подключения с помощью брандмауэров убедитесь, что в список запрещенных не были по умолчанию добавлены указанные ниже URL-адреса. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте им разрешения такие же, как и интернет-трафику. Они разрешают обмен данными с конечными точками службы Azure AD Connect Health. Узнайте, как [проверить исходящие подключения с помощью Test-AzureADConnectHealthConnectivity](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-agent-install#test-connectivity-to-azure-ad-connect-health-service).
 
 | Доменная среда | Требуемые конечные точки службы Azure |
 | --- | --- |
 | Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;.servicebus.windows.net, порт: 5671 </li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 | Azure для Германии | <li>*.blob.core.cloudapi.de; </li><li>*.servicebus.cloudapi.de; </li> <li>*.aadconnecthealth.microsoftazure.de; </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>https:\//www.office.de. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
-| Azure Government | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
+| Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 
 
 ## <a name="download-and-install-the-azure-ad-connect-health-agent"></a>Скачивание и установка агента Azure AD Connect Health
@@ -134,7 +134,7 @@ ms.locfileid: "65784815"
 7. На панели **действий** выберите действие **Изменить свойства службы федерации**.
 8. В диалоговом окне **Свойства службы федерации** откройте вкладку **События**.
 9. Установите флажки **Success audits** (Успешные события аудита) и **Failure audits** (Неудачные события аудита).
-10. Последовательно выберите **ОК**.
+10. Нажмите кнопку **ОК**.
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 
@@ -249,12 +249,12 @@ ms.locfileid: "65784815"
 
 ![Проверка Azure AD Connect Health](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install5.png)
 
-### <a name="quick-agent-installation-in-multiple-servers"></a>Установка быстрого агента на нескольких серверах
+### <a name="quick-agent-installation-in-multiple-servers"></a>Быстрая установка агентов на нескольких серверах
 
 1. Создание учетной записи пользователя в Azure AD с паролем.
-2. Назначить **владельца** роль для этой локальной учетной записи AAD, в Azure AD Connect Health на портале. Выполните действия, [здесь](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). Назначьте роль для всех экземпляров службы. 
-3. Скачайте .exe MSI-файл в локальный контроллер домена для установки.
-4. Выполните следующий скрипт для регистрации. Замените значения параметров создания новой учетной записи и пароль. 
+2. Назначьте роль **владельца** для этой локальной учетной записи AAD в Azure AD Connect Health через портал. Выполните действия, описанные [здесь](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). Назначьте роль всем экземплярам службы. 
+3. Скачайте exe MSI файл на локальном контроллере домена для установки.
+4. Выполните следующий скрипт для регистрации. Замените параметры новой созданной учетной записью пользователя и паролем. 
 
 ```powershell
 AdHealthAddsAgentSetup.exe /quiet
@@ -268,10 +268,10 @@ Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential 
 
 ```
 
-1. Когда закончите, можно удалить доступ для локальной учетной записи, выполнив одно или несколько из следующих: 
-    * Удалить назначение роли для локальной учетной записи для AAD Connect Health
-    * Измените пароль локальной учетной записи. 
-    * Отключить локальную учетную запись AAD
+1. После этого можно будет удалить доступ к локальной учетной записи, выполнив одно или несколько из следующих действий. 
+    * Удаление назначения роли для локальной учетной записи для службы AAD Connect Health
+    * Смена пароля для локальной учетной записи. 
+    * Отключение локальной учетной записи AAD
     * Удаление локальной учетной записи AAD  
 
 ## <a name="agent-registration-using-powershell"></a>Регистрация агента с помощью PowerShell
@@ -313,7 +313,7 @@ Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential 
 
 > [!NOTE]
 > Необходимо перезапустить все службы агента Azure AD Connect Health, чтобы обновить параметры прокси-сервера. Выполните следующую команду:<br />
-> Restart-Service AdHealth*
+> Restart-Service Азуреадконнексеалс *
 >
 >
 
@@ -381,6 +381,6 @@ Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential 
 * [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
 * [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md)
-* [Using Azure AD Connect Health with AD DS (Использование Azure AD Connect Health с AD DS)](how-to-connect-health-adds.md)
+* [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
 * [Azure AD Connect Health: история версий](reference-connect-health-version-history.md)

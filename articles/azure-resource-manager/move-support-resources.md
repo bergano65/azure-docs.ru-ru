@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 7/9/2019
+ms.date: 07/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: 22493ad7998e9014c88c79e6ac5eee3bf1216119
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 73f4b6fe4714d21c12d2c7bd387cd30f6f711d5a
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226818"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624325"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. В нем также содержатся сведения о специальных условиях, которые следует учитывать при перемещении ресурса.
@@ -150,37 +150,37 @@ ms.locfileid: "68226818"
 > - [Microsoft. Виндовсвиртуалдесктоп](#microsoftwindowsvirtualdesktop)
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | domainservices | Нет | Нет |
 
 ## <a name="microsoftaadiam"></a>microsoft.aadiam
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | tenants | Нет | Нет |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | актионрулес | Да | Да |
 
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| servers | Да | Да |
+| серверы | Да | Да |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | служба | Да | Да |
 
 ## <a name="microsoftappconfiguration"></a>Microsoft. Аппконфигуратион
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | конфигуратионсторес | Да | Да |
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | apiapps | Нет | Нет |
 | appidentities | Нет | Нет |
@@ -190,12 +190,12 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | policyassignments | Нет | Нет |
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | automationaccounts | Да | Да |
 | automationaccounts/configurations | Да | Да |
@@ -205,74 +205,74 @@ ms.locfileid: "68226818"
 > Модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
 
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | b2cdirectories | Да | Да |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | registrations | Да | Да |
 
 ## <a name="microsoftbackup"></a>Microsoft.Backup
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | backupvault | Нет | Нет |
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | batchaccounts | Да | Да |
 
 ## <a name="microsoftbatchai"></a>Microsoft.BatchAI
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Нет | Нет |
 | fileservers | Нет | Нет |
-| jobs | Нет | Нет |
-| workspaces | Нет | Нет |
+| задания | Нет | Нет |
+| рабочие области | Нет | Нет |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | mapapis | Нет | Нет |
 
 ## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | biztalk | Да | Да |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | blockchainmembers | Да | Да |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | blueprintassignments | Нет | Нет |
 
 ## <a name="microsoftbotservice"></a>Microsoft.BotService
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | botservices | Да | Да |
 
 ## <a name="microsoftcache"></a>Microsoft.Cache
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | redis | Да | Да |
 
 > [!IMPORTANT]
-> Если для экземпляра кэша Azure для Redis настроена виртуальная сеть, экземпляр нельзя переместить в другую подписку. См. раздел [ограничения на перемещение виртуальных сетей](./move-limitations/virtual-network-move-limitations.md).
+> Если для экземпляра кэша Azure для Redis настроена виртуальная сеть, экземпляр нельзя переместить в другую подписку. См. раздел [ограничения на перемещение виртуальных сетей](./move-limitations/networking-move-limitations.md).
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | profiles | Да | Да |
 | profiles/endpoints | Да | Да |
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | certificateorders | Да | Да |
 
@@ -280,7 +280,7 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | domainnames | Да | Нет |
 | virtualmachines | Да | Нет |
@@ -289,7 +289,7 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | networksecuritygroups | Нет | Нет |
 | reservedips | Нет | Нет |
@@ -299,7 +299,7 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storageaccounts | Да | Нет |
 
@@ -307,26 +307,26 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | availabilitysets | Да | Да |
-| disks | Да | Да |
+| диски | Да | Да |
 | galleries | Нет | Нет |
 | galleries/images | Нет | Нет |
 | galleries/images/versions | Нет | Нет |
 | хостграупс | Нет | Нет |
 | хостграупс и узлы | Нет | Нет |
-| images | Да | Да |
+| образы | Да | Да |
 | proximityplacementgroups | Нет | Нет |
 | restorepointcollections | Нет | Нет |
 | sharedvmimages | Нет | Нет |
 | sharedvmimages/versions | Нет | Нет |
-| snapshots | Да | Да |
+| моментальные снимки | Да | Да |
 | virtualmachines | Да | Да |
 | virtualmachines/extensions | Да | Да |
 | virtualmachinescalesets | Да | Да |
@@ -335,17 +335,17 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md).
 
 ## <a name="microsoftcontainer"></a>Microsoft.Container
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | containergroups | Нет | Нет |
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | containergroups | Нет | Нет |
 
 ## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | registries | Да | Да |
 | registries/buildtasks | Да | Да |
@@ -354,111 +354,111 @@ ms.locfileid: "68226818"
 | registries/webhooks | Да | Да |
 
 ## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | containerservices | Нет | Нет |
 | managedclusters | Нет | Нет |
 | openshiftmanagedclusters | Нет | Нет |
 
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| веб-масштабированием; | Да | Да |
+| приложения | Да | Да |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | соединители | Да | Да |
 
 ## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | hubs | Да | Да |
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| jobs | Нет | Нет |
+| задания | Нет | Нет |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | databoxedgedevices | Нет | Нет |
 
 ## <a name="microsoftdatabricks"></a>Microsoft.Databricks
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| workspaces | Нет | Нет |
+| рабочие области | Нет | Нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | catalogs | Да | Да |
 | каталоги | Нет | Нет |
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | connectionmanagers | Нет | Нет |
 
 ## <a name="microsoftdataexchange"></a>Microsoft.DataExchange
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | Пакеты | Нет | Нет |
 | Планы | Нет | Нет |
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | datafactories | Да | Да |
 | factories | Да | Да |
 
 ## <a name="microsoftdatalake"></a>Microsoft.DataLake
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | datalakeaccounts | Нет | Нет |
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | services; | Нет | Нет |
 | services/projects | Нет | Нет |
 | slots | Нет | Нет |
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| servers | Да | Да |
+| серверы | Да | Да |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| servers | Да | Да |
+| серверы | Да | Да |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | servergroups | Нет | Нет |
-| servers | Да | Да |
+| серверы | Да | Да |
 | serversv2 | Да | Да |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | artifactsources | Да | Да |
 | rollouts | Да | Да |
@@ -468,7 +468,7 @@ ms.locfileid: "68226818"
 | steps | Да | Да |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | elasticpools | Нет | Нет |
 | elasticpools/iothubtenants | Нет | Нет |
@@ -476,12 +476,12 @@ ms.locfileid: "68226818"
 | provisioningservices | Да | Да |
 
 ## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | controllers | Нет | Нет |
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | labcenters | Нет | Нет |
 | labs | Да | Нет |
@@ -491,7 +491,7 @@ ms.locfileid: "68226818"
 | schedules | Да | Да |
 
 ## <a name="microsoftdns"></a>microsoft.dns
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | dnszones | Нет | Нет |
 | dnszones/a | Нет | Нет |
@@ -504,44 +504,44 @@ ms.locfileid: "68226818"
 | trafficmanagerprofiles | Нет | Нет |
 
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | databaseaccounts | Да | Да |
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | domains | Да | Да |
 
 ## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | services; | Да | Да |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | domains | Да | Да |
 | topics | Да | Да |
 
 ## <a name="microsofteventhub"></a>Microsoft.EventHub
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Да | Да |
-| namespaces | Да | Да |
+| пространства имен | Да | Да |
 
 ## <a name="microsoftgenomics"></a>Microsoft.Genomics
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | hanainstances | Да | Да |
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Да | Да |
 
@@ -551,29 +551,29 @@ ms.locfileid: "68226818"
 > При перемещении кластера HDInsight в новую подписку сначала необходимо переместить другие ресурсы (такие как учетная запись хранения). А затем переместить сам кластер HDInsight.
 
 ## <a name="microsofthealthcareapis"></a>Microsoft. Хеалскареапис
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | services; | Да | Да |
 
 ## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| виртуальных | Нет | Нет |
+| Компьютеры | Нет | Нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | datamanagers | Да | Да |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| jobs | Да | Да |
+| задания | Да | Да |
 
 ## <a name="microsoftinsights"></a>microsoft.insights
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 | actiongroups | Да | Да |
 | activitylogalerts | Нет | Нет |
 | alertrules | Да | Да |
@@ -585,24 +585,24 @@ ms.locfileid: "68226818"
 | notificationrules | Нет | Нет |
 | scheduledqueryrules | Да | Да |
 | webtests | Да | Да |
-| workbooks | Да | Да |
+| книги | Да | Да |
 
 > [!IMPORTANT]
 > Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | iotapps | Да | Да |
 
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | checknameavailability | Да | Да |
-| graph | Да | Да |
+| Граф | Да | Да |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | hsmpools | Нет | Нет |
 | vaults | Да | Да |
@@ -611,27 +611,27 @@ ms.locfileid: "68226818"
 > Хранилища ключей, используемые для шифрования дисков, нельзя переместить в группу ресурсов в одной и той же подписке или в рамках подписок.
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Да | Да |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | labaccounts | Нет | Нет |
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | hostingenvironments | Нет | Нет |
 | integrationaccounts | Да | Да |
@@ -640,21 +640,21 @@ ms.locfileid: "68226818"
 | workflows | Да | Да |
 
 ## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | commitmentplans | Да | Да |
 | webservices | Да | Нет |
-| workspaces | Да | Да |
+| рабочие области | Да | Да |
 
 ## <a name="microsoftmachinelearningcompute"></a>Microsoft.MachineLearningCompute
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | operationalizationclusters | Да | Да |
 
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 | accounts/workspaces | Нет | Нет |
 | accounts/workspaces/projects | Нет | Нет |
 | teamaccounts | Нет | Нет |
@@ -662,51 +662,51 @@ ms.locfileid: "68226818"
 | teamaccounts/workspaces/projects | Нет | Нет |
 
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | hostingaccounts | Нет | Нет |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| workspaces | Нет | Нет |
+| рабочие области | Нет | Нет |
 
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | userassignedidentities | Нет | Нет |
 
 ## <a name="microsoftmaps"></a>Microsoft.Maps
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Да | Да |
+| учетные записи | Да | Да |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | classicdevservices | Нет | Нет |
 
 ## <a name="microsoftmedia"></a>Microsoft.Media
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | mediaservices | Да | Да |
 | mediaservices/liveevents | Да | Да |
 | mediaservices/streamingendpoints | Да | Да |
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | assessmentprojects | Нет | Нет |
 | migrateprojects | Нет | Нет |
 | projects | Нет | Нет |
 
 ## <a name="microsoftnetapp"></a>Microsoft.NetApp
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | netappaccounts | Нет | Нет |
 | netappaccounts/capacitypools | Нет | Нет |
@@ -715,14 +715,14 @@ ms.locfileid: "68226818"
 | netappaccounts/capacitypools/volumes/snapshots | Нет | Нет |
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | applicationgateways | Нет | Нет |
 | аппликатионгатевайвебаппликатионфиреваллполиЦиес | Нет | Нет |
 | applicationsecuritygroups | Да | Да |
 | azurefirewalls | Да | Да |
 | bastionhosts | Нет | Нет |
-| connections | Да | Да |
+| подключения | Да | Да |
 | ddoscustompolicies | Да | Да |
 | ddosprotectionplans | Нет | Нет |
 | dnszones | Да | Да |
@@ -730,7 +730,7 @@ ms.locfileid: "68226818"
 | expressroutecrossconnections | Нет | Нет |
 | expressroutegateways | Нет | Нет |
 | expressrouteports | Нет | Нет |
-| frontdoors | Нет | Нет |
+| frontdoor | Нет | Нет |
 | frontdoorwebapplicationfirewallpolicies | Нет | Нет |
 | loadbalancers | Да — SKU "базовый"<br>SKU No-Standard | Да — SKU "базовый"<br>SKU No-Standard |
 | localnetworkgateways | Да | Да |
@@ -765,61 +765,61 @@ ms.locfileid: "68226818"
 | webapplicationfirewallpolicies | Да | Да |
 
 > [!IMPORTANT]
-> См. [руководство по перемещению виртуальных сетей](./move-limitations/virtual-network-move-limitations.md).
+> См. [руководство по перемещению в сеть](./move-limitations/networking-move-limitations.md).
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| namespaces | Да | Да |
+| пространства имен | Да | Да |
 | namespaces/notificationhubs | Да | Да |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| workspaces | Да | Да |
+| рабочие области | Да | Да |
 
 > [!IMPORTANT]
 > Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | managementconfigurations | Да | Да |
-| solutions | Да | Да |
-| узел "Представления" | Да | Да |
+| решения | Да | Да |
+| просмотры | Да | Да |
 
 ## <a name="microsoftpeering"></a>Microsoft. пиринг
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | пиринги | Нет | Нет |
 
 ## <a name="microsoftportal"></a>Microsoft.Portal
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | dashboards | Да | Да |
 
 ## <a name="microsoftportalsdk"></a>Microsoft.PortalSdk
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | rootresources | Нет | Нет |
 
 ## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | workspacecollections | Да | Да |
 
 ## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | capacities | Да | Да |
 
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| accounts | Нет | Нет |
+| учетные записи | Нет | Нет |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | vaults | Да | Да |
 
@@ -827,23 +827,23 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| namespaces | Да | Да |
+| пространства имен | Да | Да |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| веб-масштабированием; | Да | Нет |
+| приложения | Да | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| flows | Да | Да |
+| Потоки | Да | Да |
 | jobcollections | Да | Да |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | searchservices | Да | Да |
 
@@ -851,50 +851,50 @@ ms.locfileid: "68226818"
 > В одной операции невозможно переместить несколько ресурсов поиска в разных регионах. Переместите их в отдельных операциях.
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | иотсекуритисолутионс | Да | Да |
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | gateways | Нет | Нет |
 | Узлы | Нет | Нет |
 
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| namespaces | Да | Да |
+| пространства имен | Да | Да |
 
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| веб-масштабированием; | Нет | Нет |
+| приложения | Нет | Нет |
 | clusters | Да | Да |
 | containergroups | Нет | Нет |
 | containergroupsets | Нет | Нет |
 | edgeclusters | Нет | Нет |
-| networks | Нет | Нет |
+| Сети | Нет | Нет |
 | secretstores | Нет | Нет |
-| volumes. | Нет | Нет |
+| тома | Нет | Нет |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| веб-масштабированием; | Да | Да |
+| приложения | Да | Да |
 | containergroups | Нет | Нет |
 | gateways | Да | Да |
-| networks | Да | Да |
-| секретные коды | Да | Да |
-| volumes. | Да | Да |
+| Сети | Да | Да |
+| секреты | Да | Да |
+| тома | Да | Да |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | signalr | Да | Да |
 
 ## <a name="microsoftsiterecovery"></a>Microsoft.SiteRecovery
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | siterecoveryvault | Нет | Нет |
 
@@ -902,21 +902,21 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | appliancedefinitions | Нет | Нет |
 | appliances | Нет | Нет |
 | applicationdefinitions | Нет | Нет |
-| веб-масштабированием; | Нет | Нет |
+| приложения | Нет | Нет |
 | jitrequests | Нет | Нет |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | инстанцепулс | Нет | Нет |
 | managedinstances | Нет | Нет |
 | managedinstances/databases | Нет | Нет |
-| servers | Да | Да |
+| серверы | Да | Да |
 | servers/databases | Да | Да |
 | servers/elasticpools | Да | Да |
 | virtualclusters | Да | Да |
@@ -925,48 +925,48 @@ ms.locfileid: "68226818"
 > База данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | sqlvirtualmachinegroups | Да | Да |
 | sqlvirtualmachines | Да | Да |
 
 ## <a name="microsoftsqlvm"></a>Microsoft.SqlVM
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | dwvm | Нет | Нет |
 
 ## <a name="microsoftstorage"></a>Microsoft.Storage;
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storageaccounts | Да | Да |
 
 ## <a name="microsoftstoragecache"></a>Microsoft. Сторажекаче
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | кэширует | Нет | Нет |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storagesyncservices | Да | Да |
 
 ## <a name="microsoftstoragesyncdev"></a>Microsoft.StorageSyncDev
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storagesyncservices | Нет | Нет |
 
 ## <a name="microsoftstoragesyncint"></a>Microsoft.StorageSyncInt
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storagesyncservices | Нет | Нет |
 
 ## <a name="microsoftstorsimple"></a>Microsoft.StorSimple
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | managers | Нет | Нет |
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | streamingjobs | Да | Да |
 
@@ -974,39 +974,39 @@ ms.locfileid: "68226818"
 > Невозможно переместить задания Stream Analytics в состоянии выполнения.
 
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | environments | Нет | Нет |
 | environments/eventsources | Нет | Нет |
-| instances | Нет | Нет |
+| Экземпляры | Нет | Нет |
 | instances/environments | Нет | Нет |
 | instances/environments/eventsources | Нет | Нет |
 
 ## <a name="microsoftterraformoss"></a>Microsoft.TerraformOSS
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | providerregistrations | Нет | Нет |
-| ресурсов | Нет | Нет |
+| ресурсы | Нет | Нет |
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | environments | Да | Да |
 | environments/eventsources | Да | Да |
 | environments/referencedatasets | Да | Да |
 
 ## <a name="microsofttoken"></a>Microsoft. Token
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | сохраняют | Нет | Нет |
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | imagetemplates | Нет | Нет |
 
 ## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | учетная запись | Да | Да |
 | account/extension | Да | Да |
@@ -1016,22 +1016,22 @@ ms.locfileid: "68226818"
 > Чтобы изменить подписку на Azure DevOps, см. статью [изменение подписки Azure, используемой для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftvmwarecloudsimple"></a>Microsoft. Вмвареклаудсимпле
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | дедикатедклауднодес | Да | Да |
 | дедикатедклаудсервицес | Да | Да |
 | virtualmachines | Да | Да |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| certificates | Нет | Да |
+| сертификаты | Нет | Да |
 | connectiongateways | Да | Да |
-| connections | Да | Да |
+| подключения | Да | Да |
 | customapis | Да | Да |
 | hostingenvironments | Нет | Нет |
 | serverfarms | Да | Да |
-| sites | Да | Да |
+| сайты | Да | Да |
 | sites/premieraddons | Да | Да |
 | sites/slots | Да | Да |
 
@@ -1039,16 +1039,16 @@ ms.locfileid: "68226818"
 > См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | deviceservices | Нет | Нет |
 
 ## <a name="microsoftwindowsvirtualdesktop"></a>Microsoft. Виндовсвиртуалдесктоп
-| Тип ресурса | Resource group | Subscription |
+| Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | аппликатионграупс | Нет | Нет |
 | хостпулс | Нет | Нет |
-| workspaces | Нет | Нет |
+| рабочие области | Нет | Нет |
 
 ## <a name="third-party-services"></a>Сторонние службы
 

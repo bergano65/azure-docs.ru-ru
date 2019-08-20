@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, sstein
 ms.date: 05/10/2019
-ms.openlocfilehash: 7e5c33577a2d926266ae45057509b112dc27ce7b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: c4ba2269003c9d401982b83f4e66c8caf45a0073
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985720"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624706"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -53,7 +53,7 @@ ms.locfileid: "68985720"
 | [Параметры сортировки сервера или экземпляра](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation) | Нет, параметры сортировки `SQL_Latin1_General_CP1_CI_AS` логического сервера по умолчанию всегда используются. | Да, может быть задано при [создании экземпляра](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md) и не может быть обновлено позже. |
 | [Индексы columnstore](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview) | Да, [в категориях "Премиум" и "Стандартный" (S3 и выше), а также в категориях "Общего назначения" и "Критически важный для бизнеса"](https://docs.microsoft.com/sql/relational-databases/indexes/columnstore-indexes-overview). |Да |
 | [Общеязыковая среда выполнения — CLR](https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts) | Нет | Да, но без доступа к файловой системе в `CREATE ASSEMBLY` инструкции см. раздел [различия в среде CLR](sql-database-managed-instance-transact-sql-information.md#clr) . |
-| [автономные базы данных;](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | Да | Сейчас нет [из-за ошибки восстановления, включая восстановление до точки во времени](sql-database-managed-instance-transact-sql-information.md#cant-restore-contained-database). Это ошибка, которая будет исправлена в ближайшее время. |
+| [автономные базы данных;](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | Да | Да |
 | [Автономные пользователи](https://docs.microsoft.com/sql/relational-databases/security/contained-database-users-making-your-database-portable) | Да | Да |
 | [Ключевые слова языка управления потоком](https://docs.microsoft.com/sql/t-sql/language-elements/control-of-flow) | Да | Да |
 | [Учетные данные](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/credentials-database-engine) | Да, но только [учетные данные уровня базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql). | Да, но поддерживаются только `SHARED ACCESS SIGNATURE` **Azure Key Vault** и. см. [сведения](sql-database-managed-instance-transact-sql-information.md#credential) |
@@ -132,7 +132,7 @@ ms.locfileid: "68985720"
 | [Временные таблицы](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables) | [Да](sql-database-temporal-tables.md) | [Да](sql-database-temporal-tables.md) |
 | Вариант часового пояса | Нет | [Да](sql-database-managed-instance-timezone.md), и его необходимо настроить при создании управляемый экземпляр. |
 | Обнаружение угроз|  [Да](sql-database-threat-detection.md)|[Да](sql-database-managed-instance-threat-detection.md)|
-| [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | Нет | Нет |
+| [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | Нет | Да, но только ограниченный набор глобальных флагов трассировки. См. раздел [различия DBCC](sql-database-managed-instance-transact-sql-information.md#dbcc) |
 | [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Да, [только подписчик транзакций и репликация моментальных снимков](sql-database-single-database-migrate.md) | Да, в [общедоступной предварительной версии](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance). Ограничения см. [здесь](sql-database-managed-instance-transact-sql-information.md#replication). |
 | [Переменные](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | Да | Да |
 | [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Да, только уровни служб общего назначения и "Критически важный для бизнеса"| [Да](transparent-data-encryption-azure-sql.md) |

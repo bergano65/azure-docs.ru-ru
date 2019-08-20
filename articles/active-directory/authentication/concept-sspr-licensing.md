@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/11/2019
+ms.date: 08/19/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7463b86ea20a712937b8ccba7997c2551aae5be6
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 4d7a23ed0a84ebd671c69744dfec145763ef6897
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879106"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622722"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Требования к лицензированию самостоятельного сброса пароля в Azure AD
 
@@ -34,7 +34,7 @@ Azure Active Directory (Azure AD) поставляется в нескольки
 * Самостоятельный сброс паролей для пользователей облака
    * Я являюсь **пользователем облака** и забыл свой пароль.
       * Я хочу **сбросить** пароль.
-   * Эта функция включена в такие выпуски Azure AD Premium P1 или P2 и Microsoft 365 бизнес.
+   * Эта функция включена в Azure AD Premium P1, P2, Microsoft 365 бизнес или Office 365.
 
 * Самостоятельный сброс, изменение или разблокировка пароля **при помощи локальной обратной записи**
    * Я использую **гибридную** локальную учетную запись Active Directory, которая с помощью Azure AD Connect синхронизируется с моей учетной записью Azure AD. Я хочу изменить свой пароль, забыл свой пароль, или он был заблокирован.

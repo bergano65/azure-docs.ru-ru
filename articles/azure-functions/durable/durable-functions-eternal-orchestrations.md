@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 352fd16d98e6f376e230d2112a9b94b66ccc1b5a
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: a93a0cf5dad83ae3c69b15fda9ba6f4268b9a91f
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69542734"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624159"
 ---
 # <a name="eternal-orchestrations-in-durable-functions-azure-functions"></a>Нескончаемые оркестрации в устойчивых функциях (Функции Azure)
 
@@ -73,6 +73,25 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 Разница между этим примером и запуском функции по таймеру заключается в том, что триггер очистки здесь можно не привязывать к расписанию. Например, если функция выполняется каждый час по расписанию CRON, она будет запущена в 1:00, 2:00, 3:00 и т.д., что может привести к проблемам наложения. А в нашем варианте, если очистка продолжается 30 минут, функция будет выполняться в 1:00, 2:30, 4:00, т. д., что позволяет избежать наложения.
+
+## <a name="starting-an-eternal-orchestration"></a>Запуск оркестрации нескончаемые
+Используйте метод [стартневасинк](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_StartNewAsync_) для запуска оркестрации нескончаемые. Это не отличается от активации любой другой функции оркестрации.  
+
+> [!NOTE]
+> Если необходимо обеспечить выполнение оркестрации одноэлементного нескончаемые, важно поддерживать тот же экземпляр `id` при запуске оркестрации. Дополнительные сведения см. в [статье об управлении экземплярами](durable-functions-instance-management.md).
+
+```csharp
+[FunctionName("Trigger_Eternal_Orchestration")]
+public static async Task<HttpResponseMessage> OrchestrationTrigger(
+    [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestMessage request,
+    [OrchestrationClient] DurableOrchestrationClientBase client)
+{
+    string instanceId = "StaticId";
+    // Null is used as the input, since there is no input in "Periodic_Cleanup_Loop".
+    await client.StartNewAsync("Periodic_Cleanup_Loop"), instanceId, null); 
+    return client.CreateCheckStatusResponse(request, instanceId);
+}
+```
 
 ## <a name="exit-from-an-eternal-orchestration"></a>Выход из нескончаемой оркестрации
 

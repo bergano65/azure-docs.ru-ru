@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 07/01/2019
 ms.author: moderakh
-ms.openlocfilehash: 3cafa4d5aecaa4c8f3863c3269ec02793340e3e6
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 3bee473adde9c4762cf400dff6190eb76a4cc8d7
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509264"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624693"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -27,8 +27,8 @@ ms.locfileid: "67509264"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
+> * [Групповой исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Групповой исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
 
 Пакет SDK Async Java для API-интерфейса SQL отличается от пакета SDK Java для API-интерфейса SQL возможностью выполнять асинхронные операции с поддержкой [библиотеки Netty](https://netty.io/). Существующий [пакет SDK Java для API-интерфейса SQL](sql-api-sdk-java.md) не поддерживает асинхронные операции. 
 
@@ -45,25 +45,25 @@ ms.locfileid: "67509264"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
-* Режим TCP теперь на по умолчанию
-* Метрики запросов в между разделами теперь возвращает все секции
-* Глобальные строгих теперь работает должным образом
-* Отработка отказа для запросов неправильно повторяет несколькими хозяевами
-* Изменяет рельеф зависимостей для исправлений безопасности
+* Режим TCP сейчас включен по умолчанию
+* Метрики запросов в перекрестной секции теперь возвращают все секции
+* Global strong теперь работает правильно
+* Отработка отказа для запросов с несколькими хозяевами не повторяется должным образом
+* Выпуклости зависимостей для исправлений безопасности
 
 ### <a name="a-name245245"></a><a name="2.4.5"/>2.4.5
-* Устраняйте для поддержки хэш V2
+* Бугфикс для поддержки хэша версии 2
 
 ### <a name="a-name243243"></a><a name="2.4.3"/>2.4.3
-* Устраняйте предмет утечки ресурсов на client#close() ([github #88](https://github.com/Azure/azure-cosmosdb-java/issues/88)).
+* Бугфикс для утечки ресурсов на клиенте # Close () ([github #88](https://github.com/Azure/azure-cosmosdb-java/issues/88)).
 
 ### <a name="a-name242242"></a><a name="2.4.2"/>2.4.2
-* Добавлена продолжения токена поддержка запросов между секциями.
+* Добавлена поддержка маркеров продолжения для запросов между секциями.
 
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
-* Исправлены некоторые ошибки в режиме прямого подключения.
-* Улучшенное ведение журнала в режиме прямого подключения.
-* Управление улучшенного подключения.
+* Исправлены некоторые ошибки в режиме Direct.
+* Улучшено ведение журнала в режиме прямого подключения.
+* Улучшенное управление подключениями.
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 * Режим прямого подключения теперь доступен по умолчанию. Пример использования режима прямого подключения, см. в разделе [azure-cosmosdb-java](https://github.com/Azure/azure-cosmosdb-java) репозитория GitHub.

@@ -7,15 +7,15 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: atsenthi
-ms.openlocfilehash: 7795612d8aa4974bc640571d49ad1520e2a0f94c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 8e39318dcaa31a111908c6be1ae7a51d73eb7478
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68963845"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69623833"
 ---
 # <a name="what-is-the-service-fabric-application-resource-model"></a>Что такое модель ресурсов приложения Service Fabric?
-Рекомендуется развертывать Service Fabric приложения на кластере Service Fabric с помощью Azure Resource Manager. Этот метод позволяет описать приложения и службы в JSON и развернуть их в том же шаблоне диспетчер ресурсов, что и кластер. В отличие от развертывания приложений и управления ими с помощью PowerShell или Azure CLI, нет необходимости ждать готовности кластера. Процесс регистрации, подготовки и развертывания приложений может выполняться за один шаг. Это рекомендуемый способ управления жизненным циклом приложения в кластере. Дополнительные сведения см. в [рекомендациях](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-service-fabric-resources).
+Рекомендуется развертывать Service Fabric приложения на кластере Service Fabric с помощью Azure Resource Manager. Этот метод позволяет описать приложения и службы в JSON и развернуть их в том же шаблоне диспетчер ресурсов, что и кластер. В отличие от развертывания приложений и управления ими с помощью PowerShell или Azure CLI, нет необходимости ждать готовности кластера. Регистрацию, подготовку и развертывание приложения можно выполнить за один шаг. Это рекомендуемая методика управления жизненным циклом приложения в кластере. Дополнительные сведения см. в [рекомендациях](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-service-fabric-resources).
 
 Если это возможно, следует управлять приложениями как ресурсами Resource Manager, чтобы улучшить:
 * Журнал аудита: Диспетчер ресурсов выполняет аудит каждой операции и хранит подробный *Журнал действий* , который поможет отслеживать любые изменения, внесенные в эти приложения и кластер.
@@ -33,7 +33,7 @@ ms.locfileid: "68963845"
 ## <a name="deploy-application-resources-using-azure-resource-manager"></a>Развертывание ресурсов приложения с помощью Azure Resource Manager  
 Чтобы развернуть приложение и его службы с помощью модели ресурсов Azure Resource Manager приложения, необходимо упаковать код приложения, передать пакет, а затем указать ссылку на расположение пакета в шаблоне Azure Resource Manager в качестве приложения. ресурсов. Дополнительные сведения см. в [пакете приложения](https://docs.microsoft.com/azure/service-fabric/service-fabric-package-apps#create-an-sfpkg).
           
-Затем создайте шаблон Azure Resource Manager, обновите файл параметров, указав сведения о приложении, и разверните его в кластере Service Fabric. Ознакомьтесь с примерами здесь
+Затем создайте шаблон Azure Resource Manager, обновите файл параметров, указав сведения о приложении, и разверните его в кластере Service Fabric. Ознакомьтесь с примерами [здесь](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/tree/master/ARM).
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 Для развертывания приложения из шаблона диспетчер ресурсов требуется учетная запись хранения для размещения образа приложения. Вы можете повторно использовать существующую учетную запись хранения или создать новую учетную запись хранения для размещения приложений. Если вы хотите использовать существующую учетную запись хранения, этот шаг можно пропустить. 

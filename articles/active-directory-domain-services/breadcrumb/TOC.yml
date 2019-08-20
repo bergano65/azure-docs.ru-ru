@@ -1,0 +1,13 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: "Документация по доменным службам Azure\_AD"
+      tocHref: /azure/active-directory/fundamentals
+      topicHref: /azure/active-directory-domain-services/index
+    - name: "Документация по доменным службам Azure\_AD"
+      tocHref: /azure/active-directory/hybrid/
+      topicHref: /azure/active-directory-domain-services/index
+    - name: "Документация по доменным службам Azure\_AD"
+      tocHref: /windows-server/identity/ad-ds/
+      topicHref: /azure/active-directory-domain-services/index

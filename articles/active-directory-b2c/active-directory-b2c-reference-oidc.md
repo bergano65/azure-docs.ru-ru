@@ -7,16 +7,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 08/20/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f6188f5c5bdd256ee84c5e7dc8632e5c067ceca5
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 36efdb7db57d3acfa7384d904e9be8faad4c6534
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541724"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622076"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Вход в веб-приложения с помощью OpenID Connect в Azure Active Directory B2C
 
@@ -32,11 +32,10 @@ OpenID Connect — это протокол проверки подлинност
 
 Если веб-приложению требуется проверить подлинность пользователя и запустить поток пользователя, он может направить пользователя в `/authorize` конечную точку. Пользователь принимает действие в зависимости от потока пользователя.
 
-В этом запросе клиент указывает разрешения, которые необходимо получить от пользователя в `scope` параметре, и поток пользователя для выполнения `p` в параметре. В следующих разделах приведены три примера для разных потоков пользователей (переносы строк добавлены для удобства чтения). Чтобы понять, как работает каждый запрос, попробуйте вставить его в браузер и запустить. Вы можете заменить `fabrikamb2c` именем своего клиента, если он есть, и создать поток пользователя. Также необходимо будет заменить `90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6`. Замените этот идентификатор клиента ИДЕНТИФИКАТОРом приложения, созданным для регистрации приложения. Также измените имя `b2c_1_sign_in` политики на имя политики, имеющееся в клиенте.
+В этом запросе клиент указывает разрешения, которые необходимо получить от пользователя в `scope` параметре, и указывает поток пользователя для выполнения. В следующих разделах приведены три примера для разных потоков пользователей (переносы строк добавлены для удобства чтения). Чтобы понять, как работает каждый запрос, попробуйте вставить его в браузер и запустить. Вы можете заменить `fabrikamb2c` именем своего клиента, если он есть, и создать поток пользователя. Также необходимо будет заменить `90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6`. Замените этот идентификатор клиента ИДЕНТИФИКАТОРом приложения, созданным для регистрации приложения. Также измените имя политики (`{policy}`) на имя политики в клиенте, например. `b2c_1_sign_in`
 
-#### <a name="use-a-sign-in-user-flow"></a>Использование потока пользователя для входа
-```
-GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
+```HTTP
+GET https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/authorize?
 client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 &response_type=code+id_token
 &redirect_uri=https%3A%2F%2Faadb2cplayground.azurewebsites.net%2F
@@ -44,40 +43,14 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 &scope=openid%20offline_access
 &state=arbitrary_data_you_can_receive_in_the_response
 &nonce=12345
-&p=b2c_1_sign_in
-```
-
-#### <a name="use-a-sign-up-user-flow"></a>Использование потока пользователя для регистрации
-```
-GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
-client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
-&response_type=code+id_token
-&redirect_uri=https%3A%2F%2Faadb2cplayground.azurewebsites.net%2F
-&response_mode=form_post
-&scope=openid%20offline_access
-&state=arbitrary_data_you_can_receive_in_the_response
-&nonce=12345
-&p=b2c_1_sign_up
-```
-
-#### <a name="use-an-edit-profile-user-flow"></a>Использование потока пользователя для изменения профиля
-```
-GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
-client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
-&response_type=code+id_token
-&redirect_uri=https%3A%2F%2Faadb2cplayground.azurewebsites.net%2F
-&response_mode=form_post
-&scope=openid%20offline_access
-&state=arbitrary_data_you_can_receive_in_the_response
-&nonce=12345
-&p=b2c_1_edit_profile
 ```
 
 | Параметр | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
+| клиентом | Да | Имя клиента Azure AD B2C |
+| политик | Да | Выполняемый пользователем поток. Это имя пользовательского потока, созданного в клиенте Azure AD B2C. Имя потока пользователей должно начинаться с `b2c_1_`. Например: `b2c_1_sign_in`, `b2c_1_sign_up`или. `b2c_1_edit_profile` |
 | client_id | Да | Идентификатор приложения, назначенный приложению [портал Azure](https://portal.azure.com/) . |
 | nonce | Да | Значение, включенное в запрос (созданное приложением), включенное в результирующий маркер идентификации в качестве утверждения. Затем приложение может проверить это значение, чтобы устранить атаки, направленные на воспроизведение маркеров. Это значение обычно представляет собой случайную уникальную строку, которую можно использовать для определения источника запроса. |
-| p | Да | Выполняемый пользователем поток. Это имя пользовательского потока, созданного в клиенте Azure AD B2C. Имя потока пользователей должно начинаться с `b2c\_1\_`. |
 | response_type | Да | Необходимо включить маркер идентификации для OpenID Connect Connect. Если веб-приложению также требуются маркеры для вызова веб-API, можно использовать `code+id_token`. |
 | область | Да | Список областей с разделителями-пробелами. Область `openid` определяет разрешение на вход пользователя и получение данных о пользователе в форме маркеров идентификации. `offline_access` Область является необязательной для веб-приложений. Это означает, что для расширенного доступа к ресурсам приложению потребуется *маркер обновления* . |
 | prompt | Нет | Требуемый тип взаимодействия с пользователем. Сейчас единственное допустимое значение — `login`, при котором пользователю приходится вводить учетные данные по запросу. |
@@ -91,7 +64,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 
 Успешный ответ с использованием метода `response_mode=fragment` выглядит следующим образом:
 
-```
+```HTTP
 GET https://aadb2cplayground.azurewebsites.net/#
 id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 &code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
@@ -106,7 +79,7 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 
 Сообщения об ошибках также могут быть отправлены в `redirect_uri` параметр, чтобы приложение могла соответствующим образом обрабатывать их:
 
-```
+```HTTP
 GET https://aadb2cplayground.azurewebsites.net/#
 error=access_denied
 &error_description=the+user+canceled+the+authentication
@@ -125,11 +98,15 @@ error=access_denied
 
 Azure AD B2C имеет конечную точку метаданных OpenID Connect Connect, которая позволяет приложению получать сведения о Azure AD B2C во время выполнения. Эти сведения включают конечные точки, содержимое маркеров и ключи подписи маркеров. Для каждого потока пользователя в клиенте B2C есть собственный документ метаданных JSON. Например, документ метаданных для потока пользователя `b2c_1_sign_in` в `fabrikamb2c.onmicrosoft.com` находится в каталоге:
 
-`https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=b2c_1_sign_in`
+```HTTP
+https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_sign_in/v2.0/.well-known/openid-configuration
+```
 
 Одно из свойств этого документа конфигурации — `jwks_uri`, значение которого для точно такого же потока пользователя будет следующим:
 
-`https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/discovery/v2.0/keys?p=b2c_1_sign_in`.
+```HTTP
+https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_sign_in/discovery/v2.0/keys
+```
 
 Чтобы определить, какой поток пользователя использовался при подписывании маркера идентификации (и откуда можно получить метаданные), у вас есть два варианта. Во-первых, имя потока пользователя включено в утверждение `acr` маркера идентификации. Другой вариант — закодировать поток пользователя в значении параметра `state` при отправке запроса, а затем декодировать его, чтобы определить используемый поток. Каждый из этих методов является допустимым.
 
@@ -159,9 +136,9 @@ Azure AD B2C имеет конечную точку метаданных OpenID 
 
 Вы также можете запросить маркер доступа для собственного серверного веб-API в соответствии с соглашением об использовании идентификатора клиента приложения в качестве запрошенной области (что приведет к маркеру доступа с таким ИДЕНТИФИКАТОРом клиента, как "аудитория"):
 
-```
-POST fabrikamb2c.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1_sign_in HTTP/1.1
-Host: https://fabrikamb2c.b2clogin.com
+```HTTP
+POST {tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/token HTTP/1.1
+Host: {tenant}.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6 offline_access&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_secret=<your-application-secret>
@@ -169,17 +146,18 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 
 | Параметр | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
+| клиентом | Да | Имя клиента Azure AD B2C |
+| политик | Да | Поток пользователя, который использовался для получения кода авторизации. В этом запросе нельзя использовать другой поток пользователя. Добавьте этот параметр в строку запроса, а не в тело сообщения POST. |
 | client_id | Да | Идентификатор приложения, назначенный приложению [портал Azure](https://portal.azure.com/) . |
 | client_secret | Да | Секрет приложения, созданный в [портал Azure](https://portal.azure.com/). Это важный артефакт безопасности, и он должен безопасно храниться на сервере. Измените секрет клиента на периодической основе. |
 | code | Да | Код авторизации, полученный в начале потока пользователя. |
 | grant_type | Да | Тип предоставления. Для потока кода авторизации это должен быть тип `authorization_code`. |
-| p | Да | Поток пользователя, который использовался для получения кода авторизации. В этом запросе нельзя использовать другой поток пользователя. Добавьте этот параметр в строку запроса, а не в тело сообщения POST. |
 | redirect_uri | Да | Параметр `redirect_uri` приложения, в котором вы получили код авторизации. |
 | область | Нет | Список областей с разделителями-пробелами. Область `openid` определяет разрешение на вход пользователя и получение данных о пользователе в форме маркеров идентификации. Его можно использовать для получения маркеров для собственного серверного веб-интерфейса API, который представляется тем же ИДЕНТИФИКАТОРом приложения, что и клиент. `offline_access` Область указывает, что приложению требуется маркер обновления для расширенного доступа к ресурсам. |
 
 Успешный ответ маркера выглядит следующим образом:
 
-```
+```JSON
 {
     "not_before": "1442340812",
     "token_type": "Bearer",
@@ -189,6 +167,7 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
     "refresh_token": "AAQfQmvuDy8WtUv-sd0TBwWVQs1rC-Lfxa_NDkLqpg50Cxp5Dxj0VPF1mx2Z...",
 }
 ```
+
 | Параметр | Описание |
 | --------- | ----------- |
 | not_before | Момент времени, в который маркер начинает считаться действительным (с начала эпохи). |
@@ -200,7 +179,7 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 
 Сообщения об ошибках выглядят следующим образом:
 
-```
+```JSON
 {
     "error": "access_denied",
     "error_description": "The user revoked access to the app.",
@@ -216,9 +195,9 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 
 После успешного получения маркера доступа маркер можно использовать в запросах к веб-API серверной части приложения путем включения маркера в заголовок `Authorization`:
 
-```
+```HTTP
 GET /tasks
-Host: https://mytaskwebapi.com
+Host: mytaskwebapi.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 ```
 
@@ -226,9 +205,9 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 Срок действия маркеров идентификатора истекает через короткий период времени. Обновите токены после истечения срока их действия, чтобы продолжить доступ к ресурсам. Токен можно обновить, отправив другой `POST` запрос `/token` в конечную точку. На этот раз укажите параметр `refresh_token` вместо параметра `code`:
 
-```
-POST fabrikamb2c.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1_sign_in HTTP/1.1
-Host: https://fabrikamb2c.b2clogin.com
+```HTTP
+POST {tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/token HTTP/1.1
+Host: {tenant}.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=openid offline_access&refresh_token=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_secret=<your-application-secret>
@@ -236,17 +215,18 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 
 | Параметр | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
+| клиентом | Да | Имя клиента Azure AD B2C |
+| политик | Да | Поток пользователя, который использовался для получения исходного маркера обновления. В этом запросе нельзя использовать другой поток пользователя. Добавьте этот параметр в строку запроса, а не в тело сообщения POST. |
 | client_id | Да | Идентификатор приложения, назначенный приложению [портал Azure](https://portal.azure.com/) . |
 | client_secret | Да | Секрет приложения, созданный в [портал Azure](https://portal.azure.com/). Это важный артефакт безопасности, и он должен безопасно храниться на сервере. Измените секрет клиента на периодической основе. |
 | grant_type | Да | Тип предоставления, который должен быть маркером обновления для этой части потока кода авторизации. |
 | refresh_token | Да | Исходный маркер обновления, полученный во второй части последовательности. Для получения маркера обновления областьдолжнаиспользоватьсякаквзапросахавторизации,такинамаркерах.`offline_access` |
-| p | Да | Поток пользователя, который использовался для получения исходного маркера обновления. В этом запросе нельзя использовать другой поток пользователя. Добавьте этот параметр в строку запроса, а не в тело сообщения POST. |
 | redirect_uri | Нет | Параметр `redirect_uri` приложения, в котором вы получили код авторизации. |
 | область | Нет | Список областей с разделителями-пробелами. Область `openid` определяет разрешение на вход пользователя и получение данных о пользователе в форме маркеров идентификации. Его можно использовать для отправки маркеров в собственный серверный веб-API приложения, который представляется тем же ИДЕНТИФИКАТОРом приложения, что и клиент. `offline_access` Область указывает, что приложению требуется маркер обновления для расширенного доступа к ресурсам. |
 
 Успешный ответ маркера выглядит следующим образом:
 
-```
+```JSON
 {
     "not_before": "1442340812",
     "token_type": "Bearer",
@@ -256,6 +236,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
     "refresh_token": "AAQfQmvuDy8WtUv-sd0TBwWVQs1rC-Lfxa_NDkLqpg50Cxp5Dxj0VPF1mx2Z...",
 }
 ```
+
 | Параметр | Описание |
 | --------- | ----------- |
 | not_before | Момент времени, в который маркер начинает считаться действительным (с начала эпохи). |
@@ -267,7 +248,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 
 Сообщения об ошибках выглядят следующим образом:
 
-```
+```JSON
 {
     "error": "access_denied",
     "error_description": "The user revoked access to the app.",
@@ -285,7 +266,7 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 
 Чтобы выйти из учетной записи пользователя, перенаправьте пользователя `end_session` на конечную точку, которая указана в документе OpenID Connect Connect metadata, описанном ранее.
 
-```
+```HTTP
 GET https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{policy}/oauth2/v2.0/logout?post_logout_redirect_uri=https%3A%2F%2Faadb2cplayground.azurewebsites.net%2F
 ```
 
