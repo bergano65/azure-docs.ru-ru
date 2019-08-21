@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 02/13/2019
+ms.date: 08/20/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 38ed3b2e4b103e63d88b9ba3d250aa8c0b6bb9bf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: bc1863795161342c05a5538e8f7e40e789ce695d
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072034"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647117"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-go"></a>Использование REST API службы QnA Maker с Go 
 <a name="HOLTop"></a>
@@ -38,7 +38,7 @@ ms.locfileid: "67072034"
 - [Получать текущий набор вариантов слов без учета регистра.](#GetAlterations)
 - [Заменять текущий набор вариантов слов без учета регистра.](#PutAlterations)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для запуска этого кода понадобится [Go 1.10.1](https://golang.org/dl/).
 
@@ -1442,7 +1442,7 @@ func main() {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
