@@ -108,7 +108,7 @@
 - name: Примеры
   items:
     - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=service-fabric'
+      href: 'https://docs.microsoft.com/samples/browse/'
     - name: Azure PowerShell
       href: service-fabric-powershell-samples.md
     - name: Интерфейс командной строки Service Fabric
@@ -354,7 +354,7 @@
       href: service-fabric-api-management-overview.md
     - name: Модель ресурсов приложения
       href: service-fabric-concept-resource-model.md
-    - name: Управляемое удостоверение
+    - name: Управляемое удостоверение (предварительная версия)
       href: concepts-managed-identity.md
 - name: Руководства
   items:
@@ -747,7 +747,7 @@
           href: service-fabric-reverse-proxy-diagnostics.md
         - name: Устранение неполадок локального кластера
           href: service-fabric-troubleshoot-local-cluster-setup.md
-    - name: Использование управляемого удостоверения для приложений Service Fabric
+    - name: Использование управляемого удостоверения для приложений Service Fabric (предварительная версия)
       items:
         - name: Настройка кластера
           items:

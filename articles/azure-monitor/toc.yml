@@ -930,6 +930,8 @@
               href: platform/alerts-understand-migration.md
             - name: Использование средства миграции
               href: platform/alerts-using-migration-tool.md
+            - name: Процесс автоматической миграции
+              href: platform/alerts-automatic-migration.md
             - name: Управление классическими оповещениями метрик
               href: platform/alerts-classic-portal.md
             - name: Создание классического оповещения на основе метрик с помощью шаблона Resource Manager

@@ -114,6 +114,8 @@
               href: backup-mabs-system-state-and-bmr.md
         - name: Восстановление данных с сервера Azure Backup Server
           href: backup-azure-alternate-dpm-server.md
+        - name: Восстановление виртуальных машин VMware с помощью Azure Backup Server
+          href: restore-azure-backup-server-vmware.md
     - name: Azure Backup Server в Azure Stack
       items:
         - name: Установка Azure Backup Server

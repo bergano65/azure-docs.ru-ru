@@ -72,7 +72,7 @@
   items:
     - name: Лаборатории для аудитории
       items:
-        - name: Создание и настройка учетных записей лаборатории
+        - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
           items:
             - name: Создание и администрирование учетных записей лаборатории
               href: classroom-labs/how-to-manage-lab-accounts.md
@@ -82,7 +82,7 @@
               href: classroom-labs/how-to-connect-peer-virtual-network.md
             - name: Подключение и отключение коллекции общих образов
               href: classroom-labs/how-to-attach-detach-shared-image-gallery.md
-        - name: 'Создание, настройка и использование лабораторий для аудитории'
+        - name: Создание и настройка лаборатории для аудитории (преподаватель)
           items:
             - name: Создание и администрирование лабораторий для аудитории
               href: classroom-labs/how-to-manage-classroom-labs.md
@@ -90,8 +90,6 @@
               href: classroom-labs/how-to-create-manage-template.md
             - name: Настройка параметров и контроль использования
               href: classroom-labs/how-to-configure-student-usage.md
-            - name: Доступ к лабораториям для аудитории
-              href: classroom-labs/how-to-use-classroom-lab.md
             - name: Создание расписаний и управление ими
               href: classroom-labs/how-to-create-schedules.md
             - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
@@ -102,6 +100,10 @@
               href: classroom-labs/how-to-enable-remote-desktop-linux.md
             - name: Установка или сброс паролей для виртуальных машин
               href: classroom-labs/how-to-set-virtual-machine-passwords.md
+        - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
+          items:
+            - name: Доступ к лабораториям для аудитории
+              href: classroom-labs/how-to-use-classroom-lab.md
     - name: DevTest Labs
       items:
         - name: Настройка лаборатории
@@ -120,6 +122,8 @@
               href: configure-lab-remote-desktop-gateway.md
             - name: Публикация объявлений в лаборатории
               href: devtest-lab-announcements.md
+            - name: Включение на виртуальных машинах подключения через браузер
+              href: enable-browser-connection-lab-virtual-machines.md
             - name: Настройка управления затратами
               href: devtest-lab-configure-cost-management.md
             - name: Отправка уведомлений об автоматическом завершении работы
@@ -166,6 +170,8 @@
               href: devtest-lab-use-resource-manager-template.md
             - name: Создание виртуальной машины с помощью образа из общедоступной коллекции образов
               href: add-vm-use-shared-image.md
+            - name: Подключение к виртуальной машине через браузер
+              href: connect-virtual-machine-through-browser.md
             - name: Запуск или остановка работы виртуальной машины с помощью PowerShell либо CLI
               href: use-command-line-start-stop-virtual-machines.md
             - name: Перезапуск виртуальной машины

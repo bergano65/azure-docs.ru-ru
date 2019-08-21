@@ -149,6 +149,8 @@
           href: display-feature-information-android.md
         - name: Добавление слоя фрагментов
           href: how-to-add-tile-layer-android-map.md
+    - name: Предоставление отзывов о данных
+      href: how-to-use-feedback-tool.md
 - name: Справочные материалы
   items:
     - name: Расширения параметров и API
