@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 489ff1824c4bc45ee7ed31e9c96377975a32baa4
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 8df01c204a6893f4e2ff1c2ff22fa337d77c519b
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879244"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69637594"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -48,7 +48,7 @@ ms.locfileid: "68879244"
 Например, если вы хотите, чтобы значение счетчика Azure AD было выше, чем AD, то Azure AD будет 120 секунд (2 минуты), а локальное AD — 1 минута (60 секунд).
 
 > [!IMPORTANT]
-> Сейчас администраторы не могут разблокировать учетные записи пользователей в облаке, если они заблокированы с помощью смарт-блокировки. Администраторы должны подождать, пока не завершится срок действия блокировки.
+> В настоящее время администратор не может разблокировать облачные учетные записи пользователей, если они были заблокированы с помощью функции смарт-блокировки. Администраторы должны подождать, пока не завершится срок действия блокировки. Тем не менее пользователь может разблокировать с помощью самостоятельного сброса пароля (SSPR) из доверенного устройства или расположения.
 
 ## <a name="verify-on-premises-account-lockout-policy"></a>Проверка локальных политик блокировки учетных записей
 

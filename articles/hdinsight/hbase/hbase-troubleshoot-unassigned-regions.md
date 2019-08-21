@@ -5,19 +5,19 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
-ms.date: 08/07/2019
-ms.openlocfilehash: e75f2fdd0530b92e8c8405b74c2a364ff9e9e28e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.date: 08/16/2019
+ms.openlocfilehash: 6e734a661557b024257fcd1b9d9c2da6a3bc8f85
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935436"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640224"
 ---
 # <a name="issues-with-region-servers-in-azure-hdinsight"></a>Проблемы с серверами регионов в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="scenario-unassigned-regions"></a>Сценарий: Неназначенные регионы
+## <a name="scenario-unassigned-regions"></a>Сценарий. Неназначенные регионы
 
 ### <a name="issue"></a>Проблемы
 
@@ -27,7 +27,7 @@ ms.locfileid: "68935436"
 multiple regions being unassigned or holes in the chain of regions
 ```
 
-В пользовательском интерфейсе Apache HBase Master можно увидеть, что количество регионов не сбалансировано на всех серверах регионов.
+В пользовательском интерфейсе Apache HBase Master можно увидеть число регионов, которые не сбалансированы по всем серверам регионов. Затем можно выполнить команду `hbase hbck`, чтобы увидеть пропуски в цепочке регионов.
 
 ### <a name="cause"></a>Причина:
 
@@ -39,19 +39,19 @@ multiple regions being unassigned or holes in the chain of regions
 
 1. Войдите в кластер HDInsight HBase с помощью SSH.
 
-1. Выполните `hbase zkcli` команду, чтобы подключиться к оболочке Zookeeper.
+1. Выполните `hbase zkcli` команду, чтобы подключиться к оболочке ZooKeeper.
 
 1. Выполните `rmr /hbase/regions-in-transition` команду `rmr /hbase-unsecure/regions-in-transition` или.
 
 1. Выйдите из оболочки Zookeeper `exit` с помощью команды.
 
-1. Откройте пользовательский интерфейс Ambari и перезапустите службу активного главного узла HBase.
+1. Откройте пользовательский интерфейс Ambari Apache и перезапустите службу активного главного узла HBase.
 
 1. Выполните `hbase hbck` команду еще раз (без дополнительных параметров). Проверьте выходные данные и убедитесь, что все регионы назначены.
 
 ---
 
-## <a name="scenario-dead-region-servers"></a>Сценарий: Неработающие серверы регионов
+## <a name="scenario-dead-region-servers"></a>Сценарий. Неработающие серверы регионов
 
 ### <a name="issue"></a>Проблемы
 

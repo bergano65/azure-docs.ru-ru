@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
 ms.date: 06/26/2019
-ms.openlocfilehash: b84e317745b7bd20f4862bd04584e42254a660d1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: aa35cb1ae0ad035bdef6ff8e19cf115188ba7f3a
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566197"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640853"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-based-purchasing-model-limits"></a>Ограничения ресурсов для эластичных пулов в рамках модели приобретения на основе виртуальных ядер
 
@@ -37,7 +37,7 @@ ms.locfileid: "68566197"
 ## <a name="general-purpose-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб общего назначения — размеры хранилищ и объемы вычислительных ресурсов
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ### <a name="general-purpose-service-tier-generation-4-compute-platform-part-1"></a>Уровень служб общего назначения — Вычислительная платформа 4-го поколения (часть 1)
 
@@ -153,7 +153,7 @@ ms.locfileid: "68566197"
 ## <a name="business-critical-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб "Критически важный для бизнеса" — размеры хранилищ и объемы вычислительных ресурсов
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ### <a name="business-critical-service-tier-generation-4-compute-platform-part-1"></a>Уровень служб "Критически важный для бизнеса" — Вычислительная платформа 4-го поколения (часть 1)
 

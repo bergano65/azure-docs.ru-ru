@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 06/26/2019
-ms.openlocfilehash: 961c0de6856a9791f76be1ec609f176f1fbbf8fb
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 412a3cb32663f5bd3bfad2d565b6797f92e26b75
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567338"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69641115"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Общие сведения об ограничениях ресурсов управляемого экземпляра базы данных SQL Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "68567338"
 | Максимальное зарезервированное хранилище экземпляра |  Общего назначения: 8 ТБ<br/>Критически важный для бизнеса: 1 ТБ | Общего назначения: 8 ТБ<br/> Критически важный для бизнеса 1 ТБ, 2 ТБ или 4 ТБ в зависимости от числа ядер |
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ### <a name="service-tier-characteristics"></a>Характеристики уровней служб
 

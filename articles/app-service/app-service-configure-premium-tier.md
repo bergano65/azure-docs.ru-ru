@@ -16,18 +16,18 @@ ms.topic: article
 ms.date: 07/25/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c85644e3cab39f9e0864af91722ee54aab6d59f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d500c3841a9ecec1e4ceae8b13824f0240a5121d
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66139745"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639849"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 
 Новая ценовая категория **Премиум V2** предоставляет более быстрые процессоры, хранилище на основе твердотельных накопителей и удвоенное соотношение "память-ядро" по сравнению с имеющимися ценовыми категориями. В дополнение к более высокой производительности вы можете сэкономить свои деньги, запуская приложения на меньшем числе экземпляров. В этой статье показано, как создать приложение с категорией **Премиум V2** либо масштабировать приложение до категории **Премиум V2**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы масштабировать приложение до категории **Премиум V2**, вам требуется приложение службы приложений Azure, работающее с категорией ниже **Премиум V2**. Кроме того, это приложение должно работать в развертывании службы приложений, поддерживающем категорию "Премиум V2".
 
@@ -99,7 +99,7 @@ az appservice list-locations --sku P1V2
 
 Создание приложения с категорией **Премиум V2** можно автоматизировать с помощью сценариев, воспользовавшись [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/overview).
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Следующая команда создает план службы приложений с ценовой категорией _P1V2_. Ее можно запустить в Cloud Shell. Параметрами для `--sku` являются P1V2, _P2V2_ и _P3V2_.
 
@@ -123,7 +123,7 @@ New-AzAppServicePlan -ResourceGroupName <resource_group_name> `
     -Tier "PremiumV2" `
     -WorkerSize "Small"
 ```
-## <a name="more-resources"></a>Дополнительные ресурсы
+## <a name="more-resources"></a>Другие ресурсы
 
-[Увеличение масштаба приложения в Azure](web-sites-scale.md)  
+[Увеличение масштаба приложения в Azure](manage-scale-up.md)  
 [Масштабирование числа экземпляров вручную или автоматически](../monitoring-and-diagnostics/insights-how-to-scale.md)

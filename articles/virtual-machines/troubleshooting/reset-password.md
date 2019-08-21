@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
-ms.date: 06/15/2018
+ms.date: 08/20/2019
 ms.author: delhan
-ms.openlocfilehash: d96d75f4f2623476f7af4e6eea930c1f2c503e3a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8fc51dfb90158316b3fe6c11b5265f1cf3251505
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60306957"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69641048"
 ---
 # <a name="how-to-reset-local-linux-password-on-azure-vms"></a>Как сбросить локальный пароль Linux на виртуальных машинах Azure
 
@@ -30,11 +30,14 @@ ms.locfileid: "60306957"
 
 ## <a name="manual-password-reset-procedure"></a>Процедура сброса пароля вручную
 
-1.  Удалите виртуальную машину и сохраните ее подключенные диски.
+> [!NOTE]
+> Следующие шаги не применяются к виртуальной машине с неуправляемым диском.
 
-2.  Подключите диск ОС в качестве диска данных к другой временной виртуальной машине в том же расположении.
+1. Создайте моментальный снимок для диска операционной системы затронутой виртуальной машины, в нем создается диск из моментального снимка, после чего диск подключается к виртуальной машине для устранения неполадок. Дополнительные сведения см. [в разделе Устранение неполадок виртуальной машины Windows путем подключения диска ОС к виртуальной машине восстановления с помощью портал Azure](troubleshoot-recovery-disks-portal-linux.md).
 
-3.  Выполните приведенную ниже команду SSH на временной виртуальной машине, чтобы стать суперпользователем.
+2. Подключитесь к виртуальной машине для устранения неполадок с помощью удаленный рабочий стол.
+
+3.  Выполните следующую команду SSH на виртуальной машине для устранения неполадок, чтобы стать суперпользователем.
 
     ```bash
     sudo su
@@ -98,12 +101,12 @@ ms.locfileid: "60306957"
     umount /tempmount
     ```
 
-11. Отсоедините диск от портала управления.
+11. В портал Azure отключите диск от виртуальной машины для устранения неполадок.
 
-12. Повторно создайте виртуальную машину.
+12. [Измените диск операционной системы для затронутой виртуальной машины](troubleshoot-recovery-disks-portal-linux.md#swap-the-os-disk-for-the-vm).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Troubleshoot Azure VM by attaching OS disk to another Azure VM](https://social.technet.microsoft.com/wiki/contents/articles/18710.troubleshoot-azure-vm-by-attaching-os-disk-to-another-azure-vm.aspx) (Устранение неполадок виртуальной машины Azure путем присоединения диска ОС к другой виртуальной машине Azure)
 
-* [Azure CLI: Как удалить и повторно развернуть виртуальную Машину из виртуального жесткого диска](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/)
+* [Azure CLI: Удаление и повторное развертывание виртуальной машины из виртуального жесткого диска](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/)

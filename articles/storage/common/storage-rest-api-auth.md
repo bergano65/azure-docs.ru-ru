@@ -1,26 +1,26 @@
 ---
-title: Вызов операций API REST служб хранилища Azure (включая аутентификацию) | Документация Майкрософт
-description: Вызов операций API REST служб хранилища Azure (включая аутентификацию)
+title: Вызов служб хранилища Azure REST API операций с авторизацией общего ключа | Документация Майкрософт
+description: Используйте REST API службы хранилища Azure, чтобы выполнить запрос к хранилищу BLOB-объектов с помощью авторизации общего ключа.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/21/2019
+ms.date: 08/19/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 2149bfb68697129680c45f15c6cce359863fbc59
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1463a470c84d38ebc30e32cf539aa9d6f64a6854
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989944"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640662"
 ---
 # <a name="using-the-azure-storage-rest-api"></a>Использование REST API службы хранилища Azure
 
-В этой статье показано, как использовать интерфейсы API REST хранилища BLOB-объектов и способы аутентификации вызова службы. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. Мы рассмотрим справочную документацию по вызову REST и посмотрим, с помощью каких полей можно сделать реальный вызов REST. Изучив, как настроить вызов REST, вы сможете использовать эти знания для использования любых других интерфейсов API REST службы хранения.
+В этой статье показано, как использовать интерфейсы API службы хранилища BLOB-объектов и как авторизовать вызов службы. Она написана с точки зрения разработчика, который ничего не знает о других частях и не имеет представления о том, как выполнить вызов RESTFUL. Мы рассмотрим справочную документацию по вызову REST и посмотрим, с помощью каких полей можно сделать реальный вызов REST. Изучив, как настроить вызов REST, вы сможете использовать эти знания для использования любых других интерфейсов API REST службы хранения.
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Приложение перечисляет контейнеры в хранилище BLOB-объектов учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее. 
 
@@ -267,12 +267,13 @@ Content-Length: 1511
 ## <a name="creating-the-authorization-header"></a>Создание заголовка авторизации
 
 > [!TIP]
-> Служба хранилища Azure теперь поддерживает интеграцию Azure Active Directory (Azure AD) для больших двоичных объектов и очередей. Azure AD предоставляет гораздо более простой процесс авторизации запроса к службе хранилища Azure. Дополнительные сведения об использовании Azure AD для авторизации операций RESTFUL см. в статье [Проверка подлинности с помощью Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory). Общие сведения об интеграции Azure AD с хранилищем Azure см. в статье [Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory](storage-auth-aad.md).
+> Служба хранилища Azure теперь поддерживает интеграцию Azure Active Directory (Azure AD) для больших двоичных объектов и очередей. Azure AD предоставляет гораздо более простой процесс авторизации запроса к службе хранилища Azure. Дополнительные сведения об использовании Azure AD для авторизации операций RESTFUL см. в статье [авторизация с помощью Azure Active Directory](/rest/api/storageservices/authorize-with-azure-active-directory). Общие сведения об интеграции Azure AD с хранилищем Azure см. в статье [Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory](storage-auth-aad.md).
 
-Существует статья, в которой концептуально (без кода) объясняется, как выполнить [аутентификацию службы хранилища Azure](/rest/api/storageservices/Authorization-for-the-Azure-Storage-Services).
+Статья посвящена концептуальной процедуре (нет кода) о том, как [авторизовать запросы к службе хранилища Azure](/rest/api/storageservices/authorize-requests-to-azure-storage).
+
 Давайте уточним, что необходимо, и посмотрим на код.
 
-Во-первых, используйте аутентификацию на основе общего ключа. Формат заголовка авторизации выглядит следующим образом:
+Сначала используйте авторизацию общего ключа. Формат заголовка авторизации выглядит следующим образом:
 
 ```  
 Authorization="SharedKey <storage account name>:<signature>"  
@@ -360,7 +361,7 @@ private static string GetCanonicalizedHeaders(HttpRequestMessage httpRequestMess
 
 Если у вас есть параметры запроса, этот пример также включает эти параметры. Вот код, который также обрабатывает дополнительные параметры запроса и параметры запроса с несколькими значениями. Помните, что вы создаете этот код для работы со всеми API-интерфейсами. Вы хотите включить все возможности, даже если методу ListContainers не требуются все они.
 
-```csharp 
+```csharp
 private static string GetCanonicalizedResource(Uri address, string storageAccountName)
 {
     // The absolute path will be "/" because for we're getting a list of containers.
@@ -376,7 +377,7 @@ private static string GetCanonicalizedResource(Uri address, string storageAccoun
         sb.Append('\n').Append(item).Append(':').Append(values[item]);
     }
 
-    return sb.ToString();
+    return sb.ToString().ToLower();
 }
 ```
 
@@ -571,3 +572,4 @@ Content-Length: 1135
 * [Blob Service REST API](/rest/api/storageservices/blob-service-rest-api) (API-интерфейс REST службы BLOB-объектов)
 * [File Service REST API](/rest/api/storageservices/file-service-rest-api) (API-интерфейс REST файловой службы)
 * [REST API службы очередей](/rest/api/storageservices/queue-service-rest-api)
+* [REST API службы таблиц](/rest/api/storageservices/table-service-rest-api)

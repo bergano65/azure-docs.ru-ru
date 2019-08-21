@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 94035fda6b1dff491a69c0f0001019ccd753d4e8
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: ebf4f516b8f90ce2ba8b277281300ae3239821c5
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816616"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640799"
 ---
 # <a name="what-is-azure-sql-database-managed-instance"></a>Что такое управляемый экземпляр базы данных SQL Azure?
 
@@ -82,7 +82,7 @@ ms.locfileid: "68816616"
 Дополнительные сведения о различиях между поколениями оборудования приведены в разделе [Характеристики поколения оборудования](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics).
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ## <a name="managed-instance-service-tiers"></a>Уровни служб управляемого экземпляра
 

@@ -17,17 +17,17 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: bd59257c1136f52beaf217c1f983c8aeb7bd81d5
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: ea8f3f1860223e102aeccf81f72b5294283b83f6
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671125"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640756"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Оптимизация виртуальной машины Linux в Azure
 Вы можете легко создать виртуальную машину (VM) Linux с помощью портала или командной строки. В этом руководстве показано, как при помощи настроек оптимизировать производительность VM на платформе Microsoft Azure. В этой статье описывается виртуальная машина Ubuntu Server, но вы можете также создавать виртуальные машины Linux, используя [собственные образы в качестве шаблонов](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что у вас уже есть действующая подписка Azure ([бесплатная пробная подписка](https://azure.microsoft.com/pricing/free-trial/)), в которой подготовлена виртуальная машина. Прежде чем [создавать виртуальную машину](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в учетную запись Azure, выполнив команду [az login](/cli/azure/reference-index).
 
 ## <a name="azure-os-disk"></a>Диск ОС в Azure
@@ -60,9 +60,9 @@ ms.locfileid: "67671125"
 
 Образы виртуальных машин, которые развернуты из каталога Azure Marketplace и в которых cloud-init не поддерживается, содержат интегрированный в ОС агент виртуальных машин Linux. Этот агент позволяет виртуальной машине взаимодействовать с различными службами Azure. Предположим, что вы развернули стандартный образ из Azure Marketplace. Теперь вам необходимо выполнить указанные ниже действия, чтобы правильно настроить параметры файла подкачки Linux.
 
-Найдите и измените две записи в файле **/etc/waagent.conf** . От них зависит наличие и размер специального файла подкачки. Следует изменить параметры `ResourceDisk.EnableSwap=N` и `ResourceDisk.SwapSizeMB=0`. 
+Найдите и измените две записи в файле **/etc/waagent.conf** . От них зависит наличие и размер специального файла подкачки. Параметры, которые необходимо проверить, — это `ResourceDisk.EnableSwap` и`ResourceDisk.SwapSizeMB` 
 
-Измените параметры следующим образом:
+Чтобы включить правильно включенный диск и подключенный файл подкачки, убедитесь, что параметры имеют следующие параметры.
 
 * ResourceDisk.EnableSwap=Y
 * ResourceDisk.SwapSizeMB={требуемый размер в МБ} 

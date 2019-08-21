@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 08/05/2019
-ms.openlocfilehash: aab93e1ecd112f7ef9fdb0829469efa14aff2e98
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 05c5d42d3c20948df4f42db50dd93abd60288c00
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69623989"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639578"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 
@@ -163,7 +163,15 @@ ms.locfileid: "69623989"
 
 Если вы используете принудительное туннелирование с Вычислительная среда Машинного обучения, добавьте [определяемые пользователем маршруты (определяемые пользователем маршруты)](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview) в подсеть, содержащую ресурс вычислений.
 
-* Установите UDR для каждого IP-адреса, используемого пакетной службой Azure в регионе, где находятся ваши ресурсы. Эти определяемые пользователем маршруты позволяют пакетной службе взаимодействовать с вычисленными узлами для планирования задач. Чтобы получить список IP-адресов пакетной службы, обратитесь в службу поддержки Azure.
+* Установите UDR для каждого IP-адреса, используемого пакетной службой Azure в регионе, где находятся ваши ресурсы. Эти определяемые пользователем маршруты позволяют пакетной службе взаимодействовать с вычисленными узлами для планирования задач. Чтобы получить список IP-адресов пакетной службы, используйте один из следующих методов.
+
+    * Скачайте [диапазоны IP-адресов и теги службы Azure](https://www.microsoft.com/download/details.aspx?id=56519) и найдите в `BatchNodeManagement.<region>`файле, `<region>` где находится регион Azure.
+
+    * Для загрузки сведений используйте [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) . В следующем примере загружаются сведения об IP-адресе и отфильтровываются сведения для региона "Восточная часть США 2":
+
+        ```azurecli-interactive
+        az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'Batch')] | [?properties.region=='eastus2']"
+        ```
 
 * Исходящий трафик в службу хранилища Azure не должен блокироваться локальным сетевым устройством. В частности, URL-адреса находятся в `<account>.table.core.windows.net`форме `<account>.queue.core.windows.net`, и `<account>.blob.core.windows.net`.
 

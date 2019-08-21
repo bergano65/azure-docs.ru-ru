@@ -1,22 +1,20 @@
 ---
 title: Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure"
 description: Инструкции по присоединению Cognitive Services "все в одной" к конвейеру обогащенного процесса в службе поиска Azure.
-manager: cgronlun
+manager: nitinme
 author: LuisCabrer
 services: search
 ms.service: search
 ms.subservice: cognitive-search
-ms.devlang: NA
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: 1a8bf1eaf37dbbd4462b0ebd93f74502f89f9d7b
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: dcdef8df25bdf6a7a60b1221d1463e6be5486875
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68841350"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639449"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
@@ -140,7 +138,7 @@ Content-Type: application/json
 }
 ```
 
-## <a name="example-estimate-costs"></a>Пример Расчет стоимости
+## <a name="example-estimate-costs"></a>Пример: Расчет стоимости
 
 Чтобы оценить затраты, связанные с использованием индексированного поиска, начните с понимания того, как выглядит средний документ, чтобы можно было выполнить несколько цифр. Например, вы можете приблизительно:
 

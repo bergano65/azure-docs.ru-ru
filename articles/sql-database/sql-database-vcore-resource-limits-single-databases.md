@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/14/2019
-ms.openlocfilehash: f69fc89fe5634c9467cf728c7ab5c4d8ac6c5c74
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 6a29d1e001d4c647d5b975b7e746eced29962ee4
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512313"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69637249"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-based-purchasing-model"></a>Ограничения ресурсов для отдельных баз данных с использованием модели приобретения на основе виртуальное ядро
 
@@ -35,7 +35,7 @@ ms.locfileid: "69512313"
 ## <a name="general-purpose-service-tier-for-provisioned-compute"></a>общего назначения уровня служб для подготовленных вычислений
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ### <a name="gen4-compute-generation-part-1"></a>Создание вычислений го поколения (часть 1)
 
@@ -184,7 +184,7 @@ ms.locfileid: "69512313"
 ## <a name="business-critical-service-tier-for-provisioned-compute"></a>критически важный для бизнеса уровня служб для подготовленных вычислений
 
 > [!IMPORTANT]
-> Новые базы данных го поколения больше не поддерживаются в регионе AustraliaEast.
+> Новые базы данных го поколения больше не поддерживаются в Восточная Австралия или Южная Бразилия регионах.
 
 ### <a name="gen4-compute-generation-part-1"></a>Создание вычислений го поколения (часть 1)
 

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bb4ac9953bcadd9e49cee5b7b99e853705b6567c
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 9609a886bdcbf093cffaf888f9aeaff0d61acec1
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990286"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69636649"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Настройка приложения службы приложений в портал Azure
 
@@ -167,7 +167,7 @@ ms.locfileid: "68990286"
 
 ![Общие настройки](./media/configure-common/open-general.png)
 
-Здесь можно настроить некоторые общие параметры для приложения. Для некоторых параметров необходимо выполнить [масштабирование до более высоких](web-sites-scale.md)ценовых категорий.
+Здесь можно настроить некоторые общие параметры для приложения. Для некоторых параметров необходимо выполнить [масштабирование до более высоких](manage-scale-up.md)ценовых категорий.
 
 - **Параметры стека**: Стек программного обеспечения для запуска приложения, включая версии языка и пакета SDK. Для приложений Linux и настраиваемых приложений-контейнеров можно также задать необязательную команду запуска или файл.
 - **Параметры платформы**: Позволяет настраивать параметры для платформы размещения, включая:
@@ -268,4 +268,4 @@ ms.locfileid: "68990286"
 [How to: Monitor web endpoint status]: https://go.microsoft.com/fwLink/?LinkID=279906
 [Основы мониторинга в службе приложений Azure]: ./web-sites-monitor.md
 [режим конвейера]: https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
-[Масштабирование приложения в службе приложений Azure]: ./web-sites-scale.md
+[Масштабирование приложения в службе приложений Azure]: ./manage-scale-up.md

@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 348cd0eccc66adb29a7564bbbeca99fffec28957
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: fdef1457254b6deb8a0b791b11c94154518b4301
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562860"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69636434"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "69562860"
 
 Вы оплачиваете те же функции для приложений-функций в плане службы приложений, что и для других ресурсов службы приложений, таких как веб-приложения. Дополнительную информацию о том, как действует план службы приложений, см. в статье [Подробный обзор планов службы приложений Azure](../app-service/overview-hosting-plans.md).
 
-С помощью плана службы приложений можно вручную выполнить масштабирование, добавив дополнительные экземпляры виртуальных машин. Также можно включить Автомасштабирование. Дополнительные сведения см. в статье [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json). Вы можете также увеличивать масштаб, используя разные планы службы приложений. Дополнительные сведения см. в статье [Увеличение масштаба приложения в Azure](../app-service/web-sites-scale.md). 
+С помощью плана службы приложений можно вручную выполнить масштабирование, добавив дополнительные экземпляры виртуальных машин. Также можно включить Автомасштабирование. Дополнительные сведения см. в статье [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json). Вы можете также увеличивать масштаб, используя разные планы службы приложений. Дополнительные сведения см. в статье [Увеличение масштаба приложения в Azure](../app-service/manage-scale-up.md). 
 
 При запуске функций JavaScript в плане службы приложений нужно выбрать план с меньшим количеством виртуальных ЦП. Дополнительные сведения см. в статье [Выбор планов службы приложений с одним ядром](functions-reference-node.md#choose-single-vcpu-app-service-plans). 
 <!-- Note: the portal links to this section via fwlink https://go.microsoft.com/fwlink/?linkid=830855 --> 

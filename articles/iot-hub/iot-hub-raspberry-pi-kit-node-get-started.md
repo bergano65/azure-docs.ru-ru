@@ -1,6 +1,6 @@
 ---
 title: Подключение Raspberry Pi (Node.js) к Центру Интернета вещей для передачи данных в облако | Документация Майкрософт
-description: Узнайте, как настроить и установить подключение Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi для отправки данных в облако Azure в этом руководстве.
+description: Узнайте, как настроить и подключить Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi, чтобы отправить данные на облачную платформу Azure в этом руководстве.
 author: wesmc7777
 manager: philmea
 keywords: Raspberry Pi и Центр Интернета вещей Azure, Raspberry Pi и Центр Интернета вещей, отправка данных с Raspberry Pi в облако, подключение Raspberry Pi к облаку
@@ -8,14 +8,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 04/11/2018
+ms.date: 07/17/2019
 ms.author: wesmc
-ms.openlocfilehash: e7863e4a0f4cab6f6328de19d1611710f9188de3
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: e7346fa0f9cc977755c441077a50707dd207019f
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67838759"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638278"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -94,10 +94,7 @@ ms.locfileid: "67838759"
 
 1. Скачайте ОС Raspbian.
 
-   1\. [Скачайте Raspbian Stretch](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (ZIP-файл).
-
-   > [!WARNING]
-   > Используйте ссылку выше, чтобы скачать ZIP-файл образа `raspbian-2017-07-5`. Последняя версия образа Raspbian имеет некоторые известные проблемы с Wiring-Pi Node, которые могут привести к сбою при выполнении дальнейших шагов.
+   1\. [Raspbian бустер с Desktop](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
    2\. Извлеките образ ОС Raspbian в папку на компьютере.
 
@@ -119,7 +116,7 @@ ms.locfileid: "67838759"
 
 1. Подключите Pi к монитору, клавиатуре и мыши.
 
-2. Запустите Pi, а затем войдите в Raspbian, используя `pi` имени пользователя и `raspberry` в качестве пароля.
+2. Запустите PI, а затем войдите в Raspbian, `pi` используя в качестве имени пользователя `raspberry` и пароля.
 
 3. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
 
@@ -195,10 +192,10 @@ ms.locfileid: "67838759"
    node -v
    ```
 
-   Если версия ниже, чем 10.x или Node.js не установлена на устройстве Pi, установите последнюю версию.
+   Если версия ниже 11. x или если на устройстве PI отсутствует Node. js, установите последнюю версию.
 
    ```bash
-   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
+   curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash
    sudo apt-get -y install nodejs
    ```
 
@@ -249,11 +246,11 @@ ms.locfileid: "67838759"
 
 ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](./media/iot-hub-raspberry-pi-kit-node-get-started/8-run-output.png)
 
-## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, отправляемые в центр
+## <a name="read-the-messages-received-by-your-hub"></a>Чтение сообщений, полученных центром
 
-— Это один из способов отслеживать сообщения, отправляемые в центр Интернета вещей с устройства с помощью средств Интернета вещей Azure для Visual Studio Code. Дополнительные сведения см. в разделе [использование средств Интернета вещей Azure для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+Одним из способов мониторинга сообщений, полученных центром Интернета вещей с устройства, является использование средств Azure IoT для Visual Studio Code. Дополнительные сведения см. в статье [использование средств Azure IOT для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 
-Дополнительные способы обработки данных, отправленные устройством перейдите к следующему разделу.
+Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
 ## <a name="next-steps"></a>Следующие шаги
 

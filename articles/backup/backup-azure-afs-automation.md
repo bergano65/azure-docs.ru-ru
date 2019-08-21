@@ -5,15 +5,15 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/05/2018
+ms.date: 08/20/2019
 ms.author: dacurwin
 ms.reviewer: pullabhk
-ms.openlocfilehash: f933b926aa0e277976416ae1b3b2eb684d9fcc85
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
-ms.translationtype: MT
+ms.openlocfilehash: f736d7f1dde8f268033d7c80322b91543672e68f
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955090"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638534"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
@@ -262,6 +262,12 @@ testAzureFS       Backup               Completed            11/12/2018 2:42:07 P
 ```
 
 Мы используем моментальные снимки общего ресурса файлов Azure при создании резервных копий и поэтому задание, как правило, завершается к тому времени, когда команда возвращает выходные данные.
+
+### <a name="using-on-demand-backups-to-extend-retention"></a>Использование резервных копий по запросу для расширения срока хранения
+
+Резервные копии по запросу можно использовать для хранения моментальных снимков в течение 10 лет. Планировщики можно использовать для выполнения сценариев PowerShell по запросу с выбранным хранением и, таким же, создавать моментальные снимки через регулярные интервалы каждую неделю, месяц или год. Создание регулярных моментальных снимков относится к [ограничениям резервного копирования по требованию](https://docs.microsoft.com/azure/backup/backup-azure-files-faq#how-many-on-demand-backups-can-i-take-per-file-share-) с помощью службы архивации Azure.
+
+Если вы ищете примеры сценариев, см. пример сценария на сайте GitHub (https://github.com/Azure-Samples/Use-PowerShell-for-long-term-retention-of-Azure-Files-Backup) с помощью модуля Runbook службы автоматизации Azure, который позволяет планировать резервное копирование на периодической основе и хранить их еще до 10 лет).
 
 ### <a name="modify-the-protection-policy"></a>Изменение политики защиты
 

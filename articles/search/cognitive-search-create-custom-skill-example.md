@@ -1,23 +1,22 @@
 ---
-title: Пример Создание пользовательского навыка для поиска с помощью API Bing для поиска сущностей-Azure
+title: 'Пример: Создание пользовательского навыка для поиска с помощью API Bing для поиска сущностей-Azure'
 description: Демонстрируется использование службы Поиск сущностей Bing в пользовательском навыке, сопоставленном с помощью конвейера индексирования поиска в службе поиска Azure.
 manager: pablocas
 author: luiscabrer
 services: search
 ms.service: search
 ms.subservice: cognitive-search
-ms.devlang: NA
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: a032288338d2d6a53489105790b6862eefadf609
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 58f98f3807955db0b32cbcd1ed0d409814e35a76
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68841225"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639896"
 ---
-# <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример Создание пользовательского навыка с помощью API Bing для поиска сущностей
+# <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Пример: Создание пользовательского навыка с помощью API Bing для поиска сущностей
 
 В этом примере вы узнаете, как создать пользовательский навык веб-API. Этот навык будет принимать местоположения, общедоступные рисунки и организации и возвращать их описания. В примере используется [функция Azure](https://azure.microsoft.com/services/functions/) для заключения [API Bing для поиска сущностей](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/) , чтобы она реализовала пользовательский интерфейс квалификации.
 

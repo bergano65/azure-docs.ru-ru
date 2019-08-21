@@ -3,25 +3,25 @@ title: Решение VMware для Azure с помощью Клаудсимпл
 description: Описание настройки функции шифрования программного обеспечения vSAN, чтобы ваше частное облако Клаудсимпле можно было работать с сервером управления ключами, работающим в виртуальной сети Azure.
 author: sharaths-cs
 ms.author: b-shsury
-ms.date: 08/15/2019
+ms.date: 08/19/2019
 ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: a00cce852878d65ca08927d937f5a0f1f37c1b87
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 288a05fc09e0c59a01a8d4c9940c0d51cabdd28f
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544478"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640961"
 ---
-# <a name="configure-vsan-encryption-for-your-cloudsimple-private-cloud"></a>Настройка шифрования vSAN для частного облака Клаудсимпле
+# <a name="configure-vsan-encryption-for-cloudsimple-private-cloud"></a>Настройка шифрования vSAN для частного облака Клаудсимпле
 
 Вы можете настроить функцию шифрования программного обеспечения vSAN, чтобы ваше частное облако Клаудсимпле можно было работать с сервером управления ключами, работающим в виртуальной сети Azure.
 
-При использовании шифрования vSAN VMware требует использования внешнего средства сервера управления ключами (KMS), совместимого с КМИП 1,1. Вы можете использовать любой поддерживаемый сервер управления ключами, сертифицированный VMware и доступный для Azure.
+При использовании шифрования vSAN VMware требует использования внешнего средства сервера управления ключами (KMS), совместимого с КМИП 1,1. Вы можете использовать любой поддерживаемый сервер управления ключами, сертифицированный VMware, и доступный для Azure. 
 
-Вот как можно использовать службу KMS Хитруст Кэйконтрол, работающую в виртуальной сети Azure. Аналогичный подход можно использовать для любого другого сертифицированного стороннего решения KMS для vSAN.
+В этом руководство описано, как использовать Хитруст Кэйконтрол KMS, работающий в виртуальной сети Azure. Аналогичный подход можно использовать для любого другого сертифицированного стороннего решения KMS для vSAN.
 
 Это решение KMS требует следующих действий:
 
@@ -33,20 +33,20 @@ ms.locfileid: "69544478"
 
 Кластер серверов службы KMS работает в виртуальной сети Azure и доступен из частного облака vCenter через настроенное подключение Azure ExpressRoute.
 
-![Кластер службы KMS в виртуальной сети Azure](media/vsan-kms-cluster.png)
+![.. кластер/медиа/КМС в виртуальной сети Azure](media/vsan-kms-cluster.png)
 
 ## <a name="how-to-deploy-the-solution"></a>Развертывание решения
 
 Процесс развертывания включает следующие шаги.
 
-1. [Проверка соблюдения предварительных требований](#verify-that-prerequisites-are-met)
+1. [Проверка соблюдения предварительных требований](#verify-prerequisites-are-met)
 2. [Портал Клаудсимпле: Получение сведений об пиринга ExpressRoute](#cloudsimple-portal-obtain-expressroute-peering-information)
 3. [Портал Azure: Подключение виртуальной сети к частному облаку](#azure-portal-connect-your-virtual-network-to-your-private-cloud)
 4. [Портал Azure: Развертывание кластера Хитруст Кэйконтрол в виртуальной сети](#azure-portal-deploy-a-hytrust-keycontrol-cluster-in-the-azure-resource-manager-in-your-virtual-network)
 5. [Хитруст WebUI: Настройка сервера КМИП](#hytrust-webui-configure-the-kmip-server)
 6. [Пользовательский интерфейс vCenter: Настройка шифрования vSAN для использования кластера KMS в виртуальной сети Azure](#vcenter-ui-configure-vsan-encryption-to-use-kms-cluster-in-your-azure-virtual-network)
 
-### <a name="verify-that-prerequisites-are-met"></a>Проверка соблюдения предварительных требований
+### <a name="verify-prerequisites-are-met"></a>Проверка соблюдения предварительных требований
 
 Перед развертыванием проверьте следующее:
 
@@ -58,7 +58,7 @@ ms.locfileid: "69544478"
 
 ### <a name="cloudsimple-portal-obtain-expressroute-peering-information"></a>Портал Клаудсимпле: Получение сведений об пиринга ExpressRoute
 
-Чтобы продолжить установку, требуется ключ авторизации и URI однорангового канала для ExpressRoute и доступ к подписке Azure. Эти сведения доступны на странице подключения к виртуальной сети на портале Клаудсимпле. Инструкции см. в статье [Настройка подключения виртуальной сети к частному облаку](virtual-network-connection.md). Если у вас возникли проблемы с получением информации, отправьте <a href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest" target="_blank">запрос в службу поддержки</a>.
+Чтобы продолжить установку, требуется ключ авторизации и URI однорангового канала для ExpressRoute и доступ к подписке Azure. Эти сведения доступны на странице подключения к виртуальной сети на портале Клаудсимпле. Инструкции см. в статье [Настройка подключения виртуальной сети к частному облаку](virtual-network-connection.md). Если у вас возникли проблемы с получением информации, отправьте [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ### <a name="azure-portal-connect-your-virtual-network-to-your-private-cloud"></a>Портал Azure: Подключение виртуальной сети к частному облаку
 
@@ -67,30 +67,30 @@ ms.locfileid: "69544478"
 3. Используйте сведения о канале ExpressRoute Клаудсимпле, полученные в приветственном сообщении электронной почты от Клаудсимпле, чтобы связать виртуальную сеть с каналом Клаудсимпле ExpressRoute в Azure.
 4. Введите ключ авторизации и URI одноранговой цепи, присвойте имя соединению и нажмите кнопку **ОК**.
 
-![Укажите URI одноранговой цепи CS при создании виртуальной сети](media/vsan-azureportal01.png)
+![Укажите URI одноранговой цепи CS при создании виртуальной сети](media/vsan-azureportal01.png) 
 
 ### <a name="azure-portal-deploy-a-hytrust-keycontrol-cluster-in-the-azure-resource-manager-in-your-virtual-network"></a>Портал Azure: Развертывание кластера Хитруст Кэйконтрол в Azure Resource Manager в виртуальной сети
 
-Чтобы развернуть кластер Хитруст Кэйконтрол в Azure Resource Manager в виртуальной сети, выполните следующие задачи. Дополнительные сведения см. в <a href="https://docs.hytrust.com/DataControl/Admin_Guide-4.0/Default.htm#OLH-Files/Azure.htm%3FTocPath%3DHyTrust%2520DataControl%2520and%2520Microsoft%2520Azure%7C_____0" target="_blank">документации по хитруст</a> .
+Чтобы развернуть кластер Хитруст Кэйконтрол в Azure Resource Manager в виртуальной сети, выполните следующие задачи. Дополнительные сведения см. в [документации по хитруст](https://docs.hytrust.com/DataControl/Admin_Guide-4.0/Default.htm#OLH-Files/Azure.htm%3FTocPath%3DHyTrust%2520DataControl%2520and%2520Microsoft%2520Azure%7C_____0) .
 
 1. Создайте группу безопасности сети Azure (NSG-хитруст) с указанными правилами для входящих подключений, следуя инструкциям в документации по Хитруст.
 2. Создание пары ключей SSH в Azure.
 3. Разверните исходный узел Кэйконтрол из образа в Azure Marketplace.  Используйте открытый ключ созданной пары ключей и выберите **NSG-хитруст** в качестве группы безопасности сети для узла кэйконтрол.
 4. Преобразуйте частный IP-адрес Кэйконтрол в статический IP-адрес.
 5. Подключитесь к виртуальной машине Кэйконтрол по протоколу SSH, используя общедоступный IP-адрес и закрытый ключ ранее упомянутой пары ключей.
-6. При появлении запроса в командной консоли SSH ```No``` выберите, чтобы задать узел в качестве начального узла кэйконтрол.
-7. Добавьте дополнительные узлы кэйконтрол, повторив шаги 3-5 этой процедуры и выбрав ```Yes``` вопрос о добавлении в существующий кластер.
+6. При появлении запроса в командной консоли SSH `No` выберите, чтобы задать узел в качестве начального узла кэйконтрол.
+7. Добавьте дополнительные узлы кэйконтрол, повторив шаги 3-5 этой процедуры и выбрав `Yes` вопрос о добавлении в существующий кластер.
 
 ### <a name="hytrust-webui-configure-the-kmip-server"></a>Хитруст WebUI: Настройка сервера КМИП
 
-Перейдите в https://*public-IP*, где *public-IP* — общедоступный IP-адрес виртуальной машины узла кэйконтрол. Выполните следующие действия из <a href="https://docs.hytrust.com/DataControl/Admin_Guide-4.0/Default.htm#OLH-Files/Azure.htm%3FTocPath%3DHyTrust%2520DataControl%2520and%2520Microsoft%2520Azure%7C_____0" target="_blank">документации по хитруст</a>.
+Перейдите в https://*public-IP*, где *public-IP* — общедоступный IP-адрес виртуальной машины узла кэйконтрол. Выполните следующие действия из [документации по хитруст](https://docs.hytrust.com/DataControl/Admin_Guide-4.0/Default.htm#OLH-Files/Azure.htm%3FTocPath%3DHyTrust%2520DataControl%2520and%2520Microsoft%2520Azure%7C_____0).
 
-1. <a href="https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/configuring-kmip-server.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____2" target="_blank">Настройка сервера КМИП</a>
-2. <a href="https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/creating-user-for-vmcrypt.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____3" target="_blank">Создание пакета сертификатов для шифрования VMware</a>
+1. [Настройка сервера КМИП](https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/configuring-kmip-server.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____2)
+2. [Создание пакета сертификатов для шифрования VMware](https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/creating-user-for-vmcrypt.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____3)
 
 ### <a name="vcenter-ui-configure-vsan-encryption-to-use-kms-cluster-in-your-azure-virtual-network"></a>Пользовательский интерфейс vCenter: Настройка шифрования vSAN для использования кластера KMS в виртуальной сети Azure
 
-Следуйте инструкциям по Хитруст, чтобы <a href="https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/creating-KMS-Cluster.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____4" target="_blank">создать кластер службы KMS в vCenter</a>.
+Следуйте инструкциям по Хитруст, чтобы [создать кластер службы KMS в vCenter](https://docs.hytrust.com/DataControl/4.2/Admin_Guide-4.2/index.htm#Books/VMware-vSphere-VSAN-Encryption/creating-KMS-Cluster.htm%3FTocPath%3DHyTrust%2520KeyControl%2520with%2520VSAN%25C2%25A0and%2520VMware%2520vSphere%2520VM%2520Encryption%7C_____4).
 
 ![Добавление сведений о кластере KMS в vCenter](media/vsan-config01.png)
 

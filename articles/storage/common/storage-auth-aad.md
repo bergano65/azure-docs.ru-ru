@@ -9,12 +9,12 @@ ms.date: 08/02/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f33193e3102afca73344fcd640d14d9af9c1d46e
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 2607e09e6b8428c2aacc8ee7c6be42f54284a1ce
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775345"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69641088"
 ---
 # <a name="authorize-access-to-azure-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory
 
@@ -54,7 +54,7 @@ Azure Active Directory (Azure AD) разрешает права доступа �
 
 ### <a name="access-permissions-for-data-operations"></a>Разрешения на доступ к операциям с данными
 
-Дополнительные сведения о разрешениях, необходимых для вызова конкретных операций большого двоичного объекта или служба очередей, см. в разделе [разрешения на вызов операций с данными большого двоичного объекта и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations).
+Дополнительные сведения о разрешениях, необходимых для вызова конкретных операций большого двоичного объекта или служба очередей, см. в разделе [разрешения на вызов операций с данными большого двоичного объекта и очереди](https://docs.microsoft.com/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations).
 
 ## <a name="resource-scope"></a>Область действия ресурса
 
@@ -85,5 +85,5 @@ Azure CLI и PowerShell поддерживают вход с использов�
 ## <a name="next-steps"></a>Следующие шаги
 
 - [Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](storage-auth-aad-msi.md)
-- [Проверка подлинности с помощью Azure Active Directory из приложения для доступа к BLOB-объектам и очередям](storage-auth-aad-app.md)
+- [Авторизация с помощью Azure Active Directory из приложения для доступа к BLOB-объектам и очередям](storage-auth-aad-app.md)
 - [Поддержка службы хранилища Azure для управления доступом на основе Azure Active Directory обычно доступна](https://azure.microsoft.com/blog/azure-storage-support-for-azure-ad-based-access-control-now-generally-available/)

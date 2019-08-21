@@ -2,20 +2,18 @@
 title: Устранение распространенных неполадок с индексатором поиска в службе "Поиск Azure"
 description: Сведения об устранении распространенных неполадок с индексаторами в службе "Поиск Azure", в том числе проблем с подключением к источнику данных, брандмауэром или отсутствующими документами.
 author: mgottein
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
-ms.custom: seodec2018
-ms.openlocfilehash: 1cb3260fa11354de963318a023fec912d082eae4
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 4692be287e9b38cf116107d2e7c1043f23a6b34b
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653406"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640592"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
 
@@ -35,13 +33,13 @@ ms.locfileid: "67653406"
 
 Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Обычно связанные с брандмауэром ошибки выглядят как `The remote server returned an error: (403) Forbidden`.
 
-Режим брандмауэра можно проверить на [портале](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). Единственное решение поддерживаемых — отключить брандмауэр, разрешает доступ из [«Все сети»](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal).
+Режим брандмауэра можно проверить на [портале](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). Единственное поддерживаемое решение — отключить брандмауэр, выбрав разрешить доступ из ["все сети"](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal).
 
-Если индексатор не содержит вложенный набор навыков, вы _может_ пытаются [добавить исключение](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) для IP-адреса службы поиска. Тем не менее этот сценарий не поддерживается и не сможет работать.
+Если у индексатора нет присоединенного набора навыков, вы _можете_ попытаться [Добавить исключение](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) для IP-адресов службы поиска. Однако этот сценарий не поддерживается и не гарантирует работу.
 
-Чтобы узнать IP-адрес службы поиска путем проверки связи с его полное доменное имя (`<your-search-service-name>.search.windows.net`).
+IP-адрес службы поиска можно узнать с помощью команды ping по полному доменному имени`<your-search-service-name>.search.windows.net`().
 
-### <a name="cosmos-db"></a>Cosmos DB
+### <a name="cosmos-db"></a>Cosmos DB
 
 #### <a name="indexing-isnt-enabled"></a>Индексирование не включено
 
@@ -68,7 +66,7 @@ api-key: [admin key]
 
 Индексатор больших двоичных объектов [находит и извлекает текст из больших двоичных объектов в контейнере](search-howto-indexing-azure-blob-storage.md#how-azure-search-indexes-blobs). При извлечении текста могут встречаться следующие проблемы.
 
-* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если у вас есть образ содержимого с помощью текстовых элементов, можно использовать [когнитивный поиск](cognitive-search-concept-image-scenarios.md) для поиска и извлечения текста.
+* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если изображение имеет содержимое с текстовыми элементами, для поиска и извлечения текста можно использовать «поиск с помощью [слов](cognitive-search-concept-image-scenarios.md) ».
 * Индексатор больших двоичных объектов индексирует только метаданные. Чтобы извлечь содержимое, индексатор больших двоичных объектов должен быть настроен на [извлечение содержимого и метаданных](search-howto-indexing-azure-blob-storage.md#controlling-which-parts-of-the-blob-are-indexed):
 
 ```
@@ -91,5 +89,5 @@ api-key: [admin key]
 * Документ еще не был проиндексирован. Проверьте на портале, был ли индексатор успешно выполнен.
 * Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
 * Нужный документ исключается условиями [запроса](https://docs.microsoft.com/rest/api/searchservice/create-data-source#request-body-syntax), который указан для этого источника данных. Индексаторы не могут индексировать документы, не являющихся частью источника данных.
-* [Сопоставление полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [когнитивный поиск](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменились документа и она выглядит иначе, чем ожидалось.
+* [Сопоставления полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или «воменяющий» [Поиск](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ, и он будет отличаться от предполагаемого.
 * Используйте [API поиска документа](https://docs.microsoft.com/rest/api/searchservice/lookup-document), чтобы найти нужный документ.

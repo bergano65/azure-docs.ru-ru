@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/04/2019
 ms.author: mlearned
-ms.openlocfilehash: 0238278b81255d735f8a950ca307d0e05100cfec
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: e3a4ea2e81e6c428b51d164336282f8f929d414b
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67614561"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639804"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу RDP к узлам Windows Server в кластере Kubernetes Service (AKS) для обслуживания или устранения неполадок
 
@@ -63,6 +63,27 @@ az vm create \
 ```
 
 Запишите общедоступный IP-адрес виртуальной машины. Этот адрес будет использоваться на следующем шаге.
+
+## <a name="allow-access-to-the-virtual-machine"></a>Разрешить доступ к виртуальной машине
+
+Подсети пула узлов AKS по умолчанию защищаются с помощью группы безопасности сети (групп безопасности сети). Чтобы получить доступ к виртуальной машине, необходимо включить доступ в NSG.
+
+> [!NOTE]
+> Группы безопасности сети управляются службой AKS. Любые изменения, вносимые в NSG, будут перезаписаны на плоскости управления в любое время.
+>
+
+Сначала получите группу ресурсов и NSG имя NSG, чтобы добавить правило:
+
+```azurecli-interactive
+CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
+NSG_NAME=$(az network nsg list -g $CLUSTER_RG --query [].name -o tsv)
+```
+
+Затем создайте правило NSG:
+
+```azurecli-interactive
+az network nsg rule create --name tempRDPAccess --resource-group $CLUSTER_RG --nsg-name $NSG_NAME --priority 100 --destination-port-range 3389 --protocol Tcp --description "Temporary RDP access to Windows nodes"
+```
 
 ## <a name="get-the-node-address"></a>Получение адреса узла
 
@@ -117,6 +138,17 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 
 ```azurecli-interactive
 az vm delete --resource-group myResourceGroup --name myVM
+```
+
+И правило NSG:
+
+```azurecli-interactive
+CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
+NSG_NAME=$(az network nsg list -g $CLUSTER_RG --query [].name -o tsv)
+```
+
+```azurecli-interactive
+az network nsg rule delete --resource-group $CLUSTER_RG --nsg-name $NSG_NAME --name tempRDPAccess
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

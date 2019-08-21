@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: v-mohabe
-ms.openlocfilehash: 87f5a14bcd6003ad81b663ed97e5349dcbff2a30
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 597670803514fa59faaafdad73786cdb745a0976
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68296514"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640898"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "68296514"
 
 ## <a name="platform-support"></a>Поддержка платформ
 
-ATP в Защитнике Windows в центре безопасности поддерживает обнаружение в операционных системах Windows Server 2012 R2 и Windows Server 2016, принадлежащих стандартной подписке службы.
+ATP в Защитнике Windows в центре безопасности поддерживает обнаружение в операционных системах Windows Server 2016, 2012 R2 и 2008 R2 с пакетом обновления 1 (SP1) в стандартной подписке на службу.
 
 > [!NOTE]
 > При использовании центра безопасности Azure для мониторинга серверов автоматически создается клиент ATP в Защитнике Windows, а данные ATP в Защитнике Windows по умолчанию хранятся в Европе. Если необходимо переместить данные в другое расположение, необходимо обратиться в служба поддержки Майкрософт для сброса клиента.

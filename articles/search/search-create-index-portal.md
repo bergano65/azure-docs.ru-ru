@@ -1,21 +1,19 @@
 ---
 title: Создание индекса службы "Поиск Azure" на портале Azure
 description: Сведения о создании индекса для Поиска Azure с помощью встроенного портала конструкторов индекса.
-manager: cgronlun
+manager: nitinme
 author: heidisteen
 services: search
 ms.service: search
-ms.devlang: NA
 ms.topic: conceptual
 ms.date: 02/16/2019
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 6a2bac71c37cc750eb24e3492ecdcdf0b2333cce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fec81cd9660348d492b1dabd24ac689f2b06e880
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60817279"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638813"
 ---
 # <a name="create-an-azure-search-index-in-the-portal"></a>Создание индекса службы "Поиск Azure" на портале
 
@@ -74,7 +72,7 @@ ms.locfileid: "60817279"
 |**key**|Уникальный идентификатор для документов в индексе. Только одно поле должно быть выбрано ключевым и оно должно иметь тип `Edm.String`.|  
 |**Доступный для получения**|Определяет, включается ли поле в возвращаемые поиском результаты. Этот атрибут полезен, когда поле (например, *показатель прибыльности*) нужно использовать для фильтрации, сортировки или оценки, но оно не должно отображаться конечному пользователю. У полей с установленным свойством `true` for `key` .|  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После создания индекса службы поиска Azure можно перейти к следующему шагу: [отправке доступных для поиска данных в индекс](search-what-is-data-import.md).
 

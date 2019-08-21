@@ -9,12 +9,12 @@ ms.date: 07/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d6a85d0f9480418bd840786e17ee258dbdb90c48
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 32b3f113658a20790e0f149739a882004f12fe21
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985214"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640824"
 ---
 # <a name="run-azure-cli-or-powershell-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Запуск Azure CLI или команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
 
@@ -26,7 +26,7 @@ ms.locfileid: "68985214"
 
 Расширения поддерживаются для операций с контейнерами и очередями. Действия, которые можно вызывать, зависят от разрешений, предоставленных субъекту безопасности Azure AD, с которым вы входите в Azure CLI или PowerShell. Разрешения для контейнеров и очередей службы хранилища Azure назначаются с помощью управления доступом на основе ролей (RBAC). Например, если назначена роль **читателя данных большого двоичного объекта** , можно выполнять команды сценариев, считывающие данные из контейнера или очереди. Если вам назначена роль **участника данных большого двоичного объекта** , можно выполнять команды сценариев, которые считывают, записывают или удаляют контейнер или очередь или содержащиеся в них данные. 
 
-Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в контейнере или очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
+Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в контейнере или очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](https://docs.microsoft.com/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
 
 ## <a name="call-cli-commands-using-azure-ad-credentials"></a>Вызов команд интерфейса командной строки с использованием учетных данных Azure AD
 
