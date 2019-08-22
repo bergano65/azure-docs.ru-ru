@@ -8,13 +8,13 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
-ms.date: 07/10/2017
-ms.openlocfilehash: ecbdbdd29a777a997c594f8119c1474a89e64a10
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.date: 08/16/2019
+ms.openlocfilehash: 60d8d4594d76fbef36df0259940d4437e28280cb
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404188"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873440"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -87,21 +87,23 @@ ms.locfileid: "68404188"
 
 Создание приложения.
 
-1. На компьютере разработки создайте пустую папку с именем `iot-java-schedule-jobs`.
+1. На компьютере разработки создайте пустую папку с именем **IOT-Java-Scheduler-Jobs**.
 
-2. В папке `iot-java-schedule-jobs` создайте проект Maven с именем **schedule-jobs**, выполнив следующую команду в командной строке. Обратите внимание, что это одна длинная команда.
+2. В папке **IOT-Java-Schedule-Jobs** создайте проект Maven с именем **Schedule-Jobs** , выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
 
-    `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=schedule-jobs -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
+   ```cmd/sh
+   mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=schedule-jobs -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+   ```
 
-3. В командной строке перейдите к папке `schedule-jobs`.
+3. В командной строке перейдите в папку **Schedule-Jobs** .
 
-4. Откройте в текстовом редакторе файл `pom.xml` из папки `schedule-jobs` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
+4. С помощью текстового редактора откройте файл **POM. XML** в папке **Schedule-Jobs** и добавьте следующую зависимость в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
       <groupId>com.microsoft.azure.sdk.iot</groupId>
       <artifactId>iot-service-client</artifactId>
-      <version>1.7.23</version>
+      <version>1.17.1</version>
       <type>jar</type>
     </dependency>
     ```
@@ -127,9 +129,9 @@ ms.locfileid: "68404188"
     </build>
     ```
 
-6. Сохраните и закройте файл `pom.xml`.
+6. Сохраните и закройте файл **pom.xml**.
 
-7. Откройте в текстовом редакторе файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
+7. Откройте файл **счедуле-жобс\срк\маин\жава\ком\микомпани\апп\апп.Жава** в текстовом редакторе.
 
 8. Добавьте в файл следующие инструкции **import** .
 
@@ -264,7 +266,7 @@ ms.locfileid: "68404188"
     public static void main( String[] args ) throws Exception
     ```
 
-15. Чтобы два задания запускались и отслеживались последовательно, добавьте следующий код в метод **main**:
+15. Чтобы последовательно запустить и отслеживать два задания, замените код в методе **Main** следующим кодом:
 
     ```java
     // Record the start time
@@ -291,36 +293,50 @@ ms.locfileid: "68404188"
     System.out.println("Shutting down schedule-jobs app");
     ```
 
-16. Сохраните и закройте файл `schedule-jobs\src\main\java\com\mycompany\app\App.java`.
+16. Сохранение и закрытие файла **счедуле-жобс\срк\маин\жава\ком\микомпани\апп\апп.Жава**
 
-17. Создайте приложение **schedule-jobs** и исправьте обнаруженные ошибки. В командной строке перейдите к папке `schedule-jobs` и выполните следующую команду:
+17. Создайте приложение **schedule-jobs** и исправьте обнаруженные ошибки. В командной строке перейдите в папку **Schedule-Jobs** и выполните следующую команду:
 
-    `mvn clean package -DskipTests`
+    ```cmd/sh
+    mvn clean package -DskipTests
+    ```
 
 ## <a name="create-a-device-app"></a>Создание приложения устройства
 
 В этом разделе вы создадите консольное приложение Java, которое обрабатывает требуемые свойства, отправленные из Центр Интернета вещей реализует непосредственный вызов методов.
 
-1. В папке `iot-java-schedule-jobs` создайте проект Maven с именем **simulated-device**, выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
+1. В папке **IOT-Java-Schedule-Jobs** создайте проект Maven с именем имитация **устройства** , выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
 
-    `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
+   ```cmd/sh
+   mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+   ```
 
-2. В командной строке перейдите к папке `simulated-device`.
+2. В командной строке перейдите в папку имитация **устройства** .
 
-3. Откройте в текстовом редакторе файл `pom.xml` из папки `simulated-device` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
+3. В текстовом редакторе откройте файл **POM. XML** в папке **имитации устройства** и добавьте следующие зависимости в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
       <groupId>com.microsoft.azure.sdk.iot</groupId>
       <artifactId>iot-device-client</artifactId>
-      <version>1.3.32</version>
+      <version>1.17.5</version>
     </dependency>
     ```
 
     > [!NOTE]
     > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-4. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+4. Добавьте следующую зависимость в узел **зависимости** . Эта зависимость настраивает NOP для фасадной ведения журнала Apache [SLF4J](https://www.slf4j.org/) , которое используется пакетом SDK для клиента устройства для реализации ведения журнала. Эта конфигурация является необязательной, но если ее опустить, при запуске приложения может появиться предупреждение в консоли. Дополнительные сведения о ведении журналов в клиентском пакете SDK для устройств см. в разделе [ведение журнала](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/readme.md#logging)в *ПРИМЕРАХ для пакета SDK для устройств Azure IOT для Java* .
+
+    ```xml
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>1.7.28</version>
+    </dependency>
+    ```
+
+5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -338,11 +354,11 @@ ms.locfileid: "68404188"
     </build>
     ```
 
-5. Сохраните и закройте файл `pom.xml`.
+6. Сохраните и закройте файл **pom.xml**.
 
-6. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+7. Откройте файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** в текстовом редакторе.
 
-7. Добавьте в файл следующие инструкции **import** .
+8. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;
@@ -353,10 +369,10 @@ ms.locfileid: "68404188"
     import java.util.Scanner;
     ```
 
-8. Добавьте в класс **App** . Замените значение `{youriothubname}` именем Центра Интернета вещей, а `{yourdevicekey}` — значением ключа устройства, сформированным при работе с разделом *Создание удостоверения устройства*:
+9. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, скопированной ранее в разделе [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub) :
 
     ```java
-    private static String connString = "HostName={youriothubname}.azure-devices.net;DeviceId=myDeviceID;SharedAccessKey={yourdevicekey}";
+    private static String connString = "{yourdeviceconnectionstring}";
     private static IotHubClientProtocol protocol = IotHubClientProtocol.MQTT;
     private static final int METHOD_SUCCESS = 200;
     private static final int METHOD_NOT_DEFINED = 404;
@@ -364,7 +380,7 @@ ms.locfileid: "68404188"
 
     При создании экземпляра объекта **DeviceClient** в этом примере приложения используется переменная **protocol**.
 
-9. Чтобы выводить оповещения двойника устройства в консоль, добавьте следующий вложенный класс в класс **App**:
+10. Чтобы выводить оповещения двойника устройства в консоль, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for device twin operation notifications from IoT Hub
@@ -375,7 +391,7 @@ ms.locfileid: "68404188"
     }
     ```
 
-10. Чтобы выводить оповещения прямого метода в консоль, добавьте следующий вложенный класс в класс **App**:
+11. Чтобы выводить оповещения прямого метода в консоль, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for direct method notifications from IoT Hub
@@ -386,7 +402,7 @@ ms.locfileid: "68404188"
     }
     ```
 
-11. Чтобы обрабатывать вызовы прямого метода от Центра Интернета вещей, добавьте следующий вложенный класс в класс **App**:
+12. Чтобы обрабатывать вызовы прямого метода от Центра Интернета вещей, добавьте следующий вложенный класс в класс **App**:
 
     ```java
     // Handler for direct method calls from IoT Hub
@@ -411,13 +427,13 @@ ms.locfileid: "68404188"
     }
     ```
 
-12. Обновите подпись метода **main**, добавив следующее предложение `throws`:
+13. Обновите подпись метода **main**, добавив следующее предложение `throws`:
 
     ```java
     public static void main( String[] args ) throws IOException, URISyntaxException
     ```
 
-13. Добавьте в конец метода **main** следующий код, чтобы:
+14. Замените код в методе **Main** следующим кодом:
     * Создать клиент устройства для взаимодействия с Центром Интернета вещей.
     * Создать объект **Device** для хранения свойств двойника устройства.
 
@@ -435,7 +451,7 @@ ms.locfileid: "68404188"
     };
     ```
 
-14. Добавьте следующий код в метод **main** для запуска клиентских служб на устройстве:
+15. Добавьте следующий код в метод **main** для запуска клиентских служб на устройстве:
 
     ```java
     try {
@@ -453,7 +469,7 @@ ms.locfileid: "68404188"
     }
     ```
 
-15. Чтобы ожидать нажатия пользователем клавиши **Ввод** перед завершением работы, добавьте следующий код в конец метода **main**:
+16. Чтобы ожидать нажатия пользователем клавиши **Ввод** перед завершением работы, добавьте следующий код в конец метода **main**:
 
     ```java
     // Close the app
@@ -465,35 +481,41 @@ ms.locfileid: "68404188"
     scanner.close();
     ```
 
-16. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+17. Сохраните и закройте файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** .
 
-17. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке `simulated-device` и выполните следующую команду:
+18. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку имитируемed **-Device** и выполните следующую команду:
 
-    `mvn clean package -DskipTests`
+    ```cmd/sh
+    mvn clean package -DskipTests
+    ```
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
 Теперь все готово к запуску консоли приложений.
 
-1. В командной строке, находясь в папке `simulated-device`, выполните следующую команду, которая запускает приложение устройства для прослушивания изменений требуемых свойств и ожидания вызовов прямого метода:
+1. В командной строке в папке **имитации устройства** выполните следующую команду, чтобы запустить приложение устройства, слушающее требуемые изменения свойств и прямые вызовы методов:
 
-    `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
+   ```cmd/sh
+   mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+   ```
 
-    ![Запуск клиента на устройстве](./media/iot-hub-java-java-schedule-jobs/device-app-1.png)
+   ![Запуск клиента на устройстве](./media/iot-hub-java-java-schedule-jobs/device-app-1.png)
 
 2. В командной строке в папке `schedule-jobs` выполните следующую команду, чтобы запустить приложение службы **schedule-jobs** для выполнения двух заданий. Первое задание устанавливает значения требуемых свойств, а второе вызывает прямой метод:
 
-    `mvn exec:java -Dexec.mainClass="com.mycompany.app.App"`
+   ```cmd\sh
+   mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+   ```
 
-    ![Java-приложение службы Центра Интернета вещей создает два задания](./media/iot-hub-java-java-schedule-jobs/service-app-1.png)
+   ![Java-приложение службы Центра Интернета вещей создает два задания](./media/iot-hub-java-java-schedule-jobs/service-app-1.png)
 
 3. Приложения для устройств обрабатывает изменения требуемого свойства и вызов прямого метода:
 
-    ![Клиент устройства реагирует на изменения](./media/iot-hub-java-java-schedule-jobs/device-app-2.png)
+   ![Клиент устройства реагирует на изменения](./media/iot-hub-java-java-schedule-jobs/device-app-2.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этом руководстве мы настроили новый Центр Интернета вещей на портале Azure и создали удостоверение устройства в реестре удостоверений Центра Интернета вещей. Вы создали серверное приложения для запуска двух заданий. Первое приложение устанавливает значения требуемых свойств, а второе вызывает прямой метод.
+В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
 Ознакомьтесь со следующими материалами, чтобы узнать как:
 

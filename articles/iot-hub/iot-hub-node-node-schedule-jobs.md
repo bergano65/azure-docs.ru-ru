@@ -8,13 +8,13 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 10/06/2017
-ms.openlocfilehash: 243f4e63cc04bca018c2bf69492dccf163e92b73
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.date: 08/16/2019
+ms.openlocfilehash: 0a89cd2c576a3539d7b1b6a282a2287551e8265a
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780826"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877111"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Планирование и вещание заданий (Node. js)
 
@@ -48,9 +48,11 @@ ms.locfileid: "68780826"
 
 * **scheduleJobService.js**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
 
-* Node. js версии 10.0. x или более поздней версии [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) описывает установку Node. js для этого руководства в Windows или Linux.
+Для работы с этим учебником необходимы указанные ниже компоненты.
+
+* Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
@@ -68,39 +70,39 @@ ms.locfileid: "68780826"
 
 1. Создайте пустую папку с именем **simDevice**.  В папке **simDevice** создайте файл package.json, используя следующую команду в командной строке.  Примите значения по умолчанию:
 
-   ```
+   ```console
    npm init
    ```
 
 2. В командной строке в папке **simDevice** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
-   
-   ```
+
+   ```console
    npm install azure-iot-device azure-iot-device-mqtt --save
    ```
 
 3. В текстовом редакторе создайте файл **simDevice.js** в папке **simDevice**.
 
 4. Добавьте следующие инструкции require в начало файла **simDevice.js**:
-   
-    ```
+
+    ```javascript
     'use strict';
-   
+
     var Client = require('azure-iot-device').Client;
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  
-   
-    ```
-    var connectionString = 'HostName={youriothostname};DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
+5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**. Замените значение `{yourDeviceConnectionString}` заполнителя строкой подключения устройства, скопированным ранее.
+
+    ```javascript
+    var connectionString = '{yourDeviceConnectionString}';
     var client = Client.fromConnectionString(connectionString, Protocol);
     ```
 
 6. Добавьте следующую функцию для обработки метода **lockDoor**.
-   
-    ```
+
+    ```javascript
     var onLockDoor = function(request, response) {
-   
+
         // Respond the cloud app for the direct method
         response.send(200, function(err) {
             if (err) {
@@ -109,14 +111,14 @@ ms.locfileid: "68780826"
                 console.log('Response to method \'' + request.methodName + '\' sent successfully.');
             }
         });
-   
+
         console.log('Locking Door!');
     };
     ```
 
 7. Добавьте следующий код для регистрации обработчика для метода **lockDoor**.
 
-   ```
+   ```javascript
    client.open(function(err) {
         if (err) {
             console.error('Could not connect to IotHub client.');
@@ -145,30 +147,30 @@ ms.locfileid: "68780826"
 
 1. Создайте пустую папку с именем **scheduleJobService**.  В папке **scheduleJobService** создайте файл package.json, используя следующую команду в командной строке.  Примите значения по умолчанию:
 
-    ```
+    ```console
     npm init
     ```
 
 2. В командной строке в папке **scheduleJobService** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iothub** и пакет **azure-iot-device-mqtt**.
-   
-    ```
+
+    ```console
     npm install azure-iothub uuid --save
     ```
 
 3. В текстовом редакторе создайте файл **scheduleJobService.js** в папке **scheduleJobService**.
 
-4. Добавьте следующие инструкции require в начале файла **dmpatterns_gscheduleJobServiceetstarted_service.js**:
-   
-    ```
+4. Добавьте следующие операторы "обязательно" в начало файла **scheduleJobService. js** :
+
+    ```javascript
     'use strict';
-   
+
     var uuid = require('uuid');
     var JobClient = require('azure-iothub').JobClient;
     ```
 
-5. Добавьте следующие объявления переменных и замените значения заполнителей:
-   
-    ```
+5. Добавьте следующие объявления переменных. Замените значение заполнителя значением, скопированным в [поле получение строки подключения центра Интернета вещей.](#get-the-iot-hub-connection-string) `{iothubconnectionstring}` Если вы зарегистрировали устройство, отличное от **myDeviceId**, не забудьте изменить его в условии запроса.
+
+    ```javascript
     var connectionString = '{iothubconnectionstring}';
     var queryCondition = "deviceId IN ['myDeviceId']";
     var startTime = new Date();
@@ -177,8 +179,8 @@ ms.locfileid: "68780826"
     ```
 
 6. Добавьте следующую функцию, которая используется, чтобы отслеживать выполнение задания:
-   
-    ```
+
+    ```javascript
     function monitorJob (jobId, callback) {
         var jobMonitorInterval = setInterval(function() {
             jobClient.getJob(jobId, function(err, result) {
@@ -197,14 +199,14 @@ ms.locfileid: "68780826"
     ```
 
 7. Добавьте следующий код, чтобы запланировать задание, которое вызывает метод устройства:
-   
-    ```
+  
+    ```javascript
     var methodParams = {
         methodName: 'lockDoor',
         payload: null,
         responseTimeoutInSeconds: 15 // Timeout after 15 seconds if device is unable to process method
     };
-   
+
     var methodJobId = uuid.v4();
     console.log('scheduling Device Method job with id: ' + methodJobId);
     jobClient.scheduleDeviceMethod(methodJobId,
@@ -228,8 +230,8 @@ ms.locfileid: "68780826"
     ```
 
 8. Добавьте следующий код, чтобы запланировать задание, которое обновляет двойник устройства:
-   
-    ```
+
+    ```javascript
     var twinPatch = {
        etag: '*',
        properties: {
@@ -239,9 +241,9 @@ ms.locfileid: "68780826"
            }
        }
     };
-   
+
     var twinJobId = uuid.v4();
-   
+
     console.log('scheduling Twin Update job with id: ' + twinJobId);
     jobClient.scheduleTwinUpdate(twinJobId,
                                 queryCondition,
@@ -270,18 +272,26 @@ ms.locfileid: "68780826"
 Теперь все готово к запуску приложений.
 
 1. В командной строке в папке **simDevice** выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки:
-   
-    ```
+
+    ```console
     node simDevice.js
     ```
 
 2. В командной строке в папке **scheduleJobService** выполните следующую команду, чтобы активировать задачи для блокировки дверей и обновления двойника.
-   
-    ```
+
+    ```console
     node scheduleJobService.js
     ```
 
-3. В консоли отобразится ответ устройства на прямой метод.
+3. Вы увидите ответ устройства на прямой метод и состояние задания в консоли.
+
+   Ниже показан ответ устройства на прямой метод:
+
+   ![Выходные данные приложения имитации устройства](./media/iot-hub-node-node-schedule-jobs/sim-device.png)
+
+   Ниже показаны задания планирования обслуживания для прямого метода и обновления двойникаов устройств, а также задания, выполняемые до завершения:
+
+   ![Запуск приложения виртуального устройства](./media/iot-hub-node-node-schedule-jobs/schedule-job-service.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 

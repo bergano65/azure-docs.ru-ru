@@ -15,18 +15,18 @@ ms.date: 06/18/2019
 ms.author: cephalin
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 4b2934c8b93ffb247661886cb2791c0719996aeb
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 47db310f6affa6317a74020d182c521d65cd32f3
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297185"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69875227"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
 В этом пошаговом руководство показано, как развернуть приложение в [службе приложений Azure](overview.md) из репозитория Git на локальном компьютере.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните следующие шаги для изучения данного руководства.
 
@@ -149,14 +149,14 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 
 При использовании Git для публикации в приложении службы приложений в Azure могут отобразиться следующие распространенные сообщения об ошибках:
 
-|Сообщение|Причина:|Способы устранения:
+|Сообщение|Причина:|Разрешение
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|Приложение не работает.|запуск приложения на портале Azure. Развертывание Git недоступно, если веб-приложение остановлено.|
 |`Couldn't resolve host 'hostname'`|Неверные сведения об адресе удаленного ресурса "Azure".|используйте команду `git remote -v`, чтобы вывести список всех удаленных репозиториев с соответствующими URL-адресами. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Вы не указали ветвь во `git push`время или не `push.default` установили значение в `.gitconfig`.|Выполните `git push` команду еще раз, указав главную ветвь `git push azure master`:.|
 |`src refspec [branchname] does not match any.`|Предпринята попытка принудительной отправки в ветвь, отличную от главной, в удаленной службе Azure.|Выполните `git push` команду еще раз, указав главную ветвь `git push azure master`:.|
 |`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы увеличить ее `postBuffer` размер. Например, `git config --global http.postBuffer 524288000`.|
-|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте сообщения `npm ERR!` об ошибках до этой ошибки для получения дополнительных сведений о сбое. Ниже приведены известные причины этой ошибки и соответствующие `npm ERR!` сообщения.<br /><br />**Неправильный формат файла Package. JSON**:`npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или диспетчер конфигурации служб <br />' NPM ERR! [modulename@version] предустановка: \маке || гмаке\`|
+|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте сообщения `npm ERR!` об ошибках до этой ошибки для получения дополнительных сведений о сбое. Ниже приведены известные причины этой ошибки и соответствующие `npm ERR!` сообщения.<br /><br />**Неправильный формат файла Package. JSON**:`npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или диспетчер конфигурации служб <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

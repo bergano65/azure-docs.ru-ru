@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 04/29/2019
+ms.date: 08/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: ee8af77ce8f3897fdf1cb3da9a125acca28f9419
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: MT
+ms.openlocfilehash: e730e1b5534c4c74734816f5481247e341436b08
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358696"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656343"
 ---
 # <a name="use-ssl-to-secure-a-web-service-through-azure-machine-learning"></a>Использование SSL для защиты веб-службы с помощью Машинное обучение Azure
 
@@ -152,6 +152,107 @@ aci_config = AciWebservice.deploy_configuration(
   Обновите DNS на вкладке **Конфигурация** общедоступного IP-адреса кластера AKS. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
   ![Служба машинного обучения Azure. Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)
+
+## <a name="update-the-ssl-certificate"></a>Обновление SSL-сертификата
+
+Срок действия SSL-сертификатов истекает, и их необходимо продлить. Обычно это происходит каждый год. Используйте сведения в следующих разделах, чтобы обновить и продлить сертификат для моделей, развернутых в службе Kubernetes Azure:
+
+### <a name="update-a-microsoft-generated-certificate"></a>Обновление сертификата, созданного корпорацией Майкрософт
+
+Если сертификат изначально был создан корпорацией Майкрософт (при использовании *leaf_domain_label* для создания службы), используйте один из следующих примеров для обновления сертификата.
+
+**Использование пакета SDK**
+
+```python
+from azureml.core.compute import AksCompute
+from azureml.core.compute.aks import AksUpdateConfiguration
+from azureml.core.compute.aks import SslConfiguration
+
+# Get the existing cluster
+aks_target = AksCompute(ws, clustername)
+
+# Update the existing certificate by referencing the leaf domain label
+ssl_configuration = SslConfiguration(leaf_domain_label="myaks", overwrite_existing_domain=True)
+update_config = AksUpdateConfiguration(ssl_configuration)
+aks_target.update(update_config)
+```
+
+**Использование интерфейса командной строки**
+
+```azurecli
+az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-leaf-domain-label "myaks" --ssl-overwrite-domain True
+```
+
+Дополнительные сведения см. в следующих справочных документах:
+
+* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
+* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+
+### <a name="update-custom-certificate"></a>Обновить пользовательский сертификат
+
+Если сертификат был изначально создан центром сертификации, выполните следующие действия.
+
+1. Чтобы продлить сертификат, используйте документацию, предоставленную центром сертификации. Этот процесс создает новые файлы сертификатов.
+
+1. Используйте пакет SDK или CLI для обновления службы с помощью нового сертификата:
+
+    **Использование пакета SDK**
+
+    ```python
+    from azureml.core.compute import AksCompute
+    from azureml.core.compute.aks import AksUpdateConfiguration
+    from azureml.core.compute.aks import SslConfiguration
+    
+    # Read the certificate file
+    def get_content(file_name):
+        with open(file_name, 'r') as f:
+            return f.read()
+
+    # Get the existing cluster
+    aks_target = AksCompute(ws, clustername)
+    
+    # Update cluster with custom certificate
+    ssl_configuration = SslConfiguration(cname="myaks", cert=get_content('cert.pem'), key=get_content('key.pem'))
+    update_config = AksUpdateConfiguration(ssl_configuration)
+    aks_target.update(update_config)
+    ```
+
+    **Использование интерфейса командной строки**
+
+    ```azurecli
+    az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-cname "myaks"--ssl-cert-file "cert.pem" --ssl-key-file "key.pem"
+    ```
+
+Дополнительные сведения см. в следующих справочных документах:
+
+* [сслконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.sslconfiguration?view=azure-ml-py)
+* [аксупдатеконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksupdateconfiguration?view=azure-ml-py)
+
+## <a name="disable-ssl"></a>Отключение SSL
+
+Чтобы отключить SSL для модели, развернутой в службе Kubernetes Azure, можно использовать пакет SDK или CLI:
+
+**Использование пакета SDK**
+
+```python
+from azureml.core.compute import AksCompute
+from azureml.core.compute.aks import AksUpdateConfiguration
+from azureml.core.compute.aks import SslConfiguration
+
+# Get the existing cluster
+aks_target = AksCompute(ws, clustername)
+
+# Disable SSL
+ssl_configuration = SslConfiguration(status="Disabled")
+update_config = AksUpdateConfiguration(ssl_configuration)
+aks_target.update(update_config)
+```
+
+**Использование интерфейса командной строки**
+
+```azurecli
+ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-disable True
+```
 
 ## <a name="next-steps"></a>Следующие шаги
 Вы узнаете, как выполнять следующие задачи:

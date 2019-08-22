@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf0c639dd5fb678af7fca9224292218331b10ee6
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: accd14446ab8f4a70336e3bd6787cbd8c93ff21d
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834755"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891521"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -196,7 +196,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 В следующем примере показано сообщение о предоставлении доступа в ответ на запрос маркера доступа к веб-API https://graph.windows.net.
 
-```
+```json
 {
     "token_type":"Bearer",
     "scope":"User.Read",
@@ -215,7 +215,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Конечная точка маркера Azure AD возвращает ответ об ошибке при попытке получить маркер доступа для подчиненного API, установленного с политикой условного доступа (например, многофакторная идентификация). Служба среднего уровня должна отображать эту ошибку в клиентском приложении, чтобы клиентское приложение могла обеспечить взаимодействие с пользователем в соответствии с политикой условного доступа.
 
-```
+```json
 {
     "error":"interaction_required",
     "error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, you must enroll in multi-factor authentication to access 'bf8d80f9-9098-4972-b203-500f535113b1'.\r\nTrace ID: b72a68c3-0926-4b8e-bc35-3150069c2800\r\nCorrelation ID: 73d656cf-54b1-4eb2-b429-26d8165a52d7\r\nTimestamp: 2017-05-01 22:43:20Z",

@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2017
-ms.openlocfilehash: 48792a90a42d0cfe5c0b34c872b3d474d6a784f1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 75bbcfa831ba7ef0b3dd0da629cfa94768d6ae9d
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433506"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873336"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
 
@@ -193,7 +193,7 @@ rxDataStep(weatherDF, outFile = weatherDF1, rowsPerRead = 50000, overwrite = T,
 
 ## <a name="importing-the-airline-and-weather-data-to-spark-dataframes"></a>Импорт данных авиакомпаний и погодных данных в таблицы данных Spark
 
-Теперь мы используем функцию SparkR [read.df()](https://docs.databricks.com/spark/1.6/sparkr/functions/read.df.html#read-df) для импорта данных по погоде и авиакомпаниям в кадры данных Spark. Это функция отложенного выполнения, как и многие другие методы Spark. Это означает, что они находятся в очереди на выполнение, но выполняются только при необходимости.
+Теперь мы используем функцию SparkR [read.df()](http://spark.apache.org/docs/latest/api/R/read.df.html) для импорта данных по погоде и авиакомпаниям в кадры данных Spark. Это функция отложенного выполнения, как и многие другие методы Spark. Это означает, что они находятся в очереди на выполнение, но выполняются только при необходимости.
 
 ```
 airPath     <- file.path(inputDataDir, "AirOnTime08to12CSV")
@@ -266,7 +266,7 @@ weatherDF <- rename(weatherDF,
 
 ## <a name="joining-the-weather-and-airline-data"></a>Объединение данных о погоде с данными об авиакомпаниях
 
-Теперь воспользуемся функцией SparkR [join()](https://docs.databricks.com/spark/1.6/sparkr/functions/join.html#join), чтобы выполнить левое внешнее соединение данных по погоде с данными по авиакомпаниям на основе идентификатора аэропорта отправления (AirportID) и значения даты и времени (datetime). Внешнее объединение позволяет сохранить все записи данных об авиакомпаниях, даже если они не коррелируют с погодными данными. После соединения удалим некоторые избыточные столбцы и переименуем оставшиеся, чтобы удалить входящий префикс кадра данных, возникший при соединении.
+Теперь воспользуемся функцией SparkR [join()](http://spark.apache.org/docs/latest/api/R/join.html), чтобы выполнить левое внешнее соединение данных по погоде с данными по авиакомпаниям на основе идентификатора аэропорта отправления (AirportID) и значения даты и времени (datetime). Внешнее объединение позволяет сохранить все записи данных об авиакомпаниях, даже если они не коррелируют с погодными данными. После соединения удалим некоторые избыточные столбцы и переименуем оставшиеся, чтобы удалить входящий префикс кадра данных, возникший при соединении.
 
 ```
 logmsg('Join airline data with weather at Origin Airport')
@@ -536,7 +536,7 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 - Дополнительные сведения об использовании ML Server в Apache Spark см. в [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
 
-- Сведения о службах машинного Обучения в HDInsight см. в разделе [Обзор из служб машинного Обучения в HDInsight](r-server/r-server-overview.md).
+- Сведения о службах ML в HDInsight см. в статье [Обзор служб ML в hdinsight](r-server/r-server-overview.md).
 
 Дополнительные сведения об использовании SparkR см. в следующих статьях:
 

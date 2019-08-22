@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: cotresne
-ms.openlocfilehash: 9f40ec658fc6725f381300d967c9d7cd61c3a218
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: a0c34fcc70d92f98a6d72e4cd2fc78d34d863d55
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624152"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650460"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "69624152"
 
 ### <a name="remote-build"></a>Удаленная сборка
 
-Функции Azure могут автоматически выполнять сборки по коду, который он получает после развертывания ZIP. Эти сборки ведут себя немного иначе в зависимости от того, выполняется ли приложение в Windows или Linux. Удаленные сборки не выполняются, если приложение ранее было настроено для запуска в режиме [запуска из пакета](run-functions-from-deployment-package.md) . 
+Функции Azure могут автоматически выполнять сборки по коду, который он получает после развертывания ZIP. Эти сборки ведут себя немного иначе в зависимости от того, выполняется ли приложение в Windows или Linux. Удаленные сборки не выполняются, если приложение ранее было настроено для запуска в режиме [запуска из пакета](run-functions-from-deployment-package.md) . Чтобы узнать, как использовать удаленную сборку, перейдите к папке [ZIP Deploy](#zip-deploy).
 
 > [!NOTE]
 > Если возникают проблемы с удаленной сборкой, это может быть вызвано тем, что приложение было создано до того, как функция стала доступной (1 августа 2019 г.). Попробуйте создать новое приложение-функцию.
@@ -85,11 +85,11 @@ ms.locfileid: "69624152"
 
 ##### <a name="consumption-preview-plan"></a>План использования (Предварительная версия)
 
-В приложениях-функциях Linux, выполняющихся в плане потребления, отсутствует сайт SCM или KUDU, который ограничивает возможности развертывания. Однако приложения функций в Linux, работающие в плане потребления, поддерживают удаленные сборки. В этих удаленных сборках используется [Орикс](https://github.com/microsoft/Oryx).
+В приложениях-функциях Linux, выполняющихся в плане потребления, отсутствует сайт SCM или KUDU, который ограничивает возможности развертывания. Однако приложения функций в Linux, работающие в плане потребления, поддерживают удаленные сборки.
 
 ##### <a name="dedicated-and-premium-preview-plans"></a>Планы специальных и Premium (Предварительная версия)
 
-Приложения-функции, работающие в Linux в [специальном плане (служба приложений)](functions-scale.md#app-service-plan) и [план Premium](functions-scale.md#premium-plan) , также имеют ограниченный сайт SCM/KUDU, который использует преимущества [Орикс](https://github.com/microsoft/Oryx).
+Приложения-функции, работающие в Linux в [специальном плане (служба приложений)](functions-scale.md#app-service-plan) и [план Premium](functions-scale.md#premium-plan) , также имеют ограниченный сайт SCM или KUDU.
 
 ## <a name="deployment-technology-details"></a>Сведения о технологии развертывания
 
@@ -111,7 +111,7 @@ URL-адрес внешнего пакета можно использовать
 
 >__Как его использовать:__ Развертывание с помощью предпочтительного клиентского средства: [VS Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure)или [Azure CLI](functions-create-first-azure-function-azure-cli.md#deploy-the-function-app-project-to-azure). Чтобы вручную развернуть ZIP-файл в приложении-функции, следуйте инструкциям в разделе [развертывание из файла с расширением ZIP или URL-адреса](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
-Чтобы выполнить развертывание ZIP-файла с помощью удаленной сборки, используйте следующую команду [Core Tools](functions-run-local.md) :
+Чтобы выполнить развертывание ZIP-файла с помощью [удаленной сборки](#remote-build), используйте следующую команду [Core Tools](functions-run-local.md) :
 
 ```bash
 func azure functionapp publish <app name> --build remote

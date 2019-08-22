@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 190b7f15a8ae0a5b9472188129f7116050fc831f
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: d441b72b34da6146eba523563a09c2908cdcbbf4
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466838"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650132"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
-В этой статье описывается выполнение запросов и централизованный просмотр всех данных журнала приложения Application Insights (в качестве замены устаревающему Соединителю Application Insights), даже если они находятся в разных подписках Azure. Вы можете включить в один запрос не более 100 ресурсов Application Insights.  
+В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
 
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>Рекомендуемый подход для запроса нескольких ресурсов Application Insights 
 Перечисление нескольких ресурсов Application Insights в запросе может быть весьма трудоемким и трудным в поддержке процессом. Вместо этого вы можете использовать функции для отделения логики запросов и области приложений.  
@@ -32,7 +32,14 @@ ApplicationInsights
 | summarize by ApplicationName
 ```
 
-Создайте функцию с помощью оператора union со списком приложений, затем сохраните запрос в рабочей области в качестве функции с псевдонимом *applicationsScoping*.  
+Создайте функцию с помощью оператора union со списком приложений, затем сохраните запрос в рабочей области в качестве функции с псевдонимом *applicationsScoping*. 
+
+Вы можете в любое время изменить список приложений на портале, перейдя к обозревателю запросов в рабочей области и выбрав функцию для редактирования с последующим сохранением, или с помощью командлета PowerShell `SavedSearch`. 
+
+>[!NOTE]
+>Этот метод нельзя использовать с оповещениями журнала, так как проверка доступа к ресурсам правила генерации оповещений, включая рабочие области и приложения, выполняется во время создания предупреждения. Добавление новых ресурсов в функцию после создания предупреждения не поддерживается. Если вы предпочитаете использовать функцию для определения области ресурсов в оповещениях журнала, необходимо изменить правило генерации оповещений на портале или с помощью шаблона диспетчер ресурсов, чтобы обновить ресурсы с областью действия. Кроме того, можно включить список ресурсов в запрос оповещения журнала.
+
+Команда `withsource= SourceApp` позволяет добавить в результаты столбец, который обозначает приложение, отправившее журнал. Оператор Parse необязателен в этом примере и использует для извлечения имени приложения из свойства Саурцеапп. 
 
 ```
 union withsource=SourceApp 
@@ -43,13 +50,6 @@ app('Contoso-app4').requests,
 app('Contoso-app5').requests 
 | parse SourceApp with * "('" applicationName "')" *  
 ```
-
->[!NOTE]
->Вы можете в любое время изменить список приложений на портале, перейдя к обозревателю запросов в рабочей области и выбрав функцию для редактирования с последующим сохранением, или с помощью командлета PowerShell `SavedSearch`. Команда `withsource= SourceApp` позволяет добавить в результаты столбец, который обозначает приложение, отправившее журнал. 
->
->Запрос использует схему Application Insights, несмотря на то что запрос выполняется в рабочей области, так как функция applicationsScoping возвращает структуру данных Application Insights. 
->
->Оператор parse является необязательным в этом примере. Этот оператор извлекает имя приложения из свойства SourceApp. 
 
 Теперь вы готовы использовать функцию applicationsScoping в межресурсном запросе.  
 
@@ -62,7 +62,7 @@ applicationsScoping
 | render timechart
 ```
 
-Псевдоним функции возвращает объединение запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению.
+Запрос использует схему Application Insights, несмотря на то что запрос выполняется в рабочей области, так как функция applicationsScoping возвращает структуру данных Application Insights. Псевдоним функции возвращает объединение запросов из всех определенных приложений. После этого с помощью запроса фильтруются неудачные запросы и визуализируются тенденции по приложению.
 
 ![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
 
@@ -105,14 +105,14 @@ applicationsScoping //this brings data from Application Insights resources
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | duration |
 | AvailabilityMessage | message |
-| AvailabilityRunLocation | location |
+| AvailabilityRunLocation | расположение |
 | AvailabilityTestId | id |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | timestamp |
 | Browser | client_browser |
-| City | client_city |
+| Город | client_city |
 | ClientIP | client_IP |
-| Computer | cloud_RoleInstance | 
+| Компьютер | cloud_RoleInstance | 
 | Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
@@ -144,6 +144,6 @@ applicationsScoping //this brings data from Application Insights resources
 | URL | url |
 | UserAccountId | user_AccountId |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

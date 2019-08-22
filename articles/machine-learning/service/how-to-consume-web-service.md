@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b7157cd58abc7f1fecf288e72b0232c8a67b7ee
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 4aa948a785153dd0d70a9af41ae0ed25036827f8
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512587"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656271"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -43,7 +43,7 @@ ms.locfileid: "69512587"
 * `auth_enabled`— Если включена `True`проверка подлинности ключа; `False`в противном случае — значение.
 * `token_auth_enabled`— Если включена `True`проверка подлинности токенов; `False`в противном случае — значение.
 * `scoring_uri` — адрес REST API.
-
+* `swagger_uri`— Адрес спецификации OpenAPI. Этот URI доступен, если включено автоматическое создание схем. Дополнительные сведения см. [в статье Развертывание моделей со службой машинное обучение Azure](how-to-deploy-and-where.md#schema).
 
 Эти сведения для развернутой веб-службы можно получить тремя способами.
 
@@ -56,6 +56,7 @@ ms.locfileid: "69512587"
                                            image_config=image_config,
                                            workspace=ws)
     print(service.scoring_uri)
+    print(service.swagger_uri)
     ```
 
 * С помощью `Webservice.list` можно получить список развернутых веб-служб для моделей в рабочей области. Добавляя фильтры, можно сузить список возвращаемых сведений. Дополнительные сведения о возможностях фильтрации см. в справочной документации по [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
@@ -63,6 +64,7 @@ ms.locfileid: "69512587"
     ```python
     services = Webservice.list(ws)
     print(services[0].scoring_uri)
+    print(services[0].swagger_uri)
     ```
 
 * Если вы знаете имя развернутой службы, создайте новый экземпляр класса `Webservice` и предоставьте ему в качестве параметров имя рабочей области и имя службы. Созданный объект будет содержать сведения о развернутой службе.
@@ -70,11 +72,12 @@ ms.locfileid: "69512587"
     ```python
     service = Webservice(workspace=ws, name='myservice')
     print(service.scoring_uri)
+    print(service.swagger_uri)
     ```
 
 ### <a name="authentication-for-services"></a>Проверка подлинности для служб
 
-Машинное обучение Azure предоставляет два способа управления доступом к веб-службам. 
+Машинное обучение Azure предоставляет два способа управления доступом к веб-службам.
 
 |Способ проверки подлинности|ACI|AKS|
 |---|---|---|

@@ -6,14 +6,14 @@ manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 03/06/2018
+ms.date: 08/16/2019
 ms.author: robinsh
-ms.openlocfilehash: c4f2994413fca07f4a168cf12ba7967b00b6b0e2
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 3594828ff3a79242e1cfd4663c415d8de502a329
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668103"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872767"
 ---
 # <a name="schedule-and-broadcast-jobs-net"></a>Планирование и трансляция заданий (.NET)
 
@@ -47,9 +47,12 @@ ms.locfileid: "68668103"
 
 **ScheduleJob** использует задания для вызова прямого метода **LockDoor** и для обновления на нескольких устройствах свойств, установленных на двойнике устройства.
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
 
-* приведенному.
+Для работы с этим учебником необходимы указанные ниже компоненты.
+
+* приведенному. В этом учебнике используется Visual Studio 2017.
+
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
@@ -64,18 +67,18 @@ ms.locfileid: "68668103"
 
 В этом разделе вы создадите консольное приложение .NET, которое отвечает на вызов прямого метода, выполняемый серверной частью решения.
 
-1. В Visual Studio добавьте в текущее решение проект классического приложения Windows на языке Visual C# с помощью шаблона проекта **консольного приложения** . Присвойте проекту имя **SimulatedDeviceMethods**.
-   
+1. Добавьте в Visual Studio проект классического C# рабочего стола Windows в новое или существующее решение с помощью шаблона проекта **консольное приложение** . Присвойте проекту имя **SimulatedDeviceMethods**.
+
     ![Новое классическое приложение устройства Windows на языке Visual C#](./media/iot-hub-csharp-csharp-schedule-jobs/create-device-app.png)
-    
-2. В обозревателе решений щелкните правой кнопкой мыши проект **SimulateDeviceMethods** и выберите пункт **Управление пакетами NuGet...** .
+
+2. В обозреватель решений щелкните правой кнопкой мыши проект **SimulateDeviceMethods** и выберите пункт **Управление пакетами NuGet...** .
 
 3. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите **Microsoft.Azure.Devices.Client**. Выберите **Установить**, чтобы установить пакет **Microsoft.Azure.Devices.Client**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для устройств Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) и его зависимостей, а также добавляется соответствующая ссылка.
-   
+
     ![Клиентское приложение в окне "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/device-app-nuget.png)
 
 4. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
-   
+
     ```csharp
     using Microsoft.Azure.Devices.Client;
     using Microsoft.Azure.Devices.Shared;
@@ -97,7 +100,7 @@ ms.locfileid: "68668103"
         Console.WriteLine();
         Console.WriteLine("Locking Door!");
         Console.WriteLine("\nReturning response for method {0}", methodRequest.Name);
-            
+
         string result = "'Door was locked.'";
         return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
     }
@@ -115,7 +118,7 @@ ms.locfileid: "68668103"
     ```
 
 8. И наконец, добавьте этот код в метод **Main**, чтобы открыть подключение к Центру Интернета вещей и инициализировать прослушиватель метода:
-   
+
     ```csharp
     try
     {
@@ -140,12 +143,12 @@ ms.locfileid: "68668103"
         Console.WriteLine("Error in sample: {0}", ex.Message);
     }
     ```
-        
-9. Сохраните результаты работы и создайте решение.         
+
+9. Сохраните результаты работы и создайте решение.
 
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
-> 
+>
 
 ## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
@@ -161,14 +164,14 @@ ms.locfileid: "68668103"
 
     ![Новый проект классического приложения Windows на языке Visual C#](./media/iot-hub-csharp-csharp-schedule-jobs/createnetapp.png)
 
-2. В обозревателе решений щелкните правой кнопкой мыши проект **ScheduleJob** и выберите **Управление пакетами NuGet…** .
+2. В обозреватель решений щелкните правой кнопкой мыши проект **ScheduleJob** и выберите пункт **Управление пакетами NuGet...** .
 
 3. В окне **Диспетчер пакетов NuGet** нажмите кнопку **Обзор**, найдите **microsoft.azure.devices**, щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices**, и примите условия использования. В результате выполняется скачивание и установка пакета NuGet [SDK для служб Azure IoT](https://www.nuget.org/packages/Microsoft.Azure.Devices/) и его зависимостей, а также добавляется соответствующая ссылка.
 
     ![Окно "Диспетчер пакетов NuGet"](./media/iot-hub-csharp-csharp-schedule-jobs/servicesdknuget.png)
 
 4. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
-    
+
     ```csharp
     using Microsoft.Azure.Devices;
     using Microsoft.Azure.Devices.Shared;
@@ -213,7 +216,7 @@ ms.locfileid: "68668103"
         CloudToDeviceMethod directMethod = 
           new CloudToDeviceMethod("LockDoor", TimeSpan.FromSeconds(5), 
           TimeSpan.FromSeconds(5));
-       
+
         JobResponse result = await jobClient.ScheduleDeviceMethodAsync(jobId,
             $"DeviceId IN ['{deviceId}']",
             directMethod,
@@ -250,7 +253,7 @@ ms.locfileid: "68668103"
 
     > [!NOTE]
     > Дополнительные сведения о синтаксисе запросов см. в статье [Язык запросов Центра Интернета вещей для двойников устройств и двойников модулей, заданий и маршрутизации сообщений](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language).
-    > 
+    >
 
 10. Наконец, добавьте следующие строки в метод **Main** :
 
@@ -275,17 +278,17 @@ ms.locfileid: "68668103"
     Console.ReadLine();
     ```
 
-11. Сохраните результаты работы и создайте решение. 
+11. Сохраните результаты работы и создайте решение.
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
 Теперь все готово к запуску приложений.
 
-1. В обозревателе решений Visual Studio щелкните решение правой кнопкой мыши и выберите пункт **Сборка**. **Несколько запускаемых проектов**. Убедитесь, что `SimulateDeviceMethods` находится в верхней части списка, за которым следует `ScheduleJob`. Установите значение **Запуск** для действий и щелкните **ОК**.
+1. В обозреватель решений Visual Studio щелкните решение правой кнопкой мыши и выберите команду **задать запускаемые проекты**. Затем выберите **Несколько запускаемых проектов**. Убедитесь, что **SimulateDeviceMethods** находится вверху списка, за которым следует **ScheduleJob**. Задайте оба действия для **запуска** и нажмите кнопку **ОК**.
 
-2. Запустите проекты, щелкнув **Запуск**, или перейдите к меню **Отладка** и щелкните **Начать отладку**.
+2. Запустите проекты, выбрав **Запуск** или перейдя в меню **Отладка** и выбрав **начать отладку**.
 
-3. Отобразятся выходные данные с устройства и серверных приложений.
+3. Вы увидите выходные данные как для устройства, так и для серверных приложений.
 
     ![Выполнение приложений для планирования заданий](./media/iot-hub-csharp-csharp-schedule-jobs/schedulejobs.png)
 

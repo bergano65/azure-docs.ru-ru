@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/16/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 0e78d9cfce59615a53534fe9815205e39f64853d
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 89c24512e50dedbf10d145088ec77c2e6e303d1e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868831"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873151"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Создание рабочей области для Машинное обучение Azure службы с помощью шаблона Azure Resource Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "67868831"
 
 Узнайте подробнее [о развертывании приложения с помощью шаблона диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-template-deploy.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Если у вас ее нет, опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -37,9 +37,9 @@ ms.locfileid: "67868831"
 
 Этот шаблон создает следующие ресурсы Azure:
 
-* группа ресурсов Azure.
+* Группа ресурсов Azure
 * Учетная запись хранения Azure
-* Azure Key Vault
+* Хранилище Azure Key Vault
 * Azure Application Insights
 * Реестр контейнеров Azure
 * Рабочая область службы "Машинное обучение Azure"
@@ -71,8 +71,6 @@ ms.locfileid: "67868831"
    * Группа ресурсов: Выберите или создайте группу ресурсов, которая будет содержать службы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
-
-     ![Параметры шаблона на портале Azure](media/how-to-create-workspace-template/template-parameters.png)
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 

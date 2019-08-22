@@ -1,7 +1,7 @@
 ---
 title: Проводник поиска для запроса данных на портале Azure — Поиск Azure
 description: Узнайте, как запрашивать индексы в службе "Поиск Azure" с помощью таких средств портала Azure, как обозреватель поиска. Введите условия поиска или полные строки поиска, используя расширенный синтаксис.
-manager: cgronlun
+manager: nitinme
 author: HeidiSteen
 services: search
 ms.service: search
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 87e5ec82299ef9ddc8bc8756196bb2ace3d1f6f3
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: e941e487adaac38c4ec3bd61a58b4b0c61f4c80a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414243"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649970"
 ---
 # <a name="search-explorer-for-querying-data-in-azure-search"></a>Проводник поиска для запроса в Поиске Azure 
 

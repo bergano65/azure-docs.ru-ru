@@ -2,19 +2,19 @@
 title: Управление одновременными операциями записи в ресурсы службы "Поиск Azure"
 description: Узнайте, как использовать оптимистическую блокировку во избежание конфликтов в процессе обновления или удаления индексов, индексаторов и источников данных Поиска Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 07/21/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 7e569fa30727f2df7411eee5fa6d48f9b9454460
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67f2dad016d3958dc10ba87e785d31694a1c94f5
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65025338"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656723"
 ---
 # <a name="how-to-manage-concurrency-in-azure-search"></a>Управление параллелизмом в Поиске Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "65025338"
 > [!Tip]
 > Концептуальный код в [примере решения C#](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает функция управления параллелизмом в Поиске Azure. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Как это работает
 
 Оптимистическая блокировка реализуется за счет проверки условий доступа в вызовах API при записи в индексы, индексаторы, источники данных и ресурсы synonymMap.
 
@@ -170,7 +170,7 @@ ms.locfileid: "65025338"
 
 Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код взят из [синоним C# пример для поиска Azure](search-synonyms-tutorial-sdk.md).
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код относится к [примеру синонима C# для поиска Azure](search-synonyms-tutorial-sdk.md).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -206,7 +206,7 @@ ms.locfileid: "65025338"
         }
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите [пример кода C# для синонимов](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms), чтобы получить дополнительные сведения о безопасном обновлении существующего индекса.
 

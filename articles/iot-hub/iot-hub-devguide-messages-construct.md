@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: asrastog
-ms.openlocfilehash: 9a62001f168e0577ea07ad030923a4d0398e50af
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 28537ac2389fbb1ca43ca4014515564bddeba4ce
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534963"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872487"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>Создание и чтение сообщений Центра Интернета вещей
 
@@ -73,7 +73,7 @@ ms.locfileid: "69534963"
 
 ## <a name="message-size"></a>Размер сообщения
 
-Центр Интернета вещей измеряет размер сообщения вне зависимости от протокола, учитывая только фактический объем полезных данных. Размер в байтах вычисляется как сумма следующих показателей:
+Центр Интернета вещей измеряет размер сообщения вне зависимости от протокола, учитывая только фактический объем полезных данных. Размер в байтах вычисляется как сумма следующих значений:
 
 * размер текста в байтах;
 * размер в байтах всех значений свойств системы сообщений;

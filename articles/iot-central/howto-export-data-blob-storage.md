@@ -8,14 +8,16 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: 0fcce6bd6ee9461790ca7618f65be9a20a821afc
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 7366072dbf6b000981899a56ca1c8cfe6af6f04a
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360339"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876051"
 ---
 # <a name="export-your-data-to-azure-blob-storage"></a>Экспорт данных в хранилище BLOB-объектов Azure
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 *Эта статья предназначена для администраторов.*
 
@@ -25,7 +27,7 @@ ms.locfileid: "68360339"
 > После включения непрерывного экспорта данных вы получаете только данные, поступающие с момента включения. Сейчас невозможно получить данные за то время, когда непрерывный экспорт данных был отключен. Чтобы сохранить больше исторических данных, включите экспорт непрерывных данных раньше.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Вы должны быть администратором в своем приложении IoT Central.
 
@@ -122,7 +124,7 @@ ms.locfileid: "68360339"
 }
 ```
 
-### <a name="devices"></a>Устройств
+### <a name="devices"></a>Устройства
 
 При первом включении экспорта непрерывных данных экспортируется один моментальный снимок со всеми устройствами. Каждое устройство включает в себя:
 - идентификатор (`id`) устройства в IoT Central;

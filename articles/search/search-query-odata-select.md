@@ -1,13 +1,13 @@
 ---
-title: Выберите ссылку OData - поиска Azure
-description: Справочник по языку OData для выберите синтаксис в запросах поиска Azure.
+title: Справочник по SELECT OData — Поиск Azure
+description: Справочник по языку OData для синтаксиса SELECT в запросах поиска Azure.
 ms.date: 06/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
 author: Brjohnstmsft
 ms.author: brjohnst
-ms.manager: cgronlun
+manager: nitinme
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,20 +19,20 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 9383ae725fffac55854488ffbc6aeb161ae7e0c2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 64e9ad75d88f595ab5def6fe8b63fee9407ae0fe
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67079682"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647873"
 ---
-# <a name="odata-select-syntax-in-azure-search"></a>Синтаксис OData $select в службе поиска Azure
+# <a name="odata-select-syntax-in-azure-search"></a>Синтаксис $select OData в поиске Azure
 
- Можно использовать [OData **$select** параметр](query-odata-filter-orderby-syntax.md) для выбора полей, включаемых в результаты поиска из поиска Azure. В этой статье описывается синтаксис **$select** подробно. Более общие сведения об использовании **$select** при представлении результатов поиска, см. в разделе [способы работы со службой поиска результатов в службе поиска Azure](search-pagination-page-layout.md).
+ [Параметр **$SELECT** OData](query-odata-filter-orderby-syntax.md) можно использовать для выбора полей, включаемых в результаты поиска в службе поиска Azure. В этой статье подробно описывается синтаксис **$SELECT** . Дополнительные общие сведения об использовании **$SELECT** при представлении результатов поиска см. [в статье как работать с результатами поиска в службе поиска Azure](search-pagination-page-layout.md).
 
 ## <a name="syntax"></a>Синтаксис
 
-**$Select** параметр определяет, какие поля для каждого документа, возвращаются в результирующем наборе запроса. Следующие EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для **$select** параметр:
+Параметр **$SELECT** определяет, какие поля для каждого документа возвращаются в результирующем наборе запроса. Следующая EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для параметра **$SELECT** :
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -42,30 +42,30 @@ select_expression ::= '*' | field_path(',' field_path)*
 field_path ::= identifier('/'identifier)*
 ```
 
-Также доступна схему интерактивный синтаксис:
+Доступна также интерактивная схема синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#select_expression)
+> [Схема синтаксиса OData для поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#select_expression)
 
 > [!NOTE]
-> См. в разделе [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md) для завершения EBNF.
+> Полный EBNF см. в [справочнике по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md) .
 
-**$Select** параметр бывают двух видов:
+Параметр **$SELECT** состоит из двух форм:
 
-1. Один символ звездочки (`*`), означает, что все извлекаемые поля должны быть возвращены, или
-1. Разделенный запятыми список путей поля, определение поля, которые должны возвращаться.
+1. Одиночная звездочка`*`(), указывающая, что должны возвращаться все извлекаемые поля, или
+1. Разделенный запятыми список путей к полям, определяющий, какие поля должны быть возвращены.
 
-Если вы используете второй форме, можно указать только извлекаемые поля в списке.
+При использовании второй формы вы можете указать в списке только доступные для получения поля.
 
-Если вывести сложных поля без явного указания его вложенные поля, все извлекаемые вложенные поля будут включены в результирующий набор запроса. Предположим, например, в индексе есть `Address` с `Street`, `City`, и `Country` дополнительные поля, которые извлекаются все. Если указать `Address` в **$select**, результаты запроса будут включены все три вложенные поля.
+Если вы передаете сложное поле, не указывая его вложенные поля явным образом, все доступные для извлечения поля будут включаться в результирующий набор запроса. Например, предположим, что в индексе `Address` есть поле `Street`с `City`полями, `Country` и, и все они доступны для извлечения. Если указать `Address` в **$SELECT**, результаты запроса будут содержать все три вложенные поля.
 
 ## <a name="examples"></a>Примеры
 
-Включить `HotelId`, `HotelName`, и `Rating` поля верхнего уровня в результатах, а также `City` подзапроса поле `Address`:
+`HotelId`Включите поля, `HotelName`и `Rating` верхнего уровня `Address`врезультаты, а также вспомогательноеполе:`City`
 
     $select=HotelId, HotelName, Rating, Address/City
 
-В примере результат может выглядеть следующим образом:
+Пример результата может выглядеть следующим образом:
 
 ```json
 {
@@ -78,11 +78,11 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-Включить `HotelName` полей более высокого уровня в результаты, а также все вложенные поля `Address`и `Type` и `BaseRate` вложенные поля каждого объекта в `Rooms` коллекции:
+`Rooms` `BaseRate` `Type` `Address`Включите поле верхнегоуровняврезультаты,атакжевсевложенныеполя,ивложенныеполяидлякаждогообъектавколлекции:`HotelName`
 
     $select=HotelName, Address, Rooms/Type, Rooms/BaseRate
 
-В примере результат может выглядеть следующим образом:
+Пример результата может выглядеть следующим образом:
 
 ```json
 {
@@ -108,9 +108,9 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
-- [Как работать со службой поиска результатов в службе поиска Azure](search-pagination-page-layout.md)
-- [Общие сведения о языках выражений OData для службы поиска Azure](query-odata-filter-orderby-syntax.md)
-- [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md)
+- [Как работать с результатами поиска в службе "Поиск Azure"](search-pagination-page-layout.md)
+- [Общие сведения о языке выражений OData для поиска Azure](query-odata-filter-orderby-syntax.md)
+- [Справочник по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md)
 - [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure"))

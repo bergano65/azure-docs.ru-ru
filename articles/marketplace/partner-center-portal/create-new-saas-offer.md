@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 3d3fc1541fb99d8d1219392158c3b87cd6ff99aa
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
-ms.translationtype: MT
+ms.openlocfilehash: 37624c79a345f956de9a289c672340e391199e2f
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69033534"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650693"
 ---
 # <a name="create-a-new-saas-offer"></a>Создание нового предложения SaaS
 
@@ -39,9 +39,9 @@ ms.locfileid: "69033534"
 
 - **Псевдоним предложения**: Имя, используемое для ссылки на предложение на портале центра партнеров. Это имя не будет использоваться в Marketplace и отличается от *имени предложения* и других значений, которые будут отображаться для клиентов. Это значение нельзя изменить после нажатия *создать*.
 
-<br>Пример Тестовое предложение 1&#8482;
+<br>Пример: Тестовое предложение 1&#8482;
 
-Щелкните **Создать**.  Для этого предложения создается страница **обзора предложения** .  
+Нажмите кнопку **Создать**.  Для этого предложения создается страница **обзора предложения** .  
 
 <!---
 ![Offer overview on Partner Center](./media/commercial-marketplace-offer-overview.png)
@@ -302,12 +302,7 @@ ms.locfileid: "69033534"
 
     Приведенный выше параметр будет выглядеть следующим образом:
 
-    <h1>Это заголовок 1</h1> 
-    <h2>Это заголовок 2</h2> 
-    <h3>Это заголовок 3</h3> 
-    <h4>Это заголовок 4</h4> 
-    <h5>Это заголовок 5</h5> 
-    <h6>Это заголовок 6</h6> 
+    ![Примеры заголовков](./media/heading.png)
 
 #### <a name="links"></a>Ссылки
 

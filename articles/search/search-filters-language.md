@@ -2,7 +2,7 @@
 title: Языковые фильтры многоязычного содержимого в индексе поиска (служба "Поиск Azure")
 description: Сведения об условии фильтра, которое обеспечивает поддержку многоязычного поиска и ограничивает область выполнения запроса до определенных языковых полей.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.workload: search
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 695fdfba1573ff97b05f8e8b50a05bef9dbf48de
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1eced868b180a916355d6f9fbfc8cd47a5d7d6e2
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61289627"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649863"
 ---
 # <a name="how-to-filter-by-language-in-azure-search"></a>Фильтрация по языку в службе "Поиск Azure" 
 
@@ -23,7 +23,7 @@ ms.locfileid: "61289627"
 
 Параметры запроса используются для ограничения операции поиска, а затем обрезки результатов полей, которые не предоставили содержимого, совместимого с возможностями поиска, которые необходимо доставить.
 
-| Параметры | Назначение |
+| Параметры | Цель |
 |-----------|--------------|
 | **searchFields** | Ограничивает полнотекстовый поиск до списка именованных полей. |
 | **$select** | Обрезает ответ, включая только указанные поля. По умолчанию возвращаются все извлекаемые поля. Параметр **$Select** позволяет выбрать, какие из них следует вернуть. |

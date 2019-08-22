@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 07d44bb54c288202d571f8e664822ecf9b4998be
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
-ms.translationtype: HT
+ms.openlocfilehash: 428c470eb633c7727f65c5a9a3afa76bce50b177
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639760"
+ms.locfileid: "69647249"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -423,7 +423,7 @@ public int getServerPort()
 ## <a name="configure-java-ee-wildfly"></a>Настройка Java EE (Вилдфли)
 
 > [!NOTE]
-> Java Enterprise Edition в службе приложений Linux в настоящее время находится на этапе предварительной версии. Этот стек **не** рекомендуется для работы в рабочей среде. сведения о стеках Java SE и Tomcat.
+> Java Enterprise Edition в службе приложений Linux в настоящее время находится на этапе предварительной версии. Этот стек **не** рекомендуется для работы в рабочей среде.
 
 Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (Java EE) в полностью управляемой службе на основе Linux.  Базовая среда выполнения Java Enterprise — это сервер приложений [вилдфли](https://wildfly.org/) с открытым исходным кодом.
 
@@ -434,7 +434,6 @@ public int getServerPort()
 - [Установка модулей и зависимостей](#install-modules-and-dependencies)
 - [Настройка источников данных](#configure-data-sources)
 - [Включение поставщиков обмена сообщениями](#enable-messaging-providers)
-- [Настройка кэширования управления сеансами](#configure-session-management-caching)
 
 ### <a name="scale-with-app-service"></a>Масштабирование с помощью Службы приложений
 
@@ -652,14 +651,121 @@ public int getServerPort()
 
 4. Выполните шаги, описанные в разделе "Установка модулей и зависимостей", используя дескриптор модуля XML, зависимости .jar, команды интерфейса командной строки JBoss и скрипт запуска для поставщика JMS. В дополнение к существующим четырем файлам вам также нужно создать XML-файл, определяющий имя JNDI для очереди и раздела JMS. См. дополнительные сведения о соответствующих [файлах конфигурации](https://github.com/JasonFreeberg/widlfly-server-configs/tree/master/appconfig).
 
-### <a name="configure-session-management-caching"></a>Настройка кэширования управления сеансами
+## <a name="use-redis-as-a-session-cache-with-tomcat"></a>Использование Redis в качестве кэша сеансов с Tomcat
 
-По умолчанию Служба приложений в Linux будет использовать файлы cookie сходства сеансов, чтобы убедиться, что клиентские запросы с существующими сеансами направляются в один и тот же экземпляр приложения. Это поведение по умолчанию не требует настройки, но имеет некоторые ограничения:
+Вы можете настроить Tomcat для использования внешнего хранилища сеансов, такого как [кэш Azure для Redis](/azure/azure-cache-for-redis/). Это позволяет сохранить состояние сеанса пользователя (например, данные покупательской корзины) при передаче пользователя на другой экземпляр приложения, например при выполнении автоматического масштабирования, перезапуска или отработки отказа.
 
-- Если экземпляр приложения перезапущен или его масштаб уменьшен, состояние сеанса пользователя на сервере приложений будет утеряно.
-- Если для приложений настроены параметры длительного времени ожидания сеанса или фиксированное число пользователей, автомасштабирование новых экземпляров для получения нагрузки может занять некоторое время, так как только новые сеансы будут направляться в новые запущенные экземпляры.
+Чтобы использовать Tomcat с Redis, необходимо настроить приложение для использования реализации [персистентманажер](http://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) . Следующие шаги описывают этот процесс с помощью [диспетчера сеансов сводных данных: Redis-Store](https://github.com/pivotalsoftware/session-managers/tree/master/redis-store) в качестве примера.
 
-Вы можете настроить Вилдфли для использования внешнего хранилища сеансов, такого как [кэш Azure для Redis](/azure/azure-cache-for-redis/). Необходимо [отключить существующую конфигурацию сходства экземпляра arr](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) , чтобы отключить маршрутизацию на основе файлов cookie сеанса и разрешить настроенному хранилищу сеансов вилдфли работу без помех.
+1. Откройте терминал Bash и используйте `export <variable>=<value>` для установки каждой из следующих переменных среды.
+
+    | Переменная                 | Значение                                                                      |
+    |--------------------------|----------------------------------------------------------------------------|
+    | RESOURCEGROUP_NAME       | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
+    | WEBAPP_NAME              | Имя экземпляра службы приложений.                                     |
+    | WEBAPP_PLAN_NAME         | Имя плана службы приложений                                          |
+    | Регион                   | Имя региона, в котором размещено приложение.                           |
+    | REDIS_CACHE_NAME         | Имя кэша Azure для экземпляра Redis.                           |
+    | REDIS_PORT               | Порт SSL, прослушиваемый кэшем Redis.                             |
+    | REDIS_PASSWORD           | Первичный ключ доступа для экземпляра.                                  |
+    | REDIS_SESSION_KEY_PREFIX | Значение, указанное для определения ключей сеанса, поступивших из приложения. |
+
+    Сведения о имени, порте и ключе доступа можно найти на портал Azure в разделе **Свойства** или **ключи доступа** вашего экземпляра службы.
+
+2. Создайте или обновите файл *src, Main, webapp/META-INF/context. XML* приложения, используя следующее содержимое:
+
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Context path="">
+        <!-- Specify Redis Store -->
+        <Valve className="com.gopivotal.manager.SessionFlushValve" />
+        <Manager className="org.apache.catalina.session.PersistentManager">
+            <Store className="com.gopivotal.manager.redis.RedisStore"
+                   connectionPoolSize="20"
+                   host="${REDIS_CACHE_NAME}.redis.cache.windows.net"
+                   port="${REDIS_PORT}"
+                   password="${REDIS_PASSWORD}"
+                   sessionKeyPrefix="${REDIS_SESSION_KEY_PREFIX}"
+                   timeout="2000"
+            />
+        </Manager>
+    </Context>
+    ```
+
+    В этом файле указывается и настраивается реализация диспетчера сеансов для приложения. В нем используются переменные среды, заданные на предыдущем шаге, чтобы данные вашей учетной записи не изменялись из исходных файлов.
+
+3. Используйте FTP для передачи JAR-файла диспетчера сеансов в экземпляр службы приложений, поместив его в каталог */Хоме/томкат/либ* . Дополнительные сведения см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
+
+4. Отключите [файл cookie сходства сеансов](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) для экземпляра службы приложений. Это можно сделать в портал Azure, перейдя к своему приложению, а затем установив для параметра **Configuration > General Settings (общие параметры) >** параметру affinity сходство значение **Off**. Кроме того, можно использовать следующую команду:
+
+    ```azurecli
+    az webapp update -g <resource group> -n <webapp name> --client-affinity-enabled false
+    ```
+
+    По умолчанию служба приложений будет использовать файлы cookie сходства сеансов, чтобы обеспечить маршрутизацию клиентских запросов с существующими сеансами к одному и тому же экземпляру приложения. Это поведение по умолчанию не требует настройки, но не может сохранить состояние сеанса пользователя при перезапуске экземпляра приложения или при перенаправлении трафика на другой экземпляр. При [отключении существующей конфигурации сходства экземпляра arr](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/) для отключения маршрутизации на основе cookie-файлов сеанса можно разрешить настроенному хранилищу сеансов работу без помех.
+
+5. Перейдите в раздел **свойств** экземпляра службы приложений и найдите **Дополнительные исходящие IP-адреса**. Они представляют все возможные исходящие IP-адреса для вашего приложения. Скопируйте их для использования на следующем шаге.
+
+6. Для каждого IP-адреса создайте правило брандмауэра в кэше Azure для экземпляра Redis. Это можно сделать на портал Azure из раздела **брандмауэр** вашего экземпляра Redis. Укажите уникальное имя для каждого правила и задайте для параметров **начальный IP-адрес** и **конечный IP** -адрес один и тот же IP-адрес.
+
+7. Перейдите к разделу " **Дополнительные параметры** " в экземпляре Redis и установите для параметра **Разрешить доступ только через SSL** . Это позволяет вашему экземпляру службы приложений взаимодействовать с кэшем Redis через инфраструктуру Azure.
+
+8. Обновите конфигурацию в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. `azure-webapp-maven-plugin` В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
+
+    При необходимости измените `1.7.0` текущую версию [подключаемого модуля Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+
+    ```xml
+    <plugin>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-webapp-maven-plugin</artifactId>
+        <version>1.7.0</version>
+        <configuration>
+
+            <!-- Web App information -->
+            <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+            <appServicePlanName>${WEBAPP_PLAN_NAME}-${REGION}</appServicePlanName>
+            <appName>${WEBAPP_NAME}-${REGION}</appName>
+            <region>${REGION}</region>
+            <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
+
+            <appSettings>
+                <property>
+                    <name>REDIS_CACHE_NAME</name>
+                    <value>${REDIS_CACHE_NAME}</value>
+                </property>
+                <property>
+                    <name>REDIS_PORT</name>
+                    <value>${REDIS_PORT}</value>
+                </property>
+                <property>
+                    <name>REDIS_PASSWORD</name>
+                    <value>${REDIS_PASSWORD}</value>
+                </property>
+                <property>
+                    <name>REDIS_SESSION_KEY_PREFIX</name>
+                    <value>${REDIS_SESSION_KEY_PREFIX}</value>
+                </property>
+                <property>
+                    <name>JAVA_OPTS</name>
+                    <value>-Xms2048m -Xmx2048m -DREDIS_CACHE_NAME=${REDIS_CACHE_NAME} -DREDIS_PORT=${REDIS_PORT} -DREDIS_PASSWORD=${REDIS_PASSWORD} IS_SESSION_KEY_PREFIX=${REDIS_SESSION_KEY_PREFIX}</value>
+                </property>
+
+            </appSettings>
+
+        </configuration>
+    </plugin>
+    ```
+
+9. Перестройте и повторно разверните приложение.
+
+    ```bash
+    mvn package
+    mvn azure-webapp:deploy
+    ```
+
+Теперь приложение будет использовать кэш Redis для управления сеансами.
+
+Пример, который можно использовать для проверки этих инструкций, см. в репозитории с поддержкой [Java-Web-App-On-Azure](https://github.com/Azure-Samples/scaling-stateful-java-web-app-on-azure) в GitHub.
 
 ## <a name="docker-containers"></a>контейнеры Docker;
 

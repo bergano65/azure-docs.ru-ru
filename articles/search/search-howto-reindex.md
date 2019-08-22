@@ -3,18 +3,18 @@ title: Перестроение индекса в службе "Поиск Azure
 description: Вы можете добавлять новые элементы, обновлять существующие элементы или документы и удалять устаревшие документы в процессе обновления индекса службы "Поиск Azure", выполняя полное перестроение или частичное добавочное индексирование.
 services: search
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 ms.service: search
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 2595912732389c8a415d1854a84a7b9c182e4dc7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8a03472b72ea7c2dc69d79400e33d5ec65cc6126
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60871154"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647692"
 ---
 # <a name="how-to-rebuild-an-azure-search-index"></a>Как перестроить индекс службы "Поиск Azure"
 
@@ -99,8 +99,8 @@ ms.locfileid: "60871154"
 + [Обзор индексатора](search-indexer-overview.md)
 + [Индексирование с поддержкой горизонтального масштабирования в службе "Поиск Azure"](search-howto-large-index.md)
 + [Импорт данных в службу поиска Azure с помощью портала](search-import-data-portal.md)
-+ [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-+ [Индексатор базы данных Azure Cosmos](search-howto-index-cosmosdb.md)
++ [Индексатор Базы данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
++ [Индексатор Azure Cosmos DB](search-howto-index-cosmosdb.md)
 + [Индексатор хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 + [Индексатор хранилища таблиц Azure](search-howto-indexing-azure-tables.md)
 + [Безопасность и управляемый доступ в службе поиска Azure](search-security-overview.md)

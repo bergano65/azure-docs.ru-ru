@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/08/2019
 ms.author: helohr
-ms.openlocfilehash: 9cd754b1810595c3ae82a7e4edfd9a3abe145b3f
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 4f325d9fc512fd9f6776fcd799b720aaf60ce472
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816422"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876760"
 ---
 # <a name="remote-desktop-client-connections"></a>Подключения клиента удаленного рабочего стола
 
@@ -173,7 +173,7 @@ Get-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname>
 - Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
-- Дополнительные сведения о службе предварительной версии см. в разделе [Среда Windows Desktop Preview](https://docs.microsoft.com/azure/virtual-desktop/environment-setup?).
+- Дополнительные сведения о службе предварительной версии см. в разделе [Среда предварительной версии виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup?).
 - Сведения об устранении неполадок см. в статье [Tutorial: Устранение неполадок при](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)развертывании шаблонов диспетчер ресурсов.
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
 - Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).

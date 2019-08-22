@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/24/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d95760745dc3554bc63271cedc63dcf3bf017c5c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 59b5138950e0fb94ea0051fa9cfe9aa75cd7d770
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855223"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877792"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server IaaS
 > [!div class="op_single_selector"]
@@ -56,7 +56,7 @@ ms.locfileid: "68855223"
 * На панели SQL Server виртуальной машины в портал Azure и Azure PowerShell для образов SQL Server в Azure Marketplace.
 * С помощью Azure PowerShell для установки расширения вручную. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Ниже приведены требования к использованию расширения агента SQL Server IaaS на виртуальной машине.
 
 **Операционная система**.
@@ -88,14 +88,17 @@ ms.locfileid: "68855223"
 Текущий режим агента SQL Server IaaS можно просмотреть с помощью PowerShell: 
 
   ```powershell-interactive
-     //Get the SqlVirtualMachine
+     #Get the SqlVirtualMachine
      $sqlvm = Get-AzResource -Name $vm.Name  -ResourceGroupName $vm.ResourceGroupName  -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines
      $sqlvm.Properties.sqlManagement
   ```
 
-Для SQL Server виртуальных машин с установленным расширением "не агент" или "упрощенное расширение IaaS" можно обновить режим до уровня Full с помощью портал Azure. Переход на более раннюю версию невозможен. Для этого необходимо полностью удалить расширение SQL Server IaaS и снова установить его. 
+SQL Server виртуальные машины, на которых установлено облегченное расширение IaaS, могут обновить режим до _полного_ с помощью портал Azure. SQL Server виртуальные машины в режиме _без агента_ можно обновить до _полной_ версии после обновления операционной системы до Windows 2008 R2 и более поздних версий. Переход на использование более ранней версии невозможен. необходимо полностью удалить расширение SQL IaaS и снова установить его. 
 
 Чтобы обновить режим агента до уровня Full, выполните следующие действия. 
+
+
+# <a name="azure-portaltabazure-portal"></a>[портал Azure](#tab/azure-portal)
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) . 
@@ -108,8 +111,33 @@ ms.locfileid: "68855223"
 
     ![Флажок для согласия на перезапуск службы SQL Server на виртуальной машине](media/virtual-machines-windows-sql-server-agent-extension/enable-full-mode-iaas.png)
 
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
+
+Выполните следующий фрагмент кода AZ CLI:
+
+  ```azurecli-interactive
+  # Update to full mode
+
+  az sql vm update --name <vm_name> --resource-group <resource_group_name> --sql-mgmt-type full  
+  ```
+
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+
+Выполните следующий фрагмент кода PowerShell:
+
+  ```powershell-interactive
+  # Update to full mode
+
+  $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
+  $SqlVm.Properties.sqlManagement="Full"
+  $SqlVm | Set-AzResource -Force
+  ```
+
+---
+
+
 ##  <a name="installation"></a>Установка
-Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md#register-with-the-sql-vm-resource-provider). При необходимости агент SQL Server IaaS можно установить вручную с помощью полного или упрощенного режима. 
+Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). При необходимости агент SQL Server IaaS можно установить вручную с помощью полного или упрощенного режима. 
 
 Расширение агента SQL Server IaaS в полноэкранном режиме автоматически устанавливается при подготовке одной из SQL Server виртуальных машин Azure Marketplace с помощью портал Azure. 
 
@@ -119,10 +147,10 @@ ms.locfileid: "68855223"
 Установите SQL Server агент IaaS с полным режимом с помощью PowerShell:
 
   ```powershell-interactive
-     // Get the existing compute VM
+     #Get the existing compute VM
      $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
           
-     // Register the SQL Server VM with 'Full' SQL Server IaaS agent
+     #Register the SQL Server VM with 'Full' SQL Server IaaS agent
      New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
         -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
         -Properties @{virtualMachineResourceId=$vm.Id;sqlServerLicenseType='AHUB';sqlManagement='Full'}  
@@ -158,10 +186,10 @@ ms.locfileid: "68855223"
 
 
   ```powershell-interactive
-     // Get the existing  Compute VM
+     /#Get the existing  Compute VM
      $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
           
-     // Register the SQL Server VM with the 'Lightweight' SQL IaaS agent
+     #Register the SQL Server VM with the 'Lightweight' SQL IaaS agent
      New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
         -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
         -Properties @{virtualMachineResourceId=$vm.Id;sqlServerLicenseType='AHUB';sqlManagement='LightWeight'}  

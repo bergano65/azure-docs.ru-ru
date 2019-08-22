@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 08/16/2019
 ms.author: robinsh
-ms.openlocfilehash: 81b2145e6107558f2d9698c7e5d03658f1129b00
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 63534260e042a1b47ca5e635c48123672d663a9b
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667954"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873310"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Планирование и трансляция заданий (Python)
 
@@ -47,15 +47,17 @@ ms.locfileid: "68667954"
 
 **scheduleJobService.py**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
 
-[!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
-
-Ниже приведены инструкции по установке необходимых компонентов.
-
-[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
-
 > [!NOTE]
 > **Пакет SDK Центра Интернета вещей Azure для Python** непосредственно не поддерживает функциональную возможность **Задания**. Вместо этого в рамках этого руководства предлагается использовать альтернативное решение путем применения асинхронных потоков и таймеров. Последующие выпуски обновлений см. в списке компонентов **клиентских пакетов SDK** на [этой](https://github.com/Azure/azure-iot-sdk-python) странице.
 >
+
+[!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим учебником необходимы указанные ниже компоненты.
+
+[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -74,6 +76,10 @@ ms.locfileid: "68667954"
     ```cmd/sh
     pip install azure-iothub-device-client
     ```
+
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
 
 2. В текстовом редакторе создайте файл **simDevice.py** в рабочей папке.
 
@@ -158,9 +164,27 @@ ms.locfileid: "68667954"
 
 ## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
-[!INCLUDE [iot-hub-howto-schedule-jobs-shared-access-policy-text](../../includes/iot-hub-howto-schedule-jobs-shared-access-policy-text.md)]
+В этой статье вы создадите серверную службу, которая вызывает прямой метод на устройстве и обновляет двойника устройства. Службе требуется разрешение **Connect** для вызова прямого метода на устройстве. Службе также требуются разрешения на **Чтение реестра** и **запись в реестр** для чтения и записи реестра удостоверений. Политика общего доступа по умолчанию, которая содержит только эти разрешения, не существует, поэтому ее необходимо создать.
 
-[!INCLUDE [iot-hub-include-find-registryrw-connection-string](../../includes/iot-hub-include-find-registryrw-connection-string.md)]
+Чтобы создать политику общего доступа, которая предоставляет разрешения на подключение **к службе**, **Чтение реестра**и **запись в реестр** , а затем получите строку подключения для этой политики, выполните следующие действия.
+
+1. Откройте центр Интернета вещей в [портал Azure](https://portal.azure.com). Самый простой способ открыть центр Интернета вещей — выбрать **группы ресурсов**, выбрать группу ресурсов, в которой находится центр Интернета вещей, а затем выбрать центр Интернета вещей в списке ресурсов.
+
+2. В левой части центра Интернета вещей выберите **политики общего доступа**.
+
+3. В верхнем меню над списком политик выберите **Добавить**.
+
+4. В области **Добавить политику общего доступа** введите описательное имя политики. Например: *сервицеандрегистриреадврите*. В разделе **разрешения**выберите **Подключение к службе** и **запись в реестр** (**Чтение реестра** будет автоматически выбрано при выборе **записи в реестр**). Щелкните **Создать**.
+
+    ![Покажите, как добавить новую политику общего доступа](./media/iot-hub-python-python-schedule-jobs/add-policy.png)
+
+5. Вернитесь на панель **политики общего доступа** и выберите в списке политик новую политику.
+
+6. В разделе **ключи общего доступа**выберите значок копирования для **строки подключения — первичный ключ** и сохраните значение.
+
+    ![Получение строки подключения](./media/iot-hub-python-python-schedule-jobs/get-connection-string.png)
+
+Дополнительные сведения о политиках и разрешениях общего доступа центра Интернета вещей см. в разделе [Управление доступом и разрешения](./iot-hub-devguide-security.md#access-control-and-permissions).
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-updating-a-device-twins-properties"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
 
@@ -172,9 +196,13 @@ ms.locfileid: "68667954"
     pip install azure-iothub-service-client
     ```
 
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
+
 2. В текстовом редакторе создайте файл **scheduleJobService.py** в рабочей папке.
 
-3. Добавьте следующие инструкции и переменные `import` в начало файла **scheduleJobService.py**.
+3. Добавьте следующие `import` инструкции и переменные в начало файла **scheduleJobService.py** . Замените заполнитель строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения для центра Интернета вещей.](#get-the-iot-hub-connection-string) `{IoTHubConnectionString}` Замените заполнитель идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей:](#register-a-new-device-in-the-iot-hub) `{deviceId}`
 
     ```python
     import sys

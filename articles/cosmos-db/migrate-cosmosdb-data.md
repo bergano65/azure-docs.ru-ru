@@ -7,18 +7,23 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/26/2019
 ms.author: bharathb
-ms.openlocfilehash: a4de902e51b101d14aac599c9aad8c4feb86a9c6
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 6092b3aac2b0282a795d89730266e72179b34e8a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624610"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648895"
 ---
 # <a name="migrate-hundreds-of-terabytes-of-data-into-azure-cosmos-db"></a>Перенос сотен терабайт данных в Azure Cosmos DB 
 
 Azure Cosmos DB может хранить терабайты данных. Вы можете выполнить крупномасштабную миграцию данных, чтобы переместить рабочую нагрузку в Azure Cosmos DB. В этой статье описываются проблемы, связанные с перемещением крупномасштабных данных в Azure Cosmos DB и рассказывается о средстве, которое помогает решать проблемы и переносить данные в Azure Cosmos DB. В этом примере клиент использовал API Cosmos DB SQL.  
 
 Перед переносом всей рабочей нагрузки в Azure Cosmos DB можно выполнить миграцию подмножества данных для проверки некоторых аспектов, таких как выбор ключа секции, производительность запросов и моделирование данных. После проверки подтверждения концепции можно переместить всю рабочую нагрузку в Azure Cosmos DB.  
+
+Вы также можете использовать [программу Cosmos DB начальной загрузки](https://azurecosmosdb.github.io/CosmosBootstrap/) для ускорения сборки или переноса приложений на Azure Cosmos DB. В рамках этой программы инженеры из группы Azure Cosmos DB будут назначены вашему проекту, и вы сможете перенести данные в Azure Cosmos DB. Нажмите кнопку ниже, чтобы зарегистрироваться в программе начальной загрузки Cosmos DB:
+
+> [!div class="nextstepaction"]
+> [Программа начальной загрузки Cosmos DB](https://azurecosmosdb.github.io/CosmosBootstrap/)
 
 ## <a name="tools-for-data-migration"></a>Средства для переноса данных 
 
@@ -152,4 +157,7 @@ Azure Cosmos DB стратегии миграции в настоящее вре
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md). 
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  
 * Обратитесь к группе разработчиков Azure Cosmos DB, открыв запрос в службу поддержки в подтипе проблем "Общие рекомендации" и "крупные (ТБ +) миграции" для получения дополнительной справки о крупномасштабных миграциях. 
+* Используйте [программу Cosmos DB начальной загрузки](https://azurecosmosdb.github.io/CosmosBootstrap/) для ускорения сборки или переноса приложений на Azure Cosmos DB.
 
+> [!div class="nextstepaction"]
+> [Программа начальной загрузки Cosmos DB](https://azurecosmosdb.github.io/CosmosBootstrap/)

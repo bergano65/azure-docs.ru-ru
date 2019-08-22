@@ -3,7 +3,7 @@ title: Поддержка cloud-init для виртуальных машин Li
 description: Общие сведения о возможностях cloud-init в Microsoft Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: rickstercdn
+author: danielsollondon
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,36 +13,39 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: article
-ms.date: 11/29/2017
-ms.author: rclaus
-ms.openlocfilehash: 057f7c42c037dac4cb2be686df09287de7113f0d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.date: 08/20/2019
+ms.author: danis
+ms.openlocfilehash: 7e22aaf2ead4dd618c2907f8659455e1862110a5
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67695387"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650105"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Поддержка cloud-init для виртуальных машин в Azure
-Из этой статьи можно узнать об имеющейся поддержке [cloud-init](https://cloudinit.readthedocs.io) для настройки виртуальной машины или масштабируемых наборов виртуальных машин во время подготовки в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы.  
+В этой статье описывается поддержка, которая существует в [Cloud-init](https://cloudinit.readthedocs.io) для настройки виртуальной машины или масштабируемых наборов виртуальных машин во время подготовки в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы.  
 
 ## <a name="cloud-init-overview"></a>Обзор cloud-Init
 [Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
 
 Кроме того, cloud-init работает с разными дистрибутивами. Например, для установки пакета не используется **apt-get install** или **yum install**. Вместо этого можно определить список пакетов для установки. Файл cloud-init автоматически использует собственный инструмент управления пакетами из выбранного дистрибутива.
 
- Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин (VMSS). В следующей таблице приведены сведения о текущей доступности образов с поддержкой cloud-init на платформе Azure:
+Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы сделают развертывания и конфигурации Cloud-init без проблем с виртуальными машинами и масштабируемыми наборами виртуальных машин. В следующей таблице приведены сведения о текущей доступности образов с поддержкой cloud-init на платформе Azure:
 
-| Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Version | готовность к использованию cloud-init |
+| Издатель | Предложение | номер SKU | Version | готовность к использованию cloud-init |
 |:--- |:--- |:--- |:--- |:--- |
-|Canonical |UbuntuServer |18.04-LTS |latest |Да | 
-|Canonical |UbuntuServer |17.10 |latest |Да | 
-|Canonical |UbuntuServer |16.04-LTS |latest |Да | 
-|Canonical |UbuntuServer |14.04.5-LTS |latest |Да |
-|CoreOS |CoreOS |Stable |latest |Да |
-|OpenLogic |CentOS |7-CI |latest |предварительный просмотр |
-|RedHat |RHEL |7-RAW-CI |latest |предварительный просмотр |
+|Канонический |UbuntuServer |18.04-LTS |latest |да | 
+|Канонический |UbuntuServer |16.04-LTS |latest |да | 
+|Канонический |UbuntuServer |14.04.5-LTS |latest |да |
+|CoreOS |CoreOS |Stable |latest |да |
+|OpenLogic 7,6 |CentOS |7-CI |latest |предварительный просмотр |
+|RedHat 7,6 |RHEL |7-RAW-CI |7.6.2019072418 |да |
+|RedHat 7,7 |RHEL |7-RAW-CI |7.7.2019081601 |предварительный просмотр |
+    
+В настоящее время Azure Stack не поддерживает подготовку RHEL 7. x и CentOS 7. x с помощью Cloud-init.
 
-Сейчас Azure Stack не поддерживает подготовку RHEL 7.4 и CentOS 7.4 с помощью cloud-init.
+* Для пакета RHEL 7,6, Cloud-init, поддерживаемый пакет: *18.2 -1. el7 _ 6.2* 
+* Для RHEL 7,7 (Предварительная версия) — пакет Cloud-init, поддерживаемый пакет: *18.5 -3. el7*
 
 ## <a name="what-is-the-difference-between-cloud-init-and-the-linux-agent-wala"></a>Разница между cloud-init и агентом Linux (WALA)
 WALA — это уникальный агент платформы Azure, использующийся для подготовки и настройки виртуальных машин и обработки расширений Azure. Мы улучшили задачу настройки виртуальных машин для использования cloud-init вместо агента Linux таким образом, чтобы имеющиеся пользователи cloud-init смогли применять свои текущие скрипты cloud-init.  Если у вас уже есть скрипты cloud-init для настройки систем Linux, то для их включения **дополнительные параметры не требуются**. 

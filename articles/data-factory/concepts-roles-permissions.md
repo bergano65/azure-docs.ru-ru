@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 author: gauravmalhot
 ms.author: gamal
 manager: craigg
-ms.openlocfilehash: 19666eb668dd120c1705c6a62a8ba1abd2321026
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 765464f8593e217fba0b564a1fabad7777e94a36
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61261850"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873598"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -80,11 +80,15 @@ ms.locfileid: "61261850"
   1. Назначьте встроенную роль **Участник** на уровне фабрики данных.
   2. Создайте пользовательскую роль с разрешением **Microsoft.Resources/deployments/** . Назначьте ее для пользователя на уровне группы ресурсов.
 
+- Разрешить пользователю только проверять соединение в связанной службе
+
+    Создайте настраиваемую роль роли с разрешениями для следующих действий. **Microsoft. жетфеатуревалуе/фабрики//Read** и Microsoft. жетдатапланеакцесс/фабрика/ **/Read**. Назначьте эту пользовательскую роль для ресурса фабрики данных для пользователя.
+
 - Дайте пользователю возможность обновлять фабрику данных с помощью PowerShell или пакета SDK, но не портала Azure.
 
   Назначьте для пользователя встроенную роль **Участник** по отношению к ресурсу фабрики данных. Эта роль позволяет просматривать ресурсы на портале Azure, однако у пользователя нет доступа к кнопкам **Опубликовать** и **Опубликовать все**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о ролях в Azure см. в статье [Определения ролей](../role-based-access-control/role-definitions.md).
 

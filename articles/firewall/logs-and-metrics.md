@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 08/21/2019
+ms.date: 08/22/2019
 ms.author: victorh
-ms.openlocfilehash: 8524c8f05a5d48755ab1ccca62f0fd53870190bb
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: fea00358fc21cf6f57673e14ebd0feafe532b620
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640247"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876558"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Журналы и метрики брандмауэра Azure
 
@@ -95,6 +95,10 @@ ms.locfileid: "69640247"
 
     Единица измерения: количество
 
+- **Число попаданий сетевых правил** — количество попаданий в сетевое правило.
+
+    Единица измерения: количество
+
 - **Обработанные данные** — объем данных, проходящих через брандмауэр.
 
     Единица: байт
@@ -109,9 +113,7 @@ ms.locfileid: "69640247"
 
 
 
-- **Число попаданий сетевых правил** — количество попаданий в сетевое правило.
 
-    Единица измерения: количество
 
 - **Использование портов SNAT** — процент портов SNAT, используемых брандмауэром.
 

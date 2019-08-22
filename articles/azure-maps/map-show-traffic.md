@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 145e2246703441a08868c8aae311573e95d4de42
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: b765f6f35cecfdd3183b4432954fcfb2548de046
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976437"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69874863"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -49,7 +49,7 @@ map.setTraffic({
 
 <br/>
 
-<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры оверлея трафика" src="//codepen.io/azuremaps/embed/RwbPqRY/?height=700&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="700" style="width: 100%;" scrolling="no" title="Параметры оверлея трафика" src="//codepen.io/azuremaps/embed/RwbPqRY/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 См. раздел <a href='https://codepen.io/azuremaps/pen/RwbPqRY/'>Параметры наложения</a> перьевого трафика<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 

@@ -2,7 +2,7 @@
 title: Администрирование службы "Поиск Azure" на портале
 description: Узнайте, как управлять службой "Поиск Azure", размещенной в Microsoft Azure облачной службой поиска, с помощью портала Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 tags: azure-portal
 services: search
 ms.service: search
@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: d5820c927b88eba37eaf092dfd4b209180bfc8eb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c4b2a03e7e5c818453eaf4ad6881b2caba3b93c
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60565449"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647678"
 ---
 # <a name="service-administration-for-azure-search-in-the-azure-portal"></a>Администрирование службы поиска Azure на портале Azure
 > [!div class="op_single_selector"]
 > * [PowerShell](search-manage-powershell.md)
 > * [REST API](https://docs.microsoft.com/rest/api/searchmanagement/)
-> * [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
+> * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
 > * [Портал](search-manage.md)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
@@ -60,7 +60,7 @@ ms.locfileid: "60565449"
 <a id="sub-5"></a>
 
 ## <a name="monitor-resource-usage"></a>Отслеживание использования ресурсов
-На панели мониторинга отслеживание ресурсов ограничивается информацией, показанной на панели мониторинга службы, а также несколькими метриками, которые вы можете получить с помощью запроса к службе. В панели мониторинга службы, в разделе «Использование», вы можете быстро определить, являются ли уровни ресурсов раздела достаточными для вашего приложения. Вы можете подготовить внешние ресурсы, такие как мониторинг Azure, если вы хотите записать и сохранить зарегистрированных событий. Дополнительные сведения см. в разделе [мониторинга службы поиска Azure](search-monitor-usage.md).
+На панели мониторинга отслеживание ресурсов ограничивается информацией, показанной на панели мониторинга службы, а также несколькими метриками, которые вы можете получить с помощью запроса к службе. В панели мониторинга службы, в разделе «Использование», вы можете быстро определить, являются ли уровни ресурсов раздела достаточными для вашего приложения. Вы можете подготавливать внешние ресурсы, такие как мониторинг Azure, если вы хотите записывать и сохранять зарегистрированные события. Дополнительные сведения см. в разделе [мониторинг службы поиска Azure](search-monitor-usage.md).
 
 С помощью API REST службы поиска вы можете рассчитать количество документов и индексов, используя программные средства. 
 
@@ -126,7 +126,7 @@ ms.locfileid: "60565449"
 
 <a id="next-steps"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Разобравшись с понятиями, связанными с администрированием службы, вы можете перейти к использованию [PowerShell](search-manage-powershell.md) для автоматизации задач.
 
 Мы также рекомендуем ознакомиться со статьей, посвященной [производительности и оптимизации](search-performance-optimization.md).

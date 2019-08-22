@@ -7,14 +7,16 @@ author: viv-liu
 ms.author: viviali
 ms.date: 06/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 16d7691d59e0805c7f8cf565a599ca5e6a78a7cf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 897b72dd7b292492e45cdc7401fe1acc5c86ca20
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053042"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877455"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 *Эта статья предназначена для администраторов.*
 
@@ -31,7 +33,7 @@ ms.locfileid: "67053042"
 
 ## <a name="get-the-power-bi-solution-for-azure-iot-centralhttpsakamsiotcentralpowerbisolutiontemplate-from-microsoft-appsource"></a>Скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate) с Microsoft AppSource.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для настройки решения требуется следующее:
 - Доступ к подписке Azure
 - Данные, экспортированные из вашего приложения IoT Central с использованием [непрерывного экспорта данных](howto-export-data.md). Рекомендуется включать измерения, устройства и потоки шаблонов устройств, чтобы максимально использовать панель мониторинга Power BI.
@@ -93,7 +95,7 @@ ms.locfileid: "67053042"
 
 Перейдите в Microsoft AppSource и скачайте [решение Power BI для Azure IoT Central](https://aka.ms/iotcentralpowerbisolutiontemplate).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как визуализировать данные в Power BI, ознакомьтесь со следующей статьей.
 

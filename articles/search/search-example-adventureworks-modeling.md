@@ -2,18 +2,18 @@
 title: 'Пример: моделирование базы данных инвентаризации AdventureWorks для Поиска Azure'
 description: Узнайте, как моделировать реляционные данные, преобразуя их в плоский набор данных, для индексирования и полнотекстового поиска в Поиске Azure.
 author: cstone
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: chstone
-ms.openlocfilehash: 6d5d01dfbbcfda56818f5c38b06117a87e021445
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 52ccf3edfca5b3481b038bd5d3449c1dd6354179
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61291914"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649916"
 ---
 # <a name="example-model-the-adventureworks-inventory-database-for-azure-search"></a>Пример: моделирование базы данных инвентаризации AdventureWorks для Поиска Azure
 
@@ -160,7 +160,7 @@ WHERE
   md.Culture='en'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Пример. Таксономии с многоуровневыми аспектами в Поиске Azure](search-example-adventureworks-multilevel-faceting.md)

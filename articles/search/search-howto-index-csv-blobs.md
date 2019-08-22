@@ -3,24 +3,24 @@ title: Индексирование больших двоичных объект
 description: Узнайте, как сканировать большие двоичные объекты в формате CSV в хранилище BLOB-объектов Azure для полнотекстового поиска с помощью индекса службы "Поиск Azure". Индексаторы автоматизируют прием данных из выбранных источников, таких как хранилище BLOB-объектов Azure.
 ms.date: 05/02/2019
 author: mgottein
-manager: cgronlun
+manager: nitinme
 ms.author: magottei
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: e7d959e77d27fb04b18f402e4056d4dea1607039
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b135fd1a0758567a7b504996bf442a913741fe59
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65522897"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656757"
 ---
 # <a name="indexing-csv-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure
 
 > [!Note]
-> Режим анализа delimitedText находится в предварительной версии и не предназначена для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
+> режим синтаксического анализа delimitedText находится в режиме предварительной версии и не предназначен для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Поддержка пакета SDK для .NET пока не реализована.
 >
 
 По умолчанию [индексатор BLOB-объектов службы поиска Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые BLOB-объекты (с разделителями) как один блок текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
@@ -29,13 +29,13 @@ ms.locfileid: "65522897"
     1, 2016-01-12, "azure-search,azure,cloud" 
     2, 2016-07-07, "cloud,mobile" 
 
-В этой статье вы узнаете, как выполнить синтаксический анализ больших двоичных объектов CSV с параметром indexerby BLOB-объектов службы поиска Azure `delimitedText` режим анализа. 
+Из этой статьи вы узнаете, как анализировать большие двоичные объекты CSV с помощью большого двоичного объекта `delimitedText` поиска Azure, индексерби задание режима анализа. 
 
 > [!NOTE]
-> Следуйте рекомендациям по конфигурации индексатора в [один ко многим индексирования](search-howto-index-one-to-many-blobs.md) для вывода нескольких поиск документов из одного BLOB-объектов Azure.
+> Следуйте рекомендациям по настройке индексатора в индексировании " [один ко многим](search-howto-index-one-to-many-blobs.md) ", чтобы вывести несколько документов поиска из одного большого двоичного объекта Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
-Чтобы индексировать большие двоичные объекты в CSV-ФАЙЛ, создать или обновить определение индексатора с `delimitedText` режим анализа на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) запроса:
+Чтобы индексировать большие двоичные объекты CSV, создайте или обновите определение индексатора с `delimitedText` помощью режима анализа для запроса на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) :
 
     {
       "name" : "my-csv-indexer",

@@ -8,20 +8,22 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 92d6f005018040e20c2df72dbc608a47bc8d9f08
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: e7c0f0abdf4a96f4af904f76549bdebd62b803cd
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849026"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877324"
 ---
 # <a name="trigger-azure-functions-using-webhooks-in-azure-iot-central"></a>Активация функций Azure с помощью веб-перехватчиков в Azure IoT Central
 
 *Этот раздел предназначен для разработчиков и администраторов.*
 
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
+
 Используйте функции Azure для выполнения бессерверного кода на выходных данных веб-перехватчика из правил IoT Central. Вам не нужно подготавливать виртуальную машину или публиковать веб-приложение для использования функций Azure, но вместо этого можно выполнить этот серверный код. Используйте функции Azure для преобразования полезных данных веб-перехватчика перед их отправкой в место назначения, такое как база данных SQL или сетка событий.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

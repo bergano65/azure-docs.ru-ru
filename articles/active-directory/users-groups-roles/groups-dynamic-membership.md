@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 08/12/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a0e0508babdd9ae703e38d58b079ab5fa16f68c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f529723abd449891dba845253502b78e8666199f
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66397882"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650216"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -44,6 +44,12 @@ ms.locfileid: "66397882"
 
 Чтобы избежать синтаксических ошибок, следует соблюдать определенный порядок частей в этом выражении.
 
+### <a name="rule-builder-in-the-azure-portal"></a>Построитель правил в портал Azure
+
+Azure AD предоставляет построитель правил для более быстрого создания и обновления важных правил. Построитель правил поддерживает до пяти правил. Чтобы добавить шестой и все последующие условия правила, необходимо использовать текстовое поле. Дополнительные пошаговые инструкции см. [в разделе Обновление динамической группы](groups-update-rule.md).
+
+   ![Добавление правила членства для динамической группы](./media/groups-update-rule/update-dynamic-group-rule.png)
+
 ### <a name="rules-with-a-single-expression"></a>Правила с одним выражением
 
 Одно выражение — это минимально возможная форма для правил членства, не содержащая только упомянутые выше три части. Правило с одним выражением выглядит примерно так: `Property Operator Value`, где свойства указываются в формате "объект.свойство".
@@ -60,22 +66,22 @@ user.department -eq "Sales"
 
 Существует три типа свойств, которые можно использовать для создания правил членства.
 
-* Boolean
-* String
+* логический
+* Строковое
 * Коллекция строк
 
 Ниже приведены свойства пользователя, которые можно использовать для создания одного выражения.
 
 ### <a name="properties-of-type-boolean"></a>Свойства логического типа
 
-| properties | Допустимые значения | Использование |
+| Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | AccountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Свойства строкового типа
 
-| properties | Допустимые значения | Использование |
+| Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | city |Любое строковое значение или *null*. |(user.city -eq "value") |
 | country |Любое строковое значение или *null*. |(user.country -eq "value") |
@@ -86,17 +92,17 @@ user.department -eq "Sales"
 | facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
-| почта |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
+| mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
-| onPremisesSecurityIdentifier; | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
+| onPremisesSecurityIdentifier | Локальный идентификатор безопасности (SID) для пользователей, которые были синхронизированы из локальной среды в облако. |(user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111") |
 | passwordPolicies |None, DisableStrongPassword, DisablePasswordExpiration, DisablePasswordExpiration, DisableStrongPassword |(user.passwordPolicies -eq "DisableStrongPassword") |
 | physicalDeliveryOfficeName |Любое строковое значение или *null*. |(user.physicalDeliveryOfficeName -eq "value") |
 | postalCode |Любое строковое значение или *null*. |(user.postalCode -eq "value") |
 | preferredLanguage |Код ISO 639-1. |(user.preferredLanguage -eq "en-US") |
 | sipProxyAddress |Любое строковое значение или *null*. |(user.sipProxyAddress -eq "value") |
-| состояние |Любое строковое значение или *null*. |(user.state -eq "value") |
+| state |Любое строковое значение или *null*. |(user.state -eq "value") |
 | streetAddress |Любое строковое значение или *null*. |(user.streetAddress -eq "value") |
 | surname |Любое строковое значение или *null*. |(user.surname -eq "value") |
 | TelephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |
@@ -106,7 +112,7 @@ user.department -eq "Sales"
 
 ### <a name="properties-of-type-string-collection"></a>Свойства типа коллекции строк
 
-| properties | Допустимые значения | Использование |
+| Свойства | Допустимые значения | Использование |
 | --- | --- | --- |
 | otherMails |Любое строковое значение. |(user.otherMails -contains "alias@domain") |
 | proxyAddresses |SMTP: alias@domain, smtp: alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
@@ -127,7 +133,7 @@ user.department -eq "Sales"
 | Содержит |-contains |
 | Не соответствует |-notMatch |
 | Соответствует |-match |
-| В | -in |
+| In | -in |
 | Не входит | -notIn |
 
 ### <a name="using-the--in-and--notin-operators"></a>Использование операторов -in и -notIn
@@ -231,7 +237,7 @@ Da, Dav, David имеют значение true, aDa имеет значение
 
 Многозначные свойства являются коллекциями объектов того же типа. Их можно использовать для создания правил членства с помощью логических операторов -any и (или) -all.
 
-| properties | Значения | Использование |
+| Свойства | Значения | Использование |
 | --- | --- | --- |
 | assignedPlans | Каждый объект в коллекции предоставляет следующие строковые параметры: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled") |
 | proxyAddresses| SMTP: alias@domain, smtp: alias@domain | (user.proxyAddresses -any (\_ -contains "contoso")) |
@@ -261,7 +267,7 @@ user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df
 user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabilityStatus -eq "Enabled")
 ```
 
-### <a name="using-the-underscore--syntax"></a>Использование синтаксической конструкции с символом подчеркивания (\_)
+### <a name="using-the-underscore-_-syntax"></a>Использование синтаксической конструкции с символом подчеркивания (\_)
 
 Символ подчеркивания (\_) позволяет сопоставить вхождения определенного значения одного из свойств в коллекции многозначных строк, чтобы добавить пользователей или устройства в динамическую группу. Он используется в сочетании с оператором -any или -all.
 
@@ -283,7 +289,7 @@ user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabi
 Direct Reports for "{objectID_of_manager}"
 ```
 
-Вот пример допустимого правила, где «62e19b97-8b3d-4d4a-a106-4ce66896a863» — это идентификатор диспетчера:
+Ниже приведен пример допустимого правила, где "62e19b97-8b3d-4d4a-A106-4ce66896a863" является objectID руководителя:
 
 ```
 Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
@@ -300,17 +306,17 @@ Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
 
 С помощью правила членства вы можете создать группу, содержащую всех пользователей в клиенте. Если в будущем пользователи будут добавлены в клиент или удалены из него, членство в группе скорректируется автоматически.
 
-Правило «Все пользователи» создается с помощью одного выражения, используя - ne-оператор и значение null. Это правило добавляет в группу гостевых пользователей B2B, а также пользователей-участников.
+Правило "все пользователи" создается с помощью одного выражения с помощью оператора-Ne и значения NULL. Это правило добавляет в группу гостевых пользователей B2B, а также пользователей-участников.
 
 ```
 user.objectid -ne null
 ```
 
-### <a name="create-an-all-devices-rule"></a>Создание правила «Все устройства»
+### <a name="create-an-all-devices-rule"></a>Создание правила "все устройства"
 
 С помощью правила членства вы можете создать группу, содержащую все устройства в клиенте. Если в будущем устройства будут добавлены в клиент или удалены из него, членство в группе скорректируется автоматически.
 
-Правило «Все устройства» создается с помощью одного выражения, используя - ne-оператор и значение null:
+Правило "все устройства" создается с помощью одного выражения с помощью оператора-Ne и значения NULL:
 
 ```
 device.objectid -ne null
@@ -318,7 +324,7 @@ device.objectid -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
 
-Атрибуты расширения и свойства пользовательского расширения поддерживаются в качестве свойства строки в правилах динамического членства. Атрибуты расширения синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
+Атрибуты расширения и пользовательские свойства расширения поддерживаются в качестве строковых свойств в правилах динамического членства. Атрибуты расширения синхронизируются из локального каталога Windows Server AD и принимают формат ExtensionAttributeX, где X равно 1–15. Вот пример правила, которое использует в качестве свойства атрибут расширения:
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
@@ -346,8 +352,8 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
  Атрибут устройства  | Значения | Пример
  ----- | ----- | ----------------
  AccountEnabled | true, false | (device.accountEnabled -eq true)
- displayName | Любое строковое значение |(device.displayName -eq "Rob iPhone")
- deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(device.deviceOSType-содержит «AndroidEnterprise»)<br>(device.deviceOSType - eq «AndroidForWork»)
+ displayName | Любое строковое значение |(Device. displayName-EQ "Вадим iPhone")
+ deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(Device. deviceOSType — содержит "Андроидентерприсе")<br>(Device. deviceOSType-EQ "Андроидфорворк")
  deviceOSVersion | Любое строковое значение | (device.deviceOSVersion -eq "9.1")
  deviceCategory | Допустимое имя категории устройств. | (device.deviceCategory -eq "BYOD")
  deviceManufacturer | Любое строковое значение | (device.deviceManufacturer -eq "Samsung")
@@ -358,12 +364,12 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")
- systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (device.systemLabels-содержит «M365Managed»)
+ systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (Device. Системлабелс — содержит "M365Managed")
 
 > [!Note]  
 > При создании динамических групп для устройств необходимо указать для атрибута deviceOwnership значение Company (Организация). В Intune этому значению соответствует тип владения устройством Corporate (Корпоративное). Дополнительные сведения см. в разделе [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующих статьях содержатся дополнительные сведения о группах в Azure Active Directory.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: 80c90ceb0e2edac47d67b99e7fb7f03c1ab82fb1
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 5b3c65361f45c8ad5bdf3adf89dc3002c229d0d0
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882355"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650408"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -87,7 +87,7 @@ ms.locfileid: "68882355"
 
    Чтобы получить бесплатную пассивную лицензию для резервной вторичной группы доступности или экземпляра отказоустойчивого кластера, необходимо выполнить все следующие условия, как описано в [документе PDF с руководством](https://download.microsoft.com/download/7/8/C/78CDF005-97C1-4129-926B-CE4A6FE92CF5/SQL_Server_2017_Licensing_guide.pdf)по лицензированию:
 
-   1. У вас есть [мобильность лицензий](https://www.microsoft.com/licensing/licensing-programs/software-assurance-license-mobility?activetab=software-assurance-license-mobility-pivot:primaryr2) в рамках [программы Software Assurance](https://www.microsoft.comlicensing/licensing-programs/software-assurance-default?activetab=software-assurance-default-pivot%3aprimaryr3). 
+   1. У вас есть [мобильность лицензий](https://www.microsoft.com/licensing/licensing-programs/software-assurance-license-mobility?activetab=software-assurance-license-mobility-pivot:primaryr2) в рамках [программы Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?activetab=software-assurance-default-pivot%3aprimaryr3). 
    1. Пассивный SQL Server экземпляр не обслуживает данные SQL Server клиентам или выполняет активные SQL Server рабочие нагрузки. Он используется только для синхронизации с сервером-источником и иным образом поддерживает пассивную базу данных в состоянии «горячего» резервирования. Если данные обслуживаются, например отчеты для клиентов, использующих активные SQL Server рабочие нагрузки, или выполнение любой "работы" (например, дополнительные резервные копии с сервера-получателя), то это должен быть платный лицензированный экземпляр SQL Server. 
    1. Лицензия на активную SQL Server покрывается программой Software Assurance и позволяет получить **один** пассивный вторичный экземпляр SQL Server с тем же объемом вычислений, что и у лицензированного активного сервера. 
    1. На виртуальной машине-получателе SQL Server используется [модель лицензирования](virtual-machines-windows-sql-ahb.md)"Ваша собственная лицензия" (BYOL) или преимущество ГИБРИДНОГО использования Azure (АХБ). 

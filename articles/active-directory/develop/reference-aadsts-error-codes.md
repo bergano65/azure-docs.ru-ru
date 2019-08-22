@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e62a0c1363acfedc1f059ac0e56fce0df68298f8
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 57ec69f4bc2e73bfb390a6b23b1da627d77f9b5e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532396"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69874254"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -265,6 +265,7 @@ ms.locfileid: "69532396"
 | AADSTS700023 | InvalidResourcelessScope: указано недопустимое значение области входных параметров при запрашивании маркера доступа. |
 | AADSTS1000000 | UserNotBoundError: API привязки требует аутентификации пользователя Azure AD с использованием внешнего поставщика удостоверений, чего еще не произошло. |
 | AADSTS1000002 | BindCompleteInterruptError: привязка успешно выполнена, но об этом необходимо сообщить пользователю. |
+| AADSTS7000112 | Унаусоризедклиентаппликатиондисаблед — приложение отключено. |
 
 ## <a name="next-steps"></a>Следующие шаги
 

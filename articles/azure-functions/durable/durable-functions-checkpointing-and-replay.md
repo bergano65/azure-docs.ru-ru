@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: b1fd31a758501620129fdbbc532b8defcf927045
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ed9e4aced7983cce10a577b38c1c170474cf83d
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60648505"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876862"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)
 
@@ -78,7 +78,7 @@ module.exports = df.orchestrator(function*(context) {
 
 По завершении приведенный выше журнал функций будет выглядеть примерно следующим образом в хранилище таблиц Azure (следующий пример приведен в сокращенном виде):
 
-| PartitionKey (InstanceId)                     | EventType             | Timestamp               | Вход | Name             | Результат                                                    | Status |
+| PartitionKey (InstanceId)                     | EventType             | Метка времени               | Ввод | Название             | Результат                                                    | Status |
 |----------------------------------|-----------------------|----------|--------------------------|-------|------------------|-----------------------------------------------------------|
 | eaee885b | OrchestratorStarted   | 2017-05-05T18:45:32.362Z |       |                  |                                                           |                     |
 | eaee885b | ExecutionStarted      | 2017-05-05T18:45:28.852Z | null  | E1_HelloSequence |                                                           |                     |
@@ -145,7 +145,7 @@ module.exports = df.orchestrator(function*(context) {
 
   Если для оркестратора требуется задержка, он может использовать API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) (.NET) или `createTimer` (JavaScript).
 
-* Код оркестратора никогда не должен **запускать асинхронную операцию**, разве что с помощью API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) или API объекта `context.df`. Например, не выполнять `Task.Run` `Task.Delay` или `HttpClient.SendAsync` в .NET либо `setTimeout()` и `setInterval()` в JavaScript. Платформа устойчивых задач выполняет код оркестратора в одном потоке и не может взаимодействовать с другими потоками, которые могут планироваться другими асинхронными API.
+* Код оркестратора никогда не должен **запускать асинхронную операцию**, разве что с помощью API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) или API объекта `context.df`. Например, не выполнять `Task.Run` `Task.Delay` или `HttpClient.SendAsync` в .NET либо `setTimeout()` и `setInterval()` в JavaScript. Платформа устойчивых задач выполняет код оркестратора в одном потоке и не может взаимодействовать с другими потоками, которые могут планироваться другими асинхронными API. В `InvalidOperationException` этом случае возникает исключение.
 
 * **Следует избегать бесконечных циклов** в коде оркестратора. Так как платформа устойчивых задач сохраняет журнал выполнения в ходе работы функции оркестрации, бесконечный цикл может привести к нехватке памяти для экземпляра оркестратора. Для сценариев с бесконечным циклом используйте API, например [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_) (.NET) или `continueAsNew` (JavaScript), чтобы перезапустить выполнение функции и отменить предыдущий журнал выполнения.
 
@@ -165,11 +165,11 @@ module.exports = df.orchestrator(function*(context) {
 
 Управление этими *устойчивыми задачами* выполняется внутренне с помощью списка объектов `TaskCompletionSource`. Во время воспроизведения эти задачи создаются как часть выполнения кода оркестратора и завершаются, когда диспетчер перечисляет соответствующие события журнала. Это все выполняется синхронно с помощью одного потока до тех пор, пока весь журнал не будет воспроизведен. Для всех устойчивых задач, не завершенных до конца воспроизведения журнала, выполняются соответствующие действия. Например, сообщение может быть поставлено в очередь для вызова функции действия.
 
-Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен `await` ожидать неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
+Описанное здесь поведение выполнения должно помочь вам понять, почему код функции оркестратора никогда не должен ожидать`await` неустойчивые задачи. Поток диспетчера не может ожидать их завершения, а любой обратный вызов этой задачи может повредить состояние отслеживания функции оркестратора. Чтобы этого избежать, выполняются некоторые проверки среды выполнения.
 
 Чтобы получить дополнительные сведения о том, как платформа устойчивых задач выполняет функции оркестратора, ознакомьтесь с [исходным кодом устойчивых задач на сайте GitHub](https://github.com/Azure/durabletask). В частности, просмотрите сведения о [TaskOrchestrationExecutor.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) и [TaskOrchestrationContext.cs](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Узнайте больше об управлении экземплярами](durable-functions-instance-management.md)

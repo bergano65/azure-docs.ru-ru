@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/16/2017
 ms.author: genli
-ms.openlocfilehash: 49ee83e451e9d555a7fe5fca57bc58d6616334da
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: b1aca591437738b29786f50c2a5291ab456f3416
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69641057"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876689"
 ---
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-with-the-azure-cli"></a>Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация возникает из-за неправильной записи в `/etc/fstab`, которая мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure CLI подключить виртуальный жесткий диск к другой виртуальной машине Linux для устранения ошибок, а затем восстановить исходную виртуальную машину. 
@@ -39,7 +39,7 @@ ms.locfileid: "69641057"
 > [!Important]
 > Скрипты в этой статье применяются только к виртуальным машинам, которые используют [управляемый диск](../linux/managed-disks-overview.md). 
 
-В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров: `myResourceGroup` и `myVM`.
+В следующих примерах замените имена параметров собственными значениями, такими как `myResourceGroup` и. `myVM`
 
 ## <a name="determine-boot-issues"></a>Выявление проблем при загрузке
 Изучите последовательные выходные данные, чтобы определить, почему виртуальная машина не может правильно загрузиться. Например, причиной может быть некорректная запись в `/etc/fstab`, удаление или перемещение базового виртуального жесткого диска.
@@ -56,88 +56,70 @@ az vm boot-diagnostics get-boot-log --resource-group myResourceGroup --name myVM
 
 В следующем примере прекращается работа виртуальной машины `myVM` из группы ресурсов `myResourceGroup`:
 
-```powershell
-Stop-AzVM -ResourceGroupName "myResourceGroup" -Name "myVM"
+```azurecli
+az vm stop --resource-group MyResourceGroup --name MyVm
 ```
-
-Подождите завершения удаления виртуальной машины перед выполнением следующего шага.
-
-## <a name="create-a-snapshot-from-the-os-disk-of-the-vm"></a>Создание моментального снимка на основе диска ОС виртуальной машины
+## <a name="take-a-snapshot-from-the-os-disk-of-the-affected-vm"></a>Создание моментального снимка с диска ОС затронутой виртуальной машины
 
 Моментальный снимок — это полная копия виртуального жесткого диска, доступная только для чтения. Его нельзя присоединить к виртуальной машине. На следующем шаге мы создадим диск из этого моментального снимка. В следующем примере создается моментальный снимок с именем `mySnapshot` из диска операционной системы виртуальной машины "myVM". 
 
-```powershell
-$resourceGroupName = 'myResourceGroup' 
-$location = 'eastus' 
-$vmName = 'myVM'
-$snapshotName = 'mySnapshot'  
+```azurecli
+#Get the OS disk Id 
+$osdiskid=(az vm show -g myResourceGroup -n myVM --query "storageProfile.osDisk.managedDisk.id" -o tsv)
 
-#Get the VM
-$vm = get-azvm `
--ResourceGroupName $resourceGroupName `
--Name $vmName
-
-#Create the snapshot configuration for the OS disk
-$snapshot =  New-AzSnapshotConfig `
--SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id `
--Location $location `
--CreateOption copy
-
-#Take the snapshot
-New-AzSnapshot `
-   -Snapshot $snapshot `
-   -SnapshotName $snapshotName `
-   -ResourceGroupName $resourceGroupName 
+#creates a snapshot of the disk
+az snapshot create --resource-group myResourceGroupDisk --source "$osdiskid" --name mySnapshot
 ```
 ## <a name="create-a-disk-from-the-snapshot"></a>Создание диска из моментального снимка
 
-Этот скрипт создает управляемый диск с именем `newOSDisk` из моментального снимка `mysnapshot`.  
+Этот скрипт создает управляемый диск с именем `myOSDisk` из моментального снимка `mySnapshot`.  
 
-```powershell
-#Set the context to the subscription Id where Managed Disk will be created
-#You can skip this step if the subscription is already selected
-
-$subscriptionId = 'yourSubscriptionId'
-
-Select-AzSubscription -SubscriptionId $SubscriptionId
-
+```azurecli
 #Provide the name of your resource group
-$resourceGroupName ='myResourceGroup'
+$resourceGroup=myResourceGroup
 
 #Provide the name of the snapshot that will be used to create Managed Disks
-$snapshotName = 'mySnapshot' 
+$snapshot=mySnapshot
 
 #Provide the name of the Managed Disk
-$diskName = 'newOSDisk'
+$osDisk=myNewOSDisk
 
 #Provide the size of the disks in GB. It should be greater than the VHD file size.
-$diskSize = '128'
+$diskSize=128
 
-#Provide the storage type for Managed Disk. PremiumLRS or StandardLRS.
-$storageType = 'StandardLRS'
+#Provide the storage type for Managed Disk. Premium_LRS or Standard_LRS.
+$storageType=Premium_LRS
 
-#Provide the Azure region (e.g. westus) where Managed Disks will be located.
-#This location should be same as the snapshot location
-#Get all the Azure location using command below:
-#Get-AzLocation
-$location = 'eastus'
+#Provide the OS type
+$osType=linux
 
-$snapshot = Get-AzSnapshot -ResourceGroupName $resourceGroupName -SnapshotName $snapshotName 
- 
-$diskConfig = New-AzDiskConfig -AccountType $storageType -Location $location -CreateOption Copy -SourceResourceId $snapshot.Id
- 
-New-AzDisk -Disk $diskConfig -ResourceGroupName $resourceGroupName -DiskName $diskName
+#Provide the name of the virtual machine
+$virtualMachine=myVM
+
+#Get the snapshot Id 
+$snapshotId=(az snapshot show --name $snapshot --resource-group $resourceGroup --query [id] -o tsv)
+
+# Create a new Managed Disks using the snapshot Id.
+
+az disk create --resource-group $resourceGroup --name $osDisk --sku $storageType --size-gb $diskSize --source $snapshotId
+
 ```
+
+Если группа ресурсов и исходный моментальный снимок находятся в разных регионах, при запуске `az disk create`будет выдано сообщение об ошибке "ресурс не найден". В этом случае необходимо указать `--location <region>` , чтобы создать диск в том же регионе, что и исходный моментальный снимок.
+
 Теперь у вас есть копия исходного диска ОС. Этот новый диск можно подключить к другой виртуальной машине Windows для устранения неполадок.
 
 ## <a name="attach-the-new-virtual-hard-disk-to-another-vm"></a>Подключение нового виртуального жесткого диска к другой виртуальной машине
-В следующих нескольких шагах описывается использование другой виртуальной машины для устранения неполадок. Вы подключаете диск к этой виртуальной машине для устранения неполадок, чтобы просматривать и изменять содержимое диска. Этот процесс позволяет, например, исправить ошибки конфигурации или изучить дополнительные журналы протоколов или системы. Выберите или создайте другую виртуальную машину, которая будет использоваться для устранения неполадок.
+В следующих нескольких шагах описывается использование другой виртуальной машины для устранения неполадок. Вы подключаете диск к этой виртуальной машине для устранения неполадок, чтобы просматривать и изменять содержимое диска. Этот процесс позволяет исправлять любые ошибки конфигурации или просматривать дополнительные файлы журналов приложений или систем.
 
-Подключите существующий виртуальный жесткий диск с помощью команды [az vm unmanaged-disk attach](/cli/azure/vm/unmanaged-disk). При присоединении существующего виртуального жесткого диска укажите универсальный код ресурса (URI) адрес диска, полученный в предыдущей команде `az vm show`. В следующем примере существующий виртуальный жесткий диск присоединяется к виртуальной машине для устранения неполадок `myVMRecovery` в группе ресурсов `myResourceGroup`:
+Этот сценарий подключает диск `myNewOSDisk` к виртуальной машине: `MyTroubleshootVM`
 
 ```azurecli
-az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecovery \
-    --vhd-uri https://mystorageaccount.blob.core.windows.net/vhds/myVM.vhd
+# Get ID of the OS disk that you just created.
+$myNewOSDiskid=(az vm show -g myResourceGroupDisk -n myNewOSDisk --query "storageProfile.osDisk.managedDisk.id" -o tsv)
+
+# Attach the disk to the troubleshooting VM
+az vm disk attach --disk $diskId --resource-group MyResourceGroup --size-gb 128 --sku Standard_LRS --vm-name MyTroubleshootVM
 ```
 ## <a name="mount-the-attached-data-disk"></a>Подключение присоединенного диска данных
 
@@ -197,46 +179,30 @@ az vm unmanaged-disk attach --resource-group myResourceGroup --vm-name myVMRecov
     sudo umount /dev/sdc1
     ```
 
-2. Теперь отсоедините виртуальный жесткий диск от виртуальной машины. Выйдите из сеанса SSH и вернитесь к виртуальной машине для устранения неполадок. Выведите список дисков данных, подключенные к виртуальной машине для устранения неполадок, выполнив команду [az vm unmanaged-disk list](/cli/azure/vm/unmanaged-disk). В следующем примере указываются диски данных, подключенные к виртуальной машине `myVMRecovery` в группе ресурсов `myResourceGroup`:
+2. Теперь отсоедините виртуальный жесткий диск от виртуальной машины. Выйдите из сеанса SSH к виртуальной машине для устранения неполадок:
 
     ```azurecli
-    azure vm unmanaged-disk list --resource-group myResourceGroup --vm-name myVMRecovery \
-        --query '[].{Disk:vhd.uri}' --output table
-    ```
-
-    Обратите внимание на имя существующего виртуального жесткого диска. Например, имя диска с URI **https://mystorageaccount.blob.core.windows.net/vhds/myVM.vhd** — **myVHD**. 
-
-    Отключите диск данных от виртуальной машины командой [az vm unmanaged-disk detach](/cli/azure/vm/unmanaged-disk). В следующем примере диск `myVHD` отключается от виртуальной машины `myVMRecovery` в группе ресурсов `myResourceGroup`.
-
-    ```azurecli
-    az vm unmanaged-disk detach --resource-group myResourceGroup --vm-name myVMRecovery \
-        --name myVHD
+    az vm disk detach -g MyResourceGroup --vm-name MyTroubleShootVm --name myNewOSDisk
     ```
 
 ## <a name="change-the-os-disk-for-the-affected-vm"></a>Изменение диска операционной системы для затронутой виртуальной машины
 
-Для переключения дисков ОС можно использовать Azure PowerShell. Нет необходимости удалять и повторно создавать виртуальную машину.
+Для замены дисков операционной системы можно использовать Azure CLI. Нет необходимости удалять и повторно создавать виртуальную машину.
 
-Этот пример останавливает виртуальную машину `myVM`, а затем присваивает диск `newOSDisk` в качестве нового диска ОС. 
+Этот пример останавливает виртуальную машину `myVM`, а затем присваивает диск `myNewOSDisk` в качестве нового диска ОС.
 
-```powershell
-# Get the VM 
-$vm = Get-AzVM -ResourceGroupName myResourceGroup -Name myVM 
+```azurecli
+# Stop the affected VM
+az vm stop -n myVM -g myResourceGroup
 
-# Make sure the VM is stopped\deallocated
-Stop-AzVM -ResourceGroupName myResourceGroup -Name $vm.Name -Force
+# Get ID of the OS disk that is repaired.
+$myNewOSDiskid=(az vm show -g myResourceGroupDisk -n myNewOSDisk --query "storageProfile.osDisk.managedDisk.id" -o tsv)
 
-# Get the new disk that you want to swap in
-$disk = Get-AzDisk -ResourceGroupName myResourceGroup -Name newDisk
-
-# Set the VM configuration to point to the new disk  
-Set-AzVMOSDisk -VM $vm -ManagedDiskId $disk.Id -Name $disk.Name  -sto
-
-# Update the VM with the new OS disk. Possible values of StorageAccountType include: 'Standard_LRS' and 'Premium_LRS'
-Update-AzVM -ResourceGroupName myResourceGroup -VM $vm -StorageAccountType <Type of the storage account >
+# Change the OS disk of the affected VM to "myNewOSDisk"
+az vm update -g myResourceGroup -n myVM --os-disk $myNewOSDiskid
 
 # Start the VM
-Start-AzVM -Name $vm.Name -ResourceGroupName myResourceGroup
+az vm start -n myVM -g myResourceGroup
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

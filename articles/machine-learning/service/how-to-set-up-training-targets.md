@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 72155e072acb8006b48f6951fc60081126c80691
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: e73a64a9782535da31e2eacbaa2740007707c774
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990462"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872412"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей 
 
@@ -317,7 +317,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 1. Перейдите на [портал Azure](https://portal.azure.com) и откройте свою рабочую область. 
 1. В разделе __Приложения__ выберите __Вычисления__.
 
-    ![Просмотр вкладки вычислений](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace.png)
+    [![Просмотр вкладки "вычисление"](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace.png)](./media/how-to-set-up-training-targets/azure-machine-learning-service-workspace-expanded.png)
 
 ### <a id="portal-create"></a>Создание целевого объекта вычислений
 
@@ -336,8 +336,6 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 1. Заполните форму. Введите значения для обязательных свойств, в частности, укажите **семейство виртуальных машин** и **максимальное количество узлов**, до которого можно развернуть вычислительный объект.  
 
-    ![Заполнение формы](./media/how-to-set-up-training-targets/add-compute-form.png) 
-
 1. Нажмите кнопку __Создать__.
 
 
@@ -348,8 +346,6 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 1. Ниже приведены сведения о выбранном целевом объекте вычислений. 
 
     ![Просмотр сведений о целевом объекте вычислений](./media/how-to-set-up-training-targets/compute-target-details.png) 
-
-
 
 ### <a id="portal-reuse"></a>Присоединение целевых объектов вычислений
 

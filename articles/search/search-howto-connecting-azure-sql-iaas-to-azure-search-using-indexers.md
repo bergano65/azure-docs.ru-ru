@@ -2,19 +2,19 @@
 title: Подключение виртуальной машины SQL Azure для индексирования поиска в службе "Поиск Azure"
 description: Активируйте зашифрованные подключения и настройте брандмауэр, чтобы разрешить подключения к SQL Server на виртуальной машине Azure из индексатора Поиска Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 90e5a133bac519cbc5ab2d7b112d51a019e8f698
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7629750da8f58c2c62f15102b60b5b562689f087
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60871286"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656702"
 ---
 # <a name="configure-a-connection-from-an-azure-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Поиска Azure к SQL Server на виртуальной машине Azure
 Как было отмечено в статье [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#faq), служба поиска Azure поддерживает создание индексаторов для **SQL Server на виртуальных машинах Azure** (или **виртуальных машинах SQL Azure** для краткости), но существует несколько требований безопасности, которые необходимо выполнить. 
@@ -87,6 +87,6 @@ ms.locfileid: "60871286"
 #### <a name="include-the-azure-search-portal-ip-addresses"></a>Включение IP-адресов портала Поиска Azure
 Если для создания индексатора используется портал Azure, то в процессе создания логике портала службы поиска Azure также необходим доступ к виртуальной машине SQL Azure. Чтобы найти IP-адреса портала службы поиска Azure, можно выполнить проверку связи с `stamp2.search.ext.azure.com`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Когда настройка выполнена, SQL Server на виртуальной машине Azure можно указать в качестве источника данных для индексатора службы поиска Azure. Дополнительные сведения см. в статье [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md).
 

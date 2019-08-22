@@ -3,19 +3,19 @@ title: Индексирование содержимого хранилища т
 description: Вы можете узнать, как индексировать данные в хранилище таблиц Azure с помощью индексатора поиска Azure.
 ms.date: 05/02/2019
 author: mgottein
-manager: cgronlun
+manager: nitinme
 ms.author: magottei
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: bca7c1b9ffe7ac0ab82f4287bba201a78fbf726a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dffb0a41dbf33cd86014115b089036d69a8e4718
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66755085"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648182"
 ---
 # <a name="index-azure-table-storage-with-azure-search"></a>Индексирование хранилища таблиц Azure с помощью поиска Azure
 В этой статье показано, как использовать поиск Azure для индексирования данных в хранилище таблиц Azure.
@@ -95,7 +95,7 @@ ms.locfileid: "66755085"
 
 Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
 
-### <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
+### <a name="step-3-create-an-indexer"></a>Шаг 3. Создать индексатор
 Индексатор соединяет источник данных с целевым индексом поиска и предоставляет расписание для автоматизации обновления данных. 
 
 После создания индекса и источника данных можно создать индексатор:
@@ -115,7 +115,7 @@ ms.locfileid: "66755085"
 
 Дополнительные сведения об API создания индексатора см. в статье [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
-Дополнительные сведения об определении расписания индексаторов см. в разделе [планирование индексаторы поиска Azure](search-howto-schedule-indexers.md).
+Дополнительные сведения об определении расписаний индексаторов см. [в статье Планирование индексаторов для поиска Azure](search-howto-schedule-indexers.md).
 
 ## <a name="deal-with-different-field-names"></a>Работа с различными именами полей
 Иногда имена полей в существующем индексе отличаются от имен свойств в таблице. Для сопоставления имен свойств таблицы с именами полей в индексе поиска можно использовать сопоставления полей. Дополнительные сведения о сопоставлениях полей см. в статье [Сопоставления полей индексатора в поиске Azure устраняют расхождения между источниками данных и индексами поиска](search-indexer-field-mappings.md).

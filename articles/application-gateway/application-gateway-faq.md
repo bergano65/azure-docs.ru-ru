@@ -5,15 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 6/1/2019
+ms.date: 08/22/2019
 ms.author: victorh
-ms.openlocfilehash: 5bfb3a093cd101f30daf4439dc8f58b5b4f693ca
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: da8142ad035eec338a3c1ba1a23be7c2be470a04
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68740883"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891725"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -361,6 +360,13 @@ SKU шлюза приложений версии 1 поддерживает сц
 ### <a name="what-could-cause-backend-health-to-return-an-unknown-status"></a>Что может вызвать работоспособность серверной части для возвращения неизвестного состояния?
 
 Как правило, вы видите неизвестное состояние, когда доступ к серверной части блокируется группой безопасности сети (NSG), настраиваемой службой DNS или определяемой пользователем маршрутизацией (UDR) в подсети шлюза приложений. Дополнительные сведения см. в разделе [работоспособность серверной части, ведение журнала диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
+
+### <a name="is-there-any-case-where-nsg-flow-logs-wont-show-allowed-traffic"></a>Есть ли в любом случае, когда в журналах потоков NSG не отображается разрешенный трафик?
+
+Да. Если конфигурация соответствует приведенной ниже ситуации, вы не увидите разрешенный трафик в журналах потоков NSG:
+- Вы развернули шлюз приложений версии 2
+- У вас есть NSG в подсети шлюза приложений
+- Вы включили журналы потоков NSG на этом NSG
 
 ## <a name="next-steps"></a>Следующие шаги
 

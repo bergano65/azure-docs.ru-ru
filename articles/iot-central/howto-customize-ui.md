@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: cef0014fb47aeddcad785fb3f938ab928964a942
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 28a0e91befb717882aa202a776e0b9cddb8fd390
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725687"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876099"
 ---
-# <a name="customize-the-azure-iot-central-ui"></a>Настройка пользовательского интерфейса IoT Central Azure 
+# <a name="customize-the-azure-iot-central-ui"></a>Настройка пользовательского интерфейса IoT Central Azure
 
-В этой статье описывается, как администратор может настроить пользовательский интерфейс приложения, применяя пользовательские темы и изменяя ссылки на справку, чтобы они указывали на пользовательские справочные ресурсы. 
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
+
+В этой статье описывается, как администратор может настроить пользовательский интерфейс приложения, применяя пользовательские темы и изменяя ссылки на справку, чтобы они указывали на пользовательские справочные ресурсы.
 
 На следующем снимке экрана показана страница, использующая стандартную тему:
 

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
-ms.openlocfilehash: 94d3599fe919cf648be7115be68002d2aa458ee3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7f6439d79e5d46621b92b1c24ba5caf87889f443
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60400649"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877076"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Синтаксис запросов маршрутизации сообщений центра Интернета вещей
 
@@ -53,10 +53,11 @@ ms.locfileid: "60400649"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| сontentType | string | Пользователь указывает тип содержимого сообщений. Чтобы разрешить запрос к тексту сообщения, для этого свойства должно быть задано значение application/JSON. |
-| contentEncoding | string | Пользователь указывает тип кодирования сообщений. Допустимые значения: UTF-8, UTF-16, UTF-32, если contentType имеет значение application/JSON. |
-| iothub-connection-device-id | string | Это значение задается Центром Интернета вещей и определяет идентификатор устройства. Чтобы запросить, используйте `$connectionDeviceId`. |
-| iothub-enqueuedtime | string | Это значение задается центром Интернета вещей и представляет фактическое время постановки сообщения в очередь в формате UTC. Чтобы запросить, используйте `enqueuedTime`. |
+| сontentType | строка | Пользователь указывает тип содержимого сообщений. Чтобы разрешить запрос к тексту сообщения, для этого свойства должно быть задано значение application/JSON. |
+| contentEncoding | строка | Пользователь указывает тип кодирования сообщений. Допустимые значения: UTF-8, UTF-16, UTF-32, если contentType имеет значение application/JSON. |
+| iothub-connection-device-id | строка | Это значение задается Центром Интернета вещей и определяет идентификатор устройства. Чтобы запросить, используйте `$connectionDeviceId`. |
+| iothub-enqueuedtime | строка | Это значение задается центром Интернета вещей и представляет фактическое время постановки сообщения в очередь в формате UTC. Чтобы запросить, используйте `enqueuedTime`. |
+| iothub-Interface-Name | строка | Это значение задается пользователем и представляет имя интерфейса Digital двойника, который реализует сообщение телеметрии. Чтобы запросить, используйте `$interfaceName`. Эта функция доступна как часть общедоступной [предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |
 
 Как описано в разделе [Сообщения центра Интернета вещей](iot-hub-devguide-messages-construct.md), существуют дополнительные системные свойства в сообщении. В дополнение к **contentType**, **contentEncoding** и **enqueuedTime** также можно запросить **connectionDeviceId** и  **connectionModuleId**.
 
@@ -86,7 +87,7 @@ processingPath = 'hot'
 $contentEncoding = 'UTF-8' AND processingPath = 'hot'
 ```
 
-Полный список поддерживаемых операторов и функций см. в разделе [Выражения и условия](iot-hub-devguide-query-language.md#expressions-and-conditions).
+Полный список поддерживаемых операторов и функций показан в [выражении и условиях](iot-hub-devguide-query-language.md#expressions-and-conditions).
 
 ## <a name="message-routing-query-based-on-message-body"></a>Запрос маршрутизации сообщений на основе текста сообщения 
 
@@ -163,7 +164,7 @@ $body.Weather.Temperature = 50 AND processingPath = 'hot'
 
 ## <a name="message-routing-query-based-on-device-twin"></a>Запрос маршрутизации сообщений на основе двойника устройства 
 
-Маршрутизация сообщений позволяет запрашивать теги и свойства [двойников устройств](iot-hub-devguide-device-twins.md), которые являются объектами JSON. Обратите внимание, что запросы к двойнику модуля не поддерживаются. Ниже приведен пример свойств и тегов двойников устройств.
+Маршрутизация сообщений позволяет запрашивать теги и свойства [двойников устройств](iot-hub-devguide-device-twins.md), которые являются объектами JSON. Запросы к модулю двойника не поддерживаются. Ниже приведен пример свойств и тегов двойников устройств.
 
 ```JSON
 {
@@ -210,7 +211,7 @@ $body.Weather.Temperature = 50 AND $twin.properties.desired.telemetryConfig.send
 $twin.tags.deploymentLocation.floor = 1 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [маршрутизации сообщений](iot-hub-devguide-messages-d2c.md).
 * [Руководство по маршрутизации сообщений](tutorial-routing.md).

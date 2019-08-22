@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 6a929359c0e4e0a5c64eadbf41f565dfeb56a233
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 3c16d8b5f1611c6c05e60d65551f73eb2d395668
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854115"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872911"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -51,22 +51,29 @@ SQL Server базы данных — это критически важные р
 
 - **Разрешить диапазоны IP-адресов центра обработки данных Azure**. Этот параметр разрешает [диапазоны IP-адресов](https://www.microsoft.com/download/details.aspx?id=41653) в загружаемом файле. Чтобы получить доступ к группе безопасности сети (NSG), используйте командлет Set-Азуренетворксекуритируле. Если список надежных получателей имеет только IP-адреса, относящиеся к региону, вам также потребуется обновить список надежных получателей, чтобы включить проверку подлинности, Azure Active Directory тег службы Azure AD.
 
-- **Разрешить доступ с помощью тегов NSG**. Если вы используете группы безопасности сети для ограничения подключения, этот параметр добавляет правило в NSG, которое разрешает исходящий доступ к Azure Backup с помощью тега AzureBackup. Помимо этого тега, вам потребуются соответствующие [правила](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) для Azure AD и службы хранилища Azure, чтобы обеспечить возможность подключения для проверки подлинности и обмена данными. Тег AzureBackup в настоящее время доступен только в PowerShell. Чтобы создать правило с помощью тега AzureBackup, выполните следующие действия.
+- **Разрешить доступ с помощью тегов NSG**.  При использовании NSG для ограничения возможностей подключения следует использовать тег службы AzureBackup, чтобы разрешить исходящий доступ к Azure Backup. Кроме того, необходимо разрешить подключение для проверки подлинности и передачу данных с помощью [правил](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) для Azure AD и службы хранилища Azure. Это можно сделать на портале или с PowerShell.
 
-    - Добавление учетных данных учетной записи Azure и обновление национальных облаков<br/>
-    `Add-AzureRmAccount`
+    Чтобы создать правило с помощью портала, выполните следующие действия.
+    
+    - В окне **все службы**перейдите в раздел **группы безопасности сети** и выберите группу безопасности сети.
+    - Выберите **правила безопасности для исходящих подключений** в разделе **Параметры**.
+    - Выберите **Добавить**. Введите все необходимые сведения для создания нового правила, как описано в разделе [Параметры правил безопасности](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#security-rule-settings). Убедитесь, что параметр **назначение** параметра имеет значение **тег службы** , а в качестве **тега целевой службы** задано значение **AzureBackup**.
+    - Нажмите кнопку **Добавить**, чтобы сохранить только что созданное правило безопасности для исходящего трафика.
+    
+   Чтобы создать правило с помощью PowerShell, выполните следующие действия.
 
-    - Выберите подписку NSG<br/>
-    `Select-AzureRmSubscription "<Subscription Id>"`
-
-     - Выберите NSG<br/>
-    `$nsg = Get-AzureRmNetworkSecurityGroup -Name "<NSG name>" -ResourceGroupName "<NSG resource group name>"`
-
-    - Добавление разрешающего правило исходящего трафика для тега службы Azure Backup<br/>
-    `Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "AzureBackupAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "AzureBackup" -DestinationPortRange 443 -Description "Allow outbound traffic to Azure Backup service"`
-
+   - Добавление учетных данных учетной записи Azure и обновление национальных облаков<br/>
+    ``Add-AzureRmAccount``
+  - Выберите подписку NSG<br/>
+    ``Select-AzureRmSubscription "<Subscription Id>"``
+  - Выберите NSG<br/>
+    ```$nsg = Get-AzureRmNetworkSecurityGroup -Name "<NSG name>" -ResourceGroupName "<NSG resource group name>"```
+  - Добавление разрешающего правило исходящего трафика для тега службы Azure Backup<br/>
+   ```Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "AzureBackupAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "AzureBackup" -DestinationPortRange 443 -Description "Allow outbound traffic to Azure Backup service"```
   - Сохранение NSG<br/>
-    `Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg`
+    ```Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg```
+
+   
 - **Разрешение доступа с помощью тегов брандмауэра Azure**. Если вы используете брандмауэр Azure, создайте правило приложения с помощью [тега полного доменного имени](https://docs.microsoft.com/azure/firewall/fqdn-tags)AzureBackup. Это разрешает исходящий доступ к Azure Backup.
 - **Разверните прокси-сервер HTTP для маршрутизации трафика**. При создании резервной копии базы данных SQL Server на ВИРТУАЛЬНОЙ машине Azure расширение резервного копирования на виртуальной машине использует API-интерфейсы HTTPS для отправки команд управления Azure Backup и данных в службу хранилища Azure. Расширение резервного копирования также использует Azure AD для проверки подлинности. Направьте трафик расширения резервного копирования для этих трех служб через прокси-сервер HTTP. Расширения — единственный компонент, который настроен для обмена данными с общедоступным Интернетом.
 
@@ -168,7 +175,7 @@ Windows Registry Editor Version 5.00
    Для оптимизации нагрузки резервного копирования Azure Backup задает максимальное количество баз данных в одной задаче резервной копии — 50.
 
      * Для защиты более 50 баз данных настройте несколько резервных копий.
-     * Для включения [](#enable-auto-protection) всего экземпляра или группы доступности Always On. В раскрывающемся списке **автозащита** выберите **вкл**., а затем нажмите кнопку **ОК**.
+     * Чтобы [включить](#enable-auto-protection) весь экземпляр или группу доступности Always on, в раскрывающемся списке **автозащита** выберите значение **вкл**., а затем нажмите кнопку **ОК**.
 
     > [!NOTE]
     > Функция [автоматической защиты](#enable-auto-protection) не только включает защиту для всех существующих баз данных одновременно, но и автоматически защищает любые новые базы данных, добавленные в этот экземпляр или группу доступности.  

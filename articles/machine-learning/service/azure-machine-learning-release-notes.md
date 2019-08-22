@@ -8,18 +8,18 @@ ms.subservice: core
 ms.topic: reference
 ms.author: jmartens
 author: j-martens
-ms.date: 07/25/2019
+ms.date: 08/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 684a84431c8348ddafab8cefbe831c2b58c3cee6
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: e169d7734776f9319685d97f941b3fc11eec8298
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639930"
+ms.locfileid: "69656243"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
-В статье рассказывается о выпусках службы "Машинное обучения Azure".  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](https://aka.ms/aml-sdk) машинное обучение Azure.
+В статье рассказывается о выпусках службы "Машинное обучения Azure".  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](https://aka.ms/aml-sdk) машинное обучение Azure. 
 
 Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
 

@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 8e7456eff3062ef6667e7b0022ea9740c397a493
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 5ffa77a05e6019ee6b5e29c5af5ed0130e027cae
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679249"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876501"
 ---
 > [!NOTE]
 > В этом документе подробно описан список функций, которые были удалены из центра безопасности Azure 31 июля 2019.
@@ -160,7 +160,7 @@ ms.locfileid: "68679249"
 - [Microsoft Advanced Threat Analytics](https://docs.microsoft.com/azure/sentinel/connect-azure-atp)
 - [Защита идентификации Azure AD](https://docs.microsoft.com/azure/sentinel/connect-azure-ad-identity-protection)
 
-После выхода из системы вы не сможете добавлять или изменять типы решений, упомянутые в предыдущем списке, из пользовательского интерфейса или API.
+После выхода из системы вы не сможете добавлять или изменять типы решений, упомянутые в предыдущем списке, из пользовательского интерфейса или API. Центр безопасности Azure больше не будет обнаруживать новые экземпляры вышеупомянутых решений партнеров.
 
 Если у вас есть подключенные решения, мы рекомендуем перейти к Azure Sentinel.
 

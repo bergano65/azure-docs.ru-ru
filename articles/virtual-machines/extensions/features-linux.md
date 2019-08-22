@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 8227aa366c8f5149d4212e6cdd00e2745db84814
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: f2397c67b71cc370a0a98d44bb02e5ee77551afb
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881952"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650642"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -86,7 +86,7 @@ az vm extension image list --location westus --output table
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и сценарий для запуска (https://raw.githubusercontent.com/me/project/hello.sh) с собственными данными. 
+Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и скрипт для запуска (HTTPS:\//RAW.githubusercontent.com/Me/Project/Hello.sh) собственными сведениями. 
 
 ```azurecli
 az vm extension set `
@@ -404,7 +404,7 @@ az vm extension delete \
 
 ## <a name="common-vm-extension-reference"></a>Справочные материалы для всех расширений ВМ
 
-| Имя расширения | Описание | Дополнительная информация |
+| Имя расширения | Описание | Дополнительные сведения |
 | --- | --- | --- |
 | Расширение пользовательских сценариев для Linux |Выполняет сценарии на виртуальных машинах Azure. |[Расширение пользовательских сценариев для Linux](custom-script-linux.md) |
 | Расширение для доступа к виртуальной машине |Восстанавливает доступ к виртуальной машине Azure. |[Расширение для доступа к виртуальной машине](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |

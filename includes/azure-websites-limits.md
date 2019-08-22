@@ -4,25 +4,25 @@ ms.service: billing
 ms.topic: include
 ms.date: 08/09/2019
 ms.author: jroth
-ms.openlocfilehash: 203f0eda7e2e9d1545e7bf5cc2bb6eff9c2c3c55
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 1080e3488483610af0f0c9afadaf000895021821
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68936887"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69657856"
 ---
 | Resource | Бесплатный | Общий доступ | Стандартная | Стандарт | Премиум (версия 2) | Изолированный </th> |
 | --- | --- | --- | --- | --- | --- | --- |
 | [Веб-приложения, мобильные устройства или приложений API](https://azure.microsoft.com/services/app-service/) на [план 1 службы приложений Azure](../articles/app-service/overview-hosting-plans.md)<sup></sup> |10 |100 |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup>|
 | [План обслуживания приложения](../articles/app-service/overview-hosting-plans.md) |10 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
 | Тип вычислительной операции |Общий доступ |Общий доступ |Выделенный<sup>3</sup> |Выделенный<sup>3</sup> |Выделенный<sup>3</sup></p> |Выделенный<sup>3</sup>|
-| [Горизонтальное масштабирование](../articles/app-service/web-sites-scale.md) (максимальное число экземпляров) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |20 выделенных<sup>3</sup>|100 выделенных<sup>4</sup>|
+| [Горизонтальное масштабирование](../articles/app-service/manage-scale-up.md) (максимальное число экземпляров) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |20 выделенных<sup>3</sup>|100 выделенных<sup>4</sup>|
 | Хранилище<sup>5</sup> |1 ГБ<sup>5</sup> |1 ГБ<sup>5</sup> |10 ГБ<sup>5</sup> |50 ГБ<sup>5</sup> |250 ГБ<sup>5</sup></p> |1 ТБ<sup>5</sup>|
 | Время ЦП (5 минут)<sup>6</sup> |3 минуты |3 минуты |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a>|
 | Время ЦП (в день)<sup>6</sup> |60 минут |240 минут |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |Без ограничений, оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/)</a> |
 | Память (1 час) |1 024 МБ на план службы приложений |1 024 МБ на приложение |Н/Д |Н/Д |Н/Д |Н/Д |
 | Пропускная способность |165 MB |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |
-| Архитектура приложения |32-разрядный |32-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |
+| Архитектура приложения |32-битная |32-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |
 | Веб-сокетов на экземпляр<sup>7</sup> |5 |35 |350 |Без ограничений |Без ограничений |Без ограничений |
 | Количество одновременных [подключений к отладчику](../articles/app-service/troubleshoot-dotnet-visual-studio.md) для каждого приложения |1 |1 |1 |5 |5 |5 |
 | Сертификаты службы приложений на подписку<sup>10</sup>| Не поддерживается | Не поддерживается |10 |10 |10 |10 |
@@ -31,7 +31,7 @@ ms.locfileid: "68936887"
 | Интегрированная подсистема балансировки нагрузки | |X |X |X |X |X<sup>9</sup> |
 | [Всегда включено](../articles/app-service/configure-common.md) | | |X |X |X |X |
 | [Запланированные резервные копии](../articles/app-service/manage-backup.md) | | | | Запланированное резервное копирование каждые 2 часа, максимум 12 резервных копий в день (вручную и по расписанию) | Запланированное резервное копирование каждый час, не более 50 резервных копий в день (вручную и по расписанию) | Запланированное резервное копирование каждый час, не более 50 резервных копий в день (вручную и по расписанию) |
-| [Автомасштабирование](../articles/app-service/web-sites-scale.md) | | | |X |X |X |
+| [Автомасштабирование](../articles/app-service/manage-scale-up.md) | | | |X |X |X |
 | [Веб-задания](../articles/app-service/webjobs-create.md)<sup>8</sup> |X |X |X |X |X |X |
 | [планировщика Azure](https://azure.microsoft.com/services/scheduler/) | |X |X |X |X |X |
 | [Мониторинг конечных точек](../articles/app-service/web-sites-monitor.md) | | |X |X |X |X |

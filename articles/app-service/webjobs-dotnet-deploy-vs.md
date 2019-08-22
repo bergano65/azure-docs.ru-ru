@@ -15,12 +15,12 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: d50acc50880229626c847d41d9abe9a9e13d9c6e
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 58d03d80c82fbf58803f7fefa8ef60c19f99bced
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736117"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876888"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -37,7 +37,7 @@ ms.locfileid: "68736117"
 > [!NOTE]
 > Веб-задания .NET Core не могут быть связаны с проектами. Если веб-задание необходимо развернуть с помощью приложения, необходимо создать его в [качестве .NET Framework консольного приложения](#webjobs-as-net-framework-console-apps).  
 
-### <a name="deploy-to-azure-app-service"></a>Развертывание в службе приложений Azure
+### <a name="deploy-to-azure-app-service"></a>Развертывание в Службе приложений Azure
 
 Публикация веб-задания .NET Core в службе приложений из Visual Studio использует те же средства, что и публикация ASP.NET Core приложения.
 
@@ -86,11 +86,11 @@ ms.locfileid: "68736117"
 
 ![Диаграмма, отображающая проект веб-задания, связанный с веб-проектом](./media/webjobs-dotnet-deploy-vs/link.png)
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Если вы используете Visual Studio 2015, установите [пакет Azure SDK для .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 
-Если вы используете Visual Studio 2019, установите [рабочую нагрузку разработки Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
+Если вы используете Visual Studio 2017, установите [рабочую нагрузку для разработки Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
 
 ### <a id="convert"></a> Включение развертывания веб-заданий для существующего проекта консольного приложения
 

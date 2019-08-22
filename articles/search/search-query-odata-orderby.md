@@ -1,13 +1,13 @@
 ---
-title: Предложение order by Справочник по протоколу OData - поиска Azure
-description: Справочник по языку OData для синтаксиса предложение order by в запросах поиска Azure.
+title: Порядок сортировки по Справочнику OData — Поиск Azure
+description: Справочник по языку OData для синтаксиса ORDER-BY в запросах поиска Azure.
 ms.date: 06/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
 author: Brjohnstmsft
 ms.author: brjohnst
-ms.manager: cgronlun
+manager: nitinme
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,20 +19,20 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 1ced35dc73e6d596fbeda32590ab0b69df396c5c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8ee44549931100a1affa5e2bb9e5cda904c05ed1
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67079760"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647539"
 ---
-# <a name="odata-orderby-syntax-in-azure-search"></a>Синтаксис OData $orderby в службе поиска Azure
+# <a name="odata-orderby-syntax-in-azure-search"></a>Синтаксис $orderby OData в поиске Azure
 
- Можно использовать [OData **$orderby** параметр](query-odata-filter-orderby-syntax.md) применить пользовательский порядок сортировки для результатов поиска в службе поиска Azure. В этой статье описывается синтаксис **$orderby** подробно. Более общие сведения об использовании **$orderby** при представлении результатов поиска, см. в разделе [способы работы со службой поиска результатов в службе поиска Azure](search-pagination-page-layout.md).
+ [Параметр **$OrderBy** OData](query-odata-filter-orderby-syntax.md) можно использовать для применения пользовательского порядка сортировки результатов поиска в службе поиска Azure. В этой статье подробно описывается синтаксис **$OrderBy** . Дополнительные общие сведения об использовании **$OrderBy** при представлении результатов поиска см. [в статье как работать с результатами поиска в службе поиска Azure](search-pagination-page-layout.md).
 
 ## <a name="syntax"></a>Синтаксис
 
-**$Orderby** параметр принимает разделенный запятыми список до 32 **предложений order by**. Синтаксис предложения order by, описываемого ниже EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)):
+Параметр **$OrderBy** принимает разделенный запятыми список из 32 **предложений упорядочения**. Синтаксис предложения ORDER-BY описывается следующим EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)):
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -42,19 +42,19 @@ order_by_clause ::= (field_path | sortable_function) ('asc' | 'desc')?
 sortable_function ::= geo_distance_call | 'search.score()'
 ```
 
-Также доступна схему интерактивный синтаксис:
+Доступна также интерактивная схема синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#order_by_clause)
+> [Схема синтаксиса OData для поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#order_by_clause)
 
 > [!NOTE]
-> См. в разделе [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md) для завершения EBNF.
+> Полный EBNF см. в [справочнике по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md) .
 
-Каждое предложение имеет критерии сортировки, при желании указав направление сортировки (`asc` для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию — по возрастанию. Критерии сортировки может быть путь к `sortable` поля или вызова [ `geo.distance` ](search-query-odata-geo-spatial-functions.md) или [ `search.score` ](search-query-odata-search-score-function.md) функции.
+Каждое предложение имеет критерий сортировки, при необходимости за которым следует направление сортировки`asc` (для по возрастанию или `desc` по убыванию). Если не указать направление, по умолчанию используется значение по возрастанию. Критерий сортировки может быть либо путем `sortable` к полю, либо вызовом либо [`search.score`](search-query-odata-search-score-function.md) функций, [`geo.distance`](search-query-odata-geo-spatial-functions.md) либо.
 
-Если несколько документов имеют одинаковые условия сортировки и `search.score` функция не используется (например, в том случае, если сортировка с числами `Rating` поля и три документа все имеющие рейтинг 4), равенстве по оценке документа в порядке убывания. Если оценки документа (например, когда запросы полнотекстового поиска, не указанный в запросе), затем относительный порядок равноценных документы не определен.
+Если несколько документов имеют одинаковые условия сортировки и `search.score` функция не используется (например, если сортировка выполняется по числовому `Rating` полю, а все три документа имеют оценку 4), то в убывающем порядке они будут разорваны. Если оценки документа одинаковы (например, если в запросе не указан запрос полнотекстового поиска), относительный порядок связанных документов является неопределенным.
 
-Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки по убыванию по оценке, следуют оценку, синтаксис будет `$orderby=search.score() desc,Rating desc`.
+Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки по убыванию по показателям, за которыми следует оценка, синтаксис будет выглядеть `$orderby=search.score() desc,Rating desc`так:.
 
 Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`sortable`) и иметь тип `Edm.GeographyPoint`.
 
@@ -70,17 +70,17 @@ sortable_function ::= geo_distance_call | 'search.score()'
 
     $orderby=Rating desc,BaseRate
 
-Сортировать по убыванию, оценка, а затем по возрастанию, расстояние от точки, заданной координатами гостиницы:
+Сортировка гостиниц по убыванию по рейтингу, затем по возрастанию по расстоянию от заданных координат:
 
     $orderby=Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-Сортировать гостиницы, в убывающем порядке по search.score и оценки, а затем в возрастающем порядке по расстояние от точки, заданной координатами. Между двумя гостиницы с идентичными релевантности и оценок ближайшая указывается в первую очередь:
+Сортировка гостиниц в порядке убывания по поиску. Оценка и оценка, а затем в порядке возрастания по расстоянию от заданных координат. Между двумя гостиницами с одинаковыми показателями релевантности и рейтингами в первую очередь указывается ближайшее значение:
 
     $orderby=search.score() desc,Rating desc,geo.distance(Location, geography'POINT(-122.131577 47.678581)') asc
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
-- [Как работать со службой поиска результатов в службе поиска Azure](search-pagination-page-layout.md)
-- [Общие сведения о языках выражений OData для службы поиска Azure](query-odata-filter-orderby-syntax.md)
-- [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md)
+- [Как работать с результатами поиска в службе "Поиск Azure"](search-pagination-page-layout.md)
+- [Общие сведения о языке выражений OData для поиска Azure](query-odata-filter-orderby-syntax.md)
+- [Справочник по синтаксису выражений OData для поиска Azure](search-query-odata-syntax-reference.md)
 - [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure"))

@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/26/2019
+ms.date: 08/20/2019
 ms.author: spelluru
-ms.openlocfilehash: 261f337ac72a28bc2e1c74e23731242cc3bd0075
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 411037dd97350d877aff4e2d094c3408f168f9fd
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68572034"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648577"
 ---
 # <a name="classroom-labs-in-azure-lab-services---frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
 Получите ответы на некоторые наиболее распространенные вопросы о занятиях лаборатории в службах лаборатории Azure. 
@@ -44,13 +44,13 @@ ms.locfileid: "68572034"
 Подпишитесь на [блог служб лаборатории Azure](https://azure.microsoft.com/blog/tag/azure-lab-services/).
 
 ## <a name="update-notifications"></a>Уведомления об обновлениях
-Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями в DevTest Labs.
+Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.
 
 ## <a name="general"></a>Общее
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
 - Опубликуйте вопрос в конце этой статьи 
-- Чтобы охватить большую аудиторию, опубликуйте вопрос на [форуме MSDN по Azure DevTest Labs](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureDevTestLabs) 
-- Чтобы сделать запрос на функцию, разместите свои запросы и предложения на [форуме пользователей Azure DevTest Labs](https://feedback.azure.com/forums/320373-azure-devtest-labs).
+- Чтобы достичь более широкой аудитории, опубликуйте вопрос на форуме по [службам Azure labs Stack overflow](https://stackoverflow.com/questions/tagged/azure-lab-services). 
+- Для запросов функций отправьте свои запросы и идеи в [службы лаборатории Azure](https://feedback.azure.com/forums/320373-lab-services?category_id=352774).
 

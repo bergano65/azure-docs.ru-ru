@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 0122b76592ce9e1179a3d65f7db681679bda6f37
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: e5b99bba3c3b21ea9662845928c523c329695bf8
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988614"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877238"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Установка среды выполнения Azure IoT Edge в Windows
 
@@ -30,16 +30,11 @@ ms.locfileid: "68988614"
 >
 > В качестве обходного решения используйте команду `Stop-Service iotedge` , чтобы прерывать работающие IOT Edge модули перед использованием этих режимов питания. 
 
-<!--
-> [!NOTE]
-> Using Linux containers on Windows systems is not a recommended or supported production configuration for Azure IoT Edge. However, it can be used for development and testing purposes.
--->
-
 Использование контейнеров Linux в системах Windows не является рекомендуемым или поддерживаемым производственной конфигурацией для Azure IoT Edge. Однако его можно использовать для целей разработки и тестирования. Дополнительные сведения см. в статье [использование IOT EDGE в Windows для запуска контейнеров Linux](how-to-install-iot-edge-windows-with-linux.md).
 
 Сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Azure IOT Edge](https://github.com/Azure/azure-iotedge/releases)выпуски.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом разделе можно посмотреть, поддерживает ли устройство Windows IoT Edge, а также подготовить его для подсистемы контейнеров перед установкой. 
 
@@ -57,6 +52,9 @@ ms.locfileid: "68988614"
 >Использование программных пакетов Azure IoT Edge регулируется условиями лицензии, содержащейся в самих пакетах (в каталоге LICENSE). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета означают, что вы принимаете эти условия. Если вы не согласны с условиями лицензии, не используйте пакет.
 
 Сценарий PowerShell загружает и устанавливает управляющую программу безопасности Azure IoT Edge. Управляющая программа безопасности запускает первый из двух модулей среды выполнения, агент IoT Edge, который обеспечивает удаленные развертывания других модулей. 
+
+>[!TIP]
+>Для устройств IoT Core рекомендуется выполнять команды установки с помощью сеанса Ремотеповершелл. Дополнительные сведения см. [в статье Использование PowerShell для Windows IOT](https://docs.microsoft.com/windows/iot-core/connect-your-device/powershell).
 
 При установке среды выполнения IoT Edge в первый раз на устройстве нужно подготовить устройство с помощью удостоверения из центра Интернета вещей. Отдельное IoT Edge устройство можно подготовить вручную, используя строку подключения устройства, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств (DPS) для автоматической подготовки устройств, что полезно при наличии множества устройств для настройки. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
 

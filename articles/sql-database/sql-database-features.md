@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, sstein
 ms.date: 05/10/2019
-ms.openlocfilehash: c4ba2269003c9d401982b83f4e66c8caf45a0073
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
-ms.translationtype: MT
+ms.openlocfilehash: a8d36e48558432edfaa242b9db13c59adacf5619
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624706"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876354"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -102,8 +102,6 @@ ms.locfileid: "69624706"
 | [OPENXML](https://docs.microsoft.com/sql/t-sql/functions/openxml-transact-sql)|Да|Да|
 | [Инструкции](https://docs.microsoft.com/sql/t-sql/language-elements/operators-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным операторам. |Да. См. раздел [T-SQL differences from SQL Server](sql-database-managed-instance-transact-sql-information.md) (Отличия T-SQL от SQL Server). |
 | [Секционирование](https://docs.microsoft.com/sql/relational-databases/partitions/partitioned-tables-and-indexes) | Да | Да |
-| Общедоступный IP-адрес | Да. Доступ можно ограничить с помощью конечных точек брандмауэра или службы.  | Да. Необходимо включить явным образом, а порт 3342 должен быть включен в правилах NSG. При необходимости общедоступный IP-адрес можно отключить. Дополнительные сведения см. в разделе общедоступная [Конечная точка](sql-database-managed-instance-public-endpoint-securely.md) . | 
-| [Восстановление базы данных до точки во времени](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | Да — все уровни служб, отличные от горизонтального масштабирования — см. в разделе [Восстановление базы данных SQL](sql-database-recovery-using-backups.md#point-in-time-restore) . | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). |
 | [PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide) | Нет. Вы можете запросить данные в файлах, размещенных в хранилище BLOB- `OPENROWSET` объектов Azure, с помощью функции. | Нет. Вы можете запросить данные в файлах, размещенных в хранилище BLOB- `OPENROWSET` объектов Azure, с помощью функции. |
 | [Предикаты](https://docs.microsoft.com/sql/t-sql/queries/predicates) | Да | Да |
 | [Уведомления о запросах](https://docs.microsoft.com/sql/relational-databases/native-client/features/working-with-query-notifications) | Нет | Да |
@@ -147,39 +145,47 @@ ms.locfileid: "69624706"
 | --- | --- | --- |
 | [Активная георепликация](sql-database-active-geo-replication.md) | Да — все уровни служб, кроме горизонтального масштабирования | Нет, в качестве альтернативы см. раздел [группы автоматической отработки отказа (Предварительная версия)](sql-database-auto-failover-group.md) |
 | [Группы автоматической отработки отказа](sql-database-auto-failover-group.md) | Да — все уровни служб, кроме горизонтального масштабирования | Да, [в общедоступной предварительной версии](sql-database-auto-failover-group.md)|
+| Автомасштабирование | Да, в [бессерверной модели](sql-database-serverless.md) | Нет, необходимо выбрать зарезервированные ресурсы вычислений и хранилища. |
+| [Проверка подлинности Azure Active Directory (AAD)](sql-database-aad-authentication.md) | Да. Только пользователи AAD. | Да. Включая имена входа AAD уровня сервера. |
 | [Работоспособность ресурсов Azure](/azure/service-health/resource-health-overview) | Да | Нет |
+| Хранение архивных копий | Да. 7 дней по умолчанию — максимум 35 дней. | Да. 7 дней по умолчанию — максимум 35 дней. |
 | [Data Migration Service (DMS)](https://docs.microsoft.com/sql/dma/dma-overview) | Да | Да |
 | Доступ к файловой системе | Нет. Используйте [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) или [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) для доступа к данным из хранилища BLOB-объектов Azure и их загрузки в качестве альтернативы. | Нет. Используйте [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) или [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) для доступа к данным из хранилища BLOB-объектов Azure и их загрузки в качестве альтернативы. |
 | [Геовосстановление](sql-database-recovery-using-backups.md#geo-restore) | Да — все уровни служб, кроме горизонтального масштабирования | Да — используется [Azure PowerShell](https://medium.com/azure-sqldb-managed-instance/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa). |
 | [Архитектура с масштабированием](sql-database-service-tier-hyperscale.md) | Да | Нет |
 | [Долгосрочное хранение резервных копий — LTR](sql-database-long-term-retention.md) | Да, автоматически создавать резервные копии до 10 лет. | Пока нет. Используйте `COPY_ONLY` [резервное копирование вручную](sql-database-managed-instance-transact-sql-information.md#backup) в качестве временного решения. |
-| [Управление на основе политик](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Нет | Нет |
-| Пулы ресурсов | Да, как [эластичные пулы](sql-database-elastic-pool.md) | Встроенная функция. У отдельного управляемого экземпляра может быть несколько баз данных, которые совместно используют один пул ресурсов. |
-| Увеличение или уменьшение масштаба (в сети) | Да, можно изменить DTU или зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. | Да, вы можете изменить зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. | 
-| Автомасштабирование | Да, в [бессерверной модели](sql-database-serverless.md) | Нет, необходимо выбрать зарезервированные ресурсы вычислений и хранилища. |
 | Приостановка и возобновление | Да, в [бессерверной модели](sql-database-serverless.md) | Нет | 
-| [SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [Да](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Да, [версия 150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
+| [Управление на основе политик](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Нет | Нет |
+| Общедоступный IP-адрес | Да. Доступ можно ограничить с помощью конечных точек брандмауэра или службы.  | Да. Необходимо включить явным образом, а порт 3342 должен быть включен в правилах NSG. При необходимости общедоступный IP-адрес можно отключить. Дополнительные сведения см. в разделе общедоступная [Конечная точка](sql-database-managed-instance-public-endpoint-securely.md) . | 
+| [Восстановление базы данных до точки во времени](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | Да — все уровни служб, отличные от горизонтального масштабирования — см. в разделе [Восстановление базы данных SQL](sql-database-recovery-using-backups.md#point-in-time-restore) . | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). |
+| Пулы ресурсов | Да, как [эластичные пулы](sql-database-elastic-pool.md) | Нет. Один управляемый мнстанце может иметь несколько баз данных, совместно использующих один и тот же пул ресурсов. Управляемые экземпляры не могут совместно использовать ресурсы. |
+| Увеличение или уменьшение масштаба (в сети) | Да, можно изменить DTU или зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. | Да, вы можете изменить зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. |
 | [Аналитика SQL](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) | Да | Да |
 | [Синхронизация данных SQL](sql-database-get-started-sql-data-sync.md) | Да | Нет |
-| [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Да | Да |
 | [SQL Server Analysis Services (SSAS)](https://docs.microsoft.com/sql/analysis-services/analysis-services) | Нет, [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) является отдельной облачной службой Azure. | Нет, [Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/) является отдельной облачной службой Azure. |
 | [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS сервера Базы данных SQL и Управляемого экземпляра см. в [этом разделе](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-single-databaseelastic-pool-and-sql-database-managed-instance). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. [здесь](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-single-databaseelastic-pool-and-sql-database-managed-instance). |
 | [SQL Server Reporting Services (SSRS)](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). |
 | [Анализ производительности запросов (QPI)](sql-database-query-performance.md) | Да | Нет. Используйте встроенные отчеты в SQL Server Management Studio и Azure Data Studio. |
 | [Виртуальная сеть](../virtual-network/virtual-networks-overview.md) | Частичный, он обеспечивает ограниченный доступ с помощью [конечных точек виртуальной сети](sql-database-vnet-service-endpoint-rule-overview.md) . | Да, Управляемый экземпляр вставляется в виртуальную сеть клиента. См. раздел [подсеть](sql-database-managed-instance-transact-sql-information.md#subnet) и [Виртуальная сеть](sql-database-managed-instance-transact-sql-information.md#vnet) |
+| Конечная точка службы виртуальной сети | [Да](sql-database-vnet-service-endpoint-rule-overview.md) | Нет |
 
 ## <a name="tools"></a>Сервис
 База данных SQL Azure поддерживает различные средства работы с данными, которые могут помочь в управлении данными.
 
-| **Инструмент SQL** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры** |
+| **Средство** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры** |
 | --- | --- | --- |
+| Портал Azure | Да | Да |
+| Azure CLI | Да | Да|
 | [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is) | Да | Да |
+| Azure PowerShell | Да | Да |
 | [BACPAC-файл (экспорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). |
 | [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). |
 | [Data Quality Services (DQS)](https://docs.microsoft.com/sql/data-quality-services/data-quality-services) | Нет | Нет |
 | [Master Data Services (MDS)](https://docs.microsoft.com/sql/master-data-services/master-data-services-overview-mds) | Нет | Нет |
+| [SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [Да](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Да, [версия 150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
 | [SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) | Да | Да |
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Да | Да [, версии 18,0 и выше](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
+| [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Да | Да |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Да |
 | [System Center Operations Manager-SCOM](https://docs.microsoft.com/system-center/scom/welcome) | [Да](https://www.microsoft.com/download/details.aspx?id=38829) | Нет |
 
