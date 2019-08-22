@@ -1,20 +1,20 @@
 ---
 title: Руководство по Созданию приложения для iOS, которое создает фотографию и запускает ее в Иммерсивном средстве чтения (Swift)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этом руководстве вы создадите приложение для iOS с нуля и добавите изображение в функциональность Иммерсивного средства чтения.
 services: cognitive-services
-author: MeganRoach
+author: metanMSFT
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 08/01/2019
-ms.author: t-meroa
-ms.openlocfilehash: d0e6cf05043c82faa04d530571ad7cacb3a02854
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.author: metan
+ms.openlocfilehash: bdaee97c8c5d7e19076847c5f1f7c07c528c1747
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68991139"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899377"
 ---
 # <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство по Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
 
@@ -57,7 +57,7 @@ ms.locfileid: "68991139"
   end
 ```
 4. В окне терминала в каталоге проекта Xcode запустите команду `pod install`, чтобы установить pod пакета SDK для иммерсивного средства чтения
-5. Добавьте `import immersive_reader_sdk` ко всем файлам, которые должны ссылаться на пакет SDK.
+5. Добавьте `import immersive_reader_sdk` ко всем файлам, которые должны ссылаться на этот пакет SDK.
 6. Убедитесь, что проект открыт, открыв файл `.xcworkspace`, а не `.xcodeproj`.
 
 ## <a name="acquire-an-azure-ad-authentication-token"></a>Получение маркера проверки подлинности Azure AD
@@ -71,7 +71,7 @@ ClientSecret => Azure AD Application Service Principal password
 Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the resource was created in the Azure portal, or 'CustomSubDomain' option if the resource was created with Azure CLI Powershell. Check the Azure portal for the subdomain on the Endpoint in the resource Overview page, for example, 'https://[SUBDOMAIN].cognitiveservices.azure.com/')
 ````
 
-В главной папке проекта, которая содержит файл ViewController.swift, создайте файл класса Swift с именем Constants.swift. Замените класс следующим кодом, добавив в него значения, где это применимо. Сохраните этот файл как локальный, существующий только на вашем компьютере, и убедитесь, что этот файл не передан в систему управления версиями, так как он содержит секреты, которые не следует публиковать. Мы рекомендуем не сохранять секреты в коде приложения. Вместо этого лучше использовать внутреннюю службу для получения токена, что позволяет хранить секреты вне приложения и вне устройства. Конечная точка внутреннего-API должна быть защищена какой-либо формой аутентификации (например, [OAuth](https://oauth.net/2/)), чтобы предотвратить получение неавторизованными пользователями токенов для использования в службе "Иммерсивное средство чтения" и выставлении счетов. Эти действия не входят в данное руководство.
+В главной папке проекта, которая содержит файл ViewController.swift, создайте файл для класса Swift с именем Constants.swift. Замените этот класс следующим кодом, добавив в него нужные реальные значения. Сохраните этот файл как локальный, существующий только на вашем компьютере, и убедитесь, что этот файл не передан в систему управления версиями, так как он содержит секреты, которые не следует публиковать. Мы рекомендуем не сохранять секреты в коде приложения. Вместо этого лучше использовать внутреннюю службу для получения токена, что позволяет хранить секреты вне приложения и вне устройства. Конечная точка внутреннего-API должна быть защищена какой-либо формой аутентификации (например, [OAuth](https://oauth.net/2/)), чтобы предотвратить получение неавторизованными пользователями токенов для использования в службе "Иммерсивное средство чтения" и выставлении счетов. Эти действия не входят в данное руководство.
 
 [!code-swift[Constants](~/ImmersiveReaderSdk/iOS/samples/picture-to-immersive-reader-swift/picture-to-immersive-reader-swift/Constants.swift)]
 

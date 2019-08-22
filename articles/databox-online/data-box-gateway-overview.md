@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: overview
-ms.date: 07/16/2019
+ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 1b749df7c5b3badbc6e7eccd885cb953ab3d0afa
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: b8c6b4085f56bc12b67bf87177ba33b82c6a6db9
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277388"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900586"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Что такое Шлюз Azure Data Box?
 
@@ -57,7 +57,6 @@ ms.locfileid: "68277388"
 |Быстрый доступ     | Локальный кэш на устройстве для быстрого доступа к последним использованным файлам.|
 |Отправка в автономном режиме     | Поддержка сценариев отправки данных в автономном режиме при отсутствии подключений к сети.|
 |Обновление данных     | Возможность обновления локальных файлов из облака с внесением последних изменений.|
-|Шифрование    | Поддержка BitLocker для локального шифрования данных и обеспечения безопасности передачи данных в облако по протоколу *https*.       |
 |Устойчивость     | Встроенная устойчивость сети.        |
 
 

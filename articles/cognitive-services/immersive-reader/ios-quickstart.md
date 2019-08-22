@@ -1,20 +1,20 @@
 ---
 title: Краткое руководство. Создание приложения iOS, которое запускает иммерсивное средство чтения (Swift)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В рамках этого краткого руководства вы создадите с нуля приложение iOS и добавите функции иммерсивного средства чтения.
 services: cognitive-services
-author: MeganRoach
+author: metanMSFT
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: quickstart
 ms.date: 08/01/2019
-ms.author: t-meroa
-ms.openlocfilehash: 64b3cab857a541d0bede88e7fdf21c00526b9a43
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.author: metan
+ms.openlocfilehash: 64fd7508244f2123cc10ee96ec4f805050aedfaa
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965147"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899532"
 ---
 # <a name="quickstart-create-an-ios-app-that-launches-the-immersive-reader-swift"></a>Краткое руководство. Создание приложения iOS, которое запускает иммерсивное средство чтения (Swift)
 
@@ -39,8 +39,8 @@ ms.locfileid: "68965147"
 
 ![Новое приложение одного представления](./media/ios/xcode-single-view-app.png)
 
-## <a name="get-the-sdk-cocoapod"></a>Получение пакета SDK CocoaPod
-Самый простой способ использовать пакет SDK для иммерсивного средства чтения — через CocoaPods. Чтобы установить его с помощью Cocoapods, выполните следующее.
+## <a name="get-the-sdk-cocoapod"></a>Получение пакета SDK CocoaPod
+Самый простой способ использовать пакет SDK для Иммерсивного средства чтения — через CocoaPods. Чтобы установить его с помощью Cocoapods, выполните следующее.
 1. [Установите CocoaPods](http://guides.cocoapods.org/using/getting-started.html) по инструкциям из руководства по началу работы.
 2. Создайте Podfile, запустив `pod init` в корневом каталоге проекта Xcode.
 3.  Добавьте CocoaPod в Podfile, добавив `pod 'immersive-reader-sdk', :path => 'https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS/immersive-reader-sdk'`. Ваш Podfile должен выглядеть, как представлено ниже, только вместо quickstart-swift будет стоять имя конкретного целевого объекта:
@@ -55,7 +55,7 @@ ms.locfileid: "68965147"
 ```
 4. В окне терминала в каталоге проекта Xcode запустите команду `pod install`, чтобы установить pod пакета SDK для иммерсивного средства чтения
 5. Добавьте `import immersive_reader_sdk` ко всем файлам, которые должны ссылаться на этот пакет SDK.
-6. Убедитесь, что проект открыт, открыв файл `.xcworkspace`, но не файл `.xcodeproj`.
+6. Убедитесь, что проект открыт, открыв файл `.xcworkspace`, а не `.xcodeproj`.
 
 ## <a name="acquire-an-azure-ad-authentication-token"></a>Получение маркера проверки подлинности Azure AD
 
@@ -92,7 +92,7 @@ Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the reso
 
 В Xcode нажмите сочетание клавиш CTRL+R или нажмите кнопку "Воспроизведение", чтобы запустить проект. Приложение должно запуститься в указанном симуляторе или устройстве.
 
-В приложении вы увидите:
+В приложении вы должны увидеть:
 
 ![Пример приложения](./media/ios/sample-app-ipad.png)
 
@@ -102,4 +102,4 @@ Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the reso
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Изучите раздел о[пакете SDK иммерсивного средства чтения для iOS](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS) и [Справочник о пакете SDK иммерсивного средства чтения для iOS](./ios-reference.md)
+* Изучите раздел о[пакете SDK Иммерсивного средства чтения для iOS](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS) и [Справочник о пакете SDK Иммерсивного средства чтения для iOS](./ios-reference.md)
