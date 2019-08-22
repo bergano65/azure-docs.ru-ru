@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: 2ed93846e0a1ab98b25bdfbe33b34779996da82b
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 6882476cabc3dc3a737f31eeeb4ccd92e5ea6ee0
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68782641"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872744"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Azure в Azure
 
@@ -139,6 +139,7 @@ Site Recovery создает моментальные снимки следую�
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 
 Если управление исходящими подключениями виртуальной машины настроено по IP-адресам, разрешите следующие адреса.
+Обратите внимание, что сведения о требованиях к сетевому подключению можно найти в [техническом документе "Сетевые](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges) подключения". 
 
 #### <a name="source-region-rules"></a>Правила исходного региона
 

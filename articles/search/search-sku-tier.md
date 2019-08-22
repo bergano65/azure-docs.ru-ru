@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: heidist
-ms.openlocfilehash: a874c8a1fe2e8a81e2f42b2c88447fd52b47f3ad
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 1c86649a989b16d928a46d322af3d805b6fbf832
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611963"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647342"
 ---
 # <a name="choose-a-pricing-tier-for-azure-search"></a>Выбор ценовой категории службы "Поиск Azure"
 
@@ -53,10 +53,10 @@ ms.locfileid: "69611963"
 
 Решение, созданное на основе поиска Azure, может повлечь за собой следующие виды затрат.
 
-+ Базовая стоимость обслуживания в минимальной конфигурации
++ Базовая стоимость обслуживания в минимальной конфигурации (создание службы)
 + Добавочные затраты при масштабировании (Добавление реплик или секций)
-+ Плата за пропускную способность для передачи исходящих данных
-+ Поиск с использованием Cognitive Servicesных ресурсов
++ Плата за пропускную способность (передача исходящих данных) 
++ Поиск со вознанием (присоединение Cognitive Services для обогащения искусственного интеллекта, служба хранилища Azure для хранилища знаний)
 
 ### <a name="service-costs"></a>Стоимость обслуживания
 

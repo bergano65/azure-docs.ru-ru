@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/09/2019
+ms.date: 08/20/2019
 ms.author: v-adgera
-ms.openlocfilehash: 7ceb36d818c84642461372f0df70c8088908550c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 66dbfd09ef07740c07ddb010b73e33e783340e5a
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965814"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873653"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -53,7 +53,9 @@ ms.locfileid: "68965814"
 
 ## <a name="obtain-an-oauth-20-token"></a>Получение маркера OAuth 2.0
 
-Затем установите и настройте Postman для получения токена Azure AD. После этого выполните HTTP-запрос с проверкой подлинности к Azure Digital Twins, используя полученный токен:
+[!INCLUDE [digital-twins-management-api](../../includes/digital-twins-management-api.md)]
+
+Настройте и настройте POST, чтобы получить маркер Azure Active Directory. После этого выполните HTTP-запрос с проверкой подлинности к Azure Digital Twins, используя полученный токен:
 
 1. Скачайте приложение, перейдя по адресу [www.getpostman.com](https://www.getpostman.com/).
 1. Убедитесь, что ваш **URL-адрес авторизации** указан правильно. Его формат должен быть следующим:

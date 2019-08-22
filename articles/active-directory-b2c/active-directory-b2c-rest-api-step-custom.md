@@ -1,51 +1,51 @@
 ---
-title: Утверждениями REST API — Azure Active Directory B2C
-description: Добавьте утверждениями REST API в пользовательские политики в Active Directory B2C.
+title: Обмен утверждениями REST API — Azure Active Directory B2C
+description: Добавление REST API заявок на обмен утверждениями в пользовательские политики в Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0bdef508e12a3b11143149b330da73838b53f860
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 42129870c6ab2bb5e58bdf9aaa323a3d64b479f8
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439013"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69644922"
 ---
-# <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Добавить утверждениями REST API в пользовательские политики в Azure Active Directory B2C
+# <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Добавление REST API обмена утверждениями в пользовательские политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Вы можете добавить взаимодействие с API-интерфейсов RESTful для вашего [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C. В этой статье показано, как создать путь взаимодействия пользователя Azure AD B2C, который взаимодействует со службами RESTful.
+Вы можете добавить взаимодействие с API RESTFUL к [пользовательским политикам](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C. В этой статье показано, как создать Azure AD B2C пути взаимодействия пользователя, взаимодействующего со службами RESTFUL.
 
-Взаимодействие включает утверждениями обмена данными между утверждениями REST API и Azure AD B2C. Утверждениями имеют следующие характеристики:
+Взаимодействие включает обмен данными между утверждениями REST API и Azure AD B2C. Обмен утверждениями имеет следующие характеристики.
 
 - может разрабатываться как этап оркестрации;
 - может вызывать внешнее действие, например записывать событие во внешнюю базу данных;
 - может использоваться, чтобы получить значение, а затем сохранить его в базе данных пользователя.
-- Можно изменить поток выполнения.
+- Может изменять поток выполнения.
 
-Сценарий, представленный в этой статье, включает следующие действия:
+Сценарий, представленный в этой статье, включает следующие действия.
 
 1. Поиск пользователя во внешней системе.
 2. Получение места регистрации пользователя.
 3. Возвращение этого атрибута как утверждения обратно в приложение.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
-- Конечная точка REST API, с которой устанавливается взаимодействие. В этом статье используется простой Azure работать в качестве примера. Чтобы создать функцию Azure, см. в разделе [Создание первой функции на портале Azure](../azure-functions/functions-create-first-azure-function.md).
+- Конечная точка REST API, с которой устанавливается взаимодействие. В этой статье в качестве примера используется простая функция Azure. Сведения о создании функции Azure см. [в разделе Создание первой функции в портал Azure](../azure-functions/functions-create-first-azure-function.md).
 
 ## <a name="prepare-the-api"></a>Подготовка API
 
-В этом разделе вы готовитесь функцию Azure для получения значения для `email`и затем вернуть значение для `city` , можно использовать с помощью Azure AD B2C в качестве утверждения.
+В этом разделе вы подготовите функцию Azure для получения значения `email`, а затем возвращаем значение для `city` , которое может использоваться Azure AD B2C в качестве утверждения.
 
-Изменение файла run.csx для функции Azure, созданные для использования в следующем коде:
+Измените файл run. CSX для созданной функции Azure, чтобы использовать следующий код:
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -84,9 +84,9 @@ public class ResponseContent
 
 ## <a name="configure-the-claims-exchange"></a>Настройка обмена утверждениями
 
-Технический профиль предоставляет конфигурацию для обмена утверждения.
+Технический профиль предоставляет конфигурацию для обмена заявками.
 
-Откройте *TrustFrameworkExtensions.xml* файл и добавьте следующие **ClaimsProvider** XML-элемент внутри **ClaimsProviders** элемент.
+Откройте файл *TrustFrameworkExtensions. XML* и добавьте следующий элемент **поставщика утверждений** XML в элемент **клаимспровидерс** .
 
 ```XML
 <ClaimsProvider>
@@ -97,8 +97,10 @@ public class ResponseContent
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
         <Item Key="ServiceUrl">https://myfunction.azurewebsites.net/api/HttpTrigger1?code=bAZ4lLy//ZHZxmncM8rI7AgjQsrMKmVXBpP0vd9smOzdXDDUIaLljA==</Item>
-        <Item Key="AuthenticationType">None</Item>
         <Item Key="SendClaimsIn">Body</Item>
+        <!-- Set AuthenticationType to Basic or ClientCertificate in production environments -->
+        <Item Key="AuthenticationType">None</Item>
+        <!-- REMOVE the following line in production environments -->
         <Item Key="AllowInsecureAuthInProduction">true</Item>
       </Metadata>
       <InputClaims>
@@ -113,11 +115,13 @@ public class ResponseContent
 </ClaimsProvider>
 ```
 
-**InputClaims** элемент определяет утверждения, которые отправляются в службу REST. В этом примере значение утверждения `givenName` отправляется в службу REST как утверждение `email`. **OutputClaims** элемент определяет утверждения, которые ожидаются от службы REST.
+Элемент **inputclaim** определяет утверждения, которые отправляются в службу RESTful. В этом примере значение утверждения `givenName` отправляется в службу RESTful в качестве утверждения. `email` Элемент **OutputClaims** определяет утверждения, ожидаемые от службы RESTful.
 
-## <a name="add-the-claim-definition"></a>Добавьте определение утверждений
+Комментарии выше `AuthenticationType` и `AllowInsecureAuthInProduction` указывают изменения, которые необходимо внести при переходе в рабочую среду. Чтобы узнать, как защитить интерфейсы API RESTFUL для рабочей среды, см. статью Защита API RESTful [с помощью базовой проверки](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) подлинности и [защищенных API-интерфейсов RESTful с проверкой подлинности сертификата](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
 
-Добавьте определение для `city` внутри **BuildingBlocks** элемент. Этот элемент можно найти в начале файла TrustFrameworkExtensions.xml.
+## <a name="add-the-claim-definition"></a>Добавление определения утверждения
+
+Добавьте определение `city` внутри элемента **BuildingBlocks** . Этот элемент можно найти в начале файла TrustFrameworkExtensions.xml.
 
 ```XML
 <BuildingBlocks>
@@ -132,11 +136,11 @@ public class ResponseContent
 </BuildingBlocks>
 ```
 
-## <a name="add-an-orchestration-step"></a>Добавить этап оркестрации
+## <a name="add-an-orchestration-step"></a>Добавление шага оркестрации
 
 Вызов REST API может использоваться как этап оркестрации в разных ситуациях. Как этап оркестрации он может использоваться в качестве обновления внешней системы после успешного выполнения пользователем задания, например первой регистрации или обновления профиля для синхронизации сведений. В этом случае вызов REST API используется для расширения сведений, предоставленных приложению после изменения профиля.
 
-Добавление шага в пути взаимодействия пользователя редактирования профиля. После пользователь прошел проверку подлинности (этапы оркестрации 1 – 4 в следующем XML) и предоставления обновленных сведений о профиле (шаг 5). Скопируйте профиля для изменения XML-код пути взаимодействия пользователя с *TrustFrameworkBase.xml* файл вашей *TrustFrameworkExtensions.xml* внутри **UserJourneys** элемент. Внесите изменения в качестве шага 6.
+Добавьте шаг к пути взаимодействия пользователя для изменения профиля. После проверки подлинности пользователя (шаги оркестрации 1-4 в следующем коде XML) и пользователь предоставил обновленные сведения о профиле (шаг 5). Скопируйте XML-код пути редактирования профиля пользователя из файла *TrustFrameworkBase. XML* в файл *TrustFrameworkExtensions. XML* внутри элемента **усержаурнэйс** . Затем внесите изменения в шаге 6.
 
 ```XML
 <OrchestrationStep Order="6" Type="ClaimsExchange">
@@ -146,7 +150,7 @@ public class ResponseContent
 </OrchestrationStep>
 ```
 
-Конечный XML-код пути взаимодействия пользователя должен выглядеть как в следующем примере:
+Окончательный формат XML для пути взаимодействия пользователя должен выглядеть, как в следующем примере:
 
 ```XML
 <UserJourney Id="ProfileEdit">
@@ -206,9 +210,9 @@ public class ResponseContent
 
 ## <a name="add-the-claim"></a>Добавление утверждения
 
-Изменить *ProfileEdit.xml* файл и добавьте `<OutputClaim ClaimTypeReferenceId="city" />` для **OutputClaims** элемент.
+Измените файл *ProfileEdit. XML* и добавьте `<OutputClaim ClaimTypeReferenceId="city" />` в элемент **OutputClaims** .
 
-После добавления нового утверждения Технический профиль выглядит следующим образом:
+После добавления нового утверждения технический профиль будет выглядеть следующим образом:
 
 ```XML
 <TechnicalProfile Id="PolicyProfile">
@@ -225,13 +229,13 @@ public class ResponseContent
 
 ## <a name="upload-your-changes-and-test"></a>Передача изменений и проверка
 
-1. (Необязательно.) Сохраните существующую версию файлов перед началом работы (скачав ее).
-2. Отправка *TrustFrameworkExtensions.xml* и *ProfileEdit.xml* и выберите, чтобы перезаписать существующий файл.
+1. (Необязательно.) Сохраните существующую версию (путем загрузки) файлов, прежде чем продолжать.
+2. Передайте *TrustFrameworkExtensions. XML* и *ProfileEdit. XML* и выберите, чтобы перезаписать существующий файл.
 3. Выберите **B2C_1A_ProfileEdit**.
-4. Для **выберите приложение** на странице "Обзор" пользовательской политики, выберите веб-приложение с именем *webapp1* , которую вы ранее зарегистрировали. Убедитесь, что **URL-адрес ответа** является `https://jwt.ms`.
-4. Выберите **запустить сейчас**. Войдите, используя учетные данные учетной записи и нажмите кнопку **Продолжить**.
+4. Для параметра **выбрать приложение** на странице Обзор настраиваемой политики выберите веб-приложение с именем *APP1* , которое вы зарегистрировали ранее. Убедитесь, что **URL-адрес ответа** имеет значение `https://jwt.ms`.
+4. Выберите **Запустить сейчас**. Выполните вход с использованием учетных данных своей учетной записи и нажмите кнопку **продолжить**.
 
-Если все настроено правильно, токен включает новое утверждение `city`, со значением `Redmond`.
+Если все настроено правильно, маркер включает новое утверждение `city`со значением. `Redmond`
 
 ```JSON
 {
@@ -249,7 +253,15 @@ public class ResponseContent
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Взаимодействие можно также реализовать как профиль проверки. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-rest-api-validation-custom.md).
-- [Azure Active Directory B2C. Создание и использование настраиваемых атрибутов в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
+Взаимодействие можно также реализовать как профиль проверки. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-rest-api-validation-custom.md).
+
+[Azure Active Directory B2C. Создание и использование настраиваемых атрибутов в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
+
+[Общие сведения Технический профиль RESTFUL](restful-technical-profile.md)
+
+Чтобы узнать, как защитить API, см. следующие статьи:
+
+* [Azure Active Directory B2C: Secure your RESTful services using HTTP basic authentication](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) (Azure Active Directory B2C: защита служб RESTful с использованием обычной проверки подлинности HTTP)
+* [Azure Active Directory B2C. Защита служб RESTful с помощью сертификатов клиента](active-directory-b2c-custom-rest-api-netfw-secure-cert.md)

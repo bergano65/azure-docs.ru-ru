@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb4378047f34f3f635b2f1dd2425bbee28f91178
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 5a6f7c6de005112578cc29865574e5e255c99a8e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815721"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873072"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning-service"></a>Настройка гиперпараметров модели с помощью Службы машинного обучения Azure
 
@@ -325,11 +325,9 @@ RunDetails(hyperdrive_run).show()
 
 Кроме того, вы можете визуально оценить соотношение между эффективностью и значениями отдельных гиперпараметров, используя график параллельных координат. 
 
-![параллельные координаты для настройки гиперпараметров](media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)
+[![Координаты параллельной настройки параметров](media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
 
 Вы также можете визуализировать все запуски для настройки гиперпараметров на веб-портале Azure. Дополнительную информацию о просмотре сведений об эксперименте на веб-портале см. в [этой статье](how-to-track-experiments.md#view-the-experiment-in-the-web-portal).
-
-![портал настройки гиперпараметров](media/how-to-tune-hyperparameters/HyperparameterTuningPortal.png)
 
 ## <a name="find-the-best-model"></a>Поиск наиболее эффективной модели
 

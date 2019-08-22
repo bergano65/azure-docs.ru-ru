@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/08/2019
-ms.openlocfilehash: e648f89a86d7d6064b883496f888cb27a4af27e4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1c4fae5c41f4f23c4a7fe3135b602133aa69aacd
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566401"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873738"
 ---
 # <a name="what-is-azure-sql-database-service"></a>Что такое служба базы данных SQL Azure
 
@@ -197,6 +197,8 @@ ms.locfileid: "68566401"
   Бесплатный, доступный для скачивания редактор кода с открытым кодом для Windows, macOS и Linux, поддерживающий расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace) для выполнения запросов к Microsoft SQL Server, базе данных SQL Azure и хранилищу данных SQL.
 
 База данных SQL поддерживает создание приложений на языках Python, Java, Node.js, PHP, Ruby и .NET для операционных систем MacOS, Windows и Linux. База данных SQL поддерживает те же [библиотеки подключений](sql-database-libraries.md), что и SQL Server.
+
+[!INCLUDE [sql-database-create-manage-portal](includes/sql-database-create-manage-portal.md)]
 
 ## <a name="sql-database-frequently-asked-questions-faq"></a>База данных SQL Azure: часто задаваемые вопросы
 

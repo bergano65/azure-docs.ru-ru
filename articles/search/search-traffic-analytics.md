@@ -2,19 +2,19 @@
 title: Реализация аналитики поискового трафика в Поиске Azure
 description: Включите аналитику поискового трафика для Поиска Azure, чтобы добавить данные телеметрии и событий, инициированных пользователем, в файлы журнала.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: b15ae30151b22509a78b9a39d258991363a05e5b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: bb12ed2f18df100ab3f679e7a8a3ef1e7c1aca45
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295428"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647812"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-search"></a>Реализация аналитики поискового трафика в Поиске Azure
 Аналитика поискового трафика — это модель реализации цикла обратной связи для службы поиска. Эта модель описывает необходимые данные и метод их сбора с помощью Application Insights, лидирующего решения для мониторинга служб на нескольких платформах.
@@ -98,7 +98,7 @@ ms.locfileid: "67295428"
 
 Каждый отправляемый поисковой запрос необходимо регистрировать в качестве события поиска, используя следующую схему пользовательского события Application Insights:
 
-**SearchServiceName**: имя службы поиска (string) **SearchId**: (guid) уникальный идентификатор поискового запроса (поставляется в ответе поиска) **IndexName**: (строка) индекс службы поиска для запросить **QueryTerms**: (строка) условия поиска, введенные пользователем **ResultCount**: (int) количество документов, которые были возвращены (поставляется в ответе поиска)  **ScoringProfile**: (строка) имя профиля оценки используется, если таковые имеются
+**SearchServiceName**: (String) имя службы поиска **SearchId**: (GUID) уникальный идентификатор поискового запроса (входит в ответ поиска) **IndexName**: (String) поисковый индекс службы поиска **куеритермс**: (String). термины, указанные пользователем **ресулткаунт**: (int) количество документов, которые были возвращены (в ответе поиска) **скорингпрофиле**: (строка) имя используемого профиля оценки, если таковые имеются
 
 > [!NOTE]
 > Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. [здесь](https://docs.microsoft.com/rest/api/searchservice/search-documents#request).
@@ -194,7 +194,7 @@ ms.locfileid: "67295428"
 
 ![Панель мониторинга Power BI для Поиска Azure](./media/search-traffic-analytics/AzureSearch-PowerBI-Dashboard.png "Панель мониторинга Power BI для Поиска Azure")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Выполните инструментирование приложения поиска для получения детальных и полезных сведений о службе поиска.
 
 Вы можете узнать больше об [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) и перейти на [страницу цен](https://azure.microsoft.com/pricing/details/application-insights/), чтобы получить дополнительные сведения о соответствующих уровнях служб.

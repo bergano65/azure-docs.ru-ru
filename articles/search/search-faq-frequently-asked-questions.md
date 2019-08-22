@@ -2,25 +2,25 @@
 title: Часто задаваемые вопросы о службе "Поиск Azure"
 description: Получите ответы на часто задаваемые вопросы о службе "Поиск Microsoft Azure", размещенной облачной службе поиска в Microsoft Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: c77f26187914b2c6e52426bb2a07303b22ccb2b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d4aae2f2ef9ccbc645647125682d999c11c99ab6
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65023997"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649835"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Поиск Azure"
 
  Найдите ответы на часто задаваемые вопросы о понятиях, коде и сценариях, связанных со службой "Поиск Azure".
 
-## <a name="platform"></a>платформа
+## <a name="platform"></a>Платформа
 
 ### <a name="how-is-azure-search-different-from-full-text-search-in-my-dbms"></a>Чем служба "Поиск Azure" отличается от полнотекстового поиска в СУБД?
 
@@ -64,7 +64,7 @@ ms.locfileid: "65023997"
 
 Нет, эта операция не поддерживается. Поиск всегда ограничивается одним индексом.
 
-### <a name="can-i-restrict-search-index-access-by-user-identity"></a>Можно ограничить доступ к индексу поиска по удостоверению пользователя?
+### <a name="can-i-restrict-search-index-access-by-user-identity"></a>Можно ли ограничить доступ к индексу поиска по удостоверению пользователя?
 
 Вы можете реализовать [фильтры безопасности](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search) с помощью фильтра `search.in()`. Этот фильтр отлично сочетается со [службами управления удостоверениями, такими как Azure Active Directory (AAD)](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search-with-aad), позволяя фильтровать результаты поиска на основе определенного членства в группе.
 
@@ -90,7 +90,7 @@ ms.locfileid: "65023997"
 
 Для поддержки разных языковых стандартов в одном индексе большинство пользователей выбирает выделенные поля в коллекции. Поля языкового стандарта позволяют назначить соответствующий анализатор. Например, можно назначить анализатору французского языка корпорации Майкрософт поля, содержащие строки на французском языке. Это также упрощает фильтрацию. Если известно, что запрос инициирован на странице с французским языковым стандартом (fr-fr), можно ограничить результаты поиска этим полем. Можно также создать [профиль оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), чтобы присвоить этому полю больший относительный вес. В службе "Поиск Azure" на выбор предлагается более [50 поддерживаемых языковых анализаторов](https://docs.microsoft.com/azure/search/search-language-support).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 У вас есть вопрос об отсутствующей функции или компоненте? Отправьте запрос на [веб-сайте User Voice](https://feedback.azure.com/forums/263029-azure-search).
 

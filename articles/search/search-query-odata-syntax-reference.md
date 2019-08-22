@@ -1,13 +1,13 @@
 ---
-title: Справочник по синтаксису выражений OData - поиска Azure
-description: Формальный грамматике и синтаксисе спецификация OData выражения в запросах поиска Azure.
+title: Справочник по синтаксису выражений OData — Поиск Azure
+description: Формальное описание грамматики и синтаксиса для выражений OData в запросах поиска Azure.
 ms.date: 06/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
 author: brjohnstmsft
 ms.author: brjohnst
-ms.manager: cgronlun
+manager: nitinme
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,29 +19,29 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: ebe41ba61ac5136900328db9c35acb8551dcd5b2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 5d7e6456cd6a6648ff2ca38ecbb4f2de5479d7c9
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67428660"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647498"
 ---
-# <a name="odata-expression-syntax-reference-for-azure-search"></a>Справочник по синтаксису выражений OData для службы поиска Azure
+# <a name="odata-expression-syntax-reference-for-azure-search"></a>Справочник по синтаксису выражений OData для поиска Azure
 
-Поиск Azure использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) как параметры в API. Чаще всего выражения OData используются для `$orderby` и `$filter` параметров. Эти выражения могут быть сложными, содержащий несколько предложений, функции и операторы. Тем не менее даже простые выражения OData, такие как свойства пути, используемые во многих частях API REST службы поиска Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей в API, например когда список вложенные поля в любом файле [средство подбора](index-add-suggesters.md), [функция оценки](index-add-scoring-profiles.md), `$select` параметр , или даже [относящегося к полю поиска в запросах Lucene](query-lucene-syntax.md).
+Поиск Azure использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) в качестве параметров по всему API. Чаще всего для `$orderby` параметров и `$filter` используются выражения OData. Эти выражения могут быть сложными, содержащими несколько предложений, функций и операторов. Однако даже простые выражения OData, такие как пути к свойствам, используются во многих частях REST API поиска Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей везде в API, например при перечислении вложенных полей в [предложении](index-add-suggesters.md), [функции оценки](index-add-scoring-profiles.md), `$select` параметра или даже [поиска по полю в Lucene. запросы](query-lucene-syntax.md).
 
-В этой статье описываются все эти формы с помощью формальная Грамматика выражений OData. Имеется также [интерактивной схемы](#syntax-diagram) для визуального изучения грамматики.
+В этой статье описываются все формы выражений OData с использованием формальной грамматики. Также есть [Интерактивная схема](#syntax-diagram) , позволяющая визуально изучить грамматику.
 
-## <a name="formal-grammar"></a>Формальная Грамматика
+## <a name="formal-grammar"></a>Формальное грамматика
 
-Описывается то подмножество языка OData, поддерживаемые службой поиска Azure с помощью EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) грамматики. «Сверху вниз», начиная с самых сложных выражений и разбить их на более простые выражения перечислены правила. Вверху размещаются правил грамматики, соответствующие конкретным параметрам API REST службы поиска Azure:
+Мы можем описать подмножество языка OData, поддерживаемого службой поиска Azure, с помощью грамматики EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)). Правила перечислены "сверху вниз", начиная с наиболее сложных выражений и разбивая их на более простые выражения. В верхней части представлены правила грамматики, соответствующие определенным параметрам REST API поиска Azure:
 
-- [`$filter`](search-query-odata-filter.md), определяемый `filter_expression` правило.
-- [`$orderby`](search-query-odata-orderby.md), определяемый `order_by_expression` правило.
-- [`$select`](search-query-odata-select.md), определяемый `select_expression` правило.
-- Поле пути, определяется `field_path` правило. Поле пути используются API. Они могут ссылаться на поля индекса, либо верхнего уровня или вложенные поля с одним или несколькими [сложных поле](search-howto-complex-data-types.md) предков.
+- [`$filter`](search-query-odata-filter.md), определяемое `filter_expression` правилом.
+- [`$orderby`](search-query-odata-orderby.md), определяемое `order_by_expression` правилом.
+- [`$select`](search-query-odata-select.md), определяемое `select_expression` правилом.
+- Пути к полям, определяемые `field_path` правилом. Пути к полям используются через API. Они могут ссылаться либо на поля верхнего уровня индекса, либо на подполя с одним или несколькими предками [поля](search-howto-complex-data-types.md) .
 
-После просмотра EBNF [диаграмма синтаксиса](https://en.wikipedia.org/wiki/Syntax_diagram) , позволяющий интерактивно исследовать грамматики и связи между его правила.
+После того как EBNF представляет собой отображаемую [схему синтаксиса](https://en.wikipedia.org/wiki/Syntax_diagram) , которая позволяет интерактивно исследовать грамматику и связи между ее правилами.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -207,12 +207,12 @@ query_type ::= "'full'" | "'simple'"
 search_mode ::= "'any'" | "'all'"
 ```
 
-## <a name="syntax-diagram"></a>Диаграмма синтаксиса
+## <a name="syntax-diagram"></a>Схема синтаксиса
 
-Для визуального изучения грамматики языка OData, поддерживаемые службой поиска Azure, попробуйте интерактивный синтаксис:
+Чтобы визуально изучить грамматику языка OData, поддерживаемую службой поиска Azure, воспользуйтесь интерактивной схемой синтаксиса:
 
 > [!div class="nextstepaction"]
-> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/)
+> [Схема синтаксиса OData для поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/)
 
 ## <a name="see-also"></a>См. также  
 

@@ -6,15 +6,15 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 03/01/2019
 author: mgottein
-manager: cgronlun
+manager: nitinme
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: b6bb70e4c56adb162006d2597d301c73b12d2a8a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0801931b57302ae1d627dab783a40d2407c19ac
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540875"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650084"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "65540875"
 ## <a name="image-search"></a>Поиск изображений
 Теперь полнотекстовый поиск, фасетную навигацию и функции сортировки поиска Azure можно применить к метаданным изображений, которые хранятся в BLOB-объектах.
 
-Когнитивный поиск включает навыки обработки изображений, например [оптического распознавания символов (OCR)](cognitive-search-skill-ocr.md) и идентификация [функции visual](cognitive-search-skill-image-analysis.md) , упрощающие позволяет индексировать визуальное содержимое, обнаруженные в каждом изображение.
+Функция "Автопоиск" включает такие навыки обработки изображений, как [оптическое распознавание символов (OCR)](cognitive-search-skill-ocr.md) и идентификация [визуальных функций](cognitive-search-skill-image-analysis.md) , позволяющих индексировать визуальное содержимое, найденное в каждом изображении.
 
 ## <a name="index-and-search-through-json-blobs"></a>Индексирование и поиск BLOB-объектов с JSON
 Для поиска Azure можно настроить извлечение структурированного содержимого BLOB-объектов, содержащих JSON. Поиск Azure может считывать большие BLOB-объекты с JSON и разбивать структурированное содержимое на соответствующие поля документа. Поиск Azure может также считывать BLOB-объекты, которые содержат массив объектов JSON, и сопоставлять каждый элемент такого массива с отдельным документом.
