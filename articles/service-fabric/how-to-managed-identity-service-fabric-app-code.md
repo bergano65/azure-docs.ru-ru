@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 7/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: f0944e9fddc0afb28f758ba7b16232330d3bc34d
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 5095e680eb7fd33d28acb2d187f83d86db1b46bf
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/20/2019
-ms.locfileid: "69635528"
+ms.locfileid: "69656624"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure (Предварительная версия)
 
@@ -60,7 +60,7 @@ GET 'http://localhost:2377/metadata/identity/oauth2/token?api-version=2019-07-01
 | `GET` | HTTP-команда, указывающая, что необходимо извлечь данные из конечной точки. В этом случае используется маркер доступа OAuth. | 
 | `http://localhost:2377/metadata/identity/oauth2/token` | Управляемая конечная точка удостоверения для приложений Service Fabric, предоставляемых через переменную среды MSI_ENDPOINT. |
 | `api-version` | Параметр строки запроса, указывающий версию API службы токенов управляемого удостоверения; Сейчас единственным допустимым значением является `2019-07-01-preview`и может быть изменено. |
-| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Это будет отражено в `aud` утверждении (аудитории) выданного маркера. В этом примере запрашивается маркер для доступа к Azure Key Vault, чей URI идентификатора https://keyvault.azure.com/ приложения —. |
+| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Это будет отражено в `aud` утверждении (аудитории) выданного маркера. В этом примере запрашивается маркер для доступа к Azure Key Vault, для которого URI идентификатора приложения\/— HTTPS:/keyvault.Azure.com/. |
 | `Secret` | Поле заголовка HTTP-запроса, необходимое для службы Service Fabric управляемого маркера идентификации для служб Service Fabric для проверки подлинности вызывающего объекта. Это значение предоставляется средой выполнения SF через переменную среды MSI_SECRET. |
 
 

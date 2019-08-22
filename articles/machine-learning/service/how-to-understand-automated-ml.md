@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.openlocfilehash: ea85a0906ce231312c491d31a33c331480d23812
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: a5632767ef8230d16b47f350436fda53794efdf5
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68362159"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872564"
 ---
 # <a name="understand-automated-machine-learning-results"></a>Общие сведения об автоматических результатах машинного обучения
 
@@ -26,7 +26,7 @@ ms.locfileid: "68362159"
 + [Метрики, диаграммы и графики для моделей регрессии](#regression)
 + [Интерпретируемость модели и важность функции](#explain-model)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -47,15 +47,15 @@ ms.locfileid: "68362159"
 
 1. В списке экспериментов выберите ту, которую хотите просмотреть.
 
-   ![Список экспериментов](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-list.png)
+   [![Список экспериментов](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-list.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-list-expanded.png)
 
 1. В нижней таблице выберите **номер запуска**.
 
-   ![Запуск эксперимента](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run.png)
+   [ Запуститьэксперимент![](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run-expanded.png))
 
 1. В таблице итерации выберите **номер итерации** для модели, которую необходимо исследовать далее.
 
-   ![Модель эксперимента](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-model.png)
+   [![Модель эксперимента](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-model.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-model-expanded.png)
 
 Эти же результаты можно увидеть во время выполнения при использовании `RunDetails`мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py).
 
@@ -192,7 +192,7 @@ normalized_root_mean_squared_log_error;|Нормализованная сред�
 
 Пример 1 Модель регрессии с низкой точностью прогнозирования ![Модель регрессии с низкой точностью прогнозирования](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression1.png)
 
-Пример 2 Модель регрессии с высокой точностью прогнозирования ![Модель регрессии с высокой точностью прогнозирования](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression2.png)
+Пример 2 Регрессионная модель с высокой точностью прогнозирования [ ![модели регрессии с высокой точностью ее прогнозов](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression2.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression2-expanded.png)
 
 
 
