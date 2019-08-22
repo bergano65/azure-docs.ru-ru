@@ -9,16 +9,18 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 4ce0606558cad981b183282bee026bdcef6b0cdd
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 78fb48d2584e94e5c38a4648f1ae41e566637601
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815788"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69875580"
 ---
 # <a name="create-an-azure-iot-central-application"></a>Создание приложения Azure IoT Central
 
-С помощью пользовательского интерфейса Azure IoT Central _конструктор_ может определить свое приложение Microsoft Azure IoT Central. В этом кратком руководстве объясняется, как создать приложение Azure IoT Central, которое содержит пример _шаблона устройства_ и _имитированные устройства_ .
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
+
+С помощью пользовательского интерфейса Azure IoT Central _конструктор_ может определить свое приложение Microsoft Azure IoT Central. В этом кратком руководстве объясняется, как создать приложение Azure IoT Central, которое содержит пример _шаблона устройства_ и _имитированные устройства_.
 
 ## <a name="create-an-application"></a>Создание приложения
 

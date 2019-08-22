@@ -11,18 +11,18 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 66effb095edf7927a38fca53b2ff317e9bad468e
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 525cb444ad7b1b78de867f83539ac338ddd144e9
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619610"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562930"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
 Решение "Функции Azure" позволяет размещать в Linux собственные функции в пользовательском контейнере. Кроме того, вы можете [использовать для размещения контейнер по умолчанию в службе приложений Azure](functions-create-first-azure-function-azure-cli-linux.md). Эта функциональность требует [среды выполнения Функций 2.x](functions-versions.md).
 
-Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа. Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base). Сейчас [Поддержка Python](functions-reference-python.md) находится в предварительной версии.
+Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа. Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base). 
 
 Из этого руководства вы узнаете, как с помощью Azure Functions Core Tools создать функцию в пользовательском образе Linux. Вы публикуете этот образ в приложении-функции Azure, которое было создано с помощью Azure CLI. Позже вы обновите функцию для подключения к Хранилищу очередей Azure. Вы также включите.  
 
@@ -69,8 +69,6 @@ func init MyFunctionProj --docker
 * `dotnet`. Создает проект библиотеки классов .NET Core (.csproj).
 * `node`. Создает проект JavaScript.
 * `python`. Создает проект Python.
-
-[!INCLUDE [functions-python-preview-note](../../includes/functions-python-preview-note.md)]
 
 При выполнении команды вы увидите выходные данные примерно следующего содержания.
 

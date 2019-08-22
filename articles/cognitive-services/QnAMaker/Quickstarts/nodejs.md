@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 02/13/2019
+ms.date: 08/20/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5b410032004bce7b97e036216c922201e1ac80c9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: a6a8c0118e8179da570ce91b9fa7e3523bae1d3f
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068292"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650563"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-nodejs"></a>Использование REST API службы QnA Maker с Node.js 
 <a name="HOLTop"></a>
@@ -40,7 +40,7 @@ ms.locfileid: "67068292"
 
 [!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-nodejs-repo-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода потребуется [Node.js 6](https://nodejs.org/en/download/).
 
@@ -1761,7 +1761,7 @@ put_alterations (path, content, function (result) {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

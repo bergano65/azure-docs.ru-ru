@@ -7,12 +7,12 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: 35a41abb156326612c2d60829980f73457cde881
-ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
+ms.openlocfilehash: 05b591137a53e60b3197feb7f57564a8d4af7a44
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601767"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624281"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании файлов Azure. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -83,8 +83,6 @@ ms.locfileid: "68601767"
 ### <a name="how-many-on-demand-backups-can-i-take-per-file-share-br"></a>Сколько раз можно выполнить резервное копирование по запросу для каждого файлового ресурса? <br/>
 В любое время вы можете хранить до 200 моментальных снимков для файлового ресурса. При этом учитываются моментальные снимки, сделанные службой Azure Backup в соответствии с политикой. Если операции резервного копирования завершаются сбоем после достижения этого ограничения, удалите точки восстановления по запросу для успешной архивации.
 
-### <a name="after-enabling-virtual-networks-on-my-storage-account-the-backup-of-file-shares-in-the-account-started-failing-why"></a>После включения виртуальных сетей в учетной записи хранения начались сбои при резервном копировании файловых ресурсов в этой учетной записи. Почему?
-Служба Backup для файловых ресурсов Azure не поддерживает учетные записи хранения с включенными виртуальными сетями. Отключите виртуальные сети в учетных записях хранения, чтобы выполнять резервное копирование.
 
 ## <a name="restore"></a>Восстановление
 

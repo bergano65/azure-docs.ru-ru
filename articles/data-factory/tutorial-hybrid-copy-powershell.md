@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: abnarain
-ms.openlocfilehash: 49d9be9f10f0e840cfa3d027901a297de8cbf750
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3f49bed0253a380dbcb0a526364c85c2031b0116
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60328295"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640331"
 ---
 # <a name="tutorial-copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Руководство по Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
 В этом руководстве для создания конвейера фабрики данных, который копирует данные из локальной базы данных SQL Server в хранилище BLOB-объектов Azure, будет использоваться Azure PowerShell. Вы создадите и будете использовать локальную среду выполнения интеграции, которая перемещает данные между локальным и облачным хранилищами данных. 
@@ -76,13 +76,11 @@ ms.locfileid: "60328295"
 
 1. В левой области выберите **Больше служб**, отфильтруйте содержимое по ключевому слову **хранение**, а затем выберите **Учетные записи хранения**.
 
-    ![Поиск учетной записи хранения](media/tutorial-hybrid-copy-powershell/search-storage-account.png)
+    ![Поиск учетной записи хранения](media/doc-common-process/search-storage-account.png)
 
 1. В списке учетных записей хранения найдите с помощью фильтра свою учетную запись хранения (при необходимости), а затем выберите эту учетную запись. 
 
 1. В окне **Учетная запись хранения** выберите параметр **Ключи доступа**.
-
-    ![Получение имени и ключа учетной записи хранения](media/tutorial-hybrid-copy-powershell/storage-account-name-key.png)
 
 1. Скопируйте значения полей **Имя учетной записи хранения** и **key1**. Затем вставьте их в Блокнот или другой редактор для дальнейшего использования в руководстве. 
 
@@ -107,7 +105,6 @@ ms.locfileid: "60328295"
 
 1. Не закрывайте окно **контейнера** **adftutorial**. Она понадобится для проверки выходных данных в конце этого руководства. Фабрика данных автоматически создает выходную папку в этом контейнере, поэтому ее не нужно создавать.
 
-    ![Окно контейнера](media/tutorial-hybrid-copy-powershell/container-page.png)
 
 ### <a name="windows-powershell"></a>Windows PowerShell
 
@@ -415,7 +412,7 @@ ms.locfileid: "60328295"
     > [!IMPORTANT]
     > - Выберите раздел в зависимости от типа проверки подлинности, который используется для подключения к экземпляру SQL Server.
     > - Замените **\<integration runtime name>** именем своей среды выполнения интеграции.
-    > - Перед сохранением файла замените **\<servername>**, **\<databasename>**, **\<username>** и **\<password>** значениями экземпляра SQL Server.
+    > - Перед сохранением файла замените **\<servername>** , **\<databasename>** , **\<username>** и **\<password>** значениями экземпляра SQL Server.
     > - Если в имени учетной записи пользователя или имени сервера необходимо использовать символ обратной косой черты (\\), добавьте escape-символ (\\). Например, *mydomain\\\\myuser*. 
 
 1. Чтобы зашифровать конфиденциальные данные (имя пользователя, пароль и т. д.), выполните командлет `New-AzDataFactoryV2LinkedServiceEncryptedCredential`.  

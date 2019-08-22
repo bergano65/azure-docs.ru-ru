@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 04/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 74f0a3c9c2d93eda35a364c9bac9d3aff7115312
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 681ab519331f40718f3465f162830e14baac4cff
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947260"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543825"
 ---
 # <a name="tutorial-secure-a-web-server-on-a-linux-virtual-machine-in-azure-with-ssl-certificates-stored-in-key-vault"></a>Руководство по Защита веб-сервера на виртуальной машине Linux в Azure с помощью SSL-сертификатов, хранимых в Key Vault
 Чтобы защитить веб-серверы, можно использовать SSL-сертификат (Secure Sockets Layer) для шифрования веб-трафика. SSL-сертификаты могут храниться в Azure Key Vault и разрешать безопасное развертывание сертификатов на виртуальных машинах Linux в Azure. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -78,7 +78,7 @@ secret=$(az keyvault secret list-versions \
           --vault-name $keyvault_name \
           --name mycert \
           --query "[?attributes.enabled].id" --output tsv)
-vm_secret=$(az vm secret format --secrets "$secret" -g myResourceGroup --keyvault $keyvault_name)
+vm_secret=$(az vm secret format --secrets "$secret" -g myResourceGroupSecureWeb --keyvault $keyvault_name)
 ```
 
 ### <a name="create-a-cloud-init-config-to-secure-nginx"></a>Создание конфигурации cloud-init для защиты сервера NGINX

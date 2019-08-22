@@ -7,12 +7,12 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: 03b65c71201ba125cb3924a52e8760a088374aa6
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d5702576b3353bbc779601c7a5fe91417d73c7a1
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954720"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624353"
 ---
 # <a name="back-up-and-restore-azure-file-shares"></a>Резервное копирование и восстановление файловых ресурсов Azure
 В этой статье описывается, как с помощью портала Azure создавать резервные копии и восстанавливать [файловые ресурсы Azure](../storage/files/storage-files-introduction.md).
@@ -32,7 +32,6 @@ ms.locfileid: "68954720"
 ## <a name="limitations-for-azure-file-share-backup-during-preview"></a>Ограничения резервного копирования файловых ресурсов Azure в предварительной версии
 Функция резервного копирования файловых ресурсов Azure находится в стадии предварительной версии. Файловые ресурсы Azure поддерживаются в учетных записях хранения общего назначения версий 1 и 2. Следующие сценарии резервного копирования не поддерживаются для файловых ресурсов Azure:
 - Поддержка резервного копирования файловых ресурсов Azure в учетные записи хранения с помощью репликации [хранилища, избыточного в пределах зоны](../storage/common/storage-redundancy-zrs.md) (ZRS), сейчас включена только в [этих регионах](backup-azure-files-faq.md#in-which-geos-can-i-back-up-azure-file-shares-).
-- Нельзя обеспечить защиту файловых ресурсов Azure в учетных записях хранения с включенными виртуальными сетями или брандмауэром.
 - Нельзя использовать CLI для применения защиты Файлов Azure с помощью Azure Backup.
 - Сейчас Azure Backup поддерживает настройку ежедневного резервного копирования для файловых ресурсов Azure.
 - Максимальное число запланированных резервных копий в день — одна.

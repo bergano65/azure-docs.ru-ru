@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 70431870027cc27d886995b0bf7f47108ad767fa
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: ddbf2e5349a77a45155fafd07da5489d0073b093
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273938"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876381"
 ---
 # <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Восстановление диска и создание восстановленной виртуальной машины в Azure
 Служба архивации Azure создает точки восстановления, которые хранятся в геоизбыточных хранилищах восстановления. Используя точку восстановления, можно восстановить всю виртуальную машину или только отдельные файлы. В этой статье описан процесс восстановления всей виртуальной машины с помощью CLI. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -95,7 +95,7 @@ az backup job list \
 
 В результате вы получите приблизительно следующие выходные данные. Они указывают на то, что задание восстановления *выполняется*:
 
-```
+```output
 Name      Operation        Status      Item Name    Start Time UTC       Duration
 --------  ---------------  ----------  -----------  -------------------  --------------
 7f2ad916  Restore          InProgress  myvm         2017-09-19T19:39:52  0:00:34.520850

@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.custom: seo-java-august2019
-ms.openlocfilehash: e8ca40ec86bc3af92fd23bb7acce3d6c39b082fb
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 7a76ed943a9c3f7312653d1ea4d714e4c02a5294
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933922"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615617"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-java-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB
 
@@ -220,7 +220,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB, базу данных Cassandra и контейнер с помощью обозревателя данных, а также как запустить приложение, чтобы эти операции выполнялись программными средствами. Теперь вы можете импортировать дополнительные данные в контейнер Azure Cosmos DB. 
+Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB, базу данных Cassandra и контейнер с помощью обозревателя данных, а также как запустить приложение, чтобы эти операции выполнялись программными средствами. Теперь вы можете импортировать дополнительные данные в контейнер Azure Cosmos. 
 
 > [!div class="nextstepaction"]
 > [Импорт данных Cassandra в Azure Cosmos DB](cassandra-import-data.md)

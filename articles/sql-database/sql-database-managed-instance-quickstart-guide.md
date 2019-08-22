@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 07/11/2019
-ms.openlocfilehash: 97f7393622311103d94d3067205f902e3eec6843
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a8dfe0db5277a995b6e6675381ebeb5aeb243c9b
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567358"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647212"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
 
@@ -55,8 +55,6 @@ ms.locfileid: "68567358"
 ## <a name="customize-network-environment"></a>Настройка сетевой среды
 
 Хотя виртуальная сеть и подсеть могут быть автоматически настроены при создании экземпляра с помощью [портала Azure](sql-database-managed-instance-get-started.md), было бы целесообразно настроить их до начала создания Управляемых экземпляров, ведь так можно настроить параметры и виртуальной сети, и подсети. Самый простой способ создать и настроить сетевую среду — использовать шаблон [развертывания ресурса Azure](sql-database-managed-instance-create-vnet-subnet.md), который создаст и настроит сеть и подсеть, где будет размещен экземпляр. Для этого просто нужно нажать кнопку развертывания Azure Resource Manager и заполнить форму параметрами.
-
-В качестве альтернативы для автоматизации создания сети можно использовать [скрипт PowerShell](https://www.powershellmagazine.com/20../../configuring-azure-environment-to-set-up-azure-sql-database-managed-instance-preview/).
 
 В качестве альтернативы можно также использовать этот [скрипт PowerShell](https://www.powershellmagazine.com/2018/07/23/configuring-azure-environment-to-set-up-azure-sql-database-managed-instance-preview/) для автоматизации создания сети.
 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Создание индекса с расширением ИИ на портале Azure — Поиск Azure
 description: Извлечение данных, обработка естественного языка и изображений на портале индексирования в службе "Поиск Azure" с использованием портала Azure и примера данных.
-manager: cgronlun
+manager: nitinme
 author: HeidiSteen
 services: search
 ms.service: search
@@ -9,12 +9,12 @@ ms.subservice: cognitive-search
 ms.topic: quickstart
 ms.date: 07/09/2019
 ms.author: heidist
-ms.openlocfilehash: 7bc8bd77ef581134fad0cb2e11277dc4fcee99c4
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: a4654e5895e9c7768b9fa6b975ef848294bcc8cc
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68841179"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648907"
 ---
 # <a name="quickstart-create-an-ai-indexing-pipeline-using-cognitive-skills-in-azure-search"></a>Краткое руководство. Создание конвейера индексирования ИИ с помощью когнитивных навыков в Поиске Azure
 
@@ -162,7 +162,7 @@ ms.locfileid: "68841179"
 
 Другим важным понятием является выполнение навыков в отношении полей входных данных. На портале необходимо выбрать одно поле входных данных для всех навыков. В коде входными данными могут быть другие поля или выходные данные вышестоящих навыков.
 
- Входные данные для навыка сопоставляются с полем выходных данных индекса. На внутреннем уровне портал настраивает [заметки](cognitive-search-concept-annotations-syntax.md) и определяет [набор навыков](cognitive-search-defining-skillset.md), устанавливая порядок операций и общую последовательность действий. Эти шаги скрыты на портале, но эти понятия становятся важными при написании кода.
+ Входные данные для навыка сопоставляются с полем выходных данных индекса. На внутреннем уровне портал настраивает [заметки](cognitive-search-concept-annotations-syntax.md) и определяет [набор навыков](cognitive-search-defining-skillset.md), устанавливая порядок операций и общий поток действий. Эти шаги скрыты на портале, но эти понятия становятся важными при написании кода.
 
 Наконец, вы узнали, что для просмотра результатов необходимо запросить индекс. В результате служба "Поиск Azure" предоставляет доступный для поиска индекс, который можно запрашивать с помощью [простого](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) или [полностью расширенного синтаксиса запроса](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search). Индекс, который содержит обогащенные поля, не отличается от других. Если вы хотите включить стандартные или [настраиваемые анализаторы](search-analyzers.md), [профили оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [синонимы](search-synonyms.md), [фильтры аспектов](search-filters-facets.md), географический поиск или любую другую функцию службы "Поиск Azure", вы можете это сделать.
 

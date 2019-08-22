@@ -1,7 +1,7 @@
 ---
 title: Начало работы с хранилищем знаний (предварительная версия) в Поиске Azure
 description: Из этой статьи вы узнаете, как отправлять обогащенные документы, созданные в конвейерах индексирования ИИ службы "Поиск Azure", в хранилище знаний в учетной записи хранения Azure. С его помощью можно хранить обогащенные документы, просматривать и преобразовывать их, а также обеспечивать доступ к ним службе "Поиск Azure" и другим приложениям.
-manager: cgronlun
+manager: nitinme
 author: HeidiSteen
 services: search
 ms.service: search
@@ -9,12 +9,12 @@ ms.subservice: cognitive-search
 ms.topic: tutorial
 ms.date: 06/29/2019
 ms.author: heidist
-ms.openlocfilehash: 7539481105e1c1fd3b6816778e31e6edde8842d3
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: d6cecdce9bc4f7fee9ec936ac73b6accc77084c4
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840813"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648836"
 ---
 # <a name="how-to-get-started-with-knowledge-store-in-azure-search"></a>Узнайте, как начать работу с хранилищем знаний (предварительная версия) в Поиске Azure
 

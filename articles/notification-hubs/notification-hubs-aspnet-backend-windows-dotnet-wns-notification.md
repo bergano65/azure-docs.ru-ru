@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
 ms.author: jowargo
-ms.openlocfilehash: 32714b3e5a5ed859716faef2ca660f8b2c90b089
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: a4949b12076ea7cdbbf882d199279410da95e005
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402514"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558649"
 ---
 # <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство по Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
 
@@ -31,7 +31,7 @@ ms.locfileid: "58402514"
 В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Для проверки подлинности клиентов используется серверная часть веб-API ASP.NET. Когда серверная часть проверяет подлинность пользователя клиентского приложения, к регистрации уведомления автоматически добавляется тег. Серверная часть использует этот тег для отправки уведомлений определенному пользователю.
 
 > [!NOTE]
-> Полный код для этого руководства можно найти на [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers).
+> Полный код для этого руководства можно найти на [GitHub](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/NotifyUsers).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -116,7 +116,7 @@ ms.locfileid: "58402514"
         </StackPanel>
     </Grid>
     ```
-9. В обозревателе решений откройте файл `MainPage.xaml.cs` для проектов **(Windows 8.1)** и **(Windows Phone 8.1)**. В верхнюю часть каждого из файлов добавьте такие `using` операторы:
+9. В обозревателе решений откройте файл `MainPage.xaml.cs` для проектов **(Windows 8.1)** и **(Windows Phone 8.1)** . В верхнюю часть каждого из файлов добавьте такие `using` операторы:
 
     ```csharp
     using System.Net.Http;

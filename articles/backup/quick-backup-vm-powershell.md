@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/16/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: b5c800e1b07fab2026ab74209a41bc07cc56238f
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: ea4f982409f339487cd570230ebbb75682f409ec
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019496"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69874602"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 
@@ -144,7 +144,7 @@ ms.locfileid: "69019496"
     ```
     В результате вы получите приблизительно следующие выходные данные. Они указывают на то, что задание **выполняется**:
 
-    ```
+    ```output
     WorkloadName   Operation         Status       StartTime              EndTime                JobID
     ------------   ---------         ------       ---------              -------                -----
     myvm           Backup            InProgress   9/18/2017 9:38:02 PM                          9f9e8f14

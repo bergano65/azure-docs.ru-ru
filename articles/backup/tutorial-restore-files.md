@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 553f19a2cb621698cb5b47e56d7cb30d529cc243
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 9e71757215f6a0a5b664abd3f8a9ee632b1535f3
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467062"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876369"
 ---
 # <a name="restore-files-to-a-virtual-machine-in-azure"></a>Восстановление файлов на виртуальной машине в Azure
 Служба архивации Azure создает точки восстановления, которые хранятся в геоизбыточных хранилищах восстановления. Используя точку восстановления, можно восстановить всю виртуальную машину или только отдельные файлы. В этой статье подробно описывается восстановление отдельных файлов. Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -142,7 +142,7 @@ ms.locfileid: "68467062"
 
     В выходных данных сценария будет указан путь к точке подключения. В следующем примере выходные данные указывают, что точка восстановления подключена по адресу */home/azureuser/myVM-20170919213536/Volume1*:
 
-    ```
+    ```output
     Microsoft Azure VM Backup - File Recovery
     ______________________________________________
     Please enter the password as shown on the portal to securely connect to the recovery point. : c068a041ce12465

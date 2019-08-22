@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 3/12/2018
-ms.openlocfilehash: a1a980e1f8b004c4a3dba53e4f83367022074c7c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e3aaf943b5eecd9ec1853c09ea36156b98560d3d
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007963"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648709"
 ---
 # <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-identities-for-azure-resources"></a>Использование образа Azure Marketplace для создания виртуальной машины Terraform Linux с управляемым удостоверением для ресурсов Azure
 
@@ -85,7 +85,7 @@ ms.locfileid: "58007963"
 
 `. ~/tfEnv.sh`
 
-В предыдущем скрипте для аутентификации в Azure и назначения управляемому удостоверению виртуальной машины прав участника на всю подписку используется механизм [интерактивного входа с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest). 
+В предыдущем скрипте для аутентификации в Azure и назначения управляемому удостоверению виртуальной машины прав участника на всю подписку используется механизм [интерактивного входа с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest#sign-in-interactively). 
 
  У виртуальной машины есть сервер удаленного состояния Terraform. Чтобы включить его в развертывание Terraform, скопируйте файл remoteState.tf из каталога tfTemplate в корень скриптов Terraform.  
 

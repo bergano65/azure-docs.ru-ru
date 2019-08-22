@@ -9,18 +9,16 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/06/2019
-ms.openlocfilehash: cf35651f7dd839e8792029851b9bfe278036624c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: eb84dc1b5bf3f756e484ef27aaa998ab6b94cc51
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185904"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891627"
 ---
 Эксперимент выполняется с целевым объектом вычислений. Это вычислительный ресурс, подключенный к вашей рабочей области.  После создания целевого объекта вычислений его можно повторно использовать при последующих запусках.
 
 1. Выберите **Выполнить** в нижней части окна, чтобы запустить эксперимент.
-
-     ![Выполнение эксперимента](./media/aml-ui-create-training-compute/run-experiment.png)
 
 1. Если в вашей рабочей области существует вычислительный ресурс, его можно выбрать в диалоговом окне **настройки целевых объектов вычислений**.  Если нет, выберите **Создать**.
 

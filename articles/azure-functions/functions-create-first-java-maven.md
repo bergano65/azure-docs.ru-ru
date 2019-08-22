@@ -13,12 +13,12 @@ ms.date: 08/10/2018
 ms.author: routlaw
 ms.reviewer: glenga
 ms.custom: mvc, devcenter, seo-java-july2019
-ms.openlocfilehash: 1bb370009ce76b1962204907689d85b4f89c26c2
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 116d211e366e17ba667baf1e1deae719b56dc3ee
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932156"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69542744"
 ---
 # <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
 
@@ -202,13 +202,13 @@ Hello AzureFunctions!
 Измените исходный файл `src/main.../Function.java` в созданном проекте, чтобы изменить текст, возвращаемый приложением-функцией. Измените эту строку:
 
 ```java
-return request.createResponse(200, "Hello, " + name);
+return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
 ```
 
 Вместо нее укажите следующую:
 
 ```java
-return request.createResponse(200, "Hi, " + name);
+return request.createResponseBuilder(HttpStatus.OK).body("Hi, " + name).build();
 ```
 
 Сохраните изменения. Выполните команду mvn clean package и повторное развертывание, запустив `azure-functions:deploy` в окне терминала, как и в прошлый раз. Приложение-функция и этот запрос обновятся:
