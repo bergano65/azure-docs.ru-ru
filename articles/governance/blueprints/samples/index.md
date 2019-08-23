@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 08/20/2019
 ms.author: dacoulte
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 884777bce761f6b16581a28038bf9a28ce6a3801
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 8a91ae0c576299e139cf036f1f20b90470f51349
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650520"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972305"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -30,8 +30,8 @@ ms.locfileid: "69650520"
 | [NIST SP 800-53, ред. 4](./nist-sp-800-53-rev4/index.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |
 | [PCI-DSS версии 3.2.1](./pci-dss-3.2.1/index.md) | Предоставляет набор политик для обеспечения соответствия требованиям PCI-DSS версии 3.2.1. |
 | [Система управления UK OFFICIAL и UK NHS](./ukofficial/index.md) | Предоставляет набор соответствующих шаблонов инфраструктуры и средства, обеспечивающие соответствие политикам, для прохождения аттестации UK OFFICIAL и UK NHS |
-| [CAF Foundation](./caf-foundation/index.md) | Предоставляет набор элементов управления для администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/governance/journeys/index.md). |
-| [Зона размещения для миграции в соответствии с CAF](./caf-migrate-landing-zone/index.md) | Предоставляет набор элементов управления для подготовки к миграции рабочей нагрузки и администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/migrate/index.md). |
+| [CAF Foundation](./caf-foundation/index.md) | Предоставляет набор элементов управления для администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/governance/journeys/index). |
+| [Зона размещения для миграции в соответствии с CAF](./caf-migrate-landing-zone/index.md) | Предоставляет набор элементов управления для подготовки к миграции рабочей нагрузки и администрирования облачной инфраструктуры в соответствии с [Microsoft Cloud Adoption Framework для Azure (CAF)](/azure/architecture/cloud-adoption/migrate/index). |
 
 ## <a name="samples-strategy"></a>Стратегия использования примеров
 
