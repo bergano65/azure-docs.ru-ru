@@ -121,6 +121,8 @@
       href: /javascript/api/overview/azure/containerinstances
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.containerinstance/containergroups
+    - name: Соединитель
+      href: /connectors/aci
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

@@ -8,8 +8,7 @@ metadata:
   author: erhopf
   manager: nitinme
   ms.service: cognitive-services
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: ink-recognizer
   ms.topic: landing-page
   ms.date: 05/02/2019
   ms.author: erhopf
@@ -78,5 +77,5 @@ sections:
             html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2089907">Справочник по REST API</a></p>'
           - title: PowerShell
             html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Azure CLI</a></p>'

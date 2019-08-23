@@ -42,7 +42,7 @@
       href: plan-conditional-access.md
     - name: Рекомендации
       href: best-practices.md
-    - name: Распространенные шаблоны политик
+    - name: Распространенные политики условного доступа
       items:
         - name: Запрос на MFA для администраторов
           href: howto-conditional-access-policy-admin-mfa.md
