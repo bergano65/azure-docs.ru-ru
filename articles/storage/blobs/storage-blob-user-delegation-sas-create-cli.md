@@ -9,12 +9,12 @@ ms.date: 08/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 1c60c4b868854952771ba297107904762a2357d8
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: ef51a1b130323a8799d5334d8d043fda08fcc7ef
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69032982"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896964"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI (Предварительная версия)
 
@@ -49,7 +49,7 @@ az role assignment create \
     --scope "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
 ```
 
-Дополнительные сведения о встроенных ролях, включающих действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , см. в статье [встроенные роли для ресурсов Azure](/role-based-access-control/built-in-roles).
+Дополнительные сведения о встроенных ролях, включающих действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , см. в статье [встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="use-azure-ad-credentials-to-secure-a-sas"></a>Использование учетных данных Azure AD для защиты SAS
 
@@ -63,7 +63,7 @@ az role assignment create \
 
 Чтобы создать SAS для делегирования пользователей для контейнера с Azure CLI, вызовите команду [AZ Storage Container Generate-SAS](/cli/azure/storage/container#az-storage-container-generate-sas) .
 
-Поддерживаются следующие разрешения для сопоставления безопасности делегирования пользователей в контейнере: Добавление, создание, удаление, перечисление, чтение и запись. Разрешения можно указать отдельно или в сочетании. Дополнительные сведения об этих разрешениях см. [в разделе Создание SAS для делегирования пользователей](/rest/api/storageservices/create-a-user-delegation-sas).
+Поддерживаются следующие разрешения для сопоставления безопасности делегирования пользователей в контейнере: Добавление, создание, удаление, перечисление, чтение и запись. Разрешения можно указать отдельно или в сочетании. Дополнительные сведения об этих разрешениях см. [в разделе Создание SAS для делегирования пользователей](/rest/api/storageservices/create-user-delegation-sas).
 
 В следующем примере возвращается маркер SAS для делегирования пользователя для контейнера. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
@@ -87,7 +87,7 @@ se=2019-07-27&sp=r&sv=2018-11-09&sr=c&skoid=<skoid>&sktid=<sktid>&skt=2019-07-26
 
 Чтобы создать SAS делегирования пользователя для большого двоичного объекта с Azure CLI, вызовите команду [AZ Storage BLOB Generate-SAS](/cli/azure/storage/blob#az-storage-blob-generate-sas) .
 
-Поддерживаются следующие разрешения для сопоставления безопасности делегирования пользователей в большом двоичном объекте: Добавление, создание, удаление, чтение и запись. Разрешения можно указать отдельно или в сочетании. Дополнительные сведения об этих разрешениях см. [в разделе Создание SAS для делегирования пользователей](/rest/api/storageservices/create-a-user-delegation-sas).
+Поддерживаются следующие разрешения для сопоставления безопасности делегирования пользователей в большом двоичном объекте: Добавление, создание, удаление, чтение и запись. Разрешения можно указать отдельно или в сочетании. Дополнительные сведения об этих разрешениях см. [в разделе Создание SAS для делегирования пользователей](/rest/api/storageservices/create-user-delegation-sas).
 
 Следующий синтаксис возвращает SAS делегирования пользователя для большого двоичного объекта. В примере указывается `--full-uri` параметр, который возвращает URI большого двоичного объекта с добавленным маркером SAS. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
@@ -115,5 +115,5 @@ https://storagesamples.blob.core.windows.net/sample-container/blob1.txt?se=2019-
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-a-user-delegation-sas)
+- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 37624c79a345f956de9a289c672340e391199e2f
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 584b9fdde33d14650c36c44b9b457a25f8a1d6f9
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650693"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900129"
 ---
 # <a name="create-a-new-saas-offer"></a>Создание нового предложения SaaS
 
@@ -153,23 +153,9 @@ ms.locfileid: "69650693"
 
 ## <a name="connect-lead-management"></a>Подключение управления интересами
 
-Напрямую Подключайтесь к клиентам, перечисляя свое предложение в Marketplace и применяя систему управления отношениями с клиентами (CRM), чтобы вы могли получить контактные данные клиента сразу же после того, как клиент выражает интерес или развертывает продукта.
+[!INCLUDE [Test drive content](./includes/connect-lead-management.md)]
 
-- **Выбор назначения интереса** (раскрывающееся меню): Укажите сведения о подключении к системе CRM, куда вы хотите отправить клиентские интересы. 
-
-Центр партнеров поддерживает следующие системы CRM для управления интересами. Выберите ссылку на инструкции по настройке.
-
-- BLOB-объект Azure — укажите адрес электронной почты, имя контейнера и строку подключения к учетной записи хранения. 
-- [Таблица Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) — укажите адрес электронной почты и строку подключения к учетной записи хранения. 
-- [Dynamics CRM Online](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) — укажите контактную почту, URL-адрес и режим проверки подлинности (Office 365 или Azure Active Directory).
-- [Конечная точка HTTPS](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) — укажите контактную почту и URL-адрес КОНЕЧНОЙ точки HTTPS. 
-- [Marketo](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo) — укажите контактный адрес электронной почты, идентификатор формы, идентификатор учетной записи Munchkin и идентификатор сервера.
-- [Salesforce](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce) — укажите контактный адрес электронной почты и идентификатор организации. 
-
-#### <a name="additional-lead-management-resources"></a>Дополнительные ресурсы по управлению интересами
-- [Вопросы и ответы по управлению интересами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
-- [Распространенные ошибки конфигурации интересов](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#common-lead-configuration-errors-during-publishing-on-cloud-partner-portal)
-- [Обзор управления интересами один пейджер](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf)
+Дополнительные сведения см. в разделе [Обзор управления интересами](./commercial-marketplace-get-customer-leads.md) .
 
 Не забудьте **сохранить** , прежде чем переходить к следующему разделу!
 

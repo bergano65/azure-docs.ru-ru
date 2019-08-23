@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d6229e78958fdc4995153d99ad02a15804330f1b
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: d314cc55096f681d1bcf66d33c4c30a4060751e9
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544569"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972653"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
@@ -63,7 +63,7 @@ VMware vCenter поддерживает различные источники у
 При наличии сведений в предыдущей таблице можно добавить локальный Active Directory как источник удостоверений единого входа в vCenter.
 
 > [!TIP]
-> Дополнительные сведения об источниках удостоверений единого входа можно найти на <a href="https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-B23B1360-8838-4FF2-B074-71643C4CB040.html" target="_blank">странице документации по VMware</a>.
+> Дополнительные сведения об источниках удостоверений единого входа можно найти на [странице документации по VMware](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-B23B1360-8838-4FF2-B074-71643C4CB040.html).
 
 ## <a name="set-up-new-active-directory-on-a-private-cloud"></a>Настройка новых Active Directory в частном облаке
 
@@ -83,7 +83,7 @@ VMware vCenter поддерживает различные источники у
 
 После настройки леса Active Directory и домена можно [Добавить источник удостоверений в vCenter](#add-an-identity-source-on-vcenter) для нового Active Directory.
 
-### <a name="new-active-directory-domain-in-an-existing-active-directory-forest"></a>Новые домен Active Directory в существующем лесу Active Directory
+### <a name="new-active-directory-domain-in-an-existing-active-directory-forest"></a>Новый домен Active Directory в существующем Active Directory лесу
 
 Чтобы настроить новый домен Active Directory в существующем Active Directory лесу, вам потребуется:
 

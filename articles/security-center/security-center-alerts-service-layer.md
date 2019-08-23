@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 8/18/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 70b43c65703316e5dee8e9cf2cf86fe982a49592
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: aae2270417e0bb3bdf0dd847e2e09e7cb1999d39
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624784"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972468"
 ---
 # <a name="threat-detection-for-azure-service-layer-in-azure-security-center"></a>Обнаружение угроз для уровня служб Azure в центре безопасности Azure
 
@@ -50,6 +50,10 @@ ms.locfileid: "69624784"
 |**Обнаружено сетевое взаимодействие с вредоносным адресом**|В ходе анализа сетевого трафика обнаружено взаимодействие, полученное от ресурса в развертывании, с помощью возможного сервера команды и элемента управления (C & C). Обратите внимание, что этот тип активности может привести к тому, что ваш IP-адрес будет помечен как вредоносный внешними сущностями.|
 
 Чтобы понять, как центр безопасности может использовать сигналы, связанные с сетью, для применения защиты от угроз, см. раздел [эвристические обнаружения DNS в центре безопасности Azure](https://azure.microsoft.com/blog/heuristic-dns-detections-in-azure-security-center/).
+
+>[!NOTE]
+>Оповещения об обнаружении угроз в сетевом уровне Azure в центре безопасности Azure не создаются в течение первого часа после создания виртуальной машины.
+
 ## Уровень управления Azure (Azure Resource Manager) (Предварительная версия)<a name ="management-layer"></a>
 
 >[!NOTE]

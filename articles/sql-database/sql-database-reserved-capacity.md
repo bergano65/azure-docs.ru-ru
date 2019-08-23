@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 ms.date: 08/02/2019
-ms.openlocfilehash: 0139b3471eb9117830180088498eb14efd6ab661
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 61b646ca1ec5a4826ac6418c1b80b88a89266012
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68781301"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972551"
 ---
 # <a name="prepay-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности
 
@@ -71,7 +71,11 @@ ms.locfileid: "68781301"
 
 Гибкость размеров виртуального ядра позволяет увеличивать или уменьшать масштаб в пределах уровня производительности и региона, не теряя преимуществ приобретенной резервной мощности. Резервная мощность Базы данных SQL также дает возможность временно размещать горячие базы данных между пулами и отдельные базы данных во время нормальной работы (в том же регионе и на уровне производительности) без потери преимуществ приобретенной резервной мощности. Зарезервировав дополнительный буфер, вы можете эффективно управлять пиками производительности, не превышая свой бюджет.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Наши координаты
+## <a name="limitation"></a>Ограничение
+
+Нельзя резервировать базы данных SQL на основе DTU (Basic, Standard или Premium).
+
+## <a name="need-help-contact-us"></a>Требуется помощь? Наши координаты
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

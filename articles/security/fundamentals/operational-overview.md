@@ -15,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: tomsh
-ms.openlocfilehash: 31e59f913fa29c92bc1b97029d8712bbd9b68ab8
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 52d74983458a2c6a4de27ec91bc23a8dd9bee387
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934660"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899822"
 ---
 # <a name="azure-operational-security-overview"></a>Обзор операционной безопасности Azure
 
-[Операционная безопасность Azure] (/Азуре/секурити/фундаменталс/оператионал-секурити относится к службам, элементам управления и функциям, доступным пользователям для защиты своих данных, приложений и других ресурсов в Microsoft Azure. Это платформа, которая базируется на знаниях, полученных с помощью широкого набора уникальных возможностей корпорации Майкрософт. Сюда входят жизненный цикл разработки защищенных приложений (Майкрософт) (SDL), программа Microsoft Security Response Center и глубокая осведомленность о характере угроз кибербезопасности.
+Под [операционной безопасностью Azure](/azure/security/fundamentals/operational-security) понимаются службы, элементы управления и функции, которые пользователи могут использовать для защиты своих данных, приложений и других ресурсов в Microsoft Azure. Это платформа, которая базируется на знаниях, полученных с помощью широкого набора уникальных возможностей корпорации Майкрософт. Сюда входят жизненный цикл разработки защищенных приложений (Майкрософт) (SDL), программа Microsoft Security Response Center и глубокая осведомленность о характере угроз кибербезопасности.
 
 ## <a name="azure-management-services"></a>Службы управления Azure
 

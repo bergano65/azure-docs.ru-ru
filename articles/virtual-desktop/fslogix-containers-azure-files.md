@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 54d3f175e74b9f94c7845725e3d8f4531750df57
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
-ms.translationtype: HT
+ms.openlocfilehash: fe45adc3eb65631c0b127872240f8d76400f9102
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877556"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899664"
 ---
 # <a name="fslogix-profile-containers-and-azure-files"></a>Контейнеры профилей FSLogix и Файлы Azure
 
@@ -98,7 +98,7 @@ UPD требует [Локальные дисковые пространства
 
 - Чтобы приступить к созданию решения для виртуализации настольных систем, см. раздел [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
 - Сведения о создании пула узлов в клиенте виртуальных рабочих столов Windows см. в статье [Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md).
-- Сведения о настройке полностью управляемых файловых ресурсов в облаке см. в разделе [Настройка общей папки службы файлов Azure](/articles/storage/files/storage-files-active-directory-enable.md).
+- Сведения о настройке полностью управляемых файловых ресурсов в облаке см. в разделе [Настройка общей папки службы файлов Azure](/azure/storage/files/storage-files-active-directory-enable).
 - Сведения о настройке контейнеров профилей Фслогикс см. в статье [Создание контейнера профилей для пула узлов с помощью общей папки](create-host-pools-user-profile.md).
 - Сведения о назначении пользователей в пул узлов см. в статье [Управление группами приложений для виртуальных рабочих столов Windows](manage-app-groups.md).
 - Сведения о доступе к ресурсам виртуальных рабочих столов Windows из веб-браузера см. в статье [Подключение к виртуальному рабочему столу Windows](connect-web.md).

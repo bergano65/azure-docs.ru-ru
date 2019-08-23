@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/06/2018
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 9c24f613de8bf26331f6fe328358aaf8a320d522
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0da3373ba2c13bd6a00a92a6b38bead86fc9a5ea
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65794230"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897012"
 ---
 # <a name="create-a-blob-snapshot"></a>Создание моментального снимка BLOB-объекта
 
@@ -78,12 +78,12 @@ private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
 * При создании моментального снимка блочного BLOB-объекта в снимок также копируется его список зафиксированных блоков. Незафиксированные блоки не копируются.
 
 ## <a name="specify-an-access-condition"></a>Назначение условий доступа
-При вызове [CreateSnapshotAsync][dotnet_CreateSnapshotAsync] можно указать условие доступа, чтобы моментальный снимок создавался только в том случае, если данное условие выполняется. Для этого воспользуйтесь параметром [AccessCondition][dotnet_AccessCondition]. При невыполнении указанного условия моментальный снимок не будет создан, а служба BLOB-объектов вернет код состояния [HTTPStatusCode][dotnet_HTTPStatusCode].PreconditionFailed.
+При вызове [креатеснапшотасинк][dotnet_CreateSnapshotAsync]можно указать условие доступа, чтобы моментальный снимок создавался только при соблюдении условия. Чтобы указать условие доступа, используйте параметр [AccessCondition][dotnet_AccessCondition] . Если указанное условие не выполнено, моментальный снимок не создается, а служба BLOB-объектов возвращает код состояния [HTTPStatusCode][dotnet_HTTPStatusCode]. PreconditionFailed.
 
 ## <a name="delete-snapshots"></a>Удаление моментальных снимков
 Большой двоичный объект с моментальными снимками невозможно удалить, пока не будут удалены все его снимки. Можно удалить моментальный снимок отдельно или указать, чтобы при удалении исходного большого двоичного объекта были удалены и все его моментальные снимки. Попытка удалить большой двоичный объект, у которого еще есть моментальные снимки, завершится ошибкой.
 
-В следующем коде показан пример удаления большого двоичного объекта и его моментальных снимков в .NET, где `blockBlob` является объектом типа [CloudBlockBlob][dotnet_CloudBlockBlob]:
+В следующем примере кода показано, как удалить большой двоичный объект и его моментальные снимки в `blockBlob` .NET, где — это объект типа [CloudBlockBlob][dotnet_CloudBlockBlob]:
 
 ```csharp
 await blockBlob.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots, null, null, null);
@@ -127,7 +127,7 @@ Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
 
 * Плата взимается за уникальные блоки и страницы независимо от того, где они находятся: в большом двоичном объекте или моментальном снимке. Ваша учетная запись не влечет за собой дополнительных затрат на моментальные снимки, связанные с большим двоичным объектом, пока большой двоичный объект, на котором они основаны, не будет обновлен. После изменения базового большого двоичного объекта он начнет отличаться от своих моментальных снимков. Теперь вы будете оплачивать все уникальные блоки и страницы в каждом большом двоичном объекте или моментальном снимке.
 * Когда вы заменяете блок в блочном большом двоичном объекте, за этот блок начинает взиматься плата как за уникальный. Это произойдет, даже если у блока тот же идентификатор блока и те же данные, что и в моментальном снимке. Как только блок фиксируется заново, он расходится со всеми своими дубликатами во всех моментальных снимках и вы будете оплачивать его данные. Это же происходит и для страницы в страничном BLOB-объекте, обновляемом идентичными данными.
-* При замещении блочного BLOB-объекта путем вызова метода [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream] или [UploadFromByteArray][dotnet_UploadFromByteArray] заменяются все блоки в этом большом двоичном объекте. Если с этим большим двоичным объектом связан моментальный снимок, то все блоки в базовом большом двоичном объекте перестанут совпадать с блоками в моментальном снимке, и вы будете оплачивать хранение всех блоков в обоих больших двоичных объектах. Это произойдет, даже если данные базового большого двоичного объекта и моментального снимка останутся идентичными.
+* Замена блочного BLOB-объекта путем вызова метода [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream]или [UploadFromByteArray][dotnet_UploadFromByteArray] заменяет все блоки в большом двоичном объекте. Если с этим большим двоичным объектом связан моментальный снимок, то все блоки в базовом большом двоичном объекте перестанут совпадать с блоками в моментальном снимке, и вы будете оплачивать хранение всех блоков в обоих больших двоичных объектах. Это произойдет, даже если данные базового большого двоичного объекта и моментального снимка останутся идентичными.
 * В службе BLOB-объектов Azure нет средств, позволяющих определить, содержат ли два блока идентичные данные. Каждый блок, который был загружен и зафиксирован, обрабатывается как уникальный, даже если он содержит те же данные и имеет тот же идентификатор блока. Так как плата добавляется за уникальные блоки, важно иметь в виду, что обновление большого двоичного объекта, содержащего моментальный снимок, приведет к появлению дополнительных уникальных блоков и дополнительным расходам.
 
 ### <a name="minimize-cost-with-snapshot-management"></a>Минимизация затрат с помощью управления моментальными снимками
@@ -135,7 +135,7 @@ Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
 Рекомендуется управлять моментальными снимками осторожно, чтобы избежать наценок. Выполните приведенные ниже рекомендации, чтобы свести к минимуму затраты на хранение моментальных снимков.
 
 * Удаляйте и повторно создавайте моментальные снимки, связанные с большим двоичным объектом, при обновлении этого объекта, даже если вы обновляете его идентичными данными, если только структура вашего приложения не требует сохранения моментальных снимков. За счет удаления и повторного создания моментальных снимков больших двоичных объектов можно исключить расхождение большого двоичного объекта с моментальными снимками.
-* Если необходимо хранить моментальные снимки для больших двоичных объектов, то не вызывайте для их обновления методы [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream] и [UploadFromByteArray][dotnet_UploadFromByteArray]. Эти методы заменяют все блоки в большом двоичном объекте, и после этого базовый большой двоичный объект начинает значительно отличаться от своих моментальных снимков. Вместо этого обновляйте наименьшее возможное количество блоков с помощью методов [PutBlock][dotnet_PutBlock] и [PutBlockList][dotnet_PutBlockList].
+* При сохранении моментальных снимков для большого двоичного объекта Избегайте вызова [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream]или [UploadFromByteArray][dotnet_UploadFromByteArray] для обновления большого двоичного объекта. Эти методы заменяют все блоки в большом двоичном объекте, и после этого базовый большой двоичный объект начинает значительно отличаться от своих моментальных снимков. Вместо этого обновляйте наименьшее возможное количество блоков с помощью методов [PutBlock][dotnet_PutBlock] и [PutBlockList][dotnet_PutBlockList].
 
 ### <a name="snapshot-billing-scenarios"></a>Сценарии выставления счетов за моментальные снимки
 В следующих сценариях показано, как добавляется плата за большой двоичный объект и его моментальные снимки.
@@ -160,11 +160,11 @@ Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
 
 **Сценарий 4**
 
-В сценарии 4 базовый большой двоичный объект был полностью обновлен и не содержит никаких первоначальных блоков. В результате плата в учетной записи взимается за все восемь уникальных блоков. Этот сценарий может произойти при использовании таких методов обновления, как [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream] и [UploadFromByteArray][dotnet_UploadFromByteArray], так как эти методы заменяют все содержимое больших двоичных объектов.
+В сценарии 4 базовый большой двоичный объект был полностью обновлен и не содержит никаких первоначальных блоков. В результате плата в учетной записи взимается за все восемь уникальных блоков. Этот сценарий может возникать, если используется метод обновления, например [UploadFromFile][dotnet_UploadFromFile], [UploadText][dotnet_UploadText], [UploadFromStream][dotnet_UploadFromStream]или [UploadFromByteArray][dotnet_UploadFromByteArray], так как эти методы заменяют все содержимое большого двоичного объекта.
 
 ![Ресурсы хранилища Azure](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о работе с моментальными снимками диска виртуальной машины см. в статье [Архивация неуправляемых дисков виртуальной машины Azure с помощью добавочных моментальных снимков](../../virtual-machines/windows/incremental-snapshots.md).
 
@@ -172,7 +172,7 @@ Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
 
 [dotnet_AccessCondition]: https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.accesscondition
 [dotnet_CloudBlockBlob]: https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob._cloud_block_blob
-[dotnet_CreateSnapshotAsync]: https://docs.microsoft.com/java/api/com.microsoft.azure.storage.blob.generatedblobs.createsnapshotasync
+[dotnet_CreateSnapshotAsync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.createsnapshotasync
 [dotnet_HTTPStatusCode]: https://docs.microsoft.com/java/api/com.microsoft.store.partnercenter.network.httpstatuscode
 [dotnet_PutBlockList]: /dotnet/api/microsoft.azure.storage.blob.cloudblockblob.putblocklist
 [dotnet_PutBlock]: /dotnet/api/microsoft.azure.storage.blob.cloudblockblob.putblock

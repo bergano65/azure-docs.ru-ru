@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jomolesk
-ms.openlocfilehash: 2fa9db20554df813e5da94e2bbea122ac6cc9b60
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 602e4356ccd9eb45855462a7a25e0966dc176b4f
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946531"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899943"
 ---
 # <a name="azure-security-and-compliance-blueprint---three-tier-iaas-web-application-for-uk-official"></a>Схема безопасности и соответствия требованиям Azure. Трехуровневое веб-приложение IaaS для UK OFFICIAL
 
@@ -186,7 +186,7 @@ ms.locfileid: "68946531"
 
 [Руководства по развертыванию Windows Server Active Directory на виртуальных машинах Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
 
-**Интеграция с Active Directory**. Как альтернативу выделенной архитектуре AD DS пользователи могут использовать интеграцию [Azure Active Directory](/azure/architecture/reference-architectures/identity.md) или [службу Active Directory в Azure, присоединенную к локальному лесу](/azure/architecture/reference-architectures/identity.md).
+**Интеграция с Active Directory**. Как альтернативу выделенной архитектуре AD DS пользователи могут использовать интеграцию [Azure Active Directory](/azure/architecture/reference-architectures/identity) или [службу Active Directory в Azure, присоединенную к локальному лесу](/azure/architecture/reference-architectures/identity).
 
 ### <a name="security"></a>Безопасность
 
@@ -200,9 +200,9 @@ ms.locfileid: "68946531"
 
 **Диапазоны IP-адресов**. Диапазоны IP-адресов в архитектуре являются предполагаемыми. Клиентам рекомендуется учитывать параметры собственной среды и использовать соответствующие диапазоны.
 
-**Гибридное подключение**. Облачные рабочие нагрузки связаны с локальным центром обработки данных через VPN IPSEC с помощью VPN-шлюза Azure. Клиентам следует убедиться, что они используют соответствующий VPN-шлюз для подключения к Azure. Пример.[Шаблон Resource Manager для VPN-шлюза](https://github.com/mspnp/template-building-blocks/tree/v1.0.0/templates/buildingBlocks/vpn-gateway-vpn-connection). Клиенты, выполняющие крупномасштабные, критически важные рабочие нагрузки с требованиями для больших данных, могут рассмотреть использование гибридной сетевой архитектуры с помощью [ExpressRoute](/azure/architecture/reference-architectures/hybrid-networking/expressroute.md) для подключения частной сети к облачным службам (Майкрософт).
+**Гибридное подключение**. Облачные рабочие нагрузки связаны с локальным центром обработки данных через VPN IPSEC с помощью VPN-шлюза Azure. Клиентам следует убедиться, что они используют соответствующий VPN-шлюз для подключения к Azure. Пример.[Шаблон Resource Manager для VPN-шлюза](https://github.com/mspnp/template-building-blocks/tree/v1.0.0/templates/buildingBlocks/vpn-gateway-vpn-connection). Клиенты, выполняющие крупномасштабные, критически важные рабочие нагрузки с требованиями для больших данных, могут рассмотреть использование гибридной сетевой архитектуры с помощью [ExpressRoute](/azure/architecture/reference-architectures/hybrid-networking/expressroute) для подключения частной сети к облачным службам (Майкрософт).
 
-**Разделение областей ответственности**. Эталонная архитектура отделяет виртуальные сети для операций управления и бизнес-операций. Отдельные виртуальные сети и подсети позволяют управлять трафиком, включая ограничение входящего и исходящего трафика, путем использования групп безопасности сети между сегментами сети, согласно рекомендациям в статье [Облачные службы Microsoft Cloud и сетевая безопасность](/azure/architecture/vdc/networking-virtual-datacenter.md).
+**Разделение областей ответственности**. Эталонная архитектура отделяет виртуальные сети для операций управления и бизнес-операций. Отдельные виртуальные сети и подсети позволяют управлять трафиком, включая ограничение входящего и исходящего трафика, путем использования групп безопасности сети между сегментами сети, согласно рекомендациям в статье [Облачные службы Microsoft Cloud и сетевая безопасность](/azure/architecture/vdc/networking-virtual-datacenter).
 
 **Управление ресурсами**. Управление ресурсами Azure, такими как виртуальные машины, виртуальные сети и подсистемы балансировки нагрузки, осуществляется путем их группировки в [группы ресурсов Azure](../../azure-resource-manager/resource-group-overview.md). Роли управления доступом на основе ресурсов можно присвоить каждой группе ресурсов, чтобы предоставлять доступ только уполномоченным пользователям.
 

@@ -11,12 +11,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: b99dbd403de0de948527fbe74b7e1205316822c0
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 848cfc96a7da4e69ff77d16a42226a983153ac63
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019677"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897001"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -44,7 +44,7 @@ ms.locfileid: "69019677"
 Для настройки и использования проверки подлинности Azure Active Directory выполните следующие действия.
 
 1. Создайте и заполните каталог Azure AD.
-2. Необязательно: Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
+2. Дополнительно Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
 3. Создайте учетную запись администратора Azure Active Directory для сервера Базы данных SQL Azure, управляемого экземпляра или [хранилища данных SQL Azure](https://azure.microsoft.com/services/sql-data-warehouse/).
 4. Настройте клиентские компьютеры.
 5. Создайте учетные записи пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD.
@@ -116,8 +116,9 @@ ms.locfileid: "69019677"
 
 Проверка подлинности Azure Active Directory поддерживает следующие способы подключения к базе данных с помощью удостоверений Azure AD:
 
-- с использованием встроенной проверки подлинности Windows;
-- Использование имени субъекта-пользователя и пароля Azure AD
+- Пароль Azure Active Directory.
+- Встроенная служба Azure Active Directory.
+- Универсальная служба Azure Active Directory с поддержкой MFA.
 - Использование маркера проверки подлинности приложения
 
 Для субъектов сервера (имен для входа) Azure AD поддерживаются следующие методы проверки подлинности (**общедоступная предварительная версия**):
@@ -125,7 +126,6 @@ ms.locfileid: "69019677"
 - Пароль Azure Active Directory.
 - Встроенная служба Azure Active Directory.
 - Универсальная служба Azure Active Directory с поддержкой MFA.
-- Интерактивная служба Azure Active Directory.
 
 
 ### <a name="additional-considerations"></a>Дополнительные замечания

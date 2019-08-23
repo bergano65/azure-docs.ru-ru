@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 07/12/2019
-ms.openlocfilehash: 902187c3462c54f728519aa1e6e60fbcc1eab20f
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.date: 08/21/2019
+ms.openlocfilehash: a7e7beb3cdef7551a1bce2a693b8044ea6ed8946
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876312"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907671"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "67876312"
 > [!IMPORTANT]
 > Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Реплики чтения (в одном регионе и в разных регионах) сейчас доступны в общедоступной предварительной версии.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве главного сервера.
 
@@ -45,9 +45,12 @@ ms.locfileid: "67876312"
 
     ![База данных Azure для MariaDB — имя реплики](./media/howto-read-replica-portal/replica-name.png)
 
-6. Выберите расположение сервера реплики. Реплику можно создать в любом регионе Azure. Расположение по умолчанию совпадает с главным сервером.
+6. Выберите расположение сервера реплики. Расположение по умолчанию совпадает с местоположением главного сервера.
 
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
+
+   > [!NOTE]
+   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
 
 7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 

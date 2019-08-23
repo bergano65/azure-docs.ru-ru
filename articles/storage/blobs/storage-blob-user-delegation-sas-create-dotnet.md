@@ -9,12 +9,12 @@ ms.date: 08/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: bed95c070649785a701f9d08a98faf29c8ee1413
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 98ab93bbec8da17dde93c9c343703838b0279994
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990693"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900434"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET (Предварительная версия)
 
@@ -44,7 +44,7 @@ Install-Package Azure.Identity -IncludePrerelease
 
 Чтобы создать субъект-службу с Azure CLI и назначить роль RBAC, вызовите команду [AZ AD SP Create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) . Укажите роль доступа к данным службы хранилища Azure для назначения новому субъекту-службе. Роль должна включать действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Дополнительные сведения о встроенных ролях, предоставляемых для службы хранилища Azure, см. [в статье встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
-Кроме того, укажите область для назначения роли. Субъект-служба создаст ключ делегирования пользователя, который является операцией, выполняемой на уровне учетной записи хранения, поэтому назначение роли должно быть ограничено уровнем учетной записи хранения, группой ресурсов или подпиской. Дополнительные сведения о разрешениях RBAC для создания SAS для делегирования пользователей см. в разделе **Назначение разрешений с помощью RBAC** статьи [Создание SAS делегирования пользователя (REST API)](/rest/api/storageservices/create-a-user-delegation-sas).
+Кроме того, укажите область для назначения роли. Субъект-служба создаст ключ делегирования пользователя, который является операцией, выполняемой на уровне учетной записи хранения, поэтому назначение роли должно быть ограничено уровнем учетной записи хранения, группой ресурсов или подпиской. Дополнительные сведения о разрешениях RBAC для создания SAS для делегирования пользователей см. в разделе **Назначение разрешений с помощью RBAC** статьи [Создание SAS делегирования пользователя (REST API)](/rest/api/storageservices/create-user-delegation-sas).
 
 Если у вас нет достаточных разрешений для назначения роли субъекту-службе, может потребоваться попросить владельца или администратора учетной записи выполнить назначение ролей.
 
@@ -165,7 +165,7 @@ UriBuilder fullUri = new UriBuilder()
 };
 ```
 
-## <a name="example-get-a-user-delegation-sas"></a>Пример Получение SAS для делегирования пользователей
+## <a name="example-get-a-user-delegation-sas"></a>Пример: Получение SAS для делегирования пользователей
 
 В следующем примере метода показан полный код для проверки подлинности субъекта безопасности и создания SAS для делегирования пользователя.
 
@@ -221,7 +221,7 @@ async static Task<Uri> GetUserDelegationSasBlob(string accountName, string conta
 }
 ```
 
-## <a name="example-read-a-blob-with-a-user-delegation-sas"></a>Пример Чтение большого двоичного объекта с помощью SAS делегирования пользователя
+## <a name="example-read-a-blob-with-a-user-delegation-sas"></a>Пример: Чтение большого двоичного объекта с помощью SAS делегирования пользователя
 
 В следующем примере выполняется проверка SAS делегирования пользователя, созданного в предыдущем примере, из имитации клиентского приложения. Если SAS является допустимым, клиентское приложение может прочитать содержимое большого двоичного объекта. Если SAS является недопустимым, например, если срок его действия истек, служба хранилища Azure возвращает код ошибки 403 (запрещено).
 
@@ -276,4 +276,4 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
 ## <a name="see-also"></a>См. также
 
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)
-- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-a-user-delegation-sas)
+- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)

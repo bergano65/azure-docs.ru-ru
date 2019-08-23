@@ -7,12 +7,12 @@ ms.author: jenhayes
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 84738d9de880e09177ebb5c060fbd7bbd4613006
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: f9223fdead9d22e8f58076b47502e71c06741e3f
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036817"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900108"
 ---
 # <a name="create-a-new-dynamics-365-for-operations-offer"></a>Создание новой Dynamics 365 для предложений операций
 
@@ -82,27 +82,11 @@ ms.locfileid: "69036817"
 
 ## <a name="connect-lead-management"></a>Подключение управления интересами
 
-Подключение клиентов напрямую путем подключения системы управления отношениями с клиентами (CRM). После этого вы получите контактные данные клиента, когда клиент выражает интерес или развертывает продукт.
+[!INCLUDE [Test drive content](./includes/connect-lead-management.md)]
 
-Чтобы подключить систему CRM, нажмите кнопку **подключить**.
+Дополнительные сведения см. в разделе [Обзор управления интересами](./commercial-marketplace-get-customer-leads.md) .
 
-### <a name="choose-a-lead-destination"></a>Выбор назначения интереса
-
-После выбора **подключения**вы увидите раскрывающееся меню, в котором можно выбрать систему CRM, а затем указать сведения о подключении.
-
-Центр партнеров поддерживает следующие системы CRM для управления интересами. Выберите ссылку на инструкции по настройке.
-
-- [Таблица Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) — укажите строку подключения к учетной записи хранения. 
-- [Dynamics 365 для взаимодействия с клиентами (ранее Dynamics CRM Online](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) — укажите URL-адрес экземпляра Dynamics 365 и режим проверки подлинности (Office 365 или Azure Active Directory).
-- [Конечная точка HTTPS](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) — укажите URL-адрес КОНЕЧНОЙ точки HTTPS. 
-- [Marketo](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo) — укажите идентификатор сервера, идентификатор учетной записи Munchkin и идентификатор формы.
-- [Salesforce](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce) — укажите идентификатор вашей организации.
-
-#### <a name="additional-lead-management-resources"></a>Дополнительные ресурсы по управлению интересами
-
-- [Вопросы и ответы по управлению интересами](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
-- [Распространенные ошибки конфигурации интересов](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#common-lead-configuration-errors-during-publishing-on-cloud-partner-portal)
-- [Обзор управления интересами один пейджер](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf)
+Не забудьте **сохранить** , прежде чем переходить к следующему разделу!
 
 ## <a name="properties"></a>Свойства
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 08/02/2019
+ms.date: 08/06/2019
 ms.author: alkohli
-ms.openlocfilehash: 734ad263356ab9f91c7cb92ab174a14e0c5dd867
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: daf7b01725a931b8fa76be14e06e2b32cffe5da6
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775171"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900633"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Разработка модуля C# IOT Edge для перемещения файлов на Data Box Edge
 
@@ -127,8 +127,10 @@ ms.locfileid: "68775171"
 2. В верхней части **пространства имен CSharpModule** добавьте следующие операторы using для типов, которые будут использоваться позже. **Microsoft.Azure.Devices.Client.Transport.Mqtt** — это протокол отправки сообщений в центр IoT Edge.
 
     ```
-    using Microsoft.Azure.Devices.Client.Transport.Mqtt;
-    using Newtonsoft.Json;
+    namespace FileCopyModule
+    {
+        using Microsoft.Azure.Devices.Client.Transport.Mqtt;
+        using Newtonsoft.Json;
     ```
 3. Добавьте в класс Program переменные **InputFolderPath** и **OutputFolderPath**.
 
@@ -140,7 +142,7 @@ ms.locfileid: "68775171"
             private const string OutputFolderPath = "/home/output";
     ```
 
-4. Добавьте класс **филивент** , чтобы определить текст сообщения.
+4. Сразу после предыдущего шага добавьте класс **филивент** для определения текста сообщения.
 
     ```
     /// <summary>
@@ -156,7 +158,7 @@ ms.locfileid: "68775171"
     }
     ```
 
-5. В методе **Init** код создает и настраивает объект **ModuleClient**. Этот объект позволяет модулю подключаться к локальной среде выполнения Azure IoT Edge по протоколу MQTT для отправки и получения сообщений. Строка подключения, используемая в методе Init, предоставляется модулю средой выполнения IoT Edge. Этот код регистрирует обратный вызов FileCopy для получения сообщений от центра IoT Edge через конечную точку **input1**.
+5. В **методе init**код создает и настраивает объект **модулеклиент** . Этот объект позволяет модулю подключаться к локальной среде выполнения Azure IoT Edge по протоколу MQTT для отправки и получения сообщений. Строка подключения, используемая в методе Init, предоставляется модулю средой выполнения IoT Edge. Этот код регистрирует обратный вызов FileCopy для получения сообщений от центра IoT Edge через конечную точку **input1**. Замените **метод init** следующим кодом.
 
     ```
     /// <summary>
@@ -178,11 +180,11 @@ ms.locfileid: "68775171"
     }
     ```
 
-6. Вставьте код метода **FileCopy**.
+6. Удалите код для **метода сообщения канала** и на его месте вставьте код для **операцию FileCopy**.
 
     ```
         /// <summary>
-        /// This method is called whenever the module is sent a message from the IoT Edge Hub. 
+        /// This method is called whenever the module is sent a message from the IoT Edge Hub.
         /// This method deserializes the file event, extracts the corresponding relative file path, and creates the absolute input file path using the relative file path and the InputFolderPath.
         /// This method also forms the absolute output file path using the relative file path and the OutputFolderPath. It then copies the input file to output file and deletes the input file after the copy is complete.
         /// </summary>
@@ -236,6 +238,7 @@ ms.locfileid: "68775171"
     ```
 
 7. Сохраните этот файл.
+8. Вы также можете [скачать существующий пример кода](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) для этого проекта. Затем можно проверить файл, сохраненный в файле **Program.CS** в этом примере.
 
 ## <a name="build-your-iot-edge-solution"></a>Сборка решения IoT Edge
 
@@ -246,7 +249,7 @@ ms.locfileid: "68775171"
 
     `docker login <ACR login server> -u <ACR username>`
 
-    Укажите имя пользователя и сервер входа, которые вы скопировали из Реестра контейнеров Azure. 
+    Укажите имя пользователя и сервер входа, которые вы скопировали из Реестра контейнеров Azure.
 
     ![Сборка и отправка решения IoT Edge](./media/data-box-edge-create-iot-edge-module/build-iot-edge-solution-1.png)
 

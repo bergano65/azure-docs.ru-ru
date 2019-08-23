@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 7cd555f66bb6f65f498f9b3e5db9bbeda0505a8f
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 0a8b3a8bcfc2aa8270d7be140a94e5b83973f3e5
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68384974"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972131"
 ---
 # <a name="manage-mobility-agent-on-protected-machines"></a>Управление агентом мобильности на защищенных компьютерах
 
@@ -61,7 +61,7 @@ Update-AzRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Acco
 
 ### <a name="on-a-linux-machine"></a>На компьютере с Linux
 1. На компьютере с Linux войдите в систему как **привилегированный** пользователь.
-2. В разделе "Терминал" перейдите к /user/local/ASR.
+2. В терминале перейдите по адресу/usr/local/ASR.
 3. Выполните следующую команду:
     ```
     uninstall.sh -Y

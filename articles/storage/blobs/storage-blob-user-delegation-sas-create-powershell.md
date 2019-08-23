@@ -9,12 +9,12 @@ ms.date: 08/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 86b5e4b6bcf65c2174fa3d3743551813ce2f8b1b
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: bdb66ec65d493c6af2f33bf6ed6e4a2bb2154235
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69034743"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897024"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell (Предварительная версия)
 
@@ -80,7 +80,7 @@ Connect-AzAccount
 
 ## <a name="assign-permissions-with-rbac"></a>Назначение разрешений с помощью RBAC
 
-Чтобы создать SAS для делегирования пользователей из Azure PowerShell, учетной записи Azure AD, используемой для входа в PowerShell, должна быть назначена роль, включающая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Это разрешение позволяет этой учетной записи Azure AD запрашивать *ключ делегирования пользователя*. Ключ делегирования пользователя используется для подписи SAS делегирования пользователя. Роль, предоставляющая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , должна быть назначена на уровне учетной записи хранения, группы ресурсов или подписки. Дополнительные сведения о разрешениях RBAC для создания SAS для делегирования пользователей см. в разделе **Назначение разрешений с помощью RBAC** статьи [Создание SAS для делегирования пользователей](/rest/api/storageservices/create-a-user-delegation-sas).
+Чтобы создать SAS для делегирования пользователей из Azure PowerShell, учетной записи Azure AD, используемой для входа в PowerShell, должна быть назначена роль, включающая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** . Это разрешение позволяет этой учетной записи Azure AD запрашивать *ключ делегирования пользователя*. Ключ делегирования пользователя используется для подписи SAS делегирования пользователя. Роль, предоставляющая действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , должна быть назначена на уровне учетной записи хранения, группы ресурсов или подписки. Дополнительные сведения о разрешениях RBAC для создания SAS для делегирования пользователей см. в разделе **Назначение разрешений с помощью RBAC** статьи [Создание SAS для делегирования пользователей](/rest/api/storageservices/create-user-delegation-sas).
 
 Если у вас нет достаточных разрешений для назначения ролей RBAC субъекту безопасности Azure AD, может потребоваться попросить владельца или администратора учетной записи назначить необходимые разрешения.
 
@@ -94,7 +94,7 @@ New-AzRoleAssignment -SignInName <email> `
     -Scope  "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
 ```
 
-Дополнительные сведения о встроенных ролях, включающих действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , см. в статье [встроенные роли для ресурсов Azure](/role-based-access-control/built-in-roles).
+Дополнительные сведения о встроенных ролях, включающих действие **Microsoft. Storage/storageAccounts/блобсервицес/женератеусерделегатионкэй** , см. в статье [встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="use-azure-ad-credentials-to-secure-a-sas"></a>Использование учетных данных Azure AD для защиты SAS
 
@@ -167,5 +167,5 @@ Revoke-AzStorageAccountUserDelegationKeys -ResourceGroupName <resource-group> `
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-a-user-delegation-sas)
+- [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

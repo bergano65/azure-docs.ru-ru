@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 06/26/2019
+ms.date: 08/22/2019
 ms.author: dapine
-ms.openlocfilehash: e6c7dcd3015b0b8ab5b3c719ebd2397bc814b81a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c87132c3ae41dec82e3493f9a0ee2397455ff881
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67717211"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971353"
 ---
 ### <a name="text-to-speech-sub-chart-chartstexttospeech"></a>Преобразование текста в речь (во вспомогательной диаграмме: Charts/Тексттоспич)
 
-Чтобы переопределить диаграмму "тег", добавьте префикс `textToSpeech.` для любого параметра, чтобы сделать его более конкретным. Например, он переопределит соответствующий параметр, например `textToSpeech.numberOfConcurrentRequest` Overrides. `numberOfConcurrentRequest`
+Чтобы переопределить диаграмму "тег", добавьте префикс `textToSpeech.` для любого параметра, чтобы сделать его более конкретным. Например, он переопределит соответствующий параметр, `textToSpeech.numberOfConcurrentRequest` например Overrides. `numberOfConcurrentRequest`
 
 |Параметр|Описание|Значение по умолчанию|
 | -- | -- | -- |
@@ -37,5 +37,6 @@ ms.locfileid: "67717211"
 | `image.args.apikey`необходимости | Используется для отслеживания данных для выставлении счетов. ||
 | `service.type` | Тип службы Kubernetes для службы преобразования **текста в речь** . Дополнительные сведения и проверка поддержки поставщика облачных служб см. в инструкциях по [типам службы Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/) . | `LoadBalancer` |
 | `service.port`|  Порт службы преобразования **текста в речь** . | `80` |
+| `service.annotations` | Заметки преобразования **текста в речь** для метаданных службы. Аннотации — это пары "ключ — значение". <br>`annotations:`<br>&nbsp;&nbsp;`some/annotation1: value1`<br>&nbsp;&nbsp;`some/annotation2: value2` | |
 | `service.autoScaler.enabled` | Включен ли [Горизонтальный Автомасштабирование Pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) . Если `true`значение равно `text-to-speech-autoscaler` , то будет развернут в кластере Kubernetes. | `true` |
 | `service.podDisruption.enabled` | Включен ли [бюджет на прерывание Pod](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) . Если `true`значение равно `text-to-speech-poddisruptionbudget` , то будет развернут в кластере Kubernetes. | `true` |

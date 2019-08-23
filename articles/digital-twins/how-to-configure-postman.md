@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/20/2019
+ms.date: 08/21/2019
 ms.author: v-adgera
-ms.openlocfilehash: 66dbfd09ef07740c07ddb010b73e33e783340e5a
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: a39663adedfdb9c00c4429f65ec1bd27286cb136
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873653"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904297"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -35,9 +35,9 @@ ms.locfileid: "69873653"
 
 Настройте приложение Azure AD на использование потока неявного предоставления разрешений OAuth 2.0.
 
-1. Чтобы создать собственное приложение Azure AD, воспользуйтесь сведениями из статьи [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad). Кроме того, можно повторно использовать имеющуюся регистрацию собственного приложения.
+1. Чтобы создать приложение Azure AD, выполните действия, описанные в этом [кратком руководстве](./quickstart-view-occupancy-dotnet.md) . Или создайте [собственное приложение, используя устаревшую колонку AAD](./how-to-use-legacy-aad.md).
 
-1. В разделе **Необходимые разрешения** выберите **Добавить** и введите **Azure Digital Twins** в разделе **Добавить доступ через API**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **Предоставление разрешений > Делегированные разрешения** и нажмите **Готово**.
+1. В разделе **разрешения API**выберите **Добавить разрешение**. Затем **Azure Digital двойников** в разделе **API, которые использует Моя организация**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **делегированные разрешения**, **Чтение** > чтение **. запись**и разрешение на **Добавление**.
 
     [![Добавление API Azure Active Directory регистрации приложений](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
@@ -75,7 +75,7 @@ ms.locfileid: "69873653"
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
     | URL-адрес аутентификации | Использование **URL-адреса авторизации** из шага 2 |
-    | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
+    | Идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
     | `Scope` | Не указывайте |
     | Область | Не указывайте |
     | Проверка подлинности клиента | `Send as Basic Auth header` |

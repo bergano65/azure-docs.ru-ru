@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 08/22/2019
 ms.author: raynew
-ms.openlocfilehash: 742f1359d928aa05a8b8d36bde2ccf022db93b79
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c330afb2c5d315b3d386d1477669f1aab2f6e6f9
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66418256"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972077"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-vmware-vms-and-physical-servers-to-a-secondary-site"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов на дополнительный сайт
 
@@ -30,7 +30,7 @@ ms.locfileid: "66418256"
 
 **Операционная система** | **Сведения**
 --- | ---
-Сервер vCenter | vCenter 5.5, 6.0 или 6.5<br/><br/> Обратите внимание, что при использовании версии 6.0 или 6.5 поддерживаются только функции версии 5.5.
+vCenter Server | vCenter 5.5, 6.0 или 6.5<br/><br/> Обратите внимание, что при использовании версии 6.0 или 6.5 поддерживаются только функции версии 5.5.
 
 
 ## <a name="replicated-vm-support"></a>Поддержка реплицируемых виртуальных машин
@@ -68,7 +68,7 @@ Linux | Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.1 или 7.2. <br/><br/> CentO
 Гостевая виртуальная машина — несколько сетевых адаптеров | Да
 
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="host-storage"></a>Хранилище узла
 
@@ -116,7 +116,7 @@ RDM | Да
 |Обновления компонентов | В пакет обновлений Scout входят обновления для всех компонентов, включая сервер RX, сервер конфигурации, главный целевой сервер и целевой сервер обработки, серверы vContinuum и исходные серверы, которые нужно защитить.<br/><br/> [Узнайте больше](vmware-physical-secondary-disaster-recovery.md#download-and-install-component-updates).|
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Скачайте [руководство пользователя InMage Scout](https://aka.ms/asr-scout-user-guide).
 

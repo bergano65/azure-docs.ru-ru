@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/25/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 1fd08efd12e723a16445eba1d341f017a86a212e
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: e55b191e937b6c9f8183b3878b264eb50401b3f1
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68481542"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69903873"
 ---
 <a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети. Azure Resource Manager следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **Azure Resource Manager** для каждого региона на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
@@ -78,7 +78,7 @@ ms.locfileid: "68481542"
 | Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Виртуальные сети |100 |100 |
-| Сайты локальной сети |20 |Обратитесь в службу поддержки. |
+| Сайты локальной сети |20 |50 |
 | DNS-серверов на виртуальную сеть |20 |20 |
 | Частных IP-адресов на виртуальную сеть |4096 |4096 |
 | Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500 000, до 1 000 000 для двух или более сетевых карт. |500 000, до 1 000 000 для двух или более сетевых карт. |

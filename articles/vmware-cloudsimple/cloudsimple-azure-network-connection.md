@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 90e3121c3f036d1abc8ca372ee349aef3485d07b
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: cfd4d65b07cf255ac2b60d6bf8376723a997374e
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69625052"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972952"
 ---
 # <a name="azure-network-connections-overview"></a>Общие сведения о сетевых подключениях Azure
 
@@ -44,7 +44,6 @@ ms.locfileid: "69625052"
 Вы можете подключить существующий канал Azure ExpressRoute к региону Клаудсимпле. Функция ExpressRoute Global Reach используется для подключения двух цепей друг к другу.  Между локальными и Клаудсимпле ExpressRoute устанавливаются соединения.  Это подключение позволяет расширять локальные сети в сеть частного облака. Маршруты из сети Клаудсимпле будут передаваться через BGP с локальной сетью.
 
 ![Подключение к локальной системе ExpressRoute — Global Reach](media/cloudsimple-global-reach-connection.png)
-
 
 ## <a name="connection-to-on-premises-network-and-azure-virtual-network"></a>Подключение к локальной сети и виртуальной сети Azure
 

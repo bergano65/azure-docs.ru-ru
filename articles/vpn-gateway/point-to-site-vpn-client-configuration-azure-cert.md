@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: 79e7027d308d389aa672d164de91df61b1142e32
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 07d48ed195f74c9aef5d34de1925ab8fc2a3ae21
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534164"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899872"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -133,13 +133,13 @@ ms.locfileid: "69534164"
    ```
    sudo apt install network-manager-strongswan
    ```
-2. Щелкните значок **Network Manager** (Диспетчер сети) (стрелка вверх или стрелка вниз), а затем выберите **Edit Connections** (Изменить подключения).
+2. Выберите **Параметры** , а затем выберите **сеть**.
 
    ![Изменение подключения](./media/point-to-site-vpn-client-configuration-azure-cert/editconnections.png)
-3. Нажмите кнопку **Add** (Добавить), чтобы создать подключение.
+3. Нажмите кнопку **+** , чтобы создать новое соединение.
 
    ![Добавление подключения](./media/point-to-site-vpn-client-configuration-azure-cert/addconnection.png)
-4. Выберите **IPsec/IKEv2 (strongswan)** (IPsec или IKEv2 (strongswan)) из раскрывающегося меню, а затем щелкните **Create** (Создать). На этом шаге можно переименовать подключение.
+4. В меню выберите **IPSec/IKEv2 (strongSwan)** и дважды щелкните. Вы можете присвоить имя подключению на этом шаге.
 
    ![Выбор типа подключения](./media/point-to-site-vpn-client-configuration-azure-cert/choosetype.png)
 5. Откройте файл **VpnSettings.xml** из папки **Generic** в скачанных файлах конфигурации клиента. Найдите тег **VpnServer** и скопируйте имя, начиная с azuregateway и заканчивая .cloudapp.net.
@@ -148,8 +148,8 @@ ms.locfileid: "69534164"
 6. Вставьте это имя в поле **Address** (Адрес) нового VPN-подключения в разделе **Gateway** (Шлюз). Затем щелкните значок папки в конце поля **Certificate** (Сертификат), перейдите в папку **Generic** и выберите файл **VpnServerRoot**.
 7. В разделе **Client** (Клиент) подключения для параметра **Authentication** (Аутентификация) выберите **Certificate/private key** (Сертификат/закрытый ключ). Для параметров **Certificate** (Сертификат ) и **Private key** (Закрытый ключ) выберите созданные ранее сертификат и закрытый ключ. В разделе **Options** (Параметры) выберите **Request an inner IP address** (Запросить внутренний IP-адрес). Нажмите кнопку **Добавить**.
 
-   ![Запрос внутреннего IP-адреса](./media/point-to-site-vpn-client-configuration-azure-cert/inneripreq.png)
-8. Щелкните значок **Network Manager** (Диспетчер сети) (стрелка вверх или стрелка вниз), а затем выберите **VPN Connections** (VPN-подключения). Вы увидите созданное VPN-подключение. Щелкните, чтобы инициировать подключение.
+   ![Запрос внутреннего IP-адреса](./media/point-to-site-vpn-client-configuration-azure-cert/turnon.png)
+8. Включите подключение.
 
 ## <a name="linuxinstallcli"></a>Linux (strongSwan CLI)
 

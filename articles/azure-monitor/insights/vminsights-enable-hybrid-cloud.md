@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/12/2019
 ms.author: magoedte
-ms.openlocfilehash: e8241069a8671919b70dfbe44fe28c99a05358c5
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: b06fe477f551977b1357f3b1b185cb340a948052
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489734"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905502"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-for-a-hybrid-environment"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) для гибридной среды
 
@@ -42,6 +42,9 @@ ms.locfileid: "68489734"
 3. Включите сбор данных счетчиков производительности.
 
 4. Разверните Azure Monitor для виртуальных машин.
+
+>[!NOTE]
+>Сведения, описанные в этой статье для развертывания агента зависимостей, также применимы к [решению сопоставление служб](service-map.md).  
 
 ## <a name="install-the-dependency-agent-on-windows"></a>Установка Dependency Agent на Windows
 

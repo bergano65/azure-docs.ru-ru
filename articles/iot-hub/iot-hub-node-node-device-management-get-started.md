@@ -7,13 +7,13 @@ ms.author: wesmc
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 08/25/2017
-ms.openlocfilehash: 88d9abda7d56deefc5880eb50799ac89a89ac44f
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.date: 08/20/2019
+ms.openlocfilehash: 049fc534c6bf3d777268363968ac2a8b92ca8d1c
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780960"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904435"
 ---
 # <a name="get-started-with-device-management-nodejs"></a>Начало работы с управлением устройствами (Node. js)
 
@@ -33,7 +33,9 @@ ms.locfileid: "68780960"
 
 * **dmpatterns_getstarted_service.js**, которое вызывает прямой метод в приложении для имитации устройства, выводит ответ и отображает обновленные сообщаемые свойства.
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 
@@ -49,7 +51,7 @@ ms.locfileid: "68780960"
 
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
 
-В этом разделе будут выполнены следующие действия.
+В этом разделе выполняются следующие действия:
 
 * создадите консольное приложение Node.js, отвечающее на прямой метод, вызываемый из облака;
 
@@ -58,40 +60,40 @@ ms.locfileid: "68780960"
 * используете сообщаемые свойства в запросах двойника устройства для определения устройств и времени последней перезагрузки.
 
 1. Создайте пустую папку с именем **manageddevice**.  В папке **manageddevice** создайте файл package.json, используя следующую команду в командной строке.  Примите значения по умолчанию:
-      
-    ```
+
+    ```cmd/sh
     npm init
     ```
 
 2. В командной строке в папке **manageddevice** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
-   
-    ```
+
+    ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
 3. В текстовом редакторе создайте файл **dmpatterns_getstarted_device.js** в папке **manageddevice**.
 
 4. Добавьте следующие инструкции require в начале файла **dmpatterns_getstarted_device.js**:
-   
-    ```
+
+    ```javascript
     'use strict';
-   
+
     var Client = require('azure-iot-device').Client;
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените connection string строкой подключения своего устройства.  
-   
-    ```
-    var connectionString = 'HostName={youriothostname};DeviceId=myDeviceId;SharedAccessKey={yourdevicekey}';
+5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение заполнителя строкой подключения устройства, скопированной ранее в окне [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `{yourdeviceconnectionstring}`  
+
+    ```javascript
+    var connectionString = '{yourdeviceconnectionstring}';
     var client = Client.fromConnectionString(connectionString, Protocol);
     ```
 
 6. Добавьте следующую функцию, чтобы реализовать прямой метод на устройстве:
-   
-    ```
+
+    ```javascript
     var onReboot = function(request, response) {
-   
+
         // Respond the cloud app for the direct method
         response.send(200, 'Reboot started', function(err) {
             if (err) {
@@ -100,7 +102,7 @@ ms.locfileid: "68780960"
                 console.log('Response to method \'' + request.methodName + '\' sent successfully.');
             }
         });
-   
+
         // Report the reboot before the physical restart
         var date = new Date();
         var patch = {
@@ -110,7 +112,7 @@ ms.locfileid: "68780960"
                 }
             }
         };
-   
+
         // Get device Twin
         client.getTwin(function(err, twin) {
             if (err) {
@@ -123,7 +125,7 @@ ms.locfileid: "68780960"
                 });  
             }
         });
-   
+
         // Add your device's reboot API for physical restart.
         console.log('Rebooting!');
     };
@@ -131,8 +133,7 @@ ms.locfileid: "68780960"
 
 7. Откройте подключение к Центру Интернета вещей и запустите прослушиватель прямого метода:
 
-   
-    ```
+    ```javascript
     client.open(function(err) {
         if (err) {
             console.error('Could not open IotHub client');
@@ -159,14 +160,14 @@ ms.locfileid: "68780960"
 В этом разделе вы создадите консольное приложение Node.js, которое инициирует удаленное обновление устройства с помощью прямого метода. Приложение использует запросы двойника устройства для определения времени последней перезагрузки этого устройства.
 
 1. Создайте пустую папку с именем **triggerrebootondevice**. В папке **triggerrebootondevice** создайте файл package.json, используя следующую команду в командной строке. Примите значения по умолчанию:
-   
-    ```
+
+    ```cmd/sh
     npm init
     ```
 
 2. В командной строке в папке **triggerrebootondevice** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iothub** и пакет **azure-iot-device-mqtt**.
-   
-    ```
+
+    ```cmd/sh
     npm install azure-iothub --save
     ```
 
@@ -174,18 +175,16 @@ ms.locfileid: "68780960"
 
 4. Добавьте следующие инструкции require в начале файла **dmpatterns_getstarted_service.js**:
 
-  
-    ```
+    ```javascript
     'use strict';
-   
+
     var Registry = require('azure-iothub').Registry;
     var Client = require('azure-iothub').Client;
     ```
 
-5. Добавьте следующие объявления переменных и замените значения заполнителей:
+5. Добавьте следующие объявления переменных и замените `{iothubconnectionstring}` значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
-   
-    ```
+    ```javascript
     var connectionString = '{iothubconnectionstring}';
     var registry = Registry.fromConnectionString(connectionString);
     var client = Client.fromConnectionString(connectionString);
@@ -193,18 +192,18 @@ ms.locfileid: "68780960"
     ```
 
 6. Добавьте следующую функцию, чтобы вызвать метод устройства для перезагрузки целевого устройства:
-   
-    ```
+
+    ```javascript
     var startRebootDevice = function(twin) {
-   
+
         var methodName = "reboot";
-   
+
         var methodParams = {
             methodName: methodName,
             payload: null,
             timeoutInSeconds: 30
         };
-   
+
         client.invokeDeviceMethod(deviceToReboot, methodParams, function(err, result) {
             if (err) {
                 console.error("Direct method error: "+err.message);
@@ -216,12 +215,12 @@ ms.locfileid: "68780960"
     ```
 
 7. Добавьте следующую функцию, чтобы запросить устройство и получить сведения о времени последней перезагрузки:
-   
-    ```
+
+    ```javascript
     var queryTwinLastReboot = function() {
-   
+
         registry.getTwin(deviceToReboot, function(err, twin){
-   
+
             if (twin.properties.reported.iothubDM != null)
             {
                 if (err) {
@@ -238,8 +237,7 @@ ms.locfileid: "68780960"
 
 8. Добавьте следующий код для вызова функций, которые активируют прямой метод перезагрузки и запросят сведения о времени последней перезагрузки:
 
-   
-    ```
+    ```javascript
     startRebootDevice();
     setInterval(queryTwinLastReboot, 2000);
     ```
@@ -248,22 +246,28 @@ ms.locfileid: "68780960"
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь все готово к запуску приложений.
+Теперь все готово для запуска приложений.
 
 1. В командной строке в папке **manageddevice** выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки.
 
-   
-    ```
+    ```cmd/sh
     node dmpatterns_getstarted_device.js
     ```
 
 2. В командной строке в папке **triggerrebootondevice** выполните следующую команду, чтобы активировать удаленную перезагрузку и выполнить запрос к двойнику устройства для поиска значения времени последней перезагрузки.
 
-   
-    ```
+    ```cmd/sh
     node dmpatterns_getstarted_service.js
     ```
 
-3. В консоли отобразится ответ устройства на прямой метод.
+3. Вы увидите ответ устройства на прямой метод перезагрузки и состояние перезагрузки в консоли.
+
+   Ниже показан ответ устройства на прямой метод перезагрузки, отправленный службой.
+
+   ![выходные данные приложения manageddevice](./media/iot-hub-node-node-device-management-get-started/device.png)
+
+   Ниже показана служба, которая запускает перезагрузку и опрашивает двойника устройства на время последней перезагрузки:
+
+   ![выходные данные приложения triggerrebootondevice](./media/iot-hub-node-node-device-management-get-started/service.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]

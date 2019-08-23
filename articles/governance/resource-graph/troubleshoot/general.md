@@ -3,16 +3,16 @@ title: Устранение распространенных ошибок
 description: Узнайте, как устранять проблемы с запросом ресурсов Azure с помощью графа ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 07/24/2019
+ms.date: 08/21/2019
 ms.topic: troubleshooting
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 511d170f90e8ed34b00a3960d084223ec73d99dd
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 3c59b5c4b580604c65572364d29d4e5d10a26820
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68480557"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900012"
 ---
 # <a name="troubleshoot-errors-using-azure-resource-graph"></a>Устранение ошибок с помощью графа ресурсов Azure
 
@@ -60,6 +60,33 @@ foreach ($batch in $subscriptionsBatch){ $response += Search-AzGraph -Query $que
 # View the completed results of the query on all subscriptions
 $response
 ```
+
+### <a name="rest-contenttype"></a>Сценарий. Неподдерживаемый заголовок содержимого типа Content-Type
+
+#### <a name="issue"></a>Проблемы
+
+Клиенты запрашивают граф ресурсов Azure REST API получить возвращенный ответ _500_ (внутренняя ошибка сервера).
+
+#### <a name="cause"></a>Причина:
+
+Граф ресурсов Azure REST API поддерживает `Content-Type` только **приложение/JSON**. Некоторые инструменты или агенты по умолчанию имеют **текст/Plain**, который не поддерживается REST API.
+
+#### <a name="resolution"></a>Разрешение
+
+Убедитесь, что средство или агент, которые вы используете для запроса графа ресурсов Azure, имеют `Content-Type` заголовок REST API, настроенный для **Application/JSON**.
+### <a name="rest-403"></a>Сценарий. Нет разрешения на чтение для всех подписок в списке
+
+#### <a name="issue"></a>Проблемы
+
+Клиенты, которые явно передают список подписок с помощью запроса графа ресурсов Azure, получают ответ _403_ (запрещено).
+
+#### <a name="cause"></a>Причина:
+
+Если у клиента нет разрешения на чтение для всех предоставленных подписок, запрос отклоняется из-за отсутствия соответствующих прав доступа.
+
+#### <a name="resolution"></a>Разрешение
+
+Включите по крайней мере одну подписку в список подписок, чтобы у клиента, выполняющего запрос, был по крайней мере доступ для чтения. Дополнительные сведения см. [в статье разрешения в графе ресурсов Azure](../overview.md#permissions-in-azure-resource-graph).
 
 ## <a name="next-steps"></a>Следующие шаги
 

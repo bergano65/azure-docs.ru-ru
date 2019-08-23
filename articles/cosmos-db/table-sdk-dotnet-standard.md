@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: e92c2e58122556f90b25f070fff9e6e6616b0257
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 22a27ba19670344f351205b6a4865bf85daf0bab
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976847"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900256"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -34,6 +34,9 @@ ms.locfileid: "68976847"
 |**Сообщить о проблемах**|[Сообщить о проблемах](https://github.com/Azure/azure-cosmos-table-dotnet/issues)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name105-preview105-preview"></a><a name="1.0.5-preview"/>1.0.5 — Предварительная версия
+* Исправления ошибок
 
 ### <a name="a-name104104"></a><a name="1.0.4"/>1.0.4
 * Исправления ошибок
@@ -76,9 +79,10 @@ ms.locfileid: "68976847"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.0.5 — Предварительная версия](#1.0.5-preview) |Аугуест 20, 2019 |--- |
 | [1.0.4](#1.0.4) |Аугуест 12, 2019 |--- |
 | [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |
-| 1.0.2-предварительная версия |2 мая 2019 г. |--- |
+| 1.0.2 — Предварительная версия |2 мая 2019 г. |--- |
 | [1.0.1](#1.0.1) |19 апреля 2019 г. |--- |
 | [1.0.0](#1.0.0) |13 марта 2019 г. |--- |
 | [0.11.0 — Предварительная версия](#0.11.0-preview) |5 марта 2019 г. |--- |

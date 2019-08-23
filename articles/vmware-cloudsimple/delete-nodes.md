@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9dbe1751ac77f370991af75ea161247c21700ff2
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 122e0636f54e066ae86ed2d19cefe5863b026293
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886992"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972818"
 ---
-# <a name="delete-nodes-from-vmware-solution-by-cloudsimple---azure"></a>Удаление узлов из решения VMware с помощью Клаудсимпле — Azure
+# <a name="delete-nodes-from-azure-vmware-solution-by-cloudsimple"></a>Удаление узлов из решения VMware Azure с помощью Клаудсимпле
 
-Узлы Клаудсимпле измеряются после их создания.  Чтобы отключить отслеживание узлов, необходимо удалить узлы.  Вы удаляете узлы, которые не используются из портал Azure. 
+Узлы Клаудсимпле измеряются после их создания.  Чтобы отключить отслеживание узлов, необходимо удалить узлы.  Вы удаляете узлы, которые не используются из портал Azure.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -25,7 +25,6 @@ ms.locfileid: "68886992"
 
 * Частное облако, созданное с помощью узлов, удаляется.  Сведения об удалении частного облака см. в статье [Удаление решения VMware для Azure с помощью клаудсимпле](delete-private-cloud.md).
 * Узел был удален из частного облака путем сжатия частного облака.  Сведения о сжатии частного облака см. в статье [Сжатие решения VMware для Azure с помощью Клаудсимпле Private Cloud](shrink-private-cloud.md).
-
 
 ## <a name="sign-in-to-azure"></a>Войдите в Azure
 

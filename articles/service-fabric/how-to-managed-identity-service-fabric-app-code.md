@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 7/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: 5095e680eb7fd33d28acb2d187f83d86db1b46bf
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 8e535fc581e186abd032206c2bbf78623d95967f
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656624"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899772"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure (Предварительная версия)
 
@@ -23,7 +23,7 @@ Service Fabric приложения могут использовать упра
 > Управляемое удостоверение представляет связь между ресурсом Azure и субъектом-службой в соответствующем клиенте Azure AD, связанном с подпиской, содержащей ресурс. Таким образом, в контексте Service Fabric управляемые удостоверения поддерживаются только для приложений, развернутых в качестве ресурсов Azure. 
 
 > [!IMPORTANT]
-> Прежде чем использовать управляемое удостоверение приложения Service Fabric, клиентскому приложению должен быть предоставлен доступ к защищенному ресурсу. Ознакомьтесь со списком [служб Azure, поддерживающих проверку подлинности Azure AD](/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-managed-identities-for-azure-resources) , чтобы проверить поддержку, а затем в соответствующую документацию службы, чтобы предоставить удостоверению доступ к интересующим ресурсам. 
+> Прежде чем использовать управляемое удостоверение приложения Service Fabric, клиентскому приложению должен быть предоставлен доступ к защищенному ресурсу. Ознакомьтесь со списком [служб Azure, поддерживающих проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-managed-identities-for-azure-resources) , чтобы проверить поддержку, а затем в соответствующую документацию службы, чтобы предоставить удостоверению доступ к интересующим ресурсам. 
 
 ## <a name="acquiring-an-access-token-using-rest-api"></a>Получение маркера доступа с помощью REST API
 В кластерах, поддерживающих управляемое удостоверение, среда выполнения Service Fabric предоставляет конечную точку localhost, которую приложения могут использовать для получения маркеров доступа. Конечная точка доступна на каждом узле кластера и доступна для всех сущностей на этом узле. Полномочные вызывающие объекты могут получить маркеры доступа, вызвав эту конечную точку и выполнив код проверки подлинности. код создается средой выполнения Service Fabric для каждой отдельной активации пакета кода службы и привязана к времени существования процесса, в котором размещается пакет кода службы.

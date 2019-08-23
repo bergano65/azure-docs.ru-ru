@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 07/19/2019
-ms.openlocfilehash: e076d6fed8cb3baf6b62dc3ede6ddd34732ed7a2
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 95df72875338b6964f42075404cf9c30ba132f9d
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562076"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900203"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -253,9 +253,11 @@ ms.locfileid: "69562076"
 
 ## <a name="firewall-configuration-ip-addresses"></a>Настройка брандмауэра: IP-адреса
 
-Все приложения логики в одном регионе используют одни и те же диапазоны IP-адреса. Чтобы поддерживать вызовы, которые приложения логики непосредственно выполняют с помощью [HTTP](../connectors/connectors-native-http.md), [HTTP + Swagger](../connectors/connectors-native-http-swagger.md) и других HTTP-запросов, настройте брандмауэры так, чтобы они включали *все* [входящие](#inbound) *и* [исходящие](#outbound) IP-адреса, используемые службой Logic Apps, на основе существования приложений логики. Эти адреса отображаются под заголовками **Входящие** и **Исходящие** в этом разделе и сортируются по регионам.
+Все приложения логики в одном регионе используют одни и те же диапазоны IP-адреса. Чтобы поддерживать вызовы, которые приложения логики непосредственно выполняют с помощью [HTTP](../connectors/connectors-native-http.md), [HTTP + Swagger](../connectors/connectors-native-http-swagger.md) и других HTTP-запросов, настройте брандмауэры так, чтобы они включали *все* [входящие](#inbound) *и* [исходящие](#outbound) IP-адреса, используемые службой Logic Apps, на основе существования приложений логики. Эти адреса отображаются под заголовками **Входящие** и **Исходящие** в этом разделе и сортируются по регионам. 
 
 Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте брандмауэр так, чтобы он включал *все* [исходящие](#outbound) IP-адреса, используемые этими соединителями, в зависимости от регионов, где существуют приложения логики. Эти адреса отображаются под заголовком **Исходящие** в этом разделе и сортируются по регионам.
+
+Для приложений логики, работающих в среде службы интеграции (ISE), убедитесь, что вы [откроете эти порты](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#ports).
 
 В [Azure для государственных организаций](../azure-government/documentation-government-overview.md) и [21Vianet в Azure для Китая](https://docs.microsoft.com/azure/china/) зарезервированные IP-адреса для соединителей сейчас недоступны.
 

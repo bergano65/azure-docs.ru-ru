@@ -16,12 +16,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50f2f1f7f5d8509a28557e9704bc178be465b1ee
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 93327091d0065a67d441dd56cadd83f4f7d2d1f2
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648655"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69970399"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
@@ -85,7 +85,7 @@ Azure AD усовершенствуется на постоянной основ
 **Категория службы:** MFA  
 **Возможности продукта:** Защита удостоверений
 
-Мы удалим IP-адрес сервера MFA из [IP-адреса и с URL Office 365](https://docs.microsoft.com/office365/enterprise/office-365-ip-web-service). Если вы в настоящее время используете эти страницы для обновления параметров брандмауэра, необходимо убедиться, что вы также включаете список IP-адресов, описанных в разделе **требования к брандмауэру сервера многофакторной идентификации Azure** в статье Приступая к [работе. ](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#azure-multi-factor-authentication-server-firewall-requirements)в статье о сервере многофакторной идентификации Azure.
+Мы удалим IP-адрес сервера MFA из [IP-адреса и с URL Office 365](https://docs.microsoft.com/office365/enterprise/office-365-ip-web-service). Если вы в настоящее время используете эти страницы для обновления параметров брандмауэра, необходимо убедиться, что вы также включаете список IP-адресов, описанных в разделе **требования к брандмауэру сервера многофакторной идентификации Azure** в статье Приступая к [работе. в статье сервер Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#azure-multi-factor-authentication-server-firewall-requirements) .
 
 ---
 
@@ -114,7 +114,7 @@ Azure AD усовершенствуется на постоянной основ
 
 Теперь клиенты Azure AD могут задавать политики для управления ключами безопасности FIDO2 для пользователей и групп Организации. Конечные пользователи также могут самостоятельно регистрировать свои ключи безопасности, использовать ключи для входа в учетные записи Майкрософт на веб-сайтах, пока на устройствах с поддержкой FIDO, а также входить на устройства Windows 10, присоединенные к Azure AD.
 
-Дополнительные сведения см. [в статье Включение входа без пароля для Azure AD (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-enable) для сведений, относящихся к администратору, и Настройка сведений о [безопасности для использования ключа безопасности (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-security-key) для сведений, относящихся к конечным пользователям.
+Дополнительные сведения см. [в статье Включение входа без пароля для Azure AD (Предварительная версия)](/azure/active-directory/authentication/concept-authentication-passwordless) для сведений, относящихся к администратору, и Настройка сведений о [безопасности для использования ключа безопасности (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-security-key) для сведений, относящихся к конечным пользователям.
 
 ---
 

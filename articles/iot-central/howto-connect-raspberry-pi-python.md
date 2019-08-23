@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: bd506bf1210692feb017f3b526c3b6d4bca36004
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c8fd5309f50cfc024083cb8a05d679d04bf112dc
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877430"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972261"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -29,6 +29,9 @@ ms.locfileid: "69877430"
 
 * Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 * Устройство Raspberry Pi с операционной системой Raspbian. Raspberry Pi должен иметь возможность подключения к Интернету. Дополнительные сведения см. в разделе [Настройка устройства Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
+
+> [!TIP]
+> Дополнительные сведения о настройке устройства Raspberry Pi и подключении к нему см. в статье Приступая к [работе с Raspberry Pi](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi) .
 
 ## <a name="sample-devkits-application"></a>Пример **приложения Devkits**
 
@@ -63,12 +66,37 @@ ms.locfileid: "69877430"
 * отправляет данные телеметрии и значения свойств в Azure IoT Central;
 * реагирует на изменения параметров, внесенные в Azure IoT Central.
 
-Чтобы настроить устройство, выполните пошаговые [инструкции на сайте GitHub](https://github.com/Azure/iot-central-firmware/blob/master/RaspberryPi/README.md).
+1. Подключитесь к среде оболочки на устройстве Raspberry Pi либо с компьютера Raspberry Pi, либо удаленно с помощью SSH.
 
-1. Когда устройство настроено, устройство начинает отправлять измерения телеметрии в Azure IoT Central.
+1. Выполните следующую команду, чтобы установить клиент IoT Central Python:
+
+    ```sh
+    pip install iotc
+    ```
+
+1. Скачайте пример кода Python:
+
+    ```sh
+    curl -O https://raw.githubusercontent.com/Azure/iot-central-firmware/master/RaspberryPi/app.py
+    ```
+
+1. Отредактируйте скачанный `DEVICE_ID` `SCOPE_ID` `PRIMARY/SECONDARY device KEY` файл и замените заполнители, и значениями подключения, которые были сделаны ранее. `app.py` Сохраните изменения.
+
+    > [!TIP]
+    > В оболочке на Raspberry Pi можно использовать текстовые редакторы **Nano** или **VI** .
+
+1. Чтобы запустить пример, используйте следующую команду:
+
+    ```sh
+    python app.py
+    ```
+
+    Raspberry Pi начинает отправку измерений телеметрии в Azure IoT Central.
+
 1. В приложении Azure IoT Central вы увидите, как код, выполняющийся в Raspberry Pi, взаимодействует с приложением:
 
     * На странице **Measurements** (Измерения) для реального устройства можно просмотреть данные телеметрии, отправленные из Raspberry Pi.
+    * На странице **Свойства** можно увидеть свойство устройство **номер кристалла** .
     * На странице **Параметры** можно изменить параметры Raspberry Pi, такие как напряжение и скорость вращения вентилятора. Когда Raspberry Pi подтверждает изменение, параметр отображается как **синхронизированный**.
 
 ## <a name="raspberry-pi-device-template-details"></a>Сведения о шаблоне устройства Raspberry Pi
@@ -110,7 +138,7 @@ ms.locfileid: "69877430"
 
 ### <a name="properties"></a>Свойства
 
-| Тип            | `Display name` | Имя поля | Тип данных |
+| Type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | номер    |
 | Текст            | Местоположение     | расположение   | Н/Д       |

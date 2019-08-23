@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 88c27b920817da5edc2cefe780903c2b94695807
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8b7b02c164021ac084dccf5663122620b2af1b15
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877639"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972892"
 ---
 # <a name="vpn-gateways-overview"></a>Общие сведения о VPN-шлюзах
 
@@ -21,10 +21,10 @@ VPN-шлюз используется для отправки зашифрова
 
 Клаудсимпле предоставляет два типа VPN-шлюзов:
 
-* VPN-шлюз типа "сеть — сеть";
+* VPN-шлюз типа "сеть — сеть"
 * VPN-шлюз типа "точка — сеть"
 
-## <a name="site-to-site-vpn-gateway"></a>VPN-шлюз типа "сеть — сеть";
+## <a name="site-to-site-vpn-gateway"></a>VPN-шлюз типа "сеть — сеть"
 
 VPN-шлюз типа "сеть — сеть" используется для отправки зашифрованного трафика между сетью регионов Клаудсимпле и локальным центром обработки данных. Используйте это подключение для определения диапазона подсетей или CIDR для сетевого трафика между локальной сетью и сетью регионов Клаудсимпле.
 

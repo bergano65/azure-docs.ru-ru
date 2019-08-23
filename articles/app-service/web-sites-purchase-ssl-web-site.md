@@ -16,12 +16,12 @@ ms.date: 10/16/2018
 ms.author: cephalin
 ms.reviewer: apurvajo
 ms.custom: seodec18
-ms.openlocfilehash: 7675a22b4b2d8b13524f06f45d6bb805c1e2fad1
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 8f55e2eb3ac7fe2e869b6b1061f6d45d11894ccf
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019133"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905945"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "69019133"
 > Сертификаты службы приложений можно использовать для любой службы Azure или сторонней службы, а не только в службах приложений. Для этого нужно создать локальную копию (PFX-файл) сертификата службы приложений, чтобы использовать ее с любой службой. Дополнительные сведения см. в записи блога о [создании локальной копии (PFX-файла) сертификата службы приложения](https://blogs.msdn.microsoft.com/benjaminperkins/2017/04/12/export-an-azure-app-service-certificate-pfx-powershell/).
 >
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Ознакомьтесь со следующими статьями:
 
@@ -139,7 +139,7 @@ ms.locfileid: "69019133"
 
 ## <a name="renew-certificate"></a>Продлить сертификат
 
-Чтобы включить автоматическое обновление сертификата в любое время, на странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) выберите сертификат, а затем в области навигации слева щелкните **Параметры автовозобновления**.
+Чтобы включить автоматическое обновление сертификата в любое время, на странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) выберите сертификат, а затем в области навигации слева щелкните **Параметры автовозобновления**. По умолчанию сертификаты службы приложений имеют срок действия в 1 год.
 
 Выберите **Вкл.** и нажмите кнопку **Сохранить**. Если автоматическое обновление включено, сертификаты начнут автоматически обновляться за 60 дней до истечения их срока действия.
 

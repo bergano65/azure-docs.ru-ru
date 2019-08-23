@@ -1,26 +1,26 @@
 ---
-title: 'Управление репликами чтения для базы данных Azure для PostgreSQL: один сервер с помощью Azure CLI'
-description: 'Сведения об управлении чтения реплик в базе данных Azure для PostgreSQL: один сервер с помощью Azure CLI.'
+title: Управление репликами чтения для базы данных Azure для PostgreSQL-Single Server из Azure CLI
+description: Узнайте, как управлять репликами чтения в базе данных Azure для PostgreSQL-Single Server из Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.openlocfilehash: 9a6a1a744a8441d2f082d4d14a3aba8aa1cfc09e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/21/2019
+ms.openlocfilehash: 63a8acad3c393a4c4d9c6a3b6750f1f934dad43d
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306024"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907430"
 ---
-# <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание и управление ими чтения реплик с помощью Azure CLI
+# <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание реплик чтения и управление ими из Azure CLI
 
-В этой статье вы узнаете, как создавать и управлять ими чтения реплик в базе данных Azure для PostgreSQL с помощью Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
+Из этой статьи вы узнаете, как создавать реплики чтения в базе данных Azure для PostgreSQL и управлять ими из Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 > [!IMPORTANT]
-> Можно создать чтения реплики, в том же регионе, что главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время находится в общедоступной предварительной версии.
+> Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время доступна в общедоступной предварительной версии.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
 
 [!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
@@ -31,15 +31,15 @@ ms.locfileid: "66306024"
 ## <a name="prepare-the-master-server"></a>Подготовка главного сервера
 Приведенные ниже действия позволяют подготовить главный сервер в ценовой категории "Общего назначения" или "Оптимизированная для операций в памяти".
 
-На главном сервере задайте для параметра `azure.replication_support` значение **REPLICA**. При изменении этого параметра static, чтобы изменения вступили в силу требуется перезагрузка сервера.
+На главном сервере задайте для параметра `azure.replication_support` значение **REPLICA**. При изменении этого статического параметра необходимо перезапустить сервер, чтобы изменения вступили в силу.
 
-1. Задайте `azure.replication_support` к РЕПЛИКЕ.
+1. Задайте `azure.replication_support` для параметра значение реплика.
 
    ```azurecli-interactive
    az postgres server configuration set --resource-group myresourcegroup --server-name mydemoserver --name azure.replication_support --value REPLICA
    ```
 
-2. Перезагрузка для применения изменений на сервер.
+2. Перезапустите, чтобы применить изменения к серверу.
 
    ```azurecli-interactive
    az postgres server restart --name mydemoserver --resource-group myresourcegroup
@@ -47,42 +47,45 @@ ms.locfileid: "66306024"
 
 ## <a name="create-a-read-replica"></a>Создание реплики чтения
 
-[Az postgres server реплике создайте](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) команды необходимо задать следующие параметры:
+Команда [AZ postgres Server Replica Create](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) требует наличия следующих параметров:
 
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
-| resource-group | myresourcegroup |  Группа ресурсов, в которой будут создаваться на сервер-реплику.  |
-| name | mydemoserver реплики | Имя нового сервера реплики, который создается. |
-| source-server | mydemoserver | Имя или ресурса идентификатор существующего главного сервера для репликации из. |
+| resource-group | myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
+| name | mydemoserver — реплика | Имя нового сервера реплики, который создается. |
+| source-server | mydemoserver | Имя или идентификатор ресурса существующего главного сервера, с которого выполняется репликация. |
 
-В следующем примере интерфейс командной строки в том же регионе, что и основной Создание реплики.
+В следующем примере CLI реплика создается в том же регионе, что и Главная.
 
 ```azurecli-interactive
 az postgres server replica create --name mydemoserver-replica --source-server mydemoserver --resource-group myresourcegroup
 ```
 
-Для создания перекрестного регион чтения реплики, используйте `--location` параметра. Приведенный ниже пример CLI создает реплику в западной части США.
+Чтобы создать реплику чтения между регионами, используйте `--location` параметр. Приведенный ниже пример интерфейса командной строки создает реплику в западной части США.
 
 ```azurecli-interactive
 az postgres server replica create --name mydemoserver-replica --source-server mydemoserver --resource-group myresourcegroup --location westus
 ```
 
-Если вы не задали `azure.replication_support` параметр **РЕПЛИКИ** на общего назначения или оптимизированной для памяти главного сервера и перезапустите сервер, то возникнет ошибка. Завершения этих этапов, прежде чем создавать реплики.
+> [!NOTE]
+> Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
 
-Реплика создается с той же конфигурацией сервера, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
+Если `azure.replication_support` параметр не задан для реплики на общего назначения или на главном сервере, оптимизированном для памяти, и сервер перезагружен, появится сообщение об ошибке. Перед созданием реплики выполните эти два действия.
+
+Реплика создается с использованием тех же параметров вычислений и хранилища, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
 
 > [!IMPORTANT]
-> Прежде чем изменить параметры конфигурации на главном сервере, установите на каждой реплике такие же или более высокие значения. Это позволит реплике справляться с нагрузкой, соответствующей новым параметрам главного сервера.
+> Перед обновлением параметра главного сервера до нового значения измените значение параметра реплики на равное или большее. Это действие помогает реплике справиться с изменениями, внесенными в главную базу.
 
 ## <a name="list-replicas"></a>Список реплик
-Список реплик главного сервера можно просмотреть с помощью [список реплик az postgres server](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) команды.
+Список реплик главного сервера можно просмотреть с помощью команды [AZ postgres Server Replica List](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-list) .
 
 ```azurecli-interactive
 az postgres server replica list --server-name mydemoserver --resource-group myresourcegroup 
 ```
 
 ## <a name="stop-replication-to-a-replica-server"></a>Остановка репликации на сервер-реплику
-Вы можете остановить репликацию между главным и чтения реплик с помощью [az postgres server реплике прекращают](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) команды.
+Репликацию между главным сервером и репликой чтения можно отключить с помощью команды [AZ postgres Server Replica](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-stop) .
 
 Остановленную репликацию отменить невозможно. Реплика чтения становится отдельным сервером, который поддерживает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.
 
@@ -90,8 +93,8 @@ az postgres server replica list --server-name mydemoserver --resource-group myre
 az postgres server replica stop --name mydemoserver-replica --resource-group myresourcegroup 
 ```
 
-## <a name="delete-a-master-or-replica-server"></a>Удаление сервера или основная реплика
-Чтобы удалить сервер или основная реплика, используйте [az postgres server delete](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) команды.
+## <a name="delete-a-master-or-replica-server"></a>Удаление главного или сервер-реплики
+Чтобы удалить главный или сервер-реплику, используйте команду [AZ postgres Server DELETE](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-delete) .
 
 При удалении главного сервера репликация всех реплик чтения останавливается. Реплики чтения становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
@@ -99,5 +102,6 @@ az postgres server replica stop --name mydemoserver-replica --resource-group myr
 az postgres server delete --name myserver --resource-group myresourcegroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
+## <a name="next-steps"></a>Следующие шаги
+* См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
+* Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).

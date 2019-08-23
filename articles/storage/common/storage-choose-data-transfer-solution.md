@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 56470c08f0ac940dae42821ae61846f1c86d52eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 838d65da90ec0daef69375e5a75bcb497a0c3512
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479515"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900400"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -65,11 +65,11 @@ ms.locfileid: "66479515"
     Если так, то вам подойдет этот вариант: [Сценарий 4. Периодическая передача данных](storage-solution-periodic-data-transfer.md).
  
 
-## <a name="data-transfer-feature-in-azure-portal"></a>Функция передачи данных на портале Azure
+## <a name="data-transfer-feature-in-azure-portal"></a>Функция пересылки данных в портал Azure
 
-Можно также перейти в учетную запись хранилища Azure в Azure, портала и выберите **передачи данных** функции. Укажите пропускную способность сети в вашей среде, размер данных, которые требуется перенести и частоту передачи данных. Вы увидите оптимальной передачи решения, соответствующие сведения, предоставленные вами данные. 
+Вы также можете открыть учетную запись хранения Azure в портал Azure и выбрать функцию **пересылки данных** . Укажите пропускную способность сети в вашей среде, размер данных, которые требуется передавать, и частоту передачи данных. Вы увидите оптимальные решения для обмена данными, соответствующие предоставленным данным. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
 - [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
@@ -83,4 +83,4 @@ ms.locfileid: "66479515"
 - Использование интерфейсов REST API для передачи данных:
 
     - [в .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage);
-    - [в Java](https://docs.microsoft.com/java/api/overview/azure/storage/client).
+    - [в Java](https://docs.microsoft.com/java/api/overview/azure/storage).

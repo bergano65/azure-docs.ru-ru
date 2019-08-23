@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 52651ca592c4da9883768cd87e090985e17be47b
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 287dbd3d6da4aa2bf5bd1da652cdeaeda3136321
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780920"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907737"
 ---
 # <a name="get-started-with-device-management-python"></a>Начало работы с управлением устройствами (Python)
 
@@ -49,7 +49,7 @@ ms.locfileid: "68780920"
 
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
 
-В этом разделе вы сделаете следующее:
+В этом разделе выполняются следующие действия:
 
 * создадите консольное приложение Python, отвечающее на прямой метод, вызываемый из облака;
 
@@ -57,9 +57,19 @@ ms.locfileid: "68780920"
 
 * используете сообщаемые свойства в запросах двойника устройства для определения устройств и времени последней перезагрузки.
 
-1. В текстовом редакторе создайте файл **dmpatterns_getstarted_device.py**.
+1. В командной строке выполните следующую команду, чтобы установить пакет **azure-iot-device-client**.
 
-2. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_device.js**.
+    ```cmd/sh
+    pip install azure-iothub-device-client
+    ```
+
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
+
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_device. корректировки** в рабочем каталоге.
+
+3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_device.js**.
 
     ```python
     import random
@@ -70,7 +80,7 @@ ms.locfileid: "68780920"
     from iothub_client import IoTHubClient, IoTHubClientError, IoTHubTransportProvider, IoTHubClientResult, IoTHubError, DeviceMethodReturnValue
     ```
 
-3. Добавьте переменные, в том числе переменную **CONNECTION_STRING** и инициализацию клиента.  Замените connection string строкой подключения своего устройства.  
+4. Добавьте переменные, в том числе переменную **CONNECTION_STRING** и инициализацию клиента.  Замените значение `{deviceConnectionString}` заполнителя строкой подключения устройства. Вы скопировали эту строку подключения ранее в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
 
     ```python
     CONNECTION_STRING = "{deviceConnectionString}"
@@ -87,7 +97,7 @@ ms.locfileid: "68780920"
     METHOD_CALLBACKS = 0
     ```
 
-4. Добавьте следующую функцию обратных вызовов, чтобы реализовать прямой метод на устройстве.
+5. Добавьте следующую функцию обратных вызовов, чтобы реализовать прямой метод на устройстве.
 
     ```python
     def send_reported_state_callback(status_code, user_context):
@@ -117,7 +127,7 @@ ms.locfileid: "68780920"
         return device_method_return_value
     ```
 
-5. Запустите прослушиватель прямого метода и подождите.
+6. Запустите прослушиватель прямого метода и подождите.
 
     ```python
     def iothub_client_init():
@@ -150,7 +160,7 @@ ms.locfileid: "68780920"
         iothub_client_sample_run()
     ```
 
-6. Сохраните и закройте файл **dmpatterns_getstarted_device.py**.
+7. Сохраните и закройте файл **dmpatterns_getstarted_device.py**.
 
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
@@ -165,9 +175,19 @@ ms.locfileid: "68780920"
 
 В этом разделе вы создадите консольное приложение Python, которое инициирует удаленное обновление устройства с помощью прямого метода. Приложение использует запросы двойника устройства для определения времени последней перезагрузки этого устройства.
 
-1. В текстовом редакторе создайте файл **dmpatterns_getstarted_service.py**.
+1. В командной строке выполните следующую команду, чтобы установить пакет **azure-iot-service-client**.
 
-2. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_service.py**.
+    ```cmd/sh
+    pip install azure-iothub-service-client
+    ```
+
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
+
+2. С помощью текстового редактора создайте файл с именем **dmpatterns_getstarted_service. корректировки** в рабочем каталоге.
+
+3. Добавьте следующие инструкции `import` в начале файла **dmpatterns_getstarted_service.py**.
 
     ```python
     import sys, time
@@ -176,7 +196,7 @@ ms.locfileid: "68780920"
     from iothub_service_client import IoTHubDeviceMethod, IoTHubError, IoTHubDeviceTwin
     ```
 
-3. Добавьте следующие объявления переменных. Только замените значения заполнителей для параметров _IoTHubConnectionString_ и _deviceId_.
+4. Добавьте следующие объявления переменных. Замените значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей.](#get-the-iot-hub-connection-string) `{IoTHubConnectionString}` Замените значение заполнителя идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `{deviceId}`
 
     ```python
     CONNECTION_STRING = "{IoTHubConnectionString}"
@@ -188,7 +208,7 @@ ms.locfileid: "68780920"
     WAIT_COUNT = 10
     ```
 
-4. Добавьте следующую функцию для вызова метода устройства, чтобы перезагрузить целевое устройство, а затем выполнить запрос к двойникам устройства и получить сведения о времени последней перезагрузки.
+5. Добавьте следующую функцию для вызова метода устройства, чтобы перезагрузить целевое устройство, а затем выполнить запрос к двойникам устройства и получить сведения о времени последней перезагрузки.
 
     ```python
     def iothub_devicemethod_sample_run():
@@ -239,24 +259,32 @@ ms.locfileid: "68780920"
         iothub_devicemethod_sample_run()
     ```
 
-5. Сохраните и закройте файл **dmpatterns_getstarted_service.py**.
+6. Сохраните и закройте файл **dmpatterns_getstarted_service.py**.
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь все готово к запуску приложений.
+Теперь все готово для запуска приложений.
 
 1. В командной строке выполните следующую команду, чтобы начать прослушивание прямого метода перезагрузки.
 
-    ```
+    ```cmd/sh
     python dmpatterns_getstarted_device.py
     ```
 
 2. В другой командной строке выполните следующую команду, чтобы активировать удаленную перезагрузку и выполнить запрос к двойнику устройства для поиска значения времени последней перезагрузки.
 
-    ```
+    ```cmd/sh
     python dmpatterns_getstarted_service.py
     ```
 
 3. В консоли отобразится ответ устройства на прямой метод.
+
+   Ниже показан ответ устройства на прямой метод reboot:
+
+   ![Выходные данные приложения имитации устройства](./media/iot-hub-python-python-device-management-get-started/device.png)
+
+   Ниже показана служба, вызывающая прямой метод перезагрузки и выполняющая опрос двойникаа устройства для состояния:
+
+   ![Вывод запуска службы перезагрузки](./media/iot-hub-python-python-device-management-get-started/service.png)
 
 [!INCLUDE [iot-hub-dm-followup](../../includes/iot-hub-dm-followup.md)]

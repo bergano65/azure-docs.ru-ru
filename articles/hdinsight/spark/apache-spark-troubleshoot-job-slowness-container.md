@@ -5,15 +5,15 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
-ms.date: 07/29/2019
-ms.openlocfilehash: 78dff1b9d9db4e54ab1a8f7203088753e206c610
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.date: 08/21/2019
+ms.openlocfilehash: 635b7adb8753b7e9490e8f14a0699c09297fdbbb
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68641959"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899097"
 ---
-# <a name="scenario-apache-spark-job-run-slowly-when-the-azure-storage-container-contains-many-files-in-azure-hdinsight"></a>Сценарий: Apache Spark задание медленно выполняется, если контейнер службы хранилища Azure содержит много файлов в Azure HDInsight
+# <a name="scenario-apache-spark-job-run-slowly-when-the-azure-storage-container-contains-many-files-in-azure-hdinsight"></a>Сценарий. Apache Spark задание медленно выполняется, если контейнер службы хранилища Azure содержит много файлов в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 
@@ -26,8 +26,6 @@ ms.locfileid: "68641959"
 Это известная проблема Spark. Медленная работа поступает из `ListBlob` операций и `GetBlobProperties` во время выполнения задания Spark.
 
 Для отслеживания секций Spark должен поддерживать `FileStatusCache` , который содержит сведения о структуре каталогов. С помощью этого кэша Spark может анализировать пути и получать информацию о доступных секциях. Преимущество отслеживания секций заключается в том, что Spark касается только необходимых файлов при чтении данных. Чтобы сохранить эти сведения в актуальном состоянии, при записи новых данных Spark должен вывести список всех файлов в каталоге и обновить этот кэш.
-
-В Spark 1,6 каждый раз при обновлении каталога вы (1) Очистите кэш (2) рекурсивно перечислите все файлы и (3) обновите весь кэш. Это приводит к множеству операций перечисления.
 
 В Spark 2,1 не требуется обновлять кэш после каждой операции записи, Spark проверяет, совпадает ли существующий столбец секционирования с предложенным в текущем запросе записи, поэтому он также приводит к переписи операций в начале каждой операции записи.
 

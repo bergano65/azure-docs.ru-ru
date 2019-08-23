@@ -10,29 +10,29 @@ services: logic-apps
 ms.reviewer: klam, divswa, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: d677c0eae9c92f90783ed4ebd95a528b34c872ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31f6a3fc281b8dc309ddcd237246c870c85ae20b
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60847482"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971632"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
 > [!NOTE]
-> Этот соединитель SAP планируется отменить. Используйте или перенести [более новые и более сложные соединителя SAP](./logic-apps-using-sap-connector.md). 
+> Для этого соединителя SAP запланировано устаревшее. Используйте или перейдите на [новый и более расширенный соединитель SAP Connector](./logic-apps-using-sap-connector.md). 
 
 В этой статье показано, как можно получить доступ к ресурсам SAP из приложения логики с помощью соединителей SAP Application Server и SAP Message Server. Так вы можете автоматизировать задачи, процессы и рабочие процессы, которые управляют данными и ресурсами SAP, путем создания приложений логики.
 
 В этом примере используется приложение логики, которое может запускаться по HTTP-запросу. Приложения логики отправляет промежуточный документ (IDoc) на сервер SAP и возвращает ответ запрашивающему объекту, вызвавшему приложение логики.
 Текущие соединители SAP содержат действия, но не триггеры, поэтому в примере используется [триггер HTTP-запроса](../connectors/connectors-native-reqres.md) как первый шаг рабочего процесса приложения логики. Для получения технических сведений о конкретных соединителях SAP см. следующие справочные статьи: 
 
-* <a href="https://docs.microsoft.com/connectors/sapapplicationserver/" target="blank">Соединитель SAP Application Server</a>
-* <a href="https://docs.microsoft.com/connectors/sapmessageserver/" target="blank">Соединитель SAP Message Server</a>
+* <a href="https://docs.microsoft.com/connectors/sap" target="blank">Соединитель SAP Application Server</a>
+* <a href="https://docs.microsoft.com/connectors/sap/#send-message-to-sap" target="blank">Соединитель SAP Message Server</a>
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, потребуется следующее:
 
@@ -84,14 +84,14 @@ ms.locfileid: "60847482"
 
 1. В конструкторе приложений логики выберите под триггером пункты **Новый шаг** > **Добавить действие**.
 
-   ![Добавление действия](./media/logic-apps-using-sap-connector-old/add-action.png) 
+   ![Добавить действие](./media/logic-apps-using-sap-connector-old/add-action.png) 
 
 2. В поле поиска введите фильтр "sap server". В списке действий выберите действие для сервера SAP: 
 
    * **SAP Application Server — отправить в SAP**
    * **SAP Message Server — отправить в SAP**
 
-   В этом примере это действие: **SAP Application Server — отправить в SAP**
+   В этом примере используется следующее действие: **SAP Application Server — отправить в SAP**
 
    ![Выберите "SAP Application Server" или "SAP Message Server"](media/logic-apps-using-sap-connector-old/select-sap-action.png)
 
@@ -190,15 +190,15 @@ ms.locfileid: "60847482"
 
 Технические сведения о соединителе, описанные в его файлах Swagger, см. в следующих статьях справки: 
 
-* [SAP Application Server](/connectors/sapapplicationserver/)
-* [SAP Message Server](/connectors/sapmessageserver/)
+* [SAP Application Server](/connectors/sap)
+* [SAP Message Server](/connectors/sap/#send-message-to-sap)
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подключение к локальным системам](../logic-apps/logic-apps-gateway-connection.md) из приложений логики.
 * Сведения о проверке, преобразовании и других операциях с сообщениями, выполняемых с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md).

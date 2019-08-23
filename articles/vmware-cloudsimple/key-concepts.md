@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: e434065feb218b0a46220b95cc6bfd9a7033de30
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 120ab94ce62010acf4e742bd5220405961dad6db
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816111"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972723"
 ---
 # <a name="key-concepts-for-administration-of-azure-vmware-solution-by-cloudsimple"></a>Основные понятия администрирования решения Azure VMware с помощью Клаудсимпле
 
@@ -34,7 +34,6 @@ ms.locfileid: "68816111"
 ## <a name="cloudsimple-node"></a>Узел Клаудсимпле
 
 Клаудсимпле-узел — это выделенный, неуправляемый, гиперконвергентномный узел вычислений и хранения, на котором развернута VMware ESXi гипервизор. Затем этот узел внедряется в платформы VMware vSphere, vCenter, vSAN и НСКС. Также включены Клаудсимпле сетевые службы и пограничные сетевые службы. Каждый узел выступает в качестве единицы вычислений и емкости хранилища, которые можно подготавливать для создания [частных облаков клаудсимпле](cloudsimple-private-cloud.md). Вы предоставляете или резервируете узлы в регионе, где доступна служба Клаудсимпле.
-
 
 Дополнительные сведения об [узлах клаудсимпле](cloudsimple-node.md).
 

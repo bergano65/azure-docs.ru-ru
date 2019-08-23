@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 393c66f57cd4a7621ad660774a95502c0f5ad8c4
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: b9fcf06caf2abf116a2f2b99f26ead6277f7ad50
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534712"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69970550"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "69534712"
 |Операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008, Windows Server 2008 R2 RTM    | Поддерживает только оценки обновлений.         |
-|Windows Server 2008 R2 SP1 и более поздней версии.  |Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855).)<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
+|Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)|Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855).)<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в [статье классификации обновлений в Linux](#linux-2) .          |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
@@ -371,7 +371,7 @@ $ServiceManager.AddService2($ServiceId,7,"")
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 |*.azure-automation.net|*.azure-automation.us|
 
-Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список необходимых ендоинтс можно найти в [вопросах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в ключе [WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
+Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в ключе [WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 
 Для компьютеров с Red Hat Linux обратитесь к IP-адресам [серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
 

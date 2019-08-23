@@ -7,14 +7,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
-ms.date: 09/15/2017
+ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 44dea072b9871d0be6e18549896456af2a4989f6
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: 5a0be55df9be67fcf6ff5d53e18e3eb2b0e69d7f
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558818"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904482"
 ---
 # <a name="get-started-with-device-management-net"></a>Начало работы с управлением устройствами (.NET)
 
@@ -34,7 +34,9 @@ ms.locfileid: "69558818"
 
 * **TriggerReboot**. Это приложение вызывает прямой метод в приложении имитации устройства, отображает ответ и отображает обновленные сообщаемые свойства.
 
-Для работы с данным руководством вам потребуется:
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * приведенному.
 
@@ -81,7 +83,7 @@ ms.locfileid: "69558818"
    using Microsoft.Azure.Devices.Shared;
    ```
 
-1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string).
+1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей.](#get-the-iot-hub-connection-string) `{iot hub connection string}`
 
    ```csharp
    static RegistryManager registryManager;
@@ -133,7 +135,7 @@ ms.locfileid: "69558818"
 
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
 
-В этом разделе вы выполните следующие действия:
+В этом разделе выполняются следующие действия:
 
 * Создайте консольное приложение .NET, отвечающее на прямой метод, вызываемый из облака.
 
@@ -164,11 +166,10 @@ ms.locfileid: "69558818"
     using Microsoft.Azure.Devices.Shared;
     ```
 
-1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения устройства, записанной в предыдущем разделе.
+1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения устройства, записанной ранее в поле [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `{device connection string}`
 
     ```csharp
-    static string DeviceConnectionString = 
-      "HostName=<yourIotHubName>.azure-devices.net;DeviceId=<yourIotDeviceName>;SharedAccessKey=<yourIotDeviceAccessKey>";
+    static string DeviceConnectionString = "{device connection string}";
     static DeviceClient Client = null;
     ```
 
@@ -233,7 +234,7 @@ ms.locfileid: "69558818"
    }
    ```
 
-1. В обозреватель решений щелкните решение правой кнопкой мыши и выберите команду **задать запускаемые проекты**. 
+1. В обозреватель решений щелкните решение правой кнопкой мыши и выберите команду **задать запускаемые проекты**.
 
 1. В поле "**запускаемый проект**" **общих свойств** > выберите **один запускаемый проект**, а затем выберите проект **SimulateManagedDevice** . Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
@@ -244,7 +245,7 @@ ms.locfileid: "69558818"
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь все готово к запуску приложений.
+Теперь все готово для запуска приложений.
 
 1. Чтобы запустить приложение **SimulateManagedDevice**для устройства .NET, в Обозреватель решений щелкните правой кнопкой мыши проект **SimulateManagedDevice** , выберите пункт **Отладка**, а затем выберите пункт **запустить новый экземпляр**. Приложение должно начать прослушивание вызовов методов из центра Интернета вещей.
 

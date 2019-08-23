@@ -1,21 +1,21 @@
 ---
 title: Просмотр ресурсов Azure
-description: Сведения об изучении ресурсов и связей между ними с помощью языка запросов графика ресурсов.
+description: Узнайте, как использовать язык запросов Graph, чтобы исследовать ресурсы и узнать, как они подключены.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 04/23/2019
+ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 0b4a75558f5e82b707ae5d012acef4d2c5c4b7a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c6fdebad3cd84699e1ac7d06bb58a33d1522af1
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64723811"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972313"
 ---
-# <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью графика ресурсов
+# <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью Resource Graph
 
 График ресурсов Azure дает возможность обнаруживать и изучать ресурсы Azure быстро и в любом масштабе. Это средство, при разработке которого ставилась цель обеспечить быстрый отклик, отлично подходит для анализа среды и характеристик ваших ресурсов Azure.
 
@@ -110,7 +110,7 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | limit
 ]
 ```
 
-Свойства сообщите нам Дополнительные сведения о виртуальной машине сам ресурс, от номера SKU, ОС, диски, теги, и группу ресурсов и подписку, он является членом.
+Свойства указывают дополнительные сведения о самом ресурсе виртуальной машины, все от SKU, ОС, дисков, тегов, а также группу ресурсов и подписку, членом которых является.
 
 ### <a name="virtual-machines-by-location"></a>Виртуальные машины по расположению
 
@@ -179,7 +179,7 @@ where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile
 ```
 
 > [!NOTE]
-> Еще один способ получить номер SKU — воспользоваться свойством **Microsoft.Compute/virtualMachines/sku.name** из раздела **aliases**. См. в разделе [Показать псевдонимы](../samples/starter.md#show-aliases) и [Показывать значения distinct псевдоним](../samples/starter.md#distinct-alias-values) примеры.
+> Еще один способ получить номер SKU — воспользоваться свойством **Microsoft.Compute/virtualMachines/sku.name** из раздела **aliases**. См. примеры для [отображения псевдонимов](../samples/starter.md#show-aliases) и [отображения различных значений псевдонимов](../samples/starter.md#distinct-alias-values) .
 
 ```azurecli-interactive
 az graph query -q "where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
@@ -259,17 +259,25 @@ Search-AzGraph -Query "where type =~ 'Microsoft.Compute/disks' and id == '/subsc
 
 ## <a name="explore-virtual-machines-to-find-public-ip-addresses"></a>Определение общедоступных IP-адресов виртуальных машин
 
-Сначала этот набор запросов Azure CLI используется для поиска и хранения всех ресурсов сетевых интерфейсов (NIC), подключенных к виртуальным машинам. Затем, чтобы найти каждый ресурс общедоступного IP-адреса и сохранить эти значения, в нем используется список NIC. Теперь он предоставляет список общедоступных IP-адресов.
+Сначала этот набор запросов находит и сохраняет все сетевые ресурсы (NIC), подключенные к виртуальным машинам. Затем запросы используют список сетевых адаптеров для поиска каждого ресурса IP-адреса, который является общедоступным IP-адресом, и сохраняет эти значения. Наконец, запросы предоставляют список общедоступных IP-адресов.
 
 ```azurecli-interactive
-# Use Resource Graph to get all NICs and store in the 'nic' variable
+# Use Resource Graph to get all NICs and store in the 'nics.txt' file
 az graph query -q "where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20" --output table | tail -n +3 > nics.txt
 
 # Review the output of the query stored in 'nics.txt'
 cat nics.txt
 ```
 
-Используйте файл `nics.txt` в следующем запросе для получения сведений о связанных ресурсах сетевых интерфейсов, с которыми связаны общедоступные IP-адреса.
+```azurepowershell-interactive
+# Use Resource Graph to get all NICs and store in the $nics variable
+$nics = Search-AzGraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | project nic = tostring(properties['networkProfile']['networkInterfaces'][0]['id']) | where isnotempty(nic) | distinct nic | limit 20"
+
+# Review the output of the query stored in the variable
+$nics.nic
+```
+
+Используйте файл (Azure CLI) или переменную (Azure PowerShell) в следующем запросе, чтобы получить сведения о связанных ресурсах сетевого интерфейса, где есть общедоступный IP-адрес, подключенный к СЕТЕВому интерфейсу.
 
 ```azurecli-interactive
 # Use Resource Graph with the 'nics.txt' file to get all related public IP addresses and store in 'publicIp.txt' file
@@ -279,14 +287,27 @@ az graph query -q="where type =~ 'Microsoft.Network/networkInterfaces' | where i
 cat ips.txt
 ```
 
-Наконец, мы используем список ресурсов общедоступных IP-адресов, хранящийся в `ips.txt`, для получения и вывода фактических общедоступных IP-адресов.
+```azurepowershell-interactive
+# Use Resource Graph  with the $nics variable to get all related public IP addresses and store in $ips variable
+$ips = Search-AzGraph -Query "where type =~ 'Microsoft.Network/networkInterfaces' | where id in ('$($nics.nic -join "','")') | project publicIp = tostring(properties['ipConfigurations'][0]['properties']['publicIPAddress']['id']) | where isnotempty(publicIp) | distinct publicIp"
+
+# Review the output of the query stored in the variable
+$ips.publicIp
+```
+
+Наконец, используйте список ресурсов общедоступного IP-адреса, хранящихся в файле (Azure CLI) или переменной (Azure PowerShell), чтобы получить фактический общедоступный IP-адрес из связанного объекта и отобразить его.
 
 ```azurecli-interactive
 # Use Resource Graph with the 'ips.txt' file to get the IP address of the public IP address resources
 az graph query -q="where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$(awk -vORS="','" '{print $0}' ips.txt | sed 's/,$//')') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip" --output table
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+```azurepowershell-interactive
+# Use Resource Graph with the $ips variable to get the IP address of the public IP address resources
+Search-AzGraph -Query "where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [языке запросов](query-language.md)
 - См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)

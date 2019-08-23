@@ -5,14 +5,14 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 08/22/2019
 ms.author: raynew
-ms.openlocfilehash: 1ce71665a924c6681af418075d8cc635c73f8a1a
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 3dc20036ead29c62d47b4a628d7ce8101b9d31f4
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717679"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972522"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
 
@@ -25,9 +25,30 @@ ms.locfileid: "68717679"
 
 [Ознакомьтесь с этой статьей](service-updates-how-to.md) для получения поддержки Site Recovery обновлений и инструкций.
 
+## <a name="updates-august-2019"></a>Обновления (2019 августа)
+
+### <a name="update-rollup-39"></a>Накопительный пакет обновления 39
+
+[Накопительный пакет обновления 39](https://support.microsoft.com/help/4517283/update-rollup-39-for-azure-site-recovery) предоставляет следующие обновления.
+
+**Update** | **Сведения**
+--- | ---
+**Поставщики и агенты** | Обновления для агентов Site Recovery и поставщиков (как описано в свертке).
+**Проблемы с исправлениями и улучшениями** | Ряд исправлений и улучшений (как описано в свертке).
+
+
+### <a name="azure-vm-disaster-recovery"></a>Аварийное восстановление виртуальной машины Azure
+
+Новые функции аварийного восстановления виртуальных машин Azure приведены в таблице.
+
+**Возможность** | **Сведения**
+--- | ---
+**Шифрование без Azure AD** | Шифрование без приложения Azure AD теперь поддерживается для репликации виртуальных машин Azure на управляемые диски под управлением Windows.
+**Сетевые ресурсы для отработки отказа** | При отправке отказа в другой регион теперь можно присоединять к виртуальной машине параметры сетевых ресурсов (группы безопасности сети, балансировку нагрузки, общедоступный IP-адрес). 
+
 ## <a name="updates-july-2019"></a>Обновления (Июль 2019)
 
-### <a name="update-rollup-38"></a>Накопительный пакет обновления 38
+### <a name="update-rollup-38"></a>Накопительный пакет обновления 38
 
 [Накопительный пакет обновления 38](https://support.microsoft.com/help/4513507/) предоставляет следующие обновления.
 

@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 08/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: e730e1b5534c4c74734816f5481247e341436b08
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 5a2cab9dff4a075545d919cb41e72cf6e446e9d2
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897329"
 ---
 # <a name="use-ssl-to-secure-a-web-service-through-azure-machine-learning"></a>Использование SSL для защиты веб-службы с помощью Машинное обучение Azure
 
@@ -149,9 +149,9 @@ aci_config = AciWebservice.deploy_configuration(
   > [!WARNING]
   > Если вы использовали *leaf_domain_label* для создания службы с помощью сертификата от Майкрософт, не обновляйте вручную значение DNS для кластера. Значение должно быть задано автоматически.
 
-  Обновите DNS на вкладке **Конфигурация** общедоступного IP-адреса кластера AKS. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
+  Обновите DNS общедоступного IP-адреса кластера AKS на вкладке **Конфигурация** в разделе **Параметры** в левой области. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
-  ![Служба машинного обучения Azure. Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)
+  [![Служба Машинное обучение Azure: Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
 
 ## <a name="update-the-ssl-certificate"></a>Обновление SSL-сертификата
 
@@ -230,9 +230,7 @@ az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n 
 
 ## <a name="disable-ssl"></a>Отключение SSL
 
-Чтобы отключить SSL для модели, развернутой в службе Kubernetes Azure, можно использовать пакет SDK или CLI:
-
-**Использование пакета SDK**
+Чтобы отключить SSL для модели, развернутой в службе Kubernetes Azure, `SslConfiguration` создайте `status="Disabled"`с помощью, а затем выполните обновление.
 
 ```python
 from azureml.core.compute import AksCompute
@@ -246,12 +244,6 @@ aks_target = AksCompute(ws, clustername)
 ssl_configuration = SslConfiguration(status="Disabled")
 update_config = AksUpdateConfiguration(ssl_configuration)
 aks_target.update(update_config)
-```
-
-**Использование интерфейса командной строки**
-
-```azurecli
- az ml computetarget update aks -g "myresourcegroup" -w "myresourceworkspace" -n "myaks" --ssl-disable True
 ```
 
 ## <a name="next-steps"></a>Следующие шаги

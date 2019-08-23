@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/06/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 7bfbec194733f2f8422eef45236a64e45bb553c7
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: acb3717f0e71ca1e67f1ddec79a259935f6cc539
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656362"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897688"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -723,7 +723,7 @@ print(response.json())
 
 1. Используйте __подключения__ к службам, чтобы настроить подключение субъекта-службы к рабочей области службы машинное обучение Azure для доступа ко всем артефактам. Перейдите в раздел Параметры проекта, щелкните подключения службы и выберите Azure Resource Manager.
 
-    ![Представление-служба — подключение](media/how-to-deploy-and-where/view-service-connection.png) 
+    [![Представление-служба — подключение](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png) 
 
 1. Определите Азуремлворкспаце в качестве __уровня области__ и заполните последующие параметры.
 
@@ -731,11 +731,11 @@ print(response.json())
 
 1. Далее, чтобы непрерывно развернуть модель машинного обучения с помощью Azure Pipelines, в разделе конвейеры выберите __выпуск__. Добавьте новый артефакт, выберите артефакт модели AzureML и подключение службы, созданное на предыдущем шаге. Выберите модель и версию для активации развертывания. 
 
-    ![SELECT-Азуремлмодел-артефакт](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)
+    [![SELECT-Азуремлмодел-артефакт](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)](media/how-to-deploy-and-where/enable-modeltrigger-artifact-expanded.png)
 
 1. Включите триггер модели для артефакта модели. При включении триггера каждый раз, когда указанная версия (например, в рабочей области регистрируется последняя версия этой модели. конвейер выпуска Azure DevOps запускается. 
 
-    ![Enable-Model-Trigger](media/how-to-deploy-and-where/set-modeltrigger.png)
+    [![Enable-Model-Trigger](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
 
 Дополнительные примеры проектов и примеры см. в следующем примере репозиториев:
 

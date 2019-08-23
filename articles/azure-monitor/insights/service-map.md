@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2019
 ms.author: magoedte
-ms.openlocfilehash: 1f06345995e30f4d7f165230f4292c560c89e2e8
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 98bf38a6c293f6d339413b5395bb32d74bcb30c0
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68489769"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905715"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Использование решения "Сопоставление служб" в Azure
+
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Это решение позволяет рассматривать серверы как взаимосвязанные системы, обеспечивающие работу важных служб. Сопоставление служб отображает сведения о подключениях между серверами, процессами, задержками во входящих и выходящих подключениях и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
 
 Эта статья описывает подключение и использование Сопоставления служб. Сведения о настройке необходимых компонентов для этого решения см. [в разделе включение Azure Monitor для виртуальных машин обзор](vminsights-enable-overview.md#prerequisites). Чтобы суммировать, вам потребуется следующее:
@@ -407,7 +408,7 @@ Linux:
 | `ReportReferenceLink` |Ссылки на отчеты, связанные с данным наблюдаемым. |
 | `AdditionalInformation` |Предоставляет дополнительную информацию, если применимо, о наблюдаемой угрозе. |
 
-### <a name="servicemapcomputercl-records"></a>Записи ServiceMapComputer_CL
+### <a name="servicemapcomputer_cl-records"></a>Записи ServiceMapComputer_CL
 
 В записях типа *AdmComputer_CL* содержатся данные инвентаризации для серверов с агентами схемы услуги. У этих записей есть свойства, приведенные в таблице ниже.
 
@@ -433,7 +434,7 @@ Linux:
 | `VirtualMachineName_s` | Имя виртуальной машины |
 | `BootTime_t` | Время загрузки |
 
-### <a name="servicemapprocesscl-type-records"></a>Записи типа ServiceMapProcess_CL
+### <a name="servicemapprocess_cl-type-records"></a>Записи типа ServiceMapProcess_CL
 
 В записях типа *ServiceMapProcess_CL* содержатся данные инвентаризации для подключенных по протоколу TCP процессов на серверах с агентами схемы услуги. У этих записей есть свойства, приведенные в таблице ниже.
 
@@ -554,16 +555,57 @@ let remoteMachines = remote | summarize by RemoteMachine;
 
 Дополнительные сведения о сборе и использовании данных см. в [заявлении о конфиденциальности служб Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=512132).
 
-
 ## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о [поиске по журналам](../../azure-monitor/log-query/log-query-overview.md) в Log Analytics для получения данных, собранных с помощью схемы услуги.
 
-
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-См. раздел об [устранении неполадок в документе по настройке схемы услуги]( service-map-configure.md#troubleshooting).
+Если при установке или запуске схемы услуги возникли проблемы, в этом разделе приводятся сведения, которые могут помочь вам. Если по-прежнему не удается устранить проблему, обратитесь в службу поддержки Майкрософт.
 
+### <a name="dependency-agent-installation-problems"></a>Проблемы при установке Dependency Agent
+
+#### <a name="installer-prompts-for-a-reboot"></a>Установщик запрашивает перезагрузку
+Агенту зависимостей *обычно* не требуется перезагрузка после установки или удаления. Однако в некоторых редких случаях для продолжения установки Windows Server требуется перезагрузить. Это происходит, когда зависимость, как правило C++ , требует перезагрузки из-за заблокированного файла.
+
+#### <a name="message-unable-to-install-dependency-agent-visual-studio-runtime-libraries-failed-to-install-code--code_number-appears"></a>Поступает сообщение "Unable to install Dependency agent: Visual Studio Runtime libraries failed to install (code = [code_number])" (Не удалось установить Dependency Agent: сбой установки библиотек среды выполнения Visual Studio (код = [номер_кода]))
+
+Microsoft Dependency Agent создан на основе библиотек среды выполнения Microsoft Visual Studio. Если во время установки этих библиотек возникла проблема, вы получите сообщение. 
+
+Установщики библиотек среды выполнения создают журналы в папке %LOCALAPPDATA%\temp. Файл `dd_vcredist_arch_yyyymmddhhmmss.log`, где *Arch* — `x86` или `amd64` и *YYYYMMDDHHMMSS* — Дата и время создания журнала (24-часовой формат). В журнале содержатся подробные сведения о проблеме, из-за которой блокируется установка.
+
+В первую очередь может оказаться полезным установить [последние версии библиотек среды выполнения](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) .
+
+В таблице ниже приведены некоторые номера кодов и рекомендации по устранению проблем.
+
+| Код | Описание | Разрешение |
+|:--|:--|:--|
+| 0x17 | Установщику библиотек требуется обновление Windows, которое не было установлено. | Проверьте сведения в последнем журнале установщика библиотек.<br><br>Если после ссылки на `Windows8.1-KB2999226-x64.msu` указана строка `Error 0x80240017: Failed to execute MSU package,` , нет необходимых условий для установки KB2999226. Следуйте инструкциям в разделе "предварительные требования" статьи [универсальная среда выполнения C в Windows](https://support.microsoft.com/kb/2999226) . Может потребоваться запустить Центр обновления Windows и несколько раз выполнить перезагрузку, чтобы установить необходимые компоненты.<br><br>Запустите установщик Microsoft Dependency Agent повторно. |
+
+### <a name="post-installation-issues"></a>Проблемы после установки
+
+#### <a name="server-doesnt-appear-in-service-map"></a>Сервер не отображается в службе схемы услуги
+
+Если установка агента зависимостей прошла удачно, но вы не видите компьютер в Сопоставление служб решении:
+* Успешно ли установлен Dependency Agent? Для этого проверьте, установлена и запущена ли служба.<br><br>
+**Windows**: Найдите службу с именем **Microsoft dependency Agent**.
+**Linux**: Найдите выполняющийся процесс **Microsoft-dependency-Agent**.
+
+* Вы на [log Analytics уровне "бесплатный](https://azure.microsoft.com/pricing/details/monitor/)"? Бесплатный план позволяет до пяти уникальных Сопоставление служб компьютеров. Все последующие компьютеры не будут отображаться в Сопоставление служб, даже если предыдущие пять больше не отправляют данные.
+
+* Сервер отправляет журналы и данные о производительности в Azure Monitor журналов? Перейдите в Azure Монитор\логс и выполните следующий запрос к компьютеру: 
+
+    ```kusto
+    Usage | where Computer == "admdemo-appsvr" | summarize sum(Quantity), any(QuantityUnit) by DataType
+    ```
+
+Вы получили множество событий в результатах? Это последние данные? Если это так, то агент Log Analytics работает правильно и взаимодействует с рабочей областью. В противном случае проверьте агент на компьютере: [об устранении неполадок с агентом Log Analytics для Windows](../platform/agent-windows-troubleshoot.md) или статье [Устранение неполадок с агентом Log Analytics для Linux](../platform/agent-linux-troubleshoot.md).
+
+#### <a name="server-appears-in-service-map-but-has-no-processes"></a>Сервер отображается в решении "Схема услуги", но для него нет процессов
+
+Если компьютер отображается в Сопоставление служб, но у него нет данных процесса или соединения, это означает, что агент зависимостей установлен и работает, но драйвер ядра не был загружен. 
+
+Проверьте (Windows) или `/var/opt/microsoft/dependency-agent/log/service.log file` (Linux). `C:\Program Files\Microsoft Dependency Agent\logs\wrapper.log file` В последних строках файла должно быть указано, почему не удалось загрузить ядро. Например, если вы обновили ядро, оно может не поддерживаться в Linux.
 
 ## <a name="feedback"></a>Отзывы
 

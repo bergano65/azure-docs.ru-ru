@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: mlearned
-ms.openlocfilehash: 459c11448280b63bafdfd54c13a6cad5983ef1b5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 967ca233169e2a2a213534d5b60bef2e3f44b6a9
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67615878"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969647"
 ---
 # <a name="network-concepts-for-applications-in-azure-kubernetes-service-aks"></a>Основные понятия сети в Службе Azure Kubernetes (AKS)
 
@@ -55,7 +55,7 @@ ms.locfileid: "67615878"
 
 IP-адрес для подсистемы балансировки нагрузки и служб может назначаться динамически, или можно указать существующий статический IP-адрес для использования. Можно назначить внутренние и внешние статические IP-адреса. Часто этот существующий статический IP-адрес связан с записью DNS.
 
-Можно создать *внутреннюю* и *внешнюю* подсистему балансировки нагрузки. Частный IP-адрес назначает внутреннюю подсистему балансировки нагрузки, поэтому она не доступна из Интернета.
+Можно создать *внутреннюю* и *внешнюю* подсистему балансировки нагрузки. Внутренним подсистемам балансировки нагрузки назначается только частный IP-адрес, поэтому к ним нельзя получить доступ из Интернета.
 
 ## <a name="azure-virtual-networks"></a>Виртуальные сети Azure
 

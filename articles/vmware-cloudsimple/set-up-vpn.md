@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: df13a6638c5ed72532b020ef7074123a2159b1c4
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: d000d8390375466232c7daac2a4a056ef424be79
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69536317"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972376"
 ---
 # <a name="configure-a-vpn-connection-to-your-cloudsimple-private-cloud"></a>Настройка VPN-подключения к частному облаку Клаудсимпле
 
@@ -26,7 +26,7 @@ VPN-шлюзы позволяют подключаться к сети Клау�
 
 В регионе можно создать один VPN-шлюз типа "сеть — сеть" и один VPN-шлюз "точка — сеть".
 
-## <a name="point-to-site-vpn"></a>VPN типа "точка — сеть";
+## <a name="point-to-site-vpn"></a>VPN-подключение типа "точка — сеть"
 
 Сведения о создании VPN-шлюза типа "точка — сеть" см. в статье [Создание VPN-шлюза типа](vpn-gateway.md#create-point-to-site-vpn-gateway)"точка — сеть".
 

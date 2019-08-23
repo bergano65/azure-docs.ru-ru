@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: hamusa
-ms.openlocfilehash: 4130bb746a4faa4907353654d16f7c20c0cc7817
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: c48323bb4c8798a0f36d3fda99a4c659187e0e81
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598953"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906376"
 ---
 # <a name="set-up-dependency-visualization-for-assessment"></a>Настройка визуализации зависимостей для оценки
 
@@ -37,10 +37,10 @@ ms.locfileid: "68598953"
 **Функции** | **Примечание**
 --- | ---
 Доступность | Визуализация зависимостей недоступна в Azure для государственных организаций.
-Схема услуги | Визуализация зависимостей использует Сопоставление служб решение в журналах Azure Monitor. [Сопоставление служб](../azure-monitor/insights/service-map-configure.md) автоматически обнаруживает и отображает соединения между серверами.
-Агенты | Чтобы использовать визуализацию зависимостей, установите несколько агентов на компьютерах, которые нужно сопоставлять:<br/> - Агент [log Analytics Azure](../azure-monitor/platform/log-analytics-agent.md) (ранее назывался Microsoft MONITORING Agent (MMA).<br/> -Сопоставление служб агент зависимостей.<br/><br/> Чтобы автоматизировать установку агента, можно использовать средство развертывания, такое как System Center Configuration Manager или партнерское средство, например [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration), которое содержит решение для развертывания агентов для службы "миграция Azure".
-Dependency Agent | Ознакомьтесь с поддержкой агента зависимостей для [Windows](../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems) и [Linux](../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems).<br/><br/> Дополнительные [сведения](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) об использовании скриптов для установки агента зависимостей.
-Агент Log Analytics (MMA) | Дополнительные [сведения](../azure-monitor/platform/log-analytics-agent.md#install-and-configure-agent) о методах установки MMA.<br/><br/> Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, не нужно устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager. Вы можете включить интеграцию с помощью инструкций, которые находятся [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-scom#prerequisites). Обратите внимание, однако, что агент зависимости должен быть установлен на этих компьютерах.<br/><br/> [Ознакомьтесь](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) с операционными системами Linux, поддерживаемыми агентом log Analytics.
+Схема услуги | Визуализация зависимостей использует Сопоставление служб решение в Azure Monitor. [Сопоставление служб](../azure-monitor/insights/service-map.md) автоматически обнаруживает и отображает соединения между серверами.
+Агенты | Чтобы использовать визуализацию зависимостей, установите следующие агенты на компьютерах, которые нужно подключить.<br/> - Агент [агента log Analytics](../azure-monitor/platform/log-analytics-agent.md) (который ранее назывался Microsoft MONITORING Agent (MMA).<br/> - [Сопоставление служб агент зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#the-microsoft-dependency-agent).<br/><br/> Чтобы автоматизировать установку агента, можно использовать средство развертывания, такое как System Center Configuration Manager или партнерское средство, например [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration), которое содержит решение для развертывания агентов для службы "миграция Azure".
+Dependency Agent | Ознакомьтесь с [поддержкой агента зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#the-microsoft-dependency-agent) для Windows и Linux.<br/><br/> Дополнительные [сведения](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples) об использовании скриптов для установки агента зависимостей.
+Агент Log Analytics (MMA) | Дополнительные [сведения](../azure-monitor/platform/log-analytics-agent.md#install-and-configure-agent) о методах установки MMA.<br/><br/> Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, не нужно устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager. Вы можете включить интеграцию с помощью инструкций, которые находятся [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-scom#prerequisites). Однако обратите внимание, что на этих компьютерах должен быть установлен агент зависимостей.<br/><br/> [Ознакомьтесь](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) с операционными системами Linux, поддерживаемыми агентом log Analytics.
 Группы оценки | Группы, для которых необходимо визуализировать зависимости, должны содержать не более 10 компьютеров. Если у вас более 10 компьютеров, разделите их на группы меньшего размера, чтобы визуализировать зависимости.
 
 ## <a name="associate-a-log-analytics-workspace"></a>Связывание рабочей области Log Analytics
