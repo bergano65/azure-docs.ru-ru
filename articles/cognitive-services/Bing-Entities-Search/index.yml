@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Документация по API Поиска сущностей Bing
 metadata:
-  title: "Документация по API Поиска сущностей Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
+  title: 'Документация по API Поиска сущностей Bing. Руководства, краткие руководства и справочники по API'
+  titleSuffix: Azure Cognitive Services
   description: 'Как использовать API Поиска сущностей Bing, чтобы получить сведения о людях, местах или других определенных субъектах. В руководствах объясняется, как создавать приложения, использующие эту службу.'
   services: cognitive-services
   author: aahill
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-entity-search
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 07/25/2019
   ms.author: aahi

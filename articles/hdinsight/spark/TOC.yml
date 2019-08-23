@@ -327,6 +327,8 @@
           href: ./apache-spark-troubleshoot-sparkexception-kryo-serialization-failed.md
         - name: "Журнал событий Apache Spark\_— RequestBodyTooLarge"
           href: ./apache-spark-troubleshoot-event-log-requestbodytoolarge.md
+        - name: Для Apache ZooKeeper нет кворума
+          href: ./zookeeper-troubleshoot-quorum-fails.md
 - name: Справочные материалы
   items:
     - name: Примеры кода

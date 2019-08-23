@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Документация по API Поиска видео Bing
 metadata:
-  title: "Документация по API Поиска видео Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
+  title: 'Документация по API Поиска видео Bing. Руководства, краткие руководства и справочники по API'
+  titleSuffix: Azure Cognitive Services
   description: 'Узнайте, как с помощью API Поиска видео Bing находить видео в Интернете.'
   services: cognitive-services
   author: aahill
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-video-search
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 07/25/2019
   ms.author: aahi

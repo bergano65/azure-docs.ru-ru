@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Документация по Распознавателю документов
 metadata:
-  title: "Документация по API Распознавателя документов в Azure Cognitive Services\_| Документация Майкрософт"
+  title: "Документация по API\_— Распознаватель документов"
+  titleSuffix: Azure Cognitive Services
   description: "Сведения об использовании Распознавателя документов для интеллектуального извлечения данных пар \"ключ\_— значение\" из ваших документов формы."
   services: cognitive-services
   author: PatrickFarley
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: forms-recognizer
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 04/16/2019
   ms.author: pafarley

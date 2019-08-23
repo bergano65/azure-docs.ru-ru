@@ -2,15 +2,15 @@
 documentType: LandingData
 title: Документация по Пользовательскому поиску Bing
 metadata:
-  title: "Документация по API Пользовательского поиска Bing. Учебные материалы, руководства и справочник по API\_— Microsoft Cognitive Services\_| Документация Майкрософт"
+  title: 'Документация по API Пользовательского поиска Bing. Руководства, краткие руководства и справочники по API'
+  titleSuffix: Azure Cognitive Services
   description: 'Узнайте, как с помощью портала и API Пользовательского поиска Bing создавать пользовательские экземпляры службы поиска'
   services: cognitive-services
   author: v-deken
   manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: bing-custom-search
   ms.topic: landing-page
   ms.date: 07/25/2019
   ms.author: v-deken

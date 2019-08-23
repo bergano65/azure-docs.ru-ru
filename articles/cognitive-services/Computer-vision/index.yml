@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Документация по API Компьютерного зрения
 metadata:
-  title: Документация по API. API Компьютерного зрения в Azure Cognitive Services | Документация Майкрософт
+  title: "Документация по API\_— Компьютерное зрение"
+  titleSuffix: Azure Cognitive Services
   description: 'Сведения об использовании Компьютерного зрения для обработки изображений и получения сведений. В руководствах описано, как создавать приложения, использующие API.'
   services: cognitive-services
   author: nitinme
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: computer-vision
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 02/26/2019
   ms.author: nitinme

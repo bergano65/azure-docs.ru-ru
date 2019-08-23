@@ -2,15 +2,15 @@
 documentType: LandingData
 title: Документация по API Детектора аномалий
 metadata:
-  title: 'Документация по API Детектора аномалий. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт'
+  title: 'API Детектора аномалий. Учебники, краткие руководства, справочные материалы по API'
+  titleSuffix: Azure Cognitive Services
   description: 'API Детектора аномалий позволяет динамически отслеживать данные и обнаруживать аномалии с помощью машинного обучения. Получайте представление о данных независимо от тома, отрасли или сценария.'
   services: cognitive-services
   author: aahill
   manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: anomaly-detector
   ms.topic: landing-page
   ms.date: 03/26/2019
   ms.author: aahi
