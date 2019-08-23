@@ -1,35 +1,59 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: "Документация по удостоверениям устройств в Azure\_AD"
+### YamlMime:Landing
+title: Документация по удостоверениям устройств Azure AD
+summary: Узнайте, как настраивать удостоверения устройств и управлять ими в Azure AD.
 metadata:
-  document_id: null
-  title: "Документация по управлению удостоверениями устройств в Azure Active Directory. Руководства, основные понятия, справочники\_| Документация Майкрософт"
-  description: "Узнайте, как настраивать удостоверения устройств и управлять ими в Azure\_AD."
+  title: Документация по удостоверениям устройств Azure AD
+  description: Узнайте, как настраивать удостоверения устройств и управлять ими в Azure AD.
   services: active-directory
-  ms.subservice: devices
-  author: MicrosoftGuyJFlo
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: devices
   ms.topic: landing-page
-  ms.date: 08/14/2018
+  author: MicrosoftGuyJFlo
   ms.author: joflore
-abstract:
-  description: "С помощью устройств в Azure\_AD пользователи получают доступ к корпоративным ресурсам. Для корпоративных ресурсов ИТ-администраторам требуется возможность управлять удостоверениями этих устройств в Azure\_AD. Это позволит предоставлять пользователям доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям.<br>Управление удостоверениями устройств также лежит в основе условного доступа на основе устройств. Используя условный доступ на основе устройств, можно разрешать доступ к ресурсам в своей среде только управляемым устройствам."
-sections:
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: "Узнайте, как интегрировать локальные устройства, присоединенные к домену AD, с помощью Azure\_AD."
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/i_security-management.png
-            text: Управляемые домены
-            href: hybrid-azuread-join-managed-domains.md
-          - image:
-              src: ./media/index/i_security-management.png
-            text: Федеративные домены
-            href: hybrid-azuread-join-federated-domains.md
+  ms.date: 08/20/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: e26be2206ba63fa4721ced7ed1a2f35ddc63a5fd
+  ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/20/2019
+  ms.locfileid: "69648928"
+landingContent:
+- title: Об удостоверении устройства
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое удостоверение устройства?
+      url: overview.md
+    - text: Служба Enterprise State Roaming
+      url: enterprise-state-roaming-overview.md
+  - linkListType: concept
+    links:
+    - text: Устройства, зарегистрированные в Azure AD
+      url: concept-azure-ad-register.md
+    - text: Устройства, присоединенные к Azure AD
+      url: concept-azure-ad-join.md
+    - text: Гибридные устройства, присоединенные к Azure AD
+      url: concept-azure-ad-join-hybrid.md
+    - text: Единый вход для доступа к локальным ресурсам
+      url: azuread-join-sso.md
+    - text: Основные токены обновления
+      url: concept-primary-refresh-token.md
+- title: Настройка и администрирование устройств, присоединенных к Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Планирование реализации присоединения к Azure AD
+      url: azureadjoin-plan.md
+    - text: Управление группой локальных администраторов на устройствах, присоединенных к Azure AD
+      url: assign-local-admin.md
+    - text: Обнаружение и администрирование неактивных устройств в Azure AD
+      url: manage-stale-devices.md
+- title: Настройка и администрирование гибридных устройств, присоединенных к Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Планирование реализации гибридного присоединения к Azure AD
+      url: hybrid-azuread-join-plan.md
+    - text: Устранение неполадок с гибридными устройствами, присоединенными к Azure AD
+      url: troubleshoot-hybrid-join-windows-current.md

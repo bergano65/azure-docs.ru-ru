@@ -1,43 +1,87 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по аутентификации Azure AD
+### YamlMime:Landing
+title: Документация по аутентификации Azure Active Directory
+summary: Сведения об администрировании и развертывании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory.
 metadata:
-  document_id: null
   title: Документация по аутентификации Azure Active Directory
-  description: 'Сведения об администрировании и развертывании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory.'
+  description: Сведения об администрировании и развертывании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory.
   services: active-directory
-  ms.subservice: authentication
-  author: MicrosoftGuyJFlo
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: authentication
   ms.topic: landing-page
-  ms.date: 07/19/2018
+  author: MicrosoftGuyJFlo
   ms.author: joflore
-abstract:
-  description: 'Сведения о развертывании и администрировании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory. Сочетание этих функций обеспечит для вашей организации надежную аутентификацию с использованием разных методов проверки, не усложняя процесс входа в систему.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Сведения о включении самостоятельного сброса пароля для сокращения числа обращений пользователей в службу технической поддержки.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/i_protect.png
-            text: Включение самостоятельного сброса пароля
-            href: 'https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr'
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: Сведения о включении простого и безопасного входа в систему для вашей организации.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/authentication/tutorial-sspr-pilot">Пилотный проект по включению самостоятельного сброса пароля</a>
-          - html: <a href="/azure/active-directory/authentication/tutorial-mfa-applications">Обязательная многофакторная проверка подлинности на портале Azure</a>
-          - html: <a href="/azure/active-directory/authentication/tutorial-enable-writeback">Включение интеграции самостоятельного сброса пароля с локальной средой</a>
-          - html: <a href="/azure/active-directory/authentication/tutorial-sspr-windows">Включение сброса пароля в Windows 10</a>
-          - html: <a href="/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa">Интеграция со службой защиты идентификации Azure AD</a>
+  ms.date: 08/20/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: 4ae9515bf7926eca305f77eff4bae3ab53d1dfa0
+  ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/21/2019
+  ms.locfileid: "69874380"
+landingContent:
+- title: Об аутентификации
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое проверка подлинности?
+      url: overview-authentication.md
+    - text: Какие методы проверки подлинности доступны?
+      url: concept-authentication-methods.md
+    - text: Регистрация сведений о безопасности
+      url: concept-registration-mfa-sspr-combined.md
+    - text: Общие сведения о входе без пароля
+      url: concept-authentication-passwordless.md
+- title: Развертывание самостоятельного сброса пароля
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о самостоятельном сбросе пароля
+      url: concept-sspr-howitworks.md
+    - text: Компонент обратной записи паролей
+      url: concept-sspr-writeback.md
+  - linkListType: quickstart
+    links:
+    - text: Краткое руководство. Самостоятельный сброс пароля
+      url: quickstart-sspr.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание самостоятельного сброса пароля Azure AD
+      url: howto-sspr-deployment.md
+    - text: Включение компонента обратной записи паролей
+      url: howto-sspr-writeback.md
+    - text: Включение сброса пароля на экране входа в Windows
+      url: howto-sspr-windows.md
+- title: Включение Многофакторной идентификации Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Принципы работы службы Многофакторной идентификации Azure
+      url: concept-mfa-howitworks.md
+  - linkListType: tutorial
+    links:
+    - text: Пилотное развертывание Azure MFA для конкретных приложений
+      url: tutorial-mfa-applications.md
+    - text: Использование событий риска для активации Многофакторной идентификации и изменения пароля
+      url: tutorial-risk-based-sspr-mfa.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание Многофакторной идентификации Azure
+      url: howto-mfa-getstarted.md
+    - text: Использование расширения NPS для интеграции локальных приложений
+      url: howto-mfa-nps-extension.md
+- title: Развертывание защиты паролем Azure AD
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Исключение ненадежных паролей в облаке
+      url: concept-password-ban-bad.md
+    - text: Исключение ненадежных паролей в локальной среде
+      url: concept-password-ban-bad-on-premises.md
+  - linkListType: get-started
+    links:
+    - text: Настройка списка запрещенных паролей
+      url: howto-password-ban-bad-configure.md
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание защиты паролем Azure AD
+      url: howto-password-ban-bad-on-premises-deploy.md

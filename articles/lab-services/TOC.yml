@@ -82,7 +82,7 @@
               href: classroom-labs/how-to-connect-peer-virtual-network.md
             - name: Подключение и отключение коллекции общих образов
               href: classroom-labs/how-to-attach-detach-shared-image-gallery.md
-        - name: Создание и настройка лаборатории для аудитории (преподаватель)
+        - name: Создание и настройка лаборатории для аудитории (инструктор)
           items:
             - name: Создание и администрирование лабораторий для аудитории
               href: classroom-labs/how-to-manage-classroom-labs.md
@@ -104,6 +104,10 @@
           items:
             - name: Доступ к лабораториям для аудитории
               href: classroom-labs/how-to-use-classroom-lab.md
+            - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
+              href: classroom-labs/how-to-use-remote-desktop-linux-student.md
+            - name: Установка или сброс паролей для виртуальных машин
+              href: classroom-labs/how-to-set-virtual-machine-passwords-student.md
     - name: DevTest Labs
       items:
         - name: Настройка лаборатории

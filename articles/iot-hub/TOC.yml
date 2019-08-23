@@ -406,14 +406,16 @@
   items:
     - name: Решения
       items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
         - name: IoT Central
           href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
     - name: Службы платформы
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
         - name: Пакеты SDK для служб IoT

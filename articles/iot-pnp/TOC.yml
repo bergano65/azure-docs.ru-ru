@@ -1,0 +1,83 @@
+- name: Документация по IoT Plug and Play
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Общие сведения об IoT Plug and Play
+      href: overview-iot-plug-and-play.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Использование модели возможностей устройства для создания устройства
+      href: quickstart-create-pnp-device.md
+    - name: Подключение устройства к Центру Интернета вещей
+      href: quickstart-connect-pnp-device.md
+    - name: Подключение устройства к IoT Central
+      href: 'https://aka.ms/iot-central-connect-qs'
+    - name: Подключение к устройству в решении
+      href: quickstart-connect-pnp-device-solution.md
+- name: Учебники
+  items:
+    - name: Создание устройства с помощью VS Code
+      href: tutorial-pnp-visual-studio-code.md
+    - name: 'Создание устройства, готового к сертификации'
+      href: tutorial-build-device-certification.md
+    - name: Сертификация устройства
+      href: tutorial-certification-test.md
+- name: Основные понятия
+  items:
+    - name: Глоссарий
+      href: iot-plug-and-play-glossary.md
+    - name: Руководство разработчика
+      href: concepts-developer-guide.md
+    - name: Распространенные интерфейсы
+      href: concepts-common-interfaces.md
+    - name: Обнаружение модели
+      href: concepts-model-discovery.md
+    - name: Ограничения и квоты
+      href: concepts-limits-quotas.md
+- name: Руководства
+  items:
+    - name: Использование IoT Device Workbench
+      href: howto-use-iot-device-workbench.md
+    - name: Установка обозревателя IoT
+      href: howto-install-iot-explorer.md
+    - name: Подключение к порталу IoT
+      href: howto-onboard-portal.md
+    - name: Модели (управление)
+      href: howto-manage-models.md
+    - name: Подключение к устройству и взаимодействие с ним
+      href: howto-develop-solution.md
+- name: Справочные материалы
+  items:
+    - name: REST
+      href: 'https://aka.ms/iot-pnp-rest'
+    - name: Создание маркера безопасности REST
+      href: howto-generate-sas-token.md
+- name: Сопутствующие материалы
+  items:
+    - name: Решения
+      items:
+        - name: IoT Central
+          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
+    - name: Службы платформы
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: Пакеты SDK для служб IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Maps
+          href: /azure/azure-maps
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: IoT Edge
+      items:
+        - name: Azure IoT Edge
+          href: /azure/iot-edge
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

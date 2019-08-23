@@ -146,30 +146,30 @@
   items:
     - name: Решения
       items:
-        - name: Предварительно настроенные решения IoT Suite
-          href: /azure/iot-suite
         - name: IoT Central
           href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
     - name: Службы платформы
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
+        - name: Пакеты SDK для служб IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Edge
+    - name: IoT Edge
       items:
-        - name: IoT Edge
+        - name: Azure IoT Edge
           href: /azure/iot-edge
         - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
-    - name: Azure Stream Analytics
-      href: /azure/stream-analytics/
 - name: Ресурсы
   items:
     - name: Запросы данных клиентов

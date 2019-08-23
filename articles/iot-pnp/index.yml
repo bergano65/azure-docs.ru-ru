@@ -1,0 +1,39 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по IoT Plug and Play (предварительная версия)
+metadata:
+  title: Документация по IoT Plug and Play (предварительная версия). Руководства и справочник по API | Документация Майкрософт
+  description: 'Узнайте, как использовать IoT Plug and Play, с помощью руководств, справочников по API, видео и других материалов.'
+  author: dominicbetts
+  manager: philmea
+  ms.service: iot-pnp
+  services: iot-pnp
+  ms.topic: landing-page
+  ms.date: 07/23/2019
+  ms.author: dobett
+abstract:
+  description: 'Узнайте, как использовать IoT Plug and Play (предварительная версия), чтобы определить модель устройства, которая позволит облачным решениям автоматически идентифицировать ваше устройство и начать взаимодействовать с ним, без необходимости писать соответствующий код. Руководства, справочники по API, видео и другие материалы помогут вам подключить устройства к облачным решениям, таким как Azure IoT Central или партнерским приложениям.'
+  aside:
+    image:
+      alt: null
+      height: 110
+      src: media/index/video-thumb-pnp-introduction.png
+      width: 250
+    title: 'Введение в IoT Plug and Play. (11:54)'
+    href: 'https://channel9.msdn.com/Shows/Internet-of-Things-Show/Introduction-to-IoT-Plug-and-Play/player'
+    width: 250
+sections:
+  - title: Пятиминутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Узнайте, как <a href="quickstart-create-pnp-device">использовать модель возможностей устройства для создания устройства</a>.'
+      - type: paragraph
+        text: 'Узнайте, как <a href="quickstart-connect-pnp-device-solution">подключить устройство к решению</a>.'
+  - title: Пошаговые инструкции
+    items:
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="tutorial-pnp-visual-studio-code">Создание устройства с помощью Visual Studio Code</a>
+          - html: '<a href="tutorial-build-device-certification">Создание устройства, готового к сертификации</a>'
+          - html: <a href="tutorial-certification-test">Сертификация устройства</a>

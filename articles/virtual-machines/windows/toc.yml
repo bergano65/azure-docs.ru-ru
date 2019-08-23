@@ -251,6 +251,8 @@
           href: mitigate-se.md
         - name: Запланированные события
           href: scheduled-events.md
+        - name: Мониторинг запланированных событий
+          href: scheduled-event-service.md
         - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Включение вложенной виртуализации

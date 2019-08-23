@@ -102,7 +102,9 @@
           items:
             - name: Создание динамической группы
               href: groups-create-rule.md
-            - name: Правила динамических групп
+            - name: Обновление правила членства
+              href: groups-update-rule.md
+            - name: Правила динамических групп и синтаксис
               href: groups-dynamic-membership.md
             - name: Изменение типа членства в группе
               href: groups-change-type.md

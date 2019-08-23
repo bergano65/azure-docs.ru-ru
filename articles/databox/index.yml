@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: alkohli
   ms.author: alkohli
-  ms.date: 08/14/2019
-  ms.openlocfilehash: 03de9ceffe4495b1c3a39dad6617cc72d022fbbd
-  ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+  ms.date: 08/16/2019
+  ms.openlocfilehash: 2c42ee93804eb1e0e24b0b67925a092cc8517ceb
+  ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/16/2019
-  ms.locfileid: "69557832"
+  ms.lasthandoff: 08/20/2019
+  ms.locfileid: "69650374"
 landingContent:
 - title: Сведения о семействе Data Box
   linkLists:
@@ -53,75 +53,43 @@ landingContent:
     links:
     - text: Для Data Box
       url: data-box-system-requirements.md
-    - text: Для хранилища BLOB-объектов службы Data Box
-      url: data-box-system-requirements-rest.md
     - text: Для Диска Data Box
       url: data-box-disk-system-requirements.md
     - text: Data Box Heavy
       url: data-box-heavy-system-requirements.md
-- title: Развертывание Data Box
+- title: Упорядочивание, настройка, копирование, возврат
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Порядок
+    - text: Data Box
       url: data-box-deploy-ordered.md
-    - text: Кабель
-      url: data-box-deploy-set-up.md
-    - text: Подключение и копирование данных через SMB
-      url: data-box-deploy-copy-data.md
-    - text: Возврат, отправка и проверка данных Azure
-      url: data-box-deploy-picked-up.md
-- title: Развертывание Диска Data Box
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Порядок
+    - text: Диск Data Box
       url: data-box-disk-deploy-ordered.md
-    - text: Разблокировка и подключение
-      url: data-box-disk-deploy-set-up.md
-    - text: Копирование и проверка данных
-      url: data-box-disk-deploy-copy-data.md
-    - text: Возврат, отправка и проверка данных Azure
-      url: data-box-disk-deploy-picked-up.md
-- title: Развертывание Data Box Heavy
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Порядок
+    - text: Data Box Heavy
       url: data-box-heavy-deploy-ordered.md
-    - text: Кабель
-      url: data-box-heavy-deploy-set-up.md
-    - text: Подключение и копирование данных через SMB
-      url: data-box-heavy-deploy-copy-data.md
-    - text: Возврат, отправка и проверка данных Azure
-      url: data-box-heavy-deploy-picked-up.md
 - title: Управление устройством
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Использование Data Box и Data Box Heavy в Azure
+    - text: Использование Data Box в Azure
       url: data-box-portal-admin.md
-    - text: Использование Data Box и Data Box Heavy с помощью локального пользовательского интерфейса
-      url: data-box-local-web-ui-admin.md
     - text: Использование Диска Data Box в Azure
       url: data-box-portal-ui-admin.md
-- title: Часто задаваемые вопросы
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Вопросы и ответы о Data Box
-      url: data-box-faq.md
-    - text: Вопросы и ответы о Диске Data Box
-      url: data-box-disk-faq.md
+    - text: Использование Data Box Heavy в Azure
+      url: data-box-portal-admin.md
 - title: Устранение неполадок
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Использование Data Box и Data Box Heavy
+    - text: Data Box
       url: data-box-troubleshoot.md
-    - text: Хранилище BLOB-объектов службы Data Box
-      url: data-box-troubleshoot-rest.md
     - text: Диск Data Box
       url: data-box-disk-troubleshoot.md
+    - text: Data Box Heavy
+      url: data-box-troubleshoot.md
+    - text: Вопросы и ответы о Data Box
+      url: data-box-faq.md
+    - text: Вопросы и ответы о Диске Data Box
+      url: data-box-disk-faq.md
     - text: Открыть запрос в службу поддержки
       url: data-box-disk-contact-microsoft-support.md

@@ -1,10 +1,10 @@
-- name: Документация по службе подготовки устройств для Центра Интернета вещей Azure
+- name: Документация по Подготовке устройств к добавлению в Центр Интернета вещей Azure
   href: index.yml
 - name: Обзор
   items:
     - name: Сведения о Службе подготовки устройств к добавлению в Центр Интернета вещей
       href: about-iot-dps.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Настройка автоматической подготовки в Azure CLI
@@ -91,13 +91,13 @@
       href: concepts-device.md
     - name: Безопасность
       href: concepts-security.md
-    - name: Service
+    - name: Служба
       href: concepts-service.md
     - name: Аттестация доверенного платформенного модуля
       href: concepts-tpm-attestation.md
     - name: Аттестация симметричных ключей
       href: concepts-symmetric-key-attestation.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
       href: how-to-connect-mxchip-iot-devkit.md
@@ -161,27 +161,29 @@
   items:
     - name: Решения
       items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
         - name: IoT Central
           href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
     - name: Службы платформы
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Карты
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
+        - name: Пакеты SDK для служб IoT
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
+        - name: Maps
+          href: /azure/azure-maps
+        - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: IoT Edge
       items:
-        - name: IoT Edge
+        - name: Azure IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
@@ -199,7 +201,7 @@
       href: 'https://azure.microsoft.com/services/iot-hub/'
     - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
       href: 'https://catalog.azureiotsolutions.com/'
-    - name: Центр разработчика IoT Azure
+    - name: Центр разработчика Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Запросы данных клиентов
       href: iot-dps-customer-data-requests.md
@@ -217,9 +219,9 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=iot-hub'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=iot-hub'

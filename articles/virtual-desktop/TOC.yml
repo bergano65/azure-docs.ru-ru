@@ -34,8 +34,10 @@
       href: create-host-pools-powershell.md
     - name: Применение лицензии Windows к узлам сеансов Виртуальных рабочих столов Windows
       href: apply-windows-license.md
-    - name: Настройка общей папки профиля пользователя в пуле узлов
+    - name: Создание контейнера профиля для пула узлов с помощью общей папки
       href: create-host-pools-user-profile.md
+    - name: Создание контейнера профиля для пула узлов с помощью Azure NetApp Files
+      href: create-fslogix-profile-container.md
     - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
       href: configure-host-pool-load-balancing.md
     - name: Подготовка и настройка главного образа VHD

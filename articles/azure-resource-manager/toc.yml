@@ -97,9 +97,6 @@
         - name: Разбиение шаблонов на модули
           displayName: 'linked templates, nested templates'
           href: resource-group-linked-templates.md
-        - name: Управление секретами
-          displayname: key vault
-          href: resource-manager-keyvault-parameter.md
         - name: Развертывание нескольких экземпляров
           href: resource-group-create-multiple.md
         - name: Использование расширений шаблонов
@@ -124,6 +121,13 @@
           href: secure-template-with-sas-token.md
         - name: Развертывание нескольких подписок или групп ресурсов
           href: resource-manager-cross-resource-group-deployment.md
+    - name: Предоставление параметров
+      items:
+        - name: Создание файла параметров
+          href: resource-manager-parameter-files.md
+        - name: Передача конфиденциальных значений
+          displayname: key vault
+          href: resource-manager-keyvault-parameter.md
     - name: CI/CD
       items:
         - name: Проект Visual Studio с конвейерами

@@ -1,40 +1,55 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: защиту идентификации Azure AD
+### YamlMime:Landing
+title: Документация по Защите идентификации Azure AD
+summary: Узнайте, как использовать Защиту идентификации для определения и устранения рисков идентификации в организации.
 metadata:
-  document_id: null
-  title: 'Документация по службе "Защита идентификации Azure Active Directory": краткие руководства, основные понятия, справочные материалы | Документация Майкрософт'
-  description: 'Узнайте, как настроить и протестировать службу "Защита идентификации Azure Active Directory".'
+  title: Документация по Защите идентификации Azure AD
+  description: Узнайте, как использовать Защиту идентификации для определения и устранения рисков идентификации в организации.
   services: active-directory
-  ms.subservice: identity-protection
-  author: MicrosoftGuyJFlo
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: identity-protection
   ms.topic: landing-page
-  ms.date: 09/14/2018
+  author: MicrosoftGuyJFlo
   ms.author: joflore
-abstract:
-  description: 'Узнайте, как работает обнаружение потенциально скомпрометированных удостоверений и как реализовать автоматическое реагирование на такие события. Защита идентификации Azure Active Directory — это функция выпуска Azure AD Premium P2, которая позволяет выполнять следующие действия:<ul><li>обнаруживать потенциальные уязвимости, которые могут повлиять на удостоверения организации;</li><li>настраивать политики условного доступа для автоматического реагирования на подозрительные действия, связанные с удостоверениями в организации;</li><li>анализировать подозрительные инциденты и выполнять соответствующие действия для их устранения.</li></ul><br> Перечисленные ниже ресурсы помогут вам быстро приступить к работе.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ./media/index/video.png
-      width: 246
-    title: Основные сведения о службе "Защита идентификации Azure AD"
-    href: 'https://www.youtube.com/watch?v=zI3jn_G0_Ns'
-    width: 246
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как настроить политики условного доступа для распространенных сценариев, чтобы минимизировать риски при входе в систему.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/i_security-management.png
-            text: Блокировка доступа при обнаружении риска безопасности сеанса
-            href: quickstart-sign-in-risk-policy.md
+  ms.date: 08/20/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: 5f69dff8568c308d7a8eb9d80e247ef7cfc58acd
+  ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/21/2019
+  ms.locfileid: "69874110"
+landingContent:
+- title: О защите идентификации
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о защите идентификации
+      url: overview-v2.md
+    - text: Введение в систему безопасности
+      url: security-overview.md
+- title: Анализ событий риска
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка политик риска
+      url: howto-configure-risk-policies.md
+    - text: Изучение действий пользователей и операций входа, которые могут представлять риск
+      url: howto-investigate-risky-users-signins.md
+  - linkListType: reference
+    links:
+    - text: Типы событий
+      url: risk-events-reference.md
+- title: Возможности защиты идентификации
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Процесс входа
+      url: flows.md
+  - linkListType: how-to-guide
+    links:
+    - text: Моделирование событий риска
+      url: playbook.md
+  - linkListType: quickstart
+    links:
+    - text: Блокировка доступа при обнаружении риска для безопасности сеанса
+      url: quickstart-sign-in-risk-policy.md

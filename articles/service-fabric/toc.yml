@@ -356,6 +356,8 @@
       href: service-fabric-concept-resource-model.md
     - name: Управляемое удостоверение (предварительная версия)
       href: concepts-managed-identity.md
+    - name: Настройка учетных данных репозитория контейнеров
+      href: configure-container-repository-credentials.md
 - name: Руководства
   items:
     - name: Настройка среды разработки

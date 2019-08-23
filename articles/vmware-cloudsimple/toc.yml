@@ -44,7 +44,7 @@
           href: cloudsimple-activity.md
         - name: Использование VMware в частном облаке
           href: vmware-components.md
-        - name: Обзор безопасности
+        - name: Общие сведения о безопасности
           href: cloudsimple-security.md
         - name: Квота на узлы
           href: node-quota.md
@@ -105,7 +105,7 @@
             - name: Просмотр списка пользователей
               href: users.md
             - name: Настройка виртуального сетевого подключения к частному облаку
-              href: 'https://docs.azure.cloudsimple.com/virtual-network-connection/'
+              href: virtual-network-connection.md
             - name: Изменение профиля пользователя
               href: 'https://docs.azure.cloudsimple.com/editprofile/'
         - name: Настройка виртуальных машин VMware для частного облака
@@ -124,8 +124,8 @@
               href: escalate-privileges.md
             - name: Настройка DNS и DHCP рабочей нагрузки
               href: dns-dhcp-setup.md
-            - name: "Использование VPN NSX уровня\_2 для миграции"
-              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/#migrating-vms-using-nsx-layer-2-vpn'
+            - name: "Перенос рабочих нагрузок с помощью растянутых сетей уровня\_2"
+              href: migration-layer-2-vpn.md
         - name: Сети для частного облака
           items:
             - name: VPN-подключение между локальной средой и частным облаком
@@ -144,25 +144,29 @@
               href: azure-application-gateway.md
             - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
               href: configure-server-vrealize-automation-endpoint.md
-            - name: Перенос рабочей нагрузки виртуальных машин в частное облако
-              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/'
+            - name: Перенос виртуальных машин рабочей нагрузки в частное облако
+              href: migrate-workloads.md
             - name: Обеспечение высокой доступности приложения в VMware в Azure
               href: 'https://docs.azure.cloudsimple.com/ensuring-high-availability/'
+            - name: Выбор решения для балансировки нагрузки
+              href: load-balancers.md
         - name: Экосистема VMware
           items:
             - name: Резервное копирование виртуальных машин рабочей нагрузки
               href: backup-workloads-veeam.md
+            - name: Настройка частного облака в качестве сайта аварийного восстановления с помощью Zerto
+              href: disaster-recovery-zerto.md
             - name: Руководство по решению VMware Horizon
               href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
             - name: Настройка шифрования vSAN для частного облака
               href: vsan-encryption.md
-            - name: Развертывание Oracle RAC в частном облаке CloudSimple
-              href: 'https://docs.azure.cloudsimple.com/oracle-rac/'
+            - name: Оптимизация частного облака для Oracle RAC
+              href: oracle-real-application-clusters.md
         - name: Интеграция основных компонентов Azure
           items:
             - name: "Использование источника удостоверений Azure\_AD в vCenter частного облака"
               href: azure-ad.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
-              href: 'https://docs.azure.cloudsimple.com/on-premises-connection/'
+              href: on-premises-connection.md
             - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
-              href: 'https://docs.azure.cloudsimple.com/azure-expressroute-connection/'
+              href: azure-expressroute-connection.md
