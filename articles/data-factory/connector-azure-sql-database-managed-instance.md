@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/21/2019
 ms.author: jingwang
-ms.openlocfilehash: 1baa28dd1c9cc323e3dc7ca6fc5fbe2eac54652a
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 0cc7313531e92aa0f57b09a9252902848297bdbf
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829155"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996667"
 ---
 # <a name="copy-data-to-and-from-azure-sql-database-managed-instance-by-using-azure-data-factory"></a>Копирование данных в Управляемый экземпляр Базы данных SQL Azure и из него с помощью Фабрики данных Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "68829155"
 >[!NOTE]
 >Субъект-служба и проверки подлинности управляемых удостоверений в настоящее время не поддерживаются этим соединителем. Чтобы решить эту проблемы, выберите соединитель базы данных SQL Azure и укажите сервер управляемого экземпляра вручную.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для доступа к общедоступной [конечной точке](../sql-database/sql-database-managed-instance-public-endpoint-securely.md)управляемый экземпляр базы данных SQL Azure можно использовать управляемую среду выполнения интеграции Azure в фабрике данных Azure. Убедитесь, что включена общедоступная конечная точка, а также разрешите трафик общедоступной конечной точки в группе безопасности сети, чтобы фабрика данных Azure могла подключаться к базе данных. Дополнительные сведения см. в [этом руководстве](../sql-database/sql-database-managed-instance-public-endpoint-configure.md).
 
@@ -126,31 +126,33 @@ ms.locfileid: "68829155"
 
 Чтобы использовать проверку подлинности по маркеру приложения Azure AD на основе субъекта-службы, выполните следующие действия:
 
-1. [Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) из портал Azure. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
+1. Выполните действия по [подготовке администратора Azure Active Directory для управляемый экземпляр](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
+
+2. [Создайте приложение Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) из портал Azure. Запишите имя приложения и следующие значения, которые используются для определения связанной службы:
 
     - ИД приложения
     - Ключ приложения
     - Идентификатор клиента
 
-2. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, котораяявляется администратором. В базе данных **master** выполните следующий T-SQL:
+3. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, котораяявляется администратором. В базе данных **master** выполните следующий T-SQL:
 
     ```sql
     CREATE LOGIN [your application name] FROM EXTERNAL PROVIDER
     ```
 
-2. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
+4. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER
     ```
 
-3. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
+5. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
 
     ```sql
     ALTER ROLE [role name e.g. db_owner] ADD MEMBER [your application name]
     ```
 
-4. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
+6. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
 
 **Пример. Использование проверки подлинности субъекта-службы**
 
@@ -185,25 +187,27 @@ ms.locfileid: "68829155"
 
 Чтобы использовать аутентификацию управляемого удостоверения, выполните следующие действия.
 
-1. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, котораяявляется администратором. В базе данных **master** выполните следующий T-SQL:
+1. Выполните действия по [подготовке администратора Azure Active Directory для управляемый экземпляр](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-managed-instance).
+
+2. [Создайте имена входа](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) для управляемого удостоверения фабрики данных Azure. В SQL Server Management Studio (SSMS) подключитесь к Управляемый экземпляр SQL Server с помощью учетной записи, котораяявляется администратором. В базе данных **master** выполните следующий T-SQL:
 
     ```sql
     CREATE LOGIN [your Data Factory name] FROM EXTERNAL PROVIDER
     ```
 
-2. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
+3. [Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities) для управляемого удостоверения в фабрике данных Azure. Подключитесь к базе данных из или в которую необходимо скопировать данные, выполнив следующий T-SQL: 
   
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER
     ```
 
-3. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
+4. Предоставьте управляемому удостоверению фабрики данных необходимые разрешения, как обычно для пользователей SQL и других. Выполните следующий код. Дополнительные параметры см. в [этом документе](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql?view=azuresqldb-mi-current).
 
     ```sql
     ALTER ROLE [role name e.g. db_owner] ADD MEMBER [your Data Factory name]
     ```
 
-4. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
+5. Настройка связанной службы Управляемый экземпляр Базы данных SQL Azure в фабрике данных Azure.
 
 **Пример. Использование проверки подлинности управляемого удостоверения**
 
@@ -378,7 +382,7 @@ GO
 | writeBatchTimeout |Это свойство определяет время ожидания при выполнении операции пакетной вставки, по истечении которого она считается не выполненной.<br/>Допустимые значения — для интервала времени. Например, 00:30:00 определяет период 30 минут. |Нет |
 | preCopyScript |Это свойство задает SQL-запрос для выполнения действия копирования перед записью данных в управляемый экземпляр. Он вызывается однократно при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
 | sqlWriterStoredProcedureName | Имя хранимой процедуры, в которой определяется, как применить исходные данные в целевой таблице. <br/>Эта хранимая процедура будет *вызываться для каждого пакета*. Для операций, выполняемых только один раз и не имеющих никаких действий с исходными данными, например Delete или TRUNCATE, используйте `preCopyScript` свойство. | Нет |
-| сторедпроцедуретаблетипепараметернаме |Имя параметра табличного типа, указанного в хранимой процедуре.  |Нет |
+| storedProcedureTableTypeParameterName |Имя параметра табличного типа, указанного в хранимой процедуре.  |Нет |
 | sqlWriterTableType |Имя типа таблицы, используемое в хранимой процедуре. Действие копирования предоставляет доступ к перемещаемым данным во временной таблице с указанным здесь типом. Это позволяет при выполнении хранимой процедуры объединить копируемые и существующие данные. |Нет |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет |
 
@@ -580,21 +584,21 @@ END
 | DateTime |DateTime |
 | datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
-| Десятичное |Десятичное |
+| Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Плавающая область |Double |
 | image |Byte[] |
 | ssNoversion |Int32 |
-| money |Десятичное |
+| money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Десятичное |
+| numeric |Decimal |
 | nvarchar |String, Char[] |
-| real |Единое |
+| real |Single |
 | rowversion |Byte[] |
 | smalldatetime |DateTime |
 | smallint |Int16 |
-| smallmoney |Десятичное |
+| smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |

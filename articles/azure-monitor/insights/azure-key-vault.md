@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: bwren
-ms.openlocfilehash: b7d9ff760bac06602d8d770a358c8a2e22a72c81
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 1e0e9a0d76e644ec48ecd423a105dd89629d290c
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68849194"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997689"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
 
@@ -103,28 +103,28 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/key-vault-logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
-| Свойство | Description |
+| Свойство | Описание |
 |:--- |:--- |
-| Тип |*AzureDiagnostics* |
-| SourceSystem |*Таблицы Azure* |
-| CallerIpAddress |IP-адрес клиента, отправившего запрос. |
-| Категория | *AuditEvent* |
-| CorrelationId |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
-| DurationMs |Время обслуживания запроса REST API в миллисекундах. Это время не включает в себя задержку сети, поэтому время, зарегистрированное на стороне клиента, может не соответствовать этому значению. |
-| HttpStatusCode_d |Код состояния HTTP, возвращаемый запросом (например, *200*) |
-| id_s |Уникальный идентификатор запроса. |
-| identity_claim_appid_g | Идентификатор GUID для идентификатора приложения |
-| OperationName |Имя операции, как описано в статье [Ведение журнала хранилища ключей Azure](../../key-vault/key-vault-logging.md) |
-| OperationVersion |Запрошенная клиентом версия REST API (например, *2015-06-01*) |
-| requestUri_s |URI запроса |
-| Resource |Имя хранилища ключей. |
-| Группа ресурсов |Группа ресурсов хранилища ключей. |
-| resourceId |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
-| ResourceProvider |*MICROSOFT.KEYVAULT* |
-| ResourceType | *VAULTS* |
-| ResultSignature |Код состояния HTTP (например, *ОК*) |
-| ResultType |Результат запроса REST API (например, *Успешно*) |
-| SubscriptionId |Идентификатор подписки Azure, которая содержит хранилище ключей. |
+| `Type` |*AzureDiagnostics* |
+| `SourceSystem` |*Таблицы Azure* |
+| `CallerIpAddress` |IP-адрес клиента, отправившего запрос. |
+| `Category` | *AuditEvent* |
+| `CorrelationId` |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
+| `DurationMs` |Время обслуживания запроса REST API в миллисекундах. Это время не включает в себя задержку сети, поэтому время, зарегистрированное на стороне клиента, может не соответствовать этому значению. |
+| `httpStatusCode_d` |Код состояния HTTP, возвращаемый запросом (например, *200*) |
+| `id_s` |Уникальный идентификатор запроса. |
+| `identity_claim_appid_g` | Идентификатор GUID для идентификатора приложения |
+| `OperationName` |Имя операции, как описано в статье [Ведение журнала хранилища ключей Azure](../../key-vault/key-vault-logging.md) |
+| `OperationVersion` |Запрошенная клиентом версия REST API (например, *2015-06-01*) |
+| `requestUri_s` |URI запроса |
+| `Resource` |Имя хранилища ключей. |
+| `ResourceGroup` |Группа ресурсов хранилища ключей. |
+| `ResourceId` |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
+| `ResourceProvider` |*MICROSOFT.KEYVAULT* |
+| `ResourceType` | *VAULTS* |
+| `ResultSignature` |Код состояния HTTP (например, *ОК*) |
+| `ResultType` |Результат запроса REST API (например, *Успешно*) |
+| `SubscriptionId` |Идентификатор подписки Azure, которая содержит хранилище ключей. |
 
 ## <a name="migrating-from-the-old-key-vault-solution"></a>Миграция из устаревшего решения Key Vault
 В январе 2017 г. поддерживаемый способ отправки журналов из Key Vault в Log Analytics был изменен. Эти изменения обеспечивают следующие преимущества:

@@ -8,18 +8,15 @@ ms.author: spelluru
 ms.date: 07/09/2019
 ms.topic: article
 ms.service: event-hubs
-ms.openlocfilehash: 003e68b36ff71fb2991cf087ef33f72aba73a8be
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 531426656fe833752c9c4685688c00de3894895b
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233961"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991944"
 ---
-# <a name="process-data-from-your-event-hub-using-azure-stream-analytics-preview"></a>Обработка данных из концентратора событий с помощью Azure Stream Analytics (Предварительная версия)
+# <a name="process-data-from-your-event-hub-using-azure-stream-analytics"></a>Обработка данных из концентратора событий с помощью Azure Stream Analytics 
 Azure Stream Analytics служба упрощает прием, обработку и анализ потоковой передачи данных из концентраторов событий Azure, позволяя получать эффективные аналитические данные для выполнения действий в реальном времени. Такая интеграция позволяет быстро создать конвейер аналитики "горячего" пути. Вы можете использовать портал Azure для визуализации входящих данных и создания запроса Stream Analytics. Когда запрос будет готов, его можно переместить в рабочую среду всего за несколько щелчков мыши. 
-
-> [!NOTE]
-> Эта функция в настоящее время находится на стадии предварительной версии. 
 
 ## <a name="key-benefits"></a>Основные преимущества
 Ниже приведены основные преимущества концентраторов событий Azure и интеграции Azure Stream Analytics. 

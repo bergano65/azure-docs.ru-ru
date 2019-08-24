@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4aa948a785153dd0d70a9af41ae0ed25036827f8
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 03579d75ad9cbaceca1a5d42913ff546088f6cfe
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656271"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982790"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -497,7 +497,7 @@ print(resp.text)
 
 Power BI поддерживает использование Машинное обучение Azure веб-служб, чтобы расширить данные в Power BI с помощью прогнозов. 
 
-Чтобы создать веб-службу, которая поддерживается для использования в Power BI, схема должна поддерживать формат, необходимый для Power BI. [Узнайте, как создать схему, поддерживаемую Power BI](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#example-script-with-dictionary-input-support-consumption-from-power-bi).
+Чтобы создать веб-службу, которая поддерживается для использования в Power BI, схема должна поддерживать формат, необходимый для Power BI. [Узнайте, как создать схему, поддерживаемую Power BI](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#example-entry-script).
 
 После развертывания веб-службы ее можно использовать в Power BI потоках данных. [Узнайте, как использовать веб-службу машинное обучение Azure из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).
 

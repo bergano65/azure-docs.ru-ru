@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: b626f906738e3a6e65053408cfdc2002d459a6e2
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
-ms.translationtype: MT
+ms.openlocfilehash: 347e7c2aa2ff4fb4f188847b81d03006c1909166
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69973861"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997642"
 ---
-# <a name="build-and-deploy-the-opc-ua-certificate-management-service"></a>Создание и развертывание службы управления сертификатами OPC UA
+# <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами хранилища OPC
 
-В этой статье объясняется, как развернуть службу управления сертификатами OPC UA в Azure.
+В этой статье объясняется, как развернуть службу управления сертификатами хранилища OPC в Azure.
 
 > [!NOTE]
 > Дополнительные сведения о развертывании и инструкциях см. в [репозитории хранилища GitHub OPC](https://github.com/Azure/azure-iiot-opc-vault-service).
@@ -59,20 +59,20 @@ cd azure-iiot-opc-vault-service
 7. Если планируется разработка с использованием этого развертывания, добавьте `-development 1` , чтобы включить пользовательский интерфейс Swagger и развернуть отладочные сборки.
 6. Следуйте инструкциям в сценарии, чтобы войти в подписку и предоставить дополнительные сведения.
 9. После успешной операции сборки и развертывания должно отобразиться следующее сообщение:
+   ```
+   To access the web client go to:
+   https://myResourceGroup.azurewebsites.net
 
-```
-To access the web client go to:
-https://myResourceGroup.azurewebsites.net
+   To access the web service go to:
+   https://myResourceGroup-service.azurewebsites.net
 
-To access the web service go to:
-https://myResourceGroup-service.azurewebsites.net
+   To start the local docker GDS server:
+   .\myResourceGroup-dockergds.cmd
 
-To start the local docker GDS server:
-.\myResourceGroup-dockergds.cmd
+   To start the local dotnet GDS server:
+   .\myResourceGroup-gds.cmd
+   ```
 
-To start the local dotnet GDS server:
-.\myResourceGroup-gds.cmd
-```
 В случае возникновения проблем выполните приведенные [ниже](#troubleshooting-deployment-failures)действия.
 
 8. Откройте свой любимый браузер и откройте страницу приложения:`https://myResourceGroup.azurewebsites.net`
@@ -86,7 +86,7 @@ To start the local dotnet GDS server:
 
 После успешного развертывания вы можете приступить к использованию служб: [Управление службой управления сертификатами хранилища OPC](howto-opc-vault-manage.md)
 
-## <a name="delete-the-certificate-management-services-from-the-subscription"></a>Удаление служб управления сертификатами из подписки
+## <a name="delete-the-certificate-management-service-from-the-subscription"></a>Удаление службы управления сертификатами из подписки
 
 1. Войдите в портал Azure: `https://portal.azure.com`.
 2. Перейдите к группе ресурсов, в которой была развернута служба.

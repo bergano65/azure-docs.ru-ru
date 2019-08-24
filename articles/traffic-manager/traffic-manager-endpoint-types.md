@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: allensu
-ms.openlocfilehash: 1b72fc510543ff57f5fac1b03e76df7ffed3fbfe
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 9de5b161c6bb1897058898dddd620ad093f148be
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333820"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981050"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
@@ -101,7 +101,7 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 * [Можно ли использовать диспетчер трафика с несколькими веб-приложениями в одном регионе?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-more-than-one-web-app-in-the-same-region)
 
-* [Разделы справки переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group)
+* [Разделы справки переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
 
 ## <a name="next-steps"></a>Следующие шаги
 

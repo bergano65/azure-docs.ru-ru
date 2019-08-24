@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: a819e0b5a0da92137451eedbf84fe06d22879568
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: ae10bb3488c21b6637163e333231e95a18c652bf
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69973783"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996154"
 ---
-# <a name="how-to-use-the-opc-ua-certificate-management-service"></a>Использование службы управления сертификатами OPC UA
+# <a name="how-to-use-the-opc-vault-certificate-management-service"></a>Как использовать службу управления сертификатами хранилища OPC
 
 В этой статье описывается регистрация приложений и выдача подписанных сертификатов приложений для устройств OPC UA.
 

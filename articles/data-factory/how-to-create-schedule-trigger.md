@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: shlo
-ms.openlocfilehash: 09f80f69857ae17a0136229fe9bf13d4f63e7096
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6b38e85994fc99272a649b9e529380cb953d1bca
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65151089"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996375"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Создание триггера, который запускает конвейер по расписанию
 В этой статье описан триггер расписания и шаги по его созданию, запуску и мониторингу. Сведения о других типах триггеров см. в статье [Выполнение конвейера и триггеры в фабрике данных Azure](concepts-pipeline-execution-triggers.md).
@@ -26,7 +26,7 @@ ms.locfileid: "65151089"
 
 В следующих разделах приведены шаги по созданию триггера расписания различными методами. 
 
-## <a name="data-factory-ui"></a>Пользовательский интерфейс фабрики данных
+## <a name="data-factory-ui"></a>Пользовательский интерфейс Фабрики данных
 Вы можете создать **триггер расписания** для периодического запуска конвейера (ежечасно, ежедневно и т. д.). 
 
 > [!NOTE]
@@ -111,31 +111,31 @@ ms.locfileid: "65151089"
     - Триггер связан с конвейером **Adfv2QuickStartPipeline**. Чтобы связать несколько конвейеров с триггером, добавьте дополнительные разделы **pipelineReference**.
     - Конвейер в кратком руководстве принимает два значения **параметров**: **inputPath** и **outputPath**. Таким образом можно передавать значения этих параметров из триггера.
 
-2. Создание триггера с помощью **AzDataFactoryV2Trigger набора** командлета:
+2. Создайте триггер с помощью командлета **Set-AzDataFactoryV2Trigger** :
 
     ```powershell
     Set-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger" -DefinitionFile "C:\ADFv2QuickStartPSH\MyTrigger.json"
     ```
 
-3. Убедитесь, что состояние триггера — **остановлено** с помощью **Get AzDataFactoryV2Trigger** командлета:
+3. Убедитесь, что состояние триггера остановлено с помощью командлета **Get-AzDataFactoryV2Trigger** :
 
     ```powershell
     Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-4. Запустите триггер с помощью **AzDataFactoryV2Trigger начала** командлета:
+4. Запустите триггер с помощью командлета **Start-AzDataFactoryV2Trigger** :
 
     ```powershell
     Start-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-5. Убедитесь, что состояние триггера — **Started** с помощью **Get AzDataFactoryV2Trigger** командлета:
+5. Убедитесь, что состояние триггера запущено с помощью командлета **Get-AzDataFactoryV2Trigger** :
 
     ```powershell
     Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name "MyTrigger"
     ```
 
-6.  Триггер выполняется в Azure PowerShell с помощью Get **Get AzDataFactoryV2TriggerRun** командлета. Для этого следующую команду нужно выполнять периодически. Обновите значения **TriggerRunStartedAfter** и **TriggerRunStartedBefore** в соответствии со значениями в определении триггера:
+6.  Получение триггера выполняется в Azure PowerShell с помощью командлета **Get-AzDataFactoryV2TriggerRun** . Для этого следующую команду нужно выполнять периодически. Обновите значения **TriggerRunStartedAfter** и **TriggerRunStartedBefore** в соответствии со значениями в определении триггера:
 
     ```powershell
     Get-AzDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "MyTrigger" -TriggerRunStartedAfter "2017-12-08T00:00:00" -TriggerRunStartedBefore "2017-12-08T01:00:00"
@@ -244,7 +244,7 @@ ms.locfileid: "65151089"
 
 Сведения о том, как отслеживать выполнения триггера и конвейера на портале Azure, см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline).
 
-## <a name="azure-resource-manager-template"></a>Шаблон диспетчера ресурсов Azure
+## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 Для создания триггера можно использовать шаблон Azure Resource Manager. Пошаговые инструкции см. в статье [Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager](quickstart-create-data-factory-resource-manager-template.md).  
 
 ## <a name="pass-the-trigger-start-time-to-a-pipeline"></a>Передача времени запуска триггера в конвейер
@@ -254,9 +254,7 @@ ms.locfileid: "65151089"
 "parameters": {
     "scheduledRunTime": "@trigger().scheduledTime"
 }
-```    
-
-Дополнительные сведения см. в статье [Чтение или запись секционированных данных в фабрике данных Azure версии 2](how-to-read-write-partitioned-data.md).
+```
 
 ## <a name="json-schema"></a>Схема JSON
 Следующее определение JSON показывает, как создать триггер расписания с указанием расписания и повторения:
@@ -325,13 +323,13 @@ ms.locfileid: "65151089"
 
 ### <a name="schema-defaults-limits-and-examples"></a>Параметры схемы по умолчанию, ограничения и примеры
 
-| Свойство JSON | type | Обязательно для заполнения | Значение по умолчанию | Допустимые значения | Пример |
+| Свойство JSON | Тип | Обязательное значение | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | String | Да | Нет | Дата и время по спецификации ISO-8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | Object | Да | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **startTime** | Строковое | Да | Отсутствуют | Дата и время по спецификации ISO-8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | Object | Да | Отсутствуют | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
 | **interval** | Number | Нет | 1 | 1–1000 | `"interval":10` |
-| **endTime** | String | Да | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | Object | Нет | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **endTime** | Строковое | Да | Отсутствуют | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | Object | Нет | Отсутствуют | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:
@@ -403,5 +401,5 @@ ms.locfileid: "65151089"
 | `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` | Задание выполняется в 05:15, 05:45, 17:15, 17:45 в третью среду каждого месяца. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).

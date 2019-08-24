@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: c782629d422eb8846b209fed7ab6b5a5c015de25
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 80dbb4f3d0c8b993beab5f6344d6034d6c2b6895
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612295"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990581"
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Присоединение виртуальной машины Ubuntu к управляемому домену в Azure
 Из этой статьи вы узнаете, как присоединить виртуальную машину Ubuntu Linux к управляемому домену доменных служб Azure AD.
@@ -88,7 +88,7 @@ sudo vi /etc/hosts
 3. Во время установки Kerberos экран будет розовым. При установке пакета krb5-user поступает запрос на имя области (ВСЕ символы названия должны быть в ВЕРХНЕМ РЕГИСТРЕ). В процессе установки разделы [realm] и [domain_realm] сохраняются в файл /etc/krb5.conf.
 
     > [!TIP]
-    > Если имя управляемого домена — contoso.com, введите contoso.COM в качестве области. Не забывайте, что имя должно быть в ВЕРХНЕМ РЕГИСТРЕ.
+    > Если имя управляемого домена — contoso.com, введите CONTOSO.COM в качестве области. Не забывайте, что имя должно быть в ВЕРХНЕМ РЕГИСТРЕ.
 
 
 ## <a name="configure-the-ntp-network-time-protocol-settings-on-the-linux-virtual-machine"></a>Настройка параметров протокола NTP на виртуальной машине Linux
@@ -121,7 +121,7 @@ sudo systemctl start ntp
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
     ```console
-    sudo realm discover contoso.COM
+    sudo realm discover CONTOSO.COM
     ```
 
    > [!NOTE]
@@ -138,7 +138,7 @@ sudo systemctl start ntp
     >
 
     ```console
-    kinit bob@contoso.COM
+    kinit bob@CONTOSO.COM
     ```
 
 3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
@@ -149,7 +149,7 @@ sudo systemctl start ntp
     > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
-    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM' --install=/
+    sudo realm join --verbose CONTOSO.COM -U 'bob@CONTOSO.COM' --install=/
     ```
 
 Когда компьютер присоединится к управляемому домену, вы получите сообщение "Компьютер успешно зарегистрирован в realm" (Successfully enrolled machine in realm).
@@ -192,10 +192,10 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине Ubuntu, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
-1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине Ubuntu, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@contoso.COM).
+1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине Ubuntu, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO.COM).
     
     ```console
-    ssh -l bob@contoso.COM contoso-ubuntu.contoso.com
+    ssh -l bob@CONTOSO.COM contoso-ubuntu.contoso.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:

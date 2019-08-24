@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 07/10/2019
 ms.author: helohr
-ms.openlocfilehash: efc721f7852d50e431be38f52e27d72ad7f3ae76
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 93f111eb4439b89ac367ad7e7b951e26cecb86e4
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877584"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981094"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
@@ -53,7 +53,7 @@ ms.locfileid: "69877584"
 
 **Причина.** Пользователю, выполнившего вход, не назначена роль Тенанткреатор в своих Azure Active Directory.
 
-**Исправно** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role-to-a-user-in-your-azure-active-directory-tenant). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
+**Исправно** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
 
 ![Снимок экрана с назначенной ролью Тенанткреатор.](media/TenantCreatorRoleAssigned.png)
 

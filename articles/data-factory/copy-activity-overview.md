@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 23ae7b5cfec26fb2483a3e4ac13a1220888d76ee
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 59ac4b36a4bc2b3ff454b3a2ae98ce60f6bfcb5f
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614267"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996608"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
@@ -263,9 +263,6 @@ ms.locfileid: "69614267"
 
 ## <a name="incremental-copy"></a>Добавочное копирование
 Фабрика данных поддерживает сценарии для постепенного копирования разностных данных из исходного хранилища данных в приемниковый. Дополнительные сведения см. в [руководстве по добавочному копированию данных](tutorial-incremental-copy-overview.md).
-
-## <a name="read-and-write-partitioned-data"></a>Чтение и запись секционированных данных
-В версии 1 фабрика данных Azure поддерживала чтение или запись секционированных данных с использованием системных переменных SliceStart/SliceEnd/WindowStart/WindowEnd. В текущей версии это достигается с помощью параметра конвейера и времени начала или запланированного времени запуска триггера в качестве значения параметра. Дополнительные сведения см. в статье о [чтении и записи секционированных данных](how-to-read-write-partitioned-data.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими руководствами и примерами:

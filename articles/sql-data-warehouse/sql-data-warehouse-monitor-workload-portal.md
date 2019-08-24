@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 73e7312eacd11fbec052d2b0b7781528c3b3d50f
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 176762e0d1c007f924d779a1b77dd52c7ed56e01
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575380"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981486"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки — портал Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "69575380"
 
 ![Добавить рабочую область аналитики](media/sql-data-warehouse-monitor/add_analytics_workspace_2.png)
 
-Дополнительные сведения о рабочих областях см. в следующей [документации](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#create-a-workspace).
+Дополнительные сведения о рабочих областях см. в следующей [документации](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace#create-a-workspace).
 
 ## <a name="turn-on-diagnostic-logs"></a>Включить журналы диагностики 
 

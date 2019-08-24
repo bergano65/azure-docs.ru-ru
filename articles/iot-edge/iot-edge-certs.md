@@ -8,12 +8,12 @@ ms.date: 09/13/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 91cde6965f3635d6d2acfaf581f570779020f8ff
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0aa70e591c7aac977fe13ed638f8ee56b88e4bd1
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60445321"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982910"
 ---
 # <a name="azure-iot-edge-certificate-usage-detail"></a>Сведения об использовании сертификатов Azure IoT Edge
 
@@ -93,14 +93,14 @@ New-CACertsCertChain rsa
 Аналогичным образом, эти команды создают сертификат ЦС устройства:
 
 ```bash
-./certGen.sh create_edge_device_certificate "<gateway device name>"
+./certGen.sh create_edge_device_ca_certificate "<gateway device name>"
 ```
 
 ```Powershell
-New-CACertsEdgeDevice "<gateway device name>"
+New-CACertsEdgeDeviceCA "<gateway device name>"
 ```
 
-* **\<Имя устройства шлюза\>** , передаваемое в эти скрипты, **не должно** совпадать со значением параметра hostname в файле config.yaml. Чтобы помочь вам избежать проблем, скрипты добавляют строку ".ca" к **\<имени устройства шлюза\>** . Это позволяет предотвратить конфликт имен, когда при настройке IoT Edge пользователь указывает одно и то же имя в обоих местах. Однако все же рекомендуется не использовать одинаковые имена.
+* **Имяустройства\> шлюза, передаваемое в эти скрипты, не должно совпадать с параметром HostName в файле config. YAML. \<** Чтобы помочь вам избежать проблем, скрипты добавляют строку ".ca" к **\<имени устройства шлюза\>** . Это позволяет предотвратить конфликт имен, когда при настройке IoT Edge пользователь указывает одно и то же имя в обоих местах. Однако все же рекомендуется не использовать одинаковые имена.
 
 >[!Tip]
 > Чтобы подключить конечные устройства и приложения Интернета вещей, использующие наш пакет SDK для устройств Интернета вещей, к IoT Edge, необходимо добавить дополнительный параметр GatewayHostName в конце строки подключения устройства. При создании сертификата сервера центра Edge используется значение свойства hostname из файла config.yaml, преобразованное в нижний регистр. Поэтому, чтобы имена совпадали и проверка TLS-сертификата завершилась успешно, значение параметра GatewayHostName следует вводить в нижнем регистре.
@@ -120,7 +120,7 @@ New-CACertsEdgeDevice "<gateway device name>"
 | Сертификат ЦС рабочей нагрузки     | iotedge workload ca                                                                                       |
 | Сертификат сервера центра IoT Edge | iotedgegw.local (соответствует значению свойства hostname в файле config.yaml)                                                |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Общие сведения о модулях IoT Edge Azure](iot-edge-modules.md)
 

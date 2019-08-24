@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: e73a64a9782535da31e2eacbaa2740007707c774
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
-ms.translationtype: MT
+ms.openlocfilehash: 7d9d6dc8a980c543aa1a94c0ed4e9ae845769567
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69872412"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997903"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей 
 
@@ -433,7 +433,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 * отправить эксперимент [с помощью расширения интерфейса командной строки](reference-azure-machine-learning-cli.md#experiments).
 * Отправьте эксперимент с помощью [расширения VS Code](how-to-vscode-tools.md#train-and-tune-models).
 
-## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
+## <a name="git-tracking-and-integration"></a>Отслеживание и интеграция Git
 
 При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Например, текущий идентификатор фиксации для репозитория регистрируется как часть журнала.
 

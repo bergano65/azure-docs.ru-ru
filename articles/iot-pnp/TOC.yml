@@ -12,7 +12,7 @@
     - name: Подключение устройства к Центру Интернета вещей
       href: quickstart-connect-pnp-device.md
     - name: Подключение устройства к IoT Central
-      href: 'https://aka.ms/iot-central-connect-qs'
+      href: ../iot-central/quick-create-pnp-device-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json
     - name: Подключение к устройству в решении
       href: quickstart-connect-pnp-device-solution.md
 - name: Учебники
@@ -50,7 +50,7 @@
 - name: Справочные материалы
   items:
     - name: REST
-      href: 'https://aka.ms/iot-pnp-rest'
+      href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/createorupdatemodel'
     - name: Создание маркера безопасности REST
       href: howto-generate-sas-token.md
 - name: Сопутствующие материалы
@@ -58,7 +58,7 @@
     - name: Решения
       items:
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /azure/iot-central
         - name: Акселераторы решений для Интернета вещей
           href: /azure/iot-accelerators
     - name: Службы платформы

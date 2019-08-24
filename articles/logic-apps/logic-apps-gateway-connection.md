@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 0580fe09c2cb6569724a9b4365233a3142645a47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 029dc8daaf456c155d46eefa699772882bdabee5
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65546272"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982873"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
@@ -30,7 +30,7 @@ ms.locfileid: "65546272"
 * [Управление локальным шлюзом данных в PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Имеется [загруженный и установленный шлюз данных на локальном компьютере](../logic-apps/logic-apps-gateway-install.md).
 
@@ -63,16 +63,16 @@ ms.locfileid: "65546272"
 
 3. На странице **Создание шлюза для подключения** для ресурса шлюза укажите такие сведения.
 
-   | Свойство | ОПИСАНИЕ | 
+   | Свойство | Описание | 
    |----------|-------------|
-   | **Имя** | Имя ресурса шлюза | 
+   | **Имя ресурса** | Имя ресурса шлюза, которое может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки`(`( `)`,) и точки (`.`). | 
    | **Подписка** | Имя подписки Azure, которое должно совпадать с подпиской приложения логики. Подписка по умолчанию основана на учетной записи Azure, которая использовалась для входа. | 
    | **Группа ресурсов** | Имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) для упорядочения связанных ресурсов | 
    | **Location** | Azure ограничивает расположение тем же регионом, выбранным для облачной службы шлюза во время [установки шлюза](../logic-apps/logic-apps-gateway-install.md). <p>**Примечание**. Убедитесь, что расположение ресурса шлюза совпадает с расположением облачной службы шлюза. В противном случае установка вашего шлюза может не отобразиться в списке установленных шлюзов, который вы можете выбрать на следующем шаге. Вы можете выбрать разные регионы для ресурса шлюза и вашего приложения логики. | 
    | **Имя установки** | Если установка шлюза еще не выбрана, выберите шлюз, установленный ранее. | 
    | | | 
 
-   Вот пример:
+   Пример:
 
    ![Предоставление сведений для создания локального шлюза данных](./media/logic-apps-gateway-connection/createblade.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "65546272"
 
       Уникальное имя подключения позволяет легко идентифицировать подключение позже, особенно при создании нескольких подключений. При необходимости добавьте также имя домена для вашего имени пользователя.
    
-      Вот пример:
+      Пример:
 
       ![Создание подключения между логическим приложением и шлюзом данных](./media/logic-apps-gateway-connection/blankconnection.png)
 
@@ -153,12 +153,12 @@ ms.locfileid: "65546272"
 
 [!INCLUDE [existing-gateway-location-changed](../../includes/logic-apps-existing-gateway-location-changed.md)]
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Защита приложений логики](./logic-apps-securing-a-logic-app.md)
 * [Распространенные примеры и сценарии использования приложений логики](./logic-apps-examples-and-scenarios.md)

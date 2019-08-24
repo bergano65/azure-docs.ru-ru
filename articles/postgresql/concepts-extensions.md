@@ -1,25 +1,25 @@
 ---
-title: 'Использовать расширения PostgreSQL в базе данных Azure для PostgreSQL: один сервер'
-description: Описывает возможность расширить функциональные возможности с помощью расширений в базе данных Azure для PostgreSQL — один сервер базы данных.
+title: Использование расширений PostgreSQL в базе данных Azure для PostgreSQL-Single Server
+description: Описывает возможность расширения функциональных возможностей базы данных с помощью расширений в базе данных Azure для PostgreSQL-Single Server.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 06/26/2019
-ms.openlocfilehash: 412ce3c5245f3f22bfb03740a0451670dc6a90a7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
-ms.translationtype: MT
+ms.date: 08/23/2019
+ms.openlocfilehash: 93cc02fafcfa153c452f37c2bc69bb47e2629f1d
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448103"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998065"
 ---
-# <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL: один сервер
-PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. на странице  [Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
+# <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — один сервер
+PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения объединяют несколько связанных объектов SQL в один пакет, который можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных функции расширений, такие как встроенные функции.
 
 ## <a name="how-to-use-postgresql-extensions"></a>Как использовать расширения PostgreSQL
-Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду  [CREATE EXTENSION](https://www.postgresql.org/docs/9.6/static/sql-createextension.html),  используя инструмент psql. При этом упакованные объекты будут загружены в базу данных.
+Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду  [CREATE EXTENSION](https://www.postgresql.org/docs/current/static/sql-createextension.html),  используя инструмент psql. При этом упакованные объекты будут загружены в базу данных.
 
-В настоящее время База данных Azure для PostgreSQL поддерживает подмножество основных расширений, которые перечислены ниже. Поддерживаются только указанные выше расширения. С помощью службы базы данных Azure для PostgreSQL невозможно создать собственное расширение.
+База данных Azure для PostgreSQL поддерживает подмножество расширений ключей, как указано ниже. Расширения, выходящие за рамки перечисленных, не поддерживаются. Вы не можете создать собственное расширение в базе данных Azure для PostgreSQL.
 
 ## <a name="extensions-supported-by-azure-database-for-postgresql"></a>Расширения, поддерживаемые базой данных Azure для PostgreSQL
 В таблицах ниже приведен список стандартных расширений PostgreSQL, которые в настоящее время поддерживаются базой данных Azure для PostgreSQL. Эти сведения также можно получить, выполнив `SELECT * FROM pg_available_extensions;`.
@@ -49,7 +49,7 @@ PostgreSQL предоставляет возможность расширить 
 > | [pg\_trgm](https://www.postgresql.org/docs/9.6/static/pgtrgm.html) | Предоставляет функции и операторы для определения сходства буквенно-цифрового текста на основе сопоставления триграмм. |
 > | [tablefunc](https://www.postgresql.org/docs/9.6/static/tablefunc.html) | Предоставляет функции для полного управления таблицами, включая перекрестные таблицы. |
 > | [uuid-ossp](https://www.postgresql.org/docs/9.6/static/uuid-ossp.html) | Создает глобально уникальные идентификаторы (UUID). (Примечание об этом расширении см. ниже.) |
-> | [orafce](https://github.com/orafce/orafce) | Предоставляет подмножество функциями и пакетами, эмулировать от коммерческих баз данных. |
+> | [орафце](https://github.com/orafce/orafce) | Предоставляет подмножество функций и пакетов, эмулированных из коммерческих баз данных. |
 
 ### <a name="full-text-search-extensions"></a>Расширения для полнотекстового поиска
 
@@ -105,59 +105,102 @@ PostgreSQL предоставляет возможность расширить 
 > [!div class="mx-tableFixed"]
 > | **Расширение** | **Описание** |
 > |---|---|
-> | [TimescaleDB](https://docs.timescale.com/latest) | Базы данных SQL временных рядов, поддерживает автоматическое секционирование для быстрее принимать запросы. Предоставляет ориентированные на время аналитических функций, оптимизации и масштабирует PostgreSQL для рабочих нагрузок временных рядов. Разработанный TimescaleDB и охраняемым товарным знаком [шкалы времени, Inc.](https://www.timescale.com/) (Примечание об этом расширении см. ниже.) |
+> | [тимескаледб](https://docs.timescale.com/latest) | База данных SQL временных рядов, которая поддерживает автоматическое секционирование для ускорения приема и запросов. Обеспечивает ориентированные на время аналитические функции, оптимизации и масштабирование PostgreSQL для рабочих нагрузок временных рядов. Тимескаледб разрабатывается с помощью зарегистрированного товарного знака [шкалы времени, Inc.](https://www.timescale.com/) (Примечание об этом расширении см. ниже.) |
+
+## <a name="postgres-11-extensions"></a>Расширения postgres 11
+
+В базе данных Azure для серверов PostgreSQL доступны следующие расширения с Postgres версии 11.
+
+> [!div class="mx-tableFixed"]
+> | **Расширение**| **Версия расширения** | **Описание** |
+> |---|---|---|
+> |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Используются для анализа адреса в составных элементы. |
+> |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Пример набора данных для стандартизации адресов США|
+> |[btree_gin](https://www.postgresql.org/docs/11/btree-gin.html)                    | 1,3             | Поддержка индексирования общих типов в Ло|
+> |[btree_gist](https://www.postgresql.org/docs/11/btree-gist.html)                   | 1.5             | Поддержка индексирования общих типов в реестрах|
+> |[citext](https://www.postgresql.org/docs/11/static/citext.html)                       | 1.5             | тип данных для символьных строк без учета регистра|
+> |[cube](https://www.postgresql.org/docs/11/static/cube.html)                         | 1.4             | тип данных для многомерных кубов|
+> |[dblink](https://www.postgresql.org/docs/11/dblink.html)                       | 1.2             | подключение к другим базам данных PostgreSQL из базы данных|
+> |[dict_int](https://www.postgresql.org/docs/11/static/dict-int.html)                     | 1.0             | шаблон словаря поиска текста для целых чисел|
+> |[earthdistance](https://www.postgresql.org/docs/11/static/earthdistance.html)                | 1.1             | Вычислите большие расстояния на поверхности земли|
+> |[fuzzystrmatch](https://www.postgresql.org/docs/11/static/fuzzystrmatch.html)                | 1.1             | определение сходства и расстояния между строками|
+> |[hstore](https://www.postgresql.org/docs/11/static/hstore.html)                       | 1.5             | тип данных для хранения наборов пар (ключ, значение)|
+> |[hypopg](https://hypopg.readthedocs.io/en/latest/)                       | 1.1.2           | Гипотетические индексы для PostgreSQL|
+> |[intarray](https://www.postgresql.org/docs/11/static/intarray.html)                     | 1.2             | функции, операторы и поддержка индексов для 1-D массивов целых чисел|
+> |[isn](https://www.postgresql.org/docs/11/static/isn.html)                          | 1.2             | типы данных для международных стандартов нумерации продуктов|
+> |[ltree](https://www.postgresql.org/docs/11/static/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
+> |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
+> |[pgcrypto](https://www.postgresql.org/docs/11/static/pgcrypto.html)                     | 1,3             | криптографические функции|
+> |[pgrouting](https://pgrouting.org/)                    | 2.6.2           | Расширение Пграутинг|
+> |[pgrowlocks](https://www.postgresql.org/docs/11/static/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
+> |[pgstattuple](https://www.postgresql.org/docs/11/static/pgstattuple.html)                  | 1.5             | Отображение статистики на уровне кортежей|
+> |[pg_buffercache](https://www.postgresql.org/docs/11/static/pgbuffercache.html)               | 1,3             | Проверка общего кэша буфера|
+> |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 4.0.0           | Расширение для управления секционированными таблицами по времени или ИДЕНТИФИКАТОРу|
+> |[pg_prewarm](https://www.postgresql.org/docs/11/pgprewarm.html)                   | 1.2             | предтеплое отношение данных|
+> |[pg_stat_statements](https://www.postgresql.org/docs/11/static/pgstatstatements.html)           | 1.6             | Трассировка статистики выполнения всех выполненных инструкций SQL|
+> |[pg_trgm](https://www.postgresql.org/docs/11/static/pgtrgm.html)                      | 1.4             | измерение подобия текста и поиск по индексу на основе триграммов|
+> |[plpgsql](https://www.postgresql.org/docs/11/static/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
+> |[plv8](https://plv8.github.io/)                         | 2.3.11          | Доверенный процедурный язык PL/JavaScript (V8)|
+> |[PostGIS](https://www.postgis.net/)                      | 2.5.1           | PostGISие геометрических, географических и растровых пространственных типов и функций|
+> |[postgis_sfcgal](https://www.postgis.net/)               | 2.5.1           | Функции СФКГАЛ PostGIS|
+> |[postgis_tiger_geocoder](https://www.postgis.net/)       | 2.5.1           | PostGIS Tiger для геокодирования и инвертированного геокодирования|
+> |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.5.1           | Пространственные типы и функции топологии PostGIS|
+> |[postgres_fdw](https://www.postgresql.org/docs/11/static/postgres-fdw.html)                 | 1.0             | оболочка внешних данных для удаленных серверов PostgreSQL|
+> |[tablefunc](https://www.postgresql.org/docs/11/static/tablefunc.html)                    | 1.0             | функции, управляющие целыми таблицами, включая перекрестный|
+> |[unaccent](https://www.postgresql.org/docs/11/static/unaccent.html)                     | 1.1             | словарь поиска текста, который удаляет диакритические знаки|
+> |[uuid-ossp](https://www.postgresql.org/docs/11/static/uuid-ossp.html)                    | 1.1             | создать универсальные уникальные идентификаторы (UUID)|
 
 
-## <a name="pgstatstatements"></a>pg_stat_statements
-[Расширение инструкций](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) \_pg\_stat предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, что предоставляет вам средства отслеживания статистики выполнения инструкций SQL.
+## <a name="pg_stat_statements"></a>pg_stat_statements
+Расширение pg_stat_statements предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, чтобы предоставить средства отслеживания статистики выполнения инструкций SQL.
 Параметр `pg_stat_statements.track`, который управляет тем, какие инструкции учитываются расширением, по умолчанию имеет значение `top`. Это означает, что все инструкции, выпущенные непосредственно клиентами, отслеживаются. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера с помощью [портала Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) или [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
 
 Существует компромисс между информацией о выполнении запроса, предоставляемой pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если расширение pg_stat_statements не используется активно, рекомендуется задать для параметра `pg_stat_statements.track` значение `none`. Обратите внимание, что некоторые сторонние службы мониторинга могут зависеть от pg_stat_statements при предоставлении информации о производительности запроса, поэтому подтвердите ваш ли это случай.
 
-## <a name="dblink-and-postgresfdw"></a>dblink и postgres_fdw
-dblink и postgres_fdw позволяют подключаться с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Принимающий сервер должен разрешать подключения с отправляющего сервера при помощи его брандмауэра. При использовании этих расширений для подключения между серверами Базы данных Azure для PostgreSQL, это можно сделать, задав значение "Вкл." для "Разрешить доступ к службам Azure". Это необходимо, если вы хотите использовать расширения для циклического возвращения на тот же сервер. Параметр "Разрешить доступ к службам Azure" можно найти на странице портала Azure для сервера Postgres в разделе "Безопасность подключения". Значение "Вкл." для "Разрешить доступ к службам Azure" добавляет в список разрешений все IP-адреса Azure.
+## <a name="dblink-and-postgres_fdw"></a>дблинк и postgres_fdw
+dblink и postgres_fdw позволяют подключаться с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Принимающий сервер должен разрешать подключения с отправляющего сервера при помощи его брандмауэра. При использовании этих расширений для подключения между серверами Базы данных Azure для PostgreSQL, это можно сделать, задав значение "Вкл." для "Разрешить доступ к службам Azure". Это необходимо, если вы хотите использовать расширения для циклического возвращения на тот же сервер. Параметр "Разрешить доступ к службам Azure" можно найти на странице портала Azure для сервера Postgres в разделе "Безопасность подключения". Включив параметр "разрешить доступ к службам Azure", вы помещаете все IP-адреса Azure в список разрешений.
 
-В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений с другой базой данных Azure для PostgreSQL серверов.
+В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений к другим серверам базы данных Azure для PostgreSQL.
 
 ## <a name="uuid"></a>uuid
-Если вы планируете использовать `uuid_generate_v4()` из расширения uuid ossp, рассмотрите возможность сравнения с `gen_random_uuid()` из pgcrypto расширения для повышения производительности.
+Если вы планируете использовать `uuid_generate_v4()` из расширения UUID-ОССП, рассмотрите возможность сравнения с `gen_random_uuid()` из расширения пгкрипто для повышения производительности.
 
 
-## <a name="timescaledb"></a>TimescaleDB
-TimescaleDB — это база данных временных рядов, который входит в состав расширения для PostgreSQL. TimescaleDB предоставляет ориентированные на время аналитических функций, оптимизации и масштабирует Postgres для рабочих нагрузок временных рядов.
+## <a name="timescaledb"></a>тимескаледб
+Тимескаледб — это база данных временных рядов, которая упакована как расширение для PostgreSQL. Тимескаледб обеспечивает ориентированные на время аналитические функции, оптимизации и масштабирование postgres для рабочих нагрузок временных рядов.
 
-[Дополнительные сведения о TimescaleDB](https://docs.timescale.com/latest), охраняемым товарным знаком [шкалы времени, Inc.](https://www.timescale.com/)
+[Узнайте больше о тимескаледб](https://docs.timescale.com/latest), охраняемом товарном знаке [шкалы времени, Inc.](https://www.timescale.com/)
 
-### <a name="installing-timescaledb"></a>Установка TimescaleDB
-Чтобы установить TimescaleDB, необходимо включить его в общую библиотеку предварительной загрузки от сервера. Изменение элемента Postgres `shared_preload_libraries` параметр требует **перезапуска сервера** вступили в силу. Можно изменить параметры с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+### <a name="installing-timescaledb"></a>Установка Тимескаледб
+Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу `shared_preload_libraries` изменения параметра postgres требуется перезагрузка **сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 > [!NOTE]
-> TimescaleDB можно включить в базе данных Azure для PostgreSQL версии 9.6 и 10
+> Тимескаледб можно включить в базе данных Azure для PostgreSQL версий 9,6 и 10.
 
-С помощью [портала Azure](https://portal.azure.com/):
+Использование [портал Azure](https://portal.azure.com/):
 
 1. Выберите сервер базы данных Azure для PostgreSQL.
 
-2. На боковой панели, выберите **параметров сервера**.
+2. На боковой панели выберите **Параметры сервера**.
 
 3. Найдите параметр `shared_preload_libraries`.
 
-4. Выберите **TimescaleDB**.
+4. Выберите **тимескаледб**.
 
-5. Выберите **Сохранить** для сохранения изменений. После сохранения изменений, вы получите уведомление. 
+5. Нажмите кнопку **сохранить** , чтобы сохранить изменения. После сохранения изменений появляется уведомление. 
 
-6. После уведомления **перезапустите** сервер, чтобы применить эти изменения. Дополнительные сведения о перезапуске сервера службы "База данных Azure для PostgreSQL" см. в [этой статье](howto-restart-server-portal.md).
+6. После уведомления перезапустите сервер, чтобы применить эти изменения. Дополнительные сведения о перезапуске сервера службы "База данных Azure для PostgreSQL" см. в [этой статье](howto-restart-server-portal.md).
 
 
-Теперь вы можете включить TimescaleDB базы данных Postgres. Подключитесь к базе данных и выполните следующую команду:
+Теперь можно включить Тимескаледб в базе данных postgres. Подключитесь к базе данных и выполните следующую команду:
 ```sql
 CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 ```
 > [!TIP]
-> Если появится сообщение об ошибке, убедитесь, что вы [перезапустить сервер](howto-restart-server-portal.md) после сохранения shared_preload_libraries. 
+> Если появится сообщение об ошибке, подтвердите [перезапуск сервера](howto-restart-server-portal.md) после сохранения shared_preload_libraries. 
 
-Теперь вы можете создать TimescaleDB hypertable [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
+Теперь можно создать таблицу Тимескаледб [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Вы можете проголосовать за существующие запросы или создать новые запросы отзывов в наших [форуме обратной связи](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
+## <a name="next-steps"></a>Следующие шаги
+Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Проголосуйте за существующие запросы или создавайте новые запросы на отзыв на [форуме отзывов](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

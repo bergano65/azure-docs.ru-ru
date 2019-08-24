@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 08/23/2019
 ms.author: jingwang
-ms.openlocfilehash: da7dbdee4a376d88219a7a621ed7e3867873a37c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 8d98405cfbabdff25c40d41b209d79761e699396
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967389"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996593"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -223,7 +223,7 @@ ms.locfileid: "68967389"
 <br/>
 >`maxPartitionsNumber` `partitionLowerBound` `partitionUpperBound` В качестве примера количество строк в каждой секции вычисляется с помощью следующей формулы: (всего строк, попадающих в диапазон и)/. `partitionOption` `partitionOnInt`<br/>
 <br/>
->Чтобы параллельно загружать секции данных для ускорения копирования, степень [`parallelCopies`](copy-activity-performance.md#parallel-copy) параллелизма определяется параметром действия копирования. Например, если установлено значение `parallelCopies` 4, фабрика данных одновременно создает и выполняет четыре запроса на основе указанного параметра секции и параметров, и каждый запрос извлекает часть данных из таблицы SAP. Настоятельно рекомендуется сделать `maxPartitionsNumber` несколько значений `parallelCopies` свойства.
+>Чтобы параллельно загружать секции данных для ускорения копирования, степень [`parallelCopies`](copy-activity-performance.md#parallel-copy) параллелизма определяется параметром действия копирования. Например, если установлено значение `parallelCopies` 4, фабрика данных одновременно создает и выполняет четыре запроса на основе указанного параметра секции и параметров, и каждый запрос извлекает часть данных из таблицы SAP. Настоятельно рекомендуется сделать `maxPartitionsNumber` несколько значений `parallelCopies` свойства. При копировании данных в хранилище данных на основе файлов оно также передается в папку в виде нескольких файлов (указывается только имя папки). в этом случае производительность лучше, чем при записи в один файл.
 
 В `rfcTableOptions`можно использовать следующие стандартные операторы запросов SAP для фильтрации строк:
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: cafe761d2b566a7bddce503765c11bf9f8e00f2a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2954f0bfcfe78243c2df12182f45034f46c8391d
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847453"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991897"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Использование Azure Data Lake Storage 2-ого поколения для обеспечения соответствия требованиям больших данных
 
@@ -25,7 +25,7 @@ ms.locfileid: "68847453"
 > * Загрузка данных
 > * Визуализация данных
 
-Начните с создания учетной записи хранения и файловой системы. Затем предоставьте доступ к данным. Начальные разделы этой статьи помогут вам выполнить эти задачи. В остальных разделах мы рассмотрим параметры и инструменты для каждого этапа обработки.
+Начните с создания учетной записи хранения и контейнера. Затем предоставьте доступ к данным. Начальные разделы этой статьи помогут вам выполнить эти задачи. В остальных разделах мы рассмотрим параметры и инструменты для каждого этапа обработки.
 
 ## <a name="create-a-data-lake-storage-gen2-account"></a>Создание учетной записи Azure Data Lake Storage 2-го поколения
 
@@ -33,16 +33,16 @@ ms.locfileid: "68847453"
 
 Чтобы создать ее, ознакомьтесь с разделом [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
-## <a name="create-a-file-system"></a>Создание файловой системы
+## <a name="create-a-container"></a>Создать контейнер
 
-*Файловая система* — это контейнер для файлов и папок. Требуется по крайней мере одна файловая система, чтобы начать прием данных в учетную запись хранения.  Ниже приведен список инструментов, которые можно использовать для их создания.
+Ниже приведен список средств, которые можно использовать для создания контейнера для файлов.
 
 |Tool | Руководство |
 |---|--|
-|Обозреватель службы хранилища Azure | [Создание файловой системы с помощью Обозревателя службы хранилища](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-explorer#create-a-file-system) |
+|Обозреватель службы хранилища Azure | [Создание контейнера с помощью Обозреватель службы хранилища](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-explorer#create-a-file-system) |
 |AzCopy | [Создание контейнера больших двоичных объектов или общего файлового ресурса с помощью AzCopyV10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10#transfer-files)|
-|Интерфейс командной строки Hadoop (HDFS) с использованием HDInsight |[Создание файловой системы с помощью HDFS и HDInsight](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-hdfs-data-lake-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system) |
-|Код в записной книжке Azure Databricks|[Создание файловой системы учетной записи хранения (Scala)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-storage-account-file-system) <br><br> [Создание и подключение файловой системы (Python)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-databricks-spark?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system-and-mount-it)|
+|Интерфейс командной строки (CLI) контейнера Hadoop с HDInsight |[Создание контейнера с помощью HDFS с HDInsight](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-hdfs-data-lake-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system) |
+|Код в записной книжке Azure Databricks|[Создание контейнера учетной записи хранения (Scala)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-storage-account-file-system) <br><br> [Создание контейнера и его подключение (Python)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-databricks-spark?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system-and-mount-it)|
 
 Проще всего создавать файловые системы с помощью Обозревателя службы хранилища или AzCopy. Создавать файловые системы с помощью HDInsight и Databricks несколько сложнее. Тем не менее, если вы все равно планируете использовать кластеры HDInsight или Databricks для обработки данных, то можете сначала создать кластеры, а затем создать файловые системы с помощью интерфейса командной строки HDFS.  
 

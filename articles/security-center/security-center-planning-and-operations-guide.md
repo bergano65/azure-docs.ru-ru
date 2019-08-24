@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/11/2019
+ms.date: 08/22/2019
 ms.author: v-mohabe
-ms.openlocfilehash: ca96ba4c6b0de8ad39866a0783e7091fb4755164
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a8033448c2db2ca30ece54b3367ecb60ecf12c3d
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706238"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990704"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Руководство по планированию использования центра безопасности Azure и работе в нем
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, организации которых планируют использовать центр безопасности Azure.
@@ -91,17 +91,17 @@ ms.locfileid: "67706238"
 
 **Дэвид (специалист по ИТ-безопасности)**
 
-* Владелец или участник подписки или администратора безопасности
+* Владелец или участник подписки или администратор безопасности
 
 **Марта (специалист по операциям безопасности)**
 
 * читатель подписки или читатель сведений о безопасности с возможностью просмотра оповещений;
-* Владелец или участник подписки или администратора безопасности требуется для закрытия оповещений
+* Владелец или участник подписки или администратор безопасности, необходимые для закрытия оповещений
 
 **Григорий (аналитик по системам безопасности)**
 
 * читатель подписки с возможностью просмотра оповещений;
-* Владелец или участник подписки требуется для закрытия оповещений
+* Владелец или участник подписки, необходимые для закрытия оповещений
 * Может потребоваться доступ к рабочей области.
 
 Нужно также учитывать следующее:
@@ -134,7 +134,7 @@ ms.locfileid: "67706238"
 Перед настройкой политик безопасности следует ознакомиться со всеми [рекомендациями по обеспечению безопасности](https://docs.microsoft.com/azure/security-center/security-center-recommendations)и определить, применимы ли они к различным подпискам и группам ресурсов, которые вы используете. Кроме того, важно понимать, какие действия нужно будет предпринять для реализации рекомендаций по обеспечению безопасности и кто в вашей организации будет отслеживать новые рекомендации и предпринимать необходимые шаги.
 
 ## <a name="data-collection-and-storage"></a>сбор и хранение данных;
-Центр безопасности Azure с помощью Microsoft Monitoring Agent — это тот же агент, используемые службой Azure Monitor — для сбора данных безопасности из виртуальных машин. [Данные](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection), собранные этим агентом, будут храниться в рабочих областях Log Analytics.
+Центр безопасности Azure использует Microsoft Monitoring Agent — это тот же агент, который используется службой Azure Monitor — для получения данных безопасности с виртуальных машин. [Данные](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection), собранные этим агентом, будут храниться в рабочих областях Log Analytics.
 
 ### <a name="agent"></a>Агент
 
@@ -174,7 +174,7 @@ ms.locfileid: "67706238"
 
 Общие сведения о центре безопасности дают представление о безопасности во всех относящихся и не относящихся к Azure ресурсах, которые вы подключили. В приведенном ниже примере показана среда с множеством проблем, которые необходимо решить:
 
-!["Веб-транзакции"](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
+![панель мониторинга](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
 
 > [!NOTE]
 > Центр безопасности не повлияет на выполнение обычных операций. Он будет выполнять пассивный мониторинг развертываний и предоставлять рекомендации в соответствии с включенными политиками безопасности.
@@ -219,7 +219,7 @@ ms.locfileid: "67706238"
 
 Целью этой статьи не является помощь в создании плана реагирования на инциденты, поэтому в качестве основы для этапов реагирования мы будем использовать методы реагирования центра безопасности Microsoft Azure в жизненном цикле облака. Эти этапы показаны на схеме ниже.
 
-![Подозрительные действия](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-1.png)
+![Подозрительная активность](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-1.png)
 
 > [!NOTE]
 > См. публикацию [Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) (Руководство по реагированию на инциденты системы безопасности компьютера) Национального института стандартов и технологий. Этот документ можно использовать в качестве справочного руководства по созданию такого плана.
@@ -235,7 +235,7 @@ ms.locfileid: "67706238"
 
 В следующем примере показаны подозрительные действия с протоколом удаленного рабочего стола.
 
-![Подозрительные действия](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-ga.png)
+![Подозрительная активность](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig5-ga.png)
 
 На этой странице показаны сведения о времени атаки, имени узла источника, целевой виртуальной машине, а также указаны рекомендации. В некоторых случаях сведения об источнике атаки могут отсутствовать. Дополнительные сведения о таком поведении см. в записи блога [Missing Source Information in Azure Security Center Alerts](https://blogs.msdn.microsoft.com/azuresecurity/2016/03/25/missing-source-information-in-azure-security-center-alerts/) (Отсутствие сведений об источнике в оповещениях центра безопасности Azure).
 
@@ -246,7 +246,7 @@ ms.locfileid: "67706238"
 См. видео [How to Leverage the Azure Security Center & Microsoft Operations Management Suite for an Incident Response](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703) (Использование центра безопасности Azure и Microsoft Operations Management Suite для реагирования на инциденты), чтобы понять, как можно использовать центр безопасности на каждом из этих этапов.
 
 > [!NOTE]
-> Дополнительные сведения об использовании возможностей центра безопасности для реагирования на инциденты см. в [этой статье](security-center-incident-response.md).
+> Дополнительные сведения об использовании возможностей центра безопасности в процессе реагирования на инциденты см. в статье [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md) .
 >
 >
 

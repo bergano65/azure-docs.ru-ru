@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: dfe27878f018dfbf5f4bdcb52d711c8727c436e0
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 90f064ce5d6dc7ffa6b4c532ac30d9b4dd60e13f
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950702"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981143"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -357,7 +357,7 @@ ms.locfileid: "68950702"
 | Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)                                                                                                                                                                                                                           |
 | Синхронизация файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Подробнее](../files/storage-sync-files-planning.md)                                                                                                       |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).                                                                                                                                    |
-| Служба машинного обучения Azure | Microsoft.MachineLearningServices | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#storage-account-for-your-workspace).                                                               
+| Служба машинного обучения Azure | Microsoft.MachineLearningServices | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace).                                                               
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).                                                                                                                                                                        |
 | Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).                                                                                                                                                                                                        |
 | Служба Azure Site Recovery      | Microsoft.SiteRecovery     | Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |

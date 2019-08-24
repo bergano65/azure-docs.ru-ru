@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/21/2019
-ms.openlocfilehash: a1475188d2e1ab0db3dfd9775fc37d3fc0a17158
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b35533eeb4c4a364588dbea11f74e8d6b76df3b
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567260"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998218"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
@@ -344,9 +344,12 @@ ms.locfileid: "68567260"
 
 Если вы используете эластичные пулы или управляемый экземпляр, необходимо также настроить параметры диагностики в этих ресурсах, чтобы диагностические данные телеметрии могли передаваться в рабочую область.
 
-### <a name="use-the-sql-analytics-solution"></a>Использование решения "Аналитика SQL"
+### <a name="use-the-sql-analytics-solution-for-monitoring-and-alerting"></a>Использование решения аналитики SQL для мониторинга и оповещений
 
-Аналитику SQL можно использовать в качестве иерархической панели мониторинга для просмотра ресурсов Базы данных SQL. Дополнительные сведения об использовании решения "Аналитика SQL" см. в статье [Мониторинг Базы данных SQL Azure с помощью служб анализа SQL Azure (предварительная версия) в Log Analytics](../log-analytics/log-analytics-azure-sql.md).
+Аналитику SQL можно использовать в качестве иерархической панели мониторинга для просмотра ресурсов Базы данных SQL.
+
+- Дополнительные сведения об использовании решения "Аналитика SQL" см. в статье [Мониторинг Базы данных SQL Azure с помощью служб анализа SQL Azure (предварительная версия) в Log Analytics](../log-analytics/log-analytics-azure-sql.md).
+- Сведения о настройке оповещений для базы данных SQL и управляемого экземпляра на основе аналитики SQL см. в разделе [Создание предупреждений для базы данных SQL и управляемого экземпляра](../azure-monitor/insights/azure-sql.md#analyze-data-and-create-alerts).
 
 ## <a name="stream-into-event-hubs"></a>Потоковая передача в Центры событий
 
@@ -437,7 +440,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Resource|Имя ресурса. |
@@ -462,7 +465,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent |
@@ -551,7 +554,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQ |
 |Категория|Имя категории. Всегда: Ошибки |
 |OperationName|Имя операции. Всегда: ErrorEvent |
@@ -580,7 +583,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent |
@@ -609,9 +612,9 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
-|Категория|Имя категории. Всегда: Время ожидания |
+|Категория|Имя категории. Всегда: Истечение выделенного времени |
 |OperationName|Имя операции. Всегда: TimeoutEvent |
 |Resource|Имя ресурса. |
 |ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES |
@@ -632,7 +635,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: Блоки |
 |OperationName|Имя операции. Всегда: BlockEvent |
@@ -656,7 +659,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: Взаимоблокировки |
 |OperationName|Имя операции. Всегда: DeadlockEvent |
@@ -677,7 +680,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: AutomaticTuning |
 |Resource|Имя ресурса. |
@@ -715,3 +718,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
 - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+
+Сведения о настройке оповещений на основе данных телеметрии из log Analytics см. в следующих статьях:
+
+- [Создание предупреждений для базы данных SQL и управляемого экземпляра](../azure-monitor/insights/azure-sql.md#analyze-data-and-create-alerts)

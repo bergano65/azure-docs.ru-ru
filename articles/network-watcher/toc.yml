@@ -35,7 +35,7 @@
       href: network-watcher-troubleshoot-overview.md
     - name: Запись пакетов переменных
       href: network-watcher-packet-capture-overview.md
-    - name: Ведение журнала последовательностей для группы безопасности сети
+    - name: Ведение журнала потоков для группы безопасности сети
       href: network-watcher-nsg-flow-logging-overview.md
     - name: Представление группы безопасности сети
       href: network-watcher-security-group-view-overview.md

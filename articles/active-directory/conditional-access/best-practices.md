@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b7265f8d5ec4b7336253787e9cb881900a52b79
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 29a30e466e78c3a71764b36bf8337aaeae8981f7
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68963444"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980493"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по условному доступу в Azure Active Directory
 
@@ -87,7 +87,9 @@ Azure Active Directory применяет обе политики, и польз
 
 ### <a name="does-conditional-access-work-with-exchange-activesync"></a>Работает ли условный доступ с Exchange ActiveSync?
 
-Да, Exchange ActiveSync можно использовать в политике условного доступа с некоторыми [ограничениями](block-legacy-authentication.md). 
+Да, Exchange ActiveSync можно использовать в политике условного доступа.
+
+Некоторые облачные приложения, такие как SharePoint Online и Exchange Online, также поддерживают устаревшие протоколы проверки подлинности. Когда клиентское приложение может использовать устаревший протокол аутентификации для доступа к облачному приложению, Azure AD не может принудительно применить политику условного доступа к этой попытке получения доступа. Чтобы предотвратить обход применяемых политик клиентским приложением, следует проверить, можно ли включить для затронутых облачных приложений только современную аутентификацию.
 
 ### <a name="how-should-you-configure-conditional-access-with-office-365-apps"></a>Как настроить условный доступ с приложениями Office 365?
 

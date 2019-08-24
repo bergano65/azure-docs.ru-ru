@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 4722cda0506493671ff872d75e7376f3de74b1b8
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 2d7cc217ff8ae45491c0f9d6b54ea8afea19cd2e
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886654"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981242"
 ---
 # <a name="azure-sql-database-and-data-warehouse-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и хранилища данных
 
@@ -33,6 +33,7 @@ ms.locfileid: "68886654"
 
 - Правила брандмауэра виртуальной сети: Используйте эту функцию, чтобы разрешить трафик из определенной виртуальной сети в границах Azure.
 
+> [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Exposed--SQL-Database-Connectivity-Explained/player?WT.mc_id=dataexposed-c9-niner]
 
 ## <a name="allow-azure-services"></a>Разрешить службы Azure 
 При создании нового SQL Server Azure [из портал Azure](sql-database-single-database-get-started.md)этот параметр остается неустановленным.

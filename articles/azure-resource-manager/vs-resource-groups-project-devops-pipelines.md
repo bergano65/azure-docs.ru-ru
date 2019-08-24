@@ -1,65 +1,65 @@
 ---
-title: CI/CD с конвейеры Azure и шаблонов Resource Manager
-description: В этой статье описывается настройка непрерывной интеграции в конвейерах Azure с помощью проектов развертывания группы ресурсов Azure в Visual Studio можно развертывать шаблоны диспетчера ресурсов.
+title: CI/CD с шаблонами Azure Pipelines и диспетчер ресурсов
+description: В этой статье описывается настройка непрерывной интеграции в Azure Pipelines с помощью проектов развертывания группы ресурсов Azure в Visual Studio для развертывания шаблонов диспетчер ресурсов.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: b70b38904c0373c53c3731dd0442511116d9c4de
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: ae896fa0820fbd25ed3f2d29c89fbcd56e7fd6f5
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191464"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982448"
 ---
-# <a name="integrate-resource-manager-templates-with-azure-pipelines"></a>Интеграция шаблонов Resource Manager с конвейерами Azure
+# <a name="integrate-resource-manager-templates-with-azure-pipelines"></a>Интеграция шаблонов диспетчер ресурсов с Azure Pipelines
 
-Visual Studio предоставляет проект группы ресурсов Azure для создания шаблонов и их развертывание в подписке Azure. Этот проект можно интегрировать с конвейерами Azure для непрерывной интеграции и непрерывного развертывания (CI/CD).
+Visual Studio предоставляет проект группы ресурсов Azure для создания шаблонов и их развертывания в подписке Azure. Этот проект можно интегрировать с Azure Pipelines для непрерывной интеграции и непрерывного развертывания (CI/CD).
 
-Развертывание шаблонов с помощью конвейеров Azure двумя способами:
+Существует два способа развертывания шаблонов с помощью Azure Pipelines.
 
-* **Добавить задачу, которая выполняет сценарий Azure PowerShell**. Этот параметр имеет преимущество при предоставлении согласованность на протяжении всего жизненного цикла разработки, так как используется тот же сценарий, который включен в проект Visual Studio (Deploy-AzureResourceGroup.ps1). Скрипт этапы артефакты проекта в учетную запись хранилища с доступом к Resource Manager. Артефакты — это элементы в проекте, такие как связанные шаблоны, сценарии и двоичные файлы приложения. Затем сценарий развертывает шаблон.
+* **Добавьте задачу, запускающую скрипт Azure PowerShell**. Этот вариант обеспечивает согласованность в течение всего жизненного цикла разработки, поскольку используется тот же сценарий, который включен в проект Visual Studio (Deploy-AzureResourceGroup. ps1). Скрипт помещает артефакты из проекта в учетную запись хранения, к которой диспетчер ресурсов имеет доступ. Артефакты — это элементы в проекте, такие как связанные шаблоны, скрипты и двоичные файлы приложения. Затем сценарий развертывает шаблон.
 
-* **Добавление задач на копирование и развертывание задачи**. Этот вариант предлагает удобную альтернативу в проект скрипта. Настройте две задачи в конвейере. Одна задача размещает артефакты и другая задача развертывает шаблон.
+* **Добавьте задачи для копирования и развертывания задач**. Этот параметр предлагает удобную альтернативу скрипту проекта. В конвейере настраиваются две задачи. Одна задача является стадией артефактов, а другая задача развертывает шаблон.
 
 В этой статье показаны оба подхода.
 
 ## <a name="prepare-your-project"></a>Подготовка проекта
 
-В этой статье предполагается, что в проект Visual Studio и Azure DevOps организации готовы к созданию конвейера. Ниже показано, как убедиться, что вы будете готовы:
+В этой статье предполагается, что проект Visual Studio и организация Azure DevOps готовы к созданию конвейера. Ниже показано, как обеспечить готовность к работе.
 
-* У вас есть организации DevOps в Azure. Если у вас нет, [создать бесплатно](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops). Если команда уже имеет организации DevOps в Azure, убедитесь, что вы являетесь администратором проекта DevOps в Azure, который вы хотите использовать.
+* У вас есть организация Azure DevOps. Если у вас ее нет, [создайте ее бесплатно](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops). Если у вашей команды уже есть организация Azure DevOps, убедитесь, что вы являетесь администратором проекта Azure DevOps, который вы хотите использовать.
 
-* Вы настроили [подключение к службе](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) свою подписку Azure. Задачи в конвейере выполняются с идентификатором субъекта-службы. Действия, чтобы создать подключение, см. в разделе [создать проект DevOps](resource-manager-tutorial-use-azure-pipelines.md#create-a-devops-project).
+* Вы настроили [Подключение службы](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) к подписке Azure. Задачи в конвейере выполняются под удостоверением субъекта-службы. Действия по созданию подключения см. в разделе [Создание проекта DevOps](resource-manager-tutorial-use-azure-pipelines.md#create-a-devops-project).
 
-* У вас есть проект Visual Studio, который был создан из **группы ресурсов Azure** шаблон начального уровня. Сведения о создании этого типа проекта, см. в разделе [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
+* У вас есть проект Visual Studio, созданный из стартового шаблона **группы ресурсов Azure** . Сведения о создании этого типа проекта см. в статье [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 
-* Проект Visual Studio [подключения в проект Azure DevOps](/azure/devops/repos/git/share-your-code-in-git-vs-2017?view=azure-devops).
+* Проект Visual Studio [подключен к проекту Azure DevOps](/azure/devops/repos/git/share-your-code-in-git-vs-2017?view=azure-devops).
 
 ## <a name="create-pipeline"></a>Создание конвейера
 
-1. Если конвейер не был добавлен ранее, необходимо создать новый конвейер. В вашей организации DevOps в Azure, выберите **конвейеры** и **новый конвейер**.
+1. Если вы ранее не добавили конвейер, необходимо создать новый конвейер. В Организации Azure DevOps выберите конвейеры и **Новый конвейер**.
 
    ![Добавить новый конвейер](./media/vs-resource-groups-project-devops-pipelines/new-pipeline.png)
 
-1. Укажите, где хранится ваш код. На следующем рисунке показана выбрав **Azure репозиториев Git**.
+1. Укажите место хранения кода. На следующем рисунке показано, как выбрать **Azure Repos Git**.
 
-   ![Выберите исходный код](./media/vs-resource-groups-project-devops-pipelines/select-source.png)
+   ![Выбор источника кода](./media/vs-resource-groups-project-devops-pipelines/select-source.png)
 
-1. Из этого источника выберите репозиторий, который содержит код для проекта.
+1. В этом источнике выберите репозиторий с кодом для проекта.
 
-   ![Выберите репозиторий](./media/vs-resource-groups-project-devops-pipelines/select-repo.png)
+   ![Выбор репозитория](./media/vs-resource-groups-project-devops-pipelines/select-repo.png)
 
-1. Выберите тип конвейер, чтобы создать. Можно выбрать **конвейера Starter**.
+1. Выберите тип создаваемого конвейера. Можно выбрать **начальный конвейер**.
 
-   ![Выберите конвейер](./media/vs-resource-groups-project-devops-pipelines/select-pipeline.png)
+   ![Выбор конвейера](./media/vs-resource-groups-project-devops-pipelines/select-pipeline.png)
 
-Вы готовы добавить задачу Azure PowerShell или копирование файла и развертывание задачи.
+Вы можете добавить задачу Azure PowerShell или скопировать файл и развернуть задачи.
 
-## <a name="azure-powershell-task"></a>Задачи по Azure PowerShell
+## <a name="azure-powershell-task"></a>Задача Azure PowerShell
 
-В этом разделе показано, как настроить непрерывное развертывание с помощью отдельной задачи, которая выполняет сценарий PowerShell в вашем проекте. Создает следующий файл YAML [задач Azure PowerShell](/azure/devops/pipelines/tasks/deploy/azure-powershell?view=azure-devops):
+В этом разделе показано, как настроить непрерывное развертывание с помощью одной задачи, запускающей скрипт PowerShell в проекте. Следующий файл YAML создает [задачу Azure PowerShell](/azure/devops/pipelines/tasks/deploy/azure-powershell?view=azure-devops):
 
 ```yaml
 pool:
@@ -75,41 +75,41 @@ steps:
     azurePowerShellVersion: LatestVersion
 ```
 
-Если задано задачи `AzurePowerShell@3`, этот конвейер использует команды из модуля AzureRM для проверки подлинности подключения. По умолчанию сценарий PowerShell в проект Visual Studio использует модуль AzureRM. Если вы обновили сценарий для использования [модуль Az](/powershell/azure/new-azureps-module-az), равным задачи `AzurePowerShell@4`.
+Если для `AzurePowerShell@3`задачи задано значение, конвейер использует команды из модуля AzureRM для проверки подлинности подключения. По умолчанию скрипт PowerShell в проекте Visual Studio использует модуль AzureRM. Если вы обновили скрипт для использования [модуля AZ](/powershell/azure/new-azureps-module-az), задайте для `AzurePowerShell@4`задачи значение.
 
 ```yaml
 steps:
 - task: AzurePowerShell@4
 ```
 
-Для `azureSubscription`, укажите имя созданного подключения службы.
+Для `azureSubscription`укажите имя созданного подключения к службе.
 
 ```yaml
 inputs:
     azureSubscription: '<your-connection-name>'
 ```
 
-Для `scriptPath`, укажите относительный путь из конвейера файла скрипта. Она позволяет заглянуть в репозиторий для просмотра пути.
+Для `scriptPath`укажите относительный путь от файла конвейера к скрипту. Чтобы увидеть путь, можно просмотреть репозиторий.
 
 ```yaml
 ScriptPath: '<your-relative-path>/<script-file-name>.ps1'
 ```
 
-Если не требуется для размещения артефактов, просто передайте имя и расположение группы ресурсов для развертывания. Скрипт Visual Studio создает группу ресурсов, если он еще не существует.
+Если не требуется выполнять промежуточное размещение артефактов, просто передайте имя и расположение группы ресурсов, которые будут использоваться для развертывания. Сценарий Visual Studio создает группу ресурсов, если она еще не существует.
 
 ```yaml
 ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocation '<location>'
 ```
 
-Если вам нужно размещения артефактов в существующую учетную запись хранения, используйте:
+Если необходимо разместить артефакты в существующей учетной записи хранения, используйте:
 
 ```yaml
 ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocation '<location>' -UploadArtifacts -ArtifactStagingDirectory '$(Build.StagingDirectory)' -StorageAccountName '<your-storage-account>'
 ```
 
-Теперь, что вы знаете, как создать задачу, давайте разберем действий по изменению конвейера.
+Теперь, когда вы понимаете, как создать задачу, давайте проверим действия по изменению конвейера.
 
-1. Откройте свой конвейер и замените его содержимое в yaml-ФАЙЛ:
+1. Откройте конвейер и замените содержимое своим YAML:
 
    ```yaml
    pool:
@@ -129,19 +129,19 @@ ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocati
 
    ![Сохранение конвейера](./media/vs-resource-groups-project-devops-pipelines/save-pipeline.png)
 
-1. Введите сообщение для фиксации и непосредственно к фиксации **master**.
+1. Укажите сообщение для фиксации и зафиксируйте его непосредственно в **master**.
 
-1. При выборе **Сохранить**, автоматически выполняется через конвейер сборки. Вернуться к сводке для конвейера сборки и посмотреть состояние.
+1. При нажатии на кнопку **сохранить**конвейер сборки запускается автоматически. Вернитесь к сводке для конвейера сборки и просмотрите состояние.
 
    ![Просмотр результатов](./media/vs-resource-groups-project-devops-pipelines/view-results.png)
 
-Вы можете выбрать текущего выполняемого конвейера, чтобы просмотреть сведения о задачах. По завершении отобразятся результаты для каждого шага.
+Вы можете выбрать выполняющийся в данный момент конвейер для просмотра сведений о задачах. По завершении вы увидите результаты для каждого шага.
 
-## <a name="copy-and-deploy-tasks"></a>Скопируйте и развертывание задачи
+## <a name="copy-and-deploy-tasks"></a>Задачи копирования и развертывания
 
-В этом разделе показано, как настроить непрерывное развертывание с помощью двух задач этапа артефакты и развертывания шаблона. 
+В этом разделе показано, как настроить непрерывное развертывание с помощью двух задач для размещения артефактов и развертывания шаблона. 
 
-Ниже YAML [задачи копирования файлов Azure](/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops):
+В следующем YAML показана [задача копирования файлов Azure](/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops).
 
 ```yaml
 - task: AzureFileCopy@3
@@ -157,26 +157,26 @@ ScriptArguments: -ResourceGroupName '<resource-group-name>' -ResourceGroupLocati
     sasTokenTimeOutInMinutes: '240'
 ```
 
-Существует несколько частей этой задачи, чтобы изменить для вашей среды. `SourcePath` Указывает расположение артефактов по отношению к файлу конвейера. В этом примере файлы существуют в папку с именем `AzureResourceGroup1` которого было имя проекта.
+Существует несколько частей этой задачи для пересмотра вашей среды. `SourcePath` Указывает расположение артефактов относительно файла конвейера. В этом примере файлы находятся в папке с `AzureResourceGroup1` именем проекта.
 
 ```yaml
 SourcePath: '<path-to-artifacts>'
 ```
 
-Для `azureSubscription`, укажите имя созданного подключения службы.
+Для `azureSubscription`укажите имя созданного подключения к службе.
 
 ```yaml
 azureSubscription: '<your-connection-name>'
 ```
 
-Для хранения и контейнер по имени укажите имена учетной записи хранения и контейнер, который вы хотите использовать для хранения артефактов. Учетная запись хранения должна существовать.
+Для хранилища и имени контейнера укажите имена учетной записи хранения и контейнера, которые будут использоваться для хранения артефактов. Учетная запись хранения должна существовать.
 
 ```yaml
 storage: '<your-storage-account-name>'
 ContainerName: '<container-name>'
 ```
 
-Ниже YAML [задачи развертывания группы ресурсов Azure](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment?view=azure-devops):
+В следующем YAML показана [задача развертывания группы ресурсов Azure](/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment?view=azure-devops):
 
 ```yaml
 - task: AzureResourceGroupDeployment@2
@@ -191,24 +191,24 @@ ContainerName: '<container-name>'
     overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken "$(artifactsLocationSasToken)"'
 ```
 
-Существует несколько частей этой задачи, чтобы изменить для вашей среды. Для `azureSubscription`, укажите имя созданного подключения службы.
+Существует несколько частей этой задачи для пересмотра вашей среды. Для `azureSubscription`укажите имя созданного подключения к службе.
 
 ```yaml
 azureSubscription: '<your-connection-name>'
 ```
 
-Для `resourceGroupName` и `location`, укажите имя и расположение группы ресурсов, которые вы хотите развернуть. Задача создает группу ресурсов, если он не существует.
+Для `resourceGroupName` и`location`укажите имя и расположение группы ресурсов, в которую требуется выполнить развертывание. Задача создает группу ресурсов, если она не существует.
 
 ```yaml
 resourceGroupName: '<resource-group-name>'
 location: '<location>'
 ```
 
-Ссылки на задачи развертывания в шаблон с именем `WebSite.json` и файл параметров с именем WebSite.parameters.json. Используйте имена файлов шаблонов и параметров.
+Задача развертывания ссылается на шаблон с именем `WebSite.json` и файл параметров с именем веб_узел. parameters. JSON. Используйте имена шаблонов и файлов параметров.
 
-Теперь, что вы знаете, как создавать задачи, давайте разберем действий по изменению конвейера.
+Теперь, когда вы понимаете, как создавать задачи, давайте проверим действия по изменению конвейера.
 
-1. Откройте свой конвейер и замените его содержимое в yaml-ФАЙЛ:
+1. Откройте конвейер и замените содержимое своим YAML:
 
    ```yaml
    pool:
@@ -240,14 +240,14 @@ location: '<location>'
 
 1. Щелкните **Сохранить**.
 
-1. Введите сообщение для фиксации и непосредственно к фиксации **master**.
+1. Укажите сообщение для фиксации и зафиксируйте его непосредственно в **master**.
 
-1. При выборе **Сохранить**, автоматически выполняется через конвейер сборки. Вернуться к сводке для конвейера сборки и посмотреть состояние.
+1. При нажатии на кнопку **сохранить**конвейер сборки запускается автоматически. Вернитесь к сводке для конвейера сборки и просмотрите состояние.
 
    ![Просмотр результатов](./media/vs-resource-groups-project-devops-pipelines/view-results.png)
 
-Вы можете выбрать текущего выполняемого конвейера, чтобы просмотреть сведения о задачах. По завершении отобразятся результаты для каждого шага.
+Вы можете выбрать выполняющийся в данный момент конвейер для просмотра сведений о задачах. По завершении вы увидите результаты для каждого шага.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Поэтапный процесс по использованию Azure конвейеров с помощью шаблонов Resource Manager см. в разделе [руководства: Непрерывная интеграция шаблонов Azure Resource Manager с конвейерами Azure](resource-manager-tutorial-use-azure-pipelines.md).
+Пошаговый процесс использования Azure pipelines с шаблонами диспетчер ресурсов см. в разделе [учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](resource-manager-tutorial-use-azure-pipelines.md).

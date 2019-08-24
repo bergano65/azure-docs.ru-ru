@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/06/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: acb3717f0e71ca1e67f1ddec79a259935f6cc539
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: a4146e20efae87287b77687e4a1d3b0196cb1c95
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69897688"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997928"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -416,7 +416,20 @@ def run(request):
 
 Конфигурация вывода описывает, как настроить модель для выполнения прогнозов. Эта конфигурация не является частью скрипта записи; Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при фактическом развертывании модели.
 
-В следующем примере показано, как создать конфигурацию вывода. В этой конфигурации указывается среда выполнения, сценарий записи и (необязательно) файл среды conda:
+Конфигурация вывода может использовать Машинное обучение Azure среды для определения зависимостей программного обеспечения, необходимых для развертывания. Среды позволяют создавать, администрировать и повторно использовать зависимости программного обеспечения, необходимые для обучения и развертывания. В следующем примере демонстрируется загрузка среды из рабочей области и ее использование с конфигурацией вывода:
+
+```python
+from azureml.core import Environment
+from azureml.core.model import InferenceConfig
+
+deploy_env = Environment.get(workspace=ws,name="myenv",version="1")
+inference_config = InferenceConfig(entry_script="x/y/score.py",
+                                   environment=deploy_env)
+```
+
+Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
+
+Можно также указать зависимости напрямую, не используя среду. В следующем примере показано, как создать конфигурацию вывода, которая загружает зависимости программного обеспечения из файла conda:
 
 ```python
 from azureml.core.model import InferenceConfig
@@ -468,10 +481,40 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
 
-> [!TIP]
-> Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Модель можно профилировать с помощью пакета SDK или интерфейса командной строки. Дополнительные сведения см. в справочнике по профилю модели [()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-) и [AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile) .
->
-> Результаты профилирования модели создаются в виде `Run` объекта. Дополнительные сведения см. в справочнике по классу [моделпрофиле](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py) .
+#### <a name="profiling"></a>Профилирование.
+
+Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Модель можно профилировать с помощью пакета SDK или интерфейса командной строки. В следующих примерах показано, как использовать профилирование из пакета SDK:
+
+> [!IMPORTANT]
+> При использовании профилирования предоставленная конфигурация определения не может ссылаться на среду Машинное обучение Azure. Вместо этого определите зависимости программного обеспечения с `conda_file` помощью параметра `InferenceConfig` объекта.
+
+```python
+import json
+test_sample = json.dumps({'data': [
+    [1,2,3,4,5,6,7,8,9,10]
+]})
+
+profile = Model.profile(ws, "profilemymodel", [model], inference_config, test_data)
+profile.wait_for_profiling(true)
+profiling_results = profile.get_results()
+print(profiling_results)
+```
+
+Этот код отображает результат, аналогичный приведенному ниже:
+
+```python
+{'cpu': 1.0, 'memoryInGB': 0.5}
+```
+
+Результаты профилирования модели создаются в виде `Run` объекта.
+
+Дополнительные сведения об использовании профилирования из CLI см. в разделе [AZ ML Model Profile](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
+
+Дополнительные сведения см. в следующих справочных документах:
+
+* [моделпрофиле](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py)
+* [профиль ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--model~s--inference-config--input-data-)
+* [Схема файла конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema)
 
 ## <a name="deploy-to-target"></a>Развертывание в целевом объекте
 
@@ -742,7 +785,136 @@ print(response.json())
 * [https://github.com/Microsoft/MLOps](https://github.com/Microsoft/MLOps)
 * [https://github.com/Microsoft/MLOpsPython](https://github.com/microsoft/MLOpsPython)
 
+## <a name="package-models"></a>Модели пакетов
+
+В некоторых случаях может потребоваться создать образ DOCKER без развертывания модели. Например, при планировании [развертывания в службе приложений Azure](how-to-deploy-app-service.md). Также можно загрузить образ и запустить его на локальном компьютере DOCKER. Вы даже можете загрузить файлы, используемые для создания образа, проверить их, изменить и выполнить сборку вручную.
+
+Упаковка модели позволяет выполнять оба действия. Он упаковывает все ресурсы, необходимые для размещения модели в качестве веб-службы, и позволяет скачать полностью созданный образ DOCKER или файлы, необходимые для его создания. Существует два способа использования упаковки модели.
+
+* __Скачать упакованную модель__: Вы скачиваете образ DOCKER, содержащий модель и другие файлы, необходимые для размещения его в качестве веб-службы.
+* __Создать dockerfile__: Вы скачиваете dockerfile, модель, сценарий входа и другие ресурсы, необходимые для создания образа DOCKER. Затем можно проверить файлы или внести изменения, прежде чем создавать образ локально.
+
+Оба пакета можно использовать для получения образа локального DOCKER. 
+
+> [!TIP]
+> Создание пакета аналогично развертыванию модели, так как в нем используется Зарегистрированная модель и конфигурация вывода.
+
+> [!IMPORTANT]
+> Для таких функций, как загрузка полностью созданного образа или создание образа локально, требуется работающий экземпляр [DOCKER](https://www.docker.com) в среде разработки.
+
+### <a name="download-a-packaged-model"></a>Загрузка упакованной модели
+
+В следующем примере показано, как создать образ, зарегистрированный в реестре контейнеров Azure для вашей рабочей области:
+
+```python
+package = Model.package(ws, [model], inference_config)
+package.wait_for_creation(show_output=True)
+```
+
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например, `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. После загрузки используйте `docker images` команду, чтобы вывести список локальных образов:
+
+```text
+REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
+myworkspacef78fd10.azurecr.io/package    20190822181338      7ff48015d5bd        4 minutes ago       1.43GB
+```
+
+Чтобы запустить локальный контейнер с помощью этого образа, используйте следующую команду для запуска именованного контейнера из оболочки или командной строки. Замените значение идентификатором образа, возвращенным `docker images` из команды: `<imageid>`
+
+```bash
+docker run -p 6789:5001 --name mycontainer <imageid>
+```
+
+Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что упрощает его работу. После запуска можно отправлять запросы в `http://localhost:6789/score`.
+
+### <a name="generate-dockerfile-and-dependencies"></a>Создание dockerfile и зависимостей
+
+В следующем примере показано, как загрузить dockerfile, модель и другие ресурсы, необходимые для создания образа локально. `generate_dockerfile=True` Параметр указывает, что нам нужно, чтобы файлы, а не полностью построенные образы:
+
+```python
+package = Model.package(ws, [model], inference_config, generate_dockerfile=True)
+package.wait_for_creation(show_output=True)
+# Download the package
+package.save("./imagefiles")
+# Get the Azure Container Registry that the model/dockerfile uses
+acr=package.get_container_registry()
+print("Address:", acr.address)
+print("Username:", acr.username)
+print("Password:", acr.password)
+```
+
+Этот код скачивает файлы, необходимые для сборки образа, в `imagefiles` каталог. Dockerfile, включаемые в файлы сохранения, ссылаются на базовый образ, хранящийся в реестре контейнеров Azure. При создании образа в локальной установке DOCKER необходимо использовать адрес, имя пользователя и пароль для проверки подлинности в этом реестре. Выполните следующие действия, чтобы создать образ с помощью локальной установки docker:
+
+1. Чтобы проверить подлинность DOCKER с помощью реестра контейнеров Azure, из оболочки или сеанса командной строки используйте следующую команду. Замените `<address>`, `<username>` `package.get_container_registry()`и значениями,полученнымиспомощью`<password>` :
+
+    ```bash
+    docker login <address> -u <username> -p <password>
+    ```
+
+2. Чтобы создать образ, используйте следующую команду. Замените `<imagefiles>` на путь к каталогу, в `package.save()` котором сохранены файлы:
+
+    ```bash
+    docker build --tag myimage <imagefiles>
+    ```
+
+    Эта команда задает имя образа в `myimage`.
+
+Чтобы убедиться, что образ создан, используйте `docker images` команду. Вы должны увидеть `myimage` изображение в списке:
+
+```text
+REPOSITORY      TAG                 IMAGE ID            CREATED             SIZE
+<none>          <none>              2d5ee0bf3b3b        49 seconds ago      1.43GB
+myimage         latest              739f22498d64        3 minutes ago       1.43GB
+```
+
+Чтобы запустить новый контейнер на основе этого образа, используйте следующую команду:
+
+```bash
+docker run -p 6789:5001 --name mycontainer myimage:latest
+```
+
+Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что упрощает его работу. После запуска можно отправлять запросы в `http://localhost:6789/score`.
+
+### <a name="example-client-to-test-the-local-container"></a>Пример клиента для тестирования локального контейнера
+
+Следующий код является примером клиента Python, который можно использовать с контейнером:
+
+```python
+import requests
+import json
+
+# URL for the web service
+scoring_uri = 'http://localhost:6789/score'
+
+# Two sets of data to score, so we get two results back
+data = {"data":
+        [
+            [ 1,2,3,4,5,6,7,8,9,10 ],
+            [ 10,9,8,7,6,5,4,3,2,1 ]
+        ]
+        }
+# Convert to JSON string
+input_data = json.dumps(data)
+
+# Set the content type
+headers = {'Content-Type': 'application/json'}
+
+# Make the request and display the response
+resp = requests.post(scoring_uri, input_data, headers=headers)
+print(resp.text)
+```
+
+Дополнительные примеры клиентов на других языках программирования см. в разделе Использование моделей, развернутых в [качестве веб-служб](how-to-consume-web-service.md).
+
+### <a name="stop-the-docker-container"></a>Останавливает контейнер DOCKER
+
+Чтобы прерывать контейнер, используйте следующую команду из другой оболочки или командной строки:
+
+```bash
+docker kill mycontainer
+```
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
+
 Для удаления развернутой веб-службы используйте `service.delete()`.
 Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
 

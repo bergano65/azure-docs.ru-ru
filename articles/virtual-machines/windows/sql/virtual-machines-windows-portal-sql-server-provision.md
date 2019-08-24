@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 05/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c316e55700fc8a28ed39bea960a9fe2b2bbd4df1
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
-ms.translationtype: HT
+ms.openlocfilehash: 52f6e7ebb1cbae14878b1897bd8c59c73dd0f493
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900376"
+ms.locfileid: "69981026"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -122,7 +122,7 @@ ms.locfileid: "69900376"
 * В разделе **Дополнительно**выберите **Да** в разделе использовать **управляемые диски**.
 
    > [!NOTE]
-   > Корпорация Майкрософт рекомендует использовать управляемые диски для SQL Server. Управляемые диски управляют хранилищем в фоновом режиме. Кроме того, когда виртуальные машины с управляемыми дисками находятся в одной группе доступности, Azure распределяет ресурсы хранения, чтобы обеспечить соответствующую избыточность. Дополнительные сведения см. в [обзоре службы "Управляемые диски Azure"][../managed-disks-overview.md). Подробные сведения об управляемых дисках в группе доступности см. в статье [Управление доступностью виртуальных машин Windows в Azure](../manage-availability.md).
+   > Корпорация Майкрософт рекомендует использовать управляемые диски для SQL Server. Управляемые диски управляют хранилищем в фоновом режиме. Кроме того, когда виртуальные машины с управляемыми дисками находятся в одной группе доступности, Azure распределяет ресурсы хранения, чтобы обеспечить соответствующую избыточность. Дополнительные сведения см. в статье [Обзор управляемых дисков Azure](../managed-disks-overview.md). Подробные сведения об управляемых дисках в группе доступности см. в статье [Управление доступностью виртуальных машин Windows в Azure](../manage-availability.md).
 
 ![Параметры диска виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/azure-sqlvm-disks.png)
   

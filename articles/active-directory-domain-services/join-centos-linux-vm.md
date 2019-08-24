@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: f28933623100ed18320df37741c7c1e82ccffa9f
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 183f1190e4ccbd730600290305a5847f83853c39
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612844"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990730"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CentOS к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CentOS в Azure к управляемому домену доменных служб Azure AD.
@@ -84,7 +84,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
     ```console
-    sudo realm discover contoso.COM
+    sudo realm discover CONTOSO.COM
     ```
 
    > [!NOTE]
@@ -100,7 +100,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
 
     ```console
-    kinit bob@contoso.COM
+    kinit bob@CONTOSO.COM
     ```
 
 3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
@@ -111,7 +111,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
     > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
-    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM'
+    sudo realm join --verbose CONTOSO.COM -U 'bob@CONTOSO.COM'
     ```
 
 Когда компьютер присоединится к управляемому домену, вы получите сообщение "Компьютер успешно зарегистрирован в realm" (Successfully enrolled machine in realm).
@@ -120,10 +120,10 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине CentOS, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
-1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине CentOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@contoso.COM).
+1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине CentOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO.COM).
     
     ```console
-    ssh -l bob@contoso.COM contoso-centos.contoso.com
+    ssh -l bob@CONTOSO.COM contoso-centos.contoso.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:

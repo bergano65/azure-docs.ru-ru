@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 0e3803edd47c3589652b3fedecd12125e3ff40b7
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: b59bd7c7196ceb87da087967498eca6dda7c212b
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612798"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990601"
 ---
 # <a name="join-a-red-hat-enterprise-linux-7-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Red Hat Enterprise Linux 7 к управляемому домену
 Эта статья покажет, как присоединить виртуальную машину Red Hat Enterprise Linux (RHEL) 7 к управляемому домену доменных служб Azure AD.
@@ -84,7 +84,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs samba-common-tools
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
     ```console
-    sudo realm discover contoso.COM
+    sudo realm discover CONTOSO.COM
     ```
 
    > [!NOTE]
@@ -100,7 +100,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs samba-common-tools
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
 
     ```console
-    kinit bob@contoso.COM
+    kinit bob@CONTOSO.COM
     ```
 
 3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
@@ -111,7 +111,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs samba-common-tools
     > Если виртуальной машине не удается присоединиться к домену, убедитесь, что группа безопасности сети виртуальной машины разрешает исходящий трафик Kerberos для TCP + UDP-порта 464 в подсети виртуальной сети для управляемого домена Azure AD DS.
 
     ```console
-    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM'
+    sudo realm join --verbose CONTOSO.COM -U 'bob@CONTOSO.COM'
     ```
 
 Когда компьютер присоединится к управляемому домену, вы получите сообщение "Компьютер успешно зарегистрирован в realm" (Successfully enrolled machine in realm).
@@ -120,10 +120,10 @@ sudo yum install realmd sssd krb5-workstation krb5-libs samba-common-tools
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине RHEL, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешена учетная запись.
 
-1. В окне терминала SSH введите следующую команду, чтобы подключиться к виртуальной машине, присоединенной к домену, с помощью SSH. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@contoso.COM).
+1. В окне терминала SSH введите следующую команду, чтобы подключиться к виртуальной машине, присоединенной к домену, с помощью SSH. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO.COM).
     
     ```console
-    ssh -l bob@contoso.COM contoso-rhel.contoso.com
+    ssh -l bob@CONTOSO.COM contoso-rhel.contoso.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:

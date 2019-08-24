@@ -311,8 +311,6 @@
           href: ./apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
         - name: "Не удается выполнить задание Apache Spark\_— InvalidClassException"
           href: ./apache-spark-troubleshoot-job-fails-invalidclassexception.md
-        - name: "Медленное выполнение заданий Apache Spark\_— listStatus"
-          href: ./apache-spark-troubleshoot-job-slowness-liststatus.md
         - name: "Медленное выполнение заданий Apache Spark\_— контейнер хранилища"
           href: ./apache-spark-troubleshoot-job-slowness-container.md
         - name: Исключение IllegalArgumentException

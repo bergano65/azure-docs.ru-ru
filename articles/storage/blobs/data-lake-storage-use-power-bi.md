@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: normesta
 ms.reviewer: bensack
-ms.openlocfilehash: cb82d47be11570baf7865468c804162a20a7685f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 59574f0a07f4ecc145f2b0efd430e65cbdebcc65
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855470"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991577"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen2-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Power BI
 
@@ -39,7 +39,7 @@ ms.locfileid: "68855470"
 
     ![Страница «получение данных»](media/data-lake-storage-use-power-bi/get-data-page.png)
 
-4. В диалоговом окне **Azure Data Lake Storage 2-го поколения** можно указать URL-адрес учетной записи Azure Data Lake Storage 2-го поколения, файловой системы или вложенной папки с помощью формата конечных точек в файловой системе. URL-адреса для Data Lake Storage 2-го поколения имеют следующий `https://<accountname>.dfs.core.windows.net/<filesystemname>/<subfolder>` шаблон и нажмите кнопку **ОК**.
+4. В диалоговом окне **Azure Data Lake Storage 2-го поколения** можно указать URL-адрес учетной записи Azure Data Lake Storage 2-го поколения, файловой системы или вложенной папки, используя формат конечной точки контейнера. URL-адреса для Data Lake Storage 2-го поколения имеют следующий `https://<accountname>.dfs.core.windows.net/<filesystemname>/<subfolder>` шаблон и нажмите кнопку **ОК**.
 
     ![URL](media/data-lake-storage-use-power-bi/adls-url.png)
 

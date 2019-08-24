@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b338ad90c01c109cc9b2e222f1d7bcaa09f20346
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a978e2755818e88cad580753e041eacd50a9e6d2
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812954"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980484"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -215,7 +215,7 @@ ms.locfileid: "68812954"
 
 - SMS
 
-Дополнительные сведения об использовании приложения Microsoft Authenticator для сброса паролей см. в разделе [Мобильное приложение и SSPR (предварительная версия)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr-preview).
+Дополнительные сведения об использовании приложения Microsoft Authenticator для сброса паролей см. в разделе [Мобильное приложение и SSPR (предварительная версия)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr).
 
 ---
 
@@ -1140,7 +1140,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 ### <a name="azure-ad-activity-logs-sign-ins-and-audit-are-now-available-through-ms-graph"></a>Журналы действий Azure AD (вход и аудит) теперь доступны через MS Graph
 
 **Тип.** Новая функция  
-**Категория службы:** Отчеты  
+**Категория службы.** Отчеты  
 **Возможности продукта:** Мониторинг и создание отчетов
  
 Журналы действий Azure AD, в том числе журналы входа и аудита, теперь доступны через MS Graph. Мы предоставили через MS Graph две конечных точки для доступа к этим журналам. Ознакомьтесь с [документацией](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal) по программному доступу к API отчетов Azure AD. 
@@ -2360,7 +2360,7 @@ Azure AD поддерживает автоматическое определе�
 
 ### <a name="access-reviews"></a>Проверки доступа
 
-**Тип:** Новая функция  
+**Тип.** Новая функция  
 **Категория службы.** Проверки доступа  
 **Возможности продукта.** Соответствие  
 

@@ -12,13 +12,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/25/2019
-ms.openlocfilehash: e749138cd28f7bd8faf10ca1087a73f323533a25
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.date: 08/20/2019
+ms.openlocfilehash: d9a1c76e8ac386b954c68f16e2189df4e6c0e1b7
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335666"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996326"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 
@@ -44,6 +44,7 @@ ms.locfileid: "68335666"
 -   [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md)
 -   [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md)
 -   [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md)
+-   [Хранилище файлов Azure](connector-azure-file-storage.md)
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
 
@@ -51,6 +52,7 @@ ms.locfileid: "68335666"
 -   [FTP](connector-ftp.md)
 -   [SFTP](connector-sftp.md)
 -   [Amazon S3](connector-amazon-simple-storage-service.md)
+-   [Google Cloud Storage](connector-google-cloud-storage.md)
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -115,7 +117,7 @@ ms.locfileid: "68335666"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| Название | Категория | Сообщение о состоянии | Error |
+| Название | Категория | Status | Error |
 |:--- |:--- |:--- |:--- |
 | test1/yyy. JSON | Файл | Удален |  |
 | test2/hello789. txt | Файл | Удален |  |

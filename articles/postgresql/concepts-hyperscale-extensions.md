@@ -1,28 +1,28 @@
 ---
-title: Расширения PostgreSQL в базе данных Azure для PostgreSQL - Гипермасштабируемого (Citus) (Предварительная версия)
-description: Описывается, как расширить функциональные возможности базы данных с помощью расширений в базе данных Azure для PostgreSQL.
+title: Расширения PostgreSQL в базе данных Azure для PostgreSQL — масштабирование (Цитус)
+description: Описывает возможность расширения функциональных возможностей базы данных с помощью расширений в базе данных Azure для PostgreSQL.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 4022c95bfda8cbdaed75876793bfbba4254a5c54
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aabcb0b0d01d821c529803927dacec448c923745
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65410254"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998020"
 ---
-# <a name="postgresql-extensions-in-azure-database-for-postgresql---hyperscale-citus-preview"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL - Гипермасштабируемого (Citus) (Предварительная версия)
+# <a name="postgresql-extensions-in-azure-database-for-postgresql--hyperscale-citus"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
-PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. на странице  [Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
+PostgreSQL предоставляет возможность расширения функциональных возможностей базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать, как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. [в разделе Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
 
-## <a name="how-to-use-postgresql-extensions"></a>Как использовать расширения PostgreSQL
+## <a name="use-postgresql-extensions"></a>Использование расширений PostgreSQL
 
-Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду  [CREATE EXTENSION](https://www.postgresql.org/docs/9.6/static/sql-createextension.html),  используя инструмент psql. При этом упакованные объекты будут загружены в базу данных.
+Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду " [создать расширение](https://www.postgresql.org/docs/9.6/static/sql-createextension.html) " из средства PSQL, чтобы загрузить упакованные объекты в базу данных.
 
-В настоящее время База данных Azure для PostgreSQL поддерживает подмножество основных расширений, которые перечислены ниже. Поддерживаются только указанные выше расширения. С помощью службы базы данных Azure для PostgreSQL невозможно создать собственное расширение.
+В настоящее время предварительная версия базы данных Azure для PostgreSQL-Scale (Цитус) поддерживает подмножество расширений ключей, перечисленных здесь. Расширения, отличные от перечисленных, не поддерживаются. Вы не можете создать собственное расширение с базой данных Azure для PostgreSQL.
 
 ## <a name="extensions-supported-by-azure-database-for-postgresql"></a>Расширения, поддерживаемые базой данных Azure для PostgreSQL
 
@@ -35,34 +35,12 @@ PostgreSQL предоставляет возможность расширить 
 > |---|---|
 > | [citext](https://www.postgresql.org/docs/9.6/static/citext.html) | Предоставляет тип строки символов без учета регистра. |
 > | [cube](https://www.postgresql.org/docs/9.6/static/cube.html) | Предоставляет тип данных для многомерных кубов. |
-> | [hstore](https://www.postgresql.org/docs/9.6/static/hstore.html) | Предоставляет тип данных для хранения наборов пар "ключ — значение". |
+> | [hstore](https://www.postgresql.org/docs/9.6/static/hstore.html) | Предоставляет тип данных для хранения наборов пар "ключ-значение". |
 > | [isn](https://www.postgresql.org/docs/9.6/static/isn.html) | Предоставляет типы данных для международных стандартов нумерации продуктов. |
-> | [Lo](https://www.postgresql.org/docs/current/lo.html) | Большой объект обслуживания. |
+> | [Lo](https://www.postgresql.org/docs/current/lo.html) | Обслуживание больших объектов. |
 > | [ltree](https://www.postgresql.org/docs/9.6/static/ltree.html) | Предоставляет тип данных для иерархических древовидных структур. |
-> | [seg](https://www.postgresql.org/docs/current/seg.html) | Тип данных для представления сегментов строк или с плавающей запятой интервалы. |
-> | [topn](https://github.com/citusdata/postgresql-topn/) | Тип для первых n JSONB. |
-
-### <a name="functions-extensions"></a>Расширения функций
-
-> [!div class="mx-tableFixed"]
-> | **Расширение** | **Описание** |
-> |---|---|
-> | [autoinc](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.7) | Функции для поля с автоматическим приращением. |
-> | [earthdistance](https://www.postgresql.org/docs/9.6/static/earthdistance.html) | Предоставляет средства для вычисления ортодромических расстояний на поверхности Земли. |
-> | [fuzzystrmatch](https://www.postgresql.org/docs/9.6/static/fuzzystrmatch.html) | Предоставляет несколько функций для определения сходства и расстояния между строками. |
-> | [Вставить\_имя пользователя](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.8) | Функции для отслеживания того, кто изменил таблицу. |
-> | [intagg](https://www.postgresql.org/docs/current/intagg.html) | Целое число средства инвентаризации программного обеспечения и перечислитель (устаревший). |
-> | [intarray](https://www.postgresql.org/docs/9.6/static/intarray.html) | Предоставляет функции и операторы для управления массивами целых чисел, не содержащими значений null. |
-> | [moddatetime](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.9) | Функции для отслеживания времени последнего изменения. |
-> | [pgcrypto](https://www.postgresql.org/docs/9.6/static/pgcrypto.html) | Предоставляет функции шифрования. |
-> | [pg\_partman](https://pgxn.org/dist/pg_partman/doc/pg_partman.html) | Управляет секционированными таблицами по времени или идентификатору. |
-> | [pg\_trgm](https://www.postgresql.org/docs/9.6/static/pgtrgm.html) | Предоставляет функции и операторы для определения сходства буквенно-цифрового текста на основе сопоставления триграмм. |
-> | [refint](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.5) | Функции для реализации ссылочной целостности (устаревший). |
-> | сеанс\_analytics | Функции для выполнения запросов к hstore массивов. |
-> | [tablefunc](https://www.postgresql.org/docs/9.6/static/tablefunc.html) | Предоставляет функции для полного управления таблицами, включая перекрестные таблицы. |
-> | [tcn](https://www.postgresql.org/docs/current/tcn.html) | Активировать уведомления об изменениях. |
-> | [timetravel](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.6) | Функции для реализации Переход во времени. |
-> | [uuid-ossp](https://www.postgresql.org/docs/9.6/static/uuid-ossp.html) | Создает глобально уникальные идентификаторы (UUID). |
+> | [SEG](https://www.postgresql.org/docs/current/seg.html) | Тип данных для представления сегментов линии или интервалов с плавающей точкой. |
+> | [TopN](https://github.com/citusdata/postgresql-topn/) | Введите для TOP-n ЖСОНБ. |
 
 ### <a name="full-text-search-extensions"></a>Расширения для полнотекстового поиска
 
@@ -70,16 +48,46 @@ PostgreSQL предоставляет возможность расширить 
 > | **Расширение** | **Описание** |
 > |---|---|
 > | [dict\_int](https://www.postgresql.org/docs/9.6/static/dict-int.html) | Предоставляет шаблон словаря текстового поиска для целых чисел. |
-> | [dict\_xsyn](https://www.postgresql.org/docs/current/dict-xsyn.html) | Текстовый шаблон словарь поиска для обработки расширенных синонима. |
+> | [словарь\_кссин](https://www.postgresql.org/docs/current/dict-xsyn.html) | Шаблон словаря поиска текста для обработки расширенных синонимов. |
 > | [unaccent](https://www.postgresql.org/docs/9.6/static/unaccent.html) | Словарь для текстового поиска, который удаляет из лексем знаки ударения (диакритические знаки). |
 
-### <a name="index-types-extensions"></a>Расширения типов индекса
+### <a name="functions-extensions"></a>Расширения функций
 
 > [!div class="mx-tableFixed"]
 > | **Расширение** | **Описание** |
 > |---|---|
-> | [Раскрытия](https://www.postgresql.org/docs/current/bloom.html) | Метод доступа bloom — файл сигнатур на основе индекса. |
-> | [btree\_gin](https://www.postgresql.org/docs/9.6/static/btree-gin.html) | Предоставляет примеры классов оператора GIN, которые реализуют поведение сбалансированного дерева для определенных типов данных. |
+> | [аутоинк](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.7) | Функции для полей с автоприращением. |
+> | [earthdistance](https://www.postgresql.org/docs/9.6/static/earthdistance.html) | Предоставляет средства для вычисления ортодромических расстояний на поверхности Земли. |
+> | [fuzzystrmatch](https://www.postgresql.org/docs/9.6/static/fuzzystrmatch.html) | Предоставляет несколько функций для определения сходства и расстояния между строками. |
+> | [вставить\_имя пользователя](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.8) | Функции для отслеживания изменений в таблице. |
+> | [интагг](https://www.postgresql.org/docs/current/intagg.html) | Целочисленный агрегат и перечислитель (устарело). |
+> | [intarray](https://www.postgresql.org/docs/9.6/static/intarray.html) | Предоставляет функции и операторы для управления массивами целых чисел, не содержащими значений null. |
+> | [моддатетиме](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.9) | Функции для отслеживания времени последнего изменения. |
+> | [pgcrypto](https://www.postgresql.org/docs/9.6/static/pgcrypto.html) | Предоставляет функции шифрования. |
+> | [pg\_partman](https://pgxn.org/dist/pg_partman/doc/pg_partman.html) | Управляет секционированными таблицами по времени или идентификатору. |
+> | [pg\_trgm](https://www.postgresql.org/docs/9.6/static/pgtrgm.html) | Предоставляет функции и операторы для определения сходства буквенно-цифрового текста на основе сопоставления триграмм. |
+> | [уточнение](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.5) | Функции для реализации ссылочной целостности (устарела). |
+> | анализ\_сеансов | Функции для запроса массивов хсторе. |
+> | [tablefunc](https://www.postgresql.org/docs/9.6/static/tablefunc.html) | Предоставляет функции для полного управления таблицами, включая перекрестные таблицы. |
+> | [ткн](https://www.postgresql.org/docs/current/tcn.html) | Активированные уведомления об изменениях. |
+> | [тиметравел](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.6) | Функции для реализации поездок по времени. |
+> | [uuid-ossp](https://www.postgresql.org/docs/9.6/static/uuid-ossp.html) | Создает глобально уникальные идентификаторы (UUID). |
+
+### <a name="hyperscale-extensions"></a>Расширения с масштабированием
+
+> [!div class="mx-tableFixed"]
+> | **Расширение** | **Описание** |
+> |---|---|
+> | [Цитус](https://github.com/citusdata/citus) | Распределенная база данных Цитус. |
+> | Подсистема балансировки сегментов\_ | Безопасно Перераспределите данные в группе серверов в случае добавления или удаления узла. |
+
+### <a name="index-types-extensions"></a>Расширения типов индексов
+
+> [!div class="mx-tableFixed"]
+> | **Расширение** | **Описание** |
+> |---|---|
+> | [раскрытия](https://www.postgresql.org/docs/current/bloom.html) | Метод доступа раскрытия — индекс на основе файла сигнатур. |
+> | [btree\_gin](https://www.postgresql.org/docs/9.6/static/btree-gin.html) | Предоставляет примеры классов операторов Ло, реализующих поведение типа «сбалансированное дерево» для определенных типов данных. |
 > | [btree\_gist](https://www.postgresql.org/docs/9.6/static/btree-gist.html) | Предоставляет классы оператора индекса GiST, которые реализуют сбалансированное дерево. |
 
 ### <a name="language-extensions"></a>Расширения языка
@@ -89,38 +97,30 @@ PostgreSQL предоставляет возможность расширить 
 > |---|---|
 > | [plpgsql](https://www.postgresql.org/docs/9.6/static/plpgsql.html) | Загружаемый процедурный язык PL/pgSQL. |
 
-### <a name="hyperscale-extensions"></a>Расширения Гипермасштабируемого
-
-> [!div class="mx-tableFixed"]
-> | **Расширение** | **Описание** |
-> |---|---|
-> | [citus](https://github.com/citusdata/citus) | Citus распределенная база данных. |
-> | Сегмент\_rebalancer | Безопасно перераспределить данные в группе серверов в случае добавления узла или удаления. |
-
 ### <a name="miscellaneous-extensions"></a>Прочие расширения
 
 > [!div class="mx-tableFixed"]
 > | **Расширение** | **Описание** |
 > |---|---|
-> | [Adminpack](https://www.postgresql.org/docs/current/adminpack.html) | Административные функции для PostgreSQL. |
-> | [amcheck](https://www.postgresql.org/docs/current/amcheck.html) | Функции при проверке целостности отношения. |
-> | [файл\_fdw](https://www.postgresql.org/docs/current/file-fdw.html) | Оболочка для внешних данных для доступа к неструктурированного файла. |
-> | [pageinspect](https://www.postgresql.org/docs/current/pageinspect.html) | Исследование содержимого страниц базы данных на низком уровне. |
+> | [админпакк](https://www.postgresql.org/docs/current/adminpack.html) | Административные функции для PostgreSQL. |
+> | [амчекк](https://www.postgresql.org/docs/current/amcheck.html) | Функции для проверки целостности связи. |
+> | [ФДВ\_файла](https://www.postgresql.org/docs/current/file-fdw.html) | Оболочка внешних данных для доступа к неструктурированным файлам. |
+> | [пажеинспект](https://www.postgresql.org/docs/current/pageinspect.html) | Проверьте содержимое страниц базы данных на низком уровне. |
 > | [pg\_buffercache](https://www.postgresql.org/docs/9.6/static/pgbuffercache.html) | Предоставляет средства для анализа того, что происходит в общем буферном кэше в режиме реального времени. |
 > | [PG\_cron](https://github.com/citusdata/pg_cron) | Планировщик заданий для PostgreSQL. |
-> | [PG\_freespacemap](https://www.postgresql.org/docs/current/pgfreespacemap.html) | Изучите карты свободного места (FSM). |
+> | [PG\_фриспацемап](https://www.postgresql.org/docs/current/pgfreespacemap.html) | Изучите карту свободного места (FSM). |
 > | [pg\_prewarm](https://www.postgresql.org/docs/9.6/static/pgprewarm.html) | Предоставляет способ загрузки реляционных данных в буферный кэш. |
-> | [pg\_stat\_statements](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) | Предоставляет средства для отслеживания статистики выполнения всех инструкций SQL, выполняемых сервером. (Примечание об этом расширении см. ниже.) |
-> | [PG\_видимости](https://www.postgresql.org/docs/current/pgvisibility.html) | Изучите видимости карты (VM) и сведения о видимости на уровне страницы. |
+> | [pg\_stat\_statements](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) | Предоставляет средства для отслеживания статистики выполнения всех инструкций SQL, выполняемых сервером. Сведения об этом расширении см. в разделе "pg_stat_statements". |
+> | [видимость\_PG](https://www.postgresql.org/docs/current/pgvisibility.html) | Проверьте сведения о видимости (на виртуальной машине) и видимость на уровне страницы. |
 > | [pgrowlocks](https://www.postgresql.org/docs/9.6/static/pgrowlocks.html) | Предоставляет средства для отображения сведений о блокировке на уровне строк. |
 > | [pgstattuple](https://www.postgresql.org/docs/9.6/static/pgstattuple.html) | Предоставляет средства для отображения статистических данных на уровне кортежей. |
-> | [postgres\_fdw](https://www.postgresql.org/docs/9.6/static/postgres-fdw.html) | Оболочка для внешних данных, используемая для доступа к данным на внешних серверах PostgreSQL. (Примечание об этом расширении см. ниже.)|
-> | [sslinfo](https://www.postgresql.org/docs/current/sslinfo.html) | Сведения о SSL-сертификаты. |
-> | [TSM\_системы\_строк](https://www.postgresql.org/docs/current/tsm-system-rows.html) | TABLESAMPLE метод, который принимает количество строк в качестве ограничения. |
-> | [TSM\_системы\_времени](https://www.postgresql.org/docs/current/tsm-system-time.html) | TABLESAMPLE метод, который принимает время в миллисекундах как ограничение. |
+> | [postgres\_fdw](https://www.postgresql.org/docs/9.6/static/postgres-fdw.html) | Оболочка для внешних данных, используемая для доступа к данным на внешних серверах PostgreSQL. Сведения об этом расширении см. в разделе "дблинк и postgres_fdw".|
+> | [сслинфо](https://www.postgresql.org/docs/current/sslinfo.html) | Сведения о SSL-сертификатах. |
+> | [ТСМ\_строки\_системы](https://www.postgresql.org/docs/current/tsm-system-rows.html) | TABLESAMPLE метод, который принимает количество строк в качестве ограничения. |
+> | [ТСМ\_системное\_время](https://www.postgresql.org/docs/current/tsm-system-time.html) | TABLESAMPLE метод, который принимает в качестве ограничения время в миллисекундах. |
 > | [hypopg](https://hypopg.readthedocs.io/en/latest/) | Предоставляет способ создания гипотетических индексов, которые используют ЦП или диск. |
-> | [dblink](https://www.postgresql.org/docs/current/dblink.html) | Модуль, который поддерживает подключения к другим базам данных PostgreSQL из сеанса базы данных. (Примечание об этом расширении см. ниже.) |
-> | [xml2](https://www.postgresql.org/docs/current/xml2.html) | Запрос XPath и XSLT. |
+> | [dblink](https://www.postgresql.org/docs/current/dblink.html) | Модуль, который поддерживает подключения к другим базам данных PostgreSQL из сеанса базы данных. Сведения об этом расширении см. в разделе "дблинк и postgres_fdw". |
+> | [xml2](https://www.postgresql.org/docs/current/xml2.html) | Запросы XPath и XSLT. |
 
 
 ### <a name="postgis-extensions"></a>Расширения PostGIS
@@ -130,18 +130,19 @@ PostgreSQL предоставляет возможность расширить 
 > |---|---|
 > | [PostGIS](https://www.postgis.net/), postgis\_topology, postgis\_tiger\_geocoder, postgis\_sfcgal | Пространственные и географические объекты для PostgreSQL. |
 > | address\_standardizer, address\_standardizer\_data\_us | Используются для анализа адреса в составных элементы. Используется для поддержки шага нормализации геокодирования адресов. |
-> | postgis\_sfcgal | Функции PostGIS SFCGAL. |
-> | postgis\_tiger\_геокодирования | PostGIS tiger геокодирования и обратного геокодирования. |
-> | postgis\_топологии | PostGIS топологии Пространственные типы и функции. |
+> | PostGIS\_сфкгал | Функции СФКГАЛ PostGIS. |
+> | PostGIS\_Tiger\_геокодировании | PostGIS Tiger для геокодирования и инвертированного геокодирования. |
+> | Топология PostGIS\_ | Пространственные типы и функции топологии PostGIS. |
 
 
-## <a name="pgstatstatements"></a>pg_stat_statements
-[Расширение инструкций](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) \_pg\_stat предварительно загружено на каждом сервере базы данных Azure для PostgreSQL, что предоставляет вам средства отслеживания статистики выполнения инструкций SQL.
-Параметр `pg_stat_statements.track`, который управляет тем, какие инструкции учитываются расширением, по умолчанию имеет значение `top`. Это означает, что все инструкции, выпущенные непосредственно клиентами, отслеживаются. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера с помощью [портала Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) или [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
+## <a name="pg_stat_statements"></a>pg_stat_statements
+[Расширение инструкций\_PG\_stat](https://www.postgresql.org/docs/current/pgstatstatements.html) предварительно загружается на каждом сервере базы данных Azure для PostgreSQL для предоставления средств отслеживания статистики выполнения инструкций SQL.
 
-Существует компромисс между информацией о выполнении запроса, предоставляемой pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если расширение pg_stat_statements не используется активно, рекомендуется задать для параметра `pg_stat_statements.track` значение `none`. Обратите внимание, что некоторые сторонние службы мониторинга могут зависеть от pg_stat_statements при предоставлении информации о производительности запроса, поэтому подтвердите ваш ли это случай.
+Параметр `pg_stat_statements.track` определяет, какие инструкции подсчитываются расширением. По умолчанию используется `top`значение, то есть выполняется трассировка всех инструкций, выдаваемых непосредственно клиентами. Два других уровня отслеживания: `none` и `all`. Этот параметр можно настроить в качестве параметра сервера с помощью [портала Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) или [Azure CLI](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
 
-## <a name="dblink-and-postgresfdw"></a>dblink и postgres_fdw
-dblink и postgres_fdw позволяют подключаться с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Принимающий сервер должен разрешать подключения с отправляющего сервера при помощи его брандмауэра. При использовании этих расширений для подключения между серверами Базы данных Azure для PostgreSQL, это можно сделать, задав значение "Вкл." для "Разрешить доступ к службам Azure". Это необходимо, если вы хотите использовать расширения для циклического возвращения на тот же сервер. Параметр "Разрешить доступ к службам Azure" можно найти на странице портала Azure для сервера Postgres в разделе "Безопасность подключения". Значение "Вкл." для "Разрешить доступ к службам Azure" добавляет в список разрешений все IP-адреса Azure.
+Существует компромисс между сведениями о выполнении запроса, pg_stat_statements, и воздействием на производительность сервера при регистрации каждой инструкции SQL. Если вы не используете расширение pg_stat_statements, рекомендуется установить для `pg_stat_statements.track` `none`значение. Некоторые сторонние службы мониторинга могут полагаться на pg_stat_statements для предоставления аналитических сведений о производительности запросов, поэтому убедитесь в том, что это так.
 
-В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений с другой базой данных Azure для PostgreSQL серверов.
+## <a name="dblink-and-postgres_fdw"></a>дблинк и postgres_fdw
+Дблинк и postgres_fdw можно использовать для подключения с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Принимающий сервер должен разрешать подключения с отправляющего сервера при помощи его брандмауэра. Чтобы использовать эти расширения для подключения между серверами базы данных Azure для PostgreSQL, установите для параметра **Разрешить доступ к службам Azure** значение Вкл. Также необходимо включить этот параметр, если нужно использовать расширения для обратного прохода на тот же сервер. Параметр **Разрешить доступ к службам Azure** можно найти на портал Azure странице для сервера postgres в разделе **Безопасность подключения**. Включение **доступа к службам Azure** на добавляются всех IP-адресах Azure.
+
+В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений к другим серверам базы данных Azure для PostgreSQL.

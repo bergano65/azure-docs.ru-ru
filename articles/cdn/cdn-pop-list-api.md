@@ -1,6 +1,6 @@
 ---
-title: Получение текущего списка точек POP Verizon для Azure CDN | Документы Майкрософт
-description: Сведения о получении текущего списка точек POP Verizon с помощью REST API.
+title: Получение списка текущих IP-адресов POP для Azure CDN | Документация Майкрософт
+description: Узнайте, как получить текущий список точек присутствия.
 services: cdn
 documentationcenter: ''
 author: mdgattuso
@@ -12,21 +12,34 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/22/2018
-ms.author: kumud
+ms.date: 08/22/2019
+ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: c8316b994dac6b859f019bea1aac6b6a5c2c5b2d
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: bc8e8219c8f8de75b01c584a2a5ce13cc1429fec
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593560"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991777"
 ---
-# <a name="retrieve-the-current-verizon-pop-list-for-azure-cdn"></a>Получение текущего списка точек POP Verizon для Azure CDN
+# <a name="retrieve-the-current-verizon-pop-ip-list-for-azure-cdn"></a>Получение списка IP-адресов POP текущего Verizon для Azure CDN
 
 С помощью REST API можно получить набор IP-адресов для серверов точек подключения (POP) Verizon. Эти серверы POP отправляют запросы к серверам-источникам, которые связаны с конечными точками сети доставки содержимого (CDN) Azure в профиле Verizon (**Azure CDN уровня "Стандартный" от Verizon**  или **Azure CDN уровня "Премиум" от Verizon**). Обратите внимание, что этот набор IP-адресов отличается от IP-адресов, которые будет видеть клиент при выполнении запросов к точкам POP. 
 
 Синтаксис операции REST API для получения списка точек POP см. в статье [Edge Nodes - List](https://docs.microsoft.com/rest/api/cdn/edgenodes/list) (Пограничные узлы — список).
+
+# <a name="retrieve-the-current-microsoft-pop-ip-list-for-azure-cdn"></a>Получение списка IP-адресов Microsoft POP для Azure CDN
+
+Чтобы заблокировать приложение для приема трафика только от Azure CDN корпорации Майкрософт, необходимо настроить списки ACL IP-адресов для серверной части. Вы также можете ограничить набор допустимых значений для заголовка "X-Forwardd-Host", отправленного Azure CDN от Майкрософт. Эти действия описаны ниже.
+
+Настройте IP адресам для серверной части, чтобы принимать трафик от Azure CDN пространства IP-адресов внутренней сети Майкрософт и только служб инфраструктуры Azure. 
+
+* Azure CDN из внутреннего IP-пространства IPv4 Майкрософт: 147.243.0.0/16
+* Azure CDN из внутреннего IP-пространства IPv6 Майкрософт: 2a01:111:2050::/44
+
+Диапазоны IP-адресов и теги служб для служб Майкрософт можно найти [здесь](https://www.microsoft.com/download/details.aspx?id=56519) .
+
+Фильтрация по значениям для входящего заголовка "X-Forwardd-Host", отправленного Azure CDN от Майкрософт. Единственными допустимыми значениями заголовка должны быть все узлы конечных точек, как указано в конфигурации CDN. На самом деле, только имена узлов, от которых требуется принимать трафик, в этом конкретном источнике.
 
 ## <a name="typical-use-case"></a>Типичный случай использования
 

@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 08/22/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: d78c110f3317f4dd9f16cbe243aeca437e9890a1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 92ec03e20fb6e681a0afd14048449ad004ebca0c
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60364707"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991472"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -25,15 +25,59 @@ ms.locfileid: "60364707"
 
 ## <a name="circuit-metrics"></a>Метрики канала
 
-Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. В разделе **Мониторинг** вы найдете подраздел **Метрики**. Выберите BitsInPerSecond или BitsOutPerSecond и агрегирование. В случае необходимости можно применить разделение. При этом будут показаны метрики для каждого типа пиринга.
+Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. В разделе **Мониторинг** вы найдете подраздел **Метрики**. Выберите из перечисленных ниже метрик. Будет применена Статистическая обработка по умолчанию. При необходимости можно применить разделение, в котором будут показаны метрики с разными измерениями.
+
+### <a name="metrics-available"></a>Доступные метрики: 
+* **Доступность** 
+    * Доступность ARP
+      * Доступные измерения:
+        * Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)
+        * Тип пиринга (частный, общедоступный/Майкрософт)
+    * Доступность BGP
+      * Доступные измерения:
+        * Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)
+        * Тип пиринга (частный, общедоступный/Майкрософт)
+* **Трафика**
+    * BitsInPerSecond
+      * Доступные измерения:
+        * Тип пиринга (частный, общедоступный/Майкрософт)
+    * BitsOutPerSecond
+      * Доступные измерения:
+        * Тип пиринга (частный, общедоступный/Майкрософт)
+    * глобалреачбитсинперсеконд
+      * Доступные измерения:
+        * Скэйная цепь (ключ службы)
+    * глобалреачбитсаутперсеконд
+      * Доступные измерения:
+        * Скэйная цепь (ключ службы)
+
+>[!NOTE]
+>Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
+>
+
+## <a name="bits-in-and-out---metrics-across-all-peerings"></a>Входные и выходные метрики во всех пиринга
+
+Вы можете просматривать метрики для всех узлов в заданном канале ExpressRoute.
 
 ![метрики канала](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
 
-## <a name="metrics-per-peering"></a>Метрики пиринга
+## <a name="bits-in-and-out---metrics-per-peering"></a>Количество входных и исходящих битов в метрики на пиринг
 
 Доступны метрики по частному и общедоступному пирингу, а также пирингу Майкрософт в бит/с.
 
 ![метрики пиринга](./media/expressroute-monitoring-metrics-alerts/erpeeringmetrics.jpg) 
+
+## <a name="bgp-availability---split-by-peer"></a>Доступность BGP — разделение по узлу  
+
+Вы можете просмотреть сведения о доступности BGP в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан основной сеанс BGP для частного пиринга и второй сеанс BGP для частного пиринга. 
+
+![Доступность BGP на узел](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
+
+## <a name="arp-availability---split-by-peering"></a>Доступность ARP — разделение по пиринга  
+
+Вы можете просмотреть сведения о доступности [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) в режиме реального времени для пиринга и одноранговых узлов (основной и дополнительный маршрутизаторы ExpressRoute). На этой панели мониторинга показан сеанс ARP частного пиринга по обоим одноранговым узлам, но для пиринга Майкрософт между одноранговыми узлами завершается. По умолчанию для обоих узлов использовалась статистическая обработка (среднее значение).  
+
+![Доступность ARP на одноранговый узел](./media/expressroute-monitoring-metrics-alerts/erArpAvailabilityMetrics.jpg) 
 
 ## <a name="expressroute-gateway-connections-in-bitsseconds"></a>Подключения шлюза ExpressRoute в бит/с
 
@@ -43,11 +87,11 @@ ms.locfileid: "60364707"
 
 1. Чтобы настроить оповещения, перейдите к **Azure Monitor** и щелкните **Оповещения**.
 
-   ![оповещения](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
+   ![оповещений](./media/expressroute-monitoring-metrics-alerts/eralertshowto.jpg)
 
 2. Щелкните **+Select Target** (Выбрать целевой объект) и выберите ресурс подключения шлюза ExpressRoute.
 
-   ![target]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
+   ![target;]( ./media/expressroute-monitoring-metrics-alerts/alerthowto2.jpg)
 3. Указание сведений для оповещения.
 
    ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
@@ -66,10 +110,10 @@ ms.locfileid: "60364707"
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Настройте подключение ExpressRoute.
   
-  * [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-arm.md)
-  * [Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell](expressroute-howto-routing-arm.md)
+  * [Создание и изменение канала](expressroute-howto-circuit-arm.md)
+  * [Создание и изменение конфигурации пиринга](expressroute-howto-routing-arm.md)
   * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

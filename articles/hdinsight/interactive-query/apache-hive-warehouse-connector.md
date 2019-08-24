@@ -7,12 +7,12 @@ ms.author: nakhanha
 ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: bf9bb7adfa25ea16498a32b57d4927de7e81c007
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 98b97abf9fe0d8e71f93022dcbfeff0a5339d5a1
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68826918"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69983086"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-the-hive-warehouse-connector"></a>Интеграция Apache Spark и Apache Hive с соединителем хранилища Hive
 
@@ -51,7 +51,7 @@ Apache Spark имеет интерфейс API структурированно�
 
         ![Конфигурация Ambari Spark2](./media/apache-hive-warehouse-connector/hive-warehouse-connector-spark2-ambari.png)
 
-    1. Задайте `spark.hadoop.hive.llap.daemon.service.hosts` то же значение, что и в свойстве **LLAP App Name** в **дополнительном Hive — Interactive-env**. Например: `llap0`
+    1. Задайте `spark.hadoop.hive.llap.daemon.service.hosts` то же значение, что и для свойства **Hive. llap. Демон. Service. Hosts** в разделе * * расширенный куст-Interactive-site * *. Например: `@llap0`
 
     1. Укажите `spark.sql.hive.hiveserver2.jdbc.url` строку подключения JDBC, которая подключается к Hiveserver2 в кластере интерактивных запросов. Строка подключения для кластера будет выглядеть как URI ниже. `CLUSTERNAME`— Это имя кластера Spark, а `user` для параметров и `password` заданы правильные значения для кластера.
 

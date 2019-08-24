@@ -127,6 +127,8 @@
       href: how-to-event-domains.md
     - name: Реализация отработки отказа на стороне клиента
       href: custom-disaster-recovery.md
+    - name: Устранение неполадок
+      href: troubleshoot-errors.md
 - name: Справочные материалы
   items:
     - name: Azure CLI

@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
-ms.date: 08/06/2019
-ms.openlocfilehash: c7092b2cbcef01ef71261b6f5498cde56a40c358
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.date: 08/22/2019
+ms.openlocfilehash: 476b8cff23d09d81fe356a6445e27794b267d9a2
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68857252"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998104"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "68857252"
 
 ## <a name="permissions-issues"></a>Проблемы с разрешениями
 
-Если вы используете Data Lake Storage Gen 2, убедитесь, что назначенное пользователем управляемое удостоверение, назначенное вашему кластеру HDInsight, находится в роли **участника данных BLOB-объекта хранилища** или в **роли владельца данных большого двоичного объекта хранилища**. Полные инструкции по установке см. [в статье использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account) .
+Если вы используете Azure Data Lake Storage Gen 2 и получаете сообщение об ошибке "Этот запрос не имеет прав на выполнение этой операции с этим разрешением", откройте портал Azure, перейдите к своей учетной записи хранения и в разделе "Управление доступом (IAM)" убедитесь, что **большой двоичный объект хранилища Участник данных** или роль **владельца данных BLOB-объекта хранилища** назначили доступ к управляемому удостоверению, **назначенному пользователю** для подписки. Подробные инструкции см. в разделе [Настройка разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account) .
 
 Если вы используете Data Lake Storage Gen 1, см. инструкции по настройке и настройке [здесь](../hdinsight-hadoop-use-data-lake-store.md). Data Lake Storage Gen 1 не поддерживается для кластеров HBase и не поддерживается в HDInsight версии 4,0.
 
@@ -53,10 +53,10 @@ ms.locfileid: "68857252"
 
 | Исходный IP-адрес | Назначение | Direction |
 |---|---|---|
-| 168.61.49.99 | *: 443 | Входящие |
-| 23.99.5.239 | *: 443 | Входящие |
-| 168.61.48.131 | *: 443 | Входящие |
-| 138.91.141.162 | *: 443 | Входящие |
+| 168.61.49.99 | *: 443 | Входящий трафик |
+| 23.99.5.239 | *: 443 | Входящий трафик |
+| 168.61.48.131 | *: 443 | Входящий трафик |
+| 138.91.141.162 | *: 443 | Входящий трафик |
 
 Также добавьте IP-адреса, относящиеся к региону, в котором создается кластер. Список адресов для каждого региона Azure см. в разделе [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) .
 
@@ -73,6 +73,8 @@ ms.locfileid: "68857252"
 ## <a name="storage-account-name-restrictions"></a>Ограничения имен учетных записей хранения
 
 Длина имен учетных записей хранения не может превышать 24 символов и не может содержать специальный символ. Эти ограничения также касаются имени контейнера по умолчанию в учетной записи хранения.
+
+Другие ограничения именования также применяются при создании кластера. Дополнительные сведения см. в разделе [ограничения имен кластеров](../hdinsight-hadoop-provision-linux-clusters.md#cluster-name).
 
 ## <a name="service-outages"></a>Простои службы
 

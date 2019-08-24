@@ -1,24 +1,22 @@
 ---
 title: Настройка параметров приложения-функции Azure | Документация Майкрософт
 description: Узнайте, как настроить параметры приложения-функции Azure.
-services: ''
-documentationcenter: .net
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 92ca09040836dfc55a9d709b12a0ee01192d6bac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 27e56c3bcaa08fee25c362cdfed64c61b92873cb
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65957393"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982659"
 ---
-# <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Управление приложением-функцией на портале Azure 
+# <a name="how-to-manage-a-function-app"></a>Управление приложением-функцией
 
 В функциях Azure приложение-функция предоставляет контекст выполнения для отдельных функций. Поведение приложения-функции применяется ко всем содержащимся в нем функциям. Эта статья описывает настройку приложений-функций и управление ими на портале Azure.
 
@@ -26,21 +24,21 @@ ms.locfileid: "65957393"
 
 ![Обзор приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
 
-Вы можете перейти к все необходимое для управления приложения-функции на странице обзора, в частности **[параметры приложения](#settings)** и **[функции платформы](#platform-features)** .
+Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)** .
 
 ## <a name="settings"></a>Параметры приложения
 
-**Параметры приложения** вкладке поддерживает параметры, которые используются приложением-функцией.
+На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции.
 
-![Параметры приложения-функции на портале Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
+![Параметры приложения функции в портал Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-Эти параметры хранятся в зашифрованном виде, и необходимо выбрать **Показывать значения** чтобы увидеть значения на портале.
+Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале.
 
-Чтобы добавить параметр, выберите **новый параметр приложения** и добавьте новую пару ключ значение.
+Чтобы добавить параметр, выберите **новый параметр приложения** и добавьте новую пару «ключ-значение».
 
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
-При разработке приложения-функции локально, эти значения сохраняются в файл проекта local.settings.json.
+При разработке приложения-функции локально эти значения сохраняются в файле проекта Local. Settings. JSON.
 
 ## <a name="platform-features"></a>Функции платформы
 
@@ -58,7 +56,7 @@ ms.locfileid: "65957393"
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
-+ [Проверка подлинности](#auth)
++ [Authentication](#auth)
 + [Определение интерфейса API](#swagger)
 
 Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/configure-common.md).
@@ -122,7 +120,7 @@ ms.locfileid: "65957393"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
