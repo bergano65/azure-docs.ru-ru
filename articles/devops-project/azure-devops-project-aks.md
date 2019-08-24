@@ -43,7 +43,7 @@ DevOps Projects также позволяет:
 
 ## <a name="use-devops-projects-to-deploy-an-aspnet-core-app-to-aks"></a>Использование DevOps Projects для развертывания приложения ASP.NET Core в AKS
 
-DevOps Projects создает конвейер CI/CD в Azure Pipelines. Вы можете создать новую организацию Azure DevOps или использовать существующую. Проект Azure DevOps также создает ресурсы Azure, такие как кластер AKS, в нужной подписке Azure.
+DevOps Projects создает конвейер CI/CD в Azure Pipelines. Вы можете создать новую организацию Azure DevOps или использовать существующую. Azure DevOps Projects также создает ресурсы Azure, такие как кластер AKS, в нужной подписке Azure.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 

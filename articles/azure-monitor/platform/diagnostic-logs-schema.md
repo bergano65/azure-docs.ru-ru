@@ -146,7 +146,7 @@ ms.locfileid: "67155293"
 |Microsoft.Network/loadBalancers|LoadBalancerAlertEvent|События оповещения балансировщика нагрузки|
 |Microsoft.Network/loadBalancers|LoadBalancerProbeHealthStatus|Состояние работоспособности балансировщика нагрузки|
 |Microsoft.Network/publicIPAddresses|DDoSProtectionNotifications|Уведомления о защите от атак DDoS|
-|Microsoft.Network/publicIPAddresses|DDoSMitigationFlowLogs|Журналы последовательностей принятия решений по защите от атак DDoS|
+|Microsoft.Network/publicIPAddresses|DDoSMitigationFlowLogs|Журналы потоков принятия решений по защите от атак DDoS|
 |Microsoft.Network/publicIPAddresses|DDoSMitigationReports|Отчеты о защите от атак DDoS|
 |Microsoft.Network/virtualNetworks|VMProtectionAlerts|Оповещения о защите виртуальной машины|
 |Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog|Журнал доступа к шлюзу приложений|

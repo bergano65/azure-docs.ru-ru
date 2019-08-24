@@ -55,7 +55,7 @@ ms.locfileid: "60859130"
 Дополнительные сведения см. в разделе [о последовательности проверки подлинности службы приложений](../app-service/overview-authentication-authorization.md#authentication-flow). 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-В следующих руководствах показано, как добавить проверку подлинности в мобильные клиенты с использованием [управляемой сервером последовательностью](../app-service/overview-authentication-authorization.md#authentication-flow).
+В следующих руководствах показано, как добавить проверку подлинности в мобильные клиенты с использованием [управляемого сервером потока](../app-service/overview-authentication-authorization.md#authentication-flow).
 
 * [Добавление проверки подлинности в приложение iOS][iOS]
 * [Добавление проверки подлинности в приложение Android][Android]
@@ -65,21 +65,21 @@ ms.locfileid: "60859130"
 * [Добавление проверки подлинности в приложение Xamarin.iOS][Xamarin.Forms]
 * [Добавление проверки подлинности в приложение Cordova][Cordova]
 
-Если нужно использовать [управляемую клиентом последовательность](../app-service/overview-authentication-authorization.md#authentication-flow) для Azure Active Directory, см. следующие ресурсы:
+Если нужно использовать [управляемый клиентом поток](../app-service/overview-authentication-authorization.md#authentication-flow) для Azure Active Directory, см. следующие ресурсы:
 
 * [Использование клиентской библиотеки iOS для мобильных приложений Azure][ADAL-iOS]
 * [Использование клиентской библиотеки Android для мобильных приложений][ADAL-Android]
 * [Использование управляемого клиента для мобильных приложений Azure][ADAL-dotnet]
 
-Если нужно использовать [управляемую клиентом последовательность](../app-service/overview-authentication-authorization.md#authentication-flow) для Facebook, см. следующий раздел.
+Если нужно использовать [управляемый клиентом поток](../app-service/overview-authentication-authorization.md#authentication-flow) для Facebook, см. следующий раздел.
 
 * [Практическое руководство: проверка подлинности пользователей с помощью пакета SDK Facebook для iOS](../app-service-mobile/app-service-mobile-ios-how-to-use-client-library.md#facebook-sdk)
 
-Если нужно использовать [управляемую клиентом последовательность](../app-service/overview-authentication-authorization.md#authentication-flow) для Twitter, см. следующий раздел.
+Если нужно использовать [управляемый клиентом поток](../app-service/overview-authentication-authorization.md#authentication-flow) для Twitter, см. следующий раздел.
 
 * [Практическое руководство: проверка подлинности пользователей с помощью структуры Twitter для iOS](../app-service-mobile/app-service-mobile-ios-how-to-use-client-library.md#twitter-fabric)
 
-Если нужно использовать [управляемую клиентом последовательность](../app-service/overview-authentication-authorization.md#authentication-flow) для Google, см. следующий раздел.
+Если нужно использовать [управляемый клиентом поток](../app-service/overview-authentication-authorization.md#authentication-flow) для Google, см. следующий раздел.
 
 * [How to: Authenticate users with the Google Sign-In SDK for iOS](../app-service-mobile/app-service-mobile-ios-how-to-use-client-library.md#google-sdk)
 

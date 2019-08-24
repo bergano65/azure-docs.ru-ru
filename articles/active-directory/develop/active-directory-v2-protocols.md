@@ -89,5 +89,5 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 * [Создание мобильного и собственного приложения с использованием OAuth 2.0](v2-oauth2-auth-code-flow.md)
 * [Сборка веб-приложения с протоколом OpenID Connect](v2-protocols-oidc.md)
 * [Создание одностраничных приложений с использованием неявной последовательности OAuth 2.0](v2-oauth2-implicit-grant-flow.md)
-* [Создание управляющих программ или серверных процессов с использованием последовательности учетных данных клиентов OAuth 2.0](v2-oauth2-client-creds-grant-flow.md)
+* [Создание управляющих программ или серверных процессов с использованием потока учетных данных клиентов OAuth 2.0](v2-oauth2-client-creds-grant-flow.md)
 * [Получение маркеров в веб-API с помощью последовательности OAuth 2.0 On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md)

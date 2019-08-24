@@ -38,7 +38,7 @@ ms.locfileid: "60343483"
 | ----------- | ----------- | 
 | [SendBatch](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SendBatch)  | В этом примере показано, как принимать пакеты событий в концентратор событий. | 
 | [SimpleSend](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend) | В этом примере показано, как принимать события в концентратор событий. |
-| [AdvanceSendOptions](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Basic/AdvancedSendOptions) | Этот пример иллюстрирует различные параметры, доступные для приема событий концентраторами. |
+| [AdvanceSendOptions](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Basic/AdvancedSendOptions) | Этот пример иллюстрирует различные параметры, доступные для приема событий Центрами событий. |
 | [ReceiveByDateTime](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Basic/ReceiveByDateTime) | В этом примере показано, как получать события из раздела концентратора событий с использованием определенного смещения даты и времени. |
 | [ReceiveUsingOffset](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Basic/ReceiveUsingOffset) | В этом примере показано, как получать события из раздела концентратора событий с использованием определенного смещения даты. |  
 | [ReceiveUsingSequenceNumber](https://github.com/Azure/azure-event-hubs/blob/master/samples/Java/Basic/ReceiveUsingSequenceNumber) | В этом примере показано, как получать события из разделов концентратора событий, используя порядковый номер. |   

@@ -123,7 +123,7 @@ ms.locfileid: "68879922"
 
 На следующей схеме представлен общий обзор процесса:
 
-![последовательность переноса](./media/sql-database-managed-instance-migration/migration-flow.png)
+![поток переноса](./media/sql-database-managed-instance-migration/migration-flow.png)
 
 В следующей таблице представлена дополнительная информация о методах, которые вы можете использовать в зависимости от используемой исходной версии SQL Server.
 
