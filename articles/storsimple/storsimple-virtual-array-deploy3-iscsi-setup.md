@@ -23,7 +23,7 @@ ms.locfileid: "68516819"
 ---
 # <a name="deploy-storsimple-virtual-array--set-up-as-an-iscsi-server-via-azure-portal"></a>Развертывание виртуального массива StorSimple. Установка в качестве сервера iSCSI на портале Azure
 
-![Последовательность операций процесса настройки сервера iSCSI](./media/storsimple-virtual-array-deploy3-iscsi-setup/iscsi4.png)
+![Поток операций процесса настройки сервера iSCSI](./media/storsimple-virtual-array-deploy3-iscsi-setup/iscsi4.png)
 
 ## <a name="overview"></a>Обзор
 
