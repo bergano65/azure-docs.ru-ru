@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 05/24/2019
+ms.date: 08/23/2019
 ms.author: jingwang
-ms.openlocfilehash: 3b50b0e81103f0b4c8ffa757673c9ec0ef652fc0
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 45f7db943499b8a722b8e203d676d1d80eb5091e
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614128"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996676"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -430,13 +430,15 @@ Polybase хранилища данных SQL напрямую поддержив
 
 2. **Исходный формат данных** — **Parquet**, **ORC**или текст с **разделителями**, со следующими конфигурациями:
 
-   1. Путь к папке не содержит фильтра с подстановочными знаками.
-   2. Имя файла указывает на один файл или значение `*` или. `*.*`
-   3. Параметр `rowDelimiter` должен иметь значение **\n**.
-   4. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчанию, а параметр `treatEmptyAsNull` остается со значением по умолчанию или ему задается значение true.
-   5. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
+   1. Путь к папке не содержит фильтр с подстановочными знаками.
+   2. Имя файла пустое или указывает на один файл. Если указать имя файла с подстановочными знаками в действии копирования, оно `*` может `*.*`иметь только значение или.
+   3. `rowDelimiter`**по умолчанию**, **\n**, **\r\n**или **\r**.
+   4. `nullValue`принимает значение по умолчанию или задает **пустую строку** (""), `treatEmptyAsNull` а принимает значение по умолчанию или значение true.
+   5. `encodingName`по умолчанию используется значение **UTF-8**.
    6. `quoteChar`, `escapeChar` и`skipLineCount` не указаны. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
    7. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
+
+3. Если источником является папка, `recursive` в действии копирования должно быть задано значение true.
 
 ```json
 "activities":[
@@ -445,7 +447,7 @@ Polybase хранилища данных SQL напрямую поддержив
         "type": "Copy",
         "inputs": [
             {
-                "referenceName": "BlobDataset",
+                "referenceName": "ParquetDataset",
                 "type": "DatasetReference"
             }
         ],
@@ -457,7 +459,11 @@ Polybase хранилища данных SQL напрямую поддержив
         ],
         "typeProperties": {
             "source": {
-                "type": "BlobSource",
+                "type": "ParquetSource",
+                "storeSettings":{
+                    "type": "AzureBlobStorageReadSetting",
+                    "recursive": true
+                }
             },
             "sink": {
                 "type": "SqlDWSink",
@@ -597,20 +603,20 @@ All columns of the table must be specified in the INSERT BULK statement.
 | DateTime                              | DateTime                       |
 | datetime2                             | DateTime                       |
 | Datetimeoffset                        | DateTimeOffset                 |
-| Десятичное                               | Десятичное                        |
+| Decimal                               | Decimal                        |
 | FILESTREAM attribute (varbinary(max)) | Byte[]                         |
 | Плавающая область                                 | Double                         |
 | image                                 | Byte[]                         |
 | ssNoversion                                   | Int32                          |
-| money                                 | Десятичное                        |
+| money                                 | Decimal                        |
 | nchar                                 | String, Char[]                 |
-| numeric                               | Десятичное                        |
+| numeric                               | Decimal                        |
 | nvarchar                              | String, Char[]                 |
-| real                                  | Единое                         |
+| real                                  | Single                         |
 | rowversion                            | Byte[]                         |
 | smalldatetime                         | DateTime                       |
 | smallint                              | Int16                          |
-| smallmoney                            | Десятичное                        |
+| smallmoney                            | Decimal                        |
 | time                                  | TimeSpan                       |
 | tinyint                               | Byte                           |
 | uniqueidentifier                      | GUID                           |

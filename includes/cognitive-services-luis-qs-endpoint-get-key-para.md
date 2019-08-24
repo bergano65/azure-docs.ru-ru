@@ -21,7 +21,7 @@ ms.locfileid: "67185598"
  
 1. Выполните вход, используя учетную запись LUIS. 
 
-    [![Снимок экрана со списком приложений Language Understanding (LUIS)](media/cognitive-services-luis/app-list.png "Screenshot of Language Understanding (LUIS) app list")](media/cognitive-services-luis/app-list.png)
+    [![Снимок экрана со списком приложений распознавания речи (LUIS)](media/cognitive-services-luis/app-list.png "Screenshot of Language Understanding (LUIS) app list")](media/cognitive-services-luis/app-list.png)
 
 2. В правом верхнем меню выберите свое имя и щелкните **Settings** (Параметры).
 

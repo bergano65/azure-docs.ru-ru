@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.openlocfilehash: 00cace13a1d3db2bca45791960ca9bf2fb9260bd
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.date: 08/21/2019
+ms.openlocfilehash: e0309ac70d39272bf045e49ca7ddecd258cc1f36
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976902"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992045"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -49,7 +49,7 @@ ms.locfileid: "68976902"
 
 
 ### <a name="paired-regions"></a>Пары регионов
-В дополнение к регионам универсальной реплики вы можете создать реплику чтения в парном регионе Azure главного сервера. Если вы не знакомы с парой регионов, дополнительные сведения см. в статье о [парных регионах Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+В дополнение к регионам универсальной реплики вы можете создать реплику чтения в парном регионе Azure главного сервера. Если вы не знакомы с парой регионов, дополнительные сведения см. в статье о [парных регионах Azure](../best-practices-availability-paired-regions.md).
 
 Если для планирования аварийного восстановления используются межрегиональные реплики, рекомендуется создать реплику в парном регионе, а не в одном из других регионов. Парные регионы не допускают одновременного обновления и определения приоритетов физической изоляции и местонахождение данных.  
 

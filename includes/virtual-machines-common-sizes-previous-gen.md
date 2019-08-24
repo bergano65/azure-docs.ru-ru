@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/16/2019
 ms.author: cynthn;azcspmt;jonbeck
 ms.custom: include file
-ms.openlocfilehash: 8d90d71b8d29d26f09ef617ddd56ce91eb4e5e2e
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 632b23a726b8e006152662ef7814aa4b7ef887fc
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541533"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69984560"
 ---
 В этом разделе содержатся сведения о предыдущих поколениях размеров виртуальных машин. Эти размеры еще можно использовать, но вам также доступны новые поколения. 
 
@@ -61,7 +61,7 @@ ACU: 210–250
 
 ## <a name="nvv2-series"></a>Серия NVv2
 
-**Новый рекомендуемый размер**: [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nvv3-series-preview-1)
+**Новый рекомендуемый размер**: [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-gpu#nvv3-series--1)
 
 Виртуальные машины серии NVv2 работают на базе графического процессора [NVIDIA Tesla M60](https://images.nvidia.com/content/tesla/pdf/188417-Tesla-M60-DS-A4-fnl-Web.pdf) и технологии NVIDIA GRID с ЦП Intel Broadwell. Эти виртуальные машины предназначены для графических приложений с ускорением GPU и виртуальных рабочих столов, на которых клиенты хотят визуализировать свои данные, модулировать результаты для просмотра, работать с CAD или преобразовывать содержимое для просмотра и выполнять его потоковую передачу. Кроме того, на этих виртуальных машинах могут выполняться рабочие нагрузки одиночной точности, такие как кодирование и рендеринг. Виртуальные машины серии NVv2 поддерживают хранилище класса Premium. Объем системной памяти (ОЗУ) у них в два раза больше, чем у моделей NV.  
 

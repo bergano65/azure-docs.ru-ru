@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 08/23/2019
 ms.author: cephalin
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 3c4811d990cfe107bc3bc4e6d359659b1935c6a4
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 9d611717ad8fee5f810a8d0876f1ebd5995249a7
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297205"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996792"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 
@@ -28,13 +28,11 @@ ms.locfileid: "68297205"
 
 Дополнительные сведения о службах управления версиями см. в статьях [Create a repo (GitHub)], [Create a repo (BitBucket)]или [создание нового репозитория Git (Azure Repos)].
 
-Чтобы вручную настроить непрерывное развертывание из облачного репозитория, которое портал не поддерживает напрямую, например [GitLab](https://gitlab.com/), см. раздел [Настройка непрерывного развертывания с помощью ручных действий](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps).
-
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
 ## <a name="authorize-azure-app-service"></a>Авторизация службы приложений Azure 
 
-Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
 
 Для BitBucket или GitHub разрешите службе приложений Azure подключиться к репозиторию. Только один раз вы должны авторизоваться в службе системы управления версиями. 
 
@@ -63,7 +61,7 @@ ms.locfileid: "68297205"
 1. Выберите свой Полномочный поставщик системы управления версиями на странице **центр развертывания** и нажмите кнопку **продолжить**. Для GitHub или BitBucket можно также выбрать **изменить учетную запись** , чтобы изменить разрешенную учетную запись. 
    
    > [!NOTE]
-   > Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps Services связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+   > Чтобы использовать Azure Repos, убедитесь, что ваша организация Azure DevOps Services связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
    
 1. Для GitHub или Azure Repos на странице **поставщик сборки** выберите **Служба сборок службы приложений**, а затем нажмите кнопку **продолжить**. BitBucket всегда использует службу сборки службы приложений.
    
@@ -76,12 +74,12 @@ ms.locfileid: "68297205"
      > [!NOTE]
      > Если вы не видите репозиториев, вам может потребоваться авторизовать службу приложений Azure на сайте GitHub. Перейдите к репозиторию GitHub и последовательно выберите **Параметры** > **приложения** > **Разрешенные приложения OAuth**. Выберите **служба приложений Azure**и щелкните **предоставить**.
      
-   - Для BitBucket выберите **группу**BitBucket, репозиторий и **ветвь** , которые нужно развернуть непрерывно.
+   - Для BitBucket выберите **группу**BitBucket, репозиторийи **ветвь** , которые нужно развернуть непрерывно.
      
-   - Для Azure Repos выберите **организацию Azure DevOps**, **проект**, репозиторий и **ветвь** , которые нужно развернуть непрерывно.
+   - Для Azure Repos выберите **организацию Azure DevOps**, **проект**, репозиторийи **ветвь** , которые нужно развернуть непрерывно.
      
      > [!NOTE]
-     > Если ваша организация Azure DevOps отсутствует в списке, убедитесь, что она связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+     > Если ваша организация Azure DevOps отсутствует в списке, убедитесь, что она связана с вашей подпиской Azure. Дополнительные сведения см. [в статье Настройка учетной записи Azure DevOps Services для ее развертывания в веб-приложении](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops).
      
 1. Выберите **Продолжить**.
    
@@ -120,7 +118,7 @@ ms.locfileid: "68297205"
      > [!NOTE]
      > Если вы не видите репозиториев, вам может потребоваться авторизовать службу приложений Azure на сайте GitHub. Перейдите к репозиторию GitHub и последовательно выберите **Параметры** > **приложения** > **Разрешенные приложения OAuth**. Выберите **служба приложений Azure**и щелкните **предоставить**.
      
-   - Для Azure Repos выберите **организацию Azure DevOps**, **проект**, репозиторий и **ветвь** , которые нужно развернуть непрерывно, или настройте новую организацию Azure DevOps.
+   - Для Azure Repos выберите **организацию Azure DevOps**, **проект**, репозиторийи **ветвь** , которые нужно развернуть непрерывно, или настройте новую организацию Azure DevOps.
      
      > [!NOTE]
      > Если существующая организация Azure DevOps отсутствует в списке, может потребоваться связать ее с подпиской Azure. Дополнительные сведения см. в разделе [Определение конвейера освобождения компакт-диска](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps#cd).
@@ -149,6 +147,10 @@ ms.locfileid: "68297205"
 ![Отключение непрерывного развертывания](media/app-service-continuous-deployment/disable.png)
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
+
+## <a name="use-unsupported-repos"></a>Использовать неподдерживаемый репозиториев
+
+Для приложений Windows можно вручную настроить непрерывное развертывание из облачного репозитория Git или Мекуриал, который не поддерживает напрямую портал, например [GitLab](https://gitlab.com/). Для этого выберите внешнее поле на странице **центра развертывания** . Дополнительные сведения см. в [статье Настройка непрерывного развертывания с помощью ручных действий](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

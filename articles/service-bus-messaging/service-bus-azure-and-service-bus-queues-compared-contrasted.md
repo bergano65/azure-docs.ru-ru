@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 32c903e5d469a9a3e7b98bd406b5512d752bb210
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
-ms.translationtype: MT
+ms.openlocfilehash: 0ebf18fe2dc6906bc2c06d94388d126fb55c6024
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017792"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69981422"
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>Очереди службы хранилища и очереди служебной шины: сходства и различия
 В данной статье анализируются сходства и различия двух типов очередей, которые предлагает Microsoft Azure: очереди службы хранилища и очереди служебной шины. Эти сведения помогут вам сопоставить эти технологии и выбрать решение, которое лучше всего отвечает вашим требованиям.
@@ -68,7 +68,7 @@ Azure поддерживает два типа механизмов очеред
 | Критерии сравнения | Очереди хранилища | Очереди служебной шины |
 | --- | --- | --- |
 | Гарантированный метод упорядочивания |**Нет** <br/><br>Дополнительные сведения см. в первом примечании в разделе "Дополнительные сведения".</br> |**Да — "первым прибыл, первым обслужен" (FIFO)**<br/><br>(используются сеансы обмена сообщениями) |
-| Гарантированный метод доставки |**Как минимум один раз** |**Как минимум один раз**<br/><br/>**Как минимум один раз** |
+| Гарантированный метод доставки |**Как минимум один раз** |Не **менее одного раза** (используется режим получения PeekLock. это значение по умолчанию) <br/><br/>**Один раз** (с использованием режима получения ReceiveAndDelete) <br/> <br/> Дополнительные сведения о различных [режимах приема](service-bus-queues-topics-subscriptions.md#receive-modes)  |
 | Поддержка атомарной операции |**Нет** |**Да**<br/><br/> |
 | Поведение при получении |**Без блокировки**<br/><br/>(немедленно завершается, если новые сообщения не найдены) |**Блокировка со временем ожидания или без него**<br/><br/>(продолжительный опрос, или ["метод Comet"](https://go.microsoft.com/fwlink/?LinkId=613759))<br/><br/>**Без блокировки**<br/><br/>(только с помощью управляемого интерфейса API для .NET) |
 | API push-уведомлений |**Нет** |**Да**<br/><br/>Сеансы [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage#Microsoft_ServiceBus_Messaging_QueueClient_OnMessage_System_Action_Microsoft_ServiceBus_Messaging_BrokeredMessage__) и **OnMessage** API-интерфейса .NET. |

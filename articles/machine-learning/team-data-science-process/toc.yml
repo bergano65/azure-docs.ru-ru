@@ -115,7 +115,7 @@
                 - name: Использование Обозревателя службы хранилища
                   href: move-data-to-azure-blob-using-azure-storage-explorer.md
                 - name: Использование AzCopy
-                  href: move-data-to-azure-blob-using-azcopy.md
+                  href: 'https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10'
                 - name: Использование Python
                   href: /azure/storage/blobs/storage-python-how-to-use-blob-storage?context=azure/machine-learning/team-data-science-process/context/ml-context
                 - name: Использование MSSQL Integration Services

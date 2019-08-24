@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 982ebf28a0f99a6eace2448676c934855cd99d1f
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: fd7cd8f73f602953573b7e6edab32bf2a6aecc05
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69879738"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998122"
 ---
 # <a name="set-up-and-manage-a-device-template-preview-features"></a>Настройка шаблона устройства и управление им (предварительные версии компонентов)
 
@@ -36,7 +36,7 @@ ms.locfileid: "69879738"
 > [!NOTE]
 > Только администраторы и конструкторы могут создавать, изменять и удалять шаблоны устройств. Любой пользователь может создавать устройства на странице **устройства** из существующих шаблонов устройств.
 
-[Plug and Play IOT](https://aka.ms/iot-pnp-docs) позволяет IOT Central интегрировать устройства без написания кода встраиваемого устройства. В основе центра Интернета вещей Plug and Play — это схема модели возможностей устройства, которая описывает возможности устройства. В приложении IoT Central Preview шаблоны устройств используют следующие модели возможностей устройств IoT Plug and Play.
+[Plug and Play IOT](../iot-pnp/overview-iot-plug-and-play.md) позволяет IOT Central интегрировать устройства без написания кода встраиваемого устройства. В основе центра Интернета вещей Plug and Play — это схема модели возможностей устройства, которая описывает возможности устройства. В приложении IoT Central Preview шаблоны устройств используют следующие модели возможностей устройств IoT Plug and Play.
 
 В качестве построителя есть несколько вариантов создания шаблонов устройств.
 

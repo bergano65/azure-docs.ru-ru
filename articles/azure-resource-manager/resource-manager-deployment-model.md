@@ -3,15 +3,15 @@ title: Развертывание с помощью Resource Manager и клас
 description: Описывает различия между моделью развертывания диспетчера ресурсов и классической моделью развертывания (или моделью управления службами).
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: overview
-ms.date: 11/15/2017
+ms.topic: conceptual
+ms.date: 08/22/2019
 ms.author: tomfitz
-ms.openlocfilehash: 773d369f23154a510624169b9329555a1f865320
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
-ms.translationtype: HT
+ms.openlocfilehash: 9356a1603a39f2ac4d18b27445bf0f8d3a555d7e
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206316"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982471"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
 
@@ -148,7 +148,7 @@ Get-AzVM -ResourceGroupName ExampleGroup
 
 Полный набор начальных шаблонов можно найти в разделе [шаблонов быстрого запуска для Azure Resource Manager](https://azure.microsoft.com/documentation/templates/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * Пошаговые инструкции по созданию шаблона, который определяет виртуальную машину, учетную запись хранения и виртуальную сеть, см. в статье [Пошаговое руководство по созданию шаблона Resource Manager](resource-manager-template-walkthrough.md).
 * Команды для развертывания шаблонов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).

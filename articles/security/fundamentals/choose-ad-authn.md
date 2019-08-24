@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: 22a5a2e157c0b2095673e75e7a3bc9ccb80f8ffd
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: ba9cda5aeebaf0764068a463cdb55f3ef5542ea3
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68928032"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997823"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
@@ -66,6 +66,9 @@ Azure AD поддерживает следующие методы аутенти
 В следующем разделе с помощью дерева принятия решений вы узнаете, какой метод аутентификации подходит вам. Это поможет вам определить, следует ли развертывать облачную или федеративную проверку подлинности для своего решения для гибридной идентификации Azure AD.
 
 ## <a name="decision-tree"></a>Дерево принятия решений
+
+> [!NOTE]
+> PTA работает только с альтернативным ИДЕНТИФИКАТОРом, когда UserPrincipalName выбран в качестве альтернативного идентификатора. Только после этого будет выполнена синхронизация локального атрибута UserPrincipalName из AD в AAD. Дополнительные сведения см. [в разделе Поддержка сквозной проверки подлинности "альтернативный идентификатор" в качестве имени пользователя вместо "userPrincipalName"](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta-faq#does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname).
 
 ![Дерево принятия решений аутентификации Azure AD](./media/choose-ad-authn/azure-ad-authn-image1.png)
 
@@ -176,7 +179,7 @@ Azure AD поддерживает следующие методы аутенти
 
 |Рассматриваемый вопрос|Синхронизация хэша паролей и простой единый вход|Сквозная аутентификация и простой единый вход|Федерация с AD FS|
 |:-----|:-----|:-----|:-----|
-|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальный|
+|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная система|
 |Каковы требования к локальному серверу, помимо системы подготовки: Azure AD Connect?|Отсутствуют|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
 |Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Отсутствуют|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
 |Существует ли требование к SSL-сертификату?|Нет|Нет|Да|

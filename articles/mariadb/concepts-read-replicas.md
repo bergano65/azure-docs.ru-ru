@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.openlocfilehash: a01f6cbb20d084864d3a7f64aa8c90d2bc3405f2
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.date: 08/21/2019
+ms.openlocfilehash: 8cfda202e57dcee4f7a783de893fb712501dfd26
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977067"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992181"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Чтение реплик в базе данных Azure для MariaDB
 
@@ -50,7 +50,7 @@ ms.locfileid: "68977067"
 
 
 ### <a name="paired-regions"></a>Пары регионов
-В дополнение к регионам универсальной реплики вы можете создать реплику чтения в парном регионе Azure главного сервера. Если вы не знакомы с парой регионов, дополнительные сведения см. в статье о [парных регионах Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+В дополнение к регионам универсальной реплики вы можете создать реплику чтения в парном регионе Azure главного сервера. Если вы не знакомы с парой регионов, дополнительные сведения см. в статье о [парных регионах Azure](../best-practices-availability-paired-regions.md).
 
 Если для планирования аварийного восстановления используются межрегиональные реплики, рекомендуется создать реплику в парном регионе, а не в одном из других регионов. Парные регионы не допускают одновременного обновления и определения приоритетов физической изоляции и местонахождение данных.  
 

@@ -16,18 +16,18 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9073e00f5c3702e43665541bd8ff9e66c2bc505b
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: ca2b7f2b0e20e85e1e62f8efabb81eddd5f901f2
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968505"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991119"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Включение удаленного доступа для Power BI Mobile с помощью AD Application Proxy Azure
 
 В этой статье описывается, как использовать AD Application Proxy Azure, чтобы разрешить Power BI мобильного приложения подключаться к Сервер отчетов Power BI (PBIRS) и SQL Server Reporting Services (SSRS) 2016 и более поздних версий. Благодаря этой интеграции пользователи, которые находятся вне корпоративной сети, могут получать доступ к отчетам Power BI из мобильного приложения Power BI и защищать их с помощью проверки подлинности Azure AD. Эта защита включает в себя такие [преимущества безопасности](application-proxy-security.md#security-benefits) , как условный доступ и многофакторная идентификация.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы уже развернули службы Reporting Services и [включили прокси приложения](application-proxy-add-on-premises-application.md).
 
@@ -35,7 +35,7 @@ ms.locfileid: "68968505"
 - При публикации Power BI рекомендуется использовать те же внутренние и внешние домены. Дополнительные сведения о пользовательских доменах см. [в статье работа с пользовательскими доменами в прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain).
 - Эта интеграция доступна для приложения **Power BI Mobile iOS и Android** .
 
-## <a name="step-1-configure-kerberos-constrained-delegation-kcd"></a>Шаг 1.: Настройка ограниченного делегирования Kerberos
+## <a name="step-1-configure-kerberos-constrained-delegation-kcd"></a>Шаг 1. Настройка ограниченного делегирования Kerberos
 
 Для локальных приложений, использующих проверку подлинности Windows, единый вход можно обеспечить с помощью протокола проверки подлинности Kerberos и функции, называемой ограниченным делегированием Kerberos (KCD). При настройке KCD позволяет соединителю прокси приложения получить маркер Windows для пользователя, даже если пользователь не вошел в Windows напрямую. Дополнительные сведения о KCD см. в статье [Общие сведения о ограниченном делегировании Kerberos](https://technet.microsoft.com/library/jj553400.aspx) и [ограниченном делегировании Kerberos для единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
 
@@ -77,7 +77,7 @@ ms.locfileid: "68968505"
 
 Дополнительные сведения см. [в статье ограниченное делегирование Kerberos для единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
 
-## <a name="step-2-publish-report-services-through-azure-ad-application-proxy"></a>Шаг 2.: Публикация служб отчетов с помощью Azure AD Application Proxy
+## <a name="step-2-publish-report-services-through-azure-ad-application-proxy"></a>Шаг 2. Публикация служб отчетов с помощью Azure AD Application Proxy
 
 Теперь вы готовы к настройке AD Application Proxy Azure.
 
@@ -103,25 +103,28 @@ ms.locfileid: "68968505"
 
 Чтобы завершить настройку приложения, перейдите в раздел **"пользователи и группы** " и назначьте пользователям доступ к этому приложению.
 
-## <a name="step-3-register-the-native-app-and-grant-access-to-the-api"></a>Шаг 3. Регистрация собственного приложения и предоставление доступа к API
+## <a name="step-3-grant-power-bi-mobile-access-to-report-services"></a>Шаг 3. Предоставление Power BI Mobile доступа к службам отчетов
 
-Собственные приложения — это программы, разработанные для использования на платформе или устройстве. Прежде чем мобильное приложение Power BI сможет подключиться к API и получить к нему доступ, его необходимо зарегистрировать в Azure AD.  
+Прежде чем мобильное приложение Power BI сможет подключиться к службам отчетов и получить к ним доступ, необходимо правильно зарегистрироваться в Azure AD.  
 
-1. Зарегистрируйте приложение в Azure AD, выполнив [Шаг 2 в статье как включить собственные клиентские приложения для взаимодействия с приложениями прокси](application-proxy-configure-native-client-application.md#step-2-register-your-native-application).
+1. На странице **обзор** Azure Active Directory выберите **Регистрация приложений**.
+2. На вкладке **все приложения** найдите приложение, созданное на шаге 2.
+3. Выберите приложение, а затем выберите **Проверка**подлинности.
+4. Добавьте следующие URI перенаправления в зависимости от используемой платформы.
 
-   При регистрации приложения для Power BI Mobile **iOS**добавьте следующие URI перенаправления:
+   При регистрации приложения для Power BI Mobile **iOS**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
    
-   При регистрации приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления:
+   При регистрации приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
 
    > [!IMPORTANT]
-   > Для правильной работы приложения необходимо добавить URI перенаправления.
+   > Для правильной работы приложения необходимо добавить URI перенаправления. Если вы настраиваете это как для iOS, так и для Android, вам нужно только зарегистрировать **одно** приложение и добавить URI перенаправления для iOS и Android. Если требуется отдельное приложение для каждой платформы, необходимо включить URI перенаправления: `mspbi-adal://com.microsoft.powerbimobile` для обоих приложений.
 
-Теперь, когда вы зарегистрировали собственное приложение, вы можете предоставить ему доступ к другим приложениям в каталоге, в данном случае для доступа к службам отчетов, опубликованным через прокси приложения. Выполните действия, описанные в [шаге 3. Предоставьте доступ к вашему прокси-](application-proxy-configure-native-client-application.md#step-3-grant-access-to-your-proxy-application)приложению.
+2. Теперь, когда вы зарегистрировали собственное приложение, вы можете предоставить ему доступ к другим приложениям в каталоге, в данном случае для доступа к службам отчетов, опубликованным через прокси приложения. Выполните действия, описанные в [шаге 3. Предоставьте доступ к вашему прокси-](application-proxy-configure-native-client-application.md#step-3-grant-access-to-your-proxy-application)приложению.
 
 ## <a name="step-4-connect-from-the-power-bi-mobile-app"></a>Шаг 4. Подключение из приложения Power BI Mobile
 

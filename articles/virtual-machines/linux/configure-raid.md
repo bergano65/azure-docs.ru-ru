@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/02/2017
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: a7e6c0b2f260976842a0b3ac1f7f69fa859e2283
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: d194f4d883063c27da05c9ddf63de2b225a8c10a
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671667"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980969"
 ---
 # <a name="configure-software-raid-on-linux"></a>Настройка программного RAID-массива в Linux
 Это обычный сценарий для использования программного RAID-массива на виртуальных машинах Linux в Azure, который позволяет представить множество дисков данных в виде одного RAID-устройства. Обычно это делается для повышения производительности и обеспечения возможности увеличения пропускной способности по сравнению с использованием только одного диска.
@@ -122,19 +122,19 @@ ms.locfileid: "67671667"
 
 1. Создайте файловую систему на новом RAID-устройстве.
    
-    1\. **CentOS, Oracle Linux, SLES 12, openSUSE и Ubuntu**
+    **CentOS, Oracle Linux, SLES 12, openSUSE и Ubuntu**
 
     ```bash   
     sudo mkfs -t ext4 /dev/md127
     ```
    
-    2\. **SLES 11**
+    **SLES 11**
 
     ```bash
     sudo mkfs -t ext3 /dev/md127
     ```
    
-    В. **SLES 11** — включите boot.md и создайте mdadm.conf.
+    **SLES 11** — включите boot.md и создайте mdadm.conf.
 
     ```bash
     sudo -i chkconfig --add boot.md
@@ -144,7 +144,7 @@ ms.locfileid: "67671667"
    > [!NOTE]
    > После внесения этих изменений в системах SUSE может потребоваться перезагрузка. Этот шаг *не* является обязательным для SLES 12.
    > 
-   > 
+   
 
 ## <a name="add-the-new-file-system-to-etcfstab"></a>Добавление новой файловой системы в /etc/fstab
 > [!IMPORTANT]

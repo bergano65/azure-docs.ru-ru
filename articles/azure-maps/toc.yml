@@ -233,6 +233,8 @@
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
         - name: Maps

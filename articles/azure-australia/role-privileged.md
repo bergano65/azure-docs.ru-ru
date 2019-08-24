@@ -6,12 +6,12 @@ ms.service: azure-australia
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: grgale
-ms.openlocfilehash: a9451b5dcd572eee27809cf66df889f06da960ed
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e2a94f82e4830bd1e9c96039f5ef8fe6546b0d0b
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68571501"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982673"
 ---
 # <a name="role-based-access-control-rbac-and-privileged-identity-management-pim"></a>Управление доступом на основе ролей (RBAC) и управление привилегированными пользователями (PIM)
 
@@ -27,7 +27,7 @@ ms.locfileid: "68571501"
 
 ![RBAC — обзор](media/rbac-overview.png)
 
-* **Субъекты безопасности**: Субъект безопасности может быть одним из следующих: пользователь, группа, [субъект-служба или [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Субъектам безопасности следует назначить права доступа с помощью групп Azure Active Directory.
+* **Субъекты безопасности**: Субъект безопасности может быть одним из следующих: пользователь, группа, субъекты- [службы](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)или [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Субъектам безопасности следует назначить права доступа с помощью групп Azure Active Directory.
 
 * **Определения ролей**: Определение роли, также называемое ролью, представляет собой коллекцию разрешений. Эти разрешения определяют операции, которые могут быть выполнены субъектами безопасности, назначенными для определения роли. Эта функция предоставляется ролями ресурсов Azure и Azure Active Directory ролями администратора. Azure поставляется с набором встроенных ролей (Link), которые можно дополнить пользовательскими ролями.
 

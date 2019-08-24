@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.openlocfilehash: 30eb922e17810ddd53166a702b5fc513684f2140
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: b451769f5f98bf64ca340504c983f16d1db36647
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742381"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991558"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?
 
@@ -178,6 +178,9 @@ _Дата вывода_ — это дата, после которой верс
 ## <a name="default-node-configuration-and-virtual-machine-sizes-for-clusters"></a>Конфигурация узлов и размеры виртуальных машин по умолчанию для кластеров
 
 В следующих таблицах перечислены размеры виртуальных машин по умолчанию для кластеров HDInsight.  В этой таблице представлены размеры виртуальных машин, которые будут использоваться при создании сценариев PowerShell или Azure CLI для развертывания кластеров HDInsight.
+
+> [!NOTE]
+> Единственными типами кластеров с дисками данных являются Kafka и HBase кластеры с включенной функцией ускоренной записи. В этих сценариях HDInsight поддерживает размеры дисков P30 и S30.
 
 > [!IMPORTANT]  
 > Если в кластере требуется более 32 рабочих узлов, для головного узла следует выбрать размер с по крайней мере 8 ядрами и 14 ГБ ОЗУ.

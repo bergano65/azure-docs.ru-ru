@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea5e476680b07a6a7ba2b57e94f1f0b99cc10987
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.openlocfilehash: 8987c14fab141a71ba2dd9f1ed228a56ce419bce
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990087"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982823"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -133,7 +133,7 @@ ms.locfileid: "68990087"
 
 Наборы данных предоставляют методы для работы с данными в популярных форматах, таких как `from_delimited_files()` использование `to_pandas_dataframe()`или.
 
-Дополнительные сведения см. в разделе [Создание и регистрация машинное обучение Azure наборов данных](how-to-create-register-datasets.md).  Дополнительные примеры использования наборов данных см. в [примере записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/work-with-data/datasets).
+Дополнительные сведения см. в разделе [Создание и регистрация машинное обучение Azure наборов данных](how-to-create-register-datasets.md).  Дополнительные примеры использования наборов данных см. в [примере записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/datasets).
 
 **Хранилище** данных — это абстракция хранилища для учетной записи хранения Azure. Хранилище данных может использовать контейнер больших двоичных объектов Azure или файловый ресурс Azure в качестве внутреннего хранилища. Каждая рабочая область содержит хранилище данных по умолчанию. Вы можете зарегистрировать дополнительные хранилища данных. Используйте API пакета SDK для Python или интерфейс командной строки Машинного обучения Azure для хранения и извлечения файлов из хранилища данных.
 

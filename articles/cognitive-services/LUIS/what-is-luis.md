@@ -23,7 +23,7 @@ ms.locfileid: "68563195"
 
 Клиентское приложение для LUIS — это любое диалоговое приложение, которое взаимодействует с пользователем на естественном языке для выполнения задачи. Примеры клиентских приложений включают в себя приложения для социальных сетей, чат-боты и классические приложения с поддержкой речи.  
 
-![Схематическое изображение 3-х клиентских приложений, работающих со службой "Распознавание речи" Cognitive Services](./media/luis-overview/luis-entry-point.png "Conceptual image of 3 client applications working with Cognitive Services Language Understanding (LUIS)")
+![Схематическое изображение 3-х клиентских приложений, работающих со службой &quot;Распознавание речи&quot; Cognitive Services](./media/luis-overview/luis-entry-point.png "Conceptual image of 3 client applications working with Cognitive Services Language Understanding (LUIS)")
 
 ## <a name="use-luis-in-a-chat-bot"></a>Использование LUIS в чат-боте
 
@@ -32,7 +32,7 @@ ms.locfileid: "68563195"
 После публикации приложения LUIS клиентское приложение отправляет фразы (текст) в [API][endpoint-apis] конечной точки обработки естественного языка LUIS и получает результаты в виде ответов JSON. Типичное применение клиента для LUIS — чат-бот.
 
 
-![Схематическое изображение LUIS, работающего с чат-ботом для прогнозирования пользовательского текста с помощью распознавания естественного языка](./media/luis-overview/luis-overview-process-2.png "Conceptual imagery of LUIS working with Chat bot to predict user text with natural language understanding (NLP")
+![Схематическое изображение LUIS, работающего с чат-ботом для прогнозирования пользовательского текста с помощью распознавания естественной речи](./media/luis-overview/luis-overview-process-2.png "Conceptual imagery of LUIS working with Chat bot to predict user text with natural language understanding (NLP")
 
 |Шаг|Действие|
 |:--|:--|

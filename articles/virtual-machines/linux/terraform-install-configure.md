@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/19/2018
 ms.author: gwallace
-ms.openlocfilehash: 14bbbb6581d3e6d00db532e343f8362fc44d0044
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: c7251b24ccd15971a704b6b47288f49168b27039
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876340"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980884"
 ---
 # <a name="install-and-configure-terraform-to-provision-vms-and-other-infrastructure-into-azure"></a>Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure
  
@@ -47,10 +47,10 @@ Usage: terraform [--version] [--help] <command> [args]
 
 Создайте [субъект-службу Azure AD](/cli/azure/create-an-azure-service-principal-azure-cli), чтобы предоставить Terraform возможность подготовить ресурсы в Azure. Субъект-служба предоставляет сценарии Terraform для подготовки ресурсов в подписке Azure.
 
-Если у вас есть несколько подписок Azure, сначала запросите свою учетную запись с помощью команды[az account show](/cli/azure/account#az-account-show), чтобы получить список значений идентификатора подписки и идентификатора клиента:
+Если у вас несколько подписок Azure, сначала запросите учетную запись с помощью команды [AZ Account List](/cli/azure/account#az-account-list) , чтобы получить список значений идентификатора подписки и идентификатора клиента:
 
 ```azurecli-interactive
-az account show --query "{subscriptionId:id, tenantId:tenantId}"
+az account list --query "[].{name:name, subscriptionId:id, tenantId:tenantId}"
 ```
 
 Чтобы использовать выбранную подписку, настройте подписку для этого сеанса с помощью команды [az account set](/cli/azure/account#az-account-set). Настройте переменную среды `SUBSCRIPTION_ID`, чтобы она хранила значение возвращаемого поля `id` из подписки, которую необходимо использовать.
