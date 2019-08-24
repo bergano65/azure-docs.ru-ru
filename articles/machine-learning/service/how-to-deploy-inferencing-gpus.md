@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 07/24/2019
-ms.openlocfilehash: 9cf39230d6a2c615925222b6545a091a4be941ac
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 08ceb5d795465a5759d0130618eafdccdc8c3c91
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847984"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011522"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
@@ -23,13 +23,16 @@ ms.locfileid: "68847984"
 
 Вывод или оценка модели — это этап, в котором для создания прогнозов используется развернутая модель. Использование графических процессоров вместо ЦП обеспечивает преимущества производительности при параллелизуемыеных вычислениях.
 
+> [!IMPORTANT]
+> Вывод GPU поддерживается только в службе Kubernetes Azure.
+
 > [!TIP]
 > Хотя фрагменты кода в этой статье Уси модель TensorFlow, эту информацию можно применить к любой платформе машинного обучения, которая поддерживает GPU.
 
 > [!NOTE]
 > Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](how-to-manage-workspace.md).
 

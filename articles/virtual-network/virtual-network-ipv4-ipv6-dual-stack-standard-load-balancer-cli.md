@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения с двойным стеком IPv6 с Load Balancer (цен. категория "Стандартный") в виртуальной сети Azure с помощью интерфейса командной строки
+title: Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью интерфейса командной строки
 titlesuffix: Azure Virtual Network
 description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 в виртуальной сети Azure с помощью Azure CLI.
 services: virtual-network
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 7b231ded3fdae7553e101beff2ee77d82fe27e6e
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: f67494b229a14b66b593950903184e54e4a8ab8c
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269628"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013702"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-with-standard-load-balancer-in-azure-virtual-network---cli-preview"></a>Развертывание приложения с двойным стеком IPv6 с Load Balancer (цен. категория "Стандартный") в виртуальной сети Azure с помощью интерфейса командной строки (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli-preview"></a>Развертывание приложения с двумя стеками IPv6 в виртуальной сети Azure с помощью интерфейса командной строки (Предварительная версия)
 
-В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с двойной подсетью, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с двумя сетевыми картами, которые имеют сдвоенную конфигурацию IP два правила группы безопасности сети и два общедоступных IP-адреса.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) с помощью Load Balancer (цен. категория "Стандартный") в Azure, которое включает в себя виртуальную сеть с двумя стеками с двойной подсетью, Load Balancer (цен. категория "Стандартный") с двумя интерфейсными конфигурациями (IPv4 + IPv6), ВМ с Сетевые карты с двумя IP-конфигурациями, двумя правилами группы безопасности сети и двумя общедоступными IP.
 
 > [!Important]
 > В настоящее время два стека IPv6 для виртуальной сети Azure находятся в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -51,7 +51,7 @@ az feature show --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```azurelci
 az provider register --namespace Microsoft.Network
 ```
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group). В следующем примере создается группа ресурсов с именем *миргдуалстакк* в расположении *eastus* :
 
@@ -182,7 +182,7 @@ az network lb rule create \
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создать группу доступности
 Чтобы повысить доступность приложения, разместите виртуальные машины в группе доступности.
 
 Создайте группу доступности с помощью команды [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
@@ -266,7 +266,7 @@ az network nsg rule create \
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*:
 

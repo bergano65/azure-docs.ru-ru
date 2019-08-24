@@ -4,17 +4,16 @@ description: Контрольный список атрибутов безопа
 services: service-bus-messaging
 ms.service: service-bus-messaging
 documentationcenter: ''
-author: msmbaldwin
-manager: barbkess
+author: axisc
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 0e1d6e041b47a261b549fb8b608cf09d0d6362dd
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.author: aschhab
+ms.openlocfilehash: 875754282f9e7a2b8dd92b0eb2d7e277ac842696
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68443896"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013109"
 ---
 # <a name="security-attributes-for-azure-service-bus-messaging"></a>Атрибуты безопасности для обмена сообщениями служебной шины Azure
 
@@ -52,7 +51,7 @@ ms.locfileid: "68443896"
 | Атрибут безопасности | Да или нет | Примечания|
 |---|---|--|
 | Проверка подлинности| Да | Управляется с помощью [Azure Active Directory управляемое удостоверение службы](service-bus-managed-service-identity.md); см. раздел [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md).|
-| Authorization| Да | Поддерживает авторизацию через [RBAC](service-bus-role-based-access-control.md) (Предварительная версия) и маркер SAS; см. раздел [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md). |
+| Authorization| Да | Поддерживает авторизацию через [RBAC](authenticate-application.md) и маркер SAS; см. раздел [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md). |
 
 
 

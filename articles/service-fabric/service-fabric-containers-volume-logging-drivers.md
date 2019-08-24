@@ -1,5 +1,5 @@
 ---
-title: Драйвер тома службы файлов Azure для Service Fabric (предварительная версия) | Документация Майкрософт
+title: Service Fabric драйвер тома файлов Azure (GA) | Документация Майкрософт
 description: Service Fabric поддерживает использование службы файлов Azure для резервного копирования томов в контейнере. Сейчас этот компонент доступен в предварительной версии.
 services: service-fabric
 author: athinanthny
@@ -9,21 +9,23 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 6/10/2018
 ms.author: atsenthi
-ms.openlocfilehash: eb45dda9886450d217355d876ae35af954d99845
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 70784e2c8c91d39c34ba503cc3ebfcf3469939d9
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955595"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013500"
 ---
 # <a name="service-fabric-azure-files-volume-driver"></a>Драйвер тома Service Fabric файлов Azure
-Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Его целью является предоставление томов на основе файлов Azure для других Service Fabric приложений-контейнеров, развернутых в кластере.
+Подключаемый модуль тома файлов Azure, [подключаемый модуль томов DOCKER](https://docs.docker.com/engine/extend/plugins_volume/) , который предоставляет тома на основе [файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров DOCKER, теперь является общедоступным.
+
+Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Его целью является предоставление томов на основе файлов Azure для других Service Fabric приложений-контейнеров, развернутых в кластере.
 
 > [!NOTE]
-> Версия подключаемого модуля тома файлов Azure версии 6.5.516.9494 — это предварительная версия, доступная в этом документе. Как и любой предварительный выпуск, эта версия **не** предназначена для рабочих сред.
+> Версия подключаемого модуля тома файлов Azure версии 6.5.661.9590 — общедоступная версия. 
 >
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
 
 * Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
@@ -119,11 +121,11 @@ ms.locfileid: "68955595"
 4. Создайте приложение, обращая особое внимание на значение параметра приложения **ListenPort** . Это значение представляет собой порт, на котором подключаемый модуль тома файлов Azure прослушивает запросы от управляющей программы DOCKER. Убедитесь, что порт, предоставленный приложению, соответствует Волумеплугинпортс в ClusterManifest и не конфликтует с любым другим портом, используемым кластером или вашими приложениями.
 
     ```powershell
-    New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.516.9494  -ApplicationParameter @{ListenPort='19100'}
+    New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.661.9590   -ApplicationParameter @{ListenPort='19100'}
     ```
 
     ```bash
-    sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type AzureFilesVolumePluginType --app-version 6.5.516.9494 --parameter '{"ListenPort":"19100"}'
+    sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type AzureFilesVolumePluginType --app-version 6.5.661.9590  --parameter '{"ListenPort":"19100"}'
     ```
 
 > [!NOTE]
@@ -136,11 +138,11 @@ ms.locfileid: "68955595"
  Число экземпляров службы по умолчанию для приложения подключаемого модуля тома службы файлов Azure равно –1. Это означает, что экземпляр службы развернут на каждом узле в кластере. Тем не менее при развертывании приложения подключаемого модуля тома службы файлов Azure в локальном кластере разработки нужно указать число экземпляров, равное 1. Это можно сделать с помощью параметра приложения **InstanceCount**. Поэтому команда для создания приложения подключаемого модуля тома файлов Azure в локальном кластере разработки:
 
 ```powershell
-New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.516.9494 -ApplicationParameter @{ListenPort='19100';InstanceCount='1'}
+New-ServiceFabricApplication -ApplicationName fabric:/AzureFilesVolumePluginApp -ApplicationTypeName AzureFilesVolumePluginType -ApplicationTypeVersion 6.5.661.9590  -ApplicationParameter @{ListenPort='19100';InstanceCount='1'}
 ```
 
 ```bash
-sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type AzureFilesVolumePluginType --app-version 6.5.516.9494 --parameter '{"ListenPort": "19100","InstanceCount": "1"}'
+sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type AzureFilesVolumePluginType --app-version 6.5.661.9590  --parameter '{"ListenPort": "19100","InstanceCount": "1"}'
 ```
 
 ## <a name="configure-your-applications-to-use-the-volume"></a>Настройка приложений для использования тома

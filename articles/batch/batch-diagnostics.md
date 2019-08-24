@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: da5a71c75485f929ba9c4f510066df84d7a31996
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
-ms.translationtype: HT
+ms.openlocfilehash: 23c5b7aab73ec6335238abede57f01ec7a30ef5f
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992170"
+ms.locfileid: "70012512"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -120,7 +120,7 @@ ms.locfileid: "69992170"
 ```
 insights-{log category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/
 RESOURCEGROUPS/{resource group name}/PROVIDERS/MICROSOFT.BATCH/
-BATCHACCOUNTS/{batch account name}/y={four-digit numeric year}/
+BATCHACCOUNTS/{Batch account name}/y={four-digit numeric year}/
 m={two-digit numeric month}/d={two-digit numeric day}/
 h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
@@ -131,12 +131,15 @@ insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
 RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/
 BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 ```
-Каждый файл BLOB-объекта PT1H.json содержит большой двоичный объект в формате JSON с событиями, произошедшими в течение часа, указанного в URL-адресе этого объекта (например, h=12). В течение заданного часа события добавляются в файл PT1H.json по мере возникновения. Значение минуты (m=00) всегда равно 00, так как события журнала диагностики разбиваются на отдельные большие двоичные объекты каждый час. (Все значения времени указаны в формате UTC.)
+Каждый `PT1H.json` файл большого двоичного объекта содержит события в формате JSON, которые произошли в течение часа, указанного в URL `h=12`-адресе большого двоичного объекта (например,). В течение текущего часа события добавляются к `PT1H.json` файлу по мере их возникновения. Значение минуты (`m=00`) всегда `00`равно, так как события журнала диагностики разбиваются на отдельные большие двоичные объекты в час. (Все значения времени указаны в формате UTC.)
 
+Ниже приведен пример `PoolResizeCompleteEvent` записи `PT1H.json` в файле журнала. Он содержит сведения о текущем и целевом количестве узлов с выделенным и низким приоритетом, а также время начала и окончания операции.
 
-Дополнительные сведения о схеме хранения журналов диагностики в учетной записи хранения см. в разделе [Схема журналов диагностики в учетной записи хранилища](../azure-monitor/platform/archive-diagnostic-logs.md#schema-of-diagnostic-logs-in-the-storage-account).
+```
+{ "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
+```
 
-Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища. 
+Дополнительные сведения о схеме хранения журналов диагностики в учетной записи хранения см. в разделе [Схема журналов диагностики в учетной записи хранилища](../azure-monitor/platform/archive-diagnostic-logs.md#schema-of-diagnostic-logs-in-the-storage-account). Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища. 
 
 ### <a name="service-log-events"></a>События журнала службы
 Журналы пакетной службы Azure (если вы их собираете) содержат события, генерируемые пакетной службой Azure за время существования каждого ресурса пакетной службы, например пула или задачи. Каждое событие, генерируемое пакетной службой, сохраняется в журнал в формате JSON. Например, так выглядит текст **события создания пула**:

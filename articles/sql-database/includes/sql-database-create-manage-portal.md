@@ -3,18 +3,18 @@ author: stevestein
 ms.service: sql-database
 ms.subservice: operations
 ms.topic: include
-ms.date: 08/09/2019
+ms.date: 08/23/2019
 ms.author: sstein
-ms.openlocfilehash: f7b385f359311217595352be31ba0687ca87bf40
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 9e189d0582d2e81193c892cb349b475ed0d68df8
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873722"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70014810"
 ---
 ## <a name="create-and-manage-azure-sql-resources-with-the-azure-portal"></a>Создание ресурсов SQL Azure и управление ими с помощью портал Azure
 
-Портал Azure предоставляет одну страницу, где можно управлять [всеми ресурсами Azure SQL](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fazuresql) , включая виртуальные машины SQL.
+Портал Azure предоставляет одну страницу, где можно управлять [всеми ресурсами Azure SQL](https://go.microsoft.com/fwlink/?linkid=2100641) , включая виртуальные машины SQL.
 
 Чтобы получить доступ к странице **ресурсов SQL Azure** , выберите **Azure SQL** в меню слева портал Azure. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите *Azure SQL* в поле поиска.
 

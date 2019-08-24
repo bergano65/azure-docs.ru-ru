@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения с двойным стеком IPv6 с Load Balancer (цен. категория "Стандартный") в виртуальной сети Azure с помощью PowerShell
+title: Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью PowerShell
 titlesuffix: Azure Virtual Network
 description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 с Load Balancer (цен. категория "Стандартный") в виртуальной сети Azure с помощью Azure PowerShell.
 services: virtual-network
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: 99e01aa611eea3d6379e2a250cc99d121e41aa82
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 05794cfaf6a550d32acdfb731a5f477111e65606
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269680"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011418"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-with-standard-load-balancer-in-azure---powershell-preview"></a>Развертывание приложения с двойным стеком IPv6 с помощью Load Balancer (цен. категория "Стандартный") в Azure PowerShell (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 в Azure с помощью PowerShell (Предварительная версия)
 
-В этой статье показано, как развернуть в Azure приложение с двойным стеком (IPv4 + IPv6), которое включает в себя виртуальную сеть и подсеть с двумя стеками, подсистему балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальные машины с сетевыми картами с двойной конфигурацией IP-адресов, сеть группы безопасности и общедоступные IP-адреса.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) с помощью Load Balancer (цен. категория "Стандартный") в Azure, которое включает в себя две виртуальные сети и подсети с двумя стеками, Load Balancer (цен. категория "Стандартный") с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальные машины с сетевыми картами с Конфигурация с двумя IP-адресами, группа безопасности сети и общедоступные IP.
 
 > [!Important]
 > Поддержка IPv6 для виртуальной сети Azure в настоящее время доступна в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -50,7 +50,7 @@ Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace
 Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *миргдуалстакк* в расположении *Восточная часть США* :
 
@@ -173,7 +173,7 @@ $lb = New-AzLoadBalancer `
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин и проверки балансировщика необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создать группу доступности
 Чтобы улучшить высокую доступность приложения, поместите виртуальные машины в группу доступности.
 
 Создайте группу доступности с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset). В следующем примере создается группа доступности *myAvailabilitySet*.
@@ -237,7 +237,7 @@ $nsg = New-AzNetworkSecurityGroup `
 -Name "dsNSG1"  `
 -SecurityRules $rule1,$rule2
 ```
-### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 

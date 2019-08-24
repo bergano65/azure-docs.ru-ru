@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f8203cade1d2e34a9852e945df03dc2fddc1fbe5
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 4e1d83d99f6df9407e24e2ae57af70f68858092d
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359413"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012755"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -38,7 +38,7 @@ ms.locfileid: "68359413"
 
 В настоящее время динамические метрики поддерживаются для ASP.NET, ASP.NET Core, функций Azure, Java и приложений Node. js.
 
-## <a name="get-started"></a>Начать работу
+## <a name="get-started"></a>Начало работы
 
 1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.md), сделайте это сейчас.
 2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
@@ -65,7 +65,7 @@ ms.locfileid: "68359413"
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
 |Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
-|Бесплатно|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
+|Бесплатный|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
 |Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Взаимодействие является односторонним (в сторону портала)|
 
@@ -107,7 +107,12 @@ ms.locfileid: "68359413"
 ![Выборка динамических ошибок](./media/live-stream/live-stream-filter.png)
 
 ## <a name="sdk-requirements"></a>Требования к пакетам SDK
+
+### <a name="net"></a>.NET
 Пользовательские метрики и события Live Metrics Stream доступны при использовании версии 2.4.0-beta2 или более новой версии [пакета SDK для Application Insights для веб-приложений](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/). Не забудьте выбрать параметр "Включить предварительные выпуски" в диспетчере пакетов NuGet.
+
+### <a name="nodejs"></a>Node.js
+Live Metrics Stream доступен в пакете SDK для Application Insights версии 1.3.0 или более поздних версий [для Node. js](https://npmjs.com/package/applicationinsights). Не забывайте использовать `setSendLiveMetrics(true)` при настройке пакета SDK в коде.
 
 ## <a name="secure-the-control-channel"></a>Защита канала управления
 Указываемые вами пользовательские критерии фильтра передаются в компонент Live Metrics в пакете SDK для Application Insights. Фильтры могут содержать конфиденциальные сведения, например идентификаторы клиентов. Помимо ключа инструментирования, канал для их передачи можно защитить секретным ключом API.

@@ -14,22 +14,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 25cae58663f6fa7ef27995c10509eb33e49dd4c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8e60f5251f911ffe2b917dcc30e433e0a960823e
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65522813"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012570"
 ---
 # <a name="create-a-netapp-account"></a>Создание учетной записи NetApp
 Создание учетной записи NetApp предоставляет возможность настройки пула емкости и впоследствии создания тома. Чтобы создать новую учетную запись NetApp, нужно использовать колонку Azure NetApp Files.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Необходимо, вы получили сообщение электронной почты от команды Azure NetApp файлы, подтверждающее, что вам был предоставлен доступ к службе. См. в разделе [ожидания помещается запрос доступа к службе](azure-netapp-files-register.md#waitlist).
+Вы должны получить сообщение электронной почты от команды Azure NetApp Files, подтверждая, что вам предоставлен доступ к службе. См. статью [Отправка запроса ваитлист для доступа к службе](azure-netapp-files-register.md#waitlist).
 
-Необходимо также зарегистрировать подписку для поставщика ресурсов NetApp. См. в разделе [зарегистрировать поставщик ресурсов NetApp](azure-netapp-files-register.md#resource-provider).
+Кроме того, необходимо зарегистрировать подписку для использования поставщика ресурсов NetApp. См. раздел [Регистрация поставщика ресурсов NetApp](azure-netapp-files-register.md#resource-provider).
 
-## <a name="steps"></a>Действия 
+## <a name="steps"></a>Шаги 
 
 1. Войдите на портал Azure. 
 2. Подключитесь к колонке Azure NetApp Files, используя один из следующих способов.  
@@ -58,11 +58,12 @@ ms.locfileid: "65522813"
    Созданная учетная запись NetApp теперь отображается в колонке Azure NetApp Files. 
 
 > [!NOTE] 
-> Если вы не имеют доступа к службе файлов Azure NetApp, вы получите следующую ошибку при попытке создать первую учетную запись NetApp:  
+> Если вы не предоставили доступ к службе Azure NetApp Files, при попытке создать первую учетную запись NetApp появится следующее сообщение об ошибке:  
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
-[Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+* [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+* [Управление ресурсами Azure NetApp Files с помощью Azure CLI](https://docs.microsoft.com/cli/azure/netappfiles?view=azure-cli-latest)
 

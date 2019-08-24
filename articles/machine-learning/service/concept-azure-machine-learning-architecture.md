@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8987c14fab141a71ba2dd9f1ed228a56ce419bce
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
-ms.translationtype: HT
+ms.openlocfilehash: b7cb4f1a106d8caa2c43f5f17c5efa16a3ee6df2
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982823"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011647"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -151,7 +151,7 @@ ms.locfileid: "69982823"
 
 ### <a name="runs"></a>Запуски
 
-Запуск — это запись, которая содержит следующие сведения:
+Запуск — это однократный запуск сценария обучения. Машинное обучение Azure записывает все запуски и сохраняет следующие сведения:
 
 * метаданные о запуске (метка времени, длительность и т. д.);
 * метрики, записанные в журнал с помощью сценария;

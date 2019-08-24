@@ -4,7 +4,6 @@ description: Аутентификация приложений в служебн
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
-manager: timlt
 editor: spelluru
 ms.assetid: 18bad0ed-1cee-4a5c-a377-facc4785c8c9
 ms.service: service-bus-messaging
@@ -12,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/23/2019
+ms.date: 08/22/2019
 ms.author: aschhab
-ms.openlocfilehash: 7c5a45504b7c44d97ff2250663ef9c47ef6e3595
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7234e33c04e742c77630f8d87481c7831fb00bf2
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60714512"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013250"
 ---
 # <a name="service-bus-authentication-and-authorization"></a>Аутентификация и авторизация в служебной шине
 
@@ -30,8 +29,19 @@ ms.locfileid: "60714512"
 > [!IMPORTANT]
 > Если вы используете службу контроля доступа Azure Active Directory (также известна как служба контроля доступа или ACS) вместе со служебной шиной, обратите внимание, что сейчас поддержка этого метода ограничена и вам необходимо использовать в приложении подписанный URL-адрес (SAS). Дополнительные сведения см. в [этой записи блога](https://blogs.msdn.microsoft.com/servicebus/2017/06/01/upcoming-changes-to-acs-enabled-namespaces/) и в [этой статье](service-bus-migrate-acs-sas.md).
 
-## <a name="shared-access-signature-authentication"></a>Проверка подлинности с помощью подписанного URL-адреса
+## <a name="azure-active-directory"></a>Azure Active Directory
+Интеграция Azure Active Directory (Azure AD) для ресурсов служебной шины обеспечивает контроль доступа на основе ролей (RBAC) для точного управления доступом клиента к ресурсам. Управление доступом на основе ролей (RBAC) можно использовать для предоставления разрешений субъекту безопасности, который может быть пользователем, группой или субъектом-службой приложения. Проверка подлинности субъекта безопасности в Azure AD возвращает маркер OAuth 2,0. Токен можно использовать для авторизации запроса на доступ к ресурсу служебной шины (очередь, раздел и т. д.).
 
+Дополнительные сведения о проверке подлинности в Azure AD см. в следующих статьях:
+
+- [Проверка подлинности с помощью управляемых удостоверений](service-bus-managed-service-identity.md)
+- [Аутентификация из приложения](authenticate-application.md)
+
+> [!IMPORTANT]
+> Авторизация пользователей или приложений с помощью токена OAuth 2,0, возвращенного Azure AD, обеспечивает более высокую безопасность и простоту использования подписей общего доступа (SAS). В Azure AD нет необходимости хранить маркеры в коде и угрожать потенциальным уязвимостям безопасности. Мы рекомендуем использовать Azure AD с приложениями служебной шины Azure, когда это возможно. 
+
+
+## <a name="shared-access-signature"></a>Подписанный URL-адрес
 [Проверка подлинности SAS](service-bus-sas.md) позволяет предоставлять пользователю доступ к ресурсам служебной шины с определенными правами. Проверка подлинности SAS в служебной шине предусматривает настройку соответствующих прав для криптографического ключа в ресурсе служебной шины. Затем клиенты могут получить доступ к этому ресурсу. Для этого им нужно предоставить маркер SAS, который состоит из универсального кода ресурса (URI) данного ресурса, а также указать срок действия, подписанный с использованием настроенного ключа.
 
 Ключи для SAS можно настроить в пространстве имен служебной шины. Ключ применяется ко всем сущностям обмена сообщениями в пределах этого пространства имен. Также можно настроить ключи для очередей и разделов служебной шины. Кроме того, SAS поддерживается в [ретрансляторе Azure](../service-bus-relay/relay-authentication-and-authorization.md).
@@ -49,7 +59,7 @@ ms.locfileid: "60714512"
 
 Поддержка проверки подлинности SAS для служебной шины включена в пакет Azure SDK для .NET 2.0 и более поздних версий. SAS включает в себя поддержку правила [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule). Все интерфейсы API, которые принимают строку подключения в качестве параметра, поддерживают строки подключения SAS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о SAS см. в статье [Аутентификация служебной шины с помощью подписанных URL-адресов](service-bus-sas.md).
 - [Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса](service-bus-migrate-acs-sas.md).

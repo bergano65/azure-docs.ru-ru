@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 9a7baa6385e0130b784b264a4c53c232ae8a1b50
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
-ms.translationtype: HT
+ms.openlocfilehash: 85b1e3eae9d7472fa829665707fca481a28f0623
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980460"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011275"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация объектов и учетных данных в управляемом домене доменных служб Azure AD
 
@@ -127,7 +127,7 @@ Azure AD имеет гораздо более простое и неструкт
 
 Для облачных сред Azure AD [Пользователи должны сбросить или изменить свой пароль](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) , чтобы создать и сохранить в Azure AD необходимые хэши паролей. Для любой облачной учетной записи пользователя в Azure AD хэши паролей сохраняются и создаются в совместимых форматах NTLM и Kerberos после включения доменных служб Azure AD. Эти новые учетные записи не требуют сброса или изменения пароля для создания устаревших хэшей паролей.
 
-Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](active-directory-ds-getting-started-password-sync-synced-tenant.md).
+Для гибридных учетных записей пользователей, синхронизированных из локальной среды AD DS с помощью Azure AD Connect, необходимо [настроить Azure AD Connect для синхронизации хэшей паролей в форматах, совместимых с NTLM и Kerberos](tutorial-configure-password-hash-sync.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

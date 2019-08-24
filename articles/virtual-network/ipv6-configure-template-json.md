@@ -12,16 +12,18 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 06/26/2019
 ms.author: kumud
-ms.openlocfilehash: e97a5a478871d94e074b59558a11df1ec752b0f9
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: b397c874045a89f5992aeadacfbbd4434a486977
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249847"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012841"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-with-basic-load-balancer-in-azure---template-preview"></a>Развертывание приложения с двойным стеком IPv6 с помощью базового Load Balancer в Azure — шаблон (Предварительная версия)
 
-В этой статье представлен список задач настройки IPv6 с частью шаблона Azure Resource Manager виртуальной машины, которая применяется к. Используйте шаблон, описанный в этой статье, чтобы развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с подсетями IPv4 и IPv6, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с сдвоенным IP-адресом. Конфигурация, группа безопасности сети и общедоступные IP-адреса. 
+В этой статье представлен список задач настройки IPv6 с частью шаблона Azure Resource Manager виртуальной машины, которая применяется к. Используйте шаблон, описанный в этой статье, чтобы развернуть приложение двойного стека (IPv4 + IPv6) с базовой Load Balancer, включающее в себя виртуальную сеть с двумя стеками с подсетями IPv4 и IPv6, базовую Load Balancer с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с Сетевые карты с двумя IP-конфигурациями, группой безопасности сети и общедоступными IP.
+
+Сведения о развертывании приложения с двойным стеком (IPV4 + IPv6) с помощью Load Balancer (цен. категория "Стандартный") см. в разделе [развертывание приложения с двумя стеками IPv6 с Load Balancer (цен. Категория "Стандартный")-Template](ipv6-configure-standard-load-balancer-template-json.md).
 
 ## <a name="required-configurations"></a>Требуемые конфигурации
 
@@ -107,7 +109,7 @@ ms.locfileid: "68249847"
             }
 ```
 
-## <a name="optional-configuration"></a>Дополнительные настройки
+## <a name="optional-configuration"></a>Необязательная конфигурация
 
 ### <a name="ipv6-internet-access-for-the-virtual-network"></a>Доступ к Интернету по протоколу IPv6 для виртуальной сети
 
@@ -176,7 +178,7 @@ ms.locfileid: "68249847"
 ```
 
 ## <a name="sample-vm-template-json"></a>Пример шаблона виртуальной машины JSON
-Чтобы развернуть приложение с двойным стеком IPv6 в виртуальной сети Azure с помощью шаблона Azure Resource Manager, просмотрите пример шаблона [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet/).
+Чтобы развернуть приложение с двумя стеками IPv6 с базовыми Load Balancer в виртуальной сети Azure с помощью шаблона Azure Resource Manager, просмотрите пример шаблона [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet/).
 
 ## <a name="next-steps"></a>Следующие шаги
 

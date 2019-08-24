@@ -8,12 +8,12 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: spelluru
-ms.openlocfilehash: 9ea22dfc83883238923de06a764d7ef1f11cb475
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
-ms.translationtype: HT
+ms.openlocfilehash: 818bebdb7555d1b515a5c4a3439d11d4a4766e56
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992995"
+ms.locfileid: "70011971"
 ---
 # <a name="authenticate-an-application-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности приложения с Azure Active Directory для доступа к ресурсам концентраторов событий
 Microsoft Azure предоставляет интегрированную систему управления доступом к ресурсам и приложениям на основе Azure Active Directory (Azure AD). Ключевым преимуществом использования Azure AD с концентраторами событий Azure является то, что вам больше не нужно хранить учетные данные в коде. Вместо этого можно запросить маркер доступа OAuth 2,0 на платформе Microsoft Identity. Azure AD выполняет проверку подлинности субъекта безопасности (пользователя, группы или субъекта-службы), на котором выполняется приложение. Если проверка подлинности прошла, Azure AD возвращает маркер доступа к приложению, а приложение может использовать маркер доступа для авторизации запросов к ресурсам концентраторов событий Azure.
@@ -26,9 +26,9 @@ Microsoft Azure предоставляет интегрированную сис
 ## <a name="built-in-roles-for-azure-event-hubs"></a>Встроенные роли для концентраторов событий Azure
 Azure предоставляет следующие встроенные роли RBAC для авторизации доступа к данным концентраторов событий с помощью Azure AD и OAuth:
 
-- [Владелец данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-owner-preview): Используйте эту роль, чтобы предоставить полный доступ к ресурсам концентраторов событий.
-- [Отправитель данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-sender-preview): Используйте эту роль, чтобы предоставить доступ на отправку ресурсам концентраторов событий.
-- [Приемник данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-receiver-preview): Используйте эту роль, чтобы предоставить доступ к ресурсам концентраторов событий.   
+- [Владелец данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-owner): Используйте эту роль, чтобы предоставить полный доступ к ресурсам концентраторов событий.
+- [Отправитель данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-sender): Используйте эту роль, чтобы предоставить доступ на отправку ресурсам концентраторов событий.
+- [Приемник данных концентраторов событий Azure](../role-based-access-control/built-in-roles.md#azure-event-hubs-data-receiver): Используйте эту роль, чтобы предоставить доступ к ресурсам концентраторов событий.   
 
 > [!IMPORTANT]
 > Наш предварительный выпуск поддерживал добавление привилегий доступа к данным концентраторов событий к роли владельца или участника. Однако права доступа к данным для роли владельца и участника больше не учитываются. Если вы используете роль владельца или участника, переключитесь на использование роли владельца данных концентраторов событий Azure.

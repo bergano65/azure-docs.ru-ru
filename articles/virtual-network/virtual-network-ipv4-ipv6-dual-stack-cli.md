@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью интерфейса командной строки
+title: Развертывание приложения с двумя стеками IPv6 с помощью базового Load Balancer в Azure-CLI
 titlesuffix: Azure Virtual Network
 description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 в виртуальной сети Azure с помощью Azure CLI.
 services: virtual-network
@@ -13,16 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: 75af2012c4e6287a2fbe76098c2a325e6c9ae2ef
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 265a14fa216741a5a5994389e671e7558a527261
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640693"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013715"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli-preview"></a>Развертывание приложения с двумя стеками IPv6 в виртуальной сети Azure с помощью интерфейса командной строки (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---cli-preview"></a>Развертывание приложения с двумя стеками IPv6 с помощью базового Load Balancer-CLI (Предварительная версия)
 
-В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с двойной подсетью, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с двумя сетевыми картами, которые имеют сдвоенную конфигурацию IP два правила группы безопасности сети и два общедоступных IP-адреса.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) с базовым Load Balancer с помощью Azure CLI, включающего в себя двойную виртуальную сеть с подсетью с двумя стеками, базовую Load Balancer с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с сетевыми картами. с двумя IP-конфигурациями, двумя правилами группы безопасности сети и двумя общедоступными IP.
+
+Сведения о развертывании приложения с двойным стеком (IPV4 + IPv6) с помощью Load Balancer (цен. категория "Стандартный") см. в статье [развертывание приложения с двумя стеками в формате IPv6 с помощью Load Balancer (цен. категория "Стандартный") Azure CLI](virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md).
 
 > [!Important]
 > В настоящее время два стека IPv6 для виртуальной сети Azure находятся в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).

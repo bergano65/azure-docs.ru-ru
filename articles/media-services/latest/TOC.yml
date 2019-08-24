@@ -149,7 +149,7 @@
       items:
         - name: Обзор
           href: media-services-apis-overview.md
-          displayName: 'accessing, naming, long-running'
+          displayName: 'accessing, naming, long-running, invalid character'
         - name: 'Разбиение на страницы, фильтрация и упорядочение сущностей'
           href: entities-overview.md
         - name: RBAC

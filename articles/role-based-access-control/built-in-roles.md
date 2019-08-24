@@ -15,12 +15,12 @@ ms.date: 08/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 09551eb2620349fa2445c1da3a7e0d66062ebaf0
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 776b8303e3454b40979691ea32fdcca11be4fa71
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899734"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013373"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -54,15 +54,15 @@ ms.locfileid: "69899734"
 | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. |
 | [Участник авере](#avere-contributor) | Может создавать кластер Авере Вфкст и управлять им. |
 | [Оператор авере](#avere-operator) | Используется кластером Авере Вфкст для управления кластером. |
-| [Владелец данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-owner-preview) | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. |
-| [Приемник данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-receiver-preview) | Разрешает получать доступ к ресурсам концентраторов событий Azure. |
-| [Отправитель данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-sender-preview) | Разрешает отправку доступа к ресурсам концентраторов событий Azure. |
+| [Владелец данных концентраторов событий Azure](#azure-event-hubs-data-owner) | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. |
+| [Приемник данных концентраторов событий Azure](#azure-event-hubs-data-receiver) | Разрешает получать доступ к ресурсам концентраторов событий Azure. |
+| [Отправитель данных концентраторов событий Azure](#azure-event-hubs-data-sender) | Разрешает отправку доступа к ресурсам концентраторов событий Azure. |
 | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
 | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
 | [Azure Maps модуль чтения данных (Предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ для чтения данных, связанных с картой, из учетной записи Azure Maps. |
-| [Владелец данных служебной шины Azure (Предварительная версия)](#azure-service-bus-data-owner-preview) | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
-| [Приемник данных служебной шины Azure (Предварительная версия)](#azure-service-bus-data-receiver-preview) | Разрешает получать доступ к ресурсам служебной шины Azure. |
-| [Отправитель данных служебной шины Azure (Предварительная версия)](#azure-service-bus-data-sender-preview) | Разрешает отправку доступа к ресурсам служебной шины Azure. |
+| [Владелец данных служебной шины Azure](#azure-service-bus-data-owner) | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
+| [Приемник данных служебной шины Azure](#azure-service-bus-data-receiver) | Разрешает получать доступ к ресурсам служебной шины Azure. |
+| [Отправитель данных служебной шины Azure](#azure-service-bus-data-sender) | Разрешает отправку доступа к ресурсам служебной шины Azure. |
 | [Владелец регистрации Azure Stack](#azure-stack-registration-owner) | Позволяет управлять регистрациями Azure Stack. |
 | [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но не может создавать хранилища и предоставлять доступ другим пользователям. |
 | [Оператор резервного копирования](#backup-operator) | Позволяет управлять службами архивации, но не удалять архивные копии, создавать хранилища или предоставлять доступ другим пользователям |
@@ -556,7 +556,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-event-hubs-data-owner-preview"></a>Владелец данных концентраторов событий Azure (Предварительная версия)
+## <a name="azure-event-hubs-data-owner"></a>Владелец данных концентраторов событий Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -571,7 +571,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-event-hubs-data-receiver-preview"></a>Приемник данных концентраторов событий Azure (Предварительная версия)
+## <a name="azure-event-hubs-data-receiver"></a>Приемник данных концентраторов событий Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -586,7 +586,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-event-hubs-data-sender-preview"></a>Отправитель данных концентраторов событий Azure (Предварительная версия)
+## <a name="azure-event-hubs-data-sender"></a>Отправитель данных концентраторов событий Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -646,7 +646,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-service-bus-data-owner-preview"></a>Владелец данных служебной шины Azure (Предварительная версия)
+## <a name="azure-service-bus-data-owner"></a>Владелец данных служебной шины Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -661,7 +661,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-service-bus-data-receiver-preview"></a>Приемник данных служебной шины Azure (Предварительная версия)
+## <a name="azure-service-bus-data-receiver"></a>Приемник данных служебной шины Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -678,7 +678,7 @@ ms.locfileid: "69899734"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-service-bus-data-sender-preview"></a>Отправитель данных служебной шины Azure (Предварительная версия)
+## <a name="azure-service-bus-data-sender"></a>Отправитель данных служебной шины Azure
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |

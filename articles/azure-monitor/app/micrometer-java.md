@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: lagayhar
-ms.openlocfilehash: 778690fb2796cea3154b3acbb662341fdaea87da
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1074495f5ac9112b6ce4f67ad2d81ee57b28e720
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60699144"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012694"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
 Мониторинг приложений Micrometer измеряет метрики для кода приложения на основе виртуальной машины Java и позволяет экспортировать данные в предпочитаемые системы мониторинга. В этой статье вы узнаете, как использовать Micrometer с Application Insights для приложений Spring Boot и других приложений.
@@ -29,7 +29,7 @@ ms.locfileid: "60699144"
 * [Micrometer Spring Legacy](https://micrometer.io/docs/ref/spring/1.5) 1.1.0 или более поздней версии (возвращение кода автонастройки на платформе Spring к более ранней версии).
 * [Ресурс ApplicationInsights](../../azure-monitor/app/create-new-resource.md )
 
-Действия
+Шаги
 
 1. Обновите файл pom.xml приложения Spring Boot и включите в него следующие зависимости:
 
@@ -64,7 +64,7 @@ ms.locfileid: "60699144"
 Добавьте следующие зависимости в файл pom.xml или build.gradle:
 
 * spring-boot-starter для Application Insights версии 2.1.2 или более поздней.
-* Azure-spring-boot-metrics-starters версии 2.0.7 или более поздней.  
+* Azure-пружины-Boot — метрики — запуски 2.1.5 или выше  
 * [Ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ).
 
 Шаги:
@@ -75,12 +75,12 @@ ms.locfileid: "60699144"
     <dependency> 
           <groupId>com.microsoft.azure</groupId>
           <artifactId>azure-spring-boot-metrics-starter</artifactId>
-          <version>2.0.7</version>
+          <version>2.1.6</version>
     </dependency>
     ```
 1. Обновите файл application.properties или yml с помощью ключа инструментирования Application Insights, используя следующее свойство:
 
-     `azure.application-insights.instrumentation-key=<your-instrumentation-key-here>`
+     `management.metrics.export.azuremonitor.instrumentation-key=<your-instrumentation-key-here>`
 3. Создайте и запустите приложение.
 4. Выполнив указанные выше инструкции, вы сможете приступить к работе с предварительно агрегированными метриками, автоматически собранными в Azure Monitor. Подробнее о том, как настроить начальное приложение Spring Boot Application Insights, см. на странице с [файлом сведений на GitHub](https://github.com/Microsoft/azure-spring-boot/releases/latest).
 
@@ -250,7 +250,7 @@ ms.locfileid: "60699144"
     New GuavaCacheMetrics().bind(registry);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о Micrometer см. в официальной [документации по Micrometer](https://micrometer.io/docs).
 * Сведения о Spring в Azure см. в [официальной документации](https://docs.microsoft.com/java/azure/spring-framework/?view=azure-java-stable).

@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: f4140754afa8de994b227dc187cd73c9ccfa86f9
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 55a340f2ee2dceb31a8457f6f2201160e573e8a2
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67666029"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012365"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="contact-us"></a>Свяжитесь с нами
+## <a name="contact-us"></a>Наши координаты
 * [Как задать вопрос рабочей группе службы управления API Microsoft Azure?](#how-can-i-ask-the-microsoft-azure-api-management-team-a-question)
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
@@ -38,7 +38,6 @@ ms.locfileid: "67666029"
 * [Почему политика, которую я хочу добавить, недоступна в редакторе политик?](#why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor)
 * [Как настроить несколько сред в одном API?](#how-do-i-set-up-multiple-environments-in-a-single-api)
 * [Можно ли использовать SOAP в управлении API?](#can-i-use-soap-with-api-management)
-* [Является ли IP-адрес шлюза управления API постоянным? Можно ли использовать его в правилах брандмауэра?](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules)
 * [Можно ли настроить на сервере авторизации OAuth 2.0 систему безопасности служб федерации Active Directory?](#can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security)
 * [Какой метод маршрутизации использует служба управления API при развертывании в нескольких географических расположениях?](#what-routing-method-does-api-management-use-in-deployments-to-multiple-geographic-locations)
 * [Можно ли использовать шаблон Azure Resource Manager, чтобы создать экземпляр службы управления API?](#can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance)
@@ -65,7 +64,7 @@ ms.locfileid: "67666029"
 
 * Использование обычной проверки подлинности HTTP. Дополнительные сведения см. в статье об [импорте и публикации первого API](import-and-publish.md).
 * использовать взаимную проверку подлинности SSL, как описано в статье [Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management](api-management-howto-mutual-certificates.md).
-* использовать разрешенный список IP-адресов во внутренних службах. На всех уровнях службы управления API, за исключением уровня потребления IP-адрес шлюза остается постоянным, обладающим некоторыми [предупреждения](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules). Можно задать список разрешений и включить в него этот IP-адрес. IP-адрес экземпляра службы управления API можно узнать на панели мониторинга на портале Azure.
+* использовать разрешенный список IP-адресов во внутренних службах. На всех уровнях управления API за исключением уровня потребления IP-адрес шлюза остается постоянным, с помощью нескольких предостережений, описанных в [статье о документации по IP](api-management-howto-ip-addresses.md).
 * подключить экземпляр службы управления API к виртуальной сети Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Как скопировать экземпляр службы управления API в новый экземпляр?
@@ -87,7 +86,7 @@ ms.locfileid: "67666029"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите в группу ресурсов, где содержится экземпляр службы управления API, который нужно обновить.
-3. В службе управления API назначьте **участник службы управления Api** роли для пользователя.
+3. В службе управления API назначьте пользователю роль **участника "Служба управления API** ".
 
 Теперь добавленный участник сможет использовать [командлеты](https://docs.microsoft.com/powershell/azure/overview) Azure PowerShell. Войдите в систему от имени администратора:
 
@@ -108,19 +107,6 @@ ms.locfileid: "67666029"
 ### <a name="can-i-use-soap-with-api-management"></a>Можно ли использовать SOAP в управлении API?
 Сейчас поддерживается [сквозная передача SOAP](https://blogs.msdn.microsoft.com/apimanagement/2016/10/13/soap-pass-through/). Администраторы могут импортировать WSDL-файл своей службы SOAP, и служба управления API Azure создаст внешний интерфейс SOAP. Для служб SOAP доступны документация портала для разработчиков, консоль тестирования, политики и средства анализа.
 
-### <a name="is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules"></a>Является ли IP-адрес шлюза управления API постоянным? Можно ли использовать его в правилах брандмауэра?
-На всех уровнях службы управления API общедоступный (виртуальный) IP-адрес клиента службы является статическим в течение всего времени существования клиента (кроме исключений ниже). IP-адрес изменяется в таких случаях:
-
-* Служба удалена или создана повторно.
-* Подписка на службу переведена в состояние [Приостановлено](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) или [С предупреждением](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) (например, из-за неуплаты), а затем ее действие восстановлено.
-* Вы добавили или удалили виртуальную сеть Azure (ее можно использовать только на уровне "Разработчик" или "Премиум").
-
-При развертывании в нескольких регионах региональный адрес изменяется, если остановить работу региона, а затем восстановить ее (развертывание в нескольких регионах можно использовать только на только на уровне "Премиум").
-
-Клиентам уровня "Премиум", для которых настроено развертывание в нескольких регионах, назначается один общедоступный IP-адрес на регион.
-
-IP-адрес (или адреса в случае развертывания в нескольких регионах) есть на странице клиента на портале Azure.
-
 ### <a name="can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security"></a>Можно ли настроить на сервере авторизации OAuth 2.0 систему безопасности служб федерации Active Directory?
 Дополнительные сведения о настройке системы безопасности служб федерации Active Directory (AD FS) на сервере авторизации OAuth 2.0 см. в записи блога [Using ADFS in API Management](https://phvbaars.wordpress.com/2016/02/06/using-adfs-in-api-management/) (Использование служб федерации Active Directory в службе управления API).
 
@@ -128,7 +114,7 @@ IP-адрес (или адреса в случае развертывания в
 При развертывании в нескольких географических расположениях служба управления API применяет [маршрутизацию трафика для повышения производительности](../traffic-manager/traffic-manager-routing-methods.md#performance). Входящий трафик направляется на ближайший шлюз API. Если регион становится недоступен, входящий трафик автоматически маршрутизируется на следующий ближайший шлюз. Дополнительные сведения о методах маршрутизации см. в статье [Методы маршрутизации трафика диспетчером трафика](../traffic-manager/traffic-manager-routing-methods.md).
 
 ### <a name="can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance"></a>Можно ли использовать шаблон Azure Resource Manager, чтобы создать экземпляр службы управления API?
-Да. Чтобы получить шаблоны быстрого запуска, посетите страницу [службы управления API Azure](https://aka.ms/apimtemplate).
+Да. См. шаблоны быстрого запуска [службы управления API Azure](https://aka.ms/apimtemplate) .
 
 ### <a name="can-i-use-a-self-signed-ssl-certificate-for-a-back-end"></a>Можно ли использовать самозаверяющий сертификат SSL для сервера?
 Да. Это можно сделать с помощью PowerShell или отправить сертификат непосредственно в API. После этого будет отключена проверка цепочки сертификатов, и вы сможете использовать самозаверяющий или подписанный в частном порядке сертификат при обмене данными между управлением API и службами серверной части.

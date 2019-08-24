@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 05/03/2019
+ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6b551ee9a0a9c7ef9a8f5ff1bd7452a24dc04b7
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 0442b987c502533bfbd55990f201a5c02b119804
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014191"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011299"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -119,7 +119,7 @@ ms.locfileid: "69014191"
 **Вопрос. Можно ли разрешить Azure AD Connect создать учетную запись соединителя Azure AD на компьютере рабочей группы?**
 Нет.  Чтобы разрешить Azure AD Connect автоматическое создание учетной записи соединителя Azure AD, компьютер должен быть присоединен к домену.  
 
-## <a name="network"></a>Сеть
+## <a name="network"></a>Network
 **Вопрос. У меня есть брандмауэр, сетевое устройство или иное средство, ограничивающее время, в течение которого подключения могут оставаться открытыми в моей сети. Каким должно быть пороговое значение времени ожидания на стороне клиента при использовании Azure AD Connect?**  
 Всему сетевому программному обеспечению, физическим устройствам или прочим средствам, ограничивающим максимальное время, в течение которого подключение может оставаться открытым, следует использовать пороговое значение в 5 минут (300 секунд) для подключений между сервером, на который установлен клиент Azure AD Connect и Azure Active Directory. Это также относится ко всем ранее выпущенным инструментам синхронизации Microsoft Identity.
 
@@ -270,3 +270,7 @@ ms.locfileid: "69014191"
 * Найдите технические вопросы и ответы или задайте свои вопросы в [сообществе Azure AD](https://social.msdn.microsoft.com/Forums/azure/en-US/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required).
 
 [How to get support for Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto) (Как получить поддержку для Azure AD)
+
+**Вопрос. Почему после ошибок синхронизации появляются события 6311 и 6401?**
+
+События 6311- **сервер обнаружил непредвиденную ошибку при выполнении обратного вызова** и 6401- **контроллер агента управления обнаружил непредвиденную ошибку** — всегда заносятся в журнал после ошибки шага синхронизации. Чтобы устранить эти ошибки, необходимо очистить ошибки шагов синхронизации.  Дополнительные сведения см. в статьях [Устранение ошибок во время синхронизации](tshoot-connect-sync-errors.md) и [Устранение неполадок синхронизации объектов с Azure AD Connect синхронизацией](/tshoot-connect-objectsync.md) .
