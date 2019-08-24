@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: b2cacc8cc6d7c22a93f46007e8150a4e55dc7650
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: b2fb7496f16359f01ddbbe6db31b2d047a2ab4df
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967719"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012813"
 ---
 # <a name="quickstart-create-a-knowledge-base-using-the-qna-maker-api-service-portal"></a>Краткое руководство. Создание базы знаний с помощью портала службы API службы QnA Maker
 
@@ -45,14 +45,11 @@ ms.locfileid: "68967719"
 
     ![Настройка источников данных](../media/qnamaker-how-to-create-kb/set-data-sources.png)
 
-    - Введите **имя** для службы. Поддерживаются повторяющиеся имена, а также специальные знаки.
-    - Добавьте URL-адреса для данных, которые необходимо извлечь. Дополнительные сведения о поддерживаемых типах источников приведены [здесь](../Concepts/data-sources-supported.md).
-    - Отправьте файлы для данных, которые необходимо извлечь. Ознакомьтесь со [сведениями о ценах](https://aka.ms/qnamaker-pricing), чтобы узнать, сколько документов можно добавить.
-    - Если вы хотите добавлять вопросы и ответы вручную, то можете пропустить **шаг 4**, показанный на предыдущем рисунке.
+1. Присвойте службе **имя** , например `my first kb`. Поддерживаются повторяющиеся имена, а также специальные знаки.
 
-1. Добавьте **беседу** в свою базу знаний. Выберите Добавление поддержки ХИ2ТЕСТ-Chat для робота, выбрав один из личных средств. 
+1. Добавьте страницу устранения неполадок QnA Maker как URL-адрес `https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/troubleshooting`:, а `+ Add URL`затем выберите. Дополнительные сведения о поддерживаемых типах источников приведены [здесь](../Concepts/data-sources-supported.md). В этом кратком руководстве **не нужно загружать файлы** для извлекаемых данных. Ознакомьтесь со [сведениями о ценах](https://aka.ms/qnamaker-pricing), чтобы узнать, сколько документов можно добавить.
 
-    ![Добавление беседы в базу знаний](../media/qnamaker-how-to-create-kb/create-kb-chit-chat.png)
+1. Добавьте  **_Professional_ ХИ2ТЕСТ-Chat** в базу знаний. 
 
 1. Выберите **Create your KB** (Создать базу знаний).
 
@@ -62,7 +59,7 @@ ms.locfileid: "68967719"
 
     ![Извлечение](../media/qnamaker-how-to-create-kb/hang-tight-extraction.png)
 
-1. Если база знаний успешно создана, вы будете перенаправлены на страницу **Knowledge base** (База знаний).
+1. После успешного создания базы знаний вы будете перенаправлены на страницу базы **знаний** .
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
