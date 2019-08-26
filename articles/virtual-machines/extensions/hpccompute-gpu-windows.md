@@ -75,9 +75,9 @@ ms.locfileid: "67705957"
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.HpcCompute | строка |
-| type | NvidiaGpuDriverWindows | строка |
-| typeHandlerVersion | 1.2 | ssNoversion |
+| publisher | Microsoft.HpcCompute | string |
+| type | NvidiaGpuDriverWindows | string |
+| typeHandlerVersion | 1.2 | int |
 
 
 ## <a name="deployment"></a>Развертывание
