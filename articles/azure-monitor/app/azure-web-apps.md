@@ -304,7 +304,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Чтобы проверить, какая версия расширения используется, посетите`http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
-![Снимок экрана: URL-путь http://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
+![Снимок экрана: URL-путьhttp://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
 
 ### <a name="upgrade-from-versions-100---265"></a>Обновление с версий 1.0.0 – 2.6.5
 
