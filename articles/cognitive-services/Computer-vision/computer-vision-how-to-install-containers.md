@@ -11,16 +11,17 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: afccce5ca9101ed1e30f69264abae7ad85b4902b
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: cbf199c391b49518bb595d7d1a0ed47147903a85
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564581"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034500"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
-Служба "Распознавание текста", входящая в состав Компьютерного зрения, также доступна в виде контейнера Docker. Это позволяет определять и извлекать печатный текст с изображений различных объектов с разными поверхностями и фонами, например чеков, плакатов и визитных карточек.  
+Служба "Распознавание текста", входящая в состав Компьютерного зрения, также доступна в виде контейнера Docker. Это позволяет определять и извлекать печатный текст с изображений различных объектов с разными поверхностями и фонами, например чеков, плакатов и визитных карточек.
+
 > [!IMPORTANT]
 > Контейнер распознавания текста в настоящее время работает только на английском языке.
 
@@ -38,7 +39,7 @@ ms.locfileid: "68564581"
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
-[!INCLUDE [Request access to private preview](../../../includes/cognitive-services-containers-request-access.md)]
+[!INCLUDE [Request access to public preview](../../../includes/cognitive-services-containers-request-access.md)]
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
@@ -46,16 +47,7 @@ ms.locfileid: "68564581"
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
-В следующей таблице описаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавания текста.
-
-| Контейнер | Минимум | Рекомендуется |ПЛАТЫ<br>(Минимум, максимум)|
-|-----------|---------|-------------|--|
-|Распознавание текста|1 ядро, 8 ГБ памяти, 0,5 TPS|2 ядра, 8 ГБ памяти, 1 Техническая спецификация|0,5, 1|
-
-* Частота каждого ядра должна быть минимум 2,6 ГГц.
-* TPS — транзакций в секунду.
-
-Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
+[!INCLUDE [Container requirements and recommendations](includes/container-requirements-and-recommendations.md)]
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 
