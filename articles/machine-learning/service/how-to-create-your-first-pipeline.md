@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: a34443abf38f31a5400b9f274c65b0b2f7362af7
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 3086df4a10c803b718f5eb0c28ed66fe137e94da
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624796"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019150"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
@@ -92,6 +92,8 @@ def_blob_store.upload_files(
 Вы только что создали источник данных, который можно указать в конвейере в качестве входных данных шага. Источник данных в конвейере представлен объектом [DataReference](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference). Объект `DataReference` указывает на данные, которые хранятся или доступны в хранилище данных.
 
 ```python
+from azureml.data.data_reference import DataReference
+
 blob_input_data = DataReference(
     datastore=def_blob_store,
     data_reference_name="test_data",
@@ -101,6 +103,8 @@ blob_input_data = DataReference(
 Промежуточные данные (или выходные данные шага) представляет объект [PipelineData](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelinedata?view=azure-ml-py). `output_data1` создается как выходные данные шага и используется в качестве входных данных одного шага или нескольких последующих шагов. `PipelineData` представляет зависимость данных между шагами и неявно определяет порядок выполнения шагов в конвейере.
 
 ```python
+from azureml.pipeline.core import PipelineData
+
 output_data1 = PipelineData(
     "output_data1",
     datastore=def_blob_store,
@@ -262,6 +266,8 @@ except ComputeTargetException:
 После создания и присоединения целевого объекта вычисления к вашей рабочей области все готово для определения шага конвейера. В пакете SDK для Машинного обучения Azure доступно много встроенных шагов. Наиболее простым из этих шагов является [писонскриптстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py), который запускает скрипт Python в указанном целевом объекте вычислений:
 
 ```python
+from azureml.pipeline.steps import PythonScriptStep
+
 trainStep = PythonScriptStep(
     script_name="train.py",
     arguments=["--input", blob_input_data, "--output", processed_data1],
@@ -283,6 +289,8 @@ trainStep = PythonScriptStep(
 # list of steps to run
 compareModels = [trainStep, extractStep, compareStep]
 
+from azureml.pipeline.core import Pipeline
+
 # Build the pipeline
 pipeline1 = Pipeline(workspace=ws, steps=[compareModels])
 ```
@@ -290,6 +298,8 @@ pipeline1 = Pipeline(workspace=ws, steps=[compareModels])
 В следующем примере используется созданный ранее целевой объект вычислений Azure Databricks. 
 
 ```python
+from azureml.pipeline.steps import DatabricksStep
+
 dbStep = DatabricksStep(
     name="databricksmodule",
     inputs=[step_1_input],
@@ -320,6 +330,8 @@ pipeline1 = Pipeline(workspace=ws, steps=steps)
 > Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
 
 ```python
+from azureml.core import Experiment
+
 # Submit the pipeline to be run
 pipeline_run1 = Experiment(ws, 'Compare_Models_Exp').submit(pipeline1)
 pipeline_run1.wait_for_completion()
@@ -351,6 +363,8 @@ pipeline_run1.wait_for_completion()
 1. Чтобы создать параметр конвейера, используйте объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
 
    ```python
+   from azureml.pipeline.core.graph import PipelineParameter
+   
    pipeline_param = PipelineParameter(
      name="pipeline_arg",
      default_value=10)
@@ -384,6 +398,9 @@ pipeline_run1.wait_for_completion()
 Чтобы вызвать запуск предыдущего конвейера, требуется маркер заголовка аутентификации Azure Active Directory, как описывается в [классе AzureCliAuthentication](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?view=azure-ml-py). Подробные сведения также см. в заметках [об аутентификации в службе Машинного обучения Azure](https://aka.ms/pl-restep-auth).
 
 ```python
+from azureml.pipeline.core import PublishedPipeline
+import requests
+
 response = requests.post(published_pipeline1.endpoint,
                          headers=aad_token,
                          json={"ExperimentName": "My_Pipeline",

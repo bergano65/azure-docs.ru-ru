@@ -1,52 +1,52 @@
 ---
-title: Показать/скрыть чат Azure IoT Central | Документация Майкрософт
-description: Как пользователь Узнайте, как отображать и скрывать чата.
+title: 'IoT Central Azure: Показать/Скрыть чат | Документация Майкрософт'
+description: Как пользователь научитесь показывать и скрывать чат.
 author: v-krghan
 ms.author: v-krghan
-ms.date: 04/18/2019
+ms.date: 08/23/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: a8d2b71899cdd6b7f9c8cb803732b760f3009811
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ab0f830ab3b06f272e371a6908ac6dde3e3893a
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64513317"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019714"
 ---
 # <a name="toggle-live-chat"></a>Переключение чата в реальном времени
 
-В этом практическом показано, как включить чата в реальном времени в приложении IoT Central. Чата в реальном времени можно использовать для доступа к технической поддержке.
+В этом руководстве показано, как переключить интерактивный чат в приложении IoT Central. Для получения технической поддержки можно использовать интерактивный чат.
 
 > [!NOTE]
-> Чат доступен только для пробных подписок.
+> Параметр разговора доступен только для пробных подписок.
 
 ## <a name="chat-with-us"></a>Пообщайтесь с нами в чате
 
-Чтобы получить техническую поддержку, откройте на IoT Central и выберите команду **свяжитесь с нами в чате**.
+Чтобы получить техническую поддержку, откройте приложение IoT Central и выберите **чат с нами**.
 
 ![Пообщайтесь с нами в чате](media/howto-show-hide-chat/chat-with-us.png)
 
-Можно ввести вопрос, как показано на следующем снимке экрана:
+Вы можете ввести вопрос, как показано на следующем снимке экрана:
 
 ![Форма настройки сведений об устройстве со сведениями о параметрах и свойствах](media/howto-show-hide-chat/sample-chat.png)
 
-## <a name="hide-chat"></a>Скрыть чата
+## <a name="hide-chat"></a>Скрыть чат
 
-Чтобы скрыть разговор, выберите **скрыть чата** в **помочь** панели:
+Чтобы скрыть чат, выберите **Скрыть чат** на панели **справки** :
 
- ![Скрыть чата](media/howto-show-hide-chat/hide-chat.png)
+ ![Скрыть чат](media/howto-show-hide-chat/hide-chat.png)
 
-## <a name="enable-chat"></a>Разрешить чат
+## <a name="enable-chat"></a>Включить чат
 
-Чтобы отобразить разговор, выберите **Показать чата** в **помочь** панели:
+Чтобы отобразить чат, выберите команду " **отобразить чат** " на панели **справки** :
 
- ![Показать разговор](media/howto-show-hide-chat/show-chat.png)
+ ![Показать чат](media/howto-show-hide-chat/show-chat.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Теперь, когда вы узнали, как включить чата в реальном времени в Azure IoT Central, вот мы предлагаем:
+Теперь, когда вы узнали, как включить чат в режиме реального времени в Azure IoT Central, предлагаем следующий шаг:
 
 > [!div class="nextstepaction"]
 > [Настройка панели мониторинга приложения](howto-configure-homepage.md)

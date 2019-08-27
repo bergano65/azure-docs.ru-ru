@@ -1,77 +1,77 @@
 ---
-title: Таблица поддержки Azure служба "Миграция"
-description: Предоставляет сводку параметров поддержки и ограничения для службы "Миграция Azure".
+title: Матрица поддержки службы "миграция Azure"
+description: Содержит сводку параметров поддержки и ограничений для службы "миграция Azure".
 services: backup
 author: rayne-wiselman
 manager: carmonm
-ms.service: backup
+ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: raynew
-ms.openlocfilehash: b2ca1b9118ecc3d112a49bb4c79b413c46fe67cb
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 49bd193303255cdf7d18fd5da9dec8d84c50a829
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67811561"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019191"
 ---
-# <a name="azure-migrate-support-matrix"></a>Таблица поддержки Azure служба "Миграция"
+# <a name="azure-migrate-support-matrix"></a>Матрица поддержки службы "миграция Azure"
 
-Можно использовать [службы "Миграция Azure"](migrate-overview.md) оценка и миграция машин в облако Microsoft Azure. В этой статье перечислены параметры общей поддержки и ограничения для развертывания и сценариев "Миграция Azure".
+Службу "миграция [Azure](migrate-overview.md) " можно использовать для оценки и миграции компьютеров в облако Microsoft Azure. В этой статье перечислены общие параметры поддержки и ограничения для сценариев и развертываний службы "миграция Azure".
 
 
-## <a name="azure-migrate-versions"></a>Версии Azure служба "Миграция"
+## <a name="azure-migrate-versions"></a>Версии службы "Миграция Azure"
 
 Существует две версии службы "Миграция Azure".
 
-- **Текущая версия**: С помощью этой версии, вы можете создать новые проекты "Миграция Azure", обнаружение локальных оценивает и координировать оценки и миграции. [Узнайте больше](whats-new.md#azure-migrate-new-version).
-- **Предыдущая версия**: Для клиента с помощью предыдущей версии "Миграция Azure" (поддерживалась только оценка локальных виртуальных машин VMware) теперь следует использовать текущую версию. В предыдущей версии нельзя создавать новые проекты "Миграция Azure" или выполнять новые операции обнаружения.
+- **Текущая версия**. С помощью этой версии можно создавать проекты службы "миграция Azure", обнаруживать локальные оценки и управлять оценками и миграциями. [Узнайте больше](whats-new.md#azure-migrate-new-version).
+- **Предыдущая версия**. Теперь пользователям, которые используют предыдущую версии службы "Миграция Azure" (где поддерживалась только оценка локальных виртуальных машин VMware), необходимо использовать текущую версию. В предыдущей версии нельзя создать новые проекты службы "миграция Azure" или выполнить новые операции обнаружения.
 
 ## <a name="supported-migration-scenarios"></a>Поддерживаемые сценарии миграции
 
 В таблице перечислены поддерживаемые сценарии миграции.
 
-**Развертывание** | **Сведения о*** 
+**Развертывание** | **Дополнительно*** 
 --- | --- 
-**Оценка на предприятии** | Оценка локальных рабочих нагрузок и данных виртуальных машин VMware и виртуальных машин Hyper-V. Оценка с помощью оценки сервера миграции Azure и Microsoft Data Migration Assistant (DMA), а также сторонние средства, которые включают Cloudamize, Технический Corent и Turbonomic Server.
-**В локальной миграции в Azure** | Перенос рабочих нагрузок и данных, выполняющимся на физические серверы, виртуальные машины VMware, виртуальных машин Hyper-V и на экземпляры AWS/GCP, в Azure. Миграция с помощью оценки сервера миграции Azure и Azure Database Migration Service (DMS), а также с помощью сторонних средств, которые включают Carbonite и CorentTech.
+**Оценка в локальной среде** | Оцените локальные рабочие нагрузки и данные, работающие на виртуальных машинах VMware и виртуальных машинах Hyper-V. Оцените использование Azure Migrate Server для оценки и Помощник по миграции данных (Майкрософт) (DMA), а также средств сторонних производителей, включающих Cloudamize, службу технической сертификации и Turbonomic Server.
+**Локальная миграция в Azure** | Перенос рабочих нагрузок и данных, работающих на физических серверах, виртуальных машинах VMware, виртуальных машинах Hyper-V и AWS/обеспечить, в Azure. Выполните миграцию с помощью средства Azure Migrate Server для оценки и Azure Database Migration Service (DMS), а также с помощью сторонних средств, включающих карбоните и Коренттеч.
 
-Конкретное программное средство поддержки можно представить следующим образом.
+Ниже приведены сводные сведения о поддержке конкретных инструментов.
 
-**Средство** | **Оценка/Миграция** | **Сведения**
+**Средство** | **Оценка и миграция** | **Сведения**
 --- | --- | ---
-"Миграция Azure" Оценка Server | Оценка | Испытать сервер оценки для [Hyper-V](tutorial-prepare-hyper-v.md) и [VMware](tutorial-prepare-vmware.md).
+Оценка сервера службы "Миграция Azure" | Оценка | Испытайте оценку сервера для [Hyper-V](tutorial-prepare-hyper-v.md) и [VMware](tutorial-prepare-vmware.md).
 Cloudamize | Оценка | [Узнайте больше](https://www.cloudamize.com/platform#tab-0).
 CorentTech | Оценка | [Узнайте больше](https://www.corenttech.com/).
 Turbonomic | Оценка | [Узнайте больше](https://turbonomic.com/solutions/technologies/azure-cloud/).
-Azure миграции сервера | Миграция | Испытайте миграции сервера для [Hyper-V](tutorial-migrate-hyper-v.md) и [VMware](tutorial-migrate-vmware.md).
-Carbonite | Миграция | [Узнайте больше](https://www.carbonite.com/data-protection-resources/resource/Datasheet/carbonite-migrate-for-microsoft-azure).
-CorentTech | Миграция | [Узнайте больше](https://www.corenttech.com/).
+Миграция сервера службы "Миграция Azure" | Перенос | Попробуйте выполнить миграцию сервера для [Hyper-V](tutorial-migrate-hyper-v.md) и [VMware](tutorial-migrate-vmware.md).
+Carbonite | Перенос | [Узнайте больше](https://www.carbonite.com/data-protection-resources/resource/Datasheet/carbonite-migrate-for-microsoft-azure).
+CorentTech | Перенос | [Узнайте больше](https://www.corenttech.com/).
 
 
-## <a name="azure-migrate-projects"></a>Проекты Azure служба "Миграция"
+## <a name="azure-migrate-projects"></a>Проекты службы "миграция Azure"
 
 **Поддержка** | **Сведения**
 --- | ---
-Subscription | Может иметь одного проекта "Миграция Azure" в подписке.
-Разрешения Azure | Необходимо иметь разрешения владельца или участника в подписке Создание проекта "Миграция Azure".
-Виртуальные машины VMware  | Оценка до 35 000 виртуальных машин VMware в одном проекте.
-Виртуальные машины Hyper-V | Оценка до 10 000 виртуальных машин Hyper-V в одном проекте.
+Подписка | В подписке может быть один проект службы "миграция Azure".
+Разрешения Azure | Для создания проекта службы "миграция Azure" необходимо иметь разрешения участника или владельца в подписке.
+Виртуальные машины VMware  | Оцените до 35 000 виртуальных машин VMware в одном проекте.
+Виртуальные машины Hyper-V | Оцените 10 000 виртуальных машин Hyper-V в одном проекте.
 
-Проект можно включать виртуальные машины VMware и виртуальных машин Hyper-V, в установленных пределах для оценки.
+Проект может содержать как виртуальные машины VMware, так и виртуальные машины Hyper-V, вплоть до ограничений оценки.
 
 
-## <a name="vmware-assessment-and-migration"></a>VMware внутренней оценки и миграции
+## <a name="vmware-assessment-and-migration"></a>Оценка и миграция VMware
 
-[Просмотрите](migrate-support-matrix-vmware.md) оценки сервера миграции Azure и миграция сервера Матрица поддержки для виртуальных машин VMware.
+[Ознакомьтесь](migrate-support-matrix-vmware.md) с таблицей "миграция сервера Azure для миграции серверов и миграция серверов" для виртуальных машин VMware.
 
-## <a name="hyper-v-assessment-and-migration"></a>Hyper-V внутренней оценки и миграции
+## <a name="hyper-v-assessment-and-migration"></a>Оценка и перенос виртуальных машин Hyper-V
 
-[Просмотрите](migrate-support-matrix-hyper-v.md) оценки сервера миграции Azure и миграция сервера Матрица поддержки для виртуальных машин Hyper-V.
+[Ознакомьтесь](migrate-support-matrix-hyper-v.md) с матрицей Azure Migration Server для оценки серверов и миграции серверов для виртуальных машин Hyper-V.
 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Оценка виртуальных машин VMware](tutorial-assess-vmware.md) для миграции.
-- [Оценка виртуальных машин Hyper-V](tutorial-assess-hyper-v.md) для миграции.
+- [Оцените виртуальные машины VMware](tutorial-assess-vmware.md) для миграции.
+- [Оцените виртуальные машины Hyper-V](tutorial-assess-hyper-v.md) для миграции.
 

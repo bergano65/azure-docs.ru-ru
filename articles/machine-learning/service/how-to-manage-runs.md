@@ -10,13 +10,13 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 07/12/2019
-ms.openlocfilehash: 701c266705c16198f35cddc36cdf1d431331c2d2
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.date: 07/31/2019
+ms.openlocfilehash: 9b58d6e189c891d0dd2917d7d150f133dc35f917
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847942"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019096"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -29,7 +29,7 @@ ms.locfileid: "68847942"
 * Создание дочерних запусков.
 * Теги и поиск запусков.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуются следующие элементы:
 
@@ -220,9 +220,32 @@ with exp.start_logging() as parent_run:
 > [!NOTE]
 > При выходе из области действия дочерние тесты автоматически помечаются как завершенные.
 
-Можно также запустить дочерний процесс по одному, но поскольку каждое создание приводит к сетевому вызову, оно менее эффективно, чем отправка пакета запусков.
+Чтобы эффективно создать множество дочерних запусков, используйте [`create_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#create-children-count-none--tag-key-none--tag-values-none-) метод. Поскольку при каждом создании создается сетевой вызов, создание пакета выполняется более эффективно, чем создание их по одному.
 
-Чтобы запросить дочерние выполнения определенного родителя, используйте [`get_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) метод.
+### <a name="submit-child-runs"></a>Отправить дочерние выполнения
+
+Дочерние запуски также могут быть отправлены из родительского запуска. Это позволяет создавать иерархии родительских и дочерних приложений, каждый из которых работает в разных целевых объектах вычислений, Соединенных общим родительским ИДЕНТИФИКАТОРом запуска.
+
+Используйте метод ["submit_child ()"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#submit-child-count-none--tag-key-none--tag-values-none-) для отправки дочернего выполнения из родительского запуска. Чтобы сделать это в родительском скрипте выполнения, получите контекст выполнения и отправьте дочерний объект с помощью метода "submit_child" "экземпляра контекста.
+
+```python
+## In parent run script
+parent_run = Run.get_context()
+child_run_config = ScriptRunConfig(source_directory='.', script='child_script.py')
+parent_run.submit_child(child_run_config)
+```
+
+В дочернем выполнении можно просмотреть идентификатор родительского запуска:
+
+```python
+## In child run script
+child_run = Run.get_context()
+child_run.parent.id
+```
+
+### <a name="query-child-runs"></a>Дочерние выполнения запросов
+
+Чтобы запросить дочерние выполнения определенного родителя, используйте [`get_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) метод. Аргумент ' ' ' Recursive = true ' ' ' позволяет запрашивать вложенное дерево дочерних элементов и внуками.
 
 ```python
 print(parent_run.get_children())

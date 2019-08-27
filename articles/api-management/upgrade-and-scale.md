@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: apimpm
-ms.openlocfilehash: 6bafd5ed5f2d7080b0f2a2db71ac96e4f97a1f76
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 64649c86dbd3c3469247308bfc4dd0ed12e06949
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774946"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018241"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -29,7 +29,7 @@ ms.locfileid: "68774946"
 >[!NOTE]
 >В [этой статье](https://azure.microsoft.com/pricing/details/api-management/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) представлены примерные данные о производительности единиц для каждого уровня. Чтобы получить более точные сведения, изучите приближенный к реальному сценарий использования API. См. статью о [емкости экземпляра службы Azure "Управление API"](api-management-capacity.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
@@ -53,8 +53,11 @@ ms.locfileid: "68774946"
 
 Вы всегда можете повысить или понизить уровень в любых комбинациях. Но при этом обратите внимание, что понижение уровня приводит к отключению некоторых возможностей. Например, при понижении уровня с "Премиум" до "Стандартный" или "Базовый" станут недоступны виртуальные сети или развертывание в нескольких регионах.
 
->[!NOTE]
->Процесс обновления или масштабирования может занять от 15 до 45 минут. По завершении вы получите соответствующее извещение.
+> [!NOTE]
+> Процесс обновления или масштабирования может занять от 15 до 45 минут. По завершении вы получите соответствующее извещение.
+
+> [!NOTE]
+> Служба управления API на уровне **потребления** масштабируется автоматически на основе трафика.
 
 ## <a name="use-the-azure-portal-to-upgrade-and-scale"></a>Использование портала Azure для обновления и масштабирования
 

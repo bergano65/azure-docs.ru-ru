@@ -1,6 +1,6 @@
 ---
 title: Связанные службы в фабрике данных Azure | Документация Майкрософт
-description: Дополнительные сведения о связанных службах в фабрике данных. Связанные службы связывают хранилища данных и вычислений с фабрикой данных.
+description: Сведения о связанных службах в фабрике данных. Связанные службы связывают хранилища данных и вычислений с фабрикой данных.
 services: data-factory
 documentationcenter: ''
 author: sharonlo101
@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: shlo
-ms.openlocfilehash: ba2041495e1e3c63ee322a0b748753ad6cb68914
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 904e063ae64a971de7f34fbfac63b7679f3bc363
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64870137"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019956"
 ---
 # <a name="linked-services-in-azure-data-factory"></a>Связанные службы в фабрике данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-create-datasets.md)
 > * [Текущая версия](concepts-datasets-linked-services.md)
 
-В этой статье описывается, какие связанные службы, каким образом они определяются в формате JSON, а также как они используются в конвейерах фабрики данных Azure.
+В этой статье описываются связанные службы, их определение в формате JSON и их использование в конвейерах фабрики данных Azure.
 
 Чтобы получить общие представления о фабрике данных, ознакомьтесь со статьей [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md).
 
@@ -62,7 +62,7 @@ ms.locfileid: "64870137"
 
 В следующей таблице описаны свойства приведенного выше объекта JSON.
 
-Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+Свойство | Описание | Обязательное значение |
 -------- | ----------- | -------- |
 name | Имя связанной службы. Дополнительные сведения см. в статье [Фабрика данных Azure — правила именования](naming-rules.md). |  Да |
 type | Тип связанной службы. Пример: AzureStorage (хранилище данных) или AzureBatch (служба вычислений). См. описание typeProperties. | Да |
@@ -92,18 +92,22 @@ connectVia | [Среда выполнения интеграции](concepts-int
 ```
 
 ## <a name="create-linked-services"></a>Создание связанных служб
-Связанные службы можно создать с помощью одного из указанных ниже инструментов или пакетов SDK: [.NET API](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), шаблона Azure Resource Manager и портала Azure
+Связанные службы можно создать с помощью одного из следующих средств или пакетов SDK: [.NET API](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), Azure Resource Manager шаблона и портал Azure
 
-## <a name="data-store-linked-services"></a>Связанные службы хранилищ данных
-Подключиться к хранилищам данных можно найти в нашей [поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats). Ссылка на список для свойства определенного подключения, необходимые для разных хранилищ.
+## <a name="data-store-linked-services"></a>Связанные службы хранилища данных
+Подключение к хранилищам данных можно найти в наших [поддерживаемых хранилищах данных и форматах](copy-activity-overview.md#supported-data-stores-and-formats). Ссылка на список свойств соединения, необходимых для разных хранилищ.
+
+## <a name="data-store-supported-activities"></a>Действия, поддерживаемые хранилищем данных
+
+[!INCLUDE [Connector-activity support matrix](../../includes/connector-activity-support-matrix.md)]
 
 ## <a name="compute-linked-services"></a>Связанные службы вычислений
-Справочник по [вычислительные среды, поддерживаемые](compute-linked-services.md) для сведения о различных вычислительных средах можно соединиться с фабрикой данных, а также различных конфигураций.
+Справочные [вычислительные среды, поддерживаемые](compute-linked-services.md) для получения сведений о различных вычислительных средах, к которым можно подключиться из фабрики данных, а также различных конфигураций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Пошаговые инструкции по созданию конвейеров и наборов данных с помощью одного из указанных ниже инструментов или пакетов SDK приведены в указанных ниже руководствах.
 
 - [Создание фабрики данных и конвейера с помощью пакета SDK для .NET](quickstart-create-data-factory-dot-net.md)
 - [Создание фабрики данных и конвейера с помощью пакета PowerShell](quickstart-create-data-factory-powershell.md)
 - [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md)
-- [Краткое руководство: создание фабрики данных с помощью портала Azure](quickstart-create-data-factory-portal.md)
+- [Краткое руководство. Создание фабрики данных с помощью портал Azure](quickstart-create-data-factory-portal.md)

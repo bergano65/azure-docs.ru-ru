@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 09/25/2018
-ms.openlocfilehash: 1bccfd8ac363b21053c45ed489e943a1b488f41f
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.date: 08/27/2019
+ms.openlocfilehash: 5ffe9de6ecb740a2d8445e88a478e718585eb5d1
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68566508"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018925"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 
@@ -40,8 +40,12 @@ ms.locfileid: "68566508"
    ![1mfa-universal-connect][1]  
 2. Заполните поле **Имя пользователя** учетными данными Azure Active Directory в формате `user_name@domain.com`.  
    ![1mfa-universal-connect-user](./media/sql-database-ssms-mfa-auth/1mfa-universal-connect-user.png)   
-3. При подключении от имени гостевого пользователя необходимо нажать кнопку **Параметры** и в диалоговом окне **Свойства соединения** заполнить поле **Доменное имя AD или идентификатор клиента**. Дополнительные сведения см. в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
-   ![mfa-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-tenant-ssms.png)   
+3. Если вы подключаетесь от имени гостевого пользователя, вам больше не нужно заполнять поле доменного имени AD или идентификатора клиента для гостевых пользователей, так как SSMS 18. x или более поздней версии автоматически распознает его. Дополнительные сведения см. в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
+   ![MFA-No-клиент-SSMS](./media/sql-database-ssms-mfa-auth/mfa-no-tenant-ssms.png)
+
+   Однако если вы подключаетесь от имени гостевого пользователя с помощью SSMS 17. x или более ранней версии, необходимо нажать кнопку **Параметры**и в диалоговом окне **Свойства соединения** и заполнить поле **доменное имя AD или идентификатор клиента** .
+   ![mfa-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-tenant-ssms.png)
+
 4. Как и для базы данных SQL и хранилища данных SQL, необходимо щелкнуть **Параметры** и указать базу данных в диалоговом окне **Параметры**. (Если подключенный пользователь является гостевым (т. е. joe@outlook.com), нужно установить флажок и добавить текущее доменное имя AD или идентификатор клиента как часть параметров.) Дополнительные сведения см. в статье [Универсальная проверка подлинности для Базы данных SQL и Хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md). Щелкните **Подключить**.  
 5. Когда откроется диалоговое окно **Вход в учетную запись** , укажите учетную запись и пароль своего удостоверения Azure Active Directory. Пароль не требуется, если пользователь является частью домена в федерации с Azure AD.  
    ![2mfa-sign-in][2]  
