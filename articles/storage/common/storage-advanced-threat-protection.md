@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 7d4f36be51591d6be2b4c42eb8a8950ab52a0258
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 2a88e778458da3c5faace401863998dda746ac75
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68782579"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051489"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -111,7 +111,7 @@ ms.locfileid: "68782579"
 
 ![Расширенная защита от угроз для службы хранилища Azure: оповещение по электронной почте](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-alert-email.png)
 
-Чтобы просматривать текущие оповещения системы безопасности из центра безопасности Azure и управлять ими, можно использовать колонку [Оповещения системы безопасности](../../security-center/security-center-managing-and-responding-alerts.md#managing-security-alerts). Если щелкнуть какое-либо оповещение, отобразятся сведения и действия, позволяющие изучить текущую угрозу и устранить будущие угрозы.
+Чтобы просматривать текущие оповещения системы безопасности из центра безопасности Azure и управлять ими, можно использовать колонку [Оповещения системы безопасности](../../security-center/security-center-managing-and-responding-alerts.md). Если щелкнуть какое-либо оповещение, отобразятся сведения и действия, позволяющие изучить текущую угрозу и устранить будущие угрозы.
 
 ![Расширенная защита от угроз для службы хранилища Azure: оповещение по электронной почте](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-alert.png)
 

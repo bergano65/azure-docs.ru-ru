@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 2efeb37f8b98f4cf9a29ec8a6976146b81aab26b
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 9bc6cfdcbc67761e99150c730adeb23602232632
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69641077"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032943"
 ---
 # <a name="sql-database-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об управляемом экземпляре базы данных SQL
 
@@ -124,9 +124,9 @@ ms.locfileid: "69641077"
 
 Примеры использования управляемого экземпляра:
 
-- [коматсу](http://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
-- [повердетаилс](http://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
-- [Аллскриптс](http://customers.microsoft.com/story/allscripts-partner-professional-services-azure)  
+- [коматсу](https://customers.microsoft.com/story/komatsu-australia-manufacturing-azure)
+- [повердетаилс](https://customers.microsoft.com/story/powerdetails-partner-professional-services-azure-sql-database-managed-instance)
+- [Аллскриптс](https://customers.microsoft.com/story/allscripts-partner-professional-services-azure)  
 Чтобы получить более полное представление о преимуществах, затратах и рисках, связанных с развертыванием управляемого экземпляра базы данных SQL Azure, также можно изучить Forrester: [Общее экономическое воздействие MI](https://azure.microsoft.com/resources/forrester-tei-sql-database-managed-instance).
 
 

@@ -179,14 +179,14 @@ ms.locfileid: "68967485"
 | Тип данных MongoDB | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Binary |Byte[] |
-| Boolean |Boolean |
+| логический |логический |
 | Date |DateTime |
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |String |
-| String |String |
-| UUID |Guid |
+| ObjectID |Строковое |
+| Строковое |Строковое |
+| UUID |GUID |
 | Object |Преобразованный в плоские столбцы с "_" в качестве вложенного разделителя |
 
 > [!NOTE]

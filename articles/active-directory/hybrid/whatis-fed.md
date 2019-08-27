@@ -1,5 +1,5 @@
 ---
-title: Использование федерации с Azure Active Directory | Документация Майкрософт
+title: Использование федерации с Azure Active Directory | Документы Майкрософт
 description: Использование федерации с Azure Active Directory
 services: active-directory
 author: billmath
@@ -13,12 +13,12 @@ ms.date: 11/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8794ffa1654e49690f3bd31a380ba2051b4b1da7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 52f9832a4307ea9519df448f192eeca70043a6d6
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60294976"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035172"
 ---
 # <a name="what-is-federation-with-azure-ad"></a>Использование федерации с Azure Active Directory
 
@@ -35,7 +35,7 @@ ms.locfileid: "60294976"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Что собой представляет гибридная идентификация](whatis-phs.md)
+- [Что собой представляет гибридная идентификация](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-hybrid-identity)
 - [Использование Azure AD Connect с расширением Azure AD Connect Health](whatis-azure-ad-connect.md)
 - [Использование синхронизации хэша паролей](whatis-phs.md)
 - [Использование федерации](whatis-fed.md)

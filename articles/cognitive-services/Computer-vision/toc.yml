@@ -147,6 +147,8 @@
           href: computer-vision-how-to-install-containers.md
         - name: Настройка контейнеров
           href: computer-vision-resource-container-config.md
+        - name: Использование с Kubernetes и Helm
+          href: deploy-computer-vision-on-premises.md
         - name: Использование экземпляров контейнеров
           href: deploy-computer-vision-on-container-instances.md
     - name: Использование подключенной службы "Компьютерное зрение"

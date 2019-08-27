@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 338ceef8ce94e97f7569f85b0079f75aed033612
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: 18bbeb2b4936b1c8a03ffdc7eade8dc92d094fde
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558643"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050611"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure (виртуальных сетей) позволяют размещать любые ресурсы Azure в сети, не поддерживающей маршрутизацию через Интернет, которая управляет доступом к. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -140,7 +140,7 @@ ms.locfileid: "69558643"
 
 + **Службы SMTP-ретрансляции.** Исходящее сетевое подключение для ретранслятора SMTP, которое разрешается в `smtpi-co1.msn.com`узле `smtpi-ch1.msn.com` `smtpi-db3.msn.com`, `smtpi-sin.msn.com` , и`ies.global.microsoft.com`
 
-+ **CAPTCHA на портале разработчика**. Исходящее сетевое подключение для CAPTCHA на портале разработчика, которое разрешается в узле `client.hip.live.com`.
++ **CAPTCHA на портале разработчика**. Исходящее сетевое подключение для CAPTCHA портала разработчика, которое разрешается в узлах `client.hip.live.com` и. `partner.hip.live.com`
 
 + **Портал Azure Diagnostics.** Включает поток журналов диагностики на портале Azure при использовании расширения управления API внутри виртуальной сети; требуется исходящий доступ к `dc.services.visualstudio.com` на порте 443. Это помогает в устранении неполадок, которые могут возникнуть при использовании расширения.
 

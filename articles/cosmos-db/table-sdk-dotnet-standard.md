@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 22a27ba19670344f351205b6a4865bf85daf0bab
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 8fd3aedd2e371e511730fd98751ae3214545c489
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900256"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034581"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -33,7 +33,14 @@ ms.locfileid: "69900256"
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
 |**Сообщить о проблемах**|[Сообщить о проблемах](https://github.com/Azure/azure-cosmos-table-dotnet/issues)|
 
-## <a name="release-notes"></a>Заметки о выпуске
+## <a name="release-notes-for-200-series"></a>Заметки о выпуске для ряда 2.0.0
+2.0.0 Series использует зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с улучшенной производительностью и консолидацией пространства имен для Cosmos DB конечной точки.
+
+### <a name="a-name200-preview200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
+* Первоначальный предварительный просмотр пакета SDK для таблиц 2.0.0, который принимает зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с повышением производительности и консолидации пространства имен для Cosmos DB конечной точки. Открытый API остается прежним.
+
+## <a name="release-notes-for-100-series"></a>Заметки о выпуске для серии 1.0.0
+Серия 1.0.0 использует зависимость от [Microsoft. Azure. DocumentDB. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
 
 ### <a name="a-name105-preview105-preview"></a><a name="1.0.5-preview"/>1.0.5 — Предварительная версия
 * Исправления ошибок
@@ -77,6 +84,12 @@ ms.locfileid: "69900256"
 
 Эта кросс-платформенная библиотека .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) заменит библиотеку .NET Framework [Microsoft. Azure. CosmosDB. Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
 
+### <a name="200-series"></a>Серия 2.0.0
+| Version | Дата выпуска | Дата вывода |
+| --- | --- | --- |
+| [2.0.0-preview](#2.0.0-preview) |Аугуест 22, 2019 |--- |
+
+### <a name="100-series"></a>Серия 1.0.0
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.5 — Предварительная версия](#1.0.5-preview) |Аугуест 20, 2019 |--- |

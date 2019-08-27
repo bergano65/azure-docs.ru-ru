@@ -49,6 +49,8 @@
       href: ../hdinsight-version-release.md?toc=/azure/hdinsight/spark/toc.json&bc=/azure/hdinsight/spark/breadcrumb/toc.json
     - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
       href: ../hdinsight-cluster-availability.md?toc=/azure/hdinsight/spark/toc.json&bc=/azure/hdinsight/spark/breadcrumb/toc.json
+    - name: Сравнение вариантов хранилищ
+      href: ../hdinsight-hadoop-compare-storage-options.md
 - name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca2b7f2b0e20e85e1e62f8efabb81eddd5f901f2
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: eb4486c889dec29f81b57605c3ccee510242f832
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991119"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035145"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Включение удаленного доступа для Power BI Mobile с помощью AD Application Proxy Azure
 
@@ -103,28 +103,27 @@ ms.locfileid: "69991119"
 
 Чтобы завершить настройку приложения, перейдите в раздел **"пользователи и группы** " и назначьте пользователям доступ к этому приложению.
 
-## <a name="step-3-grant-power-bi-mobile-access-to-report-services"></a>Шаг 3. Предоставление Power BI Mobile доступа к службам отчетов
+## <a name="step-3-modify-the-reply-uris-for-the-application"></a>Шаг 3. Изменение универсального кода ресурса (URI) ответа для приложения
 
-Прежде чем мобильное приложение Power BI сможет подключиться к службам отчетов и получить к ним доступ, необходимо правильно зарегистрироваться в Azure AD.  
+Прежде чем мобильное приложение Power BI сможет подключиться к службам отчетов и получить к ним доступ, необходимо настроить регистрацию приложения, автоматически созданную на шаге 2. 
 
 1. На странице **обзор** Azure Active Directory выберите **Регистрация приложений**.
 2. На вкладке **все приложения** найдите приложение, созданное на шаге 2.
 3. Выберите приложение, а затем выберите **Проверка**подлинности.
 4. Добавьте следующие URI перенаправления в зависимости от используемой платформы.
 
-   При регистрации приложения для Power BI Mobile **iOS**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
+   При настройке приложения для Power BI Mobile **iOS**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
    
-   При регистрации приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
+   При настройке приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
+   - `mspbi-adal://com.microsoft.powerbimobile`
 
    > [!IMPORTANT]
-   > Для правильной работы приложения необходимо добавить URI перенаправления. Если вы настраиваете это как для iOS, так и для Android, вам нужно только зарегистрировать **одно** приложение и добавить URI перенаправления для iOS и Android. Если требуется отдельное приложение для каждой платформы, необходимо включить URI перенаправления: `mspbi-adal://com.microsoft.powerbimobile` для обоих приложений.
-
-2. Теперь, когда вы зарегистрировали собственное приложение, вы можете предоставить ему доступ к другим приложениям в каталоге, в данном случае для доступа к службам отчетов, опубликованным через прокси приложения. Выполните действия, описанные в [шаге 3. Предоставьте доступ к вашему прокси-](application-proxy-configure-native-client-application.md#step-3-grant-access-to-your-proxy-application)приложению.
+   > Для правильной работы приложения необходимо добавить URI перенаправления. Если вы настраиваете приложение как для Power BI Mobile iOS, так и для Android, добавьте следующий универсальный код ресурса (URI) перенаправления типа Public Client (мобильный & Desktop) в список URI `urn:ietf:wg:oauth:2.0:oob`перенаправления, настроенных для iOS:.
 
 ## <a name="step-4-connect-from-the-power-bi-mobile-app"></a>Шаг 4. Подключение из приложения Power BI Mobile
 

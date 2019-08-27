@@ -11,12 +11,12 @@ ms.assetid: fe7a4377-5c24-4f72-ab1a-6d9d23e8d895
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 31357fa313cfa31c0f8a90c0f7722f627e4394d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae77488df6ce58d8cab61933f50d24edec35b1ab
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62106173"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050730"
 ---
 # <a name="monitor-and-manage-trello-with-azure-logic-apps"></a>Мониторинг приложения Trello и управление им с помощью Azure Logic Apps
 
@@ -30,9 +30,9 @@ ms.locfileid: "62106173"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Trello и делают выходные данные доступными для других действий. Можно использовать действия, которые выполняют задачи с вашей учетной записью Trello. Кроме того, выходные данные от действий Trello могут использоваться другими действиями. Например, при добавлении новой карты на доску или в список можно отправлять сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Учетная запись Trello и учетные данные пользователя.
 
@@ -67,11 +67,11 @@ ms.locfileid: "62106173"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/trello/) соединителя.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

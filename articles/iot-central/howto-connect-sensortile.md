@@ -3,17 +3,17 @@ title: Подключение устройства Сенсортиле. Box к 
 description: Как разработчик устройства вы узнаете, как подключить устройство Сенсортиле. Box к приложению Azure IoT Central.
 author: sarahhubbard
 ms.author: sahubbar
-ms.date: 04/24/2019
+ms.date: 08/24/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: sandeep.pujar
-ms.openlocfilehash: ce0c5abe6e89094623c07afa2d1c85903e0e7ee7
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 3d804b1e14d1b79266a74340e8682f1bf03d8f30
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877445"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050561"
 ---
 # <a name="connect-sensortilebox-device-to-your-azure-iot-central-application"></a>Подключение устройства Сенсортиле. Box к приложению Azure IoT Central
 
@@ -34,7 +34,7 @@ ms.locfileid: "69877445"
 
 В приложении IoT Central Azure добавьте реальное устройство из шаблона устройства **сенсортиле. Box** и запишите сведения о подключении устройства: **Идентификатор области**, **идентификатор устройства**и **первичный ключ**:
 
-1. Добавьте устройство из Device Explorer. Выберите **+ создать > Real** , чтобы добавить реальное устройство.
+1. Добавление устройства с устройств. Выберите **+ создать > Real** , чтобы добавить реальное устройство.
 
     * Введите **идентификатор устройства**в нижнем регистре или используйте предлагаемый **идентификатор устройства**.
     * Введите **имя устройства**или используйте предложенное имя

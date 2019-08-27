@@ -1,6 +1,6 @@
 ---
 title: Примеры и пошаговые руководства для Виртуальных машин для обработки и анализа данных в Azure | Документация Майкрософт
-description: Дополнительные сведения о примерах и пошаговых инструкциях по выполнению распространенных задач и сценариев для этой виртуальной машины.
+description: С помощью этих примеров и пошаговых руководств вы узнаете, как выполнять типичные задачи и сценарии с помощью виртуальной машины для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 documentationcenter: ''
@@ -16,47 +16,47 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: vijetaj
-ms.openlocfilehash: 57ebefb11d23c5ea18d5859ca494944e6a845e04
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 628c516553c2304739229c53d725645c799d06ce
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565317"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047835"
 ---
 # <a name="samples-on-data-science-virtual-machines"></a>Примеры для Виртуальных машин для обработки и анализа данных
 
-Виртуальные машины для обработки и анализа данных Azure включают комплексный набор примеров кода. Примеры кода представлены в виде записных книжек Jupyter и скриптов на таких языках, как Python и R. 
+Виртуальные машины Azure для обработки и анализа данных (Dsvm) включают в себя полный набор примеров кода. Эти примеры включают в себя Jupyterные записные книжки и сценарии на языках, таких как Python и R.
 > [!NOTE]
-> Дополнительные сведения о том, как запустить записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Доступ к Jupyter](#access-jupyter).
+> Дополнительные сведения о том, как запускать записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Access Jupyter](#access-jupyter) .
 
 ## <a name="quick-reference-of-samples"></a>Краткий справочник примеров
 | Категории примеров | Описание | Расположение |
 | ------------- | ------------- | ------------- |
-| Язык R  | В примерах на языке R объясняются сценарии, такие как подключение к облачным хранилищам данных Azure. В них также объясняется сравнение между языками R с открытым кодом и Microsoft R и поясняется, как использовать модели в Microsoft R Server или SQL Server. <br/> [Язык R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
-| Язык Python  | В примерах на Python рассматриваются такие сценарии, как подключение к облачным хранилищам данных Azure и работа с Машинным обучением Azure.  <br/> [Язык Python](#python-language) | <br/>`~notebooks` <br/><br/>|
-| Язык Julia  | В примерах на Julia подробно рассматривается построение графиков и глубокое обучение, а также вызовы C и Python из Julia. <br/> [Язык Julia](#julia-language) |<br/> Windows:<br/> `~notebooks/Julia_notebooks`<br/><br/> Linux:<br/> `~notebooks/julia`<br/><br/> |
-| Машинное обучение Azure  | Создавайте модели машинного обучения и глубокого обучения с помощью службы Машинного обучения Azure. Модели можно развертывать в любом расположении. Используйте автоматическое машинное обучение и интеллектуальную настройку гиперпараметров. Вы также можете использовать управление моделями и распределенное обучение. <br/> [Машинное обучение](#azureml) | <br/>`~notebooks/AzureML`<br/> <br/>|
-| Записные книжки PyTorch  | Примеры глубокого обучения, использующие нейронные сети на основе PyTorch. Записные книжки есть как для базовых, так и для расширенных сценариев.  <br/> [Записные книжки PyTorch](#pytorch) | <br/>`~notebooks/Deep_learning_frameworks/pytorch`<br/> <br/>|
-| TensorFlow  |  Различные примеры и методы нейронной сети, реализованные с помощью платформы TensorFlow. <br/> [TensorFlow](#tensorflow); | <br/>`~notebooks/Deep_learning_frameworks/tensorflow`<br/><br/> |
-| Microsoft Cognitive Toolkit <br/>   | Примеры глубокого обучения, опубликованные командой Cognitive Toolkit в Майкрософт.  <br/> [Cognitive Toolkit](#cntk) | <br/> `~notebooks/DeepLearningTools/CNTK/Tutorials`<br/><br/> Linux:<br/> `~notebooks/CNTK`<br/> <br/>|
-| Caffe2 | Примеры глубокого обучения, использующие нейронные сети на основе caffe2. С помощью нескольких записных книжек пользователи могут ознакомиться с caffe2 и его эффективным использованием. Примеры включают в себя создание набора данных и предварительную обработку изображений. Они также включают модель регрессии и сведения об использовании предварительно обученных моделей. <br/> [Caffe2](#caffe2) | <br/>`~notebooks/Deep_learning_frameworks/caffe2`<br/><br/> |
-| H2O   | Примеры на основе Python, использующие H2O для решения проблем во множестве реальных сценариев. <br/> [H2O](#h2o) | <br/>`~notebooks/h2o`<br/><br/> |
-| Язык SparkML  | Примеры использования функций набора средств MLlib Spark через pySpark и приложение "Библиотека машинного обучения Microsoft для Apache Spark (MMLSpark)" в Apache Spark 2.x.  <br/> [Язык SparkML](#sparkml) | <br/>`~notebooks/SparkML/pySpark`<br/>`~notebooks/MMLSpark`<br/><br/>  |
-| XGBoost; | Примеры стандартного машинного обучения в XGBoost для таких сценариев, как классификация и регрессия. <br/> [XGBoost](#xgboost) | <br/>Windows:<br/>`\dsvm\samples\xgboost\demo`<br/><br/> |
+| Язык R  | Примеры иллюстрируют такие сценарии, как подключение к облачным хранилищам данных на основе Azure и сравнение кода R и Microsoft Machine Learning Server с открытым кодом. Они также объясняют, как эксплуатацию модели на Microsoft Machine Learning Server и SQL Server. <br/> [Язык R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
+| Язык Python  | Примеры иллюстрируют такие сценарии, как подключение к облачным хранилищам данных на основе Azure и работа с Машинное обучение Azure.  <br/> [Язык Python](#python-language) | <br/>`~notebooks` <br/><br/>|
+| Язык Julia  | Содержит подробное описание построения и глубокого обучения в Julia. Также объясняется, как вызывать C и Python из Julia. <br/> [Язык Julia](#julia-language) |<br/> Windows:<br/> `~notebooks/Julia_notebooks`<br/><br/> Linux:<br/> `~notebooks/julia`<br/><br/> |
+| Машинное обучение Azure  | Демонстрирует создание моделей машинного обучения и глубокого обучения с помощью Машинное обучение. Модели можно развертывать в любом расположении. Используйте автоматическое машинное обучение и интеллектуальную настройку гиперпараметров. Вы также можете использовать управление моделями и распределенное обучение. <br/> [Машинное обучение](#azure-machine-learning) | <br/>`~notebooks/AzureML`<br/> <br/>|
+| Записные книжки PyTorch  | Примеры глубокого обучения, в которых используются нейронные сети на основе PyTorch. Записные книжки есть как для базовых, так и для расширенных сценариев.  <br/> [Записные книжки PyTorch](#pytorch) | <br/>`~notebooks/Deep_learning_frameworks/pytorch`<br/> <br/>|
+| TensorFlow  |  Разнообразные примеры и методики нейронной сети, реализованные с помощью платформы TensorFlow. <br/> [TensorFlow](#tensorflow); | <br/>`~notebooks/Deep_learning_frameworks/tensorflow`<br/><br/> |
+| Microsoft Cognitive Toolkit <br/>   | Примеры глубокого обучения, опубликованные Группой Cognitive Toolkit в корпорации Майкрософт.  <br/> [Cognitive Toolkit](#cntk) | <br/> `~notebooks/DeepLearningTools/CNTK/Tutorials`<br/><br/> Linux:<br/> `~notebooks/CNTK`<br/> <br/>|
+| Caffe2 | Примеры глубокого обучения, в которых используются нейронные сети на основе Caffe2. Несколько записных книжек посвящены пользователям с Caffe2 и их эффективному использованию. Примеры включают предварительную обработку изображений и создание набора данных. Они также включают регрессию и использование предварительно обученных моделей. <br/> [Caffe2](#caffe2) | <br/>`~notebooks/Deep_learning_frameworks/caffe2`<br/><br/> |
+| H2O   | Примеры на основе Python, использующие H2O для реальных сценариев проблем. <br/> [H2O](#h2o) | <br/>`~notebooks/h2o`<br/><br/> |
+| Язык SparkML  | Примеры, в которых используются функции Apache Spark MLLib Toolkit через pySpark и MMLSpark: Microsoft Машинное обучение для Apache Spark на Apache Spark 2. x.  <br/> [Язык SparkML](#sparkml) | <br/>`~notebooks/SparkML/pySpark`<br/>`~notebooks/MMLSpark`<br/><br/>  |
+| XGBoost; | Стандартные примеры машинного обучения в XGBoost для таких сценариев, как классификация и регрессия. <br/> [XGBoost](#xgboost) | <br/>Windows:<br/>`\dsvm\samples\xgboost\demo`<br/><br/> |
 
 <br/>
 
 ## <a name="access-jupyter"></a>Доступ к Jupyter 
 
-Доступ к Jupyter можно получить, щелкнув значок `Jupyter` на рабочем столе или в меню приложения. Jupyter также можно открыть в выпусках Linux на Виртуальных машинах для обработки и анализа данных. Вы можете получить доступ удаленно из веб-браузера, посетив `https://<Full Domain Name or IP Address of the DSVM>:8000` в Ubuntu.
+Чтобы получить доступ к Jupyter, выберите значок **Jupyter** в меню Рабочий стол или приложение. Вы также можете получить доступ к Jupyter в выпуске Linux DSVM. Для удаленного доступа из веб-браузера перейдите `https://<Full Domain Name or IP Address of the DSVM>:8000` на Ubuntu.
 
-Чтобы добавить исключения и получить доступ к Jupyter через браузер, ознакомьтесь со следующим снимком экрана.
+Чтобы добавить исключения и предоставить доступ к Jupyter через браузер, используйте следующие рекомендации.
 
 
 ![Добавление исключения Jupyter](./media/ubuntu-jupyter-exception.png)
 
 
-Войдите, используя один и тот же пароль, что и для входа на Виртуальные машины для обработки и анализа данных.
+Войдите в систему, используя тот же пароль, который вы используете для входа на виртуальную машину для обработки и анализа данных.
 <br/>
 
 **Домашняя страница Jupyter**
@@ -71,8 +71,8 @@ ms.locfileid: "68565317"
 ## <a name="julia-language"></a>Язык Julia 
 <br/>![Примеры для Julia](./media/julia-samples.png)<br/>
 
-## <a name="azureml"></a>AzureML 
-<br/>![Примеры AzurekML](./media/azureml-samples.png)<br/>
+## <a name="azure-machine-learning"></a>Машинное обучение Azure 
+<br/>![Примеры Машинное обучение Azure](./media/azureml-samples.png)<br/>
 
 ## <a name="pytorch"></a>PyTorch
 <br/>![Примеры PyTorch](./media/pytorch-samples.png)<br/>

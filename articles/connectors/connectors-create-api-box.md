@@ -1,21 +1,21 @@
 ---
-title: Подключение к Box с помощью Azure Logic Apps | Документация Майкрософт
+title: Подключение к Box — Azure Logic Apps
 description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Box и Azure Logic Apps.
+services: logic-apps
+ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-ms.date: 11/07/2016
-ms.topic: article
-ms.service: logic-apps
-services: logic-apps
 ms.reviewer: klam, LADocs
-ms.suite: integration
+ms.topic: conceptual
+ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 971d38fa0fbd47f0deb815577033bbe684aac32f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5fbc64194182c41a70eb27a4049234973c39fffe
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60312582"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050933"
 ---
 # <a name="create-and-manage-files-in-box-with-azure-logic-apps"></a>Создание файлов в Box и управление ими с помощью Azure Logic Apps
 
@@ -25,16 +25,16 @@ ms.locfileid: "60312582"
 
 * запускать автоматизированные задачи и рабочие процессы при создании или обновлении файлов;
 
-* запускать действия по копированию, удалению файлов и т. д.
+* Выполнение действия, которое копирует файл или удаляет файл.
 
   Когда эти действия получают ответ, они делают выходные данные доступными для использования другими действиями. 
   Например, при изменении файла в Box можно отправить измененный файл по электронной почте с помощью Office 365.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись [Box](https://www.box.com/home).
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Приложение логики, из которого необходимо получить доступ к учетной записи Box. Чтобы запустить приложение логики с помощью триггера Box, требуется [пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -43,13 +43,8 @@ ms.locfileid: "60312582"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Технические сведения, такие как триггеры, действия и ограничения, как определено соединителя OpenAPI (прежнее название — Swagger) файл, см. в разделе [соединителя справочной странице](/connectors/box/).
+Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файле OpenAPI (ранее Swagger) соединителя, см. [страницу справочника](/connectors/box/)по соединителю.
 
-## <a name="get-support"></a>Получение поддержки
-
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

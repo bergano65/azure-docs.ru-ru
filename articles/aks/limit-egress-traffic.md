@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 369729f10de4a55cd14bb866795ea1aa15b3d9da
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 9476290669606f6eb6c56b51497f3026b9613698
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639786"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034959"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Предварительный просмотр — ограничить трафик исходящего трафика для узлов кластера и управлять доступом к необходимым портам и службам в службе Kubernetes Azure (AKS)
 
@@ -85,15 +85,13 @@ az provider register --namespace Microsoft.ContainerService
 |----------------------------|-----------|----------|
 | *. HCP. \<Location\>. azmk8s.IO | HTTPS:443, TCP:22, TCP:9000 | Этот адрес является конечной точкой сервера API. *Замените\<расположение\>* на регион, в котором развернут кластер AKS. |
 | *. Тун. \<Location\>. azmk8s.IO | HTTPS:443, TCP:22, TCP:9000 | Этот адрес является конечной точкой сервера API. *Замените\<расположение\>* на регион, в котором развернут кластер AKS. |
-| aksrepos.azurecr.io        | HTTPS:443 | Этот адрес необходим для доступа к образам в реестре контейнеров Azure (запись контроля доступа). |
+| aksrepos.azurecr.io        | HTTPS:443 | Этот адрес необходим для доступа к образам в реестре контейнеров Azure (запись контроля доступа). В этом реестре содержатся сторонние изображения и диаграммы (например, сервер метрик, ядро DNS и т. д.), необходимые для функционирования кластера во время обновления и масштабирования кластера.|
 | *.blob.core.windows.net    | HTTPS:443 | Этот адрес является хранилищем серверной части для образов, хранящихся в записи контроля доступа. |
-| mcr.microsoft.com          | HTTPS:443 | Этот адрес необходим для доступа к образам в реестре контейнеров Microsoft (мкр). |
+| mcr.microsoft.com          | HTTPS:443 | Этот адрес необходим для доступа к образам в реестре контейнеров Microsoft (мкр). В этом реестре содержатся образы и диаграммы от сторонних производителей (например, значок Кита и т. д.), необходимые для функционирования кластера во время обновления и масштабирования кластера. |
 | *.cdn.mscr.io              | HTTPS:443 | Этот адрес необходим для хранилища мкр, поддерживаемого сетью доставки содержимого (CDN) Azure. |
 | management.azure.com       | HTTPS:443 | Этот адрес необходим для операций получения/размещения Kubernetes. |
 | login.microsoftonline.com  | HTTPS:443 | Этот адрес необходим для Azure Active Directory проверки подлинности. |
-| api.snapcraft.io           | HTTPS: 443, HTTP: 80 | Этот адрес необходим для установки пакетов привязки на узлах Linux. |
 | ntp.ubuntu.com             | UDP: 123   | Этот адрес необходим для синхронизации времени NTP на узлах Linux. |
-| *. docker.io                | HTTPS:443 | Этот адрес необходим для извлечения требуемых образов контейнеров для передней части туннеля. |
 
 ## <a name="optional-recommended-addresses-and-ports-for-aks-clusters"></a>Необязательные Рекомендуемые адреса и порты для кластеров AKS
 
@@ -103,7 +101,7 @@ az provider register --namespace Microsoft.ContainerService
 
 | Полное доменное имя                                    | Порт      | Использование      |
 |-----------------------------------------|-----------|----------|
-| *. ubuntu.com                            | HTTP: 80   | Этот адрес позволяет узлам кластера Linux скачивать необходимые исправления и обновления для системы безопасности. |
+| security.ubuntu.com, azure.archive.ubuntu.com, changelogs.ubuntu.com                           | HTTP: 80   | Этот адрес позволяет узлам кластера Linux скачивать необходимые исправления и обновления для системы безопасности. |
 | packages.microsoft.com                  | HTTPS:443 | Этот адрес является репозиторием пакетов Майкрософт, используемым для кэшированных операций *apt-get* . |
 | dc.services.visualstudio.com            | HTTPS:443 | Рекомендуется для правильных метрик и мониторинга с помощью Azure Monitor. |
 | *. opinsights.azure.com                  | HTTPS:443 | Рекомендуется для правильных метрик и мониторинга с помощью Azure Monitor. |

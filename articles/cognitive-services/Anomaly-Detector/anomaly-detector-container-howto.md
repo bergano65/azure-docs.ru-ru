@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: e3f6ad4338863fcbb35bad4f286b71993cf6fa2a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 0c2ff2c745ebed8385df0d351c6d43faf5ab1b9d
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854830"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050057"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Установка и запуск контейнеров детекторов аномалий
 
@@ -30,7 +30,7 @@ ms.locfileid: "68854830"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать контейнеры детекторов аномалий, необходимо выполнить следующие предварительные требования:
 
@@ -156,7 +156,7 @@ ApiKey={API_KEY}
 
 Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. 
 
-Используйте узел https://localhost:5000 для API контейнера.
+Используйте узел http://localhost:5000 для API контейнера.
 
 <!--  ## Validate container is running -->
 

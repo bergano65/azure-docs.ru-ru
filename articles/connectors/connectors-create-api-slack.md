@@ -11,12 +11,12 @@ ms.assetid: 234cad64-b13d-4494-ae78-18b17119ba24
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 675e37120b06af3add58b564495f22875647a0fa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2606fdc15194264bc3d84496d2de258adfc314be
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62105655"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050796"
 ---
 # <a name="monitor-and-manage-slack-with-azure-logic-apps"></a>Мониторинг приложения Slack и управление им с помощью Azure Logic Apps
 
@@ -29,9 +29,9 @@ ms.locfileid: "62105655"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Slack и делают выходные данные доступными для других действий. Вы можете использовать действия, которые выполняют задачи с вашей учетной записью Slack. Кроме того, выходные данные действий Slack могут использоваться другими действиями. Например, когда создается новый файл, можно отправить сообщение электронной почты с помощью соединителя Office 365 Outlook. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Ваша учетная запись [Slack](https://slack.com/) и учетные данные пользователя.
 
@@ -72,11 +72,11 @@ ms.locfileid: "62105655"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/slack/) соединителя.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

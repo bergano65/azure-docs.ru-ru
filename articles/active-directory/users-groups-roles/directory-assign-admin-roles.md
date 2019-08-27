@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 08/04/2019
+ms.date: 08/23/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4d692110a304cbfbbfda69bb2b10e3a065b2450
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: a228c0d349fd45f34923a64ef99dcfba50c4c548
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851528"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034989"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -28,8 +28,6 @@ ms.locfileid: "68851528"
 ## <a name="limit-the-use-of-global-administrator"></a>Ограничение использования глобального администратора
 
 Пользователи, которым назначена роль глобального администратора, могут читать и изменять все административные параметры в вашей организации Azure AD. По умолчанию пользователю, который подписывается на подписку Azure, назначается роль глобального администратора для Организации Azure AD. Только глобальные администраторы и администраторы привилегированных ролей могут делегировать роли администратора. Чтобы снизить риск для вашего бизнеса, рекомендуется назначить эту роль минимально возможным людям в Организации.
-
-## <a name="best-practices"></a>Рекомендации
 
 Рекомендуется назначить эту роль менее чем 5 людям в вашей организации. При наличии более пяти пользователей, назначенных роли глобального администратора в Организации, ниже приведены некоторые способы снижения ее использования.
 
@@ -94,7 +92,7 @@ ms.locfileid: "68851528"
 
 * **[Администратор облачных устройств](#cloud-device-administrator)** : пользователи с этой ролью могут включать, отключать и удалять устройства в Azure AD и считывать ключи BitLocker в Windows 10 (при наличии) на портале Azure. Роль не предоставляет разрешения на управление любыми другими свойствами устройства.
 
-* **[Администратор соответствия требованиям](#compliance-administrator)** : Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в Центре соответствия требованиям Microsoft 365, Центре администрирования Microsoft 365, Azure и Центре безопасности и соответствия требованиям Office 365. Пользователи также могут управлять всеми функциями в Центре администрирования Exchange и Центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор соответствия требованиям](#compliance-administrator)** : Пользователи с этой ролью имеют разрешения на управление возможностями, связанными с соответствием, в Центре соответствия требованиям Microsoft 365, Центре администрирования Microsoft 365, Azure и Центре безопасности и соответствия требованиям Office 365. Исполнителям также может управлять всеми компонентами в центре администрирования Exchange и группами & в центрах администрирования Skype для бизнеса и создавать билеты поддержки для Azure и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
   In | Может
   ----- | ----------
@@ -104,7 +102,7 @@ ms.locfileid: "68851528"
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр всех данных проверки Intune.
   [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.<br>Может создавать и изменять файловые политики и давать разрешение на управление файлом.<br> Позволяет просматривать все встроенные отчеты в разделе "Управление данными".
 
-* **[Администратор данных соответствия](#compliance-data-administrator)** : Пользователи с этой ролью имеют разрешения на защиту и отслеживание данных в центре Microsoft 365 соответствия требованиям, Microsoft 365 центре администрирования и Azure. Пользователи также могут управлять всеми функциями в центре администрирования Exchange, диспетчере соответствия требованиям и центре администрирования Teams и Skype для бизнеса и создавать запросы в службу поддержки для Azure и Microsoft 365.
+* **[Администратор данных соответствия](#compliance-data-administrator)** : Пользователи с этой ролью имеют разрешения на отправку данных в центре Microsoft 365 соответствия требованиям, Microsoft 365 центре администрирования и Azure. Пользователи также могут контролировать данные о соответствии в центре администрирования Exchange, диспетчере соответствия и командах & центре администрирования Skype для бизнеса и создавать билеты поддержки для Azure и Microsoft 365.
 
   In | Может
   ----- | ----------
@@ -135,7 +133,7 @@ ms.locfileid: "68851528"
   > [!NOTE] 
   > В API Microsoft Graph, API Graph Azure AD и Azure AD PowerShell эта роль определяется как "Администратор службы Dynamics 365". На [портале Azure](https://portal.azure.com) она называется "Администратор Dynamics 365".
 
-* **[Администратор Exchange](#exchange-service-administrator)** : Пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+* **[Администратор Exchange](#exchange-service-administrator)** : пользователи с этой ролью имеют глобальные разрешения в Microsoft Exchange Online (если служба используется). У них также есть возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
   > [!NOTE]
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Exchange". На [портале Azure](https://portal.azure.com) она называется "Администратор Exchange". Это "Администратор Exchange Online" в [Центре администрирования Exchange](https://go.microsoft.com/fwlink/p/?LinkID=529144). 
 
@@ -249,7 +247,7 @@ ms.locfileid: "68851528"
   Центр защиты идентификации | Чтение всех отчетов о безопасности и сведений о параметрах функций безопасности<br><ul><li>Защита от нежелательной почты<li>Шифрование<li>Защита от потери данных<li>Защита от вредоносных программ<li>Дополнительная защита от угроз<li>Защита от фишинга<li>Правила обработки почты
   [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Имеет доступ только для чтения ко всем сведениям, отображаемым в службе управления привилегированными пользователями (PIM) Azure AD: политики и отчеты для назначения ролей Azure AD, проверки безопасности, а в будущем также доступ на чтение для данных политик и отчетов, относящихся к сценариям за пределами назначения ролей Azure AD.<br>**Не может** регистрироваться в службе управления привилегированными пользователями Azure AD или вносить в нее какие-либо изменения. На портале PIM или с помощью PowerShell пользователь с этой ролью может активировать дополнительные роли (например, администратор глобального администратора или администратора привилегированных ролей), если он подходит для них.
   [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Просмотр политик безопасности<br>Просмотр и анализ угроз безопасности.<br>Просмотр отчетов
-  EDR и ATP в Защитнике Windows | Просмотр и анализ оповещений.
+  EDR и ATP в Защитнике Windows | Просмотр и анализ оповещений. При включении контроля доступа на основе ролей в ATP в Защитнике Windows пользователи с разрешениями только для чтения, такими как роль чтения безопасности Azure AD, теряют доступ, пока они не назначены роли ATP в Защитнике Windows.
   [Intune](https://docs.microsoft.com/intune/role-based-access-control) | Просмотр пользователя, устройства, соглашения о регистрации, настроек и сведений о приложении. Не может вносить изменения в Intune.
   [Cloud App Security](https://docs.microsoft.com/cloud-app-security/manage-admins) | Обладает разрешением только для чтения и может управлять оповещениями.
   [Центр безопасности Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) | Может просматривать оповещения и рекомендации, просматривать политики и состояния безопасности, но не может вносить изменения.
@@ -297,13 +295,13 @@ ms.locfileid: "68851528"
 В следующих таблицах описываются разрешения в Azure Active Directory, предоставленные каждой роли. Некоторые роли могут иметь дополнительные разрешения в службах Майкрософт за пределами Azure Active Directory.
 
 ### <a name="application-administrator"></a>Администратор приложений
-Может задавать и изменять любые аспекты регистрации приложений и работы с корпоративными приложениями.
+Может создавать любые аспекты регистрации приложений и работы с корпоративными приложениями и управлять ими.
 
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
 | microsoft.aad.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств для приложений в Azure Active Directory. |
+| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
 | microsoft.aad.directory/applications/create | Создание приложений в Azure Active Directory. |
 | microsoft.aad.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
 | microsoft.aad.directory/applications/delete | Удаление приложений в Azure Active Directory. |
@@ -315,8 +313,8 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства policies.applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Изменение свойства policies.applicationConfiguration в Azure Active Directory. |
+| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/create | Создание политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/delete | Удаление политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
@@ -326,7 +324,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Изменение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
+| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
@@ -346,7 +344,7 @@ ms.locfileid: "68851528"
 | --- | --- |
 | microsoft.aad.directory/applications/createAsOwner | Создание приложений в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/appRoleAssignments/createAsOwner | Создание объектов appRoleAssignment в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/oAuth2PermissionGrants/createAsOwner | Создание объектов oAuth2PermissionGrant в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| microsoft.aad.directory/oAuth2PermissionGrants/createAsOwner | Создание объектов oAuth2PermissionGrants в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/servicePrincipals/createAsOwner | Создание объектов servicePrincipal в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 
 ### <a name="authentication-administrator"></a>Администратор проверки подлинности
@@ -417,23 +415,23 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/organization/basic/update | Изменение базовых свойств для организаций в Azure Active Directory. |
+| microsoft.aad.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
-| microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
+| microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 
 ### <a name="cloud-application-administrator"></a>Администратор облачных приложений
-Может задавать и изменять любые аспекты регистрации приложений и работы с корпоративными приложениями, за исключением прокси приложений.
+Может задавать и контролировать любые аспекты регистрации приложений и работы с корпоративными приложениями, за исключением прокси приложения.
 
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
 | microsoft.aad.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств для приложений в Azure Active Directory. |
+| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
 | microsoft.aad.directory/applications/create | Создание приложений в Azure Active Directory. |
 | microsoft.aad.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
 | microsoft.aad.directory/applications/delete | Удаление приложений в Azure Active Directory. |
@@ -445,8 +443,8 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства policies.applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Изменение свойства policies.applicationConfiguration в Azure Active Directory. |
+| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/delete | Удаление политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 | microsoft.aad.directory/policies/applicationConfiguration/owners/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
@@ -455,7 +453,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Изменение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
+| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
@@ -469,7 +467,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="cloud-device-administrator"></a>Администратор облачных устройств
-Полный доступ для управления устройствами в Azure AD.
+Полный доступ для управления устройствами в Azure AD.
 
 | **Действия** | **Описание** |
 | --- | --- |
@@ -483,7 +481,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
 ### <a name="company-administrator"></a>Администратор организации
-Может контролировать все аспекты служб Azure AD и Майкрософт, использующих удостоверения Azure AD.
+Может контролировать все аспекты служб Azure AD и Майкрософт, использующих удостоверения Azure AD.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -495,7 +493,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.cloudAppSecurity/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.cloudAppSecurity. |
 | microsoft.aad.directory/administrativeUnits/allProperties/allTasks | Создание и удаление объектов administrativeUnit, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.aad.directory/applications/allProperties/allTasks | Создание и удаление приложений, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/allProperties/allTasks | Создание и удаление объектов appRoleAssignment и чтение и изменение всех свойств в Azure Active Directory. |
+| microsoft.aad.directory/appRoleAssignments/allProperties/allTasks | Создание и удаление объектов appRoleAssignment, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.aad.directory/contacts/allProperties/allTasks | Создание и удаление контактов, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.aad.directory/contracts/allProperties/allTasks | Создание и удаление контрактов, а также чтение и изменение всех свойств в Azure Active Directory. |
@@ -517,7 +515,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/serviceAction/disableDirectoryFeature | Выполнение действия службы Disabledirectoryfeature в Azure Active Directory. |
 | microsoft.aad.directory/serviceAction/enableDirectoryFeature | Выполнение действия службы Enabledirectoryfeature в Azure Active Directory. |
 | microsoft.aad.directory/serviceAction/getAvailableExtentionProperties | Выполнение действия службы Getavailableextentionproperties в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/allProperties/allTasks | Создание и удаление объектов servicePrincipal и чтение и изменение всех свойств в Azure Active Directory. |
+| microsoft.aad.directory/servicePrincipals/allProperties/allTasks | Создание и удаление объектов servicePrincipal, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.directory/subscribedSkus/allProperties/allTasks | Создание и удаление объектов subscribedSku и чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.aad.directory/users/allProperties/allTasks | Создание и удаление пользователей, а также чтение и изменение всех свойств в Azure Active Directory. |
@@ -528,28 +526,28 @@ ms.locfileid: "68851528"
 | microsoft.azure.informationProtection/allEntities/allTasks | Управление всеми аспектами Azure Information Protection. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
-| microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
+| microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
-| microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами диспетчера соответствия требованиям Office 365 |
+| microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
 | microsoft.office365.desktopAnalytics/allEntities/allTasks | Управляет всеми аспектами аналитики классических приложений. |
 | microsoft.office365.exchange/allEntities/allTasks | Управление всеми аспектами Exchange Online. |
-| microsoft.office365.lockbox/allEntities/allTasks | Управление всеми аспектами защищенного хранилища Office 365 |
+| microsoft.office365.lockbox/allEntities/allTasks | Управление всеми аспектами защищенного хранилища Office 365. |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 | microsoft.office365.messageCenter/securityMessages/read | Чтение сообщений о безопасности в microsoft.office365.messageCenter. |
-| microsoft.office365.protectionCenter/allEntities/allTasks | Управление всеми аспектами Центра защиты 365. |
+| microsoft.office365.protectionCenter/allEntities/allTasks | Управление всеми аспектами Центра защиты Office 365. |
 | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.office365.securityComplianceCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.sharepoint/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.office365.sharepoint. |
 | microsoft.office365.skypeForBusiness/allEntities/allTasks | Управление всеми аспектами Skype для бизнеса Online |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
-| microsoft.powerApps.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
+| microsoft.powerApps.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
 | microsoft.powerApps.powerBI/allEntities/allTasks | Управление всеми аспектами Power BI. |
 | microsoft.windows.defenderAdvancedThreatProtection/allEntities/read | Чтение всех ресурсов в microsoft.windows.defenderAdvancedThreatProtection. |
 
 ### <a name="compliance-administrator"></a>Администратор соответствия требованиям
-Может просматривать и изменять конфигурацию соответствия требованиям и отчеты в Azure AD и Office 365.
+Может просматривать и изменять конфигурацию соответствия требованиям и отчеты в Azure AD и Office 365.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -596,13 +594,13 @@ ms.locfileid: "68851528"
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/policies/conditionalAccess/basic/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/basic/update | Изменение свойства policies.conditionalAccess в Azure Active Directory. |
+| microsoft.aad.directory/policies/conditionalAccess/basic/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
 | microsoft.aad.directory/policies/conditionalAccess/create | Создание политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/conditionalAccess/delete | Удаление политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/conditionalAccess/owners/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
 | microsoft.aad.directory/policies/conditionalAccess/owners/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
 | microsoft.aad.directory/policies/conditionalAccess/policiesAppliedTo/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/tenantDefault/update | Изменение свойства policies.conditionalAccess в Azure Active Directory. |
+| microsoft.aad.directory/policies/conditionalAccess/tenantDefault/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
 
 ### <a name="crm-service-administrator"></a>Администратор службы CRM
 Может контролировать все аспекты продукта Dynamics 365.
@@ -616,7 +614,7 @@ ms.locfileid: "68851528"
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
-| microsoft.powerApps.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
+| microsoft.powerApps.dynamics365/allEntities/allTasks | Управление всеми аспектами Dynamics 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -632,7 +630,7 @@ ms.locfileid: "68851528"
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
-| microsoft.office365.lockbox/allEntities/allTasks | Управление всеми аспектами защищенного хранилища Office 365 |
+| microsoft.office365.lockbox/allEntities/allTasks | Управление всеми аспектами защищенного хранилища Office 365. |
 
 ### <a name="desktop-analytics-administrator"></a>Администратор Аналитики компьютеров
 Может управлять настройкой аналитики настольных систем и Office & служб политики. Для Desktop Analytics сюда входит возможность просмотра запасов активов, создания планов развертывания, просмотра развертывания и состояния работоспособности. Для службы политики & настройки Office эта роль позволяет пользователям управлять политиками Office.
@@ -656,7 +654,7 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSetting в Azure Active Directory. |
+| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
 | microsoft.aad.directory/groupSettingTemplates/basic/read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
 
 ### <a name="directory-readers"></a>Читатели каталогов
@@ -664,33 +662,33 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/administrativeUnits/basic/read | Чтение базовых свойств для объектов administrativeUnit в Azure Active Directory. |
+| microsoft.aad.directory/administrativeUnits/basic/read | Чтение стандартных свойств для объектов administrativeUnit в Azure Active Directory. |
 | microsoft.aad.directory/administrativeUnits/members/read | Чтение свойства administrativeUnits.members в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/read | Чтение базовых свойств для приложений в Azure Active Directory. |
+| microsoft.aad.directory/applications/basic/read | Чтение стандартных свойств приложений в Azure Active Directory. |
 | microsoft.aad.directory/applications/owners/read | Чтение свойства applications.owners в Azure Active Directory. |
 | microsoft.aad.directory/applications/policies/read | Чтение свойства applications.policies в Azure Active Directory. |
-| microsoft.aad.directory/contacts/basic/read | Чтение базовых свойств для контактов в Azure Active Directory. |
+| microsoft.aad.directory/contacts/basic/read | Чтение базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/memberOf/read | Чтение свойства contacts.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/contracts/basic/read | Чтение базовых свойств для контрактов в Azure Active Directory. |
-| microsoft.aad.directory/devices/basic/read | Чтение базовых свойств для устройств в Azure Active Directory. |
+| microsoft.aad.directory/contracts/basic/read | Чтение базовых свойств контрактов в Azure Active Directory. |
+| microsoft.aad.directory/devices/basic/read | Чтение базовых свойств устройств в Azure Active Directory. |
 | microsoft.aad.directory/devices/memberOf/read | Чтение свойства devices.memberOf в Azure Active Directory. |
 | microsoft.aad.directory/devices/registeredOwners/read | Чтение свойства devices.registeredOwners в Azure Active Directory. |
 | microsoft.aad.directory/devices/registeredUsers/read | Чтение свойства devices.registeredUsers в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoles/basic/read | Чтение базовых свойств для объектов directoryRole в Azure Active Directory. |
+| microsoft.aad.directory/directoryRoles/basic/read | Чтение базовых свойств объектов DirectoryRole в Azure Active Directory. |
 | microsoft.aad.directory/directoryRoles/eligibleMembers/read | Чтение свойства directoryroles.eligibleMembers в Azure Active Directory. |
 | microsoft.aad.directory/directoryRoles/members/read | Чтение свойства directoryRoles.members в Azure Active Directory. |
-| microsoft.aad.directory/domains/basic/read | Чтение базовых свойств для доменов в Azure Active Directory. |
-| microsoft.aad.directory/groups/appRoleAssignments/read | Чтение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/read | Чтение базовых свойств для групп в Azure Active Directory. |
+| microsoft.aad.directory/domains/basic/read | Чтение базовых свойств доменов в Azure Active Directory. |
+| microsoft.aad.directory/groups/appRoleAssignments/read | Чтение свойства Groups.AppRoleAssignments в Azure Active Directory. |
+| microsoft.aad.directory/groups/basic/read | Чтение базовых свойств в группах в Azure Active Directory. |
 | microsoft.aad.directory/groups/memberOf/read | Чтение свойства groups.memberOf в Azure Active Directory. |
 | microsoft.aad.directory/groups/members/read | Чтение свойства groups.members в Azure Active Directory. |
 | microsoft.aad.directory/groups/owners/read | Чтение свойства groups.owners в Azure Active Directory. |
 | microsoft.aad.directory/groups/settings/read | Чтение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSetting в Azure Active Directory. |
+| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
 | microsoft.aad.directory/groupSettingTemplates/basic/read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
-| microsoft.aad.directory/oAuth2PermissionGrants/basic/read | Чтение базовых свойств для объектов oAuth2PermissionGrant в Azure Active Directory. |
-| microsoft.aad.directory/organization/basic/read | Чтение базовых свойств для организаций в Azure Active Directory. |
-| microsoft.aad.directory/organization/trustedCAsForPasswordlessAuth/read | Чтение свойства organization.trustedCAsForPasswordlessAuth в Azure Active Directory. |
+| microsoft.aad.directory/oAuth2PermissionGrants/basic/read | Чтение базовых свойств для объектов oAuth2PermissionGrants в Azure Active Directory. |
+| microsoft.aad.directory/organization/basic/read | Чтение базовых свойств в организации в Azure Active Directory. |
+| microsoft.aad.directory/organization/trustedCAsForPasswordlessAuth/read | Чтение свойства оrganizations.trustedCAsForPasswordlessAuth в Azure Active Directory. |
 | microsoft.aad.directory/roleAssignments/basic/read | Чтение базовых свойств roleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/roleDefinitions/basic/read | Чтение базовых свойств roleDefinitions в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
@@ -701,13 +699,13 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/servicePrincipals/ownedObjects/read | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/owners/read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/policies/read | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/subscribedSkus/basic/read | Чтение базовых свойств для объектов subscribedSku в Azure Active Directory. |
+| microsoft.aad.directory/subscribedSkus/basic/read | Чтение базовых свойств объектов subscribedSku в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/read | Чтение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/read | Чтение базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/directReports/read | Чтение свойства users.directReports в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/read | Чтение свойства users.manager в Azure Active Directory. |
 | microsoft.aad.directory/users/memberOf/read | Чтение свойства users.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.oAuth2PermissionGrants в Azure Active Directory. |
+| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
 | microsoft.aad.directory/users/ownedDevices/read | Чтение свойства users.ownedDevices в Azure Active Directory. |
 | microsoft.aad.directory/users/ownedObjects/read | Чтение свойства users.ownedObjects в Azure Active Directory. |
 | microsoft.aad.directory/users/registeredDevices/read | Чтение свойства users.registeredDevices в Azure Active Directory. |
@@ -720,11 +718,11 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/organization/dirSync/update | Изменение свойства organization.dirSync в Azure Active Directory. |
 | microsoft.aad.directory/policies/create | Создание политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/read | Чтение базовых свойств для политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/update | Изменение базовых свойств для политик в Azure Active Directory. |
+| microsoft.aad.directory/policies/basic/read | Чтение базовых свойств политик в Azure Active Directory. |
+| microsoft.aad.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/owners/read | Чтение свойства policies.owners в Azure Active Directory. |
 | microsoft.aad.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
-| microsoft.aad.directory/policies/policiesAppliedTo/read | Чтение свойства policies.policiesAppliedTo в Azure Active Directory. |
+| microsoft.aad.directory/policies/policiesAppliedTo/read | Чтение свойства policies.policyAppliedTo в Azure Active Directory. |
 | microsoft.aad.directory/policies/tenantDefault/update | Обновление свойства policies.tenantDefault в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
@@ -733,7 +731,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/basic/read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Изменение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
+| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
 | microsoft.aad.directory/servicePrincipals/memberOf/read | Чтение свойства servicePrincipals.memberOf в Azure Active Directory. |
@@ -754,16 +752,16 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Изменение базовых свойств для групп в Azure Active Directory. |
+| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
 | microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
 | microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
 | microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/basic/update | Изменение базовых свойств для объектов groupSettings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/create | Создание объектов groupSetting в Azure Active Directory. |
+| microsoft.aad.directory/groupSettings/basic/update | Обновление базовых свойств для объектов groupSettings в Azure Active Directory. |
+| microsoft.aad.directory/groupSettings/create | Создание свойства groupSettings в Azure Active Directory. |
 | microsoft.aad.directory/groupSettings/delete | Удаление объектов groupSetting в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Изменение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.aad.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
@@ -804,18 +802,18 @@ ms.locfileid: "68851528"
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/users/appRoleAssignments/read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/read | Чтение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/read | Чтение базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/directReports/read | Чтение свойства users.directReports в Azure Active Directory. |
 | microsoft.aad.directory/users/inviteGuest | Приглашение пользователей-гостей в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/read | Чтение свойства users.manager в Azure Active Directory. |
 | microsoft.aad.directory/users/memberOf/read | Чтение свойства users.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.oAuth2PermissionGrants в Azure Active Directory. |
+| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
 | microsoft.aad.directory/users/ownedDevices/read | Чтение свойства users.ownedDevices в Azure Active Directory. |
 | microsoft.aad.directory/users/ownedObjects/read | Чтение свойства users.ownedObjects в Azure Active Directory. |
 | microsoft.aad.directory/users/registeredDevices/read | Чтение свойства users.registeredDevices в Azure Active Directory. |
 
 ### <a name="helpdesk-administrator"></a>Администратор службы поддержки
-Может сбрасывать пароли пользователей, не являющихся администраторами, и администраторов службы поддержки.
+Может сбрасывать пароли пользователей, не являющихся администраторами, и пароли администраторов службы поддержки.
 
 | **Действия** | **Описание** |
 | --- | --- |
@@ -838,17 +836,17 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Изменение базовых свойств для контактов в Azure Active Directory. |
+| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.aad.directory/devices/basic/update | Изменение базовых свойств для устройств в Azure Active Directory. |
+| microsoft.aad.directory/devices/basic/update | Обновление базовых свойств устройств в Azure Active Directory. |
 | microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
 | microsoft.aad.directory/devices/create | Создание устройств в Azure Active Directory. |
 | microsoft.aad.directory/devices/delete | Удаление устройств в Azure Active Directory. |
 | microsoft.aad.directory/devices/registeredOwners/update | Изменение свойства devices.registeredOwners в Azure Active Directory. |
 | microsoft.aad.directory/devices/registeredUsers/update | Изменение свойства devices.registeredUsers в Azure Active Directory. |
 | microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Изменение базовых свойств для групп в Azure Active Directory. |
+| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
 | microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
@@ -858,7 +856,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/groups/restore | Восстановление групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Изменение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
@@ -885,7 +883,7 @@ ms.locfileid: "68851528"
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/usageLocation/update | Изменение свойства users.usageLocation в Azure Active Directory. |
+| microsoft.aad.directory/users/usageLocation/update | Изменение свойства Users.UsageLocation в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -944,7 +942,7 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Изменение базовых свойств для контактов в Azure Active Directory. |
+| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
 | microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
@@ -953,7 +951,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Изменение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
@@ -976,7 +974,7 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Изменение базовых свойств для контактов в Azure Active Directory. |
+| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
 | microsoft.aad.directory/domains/allTasks | Создание и удаление доменов, а также чтение и изменение стандартных свойств в Azure Active Directory. |
@@ -984,10 +982,10 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
 | microsoft.aad.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.aad.directory/organization/basic/update | Изменение базовых свойств для организаций в Azure Active Directory. |
+| microsoft.aad.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Изменение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
@@ -1026,7 +1024,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="privileged-authentication-administrator"></a>Администратор привилегированной проверки подлинности
-Может просматривать, задавать и сбрасывать способ проверки подлинности для любых пользователей (включая администраторов).
+Разрешено просматривать, задавать и сбрасывать сведения о методах проверки подлинности для любого пользователя (администратора или не администратора).
 
 | **Действия** | **Описание** |
 | --- | --- |
@@ -1048,7 +1046,7 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.privilegedIdentityManagement/allEntities/allTasks | Создание и удаление всех ресурсов и чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
+| microsoft.aad.privilegedIdentityManagement/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
 | Microsoft. AAD. Directory/свойства serviceprincipals/appRoleAssignedTo/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. appRoleAssignedTo в Azure Active Directory. |
 | Microsoft. AAD. Directory/свойства serviceprincipals/oAuth2PermissionGrants/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. oAuth2PermissionGrants в Azure Active Directory. |
 | microsoft.aad.directory/administrativeUnits/allProperties/allTasks | Создание административных единиц и управление ими (включая членов) |
@@ -1056,7 +1054,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/roleDefinitions/allProperties/allTasks | Создание определений ролей и управление ими. |
 
 ### <a name="reports-reader"></a>Читатель отчетов
-Может просматривать отчеты о входе и аудите.
+Может просматривать отчеты о входах и аудите.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -1068,7 +1066,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
 ### <a name="search-administrator"></a>Администратор поиска
 Может создавать все аспекты параметров поиска Microsoft и управлять ими.
@@ -1084,7 +1082,7 @@ ms.locfileid: "68851528"
 | Microsoft. Office 365. Search/Аллентитиес/Аллпропертиес/Аллтаскс | Создание и удаление всех ресурсов, а затем чтение и обновление всех свойств в Microsoft. Office 365. Search. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="search-editor"></a>Редактор поиска
@@ -1099,7 +1097,7 @@ ms.locfileid: "68851528"
 | --- | --- |
 | microsoft.office365.messageCenter/messages/read | Чтение сообщений в microsoft.office365.messageCenter. |
 | Microsoft. Office 365. Search, Content/Аллпропертиес/Аллтаскс | Создание и удаление содержимого, а затем чтение и обновление всех свойств в Microsoft. Office 365. Search. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
 ### <a name="security-administrator"></a>Администратор безопасности
 Может просматривать отчеты и сведения для защиты, а также управлять конфигурацией Azure AD и Office 365.
@@ -1114,7 +1112,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/update | Изменение базовых свойств для политик в Azure Active Directory. |
+| microsoft.aad.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/create | Создание политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/delete | Удаление политик в Azure Active Directory. |
 | microsoft.aad.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
@@ -1127,7 +1125,7 @@ ms.locfileid: "68851528"
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.protectionCenter/allEntities/read | Чтение всех аспектов Центра защиты Office 365. |
-| microsoft.office365.protectionCenter/allEntities/update | Изменение всех ресурсов в microsoft.office365.protectionCenter. |
+| microsoft.office365.protectionCenter/allEntities/update | Обновление всех ресурсов в microsoft.office365.protectionCenter. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
 ### <a name="security-operator"></a>Оператор безопасности
@@ -1146,11 +1144,11 @@ ms.locfileid: "68851528"
 | microsoft.azure.advancedThreatProtection/allEntities/read | Прочтите и настройте Azure AD Advanced Threat protection. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Чтение и настройка Центр безопасности и соответствия требованиям. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 | microsoft.windows.defenderAdvancedThreatProtection/allEntities/read | Прочтите и настройте Advanced Threat Protection в Защитнике Windows. |
 
 ### <a name="security-reader"></a>Читатель сведений о безопасности
-Может просматривать отчеты и сведения для защиты в Azure AD и Office 365.
+Может просматривать отчеты и сведения о безопасности в Azure AD и Office 365.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -1209,7 +1207,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="teams-communications-administrator"></a>Администратор связи Teams
-Может управлять функциями вызовов и собраний в службе Microsoft Teams.
+Может управлять функциями вызовов и собраний в пределах службы Microsoft Teams.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -1223,10 +1221,10 @@ ms.locfileid: "68851528"
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
 ### <a name="teams-communications-support-engineer"></a>Сотрудник службы поддержки по связи Teams
-Может устранять проблемы связи в Microsoft Teams, используя расширенные средства.
+Может устранять неполадки со связью в пределах Teams с помощью расширенных средств.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -1240,7 +1238,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
 ### <a name="teams-communications-support-specialist"></a>Специалист службы поддержки по связи Teams
-Может устранять проблемы связи в Microsoft Teams, используя основные средства.
+Может устранять неполадки со связью в пределах Teams с помощью базовых средств.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
@@ -1263,7 +1261,7 @@ ms.locfileid: "68851528"
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства groups.hiddenMembers в Azure Active Directory. |
+| microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
 | microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
 | microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
 | microsoft.aad.directory/groups/unified/create | Создание групп Office 365. |
@@ -1275,7 +1273,7 @@ ms.locfileid: "68851528"
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
 ### <a name="user-administrator"></a>Администратор пользователей
 Может контролировать все аспекты работы пользователей и групп, в том числе сбрасывать пароли администраторов с ограниченными правами.
@@ -1284,12 +1282,12 @@ ms.locfileid: "68851528"
 | --- | --- |
 | microsoft.aad.directory/appRoleAssignments/create | Создание объектов appRoleAssignment в Azure Active Directory. |
 | microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/update | Изменение свойства appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/contacts/basic/update | Изменение базовых свойств для контактов в Azure Active Directory. |
+| microsoft.aad.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
+| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
 | microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Изменение базовых свойств для групп в Azure Active Directory. |
+| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
 | microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
 | microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 | microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
@@ -1300,7 +1298,7 @@ ms.locfileid: "68851528"
 | microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
 | microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Изменение базовых свойств для пользователей в Azure Active Directory. |
+| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/create | Создание пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
 | microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |

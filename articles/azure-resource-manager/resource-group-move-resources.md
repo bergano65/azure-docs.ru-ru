@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: 114e0d8e935aa8e6ac3f70a34a8050b19758fb42
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 69cd6031111c72d54cb87975c2040078a9965821
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624557"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035551"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -35,8 +35,6 @@ ms.locfileid: "69624557"
    * [Руководство по перемещению в сети](./move-limitations/networking-move-limitations.md)
    * [Руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
    * [Руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md)
-
-   Если целевая группа ресурсов содержит виртуальную сеть, состояние ее зависимых ресурсов может блокировать перемещение, даже если эти ресурсы не участвуют в перемещении. Дополнительные сведения см. в [статье Перемещение по сети](./move-limitations/virtual-network-move-limitations.md).
 
 1. Исходная и целевая подписки должны быть активными. Если у вас возникла проблема при включении учетной записи, которая была отключена, [создайте запрос на поддержку Azure](../azure-supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
 

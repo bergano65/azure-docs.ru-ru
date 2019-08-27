@@ -11,20 +11,20 @@ ms.assetid: 43116187-4a2f-42e5-9852-a0d62f08c5fc
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: fab52236c701f10c8e8e23ac398362ca4583ea06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 09d4a6acf93f5fb01c70f9e9bd935c404c5abf50
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104907"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050703"
 ---
 # <a name="manage-messages-in-twilio-with-azure-logic-apps"></a>Управление сообщениями в Twilio с помощью Azure Logic Apps
 
 С помощью Azure Logic Apps и соединителя Twilio можно создать автоматизированные задачи и рабочие процессы, которые получают, отправляют и отображают сообщения в Twilio, включая глобальные сообщения SMS, MMS и IP. Эти действия можно использовать для выполнения задач с вашей учетной записью Twilio. Кроме того, выходные данные действий Twilio могут использоваться другими действиями. Например, при поступлении нового сообщения вы можете отправить содержимое сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * В [Twilio](https://www.twilio.com/): 
 
@@ -71,11 +71,11 @@ ms.locfileid: "62104907"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/twilio/) соединителя.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: vijetaj
-ms.openlocfilehash: 95d128a7af60a1504d05fb5316969fccc49c397f
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 8100108adc7115921948d3e8f10e415bc2705fbd
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574962"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051650"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-on-azure"></a>Обработка и анализ данных с помощью виртуальной машины для обработки и анализа данных Linux в Azure
 В этом пошаговом руководстве показано, как выполнить несколько общих задач обработки и анализа данных с использованием специально подготовленной виртуальной машины Linux. Виртуальная машина Linux для обработки и анализа данных — это доступный в Azure образ ВМ, на которой предварительно установлен ряд инструментов, обычно используемых для анализа данных и машинного обучения. Основные программные компоненты описаны в статье [Подготовка виртуальной машины Linux для обработки и анализа данных](linux-dsvm-intro.md) . Образ виртуальной машины позволяет за считаные минуты приступить к обработке и анализу данных, не требуя установки и настройки всех инструментов по отдельности. При необходимости виртуальную машину можно с легкостью масштабировать и приостановить, если она не используется. Таким образом, это гибкий и экономичный ресурс.
@@ -36,7 +36,7 @@ ms.locfileid: "69574962"
 
 * **Подписка Azure**. Если у вас ее нет, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 * [**Виртуальная машина Linux для обработки и анализа данных.** ](https://azure.microsoft.com/marketplace/partners/microsoft-ads/linux-data-science-vm) Сведения о подготовке этой ВМ приведены в статье [Подготовка виртуальной машины Linux для обработки и анализа данных](linux-dsvm-intro.md).
-* Клиент [X2Go](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Сведения об установке и настройке **клиента X2Go** см. в разделе [Установка и настройка клиента X2Go](linux-dsvm-intro.md#installing-and-configuring-x2go-client).
+* Клиент [X2Go](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Сведения об установке и настройке **клиента X2Go**см. в разделе [Установка и Настройка клиента X2Go](linux-dsvm-intro.md#install-and-configure-the-x2go-client).
 * Чтобы прокрутка лучше работала, переключите флаг gfx.xrender.enabled в положение about:config в обозревателе FireFox виртуальных машин. [Дополнительные сведения](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Также попробуйте установить для фильтра *mousewheel.enable_pixel_scrolling* значение False. [Инструкции см. здесь.](https://support.mozilla.org/questions/981140)
 * **Учетная запись машинного обучения Azure**. Если у вас ее нет, зарегистрируйте учетную запись на [домашней странице Машинного обучения Azure](https://studio.azureml.net/). Для новичков предусмотрен период бесплатного использования.
 

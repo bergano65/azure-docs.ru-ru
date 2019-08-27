@@ -6,16 +6,17 @@ ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
+manager: carmonm
 ms.reviewer: klam, LADocs
-tags: connectors
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/23/2018
-ms.openlocfilehash: 28739ad65462acc9f2d2ed7db1e9ed14d19f032c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+tags: connectors
+ms.openlocfilehash: 5d0d276096441c780dee4f8b1e95442a1d7e7b25
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311970"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050917"
 ---
 # <a name="manage-excel-online-data-with-azure-logic-apps"></a>Управление данными Excel Online с помощью Azure Logic Apps
 
@@ -32,9 +33,9 @@ ms.locfileid: "60311970"
 > [!NOTE]
 > Соединители [Excel для бизнеса Online](/connectors/excelonlinebusiness/) и [Excel Online для OneDrive](/connectors/excelonline/) работают с Azure Logic Apps и отличаются от [соединителя Excel для PowerApps](/connectors/excel/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 * [Учетная запись Office 365](https://www.office.com/) для рабочей или пользовательской учетной записи Майкрософт.
 
@@ -53,7 +54,7 @@ ms.locfileid: "60311970"
 
 1. В поле поиска введите слово excel в качестве фильтра. В списке действий выберите любое необходимое действие.
 
-1. Если будет предложено войти в учетную запись Office 365, выберите **Вход**.
+1. При появлении запроса войдите в учетную запись Office 365.
 
    Ваши учетные данные авторизуют приложение логики, чтобы оно могло создать подключение к Excel Online и получить доступ к данным.
 
@@ -61,16 +62,11 @@ ms.locfileid: "60311970"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Технические сведения, такие как триггеры, действия и ограничения, как определено соединителя OpenAPI (прежнее название — Swagger) файлов, см. в разделе справочника эти соединителя:
+Для получения технических сведений, таких как триггеры, действия и ограничения, как описано в файлах OpenAPI (ранее Swagger) соединителя, ознакомьтесь со следующими страницами Справочника по соединителям:
 
 * [Excel Online для бизнеса](/connectors/excelonlinebusiness/)
 * [Excel Online для OneDrive](/connectors/excelonline/)
 
-## <a name="get-support"></a>Получение поддержки
-
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

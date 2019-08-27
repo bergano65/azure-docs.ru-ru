@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dapine
-ms.openlocfilehash: 2b87f9bcbaa0fd9d8a23d774e0765e1eb5b56633
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: eaf689ecb8fd64dca15570179733b7d7539a352e
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563904"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050078"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -28,7 +28,7 @@ ms.locfileid: "68563904"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для запуска контейнера LUIS требуется следующее: 
 
@@ -248,7 +248,7 @@ ApiKey={API_KEY}
 
 Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. Конечные точки для опубликованных (промежуточных или рабочих) приложений имеют _другой_ маршрут, чем конечные точки для обученных приложений. 
 
-Используйте узел `https://localhost:5000` для API контейнера. 
+Используйте узел `http://localhost:5000` для API контейнера. 
 
 |Тип пакета|Метод|Маршрут|Параметры запроса|
 |--|--|--|--|
@@ -261,9 +261,9 @@ ApiKey={API_KEY}
 |--|--|--|
 |`q`|строка|Фраза пользователя.|
 |`timezoneOffset`|номер|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
-|`verbose`|Логический|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
-|`staging`|Логический|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
-|`log`|Логический|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
+|`verbose`|boolean|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
+|`staging`|boolean|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
+|`log`|boolean|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
 
 ### <a name="query-published-app"></a>Запрос опубликованного приложения
 

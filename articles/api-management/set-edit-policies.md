@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: apimpm
-ms.openlocfilehash: 3d1847b6001ef8e32f00a4e1cd9728d5ca0662f8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 052bf619cd6f41aad139db45a8f3ecd9f4a0a62f
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205298"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034921"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Настройка или изменение политик службы управления API Azure
 
@@ -34,28 +34,30 @@ ms.locfileid: "67205298"
 2. Перейдите к экземпляру службы управления API Azure.
 3. Щелкните вкладку **Интерфейсы API**.
 
-    ![Изменение политики](./media/set-edit-policies/code-editor.png)
+    ![Изменить политику](./media/set-edit-policies/code-editor.png)
 
 4. Выберите один из API, которые вы импортировали ранее.
 5. Выберите вкладку **Конструктор**.
 6. Выберите операцию, к которой требуется применить политику. Если нужно применить политику ко всем операциям, выберите **Все операции**.
 7. Выберите значок **</>** (редактор кода) в разделе **обработка входящих запросов** или **Обработка исходящих запросов**.
 8. Вставьте код необходимой политики в один из соответствующих блоков.
-         
-        <policies>
-             <inbound>
-                 <base />
-             </inbound>
-             <backend>
-                 <base />
-             </backend>
-             <outbound>
-                 <base />
-             </outbound>
-             <on-error>
-                 <base />
-             </on-error>
-         </policies>
+
+    ```XML
+    <policies>
+        <inbound>
+            <base />
+        </inbound>
+        <backend>
+            <base />
+        </backend>
+        <outbound>
+            <base />
+        </outbound>
+        <on-error>
+            <base />
+        </on-error>
+    </policies>
+    ```
  
 ## <a name="configure-scope"></a>Настройка области
 
@@ -129,7 +131,7 @@ ms.locfileid: "67205298"
 5. Добавьте или измените политики.
 6. Нажмите кнопку **Save**(Сохранить). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Также ознакомьтесь со следующими материалами:
 

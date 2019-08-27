@@ -1,24 +1,24 @@
 ---
-title: Подключение к GitHub при помощи Azure Logic Apps | Документация Майкрософт
+title: Подключение к GitHub-Azure Logic Apps
 description: Отслеживайте события GitHub с помощью интерфейсов REST API GitHub и Azure Logic Apps.
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.date: 03/02/2018
-ms.topic: article
-ms.service: logic-apps
 services: logic-apps
-ms.reviewer: klam, LADocs
+ms.service: logic-apps
 ms.suite: integration
+author: ecfan
+ms.author: estfan
+manager: carmonm
+ms.reviewer: klam, LADocs
+ms.topic: conceptual
+ms.date: 03/02/2018
 tags: connectors
-ms.openlocfilehash: 0d2ff9368bc244a5afd6fafc40cf476b90a80a52
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a6e2a803ee2a272189abf0f21796b2305eea40b
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61462603"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050893"
 ---
-# <a name="connect-to-github"></a>Подключение к GitHub
+# <a name="connect-to-github-from-azure-logic-apps"></a>Подключение к GitHub из Azure Logic Apps
 
 GitHub — это веб-служба, где размещен репозиторий Git. Она обеспечивает все возможности распределенного управления версиями и исходным кодом (SCM) в Git, а также другие функции.
 
@@ -30,17 +30,17 @@ GitHub — это веб-служба, где размещен репозито�
 
 | Свойство | Обязательно для заполнения | Описание | 
 | -------- | -------- | ----------- | 
-| по маркеру | Да | Укажите свои учетные данные GitHub. |
+| Токен | Да | Укажите свои учетные данные GitHub. |
 
 Создав подключение, вы можете выполнять действия и ожидать передачи данных от триггеров, описанных в этой статье.
 
 > [!INCLUDE [Steps to create a connection to GitHub](../../includes/connectors-create-api-github.md)]
 > 
 
-## <a name="connector-specific-details"></a>Сведения о соединителях
+## <a name="connector-reference"></a>Справочник по соединителям
 
-Сведения о триггерах, действиях, определенных в Swagger, и всех ограничениях см. в статье о [соединителях](/connectors/github/).
+Технические сведения о триггерах, действиях и ограничениях, которые описаны в описании OpenAPI (ранее — Swagger) соединителя, см. на [странице справочника](/connectors/github/)по соединителю.
 
-## <a name="find-more-connectors"></a>Другие соединители
+## <a name="next-steps"></a>Следующие шаги
 
-* Просмотрите [список соединителей](apis-list.md).
+* См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

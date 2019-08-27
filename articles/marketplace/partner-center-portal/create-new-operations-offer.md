@@ -6,13 +6,13 @@ manager: evansma
 ms.author: jenhayes
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: f9223fdead9d22e8f58076b47502e71c06741e3f
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.date: 08/26/2019
+ms.openlocfilehash: e711e94a4ac8098137456c2ae5bf018107687354
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900108"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70033219"
 ---
 # <a name="create-a-new-dynamics-365-for-operations-offer"></a>Создание новой Dynamics 365 для предложений операций
 
@@ -339,11 +339,11 @@ ms.locfileid: "69900108"
 
 ## <a name="supplemental-content"></a>Дополнительное содержимое
 
-На этой странице можно указать дополнительные необходимые сведения о предложении.
+На этой странице вы можете указать дополнительные сведения о предложении, чтобы помочь нам проверить ваше предложение. Эти сведения не отображаются для клиентов или опубликованы в Marketplace.
 
 ### <a name="validation-assets"></a>Активы проверки
 
-В этом разделе необходимо отправить отчет об анализе настройки (автомобиль). Этот отчет создается путем анализа настроек и моделей расширения на основе предопределенного набора рекомендаций.
+В этом разделе необходимо отправить [отчет об анализе настройки (автомобиль)](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/dev-tools/customization-analysis-report) . Этот отчет создается путем анализа настроек и моделей расширения на основе предопределенного набора рекомендаций.
 
 Этот файл должен быть в формате XLS или XLSX. Если имеется более одного отчета, можно передать ZIP-файл, содержащий все отчеты.
 

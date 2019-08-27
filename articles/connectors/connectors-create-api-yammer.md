@@ -11,12 +11,12 @@ ms.assetid: b5ae0827-fbb3-45ec-8f45-ad1cc2e7eccc
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: ca2d28f3438fd166fa282488206662c95777bf3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9228a94dcf27d8987b16e2caa2681cf973db0657
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104737"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050640"
 ---
 # <a name="monitor-and-manage-your-yammer-account-by-using-azure-logic-apps"></a>Мониторинг учетной записи Yammer и управление ею с помощью Azure Logic Apps
 
@@ -28,9 +28,9 @@ ms.locfileid: "62104737"
 
 Вы можете использовать триггеры, которые получают ответы из учетной записи Yammer и делают выходные данные доступными для других действий. Вы можете использовать действия, которые выполняют задачи с вашей учетной записью Yammer. Кроме того, выходные данные от действий Yammer могут использоваться другими действиями. Например, при появлении новых сообщений в веб-каналах или группах вы можете обмениваться ими с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Учетная запись Yammer и учетные данные пользователя.
 
@@ -65,7 +65,7 @@ ms.locfileid: "62104737"
        В поле поиска введите "yammer" в качестве фильтра. 
        В списке действий выберите любое необходимое действие.
 
-1. Если вам будет предложено войти в Yammer, войдите сейчас, чтобы можно было разрешить доступ.
+1. Если вам будет предложено войти в Yammer, войдите сейчас, чтобы разрешить доступ.
 
 1. Укажите необходимые сведения для выбранного триггера или действия и продолжайте создание рабочего процесса приложения логики.
 
@@ -73,11 +73,11 @@ ms.locfileid: "62104737"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/yammer/) соединителя.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

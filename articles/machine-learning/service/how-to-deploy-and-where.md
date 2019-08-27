@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/06/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: a4146e20efae87287b77687e4a1d3b0196cb1c95
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 7f856c0b69788c3d0b711d567777aba6cb4c6918
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997928"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036087"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -78,12 +78,29 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 
 + **Использование пакета SDK**
 
-  ```python
-  model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
-  print(model.name, model.id, model.version, sep='\t')
-  ```
+  При использовании пакета SDK для обучения модели можно получить объект [Run](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master) или [аутомлрун](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master) в зависимости от способа обучения модели. Каждый объект можно использовать для регистрации модели, созданной с помощью запуска эксперимента.
 
-  Объект `model_path` ссылается на облачное расположение модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, установите `model_path` в каталог, содержащий файлы.
+  + Зарегистрировать модель из `azureml.core.Run` объекта:
+ 
+    ```python
+    model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
+    print(model.name, model.id, model.version, sep='\t')
+    ```
+
+    Объект `model_path` ссылается на облачное расположение модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, установите `model_path` в каталог, содержащий файлы. Дополнительные сведения см. в справочнике по [Run. register_model](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none----kwargs-) .
+
+  + Зарегистрировать модель из `azureml.train.automl.run.AutoMLRun` объекта:
+
+    ```python
+        description = 'My AutoML Model'
+        model = run.register_model(description = description)
+
+        print(run.model_id)
+    ```
+
+    В этом примере `metric` параметры и `iteration` не указаны, что приводит к регистрации итерации с лучшей основной метрикой. `model_id` Значение, возвращаемое при выполнении, используется вместо имени модели.
+
+    Дополнительные сведения см. в справочнике по [аутомлрун. register_model](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master#register-model-description-none--tags-none--iteration-none--metric-none-) .
 
 + **Использование интерфейса командной строки**
 
@@ -184,6 +201,9 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется вместе с [моделью. Get _model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлам модели в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
 
 При регистрации модели ей присваивается имя, которое соответствует месту размещения модели: локально или во время развертывания службы.
+
+> [!IMPORTANT]
+> При обучении модели с помощью автоматического машинного обучения `model_id` в качестве имени модели используется значение. Пример регистрации и развертывания модели, обученной с помощью автоматизированного ml, [https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-with-deployment](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-with-deployment)см. в разделе.
 
 В приведенном ниже примере возвращается путь к одному файлу с именем `sklearn_mnist_model.pkl` (зарегистрированным с именем `sklearn_mnist`):
 

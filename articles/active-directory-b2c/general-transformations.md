@@ -1,27 +1,27 @@
 ---
-title: Примеры преобразования общих утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C | Документация Майкрософт
-description: Примеры преобразования общих утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
+title: Общие примеры преобразования утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C
+description: Общие примеры преобразования утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 08/27/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a5f8068ea7e97343749c719d2d0800e20701079c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7cea33cb61f8f8d0fe305a757f11c80bc5da24ca
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510989"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032904"
 ---
 # <a name="general-claims-transformations"></a>Преобразования общих утверждений
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приведены примеры использования преобразований общих утверждений инфраструктуры процедур идентификации в Azure Active Directory (Azure AD) B2C. Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приведены примеры использования общих преобразований утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="doesclaimexist"></a>DoesClaimExist
 
@@ -29,8 +29,8 @@ ms.locfileid: "66510989"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim |Любой | Входящее утверждение, существование которого необходимо проверить. |
-| outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| InputClaim | InputClaim |Any | Входящее утверждение, существование которого необходимо проверить. |
+| outputClaim | outputClaim | boolean | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Используйте это преобразование, чтобы проверить, существует ли утверждение или содержит ли оно какое-либо значение. Возвращается логическое значение, указывающее, существует ли утверждение. В следующем примере проверяется, существует ли адрес электронной почты.
 
@@ -38,7 +38,7 @@ ms.locfileid: "66510989"
 <ClaimsTransformation Id="CheckIfEmailPresent" TransformationMethod="DoesClaimExist">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="inputClaim" />
-  </InputClaims>                    
+  </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="isEmailPresent" TransformationClaimType="outputClaim" />
   </OutputClaims>
@@ -49,19 +49,19 @@ ms.locfileid: "66510989"
 
 - Входящие утверждения:
   - **inputClaim**: someone@contoso.com.
-- Исходящие утверждения: 
-    - **outputClaim**: true.
+- Исходящие утверждения:
+  - **outputClaim**: true.
 
 ## <a name="hash"></a>Хэш
 
-Хэширует предоставленный обычный текст, используя случайное значение и секрет.
+Хэширует предоставленный обычный текст, используя случайное значение и секрет. Используется алгоритм хэширования SHA-256.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | обычный текст | string | Входящее утверждение для шифрования |
-| InputClaim | salt | string | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
-| InputParameter | randomizerSecret | string | Указывает на существующие **ключи политики** Azure AD B2C. Чтобы создать ключ политики, в клиенте Azure AD B2C выберите **B2C Settings (Параметры B2C) > Identity Experience Framework**. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Предоставьте имя (префикс B2C_1A_ может быть добавлен автоматически). В поле "Секрет" введите любой секрет, который нужно использовать, например 1234567890. Для параметра "Использование ключа" выберите **Секрет**. Нажмите кнопку **Создать**. |
-| outputClaim | hash | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
+| InputClaim | обычный текст | строка | Входящее утверждение для шифрования |
+| InputClaim | salt | строка | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
+| InputParameter | randomizerSecret | строка | Указывает на существующий **ключ политики**Azure AD B2C. Чтобы создать новый ключ политики, выполните следующие действия. В Azure AD B2C клиенте в разделе **Управление**выберите **инфраструктура процедур идентификации**. Выберите **ключи политики** , чтобы просмотреть ключи, доступные в вашем клиенте. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Укажите имя (префикс *B2C_1A_* может быть добавлен автоматически). В текстовом поле **секрет** введите любой секрет, который вы хотите использовать, например 1234567890. Для параметра **Использование ключа** выберите **Подпись**. Нажмите кнопку **Создать**. |
+| outputClaim | hash | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
 
 ```XML
 <ClaimsTransformation Id="HashPasswordWithEmail" TransformationMethod="Hash">
@@ -81,11 +81,8 @@ ms.locfileid: "66510989"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **plaintext**: MyPass@word1.
-    - **salt**: 487624568.
-    - **randomizerSecret**: B2C_1A_AccountTransformSecret.
-- Исходящие утверждения: 
-    - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U =
-
-
-
+  - **plaintext**: MyPass@word1.
+  - **salt**: 487624568.
+  - **randomizerSecret**: B2C_1A_AccountTransformSecret.
+- Исходящие утверждения:
+  - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U =

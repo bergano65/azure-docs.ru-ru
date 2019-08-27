@@ -1,20 +1,20 @@
 ---
-title: Инструменты для работы со службой хранилища Azure | Документация Майкрософт
-description: Список инструментов, позволяющих просматривать данные в службе хранилища Azure и взаимодействовать с ними.
+title: Средства для работы с хранилищем Azure
+description: Список средств, позволяющих просматривать данные службы хранилища Azure и взаимодействовать с ними.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 09/06/2017
+ms.date: 08/26/2019
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 14cbc076f4c9eebd2647cd667acc856b393e4d93
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 11838a50d70d1b9a0216505e9ef0958d3b18bdac
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68665736"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035269"
 ---
 # <a name="azure-storage-client-tools"></a>Клиентские инструменты службы хранилища Azure
 Пользователям службы хранилища Azure часто требуется просматривать свои данные или взаимодействовать с ними с помощью клиентского инструмента службы хранилища Azure. В приведенных ниже таблицах перечислен ряд инструментов, которые позволяют это сделать. Соответствующее поле содержит "X", если инструмент позволяет перечислить абстракцию данных и (или) предоставить к ней доступ. В таблице также показано, являются ли инструменты бесплатными. "Пробная версия" означает, что доступна бесплатная пробная версия, но полная версия продукта платная. "Да/нет" указывает, что есть как платная, так и бесплатная версии.
@@ -30,7 +30,7 @@ ms.locfileid: "68665736"
     <th rowspan="2">Страничный BLOB-объект</th>
     <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
-    <th rowspan="2">Очереди</th>
+    <th rowspan="2">Списки ожидания</th>
     <th rowspan="2">Файлы</th>
     <th rowspan="2">Бесплатно</th>
     <th colspan="4">Платформа</th>
@@ -96,7 +96,7 @@ ms.locfileid: "68665736"
     <th rowspan="2">Страничный BLOB-объект</th>
     <th rowspan="2">Добавить BLOB-объект</th>
     <th rowspan="2">Таблицы</th>
-    <th rowspan="2">Очереди</th>
+    <th rowspan="2">Списки ожидания</th>
     <th rowspan="2">Файлы</th>
     <th rowspan="2">Бесплатно</th>
     <th colspan="4">Платформа</th>
@@ -116,20 +116,6 @@ ms.locfileid: "68665736"
     <td>X</td>
     <td>X</td>
     <td>Пробная версия</td>
-    <td></td>
-    <td>X</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a href="https://www.red-gate.com/products/azure-development/azure-explorer/index">Redgate: Azure Explorer</a></td>
-    <td>X</td>
-    <td>X</td>
-    <td>X</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
     <td></td>
     <td>X</td>
     <td></td>

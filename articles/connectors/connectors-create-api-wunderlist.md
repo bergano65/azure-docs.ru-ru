@@ -11,12 +11,12 @@ ms.assetid: e4773ecf-3ad3-44b4-a1b5-ee5f58baeadd
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: e3570ab1227ca388ac62bffdc74bb68b1ddc41d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d57ab4a7b655a7d49a7120d358dccc627099e5fd
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62105672"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050665"
 ---
 # <a name="monitor-and-manage-wunderlist-by-using-azure-logic-apps"></a>Мониторинг Wunderlist и управление им с помощью Azure Logic Apps
 
@@ -29,9 +29,9 @@ ms.locfileid: "62105672"
 
 [Wunderlist](https://www.wunderlist.com/) — это служба, которая позволяет планировать и завершать проекты, списки поручений и задачи, а также управлять ими на любом устройстве где угодно. Вы можете использовать триггеры, которые получают ответы из учетной записи Wunderlist и делают выходные данные доступными для других действий. Вы можете использовать действия, которые выполняют задачи с вашей учетной записью Wunderlist. Кроме того, выходные данные действий Wunderlist могут использоваться другими действиями. Например, когда подходит срок выполнения новых задач, вы можете публиковать сообщения с помощью соединителя Slack. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Учетная запись Wunderlist и учетные данные пользователя.
 
@@ -74,11 +74,11 @@ ms.locfileid: "62105672"
 
 Дополнительные технические сведения о триггерах, действиях и ограничениях, которые приведены в описании OpenAPI соединителя (прежнее название — Swagger), можно найти на [странице справки](/connectors/wunderlist/) соединителя.
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="get-support"></a>Поддержка
 
 * Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

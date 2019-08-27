@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/27/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 70da3509ce44fe260f8010ccf6eb1d2192ca6e73
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 79bd41c08a566b55efb4a29084847848e001629f
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695502"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036047"
 ---
 [!INCLUDE [virtual-machines-common-premium-storage-introduction](../../../includes/virtual-machines-common-premium-storage-introduction.md)]
 
@@ -27,3 +27,12 @@ ms.locfileid: "68695502"
 
 
 [!INCLUDE [virtual-machines-common-premium-storage-performance.md](../../../includes/virtual-machines-common-premium-storage-performance.md)]
+
+Если вы хотите протестировать производительность диска, см. статью о [тестировании диска](disks-benchmarks.md).
+
+См. дополнительные сведения о доступных типах дисков: [Выбор типа диска](disks-types.md)  
+
+Если вы пользователь SQL Server, см. статьи с рекомендациями по оптимизации производительности SQL Server:
+
+* [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](../windows/sql/virtual-machines-windows-sql-performance.md)
+* [Хранилище Azure класса «Премиум» обеспечивает максимальную производительность SQL Server в виртуальных машинах Azure](https://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)

@@ -1,6 +1,6 @@
 ---
-title: Общие определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook
-description: Основные сведения о стандартные определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook
+title: Общие определения схемы предупреждений для веб-перехватчиков/Logic Apps, функций Azure и модулей Runbook службы автоматизации
+description: Основные сведения о стандартных определениях схемы предупреждений для веб-перехватчиков/Logic Apps/функций Azure и Runbook службы автоматизации
 author: anantr
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
 ms.subservice: alerts
-ms.openlocfilehash: c37ecfbadd7345fea347ff488895f16ba505c818
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 94938358bc4e4782e91401e24a01a3688c6a51ba
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594377"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034807"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
-В этой статье описывается [стандартные определения оповещений схемы](https://aka.ms/commonAlertSchemaDocs) для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook. 
+В этой статье описаны [Общие определения схемы предупреждений](https://aka.ms/commonAlertSchemaDocs) для веб-перехватчиков/Logic Apps, а также модулей Runbook для функций и автоматизации Azure. 
 
 ## <a name="overview"></a>Обзор
 
-Описывает любой экземпляр предупреждения об изменении **ресурс, на который была затронута** и **причины возникновения предупреждения**, и описываются эти экземпляры в общей схеме в следующих разделах:
-* **Essentials**: Набор **стандартизированный поля**, общих для всех типов оповещений, которые описывают **каких ресурсов** оповещение создается по вместе с дополнительными распространенных предупреждений метаданными (например, "серьезность" или "Описание"). 
-* **Контекст предупреждения**: Набор полей, которые описывают **вызывают предупреждения**, с полями, отличающихся **зависимости от типа оповещений**. Например оповещения метрики бы поля, как имя метрики и значение метрики в контексте предупреждения, а оповещение журнала действий будут иметь сведения о событии, вызвавшем предупреждение. 
+Любой экземпляр предупреждения описывает **ресурс, который был затронут** , и **причину предупреждения**, и эти экземпляры описаны в общей схеме в следующих разделах:
+* **Основные**сведения: Набор стандартизованных **полей**, общих для всех типов оповещений, которые описывают, к **какому ресурсу** относится предупреждение, а также дополнительные общие метаданные предупреждений (например, серьезность или описание). 
+* **Контекст предупреждения**: Набор полей, описывающих **причину предупреждения**, с полями, которые зависят от **типа оповещения**. Например, оповещение метрики будет иметь такие поля, как имя метрики и значение метрики в контексте предупреждения, тогда как оповещение журнала действий будет содержать сведения о событии, создавшем предупреждение. 
 
-##### <a name="sample-alert-payload"></a>Пример оповещения полезных данных
+##### <a name="sample-alert-payload"></a>Примеры полезных данных оповещений
 ```json
 {
   "schemaId": "azureMonitorCommonAlertSchema",
@@ -74,23 +74,23 @@ ms.locfileid: "67594377"
 }
 ```
 
-## <a name="essentials-fields"></a>Поля «Основные компоненты»
+## <a name="essentials-fields"></a>Поля "основные"
 
 | Поле | Описание|
 |:---|:---|
-| alertId | Идентификатор GUID, который однозначно идентифицирует экземпляр предупреждения. |
+| alertId | Идентификатор GUID, однозначно определяющий экземпляр предупреждения. |
 | alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
 | severity | Серьезность оповещения. Возможные значения: Sev0, Sev1, Sev2, Sev3, Sev4 |
-| signalType | Идентифицирует сигнал, на котором была определена правило генерации оповещений. Возможные значения: Метрики, журнал, журнал действий |
-| monitorCondition | Когда срабатывает оповещение, монитор условия оповещений имеет значение «Срабатывания». Если снимает соответствующее условие, вызвавшее предупреждение, условие монитора имеет значение «Разрешено».   |
-| monitoringService | Службы или мониторинга решения, создавшего оповещение. Поля для него контекст оповещения определяются службой наблюдения. |
-| alertTargetIds | Список целевых объектов ARM идентификаторы всех затронутых оповещение. Оповещения журнала, определенные в рабочей области Log Analytics или экземпляра Application Insights это соответствующей рабочей области или приложения. |
-| originAlertId | Идентификатор экземпляра предупреждения об изменении как созданные службой наблюдения, создавая их. |
-| firedDateTime | Дата и время срабатывания экземпляр предупреждения в формате UTC |
-| resolvedDateTime | Дата и время из когда условие монитора для экземпляра предупреждения об изменении имеет значение «Разрешено» в формате UTC. В настоящее время применяется только для оповещения о метриках.|
-| description | Описание, как определено в правило генерации оповещений |
-|essentialsVersion| Номер версии для разделе "Основное".|
-|alertContextVersion | Номер версии для раздела alertContext |
+| сигналтипе | Определяет сигнал, на котором было определено правило генерации оповещений. Возможные значения: Метрика, журнал, журнал действий |
+| мониторкондитион | При срабатывании предупреждения в качестве условия монитора отображается значение "активировался". Когда базовое условие, вызвавшее срабатывание предупреждения, очищается, условие монитора устанавливается в значение "разрешено".   |
+| мониторингсервице | Служба мониторинга или решение, создавшее оповещение. Поля для контекста предупреждения определяются службой мониторинга. |
+| алерттаржетидс | Список идентификаторов ARM, которые затронут целевые объекты предупреждения. Для предупреждения журнала, определенного в Log Analytics рабочей области или экземпляре Application Insights, это соответствующая рабочая область или приложение. |
+| оригиналертид | Идентификатор экземпляра предупреждения, сформированный службой мониторинга, создавшей его. |
+| фиреддатетиме | Дата и время срабатывания экземпляра предупреждения в формате UTC |
+| ресолведдатетиме | Дата и время, когда состояние монитора для экземпляра предупреждения имеет значение "разрешено" в формате UTC. В настоящее время применимо только для оповещений метрик.|
+| description | Описание, определенное в правиле генерации оповещений |
+|ессентиалсверсион| Номер версии для раздела Essentials.|
+|алертконтекстверсион | Номер версии для раздела Алертконтекст |
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -114,11 +114,11 @@ ms.locfileid: "67594377"
 }
 ```
 
-## <a name="alert-context-fields"></a>Поля «Контекст предупреждения»
+## <a name="alert-context-fields"></a>Поля "контекст предупреждения"
 
-### <a name="metric-alerts"></a>Оповещения о метриках
+### <a name="metric-alerts"></a>Оповещения метрики
 
-#### <a name="monitoringservice--platform"></a>monitoringService = «Платформы»
+#### <a name="monitoringservice--platform"></a>Мониторингсервице = ' Platform '
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -151,13 +151,13 @@ ms.locfileid: "67594377"
 }
 ```
 
-### <a name="log-alerts"></a>Оповещения журналов
+### <a name="log-alerts"></a>Оповещения журнала
 
 > [!NOTE]
-> + Для оповещений журнала, где был определен настраиваемые полезные данные JSON Включение в общей схеме вернется на схему полезных данных, описанным ниже.
-> + Оповещения с поддержкой общей схеме имеют предельное значение размера 256 КБ на одно оповещение. **Результаты поиска не внедряются в полезных данных оповещения журнала, если они вызывают предупреждения размер пересекать это пороговое значение.** Это можно определить, выполняется проверка флага «IncludedSearchResults». В сценариях, где результаты не включаются, рекомендуется использовать поисковый запрос в сочетании с [Log Analytics API](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
+> + Для предупреждений журнала, в которых определены пользовательские полезные данные JSON, при включении общей схемы будет возвращена схема полезных данных, описанная ниже.
+> + Оповещения с включенной общей схемой имеют ограничение верхнего размера в 256 КБ на предупреждение. **Результаты поиска не внедряются в полезные данные оповещений журнала, если они приводят к тому, что размер предупреждения пересекает это пороговое значение.** Это можно определить, установив флаг "Инклудедсеарчресултс". В случаях, когда результаты поиска не включены, рекомендуется использовать поисковый запрос в сочетании с [API log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
 
-#### <a name="monitoringservice--log-analytics"></a>monitoringService = «Log Analytics»
+#### <a name="monitoringservice--log-analytics"></a>Мониторингсервице = "Log Analytics"
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -224,7 +224,7 @@ ms.locfileid: "67594377"
 }
 ```
 
-#### <a name="monitoringservice--application-insights"></a>monitoringService = 'Application Insights'
+#### <a name="monitoringservice--application-insights"></a>Мониторингсервице = "Application Insights"
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -289,7 +289,7 @@ ms.locfileid: "67594377"
 
 ### <a name="activity-log-alerts"></a>Оповещения журнала действий
 
-#### <a name="monitoringservice--activity-log---administrative"></a>monitoringService = 'Activity Log - Administrative'
+#### <a name="monitoringservice--activity-log---administrative"></a>Мониторингсервице = ' журнал действий — Администрирование '
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -316,22 +316,118 @@ ms.locfileid: "67594377"
 }
 ```
 
-#### <a name="monitoringservice--servicehealth"></a>monitoringService = 'ServiceHealth'
+#### <a name="monitoringservice--activity-log---policy"></a>Мониторингсервице = ' журнал действий — политика '
+
+##### <a name="sample-values"></a>Примеры значений
+```json
+{
+  "alertContext": {
+    "authorization": {
+      "action": "Microsoft.Resources/checkPolicyCompliance/read",
+      "scope": "/subscriptions/<GUID>"
+    },
+    "channels": "Operation",
+    "claims": "{\"aud\":\"https://management.azure.com/\",\"iss\":\"https://sts.windows.net/<GUID>/\",\"iat\":\"1566711059\",\"nbf\":\"1566711059\",\"exp\":\"1566740159\",\"aio\":\"42FgYOhynHNw0scy3T/bL71+xLyqEwA=\",\"appid\":\"<GUID>\",\"appidacr\":\"2\",\"http://schemas.microsoft.com/identity/claims/identityprovider\":\"https://sts.windows.net/<GUID>/\",\"http://schemas.microsoft.com/identity/claims/objectidentifier\":\"<GUID>\",\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\":\"<GUID>\",\"http://schemas.microsoft.com/identity/claims/tenantid\":\"<GUID>\",\"uti\":\"Miy1GzoAG0Scu_l3m1aIAA\",\"ver\":\"1.0\"}",
+    "caller": "<GUID>",
+    "correlationId": "<GUID>",
+    "eventSource": "Policy",
+    "eventTimestamp": "2019-08-25T11:11:34.2269098+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Warning",
+    "operationName": "Microsoft.Authorization/policies/audit/action",
+    "operationId": "<GUID>",
+    "properties": {
+      "isComplianceCheck": "True",
+      "resourceLocation": "eastus2",
+      "ancestors": "<GUID>",
+      "policies": "[{\"policyDefinitionId\":\"/providers/Microsoft.Authorization/policyDefinitions/<GUID>/\",\"policySetDefinitionId\":\"/providers/Microsoft.Authorization/policySetDefinitions/<GUID>/\",\"policyDefinitionReferenceId\":\"vulnerabilityAssessmentMonitoring\",\"policySetDefinitionName\":\"<GUID>\",\"policyDefinitionName\":\"<GUID>\",\"policyDefinitionEffect\":\"AuditIfNotExists\",\"policyAssignmentId\":\"/subscriptions/<GUID>/providers/Microsoft.Authorization/policyAssignments/SecurityCenterBuiltIn/\",\"policyAssignmentName\":\"SecurityCenterBuiltIn\",\"policyAssignmentScope\":\"/subscriptions/<GUID>\",\"policyAssignmentSku\":{\"name\":\"A1\",\"tier\":\"Standard\"},\"policyAssignmentParameters\":{}}]"
+    },
+    "status": "Succeeded",
+    "subStatus": "",
+    "submissionTimestamp": "2019-08-25T11:12:46.1557298+00:00"
+  }
+}
+```
+
+#### <a name="monitoringservice--activity-log---autoscale"></a>Мониторингсервице = ' журнал действий — Автомасштабирование '
+
+##### <a name="sample-values"></a>Примеры значений
+```json
+{
+  "alertContext": {
+    "channels": "Admin, Operation",
+    "claims": "{\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/spn\":\"Microsoft.Insights/autoscaleSettings\"}",
+    "caller": "Microsoft.Insights/autoscaleSettings",
+    "correlationId": "<GUID>",
+    "eventSource": "Autoscale",
+    "eventTimestamp": "2019-08-21T16:17:47.1551167+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Informational",
+    "operationName": "Microsoft.Insights/AutoscaleSettings/Scaleup/Action",
+    "operationId": "<GUID>",
+    "properties": {
+      "description": "The autoscale engine attempting to scale resource '/subscriptions/d<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS' from 9 instances count to 10 instances count.",
+      "resourceName": "/subscriptions/<GUID>/resourceGroups/voiceassistancedemo/providers/Microsoft.Compute/virtualMachineScaleSets/alexademo",
+      "oldInstancesCount": "9",
+      "newInstancesCount": "10",
+      "activeAutoscaleProfile": "{\r\n  \"Name\": \"Auto created scale condition\",\r\n  \"Capacity\": {\r\n    \"Minimum\": \"1\",\r\n    \"Maximum\": \"10\",\r\n    \"Default\": \"1\"\r\n  },\r\n  \"Rules\": [\r\n    {\r\n      \"MetricTrigger\": {\r\n        \"Name\": \"Percentage CPU\",\r\n        \"Namespace\": \"microsoft.compute/virtualmachinescalesets\",\r\n        \"Resource\": \"/subscriptions/<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS\",\r\n        \"ResourceLocation\": \"eastus\",\r\n        \"TimeGrain\": \"PT1M\",\r\n        \"Statistic\": \"Average\",\r\n        \"TimeWindow\": \"PT5M\",\r\n        \"TimeAggregation\": \"Average\",\r\n        \"Operator\": \"GreaterThan\",\r\n        \"Threshold\": 0.0,\r\n        \"Source\": \"/subscriptions/<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS\",\r\n        \"MetricType\": \"MDM\",\r\n        \"Dimensions\": [],\r\n        \"DividePerInstance\": false\r\n      },\r\n      \"ScaleAction\": {\r\n        \"Direction\": \"Increase\",\r\n        \"Type\": \"ChangeCount\",\r\n        \"Value\": \"1\",\r\n        \"Cooldown\": \"PT1M\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "lastScaleActionTime": "Wed, 21 Aug 2019 16:17:47 GMT"
+    },
+    "status": "Succeeded",
+    "submissionTimestamp": "2019-08-21T16:17:47.2410185+00:00"
+  }
+}
+```
+
+#### <a name="monitoringservice--activity-log---security"></a>Мониторингсервице = ' журнал действий — безопасность '
+
+##### <a name="sample-values"></a>Примеры значений
+```json
+{
+  "alertContext": {
+    "channels": "Operation",
+    "correlationId": "<GUID>",
+    "eventSource": "Security",
+    "eventTimestamp": "2019-08-26T08:34:14+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Informational",
+    "operationName": "Microsoft.Security/locations/alerts/activate/action",
+    "operationId": "<GUID>",
+    "properties": {
+      "threatStatus": "Quarantined",
+      "category": "Virus",
+      "threatID": "2147519003",
+      "filePath": "C:\\AlertGeneration\\test.eicar",
+      "protectionType": "Windows Defender",
+      "actionTaken": "Blocked",
+      "resourceType": "Virtual Machine",
+      "severity": "Low",
+      "compromisedEntity": "testVM",
+      "remediationSteps": "[\"No user action is necessary\"]",
+      "attackedResourceType": "Virtual Machine"
+    },
+    "status": "Active",
+    "submissionTimestamp": "2019-08-26T09:28:58.3019107+00:00"
+  }
+}
+```
+
+#### <a name="monitoringservice--servicehealth"></a>Мониторингсервице = ' ServiceHealth '
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
 {
   "alertContext": {
     "authorization": null,
-    "channels": "Admin",
+    "channels": 1,
     "claims": null,
     "caller": null,
     "correlationId": "f3cf2430-1ee3-4158-8e35-7a1d615acfc7",
-    "eventSource": "ServiceHealth",
+    "eventSource": 2,
     "eventTimestamp": "2019-06-24T11:31:19.0312699+00:00",
     "httpRequest": null,
     "eventDataId": "<GUID>",
-    "level": "Informational",
+    "level": 3,
     "operationName": "Microsoft.ServiceHealth/maintenance/action",
     "operationId": "<GUID>",
     "properties": {
@@ -355,11 +451,12 @@ ms.locfileid: "67594377"
     },
     "status": "Active",
     "subStatus": null,
-    "submissionTimestamp": "2019-06-24T11:31:31.7147357+00:00"
+    "submissionTimestamp": "2019-06-24T11:31:31.7147357+00:00",
+    "ResourceType": null
   }
 }
 ```
-#### <a name="monitoringservice--resource-health"></a>monitoringService = 'Resource Health'
+#### <a name="monitoringservice--resource-health"></a>Мониторингсервице = "Работоспособность ресурсов"
 
 ##### <a name="sample-values"></a>Примеры значений
 ```json
@@ -390,6 +487,6 @@ ms.locfileid: "67594377"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Дополнительные сведения об общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs)
-- [Узнайте, как создать приложение логики, которое использует общую схему оповещения для обработки всех предупреждений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
+- [Дополнительные сведения о схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs)
+- [Узнайте, как создать приложение логики, использующее общую схему оповещений для обработки всех ваших оповещений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
 

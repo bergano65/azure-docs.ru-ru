@@ -4,15 +4,15 @@ ms.service: logic-apps
 ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
-ms.openlocfilehash: 48cd41d432c5969fc4128b055ca61fc86a57bdd2
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 6c905842778f43196ac463b99993a3cbcd436fa5
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185542"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036768"
 ---
-### <a name="prerequisites"></a>Технические условия
-* Учетная запись [OneDrive](http://OneDrive.com). 
+### <a name="prerequisites"></a>Предварительные требования
+* Учетная запись [OneDrive](https://OneDrive.com). 
 
 Чтобы использовать учетную запись OneDrive для бизнеса в приложении логики, вы должны авторизовать приложение логики для подключения к вашей учетной записи OneDrive для бизнеса. К счастью, это можно легко сделать из приложения логики на портале Azure. 
 

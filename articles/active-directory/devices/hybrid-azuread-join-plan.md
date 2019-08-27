@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62496aceb1454283449e952c0ed86623597e9e66
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 1431a46bf0981ee7ca3ecd06be9d7ebc35f05982
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011666"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032723"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -35,7 +35,7 @@ ms.locfileid: "70011666"
 В этой статье предполагается, что вы знакомы с [введением в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
 > [!NOTE]
-> Минимально необходимый режим работы домена и режим работы леса для гибридной службы Azure AD присоединением Windows 10 — это Windows Server 2008 R2.
+> Минимальная требуемая версия контроллера домена для гибридного подключения Azure AD Windows 10 — Windows Server 2008 R2.
 
 ## <a name="plan-your-implementation"></a>Планирование реализации
 

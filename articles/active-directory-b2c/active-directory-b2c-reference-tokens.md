@@ -7,21 +7,21 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/23/2019
+ms.date: 08/27/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c347a5740a13d071d4bb06daf43463f974198e5d
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 2b33c35b1e4f83c30e2efdf64aed0b5f2035c79b
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980799"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032079"
 ---
 # <a name="overview-of-tokens-in-azure-active-directory-b2c"></a>Общие сведения о токенах в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD) B2C выдает несколько типов маркеров безопасности при обработке каждого [потока проверки](active-directory-b2c-apps.md)подлинности. В этом документе описывается формат, характеристики безопасности и содержимое каждого типа маркера.
+При обработке каждого [потока аутентификации](active-directory-b2c-apps.md) Azure Active Directory B2C (Azure AD B2C) создает маркеры безопасности различных типов. В этом документе описывается формат, характеристики безопасности и содержимое каждого типа маркера.
 
 ## <a name="token-types"></a>Типы маркеров
 
@@ -40,7 +40,7 @@ Azure AD B2C поддерживает [протоколы OAuth 2,0 и OpenID Co
 - `https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/oauth2/v2.0/authorize`
 - `https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/oauth2/v2.0/token`
 
-Маркеры безопасности, получаемые приложением от Azure AD B2C могут поступать из `/authorize` конечных точек или `/token` . При получении маркеров идентификации от `/authorize` конечной точки они выполняются с помощью неявного [потока](active-directory-b2c-reference-spa.md), который часто используется для входа пользователей в веб-приложения на основе JavaScript. Когда маркеры идентификации поступают из конечной точки `/token`, это происходит с помощью [потока кода конфиденциальной информации](active-directory-b2c-reference-oidc.md), который предотвращает доступ браузера к маркеру.
+Маркеры безопасности, получаемые приложением от Azure AD B2C могут поступать из `/authorize` конечных точек или `/token` . Когда маркеры идентификации получены из `/authorize` конечной точки, они выполняются с помощью неявного [потока](active-directory-b2c-reference-spa.md), который часто используется для входа пользователей в веб-приложения на основе JavaScript. Когда маркеры идентификации получены от `/token` конечной точки, они выполняются с помощью [потока кода авторизации](active-directory-b2c-reference-oidc.md#get-a-token), который оставляет маркер скрытым от браузера.
 
 ## <a name="claims"></a>Претензии
 

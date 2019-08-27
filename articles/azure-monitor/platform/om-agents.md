@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: magoedte
-ms.openlocfilehash: a559fe86850ee9c1378876bc5ed8f2d0ddfb2d99
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 4b426fbc1d1b3eeed2321f86bb51c9c5d705adb4
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543047"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035610"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
@@ -47,8 +47,8 @@ ms.locfileid: "69543047"
 * Azure Monitor поддерживает только System Center Operations Manager 2016 или более поздней версии, Operations Manager 2012 SP1 UR6 или более поздней версии и Operations Manager 2012 R2 UR2 или более поздней версии. Поддержка прокси-сервера была добавлена в Operations Manager 2012 с пакетом обновления 1 (SP1) и накопительным пакетом обновления 7 (UR7) и в Operations Manager 2012 R2 с накопительным пакетом обновления 3 (UR3).
 * Для интеграции System Center Operations Manager 2016 с Cloud правительства США требуется обновленный пакет управления Advisor, входящий в состав накопительного пакета обновления 2 или более поздней версии. Для System Center Operations Manager 2012 R2 требуется обновленный пакет управления Advisor, входящий в состав накопительного пакета обновления 3 или более поздней версии.
 * Все агенты Operations Manager должны удовлетворять минимальным требованиям поддержки. Убедитесь, что агенты соответствуют минимальным требованиям, иначе взаимодействие с агентом Windows может завершиться сбоем и привести к созданию ошибок в журнале событий Operations Manager.
-* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Управление рабочими областями](../../azure-monitor/platform/manage-access.md?toc=/azure/azure-monitor/toc.json).   
-* Вы прошли проверку подлинности в Azure с учетной записью, которая является членом [роли участника Log Analytics](../../azure-monitor/platform/manage-access.md#manage-accounts-and-users).
+* Рабочая область Log Analytics. Дополнительные сведения см. в статье [Управление рабочими областями](design-logs-deployment.md). 
+* Вы прошли проверку подлинности в Azure с учетной записью, которая является членом [роли участника Log Analytics](manage-access.md#manage-access-using-azure-permissions).
 
 * Поддерживаемые регионы. System Center Operations Manager для подключения к рабочей области Log Analytics поддерживаются только следующие регионы Azure:
     - Центрально-западная часть США

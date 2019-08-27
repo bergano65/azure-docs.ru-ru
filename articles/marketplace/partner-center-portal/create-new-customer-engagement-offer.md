@@ -6,13 +6,13 @@ manager: evansma
 ms.author: jenhayes
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: 7cda51870a98b2606a0133a61ad6f786e7e9324a
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.date: 08/26/2019
+ms.openlocfilehash: 58dd9ade749458facd6f11682af0b730258a7584
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900140"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70033236"
 ---
 # <a name="create-a-new-dynamics-365-for-customer-engagement--powerapps-offer"></a>Создание нового Dynamics 365 для участия клиентов & PowerApps
 
@@ -353,7 +353,7 @@ ms.locfileid: "69900140"
 
 ## <a name="supplemental-content"></a>Дополнительное содержимое
 
-На этой странице можно указать дополнительные необходимые сведения о предложении.
+На этой странице вы можете указать дополнительные сведения о предложении, чтобы помочь нам проверить ваше предложение. Эти сведения не отображаются для клиентов или опубликованы в Marketplace.
 
 ### <a name="key-usage-scenario"></a>Сценарий использования ключа
 

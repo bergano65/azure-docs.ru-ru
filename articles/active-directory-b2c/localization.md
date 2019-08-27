@@ -1,5 +1,5 @@
 ---
-title: Локализация. Azure Active Directory B2C | Документация Майкрософт
+title: Локализация — Azure Active Directory B2C
 description: Использование элемента Localization в настраиваемой политике для Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 08/27/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a02983c5019870e8b17db48184b2f238a82f8a40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec9b4e7ce761d524d047f4d12cab9e5b782e6032
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510579"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70033465"
 ---
 # <a name="localization"></a>Локализация
 
@@ -39,7 +39,7 @@ ms.locfileid: "66510579"
 
 Элемент **Localization** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | Enabled | Нет | Возможные значения: `true` или `false`. |
 
@@ -47,14 +47,14 @@ ms.locfileid: "66510579"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| SupportedLanguages | 1:n | Список поддерживаемых языков. | 
+| SupportedLanguages | 1:n | Список поддерживаемых языков. |
 | LocalizedResources | 0:n | Список локализованных ресурсов. |
 
 ## <a name="supportedlanguages"></a>SupportedLanguages
 
 Элемент **SupportedLanguages** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | DefaultLanguage | Да | Язык, который будет использоваться по умолчанию для локализованных ресурсов. |
 | MergeBehavior | Нет | Перечисление значений, которые объединяются с любым элементом ClaimType с таким же идентификатором в родительской политике. Используйте этот атрибут, чтобы переопределить определенное в базовой политике утверждение. Допустимые значения: `Append`, `Prepend` или `ReplaceAll`. Значение `Append` означает, что указанная коллекция данных должна добавляться в конец коллекции, указанной в родительской политике. Значение `Prepend` означает, что указанная коллекция данных должна добавляться в начало коллекции, указанной в родительской политике. Значение `ReplaceAll` означает, что определенную в родительской политике коллекцию данных нужно игнорировать и заменить данными, определенными в текущей политике. |
@@ -65,15 +65,15 @@ ms.locfileid: "66510579"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| SupportedLanguage | 1:n | Отображает содержимое, которое соответствует тега языка в RFC 5646 (теги для идентификации языков). | 
+| SupportedLanguage | 1:n | Отображает содержимое, которое соответствует тега языка в RFC 5646 (теги для идентификации языков). |
 
 ## <a name="localizedresources"></a>LocalizedResources
 
 Элемент **LocalizedResources** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | Да | Идентификатор, который используется для уникальной идентификации локализованных ресурсов. |
+| Id | Да | Идентификатор, который используется для уникальной идентификации локализованных ресурсов. |
 
 Элемент **LocalizedResources** содержит следующие элементы:
 
@@ -94,7 +94,7 @@ ms.locfileid: "66510579"
 
 Элемент **LocalizedCollections** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | ElementType | Да | Ссылается на элемент ClaimType или элемент пользовательского интерфейса в файле политики. |
 | ElementId | Да | Строка, содержащая ссылку на тип утверждения, который уже определен в разделе ClaimsSchema и используется, если **ElementType** имеет значение ClaimType. |
@@ -108,10 +108,11 @@ ms.locfileid: "66510579"
 
 Элемент **Item** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
-| Text | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
+| Текст | Да | Понятная для пользователя отображаемая строка, которая размещается в пользовательском интерфейсе для этого параметра. |
 | Значение | Да | Строковое значение утверждения, связанное с этим вариантом. |
+| SelectByDefault | Нет | Указывает, следует ли по умолчанию выбирать этот параметр в пользовательском интерфейсе. Возможные значения: Значение True или False. |
 
 Следующий пример демонстрирует использование элемента **LocalizedCollections**. Он содержит два элемента **LocalizedCollection** по одному для английского и испанского языков. Оба они устанавливают для утверждения `Gender` коллекцию **Restriction** со списком элементов на английском и испанском языках.
 
@@ -131,7 +132,6 @@ ms.locfileid: "66510579"
       <Item Text="Masculino" Value="M" />
     </LocalizedCollection>
 </LocalizedCollections>
-
 ```
 
 ### <a name="localizedstrings"></a>LocalizedStrings
@@ -144,10 +144,10 @@ ms.locfileid: "66510579"
 
 Элемент **LocalizedStrings** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 | --------- | -------- | ----------- |
 | ElementType | Да | Ссылается на элемент типа утверждения или элемент пользовательского интерфейса в файле политики. Возможные значения: `ClaimType`, `UxElement`, `ErrorMessage`, `Predicate` или . Значение `ClaimType` используется для локализации одного из атрибутов утверждения, который указан в параметре StringId. Значение `UxElement` используется для локализации одного из элементов пользовательского интерфейса, который указан в параметре StringId. Значение `ErrorMessage` используется для локализации одного из системных сообщений об ошибке, которое указано в параметре StringId. Значение `Predicate` используется для локализации одного из сообщений об ошибке [Predicate](predicates.md), которое указано в параметре StringId. Значение `InputValidation` используется для локализации одного из сообщений об ошибке [PredicateValidation](predicates.md), которое указано в параметре StringId. |
-| ElementId | Да | Если **ElementType** имеет значение `ClaimType`, `Predicate` или `InputValidation`, этот элемент содержит ссылку на тип утверждения, которое уже определено в разделе ClaimsSchema. | 
+| ElementId | Да | Если **ElementType** имеет значение `ClaimType`, `Predicate` или `InputValidation`, этот элемент содержит ссылку на тип утверждения, которое уже определено в разделе ClaimsSchema. |
 | StringId | Да | Если **ElementType** имеет значение `ClaimType`, этот элемент содержит ссылку на атрибут типа утверждения. Допустимые значения: `DisplayName`, `AdminHelpText` или `PatternHelpText`. Значение `DisplayName` задает отображаемое имя утверждения. Значение `AdminHelpText` задает имя текста справки для пользователя утверждения. Значение `PatternHelpText` задает текста справки по шаблону утверждения. Если **ElementType** имеет значение `UxElement`, этот элемент содержит ссылку на атрибут элемента пользовательского интерфейса. Если **ElementType** имеет значение `ErrorMessage`, этот элемент задает идентификатор сообщения об ошибке. Полный список идентификаторов `UxElement` для строк локализации можно найти на [этой странице](localization-string-ids.md).|
 
 
@@ -187,7 +187,7 @@ ms.locfileid: "66510579"
 
 <LocalizedString ElementType="InputValidation" ElementId="StrongPassword" StringId="CharacterClasses">The password must have at least 3 of the following:</LocalizedString>
 
-<LocalizedString ElementType="Predicate" ElementId="IsLengthBetween8And64" StringId="HelpText">The password must be between 8 and 64 characters.</LocalizedString>              
+<LocalizedString ElementType="Predicate" ElementId="IsLengthBetween8And64" StringId="HelpText">The password must be between 8 and 64 characters.</LocalizedString>
 ```
 
 ## <a name="set-up-localization"></a>Настройка локализации
@@ -207,12 +207,13 @@ ms.locfileid: "66510579"
 </Localization>
 ```
 
-### <a name="provide-language-specific-strings-and-collections"></a>Предоставление строк и коллекций для каждого языка 
+### <a name="provide-language-specific-strings-and-collections"></a>Предоставление строк и коллекций для каждого языка
 
-Добавьте элементы **LocalizedResources** внутри элемента **Localization** после закрывающего тега элемента **SupportedLanguages**. Элементы **LocalizedResources** следует определить для каждой страницы (определения содержимого) и каждого языка, для которого включается поддержка. Чтобы настроить единые страницы регистрации, входа в систему, регистрации и использования многофакторной проверки подлинности (MFA) для английского, испанского и французского языков, добавьте следующие элементы **LocalizedResources**.  
+Добавьте элементы **LocalizedResources** внутри элемента **Localization** после закрывающего тега элемента **SupportedLanguages**. Элементы **LocalizedResources** следует определить для каждой страницы (определения содержимого) и каждого языка, для которого включается поддержка. Чтобы настроить единые страницы регистрации, входа в систему, регистрации и использования многофакторной проверки подлинности (MFA) для английского, испанского и французского языков, добавьте следующие элементы **LocalizedResources**.
+
 - Единая страница регистрации и входа на английском языке `<LocalizedResources Id="api.signuporsignin.en">`
 - Единая страница регистрации и входа на испанском языке `<LocalizedResources Id="api.signuporsignin.es">`
-- Единая страница регистрации и входа на французском языке `<LocalizedResources Id="api.signuporsignin.fr">` 
+- Единая страница регистрации и входа на французском языке `<LocalizedResources Id="api.signuporsignin.fr">`
 - Станица регистрации на английском языке `<LocalizedResources Id="api.localaccountsignup.en">`
 - Станица регистрации на испанском языке `<LocalizedResources Id="api.localaccountsignup.es">`
 - Станица регистрации на французском языке `<LocalizedResources Id="api.localaccountsignup.fr">`
@@ -220,7 +221,7 @@ ms.locfileid: "66510579"
 - Страница многофакторной идентификации на испанском языке `<LocalizedResources Id="api.phonefactor.es">`
 - Страница многофакторной идентификации на французском языке `<LocalizedResources Id="api.phonefactor.fr">`
 
-Каждый элемент **LocalizedResources** содержит все обязательные элементы **LocalizedStrings** с несколькими элементами **LocalizedString** и элементы **LocalizedCollections** с несколькими элементами **LocalizedCollection**.  Следующий пример добавляет локализацию страницы регистрации для английского языка: 
+Каждый элемент **LocalizedResources** содержит все обязательные элементы **LocalizedStrings** с несколькими элементами **LocalizedString** и элементы **LocalizedCollections** с несколькими элементами **LocalizedCollection**.  Следующий пример добавляет локализацию страницы регистрации для английского языка:
 
 Примечание. Этот пример использует типы утверждений `Gender` и `City`. Чтобы использовать этот пример, необходимо определить эти утверждения. Дополнительные сведения см. в описании [ClaimsSchema](claimsschema.md).
 
@@ -276,7 +277,7 @@ ms.locfileid: "66510579"
 </LocalizedResources>
 ```
 
-### <a name="edit-the-contentdefinition-for-the-page"></a>Изменение ContentDefinition для страницы 
+### <a name="edit-the-contentdefinition-for-the-page"></a>Изменение ContentDefinition для страницы
 
 Для каждой страницы, которую вы хотите локализовать, укажите коды языка из списка **ContentDefinition**.
 
@@ -363,7 +364,3 @@ ms.locfileid: "66510579"
   </Localization>
 </BuildingBlocks>
 ```
-
-
-
-

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: mbullwin
-ms.openlocfilehash: 77c5285462c4368badd63d7cdbf6589c7ad03c8d
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: f72feeefeb896c9006f767f8724d9ca3b3640c1e
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534573"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035228"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -36,7 +36,7 @@ Application Insights можно использовать с любыми веб-
 > [!IMPORTANT]
 > Для добавления Application Insights пакета SDK для JavaScript в приложение необходимо использовать только один из следующих методов. Если вы используете настройку на основе NPM, не используйте настройку на основе фрагментов кода. То же самое касается сценария обратных ситуаций при использовании подхода на основе фрагментов кода, но не также следует использовать настройку на основе NPM. 
 
-### <a name="npm-based-setup"></a>Установка на основе NPM 
+### <a name="npm-based-setup"></a>Установка на основе NPM
 
 ```js
 import { ApplicationInsights } from '@microsoft/applicationinsights-web'
@@ -198,7 +198,7 @@ dataset
 2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом`.map`
 3. Перетащите карты источника в стек вызовов в портал Azure![](https://i.imgur.com/Efue9nU.gif)
 
-## <a name="application-insights-web-basic"></a>Application Insights Web Basic
+### <a name="application-insights-web-basic"></a>Application Insights Web Basic
 
 Для упрощения работы можно вместо этого установить базовую версию Application Insights
 ```

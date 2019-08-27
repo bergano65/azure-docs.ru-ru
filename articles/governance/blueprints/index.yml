@@ -2,18 +2,18 @@
 documentType: LandingData
 title: Документация по службе Azure Blueprints
 metadata:
-  title: Документация по Azure Blueprint. Руководства и справочник по API
-  description: 'Azure Blueprint — это служба в Azure, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.'
+  title: Документация по Azure Blueprints. Руководства и справочник по API
+  description: 'Azure Blueprints — это служба в Azure, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.'
   author: DCtheGeek
   manager: carmonm
   ms.service: blueprints
   ms.topic: landing-page
-  ms.date: 03/26/2019
+  ms.date: 06/14/2019
   ms.author: dacoulte
 abstract:
   description: 'Azure Blueprints позволяет развертывать и обновлять воспроизводимые облачные среды с помощью составных артефактов, таких как шаблоны Azure Resource Manager, для подготовки ресурсов, управления доступом на основе ролей и политик.'
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как создавать и назначать определения схем и управлять ими в Azure.'
@@ -25,6 +25,11 @@ sections:
               src: ./media/portal.svg
             text: Портал Azure
             href: create-blueprint-portal.md
+          - image:
+              alt: Azure PowerShell
+              src: ./media/powershell.svg
+            text: Azure PowerShell
+            href: create-blueprint-powershell.md
           - image:
               alt: REST
               src: ./media/rest.svg
@@ -38,7 +43,7 @@ sections:
         items:
           - title: Командная строка
             html: '<p><a href="/powershell/module/az.blueprint/#blueprint">Azure PowerShell</a></p>'
-          - title: Languages
+          - title: Языки
             html: <p><a href="/dotnet/api/overview/azure/blueprints/management">Пакет Azure SDK для .NET</a></p>
           - title: REST
             html: <p><a href="/rest/api/blueprints/">Справочник по API</a></p>

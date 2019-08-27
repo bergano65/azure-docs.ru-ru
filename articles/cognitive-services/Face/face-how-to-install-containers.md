@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 93a6d0a42d6d7f07dd8947ce9f8ae99a39d44475
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 7ab921d889c48ccd8be469328e2690cb1cb2d8b2
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564148"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050027"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
@@ -118,7 +118,7 @@ ApiKey={API_KEY}
 
 Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. 
 
-Используйте узел `https://localhost:5000` для API контейнера.
+Используйте узел `http://localhost:5000` для API контейнера.
 
 
 <!--  ## Validate container is running -->

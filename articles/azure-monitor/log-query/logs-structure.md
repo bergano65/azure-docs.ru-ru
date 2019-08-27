@@ -5,14 +5,14 @@ services: log-analytics
 author: bwren
 ms.service: log-analytics
 ms.topic: conceptual
-ms.date: 06/16/2019
+ms.date: 08/22/2019
 ms.author: bwren
-ms.openlocfilehash: 6f5ae426018c9e7fa2ac586a2886c8e5e609069b
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: b1d22729724c2d1a8e3705e017762dcef588245e
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68813849"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034871"
 ---
 # <a name="structure-of-azure-monitor-logs"></a>Структура журналов Azure Monitor
 Возможность быстрого получения ценных сведений о данных с помощью [запроса журнала](log-query-overview.md) — это мощная функция Azure Monitor. Для создания эффективных и полезных запросов следует понимать некоторые основные понятия, например, где находятся нужные данные и как они структурированы. В этой статье приводятся основные понятия, которые необходимо приступить к работе.
@@ -46,7 +46,7 @@ union withsource = table *
 Дополнительные сведения о создаваемых таблицах см. в документации по каждому источнику данных. Примеры включают статьи для [источников данных агентов](../platform/agent-data-sources.md), [журналов диагностики](../platform/diagnostic-logs-schema.md)и [решений для мониторинга](../insights/solutions-inventory.md).
 
 ### <a name="workspace-permissions"></a>Разрешения рабочей области
-Дополнительные сведения о предоставлении доступа к данным в рабочей области см. в разделе [разрешения и область действия рабочей области](../platform/manage-access.md#manage-accounts-and-users) . Помимо предоставления доступа к рабочей области, можно ограничить доступ к отдельным таблицам с помощью RBAC на [уровне таблицы](../platform/manage-access.md#table-level-rbac).
+Сведения о стратегии управления доступом и рекомендации по обеспечению доступа к данным в рабочей области см. в разделе [Разработка развертывания Azure Monitor журналов](../platform/design-logs-deployment.md) . Помимо предоставления доступа к рабочей области, можно ограничить доступ к отдельным таблицам с помощью RBAC на [уровне таблицы](../platform/manage-access.md#table-level-rbac).
 
 ## <a name="application-insights-application"></a>Приложение Application Insights
 При создании приложения в Application Insights соответствующее приложение автоматически создается в журналах Azure Monitor. Для получения данных конфигурация не требуется, и приложение будет автоматически записывать данные мониторинга, такие как Просмотры страниц, запросы и исключения.
@@ -76,7 +76,7 @@ union withsource = table *
 | Рабочая область Log Analytics | Приложение Application Insights | Описание |
 |:---|:---|:---|
 | TimeGenerated | timestamp  | Дата и время создания записи. |
-| Type          | itemType   | Имя таблицы, из которой была получена запись. |
+| Тип          | itemType   | Имя таблицы, из которой была получена запись. |
 | _ResourceId   |            | Уникальный идентификатор ресурса, с которым связана запись. |
 | _IsBillable   |            | Указывает, оплачивается ли прием данных. |
 | _BilledSize   |            | Указывает размер данных в байтах, за которые будет взиматься плата. |

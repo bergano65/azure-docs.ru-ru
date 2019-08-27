@@ -1,6 +1,6 @@
 ---
 title: Управление рабочими областями Log Analytics в Azure Monitor | Документация Майкрософт
-description: Вы можете управлять рабочими областями Log Analytics в Azure Monitor с помощью различных задач администрирования, применяемых к пользователям, учетным записям, рабочим областям и учетным записям Azure.
+description: Вы можете управлять доступом к данным, хранящимся в Log Analytics рабочих областях, в Azure Monitor с помощью ресурсов, рабочей области или разрешений уровня таблицы. В этой статье подробно описывается, как это делать.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -11,16 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 08/26/2019
 ms.author: magoedte
-ms.openlocfilehash: 59e5bbaf8deccdd8218e9c5590266070ed3b5ebb
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 9bf278b76846b98f58126957c589df87524bb8a4
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624339"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034715"
 ---
-# <a name="manage-log-data-and-workspaces-in-azure-monitor"></a>Управление данными журнала и рабочими областями в Azure Monitor
+# <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Управление доступом к данным и рабочим областям журнала в Azure Monitor
 
 Azure Monitor хранит данные [журнала](data-platform-logs.md) в log Analytics рабочей области, которая по сути является контейнером, содержащим данные и сведения о конфигурации. Для управления доступом к данным журнала выполняются различные задачи администрирования, связанные с рабочей областью.
 
@@ -32,7 +32,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 
 * Как предоставить доступ пользователям, которым необходим доступ к данным журнала в определенной таблице в рабочей области, с помощью Azure RBAC.
 
-## <a name="define-access-control-mode"></a>Определение режима управления доступом
+## <a name="configure-access-control-mode"></a>Настройка режима управления доступом
 
 Режим управления доступом, настроенный в рабочей области, можно просмотреть в портал Azure или с помощью Azure PowerShell.  Этот параметр можно изменить с помощью одного из следующих поддерживаемых методов.
 
@@ -42,7 +42,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 
 * Шаблон Azure Resource Manager
 
-### <a name="configure-from-the-azure-portal"></a>Настройка из портал Azure
+### <a name="from-the-azure-portal"></a>на портале Azure;
 
 Текущий режим управления доступом к рабочей области можно просмотреть на странице **Обзор** рабочей области в меню **log Analytics Рабочая область** .
 
@@ -55,7 +55,7 @@ Azure Monitor хранит данные [журнала](data-platform-logs.md) 
 
 ![Изменение режима доступа к рабочей области](media/manage-access/change-access-control-mode.png)
 
-### <a name="configure-using-powershell"></a>Настройка с помощью PowerShell
+### <a name="using-powershell"></a>с использованием PowerShell.
 
 Чтобы проверить режим управления доступом для всех рабочих областей в подписке, используйте следующую команду:
 
@@ -99,18 +99,14 @@ else
 Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 ```
 
-### <a name="configure-using-a-resource-manager-template"></a>Настройка с помощью шаблона диспетчер ресурсов
+### <a name="using-a-resource-manager-template"></a>Использование шаблона диспетчер ресурсов
 
 Чтобы настроить режим доступа в шаблоне Azure Resource Manager, задайте для флага компонента **енаблелогакцессусингонлиресаурцепермиссионс** в рабочей области одно из следующих значений.
 
 * **false**: Задайте для рабочей области разрешения контекста рабочей области. Это значение по умолчанию, если флаг не установлен.
 * **значение true**: Задайте для рабочей области разрешения контекста ресурсов.
 
-## <a name="manage-accounts-and-users"></a>Управление учетными записями и пользователями
-
-Разрешения, применяемые к рабочей области для конкретного пользователя, определяются [режимом доступа](design-logs-deployment.md#access-mode) и [режимом управления доступом](design-logs-deployment.md#access-control-mode) рабочей области. С помощью **контекста рабочей области**можно просмотреть все журналы в рабочей области, к которым у вас есть разрешение, так как запросы в этом режиме применяются ко всем данным во всех таблицах в рабочей области. С помощью **контекста ресурса**вы можете просматривать данные журнала в рабочей области для определенного ресурса, группы ресурсов или подписки при выполнении поиска непосредственно из ресурса в портал Azure, к которому у вас есть доступ. Запросы в этом режиме ограничены данными, связанными с этим ресурсом.
-
-### <a name="workspace-permissions"></a>Разрешения рабочей области
+## <a name="manage-access-using-workspace-permissions"></a>Управление доступом с помощью разрешений рабочей области
 
 Каждая рабочая область может включать учетных записей, каждая из которых может иметь доступ к нескольким рабочим областям. Управление доступом осуществляется с помощью [доступа на основе ролей Azure](../../role-based-access-control/role-assignments-portal.md).
 
@@ -130,7 +126,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 ## <a name="manage-access-using-azure-permissions"></a>Управление доступом с помощью разрешений Azure
 
-Чтобы предоставить доступ к рабочей области Log Analytics с помощью разрешений Azure, следуйте указаниям в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md).
+Чтобы предоставить доступ к рабочей области Log Analytics с помощью разрешений Azure, следуйте указаниям в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md). Примеры пользовательских ролей см. в разделе [примеры пользовательских ролей](#custom-role-examples) .
 
 В Azure доступны две встроенные роли пользователя для рабочих областей Log Analytics:
 
@@ -180,7 +176,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 | `Microsoft.ClassicStorage/storageAccounts/listKeys/action` <br> `Microsoft.Storage/storageAccounts/listKeys/action` | Просмотр ключа учетной записи хранения. Эта возможность необходима для настройки в Log Analytics чтения журналов из учетных записей хранения Azure. |
 | `Microsoft.Insights/alertRules/*` | Добавление, обновление и удаление правил генерации оповещений. |
 | `Microsoft.Insights/diagnosticSettings/*` | Добавление, обновление и удаление параметров диагностики в ресурсах Azure. |
-| `Microsoft.OperationalInsights/*` | Добавление, обновление и удаление конфигурации рабочих областей Log Analytics. |
+| `Microsoft.OperationalInsights/*` | Добавление, обновление и удаление конфигурации для рабочих областей Log Analytics. Для изменения дополнительных параметров рабочей области, потребностей `Microsoft.OperationalInsights/workspaces/write`пользователей. |
 | `Microsoft.OperationsManagement/*` | Добавление и удаление решений по управлению. |
 | `Microsoft.Resources/deployments/*` | Создание и удаление развертываний. Требуется для добавления и удаления решений, рабочих областей и учетных записей службы автоматизации. |
 | `Microsoft.Resources/subscriptions/resourcegroups/deployments/*` | Создание и удаление развертываний. Требуется для добавления и удаления решений, рабочих областей и учетных записей службы автоматизации. |
@@ -207,6 +203,39 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 `/read`разрешение обычно предоставляется из роли _\*_ , которая включает  _\*/Реад или_ разрешения, такие как встроенные роли [читателя](../../role-based-access-control/built-in-roles.md#reader) и [участника](../../role-based-access-control/built-in-roles.md#contributor) . Обратите внимание, что пользовательские роли, которые включают определенные действия или выделенные встроенные роли, могут не включать это разрешение.
 
 Дополнительные сведения о создании различных элементов управления доступом для разных таблиц см. в разделе [Определение управления доступом на уровне таблицы](#table-level-rbac) ниже.
+
+## <a name="custom-role-examples"></a>Примеры пользовательских ролей
+
+1. Чтобы предоставить пользователю доступ к данным журнала из своих ресурсов, выполните следующие действия.
+
+    * Настройка режима управления доступом к рабочей области для **использования разрешений рабочей области или ресурса**
+
+    * Предоставьте пользователям `*/read` или `Microsoft.Insights/logs/*/read` разрешениям доступ к своим ресурсам. Если им уже назначена роль [модуля чтения log Analytics](../../role-based-access-control/built-in-roles.md#reader) в рабочей области, это достаточно.
+
+2. Чтобы предоставить пользователю доступ к данным журнала из своих ресурсов и настроить их ресурсы для отправки журналов в рабочую область, выполните следующие действия.
+
+    * Настройка режима управления доступом к рабочей области для **использования разрешений рабочей области или ресурса**
+
+    * Предоставьте пользователям следующие разрешения в рабочей области: `Microsoft.OperationalInsights/workspaces/read` и. `Microsoft.OperationalInsights/workspaces/sharedKeys/action` С этими разрешениями пользователи не могут выполнять запросы на уровне рабочей области.
+
+    * Предоставьте пользователям следующие разрешения для своих ресурсов: `Microsoft.Insights/logs/*/read` и. `Microsoft.Insights/diagnosticSettings/write` Если им уже назначена роль [участника log Analytics](../../role-based-access-control/built-in-roles.md#contributor) для этого ресурса, это достаточно.
+
+3. Чтобы предоставить пользователю доступ к данным журнала из своих ресурсов, ознакомьтесь со статьей все входы в Azure AD и чтение Управление обновлениями данных журнала решений, выполните следующие действия.
+
+    * Настройка режима управления доступом к рабочей области для **использования разрешений рабочей области или ресурса**
+
+    * Предоставьте пользователям следующие разрешения в рабочей области: 
+
+        * `Microsoft.OperationalInsights/workspaces/read`— требуется, чтобы с помощью можно было перечислить рабочую область и открыть колонку рабочей области в портал Azure
+        * `Microsoft.OperationalInsights/workspaces/query/read`— требуется для каждого пользователя, который может выполнять запросы.
+        * `Microsoft.OperationalInsights/workspaces/query/SigninLogs/read`— чтобы иметь возможность читать журналы входа в Azure AD.
+        * `Microsoft.OperationalInsights/workspaces/query/Update/read`— чтобы иметь возможность читать журналы решений Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/UpdateRunProgress/read`— чтобы иметь возможность читать журналы решений Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/UpdateSummary/read`— чтобы иметь возможность читать журналы управления обновлениями.
+        * `Microsoft.OperationalInsights/workspaces/query/Heartbeat/read`— требуется для использования решения Управление обновлениями
+        * `Microsoft.OperationalInsights/workspaces/query/ComputerGroup/read`— требуется для использования решения Управление обновлениями
+
+    * Предоставьте пользователям следующие разрешения для своих ресурсов: `*/read` или. `Microsoft.Insights/logs/*/read` Если им назначена роль [модуля чтения log Analytics](../../role-based-access-control/built-in-roles.md#reader) в рабочей области, это достаточно.
 
 ## <a name="table-level-rbac"></a>RBAC уровня таблицы
 

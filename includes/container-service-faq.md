@@ -4,12 +4,12 @@ ms.service: container-service
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
-ms.openlocfilehash: f903828285b0d4fdc8fbd932fa7c85056e937481
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3e1e1266122ebcccc0149ca8e0421577becd6708
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185844"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036770"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67185844"
 ### <a name="what-is-the-difference-between-azure-container-service-and-acs-engine"></a>Какова разница между Службой контейнеров Azure и модулем ACS? 
 Служба контейнеров Azure — это служба Azure с поддержкой соглашения об уровне обслуживания, различными возможностями на портале Azure, программами командной строки и API-интерфейсами Azure. Она позволяет быстро развертывать кластеры, на которых запущены стандартные средства оркестрации контейнеров, и управлять ими, не требуя при этом сложных конфигураций. 
 
-[Модуль ACS](http://github.com/Azure/acs-engine) — это проект с открытым кодом, который позволяет опытным пользователям настраивать конфигурацию кластера на каждом уровне. Эта возможность изменения конфигурации инфраструктуры и программного обеспечения означает, что мы не предлагаем соглашение об уровне обслуживания для модуля ACS. Поддержка осуществляется через проект с открытым исходным кодом на GitHub, а не через официальные каналы Майкрософт. 
+[Модуль ACS](https://github.com/Azure/acs-engine) — это проект с открытым кодом, который позволяет опытным пользователям настраивать конфигурацию кластера на каждом уровне. Эта возможность изменения конфигурации инфраструктуры и программного обеспечения означает, что мы не предлагаем соглашение об уровне обслуживания для модуля ACS. Поддержка осуществляется через проект с открытым исходным кодом на GitHub, а не через официальные каналы Майкрософт. 
 
 Дополнительные сведения см. в нашей [политике поддержки контейнеров](https://support.microsoft.com/en-us/help/4035670/support-policy-for-containers).
 
@@ -117,7 +117,7 @@ ssh userName@masterFQDN –A –p 22 
 | Доступ к виртуальному IP-адресу службы отсутствует | Настройте [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/), чтобы одна обычная (непривилегированная) группа pod всегда находилась в рабочем состоянии |
 |Если узел, в котором работает контейнер, становится недоступным, запросы DNS могут завершаться ошибкой, что приведет к наличию отрицательной записи кэша | Выполните следующую команду внутри затронутых контейнеров: <ul><li> `New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxCacheTtl -Value 0 -Type DWord`</li><li>`New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxNegativeCacheTtl -Value 0 -Type DWord`</li><li>`Restart-Service dnscache` </li></ul><br> Если проблема все еще не решена, попробуйте полностью отключить кэширование DNS: <ul><li>`Set-Service dnscache -StartupType disabled`</li><li>`Stop-Service dnscache`</li></ul> |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о [Службе контейнеров Azure](../articles/container-service/kubernetes/container-service-intro-kubernetes.md).
 * Разверните кластер службы контейнеров с помощью [портала](../articles/container-service/dcos-swarm/container-service-deployment.md) или [Azure CLI](../articles/container-service/dcos-swarm/container-service-create-acs-cluster-cli.md).
