@@ -3,8 +3,14 @@
 - name: Примеры приложений
   expanded: true
   items:
-    - name: Веб-приложение в контейнере Linux
-      href: secure-web-app.md
+    - name: Не знакомы с безопасной разработкой?
+      items:
+        - name: Веб-приложение в контейнере Linux
+          href: secure-web-app.md
+    - name: 'Решения, соответствующие отраслевым стандартам'
+      items:
+        - name: Индустрия платежных карточек
+          href: secure-pci-web-app.md
 - name: Основные понятия
   expanded: true
   items:

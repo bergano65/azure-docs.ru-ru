@@ -106,8 +106,6 @@
               href: users.md
             - name: Настройка виртуального сетевого подключения к частному облаку
               href: virtual-network-connection.md
-            - name: Изменение профиля пользователя
-              href: 'https://docs.azure.cloudsimple.com/editprofile/'
         - name: Настройка виртуальных машин VMware для частного облака
           items:
             - name: Создание виртуальной машины в Azure
@@ -147,7 +145,7 @@
             - name: Перенос виртуальных машин рабочей нагрузки в частное облако
               href: migrate-workloads.md
             - name: Обеспечение высокой доступности приложения в VMware в Azure
-              href: 'https://docs.azure.cloudsimple.com/ensuring-high-availability/'
+              href: ensuring-high-availability.md
             - name: Выбор решения для балансировки нагрузки
               href: load-balancers.md
         - name: Экосистема VMware
@@ -156,8 +154,10 @@
               href: backup-workloads-veeam.md
             - name: Настройка частного облака в качестве сайта аварийного восстановления с помощью Zerto
               href: disaster-recovery-zerto.md
+            - name: Настройка частного облака в качестве сайта аварийного восстановления с помощью VMware Site Recovery Manager
+              href: disaster-recovery-site-recovery-manager.md
             - name: Руководство по решению VMware Horizon
-              href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
+              href: horizon-guide.md
             - name: Настройка шифрования vSAN для частного облака
               href: vsan-encryption.md
             - name: Оптимизация частного облака для Oracle RAC

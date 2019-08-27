@@ -95,8 +95,10 @@
               href: data-box-disk-deploy-set-up.md
             - name: "3.\_Копирование и проверки"
               href: data-box-disk-deploy-copy-data.md
-            - name: '4. Возврат, отправка, проверка'
+            - name: 4. Возврат
               href: data-box-disk-deploy-picked-up.md
+            - name: 5. Проверка отправки
+              href: data-box-disk-deploy-upload-verify.md
         - name: Основные понятия
           items:
             - name: Обзор требований

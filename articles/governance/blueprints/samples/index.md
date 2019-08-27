@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 08/20/2019
 ms.author: dacoulte
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 8a91ae0c576299e139cf036f1f20b90470f51349
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: dbfecdc4f7545746694fbd0996d3281395ad47df
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972305"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013016"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -23,7 +23,8 @@ ms.locfileid: "69972305"
 
 |  |  |
 |---------|---------|
-| [IRS 1075](./irs-1075/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям IRS 1075.|
+| [Тест производительности CIS для платформ Microsoft Azure](./cis-azure-1.1.0/index.md)| Набор политик, которые помогут обеспечить соответствие рекомендациям по использованию тестов производительности от CIS для платформ Microsoft Azure. |
+| [IRS 1075](./irs-1075/index.md)| В этом документе описаны средства защиты для обеспечения соответствия требованиям IRS 1075.|
 | [ISO 27001](./iso27001/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |

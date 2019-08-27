@@ -253,14 +253,20 @@
           href: sql-data-warehouse-connect-overview.md
         - name: Строки подключения
           href: sql-data-warehouse-connection-strings.md
-        - name: Установка SSDT для Visual Studio
-          href: sql-data-warehouse-install-visual-studio.md
-        - name: Создание запросов с помощью SSDT для Visual Studio
-          href: sql-data-warehouse-query-visual-studio.md
-        - name: Создание запросов с помощью SSMS
-          href: sql-data-warehouse-query-ssms.md
-        - name: Подключение и создание запросов с помощью sqlcmd
-          href: sql-data-warehouse-get-started-connect-sqlcmd.md
+        - name: Управление изменениями и развертыванием
+          items:
+            - name: Установка SSDT для Visual Studio
+              href: sql-data-warehouse-install-visual-studio.md
+            - name: Интеграция системы управления версиями
+              href: sql-data-warehouse-source-control-integration.md
+        - name: Подключение и запросы
+          items:
+            - name: SSDT для Visual Studio
+              href: sql-data-warehouse-query-visual-studio.md
+            - name: SSMS
+              href: sql-data-warehouse-query-ssms.md
+            - name: sqlcmd
+              href: sql-data-warehouse-get-started-connect-sqlcmd.md
     - name: Управление рабочей нагрузкой
       items:
         - name: Анализ рабочей нагрузки

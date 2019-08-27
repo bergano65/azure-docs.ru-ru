@@ -79,10 +79,6 @@
       href: service-bus-samples.md
 - name: Основные понятия
   items:
-    - name: Управляемые удостоверения для ресурсов Azure
-      href: service-bus-managed-service-identity.md
-    - name: Управление доступом на основе ролей (предварительная версия)
-      href: service-bus-role-based-access-control.md
     - name: 'Обмен сообщениями: уровень "Премиум"'
       href: service-bus-premium-messaging.md
     - name: Сравнение очередей Azure и очередей служебной шины
@@ -95,8 +91,25 @@
       href: service-bus-async-messaging.md
     - name: Обработка сбоев и аварийных ситуаций
       href: service-bus-outages-disasters.md
-    - name: Общие атрибуты безопасности Azure
-      href: service-bus-messaging-security-attributes.md
+    - name: Безопасность
+      items:
+        - name: Аутентификация и авторизация
+          href: service-bus-authentication-and-authorization.md
+          items:
+            - name: Использование подписанных URL-адресов
+              items:
+                - name: Миграция из ACS в SAS
+                  href: service-bus-migrate-acs-sas.md
+                - name: Аутентификация с помощью подписанных URL-адресов
+                  href: service-bus-sas.md
+            - name: Использование Azure Active Directory
+              items:
+                - name: Аутентификация с использованием управляемых удостоверений для ресурсов Azure
+                  href: service-bus-managed-service-identity.md
+                - name: Аутентификация из приложения
+                  href: authenticate-application.md
+        - name: Общие атрибуты безопасности Azure
+          href: service-bus-messaging-security-attributes.md
 - name: Практические руководства
   items:
     - name: Создание пространства имен
@@ -119,13 +132,6 @@
               href: service-bus-to-event-grid-integration-concept.md
             - name: 'Сетка событий Azure: примеры'
               href: service-bus-to-event-grid-integration-example.md
-        - name: Аутентификация и авторизация
-          href: service-bus-authentication-and-authorization.md
-          items:
-            - name: Миграция из ACS в SAS
-              href: service-bus-migrate-acs-sas.md
-            - name: Аутентификация с помощью подписанных URL-адресов
-              href: service-bus-sas.md
         - name: Фильтры и действия разделов
           href: topic-filters.md
         - name: Миграция из пространства имен ценовой категории "Стандартный" в пространство имен категории "Премиум"

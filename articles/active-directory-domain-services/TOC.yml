@@ -17,12 +17,16 @@
       href: tutorial-create-management-vm.md
     - name: Настройка защищенного протокола LDAP
       href: tutorial-configure-ldaps.md
+    - name: Настройка синхронизации хэша паролей
+      href: tutorial-configure-password-hash-sync.md
 - name: Примеры
   items:
     - name: "Создание экземпляра Azure\_AD с помощью Azure PowerShell"
       href: powershell-create-instance.md
 - name: Основные понятия
   items:
+    - name: Распространенные сценарии развертывания
+      href: scenarios.md
     - name: Как работает синхронизация Azure AD DS
       href: synchronization.md
     - name: Как работает синхронизация хэшированных паролей
@@ -37,8 +41,6 @@
   items:
     - name: Настройка общих параметров
       items:
-        - name: Включение синхронизации хэшированных паролей
-          href: active-directory-ds-getting-started-password-sync-synced-tenant.md
         - name: Настройка синхронизации определенных учетных записей Azure AD
           href: scoped-synchronization.md
         - name: Создание подразделения
@@ -47,8 +49,6 @@
           href: create-gmsa.md
     - name: "Подготовка к использованию Azure AD\_DS"
       items:
-        - name: Распространенные сценарии
-          href: scenarios.md
         - name: Рекомендации по виртуальным сетям
           href: network-considerations.md
     - name: "Управление Azure AD\_DS"

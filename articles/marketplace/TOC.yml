@@ -473,6 +473,21 @@
                   href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
                 - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
                   href: ./partner-center-portal/saas-fulfillment-apis-faq.md
+        - name: Общие сведения об управлении потенциальными клиентами
+          href: ./partner-center-portal/commercial-marketplace-get-customer-leads.md
+          items:
+            - name: Большой двоичный объект Azure
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-azure-blob.md
+            - name: таблице Azure
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table.md
+            - name: Dynamics 365 for Customer Engagement
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md
+            - name: Конечная точка HTTPS
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-https.md
+            - name: Marketo
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md
+            - name: Salesforce
+              href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
         - name: Тестирование вашего предложения
           href: ./partner-center-portal/test-drive.md
     - name: Состояние публикации

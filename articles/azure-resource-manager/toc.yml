@@ -67,8 +67,6 @@
       href: templates-cloud-consistency.md
     - name: Режимы развертывания
       href: deployment-modes.md
-    - name: Удаление ресурсов
-      href: resource-group-delete.md
     - name: Диспетчер развертывания
       items:
         - name: Обзор
@@ -186,6 +184,8 @@
             - name: Использование Azure PowerShell
               displayName: 'open,delete,deploy,move,lock,tag'
               href: manage-resources-powershell.md
+        - name: Удаление ресурсов и групп ресурсов
+          href: resource-group-delete.md
         - name: Блокировка ресурсов
           href: resource-group-lock-resources.md
         - name: API проверки подлинности для доступа к подпискам

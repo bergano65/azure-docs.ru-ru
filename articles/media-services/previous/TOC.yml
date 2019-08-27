@@ -49,6 +49,15 @@
           href: media-services-dotnet-live-encode-with-onpremises-encoders.md
 - name: Практическое руководство
   items:
+    - name: Устаревшие компоненты
+      href: legacy-components.md
+      items:
+        - name: Миграция из кодировщика мультимедиа Azure
+          href: migrate-azure-media-encoder.md
+          displayName: AME
+        - name: Миграция из кодировщика мультимедиа Windows Azure
+          href: migrate-windows-azure-media-encoder.md
+          displayName: WAME
     - name: Управление
       items:
         - name: Учетные записи

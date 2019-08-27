@@ -149,6 +149,8 @@
       items:
         - name: Архитектура двойника OPC
           href: overview-opc-twin-architecture.md
+        - name: Архитектура хранилища OPC
+          href: overview-opc-vault-architecture.md
     - name: Руководства
       items:
         - name: Подключенная фабрика
@@ -169,14 +171,14 @@
               href: howto-opc-twin-deploy-dependencies.md
         - name: Хранилище OPC
           items:
-            - name: Развертывание хранилища OPC в существующем проекте
-              items:
-                - name: Безопасный обмен данными клиента OPC и PLC OPC
-                  href: howto-opc-vault-deploy-existing-client-plc-communication.md
-                - name: "Защита клиента OPC\_UA и серверных приложений OPC\_UA"
-                  href: howto-opc-vault-deploy-existing-client-server-communication.md
-            - name: Развертывание хранилища OPC с нуля
-              href: howto-opc-vault-deploy-scratch.md
+            - name: Развертывание службы хранилища OPC
+              href: howto-opc-vault-deploy.md
+            - name: Управление службой хранилища OPC
+              href: howto-opc-vault-manage.md
+            - name: Защита связи устройства унифицированной архитектуры OPC с хранилищем OPC
+              href: howto-opc-vault-secure.md
+            - name: Безопасная эксплуатация службы хранилища OPC
+              href: howto-opc-vault-secure-ca.md
         - name: Издатель OPC
           items:
             - name: Настройка издателя OPC

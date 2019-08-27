@@ -41,6 +41,7 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/security/develop/secure-web-app">Веб-приложение в контейнере Linux</a>
+          - html: <a href="/azure/security/develop/secure-pci-web-app">Индустрия платежных карточек</a>
   - title: Основные понятия
     items:
       - type: list
