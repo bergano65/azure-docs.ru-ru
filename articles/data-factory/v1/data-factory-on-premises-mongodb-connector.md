@@ -95,7 +95,7 @@ ms.locfileid: "67839065"
 
 | Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| запрос |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL-92. Например, select * from MyTable. |Нет (если для свойства **collectionName** задано значение **dataset**). |
+| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL-92. Например, select * from MyTable. |Нет (если для свойства **collectionName** задано значение **dataset**). |
 
 
 
@@ -295,14 +295,14 @@ ms.locfileid: "67839065"
 
 | Тип MongoDB | Тип .NET Framework |
 | --- | --- |
-| Бинарный |Byte[] |
-| Логическое |Логическое |
+| Binary |Byte[] |
+| Boolean |Boolean |
 | Date |DateTime |
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |Строка, |
-| Строка, |Строка, |
+| ObjectID |String |
+| String |String |
 | UUID |Guid |
 | Object |Преобразованный в плоские столбцы с "_" в качестве вложенного разделителя |
 
