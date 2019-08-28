@@ -85,7 +85,7 @@ ms.locfileid: "67836120"
 
 | Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| запрос |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Да |
+| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Да |
 
 ### <a name="json-example-copy-data-from-teradata-to-azure-blob"></a>Пример JSON. Копирование данных из Teradata в большой двоичный объект Azure
 Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Teradata в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
@@ -285,11 +285,11 @@ ms.locfileid: "67836120"
 
 | Тип базы данных Teradata | Тип .NET Framework |
 | --- | --- |
-| Char |Строка, |
-| Clob |Строка, |
-| Graphic |Строка, |
-| VarChar |Строка, |
-| VarGraphic |Строка, |
+| Char |String |
+| Clob |String |
+| Graphic |String |
+| VarChar |String |
+| VarGraphic |String |
 | Blob |Byte[] |
 | Byte |Byte[] |
 | VarByte |Byte[] |
@@ -297,12 +297,12 @@ ms.locfileid: "67836120"
 | ByteInt |Int16 |
 | Decimal |Decimal |
 | Double |Double |
-| Целое число |Int32 |
+| Integer |Int32 |
 | Number |Double |
 | SmallInt |Int16 |
-| Дата |DateTime |
+| Date |DateTime |
 | Time |TimeSpan |
-| Time With Time Zone |Строка, |
+| Time With Time Zone |String |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | Interval Day |TimeSpan |
@@ -315,15 +315,15 @@ ms.locfileid: "67836120"
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
 | Interval Second |TimeSpan |
-| Interval Year |Строка, |
-| Interval Year To Month |Строка, |
-| Interval Month |Строка, |
-| Period(Date) |Строка, |
+| Interval Year |String |
+| Interval Year To Month |String |
+| Interval Month |String |
+| Period(Date) |String |
 | Period(Time) |Строка, |
-| Period(Time With Time Zone) |Строка, |
-| Period(Timestamp) |Строка, |
-| Period(Timestamp With Time Zone) |Строка, |
-| Xml |Строка, |
+| Period(Time With Time Zone) |String |
+| Period(Timestamp) |String |
+| Period(Timestamp With Time Zone) |String |
+| Xml |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
