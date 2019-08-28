@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: roiyz
-ms.openlocfilehash: ca3232dc3862cffb67d396b3ec2333fdc28dbb65
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6db152394a8e57689b34436b48dbcb4ecdc58b5a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706639"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084313"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
 
@@ -38,13 +37,13 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система 
 
 Агент Retrace можно выполнять с использованием следующих дистрибутивов Linux.
 
-| Дистрибутив | Version |
+| Распространение | Version |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS, 16.10 и 17.04 |
 | Debian | 7.9 и выше, 8.2 и выше, 9 |
@@ -192,7 +191,7 @@ az vm extension set --publisher 'Stackify.LinuxAgent.Extension' --version 1.0 --
 | 40 | Ошибка при установке | Требуется ключ активации. |
 | 51 | Ошибка при установке | Дистрибутив ОС не поддерживается. |
 | 60 | Ошибка при установке | Требуется указать среду. |
-| 70 | Ошибка при установке | Unknown |
+| 70 | Ошибка при установке | Неизвестный |
 | 80 | Ошибка при включении | Не удалось установить службу. |
 | 90 | Ошибка при включении | Не удалось запустить службу. |
 | 100 | Ошибка при отключении | Не удалось остановить службу. |

@@ -8,18 +8,17 @@ manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 4b0cd88cbb3729a3e81aeb5d6f43f417c8cb2f17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c37b81e08e5d9f150081a9dc12af51175e3f590c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64682764"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084725"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
@@ -36,13 +35,13 @@ Desired State Configuration (DSC) — это платформа, которая 
 
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибутив | Version |
+| Распространение | Version |
 |---|---|
 | Debian | Все версии. |
 | Ubuntu| 18,04 |
@@ -67,7 +66,7 @@ Desired State Configuration (DSC) — это платформа, которая 
 * `ConfigurationModeFrequencyMins` (необязательный, целочисленный): указывает интервал (в минутах), с которым DSC проверяет, что конфигурация находится в требуемом состоянии.
 
 > [!NOTE]
-> Если вы используете версию старее 2.3, параметр mode совпадает с ExtensionAction. Режим кажется это перегруженный термин. Поэтому во избежание путаницы, начиная с версии 2.3, используется ExtensionAction. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction. 
+> Если вы используете версию старее 2.3, параметр mode совпадает с ExtensionAction. Похоже, что режим является перегруженным термином. Поэтому во избежание путаницы, начиная с версии 2.3, используется ExtensionAction. Для обеспечения обратной совместимости, расширение поддерживает как mode, так и ExtensionAction. 
 >
 
 ### <a name="12-protected-configuration"></a>1.2 Защищенная конфигурация
@@ -428,5 +427,5 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

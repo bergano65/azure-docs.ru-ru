@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 05/21/2019
+ms.date: 08/27/2019
 ms.author: alkohli
-ms.openlocfilehash: 2e1ed8df490343e569f9466fd56458f652dafaf6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 13d5bce46883ea4ddca91d7222f68a19ba65c21c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244618"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098817"
 ---
 # <a name="azure-data-box-limits"></a>Ограничения Azure Data Box
 
@@ -26,6 +26,7 @@ ms.locfileid: "66244618"
 ## <a name="data-box-limits"></a>Ограничения Data Box
 
 - В устройстве Data Box может храниться до 500 миллионов файлов.
+- Data Box поддерживает не более 512 контейнеров или общих папок в облаке. Каталоги верхнего уровня в общей папке пользователя преобразуются в контейнеры или общие файловые ресурсы Azure в облаке. 
 
 ## <a name="azure-storage-limits"></a>Ограничения службы хранилища Azure
 

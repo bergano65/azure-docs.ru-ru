@@ -296,13 +296,13 @@ ms.locfileid: "67839065"
 | Тип MongoDB | Тип .NET Framework |
 | --- | --- |
 | Binary |Byte[] |
-| Boolean |Boolean |
+| Логическое |Логическое |
 | Date |DateTime |
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |String |
-| String |String |
+| ObjectID |Строка, |
+| Строка, |Строка, |
 | UUID |Guid |
 | Object |Преобразованный в плоские столбцы с "_" в качестве вложенного разделителя |
 

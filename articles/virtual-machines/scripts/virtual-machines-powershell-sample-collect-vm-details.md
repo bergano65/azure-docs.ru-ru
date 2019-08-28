@@ -1,6 +1,6 @@
 ---
-title: Сбор сведений о всех виртуальных машин в подписке с помощью PowerShell | Документация Майкрософт
-description: Сбор сведений о всех виртуальных машин в подписке с помощью PowerShell
+title: Собирайте сведения обо всех виртуальных машинах в подписке с помощью PowerShell | Документация Майкрософт
+description: Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: v-miegge
@@ -9,23 +9,22 @@ editor: v-miegge
 tags: azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/01/2019
 ms.author: v-miegge
 ms.custom: mvc
-ms.openlocfilehash: b4828b34a089a59e630aaaf7652e8623b3e2c7b8
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: b51c0f7a9fbeadfd0ff79e4578bddad052466b13
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659714"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70090790"
 ---
-# <a name="collect-details-about-all-vms-in-a-subscription-with-powershell"></a>Сбор сведений о всех виртуальных машин в подписке с помощью PowerShell
+# <a name="collect-details-about-all-vms-in-a-subscription-with-powershell"></a>Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 
-Этот скрипт создает CSV-файл, содержащий имя, группа ресурсов виртуальной Машины имя, регион, виртуальной сети, подсети, частный IP-адрес, тип операционной системы и общедоступный IP-адрес из виртуальных машин в выбранной подписке.
+Этот сценарий создает CSV-файл, содержащий имя виртуальной машины, имя группы ресурсов, регион, виртуальную сеть, подсеть, частный IP-адрес, тип ОС и общедоступный IP-адрес виртуальных машин в предоставленной подписке.
 
 Если у вас еще нет [подписки Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начать работу.
 
@@ -71,14 +70,14 @@ $report | Export-CSV "$home/$reportName"
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
-Этот скрипт использует следующие команды для создания Экспорт в формат csv различными аспектами виртуальных машин в подписке. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+Этот сценарий использует следующие команды для создания экспорта CSV-файла сведений о виртуальных машинах в подписке. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
 |Command|Примечания|
 |-|-|
-|[Выберите AzSubscription](https://docs.microsoft.com/powershell/module/Az.Accounts/Set-AzContext)|Задает клиента, подписку и среды для командлетов для использования в текущем сеансе.|
+|[SELECT-Азсубскриптион](https://docs.microsoft.com/powershell/module/Az.Accounts/Set-AzContext)|Задает клиент, подписку и среду для командлетов, используемых в текущем сеансе.|
 |[Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM)|Возвращает свойства виртуальной машины.|
 |[Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzPublicIpAddress)|Возвращает общедоступный IP-адрес.|
-|[Get-AzNetworkInterface](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzNetworkInterface)|Получает сетевого интерфейса.|
+|[Get-Азнетворкинтерфаце](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzNetworkInterface)|Возвращает сетевой интерфейс.|
 
 ## <a name="next-steps"></a>Следующие шаги
 

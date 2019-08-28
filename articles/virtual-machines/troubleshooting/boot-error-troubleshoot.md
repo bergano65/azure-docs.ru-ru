@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/12/2018
 ms.author: genli
-ms.openlocfilehash: c12f753225f8c6fc4fdb3fdcbaf0e915cb85fdbf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ce51b462b17a7082fa7951aea8790e28e517401e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505451"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080503"
 ---
 # <a name="troubleshoot-azure-virtual-machines-boot-errors"></a>Устранение ошибок при загрузке виртуальных машин Azure
 
@@ -34,7 +33,7 @@ ms.locfileid: "60505451"
 * [Цикл перезагрузки Windows на виртуальной машине Azure](troubleshoot-reboot-loop.md)
 * [Зависание виртуальной машины при запуске во время обновления Windows](troubleshoot-stuck-updating-boot-error.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Диагностика загрузки](boot-diagnostics.md)
 - [Последовательная консоль виртуальной машины](../windows/serial-console.md)

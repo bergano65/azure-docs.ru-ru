@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2019
 ms.author: johndeu
-ms.openlocfilehash: d2fec29c96639d21db362f6982b88a90bd6c319f
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: df2a86dd1292f58511765e842ee97daddcff4e3e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019088"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102919"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Сигнализация метаданных времени в потоковой трансляции 
 
@@ -210,7 +210,7 @@ ms.locfileid: "70019088"
 ### <a name="built-in-supported-scheme-id-uris"></a>Встроенные поддерживаемые URI ИДЕНТИФИКАТОРов схем
 | URI идентификатора схемы                 |  Описание                                             |
 |-------------------------------|----------------------------------------------------------|
-| https://aomedia.org/emsg/ID3   | Описывает, как можно переносить метаданные [ID3v2] в качестве метаданных времени в КМАФ-совместимом [МПЕГКМАФ] фрагментированном формате MP4. Дополнительные сведения см. в разделе [метаданные времени в стандартном формате приложения мультимедиа (кмаф)](https://aomediacodec.github.io/av1-id3/) . |
+| HTTPS:\//aomedia.org/EMSG/ID3   | Описывает, как можно переносить метаданные [ID3v2] в качестве метаданных времени в КМАФ-совместимом [МПЕГКМАФ] фрагментированном формате MP4. Дополнительные сведения см. в разделе [метаданные времени в стандартном формате приложения мультимедиа (кмаф)](https://aomediacodec.github.io/av1-id3/) . |
 
 ### <a name="event-processing-and-manifest-signaling"></a>Обработка событий и сигнализация манифеста
 

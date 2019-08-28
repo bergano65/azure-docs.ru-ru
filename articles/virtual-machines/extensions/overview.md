@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 3a8c571d3c6bb55fdd8b2d097b71b83afab5ca00
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 8c63df2d9a7e398fb9b67edd3b57a3ba06cbe7a1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705921"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084327"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Расширения и компоненты виртуальной машины Azure
 Расширения виртуальных машин Azure — это небольшие приложения для выполнения задач настройки и автоматизации после развертывания на виртуальных машинах Azure. Вы можете использовать существующие образы и затем настраивать их в рамках развертываний, не прибегая к процедуре создания настраиваемых образов.
@@ -54,6 +53,6 @@ ms.locfileid: "67705921"
 ## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения о работе агента и расширений для Linux см. в статье о [расширениях и компонентах виртуальной машины Azure для Linux](features-linux.md).
 * Дополнительные сведения о работе гостевого агента и расширений для Windows см. в статье о [расширениях и компонентах виртуальной машины Azure для Windows](features-windows.md).  
-* Чтобы установить гостевой агент Windows, см. в разделе [Обзор агента виртуальной машины Windows Azure](agent-windows.md).  
-* Чтобы установить агент Linux, см. в разделе [Обзор агента виртуальной машины Linux Azure](agent-linux.md).  
+* Сведения об установке гостевого агента Windows см. в статье [Обзор агента виртуальных машин Windows в Azure](agent-windows.md).  
+* Сведения об установке агента Linux см. в статье [Обзор агента виртуальной машины Linux в Azure](agent-linux.md).  
 

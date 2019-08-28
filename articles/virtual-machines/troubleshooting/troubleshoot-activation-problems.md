@@ -10,16 +10,15 @@ tags: top-support-issue, azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: na
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/15/2018
 ms.author: genli
-ms.openlocfilehash: 46f52cb0478b47f8f6b45356815bc4c74e7cc800
-ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
+ms.openlocfilehash: d403292a7f7ab1080f4270a420c23353eda5fd71
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67724122"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70090040"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Устранение неполадок при активации виртуальных машин Windows в Azure
 
@@ -51,9 +50,9 @@ Azure использует различные конечные точки для
 >
 >Если вы используете ExpressRoute и опубликованный маршрут по умолчанию, то см. запись блога [Azure VM may fail to activate over ExpressRoute](https://blogs.msdn.com/b/mast/archive/2015/12/01/azure-vm-may-fail-to-activate-over-expressroute.aspx) (Возможен сбой при активации виртуальной машины Azure с помощью ExpressRoute).
 
-### <a name="step-1-configure-the-appropriate-kms-client-setup-key"></a>Шаг 1. Настройка подходящего ключа установки клиента KMS
+### <a name="step-1-configure-the-appropriate-kms-client-setup-key"></a>Шаг 1. Настройка соответствующего ключа установки клиента KMS
 
-Для виртуальной Машины, созданной из пользовательского образа необходимо настроить подходящий ключ установки клиента KMS для виртуальной Машины.
+Для виртуальной машины, созданной из пользовательского образа, необходимо настроить соответствующий ключ установки клиента KMS для виртуальной машины.
 
 1. В командной строке с повышенными привилегиями выполните команду **slmgr.vbs /dlv**. В выходных данных проверьте значение Description (Описание), а затем определите, какой носитель лицензии использовался для создания — розничный (канал RETAIL) или корпоративный (VOLUME_KMSCLIENT):
   
@@ -101,7 +100,7 @@ Azure использует различные конечные точки для
 
    Обратите внимание, что при удалении из виртуальной сети всех DNS-серверов виртуальные машины используют внутреннюю службу DNS Azure. Эта служба может разрешать kms.core.windows.net.
   
-    Кроме того, убедитесь, что исходящий сетевой трафик к конечной точке службы KMS порт 1688 не заблокирован брандмауэром на виртуальной машине.
+    Кроме того, убедитесь, что исходящий сетевой трафик к конечной точке KMS с портом 1688 не заблокирован брандмауэром на виртуальной машине.
 
 5. После успешной проверки подключения к kms.core.windows.net выполните в командной строке с повышенными привилегиями Windows PowerShell следующую команду. Эта команда пытается выполнить активацию несколько раз.
 
@@ -111,7 +110,7 @@ Azure использует различные конечные точки для
 
     Успешная попытка активации возвращает сведения, которые выглядят следующим образом:
     
-    **Активация Windows(R), ServerDatacenter edition (12345678-1234-1234-1234-12345678)...  Продукт успешно активирована.**
+    **Активация Windows (R), Сервердатацентер Edition (12345678-1234-1234-1234-12345678)...  Продукт успешно активирован.**
 
 ## <a name="faq"></a>Часто задаваемые вопросы 
 

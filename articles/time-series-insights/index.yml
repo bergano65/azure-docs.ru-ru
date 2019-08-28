@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по Azure Time Series Insights
+title: Документация по Аналитике временных рядов Azure
 metadata:
   title: 'Документация по службе "Аналитика временных рядов Azure". Краткие инструкции, руководства и справочник по API | Документация Майкрософт'
   description: 'Узнайте, как в облаке выполнять аналитику Azure IoT с помощью полностью управляемого модуля обработки событий. Анализируйте данные, поступающие от приложений, датчиков, устройств и из других источников, в реальном времени.'
@@ -8,8 +8,6 @@ metadata:
   author: deepakpalled
   manager: cshankar
   ms.service: time-series-insights
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 06/03/2019
   ms.author: dpalled
@@ -21,7 +19,7 @@ abstract:
       height: 110
       src: media/index/new-tsi-intro.png
       width: 250
-    title: 'Служба "Аналитика временных рядов" для приложений Интернета вещей (13:31)'
+    title: 'Служба "Аналитика временных рядов" для приложений Интернета вещей. (13:31)'
     href: 'https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Time-Series-Insights-e2e-solution-for-industrial-IoT-analytics'
     width: 250
 sections:
@@ -37,7 +35,7 @@ sections:
             text: Знакомство со службой "Аналитика временных рядов Azure" (общедоступная версия)
             href: /azure/time-series-insights/time-series-quickstart
       - html: <p><a href="/azure/time-series-insights/time-series-insights-update-quickstart">Знакомство со службой "Аналитика временных рядов Azure" (предварительная версия)</a></p>
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создать среду службы "Аналитика временных рядов Azure", одностраничные веб-приложения и многое другое, ознакомившись с несколькими пошаговыми инструкциями с примерами.'
@@ -58,6 +56,6 @@ sections:
           - title: API-интерфейсы службы "Аналитика временных рядов" (общедоступная версия)
             html: <p><a href="/rest/api/time-series-insights/ga">Доступ к данным</a></p> <p><a href="/rest/api/time-series-insights/ga-query-api">API запроса</a></p> <p><a href="/rest/api/time-series-insights/ga-query-syntax">Синтаксис запросов</a></p>
           - title: API-интерфейсы службы "Аналитика временных рядов" (предварительная версия)
-            html: <p><a href="/rest/api/time-series-insights/preview-query">API запроса</a></p> <p><a href="/rest/api/time-series-insights/preview-model">API модели</a></p> <p><a href="/rest/api/time-series-insights/preview-env">API среды</a></p> <p><a href="/rest/api/time-series-insights/preview-tsx">API языка TSX (Time Series Expression)</a></p>
+            html: <p><a href="/rest/api/time-series-insights/preview-query">API запроса</a></p> <p><a href="/rest/api/time-series-insights/preview-model">API модели</a></p> <p><a href="/rest/api/time-series-insights/preview-env">API среды</a></p> <p><a href="/rest/api/time-series-insights/preview-tsx">API выражения временных ряядов</a></p>
           - title: Клиентский пакет SDK
             html: '<p><a href="https://github.com/microsoft/tsiclient/blob/master/docs/API.md">Пакет SDK для клиента JavaScript</a></p>'

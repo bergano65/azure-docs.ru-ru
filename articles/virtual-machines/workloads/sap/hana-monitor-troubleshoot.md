@@ -7,19 +7,18 @@ author: RicksterCDN
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f25218156157f626b667c474de1674d1d8509a24
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e2c596a876817f0a501025c37e463a7eebb55cf2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705816"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099840"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Мониторинг и устранение неполадок со стороны HANA
 
@@ -27,18 +26,18 @@ ms.locfileid: "67705816"
 
 Ответы на часто задаваемые вопросы, связанные с производительностью SAP HANA, можно найти в следующих примечаниях SAP:
 
-- [SAP Note #2222200 – вопросы и ответы: SAP HANA сети](https://launchpad.support.sap.com/#/notes/2222200)
-- [SAP Note #2100040 – вопросы и ответы: SAP HANA CPU](https://launchpad.support.sap.com/#/notes/0002100040)
-- [SAP Note #199997 – вопросы и ответы: SAP HANA Memory](https://launchpad.support.sap.com/#/notes/2177064)
-- [SAP Note #200000 – вопросы и ответы: Оптимизация производительности SAP HANA](https://launchpad.support.sap.com/#/notes/2000000)
-- [SAP Note #199930 – вопросы и ответы: Анализ операций ввода-вывода SAP HANA](https://launchpad.support.sap.com/#/notes/1999930)
-- [SAP Note #2177064 – вопросы и ответы: Перезапуск и сбои службы SAP HANA службы](https://launchpad.support.sap.com/#/notes/2177064)
+- [Примечание SAP #2222200 — часто задаваемые вопросы: SAP HANA сеть](https://launchpad.support.sap.com/#/notes/2222200)
+- [Примечание SAP #2100040 — часто задаваемые вопросы: SAP HANA ЦП](https://launchpad.support.sap.com/#/notes/0002100040)
+- [Примечание SAP #199997 — часто задаваемые вопросы: Память SAP HANA](https://launchpad.support.sap.com/#/notes/2177064)
+- [Примечание SAP #200000 — часто задаваемые вопросы: Оптимизация производительности SAP HANA](https://launchpad.support.sap.com/#/notes/2000000)
+- [Примечание SAP #199930 — часто задаваемые вопросы: SAP HANAный анализ ввода-вывода](https://launchpad.support.sap.com/#/notes/1999930)
+- [Примечание SAP #2177064 — часто задаваемые вопросы: SAP HANA перезапуска и сбоев службы](https://launchpad.support.sap.com/#/notes/2177064)
 
 ## <a name="sap-hana-alerts"></a>Оповещения SAP HANA
 
-Для начала проверьте текущие журналы оповещений SAP HANA. В SAP HANA Studio, перейдите в раздел **консоли администрирования: Оповещения: Показать: все оповещения**. На этой вкладке показаны все оповещения SAP HANA для определенных значений (объем свободной физической памяти, ЦП и т. д.), которые выходят за пределы установленных минимальных и максимальных пороговых значений. По умолчанию проверки автоматически обновляются каждые 15 минут.
+Для начала проверьте текущие журналы оповещений SAP HANA. В SAP HANA Studio перейдите в **консоль администрирования: Уведомление Показывать: все оповещения**. На этой вкладке показаны все оповещения SAP HANA для определенных значений (объем свободной физической памяти, ЦП и т. д.), которые выходят за пределы установленных минимальных и максимальных пороговых значений. По умолчанию проверки автоматически обновляются каждые 15 минут.
 
-![В SAP HANA Studio откройте консоль администрирования: Оповещения: Показать: все оповещения](./media/troubleshooting-monitoring/image1-show-alerts.png)
+![В SAP HANA Studio перейдите в консоль администрирования: Уведомление Показывать: все оповещения](./media/troubleshooting-monitoring/image1-show-alerts.png)
 
 ## <a name="cpu"></a>ЦП
 
@@ -63,9 +62,9 @@ ms.locfileid: "67705816"
 
 ![На графике Load (Нагрузка) может быть показан высокий уровень потребления ресурсов ЦП или высокий уровень потребления в прошлом](./media/troubleshooting-monitoring/image4-load-graph.png)
 
-Оповещение запускается из-за высокой загрузки ЦП может быть вызвано несколькими причинами, включая, но не ограничиваясь: выполнение определенных операций, загрузку данных, задания, которые не отвечают, долго выполняющиеся инструкции SQL и снижение производительности запросов (например, с помощью BW в HANA кубы).
+Предупреждение, инициированное из-за высокой загрузки ЦП, может быть вызвано несколькими причинами, включая, но не ограниченное: выполнение определенных транзакций, загрузку данных, задания, не отвечающие на запросы, длительные инструкции SQL и производительность запросов (например, с BW в кубах HANA).
 
-Ссылаться на [SAP HANA, устранение неполадок: Вызывает, связанных с ЦП и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/4f/bc915462db406aa2fe92b708b95189/content.htm?frameset=/en/db/6ca50424714af8b370960c04ce667b/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=46&amp;show_children=false) сайта подробные инструкции по устранению.
+См. SAP HANA устранение неполадок: [ Причины и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/4f/bc915462db406aa2fe92b708b95189/content.htm?frameset=/en/db/6ca50424714af8b370960c04ce667b/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=46&amp;show_children=false) , связанные с ЦП, для подробных инструкций по устранению неполадок.
 
 ## <a name="operating-system"></a>Операционная система
 
@@ -87,9 +86,9 @@ ms.locfileid: "67705816"
 - использование памяти основного хранилища таблиц хранилища столбцов (оповещение 45);
 - файлы дампа среды выполнения (оповещение 46).
 
-Ссылаться на [SAP HANA, устранение неполадок: Проблемы с памятью](https://help.sap.com/saphelp_hanaplatform/helpdata/en/db/6ca50424714af8b370960c04ce667b/content.htm?frameset=/en/59/5eaa513dde43758b51378ab3315ebb/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=26&amp;show_children=false) сайта подробные инструкции по устранению.
+См. SAP HANA устранение неполадок: [ Место возникновения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/db/6ca50424714af8b370960c04ce667b/content.htm?frameset=/en/59/5eaa513dde43758b51378ab3315ebb/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=26&amp;show_children=false) проблем с памятью для подробных инструкций по устранению неполадок.
 
-## <a name="network"></a>Сеть
+## <a name="network"></a>Network
 
 См. примечание [SAP Note #2081065 – Troubleshooting SAP HANA Network](https://launchpad.support.sap.com/#/notes/2081065) (Примечание SAP № 2081065. Устранение неполадок сети SAP HANA) и выполните действия по устранению неполадок сети, приведенные в этом примечании SAP.
 
@@ -104,11 +103,11 @@ ms.locfileid: "67705816"
 
 Кроме того, используйте инструмент с открытым исходным кодом [IPERF](https://iperf.fr/) (или что-то похожее), чтобы измерить реальную производительность сети приложения.
 
-Ссылаться на [SAP HANA, устранение неполадок: Производительность сети и проблемы с подключением](https://help.sap.com/saphelp_hanaplatform/helpdata/en/a3/ccdff1aedc4720acb24ed8826938b6/content.htm?frameset=/en/dc/6ff98fa36541e997e4c719a632cbd8/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=142&amp;show_children=false) сайта подробные инструкции по устранению.
+См. SAP HANA устранение неполадок: [ Веб-сайт проблем](https://help.sap.com/saphelp_hanaplatform/helpdata/en/a3/ccdff1aedc4720acb24ed8826938b6/content.htm?frameset=/en/dc/6ff98fa36541e997e4c719a632cbd8/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=142&amp;show_children=false) производительности и подключения к сети для получения подробных инструкций по устранению неполадок.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 
-С точки зрения конечного пользователя приложения (или системы в целом) работает медленно, не отвечает или даже может показаться перестает отвечать на запросы при возникновении проблем с производительностью операций ввода-вывода. На вкладке **Volumes** (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба.
+С точки зрения конечных пользователей приложение (или система в целом) работает медленно, не отвечает или даже может перестать отвечать, если возникают проблемы с производительностью операций ввода-вывода. На вкладке **Volumes** (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба.
 
 ![На вкладке Volumes (Тома) в SAP HANA Studio отображаются подключенные тома, а также то, какие тома использует каждая служба](./media/troubleshooting-monitoring/image5-volumes-tab-a.png)
 
@@ -116,7 +115,7 @@ ms.locfileid: "67705816"
 
 ![В подключенных томах в нижней части экрана можно просматривать сведения о томах, например о файлах и статистике операций ввода-вывода](./media/troubleshooting-monitoring/image6-volumes-tab-b.png)
 
-Ссылаться на [SAP HANA, устранение неполадок: Основных причин и решений, связанных с ввода-вывода](https://help.sap.com/saphelp_hanaplatform/helpdata/en/dc/6ff98fa36541e997e4c719a632cbd8/content.htm?frameset=/en/47/4cb08a715c42fe9f7cc5efdc599959/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=55&amp;show_children=false) и [SAP HANA, устранение неполадок: На диске Related Root Causes и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/47/4cb08a715c42fe9f7cc5efdc599959/content.htm?frameset=/en/44/3e1db4f73d42da859008df4f69e37a/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=53&amp;show_children=false) сайта подробные инструкции по устранению.
+См. SAP HANA устранение неполадок: [ Основные причины и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/dc/6ff98fa36541e997e4c719a632cbd8/content.htm?frameset=/en/47/4cb08a715c42fe9f7cc5efdc599959/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=55&amp;show_children=false) , а [SAP HANA устранение неполадок, связанных с вводом-выводом: Основные причины и решения](https://help.sap.com/saphelp_hanaplatform/helpdata/en/47/4cb08a715c42fe9f7cc5efdc599959/content.htm?frameset=/en/44/3e1db4f73d42da859008df4f69e37a/frameset.htm&amp;current_toc=/en/85/d132c3f05e40a2b20c25aa5fd6331b/plain.htm&amp;node_id=53&amp;show_children=false) , связанные с диском, для подробных инструкций по устранению неполадок.
 
 ## <a name="diagnostic-tools"></a>Средства диагностики
 
@@ -130,15 +129,15 @@ ms.locfileid: "67705816"
 
 Выберите файл SQL Statements.zip, хранящийся локально, после чего будет импортирована папка с соответствующими инструкциями SQL. На этом этапе с помощью этих инструкций SQL можно выполнить множество различных диагностических проверок.
 
-Например, чтобы проверить требования к пропускной способности репликации системы SAP HANA, щелкните правой кнопкой мыши **пропускной способности** инструкции в разделе **репликации: Пропускная способность** и выберите **откройте** в консоли SQL.
+Например, чтобы проверить SAP HANA требования к пропускной способности репликации системы, щелкните правой кнопкой мыши **инструкцию пропускной способности в разделе Репликация: Пропускная способность** и выберите **Открыть** в консоли SQL.
 
 Откроется полная инструкция SQL, что позволит изменить входные параметры (раздел изменения), а затем выполнить их.
 
 ![Откроется полная инструкция SQL, что позволит изменить входные параметры (раздел изменения), а затем выполнить их](./media/troubleshooting-monitoring/image8-import-statements-b.png)
 
-Другой пример — щелкните правой кнопкой мыши на инструкции, выбрав **репликации: Общие сведения о**. В контекстном меню выберите **Execute** (Выполнить).
+Другим примером является щелчок правой кнопкой мыши на инструкциях **в разделе Replication: Обзор**. В контекстном меню выберите **Execute** (Выполнить).
 
-![Другой пример — щелкните правой кнопкой мыши на инструкции, выбрав репликации: Обзор. Выбор Execute (Выполнить) в контекстном меню](./media/troubleshooting-monitoring/image9-import-statements-c.png)
+![Другим примером является щелчок правой кнопкой мыши на инструкциях в разделе Replication: Средств. Выбор Execute (Выполнить) в контекстном меню](./media/troubleshooting-monitoring/image9-import-statements-c.png)
 
 После этого отобразятся сведения, которые помогут в устранении неполадок.
 

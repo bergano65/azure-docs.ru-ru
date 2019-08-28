@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 461f6127111e745fe4a81958aaa225ed1dc4392a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c493f79a066f872be6b38d127622cc757ab3c1cc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707722"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100242"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
 
@@ -133,7 +132,7 @@ ms.locfileid: "67707722"
     RMAN> backup database plus archivelog;
     ```
 
-### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Шаг 4. Резервное копирование с согласованием приложений для виртуальных машин Linux
+### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Шаг 4. Резервное копирование, учитывающее приложения, для виртуальных машин Linux
 
 Согласованное с приложениями резервное копирование — это новая функция в службе Azure Backup. Можно создавать скрипты и выбирать скрипты для выполнения до и после создания моментального снимка виртуальной машины.
 
@@ -266,7 +265,7 @@ ms.locfileid: "67707722"
 Дополнительные сведения см. в записи блога [Announcing application consistent backup for Linux VMs using Azure Backup](https://azure.microsoft.com/blog/announcing-application-consistent-backup-for-linux-vms-using-azure-backup/) (Объявление согласованного с приложениями резервного копирования для виртуальных машин Linux).
 
 
-### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Шаг 5. Хранилища служб восстановления Azure используйте резервное копирование виртуальной Машины
+### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Шаг 5. Использование хранилищ служб восстановления Azure для резервного копирования виртуальной машины
 
 1.  На портале Azure найдите **Хранилища служб восстановления**.
 
@@ -307,7 +306,7 @@ ms.locfileid: "67707722"
 
     ![Команда "Создать резервную копию" в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_09.png)
 
-10. Нажмите кнопку **Архивация**. Дождитесь завершения процесса резервного копирования. Перейдите к [шаг 6: Удалите файлы базы данных](#step-6-remove-the-database-files).
+10. Нажмите кнопку **Архивация**. Дождитесь завершения процесса резервного копирования. Затем перейдите к [шагу 6. Удалите файлы](#step-6-remove-the-database-files)базы данных.
 
     Чтобы просмотреть состояние задания резервного копирования, щелкните **Задания**.
 
@@ -319,7 +318,7 @@ ms.locfileid: "67707722"
 
 11. Для согласованных с приложениями резервных копий устраните все ошибки в файле журнала. Файл журнала находится в каталоге /var/log/azure/Microsoft.Azure.RecoveryServices.VMSnapshotLinux/1.0.9114.0.
 
-### <a name="step-6-remove-the-database-files"></a>Шаг 6. Удалите файлы базы данных 
+### <a name="step-6-remove-the-database-files"></a>Шаг 6. Удаление файлов базы данных 
 Далее в этой статье вы узнаете, как выполнить тестирование процесса восстановления. Перед тестированием процесса восстановления вам нужно удалить файлы базы данных.
 
 1.  Удалите файлы табличного пространства и резервных копий:
@@ -452,13 +451,13 @@ ms.locfileid: "67707722"
 
 Вместо того чтобы восстанавливать удаленные файлы из хранилищ служб восстановления, можно восстановить всю виртуальную машину.
 
-### <a name="step-1-delete-myvm"></a>Шаг 1. Удаление myVM
+### <a name="step-1-delete-myvm"></a>Шаг 1. Удалить myVM
 
 *   На портале Azure перейдите в хранилище **myVM1**, а затем выберите **Удалить**.
 
     ![Команда удаления хранилища](./media/oracle-backup-recovery/recover_vm_01.png)
 
-### <a name="step-2-recover-the-vm"></a>Шаг 2. Восстановление виртуальной Машины
+### <a name="step-2-recover-the-vm"></a>Шаг 2. Восстановление виртуальной машины
 
 1.  Перейдите в **Хранилища служб восстановления**, а затем выберите **myVault**.
 
@@ -496,7 +495,7 @@ ms.locfileid: "67707722"
 
     ![Состояние процесса восстановления](./media/oracle-backup-recovery/recover_vm_09.png)
 
-### <a name="step-3-set-the-public-ip-address"></a>Шаг 3. Настройка общедоступного IP-адреса
+### <a name="step-3-set-the-public-ip-address"></a>Шаг 3. Установка общедоступного IP-адреса
 После восстановления виртуальной машины необходимо настроить общедоступный IP-адрес.
 
 1.  В поле поиска введите **общедоступный IP-адрес**.
@@ -527,7 +526,7 @@ ms.locfileid: "67707722"
     ssh <publicIpAddress>
     ```
 
-### <a name="step-5-test-whether-the-database-is-accessible"></a>Шаг 5. Проверить, является ли база данных доступна
+### <a name="step-5-test-whether-the-database-is-accessible"></a>Шаг 5. Проверка доступности базы данных
 *   Чтобы проверить доступность, используйте следующий скрипт:
 
     ```bash 
@@ -537,9 +536,9 @@ ms.locfileid: "67707722"
     ```
 
     > [!IMPORTANT]
-    > Если базы данных **запуска** команда вызывает ошибку, чтобы восстановить базу данных, см. в разделе [шаг 6: Используйте RMAN для восстановления базы данных](#step-6-optional-use-rman-to-recover-the-database).
+    > Если команда **запуска** базы данных создает ошибку, для восстановления базы данных см [. шаг 6. Используйте RMAN для восстановления базы данных](#step-6-optional-use-rman-to-recover-the-database).
 
-### <a name="step-6-optional-use-rman-to-recover-the-database"></a>Шаг 6. (Необязательно) Использование RMAN для восстановления базы данных
+### <a name="step-6-optional-use-rman-to-recover-the-database"></a>Шаг 6. Используемых Восстановление базы данных с помощью RMAN
 *   Чтобы восстановить базу данных, используйте следующий скрипт:
 
     ```bash

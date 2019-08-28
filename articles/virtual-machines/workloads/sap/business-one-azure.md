@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/15/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 101710b5a57faa37be77ff4b059fa0d494f4e617
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 18409f93ab50f7d031ec78a55b9eaf8ad1b85a49
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60835657"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101413"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Использование SAP Business One на виртуальных машинах Azure
 Этот документ содержит руководство для развертывания SAP Business One на виртуальных машинах Azure. Эта документация не заменяет документацию по установке Business One для SAP. Документация должна содержать основные принципы планирования и развертывания инфраструктуры Azure для запуска приложений Business One.
@@ -32,13 +31,13 @@ Business One поддерживает две разных базы данных.
 
 Что касается SQL Server, применяются основные соображения развертывания, описанные в разделе [Развертывание СУБД виртуальных машин Azure для SAP NetWeaver ](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms-guide). для SAP HANA соображения упоминаются в этом документе.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы воспользоваться приведенными в этом руководстве сведениями, необходимо иметь базовые знания об использовании следующих компонентов Azure:
 
 - [Виртуальные машины Azure в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm)
 - [Виртуальные машины Azure в Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
 - [Управление сетями Azure и виртуальными сетями с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-virtual-network)
-- [Сети Azure и виртуальных сетей с помощью интерфейса командной строки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
+- [Сеть и виртуальные сети Azure с интерфейсом командной строки](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-virtual-network)
 - [Управление дисками Azure с помощью интерфейса командной строки Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-disks)
 
 Даже если вы интересуетесь только Business One, документ [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) может быть полезным источником информации.
@@ -130,9 +129,9 @@ Business One — это двухуровневое приложение.
 
 Приблизительные оценки размеров для стороны СУБД для SQL Server.
 
-| Количество пользователей | Число виртуальных ЦП | Память | Пример типов виртуальных машин |
+| Количество пользователей | Виртуальные ЦП | Память | Пример типов виртуальных машин |
 | --- | --- | --- | --- |
-| до 20 | 4\. | 16 ГБ | D4s_v3, и для E4s_v3 |
+| до 20 | 4 | 16 ГБ | D4s_v3, и для E4s_v3 |
 | до 40 | 8 | 32 ГБ | D8s_v3, E8s_v3 |
 | до 80 | 16 | 64 ГБ | D16s_v3, E16s_v3 |
 | до 150 | 32 | 128 ГБ | D32s_v3, E32s_v3 |

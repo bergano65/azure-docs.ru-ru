@@ -1,26 +1,26 @@
 ---
 layout: HubPage
 hide_bc: false
-title: Документация по Интернету вещей Azure. Руководства и справочник по API | Документация Майкрософт
-description: Интернет вещей Azure — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими. Проще говоря, решение Интернета вещей состоит из одного или нескольких устройств Интернета вещей и одной или нескольких внутренних служб, запущенных в облаке и взаимодействующих друг с другом.
+title: Документация по Azure IoT. Руководства и справочник по API | Документация Майкрософт
+description: Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими. Проще говоря, решение для Интернета вещей состоит из одного или нескольких устройств Интернета вещей и одной или нескольких внутренних служб, запущенных в облаке и взаимодействующих друг с другом.
 services: azure-iot
-author: dsk-2015
+author: philmea
 manager: philmea
 ms.service: azure-iot
-ms.topic: landing-page
-ms.date: 02/12/2019
-ms.author: dkshir
-ms.openlocfilehash: d19b6fff3bf2b43ecb692bd8d8e33a202e969570
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.topic: hub-page
+ms.date: 08/27/2019
+ms.author: philmea
+ms.openlocfilehash: 7ea66c873d6ba70c2a7b3907a83a466117b56190
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61216640"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074331"
 ---
 <div id="main" class="v2">
     <div class="container">
-        <h1>Документация по Интернету вещей Azure</h1>
-        <p>Интернет вещей Azure — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.</p><p></p>
+        <h1>Документация по Azure IoT</h1>
+        <p>Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.</p><p></p>
         <ul class="cardsY panelContent singlePanelContent" style="display:flex!important;">
             <li>
                 <a href="../iot-fundamentals/iot-introduction.md">
@@ -33,8 +33,8 @@ ms.locfileid: "61216640"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Что такое Интернет вещей Azure?</h3>
-                                <p>Ознакомьтесь с основами Интернета вещей Azure (Azure IoT), вариантами использования и общими сведениями о доступных службах.</p>
+                                <h3>Что такое Azure IoT?</h3>
+                                <p>Ознакомьтесь с основами Azure IoT, вариантами использования и общими сведениями о доступных службах.</p>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@ ms.locfileid: "61216640"
                             </div>
                             <div class="cardText">
                                 <h3>Службы и технологии безопасности служб Azure IoT</h3>
-                                <p>Узнайте, какие службы, решения и технологии SaaS и PaaS входят в портфель продуктов Интернета вещей Azure.</p>
+                                <p>Узнайте, какие службы, решения и технологии SaaS и PaaS входят в портфель продуктов Azure IoT.</p>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,8 @@ ms.locfileid: "61216640"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Безопасность в службах Интернета вещей Azure</h3>
-                                <p>Узнайте, как безопасность составляет неотъемлемую часть инфраструктуры Интернета вещей Azure — от устройств до облака.</p>
+                                <h3>Безопасность в службах Azure IoT</h3>
+                                <p>Узнайте, как безопасность составляет неотъемлемую часть инфраструктуры Azure IoT — от устройств до облака.</p>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ ms.locfileid: "61216640"
                 </a>
             </li>
         </ul>
-        <h2>Службы Интернета вещей Azure</h2>
+        <h2>Службы Azure IoT</h2>
         <ul class="cardsF panelContent singlePanelContent cols cols3" style="display:flex!important;">
             <li>
                 <div class="cardSize">
@@ -93,7 +93,7 @@ ms.locfileid: "61216640"
                             </div>
                             <div class="cardText">
                                 <h3>Создание собственного решения Интернета вещей с помощью Центра Интернета вещей</h3><br>
-                                <p><a href="../iot-hub/about-iot-hub.md">Что такое Центр Интернета вещей в Azure?</a></p>
+                                <p><a href="../iot-hub/about-iot-hub.md">Что такое Центр Интернета вещей Azure?</a></p>
                                 <p><a href="../iot-hub/quickstart-send-telemetry-c.md">Отправка данных телеметрии с устройства</a></p>
                                 <p><a href="../iot-hub/quickstart-control-device-node.md">Управление устройством из облака</a></p>
                                 <p><a href="../iot-hub/index.yml"><i>Дополнительные сведения &gt;</i></a></p>
@@ -113,7 +113,7 @@ ms.locfileid: "61216640"
                             </div>
                             <div class="cardText">
                                 <h3>Развертывание полностью управляемого решения Интернета вещей с помощью IoT Central</h3><br>
-                                <p><a href="../iot-central/overview-iot-central.md">What is Azure IoT Central?</a> (Что собой представляет Azure IoT Central)</p>
+                                <p><a href="../iot-central/overview-iot-central.md">Что собой представляет Azure IoT Central</a></p>
                                 <p><a href="../iot-central/quick-deploy-iot-central.md">Создание приложения IoT Central</a></p>
                                 <p><a href="../iot-central/tutorial-define-device-type.md">Определение типа устройства</a></p>
                                 <p><a href="../iot-central/index.yml"><i>Дополнительные сведения &gt;</i></a></p>
@@ -132,8 +132,8 @@ ms.locfileid: "61216640"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Настройка готового решения Интернета вещей с помощью акселераторов решений Интернета вещей Azure</h3><br>
-                                <p><a href="../iot-accelerators/about-iot-accelerators.md">Что такое акселераторы решений Интернета вещей Azure?</a></p>
+                                <h3>Настройка готового решения для Интернета вещей с помощью акселераторов решений Azure IoT</h3><br>
+                                <p><a href="../iot-accelerators/about-iot-accelerators.md">Что такое акселераторы решений Azure IoT?</a></p>
                                 <p><a href="../iot-accelerators/quickstart-remote-monitoring-deploy.md">Краткое руководство. Использование облачного решения для удаленного мониторинга</a></p>
                                 <p><a href="../iot-accelerators/quickstart-connected-factory-deploy.md">Краткое руководство. Пробное использование облачного решения для управления промышленными устройствами Центра Интернета вещей</a></p>
                                 <p><a href="../iot-accelerators/index.md"><i>Дополнительные сведения &gt;</i></a></p>
@@ -192,7 +192,7 @@ ms.locfileid: "61216640"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>Безопасная подготовка устройств в нужном масштабе с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей</h3><br>
+                                <h3>Безопасная подготовка устройств в нужном масштабе с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей Azure</h3><br>
                                 <p><a href="../iot-dps/about-iot-dps.md">Что собой представляет Служба подготовки устройств к добавлению в Центр Интернета вещей?</a></p>
                                 <p><a href="../iot-dps/quick-setup-auto-provision-cli.md">Настройка службы</a></p>
                                 <p><a href="../iot-dps/quick-create-simulated-device.md">Подготовка устройства TPM</a></p>
