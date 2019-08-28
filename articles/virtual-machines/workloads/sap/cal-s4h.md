@@ -10,18 +10,17 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 44bbd2b6-a376-4b5c-b824-e76917117fa9
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
-ms.openlocfilehash: 65643352a269796fc5353ff4cd0cb15d5f1502ec
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2fa68d9dc3052263b5354086ee802cc31fa35ace
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707475"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101442"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Развертывание SAP S/4HANA или BW/4HANA в Azure
 В этой статье описывается, как развернуть платформу S/4HANA в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. Чтобы развернуть другие решения на основе SAP HANA, например BW/4HANA, выполните те же действия.
@@ -120,7 +119,7 @@ ms.locfileid: "67707475"
 
     Г. Введите главный **пароль** для решения длиной восемь или девять знаков. Пароль используется администраторами различных компонентов.
 
-   ![Базовый режим SAP CAL: создание экземпляра](./media/cal-s4h/s4h-pic10a.png)
+   ![Базовый режим SAP CAL: Создать экземпляр](./media/cal-s4h/s4h-pic10a.png)
 
 1. Щелкните **Создать** и в появившемся диалоговом окне щелкните **ОК**.
 

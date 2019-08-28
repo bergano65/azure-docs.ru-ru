@@ -11,16 +11,15 @@ ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: 68fde09b1ee5f18aa784793cc19e9f547b19ed43
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 8eb8075454dc3a49e9525d566c34c64bab8be5a0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67871880"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083450"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -80,7 +79,7 @@ ms.locfileid: "67871880"
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
+| Добро пожаловать!                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
 | Конфигурация             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
@@ -88,7 +87,7 @@ ms.locfileid: "67871880"
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |
 | "Fenced User" (Изолированный пользователь)               | "Existing User, User name" (Существующий пользователь, имя пользователя)                     | DB2sdfe1                                                                                              |
 | "Cluster File System" (Файловая система кластера)       | "Shared disk partition device path" (Путь к устройству с общим разделом диска)            | /dev/dm-2                                                                                             |
-|                           | "Mount point" (Точка подключения)                                  | /DB2sd\_1804a                                                                                         |
+|                           | Точка подключения                                  | /DB2sd\_1804a                                                                                         |
 |                           | "Shared disk for data" (Общий диск для данных)                         | /dev/dm-1                                                                                             |
 |                           | "Mount point (Data)" (Точка подключения, данные)                           | /DB2fs/datafs1                                                                                        |
 |                           | "Shared disk for log" (Общий диск для журнала)                          | /dev/dm-0                                                                                             |

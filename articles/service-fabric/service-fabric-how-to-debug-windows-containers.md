@@ -13,18 +13,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/14/2019
 ms.author: mikhegn
-ms.openlocfilehash: 043623869163a27cdbbdd7115fca43486577ca7d
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: a5ccf527850e1c05c5d7e273ada905d65d64cee4
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599442"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073960"
 ---
 # <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2019"></a>Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2019
 
 Visual Studio 2019 позволяет отлаживать приложения .NET в контейнерах как службы Service Fabric. В этой статье показано, как настроить среду, а затем выполнить отладку приложения .NET в контейнере, выполняемом в локальном кластере Service Fabric.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * В Windows 10 выполните это краткое руководство, чтобы [настроить Windows 10 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10).
 * В Windows Server 2016 выполните это краткое руководство, чтобы [настроить Windows 2016 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server).
@@ -81,4 +81,4 @@ Visual Studio 2019 позволяет отлаживать приложения 
     Visual Studio поддерживает типы консоли и проектов ASP.NET для .NET и .NET Core.
 
 ## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения о возможностях Service Fabric и контейнеров см. в разделе Общие сведения о Service Fabric контейнерах] (Service-Fabric-Containers-overview.md).
+Дополнительные сведения о возможностях Service Fabric и контейнеров см. в разделе [Общие сведения о Service Fabric контейнерах](service-fabric-containers-overview.md).

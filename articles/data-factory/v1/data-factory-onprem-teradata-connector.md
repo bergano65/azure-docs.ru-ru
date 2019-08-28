@@ -319,7 +319,7 @@ ms.locfileid: "67836120"
 | Interval Year To Month |String |
 | Interval Month |String |
 | Period(Date) |String |
-| Period(Time) |Строка, |
+| Period(Time) |String |
 | Period(Time With Time Zone) |String |
 | Period(Timestamp) |String |
 | Period(Timestamp With Time Zone) |String |

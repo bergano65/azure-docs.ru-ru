@@ -316,7 +316,7 @@ ms.locfileid: "67839949"
 
 Ниже приведены виртуальные таблицы, в которых ренормализированы данные из столбцов "Список", "Сопоставление" и StringSet. Столбцы, имена которых заканчиваются на _index или _key, указывают на позицию данных в исходном списке или сопоставлении. Столбцы, имена которых заканчиваются на _value, содержат развернутые данные из коллекции.
 
-#### <a name="table-exampletablevtlist"></a>Таблица ExampleTable_vt_List
+#### <a name="table-exampletable_vt_list"></a>Таблица ExampleTable_vt_List
 | pk_int | List_index | List_value |
 | --- | --- | --- |
 | 1 |0 |1 |
@@ -327,14 +327,14 @@ ms.locfileid: "67839949"
 | 3 |2 |102 |
 | 3 |3 |103 |
 
-#### <a name="table-exampletablevtmap"></a>Таблица ExampleTable_vt_Map
+#### <a name="table-exampletable_vt_map"></a>Таблица ExampleTable_vt_Map
 | pk_int | Map_key | Map_value |
 | --- | --- | --- |
 | 1 |S1 |А |
 | 1 |S2 |b |
 | 3 |S1 |t |
 
-#### <a name="table-exampletablevtstringset"></a>Таблица ExampleTable_vt_StringSet:
+#### <a name="table-exampletable_vt_stringset"></a>Таблица ExampleTable_vt_StringSet:
 | pk_int | StringSet_value |
 | --- | --- |
 | 1 |А |

@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: db0b9887b80f13938045a5d11fb09ed0a43efc19
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: f6f678f91e74ea9b0b68127c1786fee745508b99
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706967"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101461"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
@@ -32,7 +31,7 @@ ms.locfileid: "67706967"
 ## <a name="goals"></a>Цели
 - Создать топологию и конфигурацию, которые соответствуют вашим требованиям к аварийному восстановлению.
 
-## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основной и сайты аварийного восстановления в Azure
+## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основной сайт и сайты аварийного восстановления в Azure
 
 У клиента есть база данных Oracle на основном сайте. Сайт аварийного восстановления находится в другом регионе. Клиент использует Oracle Data Guard для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
@@ -52,13 +51,13 @@ ms.locfileid: "67706967"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_01.png)
 
-## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Локальный первичный сайт и сайт аварийного восстановления в Azure
+## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Первичный сайт локальная сеть и сайт аварийного восстановления в Azure
 
 Клиент имеет локальную базу данных Oracle (основной сайт). Сайт аварийного восстановления — в Azure. Oracle Data Guard используется для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
 Существует два подхода для такой конфигурации.
 
-### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Способ 1. Прямые соединения между локальной средой и Azure, требуется открыть TCP-порты в брандмауэре 
+### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Подход 1: Прямые подключения между локальной средой и Azure, в брандмауэре которого требуются открытые TCP-порты 
 
 Мы не рекомендуем использовать прямые соединения, так как они позволяют открыть внешний доступ к TCP-портам.
 
@@ -78,7 +77,7 @@ ms.locfileid: "67706967"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_02.png)
 
-### <a name="approach-2-site-to-site-vpn"></a>Способ 2. VPN "сайт — сайт"
+### <a name="approach-2-site-to-site-vpn"></a>Подход 2: VPN "сайт — сайт"
 Оптимальным способом является использование VPN-подключения типа "сеть — сеть". Дополнительные сведения о настройке VPN см. в статье [Создание виртуальной сети с VPN типа "сеть — сеть" с помощью интерфейса командной строки](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli).
 
 #### <a name="topology"></a>Топология
