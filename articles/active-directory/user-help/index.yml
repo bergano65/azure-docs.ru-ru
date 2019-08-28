@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Справочная документация для пользователей
+summary: Сотрудники, ИТ-специалисты и пользователи могут настраивать аутентификацию для своих рабочих или учебных учетных записей, сбрасывать пароли, настраивать и присоединять устройства, настраивать приложение Microsoft Authenticator и использовать разные порталы.
+metadata:
+  title: Справка для пользователей по аутентификации, использованию приложений и устройств
+  description: Сотрудники и пользователи могут настраивать и использовать аутентификацию, приложение Microsoft Authenticator и портал "Мои приложения".
+  services: active-directory
+  ms.service: active-directory
+  ms.subservice: user-help
+  ms.topic: landing-page
+  ms.collection: M365-identity-device-management
+  author: eross-msft
+  ms.author: lizross
+  ms.date: 08/26/2019
+  ms.openlocfilehash: 687ae4b276b4e975c9b9de9d688f23180deaeebc
+  ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/27/2019
+  ms.locfileid: "70062211"
+landingContent:
+- title: Настройка и использование приложения Microsoft Authenticator
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое приложение Microsoft Authenticator?
+      url: user-help-auth-app-overview.md
+  - linkListType: download
+    links:
+    - text: Скачивание и установка приложения
+      url: user-help-auth-app-download-install.md
+  - linkListType: how-to-guide
+    links:
+    - text: Резервное копирование и восстановление учетных данных
+      url: user-help-auth-app-backup-recovery.md
+    - text: Вход с использованием приложения
+      url: user-help-auth-app-sign-in.md
+- title: Настройка и использование двухфакторной проверки подлинности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Основные сведения о двухфакторной проверке подлинности
+      url: user-help-two-step-verification-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка методов проверки подлинности
+      url: multi-factor-authentication-end-user-first-time.md
+    - text: Управление параметрами
+      url: multi-factor-authentication-end-user-manage-settings.md
+    - text: Получение справки
+      url: multi-factor-authentication-end-user-troubleshoot.md
+- title: Настройка и использование портала "Мои приложения"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое портал "Мои приложения"?
+      url: my-apps-portal-end-user-access.md
+  - linkListType: how-to-guide
+    links:
+    - text: Обновление сведений
+      url: my-apps-portal-end-user-update-profile.md
+    - text: Получение справки
+      url: my-apps-portal-end-user-troubleshoot.md
+- title: Настройка и использование сведений для защиты (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения для защиты (предварительная версия)
+      url: user-help-security-info-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка методов использования сведения для защиты
+      url: security-info-add-update-methods-overview.md
+    - text: Добавление сведений при входе в систему
+      url: security-info-setup-signin.md
+- title: Настройка и использование портала "Мой профиль" (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Основные сведения о портале "Мой профиль"
+      url: myprofile-portal-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление организациями
+      url: myprofile-portal-organizations-page.md
+    - text: Управление подключенными устройствами
+      url: myprofile-portal-devices-page.md
+- title: Сброс собственного пароля
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Основные сведения о сбросе пароля
+      url: user-help-password-reset-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Регистрация для сброса пароля
+      url: active-directory-passwords-reset-register.md
+    - text: Сброс пароля
+      url: user-help-reset-password.md
