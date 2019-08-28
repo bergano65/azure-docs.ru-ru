@@ -124,7 +124,7 @@ ms.locfileid: "67839487"
 
 | **Property** | **Описание** | **Допустимые значения** | **Обязательный** |
 | --- | --- | --- | --- |
-| запрос |Запрос, нужный для чтения данных. |Строка запроса, поддерживаемая Azure Cosmos DB. <br/><br/>Пример: `SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Нет <br/><br/>Если не указано, то выполняется инструкция SQL `select <columns defined in structure> from mycollection`. |
+| query |Запрос, нужный для чтения данных. |Строка запроса, поддерживаемая Azure Cosmos DB. <br/><br/>Пример: `SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Нет <br/><br/>Если не указано, то выполняется инструкция SQL `select <columns defined in structure> from mycollection`. |
 | nestingSeparator |Специальный символ, обозначающий, что документ является вложенным. |Любой символ. <br/><br/>Azure Cosmos DB — это хранилище NoSQL для JSON-документов, в которых разрешено использовать вложенные структуры. Фабрика данных Azure позволяет обозначать иерархию с помощью разделителя nestingSeparator. В приведенных выше примерах это точка. Благодаря этому разделителю действие копирование создаст объект Name с тремя дочерними элементами, First, Middle и Last, в соответствии с элементами Name.First, Name.Middle и Name.Last в определении таблицы. |Нет |
 
 **DocumentDbCollectionSink** поддерживает приведенные ниже свойства.
