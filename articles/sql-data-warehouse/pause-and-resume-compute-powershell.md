@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 03/20/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fe9cd6c951f9eba73cee1bea66df88f3143859b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 220d2aefd714cd3546fa4d5c2ac8852d2786b8ac
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66156293"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575409"
 ---
 # <a name="quickstart-pause-and-resume-compute-in-azure-sql-data-warehouse-with-powershell"></a>Краткое руководство. Приостановка и возобновление вычислений в хранилище данных SQL Azure с помощью PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "66156293"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-В этом кратком руководстве предполагается, что уже имеется хранилище данных SQL, работу которого можно приостановить и возобновить. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) для создания хранилища данных **mySampleDataWarehouse**.
+В этом кратком руководстве предполагается, что у вас уже есть Хранилище данных SQL, работу которого можно приостановить и возобновить. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md) для создания хранилища данных **mySampleDataWarehouse**.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -139,4 +139,4 @@ Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Serv
 Вы приостановили и возобновили вычисления для хранилища данных. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
-> [Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+> [Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)

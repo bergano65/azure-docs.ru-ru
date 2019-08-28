@@ -11,16 +11,16 @@ ms.service: media-services
 ms.workload: media
 ms.topic: tutorial
 ms.custom: ''
-ms.date: 02/19/2019
+ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: cce424b11cc4cd587c6e7c50bc8bdf988004a43a
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 58193a94d09dee5df611acf5d98c8661dd18abbb
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65550198"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639965"
 ---
-# <a name="tutorial-stream-video-files---cli"></a>Руководство по Потоковая передача видеофайлов с помощью CLI
+# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---cli"></a>Руководство по кодированию удаленного файла на основе URL-адреса и потоковой передачи видео с помощью CLI
 
 В этом кратком руководстве описано, как легко выполнять кодирование и потоковую передачу видео в разных браузерах и на разных устройствах с помощью Служб мультимедиа Azure и Azure CLI. Входное содержимое можно определить с помощью протокола HTTPS, URL-адреса SAS или путей к файлам в хранилище BLOB-объектов Azure.
 

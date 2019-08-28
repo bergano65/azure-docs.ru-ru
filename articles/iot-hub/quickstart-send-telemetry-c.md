@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/10/2019
 ms.author: wesmc
-ms.openlocfilehash: 92575f2fc8e6dbcfc5767a179ddf60df1bce0c83
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 842efca1b40827f63ab23581aeac7e5226d04349
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65872602"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900276"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
 
@@ -55,21 +55,21 @@ ms.locfileid: "65872602"
 
 * **iOS**: пакет SDK для устройств Центра Интернета вещей доступен в CocoaPods для разработки для устройств Mac и iOS. Дополнительные сведения можно найти в разделе [iOS Samples for Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) (Примеры iOS для Центра Интернета вещей Microsoft Azure).
 
-Тем не менее с помощью этого краткого руководства вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве. 
+Тем не менее с помощью этого краткого руководства вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве.
 
 1. Скачайте [систему сборки CMake](https://cmake.org/download/).
 
     **Перед** установкой `CMake` важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio и рабочую нагрузку "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
-2. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
-    
+2. Откройте командную строку или оболочку Git Bash и перейдите к рабочему каталогу, в который нужно клонировать пакет SDK для Azure IoT C. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
+
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
     ```
+
     Выполнение этой операции может занять несколько минут.
 
-
-3. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. 
+3. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. Введите следующие команды из рабочего каталога:
 
     ```cmd/sh
     cd azure-iot-sdk-c
@@ -77,12 +77,12 @@ ms.locfileid: "65872602"
     cd cmake
     ```
 
-4. Выполните приведенную ниже команду, чтобы создать версию пакета SDK для используемой клиентской платформы разработки. Эта команда также создает решение Visual Studio для имитированного устройства в каталоге `cmake`. 
+4. Выполните приведенную ниже команду, чтобы создать версию пакета SDK для используемой клиентской платформы разработки. Эта команда также создает решение Visual Studio для имитированного устройства в каталоге `cmake`.
 
     ```cmd
     cmake ..
     ```
-    
+
     Если `cmake` не удается найти компилятор C++, во время выполнения предыдущей команды могут возникнуть ошибки сборки. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs). 
 
     После успешного создания последние несколько строк выходных данных будут выглядеть следующим образом:
@@ -100,7 +100,6 @@ ms.locfileid: "65872602"
     -- Generating done
     -- Build files have been written to: E:/IoT Testing/azure-iot-sdk-c/cmake
     ```
-
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -138,10 +137,10 @@ ms.locfileid: "65872602"
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства в центре Интернета вещей и отправляет имитированную телеметрию в виде строки.
 
-1. В текстовом редакторе откройте исходный файл iothub_convenience_sample.c и просмотрите пример кода для отправки данных телеметрии. Этот файл расположен в приведенной ниже папке.
+1. В текстовом редакторе откройте исходный файл iothub_convenience_sample.c и просмотрите пример кода для отправки данных телеметрии. Файл находится в следующем расположении в рабочем каталоге, в который вы клонировали пакет SDK для Azure IoT C:
 
     ```
-    \azure-iot-sdk-c\iothub_client\samples\iothub_convenience_sample\iothub_convenience_sample.c
+    azure-iot-sdk-c\iothub_client\samples\iothub_convenience_sample\iothub_convenience_sample.c
     ```
 
 2. Найдите объявление константы `connectionString`.
@@ -150,12 +149,13 @@ ms.locfileid: "65872602"
     /* Paste in your device connection string  */
     static const char* connectionString = "[device connection string]";
     ```
+
     Замените значение константы `connectionString` записанной ранее строкой подключения к устройству. Затем сохраните изменения, внесенные в файл **iothub_convenience_sample.c**.
 
-3. В окне терминала на локальном компьютере перейдите в каталог проекта *iothub_convenience_sample* в каталоге CMake, созданном в пакете SDK Интернета вещей Azure для C.
+3. В окне терминала на локальном компьютере перейдите в каталог проекта *iothub_convenience_sample* в каталоге CMake, созданном в пакете SDK Интернета вещей Azure для C. Введите следующие команды из рабочего каталога:
 
-    ```
-    cd /azure-iot-sdk-c/cmake/iothub_client/samples/iothub_convenience_sample
+    ```cmd/sh
+    cd azure-iot-sdk-c/cmake/iothub_client/samples/iothub_convenience_sample
     ```
 
 4. Запустите CMake в окне терминала на локальном компьютере, чтобы выполнить сборку примера с обновленным значением `connectionString`:
@@ -176,7 +176,6 @@ ms.locfileid: "65872602"
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
-
 В этом разделе описано, как использовать Azure Cloud Shell с [расширением Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot?view=azure-cli-latest) для мониторинга сообщений, отправляемых имитированным устройством.
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
@@ -188,8 +187,6 @@ ms.locfileid: "65872602"
     ```
 
     ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-send-telemetry-c/read-device-to-cloud-messages-app.png)
-
-    
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

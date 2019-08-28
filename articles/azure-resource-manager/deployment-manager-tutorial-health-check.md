@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 3946690b24ec4123df1bb19deb05143189fd5aa5
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: def218564511b65809e776f97d0962b72f72adc2
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596042"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69898137"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Руководство по использованию проверки работоспособности в диспетчере развертывания Azure (общедоступная предварительная версия)
 
@@ -235,8 +235,8 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 
 Чтобы упростить работу с руководством, шаблон топологии и артефакты опубликованы в следующих общих расположениях, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
 
-* Шаблон топологии: \ https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json
-* Хранилище артефактов: \ https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
+* Шаблон топологии: \\[https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json](https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json)
+* Хранилище артефактов: \\[https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore](https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore)
 
 Чтобы развернуть топологию, выберите **Попробовать** для открытия Cloud Shell, а затем вставьте скрипт PowerShell.
 
@@ -265,8 +265,8 @@ New-AzResourceGroupDeployment `
 
 Чтобы упростить работу с руководством, измененный шаблон выпуска опубликован в следующих общих расположениях, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
 
-* Шаблон топологии: \ https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json
-* Хранилище артефактов: \ https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
+* Шаблон топологии: \\[https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json](https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json)
+* Хранилище артефактов: \\[https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore](https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore)
 
 Используйте URL-адрес неработоспособного состояния, созданный в разделе [Создание симулятора службы проверки работоспособности](#create-a-health-check-service-simulator). Для параметра **managedIdentityID** см. сведения в разделе [Создание управляемого удостоверения, назначаемого пользователем](./deployment-manager-tutorial.md#create-the-user-assigned-managed-identity).
 

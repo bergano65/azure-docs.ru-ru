@@ -7,12 +7,12 @@ ms.date: 07/20/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 40ee855aa01a9b24e35fb9863221e3607786d407
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 1b6348173f47b570efff25bf09e9a427ff2ba9b5
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722019"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640997"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для .NET
 
@@ -129,7 +129,7 @@ namespace blob_quickstart
 
 ### <a name="copy-your-credentials-from-the-azure-portal"></a>Копирование учетных данных с портала Azure
 
-Чтобы использовать пример приложения, нужно выполнить аутентификацию доступа к вашей учетной записи хранения. Для аутентификации добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
+Когда пример приложения выполняет запрос к службе хранилища Azure, он должен быть авторизован. Для авторизации запроса добавьте в приложение учетные данные учетной записи хранения в виде строки подключения. Чтобы просмотреть учетные данные учетной записи хранения, выполните следующие действия:
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к учетной записи хранения.

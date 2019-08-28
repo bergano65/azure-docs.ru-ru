@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/11/2019
-ms.openlocfilehash: dd28fb51a4fc3fbf3dfc893f2f5f159ccafdb4b3
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 1e30650f932d15d23d7ffe7bd9b9fe07e9872511
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839305"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891615"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-visual-interface"></a>Руководство по развертыванию модели машинного обучения с помощью графического интерфейса
 
@@ -83,11 +83,9 @@ ms.locfileid: "67839305"
 
 1. Выберите имя веб-службы, чтобы просмотреть дополнительные сведения.
 
-     ![Снимок экрана: дополнительные сведения, доступные в представлении веб-службы](./media/ui-tutorial-automobile-price-deploy/web-service-details.png)
-
 1. Выберите **Тест**.
 
-    ![Снимок экрана: страница тестирования веб-службы](./media/ui-tutorial-automobile-price-deploy/web-service-test.png)
+    [![Снимок экрана со страницей тестирования веб-службы](./media/ui-tutorial-automobile-price-deploy/web-service-test.png)](./media/ui-tutorial-automobile-price-deploy/web-service-test.png#lightbox)
 
 1. Введите данные тестирования или используйте автозаполненный пример данных и нажмите **Тест**.
 
@@ -105,8 +103,6 @@ ms.locfileid: "67839305"
 
 Перейдите на вкладку **API Doc** (Документация по API), чтобы найти дополнительные сведения об интерфейсе API.
 
-  ![Снимок экрана: дополнительные сведения об интерфейсе API, которые пользователи могут найти на вкладке документации по API](./media/ui-tutorial-automobile-price-deploy/web-service-api.png)
-
 ## <a name="manage-models-and-deployments"></a>Управление моделями и развертываниями
 
 Моделями и развертываниями веб-служб, созданными в графическом интерфейсе, также можно управлять с помощью рабочей области Службы машинного обучения Azure.
@@ -119,11 +115,9 @@ ms.locfileid: "67839305"
 
     На этой странице вы увидите дополнительные сведения о модели.
 
-    ![Снимок экрана: отображение обзора статистики эксперимента на портале Azure](./media/ui-tutorial-automobile-price-deploy/model-details.png)
-
 1. Выберите **Развертывания**, после чего будут перечислены все веб-службы, использующие модель. Выберите имя веб-службы. После этого вы перейдете на страницу сведений о веб-службе. На этой странице можно получить более подробные сведения о веб-службе.
 
-    ![Снимок экрана: подробный отчет о выполнении](./media/ui-tutorial-automobile-price-deploy/deployment-details.png)
+    [![Снимок экрана с подробным отчетом о выполнении](./media/ui-tutorial-automobile-price-deploy/deployment-details.png)](./media/ui-tutorial-automobile-price-deploy/deployment-details.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

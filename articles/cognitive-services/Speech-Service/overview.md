@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 4ea6f04dbfd18a6e561a255988ba0465b9e017be
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: da88c6d0195236a6f93f81d3296e4624228125f2
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967613"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624261"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -43,6 +43,7 @@ ms.locfileid: "68967613"
 
 * Август 2019 г.
   * **Новое руководство**. [Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)
+  * Добавлен новый стиль речи [`chat`](speech-synthesis-markup.md#adjust-speaking-styles) для голоса `en-US-JessaNeural`. 
 * Июнь 2019 г.
   * Выпущен пакет SDK версии 1.6.0 для службы "Речь". Полный список обновлений, улучшений и распространенных проблем см. в статье [Release notes](releasenotes.md) (Заметки о выпуске).
 * Май 2019 г. Доступна документация по [транскрибированию бесед](conversation-transcription-service.md), [транскрибированию обращений в центры обработки вызовов](call-center-transcription.md) и [виртуальным помощникам по обработке голоса](voice-first-virtual-assistants.md).

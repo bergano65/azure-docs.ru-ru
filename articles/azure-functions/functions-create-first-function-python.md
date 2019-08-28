@@ -11,16 +11,14 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 58f5cfd3718720cafc922bbd7b974a353e0d9d02
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 5b90702f89af260a67b69bf96c2e079a45298723
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722787"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575448"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
-
-[!INCLUDE [functions-python-preview-note](../../includes/functions-python-preview-note.md)]
 
 В этой статье показано, как использовать программы командной строки для создания проекта Python, выполняющегося в решении "Функции Azure". Создаваемая функция активируется с помощью HTTP-запросов. Наконец, вы опубликуете проект для выполнения в качестве [независимой от сервера функции](functions-scale.md#consumption-plan) в Azure.
 
@@ -32,7 +30,7 @@ ms.locfileid: "68722787"
 
 + установить [Python 3.6](https://www.python.org/downloads/);
 
-+ установить [Azure Functions Core Tools](./functions-run-local.md#v2) версии 2.6.1071 или более поздней;
++ установить [Azure Functions Core Tools](./functions-run-local.md#v2) версии 2.7.1575 или более поздней;
 
 + установить [Azure CLI](/cli/azure/install-azure-cli) версии 2.x или более поздней;
 
@@ -40,9 +38,9 @@ ms.locfileid: "68722787"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-and-activate-a-virtual-environment"></a>Создание и активация виртуальной среды
+## <a name="create-and-activate-a-virtual-environment-optional"></a>Создание и активация виртуальной среды (необязательно)
 
-Чтобы локально разрабатывать и тестировать функции Python, необходимо работать в среде Python 3.6. Для создания и активации виртуальной среды с именем `.venv` выполните следующие команды.
+Чтобы локально разрабатывать и тестировать функции Python, рекомендуется использовать среду Python 3.6. Для создания и активации виртуальной среды с именем `.venv` выполните следующие команды.
 
 ### <a name="bash"></a>Bash:
 
@@ -81,8 +79,6 @@ func init MyFunctionProj
 ```console
 cd MyFunctionProj
 ```
-
-Затем обновите файл host.json, чтобы включить пакеты расширений.  
 
 ## <a name="create-a-function"></a>Создание функции
 
@@ -165,15 +161,19 @@ az functionapp create --resource-group myResourceGroup --os-type Linux \
 --consumption-plan-location westeurope  --runtime python \
 --name <APP_NAME> --storage-account  <STORAGE_NAME>
 ```
-
 > [!NOTE]
-> Функции Azure с планом потребления для Linux в настоящее время находятся на этапе предварительной версии и доступны только в следующих регионах: западная часть США, восточная часть США, Западная Европа, Восточная Азия. Более того, приложения для Windows и Linux не могут размещаться в одной группе ресурсов. Если у вас есть группа ресурсов `myResourceGroup` с приложением-функцией Windows или веб-приложением, необходимо использовать другую группу ресурсов.
+> Приложения Windows и Linux не могут размещаться в одной группе ресурсов. Если у вас есть группа ресурсов `myResourceGroup` с приложением-функцией Windows или веб-приложением, необходимо использовать другую группу ресурсов.
+
+Эта команда также подготавливает связанный экземпляр Application Insights в той же группе ресурсов, которую можно использовать для мониторинга и просмотра журналов.
 
 Теперь вы готовы опубликовать локальный проект функций в приложение-функцию в Azure.
 
 [!INCLUDE [functions-publish-project](../../includes/functions-publish-project.md)]
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
+
+> [!NOTE]
+> Чтобы просматривать журналы для опубликованного приложения Python, которые ведутся практически в режиме реального времени, рекомендуется использовать [Live Metrics Stream для Application Insights](functions-monitoring.md#streaming-logs).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

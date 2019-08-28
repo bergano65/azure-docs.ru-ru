@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 05/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6725bbc1978109d2b690a98e2cf98cc8c8c25141
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: df5085011fd2771f094131244c1f466cebcbc89a
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69033013"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534801"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство по Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
 
@@ -40,33 +40,15 @@ ms.locfileid: "69033013"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек.  Чтобы запустить записную книжку, вам потребуется:
+* Пройдите [руководство по началу работы по созданию эксперимента Машинного обучения](tutorial-1st-experiment-sdk-setup.md), чтобы выполнить такие задачи:
+    * Создание рабочей области
+    * создать облачный сервер записных книжек;
+    * запустить панель мониторинга записной книжки Jupyter.
 
-* Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
-    * пакет SDK для Машинного обучения Azure для Python;
-    * `matplotlib` и `scikit-learn`
-* Пример записной книжки и файл **utils.py**
-* Рабочая область машинного обучения.
-* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка.
+* После запуска веб-страницы записной книжки Jupyter откройте записную книжку **tutorials/img-classification-part1-training.ipynb**.
 
-Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
+Это руководство и дополняющий его файл **utils.py** также доступны на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать их в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что вы установили `matplotlib` и `scikit-learn` в своей среде.
 
-* Использование [облачного сервера записных книжек в рабочей области](#azure)
-* Использование [собственного сервера записных книжек](#server)
-
-### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
-
-С помощью облачного сервера записной книжки можно легко начать работу. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) будет установлен и настроен, как только вы создадите этот облачный ресурс.
-
-[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
-
-* После запуска веб-страницы записной книжки откройте записную книжку **tutorials/img-classification-part1-training.ipynb**.
-
-### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
-
-[!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
-
- Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb** из клонированного каталога.
 
 ## <a name="start"></a>Настройка среды разработки
 

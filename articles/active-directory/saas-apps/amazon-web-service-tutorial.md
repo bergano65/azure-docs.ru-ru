@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f346c995cbc8be6e609020db799959d873ce89b3
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 672a3571202b92232bd45a42254a43019f6a9796
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68944959"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617341"
 ---
 # <a name="tutorial-integrate-amazon-web-services-aws-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с Amazon Web Services (AWS)
 
@@ -369,6 +369,12 @@ ms.locfileid: "68944959"
    Вы можете добавить несколько клиентов AWS (представленных как `servicePrincipals`) в Azure AD из коллекции для подготовки. При этом существует известная проблема, когда не удается автоматически записывать все импортированные роли из нескольких `servicePrincipals` AWS, используемых для объединения в `servicePrincipal` и включения возможности единого входа. 
    
    В качестве решения можно использовать [Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) для извлечения всех `appRoles`, импортируемых во все `servicePrincipal` AWS с настроенной подготовкой. Потом вы сможете добавить эти строки ролей в `servicePrincipal` AWS с настроенным единым входом.
+ 
+* Роли должны отвечать следующим требованиям, чтобы быть доступными для импорта из AWS в Azure AD:
+
+  * Роли должны иметь только один поставщик SAML, определенный в AWS.
+
+  * Общая длина ARN роли и ARN поставщика SAML для импортируемой роли не должна превышать 119 символов.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

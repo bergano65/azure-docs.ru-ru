@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 786c5725046885a0321696e95703c53081e96979
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b731d8000e748813649ea32c91b9566a8bc245a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560328"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648607"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 
@@ -137,7 +137,7 @@ ms.locfileid: "68560328"
 
 1. Метка должности в примере высказываний
 
-    Если в одном намерении больше примеров высказываний, чем в другом, то это намерение имеет более высокую вероятность того, что оно является самым предсказуемым в тексте. 
+    Если в одном намерении больше примеров высказываний, чем в другом, то это намерение имеет более высокую вероятность того, что оно является самым предсказуемым намерением. 
 
 ## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения 
 

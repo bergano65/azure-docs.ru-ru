@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: c6ae23efa90874bbefc2aff35f8798aa6c0da791
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 94df90db4a715d2540dfc5ec0aa521d76d22f757
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503740"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624217"
 ---
 # <a name="graph-data-modeling-for-azure-cosmos-db-gremlin-api"></a>Моделирование данных графов для API Gremlin Azure Cosmos DB
 
@@ -94,7 +94,7 @@ ms.locfileid: "67503740"
 
 Тем не менее обход в обратном направлении ребра при использовании функции `in()` всегда приводит к возникновению запроса между секциями. Узнайте больше о [секционировании графов](graph-partitioning.md). Если нужно постоянно выполнять обход с использованием функции `in()`, мы рекомендуем добавить ребра в обоих направлениях.
 
-Вы можете определить направление ребра, используя предикаты `.to()` или `.from()` для шага Gremlin `.addE()` либо используя [библиотеку BulkExecutor для API Gremlin](bulk-executor-graph-dotnet.md).
+Вы можете определить направление ребра, используя предикаты `.to()` или `.from()` для шага Gremlin `.addE()` либо используя [библиотеку массового исполнителя для API Gremlin](bulk-executor-graph-dotnet.md).
 
 > [!NOTE]
 > Объекты ребер имеют направление по умолчанию.

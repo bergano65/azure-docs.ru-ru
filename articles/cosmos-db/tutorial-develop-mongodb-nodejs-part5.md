@@ -12,12 +12,12 @@ ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
 Customer intent: As a developer, I want to build a Node.js application, so that I can manage the data stored in Cosmos DB.
-ms.openlocfilehash: c8cab3c723b7e507b0f3b05b933cca9e2c24fb39
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 626015e2aac5eb09dfd271a139dbc5eb49a088fc
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58075481"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616416"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
 
@@ -234,11 +234,11 @@ Mongoose является библиотекой моделирования да
 
 1. Сохраните все изменения в Visual Studio Code. Нажмите кнопку **Отладка** слева, ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/debug-button.png), а затем — кнопку **Начать отладку** ![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/start-debugging-button.png).
 
-1. Теперь переключитесь на браузер. Откройте **средства разработчика** и перейдите на **вкладку "Сеть"**. Перейдите по адресу `http://localhost:3000`, где расположено ваше приложение.
+1. Теперь переключитесь на браузер. Откройте **средства разработчика** и перейдите на **вкладку "Сеть"** . Перейдите по адресу `http://localhost:3000`, где расположено ваше приложение.
 
     ![Новая учетная запись Azure Cosmos DB на портале Azure](./media/tutorial-develop-mongodb-nodejs-part5/azure-cosmos-db-heroes-app.png)
 
-В приложении пока нет элементов hero. В следующей части этого руководства мы добавим функции put, push и delete. Затем мы сможем добавлять, обновлять и удалять элементы hero из пользовательского интерфейса, используя подключения Mongoose к базе данных Azure Cosmos DB. 
+В приложении пока нет элементов hero. В следующей части этого руководства мы добавим функции put, push и delete. Затем мы сможем добавлять, обновлять и удалять элементы hero из пользовательского интерфейса, используя подключения Mongoose к базе данных Azure Cosmos. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

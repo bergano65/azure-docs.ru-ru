@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 12/26/2018
 ms.author: rimman
 ms.custom: seo-java-august2019
-ms.openlocfilehash: 701e6f0e93fe853a3703f9923af4dffd16090c80
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 693e58cf578b5b2374a1d8fc63da8bb1a77faf1b
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036794"
+ms.locfileid: "69515822"
 ---
 # <a name="quickstart-build-a-web-app-using-azure-cosmos-dbs-api-for-mongodb-and-java-sdk"></a>Краткое руководство. Создание веб-приложения с помощью API Azure Cosmos DB для MongoDB и пакета SDK для Java
 
@@ -114,7 +114,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. В колонке учетной записи щелкните **Быстрый запуск**, выберите Java, а затем скопируйте строку подключения в буфер обмена
+1. В колонке учетной записи щелкните **Быстрый запуск**, выберите **Java**, а затем скопируйте строку подключения в буфер обмена.
 
 2. Откройте файл `Program.java`, замените аргумент конструктора MongoClientURI строкой подключения. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
     

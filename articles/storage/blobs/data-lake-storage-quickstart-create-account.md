@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 07/19/2019
+ms.date: 08/19/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f7c83e67c2162561aa579d38116f8ce01fceda9a
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: e820ed25cae23a2dad37c807eb3e188161eaecbf
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014376"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617699"
 ---
 # <a name="create-an-azure-data-lake-storage-gen2-storage-account"></a>Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения
 
@@ -28,7 +28,7 @@ Azure Data Lake Storage 2-го поколения [поддерживает ие
 |           | Предварительные требования |
 |-----------|--------------|
 |Портал     | Нет         |
-|PowerShell | Для работы с этим кратким руководством требуется модуль PowerShell Az.Storage версии **0.7** или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az.Storage`. Если после выполнения этой команды результаты не отображаются или появится версия, отличная от **0.7**, тогда вам нужно обновить модуль PowerShell. Дополнительные сведения см. в разделе [Обновление модуля PowerShell](#upgrade-your-powershell-module) этого руководства.
+|PowerShell | Для работы с этим кратким руководством требуется модуль PowerShell Az.Storage версии **0.7** или более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az.Storage`. Если после выполнения этой команды результаты не отображаются или отображается версия, предшествующая **0.7**, тогда вам нужно обновить модуль PowerShell. Дополнительные сведения см. в разделе [Обновление модуля PowerShell](#upgrade-your-powershell-module) этого руководства.
 |CLI        | Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов: <ul><li>Выполнить команды CLI на портале Azure в Azure Cloud Shell. </li><li>Установить CLI и выполнить команды CLI локально.</li></ul>|
 
 При работе в командной строке можно запустить оболочку Azure Cloud или локально установить интерфейс командной строки.

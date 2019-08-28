@@ -9,12 +9,12 @@ ms.date: 03/27/2019
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 0861c47ef9f9649dfe223d8abeb51310a87ea4a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: afb53ed013af6cd1db2f6ff3d25c350aa2b4f1e8
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66169714"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638564"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-the-azure-portal-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью портала Azure и службы "Сетка событий"
 
@@ -128,20 +128,22 @@ ms.locfileid: "66169714"
 ### <a name="azure-powershell"></a>Azure PowerShell
 Во втором примере для выполнения аналогичных действий используется PowerShell.
 
-1. На портале Azure выберите **Cloud Shell**. Выберите **PowerShell** в левом верхнем углу окна Cloud Shell. Пример того, как выглядит окно **Cloud Shell**, приведен в разделе "Инфраструктура CLI Azure". 
-2. Выполните следующую команду, чтобы получить **конечную точку** для раздела: После копирования и вставки команды перед ее выполнением измените соответствующим образом **имя раздела** и **имя группы ресурсов**. 
+1. На портале Azure выберите **Cloud Shell** (или перейдите по адресу https://shell.azure.com/) ). Выберите **PowerShell** в левом верхнем углу окна Cloud Shell. Пример того, как выглядит окно **Cloud Shell**, приведен в разделе "Инфраструктура CLI Azure".
+2. Задайте следующие переменные. После копирования и вставки команды перед ее выполнением измените соответствующим образом **имя раздела** и **имя группы ресурсов**.
 
     ```powershell
-    $endpoint = (Get-AzEventGridTopic -ResourceGroupName <resource group name> -Name <topic name>).Endpoint
+    $resourceGroupName = <resource group name>
+    $topicName = <topic name>
     ```
-3. Выполните следующую команду, чтобы получить **ключ** для пользовательского раздела. После копирования и вставки команды перед ее выполнением измените соответствующим образом **имя раздела** и **имя группы ресурсов**.
+3. Выполните следующую команду, чтобы получить **конечную точку** и **ключи** для раздела:
 
     ```powershell
-    $keys = Get-AzEventGridTopicKey -ResourceGroupName gridResourceGroup -Name <topic name>
+    $endpoint = (Get-AzEventGridTopic -ResourceGroupName $resourceGroupName -Name $topicName).Endpoint
+    $keys = Get-AzEventGridTopicKey -ResourceGroupName $resourceGroupName -Name $topicName
     ```
 4. Подготовьте событие. Скопируйте и выполните инструкции в окне Cloud Shell. 
 
-    ```azurepowershell
+    ```powershell
     $eventID = Get-Random 99999
 
     #Date format should be SortableDateTimePattern (ISO 8601)

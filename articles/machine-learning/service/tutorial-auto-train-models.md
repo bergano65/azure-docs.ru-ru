@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 08/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 060257ef144309e37208db80c7731ed96b995b2c
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 49f46c09cfcfef2ab1e74ae7c08d9a54289293ac
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990480"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534826"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -42,36 +42,11 @@ ms.locfileid: "68990480"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек. Чтобы запустить записную книжку, вам потребуется:
+* Выполните инструкции из первой части [руководства по подготовке данных](tutorial-data-prep.md).
 
-* [Выполнение руководства по подготовке данных](tutorial-data-prep.md).
-* Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
-    * пакет SDK для Машинного обучения Azure для Python с `automl` и `notebooks`;
-    * `matplotlib`
-* Пример записной книжки.
-* Рабочая область машинного обучения.
-* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка.
+* Сделав это, откройте записную книжку **tutorials/regression-part2-automated-ml.ipynb**, используя тот же сервер записной книжки.
 
-Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
-
-* Использование [облачного сервера записных книжек в рабочей области](#azure)
-* Использование [собственного сервера записных книжек](#server)
-
-### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
-
-С помощью облачного сервера записной книжки можно легко начать работу. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) будет установлен и настроен, как только вы создадите этот облачный ресурс.
-
-[!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
-
-* После запуска веб-страницы записной книжки запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb**.
-
-### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
-
-Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Убедитесь, что в вашей среде устанавливается `matplotlib` и дополнения `automl` и `notebooks`.
-
-[!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
-
-Выполнив указанные действия, запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb**.
+Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать его в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что у вас установлен пакет `matplotlib` и дополнительные компоненты `automl` и `notebooks` из пакета SDK Машинного обучения Azure.
 
 ## <a name="start"></a>Настройка среды разработки
 

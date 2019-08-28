@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 993b0249bdcc8e0e54dbe0c222aa2335c3bf8d4a
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 16c0354466d5c2a1207873a1e83e209da9339705
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679145"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509992"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Подготовка виртуальных машин VMware к оценке и миграции в Azure
 
@@ -137,7 +137,7 @@ ms.locfileid: "68679145"
 1. [Просмотрите](migrate-support-matrix-vmware.md#agentless-migration-vmware-server-requirements) требования к серверу VMware для миграции без агентов.
 2. Настройте учетную запись для доступа к vCenter Server с [необходимыми разрешениями](migrate-support-matrix-vmware.md#agentless-migration-vcenter-server-permissions) для миграции без агентов.
 3. [Обратите внимание](migrate-support-matrix-vmware.md#agentless-migration-vmware-vm-requirements) на требования к виртуальным машинам VMware, которые вы хотите перенести в Azure с помощью миграции без агента.
-4. [Просмотрите](migrate-support-matrix-vmware.md#agentless-migration-appliance-requirements) требования к устройству для миграции без агентов.]
+4. [Просмотрите](migrate-support-matrix-vmware.md#agentless-migration-appliance-requirements) требования к устройству для миграции без агентов.
 5. Обратите внимание на требования к [у](migrate-support-matrix-vmware.md#agentless-migration-url-access-requirements) и [Доступу к порту](migrate-support-matrix-vmware.md#agentless-migration-port-requirements) без агента.
 
 

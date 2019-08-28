@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 04/18/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 9c3ed6dd79d6225b38751c910253cfa1f0720d1c
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 46fb1fc6455cd35d8bb1eaf0a1b7ee499f5c1caf
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57731980"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69574883"
 ---
 # <a name="quickstart-pause-and-resume-compute-for-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Приостановка и возобновление вычислений в хранилище данных SQL Azure на портале Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "57731980"
 
 Для сокращения затрат можно приостанавливать и возобновлять работу вычислительных ресурсов по требованию. Например, если база данных не будет использоваться ночью и по выходным, ее работу можно приостанавливать на это время и возобновлять днем. Когда база данных приостановлена, оплата за вычислительные ресурсы не взимается. Тем не менее плата за хранение по-прежнему будет взиматься. 
 
-Чтобы приостановить хранилище данных SQL, сделайте следующее.
+Чтобы приостановить Хранилище данных SQL, сделайте следующее.
 
 1. На портале Azure на странице слева щелкните **Базы данных SQL**.
 2. На странице **Базы данных SQL** выберите **mySampleDataWarehouse**. Откроется хранилище данных. 
@@ -57,7 +57,7 @@ ms.locfileid: "57731980"
 
 ## <a name="resume-compute"></a>Возобновление работы вычислительных ресурсов
 
-Чтобы возобновить работу хранилища данных SQL, сделайте следующее.
+Чтобы возобновить работу Хранилища данных SQL, сделайте следующее.
 
 1. На портале Azure на странице слева щелкните **Базы данных SQL**.
 2. На странице **Базы данных SQL** выберите **mySampleDataWarehouse**. Откроется хранилище данных. 
@@ -103,4 +103,4 @@ ms.locfileid: "57731980"
 Вы приостановили и возобновили вычисления для хранилища данных. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
-> [Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+> [Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)

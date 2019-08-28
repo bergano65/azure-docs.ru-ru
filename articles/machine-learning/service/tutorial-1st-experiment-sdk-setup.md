@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке среды и рабочей области
+title: Руководство по созданию эксперимента Машинного обучения Настройка
 titleSuffix: Azure Machine Learning service
 description: В этой серии руководств описано, как начать работу с пакетом SDK Машинного обучения Azure для Python, запущенным в записных книжках Jupyter.  В первой части описано, как создать среду сервера рабочих книжек и рабочую область для управления экспериментами и моделями машинного обучения.
 services: machine-learning
@@ -10,14 +10,14 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: 70fee90fb82618a409d2566a3235ad8ca42e1760
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: cc16f3c8ea287e78d7b7b4d9a56f5a2e82c26f01
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934416"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515344"
 ---
-# <a name="tutorial-set-up-environment-and-workspace"></a>Руководство по настройке среды и рабочей области
+# <a name="tutorial-get-started-creating-your-first-ml-experiment"></a>Руководство по началу работы по созданию эксперимента Машинного обучения
 
 В этом учебнике описан пошаговый стандартный процесс начала работы с пакетом SDK Машинного обучения Azure для Python, запущенным в Записных книжках Jupyter. Этот учебник является **первой частью цикла из двух частей**. В этой части рассматривается установка и настройка среды Python, а также создание рабочей области для управления экспериментами и моделями машинного обучения. [**Вторая часть**](tutorial-1st-experiment-sdk-train.md) основана на этом учебнике. В ней показано, как обучить несколько моделей машинного обучения и управлять моделями с использованием портала Azure и пакета SDK.
 

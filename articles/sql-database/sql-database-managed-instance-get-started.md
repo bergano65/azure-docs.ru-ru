@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 05/07/2019
-ms.openlocfilehash: 646a602d7e6c47454f039a5f4f1981a60b56fa56
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: cacd67e26b13df8ef456ac8f1391e4396f5bdd96
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567527"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873875"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание управляемого экземпляра Базы данных SQL Azure
 
@@ -35,11 +35,11 @@ ms.locfileid: "68567527"
 
 Ниже показано, как создать управляемый экземпляр.
 
-1. Выберите **Создать ресурс** в верхнем левом углу окна портала Azure.
-2. Найдите **управляемый экземпляр**, а затем выберите **Управляемый экземпляр SQL Azure**.
+1. На портале Azure в меню слева выберите **Azure SQL**. Если Azure SQL отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*.
+2. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения об управляемом экземпляре базы данных SQL Azure, выберите **Показать сведения** на плитке **Управляемые экземпляры**.
 3. Нажмите кнопку **Создать**.
 
-   ![Создание управляемого экземпляра](./media/sql-database-managed-instance-get-started/managed-instance-create.png)
+   ![Создание управляемого экземпляра](./media/sql-database-managed-instance-get-started/create-managed-instance.png)
 
 4. Укажите запрошенные сведения в форме **управляемого экземпляра SQL**, используя данные, приведенные в таблице ниже.
 

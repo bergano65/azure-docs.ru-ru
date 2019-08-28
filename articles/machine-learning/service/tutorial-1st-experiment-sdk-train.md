@@ -1,5 +1,5 @@
 ---
-title: Руководство по Обучение модели
+title: Руководство по обучению модели Машинного обучения
 titleSuffix: Azure Machine Learning service
 description: В этом руководстве описаны базовые конструктивные шаблоны Службы машинного обучения Azure и показано, как обучить простую модель scikit-learn, созданную на основе набора данных о заболеваемости диабетом.
 services: machine-learning
@@ -10,14 +10,14 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: a3db70925d59f9d0e2793b04824b2e8606719dd4
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 17fee1f01bf883aa2a9845fe4f2817fb806056dd
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934232"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516241"
 ---
-# <a name="tutorial-train-your-first-model"></a>Руководство по Обучение первой модели
+# <a name="tutorial-train-your-first-ml-model"></a>Руководство по обучению модели Машинного обучения
 
 Это руководство представляет собой **вторую часть серии, состоящей из двух частей**. В предыдущем руководстве показано, как [создать рабочую область и выбрать среду разработки](tutorial-1st-experiment-sdk-setup.md). В этом руководстве описаны базовые конструктивные шаблоны Службы машинного обучения Azure и показано, как обучить простую модель scikit-learn, созданную на основе набора данных о заболеваемости диабетом. Изучив это руководство, вы получите практические знания о пакете SDK и сможете перейти к более сложным экспериментам и рабочим процессам.
 

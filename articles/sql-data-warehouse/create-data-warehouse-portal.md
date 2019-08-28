@@ -11,16 +11,16 @@ ms.date: 05/28/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: sqlfreshmay19
-ms.openlocfilehash: 2864acca443e3135ea0023070da95accf97fe2e9
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: b7b7d4cfe699ffdef3a8f736f5656d0b0067453a
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479439"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575194"
 ---
-# <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных
+# <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Создание Хранилища данных SQL Azure на портале Azure и выполнение запроса к нему
 
-Можно быстро создать хранилище данных SQL Azure на портале Azure и отправлять запросы к этому хранилищу данных.
+Можно быстро создать Хранилище данных SQL Azure на портале Azure и отправлять запросы к этому хранилищу данных.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -39,7 +39,7 @@ ms.locfileid: "68479439"
 
 Хранилище данных SQL Azure создается с определенным набором [вычислительных ресурсов](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-logical-servers.md). 
 
-Следуйте приведенным инструкциям по созданию хранилища данных SQL, содержащего пример данных AdventureWorksDW. 
+Следуйте приведенным инструкциям по созданию Хранилища данных SQL, содержащего пример данных AdventureWorksDW. 
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 
@@ -207,4 +207,4 @@ ms.locfileid: "68479439"
 Вы создали хранилище данных, создали правило брандмауэра, подключились к этому хранилищу данных и выполнили несколько запросов. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
-> [Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+> [Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)

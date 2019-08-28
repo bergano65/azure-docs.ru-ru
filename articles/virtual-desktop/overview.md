@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 7c331a4a7395069dc4dc3ab1dcfc89415be0898c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8827aa660d348ef9e42c617067c2837b8697ba6e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854455"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876784"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -81,7 +81,7 @@ ms.locfileid: "68854455"
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:
 
 * [Стандартное присоединение к домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) или [гибридное присоединение к AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). Виртуальные машины не могут быть присоединены к Azure AD.
-* Использование одного из следующих [поддерживаемых образов ОС](#supported-virtual-machine-os-image).
+* Использование одного из следующих [поддерживаемых образов ОС](#supported-virtual-machine-os-images).
 
 >[!NOTE]
 >Если у вас нет подписки Azure, можно [зарегистрироваться и получить бесплатную пробную версию для использования в течение месяца](https://azure.microsoft.com/free/). Если вы используете бесплатную пробную версию Azure, следует использовать доменные службы Azure AD для синхронизации Windows Server Active Directory с Azure Active Directory.
@@ -101,7 +101,7 @@ ms.locfileid: "68854455"
 * [Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-windows-7-and-10)
 * [HTML5](https://docs.microsoft.com/azure/virtual-desktop/connect-web)
 
-## <a name="supported-virtual-machine-os-image"></a>Поддерживаемый образ ОС виртуальной машины
+## <a name="supported-virtual-machine-os-images"></a>Поддерживаемые образы ОС виртуальной машины
 
 Виртуальный рабочий стол Windows поддерживает следующие образы ОС:
 

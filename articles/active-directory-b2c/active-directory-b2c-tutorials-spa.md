@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 6884cb7b10da3996977f2aea7693625bc45c3139
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 8683169e0f8464cdcf52600968f67f3622e61445
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68369580"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509580"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Включение в одностраничном приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -116,7 +116,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 ### <a name="sign-up-using-an-email-address"></a>Регистрация с помощью адреса электронной почты
 
 1. Щелкните **Войти**, чтобы инициировать поток пользователя *B2C_1_signupsignin1*, указанный на предыдущем шаге.
-1. Появляется страница входа в Azure AD B2C со ссылкой для регистрации. Щелкните ссылку **Зарегистрироваться сейчас**, так как у вас нет учетной записи.
+1. Появляется страница входа в Azure AD B2C со ссылкой для регистрации. Щелкните ссылку **Зарегистрироваться сейчас**, так как у вас пока нет учетной записи.
 1. В рамках рабочего процесса регистрации появляется страница для сбора данных и проверки личности пользователя с использованием адреса электронной почты. Рабочий процесс регистрации также собирает пароль пользователя и запрашиваемые атрибуты, определенные в потоке пользователя.
 
     Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.

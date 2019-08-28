@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 02/22/2019
 ms.author: vijetaj
-ms.openlocfilehash: dfb3e9f6390d4c80b8f3c37b87f2659c671fa823
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 488dc7db01bd865268e143b68cdaccd989010912
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68591822"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534939"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
 
@@ -48,6 +48,7 @@ ms.locfileid: "68591822"
   * [Apache Drill.](https://drill.apache.org/) Обработчик SQL-запросов без схемы для Apache Hadoop, NoSQL и облачного хранилища. Он поддерживает интерфейсы ODBC и JDBC для запросов по NoSQL и файлам стандартных средств бизнес-аналитики, таких как PowerBI, Excel и Tableau.
 * Библиотеки R и Python для машинного обучения Azure и других служб Azure
 * Git, включая Git Bash, для работы с репозиториями исходного кода, такими как GitHub и Azure DevOps Services. Git предоставляет несколько популярных служебных программ Linux, которые можно использовать как в Git Bash, так и в командной строке. Сюда входят, например, awk, sed, perl, grep, find, wget и curl.
+* Средства разработки и редакторы (RStudio, PyCharm).
 
 ### <a name="about-data-science"></a>Сведение об обработке и анализе данных
 

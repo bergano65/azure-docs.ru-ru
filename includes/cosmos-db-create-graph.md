@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: a24159a482c55496bb1e6031be951196258a6796
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 837231ca07abcfdbd6ce932bb24bd890d91506a8
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565497"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541537"
 ---
 Теперь вы можете использовать обозреватель данных на портале Azure для создания базы данных графов. 
 
-1. Щелкните **Обозреватель данных** > **Новый граф**.
+1. Выберите **Data Explorer** > **New Graph** (Создать граф).
 
     Справа отобразится область **Добавление графа** (вам может потребоваться прокрутить вправо, чтобы увидеть ее).
 

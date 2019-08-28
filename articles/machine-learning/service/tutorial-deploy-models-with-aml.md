@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: c673fd43abe6808256eb74f435aad48ed8d41539
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: a4395105c66756c4743373707309a88e2afa96b7
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359842"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534813"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -38,10 +38,10 @@ ms.locfileid: "68359842"
 > Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.41.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Перейдите к разделу о [настройке среды разработки](#start), чтобы ознакомиться с шагами записной книжки.  
 
-Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).   Затем запустите записную книжку **tutorials/img-classification-part2-deploy.ipynb**, используя тот же сервер записных книжек.
+Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Затем откройте записную книжку **tutorials/img-classification-part2-deploy.ipynb**, используя тот же сервер записных книжек.
 
+Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать его в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что вы установили `matplotlib` и `scikit-learn` в своей среде. 
 
 ## <a name="start"></a>Настройка среды
 

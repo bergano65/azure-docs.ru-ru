@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 062b815315d7bcdd5d55a86c2447a0b21295e8b6
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: cd80ed3c3db2453a333c87ed706dd358ba248b47
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014095"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516185"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-preview"></a>Руководство по Создание арендатора предварительной версии Виртуального рабочего стола Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "69014095"
    * Учетная запись администратора должна быть рабочей или учебной учетной записью.
 * Подписка Azure.
 
-## <a name="grant-azure-active-directory-permissions-to-the-windows-virtual-desktop-preview-service"></a>Предоставление разрешений Azure Active Directory службе "Виртуальный рабочий стол Windows"
+## <a name="grant-permissions-to-windows-virtual-desktop"></a>Предоставление разрешений Виртуальному рабочему столу Windows
 
 Если вы уже предоставили Виртуальному рабочему столу Windows разрешения для этого экземпляра Azure Active Directory, пропустите этот раздел.
 
@@ -62,7 +62,7 @@ ms.locfileid: "69014095"
 6. Войдите на страницу предоставления согласия для Виртуального рабочего стола Windows с учетными данными глобального администратора, как на шаге 2.
 7. Нажмите кнопку **Принять**.
 
-## <a name="assign-the-tenantcreator-application-role-to-a-user-in-your-azure-active-directory-tenant"></a>Назначение роли приложения TenantCreator пользователю в арендаторе Azure Active Directory
+## <a name="assign-the-tenantcreator-application-role"></a>Назначение роли приложению для TenantCreator
 
 Роль приложения TenantCreator позволяет пользователю Azure Active Directory создавать арендатор Виртуального рабочего стола Windows, связанный с экземпляром Azure Active Directory. Чтобы назначить роль TenantCreator, нужна учетная запись глобального администратора.
 

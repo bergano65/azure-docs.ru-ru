@@ -3,30 +3,31 @@ author: MashaMSFT
 ms.service: sql-database
 ms.subservice: single-database
 ms.topic: include
-ms.date: 06/19/2019
+ms.date: 07/31/2019
 ms.author: mathoma
-ms.openlocfilehash: ffa48d55703347883edf96a0a27ee52d19189976
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: d19e21edd31be461ba30e8985e80c4651bbbb02d
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935016"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69894165"
 ---
-На этом этапе вы создадите группу ресурсов и отдельную базу данных в службе "База данных SQL Azure".
+На этом этапе вы создадите отдельную базу данных в службе "База данных SQL Azure". 
 
 > [!IMPORTANT]
-> Убедитесь, что правила брандмауэра настроены для использования общедоступного IP-адреса компьютера, на котором выполняются действия из этой статьи. 
+> Убедитесь, что правила брандмауэра настроены для использования общедоступного IP-адреса компьютера, на котором выполняются инструкции из этой статьи.
 >
-> Дополнительные сведения см. в статье [sp_set_database_firewall_rule (Azure SQL Database)](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) (sp_set_database_firewall_rule (база данных SQL Azure)). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье [Краткое руководство. Создание правила брандмауэра на уровне сервера для базы данных SQL с помощью портала Azure](../sql-database-server-level-firewall-rule.md).  
+> Дополнительные сведения см. в статье о [создании правила брандмауэра на уровне базы данных](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье о [создании правила брандмауэра на уровне сервера](../sql-database-server-level-firewall-rule.md).  
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Создайте группу ресурсов и отдельную базу данных с помощью портала Azure.
 
-1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
-2. Выберите **Базы данных**, **База данных SQL**, чтобы открыть страницу **Создать базу данных SQL**.
+1. На портале Azure в меню слева выберите **Azure SQL**. Если **Azure SQL** отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*.
+2. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения о различных базах данных, выберите **Показать сведения** на плитке **Базы данных**.
+3. Нажмите кнопку **Создать**.
 
-   ![Создание отдельной базы данных](../media/sql-database-get-started-portal/create-database-1.png)
+   ![Создание отдельной базы данных](../media/sql-database-get-started-portal/create-single-database.png)
 
 3. На вкладке **Основные сведения**  в разделе **Сведения о проекте** введите или выберите следующие значения:
 

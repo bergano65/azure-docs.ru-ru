@@ -8,14 +8,14 @@ ms.custom: seo-java-august2019
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: acb59c75441c729aabaea8b33b5253f4df7c1fc0
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b025315391ceb15fc1ae76f0365898f02882dd0b
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845853"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563443"
 ---
-# <a name="azure-database-for-postgresql---single-server-use-java-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: использование Java для подключения и создания запросов данных
+# <a name="quickstart-use-java-to-connect-to-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Java
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения Java. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования

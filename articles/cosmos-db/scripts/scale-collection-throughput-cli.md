@@ -1,6 +1,6 @@
 ---
-title: Скрипт Azure CLI. Масштабирование пропускной способности контейнера базы данных Azure Cosmos DB | Документация Майкрософт
-description: Пример скрипта Azure CLI. Масштабирование пропускной способности контейнера базы данных Azure Cosmos DB
+title: Скрипт Azure CLI. Масштабирование пропускной способности контейнера Azure Cosmos | Документация Майкрософт
+description: Пример скрипта Azure CLI. Масштабирование пропускной способности контейнера Azure Cosmos
 author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
@@ -8,16 +8,16 @@ ms.topic: sample
 ms.date: 10/26/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 593fade731fac86e7fcda69bfe223716127de9e1
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: a7ae4b015ba476ca1ffdb4b4510334490a6f6fee
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54038455"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616695"
 ---
-# <a name="scale-azure-cosmos-db-container-throughput-using-the-azure-cli"></a>Масштабирование пропускной способности контейнера базы данных Azure Cosmos DB с помощью Azure CLI
+# <a name="scale-azure-cosmos-container-throughput-using-the-azure-cli"></a>Масштабирование пропускной способности контейнера Azure Cosmos с помощью Azure CLI
 
-Этот пример масштабирует пропускную способность для любого типа контейнера базы данных Azure Cosmos DB.  
+Этот пример масштабирует пропускную способность для любого типа контейнера Azure Cosmos.  
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -43,9 +43,9 @@ az group delete --name $resourceGroupName
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az cosmosdb create](/cli/azure/cosmosdb#az-cosmosdb-create) | Создает учетную запись Azure Cosmos DB. |
-| [az cosmosdb database create](/cli/azure/cosmosdb/database#az-cosmosdb-database-create) | Создает базу данных Azure Cosmos DB. |
-| [az cosmosdb collection create](/cli/azure/cosmosdb/collection#az-cosmosdb-collection-create) | Создает контейнер Azure Cosmos DB. |
-| [az cosmosdb collection update](/cli/azure/cosmosdb/collection#az-cosmosdb-collection-update) | Обновляет контейнер Azure Cosmos DB. |
+| [az cosmosdb database create](/cli/azure/cosmosdb/database#az-cosmosdb-database-create) | Создает базу данных Azure Cosmos. |
+| [az cosmosdb collection create](/cli/azure/cosmosdb/collection#az-cosmosdb-collection-create) | Создает контейнер Azure Cosmos. |
+| [az cosmosdb collection update](/cli/azure/cosmosdb/collection#az-cosmosdb-collection-update) | Обновляет контейнер Azure Cosmos. |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

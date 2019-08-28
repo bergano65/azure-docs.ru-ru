@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
-ms.date: 05/11/2018
+ms.date: 07/11/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fb35cc99164cc8da047e8309d63bf7909abf4815
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 50297147d371898c35259bf4be59337eaa716579
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67846034"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877845"
 ---
 # <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
 
@@ -42,16 +42,15 @@ ms.locfileid: "67846034"
 
 1. Войдите на [портал Azure](https://portal.azure.com), используя свои учетные данные.
 
-1. На портале Azure выберите **Создать ресурс**. 
+1. На портале Azure в меню слева выберите **Azure SQL**. Если **Azure SQL** отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*.
+1. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения, щелкните **Показать подробности** на плитке **Виртуальные машины SQL**.
+1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016) в раскрывающемся списке.
 
-1. В поле поиска введите `SQL Server 2017 Developer on Windows Server 2016` и нажмите клавишу ВВОД. Разверните параметр "SQL Server 2017 on Windows Server 2016" (SQL Server 2017 в Windows Server 2016). 
-
-1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016). В этом руководстве используется выпуск Developer, так как это полнофункциональный выпуск SQL Server, предоставляемый бесплатно для тестирования в процессе разработки. Вы оплачиваете только стоимость выполнения виртуальной машины. Полные рекомендации по ценам приведены в разделе [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](virtual-machines-windows-sql-server-pricing-guidance.md).
-
-   ![Окно поиска](./media/quickstart-sql-vm-create-portal/newsearch.png)
-
+   ![Окно поиска](./media/quickstart-sql-vm-create-portal/select-sql-2017-vm-image.png)
 
 1. Нажмите кнопку **Создать**.
+
+   ![Окно поиска](./media/quickstart-sql-vm-create-portal/create-sql-2017-vm-image.png)
 
 ## <a id="configure"></a> Указание основных сведений
 

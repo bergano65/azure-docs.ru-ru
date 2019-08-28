@@ -9,14 +9,16 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: b073a270fabb8657be19b79601fa90f1b9a0351b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 03fd31333a97290a5e8a00029867fc4e73a0cdd7
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "66015235"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69875607"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 В этом руководстве показано, как добавить реальное устройство в приложение Microsoft Azure IoT Central и настроить его.
 
@@ -36,11 +38,8 @@ ms.locfileid: "66015235"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем вы начнете, конструктор должен выполнить инструкции по крайней мере в первом руководстве по созданию приложения Azure IoT Central:
+Прежде чем вы начнете, конструктор должен выполнить инструкции по крайней мере в первом руководстве по созданию приложения Azure IoT Central: [Определение типа нового устройства в приложении в Azure IoT Central](tutorial-define-device-type.md) (обязательно).
 
-* [Определение типа нового устройства в приложении в Azure IoT Central](tutorial-define-device-type.md) (обязательно).
-* [Настройка правил и действий для устройства в Azure IoT Central](tutorial-configure-rules.md).
-* [Настройка представлений оператора Azure IoT Central](tutorial-customize-operator.md) (необязательно).
 
 Установите на компьютере для разработки [Node.js](https://nodejs.org/) версии 8.0.0 или более поздней. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
@@ -244,7 +243,7 @@ ms.locfileid: "66015235"
 
     * наблюдает за отправкой требуемого свойства из Azure IoT Central;
     * находит соответствующую функцию, которую нужно вызвать для обработки изменения параметра;
-    * отправляет подтверждение обратно в приложение Azure IoT Central.
+    * возвращает подтверждение в приложение Azure IoT Central.
 
 1. Чтобы ответить на команду, например **echo**, от приложения Azure IoT Central, добавьте следующее определение:
 

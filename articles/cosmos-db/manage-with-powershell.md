@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 08/05/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 45f5e21e05cf627d418cb66418cf305833a73891
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: e8f943ebaa5dfc06e0bfb04dc1097d6794ec6d05
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965106"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616834"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "68965106"
 
 ### <a id="create-account"></a> Создание учетной записи Azure Cosmos
 
-Эта команда создает учетную запись базы данных Azure Cosmos DB с поддержкой [множества регионов][distribute-data-globally] и [политикой согласованности](consistency-levels.md) с ограниченным устареванием.
+Эта команда создает учетную запись базы данных Azure Cosmos с поддержкой [множества регионов][distribute-data-globally] и [политикой согласованности](consistency-levels.md) с ограниченным устареванием.
 
 ```azurepowershell-interactive
 # Create an Azure Cosmos Account for Core (SQL) API
@@ -112,7 +112,7 @@ Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="update-account"></a> Обновление учетной записи Azure Cosmos
 
-Эта команда позволяет обновить свойства учетной записи базы данных Azure Cosmos DB. В контексте свойств можно выполнить такие изменения:
+Эта команда позволяет обновить свойства учетной записи базы данных Azure Cosmos. В контексте свойств можно выполнить такие изменения:
 
 * добавление или удаление регионов;
 * изменение политики согласованности по умолчанию;
@@ -247,6 +247,7 @@ Select-Object $keys
 
 ```azurepowershell-interactive
 # Change the failover priority for an Azure Cosmos Account
+# Assume existing priority is "West US 2" = 0 and "East US 2" = 1
 
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"

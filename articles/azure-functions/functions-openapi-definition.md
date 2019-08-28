@@ -1,24 +1,23 @@
 ---
-title: Создание определения OpenAPI функции с помощью Управления API
+title: Создание определения OpenAPI для бессерверного API с помощью Управления API
 description: Создание определения OpenAPI, которое позволяет другим приложениям и службам вызывать функцию в Azure.
-services: functions
 keywords: OpenAPI, Swagger, облачные приложения, облачные службы
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 05/08/2019
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: fc724e241849f4519a0e353cb6789d3f83eaf4b9
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 54a4c6eba094231e8e73cdef87b911dfba20f657
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510446"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533546"
 ---
-# <a name="create-an-openapi-definition-for-a-function-with-azure-api-management"></a>Создание определения OpenAPI функции с помощью Управления API
+# <a name="create-an-openapi-definition-for-a-serverless-api-using-azure-api-management"></a>Создание определения OpenAPI для бессерверного API с помощью Управления API
 
 Интерфейсы REST API часто описываются с использованием определения OpenAPI. Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API.
 
@@ -49,9 +48,9 @@ ms.locfileid: "65510446"
 
 1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Последовательно выберите **На портале** > **Продолжить**.
 
-1. Щелкните **Другие шаблоны…**, а затем выберите **Завершить и просмотреть шаблоны**.
+1. Щелкните **Другие шаблоны…** , а затем выберите **Завершить и просмотреть шаблоны**.
 
-1. Выберите триггер HTTP, введите `TurbineRepair` для **имени** функции, выберите `Function` в качестве **[уровня аутентификации](functions-bindings-http-webhook.md#http-auth)**, а затем нажмите кнопку **Создать**.  
+1. Выберите триггер HTTP, введите `TurbineRepair` для **имени** функции, выберите `Function` в качестве **[уровня аутентификации](functions-bindings-http-webhook.md#http-auth)** , а затем нажмите кнопку **Создать**.  
 
     ![Создание функции HTTP для OpenAPI](media/functions-openapi-definition/select-http-trigger-openapi.png)
 

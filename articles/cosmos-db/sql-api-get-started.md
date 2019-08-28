@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 07/23/2019
 ms.author: kirankk
-ms.openlocfilehash: 37b6a9947d3cabe1f566f842e321229efe9d03b6
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: ea3779ce7d4d77e6b0a55b8a00374b701a073b66
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598517"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876442"
 ---
 # <a name="build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -253,9 +253,9 @@ ms.locfileid: "68598517"
 
 Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно создали базу данных Azure Cosmos DB.  
+Поздравляем! Вы успешно создали базу данных Azure Cosmos.  
 
-## <a id="CreateColl"></a>Шаг 5. Создание контейнера
+## <a id="CreateColl"></a>Шаг 5. Создание контейнера
 > [!WARNING]
 > При вызове метода **CreateContainerIfNotExistsAsync** будет создан контейнер с ценовыми требованиями. Дополнительные сведения см. на нашей [странице цен](https://azure.microsoft.com/pricing/details/cosmos-db/).
 >
@@ -283,10 +283,10 @@ ms.locfileid: "68598517"
 
    Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно создали контейнер Azure Cosmos DB.  
+Поздравляем! Вы успешно создали контейнер Azure Cosmos.  
 
 ## <a id="CreateDoc"></a>Шаг 6. Добавление элементов в контейнер
-Элемент можно создать с помощью функции [**CreateItemAsync**](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Container_CreateItemAsync__1___0_System_Nullable_Microsoft_Azure_Cosmos_PartitionKey__Microsoft_Azure_Cosmos_ItemRequestOptions_System_Threading_CancellationToken_) класса **CosmosContainer**. При использовании API SQL элементы проецируются как документы, которые являются содержимым JSON, определенным пользователем (произвольным). Теперь можно вставить элемент в ваш контейнер Azure Cosmos DB.
+Элемент можно создать с помощью функции [**CreateItemAsync**](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet#Microsoft_Azure_Cosmos_Container_CreateItemAsync__1___0_System_Nullable_Microsoft_Azure_Cosmos_PartitionKey__Microsoft_Azure_Cosmos_ItemRequestOptions_System_Threading_CancellationToken_) класса **CosmosContainer**. При использовании API SQL элементы проецируются как документы, которые являются содержимым JSON, определенным пользователем (произвольным). Теперь можно вставить элемент в ваш контейнер Azure Cosmos.
 
 Сначала создадим класс **Family**, который будет представлять объекты, хранящиеся в Azure Cosmos DB в этом примере. Мы также создадим подклассы **Parent**, **Child**, **Pet** и **Address**, используемые в классе **Family**. Обратите внимание, что элемент должен иметь свойство **Id**, сериализуемое как **id** в файле JSON.
 
@@ -320,10 +320,10 @@ ms.locfileid: "68598517"
 
 Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно создали два элемента Azure Cosmos DB.  
+Поздравляем! Вы успешно создали два элемента Azure Cosmos.  
 
-## <a id="Query"></a>Шаг 7. Запрашивание ресурсов Azure Cosmos DB
-Azure Cosmos DB поддерживает [полнофункциональные запросы](sql-api-sql-query.md) к документам JSON, хранящимся в каждой коллекции. В следующем примере кода показано, как выполнить запрос к элементам, вставленным на предыдущем шаге.
+## <a id="Query"></a>Шаг 7. Запрашивание ресурсов Azure Cosmos DB
+Azure Cosmos DB поддерживает полнофункциональные [запросы](sql-api-sql-query.md) к документам JSON, хранящимся в каждом контейнере. В следующем примере кода показано, как выполнить запрос к элементам, вставленным на предыдущем шаге.
 
 1. Скопируйте и вставьте метод **QueryItemsAsync** ниже метода **AddItemsToContainerAsync**.
 
@@ -347,9 +347,9 @@ Azure Cosmos DB поддерживает [полнофункциональные
 
 Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно выполнили запрос контейнера Azure Cosmos DB.
+Поздравляем! Вы успешно выполнили запрос контейнера Azure Cosmos.
 
-## <a id="ReplaceItem"></a>Шаг 8. Замена элемента JSON
+## <a id="ReplaceItem"></a>Шаг 8. Замена элемента JSON
 Теперь мы будем обновлять элемент в Azure Cosmos DB.
 
 1. Скопируйте и вставьте метод **ReplaceFamilyItemAsync** ниже метода **QueryItemsAsync**. Обратите внимание, что мы меняем свойство ``IsRegistered`` семейства и параметр ``Grade`` одного из дочерних элементов.
@@ -375,7 +375,7 @@ Azure Cosmos DB поддерживает [полнофункциональные
 
    Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно заменили элемент Azure Cosmos DB.
+Поздравляем! Вы успешно заменили элемент Azure Cosmos.
 
 ## <a id="DeleteDocument"></a>Шаг 9. Удаление элемента
 Теперь мы будем удалять элемент в Azure Cosmos DB.
@@ -404,9 +404,9 @@ Azure Cosmos DB поддерживает [полнофункциональные
 
 Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно удалили элемент Azure Cosmos DB.
+Поздравляем! Вы успешно удалили элемент Azure Cosmos.
 
-## <a id="DeleteDatabase"></a>Шаг 10. Удаление базы данных
+## <a id="DeleteDatabase"></a>Шаг 10. Удаление базы данных
 Теперь удалим базу данных. Удаление созданной базы данных приведет к удалению базы данных и всех дочерних ресурсов (контейнеров, элементов и любых хранимых процедур, определяемых пользователем функций и триггеров). Мы также удалим экземпляр **CosmosClient**.
 
 1. Скопируйте и вставьте метод **DeleteDatabaseAndCleanupAsync** ниже метода **DeleteFamilyItemAsync**.
@@ -419,9 +419,9 @@ Azure Cosmos DB поддерживает [полнофункциональные
 
 Нажмите клавишу **F5**, чтобы запустить приложение.
 
-Поздравляем! Вы успешно удалили базу данных Azure Cosmos DB.
+Поздравляем! Вы успешно удалили базу данных Azure Cosmos.
 
-## <a id="Run"></a>Шаг 11. Запуск консольного приложения C#
+## <a id="Run"></a>Шаг 11. Запуск консольного приложения C#
 Чтобы создать приложение в режиме отладки, откройте Visual Studio и нажмите клавишу F5.
 
 В окне консоли должны отобразиться все выходные данные вашего приложения. Они должны содержать результаты обработки добавленных запросов. При этом выглядеть они должны примерно так, как показано в примере ниже.

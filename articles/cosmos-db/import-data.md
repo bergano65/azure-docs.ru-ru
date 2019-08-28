@@ -6,16 +6,16 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: dech
-ms.openlocfilehash: 792dca41a052930bf2c853846cdd0c09661c5cd3
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 0981a0810ee64f78443512d794d172a69fb54494
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65954497"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617010"
 ---
 # <a name="use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Использование средства переноса данных для переноса данных в Azure Cosmos DB
 
-В этом руководстве показано, как использовать средство миграции данных Azure Cosmos DB, с помощью которого можно импортировать данные из различных источников в коллекции и таблицы Azure Cosmos DB. Данные можно импортировать из JSON-файлов, CSV-файлов, с сервера SQL, из MongoDB, хранилища таблиц Azure, Amazon DynamoDB и даже из коллекций API SQL для базы данных Azure Cosmos DB. Эти данные переносятся в коллекции и таблицы для использования в Azure Cosmos DB. Средство миграции данных можно также использовать при миграции из односекционной коллекции в многосекционную для API SQL.
+В этом руководстве показано, как использовать средство миграции данных Azure Cosmos DB, с помощью которого можно импортировать данные из разных источников в контейнеры и таблицы Azure Cosmos. Данные можно импортировать из JSON-файлов, CSV-файлов, с сервера SQL, из MongoDB, хранилища таблиц Azure, Amazon DynamoDB и даже из коллекций API SQL для базы данных Azure Cosmos DB. Эти данные переносятся в коллекции и таблицы для использования в Azure Cosmos DB. Средство миграции данных можно также использовать при миграции из односекционной коллекции в многосекционную для API SQL.
 
 Какой программный интерфейс вы собираетесь использовать с помощью Azure Cosmos DB?
 
@@ -39,7 +39,7 @@ ms.locfileid: "65954497"
 
 * **Увеличьте пропускную способность**. Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельной коллекции или набора коллекций. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на портале Azure см. в статьях об [уровнях производительности](performance-levels.md) и [ценовых категориях](https://azure.microsoft.com/pricing/details/cosmos-db/) в Azure Cosmos DB.
 
-* **Создайте ресурсы Azure Cosmos DB**. Перед началом переноса данных заранее создайте коллекции на портале Azure. Для перехода на учетную запись Azure Cosmos DB с пропускной способностью уровня базы данных при создании коллекций Azure Cosmos DB укажите ключ раздела.
+* **Создайте ресурсы Azure Cosmos DB**. Перед началом переноса данных заранее создайте коллекции на портале Azure. Чтобы перейти на учетную запись Azure Cosmos DB с пропускной способностью уровня базы данных, при создании контейнеров Azure Cosmos укажите ключ раздела.
 
 ## <a id="Overviewl"></a>Обзор
 
@@ -52,7 +52,7 @@ ms.locfileid: "65954497"
 * табличное хранилище Azure;
 * Amazon DynamoDB
 * HBase
-* коллекции Azure Cosmos DB.
+* Контейнеры Azure Cosmos
 
 Хотя средство миграции предоставляет графический интерфейс пользователя (dtui.exe), им также можно управлять из командной строки (dt.exe). К слову, существует возможность просмотреть соответствующую команду после настройки импорта в пользовательском интерфейсе. Можно преобразовать исходные данные в табличном формате, например данные SQL Server или CSV-файлы, чтобы создать иерархические связи (вложенные документы) во время импорта. Чтобы узнать о доступных источниках, примерах команд для импорта из каждого источника, возможных целевых объектах и просмотре результатов импорта, читайте дальше.
 
@@ -75,7 +75,7 @@ ms.locfileid: "65954497"
 * [Хранилище таблиц Azure](#AzureTableSource)
 * [Amazon DynamoDB](#DynamoDBSource);
 * [Большой двоичный объект](#BlobImport)
-* [коллекции Azure Cosmos DB](#SQLSource);
+* [Контейнеры Azure Cosmos](#SQLSource)
 * [HBase](#HBaseSource)
 * [массовый импорт Azure Cosmos DB](#SQLBulkTarget);
 * [последовательный импорт записей Azure Cosmos DB](#SQLSeqTarget).
@@ -273,7 +273,7 @@ dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;Account
 Ниже приведен пример команды для импорта данных из Amazon DynamoDB:
 
 ```console
-dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<Azure Cosmos DB Endpoint>;AccountKey=<Azure Cosmos DB Key>;Database=<Azure Cosmos DB Database>;" /t.Collection:catalogCollection /t.CollectionThroughput:2500
+dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<Azure Cosmos DB Endpoint>;AccountKey=<Azure Cosmos DB Key>;Database=<Azure Cosmos database>;" /t.Collection:catalogCollection /t.CollectionThroughput:2500
 ```
 
 ## <a id="BlobImport"></a>Импорт из хранилища больших двоичных объектов Azure
@@ -290,7 +290,7 @@ dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net
 
 ## <a id="SQLSource"></a>Импорт из коллекции API SQL
 
-Параметр импортера источников Azure Cosmos DB позволяет импортировать данные из коллекций Azure Cosmos DB и, если нужно, фильтровать документы с помощью запроса.  
+С помощью импортера источников Azure Cosmos DB можно импортировать данные из контейнеров Azure Cosmos и при необходимости фильтровать документы с помощью запроса.  
 
 ![Снимок экрана: параметры источника Azure Cosmos DB](./media/import-data/documentdbsource.png)
 
@@ -305,7 +305,7 @@ dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net
 > [!NOTE]
 > Используйте команду Verify, чтобы проверить доступ к экземпляру Azure Cosmos DB, указанному в строке подключения.
 
-Чтобы импортировать данные из одной коллекции Azure Cosmos DB, введите ее имя. Чтобы выполнить импорт из нескольких коллекций Azure Cosmos DB, введите регулярное выражение для поиска имени одной коллекции либо нескольких коллекций (например, collection01 | collection02 | collection03). Дополнительно можно указать или предоставить файл запроса для фильтрации и формирования импортируемых данных.
+Чтобы импортировать данные из одного контейнера Azure Cosmos, введите его имя. Чтобы импортировать данные из нескольких контейнеров Azure Cosmos, введите регулярное выражение для поиска имени одной или нескольких коллекций (например, collection01 | collection02 | collection03). Дополнительно можно указать или предоставить файл запроса для фильтрации и формирования импортируемых данных.
 
 > [!NOTE]
 > Так как в поле коллекции можно вводить регулярные выражения, то при импорте данных из одной коллекции, имя которой содержит символы регулярного выражения, перед этими символами нужно использовать escape-символы.
@@ -325,13 +325,13 @@ dt.exe /s:JsonFile /s.Files:"blobs://<account key>@account.blob.core.windows.net
 Ниже приведены некоторые примеры команд для импорта данных из Azure Cosmos DB:
 
 ```console
-#Migrate data from one Azure Cosmos DB collection to another Azure Cosmos DB collections
+#Migrate data from one Azure Cosmos container to another Azure Cosmos containers
 dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /s.Collection:TEColl /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /t.Collection:TESessions /t.CollectionThroughput:2500
 
-#Migrate data from more than one Azure Cosmos DB collection to a single Azure Cosmos DB collection
+#Migrate data from more than one Azure Cosmos container to a single Azure Cosmos container
 dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /s.Collection:comp1|comp2|comp3|comp4 /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /t.Collection:singleCollection /t.CollectionThroughput:2500
 
-#Export an Azure Cosmos DB collection to a JSON file
+#Export an Azure Cosmos container to a JSON file
 dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>;" /s.Collection:StoresSub /t:JsonFile /t.File:StoresExport.json /t.Overwrite /t.CollectionThroughput:2500
 ```
 
@@ -361,7 +361,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 ## <a id="SQLBulkTarget"></a>Импорт в API SQL (массовый импорт)
 
-Средство массового импорта Azure Cosmos DB позволяет импортировать данные из любого доступного источника, используя хранимую процедуру Azure Cosmos DB для повышения эффективности. Средство поддерживает импорт в одну коллекцию Azure Cosmos DB, содержащую один раздел. Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими коллекциями Azure Cosmos DB, каждая из которых содержит один раздел. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md). Кроме того, это средство создает, выполняет и удаляет хранимую процедуру из целевых коллекций.  
+Средство массового импорта Azure Cosmos DB позволяет импортировать данные из любого доступного источника, используя хранимую процедуру Azure Cosmos DB для повышения эффективности. Средство поддерживает импорт в один контейнер Azure Cosmos, содержащий один раздел. Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими контейнерами Azure Cosmos, каждый из которых содержит один раздел. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md). Кроме того, это средство создает, выполняет и удаляет хранимую процедуру из целевых коллекций.  
 
 ![Снимок экрана: параметры массового импорта Azure Cosmos DB](./media/import-data/documentdbbulk.png)
 
@@ -420,7 +420,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 ## <a id="SQLSeqTarget"></a>Импорт в API SQL (последовательный импорт записей)
 
-Средство последовательного импорта записей Azure Cosmos DB позволяет импортировать данные из доступного источника по одной записи. Этот параметр можно выбрать при импорте в существующую коллекцию, для которой достигнута квота хранимых процедур. Средство поддерживает импорт в одну коллекцию Azure Cosmos DB (состоящую из одного или нескольких разделов). Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими коллекциями Azure Cosmos DB, каждая из которых содержит один или несколько разделов. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md).
+Средство последовательного импорта записей Azure Cosmos DB позволяет импортировать данные из доступного источника по одной записи. Этот параметр можно выбрать при импорте в существующую коллекцию, для которой достигнута квота хранимых процедур. Средство поддерживает импорт в один контейнер Azure Cosmos (состоящий из одного или нескольких разделов). Оно также поддерживает сегментированный импорт, когда данные распределяются между несколькими контейнерами Azure Cosmos, каждый из которых содержит один или несколько разделов. Дополнительные сведения о секционировании данных см. в статье о [секционировании и масштабировании в Azure Cosmos DB](partition-data.md).
 
 ![Снимок экрана: параметры последовательного импорта записей Azure Cosmos DB](./media/import-data/documentdbsequential.png)
 
@@ -430,7 +430,7 @@ dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<userna
 
 Строку подключения для учетной записи Azure Cosmos DB можно найти на странице "Ключи" портала Azure, как описано в [статье об управлении учетной записью Azure Cosmos DB](manage-account.md). Имя учетной записи необходимо добавить к строке подключения в следующем формате:
 
-`Database=<Azure Cosmos DB Database>;`
+`Database=<Azure Cosmos database>;`
 
 > [!NOTE]
 > Используйте команду Verify, чтобы проверить доступ к экземпляру Azure Cosmos DB, указанному в строке подключения.

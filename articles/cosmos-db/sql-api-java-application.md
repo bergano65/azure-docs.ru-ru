@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/22/2018
 ms.author: ramkris
-ms.openlocfilehash: dfb4e40aeed797a55a7b2cabad32d33920547c06
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: bd2894c23e206ed5f49fec8aa169d6ed852df4c6
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479494"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616652"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -250,7 +250,7 @@ ms.locfileid: "66479494"
    
             return gson.fromJson(todoItemDocument.toString(), TodoItem.class);
         }
-5. Подобно используемым базам данных Azure Cosmos DB и коллекциям, документы также связываются с помощью самостоятельных ссылок. Следующая вспомогательная функция позволит получать документы с определенным атрибутом (например, id) без использования самостоятельных ссылок:
+5. Подобно используемым базам данных Azure Cosmos и коллекциям, документы также связываются с помощью самостоятельных ссылок. Следующая вспомогательная функция позволит получать документы с определенным атрибутом (например, id) без использования самостоятельных ссылок:
    
         private Document getDocumentById(String id) {
             // Retrieve the document using the DocumentClient.
@@ -742,7 +742,7 @@ ms.locfileid: "66479494"
 8. На экране **Local Destination** (Локальная папка назначения) нажмите кнопку **Browse** (Обзор), выберите папку, в которую можно копировать репозитории, и нажмите кнопку **Next** (Далее).
 9. Проверьте, установлен ли на экране **Select a wizard to use for importing projects** (Выбор мастера для импорта проектов) флажок **Import existing projects** (Импортировать существующие проекты), и нажмите кнопку **Next** (Далее).
 10. На экране **Import Projects** (Импорт проектов) снимите флажок возле проекта **DocumentDB** и нажмите кнопку **Finish** (Готово). В проекте DocumentDB содержится пакет Java SDK для Azure Cosmos DB, который будет добавлен в качестве зависимости.
-11. В **обозревателе проектов** перейдите в расположение azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java и замените значения в полях host и master_key значениями URI и первичного ключа своей учетной записи Azure Cosmos DB, а затем сохраните файл. Дополнительные сведения см. в инструкции [Шаг 1. Создание учетной записи базы данных Azure Cosmos DB](#CreateDB).
+11. В **обозревателе проектов** перейдите в расположение azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java и замените значения в полях host и master_key значениями URI и первичного ключа своей учетной записи Azure Cosmos DB, а затем сохраните файл. Дополнительные сведения см. в инструкции [Шаг 1. Создание учетной записи базы данных Azure Cosmos](#CreateDB).
 12. В **обозревателе проектов** щелкните правой кнопкой элемент **azure-documentdb-java-sample**, а затем выберите **Build Path** (Путь сборки) и щелкните **Configure Build Path** (Настройка пути сборки).
 13. На экране **Java Build Path** (Путь сборки Java) в правой области откройте вкладку **Libraries** (Библиотеки) и щелкните **Add External JAR** (Добавить внешние JAR-файлы). Перейдите в расположение файла lombok.jar, щелкните **Open** (Открыть), а затем нажмите кнопку **ОК**.
 14. Используйте инструкцию из шага 12, то есть снова откройте окно **Properties** (Свойства), а затем в левой области щелкните **Targeted Runtimes** (Целевые среды выполнения).

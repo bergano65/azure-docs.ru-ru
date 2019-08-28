@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: f7170fbb4a258e9d8290ad9d207028087b22003a
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a2420f98bb07686b548dc6641df77dd0fdf7028b
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322316"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562809"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
 
@@ -174,7 +174,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-batch-job"></a>Создание пакетного задания
 
-Пакетное задание — это логическая группа из одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Это приложение использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations) отправляет пул в пакетную службу. Изначально у задания нет задач.
+Пакетное задание — это логическая группа из одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Это приложение использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations) добавляет задание в указанную учетную запись пакетной службы. Изначально у задания нет задач.
 
 ```python
 job = batch.models.JobAddParameter(

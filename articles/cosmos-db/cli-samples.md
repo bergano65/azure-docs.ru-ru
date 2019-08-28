@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 10/26/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: a6348024d4e84c27610f1294f916cca9a851b6b9
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: d7ce5e2c12feeee770de8acfd5df81d340e0a7d0
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034205"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615573"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db"></a>Примеры Azure CLI для Azure Cosmos DB
 
@@ -28,7 +28,7 @@ ms.locfileid: "54034205"
 | [Azure Cosmos DB — создание учетной записи API таблиц с помощью Azure CLI](scripts/create-table-database-account-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Создание отдельной учетной записи, базы данных и таблицы Azure Cosmos DB. |
 |**Масштабирование Azure Cosmos DB**||
 | [Масштабирование пропускной способности контейнера](scripts/scale-collection-throughput-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Изменение подготовленной пропускной способности контейнера.|
-| [Репликация учетной записи базы данных Azure Cosmos DB в нескольких регионах и настройка приоритетов отработки отказа](scripts/scale-multiregion-cli.md?toc=%2fcli%2fazure%2ftoc.json)|Глобальная репликация данные учетной записи в нескольких регионах с указанным приоритетом отработки отказа.|
+| [Репликация учетной записи базы данных Azure Cosmos в нескольких регионах и настройка приоритетов отработки отказа](scripts/scale-multiregion-cli.md?toc=%2fcli%2fazure%2ftoc.json)|Глобальная репликация данные учетной записи в нескольких регионах с указанным приоритетом отработки отказа.|
 |**Безопасность базы данных Azure Cosmos DB**||
 | [Получение ключей учетной записи](scripts/secure-get-account-key-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Возвращение первичного и вторичного главных ключей для записи и первичного и вторичного ключей только для чтения для учетной записи.|
 | [Получение строки подключения базы данных Azure Cosmos DB для MongoDB с помощью Azure CLI](scripts/secure-mongo-connection-string-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Соединение строки подключения и приложения MongoDB к вашей учетной записи Azure Cosmos DB.|
@@ -37,5 +37,5 @@ ms.locfileid: "54034205"
 |**Высокий уровень доступности, аварийное восстановление, архивация и восстановление**||
 | [Настройка политики отработки](scripts/ha-failover-policy-cli.md?toc=%2fcli%2fazure%2ftoc.json)|Настройка приоритета отработки отказа для каждого региона, в котором реплицируется учетная запись.|
 |**Подключение Azure Cosmos DB к ресурсам**||
-| [Подключение веб-приложения к Azure Cosmos DB](../app-service/scripts/cli-connect-to-documentdb.md?toc=%2fcli%2fazure%2ftoc.json)|Создание и подключение базы данных Azure Cosmos DB и веб-приложения Azure.|
+| [Подключение веб-приложения к Azure Cosmos DB](../app-service/scripts/cli-connect-to-documentdb.md?toc=%2fcli%2fazure%2ftoc.json)|Создание и подключение базы данных Azure Cosmos и веб-приложения Azure.|
 |||

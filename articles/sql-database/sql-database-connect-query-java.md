@@ -10,15 +10,15 @@ author: ajlam
 ms.author: andrela
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 273f8ad080b80a58b63e70ab2aa311c9c498d491
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.custom: seo-java-july2019. seo-java-august2019
+ms.openlocfilehash: 8940e13dcc6d6287984ba1cc7c7510768b4e232f
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640081"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624079"
 ---
-# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-java-to-connect-to-and-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для подключения и создания запросов к базе данных SQL Azure
 
 В этой статье показано, как подключаться к базе данных SQL Azure с помощью [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server). Затем можно запросить данные с использованием инструкций T-SQL.
 
@@ -55,7 +55,7 @@ ms.locfileid: "68640081"
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
+2. Выберите **Базы данных SQL** или перейдите на страницу **Управляемые экземпляры SQL**.
 
 3. На странице **Обзор** просмотрите полное имя сервера рядом с полем **Имя сервера** для отдельной базы данных или полное имя сервера рядом с полем **Узел** для управляемого экземпляра. Чтобы скопировать имя сервера или имя узла, наведите на него указатель мыши и щелкните значок **копирования**. 
 

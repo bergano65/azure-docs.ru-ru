@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: f465ac91936b766d2c19ea8efd67b3acc8df6d75
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 20a9ca8e28961a6dc49947a22f745424961b4a3f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243929"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615269"
 ---
 # <a name="how-to-write-stored-procedures-and-triggers-in-azure-cosmos-db-by-using-the-javascript-query-api"></a>Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript
 
@@ -19,7 +19,7 @@ Azure Cosmos DB позволяет создавать оптимизирован
 
 ## <a id="stored-procedures"></a>Создание хранимой процедуры с использованием API запросов JavaScript
 
-Ниже приведен пример кода, где хранимая процедура создается с использованием API запросов JavaScript. Хранимая процедура вставляет заданный входным параметром элемент Azure Cosmos DB, после чего обновляет документ метаданных с помощью метода `__.filter()`, а также на основе свойств размера входного элемента minSize, maxSize и totalSize.
+Ниже приведен пример кода, где хранимая процедура создается с использованием API запросов JavaScript. Хранимая процедура вставляет заданный входным параметром элемент Azure Cosmos, после чего обновляет документ метаданных с помощью метода `__.filter()`, а также на основе свойств размера входного элемента minSize, maxSize и totalSize.
 
 > [!NOTE]
 > `__` (двойное подчеркивание) является псевдонимом для `getContext().getCollection()` при использовании API запросов JavaScript.

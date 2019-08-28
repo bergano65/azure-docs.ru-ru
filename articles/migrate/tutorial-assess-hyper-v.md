@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/11/2019
+ms.date: 08/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 60e1db913336cc9f9e355c2e8f8466854de20389
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: b93d9ee65850749e79714b632584f1977ca88c81
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828328"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639985"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -128,13 +128,17 @@ ms.locfileid: "68828328"
 
 Импортируйте скачанный файл и создайте виртуальную машину.
 
-1. Извлеките сжатый VHD-файл в папку на узле Hyper-V, на котором будет размещена виртуальная машина устройства. Извлекаются три папки.
+1. После скачивания сжатого VHD-файла на узел Hyper-V, на котором будет размещена виртуальная машина устройства, разархивируйте ZIP-файл.
+    - В указанном расположении файл буде распакован в папку с именем **AzureMigrateAppliance_VersionNumber**.
+    - Эта папка содержит вложенную папку, которая также называется **AzureMigrateAppliance_VersionNumber**.
+    - В этой вложенной папке находятся три вложенные папки — **Snapshots**, **Virtual Hard Disks** и **Virtual Machines**.
+
 2. Откройте диспетчер Hyper-V. В меню **Actions** (Действия) щелкните команду **Import Virtual Machine** (Импорт виртуальной машины).
 
     ![Развертывание VHD](./media/tutorial-assess-hyper-v/deploy-vhd.png)
 
 2. В мастере импорта виртуальных машин в разделе **Before you begin** (Перед началом работы) нажмите кнопку **Next** (Далее).
-3. В поле **Locate Folder** (Определить папку) укажите папку, содержащую извлеченный VHD. Нажмите кнопку **Далее**.
+3. В окне **выбора папки** выберите папку **Virtual Machines**. Нажмите кнопку **Далее**.
 1. В меню **Select Virtual Machine** (Выбор виртуальной машины) нажмите кнопку **Next** (Далее).
 2. В меню **Choose Import Type** (Выбор типа импорта) щелкните **Copy the virtual machine (create a new unique ID)** (Копировать виртуальную машину (создать уникальный идентификатор)). Нажмите кнопку **Далее**.
 3. В меню **Choose Destination** (Выбор назначения) оставьте параметр по умолчанию. Щелкните **Далее**.

@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
-ms.openlocfilehash: 3c3be507fd544ec86790f820830c2275e7703564
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 193aec8de2a6ee34da666a013dcb0d49d85c08b0
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68641083"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69574854"
 ---
 # <a name="quickstart-scale-compute-in-azure-sql-data-warehouse-in-powershell"></a>Краткое руководство. Масштабирование вычислительных ресурсов в Хранилище данных SQL Azure в PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "68641083"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-В этом кратком руководстве предполагается, что вы уже создали хранилище данных SQL, которое можно масштабировать. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
+В этом кратком руководстве предполагается, что вы уже создали Хранилище данных SQL, которое можно масштабировать. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -123,4 +123,4 @@ $database | Select-Object DatabaseName,Status
 Вы узнали, как масштабировать вычислительные ресурсы для хранилища данных. Чтобы узнать больше о хранилище данных SQL Azure, перейдите к руководству по загрузке данных.
 
 > [!div class="nextstepaction"]
->[Загрузка данных в хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
+>[Загрузка данных в Хранилище данных SQL](load-data-from-azure-blob-storage-using-polybase.md)
