@@ -10,14 +10,13 @@ metadata:
   manager: jeconnoc
   ms.service: container-service
   ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 05-06-2019
   ms.author: twhitney
 abstract:
   description: 'Azure Red Hat OpenShift предоставляет однотенантные высокодоступные кластеры Kubernetes в Azure, поддерживаемые в решениях Red Hat и Microsoft.'
 sections:
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создавать и администрировать кластеры Azure Red Hat OpenShift.'
@@ -33,8 +32,8 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Команда
-            html: <p><a href="/cli/azure/openshift">Интерфейс командной строки Azure</a></p>
+          - title: Командная строка
+            html: <p><a href="/cli/azure/openshift">Azure CLI</a></p>
           - title: REST
             html: <p><a href="/rest/api/openshift">REST API</a></p>
           - title: Документация по Red Hat

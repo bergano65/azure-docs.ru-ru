@@ -238,7 +238,7 @@
     - name: Платформа как услуга
       items:
         - name: Документация по платформе как услуге
-          href: sql-database-paas.yml
+          href: sql-database-paas-index.yml
         - name: Непрерывность бизнес-процессов
           href: sql-database-business-continuity.md
         - name: Высокий уровень доступности

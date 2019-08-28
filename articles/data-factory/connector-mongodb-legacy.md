@@ -184,8 +184,8 @@ ms.locfileid: "68967485"
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |Строковое |
-| Строковое |Строковое |
+| ObjectID |String |
+| String |String |
 | UUID |GUID |
 | Object |Преобразованный в плоские столбцы с "_" в качестве вложенного разделителя |
 
