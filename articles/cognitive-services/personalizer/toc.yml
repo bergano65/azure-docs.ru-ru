@@ -72,8 +72,8 @@
       items:
         - name: .NET
           items:
-            - name: Справочник по пакету SDK для .NET
-              href: 'https://go.microsoft.com/fwlink/?linkid=2092353'
+            - name: Справочные материалы
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/personalizer?view=azure-dotnet'
             - name: Пакет NuGet
               href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
         - name: Go
