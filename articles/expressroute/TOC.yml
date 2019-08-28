@@ -44,6 +44,8 @@
       href: expressroute-erdirect-about.md
     - name: Общие сведения об ExpressRoute Global Reach
       href: expressroute-global-reach.md
+    - name: Подключение Azure к общедоступному облаку
+      href: expressroute-connect-azure-to-public-cloud.md
     - name: Взаимодействие компонентов при подключении к серверной части
       items:
         - name: Вводная часть и сведения о настройке теста

@@ -28,10 +28,7 @@
               href: tutorial-deploy-models-with-aml.md
         - name: Регрессия (данные о такси Нью-Йорка)
           items:
-            - name: 1. Подготовка данных для построения модели
-              displayName: data prep
-              href: tutorial-data-prep.md
-            - name: 2. Автоматическое обучение модели машинного обучения
+            - name: Автоматическое обучение модели машинного обучения
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
     - name: Графический интерфейс
@@ -260,7 +257,7 @@
     - name: Создание рабочих процессов для многоразового использования
       displayName: pipelines
       items:
-        - name: Конвейеры Машинного обучения
+        - name: Создание конвейеров машинного обучения в Python
           href: how-to-create-your-first-pipeline.md
         - name: Azure Pipelines для CI/CD
           displayName: 'continuous, integration, delivery'

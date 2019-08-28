@@ -33,18 +33,16 @@
       href: security-center-data-security.md
     - name: Использование рекомендаций для повышения уровня безопасности
       href: security-center-using-recommendations.md
-    - name: Обнаружение угроз
-      href: security-center-detection-capabilities.md
-    - name: Управление оповещениями системы безопасности
-      href: security-center-managing-and-responding-alerts.md
-    - name: Инциденты безопасности
-      href: security-center-incident.md
     - name: Управление в нескольких клиентах
       href: security-center-cross-tenant-management.md
-    - name: Оповещения об обнаружении угроз
+    - name: Инциденты и оповещения об обнаружении угроз
       items:
         - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
+        - name: Управление оповещениями системы безопасности
+          href: security-center-managing-and-responding-alerts.md
+        - name: Управление инцидентами безопасности
+          href: security-center-incident.md
         - name: Обнаружение угроз для виртуальных машин и серверов
           href: security-center-alerts-iaas.md
         - name: Обнаружение угроз для облачных собственных вычислений

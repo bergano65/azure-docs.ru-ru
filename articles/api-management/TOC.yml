@@ -207,6 +207,8 @@
           href: api-management-configuration-repository-git.md
         - name: Использование управления доступом на основе ролей
           href: api-management-role-based-access-control.md
+        - name: Перенос экземпляров службы "Управление API"
+          href: api-management-howto-migrate.md
         - name: Использование управляемых удостоверений для ресурсов Azure
           href: api-management-howto-use-managed-service-identity.md
         - name: Интеграция с Service Fabric

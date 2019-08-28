@@ -1,0 +1,47 @@
+### YamlMime:Landing
+title: Документация по возможностям поддержки Azure
+summary: Объяснение того, как клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
+metadata:
+  title: Документация по возможностям поддержки Azure
+  description: Объяснение того, как клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
+  services: azure supportability
+  ms.service: azure-supportability
+  ms.subservice: 
+  ms.topic: landing-page
+  ms.collection: 
+  author: arob98
+  ms.author: angrobe
+  ms.date: 08/24/2019
+  ms.openlocfilehash: 4ee8de0f591618be7eb3a08c04f5820faeebaf4a
+  ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/27/2019
+  ms.locfileid: "70052143"
+landingContent:
+- title: Создание запроса на обслуживание
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание запроса на поддержку Azure
+      url: how-to-create-azure-support-request.md
+  - linkListType: get-started
+    links:
+    - text: Создание запроса на поддержку на портале Azure
+      url: https://portal.azure.com/#create/Microsoft.Support
+- title: Запросы на увеличение квоты
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Увеличение лимита виртуальных ЦП для серии виртуальных машин
+      url: per-vm-quota-requests.md
+    - text: Общее региональное увеличение лимита виртуальных ЦП
+      url: regional-quota-requests.md
+    - text: Увеличение лимита сети
+      url: networking-quota-requests.md
+- title: Устранение неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Регион или номер SKU недоступен
+      url: sku-series-unavailable.md

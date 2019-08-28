@@ -11,6 +11,9 @@
     - name: Создание схемы с помощью портала
       displayName: 'publish, assign, track, unassign, delete'
       href: create-blueprint-portal.md
+    - name: Создание схемы с помощью PowerShell
+      displayName: 'publish, assign, track, unassign, delete'
+      href: create-blueprint-powershell.md
     - name: Создание схемы с помощью REST API
       displayName: 'publish, assign, track, unassign, delete'
       href: create-blueprint-rest-api.md
