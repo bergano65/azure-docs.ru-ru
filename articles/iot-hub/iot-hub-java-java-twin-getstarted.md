@@ -8,13 +8,13 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
-ms.date: 07/04/2017
-ms.openlocfilehash: 6d2d0540786f1aa4bec35cf4bec26212cb7df7ae
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.date: 08/26/2019
+ms.openlocfilehash: 91bdaf93c9dc9b051fce6e052ccd5bd2f5682eaa
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404213"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061974"
 ---
 # <a name="get-started-with-device-twins-java"></a>Начало работы с двойниками устройств (Java)
 
@@ -27,6 +27,8 @@ ms.locfileid: "68404213"
 
 > [!NOTE]
 > Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -54,23 +56,23 @@ ms.locfileid: "68404213"
 
 В этом разделе вы создадите приложение Java, которое добавляет метаданные расположения в виде тега в двойник устройства в Центре Интернета вещей, связанный с **myDeviceId**. Сначала приложение запрашивает в Центре Интернета вещей устройства, расположенные в США, а затем устройства, подключенные к сотовой сети.
 
-1. На компьютере разработки создайте пустую папку с названием `iot-java-twin-getstarted`.
+1. На компьютере разработки создайте пустую папку с именем **IOT-Java-двойника-** OnStarted.
 
-2. В папке `iot-java-twin-getstarted` создайте проект Maven **add-tags-query**, выполнив следующую команду в командной строке. Обратите внимание, что это одна длинная команда.
+2. В папке **IOT-Java-двойника-** Maven создайте проект с именем **Add-Tags-Query** , выполнив в командной строке следующую команду:
 
-    ```
+    ```cmd/sh
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=add-tags-query -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-3. В командной строке перейдите к папке `add-tags-query`.
+3. В командной строке перейдите в папку **Добавить-теги-запрос** .
 
-4. Откройте в текстовом редакторе файл `pom.xml` из папки `add-tags-query` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
+4. С помощью текстового редактора откройте файл **POM. XML** в папке **Add-tagss-Query** и добавьте следующую зависимость в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет **iot-service-client** для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
       <groupId>com.microsoft.azure.sdk.iot</groupId>
       <artifactId>iot-service-client</artifactId>
-      <version>1.7.23</version>
+      <version>1.17.1</version>
       <type>jar</type>
     </dependency>
     ```
@@ -78,7 +80,7 @@ ms.locfileid: "68404213"
     > [!NOTE]
     > Наличие последней версии пакета **iot-service-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация указывает Maven использовать Java 1,8 для сборки приложения.
 
     ```xml
     <build>
@@ -96,9 +98,9 @@ ms.locfileid: "68404213"
     </build>
     ```
 
-6. Сохраните и закройте файл `pom.xml`.
+6. Сохраните и закройте файл **pom.xml**.
 
-7. Откройте в текстовом редакторе файл `add-tags-query\src\main\java\com\mycompany\app\App.java`.
+7. Откройте файл **адд-ТАГС-куери\срк\маин\жава\ком\микомпани\апп\апп.Жава** в текстовом редакторе.
 
 8. Добавьте в файл следующие инструкции **import** .
 
@@ -111,7 +113,7 @@ ms.locfileid: "68404213"
     import java.util.Set;
     ```
 
-9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированной ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированной в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string).
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -127,7 +129,7 @@ ms.locfileid: "68404213"
     public static void main( String[] args ) throws IOException
     ```
 
-11. Добавьте следующий код в метод **main** для создания объектов **DeviceTwin** и **DeviceTwinDevice**. Объект **DeviceTwin** обрабатывает взаимодействие с вашим Центром Интернета вещей. Объект **DeviceTwinDevice** представляет двойник устройства, его свойства и теги:
+11. Замените код в методе **Main** следующим кодом, чтобы создать объекты **DeviceTwin** и **DeviceTwinDevice** . Объект **DeviceTwin** обрабатывает взаимодействие с вашим Центром Интернета вещей. Объект **DeviceTwinDevice** представляет двойник устройства, его свойства и теги:
 
     ```java
     // Get the DeviceTwin and DeviceTwinDevice objects
@@ -176,7 +178,7 @@ ms.locfileid: "68404213"
     System.out.println(device);
     ```
 
-14. Чтобы отправить запрос к двойникам устройств в Центре Интернета вещей, добавьте следующий код в блок `try` после кода, добавленного на предыдущем шаге. Код выполняет два запроса. Каждый запрос возвращает не более 100 устройств:
+14. Чтобы отправить запрос к двойникам устройств в Центре Интернета вещей, добавьте следующий код в блок `try` после кода, добавленного на предыдущем шаге. Код выполняет два запроса. Каждый запрос возвращает не более 100 устройств.
 
     ```java
     // Query the device twins in IoT Hub
@@ -205,11 +207,11 @@ ms.locfileid: "68404213"
     }
     ```
 
-15. Сохраните и закройте файл `add-tags-query\src\main\java\com\mycompany\app\App.java`.
+15. Сохранение и закрытие файла **адд-ТАГС-куери\срк\маин\жава\ком\микомпани\апп\апп.Жава**
 
-16. Создайте приложение **add-tags-query** и исправьте все ошибки. В командной строке перейдите к папке `add-tags-query` и выполните следующую команду:
+16. Создайте приложение **add-tags-query** и исправьте все ошибки. В командной строке перейдите к папке **Add-tagss-Query** и выполните следующую команду:
 
-    ```
+    ```cmd/sh
     mvn clean package -DskipTests
     ```
 
@@ -217,28 +219,38 @@ ms.locfileid: "68404213"
 
 В этом разделе вы создадите консольное приложение Java, которое задает значение сообщаемого свойства, отправляемое в Центр Интернета вещей.
 
-1. В папке `iot-java-twin-getstarted` создайте проект Maven с именем **simulated-device**, выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
+1. В папке **IOT-Java-двойника-** Maven создайте проект с именем **имитация устройства** , выполнив в командной строке следующую команду:
 
-    ```
+    ```cmd/sh
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-2. В командной строке перейдите к папке `simulated-device`.
+2. В командной строке перейдите в папку имитация **устройства** .
 
-3. Откройте в текстовом редакторе файл `pom.xml` из папки `simulated-device` и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
+3. В текстовом редакторе откройте файл **POM. XML** в папке **имитации устройства** и добавьте следующие зависимости в узел **зависимости** . Эта зависимость позволяет использовать пакет **IOT-Device-Client** в приложении для взаимодействия с центром Интернета вещей.
 
     ```xml
     <dependency>
       <groupId>com.microsoft.azure.sdk.iot</groupId>
       <artifactId>iot-device-client</artifactId>
-      <version>1.14.2</version>
+      <version>1.17.5</version>
     </dependency>
     ```
 
     > [!NOTE]
     > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-4. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
+4. Добавьте следующую зависимость в узел **зависимости** . Эта зависимость настраивает NOP для фасадной ведения журнала Apache [SLF4J](https://www.slf4j.org/) , которое используется пакетом SDK для клиента устройства для реализации ведения журнала. Эта конфигурация является необязательной, но если ее опустить, при запуске приложения может появиться предупреждение в консоли. Дополнительные сведения о ведении журналов в клиентском пакете SDK для устройств см. в разделе [ведение журнала](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/readme.md#logging) в *ПРИМЕРАХ для пакета SDK для устройств Azure IOT для Java* .
+
+    ```xml
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-nop</artifactId>
+      <version>1.7.28</version>
+    </dependency>
+    ```
+
+5. Добавьте следующий узел, **build**, после узла **dependencies**. Эта конфигурация дает указание Maven использовать Java версии 1.8 для создания приложения:
 
     ```xml
     <build>
@@ -256,11 +268,11 @@ ms.locfileid: "68404213"
     </build>
     ```
 
-5. Сохраните и закройте файл `pom.xml`.
+6. Сохраните и закройте файл **pom.xml**.
 
-6. Откройте в текстовом редакторе файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+7. Откройте файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** в текстовом редакторе.
 
-7. Добавьте в файл следующие инструкции **import** .
+8. Добавьте в файл следующие инструкции **import** .
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;
@@ -271,17 +283,17 @@ ms.locfileid: "68404213"
     import java.util.Scanner;
     ```
 
-8. Добавьте в класс **App** . Замените значение `{youriothubname}` именем Центра Интернета вещей, а `{yourdevicekey}` — значением ключа устройства, сформированным при работе с разделом *Создание удостоверения устройства*:
+9. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, скопированной в раздел [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
 
     ```java
-    private static String connString = "HostName={youriothubname}.azure-devices.net;DeviceId=myDeviceID;SharedAccessKey={yourdevicekey}";
+    private static String connString = "{yourdeviceconnectionstring}";
     private static IotHubClientProtocol protocol = IotHubClientProtocol.MQTT;
     private static String deviceId = "myDeviceId";
     ```
 
-    При создании экземпляра объекта **DeviceClient** в этом примере приложения используется переменная **protocol**. 
+    При создании экземпляра объекта **DeviceClient** в этом примере приложения используется переменная **protocol**.
 
-1. Чтобы распечатать сведения об обновлениях двойников, добавьте в класс **App** следующий метод:
+10. Чтобы распечатать сведения об обновлениях двойников, добавьте в класс **App** следующий метод:
 
     ```java
     protected static class DeviceTwinStatusCallBack implements IotHubEventCallback {
@@ -292,24 +304,26 @@ ms.locfileid: "68404213"
       }
     ```
 
-9. Добавьте в конец метода **main** следующий код, чтобы:
+11. Замените код в методе **Main** следующим кодом:
+
     * Создать клиент устройства для взаимодействия с Центром Интернета вещей.
+
     * Создать объект **Device** для хранения свойств двойника устройства.
 
-      ```java
-      DeviceClient client = new DeviceClient(connString, protocol);
+    ```java
+    DeviceClient client = new DeviceClient(connString, protocol);
 
-      // Create a Device object to store the device twin properties
-      Device dataCollector = new Device() {
+    // Create a Device object to store the device twin properties
+    Device dataCollector = new Device() {
       // Print details when a property value changes
       @Override
       public void PropertyCall(String propertyKey, Object propertyValue, Object context) {
         System.out.println(propertyKey + " changed to " + propertyValue);
       }
-      };
-      ```
+    };
+    ```
 
-10. Добавьте следующий код в метод **main**, чтобы создать сообщаемое свойство **connectivityType** и отправить его в Центр Интернета вещей:
+12. Добавьте следующий код в метод **main**, чтобы создать сообщаемое свойство **connectivityType** и отправить его в Центр Интернета вещей:
 
     ```java
     try {
@@ -329,7 +343,7 @@ ms.locfileid: "68404213"
     }
     ```
 
-11. Добавьте в конец метода **main** следующий код: Во время ожидания нажатия клавиши **ВВОД** Центр Интернета вещей сообщает состояние операций двойника устройства:
+13. Добавьте в конец метода **main** следующий код: Ожидание клавиши **Ввод** позволяет центру Интернета вещей сообщить о состоянии операций двойникаа устройства.
 
     ```java
     System.out.println("Press any key to exit...");
@@ -341,17 +355,17 @@ ms.locfileid: "68404213"
     client.close();
     ```
 
-1. Измените подпись метода **main** , чтобы включить исключения, указанные ниже.
+14. Измените подпись метода **main** , чтобы включить исключения, указанные ниже.
 
      ```java
      public static void main(String[] args) throws URISyntaxException, IOException
      ```
 
-1. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+15. Сохраните и закройте файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** .
 
-13. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке `simulated-device` и выполните следующую команду:
+16. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку имитируемed **-Device** и выполните следующую команду:
 
-    ```
+    ```cmd/sh
     mvn clean package -DskipTests
     ```
 
@@ -359,9 +373,9 @@ ms.locfileid: "68404213"
 
 Теперь все готово к запуску консоли приложений.
 
-1. В командной строке в папке `add-tags-query` выполните следующую команду, чтобы запустить приложение службы **add-tags-query**:
+1. В командной строке в папке **Add-tagss-Query** выполните следующую команду, чтобы запустить приложение службы **Add-tagss-Query** .
 
-    ```
+    ```cmd/sh
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
@@ -369,23 +383,23 @@ ms.locfileid: "68404213"
 
     Вы увидите теги **plant** и **region**, добавленные в двойник устройства. Первый запрос возвращает устройство, а второй — нет.
 
-2. В командной строке в папке `simulated-device` выполните следующую команду, чтобы добавить в двойник устройства сообщаемое свойство **connectivityType**:
+2. В командной строке в папке **имитации устройства** выполните следующую команду, чтобы добавить свойство **connectivityType** , сообщаемое в двойника устройства:
 
-    ```
+    ```cmd/sh
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
     ![Клиент устройства добавляет сообщаемое свойство **connectivityType**](./media/iot-hub-java-java-twin-getstarted/device-app-1.png)
 
-3. В командной строке в папке `add-tags-query` выполните следующую команду, чтобы повторно запустить приложение службы **add-tags-query**:
+3. В командной строке в папке **Add-tagss-Query** выполните следующую команду, чтобы запустить приложение службы **Add-tagss-Query** во второй раз:
 
-    ```
+    ```cmd/sh
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
     ![Обновление значений тегов и выполнение запросов устройств с помощью приложения службы Центра Интернета вещей](./media/iot-hub-java-java-twin-getstarted/service-app-2.png)
 
-    Теперь устройство отправило свойство **connectivityType** в Центр Интернета вещей, и второй запрос возвращает устройство.
+    Теперь, когда устройство отправило свойство **connectivityType** в центр Интернета вещей, второй запрос возвращает ваше устройство.
 
 ## <a name="next-steps"></a>Следующие шаги
 

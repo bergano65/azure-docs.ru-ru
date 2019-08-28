@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/10/2019
 ms.author: juergent
-ms.openlocfilehash: c649b93284a48df705d389f4de728d83f793af04
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: bed56f169e2a985b23b3bca96c32f7caba596432
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036639"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061505"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -517,15 +517,19 @@ j2ee/dbhost = db-virt-hostname
 Используйте средство настройки J2EE для проверки или обновления URL-адреса JDBC. Поскольку средство настройки J2EE является графическим средством, необходимо установить X Server:
  
 1. Войдите на основной сервер приложений экземпляра J2EE и выполните:
-     <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>  
-1.В левом фрейме выберите **хранилище безопасности**.
-1.В правом фрейме выберите ключевые JDBC/Pool/\<SAPSID>/УРЛ.
-1.Измените имя узла в URL-адресе JDBC на имя виртуального узла.
-     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>  
-1.Нажмите кнопку **Добавить**.
-1.Чтобы сохранить изменения, щелкните значок диска в левом верхнем углу.
-1.Закройте средство настройки.
-1.Перезапустите экземпляр Java.
+    
+    <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>  
+    
+1. В левом фрейме выберите **хранилище безопасности**.
+1. В правой части окна выберите ключ `jdbc/pool/\<SAPSID>/url`.
+1. Измените имя узла в URL-адресе JDBC на имя виртуального узла.
+    
+    <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>  
+    
+1. Выберите **Добавить**.
+1. Чтобы сохранить изменения, щелкните значок диска в левом верхнем углу.
+1. Закройте средство настройки.
+1. Перезапустите экземпляр Java.
 
 ## <a name="configure-log-archiving-for-hadr-setup"></a>Настройка архивирования журналов для установки HADR
 Чтобы настроить архивацию журналов DB2 для программы установки HADR, рекомендуется настроить базу данных как в основной, так и в резервной, чтобы иметь возможность автоматического получения журналов из всех расположений архива журналов. Как основная, так и резервная база данных должна иметь возможность получения файлов архивов журналов из всех расположений архивов журналов, в которые один из экземпляров базы данных может архивировать файлы журналов. 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/27/2019
 ms.author: jingwang
-ms.openlocfilehash: 2010799dd590808a2c5be7d9e2330bd60e2c7913
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 79a960b106cc9de4116e8e59b2fa17f48c896221
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842495"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061456"
 ---
 # <a name="copy-data-from-and-to-microsoft-access-data-stores-using-azure-data-factory"></a>Копирование данных из хранилищ данных Microsoft Access и обратно с помощью фабрики данных Azure
 
@@ -27,12 +27,15 @@ ms.locfileid: "68842495"
 
 Данные из источника Microsoft Access можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель Microsoft Access, необходимо выполнить следующие действия:
 
 - Настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
 - Установите драйвер Microsoft Access ODBC для хранилища данных на Integration Runtime компьютере.
+
+>[!NOTE]
+>Версия драйвера ODBC для Microsoft Access 2016 не работает с этим соединителем. Используйте вместо него драйвер версии 2013 или 2010.
 
 ## <a name="getting-started"></a>Приступая к работе
 

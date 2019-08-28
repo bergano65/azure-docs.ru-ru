@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 08/25/2017
+ms.date: 08/26/2019
 ms.author: elioda
-ms.openlocfilehash: edbeffebd1f4ee41d8a2bdaddcdc7d84cbe1affe
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 02ff65b27e03db9e9a48910e23d8ebf46de905a5
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780928"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060731"
 ---
 # <a name="get-started-with-device-twins-nodejs"></a>Начало работы с двойниковами устройств (Node. js)
 
@@ -29,7 +29,9 @@ ms.locfileid: "68780928"
 > Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
 >
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Node. js версии 10.0. x или более поздней.
 
@@ -53,28 +55,28 @@ ms.locfileid: "68780928"
 
 В этом разделе вы создадите консольное приложение Node.js, которое добавляет метаданные расположения в двойник устройства, связанный с **myDeviceId**. После этого оно запрашивает данные двойников устройств, хранящихся в Центре Интернета вещей, выбирает устройства, находящиеся в США, а затем те, которые сообщили о подключении по сети мобильной связи.
 
-1. Создайте пустую папку с именем **addtagsandqueryapp**. В папке **addtagsandqueryapp** создайте файл package.json, используя следующую команду в командной строке. Примите значения по умолчанию:
+1. Создайте пустую папку с именем **addtagsandqueryapp**. В папке **addtagsandqueryapp** создайте файл package.json, используя следующую команду в командной строке. `--yes` Параметр принимает все значения по умолчанию.
 
-    ```
-    npm init
+    ```cmd/sh
+    npm init --yes
     ```
 
 2. В командной строке в папке **addtagsandqueryapp** выполните следующую команду, чтобы установить пакет **azure-iothub**.
-   
-    ```
+
+    ```cmd/sh
     npm install azure-iothub --save
     ```
 
 3. В текстовом редакторе создайте файл **AddTagsAndQuery.js** в папке **addtagsandqueryapp**.
 
-4. Добавьте следующий код в файл **AddTagsAndQuery. js** и замените значение заполнителя **{строка подключения центра Интернета вещей}** строкой подключения центра Интернета вещей, скопированной ранее в поле [Получение строки подключения к центру Интернета вещей](#get-the-iot-hub-connection-string):
+4. Добавьте следующий код в файл **AddTagsAndQuery. js** . Замените `{iot hub connection string}` строкой подключения центра Интернета вещей, скопированной в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string).
 
    ``` javascript
         'use strict';
         var iothub = require('azure-iothub');
         var connectionString = '{iot hub connection string}';
         var registry = iothub.Registry.fromConnectionString(connectionString);
-   
+
         registry.getTwin('myDeviceId', function(err, twin){
             if (err) {
                 console.error(err.constructor.name + ': ' + err.message);
@@ -87,7 +89,7 @@ ms.locfileid: "68780928"
                       }
                     }
                 };
-   
+
                 twin.update(patch, function(err) {
                   if (err) {
                     console.error('Could not update twin: ' + err.constructor.name + ': ' + err.message);
@@ -116,7 +118,7 @@ ms.locfileid: "68780928"
                     console.log("Devices in Redmond43: " + results.map(function(twin) {return twin.deviceId}).join(','));
                 }
             });
-   
+
             query = registry.createQuery("SELECT * FROM devices WHERE tags.location.plant = 'Redmond43' AND properties.reported.connectivity.type = 'cellular'", 100);
             query.nextAsTwin(function(err, results) {
                 if (err) {
@@ -130,17 +132,17 @@ ms.locfileid: "68780928"
 
     Предыдущий код выполняет два запроса: первый выбирает только двойников устройства, расположенных на фабрике **Redmond43**, а второй уточняет условия первого запроса и выбирает устройства, подключенные по сети мобильной связи.
 
-    При создании объекта **query** предыдущий код указывает максимальное количество возвращаемых документов. Объект **query** содержит логическое свойство **hasMoreResults**, которое можно использовать для вызова методов **nextAsTwin** несколько раз, чтобы получить все результаты. Метод **next** доступен для результатов, которые не являются двойниками устройств, например для результатов статистических запросов.
+    Когда код создает объект **запроса** , он указывает максимальное число возвращаемых документов во втором параметре. Объект **query** содержит логическое свойство **hasMoreResults**, которое можно использовать для вызова методов **nextAsTwin** несколько раз, чтобы получить все результаты. Метод с именем **Next** доступен для результатов, которые не являются двойниковами устройств, например результатами запросов агрегирования.
 
 6. Запустите приложение, выполнив следующую команду:
 
-    ```
+    ```cmd/sh
         node AddTagsAndQuery.js
     ```
 
    В результатах запроса на все устройства, расположенные на фабрике **Redmond43**, отобразится одно устройство, а для запроса на ограничение результатов устройствами, использующими сеть мобильной связи, не отобразится ни одного устройства.
-   
-    ![Просмотр одного устройства в результатах запроса](media/iot-hub-node-node-twin-getstarted/service1.png)
+
+   ![Просмотр одного устройства в результатах запроса](media/iot-hub-node-node-twin-getstarted/service1.png)
 
 В следующем разделе рассказывается о том, как создать приложение устройства, которое сообщает сведения о подключении и изменяет результат запроса, описанного в предыдущем разделе.
 
@@ -148,36 +150,36 @@ ms.locfileid: "68780928"
 
 В этом разделе вы создадите консольное приложение Node.js, которое подключается к центру как **myDeviceId** и обновляет сообщаемые свойства двойника устройства, добавив в них сведения о подключении по сети мобильной связи.
 
-1. Создайте пустую папку с именем **reportconnectivity**. В папке **reportconnectivity** создайте файл package.json, используя следующую команду в командной строке. Примите значения по умолчанию:
-   
-    ```
-    npm init
+1. Создайте пустую папку с именем **reportconnectivity**. В папке **reportconnectivity** создайте файл package.json, используя следующую команду в командной строке. `--yes` Параметр принимает все значения по умолчанию.
+
+    ```cmd/sh
+    npm init --yes
     ```
 
-2. В командной строке в папке **reportconnectivity** выполните следующую команду, чтобы установить пакет SDK для устройств **azure-iot-device** и пакет **azure-iot-device-mqtt**.
-   
-    ```
+2. В командной строке в папке **reportconnectivity** выполните следующую команду, чтобы установить пакеты **Azure-IOT-Device**и **Azure-IOT-Device-mqtt** :
+
+    ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
 3. В текстовом редакторе создайте файл **ReportConnectivity.js** в папке **reportconnectivity**.
 
-4. Добавьте следующий код в файл **ReportConnectivity.js** и замените заполнитель **{device connection string}** строкой подключения устройства, скопированной при создании удостоверения устройства **myDeviceId**.
+4. Добавьте следующий код в файл **ReportConnectivity. js** . Замените `{device connection string}` строкой подключения устройства, скопированной при создании удостоверения устройства **myDeviceId** , в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
 
-    ```
+    ```javascript
         'use strict';
         var Client = require('azure-iot-device').Client;
         var Protocol = require('azure-iot-device-mqtt').Mqtt;
-   
+
         var connectionString = '{device connection string}';
         var client = Client.fromConnectionString(connectionString, Protocol);
-   
+
         client.open(function(err) {
         if (err) {
             console.error('could not open IotHub client');
         }  else {
             console.log('client opened');
-   
+
             client.getTwin(function(err, twin) {
             if (err) {
                 console.error('could not get twin');
@@ -187,7 +189,7 @@ ms.locfileid: "68780928"
                         type: 'cellular'
                     }
                 };
-   
+
                 twin.properties.reported.update(patch, function(err) {
                     if (err) {
                         console.error('could not update twin');
@@ -206,7 +208,7 @@ ms.locfileid: "68780928"
 
 5. Запуск приложения устройства
 
-    ```   
+    ```cmd/sh
         node ReportConnectivity.js
     ```
 
@@ -214,7 +216,7 @@ ms.locfileid: "68780928"
 
 6. Теперь, когда устройство сообщило сведения о подключении, оно должно появиться в обоих запросах. Вернитесь к папке **addtagsandqueryapp** и выполните запросы снова:
 
-    ```   
+    ```cmd/sh
         node AddTagsAndQuery.js
     ```
 

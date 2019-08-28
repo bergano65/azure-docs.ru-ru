@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/27/2018
+ms.date: 08/21/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 597670803514fa59faaafdad73786cdb745a0976
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 5342ec14e32b87c5cccdb36206122ce1168aeb56
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640898"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061414"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -117,6 +117,7 @@ ATP в Защитнике Windows в центре безопасности по�
 
 ## <a name="next-steps"></a>Следующие шаги
 
+- [Поддерживаемые платформы и возможности в Центре безопасности Azure](security-center-os-coverage.md)
 - [Руководство: определение и оценка политик безопасности](tutorial-security-policy.md). Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 - [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md). Узнайте, как рекомендации могут помочь вам защитить ресурсы в Azure.
 - [Укрепление системы безопасности с помощью центра безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.

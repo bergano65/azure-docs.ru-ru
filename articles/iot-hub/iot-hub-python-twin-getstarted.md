@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 08/26/2019
 ms.author: robinsh
-ms.openlocfilehash: 62385f4bd07f4b80dc3d571d409e16c7e0dca205
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: c720dfe7aeaa39a1717362b040b5548e116cc246
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667826"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70062066"
 ---
 # <a name="get-started-with-device-twins-python"></a>Начало работы с двойниками устройств (Python)
 
@@ -49,11 +49,15 @@ ms.locfileid: "68667826"
 
 В этом разделе вы создадите консольное приложение Python, которое добавляет метаданные расположения в двойника устройства, связанные с **{Device ID}** . После этого оно запрашивает данные двойников устройств, хранящихся в Центре Интернета вещей, и выбирает устройства в городе Редмонд, которые передали уведомление о подключении по сети мобильной связи.
 
-1. Откройте окно командной строки и установите **пакет SDK службы Центра Интернета вещей Azure для Python**. После установки пакета SDK закройте окно командной строки.
+1. В рабочем каталоге откройте командную строку и установите **пакет SDK службы центра Интернета вещей Azure для Python**.
 
-   ```
+   ```cmd/sh
    pip install azure-iothub-service-client
    ```
+
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
 
 2. В текстовом редакторе создайте файл **AddTagsAndQuery.py**.
 
@@ -66,7 +70,7 @@ ms.locfileid: "68667826"
    from iothub_service_client import IoTHubDeviceTwin, IoTHubError
    ```
 
-4. Добавьте следующий код, заменив заполнитель для `[IoTHub Connection String]` и `[Device Id]` строкой подключения для центра Интернета вещей и идентификатором устройства, созданным в предыдущих разделах.
+4. Добавьте следующий код. Замените `[IoTHub Connection String]` строкой подключения центра Интернета вещей, скопированной в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string). Замените `[Device Id]` идентификатором устройства, зарегистрированным в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).
   
     ```python
     CONNECTION_STRING = "[IoTHub Connection String]"
@@ -80,7 +84,7 @@ ms.locfileid: "68667826"
 
 5. Добавьте следующий код в файл **AddTagsAndQuery.py**:
 
-     ```python
+    ```python
     def iothub_service_sample_run():
         try:
             iothub_registry_manager = IoTHubRegistryManager(CONNECTION_STRING)
@@ -143,7 +147,7 @@ ms.locfileid: "68667826"
 
     В результатах запроса на все устройства, расположенные на фабрике **Redmond43**, отобразится одно устройство, а для запроса на ограничение результатов устройствами, использующими сеть мобильной связи, не отобразится ни одного устройства.
 
-    ![Первый запрос, показывающий все устройства в Редмонде](./media/iot-hub-python-twin-getstarted/1-device-twins-python-service-sample.png)
+    ![Первый запрос, показывающий все устройства в Редмонде](./media/iot-hub-python-twin-getstarted/service-1.png)
 
 В следующем разделе рассказывается о том, как создать приложение устройства, которое сообщает сведения о подключении и изменяет результат запроса, описанного в предыдущем разделе.
 
@@ -151,11 +155,15 @@ ms.locfileid: "68667826"
 
 В этом разделе вы создадите консольное приложение Python, которое подключается к концентратору в качестве **идентификатора {Device ID}** , а затем обновит сообщаемые свойства двойникаа устройства, чтобы они содержали сведения, подключенные с помощью сотовой сети.
 
-1. Откройте окно командной строки и установите **пакет SDK службы Центра Интернета вещей Azure для Python**. После установки пакета SDK закройте окно командной строки.
+1. В командной строке в рабочем каталоге установите **пакет SDK для службы центра Интернета вещей Azure для Python**:
 
-    ```
+    ```cmd/sh
     pip install azure-iothub-device-client
     ```
+
+   > [!NOTE]
+   > Пакеты PIP для Azure-iothub-Service-Client и Azure-iothub-Device-Client в настоящее время доступны только для ОС Windows. Сведения для Linux и Mac OS см. в разделах, посвященных Linux и Mac OS, в разделе [Подготовка среды разработки для Python](https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) POST.
+   >
 
 2. В текстовом редакторе создайте файл **ReportConnectivity.py**.
 
@@ -167,7 +175,7 @@ ms.locfileid: "68667826"
     from iothub_client import IoTHubClient, IoTHubClientError, IoTHubTransportProvider, IoTHubClientResult, IoTHubError
     ```
 
-4. Добавьте приведенный ниже код, заменив заполнитель `[IoTHub Device Connection String]` строкой подключения к устройству Центра Интернета вещей, созданному в предыдущих разделах.
+4. Добавьте следующий код. Замените значение заполнителя строкой подключения устройства, скопированной в раздел [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `[IoTHub Device Connection String]`
 
     ```python
     CONNECTION_STRING = "[IoTHub Device Connection String]"
@@ -227,7 +235,7 @@ ms.locfileid: "68667826"
             return
         except KeyboardInterrupt:
             print ( "IoTHubClient sample stopped" )
-     ```
+    ```
 
     Объект **Client** позволяет получить все методы, необходимые для взаимодействия с двойниками устройства с устройства. После инициализации объекта **Client** предыдущий код извлекает двойник для вашего устройства и обновляет его сообщаемое свойство, используя сведения о подключении.
 
@@ -248,7 +256,7 @@ ms.locfileid: "68667826"
 
     Вы увидите сообщение, подтверждающее обновление двойников устройств.
 
-    ![Обновление двойников](./media/iot-hub-python-twin-getstarted/2-python-client-sample.png)
+    ![Обновление двойников](./media/iot-hub-python-twin-getstarted/device-1.png)
 
 8. Теперь, когда устройство сообщило сведения о подключении, оно должно появиться в обоих запросах. Вернитесь обратно и повторно запустите запросы:
 
@@ -258,7 +266,7 @@ ms.locfileid: "68667826"
 
     На этот раз ваш **{Device ID}** должен отображаться в результатах обоих запросов.
 
-    ![второй запрос](./media/iot-hub-python-twin-getstarted/3-device-twins-python-service-sample.png)
+    ![второй запрос](./media/iot-hub-python-twin-getstarted/service-2.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 

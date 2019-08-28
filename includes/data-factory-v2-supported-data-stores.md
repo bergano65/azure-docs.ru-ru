@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: d1a33cba99ef1e35aadd5f9e338ba11fc87830f5
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 49aaa40b4a50d2170ee6c8745ae35b16341e29f0
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68843312"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060684"
 ---
-| Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается [локальной IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
+| Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается локальными [средами IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **Таблицы Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |✓ |✓ |✓ |✓  |
@@ -31,7 +31,7 @@ ms.locfileid: "68843312"
 | &nbsp; |[Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Хранилище данных Azure SQL](../articles/data-factory/connector-azure-sql-data-warehouse.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Индекс службы поиска Azure](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  |
-| &nbsp; |[хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  |
 | **База данных** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |✓ | |✓ |✓  |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |✓ | |✓ |✓  |
 | &nbsp; |[Детализация (предварительная версия)](../articles/data-factory/connector-drill.md) |✓ | |✓ |✓  |
@@ -49,7 +49,7 @@ ms.locfileid: "68843312"
 | &nbsp; |[Phoenix](../articles/data-factory/connector-phoenix.md) |✓ | |✓ |✓  |
 | &nbsp; |[PostgreSQL](../articles/data-factory/connector-postgresql.md) |✓ | |✓ |✓  |
 | &nbsp; |[Presto (предварительная версия)](../articles/data-factory/connector-presto.md) |✓ | |✓ |✓  |
-| &nbsp; |[Открытый центр SAP Business Warehouse](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
+| &nbsp; |[SAP Business Warehouse через открытый центр](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
 | &nbsp; |[SAP Business Warehouse через MDX](../articles/data-factory/connector-sap-business-warehouse.md) |✓ | | |✓  |
 | &nbsp; |[SAP HANA](../articles/data-factory/connector-sap-hana.md) |✓ |✓ | |✓  |
 | &nbsp; |[Таблица SAP](../articles/data-factory/connector-sap-table.md) |✓ | | |✓  |
@@ -72,7 +72,7 @@ ms.locfileid: "68843312"
 | &nbsp; |[Универсальные данные ODBC](../articles/data-factory/connector-odbc.md) |✓ |✓ | |✓  |
 | &nbsp; |[Универсальные данные REST](../articles/data-factory/connector-rest.md) |✓ | |✓ |✓  |
 | **Службы и приложения** |[Веб-служба Amazon Marketplace (предварительная версия)](../articles/data-factory/connector-amazon-marketplace-web-service.md) |✓ | |✓ |✓  |
-| &nbsp; |[Common Data Service для приложений](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Common Data Service](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Concur (предварительная версия)](../articles/data-factory/connector-concur.md) |✓ | |✓ |✓  |
 | &nbsp; |[Dynamics 365](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Dynamics AX (предварительная версия)](../articles/data-factory/connector-dynamics-ax.md) |✓ | |✓ |✓  |
@@ -86,7 +86,7 @@ ms.locfileid: "68843312"
 | &nbsp; |[Oracle Eloqua (предварительная версия)](../articles/data-factory/connector-oracle-eloqua.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle Responsys (предварительная версия)](../articles/data-factory/connector-oracle-responsys.md) |✓ | |✓ |✓  |
 | &nbsp; |[Oracle Service Cloud (предварительная версия)](../articles/data-factory/connector-oracle-service-cloud.md) |✓ | |✓ |✓  |
-| &nbsp; |[Paypal (предварительная версия)](../articles/data-factory/connector-paypal.md) |✓ | |✓ |✓  |
+| &nbsp; |[PayPal (Предварительная версия)](../articles/data-factory/connector-paypal.md) |✓ | |✓ |✓  |
 | &nbsp; |[QuickBooks (предварительная версия)](../articles/data-factory/connector-quickbooks.md) |✓ | |✓ |✓  |
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce-service-cloud.md) |✓ |✓ |✓ |✓  |
@@ -101,4 +101,4 @@ ms.locfileid: "68843312"
 | &nbsp; |[Zoho (предварительная версия)](../articles/data-factory/connector-zoho.md) |✓ | |✓ |✓  |
 
 > [!NOTE]
-> Пометка *предварительная версия* возле соединителя означает, что его можно опробовать и оставить отзыв.  Если вы хотите использовать в своем решении зависимость от соединителей в предварительной версии, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/).
+> Если соединитель помечен как *Предварительная версия*, вы можете испытать его и отправить нам отзыв. Если вы хотите получить зависимость от соединителей предварительной версии в решении, обратитесь в [службу поддержки Azure](https://azure.microsoft.com/support/).

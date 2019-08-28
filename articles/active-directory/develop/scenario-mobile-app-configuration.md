@@ -15,16 +15,16 @@ ms.date: 07/23/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bdf9210eb88b2057cf861b208f19d3e6f562e9a
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 8ebf524d932322fa08729f229a451afe656900d5
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414854"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061406"
 ---
 # <a name="mobile-app-that-calls-web-apis---code-configuration"></a>Мобильное приложение, вызывающее веб-API — конфигурация кода
 
-После создания приложения вы узнаете, как настроить код из параметров приложения, которые вы получили при регистрации приложения. Мобильные приложения также имеют некоторые сложные особенности, которые должны быть выполнены с учетом платформы, используемой для создания этих приложений.
+После создания приложения вы узнаете, как настроить код с помощью параметров регистрации приложения. Мобильные приложения также имеют некоторые сложные особенности, которые должны быть выполнены с учетом платформы, используемой для создания этих приложений.
 
 ## <a name="msal-libraries-supporting-mobile-apps"></a>Библиотеки MSAL, поддерживающие мобильные приложения
 
@@ -38,7 +38,7 @@ ms.locfileid: "68414854"
 
 ## <a name="configuring-the-application"></a>Настройка приложения
 
-Мобильные приложения используют `PublicClientApplication` класс MSAL. Вот как создать его экземпляр:
+Мобильные приложения используют `PublicClientApplication` класс. Вот как создать его экземпляр:
 
 ### <a name="android"></a>Android
 
@@ -68,7 +68,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
 #### <a name="instantiating-the-application"></a>Создание экземпляра приложения
 
-В Xamarin или UWP самый простой способ создания экземпляра приложения выглядит следующим `ClientId` образом: идентификатор GUID приложения зарегистрирован.
+В Xamarin или UWP самый простой способ создания экземпляра приложения выглядит следующим образом, где `ClientId` — это идентификатор GUID зарегистрированного приложения.
 
 ```CSharp
 var app = PublicClientApplicationBuilder.Create(clientId)
@@ -87,7 +87,7 @@ IPublicClientApplication application = PublicClientApplicationBuilder.Create(cli
   .Build();
 ```
 
-В Android мы рекомендуем вам `CurrentActivityPlugin` [здесь](https://github.com/jamesmontemagno/CurrentActivityPlugin).  Затем код `PublicClientApplication` построителя будет выглядеть следующим образом:
+В Android мы рекомендуем использовать `CurrentActivityPlugin` [здесь](https://github.com/jamesmontemagno/CurrentActivityPlugin).  Затем код `PublicClientApplication` построителя будет выглядеть следующим образом:
 
 ```CSharp
 // Requires MSAL.NET 4.2 or above
@@ -128,7 +128,7 @@ var pca = PublicClientApplicationBuilder
 
 #### <a name="uwp-specific-considerations"></a>Особенности, связанные с UWP
 
-В UWP можно использовать корпоративные сети. Сведения о характерах для UWP см. в разделе [рекомендации по универсальная платформа Windows MSAL.NET](msal-net-uwp-considerations.md).
+В UWP можно использовать корпоративные сети. Дополнительные сведения об использовании библиотеки MSAL с UWP см. в разделе [вопросы, связанные с универсальная платформа Windows MSAL.NET](msal-net-uwp-considerations.md).
 
 ## <a name="configuring-the-application-to-use-the-broker"></a>Настройка приложения для использования брокера
 
@@ -148,7 +148,7 @@ var pca = PublicClientApplicationBuilder
 
 Выполните следующие действия, чтобы разрешить приложению Xamarin. iOS взаимодействовать с [Microsoft Authenticator](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458) приложением.
 
-#### <a name="step-1-enable-broker-support"></a>Шаг 1.: Включить поддержку брокера
+#### <a name="step-1-enable-broker-support"></a>Шаг 1. Включить поддержку брокера
 
 Поддержка брокера включается отдельно для каждого`PublicClientApplication` компонента. Она отключена по умолчанию. Необходимо использовать `WithBroker()` параметр (по умолчанию задано значение true) при создании с `PublicClientApplication` помощью. `PublicClientApplicationBuilder`
 
@@ -160,7 +160,7 @@ var app = PublicClientApplicationBuilder
                 .Build();
 ```
 
-#### <a name="step-2-update-appdelegate-to-handle-the-callback"></a>Шаг 2.: Обновление AppDelegate для обработки обратного вызова
+#### <a name="step-2-update-appdelegate-to-handle-the-callback"></a>Шаг 2. Обновление AppDelegate для обработки обратного вызова
 
 Когда MSAL.NET вызывает брокер, брокер, в свою очередь, выполняет обратный вызов к приложению с помощью `AppDelegate.OpenUrl` метода. Так как MSAL будет ждать ответа от брокера, ваше приложение должно взаимодействовать для вызова MSAL.NET назад. Для этого необходимо обновить `AppDelegate.cs` файл, переопределив приведенный ниже метод.
 
@@ -186,7 +186,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url,
 
 #### <a name="step-3-set-a-uiviewcontroller"></a>Шаг 3. Задать UIViewController ()
 
-В случае Xamarin iOS вам обычно не нужно задавать окно объекта, но в данном случае это делается для отправки и получения ответов от брокера. По- `AppDelegate.cs`прежнему в установите ViewController.
+В случае Xamarin iOS вам обычно не нужно задавать окно объекта, но в данном случае для отправки и получения ответов от брокера. По- `AppDelegate.cs`прежнему в установите ViewController.
 
 Чтобы задать окно объекта, выполните следующие действия.
 

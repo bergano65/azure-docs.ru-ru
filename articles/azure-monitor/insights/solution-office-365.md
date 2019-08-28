@@ -10,14 +10,14 @@ ms.service: azure-monitor
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/01/2019
+ms.date: 08/13/2019
 ms.author: bwren
-ms.openlocfilehash: d50b3ab68b406db47a4cc8fec081b2fc076071d1
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: 3818547eee05a1d6f8cf84ccb0f5f4ecb44a9ab3
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741658"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061587"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -83,45 +83,46 @@ ms.locfileid: "68741658"
 
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com/).
 1. Выберите **Azure Active Directory**, а затем — **Регистрация приложений**.
-1. Щелкните **Регистрация нового приложения**.
+1. Нажмите кнопку **создать регистрацию**.
 
     ![Добавление регистрации приложений](media/solution-office-365/add-app-registration.png)
-1. Введите **имя** приложения и **URL-адрес входа**.  Имя должно быть описательным.  Использование `http://localhost` для URL-адреса и сохранения _веб-приложения или API_ для **типа приложения**
+1. Введите **имя**приложения. Выберите **учетные записи в любом каталоге организации (любой каталог Azure AD — клиент)** для **поддерживаемых типов учетных записей**.
     
     ![Создать приложение](media/solution-office-365/create-application.png)
-1. Щелкните **Создать** и проверьте сведения о приложении.
+1. Щелкните **Регистрация** и проверьте сведения о приложении.
 
     ![Зарегистрированное приложение](media/solution-office-365/registered-app.png)
 
 ### <a name="configure-application-for-office-365"></a>Настройка приложения для Office 365
 
-1. Щелкните **Параметры**, чтобы открыть меню **настроек**.
-1. Выберите **Свойства**. Задайте для параметра **Мультитенантный** значение _Да_.
+1. Выберите **Проверка** подлинности и убедитесь, что в разделе **Поддерживаемые типы учетных записей**выбран параметр учетные записи **в любом организационном каталоге (любой каталог Azure AD — клиент)** .
 
     ![Настройка мультитенантного приложения](media/solution-office-365/settings-multitenant.png)
 
-1. В меню **Параметры** выберите **Требуемые разрешения**, а затем щелкните **Добавить**.
-1. Щелкните **Select an API** (Выбор API), а затем — **Office 365 Management APIs** (Интерфейсы API управления Office 365). Выберите **Office 365 Management APIs** (Интерфейсы API управления Office 365). Нажмите кнопку **Выбрать**.
+1. Выберите **разрешения API** , а затем **добавьте разрешение**.
+1. Щелкните **API управления Office 365**. 
 
     ![Выбрать API](media/solution-office-365/select-api.png)
 
-1. В разделе **Выберите разрешения** выберите следующие параметры в разделах **Разрешения приложений** и **Делегированные разрешения**:
+1. В **каком типе разрешений требуется ваше приложение?** выберите следующие параметры для **разрешений приложений** и **делегированных разрешений**:
    - чтение сведений о работоспособности служб в вашей организации;
    - чтение данных о действиях в организации;
-   - Чтение отчетов о действиях для вашей организации
+   - чтение отчетов о действиях для вашей организации.
 
-     ![Выбрать API](media/solution-office-365/select-permissions.png)
+     ![Выбрать API](media/solution-office-365/select-permissions-01.png)![Выбрать API](media/solution-office-365/select-permissions-02.png)
 
-1. Нажмите кнопку **Выбрать**, а затем — **Готово**.
-1. Щелкните **Предоставить разрешения**, а затем — **Да** при появлении запроса на проверку.
+1. Щелкните **Добавить разрешения**.
+1. Щелкните **предоставить согласие администратора** , а затем нажмите кнопку **Да** при появлении запроса на проверку.
 
-    ![Предоставление разрешений](media/solution-office-365/grant-permissions.png)
 
-### <a name="add-a-key-for-the-application"></a>Добавление ключа для приложения
+### <a name="add-a-secret-for-the-application"></a>Добавление секрета для приложения
 
-1. В меню **Параметры** выберите **Ключи**.
+1. Выберите **сертификаты & секреты** , а затем — **новый секрет клиента**.
+
+    ![Ключи](media/solution-office-365/secret.png)
+ 
 1. Для нового ключа введите **описание** и **срок действия**.
-1. Нажмите кнопку **Сохранить**, а затем скопируйте созданное **значение**.
+1. Нажмите кнопку **Добавить** , а затем скопируйте созданное **значение** .
 
     ![Ключи](media/solution-office-365/keys.png)
 
@@ -182,7 +183,7 @@ ms.locfileid: "68741658"
     .\office365_consent.ps1 -WorkspaceName <Workspace name> -ResourceGroupName <Resource group name> -SubscriptionId <Subscription ID>
     ```
 
-    Пример
+    Пример:
 
     ```
     .\office365_consent.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631- yyyyyyyyyyyy'
@@ -366,7 +367,7 @@ ms.locfileid: "68741658"
     .\office365_subscription.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeUsername <OfficeUsername> -OfficeTennantID <Tenant ID> -OfficeClientId <Client ID> -OfficeClientSecret <Client secret>
     ```
 
-    Пример
+    Пример:
 
     ```powershell
     .\office365_subscription.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeUsername 'admin@contoso.com' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx' -OfficeClientId 'f8f14c50-5438-4c51-8956-zzzzzzzzzzzz' -OfficeClientSecret 'y5Lrwthu6n5QgLOWlqhvKqtVUZXX0exrA2KRHmtHgQb='
@@ -492,7 +493,7 @@ At line:12 char:18
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример
+    Пример:
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
@@ -541,7 +542,7 @@ At line:12 char:18
 
 | Свойство | Description |
 |:--- |:--- |
-| Type | *OfficeActivity* |
+| Тип | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
 | OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Операция | Имя действия пользователя или администратора.  |

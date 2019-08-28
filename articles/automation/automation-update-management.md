@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b9fcf06caf2abf116a2f2b99f26ead6277f7ad50
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 6f23a1f8e60567e1c2ed89b27f0eb2bab4ca5912
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69970550"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061818"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -378,6 +378,8 @@ $ServiceManager.AddService2($ServiceId,7,"")
 Дополнительные сведения о портах, которым необходима гибридная рабочая роль Runbook, см. в статье [Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#hybrid-worker-role).
 
 При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
+
+Следуйте инструкциям в разделе [Подключение компьютеров без доступа к Интернету](../azure-monitor/platform/gateway.md) для настройки компьютеров, не имеющих доступа к Интернету.
 
 ## <a name="search-logs"></a>Поиск в журналах
 

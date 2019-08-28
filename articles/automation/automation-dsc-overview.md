@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: dd898397b4aaec2e62558d12a3547f7b61d6d3fd
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: a3a52fbda91d19905bd6add631f536010197c4dd
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533467"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061386"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -58,16 +58,11 @@ ms.locfileid: "69533467"
 - Windows 8.1
 - Windows 7
 
-SKU автономного продукта [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) не содержит реализацию требуемого состояния a, поэтому она не может управляться с помощью PowerShell DSC или конфигурации состояния службы автоматизации Azure.
+Номер SKU автономного продукта [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) не содержит реализацию требуемого состояния a, поэтому управление им с помощью PowerShell DSC или конфигурации состояния службы автоматизации Azure невозможно.
 
 Для узлов под управлением Linux поддерживаются следующие дистрибутивов и версии:
 
-Расширение DSC для Linux поддерживает все дистрибутивы Linux, которые были [включены в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) , за исключением следующих:
-
-Распространение | Version
--|-
-Debian  | Все версии.
-Ubuntu  | 18,04
+Расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в разделе [Поддерживаемые дистрибутивы Linux](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions).
 
 ### <a name="dsc-requirements"></a>Требования к DSC
 
