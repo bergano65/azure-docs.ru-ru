@@ -98,7 +98,7 @@ ms.locfileid: "67839613"
 
 | Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| запрос |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Например, `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
+| query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) . Например, `select * from MyTable__c`. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
 > [!IMPORTANT]
 > Имя API для любых настраиваемых объектов должно содержать приставку __c.
