@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1431a46bf0981ee7ca3ecd06be9d7ebc35f05982
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 6c6980d11fa5fe3733e351923d058d1ad0a1677e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70032723"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084925"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -64,7 +64,7 @@ ms.locfileid: "70032723"
 ### <a name="windows-down-level-devices"></a>Устройства Windows нижнего уровня
 
 - Windows 8.1
-- Windows 7. Сведения о поддержке Windows 7 см. в этой статье [Поддержка для Windows 7 заканчивается](https://www.microsoft.com/windowsforbusiness/end-of-windows-7-support)
+- Windows 7. Сведения о поддержке Windows 7 см. в этой статье [Поддержка для Windows 7 заканчивается](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support)
 - Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
@@ -124,7 +124,7 @@ ms.locfileid: "70032723"
   `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения о том, как отключить WS-Trust конечные точки Windows, см. в разделе [Отключение WS-Trust конечных точек Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 > [!NOTE]
 > Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.

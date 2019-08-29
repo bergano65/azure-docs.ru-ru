@@ -9,17 +9,16 @@ ms.assetid: 9e21a7e4-2436-4e81-bb05-4a6ba70eeaf7
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: ba34638bbdb838adc6f1e61b1f8b07a6915815c0
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: f40043b920fab4cb38f935618c7aaecc6bf40a87
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540775"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069712"
 ---
 # <a name="certificates-and-the-app-service-environment"></a>Сертификаты и среда Службы приложений 
 
@@ -55,7 +54,7 @@ ms.locfileid: "67540775"
 
     $fileName = "exportedcert.pfx"
     Export-PfxCertificate -cert $certThumbprint -FilePath $fileName -Password $password     
-При создании самозаверяющего сертификата, необходимо убедиться, имя субъекта имеет вид CN = _InternalLoadBalancingASE {ASE_NAME_HERE}.
+При создании самозаверяющего сертификата необходимо убедиться, что имя субъекта имеет формат CN = {ASE_NAME_HERE} _InternalLoadBalancingASE.
 
 ## <a name="application-certificates"></a>сертификаты приложения. 
 
@@ -85,7 +84,7 @@ ms.locfileid: "67540775"
 
     84EC242A4EC7957817B8E48913E50953552DAFA6,6A5C65DC9247F762FE17BF8D4906E04FE6B31819
 
-Сертификат будет доступен для всех приложений в одном плане Службы приложений как приложение, которое настроено для этого параметра. Если требуется, чтобы он имел доступ к приложению в разных планах Службы приложений, необходимо повторить операцию "Настройка приложения" в этом плане Службы приложений. Чтобы проверить, что сертификат установлен, перейдите в консоль Kudu и выполните следующую команду в консоли отладки PowerShell:
+Сертификат будет доступен для всех приложений в одном плане Службы приложений как приложение, которое настроено для этого параметра. Если требуется, чтобы он имел доступ к приложению в разных планах Службы приложений, необходимо повторить операцию "Настройка приложения" в этом плане Службы приложений. Чтобы проверить, задан ли сертификат, перейдите в консоль KUDU и выполните следующую команду в консоли отладки PowerShell:
 
     dir cert:\localmachine\root
 

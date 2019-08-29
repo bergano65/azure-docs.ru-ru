@@ -1,6 +1,6 @@
 ---
 title: Решения Oracle в Microsoft Azure | Документация Майкрософт
-description: Дополнительные сведения о вариантах развертывания приложений Oracle и решений в Microsoft Azure, включая запущены на инфраструктуры Azure или с помощью подключения к облачной инфраструктуры облака с Oracle (OCI).
+description: Узнайте о вариантах развертывания приложений и решений Oracle на Microsoft Azure, включая работу полностью в инфраструктуре Azure или использование межоблачного подключения к облачной инфраструктуре Oracle (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
 author: romitgirdhar
@@ -8,81 +8,80 @@ manager: gwallace
 tags: azure-resource-management
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
-ms.openlocfilehash: b8bfa0dfa82f73cad010a608150eac48c7f3d4c8
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e9e37c54668ec0343cbfd45e51e90216955b46c4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707448"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100023"
 ---
-# <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложения Oracle и решений в Azure
+# <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Общие сведения о приложениях и решениях Oracle в Azure
 
-В этой статье рассматриваются возможности для запуска решений Oracle, с помощью инфраструктуры Azure. См. также подробное введение доступных [образов виртуальных Машин Oracle](oracle-vm-solutions.md) в Azure Marketplace, а также возможность предварительного просмотра [соединения Azure с Oracle облачной инфраструктуры (OCI)](oracle-oci-overview.md).
+В этой статье представлены возможности для запуска решений Oracle с помощью инфраструктуры Azure. См. также подробные сведения о доступных [образах виртуальных машин Oracle](oracle-vm-solutions.md) в Azure Marketplace и возможности предварительной версии для [соединения Azure с облачной инфраструктурой Oracle (OCI)](oracle-oci-overview.md).
 
-## <a name="oracle-databases-on-azure-infrastructure"></a>Баз данных Oracle в инфраструктуре Azure
+## <a name="oracle-databases-on-azure-infrastructure"></a>Базы данных Oracle в инфраструктуре Azure
 
-Выполните баз данных Oracle на инфраструктуру Azure, с помощью образов Linux в Azure Marketplace:
+Запуск баз данных Oracle в инфраструктуре Azure с помощью образов Linux, доступных в Azure Marketplace:
 
-* Oracle Database 12.1 12.2 и 18,3 Enterprise Edition 
+* Oracle Database 12,1, 12,2 и 18,3 Enterprise Edition 
 
-* Oracle Database 12.1 12.2 и 18,3 Standard Edition 
+* Oracle Database 12,1, 12,2 и 18,3 Standard Edition 
 
-Можно также создать решение на основе пользовательского образа, создание с нуля в Azure и отправка пользовательского образа из локальной среды.
+Вы также можете создать решение на основе пользовательского образа, созданного с нуля в Azure, или отправить пользовательский образ из локальной среды.
 
-При необходимости настроить несколько подключенных дисков и улучшить производительность базы данных, установив Oracle автоматической Storage Management (ASM).
+При необходимости настройте с несколькими подключенными дисками и увеличьте производительность базы данных, установив автоматическое управление хранилищем (ASM) Oracle.
 
-## <a name="applications-on-oracle-linux-and-weblogic-server"></a>Приложений на Linux, Oracle и WebLogic Server
+## <a name="applications-on-oracle-linux-and-weblogic-server"></a>Приложения на Oracle Linux и сервере серверной логической логики
 
-Запуск корпоративных приложений в Azure в поддерживаемых операционных системах с поддержкой Oracle. В Azure Marketplace доступны следующие образы:
+Запускайте корпоративные приложения в Azure в поддерживаемых операционных системах Oracle. В Azure Marketplace доступны следующие образы:
 
-* Oracle WebLogic Server 12.1.2
+* Сервер 12.1.2 для Oracle.
 
-* Oracle Linux (UEK), 6.8, 6.9, 6.10, 7.3, 7.4, 7.5 и 7.6
+* Oracle Linux (UEK) 6,8, 6,9, 6,10, 7,3, 7,4, 7,5 и 7,6
 
-## <a name="high-availability-and-disaster-recovery-options"></a>Варианты обеспечения высокого уровня доступности и аварийного восстановления
+## <a name="high-availability-and-disaster-recovery-options"></a>Параметры высокого уровня доступности и аварийного восстановления
 
-* Настройка Oracle Data Guard, Active Data Guard и GoldenGate в инфраструктуре Azure в сочетании с [зон доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности.
+* Настройте Oracle Data Guard, Active Data Guard или GoldenGate в инфраструктуре Azure в сочетании с [зоны доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности.
 
-* Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) для координации и управления процессами аварийного восстановления для виртуальных машин Oracle Linux в Azure и локальных или физических серверов. 
+* Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) , чтобы управлять аварийным восстановлением для виртуальных машин Oracle Linux и локальных или физических серверов, а также осуществлять управление ими. 
 
-* Включить кластеры реальных приложений Oracle (RAC) в Azure с помощью [FlashGrid SkyCluster](https://www.flashgrid.io/oracle-rac-in-azure/).
+* Включите кластеры реальных приложений Oracle (RAC) в Azure с помощью [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
 
-## <a name="integration-of-azure-with-oci-preview"></a>Интеграция Azure с помощью OCI (Предварительная версия)
+## <a name="integration-of-azure-with-oci-preview"></a>Интеграция Azure с OCI (Предварительная версия)
 
-Запустите приложения Oracle в инфраструктуру Azure, подключенных к базе данных серверной части облачной инфраструктуры Oracle (OCI). Это решение использует следующие возможности: 
+Запускайте приложения Oracle в инфраструктуре Azure, подключенные к серверным базам данных в облачной инфраструктуре Oracle (OCI). Это решение использует следующие возможности: 
 
-* **Облачной сети** -использовать прямые соединения между Azure ExpressRoute и Oracle FastConnect для установления соединения высокой пропускной способностью, частных и низкой задержкой между приложением и на уровне базы данных.
-* **Интегрированные удостоверений** -Настройка федеративного удостоверения между Azure AD и IDCS Oracle, чтобы создать источник единое удостоверение для решений. Включите единый вход для управления ресурсами OCI и в Azure.
+* **Сети** между облаками. Используйте прямое соединение между Azure ExpressRoute и Oracle фастконнект для установки соединений с высокой пропускной способностью, частными и низкой задержкой между приложением и уровнем базы данных.
+* **Интегрированная идентификация** . Настройте федеративные удостоверения между Azure AD и Oracle идкс, чтобы создать единый источник удостоверений для решений. Включите единый вход для управления ресурсами в OCI и Azure.
 
-### <a name="deploy-oracle-applications-on-azure"></a>Развертывать приложения Oracle в Azure
+### <a name="deploy-oracle-applications-on-azure"></a>Развертывание приложений Oracle в Azure
 
-Используйте шаблоны Terraform для настройки инфраструктуры Azure и установка приложений Oracle тестируются и поддерживаются для запуска в облачной конфигурации:
+Используйте шаблоны terraform, чтобы настроить инфраструктуру Azure и установить приложения Oracle, проверенные и поддерживаемые для запуска в конфигурации между облаками:
 
-* E-Business Suite
+* Набор E-Business
 * JD Edwards EnterpriseOne
 * PeopleSoft
-* Приложения для розничной торговли Oracle
-* Управление финансами Hyperion Oracle
+* Розничные приложения Oracle
+* Oracle Hyperion Financial Management
 
-Также развертывание пользовательских приложений в Azure, которые подключаются с OCI и других служб Azure.
+Также развертывайте пользовательские приложения в Azure, которые подключаются к OCI и другим службам Azure.
 
 ### <a name="set-up-oracle-databases-in-oci"></a>Настройка баз данных Oracle в OCI
 
-Используйте облачные службы базы данных Oracle (автономной базы данных, RAC, Exadata, DBaaS, одним узлом) вместе с Oracle приложений, работающих в Azure. Дополнительные сведения о [параметры базы данных OCI](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm). 
+Используйте Oracle Database облачные службы (автономная база данных, RAC, Ексадата, DBaaS, один узел) в сочетании с приложениями Oracle, работающими в Azure. Дополнительные сведения о [параметрах базы данных OCI](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm). 
  
 
 ## <a name="licensing"></a>Лицензирование
 
-Развертывание приложений Oracle в Azure основан на модели «принести собственные лицензии». Предполагается, что вы имеете право использовать программное обеспечение Oracle и у вас соглашение о текущей поддержке на месте с Oracle должным образом. Oracle гарантирует перемещение лицензий из локальной среды в Azure. См. в разделе Oracle Azure [часто задаваемые вопросы о](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html).
+Развертывание приложений Oracle в Azure основано на модели "использование собственной лицензии". Предполагается, что вы правильно лицензированы для использования программного обеспечения Oracle и у вас есть действующее соглашение о поддержке для Oracle. Oracle гарантирует перемещение лицензий из локальной среды в Azure. См. раздел [часто задаваемые вопросы об](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)Oracle и Azure.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о развертывании [образов виртуальных Машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
+* Дополнительные сведения о развертывании [образов виртуальных машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
 
-* Дополнительные сведения о том, как [соединения Azure с помощью OCI](oracle-oci-overview.md).
+* Узнайте больше о том, как присоединиться к [Azure с помощью OCI](oracle-oci-overview.md).

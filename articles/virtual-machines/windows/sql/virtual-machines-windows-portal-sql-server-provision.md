@@ -8,19 +8,18 @@ manager: craigg
 tags: azure-resource-manager
 ms.assetid: 1aff691f-a40a-4de2-b6a0-def1384e086e
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
 ms.date: 05/04/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 52f6e7ebb1cbae14878b1897bd8c59c73dd0f493
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 38fdbbf76806325e457f066e6b469a531c27b038
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981026"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102204"
 ---
 # <a name="how-to-provision-a-windows-sql-server-virtual-machine-in-the-azure-portal"></a>Как подготовить виртуальную машину SQL Server на платформе Windows на портале Azure
 
@@ -37,21 +36,12 @@ ms.locfileid: "69981026"
 
 При создании виртуальной машины SQL Server можно выбрать один из нескольких предварительно настроенных образов, доступных в коллекции виртуальных машин. Ниже приведены инструкции по выбору одного из образов SQL Server 2017.
 
-1. Войдите на [портал Azure](https://portal.azure.com), используя свои учетные данные.
+1. На портале Azure в меню слева выберите **Azure SQL**. Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. Используемых Выберите звезду рядом с элементом **Azure SQL** , чтобы добавить его в избранное, и добавьте его в качестве элемента в левую навигацию. 
+1. Выберите **+ Добавить** , чтобы открыть страницу **Выбор варианта развертывания SQL** . Чтобы просмотреть дополнительные сведения, выберите **Показать подробности**. 
+1. Введите `2017` в поле поиска изображений SQL Server на плитке **виртуальные машины SQL** , а затем выберите **бесплатную SQL Server лицензию: SQL Server 2017 Developer в Windows Server 2016** из раскрывающегося списка. 
 
-1. На портале Azure щелкните **Создать ресурс**. На портале откроется окно **Создать** .
 
-1. В окне **Создать** щелкните **Вычисления** и выберите **See all** (Показать все).
-
-1. В поле поиска введите **SQL Server 2017** и нажмите клавишу ВВОД.
-
-1. В раскрывающемся списке Фильтр выберите _Windows Server 2016_ для **операционной системы** и выберите _Майкрософт_ в качестве **издателя**. 
-
-     ![Окно "Новое вычисление"](./media/virtual-machines-windows-portal-sql-server-provision/azure-new-compute-blade.png)
-
-1. Просмотрите доступные образы SQL Server. Каждый образ определяет версию SQL Server и операционную систему.
-
-1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016).
+   ![Выбор образа виртуальной машины SQL](media/virtual-machines-windows-portal-sql-server-provision/select-sql-vm-image-portal.png)
 
    > [!TIP]
    > В этом пошаговом руководстве используется выпуск Developer, так как это полнофункциональный выпуск SQL Server, предоставляемый бесплатно для тестирования в процессе разработки. Вы оплачиваете только стоимость выполнения виртуальной машины. Но вы можете выбрать для использования в этом пошаговом руководстве любой образ. Описание доступных образов см. в разделе [Начало работы с виртуальными машинами SQL](virtual-machines-windows-sql-server-iaas-overview.md#payasyougo).
@@ -61,7 +51,6 @@ ms.locfileid: "69981026"
    >
    > Дополнительные сведения об этих параметрах см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
 
-1. В разделе **Выбор модели развертывания** выберите **Resource Manager**. Для новых виртуальных машин рекомендуется использовать модель развертывания Resource Manager. 
 
 1. Нажмите кнопку **Создать**.
 

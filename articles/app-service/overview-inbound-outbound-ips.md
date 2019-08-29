@@ -9,17 +9,16 @@ editor: ''
 ms.service: app-service
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: de9ae8e5c0cbf0997811db9624f6c6b92e03a5df
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2508090fa8831c8fefb0e710c28e512ec0c94c6e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66742939"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074141"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Входящие и исходящие IP-адреса в Службе приложений Azure
 
@@ -35,9 +34,9 @@ ms.locfileid: "66742939"
 - удалите последнее приложение в некотором сочетании группы ресурсов _и_ региона и создадите его заново;
 - удалите существующую SSL-привязку, например во время обновления сертификатов (см. раздел [об обновлении сертификатов](app-service-web-tutorial-custom-ssl.md#renew-certificates)).
 
-## <a name="find-the-inbound-ip"></a>Поиск входящих IP-адреса
+## <a name="find-the-inbound-ip"></a>Поиск входящего IP-адреса
 
-Просто выполните следующую команду в локальном окне терминала:
+Просто выполните следующую команду в локальном терминале:
 
 ```bash
 nslookup <app-name>.azurewebsites.net
@@ -53,11 +52,11 @@ nslookup <app-name>.azurewebsites.net
 
 Набор исходящих IP-адресов приложения изменяется при переводе приложения с любого из низких уровней (**Базовый**, **Стандартный** или **Премиум**) на уровень **Премиум V2** или обратно.
 
-Можно найти набор всех возможных исходящих IP-адресов можно использовать приложения, независимо от ценовой категории, выполняя поиск `possibleOutboundIPAddresses` свойство или в **дополнительных исходящих IP-адресов** в **свойства**  колонка на портале Azure. См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ips).
+Набор всех возможных исходящих IP-адресов, которые может использовать приложение, независимо от ценовых категорий, путем поиска `possibleOutboundIPAddresses` свойства или в поле Дополнительные исходящие **IP-адреса** в колонке **Свойства** в портал Azure. См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ips).
 
 ## <a name="find-outbound-ips"></a>Поиск исходящих IP-адресов
 
-Чтобы найти на портале Azure исходящие IP-адреса, которые используются в конкретный момент в приложении, щелкните **Свойства** в области навигации приложения слева. Они перечислены в **исходящие IP-адреса** поля.
+Чтобы найти на портале Azure исходящие IP-адреса, которые используются в конкретный момент в приложении, щелкните **Свойства** в области навигации приложения слева. Они перечислены в поле **Исходящие IP-адреса** .
 
 Эти же сведения можно получить, выполнив следующую команду в [Cloud Shell](../cloud-shell/quickstart.md).
 
@@ -69,7 +68,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query outboundI
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).OutboundIpAddresses
 ```
 
-Чтобы найти _все_ возможных исходящих IP-адресов для вашего приложения, независимо от ценовой категории, нажмите кнопку **свойства** в левой области навигации приложения. Они перечислены в **дополнительных исходящих IP-адресов** поля.
+Чтобы найти _все_ возможные исходящие IP-адреса для приложения, независимо от ценовых категорий, щелкните **свойства** в левой области навигации приложения. Они перечислены в поле **Дополнительные исходящие IP-адреса** .
 
 Эти же сведения можно получить, выполнив следующую команду в [Cloud Shell](../cloud-shell/quickstart.md).
 
@@ -81,7 +80,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).PossibleOutboundIpAddresses
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как ограничить входящий трафик по IP-адресам источников.
 

@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: facb1115-2b4e-4ef3-9905-330e42beb686
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2016
 ms.author: gwallace
-ms.openlocfilehash: b36f6e2ace02324a63616f31fcdccfa666856699
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 116811a8b4d8e61a2a727cd4606344f2b169be96
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875221"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091599"
 ---
 # <a name="create-a-linux-vm-using-the-azure-classic-cli"></a>Создание виртуальной машины Linux с помощью классического интерфейса командной строки Azure
 
@@ -50,24 +49,24 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 
 Чтобы быстро выбрать дистрибутив, можно воспользоваться псевдонимами интерфейса командной строки Azure для большинства распространенных дистрибутивов ОС. В следующей таблице перечислены псевдонимы (для интерфейса командной строки Azure версии 0.10). Все развертывания с использованием команды `quick-create` по умолчанию устанавливают резервные виртуальные машины с поддержкой хранилища на основе твердотельных накопителей (SSD), что обеспечивает более быструю подготовку к работе и доступ к диску с высокой производительностью. (Эти псевдонимы представляют лишь небольшую часть дистрибутивов, доступных в Azure. Чтобы найти другие образы в Azure Marketplace, выполните поиск в [PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [Интернете](https://azure.microsoft.com/marketplace/virtual-machines/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) или [загрузите собственный пользовательский образ](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
 
-| Alias | Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Version |
+| Псевдоним | Издатель | Предложение | номер SKU | Version |
 |:--- |:--- |:--- |:--- |:--- |
 | CentOS |OpenLogic |CentOS |7,2 |latest |
 | CoreOS |CoreOS |CoreOS |Stable |latest |
 | Debian |credativ |Debian |8 |latest |
 | openSUSE |SUSE |openSUSE |13.2 |latest |
 | RHEL |Red Hat |RHEL |7,2 |latest |
-| UbuntuLTS |Canonical |Сервер Ubuntu |14.04.4-LTS |latest |
+| UbuntuLTS |Канонический |Сервер Ubuntu |14.04.4-LTS |latest |
 
 В следующих разделах для параметра **ImageURN** (`-Q`) используется псевдоним `UbuntuLTS`, чтобы развернуть виртуальную машину на базе сервера Ubuntu 14.04.4 LTS.
 
 В предыдущем примере команда `quick-create` вызывала только флаг `-M`, чтобы идентифицировать открытый ключ SSH для его передачи при отключении паролей SSH. Теперь необходимо ввести следующие аргументы:
 
 * имя группы ресурсов (для своей первой группы ресурсов в Azure вы можете выбрать любое имя);
-* имя виртуальной машины;
+* Имя виртуальной машины
 * расположение (по умолчанию можно использовать `westus` или `westeurope`);
 * Linux (для Azure необходимо указать ОС, которую вы предпочитаете использовать);
-* username пользователя
+* username
 
 В приведенном ниже примере указаны все необходимые значения. Так как в качестве файла открытого ключа формата SSH-RSA используется `~/.ssh/id_rsa.pub`, этот файл работает как есть.
 
