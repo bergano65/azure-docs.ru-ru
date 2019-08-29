@@ -301,8 +301,8 @@ ms.locfileid: "67839065"
 | NumberDouble |Double |
 | NumberInt |Int32 |
 | NumberLong |Int64 |
-| ObjectID |Строка, |
-| Строка, |Строка, |
+| ObjectID |String |
+| String |String |
 | UUID |Guid |
 | Object |Преобразованный в плоские столбцы с "_" в качестве вложенного разделителя |
 
