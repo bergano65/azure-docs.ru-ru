@@ -10,12 +10,12 @@ ms.reviewer: jmartens, garye
 ms.author: jordane
 author: jpe316
 ms.date: 07/12/2019
-ms.openlocfilehash: 97b66bff0e6413b7774a054a01a0dc73649c9cce
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: b0d8eef025efb6398f1d7c734ca558540b157fef
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68962985"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128254"
 ---
 # <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-pipelines"></a>Выполнение пакетных прогнозов в больших наборах данных с помощью конвейеров Машинное обучение Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "68962985"
 
 На следующих шагах вы создадите [конвейер машинного обучения](concept-ml-pipelines.md) для регистрации предварительно обученной модели компьютерной концепции ([порождение — v3](https://arxiv.org/abs/1512.00567)). Затем вы используете предварительно обученную модель для пакетной оценки образов, доступных в учетной записи хранилища BLOB-объектов Azure. Для оценки будут использоваться изображения без меток из набора данных [ImageNet](http://image-net.org/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -114,7 +114,7 @@ output_dir = PipelineData(name="scores",
 
 ### <a name="set-up-compute-target"></a>Настройка целевого объекта для вычислений
 
-В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Например, вы можете создать `Azure Machine Learning compute`.
+В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Например, можно создать Машинное обучение Azure вычислений с помощью класса [амлкомпуте](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute%28class%29?view=azure-ml-py) .
 
 ```python
 from azureml.core.compute import AmlCompute

@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 08/22/2019
+ms.date: 08/29/2019
 ms.author: dalek
-ms.openlocfilehash: 45a8f8a7ee4d887503aeaf8e0e285c45a21c4bcc
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: f2ea87f237fa5cca8a4b1f6773d2b47729cfb5b0
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982605"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147552"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -147,6 +147,9 @@ systemEvents
 Для каждой сохранившейся записи `itemCount` обозначает число исходных записей, которые эта запись представляет. Эта величина равна 1 + число предыдущих удаленных записей. 
 
 ## <a name="change-the-data-retention-period"></a>Изменение срока хранения данных
+
+> [!NOTE]
+> Мы временно удалили эту функцию во время устранения возможной проблемы.  Мы вернемся к середине до сентября 2019.
 
 Срок хранения по умолчанию для ресурсов Application Insights составляет 90 дней. Для каждого Application Insightsного ресурса можно выбрать разные периоды хранения. Полный набор доступных периодов хранения составляет 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. 
 

@@ -3,22 +3,20 @@ title: Фабрика данных Azure — примеры
 description: Подробное описание примеров, поставляемых со службой фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: c0538b90-2695-4c4c-a6c8-82f59111f4ab
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: f7ebc57e09691af1583815ae9672e1afb820145b
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 63db1810cbdd2133bc0577530325351997b31f30
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67462066"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139267"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
 > [!NOTE]
@@ -28,7 +26,7 @@ ms.locfileid: "67462066"
 ## <a name="samples-on-github"></a>Примеры на GitHub
 В [репозитории GitHub Azure-DataFactory](https://github.com/azure/azure-datafactory) предлагается несколько примеров, которые помогут вам быстро приступить к работе со службой фабрики данных Azure или настроить сценарии для использования в собственном приложении. Папка Samples\JSON содержит фрагменты JSON для распространенных сценариев.
 
-| Образец | Описание |
+| Пример | Описание |
 |:--- |:--- |
 | [Пошаговое руководство по ADF](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ADFWalkthrough) |Этот пример представляет собой сквозное руководство по обработке файлов журналов с помощью фабрики данных Azure для преобразования данных из файлов журналов в аналитические данные. <br/><br/>В этом руководстве конвейер фабрики данных собирает примеры журналов, обрабатывает и дополняет их эталонными данными из журналов, а также преобразует сведения, чтобы оценить эффективность недавно запущенной маркетинговой кампании. |
 | [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
@@ -70,14 +68,14 @@ ms.locfileid: "67462066"
 5. Настроив параметры, нажмите кнопку **Создать** , чтобы создать или развернуть примеры конвейеров и используемые ими связанные службы и таблицы.
 6. Состояние развертывания отображается на элементе примера, который вы щелкнули ранее в колонке **Примеры конвейеров**.
 
-    ![Состояния развертывания](./media/data-factory-samples/DeploymentStatus.png)
+    ![Состояние развертывания](./media/data-factory-samples/DeploymentStatus.png)
 7. Когда на элементе примера появится сообщение **Развертывание прошло успешно**, закройте колонку **Примеры конвейеров**.  
 8. В колонке **ФАБРИКА ДАННЫХ** вы увидите, что связанные службы, наборы данных и конвейеры добавлены в вашу фабрику данных.  
 
     ![Колонка "Фабрика данных"](./media/data-factory-samples/DataFactoryBladeAfter.png)
 
 ## <a name="samples-in-visual-studio"></a>Примеры в Visual Studio
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 На вашем компьютере должны быть установлены следующие компоненты:
 
 * Visual Studio 2013 или Visual Studio 2015.
@@ -92,7 +90,7 @@ ms.locfileid: "67462066"
    2. В правой области выберите **Шаблоны фабрики данных** .
    3. Введите **имя** проекта.
    4. Выберите **расположение** для проекта.
-   5. Последовательно выберите **ОК**.
+   5. Нажмите кнопку **ОК**.
 
       ![Диалоговое окно "Новый проект"](./media/data-factory-samples/vs-new-project-adf-templates.png)
 3. В диалоговом окне **Шаблоны фабрики данных** выберите пример шаблона в разделе **Use-Case Templates** (Примеры использования шаблонов) и нажмите кнопку **Далее**. Далее приводится описание процедуры использования шаблона **Профилирование клиентов** . Действия аналогичны действиям в других примерах.

@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 60d8d4594d76fbef36df0259940d4437e28280cb
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 5957a7c555c5b5d9905fcb7e3310093416ae5efb
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873440"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147710"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -52,8 +52,6 @@ ms.locfileid: "69873440"
 > Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Последняя версия [пакета SDK для Java SE 8](https://aka.ms/azure-jdks)
 

@@ -3,22 +3,20 @@ title: Преобразование данных. Обработка и прео
 description: Узнайте, как преобразовать или обработать данные в фабрике данных Azure с помощью Hadoop, Машинного обучения Azure или Azure Data Lake Analytics.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: 39786731-1e4b-40a4-81b7-d06e127427aa
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: b1a99f2872a69e01232c69a73f36319552429ca0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9e70877a51c23be2d626492f84a69ae49fb27fac
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60486606"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139773"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 > [!div class="op_single_selector"]
@@ -66,7 +64,7 @@ ms.locfileid: "60486606"
 
 Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](data-factory-azure-ml-batch-execution-activity.md). 
 
-## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
+## <a name="stored-procedure-activity"></a>Операция хранимой процедуры
 С помощью действия "Хранимая процедура SQL Server" в конвейере Фабрики данных можно вызвать хранимую процедуру в одном из таких хранилищ данных: Базе данных SQL Azure, Хранилище данных SQL Azure, базе данных SQL Server в вашей организации или на виртуальной машине Azure. Дополнительные сведения см. в разделе [Действие хранимой процедуры](data-factory-stored-proc-activity.md).  
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
@@ -94,7 +92,7 @@ ms.locfileid: "60486606"
 | [Pig](data-factory-pig-activity.md) |HDInsight [Hadoop] |
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
-| [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |Azure |
+| [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |Azure VM |
 | [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, хранилище данных Azure SQL или SQL Server |
 | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |Azure Data Lake Analytics |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |

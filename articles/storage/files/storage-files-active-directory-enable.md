@@ -6,12 +6,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: rogarana
-ms.openlocfilehash: 23e8c82bad60675338a0482155ed8a92cdad3d3d
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 886cacc5e90136380a183f6b9ddd1123d726dcf3
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69617674"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129228"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-over-smb-for-azure-files"></a>Включение проверки подлинности Azure Active Directory доменных служб по протоколу SMB для файлов Azure
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -46,11 +46,9 @@ ms.locfileid: "69617674"
 
 2.  **Включите доменные службы Azure AD в клиенте Azure AD**.
 
-< < < < < < <, чтобы обеспечить проверку подлинности с помощью учетных данных Azure AD, необходимо включить доменные службы Azure AD для вашего клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](../../active-directory-domain-services/tutorial-create-instance.md).
-= = = = = = = Для поддержки проверки подлинности с помощью учетных данных Azure AD необходимо включить AD DS Azure для вашего клиента Azure AD. Если вы не являетесь администратором клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить Azure Active Directory доменных служб с помощью портал Azure](../../active-directory-domain-services/create-instance.md).
->>>>>>> 5f049740fef320adb172d59f68bd161bdc4318e1
+    Чтобы поддерживать аутентификацию с помощью учетных данных Azure AD, нужно включить доменные службы Azure AD для вашего клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](../../active-directory-domain-services/tutorial-create-instance.md).
 
-    It typically takes about 15 minutes for an Azure AD DS deployment to complete. Verify that the health status of Azure AD DS shows **Running**, with password hash synchronization enabled, before proceeding to the next step.
+    Для завершения развертывания AD DS Azure обычно требуется около 15 минут. Прежде чем перейти к следующему шагу, убедитесь, что для состояния работоспособности AD DS Azure указано состояние **работает**с включенной синхронизацией хэшей паролей.
 
 3.  **Домен: присоединение виртуальной машины Azure к Azure AD DS.**
 

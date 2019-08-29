@@ -3,21 +3,20 @@ title: DataSets в фабрике данных Azure | Документация 
 description: Сведения о наборах данных в фабрике. Наборы данных представляют входные и выходные данные.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.author: shlo
-ms.openlocfilehash: bbf7159abf88ce70cc62d202a8375aad302a0552
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 788fee724f381ab317b97a682aa21d17ec1ffa9d
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019974"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137300"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Наборы данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -147,9 +146,7 @@ typeProperties | Свойства каждого типа отличаются (
 - параметр linkedServiceName ссылается на связанную службу типа AzureSqlDatabase, определение которой указано во фрагменте кода JSON ниже;
 
 ## <a name="dataset-type"></a>Тип набора данных
-Существует множество различных типов наборов данных в зависимости от используемого хранилища данных. В таблице ниже перечислены хранилища данных, поддерживаемые фабрикой данных. Щелкните хранилище данных, чтобы узнать, как для него создать связанную службу и набор данных.
-
-[!INCLUDE [data-factory-v2-supported-data-stores](../../includes/connector-activity-support-matrix.md)]
+Существует множество различных типов наборов данных в зависимости от используемого хранилища данных. Список сохраненных данных, поддерживаемых фабрикой данных, можно найти в статье [Обзор соединителя](connector-overview.md) . Щелкните хранилище данных, чтобы узнать, как для него создать связанную службу и набор данных.
 
 В примере в предыдущем разделе задан тип набора данных **AzureSqlTable**. Аналогично для набора данных больших двоичных объектов Azure задается тип **AzureBlob**, как показано в следующем фрагменте JSON.
 

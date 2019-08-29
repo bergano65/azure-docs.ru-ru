@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: caac53aec08e234f320ee4278a5a58bbc62bff68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3f58e596db26c04a8f3be4f87eb129fadf5e328
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66494580"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141740"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-python"></a>Создание кластера и базы данных Azure Data Explorer с использованием Python
 
@@ -24,9 +24,9 @@ ms.locfileid: "66494580"
 > * [Python](create-cluster-database-python.md)
 >  
 
-Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этой статье Создайте кластер и базы данных с помощью Python.
+Azure Data Explorer — это быстрая и полностью управляемая служба для анализа большого объема потоковых данных в реальном времени, поступающих из приложений, а также с веб-сайтов, устройств Интернета вещей и т. д. Чтобы использовать обозреватель данных Azure, сначала нужно создать кластер и одну или несколько баз данных в этом кластере. Затем вы должны принять (загрузить) данные в базы данных, чтобы к ним можно было выполнять запросы. В этой статье вы создадите кластер и базу данных с помощью Python.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -71,7 +71,7 @@ pip install azure-mgmt-kusto
 
     Можно использовать дополнительные необязательные параметры, например емкость кластера и т. д.
     
-1. Введите [*свои учетные данные*](https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate?view=azure-python).
+1. Введите [*свои учетные данные*](/azure/python/python-sdk-azure-authenticate).
 
 1. Чтобы проверить, успешно ли создан кластер, можно выполнить следующую команду:
 
@@ -119,13 +119,13 @@ pip install azure-mgmt-kusto
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-* Если вы планируете выполнить другие статьи, сохраните созданные ресурсы.
+* Если вы планируете следовать нашим другим статьям, не заполняйте созданные ресурсы.
 * Чтобы очистить ресурсы, удалите кластер. При удалении кластера также удаляются все содержащиеся в нем базы данных. Для удаления кластера используйте следующую команду:
 
     ```Python
     cluster_operations.delete(resource_group_name = resource_group_name, cluster_name = clusterName)
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство. Прием данных с помощью библиотеки Python в Azure Data Explorer](python-ingest-data.md)

@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 0a89cd2c576a3539d7b1b6a282a2287551e8265a
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 124af71e458e103392c554a9c86d679f691df5b9
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877111"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147644"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Планирование и вещание заданий (Node. js)
 
@@ -49,8 +49,6 @@ ms.locfileid: "69877111"
 * **scheduleJobService.js**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 

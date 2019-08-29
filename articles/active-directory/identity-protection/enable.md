@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 304ba16985d5abfc4d385b3f1150cfa544c20b2a
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: c8e73bd3639adcc43dd191ff2eacaf7335f08d72
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335510"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126595"
 ---
 # <a name="enabling-azure-active-directory-identity-protection"></a>Включение защиты идентификации Azure Active Directory
 
 Защита идентификации Azure Active Directory — это возможность службы Azure Active Directory (Azure AD). С помощью защиты идентификации Azure AD можно сделать следующее.
 
-- Получить консолидированное представление помеченных пользователей и событий риска, определенных с помощью алгоритмов Машинного обучения.
+- Получение консолидированного представления помеченных пользователей и обнаруженных рисков с помощью алгоритмов машинного обучения
 - Настроить политики условного доступа на основе рисков для автоматической защиты пользователей.
-- Улучшить безопасность путем реагирования на уязвимости. 
+- Улучшить безопасность путем выполнения действий, связанных с уязвимостями. 
 
 Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 

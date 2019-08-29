@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 300fd31632a6b3c9043c19dd9b47f40258080261
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 1165cbeff1144567e43f408c0866c0b8a571882d
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614204"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125587"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -22,7 +22,7 @@ ms.locfileid: "69614204"
 Из этой статьи вы узнаете, как настроить присоединенный к домену кластер HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory (Azure AD-DS).
 
 > [!NOTE]  
-> Протокол ESP общедоступен в HDInsight 3,6 и 4,0 для типов кластера: Apache Spark, Interactive, Apache Hadoop и HBase. Для типа кластера Apache Kafka используется предварительная версия ESP.
+> Протокол ESP общедоступен в HDInsight 3,6 и 4,0 для типов кластера: Apache Spark, Interactive, Hadoop и HBase. Протокол ESP для Apache Kafka типа кластера доступен в режиме предварительной версии с поддержкой только наиболее подходящих усилий. Кластеры ESP, созданные до даты ESP (1 октября 2018), не поддерживаются.
 
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 

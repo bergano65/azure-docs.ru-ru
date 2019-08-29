@@ -9,17 +9,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 ms.reviewer: maghan
 manager: craigg
 robots: noindex
-ms.openlocfilehash: cc880885777cbca67d6fb39b90feadc889339f76
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: d729fd11f355650b1476e6864a6d70219bf37e12
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67836178"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135130"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок Фабрики данных
 > [!NOTE]
@@ -31,7 +31,7 @@ ms.locfileid: "67836178"
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 ### <a name="error-the-subscription-is-not-registered-to-use-namespace-microsoftdatafactory"></a>Ошибка: "Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory"
-Если эта ошибка возникает, поставщик ресурсов фабрики данных Azure не был зарегистрирован на компьютере. Выполните следующее:
+Если эта ошибка возникает, поставщик ресурсов фабрики данных Azure не был зарегистрирован на компьютере. Выполните следующие действия:
 
 1. Запустите Azure PowerShell.
 2. Войдите в свою учетную запись Azure с помощью следующей команды:
@@ -48,9 +48,9 @@ ms.locfileid: "67836178"
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема. Ошибка авторизации при выполнении командлета Фабрики данных
 Скорее всего, для Azure PowerShell используется неправильная учетная запись или подписка Azure. Чтобы выбрать правильную учетную запись и подписку Azure для Azure PowerShell, используйте такие командлеты:
 
-1. Подключения-AzAccount — использование правильного идентификатора пользователя и пароль
-2. Get-AzSubscription - просмотреть все подписки для учетной записи.
-3. Выберите AzSubscription &lt;имя подписки&gt; -выбрать подходящую подписку. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
+1. Connect-Азаккаунт — используйте правильный идентификатор пользователя и пароль.
+2. Get-Азсубскриптион — Просмотр всех подписок для учетной записи.
+3. SELECT-азсубскриптион &lt;имя&gt; подписки — выберите подходящую подписку. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
 
 ### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Проблема. Не удается запустить экспресс-установку шлюза управления данными с портала Azure
 Для экспресс-установки шлюза управления данными требуется Internet Explorer или другой веб-браузер, совместимый с Microsoft ClickOnce. Если не удается запустить экспресс-установку, выполните одно из следующих действий:

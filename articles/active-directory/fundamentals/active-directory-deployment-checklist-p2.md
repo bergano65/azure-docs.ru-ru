@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 767e3caf577bc1b7a49bd56570b8aeedbe307edc
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 7b5678fb0edcecae9ffa6a3c27f3dc6334ecf505
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68693875"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125343"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Руководство по развертыванию компонентов Azure Active Directory
 
@@ -55,7 +55,7 @@ ms.locfileid: "68693875"
 | [Включение смарт-блокировки экстрасети для служб федерации Active Directory](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) | Блокировка экстрасети служб федерации Active Directory (AD FS) обеспечивает защиту от атак методом подбора пароля. При этом действительные пользователи AD FS могут продолжать использовать свои учетные записи. | |
 | [Развертывание многофакторной идентификации Azure AD с помощью политик условного доступа](../authentication/howto-mfa-getstarted.md) | Требовать, чтобы пользователи выполняли двухфакторную проверку подлинности при доступе к конфиденциальным приложениям с помощью политик условного доступа. | Azure AD Premium P1 |
 | [Включение Защиты идентификации Azure Active Directory](../identity-protection/enable.md) | Включите отслеживание небезопасных входов в систему и скомпрометированных учетных данных для пользователей в своей организации. | Azure AD Premium P2 |
-| [Использование событий риска для активации многофакторной проверки подлинности и изменения пароля](../authentication/tutorial-risk-based-sspr-mfa.md) | Используйте автоматизацию, позволяющую активировать такие события, как многофакторная проверки подлинности, сброс пароля и блокирование входа в систему в зависимости от степени риска. | Azure AD Premium P2 |
+| [Использование обнаружения рисков для активации многофакторной проверки подлинности и смены паролей](../authentication/tutorial-risk-based-sspr-mfa.md) | Используйте автоматизацию, позволяющую активировать такие события, как многофакторная проверки подлинности, сброс пароля и блокирование входа в систему в зависимости от степени риска. | Azure AD Premium P2 |
 | [Включение конвергентной регистрации методов самостоятельного сброса пароля и многофакторной идентификации Azure AD (предварительная версия)](../authentication/concept-registration-mfa-sspr-converged.md) | Разрешите своим пользователям регистрироваться через один общий интерфейс для использования службы "Многофакторная идентификация Microsoft Azure" и самостоятельного сброса пароля. | Azure AD Premium P1 |
 
 ## <a name="phase-2-import-users-enable-synchronization-and-manage-devices"></a>Этап 2. Импорт пользователей, включение синхронизации и управление устройствами

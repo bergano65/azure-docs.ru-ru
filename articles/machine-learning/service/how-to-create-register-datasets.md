@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/22/2019
-ms.openlocfilehash: 497a00570d85ab83f71416e979e485db4685b64a
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: e5d5d36e82914f1d6d03299db0ed1427ac5a389a
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992110"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147588"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в Машинное обучение Azure
 
@@ -45,9 +45,11 @@ ms.locfileid: "69992110"
 
 ## <a name="dataset-types"></a>Типы наборов данных
 
-Наборы данных подразделяются на различные типы в зависимости от того, как пользователи их используют в обучении. В настоящее время мы поддерживаем [табулардатасетс](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) , которые представляют данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas. `TabularDataset` Объект может быть создан из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей документации.
+Наборы данных подразделяются на различные типы в зависимости от того, как пользователи их используют в обучении. Список типов наборов данных:
+* [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas. `TabularDataset` Объект может быть создан из файлов CSV, TSV, Parquet, результатов SQL-запросов и т. д. Полный список см. в нашей [документации](https://aka.ms/tabulardataset-api-reference).
+* Филедатасет ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Это дает возможность скачивать файлы или подключать их к вашему вычислению. Файлы могут иметь любой формат, что позволяет использовать более широкий спектр сценариев машинного обучения, включая глубокое обучение.
 
-Дополнительные сведения о предстоящих изменениях API см. в статье [что такое машинное обучение Azure служба?](https://aka.ms/tabular-dataset) 
+Дополнительные сведения о предстоящих изменениях API см. [здесь](https://aka.ms/tabular-dataset).
 
 ## <a name="create-datasets"></a>Создание наборов данных 
 
@@ -101,6 +103,25 @@ titanic_ds.take(3).to_pandas_dataframe()
 1|2|1|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|В
 2|3|1|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
+### <a name="create-filedatasets"></a>Создание Филедатасетс
+`from_files()` Используйте`FileDatasetFactory` метод класса для загрузки файлов в любом формате и создания незарегистрированного филедатасет.
+
+```Python
+# create a FileDataset from multiple paths in datastore
+datastore_paths = [
+                  (datastore, 'animals/dog/1.jpg'),
+                  (datastore, 'animals/dog/2.jpg'),
+                  (datastore, 'animals/dog/*.jpg')
+                 ]
+animal_ds = Dataset.File.from_files(path=datastore_paths)
+
+# create a FileDataset from image and label files behind public web urls
+web_paths = [
+            'https://azureopendatastorage.blob.core.windows.net/mnist/train-images-idx3-ubyte.gz',
+            'https://azureopendatastorage.blob.core.windows.net/mnist/train-labels-idx1-ubyte.gz'
+           ]          
+mnist_ds = Dataset.File.from_files(path=web_paths)
+```
 ## <a name="register-datasets"></a>Регистрация наборов данных
 
 Чтобы завершить процесс создания, зарегистрируйте наборы данных в рабочей области:

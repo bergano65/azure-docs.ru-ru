@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/21/2019
-ms.openlocfilehash: 1b35533eeb4c4a364588dbea11f74e8d6b76df3b
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: d9f1afdff53ada2df7722fcfdd7014fb6c417e39
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69998218"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135177"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
@@ -440,7 +440,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Resource|Имя ресурса. |
@@ -554,8 +554,8 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
-|ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQ |
+|Type|Всегда: AzureDiagnostics |
+|ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: Ошибки |
 |OperationName|Имя операции. Всегда: ErrorEvent |
 |Resource|Имя ресурса. |
@@ -583,7 +583,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Type|Всегда: AzureDiagnostics |
+|Тип|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent |
@@ -612,7 +612,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: Истечение выделенного времени |
 |OperationName|Имя операции. Всегда: TimeoutEvent |
@@ -680,7 +680,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics |
+|Type|Всегда: AzureDiagnostics |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL |
 |Категория|Имя категории. Всегда: AutomaticTuning |
 |Resource|Имя ресурса. |

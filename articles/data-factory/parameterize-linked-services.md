@@ -8,15 +8,15 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/18/2018
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 manager: craigg
-ms.openlocfilehash: 0239c53f98fba201b6d70e1e2212eea36134e30d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 285b7c182fc218a590b7a3980e43175c76555106
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60635550"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140959"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -36,14 +36,14 @@ ms.locfileid: "60635550"
 В настоящее время в пользовательском интерфейсе Фабрики данных на портале Azure связанной службы параметризация поддерживается для следующих хранилищ данных. Для всех других хранилищ данных можно параметризовать связанную службу, выбрав значок **Код** на вкладке **Подключения**, а также использовать редактор JSON.
 - База данных SQL Azure
 - Хранилище данных SQL Azure
-- SQL Server;
+- SQL Server
 - Oracle
-- База данных Cosmos
+- Cosmos DB
 - Amazon Redshift
 - MySQL
 - База данных Azure для MySQL
 
-## <a name="data-factory-ui"></a>Пользовательский интерфейс фабрики данных
+## <a name="data-factory-ui"></a>Пользовательский интерфейс Фабрики данных
 
 ![Добавление динамического содержимого к определению связанной службы](media/parameterize-linked-services/parameterize-linked-services-image1.png)
 

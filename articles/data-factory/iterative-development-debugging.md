@@ -8,15 +8,15 @@ services: data-factory
 documentationcenter: ''
 ms.workload: data-services
 ms.tgt_pltfrm: na
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 manager: craigg
-ms.openlocfilehash: a8028fdde93d06f7b25bf9bd8b4ed5a560a35f83
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: afc51735fcbd8f4131b2a4066a0fc4adbb8f1a41
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60686313"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142334"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Итеративные разработка и отладка в фабрике данных Azure
 
@@ -70,5 +70,5 @@ ms.locfileid: "60686313"
 
 ![После включения точки останова для выбранного элемента](media/iterative-development-debugging/iterative-development-image6.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Непрерывные интеграция и развертывание в фабрике данных Azure](continuous-integration-deployment.md)

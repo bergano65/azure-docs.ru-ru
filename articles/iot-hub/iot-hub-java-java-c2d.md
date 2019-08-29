@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 06/28/2017
-ms.openlocfilehash: 28d01f1acbc6d9ff033567b10efc801925752191
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 4d9a73ee9fb9e4019d30354e6d9fbbe57d081e33
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618484"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147519"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-java"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (Java)
 
@@ -43,7 +43,7 @@ ms.locfileid: "68618484"
 > [!NOTE]
 > В центре Интернета вещей предусмотрена поддержка пакетов SDK для многих платформ и языков устройств (включая C, Java, Python и JavaScript) с помощью пакетов SDK для устройств Azure IoT. Пошаговые указания по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [центре разработчиков для Интернета вещей Azure](https://azure.microsoft.com/develop/iot).
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
 
 * Полная рабочая версия руководства отправка данных [телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-java.md) или руководство по [настройке маршрутизации сообщений с помощью центра Интернета вещей](tutorial-routing.md) .
 

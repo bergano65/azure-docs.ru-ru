@@ -13,12 +13,12 @@ ms.date: 06/20/2019
 ms.subservice: hybrid
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d4eb5b4c634fe495a0ed149016d862defc2eb45
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 36433aef75d38418cb74fcd195dc1e9e902f24a8
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532446"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70124924"
 ---
 # <a name="four-steps-to-a-strong-identity-foundation-with-azure-active-directory"></a>Четыре шага для надежной идентификации с помощью Azure Active Directory
 
@@ -141,7 +141,7 @@ Azure AD Connect играет ключевую роль в процессе по
 
 Azure предоставляет отчеты, которые могут использоваться вами и вашей организацией для проверки регистрации пользователей в MFA и SSPR. Пользователям, которые не зарегистрированы, может потребоваться обучение процесса.
 
-Отчет о событиях [входа](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) в MFA содержит сведения об использовании MFA и позволяет получить представление о работе MFA в вашей организации. Наличие доступа к действиям входа (и аудитам и событиям риска) для Azure AD крайне важно для устранения неполадок, анализа использования и исследований.
+Отчет о событиях [входа](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) в MFA содержит сведения об использовании MFA и позволяет получить представление о работе MFA в вашей организации. Наличие доступа к действиям входа (и аудиту и обнаружению рисков) для Azure AD является критически важным для устранения неполадок, анализа использования и исследований.
 
 Аналогичным образом [отчет об управлении паролями](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting) можно использовать для определения того, кто или не зарегистрирован для SSPR.
 

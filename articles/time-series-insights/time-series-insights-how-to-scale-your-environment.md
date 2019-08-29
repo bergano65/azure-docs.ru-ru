@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: ce29336c6e5dc187eb2ef713cd5dfeafdc8a003f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 13fa2b892013cf4a3fb96220c901030c6b0aee0b
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165654"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129116"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Как масштабировать среду Azure Time Series Insights
 
@@ -49,16 +49,16 @@ ms.locfileid: "67165654"
 
 1. В меню среды службы "Аналитика временных рядов" выберите **Настроить**.
 
-   [![configure.png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
+   [![Настройка. png](media/scale-your-environment/configure.png)](media/scale-your-environment/configure.png#lightbox)
 
 1. Настройте ползунок **емкости** соответственно требованиям скорости приема и емкости хранилища. Обратите внимание, что **скорость приема**, **емкость хранилища** и **оценочная стоимость** обновляются динамически, чтобы показать эффект изменения.
 
-   [!["Ползунок"](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
+   [![Группу](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
 
    Кроме того, можно ввести число множителя емкости в текстовом поле справа от ползунка.
 
 1. Выберите **Сохранить**, чтобы масштабировать среду. Индикатор хода выполнения будет отображаться, пока изменения не зафиксируются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Убедитесь, что новое значение емкости [недостаточно для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).
+- Убедитесь, что Новая емкость [достаточна для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).

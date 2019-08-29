@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 07/01/2019
 ms.author: moderakh
-ms.openlocfilehash: 3bee473adde9c4762cf400dff6190eb76a4cc8d7
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 156699b8d8c1a645961f4e919bdd843d995a3d18
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624693"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142657"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -152,6 +152,10 @@ ms.locfileid: "69624693"
 
 Любые запросы к Cosmos DB с помощью выведенного из эксплуатации пакета SDK будут отклонены службой.
 
+> [!WARNING]
+> Все версии **1. x** пакета SDK для Async Java для API SQL будут прекращены **30 августа 2020**.
+> 
+>
 <br/>
 
 | Version | Дата выпуска | Дата вывода |
@@ -169,9 +173,9 @@ ms.locfileid: "69624693"
 | [2.1.0](#2.1.0) |5 сентября 2018 г.|--- |
 | [2.0.1](#2.0.1) |16 августа 2018 г.|--- |
 | [2.0.0](#2.0.0) |20 июня 2018 г.|--- |
-| [1.0.2](#1.0.2) |18 мая 2018 г.|--- |
-| [1.0.1](#1.0.1) |20 апреля 2018 г.|--- |
-| [1.0.0](#1.0.0) |27 февраля 2018 г|--- |
+| [1.0.2](#1.0.2) |18 мая 2018 г.|30 августа 2020 г. |
+| [1.0.1](#1.0.1) |20 апреля 2018 г.|30 августа 2020 г. |
+| [1.0.0](#1.0.0) |27 февраля 2018 г|30 августа 2020 г. |
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]

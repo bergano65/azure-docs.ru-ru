@@ -1,5 +1,5 @@
 ---
-title: Архитектура аварийного восстановления из Hyper-V в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Архитектура аварийного восстановления Hyper-V в Azure в Azure Site Recovery
 description: В этой статье представлен обзор компонентов и архитектуры, используемых при развертывании виртуальных машин Hyper-V (без VMM) из локальной среды в Azure в рамках аварийного восстановления с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: raynew
-ms.openlocfilehash: 3af96fd03ed8e9878c3418e66cfcf24c7f30088c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 4035746772b44d7267d6a9cd90c7bdc02c804a8a
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845779"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147079"
 ---
 # <a name="hyper-v-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Hyper-V в Azure
 

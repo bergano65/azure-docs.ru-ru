@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64d1b3e2f36256164420ae6b2e699f0ef48e2e78
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 3cf3281e00560a289fbb4adfe57083644e1a86e3
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69576554"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125430"
 ---
 # <a name="conditional-access-risk-based-conditional-access"></a>Условный доступ: Условный доступ на основе рисков
 
-Организации с лицензиями Azure AD Premium P2 могут создавать политики условного доступа, включающие события риска защита идентификации Azure AD. Предусмотрены три политики по умолчанию, которые можно включить в любое поле. 
+Организации с лицензиями Azure AD Premium P2 могут создавать политики условного доступа, включая обнаружение рисков защита идентификации Azure AD. Предусмотрены три политики по умолчанию, которые можно включить в любое поле. 
 
 * Требовать регистрацию всех пользователей для многофакторной идентификации Azure.
 * Требовать изменения пароля для пользователей с высоким уровнем риска.

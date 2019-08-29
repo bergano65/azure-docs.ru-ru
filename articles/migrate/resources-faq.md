@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: snehaa
-ms.openlocfilehash: af95ad892b62cb5d8bece554d6026525d9279777
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
-ms.translationtype: HT
+ms.openlocfilehash: 03651ecb073d02a373c434b8cb55bdafec6d142a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102869"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142218"
 ---
 # <a name="azure-migrate-frequently-asked-questions-faq"></a>Миграция Azure Часто задаваемые вопросы
 
@@ -172,7 +172,7 @@ ms.locfileid: "70102869"
 
 ### <a name="how-can-i-automate-the-installation-of-microsoft-monitoring-agent-mma-and-the-dependency-agent"></a>Как автоматизировать установку Microsoft Monitoring Agent (MMA) и агента зависимостей?
 
-Используйте этот [скрипт для установки агентов](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples). Выполните эти [инструкции, чтобы установить MMA](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent) с помощью командной строки или службы автоматизации. Для MMA используйте [этот скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+Используйте этот [скрипт для установки агента зависимостей](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples). Выполните эти [инструкции, чтобы установить MMA](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent) с помощью командной строки или службы автоматизации. Для MMA используйте [этот скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
 
 Кроме сценариев, для развертывания агентов можно также использовать средства развертывания, такие как System Center Configuration Manager и [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) .
 
@@ -183,8 +183,7 @@ ms.locfileid: "70102869"
 
 ### <a name="what-operating-systems-are-supported-by-the-dependency-agent"></a>Какие операционные системы поддерживаются агентом зависимостей?
 
-- Просмотрите список [операционных систем Windows, поддерживаемых агентом зависимостей](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-windows-operating-systems).
-- Просмотрите список [операционных систем Linux, поддерживаемых агентом зависимостей](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#supported-linux-operating-systems).
+Просмотрите список [операционных систем Windows и Linux, которые Azure Monitor для виртуальных машин поддерживаются](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems).
 
 ### <a name="can-i-visualize-dependencies-in-azure-migrate-for-more-than-an-hour"></a>Можно ли визуализировать зависимости в Azure в течение нескольких часов?
 Нет. Можно визуализировать зависимости до часа. Вы можете вернуться к определенной дате в журнале, как и до конца месяца, но максимальная продолжительность визуализации — это час. Например, период времени на карте зависимостей можно использовать для просмотра зависимостей за вчерашний период, но его можно просмотреть только в течение одного часового окна. Однако можно использовать журналы Azure Monitor для [запроса данных зависимости](https://docs.microsoft.com/azure/migrate/how-to-create-group-machine-dependencies) в течение более длительного времени.

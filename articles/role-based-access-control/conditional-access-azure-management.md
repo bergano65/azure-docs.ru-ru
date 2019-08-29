@@ -15,14 +15,17 @@ ms.workload: identity
 ms.date: 07/15/2019
 ms.author: rolyon
 ms.reviewer: skwan
-ms.openlocfilehash: d4036b2aaa59eeb8e38a5881e465031d7a2f15e3
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: e4b7ce0701349cae3ef501213d0f822ee8d150d0
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899722"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142828"
 ---
 # <a name="manage-access-to-azure-management-with-conditional-access"></a>Управление доступом к управлению Azure с помощью условного доступа
+
+> [!CAUTION]
+> Прежде чем настраивать политику для управления доступом к управлению Azure, убедитесь, что вы понимаете, как работает условный доступ. Убедитесь в отсутствии условий, которые могут заблокировать вам доступ к порталу.
 
 Условный доступ в Azure Active Directory (Azure AD) управляет доступом к облачным приложениям на основе указанных вами условий. Чтобы разрешить доступ, создайте политики условного доступа, разрешающие или блокирующие доступ в зависимости от того, соблюдены ли требования в политике. 
 
@@ -44,7 +47,5 @@ ms.locfileid: "69899722"
 
 Обратите внимание на то, что политика применяется к среде Azure PowerShell, которая вызывает API Azure Resource Manager. Она не применяется к [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2), которая вызывает Microsoft Graph.
 
-> [!CAUTION]
-> Прежде чем настраивать политику для управления доступом к управлению Azure, убедитесь, что вы понимаете, как работает условный доступ. Убедитесь в отсутствии условий, которые могут заблокировать вам доступ к порталу.
 
 Дополнительные сведения о настройке и использовании условного доступа см. [в разделе условный доступ в Azure Active Directory](../active-directory/active-directory-conditional-access-azure-portal.md).

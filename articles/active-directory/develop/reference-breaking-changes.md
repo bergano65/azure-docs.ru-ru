@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/26/2019
+ms.date: 08/28/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38383685f74020f5208d42df4428f896931fbe2a
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 6dd50aa00368469a9c5b42c41826da28566268d4
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68931788"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125420"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -41,7 +41,24 @@ ms.locfileid: "68931788"
 
 ## <a name="upcoming-changes"></a>Предстоящие изменения
 
-2019 августа: Принудительно применять семантику POST в соответствии с правилами анализа URL-адресов. дублирование параметров приведет к ошибке, и кавычки в параметрах больше не будут учитываться, а [BOM](https://www.w3.org/International/questions/qa-byte-order-mark) игнорируется.
+Сентябрь 2019: Дополнительное применение семантики POST в соответствии с правилами анализа URL-адресов. при дублировании параметров будет вызвана ошибка и [Спецификация](https://www.w3.org/International/questions/qa-byte-order-mark) пропускается.
+
+## <a name="august-2019"></a>Август 2019 г.
+
+### <a name="post-form-semantics-will-be-enforced-more-strictly---spaces-and-quotes-will-be-ignored"></a>Семантика отправки формы будет требовать более строгого пробела, а кавычки будут пропущены.
+
+**Дата вступления в силу**: 2 сентября 2019 г.
+
+**Затронутые конечные точки**: версии 1.0 и 2.0.
+
+**Затронутый протокол**: Используется запись в любом месте[(учетные данные клиента](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow), [код авторизации активации](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow), [ропк](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth-ropc), [OBO](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)и активация [токена обновления](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow#refresh-the-access-token)).
+
+Начиная с 9/2 недели, запросы проверки подлинности, использующие метод POST, будут проверены с использованием более длинных стандартов HTTP.  В частности, пробелы и двойные кавычки (") больше не будут удаляться из значений формы запроса. Эти изменения не приводят к нарушению работы существующих клиентов и гарантируют, что запросы, отправляемые в Azure AD, будут надежно обрабатываться каждый раз. В будущем (см. выше) мы планируем дополнительно отклонить дублирующиеся параметры и игнорировать СПЕЦИФИКАЦИю в запросах. 
+
+Пример:
+
+В настоящее `?e=    "f"&g=h` время синтаксический анализ выполняется так `?e=f&g=h` же, `e`как и  ==  `f`.  После этого изменения он будет проанализирован таким образом, что `e`  ==  `    "f"` это вряд ли будет допустимым аргументом, и запрос теперь завершится ошибкой. 
+
 
 ## <a name="july-2019"></a>2019 июля
 

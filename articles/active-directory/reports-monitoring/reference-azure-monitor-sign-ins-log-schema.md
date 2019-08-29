@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a82cc4da3b9f4f0c654c95b9889a8bf73fd8ec5
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 4cc07ac2644ac9f97146e980a1961b9b84e7c561
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989611"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127045"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Анализ схемы журналов входа в Azure AD в Azure Monitor
 
@@ -154,11 +154,11 @@ ms.locfileid: "68989611"
 | ResultType | Результатом операции входа может быть *Success* или *Failure*. | 
 | ResultSignature | Содержит код ошибки, которая возникла во время входа. |
 | ResultDescription | Содержит описание ошибки, которая возникла во время входа. |
-| рискдетаил | рискдетаил | Предоставляет "причину" для определенного состояния рискованного пользователя, входа или события риска. Возможные значения `none`:, `adminGeneratedTemporaryPassword`, `userPerformedSecuredPasswordChange`, `userPerformedSecuredPasswordReset`, ,,`aiConfirmedSigninSafe`,, ,`adminConfirmedSigninCompromised`. `userPassedMFADrivenByRiskBasedPolicy` `adminConfirmedSigninSafe` `adminDismissedAllRiskForUser` `unknownFutureValue` Это значение `none` означает, что для пользователя или входа не было выполнено никаких действий. <br>**Примечание.** Для получения сведений об этом свойстве требуется лицензия Azure AD Premium P2. Другие лицензии возвращают значение `hidden`. |
-| рискевенттипес | рискевенттипес | Типы событий риска, связанные с входом. Возможные значения `unlikelyTravel`:, `anonymizedIPAddress`, `maliciousIPAddress`, `unfamiliarFeatures`, ,,`suspiciousIPAddress`,, и`generic`. `leakedCredentials` `malwareInfectedIPAddress` `investigationsThreatIntelligence` `unknownFutureValue` |
+| рискдетаил | рискдетаил | Предоставляет "причину" для определенного состояния рискованного пользователя, входа или обнаружения риска. Возможные значения `none`:, `adminGeneratedTemporaryPassword`, `userPerformedSecuredPasswordChange`, `userPerformedSecuredPasswordReset`, ,,`aiConfirmedSigninSafe`,, ,`adminConfirmedSigninCompromised`. `userPassedMFADrivenByRiskBasedPolicy` `adminConfirmedSigninSafe` `adminDismissedAllRiskForUser` `unknownFutureValue` Это значение `none` означает, что для пользователя или входа не было выполнено никаких действий. <br>**Примечание.** Для получения сведений об этом свойстве требуется лицензия Azure AD Premium P2. Другие лицензии возвращают значение `hidden`. |
+| рискевенттипес | рискевенттипес | Типы обнаружения рисков, связанные с входом. Возможные значения `unlikelyTravel`:, `anonymizedIPAddress`, `maliciousIPAddress`, `unfamiliarFeatures`, ,,`suspiciousIPAddress`,, и`generic`. `leakedCredentials` `malwareInfectedIPAddress` `investigationsThreatIntelligence` `unknownFutureValue` |
 | рисклевелаггрегатед | рисклевел | Агрегированный уровень риска. `none`Возможные значения:, `low`, `medium`, `high`, и`hidden`. `unknownFutureValue` Значение `hidden` означает, что пользователь или вход не был включен для Защита идентификации Azure AD. **Примечание.** Сведения для этого свойства доступны только для клиентов Azure AD Premium P2. Будут возвращены `hidden`все остальные клиенты. |
 | рисклевелдурингсигнин | рисклевел | Уровень риска во время входа. `none`Возможные значения:, `low`, `medium`, `high`, и`hidden`. `unknownFutureValue` Значение `hidden` означает, что пользователь или вход не был включен для Защита идентификации Azure AD. **Примечание.** Сведения для этого свойства доступны только для клиентов Azure AD Premium P2. Будут возвращены `hidden`все остальные клиенты. |
-| рискстате | рискстате | Сообщает состояние рискованного пользователя, входа в систему или события риска. `none`Возможные значения:, `confirmedSafe`, `remediated`, `dismissed`, ,`atRisk` ,`unknownFutureValue`. `confirmedCompromised` |
+| рискстате | рискстате | Сообщает состояние рискованного пользователя, входа в систему или обнаружения риска. `none`Возможные значения:, `confirmedSafe`, `remediated`, `dismissed`, ,`atRisk` ,`unknownFutureValue`. `confirmedCompromised` |
 | DurationMs |  Это значение не сопоставлено, и его можно игнорировать. |
 | CallerIpAddress | IP-адрес отправившего запрос клиента. | 
 | CorrelationId | Необязательный код GUID, который передал клиент. Это значение может помочь найти связь между операциями на стороне клиента и операциями на стороне сервера. Кроме того, оно может пригодиться при отслеживании журналов, в которые записываются данные о многих службах. |

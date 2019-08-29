@@ -3,24 +3,23 @@ title: Выполнение конвейера и триггеры в фабри
 description: В этой статье объясняется, как выполнить конвейер в фабрике данных Azure по запросу или путем создания триггера.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/05/2018
-ms.author: shlo
-ms.openlocfilehash: 21e66f962d1cc0bbbe8d780a702216d40abe2836
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34ff075a604afdcbef67c7b10ce1ef8cbe2924e7
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66155216"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137032"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
-> [!div class="op_single_selector" title1="Выберите версию в службе фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите версию службы "Фабрика данных", которую вы используете:"]
 > * [Версия 1](v1/data-factory-scheduling-and-execution.md)
 > * [Текущая версия](concepts-pipeline-execution-triggers.md)
 
@@ -277,13 +276,13 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 ### <a name="schema-defaults-limits-and-examples"></a>Параметры схемы по умолчанию, ограничения и примеры
 
-| Свойство JSON | type | Обязательно для заполнения | Значение по умолчанию | Допустимые значения | Пример |
+| Свойство JSON | Тип | Обязательное значение | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | string | Да | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | object | Да | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **startTime** | строка | Да | Отсутствуют | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | объект | Да | Отсутствуют | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
 | **interval** | номер | Нет | 1 | От 1 до 1000 | `"interval":10` |
-| **endTime** | string | Да | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | object | Нет | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **endTime** | строка | Да | Отсутствуют | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | объект | Нет | Отсутствуют | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:
@@ -377,7 +376,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 | **Системные переменные** | Поддерживают использование системных переменных **WindowStart** и **WindowEnd**. Пользователи могут получить доступ к `triggerOutputs().windowStartTime` и `triggerOutputs().windowEndTime` как к системным переменным триггера в определении триггера. Значения используются как время начала и окончания окна соответственно. Например, для триггера "переворачивающегося" окна, выполняющегося каждый час, в окне от 1:00 до 2:00 определением является `triggerOutputs().WindowStartTime = 2017-09-01T01:00:00Z` и `triggerOutputs().WindowEndTime = 2017-09-01T02:00:00Z`. | Не поддерживается. |
 | **Связь конвейера и триггера** | Поддерживает связь "один к одному". Вы можете активировать только один конвейер. | Поддерживает связи "многие ко многим" Несколько триггеров могут запускать один конвейер. Один триггер может запускать несколько конвейеров. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими руководствами:
 
 - [Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET](quickstart-create-data-factory-dot-net.md)

@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57ec69f4bc2e73bfb390a6b23b1da627d77f9b5e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8cfefe02b8c9325a2d501289b10b09bc153b0593
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874254"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135760"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -194,6 +194,7 @@ ms.locfileid: "69874254"
 | AADSTS90019 | MissingTenantRealm — Azure AD не удалось определить идентификатор клиента из запроса. |
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat — неправильный формат имени субъекта или не соблюдается ожидаемый формат `name[/host][@realm]`. Имя субъекта является обязательным параметром, а узел и область — необязательные параметры. Их можно оставить пустыми (NULL). |
 | AADSTS90023 | InvalidRequest — недопустимый запрос службы проверки подлинности. |
+| AADSTS9002313 | Инвалидрекуест-запрос имеет неправильный формат или является недопустимым. Проблема заключается в том, что возникли проблемы с запросом к определенной конечной точке. Предложение этой проблемы заключается в том, чтобы получить fiddlerную трассировку ошибки и посмотреть, правильно ли отформатирован запрос. |
 | AADSTS90024 | RequestBudgetExceededError: произошла случайная ошибка. Повторите попытку. |
 | AADSTS90033 | MsodsServiceUnavailable: служба каталогов Microsoft Online (MSODS) недоступна. |
 | AADSTS90036 | MsodsServiceUnretryableFailure: произошла непредвиденная, неповторяемая ошибка службы WCF, размещенной в MSODS. Чтобы получить дополнительные сведения об ошибке, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md). |

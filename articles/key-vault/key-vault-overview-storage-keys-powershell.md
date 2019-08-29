@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: df377b19d78a63b3cfc57347fff00345a9c63ead
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 21b046a54c2fbe309113222f54dbad4405fc409d
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562530"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70136570"
 ---
 # <a name="azure-key-vault-managed-storage-account---powershell"></a>PowerShell: учетная запись хранения, управляемая с помощью Azure Key Vault
 
@@ -21,6 +21,7 @@ ms.locfileid: "69562530"
 > - Проверять подлинность клиентского приложения, используя удостоверение приложения или пользователя вместо учетных данных учетной записи хранения. 
 > - Использовать [управляемое удостоверение Azure AD](/azure/active-directory/managed-identities-azure-resources/) при запуске в Azure. Управляемые удостоверения полностью устраняют необходимость проверки подлинности клиента и хранения учетных данных в приложении или вместе с ним.
 > - Для управления авторизацией, которая также поддерживается с помощью Key Vault, используйте управление доступом на основе ролей (RBAC).
+> - Доступ AAD к учетной записи хранения пока не работает для доступа к таблицам.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -142,7 +143,7 @@ Tags                :
 
 ### <a name="enable-key-regeneration"></a>Включение повторного создания ключа
 
-Если нужно, чтобы программа Key Vault периодически повторно создавала ключи для учетной записи хранения, вы можете настроить этот период. В следующем примере задан трехдневный период повторного создания. Через три дня Key Vault повторно создаст ключ key1 и установит его в качестве активного вместо key2.
+Если нужно, чтобы программа Key Vault периодически повторно создавала ключи для учетной записи хранения, вы можете настроить этот период. В следующем примере задан трехдневный период повторного создания. Через три дня Key Vault повторно создаст Key2 и заменит активный ключ с "key2" на "key1".
 
 ```azurepowershell-interactive
 $regenPeriod = [System.Timespan]::FromDays(3)

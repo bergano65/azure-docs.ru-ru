@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 06/25/2018
 ms.author: menchi
-ms.openlocfilehash: 0e0ad63ffb8d9c22d1b527644bc78e229ac6830c
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: bbec8c79b7d1b1a3f8864e12a6dc5b6c07bbb05d
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668204"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147814"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-c"></a>Начало работы с удостоверениями модулей центра Интернета вещей и двойника модуля (C)
 
@@ -31,7 +31,7 @@ ms.locfileid: "68668204"
 > [!NOTE]
 > Дополнительные сведения о различных пакетах SDK, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения, см. в статье [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md).
 
-Для работы с этим учебником требуется:
+## <a name="prerequisites"></a>Предварительные требования
 
 * Активная учетная запись Azure. (Если ее нет, всего за несколько минут можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).)
 

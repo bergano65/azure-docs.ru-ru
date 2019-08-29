@@ -3,22 +3,20 @@ title: Мониторинг конвейеров и управление ими 
 description: Сведения о том, как с помощью портала Azure и Azure PowerShell отслеживать состояние созданных конвейеров и фабрик данных Azure и управлять ими.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: 9b0fdc59-5bbe-44d1-9ebc-8be14d44def9
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: 64fae56bfc95b62bd60444d49100689845f64278
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8e8215d9737087cf1a5632dc8514c12988ff999f
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66122662"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139661"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -89,7 +87,7 @@ ms.locfileid: "66122662"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Область</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
@@ -107,7 +105,7 @@ ms.locfileid: "66122662"
 <td>ActivityResume</td><td>Действие приостановлено, и до его возобновления выполнять срезы нельзя.</td>
 </tr>
 <tr>
-<td>Повторить попытку</td><td>Действие выполняется повторно.</td>
+<td>Повтор</td><td>Действие выполняется повторно.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Проверка еще не начата.</td>
@@ -117,16 +115,16 @@ ms.locfileid: "66122662"
 </tr>
 <tr>
 <tr>
-<td rowspan="2">InProgress</td><td>Validating</td><td>Проверка выполняется.</td>
+<td rowspan="2">Выполняется</td><td>Выполняется проверка</td><td>Проверка выполняется.</td>
 </tr>
 <td>-</td>
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Неудача</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Canceled</td><td>Срез был отменен пользователем.</td>
+<td>Отменено</td><td>Срез был отменен пользователем.</td>
 </tr>
 <tr>
 <td>Проверка</td><td>Сбой проверки.</td>
@@ -134,13 +132,13 @@ ms.locfileid: "66122662"
 <tr>
 <td>-</td><td>Не удалось создать и/или проверить срез.</td>
 </tr>
-<td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
+<td>Готово</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Skipped</td><td>Нет</td><td>Срез не обрабатывается.</td>
+<td>Пропущен</td><td>Отсутствуют</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
-<td>Нет</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
+<td>Отсутствуют</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
 </tr>
 </table>
 
@@ -152,7 +150,7 @@ ms.locfileid: "66122662"
 
 Если срез выполнялся несколько раз, вы увидите несколько строк в списке **Выполнения действий** . Чтобы просмотреть сведения о выполнении действия, щелкните запись цикла в списке **Циклы выполнения действия** . Отобразятся все файлы журналов и сообщения об ошибках, если таковые были. Эта функция удобна для просмотра и обработки файлов журналов непосредственно из фабрики данных.
 
-![СВЕДЕНИЯ О ВЫПОЛНЕННОМ ДЕЙСТВИИ](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
+![Подробности о выполнении операции](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
 
 Если срез не находится в состоянии **Готово**, вы можете увидеть восходящие срезы, которые не находятся в состоянии готовности и блокируют выполнение текущего среза в списке **Неготовые восходящие срезы**. Эта функция удобна для просмотра восходящих зависимостей, если срез находится в состоянии **Ожидание**.
 
@@ -175,7 +173,7 @@ ms.locfileid: "66122662"
 > [!NOTE] 
 > Представление схемы не поддерживает приостановку и возобновление конвейеров. Если вы хотите использовать пользовательский интерфейс, используйте приложение для мониторинга и управления. Чтобы узнать больше об этом приложении, ознакомьтесь со статьей [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления](data-factory-monitor-manage-app.md). 
 
-Вы можете приостановить работу конвейеров с помощью **Suspend AzDataFactoryPipeline** командлета PowerShell. Этот командлет полезен, если не требуется запускать конвейеры до устранения проблемы. 
+Приостанавливать и приостанавливать конвейеры можно с помощью командлета PowerShell **Suspend-аздатафакторипипелине** . Этот командлет полезен, если не требуется запускать конвейеры до устранения проблемы. 
 
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
@@ -219,7 +217,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 
 #### <a name="use-powershell-to-debug-an-error"></a>Отладка ошибок с помощью PowerShell
 1. Запустите **PowerShell**.
-2. Запустите **Get AzDataFactorySlice** команду, чтобы просмотреть срезы и их состояние. Вы должны увидеть срез с состоянием **Сбой**.        
+2. Выполните команду **Get-аздатафакторислице** , чтобы просмотреть срезы и их состояния. Вы должны увидеть срез с состоянием **Сбой**.        
 
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
@@ -231,7 +229,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     ```
 
    Замените **StartDateTime** на время запуска конвейера. 
-3. Теперь запустите **Get-AzDataFactoryRun** для получения сведений о действии выполнения среза.
+3. Теперь выполните командлет **Get-аздатафакторирун** , чтобы получить сведения о выполнении действия для среза.
 
     ```powershell   
     Get-AzDataFactoryRun [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime]
@@ -269,7 +267,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     PipelineName            : EnrichGameLogsPipeline
     Type                    :
     ```
-5. Можно запустить **сохранить AzDataFactoryLog** командлет со значением идентификатора см. в статье из выходных данных и загрузки файлов журналов с помощью **- DownloadLogsoption** для командлета.
+5. Вы можете запустить командлет **Save-аздатафакторилог** со значением идентификатора, отображаемым на выходе, и скачать файлы журнала с помощью командлета **-DownloadLogsoption** .
 
     ```powershell
     Save-AzDataFactoryLog -ResourceGroupName "ADF" -DataFactoryName "LogProcessingFactory" -Id "841b77c9-d56c-48d1-99a3-8c16c3e77d39" -DownloadLogs -Output "C:\Test"
@@ -290,7 +288,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 ![Исправление ошибок и проверка](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
 
 ### <a name="use-azure-powershell"></a>Использование Azure PowerShell
-Вы можете повторно с помощью **AzDataFactorySliceStatus набора** командлета. См. в разделе [AzDataFactorySliceStatus набора](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus) разделе синтаксис и другие сведения об этом командлете.
+Ошибки можно повторно запустить с помощью командлета **Set-аздатафакторислицестатус** . Синтаксис и другие сведения о командлете см. в разделе [Set-аздатафакторислицестатус](https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus) .
 
 **Пример.**
 

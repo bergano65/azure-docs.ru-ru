@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: fa3aedf138564fedafe555adfbaf6c56efc1813e
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 9bb53a8e68866e2ed346277171e2706f5907e8af
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360844"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141914"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Как использовать очереди служебной шины с Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "68360844"
 
 В этом руководстве вы узнаете, как создавать приложения Python для отправки сообщений в очередь служебной шины и получать сообщения из нее. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Выполните действия, описанные в разделе [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) .
     1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 
@@ -36,7 +36,7 @@ ms.locfileid: "68360844"
 
         > [!NOTE]
         > Вы создадите **очередь** в пространстве имен служебной шины с помощью Python в этом руководстве. 
-1. Установка Python или [пакета служебной шины Azure для Python][Python Azure Service Bus package]см. в разделе [руководства по установке Python](../python-how-to-install.md). Полную документацию по пакету SDK для Python служебной шины см. [здесь](/python/api/overview/azure/servicebus?view=azure-python).
+1. Установка Python или [пакета служебной шины Azure для Python][Python Azure Service Bus package]см. в разделе [руководства по установке Python](/azure/python/python-sdk-azure-install). Полную документацию по пакету SDK для Python служебной шины см. [здесь](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="create-a-queue"></a>Создать очередь
 Объект **сервицебусклиент** позволяет работать с очередями. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.

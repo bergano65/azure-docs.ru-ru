@@ -5,25 +5,36 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 08/22/2019
+ms.date: 08/29/2019
 ms.author: raynew
-ms.openlocfilehash: 3dc20036ead29c62d47b4a628d7ce8101b9d31f4
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 5cd4b86c9c70f713a207f7feea9fa8efc06b6247
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972522"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70146904"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
 
 Служба [Azure Site Recovery](site-recovery-overview.md) постоянно обновляется и совершенствуется. Эта статья содержит сведения о последних выпусках, новых функциях и новом содержимом, чтобы помочь вам оставаться в курсе событий. Эта страница регулярно обновляется.
 
-Если у вас есть предложения и отзывы по функциям Site Recovery, мы с радостью [ознакомимся с ними](https://feedback.azure.com/forums/256299-site-recovery).
+Вы можете подписаться на уведомления об обновлениях Site Recovery в канале [обновлений Azure](https://azure.microsoft.com/updates/?product=site-recovery) .
 
+## <a name="supported-updates"></a>Поддерживаемые обновления
 
-## <a name="installing-updates"></a>Установка обновлений
+Для Site Recovery компонентов поддерживается N-4 версий, где N — Последняя выпущенная версия. Эти сведения приведены в следующей таблице.
 
-[Ознакомьтесь с этой статьей](service-updates-how-to.md) для получения поддержки Site Recovery обновлений и инструкций.
+**Update** |  **Единая установка** | **OVA сервера конфигурации** | **Агент службы Mobility Service** | **Поставщик Site Recovery** | **Агент служб восстановления** 
+--- | --- | --- | --- | ---
+[Свертка 39](https://support.microsoft.com/help/4517283/) | 9.27.5308.1 | 5.1.4600.0 | 9.27.5308.1 | 5.1.4600.0 | 2.0.9165.0
+[Свертка 38](https://support.microsoft.com/help/4513507/) | 9.26.5269.1 | 5.1.4500.0 | 9.26.5269.1 | 5.1.4500.0 | 2.0.9165.0
+[Свертка 37](https://support.microsoft.com/help/4508614/) | 9.25.5241.1 | 5.1.4300.0 | 9.25.5241.1 | 5.1.4300.0 | 2.0.9163.0
+[Свертка 36](https://support.microsoft.com/help/4503156/) | 9.24.5211.1 | 5.1.4150.0 | 9.24.5211.1 | 5.1.4150.0 | 2.0.9160.0 
+[Свертка 35](https://support.microsoft.com/help/4494485/) | 9.23.5163.1 | 5.1.4000.0 | 9.23.5163.1 | 5.1.4000.0 | 2.0.9156.0 
+        
+
+Дополнительные [сведения](service-updates-how-to.md) об установке и поддержке обновлений.
+
 
 ## <a name="updates-august-2019"></a>Обновления (2019 августа)
 

@@ -3,22 +3,20 @@ title: 'Вариант использования: профилирование 
 description: Узнайте, как с помощью фабрики данных Azure создать управляемый данными рабочий процесс (конвейер) для профилирования игроков.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: e07d55cf-8051-4203-9966-bdfa1035104b
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: bb7d6531da330bcfbf6de786ffb19984cfd1964e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 866a7fdabaf51738333d8583bea5d0fa9fabf6f2
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60487218"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139856"
 ---
 # <a name="use-case---customer-profiling"></a>Вариант использования: профилирование клиентов
 Фабрика данных Azure — одна из многочисленных служб, используемых для внедрения набора аналитических инструментов Cortana Intelligence Suite для ускорителей решений.  Дополнительные сведения см. на сайте [Cortana Intelligence Suite](https://www.microsoft.com/cortanaanalytics). В этом документе описан простой вариант использования, позволяющий понять, как фабрика данных Azure помогает решать типичные проблемы аналитики.
@@ -46,7 +44,7 @@ Contoso — это компания, которая создает игры дл
 5. Настроив параметры, нажмите кнопку **Создать** , чтобы создать или развернуть примеры конвейеров и используемые ими связанные службы и таблицы.
 6. Состояние развертывания отображается на элементе примера, который вы щелкнули ранее в колонке **Примеры конвейеров**.
 
-    ![Состояния развертывания](./media/data-factory-samples/DeploymentStatus.png)
+    ![Состояние развертывания](./media/data-factory-samples/DeploymentStatus.png)
 7. Когда на элементе примера появится сообщение **Развертывание прошло успешно**, закройте колонку **Примеры конвейеров**.  
 8. В колонке **ФАБРИКА ДАННЫХ** вы увидите, что связанные службы, наборы данных и конвейеры добавлены в вашу фабрику данных.  
 

@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: d294ceaaf77175a3010131b18864b71c7b26b88b
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: ef0237b38c8f640c0fc4b1b1788215c8804a5cd4
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360833"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141900"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Как использовать разделы и подписки служебной шины с Python
 
@@ -33,13 +33,13 @@ ms.locfileid: "68360833"
 - получение сообщений из подписки;
 - удаление разделов и подписок.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества Visual Studio или подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Выполните действия, [описанные в кратком руководстве: Используйте портал Azure для создания раздела служебной шины и подписки на раздел](service-bus-quickstart-topics-subscriptions-portal.md) , чтобы создать **пространство имен** служебной шины и получить **строку подключения**.
 
     > [!NOTE]
-    > Вы создадите **раздел** и подписку на  раздел с помощью **Python** в этом кратком руководстве. 
-3. Установите [пакет Azure Python][Azure Python package]. См. раздел [руководства по установке Python](../python-how-to-install.md).
+    > Вы создадите **раздел** и подписку на раздел с помощью **Python** в этом кратком руководстве. 
+3. Установите [пакет Azure Python][Azure Python package]. См. раздел [руководства по установке Python](/azure/python/python-sdk-azure-install).
 
 ## <a name="create-a-topic"></a>Создать раздел
 

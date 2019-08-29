@@ -3,21 +3,20 @@ title: Действие условия If в фабрике данных Azure |
 description: Действие условия If позволяет управлять потоком обработки на основе условия.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-ms.openlocfilehash: 52f96b8fc2a1288c652169817a3a73d7b26caac9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fc6318b5033ff1297f917ab95b28f8ed9285e930
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66153474"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142489"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
 Действие условия If предоставляет те же функциональные возможности, что и инструкция if в языках программирования. Оно определяет набор действий, если условие принимает значение `true`, и другой набор действий, если условие принимает значение `false`. 
@@ -64,10 +63,10 @@ ms.locfileid: "66153474"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательное значение
 -------- | ----------- | -------------- | --------
-name | Имя действия условия If. | String | Да
-type | Для этого свойства необходимо задать значение **IfCondition**. | String | Да
+name | Имя действия условия If. | Строковое | Да
+type | Для этого свойства необходимо задать значение **IfCondition**. | Строковое | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение с типом результата "логический" | Да
 ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Array | Да
 ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Array | Да
@@ -289,7 +288,7 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)

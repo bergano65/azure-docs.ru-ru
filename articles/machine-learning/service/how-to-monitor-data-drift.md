@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 07/08/2019
-ms.openlocfilehash: 41e357ee53d4c2fbc6683be3446ba2527dd9253f
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: c6c4d1d4da3679eaefacb5aa0c91fcf64afc2a6b
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69623980"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128280"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Обнаружение смещения данных (Предварительная версия) в моделях, развернутых в службе Kubernetes Azure (AKS)
 
@@ -46,7 +46,7 @@ ms.locfileid: "69623980"
 
 - Подписка Azure. Если у вас ее нет, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-- Установленный пакет SDK для Машинное обучение Azure для Python. Используйте инструкции, приведенные в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) , чтобы выполнить следующие действия.
+- Установленный пакет SDK службы "Машинное обучение Azure" для Python. Следуйте инструкциям из статьи об [установке пакета SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), чтобы выполнить следующее:
 
     - создать среду Miniconda;
     - установить пакет SDK для Машинного обучения Azure для Python.
@@ -178,16 +178,7 @@ datadrift.disable_schedule()
 
 ## <a name="retrain-your-model-after-drift"></a>Переобучение модели после отклонения
 
-Когда смещение данных отрицательно влияет на производительность развернутой модели, пора переучить модель. Следующий [ `diff()` метод дает начальное представление о том, что изменилось между старыми и новыми обучающими наборами данных. ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#diff-rhs-dataset--compute-target-none--columns-none-
-) 
-
-```python
-from azureml.core import Dataset
-
-old_training_dataset.diff(new_training_dataset)
-```
-
-На основе выходных данных предыдущего кода может потребоваться переучить модель. Для этого перейдите к следующим шагам.
+Когда смещение данных отрицательно влияет на производительность развернутой модели, пора переучить модель. Для этого перейдите к следующим шагам.
 
 * Изучите собранные данные и подготавливайте данные для обучения новой модели.
 * Разделите его на данные для обучения и тестирования.

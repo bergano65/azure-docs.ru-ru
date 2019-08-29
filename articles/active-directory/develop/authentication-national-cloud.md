@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 08/28/2019
 ms.author: negoe
 ms.reviewer: negoe,CelesteDG
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abaf8c910710000930f4e0ab6200d0ebd75b8d46
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: ca82efbd4e26ccb8a169c84332e3d24196fae95e
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835190"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135859"
 ---
 # <a name="national-clouds"></a>Местные облака
 
@@ -69,9 +69,6 @@ ms.locfileid: "68835190"
 
 Для приложений с одним клиентом замените "Common" в предыдущих URL-адресах на идентификатор клиента или имя. Например, `https://login.microsoftonline.de/contoso.com`.
 
-> [!NOTE]
-> Конечные точки авторизации и маркеров [Azure AD версии 2.0]( https://docs.microsoft.com/azure/active-directory/develop/active-directory-appmodel-v2-overview) доступны только для глобальной службы. Они не поддерживаются для национальных развертываний в облаке.
-
 ## <a name="microsoft-graph-api"></a>API Microsoft Graph
 
 Чтобы узнать, как вызывать интерфейсы API Microsoft Graph в национальной облачной среде, перейдите в раздел [Microsoft Graph в облачных развертываниях в облаке](https://developer.microsoft.com/graph/docs/concepts/deployments).
@@ -86,6 +83,6 @@ ms.locfileid: "68835190"
 См. также:
 
 - [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
-- [Azure Китая (21Vianet)](https://docs.microsoft.com/azure/china/)
+- [Azure China 21Vianet](https://docs.microsoft.com/azure/china/)
 - [Azure для Германии](https://docs.microsoft.com/azure/germany/)
 - [Основы проверки подлинности Azure AD](authentication-scenarios.md)

@@ -3,21 +3,20 @@ title: Связанные службы в фабрике данных Azure | Д
 description: Сведения о связанных службах в фабрике данных. Связанные службы связывают хранилища данных и вычислений с фабрикой данных.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.author: shlo
-ms.openlocfilehash: 904e063ae64a971de7f34fbfac63b7679f3bc363
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 80e9cee0d973dc8575e9645c537b6b69fbeef700
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019956"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137119"
 ---
 # <a name="linked-services-in-azure-data-factory"></a>Связанные службы в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -92,14 +91,11 @@ connectVia | [Среда выполнения интеграции](concepts-int
 ```
 
 ## <a name="create-linked-services"></a>Создание связанных служб
+
 Связанные службы можно создать с помощью одного из следующих средств или пакетов SDK: [.NET API](quickstart-create-data-factory-dot-net.md), [PowerShell](quickstart-create-data-factory-powershell.md), [REST API](quickstart-create-data-factory-rest-api.md), Azure Resource Manager шаблона и портал Azure
 
 ## <a name="data-store-linked-services"></a>Связанные службы хранилища данных
-Подключение к хранилищам данных можно найти в наших [поддерживаемых хранилищах данных и форматах](copy-activity-overview.md#supported-data-stores-and-formats). Ссылка на список свойств соединения, необходимых для разных хранилищ.
-
-## <a name="data-store-supported-activities"></a>Действия, поддерживаемые хранилищем данных
-
-[!INCLUDE [Connector-activity support matrix](../../includes/connector-activity-support-matrix.md)]
+Список сохраненных данных, поддерживаемых фабрикой данных, можно найти в статье [Обзор соединителя](copy-activity-overview.md#supported-data-stores-and-formats) . Щелкните хранилище данных, чтобы узнать о поддерживаемых свойствах соединения.
 
 ## <a name="compute-linked-services"></a>Связанные службы вычислений
 Справочные [вычислительные среды, поддерживаемые](compute-linked-services.md) для получения сведений о различных вычислительных средах, к которым можно подключиться из фабрики данных, а также различных конфигураций.

@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: troubleshooting
-ms.date: 05/07/2019
+ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: fa2e26666ce863d98b5c47201eeadb1d7f6a5d2c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e7c5786f4510e11d431f9e80dd52d1ffc3adb410
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164513"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129121"
 ---
 # <a name="diagnose-and-solve-issues-in-your-time-series-insights-environment"></a>Диагностика и устранение неполадок в среде "Аналитика временных рядов Azure"
 
@@ -24,37 +24,37 @@ ms.locfileid: "67164513"
 
 ## <a name="video"></a>Видео
 
-### <a name="learn-about-common-time-series-insights-customer-challenges-and-mitigationsbr"></a>Дополнительные сведения о синхронизации времени Series Insights клиента проблемы и способы их устранения.</br>
+### <a name="learn-about-common-time-series-insights-customer-challenges-and-mitigationsbr"></a>Ознакомьтесь с общими проблемами и решениями по устранению проблем, возникающих в статье "аналитика временных рядов".</br>
 
 > [!VIDEO https://www.youtube.com/embed/7U0SwxAVSKw]
 
-## <a name="problem-no-data-is-shown"></a>Проблема: данные не отображаются
+## <a name="problem-no-data-is-shown"></a>Проблема. данные не отображаются
 
 Отсутствие данных в [обозревателе службы "Аналитика временных рядов Azure"](https://insights.timeseries.azure.com) может возникнуть из-за нескольких наиболее распространенных причин.
 
-### <a name="cause-a-event-source-data-isnt-in-json-format"></a>Причина ответ событий источника данных не в формате JSON
+### <a name="cause-a-event-source-data-isnt-in-json-format"></a>Причина: данные источника события не находятся в формате JSON
 
 Среда службы "Аналитика временных рядов Azure" поддерживает данные только в формате JSON. Примеры JSON см. в разделе [Поддерживаемые формы JSON](./how-to-shape-query-json.md).
 
-### <a name="cause-b-the-event-source-key-is-missing-a-required-permission"></a>Причина б: для ключа источника события отсутствует необходимое разрешение
+### <a name="cause-b-the-event-source-key-is-missing-a-required-permission"></a>Причина б. у ключа источника события отсутствует требуемое разрешение
 
 * Для Центра Интернета вещей в Центре Интернета вещей Azure необходимо указать ключ с разрешениями на **подключение службы**. Политики **iothubowner** или **service** будут работать, поскольку у них обеих есть разрешения **service connect**.
 
-   [![Разрешения на подключение службы центра Интернета вещей](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
+   [![Разрешения на подключение к службе центра Интернета вещей](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png)](media/diagnose-and-solve-problems/iothub-serviceconnect-permissions.png#lightbox)
 
 * Для концентратора событий в концентраторах событий Azure необходимо указать ключ с разрешением **listen**. Политики **read** или **manage** будут работать, поскольку у них обеих есть разрешение **listen**.
 
-   [![Разрешения прослушивание концентратора событий](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
+   [![Разрешения на прослушивание концентратора событий](media/diagnose-and-solve-problems/eventhub-listen-permissions.png)](media/diagnose-and-solve-problems/eventhub-listen-permissions.png#lightbox)
 
-### <a name="cause-c-the-consumer-group-provided-isnt-exclusive-to-time-series-insights"></a>Причина C: указанная группа потребителей не уникальной для Time Series Insights
+### <a name="cause-c-the-consumer-group-provided-isnt-exclusive-to-time-series-insights"></a>Причина C. предоставленная группа потребителей не является монопольной для Time Series Insights
 
 При регистрации Центра Интернета вещей или концентратора событий важно задать группу потребителей, которая будет использоваться для чтения данных. Эта группа потребителей *не может использоваться совместно*. В противном случае базовый центр Интернета вещей или концентратор событий автоматически отключит один из модулей чтения в случайном порядке. Укажите уникальную группу получателей, из которой должна считывать данные среда службы "Аналитика временных рядов".
 
-## <a name="problem-some-data-is-shown-but-data-is-missing"></a>Проблема: некоторые данные отображаются, но данные отсутствуют
+## <a name="problem-some-data-is-shown-but-data-is-missing"></a>Проблема. отображаются некоторые данные, но отсутствуют данные
 
 Если данные отображаются лишь частично и, по-видимому, присутствует задержка в отображении данных, необходимо учитывать несколько возможностей.
 
-### <a name="cause-a-your-environment-is-being-throttled"></a>Причина а: среду регулируется
+### <a name="cause-a-your-environment-is-being-throttled"></a>Причина: ваша среда регулируется
 
 Регулирование — это распространенная проблема, когда среды подготавливаются после создания источника событий с данными. Центр Интернета вещей Azure и концентраторы событий Azure хранят данные до семи дней. Аналитика временных рядов всегда начинается с наиболее старого события в источнике событий (первым пришел — первым ушел, или *FIFO*).
 
@@ -69,13 +69,14 @@ ms.locfileid: "67164513"
 
 На рисунке ниже показана среда "Аналитика временных рядов" с номером SKU S1 и емкостью 3. Она может принимать 3 миллиона событий в день.
 
-![Текущая емкость номера SKU среды](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
+[![Текущая емкость SKU окружения](media/diagnose-and-solve-problems/environment-sku-current-capacity.png)](media/diagnose-and-solve-problems/environment-sku-current-capacity.png#lightbox)
 
-Например, предположим, что эта среда принимает сообщения от концентратора событий. На следующем рисунке показана скорость поступления входящих данных:
+Например, предположим, что среда принимает сообщения из концентратора событий. ежедневная частота приема данных составляет около 67 000 сообщений. Такая скорость соответствует примерно 46 сообщениям каждую минуту. 
 
-[![Пример скорости входящих данных для концентратора событий](media/diagnose-and-solve-problems/eventhub-ingress-rate.png)](media/diagnose-and-solve-problems/eventhub-ingress-rate.png#lightbox)
+* Если все сообщения концентратора событий свести к одному событию "Аналитика временных рядов", станет понятно, что здесь регулирование не применяется. 
+* Если все сообщения концентратора событий свести к 100 событиям службы "Аналитика временных рядов", каждую минуту будет передаваться по 4600 событий. 
 
-ежедневная частота приема данных составляет около 67 000 сообщений. Такая скорость соответствует примерно 46 сообщениям каждую минуту. Если все сообщения концентратора событий свести к одному событию "Аналитика временных рядов", станет понятно, что здесь регулирование не применяется. Если все сообщения концентратора событий свести к 100 событиям службы "Аналитика временных рядов", каждую минуту будет передаваться по 4600 событий. Среда с номером SKU S1 и емкостью 3 может принимать только 2100 событий в минуту (1 миллион событий в день = 700 событий в минуту на 3 единицы = 2100 событий в минуту). В этой конфигурации из-за регулирования проявится задержка.
+Среда с номером SKU S1 и емкостью 3 может принимать только 2100 событий в минуту (1 миллион событий в день = 700 событий в минуту на 3 единицы = 2100 событий в минуту). 
 
 Подробные сведения о логике сведения см. в разделе [Поддерживаемые формы JSON](./how-to-shape-query-json.md).
 
@@ -83,9 +84,9 @@ ms.locfileid: "67164513"
 
 Чтобы устранить задержку, увеличьте емкость номера SKU среды. Дополнительные сведения см. в статье [Как масштабировать среду Azure Time Series Insights](time-series-insights-how-to-scale-your-environment.md).
 
-### <a name="cause-b-initial-ingestion-of-historical-data-slows-ingress"></a>Причина б: начальное получение исторических данных замедляет входящих данных
+### <a name="cause-b-initial-ingestion-of-historical-data-slows-ingress"></a>Причина б. при первом приеме исторических данных происходит медленный входящий трафик
 
-При подключении существующего источника событий вполне вероятно, что центр Интернета вещей или концентратор событий уже содержит данные. Среда начинает извлекать данные, как только сообщения источника событий начинают сохраняться. Такая обработка по умолчанию не может быть переопределен. Вы можете включить регулирование. Регулирование может занять некоторое время, пока будет отслеживаться прием хронологических данных.
+При подключении существующего источника событий вполне вероятно, что центр Интернета вещей или концентратор событий уже содержит данные. Среда начинает извлекать данные, как только сообщения источника событий начинают сохраняться. Эта обработка по умолчанию не может быть переопределена. Вы можете включить регулирование. Регулирование может занять некоторое время, пока будет отслеживаться прием хронологических данных.
 
 #### <a name="recommended-resolutions-for-large-initial-ingestion"></a>Рекомендуемые решения для большого начального объема принимаемых данных
 
@@ -95,7 +96,7 @@ ms.locfileid: "67164513"
 
 2. Устранив задержку, уменьшите емкость номера SKU до обычного уровня приема.
 
-## <a name="problem-my-event-sources-timestamp-property-name-setting-doesnt-work"></a>Проблема: параметр имени свойства метки времени источника события не работает
+## <a name="problem-my-event-sources-timestamp-property-name-setting-doesnt-work"></a>Проблема: параметр имени свойства метки времени источника событий не работает
 
 Убедитесь, что имя и значение свойства метки времени соответствуют следующим правилам.
 
@@ -112,7 +113,7 @@ ms.locfileid: "67164513"
 - *Значок календаря*. Указывает на то, что служба "Аналитика временных рядов" считывает значения данных как дату/время.
 - *#* . Указывает на то, что служба "Аналитика временных рядов" считывает значения данных как целое значение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Если вам понадобится помощь, начните с [форума MSDN](https://social.msdn.microsoft.com/Forums/home?forum=AzureTimeSeriesInsights) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-timeseries-insights).
 

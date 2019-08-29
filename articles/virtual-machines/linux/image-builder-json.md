@@ -7,12 +7,12 @@ ms.date: 07/31/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: abaf96b11abee0bf519a276f825b9c47cd333c1b
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 240e0dadaebde6725974604b578328ede0b20652
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816320"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129055"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Azure Image Builder 
 
@@ -190,6 +190,7 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 Значение `imageVersionId` должно быть идентификатором ResourceId версии образа. Для вывода списка версий образа используйте команду [AZ SIG Image-Version List](/cli/azure/sig/image-version#az-sig-image-version-list) .
 
 ## <a name="properties-buildtimeoutinminutes"></a>Свойства: Буилдтимеаутинминутес
+
 По умолчанию построитель образов будет выполняться в течение 240 минут. После этого он будет исполняться и останавливаться, независимо от того, завершена ли сборка образа. При достижении времени ожидания появится сообщение об ошибке следующего вида:
 
 ```text
@@ -203,7 +204,6 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 
 
 ## <a name="properties-customize"></a>Свойства: Настройка
-
 
 Построитель образов поддерживает несколько "настраиваемых" настроек. Пользовательские настройки — это функции, используемые для настройки образа, такие как выполнение сценариев или перезагрузка серверов. 
 

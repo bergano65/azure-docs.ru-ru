@@ -3,23 +3,22 @@ title: Действие Wait в фабрике данных Azure | Докуме
 description: Действие Wait приостанавливает обработку в конвейере на указанный период.
 services: data-factory
 documentationcenter: ''
-author: shlo
-manager: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.author: shlo
-ms.openlocfilehash: 66d79bc1597cd8f3c7e01eb8227eb7c91ba04d1d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48a722979e61209a855dd1fec22fcdcc756ae1ce
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60764757"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142416"
 ---
-# <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнить действие wait в фабрике данных Azure
+# <a name="execute-wait-activity-in-azure-data-factory"></a>Выполнение действия Wait в фабрике данных Azure
 Если в конвейере используется действие Wait, он приостанавливает обработку на указанный период, прежде чем возобновить выполнение последующих действий. 
 
 ## <a name="syntax"></a>Синтаксис
@@ -37,11 +36,11 @@ ms.locfileid: "60764757"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательное значение
 -------- | ----------- | -------------- | --------
-name | Имя действия `Wait`. | String | Да
-type | Для этого свойства необходимо задать значение **Wait**. | String | Да
-waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Целое число | Да
+name | Имя действия `Wait`. | Строковое | Да
+type | Для этого свойства необходимо задать значение **Wait**. | Строковое | Да
+waitTimeInSeconds | Период ожидания в секундах перед возобновлением обработки в конвейере. | Integer | Да
 
 ## <a name="example"></a>Пример
 
@@ -99,7 +98,7 @@ waitTimeInSeconds | Период ожидания в секундах перед
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)

@@ -16,14 +16,14 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1244dd460196e5882caab0d4b526850da48d084
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 03c09a751119c1d6effa5795f2dbf7da422b7806
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60383411"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135794"
 ---
-# <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращения случайного удаления
+# <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: Предотвращение случайного удаления
 В этом разделе описывается функция предотвращения случайного удаления в Azure AD Connect.
 
 При установке Azure AD Connect функция предотвращения случайного удаления включается по умолчанию с настроенным запретом экспортировать более 500 операций удаления. Эта функция защищает от случайных изменений конфигурации и изменений в локальном каталоге, которые могут повлиять на большое количество пользователей и других объектов.
@@ -58,6 +58,8 @@ ms.locfileid: "60383411"
 
 ![Пространство поиска соединителя](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
+[!NOTE] Если вы не уверены в том, что все операции удаления нужны, и хотите перейти к более безопасному маршруту. Вы можете использовать командлет PowerShell: `Enable-ADSyncExportDeletionThreshold` для установки нового порогового значения вместо отключения порогового значения, которое может привести к нежелательным удалениям. 
+
 Если удаление необходимо, сделайте следующее.
 
 1. Чтобы получить текущее пороговое значение удаления, выполните командлет PowerShell `Get-ADSyncExportDeletionThreshold`. Укажите имя учетной записи и пароль глобального администратора Azure AD. По умолчанию используется значение 500.
@@ -66,7 +68,7 @@ ms.locfileid: "60383411"
 3. С выбранным соединителем Azure Active Directory укажите действие **Запустить** и затем выберите **Экспорт**.
 4. Чтобы повторно включить защиту, запустите командлет PowerShell: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 500`. Замените 500 значением, которое вы записали при получении текущего порогового значения удаления. Укажите имя учетной записи и пароль глобального администратора Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 **Обзорные статьи**
 
 * [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)

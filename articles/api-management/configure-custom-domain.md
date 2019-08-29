@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 08/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 45e1ad6bd757ec5acaf784c94e4cfb5e487ce9ba
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 52eeedf4651cee012569034ae635a4736b3f3335
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68975741"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135539"
 ---
 # <a name="configure-a-custom-domain-name"></a>Настройка имени личного домена
 
@@ -25,7 +25,7 @@ ms.locfileid: "68975741"
 > [!WARNING]
 > Пользователям, желающим использовать привязку сертификата для повышения безопасности своих приложений, необходимо использовать имя пользовательского домена и сертификат, которым они управляют, а не сертификат по умолчанию. Пользователи, которые привязывают сертификат по умолчанию, получат жесткую зависимость от свойств сертификата, которым они не управляют. Поэтому это делать не рекомендуется.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -88,7 +88,7 @@ ms.locfileid: "68975741"
 -   Настройка A-записи, указывающей на IP-адрес шлюза управления API.
 
 > [!NOTE]
-> Хотя IP-адрес экземпляра службы управления API является статическим, он может измениться в нескольких сценариях. Поэтому рекомендуется использовать CNAME при настройке пользовательского домена. Примите во внимание это при выборе метода конфигурации DNS. Дополнительные сведения см. в [разделе часто задаваемые вопросы об API мананажемент](https://docs.microsoft.com/azure/api-management/api-management-faq#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules).
+> Хотя IP-адрес экземпляра службы управления API является статическим, он может измениться в нескольких сценариях. Поэтому рекомендуется использовать CNAME при настройке пользовательского домена. Примите во внимание это при выборе метода конфигурации DNS. Дополнительные сведения см. в [разделе часто задаваемые вопросы об API мананажемент](api-management-faq.md#how-can-i-secure-the-connection-between-the-api-management-gateway-and-my-back-end-services).
 
 ## <a name="next-steps"></a>Следующие шаги
 

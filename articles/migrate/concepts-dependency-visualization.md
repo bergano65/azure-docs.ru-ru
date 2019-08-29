@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: hamusa
-ms.openlocfilehash: 4b6a140ec428ce3b053c41074f02f65f19b8dc72
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e7b69e57d4e01c292a2c6d032ba995d1936b88dc
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102889"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142906"
 ---
 # <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -45,7 +45,7 @@ ms.locfileid: "70102889"
 
 - Во время связывания вы можете создать рабочую область или присоединить имеющуюся.
   - Когда вы создаете рабочую область, необходимо указать ее имя. Рабочая область создается в том же [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), что и проект миграции.
-  - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. Обратите внимание, что в списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-configure#supported-azure-regions). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
+  - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. Обратите внимание, что в списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](../azure-monitor/insights/vminsights-enable-overview.md#prerequisites). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
 
   > [!NOTE]
   > После присоединения к проекту рабочую область нельзя изменять.

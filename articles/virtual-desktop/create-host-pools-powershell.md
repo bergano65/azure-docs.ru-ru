@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: helohr
-ms.openlocfilehash: 1c365790e1633a74be9f5baf41098e7511f99a7d
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 2fd8934f34b811c0a2532f27e32fc799c2c8186e
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69563285"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141847"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
@@ -82,7 +82,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 5. Проверка подлинности с учетной записью домена, имеющей права на присоединение к домену компьютеров.
 
     >[!NOTE]
-    > Если вы присоединяете виртуальные машины к среде доменных служб Azure AD, убедитесь, что пользователь для присоединения к домену также является участником [группы администраторов контроллера домена AAD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
+    > Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance.md#configure-an-administrative-group).
 
 ## <a name="register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool"></a>Зарегистрируйте виртуальные машины в пуле узлов предварительного просмотра виртуальных рабочих столов Windows
 

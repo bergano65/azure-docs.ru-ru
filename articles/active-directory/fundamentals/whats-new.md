@@ -16,12 +16,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93327091d0065a67d441dd56cadd83f4f7d2d1f2
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: afab194c984dcbfa96a9342f46b892c7ec08d321
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69970399"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135671"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
@@ -85,7 +85,7 @@ Azure AD усовершенствуется на постоянной основ
 **Категория службы:** MFA  
 **Возможности продукта:** Защита удостоверений
 
-Мы удалим IP-адрес сервера MFA из [IP-адреса и с URL Office 365](https://docs.microsoft.com/office365/enterprise/office-365-ip-web-service). Если вы в настоящее время используете эти страницы для обновления параметров брандмауэра, необходимо убедиться, что вы также включаете список IP-адресов, описанных в разделе **требования к брандмауэру сервера многофакторной идентификации Azure** в статье Приступая к [работе. в статье сервер Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#azure-multi-factor-authentication-server-firewall-requirements) .
+Мы удалим IP-адрес сервера MFA из [IP-адреса и с URL Office 365](https://docs.microsoft.com/office365/enterprise/office-365-ip-web-service). Если в настоящее время вы используете эти страницы для обновления параметров брандмауэра, необходимо убедиться, что вы также включаете список IP-адресов, описанных в разделе **требования к брандмауэру сервер многофакторной идентификации Azure** статьи Приступая к [работе. в статье сервер Многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy#azure-multi-factor-authentication-server-firewall-requirements) .
 
 ---
 
@@ -164,7 +164,7 @@ Azure AD усовершенствуется на постоянной основ
 
 Если вы устали управлять длинными списками IP-адресов и диапазонов, вы можете использовать новый тег **азуреактиведиректоридомаинсервицес** Network Service в группе безопасности сети Azure, чтобы защитить входящий трафик к виртуальным службам домена Azure AD. Сетевая подсеть.
 
-Дополнительные сведения об этом новом теге службы см. в статье [группы безопасности сети для доменных служб Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/network-considerations#default-network-service-group).
+Дополнительные сведения об этом новом теге службы см. в статье [группы безопасности сети для доменных служб Azure AD](../../active-directory-domain-services/network-considerations.md#network-security-groups-and-required-ports).
 
 ---
 
@@ -390,7 +390,7 @@ Azure AD усовершенствуется на постоянной основ
 
 По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности в Организации, теперь должны использовать службу многофакторной идентификации Azure на основе облака. Клиенты, которые активировали сервер MFA до 1 июля, не увидят изменений. Вы по-прежнему сможете скачать последнюю версию, получить будущие обновления и создать учетные данные активации.
 
-Дополнительные сведения см. в статье Приступая к [работе с сервером многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy). Дополнительные сведения об облачной многофакторной идентификации Azure см. в статье [Планирование развертывания многофакторной идентификации Azure на основе облачных служб](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted).
+Дополнительные сведения см. в статье Приступая к [работе с сервер многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy). Дополнительные сведения об облачной многофакторной идентификации Azure см. в статье [Планирование развертывания многофакторной идентификации Azure на основе облачных служб](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted).
 
 ---
 
@@ -590,7 +590,7 @@ Azure AD усовершенствуется на постоянной основ
 
 Обнаружение аналитики угроз Azure AD теперь доступно в составе обновленной защита идентификации Azure AD функции. Эта новая функция позволяет указать необычные действия пользователя для конкретного пользователя или действия, которые соответствуют известным шаблонам атак, основанным на внутренних и внешних источниках анализа угроз Майкрософт.
 
-Дополнительные сведения о обновленной версии защита идентификации Azure AD см. в блоге, посвященном [четырем усовершенствованиям Защита идентификации Azure AD](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Four-major-Azure-AD-Identity-Protection-enhancements-are-now-in/ba-p/326935) , а также о том, [что защита идентификации Azure Active Directory (Обновлено)?](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-v2) рассмотрен. Дополнительные сведения об обнаружении аналитики угроз в Azure AD см. в статье [Защита идентификации Azure Active Directory события риска](https://docs.microsoft.com/azure/active-directory/identity-protection/risk-events-reference#azure-ad-threat-intelligence) .
+Дополнительные сведения о обновленной версии защита идентификации Azure AD см. в блоге, посвященном [четырем усовершенствованиям Защита идентификации Azure AD](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Four-major-Azure-AD-Identity-Protection-enhancements-are-now-in/ba-p/326935) , а также о том, [что защита идентификации Azure Active Directory (Обновлено)?](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-v2) рассмотрен. Дополнительные сведения об обнаружении аналитики угроз в Azure AD см. в статье [Защита идентификации Azure Active Directory обнаружения рисков](https://docs.microsoft.com/azure/active-directory/identity-protection/risk-events-reference#azure-ad-threat-intelligence) .
 
 ---
 

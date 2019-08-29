@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: mlearned
-ms.openlocfilehash: 879e2831dc099eabe43f1eefb81b1b7373c665dc
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: a173272600bab71264ed3b85ce5141814c0a6aed
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898712"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147207"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -121,8 +121,11 @@ az group create --name myResourceGroup --location eastus
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
 Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, кластер должен использовать сетевую политику, которая использует подключаемый модуль сети [Azure CNI][azure-cni-about] (дополнительно). Дополнительные сведения о планировании требуемых диапазонов подсетей и сетевых факторов см. в статье [Настройка сетей Azure CNI][use-advanced-networking]. Используйте команду [AZ AKS Create][az-aks-create] , чтобы создать кластер AKS с именем *myAKSCluster*. Эта команда создает необходимые сетевые ресурсы, если они не существуют.
-  * В кластере настроен один узел
+  * Кластер настроен с двумя узлами
   * Параметры *Windows-Admin-Password* и *Windows-Admin-username* устанавливают учетные данные администратора для всех контейнеров Windows Server, созданных в кластере.
+
+> [!NOTE]
+> Чтобы обеспечить надежное функционирование кластера, необходимо запустить по крайней мере 2 узла в пуле узлов по умолчанию.
 
 Предоставьте собственный безопасный *PASSWORD_WIN* (Помните, что команды в этой статье введены в оболочку Bash):
 
@@ -132,7 +135,7 @@ PASSWORD_WIN="P@ssw0rd1234"
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
-    --node-count 1 \
+    --node-count 2 \
     --enable-addons monitoring \
     --kubernetes-version 1.14.6 \
     --generate-ssh-keys \
@@ -184,7 +187,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl get nodes
 ```
 
-В следующем примере показан единый узел, созданный на предыдущих шагах. Убедитесь, что узел находится в состоянии *Ready* (Готово):
+В следующем примере выходных данных показаны все узлы в кластере. Убедитесь, что состояние всех узлов *Готово*:
 
 ```
 NAME                                STATUS   ROLES   AGE    VERSION

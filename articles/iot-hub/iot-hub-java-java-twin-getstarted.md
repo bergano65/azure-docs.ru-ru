@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 91bdaf93c9dc9b051fce6e052ccd5bd2f5682eaa
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 3f0355ae14ed1a6157c8d3b7fccb5fb8a225ee80
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061974"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147500"
 ---
 # <a name="get-started-with-device-twins-java"></a>Начало работы с двойниками устройств (Java)
 
@@ -29,8 +29,6 @@ ms.locfileid: "70061974"
 > Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Последняя версия [пакета SDK для Java SE 8](https://aka.ms/azure-jdks)
 

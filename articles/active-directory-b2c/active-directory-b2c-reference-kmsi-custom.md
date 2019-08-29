@@ -1,5 +1,5 @@
 ---
-title: Оставаться в системе в Azure Active Directory B2C | Документация Майкрософт
+title: Всегда оставаться в системе Azure Active Directory B2C
 description: Настройка функции "Оставаться в системе" в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -7,29 +7,31 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/03/2018
+ms.date: 08/29/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e99dacbe7ae0f42919616e04e60bf4f21b9bd985
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 29cdf5e7723113b4673945bf5db3158680a44b79
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835371"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147041"
 ---
 # <a name="enable-keep-me-signed-in-kmsi-in-azure-active-directory-b2c"></a>Включение функции "Оставаться в системе" в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory (Azure AD) B2C теперь можно включать функцию "Оставаться в системе" в веб-приложениях и собственных приложениях. Эта функция предоставляет пользователям, которые возвращаются в приложение, доступ без запроса на повторный ввод имени пользователя и пароля. Доступ отменяется, когда пользователь выходит из системы.
+Вы можете включить функцию "оставаться в системе" (функции "оставаться) для пользователей вашего веб-приложения и собственных приложений с локальными учетными записями в каталоге Azure Active Directory B2C (Azure AD B2C). Эта функция предоставляет пользователям доступ к приложению без запроса на повторное ввод имени пользователя и пароля. Доступ отменяется, когда пользователь выходит из системы.
 
 Пользователям не следует включать этот параметр на общедоступных компьютерах.
 
-![Пример регистрации на странице входа выводятся сведения о Keep входа флажок](./media/active-directory-b2c-reference-kmsi-custom/kmsi.PNG)
+![Пример страницы входа, на которой отображается флажок "оставаться в системе"](./media/active-directory-b2c-reference-kmsi-custom/kmsi.PNG)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Клиент Azure AD B2C, настроенный для разрешения регистрации или входа с локальной учетной записью. Если у вас нет клиента, его можно создать с помощью процедуры, описанной в статье [Руководство по созданию клиента Azure Active Directory B2C](tutorial-create-tenant.md).
+Клиент Azure AD B2C, настроенный для разрешения входа в локальную учетную запись. ФУНКЦИИ "оставаться не поддерживается для учетных записей внешних поставщиков удостоверений.
+
+Если у вас нет клиента, его можно создать с помощью процедуры, описанной в статье [Руководство по созданию клиента Azure Active Directory B2C](tutorial-create-tenant.md).
 
 ## <a name="add-a-content-definition-element"></a>Добавление элемента определения содержимого
 
@@ -87,7 +89,7 @@ ms.locfileid: "67835371"
 
 1. В файле *TrustFrameworkExtensions.xml* найдите элемент **TechnicalProfile** с идентификатором `login-NonInteractive` и элемент **TechnicalProfile** с идентификатором `login-NonInteractive-PasswordChange` и замените все значения `IdentityExperienceFrameworkAppId` на идентификатор приложения Identity Experience Framework, как описано в [руководстве по началу работы](active-directory-b2c-get-started-custom.md).
 
-    ```
+    ```XML
     <Item Key="client_id">8322dedc-cbf4-43bc-8bb6-141d16f0f489</Item>
     ```
 
@@ -183,11 +185,3 @@ ms.locfileid: "67835371"
 5. Чтобы протестировать отправленную настраиваемую политику, на портале Azure перейдите к странице политики и нажмите кнопку **Выполнить**.
 
 Пример политики можно найти [здесь](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/keep%20me%20signed%20in).
-
-
-
-
-
-
-
-

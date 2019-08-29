@@ -8,16 +8,16 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/15/2018
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 ms.reviewer: maghan
 manager: craigg
-ms.openlocfilehash: 3ab3ec5380fbc90dffd4f258073ad8b477e2318a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02c4644c4440c3a00a21ef22674bcc0d00902ac2
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002846"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140792"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 
@@ -62,14 +62,14 @@ ms.locfileid: "66002846"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|Обязательно для заполнения|
+|Свойство|Описание|Обязательное значение|
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
 |type|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
 |pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Да|
-|parameters|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
+|параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Нет|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks

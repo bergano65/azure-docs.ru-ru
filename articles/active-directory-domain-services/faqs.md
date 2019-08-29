@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 509bd472fe5f930ac830b8b4016129f8acb67324
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 80bc5ef78a73430dea23bdd644767d9fa9b3c9a8
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612881"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70124676"
 ---
 # <a name="azure-active-directory-domain-services-frequently-asked-questions-faqs"></a>Доменные службы Azure Active Directory. Часто задаваемые вопросы (FAQ)
 На этой странице вы найдете ответы на часто задаваемые вопросы о доменных службах Azure Active Directory. Следите за обновлениями.
@@ -61,6 +61,9 @@ ms.locfileid: "69612881"
 
 ### <a name="can-guest-users-invited-to-my-directory-use-azure-ad-domain-services"></a>Могут ли гостевые пользователи, приглашенные в каталог, использовать доменные службы Azure AD?
 Нет. Гостевые пользователи, приглашенные в каталог Azure AD с помощью процесса [Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md), синхронизируются в управляемом домене доменных служб Azure AD. Однако пароли этих пользователей не хранятся в каталоге Azure AD. Таким образом доменные службы Azure AD не имеют возможности синхронизировать хэши NTLM и Kerberos этих пользователей в управляемом домене. В результате такие пользователи не могут войти в управляемый домен или подключить к нему компьютеры.
+
+### <a name="can-i-move-an-existing-azure-ad-domain-services-managed-domain-to-a-different-subscription-resource-group-region-or-virtual-network"></a>Можно ли переместить существующий управляемый домен доменных служб Azure AD в другую подписку, группу ресурсов, регион или виртуальную сеть?
+Нет. После создания управляемого домена доменных служб Azure AD вы не сможете переместить экземпляр в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выберите наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании экземпляра AD DS Azure.
 
 ## <a name="administration-and-operations"></a>Администрирование и операции
 ### <a name="can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop"></a>Можно ли подключиться к контроллеру управляемого домена с помощью удаленного рабочего стола?

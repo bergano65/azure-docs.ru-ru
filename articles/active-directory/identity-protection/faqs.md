@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc02b8b5dccbec106e90430fc1714253df6ad847
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: e30f8264870272fc12dcb7e15b37e5fd30688bcb
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334013"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126527"
 ---
 # <a name="azure-active-directory-identity-protection-faq"></a>Вопросы и ответы о защите идентификации Azure Active Directory
 
 Эта статья содержит ответы на часто задаваемые вопросы о защите идентификации Azure Active Directory (Azure AD). Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md). 
 
-## <a name="why-do-some-risk-events-have-closed-system-status"></a>Почему для некоторых событий риска отображается состояние "Закрыто (системные)"?
+## <a name="why-do-some-risk-detections-have-closed-system-status"></a>Почему некоторые определения рисков имеют состояние "закрыто (система)"?
 
-**Ответ.** Эти события риска обнаружены и затем закрыты службой защиты идентификации, так как они перестали считаться событиями, представляющими риск. Эти события не учитываются в уровне риска пользователя. 
+**Ответ.** Эти обнаружения рисков были обнаружены защитой идентификации и позже закрыты, так как события больше не считаются рискованными. Эти события не учитываются в уровне риска пользователя. 
 
 ---
 

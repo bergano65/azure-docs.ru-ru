@@ -1,6 +1,6 @@
 ---
 title: Использование Microsoft Graph для защиты идентификации Azure Active Directory | Документация Майкрософт
-description: Узнайте, как выполнять запросы к Microsoft Graph для получения списка событий риска и связанных сведений из Azure Active Directory.
+description: Узнайте, как запрашивать Microsoft Graph для получения списка обнаруженных рисков и связанных сведений из Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1640511c2f97865f5026f9f977ed0e4a9c03e338
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: a79440d0d969e01dc94759d4619fc0359762e1fd
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774374"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126579"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 
-Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Существует четыре интерфейса API, которые предоставляют сведения о рискованных пользователях и входах. Первый интерфейс API, **рискдетектион**, позволяет запрашивать Microsoft Graph для получения списка обнаруженных рисков, связанных с входом пользователя и входа, и связанных сведений об обнаружении. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. Четвертый API, **identityRiskEvents**, позволяет запрашивать Microsoft Graph для получения списка [событий риска](../reports-monitoring/concept-risk-events.md) и связанных сведений. В этой статье описывается, как начать подключение к Microsoft Graph и запросить эти API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/) или по следующим ссылкам на документацию по API-интерфейсам:
+Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](../active-directory-identityprotection.md). Существует четыре интерфейса API, которые предоставляют сведения о рискованных пользователях и входах. Первый интерфейс API, **рискдетектион**, позволяет запрашивать Microsoft Graph для получения списка обнаруженных рисков, связанных с входом пользователя и входа, и связанных сведений об обнаружении. Второй API, **riskyUsers**, позволяет запрашивать у Microsoft Graph информацию о пользователях, которых служба "Защита идентификации" определила как выполняющих рискованные действия. Третий API, **signIn**, позволяет запрашивать у Microsoft Graph информацию о входах в Azure AD со специфическими свойствами, связанными с состоянием, подробностями и уровнем риска. Четвертый API, **identityRiskEvents**, позволяет запрашивать Microsoft Graph для получения списка [обнаруженных рисков](../reports-monitoring/concept-risk-events.md) и связанных сведений. В этой статье описывается, как начать подключение к Microsoft Graph и запросить эти API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/) или по следующим ссылкам на документацию по API-интерфейсам:
 
 * [API Рискдетектион](https://docs.microsoft.com/graph/api/resources/riskdetection?view=graph-rest-beta)
 * [API riskyUsers](https://docs.microsoft.com/graph/api/resources/riskyuser?view=graph-rest-beta)
@@ -68,7 +68,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
    ![Создание приложения](./media/graph-get-started/44.png)
 
-   1. В текстовом поле **Имя** введите имя приложения (например, приложение API события риска AADIP).
+   1. В текстовом поле **Имя** введите имя приложения (например, Приложение API обнаружения рисков ААДИП).
 
    1. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
 
@@ -122,7 +122,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
    ![Создание приложения](./media/graph-get-started/24.png)
 
-   1. В текстовом поле **Описание ключа** введите описание (например, *Событие риска AADIP*).
+   1. В текстовом поле **Описание ключа** введите описание (например, *обнаружение рисков аадип*).
    1. Для параметра **Длительность** выберите значение **Через один год**.
    1. Нажмите кнопку **Сохранить**.
    1. Скопируйте значение ключа и вставьте его в безопасное место.   
@@ -131,7 +131,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
    > Если ключ будет утерян, вам нужно будет вернуться в этот раздел и создать новый ключ. Не предоставляйте этот ключ никому: с его помощью кто угодно может получить доступ к вашим данным.
    > 
 
-## <a name="authenticate-to-microsoft-graph-and-query-the-identity-risk-events-api"></a>Проверка подлинности в Microsoft Graph и выполнение запросов с помощью API рисковых событий идентификации
+## <a name="authenticate-to-microsoft-graph-and-query-the-identity-risk-detections-api"></a>Проверка подлинности на Microsoft Graph и запрос API обнаружения рисков удостоверений
 
 На этом этапе вам понадобятся:
 
@@ -157,7 +157,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
 Отправьте этот заголовок как запрос по следующему URL-адресу API: `https://graph.microsoft.com/beta/identityRiskEvents`
 
-В случае успеха в ответ вы получите коллекцию событий риска идентификаторов и связанных данных в формате OData JSON. Эти данные можно проанализировать и обработать по своему усмотрению.
+Ответ, если он был успешным, представляет собой коллекцию обнаружений рисков идентификации и связанных данных в формате OData JSON, который можно проанализировать и обработать по своему усмотрению.
 
 Ниже приведен пример кода для аутентификации и вызова API с помощью PowerShell.  
 Просто добавьте свои идентификатор клиента, секретный ключ и домен клиента.
@@ -204,9 +204,9 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 GET https://graph.microsoft.com/beta/riskDetections?$filter=detectionTimingType eq 'offline'
 ```
 
-### <a name="get-the-high-risk-and-medium-risk-events-identityriskevents-api"></a>Получение списка событий риска высокого и среднего уровня (API identityRiskEvents)
+### <a name="get-the-high-risk-and-medium-risk-detections-identityriskevents-api"></a>Получение обнаружений с высоким риском и средним риском (API identityRiskEvents)
 
-События со средним и высоким уровнем риска представляют собой события, которые могут активировать политики защиты идентификации (риска входа в систему или пользователя). Исправление этих событий должно быть приоритетным, так как они имеют среднюю или высокую вероятность того, что пользователь, пытающийся войти в систему, не является законным владельцем удостоверения. 
+Обнаружение среднего и высокого риска представляет те, которые могут активировать проверку подлинности входа или политики риска. Исправление этих событий должно быть приоритетным, так как они имеют среднюю или высокую вероятность того, что пользователь, пытающийся войти в систему, не является законным владельцем удостоверения. 
 
 ```
 GET https://graph.microsoft.com/beta/identityRiskEvents?`$filter=riskLevel eq 'high' or riskLevel eq 'medium'" 
@@ -230,14 +230,14 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 ## <a name="next-steps"></a>Следующие шаги
 
 Поздравляем, вы только что выполнили первый вызов Microsoft Graph.  
-Теперь вы можете запрашивать рисковые события идентификации и использовать данные по своему усмотрению.
+Теперь вы можете запросить обнаружение рисков удостоверений и использовать данные, но вы увидите их по своему усмотрению.
 
 Дополнительные сведения о Microsoft Graph и инструкции по созданию приложения с помощью API Graph см. в [документации](https://docs.microsoft.com/graph/overview), а также на [веб-сайте Microsoft Graph](https://developer.microsoft.com/graph). 
 
 Связанные сведения:
 
 - [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md)
-- [Типы событий риска, обнаруживаемые защитой идентификации Azure Active Directory](../reports-monitoring/concept-risk-events.md)
+- [Типы обнаружений рисков, обнаруживаемые Защита идентификации Azure Active Directory](../reports-monitoring/concept-risk-events.md)
 - [Microsoft Graph](https://developer.microsoft.com/graph/)
 - [Overview of Microsoft Graph (Обзор Microsoft Graph)](https://developer.microsoft.com/graph/docs)
 - [Azure AD Identity Protection Service Root (Корень службы защиты идентификации Azure AD)](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root)

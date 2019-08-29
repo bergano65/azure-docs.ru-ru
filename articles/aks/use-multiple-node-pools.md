@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: 656934f00879b47669fac4deaac5156cb100e159
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: caeb89332bd46b4f0cf2d0f9e5654aebca4d765d
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898751"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147265"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительная версия. Создание пулов нескольких узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -101,12 +101,15 @@ az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --enable-vmss \
-    --node-count 1 \
+    --node-count 2 \
     --generate-ssh-keys \
     --kubernetes-version 1.13.10
 ```
 
 Создание кластера занимает несколько минут.
+
+> [!NOTE]
+> Чтобы обеспечить надежное функционирование кластера, необходимо запустить по крайней мере 2 узла в пуле узлов по умолчанию, так как базовые системные службы работают в этом пуле узлов.
 
 Когда кластер будет готов, выполните команду [AZ AKS Get-Credential][az-aks-get-credentials] , чтобы получить учетные данные кластера для использования с `kubectl`:
 
@@ -133,7 +136,7 @@ az aks nodepool add \
 az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 ```
 
-В следующем примере выходных данных показано, что *минодепул* успешно создан с тремя узлами в пуле узлов. При создании кластера AKS на предыдущем шаге создается *nodepool1* по умолчанию с числом узлов, равным *1*.
+В следующем примере выходных данных показано, что *минодепул* успешно создан с тремя узлами в пуле узлов. При создании кластера AKS на предыдущем шаге создается *nodepool1* по умолчанию с числом узлов, равным *2*.
 
 ```console
 $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
@@ -151,7 +154,7 @@ $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSClus
   },
   {
     ...
-    "count": 1,
+    "count": 2,
     ...
     "name": "nodepool1",
     "orchestratorVersion": "1.13.10",
@@ -166,11 +169,14 @@ $ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSClus
 > Если *орчестраторверсион* или *VmSize* не указаны при добавлении пула узлов, узлы создаются на основе значений по умолчанию для кластера AKS. В этом примере это был Kubernetes версии *1.13.10* и размером узла *Standard_DS2_v2*.
 
 ## <a name="upgrade-a-node-pool"></a>Обновление пула узлов
-
+ 
 > [!NOTE]
 > Операции обновления и масштабирования в кластере или пуле узлов являются взаимоисключающими. Нельзя одновременно обновлять и масштабировать кластер или пул узлов. Вместо этого каждый тип операции должен быть завершен в целевом ресурсе до следующего запроса к этому же ресурсу. Дополнительные сведения см. в нашем [руководство по устранению неполадок](https://aka.ms/aks-pending-upgrade).
 
 Когда кластер AKS был создан на первом шаге, `--kubernetes-version` был указан параметр *1.13.10* . Это задает версию Kubernetes как для плоскости управления, так и для начального пула узлов. Существуют различные команды для обновления Kubernetes версии плоскости управления и пула узлов. Команда используется для обновления плоскости управления, `az aks nodepool upgrade` а используется для обновления пула отдельных узлов. `az aks upgrade`
+
+> [!NOTE]
+> Версия образа ОС пула узлов привязана к Kubernetes версии кластера. Обновления образа ОС будут получаться только после обновления кластера.
 
 Давайте выполним обновление *минодепул* до Kubernetes *1.13.10*. Используйте команду [AZ AKS node][az-aks-nodepool-upgrade] для обновления пула узлов, как показано в следующем примере:
 
@@ -206,7 +212,7 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
   },
   {
     ...
-    "count": 1,
+    "count": 2,
     ...
     "name": "nodepool1",
     "orchestratorVersion": "1.13.10",
@@ -269,7 +275,7 @@ $ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster
   },
   {
     ...
-    "count": 1,
+    "count": 2,
     ...
     "name": "nodepool1",
     "orchestratorVersion": "1.13.10",
@@ -319,7 +325,7 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
   },
   {
     ...
-    "count": 1,
+    "count": 2,
     ...
     "name": "nodepool1",
     "orchestratorVersion": "1.13.10",
@@ -372,7 +378,7 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
   },
   {
     ...
-    "count": 1,
+    "count": 2,
     ...
     "name": "nodepool1",
     "orchestratorVersion": "1.13.10",
@@ -389,7 +395,7 @@ $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
 ## <a name="schedule-pods-using-taints-and-tolerations"></a>Планирование модулей Pod с помощью таинтс и допусков
 
-Теперь у вас есть два пула узлов в кластере — пул узлов по умолчанию изначально создан и пул узлов на основе GPU. Используйте команду [kubectl Get Nodes][kubectl-get] , чтобы просмотреть узлы в кластере. В следующем примере выходных данных показан один узел в каждом пуле узлов:
+Теперь у вас есть два пула узлов в кластере — пул узлов по умолчанию изначально создан и пул узлов на основе GPU. Используйте команду [kubectl Get Nodes][kubectl-get] , чтобы просмотреть узлы в кластере. В следующем примере выходных данных показаны узлы:
 
 ```console
 $ kubectl get nodes

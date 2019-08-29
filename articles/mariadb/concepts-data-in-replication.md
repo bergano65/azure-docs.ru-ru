@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/11/2019
-ms.openlocfilehash: c19ec06ce353d653086fa693dde975a55f51f823
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 28c2c01e85120ec17e6f782fb0686a627d50d0d0
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839259"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70136747"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
@@ -34,8 +34,12 @@ ms.locfileid: "67839259"
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
+- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mariadb.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
+- Убедитесь, что IP-адрес главного сервера добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MariaDB. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-cli).
+- Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
+- Убедитесь, что главный сервер имеет **общедоступный IP-адрес** или что DNS является общедоступной.
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другой
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 
 ## <a name="next-steps"></a>Следующие шаги

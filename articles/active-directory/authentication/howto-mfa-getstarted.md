@@ -1,6 +1,6 @@
 ---
 title: Планирование и выполнение развертывания многофакторной идентификации Azure — Azure Active Directory
-description: Планирование развертывания многофакторной идентификации Microsoft Azure
+description: Планирование развертывания Многофакторная идентификация Microsoft Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 776a73f8a20a3f5ad4e97a08ff3871e805a61eb3
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 4b555ecdf8bbd3d29e440675599041f40ac3c9d0
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879121"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125025"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания многофакторной идентификации Azure на основе облачных служб
 
@@ -76,7 +76,7 @@ ms.locfileid: "68879121"
 * Входы в систему с зараженных устройств
 * Входы с IP-адресов с подозрительными действиями
 
-Некоторые события риска, обнаруженные Защита идентификации Azure Active Directory возникают в режиме реального времени, и для некоторых требуется автономная обработка. Администраторы могут блокировать пользователей, которые работают с опасным поведением и устраняют неполадки вручную, требовать изменения пароля или требовать многофакторную проверку подлинности в рамках политик условного доступа.
+Некоторые обнаружения рисков, обнаруженные Защита идентификации Azure Active Directory, происходят в режиме реального времени, и для некоторых требуется автономная обработка. Администраторы могут блокировать пользователей, которые работают с опасным поведением и устраняют неполадки вручную, требовать изменения пароля или требовать многофакторную проверку подлинности в рамках политик условного доступа.
 
 ## <a name="define-network-locations"></a>Определение сетевых расположений
 

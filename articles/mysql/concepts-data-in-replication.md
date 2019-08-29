@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.openlocfilehash: f91a6da9a305c6620e4e01ab7aa3c554374cb5d7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 889c2e75e9eee0586c709b032dbb6d1c58d45102
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60996829"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142050"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -34,11 +34,15 @@ ms.locfileid: "60996829"
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро MySQL InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
+- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
+- Убедитесь, что IP-адрес главного сервера был добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MySQL. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli).
+- Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
+- Убедитесь, что главный сервер имеет общедоступный **IP-адрес** или что DNS общедоступна.
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другой
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).

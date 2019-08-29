@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c30669c8f5aeefc14db42a32d87f333419758327
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 28c64653ee0f9135e6da4c3768b89f9a0b25b2ef
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989878"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127358"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -34,7 +34,7 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 При возникновении проблем ознакомьтесь со статьей [Как получить поддержку для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы получить доступ к API отчетов с вмешательством пользователя или без него, потребуется:
 
@@ -49,7 +49,7 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 `https://graph.microsoft.com/beta/auditLogs/directoryAudits` — это конечная точка API Microsoft Graph для журналов аудита, а `https://graph.microsoft.com/beta/auditLogs/signIns` — конечная точка API Microsoft Graph для входа в систему. Дополнительные сведения см. в справке по [API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) и [API входа](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signIn).
 
-Кроме того, вы можете использовать [API-интерфейс событий риска защиты идентификации](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent), чтобы получить программный доступ к сведениям об обнаружениях с помощью Microsoft Graph. Дополнительные сведения см. в статье [Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph](../identity-protection/graph-get-started.md). 
+Кроме того, вы можете использовать [API обнаружения угроз для защиты идентификации](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent) , чтобы получить программный доступ к средствам обнаружения безопасности с помощью Microsoft Graph. Дополнительные сведения см. в статье [Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph](../identity-protection/graph-get-started.md). 
 
 > [!NOTE]
 >  Конечная точка **https:\/\/graph.windows.net\/\<имя_клиента\>\/reports\/** является нерекомендуемой. Используйте описанные выше новые конечные точки API для получения программного доступа к действиям и отчетам о безопасности.

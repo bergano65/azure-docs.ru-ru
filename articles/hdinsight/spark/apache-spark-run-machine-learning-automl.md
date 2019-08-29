@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: ff6a071a2d157bf79ab27fcbf4f9753fdbcac118
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: a731d9e0c97cb8431b1294d961ad46ff324f32be
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354858"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141189"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-automl-on-apache-spark-in-azure-hdinsight"></a>Выполнение рабочих нагрузок Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight
 
@@ -34,7 +34,7 @@ ms.locfileid: "68354858"
 
 ## <a name="authentication-for-workspace"></a>Аутентификация для рабочей области
 
-Для создания рабочей области и отправки эксперимента требуется маркер аутентификации. Этот маркер можно создать с помощью [приложения Azure AD](../../active-directory/develop/app-objects-and-service-principals.md). Для создания требуемого маркера аутентификации также можно использовать [пользователя Azure AD](https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate?view=azure-python), если многофакторная проверка подлинности не включена в учетной записи.  
+Для создания рабочей области и отправки эксперимента требуется маркер аутентификации. Этот маркер можно создать с помощью [приложения Azure AD](../../active-directory/develop/app-objects-and-service-principals.md). Для создания требуемого маркера аутентификации также можно использовать [пользователя Azure AD](/azure/python/python-sdk-azure-authenticate), если многофакторная проверка подлинности не включена в учетной записи.  
 
 Следующий фрагмент кода создает маркер аутентификации, используя **приложение Azure AD**.
 
