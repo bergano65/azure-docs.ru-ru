@@ -3,16 +3,16 @@ title: Что собой представляет Azure Lighthouse?
 description: Azure Lighthouse позволяет поставщикам служб доставлять клиентам управляемые службы с высоким уровнем автоматизации и эффективностью в масштабе.
 author: JnHs
 ms.author: jenhayes
-ms.date: 07/11/2019
+ms.date: 08/22/2019
 ms.topic: overview
 ms.service: lighthouse
 manager: carmonm
-ms.openlocfilehash: eb55af5a1121eb193bb76efc9f9e0b833f4b5a1f
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 05fa16504e25a6bf0f6aa1c0a348284abba6e1ed
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67810798"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011907"
 ---
 # <a name="what-is-azure-lighthouse"></a>Что собой представляет Azure Lighthouse?
 
@@ -42,3 +42,8 @@ Azure Lighthouse содержит несколько способов оптим
 
 > [!NOTE]
 > Описанные выше возможности в настоящее время доступны в общедоступных облаках. Сведения о доступности продуктов по регионам см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- Ознакомьтесь со сведениями о [делегированном управлении ресурсами Azure](concepts/azure-delegated-resource-management.md).
+- Узнайте больше об [интерфейсах управления для различных клиентов](concepts/cross-tenant-management-experience.md).

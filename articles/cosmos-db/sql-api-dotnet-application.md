@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: sngun
-ms.openlocfilehash: b1d8d2539ae89dfdb8feb2e38f00bf4440411d8a
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 9824e1468604763834e37abe94290d68d81077ab
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815137"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020126"
 ---
 # <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Руководство по Разработка веб-приложения ASP.NET Core MVC с использованием Azure Cosmos DB с помощью пакета SDK для .NET 
 
@@ -120,22 +120,6 @@ ms.locfileid: "68815137"
    
    Хранимые данные в Azure Cosmos DB передаются по сети и сохраняются в виде JSON-файлов. Для управления сериализацией и десериализацией объектов с помощью JSON.NET можно использовать атрибут **JsonProperty**, как показано на примере созданного класса **Item**. Вы можете не только контролировать формат имени свойства при его поступлении в JSON, но также и переименовывать свойства .NET, как вы сделали со свойством **Completed**. 
 
-### <a name="add-a-controller"></a>Добавление контроллера
-
-1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**. Откроется диалоговое окно **Добавление элемента формирования шаблонов** .
-
-1. Выберите **Контроллер MVC — пустой** и нажмите кнопку **Добавить**.
-
-   ![Снимок экрана: диалоговое окно "Добавление шаблона" с выделенным параметром "Контроллер MVC — пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
-
-1. Назовите новый контроллер **ItemController** и замените код в этом файле следующим:
-
-   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
-
-   Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в статье [Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET MVC Application][Preventing Cross-Site Request Forgery] (Предотвращение атак с подделкой межсайтовых запросов в приложениях ASP.NET MVC). Исходный код, предоставленный на [GitHub][GitHub], имеет полную реализацию.
-
-   Для защиты от атак overposting также используется атрибут **Bind** в параметре метода. Дополнительные сведения см. в записи блога [Implementing Basic CRUD Functionality with the Entity Framework in ASP.NET MVC Application][Basic CRUD Operations in ASP.NET MVC] (Реализация базовых функций CRUD с помощью Entity Framework в приложении ASP.NET MVC).
-
 ### <a name="add-views"></a>Добавление представлений
 
 Теперь давайте создадим следующие три представления. 
@@ -191,7 +175,23 @@ ms.locfileid: "68815137"
 
 Как только все будет готово, закройте документы cshtml в Visual Studio, вы вернетесь к ним позже.
 
-## <a name="connect-to-cosmosdb"></a>Шаг 5. Подключение к Azure Cosmos DB 
+### <a name="add-a-controller"></a>Добавление контроллера
+
+1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**. Откроется диалоговое окно **Добавление элемента формирования шаблонов** .
+
+1. Выберите **Контроллер MVC — пустой** и нажмите кнопку **Добавить**.
+
+   ![Снимок экрана: диалоговое окно "Добавление шаблона" с выделенным параметром "Контроллер MVC — пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
+
+1. Назовите новый контроллер **ItemController** и замените код в этом файле следующим:
+
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
+
+   Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в статье [Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET MVC Application][Preventing Cross-Site Request Forgery] (Предотвращение атак с подделкой межсайтовых запросов в приложениях ASP.NET MVC). Исходный код, предоставленный на [GitHub][GitHub], имеет полную реализацию.
+
+   Для защиты от атак overposting также используется атрибут **Bind** в параметре метода. Дополнительные сведения см. в записи блога [Implementing Basic CRUD Functionality with the Entity Framework in ASP.NET MVC Application][Basic CRUD Operations in ASP.NET MVC] (Реализация базовых функций CRUD с помощью Entity Framework в приложении ASP.NET MVC).
+
+## <a name="connect-to-cosmosdb"></a>Шаг 5. Подключение к Azure Cosmos DB 
 
 Теперь, когда мы позаботились об основных ресурсах MVC, давайте рассмотрим добавление кода для подключения к Azure Cosmos DB и выполнения операций CRUD. 
 

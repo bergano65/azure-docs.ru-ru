@@ -9,17 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 757c710ddca72ec6a1383b51a8b536d196e6cb8c
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: dd591f18ad2abb8603270f4c570c7ef311bdadae
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203592"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072568"
 ---
 # <a name="use-revisions-to-make-non-breaking-changes-safely"></a>Безопасное внесение некритических изменений с помощью редакций
 Когда готовый к работе API начинают использовать разработчики, следует осторожно вносить изменения в этот API, чтобы не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Для этого можно использовать **редакции** в службе управления API Azure. Дополнительные сведения см. в статьях [Versions & revisions](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/) (Версии и редакции) и [API Versioning with Azure API Management](https://blogs.msdn.microsoft.com/apimanagement/2017/09/13/api-versioning-with-azure-api-management/) (Управление версиями API с помощью службы управления API Azure).

@@ -7,17 +7,16 @@ author: ggailey777
 manager: jeconnoc
 ms.assetid: d6bff41c-a624-40c1-bbc7-80590df29ded
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.author: glenga
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: cc730650f7bd570f237c06b074afb3678b54448f
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: b8855fa061e07ec77482ca960971db8252608b51
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54901468"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096885"
 ---
 # <a name="create-a-function-triggered-by-azure-blob-storage"></a>Создание функции, активируемой хранилищем BLOB-объектов Azure
 

@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6d870e5eedf362a6c929216735c8b5e9240aaa4f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 856e3e41e624844f1d7cbf5bf4cd1611bc10ecbb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708479"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70081526"
 ---
 # <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство по Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
 

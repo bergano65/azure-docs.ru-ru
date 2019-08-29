@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
-ms.openlocfilehash: dcbec817f771324219a68de96eb5dd262a887fc1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d8ecfb53b78277e4b0e4a85d60fb6712d0bc2292
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449048"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114832"
 ---
 # <a name="example-use-the-large-scale-feature"></a>Пример: Использование функции для увеличения масштаба
 
@@ -32,7 +32,7 @@ LargePersonGroup и LargeFaceList вместе называются крупно
 
 Если вы используете клиентскую библиотеку API "Распознавание лиц", ключ и конечная точка подписки передаются через конструктор класса FaceClient. Например:
 
-```CSharp
+```csharp
 string SubscriptionKey = "<Subscription Key>";
 // Use your own subscription endpoint corresponding to the subscription key.
 string SubscriptionEndpoint = "https://westus.api.cognitive.microsoft.com";
@@ -73,7 +73,7 @@ faceClient.Endpoint = SubscriptionEndpoint
 
 В таблице выше приведено сравнение операций уровня списка FaceList и LargeFaceList. Как видно, в LargeFaceList есть новые операции Train и Get Training Status, которых нет в FaceList. Обучение LargeFaceList — обязательное предварительное условие для операций [FindSimilar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). Для FaceList обучение не требуется. В следующем фрагменте кода реализуется вспомогательная функция, которая ожидает обучения LargeFaceList:
 
-```CSharp
+```csharp
 /// <summary>
 /// Helper function to train LargeFaceList and wait for finish.
 /// </summary>
@@ -123,7 +123,7 @@ private static async Task TrainLargeFaceList(
 
 Раньше типичный процесс добавления лиц и выполнения FindSimilar для FaceList выглядел так:
 
-```CSharp
+```csharp
 // Create a FaceList.
 const string FaceListId = "myfacelistid_001";
 const string FaceListName = "MyFaceListDisplayName";
@@ -156,7 +156,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Вот как он изменится после переноса в LargeFaceList:
 
-```CSharp
+```csharp
 // Create a LargeFaceList.
 const string LargeFaceListId = "mylargefacelistid_001";
 const string LargeFaceListName = "MyLargeFaceListDisplayName";
@@ -233,7 +233,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Допустим, есть функция `TrainLargePersonGroup`, аналогичная `TrainLargeFaceList`. Типичная реализация изолированного обучения для LargePersonGroup через класс [`Timer`](https://msdn.microsoft.com/library/system.timers.timer(v=vs.110).aspx) из `System.Timers` будет выглядеть так:
 
-```CSharp
+```csharp
 private static void Main()
 {
     // Create a LargePersonGroup.

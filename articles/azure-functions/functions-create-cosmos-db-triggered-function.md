@@ -7,17 +7,16 @@ author: ggailey777
 manager: jeconnoc
 ms.assetid: bc497d71-75e7-47b1-babd-a060a664adca
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 10/02/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 941a35084ba811e3bf9224087336db9abbd5b5d5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9cd09349ae37d11e4d01bc308162512ebfa03dfc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58137850"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086354"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Создание функции, активируемой с помощью Azure Cosmos DB
 

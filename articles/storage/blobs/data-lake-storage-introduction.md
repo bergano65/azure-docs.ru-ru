@@ -8,12 +8,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 3dea4dfc58bf087b8f6bc0a3f45646da5cb597ad
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: de2dc5068dc454925744688a43f49a855aac42f3
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847224"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991846"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
 
@@ -64,7 +64,7 @@ Data Lake Storage 2-го поколения — это дополнительн
 | Концепция                                | Организация верхнего уровня | Организация нижнего уровня                                            | Контейнер данных |
 |----------------------------------------|------------------------|---------------------------------------------------------------------|----------------|
 | Большие двоичные объекты — хранилище объектов общего назначения | Контейнер              | Виртуальный каталог (только пакет SDK — не поддерживает атомарное управление) | BLOB-объект           |
-| ADLS 2-го поколения — хранилище аналитики          | Файловая система             | Каталог                                                           | Файл           |
+| ADLS 2-го поколения — хранилище аналитики          | Контейнер            | Каталог                                                           | Файл           |
 
 ## <a name="supported-open-source-platforms"></a>Поддерживаемые платформы с открытым исходным кодом
 

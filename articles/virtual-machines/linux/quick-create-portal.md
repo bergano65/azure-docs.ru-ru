@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 8/20/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: feaefef23b433a296d25cc11b5cd89d86acd280f
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 0c05eb59c42700394f755f226405f16a47edc73c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650179"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091550"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Linux на портале Azure
 
@@ -110,7 +109,7 @@ sudo apt-get -y install nginx
 
 Страницу приветствия NGINX по умолчанию можно просмотреть в любом веб-браузере. Введите общедоступный IP-адрес виртуальной машины в качестве веб-адреса. Общедоступный IP-адрес можно найти на странице общих сведений о виртуальной машине. Также он является частью строки подключения SSH, использованной ранее.
 
-![Сайт NGINX по умолчанию](./media/quick-create-cli/nginx.png)
+![Сайт NGINX по умолчанию](./media/quick-create-portal/nginx.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

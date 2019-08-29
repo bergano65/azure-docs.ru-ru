@@ -7,17 +7,16 @@ manager: jeconnoc
 keywords: функции azure, функции, обработка событий, веб-перехватчики, динамические вычисления, независимая архитектура
 ms.assetid: 01d6ca9f-ca3f-44fa-b0b9-7ffee115acd4
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: overview
 ms.date: 10/03/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 36dbfca577f69c3a7c49d03ef31bc18c71222f95
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: f3fc7691fc3afa3a1fe886655353d9ed41f631cc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881297"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096081"
 ---
 # <a name="an-introduction-to-azure-functions"></a>Общие сведения о Функциях Azure  
 Функции Azure — это решение для быстрого запуска фрагментов кода (функций) в облаке. Вы можете быстро написать код для решения своих задач, не беспокоясь о наличии приложения или инфраструктуры для его выполнения. Функции Azure повышают производительность при разработке. Кроме того, вы можете использовать такие языки программирования, как C#, Java, JavaScript, PowerShell и Python. Оплата взимается только один раз при выполнении кода, а масштабирование в Azure выполняется при необходимости. Функции Azure предоставляют возможность разрабатывать в Microsoft Azure [независимые от сервера](https://azure.microsoft.com/solutions/serverless/) приложения.

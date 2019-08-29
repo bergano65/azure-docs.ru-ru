@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 579b35a06b74ffcef47ca0b41ff60bfdc4e0eb2b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dba50c984984363682efce1f09ef462b3c0c5def
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67099787"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078498"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Руководство по Интеграция Azure Active Directory c IQNavigator VMS
 
@@ -114,7 +114,7 @@ ms.locfileid: "67099787"
     d. В текстовом поле **Состояние ретранслятора** введите URL-адрес в формате `https://<subdomain>.iqnavigator.com`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими URL-адресом ответа и значением состояния ретранслятора. Чтобы получить эти значения, обратитесь к [группе поддержки IQNavigator VMS](https://www.beeline.com/support-iqn/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. Приложение IQNavigator ожидает в утверждении идентификатора имени значение уникального идентификатора пользователя. Клиент может сопоставить правильное значение для утверждения идентификатора имени. В данном случае для примера мы сопоставили user.UserPrincipalName. Однако вам нужно сопоставить правильное значение, соответствующее параметрам вашей организации.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67099787"
 
 ### <a name="configure-iqnavigator-vms-single-sign-on"></a>Настройка единого входа в IQNavigator VMS
 
-Чтобы настроить единый вход на стороне **IQNavigator VMS**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **IQNavigator VMS**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки IQNavigator VMS](https://www.beeline.com/support-iqn/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -181,7 +181,7 @@ ms.locfileid: "67099787"
 
 ### <a name="create-iqnavigator-vms-test-user"></a>Создание тестового пользователя IQNavigator VMS
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении IQNavigator VMS. Обратитесь к  [группе поддержки IQNavigator VMS](https://www.beeline.com/iqn-product-support/), чтобы добавить пользователей на платформу IQNavigator VMS. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении IQNavigator VMS. Обратитесь к  [группе поддержки IQNavigator VMS](https://www.beeline.com/support-iqn/), чтобы добавить пользователей на платформу IQNavigator VMS. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -195,4 +195,4 @@ ms.locfileid: "67099787"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -125,10 +125,10 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 
 | Название | Тип | Пример | Примечания |
 | --- | --- | --- | --- |
-| Описание |строка |"GET /indexes('content')/docs" |Конечная точка операции |
-| Запрос |строка |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Параметры запроса |
+| Description |string |"GET /indexes('content')/docs" |Конечная точка операции |
+| query |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Параметры запроса |
 | Documents |int |42 |Количество обработанных документов |
-| IndexName |строка |"testindex" |Имя индекса, связанного с операцией |
+| IndexName |string |"testindex" |Имя индекса, связанного с операцией |
 
 ## <a name="metrics-schema"></a>Схема метрик
 

@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: 120fe358e5c8afe63e98038ad353d5ebc45a1937
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 484621668b582953d49c366336a49970d82c3fbf
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636477"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073264"
 ---
 # <a name="import-an-api-app-as-an-api"></a>Импорт приложения API в качестве API
 
@@ -33,7 +32,7 @@ ms.locfileid: "51636477"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-+ Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + Убедитесь, что в вашей подписке есть приложение API. Дополнительные сведения см. в [документации по службе приложений](https://docs.microsoft.com/azure/app-service/).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]

@@ -7,12 +7,12 @@ ms.author: jenhayes
 ms.date: 07/11/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 15454d4b3f0abad6166c4b163df6c8652669d649
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: f6468e62e9969aa87d51e25ed220bf7d4bed989e
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67810918"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971567"
 ---
 # <a name="cross-tenant-management-experiences"></a>Интерфейсы управления для различных клиентов
 
@@ -112,6 +112,7 @@ ms.locfileid: "67810918"
 
 - Откройте запросы в службу поддержки для делегированных ресурсов с помощью колонки **Справка и поддержка** на портале Azure (выбирая план поддержки, доступный для делегированной области).
 
+## <a name="current-limitations"></a>Текущие ограничения
 Во всех сценариях необходимо учитывать следующие текущие ограничения.
 
 - Запросы, обрабатываемые службой Azure Resource Manager, можно выполнять с помощью делегированного управления ресурсами Azure. URI операций для этих запросов начинаются с `https://management.azure.com`. Однако запросы, которые обрабатываются экземпляром типа ресурса (например, доступ к секретам KeyVault или доступ к данным хранилища), не поддерживаются с системой делегированного управления ресурсами Azure. URI операций для этих запросов обычно начинаются с адреса, уникального для вашего экземпляра, например `https://myaccount.blob.core.windows.net` или `https://mykeyvault.vault.azure.net/`. Последние также обычно являются операциями с данными, а не операциями управления. 

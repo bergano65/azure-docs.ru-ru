@@ -8,19 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: 7965a80f-ea24-4cc2-bc43-60b574101902
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: overview
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 9d33b478cb848724d0b3747761a99a1269d58b6e
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 14ed21efec47e15663724bd782ad931903fb8f13
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671058"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70082425"
 ---
 # <a name="azure-and-linux"></a>Azure и Linux
 Microsoft Azure — это расширяющийся набор интегрированных общедоступных облачных служб, которые включают в себя возможности анализа, работы с виртуальными машинами и базами данных, мобильные средства, веб-технологии, а также возможности работы в сети и хранения данных, требуемые для размещения ваших решений.  Microsoft Azure предоставляет масштабируемую платформу вычислений, которая позволяет платить только за те ресурсы, которые вы используете по требованию, без дополнительных затрат на локальное оборудование.  Среда Azure готова к использованию, когда вы можете масштабировать свои решения в соответствии с потребностями клиентов.

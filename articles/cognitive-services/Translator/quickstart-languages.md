@@ -8,19 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 08/12/2019
+ms.date: 08/19/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 16f841ebfac68fb6e02d624105e83517cba1fb56
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 7500fde43f89b0a5578f816265127af5a5ed29a7
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968250"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906957"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью API Перевода текстов
 
 Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
+
+[!INCLUDE [Custom subdomains notice](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ::: zone pivot="programming-language-csharp"
 

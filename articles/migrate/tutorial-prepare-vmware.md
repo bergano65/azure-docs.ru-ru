@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 16c0354466d5c2a1207873a1e83e209da9339705
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 5bd4926494e13c1dd0cfb6283292ade967471238
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69509992"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013433"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Подготовка виртуальных машин VMware к оценке и миграции в Azure
 
@@ -163,5 +163,5 @@ ms.locfileid: "69509992"
 Перейдите ко второму руководству по настройке проекта миграции Azure и оцените виртуальные машины VMware для миграции на Azure.
 
 > [!div class="nextstepaction"] 
-> [Migrate VMware VMs to Azure (agentless)](./tutorial-migrate-vmware.md) (Миграция виртуальных машин VMware в Azure (без агента)) 
+> [Migrate VMware VMs to Azure (agentless)](./tutorial-assess-vmware.md) (Миграция виртуальных машин VMware в Azure (без агента)) 
 

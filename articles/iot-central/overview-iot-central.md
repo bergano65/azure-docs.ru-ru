@@ -3,18 +3,18 @@ title: Сведения об Azure IoT Central | Документация Май
 description: Azure IoT Central — это комплексное решение SaaS, с помощью которого можно создавать пользовательские решения IoT и управлять ими. В этой статье приведено краткое описание основных функций Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 04/24/2019
+ms.date: 08/26/2019
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: ff212e77b6fcaaa057c22c420cce82e7ea6c82e6
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c5c1f36e77e24b598aa777d384462ee4538bd486
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877293"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70048936"
 ---
 <!---
 Purpose of an Overview article: 

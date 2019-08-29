@@ -9,17 +9,16 @@ editor: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 15a1e388b17a66bf22fc0fd51744cb0aaa1b36d4
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: f44c7a66b6d8fe7ed6ad114ea176c84351ac6493
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415527"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70071520"
 ---
 # <a name="migrate-an-aspnet-app-to-azure-app-service-using-a-windows-container-preview"></a>Перенос приложения ASP.NET в Службу приложений Azure с помощью контейнера Windows (предварительная версия)
 

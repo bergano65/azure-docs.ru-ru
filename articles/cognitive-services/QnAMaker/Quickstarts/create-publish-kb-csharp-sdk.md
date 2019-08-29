@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 08/06/2019
 ms.author: diberry
-ms.openlocfilehash: 686bdf834efd637db49a7b51dc2bf7effa1eb4cb
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 2902e63f65db3883d6d8f442db273d19f60e82a8
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839966"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012786"
 ---
 # <a name="quickstart-qna-maker-client-library-for-net"></a>Краткое руководство. Клиентская библиотека QnA Maker для .NET
 
@@ -186,7 +186,7 @@ _loop_ и _Task.Delay_ в следующем блоке кода использ�
 dotnet run
 ```
 
-[Исходный код для этого краткого руководства](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/Knowledgebase_Quickstart/Program.css) доступен в репозитории примеров C# для QnA Maker на сайте GitHub.
+[Исходный код для этого краткого руководства](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/Knowledgebase_Quickstart/Program.cs) доступен в репозитории примеров C# для QnA Maker на сайте GitHub.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

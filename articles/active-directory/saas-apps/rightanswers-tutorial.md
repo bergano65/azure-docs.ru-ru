@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 5f083178ca7e28831bf4f60940c3ced73a427dda
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f242b2e33b50aa955446ae2b1f62421d39e58418
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092780"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rightanswers"></a>Руководство по Интеграция Azure Active Directory с RightAnswers
 
@@ -110,7 +110,7 @@ ms.locfileid: "67092780"
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.rightanswers.com:<identifier>/portal`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://www.rightanswers.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RightAnswers](https://support.rightanswers.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -128,7 +128,7 @@ ms.locfileid: "67092780"
 
 ### <a name="configure-rightanswers-single-sign-on"></a>Настройка единого входа в RightAnswers
 
-Чтобы настроить единый вход на стороне **RightAnswers**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки RightAnswers](https://www.rightanswers.com/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **RightAnswers**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки RightAnswers](https://support.rightanswers.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!NOTE]
 > Настройка единого входа должна выполняться службой поддержки RightAnswers. Как только единый вход для вашей подписки будет включен, вы получите уведомление.
@@ -205,4 +205,4 @@ ms.locfileid: "67092780"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
