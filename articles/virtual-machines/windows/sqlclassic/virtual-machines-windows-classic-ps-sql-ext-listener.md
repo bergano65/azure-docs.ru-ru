@@ -9,18 +9,17 @@ editor: ''
 tags: azure-service-management
 ms.assetid: a2453032-94ab-4775-b976-c74d24716728
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/31/2017
 ms.author: mikeray
-ms.openlocfilehash: 89623adbddce07cbc3c3ead811f5174d108c9b0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 78881830d4e558daaad6e1929b30287e2731fb1b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62101631"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100418"
 ---
 # <a name="configure-an-external-listener-for-always-on-availability-groups-in-azure"></a>Настройка внешнего прослушивателя для групп доступности AlwaysOn в Azure
 > [!div class="op_single_selector"]
@@ -123,14 +122,14 @@ ms.locfileid: "62101631"
 [!INCLUDE [Test-Listener-Within-VNET](../../../../includes/virtual-machines-ag-listener-test.md)]
 
 ## <a name="test-the-availability-group-listener-over-the-internet"></a>Проверьте прослушиватель группы доступности (из сети Интернет)
-Чтобы получить доступ к прослушивателю вне виртуальной сети, необходимо использовать внешнюю или общедоступную балансировку (описанные в этом разделе) вместо внутренней подсистемы балансировки Нагрузки, которой он доступен только в той же виртуальной сети. В строке подключения укажите имя облачной службы. Например, если ваша облачная служба называется *mycloudservice*, оператор sqlcmd будет выглядеть так:
+Чтобы получить доступ к прослушивателю извне виртуальной сети, необходимо использовать внешнюю или общедоступную балансировку нагрузки (описанную в этом разделе), а не ILB, которая доступна только в той же виртуальной сети. В строке подключения укажите имя облачной службы. Например, если ваша облачная служба называется *mycloudservice*, оператор sqlcmd будет выглядеть так:
 
     sqlcmd -S "mycloudservice.cloudapp.net,<EndpointPort>" -d "<DatabaseName>" -U "<LoginId>" -P "<Password>"  -Q "select @@servername, db_name()" -l 15
 
-В отличие от предыдущего примера здесь потребуется проверка подлинности SQL. Это связано с тем, что вызывающий объект не может использовать проверку подлинности Windows через Интернет. Дополнительные сведения см. в разделе [группы доступности AlwaysOn на виртуальной Машине Azure: Сценарии подключения клиента](https://blogs.msdn.com/b/sqlcat/archive/2014/02/03/alwayson-availability-group-in-windows-azure-vm-client-connectivity-scenarios.aspx). При использовании проверки подлинности SQL учетные данные для входа на обоих репликах должны совпадать. Дополнительные сведения об устранении неполадок с учетными данными, возникающих при использовании групп доступности, см. в статье [Сопоставление учетных записей или использование пользователей автономных баз данных SQL для подключения к другим репликам и сопоставления баз данных доступности](https://blogs.msdn.com/b/alwaysonpro/archive/2014/02/19/how-to-map-logins-or-use-contained-sql-database-user-to-connect-to-other-replicas-and-map-to-availability-databases.aspx).
+В отличие от предыдущего примера здесь потребуется проверка подлинности SQL. Это связано с тем, что вызывающий объект не может использовать проверку подлинности Windows через Интернет. Дополнительные сведения см. в [разделе Always on Availability Group на виртуальной машине Azure. Сценарии](https://blogs.msdn.com/b/sqlcat/archive/2014/02/03/alwayson-availability-group-in-windows-azure-vm-client-connectivity-scenarios.aspx)подключения клиентов. При использовании проверки подлинности SQL учетные данные для входа на обоих репликах должны совпадать. Дополнительные сведения об устранении неполадок с учетными данными, возникающих при использовании групп доступности, см. в статье [Сопоставление учетных записей или использование пользователей автономных баз данных SQL для подключения к другим репликам и сопоставления баз данных доступности](https://blogs.msdn.com/b/alwaysonpro/archive/2014/02/19/how-to-map-logins-or-use-contained-sql-database-user-to-connect-to-other-replicas-and-map-to-availability-databases.aspx).
 
 Если реплики AlwaysOn размещены в разных подсетях, клиенты должны указывать **MultisubnetFailover=True** в строке подключения. В результате будут выполняться попытки параллельного подключения к репликам в разных подсетях. Обратите внимание, что этот сценарий включает развертывание межрегиональной группы доступности AlwaysOn.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [!INCLUDE [Listener-Next-Steps](../../../../includes/virtual-machines-ag-listener-next-steps.md)]
 

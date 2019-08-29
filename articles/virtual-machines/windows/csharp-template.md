@@ -11,16 +11,15 @@ ms.assetid: bfba66e8-c923-4df2-900a-0c2643b81240
 ms.service: virtual-machines-windows
 ms.workload: na
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: cynthn
-ms.openlocfilehash: a798f4b90057cd4220467cec4756ddda10fe456e
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 65ce7711786e15a5455d91ce829a3bc0bdf4317d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718719"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103229"
 ---
 # <a name="deploy-an-azure-virtual-machine-using-c-and-a-resource-manager-template"></a>Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager
 
@@ -166,7 +165,7 @@ ms.locfileid: "67718719"
 
 ### <a name="create-the-parameters-file"></a>Создание файла параметров
 
-Чтобы задать значения для параметров ресурсов в шаблоне, создайте файл параметров, который содержит значения.
+Чтобы указать значения для параметров ресурсов в шаблоне, необходимо создать файл параметров, содержащий значения.
 
 1. В обозревателе решений щелкните правой кнопкой мыши *myDotnetProject* > **Добавить** > **Новый элемент** и в списке **Элементы Visual C#** выберите *Текстовый файл*. Назовите файл *Parameters.json*, а затем щелкните **Добавить**.
 2. Добавьте следующий код JSON в созданный файл:
@@ -205,7 +204,7 @@ ms.locfileid: "67718719"
     Замените **&lt;subscription-id&gt;** своим идентификатором подписки, **&lt;application-id&gt;** — идентификатором приложения Active Directory, **&lt;authentication-key&gt;** — ключом приложения, а **&lt;tenant-id&gt;** — идентификатором клиента.
 
 3. Сохраните файл azureauth.properties.
-4. Набор, переменной среды в Windows с именем AZURE_AUTH_LOCATION с полным путем к файлу авторизации, который вы создали, например можно использовать следующую команду PowerShell:
+4. Задайте переменную среды в Windows с именем AZURE_AUTH_LOCATION, указав полный путь к созданному файлу авторизации. Например, можно использовать следующую команду PowerShell:
 
     ```powershell
     [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2019\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
@@ -215,7 +214,7 @@ ms.locfileid: "67718719"
 
 ## <a name="create-the-management-client"></a>Создание клиента управления
 
-1. Откройте файл Program.cs для созданного проекта. Затем добавьте в начало файла следующие операторы к существующим операторам using:
+1. Откройте файл Program.cs для созданного проекта. Затем добавьте эти операторы using в существующие инструкции в начале файла:
 
     ```csharp
     using Microsoft.Azure.Management.Compute.Fluent;
@@ -240,7 +239,7 @@ ms.locfileid: "67718719"
         .WithDefaultSubscription();
     ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Чтобы задать значения для приложения, добавьте код в метод Main:
 
@@ -253,7 +252,7 @@ var resourceGroup = azure.ResourceGroups.Define(groupName)
     .Create();
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
 Шаблон и параметры развертываются из учетной записи хранения в Azure. На этом шаге создается учетная запись и отправляются файлы. 
 

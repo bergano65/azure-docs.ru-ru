@@ -6,14 +6,14 @@ author: dlepow
 manager: gwallace
 ms.service: container-service
 ms.topic: article
-ms.date: 08/08/2018
+ms.date: 08/27/2019
 ms.author: danlep
-ms.openlocfilehash: 9690f900b6fe8d81fbebc3fcf5b7022b12bc3b96
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: f80956ec401737766f7a85540e90be70b9d621e7
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310262"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114704"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -21,7 +21,7 @@ ms.locfileid: "68310262"
 
 Необходимо настроить только один из этих методов проверки подлинности. Наиболее распространенным подходом является [предоставление доступа с помощью субъекта-службы AKS](#grant-aks-access-to-acr). При необходимости вы можете [предоставить доступ с помощью секретов Kubernetes](#access-with-kubernetes-secret).
 
-В этой статье предполагается, что вы уже создали кластер AKS и у вас есть доступ к кластеру через клиент командной строки `kubectl`.
+В этой статье предполагается, что вы уже создали кластер AKS и у вас есть доступ к кластеру через клиент командной строки `kubectl`. Если вместо этого вы хотите создать кластер и настроить доступ к реестру контейнеров во время создания кластера, см. [раздел учебник. Развертывание кластера](../aks/tutorial-kubernetes-deploy-cluster.md) AKS или [Проверка подлинности с помощью реестра контейнеров Azure из службы Kubernetes Azure (Предварительная версия)](../aks/cluster-container-registry-integration.md).
 
 ## <a name="grant-aks-access-to-acr"></a>Предоставление AKS доступа к ACR
 

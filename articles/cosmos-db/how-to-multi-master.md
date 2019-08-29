@@ -3,15 +3,15 @@ title: Настройка нескольких источников в Azure Cos
 description: Сведения о том, как настроить несколько источников в приложениях в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: a5232101d4e5d13fb4c95268311e06b56fa81e65
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: e86cacbd76a70c8b114d65a77ff013d32327a2d0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356221"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093103"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
@@ -102,7 +102,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
                                     'masterKey': self.account_key}, connection_policy, documents.ConsistencyLevel.Session)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь со следующими статьями:
 

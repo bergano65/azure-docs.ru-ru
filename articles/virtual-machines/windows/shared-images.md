@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 707c642fae4d7698eb3d793b83dc574872925f0f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 9842f57c7d8d49aa9d1b3d17f82f3519ecead98c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709129"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088588"
 ---
 # <a name="create-a-shared-image-gallery-with-azure-powershell"></a>Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -44,7 +43,7 @@ ms.locfileid: "67709129"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы выполнить пример из этой статьи, вам нужен существующий управляемый образ. Если вам нужно создать образ, выполните инструкции из статьи [Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell](tutorial-custom-images.md). Если управляемый образ содержит диск данных, размер диска с данными, не может быть больше 1 ТБ.
+Чтобы выполнить пример из этой статьи, вам нужен существующий управляемый образ. Если вам нужно создать образ, выполните инструкции из статьи [Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell](tutorial-custom-images.md). Если управляемый образ содержит диск данных, размер диска данных не может превышать 1 ТБ.
 
 При работе со статьей по мере необходимости заменяйте имена групп ресурсов и виртуальных машин.
 
@@ -53,9 +52,9 @@ ms.locfileid: "67709129"
  
 ## <a name="create-vms-from-an-image"></a>Создание виртуальных машин из образа
 
-Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. С помощью [командлета New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) командлета. 
+Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. С помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) . 
 
-В этом примере создается виртуальная машина с именем *myVMfromImage*в *myResourceGroup* в *центральных штатах юга США* центра обработки данных.
+В этом примере создается виртуальная машина с именем *myVMfromImage*в *myResourceGroup* в центре данных *Южной Центральной части США* .
 
 
 ```azurepowershell-interactive
@@ -98,7 +97,7 @@ New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-ps](../../../includes/virtual-machines-common-shared-images-update-delete-ps.md)]
 
 ## <a name="next-steps"></a>Следующие шаги
-[Azure Image Builder (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версии образа, его можно использовать даже для обновления и [Создание новой версии образа с существующей версии образа](image-builder-gallery-update-image-version.md). 
+С помощью [построителя образов Azure (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

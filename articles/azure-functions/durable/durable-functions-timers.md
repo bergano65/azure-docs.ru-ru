@@ -6,16 +6,15 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/08/2018
 ms.author: azfuncdf
-ms.openlocfilehash: a05f75a7e38ee7cd4dc056629d9acaacad875e08
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 11edfc11fc1e54684a99774c21517d4c322348b1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60730231"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70087043"
 ---
 # <a name="timers-in-durable-functions-azure-functions"></a>Таймеры в устойчивых функциях (Функции Azure)
 
@@ -132,13 +131,13 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!WARNING]
-> Используйте `CancellationTokenSource` для отмены устойчивого таймера (C#) или вызовите `cancel()` при возврате `TimerTask` (JavaScript), если ваш код не будет ожидать его завершения. Платформа устойчивых задач не изменит состояние оркестрации на «завершено», пока не будут завершены или отменены все незавершенные задачи.
+> Используйте `CancellationTokenSource` для отмены устойчивого таймера (C#) или вызовите `cancel()` при возврате `TimerTask` (JavaScript), если ваш код не будет ожидать его завершения. Платформа устойчивых задач не изменит состояние оркестрации на "завершено" до тех пор, пока все невыполненные задачи не будут завершены или отменены.
 
 Этот механизм фактически не прекращает текущее выполнение функции действия. Вместо этого он просто позволяет функции оркестратора игнорировать результат и двигаться дальше. Если в вашем приложении-функции используется план потребления, вам все равно будет выставлен счет за время и память, потребленные прерванной функцией действия. По умолчанию для функций, выполняемых в плане потребления, устанавливается время ожидания в пять минут. При превышении этого ограничения узел Функций Azure перезапускается для остановки выполнения всех процессов и предотвращения неконтролируемого выставления счетов. [Время ожидания функции можно настроить](../functions-host-json.md#functiontimeout).
 
 Более подробный пример реализации времени ожидания в функциях оркестраторов см. в пошаговом руководстве [Human interaction in Durable Functions — Phone verification sample](durable-functions-phone-verification.md) (Участие пользователя в устойчивых функциях: пример проверки по телефону).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о том, как вызывать и обрабатывать внешние события](durable-functions-external-events.md)

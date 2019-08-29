@@ -6,16 +6,15 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 9d5e06c3d72d87a87b41a52ed4df369ebc04dccd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae6c2bd27e9192966ecffb4d4296063201fca970
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387081"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098020"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
@@ -54,9 +53,9 @@ ms.locfileid: "66387081"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* `E3_Monitor`: функция оркестрации, которая периодически вызывает `E3_GetIsClear`. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
-* `E3_GetIsClear`: функция действия, которая проверяет текущие погодные условия для местоположения.
-* `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
+* `E3_Monitor`. функция оркестрации, которая периодически вызывает `E3_GetIsClear`. Она вызывает `E3_SendGoodWeatherAlert`, если `E3_GetIsClear` возвращает значение true.
+* `E3_GetIsClear`. функция действия, которая проверяет текущие погодные условия для местоположения.
+* `E3_SendGoodWeatherAlert`. функция действия, которая отправляет SMS-сообщение через Twilio.
 
 В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языках C# и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
@@ -89,7 +88,7 @@ ms.locfileid: "66387081"
 
 ## <a name="strongly-typed-data-transfer-net-only"></a>Строго типизированная передача данных (только .NET)
 
-Оркестратору требуется несколько фрагментов данных, поэтому [общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для передачи строго типизированных данных в C# и C# сценария:  
+Orchestrator требует несколько фрагментов данных, поэтому [Общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для строго типизированного обмена данными в C# скрипте и C# :  
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)]
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/Location.csx)]
@@ -182,7 +181,7 @@ POST https://{host}/admin/extensions/DurableTaskExtension/instances/f6893f25acf6
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/Monitor.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом примере показано, как использовать устойчивые функции для контроля состояния внешнего источника с помощью [устойчивых таймеров](durable-functions-timers.md) и условной логики. В приведенном ниже примере показано, как использовать внешние события и [устойчивые таймеры](durable-functions-timers.md) для обработки действий человека.
 

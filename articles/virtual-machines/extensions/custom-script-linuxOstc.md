@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: f4920cde64ae951fa5f234f6ad6d7423429bb907
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e5ef1bde9420104b596c22837048b054f918b3cc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706034"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092632"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -119,7 +118,7 @@ ms.locfileid: "67706034"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример | Тип данных |
+| Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.OSTCExtensions | строка |
@@ -183,7 +182,7 @@ ms.locfileid: "67706034"
 >[!NOTE]
 >В именах свойств учитывается регистр. Чтобы избежать проблем с развертыванием, используйте имена, как показано ниже.
 
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Azure CLI
 
 При использовании Azure CLI для выполнения расширения пользовательских сценариев создайте один или несколько файлов конфигурации. Как минимум, требуется commandToExecute.
 
@@ -296,7 +295,7 @@ az vm extension set
 
 1. Enable — означает момент запуска команды.
 1. Download — относится к скачиванию пакета расширения CustomScript из Azure, а не файлов скрипта, указанных в fileUris.
-1. Можно также просмотреть файл журнала записываются для `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
+1. Вы также можете увидеть, в какой файл журнала выполняется запись.`/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
 
 Далее нужно проверить файл журнала, имеющий следующий формат:
 
@@ -304,7 +303,7 @@ az vm extension set
 /var/log/azure/<extension-name>/<version>/extension.log file.
 ```
 
-Следует искать отдельные выполнения, он будет выглядеть примерно так:
+Следует обратить внимание на отдельное выполнение, оно будет выглядеть примерно так:
 
 ```text
 2018/04/26 15:29:46 [Microsoft.OSTCExtensions.CustomScriptForLinux-1.5.2.2] Enable,transitioning,0,Launching the script...

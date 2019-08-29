@@ -9,19 +9,18 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 7ccf99d7-7cce-4e3d-bbab-21b751ab0e88
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 3b3bb206286629a68c14b6444f3f88ffa0af50dd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ebcfa9da8fc8760fa4c13cec1a8921c4ecef5691
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60583270"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101936"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
 
@@ -34,7 +33,7 @@ ms.locfileid: "60583270"
 
 Данная статья содержит информацию о планировании и осуществлении миграции виртуальной машины под управлением SQL Server для использования хранилища Premium Storage. Она включает описание этапов работы с инфраструктурой Azure (сеть, хранилище) и гостевой виртуальной машиной Windows. В примере из [приложения](#appendix-migrating-a-multisite-always-on-cluster-to-premium-storage) приведена комплексная схема миграции, описывающая перенос более крупных виртуальных машин, что позволит воспользоваться преимуществами улучшенного локального хранилища SSD с помощью PowerShell.
 
-Важно понимать весь процесс использования хранилища Azure Premium Storage с сервером SQL Server на виртуальных машинах IAAS. А именно:
+Важно понимать весь процесс использования хранилища Azure Premium Storage с сервером SQL Server на виртуальных машинах IAAS. Сюда входят следующие возможности.
 
 * Определение необходимых условий для использования хранилища Premium Storage.
 * Примеры развертывания сервера SQL Server на IaaS в хранилище Premium Storage для нового развертывания.
@@ -140,7 +139,7 @@ New-AzureStorageAccount -StorageAccountName $newstorageaccountname -Location "We
 Get-AzureVM -ServiceName <servicename> -Name <vmname> | Get-AzureDataDisk
 ```
 
-1. Обратите внимание на то, имя диска и LUN.
+1. Обратите внимание на DiskName и LUN.
 
     ![DisknameAndLUN][2]
 1. Подключитесь к виртуальной машине с помощью удаленного рабочего стола. Затем перейдите к **Управление компьютером** | **Диспетчер устройств** | **Диски**. Просмотрите свойства каждого диска в «Виртуальных дисках Microsoft»
@@ -245,7 +244,7 @@ $standardstorageaccountname = "danstdams"
 Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
 ```
 
-#### <a name="step-6-create-vm"></a>Шаг 6. Создание виртуальной машины
+#### <a name="step-6-create-vm"></a>Шаг 6. Создать VM
 
 ```powershell
 #Get list of available SQL Server Images from the Azure Image Gallery.
@@ -294,7 +293,7 @@ Get-AzureVM -ServiceName $destcloudsvc -Name $vmName |Get-AzureOSDisk
 
 В этом сценарии показана ситуация, где у вас есть существующие настраиваемые образы, хранящиеся в учетной записи хранения Standard. Как уже упоминалось, для помещения виртуального жесткого диска ОС в хранилище класса Premium необходимо скопировать образ, имеющийся в учетной записи хранилища класса Standard, и передать его в хранилище класса Premium. Только после этого его можно будет использовать. Если образ хранится локально, вы также можете использовать этот метод для его копирования непосредственно в учетную запись хранения Premium.
 
-#### <a name="step-1-create-storage-account"></a>Шаг 1. Учетная запись хранения
+#### <a name="step-1-create-storage-account"></a>Шаг 1. Создание учетной записи хранения
 
 ```powershell
 $mysubscription = "DansSubscription"
@@ -682,7 +681,7 @@ $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение значения разрешенных ошибок на ресурсах \<необязательно >
+#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение разрешенных сбоев для ресурсов \<необязательно >
 
 На некоторых ресурсах, принадлежащих группе доступности Always On, существуют ограничения на количество сбоев, которые могут возникнуть в течение определенного периода, когда служба кластеров пытается перезапустить группу ресурсов. Рекомендуется увеличить это значение на время выполнения процедуры, потому как если вы не будете выполнять или вызывать переход на другой ресурс вручную посредством отключения машин, вы можете приблизиться к заданному ограничению.
 
@@ -692,7 +691,7 @@ New-AzureService $destcloudsvc -Location $location
 
 Установите значение максимальных отказов на 6.
 
-#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера \<необязательно >
+#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы \<кластера необязательно >
 
 Если у вас есть только один IP-адрес для группы кластера и он настраивается на подсеть облака, следите за тем, чтобы случайно не перевести в автономный режим все узлы кластера в облаке в данной сети — в таком случае ресурс IP-адреса кластера и сетевое имя кластера не могут перейти в оперативный режим. В этом случае данное действие предотвращает обновления для других ресурсов кластера.
 
@@ -750,7 +749,7 @@ Get-ClusterResource $ListenerName| Set-ClusterParameter -Name "HostRecordTTL" 12
 
 ##### <a name="client-application-settings"></a>Параметры клиентского приложения
 
-Если клиентское приложение SQL поддерживает .NET 4.5 SQLClient, то можно использовать "MULTISUBNETFAILOVER = TRUE" ключевое слово. Данное решение является предпочтительным, так как оно обеспечивает более быстрое соединение с группой доступности AlwaysOn SQL во время перехода на другой ресурс. Оно перечисляет все IP-адреса, параллельно связанные с прослушивателем AlwaysOn, и интенсивнее выполняет попытки повторного подключения TCP при отработке отказа.
+Если клиентское приложение SQL поддерживает SQLClient .NET 4,5, то можно использовать ключевое слово "MULTISUBNETFAILOVER = TRUE". Данное решение является предпочтительным, так как оно обеспечивает более быстрое соединение с группой доступности AlwaysOn SQL во время перехода на другой ресурс. Оно перечисляет все IP-адреса, параллельно связанные с прослушивателем AlwaysOn, и интенсивнее выполняет попытки повторного подключения TCP при отработке отказа.
 
 Дополнительные сведения о предыдущих параметрах см. в разделе [Ключевое слово и связанные функции MultiSubnetFailover](https://msdn.microsoft.com/library/hh213080.aspx#MultiSubnetFailover). Ознакомьтесь также со статьей [Поддержка SqlClient для высокого уровня доступности и аварийного восстановления](https://msdn.microsoft.com/library/hh205662\(v=vs.110\).aspx).
 
@@ -1223,7 +1222,7 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 
 #### <a name="step-23-test-failover"></a>Шаг 23. Тестовая отработка отказа
 
-Дождитесь, пока перенесенный узел синхронизируется с локальным узлом Always On. Переведите его в режим синхронной репликации и подождите, пока он синхронизируется. Затем отработку отказа из локальной среды к первому узлу миграции, который назначен AFP. После успешного выполнения этого действия измените последний перенесенный узел на AFP.
+Дождитесь, пока перенесенный узел синхронизируется с локальным узлом Always On. Переведите его в режим синхронной репликации и подождите, пока он синхронизируется. Затем отработка отказа с локального компьютера на первый перенесенный узел, который является AFP. После успешного выполнения этого действия измените последний перенесенный узел на AFP.
 
 Вам будет необходимо проверить переходы между всеми узлами и выполнить тесты на несоответствия для обеспечения правильной и своевременной работы переходов на другой ресурс.
 

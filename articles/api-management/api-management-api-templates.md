@@ -10,16 +10,15 @@ ms.assetid: 3642fd09-ba98-4358-93a6-c48ab0500431
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: e8519bf436e1af19a22a840f48bf1bfccdae99b2
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 9d75dff413e7b6e61d38b95e08bf9c891b583014
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341256"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073823"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -79,7 +78,7 @@ ms.locfileid: "67341256"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `API list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
@@ -338,16 +337,16 @@ ms.locfileid: "67341256"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Operation` нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
-|`apiId`|string|Идентификатор текущего API.|  
+|`apiId`|строка|Идентификатор текущего API.|  
 |`apiName`|строка|Имя API.|  
-|`apiDescription`|string|Описание API.|  
+|`apiDescription`|строка|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
 |`sampleUrl`|строка|URL-адрес текущей операции.|  
@@ -681,7 +680,7 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -860,7 +859,7 @@ namespace CSHttpClientSample
 }     
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -956,7 +955,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1045,7 +1044,7 @@ public class JavaSample
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1157,7 +1156,7 @@ int main(int argc, const char * argv[])
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1247,7 +1246,7 @@ catch (HttpException $ex)
 ?>  
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1365,7 +1364,7 @@ except Exception as e:
 ####################################  
 ```
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1436,7 +1435,7 @@ puts response.body
   
 ```  
   
-#### <a name="controls"></a>Управление  
+#### <a name="controls"></a>Элементы управления  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 #### <a name="data-model"></a>Модель данных  
@@ -1471,5 +1470,5 @@ puts response.body
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

@@ -7,19 +7,18 @@ author: saghorpa
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/22/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 27f7a9b576263b97c251306c9817b85c31041739
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 705dfb0b62327d9675fe9bf3e5860b1396e2fab9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312225"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101310"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
@@ -132,7 +131,7 @@ SAP HANA в Azure (крупные экземпляры) поставляется
 
 Вы несете ответственность за установку SAP HANA клиента HDB на единицах крупных экземпляров HANA во время установки SAP HANA.
 
-### <a name="step-2-change-the-etcsshsshconfig"></a>Шаг 2. Изменение конфигурации /etc/ssh/ssh\_config
+### <a name="step-2-change-the-etcsshssh_config"></a>Шаг 2. Изменение конфигурации /etc/ssh/ssh\_config
 
 Этот шаг описан в разделе "Включение связи с хранилищем" в [средствах моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/snapshot_tools_v4.1/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20v4.1.pdf).
 
@@ -148,7 +147,7 @@ SAP HANA в Azure (крупные экземпляры) поставляется
 
 ### <a name="step-4-create-an-sap-hana-user-account"></a>Шаг 4. Создание учетной записи пользователя SAP HANA
 
-Чтобы начать создание моментальных снимков SAP HANA, создайте учетную запись пользователя в SAP HANA, которую могут использовать скрипты моментальных снимков хранилища. Для этих целей создайте в SAP HANA Studio учетную запись пользователя SAP HANA. Пользователь должен быть создан в СИСТЕМДБ, а *не* в базе данных sid для MDC. В среде с одним контейнером пользователь создается в базе данных клиента. Эта учетная запись должна иметь права  **администратора резервного копирования** и доступа к каталогу. 
+Чтобы начать создание моментальных снимков SAP HANA, создайте учетную запись пользователя в SAP HANA, которую могут использовать скрипты моментальных снимков хранилища. Для этих целей создайте в SAP HANA Studio учетную запись пользователя SAP HANA. Пользователь должен быть создан в СИСТЕМДБ, а *не* в базе данных sid для MDC. В среде с одним контейнером пользователь создается в базе данных клиента. Эта учетная запись должна иметь права **администратора резервного копирования** и доступа к каталогу. 
 
 Сведения о настройке и использовании учетной записи пользователя см. в разделе "Включение связи с SAP HANA" в [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1).
 

@@ -9,25 +9,24 @@ editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: aabf0d30-04eb-4d34-b44a-69f8bfb84f22
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/08/2019
 ms.author: jonbeck
-ms.openlocfilehash: 91c6d0446d47e118a4e607ff985e06ff5e43e1f7
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e14a12543b95f3495e91e4a80880ac586ba911a0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884055"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088309"
 ---
 # <a name="sizes-for-windows-virtual-machines-in-azure"></a>Размеры виртуальных машин Windows в Azure
 
 В этой статье описаны доступные размеры и разновидности виртуальных машин Azure, которые можно использовать для запуска приложений для Windows и рабочих нагрузок Windows. Здесь также предоставлены рекомендации по развертыванию, которые нужно учитывать при планировании использования этих ресурсов.  Также доступна версия этой статьи для [виртуальных машин Linux](../linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 
-| Type                     | Размеры           |    Описание       |
+| Тип                     | Размеры           |    Описание       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Универсальные](sizes-general.md)          | B, Dsv3, Dv3, Dasv3, Dav3, DSv2, Dv2, Av2, DC  | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
 | [Оптимизированные для вычислений](sizes-compute.md)        | Fsv2           | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений.        |

@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: alsin
-ms.openlocfilehash: 656bc8329d6273695e4da24a7e7d13c9df6a1080
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: MT
+ms.openlocfilehash: 73bf7424e7c1aedff271ed3653592d174416003c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846604"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70090187"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
 GRUB — это универсальный загрузчик с титулом GRand, который, вероятнее всего, является первым, что вы увидите при загрузке виртуальной машины. Так как он отображается до запуска операционной системы, он недоступен по протоколу SSH. GRUB, помимо всего прочего, дает возможность изменить конфигурацию для загрузки в однопользовательский режим.

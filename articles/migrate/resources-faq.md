@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: snehaa
-ms.openlocfilehash: 96fde6ade45bb92036fbc9ac803eebd50640bf85
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
-ms.translationtype: MT
+ms.openlocfilehash: af95ad892b62cb5d8bece554d6026525d9279777
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013451"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102869"
 ---
 # <a name="azure-migrate-frequently-asked-questions-faq"></a>Миграция Azure Часто задаваемые вопросы
 
@@ -157,7 +157,7 @@ ms.locfileid: "70013451"
 
 На каждом компьютере необходимо установить следующие агенты:
 - [Microsoft Monitoring Agent (MMA)](https://docs.microsoft.com/azure/log-analytics/log-analytics-agent-windows).
-- [Агент зависимостей](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure).
+- [Агент зависимостей](../azure-monitor/platform/agents-overview.md#dependency-agent).
 - Если у вас есть компьютеры без подключения к Интернету, необходимо скачать и установить шлюз Log Analytics.
 
 Эти агенты не нужны, если не используется Визуализация зависимостей.

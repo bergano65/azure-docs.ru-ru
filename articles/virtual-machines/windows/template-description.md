@@ -11,16 +11,15 @@ ms.assetid: f63ab5cc-45b8-43aa-a4e7-69dc42adbb99
 ms.service: virtual-machines-windows
 ms.workload: na
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: fd4fad40ef4809c756321493854f38fd813569ca
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 23519edb61df23c97dfd2162d6cabea6b7fa5d38
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710285"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101772"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -375,7 +374,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>расширения.
+## <a name="extensions"></a>Расширения
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 
@@ -447,7 +446,7 @@ Resource Manager параллельно развертывает все ресу
 
 Сведения о расширении также можно получить с помощью команды PowerShell **Get-AzVMExtension**, команды Azure CLI **vm extension get** или команды REST API **Get extension information**.
 
-## <a name="deployments"></a>Развернутые приложения
+## <a name="deployments"></a>Развертывания
 
 При развертывании шаблона Azure отслеживает ресурсы, развернутые в рамках группы, и автоматически присваивает имя этой развернутой группе. Имя этого развертывания совпадает с именем шаблона.
 

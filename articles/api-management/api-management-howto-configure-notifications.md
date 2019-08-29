@@ -9,23 +9,22 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: apimpm
-ms.openlocfilehash: 2a959c9d131c6aa0bdc99450cf2b6f09a5d8bfa7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d49e861a529f3b2265f65c53cc0ee2f6feb151da
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60528389"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072480"
 ---
 # <a name="how-to-configure-notifications-and-email-templates-in-azure-api-management"></a>Как настраивать уведомления и почтовые шаблоны в Azure API Management
 Служба управления API позволяет настраивать уведомления для определенных событий, а также почтовые шаблоны, которые используются для связи с администраторами и разработчиками экземпляра службы управления API. В этой статье показано, как настраивать уведомления и почтовые шаблоны для доступных событий.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас нет экземпляра службы управления API, выполните инструкции из краткого руководства. [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
+Если у вас нет экземпляра службы управления API, выполните следующее краткое руководство. [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 

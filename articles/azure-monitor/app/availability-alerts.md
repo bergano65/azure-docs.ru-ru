@@ -1,5 +1,5 @@
 ---
-title: Настроить оповещения доступности с помощью Azure Application Insights | Документация Майкрософт
+title: Настройка оповещений о доступности с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка веб-тестов в Application Insights. Получение оповещений, когда веб-сайт становится недоступным или медленно реагирует на запросы.
 services: application-insights
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.reviewer: sdash
 ms.author: lagayhar
-ms.openlocfilehash: cc022f91d4b4fec42929769df8c979320548a1f9
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 1d7527d6f52235c6b95ad2e336ea9f9ba85d6344
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67305109"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114393"
 ---
 # <a name="availability-alerts"></a>Оповещения о доступности
 
-[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Он может выдать Если приложение не отвечает, или если она отвечает слишком медленно.
+[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Он может оповещать вас о том, что приложение не отвечает, или если оно реагирует слишком медленно.
 
-## <a name="enable-alerts"></a>Включение оповещений
+## <a name="enable-alerts"></a>Включить оповещения
 
-Оповещения автоматически включаются по умолчанию. Однако чтобы полностью настроить оповещение необходимо сначала изначально создать тест доступности.
+Оповещения теперь автоматически включаются по умолчанию, но для полной настройки предупреждения сначала необходимо создать тест доступности.
 
 ![Интерфейс создания](./media/availability-alerts/create-test.png)
 
@@ -61,18 +61,21 @@ ms.locfileid: "67305109"
 
 ### <a name="alert-on-custom-analytics-queries"></a>Оповещение о настраиваемых аналитических запросах
 
-С помощью [новых унифицированных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) вы можете создать оповещение [о настраиваемых запросах к журналу](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log). С помощью настраиваемых запросов вы можете создать оповещение с любым произвольным условием, которое поможет вам получить самый надежный сигнал о проблемах с доступностью. Это особенно применимо при отправке настраиваемых результатов доступности с помощью пакета TrackAvailability SDK. 
+С помощью [новых унифицированных оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) вы можете создать оповещение [о настраиваемых запросах к журналу](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log). С помощью настраиваемых запросов вы можете создать оповещение с любым произвольным условием, которое поможет вам получить самый надежный сигнал о проблемах с доступностью. Это также применимо, если вы отправляете пользовательские результаты доступности с помощью пакета SDK TrackAvailability.
 
 > [!Tip]
 > К метрикам доступности данных относятся все настраиваемые результаты доступности, которые вы может отправлять путем вызова TrackAvailability SDK. Поддержку оповещений о метриках можно использовать для оповещения о доступности результатов.
 >
 
+## <a name="automate-alerts"></a>Автоматизация оповещений
+
+Чтобы автоматизировать этот процесс с помощью шаблонов Azure Resource Manager, см. документацию [Создание оповещения метрики с помощью шаблона диспетчер ресурсов](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-a-availability-test-along-with-availability-test-alert) .
+
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Выделенные [статьи об устранении неполадок](troubleshoot-availability.md).
+Выделенная [статья по устранению неполадок](troubleshoot-availability.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Многошаговые веб-тесты](availability-multistep.md)
-* [URL-адрес проверки связи веб-тестов](monitor-web-app-availability.md)
-
+* [Веб-тесты проверки связи URL](monitor-web-app-availability.md)

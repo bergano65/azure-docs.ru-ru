@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
-ms.openlocfilehash: ca3fe83d7072ba774c8124c5108652ab7223041d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2a6e8985a2cb13da0f2e34f4e9961f84aacdd974
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449815"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103506"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure
 В этой статье описывается ошибка "Сбой критически важной службы", которая может возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Здесь приведены действия по устранению неполадок. 
@@ -104,9 +103,9 @@ ms.locfileid: "67449815"
         bcdedit /store <OS DISK LETTER>:\boot\bcd /deletevalue {default} safeboot
 8.  Перезапустите виртуальную машину. 
 
-### <a name="optional-analyze-the-dump-logs-in-dump-crash-mode"></a>Необязательно: анализ журналов дампа в режиме аварийного завершения дампа
+### <a name="optional-analyze-the-dump-logs-in-dump-crash-mode"></a>Дополнительно анализ журналов дампа в режиме аварийного завершения дампа
 
-Чтобы проанализировать журналы дампа самостоятельно, выполните следующие действия:
+Чтобы самостоятельно проанализировать журналы дампа, выполните следующие действия.
 
 1. Подключите диск ОС к виртуальной машине для восстановления.
 2. В подключенном диске операционной системы перейдите в папку **\windows\system32\config**. Скопируйте все файлы как файл резервной копии. Это необходимо, если потребуется откат.

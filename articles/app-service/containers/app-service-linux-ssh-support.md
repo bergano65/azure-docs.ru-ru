@@ -11,17 +11,16 @@ ms.assetid: 66f9988f-8ffa-414a-9137-3a9b15a5573c
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: b54d5003f67a1bd79e1e52eef87df858bc68ade1
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: fef8a17de4539a1427c269cdc512063d07df195c
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551910"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066878"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
@@ -39,7 +38,7 @@ ms.locfileid: "67551910"
 
 ## <a name="use-ssh-support-with-custom-docker-images"></a>Применение поддержки SSH в пользовательских образах Docker
 
-См. в разделе [Настройка SSH в пользовательский контейнер](configure-custom-container.md#enable-ssh).
+См. раздел [Настройка SSH в пользовательском контейнере](configure-custom-container.md#enable-ssh).
 
 ## <a name="open-ssh-session-from-remote-shell"></a>Открытие сеанса SSH из удаленной оболочки
 
@@ -51,7 +50,7 @@ ms.locfileid: "67551910"
 
 Чтобы начать работу, нужно установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы ознакомиться с принципами работы без установки Azure CLI, перейдите к статье [Обзор Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Укажите  _\<ИД_ПОДПИСКИ >_ ,  _\<имя группы >_ и \_ \<имя_приложения > _ для вашего приложения.
+Откройте удаленное подключение к приложению, используя команду [az webapp remote-connection create](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). \<Укажите \_  _\<для своего приложения идентификатор подписки >_ ,  _\<имя группы >_ и имя приложения > _.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &
@@ -121,7 +120,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 45738     1 root     Z        0   0%   0   0% [init]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас возникли вопросы, опубликуйте их на [форуме Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazurewebsitespreview).
 

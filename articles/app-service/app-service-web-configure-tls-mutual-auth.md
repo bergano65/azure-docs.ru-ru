@@ -10,41 +10,40 @@ ms.assetid: cd1d15d3-2d9e-4502-9f11-a306dac4453a
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 5702362add6a50f2f4525afbd3649f083f34b6fc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c4e97a96687e5fa1d934ab8c0317b52cb753f72c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60852454"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088173"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS для службы приложений Azure
 
-Доступ к службе приложений Azure можно ограничить, используя разные способы проверки подлинности. Один из способов сделать это является запросить сертификат клиента при запросе клиента по протоколу TLS/SSL и проверки сертификата. Этот механизм называется взаимной проверки подлинности TLS или проверка подлинности сертификата клиента. В этой статье показано, как настроить приложение для использования проверки подлинности сертификата клиента.
+Доступ к службе приложений Azure можно ограничить, используя разные способы проверки подлинности. Один из способов сделать это — запросить сертификат клиента, когда запрос клиента находится по протоколу TLS/SSL и проверить сертификат. Этот механизм называется взаимной проверкой подлинности TLS или проверкой подлинности сертификата клиента. В этой статье показано, как настроить приложение для использования проверки подлинности с помощью сертификата клиента.
 
 > [!NOTE]
-> Если для доступа к сайту используется протокол HTTP, а не HTTPS, вы не получите сертификат клиента. Поэтому если приложение требует клиентские сертификаты, вы не следует разрешать запросы к приложению по протоколу HTTP.
+> Если для доступа к сайту используется протокол HTTP, а не HTTPS, вы не получите сертификат клиента. Поэтому, если приложению требуются сертификаты клиента, не следует разрешать запросы к приложению по протоколу HTTP.
 >
 
-## <a name="enable-client-certificates"></a>Сертификаты клиента
+## <a name="enable-client-certificates"></a>Включение сертификатов клиента
 
-Чтобы настроить приложение на использование сертификатов клиентов, необходимо задать `clientCertEnabled` для приложения, чтобы `true`. Для изменения параметра, выполните следующую команду [Cloud Shell](https://shell.azure.com).
+Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать `clientCertEnabled` для `true`приложения параметр. Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>
 ```
 
-## <a name="access-client-certificate"></a>Сертификат клиентского доступа
+## <a name="access-client-certificate"></a>Доступ к сертификату клиента
 
-В службе приложений SSL завершение обработки запроса произойдет в подсистеме балансировки нагрузки переднего плана. При пересылке запроса в код приложения с [сертификаты клиента включена](#enable-client-certificates), внедряет службы приложений `X-ARR-ClientCert` заголовок запроса с помощью сертификата клиента. Службы приложений не выполняет никаких действий с данный сертификат клиента, отличного от его перенаправления в приложение. Код приложения отвечает за проверку сертификата клиента.
+В службе приложений завершение запроса SSL происходит на интерфейсной подсистеме балансировки нагрузки. При пересылке запроса в код приложения с [включенными сертификатами клиента](#enable-client-certificates)служба приложений вставляет `X-ARR-ClientCert` заголовок запроса с сертификатом клиента. Служба приложений не выполняет никаких действий с этим сертификатом клиента, кроме перенаправления его в приложение. Код приложения отвечает за проверку сертификата клиента.
 
-Для ASP.NET, сертификат клиента доступен через **HttpRequest.ClientCertificate** свойство.
+Для ASP.NET сертификат клиента можно получить с помощью свойства **HttpRequest. clientcertificate** .
 
-Для других стеков приложений (Node.js, PHP, и т.д.), сертификат клиента доступен в приложения с помощью значение в кодировке base64 в `X-ARR-ClientCert` заголовка запроса.
+Для других стеков приложений (Node. js, PHP и т. д.) сертификат клиента доступен в приложении через значение в `X-ARR-ClientCert` заголовке запроса в кодировке Base64.
 
 ## <a name="aspnet-sample"></a>Пример ASP.NET
 
@@ -170,9 +169,9 @@ az webapp update --set clientCertEnabled=true --name <app_name> --resource-group
     }
 ```
 
-## <a name="nodejs-sample"></a>Пример node.js
+## <a name="nodejs-sample"></a>Пример Node. js
 
-В следующем примере кода Node.js возвращает `X-ARR-ClientCert` заголовка и использует [узел forge](https://github.com/digitalbazaar/forge) преобразовать строку PEM в кодировке base64 в объект сертификата с последующей проверкой:
+Следующий пример кода Node. js получает `X-ARR-ClientCert` заголовок и использует подделку [node](https://github.com/digitalbazaar/forge) для преобразования строки PEM в кодировке Base64 в объект сертификата и его проверки:
 
 ```javascript
 import { NextFunction, Request, Response } from 'express';
@@ -190,7 +189,7 @@ export class AuthorizationHandler {
             const incomingCert: pki.Certificate = pki.certificateFromPem(pem);
 
             // Validate certificate thumbprint
-            const fingerPrint = md.sha1.create().update(asn1.toDer((pki as any).certificateToAsn1(incomingCert)).getBytes()).digest().toHex();
+            const fingerPrint = md.sha1.create().update(asn1.toDer(pki.certificateToAsn1(incomingCert)).getBytes()).digest().toHex();
             if (fingerPrint.toLowerCase() !== 'abcdef1234567890abcdef1234567890abcdef12') throw new Error('UNAUTHORIZED');
 
             // Validate time validity

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: evansma
-ms.openlocfilehash: 17ae6dc8d1d583e5223a64ee079731fa5d9dc63c
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 03d67249ef1d74844a7e9019e90f6331ecfdf0c3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69902316"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102975"
 ---
 # <a name="configure-lead-management-for-dynamics-365-for-customer-engagement"></a>Настройка управления интересами для Dynamics 365 для участия клиентов
 
@@ -97,7 +97,7 @@ ms.locfileid: "69902316"
 
     ![Добавление разрешений](./media/commercial-marketplace-lead-management-instructions-dynamics/api-permissions.png)
 
-14. После выполнения шагов 1-13 на портал Azure перейдите к своему экземпляру Dynamics 365 для взаимодействия с клиентами, перейдя по URL-адресу ( https://tenant.crm.dynamics.com) например,.
+14. После выполнения шагов 1-13 на портал Azure перейдите к своему экземпляру Dynamics 365 для взаимодействия с клиентами, перейдя по URL-адресу ( `https://tenant.crm.dynamics.com`например,).
 15. Параметры доступа, щелкнув значок шестеренки и **Дополнительные параметры** на верхней панели навигации.
 16. На странице Параметры откройте меню Параметры на верхней панели навигации и выберите **Безопасность**.
 17. На странице Безопасность выберите **Пользователи**.  На странице пользователи выберите раскрывающийся список "включенные пользователи", чтобы переключиться на **пользователей приложений**.

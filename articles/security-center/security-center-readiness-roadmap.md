@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: 1527dbd1df3e4a10a68a5949d9e0bca11628bdd2
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 989d438ad2c5ec80b89540eb7ddfc80d69a9d0e6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68781137"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100918"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -67,9 +67,8 @@ ms.locfileid: "68781137"
 
 Статьи    
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
-* [Защита виртуальных машин в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-virtual-machine-recommendations)
+* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита сети в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
-* [Защита приложений в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-application-recommendations)
 * [Защита службы SQL Azure и данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
 
 

@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 26c6abc75e653b489a7385c423a9b2d00a4ed063
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6d43fa2621aa95bdcf18d5c033d1347e13dc3f67
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705308"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101474"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Создание базы данных Oracle на виртуальной машине Azure
 
@@ -32,7 +31,7 @@ ms.locfileid: "67705308"
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 

@@ -6,16 +6,15 @@ documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 8b7666b043379f3ff143e2a5eaae6b40ea80ab90
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: dc113417be3df97b9ab9509c30a1f23e1eeaf35b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480254"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086283"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -164,7 +163,7 @@ public class Message
 
 ### <a name="java-example"></a>Пример Java
 
-В следующем примере используется `@SendGridOutput` заметки [Java функции библиотеки времени выполнения](/java/api/overview/azure/functions/runtime) отправить сообщение электронной почты, с помощью выходной привязки.
+В следующем примере используется `@SendGridOutput` Аннотация из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для отправки сообщения электронной почты с помощью выходной привязки SendGrid.
 
 ```java
 @FunctionName("SendEmail")
@@ -249,7 +248,7 @@ public static void Run(
 
 Полный пример см. в разделе [Пример C#](#c-example).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SendGrid`.
 
@@ -259,7 +258,7 @@ public static void Run(
 |**direction**|| Обязательное. Необходимо задать значение `out`.|
 |**name**|| Обязательное. Имя переменной, из которой в коде функции можно получить запрос или текст запроса. Это значение равно ```$return``` при наличии только одного возвращаемого значения. |
 |**apiKey**|**ApiKey**| Имя параметра приложения, в котором содержится ваш ключ API. Если значение не задано, имя параметра приложения по умолчанию AzureWebJobsSendGridApiKey.|
-|**to**|**To**| Электронный адрес получателя. |
+|**to**|**Задача**| Электронный адрес получателя. |
 |**From**|**From**| Электронный адрес отправителя. |
 |**subject**|**Subject**| Тема электронного сообщения. |
 |**text**|**Text**| Содержимое электронного сообщения. |
@@ -286,12 +285,12 @@ public static void Run(
 }
 ```  
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------| 
-|from|Недоступно|Адрес электронной почты для всех функций.| 
+|from|Н/Д|Адрес электронной почты для всех функций.| 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

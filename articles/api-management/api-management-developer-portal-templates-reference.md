@@ -10,16 +10,15 @@ ms.assetid: 5189f3d8-2a4c-4dc8-ab19-11c7df0114d4
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 0f339984a9db1a337f97e6db24571004cc34f679
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb06c1c5db20f3216c5c8e81580e445f9c0ba804
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60657651"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072598"
 ---
 # <a name="developer-portal-templates"></a>Шаблоны портала разработчика
 
@@ -31,7 +30,7 @@ ms.locfileid: "60657651"
 
 ##  <a name="DeveloperPortalTemplates"></a>Шаблоны портала разработчика  
   
--   [Интерфейсы API](api-management-api-templates.md)  
+-   [Программные интерфейсы](api-management-api-templates.md)  
     -   [Список API](api-management-api-templates.md#APIList)  
     -   [Операция](api-management-api-templates.md#Product)  
     -   [Примеры кода](api-management-api-templates.md#CodeSamples)  
@@ -61,7 +60,7 @@ ms.locfileid: "60657651"
     -   [Регистрация](api-management-page-templates.md#SignUp)  
     -   [Страница не найдена](api-management-page-templates.md#PageNotFound)
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 + [Справочник по шаблонам](api-management-developer-portal-templates-reference.md)  
 + [Справочник по моделям данных](api-management-template-data-model-reference.md)  

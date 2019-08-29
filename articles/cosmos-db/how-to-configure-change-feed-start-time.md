@@ -3,15 +3,15 @@ title: Настройка времени запуска обработчика �
 description: Узнайте, как настроить обработчик канала изменений, чтобы начать чтение с определенной даты и времени
 author: ealsur
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: maquaran
-ms.openlocfilehash: 3ad9aff10b3bae36a173f776f55a434fd8b38b98
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
-ms.translationtype: HT
+ms.openlocfilehash: 600556a06d3f58c4d2ec79a49fdee5e8e04d4036
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574267"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093651"
 ---
 # <a name="how-to-configure-the-change-feed-processor-start-time"></a>Настройка времени запуска обработчика канала изменений
 
@@ -46,10 +46,10 @@ ms.locfileid: "69574267"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Azure Cosmos DB](sql-api-sdk-dotnet.md)
-* [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/usage/changefeed)
+* [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 

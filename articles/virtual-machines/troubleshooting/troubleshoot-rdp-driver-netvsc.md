@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: v-jesits
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/19/2018
 ms.author: genli
-ms.openlocfilehash: e6685a5e77d92bb9e05ab9578e48c99e80a64b74
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6e68aac07379de142968b85884e7dbd95e73195f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60362260"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103473"
 ---
 # <a name="cannot-connect-remotely-to-a-windows-10-or-windows-server-2016-vm-in-azure-because-of-netvscsys"></a>netvsc.sys не позволяет удаленно подключиться к виртуальной машине Windows 10 или Windows Server 2016 в Azure
 
@@ -26,7 +25,7 @@ ms.locfileid: "60362260"
 
 ## <a name="symptoms"></a>Проблемы
 
-Не удается подключиться к Azure Windows 10 или виртуальной Машины Windows Server 2016 с помощью протокола удаленного рабочего стола (RDP). В [диагностике загрузки](boot-diagnostics.md) экран отображает красный крест на сетевом адаптере. Это означает, что виртуальная машина не имеет сетевого подключения после завершения загрузки операционной системы.
+Вы не можете подключиться к виртуальной машине Azure Windows 10 или Windows Server 2016 с помощью протокол удаленного рабочего стола (RDP). В [диагностике загрузки](boot-diagnostics.md) экран отображает красный крест на сетевом адаптере. Это означает, что виртуальная машина не имеет сетевого подключения после завершения загрузки операционной системы.
 
 Обычно такая проблема возникает в Windows [сборки 14393](https://support.microsoft.com/help/4093120/) и [сборки 15063](https://support.microsoft.com/help/4015583/). Эта статья неприменима к проблемам с более поздней версией операционной системы, чем указанные выше. Чтобы проверить версию системы, откройте сеанс командной строки из [последовательной консоли доступа](serial-console-windows.md) и запустите команду **Ver**.
 
@@ -55,8 +54,8 @@ ms.locfileid: "60362260"
 
 2. Скачайте соответствующее обновление на любой новый или существующий диск, который подключен к любой работающей виртуальной машине в том же регионе:
 
-   - **10.0.14393.594**: [KB4073562](https://support.microsoft.com/help/4073562) или более поздней версии
-   - **10.0.15063.0**: [KB4016240](https://support.microsoft.com/help/4016240) или более поздней версии
+   - **10.0.14393.594**: [KB4073562 или более позднее](https://support.microsoft.com/help/4073562) обновление
+   - **10.0.15063.0**: [KB4016240](https://support.microsoft.com/help/4016240) или более позднее обновление
 
 3. Отсоедините этот вспомогательный диск от работающей виртуальной машины и присоедините его к проблемной виртуальной машине.
 
@@ -98,8 +97,8 @@ ms.locfileid: "60362260"
 
 12. Скачайте соответствующее обновление:
 
-    - **10.0.14393.594**: [KB4073562](https://support.microsoft.com/help/4073562) или более поздней версии
-    - **10.0.15063.0**: [KB4016240](https://support.microsoft.com/help/4016240) или более поздней версии
+    - **10.0.14393.594**: [KB4073562 или более позднее](https://support.microsoft.com/help/4073562) обновление
+    - **10.0.15063.0**: [KB4016240](https://support.microsoft.com/help/4016240) или более позднее обновление
 
 13. Подключите системный диск в качестве диска данных к виртуальной машине восстановления, на которую вы скачали обновление.
 
@@ -117,6 +116,6 @@ ms.locfileid: "60362260"
 
 16. [Отсоедините системный диск и снова создайте виртуальную машину](../windows/troubleshoot-recovery-disks-portal.md).
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Связаться со службой поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

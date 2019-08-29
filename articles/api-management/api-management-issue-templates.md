@@ -10,16 +10,15 @@ ms.assetid: 47da4bb2-426e-4e53-8fa7-214ee2e3ab37
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: c70e88a572bc261ad9d25f9a742b1987d0c19b44
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 93681062b325756f720f6fe8280ee6b874fea284
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60656715"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072260"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -90,7 +89,7 @@ ms.locfileid: "60656715"
 </div>
 ```
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Issue list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
@@ -101,9 +100,9 @@ ms.locfileid: "60656715"
 |--------------|----------|-----------------|  
 |`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
-|`IsAuthenticated`|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
-|`CanReportIssues`|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
-|`Search`|string|Это свойство является устаревшим и не должно использоваться.|  
+|`IsAuthenticated`|boolean|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
+|`CanReportIssues`|boolean|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
+|`Search`|строка|Это свойство является устаревшим и не должно использоваться.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -136,5 +135,5 @@ ms.locfileid: "60656715"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

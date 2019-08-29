@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: e27829fe5ebf57552ef4e97a2bfc7b6aefd81dc8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed20ef023a884ac79150cd31f25fde86b715c752
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66254403"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073397"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
@@ -56,7 +55,7 @@ ms.locfileid: "66254403"
 -   [Политики аутентификации](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Обычная проверка подлинности](api-management-authentication-policies.md#Basic) – обычная проверка подлинности внутренней службы.  
     -   [Аутентификация с помощью сертификата клиента](api-management-authentication-policies.md#ClientCertificate) – аутентификация внутренней службы с помощью сертификатов клиентов.  
-    -   [Проверка подлинности с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) -проверка подлинности с помощью серверной службы с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
+    -   [Аутентификация с помощью управляемого удостоверения](api-management-authentication-policies.md#ManagedIdentity) — аутентификация в серверной службе с помощью [управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
 -   [Политики кэширования](api-management-caching-policies.md#CachingPolicies)  
     -   [Получение из кэша](api-management-caching-policies.md#GetFromCache) – выполнение операции поиска в кэше и возврат допустимого кэшированного ответа при его наличии.  
     -   [Сохранение в кэше](api-management-caching-policies.md#StoreToCache) – помещение в кэш ответа в соответствии с заданной конфигурацией управления кэшем.  
@@ -81,7 +80,7 @@ ms.locfileid: "66254403"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Политики в управлении API](api-management-howto-policies.md)

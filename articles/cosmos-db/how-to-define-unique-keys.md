@@ -3,15 +3,15 @@ title: Определение уникальных ключей для конт�
 description: Узнайте, как определить уникальные ключи для контейнера Azure Cosmos
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: thweiss
-ms.openlocfilehash: 313dd07c2b8eeb5684310b57d74053d3cbc1b5e1
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: 67b6ca1914d1728930c29c4a0bbca6cf86753da9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356383"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093329"
 ---
 # <a name="define-unique-keys-for-an-azure-cosmos-container"></a>Определение уникальных ключей для контейнера Azure Cosmos
 
@@ -118,7 +118,7 @@ client.CreateContainer('dbs/' + config['DATABASE'], {
 })
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 - Подробнее о [секционировании](partition-data.md)
 - [Как работает индексация](index-overview.md)

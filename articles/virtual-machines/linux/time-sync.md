@@ -8,18 +8,17 @@ manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 3271804a80ededae650c3b6ad34fdb7f9f1e5b18
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7e23b71edd05154f3c19a097ebf92c690426c777
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708619"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100786"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
 
@@ -50,7 +49,7 @@ ms.locfileid: "67708619"
 
 
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 В целом есть три способа настроить синхронизацию времени для виртуальных машин Linux, размещенных в Azure:
 

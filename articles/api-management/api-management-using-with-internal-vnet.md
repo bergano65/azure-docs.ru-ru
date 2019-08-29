@@ -10,16 +10,15 @@ ms.assetid: dac28ccf-2550-45a5-89cf-192d87369bc3
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: apimpm
-ms.openlocfilehash: a23572642df99f00e278b6ba74367a30b0604640
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 29c86363842299870179b35a0466d2e44d2e56e0
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851467"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072188"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -39,7 +38,7 @@ ms.locfileid: "68851467"
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 

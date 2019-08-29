@@ -11,16 +11,15 @@ ms.assetid: 3b7d3cd5-e3d7-4041-a2a7-0290447458ea
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 10/10/2018
 ms.author: cynthn
-ms.openlocfilehash: 8f4169e7d94a5a838ecc11b22e7988223c25e02c
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 5dde098277b16c7ec5339aa6b963b04dd608c8ac
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718814"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079673"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -205,7 +204,7 @@ $snapShot = New-AzSnapshot `
 ```
 
 
-Чтобы использовать этот моментальный снимок, чтобы создать виртуальную Машину, которая должна быть высокой производительностью, добавьте параметр `-AccountType Premium_LRS` в команду New-AzSnapshotConfig. Этот параметр создает моментальный снимок таким образом, чтобы он хранился в качестве управляемого диска уровня "Премиум". Такие диски дороже, чем стандартные, поэтому перед использованием этого параметра убедитесь, что вам необходимы именно управляемые диски уровня "Премиум".
+Чтобы использовать этот моментальный снимок для создания виртуальной машины, требующей высокой производительности, добавьте параметр `-AccountType Premium_LRS` в команду New-азснапшотконфиг. Этот параметр создает моментальный снимок таким образом, чтобы он хранился в качестве управляемого диска уровня "Премиум". Такие диски дороже, чем стандартные, поэтому перед использованием этого параметра убедитесь, что вам необходимы именно управляемые диски уровня "Премиум".
 
 ### <a name="create-a-new-disk-from-the-snapshot"></a>Создайте новый диск из моментального снимка.
 

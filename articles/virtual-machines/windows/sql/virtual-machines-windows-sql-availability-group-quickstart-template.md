@@ -8,19 +8,18 @@ manager: craigg
 tags: azure-resource-manager
 ms.assetid: aa5bf144-37a3-4781-892d-e0e300913d03
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/04/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f95d3487adecb17e0f4b79e81a08e16bafe4594f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2b44b51da11bc1c51fcbc60992a9b5b870daf02e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855254"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100582"
 ---
 # <a name="use-azure-quickstart-templates-to-configure-an-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Использование шаблонов быстрого запуска Azure для настройки Always On группы доступности для SQL Server на виртуальной машине Azure
 В этой статье описывается, как использовать шаблоны быстрого запуска Azure для частичной автоматизации развертывания Always On конфигурации группы доступности для SQL Server виртуальных машин в Azure. В этом процессе используются два шаблона быстрого запуска Azure: 
@@ -34,7 +33,7 @@ ms.locfileid: "68855254"
 Другие части конфигурации группы доступности должны выполняться вручную, например создать группу доступности и создать внутреннюю подсистему балансировки нагрузки. В этой статье описана последовательность автоматизированных и выполняемых вручную действий.
  
 
-## <a name="prerequisites"></a>предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования 
 Чтобы автоматизировать настройку группы доступности Always On с помощью шаблонов быстрого запуска, необходимо выполнить следующие предварительные требования. 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
@@ -48,7 +47,7 @@ ms.locfileid: "68855254"
 - Учетная запись пользователя домена, управляющая службой SQL Server. 
 
 
-## <a name="step-1-create-the-failover-cluster-and-join-sql-server-vms-to-the-cluster-by-using-a-quickstart-template"></a>Шаг 1.: Создание отказоустойчивого кластера и присоединение SQL Server виртуальных машин к кластеру с помощью шаблона быстрого запуска 
+## <a name="step-1-create-the-failover-cluster-and-join-sql-server-vms-to-the-cluster-by-using-a-quickstart-template"></a>Шаг 1. Создание отказоустойчивого кластера и присоединение SQL Server виртуальных машин к кластеру с помощью шаблона быстрого запуска 
 После регистрации SQL Server виртуальных машин с помощью поставщика ресурсов виртуальной машины SQL можно присоединить SQL Server виртуальные машины к *склвиртуалмачинеграупс*. Этот ресурс определяет метаданные отказоустойчивого кластера Windows. Метаданные включают версию, выпуск, полное доменное имя, Active Directory учетные записи для управления кластером и службой SQL Server, а также учетную запись хранения в качестве облачного следящего сервера. 
 
 Добавление виртуальных машин SQL Server в группу ресурсов *SqlVirtualMachineGroups* запускает службу отказоустойчивого кластера Windows для создания кластера, а затем присоединяет эти виртуальные машины SQL Server к этому кластеру. Этот шаг автоматизирован с помощью шаблона быстрого запуска **101-SQL-VM-AG-Setup** . Его можно реализовать, выполнив следующие действия.
@@ -82,7 +81,7 @@ ms.locfileid: "68855254"
 > Учетные данные, указанные во время развертывания шаблона, сохраняются только в течение всего развертывания. После завершения развертывания эти пароли удаляются. Вам будет предложено предоставить их снова, если в кластер добавляются дополнительные SQL Server виртуальные машины. 
 
 
-## <a name="step-2-manually-create-the-availability-group"></a>Шаг 2.: Создание группы доступности вручную 
+## <a name="step-2-manually-create-the-availability-group"></a>Шаг 2. Создание группы доступности вручную 
 Вручную создайте группу доступности, как обычно, с помощью [SQL Server Management Studio](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio), [PowerShell](/sql/database-engine/availability-groups/windows/create-an-availability-group-sql-server-powershell)или [Transact-SQL](/sql/database-engine/availability-groups/windows/create-an-availability-group-transact-sql). 
 
 >[!IMPORTANT]

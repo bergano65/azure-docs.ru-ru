@@ -11,17 +11,16 @@ ms.assetid: 10da5b8a-1823-41a3-a2ff-a0717c2b5c2d
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 6215230a52bcb5c44f54747b447dc5f64e6af650
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 703a151f801f65b968ecf93eaa97640c22a71bd2
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130387"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073093"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -31,7 +30,7 @@ ms.locfileid: "62130387"
 
 Если вас не беспокоит простой при разрешении DNS-имен, обратитесь к разделу [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -41,7 +40,7 @@ ms.locfileid: "62130387"
 
 Заблаговременно привязывая личный домен, вы выполняете обе из приведенных ниже задач перед внесением каких-либо изменений в записи DNS:
 
-- проверка принадлежности домена;
+- Проверить права на владение доменом
 - включение доменного имени для приложения.
 
 Когда впоследствии вы перенесете настраиваемое DNS-имя из старого приложения в приложение службы приложений, разрешение DNS-имен будет выполняться без простоев.
@@ -123,15 +122,15 @@ ms.locfileid: "62130387"
 
 | Пример полного доменного имени | Тип записи | Узел | Значение |
 | - | - | - | - |
-| contoso.com (корневой домен) | A | `@` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
-| www\.contoso.com (поддомен) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
+| contoso.com (корневой домен) | А | `@` | IP-адрес из раздела [Копирование IP-адреса приложения](#info). |
+| www\.contoso.com (подсистема) | CNAME | `www` | _&lt;имя_приложения>.azurewebsites.net_ |
 | \*.contoso.com (с подстановочным знаком) | CNAME | _\*_ | _&lt;имя_приложения>.azurewebsites.net_ |
 
 Сохраните параметры.
 
 Разрешение запросов DNS должно начаться в приложении службы приложений сразу после распространения DNS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о том, как привязать настраиваемый SSL-сертификат к службе приложений.
 

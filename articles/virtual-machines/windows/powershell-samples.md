@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 03/01/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9aea63b8366bf974fd89c32105bea707ad72c8a5
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: c106ee2110a8c023ab3ed4f2ec9903fc5ca146b2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719983"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088968"
 ---
 # <a name="azure-virtual-machine-powershell-samples"></a>Примеры PowerShell для виртуальной машины Azure
 
@@ -49,6 +48,6 @@ ms.locfileid: "67719983"
 |**Защита виртуальных машин**||
 | [Шифрование виртуальной машины и ее дисков данных](./../scripts/virtual-machines-windows-powershell-sample-encrypt-vm.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создает Azure Key Vault, ключ шифрования и субъект-службу и шифрует виртуальную машину. |
 |**Мониторинг виртуальных машин**||
-| [Мониторинг виртуальной Машины с помощью Azure Monitor](./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Создает виртуальную машину, устанавливает агент Azure Log Analytics и регистрирует виртуальную машину в рабочей области Log Analytics.  |
-| [Сбор сведений о всех виртуальных машин в подписке с помощью PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Создает CSV-файл, содержащий имя, группа ресурсов виртуальной Машины имя, регион, виртуальной сети, подсети, частный IP-адрес, тип операционной системы и общедоступный IP-адрес из виртуальных машин в выбранной подписке.
+| [Мониторинг виртуальной машины с помощью Azure Monitor](./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Создает виртуальную машину, устанавливает агент Azure Log Analytics и регистрирует виртуальную машину в рабочей области Log Analytics.  |
+| [Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Создает CSV-файл, содержащий имя виртуальной машины, имя группы ресурсов, регион, виртуальную сеть, подсеть, частный IP-адрес, тип ОС и общедоступный IP-адрес виртуальных машин в указанной подписке.
 | | |

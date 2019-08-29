@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 5458a02c09a3600875c7300b27c5a87a735b2f1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 845e9c17d6f7facb4e24f3069b3622b6449295ca
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318906"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103341"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -37,12 +36,12 @@ ms.locfileid: "60318906"
 
 - Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что службы удаленных рабочих столов (TermService) не запускаются или происходит сбой запуска. Ниже приведен пример журнала:
 
-    **Log Name**:      системный; </br>
+    **Log Name**:      Система </br>
     **Source**:        Service Control Manager </br>
     **Дата**.          16.12.2017 11:19:36</br>
     **Event ID**:      7022</br>
-    **Task Category**: Нет</br>
-    **Level**:         Ошибка</br>
+    **Task Category**: Отсутствуют</br>
+    **Level**:         Error</br>
     **Keywords**:      Классический</br>
     **User**:          Н/Д</br>
     **Компьютер**: vm.contoso.com</br>
@@ -57,8 +56,8 @@ ms.locfileid: "60318906"
 Эта проблема возникает, потому что службы удаленных рабочих столов не запущены на виртуальной машине. Причина может быть в следующем: 
 
 - Служба TermService **отключена**. 
-- Служба терминалов может закончиться, или не отвечает. 
-- TermService не начинает из-за неправильной настройки.
+- Служба TermService работает со сбоем или не отвечает. 
+- TermService не запускается из-за неверной конфигурации.
 
 ## <a name="solution"></a>Решение
 
@@ -97,7 +96,7 @@ ms.locfileid: "60318906"
    ```
 8. Если служба не запускается, выполните поиск решения на основе полученного сообщения об ошибке:
 
-    |  Ошибка |  Предложение |
+    |  Error |  Предложение |
     |---|---|
     |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termservice-service-is-stopped-because-of-an-access-denied-problem). |
     |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termservice-service-is-disabled).  |  
@@ -222,6 +221,6 @@ ms.locfileid: "60318906"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Связаться со службой поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

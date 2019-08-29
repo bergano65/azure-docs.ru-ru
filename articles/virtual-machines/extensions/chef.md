@@ -10,16 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
-ms.openlocfilehash: e72536cc6f9ec3b94016d16de8502e70bc7107aa
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 0ed042b3b004fd43bc03304c3042c2ac3e1a6482
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706090"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092552"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
@@ -68,16 +67,16 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
-| ИМЯ | Значение и пример | Тип данных
+| Название | Значение и пример | Тип данных
 | ---- | ---- | ----
 | apiVersion | `2017-12-01` | string (date) |
 | publisher | `Chef.Bootstrap.WindowsAzure` | строка |
 | type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
 | typeHandlerVersion | `1210.12` | string (double) |
 
-### <a name="settings"></a>Параметры
+### <a name="settings"></a>Настройки
 
-| ИМЯ | Значение и пример | Тип данных | Обязательный?
+| Название | Значение и пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ----
 | settings/bootstrap_options/chef_server_url | `https://api.chef.io/organizations/myorg` | string (url) | Y |
 | settings/bootstrap_options/validation_client_name | `myorg-validator` | строка | Y |
@@ -85,7 +84,7 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
-| ИМЯ | Пример | Тип данных | Обязательный?
+| Название | Пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ---- |
 | protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Y |
 
@@ -105,7 +104,7 @@ Chef работает во всех [операционных системах, 
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. С помощью шаблонов можно развернуть одну или несколько виртуальных машин, установить клиент Chef, подключиться к серверу Chef и выполнить начальной конфигурации на сервере, как определено в списке [Run-list](https://docs.chef.io/run_lists.html).
 
-Пример шаблона Resource Manager, который включает в себя расширение виртуальной Машины Chef можно найти в [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm).
+Пример шаблона диспетчер ресурсов, включающий расширение виртуальной машины Chef, можно найти в коллекции быстрого запуска [Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm).
 
 Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-manager-template-child-resource.md).
 
@@ -123,7 +122,7 @@ az vm extension set \
   --settings '{ "bootstrap_options": { "chef_server_url": "<chef_server_url>", "validation_client_name": "<validation_client_name>" }, "runlist": "<run_list>" }'
 ```
 
-## <a name="troubleshooting-and-support"></a>Устранение неполадок и поддержка
+## <a name="troubleshooting-and-support"></a>Поддержка и устранение неполадок
 
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
 

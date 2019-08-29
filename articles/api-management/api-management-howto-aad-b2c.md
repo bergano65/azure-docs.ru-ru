@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2017
 ms.author: apimpm
-ms.openlocfilehash: 644cc2a4175043b523d53b39f17483c6f3acfe96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4260f4640f488e67d6bb3101ff2cf7d269e2bf3e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696732"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073662"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -36,7 +35,7 @@ Azure Active Directory B2C — это облачное решение, позв
 1. Чтобы приступить к работе, перейдите на [портал Azure](https://portal.azure.com) и найдите свой экземпляр управления API.
 
    > [!NOTE]
-   > Если вы еще не создали экземпляр службы управления API, см. сведения в разделе [Создание экземпляра управления API][Create an API Management service instance] руководства [Начало работы со службой управления Azure API][Get started with Azure API Management].
+   > Если вы еще не создали экземпляр службы управления API, ознакомьтесь со статьей [Создание экземпляра службы управления API][Create an API Management service instance] в [руководстве Приступая к работе с управлением API Azure][Get started with Azure API Management].
 
 2. В разделе **удостоверения**. В верхней части меню щелкните **+Добавить**.
 
@@ -76,9 +75,9 @@ Azure Active Directory B2C — это облачное решение, позв
 
 11. Вернитесь на панель **Добавление поставщика удостоверений** управления API и вставьте ключ в текстовое поле **секрет клиента**.
     
-12. Укажите имя домена клиента Azure Active Directory B2C в **вход клиента**.
+12. Укажите доменное имя клиента Azure Active Directory B2C в клиенте **SignIn**.
 
-13. **Центра** поля позволяют управлять URL-адрес входа Azure AD B2C для использования. Задайте значение **< your_b2c_tenant_name >. b2clogin.com**.
+13. Поле " **центр** " позволяет управлять используемым URL-адресом входа Azure AD B2C. Задайте значение **< your_b2c_tenant_name >. b2clogin. com**.
 
 14. Из политик клиента B2C укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
 
@@ -101,13 +100,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C. Расширяемая платформа политик]

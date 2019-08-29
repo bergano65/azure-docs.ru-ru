@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83319118c778d89749b1eb5d5fd792a5200c19c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6824eae4d5fed2eceaf85b9a674f980815afb260
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836064"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101376"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
@@ -320,7 +319,7 @@ ms.locfileid: "60836064"
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-maxdb-dbms"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для СУБД SAP MaxDB
 Сведения о поддерживаемых версиях Microsoft Windows для СУБД SAP MaxDB в Azure, см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP (PAM)][sap-pam]
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуем использовать последнюю версию операционной системы Microsoft Windows — Microsoft Windows 2016.
@@ -386,7 +385,7 @@ ms.locfileid: "60836064"
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-livecache-dbms"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для СУБД SAP liveCache
 Сведения о поддерживаемых версиях Microsoft Windows для СУБД SAP liveCache в Azure, см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP (PAM)][sap-pam]
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуем использовать последнюю версию операционной системы Microsoft Windows Server. 
@@ -428,18 +427,18 @@ ms.locfileid: "60836064"
 
 Мы настоятельно рекомендуем использовать последнюю версию сервера содержимого SAP, а также самую последнюю версию **служб Microsoft IIS**. 
 
-Узнать последние версии SAP Content Server и служб Microsoft IIS можно в [матрице доступности продуктов SAP][sap-pam].
+Проверьте последние Поддерживаемые версии сервера содержимого SAP и Microsoft IIS в [матрице доступности продуктов SAP (PAM)][sap-pam].
 
 ### <a name="supported-microsoft-windows-and-azure-vm-types-for-sap-content-server"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для сервера содержимого SAP
 Сведения о поддерживаемых версиях Microsoft Windows для сервера содержимого SAP в Azure см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP (PAM)][sap-pam]
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуется использовать последнюю версию Microsoft Windows Server.
 
 ### <a name="sap-content-server-configuration-guidelines-for-sap-installations-in-azure-vms"></a>Рекомендации по конфигурации сервера содержимого SAP для установки SAP на виртуальные машины Azure
-#### <a name="storage-configuration-for-content-server-in-azure"></a>Настройка хранилища для сервера содержимого в Azure
+#### <a name="storage-configuration-for-content-server-in-azure"></a>Конфигурация хранилища для сервера содержимого в Azure
 При настройке сервера содержимого SAP для хранения файлов в базе данных SAP MaxDB все рекомендации для службы хранилища Azure, приведенные для SAP MaxDB в настоящем документе, также относятся к серверу содержимого SAP. 
 
 При настройке сервера контента SAP для хранения файлов в файловой системе мы рекомендуем использовать выделенный логический диск. Кроме того, использование дисковых пространств Windows позволяет увеличить размер логического диска и количество операций ввода-вывода в секунду, как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
@@ -468,7 +467,7 @@ ms.locfileid: "60836064"
 
 Если вы настраиваете сервер содержимого SAP для хранения файлов в файловой системе, резервное копировании и восстановление выполняется вручную для всей файловой структуры, в которой хранятся документы. Как и в случае с резервным копированием и восстановлением SAP MaxDB, для целей резервного копирования мы рекомендуем выделить отдельный том диска. 
 
-#### <a name="other"></a>Другие
+#### <a name="other"></a>Другой
 Другие параметры сервера содержимого SAP прозрачны для виртуальных машин Azure и описаны в различных документах и примечаниях SAP:
 
 * <https://service.sap.com/contentserver> 

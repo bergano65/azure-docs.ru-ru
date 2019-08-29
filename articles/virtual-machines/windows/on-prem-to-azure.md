@@ -11,17 +11,16 @@ ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 10/07/2017
 ms.author: rogarana
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 42ad7bc10cb7b93bd4db9260f950ae4ca12aba44
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4611efa8767094ea8f92dac584a5610811947620
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61126902"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102594"
 ---
 # <a name="migrate-from-amazon-web-services-aws-and-other-platforms-to-managed-disks-in-azure"></a>Переход из Amazon Web Services (AWS) и других платформ на Управляемые диски Azure
 
@@ -55,7 +54,7 @@ ms.locfileid: "61126902"
 
 При планировании миграции с неуправляемых дисков до управляемых следует учитывать, что пользователи с ролью [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) не смогут изменять размер виртуальной машины (как это было возможно перед преобразованием). Причина в том, что виртуальные машины с управляемыми дисками требуют разрешения Microsoft.Compute/disks/write для дисков операционной системы.
 
-### <a name="location"></a>Расположение
+### <a name="location"></a>Местоположение
 
 Выберите расположение, в котором доступны Управляемые диски Azure. Если миграция выполняется на управляемые диски уровня "Премиум", то в этом регионе должно быть также доступно хранилище уровня "Премиум". Актуальные сведения о доступных расположениях см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/#services).
 

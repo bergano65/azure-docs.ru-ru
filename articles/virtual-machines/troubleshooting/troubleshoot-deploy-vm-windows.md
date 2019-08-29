@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок при развертывании виртуальных машин Windows в Azure | Документация Майкрософт
-description: Windows виртуальной машины Устранение неполадок при развертывании в модели развертывания Azure Resource Manager.
+description: Устранение неполадок при развертывании проблем с виртуальными машинами Windows в модели развертывания Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
@@ -11,16 +11,15 @@ ms.assetid: 4e383427-4aff-4bf3-a0f4-dbff5c6f0c81
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 76841484595b0a8809b8ab10db3199fc8cd28b04
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: d963556a657f4367acca14d5d8340f384ef555a9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710440"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080205"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Windows в Azure
 
@@ -65,7 +64,7 @@ ms.locfileid: "67710440"
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
- - [Общие сведения о программе преимуществ гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
+ - [Общие сведения о преимуществах гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 
  - [Скачиваемый файл с часто задаваемыми вопросами](https://download.microsoft.com/download/4/2/1/4211AC94-D607-4A45-B472-4B30EDF437DE/Windows_Server_Azure_Hybrid_Use_FAQ_EN_US.pdf)
 

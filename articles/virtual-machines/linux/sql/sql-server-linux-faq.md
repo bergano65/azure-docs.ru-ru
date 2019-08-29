@@ -7,18 +7,17 @@ author: MashaMSFT
 manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: troubleshooting
 ms.workload: iaas-sql-server
 ms.date: 12/13/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: fb1cafcf9405576749ea91aeea033c6ee783a026
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1e729c608a2cad28c810f8d5236360c909a496b0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60739273"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70082027"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-linux-azure-virtual-machines"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure
 
@@ -73,9 +72,9 @@ ms.locfileid: "60739273"
 
 1. **Можно ли настроить виртуальную машину для использования собственной лицензии SQL Server, если она была создана из одного из образов коллекции с оплатой по мере использования?**
 
-   № Возможность перейти с лицензирования с посекундной оплатой на собственную лицензию не предусмотрена. При такой необходимости вам потребуется создать новую виртуальную машину Linux, установить на ней SQL Server и перенести ваши данные. Дополнительные сведения об использовании собственной лицензии есть в ответе на предыдущий вопрос.
+   Нет. Возможность перейти с лицензирования с посекундной оплатой на собственную лицензию не предусмотрена. При такой необходимости вам потребуется создать новую виртуальную машину Linux, установить на ней SQL Server и перенести ваши данные. Дополнительные сведения об использовании собственной лицензии есть в ответе на предыдущий вопрос.
 
-## <a name="administration"></a>Администрирование
+## <a name="administration"></a>Управление
 
 1. **Можно ли управлять виртуальной машиной SQL Server на базе Linux с помощью SQL Server Management Studio (SSMS)?**
 
@@ -91,7 +90,7 @@ ms.locfileid: "60739273"
 
    В настоящее время выполнить обновление на месте для SQL Server в виртуальной машине Azure невозможно. Создайте виртуальную машину Azure с нужной версией или выпуском SQL Server, а затем перенесите базы данных на новый сервер с помощью стандартных [методов миграции данных](https://docs.microsoft.com/sql/linux/sql-server-linux-migrate-overview).
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 1. **Поддерживаются ли на виртуальных машинах Azure решения SQL Server для высокого уровня доступности?**
 

@@ -6,16 +6,15 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: 4688cf6fb82eb8f726205d54d0c852fd3daf8dfb
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5a4bc05e0a0b0b6a2c1b859caea2aadc12b8e0e0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564782"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096406"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
@@ -233,7 +232,7 @@ ms.locfileid: "68564782"
 
 |Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------| 
-|isEnabled|False|Включает или отключает ведение журнала консоли.| 
+|isEnabled|false|Включает или отключает ведение журнала консоли.| 
 
 ## <a name="queues"></a>queues
 

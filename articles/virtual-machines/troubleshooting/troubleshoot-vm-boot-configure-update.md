@@ -10,16 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: c3592529d20680c6920e569887effee4ffe38344
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2f3c18ea1887ea5b05bb89f85371139ac83dfe49
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64684003"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080163"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
 
@@ -121,7 +120,7 @@ ms.locfileid: "64684003"
 
 Следуйте инструкциям в разделе [Сбор файла дампа памяти](troubleshoot-common-blue-screen-error.md#collect-memory-dump-file), чтобы собрать файл дампа операционной системы, когда виртуальная машина зависает на этапе настройки.
 
-## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
+## <a name="contact-microsoft-support"></a>Обратитесь в службу поддержки Майкрософт
 
 После сбора файла дампа обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы проанализировать первопричину.
 

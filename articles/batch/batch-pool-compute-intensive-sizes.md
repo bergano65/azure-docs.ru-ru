@@ -9,16 +9,15 @@ ms.assetid: ''
 ms.service: batch
 ms.workload: big-compute
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: lahugh
-ms.openlocfilehash: 687783520b082cdfd1a6ffc91a8641ea35fafd68
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: c3c54b003017f7512cd40c7798fc351e4e4a3f69
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323351"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70094919"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Использование экземпляров RDMA или GPU в пулах пакетной службы
 
@@ -43,7 +42,7 @@ ms.locfileid: "68323351"
 
 ### <a name="linux-pools---virtual-machine-configuration"></a>Пулы Linux — конфигурация виртуальной машины
 
-| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | -------- | ----- |  -------- | ----- |
 | [H16r, H16mr, A8, A9](../virtual-machines/linux/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/linux/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Ubuntu 16.04 LTS или<br/>Экземпляр HPC на платформе CentOS<br/>(Microsoft Azure Marketplace) | Intel MPI 5<br/><br/>Драйверы RDMA Linux | Включение связи между узлами, отключение параллельного выполнения задач |
 | [Серия NC, NCv2, NCv3, NDv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Ubuntu 16.04 LTS или<br/>CentOS 7.3 или 7.4<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit | Н/Д | 
@@ -53,7 +52,7 @@ ms.locfileid: "68323351"
 
 ### <a name="windows-pools---virtual-machine-configuration"></a>Пулы Windows — конфигурация виртуальной машины
 
-| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | ------ | -------- | -------- | ----- |
 | [H16r, H16mr, A8, A9](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/windows/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Windows Server 2016, 2012 R2 или<br/>2012 (Azure Marketplace) | Microsoft MPI 2012 R2 или более поздней версии либо<br/> Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами, отключение параллельного выполнения задач |
 | [Серия NC, NCv2, NCv3, ND, NDv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Windows Server 2016 или <br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit| Н/Д | 
@@ -67,7 +66,7 @@ ms.locfileid: "68323351"
 > Размеры серии N не поддерживаются в пулах пакетной службы с использованием конфигурации облачных служб.
 >
 
-| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | ------- | -------- | -------- | ----- |
 | [H16r, H16mr, A8, A9](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances) | RDMA | Windows Server 2016, 2012 R2, 2012 или<br/>2008 R2 (семейство версий гостевой ОС) | Microsoft MPI 2012 R2 или более поздней версии либо<br/>Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами,<br/> отключение параллельного выполнения задач |
 

@@ -6,22 +6,21 @@ author: jeffhollan
 manager: jeconnoc
 ms.assetid: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: jehollan
-ms.openlocfilehash: 8ad09550e572c98931346b44a6c6f84da29a85e4
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 2cc6493d01508d439d8dcef2d12ca1ea40632d81
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68443957"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096228"
 ---
 # <a name="azure-functions-premium-plan-preview"></a>План функций Azure Premium (Предварительная версия)
 
 План функций Azure Premium — это вариант размещения для приложений-функций. План "Премиум" предоставляет такие функции, как подключение к виртуальной сети, без холодного запуска и оборудование уровня "Премиум".  В один и тот же план Premium можно развернуть несколько приложений с функциями, а план позволяет настроить размер вычислительных экземпляров, базовый размер плана и максимальный размер плана.  Сравнение плана Premium и других типов планов и размещения см. в статье [варианты масштабирования и размещения функций](functions-scale.md).
 
-## <a name="create-a-premium-plan"></a>Создание плана Premium
+## <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
 [!INCLUDE [functions-premium-create](../../includes/functions-premium-create.md)]
 

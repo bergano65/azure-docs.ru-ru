@@ -3,15 +3,15 @@ title: Запрос контейнеров в Azure Cosmos DB
 description: Узнайте, как запрашивать контейнеры в Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: cf14e005de3710f26bfdbab7cc0dac87e0cf000e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
-ms.translationtype: HT
+ms.openlocfilehash: 799fa43ad6ff12e5fa84326cbb41842e76daff12
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243754"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092967"
 ---
 # <a name="query-an-azure-cosmos-container"></a>Запрос контейнера Azure Cosmos
 
@@ -65,7 +65,7 @@ IQueryable<DeviceReading> crossPartitionQuery = client.CreateDocumentQuery<Devic
 
 При неизменном состоянии коллекции параллельные запросы будут возвращать результаты в том же порядке, что и при последовательном выполнении. При выполнении межсекционного запроса, включающего в себя операторы сортировки (ORDER BY, TOP), пакет SDK для Azure Cosmos DB параллельно выполняет запрос между секциями. Он объединяет частично отсортированные результаты на стороне клиента для получения глобально упорядоченных результатов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать о секционировании в Azure Cosmos DB, ознакомьтесь со следующими статьями:
 

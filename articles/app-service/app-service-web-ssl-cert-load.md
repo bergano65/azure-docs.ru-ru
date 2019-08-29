@@ -9,77 +9,76 @@ editor: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ead1892062912840c9931ae60d11c90975ad26ac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6820daf34e63fd48e83c645e7509a3256bc8435b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475101"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066989"
 ---
 # <a name="use-an-ssl-certificate-in-your-application-code-in-azure-app-service"></a>Использование SSL-сертификата в коде приложения службы приложений Azure
 
-В этом практическом руководстве показано, как использовать общедоступный или частный сертификаты в коде приложения. Это будет удобно, если приложение обращается к внешней службе, для которой требуется аутентификация на основе сертификата.
+В этом пошаговом руководство показано, как использовать общедоступные или частные сертификаты в коде приложения. Это будет удобно, если приложение обращается к внешней службе, для которой требуется аутентификация на основе сертификата.
 
-Подход с использованием сертификатов в коде используются SSL в службе приложений, который требует приложения, которые будут в **основные** уровня или более поздней версии. Кроме того, вы можете [включать файл сертификата в репозиторий приложения](#load-certificate-from-file), но это не рекомендуется для закрытых сертификатов.
+Этот подход к использованию сертификатов в коде использует функциональность SSL в службе приложений, которая требует, чтобы ваше приложение было на уровне **Basic** или выше. Кроме того, можно [включить файл сертификата в репозиторий приложения](#load-certificate-from-file), но не рекомендуется использовать его для частных сертификатов.
 
 Доверив управление SSL-сертификатами службе приложений, вы сможете разделить сертификаты и код приложения, защитив таким образом конфиденциальные данные.
 
 ## <a name="upload-a-private-certificate"></a>Передача закрытого сертификата
 
-Перед отправкой закрытый сертификат, убедитесь, что [он удовлетворяет всем требованиям](app-service-web-tutorial-custom-ssl.md#prepare-a-private-certificate), за исключением того, что это необязательно должен быть настроен для проверки подлинности сервера.
+Перед отправкой частного сертификата убедитесь, что [он удовлетворяет всем требованиям](app-service-web-tutorial-custom-ssl.md#prepare-a-private-certificate), за исключением того, что его не нужно настраивать для проверки подлинности сервера.
 
-Когда вы будете готовы к отправке, выполните следующую команду <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Когда вы будете готовы к отправке, выполните следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config ssl upload --name <app-name> --resource-group <resource-group-name> --certificate-file <path-to-PFX-file> --certificate-password <PFX-password> --query thumbprint
 ```
 
-Скопируйте отпечаток сертификата и см. в разделе [сделать сертификат доступным](#make-the-certificate-accessible).
+Скопируйте отпечаток сертификата и см. раздел [обеспечение доступности сертификата](#make-the-certificate-accessible).
 
 ## <a name="upload-a-public-certificate"></a>Передача общего сертификата
 
-Открытые сертификаты поддерживаются в *.cer* формат. Чтобы передать открытый сертификат, <a href="https://portal.azure.com" target="_blank">портала Azure</a>и перейдите к своему приложению.
+Общедоступные сертификаты поддерживаются в формате *CER* . Чтобы отправить открытый сертификат, <a href="https://portal.azure.com" target="_blank">портал Azure</a>и перейдите к своему приложению.
 
-Нажмите кнопку **параметры SSL** > **открытых сертификатов (.cer)**  > **передать открытый сертификат** в левой области навигации приложения.
+Щелкните **Параметры** > SSL**открытые сертификаты (CER)**  > **отправить открытый сертификат** в левой области навигации приложения.
 
-В **имя**, введите имя для сертификата. В **CER-файл сертификата**, выберите CER-файл.
+В поле **имя**введите имя сертификата. В **файле сертификата CER**выберите файл CER.
 
 Щелкните **Отправить**.
 
 ![Передача открытого сертификата](./media/app-service-web-ssl-cert-load/private-cert-upload.png)
 
-После отправки сертификата, скопируйте отпечаток сертификата и см. в разделе [сделать сертификат доступным](#make-the-certificate-accessible).
+После отправки сертификата скопируйте отпечаток сертификата и [Убедитесь, что сертификат доступен](#make-the-certificate-accessible).
 
-## <a name="import-an-app-service-certificate"></a>Импортировать сертификат службы приложений
+## <a name="import-an-app-service-certificate"></a>Импорт сертификата службы приложений
 
-См. в разделе [приобретение и Настройка SSL-сертификат для службы приложений Azure](web-sites-purchase-ssl-web-site.md).
+См. статью [приобретение и Настройка SSL-сертификата для службы приложений Azure](web-sites-purchase-ssl-web-site.md).
 
-Когда сертификат будет импортирован, скопируйте отпечаток сертификата и см. в разделе [сделать сертификат доступным](#make-the-certificate-accessible).
+После импорта сертификата скопируйте отпечаток сертификата и [Убедитесь, что сертификат доступен](#make-the-certificate-accessible).
 
-## <a name="make-the-certificate-accessible"></a>Сделать сертификат доступным
+## <a name="make-the-certificate-accessible"></a>Предоставление доступа к сертификату
 
-Чтобы использовать сертификат, загруженный или импортированный в коде приложения, сделать его отпечаток доступным с `WEBSITE_LOAD_CERTIFICATES` параметр приложения, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+Чтобы использовать отправленный или импортированный сертификат в коде приложения, сделайте его отпечатком доступным с `WEBSITE_LOAD_CERTIFICATES` помощью параметра приложения, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_CERTIFICATES=<comma-separated-certificate-thumbprints>
 ```
 
-Чтобы сделать доступными все сертификаты, присвоено значение `*`.
+Чтобы сделать все сертификаты доступными, задайте значение `*`.
 
 > [!NOTE]
-> Этот параметр накладывает указанных сертификатов в [текущей User\My](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) хранилище для большинства ценовые категории, но в **Isolated** уровня (т. е. приложение запускается в [среды службы приложений](environment/intro.md)), она помещает сертификаты в [локального Machine\My](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) хранения.
+> Этот параметр помещает указанные сертификаты в [Текущее хранилище усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) для большинства ценовых категорий, но на изолированном уровне (т. е. приложение выполняется в [Среда службы приложений](environment/intro.md)) помещает сертификаты в [локальный мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) сообщений.
 >
 
 ![Настройка параметров приложения](./media/app-service-web-ssl-cert-load/configure-app-setting.png)
 
 По завершении щелкните **Сохранить**.
 
-Настроенные сертификаты теперь готовы для использования в коде.
+Настроенные сертификаты теперь готовы к использованию в коде.
 
 ## <a name="load-the-certificate-in-code"></a>Загрузка сертификата в коде
 
@@ -109,17 +108,17 @@ certStore.Close();
 ```
 
 <a name="file"></a>
-## <a name="load-certificate-from-file"></a>Загрузка сертификата из файла
+## <a name="load-certificate-from-file"></a>Загрузить сертификат из файла
 
-Если вам нужно загрузить файл сертификата из каталога приложения, лучше передать его при помощи [FTPS](deploy-ftp.md) вместо [Git](deploy-local-git.md), например. Следует хранить конфиденциальные данные, например закрытый сертификат из системы управления версиями.
+Если необходимо загрузить файл сертификата из каталога приложения, лучше передать его с помощью [FTPS](deploy-ftp.md) , а не [Git](deploy-local-git.md), например. Конфиденциальные данные следует учитывать как закрытый сертификат из системы управления версиями.
 
-Несмотря на то, что вы загружаете файл непосредственно в коде .NET, библиотека по-прежнему проверяет, загружен ли текущий профиль пользователя. Для загрузки текущего профиля пользователя, укажите `WEBSITE_LOAD_USER_PROFILE` параметр приложения с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Несмотря на то, что файл загружается непосредственно в код .NET, Библиотека по-прежнему проверяет, загружен ли текущий профиль пользователя. Чтобы загрузить текущий профиль пользователя, задайте `WEBSITE_LOAD_USER_PROFILE` параметр приложения с помощью следующей команды в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
 ```
 
-После задания этого параметра следующие C# пример загружает сертификат с именем `mycert.pfx` из `certs` каталог репозитория приложения.
+После установки этого параметра в следующем C# примере загружается сертификат, вызываемый `certs` `mycert.pfx` из каталога репозитория приложения.
 
 ```csharp
 using System;

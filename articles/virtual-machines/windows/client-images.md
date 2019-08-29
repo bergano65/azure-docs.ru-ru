@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: 91c3880a-cede-44f1-ae25-f8f9f5b6eaa4
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: fcd97b07416526d71d5bee9bc198eb0d912e1c55
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: dbb771351ee774a7fea33e5aaad3ae4d0c70f8b1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719154"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079902"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Использование клиента Windows в Azure для сценариев разработки и тестирования
 В сценариях разработки и тестирования Azure можно использовать Windows 7, Windows 8 или Windows 10 Корпоративная (x64) при условии, что у вас есть соответствующая подписка Visual Studio (прежнее название — MSDN). В этой статье описываются требования к доступности при запуске Windows 7, Windows 8.1 и Windows 10 Корпоративная в Azure и использовании образов из коллекции Azure.

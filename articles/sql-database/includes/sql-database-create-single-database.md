@@ -5,12 +5,12 @@ ms.subservice: single-database
 ms.topic: include
 ms.date: 07/31/2019
 ms.author: mathoma
-ms.openlocfilehash: d19e21edd31be461ba30e8985e80c4651bbbb02d
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: d4c426c5fe31f8fc2bfaf4697c05456124cafcb1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69894165"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099171"
 ---
 На этом этапе вы создадите отдельную базу данных в службе "База данных SQL Azure". 
 
@@ -23,8 +23,8 @@ ms.locfileid: "69894165"
 
 Создайте группу ресурсов и отдельную базу данных с помощью портала Azure.
 
-1. На портале Azure в меню слева выберите **Azure SQL**. Если **Azure SQL** отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*.
-2. Выберите **Добавить**, чтобы открыть страницу **выбора варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения о различных базах данных, выберите **Показать сведения** на плитке **Базы данных**.
+1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Azure SQL**. Если **Azure SQL** отсутствует в списке, выберите **Все службы** и в поле поиска введите *Azure SQL*. (Необязательно) Щелкните звезду рядом с **Azure SQL**, чтобы добавить этот элемент в избранное и область навигации слева. 
+2. Щелкните **+ Добавить**, чтобы открыть страницу **Выбор варианта развертывания SQL**. Чтобы просмотреть дополнительные сведения о различных базах данных, выберите **Показать сведения** на плитке **Базы данных**.
 3. Нажмите кнопку **Создать**.
 
    ![Создание отдельной базы данных](../media/sql-database-get-started-portal/create-single-database.png)
@@ -43,7 +43,7 @@ ms.locfileid: "69894165"
        - **Имя сервера**. Введите `mysqlserver` и несколько цифр для уникальности имени.
        - **Учетные данные администратора сервера для входа**. Введите `azureuser`.
        - **Пароль**. Введите сложный пароль, который соответствует требованиям к паролю.
-       - **Расположение.** Выберите расположение из раскрывающегося списка, например `West US 2`.
+       - **Расположение.** Выберите расположение из раскрывающегося списка, например `West US`.
 
          ![Новый сервер](../media/sql-database-get-started-portal/new-server.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "69894165"
    # Set variables for your server and database
    $subscriptionId = '<SubscriptionID>'
    $resourceGroupName = "myResourceGroup-$(Get-Random)"
-   $location = "West US 2"
+   $location = "West US"
    $adminLogin = "azureuser"
    $password = "PWD27!"+(New-Guid).Guid
    $serverName = "mysqlserver-$(Get-Random)"

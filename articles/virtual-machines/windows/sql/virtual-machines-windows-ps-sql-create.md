@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 98d50dd8-48ad-444f-9031-5378d8270d7b
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: edf5f2b681123243f55b1c2bf19a500e68171c0e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 072c58377645c807328bfcd79028daad70df7338
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66165734"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102109"
 ---
 # <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell
 
@@ -67,7 +66,7 @@ $StorageSku = "Premium_LRS"
 ### <a name="network-properties"></a>Свойства сети
 Определите свойства, используемые для сети на виртуальной машине. 
 
-- сетевому интерфейсу
+- Сетевой интерфейс
 - метод распределения TCP/IP;
 - Имя виртуальной сети
 - имя виртуальной подсети;
@@ -130,7 +129,7 @@ $OSDiskName = $VMName + "OSDisk"
    $Sku = "SQLDEV"
    ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 Если используется модель развертывания с помощью Resource Manager, первый создаваемый объект — группа ресурсов. Чтобы создать группу ресурсов и входящие в нее ресурсы Azure, используйте командлет [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Укажите переменные, инициализированные ранее для имени группы ресурсов и расположения.
 
 Выполните следующий командлет, чтобы создать группу ресурсов.
@@ -139,7 +138,7 @@ $OSDiskName = $VMName + "OSDisk"
 New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](https://docs.microsoft.com/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, инициализированные ранее для имени учетной записи хранения, SKU хранилища и расположения.
 
 Выполните этот командлет, чтобы создать учетную запись хранения.
@@ -424,7 +423,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualM
 Set-AzVMSqlServerExtension -ResourceGroupName $ResourceGroupName -VMName $VMName -name "SQLIaasExtension" -version "1.2" -Location $Location
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После создания виртуальной машины можно:
 
 - подключаться к виртуальной машине с помощью протокола удаленного рабочего стола (RDP);

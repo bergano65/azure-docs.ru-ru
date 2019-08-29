@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: shwinne
-author: swinner95
+ms.author: ronglu
+author: ronglums
 ms.date: 7/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3b49def1af7f13e38c3a9daea32d56bf3c633261
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: b1d18006e6ec3ff1659f8fb80f8cf6766797d76b
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67871765"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114430"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -25,9 +25,9 @@ ms.locfileid: "67871765"
 
 Эти модели также можно развернуть для тестирования и потребностей в рабочей среде.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-+ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию службы машинное обучение Azure](https://aka.ms/AMLFree).
++ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 + Необходимо установить Visual Studio Code. Visual Studio Code — это упрощенный, но мощный редактор исходного кода, работающий на рабочем столе. Он поставляется со встроенной поддержкой Python и других языков программирования. Если вы еще не установили Visual Studio Code, [Узнайте, как](https://code.visualstudio.com/docs/setup/setup-overview)это делать.
 
