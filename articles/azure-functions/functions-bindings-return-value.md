@@ -1,27 +1,26 @@
 ---
-title: Использование возвращаемого значения функции Azure
-description: Сведения об управлении возвращаемые значения для функций Azure
+title: Использование возвращаемого значения из функции Azure
+description: Узнайте, как управлять возвращаемыми значениями для функций Azure.
 services: functions
 documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 01/14/2019
 ms.author: cshoe
-ms.openlocfilehash: 03cf85ab12a8f64d639c09db5ea75002b258aa84
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1ea7ec0444ba80d3494afba77ad9d7fdabd5f982
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480281"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086421"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
 
-В этой статье объясняется, как возвращаемые значения работы внутри функции.
+В этой статье объясняется, как возвращаемые значения работают внутри функции.
 
-В языках, которые должны иметь возвращаемого значения, можно привязать функцию [выходная привязка](./functions-triggers-bindings.md#binding-direction) к возвращаемому значению:
+В языках, имеющих возвращаемое значение, можно привязать выходную [привязку](./functions-triggers-bindings.md#binding-direction) функции к возвращаемому значению:
 
 * В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
 * В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
@@ -165,7 +164,7 @@ def main(input: azure.functions.InputStream) -> str:
     })
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Обработка ошибок привязки функций Azure](./functions-bindings-errors.md)
+> [Обработчик ошибок привязки функций Azure](./functions-bindings-errors.md)

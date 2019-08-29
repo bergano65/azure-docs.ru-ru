@@ -6,16 +6,15 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 3aa3176b1d6d9e5665fd3a8988b71159a4fc20c0
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 4426b83ee62f4a894f72e197cbe541b8b669695d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735712"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086811"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -185,7 +184,7 @@ ms.locfileid: "68735712"
 |Ключ|Значение|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|False|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
 
 
 ## <a name="azure_function_proxy_backend_url_decode_slashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
@@ -195,7 +194,7 @@ ms.locfileid: "68735712"
 |Ключ|Значение|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|False|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение установлено по умолчанию. Все параметры маршрута будут передаваться без изменений|
 
 ### <a name="example"></a>Пример
 
@@ -217,7 +216,7 @@ ms.locfileid: "68735712"
 |Декодирование URL-адреса|Ввод|Вывод|
 |-|-|-|
 |true|myfunction.com/test%2fapi|example.com/test/api
-|False|myfunction.com/test%2fapi|example.com/test%2fapi|
+|false|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 
 ## <a name="next-steps"></a>Следующие шаги

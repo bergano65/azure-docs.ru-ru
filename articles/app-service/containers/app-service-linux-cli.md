@@ -11,17 +11,16 @@ ms.assetid: ''
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 21f6963fbaada4524f27602454d38e7252a5e8b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5481e9f28d8fc47936ad62bd8d974beb5ca85fcd
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60850090"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70071311"
 ---
 # <a name="manage-web-app-for-containers-using-azure-cli"></a>Управление веб-приложением для контейнеров с помощью Azure CLI
 
@@ -103,7 +102,7 @@ az webapp config set -n sname -g rgname --linux-fx-version "node|6.11"
 az webapp deployment source config -n sname -g rgname --repo-url <gitrepo url> --branch <branch>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения о службе приложений на платформе Linux](app-service-linux-intro.md).
 * [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)

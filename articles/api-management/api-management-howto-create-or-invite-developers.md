@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: d9cc5da0cd2936c1ac79a308366b8164548cb202
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9de75b5537b3e267116882e7f151d893de575071
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66241727"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072465"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Управление учетными записями пользователей в службе управления API Azure
 
@@ -26,9 +25,9 @@ ms.locfileid: "66241727"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Выполните задачи в этой статье. [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
+Выполнение задач в этой статье: [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -69,7 +68,7 @@ ms.locfileid: "66241727"
 
 ## <a name="reset-a-user-password"></a>Сброс пароля пользователя
 
-Чтобы программно работать с учетными записями пользователей, см. в документации по сущности пользователя в [REST API управления](/rest/api/apimanagement/) ссылки. Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
+Сведения о программной работе с учетными записями пользователей см. в документации по сущности пользователя в справочнике по службе [управления API REST API](/rest/api/apimanagement/) . Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
 
 ## <a name="next-steps"> </a>Дальнейшие действия
 После создания учетной записи разработчика ее можно связать с ролями и подписать ее на продукты и интерфейсы API. Дополнительные сведения см. в статье [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API][How to create and use groups].

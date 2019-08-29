@@ -3,15 +3,15 @@ title: Определение расходов в единицах запрос�
 description: Узнайте, как определить расходы в единицах запроса (ЕЗ) для любой операции, выполняемой в контейнере Azure Cosmos.
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 06/14/2019
 ms.author: thweiss
-ms.openlocfilehash: 96c36067456a49a5760d6fde488dcb4ad8311a90
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: 682273524269682f62cd386de1c9161888747f16
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356456"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093709"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -301,7 +301,7 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 
 Дополнительные сведения см. в [кратком руководстве Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB](create-table-dotnet.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 

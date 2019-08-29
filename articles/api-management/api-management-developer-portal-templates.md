@@ -10,24 +10,23 @@ ms.assetid: a195675b-f7d0-4fc9-90bf-860e6f17ccf7
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 00d5e3df78e85d19a519786dad1a1b176ad7fa08
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8b250c45716146c505a803046b18bf5d05cf116
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837237"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073770"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
 
 Существуют три основных способа настройки портала разработчика в службе управления Azure API.
 
 * [Изменение содержимого статических страниц и элементов макета страницы.][modify-content-layout]
-* [Обновление стилей, которые используются для элементов страницы на портале разработчика][customize-styles].
-* [Изменение шаблонов, используемых для страниц, созданных порталом][portal-templates] (описывается в этом руководстве).
+* [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
+* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (описывается в этом разделе)
 
 Шаблоны используются для настройки содержимого страниц портала разработчика, создаваемых системой (например, документы API, продукты, аутентификация пользователей и т. д.). С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/) и указанного набора локализованных строковых ресурсов, значков и элементов управления на странице можно гибко настраивать содержимое страниц по своему усмотрению.
 
@@ -132,7 +131,7 @@ ms.locfileid: "60837237"
 ## <a name="to-save-a-template"></a>Сохранение шаблона
 Чтобы сохранить шаблон, нажмите кнопку "Сохранить" в редакторе шаблона.
 
-![Сохранение шаблона][api-management-save-template]
+![Сохранить шаблон][api-management-save-template]
 
 Сохраненные изменения не отобразятся на портале разработчика, пока шаблон не будет опубликован.
 
@@ -183,7 +182,7 @@ ms.locfileid: "60837237"
 
 Затем необходимо опубликовать восстановленные шаблоны вместе или по отдельности, выполнив действия, описанные в разделе [Публикация шаблона](#to-publish-a-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Справочную информацию о шаблонах портала разработчика, строковых ресурсах, значках и элементах управления страницы см. в разделе [Azure API Management Templates](api-management-developer-portal-templates-reference.md) (Шаблоны в службе управления API).
 
 [modify-content-layout]: api-management-modify-content-layout.md

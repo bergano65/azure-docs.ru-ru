@@ -8,16 +8,15 @@ manager: cfowler
 editor: ''
 ms.service: azure-functions
 ms.workload: na
-ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: 6057fa52cd2f1e9b9fd525723f96ab66983fb5d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d5959acc7719e2b02d529bca8261bc09d5b93634
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61020304"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085330"
 ---
 # <a name="how-to-troubleshoot-functions-runtime-is-unreachable"></a>Способы устранения неполадок, связанных с недоступностью среды выполнения функций.
 
@@ -55,7 +54,7 @@ ms.locfileid: "61020304"
 
 ### <a name="required-application-settings"></a>Необходимые параметры приложения
 
-* Обязательно для заполнения
+* Обязательное значение
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Обязательные для Функций плана потребления:
     * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
@@ -66,7 +65,7 @@ ms.locfileid: "61020304"
 ### <a name="guidance"></a>Руководство
 
 * Не устанавливайте флажок "Параметр слота" для любого из этих параметров. При переключении слотов развертывания Функция будет нарушена.
-* Не изменяйте эти параметры в рамках автоматического развертывания.
+* Не изменяйте эти параметры как часть автоматизированных развертываний.
 * Эти параметры должны быть указаны и допустимы во время создания. Если в автоматическом развертывании нет этих параметров, это приведет к неработоспособности приложения, даже если параметры будут добавлены позже.
 
 ## <a name="storage-account-credentials-invalid"></a>Недопустимые учетные данные учетной записи хранения

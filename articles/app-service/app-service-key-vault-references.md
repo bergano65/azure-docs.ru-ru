@@ -7,17 +7,16 @@ manager: jeconnoc
 editor: ''
 ms.service: app-service
 ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: e7a049c8def0a5014aeb8a0e7a16aaa8def28009
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 30bd7c68ae1c88aba288b515d0ec32581f90b868
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705699"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088186"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -39,7 +38,7 @@ ms.locfileid: "67705699"
 
 1. Создайте [политику доступа в Key Vault](../key-vault/key-vault-secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `applicationId`, так как он не совместим с управляемым удостоверением.
 
-    Предоставление доступа к приложению удостоверений в хранилище ключей является операцией onetime, и он останется тем же для всех подписок Azure. Его можно использовать для развертывания сертификатов, нужно. 
+    Предоставление доступа к удостоверению приложения в хранилище ключей — это OneTime операция, которая остается одинаковой для всех подписок Azure. Его можно использовать для развертывания требуемого количества сертификатов. 
 
 ## <a name="reference-syntax"></a>Синтаксис ссылок
 

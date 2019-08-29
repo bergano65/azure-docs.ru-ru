@@ -11,16 +11,15 @@ ms.assetid: d351396c-95a0-4092-b7bf-c6aae0bbd112
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: szark
-ms.openlocfilehash: 1f9512e4eabf76edecef594b6b6498782725c019
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: eb6ef87edd2ff16750573c6b8c719fa4b81d3a4c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671598"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083591"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -74,7 +73,7 @@ ms.locfileid: "67671598"
 ### <a name="resizing-vhds"></a>Изменение размера VHD
 Размер виртуальной памяти образов VHD в Azure должен быть округлен до 1 МБ.  Как правило, размер VHD, созданных с помощью Hyper-V, настроен правильно.  Если виртуальный жесткий диск (VHD) настроен неправильно, при попытке создать образ из VHD-файла может появиться следующее сообщение об ошибке.
 
-* Http виртуального жесткого диска:\//\<mystorageaccount >.blob.core.windows.net/vhds/MyLinuxVM.vhd имеет неподдерживаемый виртуальный размер 21475270656 байтов. Размер должен задаваться целым числом (в МБ).
+* Виртуальный жесткий диск HTTP\/:/\<mystorageaccount >. BLOB. Core. Windows. NET/VHD/милинуксвм. VHD имеет неподдерживаемый размер виртуального размера 21475270656 байт. Размер должен задаваться целым числом (в МБ).
 
 В таком случае вы можете изменить размер виртуальной машины с помощью консоли диспетчера Hyper-V или командлета Powershell [Resize-VHD](https://technet.microsoft.com/library/hh848535.aspx).  Если вы работаете не в среде Windows, воспользуйтесь командой `qemu-img` для преобразования (если необходимо) и изменения размера VHD.
 
@@ -144,10 +143,10 @@ ms.locfileid: "67671598"
 Ядро должно включать следующие исправления. Этот список не является исчерпывающим для всех дистрибутивов.
 
 * [ata_piix: предоставление дисков драйверам Hyper-V по умолчанию;](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c)
-* [storvsc: Учетная запись во время передачи пакетов в папке RESET](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
+* [storvsc Учетная запись для транзитных пакетов в пути сброса](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
 * [storvsc: предотвращение использования WRITE_SAME;](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090)
-* [storvsc: Отключение WRITE SAME для RAID и драйверы адаптера виртуального узла](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
-* [storvsc: Исправление разыменования ПУСТОГО указателя](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
+* [storvsc Отключить запись для драйверов RAID и виртуальных хост-адаптеров](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
+* [storvsc Исправление разыменования указателя NULL](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
 * [storvsc: ошибки кольцевого буфера могут привести к заморозке операций ввода-вывода.](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951)
 * [scsi_sysfs: защита от двойного выполнения __scsi_remove_device.](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/scsi_sysfs.c?id=be821fd8e62765de43cc4f0e2db363d0e30a7e9b)
 
