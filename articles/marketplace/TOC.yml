@@ -60,6 +60,8 @@
         - name: Преимущества использования Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:
+            - name: Участие партнеров в совместных продажах
+              href: ./marketplace-co-sell.md
             - name: Предпочтительные решения
               href: ./preferred-solutions.md
             - name: Интегрированные решения
@@ -490,6 +492,13 @@
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
         - name: Тестирование вашего предложения
           href: ./partner-center-portal/test-drive.md
+        - name: Возможность совместных продаж
+          href: ./partner-center-portal/commercial-marketplace-co-sell.md
+          items:
+            - name: Коды стран и регионов
+              href: ./partner-center-portal/commercial-marketplace-co-sell-countries.md
+            - name: Коды штатов
+              href: ./partner-center-portal/commercial-marketplace-co-sell-states.md
     - name: Состояние публикации
       href: ./partner-center-portal/publishing-status.md
     - name: Обновление существующих предложений

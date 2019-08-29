@@ -281,6 +281,8 @@
           maintainContext: true
 - name: Справочные материалы
   items:
+    - name: Поддерживаемые конфигурации узлов
+      href: ../hdinsight-supported-node-configuration.md
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=hdinsight'
     - name: Azure PowerShell

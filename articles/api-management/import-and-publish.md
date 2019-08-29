@@ -9,17 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: apimpm
-ms.openlocfilehash: 0e104f4cbdef7edc5c109781509e3924400e5ba4
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 6a1ae2966e8d5535a5fd9aeffb5ddc3a788f85ee
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56959737"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072099"
 ---
 # <a name="import-and-publish-your-first-api"></a>Импорт и публикация первого API 
 

@@ -10,7 +10,7 @@
     - name: Развертывание и настройка
       href: tutorial-firewall-deploy-portal.md
     - name: Развертывание в гибридной сети
-      href: tutorial-hybrid-ps.md
+      href: tutorial-hybrid-portal.md
     - name: Фильтрация входящего трафика с помощью DNAT
       href: tutorial-firewall-dnat.md
     - name: Мониторинг журналов диагностики
@@ -39,6 +39,8 @@
   items:
     - name: "Развертывание с помощью Azure\_PowerShell"
       href: deploy-ps.md
+    - name: "Развертывание в гибридной сети\_— PowerShell"
+      href: tutorial-hybrid-ps.md
     - name: Развертывание с помощью Azure CLI
       href: deploy-cli.md
     - name: Развертывание с помощью шаблона
