@@ -259,6 +259,8 @@
               href: sql-data-warehouse-install-visual-studio.md
             - name: Интеграция системы управления версиями
               href: sql-data-warehouse-source-control-integration.md
+            - name: Непрерывная интеграция и развертывание
+              href: sql-data-warehouse-continuous-integration-and-deployment.md
         - name: Подключение и запросы
           items:
             - name: SSDT для Visual Studio
