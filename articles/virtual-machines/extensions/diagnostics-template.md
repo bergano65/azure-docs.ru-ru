@@ -11,17 +11,16 @@ ms.assetid: 8cde8fe7-977b-43d2-be74-ad46dc946058
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2017
 ms.author: saurabh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d1c5598bd7ea5b3f35d5447935953d4cd55664a
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 9ba8fdba3b7283185920432b5b096b80b2e32021
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67706756"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092541"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager
 Расширение системы диагностики Azure позволяет использовать возможности мониторинга и диагностики в виртуальной машине Azure под управлением Windows. Чтобы использовать эти возможности на виртуальной машине, необходимо включить расширение в шаблон Azure Resource Manager. Дополнительные сведения о включении любого расширения в шаблон виртуальной машины см. в статье [Создание шаблонов диспетчера ресурсов Azure с расширениями виртуальных машин](../windows/template-description.md#extensions). В этой статье описывается, как добавить расширение системы диагностики Azure в шаблон виртуальной машины Windows.  
@@ -164,7 +163,7 @@ ms.locfileid: "67706756"
 * **V2S**: строковая константа.
 * **yyyymmdd**: дата начала сбора данных таблицей.
 
-Пример таблица *WADMetricsPT1HP10DV2S20151108* содержит данные метрик, объединенные за час в течение 10 дней начиная с 11 ноября 2015 года.    
+Пример: таблица *WADMetricsPT1HP10DV2S20151108* содержит данные метрик, объединенные за час в течение 10 дней начиная с 11 ноября 2015 года.    
 
 Каждая таблица WADMetrics содержит следующие столбцы.
 

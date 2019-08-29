@@ -8,17 +8,16 @@ manager: jeconnoc
 keywords: Функции Azure, шаблоны, рекомендация, функции, обработка событий, объекты webhook, динамические вычисления, бессерверная архитектура
 ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/16/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 30b187676f0c1fb03b7124d93b3991b0e32d61ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 19e088eee878695d24678d1df17b2848a4be1e01
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104683"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097540"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -84,7 +83,7 @@ ms.locfileid: "62104683"
 
 Следите за тем, что вы загружаете в рабочие приложения-функции. Память усредняется для каждой функции в приложении.
 
-При наличии общей сборки, указанной в нескольких функциях .NET, поместите его в общую папку. Создайте ссылку на сборку с помощью оператора, аналогичного следующему, если вы используете скрипты C# (CSX-файлы): 
+Если у вас есть общая сборка, на которую имеется ссылка в нескольких функциях .NET, поставьте ее в общую общую папку. Создайте ссылку на сборку с помощью оператора, аналогичного следующему, если вы используете скрипты C# (CSX-файлы): 
 
     #r "..\Shared\MyAssembly.dll". 
 
@@ -116,7 +115,7 @@ ms.locfileid: "62104683"
 
 Другие параметры конфигурации узла см. в [документации по конфигурации узлов](functions-host-json.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

@@ -7,18 +7,17 @@ author: MashaMSFT
 manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: conceptual
 ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c97793dc28b4ef097d8baa34678aeb92bf123809
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d376672336845958fb6434a78177f42aca938229
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473507"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70081971"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Обзор SQL Server на виртуальных машинах Azure (Linux)
 
@@ -50,11 +49,11 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 При настройке SQL Server в Linux установите пакет ядра СУБД, а затем некоторые дополнительные пакеты, в зависимости от ваших целей. Образы виртуальных машин Linux для SQL Server автоматически устанавливают большинство пакетов. В следующей таблице показаны установленные пакеты для каждого дистрибутива.
 
-| Дистрибутив | [Ядро СУБД](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Инструменты](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полнотекстовый поиск](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [SSIS](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
+| Распространение | [Ядро СУБД](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Инструменты](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полнотекстовый поиск](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [MSSQL Integration Services](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
 |---|---|---|---|---|---|---|
-| RHEL | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| SLES | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| Ubuntu | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) |
+| RHEL | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| SLES | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| Ubuntu | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) |
 
 ## <a name="related-products-and-services"></a>Связанные продукты и услуги
 
@@ -62,11 +61,11 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 * [Обзор виртуальных машин](../overview.md).
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Служба хранилища
 
 * [Введение в службу хранилища Microsoft Azure](../../../storage/common/storage-introduction.md)
 
-### <a name="networking"></a>Сеть
+### <a name="networking"></a>Сети
 
 * [Обзор виртуальной сети](../../../virtual-network/virtual-networks-overview.md)
 * [IP-адреса в Azure](../../../virtual-network/virtual-network-ip-addresses-overview-arm.md)
@@ -74,10 +73,10 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 ### <a name="sql"></a>SQL
 
-* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux).
+* [Документация по SQL Server в Linux](https://docs.microsoft.com/sql/linux)
 * [Сравнение со службой "База данных SQL"](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Начало работы с SQL Server на виртуальных машинах Azure с Linux:
 

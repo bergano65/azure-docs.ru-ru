@@ -10,19 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 2ce38add-1078-4bb9-a1da-6f407a9bc910
 ms.service: virtual-machines-windows
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3577128e66112bda5a5e3e08097d14604043cbd
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: f9b7ac97cb190073966f9be450e9f9e04014fbd7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709000"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078052"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -210,11 +209,11 @@ ms.locfileid: "67709000"
 
 В этой статье документе описываются шаги по подготовке инфраструктуры Azure, необходимые для установки и настройки высокодоступных систем SAP в отказоустойчивом кластере Windows (WSFC) с использованием масштабируемого файлового ресурса для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 Прежде чем начать установку, ознакомьтесь со следующей статьей:
 
-* [Руководство по архитектуре: Экземпляры кластера SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
+* [Руководство по архитектуре: Кластеризация экземпляров SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
 
 
 ## <a name="host-names-and-ip-addresses"></a>Имена узлов и IP-адреса
@@ -227,13 +226,13 @@ ms.locfileid: "67709000"
 | Имя сети кластера SAP ASCS PR1 |pr1-ascs | 10.0.6.7 | Н/Д |
 
 
-**Таблица 1**: Кластера ASCS/SCS
+**Таблица 1**. Кластер ASCS/SCS
 
 | \<SID> SAP | Количество экземпляров SAP ASCS/SCS |
 | --- | --- |
 | PR1 | 00 |
 
-**Таблица 2**: Сведения об экземпляре SAP ASCS/SCS
+**Таблица 2**. Сведения об экземпляре SAP ASCS/SCS
 
 
 | Роль имени виртуального узла | Имя виртуального узла | Статический IP-адрес | Группа доступности |
@@ -244,37 +243,37 @@ ms.locfileid: "67709000"
 | Имя сети кластера | sofs-cl | 10.0.6.13 | Н/Д |
 | Имя глобального узла SAP | sapglobal | Используйте IP-адреса всех узлов кластера | Н/Д |
 
-**Таблица 3**: Кластер масштабируемых файловых серверов
+**Таблица 3**. Кластер масштабируемый файловый сервер
 
 
 ## <a name="deploy-vms-for-an-sap-ascsscs-cluster-a-database-management-system-dbms-cluster-and-sap-application-server-instances"></a>Развертывание виртуальных машин для кластера SAP ASCS/SCS, кластера системы управления базами данных (СУБД) и экземпляров сервера приложений SAP
 
 Чтобы подготовить инфраструктуру Azure, выполните следующие действия.
 
-* [Подготовка инфраструктуры для шаблонов архитектуры 1, 2 и 3][sap-high-availability-infrastructure-wsfc-shared-disk].
+* [Подготовьте инфраструктуру для шаблонов архитектуры 1, 2 и 3][sap-high-availability-infrastructure-wsfc-shared-disk].
 
-* [Создание виртуальной сети Azure][sap-high-availability-infrastructure-wsfc-shared-disk-azure-network].
+* [Создайте виртуальную сеть Azure][sap-high-availability-infrastructure-wsfc-shared-disk-azure-network].
 
-* [Задать необходимые IP-адрес DNS адреса][sap-high-availability-infrastructure-wsfc-shared-disk-dns-ip].
+* [Задайте необходимые IP-адреса DNS][sap-high-availability-infrastructure-wsfc-shared-disk-dns-ip].
 
-* [Настройка статических IP-адресов для виртуальных машин SAP][sap-ascs-high-availability-multi-sid-wsfc-set-static-ip].
+* [Задайте статические IP-адреса для виртуальных машин SAP][sap-ascs-high-availability-multi-sid-wsfc-set-static-ip].
 
-* [Задать статический IP-адрес для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-set-static-ip-ilb].
+* [Задайте статический IP-адрес для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-set-static-ip-ilb].
 
-* [Задать балансировки нагрузки ASCS/SCS по умолчанию правила для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-default-ascs-ilb-rules].
+* [Задайте правила балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-default-ascs-ilb-rules].
 
-* [Изменение правил для внутреннего балансировщика нагрузки Azure балансировки нагрузки ASCS/SCS по умолчанию][sap-high-availability-infrastructure-wsfc-shared-disk-change-ascs-ilb-rules].
+* [Измените правила балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure][sap-high-availability-infrastructure-wsfc-shared-disk-change-ascs-ilb-rules].
 
-* [Добавление виртуальных машин Windows к домену][sap-high-availability-infrastructure-wsfc-shared-disk-add-win-domain].
+* [Добавление виртуальных машин Windows в домен][sap-high-availability-infrastructure-wsfc-shared-disk-add-win-domain].
 
-* [Добавление записей реестра для обоих узлов кластера экземпляра SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-add-win-domain].
+* [Добавьте записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-add-win-domain].
 
-* При использовании Windows Server 2016, мы рекомендуем настроить [облако-свидетель Azure][deploy-cloud-witness].
+* При использовании Windows Server 2016 рекомендуется настроить [Azure Cloud следящий][deploy-cloud-witness].
 
 
 ## <a name="deploy-the-scale-out-file-server-cluster-manually"></a>Развертывание кластера масштабируемых файловых серверов вручную 
 
-Можно развернуть кластер Microsoft Scale-Out File Server вручную, как описано в блоге [Storage Spaces Direct in Azure][ms-blog-s2d-in-azure], выполнив следующий код:  
+Кластер Microsoft масштабируемый файловый сервер можно развернуть вручную, как описано в [Локальные дисковые пространства блога в Azure][ms-blog-s2d-in-azure], выполнив следующий код:  
 
 
 ```powershell
@@ -319,13 +318,13 @@ Add-ClusterScaleOutFileServerRole -Name $SAPGlobalHostName
 
 ### <a name="use-managed-disks"></a>Использование управляемых дисков
 
-Шаблон Azure Resource Manager для развертывания масштабируемого файлового сервера с дисковыми пространствами и управляемых дисков Azure можно найти на [GitHub][arm-sofs-s2d-managed-disks].
+Шаблон Azure Resource Manager для развертывания масштабируемый файловый сервер с Локальные дисковые пространства и управляемыми дисками Azure можно найти на сайте [GitHub][arm-sofs-s2d-managed-disks].
 
 Рекомендуется использовать службу "Управляемые диски".
 
-![Рис. 1. Экран пользовательского интерфейса для шаблона диспетчера ресурсов файлового сервера для горизонтального масштабирования с управляемыми дисками][sap-ha-guide-figure-8010]
+![Рис. 1. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер диспетчер ресурсов с управляемыми дисками][sap-ha-guide-figure-8010]
 
-_**Рис. 1**: Экран пользовательского интерфейса для шаблона диспетчера ресурсов файлового сервера для горизонтального масштабирования с управляемыми дисками_
+_**Рис. 1**. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер диспетчер ресурсов с управляемыми дисками_
 
 В шаблоне выполните следующее.
 1. В поле **Vm Count** (Число виртуальных машин) введите минимальное число, равное **2**.
@@ -335,24 +334,24 @@ _**Рис. 1**: Экран пользовательского интерфейс
 
 ### <a name="use-unmanaged-disks"></a>Использование неуправляемых дисков
 
-Шаблон Azure Resource Manager для развертывания масштабируемого файлового сервера с дисковыми пространствами, так и неуправляемых дисков Azure можно найти на [GitHub][arm-sofs-s2d-non-managed-disks].
+Шаблон Azure Resource Manager для развертывания масштабируемый файловый сервер с Локальные дисковые пространства и неуправляемыми дисками Azure доступен на сайте [GitHub][arm-sofs-s2d-non-managed-disks].
 
-![Рис. 2. Экран пользовательского интерфейса для шаблона диспетчера ресурсов Azure масштабируемого файлового сервера без управляемых дисков][sap-ha-guide-figure-8011]
+![Рис. 2. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер Azure Resource Manager без управляемых дисков][sap-ha-guide-figure-8011]
 
-_**Рис. 2**: Экран пользовательского интерфейса для шаблона диспетчера ресурсов Azure масштабируемого файлового сервера без управляемых дисков_
+_**Рис. 2**. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер Azure Resource Manager без управляемых дисков_
 
 В поле **Тип учетной записи хранения** выберите **Хранилище класса "Премиум"** . Все прочие параметры совпадают с параметрами управляемых дисков.
 
 ## <a name="adjust-cluster-timeout-settings"></a>Настройка параметров времени ожидания кластера
 
-После успешной установки кластера Windows масштабируемого файлового сервера, адаптировать пороговые значения времени ожидания для обнаружения отработки отказа к условиям в Azure. Параметры, которые можно изменить, описаны в [настройке пороговых значений сети кластера отработки отказа][tuning-failover-cluster-network-thresholds]. Предположим, что кластеризованные виртуальные машины находятся в той же подсети, измените эти значения со следующими параметрами:
+После успешной установки кластера Windows масштабируемый файловый сервер необходимо адаптировать пороговые значения времени ожидания для обнаружения отработки отказа в условиях Azure. Параметры, которые необходимо изменить, описаны в статье [Настройка пороговых значений сети для отказоустойчивого кластера][tuning-failover-cluster-network-thresholds]. При условии, что кластеризованные виртуальные машины находятся в одной подсети, измените следующие параметры на следующие значения:
 
-- SameSubNetDelay = 2000
+- Самесубнетделай = 2000
 - SameSubNetThreshold = 15
-- RoutingHistoryLength = 30
+- Раутингхисториленгс = 30
 
-Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они являются достаточно устойчивыми, но они также обеспечивают быстрое достаточно отработки отказа в реальных условиях или сбоя виртуальной Машины.
+Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они достаточно устойчивы, но они также обеспечивают достаточную отработку отказа в реальных условиях возникновения ошибок или сбоя виртуальной машины.
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Установка высокодоступной системы SAP NetWeaver на Windows отказоустойчивого кластера и файлового ресурса для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]
+* [Установка высокого уровня доступности SAP NetWeaver в отказоустойчивом кластере Windows и в общей папке для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]

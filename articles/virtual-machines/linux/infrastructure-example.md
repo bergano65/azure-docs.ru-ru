@@ -11,17 +11,16 @@ ms.assetid: 281fc2c0-b533-45fa-81a3-728c0049c73d
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 63bdfa6f419d97696faa6545cbb1017a66cf0e2d
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 71b0dd15d183f3209c7424c537dde1e3df29d097
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667538"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083144"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-linux-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Linux
 В этой статье рассматривается создание примера инфраструктуры приложений. Мы подробно рассмотрим проектирование инфраструктуры для простого интернет-магазина, учтя все рекомендации и решения по соглашениям об именовании, группам доступности, виртуальным сетям и балансировщикам нагрузки, и фактически развернем виртуальные машины.
@@ -48,7 +47,7 @@ Adventure Works Cycles хочет создать приложение интер
 * Управляемые диски Azure
 * виртуальную сеть с двумя подсетями;
 * группы доступности для виртуальных машин с аналогичной ролью;
-* Виртуальные машины
+* ВМ
 
 Все вышеуказанное соответствует соглашению об именовании.
 
@@ -61,7 +60,7 @@ Adventure Works Cycles хочет создать приложение интер
 ## <a name="azure-subscriptions-and-accounts"></a>Подписки и учетные записи Azure
 Компания Adventure Works Cycles использует подписку Enterprise Subscription под названием "Adventure Works Enterprise Subscription" для выставления счетов за эту рабочую нагрузку ИТ-среды.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 В компании Adventure Works Cycles решили использовать Управляемые диски Azure. При создании виртуальных машин используются хранилища обоих уровней:
 
 * **хранилище уровня "Стандартный"** для веб-серверов, серверов приложений, контроллеров домена и их дисков данных;
@@ -73,10 +72,10 @@ Adventure Works Cycles хочет создать приложение интер
 Облачная виртуальная сеть создана на портале Azure с указанием следующих параметров:
 
 * Имя: AZOS-USE-VN01
-* Расположение. Восток США 2
+* Расположение. Восточная часть США 2
 * Диапазон адресов виртуальной сети: 10.0.0.0/8
 * Первая подсеть:
-  * Имя: FrontEnd
+  * Имя: Интерфейсный
   * Диапазон адресов: 10.0.1.0/24
 * Вторая подсеть:
   * Имя: BackEnd
@@ -90,7 +89,7 @@ Adventure Works Cycles хочет создать приложение интер
 * **azos-use-as-db** для серверов в сегментированном кластере MongoDB;
 * **azos-use-as-dc** для контроллеров домена.
 
-## <a name="virtual-machines"></a>Виртуальные машины
+## <a name="virtual-machines"></a>ВМ
 Компания Adventure Works Cycles использует следующие имена для своих виртуальных машин Azure:
 
 * **azos-use-vm-web01** для первого веб-сервера;

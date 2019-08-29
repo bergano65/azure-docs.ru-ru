@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 1ed9e8cc9d05aef81175acb3bc0efd953e1bf1c4
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 7538e47a1d0bed0c72ff5ed467c98828cc9c18ba
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480408"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086646"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Выходная привязка Центра уведомлений для службы "Функции Azure"
 
@@ -27,7 +26,7 @@ ms.locfileid: "67480408"
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
 > [!IMPORTANT]
-> Google имеет [рекомендуется к использованию Google Cloud Messaging (GCM) пользу Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). Эта привязка вывода не поддерживает FCM. Для отправки уведомлений с использованием FCM, использовать [Firebase API](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) непосредственно в функции или использование [шаблонные уведомления](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
+> В Google используется [устаревший Google Cloud Messaging (gcm) в пользу Firebase Cloud Messaging (FCM)](https://developers.google.com/cloud-messaging/faq). Эта выходная привязка не поддерживает FCM. Чтобы отправлять уведомления с помощью FCM, используйте [API Firebase](https://firebase.google.com/docs/cloud-messaging/server#choosing-a-server-option) непосредственно в функции или используйте [уведомления шаблона](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md).
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
@@ -249,15 +248,15 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 Параметры конструктора атрибута и его свойства описаны в разделе [конфигурации](#configuration).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `NotificationHub`:
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
-|**type** |Недоступно| Для этого свойства следует задать значение notificationHub. |
-|**direction** |Недоступно| Для этого свойства необходимо задать значение out. | 
-|**name** |Недоступно| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
+|**type** |Н/Д| Для этого свойства следует задать значение notificationHub. |
+|**direction** |Н/Д| Для этого свойства необходимо задать значение out. | 
+|**name** |Н/Д| Имя переменной, используемой в коде функции для сообщения Центра уведомлений. |
 |**tagExpression** |**TagExpression** | Выражения тегов позволяют указать, что уведомления должны отправляться на устройства, зарегистрированные для получения уведомлений, соответствующих выражению тега.  Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](../notification-hubs/notification-hubs-tags-segment-push-message.md). |
 |**hubName** | **HubName** | Имя ресурса Центра уведомлений на портале Azure. |
 |**подключение** | **ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения Центров уведомлений.  Для нее необходимо задать значение *DefaultFullSharedAccessSignature* для Центра уведомлений. Ознакомьтесь с разделом [Настройка строки подключения](#connection-string-setup) далее в этой статье.|
@@ -302,11 +301,11 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочные материалы |
+| Привязка | Ссылка |
 |---|---|
-| Центр уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
+| Концентратор уведомлений | [Руководство по операциям](https://docs.microsoft.com/rest/api/notificationhubs/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
