@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 09/22/2018
 ms.custom: mvc
 ms.author: aschhab
-ms.openlocfilehash: 0ab658b26a44e98b073c477c1aaeeb683372ee46
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 0f3995e8904396dbb0bcbeeea1f993913d68587e
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65988491"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013120"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -97,7 +97,7 @@ ms.locfileid: "65988491"
 
 ### <a name="sas-rbac-and-managed-identities-for-azure-resources"></a>Использование управляемых удостоверений, RBAC и подписанного URL-адреса для ресурсов Azure
 
-Служебная шина поддерживает такие протоколы безопасности, как [подписанный URL-адрес](service-bus-sas.md) (SAS), [управление доступом на основе ролей](service-bus-role-based-access-control.md) (RBAC) и [управляемые удостоверения для ресурсов Azure](service-bus-managed-service-identity.md).
+Служебная шина поддерживает такие протоколы безопасности, как [подписанный URL-адрес](service-bus-sas.md) (SAS), [управление доступом на основе ролей](authenticate-application.md) (RBAC) и [управляемые удостоверения для ресурсов Azure](service-bus-managed-service-identity.md).
 
 ### <a name="geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление
 
@@ -119,7 +119,7 @@ ms.locfileid: "65988491"
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 - [Функции](https://azure.microsoft.com/services/functions/) 
 - [Dynamics 365](https://dynamics.microsoft.com)
-- [Анализ потока](https://azure.microsoft.com/services/stream-analytics/)
+- [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
  
 ## <a name="next-steps"></a>Дополнительная информация
 
