@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: haroldw
-ms.openlocfilehash: 91b37753ae80596612eda9d3ccd34858691e35ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9f1072954e01f718fd3d9f03430b6ed6666bb62
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771555"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70082596"
 ---
 # <a name="deploy-openshift-container-platform-or-okd-in-azure-stack"></a>Развертывание платформы контейнеров OpenShift (OKD) в Azure Stack
 
@@ -69,7 +68,7 @@ ms.locfileid: "60771555"
 
 Инструкции по развертыванию с помощью Azure CLI вы найдете в соответствующем разделе документации по [платформе контейнеров OpenShift](./openshift-container-platform.md) или [OKD](./openshift-okd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Задачи, выполняемые после развертывания](./openshift-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-troubleshooting.md)

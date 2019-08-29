@@ -9,12 +9,12 @@ ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.topic: conceptual
 ms.date: 07/19/2019
-ms.openlocfilehash: e1285f6bc3bd081eae03cf1e5a124a86cac7a2ae
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 62b96fa8722408aed81e87cb31218140fa4f5da8
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335990"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099406"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Модель ценообразования для Azure Logic Apps
 
@@ -61,7 +61,7 @@ ms.locfileid: "68335990"
 
   * **SKU для разработчиков**: До 4 более стандартных учетных записей или до 5 общих стандартных учетных записей. Нет базовых учетных записей.
 
-Дополнительные сведения об ограничениях учетной записи интеграции см. в разделе [ограничения Logic Apps и конфигурация](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Дополнительные сведения об [уровнях учетных записей интеграции и их модели ценообразования см](#integration-accounts) . Далее в этом разделе. 
+Дополнительные сведения об ограничениях учетной записи интеграции см. в разделе [ограничения Logic Apps и конфигурация](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Дополнительные сведения об [уровнях учетных записей интеграции и их модели ценообразования см](#integration-accounts) . Далее в этом разделе.
 
 Для SKU "Премиум", базовое устройство имеет фиксированную емкость, поэтому, если требуется дополнительная пропускная способность, можно [добавить дополнительные единицы масштабирования](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity)во время создания или позже. SKU для разработчиков ИНТЕГРИРОВАНной среды разработки не имеют возможности добавлять дополнительные единицы масштабирования. Приложения логики, работающие в интегрированной среде сценариев, не приводят к затратам на хранение данных.
 

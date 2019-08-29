@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/19/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 0704db7444756fb44c5587ae8e8e743f671c9dcc
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 5f34f5e0c622ff107da880d9a4a77c63568b63b0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907946"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100937"
 ---
 # <a name="protect-azure-data-and-storage-services-in-azure-security-center"></a>Защита данных и служб хранилища Azure в центре безопасности Azure
 В этом разделе показано, как просмотреть и реализовать рекомендации по обеспечению безопасности для данных и ресурсов хранения. Центр безопасности Azure обнаружил эти рекомендации при анализе состояния безопасности ресурсов Azure.
@@ -78,7 +78,6 @@ ms.locfileid: "69907946"
 Дополнительные сведения о рекомендациях, относящихся к другим типам ресурсов Azure, см. в следующих разделах:
 
 * [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
-* [Защита приложений в центре безопасности Azure.](security-center-application-recommendations.md)
 * [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)
 
 Дополнительные сведения о центре безопасности см. в следующих разделах:

@@ -10,16 +10,15 @@ ms.assetid: 364cd53e-88fb-4301-a093-f132fa1f88f5
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 2e53b0d582a69e10de22e85720833800d44058e3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e33d981429f0e79accbe47ea0edea5f3c7a2157b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66141485"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072211"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Как использовать управление доступом на основе ролей в службе управления API Azure
 
@@ -33,7 +32,7 @@ ms.locfileid: "66141485"
 
 В таблице ниже содержатся краткие описания встроенных ролей. Эти роли можно назначать с помощью портала Azure или других инструментов, включая Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) и [REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). Дополнительные сведения о том, как назначать встроенные роли, см. в разделе [Начало работы с управлением доступом на портале Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
-| Роль          | Доступ на чтение<sup>[1]</sup> | Доступ на запись<sup>[2]</sup> | Создание, удаление и масштабирование служб, настройка VPN и личных доменов | Доступ к устаревшему порталу издателя | Описание
+| Role          | Доступ на чтение<sup>[1]</sup> | Доступ на запись<sup>[2]</sup> | Создание, удаление и масштабирование служб, настройка VPN и личных доменов | Доступ к устаревшему порталу издателя | Описание
 | ------------- | ---- | ---- | ---- | ---- | ---- 
 | Azure API Management Service Contributor | ✓ | ✓ | ✓ | ✓ | Суперпользователь. Имеет полный доступ CRUD к службам и сущностям управления API (например, к интерфейсам API и политикам). Имеет доступ к устаревшему порталу издателя. |
 | Azure API Management Service Reader | ✓ | | || Имеет доступ на чтение к службам и сущностям управления API. |
@@ -52,7 +51,7 @@ ms.locfileid: "66141485"
 Если ни одна из встроенных ролей не удовлетворяет вашим потребностям, можно создать пользовательские роли, которые обеспечат более детализированное управление доступом к сущностям управления API. Например, можно создать пользовательскую роль, которая имеет доступ на чтение к службе управления API и доступ на запись к одному конкретному API. Дополнительные сведения о пользовательских ролях см. в описании [пользовательских ролей в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/custom-roles). 
 
 > [!NOTE]
-> Чтобы иметь возможность экземпляра управления API на портале Azure см. в разделе, необходимо включить настраиваемую роль ```Microsoft.ApiManagement/service/read``` действие.
+> Чтобы иметь возможность видеть экземпляр управления API в портал Azure, пользовательская роль должна включать ```Microsoft.ApiManagement/service/read``` действие.
 
 При создании пользовательской роли проще всего начать с одной из встроенных ролей. Измените атрибуты и добавьте необходимые действия **Actions**, **notActions** или области **AssignableScopes**, а затем сохраните изменения как новую роль. В следующем примере на основе роли Azure API Managment Service Reader создается пользовательская роль Calculator API Editor. Пользовательскую роль можно назначить конкретному API. Следовательно, эта роль получит доступ только к этому API. 
 
@@ -78,7 +77,7 @@ New-AzRoleAssignment -ObjectId <object ID of the user account> -RoleDefinitionNa
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше об управлении доступом на основе ролей в Azure, см. следующие статьи:
   * [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md)

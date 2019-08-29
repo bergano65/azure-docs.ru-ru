@@ -1,5 +1,5 @@
 ---
-title: Создание коллекций общего образа с помощью Azure CLI | Документация Майкрософт
+title: Создание коллекций с общими изображениями с помощью Azure CLI | Документация Майкрософт
 description: В этой статье вы узнаете, как с помощью Azure CLI создать общий образ виртуальной машины Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -9,7 +9,6 @@ editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
@@ -17,12 +16,12 @@ ms.date: 05/06/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 5001e6a58bb309ddf9446b1a56b31eb9f37a138d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: ea884b80698fb257106ef68d293f350b2f55dc06
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708896"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103551"
 ---
 # <a name="create-a-shared-image-gallery-with-the-azure-cli"></a>Создание коллекции общих образов с помощью Azure CLI
 
@@ -47,7 +46,7 @@ ms.locfileid: "67708896"
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Создание виртуальной Машины из последнюю версию образа с помощью [Создание виртуальной машины az](/cli/azure/vm#az-vm-create).
+Создайте виртуальную машину из последней версии образа с помощью команды [AZ VM Create](/cli/azure/vm#az-vm-create).
 
 ```azurecli-interactive 
 az vm create\
@@ -57,16 +56,16 @@ az vm create\
    --generate-ssh-keys
 ```
 
-Также можно использовать конкретную версию, используя идентификатор версии изображения для `--image` параметра. Например, чтобы использовать версию образа *1.0.0* типа: `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`.
+Вы также можете использовать определенную версию с помощью идентификатора версии образа для `--image` параметра. Например, чтобы использовать тип Image версии *1.0.0* : `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`.
 
 [!INCLUDE [virtual-machines-common-gallery-list-cli](../../../includes/virtual-machines-common-gallery-list-cli.md)]
 
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-cli](../../../includes/virtual-machines-common-shared-images-update-delete-cli.md)]
 
 ## <a name="next-steps"></a>Следующие шаги
-[Azure Image Builder (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версии образа, его можно использовать даже для обновления и [Создание новой версии образа с существующей версии образа](image-builder-gallery-update-image-version.md). 
+С помощью [построителя образов Azure (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](image-builder-gallery-update-image-version.md). 
 
-Можно также создать коллекции образов общих ресурсов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
+Вы также можете создавать ресурсы коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
 - [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)

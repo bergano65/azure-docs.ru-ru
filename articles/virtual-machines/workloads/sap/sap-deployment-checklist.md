@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: abe04a88f3337ed26b98815b5633fd5d719b7ce3
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 2d6170dead4e8577cea6883ffea25b90ebe39b88
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234225"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079012"
 ---
 # <a name="sap-workload-on-azure-planning-and-deployment-checklist"></a>Контрольный список для планирования и развертывания рабочей нагрузки SAP в Azure 
 
@@ -99,7 +98,7 @@ ms.locfileid: "68234225"
       3.  Оцените и протестируйте размеры виртуальных машин Azure на предмет максимальной пропускной способности хранилища и сети для разных типов виртуальных машин, которые вы выбрали на этапе планирования. Эти данные можно найти здесь:
           1.  [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json). При выборе размера важно учитывать **максимальную пропускную способность некэшированных дисков**.
           2.  [Размеры виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json). При выборе размера важно учитывать **максимальную пропускную способность некэшированных дисков**.
-   2. Хранилище
+   2. Служба хранилища
       1.  Используйте [хранилище Azure SSD (цен. Категория "Стандартный")](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#standard-ssd) как минимум для виртуальных машин, представляющих уровни приложений SAP, и для развертывания СУБД, не учитывающих производительность.
       2.  Мы рекомендуем не использовать [диски HDD (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#standard-hdd) в целом.
       2.  Использование [хранилища Azure класса Premium](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#premium-ssd) для любых ВИРТУАЛЬНЫХ машин СУБД с конфиденциальной производительностью
@@ -109,7 +108,7 @@ ms.locfileid: "68234225"
       5.  Системы SAP HANA подробнее описаны в разделе [Конфигурации инфраструктуры SAP HANA и работа с ней в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations).
       6.  Никогда не подключайте диски данных Azure к виртуальной машине Linux Azure через идентификатор устройства. Вместо этого используйте универсальный уникальный идентификатор (UUID). Будьте внимательны, например, при использовании графических средств для подключения дисков данных Azure. Дважды проверьте записи в /etc/fstab, чтобы убедиться, что диски подключены с использованием UUID.
           1.  Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#connect-to-the-linux-vm-to-mount-the-new-disk).
-   3. Сеть
+   3. Сети
       1.  Протестируйте и оцените инфраструктуру виртуальных сетей и распределение приложений SAP в одной или разных виртуальных сетях Azure.
           1.  Оцените архитектуру виртуальной сети типа "звезда" или микросегментирование в пределах одной виртуальной сети Azure на основе следующих факторов:
               1.  Затраты на обмен данными между [пиринговыми виртуальными сетями Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview). Для этого ознакомьтесь с [ценами на виртуальную сеть](https://azure.microsoft.com/pricing/details/virtual-network/).
@@ -251,7 +250,7 @@ ms.locfileid: "68234225"
         4.  запись на диск (КБ/с) — для каждого отдельного диска; 
         5.  число операций записи на диск в секунду — для каждого отдельного диска;
         6.  длительность операций записи на диск (мс) — для каждого отдельного диска.
-    5.  Сеть 
+    5.  Network 
         1.  число входящих сетевых пакетов в секунду;
         2.  число исходящих сетевых пакетов в секунду;
         3.  входящий сетевой трафик (КБ/с);

@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 5b406f9c7f8c16038561853170896d2cd95dc383
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 852530910f7a8c6c815493d0dbcc57f67695d6de
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444852"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066108"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера распознавания языка в Службе Azure Kubernetes
 
 Узнайте, как развертывать контейнер распознавания языка. В статье описано, как создавать локальные контейнеры Docker, отправлять их в закрытый реестр контейнеров и запускать в кластере Kubernetes, а также тестировать в веб-браузере.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
 
@@ -62,19 +62,19 @@ ms.locfileid: "67444852"
 
 1. Вход в Azure CLI
 
-    ```azurecli
+    ```azurecli-interactive
     az login
     ```
 
 1. Создайте группу ресурсов с именем `cogserv-container-rg`, в которой будут размещены все созданные в этой процедуре ресурсы.
 
-    ```azurecli
+    ```azurecli-interactive
     az group create --name cogserv-container-rg --location westus
     ```
 
 1. Создайте Реестр контейнеров Azure, указав для него имя с постфиксом `registry`, например `pattyregistry`. Не используйте в имени символы дефиса или подчеркивания.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
     ```
 
@@ -104,7 +104,7 @@ ms.locfileid: "67444852"
 
 1. Войдите в реестр контейнеров Необходимо войти в систему, чтобы публиковать образы в реестр.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr login --name pattyregistry
     ```
 
@@ -174,7 +174,7 @@ ms.locfileid: "67444852"
 
 1. Создайте субъект-службу.
 
-    ```azurecli
+    ```azurecli-interactive
     az ad sp create-for-rbac --skip-assignment
     ```
 
@@ -193,7 +193,7 @@ ms.locfileid: "67444852"
 
 1. Получите идентификатор реестра контейнеров.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr show --resource-group cogserv-container-rg --name pattyregistry --query "id" --o table
     ```
 
@@ -208,7 +208,7 @@ ms.locfileid: "67444852"
 
 1. Чтобы правильно предоставить кластеру AKS права доступа для использования образов, хранящихся в реестре контейнеров, создайте назначение роли. Замените `<appId>` и `<acrId>` значениями, полученными на двух предыдущих шагах.
 
-    ```azurecli
+    ```azurecli-interactive
     az role assignment create --assignee <appId> --scope <acrId> --role Reader
     ```
 
@@ -216,7 +216,7 @@ ms.locfileid: "67444852"
 
 1. Создание кластера Kubernetes. Все значения параметров, кроме имени взяты из предыдущих разделов. Выберите имя, которое описывает понять, кто и зачем его создал, например `patty-kube`.
 
-    ```azurecli
+    ```azurecli-interactive
     az aks create --resource-group cogserv-container-rg --name patty-kube --node-count 2  --service-principal <appId>  --client-secret <client-secret>  --generate-ssh-keys
     ```
 
@@ -284,7 +284,7 @@ ms.locfileid: "67444852"
 
 1. Получите учетные данные кластера Kubernetes.
 
-    ```azurecli
+    ```azurecli-interactive
     az aks get-credentials --resource-group cogserv-container-rg --name patty-kube
     ```
 
@@ -313,14 +313,14 @@ ms.locfileid: "67444852"
 
 1. Измените строки развертывания интерфейса распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    Параметры развертывания интерфейса распознавания языка|Назначение|
+    Параметры развертывания интерфейса распознавания языка|Цель|
     |--|--|
     |Строка 32<br> Свойство `image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
     |Строка 44<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
 
 1. Измените строки развертывания распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    |Параметры развертывания распознавания языка|Назначение|
+    |Параметры развертывания распознавания языка|Цель|
     |--|--|
     |Строка 78<br> Свойство `image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
     |Строка 95<br> Свойство `name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
@@ -397,7 +397,7 @@ replicaset.apps/language-frontend-68b9969969   1         1         1         13h
 
 Когда вы закончите работу с кластером, удалите группу ресурсов Azure.
 
-```azure-cli
+```azurecli-interactive
 az group delete --name cogserv-container-rg
 ```
 
@@ -405,7 +405,7 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

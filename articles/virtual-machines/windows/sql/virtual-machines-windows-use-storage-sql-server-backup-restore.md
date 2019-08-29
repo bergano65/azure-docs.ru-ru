@@ -8,18 +8,17 @@ manager: craigg
 tags: azure-service-management
 ms.assetid: 0db7667d-ef63-4e2b-bd4d-574802090f8b
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/31/2017
 ms.author: mikeray
-ms.openlocfilehash: 1b6660a1565b3c119cc1dec0823870c7dd5bd24f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cb19dc7262721e672bd3f54b32db9188dad7fee0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61477150"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101892"
 ---
 # <a name="use-azure-storage-for-sql-server-backup-and-restore"></a>Использование службы хранилища Azure для архивации и восстановления SQL Server
 ## <a name="overview"></a>Обзор
@@ -66,7 +65,7 @@ SQL Server 2016 содержит новые возможности: можно �
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 1. Если у вас ее еще нет, создайте учетную запись Azure. При оценке затрат на Azure рассмотрите [бесплатную пробную версию](https://azure.microsoft.com/free/).
 2. Затем следуйте одному из следующих учебников, в которых описывается создание учетной записи и выполнение восстановления.
    

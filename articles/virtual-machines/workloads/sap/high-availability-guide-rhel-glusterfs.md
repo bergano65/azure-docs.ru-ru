@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 484a0043b9b5eefa5491dee75e87244d1c001620
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd5014de622c37950c15006c2cc4dcbbb27ef8e1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711280"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101129"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -44,7 +43,7 @@ ms.locfileid: "60711280"
 [sap-hana-ha]:sap-hana-high-availability-rhel.md
 
 В этой статье описывается развертывание виртуальных машин, их настройка и установка кластера GlusterFS, который можно использовать для хранения общих данных высокодоступной системы SAP.
-В этом руководстве описывается настройка кластера GlusterFS, который используется двумя системами SAP: NW1 и NW2. Имена ресурсов (например, виртуальных машин или виртуальных сетей) в примере предполагают, что вы использовали [шаблон файлового сервера SAP][template-file-server] с префиксом ресурсов **glust**.
+В этом руководстве описывается настройка кластера GlusterFS, который используется двумя системами SAP: NW1 и NW2. Имена ресурсов (например, виртуальных машин, виртуальных сетей) в примере предполагают, что вы использовали [шаблон файлового сервера SAP][template-file-server] с префиксом ресурса **глуст**.
 
 Сначала прочитайте следующие примечания и документы SAP:
 
@@ -62,9 +61,9 @@ ms.locfileid: "60711280"
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure (эта статья)][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP в Linux][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
+* [Развертывание СУБД на виртуальных машинах Azure для SAP в Linux][dbms-guide]
 * [Документация по хранилищу Red Hat Gluster](https://access.redhat.com/documentation/red_hat_gluster_storage/)
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
@@ -89,7 +88,7 @@ ms.locfileid: "60711280"
 В Azure Marketplace доступен образ для Red Hat Enterprise Linux, который можно использовать для развертывания новых виртуальных машин.
 Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, группу доступности и т. д. Выполните следующее, чтобы развернуть шаблон.
 
-1. Откройте [шаблон файлового сервера SAP][template-file-server] на портале Azure.
+1. Откройте [шаблон файлового сервера SAP][template-file-server] в портал Azure
 1. Задайте следующие параметры.
    1. Префикс ресурса  
       Введите префикс, который вы хотите использовать. Значение будет использоваться в качестве префикса для развертываемых ресурсов.
@@ -106,7 +105,7 @@ ms.locfileid: "60711280"
 Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах.
 
 1. Создание группы ресурсов
-1. Создайте виртуальную сеть
+1. Создать виртуальную сеть
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
@@ -349,11 +348,11 @@ ms.locfileid: "60711280"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
+* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
 * Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
-* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].
+* Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha] .

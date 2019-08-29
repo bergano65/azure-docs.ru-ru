@@ -1,25 +1,24 @@
 ---
-title: Azure выражения функции привязки и шаблоны
-description: Узнайте, как создать различные выражения привязки функций Azure, исходя из распространенных шаблонов.
+title: Выражения и шаблоны привязок функций Azure
+description: Научитесь создавать различные выражения привязки функций Azure на основе общих шаблонов.
 services: functions
 documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: b9a44bd058e6148c6210c5e3be93745d18d8cb74
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: db6f4f938b1555091dc51e310d4d31f96f93200c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480424"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097351"
 ---
-# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки в функциях Azure
+# <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
 
-Одной из наиболее мощных функций [триггеров и привязок](./functions-triggers-bindings.md) — *выражения привязки*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
+Одной из самых эффективных функций триггеров [и привязок](./functions-triggers-bindings.md) являются *выражения привязки*. В файле *function.json* и в параметрах функции и коде можно использовать выражения, которые разрешаются в значения из различных источников.
 
 Большинство выражений определяются путем их заключения в фигурные скобки. Например, в функции триггера очереди `{queueTrigger}` разрешается в текст сообщения очереди. Если свойство `path` для выходной привязки большого двоичного объекта — `container/{queueTrigger}`, а функция активируется сообщением очереди `HelloWorld`, создается большой двоичный объект с именем `HelloWorld`.
 
@@ -147,7 +146,7 @@ public static void Run(
 * QueueTrigger (содержимое активирующего сообщения, если строка допустима)
 * DequeueCount
 * ExpirationTime
-* Идентификатор
+* Id
 * InsertionTime
 * NextVisibleTime
 * PopReceipt
@@ -310,6 +309,6 @@ public class BlobName
 
 В C# и других языках .NET можно использовать шаблон императивной привязки, которая отличается от декларативной привязки в файле *function.json* или в атрибутах. Императивную привязку удобно использовать, когда параметры привязки должны вычисляться не при проектировании, а во время выполнения. Дополнительные сведения см. в [справочнике разработчика C#](functions-dotnet-class-library.md#binding-at-runtime) и [справочнике разработчика скриптов C#](functions-reference-csharp.md#binding-at-runtime).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Использование возвращаемого значения функции Azure](./functions-bindings-return-value.md)

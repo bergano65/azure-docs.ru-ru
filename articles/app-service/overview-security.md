@@ -10,17 +10,16 @@ editor: ''
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/24/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 0e592c03da222e5265ed53aab8ef73f3b477f33a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6f122abff1ac75bb1cb836f3389c96dfcdf60e0
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475866"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074121"
 ---
 # <a name="security-in-azure-app-service"></a>Безопасность в Службе приложений Azure
 
@@ -58,7 +57,7 @@ ms.locfileid: "66475866"
 
 По умолчанию приложение службы приложений принимает запросы со всех IP-адресов из Интернета, но вы можете ограничить доступ небольшим подмножеством IP-адресов. Служба приложений в Windows позволяет определить список IP-адресов, с которых разрешен доступ к вашему приложению. Список разрешений может содержать отдельные IP-адреса или их диапазон, который определяется маской подсети. Дополнительные сведения см. в статье [Ограничения статических IP-адресов в Службе приложений Azure](app-service-ip-restrictions.md).
 
-Для службы приложений в Windows вы также можете ограничить IP-адреса динамически, настроив _web.config_. Дополнительные сведения см. в разделе [Dynamic IP Security \<dynamicIpSecurity >](https://docs.microsoft.com/iis/configuration/system.webServer/security/dynamicIpSecurity/).
+Для службы приложений в Windows вы также можете ограничить IP-адреса динамически, настроив _web.config_. Дополнительные сведения см. в разделе [Dynamic IP \<Security динамиЦипсекурити >](https://docs.microsoft.com/iis/configuration/system.webServer/security/dynamicIpSecurity/).
 
 ## <a name="client-authentication-and-authorization"></a>Аутентификация и авторизация клиента
 
@@ -66,7 +65,7 @@ ms.locfileid: "66475866"
 
 Аутентификация и авторизация службы приложений поддерживают несколько поставщиков аутентификации, включая Azure Active Directory, учетные записи Майкрософт, Facebook, Google и Twitter. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в службе приложений Azure](overview-authentication-authorization.md).
 
-## <a name="service-to-service-authentication"></a>Взаимодействие между службами
+## <a name="service-to-service-authentication"></a>Аутентификация между службами
 
 При аутентификации внутренней службы служба приложений предоставляет два разных механизма в зависимости от ваших потребностей:
 

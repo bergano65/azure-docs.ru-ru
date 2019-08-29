@@ -6,16 +6,15 @@ author: alexkarcher-msft
 manager: jeconnoc
 ms.assetid: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: alkarche
-ms.openlocfilehash: 2fbf29385b9a14cf5d4a9df621f0767a32079587
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5f856bbd8f6fdec46d947a4c726024a08a2b6e9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61020995"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096039"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 
@@ -113,7 +112,7 @@ ms.locfileid: "61020995"
 
 Чтобы полностью отключить трассировку, добавьте `"debug":false` для конкретного прокси-сервера в `proxies.json`.
 
-## <a name="advanced-configuration"></a>Расширенная конфигурация
+## <a name="advanced-configuration"></a>Расширенная настройка
 
 Настроенные прокси-серверы хранятся в файле *proxies.json*, расположенном в корневом каталоге приложения-функции. Вы можете вручную изменить этот файл и развернуть его как часть приложения, используя любой из [методов развертывания](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment), поддерживаемых Функциями. 
 

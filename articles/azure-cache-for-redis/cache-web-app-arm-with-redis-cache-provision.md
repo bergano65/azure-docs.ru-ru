@@ -10,16 +10,15 @@ ms.assetid: 6e99c71f-ef8e-4570-a307-e4c059e60c35
 ms.service: app-service
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2017
 ms.author: yegu
-ms.openlocfilehash: 23b8e4e7e88f5b993f9b0f9981bbae6b884e2818
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b28ed58159545bca10ec89375b82b9c97ae38630
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65911307"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098240"
 ---
 # <a name="create-a-web-app-plus-azure-cache-for-redis-using-a-template"></a>Создание веб-приложения и экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -86,7 +85,7 @@ ms.locfileid: "65911307"
 ### <a name="web-app"></a>Веб-приложение
 Создает веб-приложение с именем, указанным в переменной **webSiteName** .
 
-Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти приложения, параметры создаются динамически на основании значений, предоставленных во время развертывания.
+Обратите внимание, что веб-приложение настроено со свойствами параметров приложения, которые позволяют ему работать с кэшем Redis для Azure. Эти параметры приложения создаются динамически на основе значений, указанных во время развертывания.
 
     {
       "apiVersion": "2015-08-01",
@@ -127,5 +126,5 @@ ms.locfileid: "65911307"
 ### <a name="powershell"></a>PowerShell
     New-AzResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -ResourceGroupName ExampleDeployGroup
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -g ExampleDeployGroup

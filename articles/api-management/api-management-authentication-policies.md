@@ -10,16 +10,15 @@ ms.assetid: 061702a7-3a78-472b-a54a-f3b1e332490d
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: apimpm
-ms.openlocfilehash: bd31d711c58a63b5c15712c1774d48433c62f18d
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 69584b434ac0442df48dcdea2a7d9f2aca9c1ccd
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774976"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073737"
 ---
 # <a name="api-management-authentication-policies"></a>Политики аутентификации в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -133,7 +132,7 @@ ms.locfileid: "68774976"
 
 ### <a name="elements"></a>Элементы  
   
-|Имя|Описание|Обязательное значение|  
+|Название|Описание|Обязательное значение|  
 |----------|-----------------|--------------|  
 |Проверка подлинности — управляемое удостоверение |Корневой элемент.|Да|  
   
@@ -143,7 +142,7 @@ ms.locfileid: "68774976"
 |----------|-----------------|--------------|-------------|  
 |ресурс|Строка. URI идентификатора приложения целевого веб-API (защищенный ресурс) в Azure Active Directory.|Да|Н/Д|  
 |Output-Token-переменная-имя|Строка. Имя переменной контекста, которая будет принимать значение токена в качестве типа `string`объекта. |Нет|Н/Д|  
-|ignore-error|Логическое значение. Если задано `true`значение, конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|False|  
+|ignore-error|Логическое значение. Если задано `true`значение, конвейер политики продолжит выполняться, даже если маркер доступа не получен.|Нет|false|  
   
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  

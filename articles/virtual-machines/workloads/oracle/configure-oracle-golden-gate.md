@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 39d1b8b860fd19261bd39c345d464dd37b48d871
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 40eaabb149e2e897ecd4e1109e0db7c42b990925
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707552"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101542"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 
@@ -49,7 +48,7 @@ Azure CLI используется для создания ресурсов Azur
 > | **Процесс Golden Gate** |EXTORA |REPORA|
 
 
-### <a name="sign-in-to-azure"></a>Вход в Azure 
+### <a name="sign-in-to-azure"></a>Войдите в Azure 
 
 Войдите в подписку Azure, используя команду [az login](/cli/azure/reference-index). Затем выполните инструкции на экране.
 
@@ -57,7 +56,7 @@ Azure CLI используется для создания ресурсов Azur
 az login
 ```
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
@@ -67,7 +66,7 @@ az login
 az group create --name myResourceGroup --location westus
 ```
 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создать группу доступности
 
 Следующий шаг необязателен, но мы рекомендуем его выполнить. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines).
 
@@ -79,7 +78,7 @@ az vm availability-set create \
     --platform-update-domain-count 2
 ```
 
-### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+### <a name="create-a-virtual-machine"></a>Создать виртуальную машину
 
 Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm). 
 
@@ -698,7 +697,7 @@ SQL> EXIT;
    MAP pdb1.test.*, TARGET pdb1.test.*;
    ```
 
-5. Настройте контрольную точку репликации:
+5. Настройка репликации контрольной точки:
 
    ```bash
    GGSCI> ADD REPLICAT REPORA, INTEGRATED, EXTTRAIL ./dirdat/rt

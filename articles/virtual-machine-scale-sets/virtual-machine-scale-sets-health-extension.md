@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: manayar
-ms.openlocfilehash: d1cff1011e190e5fbb2874657cbdfbdc68bde0c0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e074d76f9ed095725d99bddc9eb21925f4b3697c
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60619830"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114482"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания.
 
 В этой статье описывается, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В данной статье предполагается, что вы знакомы с:
 -   [Расширениями](../virtual-machines/extensions/overview.md) виртуальной машины Azure.
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -63,20 +63,20 @@ ms.locfileid: "60619830"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример | Тип данных
+| Название | Значение и пример | Тип данных
 | ---- | ---- | ---- 
 | apiVersion | `2018-10-01` | date |
-| publisher | `Microsoft.ManagedServices` | string |
-| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
-| typeHandlerVersion | `1.0` | int |
+| publisher | `Microsoft.ManagedServices` | строка |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
+| typeHandlerVersion | `1.0` | ssNoversion |
 
-### <a name="settings"></a>Параметры
+### <a name="settings"></a>Настройки
 
-| ИМЯ | Значение и пример | Тип данных
+| Название | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` или `tcp` | string |
-| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
-| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
+| protocol | `http` или `tcp` | строка |
+| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | ssNoversion |
+| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | строка |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.
@@ -149,16 +149,25 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
 
 Используйте команду [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set), чтобы добавить расширение "Работоспособность приложения" в определение модели масштабируемого набора.
 
-В следующем примере расширение "Работоспособность приложения" добавляется для модели масштабируемого набора на основе Windows.
+В следующем примере расширение работоспособности приложения добавляется в модель масштабируемого набора для масштабируемого набора на основе Linux.
 
 ```azurecli-interactive
 az vmss extension set \
-  --name ApplicationHealthWindows \
+  --name ApplicationHealthLinux \
   --publisher Microsoft.ManagedServices \
   --version 1.0 \
   --resource-group <myVMScaleSetResourceGroup> \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
+```
+Содержимое файла Extension. JSON.
+
+```json
+{
+  "protocol": "<protocol>",
+  "port": "<port>",
+  "requestPath": "</requestPath>"
+}
 ```
 
 
@@ -175,5 +184,5 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.ManagedServices.ApplicationHealthWindows\
 
 Журналы также периодически записывают состояние работоспособности приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

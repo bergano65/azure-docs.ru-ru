@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0442b987c502533bfbd55990f201a5c02b119804
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 70f0badc170c65b11bc244b5ed4ec2f9a205c72d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011299"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084863"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -273,4 +273,4 @@ ms.locfileid: "70011299"
 
 **Вопрос. Почему после ошибок синхронизации появляются события 6311 и 6401?**
 
-События 6311- **сервер обнаружил непредвиденную ошибку при выполнении обратного вызова** и 6401- **контроллер агента управления обнаружил непредвиденную ошибку** — всегда заносятся в журнал после ошибки шага синхронизации. Чтобы устранить эти ошибки, необходимо очистить ошибки шагов синхронизации.  Дополнительные сведения см. в статьях [Устранение ошибок во время синхронизации](tshoot-connect-sync-errors.md) и [Устранение неполадок синхронизации объектов с Azure AD Connect синхронизацией](/tshoot-connect-objectsync.md) .
+События 6311- **сервер обнаружил непредвиденную ошибку при выполнении обратного вызова** и 6401- **контроллер агента управления обнаружил непредвиденную ошибку** — всегда заносятся в журнал после ошибки шага синхронизации. Чтобы устранить эти ошибки, необходимо очистить ошибки шагов синхронизации.  Дополнительные сведения см. в статьях [Устранение ошибок во время синхронизации](tshoot-connect-sync-errors.md) и [Устранение неполадок синхронизации объектов с Azure AD Connect синхронизацией](tshoot-connect-objectsync.md) .

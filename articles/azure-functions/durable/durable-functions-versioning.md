@@ -6,16 +6,15 @@ author: cgillum
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 33ca6c36cd11d53a3c50a8374181c511fd2f8c3e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ef64a43cbed7f033a938351506b7f78142ff044c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60648159"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097621"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Управление версиями в устойчивых функциях (Функции Azure)
 
@@ -133,16 +132,16 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 #### <a name="functions-2x"></a>Функции 2.x
 
-По умолчанию используется значение `DurableFunctionsHub`.
+Значение по умолчанию — `DurableFunctionsHub`.
 
 Все сущности в службе хранилища Azure именуются на основе значения конфигурации `HubName`. Задавая новое имя для центра задач, вы гарантируете, что для новой версии приложения будут созданы отдельные очереди и таблица журнала.
 
 Мы советуем развертывать новую версию приложения-функции в новый [слот развертывания](https://blogs.msdn.microsoft.com/appserviceteam/2017/06/13/deployment-slots-preview-for-azure-functions/). Слоты развертывания позволяют параллельно запускать несколько копий приложения-функции, при этом только один слот может быть активным *рабочим* слотом. Предоставить новую логику оркестрации для имеющейся инфраструктуры может быть так же просто, как заменить новую версию в рабочем слоте.
 
 > [!NOTE]
-> Эта стратегия оптимально подходит при использовании триггеров HTTP и веб-перехватчика для функций оркестратора. Для триггеров, отличных от HTTP, таких как очереди или концентраторы событий, определение триггера должно [являются производными от параметр приложения](../functions-bindings-expressions-patterns.md#binding-expressions---app-settings) , обновляется как часть операции замены.
+> Эта стратегия оптимально подходит при использовании триггеров HTTP и веб-перехватчика для функций оркестратора. Для триггеров, отличных от HTTP, таких как очереди или концентраторы событий, определение триггера должно [быть производным от параметра приложения](../functions-bindings-expressions-patterns.md#binding-expressions---app-settings) , который обновляется как часть операции переключения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Узнайте, как управлять проблемами с производительностью и масштабированием](durable-functions-perf-and-scale.md)

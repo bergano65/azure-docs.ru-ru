@@ -7,17 +7,16 @@ author: tfitzmac
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: d8fa8b216ca6044adefe1398b58f5d14630540e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 196aeb69a1948a44afb8170fa5f48d42b978854d
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66137165"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070462"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -131,13 +130,13 @@ Set-AzKeyVaultAccessPolicy `
 
 В хранилище Key Vault выберите **Сертификаты** и нажмите **Создать или импортировать**, чтобы отправить сертификат.
 
-![Импорт сертификата](media/web-sites-rm-template-guidance/import-certificate.png)
+![Импортировать сертификат](media/web-sites-rm-template-guidance/import-certificate.png)
 
 В шаблоне укажите имя сертификата для `keyVaultSecretName`.
 
 Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Руководство по развертыванию веб-приложений с помощью шаблона см. [здесь](deploy-complex-application-predictably.md).
 * Сведения о синтаксисе JSON и свойствах типов ресурсов в шаблонах см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).

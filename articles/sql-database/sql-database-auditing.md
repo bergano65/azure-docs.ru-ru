@@ -7,20 +7,20 @@ ms.subservice: security
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: vainolo
-ms.author: arib
+author: barmichal
+ms.author: mibar
 ms.reviewer: vanto
-ms.date: 04/16/2019
-ms.openlocfilehash: 69fe3287083523a3a47975a3db51d7241681f5c4
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.date: 08/22/2019
+ms.openlocfilehash: c8533f79dd2bf02a03ff4a37283359f3b3a5bf39
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68569508"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066034"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
-Аудит [Базы данных SQL Azure](sql-database-technical-overview.md) и [Хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure, в рабочей области OMS или в Центрах событий. Аудит также дает следующие возможности:
+Аудит для [базы данных SQL](sql-database-technical-overview.md) Azure и [хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure, log Analytics рабочей области или концентраторах событий. Аудит также дает следующие возможности:
 
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
 
@@ -121,11 +121,22 @@ ms.locfileid: "68569508"
 
 - Используйте [портал Azure](https://portal.azure.com).  Откройте соответствующую базу данных. В верхней области страницы базы данных **Аудит** щелкните **Ознакомиться с журналами аудита**.
 
-    ![просмотр журналов аудита](./media/sql-database-auditing-get-started/7_auditing_get_started_blob_view_audit_logs.png)
+    ![просмотр журналов аудита](./media/sql-database-auditing-get-started/auditing-view-audit-logs.png)
 
-- Затем щелкните **Открыть в OMS** в верхней части страницы **Записи аудита**. Откроется представление журналов в Log Analytics, где можно настроить диапазон времени и поисковой запрос.
+- После этого у вас есть два способа просмотра журналов:
+    
+    Если щелкнуть **log Analytics** в верхней части страницы **записи аудита** , откроется представление журналы в log Analytics рабочей области, где можно настроить диапазон времени и поисковый запрос.
+    
+    ![открыть в Log Analytics рабочей области](./media/sql-database-auditing-get-started/auditing-log-analytics.png)
 
-    ![открытие в Log Analytics](./media/sql-database-auditing-get-started/auditing_open_in_oms.png)
+    Если щелкнуть **Просмотреть панель мониторинга** в верхней части страницы **записи аудита** , откроется панель мониторинга со сведениями о журналах аудита, где можно детализировать анализ безопасности, доступ к конфиденциальным данным и многое другое. Эта панель мониторинга предназначена для получения ценных сведений о безопасности данных.
+    Кроме того, можно настроить диапазон времени и поисковый запрос. 
+    ![Просмотр панели мониторинга Log Analytics](media/sql-database-auditing-get-started/auditing-view-dashboard.png)
+
+    ![Панель мониторинга Log Analytics](media/sql-database-auditing-get-started/auditing-log-analytics-dashboard.png)
+
+    ![Log Analytics ценная информация по безопасности](media/sql-database-auditing-get-started/auditing-log-analytics-dashboard-data.png)
+ 
 
 - Кроме того, к журналам аудита также можно перейти в колонке Log Analytics. Откройте рабочую область Log Analytics и в разделе **General** (Общие сведения) щелкните **Журналы**. Вы можете начать с простого запроса, например *выполните поиск SQLSecurityAuditEvents*, чтобы просмотреть журналы аудита.
     Здесь можно также использовать [журналы Azure Monitor](../log-analytics/log-analytics-log-search.md) для выполнения расширенного поиска по данным журнала аудита. Журналы Azure Monitor предоставляют оперативную аналитику в режиме реального времени с помощью встроенных средств поиска и настраиваемых панелей мониторинга для быстрого анализа миллионов записей во всех рабочих нагрузках и серверах. Дополнительные полезные сведения о языке и командах поиска журналов Azure Monitor см. в статье [Поиск по Azure Monitor журналов Справочник](../log-analytics/log-analytics-log-search.md).
@@ -257,7 +268,7 @@ ms.locfileid: "68569508"
 - [Получение политики *расширенного* аудита базы данных](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/get)
 - [Получить политику *расширенного* аудита сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
 
-## <a id="subheading-10"></a>Управление аудитом базы данных SQL с помощью шаблонов ARM
+## <a id="subheading-10"></a>Управление аудитом базы данных SQL с помощью шаблонов Azure Resource Manager
 
 Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
 

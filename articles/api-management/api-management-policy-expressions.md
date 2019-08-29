@@ -10,16 +10,15 @@ ms.assetid: ea160028-fc04-4782-aa26-4b8329df3448
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a42028891f0a8677127221c8ed4cff73a22103a
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: fa5e84ba62896969458b84cf014e2b35ee869df7
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498532"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072177"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
@@ -74,7 +73,7 @@ ms.locfileid: "68498532"
 ## <a name="CLRTypes"></a> Типы .NET Framework, допустимые в выражениях политики
 В следующей таблице перечислены типы .NET Framework и их члены, допустимые в выражениях политики.
 
-|Тип|Поддерживаемые члены|
+|Type|Поддерживаемые члены|
 |--------------|-----------------------|
 |Newtonsoft. JSON. форматирование|Все|
 |Newtonsoft. JSON. JsonConvert|Для SerializeObject, методов DeserializeObject|
@@ -210,18 +209,18 @@ ms.locfileid: "68498532"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Метка времени: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables). IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
+|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables). IReadOnlyDictionary<строка, объект><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
 |<a id="ref-context-operation"></a>локального. Операцию|Id: строка<br /><br /> Method: строка<br /><br /> Name: строка<br /><br /> UrlTemplate: строка|
-|<a id="ref-context-product"></a>локального. Продукта|Apis: IEnumerable <[иапи](#ref-iapi)\><br /><br /> ApprovalRequired: логическое значение<br /><br /> Группы: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Name: строка<br /><br /> State: enum ProductState {NotPublished, Published}<br /><br /> SubscriptionLimit: целое число?<br /><br /> SubscriptionRequired: логическое значение|
-|<a id="ref-context-request"></a>локального. Получения|Текст сообщения: [Имессажебоди](#ref-imessagebody) или `null` , если запрос не имеет текста.<br /><br /> Сертификат: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<строка, строка><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> URL-адрес: [иурл](#ref-iurl)|
+|<a id="ref-context-product"></a>локального. Продукта|Apis: IEnumerable <[иапи](#ref-iapi)\><br /><br /> ApprovalRequired: логическое значение<br /><br /> Groups: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Name: строка<br /><br /> State: enum ProductState {NotPublished, Published}<br /><br /> SubscriptionLimit: целое число?<br /><br /> SubscriptionRequired: логическое значение|
+|<a id="ref-context-request"></a>локального. Получения|Текст: [Имессажебоди](#ref-imessagebody) или `null` , если запрос не имеет текста.<br /><br /> Certificate: System.Security.Cryptography.X509Certificates.X509Certificate2<br /><br /> [Заголовки](#ref-context-request-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> IpAddress: строка<br /><br /> MatchedParameters: IReadOnlyDictionary<строка, строка><br /><br /> Method: строка<br /><br /> Оригиналурл: [иурл](#ref-iurl)<br /><br /> Url: [иурл](#ref-iurl)|
 |<a id="ref-context-request-headers"></a>контекст строки. Request. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: строка)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков запросов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
-|<a id="ref-context-response"></a>локального. Ответ|Текст сообщения: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
+|<a id="ref-context-response"></a>локального. Ответ|Текст: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary<строка, строка[]><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
 |<a id="ref-context-response-headers"></a>контекст строки. Response. Headers. GetValueOrDefault (Хеадернаме: строка, defaultValue: String)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков ответов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
 |<a id="ref-context-subscription"></a>локального. Подписчик|CreatedTime: DateTime<br /><br /> EndDate: DateTime?<br /><br /> Id: строка<br /><br /> Key: строка<br /><br /> Name: строка<br /><br /> PrimaryKey: строка<br /><br /> SecondaryKey: строка<br /><br /> StartDate: DateTime?|
-|<a id="ref-context-user"></a>локального. Нажат|Email: строка<br /><br /> FirstName: строка<br /><br /> Группы: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Identities: IEnumerable <[иусеридентити](#ref-iuseridentity)\><br /><br /> LastName: строка<br /><br /> Note: строка<br /><br /> RegistrationDate: DateTime|
+|<a id="ref-context-user"></a>локального. Нажат|Email: строка<br /><br /> FirstName: строка<br /><br /> Groups: IEnumerable <[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Identities: IEnumerable <[иусеридентити](#ref-iuseridentity)\><br /><br /> LastName: строка<br /><br /> Note: строка<br /><br /> RegistrationDate: DateTime|
 |<a id="ref-iapi"></a>иапи|Id: строка<br /><br /> Name: строка<br /><br /> Path: строка<br /><br /> Protocols: IEnumerable<строка\><br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> SubscriptionKeyParameterNames: [исубскриптионкэйпараметернамес](#ref-isubscriptionkeyparameternames)|
 |<a id="ref-igroup"></a>играуп|Id: строка<br /><br /> Name: строка|
 |<a id="ref-imessagebody"></a>имессажебоди|As<T\>(preserveContent: bool = false): Где T: String, Byte [], JObject, JToken, Жаррай, XNode, XElement, XDocument<br /><br /> Методы `context.Request.Body.As<T>` и `context.Response.Body.As<T>` используются для чтения текста сообщения запроса или ответа в одном из заданных форматов `T`. По умолчанию метод использует исходный поток текста сообщения и делает его недоступным после возвращения. Чтобы избежать этого, задайте для параметра `preserveContent` значение `true`, чтобы метод работал с копией потока текста. Перейдите по [этой](api-management-transformation-policies.md#SetBody) ссылке, чтобы увидеть пример.|

@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/10/2019
 ms.author: ejarvi
-ms.openlocfilehash: d544aae33faf60be00a2b4ea0a45f405efcedb39
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6a81f105f9632a7ca7e2bf7188e358274020c78f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706139"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084770"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -34,18 +33,18 @@ ms.locfileid: "67706139"
 
 ### <a name="operating-system"></a>Операционная система
 
-Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  См. в разделе [шифрования дисков Azure поддерживаемые операционные системы: Linux](../../security/azure-security-disk-encryption-prerequisites.md#linux) список дистрибутивов Linux, которые поддерживаются.
+Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  Ознакомьтесь с [поддерживаемыми операционными системами шифрования дисков Azure: Linux](../../security/azure-security-disk-encryption-prerequisites.md#linux) для поддерживаемого списка дистрибутивов Linux.
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
 При шифровании дисков Azure для Linux требуется подключение к Интернету для доступа к Active Directory, хранилищу Key Vault, хранения и конечным точкам управления пакетами.  См. список [необходимых компонентов для шифрования дисков Azure](../../security/azure-security-disk-encryption-prerequisites.md).
 
-## <a name="extension-schemata"></a>Расширение схемы
+## <a name="extension-schemata"></a>Schemata расширения
 
-Существуют две схемы для шифрования дисков Azure: v1.1, более новые и рекомендуемые схему, которая не использует свойства Azure Active Directory (AAD) и v0.1, более старую схему, требуются свойства AAD. Необходимо использовать версию схемы, соответствующее расширению, вы используете: v1.1 схемы для AzureDiskEncryptionForLinux расширение версии 1.1, v0.1 схемы для AzureDiskEncryptionForLinux версия расширения 0,1.
-### <a name="schema-v11-no-aad-recommended"></a>Версия 1.1 схемы. Нет AAD (рекомендуется)
+Существует два Schemata для шифрования дисков Azure: v 1.1, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 0,1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 1.1 для расширения AzureDiskEncryptionForLinux версии 1,1, схема v 0,1 для расширения AzureDiskEncryptionForLinux версии 0,1.
+### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: Нет AAD (рекомендуется)
 
-Схема v1.1 рекомендуется и не требует свойства Azure Active Directory.
+Рекомендуется использовать схему версии 1.1 и не требует Azure Active Directory свойств.
 
 ```json
 {
@@ -71,9 +70,9 @@ ms.locfileid: "67706139"
 ```
 
 
-### <a name="schema-v01-with-aad"></a>Схемы v0.1: с помощью AAD 
+### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
 
-Схема 0,1 требует `aadClientID` и либо `aadClientSecret` или `AADClientCertificate`.
+Для схемы 0,1 требуется `aadClientID` значение `aadClientSecret` и `AADClientCertificate`.
 
 С помощью `aadClientSecret`:
 
@@ -138,20 +137,20 @@ ms.locfileid: "67706139"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных |
+| Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | строка |
 | type | AzureDiskEncryptionForLinux | строка |
-| typeHandlerVersion | 0.1, 1.1 | ssNoversion |
-| (0,1 схема) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (0,1 схема) AADClientSecret | password | строка |
-| (0,1 схема) AADClientCertificate | thumbprint | строка |
+| typeHandlerVersion | 0,1, 1,1 | ssNoversion |
+| (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
+| (схема 0,1) AADClientSecret | password | строка |
+| (схема 0,1) аадклиентцертификате | thumbprint | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
 | KeyEncryptionKeyURL | url | строка |
-| (необязательно) KeyVaultURL | url | string |
+| используемых кэйваултурл | url | string |
 | Passphrase | password | строка | 
 | SequenceVersion | uniqueidentifier | строка |
 | VolumeType | OS, Data, All | строка |

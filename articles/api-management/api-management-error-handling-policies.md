@@ -10,16 +10,15 @@ ms.assetid: 3c777964-02b2-4f55-8731-8c3bd3c0ae27
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: apimpm
-ms.openlocfilehash: 87693caa5343e359bb3ab424de489c2270bbca62
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: df7b14c8221ab7837cabe968a82cfc5d5d9050c4
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64704441"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072584"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Обработка ошибок в политиках управления API
 
@@ -77,15 +76,15 @@ ms.locfileid: "64704441"
 
  Когда возникает ошибка и управление переходит к разделу политики `on-error`, информация об ошибке сохраняется в свойстве [context.LastError](api-management-policy-expressions.md#ContextVariables), к которому могут обратиться политики, определенные в разделе `on-error`. LastError имеет следующие свойства.  
   
-| Name       | Тип   | Описание                                                                                               | Обязательно для заполнения |
+| Название       | Тип   | Описание                                                                                               | Обязательное значение |
 |------------|--------|-----------------------------------------------------------------------------------------------------------|----------|
-| `Source`   | string | Указывает имя элемента, в котором произошла ошибка. Это может быть имя политики или встроенного шага конвейера.     | Да      |
-| `Reason`   | string | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
-| `Message`  | string | Описание ошибки в понятном для человека формате.                                                                         | Да      |
-| `Scope`    | string | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | Нет       |
-| `Section`  | string | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.       | Нет       |
-| `Path`     | string | Задает вложенные политики, например: choose[3]/when[2].                                                        | Нет       |
-| `PolicyId` | string | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | Нет       |
+| `Source`   | строка | Указывает имя элемента, в котором произошла ошибка. Это может быть имя политики или встроенного шага конвейера.     | Да      |
+| `Reason`   | строка | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
+| `Message`  | строка | Описание ошибки в понятном для человека формате.                                                                         | Да      |
+| `Scope`    | строка | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | Нет       |
+| `Section`  | строка | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.       | Нет       |
+| `Path`     | строка | Задает вложенные политики, например: choose[3]/when[2].                                                        | Нет       |
+| `PolicyId` | строка | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | Нет       |
 
 > [!TIP]
 > Доступ к коду состояния можно получить с помощью context.Response.StatusCode.  
@@ -99,8 +98,8 @@ ms.locfileid: "64704441"
 | `Source`        | Условие                                 | `Reason`                  | `Message`                                                                                                                |
 |---------------|-------------------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
 | настройка | URI не соответствует ни одному API или операции | OperationNotFound       | Unable to match incoming request to an operation. (Не удалось сопоставить входящий запрос с операцией.)                                                                      |
-| authorization | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
-| authorization | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
+| авторизация | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
+| авторизация | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
   
 ## <a name="predefined-errors-for-policies"></a>Стандартные ошибки для политик  
  Далее перечислены стандартные ошибки, которые могут возникнуть во время оценки политик.  
@@ -108,7 +107,7 @@ ms.locfileid: "64704441"
 | `Source`       | Условие                                                       | `Reason`                    | `Message`                                                                                                                              |
 |--------------|-----------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | rate-limit   | Превышено ограничение скорости                                             | RateLimitExceeded         | Rate limit is exceeded (Превышено ограничение скорости)                                                                                                               |
-| quota        | Превышена квота                                                  | QuotaExceeded             | превышена квота на количество вызовов. Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) -или- Out of bandwidth quota. (Превышена квота пропускной способности.) Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) |
+| квота        | Превышена квота                                                  | QuotaExceeded             | превышена квота на количество вызовов. Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) -или- Out of bandwidth quota. (Превышена квота пропускной способности.) Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) |
 | jsonp        | Недопустимое значение параметра обратного вызова (содержит неправильные символы) | CallbackParameterInvalid  | Value of callback parameter {callback-parameter-name} is not a valid JavaScript identifier. (Значение параметра обратного вызова {имя параметра обратного вызова} не является допустимым идентификатором JavaScript.)                                          |
 | ip-filter    | Не удалось проанализировать IP-адрес вызывающего объекта из запроса                          | FailedToParseCallerIP     | Failed to establish IP address for the caller. Access denied. (Не удалось установить IP-адрес вызывающего объекта. Доступ запрещен.)                                                                        |
 | ip-filter    | IP-адрес вызывающего объекта не входит в список разрешенных                                | CallerIpNotAllowed        | Caller IP address {ip-address} is not allowed. Access denied. (Недопустимый IP-адрес вызывающего объекта: {IP-адрес}. Доступ запрещен.)                                                                        |
@@ -174,7 +173,7 @@ ms.locfileid: "64704441"
 
 ![Ответ при ошибке авторизации](media/api-management-error-handling-policies/error-response.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

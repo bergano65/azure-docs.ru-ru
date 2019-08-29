@@ -6,16 +6,15 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 167f697d4928d88114a30739a1d39a576c87ac84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2cc60ee2c73aa6858f68d6b13a895a0188bb5735
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62126663"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098135"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -155,7 +154,7 @@ traces
 
 ![Запрос Application Insights](./media/durable-functions-diagnostics/app-insights-single-summary-query.png)
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
 Очень важно помнить о поведении воспроизведения оркестратора при записи журналов непосредственно из функции оркестратора. Например, рассмотрим следующую функцию оркестратора:
 
@@ -323,18 +322,18 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 > [!TIP]
 > При установке точек останова, если вы хотите прервать только выполнение без воспроизведения, можно задать условную точку останова, которая прерывается, только когда `IsReplaying` имеет значение `false`.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 
 По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Это означает, что вы можете проверить состояние вашей оркестрации с помощью средств, таких как [обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 
-![Снимок экрана обозревателя службы хранилища Azure](./media/durable-functions-diagnostics/storage-explorer.png)
+![Снимок экрана Обозреватель службы хранилища Azure](./media/durable-functions-diagnostics/storage-explorer.png)
 
 Это полезно для отладки, так как вы можете увидеть точное состояние оркестрации. Сообщения в очередях можно также проверить, чтобы узнать, какое действие находится в состоянии ожидания (или в некоторых случаях могло зависнуть).
 
 > [!WARNING]
 > Хотя просматривать журнал выполнения в службе таблиц более удобно, избегайте использования зависимостей в таблице. Они могут измениться при развитии расширения устойчивых функций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Таймеры в устойчивых функциях (Функции Azure)](durable-functions-timers.md)

@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: jonbeck
-ms.openlocfilehash: cb99a13b97c0dafa4ace358167d76faaffc30079
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: fdb21f2c96f66da140cdefa9a0b7b54dd2dc66ec
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710137"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102260"
 ---
 # <a name="storage-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для операций в хранилище
 
@@ -39,4 +38,4 @@ ms.locfileid: "67710137"
 
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 
-Узнайте, как [оптимизации производительности на виртуальных машинах серии Lsv2](storage-performance.md).
+Узнайте, как [оптимизировать производительность виртуальных машин серии Lsv2](storage-performance.md).

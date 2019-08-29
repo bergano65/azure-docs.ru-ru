@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 7a3cdab8e05a873e67788a72350d1bf3fde3cd18
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: 4865a2b3b02a1e7a6db19418122b66aeb79dd332
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70018205"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099467"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>Подключение к виртуальным сетям Azure из Azure Logic Apps с помощью среды службы интеграции (ISE)
 
@@ -88,7 +88,8 @@ ms.locfileid: "70018205"
 | Обмен данными с диспетчером трафика Azure | Входящий трафик | 443 | AzureTrafficManager | VirtualNetwork | |
 | Конструктор Logic Apps — динамические свойства | Входящий трафик | 454 | Интернет | VirtualNetwork | Запросы поступают из Logic Apps [доступа к входящим IP-адресам конечной точки в этом регионе](../logic-apps/logic-apps-limits-and-config.md#inbound). |
 | Зависимость от управления службой приложений | Входящий трафик | 454, 455 | AppServiceManagement | VirtualNetwork | |
-| Развертывание соединителя | Входящий трафик | 454, 3443 | Интернет | VirtualNetwork | Требуется для развертывания и обновления соединителей. Закрытие или блокировка этого порта приводит к сбою развертываний интегрированной среды сценариев и предотвращает обновления или исправления соединителя. |
+| Развертывание соединителя | Входящий трафик | 454 | азуреконнекторс | VirtualNetwork | Требуется для развертывания и обновления соединителей. Закрытие или блокировка этого порта приводит к сбою развертываний интегрированной среды сценариев и предотвращает обновления или исправления соединителя. |
+| Развертывание политики соединителей | Входящий трафик | 3443 | Интернет | VirtualNetwork | Требуется для развертывания и обновления соединителей. Закрытие или блокировка этого порта приводит к сбою развертываний интегрированной среды сценариев и предотвращает обновления или исправления соединителя. |
 | Зависимость SQL Azure | Исходящие | 1433 | VirtualNetwork | SQL | |
 | Работоспособность ресурсов Azure | Исходящие | 1886 | VirtualNetwork | AzureMonitor | Для публикации состояния работоспособности в Работоспособность ресурсов |
 | Управление API — конечная точка управления | Входящий трафик | 3443 | APIManagement | VirtualNetwork | |

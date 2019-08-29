@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: afd43bbf6f52f498ad8f56d5a48b960d45d84137
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9144af131e1427d0b3226655c871921ac1d91665
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243263"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073417"
 ---
 # <a name="subscriptions-in-azure-api-management"></a>Подписки в службе управления API Azure
 
@@ -42,7 +41,7 @@ ms.locfileid: "66243263"
 
 ### <a name="subscriptions-for-a-product"></a>Подписки для продукта
 
-Традиционно подписки в службе управления API связывались с одной областью [продукта API](api-management-terminology.md). Разработчики находят список продуктов на портале разработчика. Потом они отправляют запросы на подписку на продукт, который желают использовать. После утверждения запроса подписки автоматически или издателями API, разработчик может использовать ключи в нем для доступа к всем API в продукте. В настоящее время портал разработчика только отображаются подписки область продукта в разделе "профиль" пользователя. 
+Традиционно подписки в службе управления API связывались с одной областью [продукта API](api-management-terminology.md). Разработчики находят список продуктов на портале разработчика. Потом они отправляют запросы на подписку на продукт, который желают использовать. После утверждения запроса на подписку либо автоматически, либо издателями API Разработчик может использовать ключи в нем для доступа ко всем API в продукте. В настоящее время на портале разработчика отображаются подписки уровня продукта в разделе Профиль пользователя. 
 
 ![Подписки для продукта](./media/api-management-subscriptions/product-subscription.png)
 
@@ -60,7 +59,7 @@ ms.locfileid: "66243263"
 
     ![Гибкие подписки](./media/api-management-subscriptions/flexible-subscription.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о службе управления API:
 
 + Узнайте о терминологии Управления API в [этой статье](api-management-terminology.md).

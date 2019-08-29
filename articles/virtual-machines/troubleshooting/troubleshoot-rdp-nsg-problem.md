@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: v-jesits
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: c32612c411f275220f549eea79276fa5a7232fd0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cfb0464fd7fbd271272a992cffead44e9ba3b553
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318941"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103424"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -47,9 +46,9 @@ ms.locfileid: "60318941"
     **Имя**: Port_3389 </br>
     **Порт**: 3389 </br>
     **Протокол**: TCP </br>
-    **Источник**: Любой </br>
-    **Назначения**: Любой </br>
-    **Действие**: Allow </br>
+    **Источник**: Any </br>
+    **Назначения**: Any </br>
+    **Действие**: РАЗРЕШИТЬ </br>
 
 Если вы указываете IP-адрес источника, этот параметр разрешает передачу трафика только с определенного IP-адреса или диапазона IP-адресов для подключения к виртуальной машине. Убедитесь, что компьютер, который используется для начала сеанса RDP, находится в диапазоне.
 
@@ -58,7 +57,7 @@ ms.locfileid: "60318941"
 > [!NOTE]
 > RDP-порт 3389 доступен через Интернет. Поэтому мы рекомендуем использовать этот порт только для тестирования. Для рабочих сред мы рекомендуем использовать VPN или частное подключение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если порт RDP уже включен в NSG, ознакомьтесь со статьей [Устранение общей ошибки RDP на виртуальной машине Azure](./troubleshoot-rdp-general-error.md).
 

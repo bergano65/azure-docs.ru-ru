@@ -8,19 +8,18 @@ manager: craigg
 tags: azure-resource-manager
 ms.assetid: aa5bf144-37a3-4781-892d-e0e300913d03
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 70e478ac70b7ab53f1357394f3a3cb0d92f41f00
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ae5c4cdd76f164d13da349c355a30d8b6dc83058
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075788"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102090"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -42,7 +41,7 @@ ms.locfileid: "67075788"
 
 | Параметр | Описание |
 |---|---|
-| **Общедоступное** | Подключение к SQL Server через Интернет |
+| **Public** | Подключение к SQL Server через Интернет |
 | **Закрытые** | Подключение к SQL Server в пределах одной виртуальной сети |
 | **Локальное** | Локальное подключение к SQL Server на одной и той же виртуальной машине | 
 
@@ -98,11 +97,11 @@ Server=mysqlvm;Integrated Security=true
 
 Можно изменить параметры подключения для вашей виртуальной машины SQL Server на портале Azure.
 
-1. На портале Azure выберите **виртуальные машины SQL**.
+1. В портал Azure выберите **виртуальные машины SQL**.
 
 2. Выберите виртуальную машину SQL Server.
 
-3. В разделе **параметры**выберите **безопасности**.
+3. В разделе **Параметры**выберите **Безопасность**.
 
 4. Измените **уровень подключения SQL**, выбрав необходимый параметр. Эту область можно при необходимости использовать, чтобы изменить порт SQL Server или параметры аутентификации SQL.
 

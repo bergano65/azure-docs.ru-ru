@@ -7,17 +7,16 @@ manager: cfowler
 editor: ''
 ms.service: app-service
 ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: article
 ms.date: 08/15/2019
 ms.author: mahender
 ms.reviewer: yevbronsh
-ms.openlocfilehash: a2b8a4e496094c6275710328e70a09376ce0e5fc
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 16c65a98ca420a4b15281ee033ea7773197b5b2a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69563024"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098472"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -307,10 +306,10 @@ Vault myKeyVault = azure.vaults().getByResourceGroup(resourceGroup, keyvaultName
 
 > |Имя параметра|In|Описание|
 > |-----|-----|-----|
-> |ресурс|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
-> |api-version|Запрос|Версия API маркеров, которая будет использоваться. Сейчас поддерживается только одна версия: 2017-09-01.|
+> |ресурс|Query|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
+> |api-version|Query|Версия API маркеров, которая будет использоваться. Сейчас поддерживается только одна версия: 2017-09-01.|
 > |secret|Header|Значение переменной среды MSI_SECRET. Заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF).|
-> |clientid|Запрос|(Необязательно.) Идентификатор назначаемого пользователем удостоверения, который следует использовать. Если этот параметр опущен, используется назначаемое системой удостоверение.|
+> |clientid|Query|(Необязательно.) Идентификатор назначаемого пользователем удостоверения, который следует использовать. Если этот параметр опущен, используется назначаемое системой удостоверение.|
 
 Успешный ответ 200 — OK включает текст JSON со следующими свойствами:
 

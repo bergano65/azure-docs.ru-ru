@@ -8,17 +8,16 @@ manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.assetid: d2f013d1-f458-42ae-baf8-1810138118ac
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 962c28c8b081980c2715d4d78739662e86748bd1
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 77fa97cd339b6498263e12eae9cea50187493a89
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68814452"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097115"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -261,7 +260,7 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 
 Каждое поле может принимать значение одного из следующих типов:
 
-|Тип  |Пример  |Когда активируется  |
+|Type  |Пример  |Когда активируется  |
 |---------|---------|---------|
 |Определенное значение |<nobr>"0 5 * * * *"</nobr>|в hh:05:00, где hh — каждый час (один раз в час)|
 |Все значения (`*`)|<nobr>"0 * 5 * * *"</nobr>|в 5:mm:00 каждый день, где mm — каждая минута часа (60 раз в день)|

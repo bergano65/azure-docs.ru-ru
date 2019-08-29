@@ -7,18 +7,17 @@ author: MSSedusch
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 66e1e4603602835d6ed5be9af58eb09a24b00b63
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: f51870fb8f6ed71aab2558099c2361bf6e340493
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709117"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078517"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP HANA в виртуальных машинах Azure в Red Hat Enterprise Linux
 
@@ -66,9 +65,9 @@ ms.locfileid: "67709117"
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [На виртуальных машинах планированию и внедрению SAP NETWEAVER на платформе Linux][planning-guide]
-* [Развертывание виртуальных машин для SAP в Linux (в этой статье)][deployment-guide]
-* [Развертывание программного обеспечения SAP на платформе Linux для Azure виртуальные машины СУБД][dbms-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP в Linux][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
+* [Развертывание СУБД на виртуальных машинах Azure для SAP в Linux][dbms-guide]
 * [Репликация системы SAP HANA в кластере pacemaker](https://access.redhat.com/articles/3004101)
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
@@ -101,14 +100,14 @@ ms.locfileid: "67709117"
 Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, подсистему балансировки нагрузки, группу доступности и т. д.
 Чтобы развернуть шаблон, сделайте следующее.
 
-1. Откройте [шаблон базы данных][template-multisid-db] на портале Azure.
+1. Откройте [шаблон базы данных][template-multisid-db] на портал Azure.
 1. Задайте следующие параметры:
     * **Идентификатор системы SAP**: Введите идентификатор системы SAP, которую требуется установить. Идентификатор будет использоваться в качестве префикса для развертываемых ресурсов.
     * **Тип ОС**: Выберите один из дистрибутивов Linux. Для этого примера выберите **RHEL 7**.
     * **Тип базы данных**: выберите **HANA**.
     * **Размер системы SAP**: введите число протоколов SAP, которое должна предоставлять новая система. Если вы не знаете, сколько систем SAP потребуется, обратитесь к партнеру по технологиям или системному интегратору SAP.
     * **Доступность системы**: Выберите **высокую доступность**.
-    * **Имя пользователя и пароль администратора или ключ SSH**: Пользователь будет создан, можно использовать для входа на компьютер.
+    * **Имя пользователя и пароль администратора или ключ SSH**: Создается новый пользователь, который может использоваться для входа на компьютер.
     * **Идентификатор подсети**: Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>** . Оставьте пустым, если нужно создать новую виртуальную сеть
 
 ### <a name="manual-deployment"></a>Развертывание вручную
@@ -181,11 +180,11 @@ ms.locfileid: "67709117"
    1. Нажмите кнопку **ОК**.
    1. Повторите эти шаги для портов 3**03**41 и 3**03**42.
 
-Дополнительные сведения о портах, требуемых для SAP HANA, читать главу [подключений к базам данных клиентов](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в [баз данных клиентов SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) руководство или [2388694 Примечание SAP][2388694].
+Дополнительные сведения о портах, требуемых для SAP HANA, см. в разделе [подключения к базам данных клиента](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в руководству по [базам данных клиента SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в статье о [SAP 2388694][2388694].
 
 > [!IMPORTANT]
-> Не включайте отметки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение TCP отметки времени вызовет пробы работоспособности, переход на другой. Задайте для параметра **net.ipv4.tcp_timestamps** для **0**. Дополнительные сведения см. [пробы работоспособности подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
-> См. также SAP Примечание [2382421](https://launchpad.support.sap.com/#/notes/2382421). 
+> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. TCP _timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+> См. также Примечание SAP [2382421](https://launchpad.support.sap.com/#/notes/2382421). 
 
 ## <a name="install-sap-hana"></a>Установка SAP HANA
 
@@ -204,7 +203,7 @@ ms.locfileid: "67709117"
    <pre><code>ls /dev/disk/azure/scsi1/lun*
    </code></pre>
 
-   Выходные данные примера:
+   Пример выходных данных:
 
    <pre><code>
    /dev/disk/azure/scsi1/lun0  /dev/disk/azure/scsi1/lun1  /dev/disk/azure/scsi1/lun2  /dev/disk/azure/scsi1/lun3
@@ -335,14 +334,14 @@ ms.locfileid: "67709117"
 
 1. **[A]** . Обновите агент узла SAP.
 
-   Скачайте последний архив агента SAP Host Agent из [центра программного обеспечения SAP][sap-swcenter] , выполните следующую команду, чтобы обновить агент. Замените путь к архиву, чтобы он указывал на скачанный файл.
+   Скачайте последнюю копию агента узла SAP из [центра программного обеспечения SAP][sap-swcenter] и выполните следующую команду, чтобы обновить агент. Замените путь к архиву, чтобы он указывал на скачанный файл.
 
    <pre><code>sudo /usr/sap/hostctrl/exe/saphostexec -upgrade -archive &lt;path to SAP Host Agent SAR&gt;
    </code></pre>
 
 1. **[A]** Настройка брандмауэра
 
-   Создайте правило брандмауэра для порта пробы подсистемы балансировки нагрузки Azure.
+   Создайте правило брандмауэра для порта пробы балансировщика нагрузки Azure.
 
    <pre><code>sudo firewall-cmd --zone=public --add-port=625<b>03</b>/tcp
    sudo firewall-cmd --zone=public --add-port=625<b>03</b>/tcp --permanent
@@ -382,14 +381,14 @@ ms.locfileid: "67709117"
 
    Если вы используете SAP HANA 2.0 или MDC, создайте базу данных клиента для системы SAP NetWeaver. Замените **NW1** идентификатором SID для системы SAP.
 
-   Выполнить от имени < hanasid\>adm следующую команду:
+   Выполните команду AS <\>ханасид ADM с помощью следующей команды:
 
    <pre><code>hdbsql -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> -d SYSTEMDB 'CREATE DATABASE <b>NW1</b> SYSTEM USER PASSWORD "<b>passwd</b>"'
    </code></pre>
 
 1. **[1]** Настройте репликацию системы на первом узле.
 
-   Резервное копирование баз данных, как < hanasid\>adm:
+   Создайте резервную копию баз данных\>как < ханасид ADM:
 
    <pre><code>hdbsql -d SYSTEMDB -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupSYS</b>')"
    hdbsql -d <b>HN1</b> -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupHN1</b>')"
@@ -409,7 +408,7 @@ ms.locfileid: "67709117"
 
 1. **[2]** Настройте системную репликацию на втором узле
     
-   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Выполните следующую команду как < hanasid\>adm:
+   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Выполните следующую команду, как < ханасид\>ADM:
 
    <pre><code>sapcontrol -nr <b>03</b> -function StopWait 600 10
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b>
@@ -457,7 +456,7 @@ ms.locfileid: "67709117"
 
 1. **[1]** Создайте обязательных пользователей.
 
-   Выполните следующую команду в качестве привилегированного пользователя. Обязательно замените строки, выделенные полужирным шрифтом (идентификатор системы HANA **HN1** и номер экземпляра **03**), значениями для своей системы SAP HANA.
+   Выполните следующую команду в качестве привилегированной. Обязательно замените строки, выделенные полужирным шрифтом (идентификатор системы HANA **HN1** и номер экземпляра **03**), значениями для своей системы SAP HANA.
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbsql -u system -i <b>03</b> 'CREATE USER <b>hdb</b>hasync PASSWORD "<b>passwd</b>"'
@@ -467,7 +466,7 @@ ms.locfileid: "67709117"
 
 1. **[A]** Создайте запись в хранилище ключей.
 
-   В качестве привилегированного пользователя, чтобы создать новую запись для хранилища ключей, выполните следующую команду:
+   Выполните следующую команду в качестве учетной записи root, чтобы создать новую запись в хранилище ключей:
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbuserstore SET <b>hdb</b>haloc localhost:3<b>03</b>15 <b>hdb</b>hasync <b>passwd</b>
@@ -475,7 +474,7 @@ ms.locfileid: "67709117"
 
 1. **[1]** Создайте резервную копию базы данных.
 
-   Резервное копирование баз данных в качестве привилегированного пользователя:
+   Создайте резервную копию баз данных в качестве корневого:
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbsql -d SYSTEMDB -u system -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackup</b>')"
@@ -488,7 +487,7 @@ ms.locfileid: "67709117"
 
 1. **[1]** Настройте репликацию системы на первом узле.
 
-   Создать первичный сайт как < hanasid\>adm:
+   Создайте первичный сайт < ханасид\>ADM:
 
    <pre><code>su - <b>hdb</b>adm
    hdbnsutil -sr_enable –-name=<b>SITE1</b>
@@ -496,7 +495,7 @@ ms.locfileid: "67709117"
 
 1. **[2]** Настройте репликацию системы на вторичном узле
 
-   Зарегистрируйте дополнительный сайт как < hanasid\>adm:
+   Зарегистрируйте вторичный сайт как <\>ханасид ADM:
 
    <pre><code>HDB stop
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b>
@@ -647,7 +646,7 @@ Resource Group: g_ip_HN1_03
 </code></pre>
 
 Чтобы проверить конфигурацию агента ограждения, отключите сетевой интерфейс в главном узле SAP HANA.
-См. в разделе [статьи базы знаний Red Hat 79523](https://access.redhat.com/solutions/79523) описание о том, как имитировать сбой сети. В этом примере мы используем сценарий net_breaker для полной блокировки доступа к сети.
+Описание имитации сбоя сети см. в [статье базы знаний Red Hat 79523](https://access.redhat.com/solutions/79523) . В этом примере мы используем сценарий net_breaker для полной блокировки доступа к сети.
 
 <pre><code>[root@hn1-db-1 ~]# sh ./net_breaker.sh BreakCommCmd 10.0.0.6
 </code></pre>
@@ -730,7 +729,7 @@ Resource Group: g_ip_HN1_03
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [На виртуальных машинах планированию и внедрению SAP NETWEAVER][planning-guide]
-* [Развертывание виртуальных машин для SAP][deployment-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
 * Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).

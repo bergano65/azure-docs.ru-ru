@@ -8,35 +8,35 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 69425129d5f049254a60032283ddc6ca2ab84d5c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26702ae63dcb7aadb96b5bf77f96a44f7d6776f5
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65872688"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114323"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
-Функции в приложении-функции совместно используют ресурсы. Среди этих ресурсов приведены подключений. Подключения по протоколу HTTP, подключения к базе данных и подключения к службам, например службу хранилища Azure. При параллельном выполнении многих функций можно остаться без доступных подключений. В этой статье описывается программирование функций можно отказаться от больше подключений, чем требуется.
+Функции в приложении-функции совместно используют ресурсы. Между этими общими ресурсами находятся соединения: HTTP-подключения, подключения к базам данных и подключения к службам, таким как служба хранилища Azure. При параллельном выполнении многих функций можно остаться без доступных подключений. В этой статье объясняется, как закодировать функции, чтобы не использовать больше соединений, чем требуется.
 
 ## <a name="connection-limit"></a>Ограничение числа подключений
 
-Количество доступных подключений ограничено, отчасти потому, что приложение-функция работает [среде-песочнице](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Одно из ограничений, которые "песочницы" налагает на коде имеет ограничение на количество исходящих подключений, в настоящее время 600 активных подключений (1200 всего) каждого экземпляра; Когда этот предел достигнут, среда выполнения функций записывает в журналы следующее сообщение: `Host thresholds exceeded: Connections`. Дополнительные сведения см. в разделе [ограничениях службы функции](functions-scale.md#service-limits).
+Количество доступных подключений ограничено частично, поскольку приложение-функция выполняется в изолированной [среде](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Одним из ограничений, налагаемых песочницей в коде, является ограничение числа исходящих подключений, которое в настоящее время 600 активных (всего 1 200) подключений на экземпляр. При достижении этого предела среда выполнения функций записывает в журналы следующее сообщение: `Host thresholds exceeded: Connections`. Дополнительные сведения см. в статье [ограничения службы функций](functions-scale.md#service-limits).
 
-Это ограничение не на один экземпляр. Когда [контроллер масштабирования добавляет экземпляров приложения-функции](functions-scale.md#how-the-consumption-and-premium-plans-work) возможность обрабатывать больше запросов, каждый экземпляр имеет ограничение независимое подключение. Это означает, что не ограничено глобальных подключений, и может иметь гораздо более чем 600 активных подключений для всех активных экземпляров.
+Это ограничение для каждого экземпляра. Когда [контроллер масштабирования добавляет экземпляры приложения функции](functions-scale.md#how-the-consumption-and-premium-plans-work) для обработки большего количества запросов, каждый экземпляр имеет независимое ограничение на число подключений. Это означает, что нет глобального ограничения на подключение, и вы можете использовать гораздо больше 600 активных подключений для всех активных экземпляров.
 
-При устранении неполадок, убедитесь, что вы включили Application Insights для приложения-функции. Application Insights позволяет просматривать метрики для приложения-функции например выполнений. Дополнительные сведения см. в разделе [просмотреть данные телеметрии в Application Insights](functions-monitoring.md#view-telemetry-in-application-insights).  
+При устранении неполадок убедитесь, что вы включили Application Insights для приложения функции. Application Insights позволяет просматривать метрики для приложений функций, таких как выполнение. Дополнительные сведения см. [в разделе Просмотр телеметрии в Application Insights](functions-monitoring.md#view-telemetry-in-application-insights).  
 
-## <a name="static-clients"></a>Статических клиентов
+## <a name="static-clients"></a>Статические клиенты
 
-Чтобы избежать большего количества подключений, чем необходимо, повторно используйте экземпляры клиента, а не создавайте новые с каждым вызовом функции. Мы рекомендуем, повторно используя подключения клиента для любого языка, который может писать код функции на. Например, клиенты .NET, такие как [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx), [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-), и клиентов хранилища Azure можно управлять подключениями, при использовании одного, статические клиента.
+Чтобы избежать большего количества подключений, чем необходимо, повторно используйте экземпляры клиента, а не создавайте новые с каждым вызовом функции. Рекомендуется повторно использовать клиентские подключения для любого языка, в котором можно написать функцию. Например, клиенты .NET, такие как [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx), [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
+)и клиенты службы хранилища Azure, могут управлять подключениями, если используется один статический клиент.
 
-Ниже приведены некоторые рекомендации по вы используете клиент определенных служб в приложении "функции Azure".
+Ниже приведены некоторые рекомендации, которые необходимо выполнить при использовании клиента, зависящего от службы, в приложении "функции Azure".
 
-- *Не* Создание нового клиента с помощью каждого вызова функции.
-- *Сделать* создать единый, статические клиент, каждый вызов функции можно использовать.
-- *Рассмотрите возможность* Создание единой, статические клиента в общих вспомогательный класс, если различные функции использовать ту же службу.
+- *Не* создавайте новый клиент при каждом вызове функции.
+- Создайте один статический клиент, который может использовать каждый вызов функции.
+- *Рассмотрите возможность* создания отдельного статического клиента в общем вспомогательном классе, если разные функции используют одну и ту же службу.
 
 ## <a name="client-code-examples"></a>Примеры кода клиента
 
@@ -44,7 +44,7 @@ ms.locfileid: "65872688"
 
 ### <a name="httpclient-example-c"></a>Пример HttpClient (C#)
 
-Ниже приведен пример C# код, который создает статический функции [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) экземпляр:
+Ниже приведен пример кода C# функции, который создает статический экземпляр [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) :
 
 ```cs
 // Create a single, static HttpClient
@@ -57,19 +57,19 @@ public static async Task Run(string input)
 }
 ```
 
-Часто задаваемые вопросы о [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) в .NET — «Следует ли освободить мой клиент?» Как правило, реализации объектов, реализующих `IDisposable` после завершения их использования. Но не удаляет из статического клиента, так как вы не сделали его использования, когда функция заканчивается. Необходимо, чтобы статический клиент существовал в течение срока жизни приложения.
+Распространенный вопрос о [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) в .NET: «следует ли мне избавиться от моего клиента?» Как правило, удаляются объекты, которые реализуют `IDisposable` , когда вы закончите их использовать. Но вы не удаляете статический клиент, так как вы не закончите использовать его при завершении функции. Необходимо, чтобы статический клиент существовал в течение срока жизни приложения.
 
 ### <a name="http-agent-examples-javascript"></a>Примеры агента HTTP (JavaScript)
 
-Так как собственный класс [ `http.agent` ](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_class_http_agent) предоставляет лучшие возможности управления подключениями, следует использовать его вместо методов, не являющихся собственными, таких как модуль `node-fetch`. Параметры подключения настраиваются через параметры на `http.agent` класса. Подробные параметры, доступные с агентом HTTP, см. в разделе [новый агент (\[параметры\])](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_new_agent_options).
+Так как собственный класс [ `http.agent` ](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_class_http_agent) предоставляет лучшие возможности управления подключениями, следует использовать его вместо методов, не являющихся собственными, таких как модуль `node-fetch`. Параметры соединения настраиваются с помощью параметров `http.agent` класса. Подробные сведения о параметрах, доступных в агенте HTTP, см. в разделе [Создание агента (\[\]параметры)](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_new_agent_options).
 
-Глобальный `http.globalAgent` класс, используемый `http.request()` имеет все эти значения, соответствующие значения по умолчанию. Чтобы настроить ограничения для подключений в Функциях Azure, рекомендуется глобально задать максимальное число. В следующем примере задается максимальное количество сокетов для приложения-функции.
+Глобальный `http.globalAgent` класс, используемый, `http.request()` имеет значения по умолчанию для всех этих значений. Чтобы настроить ограничения для подключений в Функциях Azure, рекомендуется глобально задать максимальное число. В следующем примере задается максимальное количество сокетов для приложения-функции.
 
 ```js
 http.globalAgent.maxSockets = 200;
 ```
 
- В следующем примере создается новый запрос HTTP с помощью пользовательского агента HTTP только для этого запроса:
+ В следующем примере создается новый HTTP-запрос с пользовательским агентом HTTP только для этого запроса:
 
 ```js
 var http = require('http');
@@ -110,35 +110,35 @@ public static async Task Run(string input)
 }
 ```
 
-### <a name="cosmosclient-code-example-javascript"></a>Пример кода CosmosClient (JavaScript)
-[CosmosClient](/javascript/api/@azure/cosmos/cosmosclient) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](../cosmos-db/performance-tips.md#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
+### <a name="cosmosclient-code-example-javascript"></a>Пример кода Космосклиент (JavaScript)
+[Космосклиент](/javascript/api/@azure/cosmos/cosmosclient) подключается к экземпляру Azure Cosmos DB. В документации Azure Cosmos DB рекомендуется [использовать отдельный клиент Azure Cosmos DB в течении всего жизненного цикла приложения](../cosmos-db/performance-tips.md#sdk-usage). В следующем примере показан один шаблон в функции, чтобы это делать.
 
 ```javascript
 const cosmos = require('@azure/cosmos');
 const endpoint = process.env.COSMOS_API_URL;
-const masterKey = process.env.COSMOS_API_KEY;
+const key = process.env.COSMOS_API_KEY;
 const { CosmosClient } = cosmos;
 
-const client = new CosmosClient({ endpoint, auth: { masterKey } });
+const client = new CosmosClient({ endpoint, key });
 // All function invocations also reference the same database and container.
 const container = client.database("MyDatabaseName").container("MyContainerName");
 
 module.exports = async function (context) {
-    const { result: itemArray } = await container.items.readAll().toArray();
+    const { resources: itemArray } = await container.items.readAll().fetchAll();
     context.log(itemArray);
 }
 ```
 
 ## <a name="sqlclient-connections"></a>Подключения SqlClient
 
-Код функции можно использовать поставщик данных .NET Framework для SQL Server ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx)) для подключения к реляционной базе данных SQL. Это также основной поставщик для платформы данным, которые основаны на ADO.NET, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). В отличие от соединений [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) и [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-) ADO.NET осуществляет объединение подключений в пул по умолчанию. Но так как по-прежнему могут закончиться подключения, следует оптимизировать подключения к базе данных. Дополнительные сведения см. в разделе [Объединение подключений в пул в SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling).
+Код функции может использовать поставщик данных .NET Framework для SQL Server ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx)) для создания соединений с реляционной базой данных SQL. Это также базовый поставщик для платформ данных, которые используют ADO.NET, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). В отличие от соединений [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) и [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
+) ADO.NET осуществляет объединение подключений в пул по умолчанию. Но поскольку вы по-прежнему можете работать с нехваткой подключений, следует оптимизировать соединения с базой данных. Дополнительные сведения см. в разделе [Объединение подключений в пул в SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling).
 
 > [!TIP]
-> Некоторые платформы данных, например Entity Framework, обычно получают строк соединения из **ConnectionStrings** раздел файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции следует хранить значение строки подключения в **параметры приложения** с другими подключениями.
+> Некоторые платформы данных, такие как Entity Framework, обычно получают строки подключения из раздела **ConnectionString** файла конфигурации. В этом случае необходимо добавить строки подключений базы данных SQL непосредственно в список функциональных настроек приложения **Строки подключения** и в [файл local.settings.json](functions-run-local.md#local-settings-file) в локальном проекте. Если вы создаете экземпляр [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции, вы должны сохранить значение строки подключения в **параметрах приложения** с другими соединениями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о причина статических клиентов, см. в разделе [неправильной установке](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/).
+Дополнительные сведения о том, почему мы рекомендуем использовать статические клиенты, см. в разделе неправильное антишаблонное [Создание экземпляра](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/).
 
 Дополнительные советы по повышению производительности службы "Функции Azure" см. в статье [Оптимизация производительности и надежности Функций Azure](functions-best-practices.md).

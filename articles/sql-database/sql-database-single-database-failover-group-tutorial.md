@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
 ms.date: 06/19/2019
-ms.openlocfilehash: 6cf688750ac73763c7f0da4eea152cf6bf0c8285
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: a80dc8ccaa72a57986ed6c64f7ab7050ab4c7de5
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935027"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098963"
 ---
 # <a name="tutorial-add-an-azure-sql-database-single-database-to-a-failover-group"></a>Учебник. Добавление отдельной базы данных SQL Azure в группу отработки отказа
 
@@ -27,7 +27,7 @@ ms.locfileid: "68935027"
 > - Создайте [группу](sql-database-auto-failover-group.md) отработки отказа для отдельной базы данных между двумя логическими серверами SQL.
 > - Тестовая отработка отказа.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 В рамках этого руководства вам потребуются: 
@@ -61,16 +61,15 @@ ms.locfileid: "68935027"
 Создайте группу отработки отказа и добавьте в нее отдельную базу данных с помощью портал Azure. 
 
 
-1. Выберите **все службы** в левом верхнем углу [портал Azure](https://portal.azure.com). 
-1. Введите `sql servers` в поле поиска. 
-1. Используемых Щелкните значок звездочки рядом с пунктом серверы SQL Server для избранных **серверов SQL Server** и добавьте его в область навигации слева. 
-    
-    ![Обнаружение серверов SQL Server](media/sql-database-single-database-create-failover-group-tutorial/all-services-sql-servers.png)
+1. Выберите **Azure SQL** в меню слева [портал Azure](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. Используемых Выберите звезду рядом с элементом **Azure SQL** , чтобы добавить его в избранное, и добавьте его в качестве элемента в левую навигацию. 
+1. Выберите одну базу данных, созданную в разделе 2, например `mySampleDatbase`. 
+1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
 
-1. Выберите **серверы SQL Server** и выберите сервер, созданный в разделе 1, например `mysqlserver`.
+   ![Открыть сервер для отдельной базы данных](media/sql-database-single-database-failover-group-tutorial/open-sql-db-server.png)
+
 1. Выберите **группы** отработки отказа в области **Параметры** , а затем щелкните **Добавить группу** , чтобы создать новую группу отработки отказа. 
 
-    ![Добавить новую группу отработки отказа](media/sql-database-single-database-create-failover-group-tutorial/sqldb-add-new-failover-group.png)
+    ![Добавить новую группу отработки отказа](media/sql-database-single-database-failover-group-tutorial/sqldb-add-new-failover-group.png)
 
 1. На странице **Группа** отработки отказа введите или выберите следующие значения, а затем щелкните **создать**.
     - **Имя группы**отработки отказа: Введите уникальное имя группы отработки отказа, `failovergrouptutorial`например. 
@@ -78,16 +77,16 @@ ms.locfileid: "68935027"
         - **Имя сервера**. Введите уникальное имя сервера-получателя, например `mysqlsecondary`. 
         - **Учетные данные администратора сервера для входа**. Тип`azureuser`
         - **Пароль**. Введите сложный пароль, который соответствует требованиям к паролю.
-        - **Расположение.** Выберите расположение из раскрывающегося списка, например Восточная часть США 2. Это расположение не может совпадать с расположением основного сервера.
+        - **Расположение.** Выберите расположение из раскрывающегося списка, например `East US`. Это расположение не может совпадать с расположением основного сервера.
 
     > [!NOTE]
     > Параметры имени для входа и брандмауэра сервера должны совпадать с именем сервера источника. 
     
-      ![Создание сервера-получателя для группы отработки отказа](media/sql-database-single-database-create-failover-group-tutorial/create-secondary-failover-server.png)
+      ![Создание сервера-получателя для группы отработки отказа](media/sql-database-single-database-failover-group-tutorial/create-secondary-failover-server.png)
 
    - **Базы данных в группе**: После выбора сервера-получателя этот параметр будет разблокирован. Выберите его, чтобы **выбрать базы данных** , а затем выберите базу данных, созданную в разделе 1. Добавление базы данных в группу отработки отказа автоматически начнет процесс георепликации. 
         
-    ![Добавление базы данных SQL в группу отработки отказа](media/sql-database-single-database-create-failover-group-tutorial/add-sqldb-to-failover-group.png)
+    ![Добавление базы данных SQL в группу отработки отказа](media/sql-database-single-database-failover-group-tutorial/add-sqldb-to-failover-group.png)
         
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -99,12 +98,12 @@ ms.locfileid: "68935027"
    ```powershell-interactive
    # $subscriptionId = '<SubscriptionID>'
    # $resourceGroupName = "myResourceGroup-$(Get-Random)"
-   # $location = "West US 2"
+   # $location = "West US"
    # $adminLogin = "azureuser"
    # $password = "PWD27!"+(New-Guid).Guid
    # $serverName = "mysqlserver-$(Get-Random)"
    # $databaseName = "mySampleDatabase"
-   $drLocation = "East US 2"
+   $drLocation = "East US"
    $drServerName = "mysqlsecondary-$(Get-Random)"
    $failoverGroupName = "failovergrouptutorial-$(Get-Random)"
 
@@ -194,16 +193,21 @@ ms.locfileid: "68935027"
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 Тестовая отработка отказа с помощью портал Azure. 
 
-1. Перейдите к серверу **SQL Server** в [портал Azure](https://portal.azure.com). 
+1. Выберите **Azure SQL** в меню слева [портал Azure](https://portal.azure.com). Если **SQL Azure** отсутствует в списке, выберите **все службы**, а затем введите Azure SQL в поле поиска. Используемых Выберите звезду рядом с элементом **Azure SQL** , чтобы добавить его в избранное, и добавьте его в качестве элемента в левую навигацию. 
+1. Выберите одну базу данных, созданную в разделе 2, например `mySampleDatbase`. 
+1. Выберите имя сервера в поле **имя сервера** , чтобы открыть параметры для сервера.
+
+   ![Открыть сервер для отдельной базы данных](media/sql-database-single-database-failover-group-tutorial/open-sql-db-server.png)
+
 1. Выберите **группы** отработки отказа в области **Параметры** , а затем выберите группу отработки отказа, созданную в разделе 2. 
   
-   ![Выбор группы отработки отказа на портале](media/sql-database-single-database-create-failover-group-tutorial/select-failover-group.png)
+   ![Выбор группы отработки отказа на портале](media/sql-database-single-database-failover-group-tutorial/select-failover-group.png)
 
 1. Проверьте, какой сервер является основным, а какой — сервером-получателем. 
 1. Выберите отработка отказа в области задач для отработки отказа группы отработки отказа, содержащей пример отдельной базы данных 
 1. Нажмите кнопку **Да** в предупреждении, уведомляющее о том, что сеансы TDS будут отключены. 
 
-   ![Переключение группы отработки отказа, содержащей базу данных SQL](media/sql-database-single-database-create-failover-group-tutorial/failover-sql-db.png)
+   ![Переключение группы отработки отказа, содержащей базу данных SQL](media/sql-database-single-database-failover-group-tutorial/failover-sql-db.png)
 
 1. Проверьте, какой сервер является основным и какой сервер является вторичным. Если отработка отказа завершилась успешно, два сервера должны иметь переключенные роли. 
 1. Снова установите флажок отработка отказа, чтобы вернуть серверы к исходным ролям. 

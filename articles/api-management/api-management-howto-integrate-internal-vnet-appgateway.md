@@ -10,16 +10,15 @@ ms.assetid: a8c982b2-bca5-4312-9367-4a0bbc1082b1
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: sasolank
-ms.openlocfilehash: 4ee970f14a6da3d65849a79ff4afae68601f106f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f7617348a98899251dcd3b8f1645c40bd297ffdb
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66141666"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073555"
 ---
 # <a name="integrate-api-management-in-an-internal-vnet-with-application-gateway"></a>Интеграция службы управления API во внутреннюю сеть со шлюзом приложений
 
@@ -35,7 +34,7 @@ ms.locfileid: "66141666"
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -49,15 +48,15 @@ ms.locfileid: "66141666"
 
 ## <a name="scenario"> </a> Сценарий
 
-В этой статье описывается, как использовать одну службу управления API для внутренних и внешних потребителей и сделать ее как единым интерфейсным компонентом для обоих на локальном компьютере и облачных API. Также вы узнаете, как предоставить некоторое подмножество этих API-интерфейсов (в нашем примере они выделены зеленым цветом) для внешнего использования, применив функцию маршрутизации, предоставляемую Шлюзом приложений.
+В этой статье описывается, как использовать одну службу управления API как для внутренних, так и для внешних потребителей, а также как единый интерфейс для локальных и облачных API. Также вы узнаете, как предоставить некоторое подмножество этих API-интерфейсов (в нашем примере они выделены зеленым цветом) для внешнего использования, применив функцию маршрутизации, предоставляемую Шлюзом приложений.
 
-В первом примере конфигурации все API-интерфейсы управляются только из виртуальной сети. Внутренние потребители (выделены оранжевым цветом) могут обращаться ко всем внутренним и внешним API. Трафик никогда не выходит в Интернет. Высококачественная доставляется канал Express Route.
+В первом примере конфигурации все API-интерфейсы управляются только из виртуальной сети. Внутренние потребители (выделены оранжевым цветом) могут обращаться ко всем внутренним и внешним API. Трафик никогда не переходит в Интернет. Высокопроизводительное подключение доставляется через каналы Express Route.
 
 ![Маршрут URL-адреса](./media/api-management-howto-integrate-internal-vnet-appgateway/api-management-howto-integrate-internal-vnet-appgateway.png)
 
 ## <a name="before-you-begin"> </a> Перед началом работы
 
-* Убедитесь, что у вас установлена последняя версия Azure PowerShell. См. инструкции по установке в [установить Azure PowerShell](/powershell/azure/install-az-ps). 
+* Убедитесь, что у вас установлена последняя версия Azure PowerShell. Инструкции по установке см. в статье [установка Azure PowerShell](/powershell/azure/install-az-ps). 
 
 ## <a name="what-is-required-to-create-an-integration-between-api-management-and-application-gateway"></a>Что нужно для того, чтобы интегрировать управление API со шлюзом приложений?
 
@@ -88,7 +87,7 @@ ms.locfileid: "66141666"
 
 ## <a name="create-a-resource-group-for-resource-manager"></a>Создание группы ресурсов для диспетчера ресурсов.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Вход в Azure
 
@@ -98,7 +97,7 @@ Connect-AzAccount
 
 Выполните аутентификацию со своими учетными данными.
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Выберите нужную подписку.
 
@@ -107,7 +106,7 @@ $subscriptionId = "00000000-0000-0000-0000-000000000000" # GUID of your Azure su
 Get-AzSubscription -Subscriptionid $subscriptionId | Select-AzSubscription
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Создайте группу ресурсов. Если вы используете существующую группу, пропустите этот шаг.
 
@@ -123,7 +122,7 @@ New-AzResourceGroup -Name $resGroupName -Location $location
 
 В следующем примере показано создание виртуальной сети с помощью Resource Manager.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Создайте переменную подсети с диапазоном адресов 10.0.0.0/24, которая будет использоваться для шлюза приложений при создании виртуальной сети.
 
@@ -131,7 +130,7 @@ New-AzResourceGroup -Name $resGroupName -Location $location
 $appgatewaysubnet = New-AzVirtualNetworkSubnetConfig -Name "apim01" -AddressPrefix "10.0.0.0/24"
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Создайте переменную подсети с диапазоном адресов 10.0.1.0/24, которая будет использоваться для управления API при создании виртуальной сети.
 
@@ -139,7 +138,7 @@ $appgatewaysubnet = New-AzVirtualNetworkSubnetConfig -Name "apim01" -AddressPref
 $apimsubnet = New-AzVirtualNetworkSubnetConfig -Name "apim02" -AddressPrefix "10.0.1.0/24"
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Создайте виртуальную сеть с именем **appgwvnet** в группе ресурсов **apim-appGw-RG** для региона "Западная часть США", назначив ей префикс 10.0.0.0/16. Создайте в ней подсети 10.0.0.0/24 и 10.0.1.0/24.
 
@@ -147,7 +146,7 @@ $apimsubnet = New-AzVirtualNetworkSubnetConfig -Name "apim02" -AddressPrefix "10
 $vnet = New-AzVirtualNetwork -Name "appgwvnet" -ResourceGroupName $resGroupName -Location $location -AddressPrefix "10.0.0.0/16" -Subnet $appgatewaysubnet,$apimsubnet
 ```
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 Назначьте переменную для подсети, которая будет использоваться далее.
 
@@ -160,7 +159,7 @@ $apimsubnetdata = $vnet.Subnets[1]
 
 В следующем примере демонстрируется создание службы управления API в виртуальной сети, настроенной только для внутреннего доступа.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Создайте объект виртуальной сети для управления API, используя созданную выше переменную подсети $apimsubnetdata.
 
@@ -168,7 +167,7 @@ $apimsubnetdata = $vnet.Subnets[1]
 $apimVirtualNetwork = New-AzApiManagementVirtualNetwork -SubnetResourceId $apimsubnetdata.Id
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Создайте службу управления API в виртуальной сети.
 
@@ -183,9 +182,9 @@ $apimService = New-AzApiManagement -ResourceGroupName $resGroupName -Location $l
 
 ## <a name="set-up-a-custom-domain-name-in-api-management"></a>Настройка пользовательского доменного имени в службе управления API
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
-Инициализируйте переменные следующие подробные сведения о сертификаты с закрытыми ключами для доменов. В этом примере используется `api.contoso.net` и `portal.contoso.net`.  
+Инициализируйте следующие переменные с подробными сведениями о сертификатах с закрытыми ключами для доменов. В этом примере используется `api.contoso.net` и `portal.contoso.net`.  
 
 ```powershell
 $gatewayHostname = "api.contoso.net"                 # API gateway host
@@ -200,9 +199,9 @@ $certPwd = ConvertTo-SecureString -String $gatewayCertPfxPassword -AsPlainText -
 $certPortalPwd = ConvertTo-SecureString -String $portalCertPfxPassword -AsPlainText -Force
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
-Создайте и задайте имя узла прокси-сервера и портала объектов конфигурации.  
+Создайте и задайте объекты конфигурации имени узла для прокси-сервера и для портала.  
 
 ```powershell
 $proxyHostnameConfig = New-AzApiManagementCustomHostnameConfiguration -Hostname $gatewayHostname -HostnameType Proxy -PfxPath $gatewayCertPfxPath -PfxPassword $certPwd
@@ -227,7 +226,7 @@ IP-адрес назначается шлюзу приложений при за
 
 Перед созданием шлюза приложений необходимо настроить все элементы конфигурации. В ходе следующих шагов создаются необходимые элементы конфигурации для ресурса шлюза приложений.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Создайте конфигурацию IP-адресов шлюза приложений с именем **gatewayIP01**. При запуске шлюз приложений получает IP-адрес из настроенной подсети. Затем шлюз маршрутизирует сетевой трафик на IP-адреса из пула внутренних IP-адресов. Помните, что для каждого экземпляра требуется отдельный IP-адрес.
 
@@ -235,7 +234,7 @@ IP-адрес назначается шлюзу приложений при за
 $gipconfig = New-AzApplicationGatewayIPConfiguration -Name "gatewayIP01" -Subnet $appgatewaysubnetdata
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Настройте интерфейсный порт IP для конечной точки с общедоступным IP-адресом. Это порт, к которому подключаются пользователи.
 
@@ -243,7 +242,7 @@ $gipconfig = New-AzApplicationGatewayIPConfiguration -Name "gatewayIP01" -Subnet
 $fp01 = New-AzApplicationGatewayFrontendPort -Name "port01"  -Port 443
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Настройте внешний IP-адрес, используя конечную точку с общедоступным IP-адресом.
 
@@ -251,7 +250,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port01"  -Port 443
 $fipconfig01 = New-AzApplicationGatewayFrontendIPConfig -Name "frontend1" -PublicIPAddress $publicip
 ```
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 Настройте в Шлюзе приложений сертификаты для повторного шифрования и расшифровки проходящего трафика.
 
@@ -355,7 +354,7 @@ Get-AzPublicIpAddress -ResourceGroupName $resGroupName -Name "publicIP01"
 ```
 
 ## <a name="summary"> </a> Сводка
-Управление API Azure, настроенная в виртуальной сети предоставляет интерфейс один шлюз для всех настроенных API-интерфейсов, размещенные в локальной среде или в облаке. Интеграция шлюза приложений с управлением API дает вам дополнительную гибкость, позволяя избирательно предоставлять доступ к API-интерфейсам через Интернет. Также вы можете использовать брандмауэр веб-приложения в качестве интерфейсного компонента для экземпляра службы управления API.
+Служба управления API Azure, настроенная в виртуальной сети, предоставляет один интерфейс шлюза для всех настроенных интерфейсов API, размещенных в локальной среде или в облаке. Интеграция шлюза приложений с управлением API дает вам дополнительную гибкость, позволяя избирательно предоставлять доступ к API-интерфейсам через Интернет. Также вы можете использовать брандмауэр веб-приложения в качестве интерфейсного компонента для экземпляра службы управления API.
 
 ## <a name="next-steps"> </a> Дальнейшие действия
 * Дополнительные сведения о шлюзе приложений Azure:

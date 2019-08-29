@@ -8,16 +8,15 @@ manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: 3d5b2afd642a7eb042b2e6e07ef93a505f6b9648
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: f2bdfab82e1b9fb05d74f69536ec672a4b18a4bf
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774697"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114384"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -715,14 +714,19 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 * `out T paramName` - `T` может быть любым сериализуемым в JSON типом. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" создает сообщение с пустым объектом.
 * `out string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
 * `out byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
-* `out BrokeredMessage`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `out BrokeredMessage`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
+* `out Message`— Если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x).
 * `ICollector<T>` или `IAsyncCollector<T>`. Используется для создания нескольких сообщений. Сообщение создается при вызове метода `Add` .
 
-В асинхронных функциях используйте возвращаемое значение или `IAsyncCollector` вместо параметра `out`.
+При работе с C# функциями:
 
-Эти параметры предназначены для решения "Функции Azure" версии 1.x. Если используется версия 2.x, вместо `BrokeredMessage` примените [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message).
+* Асинхронным функциям требуется возвращаемое `IAsyncCollector` значение или вместо `out` параметра.
 
-В JavaScript доступ к очереди или разделу осуществляется с помощью `context.bindings.<name from function.json>`. `context.binding.<name>` можно назначить строку, массив байтов или объект Javascript (десериализируется в JSON).
+* Чтобы получить доступ к идентификатору сеанса, выполните [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) привязку к типу `sessionId` и используйте свойство.
+
+В JavaScript доступ к очереди или разделу осуществляется с помощью `context.bindings.<name from function.json>`. В `context.binding.<name>`можно назначить строку, массив байтов или объект JavaScript (десериализовать в JSON).
+
+Чтобы отправить сообщение в очередь с поддержкой сеансов наC# языках, отличных от языка, используйте [пакет SDK служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging) , а не встроенную выходную привязку.
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 

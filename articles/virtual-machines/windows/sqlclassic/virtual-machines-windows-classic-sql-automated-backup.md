@@ -9,19 +9,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: 3333e830-8a60-42f5-9f44-8e02e9868d7b
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: aeb97d661d330ed6afb3ca5e5e1eb924dacc4024
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: da40b635b0fc094275d8d46b8c5ad6d3d90bea24
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60607699"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101826"
 ---
 # <a name="automated-backup-for-sql-server-in-azure-virtual-machines-classic"></a>Автоматическая архивация SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -35,14 +34,14 @@ ms.locfileid: "60607699"
 > [!IMPORTANT] 
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Версию этой статьи для Resource Manager см. в статье [Автоматическая архивация SQL Server на виртуальных машинах Azure (Resource Manager)](../sql/virtual-machines-windows-sql-automated-backup.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической архивации необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
 
 * Windows Server 2012
 * Windows Server 2012 R2
-* Windows Server 2016
+* Windows Server 2016
 
 **Версия/выпуск SQL Server**
 
@@ -64,7 +63,7 @@ ms.locfileid: "60607699"
 
 * [Установите расширение IaaS для SQL Server](../classic/sql-server-agent-extension.md).
 
-## <a name="settings"></a>Параметры
+## <a name="settings"></a>Настройки
 В приведенной ниже таблице описаны параметры настройки автоматической архивации. Для виртуальных машин, развернутых с использованием классической модели, эти параметры необходимо настроить с помощью PowerShell.
 
 | Параметр | Диапазон (по умолчанию) | Описание |
@@ -107,7 +106,7 @@ ms.locfileid: "60607699"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Автоматическая архивация настраивает управляемое резервное копирование на виртуальных машинах Azure. В связи с этим важно изучить [документацию по управляемой архивации](https://msdn.microsoft.com/library/dn449496.aspx) и понять, как она работает.
 
 Дополнительные указания по резервному копированию и восстановлению для SQL Server на виртуальных машинах Azure см. в статье [Резервное копирование и восстановление SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-backup-recovery.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json).

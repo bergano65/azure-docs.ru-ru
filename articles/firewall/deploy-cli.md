@@ -1,31 +1,31 @@
 ---
-title: Развертывание и настройка брандмауэра Azure, с помощью Azure CLI
-description: В этой статье вы узнаете, как развернуть и настроить брандмауэр Azure с помощью Azure CLI.
+title: Развертывание и настройка брандмауэра Azure с помощью Azure CLI
+description: Из этой статьи вы узнаете, как развернуть и настроить брандмауэр Azure с помощью Azure CLI.
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.date: 7/10/2019
+ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: 24954eecde58c978fa3e14bb3a2d411d708687a3
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 94db17405457be91795d1588bee68a0deea68246
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707161"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114813"
 ---
-# <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure, с помощью Azure CLI
+# <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
 
 Управление доступом исходящих сетевых подключений является важной частью общего плана безопасности сети. Например, вы можете ограничить доступ к веб-сайтам или исходящим IP-адресам и портам, которые могут быть доступными.
 
 Вы можете управлять доступом к исходящей сети из подсети Azure только с помощью Брандмауэра Azure. Брандмауэр Azure позволяет настроить:
 
-* Правила приложений, определяющие полные доменные имена (FQDN), к которым можно получить доступ из подсети. Полное доменное имя можно также [включают экземпляры SQL](sql-fqdn-filtering.md).
+* Правила приложений, определяющие полные доменные имена (FQDN), к которым можно получить доступ из подсети. Полное доменное имя может также [содержать экземпляры SQL](sql-fqdn-filtering.md).
 * Правила сети, определяющие адрес источника, протокол, порт назначения и адрес назначения.
 
 При маршрутизации трафика на брандмауэр, используемый в качестве шлюза по умолчанию, для подсети к трафику применяются настроенные правила брандмауэра.
 
-В этой статье вы создадите упрощенный одной виртуальной сети с три подсети для более удобного развертывания. В рабочих развертываниях [звездообразной модели](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) рекомендуется. Брандмауэр является в собственную виртуальную сеть. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
+В этой статье вы создадите упрощенную отдельную виртуальную сеть с тремя подсетями для простоты развертывания. Для рабочих развертываний рекомендуется использовать [модель](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) "звезда". Брандмауэр находится в собственной виртуальной сети. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
 
 * **AzureFirewallSubnet** — в этой подсети находится брандмауэр.
 * **Workload-SN** — в этой подсети находится сервер рабочей нагрузки. Трафик этой подсети проходит через брандмауэр.
@@ -43,19 +43,19 @@ ms.locfileid: "67707161"
 > * настройка сетевых правил для предоставления доступа к внешним DNS-серверам;
 > * тестирование брандмауэра.
 
-При желании можно выполнить этой процедуры с помощью [портала Azure](tutorial-firewall-deploy-portal.md) или [Azure PowerShell](deploy-ps.md).
+При желании эту процедуру можно выполнить с помощью [портал Azure](tutorial-firewall-deploy-portal.md) или [Azure PowerShell](deploy-ps.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
 
-Установка расширения брандмауэр Azure:
+Установите расширение брандмауэра Azure:
 
 ```azurecli-interactive
 az extension add -n azure-firewall
@@ -66,7 +66,7 @@ az extension add -n azure-firewall
 
 Сначала создайте группу ресурсов, необходимых для развертывания брандмауэра. Затем создайте виртуальную сеть, подсети и тестовые серверы.
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов содержит все ресурсы для развертывания.
 
@@ -79,7 +79,7 @@ az group create --name Test-FW-RG --location eastus
 Эта виртуальная сеть имеет три подсети.
 
 > [!NOTE]
-> Минимальный размер подсети AzureFirewallSubnet равен /26.
+> Размер подсети Азурефиреваллсубнет —/26. Дополнительные сведения о размере подсети см. в разделе [часто задаваемые вопросы о брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
 
 ```azurecli-interactive
 az network vnet create \
@@ -88,7 +88,7 @@ az network vnet create \
   --location eastus \
   --address-prefix 10.0.0.0/16 \
   --subnet-name AzureFirewallSubnet \
-  --subnet-prefix 10.0.1.0/24
+  --subnet-prefix 10.0.1.0/26
 az network vnet subnet create \
   --name Workload-SN \
   --resource-group Test-FW-RG \
@@ -104,9 +104,9 @@ az network vnet subnet create \
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
 
 Теперь создайте виртуальные машины для перехода и рабочей нагрузки и поместите их в соответствующие подсети.
-Когда появится запрос, введите пароль для виртуальной машины.
+При появлении запроса введите пароль для виртуальной машины.
 
-Создайте виртуальную машину Srv перехода.
+Создайте виртуальную машину с SRV-переходом.
 
 ```azurecli-interactive
 az vm create \
@@ -122,7 +122,7 @@ az vm open-port --port 3389 --resource-group Test-FW-RG --name Srv-Jump
 
 
 
-Создайте сетевой Адаптер для Srv-работа с определенных IP-адресов сервера DNS и без общедоступного IP-адреса для тестирования.
+Создайте сетевую карту для SRV-работы с конкретными IP-адресами DNS-сервера и без общедоступного IP-адреса для тестирования.
 
 ```azurecli-interactive
 az network nic create \
@@ -135,7 +135,7 @@ az network nic create \
 ```
 
 Теперь создайте виртуальную машину рабочей нагрузки.
-Когда появится запрос, введите пароль для виртуальной машины.
+При появлении запроса введите пароль для виртуальной машины.
 
 ```azurecli-interactive
 az vm create \
@@ -149,7 +149,7 @@ az vm create \
 
 ## <a name="deploy-the-firewall"></a>Развертывание брандмауэра
 
-Теперь можно разверните брандмауэр в виртуальной сети.
+Теперь разверните брандмауэр в виртуальной сети.
 
 ```azurecli-interactive
 az network firewall create \
@@ -181,7 +181,7 @@ fwprivaddr="$(az network firewall ip-config list -g Test-FW-RG -f Test-FW01 --qu
 
 ## <a name="create-a-default-route"></a>создание маршрута по умолчанию;
 
-Создание таблицы с отключить распространение маршрутов BGP
+Создание таблицы с отключенным распространением маршрута BGP
 
 ```azurecli-interactive
 az network route-table create \
@@ -203,7 +203,7 @@ az network route-table route create \
   --next-hop-ip-address $fwprivaddr
 ```
 
-Привязка таблицы маршрутов к подсети
+Связывание таблицы маршрутов с подсетью
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -216,7 +216,7 @@ az network vnet subnet update \
 
 ## <a name="configure-an-application-rule"></a>Настройка правила приложения
 
-Приложение правило разрешает исходящий доступ к www.google.com.
+Правило приложения разрешает исходящий доступ к www.google.com.
 
 ```azurecli-interactive
 az network firewall application-rule create \
@@ -235,7 +235,7 @@ az network firewall application-rule create \
 
 ## <a name="configure-a-network-rule"></a>Настройка правила сети
 
-Сетевое правило разрешает исходящий доступ к два IP-адреса на порт 53 (DNS).
+Правило сети разрешает исходящий доступ к двум IP-адресам через порт 53 (DNS).
 
 ```azurecli-interactive
 az network firewall network-rule create \
@@ -255,7 +255,7 @@ az network firewall network-rule create \
 
 Теперь проверьте брандмауэр, чтобы убедиться, что он работает должным образом.
 
-1. Обратите внимание, частный IP-адрес для **Srv рабочих** виртуальной машины:
+1. Запишите частный IP-адрес для виртуальной машины **SRV-работы** :
 
    ```azurecli-interactive
    az vm list-ip-addresses \
@@ -263,16 +263,16 @@ az network firewall network-rule create \
    -n Srv-Work
    ```
 
-1. Подключите удаленный рабочий стол к виртуальной машине **Srv-Jump** и выполните вход. Откройте удаленный рабочий стол для **Srv рабочих** частных IP-адрес и входа.
+1. Подключите удаленный рабочий стол к виртуальной машине **Srv-Jump** и выполните вход. После этого откройте подключение к удаленному рабочему столу к частному IP-адресу **SRV** и выполните вход.
 
-3. На **SRV рабочих**, откройте окно PowerShell и выполните следующие команды:
+3. На **SRV-работе**откройте окно PowerShell и выполните следующие команды:
 
    ```
    nslookup www.google.com
    nslookup www.microsoft.com
    ```
 
-   Обе команды должна возвращать ответы, показывающий, что в брандмауэре получают запросы DNS.
+   Обе команды должны возвращать ответы, показывая, что запросы DNS проходят через брандмауэр.
 
 1. Выполните следующие команды:
 
@@ -284,7 +284,7 @@ az network firewall network-rule create \
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   Запросы www.google.com должны завершиться успешно и не выполняется, запросы www.microsoft.com. Это показывает, что правила брандмауэра работают должным образом.
+   Запросы www.google.com должны выполняться успешно, и запросы www.microsoft.com должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -293,7 +293,7 @@ az network firewall network-rule create \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Можно сохранить ресурсы брандмауэра к следующему руководству, или если больше не нужен, удалите **Test-FW-RG** группы ресурсов, чтобы удалить все ресурсы, связанные с брандмауэра:
+Вы можете разместить ресурсы брандмауэра для следующего руководства или, если они больше не нужны, удалить группу ресурсов **Test-FW-RG** , чтобы удалить все ресурсы, связанные с брандмауэром:
 
 ```azurecli-interactive
 az group delete \

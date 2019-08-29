@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: roiyz
-ms.openlocfilehash: 004d6125de6762303db91f3a5ef9ffa16e6e501f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c44722403967f3563472692f97cb2a114e6294cd
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705957"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084467"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -27,7 +26,7 @@ ms.locfileid: "67705957"
 
 Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Windows. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
-Инструкции по установке вручную драйверы и текущими поддерживаемыми версиями доступны [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
+Инструкции по установке драйверов вручную и текущим поддерживаемым версиям доступны [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Linux серии N](hpccompute-gpu-linux.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -36,11 +35,11 @@ ms.locfileid: "67705957"
 
 Это расширение поддерживает следующие операционные системы:
 
-| Дистрибутив | Version |
+| Распространение | Version |
 |---|---|
-| Windows 10 | Core |
-| Windows Server 2016 | Core |
-| Windows Server 2012R2 | Core |
+| Windows 10 | Ядро |
+| Windows Server 2016 | Ядро |
+| Windows Server 2012R2 | Ядро |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -72,7 +71,7 @@ ms.locfileid: "67705957"
 
 ### <a name="properties"></a>Свойства
 
-| ИМЯ | Значение и пример | Тип данных |
+| Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | string |
@@ -125,7 +124,7 @@ Set-AzVMExtension
     }'
 ```
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli
 az vm extension set `

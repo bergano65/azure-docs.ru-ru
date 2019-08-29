@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: c47cc49a8e81b44a4529f8f82954797e2648c938
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: c2aad97cea39221da56666dbeff72ce56fcb2a22
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983092"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70113701"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -83,7 +83,7 @@ ms.locfileid: "69983092"
 - Допустимые символы: a – z, 0-9, A – Z 
 - Максимальная длина — 59
 - Зарезервированные имена: приложения
-- Должно быть уникальным
+- Область именования кластера предназначена для всех Azure во всех подписках. Поэтому имя кластера должно быть уникальным по всему миру.
 - Первые 6 символов должны быть уникальными в пределах виртуальной сети.
 
 ## <a name="cluster-login-and-ssh-username"></a>Имя входа в кластер и имя пользователя SSH

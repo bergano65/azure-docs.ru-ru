@@ -7,18 +7,17 @@ author: MSSedusch
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 78d14add09a89b7ec4d4844a12ffa0434d714b3a
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 7b9d3791d44e9541df7fc95c34b5e8c83a4295b3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "67709100"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078394"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -343,7 +342,7 @@ ms.locfileid: "67709100"
    * Введите пароль пользователя базы данных (SYSTEM). Введите пароль пользователя базы данных.
    * Подтвердите пароль пользователя базы данных (SYSTEM). Введите пароль пользователя базы данных еще раз для подтверждения.
    * "Restart system after machine reboot?" [нет]. Нажмите клавишу ВВОД.
-   * Продолжить? (Вы действительно хотите продолжить? (Да/нет)). Проверьте сводку. Для продолжения введите **y**.
+   * "Do you want to continue? (y/n)" (Вы действительно хотите продолжить? (Да/нет)). Проверьте сводку. Для продолжения введите **y**.
 
 1. **[A]** . Обновите агент узла SAP.
 
@@ -693,7 +692,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
 Описания следующих тестов взяты из руководства по системной репликации SAP HANA, оптимизированной для высокой производительности, на сервере SUSE Linux Enterprise Server for SAP Applications версии 12 с пакетом обновлений 1 (SP1). Чтобы получить самую свежую версию этих описаний, используйте оригинал руководства. Прежде чем начинать тест, обязательно проверьте состояние синхронизации HANA и конфигурацию Pacemaker.
 
 В следующих описаниях тестов мы предполагаем, что PREFER_SITE_TAKEOVER = true, а AUTOMATED_REGISTER = false.
-ПРИМЕЧАНИЕ. Описанные тесты должны выполняться поочередно и с учетом состояния завершения всех предыдущих тестов.
+Примечание. Описанные тесты должны выполняться поочередно и с учетом состояния завершения всех предыдущих тестов.
 
 1. ТЕСТ 1: ОСТАНОВКА БАЗЫ ДАННЫХ — ИСТОЧНИКА НА УЗЛЕ 1
 

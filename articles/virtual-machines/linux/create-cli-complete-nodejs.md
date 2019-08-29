@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 4ba4060b-ce95-4747-a735-1d7c68597a1a
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/09/2017
 ms.author: cynthn
-ms.openlocfilehash: 5fbcbc63b3038151a7d45a70ce88eb7ca9829fe5
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: aaf91aa81be5fc4c5944dde804798a61ceffc5a6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67668008"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083717"
 ---
 # <a name="create-a-complete-linux-environment-with-the-azure-classic-cli"></a>Создание полной среды Linux с помощью Azure Classic CLI
 В этой статье мы создаем простую сеть с балансировщиком нагрузки и парой виртуальных машин, подходящих для разработки и простых вычислений. Мы поэтапно выполняем полное развертывание, от первой до последней команды, в результате чего создаем две защищенные рабочие виртуальные машины Linux, к которым можно подключиться откуда угодно через Интернет. Затем вы сможете работать с более сложными сетями и средами.
@@ -301,7 +300,7 @@ data:
 info:    group create command OK
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 Необходимы учетные записи хранения для дисков виртуальной машины и других дисков данных, которые вы захотите добавить. Учетные записи хранения создаются практически сразу после создания групп ресурсов.
 
 В этом случае мы используем команду `azure storage account create` и с ее помощью передаем расположение учетной записи, имя группы ресурсов, которая ее контролирует, и нужный вам тип поддержки хранилища. В следующем примере создается учетная запись хранения с именем `mystorageaccount`:
@@ -1097,7 +1096,7 @@ azure network nic set --resource-group myResourceGroup --name myNic2 \
   --network-security-group-name myNetworkSecurityGroup
 ```
 
-## <a name="create-an-availability-set"></a>"Создать группу доступности"
+## <a name="create-an-availability-set"></a>Создать группу доступности
 Группы доступности помогают распределить виртуальные машины между доменами сбоя и доменами обновления. Создадим группу доступности для виртуальных машин. В следующем примере создается группа доступности с именем `myAvailabilitySet`.
 
 ```azurecli

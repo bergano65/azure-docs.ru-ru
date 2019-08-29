@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 6dfd3bd86e55d19bf1c15486a502a4cbab3c96a8
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 3683550045699a24c27a3226fba2e90a671f80e1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69905302"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101029"
 ---
 # <a name="protect-your-network-resources-in-azure-security-center"></a>Защита ресурсов сети в центре безопасности Azure
 Центр безопасности Azure постоянно анализирует состояние безопасности ресурсов Azure, чтобы предоставлять рекомендации по обеспечению безопасности сети. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления, чтобы укрепить защиту ресурсов.
@@ -153,7 +153,6 @@ ms.locfileid: "69905302"
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
 * [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
-* [Защита приложений в центре безопасности Azure.](security-center-application-recommendations.md)
 * [Защита службы SQL Azure в центре безопасности Azure.](security-center-sql-service-recommendations.md)
 
 Дополнительные сведения о Центре безопасности см. в следующих статьях:

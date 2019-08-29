@@ -9,19 +9,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: ab8d41a7-1971-4032-ab71-eb435c455dc1
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/17/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e20e2a094e1fd88dfc2a25b586dc6c894f92b418
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 96d2dc567a4ccc96d33c2ccac233268a5b9148e4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62108477"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100343"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-classic"></a>Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -53,7 +52,7 @@ ms.locfileid: "62108477"
 
 | Параметр | Описание | Пример |
 | --- | --- | --- |
-| **$akvURL** |**URL-адрес хранилища ключей** |«https:\//contosokeyvault.vault.azure.net/» |
+| **$akvURL** |**URL-адрес хранилища ключей** |"https:\//contosokeyvault.Vault.Azure.NET/" |
 | **$spName** |**Имя субъекта-службы** |fde2b411-33d5-4e11-af04eb07b669ccf2 |
 | **$spSecret** |**Секрет субъекта-службы** |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
 | **$credName** |**Учетное имя**. Интеграция AKV создает учетные данные в рамках SQL Server, с помощью которых VM будет получать доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |

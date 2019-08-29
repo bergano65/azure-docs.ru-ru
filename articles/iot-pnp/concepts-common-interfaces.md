@@ -7,16 +7,16 @@ ms.date: 07/16/2019
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 848210509bf9ab0ffec35004cbb07e39d6de1bc0
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 5a5aeac06ccf31e88a8ec670e57b22e753553ff5
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69879608"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114252"
 ---
 # <a name="iot-plug-and-play-preview-common-interfaces"></a>Общие интерфейсы предварительной версии Plug and Play IoT
 
-Все устройства IoT Plug and Play должны реализовывать некоторые общие интерфейсы. Общие интерфейсы предоставляют решения IoT, так как они обеспечивают единообразную функциональность. Для [сертификации](tutorial-build-device-certification.md) требуется, чтобы устройство реализовало несколько распространенных интерфейсов. Общие определения интерфейса можно получить из глобального репозитория модели.
+Все устройства IoT Plug and Play должны реализовывать некоторые общие интерфейсы. Общие интерфейсы предоставляют решения IoT, так как они обеспечивают единообразную функциональность. Для [сертификации](tutorial-build-device-certification.md) требуется, чтобы устройство реализовало несколько распространенных интерфейсов. Общие определения интерфейса можно получить из репозитория общедоступной модели.
 
 ## <a name="summary-of-common-interfaces"></a>Сводка по общим интерфейсам
 
@@ -35,7 +35,7 @@ ms.locfileid: "69879608"
 
 ### <a name="cli"></a>CLI
 
-Вы можете использовать расширение Интернета вещей Azure для Azure CLI, чтобы получить общие интерфейсы из глобального репозитория модели.
+Вы можете использовать расширение Интернета вещей Azure для Azure CLI, чтобы получить общие интерфейсы из репозитория общедоступной модели.
 
 ```cmd/sh
 az iot pnp interface show --interface {InterfaceID} --login {ModelRepoConnectionString}
@@ -47,11 +47,11 @@ az iot pnp model show --interface {InterfaceID} --login {ModelRepoConnectionStri
 
 ### <a name="vs-code"></a>VS Code
 
-1. Используйте **сочетание клавиш CTRL + SHIFT + P** , чтобы открыть палитру команд.
+1. Нажмите сочетание клавиш **CTRL+SHIFT+P**, чтобы открыть палитру команд.
 
-1. Введите **Plug and Play** , а затем выберите **Plug and Play IOT: Команда Открыть репозиторий** модели. Выберите **глобальный репозиторий модели**. В VS Code откроется репозиторий глобальной модели.
+1. Введите **Plug and Play** , а затем выберите **Plug and Play IOT: Open Model Repository** (Открыть репозиторий моделей IoT Plug and Play). Выберитеобщедоступный репозиторий. Общедоступный репозиторий моделей откроется в VS Code.
 
-1. В репозитории глобальных моделей введите имя интерфейса в поле поиска.
+1. В репозитории общедоступной модели введите имя интерфейса в поле поиска.
 
 1. Чтобы создать локальную копию интерфейса, выберите ее в результатах поиска, а затем щелкните **скачать**.
 

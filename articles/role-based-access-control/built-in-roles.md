@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 08/02/2019
+ms.date: 08/27/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 776b8303e3454b40979691ea32fdcca11be4fa71
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: fb1007929a26384da60e542865c750fd1d642440
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013373"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114669"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -70,6 +70,8 @@ ms.locfileid: "70013373"
 | [Читатель счетов](#billing-reader) | Разрешает читать данные выставления счетов. |
 | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. |
 | [Доступ к узлу-члену блокчейн (Предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам члена Блокчейн |
+| [Участник схемы](#blueprint-contributor) | Может управлять определениями схем, но не назначать их. |
+| [Оператор схемы](#blueprint-operator) | Может назначать существующие опубликованные проекты, но не может создавать новые. Примечание. это работает только в том случае, если назначение выполняется с управляемым удостоверением, назначенным пользователем. |
 | [Участник конечных точек CDN](#cdn-endpoint-contributor) | Может управлять конечными точками CDN, но не может предоставлять доступ другим пользователям. |
 | [Читатель конечной точки CDN](#cdn-endpoint-reader) | Может просматривать конечные точки CDN, но не может вносить изменения. |
 | [Участник профиля CDN](#cdn-profile-contributor) | Может управлять профилями CDN и их конечными точками, но не может предоставлять доступ другим пользователям. |
@@ -948,6 +950,44 @@ ms.locfileid: "70013373"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="blueprint-contributor"></a>Участник схемы
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Может управлять определениями схем, но не назначать их. |
+> | **Id** | 41077137-E803-4205-871c-5a86e6a753b4 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft. чертеж/чертежи/* | Создание определений схем или артефактов схемы и управление ими. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="blueprint-operator"></a>Оператор схемы
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Может назначать существующие опубликованные проекты, но не может создавать новые. Примечание. это работает только в том случае, если назначение выполняется с управляемым удостоверением, назначенным пользователем. |
+> | **Id** | 437d2ced-4a38-4302-8479-ed2bcb43d090 |
+> | **Действия** |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft. чертеж/Блуепринтассигнментс/* | Создание назначений схем и управление ими. |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="cdn-endpoint-contributor"></a>Участник конечных точек CDN
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1268,7 +1308,7 @@ ms.locfileid: "70013373"
 > | **Действия** |  |
 > | Microsoft.Consumption/* |  |
 > | Microsoft.CostManagement/* |  |
-> | Microsoft.Billing/billingPeriods/read | Вывод списка доступных интервалов выставления счетов. |
+> | Microsoft.Billing/billingPeriods/read |  |
 > | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
@@ -1291,7 +1331,7 @@ ms.locfileid: "70013373"
 > | **Действия** |  |
 > | Microsoft.Consumption/*/read |  |
 > | Microsoft.CostManagement/*/read |  |
-> | Microsoft.Billing/billingPeriods/read | Вывод списка доступных интервалов выставления счетов. |
+> | Microsoft.Billing/billingPeriods/read |  |
 > | Microsoft.Resources/subscriptions/read | Возвращает список подписок. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
@@ -1899,6 +1939,7 @@ ms.locfileid: "70013373"
 > | Microsoft.Insights/Register/Action | Регистрация поставщика Microsoft Insights |
 > | Microsoft.Insights/scheduledqueryrules/* |  |
 > | Microsoft.Insights/webtests/* | Чтение, запись и удаление веб-тестов Application Insights. |
+> | Microsoft. Insights/книги/* |  |
 > | Microsoft.OperationalInsights/workspaces/intelligencepacks/* | Чтение, запись и удаление пакетов решений log Analytics. |
 > | Microsoft.OperationalInsights/workspaces/savedSearches/* | Чтение, запись и удаление сохраненных поисков log Analytics. |
 > | Microsoft.OperationalInsights/workspaces/search/action | Выполняет поисковый запрос. |
@@ -2474,6 +2515,7 @@ ms.locfileid: "70013373"
 > | Microsoft. SQL/Манажединстанцес/databases/Сенситивитилабелс/* |  |
 > | Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/* |  |
 > | Microsoft. SQL/Манажединстанцес/СекуритялертполиЦиес/* |  |
+> | Microsoft. SQL/Манажединстанцес/databases/Транспарентдатаенкриптион/* |  |
 > | Microsoft.Sql/managedInstances/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/auditingPolicies/* | Создание политик аудита SQL Server и управление ими |
 > | Microsoft.Sql/servers/auditingSettings/* | Создание параметров аудита SQL Server и управление ими |
@@ -2494,6 +2536,7 @@ ms.locfileid: "70013373"
 > | Microsoft.Sql/servers/databases/securityAlertPolicies/* | Создание политик оповещения системы безопасности баз данных SQL Server и управление ими |
 > | Microsoft.Sql/servers/databases/securityMetrics/* | Создание метрик безопасности базы данных SQL и управление ими |
 > | Microsoft.Sql/servers/databases/sensitivityLabels/* |  |
+> | Microsoft. SQL/Servers/databases/Транспарентдатаенкриптион/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessments/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |

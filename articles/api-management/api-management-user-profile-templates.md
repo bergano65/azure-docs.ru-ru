@@ -10,16 +10,15 @@ ms.assetid: 2e3b73ef-d223-44fe-9280-c3af3fd4a030
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 9d74cd3bd466578c61f8f12bf9b6e862c046e9bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f24b9c6ce2aeb318040b61c29d7e14c01886c46
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61074877"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073312"
 ---
 # <a name="user-profile-templates-in-azure-api-management"></a>Шаблоны профилей пользователей в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -96,7 +95,7 @@ ms.locfileid: "61074877"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В этом шаблоне нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
@@ -106,17 +105,17 @@ ms.locfileid: "61074877"
   
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
-|`firstName`|string|Имя текущего пользователя.|  
-|`lastName`|string|Фамилия текущего пользователя.|  
-|`companyName`|string|Название компании текущего пользователя.|  
-|`addresserEmail`|string|Адрес электронной почты текущего пользователя.|  
-|`developersUsageStatisticsLink`|string|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
+|`firstName`|строка|Имя текущего пользователя.|  
+|`lastName`|строка|Фамилия текущего пользователя.|  
+|`companyName`|строка|Название компании текущего пользователя.|  
+|`addresserEmail`|строка|Адрес электронной почты текущего пользователя.|  
+|`developersUsageStatisticsLink`|строка|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
 |`subscriptions`|Коллекция сущностей [Subscription](api-management-template-data-model-reference.md#Subscription) (Подписка).|Подписки текущего пользователя.|  
 |`applications`|Коллекция сущностей [Application](api-management-template-data-model-reference.md#Application) (Приложение).|Приложения текущего пользователя.|  
-|`changePasswordUrl`|string|Относительный URL-адрес для изменения пароля текущего пользователя.|  
-|`changeNameOrEmailUrl`|string|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
-|`canChangePassword`|Логическое|Определяет, может ли текущий пользователь изменять свой пароль.|  
-|`isSystemUser`|Логическое|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
+|`changePasswordUrl`|строка|Относительный URL-адрес для изменения пароля текущего пользователя.|  
+|`changeNameOrEmailUrl`|строка|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
+|`canChangePassword`|boolean|Определяет, может ли текущий пользователь изменять свой пароль.|  
+|`isSystemUser`|boolean|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -315,7 +314,7 @@ ms.locfileid: "61074877"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В этом шаблоне могут использоваться следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [subscription-cancel](api-management-page-controls.md#subscription-cancel)  
@@ -327,17 +326,17 @@ ms.locfileid: "61074877"
   
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
-|`firstName`|string|Имя текущего пользователя.|  
-|`lastName`|string|Фамилия текущего пользователя.|  
-|`companyName`|string|Название компании текущего пользователя.|  
-|`addresserEmail`|string|Адрес электронной почты текущего пользователя.|  
-|`developersUsageStatisticsLink`|string|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
+|`firstName`|строка|Имя текущего пользователя.|  
+|`lastName`|строка|Фамилия текущего пользователя.|  
+|`companyName`|строка|Название компании текущего пользователя.|  
+|`addresserEmail`|строка|Адрес электронной почты текущего пользователя.|  
+|`developersUsageStatisticsLink`|строка|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
 |`subscriptions`|Коллекция сущностей [Subscription](api-management-template-data-model-reference.md#Subscription) (Подписка).|Подписки текущего пользователя.|  
 |`applications`|Коллекция сущностей [Application](api-management-template-data-model-reference.md#Application) (Приложение).|Приложения текущего пользователя.|  
-|`changePasswordUrl`|string|Относительный URL-адрес для изменения пароля текущего пользователя.|  
-|`changeNameOrEmailUrl`|string|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
-|`canChangePassword`|Логическое|Определяет, может ли текущий пользователь изменять свой пароль.|  
-|`isSystemUser`|Логическое|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
+|`changePasswordUrl`|строка|Относительный URL-адрес для изменения пароля текущего пользователя.|  
+|`changeNameOrEmailUrl`|строка|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
+|`canChangePassword`|boolean|Определяет, может ли текущий пользователь изменять свой пароль.|  
+|`isSystemUser`|boolean|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -478,7 +477,7 @@ ms.locfileid: "61074877"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В этом шаблоне могут использоваться следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [app-actions](api-management-page-controls.md#app-actions)  
@@ -490,17 +489,17 @@ ms.locfileid: "61074877"
   
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
-|`firstName`|string|Имя текущего пользователя.|  
-|`lastName`|string|Фамилия текущего пользователя.|  
-|`companyName`|string|Название компании текущего пользователя.|  
-|`addresserEmail`|string|Адрес электронной почты текущего пользователя.|  
-|`developersUsageStatisticsLink`|string|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
+|`firstName`|строка|Имя текущего пользователя.|  
+|`lastName`|строка|Фамилия текущего пользователя.|  
+|`companyName`|строка|Название компании текущего пользователя.|  
+|`addresserEmail`|строка|Адрес электронной почты текущего пользователя.|  
+|`developersUsageStatisticsLink`|строка|Относительный URL-адрес для просмотра аналитики по текущему пользователю.|  
 |`subscriptions`|Коллекция сущностей [Subscription](api-management-template-data-model-reference.md#Subscription) (Подписка).|Подписки текущего пользователя.|  
 |`applications`|Коллекция сущностей [Application](api-management-template-data-model-reference.md#Application) (Приложение).|Приложения текущего пользователя.|  
-|`changePasswordUrl`|string|Относительный URL-адрес для изменения пароля текущего пользователя.|  
-|`changeNameOrEmailUrl`|string|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
-|`canChangePassword`|Логическое|Определяет, может ли текущий пользователь изменять свой пароль.|  
-|`isSystemUser`|Логическое|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
+|`changePasswordUrl`|строка|Относительный URL-адрес для изменения пароля текущего пользователя.|  
+|`changeNameOrEmailUrl`|строка|Относительный URL-адрес для изменения имени и адреса электронной почты текущего пользователя.|  
+|`canChangePassword`|boolean|Определяет, может ли текущий пользователь изменять свой пароль.|  
+|`isSystemUser`|boolean|Определяет, входит ли текущий пользователь в одну из встроенных [групп](api-management-key-concepts.md#groups).|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -605,7 +604,7 @@ ms.locfileid: "61074877"
 </a>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В этом шаблоне нельзя использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
@@ -625,5 +624,5 @@ ms.locfileid: "61074877"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/27/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 687012e73b4b0c869b491ac1c9ea128662b23510
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1c5b4904419af1fe86e43dc2f781ef43ce8dd762
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64680872"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078788"
 ---
 # <a name="sap-hana-availability-within-one-azure-region"></a>Доступность SAP HANA в пределах одного региона Azure
 В этой статье представлены несколько сценариев доступности в пределах одного региона Azure. В Azure есть множество регионов, распределенных по всему миру. Список доступных регионов см. на странице с [регионами Azure](https://azure.microsoft.com/regions/). При развертывании SAP HANA на виртуальных машинах в пределах одного региона Azure корпорация Майкрософт предлагает развернуть одну виртуальную машину с экземпляром HANA. Для повышения уровня доступности можно развернуть две виртуальные машины с двумя экземплярами HANA в [группе доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets), использующей репликацию системы HANA в целях обеспечения доступности. 
@@ -119,7 +118,7 @@ ms.locfileid: "64680872"
 
 Это решение позволяет достичь RPO 0 и низкого целевого времени восстановления. Настройте клиентское подключение SAP HANA таким образом, чтобы клиенты SAP HANA использовали виртуальный IP-адрес для подключения к конфигурации репликации системы HANA. Такая конфигурация устранит необходимость перенастройки приложения в случае отработки отказа на дополнительный узел. В этом сценарии номера SKU Azure для основной и дополнительной виртуальных машин должны быть одинаковыми.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Пошаговое руководство по настройке этих конфигураций в Azure см. в следующих статьях:
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 4dbbaeea736dd46478ad9992201ea28bd7bfc2ba
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2cff6ef25d0fe812cc6df26bf946daff29d37f84
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61457844"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102839"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание центров уведомлений и управление ими с помощью PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "61457844"
 
 Управление центрами уведомлений не поддерживается напрямую с помощью командлетов, включенных в Azure PowerShell. Лучше всего для PowerShell указать сборку Microsoft.Azure.NotificationHubs.dll. Сборка входит в состав [пакета NuGet для центров уведомлений Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Azure — это платформа на основе подписок. Дополнительные сведения о получении подписки см. на страницах [Как приобрести Azure], [Предложения для участников] или [Создайте бесплатную учетную запись Azure уже сегодня].
 - Компьютер с Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell].
@@ -74,7 +74,7 @@ catch [System.Exception]
 
 ## <a name="create-the-namespacemanager-class"></a>Создание класса `NamespaceManager`
 
-Для подготовки центров уведомлений создайте экземпляр класса [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.namespacemanager.aspx) из пакета SDK.
+Для подготовки центров уведомлений создайте экземпляр класса [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager?view=azure-dotnet) из пакета SDK.
 
 Получить правило авторизации для указания строки подключения можно с помощью командлета [Get-AzureSBAuthorizationRule] в составе Azure PowerShell. Ссылка на экземпляр `NamespaceManager` хранится в переменной `$NamespaceManager`. Для подготовки центра уведомлений используется `$NamespaceManager`.
 
@@ -92,10 +92,10 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 В этой части сценария выполняется настройка четырех локальных переменных.
 
-1. `$Namespace`: присвойте имя пространству имен, в котором нужно создать центр уведомлений.
-2. `$Path`: присвойте путь к имени нового центра уведомлений.  Например, MyHub.
-3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
-4. `$WnsSecretkey`: присвойте значение секретного ключа своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+1. `$Namespace`. присвойте имя пространству имен, в котором нужно создать центр уведомлений.
+2. `$Path`. присвойте путь к имени нового центра уведомлений.  Например, MyHub.
+3. `$WnsPackageSid`. присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+4. `$WnsSecretkey`. присвойте значение секретного ключа своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
 
 Эти переменные используются для подключения к пространству имен и создания нового центра уведомлений, настроенного для обработки уведомлений от служб уведомлений Windows (WNS) с использованием учетных данных WNS для приложения для Windows. Сведения о получении идентификатора безопасности пакета и секретного ключа см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 

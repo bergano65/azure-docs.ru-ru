@@ -9,19 +9,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: 737b2f65-08b9-4f54-b867-e987730265a8
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/07/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: aa912e3eb76d72e7a79c83d7e51d493310bd36b3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9fabccd477883750c1aecb5493fdb64ddf5ab2c3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60362141"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100295"
 ---
 # <a name="automated-patching-for-sql-server-in-azure-virtual-machines-classic"></a>Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -40,14 +39,14 @@ ms.locfileid: "60362141"
 > [!IMPORTANT] 
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Версию этой статьи для Resource Manager см. в статье [Автоматическое исправление SQL Server на виртуальных машинах Azure Resource Manager](../sql/virtual-machines-windows-sql-automated-patching.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической установки исправлений необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
 
 * Windows Server 2012
 * Windows Server 2012 R2
-* Windows Server 2016
+* Windows Server 2016
 
 **Версия SQL Server**
 
@@ -63,7 +62,7 @@ ms.locfileid: "60362141"
 
 * [Установите расширение IaaS для SQL Server](../classic/sql-server-agent-extension.md).
 
-## <a name="settings"></a>Параметры
+## <a name="settings"></a>Настройки
 В приведенной ниже таблице описаны параметры для настройки автоматической установки исправлений. Для виртуальных машин, развернутых с использованием классической модели, эти параметры необходимо настроить с помощью PowerShell.
 
 | Параметр | Возможные значения | Описание |
@@ -94,7 +93,7 @@ ms.locfileid: "60362141"
 
 Чтобы отключить автоматическую установку обновлений, выполните тот же скрипт без параметра -Enable в команде New-AzureVMSqlServerAutoPatchingConfig. Как и установка, отключение автоматической установки исправлений занимает несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о других доступных задачах автоматизации см. в разделе [Расширение агента IaaS для SQL Server](../classic/sql-server-agent-extension.md).
 
 Дополнительные сведения о запуске SQL Server на виртуальных машинах Azure см. в [обзоре использования SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md).

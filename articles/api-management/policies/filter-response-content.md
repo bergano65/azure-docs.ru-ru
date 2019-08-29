@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 26829dfc04acdac2a25fe0d4fdc3e95e4d219057
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 462db76b06e5071571ae475d420a627e57dad92e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60637069"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70067753"
 ---
 # <a name="filter-response-content"></a>Фильтрация содержимого ответа
 
@@ -30,7 +29,7 @@ ms.locfileid: "60637069"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Filter response content based on product name.policy.xml)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробнее о политиках службы управления API:
 

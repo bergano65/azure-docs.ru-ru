@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: d9edfd9f-482f-4c0b-956c-0d2c2c30026c
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: kirpas
 ms.subservice: disks
-ms.openlocfilehash: 81e6b5558ab90f154ebf121a558704b00b97444d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b22507796a9e614da780d25795bb7edf7094e935
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64684329"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103201"
 ---
 # <a name="how-to-expand-the-os-drive-of-a-virtual-machine"></a>Расширение диска ОС виртуальной машины
 
@@ -215,6 +214,6 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 4.  В командной строке **DISKPART** введите `extend [size=<size>]`. Эта команда расширяет выбранный том на указанный *размер* в МБ.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Диски также можно подключить на [портале Azure](attach-managed-disk-portal.md).

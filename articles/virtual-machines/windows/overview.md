@@ -11,17 +11,16 @@ ms.assetid: fbae9c8e-2341-4ed0-bb20-fd4debb2f9ca
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7bb87713f1f7d1f41f68f3743b2504784b37bb23
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 47ad2346f4574b10d12c46c1f72394225e014854
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723049"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102568"
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Обзор виртуальных машин Windows в Azure
 
@@ -53,17 +52,17 @@ ms.locfileid: "67723049"
 
 Если диск операционной системы создается с помощью Azure, имя компьютера и имя виртуальной машины совпадают. При [передаче и использовании собственного образа](upload-generalized-managed.md), содержащего ранее настроенную операционную систему, а также создании виртуальной машины с его помощью имена могут различаться. При передаче файла собственного образа мы советуем указать одинаковые имя компьютера в операционной системе и имя виртуальной машины.
 
-### <a name="locations"></a>Расположения
+### <a name="locations"></a>Расположение
 Все ресурсы, созданные в Azure, распределяются по нескольким [географическим регионам](https://azure.microsoft.com/regions/) во всем мире. Как правило, при создании виртуальной машины регион называется **расположением**. Для виртуальной машины расположение указывает на место хранения виртуальных жестких дисков.
 
 В этой таблице приведены некоторые способы, с помощью которых можно получить список доступных расположений.
 
 | Метод | Описание |
 | --- | --- |
-| Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
+| портала Azure |Выберите расположение из списка при создании виртуальной машины. |
 | Azure PowerShell |Используйте команду [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
 | REST API |Используйте операцию [вывода списка расположений](https://docs.microsoft.com/rest/api/resources/subscriptions). |
-| Инфраструктура CLI Azure |Используйте операцию [az account list-locations](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest). |
+| Azure CLI |Используйте операцию [az account list-locations](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest). |
 
 ### <a name="vm-size"></a>Размер виртуальной машины
 Используемый [размер](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) виртуальной машины зависит от рабочей нагрузки, которую требуется выполнить. Позже выбранный размер определяет разные факторы, например вычислительную мощность, объем памяти и хранилища. Azure предлагает широкий спектр размеров для поддержки разных вариантов использования.
@@ -82,10 +81,10 @@ Azure предоставляет множество [образов из Marketp
 
 | Метод | Описание |
 | --- | --- |
-| Портал Azure |При выборе используемого образа значения задаются автоматически. |
+| портала Azure |При выборе используемого образа значения задаются автоматически. |
 | Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
-| Интерфейсы REST API |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
-| Инфраструктура CLI Azure |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
+| REST API |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
+| Azure CLI |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 
 Вы можете [передать и использовать собственный образ](upload-generalized-managed.md#upload-the-vhd-to-your-storage-account). В этом случае имя издателя, предложение и SKU не используются.
 
@@ -101,7 +100,7 @@ Azure предоставляет множество [образов из Marketp
 ### <a name="related-resources"></a>Связанные ресурсы
 Ресурсы в этой таблице используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
 
-| Resource | Обязательно для заполнения | Описание |
+| Resource | Обязательное значение | Описание |
 | --- | --- | --- |
 | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
 | [Учетная запись хранения](../../storage/common/storage-create-storage-account.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
@@ -117,12 +116,12 @@ Azure предоставляет множество [образов из Marketp
 
 | Метод | Статья |
 | --- | --- |
-| Портал Azure |[Создание виртуальной машины под управлением Windows на портале](../virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
+| портала Azure |[Создание виртуальной машины под управлением Windows на портале](../virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
 | Шаблоны |[Создание виртуальной машины Windows с использованием шаблона диспетчера ресурсов](ps-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
 | Azure PowerShell |[Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines-windows-ps-create.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
 | Клиентские пакеты SDK |[Развертывание ресурсов Azure с помощью языка C#](csharp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
-| Интерфейсы REST API |[Создание или обновление виртуальной машины](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
-| Инфраструктура CLI Azure |[Создание виртуальной машины с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm) |
+| REST API |[Создание или обновление виртуальной машины](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
+| Azure CLI |[Создание виртуальной машины с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm) |
 
 Так или иначе, иногда вы будете сталкиваться с проблемами. В этом случае см. сведения в статье [Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Windows в Azure](../troubleshooting/troubleshoot-deployment-new-vm-windows.md).
 
@@ -134,11 +133,11 @@ Azure предоставляет множество [образов из Marketp
 
 | Метод | Описание |
 | --- | --- |
-| Портал Azure |В меню концентратора щелкните **Виртуальные машины** и выберите виртуальную машину из списка. В колонке виртуальной машины доступны общие сведения, значения параметров и метрики мониторинга. |
+| портала Azure |В меню концентратора щелкните **Виртуальные машины** и выберите виртуальную машину из списка. В колонке виртуальной машины доступны общие сведения, значения параметров и метрики мониторинга. |
 | Azure PowerShell |Сведения об использовании PowerShell для управления виртуальными машинами см. в статье [Создание виртуальных машин Windows и управление ими с помощью модуля Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |
 | REST API |Используйте операцию [получения сведений о виртуальной машине](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-get) для выполнения соответствующего действия. |
 | Клиентские пакеты SDK |Сведения об управлении виртуальными машинами с помощью C# см. в статье [Управление виртуальными машинами Azure с помощью Azure Resource Manager и языка C#](csharp-manage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |
-| Инфраструктура CLI Azure |Сведения об использовании Azure CLI для управления виртуальными машинами см. в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/vm). |
+| Azure CLI |Сведения об использовании Azure CLI для управления виртуальными машинами см. в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/vm). |
 
 ### <a name="log-on-to-the-vm"></a>Вход в виртуальную машину
 Чтобы [запустить сеанс удаленного рабочего стола](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), на портале Azure нажмите кнопку "Подключиться". Иногда при попытке использования удаленного подключения может произойти сбой. В этом случае см. справочные сведения в статье [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](../troubleshooting/troubleshoot-rdp-connection.md).

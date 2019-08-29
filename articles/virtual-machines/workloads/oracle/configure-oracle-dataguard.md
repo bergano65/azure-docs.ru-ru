@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 4329ce7fb74c61a601a37646a398c46940e22ffa
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 52723ca53b9156dd8e8183d92d8d4a350750c936
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707508"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100106"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
@@ -38,7 +37,7 @@ Azure CLI используется для создания ресурсов Azur
 
 Образ Marketplace, который вы будете использовать для создания виртуальных машин, — Oracle:Oracle-Database-Ee:12.1.0.2:latest.
 
-### <a name="sign-in-to-azure"></a>Вход в Azure 
+### <a name="sign-in-to-azure"></a>Войдите в Azure 
 
 Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index) и следуйте инструкциям на экране.
 
@@ -46,7 +45,7 @@ Azure CLI используется для создания ресурсов Azur
 az login
 ```
 
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
@@ -56,7 +55,7 @@ az login
 az group create --name myResourceGroup --location westus
 ```
 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создать группу доступности
 
 Создавать группу доступности необязательно, но мы рекомендуем это сделать. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines).
 

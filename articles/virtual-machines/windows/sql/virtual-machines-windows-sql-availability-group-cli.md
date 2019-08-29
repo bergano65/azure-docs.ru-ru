@@ -7,24 +7,23 @@ author: MashaMSFT
 manager: craigg
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 5bfbf995b67ac49cf169565046daa2887a57e476
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 58174704051709a720950ac51591a1d53b9d01bb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846152"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100562"
 ---
 # <a name="use-the-azure-cli-to-configure-an-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности Always On для SQL Server на виртуальной машине Azure с помощью Azure CLI
 В этой статье описывается, как использовать [Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания отказоустойчивого кластера Windows, добавления SQL Server виртуальных машин в кластер и создания внутренней подсистемы балансировки нагрузки и прослушивателя для Always on группы доступности. Развертывание группы доступности Always On по-прежнему выполняется вручную с помощью SQL Server Management Studio (SSMS). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы автоматизировать настройку Always On группы доступности с помощью Azure CLI, необходимо выполнить следующие предварительные требования. 
 - [Подписка Azure](https://azure.microsoft.com/free/).
 - Группа ресурсов с контроллером домена. 
@@ -38,7 +37,7 @@ ms.locfileid: "68846152"
 - Существующая учетная запись пользователя домена, имеющая разрешение на **Создание объекта Computer** в домене. Например, учетная запись администратора домена обычно имеет достаточные разрешения (например account@domain.com,). _Эта учетная запись также должна входить в группу локальных администраторов на каждой виртуальной машине для создания кластера._
 - Учетная запись пользователя домена, управляющая службой SQL Server. 
  
-## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1.: Создание учетной записи хранения в качестве облачного следящего сервера
+## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>Шаг 1. Создание учетной записи хранения в качестве облачного следящего сервера
 Кластеру требуется учетная запись хранения, которая будет использоваться в качестве облачного следящего сервера. Вы можете использовать любую существующую учетную запись хранения или создать новую. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
 
 В следующем фрагменте кода создается учетная запись хранения: 
@@ -54,7 +53,7 @@ az storage account create -n <name> -g <resource group name> -l <region ex:eastu
 >[!TIP]
 > Если вы используете устаревшую `az sql: 'vm' is not in the 'az sql' command group` версию Azure CLI, может появиться сообщение об ошибке. Скачайте [последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) , чтобы устранить эту ошибку.
 
-## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2.: Определение метаданных отказоустойчивого кластера Windows
+## <a name="step-2-define-windows-failover-cluster-metadata"></a>Шаг 2. Определение метаданных отказоустойчивого кластера Windows
 Группа команд Azure CLI [AZ SQL VM Group](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) управляет метаданными службы отказоустойчивого кластера Windows Server (WSFC), в которой размещается группа доступности. Метаданные кластера включают домен Active Directory, учетные записи кластера, учетные записи хранения, которые будут использоваться в качестве облака-свидетеля, и SQL Server версии. Для определения метаданных для WSFC, чтобы при добавлении первой SQL Server виртуальной машины был создан кластер, используйте команду [AZ SQL VM Group Create](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) . 
 
 В следующем фрагменте кода определяются метаданные для кластера.

@@ -10,16 +10,15 @@ ms.assetid: 49f9254c-4c5f-4ed4-9c8d-798f44e805ee
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 14090e21fb7c6ca07fe63220ffd1d44d483ac869
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 637d4e7bc75537d99538048700673192534613dc
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61088194"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073384"
 ---
 # <a name="product-templates-in-azure-api-management"></a>Шаблоны продуктов в службе управления API Azure
 
@@ -69,7 +68,7 @@ ms.locfileid: "61088194"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [paging-control](api-management-page-controls.md#paging-control)  
@@ -196,7 +195,7 @@ ms.locfileid: "61088194"
 {% endif %}  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  В шаблоне `Product list` можно использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [subscribe-button](api-management-page-controls.md#subscribe-button)  
@@ -206,16 +205,16 @@ ms.locfileid: "61088194"
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
 |Продукт|[Продукт](api-management-template-data-model-reference.md#Product)|Выбранный продукт.|  
-|IsDeveloperSubscribed|Логическое|Указывает, подписан ли текущий пользователь на этот продукт.|  
+|IsDeveloperSubscribed|boolean|Указывает, подписан ли текущий пользователь на этот продукт.|  
 |SubscriptionState|номер|Состояние подписки. Возможны следующие состояния.<br /><br /> —-    `0 - suspended`: подписка заблокирована, и подписчик не может вызвать ни один API продукта.<br />— -   `1 - active`: подписка активна.<br />— -   `2 - expired`: срок действия подписки истек, и она была деактивирована.<br />— -   `3 - submitted`: запрос разработчика на подписку выполнен, но еще не был утвержден или отклонен.<br />—-    `4 - rejected`: администратор отклонил запрос на подписку.<br />-   `5 - cancelled`: подписка отменена разработчиком или администратором.|  
-|Ограничения|массив|Это свойство является устаревшим и не должно использоваться.|  
-|DelegatedSubscriptionEnabled|Логическое|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
-|DelegatedSubscriptionUrl|string|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
-|IsAgreed|Логическое|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
+|Ограничения|array|Это свойство является устаревшим и не должно использоваться.|  
+|DelegatedSubscriptionEnabled|boolean|Указывает, включено ли [делегирование](https://azure.microsoft.com/documentation/articles/api-management-howto-setup-delegation/) для этой подписки.|  
+|DelegatedSubscriptionUrl|строка|Если делегирование включено, содержит URL-адрес делегированной подписки.|  
+|IsAgreed|boolean|Указывает, принял ли текущий пользователь условия использования продукта, если они определены.|  
 |Подписки|Коллекция сущностей [Сводка по подписке](api-management-template-data-model-reference.md#SubscriptionSummary).|Подписки на продукт.|  
 |Apis|Коллекция сущностей [API](api-management-template-data-model-reference.md#API).|API-интерфейсы, существующие для этого продукта.|  
-|CannotAddBecauseSubscriptionNumberLimitReached|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
-|CannotAddBecauseMultipleSubscriptionsNotAllowed|Логическое|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  
+|CannotAddBecauseSubscriptionNumberLimitReached|boolean|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте лимита подписки.|  
+|CannotAddBecauseMultipleSubscriptionsNotAllowed|boolean|Определяет, имеет ли текущий пользователь право подписаться на этот продукт в контексте допустимости нескольких подписок.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -261,5 +260,5 @@ ms.locfileid: "61088194"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

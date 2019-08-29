@@ -6,16 +6,15 @@ documentationcenter: na
 author: ggailey777
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: glenga
-ms.openlocfilehash: 96dbe9b15831a349afc0e68c15c39c1cb31b1032
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: b6a2347ff79268cdaf54993952d59bd700b781bc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444073"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70095967"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>Запуск функций Azure из файла пакета
 
@@ -61,7 +60,7 @@ ms.locfileid: "68444073"
 
 [Развертывание ZIP][Zip deployment for Azure Functions] — это функция службы приложений Azure, которая позволяет развертывать проект приложения-функции в `wwwroot` каталоге. Проект упакован как ZIP-файл развертывания. Те же API можно использовать для развертывания пакета в папку `d:\home\data\SitePackages`. Если для параметра приложения `WEBSITE_RUN_FROM_PACKAGE` задано значение `1`, API-интерфейсы развертывания из ZIP-файла копируют пакет в папку `d:\home\data\SitePackages`, а не извлекают файлы в `d:\home\site\wwwroot`. Также создается файл `packagename.txt`. Затем после перезагрузки приложение-функция запускается из пакета и `wwwroot` становится доступным только для чтения. Дополнительные сведения о развертывании из ZIP-файла см. в статье [Непрерывное развертывание Функций Azure из ZIP-файла](deployment-zip-push.md).
 
-## <a name="adding-the-websiterunfrompackage-setting"></a>Добавление параметра WEBSITE_RUN_FROM_PACKAGE
+## <a name="adding-the-website_run_from_package-setting"></a>Добавление параметра WEBSITE_RUN_FROM_PACKAGE
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
 

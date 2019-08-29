@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 5f9b255e8aa370184ec244ed418f02e55fc149b3
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: e1649d1ad50a62374cb5a1d9491c594e1b485ec1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70049167"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100975"
 ---
 # <a name="extend-azure-iot-central-with-custom-analytics"></a>Расширение IoT Central Azure с помощью пользовательской аналитики
 
@@ -35,7 +35,7 @@ ms.locfileid: "70049167"
 
 ### <a name="iot-central-application"></a>Приложение IoT Central
 
-Создайте IoT Central приложение на странице [IOT Central — мои приложения Azure](https://aka.ms/iotcentral) со следующими параметрами:
+Создайте приложение IoT Central на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) со следующими параметрами:
 
 | Параметр | Значение |
 | ------- | ----- |
@@ -99,7 +99,7 @@ ms.locfileid: "70049167"
 
 ## <a name="configure-export-in-iot-central"></a>Настройка экспорта в IoT Central
 
-Перейдите к [IOT Centralному приложению](https://aka.ms/iotcentral) , созданному на основе шаблона Contoso. В этом разделе вы настроите приложение для потоковой передачи данных телеметрии из виртуальных устройств в концентратор событий. Чтобы настроить экспорт, выполните следующие действия.
+На веб-сайте [Azure IOT Central Application Manager](https://aka.ms/iotcentral) перейдите к IOT Centralному приложению, созданному на основе шаблона Contoso. В этом разделе вы настроите приложение для потоковой передачи данных телеметрии из виртуальных устройств в концентратор событий. Чтобы настроить экспорт, выполните следующие действия.
 
 1. Перейдите на страницу **Непрерывная экспорт данных** , выберите **+ создать**, а затем **концентраторы событий Azure**.
 1. Используйте следующие параметры для настройки экспорта, а затем выберите **сохранить**:

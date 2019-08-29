@@ -10,23 +10,22 @@ ms.assetid: 186128fe-41c0-4efb-9efe-2478ad4d103f
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/09/2017
 ms.author: vlvinogr
-ms.openlocfilehash: fd9902a83a813daffc52e089e6e8bfc4137c5b8f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0a333b1fac78889b61829b869c23efea5e312adf
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60656647"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072267"
 ---
 # <a name="modify-the-content-and-layout-of-pages-on-the-developer-portal-in-azure-api-management"></a>Изменение содержимого и макета страниц на портале разработчика в службе управления API Azure
 Существуют три основных способа настройки портала разработчика в службе управления Azure API.
 
-* [Изменение содержимого статических страниц и элементов макета страницы][modify-content-layout] (описывается в этом руководстве).
-* [Обновление стилей, которые используются для элементов страницы на портале разработчика][customize-styles].
-* [Изменение шаблонов, используемых для страниц, созданных порталом][portal-templates] (например, документы по API, продукты, аутентификация пользователей и т. д.).
+* [Изменение содержимого статических страниц и элементов макета страницы][modify-content-layout] (описывается в этом разделе)
+* [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
+* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (например, документация по API, продукты, проверка подлинности пользователей и т. д.)
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
@@ -56,8 +55,8 @@ ms.locfileid: "60656647"
 Теперь новый заголовок будет отображаться на каждой странице портала разработчика.
 
 ## <a name="next-steps"> </a>Дальнейшие действия
-* [Обновление стилей, которые используются для элементов страницы на портале разработчика][customize-styles].
-* [Изменение шаблонов, используемых для страниц, созданных порталом][portal-templates] (например, документы по API, продукты, аутентификация пользователей и т. д.).
+* [Обновление стилей, используемых для элементов страницы на портале разработчика][customize-styles]
+* [Изменение шаблонов, используемых для страниц][portal-templates] , создаваемых порталом (например, документация по API, продукты, проверка подлинности пользователей и т. д.)
 
 [Structure of developer portal pages]: #page-structure
 [Modifying the contents of a layout widget]: #modify-layout-widget

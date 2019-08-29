@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: e20d351fa33ae432e184addcd1729b2663dbb490
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e56fb938ca8d45a148700a0a6b91e22a4f9034c3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708796"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100853"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
 
@@ -28,7 +27,7 @@ ms.locfileid: "67708796"
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../../includes/virtual-machines-common-sizes-table-defs.md)]
 
-## <a name="older-generations-of-virtual-machine-sizes"></a>Размеры виртуальных машин предыдущих поколений
+## <a name="older-generations-of-virtual-machine-sizes"></a>Старые поколения размеров виртуальных машин
 
 [!INCLUDE [virtual-machines-common-sizes-older](../../../includes/virtual-machines-common-sizes-older.md)]
 

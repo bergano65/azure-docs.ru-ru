@@ -7,19 +7,18 @@ author: saghorpa
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7cbec63cb04075977c167d8b21bf3128e91434f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 1d97130251f7ca56adaf77c5e70d6f08bd5cf514
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710055"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101515"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -258,7 +257,7 @@ systemctl start pacemaker
 ```
 crm_mon
 ```
-![CRM-mon.png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы можете также войти в hawk для проверки состояния кластера *https://\<IP-Адресу узла >: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
+![КРМ-Мон. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы также можете войти в Hawk, чтобы проверить состояние кластера *https://\<узел IP >: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств кластера и ресурсов 
 В этом разделе описаны действия по настройке кластерных ресурсов.
@@ -323,7 +322,7 @@ crm configure load update crm-vip.txt
 При выполнении команды *crm_mon* отобразится два ресурса.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Кроме того, вы увидите сообщение о состоянии в *https://\<узла IP-адрес >: 7630/cib/live/состояние*
+Кроме того, состояние можно увидеть на *узле HTTPS://\<IP address >: 7630/ЦИБ/Live/State.*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 
@@ -422,7 +421,7 @@ zypper -n install libyui-qt
 
 - Базовый сервер SAP HANA.
 - Компилятор и средства C/C++.
-- Высокий уровень доступности
+- Высокая надежность
 - Базовый сервер приложений SAP.
 
 На следующем экране показаны шаги по установке шаблонов.

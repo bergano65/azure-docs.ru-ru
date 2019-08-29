@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 8e108d88282894a7b1bf014146083008bedd483d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cc1200d6acef077e36f701a75f613aba0ccbb75f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60319504"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103405"
 ---
 #  <a name="cannot-rdp-to-a-vm-because-the-vm-boots-into-safe-mode"></a>Сбой подключения к виртуальной машине по протоколу RDP по причине загрузки виртуальной машины в безопасном режиме
 
@@ -55,8 +54,8 @@ ms.locfileid: "60319504"
     Если виртуальная машина настроена на загрузку в безопасном режиме, вы увидите в разделе **загрузчика Windows** дополнительный параметр, который называется **safeboot**. Если параметр **safeboot** не отображается, виртуальная машина не находится в безопасном режиме. В таком случае эта статья не применима к вашему сценарию.
 
     Параметр **safeboot** может отображаться со следующими значениями:
-   - Небольшие
-   - Сеть
+   - Минимальный
+   - Network
 
      В любом из этих двух режимов протокол RDP не запускается. Поэтому исправление будет одинаковым для обоих режимов.
 
