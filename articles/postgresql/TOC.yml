@@ -13,7 +13,7 @@
           href: quickstart-create-server-database-portal.md
         - name: Создание базы данных с помощью Azure CLI
           href: quickstart-create-server-database-azure-cli.md
-        - name: "Создание базы данных с помощью команды up в Azure\_CLI"
+        - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
           href: quickstart-create-server-up-azure-cli.md
         - name: Подключение и запросы
           items:
@@ -122,7 +122,7 @@
               href: concepts-connection-libraries.md
             - name: Устойчивость подключения
               href: concepts-connectivity.md
-            - name: Разработка с помощью Службы Azure Kubernetes (AKS)
+            - name: Разработка с помощью службы Azure Kubernetes (AKS)
               href: concepts-aks.md
             - name: Java
               items:
@@ -176,7 +176,7 @@
           href: howto-restore-server-portal.md
         - name: Azure CLI
           href: howto-restore-server-cli.md
-    - name: Миграция базы данных
+    - name: Перенос базы данных
       items:
         - name: Дамп и восстановление
           href: howto-migrate-using-dump-and-restore.md
@@ -194,6 +194,8 @@
       items:
         - name: Портал Azure
           href: howto-auto-grow-storage-portal.md
+        - name: Портал Azure
+          href: howto-auto-grow-storage-cli.md
     - name: Доступ к журналам сервера
       items:
         - name: Портал Azure
@@ -254,7 +256,7 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-database-postgresql'
     - name: Видео
       items:
-        - name: Видеоролики о продукте
+        - name: Видео о продукте
           href: videos.md
         - name: Серия видеоинструкций
           items:
@@ -278,5 +280,5 @@
       href: 'https://customers.microsoft.com/en-us/search?sq="Azure%20Database%20for%20PostgreSQL"'
     - name: Партнеры
       href: partners-migration-postgresql.md
-    - name: Руководство по миграции баз данных
+    - name: Руководство по переносу баз данных
       href: 'https://datamigration.microsoft.com/'

@@ -89,6 +89,10 @@
           href: concepts-read-replicas.md
 - name: Руководства
   items:
+    - name: Управление сервером
+      items:
+        - name: Портал Azure
+          href: howto-create-manage-server-portal.md
     - name: Правила брандмауэра
       items:
         - name: Портал Azure
@@ -123,6 +127,8 @@
       items:
         - name: Портал Azure
           href: howto-auto-grow-storage-portal.md
+        - name: Azure CLI
+          href: howto-auto-grow-storage-cli.md
     - name: Доступ к журналам сервера
       items:
         - name: Журналы медленных запросов

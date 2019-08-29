@@ -127,8 +127,6 @@
           href: security-center-install-endpoint-protection.md
         - name: Решение для оценки уязвимостей не установлено
           href: security-center-vulnerability-assessment-recommendations.md
-        - name: Включение групп безопасности сети
-          href: security-center-enable-network-security-groups.md
         - name: Отчеты об угрозах
           href: security-center-threat-report.md
         - name: Настраиваемые оповещения
@@ -143,8 +141,6 @@
           href: security-center-investigation-user-data.md
         - name: Сборники схем в Logic Apps
           href: security-center-playbooks.md
-        - name: Просмотр событий
-          href: security-center-events-dashboard.md
         - name: Поиск
           href: security-center-search.md
         - name: Планирование и эксплуатация

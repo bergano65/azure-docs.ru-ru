@@ -1,19 +1,19 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по фабрике данных Azure
+title: Документация по Фабрике данных Azure
 metadata:
-  title: Документация по фабрике данных Azure. Руководства и справочник по API | Документация Майкрософт
-  description: 'Узнайте, как использовать фабрику данных для настройки автоматизированных конвейеров данных, выполняющих двунаправленное перемещение данных между локальными и облачными источниками для последующих обработки и анализа.'
+  title: Документация по Фабрике данных Azure. Руководства и справочник по API | Документация Майкрософт
+  description: 'Узнайте, как использовать Фабрику данных для настройки автоматизированных конвейеров данных, выполняющих двунаправленное перемещение данных между локальными и облачными источниками для последующих обработки и анализа.'
   services: data-factory
-  author: sharonlo101
-  ms.author: shlo
+  author: djpmsft
+  ms.author: daperlov
   manager: craigg
   ms.service: data-factory
   ms.tgt_pltfrm: na
   ms.topic: overview
   ms.date: 08/06/2018
 abstract:
-  description: 'Узнайте, как использовать фабрику данных, облачную службу интеграции данных, для объединения служб хранения, перемещения и обработки данных в автоматизированные конвейеры данных. Из руководств и различной документации вы узнаете, как настраивать и администрировать конвейеры данных, а также перемещать и преобразовывать данные для анализа. <p>Если вы используете версию V1 службы фабрики данных, см. <a href=/azure/data-factory/v1/data-factory-introduction>документацию по этой версии.</a></p>'
+  description: 'Узнайте, как использовать Фабрику данных, облачную службу интеграции данных, для объединения служб хранения, перемещения и обработки данных в автоматизированные конвейеры данных. Из руководств и различной документации вы узнаете, как настраивать и администрировать конвейеры данных, а также перемещать и преобразовывать данные для анализа. <p>Если вы используете версию 1 Фабрики данных, см. <a href=/azure/data-factory/v1/data-factory-introduction>документацию по этой версии.</a></p>'
   aside:
     image:
       alt: null
@@ -24,16 +24,16 @@ abstract:
     href: 'https://channel9.msdn.com/Events/Build/2018/BRK2204/player'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Изучите одно из приведенных ниже руководств, чтобы узнать, как создавать конвейеры Фабрики данных для перемещения и обработки данных.'
+        text: 'Изучите одно из приведенных ниже руководств, чтобы узнать, как создавать конвейеры Фабрики данных для перемещения и обработки данных:'
       - type: list
         style: icon48
         items:
           - image:
               src: /azure/data-factory/media/index/portal.svg
-            text: Пользовательский интерфейс фабрики данных
+            text: Пользовательский интерфейс Фабрики данных
             href: /azure/data-factory/quickstart-create-data-factory-portal
           - image:
               src: /azure/data-factory/media/index/copy-data-tool.png
@@ -59,26 +59,26 @@ sections:
               src: /azure/data-factory/media/index/logo_azure_resource_manager.svg
             text: Шаблон Resource Manager
             href: /azure/data-factory/quickstart-create-data-factory-resource-manager-template
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создать и отслеживать фабрику данных:'
       - type: list
         style: unordered
         items:
-          - html: 'Копирование данных в облаке: <a href="/azure/data-factory/tutorial-copy-data-tool">средство копирования данных</a> | <a href="/azure/data-factory/tutorial-copy-data-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-copy-data-dot-net">.NET</a>'
+          - html: 'Копирование данных в облаке: <a href="/azure/data-factory/tutorial-copy-data-tool">средство копирования данных</a> | <a href="/azure/data-factory/tutorial-copy-data-portal">пользовательский интерфейс Фабрики данных</a> | <a href="/azure/data-factory/tutorial-copy-data-dot-net">.NET</a>'
           - html: 'Копирование локальных данных в облако: <a href="/azure/data-factory/tutorial-hybrid-copy-data-tool">средство копирования данных | <a href="/azure/data-factory/tutorial-hybrid-copy-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-hybrid-copy-powershell">Azure PowerShell</a>'
           - html: 'Копирование данных в пакетном режиме: <a href="/azure/data-factory/tutorial-bulk-copy-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-bulk-copy">Azure PowerShell</a>'
           - html: 'Добавочное копирование данных: <a href="/azure/data-factory/tutorial-incremental-copy-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-incremental-copy-powershell">Azure PowerShell</a>'
           - html: 'Преобразование данных в облаке с помощью Spark: <a href="/azure/data-factory/tutorial-transform-data-spark-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-transform-data-spark-powershell">Azure PowerShell</a>'
           - html: 'Преобразование данных в виртуальной сети: <a href="/azure/data-factory/tutorial-transform-data-hive-virtual-network-portal">пользовательский интерфейс фабрики данных</a> | <a href="/azure/data-factory/tutorial-transform-data-hive-virtual-network">Azure PowerShell</a>'
           - html: 'Создание ветвей и цепочек действий: <a href="/azure/data-factory/tutorial-control-flow-portal">пользовательский интерфейс Фабрики данных </a> | <a href="/azure/data-factory/tutorial-control-flow">.NET</a>'
-          - html: 'Выполнение пакетов SSIS в Azure: <a href="/azure/data-factory/tutorial-create-azure-ssis-runtime-portal">пользовательский интерфейс Фабрики данных</a> | <a href="/azure/data-factory/tutorial-deploy-ssis-packages-azure">Azure PowerShell</a>'
+          - html: 'Выполнение пакетов Integration Services в Azure: <a href="/azure/data-factory/tutorial-create-azure-ssis-runtime-portal">пользовательский интерфейс Фабрики данных</a> | <a href="/azure/data-factory/tutorial-deploy-ssis-packages-azure">Azure PowerShell</a>'
           - html: 'Непрерывные интеграция и поставка (CI/CD) в Фабрике данных Azure: <a href="/azure/data-factory/continuous-integration-deployment">пользовательский интерфейс Фабрики данных</a>'
   - title: Примеры
     items:
       - type: paragraph
-        text: Используйте приведенные ниже примеры для работы с фабрикой данных
+        text: Используйте приведенные ниже примеры для работы с Фабрикой данных
       - type: list
         style: unordered
         className: spaced noBullet
