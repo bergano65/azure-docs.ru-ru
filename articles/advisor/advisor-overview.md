@@ -61,7 +61,7 @@ ms.locfileid: "67069683"
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Для каких ресурсов Advisor предоставляет рекомендации?
 
-Помощник предлагает рекомендации для шлюза приложений, служб приложений группы доступности, кэш Azure, фабрики данных Azure, база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных Azure для MariaDB, Azure ExpressRoute, Azure Cosmos DB, Azure public IP-адреса, хранилище данных SQL, серверов SQL Server, учетные записи хранения, профили диспетчера трафика и виртуальных машин.
+Помощник предлагает рекомендации для Application Gateway, App Services, группы доступности, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure ExpressRoute, Azure Cosmos DB, Azure public IP-адреса, SQL Data Warehouse, серверов SQL Server, учетные записи хранения, профили диспетчера трафика и виртуальных машин.
 
 Помощник по Azure также включает рекомендации из [центра безопасности](https://docs.microsoft.com/azure/security-center/security-center-recommendations) в том числе рекомендации по дополнительные типы ресурсов.
 
