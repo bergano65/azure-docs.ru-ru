@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 5/1/2019
 ms.author: alsin
-ms.openlocfilehash: 0eda9fe0e16a945dcb9f9a1b686afcd2aebe6306
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: MT
+ms.openlocfilehash: 4e0c91096d5efdcc9639a7127126d8e4b89ef068
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854382"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70090165"
 ---
 # <a name="azure-serial-console-for-linux"></a>Последовательная консоль Azure для Linux
 
@@ -33,7 +32,7 @@ ms.locfileid: "68854382"
 > Последовательная консоль общедоступна в глобальных регионах Azure. Последовательная консоль еще недоступна в облаке Azure для государственных организаций или облаке Azure для Китая.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для виртуальной машины или экземпляра масштабируемого набора виртуальных машин должна использоваться модель развертывания "Управление ресурсами". Классические развертывания не поддерживаются.
 

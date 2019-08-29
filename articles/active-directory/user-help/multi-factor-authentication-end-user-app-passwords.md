@@ -14,12 +14,12 @@ ms.date: 08/13/2019
 ms.author: lizross
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a9d997f9ced0fbd921abfb13cda5a4845eb3763
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: fc6f6f7b02db664ca6cd62dc7aad61baf5f132fa
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69616309"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088409"
 ---
 # <a name="manage-app-passwords-for-two-step-verification"></a>Управление паролями приложения для двухфакторной проверки подлинности
 
@@ -47,7 +47,7 @@ ms.locfileid: "69616309"
 
 - **Ваша организация использует двухфакторную проверку подлинности и дополнительную страницу проверки безопасности.** Если вы используете рабочую или учебную учетную запись (например, alain@contoso.com) с двухфакторной проверкой в вашей организации, вы можете управлять паролями приложений на [странице дополнительной проверки безопасности](https://account.activedirectory.windowsazure.com/Proofup.aspx). Подробные инструкции см. на [странице Создание и удаление паролей приложений с помощью дополнительной проверки безопасности](#create-and-delete-app-passwords-from-the-additional-security-verification-page) в этой статье.
 
-- **Ваша организация использует двухфакторную проверку подлинности и портал Office 365.** Если вы используете рабочую или учебную учетную запись (например, alain@contoso.com), двухфакторную проверку подлинности и приложения Office 365 в Организации, вы можете управлять паролями приложений на [странице портала Office 365](https://office.portal.com). Подробные инструкции см. в статье [Создание и удаление паролей приложений с помощью портала Office 365](#create-and-delete-app-passwords-using-the-office-365-portal) .
+- **Ваша организация использует двухфакторную проверку подлинности и портал Office 365.** Если вы используете рабочую или учебную учетную запись (например, alain@contoso.com), двухфакторную проверку подлинности и приложения Office 365 в Организации, вы можете управлять паролями приложений на [странице портала Office 365](https://www.office.com). Подробные инструкции см. в статье [Создание и удаление паролей приложений с помощью портала Office 365](#create-and-delete-app-passwords-using-the-office-365-portal) .
 
 - **Вы используете двухфакторную проверку подлинности с персональным учетная запись Майкрософт.** Если вы используете личную учетная запись Майкрософт (например, alain@outlook.com) с двухфакторной проверкой, вы можете управлять паролями приложения на странице " [основы безопасности](https://account.microsoft.com/security/)". Подробные инструкции см. в статье [использование паролей приложений с приложениями, которые не поддерживают двухфакторную проверку](https://support.microsoft.com/help/12409/microsoft-account-app-passwords-and-two-step-verification)подлинности.
 

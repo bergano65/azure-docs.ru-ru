@@ -9,19 +9,18 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 388c464e-a16e-4c9d-a0d5-bb7cf5974689
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.custom: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: f9e31ac7685d597c741033bc165c6a51280e3d72
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f74f9ba55f3593ed31994b83bb9bda1501445e0a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571733"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100673"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
 
@@ -145,7 +144,7 @@ ms.locfileid: "64571733"
 
 Желательно изменить строки подключения клиента, чтобы задать `MultiSubnetFailover=Yes`. Ознакомьтесь с разделом [Соединение с помощью MultiSubnetFailover](https://msdn.microsoft.com/library/gg471494#Anchor_0).
 
-Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. См. в разделе [ошибку времени ожидания и вам не удается подключиться к прослушивателю группы доступности SQL Server 2012 AlwaysOn в среде с несколькими подсетями](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av).
+Если вам не удается изменить строки подключения, можно настроить кэширование разрешения имен. См. статью [об ошибке времени ожидания, и вы не можете подключиться к прослушивателю группы доступности AlwaysOn SQL Server 2012 в среде с несколькими](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av)подсетями.
 
 ## <a name="fail-over-to-remote-region"></a>Отработка отказа в удаленный регион
 
@@ -165,11 +164,11 @@ ms.locfileid: "64571733"
 
 После проверки подключения верните первичную реплику в основной центр обработки данных и восстановите обычные рабочие параметры режима доступности. В таблице ниже приведены обычные рабочие параметры для архитектуры, описанной в этом документе.
 
-| Расположение | Экземпляр сервера | Роль | Режим доступности | Режим отработки отказа
+| Местоположение | Экземпляр сервера | Role | Режим доступности | Режим отработки отказа
 | ----- | ----- | ----- | ----- | -----
-| Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматический
-| Основной центр обработки данных | SQL-2 | Вторичная | Синхронный | Автоматический
-| Дополнительный или удаленный центр обработки данных | SQL-3 | Вторичная | Асинхронный | Руководство
+| Основной центр обработки данных | SQL-1 | Первичная | Синхронный | Автоматически
+| Основной центр обработки данных | SQL-2 | Дополнительный | Синхронный | Автоматически
+| Дополнительный или удаленный центр обработки данных | SQL-3 | Дополнительный | Асинхронно | Руководство
 
 
 ### <a name="more-information-about-planned-and-forced-manual-failover"></a>Дополнительные сведения о плановой и принудительной отработке отказа вручную

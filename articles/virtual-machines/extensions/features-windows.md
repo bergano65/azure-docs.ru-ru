@@ -9,19 +9,18 @@ editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 999d63ee-890e-432e-9391-25b3fc6cde28
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2cd64b54b1a30080d7942a754bc0c0c72c59f88
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 9a7f204245e59cbda11c663a80828a20a79c9923
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705984"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084565"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -36,7 +35,7 @@ ms.locfileid: "67705984"
 Существует несколько разных расширений ВМ Azure, которые используются в определенных сценариях. Некоторые примеры:
 
 - Применение к виртуальной машине конфигураций требуемого состояния PowerShell с помощью расширения DSC для Windows. Подробнее см. [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md);
-- Настройка мониторинга виртуальной машины с помощью расширения виртуальной машины Microsoft Monitoring Agent. Дополнительные сведения см. в разделе [подключения виртуальных машин Azure в Azure Monitor журналы](../../log-analytics/log-analytics-azure-vm-extension.md).
+- Настройка мониторинга виртуальной машины с помощью расширения виртуальной машины Microsoft Monitoring Agent. Дополнительные сведения см. [в статье подключение виртуальных машин Azure к Azure Monitor журналах](../../log-analytics/log-analytics-azure-vm-extension.md).
 - Настройка виртуальной машины Azure с помощью Chef. Дополнительные сведения см. в статье [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../windows/chef-automation.md).
 - настройка мониторинга инфраструктуры Azure с помощью расширения Datadog. Дополнительную информацию см. в [блоге Datadog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/);
 
@@ -141,7 +140,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 С помощью команды `Set-AzVMExtension` можно запустить любое расширение виртуальной машины. Дополнительные сведения см. в разделе справки [о командлете Set-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension).
 
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Расширения виртуальных машин можно устанавливать на имеющиеся виртуальные машины через портал Azure. Выберите на портале нужную виртуальную машину, затем щелкните **Расширения** и **Добавить**. Выберите нужное расширение из списка доступных расширений и следуйте инструкциям мастера.
 
@@ -260,7 +259,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- расширения.
+- Расширения
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -368,7 +367,7 @@ AutoUpgradeMinorVersion     : True
 
 ### <a name="view-extension-status"></a>Просмотр состояния расширения
 
-После расширения виртуальной Машины будет выполнено виртуальной Машины, используйте [командлета Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) можно получить состояние расширения. *Substatuses[0]* указывает, что подготовка расширения прошла успешно, а значит оно правильно развернуто на виртуальной машине. Но *Substatuses[1]* указывает, что выполнение расширения на виртуальной машине завершилось сбоем.
+После запуска расширения ВИРТУАЛЬНОЙ машины для виртуальной машины используйте команду [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm) , чтобы вернуть состояние расширения. *Substatuses[0]* указывает, что подготовка расширения прошла успешно, а значит оно правильно развернуто на виртуальной машине. Но *Substatuses[1]* указывает, что выполнение расширения на виртуальной машине завершилось сбоем.
 
 ```powershell
 Get-AzVM -ResourceGroupName "myResourceGroup" -VMName "myVM" -Status

@@ -10,19 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: 71296618-673b-4093-ab17-b7a80df6e9ac
 ms.service: virtual-machines-windows
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0efb1ec30430a69563c61de667ad2568f2679a1b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: b7bdd1e1922d9d8845a8187cabb3fd39af4694ab
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708979"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70077899"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS
 
@@ -206,13 +205,13 @@ ms.locfileid: "67708979"
 
 * [Руководство по архитектуре: Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
 
-* [Подготовка высокодоступной инфраструктуры Azure SAP с использованием Windows отказоустойчивого кластера и файлового ресурса для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
+* [Подготовка инфраструктуры Azure SAP с высоким уровнем доступности с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
 
 * [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure][high-availability-guide]
 
 Вам понадобятся следующие исполняемые файлы и библиотеки DLL, которые предоставляет SAP:
-* SAP Software Provisioning Manager (SWPM) версия средства установки SPS25 или более поздней версии.
-* Ядро SAP 7.49 или более поздней версии
+* Средство установки диспетчера подготовки программного обеспечения SAP (SWPM) версии SPS25 или более поздней.
+* SAP ядра 7,49 или более поздней версии
 
 > [!IMPORTANT]
 > Кластеризация экземпляров SAP ASCS/SCS с файловым ресурсом поддерживается для продуктов SAP NetWeaver 7.40 (и более поздней версии) с ядром SAP 7.49 (и более поздней версии).
@@ -232,7 +231,7 @@ ms.locfileid: "67708979"
 
 Создайте в кластере SOFS следующие том и файловый ресурс:
 
-* Файла SAP GLOBALHOST `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` структуры в кластере масштабируемых файловых СЕРВЕРОВ общего тома (CSV)
+* Структура файлов `C:\ClusterStorage\Volume1\usr\sap\<SID>\SYS\` SAP GLOBALHOST на общем томе кластера SOFS (CSV)
 
 * файловый ресурс SAPMNT;
 
@@ -291,31 +290,31 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 ## <a name="create-a-virtual-host-name-for-the-clustered-sap-ascsscs-instance"></a>Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS
 
-Создайте сетевое имя кластера SAP ASCS/SCS (например, **pr1-ascs [10.0.6.7]** ), как описано в разделе [Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-create-ascs-virt-host].
+Создайте Сетевое имя кластера SAP ASCS/SCS (например, **PR1-ASCS [10.0.6.7]** ), как описано в разделе [Создание имени виртуального узла для КЛАСТЕРИЗОВАННОГО экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-create-ascs-virt-host].
 
 
-## <a name="install-an-ascsscs-and-ers-instances-in-the-cluster"></a>Установить экземпляр ASCS/SCS и ERS в кластере
+## <a name="install-an-ascsscs-and-ers-instances-in-the-cluster"></a>Установка экземпляров ASCS/SCS и ERS в кластере
 
 ### <a name="install-an-ascsscs-instance-on-the-first-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на первом узле кластера ASCS/SCS
 
 Установите экземпляр SAP ASCS/SCS на первом узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт >**  >  **\<СУБД >**  > **установки** > **сервер приложений ABAP** () или **Java**) > **высокого уровня доступности системы** > **экземпляра ASCS/SCS** > **первого узла кластера**.
+**\<Продукт >**  >  >  **СУБД>\<** установки > сервераприложенийABAP(илиJava)>системысвысокимуровнемдоступности >  **Экземпляр ASCS/SCS** **Первый узел кластера.**  > 
 
 ### <a name="add-a-probe-port"></a>Добавление порта пробы
 
-Настройте порт пробы SAP-SID-IP в качестве ресурса кластера SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS, как описано [в этой статье][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].
+Настройте порт пробы SAP-SID-IP в качестве ресурса кластера SAP с помощью PowerShell. Выполните эту настройку на одном из узлов кластера SAP ASCS/SCS, как описано [в этой статье][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].
 
-### <a name="install-an-ascsscs-instance-on-the-second-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на второго узла кластера ASCS/SCS
+### <a name="install-an-ascsscs-instance-on-the-second-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на второй узел кластера ASCS/SCS
 
 Установите экземпляр SAP ASCS/SCS на втором узле кластера. Чтобы установить экземпляр, в программе установки SAP SWPM выберите следующие элементы:
 
-**\<Продукт >**  >  **\<СУБД >**  > **установки** > **сервер приложений ABAP** () или **Java**) > **высокого уровня доступности системы** > **экземпляра ASCS/SCS** > **дополнительного узла кластера** .
+**\<Продукт >**  >  >  **СУБД>\<** установки > сервераприложенийABAP(илиJava)>системысвысокимуровнемдоступности >  **Экземпляр ASCS/SCS** **Дополнительный узел кластера.**  > 
 
 
 ## <a name="update-the-sap-ascsscs-instance-profile"></a>Изменение профиля экземпляра SAP ASCS/SCS
 
-Обновите параметры в профиль экземпляра SAP ASCS/SCS \<SID >_ASCS/SCS\<Nr >_ \<узла >.
+Обновите параметры в профиле \<экземпляра SAP ASCS/SCS SID >_ASCS/\<SCS Nr >_ \<Host >.
 
 
 | Имя параметра | Значение параметра |
@@ -324,7 +323,7 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 | enque/encni/set_so_keepalive  | **true** |
 | service/ha_check_node | **1** |
 
-Перезапустите экземпляр SAP ASCS/SCS. Задайте `KeepAlive` параметры на обоих узлах кластера SAP ASCS/SCS следуйте инструкциям, чтобы [значение записи реестра на узлах кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
+Перезапустите экземпляр SAP ASCS/SCS. Настройка `KeepAlive` параметров на узлах кластера SAP ASCS/SCS следуйте инструкциям по [установке записей реестра на узлах кластера экземпляра SAP ASCS/SCS][high-availability-guide]. 
 
 ## <a name="install-a-dbms-instance-and-sap-application-servers"></a>Установка экземпляра СУБД и серверов приложений SAP
 
@@ -335,10 +334,10 @@ Set-Acl $UsrSAPFolder $Acl -Verbose
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Установка экземпляра ASCS/SCS в отказоустойчивом кластере без общих дисков - официальные рекомендации SAP для высокого уровня доступности файлового ресурса][sap-official-ha-file-share-document]
+* [Установка экземпляра ASCS/SCS в отказоустойчивом кластере без общих дисков — официальные рекомендации SAP для файлового ресурса с высоким уровнем доступности][sap-official-ha-file-share-document]
 
-* [Дисковые пространства в Windows Server 2016][s2d-in-win-2016]
+* [Локальные дисковые пространства в Windows Server 2016][s2d-in-win-2016]
 
-* [Масштабируемого файлового сервера для обзора данных приложения][sofs-overview]
+* [Общие сведения о масштабируемый файловый сервер для данных приложений][sofs-overview]
 
 * [Новые возможности хранилища в Windows Server 2016][new-in-win-2016-storage]

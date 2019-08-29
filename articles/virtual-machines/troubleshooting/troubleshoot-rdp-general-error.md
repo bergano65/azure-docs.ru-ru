@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: f290a7e16938c66d45fab9b78086f77bfdfe4839
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: abff12e1a304c51cb0df394534c7da0a35518008
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60319519"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70089794"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Устранение общей ошибки RDP на виртуальной машине Azure
 
@@ -65,7 +64,7 @@ ms.locfileid: "60319519"
 
 ### <a name="serial-console"></a>Серийная консоль
 
-#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Шаг 1. Открыть экземпляр командной строки в последовательной консоли
+#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Шаг 1. Открытие экземпляра CMD в Серийная консоль
 
 1. Откройте [последовательную консоль](serial-console-windows.md), выбрав **Поддержка и устранение неисправностей** > **Последовательная консоль (предварительная версия)** . Если эта функция включена на виртуальной машине, вы сможете успешно подключиться к виртуальной машине.
 
@@ -77,7 +76,7 @@ ms.locfileid: "60319519"
    ch -si 1
    ```
 
-#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Шаг 2. Проверьте значения разделов реестра протокола удаленного рабочего СТОЛА:
+#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Шаг 2. Проверьте значения разделов реестра RDP:
 
 1. Проверьте, не отключен ли протокол RDP политиками.
 
@@ -164,17 +163,17 @@ ms.locfileid: "60319519"
 
 Если эта проблема не исчезает, перейдите к шагу 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включить службы удаленных рабочих столов
+#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включение служб удаленных рабочих столов
 
 Дополнительные сведения см. в статье [Службы удаленных рабочих столов не запускаются на виртуальной машине Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сбросьте RDP-прослушиватель
+#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сброс прослушивателя RDP
 
 Дополнительные сведения см. в статье [Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure](troubleshoot-rdp-intermittent-connectivity.md).
 
 ### <a name="offline-repair"></a>Автономные реплики
 
-#### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленного рабочего стола
+#### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленный рабочий стол
 
 1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
@@ -234,14 +233,14 @@ ms.locfileid: "60319519"
 
 Если эта проблема не исчезает, перейдите к шагу 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включить службы удаленных рабочих столов
+#### <a name="step-2-enable-remote-desktop-services"></a>Шаг 2. Включение служб удаленных рабочих столов
 
 Дополнительные сведения см. в статье [Службы удаленных рабочих столов не запускаются на виртуальной машине Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сбросьте RDP-прослушиватель
+#### <a name="step-3-reset-rdp-listener"></a>Шаг 3. Сброс прослушивателя RDP
 
 Дополнительные сведения см. в статье [Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure](troubleshoot-rdp-intermittent-connectivity.md).
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Связаться со службой поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

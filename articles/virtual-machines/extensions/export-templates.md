@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 7f4e2ca6-f1c7-4f59-a2cc-8f63132de279
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: roiyz
-ms.openlocfilehash: 58e72390e4cee04b31ed983fb5fcdf5657fcca45
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6ac3a19d12b99c61dd0607b07b4659114f52400e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706012"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084618"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
 
@@ -42,7 +41,7 @@ ms.locfileid: "67706012"
 | Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
 | Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
 | Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Пользовательский скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
+| Настраиваемый скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
 | Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
 | Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
 | Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |

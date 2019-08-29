@@ -7,16 +7,15 @@ author: ggailey777
 manager: jeconnoc
 ms.assetid: 076f5f95-f8d2-42c7-b7fd-6798856ba0bb
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
-ms.openlocfilehash: f81337cea3ece822ea05bcc94f4e05d6e177bf93
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 0388c712d6f44755e768e491944df1a9451653b7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735586"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085252"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
 
@@ -24,7 +23,7 @@ ms.locfileid: "68735586"
 
 Если вы впервые работаете с Функциями C#, обратитесь к статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните шаги, приведенные в статье [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md), чтобы создать локальное приложение-функцию, предназначенное для среды выполнения версии 2.x. Кроме того, опубликуйте свой проект в приложении-функции в Azure.
 

@@ -6,16 +6,15 @@ author: cgillum
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 4657bd136592c66b5dab9a712f5f1d6df898876c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1168963c0698c6bdafe20babe2e5143585bf90a8
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60730551"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70087109"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
@@ -27,15 +26,15 @@ ms.locfileid: "60730551"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* `E1_HelloSequence`: Функция оркестратора, которая вызывает `E1_SayHello` несколько раз подряд. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
-* `E1_SayHello`: Функция действия, которая добавляет Hello в начало строки.
+* `E1_HelloSequence`. Функция оркестратора, которая вызывает `E1_SayHello` несколько раз подряд. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
+* `E1_SayHello`. Функция действия, которая добавляет Hello в начало строки.
 
 В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языках C# и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
 
 > [!NOTE]
 > Устойчивые функции JavaScript доступны только для среды выполнения Функций версии 2.x.
 
-## <a name="e1hellosequence"></a>E1_HelloSequence
+## <a name="e1_hellosequence"></a>E1_HelloSequence
 
 ### <a name="functionjson-file"></a>Файл function.json
 
@@ -72,7 +71,7 @@ ms.locfileid: "60730551"
 
 Объект `context` содержит объект `df`, что позволяет вызывать другие функции *действий* и передавать им входные параметры с помощью метода `callActivity`. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Значение, возвращаемое при каждом вызове, добавляется в список `outputs`, который возвращается в качестве результата функции.
 
-## <a name="e1sayhello"></a>E1_SayHello
+## <a name="e1_sayhello"></a>E1_SayHello
 
 ### <a name="functionjson-file"></a>Файл function.json
 
@@ -150,7 +149,7 @@ Content-Type: application/json; charset=utf-8
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом примере показана простая оркестрация с цепочкой функций. В приведенном ниже примере кода показана реализация шаблона развертывания и объединения.
 

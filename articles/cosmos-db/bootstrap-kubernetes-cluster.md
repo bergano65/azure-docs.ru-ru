@@ -3,15 +3,15 @@ title: Использование Azure Kubernetes с Azure Cosmos DB
 description: Сведения о начальной загрузке кластера Kubernetes в Azure, который использует Azure Cosmos DB (предварительная версия).
 author: SnehaGunda
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: sngun
-ms.openlocfilehash: 2c6af53aeec5d40f603d65595d93527107c0d80a
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
-ms.translationtype: HT
+ms.openlocfilehash: 9dbbc914580d8d80a3f9b7d730574e24b44827c1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66427701"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093728"
 ---
 # <a name="how-to-use-azure-kubernetes-with-azure-cosmos-db-preview"></a>Использование Azure Kubernetes с Azure Cosmos DB (предварительная версия)
 
@@ -179,7 +179,7 @@ INFO[0587] Finished ARM Deployment (aks-sg-test-546247491). Succeeded
 
 Имя учетной записи Azure Cosmos будет соответствовать указанному префиксу DNS с добавлением k8s. Вашей учетной записи Azure Cosmos будет автоматически предоставлена база данных **EtcdDB** и контейнер **EtcdData**. В контейнере будут храниться все данные, связанные с etcd. Контейнеру предоставляется определенное количество единиц запроса, и вы сможете [масштабировать (увеличивать/уменьшать) пропускную способность](scaling-throughput.md) на основе рабочей нагрузки. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со сведениями о [работе с базами данных, контейнерами и элементами Azure Cosmos](databases-containers-items.md).
 * Ознакомьтесь со сведениями об [оптимизации затрат на подготовленную пропускную способность](optimize-cost-throughput.md).

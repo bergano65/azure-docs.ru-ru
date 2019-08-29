@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 9ca58bbc6f7b983ff545eb2dca6240359637e214
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: c394b013b057a78e99cafc0adde9727d0a75a87c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671227"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091825"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -32,7 +31,7 @@ ms.locfileid: "67671227"
 Для работы с этим руководством требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Создайте группу ресурсов с именем *myResourceGroup* в расположении *Восточная часть США*.
 
@@ -40,9 +39,9 @@ ms.locfileid: "67671227"
 az group create --name myResourceGroup --location eastus
 ```
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+## <a name="create-a-storage-account"></a>Создать учетную запись хранения
 
-Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создает учетную запись хранения с именем *mySTORAGEACCT\<случайное число >* и помещает имя этой учетной записи хранения в переменной **STORAGEACCT**. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
+Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account). В этом примере создается учетная запись хранения с именем *mySTORAGEACCT\<Random Number >* и в переменной **STORAGEACCT**помещается имя этой учетной записи хранения. Имена учетных записей хранения должны быть уникальными. Для этого используйте команду `$RANDOM`, которая добавляет к нему номер.
 
 ```bash
 STORAGEACCT=$(az storage account create \

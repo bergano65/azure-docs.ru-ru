@@ -10,18 +10,17 @@ tags: ''
 keywords: ''
 ms.assetid: 2a15ffbf-9f86-41e4-b75b-eb44c1a2a7ab
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/19/2017
 ms.author: seanmck
-ms.openlocfilehash: e042c9cbce985882b468472425d6803862e82941
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: d91ad0bea7f79dd67edd4f0bb9e06a37a0f86bea
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67668312"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091923"
 ---
 # <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
 
@@ -29,7 +28,7 @@ Cloud Foundry — это платформа как услуга (PaaS) с от�
 
 ## <a name="cloud-foundry-offerings"></a>Предложения Cloud Foundry
 
-Для запуска в Azure доступны две разновидности Cloud Foundry: Cloud Foundry с открытым кодом (OSS CF) и Pivotal Cloud Foundry (PCF). OSS CF является версией Cloud Foundry с полностью [открытым кодом](https://github.com/cloudfoundry), которой управляет Cloud Foundry Foundation. Pivotal Cloud Foundry является корпоративным дистрибутивом Cloud Foundry от Pivotal Software Inc. Мы рассмотрим некоторые различия между двумя предложениями.
+Для запуска в Azure доступны две разновидности Cloud Foundry: Cloud Foundry с открытым кодом (OSS CF) и Pivotal Cloud Foundry (PCF). OSS CF является версией Cloud Foundry с полностью [открытым кодом](https://github.com/cloudfoundry), которой управляет Cloud Foundry Foundation. Сводная Cloud Foundry — это корпоративное распределение Cloud Foundry из сводного программного обеспечения Inc. Мы рассмотрим некоторые различия между этими предложениями.
 
 ### <a name="open-source-cloud-foundry"></a>Cloud Foundry с открытым кодом
 

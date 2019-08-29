@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 9a3e135172f0744c053da816b3c77762dbe783c3
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 11394f692765cc1df5db0eb5c0dd06425026505d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706101"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092645"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -41,13 +40,13 @@ ms.locfileid: "67706101"
 При шифровании дисков Azure требуется подключение к Интернету для доступа к Active Directory, хранилищу Key Vault, хранения и конечным точкам управления пакетами.  Список параметров безопасности сети см. в разделе с описанием [необходимых компонентов для шифрования дисков Azure](
 ../../security/azure-security-disk-encryption-prerequisites.md).
 
-## <a name="extension-schemata"></a>Расширение схемы
+## <a name="extension-schemata"></a>Schemata расширения
 
-Существуют две схемы для шифрования дисков Azure: v1.1, более новые и рекомендуемые схему, которая не использует свойства Azure Active Directory (AAD) и v0.1, более старую схему, требуются свойства AAD. Необходимо использовать версию схемы, соответствующее расширению, вы используете: v1.1 схемы для AzureDiskEncryption расширение версии 1.1, v0.1 схемы для AzureDiskEncryption версия расширения 0,1.
+Существует два Schemata для шифрования дисков Azure: v 1.1, более новая, Рекомендуемая схема, которая не использует свойства Azure Active Directory (AAD) и v 0,1, более старая схема, для которой требуются свойства AAD. Необходимо использовать версию схемы, соответствующую используемому расширению: schema v 1.1 для расширения AzureDiskEncryption версии 1,1, схема v 0,1 для расширения AzureDiskEncryption версии 0,1.
 
-### <a name="schema-v11-no-aad-recommended"></a>Версия 1.1 схемы. Нет AAD (рекомендуется)
+### <a name="schema-v11-no-aad-recommended"></a>Схема v 1.1: Нет AAD (рекомендуется)
 
-Схема v1.1 рекомендуется и не требует свойства Azure Active Directory.
+Рекомендуется использовать схему версии 1.1 и не требует Azure Active Directory свойств.
 
 ```json
 {
@@ -74,9 +73,9 @@ ms.locfileid: "67706101"
 ```
 
 
-### <a name="schema-v01-with-aad"></a>Схемы v0.1: с помощью AAD 
+### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
 
-Схема 0,1 требует `aadClientID` и либо `aadClientSecret` или `AADClientCertificate`.
+Для схемы 0,1 требуется `aadClientID` значение `aadClientSecret` и `AADClientCertificate`.
 
 С помощью `aadClientSecret`:
 
@@ -141,15 +140,15 @@ ms.locfileid: "67706101"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных |
+| Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | строка |
 | type | AzureDiskEncryptionForLinux | строка |
-| typeHandlerVersion | 0.1, 1.1 | ssNoversion |
-| (0,1 схема) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (0,1 схема) AADClientSecret | password | строка |
-| (0,1 схема) AADClientCertificate | thumbprint | строка |
+| typeHandlerVersion | 0,1, 1,1 | ssNoversion |
+| (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
+| (схема 0,1) AADClientSecret | password | строка |
+| (схема 0,1) аадклиентцертификате | thumbprint | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |

@@ -8,25 +8,24 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: NA
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/08/2018
 ms.author: chackdan
-ms.openlocfilehash: f1717cfb7980fc481f01c51c04d076aa2ca0f67d
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 165dc95681b75e98d91c66b490e15c2e96608299
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876494"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098931"
 ---
 # <a name="create-service-fabric-container-running-apache-tomcat-server-on-linux"></a>Создание контейнера Service Fabric в Linux с сервером Apache Tomcat
 Apache Tomcat — это популярная реализация технологий Java Servlet и Java Server с открытым кодом. В этой статье показано, как создать контейнер с Apache Tomcat и простым веб-приложением, а затем развернуть этот контейнер в кластере Service Fabric под управлением Linux и подключить его к веб-приложению.  
 
 Дополнительные сведения об Apache Tomcat см. на [главной странице Apache Tomcat](https://tomcat.apache.org/). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 

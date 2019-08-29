@@ -10,22 +10,21 @@ tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 3ae730389b54fc1034bfac3ffdc7e56a2dc5f3fc
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 30e5a7e5953c56ff452b992370e8225ca103abba
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718967"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079695"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
 Вы можете создать несколько виртуальных машин из управляемого образа виртуальной машины Azure, используя портал Azure или PowerShell. Управляемый образ виртуальной машины содержит сведения, необходимые для создания виртуальной машины, включая диски ОС и диски данных. Виртуальные жесткие диски (VHD), входящие в образ, включая диски ОС и диски данных, хранятся в виде управляемых дисков. 
 
-Прежде чем создавать новую виртуальную Машину, вам потребуется [Создание управляемого образа виртуальной Машины](capture-image-resource.md) использовать в качестве исходного образа и предоставить доступ на чтение на изображении всем пользователям, которым требуется доступ к образу. 
+Перед созданием новой виртуальной машины необходимо [создать управляемый образ виртуальной машины](capture-image-resource.md) для использования в качестве исходного образа и предоставить доступ для чтения к образу любому пользователю, который должен иметь доступ к образу. 
 
 
 ## <a name="use-the-portal"></a>Использование портала

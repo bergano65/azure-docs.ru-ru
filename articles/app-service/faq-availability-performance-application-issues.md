@@ -11,22 +11,21 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: f455985d2a7d05f45100d4a88b43c688fe1a7767
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2b9689eeecb0549fae9f7131dd424e15c040b042
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65955768"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073186"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Вопросы и ответы о производительности приложений в веб-приложениях Azure
 
 > [!NOTE]
-> Некоторые из следующим рекомендациям работают только с Windows или Linux службы приложений. Например службы приложений Linux, по умолчанию выполняются в 64-разрядном режиме.
+> Некоторые из приведенных ниже рекомендаций могут работать только с службами приложений Windows или Linux. Например, службы приложений Linux по умолчанию работают в 64-разрядном режиме.
 >
 
 В этой статье приведены ответы на часто задаваемые вопросы о проблемах производительности приложений в [веб-приложениях службы приложений Azure](https://azure.microsoft.com/services/app-service/web/).

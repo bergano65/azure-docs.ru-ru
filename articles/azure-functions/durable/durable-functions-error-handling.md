@@ -6,20 +6,19 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 79af90d1c2c5b698ee7394f7fb20486b3069038c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33d1b410119e631e0ccc9941beac1062d4ec30f9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66751939"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70087328"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
-Оркестрации устойчивых функций реализованы в коде и могут использовать возможности языка программирования по обработке ошибок. С учетом этого не требуется получить сведения о внедрении в оркестрации обработки и компенсации ошибок новые концепции. Однако следует помнить о некоторых особенностях поведения.
+Оркестрации устойчивых функций реализованы в коде и могут использовать возможности языка программирования по обработке ошибок. Учитывая это, нет никаких новых концепций, которые необходимо изучить, чтобы реализовать обработку ошибок и компенсацию в согласованиях. Однако следует помнить о некоторых особенностях поведения.
 
 ## <a name="errors-in-activity-functions"></a>Ошибки в функциях действий
 
@@ -139,7 +138,7 @@ module.exports = df.orchestrator(function*(context) {
 
 API `CallActivityWithRetryAsync` (.NET) или `callActivityWithRetry` (JavaScript) принимает параметр `RetryOptions`. В вызовах суборкестрации через API `CallSubOrchestratorWithRetryAsync` (.NET) или `callSubOrchestratorWithRetry` (JavaScript) можно использовать эти же политики повтора.
 
-Существует несколько параметров настройки политики автоматического повтора. К ним относятся следующие:
+Существует несколько параметров настройки политики автоматического повтора. В их число входят следующие.
 
 * **Max number of attempts** (Максимальное число попыток). Максимальное число повторных попыток.
 * **First retry interval** (Интервал до первого повтора). Время ожидания перед первой повторной попыткой.
@@ -212,7 +211,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Если функция оркестратора завершается сбоем с необработанным исключением, сведения об этом исключении регистрируются в журнале, и экземпляр завершает работу с состоянием `Failed`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения для диагностики неполадок](durable-functions-diagnostics.md)

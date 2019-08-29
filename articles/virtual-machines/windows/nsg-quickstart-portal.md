@@ -8,24 +8,23 @@ manager: gwallace
 editor: ''
 ms.assetid: f7cf0319-5ee7-435e-8f94-c484bf5ee6f1
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: cf85bfd8be146cb599ced61eaa2126ee9e12538b
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: f9edee7a0ff19a536d0ea719ede6d0cd2e9d6ac7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723074"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102638"
 ---
 # <a name="how-to-open-ports-to-a-virtual-machine-with-the-azure-portal"></a>Как открыть порты для виртуальной машины Windows с помощью портала Azure
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
@@ -74,7 +73,7 @@ ms.locfileid: "67723074"
 
     Любые виртуальные машины, подключаемые к этой подсети, будут доступны через порт 80.
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 См. статью [Как открыть порты и конечные точки для виртуальной машины в Azure с помощью PowerShell](nsg-quickstart-powershell.md), чтобы выполнить эти действия.
 

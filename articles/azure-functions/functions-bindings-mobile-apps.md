@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 965ec88b39336e71d2779da4b7cd31b9c26e28be
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 37192a25bff794ac019fd29b47e0e8ad161790c9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480363"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097324"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Привязки мобильных приложений для службы "Функции Azure" 
 
@@ -35,7 +34,7 @@ ms.locfileid: "67480363"
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
-## <a name="input"></a>Вход
+## <a name="input"></a>Ввод
 
 Входная привязка мобильных приложений загружает запись из конечной точки мобильной таблицы и передает ее в функцию. В функциях C# и F# любые изменения, внесенные в запись, автоматически отправляются обратно в таблицу после успешного выхода из функции.
 
@@ -148,7 +147,7 @@ module.exports = function (context, myQueueItem) {
 |**tableName** |**TableName**|Имя таблицы данных мобильного приложения|
 | **id**| **Id** | Идентификатор извлекаемой записи. Может быть статическим или определяться по триггеру, который вызывает функцию. Например, если вы используете триггер очереди для функции, то `"id": "{queueTrigger}"` использует строковое значение сообщения очереди в качестве идентификатора записи, который нужно получить.|
 |**подключение**|**Connection**|Имя параметра приложения, в котором содержится URL-адрес мобильного приложения. Функция использует этот URL-адрес для создания необходимых операций REST с мобильным приложением. Создайте параметр приложения в приложении-функции, содержащем URL-адрес мобильного приложения, а затем укажите имя параметра приложения в свойстве `connection` во входной привязке. URL-адрес выглядит следующим образом: `http://<appname>.azurewebsites.net`.
-|**apiKey**|**ApiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в мобильное приложение Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) или [.NET](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key) предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
+|**apiKey**|**ApiKey**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в мобильное приложение Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) [или](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key) .NET предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -163,7 +162,7 @@ module.exports = function (context, myQueueItem) {
 
 В функциях C# и F# любые изменения, внесенные во входную запись (входной параметр), после успешного выхода из функции автоматически отправятся обратно в таблицу. Изменить запись в JavaScript невозможно.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Вывод
 
 Используйте выходную привязку мобильных приложений, чтобы сделать новую запись в таблице мобильных приложений.  
 
@@ -305,7 +304,7 @@ public static object Run(
 | **name**|| Имя выходного параметра в сигнатуре функции.|
 |**tableName** |**TableName**|Имя таблицы данных мобильного приложения|
 |**подключение**|**MobileAppUriSetting**|Имя параметра приложения, в котором содержится URL-адрес мобильного приложения. Функция использует этот URL-адрес для создания необходимых операций REST с мобильным приложением. Создайте параметр приложения в приложении-функции, содержащем URL-адрес мобильного приложения, а затем укажите имя параметра приложения в свойстве `connection` во входной привязке. URL-адрес выглядит следующим образом: `http://<appname>.azurewebsites.net`.
-|**apiKey**|**ApiKeySetting**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в серверную часть мобильного приложения Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key)[ или ](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key).NET предоставьте ключ API. Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
+|**apiKey**|**ApiKeySetting**|Имя параметра приложения, в котором содержится ваш ключ API для мобильных приложений. При [внедрении ключа API в серверную часть мобильного приложения Node.js](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples/api-key) или [.NET предоставьте ключ API](https://github.com/Azure/azure-mobile-apps-net-server/wiki/Implementing-Application-Key). Для этого создайте параметр приложения в приложении-функции, содержащем ключ API, а затем добавьте свойство `apiKey` в свою входную привязку с именем параметра приложения. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -322,7 +321,7 @@ public static object Run(
 
 Для доступа к выходной записи в функциях Node.js используйте `context.bindings.<name>`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

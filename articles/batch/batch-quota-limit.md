@@ -10,17 +10,16 @@ ms.assetid: 28998df4-8693-431d-b6ad-974c2f8db5fb
 ms.service: batch
 ms.workload: big-compute
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 118a36587667c815489ddad03426b5cfcfee7382
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 1e7d64aabba19f04fb98bd208389dc0b2077bfe4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036681"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70094696"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -55,7 +54,7 @@ ms.locfileid: "69036681"
 | Режим распределения пула "Пользовательская подписка" | 80 |
 | **Вычислительные узлы в [пуле, созданные с помощью пользовательского образа виртуальной машины](batch-custom-images.md)** <sup>1</sup> ||
 | Выделенные узлы | 2000 |
-| Узлы с низким приоритетом | 1000 |
+| Низкоприоритетные узлы | 1000 |
 
 <sup>1</sup> Пулы, для которых не включен обмен данными между узлами.
 

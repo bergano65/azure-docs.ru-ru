@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: b7b003c588d7b079823bb046676a1226828fcae2
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: e6b5c8c2f734a12fe246a82ce1aa1dc53893ab64
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249860"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072377"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -97,7 +96,7 @@ ms.locfileid: "68249860"
 
 Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API.  Щелкните **Портал разработчика** в верхнем меню страницы **Обзор** экземпляра службы управления API Azure.
 
-![Developer portal][api-management-developer-portal-menu]
+![Портал разработчика][api-management-developer-portal-menu]
 
 Щелкните **APIs** в меню вверху и выберите **Echo API**.
 
@@ -115,7 +114,7 @@ ms.locfileid: "68249860"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Вход][api-management-oauth2-signin]
+![Войти][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 

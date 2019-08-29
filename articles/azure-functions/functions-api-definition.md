@@ -6,16 +6,15 @@ author: alexkarcher-msft
 manager: jeconnoc
 ms.assetid: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
-ms.openlocfilehash: 1bc53fadfb622794703deaff560c9083ca6a1a10
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 00dedd069914384a1883a54bfb433857286fb49c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67656819"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097576"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
@@ -45,7 +44,7 @@ ms.locfileid: "67656819"
 
 ### <a name="templates"></a>Доступные шаблоны
 
-|Имя| Описание |
+|Название| Описание |
 |:-----|:-----|
 |Созданное определение|Определение OpenAPI с максимальным объемом информации, которую можно извлечь из имеющихся метаданных функции.|
 
@@ -56,7 +55,7 @@ ms.locfileid: "67656819"
 |Swagger.json|Пользовательский интерфейс портала|Function.json|
 |:----|:-----|:-----|
 |[Host](https://swagger.io/specification/#fixed-fields-15)|**Параметры приложения-функции** > **Параметры службы приложений** > **Обзор** > **URL-адрес**|*Отсутствует*
-|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрутизация
+|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрут
 |[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Привязки: Методы
 |[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
 |operationID*|**Маршрут + допустимые команды**|Маршрут + допустимые команды|

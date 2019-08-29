@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/20/2019
 ms.author: tomfitz
-ms.openlocfilehash: 2cd37405176eefa8f4445942b9fbf1afc2a7404a
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: eddd99be9d4a30e3e71c806a3f98c6be6800e8fb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650420"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70095756"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -188,7 +188,7 @@ ms.locfileid: "69650420"
 
 При использовании функции **List** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут. Если функция **List** ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует if и List с условно развернутым ресурсом.
 
-### <a name="example"></a>Пример
+### <a name="list-example"></a>Пример списка
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) показано, как получить в разделе выходных данных первичный и вторичный ключи из учетной записи хранения. Он также возвращает маркер SAS для учетной записи хранения. 
 
@@ -265,7 +265,7 @@ ms.locfileid: "69650420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
 | resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
@@ -284,7 +284,7 @@ ms.locfileid: "69650420"
 
 Упорядочение массива возвращаемых значений не гарантируется.
 
-### <a name="example"></a>Пример
+### <a name="providers-example"></a>Пример поставщиков
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/providers.json) показано, как использовать функцию provider:
 
@@ -433,7 +433,7 @@ ms.locfileid: "69650420"
 
 `Microsoft.Compute/virtualMachines/myVM/extensions/myExt` — правильно, `Microsoft.Compute/virtualMachines/extensions/myVM/myExt` — неправильно.
 
-### <a name="example"></a>Пример
+### <a name="reference-example"></a>Пример ссылки
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/referencewithstorage.json) развертывает ресурс и ссылается на этот ресурс.
 
@@ -600,7 +600,7 @@ ms.locfileid: "69650420"
 
 Кроме того, функцию resourceGroup можно использовать для применения тегов из группы ресурсов к ресурсу. Дополнительные сведения см. в статье [применение тегов из группы ресурсов](resource-group-using-tags.md#apply-tags-from-resource-group).
 
-### <a name="example"></a>Пример
+### <a name="resource-group-example"></a>Пример группы ресурсов
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourcegroup.json) возвращает свойства группы ресурсов.
 
@@ -737,7 +737,7 @@ ms.locfileid: "69650420"
 }
 ```
 
-### <a name="example"></a>Пример
+### <a name="resource-id-example"></a>Пример идентификатора ресурса
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourceid.json) возвращает идентификатор ресурса для учетной записи хранения в группе ресурсов:
 
@@ -795,7 +795,7 @@ ms.locfileid: "69650420"
 }
 ```
 
-### <a name="example"></a>Пример
+### <a name="subscription-example"></a>Пример подписки
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/subscription.json) показана функция subscription, вызываемая в разделе выходных данных. 
 

@@ -7,18 +7,17 @@ author: hermanndms
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: rclaus
-ms.openlocfilehash: 91671b39e6ac33e16636cc924f5c0aa5e3fcbf3b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 05a4b8e8034e1c354a4209244694aeb2fc2c6007
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709945"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078747"
 ---
 # <a name="backup-guide-for-sap-hana-on-azure-virtual-machines"></a>Руководство по резервному копированию SAP HANA на виртуальных машинах Azure
 
@@ -90,7 +89,7 @@ _Нет. Сейчас резервные копии данных и журнал
 
 В Azure необходимо учитывать, что функция создания моментальных снимков больших двоичных объектов Azure не гарантирует согласованность файловой системы (см. статью [Using blob snapshots with PowerShell](https://blogs.msdn.microsoft.com/cie/2016/05/17/using-blob-snapshots-with-powershell/) (Использование моментальных снимков больших двоичных объектов в PowerShell)). В разделе _Согласованность данных SAP HANA при создании моментальных снимков хранилища_ (см. ниже) рассматриваются некоторые вопросы, касающиеся этой функции.
 
-Кроме того один должен понимать процесс выставления счетов, при работе часто с моментальными снимками BLOB-объектов, как описано в этой статье: [Основные сведения о том, как моментальные снимки увеличивают плату](/rest/api/storageservices/understanding-how-snapshots-accrue-charges)— он&#39;t очевидным, как с помощью виртуальные диски Azure.
+Кроме того, необходимо учитывать последствия выставления счетов при частой работе с моментальными снимками больших двоичных объектов, как описано в этой статье: [Понимание того, как в моментальных снимках начисляется плата](/rest/api/storageservices/understanding-how-snapshots-accrue-charges)— это не&#39;так очевидно, как использование виртуальных дисков Azure.
 
 ### <a name="sap-hana-data-consistency-when-taking-storage-snapshots"></a>Согласованность данных SAP HANA при создании моментальных снимков хранилища
 

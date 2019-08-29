@@ -9,25 +9,24 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1db56ad31991b85ffad415818c7c67f0ee30808d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc0d6b07e1e61baa28ceb8e7198ef15f0f831fb7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60708453"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078658"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure
 
 Вы можете использовать многочисленные возможности Azure для развертывания критически важных баз данных, таких как SAP HANA, на виртуальных машинах Azure. Эта статья содержит рекомендации по организации доступа для экземпляров SAP HANA, размещенных на виртуальных машинах Azure. Здесь описаны несколько сценариев, которые можно реализовать на основе инфраструктуры Azure для повышения уровня доступности SAP HANA в Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В статье предполагается, что вы знакомы с концепцией инфраструктуры как услуги (IaaS) в Azure, т. е. умеете выполнять такие задачи: 
 
@@ -66,7 +65,7 @@ ms.locfileid: "60708453"
 
 Сравните свои требования к уровню доступности с теми параметрами, которые предложены в соглашениях об уровне обслуживания для компонентов Azure. По результатам этого анализа выберите такой сценарий SAP HANA, который обеспечит необходимый уровень доступности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Доступность SAP HANA в пределах одного региона Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-one-region)
 - [Доступность SAP HANA в разных регионах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-across-regions) 
