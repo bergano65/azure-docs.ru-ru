@@ -43,7 +43,7 @@ ms.locfileid: "68853669"
 
 - Azure Analysis Services
 - Azure DevOps
-- База данных SQL Azure и хранилище данных — [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
+- Azure SQL Database хранилище данных — [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 - Dynamics CRM Online
 - Аналитика Microsoft Application Insights
 - Microsoft Azure Information Protection — дополнительные [сведения](https://docs.microsoft.com/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
