@@ -30,6 +30,11 @@
     - name: Индекс
       displayName: 'list, examples'
       href: ./samples/index.md
+    - name: Canada Federal PBMM
+      items:
+        - name: Сопоставление элементов управления
+          displayName: 'standards, canada, federal, pbmm'
+          href: ./samples/canada-federal-pbmm/control-mapping.md
     - name: Тест производительности CIS для платформ Microsoft Azure
       items:
         - name: Обзор

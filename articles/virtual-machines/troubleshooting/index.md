@@ -8,74 +8,81 @@ manager: gwallace
 ms.assetid: ''
 ms.service: virtual-machines
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 10/3/2018
 ms.author: genli
-ms.openlocfilehash: 1db5829abd52a1b010d38dd8e9151ab2df3f1de5
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ed1873fa8e74b2af5734411dc80aeb9089b61a7e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854402"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080454"
 ---
 # <a name="troubleshooting-azure-virtual-machines"></a>Устранение неполадок с виртуальными машинами Azure
 
-- Ошибки распределения ресурсов
-    - [Ошибки выделения ресурсов](allocation-failure.md)
-    - [Ошибки распределения ресурсов для классических развертываний](allocation-failure-classic.md)
+## <a name="tools-for-troubleshooting"></a>Средства для устранения неполадок
+
+- [Последовательная консоль](serial-console-windows.md)
 - [Диагностика загрузки](boot-diagnostics.md)
-- RDP
-    - [Сброс RDP](reset-rdp.md)
-    - [Устранение неполадок с RDP](troubleshoot-rdp-connection.md)
-    - [Подробные сведения об устранении неполадок с RDP](detailed-troubleshoot-rdp.md)
-    - [Устранение определенных ошибок](troubleshoot-specific-rdp-errors.md)
-- SSH 
-    - [Устранение неполадок с SSH](troubleshoot-ssh-connection.md)
-    - [Подробные сведения об устранении неполадок с SSH](detailed-troubleshoot-ssh-connection.md)
-    - [Распространенные сообщения об ошибках](error-messages.md)
-- [Установка агента виртуальной машины Windows в автономном режиме](install-vm-agent-offline.md)
-- Устранение неполадок с производительностью виртуальных машин
-    - [Проблемы с производительностью виртуальных машин](performance-diagnostics.md)
-    - Windows
-        - [Как использовать PerfInsights](how-to-use-perfinsights.md)
-        - [Расширение для диагностики производительности](performance-diagnostics-vm-extension.md)
-    - Linux
-        - [Как использовать PerfInsights](how-to-use-perfinsights-linux.md)
+- [Виртуальная машина Windows. Подключение диска ОС к другой виртуальной машине для устранения неполадок](troubleshoot-recovery-disks-portal-windows.md)
+- [Виртуальная машина Linux. Подключение диска ОС к другой виртуальной машине для устранения неполадок](troubleshoot-recovery-disks-portal-linux.md)
+
+## <a name="cant-connect-to-the-vm"></a>Не удается подключиться к виртуальной машине
+
+### <a name="windows"></a>Windows
+
+**Распространенное решение**
+
+- [Сброс RDP](reset-rdp.md)
+- [Устранение неполадок с RDP](troubleshoot-rdp-connection.md)
+- [Подробные сведения об устранении неполадок с RDP](detailed-troubleshoot-rdp.md)
+
+**Ошибки RDP**
+
+- [Сервер лицензирования отсутствует](troubleshoot-rdp-no-license-server.md)
+- [Внутренние ошибки ](Troubleshoot-rdp-internal-error.md)
+- [аутентификации](troubleshoot-authentication-error-rdp-vm.md)
+- [Устранение определенных ошибок](troubleshoot-specific-rdp-errors.md)
+
+**Ошибки загрузки виртуальной машины**
+
+* [Ошибки загрузки BitLocker на виртуальной машине Azure](troubleshoot-bitlocker-boot-error.md) 
+* [Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure](troubleshoot-check-disk-boot-error.md)
+* [Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows](troubleshoot-common-blue-screen-error.md)
+* [При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure](troubleshoot-vm-boot-configure-update.md)
+* [Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure](troubleshoot-critical-service-failed-boot-error.md)
+* [Цикл перезагрузки Windows на виртуальной машине Azure](troubleshoot-reboot-loop.md)
+* [Зависание виртуальной машины при запуске во время обновления Windows](troubleshoot-stuck-updating-boot-error.md)
+* [Виртуальная машина загружается в защищенном режиме](troubleshoot-rdp-safe-mode.md)
+
+**другие.**
+- [Сброс пароля виртуальной машины Windows в автономном режиме](reset-local-password-without-agent.md)
+- [Сброс сетевого адаптера после применения неправильной настройки](reset-network-interface.md)
+
+### <a name="linux"></a>Linux
+
+- [Устранение неполадок с SSH](troubleshoot-ssh-connection.md)
+- [Подробные сведения об устранении неполадок с SSH](detailed-troubleshoot-ssh-connection.md)
+- [Распространенные сообщения об ошибках](error-messages.md)
+- [Сброс пароля виртуальной машины Linux в автономном режиме](reset-password.md)
+
+## <a name="vm-deployment-issues"></a>Проблемы с развертыванием виртуальных машин
+
+- [Ошибки выделения ресурсов](allocation-failure.md)
 - Повторное развертывание виртуальной машины
     - [Linux](redeploy-to-new-node-linux.md)
     - [Windows](redeploy-to-new-node-windows.md)
-- Сброс пароля к виртуальной машине
-    - [Windows](reset-local-password-without-agent.md)
-    - [Linux](reset-password.md)
-- [Сброс сетевого адаптера](reset-network-interface.md)
-- [Перезапуск или изменение размера виртуальной машины](restart-resize-error-troubleshooting.md)
-- Использование последовательной консоли
-    - [Виртуальные машины Linux](serial-console-linux.md)
-        - [Загрузчик GRUB в последовательной консоли (однопользовательский режим)](serial-console-grub-single-user-mode.md)
-        - [Немаскируемое прерывание в последовательной консоли (SysRq)](serial-console-nmi-sysrq.md)
-    - [Виртуальные машины Windows](serial-console-windows.md)
-        - [CMD и команды PowerShell](serial-console-cmd-ps-commands.md)
-- [Ошибки при удалении ресурсов хранилища](storage-resource-deletion-errors.md      )
-- [Непредвиденные перезагрузки виртуальных машин с подключенными VHD](unexpected-reboots-attached-vhds.md)
-- [Проблемы с активацией Windows](troubleshoot-activation-problems.md)
-- [Ошибки доступа к приложению](troubleshoot-app-connection.md)
 - Устранение неполадок развертываний
     - [Linux](troubleshoot-deploy-vm-linux.md)
     - [Windows](troubleshoot-deploy-vm-windows.md)
 - [Изменение имен устройств](troubleshoot-device-names-problems.md)
-- Доступ к восстановлению виртуальной машины
-    - Windows
-        - [PowerShell](troubleshoot-recovery-disks-windows.md)
-        - [Портал Azure](troubleshoot-recovery-disks-portal-windows.md)
-    - Linux
-        - [CLI](troubleshoot-recovery-disks-linux.md)
-    - [Портал Azure](troubleshoot-recovery-disks-portal-linux.md)
-- [Ошибки при загрузке](boot-error-troubleshoot.md)
-- [Ошибки BitLocker](troubleshoot-bitlocker-boot-error.md)
-- [Проверка ошибок файловой системы](troubleshoot-check-disk-boot-error.md)
-- [Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows](troubleshoot-common-blue-screen-error.md)
-- [Ошибки регулирования](troubleshooting-throttling-errors.md)
-- [Использование вложенной виртуализации](troubleshoot-vm-by-use-nested-virtualization.md)
-- [Общие сведения о перезагрузке системы](understand-vm-reboot.md)
+- [Установка агента виртуальной машины Windows в автономном режиме](install-vm-agent-offline.md)
+- [Перезапуск или изменение размера виртуальной машины](restart-resize-error-troubleshooting.md)
 
+## <a name="vm-performance-issue"></a>Проблемы с производительностью виртуальных машин
+- [Проблемы с производительностью виртуальных машин](performance-diagnostics.md)
+- Windows
+    - [Как использовать PerfInsights](how-to-use-perfinsights.md)
+    - [Расширение для диагностики производительности](performance-diagnostics-vm-extension.md)
+- Linux
+    - [Как использовать PerfInsights](how-to-use-perfinsights-linux.md)
