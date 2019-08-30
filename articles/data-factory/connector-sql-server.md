@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: f5ddd9928194c477d8f8b6f4c9569a8fe58f39d3
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 90d77d511c76d8d718c8b0b3dea9ef8536b2e864
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967376"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172645"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -28,7 +28,7 @@ ms.locfileid: "68967376"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Вы можете копировать данные из базы данных SQL Server в любое хранилище данных, которое поддерживается в качестве приемника, и обратно. Или можно скопировать данные из любого поддерживаемого исходного хранилища данных в базу данных SQL Server. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+Данные из базы данных SQL Server можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Или можно скопировать данные из любого поддерживаемого исходного хранилища данных в базу данных SQL Server. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
 В частности, этот соединитель SQL Server поддерживает:
 
@@ -42,7 +42,7 @@ ms.locfileid: "68967376"
 >[!NOTE]
 >SQL Server [Always encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) сейчас не поддерживается этим соединителем. Для решения этой проблемы можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер SQL Server ODBC. Следуйте указаниям [по](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=sql-server-2017) загрузке драйвера ODBC и настройке строки подключения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -497,27 +497,27 @@ END
 | DateTime |DateTime |
 | datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
-| Десятичное |Десятичное |
+| Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Плавающая область |Double |
 | image |Byte[] |
 | ssNoversion |Int32 |
-| money |Десятичное |
+| money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Десятичное |
+| numeric |Decimal |
 | nvarchar |String, Char[] |
-| real |Единое |
+| real |Single |
 | rowversion |Byte[] |
 | smalldatetime |DateTime |
 | smallint |Int16 |
-| smallmoney |Десятичное |
+| smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |
 | timestamp |Byte[] |
 | tinyint |Int16 |
-| uniqueidentifier |GUID |
+| uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
 | Xml |Xml |

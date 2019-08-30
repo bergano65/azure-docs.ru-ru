@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: 3acae8f7d34bb02905e6e8d479b7de5ccab1bb7a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d9b0c551cdfb92b380a967aaa5bdce7c278fd39e
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850984"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183569"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений
 
@@ -105,7 +105,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Существует три способа хранения журналов:
 
 * **Учетная запись хранения**. Лучше всего подходит для длительного хранения журналов и их просмотра по мере необходимости.
-* **Центры событий**. Центры событий — это отличный вариант для интеграции с другими инструментами управления событиями и сведениями о безопасности (SEIM), позволяющий получать оповещения о ваших ресурсах.
+* **Центры событий**. Концентраторы событий — это отличный вариант для интеграции с другими средствами управления сведениями о безопасности и событиями (SIEM) для получения оповещений о ресурсах.
 * **Журналы Azure Monitor**. Журналы Azure Monitor лучше всего подходят для общего мониторинга приложения в реальном времени и изучения тенденций.
 
 ### <a name="enable-logging-through-powershell"></a>Включение ведения журнала с помощью PowerShell

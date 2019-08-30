@@ -10,17 +10,16 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: e6d18222e15f62f12592362827b6dbc4a3d7dfbc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b13bc43595c09b3700798935f70c401c9311651c
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60766925"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070879"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
 В этом руководстве описано, как предсказуемо с помощью шаблонов групп ресурсов JSON и скриптов PowerShell подготовить и развернуть приложение, состоящее из [микрослужб](https://en.wikipedia.org/wiki/Microservices), в [службу приложений Azure](https://azure.microsoft.com/services/app-service/) как единое целое. 
@@ -103,7 +102,7 @@ ms.locfileid: "60766925"
 ### <a name="resources"></a>Ресурсы
 В узле "Ресурсы" можно видеть, что определены четыре ресурса верхнего уровня, включая экземпляр SQL Server, план службы приложений и два приложения. 
 
-#### <a name="app-service-plan"></a>План службы приложений
+#### <a name="app-service-plan"></a>план службы приложений
 Начнем с простого ресурса корневого уровня в JSON. В структуре JSON щелкните план службы приложений с именем **[hostingPlanName]** , чтобы выделить соответствующий код JSON. 
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
@@ -140,7 +139,7 @@ ms.locfileid: "60766925"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
-##### <a name="app-settings"></a>Параметры приложения
+##### <a name="app-settings"></a>Параметры приложений
 Параметры приложения также определены в качестве вложенного ресурса.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
@@ -259,7 +258,7 @@ ms.locfileid: "60766925"
 
 <a name="resources"></a>
 
-## <a name="more-resources"></a>Дополнительные ресурсы
+## <a name="more-resources"></a>Другие ресурсы
 * [Язык шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Функции шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/resource-group-template-functions.md)
@@ -267,7 +266,7 @@ ms.locfileid: "60766925"
 * [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/resource-manager-common-deployment-errors.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 

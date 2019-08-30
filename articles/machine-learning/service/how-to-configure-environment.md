@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 220f68461d47293e9f43a650e4fa5d1d59bce02f
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 33ee006a704cec1fb0d75a953629aec68461a4f4
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128341"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165186"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "70128341"
 
 + **Настраиваемые**. В то время как управляемое и безопасное предложение виртуальных машин обеспечивает полный доступ к возможностям оборудования и настраивает его для вашего сердца. Например, быстро создайте новейшую виртуальную машину на платформе NVidia V100 для выполнения пошаговой отладки архитектуры нейронной сети роман.
 
-Чтобы закончить сбор расходов на виртуальные машины записной книжки, [закройте виртуальную машину записной книжки](tutorial-1st-experiment-sdk-setup.md#stop-the-notebook-vm). 
+Чтобы закончить сбор расходов на виртуальные машины записной книжки, [закройте виртуальную машину записной книжки](tutorial-1st-experiment-sdk-train.md#clean-up-resources). 
 
 ## <a id="dsvm"></a>Виртуальная машина для обработки и анализа данных
 

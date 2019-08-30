@@ -3,19 +3,19 @@ title: Мониторинг состояния индексатора и рез�
 description: Отслеживайте состояние, ход выполнения и результаты индексаторов службы "Поиск Azure" в портал Azure с помощью REST API или пакета SDK для .NET.
 ms.date: 06/28/2019
 author: RobDixon22
-manager: HeidiSteen
+manager: nitinme
 ms.author: heidist
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 52e9e96598f429bcd57bba23d035d0d341731a9c
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 6a8eaca029767e1d6bce4bc8ce22ce5523be26d8
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840733"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186593"
 ---
 # <a name="how-to-monitor-azure-search-indexer-status-and-results"></a>Мониторинг состояния индексатора поиска Azure и результатов
 

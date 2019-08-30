@@ -5,15 +5,15 @@ services: container-registry
 author: stevelas
 manager: gwallace
 ms.service: container-registry
-ms.topic: overview
+ms.topic: article
 ms.date: 08/16/2019
 ms.author: stevelas
-ms.openlocfilehash: 73d497b4784a91974fab8a94c6f9fe595770ea45
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
-ms.translationtype: HT
+ms.openlocfilehash: 50ab3fc92fc980638547bb090c5d0d78aa20ab5f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69574384"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172274"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
 
@@ -64,7 +64,7 @@ docker push contosowesteu.azurecr.io/public/products/web:1.2
 
 ## <a name="configure-geo-replication"></a>Настройка георепликации
 
-Настроить георепликацию так же просто, как и выбрать регионы на карте. Вы можете также управлять георепликацией, используя различные инструменты, включая команды [az acr replication](/cli/azure/acr/replication) в Azure CLI.
+Настроить георепликацию так же просто, как и выбрать регионы на карте. Можно также управлять георепликацией с помощью средств, включая команды [AZ запись контроля](/cli/azure/acr/replication) доступа в Azure CLI, или развернуть реестр, включенный для георепликации с шаблоном [Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-container-registry-geo-replication).
 
 Георепликация — это функция [реестров только уровня "Премиум"](container-registry-skus.md). Вы можете изменить уровень "Базовый" или "Стандартный" на "Премиум" (если у вас его еще нет) на [портале Azure](https://portal.azure.com).
 
@@ -114,7 +114,7 @@ ACR начинает синхронизацию образов между нас
 
 Чтобы для разрешения DNS-имен при передаче образов использовалась ближайшая реплика, настройте геореплицированный реестр в том же регионе Azure, где находится источник операций отправки, или в ближайшем регионе при работе вне Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите руководство, состоящее из трех частей, [Подготовка геореплицированного реестра контейнеров Azure](container-registry-tutorial-prepare-registry.md). Рассмотрите создание геореплицированного реестра, создание контейнера, а затем его развертывание в несколько региональных экземпляров веб-приложений для контейнеров, выполнив единую команду `docker push`.
 

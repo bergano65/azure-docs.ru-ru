@@ -2,7 +2,7 @@
 title: Обновление до пакета SDK .NET для службы "Поиск Azure" версии 3
 description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 3 с предыдущих версий. Узнайте о новых возможностях и необходимых изменениях кода.
 author: brjohnstmsft
-manager: jlembicz
+manager: nitinme
 services: search
 ms.service: search
 ms.devlang: dotnet
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: d41c2b541bf80448d180a1d081c255e5bf754e5e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cab0da93bbea117c216969faf2f1e194e16d675f
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147330"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183216"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-3"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 3
 
@@ -148,6 +148,6 @@ index.Analyzers = new Analyzer[]
 ## <a name="conclusion"></a>Заключение
 Если вам нужны дополнительные сведения об использовании пакета SDK .NET для службы поиска Azure, то ознакомьтесь с [практическим руководством по .NET](search-howto-dotnet-sdk.md).
 
-Будем рады вашим отзывам о пакете SDK. Если возникли проблемы, вы можете обратиться за помощью на [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
+Будем рады вашим отзывам о пакете SDK. При возникновении проблем вы можете попросить нас получить помощь по [Stack overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
 
 Благодарим вас за использование поиска Azure!

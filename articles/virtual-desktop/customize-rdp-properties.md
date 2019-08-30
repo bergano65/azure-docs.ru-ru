@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: 624edaea9a0fb56e34eb83f033dfdab64985bd5c
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: fbc24705288d9bb4acf0d1b2d99dfbda32149614
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950712"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163555"
 ---
 # <a name="customize-remote-desktop-protocol-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола пула узлов
 
@@ -20,7 +20,11 @@ ms.locfileid: "68950712"
 
 Полный список поддерживаемых свойств и их значений по умолчанию см. в разделе [параметры удаленный рабочий стол RDP-файла](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files) .
 
-Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
+Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали). После этого выполните следующий командлет, чтобы войти в учетную запись:
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
 
 ## <a name="add-or-edit-a-single-custom-rdp-property"></a>Добавление или изменение одного настраиваемого свойства RDP
 

@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 08/12/2019
+ms.date: 08/29/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: ef51a1b130323a8799d5334d8d043fda08fcc7ef
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 6ea4dbf07c8ef99c43dbe7add1ae9270056f708c
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896964"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164320"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI (Предварительная версия)
 
@@ -61,7 +61,7 @@ az role assignment create \
 
 ### <a name="create-a-user-delegation-sas-for-a-container"></a>Создание SAS для делегирования пользователя для контейнера
 
-Чтобы создать SAS для делегирования пользователей для контейнера с Azure CLI, вызовите команду [AZ Storage Container Generate-SAS](/cli/azure/storage/container#az-storage-container-generate-sas) .
+Чтобы создать SAS для делегирования пользователя для контейнера с Azure CLI, вызовите команду [AZ Storage Container Generate-SAS](/cli/azure/storage/container#az-storage-container-generate-sas) .
 
 Поддерживаются следующие разрешения для сопоставления безопасности делегирования пользователей в контейнере: Добавление, создание, удаление, перечисление, чтение и запись. Разрешения можно указать отдельно или в сочетании. Дополнительные сведения об этих разрешениях см. [в разделе Создание SAS для делегирования пользователей](/rest/api/storageservices/create-user-delegation-sas).
 
@@ -112,6 +112,21 @@ https://storagesamples.blob.core.windows.net/sample-container/blob1.txt?se=2019-
 
 > [!NOTE]
 > SAS пользователя, поддерживающий делегирование, не поддерживает определение разрешений с помощью хранимой политики доступа.
+
+## <a name="revoke-a-user-delegation-sas"></a>Отзыв SAS для делегирования пользователя
+
+Чтобы отозвать SAS для делегирования пользователя из Azure CLI, вызовите команду [AZ Storage Account REVOKE-делегирование Keys](/cli/azure/storage/account#az-storage-account-revoke-delegation-keys) . Эта команда отменяет все ключи делегирования пользователя, связанные с указанной учетной записью хранения. Все подписанные URL, связанные с этими ключами, становятся недействительными.
+
+Не забудьте заменить значения заполнителей в угловых скобках собственными значениями:
+
+```azurecli-interactive
+az storage account revoke-delegation-keys \
+    --name <storage-account> \
+    --resource-group <resource-group>
+```
+
+> [!IMPORTANT]
+> Как ключ делегирования пользователя, так и назначение ролей RBAC кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
 ## <a name="next-steps"></a>Следующие шаги
 

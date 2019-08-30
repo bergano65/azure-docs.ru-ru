@@ -2,19 +2,19 @@
 title: Управление версиями API пакета SDK для .NET и интерфейсов REST API в службе "Поиск Azure"
 description: Политика управления версиями для API REST службы поиска Azure и клиентской библиотеки пакетов SDK для .NET.
 author: brjohnstmsft
-manager: jlembicz
+manager: nitinme
 services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
-ms.openlocfilehash: d72901653e995e811a1d3e89cef8a5f77a9ea8bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f400c6fcb2b35e2adcf605c96bb802041cd9e0a9
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523808"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182360"
 ---
 # <a name="api-versions-in-azure-search"></a>Версии API в службе поиска Azure
 Служба поиска Azure развертывает обновления компонентов на регулярной основе. Иногда (но не всегда) для сохранения обратной совместимости для этих обновлений требуется новая версия API. Публикация новой версии позволяет вам выбирать, когда и как интегрировать обновления службы поиска в код.
@@ -32,10 +32,10 @@ ms.locfileid: "65523808"
 
 | Интерфейсы | Последняя основная версия | Status |
 | --- | --- | --- |
-| [ПАКЕТ SDK .NET](https://aka.ms/search-sdk) |9.0 |Общедоступная версия, выпущенная мая 2019 г. |
-| [Предварительная версия пакета SDK для .NET](https://aka.ms/search-sdk-preview) |Предварительная версия 8.0 |Предварительная версия, выпущенная апреля 2019 г. |
+| [Пакет SDK для .NET](https://aka.ms/search-sdk) |9.0 |Выпущена общедоступная версия, Май 2019 |
+| [Предварительная версия пакета SDK для .NET](https://aka.ms/search-sdk-preview) |8,0 — Предварительная версия |Предварительная версия, выпущенная 2019 апреля |
 | [API REST службы](https://docs.microsoft.com/rest/api/searchservice/) |2019-05-06 |Общедоступная версия |
-| [API 2019 REST службы-05-06-Preview](search-api-preview.md) |2019-05-06-preview |Предварительный просмотр |
+| [Служба REST API 2019-05-06-Preview](search-api-preview.md) |2019-05-06 — Предварительная версия |Предварительный просмотр |
 | [Пакет SDK управления для .NET](https://aka.ms/search-mgmt-sdk) |3.0 |Общедоступная версия |
 | [Интерфейс API REST для управления.](https://docs.microsoft.com/rest/api/searchmanagement/) |2015-08-19 |Общедоступная версия |
 

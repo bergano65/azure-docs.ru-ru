@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: robinsh
-ms.openlocfilehash: 1fbaa54be4419d493d5179a6d6d0884393c8138a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 9a64c6e476910ab4fe983fa949680f05fdded3ae
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967321"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70161862"
 ---
 # <a name="azure-iot-sdks-platform-support"></a>Поддержка платформ пакетов SDK для устройств Azure IoT
 
@@ -71,10 +71,10 @@ ms.locfileid: "68967321"
 
 ### <a name="nodejs-sdk"></a>Пакет SDK для Node.js
 
-| OS                                           | Arch | Версия узла |
-|----------------------------------------------|------|--------------|
-| Ubuntu 16.04 LTS (с использованием образа docker node 6) | X64  | Node 6       |
-| Windows Server 2016                          | X64  | Node 6       |
+| OS                                           | Arch | Версия узла    |
+|----------------------------------------------|------|-----------------|
+| Ubuntu 16.04 LTS (с использованием образа docker node 6) | X64  | LTS и текущий |
+| Windows Server 2016                          | X64  | LTS и текущий |
 
 ### <a name="java-sdk"></a>Пакет SDK для Java
 
@@ -89,7 +89,7 @@ ms.locfileid: "68967321"
 
 Клиенты могут расширять поддержку платформы путем переноса пакета C SDK Azure IoT, в частности, создавая уровень платформенной абстракции (PAL) пакета SDK. Корпорация Майкрософт сотрудничает с партнерами для предоставления расширенной поддержки. Список партнеров, которые выполняют перенос пакета SDK C на другие платформы и поддерживают PAL.
 
-| Партнер             | Устройств                            | Ссылка                     | Поддержка |
+| Партнер             | Устройства                            | Ссылка                     | Поддержка |
 |---------------------|------------------------------------|--------------------------|---------|
 | Espressif           | ESP32 <br/> ESP8266                              | [ESP-azure](https://github.com/espressif/esp-azure)                | [GitHub](https://github.com/espressif/esp-azure)  
 | Qualcomm            | Модем Qualcomm MDM9206 LTE IoT     | [Qualcomm LTE для пакета SDK IoT](https://developer.qualcomm.com/software/lte-iot-sdk) | [Форум](https://developer.qualcomm.com/forums/software/lte-iot-sdk)   |

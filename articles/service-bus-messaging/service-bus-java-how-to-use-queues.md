@@ -14,22 +14,22 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 4075ceae6c40a6be8ee2b9f6580a57fafb96e17e
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.custom: seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 84f035a55256ab22c823b2aaed9c9c2400eebf5b
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663424"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173408"
 ---
-# <a name="how-to-use-service-bus-queues-with-java"></a>Как использовать очереди служебной шины с Java
+# <a name="use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Использование очередей служебной шины Azure с Java для отправки и получения сообщений
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 В этом руководстве вы узнаете, как создавать приложения Java для отправки сообщений в очередь служебной шины и получения сообщений из нее. 
 
 > [!NOTE]
 > Примеры Java можно найти на сайте GitHub в [репозитории azure-service-bus](https://github.com/Azure/azure-service-bus/tree/master/samples/Java).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Если у вас нет очереди для работы, выполните действия, описанные в статье [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) для создания очереди.
     1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 

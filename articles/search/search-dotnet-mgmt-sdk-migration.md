@@ -2,24 +2,24 @@
 title: Обновление пакета SDK управления .NET для службы "Поиск Azure" до версии 2
 description: Сведения об обновлении пакета SDK управления .NET для службы "Поиск Azure" до версии 2. Сведения о новых возможностях и необходимых изменениях кода.
 author: brjohnstmsft
-manager: jlembicz
+manager: nitinme
 ms.author: brjohnst
 services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/02/2019
-ms.openlocfilehash: 62c2ed555fcac56677f4950c10d38ded8fb0649d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2a59cff7f5313b0ac5a060d698950a4c82160f67
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65025175"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182249"
 ---
-# <a name="upgrading-to-the-azure-search-net-management-sdk-version"></a>Обновление до версии пакета SDK управления .NET поиска Azure 
+# <a name="upgrading-to-the-azure-search-net-management-sdk-version"></a>Обновление до версии пакета SDK для службы поиска Azure для .NET 
 
 > [!Important]
-> Это содержимое является еще находятся в разработке. Версия 3.0 пакета SDK управления .NET поиска Azure доступна в NuGet. Мы работаем над обновлением данное руководство по миграции, чтобы объяснить, как выполнить обновление до новой версии. 
+> Это содержимое все еще находится в стадии разработки. Версия 3,0 пакета SDK для .NET для управления поиском Azure доступна в NuGet. Мы работаем над обновлением этого руководства по миграции, чтобы объяснить, как выполнить обновление до новой версии. 
 >
 
 Если вы используете версию 1.0.2 [пакета SDK управления .NET для службы поиска Azure](https://aka.ms/search-mgmt-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 2.

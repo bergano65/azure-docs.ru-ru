@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/23/2019
 ms.author: jingwang
-ms.openlocfilehash: 45f7db943499b8a722b8e203d676d1d80eb5091e
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 49a0c7597e8d44e3f60e2d3b6bd4c14cad1524b5
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69996676"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172626"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -536,6 +536,10 @@ Polybase хранилища данных SQL напрямую поддержив
 
 Кроме того, для данных с такими широкими столбцами можно использовать не Polybase для загрузки данных с помощью ADF, отключив параметр Allow Polybase.
 
+### <a name="sql-data-warehouse-resource-class"></a>Класс ресурсов хранилища данных SQL
+
+Чтобы получить наилучшую пропускную способность, присвойте более высокий класс ресурсов пользователю, который загружает данные в хранилище данных SQL через PolyBase.
+
 ### <a name="polybase-troubleshooting"></a>Устранение неполадок Polybase
 
 **Загрузка в десятичный столбец**
@@ -549,13 +553,7 @@ ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data typ
 Решение состоит в том, чтобы отменить выбор параметра "**использовать тип по умолчанию**" (false) в приемнике действия копирования — > параметры polybase. "[USE_TYPE_DEFAULT](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql?view=azure-sqldw-latest#arguments
 )" — это собственная конфигурация polybase, которая указывает, как следует выполнять обработку отсутствующих значений в текстовых файлах с разделителями, когда polybase извлекает данные из текстового файла. 
 
-**Прочее**
-
-### <a name="sql-data-warehouse-resource-class"></a>Класс ресурсов хранилища данных SQL
-
-Чтобы получить наилучшую пропускную способность, присвойте более высокий класс ресурсов пользователю, который загружает данные в хранилище данных SQL через PolyBase.
-
-### <a name="tablename-in-azure-sql-data-warehouse"></a>Использование **tableName** в хранилище данных SQL Azure
+**`tableName`в хранилище данных SQL Azure**
 
 В следующей таблице приведены примеры того, как указать свойство **tableName** в наборе данных JSON. В ней показаны несколько сочетаний имен схем и таблиц.
 
@@ -572,7 +570,7 @@ ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data typ
 Type=System.Data.SqlClient.SqlException,Message=Invalid object name 'stg.Account_test'.,Source=.Net SqlClient Data Provider
 ```
 
-### <a name="columns-with-default-values"></a>Столбцы со значениями по умолчанию
+**Столбцы со значениями по умолчанию**
 
 Сейчас для PolyBase в фабрике данных требуется такое же количество столбцов, как и в целевой таблице. Примером может служить таблица с четырьмя столбцами, и один из них определен со значением по умолчанию. Входные данные по-прежнему должны иметь четыре столбца. Если входной набор данных будет содержать три столбца, мы получим ошибку, похожую на следующую:
 
@@ -619,7 +617,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | smallmoney                            | Decimal                        |
 | time                                  | TimeSpan                       |
 | tinyint                               | Byte                           |
-| uniqueidentifier                      | GUID                           |
+| uniqueidentifier                      | Guid                           |
 | varbinary                             | Byte[]                         |
 | varchar                               | String, Char[]                 |
 

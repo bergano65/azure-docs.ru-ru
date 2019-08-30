@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/19/2019
-ms.openlocfilehash: cbbfd5f7beb7270bf55e952c818b4802d9d9ecab
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f30ac3d5e20b3f797e083972ac179fd29f6b1475
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847988"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182541"
 ---
 # <a name="use-an-existing-model-with-azure-machine-learning-service"></a>Использование существующей модели со службой Машинное обучение Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "68847988"
 >
 > Общие сведения о процессе развертывания см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область службы машинного обучения Azure. Дополнительные сведения см. [в разделе Создание рабочей области](how-to-manage-workspace.md).
 
@@ -76,23 +76,40 @@ az ml model register -p ./models -n sentiment -w myworkspace -g myresourcegroup
 
 ## <a name="define-inference-configuration"></a>Определение конфигурации вывода
 
-Конфигурация вывода определяет среду, используемую для запуска развернутой модели. Конфигурация вывода ссылается на следующие файлы, которые используются для запуска модели при ее развертывании:
+Конфигурация вывода определяет среду, используемую для запуска развернутой модели. Конфигурация вывода ссылается на следующие сущности, которые используются для запуска модели при ее развертывании:
 
-* Среда выполнения. Единственным допустимым значением для выполнения в настоящее время является Python.
 * Скрипт записи. Этот файл (с `score.py`именем) загружает модель при запуске развернутой службы. Он также отвечает за получение данных, передачу их в модель и возврат ответа.
-* Файл среды conda. Этот файл определяет пакеты Python, необходимые для запуска скрипта модели и входа. 
+* [Среда](how-to-use-environments.md)службы машинное обучение Azure. Среда определяет зависимости программного обеспечения, необходимые для запуска скрипта модели и входа.
 
-В следующем примере показана базовая конфигурация вывода с помощью пакета SDK для Python:
+В следующем примере показано, как использовать пакет SDK для создания среды, а затем использовать ее с конфигурацией вывода:
 
 ```python
 from azureml.core.model import InferenceConfig
+from azureml.core import Environment
+from azureml.core.environment import CondaDependencies
 
-inference_config = InferenceConfig(runtime= "python", 
-                                   entry_script="score.py",
-                                   conda_file="myenv.yml")
+# Create the environment
+myenv = Environment(name="myenv")
+conda_dep = CondaDependencies()
+
+# Define the packages needed by the model and scripts
+conda_dep.add_conda_package("tensorflow")
+conda_dep.add_conda_package("numpy")
+conda_dep.add_conda_package("scikit-learn")
+conda_dep.add_pip_package("keras")
+
+# Adds dependencies to PythonSection of myenv
+myenv.python.conda_dependencies=conda_dep
+
+inference_config = InferenceConfig(entry_script="score.py",
+                                   environment=myenv)
 ```
 
-Дополнительные сведения см. в справочнике по [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
+Дополнительные сведения см. в следующих статьях:
+
++ [Использование сред](how-to-use-environments.md).
++ Ссылка на [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
+
 
 CLI загружает конфигурацию вывода из файла YAML:
 
@@ -102,6 +119,20 @@ CLI загружает конфигурацию вывода из файла YAM
    "runtime": "python",
    "condaFile": "myenv.yml"
 }
+```
+
+При использовании интерфейса командной строки среда conda определяется в `myenv.yml` файле, на который ссылается конфигурация вывода. Следующий YAML является содержимым этого файла:
+
+```yaml
+name: inference_environment
+dependencies:
+- python=3.6.2
+- tensorflow
+- numpy
+- scikit-learn
+- pip:
+    - azureml-defaults
+    - keras
 ```
 
 Дополнительные сведения о конфигурации вывода см. в разделе [deploy Models with машинное обучение Azure Service](how-to-deploy-and-where.md).
@@ -190,24 +221,6 @@ def predict(text, include_neutral=True):
 ```
 
 Дополнительные сведения о сценариях ввода см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
-
-### <a name="conda-environment"></a>Среда Conda
-
-В следующем YAML описывается среда conda, необходимая для запуска скрипта модели и записи.
-
-```yaml
-name: inference_environment
-dependencies:
-- python=3.6.2
-- tensorflow
-- numpy
-- scikit-learn
-- pip:
-    - azureml-defaults
-    - keras
-```
-
-Дополнительные сведения см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
 ## <a name="define-deployment"></a>Определение развертывания
 

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 03/21/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: d6cde04d122d20c4aad5920c29995d9d33165163
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: c07086feef1851f1a6e2a5cda2f541d52a50d91d
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515520"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163498"
 ---
 # <a name="identify-issues-with-the-diagnostics-feature"></a>Выявление проблем с функцией диагностики
 
@@ -24,7 +24,11 @@ ms.locfileid: "69515520"
   
 Подключения, которые не достигают виртуальных рабочих столов Windows, не отображаются в результатах диагностики, так как сама служба роли диагностики является частью виртуального рабочего стола Windows. Проблемы с подключением к виртуальным рабочим столам Windows могут возникнуть, когда пользователь испытывает проблемы с сетевым подключением.
 
-Чтобы приступить к работе, [скачайте и импортируйте модуль PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell, если вы этого еще не сделали.
+Чтобы приступить к работе, [скачайте и импортируйте модуль PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell, если вы этого еще не сделали. После этого выполните следующий командлет, чтобы войти в учетную запись:
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
 
 ## <a name="diagnose-issues-with-powershell"></a>Диагностика проблем с помощью PowerShell
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 81b02cc7c7683bcd9abac2ad1b554644035991c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4158c2c5ce69d1811b20c9937c1d064f4fe657ee
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64710095"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163943"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-powershell"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure в PowerShell
 
@@ -54,13 +54,13 @@ ms.locfileid: "64710095"
 
 ## <a name="install-vm-extension"></a>Установка расширения виртуальной машины
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 ```powershell
 $VM = Get-AzVM -ResourceGroupName testrg -Name VM1
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 В следующем примере извлекается информация о расширении, необходимом для выполнения командлета `Set-AzVMExtension`. Этот командлет устанавливает агент записи пакетов на гостевой виртуальной машине.
 
@@ -91,7 +91,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
                          True         OK OK   
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Чтобы убедиться, что агент установлен, выполните командлет `Get-AzVMExtension` и передайте ему имя виртуальной машины и расширения.
 
@@ -125,16 +125,15 @@ ForceUpdateTag          :
 
 После выполнения предыдущих шагов на виртуальной машине будет установлен агент записи пакетов.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Далее необходимо извлечь экземпляр Наблюдателя за сетями. Эта переменная передается в командлет `New-AzNetworkWatcherPacketCapture` на шаге 4.
 
 ```powershell
-$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" }
-$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName  
+$networkWatcher = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" }
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Получите учетную запись хранения. Она используется для хранения файла записи пакетов.
 
@@ -142,7 +141,7 @@ $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.Res
 $storageAccount = Get-AzStorageAccount -ResourceGroupName testrg -Name testrgsa123
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 С помощью фильтров можно ограничить данные, которые сохраняются при записи пакетов. В следующем примере устанавливаются два фильтра.  Один фильтр собирает исходящий TCP-трафик только с локального IP-адреса 10.0.0.3 на порты назначения 20, 80 и 443.  Второй фильтр собирает только трафик, передаваемый по протоколу UDP.
 
@@ -154,7 +153,7 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 > [!NOTE]
 > Для записи пакетов можно определить несколько фильтров.
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4
 
 Выполните командлет `New-AzNetworkWatcherPacketCapture`, чтобы начать процесс записи пакетов, передав требуемые значения, полученные на предыдущих шагах.
 ```powershell
@@ -277,7 +276,7 @@ Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCapt
 https://{storageAccountName}.blob.core.windows.net/network-watcher-logs/subscriptions/{subscriptionId}/resourcegroups/{storageAccountResourceGroup}/providers/microsoft.compute/virtualmachines/{VMName}/{year}/{month}/{day}/packetCapture_{creationTime}.cap
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об автоматизации записи пакетов с помощью оповещений на виртуальной машине см. в статье, посвященной [созданию записи пакетов, активируемой с использованием оповещений](network-watcher-alert-triggered-packet-capture.md).
 

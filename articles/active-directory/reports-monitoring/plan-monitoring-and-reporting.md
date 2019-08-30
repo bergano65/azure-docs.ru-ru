@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f974b3564857a439f1ac1c40ddd572633b761862
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 6d24a4ab74f7957c068fc664fc4e8898c525afcb
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879860"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162542"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
 
@@ -164,8 +164,6 @@ ms.locfileid: "68879860"
 ### <a name="consume-and-archive-azure-ad-logs"></a>Использование и архивация журналов Azure AD
 
 [Поиск отчетов о действиях на портале Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-find-activity-reports)
-
-[Использование пакета содержимого Power BI для Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-power-bi-content-pack)
 
 [Архивация журналов Azure AD в учетную запись хранения Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
 

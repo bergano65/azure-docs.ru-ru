@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: bf8959abcf591acd902793e9247cd15e2cfdada9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: aa36051f65936f25e4f2cc3bf03619b0f66ce5a6
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089221"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165302"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
@@ -203,7 +203,7 @@ ms.locfileid: "70089221"
 Включайте только необходимые службы в Azure Resource Manager.  Ниже приведены службы, которыми ограничивается большинство клиентов, использующих среды Azure.
 
 - [Управление доступом на основе ролей](../../role-based-access-control/overview.md).
-- [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/resource-group-overview.md#template-deployment).
+- [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/template-deployment-overview.md).
 - [Теги](../../azure-resource-manager/resource-group-using-tags.md).
 - [Управление действиями](../../azure-resource-manager/resource-group-audit.md).
 - [Политики Azure](../../governance/policy/overview.md).

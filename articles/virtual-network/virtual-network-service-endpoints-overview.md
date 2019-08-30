@@ -13,38 +13,37 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: e36e1ca17b5106c79076d1c62e737ba60907ab19
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 8420142e67fe4af12045a2b6fe7f7461ef384f81
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67666471"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164473"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы для виртуальной сети
 
 Конечные точки служб виртуальной сети расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению. Конечные точки позволяют защищать критически важные ресурсы служб Azure в пределах отдельных виртуальных сетей. Трафик, поступающий из виртуальной сети в службу Azure, всегда остается в магистральной сети Microsoft Azure.
 
-Эта функция доступна для следующих служб и регионов Azure:
+Эта функция доступна для следующих служб и регионов Azure, и вы также найдете ресурс Microsoft. * в круглых скобках, который должен быть включен на стороне подсети при настройке конечных точек службы для службы:
 
 **Общедоступная версия**
 
-- **[Служба хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** : общедоступная версия во всех регионах Azure.
-- **[База данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
-- **[Хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
-- **[Сервер Базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Сервер Базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Базы данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** . общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
-- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** : общедоступная версия во всех регионах Azure.
-- **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
-- **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
-- **[Azure Data Lake Store 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.
-- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Общедоступная во всех регионах Azure, где доступны службы приложений
+- Служба **[хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** (Microsoft. Storage): общедоступная версия во всех регионах Azure.
+- **[База данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. SQL): общедоступная версия во всех регионах Azure.
+- **[Хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. SQL): общедоступная версия во всех регионах Azure.
+- **[Сервер базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. SQL): общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[Сервер базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. SQL): общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[База данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (Microsoft. SQL): общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. Азурекосмосдб): общедоступная версия во всех регионах Azure.
+- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** (Microsoft. KeyVault): общедоступная версия во всех регионах Azure.
+- **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. ServiceBus): общедоступная версия во всех регионах Azure.
+- **[Концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. EventHub): общедоступная версия во всех регионах Azure.
+- **[Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. AzureActiveDirectory): общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.
+- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Общедоступно во всех регионах Azure, где доступна служба приложений
 
 **Общедоступная предварительная версия**
 
-- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** : Предварительный просмотр доступен во всех регионах Azure, где доступны реестр контейнеров Azure.
-.
+- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** (Microsoft. ContainerRegistry): Предварительная версия доступна во всех регионах Azure, где доступен реестр контейнеров Azure.
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
@@ -63,7 +62,7 @@ ms.locfileid: "67666471"
 - Функция доступна только для виртуальных сетей, развернутых посредством модели развертывания с помощью Azure Resource Manager.
 - Конечные точки включаются в подсетях, которые настроены в виртуальных сетях Azure. Конечные точки нельзя использовать для трафика, поступающего из локальной среды в службы Azure. Дополнительные сведения см. в разделе о [защите доступа к службам Azure из локальной среды](#securing-azure-services-to-virtual-networks).
 - В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. В службе хранилища Azure для поддержки трафика RA-GRS и GRS конечные точки также применяются к сопряженным регионам, в которых развернута виртуальная сеть. См. дополнительные сведения о [парах регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
-- У Azure Data Lake Storage 1-го поколения возможность интеграции с виртуальной сетью доступна только для виртуальных сетей из одного региона. Также Обратите внимание, что интеграция виртуальной сети для Gen1 хранилища Озера данных Azure позволяет использовать безопасности конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD), создавать дополнительную защиту утверждения в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Тег «Microsoft.AzureActiveDirectory», в списке служб, поддерживающих конечных точек службы используется только для поддержки конечных точек службы ADLS Gen 1. Azure Active Directory (Azure AD) нет встроенной поддержки конечных точек службы. Дополнительные сведения о [Azure Data Lake Store Gen 1 интеграции с виртуальной сетью](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- У Azure Data Lake Storage 1-го поколения возможность интеграции с виртуальной сетью доступна только для виртуальных сетей из одного региона. Также обратите внимание, что интеграция виртуальной сети для Azure Data Lake Storage 1-го поколения использует безопасность конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD) для создания дополнительных утверждений безопасности в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Тег Microsoft. AzureActiveDirectory, указанный в разделе службы, поддерживающие конечные точки службы, используется только для вспомогательных конечных точек службы для ADLS Gen 1. Azure Active Directory (Azure AD) не поддерживает конечные точки службы изначально. Дополнительные сведения об [интеграции с виртуальной сетью Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="securing-azure-services-to-virtual-networks"></a>Защита служб Azure в виртуальных сетях
 
@@ -120,9 +119,9 @@ ms.locfileid: "67666471"
 >[!NOTE]
 > Маршрут конечной точки службы переопределяет маршруты BGP или UDR при совпадении префиксов адресов для службы Azure. Ознакомьтесь со сведениями об [устранении неполадок с действующими маршрутами](diagnose-network-routing-problem.md).
 
-## <a name="provisioning"></a>Подготовка
+## <a name="provisioning"></a>Идет подготовка
 
-Пользователь с правами на запись в виртуальной сети может настроить конечные точки служб в виртуальных сетях независимо друг от друга. Чтобы защитить ресурсы служб Azure к виртуальной сети, пользователь должен иметь разрешение на *Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action* для добавляемых подсетей. Это разрешение по умолчанию включено во встроенные роли администраторов служб и может быть изменено при создании настраиваемых ролей.
+Пользователь с правами на запись в виртуальной сети может настроить конечные точки служб в виртуальных сетях независимо друг от друга. Чтобы защитить ресурсы службы Azure для виртуальной сети, пользователь должен иметь разрешение на доступ к *Microsoft. Network/virtualNetworks/подсети/жоинвиасервицеендпоинт/Action* для добавляемых подсетей. Это разрешение по умолчанию включено во встроенные роли администраторов служб и может быть изменено при создании настраиваемых ролей.
 
 Узнайте больше о [встроенных ролях](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и назначении разрешений, определенных для [настраиваемых ролей](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
@@ -134,7 +133,7 @@ ms.locfileid: "67666471"
 
 Общее количество конечных точек служб в виртуальной сети не ограничено.
 
-Определенные службы Azure, такие как учетные записи хранения Azure, могут применяться ограничения на количество подсетей, которые используются для защиты ресурса. Дополнительные сведения см. в документации по различным службам в разделе [Дальнейшие действия](#next-steps).
+Некоторые службы Azure, такие как учетные записи хранения Azure, могут применять ограничения на количество подсетей, используемых для защиты ресурса. Дополнительные сведения см. в документации по различным службам в разделе [Дальнейшие действия](#next-steps).
 
 ## <a name="virtual-network-service-endpoint-policies"></a>Политики конечных точек служб для виртуальной сети 
 

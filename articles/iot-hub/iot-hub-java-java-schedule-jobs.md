@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 5957a7c555c5b5d9905fcb7e3310093416ae5efb
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: bbb78dcd36ec986cefc1d57e01396f285a6b30dd
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147710"
+ms.locfileid: "70161951"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -53,9 +53,9 @@ ms.locfileid: "70147710"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Последняя версия [пакета SDK для Java SE 8](https://aka.ms/azure-jdks)
+* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Обязательно выберите **Java 8** в разделе **долгосрочная поддержка** , чтобы скачать файлы для JDK 8.
 
-* [Maven 3](https://maven.apache.org/install.html)
+* [Maven 3](https://maven.apache.org/download.cgi)
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 

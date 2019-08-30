@@ -6,14 +6,14 @@ manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 08/29/2019
 ms.author: v-adgera
-ms.openlocfilehash: eca355a51b516311d060df09905c1df769037ec5
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 55b0676ce0a0dc6d4347ddcadf43b7b650f0f9a1
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722853"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172796"
 ---
 # <a name="how-to-query-azure-digital-twins-apis-for-common-tasks"></a>Как запросить API Azure Digital Twins для выполнения общих задач
 
@@ -238,4 +238,4 @@ ms.locfileid: "67722853"
 
 Сведения об аутентификации с помощью API управления см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 
-Дополнительные сведения о конечных точках API см. в статье [способы использования цифровых Swagger двойниками](./how-to-use-swagger.md).
+Дополнительные сведения о конечных точках API см. в статье [Использование цифрового двойников Swagger](./how-to-use-swagger.md).

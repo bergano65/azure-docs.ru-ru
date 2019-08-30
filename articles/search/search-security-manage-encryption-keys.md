@@ -2,19 +2,19 @@
 title: Шифрование неактивных с помощью управляемых клиентом ключей в Azure Key Vault (Предварительная версия) — Поиск Azure
 description: Дополнительное шифрование на стороне сервера по индексам и сопоставлениям синонимов в поиске Azure с помощью ключей, которые вы создаете и управляете в Azure Key Vault.
 author: NatiNimni
-manager: jlembicz
+manager: nitinme
 ms.author: natinimn
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: ''
-ms.openlocfilehash: 9d4494cb46bece7402b1284ee6324ca9ff86e0f3
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: ce7a8af1416664a3a94b248c95203c8e775e805c
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779105"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182411"
 ---
 # <a name="azure-search-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование службы поиска Azure с помощью управляемых клиентом ключей в Azure Key Vault
 
@@ -31,7 +31,7 @@ ms.locfileid: "68779105"
 
 Вы можете использовать разные ключи из разных хранилищ ключей. Это означает, что одна служба поиска может размещать несколько зашифрованных карт индексес\синоним, каждая из которых может использовать другой ключ, управляемый клиентом, наряду с картами индексес\синоним, которые не шифруются с помощью управляемых клиентом ключей. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом примере используются следующие службы. 
 
@@ -164,7 +164,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 }
 ```
 
-## <a name="example-index-encryption"></a>Пример Шифрование индекса
+## <a name="example-index-encryption"></a>Пример: Шифрование индекса
 Сведения о создании нового индекса с помощью REST API можно найти в статье [Создание индекса (Azure Служба поиска REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index), где единственное отличие заключается в указании сведений о ключе шифрования в определении индекса: 
 
 ```json
@@ -191,7 +191,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 ```
 Теперь можно отправить запрос на создание индекса, а затем начать использовать индекс в обычном режиме.
 
-## <a name="example-synonym-map-encryption"></a>Пример Шифрование на карте синонимов
+## <a name="example-synonym-map-encryption"></a>Пример: Шифрование на карте синонимов
 
 Сведения о создании новой схемы синонимов с помощью REST API можно найти на странице [Создание сопоставления синонимов (Azure Служба поиска REST API)](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map), где единственное отличие заключается в указании сведений о ключе шифрования как части определения сопоставления синонимов: 
 

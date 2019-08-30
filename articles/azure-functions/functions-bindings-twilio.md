@@ -7,17 +7,16 @@ author: craigshoemaker
 manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c63b81e5461af5407d260651b79ec80e79fc9b4d
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 32f987caed915aff8c581b974dec7689fc90b007
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479977"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114352"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
 
@@ -122,7 +121,7 @@ public static void Run(string myQueueItem, out SMSMessage message,  TraceWriter 
 }
 ```
 
-Вы не можете использовать параметры out в синхронном коде. Ниже приведен пример асинхронного кода сценария C#:
+Вы не можете использовать параметры вывода в асинхронном коде. Ниже приведен пример асинхронного кода сценария C#:
 
 ```cs
 #r "Newtonsoft.Json"
@@ -298,7 +297,7 @@ public static void Run(string myQueueItem, out CreateMessageOptions message,  IL
 }
 ```
 
-Вы не можете использовать параметры out в синхронном коде. Ниже приведен пример асинхронного кода сценария C#:
+Вы не можете использовать параметры вывода в асинхронном коде. Ниже приведен пример асинхронного кода сценария C#:
 
 ```cs
 #r "Newtonsoft.Json"
@@ -395,7 +394,7 @@ public static CreateMessageOptions Run(
 
 Полный пример см. в разделе [Пример C#](#c-example).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 
@@ -406,13 +405,13 @@ public static CreateMessageOptions Run(
 |**name**|**name**| Имя переменной, используемое в коде функции для текстового SMS-сообщения Twilio. |
 |**accountSid**|**accountSidSetting**| **AccountSidSetting**| Требуемое значение: имя параметра приложения, содержащего идентификатор безопасности учетной записи Twilio, например TwilioAccountSid. Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAccountSid. |
 |**authToken**|**authTokenSetting**|**AuthTokenSetting**| Требуемое значение: имя параметра приложения, содержащего токен проверки подлинности Twilio, например TwilioAccountAuthToken. Если значение не задано, имя параметра приложения по умолчанию — AzureWebJobsTwilioAuthToken. |
-|**to**| Недоступно — указать в коде | **To**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
-|**from**|**from** | **from**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
+|**to**| Недоступно — указать в коде | **Задача**| Требуемое значение: номер телефона, на который отправляется текст SMS-сообщения.|
+|**From**|**From** | **From**| Требуемое значение: номер телефона, с которого отправляется текст SMS-сообщения.|
 |**body**|**body** | **Текст**| Это значение можно использовать для жесткого кодирования текстового SMS-сообщения, если его не нужно задавать динамически в коде функции. |  
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

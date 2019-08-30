@@ -7,25 +7,25 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 6/21/2019
+ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb81c73f7946a10bae0470a55dcf1c0d55c2b847
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 093ada2b2751540b986154be3a2f333784c1259f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67330053"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173287"
 ---
-# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Остановить или удалить задания Azure Stream Analytics
+# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Завершение или удаление задания Azure Stream Analytics
 
-Задания Azure Stream Analytics может быть легко остановлена или удалена с помощью портала Azure, Azure PowerShell, пакет Azure SDK для .net или REST API. Задание Stream Analytics нельзя восстановить после его удаления.
+Azure Stream Analytics задания можно легко остановить или удалить с помощью портал Azure, Azure PowerShell, пакета Azure SDK для .NET или REST API. Задание Stream Analytics нельзя восстановить после его удаления.
 
 >[!NOTE] 
 >При остановке задания Stream Analytics данные сохраняются в хранилище входных и выходных данных, например Центрах событий или Базе данных SQL Azure. Если необходимо удалить данные из Azure, обязательно следуйте процедуре удаления входящих и исходящих ресурсов задания Stream Analytics.
 
 ## <a name="stop-a-job-in-azure-portal"></a>Остановка задания на портале Azure
 
-При остановке задания, ресурсы, deprovisionned и останавливается обработка событий. Также останавливаются расходов, связанных с этим заданием. Тем не менее все настройки хранятся и более поздней версии можно перезапустить задание 
+При остановке задания ресурсы отменяются и прекращается обработка событий. Расходы, связанные с этим заданием, также останавливаются. Однако все ваши настройки сохраняются, и вы можете перезапустить задание позже. 
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 
@@ -54,7 +54,7 @@ ms.locfileid: "67330053"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы остановить задание, с помощью PowerShell, используйте [Stop AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/stop-azstreamanalyticsjob) командлета. Чтобы удалить задание с помощью PowerShell, используйте [Remove-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/Remove-azStreamAnalyticsJob) командлета.
+Чтобы прерывать задание с помощью PowerShell, используйте командлет [азстреаманалитиксжоб](https://docs.microsoft.com/powershell/module/az.streamanalytics/stop-azstreamanalyticsjob) . Чтобы удалить задание с помощью PowerShell, используйте командлет [Remove-азстреаманалитиксжоб](https://docs.microsoft.com/powershell/module/az.streamanalytics/Remove-azStreamAnalyticsJob) .
 
 ## <a name="stop-or-delete-a-job-using-azure-sdk-for-net"></a>Остановка или удаление задания с помощью пакета Azure SDK для .NET
 

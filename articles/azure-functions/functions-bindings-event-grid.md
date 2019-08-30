@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: f48eced2ebcc4ad92c5124194ed2e2df92f64f11
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: d2e15c63ac6d93824aeab3f251c2860b7ea114d6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480663"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086830"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -317,11 +316,11 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Полный пример см. в разделе "Пример C#".
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
-|свойство function.json |ОПИСАНИЕ|
+|свойство function.json |Описание|
 |---------|---------|
 | **type** | Обязательное. Необходимо задать значение `eventGridTrigger`. |
 | **direction** | Обязательное. Необходимо задать значение `in`. |
@@ -381,11 +380,11 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Тип `EventGridEvent` определяет только свойства верхнего уровня. Свойство `Data` имеет значение `JObject`.
 
-## <a name="create-a-subscription"></a>Создание подписки
+## <a name="create-a-subscription"></a>Создать подписку
 
 Чтобы начать получать HTTP-запросы Сетки событий, создайте подписку службы "Сетка событий", которая указывает URL-адрес конечной точки, вызывающей функцию.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Для функций, разрабатываемых на портале Azure с использованием триггера службы "Сетка событий", выберите **Добавить подписку сетки событий**.
 
@@ -397,7 +396,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы создать подписку с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-create).
 
@@ -529,14 +528,14 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 * Задайте заголовок `Content-Type: application/json`.
 * Задайте заголовок `aeg-event-type: Notification`.
 * Вставьте данные RequestBin в текст запроса.
-* Опубликовать URL-адрес функции триггера сетки событий.
-  * Для версии 2.x используйте следующий шаблон:
+* Опубликуйте по URL-адресу функции триггера сетки событий.
+  * Для 2. x используйте следующий шаблон:
 
     ```
     http://localhost:7071/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
     ```
 
-  * Для использования 1.x:
+  * Для использования с 1. x:
 
     ```
     http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
@@ -595,7 +594,7 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 
 Служба "Сетка событий" не обрабатывает URL-адрес ngrok особым образом, поэтому при создании подписки функция должна выполняться локально. В противном случае ответ проверки не отправляется и происходит сбой при создании подписки.
 
-### <a name="create-a-subscription"></a>Создание подписки
+### <a name="create-a-subscription"></a>Создать подписку
 
 Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке ngrok.
 
@@ -640,7 +639,7 @@ az eventgrid event-subscription create --resource-id /subscriptions/aeb4b7cb-b7c
 
 Дополнительные сведения об URL-адресе, используемом для вызова функции, выполняемой локально или в Azure, см. в [справочной документации по привязке триггера HTTP](functions-bindings-http-webhook.md).
 
-### <a name="event-grid-schema"></a>Схема "Сетка событий"
+### <a name="event-grid-schema"></a>Схема службы "Сетка событий"
 
 Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме "Сетка событий".
 
@@ -775,7 +774,7 @@ module.exports = function (context, req) {
 };
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

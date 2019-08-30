@@ -5,15 +5,15 @@ services: container-registry
 author: dlepow
 manager: gwallace
 ms.service: container-registry
-ms.topic: quickstart
+ms.topic: article
 ms.date: 05/06/2019
 ms.author: danlep
-ms.openlocfilehash: d2132f060076aefe6ae0eccb6d5300c78c96ece5
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: 6cf5efb33340844d782dc4481f5834d7590e745a
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356546"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172313"
 ---
 # <a name="content-trust-in-azure-container-registry"></a>Доверие к содержимому в Реестре контейнеров Azure
 
@@ -78,7 +78,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 Далее описано, как назначить роль `AcrImageSigner` на портале Azure и в инфраструктуре Azure CLI.
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Перейдите в свой реестр на портале Azure и последовательно выберите **Управление доступом (IAM)**  > **Добавление назначения ролей**. В разделе **Добавление назначения ролей** выберите `AcrImageSigner` в поле **Роль**, затем одного или нескольких пользователей либо один или несколько субъектов-служб в поле **Выбрать** и выберите **Сохранить**.
 
@@ -86,7 +86,7 @@ docker build --disable-content-trust -t myacr.azurecr.io/myimage:v1 .
 
 ![Включение доверия к содержимому в реестре на портале Azure][content-trust-02-portal]
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы выдать разрешение на подписывание с помощью Azure CLI, назначьте роль `AcrImageSigner` пользователю из вашего реестра. Команда имеет следующий формат.
 
@@ -193,7 +193,7 @@ umask 077; tar -zcvf docker_private_keys_backup.tar.gz ~/.docker/trust/private; 
 
 ![Отключение доверия к содержимому в реестре на портале Azure][content-trust-03-portal]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * Подробные сведения о функции доверия к содержимому см. в статье [Content trust in Docker][docker-content-trust] (Функция доверия к содержимому в Docker). В этой статье мы затронули лишь ключевые моменты обширной темы доверия к содержимому, которая более подробно рассматривается в документации Docker.
 

@@ -1,66 +1,66 @@
 ---
-title: Создание пула узла Апробация виртуального рабочего стола Windows с помощью шаблона Azure Resource Manager — Azure
-description: Как создать кластер узла в Апробация виртуального рабочего стола Windows с помощью шаблона Azure Resource Manager.
+title: Создание пула узлов для предварительного просмотра виртуальных рабочих столов Windows с помощью шаблона Azure Resource Manager — Azure
+description: Создание пула узлов в предварительной версии виртуальных рабочих столов Windows с помощью шаблона Azure Resource Manager.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 04/05/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: cdc61aede6e650bce62768b7a97f8640affd594f
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 27fe19c2b1f92b67e02b4e09d5fcd607759d8abd
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620484"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163742"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Создание пула узлов с помощью шаблона Azure Resource Manager
 
 Пулы узлов — это коллекция, состоящая из одной или нескольких идентичных виртуальных машин в средах клиента предварительной версии Виртуального рабочего стола Windows. Каждый пул узлов может содержать группы приложений, с которыми пользователи могут взаимодействовать, как с физическим рабочим столом.
 
-Следуйте инструкциям в этом разделе, чтобы создать пул узлов для клиента виртуальный рабочий стол Windows с помощью шаблона Azure Resource Manager, предоставляемые корпорацией Майкрософт. В этой статье о том, как создать пул узла в виртуальный рабочий стол Windows, создайте группу ресурсов с виртуальными машинами в подписке Azure, присоединение этих виртуальных машин к домену AD и зарегистрировать виртуальные машины с помощью виртуального рабочего стола Windows.
+Следуйте инструкциям этого раздела, чтобы создать пул узлов для клиента виртуальных рабочих столов Windows с помощью шаблона Azure Resource Manager, предоставляемого корпорацией Майкрософт. В этой статье вы узнаете, как создать пул узлов в виртуальном рабочем столе Windows, создать группу ресурсов с виртуальными машинами в подписке Azure, присоединить эти виртуальные машины к домену AD и зарегистрировать виртуальные машины с помощью виртуального рабочего стола Windows.
 
 ## <a name="what-you-need-to-run-the-azure-resource-manager-template"></a>Предварительные требования для запуска шаблона Azure Resource Manager
 
-Убедитесь, что перед запуском шаблона Azure Resource Manager, вы знаете следующее:
+Перед запуском шаблона Azure Resource Manager убедитесь, что вы знакомы со следующими действиями:
 
-- Где находится источник изображения, который вы хотите использовать. Его из коллекции Azure или это пользовательские?
-- Your domain join credentials.
-- Учетные данные виртуальному рабочему столу Windows.
+- Источник изображения, который вы хотите использовать. Он находится в коллекции Azure или является настраиваемым?
+- Учетные данные присоединение к домену.
+- Учетные данные виртуального рабочего стола Windows.
 
-При создании пула узла виртуального рабочего стола Windows с помощью шаблона Azure Resource Manager, можно создать виртуальную машину из коллекции Azure, образ управляемого или неуправляемого образа. Дополнительные сведения о создании образов виртуальных Машин, см. в разделе [Подготовка к отправке в Azure виртуального жесткого диска Windows или VHDX](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) и [Создание управляемого образа универсальной виртуальной машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
+При создании пула узлов виртуальных рабочих столов Windows с помощью шаблона Azure Resource Manager можно создать виртуальную машину из коллекции Azure, управляемого образа или неуправляемого образа. Дополнительные сведения о создании образов виртуальных машин см. в статьях [Подготовка VHD или VHDX Windows к отправке в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) и [Создание управляемого образа универсальной виртуальной машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
 
-## <a name="run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool"></a>Запустите шаблон Azure Resource Manager для подготовки пула узла
+## <a name="run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool"></a>Запуск шаблона Azure Resource Manager для подготовки нового пула узлов
 
-Чтобы начать, перейдите к [этот URL-адрес GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool).
+Чтобы начать, перейдите по [этому URL-адресу GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool).
 
 ### <a name="deploy-the-template-to-azure"></a>Развертывание шаблона в Azure
 
-Если вы развертываете в подписке Enterprise, прокрутите вниз и выберите **развертывание в Azure**, затем skip вперед, заполните параметры на основе вашего образа источника.
+Если вы развертываете в корпоративной подписке, прокрутите вниз и выберите **развернуть в Azure**, а затем пропустите все параметры, исходя из источника образа.
 
 Если вы развертываете в подписке поставщика облачных решений, выполните следующие действия для развертывания в Azure.
 
 1. Прокрутите страницу вниз и щелкните правой кнопкой мыши **Развертывание в Azure**, а затем выберите **Copy Link Location** (Скопировать ссылку).
 2. Откройте текстовый редактор, например Блокнот, и вставьте в него ссылку.
-3. Сразу же после "https://portal.azure.com/" и перед хештега (#) введите знак (@) и имя домена клиента. Ниже приведен пример формата, следует использовать: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
+3. Сразу после "https://portal.azure.com/" и перед хэш-объектом (#) введите символ @, а затем доменное имя клиента. Ниже приведен пример формата, который следует использовать https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
 4. Войдите на портал Azure как пользователь с правами администратора или участника подписки поставщика облачных решений.
 5. Вставьте скопированную в текстовый редактор ссылку в адресную строку.
 
-Рекомендации, о какие параметры следует ввести для вашего сценария, см. в разделе виртуального рабочего стола Windows [файл Readme](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/README.md). Файл сведений всегда обновляется с последними изменениями.
+Инструкции по выбору параметров, которые следует ввести в сценарии, см. в [файле сведений](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/README.md)о виртуальном рабочем столе Windows. Файл сведений всегда обновляется последними изменениями.
 
-## <a name="assign-users-to-the-desktop-application-group"></a>Назначить пользователей к группе настольных приложений
+## <a name="assign-users-to-the-desktop-application-group"></a>Назначение пользователей группе приложений для настольных компьютеров
 
-По завершении выполнения шаблона GitHub Azure Resource Manager для назначения доступа пользователя перед началом тестирования полный сеансовых рабочих столов на виртуальных машинах.
+После завершения работы с шаблоном Azure Resource Manager GitHub назначьте пользователю доступ, прежде чем начать тестирование всех рабочих столов на виртуальных машинах.
 
 Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
 
-Чтобы назначить пользователей к группе настольных приложений, откройте окно PowerShell и выполните этот командлет для входа в среде виртуального рабочего стола Windows:
+Чтобы назначить пользователей группе приложений для настольных систем, откройте окно PowerShell и запустите этот командлет, чтобы войти в среду виртуальных рабочих столов Windows:
 
 ```powershell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
-После этого добавьте пользователей в группу настольного приложения с помощью этого командлета:
+После этого добавьте пользователей в группу приложений для настольных систем с помощью этого командлета:
 
 ```powershell
 Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -UserPrincipalName <userupn>

@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/22/2019
-ms.openlocfilehash: a86dd021d8f9cfe275b3af3f0cb71b99857c26d7
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 753f0bece5b8b52ebb50ab2a6e93056ce209cfbc
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69971520"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183562"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Развертывание модели с помощью пользовательского базового образа DOCKER
 
@@ -23,7 +23,7 @@ ms.locfileid: "69971520"
 
 При развертывании обученной модели для веб-службы или устройства IoT Edge создается пакет, содержащий веб-сервер для обработки входящих запросов.
 
-Машинное обучение Azure служба предоставляет базовый образ DOCKER по умолчанию, поэтому вам не нужно беспокоиться о его создании. Можно также использовать пользовательский базовый образ, который создается в качестве _базового образа_. 
+Машинное обучение Azure служба предоставляет базовый образ DOCKER по умолчанию, поэтому вам не нужно беспокоиться о его создании. Можно также использовать __среды__ службы машинное обучение Azure, чтобы выбрать конкретный базовый образ или использовать предоставленный вами пользовательский.
 
 Базовый образ используется в качестве начальной точки при создании изображения для развертывания. Он предоставляет базовую операционную систему и компоненты. После этого в образ добавляются дополнительные компоненты, такие как модель, среда conda и другие ресурсы, перед развертыванием.
 
@@ -193,6 +193,8 @@ ms.locfileid: "69971520"
 > [!IMPORTANT]
 > Образы Майкрософт, использующие CUDA или Тенсоррт, должны использоваться только в Microsoft Azure Services.
 
+Дополнительные сведения см. в разделе [машинное обучение Azure Service Containers](https://github.com/Azure/AzureML-Containers).
+
 > [!TIP]
 >__Если ваша модель обучена в машинное обучение Azure вычислений__с помощью пакета SDK для машинное обучение Azure __версии 1.0.22 или более поздней__ , образ создается во время обучения. Чтобы узнать имя этого образа, используйте `run.properties["AzureML.DerivedImageName"]`. В следующем примере показано, как использовать это изображение:
 >
@@ -203,29 +205,50 @@ ms.locfileid: "69971520"
 
 ### <a name="use-an-image-with-the-azure-machine-learning-sdk"></a>Использование образа с пакетом SDK для Машинное обучение Azure
 
-Чтобы использовать пользовательский образ, задайте `base_image` для свойства [объекта конфигурации вывода](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) адрес изображения:
+Чтобы использовать образ, хранящийся в **реестре контейнеров Azure для вашей рабочей области**, или **общий доступ к реестру контейнеров**, задайте следующие атрибуты [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) :
+
++ `docker.enabled=True`
++ `docker.base_image`. Укажите в реестре и путь к образу.
 
 ```python
-# use an image from a registry named 'myregistry'
-inference_config.base_image = "myregistry.azurecr.io/myimage:v1"
+from azureml.core import Environment
+# Create the environment
+myenv = Environment(name="myenv")
+# Enable Docker and reference an image
+myenv.docker.enabled = True
+myenv.docker.base_image = "mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda"
 ```
 
-Этот формат подходит для обоих образов, хранящихся в реестре контейнеров Azure, для рабочей области и реестров контейнеров, которые являются общедоступными. Например, в следующем коде используется изображение по умолчанию, предоставляемое корпорацией Майкрософт:
+Чтобы использовать образ из закрытого __реестра контейнеров__ , который отсутствует в рабочей области, необходимо использовать `docker.base_image_registry` для указания адреса репозитория и имени пользователя и пароля:
 
 ```python
-# use an image available in public Container Registry without authentication
-inference_config.base_image = "mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda"
+# Set the container registry information
+myenv.docker.base_image_repository.address = "myregistry.azurecr.io"
+myenv.docker.base_image_repository.username = "username"
+myenv.docker.base_image_repository.password = "password"
 ```
 
-Чтобы использовать образ из закрытого __реестра контейнеров__ , который отсутствует в рабочей области, необходимо указать адрес репозитория и имя пользователя и пароль:
+Определив среду, используйте ее с объектом [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) , чтобы определить среду вывода, в которой будет выполняться модель и веб-служба.
 
 ```python
-# Use an image available in a private Container Registry
-inference_config.base_image = "myregistry.azurecr.io/mycustomimage:1.0"
-inference_config.base_image_registry.address = "myregistry.azurecr.io"
-inference_config.base_image_registry.username = "username"
-inference_config.base_image_registry.password = "password"
+from azureml.core.model import InferenceConfig
+# Use environment in InferenceConfig
+inference_config = InferenceConfig(entry_script="score.py",
+                                   environment=myenv)
 ```
+
+На этом этапе можно продолжить развертывание. Например, следующий фрагмент кода может развернуть веб-службу локально с помощью конфигурации вывода и пользовательского образа:
+
+```python
+from azureml.core.webservice import LocalWebservice, Webservice
+
+deployment_config = LocalWebservice.deploy_configuration(port=8890)
+service = Model.deploy(ws, "myservice", [model], inference_config, deployment_config)
+service.wait_for_deployment(show_output = True)
+print(service.state)
+```
+
+Дополнительные сведения о развертывании см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
 ### <a name="use-an-image-with-the-machine-learning-cli"></a>Использование образа с интерфейсом командной строки Машинное обучение
 

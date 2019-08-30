@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 08/29/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fc30c3273528b8cbc08681950e0bd5f03ec7890
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 55e3f073c1d22ef09784f699dc2decb0492d9edf
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69561269"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162293"
 ---
 # <a name="enable-combined-security-information-registration-preview"></a>Включить объединенную регистрацию сведений о безопасности (Предварительная версия)
 
@@ -88,6 +88,8 @@ ms.locfileid: "69561269"
 1. Затем нажмите кнопку **создать** .
 
 ## <a name="next-steps"></a>Следующие шаги
+
+[Принудительная повторная регистрация методов проверки подлинности пользователями](howto-mfa-userdevicesettings.md#manage-authentication-methods)
 
 [Доступные методы для многофакторной проверки подлинности и SSPR](concept-authentication-methods.md)
 

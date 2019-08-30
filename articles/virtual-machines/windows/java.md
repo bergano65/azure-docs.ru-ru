@@ -11,16 +11,15 @@ ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.workload: na
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: b02fd8f012dee2436f4f276e05185428008508a1
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: fa6c5115663d770f561764356129448af878668b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722571"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103026"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
@@ -185,7 +184,7 @@ ms.locfileid: "67722571"
 
     ```
 
-## <a name="create-resources"></a>Создание ресурсов
+## <a name="create-resources"></a>Создать ресурсы
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 

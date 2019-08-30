@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: kumud
-ms.openlocfilehash: 8c8fe6125d9c638fedadc3d299ff0ac0d601fd61
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5bd7e30a6a95d60bda4b7c3da44be1b8046bb71f
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64685695"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163792"
 ---
 # <a name="role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Разрешения на управление доступом на основе ролей, необходимые для использования возможностей Наблюдателя за сетями
 
@@ -27,22 +27,22 @@ ms.locfileid: "64685695"
 
 ## <a name="network-watcher"></a>Наблюдатель за сетями
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/read                              | Получение Наблюдателя за сетями                                          |
 | Microsoft.Network/networkWatchers/write                             | Создание или обновление Наблюдателя за сетями                             |
 | Microsoft.Network/networkWatchers/delete                            | Удаление Наблюдателя за сетями                                       |
 
-## <a name="nsg-flow-logs"></a>Журналы потоков NSG
+## <a name="nsg-flow-logs"></a>Журналы потока NSG
 
-| Действие                                                              | ИМЯ                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/configureFlowLog/action           | Настройка журнала потока                                           |
 | Microsoft.Network/networkWatchers/queryFlowLogStatus/action         | Запрос состояния для журнала потока                                    |
 
-## <a name="connection-troubleshoot"></a>Устранение неполадок подключения
+## <a name="connection-troubleshoot"></a>Устранение неполадок с подключением
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectivityCheck/action          | Инициирование теста на устранение неполадок подключения
 | Microsoft.Network/networkWatchers/queryTroubleshootResult/action    | Запрос результатов теста устранения неполадок подключения                |
@@ -50,7 +50,7 @@ ms.locfileid: "64685695"
 
 ## <a name="connection-monitor"></a>Монитор подключения
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectionMonitors/start/action   | Запуск монитора подключения                                     |
 | Microsoft.Network/networkWatchers/connectionMonitors/stop/action    | Остановка монитора подключения                                      |
@@ -61,7 +61,7 @@ ms.locfileid: "64685695"
 
 ## <a name="packet-capture"></a>Запись пакетов
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/packetCaptures/queryStatus/action | Запрос состояния записи пакета                           |
 | Microsoft.Network/networkWatchers/packetCaptures/stop/action        | Прекращение записи пакета                                          |
@@ -71,51 +71,48 @@ ms.locfileid: "64685695"
 
 ## <a name="ip-flow-verify"></a>Проверка IP-потока
 
-| Действие                                                              | ИМЯ                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/ipFlowVerify/action               | Проверка IP-потока                                              |
 
 ## <a name="next-hop"></a>Следующий прыжок
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/nextHop/action                    | Получение следующего прыжка с виртуальной машины                                     |
 
 ## <a name="network-security-group-view"></a>Представление группы безопасности сети
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/securityGroupView/action          | Просмотр групп безопасности                                           |
 
 ## <a name="topology"></a>Топология
 
-| Действие                                                              | ИМЯ                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/topology/action                   | Получение топологии                                                   |
 
 ## <a name="reachability-report"></a>Отчет о возможности доступа
 
-| Действие                                                              | Name                                                           |
+| Action                                                              | Описание                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/azureReachabilityReport/action    | Получение отчета о возможности доступа Azure                               |
+
 
 ## <a name="additional-actions"></a>Дополнительные действия
 
 Возможностям Наблюдателя за сетью также требуются следующие действия:
 
-- Microsoft.Authorization/\*/Read
-- Microsoft.Resources/subscriptions/resourceGroups/Read;
-- Microsoft.Storage/storageAccounts/Read
-- Microsoft.Storage/storageAccounts/listServiceSas/Action;
-- Microsoft.Storage/storageAccounts/listAccountSas/Action;
-- Microsoft.Storage/storageAccounts/listKeys/Action;
-- Microsoft.Compute/virtualMachines/Read;
-- Microsoft.Compute/virtualMachines/Write;
-- Microsoft.Compute/virtualMachines/extensions/Read
-- Microsoft.Compute/virtualMachines/extensions/Write
-- Microsoft.Compute/virtualMachineScaleSets/Read;
-- Microsoft.Compute/virtualMachineScaleSets/Write;
-- Microsoft.Compute/virtualMachineScaleSets/extensions/Read
-- Microsoft.Compute/virtualMachineScaleSets/extensions/Write
-- Microsoft.Insights/alertRules/*
-- Microsoft.Support/*
+| Действия                                                           | Описание                                                    |
+| ---------                                                           | -------------                                                  |
+| Microsoft.Authorization/\*/Read                                     | Используется для выборки назначений ролей RBAC и определений политик          |
+| Microsoft.Resources/subscriptions/resourceGroups/Read;               | Используется для перечисления всех групп ресурсов в подписке    |
+| Microsoft.Storage/storageAccounts/Read                              | Используется для получения свойств указанной учетной записи хранения   |
+| Microsoft. Storage/storageAccounts/Листсервицесас/действие, </br> Microsoft. Storage/storageAccounts/Листаккаунтсас/действие, <br> Microsoft.Storage/storageAccounts/listKeys/Action;| Используется для получения подписанных URL-адресов (SAS), обеспечивающих [безопасный доступ к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-sas-overview) и записи в учетную запись хранения. |
+| Microsoft. COMPUTE/virtualMachines/Read, </br> Microsoft.Compute/virtualMachines/Write;| Используется для входа в виртуальную машину, для записи пакетов и их передачи в учетную запись хранения|
+| Microsoft.Compute/virtualMachines/extensions/Read </br> Microsoft.Compute/virtualMachines/extensions/Write| Используется для проверки наличия расширения наблюдателя за сетями и установки при необходимости |
+| Microsoft. COMPUTE/virtualMachineScaleSets/Read, </br> Microsoft.Compute/virtualMachineScaleSets/Write;| Используется для доступа к масштабируемым наборам виртуальных машин, для записи пакетов и их передачи в учетную запись хранения|
+| Microsoft. COMPUTE/virtualMachineScaleSets/Extensions/Read, </br> Microsoft.Compute/virtualMachineScaleSets/extensions/Write| Используется для проверки наличия расширения наблюдателя за сетями и установки при необходимости |
+| Microsoft.Insights/alertRules/*                                     | Используется для настройки оповещений метрик                                     |
+| Microsoft.Support/*                                                 | Используется для создания и обновления билетов на службу поддержки в службе "наблюдатель за сетями" |

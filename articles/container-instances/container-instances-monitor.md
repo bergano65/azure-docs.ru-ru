@@ -5,15 +5,15 @@ services: container-instances
 author: dlepow
 manager: gwallace
 ms.service: container-instances
-ms.topic: overview
+ms.topic: article
 ms.date: 04/24/2019
 ms.author: danlep
-ms.openlocfilehash: 4c1208d8cbc795e53128df0ccf93e79dc427abad
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: a26789bb41fb3fb1e7dec376b7e187f45745ea65
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325854"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172258"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -49,7 +49,7 @@ Azure Monitor предоставляет следующие [метрики дл
 1. На странице **Обзор** выберите одну из диаграмм метрик, таких как **ЦП**. 
 1. Нажмите кнопку **Применить разделение**, а затем выберите **Имя контейнера**.
 
-![Измерение][dimension]
+![измерение][dimension]
 
 ## <a name="get-metrics---azure-cli"></a>Получение метрик через Azure CLI
 
@@ -135,7 +135,7 @@ Timestamp            Name          Containername             Average
 2019-04-23 23:10:00  Memory Usage  aci-tutorial-sidecar  847872.0
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Подробные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 

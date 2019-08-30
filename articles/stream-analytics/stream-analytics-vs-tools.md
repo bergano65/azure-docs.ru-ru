@@ -1,6 +1,6 @@
 ---
 title: Просмотр заданий Azure Stream Analytics в Visual Studio
-description: В этой статье описывается, как просмотреть задания Azure Stream Analytics в Visual Studio.
+description: В этой статье описывается, как просматривать задания Azure Stream Analytics в Visual Studio и управлять ими.
 services: stream-analytics
 author: su-jie
 ms.author: sujie
@@ -9,12 +9,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/10/2018
-ms.openlocfilehash: 1c7133801eb0d95616cacf501162e6cee3da7c80
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae532ed19c2273e43aa739e84d5a68cadb717b86
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61477906"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173023"
 ---
 # <a name="use-visual-studio-to-view-azure-stream-analytics-jobs"></a>Просмотр заданий Azure Stream Analytics с помощью Visual Studio
 
@@ -84,9 +84,9 @@ ms.locfileid: "61477906"
 
    ![Результаты проверки подключения](./media/stream-analytics-vs-tools/stream-analytics-test-connection-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Мониторинг заданий Stream Analytics и управление ими с помощью Visual Studio](stream-analytics-monitor-jobs-use-vs.md)
-* [Краткое руководство Создание задания Stream Analytics с помощью Visual Studio](stream-analytics-quick-create-vs.md)
-* [Учебник. Развертывание задания Azure Stream Analytics с помощью с помощью Azure конвейеров CI/CD](stream-analytics-tools-visual-studio-cicd-vsts.md)
+* [Краткое руководство Создание Stream Analytics задания с помощью Visual Studio](stream-analytics-quick-create-vs.md)
+* [Учебник. Развертывание задания Azure Stream Analytics с помощью CI/CD с использованием Azure Pipelines](stream-analytics-tools-visual-studio-cicd-vsts.md)
 * [Непрерывная интеграция и разработка с помощью инструментов Stream Analytics](stream-analytics-tools-for-visual-studio-cicd.md)

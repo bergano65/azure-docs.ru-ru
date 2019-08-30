@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: eaa169714006ec948a5790ed5841f9dcf52c2a23
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d3e22df76124185c1e23f04f59145e12a1fec023
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68846648"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164259"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Создание ресурсов службы "Аналитика временных рядов" с помощью шаблонов Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "68846648"
 
 Шаблоны Resource Manager являются файлами в формате JSON, определяющими инфраструктуру и конфигурацию ресурсов в группе ресурсов. В следующих документах более подробно описаны файлы шаблонов:
 
-- [Развертывание шаблона](../azure-resource-manager/resource-group-overview.md#template-deployment)
+- [Развертывание шаблона Azure Resource Manager](../azure-resource-manager/template-deployment-overview.md)
 - [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
 - [Microsoft.TimeSeriesInsights resource types](/azure/templates/microsoft.timeseriesinsights/allversions) (Типы ресурсов Microsoft.TimeSeriesInsights)
 

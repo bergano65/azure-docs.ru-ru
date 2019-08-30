@@ -6,14 +6,14 @@ manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 08/29/2019
 ms.author: v-adgera
-ms.openlocfilehash: da1493d2d52f2c8a964df3b72c1622a9c6b66abf
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 8472a86800d13cedd228ca881a7c095ff748350a
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719849"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172817"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 
@@ -88,6 +88,7 @@ API управления Azure Digital Twins предоставляют эффе
 
 
 ## <a name="odata-support"></a>Поддержка OData
+
 Большинство программных интерфейсов, возвращающих коллекции, например, вызовы GET для пространств, поддерживают следующее подмножество универсальных параметров системного запроса [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData).  
 
 * **$filter**
@@ -95,11 +96,12 @@ API управления Azure Digital Twins предоставляют эффе
 * **$top**.
 * **$skip** — если вы хотите отобразить всю коллекцию целиком, вы должны запросить ее как весь набор в одном вызове, а затем выполнить подкачку в приложении. 
 
-Обратите внимание, что другие параметры запроса, такие как $count, $expand и $search, не поддерживаются.
+> [!NOTE]
+> Некоторые параметры OData (такие как параметры запроса **$Count**, **$expand**и **$Search**) в настоящее время не поддерживаются.
 
 ### <a name="examples"></a>Примеры
 
-В следующем списке приведены примеры запросов, использующих параметры системных запросов OData.
+В следующем списке показаны несколько запросов с допустимым синтаксисом OData:
 
 - `YOUR_MANAGEMENT_API_URL/devices?$top=3&$orderby=Name desc`
 - `YOUR_MANAGEMENT_API_URL/keystores?$filter=endswith(Description,’space’)`
@@ -108,9 +110,10 @@ API управления Azure Digital Twins предоставляют эффе
 - `YOUR_MANAGEMENT_API_URL/users?$top=4&$filter=endswith(LastName,’k’)&$orderby=LastName`
 - `YOUR_MANAGEMENT_API_URL/spaces?$orderby=Name desc&$top=3&$filter=substringof('Floor’,Name)`
  
-
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о некоторых распространенных шаблонах запросов API см. в статье [Как запросить API Azure Digital Twins для выполнения общих задач](how-to-query-common-apis.md).
+Дополнительные сведения о некоторых распространенных шаблонах запросов API см. в статье [Как запросить API Azure Digital Twins для выполнения общих задач](./how-to-query-common-apis.md).
 
-Дополнительные сведения о конечных точках API см. в статье [способы использования цифровых Swagger двойниками](./how-to-use-swagger.md).
+Дополнительные сведения о конечных точках API см. в статье [Использование цифрового двойников Swagger](./how-to-use-swagger.md).
+
+Чтобы просмотреть синтаксис OData и доступные операторы сравнения, прочитайте [Операторы сравнения OData в службе поиска Azure](../search/search-query-odata-comparison-operators.md).

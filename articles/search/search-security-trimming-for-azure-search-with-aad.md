@@ -2,19 +2,19 @@
 title: Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием Active Directory
 description: Управление доступом к содержимому службы "Поиск Azure" с помощью фильтров безопасности и удостоверений Azure Active Directory (AAD).
 author: brjohnstmsft
-manager: jlembicz
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 11/07/2017
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 410727022b092e2dd8ab8b05e628e25fd60ab833
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8bcc1dcd1d86c0ca18ed03dc60834884a42a39c9
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61282221"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186520"
 ---
 # <a name="security-filters-for-trimming-azure-search-results-using-active-directory-identities"></a>Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "61282221"
 > [!NOTE]
 > Примеры фрагментов когда в этой статье написаны языке C#. Полный исходный код можно найти на сайте [GitHub](https://aka.ms/search-dotnet-howto). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Индекс в службе "Поиск Azure" должен иметь [поле безопасности](search-security-trimming-for-azure-search.md) для хранения списка удостоверений групп, имеющих доступ на чтение документа. Этот вариант использования предполагает прямое соответствие между защищаемым элементом (например, заявление на вступление в колледж конкретного человека) и полем безопасности, в котором указывается, кто имеет доступ к этому элементу (персонал приемной комиссии).
 

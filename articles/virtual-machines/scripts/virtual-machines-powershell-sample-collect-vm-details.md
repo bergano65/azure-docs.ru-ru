@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/01/2019
 ms.author: v-miegge
 ms.custom: mvc
-ms.openlocfilehash: b51c0f7a9fbeadfd0ff79e4578bddad052466b13
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: dc5dc187bf23c9391108b24df9836645756fd62c
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70090790"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165295"
 ---
 # <a name="collect-details-about-all-vms-in-a-subscription-with-powershell"></a>Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
 
@@ -38,7 +38,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 ```azurepowershell-interactive
 #Provide the subscription Id where the VMs reside
-$subscriptionId = "ea7ded4e-153a-4e65-ad70-25bf9f7b91bc"
+$subscriptionId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 #Provide the name of the csv file to be exported
 $reportName = "myReport.csv"

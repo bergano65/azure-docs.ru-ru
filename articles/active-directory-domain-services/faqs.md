@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 80bc5ef78a73430dea23bdd644767d9fa9b3c9a8
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: b079d311e357f4dfb94e55fbca3cafdec198ade9
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70124676"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70171905"
 ---
 # <a name="azure-active-directory-domain-services-frequently-asked-questions-faqs"></a>Доменные службы Azure Active Directory. Часто задаваемые вопросы (FAQ)
 На этой странице вы найдете ответы на часто задаваемые вопросы о доменных службах Azure Active Directory. Следите за обновлениями.
@@ -79,7 +79,7 @@ ms.locfileid: "70124676"
 Нет. В доменах, поддерживаемых доменными службами Azure AD, членство в группах изменить нельзя. То же касается и атрибутов пользователей. Однако членство в группах или атрибуты пользователей можно изменить в Azure AD или в локальном домене. Такие изменения автоматически синхронизируются с доменными службами Azure AD.
 
 ### <a name="how-long-does-it-take-for-changes-i-make-to-my-azure-ad-directory-to-be-visible-in-my-managed-domain"></a>Через какое время изменения в каталоге Azure AD будут отображаться в управляемом домене?
-Изменения, внесенные в каталог Azure AD с помощью пользовательского интерфейса Azure AD или PowerShell, синхронизируются с управляемым доменом. Процесс синхронизации происходит в фоновом режиме. После выполнения однократной начальной синхронизации каталога обычно необходимо около 20 минут, чтобы внесенные в Azure AD изменения отобразились в управляемом домене.
+Изменения, внесенные в каталог Azure AD с помощью пользовательского интерфейса Azure AD или PowerShell, автоматически синхронизируются с управляемым доменом. Процесс синхронизации происходит в фоновом режиме. Не определен период времени для этой синхронизации, чтобы выполнить все изменения объекта.
 
 ### <a name="can-i-extend-the-schema-of-the-managed-domain-provided-by-azure-ad-domain-services"></a>Могу ли я расширить схему управляемого домена, предоставляемого доменными службами Azure AD?
 Нет. Схемой управляемого домена управляет корпорация Майкрософт. Расширения схемы не поддерживаются в доменных службах Azure AD.

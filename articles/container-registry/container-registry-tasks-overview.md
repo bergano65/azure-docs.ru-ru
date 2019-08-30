@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: danlep
-ms.openlocfilehash: 1459b6fc45bb3d875b4869d1dcb4302dec21eb96
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: bc32ce59a7ec99278fb193f375d4ca945c227d2f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114803"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172193"
 ---
 # <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Автоматизация сборки и обслуживание образов контейнеров с помощью задач контроля доступа
 
@@ -49,6 +49,13 @@ ms.locfileid: "70114803"
 | Ветвь GitHub | Определенная ветвь репозитория GitHub.| `https://github.com/gituser/myapp-repo.git#mybranch` |
 | Вложенная папка GitHub | Файлы во вложенной папке в репозитории GitHub. В примере показано сочетание ветви и спецификации вложенных папок. | `https://github.com/gituser/myapp-repo.git#mybranch:myfolder` |
 | Удаленный архив Tarball | Файлы в сжатом архиве на удаленном веб-сервере. | `http://remoteserver/myapp.tar.gz` |
+
+По умолчанию задачи записи контроля доступа строят образы для ОС Linux и архитектуры AMD64. `--platform` Укажите тег для создания образов Windows или образов Linux для других архитектур. Укажите операционную систему и, при необходимости, поддерживаемую архитектуру в формате ОС/архитектуры `--platform Linux/arm`(например,). Для архитектур ARM можно дополнительно указать вариант в формате OS/Architecture/Variant (например, `--platform Linux/arm64/v8`):
+
+| OS | Архитектура|
+| --- | ------- | 
+| Linux | AMD64<br/>активации<br/>arm64<br/>386 |
+| Windows | AMD64 |
 
 Служба "Задачи ACR" разработана как примитив жизненного цикла контейнеров. К примеру, интегрируйте службу "Задачи ACR" в решение CI/CD. Выполняя команду [AZ login][az-login] с субъектом- [службой][az-login-service-principal], решение CI/CD может выдавать команды [AZ контроля][az-acr-build] доступа для запуска сборок образа.
 

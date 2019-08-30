@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
-ms.openlocfilehash: be5ff2c59878cc966e73d89c18343b0a6ea3d89c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 64a5892226b90019f175308b5984dc0a0108e226
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311628"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162256"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление виртуальной машины в лабораторию в Azure DevTest Labs
 Если вы уже [создали свою первую виртуальную машину](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), скорее всего, вы использовали предварительно загруженный [образ Мarketplace](devtest-lab-configure-marketplace-images.md). Теперь, если вы хотите добавить в лабораторию больше виртуальных машин, вы также можно использовать *базовый образ* — [пользовательский образа](devtest-lab-create-template.md) или [формулу](devtest-lab-manage-formulas.md). В данном руководстве описывается добавление виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure.
@@ -107,7 +107,7 @@ ms.locfileid: "60311628"
 ## <a name="save-azure-resource-manager-template"></a>Сохранение шаблона Azure Resource Manager
 С помощью шаблона Azure Resource Manager можно декларативно определить повторяемое развертывание.
 Далее описывается процесс сохранения шаблона Azure Resource Manager для создаваемой виртуальной машины.
-После сохранения шаблон Azure Resource Manager можно использовать для [развертывания новых виртуальных машин с помощью Azure PowerShell](../azure-resource-manager/resource-group-overview.md#template-deployment).
+После сохранения шаблон Azure Resource Manager можно использовать для [развертывания новых виртуальных машин с помощью Azure PowerShell](../azure-resource-manager/template-deployment-overview.md).
 
 1. В области **Виртуальная машина** выберите **Просмотр шаблона Azure Resource Manager**.
 2. В области **Просмотр шаблона Azure Resource Manager** выделите текст шаблона.
@@ -119,7 +119,7 @@ ms.locfileid: "60311628"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * После создания виртуальной машины к ней можно подключиться, щелкнув **Подключиться** в области виртуальной машины.
 * Узнайте, как [создавать пользовательские артефакты для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md).
 * Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

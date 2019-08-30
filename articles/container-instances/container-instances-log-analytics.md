@@ -5,15 +5,15 @@ services: container-instances
 author: dlepow
 manager: gwallace
 ms.service: container-instances
-ms.topic: overview
+ms.topic: article
 ms.date: 07/09/2019
 ms.author: danlep
-ms.openlocfilehash: 4099bc0b15f02faade02f47aeb00fb7c4b4a3332
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: 9b57775040251312c8afbff5983a52ae9d14e6c6
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325884"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172494"
 ---
 # <a name="container-instance-logging-with-azure-monitor-logs"></a>Ведение журнала для экземпляров контейнеров с помощью Журналов Azure Monitor
 
@@ -133,7 +133,7 @@ ContainerInstanceLog_CL
 | where (TimeGenerated > ago(1h))
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 ### <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 

@@ -3,25 +3,35 @@ title: Создание и развертывание функций Azure в Py
 description: Использование расширения Visual Studio Code для функций Azure для создания бессерверных функций в Python и их развертывания в Azure.
 services: functions
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: glenga
-ms.openlocfilehash: f5591a3e0ca73649b1ffc51c75aa95e86e286768
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 4f5c10536992f51ac61815507a3869e521520299
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639090"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70170707"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Развертывание Python в функциях Azure с помощью Visual Studio Code
 
 В этом руководстве вы используете Visual Studio Code и расширение функций Azure, чтобы создать бессерверную конечную точку HTTP с помощью Python, а также добавить подключение (или "привязку") в хранилище. Функции Azure выполняют код в бессерверной среде без необходимости подготавливать виртуальную машину или публиковать веб-приложение. Расширение "функции Azure" для Visual Studio Code значительно упрощает процесс использования функций путем автоматической обработки множества проблем с конфигурацией.
 
-Если вы столкнулись с проблемами, изложенными в этом руководстве, мы будем рады узнать о деталях. Используйте кнопку **"** отправить" в конце каждого раздела для отправки подробных отзывов.
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
-## <a name="prerequisites"></a>предварительные требования
+> [!div class="checklist"]
+> * Установка расширения "Функции Azure"
+> * Создание функции, активируемой по HTTP
+> * Локальная отладка
+> * Синхронизация параметров приложения
+> * Просмотр журналов потоковой передачи
+> * Подключение к службе хранилища Azure
+
+Если вы столкнулись с проблемами, изложенными в этом руководстве, мы будем рады узнать о деталях. Используйте кнопку "Отправить" в конце каждого раздела для отправки подробных отзывов.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Подписка Azure](#azure-subscription).
 - [Visual Studio Code с расширением функций Azure](#visual-studio-code-python-and-the-azure-functions-extension) .
@@ -84,7 +94,7 @@ ms.locfileid: "68639090"
 `func` Если команда не распознается, убедитесь, что папка, в которую вы установили Azure functions Core Tools, включена в переменную среды PATH.
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=01-verify-prerequisites)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=01-verify-prerequisites)
 
 ## <a name="create-the-function"></a>Создание функции
 
@@ -100,29 +110,26 @@ ms.locfileid: "68639090"
     | Select a language for your function app project (Выберите язык для проекта приложения-функции) | **Python** | Язык, используемый для функции, который определяет шаблон для кода. |
     | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | **триггером HTTP** | Функция, использующая триггер HTTP, выполняется всякий раз, когда в конечной точке функции выполняется HTTP-запрос. (Существует множество других триггеров для функций Azure. Дополнительные сведения см. в разделе [что можно делать с помощью функций?](functions-overview.md#what-can-i-do-with-functions).) |
     | Provide a function name (Укажите имя функции) | хттпексампле | Имя используется для вложенной папки, которая содержит код функции вместе с данными конфигурации, а также определяет имя конечной точки HTTP. Используйте "Хттпексампле" вместо принятия значения по умолчанию "HTTPTrigger", чтобы отличать саму функцию от триггера. |
-    | Уровень авторизации | **Подключившихся** | Анонимная авторизация делает функцию общедоступной для всех. |
+    | Уровень авторизации | **Function** | Вызовы, выполненные в конечной точке функции, должны иметь [ключ функции](functions-bindings-http-webhook.md#authorization-keys). |
     | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | **Открыть в текущем окне** | Открывает проект в текущем окне Visual Studio Code. |
 
-1. Через некоторое время появляется сообщение о том, что был создан новый проект. В **обозревателе**есть вложенная папка, созданная для функции, а Visual Studio Code открывает  *\_ \_файл\_init\_. корректировки* , содержащий код функции по умолчанию:
+1. Через некоторое время появляется сообщение о том, что был создан новый проект. В **обозревателе**есть вложенная папка, созданная для функции. 
+
+1. Если он еще не открыт, откройте  *\_ \_файл\_init\_. корр* , содержащий код функции по умолчанию:
 
     [![Результат создания проекта функций Python](media/tutorial-vs-code-serverless-python/project-create-results.png)](media/tutorial-vs-code-serverless-python/project-create-results.png)
 
     > [!NOTE]
-    > Если Visual Studio Code сообщает, что при открытии  *\_ \_\_init\_.* **корректировки не выбран интерпретатор Python, откройте палитру команд (F1), выберите Python: Выберите** команду интерпретатор, а затем выберите виртуальную среду в локальной `.env` папке (которая была создана как часть проекта). Среда должна основываться на Python 3.6 x специально, как отмечалось ранее в разделе [Предварительные требования](#prerequisites).
+    > Когда Visual Studio Code сообщает, что при открытии  *\_ \_\_init\_.* **корректировки не выбран интерпретатор Python, откройте палитру команд (F1), выберите Python: Выберите** команду интерпретатор, а затем выберите виртуальную среду в локальной `.env` папке (которая была создана как часть проекта). Среда должна основываться на Python 3.6 x специально, как отмечалось ранее в разделе [Предварительные требования](#prerequisites).
     >
     > ![Выбор виртуальной среды, созданной с помощью проекта](media/tutorial-vs-code-serverless-python/select-venv-interpreter.png)
 
-> [!TIP]
-> Если вы хотите создать другую функцию в том же проекте, используйте команду **CREATE FUNCTION** в **Azure: Обозреватель** функций или откройте палитру команд (F1) и **выберите функции Azure: Create Function** (Функции Azure: создать функцию). Обе команды запрашивают имя функции (которая является именем конечной точки), а затем создает вложенную папку с файлами по умолчанию.
->
-> ![Новая команда функции в Azure: Обозреватель функций](media/tutorial-vs-code-serverless-python/function-create-new.png)
-
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=02-create-function)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=02-create-function)
 
 ## <a name="examine-the-code-files"></a>Проверка файлов кода
 
-Во вновь созданной подпапке функции находятся три файла  *\_:\_ \_\_init. Корректировка* содержит код функции, *Function. JSON* описывает функцию для функций Azure и *Sample. dat.* — пример файла данных. При необходимости можно удалить *Sample. dat* , так как он существует только для того, чтобы показывать, что можно добавить другие файлы во вложенную папку.
+В созданной подпапке _хттпексампле_ функции содержатся три файла:  *\_ \_init\_\_. Корректировка* содержит код функции, *Function. JSON* описывает функцию в Azure. Функции, а *Sample. dat* — пример файла данных. При необходимости можно удалить *Sample. dat* , так как он существует только для того, чтобы показывать, что можно добавить другие файлы во вложенную папку.
 
 Давайте рассмотрим сначала *Function. JSON* , а затем код в  *\_ \_\_init\_. корректировки*.
 
@@ -135,7 +142,7 @@ ms.locfileid: "68639090"
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "authLevel": "anonymous",
+      "authLevel": "function",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
@@ -155,9 +162,9 @@ ms.locfileid: "68639090"
 
 Свойство определяет файл запуска для кода, и этот код должен содержать функцию Python с именем `main`. `scriptFile` Вы можете разделить код на несколько файлов, пока указанный здесь файл содержит `main` функцию.
 
-`bindings` Элемент содержит два объекта: один для описания входящих запросов, а другой — для описания ответа HTTP. Для входящих запросов (`"direction": "in"`) функция реагирует на запросы HTTP GET или POST и не требует проверки подлинности. Ответ (`"direction": "out"`) — это HTTP-ответ, возвращающий любое значение, возвращаемое `main` функцией Python.
+`bindings` Элемент содержит два объекта: один для описания входящих запросов, а другой — для описания ответа HTTP. Для входящих запросов (`"direction": "in"`) функция реагирует на запросы HTTP GET или POST и требует, чтобы была указана ключ функции. Ответ (`"direction": "out"`) — это HTTP-ответ, возвращающий любое значение, возвращаемое `main` функцией Python.
 
-### <a name="initpy"></a>\_\_init.py\_\_
+### <a name="__initpy__"></a>\_\_init.py\_\_
 
 При создании новой функции функции Azure предоставляют код Python по умолчанию в  *\_ \_\_init\_. корректировки*:
 
@@ -196,7 +203,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - Если имя найдено, код возвращает строку "Hello" с добавленным именем; в противном случае возвращается сообщение об ошибке.
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=03-examine-code-files)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=03-examine-code-files)
 
 ## <a name="debug-locally"></a>Локальная отладка
 
@@ -233,12 +240,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     Кроме того, создайте файл, например *Data. JSON* , который `{"name":"Visual Studio Code"}` содержит и используйте команду `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample`.
 
-1. Чтобы проверить отладку функции, установите точку останова в строке, которая `name = req.params.get('name')` считывает и снова выполняет запрос к URL-адресу. Отладчик Visual Studio Code должен останавливаться на этой строке, что позволяет проверять переменные и выполнять код по шагам. (Краткое пошаговое руководство по базовой отладке см. в разделе [Visual Studio Code учебник. Настройка и запуск отладчика](https://code.visualstudio.com/docs/python/python-tutorial.md#configure-and-run-the-debugger).)
+1. Чтобы выполнить отладку функции, установите точку останова в строке, `name = req.params.get('name')` которая считывает и снова выполняет запрос к URL-адресу. Отладчик Visual Studio Code должен останавливаться на этой строке, что позволяет проверять переменные и выполнять код по шагам. (Краткое пошаговое руководство по базовой отладке см. в разделе [Visual Studio Code учебник. Настройка и запуск отладчика](https://code.visualstudio.com/docs/python/python-tutorial.md#configure-and-run-the-debugger).)
 
 1. Если вы удовлетворены тщательной тестированием функции в локальной среде, закройте отладчик (с помощью команды меню **Отладка** > для**завершения отладки** или команду **Отключить** на панели инструментов Отладка).
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=04-test-debug)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=04-test-debug)
 
 ## <a name="deploy-to-azure-functions"></a>Развертывание в Функции Azure
 
@@ -276,7 +283,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     Используйте эту конечную точку для выполнения тех же тестов, которые вы сделали локально, используя параметры URL-адреса и (или) запросы с данными JSON в тексте запроса. Результаты общедоступной конечной точки должны соответствовать результатам проверенной ранее локальной конечной точки.
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=05-deploy)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=05-deploy)
 
 ### <a name="stream-logs"></a>Журналы потоковой передачи
 
@@ -304,7 +311,7 @@ func azure functionapp logstream <app_name> --browser
 1. В области **Azure: Обозреватель** функций, выберите команду **создать функцию** или используйте **функции Azure: Создание функции** из палитры команд. Укажите следующие сведения о функции:
 
     - Шаблон: Триггер HTTP
-    - имя: "Дигитсофпи"
+    - Имя: "Дигитсофпи"
     - Уровень авторизации: Anonymous
 
 1. В Visual Studio Code Explorer — это вложенная папка с именем функции, которая снова содержит файлы с  *\_именами\_ \_\_init. корректировки*, *Function. JSON*и *Sample. dat*.
@@ -403,7 +410,7 @@ func azure functionapp logstream <app_name> --browser
 1. По завершении развертывания (займет несколько минут!) в окне **вывод** отображаются общедоступные конечные точки, с помощью которых можно повторить тесты.
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=06-second-function)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=06-second-function)
 
 ## <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Добавление привязки для записи сообщений в службу хранилища Azure
 
@@ -423,7 +430,7 @@ _Привязка_ позволяет подключать код функции
     | --- | --- |
     | Задать направление привязки | out |
     | Выбор привязки с направлением | Хранилище очередей Azure |
-    | Имя, которое используется для идентификации привязки в коде | об |
+    | Имя, используемое для распознавания этой привязки в коде | об |
     | Очередь, в которую будет отправлено сообщение | outqueue |
     | Выберите параметр из *Local. Settings. JSON* (запрос на подключение к хранилищу) | AzureWebJobsStorage |
 
@@ -487,7 +494,7 @@ _Привязка_ позволяет подключать код функции
 1. Чтобы выполнить тестирование в облаке, повторно разверните код, используя **развертывание в приложение-функция** в **Azure: Обозреватель** функций. При появлении запроса выберите созданную ранее приложение-функция. По завершении развертывания (займет несколько минут!) в окне **вывода** снова отобразятся общедоступные конечные точки, с помощью которых можно повторить тесты.
 
 > [!div class="nextstepaction"]
-> [Возникла ошибка](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
+> [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -511,5 +518,5 @@ _Привязка_ позволяет подключать код функции
 
 - [База данных Cosmos](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 - [Служба приложений Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
-- [Средства Azure CLI](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)
+- [Средства интерфейса командной строки Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)
 - [Средства Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)

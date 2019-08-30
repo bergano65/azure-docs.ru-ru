@@ -7,13 +7,13 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 07/9/2019
-ms.openlocfilehash: a0dd2499f3ddfaa1cd22a58e058c6adb7e40fd7e
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.date: 07/09/2019
+ms.openlocfilehash: 8561789d53c3c1b00ac1477909bcbe356fe6a85d
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68620038"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173118"
 ---
 # <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Анализ тональности в Twitter в режиме реального времени в Azure Stream Analytics
 
@@ -23,13 +23,13 @@ ms.locfileid: "68620038"
 
 Анализ тенденций Twitter в режиме реального времени — это отличный пример средства аналитики, поскольку модель подписки на хэш-Теги позволяет ожидать определенные ключевые слова (хэш-Теги) и разрабатывать тональности-канал.
 
-## <a name="scenario-social-media-sentiment-analysis-in-real-time"></a>Сценарий: Анализ тональности в социальной сети в режиме реального времени
+## <a name="scenario-social-media-sentiment-analysis-in-real-time"></a>Сценарий. Анализ тональности в социальной сети в режиме реального времени
 
 У организации есть новостной веб-сайт. Она хочет получить конкурентное преимущество, мгновенно предлагая читателям содержимое, которое будет им интересно. Организация выполняет анализ социальных сетей по темам, которые интересуют их читателей, анализируя тональность данных Twitter в режиме реального времени.
 
 Чтобы определять наиболее популярные темы в Twitter в режиме реального времени, организации необходимо анализировать количество твитов и тональность по ключевым темам.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В этом пошаговом руководство вы используете клиентское приложение, которое подключается к Twitter и ищет твиты, имеющие определенные хэш-Теги (которые можно задать). Чтобы запустить приложение и проанализировать твиты с помощью Azure Stream Analytics, необходимо иметь следующее:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
