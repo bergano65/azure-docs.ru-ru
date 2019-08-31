@@ -1,31 +1,25 @@
 ---
-title: Пулы виртуальных машин для обработки и анализа данных в Azure | Документы Майкрософт
+title: Общие пулы
+titleSuffix: Azure Data Science Virtual Machine
 description: Развертывание пулов Dsvm в качестве общего ресурса для команды
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 12/10/2018
+author: vijetajo
 ms.author: vijetaj
-ms.openlocfilehash: 76a715838fa5eb4f806fccc98675ea5acdbe1822
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.topic: conceptual
+ms.date: 12/10/2018
+ms.openlocfilehash: 929040b5dc8650a757fb9c0da58cb82a76a72b5b
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992032"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195630"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Создание общего пула виртуальных машин для обработки и анализа данных
 
-В этой статье рассматривается создание общего пула виртуальных машин для обработки и анализа данных (Dsvm) для команды. Преимущества использования общего пула включают более эффективное использование ресурсов, удобство совместного доступа и совместной работы, а также более эффективное управление ресурсами DSVM.
+В этой статье вы узнаете, как создать общий пул виртуальных машин для обработки и анализа данных (Dsvm) для команды. Преимущества использования общего пула включают более эффективное использование ресурсов, удобство совместного доступа и совместной работы, а также более эффективное управление ресурсами DSVM.
 
 Для создания пула DSVM можно использовать множество методик и технологий. В этой статье рассматриваются пулы для интерактивных виртуальных машин. Вычислительная среда Машинного обучения Azure является альтернативной управляемой инфраструктурой для вычислений. Дополнительные сведения см. в разделе [Настройка целевых объектов вычислений](../service/how-to-set-up-training-targets.md#amlcompute).
 

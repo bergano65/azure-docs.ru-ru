@@ -7,12 +7,12 @@ ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 235ad37c5cf5f8ac7e801a6d25e961d32c1b7aad
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: ee8a17846495a122f7432e66c3e343a00dd0a015
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164924"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194627"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -367,6 +367,13 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` для всех виртуальных машин, где требуется подписывание кода. Этот тег можно доставлять в масштабе с помощью политики Azure. См. [тег Apply и пример значения по умолчанию](../samples/apply-tag-default-value.md) .
 После создания тега определение политики, созданное с помощью `New-GuestConfigurationPolicy` командлета, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
+
+## <a name="preview-troubleshooting-guest-configuration-policy-assignments"></a>ОБРАЗЦА Устранение неполадок назначений политик гостевой конфигурации
+
+Средство можно просмотреть в предварительной версии, чтобы помочь в устранении неполадок назначений гостевой конфигурации политики Azure.
+Средство находится на этапе предварительной версии и Опубликовано в коллекция PowerShell в качестве имени модуля [средство устранения неполадок конфигурации гостя](https://www.powershellgallery.com/packages/GuestConfigurationTroubleshooter/).
+
+Для получения дополнительных сведений о командлетах в этом средстве используйте команду Get-Help в PowerShell, чтобы отобразить встроенные инструкции.  Так как средство получает частые обновления, это лучший способ получить самую свежую информацию.
 
 ## <a name="next-steps"></a>Следующие шаги
 

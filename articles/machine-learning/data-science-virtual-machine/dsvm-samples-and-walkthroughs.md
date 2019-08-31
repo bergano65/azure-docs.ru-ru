@@ -1,35 +1,29 @@
 ---
-title: Примеры и пошаговые руководства для Виртуальных машин для обработки и анализа данных в Azure | Документация Майкрософт
+title: Примеры & пошаговые руководства
+titleSuffix: Azure Data Science Virtual Machine
 description: С помощью этих примеров и пошаговых руководств вы узнаете, как выполнять типичные задачи и сценарии с помощью виртуальной машины для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: vijetaj
-ms.openlocfilehash: 628c516553c2304739229c53d725645c799d06ce
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: f3d683ffb91639db64000efa2d9791d13d84b79b
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047835"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195675"
 ---
-# <a name="samples-on-data-science-virtual-machines"></a>Примеры для Виртуальных машин для обработки и анализа данных
+# <a name="samples-on-azure-data-science-virtual-machines"></a>Примеры на виртуальных машинах Azure для обработки и анализа данных
 
 Виртуальные машины Azure для обработки и анализа данных (Dsvm) включают в себя полный набор примеров кода. Эти примеры включают в себя Jupyterные записные книжки и сценарии на языках, таких как Python и R.
 > [!NOTE]
 > Дополнительные сведения о том, как запускать записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Access Jupyter](#access-jupyter) .
 
-## <a name="quick-reference-of-samples"></a>Краткий справочник примеров
+## <a name="available-samples"></a>Доступные образцы
 | Категории примеров | Описание | Расположение |
 | ------------- | ------------- | ------------- |
 | Язык R  | Примеры иллюстрируют такие сценарии, как подключение к облачным хранилищам данных на основе Azure и сравнение кода R и Microsoft Machine Learning Server с открытым кодом. Они также объясняют, как эксплуатацию модели на Microsoft Machine Learning Server и SQL Server. <br/> [Язык R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|

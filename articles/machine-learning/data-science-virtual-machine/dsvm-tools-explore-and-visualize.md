@@ -1,28 +1,23 @@
 ---
-title: Средства исследования и визуализации данных в Azure | Документация Майкрософт
+title: Инструменты исследования и визуализации данных
+titleSuffix: Azure Data Science Virtual Machine
 description: Средства исследования и визуализации данных для виртуальной машины для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: vijetaj
-ms.openlocfilehash: d60acdf483d418e458f51ef6cf31b17c43b7379f
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 14c34a13440d50fcf42c2207f9933dc1de014a14
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065905"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70191967"
 ---
-# <a name="data-exploration-and-visualization-tools-on-the-data-science-virtual-machine"></a>Средства исследования и визуализации данных на виртуальной машине для обработки и анализа данных
+# <a name="data-exploration-and-visualization-tools-on-the-azure-data-science-virtual-machine"></a>Средства исследования и визуализации данных на виртуальной машине Azure для обработки и анализа данных
 
 В процессе обработки и анализа данных ключ — это понимание данных. Средства визуализации и исследования данных позволяют ускорить этот процесс. Следующие средства, предоставляемые на виртуальной машине для обработки и анализа данных (DSVM), упрощают этот шаг.
 

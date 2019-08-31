@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
 ms.author: harelbr
-ms.openlocfilehash: 6bb89eec0b4905e101bed87d3d3fc617dec589e0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: e7a54c2e207a27f3519375df09d0c930a92d52d6
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477858"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193721"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -29,9 +29,9 @@ ms.locfileid: "67477858"
 
 Для правила интеллектуального обнаружения можно настроить следующие параметры:
 - Включено ли правило (по умолчанию используется значение **true**.)
-- Если сообщения электронной почты должны отправляться пользователям, связанной с подпиской [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) роли при обнаружении это обозначение (по умолчанию используется **true**.)
+- Если сообщения электронной почты должны отправляться пользователям, связанным с ролью " [читатель мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) " в подписке и ролям [участников мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) , при обнаружении обнаружения (значение по умолчанию — **true**).
 - Можно указать дополнительных получателей, которые должны получать уведомление при обнаружении.
-    -  Настройки электронной почты не поддерживается, для правила интеллектуального обнаружения, имеющие _предварительной версии_.
+    -  Конфигурация электронной почты недоступна для правил интеллектуального обнаружения, помеченных как _Предварительная версия_.
 
 Чтобы разрешить настройку параметров правил с помощью Azure Resource Manager, конфигурация правила интеллектуального обнаружения теперь доступна в качестве внутреннего ресурса в ресурсе Application Insights и называется **ProactiveDetectionConfigs**.
 Чтобы достичь максимальной гибкости, для каждого правила интеллектуального обнаружения можно настроить уникальные параметры уведомлений.
@@ -138,9 +138,9 @@ ms.locfileid: "67477858"
 
 ```
 
-### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Правило генерации оповещений (неклассической) версии 2 аномалии сбоя
+### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Правило генерации оповещений о сбоях версии 2 (не классическая)
 
-Этот шаблон Azure Resource Manager демонстрирует настройке правила генерации оповещений аномалии в сбоях v2 с уровнем серьезности 2. Эту новую версию правила генерации оповещений аномалии в сбоях является частью нового оповещения платформы Azure и заменяет классической версии, который выводится из эксплуатации как часть [классических оповещений процесс прекращения использования](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+В этом шаблоне Azure Resource Manager показано, как настроить правило генерации оповещений об ошибке ошибки v2 с уровнем серьезности 2. Эта новая версия правила оповещения "аномалии ошибок" входит в состав новой платформы оповещений Azure и заменяет классическую версию, которая будет снята с учета в рамках [процесса](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/)прекращения использования классических предупреждений.
 
 ```json
 {
@@ -151,6 +151,7 @@ ms.locfileid: "67477858"
             "type": "microsoft.alertsmanagement/smartdetectoralertrules",
             "apiVersion": "2019-03-01",
             "name": "Failure Anomalies - my-app",
+            "location": "global", 
             "properties": {
                   "description": "Detects a spike in the failure rate of requests or dependencies",
                   "state": "Enabled",
@@ -170,14 +171,14 @@ ms.locfileid: "67477858"
 ```
 
 > [!NOTE]
-> Этот шаблон Azure Resource Manager является уникальным для правила генерации оповещений v2 аномальных сбоев и отличается от классической другие правила интеллектуального обнаружения описывается в этой статье.   
+> Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя версии 2 и отличается от других правил интеллектуального обнаружения, описанных в этой статье.   
 
 ## <a name="smart-detection-rule-names"></a>Имена правил интеллектуального обнаружения
 
 Ниже приведена таблица с именами правил интеллектуального обнаружения так, как они отображаются на портале, вместе с их внутренними именами, которые должны использоваться в шаблоне Azure Resource Manager.
 
 > [!NOTE]
-> Правила интеллектуального обнаружения, имеющие _предварительной версии_ не поддерживают уведомления по электронной почте. Таким образом, можно задать только _включена_ свойства для этих правил. 
+> Правила интеллектуального обнаружения, помеченные как _Предварительный просмотр_ , не поддерживают уведомления по электронной почте. Таким образом, для этих правил можно задать только свойство _Enabled_ . 
 
 | Имя правила на портале Azure | Внутреннее имя
 |:---|:---|
@@ -190,7 +191,7 @@ ms.locfileid: "67477858"
 | Чрезмерное увеличение числа исключений (предварительная версия) | extension_exceptionchangeextension |
 | Обнаружена возможная утечка памяти (предварительная версия) | extension_memoryleakextension |
 | Обнаружена возможная проблема с безопасностью (предварительная версия) | extension_securityextensionspackage |
-| Чрезмерное увеличение ежедневным объемом данных (Предварительная версия) | extension_billingdatavolumedailyspikeextension |
+| Аномальный рост объема данных за день (Предварительная версия) | extension_billingdatavolumedailyspikeextension |
 
 ## <a name="next-steps"></a>Следующие шаги
 

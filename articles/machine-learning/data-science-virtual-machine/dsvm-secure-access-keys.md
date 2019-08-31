@@ -1,29 +1,23 @@
 ---
-title: Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных в Azure | Документация Майкрософт
+title: Безопасное хранение учетных данных доступа
+titleSuffix: Azure Data Science Virtual Machine
 description: Описание безопасного хранения учетных данных для доступа на виртуальной машине для обработки и анализа данных. Вы узнаете, как использовать управляемые удостоверения служб и Azure Key Vault для хранения учетных данных доступа.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 05/08/2018
+author: vijetajo
 ms.author: vijetaj
-ms.openlocfilehash: 1374cbef41f40ea270f3c4d84c68d08e7db095bc
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.topic: conceptual
+ms.date: 05/08/2018
+ms.openlocfilehash: 17e611007d2b5400497597946159826df7aa4848
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051616"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195611"
 ---
-# <a name="store-access-credentials-securely-on-a-data-science-virtual-machine"></a>Безопасное хранение учетных данных доступа на виртуальной машине для обработки и анализа данных
+# <a name="store-access-credentials-securely-on-an-azure-data-science-virtual-machine"></a>Безопасное хранение учетных данных доступа на виртуальной машине Azure для обработки и анализа данных
 
 Как правило, код в облачных приложениях содержит учетные данные для проверки подлинности в облачных службах. Как управлять этими учетными данными и защищать их — хорошо известная задача при создании облачных приложений. В идеале учетные данные никогда не должны отображаться на рабочих станциях разработчиков или возвращены в систему управления версиями.
 

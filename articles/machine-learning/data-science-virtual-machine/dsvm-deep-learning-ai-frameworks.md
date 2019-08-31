@@ -1,30 +1,23 @@
 ---
 title: Глубокое обучение & платформах искусственного интеллекта
-titleSuffix: Azure Data Science Virtual Machines
-description: Платформы и средства глубокого обучения на виртуальной машине Azure для обработки и анализа данных, включая TensorFlow, PyTorch, keras, Caffe, MXNet, хоровод, Theano, chaining и др.
+titleSuffix: Azure Data Science Virtual Machine
+description: Доступные платформы и средства глубокого обучения на виртуальной машине Azure для обработки и анализа данных, включая TensorFlow, PyTorch, keras, Caffe, MXNet, хоровод, Theano, chaining и др.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 08/11/2019
-ms.author: vijetaj
-ms.openlocfilehash: 3c9510b99bbdc7db292ecdc0bf59aadc305cf0c8
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: bcf5228b6d6055c4b2e716ca6b34878a3bb3b870
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035842"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192174"
 ---
-# <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
+# <a name="deep-learning-and-ai-frameworks-for-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Виртуальная машина для обработки и [анализа данных](https://aka.ms/dsvm) (DSVM) поддерживает несколько платформ глубокого обучения для создания приложений искусственного интеллекта (ии) с прогнозной аналитикой и функциями, такими как понимание изображений и языков.
 
 Платформы глубокого обучения, доступные в DSVM, включают:

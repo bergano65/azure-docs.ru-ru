@@ -1,27 +1,21 @@
 ---
-title: Общие сведения о командных средах на базе виртуальной машины для обработки и анализа данных в Azure | Документы Майкрософт
+title: Среда Team Analytics и искусственный интеллект
+titleSuffix: Azure Data Science Virtual Machine
 description: Шаблоны для развертывания виртуальной машины для обработки и анализа данных в качестве корпоративной командной среды.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 05/08/2018
+author: vijetajo
 ms.author: vijetaj
-ms.openlocfilehash: 5f34498fbdacf7fc6e62788913c795ab70ceef23
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
-ms.translationtype: MT
+ms.topic: overview
+ms.date: 05/08/2018
+ms.openlocfilehash: 06d05d6d410af13bfbe85f3cb66523c1d48cb77c
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991618"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195662"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 Виртуальная машина для обработки и [анализа данных](overview.md) (DSVM) предоставляет обширную среду на платформе Azure с предварительно созданным программным обеспечением для искусственного интеллекта (ии) и аналитики данных.

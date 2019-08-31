@@ -1,27 +1,21 @@
 ---
-title: Использование виртуальной машины для обработки и анализа геоданных средствами искусственного интеллекта в Azure | Документация Майкрософт
+title: Использование географического AI
+titleSuffix: Azure Data Science Virtual Machine
 description: Сведения об использовании виртуальной машины обработки и анализа географических данных с помощью ИИ для анализа данных и построения моделей на основе геопространственных данных.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.author: vijetaj
-ms.openlocfilehash: 22c0d7d604ca41044d2d969d4ddbd2ae1a4d23d5
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 01238885e68a39ff713bd346a9206668e16e7ee4
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170489"
+ms.locfileid: "70195282"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
 
@@ -47,7 +41,7 @@ ms.locfileid: "70170489"
 
 2. [Приступая к работе с геопространственной аналитикой с помощью R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Вводный пример, демонстрирующий работу с геопространственными данными с помощью интерфейса R для ArcGIS, предоставляемого библиотекой [arcgisbinding](https://github.com/R-ArcGIS/r-bridge) . 
 
-3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примерами наметок земельных участков являются *леса* и *вода*. Модель возвращает такую метку для каждого пикселя в изображении. Модель строится с помощью платформы глубокого обучения Microsoft Open-Source [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) .
+3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примерами наметок земельных участков являются *леса* и *вода*. Модель возвращает такую метку для каждого пикселя в изображении. 
 
 
 ## <a name="next-steps"></a>Следующие шаги

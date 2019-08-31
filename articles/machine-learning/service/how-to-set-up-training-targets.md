@@ -11,14 +11,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: b1ee18abfab2cf286ee010bd6d25dfbc5a38cebb
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: c9bc9d64d7f21498acd5cb0c23447e7ff77de629
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011566"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195572"
 ---
-# <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей 
+# <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 
 С помощью Службы машинного обучения Azure вы можете обучать модель, используя разные вычислительные ресурсы или среды, которые вместе называются [__целевыми объектами вычислений__](concept-azure-machine-learning-architecture.md#compute-targets). Они могут быть локальными или облачными, например Вычислительная среда машинного обучения Azure, Azure HDInsight или удаленная виртуальная машина.  Можно также создать целевые объекты вычислений для развертывания моделей, как описано в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
@@ -47,33 +47,9 @@ ms.locfileid: "70011566"
 
 При обучении этот учебный сценарий обычно запускают на локальном компьютере, а затем запускают в другом целевом объекте вычислений. Служба машинного обучения Azure позволяет запускать сценарий для различных целевых объектов вычислений без необходимости изменения сценария. 
 
-Вам нужно лишь определить среду для каждого целевого объекта вычислений с помощью **конфигурации запуска**.  Затем, если вы хотите запустить обучающий эксперимент на другом целевом объекте вычислений, укажите конфигурацию запуска для этого вычисления.
+Все, что нужно сделать, — это определить среду для каждого целевого объекта вычислений в **конфигурации запуска**.  Затем, если вы хотите запустить обучающий эксперимент на другом целевом объекте вычислений, укажите конфигурацию запуска для этого вычисления. Дополнительные сведения об указании среды и ее привязке для запуска конфигурации см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md) .
 
 Дополнительные сведения об [отправке экспериментов](#submit) см. в конце этой статьи.
-
-### <a name="manage-environment-and-dependencies"></a>Управление средой и зависимостями
-
-При создании конфигурации запуска необходимо выбрать способ управления средой и зависимостями на целевом объекте вычислений. 
-
-#### <a name="system-managed-environment"></a>Среда, управляемая системой
-
-Если необходимо, чтобы [Conda](https://conda.io/docs/) управляла средой Python и зависимостями сценария, используйте среду, управляемую системой. Наиболее распространенным по умолчанию вариантом считается среда, управляемая системой. Это полезно для удаленных целевых объектов вычислений, особенно когда невозможно настроить эту цель. 
-
-Вам нужно лишь указать каждую зависимость пакета с помощью [класса CondaDependency](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py). Затем Conda создаст файл с именем **conda_dependencies.yml** в каталоге рабочей области **aml_config** с помощью списка зависимостей пакета и настроит среду Python при отправке обучающего эксперимента. 
-
-Первоначальная настройка новой среды может занять несколько минут в зависимости от размера необходимых зависимостей. Пока список пакетов остается неизменным, настройка происходит только один раз.
-  
-В следующем коде показан пример для среды, управляемой системой, которая требует scikit-learn.
-    
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/runconfig.py?name=run_system_managed)]
-
-#### <a name="user-managed-environment"></a>Среда, управляемая пользователем
-
-В среде, управляемой пользователем, вы несете ответственность за настройку среды и установку каждого пакета, который необходим вашему обучающему сценарию на целевом объекте вычислений. Если ваша учебная среда уже настроена (например, на локальном компьютере), вы можете пропустить этот шаг настройки, задав `user_managed_dependencies` значение "True". Conda не будет проверять вашу среду или устанавливать что-либо за вас.
-
-Следующий код представляет собой пример настройки запусков обучения для среды, управляемой пользователем.
-
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/runconfig.py?name=run_user_managed)]
 
 ## <a name="whats-an-estimator"></a>Что такое оценщик?
 
@@ -390,7 +366,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 Вы можете получать доступ, создавать и управлять целевыми объектами вычислений, связанными с рабочей областью, с помощью [расширения VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) для службы машинное обучение Azure.
 
-## <a id="submit"></a>Отправка запуска на выполнение обучения
+## <a id="submit"></a>Отправка учебного прогона с помощью пакета SDK для Машинное обучение Azure
 
 После создания конфигурации запуска, используйте ее для выполнения эксперимента.  Шаблон кода для отправки запуска на выполнение обучения одинаковый для всех типов целевых объектов вычислений.
 
@@ -430,8 +406,70 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 Также вы можете:
 
 * отправить эксперимент с объектом `Estimator`, как показано в разделе [Обучение моделей машинного обучения с использованием средства оценки](how-to-train-ml-models.md);
-* отправить эксперимент [с помощью расширения интерфейса командной строки](reference-azure-machine-learning-cli.md#experiments).
+* Отправка видеодиска для [настройки параметров](how-to-tune-hyperparameters.md).
 * Отправьте эксперимент с помощью [расширения VS Code](how-to-vscode-tools.md#train-and-tune-models).
+
+## <a name="create-run-configuration-and-submit-run-using-azure-machine-learning-cli"></a>Создание конфигурации запуска и отправка выполнения с помощью Машинное обучение Azure CLI
+
+[Расширение CLI](reference-azure-machine-learning-cli.md) [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и машинное обучение можно использовать для создания конфигураций запуска и отправки запусков на различных целевых объектах вычислений. В следующих примерах предполагается, что у вас есть существующий Рабочая область машинного обучения Azure и вы выполнили вход `az login` в Azure с помощью команды CLI. 
+
+### <a name="create-run-configuration"></a>Создать конфигурацию запуска
+
+Самый простой способ создать конфигурацию запуска — переходить по папке, содержащей скрипты Python машинного обучения, и использовать команду CLI.
+
+```azurecli
+az ml folder attach
+```
+
+Эта команда создает вложенную `.azureml` папку, содержащую файлы конфигурации запуска шаблона для различных целевых объектов вычислений. Вы можете скопировать и изменить эти файлы, чтобы настроить конфигурацию, например добавить пакеты Python или изменить параметры DOCKER.  
+
+### <a name="create-an-experiment"></a>Создание эксперимента
+
+Сначала создайте эксперимент для своих запусков.
+
+```azurecli
+az ml experiment create -n <experiment>
+```
+
+### <a name="script-run"></a>Запустить скрипт
+
+Чтобы отправить скрипт, выполните команду
+
+```azurecli
+az ml run submit-script -e <experiment> -c <runconfig> my_train.py
+```
+
+### <a name="hyperdrive-run"></a>Запуск устройства
+
+С помощью Azure CLI можно выполнять настройку параметров. Сначала создайте файл конфигурации для диска в следующем формате. Дополнительные сведения о параметрах настройки параметров см. в разделе [Настройка параметров для](how-to-tune-hyperparameters.md) статьи о модели.
+
+```yml
+# hdconfig.yml
+sampling: 
+    type: random # Supported options: Random, Grid, Bayesian
+    parameter_space: # specify a name|expression|values tuple for each parameter.
+    - name: --penalty # The name of a script parameter to generate values for.
+      expression: choice # supported options: choice, randint, uniform, quniform, loguniform, qloguniform, normal, qnormal, lognormal, qlognormal
+      values: [0.5, 1, 1.5] # The list of values, the number of values is dependent on the expression specified.
+policy: 
+    type: BanditPolicy # Supported options: BanditPolicy, MedianStoppingPolicy, TruncationSelectionPolicy, NoTerminationPolicy
+    evaluation_interval: 1 # Policy properties are policy specific. See the above link for policy specific parameter details.
+    slack_factor: 0.2
+primary_metric_name: Accuracy # The metric used when evaluating the policy
+primary_metric_goal: Maximize # Maximize|Minimize
+max_total_runs: 8 # The maximum number of runs to generate
+max_concurrent_runs: 2 # The number of runs that can run concurrently.
+max_duration_minutes: 100 # The maximum length of time to run the experiment before cancelling.
+```
+
+Добавьте этот файл вместе с файлами конфигурации запуска. Затем отправьте запрос на запуск с помощью:
+```azurecli
+az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
+```
+
+Обратите внимание на раздел arguments в runconfig и *пространстве параметров* в файле config. Они содержат аргументы командной строки, передаваемые в сценарий обучения. Значение в runconfig остается неизменным для каждой итерации, в то время как диапазон в файле конфигурации для работы с ними перебирается. Не указывайте один и тот же аргумент в обоих файлах.
+
+Дополнительные сведения об этих ```az ml``` командах интерфейса командной строки и полном наборе аргументов см. [в справочной документации](reference-azure-machine-learning-cli.md).
 
 <a id="gitintegration"></a>
 

@@ -1,18 +1,18 @@
 ---
 title: Проверка состояния публикации предложения коммерческого магазина
 description: Проверьте состояние проверки, сертификации и шагов предварительной версии, необходимых для публикации предложения через коммерческий магазин в центре партнеров Майкрософт.
-author: mattwojo
+author: ChJenk
 manager: evansma
-ms.author: mattwoj
+ms.author: v-chjen
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: c547ad256e6ba44da4ef81aa2a3aa2c77ba24815
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 77cb18a858ca87acbb8182bf708e403010251365
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982735"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70191777"
 ---
 # <a name="check-the-publishing-status-of-your-commercial-marketplace-offer"></a>Проверка состояния публикации предложения коммерческого магазина
 

@@ -3,15 +3,15 @@ title: Функции развертывания для шаблонов Azure R
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 01/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9cf81058d79d474a4d61195850636e428a1dbd0d
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 236fbb9e4ed3283ecf9147e6eb5033fb906a127b
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206470"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194348"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
 
@@ -152,16 +152,16 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="parameters" />
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>параметры
 `parameters(parameterName)`
 
 Возвращает значение параметра. Указанное имя параметра должно быть определено в разделе параметров шаблона.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| parameterName |Да |string |Имя параметра, который требуется вернуть. |
+| parameterName |Да |строка |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -246,13 +246,13 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| Название | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | String | вариант 1 |
-| intOutput | Int | 1 |
+| stringOutput | Строковое | вариант 1 |
+| intOutput | int | 1 |
 | objectOutput | Object | {"one": "a", "two": "b"} |
 | arrayOutput | Array | [1, 2, 3] |
-| crossOutput | String | вариант 1 |
+| crossOutput | Строковое | вариант 1 |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -275,9 +275,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| variableName |Да |String |Имя переменной, которую необходимо вернуть. |
+| variableName |Да |Строковое |Имя переменной, которую необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -349,11 +349,11 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| Название | Тип | Значение |
 | ---- | ---- | ----- |
-| exampleOutput1 | String | myVariable |
+| exampleOutput1 | Строковое | myVariable |
 | exampleOutput2 | Array | [1, 2, 3, 4] |
-| exampleOutput3 | String | myVariable |
+| exampleOutput3 | Строковое | myVariable |
 | exampleOutput4 |  Object | {"property1": "value1", "property2": "value2"} |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
@@ -368,7 +368,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/variables.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

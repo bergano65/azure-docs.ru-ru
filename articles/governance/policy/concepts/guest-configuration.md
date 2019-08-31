@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b6c9e50334a25b505655a49a02cd98165d04740b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 269d13e0b64d2da7a21316b16c88acde46ba1722
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164949"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194641"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -130,6 +130,11 @@ Windows Server Nano Server не поддерживается ни в одной 
 ### <a name="multiple-assignments"></a>Несколько назначений
 
 Политики конфигурации гостя в настоящее время поддерживают назначение одного и того же назначения гостей один раз на компьютер, даже если в назначении политики используются другие параметры.
+
+## <a name="built-in-resource-modules"></a>Встроенные модули ресурсов
+
+При установке расширения гостевой конфигурации модуль PowerShell "Гуестконфигуратион" включается в последнюю версию модулей ресурсов DSC. Этот модуль можно скачать из коллекция PowerShell с помощью ссылки для скачивания вручную на странице модуля [гуестконфигуратион/](https://www.powershellgallery.com/packages/GuestConfiguration/).
+Формат файла ". nupkg" можно переименовать в ZIP-файл для распаковки и просмотра.
 
 ## <a name="client-log-files"></a>Файлы журналов клиента
 

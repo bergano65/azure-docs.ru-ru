@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 08/22/2019
+ms.date: 08/31/2019
 ms.author: victorh
-ms.openlocfilehash: da8142ad035eec338a3c1ba1a23be7c2be470a04
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 3fa97c5738128907b0edad40cedf582e80c33443
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69891725"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194474"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -277,7 +277,11 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="how-do-i-configure-https-listeners-for-com-and-net-sites"></a>Разделы справки настроить прослушиватели HTTPS для сайтов com и .NET? 
 
-Для маршрутизации на основе нескольких доменов (на основе узла) можно создать многосайтовые прослушиватели, настроить прослушиватели, использующие протокол HTTPS, в качестве протокола и связать прослушиватели с правилами маршрутизации. Дополнительные сведения см. в разделе [Размещение нескольких сайтов с помощью шлюза приложений](https://docs.microsoft.com/azure/application-gateway/multiple-site-overview). 
+Для маршрутизации на основе нескольких доменов (на основе узла) можно создать многосайтовые прослушиватели, настроить прослушиватели, использующие протокол HTTPS, в качестве протокола и связать прослушиватели с правилами маршрутизации. Дополнительные сведения см. в разделе [Размещение нескольких сайтов с помощью шлюза приложений](https://docs.microsoft.com/azure/application-gateway/multiple-site-overview).
+
+### <a name="can-i-use-special-characters-in-my-pfx-file-password"></a>Можно ли использовать специальные символы в пароле PFX-файла?
+
+Нет, используйте только буквенно-цифровые символы в пароле PFX-файла.
 
 ## <a name="configuration---web-application-firewall-waf"></a>Настройка — брандмауэр веб-приложения (WAF)
 

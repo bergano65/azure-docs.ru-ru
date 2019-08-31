@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 08/30/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 27526f4940cb7ab538992f3506c1a35a81cec9bc
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
-ms.translationtype: HT
+ms.openlocfilehash: c7b0dc39d2da403383f245b9ff3227734c58cbbe
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165025"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193480"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 
@@ -90,8 +90,4 @@ ms.locfileid: "70165025"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Узнайте, когда и как можно изменять уровни служб.
-
-* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku): Если вам требуется больше исходных файлов или документов большего размера в базе знаний, помимо текущего уровня, обновите ценовую категорию службы QnA Maker.
-* [Служба приложений](how-to/upgrade-qnamaker-service.md#upgrade-app-service): Если потребуется, чтобы база знаний обслуживала большее количество запросов из клиентского приложения, перейдите на ценовую категорию службы приложений.
-* [Поиск Azure](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service): Если вы планируете использовать несколько баз знаний, перейдите на ценовую категорию службы поиска Azure.
+Узнайте, когда и как изменить [ценовые категории служб](How-To/set-up-qnamaker-service-azure.md#upgrade-qna-maker).

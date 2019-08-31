@@ -1,28 +1,21 @@
 ---
-title: Поддерживаемые языки на Виртуальной машине для обработки и анализа данных
-titleSuffix: Azure
-description: Сведения о языках программирования и соответствующих средствах, предустановленных на Виртуальной машине для обработки и анализа данных.
+title: Поддерживаемые языки
+titleSuffix: Azure Data Science Virtual Machine
+description: Поддерживаемые языки программирования и связанные средства, предварительно установленные на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.author: vijetaj
-ms.openlocfilehash: 1df3c986132de2a3e7ec9547a996abef60ea04ac
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 573b6b75b4534789e4e40fa3d6cc1694c5ede2ea
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558128"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192165"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
 

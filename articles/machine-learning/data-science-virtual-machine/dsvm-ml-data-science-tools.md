@@ -1,34 +1,29 @@
 ---
-title: Средства машинного обучения и обработки и анализа данных в Azure | Документация Майкрософт
+title: Машинное обучение & средства обработки и анализа данных
+titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте о средствах машинного обучения и платформах, предустановленных на Виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: vijetaj
-ms.openlocfilehash: 3b05d076a61593e8c34ce642f2fe2fd137e07109
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d823eb615f983190ee6974ee3012f069309ca753
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565250"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195645"
 ---
-# <a name="machine-learning-and-data-science-tools"></a>Средства машинного обучения и обработки и анализа данных
+# <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Машинное обучение и средства обработки и анализа данных на виртуальных машинах Azure для обработки и анализа данных
 Виртуальные машины для обработки и анализа данных Azure содержат большой набор средств и библиотек для машинного обучения, доступных на распространенных языках, таких как Python, R, Julia. 
 
 Ниже приведены некоторые инструменты и библиотеки Машинного обучения на Виртуальных машинах для обработки и анализа данных. 
 
-## <a name="azure-machine-learninghttpsdocsmicrosoftcomazuremachine-learningserviceoverview-what-is-azure-ml-sdk"></a>Пакет SDK для [Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/overview-what-is-azure-ml)
+## <a name="azure-machine-learning-sdk-for-python"></a>Пакет SDK для Машинное обучение Azure для Python
+См. полный справочник по [пакету SDK для машинное обучение Azure для Python](https://docs.microsoft.com/azure/machine-learning/service/overview-what-is-azure-ml).
 |    |           |
 | ------------- | ------------- |
 | Что это такое?   |   Машинное обучение Azure — это облачная служба, с помощью которой можно разрабатывать и развертывать модели машинного обучения. Модели можно отслеживать в процессе их создания, обучения, масштабирования, а также управления ими с помощью пакета SDK для Python. Разверните модели как контейнеры и запустите их в облаке, локально или в Azure IoT Edge.   |

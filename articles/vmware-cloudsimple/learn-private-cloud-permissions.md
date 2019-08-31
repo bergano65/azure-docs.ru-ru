@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ab74b37fa8adc58f8641893b4168f71c453b0fdd
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 0c617cbd17d9b9620c957eec45aadd962db34831
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972711"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194128"
 ---
 # <a name="cloudsimple-private-cloud-permission-model-of-vmware-vcenter"></a>Модель разрешений частного облака Клаудсимпле для VMware vCenter
 
@@ -24,7 +24,7 @@ ms.locfileid: "69972711"
 При создании частного облака в домене с единым входом vCenter создается **клаудовнер** пользователь с доступом к **роли "владелец облака** " для управления объектами в частном облаке. Этот пользователь также может настроить дополнительные [источники удостоверений vCenter](set-vcenter-identity.md)и других пользователей в частном облаке vCenter.
 
 > [!NOTE]
-> Пользователь по умолчанию для клаудсимпле частного облака vCenter `cloudowner@cloudsimple.local` находится в случае создания частного облака без его привязки к локальному vCenter.
+> Пользователь по умолчанию для клаудсимпле частного облака vCenter cloudowner@cloudsimple.local находится в случае создания частного облака.
 
 ## <a name="user-groups"></a>Группы пользователей
 

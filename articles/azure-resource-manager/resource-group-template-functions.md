@@ -3,18 +3,18 @@ title: Функции шаблона Resource Manager | Документаци�
 description: Описывает функции, используемые в шаблоне диспетчера ресурсов Azure для извлечения значений, работы со строками и числовыми значениями и получения сведений о развертывании.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: 201fea91aba2a14720a7c28df5128f94e9e327fd
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 5333bfd8c7f7d24e497e4b7ba7da3543aee54da6
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205428"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194760"
 ---
 # <a name="azure-resource-manager-template-functions"></a>Функции шаблонов диспетчера ресурсов Azure
-В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager. Сведения об использовании функций в шаблоне, см. в разделе [синтаксис шаблона](resource-group-authoring-templates.md#syntax).
+В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager. Сведения об использовании функций в шаблоне см. в разделе [синтаксис шаблона](resource-group-authoring-templates.md#syntax).
 
 Для создания собственных функций см. раздел об [определяемых пользователем функциях](resource-group-authoring-templates.md#functions).
 
@@ -39,7 +39,7 @@ ms.locfileid: "67205428"
 ## <a name="array-and-object-functions"></a>Функции массива и объекта
 Resource Manager предоставляет ряд функций для работы с массивами и объектами.
 
-* [array](resource-group-template-functions-array.md#array).
+* [array](resource-group-template-functions-array.md#array)
 * [coalesce](resource-group-template-functions-array.md#coalesce)
 * [concat](resource-group-template-functions-array.md#concat)
 * [contains](resource-group-template-functions-array.md#contains)
@@ -49,7 +49,7 @@ Resource Manager предоставляет ряд функций для раб�
 * [intersection](resource-group-template-functions-array.md#intersection)
 * [json](resource-group-template-functions-array.md#json)
 * [last](resource-group-template-functions-array.md#last)
-* [длина](resource-group-template-functions-array.md#length)
+* [length](resource-group-template-functions-array.md#length)
 * [min](resource-group-template-functions-array.md#min)
 * [max](resource-group-template-functions-array.md#max)
 * [range](resource-group-template-functions-array.md#range)
@@ -193,7 +193,7 @@ Resource Manager предоставляет для работы с логиче�
 * [indexOf](resource-group-template-functions-string.md#indexof)
 * [last](resource-group-template-functions-string.md#last)
 * [lastIndexOf](resource-group-template-functions-string.md#lastindexof)
-* [длина](resource-group-template-functions-string.md#length)
+* [length](resource-group-template-functions-string.md#length)
 * [newGuid](resource-group-template-functions-string.md#newguid)
 * [padLeft](resource-group-template-functions-string.md#padleft)
 * [replace](resource-group-template-functions-string.md#replace)
@@ -212,8 +212,8 @@ Resource Manager предоставляет для работы с логиче�
 * [uriComponentToString](resource-group-template-functions-string.md#uricomponenttostring)
 * [utcNow](resource-group-template-functions-string.md#utcnow)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа см. в разделе [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).
-* Чтобы узнать, как развернуть шаблон, который вы создали, см. в разделе [развертывание ресурсов с использованием шаблона Azure Resource Manager](resource-group-template-deploy.md)
+* Сведения о развертывании созданного шаблона см. в разделе [развертывание приложения с помощью Azure Resource Manager шаблона](resource-group-template-deploy.md) .

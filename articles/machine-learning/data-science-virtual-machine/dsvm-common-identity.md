@@ -1,27 +1,21 @@
 ---
-title: Настройка общего удостоверения для виртуальной машины для обработки и анализа данных в Azure | Документация Майкрософт
+title: Настройка общего удостоверения
+titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте, как создавать общие учетные записи пользователей, которые можно использовать в нескольких Виртуальных машинах для обработки и анализа данных. Для аутентификации пользователей в Виртуальной машине для обработки и анализа данных можно использовать Azure Active Directory или локальную службу Active Directory.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 05/08/2018
+author: vijetajo
 ms.author: vijetaj
-ms.openlocfilehash: 34303c8832a58e4d97ba4e712d624edf321b84a1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.topic: conceptual
+ms.date: 05/08/2018
+ms.openlocfilehash: 5cd310dac28b999af3d21c46b108abdc6d5779b5
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558269"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192233"
 ---
 # <a name="set-up-a-common-identity-on-the-data-science-virtual-machine"></a>Настройка общего удостоверения для виртуальной машины для обработки и анализа данных в Azure
 

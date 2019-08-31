@@ -8,12 +8,13 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 08/29/2019
 ms.author: alkohli
-ms.openlocfilehash: e17fbcebc128a7169953ed05de617efa25fc25f8
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.localizationpriority: high
+ms.openlocfilehash: 20c27a3e4e9a96a19b347e5ef57ab9fb3c047140
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172713"
+ms.locfileid: "70194427"
 ---
 ::: zone target="docs"
 
@@ -27,12 +28,13 @@ ms.locfileid: "70172713"
 
 ::: zone target="chromeless"
 
-## <a name="prerequisites"></a>Предварительные требования
+# <a name="review-prerequisites"></a>Проверка предварительных требований
 
-У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
+1. Вам необходимо заказать Диск Data Box с помощью учебника: Закажите Диск Azure Data Box. Вы получили диски и один соединительный кабель на диск.
+2. У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
 
-- Запустите поддерживаемую операционную систему.
-- Установите другое обязательное программное обеспечение.
+    - Запустите поддерживаемую операционную систему.
+    - Установите другое обязательное программное обеспечение.
 
 ::: zone-end
 
