@@ -3,16 +3,16 @@ title: Матрица поддержки для агента Службы вос
 description: В этой статье приводится сводка Azure Backup поддержки при резервном копировании компьютеров, на которых выполняется агент Службы восстановления Microsoft Azure (MARS).
 author: dcurwin
 ms.service: backup
-ms.date: 02/17/2019
+ms.date: 08/30/2019
 ms.topic: conceptual
 ms.author: dacurwin
 manager: carmonm
-ms.openlocfilehash: 8c983772f58c1ea01db175b47225ccfafa515b96
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 599d3f97ea30b096999d754a995af2ba660c0bc3
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951980"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186176"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
 
@@ -72,20 +72,22 @@ Size |  Объем свободного места в папке кэша дол
 
 Агент MARS можно использовать для резервного копирования непосредственно в Azure в некоторых операционных системах, работающих на локальных компьютерах и виртуальных машинах Azure. Операционные системы должны иметь 64 бит и должны работать с последними пакетами и обновлениями служб. В следующей таблице перечислены эти операционные системы.
 
-**Операционная система** | **Файлы, папки** | **Состояние системы** 
---- | --- | --- 
-Windows 10 (Корпоративная, Pro, Домашняя) | Да | Нет
-Windows 8.1 (Корпоративная, Pro)| Да |Нет
-Windows 8 (Корпоративная, Pro) | Да | Нет
-Windows 7 (Максимальная, Корпоративная, Pro, Домашняя расширенная, Домашняя базовая, Начальная) | Да | Нет
-Windows Server 2016 (Standard, Datacenter и Essentials) | Да | Да
-Windows Server 2012 R2 (Standard, Datacenter, Foundation и Essentials) | Да | Да
-Windows Server 2012 (Standard, Datacenter, Foundation) | Да | Да
-Windows Server 2008 R2 (Standard, Enterprise, Datacenter, Foundation) | Да | Да
-Windows Server 2008 с пакетом обновления 2 (Standard, Datacenter, Foundation) | Да | Нет
-Windows Storage Server 2016/2012 R2/2012 (стандартная, Рабочая группа) | Да | Нет
+**Операционная система** | **Файлы, папки** | **Состояние системы** | **Требования к программному обеспечению и модулям**
+--- | --- | --- | ---
+Windows 10 (Корпоративная, Pro, Домашняя) | Да | Нет |  Проверьте соответствующую версию сервера на наличие требований к программному обеспечению или модулю
+Windows 8.1 (Корпоративная, Pro)| Да |Нет | Проверьте соответствующую версию сервера на наличие требований к программному обеспечению или модулю
+Windows 8 (Корпоративная, Pro) | Да | Нет | Проверьте соответствующую версию сервера на наличие требований к программному обеспечению или модулю
+Windows 7 (Максимальная, Корпоративная, Pro, Домашняя расширенная, Домашняя базовая, Начальная) | Да | Нет | Проверьте соответствующую версию сервера на наличие требований к программному обеспечению или модулю
+Windows Server 2016 (Standard, Datacenter и Essentials) | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
+Windows Server 2012 R2 (Standard, Datacenter, Foundation и Essentials) | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
+Windows Server 2012 (Standard, Datacenter, Foundation) | Да | Да |— .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe)
+Windows Server 2008 R2 (Standard, Enterprise, Datacenter, Foundation) | Да | Да | — .NET 3,5, .NET 4,5 <br> — Windows PowerShell <br> -Совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe)
+Windows Server 2008 с пакетом обновления 2 (Standard, Datacenter, Foundation) | Да | Нет | — .NET 3,5, .NET 4,5 <br> — Windows PowerShell <br> -Совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe) <br> — Виртуальный сервер 2005, базовый + KB KB948515
+Windows Storage Server 2016/2012 R2/2012 (стандартная, Рабочая группа) | Да | Нет | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
+Windows Server 2019 (Standard, Datacenter и Essentials); | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
 
 Дополнительные сведения см. в разделе [ПОДДЕРЖИВАЕМЫЕ MABS и операционные системы DPM](backup-support-matrix-mabs-dpm.md#supported-mabs-and-dpm-operating-systems).
+
 
 ## <a name="backup-limits"></a>Ограничения резервного копирования
 

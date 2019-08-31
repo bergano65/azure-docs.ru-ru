@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 08/29/2019
 ms.author: dapine
-ms.openlocfilehash: 3c0129275ecf78e6a4e6b9286f975ded2b6f9ae3
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 25ea4c96a0e392db2af9c25a150696ca2b25b2dd
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051203"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164537"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 
@@ -58,28 +58,25 @@ ms.locfileid: "70051203"
 
 | Контейнер | Минимум | Рекомендуется |
 |-----------|---------|-------------|
-|cognitive-services-form-recognizer | 2 ядра, 4 ГБ памяти | 4 ядра, 8 ГБ памяти |
+| Распознаватель документов | 2 ядра, 4 ГБ памяти | 4 ядра, 8 ГБ памяти |
+| Распознавание текста | 1 ядро, 8 ГБ памяти | 2 ядра, 8 ГБ памяти |
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
-* TPS — транзакций в секунду.
 * Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
 
 > [!Note]
 > Минимальные и рекомендуемые значения основаны на ограничениях Docker, *а не на* ресурсах узла.
 
-## <a name="get-the-container-image-with-the-docker-pull-command"></a>Получение образа контейнера с помощью команды docker pull
+## <a name="get-the-container-images-with-the-docker-pull-command"></a>Получение образов контейнеров с помощью команды docker pull
 
-Образы контейнеров для Распознавателя документов доступны в следующем репозитории:
+Образы контейнеров как для **распознавателя форм** , так и для предложений **Распознавание текста** доступны в следующем реестре контейнеров:
 
-| Контейнер | Репозиторий |
+| Контейнер | Полное имя образа |
 |-----------|------------|
-| cognitive-services-form-recognizer | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
+| Распознаватель документов | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
+| Распознавание текста | `containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest` |
 
-Если вы планируете использовать [контейнер](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) `cognitive-services-recognize-text` вместо Распознавателя документов, убедитесь, что используется команда `docker pull` с правильным именем контейнера: 
-
-```
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
-```
+Вам понадобятся оба контейнера. Обратите внимание, что контейнер **текста распознавателя** [подробно указан за пределами этой статьи.](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull)
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -91,6 +88,15 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 ```Docker
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest
+```
+### <a name="docker-pull-for-the-recognize-text-container"></a>docker pull для контейнера Распознавания текста
+
+#### <a name="recognize-text"></a>Распознавание текста
+
+Чтобы получить контейнер Распознавание текста, используйте следующую команду:
+
+```Docker
+docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
 ```
 
 ## <a name="how-to-use-the-container"></a>Использование контейнера

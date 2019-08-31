@@ -11,12 +11,12 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 07/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 24716a9b9fa5174d899cf0678b83b2da0c59957c
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 5ec92e34ffa68718525e9b407dc9e58f4c409975
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358667"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183536"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
@@ -203,6 +203,9 @@ print(prediction)
 ### <a name="update-the-service"></a>Обновление службы
 
 Во время локального тестирования может потребоваться обновить `score.py` файл, чтобы добавить ведение журнала, или попробовать устранить обнаруженные проблемы. Чтобы перезагрузить изменения в `score.py` файле, используйте. `reload()` Например, следующий код перезагружает скрипт для службы, а затем отправляет в него данные. Данные оцениваются с помощью обновленного `score.py` файла:
+
+> [!IMPORTANT]
+> `reload` Метод доступен только для локальных развертываний. Сведения об обновлении развертывания на другом целевом объекте вычислений см. в разделе "обновление" статьи [Развертывание моделей](how-to-deploy-and-where.md#update).
 
 ```python
 service.reload()
