@@ -1,42 +1,63 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Каталогу данных Azure
+summary: Узнайте, как создавать и настраивать каталог данных для поиска, распознавания и использования источников данных организацией. Руководства, справочник по API REST и другая документация, в которой показано, как планировать и настраивать репозиторий данных, в котором пользователи могут искать доступные источники данных и использовать профильную информацию, предоставленную специалистами.
 metadata:
-  title: 'Документация по Каталогу данных Azure: руководства и справочник по API'
-  meta.description: 'Learn how to set up a data catalog where your organization can find, understand, and consume data sources. Tutorials, API reference, and other documentation.'
-  services: data-catalog
-  author: JasonWHowell
+  author: jasonwhowell
+  description: Узнайте, как создавать и настраивать каталог данных, используемые организацией для поиска, распознавания и использования источников данных. Руководства, справочники по API и другая документация.
   ms.author: jasonh
+  ms.date: 08/30/2019
   ms.service: data-catalog
   ms.topic: landing-page
-  ms.date: 07/01/2019
-abstract:
-  description: 'Узнайте, как использовать Каталог данных, чтобы помочь организации или команде находить, распознавать и использовать источники данных. Руководства, справочник по API REST и другая документация, в которой показано, как планировать и настраивать репозиторий данных, в котором пользователи могут искать доступные источники данных и использовать профильную информацию, предоставленную специалистами.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как развернуть свой первый каталог данных Azure:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/data-catalog.svg
-            text: Портал Azure
-            href: 'https://docs.microsoft.com/azure/data-catalog/data-catalog-get-started'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как регистрировать, искать, контролировать и удалять ресурсы в Каталоге данных Azure, а также добавлять к ним заметки:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="register-data-assets-tutorial">Регистрация ресурсов данных в Каталоге данных Azure</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: <p><a href="/rest/api/datacatalog/">Справочник по REST API</a></p><p><a href="/rest/api/datacatalog/data-catalog-search-syntax-reference">Справочник по синтаксису поиска</a></p>
+  ms.openlocfilehash: eb60085cd76fa9d3857b5e284b2cdd03f35fcb13
+  ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/30/2019
+  ms.locfileid: "70172674"
+landingContent:
+- title: Сведения о Каталоге данных Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое каталог данных Azure?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Узнайте, как развернуть Каталог данных.
+      url: data-catalog-get-started.md
+  - linkListType: concept
+    links:
+    - text: Часто задаваемые вопросы
+      url: data-catalog-frequently-asked-questions.md
+- title: Регистрация ресурсов данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Узнайте, как регистрировать, искать и администрировать, удалять ресурсы, а также добавлять к ним заметки.
+      url: register-data-assets-tutorial.md
+  - linkListType: concept
+    links:
+    - text: Поддерживаемые источники данных
+      url: data-catalog-dsr.md
+  - linkListType: how-to-guide
+    links:
+    - text: Регистрация источников данных
+      url: data-catalog-how-to-register.md
+- title: Программирование REST API Каталога данных
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Создание Каталога данных — REST
+      url: /rest/api/datacatalog/get-started-creating-a-data-catalog-app
+  - linkListType: reference
+    links:
+    - text: Справочник по REST API
+      url: /rest/api/datacatalog/
+  - linkListType: how-to-guide
+    links:
+    - text: Создание приложения Каталога данных
+      url: /rest/api/datacatalog/register-a-client-app
+  - linkListType: reference
+    links:
+    - text: Справочник по синтаксису поиска
+      url: /rest/api/datacatalog/data-catalog-search-syntax-reference

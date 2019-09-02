@@ -1,55 +1,87 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Active Directory B2B
+summary: Узнайте, как с помощью функции совместной работы Azure AD B2B (бизнес-бизнес) обеспечить безопасность общего доступа к приложениям и службам вашей компании для гостевых пользователей и внешних партнеров из любой организации, контролируя при этом собственные корпоративные данные.
 metadata:
-  document_id: null
-  title: "Документация по Azure Active Directory B2B\_— Azure Active Directory\_| Документация Майкрософт"
-  description: 'Изучите наши руководства и инструкции, чтобы узнать, как использовать доступ гостевых пользователей B2B для взаимодействия и совместной работы с внешними партнерами.'
-  services: active-directory
-  ms.subservice: authentication
-  author: msmimart
-  manager: celestedg
+  title: Документация по управлению приложениями
+  description: Узнайте, как с помощью функции совместной работы Azure AD B2B (бизнес-бизнес) обеспечить безопасность общего доступа к приложениям и службам вашей компании для гостевых пользователей и внешних партнеров из любой организации, контролируя при этом собственные корпоративные данные.
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: manage-apps
+  ms.workload: identity
   ms.topic: landing-page
-  ms.date: 09/10/2018
+  ms.date: 08/27/2019
+  author: msmimart
   ms.author: mimart
-abstract:
-  description: "Узнайте, как с помощью функции совместной работы Azure AD B2B (бизнес-бизнес) обеспечить безопасность общего доступа к приложениям и службам вашей компании для гостевых пользователей и внешних партнеров из любой организации, контролируя при этом собственные корпоративные данные.  Ниже описаны некоторые основные функции:<ul><li>Простая процедура приглашения и активации позволяет гостевым пользователям начать совместную работу с ресурсами, к которым вы хотите предоставить им доступ.</li><li>Гостевые пользователи и внешние партнеры управляют своими удостоверениями с помощью Azure\_AD, учетных записей электронной почты в социальных сетях или любого поставщика удостоверений.</li><li>Вы можете защитить корпоративные ресурсы с помощью таких функций Azure\_AD, как многофакторная проверка подлинности.</li><li>Задать настройки можно с помощью API-интерфейсов, например, портала самостоятельной регистрации.</li></ul>Перечисленные ниже ресурсы помогут вам быстро приступить к работе."
-  aside:
-    image:
-      alt: "Изображение эскиза видео с именем Azure AD\_B2B (объяснение)"
-      height: 110
-      src: ./media/index/video.png
-      width: 246
-    title: "Пояснение принципов работы Azure\_AD B2B"
-    href: 'https://www.youtube.com/watch?v=AhwrweCBdsc'
-    width: 246
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как приглашать гостевых пользователей и приступить к работе с функцией совместной работы B2B.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              alt: null
-              src: ./media/index/i_security-management.png
-            text: Добавление гостевых пользователей на портале Azure
-            href: b2b-quickstart-add-guest-users-portal.md
-          - image:
-              alt: null
-              src: ./media/index/i_security-management.png
-            text: Добавление гостевого пользователя с помощью PowerShell
-            href: b2b-quickstart-invite-powershell.md
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: Ознакомьтесь с дополнительными сведениями о настройке функции совместной работы B2B и защите ресурсов компании.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/b2b/tutorial-bulk-invite">Массовое приглашение гостевых пользователей B2B с помощью PowerShell</a>
-          - html: <a href="/azure/active-directory/b2b/b2b-tutorial-require-mfa">Применение многофакторной проверки подлинности для пользователей B2B</a>
+  manager: celested
+  ms.openlocfilehash: a1822b3bd6ec7950bc3c0ab9304ea2f60a7127e4
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70125158"
+landingContent:
+- title: Совместная работа B2B
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет доступ гостевых пользователей B2B
+      url: what-is-b2b.md
+- title: Приглашение гостевых пользователей B2B
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Как гостевой пользователь B2B активирует приглашение
+      url: redemption-experience.md
+  - linkListType: quickstart
+    links:
+    - text: Добавление гостевого пользователя в каталог
+      url: b2b-quickstart-add-guest-users-portal.md
+    - text: Добавление гостевого пользователя с помощью PowerShell
+      url: b2b-quickstart-invite-powershell.md
+  - linkListType: how-to-guide
+    links:
+    - text: Как администраторы приглашают гостей
+      url: add-users-administrator.md
+    - text: Как пользователи приглашают гостей
+      url: add-users-information-worker.md
+- title: Настройка службы "Совместная работа B2B"
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Включение службы "Совместная работа B2B"
+      url: delegate-invitations.md
+  - linkListType: deploy
+    links:
+    - text: Настройка прямой федерации (предварительная версия)
+      url: direct-federation.md
+    - text: Настройка федерации Google
+      url: google-federation.md
+    - text: Настройка проверки подлинности с отправкой одноразового секретного кода (предварительная версия)
+      url: one-time-passcode.md
+  - linkListType: tutorial
+    links:
+    - text: Применение многофакторной проверки подлинности
+      url: b2b-tutorial-require-mfa.md
+  - linkListType: reference
+    links:
+    - text: Примеры кода и команд PowerShell для службы "Совместная работа B2B"
+      url: code-samples.md
+- title: Управление гостевыми пользователями
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о гостевом B2B-пользователе
+      url: user-properties.md
+    - text: Динамические группы и гостевые B2B-пользователи
+      url: use-dynamic-groups.md
+  - linkListType: how-to-guide
+    links:
+    - text: Аудит и отчеты для гостевых пользователей B2B
+      url: auditing-and-reporting.md
+    - text: Предоставление разрешений пользователям B2B
+      url: add-guest-to-role.md
+    - text: Разрешение или блокировка организаций
+      url: allow-deny-list.md
+  - linkListType: deploy
+    links:
+    - text: Настройка приложений SaaS для службы совместной работы B2B
+      url: configure-saas-apps.md

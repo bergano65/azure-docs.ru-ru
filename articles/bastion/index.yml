@@ -1,35 +1,51 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Бастиону Azure
+### YamlMime:Landing
+title: Документация по службе "Бастион Azure"
+summary: Узнайте, как подключиться к виртуальной машине с помощью Бастиона Azure. Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении с помощью Бастиона Azure виртуальным машинам не требуются общедоступные IP-адреса.
 metadata:
-  document_id: null
-  title: Бастион
-  meta.description: Learn how to use Azure Bastion
-  author: cherylmc
-  ms.service: Bastion
+  title: Документация по службе "Бастион Azure"
+  description: Узнайте, как подключиться к виртуальной машине с помощью Бастиона Azure. Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL.
+  services: bastion
+  ms.service: bastion
   ms.topic: landing-page
-  ms.date: 07/02/2019
+  author: cherylmc
   ms.author: cherylmc
-abstract:
-  description: 'Узнайте, как подключиться к виртуальной машине с помощью Бастиона Azure. Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении с помощью Бастиона Azure виртуальным машинам не требуются общедоступные IP-адреса.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: 'https://go.microsoft.com/fwlink/?linkid=2095604'
-      width: 250
-    title: 'Работа с Бастионом Azure (1:03)'
-    href: 'https://go.microsoft.com/fwlink/?linkid=2095517'
-    width: 250
-sections:
-  - title: Создание и администрирование Бастиона Azure (предварительная версия)
-    items:
-      - type: paragraph
-        text: 'Узнайте, как настроить узел Бастиона Azure и подключиться к виртуальной машине.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/bastion/bastion-create-host-portal">Создание и изменение узла Бастиона Azure</a>
-          - html: <a href="/azure/bastion/bastion-connect-vm-rdp">Подключение к виртуальной машине Windows</a>
-          - html: <a href="/azure/bastion/bastion-connect-vm-ssh">Подключение к виртуальной машине Linux</a>
-          - html: <a href="/azure/bastion/bastion-faq">Ознакомьтесь с вопросами и ответами о Бастионе Azure </a>
+  ms.date: 08/29/2019
+  ms.openlocfilehash: 6854e6ec4bd36ea38fa0e1f9cd46f95e11144be6
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70128120"
+landingContent:
+- title: Сведения о службе "Бастион Azure" (предварительная версия)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Бастион Azure
+      url: bastion-overview.md
+  - linkListType: concept
+    links:
+    - text: 'Бастион Azure: часто задаваемые вопросы'
+      url: bastion-faq.md
+- title: Начало работы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание узла-бастиона
+      url: bastion-create-host-portal.md
+    - text: Подключение к виртуальной машине (Linux)
+      url: bastion-connect-vm-ssh.md
+    - text: Подключение к виртуальной машине (Windows)
+      url: bastion-connect-vm-rdp.md
+  - linkListType: video
+    links:
+    - text: Работа со службой "Бастионом Azure"
+      url: https://go.microsoft.com/fwlink/?linkid=2095517
+- title: Работа с сеансами виртуальной машины
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Копирование и вставка
+      url: bastion-vm-copy-paste.md
+    - text: Полноэкранный режим
+      url: bastion-vm-full-screen.md

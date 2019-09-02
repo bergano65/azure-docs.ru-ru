@@ -1,63 +1,55 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Иммерсивному средству чтения
+### YamlMime:Landing
+title: Документация по иммерсивному средству чтения
+summary: Иммерсивное средство чтения — это решение, в котором реализованы проверенные методы, улучшающие понимание при чтении для начинающих, а также тех, кто изучает язык, и людей с особыми потребностями. Использовать Иммерсивное средство чтения в своем веб-приложении вы можете с помощью соответствующего пакета SDK.
 metadata:
-  title: "Документация по Иммерсивному средству чтения. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services\_| Документация Майкрософт"
-  description: 'Узнайте, как использовать Иммерсивное средство чтения в своем приложении.'
-  services: cognitive-services
-  author: metanMSFT
-  manager: nitinme
+  title: Документация по иммерсивному средству чтения
+  description: Иммерсивное средство чтения — это решение, в котором реализованы проверенные методы, улучшающие понимание при чтении для начинающих, а также тех, кто изучает язык, и людей с особыми потребностями. Использовать Иммерсивное средство чтения в своем веб-приложении вы можете с помощью соответствующего пакета SDK.
+  services: service
   ms.service: cognitive-services
   ms.subservice: immersive-reader
   ms.topic: landing-page
-  ms.date: 06/20/2019
-  ms.author: metanMSFT
-abstract:
-  description: "Иммерсивное средство чтения\_— это решение, в котором реализованы проверенные методы, улучшающие понимание при чтении для начинающих, а также тех, кто изучает язык, и людей с особыми потребностями. Использовать Иммерсивное средство чтения в своем веб-приложении вы можете с помощью соответствующего пакета SDK."
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/immersive-reader/overview
-            html: '<p>Сведения об Иммерсивном средстве чтения и о том, как интегрировать его в приложения</p>'
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что собой представляет Иммерсивное средство чтения?
-          - href: /azure/cognitive-services/immersive-reader/reference
-            html: <p>Сведения о пакете SDK Иммерсивного средства чтения для Javascript</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Использование пакета SDK Иммерсивного средства чтения
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Начало работы с Иммерсивным средством чтения:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/logo_csharp.svg
-            text: 'C#'
-            alt: 'Логотип C#'
-            href: quickstart
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как разрабатывать приложения с использованием Иммерсивного средства чтения:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="tutorial-nodejs.md">Запуск Иммерсивного средства чтения с помощью Node.js</a>
-          - html: <a href="tutorial-python.md">Запуск иммерсивного средства чтения с помощью Python</a>
-          - html: <a href="tutorial-ios-picture-immersive-reader.md">Запуск иммерсивного средства чтения с помощью Swift</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Пакеты SDK
-            html: <p><a href="reference.md">Javascript</a></p>
+  ms.collection: collection
+  author: IEvangelist
+  ms.author: dapine
+  ms.date: 08/29/2019
+  ms.openlocfilehash: 50185a0bbfc3a9677ebc90f326b0c43ab2a2eb13
+  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70164494"
+landingContent:
+- title: Об иммерсивном средстве чтения
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Иммерсивное средство чтения?
+      url: overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: ASP.NET Core
+      url: quickstart.md
+    - text: Swift (iOS)
+      url: ios-quickstart.md
+  - linkListType: tutorial
+    links:
+    - text: Node.js
+      url: tutorial-nodejs.md
+    - text: Python
+      url: tutorial-python.md
+    - text: Swift (iOS)
+      url: tutorial-ios-picture-immersive-reader.md
+- title: Сведения об иммерсивном средстве чтения
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Проверка подлинности с помощью Azure Active Directory
+      url: azure-active-directory-authentication.md
+  - linkListType: reference
+    links:
+    - text: Пакет SDK для JavaScript
+      url: reference.md
+    - text: iOS SDK
+      url: ios-reference.md

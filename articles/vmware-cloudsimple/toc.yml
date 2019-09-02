@@ -60,6 +60,8 @@
           href: access-cloudsimple-portal.md
         - name: Локальная конфигурация брандмауэра
           href: on-premises-firewall-configuration.md
+        - name: Доступ к клиенту vSphere
+          href: vcenter-access.md
         - name: Управление узлами
           items:
             - name: Подготовка узлов
@@ -94,23 +96,19 @@
               href: public-ips.md
             - name: Настройка VPN-подключений
               href: vpn-gateway.md
-            - name: Получение сведений о кэширующем узле для виртуального сетевого подключения к CloudSimple
+            - name: Подключение виртуальной сети к CloudSimple
               href: virtual-network-connection.md
-            - name: Доступ к привилегиям эскалации клиента vSphere для выполнения задач администрирования
-              href: 'https://docs.azure.cloudsimple.com/vsphere-access/'
         - name: Управление учетными записями портала CloudSimple
           items:
             - name: Просмотр сводки об учетной записи
               href: account.md
             - name: Просмотр списка пользователей
               href: users.md
-            - name: Настройка виртуального сетевого подключения к частному облаку
-              href: virtual-network-connection.md
-        - name: Настройка виртуальных машин VMware для частного облака
+        - name: Настройка виртуальных машин CloudSimple
           items:
-            - name: Создание виртуальной машины в Azure
+            - name: Создание виртуальной машины CloudSimple в Azure
               href: azure-create-vm.md
-            - name: Управление виртуальными машинами в Azure
+            - name: Управление виртуальными машинами CloudSimple в Azure
               href: azure-manage-vm.md
     - name: Руководства
       items:
@@ -126,12 +124,14 @@
               href: migration-layer-2-vpn.md
         - name: Сети для частного облака
           items:
-            - name: VPN-подключение между локальной средой и частным облаком
+            - name: VPN-подключение к частному облаку
               href: set-up-vpn.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
               href: on-premises-connection.md
             - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
               href: azure-expressroute-connection.md
+            - name: Настройка разрешения имен DNS
+              href: on-premises-dns-setup.md
         - name: Платформа VMware
           items:
             - name: Обучение модели разрешений частного облака

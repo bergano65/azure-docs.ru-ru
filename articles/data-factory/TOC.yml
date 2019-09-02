@@ -187,6 +187,8 @@
           href: iterative-development-debugging.md
     - name: Соединители
       items:
+        - name: Обзор соединителей
+          href: connector-overview.md
         - name: Веб-служба Amazon Marketplace
           href: connector-amazon-marketplace-web-service.md
         - name: Amazon Redshift
@@ -306,7 +308,7 @@
           href: connector-oracle-service-cloud.md
         - name: Формат Parquet
           href: format-parquet.md
-        - name: Paypal
+        - name: PayPal
           href: connector-paypal.md
         - name: Phoenix
           href: connector-phoenix.md
@@ -382,40 +384,40 @@
     - name: Преобразование данных
       href: transform-data.md
       items:
+        - name: Действия функции Azure
+          href: control-flow-azure-function-activity.md
+        - name: Настраиваемое действие
+          href: transform-data-using-dotnet-custom-activity.md
+        - name: Действие JAR в Databricks
+          href: transform-data-databricks-jar.md
+        - name: Действие записной книжки Databricks
+          href: transform-data-databricks-notebook.md
+        - name: Действие Python в Databricks
+          href: transform-data-databricks-python.md
+        - name: Действие U-SQL Data Lake
+          href: transform-data-using-data-lake-analytics.md
         - name: Действие Hive HDInsight
           href: transform-data-using-hadoop-hive.md
-        - name: Действие Pig HDInsight
-          href: transform-data-using-hadoop-pig.md
         - name: Действие MapReduce HDInsight
           href: transform-data-using-hadoop-map-reduce.md
-        - name: Действие потоковой передачи HDInsight
-          href: transform-data-using-hadoop-streaming.md
+        - name: Действие Pig HDInsight
+          href: transform-data-using-hadoop-pig.md
         - name: Действие HDInsight Spark
           href: transform-data-using-spark.md
+        - name: Действие потоковой передачи HDInsight
+          href: transform-data-using-hadoop-streaming.md
         - name: Действие выполнения пакета Машинного обучения
           href: transform-data-using-machine-learning.md
         - name: Действия ресурса обновления Машинного обучения
           href: update-machine-learning-models.md
         - name: Действие хранимой процедуры
           href: transform-data-using-stored-procedure.md
-        - name: Действие U-SQL Data Lake
-          href: transform-data-using-data-lake-analytics.md
-        - name: Действие записной книжки Databricks
-          href: transform-data-databricks-notebook.md
-        - name: Действие JAR в Databricks
-          href: transform-data-databricks-jar.md
-        - name: Действие Python в Databricks
-          href: transform-data-databricks-python.md
-        - name: Настраиваемое действие
-          href: transform-data-using-dotnet-custom-activity.md
         - name: Связанные службы вычислений
           href: compute-linked-services.md
     - name: Поток управления
       items:
         - name: Добавление действия переменной
           href: control-flow-append-variable-activity.md
-        - name: Действия функции Azure
-          href: control-flow-azure-function-activity.md
         - name: Выполнение действия потока данных
           href: control-flow-execute-data-flow-activity.md
         - name: Действие выполнения конвейера
@@ -584,6 +586,8 @@
       items:
         - name: Устранение неполадок с действиями
           href: data-factory-troubleshoot-guide.md
+        - name: Устранение неполадок соединителя
+          href: connector-troubleshoot-guide.md
         - name: Устранение неполадок с управлением Azure-SSIS IR
           href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"

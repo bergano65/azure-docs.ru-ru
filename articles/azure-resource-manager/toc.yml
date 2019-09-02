@@ -58,6 +58,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager'
 - name: Основные понятия
   items:
+    - name: Развертывания шаблонов
+      href: template-deployment-overview.md
     - name: Структура файла шаблона
       displayName: 'parameters,variables,resources,outputs,condition'
       href: resource-group-authoring-templates.md
@@ -83,6 +85,8 @@
   items:
     - name: Создание шаблонов
       items:
+        - name: "Средства разработки\_— VS Code"
+          href: resource-manager-tools-vs-code.md
         - name: Создание шаблона
           href: how-to-create-template.md
         - name: Имя и тип дочернего ресурса

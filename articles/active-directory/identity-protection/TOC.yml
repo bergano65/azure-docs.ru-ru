@@ -32,11 +32,11 @@
           href: howto-sign-in-risk-policy.md
         - name: Настройка политики минимизации рисков для пользователей
           href: howto-user-risk-policy.md
-        - name: Закрытие активных событий риска
+        - name: Закрытие обнаруженных активных событий риска
           href: howto-close-active-risk-events.md
         - name: Разблокировка пользователей
           href: howto-unblock-user.md
-        - name: Моделирование событий риска
+        - name: Моделирование обнаружения рисков
           href: playbook.md
         - name: Часто задаваемые вопросы
           href: faqs.md
@@ -44,11 +44,11 @@
       items:
         - name: Обзор
           href: overview-v2.md
-        - name: Обзор системы безопасности
+        - name: Общие сведения о безопасности
           href: security-overview.md
-        - name: 'Изучение действий пользователей и операций входа, которые могут представлять риск'
-          href: howto-investigate-risky-users-signins.md
-        - name: Отзыв о событиях риска
+        - name: Анализ риска
+          href: howto-investigate-risk.md
+        - name: Отзыв об обнаружении событий риска
           href: howto-provide-risk-event-feedback.md
         - name: Настройка политик риска
           href: howto-configure-risk-policies.md
@@ -58,7 +58,7 @@
   items:
     - name: Использование API Microsoft Graph
       href: graph-get-started.md
-    - name: События риска
+    - name: Обнаружение рисков
       href: risk-events-reference.md
     - name: Глоссарий
       href: glossary.md

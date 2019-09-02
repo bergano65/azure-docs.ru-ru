@@ -1,47 +1,67 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Базовая документация по Azure Active Directory
+summary: Изучите основные понятия и процессы Azure Active Directory (Azure AD), а также узнайте, как создать базовую среду, базовых пользователей и группы. Эта информация поможет вам приступить к работе.
 metadata:
-  document_id: null
   title: Базовая документация по Azure Active Directory
-  description: 'Ознакомьтесь с основными понятиями и процессами, которые используются при работе с Azure Active Directory.'
-  services: active-directory
-  ms.subservice: fundamentals
-  author: msaburnley
+  description: Изучите основные понятия и процессы Azure Active Directory (Azure AD), а также узнайте, как создать базовую среду, базовых пользователей и группы. Эта информация поможет вам приступить к работе.
   manager: daveba
-  ms.service: active-directory
-  ms.topic: landing-page
-  ms.date: 09/07/2018
   ms.author: ajburnle
-abstract:
-  description: "Изучите основные понятия и процессы Azure Active Directory (Azure\_AD), а также узнайте, как создать обычных пользователей, группы и простую среду. Эта информация поможет вам приступить к работе."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как приступить к работе с порталом Azure Active Directory.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/i_portal.png
-            text: "Вход на портал Azure\_AD для создания клиента"
-            href: active-directory-access-create-new-tenant.md
-          - image:
-              src: ./media/index/i_tasks.png
-            text: Просмотр групп и участников
-            href: active-directory-groups-view-azure-portal.md
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как выполнять основные задачи по настройке среды в Azure Active Directory.'
-      - type: list
-        style: unordered
-        items:
-          - html: "<a href=\"/azure/active-directory/fundamentals/active-directory-get-started-premium\">Регистрация для использования Azure\_AD Premium</a>"
-          - html: <a href="/azure/active-directory/fundamentals/add-custom-domain">Как добавить имя личного домена</a>
-          - html: <a href="/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal">Как создать простую группу и добавить в нее участников</a>
-          - html: <a href="/azure/active-directory/fundamentals/active-directory-accessmanagement-managing-group-owners">Как добавить владельцев группы</a>
-          - html: <a href="/azure/active-directory/fundamentals/add-users-azure-active-directory">Как добавить нового пользователя</a>
-          - html: <a href="/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal">Как назначить роли пользователям</a>
-          - html: <a href="/azure/active-directory/fundamentals/license-users-groups">Как назначить лицензии пользователям</a>
+  ms.collection: na
+  ms.date: 08/27/2019
+  ms.service: active-directory
+  ms.subservice: na
+  ms.topic: landing-page
+  services: active-directory
+  ms.openlocfilehash: c0f85c065a4334f41c7f52a05e2b885f97dde25f
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70124897"
+landingContent:
+- title: Общие сведения об Azure AD
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Active Directory
+      url: active-directory-whatis.md
+    - text: Новые возможности Azure Active Directory
+      url: whats-new.md
+  - linkListType: concept
+    links:
+    - text: Архитектура Azure AD
+      url: active-directory-architecture.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Доступ к порталу и создание клиента
+      url: active-directory-access-create-new-tenant.md
+    - text: Просмотр групп и их участников
+      url: active-directory-groups-view-azure-portal.md
+- title: Создание учетной записи Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Регистрация для работы с выпусками Azure Active Directory Premium
+      url: active-directory-get-started-premium.md
+    - text: Регистрация организации в Azure AD
+      url: sign-up-organization.md
+    - text: Добавление имени личного домена
+      url: add-custom-domain.md
+- title: Создание группы в Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание простой группы и добавление участников
+      url: active-directory-groups-create-azure-portal.md
+    - text: Добавление и удаление владельцев группы
+      url: active-directory-accessmanagement-managing-group-owners.md
+- title: Добавление пользователей и назначение им ролей и лицензий
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление или удаление пользователей
+      url: add-users-azure-active-directory.md
+    - text: Назначение лицензий пользователям
+      url: license-users-groups.md

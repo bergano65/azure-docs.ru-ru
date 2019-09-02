@@ -1,82 +1,86 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Наблюдателю за сетями
+### YamlMime:Landing
+title: Документация по Наблюдателю за сетями Azure
+summary: Сведения об использовании Наблюдателя за сетями Azure. В руководствах, примерах и документации показано, как выполнять мониторинг подключений и получать сведения о виртуальной сети Azure с помощью таких средств, как захват пакетов и журналы потоков NSG, для диагностики проблем с фильтрацией трафика и маршрутизацией.
 metadata:
-  document_id: null
-  title: "Документация по службе \"Наблюдатель за сетями\". Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
-  meta.description: 'Learn how to use Azure Network Watcher. Quickstarts, tutorials, and more, show you how to gain insight into your Azure Virtual Network with tools like packet capture and NSG flows logs, to diagnose problems with traffic filtering and routing, and to monitor connections.'
+  title: Документация по Наблюдателю за сетями Azure
+  description: Сведения об использовании Наблюдателя за сетями Azure. В руководствах, примерах и документации показано, как выполнять мониторинг подключений и получать сведения о виртуальной сети Azure с помощью таких средств, как захват пакетов и журналы потоков NSG, для диагностики проблем с фильтрацией трафика и маршрутизацией.
   services: network-watcher
-  author: KumudD
-  manager: twolley
   ms.service: network-watcher
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/24/2018
+  ms.collection: collection
+  author: KumudD
   ms.author: kumud
-abstract:
-  description: 'Сведения об использовании Наблюдателя за сетями Azure В руководствах, примерах и документации показано, как выполнять мониторинг подключений и получать сведения о виртуальной сети Azure с помощью таких средств, как захват пакетов и журналы потоков NSG, для диагностики проблем с фильтрацией трафика и маршрутизацией.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Сведения о диагностике проблем с фильтрацией входящего и исходящего трафика виртуальной машины.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/portal.svg
-            text: Портал Azure
-            href: /azure/network-watcher/diagnose-vm-network-traffic-filtering-problem
-          - image:
-              src: ./media/index/powershell.svg
-            text: Azure PowerShell
-            href: /azure/network-watcher/diagnose-vm-network-traffic-filtering-problem-powershell
-          - image:
-              src: ./media/index/cli.svg
-            text: Инфраструктура CLI Azure
-            href: /azure/network-watcher/diagnose-vm-network-traffic-filtering-problem-cli
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: Сведения о диагностике неполадок в виртуальной сети.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/network-watcher/diagnose-vm-network-routing-problem">Диагностика проблем с маршрутизацией сети виртуальной машины</a>
-          - html: <a href="/azure/network-watcher/connection-monitor">Мониторинг сетевого взаимодействия между двумя виртуальными машинами</a>
-          - html: <a href="/azure/network-watcher/diagnose-communication-problem-between-networks">Диагностика проблем с обменом данными между сетями</a>
-          - html: <a href="/azure/network-watcher/network-watcher-nsg-flow-logging-portal">Запись сетевого входящего и исходящего трафика виртуальной машины в журнал</a>
-  - title: Бесплатные видеоуроки PluralSight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Администратор Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-          - title: Архитектор решений Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-          - title: Администрирование Azure для администраторов AWS
-            href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/powershell/module/az.network/#network_watcher">PowerShell</a></p><p><a href="/cli/azure/network/watcher">Интерфейс командной строки Azure</a></p>'
-          - title: Languages
-            html: <p><a href="/dotnet/api/overview/azure/virtual-network">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p><p><a href="/javascript/api/azure-arm-network">Node.js</a></p><p><a href="/python/api/overview/azure/network">Python</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/network-watcher/">справочник по API REST</a></p>
+  ms.date: 08/29/2019
+  ms.openlocfilehash: 534da1b945b4a4463406d5b5c6277833fad35984
+  ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/30/2019
+  ms.locfileid: "70195097"
+landingContent:
+- title: Сведения о Наблюдателе за сетями
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Наблюдатель за сетями Azure
+      url: network-watcher-monitoring-overview.md
+- title: Диагностика проблем с фильтрацией трафика виртуальной машины
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Проверка потока IP-адресов
+      url: network-watcher-ip-flow-verify-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Диагностика проблем с фильтрацией трафика виртуальной машины
+      url: diagnose-vm-network-traffic-filtering-problem.md
+- title: Диагностика проблем с маршрутизацией трафика виртуальной машины
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Диагностика проблем с маршрутизацией трафика виртуальной машины со следующим прыжком
+      url: network-watcher-next-hop-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Диагностика проблем с маршрутизацией трафика виртуальной машины
+      url: diagnose-vm-network-routing-problem.md
+- title: Диагностика проблем с обменом данными с виртуальной машиной
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Диагностика проблем с исходящими подключениями виртуальной машины
+      url: network-watcher-connectivity-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Диагностика проблем с маршрутизацией трафика виртуальной машины
+      url: network-watcher-connectivity-portal.md
+    - text: Мониторинг сетевого взаимодействия между виртуальными машинами
+      url: connection-monitor.md
+- title: Запись сетевого трафика виртуальной машины в журнал
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Запись сетевого трафика виртуальной машины в журнал
+      url: network-watcher-nsg-flow-logging-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Запись сетевого трафика виртуальной машины в журнал
+      url: network-watcher-nsg-flow-logging-portal.md
+  - linkListType: tutorial
+    links:
+    - text: Настройка журналов потоков для NSG
+      url: network-watcher-nsg-flow-logging-portal.md
+    - text: Анализ журналов потоков NSG с помощью Аналитики трафика
+      url: traffic-analytics.md
+    - text: Запись сетевого трафика виртуальной машины в журнал
+      url: network-watcher-nsg-flow-logging-portal.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure PowerShell
+      url: /powershell/module/az.network/#network_watcher
+    - text: Azure CLI
+      url: /cli/azure/network/watcher
+    - text: REST
+      url: /rest/api/network-watcher/

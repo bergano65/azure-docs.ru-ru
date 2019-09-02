@@ -1,46 +1,83 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: "Документация по управлению корпоративными пользователями\_— Azure Active Directory"
+### YamlMime:Landing
+title: Документация по управлению корпоративными пользователями — Azure Active Directory
+summary: Службы управления пользователями Azure AD, такие как создание групп и назначение ролей администратора, помогают быстро справляться с основными задачами. Назначайте лицензии, предоставляйте доступ к приложениям группам или отдельным пользователям либо делегируйте разрешения на распределение задач управления удостоверениями.
 metadata:
-  document_id: null
-  title: 'Документация по пользователям, группам, ролям и лицензиям Azure Active Directory'
-  description: 'Узнайте, как управлять аутентификацией в облачных службах Azure в своем клиенте с помощью администрирования пользователей, групп, ролей и лицензий.'
+  title: Документация по пользователям, группам, ролям и лицензиям Azure Active Directory
+  description: Узнайте, как управлять аутентификацией в облачных службах Azure в своей организации с помощью пользователей, групп, ролей и лицензий.
   services: active-directory
-  ms.subservice: users-groups-roles
-  author: curtand
-  manager: mtillman
   ms.service: active-directory
+  ms.subservice: users-groups-roles
+  manager: mtillman
   ms.topic: landing-page
-  ms.date: 01/31/2019
+  ms.date: 08/28/2019
+  author: curtand
   ms.author: curtand
-abstract:
-  description: "Средства управления пользователями Azure\_AD, такие как создание групп и назначение ролей администратора, помогают быстрее справляться с основными задачами и способствуют развитию. Вы можете назначать лицензии или права доступа к приложениям SaaS группам, а не отдельным пользователям, или делегировать разрешения, чтобы распределять задачи управления удостоверениями Azure\_AD."
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как использовать средства управления в Azure Active Directory'
-      - type: list
-        style: unordered
-        items:
-          - html: "<a href=\"/azure/active-directory/fundamentals/add-users-azure-active-directory\">Добавление пользователей в Azure\_AD</a>"
-          - html: <a href="/azure/active-directory/fundamentals/license-users-groups">Назначение лицензий пользователям</a>
-          - html: "<a href=\"/azure/active-directory/fundamentals/active-directory-get-started-premium\">Регистрация для использования Azure\_AD Premium</a>"
-          - html: <a href="/azure/active-directory/users-groups-roles/groups-quickstart-expiration">Настройка срока действия для созданных пользователями групп</a>
-          - html: <a href="/azure/active-directory/users-groups-roles/groups-quickstart-naming-policy">Настройка политики именования для созданных пользователями групп</a>
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как динамически заполнять группы в Azure Active Directory'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/users-groups-roles/groups-dynamic-tutorial">Создание динамически заполняемой группы</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Ссылки для справки
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0">Командлеты Azure AD PowerShell</a></p>'
+  ms.openlocfilehash: 4689a573bf8d58aa9734af97ea66f78ab4e5707a
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70126928"
+landingContent:
+- title: Пользователи, группы, роли и лицензии
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Пользователи, группы, лицензирование и роли в крупных организациях
+      url: directory-overview-user-model.md
+    - text: Обзор настраиваемых ролей
+      url: roles-custom-overview.md
+  - linkListType: concept
+    links:
+    - text: Делегирование прав на администрирование
+      url: roles-concept-delegation.md
+    - text: Сравнение ролей RBAC Azure и ролей администраторов Azure AD
+      url: https://docs.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles?context=azure/active-directory/users-groups-roles/context/ugr-context
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Добавление пользователей
+      url: https://review.docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - text: Настройка политики истечения срока действия для групп
+      url: groups-quickstart-expiration.md
+    - text: Назначение лицензий пользователям
+      url: https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
+- title: Назначение ролей администраторов в Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Назначение ролей с помощью PowerShell
+      url: roles-assign-powershell.md
+    - text: Назначение ролей с помощью API Graph
+      url: roles-assign-graph.md
+    - text: Делегирование ролей в зависимости от задачи
+      url: roles-delegate-by-task.md
+    - text: Делегирование прав на управление приложениями
+      url: roles-delegate-app-roles.md
+- title: Назначение лицензий
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Лицензирование группы пользователей
+      url: licensing-groups-assign.md
+    - text: 'Лицензирование: примеры для PowerShell'
+      url: licensing-ps-examples.md
+- title: Управление группами
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание динамической группы
+      url: groups-create-rule.md
+    - text: Параметры групп в PowerShell
+      url: groups-settings-v2-cmdlets.md
+    - text: Настройка политики именования для групп
+      url: groups-naming-policy.md
+- title: Добавление доменов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление имени личного домена
+      url: https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - text: Управление именами личных доменов
+      url: domains-manage.md

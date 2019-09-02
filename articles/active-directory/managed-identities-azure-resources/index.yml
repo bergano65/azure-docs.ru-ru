@@ -1,73 +1,63 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
+### YamlMime:Landing
+title: Документация по использованию управляемых удостоверений для ресурсов Azure в Azure AD
+summary: Узнайте, как использовать управляемые удостоверения в Azure AD.
 metadata:
-  document_id: null
-  title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
-  description: 'Узнайте, как с помощью управляемых удостоверений для ресурсов Azure выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.'
+  title: Документация по использованию управляемых удостоверений для ресурсов Azure в Azure AD
+  description: Узнайте, как использовать управляемые удостоверения для ресурсов Azure в Azure AD.
   services: active-directory
-  ms.subservice: msi
-  author: priyamohanram
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: devices
   ms.topic: landing-page
-  ms.date: 03/16/2018
-  ms.author: priyamo
-abstract:
-  description: 'Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.  Узнайте, как создавать и администрировать управляемые удостоверения для ресурсов Azure, из наших кратких руководств и других материалов.'
-  aside:
-    image:
-      alt: null
-      height: 112
-      src: media/index/video-thumb-landing-page.png
-      width: 200
-    title: Общие сведения об управляемых удостоверениях для ресурсов Azure
-    href: 'https://www.youtube.com/embed/bBi1bll2928'
-    width: 200
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как получить доступ к API Azure Resource Manager, используя управляемые удостоверения для ресурсов Azure'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-arm">Доступ к Azure Resource Manager с виртуальной машины Azure под управлением Windows</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-arm">Доступ к Azure Resource Manager с виртуальной машины Azure под управлением Linux</a>
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как обеспечить безопасный доступ к ресурсам Azure, используя управляемые удостоверения для ресурсов Azure'
-      - type: paragraph
-        text: Виртуальные машины и масштабируемые наборы виртуальных машин Windows
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-datalake">Доступ к Azure Data Lake Store</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-storage">Доступ к службе хранилища Azure с помощью ключа доступа</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-sql">Доступ к Azure SQL</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-nonaad">Доступ к Azure Key Vault</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-access-cosmos-db">Доступ к Azure Cosmos DB</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-windows-vm-ua-arm">Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения</a>
-      - type: paragraph
-        text: Виртуальные машины и масштабируемые наборы виртуальных машин Linux
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-datalake">Доступ к Azure Data Lake Store</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-storage-access-key">Доступ к службе хранилища Azure с помощью ключа доступа</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-nonaad">Доступ к Azure Key Vault</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/tutorial-linux-vm-access-cosmos-db">Доступ к Azure Cosmos DB</a>
-          - html: <a href="/azure/active-directory/managed-service-identity/msi-tutorial-linux-vm-access-arm">Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/powershell/module/az.managedserviceidentity#managed_service_identity">Azure PowerShell</a></p><p><a href="/cli/azure/identity">Интерфейс командной строки Azure</a></p>'
-          - title: Languages
-            html: '<p><a href="/dotnet/api/microsoft.azure.management.resourcemanager.fluent.authentication">.NET</a></p><p><a href="https://github.com/Azure/azure-libraries-for-java#ready-to-run-code-samples-for-virtual-machines">Java</a></p><p><a href="/javascript/api/ms-rest-azure">Node.js</a></p><p><a href="/python/api/azure.mgmt.msi">Python</a></p></p><a href="https://rubygems.org/gems/azure_mgmt_msi">Ruby</a></p></p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/msi/mgmt/2015-08-31-preview/msi">GO</a></p>'
+  author: MarkusVi
+  ms.author: markvi
+  ms.date: 08/29/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: 2a403b66cfd1005e86f269d4affe4086564e291c
+  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70162548"
+landingContent:
+- title: Сведения об управляемых удостоверениях
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое управляемые удостоверения для ресурсов Azure?
+      url: overview.md
+- title: Настройка управляемых удостоверений в виртуальных машинах Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Портал
+      url: qs-configure-portal-windows-vmss.md
+    - text: CLI
+      url: qs-configure-cli-windows-vmss.md
+    - text: PowerShell
+      url: qs-configure-powershell-windows-vmss.md
+    - text: Шаблон Azure Resource Manager
+      url: qs-configure-template-windows-vmss.md
+    - text: REST
+      url: qs-configure-rest-vmss.md
+- title: Использование управляемых удостоверений на виртуальных машинах
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Получение маркера доступа
+      url: qs-configure-rest-vmss.md
+    - text: Вход в PowerShell и CLI
+      url: how-to-use-vm-sign-in.md
+    - text: Использование с пакетом Azure SDK
+      url: how-to-use-vm-sdk.md
+    - text: Прекращение использования расширений виртуальной машины
+      url: howto-migrate-vm-extension.md
+- title: Назначение управляемому удостоверению прав доступа к другому ресурсу Azure
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Портал
+      url: howto-assign-access-portal.md
+    - text: CLI
+      url: howto-assign-access-cli.md
+    - text: PowerShell
+      url: howto-assign-access-powershell.md

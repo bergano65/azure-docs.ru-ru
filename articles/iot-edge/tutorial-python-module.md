@@ -168,7 +168,7 @@ ms.locfileid: "68839548"
         print ( "Total calls confirmed: %d\n" % TWIN_CALLBACKS )
     ```
 
-6. В класс **HubManager** добавьте новую строку в метод ** __** для инициализации функции **module_twin_callback**, которую вы только что добавили:
+6. В класс **HubManager** добавьте новую строку в метод **__init__** для инициализации функции **module_twin_callback**, которую вы только что добавили:
 
     ```python
     # Sets the callback when a module twin's desired properties are updated.

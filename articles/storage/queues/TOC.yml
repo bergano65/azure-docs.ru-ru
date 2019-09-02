@@ -1,5 +1,5 @@
-- name: Документация по службе хранилища Azure
-  href: /azure/storage/
+- name: Документация по хранилищу очередей Azure
+  href: /azure/storage/queues/
 - name: Обзор
   expanded: true
   items:

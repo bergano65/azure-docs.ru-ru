@@ -156,6 +156,9 @@
     - name: Обновление существующих назначений с помощью портала
       displayName: 'lock, errors'
       href: ./how-to/update-existing-assignments.md
+    - name: Настройка среды для роли "Оператор схем"
+      displayName: 'rbac, user-assigned, managed, identity, management group'
+      href: ./how-to/configure-for-blueprint-operator.md
     - name: Управление схемами как кодом (сообщество)
       href: 'https://github.com/Azure/azure-blueprints/blob/master/README.md'
 - name: Устранение неполадок

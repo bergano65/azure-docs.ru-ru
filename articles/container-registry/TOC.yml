@@ -59,6 +59,8 @@
       items:
         - name: Передача и получение образа
           href: container-registry-get-started-docker-cli.md
+        - name: Отправка и извлечение артефакта OCI
+          href: container-registry-oci-artifacts.md
         - name: Просмотр списка репозиториев
           href: container-registry-repositories.md
         - name: Импорт образов контейнеров

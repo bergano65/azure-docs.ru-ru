@@ -1,94 +1,65 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure DNS
+summary: Сведения об использовании Azure DNS. В руководствах, справочниках, примерах и другой документации показано, как настраивать и администрировать зоны и записи DNS для доменных имен.
 metadata:
   title: Документация по Azure DNS
-  meta.description: Learn how to manage your DNS records using Azure Domain Name System. Documentation shows how to set up and manage DNS zones and records for domain names.
+  description: Сведения об использовании Azure DNS. В руководствах, справочниках, примерах и другой документации показано, как настраивать и администрировать зоны и записи DNS для доменных имен.
   services: dns
-  author: KumudD
-  manager: jeconnoc
-  layout: LandingPage
-  ms.assetid: na
   ms.service: dns
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 6/13/2018
-  ms.author: kumud
-abstract:
-  description: 'Сведения об использовании Azure DNS. В руководствах, справочниках, примерах и другой документации показано, как настраивать и администрировать зоны и записи DNS для доменных имен.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Сведения о создании зон и записей DNS для доменных имен.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Портал Azure
-            href: /azure/dns/dns-getstarted-portal
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: Azure PowerShell
-            href: /azure/dns/dns-getstarted-powershell
-          - image:
-              src: 'https://docs.microsoft.com/media/common/cli.svg'
-            text: Инфраструктура CLI Azure
-            href: /azure/dns/dns-getstarted-cli
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Инструкции по размещению домена в Azure DNS, созданию пользовательских записей DNS для веб-приложения с помощью Azure DNS, а также частной зоны и записей DNS.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/dns/dns-delegate-domain-azure-dns">Размещение домена в Azure DNS</a>
-          - html: <a href="/azure/dns/dns-web-sites-custom-domain">Создание пользовательских записей DNS для веб-приложения</a>
-          - html: <a href="/azure/dns/private-dns-getstarted-powershell">Создание частной зоны и записи DNS</a>
-          - html: <a href="/azure/dns/tutorial-alias-pip">Настройка записи псевдонима для ссылки на общедоступный IP-адрес Azure</a>
-          - html: <a href="/azure/dns/tutorial-alias-tm">Настройка записи псевдонима для поддержки доменных имен Apex с помощью диспетчера трафика</a>
-          - html: <a href="/azure/dns/tutorial-alias-rr">Настройка записи псевдонима для записей зоны</a>
-  - title: Бесплатные видеоуроки PluralSight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Администратор Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-          - title: Архитектор решений Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-          - title: Администрирование Azure для администраторов AWS
-            href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Примеры скриптов для выполнения стандартных задач.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/dns/cli-samples">Интерфейс командной строки Azure</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/module/az.dns">PowerShell</a></p><p><a href="/cli/azure/network/traffic-manager">Интерфейс командной строки Azure</a></p>
-          - title: Languages
-            html: '<p><a href="/dotnet/api/microsoft.azure.management.dns.models">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.dns">Java</a></p><p><a href="https://azure.github.io/azure-sdk-for-node/azure-arm-dns/latest/">Node.js</a></p><p><a href="https://www.rubydoc.info/gems/azure_mgmt_dns/0.8.0">Ruby</a></p><p><a href="https://docs.microsoft.com/python/api/azure.mgmt.dns">Python</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/dns/">справочник по API REST</a></p>
+  author: vhorne
+  ms.author: victorh
+  ms.date: 08/29/2019
+  ms.openlocfilehash: be93b43a72d8a9b33b75abafe15abf65ab8fb58a
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70126037"
+landingContent:
+- title: Сведения об Azure DNS
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure DNS?
+      url: dns-overview.md
+- title: Создание зоны и записи Azure DNS
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Создание зоны и записи Azure DNS с помощью портала Azure
+      url: dns-getstarted-portal.md
+  - linkListType: tutorial
+    links:
+    - text: Размещение домена в Azure DNS
+      url: dns-delegate-domain-azure-dns.md
+- title: Развертывание частной зоны DNS
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Частная зона DNS
+      url: private-dns-overview.md
+  - linkListType: concept
+    links:
+    - text: Сценарии применения частных зон DNS Azure
+      url: private-dns-scenarios.md
+    - text: 'Частная зона DNS: часто задаваемые вопросы'
+      url: dns-faq-private.md
+  - linkListType: tutorial
+    links:
+    - text: созданию частной зоны Azure DNS с помощью портала Azure
+      url: private-dns-portal.md
+- title: Использование записей псевдонимов
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор записей псевдонимов Azure DNS
+      url: dns-alias.md
+  - linkListType: tutorial
+    links:
+    - text: Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика
+      url: tutorial-alias-tm.md
+    - text: записи псевдонима для ссылки на общедоступный IP-адрес Azure
+      url: tutorial-alias-pip.md
+    - text: Создание записи псевдонима для ссылки на запись ресурса в зоне
+      url: tutorial-alias-rr.md

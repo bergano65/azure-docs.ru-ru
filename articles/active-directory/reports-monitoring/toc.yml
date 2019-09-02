@@ -37,10 +37,12 @@
       href: concept-usage-insights-report.md
     - name: 'Вход, представляющий риск'
       href: concept-risky-sign-ins.md
-    - name: События риска
+    - name: Обнаружение рисков
       href: concept-risk-events.md
     - name: 'Пользователи, подверженные риску'
       href: concept-user-at-risk.md
+    - name: Подготовка журналов
+      href: concept-provisioning-logs.md
     - name: API отчетов
       href: concept-reporting-api.md
     - name: "Журналы Azure\_AD в Azure Monitor"

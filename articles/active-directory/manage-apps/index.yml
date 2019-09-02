@@ -1,51 +1,95 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по управлению приложениями
+summary: Azure Active Directory предоставляет простой и безопасный доступ к облачным и локальным приложениям. Кроме того, вам не нужно управлять паролями. Конечные пользователи входят в систему только один раз и получают доступ к Office 365 и тысячам других приложений. Узнайте, как развертывать приложения и управлять ими с помощью наших кратких инструкций, руководств и пособий.
 metadata:
-  title: "Документация по управлению приложениями Azure\_AD\_— Azure Active Directory"
-  description: 'Узнайте, как администрировать и развертывать приложения с помощью Azure Active Directory.'
-  services: active-directory
-  author: barbkess
-  manager: daveba
-  layout: LandingPage
-  ms.assetid: null
+  title: Документация по управлению приложениями
+  description: Azure Active Directory предоставляет простой и безопасный доступ к облачным и локальным приложениям. Кроме того, вам не нужно управлять паролями. Конечные пользователи входят в систему только один раз и получают доступ к Office 365 и тысячам других приложений. Узнайте, как развертывать приложения и управлять ими с помощью наших кратких инструкций, руководств и пособий.
   ms.service: active-directory
+  ms.subservice: manage-apps
+  ms.workload: identity
   ms.topic: landing-page
-  ms.date: 09/14/2018
-  ms.author: barbkess
-abstract:
-  description: "Azure Active Directory предоставляет простой и безопасный доступ к облачным и локальным приложениям. Кроме того, вам не нужно управлять паролями. Конечные пользователи входят в систему только один раз и получают доступ к Office\_365 и тысячам других приложений. Узнайте, как развертывать приложения и управлять ими с помощью наших кратких инструкций, руководств и пособий."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video.png
-      width: 250
-    title: "Защита доступа к приложениям с помощью Azure\_AD (1:47)"
-    href: 'https://youtu.be/BSUuXXcJKCk/'
-    width: 250
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как добавить приложения, чтобы пользователи могли получить к ним доступ через Azure Active Directory.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_protect.svg'
-            text: Добавление приложения
-            href: 'https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal'
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_protect.svg'
-            text: Просмотр приложений
-            href: 'https://docs.microsoft.com/azure/active-directory/manage-apps/view-applications-portal'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как включить простой и безопасный вход в систему для ваших приложений.'
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://docs.microsoft.com/azure/active-directory/saas-apps/">Руководства по приложениям SaaS</a>'
-          - html: <a href="/azure/active-directory/manage-apps/application-proxy-add-on-premises-application">Добавление локального приложения через AD Application Proxy</a>
+  ms.date: 08/16/2019
+  author: msmimart
+  ms.author: mimart
+  manager: celested
+  ms.openlocfilehash: acb99eab233836f46c1e1dfe4c857fb2e80ed3de
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70127545"
+landingContent:
+- title: Сведения об управлении приложениями
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое управление приложениями?
+      url: what-is-application-management.md
+- title: Управление облачными приложениями и единый вход
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о едином входе
+      url: what-is-single-sign-on.md
+    - text: Возможности для пользователей
+      url: end-user-experiences.md
+  - linkListType: quickstart
+    links:
+    - text: Добавление приложения из коллекции
+      url: add-application-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Добавление приложения не из коллекции
+      url: add-non-gallery-app.md
+    - text: Настройка единого входа
+      url: configure-single-sign-on-non-gallery-applications.md
+    - text: Назначение приложению пользователя или группы
+      url: assign-user-or-group-access-portal.md
+- title: Подготовка пользователей и групп к работе с приложением
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет автоматическая подготовка пользователей?
+      url: user-provisioning.md
+  - linkListType: concept
+    links:
+    - text: Использование SCIM для подготовки пользователей и групп
+      url: use-scim-to-provision-users-and-groups.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка автоматической подготовки пользователей
+      url: configure-automatic-user-provisioning-portal.md
+    - text: Настройка сопоставлений атрибутов
+      url: customize-application-attributes.md
+    - text: Проверка состояния подготовки
+      url: application-provisioning-when-will-provisioning-finish-specific-user.md
+  - linkListType: reference
+    links:
+    - text: Написание выражений для сопоставления атрибутов
+      url: functions-for-customizing-application-data.md
+- title: Публикация локальных приложений с помощью Application Proxy
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Application Proxy?
+      url: what-is-application-proxy.md
+  - linkListType: concept
+    links:
+    - text: Планирование использования функции Application Proxy
+      url: application-proxy-deployment-plan.md
+  - linkListType: tutorial
+    links:
+    - text: Добавление локального приложения
+      url: application-proxy-add-on-premises-application.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка соединителей с помощью прокси-серверов
+      url: application-proxy-configure-connectors-with-proxy-servers.md
+    - text: Настройка пользовательской домашней страницы
+      url: application-proxy-configure-custom-home-page.md
+  - linkListType: deploy
+    links:
+    - text: Публикация удаленного рабочего стола с помощью Application Proxy
+      url: application-proxy-integrate-with-remote-desktop-services.md
+    - text: Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
+      url: application-proxy-integrate-with-sharepoint-server.md

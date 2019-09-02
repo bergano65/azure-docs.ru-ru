@@ -8,7 +8,9 @@
   items:
     - name: Создание базы знаний
       href: How-To/create-knowledge-base.md
-    - name: Получение ответов из базы знаний
+    - name: Добавление вопросов с использованием метаданных
+      href: quickstarts/add-question-metadata-portal.md
+    - name: Получение ответов
       items:
         - name: Использование Postman
           href: Quickstarts/get-answer-from-kb-using-postman.md
@@ -40,7 +42,7 @@
               href: 'Quickstarts/create-knowledge-rest-api-nodejs.md##publish-a-knowledge-base'
             - name: Python
               href: Quickstarts/publish-kb-python.md
-        - name: Получение ответов из базы знаний
+        - name: Получение ответов
           items:
             - name: 'C#'
               href: Quickstarts/get-answer-from-knowledge-base-csharp.md
@@ -125,20 +127,15 @@
           displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
     - name: Управление службой
       items:
-        - name: Настройка службы QnA Maker
+        - name: Управление ресурсами
           href: How-To/set-up-qnamaker-service-azure.md
-        - name: Получение аналитических данных о базе знаний
+          displayName: 'azure, resource, key, upgrade, pricing, tier,'
+        - name: Получение аналитики
           href: How-To/get-analytics-knowledge-base.md
-        - name: Управление ключами
-          href: How-To/key-management.md
-        - name: Выбор ресурсов для развертывания QnA Maker
+        - name: Выбор емкости
           href: Tutorials/choosing-capacity-qnamaker-deployment.md
-        - name: Обновление службы QnA Maker
-          href: How-To/upgrade-qnamaker-service.md
-        - name: Создание плана по обеспечению непрерывности бизнеса для QnA Maker
+        - name: Создание плана обеспечения непрерывности бизнес-процессов
           href: How-To/business-continuity-plan.md
-        - name: Устранение неполадок и обновление среды выполнения QnA Maker
-          href: How-To/troubleshooting-runtime.md
     - name: Использование REST API
       items:
         - name: 'C#'

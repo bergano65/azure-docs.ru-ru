@@ -1,0 +1,244 @@
+### YamlMime:Hub
+title: Документация по системе безопасности Azure
+summary: Средства безопасности интегрированы в каждое решение Azure. Azure предлагает уникальную систему защиты на основе глобальной службы безопасности, сложных элементов управления для клиентов и безопасной защищенной инфраструктуры. Это мощное сочетание помогает защитить приложения и данные, а также обеспечивает соответствие требованиям и экономичную защиту для организаций любых размеров.
+brand: azure
+metadata:
+  title: Документация по системе безопасности Azure
+  description: Средства безопасности интегрированы в каждое решение Azure. Azure предлагает уникальную систему защиты на основе глобальной службы безопасности, сложных элементов управления для клиентов и безопасной защищенной инфраструктуры. Это мощное сочетание помогает защитить приложения и данные, а также обеспечивает соответствие требованиям и экономичную защиту для организаций любых размеров.
+  services: security
+  ms.service: security
+  ms.subservice: na
+  ms.topic: hub-page
+  ms.collection: na
+  author: TerryLanfear
+  ms.author: terrylan
+  manager: rkarlin
+  ms.date: 08/29/2019
+  ms.openlocfilehash: 2b33bd8b2b4e2338884993ec76feb8027c8753d4
+  ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70148886"
+highlightedContent:
+  items:
+  - title: Введение в систему безопасности Azure
+    itemType: overview
+    url: ./fundamentals/overview.md
+  - title: Рекомендации по безопасности и шаблоны
+    itemType: concept
+    url: ./fundamentals/best-practices-and-patterns.md
+  - title: Что такое Центр безопасности Azure?
+    itemType: overview
+    url: ../security-center/security-center-intro.md
+conceptualContent:
+  items:
+  - title: Основные сведения
+    links:
+    - url: ./fundamentals/technical-capabilities.md
+      itemType: overview
+      text: Технические возможности обеспечения безопасности Azure
+    - url: https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91
+      itemType: concept
+      text: Общие обязанности для облачных вычислений
+    - url: ./fundamentals/common-security-attributes.md
+      itemType: concept
+      text: Средства управления безопасностью для служб Azure
+    footerLink:
+      url: ./fundamentals/index.md
+      text: Дополнительные сведения
+  - title: Разработчики
+    links:
+    - url: ./develop/secure-dev-overview.md
+      itemType: overview
+      text: Рекомендации по безопасной разработке
+    - url: ./develop/secure-web-app.md
+      itemType: tutorial
+      text: Разработка безопасного веб-приложения
+    - url: ./develop/threat-modeling-tool.md
+      itemType: concept
+      text: Microsoft Threat Modeling Tool
+    footerLink:
+      url: ./develop/index.yml
+      text: Дополнительные сведения
+  - title: Тесты производительности и рекомендации
+    links:
+    - url: https://azure.microsoft.com/resources/azure-cloud-security-benchmark-draft/
+      itemType: download
+      text: Тестирование безопасности в облаке Azure
+    - url: ../security-center/security-center-using-recommendations.md
+      itemType: overview
+      text: Рекомендации Центра безопасности Azure
+  - title: Секреты и ключи
+    links:
+    - url: ../key-vault/key-vault-overview.md
+      itemType: overview
+      text: Что такое хранилище ключей Azure?
+    - url: ../key-vault/quick-create-cli.md
+      itemType: quickstart
+      text: Настройка и получение секрета
+    - url: ../dedicated-hsm/overview.md
+      itemType: overview
+      text: Что такое служба выделенных устройств HSM Azure?
+    footerLink:
+      url: /azure/key-vault/
+      text: Дополнительные сведения
+  - title: Защита данных
+    links:
+    - url: ./fundamentals/encryption-atrest.md
+      itemType: concept
+      text: Шифрование неактивных данных
+    - url: ./fundamentals/data-encryption-best-practices.md
+      itemType: concept
+      text: Рекомендации по шифрованию и обеспечению защиты данных
+    - url: ../storage/common/storage-security-guide.md
+      itemType: concept
+      text: Безопасность хранилищ
+    footerLink:
+      url: azure-security-disk-encryption-overview.md
+      text: Дополнительные сведения
+  - title: Управление удостоверениями
+    links:
+    - url: ./fundamentals/choose-ad-authn.md
+      itemType: concept
+      text: Выбор правильного метода проверки подлинности
+    - url: ./fundamentals/steps-secure-identity.md
+      itemType: concept
+      text: Защита инфраструктуры удостоверений
+    - url: ./fundamentals/identity-management-best-practices.md
+      itemType: concept
+      text: Рекомендации по обеспечению безопасности
+    footerLink:
+      url: ./fundamentals/identity-management-overview.md
+      text: Дополнительные сведения
+  - title: Мониторинг безопасности
+    links:
+    - url: ../security-center/security-center-get-started.md
+      itemType: quickstart
+      text: Подключение подписки к Центру безопасности
+    - url: ../security-center/security-center-just-in-time.md
+      itemType: how-to-guide
+      text: JIT-доступ к виртуальным машинам
+    - url: ../security-center/tutorial-security-policy.md
+      itemType: how-to-guide
+      text: Использование политик безопасности
+    footerLink:
+      url: /azure/security-center/
+      text: Дополнительные сведения
+  - title: Мониторинг безопасности Интернета вещей
+    links:
+    - url: ../asc-for-iot/overview.md
+      itemType: overview
+      text: Общие сведения о центре безопасности Azure для Интернета вещей
+    - url: ../asc-for-iot/architecture.md
+      itemType: how-to-guide
+      text: Архитектура Центра безопасности Azure для Интернета вещей
+    - url: ../asc-for-iot/getting-started.md
+      itemType: how-to-guide
+      text: Начало работы с Центром безопасности Azure для Интернета вещей
+    footerLink:
+      url: /azure/asc-for-iot/
+      text: Дополнительные сведения
+  - title: Аналитика безопасности
+    links:
+    - url: ../sentinel/overview.md
+      itemType: overview
+      text: Что такое предварительная версия Azure Sentinel?
+    - url: ../sentinel/quickstart-onboard.md
+      itemType: quickstart
+      text: Подключение предварительной версии Azure Sentinel
+    - url: ../sentinel/quickstart-get-visibility.md
+      itemType: quickstart
+      text: Начало работы с предварительной версией Azure Sentinel
+    footerLink:
+      url: /azure/sentinel/
+      text: Дополнительные сведения
+  - title: Защита от угроз
+    links:
+    - url: ../security-center/security-center-alerts-overview.md
+      itemType: concept
+      text: Оповещения безопасности в Центре безопасности Azure
+    - url: ../storage/common/storage-advanced-threat-protection.md
+      itemType: concept
+      text: Расширенная защита от угроз для службы хранилища Azure
+    - url: ../sql-database/sql-database-threat-detection-overview.md
+      itemType: concept
+      text: Расширенная защита от угроз для Базы данных SQL Azure
+    footerLink:
+      url: ./fundamentals/threat-detection.md
+      text: Дополнительные сведения
+  - title: Ведение журналов и аудит
+    links:
+    - url: ./fundamentals/log-audit.md
+      itemType: concept
+      text: Ведение журналов и аудит в Azure
+    - url: ./fundamentals/management-monitoring-overview.md
+      itemType: overview
+      text: Общие сведения об управлении и мониторинге
+    - url: ./fundamentals/azure-log-integration-overview.md
+      itemType: overview
+      text: Общие сведения о службе "Интеграция журналов данных Azure"
+    footerLink:
+      url: https://docs.microsoft.com/search/?search=security+audit+log&scope=azure&category=Documentation
+      text: Поиск дополнительных данных
+  - title: Безопасность сети
+    links:
+    - url: ./fundamentals/network-overview.md
+      itemType: overview
+      text: Общие сведения о безопасности
+    - url: ./fundamentals/network-best-practices.md
+      itemType: concept
+      text: Рекомендации по обеспечению безопасности
+    - url: ./fundamentals/ddos-best-practices.md
+      itemType: concept
+      text: Защита от атак DDoS
+  - title: Безопасность инфраструктуры
+    links:
+    - url: ./fundamentals/physical-security.md
+      itemType: concept
+      text: Объекты, локальная среда и физическая безопасность в Azure
+    - url: ./fundamentals/infrastructure-network.md
+      itemType: concept
+      text: Сетевая архитектура
+    - url: ./fundamentals/protection-customer-data.md
+      itemType: concept
+      text: Защита данных клиентов
+    footerLink:
+      url: ./fundamentals/infrastructure.md
+      text: Дополнительные сведения
+  - title: Безопасность виртуальных машин
+    links:
+    - url: ./fundamentals/virtual-machines-overview.md
+      itemType: overview
+      text: Общие сведения о безопасности
+    - url: ./fundamentals/iaas.md
+      itemType: concept
+      text: Рекомендации для рабочих нагрузок IaaS
+    - url: ./fundamentals/azure-marketplace-images.md
+      itemType: concept
+      text: Рекомендации по конфигурации системы безопасности
+  - title: Безопасность базы данных
+    links:
+    - url: ./fundamentals/database-security-overview.md
+      itemType: overview
+      text: Общие сведения о безопасности
+    - url: ./fundamentals/database-best-practices.md
+      itemType: concept
+      text: Рекомендации по обеспечению безопасности
+    - url: ./fundamentals/database-security-checklist.md
+      itemType: concept
+      text: Контрольный список по безопасности
+  - title: Система управления и соответствие требованиям
+    links:
+    - url: ./blueprints/au-protected-iaaswa-overview.md
+      itemType: tutorial
+      text: Решения для обеспечения соответствия
+    - url: ../governance/policy/overview.md
+      itemType: overview
+      text: Служба "Политика Azure".
+    - url: ../governance/blueprints/overview.md
+      itemType: overview
+      text: Служба Azure Blueprints
+    footerLink:
+      url: /azure/governance/
+      text: Дополнительные сведения

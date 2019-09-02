@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: Документация по хранилищу очередей Azure — служба хранилища Azure
+summary: Хранилище очередей Azure — это служба для хранения большого количества сообщений. Доступ к сообщениям возможен из любой точки мира по протоколу HTTP или HTTPS.
+metadata:
+  title: Документация по хранилищу очередей Azure — служба хранилища Azure
+  description: Хранилище очередей Azure — это служба для хранения большого количества сообщений. Доступ к сообщениям возможен из любой точки мира по протоколу HTTP или HTTPS.
+  services: storage
+  ms.service: storage
+  ms.subservice: queues
+  ms.topic: landing-page
+  ms.collection: collection
+  author: mhopkins-msft
+  ms.author: mhopkins
+  ms.date: 08/27/2019
+  ms.openlocfilehash: 5de22a49dcc985ca95ee97d9de77180e2c56765b
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70129420"
+landingContent:
+- title: Очереди Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое очереди Azure?
+      url: storage-queues-introduction.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание очереди и добавление сообщения в нее с помощью портала Azure
+      url: storage-quickstart-queues-portal.md
+    - text: Использование .NET для создания очереди в службе хранилища Azure
+      url: storage-quickstart-queues-dotnet.md
+- title: Разработка с использованием очередей
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Приступая к работе с хранилищем очередей Azure с помощью .NET
+      url: storage-dotnet-how-to-use-queues.md
+    - text: Использование хранилища очередей из Java
+      url: storage-java-how-to-use-queue-storage.md
+    - text: Использование хранилища очередей из Node.js
+      url: storage-nodejs-how-to-use-queues.md
+    - text: Использование хранилища очередей из C++
+      url: storage-c-plus-plus-how-to-use-queues.md
+    - text: Использование хранилища очередей из Python
+      url: storage-python-how-to-use-queue-storage.md
+- title: Управление очередями
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
+      url: storage-powershell-how-to-use-queues.md
+- title: Учебник
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Работа с очередями службы хранилища Azure (.NET)
+      url: storage-tutorial-queues.md

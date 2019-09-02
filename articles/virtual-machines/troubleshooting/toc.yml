@@ -96,20 +96,27 @@
   href: reset-network-interface.md
 - name: Перезапуск или изменение размера виртуальной машины
   href: restart-resize-error-troubleshooting.md
-- name: Использование последовательной консоли
+- name: Серийная консоль
+  href: serial-console-overview.md
   items:
-    - name: Виртуальная машина Linux
+    - name: Последовательная консоль для Linux
       href: serial-console-linux.md
       items:
         - name: Загрузчик GRUB в последовательной консоли / Однопользовательский режим
           href: serial-console-grub-single-user-mode.md
         - name: Немаскируемое прерывание в последовательной консоли / SysRq
           href: serial-console-nmi-sysrq.md
-    - name: Виртуальная машина Windows
+    - name: Последовательная консоль для Windows
       href: serial-console-windows.md
       items:
         - name: CMD и команды PowerShell
           href: serial-console-cmd-ps-commands.md
+    - name: Включение и отключение последовательной консоли
+      href: serial-console-enable-disable.md
+    - name: Параметры электропитания в последовательной консоли
+      href: serial-console-power-options.md
+    - name: Распространенные ошибки последовательностей консоли
+      href: serial-console-errors.md
 - name: Ошибки при удалении ресурсов хранилища
   href: storage-resource-deletion-errors.md
 - name: Ошибки при удалении ресурсов классического хранилища
@@ -153,6 +160,8 @@
 - name: Ошибки при загрузке
   href: boot-error-troubleshoot.md
   items:
+    - name: Ошибка загрузки виртуальной машины Azure
+      href: troubleshoot-vm-boot-error.md
     - name: Диагностика загрузки
       href: boot-diagnostics.md
     - name: Ошибки BitLocker

@@ -1,105 +1,172 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по виртуальной сети
+summary: Сведения об использовании виртуальной сети Azure. В этих кратких инструкциях, руководствах, примерах и других материалах объясняется, как развернуть виртуальную сеть, как управлять фильтрацией и маршрутизацией трафика и как подключить виртуальную сеть к другим виртуальным сетям.
 metadata:
-  document_id: 44409b3f-ab8c-053d-cdf4-5d7e823a275f
-  title: "Документация по виртуальной сети Microsoft Azure. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
-  meta.description: 'Learn how to use Azure Virtual Network. Quickstarts, tutorials, samples, and more, show you how to deploy a virtual network, control traffic filtering and routing, and connect a virtual network to other virtual networks.'
+  title: Документация по виртуальной сети Azure. Учебные материалы, краткие руководства и справочники по API
+  description: Сведения об использовании виртуальной сети Azure. В этих кратких инструкциях, руководствах, примерах и других материалах объясняется, как развернуть виртуальную сеть, как управлять фильтрацией и маршрутизацией трафика и как подключить виртуальную сеть к другим виртуальным сетям.
   services: virtual-network
-  author: KumudD
-  manager: twooley
   ms.service: virtual-network
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 03/23/2018
+  ms.collection: collection
+  author: KumudD
   ms.author: kumud
-abstract:
-  description: 'Сведения об использовании виртуальной сети Azure. В этих кратких инструкциях, руководствах, примерах и других материалах объясняется, как развернуть виртуальную сеть, как управлять фильтрацией и маршрутизацией трафика и как подключить виртуальную сеть к другим виртуальным сетям.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Сведения о создании виртуальной сети, развертывании в ней виртуальных машин и обмене данными между виртуальными машинами и Интернетом.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-network/media/index/portal.svg'
-            text: Портал Azure
-            href: /azure/virtual-network/quick-create-portal
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-network/media/index/powershell.svg'
-            text: Azure PowerShell
-            href: /azure/virtual-network/quick-create-powershell
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-network/media/index/cli.svg'
-            text: Инфраструктура CLI Azure
-            href: /azure/virtual-network/quick-create-cli
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Сведения о создании и подключении виртуальных сетей, а также об управлении маршрутизацией и фильтрацией.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/virtual-network/tutorial-filter-network-traffic">Фильтрация сетевого трафика</a>
-          - html: <a href="/azure/virtual-network/tutorial-create-route-table-portal">Маршрутизация сетевого трафика</a>
-          - html: <a href="/azure/virtual-network/tutorial-restrict-network-access-to-resources">Ограничение сетевого доступа к ресурсам</a>
-          - html: <a href="/azure/virtual-network/tutorial-connect-virtual-networks-portal">Подключение виртуальных сетей</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: "\_Общие сведения о сетевых возможностях Azure"
-            href: /learn/modules/intro-to-azure-networking/
-            image:
-              src: /learn/achievements/intro-to-azure-networking.svg
-              href: /learn/modules/intro-to-azure-networking/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Администратор Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-          - title: Архитектор решений Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-          - title: Администрирование Azure для администраторов AWS
-            href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Примеры скриптов для выполнения стандартных задач.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/virtual-network/cli-samples">Интерфейс командной строки Azure</a>
-          - html: <a href="/azure/virtual-network/powershell-samples">PowerShell</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/powershell/module/az.network#networking">PowerShell</a></p><p><a href="/cli/azure/network">Интерфейс командной строки Azure</a></p>'
-          - title: Languages
-            html: <p><a href="/dotnet/api/overview/azure/virtual-network">.NET</a></p><p><a href="/java/api/overview/azure/network">Java</a></p><p><a href="/javascript/api/overview/azure/virtual-network">Node.js</a></p><p><a href="/python/api/overview/azure/network">Python</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/virtual-network/">справочник по API REST</a></p>
+  ms.date: 08/28/2019
+  ms.openlocfilehash: f96f011eedc297b3f48d8b8dda177198809bb564
+  ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70142946"
+landingContent:
+- title: Сведения о виртуальной сети
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое виртуальная сеть Azure?
+      url: virtual-networks-overview.md
+  - linkListType: concept
+    links:
+    - text: 'Виртуальная сеть: часто задаваемые вопросы'
+      url: virtual-networks-overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание виртуальной сети
+      url: quick-create-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание, изменение или удаление виртуальной сети
+      url: manage-virtual-network.md
+    - text: Добавление, изменение и удаление подсети
+      url: virtual-network-manage-subnet.md
+- title: защищают сетевой трафик;
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Группы безопасности сети
+      url: security-overview.md
+    - text: Группы безопасности приложений
+      url: security-overview.md#application-security-groups
+    - text: Конечные точки службы для виртуальной сети
+      url: virtual-network-service-endpoints-overview.md
+    - text: 'Безопасность виртуальной сети: часто задаваемые вопросы'
+      url: virtual-networks-faq.md#security
+  - linkListType: tutorial
+    links:
+    - text: Фильтрация сетевого трафика с помощью групп безопасности сети
+      url: tutorial-filter-network-traffic.md
+    - text: Ограничение доступа к сети с помощью конечных точек службы
+      url: tutorial-restrict-network-access-to-resources.md
+    - text: Работа с группами безопасности приложений
+      url: manage-network-security-group.md#work-with-application-security-groups
+  - linkListType: learn
+    links:
+    - text: Защита и изоляция доступа к ресурсам Azure
+      url: https://docs.microsoft.com/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
+- title: Подключение виртуальных сетей
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Пиринг между виртуальными сетями
+      url: virtual-network-peering-overview.md
+    - text: 'Пиринг между виртуальными сетями: часто задаваемые вопросы'
+      url: virtual-networks-faq.md#vnet-peering
+  - linkListType: tutorial
+    links:
+    - text: Подключение виртуальных сетей с помощью пиринговой связи
+      url: tutorial-connect-virtual-networks-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Одна модель развертывания — одна подписка
+      url: tutorial-connect-virtual-networks-powershell.md
+    - text: Одна модель развертывания — разные подписки
+      url: create-peering-different-subscriptions.md
+    - text: Разные модели развертывания — одна подписка
+      url: create-peering-different-deployment-models.md
+    - text: Разные модели развертывания — разные подписки
+      url: create-peering-different-deployment-models-subscriptions.md
+  - linkListType: learn
+    links:
+    - text: Обмен данными между виртуальными сетями с помощью пиринга
+      url: https://docs.microsoft.com/learn/modules/integrate-vnets-with-vnet-peering
+- title: Маршрутизация сетевого трафика
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Маршрутизация сетевого трафика с помощью таблиц маршрутов
+      url: virtual-networks-udr-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Маршрутизация сетевого трафика — портал
+      url: tutorial-create-route-table-portal.md
+- title: Создание IP-адресов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Типы IP-адресов и методы их распределения
+      url: virtual-network-ip-addresses-overview-arm.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание, изменение и удаление общедоступного IP-адреса
+      url: virtual-network-public-ip-address.md
+    - text: Добавление общедоступного IP-адреса для виртуальной машины
+      url: associate-public-ip-address-vm.md
+    - text: Создание виртуальной машины со статическим IP-адресом
+      url: virtual-network-deploy-static-pip-arm-portal.md
+    - text: Настройка статического частного IP-адреса для виртуальной машины
+      url: virtual-networks-static-private-ip-arm-pportal.md
+    - text: Назначение виртуальной машине нескольких IP-адресов
+      url: virtual-network-multiple-ip-addresses-powershell.md
+- title: Создание IPv6 для виртуальных сетей
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое IPv6 для виртуальной сети Azure?
+      url: ipv6-overview.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание приложения с двойным стеком IPV6 — Load Balancer (цен. категория "Стандартный")
+      url: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
+    - text: Развертывание приложения с двойным стеком IPV6 — Load Balancer (цен. категория "Базовый")
+      url: virtual-network-ipv4-ipv6-dual-stack-powershell.md
+- title: Мониторинг виртуальных сетей
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Точка доступа к терминалу виртуальной сети (TAP)
+      url: virtual-network-tap-overview.md
+    - text: 'TAP виртуальной сети: часто задаваемые вопросы'
+      url: virtual-networks-faq.md#virtual-network-tap
+  - linkListType: how-to-guide
+    links:
+    - text: Создание TAP виртуальной сети
+      url: tutorial-tap-virtual-network-cli.md
+- title: Управление службами IP
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Типы IP-адресов и методы их распределения
+      url: virtual-network-ip-addresses-overview-arm.md
+    - text: Что такое IPv6 для виртуальной сети Azure?
+      url: ipv6-overview.md
+    - text: Префикс общедоступного IP-адреса
+      url: public-ip-address-prefix.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание, изменение и удаление общедоступного IP-адреса
+      url: virtual-network-public-ip-address.md
+    - text: Развертывание приложения с двойным стеком IPV6
+      url: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
+    - text: Создание, изменение и удаление префикса общедоступного IP-адреса
+      url: manage-public-ip-address-prefix.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure CLI
+      url: /cli/azure/network
+    - text: Azure PowerShell
+      url: /powershell/module/az.network
+    - text: REST
+      url: /rest/api/virtual-network

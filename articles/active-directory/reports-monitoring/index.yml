@@ -1,48 +1,57 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Создание отчетов и мониторинг в Azure Active Directory
+### YamlMime:Landing
+title: Документация по отчетам и мониторингу в Azure Active Directory
+summary: Узнайте, как использовать отчеты в Azure AD.
 metadata:
-  document_id: null
-  title: "Документация по отчетам и мониторингу Azure Active Directory B2B: руководства, краткие инструкции, основные понятия\_| Документация Майкрософт"
-  description: 'Узнайте, как настроить и протестировать решения Azure Active Directory для создания отчетов и мониторинга'
+  title: Документация по отчетам и мониторингу в Azure Active Directory
+  description: Узнайте, как использовать отчеты и мониторинг в Azure AD.
   services: active-directory
-  ms.subservice: report-monitor
-  author: priyamohanram
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: devices
   ms.topic: landing-page
-  ms.date: 08/14/2018
-  ms.author: priyamo
-abstract:
-  description: "Узнайте, как просматривать отчеты о безопасности и аудите для своей среды или выполнять мониторинг в динамике, чтобы получать ценные сведения об особенностях использования ресурсов. Отчеты Azure Active Directory (Azure\_AD) содержат ценные сведения о безопасности и особенностях использования ресурсов в вашей среде. Например, вы можете получить ответы на следующие вопросы:<ul><li>Как именно пользователи используют приложения или службы?</li><li>Каковы потенциальные риски, которые могут повлиять на работоспособность среды?</li><li>Как устранить неполадки, влияющие на работу пользователей?</li>"
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как скачать отчеты о действиях и передать журналы в учетную запись хранения Azure'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report">Скачивание отчета о действиях входа</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-audit-report">Скачивание отчета об аудите</a>
-          - html: "<a href=\"/azure/active-directory/reports-monitoring/quickstart-install-power-bi-content-pack\">Установка пакета содержимого Power\_BI для отчетов</a>"
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account">Передача журналов в учетную запись хранения</a>
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как получить доступ к отчетам и выполнять потоковую передачу журналов действий в систему мониторинга по своему усмотрению'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-access-api-with-certificates">Программный доступ к API отчетов с использованием сертификатов</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub">Потоковая передача журналов действий в концентратор событий</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes">Коды ошибок входа</a>
-          - html: "<a href=\"/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema\">Схема журналов аудита Azure\_AD в Azure Monitor</a>"
-          - html: "<a href=\"/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema\">Схема журналов входа Azure\_AD в Azure Monitor</a>"
+  author: MarkusVi
+  ms.author: markvi
+  ms.date: 08/29/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: 2b29aaf88f0a7659fd3ceb58ddf3b762ee7646d3
+  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70162498"
+landingContent:
+- title: Сведения о создании отчетов и мониторинге в Azure Active Directory
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Мониторинг в Azure Active Directory
+      url: overview-monitoring.md
+  - linkListType: concept
+    links:
+    - text: Журналы аудита
+      url: concept-audit-logs.md
+    - text: Журналы входа
+      url: concept-sign-ins.md
+    - text: Журналы входа, представляющего риск
+      url: concept-risky-sign-ins.md
+    - text: Пользователи, помеченные для журналов риска
+      url: concept-user-at-risk.md
+    - text: Подготовка журналов
+      url: concept-provisioning-logs.md
+- title: Использование отчетов в Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Поиск отчетов о действиях
+      url: howto-find-activity-reports.md
+    - text: Применение защитных мер к пользователям, находящимся в группе риска
+      url: howto-remediate-users-flagged-for-risk.md
+    - text: Использование книг Azure AD
+      url: howto-use-azure-monitor-workbooks.md
+- title: Использование мониторинга в Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Анализ журналов действий в журналах Azure Monitor
+      url: howto-analyze-activity-logs-log-analytics.md
+    - text: Установка и использование представлений службы анализа журналов для Azure AD
+      url: howto-install-use-log-analytics-views.md

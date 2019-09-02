@@ -41,7 +41,7 @@ sections:
       - items:
           - html: <a href="service/tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
           - html: <a href="service/tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
-          - html: <a href="service/tutorial-data-prep">Подготовка данных и использование автоматизированного машинного обучения для прогнозирования платы за такси</a>
+          - html: <a href="service/tutorial-auto-train-models">Использование автоматизированного Машинного обучения для прогнозирования платы за такси</a>
         style: unordered
         type: list
       - text: 'Использование моделей:'

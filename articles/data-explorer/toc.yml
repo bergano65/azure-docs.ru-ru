@@ -44,8 +44,12 @@
           href: ingest-data-event-hub.md
         - name: Сетка событий Azure
           href: ingest-data-event-grid.md
+        - name: Центр Интернета вещей
+          href: ingest-data-iot-hub.md
         - name: Прием данных одним щелчком
           href: ingest-data-one-click.md
+        - name: Прием потоковой передачи
+          href: ingest-data-streaming.md
         - name: Kafka
           href: ingest-data-kafka.md
         - name: Python
@@ -90,6 +94,12 @@
               href: power-bi-imported-query.md
             - name: Запросы SQL
               href: power-bi-sql-query.md
+        - name: Excel
+          items:
+            - name: Соединитель
+              href: excel-connector.md
+            - name: Пустой запрос
+              href: excel-blank-query.md
         - name: Grafana
           href: grafana.md
         - name: Соединитель ODBC

@@ -8,6 +8,9 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: "Выполнение запроса\_— Azure CLI"
+      displayName: 'portal, resource, graph, explorer'
+      href: first-query-portal.md
     - name: Выполнение первого запроса с помощью Azure CLI
       displayName: 'extension, docker'
       href: first-query-azurecli.md

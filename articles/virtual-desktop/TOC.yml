@@ -66,6 +66,8 @@
       href: fslogix-containers-azure-files.md
     - name: Интеграция с партнерскими решениями
       href: partners.md
+    - name: "Windows\_10 Корпоративная с поддержкой нескольких сеансов: часто задаваемые вопросы"
+      href: windows-10-multisession-faq.md
 - name: Устранение неполадок
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'

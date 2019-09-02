@@ -145,17 +145,6 @@
         - name: Добавление и регистрация наборов данных
           displayName: 'data, dataset'
           href: how-to-create-register-datasets.md
-        - name: Подготовка с помощью azureml.dataprep
-          items:
-            - name: Загрузка данных
-              displayName: 'data, etl, data prep, dataprep'
-              href: how-to-load-data.md
-            - name: Преобразование данных
-              displayName: 'data, etl, dataprep, data prep'
-              href: how-to-transform-data.md
-            - name: Запись данных
-              displayName: 'data, etl, data prep, dataprep'
-              href: how-to-write-data.md
     - name: Обучение моделей
       items:
         - name: Настройка сред обучения
@@ -347,6 +336,8 @@
               href: ../algorithm-module-reference/multiclass-neural-network.md
             - name: Лес решений с несколькими классами
               href: ../algorithm-module-reference/multiclass-decision-forest.md
+            - name: Мультиклассовое увеличивающееся дерево принятия решений
+              href: ../algorithm-module-reference/multiclass-boosted-decision-tree.md
             - name: Двухклассовое усредненное восприятие
               href: ../algorithm-module-reference/two-class-averaged-perceptron.md
             - name: Двухклассовый лес принятия решений
