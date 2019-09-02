@@ -9,12 +9,12 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
-ms.openlocfilehash: 065931140894478caee9d4ea49dac49f2415716b
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 76b70c742289ac98e49338b267660a30abba9557
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128653"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210445"
 ---
 # <a name="algorithm--module-reference-overview"></a>Обзор справочника по модулям & алгоритма
 
@@ -33,7 +33,7 @@ ms.locfileid: "70128653"
 | --- |--- | ---- |
 | Преобразование формата данных | Преобразование данных из различных форматов файлов, используемых в машинном обучении, | [Преобразовать в CSV-файл](convert-to-csv.md) |
 | Входные и выходные данные | Перемещение данных из облачных источников в эксперимент. Запись результатов или промежуточных данных в службу хранилища Azure, базу данных SQL или Hive во время эксперимента или использование облачного хранилища для обмена данными между экспериментами.  | [Импорт данных](import-data.md)<br/>[Экспорт данных](export-data.md)<br/>[Ввод данных вручную](enter-data-manually.md) |
-| Преобразование данных | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, выбор компонентов и уменьшение размерности.| [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [Объединение данных](join-data.md) <br/> [Разделение данных](split-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md) |
+| Преобразование данных | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, выбор компонентов и уменьшение размерности.| [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/>  [Хэширование компонентов](feature-hashing.md) <br/>  [Извлечь из текста N функций для грамматики.](extract-n-gram-features-from-text.md) <br/> [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [Предварительная обработка текста](preprocess-text.md) <br/> [Объединение данных](join-data.md) <br/> [Разделение данных](split-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md) |
 | Модули Python и R | Напишите код и внедрите его в модуль для интеграции Python и R с вашим экспериментом. | [Выполнение скрипта Python](execute-python-script.md)   <br/> [Создание модели Python](create-python-model.md) <br/> [Выполнить сценарий R](execute-r-script.md)
 |  | **Алгоритмы машинного обучения**: | |
 | Классификация | Прогнозирование класса.  Выберите один из двоичных (двух классов) или многоклассовых алгоритмов.| [Лес решений в многоклассовых решениях](multiclass-decision-forest.md) <br/> [Многоклассическое дерево принятия решений](multiclass-boosted-decision-tree.md) <br/> [Логистическая регрессия в многоклассовой](multiclass-logistic-regression.md)  <br/> [Многоклассовая нейронная сеть](multiclass-neural-network.md)  <br/>  [Логистическая регрессия двух классов](two-class-logistic-regression.md)  <br/>[Среднее перцептрона, основанное на двух классах](two-class-averaged-perceptron.md) <br/> [Дерево&nbsp;&nbsp;решений,&nbsp;увеличивающееся двумя классами](two-class-boosted-decision-tree.md)  <br/> [Лес решений с двумя классами](two-class-decision-forest.md)  <br/> [Нейронная сеть с двумя классами](two-class-neural-network.md)  <br/> [&#8209;Векторный&nbsp;&nbsp;компьютер поддержки двух классов&nbsp;](two-class-support-vector-machine.md) 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 05ecfdc4f082aaa44fe54e6b807a1c5faf84eb8d
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 22c83b1fe53a9209fd243fe807bb76718cbdcbbd
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69996461"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211694"
 ---
 # <a name="copy-activity-performance-and-scalability-guide"></a>Инструкции по повышению производительности и масштабируемости действия копирования
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -181,6 +181,7 @@ ADF предлагает бессерверную архитектуру, кот
 | Сценарий копирования | Число параллельных копий по умолчанию, определенное службой |
 | --- | --- |
 | Копирование данных между файловыми хранилищами |Зависит от размера файлов и числа диус, используемых для копирования данных между двумя облачными хранилищами данных, или физической конфигурацией компьютера, на котором размещена локальная среда выполнения интеграции. |
+| Копирование из реляционного хранилища данных с включенным параметром секционирования (включая [Oracle](connector-oracle.md#oracle-as-source), [Teradata](connector-teradata.md#teradata-as-source), [таблицу SAP](connector-sap-table.md#sap-table-as-source)и [открытый центр SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source))|4 |
 | Копирование данных из любого исходного хранилища в хранилище таблиц Azure |4 |
 | Все остальные сценарии копирования |1 |
 

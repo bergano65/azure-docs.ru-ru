@@ -10,18 +10,21 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 6fd7c4ffafa54acb7ff67bd2e595f0b3c02a0e5a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: a419bdcda3507dd82ec92f621e7405c87f0cb98f
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967415"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211638"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure копировать данные из SAP Enterprise Central (ECC). Дополнительные сведения см. в разделе [Общие сведения о действиях копирования](copy-activity-overview.md).
+
+>[!TIP]
+>Сведения о общей поддержке ADF в сценарии интеграции данных SAP см. в статье [Интеграция данных SAP с помощью фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) с подробным введением, компарсион и рекомендациями.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -42,7 +45,7 @@ ms.locfileid: "68967415"
 >[!TIP]
 >Чтобы скопировать данные из SAP ECC через таблицу или представление SAP, используйте соединитель [таблиц SAP](connector-sap-table.md) , который является более быстрым и масштабируемым.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Как правило, SAP ECC предоставляет сущности через службы OData посредством шлюза SAP. Чтобы использовать этот соединитель SAP ECC, сделайте следующее:
 
@@ -50,7 +53,7 @@ ms.locfileid: "68967415"
 
 - **Активируйте и настройте службу SAP OData**. Вы можете активировать службу OData через ТКОДЕ СИКФ за считаные секунды. Также можно настроить, какие объекты должны быть предоставлены. Дополнительные сведения см. в разделе Пошаговое [руководство](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 

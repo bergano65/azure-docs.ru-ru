@@ -7,14 +7,14 @@ manager: carmonm
 keywords: восстановление на уровне элементов; восстановление файлов из резервной копии виртуальной машины Azure; восстановление файлов виртуальной машины Azure
 ms.service: backup
 ms.topic: conceptual
-ms.date: 3/01/2019
+ms.date: 03/01/2019
 ms.author: dacurwin
-ms.openlocfilehash: 67ba9ba9bc85213ec479a90d205ed9570c62bf8c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 5ff4f1ff8a3d6143285b2842c351e1d26bd356ea
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954607"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210368"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -68,7 +68,7 @@ Azure Backup предоставляет возможность восстано�
     - download.microsoft.com
     - URL-адреса служб восстановления (geo-name относится к региону, в котором расположено хранилище служб восстановления):
         - HTTPS:\//pod01-rec2.Geo-Name.Backup.WindowsAzure.com (для Azure Public геообъектов)
-        - HTTPS:\//pod01-rec2.Geo-Name.Backup.WindowsAzure.CN (для Azure для Китая)
+        - HTTPS:\//pod01-rec2.Geo-Name.Backup.WindowsAzure.CN (для Azure Китая 21vianet)
         - HTTPS:\//pod01-rec2.Geo-Name.Backup.WindowsAzure.US (для государственных организаций США Azure)
         - HTTPS:\//pod01-rec2.Geo-Name.Backup.WindowsAzure.de (для Azure для Германии)
     - исходящий порт 3260.

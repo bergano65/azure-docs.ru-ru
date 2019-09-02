@@ -6,14 +6,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 5/8/2018
+ms.date: 05/08/2018
 ms.author: dacurwin
-ms.openlocfilehash: 0f60fbf22541e5fdd003d0ab663b5905cd31adcd
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: c542abe0e778b9204a23ccea0f3617656ba101e1
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68737239"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210434"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Автономное резервное копирование для DPM и Azure Backup Server
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Следовательно, для первой архивации требуется более высокая пропускная способность по сравнению с последующими операциями архивации, в ходе которых передаются только изменения или добавочные резервные копии. Служба архивации Azure сжимает начальные резервные копии, а также предоставляет механизм передачи сжатых копий данных в Azure с помощью дисков за счет процесса автономного заполнения.
@@ -42,7 +42,7 @@ ms.locfileid: "68737239"
 > * Резервное копирование всех рабочих нагрузок и файлов с помощью System Center Data Protection Manager (SC DPM).
 > * Резервное копирование всех рабочих нагрузок и файлов с помощью Microsoft Azure Backup Server. <br/>
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Перед запуском рабочего процесса автономного резервного копирования убедитесь, что выполнены следующие предварительные требования.
 * Создано [хранилище служб восстановления](backup-azure-recovery-services-vault-overview.md). Инструкции по его созданию приведены в [данной статье](tutorial-backup-windows-server-to-azure.md#create-a-recovery-services-vault).
 * На сервер Windows Server или клиент Windows установлен агент Azure Backup, Azure Backup Server или System Center Data Protection Manager (SC DPM), и этот компьютер зарегистрирован в хранилище служб восстановления. Убедитесь, что вы используете [самую последнюю версию агента Azure Backup](https://go.microsoft.com/fwlink/?linkid=229525).

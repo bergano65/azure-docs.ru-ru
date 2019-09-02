@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 49f86a6a8858fd0ef3085ed571f3348d33f70c8d
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 16dd40a521a9b0a240574c2f177f896c31508a37
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966587"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211702"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -32,6 +32,7 @@ ms.locfileid: "68966587"
 
 В частности, этот соединитель DB2 поддерживает приведенные ниже платформы и версии IBM DB2 с архитектурой распределенной реляционной базы данных (DRDA) SQL Access Manager (SQLAM) версии 9, 10 и 11:
 
+* IBM DB2 для z/OS 12
 * IBM DB2 для z/OS версии 11.1
 * IBM DB2 для z/OS версии 10.1
 * IBM DB2 для i версии 7.3
@@ -46,7 +47,7 @@ ms.locfileid: "68966587"
 > - DB2 для i (AS400): позволяет опытному пользователю создать коллекцию для имени пользователя для входа перед использованием действия копирования. Команда: `create collection <username>`
 > - DB2 для z/OS или LUW: использование учетной записи с высоким уровнем привилегий — опытного пользователя или администратора с правами на работу с пакетами и разрешениями BIND, BINDADD, GRANT EXECUTE TO PUBLIC — для однократного выполнения действия копирования, после чего необходимый пакет создается автоматически во время копирования. Для выполнения последующих действий копирования можно переключиться на обычную учетную запись.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -179,13 +180,13 @@ ms.locfileid: "68966587"
 | BigInt |Int64 |
 | Бинарный |Byte[] |
 | Blob |Byte[] |
-| Char |Строковое |
+| Char |String |
 | Clob |Строковое |
 | Date |Datetime |
 | DB2DynArray |Строковое |
 | DbClob |Строковое |
-| Десятичное |Десятичное |
-| DecimalFloat |Десятичное |
+| Decimal |Decimal |
+| DecimalFloat |Decimal |
 | Double |Double |
 | Float |Double |
 | Graphic |String |
@@ -193,13 +194,13 @@ ms.locfileid: "68966587"
 | LongVarBinary |Byte[] |
 | LongVarChar |Строковое |
 | LongVarGraphic |Строковое |
-| Numeric |Десятичное |
-| Реальный |Единое |
+| Numeric |Decimal |
+| Реальный |Single |
 | SmallInt |Int16 |
 | Time |TimeSpan |
 | Метка времени |Datetime |
 | VarBinary |Byte[] |
-| VarChar |Строковое |
+| VarChar |String |
 | VarGraphic |Строковое |
 | Xml |Byte[] |
 

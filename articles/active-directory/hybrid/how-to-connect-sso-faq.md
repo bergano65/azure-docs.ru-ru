@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 709fb3be37850be37d6378652921ce26f4ff15fe
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: dcea3c1ab715a79ebecd913885fbf9bbee61606a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/02/2019
 ms.locfileid: "60242231"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
@@ -37,24 +37,24 @@ ms.locfileid: "60242231"
 
 ## <a name="is-seamless-sso-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступен ли компонент "Простой единый вход" в облаке [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
-№ Компонент "Простой единый вход" доступен только в международном экземпляре Azure AD.
+Нет. Компонент "Простой единый вход" доступен только в международном экземпляре Azure AD.
 
-## <a name="what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso"></a>Какие приложения используют возможность параметра `domain_hint` или `login_hint` простого единого входа?
+## <a name="what-applications-take-advantage-of-domain_hint-or-login_hint-parameter-capability-of-seamless-sso"></a>Какие приложения используют возможность параметра `domain_hint` или `login_hint` простого единого входа?
 
 Ниже приведен неполный список приложений, которые могут отправить эти параметры в Azure AD и тем самым обеспечить автоматический вход пользователей с помощью простого единого входа (то есть пользователю не требуется вводить имя пользователя или пароль):
 
-| имя приложения; | Используемый URL-адрес приложения |
+| Имя приложения | Используемый URL-адрес приложения |
 | -- | -- |
-| Панель доступа | https:\//myapps.microsoft.com/contoso.com |
-| Outlook on Web | https:\//outlook.office365.com/contoso.com |
-| Порталы Office 365 | https:\//portal.office.com?domain_hint=contoso.com, https:\//www.office.com?domain_hint=contoso.com |
+| Панель доступа | HTTPS:\//MyApps.Microsoft.com/contoso.com |
+| Outlook on Web | HTTPS:\//Outlook.Office365.com/contoso.com |
+| Порталы Office 365 | HTTPS:\//портал.оффице.ком? domain_hint = contoso. com, HTTPS:\//ВВВ.оффице.ком? domain_hint = contoso. com |
 
-Кроме того, пользователи могут использовать автоматический вход, если приложение отправляет запросы на вход в конечные точки Azure AD настроить как клиенты — то есть https:\//login.microsoftonline.com/contoso.com/ <... > или https:\//login.microsoftonline.com/ < tenant_ID > / <... >, вместо Azure AD общую конечную точку — то есть https:\//login.microsoftonline.com/common/ <... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
+Кроме того, пользователи получают возможность автоматического входа в систему, если приложение отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть HTTPS:\//Login.microsoftonline.com/contoso.com/<. > или HTTPS:\//Login.microsoftonline.com/<tenant_ID>/<.. > — вместо общей конечной точки Azure AD — т. е. HTTPS:\//Login.microsoftonline.com/Common/<... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
 
-| имя приложения; | Используемый URL-адрес приложения |
+| Имя приложения | Используемый URL-адрес приложения |
 | -- | -- |
-| SharePoint Online | https:\//contoso.sharepoint.com |
-| Портал Azure | https:\//portal.azure.com/contoso.com |
+| SharePoint Online | HTTPS:\//contoso.SharePoint.com |
+| портала Azure | HTTPS:\//Portal.Azure.com/contoso.com |
 
 В приведенных выше таблицах замените contoso.com своим доменным именем, чтобы получить соответствующие URL-адреса приложений для своего клиента.
 
@@ -108,7 +108,7 @@ ms.locfileid: "60242231"
 
 ### <a name="step-1-disable-the-feature-on-your-tenant"></a>Шаг 1. Отключение функции в своем клиенте
 
-#### <a name="option-a-disable-using-azure-ad-connect"></a>Вариант 1. Использование Azure AD Connect
+#### <a name="option-a-disable-using-azure-ad-connect"></a>Вариант А. Использование Azure AD Connect
 
 1. Запустите Azure AD Connect, перейдите на страницу **Изменение параметров входа пользователя** и щелкните **Далее**.
 2. Затем снимите флажок **Включить единый вход**. Продолжайте выполнять указания мастера.
@@ -144,7 +144,7 @@ ms.locfileid: "60242231"
 
 ### <a name="step-3-manually-delete-the-azureadssoacct-computer-account-from-each-ad-forest-that-you-see-listed"></a>Шаг 3. Вручную удалите учетную запись компьютера `AZUREADSSOACCT` из каждого леса AD в списке, упомянутом выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](how-to-connect-sso-how-it-works.md). Сведения о том, как работает эта функция.
