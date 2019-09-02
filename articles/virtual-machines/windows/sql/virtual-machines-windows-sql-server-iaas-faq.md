@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: 9b87e6736d37d5b03630b642fee310269e8b080a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: eeda78c69c21fafcbe64071422bf7d73a4737249
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100422"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208318"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -171,7 +171,7 @@ ms.locfileid: "70100422"
 
 1. **Можно ли обновить экземпляр SQL Server 2008/2008 R2 после его регистрации с помощью поставщика ресурсов виртуальной машины SQL Server?**
 
-   Да. Вы можете использовать любой установочный носитель для обновления версии и выпуска SQL Server, после чего вы можете обновить [режим расширения SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#change-management-modes) _без агента_ на _Full_. Это обеспечит доступ ко всем преимуществам расширения SQL IaaS, таких как Управление порталом, автоматическая архивация и автоматическая установка исправлений. 
+   Да. Вы можете использовать любой установочный носитель для обновления версии и выпуска SQL Server, после чего вы можете обновить [режим расширения SQL IaaS](virtual-machines-windows-sql-register-with-resource-provider.md#change-management-modes) _без агента_ на _Full_. Это обеспечит доступ ко всем преимуществам расширения SQL IaaS, таких как Управление порталом, автоматическая архивация и автоматическая установка исправлений. 
 
 ## <a name="general"></a>Общее
 

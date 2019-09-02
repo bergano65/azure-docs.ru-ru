@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 18129c625630e7e21e2139ea3967ba5152bc0b30
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: df441a55ef4a9a40fe4defcabca5f667eeddbf29
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991179"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207298"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -100,7 +100,7 @@ ms.locfileid: "69991179"
 Корпорация Майкрософт использует данные только для предоставления вам возможностей службы.
 
 ## <a name="where-is-the-data-held"></a>Где хранятся данные?
-* В США, Европе и юго-восточной Азии. Расположение можно выбрать при создании нового ресурса Application Insights. 
+* Расположение можно выбрать при создании нового ресурса Application Insights. Дополнительные сведения о доступности Application Insights для каждого региона см. [здесь](https://azure.microsoft.com/global-infrastructure/services/?products=all).
 
 #### <a name="does-that-mean-my-app-has-to-be-hosted-in-the-usa-europe-or-southeast-asia"></a>Значит ли это, что мое приложение должно размещаться в США, Европе или юго-восточной Азии?
 * Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.

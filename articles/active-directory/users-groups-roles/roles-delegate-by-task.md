@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62814bb1e2934c406dc5fb1eb3b3bc3f3d2ee3b7
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 3799496d13259c943847625a2cf6a39a8edb1d35
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135553"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207248"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Роли администратора для задач администратора в Azure Active Directory
 
@@ -143,6 +143,11 @@ ms.locfileid: "70135553"
 Обновление параметров самообслуживания для корпоративного приложения | Владелец корпоративного приложения ([см. документацию](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | Администратор облачных приложений, администратор приложения
 Обновление свойств единого входа | Владелец корпоративного приложения ([см. документацию](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | Администратор облачных приложений, администратор приложения
 
+## <a name="entitlement-management"></a>Управление правами
+Задача | Наименее привилегированная роль | Дополнительные роли
+---- | --------------------- | ----------------
+Добавление ресурсов в каталог | Администратор пользователей | С помощью управления назначением можно делегировать эту задачу владельцу каталога (см.[документацию](../governance/entitlement-management-delegate.md#add-a-catalog-owner-or-an-access-package-manager)).
+Добавление сайтов SharePoint Online в каталог | Глобальный администратор
 
 
 ## <a name="groups"></a>Группы

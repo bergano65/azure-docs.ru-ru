@@ -1,21 +1,21 @@
 ---
 title: Хранение блочных BLOB-объектов на устройствах — Azure IoT Edge | Документация Майкрософт
 description: Общие сведения о распределении по уровням и срокам жизни см. в статье поддерживаемые операции с хранилищем BLOB-объектов и подключение к учетной записи хранилища BLOB-объектов.
-author: kgremban
+author: arduppal
 manager: mchad
-ms.author: kgremban
-ms.reviewer: kgremban
+ms.author: arduppal
+ms.reviewer: arduppal
 ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 861b5c3ee6d5661339788e7a27ba70557d0ea267
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: f2b26e3418e264c2613a183570c7e27f75ab5d63
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947032"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208229"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure на IoT Edge
 
@@ -79,24 +79,24 @@ ms.locfileid: "68947032"
 
 Имя этого параметра —`deviceToCloudUploadProperties`
 
-| Поле | Возможные значения | Объяснение | Переменная среды |
-| ----- | ----- | ---- | ---- |
-| уплоадон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. | `deviceToCloudUploadProperties__uploadOn={false,true}` |
-| уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. `OldestFirst` По умолчанию задано значение. Порядок определяется временем последнего изменения BLOB-объекта. | `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
-| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"`— Это строка подключения, которая позволяет указать учетную запись хранения, в которую будут передаваться данные. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, .`End point suffix` Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. <br><br> Здесь можно указать строку подключения SAS службы хранилища Azure. Но это свойство необходимо обновлять по истечении срока его действия.  | `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
-| сторажеконтаинерсфоруплоад | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, которые нужно передать в Azure. Этот модуль позволяет указать имена исходного и целевого контейнеров. Если не указать имя целевого контейнера, оно будет автоматически назначено имени `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>`контейнера. Вы можете создать строки шаблона для имени целевого контейнера, извлеките столбец возможные значения. <br>*% h — > имя центра Интернета вещей (3-50 символов). <br>*% d — > IoT Edge идентификатор устройства (от 1 до 129 символов). <br>*% m — > имя модуля (от 1 до 64 символов). <br>*% c-> имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера составляет 63 символов, при этом автоматически назначается имя целевого контейнера, если размер контейнера превышает 63 символов. Каждый раздел будет обрезан (IoTHubName, Иотеджедевицеид, ModuleName, Саурцеконтаинернаме) до 15. буквы. | `deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target: <targetName>` |
-| делетеафтеруплоад | true, false | `false` По умолчанию задано значение. Если задано значение `true`, то при завершении отправки в облачное хранилище данные будут автоматически удалены. | `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` |
+| Свойство | Возможные значения | Объяснение |
+| ----- | ----- | ---- |
+| уплоадон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. <br><br> Переменная среды:`deviceToCloudUploadProperties__uploadOn={false,true}` |
+| уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. `OldestFirst` По умолчанию задано значение. Порядок определяется временем последнего изменения большого двоичного объекта. <br><br> Переменная среды:`deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
+| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"`— Это строка подключения, которая позволяет указать учетную запись хранения, в которую будут передаваться данные. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, .`End point suffix` Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. <br><br> Здесь можно указать строку подключения SAS службы хранилища Azure. Но это свойство необходимо обновлять по истечении срока его действия. <br><br> Переменная среды:`deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
+| сторажеконтаинерсфоруплоад | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, которые нужно передать в Azure. Этот модуль позволяет указать имена исходного и целевого контейнеров. Если не указать имя целевого контейнера, оно будет автоматически назначено имени `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>`контейнера. Вы можете создать строки шаблона для имени целевого контейнера, извлеките столбец возможные значения. <br>*% h — > имя центра Интернета вещей (3-50 символов). <br>*% d — > IoT Edge идентификатор устройства (от 1 до 129 символов). <br>*% m — > имя модуля (от 1 до 64 символов). <br>*% c-> имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера составляет 63 символов, при этом автоматически назначается имя целевого контейнера, если размер контейнера превышает 63 символов. Каждый раздел будет обрезан (IoTHubName, Иотеджедевицеид, ModuleName, Саурцеконтаинернаме) до 15. буквы. <br><br> Переменная среды:`deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target: <targetName>` |
+| делетеафтеруплоад | true, false | `false` По умолчанию задано значение. Если задано значение `true`, данные будут автоматически удалены при отправке в облачное хранилище. <br><br> Переменная среды:`deviceToCloudUploadProperties__deleteAfterUpload={false,true}` |
 
 
 ### <a name="deviceautodeleteproperties"></a>девицеаутоделетепропертиес
 
 Имя этого параметра —`deviceAutoDeleteProperties`
 
-| Поле | Возможные значения | Объяснение | Переменная среды |
-| ----- | ----- | ---- | ---- |
-| делетеон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. | `deviceAutoDeleteProperties__deleteOn={false,true}` |
-| делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет | `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
-| ретаинвхилеуплоадинг | true, false | По умолчанию он имеет значение `true`, и он будет хранить большой двоичный объект при отправке в облачное хранилище, если делетеафтерминутес истекает. Вы можете задать для `false` него значение, и данные будут удалены сразу после истечения срока действия делетеафтерминутес. Примечание. Чтобы это свойство работало Уплоадон, должно быть установлено значение true.| `deviceAutoDeleteProperties__retainWhileUploading={false,true}` |
+| Свойство | Возможные значения | Объяснение |
+| ----- | ----- | ---- |
+| делетеон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. <br><br> Переменная среды:`deviceAutoDeleteProperties__deleteOn={false,true}` |
+| делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет. <br><br> Переменная среды:`deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
+| ретаинвхилеуплоадинг | true, false | По умолчанию он имеет значение `true`, и он будет хранить большой двоичный объект при отправке в облачное хранилище, если делетеафтерминутес истекает. Вы можете задать для `false` него значение, и данные будут удалены сразу после истечения срока действия делетеафтерминутес. Примечание. Чтобы это свойство работало Уплоадон, должно быть установлено значение true. <br><br> Переменная среды:`deviceAutoDeleteProperties__retainWhileUploading={false,true}`|
 
 ## <a name="using-smb-share-as-your-local-storage"></a>Использование общего ресурса SMB в качестве локального хранилища
 Вы можете указать общий ресурс SMB в качестве пути к локальному хранилищу при развертывании контейнера Windows для этого модуля на узле Windows.
@@ -175,7 +175,12 @@ sudo chmod -R 700 <blob-dir>
 - [.NET](../storage/blobs/storage-quickstart-blobs-dotnet.md)
 - [Java](../storage/blobs/storage-quickstart-blobs-java-v10.md)
 - [Python](../storage/blobs/storage-quickstart-blobs-python.md)
+    - У нас есть известная проблема при использовании этого пакета SDK, так как эта версия модуля не возвращает время создания большого двоичного объекта. Поэтому несколько методов, таких как List Blobs, не работают. В качестве обходного пути можно задать явную версию API в клиенте больших двоичных объектов на "2017-04-17". <br>Пример: `block_blob_service._X_MS_VERSION = '2017-04-17'`
 - [Node.js](../storage/blobs/storage-quickstart-blobs-nodejs-v10.md)
+- [JS/HTML](../storage/blobs/storage-quickstart-blobs-javascript-client-libraries-v10.md)
+- [Ruby](../storage/blobs/storage-quickstart-blobs-ruby.md)
+- [GO](../storage/blobs/storage-quickstart-blobs-go.md)
+- [PHP](../storage/blobs/storage-quickstart-blobs-php.md)
 
 ## <a name="connect-to-your-local-storage-with-azure-storage-explorer"></a>Подключение к локальному хранилищу с помощью Обозреватель службы хранилища Azure
 

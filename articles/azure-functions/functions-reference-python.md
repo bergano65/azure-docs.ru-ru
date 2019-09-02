@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: 16cf6704096f8c1534777ffb1958d2fa858374db
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 88d9ab0063b6cf2803332d7af50190c659b3e6fe
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170536"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207205"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -378,6 +378,8 @@ pip install -r requirements.txt
 ## <a name="publishing-to-azure"></a>Публикация в Azure
 
 Когда все будет готово к публикации, убедитесь, что все зависимости перечислены в файле *требований. txt* , который находится в корне каталога проекта. Функции Azure могут [удаленно создавать](functions-deployment-technologies.md#remote-build) эти зависимости.
+
+Файлы проекта и папки, исключаемые из публикации, включая папку виртуальной среды, перечислены в файле. фунЦигноре.  
 
 Для развертывания в Azure и выполнения удаленной сборки используйте следующую команду:
 

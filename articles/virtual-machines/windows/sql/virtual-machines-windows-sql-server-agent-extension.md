@@ -9,18 +9,19 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: effe4e2f-35b5-490a-b5ef-b06746083da4
 ms.service: virtual-machines-sql
+ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 06/24/2019
+ms.date: 08/30/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f4dd529481a6216e43d35c76ecee734543d487f3
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f0222c64b53bf9e6e8dc69da42d6e6a9c5549765
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100478"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208366"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server IaaS
 > [!div class="op_single_selector"]
@@ -33,13 +34,6 @@ ms.locfileid: "70100478"
 
 Чтобы просмотреть классическую версию этой статьи, см. раздел [SQL Server расширение агента IaaS для SQL Server виртуальных машин (классическая модель)](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md).
 
-Существует три режима управления для расширения SQL Server IaaS: 
-
-- **Полный** режим обеспечивает все функциональные возможности, но требует перезапуска разрешений SQL Server и системного администратора. Этот вариант установлен по умолчанию. Используйте его для управления виртуальной машиной SQL Server с одним экземпляром. 
-
-- Для облегчения не требуется перезапуск SQL Server, но он поддерживает только изменение типа лицензии и выпуска SQL Server. Используйте этот параметр для SQL Server виртуальных машин с несколькими экземплярами или для участия в экземпляре отказоустойчивого кластера (FCI). 
-
-- Для SQL Server 2008 и SQL Server 2008 R2, установленных на Windows Server 2008, используется специальный **Агент** . Сведения об использовании этого режима для образа Windows Server 2008 см. в разделе [регистрация Windows server 2008](virtual-machines-windows-sql-register-with-resource-provider.md#register-sql-server-2008-or-2008-r2-on-windows-server-2008-vms). 
 
 ## <a name="supported-services"></a>Поддерживаемые службы
 Расширение агента IaaS для SQL Server поддерживает следующие задачи администрирования:
@@ -82,90 +76,16 @@ ms.locfileid: "70100478"
 [!INCLUDE [updated-for-az.md](../../../../includes/updated-for-az.md)]
 
 
-## <a name="change-management-modes"></a>Режимы управления изменениями
-
-Текущий режим агента SQL Server IaaS можно просмотреть с помощью PowerShell: 
-
-  ```powershell-interactive
-     #Get the SqlVirtualMachine
-     $sqlvm = Get-AzResource -Name $vm.Name  -ResourceGroupName $vm.ResourceGroupName  -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines
-     $sqlvm.Properties.sqlManagement
-  ```
-
-SQL Server виртуальные машины, на которых установлено облегченное расширение IaaS, могут обновить режим до _полного_ с помощью портал Azure. SQL Server виртуальные машины в режиме _без агента_ можно обновить до _полной_ версии после обновления операционной системы до Windows 2008 R2 и более поздних версий. Переход на использование более ранней версии невозможен. необходимо полностью удалить расширение SQL IaaS и снова установить его. 
-
-Чтобы обновить режим агента до уровня Full, выполните следующие действия. 
-
-
-# <a name="azure-portaltabazure-portal"></a>[портал Azure](#tab/azure-portal)
-
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Перейдите к ресурсу [виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) . 
-1. Выберите SQL Server виртуальную машину и щелкните **Обзор**. 
-1. Для SQL Server виртуальных машин с режимом "без агента" или "упрощенный IaaS" выберите **только тип лицензии и обновления выпуска, доступные в сообщении расширения SQL IaaS** .
-
-   ![Варианты изменения режима на портале](media/virtual-machines-windows-sql-server-agent-extension/change-sql-iaas-mode-portal.png)
-
-1. Установите флажок **я принимаю, чтобы перезапустить службу SQL Server на виртуальной машине** , а затем нажмите кнопку **подтвердить** , чтобы обновить режим IaaS до полного. 
-
-    ![Флажок для согласия на перезапуск службы SQL Server на виртуальной машине](media/virtual-machines-windows-sql-server-agent-extension/enable-full-mode-iaas.png)
-
-# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
-
-Выполните следующий фрагмент кода AZ CLI:
-
-  ```azurecli-interactive
-  # Update to full mode
-
-  az sql vm update --name <vm_name> --resource-group <resource_group_name> --sql-mgmt-type full  
-  ```
-
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
-
-Выполните следующий фрагмент кода PowerShell:
-
-  ```powershell-interactive
-  # Update to full mode
-
-  $SqlVm = Get-AzResource -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines -ResourceGroupName <resource_group_name> -ResourceName <VM_name>
-  $SqlVm.Properties.sqlManagement="Full"
-  $SqlVm | Set-AzResource -Force
-  ```
-
----
-
-
 ##  <a name="installation"></a>Установка
-Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). При необходимости агент SQL Server IaaS можно установить вручную с помощью полного или упрощенного режима. 
-
-Расширение агента SQL Server IaaS в полноэкранном режиме автоматически устанавливается при подготовке одной из SQL Server виртуальных машин Azure Marketplace с помощью портал Azure. 
-
-### <a name="install-in-full-mode"></a>Установка в полном режиме
-Полный режим для расширения IaaS SQL Server обеспечивает полную управляемость для одного экземпляра на виртуальной машине SQL Server. Если экземпляр по умолчанию существует, расширение будет работать с экземпляром по умолчанию и не будет поддерживать управление другими экземплярами. Если экземпляр по умолчанию отсутствует, но только один именованный экземпляр, он будет управлять именованным экземпляром. Если экземпляр по умолчанию отсутствует и существует несколько именованных экземпляров, установить расширение не удастся. 
-
-Установите SQL Server агент IaaS с полным режимом с помощью PowerShell:
+Расширение SQL Server IaaS устанавливается при регистрации SQL Server виртуальной машины с помощью [поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). При необходимости можно установить агент SQL Server IaaS вручную с помощью следующей команды PowerShell: 
 
   ```powershell-interactive
-     # Get the existing compute VM
-     $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
-          
-     # Install 'Full' SQL Server IaaS agent extension
-     New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
-        -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
-        -Properties @{virtualMachineResourceId=$vm.Id;sqlServerLicenseType='AHUB';sqlManagement='Full'}  
-  
+    Set-AzVMExtension -ResourceGroupName "<ResourceGroupName>" -Location "<VMLocation>" -VMName "<VMName>" -Name "SqlIaasExtension" -Publisher "Microsoft.SqlServer.Management" -ExtensionType "SqlIaaSAgent" -TypeHandlerVersion "2.0";  
   ```
-
-| Параметр | Допустимые значения                        |
-| :------------------| :-------------------------------|
-| **склсерверлиценсетипе** | `AHUB` или `PAYG`     |
-| &nbsp;             | &nbsp;                          |
-
 
 > [!NOTE]
-> Если расширение еще не установлено, установка полного расширения перезапускает службу SQL Server. Чтобы не перезапускать службу SQL Server, установите упрощенный режим с ограниченной управляемостью.
-> 
-> Обновление расширения SQL Server IaaS не приводит к перезапуску службы SQL Server. 
+> При установке расширения перезапускается служба SQL Server. 
+
 
 ### <a name="install-on-a-vm-with-a-single-named-sql-server-instance"></a>Установка на виртуальной машине с одним именованным экземпляром SQL Server
 Расширение SQL Server IaaS будет работать с именованным экземпляром на SQL Server, если экземпляр по умолчанию удален, а расширение IaaS будет переустановлено.
@@ -176,29 +96,6 @@ SQL Server виртуальные машины, на которых устано
    1. Полностью удалите SQL Server в SQL Server виртуальной машине.
    1. Установите SQL Server с именованным экземпляром в виртуальной машине SQL Server. 
    1. Установите расширение IaaS из портал Azure.  
-
-
-### <a name="install-in-lightweight-mode"></a>Установка в упрощенном режиме
-Упрощенный режим не приведет к перезапуску службы SQL Server, но предлагает ограниченную функциональность. 
-
-Установите агент IaaS SQL Server в упрощенном режиме с помощью PowerShell:
-
-
-  ```powershell-interactive
-     /#Get the existing  Compute VM
-     $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
-          
-     #Register the SQL Server VM with the 'Lightweight' SQL IaaS agent
-     New-AzResource -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
-        -ResourceType Microsoft.SqlVirtualMachine/SqlVirtualMachines `
-        -Properties @{virtualMachineResourceId=$vm.Id;sqlServerLicenseType='AHUB';sqlManagement='LightWeight'}  
-  
-  ```
-
-| Параметр | Допустимые значения                        |
-| :------------------| :-------------------------------|
-| **склсерверлиценсетипе** | `AHUB` или `PAYG`     |
-| &nbsp;             | &nbsp;                          |
 
 
 ## <a name="get-the-status-of-the-sql-server-iaas-extension"></a>Получение состояния расширения IaaS SQL Server
@@ -235,4 +132,3 @@ SQL Server виртуальные машины, на которых устано
 Начните использовать одну из служб, которую поддерживает расширение. Дополнительные сведения см. в статьях, указанных в разделе " [Поддерживаемые службы](#supported-services) " этой статьи.
 
 Дополнительные сведения о запуске SQL Server на виртуальных машинах Azure см. в разделе [что такое SQL Server на виртуальных машинах Azure?](virtual-machines-windows-sql-server-iaas-overview.md).
-

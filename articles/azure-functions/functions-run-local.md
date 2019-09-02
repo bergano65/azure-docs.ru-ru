@@ -1,22 +1,20 @@
 ---
 title: Запуск основных инструментов службы "Функции Azure" | Документация Майкрософт
 description: Узнайте, как программировать и тестировать функции Azure из командной строки или терминала на локальном компьютере, прежде чем запускать их в службе "Функции Azure".
-services: functions
-documentationcenter: na
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 4bad9db6af6d368c943619bc2105f3fba0b7eb7b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fc77ef6786fbd16ecfeb34397ead11be8b107176
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096158"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207280"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -414,6 +412,8 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 ## <a name="publish"></a>Публикация в Azure
 
 Azure Functions Core Tools поддерживает два типа развертывания: развертывание файлов проекта функции непосредственно в приложение-функцию через Zip- [развертывание](functions-deployment-technologies.md#zip-deploy) и [Развертывание пользовательского контейнера DOCKER](functions-deployment-technologies.md#docker-container). Вы должны уже [создали приложение-функцию в подписке Azure](functions-cli-samples.md#create), в которой вы развернете свой код. Проекты, для которых требуется компиляция, должны быть созданы таким образом, чтобы двоичные файлы можно было развернуть.
+
+Папка проекта может содержать файлы и каталоги, относящиеся к языку, которые не должны публиковаться. Исключенные элементы перечислены в файле фунЦигноре в корневой папке проекта.     
 
 ### <a name="project-file-deployment"></a>Развертывание (файлы проекта)
 

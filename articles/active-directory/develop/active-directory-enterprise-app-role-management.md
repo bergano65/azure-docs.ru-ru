@@ -17,18 +17,18 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 091fb7cb9e74166b1e01c00834c2346dd2f0fd8b
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 699c8ce559d26ad226ad1dfd7f7266fe8c4acdfb
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835538"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207186"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство. настройка утверждения роли, выдаваемого в токене SAML для корпоративных приложений
 
 С помощью Azure Active Directory (Azure AD) вы можете настроить тип утверждения для утверждения роли в токене ответа, который вы получаете после авторизации приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure AD с настроенным каталогом.
 - Подписка с поддержкой единого входа (SSO). Настроенный единый вход в приложении.
@@ -59,7 +59,7 @@ ms.locfileid: "68835538"
 
     ![Страница "Свойства"](./media/active-directory-enterprise-app-role-management/tutorial_app_properties.png)
 
-6. В другом окне откройте [песочницу Azure AD Graph](https://developer.microsoft.com/graph/graph-explorer) и сделайте следующее:
+6. Откройте [проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) в другом окне и выполните следующие действия.
 
     1\. Войдите на сайт песочницы Graph с помощью учетных данных глобального администратора или соадминистратора вашего клиента.
 
@@ -186,7 +186,7 @@ ms.locfileid: "68835538"
 
 Чтобы обновить существующую роль, сделайте следующее:
 
-1. Откройте [обозреватель Azure AD Graph](https://developer.microsoft.com/graph/graph-explorer).
+1. Откройте [обозреватель Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer).
 
 2. Войдите на сайт песочницы Graph с помощью учетных данных глобального администратора или соадминистратора вашего клиента.
 
@@ -224,7 +224,7 @@ ms.locfileid: "68835538"
 
 Чтобы удалить существующую роль, сделайте следующее:
 
-1. В другом окне откройте [обозреватель Azure AD Graph](https://developer.microsoft.com/graph/graph-explorer).
+1. Откройте [проводник Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) в другом окне.
 
 2. Войдите на сайт песочницы Graph с помощью учетных данных глобального администратора или соадминистратора вашего клиента.
 

@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 09/24/2018
 ms.author: dech
-ms.openlocfilehash: 4292b2e83c55ce62db777d846206e5857bf81ca7
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: de1c1b93b813f71b321da0625bc60e0762a859c7
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142580"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207959"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -414,7 +414,7 @@ Add DISTINCT and LIMIT/OFFSET queries (#306)
 Любые запросы к Cosmos DB с помощью выведенного из эксплуатации пакета SDK будут отклонены службой.
 
 > [!WARNING]
-> Все версии **1. x** пакета SDK для узлов для API-интерфейса SQL будут прекращены **до 30 августа 2020 г**.
+> Все версии **1. x** пакета SDK для клиента узла для API-интерфейса SQL будут прекращены **до 30 августа 2020**. Это влияет только на клиентский пакет SDK и не влияет на серверные скрипты (хранимые процедуры, триггеры и UDF).
 > 
 >
 <br/>

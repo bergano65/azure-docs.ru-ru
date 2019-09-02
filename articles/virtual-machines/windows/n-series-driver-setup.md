@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bc6e37b088c6bcbb2de4693eb50be661db869ecd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 92ebd34c20e3733971593344925dcb566a1bf912
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089188"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207368"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
 
@@ -40,6 +40,8 @@ ms.locfileid: "70089188"
 После установки драйвера GRID на виртуальной машине ее требуется перезагрузить. После установки драйвера CUDA перезапуск не требуется.
 
 ## <a name="verify-driver-installation"></a>Проверка установки драйверов
+
+Обратите внимание, что панель управления NVIDIA доступна только при установке драйвера сетки. Если установлены драйверы CUDA, панель управления NVIDIA отображаться не будет.
 
 Установку драйвера можно проверить в диспетчере устройств. В следующем примере показана успешная конфигурация карты Tesla K80 на виртуальной машине Azure серии NC.
 
