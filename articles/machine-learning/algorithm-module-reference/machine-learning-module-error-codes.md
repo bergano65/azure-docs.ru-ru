@@ -2081,7 +2081,7 @@ For general information about how the Matchbox recommendation algorithm works, a
 |Сообщения об исключении|  
 |------------------------|  
 |Ошибка доступа GitHub.|  
-|Ошибка доступа GitHub. [https://login.microsoftonline.com/tfp/00000000-0000-0000-0000-000000000000/b2c_1a_tp_sign-up-or-sign-in/v2.0/]({0})|  
+|Ошибка доступа GitHub. {0}|  
   
 
 ## <a name="error-0148"></a>Ошибка 0148  
