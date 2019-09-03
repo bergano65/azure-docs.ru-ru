@@ -4,8 +4,10 @@
   items:
     - name: Сведения о центре безопасности
       href: security-center-intro.md
-    - name: Поддерживаемые платформы и функции в Центре безопасности
+    - name: Поддерживаемые платформы
       href: security-center-os-coverage.md
+    - name: Поддерживаемые функции
+      href: security-center-services.md
 - name: Краткие руководства
   expanded: true
   items:

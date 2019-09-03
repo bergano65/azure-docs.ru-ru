@@ -7,13 +7,12 @@ ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 71584c9a69ebab6583973003aa51e94a1afe1b14
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 05cc12f5416cbbbff470b40c870f41647ef37cd5
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992002"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231920"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Сведения о последовательности развертывания в Azure Blueprint
 
@@ -146,7 +145,7 @@ ms.locfileid: "69992002"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Ознакомьтесь с [жизненным циклом схемы](lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Узнайте, как применять [блокировку ресурсов схемы](resource-locking.md).
 - Узнайте, как [обновлять существующие назначения](../how-to/update-existing-assignments.md).

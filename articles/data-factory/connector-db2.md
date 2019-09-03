@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 16dd40a521a9b0a240574c2f177f896c31508a37
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: 2bdec0c70e9f11ca40e0ff9e1aa87898c94e119c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211702"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232993"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -32,7 +32,6 @@ ms.locfileid: "70211702"
 
 В частности, этот соединитель DB2 поддерживает приведенные ниже платформы и версии IBM DB2 с архитектурой распределенной реляционной базы данных (DRDA) SQL Access Manager (SQLAM) версии 9, 10 и 11:
 
-* IBM DB2 для z/OS 12
 * IBM DB2 для z/OS версии 11.1
 * IBM DB2 для z/OS версии 10.1
 * IBM DB2 для i версии 7.3

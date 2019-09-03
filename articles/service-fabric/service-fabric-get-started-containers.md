@@ -3,7 +3,7 @@ title: Создание приложения-контейнера Azure Service 
 description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создание образа Docker с приложением Python, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: jpconnock
 editor: vturecek
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/25/2019
-ms.author: aljo
-ms.openlocfilehash: 70dc458e341024797761262cd9a4fd1b3eb23ec3
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: atsenthi
+ms.openlocfilehash: 771a4ffde9f3929a55ee8ce48c2b38e16b83ad49
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359796"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650680"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -35,7 +35,7 @@ ms.locfileid: "68359796"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * Visual Studio 2015 или Visual Studio 2019.
@@ -265,136 +265,9 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 > [!NOTE]
 > Дополнительные PortBindings для службы могут быть добавлены путем объявления дополнительных элементов PortBinding с соответствующими значениями свойств.
 
-## <a name="configure-container-registry-authentication"></a>Настройка проверки подлинности в реестре контейнеров
+## <a name="configure-container-repository-authentication"></a>Настройка аутентификации в репозитории
 
-Чтобы настроить проверку подлинности для реестра контейнеров, в файле ApplicationManifest.xml добавьте `RepositoryCredentials` в элемент `ContainerHostPolicies`. Добавьте учетную запись и пароль для реестра контейнеров myregistry.azurecr.io. Это позволит службе скачать образ контейнера из репозитория.
-
-```xml
-<ServiceManifestImport>
-    ...
-    <Policies>
-        <ContainerHostPolicies CodePackageRef="Code">
-            <RepositoryCredentials AccountName="myregistry" Password="=P==/==/=8=/=+u4lyOB=+=nWzEeRfF=" PasswordEncrypted="false"/>
-            <PortBinding ContainerPort="80" EndpointRef="Guest1TypeEndpoint"/>
-        </ContainerHostPolicies>
-    </Policies>
-    ...
-</ServiceManifestImport>
-```
-
-Рекомендуем зашифровать пароль репозитория с помощью сертификата шифрования, который развертывается на всех узлах кластера. Когда служба Service Fabric развернет пакет службы в кластере, сертификат шифрования будет использоваться для расшифровки зашифрованного текста. Командлет Invoke-ServiceFabricEncryptText используется для создания зашифрованного текста пароля, который добавляется в файл ApplicationManifest.xml.
-
-Указанный ниже скрипт создает новый самозаверяющий сертификат и экспортирует его в PFX-файл. Этот сертификат импортируется в существующее хранилище ключей и затем развертывается в кластере Service Fabric.
-
-```powershell
-# Variables.
-$certpwd = ConvertTo-SecureString -String "Pa$$word321!" -Force -AsPlainText
-$filepath = "C:\MyCertificates\dataenciphermentcert.pfx"
-$subjectname = "dataencipherment"
-$vaultname = "mykeyvault"
-$certificateName = "dataenciphermentcert"
-$groupname="myclustergroup"
-$clustername = "mycluster"
-
-$subscriptionId = "subscription ID"
-
-Login-AzAccount
-
-Select-AzSubscription -SubscriptionId $subscriptionId
-
-# Create a self signed cert, export to PFX file.
-New-SelfSignedCertificate -Type DocumentEncryptionCert -KeyUsage DataEncipherment -Subject $subjectname -Provider 'Microsoft Enhanced Cryptographic Provider v1.0' `
-| Export-PfxCertificate -FilePath $filepath -Password $certpwd
-
-# Import the certificate to an existing key vault. The key vault must be enabled for deployment.
-$cer = Import-AzureKeyVaultCertificate -VaultName $vaultName -Name $certificateName -FilePath $filepath -Password $certpwd
-
-Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $groupname -EnabledForDeployment
-Add-AzServiceFabricApplicationCertificate -ResourceGroupName $groupname -Name $clustername -SecretIdentifier $cer.SecretId
-```
-Зашифруйте пароль с помощью командлета [Invoke-ServiceFabricEncryptText](/powershell/module/servicefabric/Invoke-ServiceFabricEncryptText?view=azureservicefabricps).
-
-```powershell
-$text = "=P==/==/=8=/=+u4lyOB=+=nWzEeRfF="
-Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint $cer.Thumbprint -Text $text -StoreLocation Local -StoreName My
-```
-
-Замените пароль зашифрованным текстом, полученным с помощью командлета [Invoke-ServiceFabricEncryptText](/powershell/module/servicefabric/Invoke-ServiceFabricEncryptText?view=azureservicefabricps), и задайте для параметра `PasswordEncrypted` значение true.
-
-```xml
-<ServiceManifestImport>
-    ...
-    <Policies>
-        <ContainerHostPolicies CodePackageRef="Code">
-            <RepositoryCredentials AccountName="myregistry" Password="MIIB6QYJKoZIhvcNAQcDoIIB2jCCAdYCAQAxggFRMIIBTQIBADA1MCExHzAdBgNVBAMMFnJ5YW53aWRhdGFlbmNpcGhlcm1lbnQCEFfyjOX/17S6RIoSjA6UZ1QwDQYJKoZIhvcNAQEHMAAEg
-gEAS7oqxvoz8i6+8zULhDzFpBpOTLU+c2mhBdqXpkLwVfcmWUNA82rEWG57Vl1jZXe7J9BkW9ly4xhU8BbARkZHLEuKqg0saTrTHsMBQ6KMQDotSdU8m8Y2BR5Y100wRjvVx3y5+iNYuy/JmM
-gSrNyyMQ/45HfMuVb5B4rwnuP8PAkXNT9VLbPeqAfxsMkYg+vGCDEtd8m+bX/7Xgp/kfwxymOuUCrq/YmSwe9QTG3pBri7Hq1K3zEpX4FH/7W2Zb4o3fBAQ+FuxH4nFjFNoYG29inL0bKEcTX
-yNZNKrvhdM3n1Uk/8W2Hr62FQ33HgeFR1yxQjLsUu800PrYcR5tLfyTB8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBybgM5NUV8BeetUbMR8mJhgFBrVSUsnp9B8RyebmtgU36dZiSObDsI
-NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==" PasswordEncrypted="true"/>
-            <PortBinding ContainerPort="80" EndpointRef="Guest1TypeEndpoint"/>
-        </ContainerHostPolicies>
-    </Policies>
-    ...
-</ServiceManifestImport>
-```
-
-### <a name="configure-cluster-wide-credentials"></a>Настройка учетных данных на уровне кластера
-
-Начиная с исполняющей среды 6.3, Service Fabric позволяет настроить учетные данные на уровне кластера, которые могут использоваться приложениями как учетные данные репозитория по умолчанию.
-
-Можно включить или отключить функцию, добавив атрибут `UseDefaultRepositoryCredentials` к `ContainerHostPolicies` в файл ApplicationManifest.xml со значением `true` или `false`.
-
-```xml
-<ServiceManifestImport>
-    ...
-    <Policies>
-        <ContainerHostPolicies CodePackageRef="Code" UseDefaultRepositoryCredentials="true">
-            <PortBinding ContainerPort="80" EndpointRef="Guest1TypeEndpoint"/>
-        </ContainerHostPolicies>
-    </Policies>
-    ...
-</ServiceManifestImport>
-```
-
-Затем Service Fabric будет по умолчанию использовать учетные данные репозитория, заданные в ClusterManifest в разделе `Hosting`.  Если `UseDefaultRepositoryCredentials` — `true`, Service Fabric считывает следующие значения с ClusterManifest:
-
-* DefaultContainerRepositoryAccountName (строка).
-* DefaultContainerRepositoryPassword (строка).
-* IsDefaultContainerRepositoryPasswordEncrypted (логическое значение).
-* DefaultContainerRepositoryPasswordType (строка) — поддерживается, начиная со среды выполнения 6.4.
-
-Ниже приведен пример того, что можно добавить в раздел `Hosting` файла ClusterManifestTemplate.json. Этот `Hosting` раздел можно добавить при создании кластера или позднее при обновлении конфигурации. Дополнительные сведения см. в статьях [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md) и [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
-
-```json
-"fabricSettings": [
-    ...,
-    {
-        "name": "Hosting",
-        "parameters": [
-          {
-            "name": "EndpointProviderEnabled",
-            "value": "true"
-          },
-          {
-            "name": "DefaultContainerRepositoryAccountName",
-            "value": "someusername"
-          },
-          {
-            "name": "DefaultContainerRepositoryPassword",
-            "value": "somepassword"
-          },
-          {
-            "name": "IsDefaultContainerRepositoryPasswordEncrypted",
-            "value": "false"
-          },
-          {
-            "name": "DefaultContainerRepositoryPasswordType",
-            "value": "PlainText"
-          }
-        ]
-      },
-]
-```
+Сведения о настройке различных типов проверки подлинности для загрузки образа контейнера см. в статье [Проверка подлинности репозитория контейнеров](configure-container-repository-credentials.md).
 
 ## <a name="configure-isolation-mode"></a>Настройка режима изоляции
 Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В режиме изоляции процесса все контейнеры, запущенные на одном хост-компьютере, совместно используют ядро и узел. В режиме изоляции Hyper-V все контейнеры Hyper-V и узлы контейнера используют отдельные ядра. Режим изоляции указывается в элементе `ContainerHostPolicies` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию на узлах Windows Server используется режим изоляции процессов. На узлах Windows 10 поддерживается только режим изоляции Hyper-V, поэтому контейнер работает в этом режиме независимо от параметра режима изоляции. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
@@ -447,7 +320,7 @@ Windows поддерживает два режима изоляции для к�
     </Policies>
 </ServiceManifestImport>
 ```
-По умолчанию *инклудедоккерхеалсстатусинсистемхеалсрепорт* имеет значение **true**, *RestartContainerOnUnhealthyDockerHealthStatus* имеет значение **false**, а *треатконтаинерунхеалсистатусасеррор* — значение false. . 
+По умолчанию *инклудедоккерхеалсстатусинсистемхеалсрепорт* имеет значение **true**, *RestartContainerOnUnhealthyDockerHealthStatus* имеет значение **false**, а *треатконтаинерунхеалсистатусасеррор* — значение false.. 
 
 Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
 

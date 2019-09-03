@@ -7,12 +7,12 @@ ms.date: 06/24/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 5362d25e1a6c9bcd273ae915bf2f599578f575ff
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: f71d21149fa842b005d81b1f222b78244def6c20
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228841"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231662"
 ---
 # <a name="overview-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Общие сведения об образце схемы NIST SP 800-53 R4
 
@@ -32,7 +32,7 @@ ms.locfileid: "68228841"
 
 Дополнительные статьи о схемах и способах их использования:
 
-- Ознакомьтесь с [жизненным циклом схемы](../../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../../concepts/resource-locking.md).

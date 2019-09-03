@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 6/27/2019
 ms.author: sutalasi
-ms.openlocfilehash: bc6d9e7214d2b7cd009e7562357bed420e49f185
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: e9b688d54049c21da3276a20e27dcc9ad3d4ceca
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325110"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231473"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
@@ -56,7 +56,7 @@ SharePoint можно развертывать на одном или неско
 
 ## <a name="site-recovery-support"></a>Поддержка Site Recovery
 
-Для написания этой статьи использовались виртуальные машины VMware под управлением Windows Server 2012 R2 Enterprise. Кроме того, использовались выпуски SharePoint 2013 Enterprise и SQL Server 2014 Enterprise. Так как репликация Site Recovery не зависит от приложения, описанные здесь рекомендации также подходят для сценариев, представленных ниже.
+Site Recovery не зависит от приложения и должна работать с любой версией SharePoint, работающей на поддерживаемом компьютере. Для написания этой статьи использовались виртуальные машины VMware под управлением Windows Server 2012 R2 Enterprise. Кроме того, использовались выпуски SharePoint 2013 Enterprise и SQL Server 2014 Enterprise.
 
 ### <a name="source-and-target"></a>Исходный и целевой объект
 
@@ -65,15 +65,8 @@ SharePoint можно развертывать на одном или неско
 **Hyper-V** | Да | Да
 **VMware** | Да | Да
 **Физический сервер** | Да | Да
-**Таблицы Azure** | Нет данных | Да
+**Таблицы Azure** | Н/Д | Да
 
-### <a name="sharepoint-versions"></a>Версии SharePoint
-Поддерживаются следующие версии SharePoint Server.
-
-* SharePoint Server 2013 Standard
-* SharePoint Server 2013 Enterprise
-* SharePoint Server 2016 Standard
-* SharePoint Server 2016 Enterprise
 
 ### <a name="things-to-keep-in-mind"></a>Важные аспекты
 

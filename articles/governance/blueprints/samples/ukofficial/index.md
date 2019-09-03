@@ -8,12 +8,12 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: a1db2fb5738be91fd08830a8e238c217fba34e34
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 21264947756510f139a9c99f23b4a3f28088b2eb
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67451178"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231601"
 ---
 # <a name="overview-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Общие сведения о примерах схем UK OFFICIAL и UK NHS
 
@@ -33,7 +33,7 @@ ms.locfileid: "67451178"
 
 Дополнительные статьи о схемах и способах их использования:
 
-- Ознакомьтесь с [жизненным циклом схемы](../../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../../concepts/resource-locking.md).

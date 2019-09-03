@@ -6,18 +6,18 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-author: djpmsft
-ms.author: daperlov
+author: nabhishek
+ms.author: abnarain
 manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: db437c7699c7fddc2b04175537446f53c4c4bc85
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 23166a4a0110629674db6ccc9d225118264b3c15
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70140827"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70233058"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 
@@ -111,6 +111,19 @@ ms.locfileid: "70140827"
 ```
 
 Дополнительные сведения см. в [документации Databricks](https://docs.azuredatabricks.net/api/latest/libraries.html#managedlibrarieslibrary) по типам библиотек.
+
+## <a name="passing-parameters-between-notebooks-and-data-factory"></a>Передача параметров между записными книжками и фабрикой данных
+
+Параметры фабрики данных можно передать в записные книжки с помощью свойства *басепараметерс* в действии модуля данных. 
+
+В некоторых случаях может потребоваться передача определенных значений из записной книжки обратно в фабрику данных, которую можно использовать для потока управления (условные проверки) в фабрике данных или для использования нисходящими действиями (ограничение размера — 2 МБ). 
+
+1. В записной книжке вы можете вызвать [дбутилс. Notebook. Exit ("ReturnValue")](https://docs.azuredatabricks.net/user-guide/notebooks/notebook-workflows.html#notebook-workflows-exit) , и в фабрике данных будет возвращен соответствующий результат "ReturnValue".
+
+2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого `'@activity('databricks notebook activity name').output.runOutput'`как. 
+
+   > [!IMPORTANT]
+   > При передаче объекта JSON значения можно получить, добавив имена свойств. Пример: `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 

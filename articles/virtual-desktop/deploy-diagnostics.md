@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/14/2019
 ms.author: helohr
-ms.openlocfilehash: d5f0dbf916096b608495c0cc1017d919616653d4
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 625515223da12751b7765baa795bc68d2a7b46b4
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899705"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70233255"
 ---
 # <a name="deploy-the-diagnostics-tool"></a>Развертывание средства диагностики
 
@@ -154,7 +154,7 @@ ms.locfileid: "69899705"
 
 Чтобы развернуть шаблон управления ресурсами Azure для средства диагностики, выполните следующие действия.
 
-1.  Перейдите на страницу Azure RDS-Templates в GitHub.
+1.  Перейдите на [страницу Azure RDS-Templates в GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/diagnostics-sample/deploy).
 2.  Разверните шаблон в Azure и следуйте инструкциям в шаблоне. Убедитесь, что доступны следующие сведения:
 
     -   Идентификатор клиента

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: faae9ae335e391afac4ed2ef75472f1fecdaca86
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: 94bdeebcecdf924468f022ac95867bd82df5a793
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211680"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231319"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -35,9 +35,9 @@ ms.locfileid: "70211680"
 - Копирование данных из таблицы SAP в:
 
   - Центральный компонент SAP ERP (SAP ECC) версии 7,01 или более поздней (в последнем стеке пакетов поддержки SAP, выпущенном после 2015).
-  - SAP Business Warehouse (SAP BW) версии 7,01 или более поздней.
+  - SAP Business Warehouse (SAP BW) версии 7,01 или более поздней (в последнем стеке пакетов поддержки SAP, выпущенном после 2015).
   - SAP S/4HANA.
-  - Другие продукты в SAP Business Suite 7,01 или более поздней версии.
+  - Другие продукты в SAP Business Suite версии 7,01 или более поздней (в последнем стеке пакетов поддержки SAP, выпущенном после 2015).
 
 - Копирование данных из прозрачной таблицы SAP, таблицы с группировкой, кластеризованной таблицы и представления.
 - Копирование данных с использованием обычной проверки подлинности или защищенного сетевого подключения (SNC), если установлен SNC.

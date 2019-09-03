@@ -1,5 +1,5 @@
 ---
-title: Настройка среды для оператора схемы
+title: Настройка среды для роли "Оператор схем"
 description: Узнайте, как настроить среду Azure для использования с помощью встроенной роли "Управление доступом на основе ролей" (RBAC).
 author: DCtheGeek
 ms.author: dacoulte
@@ -7,14 +7,14 @@ ms.date: 08/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 8c39eadc6f1448e19ffee6d741cc50a7b6e09475
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 27f7c747dfd39fed7a67924da71b9293979e0f94
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70148613"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231893"
 ---
-# <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для оператора схемы
+# <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для роли "Оператор схем"
 
 Управление определениями и назначениями схем можно назначить разным командам. Обычно архитектор или группа управления ответственны за управление жизненным циклом определений схем, в то время как Рабочая группа отвечает за управление назначениями этих определений схем, управляемых с помощью централизованного управления.
 
@@ -40,7 +40,7 @@ ms.locfileid: "70148613"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Ознакомьтесь с [жизненным циклом схемы](../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../concepts/resource-locking.md).

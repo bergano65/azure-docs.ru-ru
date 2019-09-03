@@ -7,12 +7,12 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: 2499842eeb2dd5a8fa845ed364a6aea7418acc8b
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: a4cc11447686f81017332a3528019a54a5167c52
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68824414"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231980"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2
 
@@ -127,7 +127,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
 
 ## <a name="example-2"></a>Пример 2
 
-Необходимо заблокировать все запросы с IP-адресов в диапазоне 198.168.5.4/24.
+Необходимо заблокировать все запросы с IP-адресов в диапазоне 198.168.5.0/24.
 
 В этом примере вы блокируете весь трафик, поступающий из диапазона IP-адресов. Имя правила — *myrule1* , а для его приоритета — значение 100.
 
@@ -140,7 +140,7 @@ $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
 $condition1 = New-AzApplicationGatewayFirewallCondition `
    -MatchVariable $variable1 `
    -Operator IPMatch `
-   -MatchValue "192.168.5.4/24" `
+   -MatchValue "192.168.5.0/24" `
    -NegationCondition $False
 
 $rule = New-AzApplicationGatewayFirewallCustomRule `
@@ -166,7 +166,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
             "matchVariable": "RemoteAddr",
             "operator": "IPMatch",
             "matchValues": [
-              "192.168.5.4/24"
+              "192.168.5.0/24"
             ]
           }
         ]
@@ -175,11 +175,11 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-Соответствующее правило CR:`SecRule REMOTE_ADDR "@ipMatch 192.168.5.4/24" "id:7001,deny"`
+Соответствующее правило CR:`SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:7001,deny"`
 
 ## <a name="example-3"></a>Пример 3
 
-В этом примере необходимо заблокировать *Евилбот*агента пользователя и трафик в диапазоне 192.168.5.4/24. Для этого можно создать два отдельных условия соответствия и разместить их в одном правиле. Это гарантирует, что оба *евилбот* в заголовке пользователя **и** IP-адреса из диапазона 192.168.5.4/24 блокируются.
+В этом примере необходимо заблокировать *Евилбот*агента пользователя и трафик в диапазоне 192.168.5.0/24. Для этого можно создать два отдельных условия соответствия и разместить их в одном правиле. Это гарантирует, что оба *евилбот* в заголовке пользователя **и** IP-адреса из диапазона 192.168.5.0/24 блокируются.
 
 Логика: p **и** q
 
@@ -194,7 +194,7 @@ $variable1 = New-AzApplicationGatewayFirewallMatchVariable `
 $condition1 = New-AzApplicationGatewayFirewallCondition `
    -MatchVariable $variable1 `
    -Operator IPMatch `
-   -MatchValue "192.168.5.4/24" `
+   -MatchValue "192.168.5.0/24" `
    -NegationCondition $False
 
 $condition2 = New-AzApplicationGatewayFirewallCondition `
@@ -229,7 +229,7 @@ $condition2 = New-AzApplicationGatewayFirewallCondition `
               "operator": "IPMatch", 
               "negateCondition": false, 
               "matchValues": [ 
-                "192.168.5.4/24" 
+                "192.168.5.0/24" 
               ] 
             }, 
             { 
@@ -251,7 +251,7 @@ $condition2 = New-AzApplicationGatewayFirewallCondition `
 
 ## <a name="example-4"></a>Пример 4
 
-В этом примере необходимо заблокировать, если запрос находится вне диапазона IP-адресов *192.168.5.4/24*или строка агента пользователя не является хромом (то есть пользователь не использует браузер Chrome). Так как эта логика использует **или**, два условия находятся в отдельных правилах, как показано в следующем примере. *myrule1* и *myrule2* должны соответствовать друг другу для блокировки трафика.
+В этом примере необходимо заблокировать, если запрос находится вне диапазона IP-адресов *192.168.5.0/24*или строка агента пользователя не является хромом (то есть пользователь не использует браузер Chrome). Так как эта логика использует **или**, два условия находятся в отдельных правилах, как показано в следующем примере. *myrule1* и *myrule2* должны соответствовать друг другу для блокировки трафика.
 
 Logic: **Not** (p **и** q) = **Not** p **или not** q.
 
@@ -266,7 +266,7 @@ $variable2 = New-AzApplicationGatewayFirewallMatchVariable `
 $condition1 = New-AzApplicationGatewayFirewallCondition `
    -MatchVariable $variable1 `
    -Operator IPMatch `
-   -MatchValue "192.168.5.4/24" `
+   -MatchValue "192.168.5.0/24" `
    -NegationCondition $True
 
 $condition2 = New-AzApplicationGatewayFirewallCondition `
@@ -307,7 +307,7 @@ $rule2 = New-AzApplicationGatewayFirewallCustomRule `
             "operator": "IPMatch",
             "negateCondition": true,
             "matchValues": [
-              "192.168.5.4/24"
+              "192.168.5.0/24"
             ]
           }
         ]

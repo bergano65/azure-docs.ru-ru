@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: helohr
-ms.openlocfilehash: 05289b8e3aa0e083dd948a2d43f3af92418bc5d2
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 078a29fc1ab66151aa41c3901bb6a3af6479a0ba
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051978"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70233269"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
 
@@ -218,7 +218,7 @@ ms.locfileid: "70051978"
 
 6. Подключитесь напрямую к любой виртуальной машине из пула узлов с помощью удаленный рабочий стол и откройте **Проводник.** Затем перейдите к **пути подключения** (в следующем примере путь подключения — \\ \\ANF-SMB-3863.gt1107.onmicrosoft.com\\использовании-VOL).
 
-   В этой папке должен быть виртуальный жесткий диск профиля, подобный показанному в следующем примере.
+   В этой папке должен быть виртуальный жесткий диск профиля (или VHDX), подобный показанному в следующем примере.
 
    ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем «Profile_ssbb».](media/mount-path-folder.png)
 

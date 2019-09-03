@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/23/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 49a0c7597e8d44e3f60e2d3b6bd4c14cad1524b5
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 2bfb094994bcc6f41044a08aab6eb0155967638e
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172626"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231424"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -379,6 +379,7 @@ GO
 | writeBatchSize    | Число строк для вставки в таблицу SQL **для каждого пакета**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). По умолчанию фабрика данных динамически определяет соответствующий размер пакета в зависимости от размера строки. | Нет                                            |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет                                            |
 | preCopyScript     | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет                                            |
+| дисаблеметриксколлектион | Фабрика данных собирает такие метрики, как DWU хранилища данных SQL для оптимизации производительности копирования и рекомендации. Если вы отвечаете за такое поведение, укажите `true` для его отключения. | Нет (значение по умолчанию — `false`) |
 
 #### <a name="sql-data-warehouse-sink-example"></a>Пример приемника хранилища данных SQL
 

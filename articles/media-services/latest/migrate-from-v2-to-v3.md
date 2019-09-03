@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: b85b06552dcd0fc419302882f05814adbd454f46
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 901542e2a69d2c7880825d76c1d69d3795713ed2
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542564"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231172"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -36,12 +36,12 @@ ms.locfileid: "67542564"
 ### <a name="api-is-more-approachable"></a>Более доступный API
 
 *  Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в Azure Resource Manager. Шаблоны Azure Resource Manager можно использовать для создания и развертывания преобразований, конечных точек потоковой передачи, событий потоковой трансляции и т. д.
-* [Спецификация OpenAPI (прежнее название — Swagger)](https://aka.ms/ams-v3-rest-sdk) документа.
+* [Спецификация OpenAPI (прежнее название — Swagger)](https://aka.ms/ams-v3-rest-sdk) .
     Представляет схему для всех компонентов службы, включая кодирование на основе файла.
 * Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](https://aka.ms/ams-v3-nodejs-ref), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
 * Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
 
-### <a name="new-features"></a>новые функции;
+### <a name="new-features"></a>Новые функции
 
 * Для обработки задания на основе файла можно использовать URL-адрес HTTP в качестве входных данных.<br/>Вам не обязательно ни хранить содержимое в Azure, ни создавать ресурсы.
 * Для обработки задания на основе файла введено понятие [преобразования](transforms-jobs-concept.md). Преобразование можно использовать для создания повторно используемых конфигураций, создания шаблонов Azure Resource Manager и изолирования параметров обработки между несколькими пользователями или клиентами.
@@ -57,10 +57,10 @@ ms.locfileid: "67542564"
 
 ## <a name="changes-from-v2"></a>Отличия от версии 2
 
-* Если ресурсы созданы с помощью версии 3, Службы мультимедиа поддерживают шифрование хранилища только на стороне сервера [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
+* Для ресурсов, созданных с помощью v3, службы мультимедиа поддерживают только [Шифрование хранилища на стороне сервера хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
     * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
     * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
-* Свойства ресурса в версии 3 отличается от версии 2, см. в разделе [как сопоставить свойства](assets-concept.md#map-v3-asset-properties-to-v2).
+* Свойства [ресурса](assets-concept.md)в v3 отличаются от версии 2. см. [сведения о сопоставлении свойств](assets-concept.md#map-v3-asset-properties-to-v2).
 * Пакеты SDK версии 3 теперь лишаются хранилища SDK, что обеспечивает больший контроль над используемой версией хранилища SDK и позволяет избежать проблем с управлением версиями. 
 * В API версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard версии 2. Например, скорость в версии 2 указывается как 128 (кбит/с), а в версии 3 она имела бы значение 128 000 (бит/с). 
 * Сущности AssetFiles, AccessPolicies и IngestManifests не существуют в версии 3.
@@ -73,21 +73,24 @@ ms.locfileid: "67542564"
     * Событие потоковой трансляции заменяет Channel.<br/>Выставление счетов за события потоковой трансляции основано на метриках динамического канала. Для получения дополнительных сведений ознакомьтесь с [выставлением счетов](live-event-states-billing.md) и [ценами](https://azure.microsoft.com/pricing/details/media-services/).
     * Выходные данные потоковой трансляции заменяют Program.
 * Выходные данные потоковой трансляции запускаются при создании и останавливаются при удалении. Программы работали иначе в API версии 2, они должны были запускаться после создания.
-*  Чтобы получить сведения о задании, необходимо знать имя преобразования, в котором было создано задание. 
+*  Чтобы получить сведения о задании, необходимо знать имя преобразования, под которым было создано задание. 
+
+> [!NOTE]
+> Ознакомьтесь с соглашениями об именовании, которые применяются к [ресурсам служб мультимедиа v3](media-services-apis-overview.md#naming-conventions). Также проверьте [имена больших двоичных объектов](assets-concept.md#naming-blobs).
 
 ## <a name="feature-gaps-with-respect-to-v2-apis"></a>Недочеты функций по отношению к API версии 2
 
 API версии 3 содержит следующие недочеты функций относительно API версии 2. Устранение недочетов не завершено.
 
 * [Кодировщик (цен. категория "Премиум")](../previous/media-services-premium-workflow-encoder-formats.md) и [устаревшие обработчики аналитики мультимедиа](../previous/media-services-analytics-overview.md) (Предварительная версия индексатора Служб мультимедиа Azure версии 2, скрытие лиц и т. д.) недоступны в версии 3.<br/>Пользователи, желающие выполнить миграцию из предварительной версии индексатора мультимедийных данных версии 1 или 2, могут немедленно использовать предустановку AudioAnalyzer в API версии 3.  Эта новая предустановка содержит больше возможностей, чем старые индексаторы мультимедийных данных версии 1 или 2. 
-* Многие из [дополнительные возможности Media Encoder Standard в версии 2](../previous/media-services-advanced-encoding-with-mes.md) API-интерфейсы в настоящее время не доступны в версии 3, такие как:
+* Многие [Расширенные функции Media Encoder Standard в API v2](../previous/media-services-advanced-encoding-with-mes.md) в настоящее время недоступны в версии 3, например:
   
     * Совмещение ресурсов
     * Наложения
     * Обрезка
     * Спрайты эскизов
-    * Вставка звуковой дорожки с тишиной при вводе данных не содержит звука
-    * Вставка видеодорожки Если входные данные не содержат видео
+    * Вставка автоматической звуковой дорожки, если входные данные не имеют звука
+    * Вставка видеодорожки, если у ввода нет видео
 * Сейчас события потоковой трансляции с перекодированием не поддерживают вставку баннера в поток и вставку рекламного маркера через вызов API. 
 
 > [!NOTE]
@@ -102,7 +105,7 @@ API версии 3 содержит следующие недочеты функ
 |Создайте ресурс и отправьте файл. |[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L113)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L169)|
 |Отправка задания|[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L146)|[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L298)<br/><br/>Показано, как сначала создать преобразование, а затем отправить задание.|
 |Опубликуйте ресурс с шифрованием AES. |1. Создайте ContentKeyAuthorizationPolicyOption.<br/>2. Создайте ContentKeyAuthorizationPolicy.<br/>3. Создайте AssetDeliveryPolicy.<br/>4. Создайте ресурс и передайте содержимое или отправьте задание и используйте выходной ресурс.<br/>5. Свяжите AssetDeliveryPolicy с ресурсом.<br/>6. Создайте ContentKey.<br/>7. Присоедините ContentKey к Asset.<br/>8. Создайте AccessPolicy.<br/>9. Создайте Locator.<br/><br/>[Пример .NET версии 2](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-aes/blob/master/DynamicEncryptionWithAES/DynamicEncryptionWithAES/Program.cs#L64)|1. Создайте политику ключа содержимого.<br/>2. Создайте ресурс.<br/>3. Передайте содержимое или используйте ресурс как JobOutput.<br/>4. Создайте указатель потоковой передачи.<br/><br/>[Пример .NET версии 3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs#L105)|
-|Получение сведений о задании заданий и управление ими |[Управление заданиями с помощью версии 2](../previous/media-services-dotnet-manage-entities.md#get-a-job-reference) |[Управление заданиями с v3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L546)|
+|Получение сведений о заданиях и управление заданиями |[Управление заданиями с помощью версии 2](../previous/media-services-dotnet-manage-entities.md#get-a-job-reference) |[Управление заданиями с помощью v3](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#L546)|
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -120,7 +123,7 @@ API версии 3 содержит следующие недочеты функ
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать, как легко начать кодирование и потоковую передачу видеофайлов, ознакомьтесь со сведениями о [файлах потоковой передачи](stream-files-dotnet-quickstart.md). 
 

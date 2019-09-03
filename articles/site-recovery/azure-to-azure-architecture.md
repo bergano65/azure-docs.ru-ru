@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 09/03/2019
 ms.author: raynew
-ms.openlocfilehash: 6882476cabc3dc3a737f31eeeb4ccd92e5ea6ee0
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: d415f303976ae454cb99f07e8d6e15e338e24d7d
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69872744"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231466"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Архитектура аварийного восстановления из Azure в Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "69872744"
 **Параметр политики** | **Сведения** | **Default**
 --- | --- | ---
 **Хранение точки восстановления** | Указывает, как долго в Site Recovery хранятся точки восстановления. | 24 часа
-**Периодичность создания моментальных снимков с согласованием приложений** | Определяет, как часто Site Recovery создает моментальные снимки с согласованностью на уровне приложений. | Каждые 60 минут.
+**Периодичность создания моментальных снимков с согласованием приложений** | Определяет, как часто Site Recovery создает моментальные снимки с согласованностью на уровне приложений. | Каждые четыре часа
 
 ### <a name="managing-replication-policies"></a>Управление политиками репликации
 

@@ -233,7 +233,7 @@
                 - name: Служба приложений Azure
                   displayname: 'App Service, web app, PaaS, Azure web app'
                   href: app/azure-web-apps.md
-                - name: Облачные службы Azure
+                - name: Oблачныe службы Azure
                   displayname: 'cloud, cloud services, PaaS'
                   href: app/cloudservices.md
                 - name: Функции Azure
@@ -476,8 +476,6 @@
               items:
                 - name: Сайты SharePoint
                   href: app/sharepoint.md
-                - name: Dynamics CRM
-                  href: app/sample-mscrm.md
                 - name: Классические приложения Windows
                   href: app/windows-desktop.md
         - name: Контейнеры

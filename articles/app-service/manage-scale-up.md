@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cebd6e5c120bdaa5e7dd5b681366e07087cd3498
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d2c3b09277963781b90f65705e03f936f81b14ee
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70069178"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232359"
 ---
 # <a name="scale-up-an-app-in-azure-app-service"></a>Увеличение масштаба приложения в службе приложений Azure
 
@@ -85,11 +85,8 @@ ms.locfileid: "70069178"
 
 ## <a name="more-resources"></a>Другие ресурсы
 
-Видео о масштабировании приложений службы приложений см. на следующих ресурсах:
- 
-* [Стефан Шаков (Stefan Schackow). Когда следует масштабировать веб-сайты Azure](https://azure.microsoft.com/resources/videos/azure-web-sites-free-vs-standard-scaling/)
-* [Стефан Шаков (Stefan Schackow). Автоматическое масштабирование веб-сайтов Azure, ЦП или по расписанию](https://azure.microsoft.com/resources/videos/auto-scaling-azure-web-sites/)
-* [Стефан Шаков (Stefan Schackow). Как масштабируются веб-сайты Azure](https://azure.microsoft.com/resources/videos/how-azure-web-sites-scale/)
+[Масштабирование числа экземпляров вручную или автоматически](../monitoring-and-diagnostics/insights-how-to-scale.md)  
+[Настройка уровня категории премиум v2 для службы приложений](app-service-configure-premium-tier.md)
 
 <!-- LINKS -->
 [vmsizes]:https://azure.microsoft.com/pricing/details/app-service/

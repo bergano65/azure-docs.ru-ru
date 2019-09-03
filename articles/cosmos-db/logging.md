@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 3a2702abd39ecdf506d58b6bd8884f12607e29e8
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: d8a9963edd689a32ae0642ac6fa4a622c248bc5b
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615302"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232381"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
@@ -436,7 +436,7 @@ $blobs | Get-AzStorageBlobContent `
 * Для запроса операций, которые выполнялись дольше 3 миллисекунд:
 
     ```
-    AzureDiagnostics | where toint(duration_s) > 30000 and ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | summarize count() by clientIpAddress_s, TimeGenerated
+    AzureDiagnostics | where toint(duration_s) > 3 and ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | summarize count() by clientIpAddress_s, TimeGenerated
     ```
 
 * Для запроса агента, выполняющего операции:
@@ -448,7 +448,7 @@ $blobs | Get-AzStorageBlobContent `
 * Для запроса времени выполнения длительных операций:
 
     ```
-    AzureDiagnostics | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | project TimeGenerated , toint(duration_s)/1000 | render timechart
+    AzureDiagnostics | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | project TimeGenerated , duration_s | render timechart
     ```
 
 Дополнительные сведения об использовании нового языка поиска по журналам см. в разделе [сведения о поиске по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-search-new.md). 
@@ -474,7 +474,7 @@ $blobs | Get-AzStorageBlobContent `
 | **clientIpAddress** | **clientIpAddress_s** | IP-адрес клиента. |
 | **requestCharge** | **requestCharge_s** | Количество ЕЗ, которые используются при операции. |
 | **collectionRid** | **collectionId_s** | Уникальный идентификатор коллекции.|
-| **duration** | **duration_s** | Длительность операции в тактах. |
+| **duration** | **duration_s** | Длительность операции в миллисекундах. |
 | **requestLength** | **requestLength_s** | Длина запроса в байтах. |
 | **responseLength** | **responseLength_s** | Длина ответа в байтах.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Это свойство должно быть заполнено, если [маркеры ресурсов](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) используются для проверки подлинности. Значение указывает на идентификатор ресурса пользователя. |

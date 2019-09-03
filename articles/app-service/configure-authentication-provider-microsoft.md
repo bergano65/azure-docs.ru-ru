@@ -1,6 +1,6 @@
 ---
 title: Настройка проверки подлинности учетной записи Майкрософт в Службе приложений Azure
-description: Настройка проверки подлинности учетной записи Майкрософт для приложения служб приложений.
+description: Узнайте, как настроить проверку подлинности учетной записи Майкрософт для приложения службы приложений.
 author: mattchenderson
 services: app-service
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 5ef0cb2da26fcc00d1daf4b2dd0faf8bde8b743b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 0832c1e5f10cdb8e1d7a2edbb88162230ab13401
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098525"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70233083"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-microsoft-account-login"></a>Настройка приложения службы приложений для использования входа по учетной записи Майкрософт
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "70098525"
 
 4. Используемых Чтобы ограничить доступ к учетная запись Майкрософт пользователям, задайте **действие, которое будет выполняться, если запрос не прошел проверку** подлинности для **входа с помощью учетной записи Майкрософт**. В этом случае все запросы, не прошедшие проверку подлинности, направляются для проверки подлинности по учетной записи Майкрософт.
 
-> [!CAUTION]
+> [!NOTE]
 > Таким образом, ограниченный доступ применяется ко всем вызовам приложения, что может быть нежелательно для приложений, которым требуется общедоступная Домашняя страница, как во многих одностраничных приложениях. Для таких приложений рекомендуется **Разрешить анонимные запросы (без действий)** , если приложение вручную запускает вход, как описано [здесь](overview-authentication-authorization.md#authentication-flow).
 
 5. Нажмите кнопку **Сохранить**.

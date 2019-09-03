@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c6980d11fa5fe3733e351923d058d1ad0a1677e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 66dbfa40d5a19c7f15ed2772740b84652ae3e58c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084925"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231272"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -64,10 +64,10 @@ ms.locfileid: "70084925"
 ### <a name="windows-down-level-devices"></a>Устройства Windows нижнего уровня
 
 - Windows 8.1
-- Windows 7. Сведения о поддержке Windows 7 см. в этой статье [Поддержка для Windows 7 заканчивается](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support)
+- Windows 7. Сведения о поддержке в Windows 7 см. в статье [Поддержка Windows 7 в конце концов](https://www.microsoft.com/microsoft-365/windows/end-of-windows-7-support).
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2
+- Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
 

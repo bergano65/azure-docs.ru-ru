@@ -1,19 +1,18 @@
 ---
 title: Основные сведения о языке запросов
-description: Описывает доступные операторы Kusto и функции, можно использовать с график ресурсов Azure.
+description: Описание доступных операторов и функций Kusto, которые можно использовать с графом ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: dcb21a6aedf16b034fad4f0822e22758dda03c33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c6e35d688581d0839e12806117e63c7d71fbc459
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800504"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231514"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -55,37 +54,37 @@ ms.locfileid: "65800504"
 
 ## <a name="escape-characters"></a>Escape-символы
 
-Некоторые имена свойств, например те, которые включают `.` или `$`, должны изолированы или escape-последовательность в запрос или свойства имя интерпретируется неправильно и не дает ожидаемых результатов.
+Некоторые имена свойств, например те, которые включают `.` или `$`, должны быть заключены в запрос или экранированы в запросе, либо имя свойства интерпретируется неправильно и не предоставляет ожидаемые результаты.
 
-- `.` -Wrap имя свойства таким образом: `['propertyname.withaperiod']`
+- `.`— Заключите имя свойства в следующее:`['propertyname.withaperiod']`
   
-  Пример запроса, который создает оболочку для свойства _odata.type_:
+  Пример запроса, который заключает в оболочку свойство _OData. Type_:
 
   ```kusto
   where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
   ```
 
-- `$` -Escape-символ в имени свойства. Escape-символ, используемый зависит от выполнения график ресурсов из оболочки.
+- `$`— Escape-последовательность символа в имени свойства. Используемый escape-символ зависит от графа ресурсов оболочки, из которого выполняется.
 
-  - **Bash** - `\`
+  - **Bug** - `\`
 
-    Пример запроса, который не соответствует свойство  _\$тип_ в bash:
+    Пример запроса, который экранирование  _\$типа_ свойства в Bash:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
     ```
 
-  - **cmd** -не `$` символ.
+  - **cmd** — не Escape `$` -символ.
 
   - **PowerShell** - ``` ` ```
 
-    Пример запроса, который не соответствует свойство  _\$тип_ в PowerShell:
+    Пример запроса, который обходит  _\$тип_ свойства в PowerShell:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)
 - См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md)

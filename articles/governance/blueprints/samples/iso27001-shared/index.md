@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: c54d8aedb9464364f93a087de4bdb00c693a96ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b590eeb86972a8e769fc240b1935c6c8ed32530a
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60875159"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231731"
 ---
 # <a name="overview-of-the-iso-27001-shared-services-blueprint-sample"></a>Обзор примера схемы "ISO 27001: общие службы"
 
@@ -38,7 +38,7 @@ ms.locfileid: "60875159"
   - jumpbox или узел-бастион, используемый для управления, доступ к которому можно получить, развернув [Брандмауэр Azure](../../../../firewall/overview.md) в подсети стека входящего трафика;
   - две виртуальные машины, в которых работают доменные службы Active Directory (ADDS) и DNS, доступные только с использованием jumpbox и настраиваемые только для репликации AD через подключение VPN или [ExpressRoute](../../../../expressroute/expressroute-introduction.md) (не развертывается схемой);
   - использование [Наблюдателя за сетями Azure](../../../../network-watcher/network-watcher-monitoring-overview.md) и стандартной защиты от атак DDoS.
-- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб.
+- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
 
 Все эти элементы соответствуют проверенным на практике рекомендациям, опубликованным в [Центре архитектуры Azure (эталонные архитектуры)](/azure/architecture/reference-architectures/).
 
@@ -48,7 +48,7 @@ ms.locfileid: "60875159"
 
 Дополнительные сведения см. в [документации по виртуальному центру обработки данных](/azure/architecture/vdc/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с описанием архитектуры и обзором примера схемы "ISO 27001: общие службы".
 Дополнительные сведения о сопоставлении элементов управления и развертывании этого примера см. в следующих статьях:
@@ -59,7 +59,7 @@ ms.locfileid: "60875159"
 
 Дополнительные статьи о схемах и способах их использования:
 
-- Ознакомьтесь с [жизненным циклом схемы](../../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../../concepts/resource-locking.md).

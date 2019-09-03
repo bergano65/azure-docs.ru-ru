@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 2b4d636737dbd75829c9555e340f79c3c867910d
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: a8ab2039cde11876d853b411ca09a51e96e2ca0a
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967563"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70233047"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -380,6 +380,7 @@ GO
 | storedProcedureTableTypeParameterName |Имя параметра табличного типа, указанного в хранимой процедуре.  |Нет |
 | sqlWriterTableType |Имя типа таблицы, используемое в хранимой процедуре. Действие копирования предоставляет доступ к перемещаемым данным во временной таблице с указанным здесь типом. Это позволяет при выполнении хранимой процедуры объединить копируемые и существующие данные. |Нет |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет |
+| дисаблеметриксколлектион | Фабрика данных собирает такие метрики, как база данных SQL Azure DTU для оптимизации и рекомендации по копированию производительности. Если вы отвечаете за такое поведение, укажите `true` для его отключения. | Нет (значение по умолчанию — `false`) |
 
 **Пример 1. Добавление данных**.
 
@@ -583,27 +584,27 @@ END
 | DateTime |DateTime |
 | datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
-| Десятичное |Десятичное |
+| Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Плавающая область |Double |
 | image |Byte[] |
 | ssNoversion |Int32 |
-| money |Десятичное |
+| money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Десятичное |
+| numeric |Decimal |
 | nvarchar |String, Char[] |
-| real |Единое |
+| real |Single |
 | rowversion |Byte[] |
 | smalldatetime |DateTime |
 | smallint |Int16 |
-| smallmoney |Десятичное |
+| smallmoney |Decimal |
 | sql_variant |Object |
 | text |String, Char[] |
 | time |TimeSpan |
 | timestamp |Byte[] |
 | tinyint |Byte |
-| uniqueidentifier |GUID |
+| uniqueidentifier |Guid |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
 | Xml |Xml |

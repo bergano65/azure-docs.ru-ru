@@ -7,12 +7,12 @@ ms.date: 08/07/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 2bf66f0d6636ac2a8d92a3a865833c9056cd22da
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 5892c0b7f18c43c095019caa9fa40ffec0017369
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934140"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231822"
 ---
 # <a name="overview-of-the-irs-1075-blueprint-sample"></a>Общие сведения о примере схемы IRS 1075.
 
@@ -31,7 +31,7 @@ ms.locfileid: "68934140"
 
 Дополнительные статьи о схемах и способах их использования:
 
-- Ознакомьтесь с [жизненным циклом схемы](../../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../../concepts/resource-locking.md).
