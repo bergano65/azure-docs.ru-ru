@@ -52,7 +52,7 @@ ms.locfileid: "67720207"
 Можно настроить эти параметры вручную или использовать предоставленный скрипт PowerShell, автоматизирующий настройку.
 
 ### <a name="option-1-use-a-powershell-script-to-configure-nested-virtualization"></a>Вариант 1. Настройки вложенной виртуализации с помощью сценария PowerShell
-Скрипт PowerShell, который включает вложенную виртуализацию на узле Windows Server 2016, доступен на [GitHub](https://github.com/charlieding/Virtualization-Documentation/tree/live/hyperv-tools/Nested). Скрипт проверяет предварительные требования, а затем настраивает вложенную виртуализацию на виртуальной машине Azure. Для завершения настройки требуется перезагрузить виртуальную машину Azure. Этот скрипт может работать в других средах, однако это не гарантируется. Просмотрите запись блога Azure с видеодемонстрацией вложенной виртуализации, выполняемой в Azure! https://aka.ms/AzureNVblog.
+Скрипт PowerShell, который включает вложенную виртуализацию на узле Windows Server 2016, доступен на [GitHub](https://github.com/charlieding/Virtualization-Documentation/tree/live/hyperv-tools/Nested). Скрипт проверяет предварительные требования, а затем настраивает вложенную виртуализацию на виртуальной машине Azure. Для завершения настройки требуется перезагрузить виртуальную машину Azure. Этот скрипт может работать в других средах, однако это не гарантируется. Просмотрите запись блога Azure с видеодемонстрацией вложенной виртуализации, выполняемой в Azure! [https://aka.ms/AzureNVblog](https://aka.ms/AzureNVblog ).
 
 ### <a name="option-2-configure-nested-virtualization-manually"></a>Вариант 2. Настройка вложенной виртуализации вручную
 
