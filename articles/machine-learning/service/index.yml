@@ -45,7 +45,7 @@ sections:
         items:
           - html: <a href="tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
           - html: <a href="tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
-          - html: <a href="tutorial-data-prep">Подготовка данных и использование автоматизированного машинного обучения для прогнозирования платы за такси</b></a>
+          - html: <a href="tutorial-auto-train-models">Использование автоматизированного машинного обучения для прогнозирования платы за такси</b></a>
           - html: <a href="how-to-run-batch-predictions">Пакетное прогнозирование для больших объемов данных с помощью конвейеров ML</b></a>
   - title: Примеры
     items:

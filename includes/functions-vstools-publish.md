@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/02/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: a0cf557cec0f20d257c3c70290e2d74f077d881a
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: b96586c801acfc0419b80fa725a468dcb896f79e
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68593801"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70197182"
 ---
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Опубликовать**.
 
@@ -25,7 +25,7 @@ ms.locfileid: "68593801"
     | ------------ |  -------------------------------------------------- |
     | **План потребления службы "Функции Azure"** |   При публикации проекта в приложении-функции, которое работает в [плане потребления](../articles/azure-functions/functions-scale.md#consumption-plan), вы платите только за выполнение приложения-функции. Другие планы размещения связаны с дополнительными расходами. Дополнительные сведения см. в статье [Масштабирование и размещение Функций Azure](../articles/azure-functions/functions-scale.md). | 
     | **Создать** | В Azure создается приложение-функция со связанными ресурсами. Если выбрать параметр **Выбрать существующее**, все файлы в существующем приложении-функции в Azure будут перезаписаны файлами из локального проекта. Используйте этот параметр только при повторной публикации обновлений для существующего приложения-функции. |
-    | **Запустить из файла пакета** | Приложение-функция развертывается с помощью [Zip Deploy](../articles/azure-functions/functions-deployment-technologies.md#zip-deploy) с включенным режимом [Run-From-Package](../articles/azure-functions/run-functions-from-deployment-package.md) (Выполнение из пакета). Этот способ повышает производительность приложения-функции и является рекомендуемым. |
+    | **Запустить из файла пакета** | Приложение-функция развертывается с помощью [Zip Deploy](../articles/azure-functions/functions-deployment-technologies.md#zip-deploy) с включенным режимом [Run-From-Package](../articles/azure-functions/run-functions-from-deployment-package.md) (Выполнение из пакета). Этот способ повышает производительность приложения-функции и является рекомендуемым. Если этот параметр не используется, перед публикацией в Azure остановите локальное выполнение проекта приложения-функции. |
 
 
 3. Нажмите кнопку **Опубликовать**. Если вы еще не вошли в учетную запись Azure из Visual Studio, выберите **Вход**. Вы также можете создать бесплатную учетную запись Azure.
