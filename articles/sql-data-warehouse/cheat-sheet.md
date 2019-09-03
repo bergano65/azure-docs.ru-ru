@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: overview
 ms.subservice: design
-ms.date: 04/17/2018
+ms.date: 08/23/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 38d353541b233f3cd9466e8dcf6c2b84083bd859
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 6c198b6d5e9ecfed3f36ddc3be831af85a913ca5
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515787"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69995840"
 ---
 # <a name="cheat-sheet-for-azure-sql-data-warehouse"></a>Памятка для хранилища данных SQL Azure
 В этой памятке предоставляются полезные советы и рекомендации по созданию решений хранилища данных SQL Azure. Прежде чем приступить к работе, подробно ознакомьтесь с каждым из шагов в записи блога [Azure SQL Data Warehouse Workload Patterns and Anti-Patterns](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns) (Шаблоны и антишаблоны рабочих нагрузок хранилища данных SQL Azure), где объясняется, что такое хранилище данных SQL и чем оно не является.
@@ -96,9 +96,11 @@ ms.locfileid: "66515787"
 
 ## <a name="incremental-load"></a>Поэтапная загрузка
 
-Если данные будут загружаться поэтапно, то сначала необходимо убедиться, что для загрузки данных выделены большие классы ресурсов. Для автоматизации конвейеров извлечения, загрузки и преобразования в хранилище данных SQL рекомендуем использовать PolyBase и ADF V2.
+Если данные будут загружаться поэтапно, то сначала необходимо убедиться, что для загрузки данных выделены большие классы ресурсов.  Это особенно важно при загрузке данных в таблицы с кластеризованными индексами columnstore.  Дополнительные сведения см. в разделе о [классах ресурсов](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management).  
 
-Для большого пакета обновлений исторических данных сначала удалите соответствующие данные. Затем можно выполнить массовую вставку новых данных. Такой двухэтапный подход более эффективен.
+Для автоматизации конвейеров извлечения, загрузки и преобразования в хранилище данных SQL рекомендуем использовать PolyBase и ADF V2.
+
+Для большого пакета обновлений устаревших данных попробуйте использовать [CTAS](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-develop-ctas), чтобы записать в таблицу данные, которые необходимо сохранить, вместо использования операций INSERT, UPDATE и DELETE.
 
 ## <a name="maintain-statistics"></a>Обеспечение статистики
  Пока автоматическая статистика не станет общедоступной, для хранилища данных SQL необходимо вести статистику вручную. Важно также обновлять статистику, так как данные могут быть *существенно* изменены. Это поможет оптимизировать ваши планы запросов. Если ведение статистики занимает слишком много времени, нужно выбирать отдельные столбцы, для которых необходимо создавать статистику. 
@@ -157,7 +159,7 @@ ms.locfileid: "66515787"
 <!--Other Web references-->
 [typical architectures that take advantage of SQL Data Warehouse]: https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/
 [is and is not]:https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns/
-[переносе данных]:https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
+[переносе данных]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
 
 [Azure Data Lake Store]: ../data-factory/connector-azure-data-lake-store.md
 [sys.dm_pdw_nodes_db_partition_stats]: /sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql
