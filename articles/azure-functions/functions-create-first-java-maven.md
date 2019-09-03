@@ -7,20 +7,20 @@ author: rloutlaw
 manager: justhe
 keywords: функции azure, функции, обработка событий, вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: java
 ms.topic: quickstart
+ms.devlang: java
 ms.date: 08/10/2018
 ms.author: routlaw
 ms.reviewer: glenga
-ms.custom: mvc, devcenter, seo-java-july2019
-ms.openlocfilehash: 116d211e366e17ba667baf1e1deae719b56dc3ee
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 5c5a0285a827a7990a11eb6ef6445e7d84189767
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69542744"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096857"
 ---
-# <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
+# <a name="quickstart-use-java-to-create-and-publish-a-function-to-azure-functions"></a>Краткое руководство. Создание и публикация функции в Функциях Azure с помощью Java
 
 В этой статье показано, как использовать средство командной строки Maven для создания и публикации функции Java в службе "Функции Azure". После выполнения действий, описанных в этой статье, код функции будет выполняться в Azure в [Плане потребления](functions-scale.md#consumption-plan) и может запускаться с помощью HTTP-запроса.
 

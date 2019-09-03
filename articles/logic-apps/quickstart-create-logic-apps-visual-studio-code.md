@@ -1,27 +1,29 @@
 ---
-title: Создание автоматизированных рабочих процессов и управление ими в Visual Studio Code с помощью Azure Logic Apps | Документы Майкрософт
+title: Создание автоматизированных рабочих процессов и управление ими в Visual Studio Code с помощью Azure Logic Apps
 description: Краткое руководство о создании приложений логики и управление ими с помощью JSON в Visual Studio Code (VS Code)
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 ms.workload: azure-vs
 author: ecfan
 ms.author: estfan
-ms.topic: article
+ms.manager: carmonm
 ms.reviewer: klam, deli, LADocs
-ms.suite: integration
+ms.topic: quickstart
+ms.custom: mvc
 ms.date: 10/05/2018
-ms.openlocfilehash: 0fec590523fa130af2e5670a92914c056df289d1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: f0b568289a50b9883e6e0f1cba6b793c9e6e90e8
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60512250"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051732"
 ---
 # <a name="quickstart-create-and-manage-automated-logic-app-workflows---visual-studio-code"></a>Краткое руководство. Создание автоматизированных рабочих процессов приложений логики и управление ими в Visual Studio Code
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio Code можно создать приложения логики, которые автоматизируют задачи, рабочие процессы и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям, и управлять ими. В этом кратком руководстве показано, как создать и изменить определения рабочего процесса, работая со схемой определения рабочего процесса в нотации объектов JavaScript (JSON) через взаимодействие на основе кода. В облаке можно также работать с приложениями логики, уже развернутыми в <a href="https://docs.microsoft.com/azure/guides/developer/azure-developer-guide" target="_blank">Azure</a>. 
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio Code можно создать приложения логики, которые автоматизируют задачи, рабочие процессы и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям, и управлять ими. В этом кратком руководстве показано, как создать и изменить определения рабочего процесса, работая со схемой определения рабочего процесса в нотации объектов JavaScript (JSON) через взаимодействие на основе кода. Вы также можете работать с приложениями логики, уже развернутыми в Azure. 
 
-Несмотря на то, что эти задачи можно выполнять на <a href="https://portal.azure.com" target="_blank">портале Azure</a> и в Visual Studio, Visual Studio Code позволяет быстрее приступить к работе если вы уже знакомы с приложением логики и хотите работать непосредственно в коде. Например, также можно отключать, включать, удалять и обновлять уже созданные приложения логики. Кроме того, вы можете работать в приложениях логики и учетных записях интеграции на любой платформе разработки с поддержкой Visual Studio Code, например Linux, Windows и Mac.
+Хотя эти задачи можно выполнять на портале Azure (https://portal.azure.com) ) и в Visual Studio, Visual Studio Code упрощает начало работы, если вы уже знакомы с определениями приложения логики и хотите работать непосредственно с кодом. Например, также можно отключать, включать, удалять и обновлять уже созданные приложения логики. Кроме того, вы можете работать в приложениях логики и учетных записях интеграции на любой платформе разработки с поддержкой Visual Studio Code, например Linux, Windows и Mac.
 
 В этой статье приводятся инструкции по созданию такого же приложения логики, что и в [кратком руководстве по созданию приложения логики на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md), в котором основное внимание уделяется базовым понятиям. В Visual Studio Code приложение логики выглядит так, как показано в следующем примере.
 
@@ -29,7 +31,7 @@ ms.locfileid: "60512250"
 
 Прежде чем начать, убедитесь, что вы выполняете следующие условия.
 
-* Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
+* Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 * Базовые знания об [определениях рабочих процессов приложения логики](../logic-apps/logic-apps-workflow-definition-language.md) и их структуре, которая использует нотацию объектов JavaScript (JSON). 
 
@@ -39,7 +41,7 @@ ms.locfileid: "60512250"
 
 * Скачайте и установите эти средства, если вы еще этого не сделали: 
 
-  * бесплатная <a href="https://code.visualstudio.com/" target="_blank">версия Visual Studio Code 1.25.1 или более поздняя версия</a>;
+  * бесплатная [версия Visual Studio Code 1.25.1 или более поздняя версия]("https://code.visualstudio.com/);
 
   * расширение Visual Studio Code для Azure Logic Apps.
 
@@ -52,7 +54,7 @@ ms.locfileid: "60512250"
 
     ![Установленное расширение](./media/create-logic-apps-visual-studio-code/installed-extension.png)
 
-    Дополнительные сведения см. на странице <a href="https://code.visualstudio.com/docs/editor/extension-gallery" target="_blank">Extension Marketplace</a> (Расширения в Marketplace). Вы также можете просмотреть и внести дополнения в версию с открытым кодом расширения [Azure Logic Apps для Visual Studio Code на сайте GitHub](https://github.com/Microsoft/vscode-azurelogicapps). 
+    Дополнительные сведения см. на странице [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) (Расширения в Marketplace). Вы также можете просмотреть и внести дополнения в версию с открытым кодом расширения [Azure Logic Apps для Visual Studio Code на сайте GitHub](https://github.com/Microsoft/vscode-azurelogicapps). 
 
 <a name="sign-in-azure"></a>
 
@@ -220,8 +222,7 @@ ms.locfileid: "60512250"
 
    ![Отправка изменений](./media/create-logic-apps-visual-studio-code/upload-logic-app-changes.png)
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="next-steps"></a>Дополнительная информация
 
-* Если у вас возникли вопросы, то посетите <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps" target="_blank">форум Azure Logic Apps</a>.
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на <a href="https://aka.ms/logicapps-wish" target="_blank">сайте отзывов пользователей Logic Apps</a>.
-
+> [!div class="nextstepaction"]
+> * [Создание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)

@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.openlocfilehash: 2425d14e43abd98d80bef8ce01e1c1c5f73a78a0
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 358f55594037f4a468d31265f4e65a6ec4d7ef28
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65833083"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020136"
 ---
 # <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB
 
@@ -82,7 +82,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
     ![Просмотр и копирование строки подключения на панели "Строка подключения"](./media/create-table-python/connection-string.png)
 

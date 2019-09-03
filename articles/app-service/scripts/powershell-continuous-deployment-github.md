@@ -10,27 +10,25 @@ tags: azure-service-management
 ms.assetid: 42f901f8-02f7-4869-b22d-d99ef59f874c
 ms.service: app-service-web
 ms.workload: web
-ms.devlang: na
 ms.topic: sample
 ms.date: 03/20/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: d60fc1afbd129471ba56dddb6e2d5beba5ca2330
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bc8be33ede80070b8e9928e01d07b6066f1c887c
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66136485"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70113578"
 ---
 # <a name="create-a-web-app-with-continuous-deployment-from-github"></a>Создание веб-приложения с непрерывным развертыванием из GitHub
 
-Этот пример скрипта создает веб-приложение в службе приложений со связанными ресурсами, а затем настраивает непрерывное развертывание из репозитория GitHub. Дополнительные сведения о развертывании GitHub без непрерывного развертывания см. в статье [Создание веб-приложения и развертывание кода из GitHub](powershell-deploy-github.md).
+Этот пример скрипта создает веб-приложение в Службе приложений со связанными ресурсами, а затем настраивает [непрерывное развертывание](../deploy-continuous-deployment.md) из репозитория GitHub. Дополнительные сведения о развертывании GitHub без непрерывного развертывания см. в статье [Создание веб-приложения и развертывание кода из GitHub](powershell-deploy-github.md).
 
 При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure. Кроме того, убедитесь в следующем.
 
-- Подключение к Azure установлено с помощью команды `az login`.
-- Код приложения находится в вашем открытом или закрытом репозитории GitHub.
-- Вы [создали маркер доступа в учетной записи GitHub](https://help.github.com/articles/creating-an-access-token-for-command-line-use/).
+- Код приложения находится в вашем открытом или закрытом репозитории GitHub. Чтобы получить автоматические сборки, структурируйте репозиторий в соответствии с таблицей [Prepare your repository](../deploy-continuous-deployment.md#prepare-your-repository) (Подготовка репозитория).
+- Вы [создали личный маркер доступа в учетной записи GitHub](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line).
 
 ## <a name="sample-script"></a>Пример скрипта
 

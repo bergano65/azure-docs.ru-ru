@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 05b761dbf9f58f6afca6459e28d2fecca9aa7b06
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 0ae82f8980b995edab3419374e27a2cb905935d5
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881673"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099498"
 ---
 # <a name="create-an-azure-iot-central-application-preview-features"></a>Создание приложения Azure IoT Central (предварительная версия функции)
 
@@ -27,7 +27,7 @@ ms.locfileid: "69881673"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Перейдите на страницу [диспетчера приложений](https://aka.ms/iotcentral) в Azure IoT Central. Затем выполните вход с помощью личной, рабочей или учебной учетной записи Майкрософт.
+Перейдите на веб-сайт [диспетчера приложений в Azure IoT Central](https://aka.ms/iotcentral). Затем выполните вход с помощью личной, рабочей или учебной учетной записи Майкрософт.
 
 Чтобы начать создание приложения Azure IoT Central, выберите **Новое приложение**. Вы перейдете на страницу **Создание приложения**.
 
@@ -55,4 +55,4 @@ ms.locfileid: "69881673"
 В этом кратком руководстве описано, как создать приложение IoT Central, которое использует предварительные версии функций. Следующий шаг может быть таким:
 
 > [!div class="nextstepaction"]
-> [Узнайте о возможностях IoT Central](overview-iot-central-tour-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)
+> [Определение типа нового устройства в приложении Azure IoT Central](./tutorial-define-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)

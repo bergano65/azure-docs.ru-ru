@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 58b36265a5e440dbf33a5d6fb85e791abbd006a8
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 378904b139edb7fe5d7c4376102ca6b153d84fb6
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274241"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129079"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell
 
@@ -295,40 +295,37 @@ for ($i=1; $i -le 2; $i++)
 
 1. Получите общедоступный IP-адрес Load Balancer. С помощью `Get-AzPublicIPAddress` получите общедоступный IP-адрес Load Balancer.
 
-   ```azurepowershell-interactive
-    Get-AzPublicIPAddress `
-    -ResourceGroupName "myResourceGroupLB" `
-    -Name "myPublicIP" | select IpAddress
-   ```
-2. Создайте подключение к виртуальной машине VM1 по протоколу удаленного рабочего стола, используя полученный на предыдущем шаге общедоступный IP-адрес. 
+    ```azurepowershell-interactive
+    Get-AzPublicIPAddress -ResourceGroupName "myResourceGroupLB" -Name "myPublicIP" | select IpAddress
+    ```
 
-   ```azurepowershell-interactive
+2. **На локальном компьютере откройте окно командной строки или PowerShell, чтобы выполнить этот шаг**.  Создайте подключение к виртуальной машине VM1 по протоколу удаленного рабочего стола, используя полученный на предыдущем шаге общедоступный IP-адрес. 
 
-      mstsc /v:PublicIpAddress:4221  
-  
-   ```
+    ```azurepowershell-interactive
+    mstsc /v:PublicIpAddress:4221  
+    ```
+
 3. Введите учетные данные для *VM1*, чтобы начать сеанс удаленного рабочего стола.
 4. Запустите на VM1 Windows PowerShell и выполните в нем приведенные ниже команды, чтобы установить сервер IIS и изменить стандартный HTM-файл.
+
     ```azurepowershell-interactive
-    # Install IIS
-      Install-WindowsFeature -name Web-Server -IncludeManagementTools
-    
-    # Remove default htm file
-     remove-item  C:\inetpub\wwwroot\iisstart.htm
-    
-    #Add custom htm file
-     Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello from" + $env:computername)
+        # Install IIS
+          Install-WindowsFeature -name Web-Server -IncludeManagementTools
+        
+        # Remove default htm file
+          remove-item  C:\inetpub\wwwroot\iisstart.htm
+        
+        # Add custom htm file
+          Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello from" + $env:computername)
     ```
 5. Закройте RDP-подключение к *myVM1*.
-6. Создайте RDP-подключение к *myVM2*, выполнив команду `mstsc /v:PublicIpAddress:4222`. Затем повторите шаг 4 для *VM2*.
+6. **Создайте RDP-подключение на локальном компьютере** к *myVM2*, выполнив команду `mstsc /v:PublicIpAddress:4222`. Затем повторите шаг 4 для *VM2*.
 
 ## <a name="test-load-balancer"></a>Проверка балансировщика нагрузки
 Получите общедоступный IP-адрес подсистемы балансировки нагрузки с помощью командлета [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее *myPublicIP*.
 
 ```azurepowershell-interactive
-Get-AzPublicIPAddress `
-  -ResourceGroupName "myResourceGroupLB" `
-  -Name "myPublicIP" | select IpAddress
+Get-AzPublicIPAddress -ResourceGroupName "myResourceGroupLB" -Name "myPublicIP" | select IpAddress
 ```
 
 После этого можно ввести общедоступный IP-адрес в веб-браузер. Отображается веб-сайт, а также имя узла виртуальной машины, на которую балансировщик нагрузки направил трафик, как показано в следующем примере:

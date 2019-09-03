@@ -4,18 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 993654f22e3eaec0758366b85501c4c93373f2bc
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 5a362d2610e6feb85de730c086070636f3afa2b9
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968122"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906664"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-java.md)]
 
-* [JDK 7 или более поздней версии](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Gradle](https://gradle.org/install/)
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="initialize-a-project-with-gradle"></a>Инициализация проекта с помощью Gradle
 
@@ -89,11 +87,12 @@ public class Translate {
 }
 ```
 
-Добавьте эти строки в класс `Translate`. Вы заметите, что кроме `api-version` в `url` добавлены два дополнительных параметра. Эти параметры используются для настройки выходных данных перевода. В этом примере для параметров указан немецкий (`de`) и итальянский язык (`it`). Обязательно обновите значение ключа подписки.
+Добавьте эти строки в класс `Translate`. Сначала ключ подписки и конечная точка считываются из переменных среды. Вы заметите, что кроме `api-version` в `url` были добавлены два дополнительных параметра. Эти параметры используются для настройки выходных данных перевода. В этом примере для параметров указан немецкий (`de`) и итальянский язык (`it`). 
 
 ```java
-String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-String url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=de,it";
+private static String subscriptionKey = System.getenv("TRANSLATOR_TEXT_SUBSCRIPTION_KEY");
+private static String endpoint = System.getenv("TRANSLATOR_TEXT_ENDPOINT");
+String url = endpoint + "/translate?api-version=3.0&to=de,it";
 ```
 
 Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).

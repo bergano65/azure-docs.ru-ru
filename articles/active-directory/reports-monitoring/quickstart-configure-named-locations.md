@@ -16,17 +16,17 @@ ms.date: 11/13/2018
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 540bc8a4dbfda83ff6e0480bc216a38742bbef2b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1513dba19221e64d40551ffb13a5e9f33fd9858f
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988079"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127241"
 ---
 # <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Краткое руководство. Настройка именованных расположений в Azure Active Directory
 
 С помощью именованных расположений можно пометить доверенные диапазоны IP-адресов в вашей организации. Именованные расположения в Azure AD используются для перечисленных ниже задач.
-- Обнаружение ложноположительных событий в [событиях риска](concept-risk-events.md). Вход из надежного расположения снижает риски входа пользователя.   
+- Определение ложноположительных событий при [обнаружении рисков](concept-risk-events.md). Вход из надежного расположения снижает риски входа пользователя.   
 - Настройка [условного доступа на основе расположения](../conditional-access/location-condition.md).
 
 Из этого краткого руководства вы узнаете, как настроить именованные расположения в своей среде.

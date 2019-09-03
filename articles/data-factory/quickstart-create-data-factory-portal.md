@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: d5213ff21d92bf811b05802e4cb2ffab9b9a29c6
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 5baa8c78ad581a00a3601706f31cf815359120c7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648372"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70077044"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 
@@ -71,7 +71,7 @@ ms.locfileid: "69648372"
 ## <a name="create-a-linked-service"></a>Создание связанной службы
 На этом этапе вы создадите связанную службу, чтобы связать учетную запись хранения Azure с фабрикой данных. Связанная служба содержит сведения о подключении, используемые фабрикой данных для подключения к ней в среде выполнения.
 
-1. Выберите **Подключения** и нажмите кнопку **Создать** на панели инструментов. 
+1. Выберите **Подключения** и нажмите кнопку **Создать** на панели инструментов (кнопка **Подключения** расположена внизу левого столбца в разделе **Ресурсы фабрики**). 
 
 1. На странице **New Linked Service** (Новая связанная служба) выберите **Хранилище BLOB-объектов Azure** и щелкните **Продолжить**. 
 

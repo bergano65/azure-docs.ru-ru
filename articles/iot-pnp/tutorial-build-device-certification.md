@@ -1,5 +1,5 @@
 ---
-title: Создание готового к сертификации устройства Azure IoT Plug and Play (предварительная версия) | Документация Майкрософт
+title: Создание готового к сертификации устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
 description: В этой статье разработчик устройств сможет ознакомиться со сведениями о создании готового к сертификации устройства IoT Plug and Play (предварительная версия).
 author: tbhagwat3
 ms.author: tanmayb
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: bfa611eba8e7a990626fbace8b930962615e0594
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 151f6609375063a68a848f4c799af0b459124f23
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69878755"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047905"
 ---
 # <a name="build-an-iot-plug-and-play-preview-device-thats-ready-for-certification"></a>Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)
 
@@ -124,7 +124,7 @@ ms.locfileid: "69878755"
 
 #### <a name="implement-the-model-information-and-sdk-information-interfaces"></a>Реализация интерфейсов со сведениями о модели и пакете SDK
 
-Пакет SDK для устройств Azure IoT реализует интерфейсы со сведениями о модели и пакете SDK. Если вы используете функцию создания кода в VS Code, код вашего устройства будет использовать пакет SDK для устройств Azure IoT Plug and Play.
+Пакет SDK для устройств Azure IoT реализует интерфейсы со сведениями о модели и пакете SDK. Если вы используете функцию создания кода в VS Code, код вашего устройства будет использовать пакет SDK для устройств IoT Plug and Play.
 
 Если вы решили не использовать пакет SDK для устройств Azure IoT, можете использовать исходный код пакета SDK в качестве справочного материала для реализации.
 

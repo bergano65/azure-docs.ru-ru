@@ -4,19 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 5a56744173974b470999f846da49d144f2013fbb
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 55ad3591a8c2e7d5de6d1efe255e0f3a4b3c11bd
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968090"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907041"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-csharp.md)]
 
-* [Пакет SDK для .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
-* [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Setup and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-net-core-project"></a>Создание проекта .NET Core
 
@@ -46,6 +43,31 @@ using System.Text;
 using Newtonsoft.Json;
 ```
 
+## <a name="get-subscription-information-from-environment-variables"></a>Получение сведений о подписке из переменных среды
+
+Добавьте следующие строки в класс `Program`. Эти строки считывают ключ подписки и конечную точку из переменных среды и выдают ошибку при возникновении каких-либо проблем.
+
+```csharp
+private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
+private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+static Program()
+{
+    if (null == subscriptionKey)
+    {
+        throw new Exception("Please set/export the environment variable: " + key_var);
+    }
+    if (null == endpoint)
+    {
+        throw new Exception("Please set/export the environment variable: " + endpoint_var);
+    }
+}
+// The code in the next section goes here.
+```
+
 ## <a name="create-a-function-to-get-alternate-translations"></a>Создание функции для поиска вариантов перевода
 
 В классе `Program` создайте функцию `AltTranslation`. Этот класс инкапсулирует код, используемый для вызова ресурса Dictionary, и выводит результат в консоль.
@@ -60,14 +82,14 @@ static void AltTranslation()
 }
 ```
 
-## <a name="set-the-subscription-key-host-name-and-path"></a>Выбор ключа подписки, имени узла и пути
+## <a name="construct-the-uri"></a>Создание универсального кода ресурса (URI)
 
-Добавьте эти строки в функцию `AltTranslation`. Вы заметите, что кроме `api-version` в `route` добавлены два дополнительных параметра. Эти параметры используются для настройки входных и выходных данных перевода. В этом примере мы используем английский и испанский языки: `en` и `es`.
+Добавьте эти строки в функцию `AltTranslation`. Вы заметите, что кроме `api-version` были добавлены два дополнительных параметра. Эти параметры используются для настройки входных и выходных данных перевода. В этом примере мы используем английский и испанский языки: `en` и `es`.
 
 ```csharp
-string host = "https://api.cognitive.microsofttranslator.com";
-string route = "/dictionary/lookup?api-version=3.0&from=en&to=es";
-string subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+string route = "/dictionary/lookup?api-version=3.0";
+static string params_ = "from=en&to=es";
+static string uri = endpoint + path + params_;
 ```
 
 Далее необходимо создать и сериализовать объект JSON, содержащий переводимый текст. Учтите, что в массив `body` можно передать несколько объектов.
@@ -76,8 +98,6 @@ string subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 System.Object[] body = new System.Object[] { new { Text = @"Elephants" } };
 var requestBody = JsonConvert.SerializeObject(body);
 ```
-
-
 
 ## <a name="instantiate-the-client-and-make-a-request"></a>Создание экземпляра клиента и выполнение запроса
 
@@ -109,7 +129,7 @@ using (var request = new HttpRequestMessage())
 request.Method = HttpMethod.Post;
 
 // Construct the full URI
-request.RequestUri = new Uri(host + route);
+request.RequestUri = new Uri(uri);
 
 // Add the serialized JSON object to your request
 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
@@ -142,7 +162,8 @@ static string PrettyPrint(string s)
 
 ```csharp
 AltTranslation();
-Console.ReadLine();
+Console.WriteLine("Press any key to continue.");
+Console.ReadKey();
 ```
 
 ## <a name="run-the-sample-app"></a>Запуск примера приложения

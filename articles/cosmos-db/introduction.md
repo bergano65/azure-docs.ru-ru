@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: overview
 ms.date: 07/23/2019
 ms.author: rimman
-ms.openlocfilehash: ee863b6003444ec099753a6488f3fe4078338e60
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 5e53a671c866b9482296622d19d4ad6bec46829d
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68384117"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905291"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Вас приветствует Azure Cosmos DB
 
@@ -23,6 +23,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
 > [!div class="nextstepaction"]
 > [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)
+
+Вы также можете поучаствовать в программе [Cosmos DB Bootstrap Program](https://azurecosmosdb.github.io/CosmosBootstrap/), чтобы ускорить сборку или перенос приложений в Azure Cosmos DB. Когда вы регистрируетесь для участия в этой программе, вам назначаются инженеры Azure Cosmos DB для помощи в проекте. Они могут помочь перенести данные или создать приложения в Azure Cosmos DB.
+
+> [!div class="nextstepaction"]
+> [Зарегистрируйтесь для участия в программе Cosmos DB Bootstrap Program](https://azurecosmosdb.github.io/CosmosBootstrap/)
 
 ![Cosmos DB — это глобально распределенная служба базы данных Майкрософт с гибкой масштабируемостью, гарантированно низкой задержкой, пятью моделями согласованности и универсальными соглашениями об уровне обслуживания.](./media/introduction/azure-cosmos-db.png)
 

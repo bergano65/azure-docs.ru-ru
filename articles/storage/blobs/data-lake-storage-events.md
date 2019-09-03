@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
-ms.openlocfilehash: ce132c6a6859156b209a26b5950eb6a509f446fc
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 5a85e3b16a5a93fedd6a2257f5601b0673f825ad
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656133"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904661"
 ---
 # <a name="tutorial-use-azure-data-lake-storage-gen2-events-to-update-a-databricks-delta-table"></a>Руководство по Обновление таблицы Databricks Delta с помощью событий Azure Data Lake Storage 2-го поколения
 
@@ -140,10 +140,9 @@ ms.locfileid: "69656133"
 
     spark.conf.set("fs.azure.account.auth.type", "OAuth")
     spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-    spark.conf.set("fs.azure.account.oauth2.client.id", "<appId")
+    spark.conf.set("fs.azure.account.oauth2.client.id", "<appId>")
     spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")
     spark.conf.set("fs.azure.account.oauth2.client.endpoint", "https://login.microsoftonline.com/<tenant>/oauth2/token")
-    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
 
     adlsPath = 'abfss://data@contosoorders.dfs.core.windows.net/'
     inputPath = adlsPath + dbutils.widgets.get('source_file')
@@ -151,6 +150,9 @@ ms.locfileid: "69656133"
     ```
 
     Этот код позволяет создать мини-приложение с именем **source_file**. Позже вы создадите функцию Azure, которая вызывает этот код и передает мини-приложению путь к файлу.  Этот код также позволяет выполнить аутентификацию субъекта-службы в учетной записи хранения, а затем создать переменные для использования в других ячейках.
+
+    > [!NOTE]
+    > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. <br><br>Например, вместо использования строки кода `spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")` следует использовать строку `spark.conf.set("fs.azure.account.oauth2.client.secret", dbutils.secrets.get(scope = "<scope-name>", key = "<key-name-for-service-credential>"))`. <br><br>Выполнив инструкции из этого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
 2. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
@@ -309,7 +311,7 @@ ms.locfileid: "69656133"
         log.LogInformation(eventGridEvent.Data.ToString());
 
         if (eventGridEvent.EventType == "Microsoft.Storage.BlobCreated" | | eventGridEvent.EventType == "Microsoft.Storage.FileRenamed") {
-            var fileData = ((JObject)(eventGridEvent.Data)) .ToObject<StorageBlobCreatedEventData>();
+            var fileData = ((JObject)(eventGridEvent.Data)).ToObject<StorageBlobCreatedEventData>();
             if (fileData.Api == "FlushWithClose") {
                 log.LogInformation("Triggering Databricks Job for file: " + fileData.Url);
                 var fileUrl = new Uri(fileData.Url);
@@ -382,6 +384,27 @@ ms.locfileid: "69656133"
    Возвращается таблица, которая содержит последнюю запись.
 
    ![Последняя запись отображается в таблице](./media/data-lake-storage-events/final_query.png "Latest record appears in table")
+
+6. Чтобы обновить эту запись, создайте файл с именем `customer-order-update.csv`, вставьте в него приведенный ниже код и сохраните файл на локальном компьютере.
+
+   ```
+   InvoiceNo,StockCode,Description,Quantity,InvoiceDate,UnitPrice,CustomerID,Country
+   536371,99999,EverGlow Single,22,1/1/2018 9:01,33.85,20993,Sierra Leone
+   ```
+
+   Этот CSV-файл почти идентичен предыдущему, за исключением того, что количество в заказе изменилось с `228` на `22`.
+
+7. С помощью Обозревателя службы хранилища отправьте этот файл в папку **input** в учетной записи хранения.
+
+8. Снова выполните запрос `select`, чтобы просмотреть обновленную разностную таблицу.
+
+   ```
+   %sql select * from customer_data
+   ```
+
+   Будет возвращена таблица, которая содержит обновленную запись.
+
+   ![Обновленная запись отображается в таблице](./media/data-lake-storage-events/final_query-2.png "Обновленная запись отображается в таблице")
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

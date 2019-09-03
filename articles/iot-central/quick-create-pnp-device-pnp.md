@@ -1,5 +1,5 @@
 ---
-title: Подключение устройства IoT Plug and Play (предварительная версия) к IoT Central | Документация Майкрософт
+title: Подключение устройства IoT Plug and Play (предварительная версия) к Azure IoT Central | Документация Майкрософт
 description: Используйте модель возможностей устройства для создания кода устройства. Затем запустите код устройства, убедитесь, что устройство подключено к приложению IoT Central, и используйте автоматически сформированные представления.
 author: dominicbetts
 ms.author: dobett
@@ -8,18 +8,18 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 152e373f3a340a8abe3d8bc54d6515296d95efba
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 2f1ee5caf89af718d91abeac01730700c131ab41
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881693"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70048957"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-device-and-connect-it-to-your-iot-central-application"></a>Краткое руководство. Использование модели возможностей устройства для создания устройства IoT Plug and Play и его подключения к приложению IoT Central
 
 [!INCLUDE [iot-central-pnp-original](../../includes/iot-central-pnp-original-note.md)]
 
-_Модель возможностей устройства_ (DCM) описывает возможности устройства [IoT Plug and Play](https://aka.ms/iot-pnp-docs). IoT Central может использовать DCM для создания шаблона и визуализаций для устройства при его первом подключении. В этом кратком руководстве объясняется, как выполнять следующие задачи:
+_Модель возможностей устройства_ (DCM) описывает возможности устройства [IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). IoT Central может использовать DCM для создания шаблона и визуализаций для устройства при его первом подключении. В этом кратком руководстве объясняется, как выполнять следующие задачи:
 
 * Создать устройство IoT Plug and Play с использованием DCM в Visual Studio Code.
 * Запустить код устройства в Windows и убедиться, что оно подключено к приложению IoT Central.

@@ -4,12 +4,12 @@ ms.service: spatial-anchors
 ms.topic: include
 ms.date: 1/30/2019
 ms.author: rgarcia
-ms.openlocfilehash: b46a2b18309851bbe2934980137a53d2de6f6efc
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 1007533df077c58d9e4d57f9e86b035730ea917f
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "67135359"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904038"
 ---
 ## <a name="set-up-your-device-in-unity"></a>Настройка устройства в Unity
 
@@ -29,7 +29,7 @@ ms.locfileid: "67135359"
 
 [!INCLUDE [Configure Unity Scene](spatial-anchors-unity-configure-scene.md)]
 
-В области **Inspector** (Инспектор) введите `Sharing Anchors Service url` (из развертывания веб-приложения ASP.NET в Azure) в качестве значения для `Base Sharing Url`, заменив `index.html` на `api/anchors`. Результат будет выглядеть так: `https://<app_name>.azurewebsites.net/api/anchors`.
+На панели **Проект** перейдите к `Assets\AzureSpatialAnchors.Examples\Resources`. Выберите `SpatialAnchorSamplesConfig`. Затем в области **Inspector** (Инспектор) введите `Sharing Anchors Service url` (из развертывания веб-приложения ASP.NET в Azure) в качестве значения для `Base Sharing Url`, заменив `index.html` на `api/anchors`. Результат будет выглядеть так: `https://<app_name>.azurewebsites.net/api/anchors`.
 
 Сохраните сцену, выбрав **File** > **Save** (Файл > Сохранить).
 

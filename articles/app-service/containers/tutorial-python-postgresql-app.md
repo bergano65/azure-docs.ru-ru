@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 1cb9cd72908dc88ef2890764bc8d3fad88a82707
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: b5a21bd144558459ac60ae2da405f9ea57ca2fd1
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951907"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020187"
 ---
 # <a name="build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Создание веб-приложения Python (Django) с помощью PostgreSQL в Службе приложений Azure
 
@@ -140,13 +140,13 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
-Откройте браузер и перейдите по адресу `http://localhost:8000`. Отобразится сообщение `No polls are available.`. 
+Перейдите к `http://localhost:8000` в браузере. Отобразится сообщение `No polls are available.`. 
 
-Перейдите к `http://localhost:8000/admin` и войдите под именем администратора, который был создан на предыдущем шаге. Щелкните **Добавить** возле поля **Вопросы** и создайте вопрос опроса с несколькими вариантами.
+Перейдите к `http://localhost:8000/admin` и войдите с именем администратора, который был создан на предыдущем шаге. Щелкните **Добавить** возле поля **Вопросы** и создайте вопрос опроса с несколькими вариантами.
 
 ![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-local.png)
 
-Еще раз перейдите к `http://localhost:8000`, и отобразится вопрос опроса.
+Перейдите к `http://localhost:8000`, и отобразится вопрос опроса.
 
 Пример приложения Django хранит данные пользователя в базе данных. Если добавление вопроса опроса прошло успешно, значит ваше приложение записывает данные в локальную базу данных PostgreSQL.
 
@@ -269,13 +269,13 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Перейдите по адресу `http://localhost:8000`. Отобразится сообщение `No polls are available.`. 
+Выполните вход в `http://localhost:8000` повторно. Отобразится сообщение `No polls are available.`. 
 
-Перейдите к `http://localhost:8000/admin`, и выполните вход с помощью созданного администратора, и создайте вопрос опроса, как это делали ранее.
+Перейдите к `http://localhost:8000/admin`, и выполните вход с данными созданного администратора, и создайте вопрос опроса, как это делали ранее.
 
 ![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-local.png)
 
-Еще раз перейдите к `http://localhost:8000`, и отобразится вопрос опроса. Теперь приложение записывает данные в базу данных на портале Azure.
+Перейдите к `http://localhost:8000`, и отобразится вопрос опроса. Теперь приложение записывает данные в базу данных на портале Azure.
 
 ## <a name="deploy-to-azure"></a>Развертывание в Azure
 
@@ -386,7 +386,7 @@ http://<app-name>.azurewebsites.net
 
 В репозитории Служба приложений Azure обнаруживает проект Django во время поиска _wsgi.py_ в каждом подкаталоге, который создается по умолчанию с помощью `manage.py startproject`. С помощью найденного файла загружается веб-приложение Django. Дополнительные сведения о том, как загружаются приложения Python с помощью Службы приложений Azure, см. [здесь](how-to-configure-python.md).
 
-Перейдите к `<app-name>.azurewebsites.net` и войдите под именем уже созданного администратора. При желании попробуйте создать некоторые дополнительные вопросы опроса.
+Перейдите к `<app-name>.azurewebsites.net` и войдите с тем же именем созданного администратора. При желании попробуйте создать некоторые дополнительные вопросы опроса.
 
 ![Приложение Python Django, выполняемое в локальной среде](./media/tutorial-python-postgresql-app/django-admin-azure.png)
 
@@ -400,7 +400,7 @@ http://<app-name>.azurewebsites.net
 
 Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+В меню слева выберите **Службы приложений** и щелкните имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/tutorial-python-postgresql-app/app-resource.png)
 

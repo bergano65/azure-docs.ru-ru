@@ -4,18 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 6b1fff913defce20aff41f685c5b96f0547faaca
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: fd8b4ae06018de1d03ca60e836534a535c8f5df8
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968218"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906928"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-nodejs.md)]
 
-Для работы с этим кратким руководством вам понадобится:
-
-* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -31,6 +29,14 @@ const uuidv4 = require('uuid/v4');
 
 Эти модули необходимы для построения HTTP-запроса и создания уникального идентификатора для заголовка `'X-ClientTraceId'`.
 
+## <a name="set-the-endpoint"></a>Задание конечной точки
+
+В этом примере будет предпринята попытка считать конечную точку API "Перевод текстов" из переменной среды `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `endpoint` в виде строки и закомментировать условный оператор.
+
+```javascript
+lorum ipsum
+```
+
 ## <a name="configure-the-request"></a>Настройка запроса
 
 Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
@@ -41,7 +47,7 @@ const uuidv4 = require('uuid/v4');
 ```javascript
 let options = {
     method: 'GET',
-    baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+    baseUrl: endpoint,
     url: 'languages',
     qs: {
       'api-version': '3.0',

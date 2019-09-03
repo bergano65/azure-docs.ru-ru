@@ -10,16 +10,15 @@ ms.assetid: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.date: 04/29/2019
+ms.date: 08/23/2019
 ms.author: cephalin
-ms.openlocfilehash: 163876d63ba2127dd3f3444e95b284918e60e368
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: d4f1cd5193f29e929c822966ca427c6e6ebf67de
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951996"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070971"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Создание приложения Python в Службе приложений Azure в Linux
 
@@ -37,7 +36,7 @@ ms.locfileid: "68951996"
 
 ## <a name="download-the-sample-locally"></a>Скачать пример на локальный компьютер
 
-В окне терминала выполните нижеприведенные команды, чтобы клонировать пример приложения на локальный компьютер и перейти в каталог, содержащий пример кода.
+В окне терминала выполните нижеприведенные команды, чтобы клонировать пример приложения на локальный компьютер, и перейдите в каталог, содержащий пример кода.
 
 ```bash
 git clone https://github.com/Azure-Samples/python-docs-hello-world
@@ -82,7 +81,7 @@ flask run
 ```bash
 mkdir quickstart
 
-cd quickstart
+cd $HOME/quickstart
 ```
 
 Затем выполните следующую команду, чтобы клонировать репозиторий с примером приложения в локальный каталог quickstart.
@@ -184,7 +183,7 @@ az webapp up -n <app-name> -l <location-name>
 
 Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
 
-В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
+В меню слева выберите **Службы приложений**, а затем щелкните имя своего приложения Azure.
 
 ![Переход к приложению Azure на портале](./media/quickstart-python/app-service-list.png)
 

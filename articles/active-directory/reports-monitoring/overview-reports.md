@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cf5770cf052a478ea56f906efc19698554a1cd0
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: cd3907231ce3963d43fa8279039a736b63fc2043
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989721"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127272"
 ---
 # <a name="what-are-azure-active-directory-reports"></a>Что такое отчеты в Azure Active Directory
 
@@ -54,9 +54,9 @@ ms.locfileid: "68989721"
 
 - В **выпусках Azure Active Directory Free и Basic** отображается список пользователей, находящихся в группе риска, и рискованных входов в систему. 
 
-- Выпуск **Azure Active Directory Premium 1** расширяет эту модель, также позволяя вам изучать некоторые базовые события риска, обнаруженные для каждого отчета. 
+- Выпуск **Azure Active Directory Premium 1** расширяет эту модель, также позволяя вам изучать некоторые базовые данные обнаружения рисков для каждого отчета. 
 
-- Выпуск **Azure Active Directory Premium 2** предоставляет наиболее полные сведения о базовых событиях риска, а также позволяет настроить политики безопасности, автоматически реагирующие на настроенные уровни риска.
+- Выпуск **Azure Active Directory Premium 2** предоставляет наиболее полные базовые данные обнаружения рисков, а также позволяет настроить политики безопасности, автоматически реагирующие на настроенные уровни риска.
 
 
 ## <a name="activity-reports"></a>Отчеты об активности

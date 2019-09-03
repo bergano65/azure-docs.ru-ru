@@ -12,19 +12,19 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 06/05/2019
+ms.date: 08/28/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: e34fbe200420fef1653e21bb44ac2f7e0de90fb7
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 6826c1340de16891933b290eb29bd4fb8d120974
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593872"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127923"
 ---
 # <a name="compare-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
-Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: **Azure CDN уровня "Стандартный" от корпорации Майкрософт**, **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md).
+Сеть доставки содержимого Microsoft Azure (CDN) включает в себя четыре продукта: **Azure CDN уровня "Стандартный" от корпорации Майкрософт**, **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md). Обратите внимание, что хотя существует вариант обновления со Standard Verizon до Premium Verizon, механизм преобразования между другими продуктами в настоящее время отсутствует.
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 

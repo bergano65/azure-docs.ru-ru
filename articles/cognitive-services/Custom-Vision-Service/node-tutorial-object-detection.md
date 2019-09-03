@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
 ms.author: areddish
-ms.openlocfilehash: 7f43507566109a52b914f27e37e5392345ec2eaf
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 6e3bf7b4fb60d81ff8883c2592de3739572bf2fa
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946168"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997796"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-nodejs-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Node.js
 
@@ -26,20 +26,19 @@ ms.locfileid: "68946168"
 - Установленный компонент [Node.js 8](https://www.nodejs.org/en/download/) или более поздней версии.
 - Установленный компонент [npm](https://www.npmjs.com/).
 
+[!INCLUDE [get-keys](includes/get-keys.md)]
+
+[!INCLUDE [node-get-images](includes/node-get-images.md)]
+
+
 ## <a name="install-the-custom-vision-sdk"></a>Установка пакета SDK Пользовательского визуального распознавания
 
-Чтобы установить пакеты SDK Пользовательского визуального распознавания для Node.js, выполните следующие команды:
+Чтобы установить пакеты SDK Пользовательского визуального распознавания для Node.js в своем проекте, выполните следующие команды:
 
 ```shell
 npm install @azure/cognitiveservices-customvision-training
 npm install @azure/cognitiveservices-customvision-prediction
 ```
-
-Вы можете скачать изображения из [репозитория примеров для Node.js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples).
-
-[!INCLUDE [get-keys](includes/get-keys.md)]
-
-[!INCLUDE [node-get-images](includes/node-get-images.md)]
 
 ## <a name="add-the-code"></a>Добавление кода
 
@@ -47,9 +46,10 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 ### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
 
-Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения. Обратите внимание, что разница между созданием проекта поиска объектов и классификации изображений состоит в домене, установленном в вызове **create_project**.
+Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения и задайте путь к папке образа в качестве значения пути sampleDataRoot. Убедитесь, что значение endPoint соответствует конечным точкам обучения и прогнозирования, созданным в [Customvision.ai](https://www.customvision.ai/). Обратите внимание, что разница между созданием проекта поиска объектов и классификации изображений состоит в домене, установленном в вызове **create_project**.
 
 ```javascript
+const fs = require('fs');
 const util = require('util');
 const TrainingApi = require("@azure/cognitiveservices-customvision-training");
 const PredictionApi = require("@azure/cognitiveservices-customvision-prediction");

@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: cc062f830facb0d617dc649ecd17acfff0a740af
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 7fa2a5088e2eae039d43ecf0db080190f74cd772
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69618934"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125224"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Руководство по Создание и настройка экземпляра доменных служб Azure Active Directory
 
@@ -43,6 +43,9 @@ ms.locfileid: "69618934"
 * Привилегии *глобального администратора* для клиента Azure AD, чтобы включить доменные службы Azure AD.
 * Для создания нужных ресурсов Azure AD DS требуются привилегии *участника* в подписке Azure.
 * Для клиента Azure AD должна быть настроена [функция самостоятельного сброса пароля][configure-sspr].
+
+> [!IMPORTANT]
+> После создания управляемого домена AD DS Azure вы не сможете переместить экземпляр в другую группу ресурсов, виртуальную сеть, подписку и т. д. Выберите наиболее подходящую подписку, группу ресурсов, регион и виртуальную сеть при развертывании экземпляра AD DS Azure.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -222,6 +225,6 @@ ms.locfileid: "69618934"
 [network-considerations]: network-considerations.md
 [create-dedicated-subnet]: ../virtual-network/virtual-network-manage-subnet.md#add-a-subnet
 [scoped-sync]: scoped-synchronization.md
-[on-prem-sync]: active-directory-ds-getting-started-password-sync-synced-tenant.md
+[on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services

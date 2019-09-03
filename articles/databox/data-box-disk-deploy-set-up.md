@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 07/23/2019
+ms.date: 08/28/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 49f3f608ff34847905b219047af843db00da78c4
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 15960c39878e0c8ae22f94197ed1937597f1ee02
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68480046"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126126"
 ---
 ::: zone target="docs"
 
@@ -29,6 +29,16 @@ ms.locfileid: "68480046"
 > * Подключение к дискам и получение ключа доступа
 > * Разблокировка дисков на клиенте Windows
 > * Разблокировка дисков на клиенте Linux
+
+::: zone-end
+
+::: zone target="chromeless"
+
+## <a name="unpack-connect-and-unlock-azure-data-box-disk"></a>Распаковка, подключение и разблокировка Диска Azure Data Box
+
+::: zone-end
+
+::: zone target="docs"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -282,7 +292,7 @@ ms.locfileid: "68480046"
         ``` 
         .\DataBoxDiskUnlock.exe
         ```
-    -  Укажите ключ доступа, полученный из **Общие сведения > Сведения об устройстве** на портале Azure. Отобразится буква диска, присвоенная диску. 
+    -  Получите ключ доступа, выбрав **Общие сведения > Сведения об устройстве** на портале Azure, и укажите его здесь. Отобразится буква диска, присвоенная диску. 
 4. Откройте терминал, чтобы разблокировать диски на клиенте Linux. Перейдите в папку со скачанным программным обеспечением. Введите следующие команды для изменения разрешения для файлов, чтобы можно было их выполнить. 
 
     ```
@@ -294,7 +304,7 @@ ms.locfileid: "68480046"
     ```
     sudo ./DataBoxDiskUnlock_Prep.sh
     ```
-    Запустите средство разблокировки диска Data Box. Укажите ключ доступа на портале Azure, перейдя в раздел **Общие сведения > Сведения об устройстве**. При необходимости укажите список томов, зашифрованных BitLocker, в одинарных кавычках, чтобы разблокировать их.
+    Запустите средство разблокировки диска Data Box. Получите ключ доступа, выбрав **Общие сведения > Сведения об устройстве** на портале Azure, и укажите его здесь. При необходимости укажите список томов, зашифрованных BitLocker, в одинарных кавычках, чтобы разблокировать их.
 
     ```
     sudo ./DataBoxDiskUnlock_x86_64 /PassKey:’<Your passkey from Azure portal>’
@@ -303,7 +313,9 @@ ms.locfileid: "68480046"
 
 Когда диск будет разблокирован, можно просмотреть содержимое диска.
 
-Чтобы ознакомиться с дополнительными сведениями о том, как настроить и разблокировать диски, перейдите в раздел [Руководство. Распаковка, подключение и разблокировка Диска Azure Data Box](data-box-disk-deploy-set-up.md).
+Дополнительные сведения о том, как настроить диски, см. в разделе [Распаковка Диска Data Box](data-box-disk-deploy-set-up.md#unpack-your-disks).
+
+Дополнительные сведения о том, как разблокировать диски, см. в разделе [Разблокировка дисков на клиенте Windows](data-box-disk-deploy-set-up.md#unlock-disks-on-windows-client).
 
 ::: zone-end
 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство по Python. Создание, загрузка и запрос индексов с помощью REST API в службе "Поиск Azure"
 description: Описание процессов создания индекса, загрузки данных и выполнения запросов с помощью Python, Jupyter Notebook и REST API службы "Поиск Azure".
-ms.date: 07/11/2019
+ms.date: 08/28/2019
 author: heidisteen
 manager: nitinme
 ms.author: heidist
@@ -9,12 +9,12 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: quickstart
-ms.openlocfilehash: 308e296ba5306949e87e68f14c8c219b85825af4
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 352d26a1f3e781f7dbb6e502caea44bdb45b398a
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656792"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129401"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в Python с помощью записных книжек Jupyter
 > [!div class="op_single_selector"]
@@ -71,6 +71,8 @@ ms.locfileid: "69656792"
    headers = {'Content-Type': 'application/json',
            'api-key': '<YOUR-ADMIN-API-KEY>' }
    ```
+
+   Если вы получаете ошибку подключения `"Failed to establish a new connection"`, убедитесь, что ключ API является первичным или вторичным ключом администратора и присутствуют все начальные и конечные символы (`?` и `/`).
 
 1. В третьей ячейке сформулируйте сам запрос. Этот запрос GET отправляется в коллекцию индексов службы поиска и выбирает свойство имен существующих индексов.
 

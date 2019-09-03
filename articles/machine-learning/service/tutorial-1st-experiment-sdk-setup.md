@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: cc16f3c8ea287e78d7b7b4d9a56f5a2e82c26f01
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 7ed81375912613995d573b110607e7913adfd10f
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515344"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051663"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment"></a>Руководство по началу работы по созданию эксперимента Машинного обучения
 
@@ -73,7 +73,12 @@ ms.locfileid: "69515344"
     > [!TIP]
     > Эта папка находится в рабочей области [контейнера хранилища](concept-workspace.md#resources), а не на самой виртуальной машине записной книжки.  Вы можете удалить виртуальную машину записной книжки, сохранив свою работу.  Если вы создадите виртуальную машину записной книжки, она будет загружена в эту же папку. При совместном использовании рабочей области с другими пользователями, они увидит вашу папку и вы увидите их.
 
-1. Откройте подкаталог `samples-*`, а затем откройте `tutorials/tutorial-1st-experiment-sdk-train.ipynb`, чтобы запустить **вторую часть** этого учебника.
+1. Откройте подкаталог `samples-*`, а затем откройте файл `tutorials/tutorial-1st-experiment-sdk-train.ipynb`.
+
+> [!Warning]
+> Проверьте, что вы открыли файл `tutorial-1st-experiment-sdk-train.ipynb`, а **не** файл `.yml` с таким же именем. 
+
+Во **второй части** руководства вы выполните код в `tutorial-1st-experiment-sdk-train.ipynb` для обучения модели машинного обучения.
 
 ## <a name="end"></a> Очистка ресурсов
 

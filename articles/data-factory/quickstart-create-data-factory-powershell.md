@@ -13,16 +13,16 @@ ms.devlang: powershell
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 07b5b039e0069702b613619c54eb7eda46bf3051
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8678bacb48bdf63abb2ce517f1bead83d86a5827
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60313230"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70113745"
 ---
 # <a name="quickstart-create-an-azure-data-factory-using-powershell"></a>Краткое руководство. Создание фабрики данных Azure с помощью PowerShell
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-powershell.md)
 
@@ -107,6 +107,7 @@ ms.locfileid: "60313230"
 
 * Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
+
 ## <a name="create-a-linked-service"></a>Создание связанной службы
 
 Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом кратком руководстве мы создадим службу, связанную со службой хранилища Azure, которая используется и как хранилище-источник, и как хранилище-приемник. Связанная служба содержит сведения о подключении, используемые фабрикой данных для подключения к ней в среде выполнения.
@@ -120,12 +121,10 @@ ms.locfileid: "60313230"
     {
         "name": "AzureStorageLinkedService",
         "properties": {
-            "type": "AzureStorage",
+            "annotations": [],
+            "type": "AzureBlobStorage",
             "typeProperties": {
-                "connectionString": {
-                    "value": "DefaultEndpointsProtocol=https;AccountName=<accountName>;AccountKey=<accountKey>;EndpointSuffix=core.windows.net",
-                    "type": "SecureString"
-                }
+                "connectionString": "DefaultEndpointsProtocol=https;AccountName=<accountName>;AccountKey=<accountKey>;EndpointSuffix=core.windows.net"
             }
         }
     }
@@ -153,57 +152,99 @@ ms.locfileid: "60313230"
     LinkedServiceName : AzureStorageLinkedService
     ResourceGroupName : <resourceGroupName>
     DataFactoryName   : <dataFactoryName>
-    Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureStorageLinkedService
+    Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureBlobStorageLinkedService
     ```
 
-## <a name="create-a-dataset"></a>Создание набора данных
+## <a name="create-datasets"></a>Создание наборов данных
 
-На этом этапе вы можете определить набор данных, который будет представлять данные для копирования из источника в приемник. Это набор данных типа **AzureBlob**. Он относится к **связанной службе хранилища Azure**, созданной на предыдущем этапе, и использует параметр для создания свойства **folderPath**. Для входного набора данных значением этого параметра будет входной путь, который передается при помощи действия копирования в конвейере. Аналогичным образом, для выходного набора данных значением этого параметра будет выходной путь, который передается при помощи действия копирования. 
-
-1. Создайте файл JSON с именем **BlobDataset.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым:
+В ходе этой процедуры вы создадите два набора данных, **InputDataset** и **OutputDataset**. Эти наборы данных имеют тип **Binary**. Они будут ссылаться на связанную службу хранилища Azure, созданную в предыдущем разделе.
+Входной набор данных представляет исходные данные в папке входных данных. В определении входного набора данных укажите контейнер больших двоичных объектов (**adftutorial**), папку (**input**) и файл (**emp.txt**), определяющие расположение исходных данных.
+Выходной набор данных представляет данные, которые копируются в место назначения. В определении выходного набора данных укажите контейнер больших двоичных объектов (**adftutorial**), папку (**output**) и файл, определяющие расположение копируемых данных. 
+1. Создайте файл JSON с именем **InputDataset.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым:
 
     ```json
     {
-        "name": "BlobDataset",
+        "name": "InputDataset",
         "properties": {
-            "type": "AzureBlob",
-            "typeProperties": {
-                "folderPath": "@{dataset().path}"
-            },
             "linkedServiceName": {
                 "referenceName": "AzureStorageLinkedService",
                 "type": "LinkedServiceReference"
             },
-            "parameters": {
-                "path": {
-                    "type": "String"
+            "annotations": [],
+            "type": "Binary",
+            "typeProperties": {
+                "location": {
+                    "type": "AzureBlobStorageLocation",
+                    "fileName": "emp.txt",
+                    "folderPath": "input",
+                    "container": "adftutorial"
                 }
             }
         }
     }
     ```
 
-2. Чтобы создать набор данных **BlobDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
+2. Чтобы создать набор данных **InputDataset**, выполните командлет **Set-AzDataFactoryV2Dataset**.
 
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $DataFactory.DataFactoryName `
-        -ResourceGroupName $ResGrp.ResourceGroupName -Name "BlobDataset" `
-        -DefinitionFile ".\BlobDataset.json"
+        -ResourceGroupName $ResGrp.ResourceGroupName -Name "InputDataset" `
+        -DefinitionFile ".\InputDataset.json"
     ```
 
     Пример выходных данных:
 
     ```console
-    DatasetName       : BlobDataset
+    DatasetName       : InputDataset
     ResourceGroupName : <resourceGroupname>
     DataFactoryName   : <dataFactoryName>
     Structure         :
-    Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureBlobDataset
+    Properties        : Microsoft.Azure.Management.DataFactory.Models.BinaryDataset
     ```
 
+3. Повторите эти шаги, чтобы создать выходной набор данных. Создайте файл JSON с именем **OutputDataset.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым:
+
+    ```json
+    {
+        "name": "OutputDataset",
+        "properties": {
+            "linkedServiceName": {
+                "referenceName": "AzureStorageLinkedService",
+                "type": "LinkedServiceReference"
+            },
+            "annotations": [],
+            "type": "Binary",
+            "typeProperties": {
+                "location": {
+                    "type": "AzureBlobStorageLocation",
+                    "folderPath": "output",
+                    "container": "adftutorial"
+                }
+            }
+        }
+    }
+    ```
+
+4. Выполните командлет **Set-AzDataFactoryV2Dataset**, чтобы создать набор данных **OutDataset**.
+
+    ```powershell
+    Set-AzDataFactoryV2Dataset -DataFactoryName $DataFactory.DataFactoryName `
+        -ResourceGroupName $ResGrp.ResourceGroupName -Name "OutputDataset" `
+        -DefinitionFile ".\OutputDataset.json"
+    ```
+
+    Пример выходных данных:
+
+    ```console
+    DatasetName       : OutputDataset
+    ResourceGroupName : <resourceGroupname>
+    DataFactoryName   : <dataFactoryName>
+    Structure         :
+    Properties        : Microsoft.Azure.Management.DataFactory.Models.BinaryDataset
+    ```
 ## <a name="create-a-pipeline"></a>Создание конвейера
 
-В этом кратком руководстве мы создадим конвейер с одним действием, которое принимает два параметра: входной и выходной путь для больших двоичных объектов. Значения для этих параметров устанавливаются при активации или выполнении конвейера. Для действия копирования используется тот же набор данных большого двоичного объекта, который был создан на предыдущем шаге, в качестве входного и выходного. Если набор данных используется в качестве входного, указывается путь к входным данным. И если набор данных используется в качестве выходного, указывается путь к выходным данным.
+На этом этапе вы создадите конвейер с действием копирования, которое использует входной и выходной наборы данных. При помощи действия копирования данные копируются из файла, указанного в параметрах входного набора данных, в файл, указанный в параметрах выходного набора данных.  
 
 1. Создайте файл JSON с именем **Adfv2QuickStartPipeline.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым:
 
@@ -215,42 +256,46 @@ ms.locfileid: "60313230"
                 {
                     "name": "CopyFromBlobToBlob",
                     "type": "Copy",
+                    "dependsOn": [],
+                    "policy": {
+                        "timeout": "7.00:00:00",
+                        "retry": 0,
+                        "retryIntervalInSeconds": 30,
+                        "secureOutput": false,
+                        "secureInput": false
+                    },
+                    "userProperties": [],
+                    "typeProperties": {
+                        "source": {
+                            "type": "BinarySource",
+                            "storeSettings": {
+                                "type": "AzureBlobStorageReadSettings",
+                                "recursive": true
+                            }
+                        },
+                        "sink": {
+                            "type": "BinarySink",
+                            "storeSettings": {
+                                "type": "AzureBlobStorageWriteSettings"
+                            }
+                        },
+                        "enableStaging": false
+                    },
                     "inputs": [
                         {
-                            "referenceName": "BlobDataset",
-                            "parameters": {
-                                "path": "@pipeline().parameters.inputPath"
-                            },
+                            "referenceName": "InputDataset",
                             "type": "DatasetReference"
                         }
                     ],
                     "outputs": [
                         {
-                            "referenceName": "BlobDataset",
-                            "parameters": {
-                                "path": "@pipeline().parameters.outputPath"
-                            },
+                            "referenceName": "OutputDataset",
                             "type": "DatasetReference"
                         }
-                    ],
-                    "typeProperties": {
-                        "source": {
-                            "type": "BlobSource"
-                        },
-                        "sink": {
-                            "type": "BlobSink"
-                        }
-                    }
+                    ]
                 }
             ],
-            "parameters": {
-                "inputPath": {
-                    "type": "String"
-                },
-                "outputPath": {
-                    "type": "String"
-                }
-            }
+            "annotations": []
         }
     }
     ```
@@ -267,24 +312,15 @@ ms.locfileid: "60313230"
 
 ## <a name="create-a-pipeline-run"></a>Создание конвейера
 
-На этом шаге задайте значения параметров конвейера **inputPath** и **outputPath** с фактическими значениями путей большого двоичного объекта источника и приемника. Затем можно создать конвейер с использованием этих аргументов.
+На этом шаге вы создадите конвейер.
 
-1. Создайте файл JSON с именем **PipelineParameters.json** в папке **C:\ADFv2QuickStartPSH** со следующим содержимым:
-
-    ```json
-    {
-        "inputPath": "adftutorial/input",
-        "outputPath": "adftutorial/output"
-    }
-    ```
-2. Выполните командлет **Invoke-AzDataFactoryV2Pipeline**, чтобы создать конвейер и передать значения параметров. Командлет позволяет получить идентификатор выполнения конвейера для дальнейшего мониторинга.
+1. Выполните командлет **Invoke-AzDataFactoryV2Pipeline**, чтобы создать конвейер. Командлет позволяет получить идентификатор выполнения конвейера для дальнейшего мониторинга.
 
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline `
         -DataFactoryName $DataFactory.DataFactoryName `
         -ResourceGroupName $ResGrp.ResourceGroupName `
-        -PipelineName $DFPipeLine.Name `
-        -ParameterFile .\PipelineParameters.json
+        -PipelineName $DFPipeLine.Name 
     ```
 
 ## <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
@@ -317,43 +353,18 @@ ms.locfileid: "60313230"
     Pipeline is running...status: InProgress
     Pipeline run finished. The status is:  Succeeded
     
-    ResourceGroupName : ADFTutorialResourceGroup
-    DataFactoryName   : SPTestFactory0928
-    RunId             : 0000000000-0000-0000-0000-0000000000000
+    ResourceGroupName : ADFQuickStartRG
+    DataFactoryName   : ADFQuickStartFactory
+    RunId             : 00000000-0000-0000-0000-0000000000000
     PipelineName      : Adfv2QuickStartPipeline
-    LastUpdated       : 9/28/2017 8:28:38 PM
-    Parameters        : {[inputPath, adftutorial/input], [outputPath, adftutorial/output]}
-    RunStart          : 9/28/2017 8:28:14 PM
-    RunEnd            : 9/28/2017 8:28:38 PM
-    DurationInMs      : 24151
+    LastUpdated       : 8/27/2019 7:23:07 AM
+    Parameters        : {}
+    RunStart          : 8/27/2019 7:22:56 AM
+    RunEnd            : 8/27/2019 7:23:07 AM
+    DurationInMs      : 11324
     Status            : Succeeded
-    Message           :
+    Message           : 
     ```
-
-    Возможны следующие ошибки:
-
-    ```console
-    Activity CopyFromBlobToBlob failed: Failed to detect region of linked service 'AzureStorage' : 'AzureStorageLinkedService' with error '[Region Resolver] Azure Storage failed to get address for DNS. Warning: System.Net.Sockets.SocketException (0x80004005): No such host is known
-    ```
-
-    Если появится сообщение об ошибке, выполните следующие действия:
-
-    1. В AzureStorageLinkedService.json проверьте правильность имени и ключа учетной записи хранения Azure.
-    2. Проверьте формат строки подключения. Свойства, например AccountName и AccountKey, разделяются точкой с запятой (`;`).
-    3. Если имя и ключ учетной записи взяты в угловые скобки, удалите скобки.
-    4. Вот пример строки подключения:
-
-        ```json
-        "connectionString": {
-            "value": "DefaultEndpointsProtocol=https;AccountName=mystorageaccountname;AccountKey=mystorageaccountkey;EndpointSuffix=core.windows.net",
-            "type": "SecureString"
-        }
-        ```
-
-    5. Повторно создайте связанную службу, выполнив инструкции в разделе [Создание связанной службы](#create-a-linked-service).
-    6. Повторно запустите конвейер, выполнив инструкции в разделе [Создание конвейера](#create-a-pipeline-run).
-    7. Выполните текущую команду мониторинга еще раз, чтобы отслеживать новый запуск конвейера.
-
 2. Запустите следующий скрипт, извлекающий сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
 
     ```powershell
@@ -370,29 +381,59 @@ ms.locfileid: "60313230"
 3. Убедитесь, что это выходные данные аналогичные следующему примеру результатов выполнения действия:
 
     ```console
-    ResourceGroupName : ADFTutorialResourceGroup
-    DataFactoryName   : SPTestFactory0928
+    ResourceGroupName : ADFQuickStartRG
+    DataFactoryName   : ADFQuickStartFactory
+    ActivityRunId     : 00000000-0000-0000-0000-000000000000
     ActivityName      : CopyFromBlobToBlob
-    PipelineRunId     : 00000000000-0000-0000-0000-000000000000
+    PipelineRunId     : 00000000-0000-0000-0000-000000000000
     PipelineName      : Adfv2QuickStartPipeline
-    Input             : {source, sink}
-    Output            : {dataRead, dataWritten, copyDuration, throughput...}
+    Input             : {source, sink, enableStaging}
+    Output            : {dataRead, dataWritten, filesRead, filesWritten...}
     LinkedServiceName :
-    ActivityRunStart  : 9/28/2017 8:28:18 PM
-    ActivityRunEnd    : 9/28/2017 8:28:36 PM
-    DurationInMs      : 18095
+    ActivityRunStart  : 8/27/2019 7:22:58 AM
+    ActivityRunEnd    : 8/27/2019 7:23:05 AM
+    DurationInMs      : 6828
     Status            : Succeeded
     Error             : {errorCode, message, failureType, target}
     
     Activity 'Output' section:
-    "dataRead": 38
-    "dataWritten": 38
-    "copyDuration": 7
+    "dataRead": 20
+    "dataWritten": 20
+    "filesRead": 1
+    "filesWritten": 1
+    "sourcePeakConnections": 1
+    "sinkPeakConnections": 1
+    "copyDuration": 4
     "throughput": 0.01
     "errors": []
-    "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (West US)"
-    "usedDataIntegrationUnits": 2
-    "billedDuration": 14
+    "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (Central US)"
+    "usedDataIntegrationUnits": 4
+    "usedParallelCopies": 1
+    "executionDetails": [
+      {
+        "source": {
+          "type": "AzureBlobStorage"
+        },
+        "sink": {
+          "type": "AzureBlobStorage"
+        },
+        "status": "Succeeded",
+        "start": "2019-08-27T07:22:59.1045645Z",
+        "duration": 4,
+        "usedDataIntegrationUnits": 4,
+        "usedParallelCopies": 1,
+        "detailedDurations": {
+          "queuingDuration": 3,
+          "transferDuration": 1
+        }
+      }
+    ]
+    
+    Activity 'Error' section:
+    "errorCode": ""
+    "message": ""
+    "failureType": ""
+    "target": "CopyFromBlobToBlob"
     ```
 
 [!INCLUDE [data-factory-quickstart-verify-output-cleanup.md](../../includes/data-factory-quickstart-verify-output-cleanup.md)]

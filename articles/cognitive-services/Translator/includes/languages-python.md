@@ -4,18 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 62a90e30b281a7a9b0d1369893cf58fb12086a0b
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 7f14a12d5de64206f64e8c7205beb2c59c4f1f2a
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968186"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906999"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-python.md)]
 
-Для работы с этим кратким руководством вам понадобится:
-
-* Python 2.7.x или 3.x;
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -23,10 +21,7 @@ ms.locfileid: "68968186"
 
 ```python
 # -*- coding: utf-8 -*-
-import os
-import requests
-import uuid
-import json
+import os, requests, uuid, json
 ```
 
 > [!NOTE]
@@ -34,17 +29,25 @@ import json
 
 Первый комментарий сообщает вашему интерпретатору Python об использовании кодировки UTF-8. Затем требуемые модули импортируются для считывания ключа подписки из переменной среды, создания запроса HTTP, создания уникального идентификатора и обработки ответа JSON, возвращаемого с помощью API перевода текстов.
 
-## <a name="set-the-base-url-and-path"></a>Задание базового URL-адреса и пути
+## <a name="set-the-endpoint-and-path"></a>Выбор конечной точки и пути
 
-Конечная точка для перевода текстов задается как `base_url`. Параметр `path` задает маршрут `languages` и определяет, что нужно использовать версию 3 API.
+В этом примере будет предпринята попытка считать конечную точку API "Перевод текстов" из переменной среды `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `endpoint` в виде строки и закомментировать условный оператор.
+
+```python
+endpoint_var_name = 'TRANSLATOR_TEXT_ENDPOINT'
+if not endpoint_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
+endpoint = os.environ[endpoint_var_name]
+```
+
+Конечная точка для перевода текстов задается как `endpoint`. Параметр `path` задает маршрут `languages` и определяет, что нужно использовать версию 3 API.
 
 >[!NOTE]
 > Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
 
 ```python
-base_url = 'https://api.cognitive.microsofttranslator.com'
 path = '/languages?api-version=3.0'
-constructed_url = base_url + path
+constructed_url = endpoint + path
 ```
 
 ## <a name="add-headers"></a>Добавление заголовков

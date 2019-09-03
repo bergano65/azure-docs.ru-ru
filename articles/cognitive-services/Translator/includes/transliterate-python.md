@@ -4,19 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: c047d03f27325ffa133c62ef3fe945f330139656
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 86ef8f3730fe7ae3ab3428956aaafb86331c5cf5
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968026"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906440"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-python.md)]
 
-Для работы с этим кратким руководством вам понадобится:
-
-* Python 2.7.x или 3.x;
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -24,10 +21,7 @@ ms.locfileid: "68968026"
 
 ```python
 # -*- coding: utf-8 -*-
-import os
-import requests
-import uuid
-import json
+import os, requests, uuid, json
 ```
 
 > [!NOTE]
@@ -35,27 +29,25 @@ import json
 
 Первый комментарий сообщает вашему интерпретатору Python об использовании кодировки UTF-8. Затем требуемые модули импортируются для считывания ключа подписки из переменной среды, создания запроса HTTP, создания уникального идентификатора и обработки ответа JSON, возвращаемого с помощью API перевода текстов.
 
-## <a name="set-the-subscription-key-base-url-and-path"></a>Задание ключа подписки, базового URL-адреса и пути
+## <a name="set-the-subscription-key-endpoint-and-path"></a>Выбор ключа подписки, конечной точки и пути
 
-В этом примере будет предпринята попытка считать ключ подписки API перевода текстов из переменной среды `TRANSLATOR_TEXT_KEY`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` в виде строки и закомментировать условный оператор.
+В этом примере будет предпринята попытка считать ключ подписки API "Перевод текстов" из переменных среды `TRANSLATOR_TEXT_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscription_key` и `endpoint` в виде строк и закомментировать условные операторы.
 
 Скопируйте в проект следующий код:
 
 ```python
-# Checks to see if the Translator Text subscription key is available
-# as an environment variable. If you are setting your subscription key as a
-# string, then comment these lines out.
-if 'TRANSLATOR_TEXT_KEY' in os.environ:
-    subscriptionKey = os.environ['TRANSLATOR_TEXT_KEY']
-else:
-    print('Environment variable for TRANSLATOR_TEXT_KEY is not set.')
-    exit()
-# If you want to set your subscription key as a string, uncomment the line
-# below and add your subscription key.
-#subscriptionKey = 'put_your_key_here'
+key_var_name = 'TRANSLATOR_TEXT_SUBSCRIPTION_KEY'
+if not key_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
+subscription_key = os.environ[key_var_name]
+
+endpoint_var_name = 'TRANSLATOR_TEXT_ENDPOINT'
+if not endpoint_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
+endpoint = os.environ[endpoint_var_name]
 ```
 
-Конечная точка для перевода текстов задается как `base_url`. Параметр `path` задает маршрут `transliterate` и определяет, что нужно использовать версию 3 API.
+Конечная точка для перевода текстов задается как `endpoint`. Параметр `path` задает маршрут `transliterate` и определяет, что нужно использовать версию 3 API.
 
 Параметры `params` используются для настройки языка ввода, а также входные и выходные наборы символов. В этом примере японский текст транслитерируется в текст на латинице.
 
@@ -63,10 +55,9 @@ else:
 > Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: транслитерация](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate).
 
 ```python
-base_url = 'https://api.cognitive.microsofttranslator.com'
 path = '/transliterate?api-version=3.0'
 params = '&language=ja&fromScript=jpan&toScript=latn'
-constructed_url = base_url + path + params
+constructed_url = endpoint + path + params
 ```
 
 ## <a name="add-headers"></a>Добавление заголовков
@@ -77,7 +68,7 @@ constructed_url = base_url + path + params
 
 ```python
 headers = {
-    'Ocp-Apim-Subscription-Key': subscriptionKey,
+    'Ocp-Apim-Subscription-Key': subscription_key,
     'Content-type': 'application/json',
     'X-ClientTraceId': str(uuid.uuid4())
 }

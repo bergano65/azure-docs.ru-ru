@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: f575dd882c217badb3320b85229149d9793ceb5f
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 505a3104968e285a7fe4801db8029dc45647087a
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69619034"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011348"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по настройке защищенного протокола LDAP для управляемого домена доменных служб Azure AD
 
@@ -38,7 +38,7 @@ ms.locfileid: "69619034"
 
 * Активная подписка Azure.
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным каталогом или полностью облачным каталогом.
+* Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
@@ -286,7 +286,7 @@ Thumbprint                                Subject
 > * Привязка и тестирование защищенного протокола LDAP в управляемом домене Azure AD DS.
 
 > [!div class="nextstepaction"]
-> [Сведения о том, как работает синхронизация в управляемом домене доменных служб Azure AD](synchronization.md)
+> [Настройка синхронизации хэша паролей для гибридной среды Azure AD](tutorial-configure-password-hash-sync.md)
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

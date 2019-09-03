@@ -4,19 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: a3f26773fe3366e5592dd5baabb6b8fa5e7544a9
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: d7126acebae02a60e5c485b74716aaa84b99f781
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967986"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906815"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-nodejs.md)]
 
-Для работы с этим кратким руководством вам понадобится:
-
-* [Node 8.12.x или более поздней версии](https://nodejs.org/en/);
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -32,23 +29,23 @@ const uuidv4 = require('uuid/v4');
 
 Эти модули необходимы для построения HTTP-запроса и создания уникального идентификатора для заголовка `'X-ClientTraceId'`.
 
-## <a name="set-the-subscription-key"></a>Настройка ключа подписки
+## <a name="set-the-subscription-key-and-endpoint"></a>Выбор ключа подписки и конечной точки
 
-В этом фрагменте кода будет предпринята попытка считать ключ подписки API перевода текстов из переменной среды `TRANSLATOR_TEXT_KEY`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` в виде строки и закомментировать условный оператор.
+В этом примере будет предпринята попытка считать ключ подписки API "Перевод текстов" из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
 
 Скопируйте в проект следующий код:
 
 ```javascript
-/* Checks to see if the subscription key is available
-as an environment variable. If you are setting your subscription key as a
-string, then comment these lines out.
-
-If you want to set your subscription key as a string, replace the value for
-the Ocp-Apim-Subscription-Key header as a string. */
-const subscriptionKey = process.env.TRANSLATOR_TEXT_KEY;
-if (!subscriptionKey) {
-  throw new Error('Environment variable for your subscription key is not set.')
-};
+var key_var = 'TRANSLATOR_TEXT_SUBSCRIPTION_KEY';
+if (!process.env[key_var]) {
+    throw new Error('Please set/export the following environment variable: ' + key_var);
+}
+var subscriptionKey = process.env[key_var];
+var endpoint_var = 'TRANSLATOR_TEXT_ENDPOINT';
+if (!process.env[endpoint_var]) {
+    throw new Error('Please set/export the following environment variable: ' + endpoint_var);
+}
+var endpoint = process.env[endpoint_var];
 ```
 
 ## <a name="configure-the-request"></a>Настройка запроса
@@ -61,7 +58,7 @@ if (!subscriptionKey) {
 ```javascript
 let options = {
     method: 'POST',
-    baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+    baseUrl: endpoint,
     url: 'breaksentence',
     qs: {
       'api-version': '3.0',

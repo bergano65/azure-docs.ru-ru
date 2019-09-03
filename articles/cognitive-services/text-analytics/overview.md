@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 07/30/2019
+ms.date: 08/26/2019
 ms.author: aahi
-ms.openlocfilehash: ee4551f6a31436ef2322fcea3a0c479b45036993
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 8c5df8461c74d48c0712ab1947e29813e7e1ea3f
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697618"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032679"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
@@ -81,7 +81,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 ## <a name="data-limits"></a>Ограничения данных
 
-Все конечные точки API анализа текста принимают необработанные текстовые данные. Текущий предел составляет 5120 символов для одного документа. Если необходимо проанализировать документ большего размера, его можно разбить на части. Если вам требуется более высокий лимит, [свяжитесь с нами](https://azure.microsoft.com/overview/sales-number/), чтобы мы могли обсудить ваши требования.
+Все конечные точки API анализа текста принимают необработанные текстовые данные. Текущий предел составляет 5120 символов для одного документа. Если необходимо проанализировать документ большего размера, его можно разбить на части.
 
 | Ограничение | Значение |
 |------------------------|---------------|
@@ -93,7 +93,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 
 | Уровень          | Число запросов в секунду | Число запросов в минуту |
 |---------------|---------------------|---------------------|
-| Несколько служб | 1000                | 1000                |
+| S / Несколько служб | 1000                | 1000                |
 | S0/F0         | 100                 | 300                 |
 | S1            | 200                 | 300                 |
 | S2            | 300                 | 300                 |

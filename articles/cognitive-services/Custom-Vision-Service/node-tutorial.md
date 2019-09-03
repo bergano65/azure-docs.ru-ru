@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 08/08/2019
 ms.author: areddish
-ms.openlocfilehash: 2fd9ccff68eb368107a299af02a54ae6fc6cc0e2
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: edb9e50cceed95d8ca77567e7c1228704b5f177d
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946145"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982359"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-nodejs-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательского визуального распознавания для Node.js
 
@@ -45,7 +45,7 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 ### <a name="create-the-custom-vision-service-project"></a>Создание проекта Пользовательской службы визуального распознавания
 
-Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения.
+Добавьте в скрипт следующий код, чтобы создать проект Пользовательской службы визуального распознавания. Вставьте ключи подписки в соответствующие определения и задайте путь к папке образа в качестве значения пути sampleDataRoot. Убедитесь, что значение endPoint соответствует конечным точкам обучения и прогнозирования, созданным в [Customvision.ai](https://www.customvision.ai/).
 
 ```javascript
 const util = require('util');

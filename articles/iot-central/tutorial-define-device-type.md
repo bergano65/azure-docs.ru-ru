@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: fd3ec276fdc95ad326d14a5b21e8ab793b154080
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: db9f7e75af01ed83c39ef3a37ab2612426ef6ea4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875782"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099605"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по Определение типа нового устройства в приложении Azure IoT Central
 
@@ -49,7 +49,7 @@ ms.locfileid: "69875782"
 
 Для работы с этим руководством вам потребуется приложение Azure IoT Central. Если вы завершили работу с руководством по [созданию приложения Azure IoT Central](quick-deploy-iot-central.md), вы можете повторно использовать созданное в нем приложение. В противном случае выполните следующие шаги для создания пустого приложения Azure IoT Central:
 
-1. Перейдите на страницу [диспетчера приложений](https://aka.ms/iotcentral) в Azure IoT Central.
+1. Перейдите на веб-сайт [диспетчера приложений в Azure IoT Central](https://aka.ms/iotcentral).
 
 2. Введите адрес электронной почты и пароль, которые вы используете для доступа к подписке Azure:
 

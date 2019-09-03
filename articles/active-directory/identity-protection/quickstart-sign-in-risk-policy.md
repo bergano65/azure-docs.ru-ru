@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bb1e29735a860f5dc3b6ce8996af9fcd4962871
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: ed5e5e26a27e13ba09ffcc97e0b2b0f1b37bc8bd
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335300"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127696"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-identity-protection"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса с помощью Защиты идентификации Azure Active Directory  
 
@@ -34,7 +34,7 @@ ms.locfileid: "68335300"
 
 - **Доступ к выпуску Azure AD Premium P2**. Защита идентификации Azure AD является возможностью Azure AD Premium P2. 
 - **Защита идентификации**. Сценарий в этом руководстве требует включенной функции защиты идентификации. Если вы не знаете, как включить защиту идентификации Azure, см. раздел [Включение защиты идентификации Azure Active Directory](../identity-protection/enable.md).
-- **Обозреватель Tor**. [Обозреватель Tor](https://www.torproject.org/projects/torbrowser.html.en) предназначен для сохранения конфиденциальности в Интернете. Служба защиты идентификации воспринимает вход в систему с помощью обозревателя Tor как **входы с анонимных IP-адресов**, которые имеют средний уровень риска. Дополнительные сведения см. в статье [События риска Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
+- **Обозреватель Tor**. [Обозреватель Tor](https://www.torproject.org/projects/torbrowser.html.en) предназначен для сохранения конфиденциальности в Интернете. Служба защиты идентификации воспринимает вход в систему с помощью обозревателя Tor как **входы с анонимных IP-адресов**, которые имеют средний уровень риска. Дополнительные сведения см. в статье об [обнаружении рисков Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
 - **Тестовая учетная запись Alain Charon**. Сведения о создании тестовой учетной записи см. в разделе [Добавление пользователя](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
 
 ## <a name="test-your-sign-in"></a>Проверка входа 
@@ -48,7 +48,7 @@ ms.locfileid: "68335300"
 
 ## <a name="create-your-conditional-access-policy"></a>Создание политики условного доступа 
 
-В этом сценарии используется вход в систему с помощью обозревателя Tor для создания обнаруженных событий риска — **входы с анонимных IP-адресов**. Уровень риска этого события средний. Для ответа на такое событие риска установите условие риска при входе на "Средний". 
+В этом сценарии используется вход в систему с помощью браузера Tor, чтобы создать данные для обнаружения риска **входов с анонимных IP-адресов**. Уровень риска для таких данных средний. Для ответа при обнаружении такого риска установите для условия риска при входе значение "Средний". 
 
 В этом разделе показано, как создать необходимую политику условного доступа с учетом рисков при входе. В политике задайте следующие значения.
 

@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 7cf87c3a146f51666a2c24c7cd0d6e9425159225
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: ad321dfa3db69c89b8da080673cb3bab02e4af66
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228408"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905226"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Работа с предыдущей версией службы "Миграция Azure"
 
@@ -246,7 +246,6 @@ Linux | Azure рекомендует эти [операционные систе
 
 Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, нет необходимости устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager MMA для сбора необходимых данных о зависимостях. [Узнайте больше](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-scom#prerequisites). Агент зависимостей должен быть установлен.
 
-
 ### <a name="install-the-dependency-agent"></a>Установка агента зависимостей
 
 1. Чтобы установить агент зависимостей на компьютере Windows, дважды щелкните файл установки и следуйте инструкциям мастера.
@@ -254,9 +253,11 @@ Linux | Azure рекомендует эти [операционные систе
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-- Узнайте больше о поддержке агента зависимостей для ОС [Windows](../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems) и [Linux](../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems).
-- [Узнайте больше](https://docs.microsoft.com/azure/monitoring/monitoring-service-map-configure#installation-script-examples) о том, как установить агент зависимостей с помощью скриптов.
+- Узнайте больше о [поддержке агента зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) для ОС Windows и Linux.
+- [Узнайте больше](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples) о том, как установить агент зависимостей с помощью скриптов.
 
+>[!NOTE]
+> В статье об Azure Monitor для виртуальных машин приведен обзор требований к системе и методов для развертывания агента зависимостей, которые также применяются к решению "Сопоставление служб".
 
 ### <a name="create-a-group-with-dependency-mapping"></a>Создание группы с помощью сопоставления зависимостей
 

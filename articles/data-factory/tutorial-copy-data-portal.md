@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 5174b46bae5bbcc18f5a2575fb68cce1305507a3
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: a1a97e7521e9772b1d13049d42e67d7ac318fffc
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68826557"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907366"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
 В этом руководстве вы создадите фабрику данных с помощью пользовательского интерфейса фабрики данных Azure. Конвейер этой фабрики данных копирует данные из хранилища BLOB-объектов Azure в базу данных SQL. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -172,6 +172,9 @@ ms.locfileid: "68826557"
 1. Перейдите на вкладку с конвейером и убедитесь, что в поле **Sink Dataset** (Целевой набор данных) выбрано значение **OutputSqlDataset**.
 
     ![Вкладка конвейера](./media/tutorial-copy-data-portal/pipeline-tab-2.png)       
+
+При необходимости вы можете сопоставить схему источника с соответствующей схемой назначения, выполнив [сопоставление схемы в действии копирования](copy-activity-schema-and-type-mapping.md).
+    
 ## <a name="validate-the-pipeline"></a>Проверка конвейера
 Чтобы проверить параметры конвейера, на панели инструментов выберите **Проверить**.
  

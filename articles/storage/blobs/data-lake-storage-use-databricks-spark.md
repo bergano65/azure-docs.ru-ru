@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 3a283f6cbcf4dc345a8c55192507c461f33244d6
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 66394600963cf154b3cb1fe661968f4ded2ec225
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855448"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992263"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство по Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
@@ -124,18 +124,18 @@ ms.locfileid: "68855448"
 2. Чтобы скопировать данные из *CSV*-файла учетной записи, введите следующую команду.
 
    ```bash
-   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time.csv
+   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<container-name>/folder1/On_Time.csv
    ```
 
    * Замените значение заполнителя `<csv-folder-path>` путем к *CSV*-файлу.
 
    * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
-   * Замените заполнитель `<file-system-name>` любым именем, которое вы хотите предоставить вашей файловой системе.
+   * Замените заполнитель `<container-name>` любым именем, которое хотите присвоить своему контейнеру.
 
-## <a name="create-a-file-system-and-mount-it"></a>Создание и подключение файловой системы
+## <a name="create-a-container-and-mount-it"></a>Создание и подключение контейнера
 
-В этом разделе вы создадите файловую систему и папку в своей учетной записи хранения.
+В рамках этого раздела вы создадите контейнер и папку в своей учетной записи хранения.
 
 1. На [портале Azure](https://portal.azure.com) перейдите к созданной службе Azure Databricks, а затем выберите **Launch Workspace** (Запустить рабочую область).
 
@@ -158,12 +158,12 @@ ms.locfileid: "68855448"
            "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
     dbutils.fs.mount(
-    source = "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/folder1",
+    source = "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/folder1",
     mount_point = "/mnt/flightdata",
     extra_configs = configs)
     ```
 
-18. В этом блоке кода замените значения заполнителя `appId`, `password`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `file-system-name` именем, которое вы дали своей файловой системе ADLS на предыдущем шаге.
+18. В этом блоке кода замените значения заполнителя `appId`, `password`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `container-name` именем, которое вы присвоили своему контейнеру на предыдущем этапе.
 
 Используйте эти значения, чтобы заменить упомянутые заполнители.
 
@@ -173,7 +173,7 @@ ms.locfileid: "68855448"
 
    * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
 
-   * Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
+   * Замените заполнитель `container-name` любым именем, которое хотите присвоить своему контейнеру.
 
    > [!NOTE]
    > При настройке рабочей среды рассмотрите возможность сохранения пароля в Azure Databricks. Затем в блоке кода замените пароль ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.

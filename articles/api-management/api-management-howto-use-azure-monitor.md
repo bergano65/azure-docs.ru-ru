@@ -9,17 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: c3148adc42cb4f899a87d894909eedff4c798575
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 598168285ee67921ab17ab8c2ce780753c562f81
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680253"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072337"
 ---
 # <a name="monitor-published-apis"></a>Мониторинг опубликованных API-интерфейсов
 
@@ -64,8 +63,9 @@ ms.locfileid: "59680253"
 
     ![Метрики](./media/api-management-azure-monitor/api-management-metrics-blade.png)
 
-2. В раскрывающемся списке выберите метрики, которые вас интересуют. Например, **Successful Gateway Requests** (Число успешных запросов к шлюзу). Вы также можете добавить дополнительные метрики для диаграммы.
-3. На диаграмме показано общее число успешных вызовов API.
+1. В раскрывающемся списке выберите метрики, которые вас интересуют. Например, **Requests**. 
+1. Просмотрите диаграмму с общим числом вызовов API.
+1. Диаграмму можно отфильтровать с помощью измерений метрики **запросов**. Например, щелкните **Добавить фильтр**, выберите **Backend Response Code** (Код ответа серверной части) и введите 500 в качестве значения. Теперь на диаграмме показано количество запросов, завершившихся сбоем в серверной части API.   
 
 ## <a name="set-up-an-alert-rule-for-unauthorized-request"></a>Настройка правила генерации оповещений на случай несанкционированного запроса
 

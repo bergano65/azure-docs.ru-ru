@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 07/02/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e78dd093c4bbf0cf1bdbd5280ffaa63286e585d4
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 52ccaa17b9994751bb9dfd54848e20aef90146c3
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537130"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905881"
 ---
 # <a name="quickstart-configure-server-firewall---portal"></a>Краткое руководство. Настройка брандмауэра сервера с помощью портала
 
@@ -23,6 +23,7 @@ ms.locfileid: "67537130"
 
 - Подписка на сервер служб Analysis Services. Дополнительные сведения см. в статье [ Краткое руководство по созданию сервера с помощью портала](analysis-services-create-server.md) или [ Краткое руководство по созданию сервера с помощью PowerShell](analysis-services-create-powershell.md).
 - Один или несколько диапазонов IP-адресов для клиентских компьютеров (при необходимости).
+- Обратите внимание, что сценарий импорта из Power BI Premium сейчас не поддерживается.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure 
 

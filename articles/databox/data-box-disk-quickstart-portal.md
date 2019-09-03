@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: quickstart
-ms.date: 02/26/2019
+ms.date: 08/28/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: 65bf4e973ce33b2898abf585fe306a8bc85c64a0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: cbc55433517174c8080b941ca8526e5a4fd3427d
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477798"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126015"
 ---
 ::: zone target="docs"
 
@@ -24,7 +24,7 @@ ms.locfileid: "67477798"
 
 ::: zone target="chromeless"
 
-# <a name="get-started-with-azure-data-box-disk-using-azure-portal"></a>Начало работы с диском Azure Data Box с помощью портала Azure
+## <a name="get-started-with-azure-data-box-disk"></a>Начало работы с Диском Azure Data Box 
 
 ::: zone-end
 
@@ -40,7 +40,7 @@ ms.locfileid: "67477798"
 
 ::: zone target="chromeless"
 
-В этом кратком руководстве описывается развертывание диска Azure Data Box с помощью портала Azure. Шаги включают проверку предварительных требований, разблокировку дисков, подключение и копирование данных на диски, которые отправляются в Azure.
+В этом руководстве описано, как развернуть Диск Azure Data Box на портале Azure. Шаги включают проверку предварительных требований, разблокировку дисков, подключение и копирование данных на диски для отправки данных в Azure.
 
 ::: zone-end
 
@@ -60,10 +60,11 @@ ms.locfileid: "67477798"
 
 ::: zone target="chromeless"
 
-## <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 - Вы разместили заказ на диск Data Box с помощью статьи [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md).
 - Состояние ваших дисков и заданий на портале обновилось до **Доставлено**.
+- Вы проверили количество полученных дисков и наличие одного кабеля подключения на диск.
 - У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
 
     - [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients).

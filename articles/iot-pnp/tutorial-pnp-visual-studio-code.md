@@ -1,5 +1,5 @@
 ---
-title: Создание и тестирование устройства с предварительной версией IoT Plug and Play | Документация Майкрософт
+title: Создание и тестирование устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
 description: Информация для разработчиков устройств об использовании VS Code для создания и тестирования новой модели возможностей устройства, созданной для устройств с предварительной версией IoT Plug and Play.
 author: dominicbetts
 ms.author: dobett
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 5a03eea84d0d68f06b432014fc4374e799914d67
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 10eb9655371177a52d1c1a5a9118665015076b35
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69878725"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047973"
 ---
 # <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство по созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
 

@@ -4,19 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: ddafced360cbca6b73c775e8f7bf95d4fe197ed6
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 2ead85da805bb33247ca54bea51cccc57b0e4e94
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968178"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906748"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-go.md)]
 
-Для работы с этим кратким руководством вам понадобится:
-
-* [GO](https://golang.org/doc/install)
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -38,28 +35,33 @@ import (
 
 ## <a name="create-the-main-function"></a>Создание функции main
 
-В этом примере будет предпринята попытка считать ключ подписки API перевода текстов из переменной среды `TRANSLATOR_TEXT_KEY`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` в виде строки и закомментировать условный оператор.
+В этом примере будет предпринята попытка считать ключ подписки API "Перевод текстов" из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
 
 Скопируйте в проект следующий код:
 
 ```go
 func main() {
     /*
-     * Read your subscription key from an env variable.
-     * Please note: You can replace this code block with
-     * var subscriptionKey = "YOUR_SUBSCRIPTION_KEY" if you don't
-     * want to use env variables. If so, be sure to delete the "os" import.
-     */
-    subscriptionKey := os.Getenv("TRANSLATOR_TEXT_KEY")
-    if subscriptionKey == "" {
-       log.Fatal("Environment variable TRANSLATOR_TEXT_KEY is not set.")
+    * Read your subscription key from an env variable.
+    * Please note: You can replace this code block with
+    * var subscriptionKey = "YOUR_SUBSCRIPTION_KEY" if you don't
+    * want to use env variables. If so, be sure to delete the "os" import.
+    */
+    if "" == os.Getenv("TRANSLATOR_TEXT_SUBSCRIPTION_KEY") {
+      log.Fatal("Please set/export the environment variable TRANSLATOR_TEXT_SUBSCRIPTION_KEY.")
     }
+    subscriptionKey := os.Getenv("TRANSLATOR_TEXT_SUBSCRIPTION_KEY")
+    if "" == os.Getenv("TRANSLATOR_TEXT_ENDPOINT") {
+      log.Fatal("Please set/export the environment variable TRANSLATOR_TEXT_ENDPOINT.")
+    }
+    endpoint := os.Getenv("TRANSLATOR_TEXT_ENDPOINT")
+    uri := endpoint + "/translate?api-version=3.0"
     /*
-     * This calls our translate function, which we'll
+     * This calls our breakSentence function, which we'll
      * create in the next section. It takes a single argument,
      * the subscription key.
      */
-    translate(subscriptionKey)
+    translate(subscriptionKey, uri)
 }
 ```
 
@@ -68,7 +70,7 @@ func main() {
 Давайте создадим функцию для перевода текста. Эта функция будет принимать один аргумент — ключ подписки API перевода текстов.
 
 ```go
-func translate(subscriptionKey string) {
+func translate(subscriptionKey string, uri string) {
     /*  
      * In the next few sections, we'll add code to this
      * function to make a request and handle the response.
@@ -82,7 +84,7 @@ func translate(subscriptionKey string) {
 
 ```go
 // Build the request URL. See: https://golang.org/pkg/net/url/#example_URL_Parse
-u, _ := url.Parse("https://api.cognitive.microsofttranslator.com/translate?api-version=3.0")
+u, _ := url.Parse(uri)
 q := u.Query()
 q.Add("to", "de")
 q.Add("to", "it")

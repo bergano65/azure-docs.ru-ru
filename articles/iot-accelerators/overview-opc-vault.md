@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 40a9016ac7a10175b51f0fb6f072dd089bde3a51
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 44315790116545dd888aed533731bbf01abe801d
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606282"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997308"
 ---
 # <a name="what-is-opc-vault"></a>Что собой представляет OPC Vault?
 
@@ -30,3 +30,10 @@ OPC Vault — это микрослужба, которая настраива�
 На приведенной ниже схеме показана полная архитектура хранилища OPC.
 
 ![Архитектура хранилища OPC](media/overview-opc-vault-architecture/opc-vault.png)
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Теперь, когда вы узнали о принципах работы хранилища OPC и вариантах его использования, предлагаем ознакомиться со статьей:
+
+> [!div class="nextstepaction"]
+> [Архитектура хранилища OPC](overview-opc-vault-architecture.md)

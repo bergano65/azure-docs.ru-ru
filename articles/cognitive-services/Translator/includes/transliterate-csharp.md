@@ -4,20 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 5f0cf167a391cb14c70edd51832ec83cdda7bab6
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 81fb599ca4987adccdb91baa7a74c33ae3af48d4
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967970"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906578"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [Prerequisites](prerequisites-csharp.md)]
 
-* C# версии 7.1 или более поздней
-* [Пакет SDK для .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
-* [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
-* ключ подписки Azure для API перевода текстов.
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-net-core-project"></a>Создание проекта .NET Core
 
@@ -76,12 +72,37 @@ public class TransliterationResult
 }
 ```
 
-## <a name="create-a-function-to-transliterate-text"></a>Создание функции для транслитерации текста
+## <a name="get-subscription-information-from-environment-variables"></a>Получение сведений о подписке из переменных среды
 
-В рамках класса `Program` создайте асинхронную функцию `TransliterateTextRequest()`. Эта функция принимает четыре аргумента: `subscriptionKey`, `host`, `route` и `inputText`.
+Добавьте следующие строки в класс `Program`. Эти строки считывают ключ подписки и конечную точку из переменных среды и выдают ошибку при возникновении каких-либо проблем.
 
 ```csharp
-static public async Task TransliterateTextRequest(string subscriptionKey, string host, string route, string inputText)
+private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
+private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+static Program()
+{
+    if (null == subscriptionKey)
+    {
+        throw new Exception("Please set/export the environment variable: " + key_var);
+    }
+    if (null == endpoint)
+    {
+        throw new Exception("Please set/export the environment variable: " + endpoint_var);
+    }
+}
+// The code in the next section goes here.
+```
+
+## <a name="create-a-function-to-transliterate-text"></a>Создание функции для транслитерации текста
+
+В рамках класса `Program` создайте асинхронную функцию `TransliterateTextRequest()`. Эта функция принимает четыре аргумента: `subscriptionKey`, `endpoint`, `route` и `inputText`.
+
+```csharp
+static public async Task TransliterateTextRequest(string subscriptionKey, string endpoint, string route, string inputText)
 {
   /*
    * The code for your call to the translation service will be added to this
@@ -129,7 +150,7 @@ using (var request = new HttpRequestMessage())
 // Set the method to Post.
 request.Method = HttpMethod.Post;
 // Construct the URI and add headers.
-request.RequestUri = new Uri(host + route);
+request.RequestUri = new Uri(endpoint + route);
 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
@@ -159,15 +180,15 @@ static async Task Main(string[] args)
     // Output languages are defined in the route.
     // For a complete list of options, see API reference.
     // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate
-    string subscriptionKey = "YOUR_TRANSLATOR_TEXT_KEY_GOES_HERE";
-    string host = "https://api.cognitive.microsofttranslator.com";
     string route = "/transliterate?api-version=3.0&language=ja&fromScript=jpan&toScript=latn";
     string textToTransliterate = @"こんにちは";
-    await TransliterateTextRequest(subscriptionKey, host, route, textToTransliterate);
+    await TransliterateTextRequest(subscriptionKey, endpoint, route, textToTransliterate);
+    Console.WriteLine("Press any key to continue.");
+    Console.ReadKey();
 }
 ```
 
-Вы заметите, что в `Main` объявляется `subscriptionKey`, `host`, `route`, а сценарий транслитерации — `textToTransliterate`.
+Вы заметите, что в `Main` объявляется `subscriptionKey`, `endpoint`, `route`, а сценарий транслитерации — `textToTransliterate`.
 
 ## <a name="run-the-sample-app"></a>Запуск примера приложения
 

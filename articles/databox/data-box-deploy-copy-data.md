@@ -6,16 +6,28 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 05/14/2019
+ms.date: 08/27/2019
 ms.author: alkohli
-ms.openlocfilehash: 6b2a0655173405008e0bccf3e31a8db391da6127
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 9f5ccc255310ca42ef39586860c0861b945ac6e9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496293"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098883"
 ---
+::: zone target="docs"
+
 # <a name="tutorial-copy-data-to-azure-data-box-via-smb"></a>Руководство по Копирование данных в Azure Data Box через SMB
+
+::: zone-end
+
+::: zone target="chromeless"
+
+# <a name="copy-data-to-azure-data-box"></a>Копирование данных в Azure Data Box
+
+::: zone-end
+
+::: zone target="docs"
 
 В этом руководстве объясняется, как подключиться к главному компьютеру и скопировать данные с него с помощью локального пользовательского веб-интерфейса.
 
@@ -208,7 +220,62 @@ ms.locfileid: "66496293"
     
    ![Проверка свободного и использованного места на панели мониторинга](media/data-box-deploy-copy-data/verify-used-space-dashboard.png)
 
+::: zone-end
 
+::: zone target="chromeless"
+
+Данные можно скопировать с исходного сервера в Data Box с помощью SMB, NFS, REST, службы копирования данных или же скопировать их на управляемые диски.
+
+В каждом случае необходимо убедиться, что имена общих ресурсов и папок, а также объем данных соответствуют рекомендациям, приведенным в разделе об [ограничениях службы хранилища Azure и Data Box](data-box-limits.md).
+
+## <a name="copy-data-via-smb"></a>Копирование данных по протоколу SMB
+
+1. При использовании узла Windows подключитесь к общим папкам SMB с помощью такой команды:
+
+    `\\<IP address of your device>\ShareName`
+
+2. Учетные данные для доступа к общему ресурсу можно узнать на странице **Connect & copy** (Подключение и копирование) в локальном пользовательском веб-интерфейсе Data Box.
+3. Для копирования данных в общие папки можно использовать любое средство копирования файлов, совместимое с протоколом SMB, например Robocopy. 
+
+Пошаговые инструкции см. в [руководстве по копированию данных в Azure Data Box по протоколу SMB](data-box-deploy-copy-data.md).
+
+## <a name="copy-data-via-nfs"></a>Копирование данных по протоколу NFS
+
+1. При использовании узла NFS примените следующую команду, чтобы подключить общие папки NFS к Data Box:
+
+    `sudo mount <Data Box device IP>:/<NFS share on Data Box device> <Path to the folder on local Linux computer>`
+
+2. Учетные данные для доступа к общему ресурсу можно узнать на странице **Connect & copy** (Подключение и копирование) в локальном пользовательском веб-интерфейсе Data Box.
+3. Используйте команду `cp` или `rsync` для копирования данных.
+
+Пошаговые инструкции см. в [руководстве по копированию данных в Azure Data Box с помощью NFS](data-box-deploy-copy-data-via-nfs.md).
+
+## <a name="copy-data-via-rest"></a>Копирование данных с помощью REST
+
+1. Чтобы скопировать данные, используя хранилище BLOB-объектов службы Data Box и интерфейсы REST API, выполните подключение по протоколу *HTTP* или *HTTPS*.
+2. Для копирования данных в хранилище BLOB-объектов службы Data Box можно использовать AzCopy.
+
+Пошаговые инструкции см. в [руководстве по копированию данных в хранилище BLOB-объектов службы Azure Data Box с помощью интерфейсов REST API](data-box-deploy-copy-data-via-nfs.md).
+
+## <a name="copy-data-via-data-copy-service"></a>Копирование данных с помощью службы копирования данных
+
+1. Чтобы скопировать данные с помощью службы копирования данных, необходимо создать задание. В локальном пользовательском интерфейсе Data Box перейдите в раздел **Управление > Копирование данных > Создать**. 
+2. Укажите параметры и создайте задание.
+
+Пошаговые инструкции см. в [руководстве по копированию данных в Azure Data Box с помощью службы копирования данных](data-box-deploy-copy-data-via-copy-service.md).
+
+## <a name="copy-data-to-managed-disks"></a>Копирование данных на управляемые диски
+
+1. При заказе устройства Data Box необходимо указать управляемые диски в качестве целевого хранилища данных.
+2. Вы можете подключиться к Data Box через общие папки SMB или NFS.
+3. Затем можно скопировать данные с помощью средств SMB или NFS.
+
+Пошаговые инструкции см. в [руководстве по использованию Data Box для импорта данных в качестве управляемых дисков в Azure](data-box-deploy-copy-data-from-vhds.md).
+
+::: zone-end
+
+
+::: zone target="docs"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -224,4 +291,6 @@ ms.locfileid: "66496293"
 
 > [!div class="nextstepaction"]
 > [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
+
+::: zone-end
 

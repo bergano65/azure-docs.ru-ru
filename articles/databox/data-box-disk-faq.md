@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: overview
 ms.date: 08/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 1361224fb59a32ca227c5ea1e6cc92a4b0fdff6e
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 1ac91853c78a33645c0ccb234437e3cabc188f88
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541812"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076905"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Диск Azure Data Box Часто задаваемые вопросы
 
@@ -113,7 +113,7 @@ ms.locfileid: "69541812"
 - Используйте несколько сеансов.
 - Вместо копирования из сетевой папки (где вы можете быть ограничены скоростью сети) копируйте данные, которые расположены локально на компьютере, к которому подключены диски.
 - Во время процесса копирования следует использовать USB 3.0 или более поздней версии. Загрузите [средство USBView](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview) и используйте его для идентификации контроллеров USB и USB-устройств, подключенных к компьютеру.
-- Оцените производительность компьютера, используемого для копирования данных. Скачайте [средство Bluestop FIO](https://bluestop.org/fio/) и используйте его, чтобы измерять производительность оборудования сервера.
+- Оцените производительность компьютера, используемого для копирования данных. Скачайте [средство Bluestop FIO](https://ci.appveyor.com/project/axboe/fio) и используйте его, чтобы измерять производительность оборудования сервера. Выберите последнюю сборку x86 или x64, откройте вкладку **Артефакты** и скачайте MSI.
 
 ### <a name="q-how-to-speed-up-the-data-if-the-source-data-has-small-files-kbs-or-few-mbs"></a>В. Как ускорить данные, если исходные данные состоят из небольших файлов размером от килобайтов до нескольких мегабайтов?
 О.  Чтобы ускорить процесс копирования:

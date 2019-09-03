@@ -6,759 +6,66 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-author: nacharya1
-ms.author: nilesha
+author: trevorbye
+ms.author: trbye
 ms.reviewer: trbye
-ms.date: 08/11/2019
-ms.custom: seodec18
-ms.openlocfilehash: 49f46c09cfcfef2ab1e74ae7c08d9a54289293ac
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.date: 08/21/2019
+ms.openlocfilehash: 990755b247190f689a90d5cdf3d60d6eff9f4ae7
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534826"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036253"
 ---
-# <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
+# <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 
-Это руководство представляет собой **вторую часть серии, состоящей из двух частей**. Из предыдущего руководства вы узнали, как [подготовить данные о такси в Нью-Йорке для моделирования с применением регрессии](tutorial-data-prep.md).
-
-Теперь все готово для создания модели с помощью службы "Машинное обучение Azure". В этой части руководства вы примените подготовленные данные и автоматически создадите модель регрессии для прогнозирования тарифов на такси. С помощью автоматического машинного обучения, которое поддерживается службой, вы можете определить цели и ограничения машинного обучения. Вы просто запускаете процесс автоматического машинного обучения. Затем дождитесь, пока для вас будет выбран алгоритм и настроены гиперпараметры. Метод автоматического машинного обучения позволяет выполнить итерацию множества сочетаний алгоритмов и гиперпараметров, пока не будет найдена лучшая модель на основе выбранных критериев.
+В этом руководстве рассматривается использование автоматизированного машинного обучения в Службе машинного обучения Azure для создания модели регрессии для прогнозирования тарифов на такси в Нью-Йорке. В ходе этого процесса добавляются данные для обучения и настраиваются параметры, а также выполняется автоматическая итерация с использованием комбинаций разных методов нормализации или стандартизации признаков, моделей и настроек гиперпараметров для получения оптимальной модели.
 
 ![Схема процесса](./media/tutorial-auto-train-models/flow2.png)
 
-В этом руководстве вы выполнили следующие задачи.
+В этом руководстве описано, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Настройка среды Python и импорт пакетов SDK.
-> * Настройка рабочей области Службы машинного обучения Azure.
-> * Автоматическое обучение модели регрессии.
-> * Локальный запуск модели с пользовательскими параметрами.
-> * Изучение результатов.
+> * Загрузка, преобразование и очистка данных с помощью Открытых наборов данных Azure.
+> * Обучение автоматизированной регрессионной модели машинного обучения.
+> * Расчет точности модели.
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
-
->[!NOTE]
-> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.39.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию](https://aka.ms/AMLFree) Службы машинного обучения Azure уже сегодня.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Выполните инструкции из первой части [руководства по подготовке данных](tutorial-data-prep.md).
+* Завершите [руководство по установке](tutorial-1st-experiment-sdk-setup.md), если у вас еще нет рабочей области Службы машинного обучения Azure или записной книжки виртуальной машины.
+* Завершив установку, откройте записную книжку**tutorials/regression-automated-ml.ipynb**, используя тот же сервер записной книжки.
 
-* Сделав это, откройте записную книжку **tutorials/regression-part2-automated-ml.ipynb**, используя тот же сервер записной книжки.
+Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите запустить его в собственной [локальной среде](how-to-configure-environment.md#local). Выполните команду `pip install azureml-sdk[automl] azureml-opendatasets azureml-widgets`, чтобы получить необходимые пакеты.
 
-Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать его в собственной [локальной среде](how-to-configure-environment.md#local).  Убедитесь, что у вас установлен пакет `matplotlib` и дополнительные компоненты `automl` и `notebooks` из пакета SDK Машинного обучения Azure.
+## <a name="download-and-prepare-data"></a>Скачивание и подготовка данных
 
-## <a name="start"></a>Настройка среды разработки
-
-Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
-
-* Установка пакета SDK
-* Импорт пакетов Python.
-* Настройка рабочей области.
-
-### <a name="install-and-import-packages"></a>Установка и импорт пакетов
-
-Если вы работаете с руководством в собственной среде Python, используйте следующую команду для установки необходимых пакетов.
-
-```shell
-pip install azureml-sdk[automl,notebooks] matplotlib
-```
-
-Импортируйте пакеты Python, которые необходимы в этом руководстве.
+Импортируйте необходимые пакеты. Пакет открытых наборов данных содержит класс, представляющий каждый источник данных (например `NycTlcGreen`), для упрощения фильтрации параметров данных перед скачиванием.
 
 ```python
-import azureml.core
+from azureml.opendatasets import NycTlcGreen
 import pandas as pd
-from azureml.core.workspace import Workspace
-import logging
-import os
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 ```
 
-### <a name="configure-workspace"></a>Настройка рабочей области
+Начните с создания кадра данных для хранения данных о поездках на такси. При работе в среде, отличающейся от Spark, в открытых наборах данных можно скачать за раз данные некоторых классов только за один месяц. Это ограничение позволяет избежать ошибки `MemoryError` при использовании больших наборов данных.
 
-В существующей рабочей области создайте объект. Класс [Workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели.
-
-`Workspace.from_config()` считывает файл **config.json** и загружает данные в объект с именем `ws`.  `ws` используется в остальном коде в этом руководстве.
-
-Получив объект рабочей области, укажите имя для эксперимента. Создайте и зарегистрируйте локальный каталог в рабочей области. Все выполнения указанного эксперимента записываются в журнал под его именем и на [портале Azure](https://portal.azure.com).
+Чтобы получить данные о поездках на такси, поочередно скачайте данные за каждый месяц и, прежде чем добавить их к`green_taxi_df`случайной выборке 2,000 записей за каждый месяц, чтобы не раздувать кадр данных. После этого проверьте данные.
 
 
 ```python
-ws = Workspace.from_config()
-# choose a name for the run history container in the workspace
-experiment_name = 'automated-ml-regression'
-# project folder
-project_folder = './automated-ml-regression'
+green_taxi_df = pd.DataFrame([])
+start = datetime.strptime("1/1/2015","%m/%d/%Y")
+end = datetime.strptime("1/31/2015","%m/%d/%Y")
 
-output = {}
-output['SDK version'] = azureml.core.VERSION
-output['Subscription ID'] = ws.subscription_id
-output['Workspace'] = ws.name
-output['Resource Group'] = ws.resource_group
-output['Location'] = ws.location
-output['Project Directory'] = project_folder
-pd.set_option('display.max_colwidth', -1)
-pd.DataFrame(data=output, index=['']).T
-```
+for sample_month in range(12):
+    temp_df_green = NycTlcGreen(start + relativedelta(months=sample_month), end + relativedelta(months=sample_month)) \
+        .to_pandas_dataframe()
+    green_taxi_df = green_taxi_df.append(temp_df_green.sample(2000))
 
-## <a name="explore-data"></a>Изучение данных
-
-Используйте объект потока данных, созданный в рамках работы с предыдущим руководством. Таким образом, в первой части этого руководства были очищены данные о такси Нью-Йорка, поэтому их можно использовать в модели машинного обучения. Теперь вы используете различные функции из набора данных и позволяете автоматизированной модели создавать связи между функциями и стоимостью поездки на такси. Откройте и выполните поток данных, а затем проверьте результаты.
-
-
-```python
-import azureml.dataprep as dprep
-
-file_path = os.path.join(os.getcwd(), "dflows.dprep")
-
-dflow_prepared = dprep.Dataflow.open(file_path)
-dflow_prepared.get_profile()
-```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>type</th>
-      <th>Min</th>
-      <th>Max</th>
-      <th>Count</th>
-      <th>Отсутствующее количество</th>
-      <th>Присутствующее количество</th>
-      <th>Процент отсутствующих</th>
-      <th>Количество ошибок</th>
-      <th>Количество пустых</th>
-      <th>Квантиль уровня 0,1 %</th>
-      <th>Квантиль уровня 1 %</th>
-      <th>Квантиль уровня 5 %</th>
-      <th>Квантиль уровня 25 %</th>
-      <th>Квантиль уровня 50 %</th>
-      <th>Квантиль уровня 75 %</th>
-      <th>Квантиль уровня 95 %</th>
-      <th>Квантиль уровня 99 %</th>
-      <th>Квантиль уровня 99,9 %</th>
-      <th>Среднее значение</th>
-      <th>Стандартное отклонение</th>
-      <th>Variance</th>
-      <th>Асимметрия</th>
-      <th>Эксцесс</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>vendor</th>
-      <td>FieldType.STRING</td>
-      <td>1</td>
-      <td>VTS</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>pickup_weekday</th>
-      <td>FieldType.STRING</td>
-      <td>Пятница</td>
-      <td>Среда</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>pickup_hour</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>23</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>2,90047</td>
-      <td>2,69355</td>
-      <td>9,72889</td>
-      <td>16</td>
-      <td>19,3713</td>
-      <td>22,6974</td>
-      <td>23</td>
-      <td>23</td>
-      <td>14,2731</td>
-      <td>6,59242</td>
-      <td>43,46</td>
-      <td>–0,693723</td>
-      <td>–0,570403</td>
-    </tr>
-    <tr>
-      <th>pickup_minute</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>59</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>4,99701</td>
-      <td>4,95833</td>
-      <td>14,1528</td>
-      <td>29,3832</td>
-      <td>44,6825</td>
-      <td>56,4444</td>
-      <td>58,9909</td>
-      <td>59</td>
-      <td>29,427</td>
-      <td>17,4333</td>
-      <td>303,921</td>
-      <td>0,0120999</td>
-      <td>–1,20981</td>
-    </tr>
-    <tr>
-      <th>pickup_second</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>59</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>5,28131</td>
-      <td>5</td>
-      <td>14,7832</td>
-      <td>29,9293</td>
-      <td>44,725</td>
-      <td>56,7573</td>
-      <td>59</td>
-      <td>59</td>
-      <td>29,7443</td>
-      <td>17,3595</td>
-      <td>301,351</td>
-      <td>–0,0252399</td>
-      <td>–1,19616</td>
-    </tr>
-    <tr>
-      <th>dropoff_weekday</th>
-      <td>FieldType.STRING</td>
-      <td>Пятница</td>
-      <td>Среда</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>dropoff_hour</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>23</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>2,57153</td>
-      <td>2</td>
-      <td>9,58795</td>
-      <td>15,9994</td>
-      <td>19,6184</td>
-      <td>22,8317</td>
-      <td>23</td>
-      <td>23</td>
-      <td>14,2105</td>
-      <td>6,71093</td>
-      <td>45,0365</td>
-      <td>–0,687292</td>
-      <td>–0,61951</td>
-    </tr>
-    <tr>
-      <th>dropoff_minute</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>59</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>5,44383</td>
-      <td>4,84694</td>
-      <td>14,1036</td>
-      <td>28,8365</td>
-      <td>44,3102</td>
-      <td>56,6892</td>
-      <td>59</td>
-      <td>59</td>
-      <td>29,2907</td>
-      <td>17,4108</td>
-      <td>303,136</td>
-      <td>0,0222514</td>
-      <td>–1,2181</td>
-    </tr>
-    <tr>
-      <th>dropoff_second</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0</td>
-      <td>59</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0</td>
-      <td>5,07801</td>
-      <td>5</td>
-      <td>14,5751</td>
-      <td>29,5972</td>
-      <td>45,4649</td>
-      <td>56,2729</td>
-      <td>59</td>
-      <td>59</td>
-      <td>29,772</td>
-      <td>17,5337</td>
-      <td>307,429</td>
-      <td>–0,0212575</td>
-      <td>–1,226</td>
-    </tr>
-    <tr>
-      <th>store_forward</th>
-      <td>FieldType.STRING</td>
-      <td>Нет</td>
-      <td>Да</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>pickup_longitude</th>
-      <td>FieldType.DECIMAL</td>
-      <td>–74,0781</td>
-      <td>–73,7459</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>–74,0578</td>
-      <td>–73,9639</td>
-      <td>–73,9656</td>
-      <td>–73,9508</td>
-      <td>–73,9255</td>
-      <td>–73,8529</td>
-      <td>–73,8302</td>
-      <td>–73,8238</td>
-      <td>–73,7697</td>
-      <td>–73,9123</td>
-      <td>0,0503757</td>
-      <td>0,00253771</td>
-      <td>0,352172</td>
-      <td>–0,923743</td>
-    </tr>
-    <tr>
-      <th>pickup_latitude</th>
-      <td>FieldType.DECIMAL</td>
-      <td>40,5755</td>
-      <td>40,8799</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>40,632</td>
-      <td>40,7117</td>
-      <td>40,7115</td>
-      <td>40,7213</td>
-      <td>40,7565</td>
-      <td>40,8058</td>
-      <td>40,8478</td>
-      <td>40,8676</td>
-      <td>40,8778</td>
-      <td>40,7649</td>
-      <td>0,0494674</td>
-      <td>0,00244702</td>
-      <td>0,205972</td>
-      <td>–0,777945</td>
-    </tr>
-    <tr>
-      <th>dropoff_longitude</th>
-      <td>FieldType.DECIMAL</td>
-      <td>-74,0857</td>
-      <td>-73,7209</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>–74,0775</td>
-      <td>–73,9875</td>
-      <td>–73,9882</td>
-      <td>–73,9638</td>
-      <td>–73,935</td>
-      <td>–73,8755</td>
-      <td>–73,8125</td>
-      <td>–73,7759</td>
-      <td>–73,7327</td>
-      <td>–73,9202</td>
-      <td>0,0584627</td>
-      <td>0,00341789</td>
-      <td>0,623622</td>
-      <td>–0,262603</td>
-    </tr>
-    <tr>
-      <th>dropoff_latitude</th>
-      <td>FieldType.DECIMAL</td>
-      <td>40,5835</td>
-      <td>40,8797</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>40,5973</td>
-      <td>40,6928</td>
-      <td>40,6911</td>
-      <td>40,7226</td>
-      <td>40,7567</td>
-      <td>40,7918</td>
-      <td>40,8495</td>
-      <td>40,868</td>
-      <td>40,8787</td>
-      <td>40,7583</td>
-      <td>0,0517399</td>
-      <td>0,00267701</td>
-      <td>0,0390404</td>
-      <td>–0,203525</td>
-    </tr>
-    <tr>
-      <th>passengers</th>
-      <td>FieldType.DECIMAL</td>
-      <td>1</td>
-      <td>6</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>5</td>
-      <td>5</td>
-      <td>6</td>
-      <td>6</td>
-      <td>2,39249</td>
-      <td>1,83197</td>
-      <td>3,3561</td>
-      <td>0,763144</td>
-      <td>–1,23467</td>
-    </tr>
-    <tr>
-      <th>distance</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0,01</td>
-      <td>32,34</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0108744</td>
-      <td>0,743898</td>
-      <td>0,738194</td>
-      <td>1,243</td>
-      <td>2,40168</td>
-      <td>4,74478</td>
-      <td>10,5136</td>
-      <td>14,9011</td>
-      <td>21,8035</td>
-      <td>3,5447</td>
-      <td>3,2943</td>
-      <td>10,8524</td>
-      <td>1,91556</td>
-      <td>4,99898</td>
-    </tr>
-    <tr>
-      <th>cost</th>
-      <td>FieldType.DECIMAL</td>
-      <td>0,1</td>
-      <td>88</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>6148,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>0,0</td>
-      <td>2,33837</td>
-      <td>5,00491</td>
-      <td>5</td>
-      <td>6,93129</td>
-      <td>10,524</td>
-      <td>17,4811</td>
-      <td>33,2343</td>
-      <td>50,0093</td>
-      <td>63,1753</td>
-      <td>13,6843</td>
-      <td>9,66571</td>
-      <td>93,426</td>
-      <td>1,78518</td>
-      <td>4,13972</td>
-    </tr>
-  </tbody>
-</table>
-
-Чтобы подготовить данные для эксперимента, добавьте столбцы в `dflow_x` (таким образом они будут считаться признаками создания модели). `dflow_y` определяется как прогнозируемое значение (**стоимость**).
-
-```python
-dflow_X = dflow_prepared.keep_columns(
-    ['pickup_weekday', 'pickup_hour', 'distance', 'passengers', 'vendor'])
-dflow_y = dflow_prepared.keep_columns('cost')
-```
-
-### <a name="split-the-data-into-train-and-test-sets"></a>Разделение данных на обучающий и тестовый наборы
-
-Теперь разделите данные на обучающий и тестовый наборы с помощью функции `train_test_split` из библиотеки `sklearn`. Эта функция выполняет разделение данных на набор данных X (**функции**) для обучения модели и набор данных Y (**прогнозируемые значения**) для тестирования. Параметр `test_size` определяет процент данных, выделяемых для тестирования. Параметр `random_state` задает начальное значение для случайного генератора, чтобы разделение тестового обучения было детерминированным.
-
-```python
-from sklearn.model_selection import train_test_split
-
-x_df = dflow_X.to_pandas_dataframe()
-y_df = dflow_y.to_pandas_dataframe()
-
-x_train, x_test, y_train, y_test = train_test_split(
-    x_df, y_df, test_size=0.2, random_state=223)
-# flatten y_train to 1d array
-y_train.values.flatten()
-```
-
-Цель этого шага — получить точки данных для проверки готовой модели, которые не использовались для обучения модели, чтобы измерить истинную точность. Другими словами, хорошо обученная модель должна уметь делать точные прогнозы на основе данных, которые она еще не видела. Теперь у вас есть необходимые пакеты и готовые данные для автоматического обучения модели.
-
-## <a name="automatically-train-a-model"></a>Автоматическое обучение модели
-
-Чтобы автоматически обучить модель, выполните следующие действия.
-1. Определите параметры для запуска эксперимента. Вложите данные для обучения в конфигурацию и измените параметры, которые управляют процессом обучения.
-1. Отправьте эксперимент для настройки модели. После отправки эксперимента процесс повторяется в различных алгоритмах машинного обучения и значениях гиперпараметров в соответствии с заданными вами ограничениями. Он выбирает наиболее подходящую модель путем оптимизации метрики точности.
-
-### <a name="define-settings-for-autogeneration-and-tuning"></a>Определение параметров для автоматического создания и настройки
-
-Определите параметры эксперимента и модели для ее автоматического создания и настройки. Просмотрите полный список параметров [здесь](how-to-configure-auto-train.md). Отправка эксперимента с этими параметрами по умолчанию занимает примерно 10–15 минут, но если вы хотите снизить время выполнения, уменьшите `iterations` или `iteration_timeout_minutes`.
-
-
-|Свойство| Значение в этом руководстве |ОПИСАНИЕ|
-|----|----|---|
-|**iteration_timeout_minutes**|10|Максимальная длительность каждой итерации в минутах. Уменьшите это значение, чтобы уменьшить общее время выполнения.|
-|**iterations**|30|Число итераций. В каждой итерации новая модель машинного обучения обучается с помощью ваших данных. Это основное значение, которое влияет на общее время выполнения.|
-|**primary_metric**| spearman_correlation; | Метрика, который вы хотите оптимизировать. Наиболее подходящая модель будет выбрана на основе этой метрики.|
-|**preprocess**| Истина | Используя **True**, эксперимент может предварительно обработать входные данные (обработка отсутствующих данных, преобразование текста в числовой тип и т. д.).|
-|**verbosity**| logging.INFO | Определяет уровень ведения журнала.|
-|**n_cross_validations**|5|Количество разделений перекрестных проверок, которые нужно выполнить, если данные проверки не указаны.|
-
-
-
-```python
-automl_settings = {
-    "iteration_timeout_minutes": 10,
-    "iterations": 30,
-    "primary_metric": 'spearman_correlation',
-    "preprocess": True,
-    "verbosity": logging.INFO,
-    "n_cross_validations": 5
-}
-```
-
-Используйте определенные вами параметры обучения в качестве параметра для объекта `AutoMLConfig`. Кроме того, укажите свои данные для обучения и тип модели, которая является `regression` в данном случае.
-
-```python
-from azureml.train.automl import AutoMLConfig
-
-# local compute
-automated_ml_config = AutoMLConfig(task='regression',
-                                   debug_log='automated_ml_errors.log',
-                                   path=project_folder,
-                                   X=x_train.values,
-                                   y=y_train.values.flatten(),
-                                   **automl_settings)
-```
-
-> [!NOTE]
-> Этапы предварительной обработки автоматизированного машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовой формат и т. д.) становятся частью базовой модели. При использовании модели для прогнозирования эти этапы предварительной обработки, которые выполнялись во время обучения, автоматически выполняются для входных данных.
-
-### <a name="train-the-automatic-regression-model"></a>Обучение модели автоматической регрессии
-
-Запустите эксперимент, чтобы выполнить его в локальной среде. Передайте в эксперимент определенный объект `automated_ml_config`. Настройте выход `True` для просмотра хода выполнения во время эксперимента:
-
-
-```python
-from azureml.core.experiment import Experiment
-experiment = Experiment(ws, experiment_name)
-local_run = experiment.submit(automated_ml_config, show_output=True)
-```
-
-Показанный вывод обновляется в реальном времени по мере выполнения эксперимента. Для каждой итерации вы видите тип модели, длительность выполнения и точность обучения. Поле `BEST` отслеживает лучшую оценку выполнения обучения на основе вашего типа метрики.
-
-    Parent Run ID: AutoML_02778de3-3696-46e9-a71b-521c8fca0651
-    *******************************************************************************************
-    ITERATION: The iteration being evaluated.
-    PIPELINE: A summary description of the pipeline being evaluated.
-    DURATION: Time taken for the current iteration.
-    METRIC: The result of computing score on the fitted pipeline.
-    BEST: The best observed score thus far.
-    *******************************************************************************************
-
-     ITERATION   PIPELINE                                       DURATION      METRIC      BEST
-             0   MaxAbsScaler ExtremeRandomTrees                0:00:08       0.9447    0.9447
-             1   StandardScalerWrapper GradientBoosting         0:00:09       0.9536    0.9536
-             2   StandardScalerWrapper ExtremeRandomTrees       0:00:09       0.8580    0.9536
-             3   StandardScalerWrapper RandomForest             0:00:08       0.9147    0.9536
-             4   StandardScalerWrapper ExtremeRandomTrees       0:00:45       0.9398    0.9536
-             5   MaxAbsScaler LightGBM                          0:00:08       0.9562    0.9562
-             6   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.8282    0.9562
-             7   StandardScalerWrapper LightGBM                 0:00:07       0.9421    0.9562
-             8   MaxAbsScaler DecisionTree                      0:00:08       0.9526    0.9562
-             9   MaxAbsScaler RandomForest                      0:00:09       0.9355    0.9562
-            10   MaxAbsScaler SGD                               0:00:09       0.9602    0.9602
-            11   MaxAbsScaler LightGBM                          0:00:09       0.9553    0.9602
-            12   MaxAbsScaler DecisionTree                      0:00:07       0.9484    0.9602
-            13   MaxAbsScaler LightGBM                          0:00:08       0.9540    0.9602
-            14   MaxAbsScaler RandomForest                      0:00:10       0.9365    0.9602
-            15   MaxAbsScaler SGD                               0:00:09       0.9602    0.9602
-            16   StandardScalerWrapper ExtremeRandomTrees       0:00:49       0.9171    0.9602
-            17   SparseNormalizer LightGBM                      0:00:08       0.9191    0.9602
-            18   MaxAbsScaler DecisionTree                      0:00:08       0.9402    0.9602
-            19   StandardScalerWrapper ElasticNet               0:00:08       0.9603    0.9603
-            20   MaxAbsScaler DecisionTree                      0:00:08       0.9513    0.9603
-            21   MaxAbsScaler SGD                               0:00:08       0.9603    0.9603
-            22   MaxAbsScaler SGD                               0:00:10       0.9602    0.9603
-            23   StandardScalerWrapper ElasticNet               0:00:09       0.9603    0.9603
-            24   StandardScalerWrapper ElasticNet               0:00:09       0.9603    0.9603
-            25   MaxAbsScaler SGD                               0:00:09       0.9603    0.9603
-            26   TruncatedSVDWrapper ElasticNet                 0:00:09       0.9602    0.9603
-            27   MaxAbsScaler SGD                               0:00:12       0.9413    0.9603
-            28   StandardScalerWrapper ElasticNet               0:00:07       0.9603    0.9603
-            29    Ensemble                                      0:00:38       0.9622    0.9622
-
-## <a name="explore-the-results"></a>Просмотр результатов.
-
-Ознакомьтесь с результатами автоматического обучения, воспользовавшись мини-приложением Jupyter или журналом эксперимента.
-
-### <a name="option-1-add-a-jupyter-widget-to-see-results"></a>Вариант 1. Просмотр результатов с помощью мини-приложения Jupyter
-
-Если вы используете записную книжку Jupyter, это [мини-приложение Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) позволит просмотреть график и таблицу всех результатов:
-
-
-```python
-from azureml.widgets import RunDetails
-RunDetails(local_run).show()
-```
-
-![Мини-приложение Jupyter, данные о выполнении](./media/tutorial-auto-train-models/automl-dash-output.png)
-![График в мини-приложении Jupyter](./media/tutorial-auto-train-models/automl-chart-output.png)
-
-Эти же результаты сохраняются в вашей рабочей области.  Вы можете получить ссылку на результаты выполнения:
-
-```
-local_run.get_portal_url()
-```
-
-
-### <a name="option-2-get-and-examine-all-run-iterations-in-python"></a>Вариант 2. Получение и просмотр всех итераций запуска в Python
-
-Вы можете извлечь журнал каждого эксперимента и просмотреть отдельные метрики для каждой итерации. Проверив RMSE (root_mean_squared_error) для каждого отдельного выполнения модели, вы увидите, что большинство итераций прогнозируют справедливую стоимость такси в разумных границах (3–4 доллара США).
-
-```python
-children = list(local_run.get_children())
-metricslist = {}
-for run in children:
-    properties = run.get_properties()
-    metrics = {k: v for k, v in run.get_metrics().items()
-               if isinstance(v, float)}
-    metricslist[int(properties['iteration'])] = metrics
-
-rundata = pd.DataFrame(metricslist).sort_index(1)
-rundata
+green_taxi_df.head(10)
 ```
 
 <div>
@@ -776,326 +83,919 @@ rundata
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4\.</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
+      <th>vendorID</th>
+      <th>lpepPickupDatetime</th>
+      <th>lpepDropoffDatetime</th>
+      <th>passengerCount</th>
+      <th>tripDistance</th>
+      <th>puLocationId</th>
+      <th>doLocationId</th>
+      <th>pickupLongitude</th>
+      <th>pickupLatitude</th>
+      <th>dropoffLongitude</th>
       <th>...</th>
-      <th>20</th>
-      <th>21</th>
-      <th>22</th>
-      <th>23</th>
-      <th>24</th>
-      <th>25</th>
-      <th>26</th>
-      <th>27</th>
-      <th>28</th>
-      <th>29</th>
+      <th>paymentType</th>
+      <th>fareAmount</th>
+      <th>extra</th>
+      <th>mtaTax</th>
+      <th>improvementSurcharge</th>
+      <th>tipAmount</th>
+      <th>tollsAmount</th>
+      <th>ehailFee</th>
+      <th>totalAmount</th>
+      <th>tripType</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>explained_variance</th>
-      <td>0,811037</td>
-      <td>0,880553</td>
-      <td>0,398582</td>
-      <td>0,776040</td>
-      <td>0,663869</td>
-      <td>0,875911</td>
-      <td>0,115632</td>
-      <td>0,586905</td>
-      <td>0,851911</td>
-      <td>0,793964</td>
+      <th>131969</th>
+      <td>2</td>
+      <td>2015-01-11 05:34:44</td>
+      <td>2015-01-11 05:45:03</td>
+      <td>3</td>
+      <td>4,84</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,88</td>
+      <td>40,84</td>
+      <td>-73,94</td>
       <td>...</td>
-      <td>0,850023</td>
-      <td>0,883603</td>
-      <td>0,883704</td>
-      <td>0,880797</td>
-      <td>0,881564</td>
-      <td>0,883708</td>
-      <td>0,881826</td>
-      <td>0,585377</td>
-      <td>0,883123</td>
-      <td>0,886817</td>
+      <td>2</td>
+      <td>15,00</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>16,30</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>mean_absolute_error</th>
-      <td>2,189444</td>
-      <td>1,500412</td>
-      <td>5,480531</td>
-      <td>2,626316</td>
-      <td>2,973026</td>
-      <td>1,550199</td>
-      <td>6,383868</td>
-      <td>4,414241</td>
-      <td>1,743328</td>
-      <td>2,294601</td>
+      <th>1129817</th>
+      <td>2</td>
+      <td>2015-01-20 16:26:29</td>
+      <td>2015-01-20 16:30:26</td>
+      <td>1</td>
+      <td>0,69</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,81</td>
+      <td>-73,96</td>
       <td>...</td>
-      <td>1,797402</td>
-      <td>1,415815</td>
-      <td>1,418167</td>
-      <td>1,578617</td>
-      <td>1,559427</td>
-      <td>1,413042</td>
-      <td>1,551698</td>
-      <td>4,069196</td>
-      <td>1,505795</td>
-      <td>1,430957</td>
+      <td>2</td>
+      <td>4.50</td>
+      <td>1.00</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,30</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>median_absolute_error</th>
-      <td>1,438417</td>
-      <td>0,850899</td>
-      <td>4,579662</td>
-      <td>1,765210</td>
-      <td>1,594600</td>
-      <td>0,869883</td>
-      <td>4,266450</td>
-      <td>3,627355</td>
-      <td>0,954992</td>
-      <td>1,361014</td>
+      <th>1278620</th>
+      <td>2</td>
+      <td>2015-01-01 05:58:10</td>
+      <td>2015-01-01 06:00:55</td>
+      <td>1</td>
+      <td>0,45</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,92</td>
+      <td>40,76</td>
+      <td>-73,91</td>
       <td>...</td>
-      <td>0,973634</td>
-      <td>0,774814</td>
-      <td>0,797269</td>
-      <td>1,147234</td>
-      <td>1,116424</td>
-      <td>0,783958</td>
-      <td>1,098464</td>
-      <td>2,709027</td>
-      <td>1,003728</td>
-      <td>0,851724</td>
+      <td>2</td>
+      <td>4,00</td>
+      <td>0,00</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>4,80</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>normalized_mean_absolute_error;</th>
-      <td>0,024908</td>
-      <td>0,017070</td>
-      <td>0,062350</td>
-      <td>0,029878</td>
-      <td>0,033823</td>
-      <td>0,017636</td>
-      <td>0,072626</td>
-      <td>0,050219</td>
-      <td>0,019833</td>
-      <td>0,026105</td>
+      <th>348430</th>
+      <td>2</td>
+      <td>2015-01-17 02:20:50</td>
+      <td>2015-01-17 02:41:38</td>
+      <td>1</td>
+      <td>0,00</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,81</td>
+      <td>40,70</td>
+      <td>-73,82</td>
       <td>...</td>
-      <td>0,020448</td>
-      <td>0,016107</td>
-      <td>0,016134</td>
-      <td>0,017959</td>
-      <td>0,017741</td>
-      <td>0,016076</td>
-      <td>0,017653</td>
-      <td>0,046293</td>
-      <td>0,017131</td>
-      <td>0,016279</td>
+      <td>2</td>
+      <td>12,50</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>13,80</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>normalized_median_absolute_error</th>
-      <td>0,016364</td>
-      <td>0,009680</td>
-      <td>0,052101</td>
-      <td>0,020082</td>
-      <td>0,018141</td>
-      <td>0,009896</td>
-      <td>0,048538</td>
-      <td>0,041267</td>
-      <td>0,010865</td>
-      <td>0,015484</td>
+      <th>1269627</th>
+      <td>1</td>
+      <td>2015-01-01 05:04:10</td>
+      <td>2015-01-01 05:06:23</td>
+      <td>1</td>
+      <td>0,50</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,92</td>
+      <td>40,76</td>
+      <td>-73,92</td>
       <td>...</td>
-      <td>0,011077</td>
-      <td>0,008815</td>
-      <td>0,009070</td>
-      <td>0,013052</td>
-      <td>0,012701</td>
-      <td>0,008919</td>
-      <td>0,012497</td>
-      <td>0,030819</td>
-      <td>0,011419</td>
-      <td>0,009690</td>
+      <td>2</td>
+      <td>4,00</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>5.00</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>normalized_root_mean_squared_error;</th>
-      <td>0,047968</td>
-      <td>0,037882</td>
-      <td>0,085572</td>
-      <td>0,052282</td>
-      <td>0,065809</td>
-      <td>0,038664</td>
-      <td>0,109401</td>
-      <td>0,071104</td>
-      <td>0,042294</td>
-      <td>0,049967</td>
+      <th>811755</th>
+      <td>1</td>
+      <td>2015-01-04 19:57:51</td>
+      <td>2015-01-04 20:05:45</td>
+      <td>2</td>
+      <td>1,10</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,72</td>
+      <td>-73,95</td>
       <td>...</td>
-      <td>0,042565</td>
-      <td>0,037685</td>
-      <td>0,037557</td>
-      <td>0,037643</td>
-      <td>0,037513</td>
-      <td>0,037560</td>
-      <td>0,037465</td>
-      <td>0,072077</td>
-      <td>0,037249</td>
-      <td>0,036716</td>
+      <td>2</td>
+      <td>6,50</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>7,80</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>normalized_root_mean_squared_log_error;</th>
-      <td>0,055353</td>
-      <td>0,045000</td>
-      <td>0,110219</td>
-      <td>0,065633</td>
-      <td>0,063589</td>
-      <td>0,044412</td>
-      <td>0,123433</td>
-      <td>0,092312</td>
-      <td>0,046130</td>
-      <td>0,055243</td>
+      <th>737281</th>
+      <td>1</td>
+      <td>2015-01-03 12:27:31</td>
+      <td>2015-01-03 12:33:52</td>
+      <td>1</td>
+      <td>0,90</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,88</td>
+      <td>40,76</td>
+      <td>-73,87</td>
       <td>...</td>
-      <td>0,046540</td>
-      <td>0,041804</td>
-      <td>0,041771</td>
-      <td>0,045175</td>
-      <td>0,044628</td>
-      <td>0,041617</td>
-      <td>0,044405</td>
-      <td>0,079651</td>
-      <td>0,042799</td>
-      <td>0,041530</td>
+      <td>2</td>
+      <td>6,00</td>
+      <td>0,00</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,80</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>r2_score;</th>
-      <td>0,810900</td>
-      <td>0,880328</td>
-      <td>0,398076</td>
-      <td>0,775957</td>
-      <td>0,642812</td>
-      <td>0,875719</td>
-      <td>0,021603</td>
-      <td>0,586514</td>
-      <td>0,851767</td>
-      <td>0,793671</td>
+      <th>113951</th>
+      <td>1</td>
+      <td>2015-01-09 23:25:51</td>
+      <td>2015-01-09 23:39:52</td>
+      <td>1</td>
+      <td>3,30</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,72</td>
+      <td>-73,91</td>
       <td>...</td>
-      <td>0,849809</td>
-      <td>0,880142</td>
-      <td>0,880952</td>
-      <td>0,880586</td>
-      <td>0,881347</td>
-      <td>0,880887</td>
-      <td>0,881613</td>
-      <td>0,548121</td>
-      <td>0,882883</td>
-      <td>0,886321</td>
+      <td>2</td>
+      <td>12,50</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>13,80</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>root_mean_squared_error</th>
-      <td>4,216362</td>
-      <td>3,329810</td>
-      <td>7,521765</td>
-      <td>4,595604</td>
-      <td>5,784601</td>
-      <td>3,398540</td>
-      <td>9,616354</td>
-      <td>6,250011</td>
-      <td>3,717661</td>
-      <td>4,392072</td>
+      <th>150436</th>
+      <td>2</td>
+      <td>2015-01-11 17:15:14</td>
+      <td>2015-01-11 17:22:57</td>
+      <td>1</td>
+      <td>1,19</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,94</td>
+      <td>40,71</td>
+      <td>-73,95</td>
       <td>...</td>
-      <td>3,741447</td>
-      <td>3,312533</td>
-      <td>3,301242</td>
-      <td>3,308795</td>
-      <td>3,297389</td>
-      <td>3,301485</td>
-      <td>3,293182</td>
-      <td>6,335581</td>
-      <td>3,274209</td>
-      <td>3,227365</td>
+      <td>1</td>
+      <td>7,00</td>
+      <td>0,00</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>1,75</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>9,55</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>root_mean_squared_log_error</th>
-      <td>0,243184</td>
-      <td>0,197702</td>
-      <td>0,484227</td>
-      <td>0,288349</td>
-      <td>0,279367</td>
-      <td>0,195116</td>
-      <td>0,542281</td>
-      <td>0,405559</td>
-      <td>0,202666</td>
-      <td>0,242702</td>
+      <th>432136</th>
+      <td>2</td>
+      <td>2015-01-22 23:16:33</td>
+      <td>2015-01-22 23:20:13</td>
+      <td>1</td>
+      <td>0,65</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,94</td>
+      <td>40,71</td>
+      <td>-73,94</td>
       <td>...</td>
-      <td>0,204464</td>
-      <td>0,183658</td>
-      <td>0,183514</td>
-      <td>0,198468</td>
-      <td>0,196067</td>
-      <td>0,182836</td>
-      <td>0,195087</td>
-      <td>0,349935</td>
-      <td>0,188031</td>
-      <td>0,182455</td>
-    </tr>
-    <tr>
-      <th>spearman_correlation;</th>
-      <td>0,944743</td>
-      <td>0,953618</td>
-      <td>0,857965</td>
-      <td>0,914703</td>
-      <td>0,939846</td>
-      <td>0,956159</td>
-      <td>0,828187</td>
-      <td>0,942069</td>
-      <td>0,952581</td>
-      <td>0,935477</td>
-      <td>...</td>
-      <td>0,951287</td>
-      <td>0,960335</td>
-      <td>0,960195</td>
-      <td>0,960279</td>
-      <td>0,960288</td>
-      <td>0,960323</td>
-      <td>0,960161</td>
-      <td>0,941254</td>
-      <td>0,960293</td>
-      <td>0,962158</td>
-    </tr>
-    <tr>
-      <th>spearman_correlation_max</th>
-      <td>0,944743</td>
-      <td>0,953618</td>
-      <td>0,953618</td>
-      <td>0,953618</td>
-      <td>0,953618</td>
-      <td>0,956159</td>
-      <td>0,956159</td>
-      <td>0,956159</td>
-      <td>0,956159</td>
-      <td>0,956159</td>
-      <td>...</td>
-      <td>0,960303</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,960335</td>
-      <td>0,962158</td>
+      <td>2</td>
+      <td>5.00</td>
+      <td>0,50</td>
+      <td>0,50</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,30</td>
+      <td>1.00</td>
     </tr>
   </tbody>
 </table>
-<p>12 строк × 30 столбцов</p>
+<p>10 строк × 23 столбца</p>
 </div>
 
-## <a name="retrieve-the-best-model"></a>Извлечение наиболее эффективной модели
 
-Выберите наилучший конвейер из итераций. Метод `get_output` в `automl_classifier` возвращает лучшее выполнение и соответствующую модель для последнего соответствующего вызова. Используя перегрузки `get_output`, вы можете извлекать лучшее выполнение и соответствующую ему модель по любой зарегистрированной метрике или по определенной итерации.
+Теперь, когда начальные данные загружены, определите функцию для создания различных признаков на основе времени из поля с временем и датой начала поездки. При этом будут созданы новые поля для номера месяца, дня месяца, дня недели и времени дня, что позволит модели учитывать сезонные колебания на основе времени. Примените функцию `apply()` к кадру данных, чтобы последовательно применить функцию `build_time_features()` к каждой строке данных о поездках на такси.
+
+```python
+def build_time_features(vector):
+    pickup_datetime = vector[0]
+    month_num = pickup_datetime.month
+    day_of_month = pickup_datetime.day
+    day_of_week = pickup_datetime.weekday()
+    hour_of_day = pickup_datetime.hour
+
+    return pd.Series((month_num, day_of_month, day_of_week, hour_of_day))
+
+green_taxi_df[["month_num", "day_of_month","day_of_week", "hour_of_day"]] = green_taxi_df[["lpepPickupDatetime"]].apply(build_time_features, axis=1)
+green_taxi_df.head(10)
+```
+
+<div>
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vendorID</th>
+      <th>lpepPickupDatetime</th>
+      <th>lpepDropoffDatetime</th>
+      <th>passengerCount</th>
+      <th>tripDistance</th>
+      <th>puLocationId</th>
+      <th>doLocationId</th>
+      <th>pickupLongitude</th>
+      <th>pickupLatitude</th>
+      <th>dropoffLongitude</th>
+      <th>...</th>
+      <th>improvementSurcharge</th>
+      <th>tipAmount</th>
+      <th>tollsAmount</th>
+      <th>ehailFee</th>
+      <th>totalAmount</th>
+      <th>tripType</th>
+      <th>month_num</th>
+      <th>day_of_month</th>
+      <th>day_of_week</th>
+      <th>hour_of_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>131969</th>
+      <td>2</td>
+      <td>2015-01-11 05:34:44</td>
+      <td>2015-01-11 05:45:03</td>
+      <td>3</td>
+      <td>4,84</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,88</td>
+      <td>40,84</td>
+      <td>-73,94</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>16,30</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>11</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1129817</th>
+      <td>2</td>
+      <td>2015-01-20 16:26:29</td>
+      <td>2015-01-20 16:30:26</td>
+      <td>1</td>
+      <td>0,69</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,81</td>
+      <td>-73,96</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,30</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>20</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>1278620</th>
+      <td>2</td>
+      <td>2015-01-01 05:58:10</td>
+      <td>2015-01-01 06:00:55</td>
+      <td>1</td>
+      <td>0,45</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,92</td>
+      <td>40,76</td>
+      <td>-73,91</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>4,80</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>348430</th>
+      <td>2</td>
+      <td>2015-01-17 02:20:50</td>
+      <td>2015-01-17 02:41:38</td>
+      <td>1</td>
+      <td>0,00</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,81</td>
+      <td>40,70</td>
+      <td>-73,82</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>13,80</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>17</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1269627</th>
+      <td>1</td>
+      <td>2015-01-01 05:04:10</td>
+      <td>2015-01-01 05:06:23</td>
+      <td>1</td>
+      <td>0,50</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,92</td>
+      <td>40,76</td>
+      <td>-73,92</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>5.00</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>811755</th>
+      <td>1</td>
+      <td>2015-01-04 19:57:51</td>
+      <td>2015-01-04 20:05:45</td>
+      <td>2</td>
+      <td>1,10</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,72</td>
+      <td>-73,95</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>7,80</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>4\.</td>
+      <td>6</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>737281</th>
+      <td>1</td>
+      <td>2015-01-03 12:27:31</td>
+      <td>2015-01-03 12:33:52</td>
+      <td>1</td>
+      <td>0,90</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,88</td>
+      <td>40,76</td>
+      <td>-73,87</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,80</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>113951</th>
+      <td>1</td>
+      <td>2015-01-09 23:25:51</td>
+      <td>2015-01-09 23:39:52</td>
+      <td>1</td>
+      <td>3,30</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,96</td>
+      <td>40,72</td>
+      <td>-73,91</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>13,80</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>9</td>
+      <td>4\.</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>150436</th>
+      <td>2</td>
+      <td>2015-01-11 17:15:14</td>
+      <td>2015-01-11 17:22:57</td>
+      <td>1</td>
+      <td>1,19</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,94</td>
+      <td>40,71</td>
+      <td>-73,95</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>1,75</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>9,55</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>11</td>
+      <td>6</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>432136</th>
+      <td>2</td>
+      <td>2015-01-22 23:16:33</td>
+      <td>2015-01-22 23:20:13</td>
+      <td>1</td>
+      <td>0,65</td>
+      <td>Нет</td>
+      <td>Нет</td>
+      <td>-73,94</td>
+      <td>40,71</td>
+      <td>-73,94</td>
+      <td>...</td>
+      <td>0,3</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>не число</td>
+      <td>6,30</td>
+      <td>1.00</td>
+      <td>1</td>
+      <td>22</td>
+      <td>3</td>
+      <td>23</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 строк × 27 столбцов</p>
+</div>
+
+Удалите столбцы, которые не требуются для обучения или построения дополнительных компонентов.
+
+```python
+columns_to_remove = ["lpepPickupDatetime", "lpepDropoffDatetime", "puLocationId", "doLocationId", "extra", "mtaTax",
+                     "improvementSurcharge", "tollsAmount", "ehailFee", "tripType", "rateCodeID",
+                     "storeAndFwdFlag", "paymentType", "fareAmount", "tipAmount"
+                    ]
+for col in columns_to_remove:
+    green_taxi_df.pop(col)
+
+green_taxi_df.head(5)
+```
+
+### <a name="cleanse-data"></a>Удаление данных
+
+Примените функцию `describe()` к новому кадру данных, чтобы просмотреть сводные статистические данные для каждого поля.
+
+```python
+green_taxi_df.describe()
+```
+
+<div>
+<style scoped> .dataframe tbody tr th:only-of-type { vertical-align: middle; }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vendorID</th>
+      <th>passengerCount</th>
+      <th>tripDistance</th>
+      <th>pickupLongitude</th>
+      <th>pickupLatitude</th>
+      <th>dropoffLongitude</th>
+      <th>dropoffLatitude</th>
+      <th>totalAmount</th>
+      <th>month_num</th>
+      <th>day_of_month</th>
+      <th>day_of_week</th>
+      <th>hour_of_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+      <td>48000,00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1,78</td>
+      <td>1,37</td>
+      <td>2,87</td>
+      <td>-73,83</td>
+      <td>40,69</td>
+      <td>-73.84</td>
+      <td>40,70</td>
+      <td>14,75</td>
+      <td>6,50</td>
+      <td>15,13</td>
+      <td>3,27</td>
+      <td>13,52</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0,41</td>
+      <td>1,04</td>
+      <td>2,93</td>
+      <td>2.76</td>
+      <td>1,52</td>
+      <td>2.61</td>
+      <td>1,44</td>
+      <td>12,08</td>
+      <td>3.45</td>
+      <td>8,45</td>
+      <td>1,95</td>
+      <td>6,83</td>
+    </tr>
+    <tr>
+      <th>Min</th>
+      <td>1.00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>-74,66</td>
+      <td>0,00</td>
+      <td>-74,66</td>
+      <td>0,00</td>
+      <td>-300,00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+    </tr>
+    <tr>
+      <th>25 %</th>
+      <td>2,00</td>
+      <td>1.00</td>
+      <td>1,06</td>
+      <td>-73,96</td>
+      <td>40,70</td>
+      <td>-73,97</td>
+      <td>40,70</td>
+      <td>7,80</td>
+      <td>3,75</td>
+      <td>8,00</td>
+      <td>2,00</td>
+      <td>9,00</td>
+    </tr>
+    <tr>
+      <th>50 %</th>
+      <td>2,00</td>
+      <td>1.00</td>
+      <td>1,90</td>
+      <td>-73,94</td>
+      <td>40,75</td>
+      <td>-73,94</td>
+      <td>40,75</td>
+      <td>11,30</td>
+      <td>6,50</td>
+      <td>15,00</td>
+      <td>3.00</td>
+      <td>15,00</td>
+    </tr>
+    <tr>
+      <th>75 %</th>
+      <td>2,00</td>
+      <td>1.00</td>
+      <td>3.60</td>
+      <td>-73,92</td>
+      <td>40,80</td>
+      <td>-73,91</td>
+      <td>40,79</td>
+      <td>17,80</td>
+      <td>9,25</td>
+      <td>22,00</td>
+      <td>5.00</td>
+      <td>19,00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2,00</td>
+      <td>9,00</td>
+      <td>97,57</td>
+      <td>0,00</td>
+      <td>41,93</td>
+      <td>0,00</td>
+      <td>41,94</td>
+      <td>450,00</td>
+      <td>12,00</td>
+      <td>30,00</td>
+      <td>6,00</td>
+      <td>23,00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+Из сводных статистических данных видно, что в некоторых полях присутствуют выбросы или значения, снижающие точность модели. Сначала отфильтруйте поля ширины/долготы в границах округа Манхэттен. Это отфильтрует более длительные поездки на такси или поездки, которые являются выбросами по отношению к другим компонентам.
+
+Кроме того, отфильтруйте поле `tripDistance`, чтобы его значение было больше нуля, но меньше 31 мили (расстояние между двумя парами ширина/долгота по формуле гаверсинуса). Это исключает длительные поездки-выбросы, которые имеют несогласованную стоимость.
+
+Наконец, поле `totalAmount` содержит отрицательные значения для тарифов на такси, которые не имеют смысла в контексте нашей модели, а поле `passengerCount` содержит неверные данные с минимальными значениями, равными нулю.
+
+Отфильтруйте эти аномалии с помощью функций запросов, а затем удалите несколько последних столбцов, не требуемых для обучения.
+
+
+```python
+final_df = green_taxi_df.query("pickupLatitude>=40.53 and pickupLatitude<=40.88")
+final_df = final_df.query("pickupLongitude>=-74.09 and pickupLongitude<=-73.72")
+final_df = final_df.query("tripDistance>=0.25 and tripDistance<31")
+final_df = final_df.query("passengerCount>0 and totalAmount>0")
+
+columns_to_remove_for_training = ["pickupLongitude", "pickupLatitude", "dropoffLongitude", "dropoffLatitude"]
+for col in columns_to_remove_for_training:
+    final_df.pop(col)
+```
+
+Снова вызовите `describe()`, чтобы убедиться в том, что данные очищены должным образом. Теперь у вас есть подготовленный набор очищенных данных о поездках на такси, праздничных днях и погоде для обучения модели машинного обучения.
+
+```python
+final_df.describe()
+```
+
+## <a name="configure-workspace"></a>Настройка рабочей области
+
+В существующей рабочей области создайте объект. Класс [Workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс для мониторинга и отслеживания работы модели. `Workspace.from_config()` считывает файл **config.json** и загружает сведения о проверке подлинности в объект с именем `ws`. `ws` используется в остальном коде в этом руководстве.
+
+```python
+from azureml.core.workspace import Workspace
+ws = Workspace.from_config()
+```
+
+## <a name="split-the-data-into-train-and-test-sets"></a>Разделение данных на обучающий и тестовый наборы
+
+Разделите данные на обучающий и тестовый наборы с помощью функции `train_test_split` из библиотеки `scikit-learn`. Эта функция выполняет разделение данных на набор данных X (**функции**) для обучения модели и набор данных Y (**прогнозируемые значения**) для тестирования.
+
+Параметр `test_size` определяет процент данных, выделяемых для тестирования. Параметр `random_state` задает начальное значение для случайного генератора, чтобы разделение тестового обучения было детерминированным.
+
+```python
+from sklearn.model_selection import train_test_split
+
+y_df = final_df.pop("totalAmount")
+x_df = final_df
+
+x_train, x_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.2, random_state=223)
+```
+
+Цель этого шага — получить точки данных для проверки готовой модели, которые не использовались для обучения модели, чтобы измерить истинную точность.
+
+Другими словами, хорошо обученная модель должна уметь делать точные прогнозы на основе данных, которые она еще не видела. Теперь у вас есть данные, подготовленные для автоматического обучения модели машинного обучения.
+
+## <a name="automatically-train-a-model"></a>Автоматическое обучение модели
+
+Чтобы автоматически обучить модель, выполните следующие действия.
+1. Определите параметры для запуска эксперимента. Вложите данные для обучения в конфигурацию и измените параметры, которые управляют процессом обучения.
+1. Отправьте эксперимент для настройки модели. После отправки эксперимента процесс повторяется в различных алгоритмах машинного обучения и значениях гиперпараметров в соответствии с заданными вами ограничениями. Он выбирает наиболее подходящую модель путем оптимизации метрики точности.
+
+### <a name="define-training-settings"></a>Определение параметров обучения
+
+Определите параметры эксперимента и модели для обучения. Просмотрите полный список параметров [здесь](how-to-configure-auto-train.md). Отправка эксперимента с этими параметрами по умолчанию занимает примерно 5–10 минут, но если вы хотите снизить время выполнения, уменьшите параметр`iterations`.
+
+|Свойство| Значение в этом руководстве |ОПИСАНИЕ|
+|----|----|---|
+|**iteration_timeout_minutes**|2|Максимальная длительность каждой итерации в минутах. Уменьшите это значение, чтобы уменьшить общее время выполнения.|
+|**iterations**|20|Число итераций. В каждой итерации новая модель машинного обучения обучается с помощью ваших данных. Это основное значение, которое влияет на общее время выполнения.|
+|**primary_metric**| spearman_correlation; | Метрика, который вы хотите оптимизировать. Наиболее подходящая модель будет выбрана на основе этой метрики.|
+|**preprocess**| Истина | Используя **True**, эксперимент может предварительно обработать входные данные (обработка отсутствующих данных, преобразование текста в числовой тип и т. д.).|
+|**verbosity**| logging.INFO | Определяет уровень ведения журнала.|
+|**n_cross_validations**|5|Количество разделений перекрестных проверок, которые нужно выполнить, если данные проверки не указаны.|
+
+```python
+import logging
+
+automl_settings = {
+    "iteration_timeout_minutes": 2,
+    "iterations": 20,
+    "primary_metric": 'spearman_correlation',
+    "preprocess": True,
+    "verbosity": logging.INFO,
+    "n_cross_validations": 5
+}
+```
+
+Используйте определенные вами параметры обучения в качестве параметра `**kwargs` для объекта `AutoMLConfig`. Кроме того, укажите свои данные для обучения и тип модели, которая является `regression` в данном случае.
+
+```python
+from azureml.train.automl import AutoMLConfig
+
+automl_config = AutoMLConfig(task='regression',
+                             debug_log='automated_ml_errors.log',
+                             X=x_train.values,
+                             y=y_train.values.flatten(),
+                             **automl_settings)
+```
+
+> [!NOTE]
+> Этапы предварительной обработки автоматизированного машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовой формат и т. д.) становятся частью базовой модели. При использовании модели для прогнозирования эти этапы предварительной обработки, которые выполнялись во время обучения, автоматически выполняются для входных данных.
+
+### <a name="train-the-automatic-regression-model"></a>Обучение модели автоматической регрессии
+
+Создайте объект эксперимента в рабочей области. Эксперимент выступает в качестве контейнера для отдельных запусков. Передайте определенный объект `automl_config` в эксперимент и задайте для выходных данных значение `True`, чтобы просмотреть ход выполнения.
+
+После запуска эксперимента показанный вывод обновляется в реальном времени по мере выполнения эксперимента. Для каждой итерации вы видите тип модели, длительность выполнения и точность обучения. Поле `BEST` отслеживает лучшую оценку выполнения обучения на основе вашего типа метрики.
+
+```python
+from azureml.core.experiment import Experiment
+experiment = Experiment(ws, "taxi-experiment")
+local_run = experiment.submit(automl_config, show_output=True)
+```
+
+    Running on local machine
+    Parent Run ID: AutoML_1766cdf7-56cf-4b28-a340-c4aeee15b12b
+    Current status: DatasetFeaturization. Beginning to featurize the dataset.
+    Current status: DatasetEvaluation. Gathering dataset statistics.
+    Current status: FeaturesGeneration. Generating features for the dataset.
+    Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+    Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+    Current status: ModelSelection. Beginning model selection.
+
+    ****************************************************************************************************
+    ITERATION: The iteration being evaluated.
+    PIPELINE: A summary description of the pipeline being evaluated.
+    DURATION: Time taken for the current iteration.
+    METRIC: The result of computing score on the fitted pipeline.
+    BEST: The best observed score thus far.
+    ****************************************************************************************************
+
+     ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+             0   StandardScalerWrapper RandomForest             0:00:16       0.8746    0.8746
+             1   MinMaxScaler RandomForest                      0:00:15       0.9468    0.9468
+             2   StandardScalerWrapper ExtremeRandomTrees       0:00:09       0.9303    0.9468
+             3   StandardScalerWrapper LightGBM                 0:00:10       0.9424    0.9468
+             4   RobustScaler DecisionTree                      0:00:09       0.9449    0.9468
+             5   StandardScalerWrapper LassoLars                0:00:09       0.9440    0.9468
+             6   StandardScalerWrapper LightGBM                 0:00:10       0.9282    0.9468
+             7   StandardScalerWrapper RandomForest             0:00:12       0.8946    0.9468
+             8   StandardScalerWrapper LassoLars                0:00:16       0.9439    0.9468
+             9   MinMaxScaler ExtremeRandomTrees                0:00:35       0.9199    0.9468
+            10   RobustScaler ExtremeRandomTrees                0:00:19       0.9411    0.9468
+            11   StandardScalerWrapper ExtremeRandomTrees       0:00:13       0.9077    0.9468
+            12   StandardScalerWrapper LassoLars                0:00:15       0.9433    0.9468
+            13   MinMaxScaler ExtremeRandomTrees                0:00:14       0.9186    0.9468
+            14   RobustScaler RandomForest                      0:00:10       0.8810    0.9468
+            15   StandardScalerWrapper LassoLars                0:00:55       0.9433    0.9468
+            16   StandardScalerWrapper ExtremeRandomTrees       0:00:13       0.9026    0.9468
+            17   StandardScalerWrapper RandomForest             0:00:13       0.9140    0.9468
+            18   VotingEnsemble                                 0:00:23       0.9471    0.9471
+            19   StackEnsemble                                  0:00:27       0.9463    0.9471
+
+## <a name="explore-the-results"></a>Просмотр результатов.
+
+Просмотрите результаты автоматического обучения с помощью [мини-приложения Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py). Мини-приложение позволяет просматривать график и таблицу всех отдельных итераций выполнения, а также метрики и метаданные точности обучения. Кроме того, с помощью раскрывающегося списка вы можете выполнить фильтрацию по метрикам точности, отличным от основной.
+
+```python
+from azureml.widgets import RunDetails
+RunDetails(local_run).show()
+```
+
+![Мини-приложение Jupyter, данные о выполнении](./media/tutorial-auto-train-models/automl-dash-output.png)
+![График в мини-приложении Jupyter](./media/tutorial-auto-train-models/automl-chart-output.png)
+
+### <a name="retrieve-the-best-model"></a>Извлечение наиболее эффективной модели
+
+Выберите наиболее эффективную модель из итераций. Функция `get_output` возвращает лучшее выполнение и соответствующую модель для последнего соответствующего вызова. Используя перегрузки `get_output`, вы можете извлекать лучшее выполнение и соответствующую ему модель по любой зарегистрированной метрике или по определенной итерации.
 
 ```python
 best_run, fitted_model = local_run.get_output()
@@ -1103,57 +1003,27 @@ print(best_run)
 print(fitted_model)
 ```
 
-## <a name="test-the-best-model-accuracy"></a>Тестирование точности лучшей модели
+### <a name="test-the-best-model-accuracy"></a>Тестирование точности лучшей модели
 
-Используйте лучшую модель для выполнения прогнозирования в тестовом наборе данных, чтобы прогнозировать тарифы на такси. Функция `predict` использует лучшую модель и прогнозирует значения Y (**стоимость поездки**) из набора данных `x_test`. Выведите первые 10 прогнозируемых значений стоимости из `y_predict`.
+Используйте лучшую модель для выполнения прогнозирования в тестовом наборе данных, чтобы прогнозировать тарифы на такси. Функция `predict` использует лучшую модель и прогнозирует значения Y **стоимость поездки** из набора данных `x_test`. Распечатайте первые 10 прогнозируемых значений стоимости из `y_predict`.
 
 ```python
 y_predict = fitted_model.predict(x_test.values)
 print(y_predict[:10])
 ```
 
-Создайте точечную диаграмму для отображения прогнозируемых значений затрат в сравнении с фактическими значениями затрат. Следующий код использует функцию `distance` в качестве оси X и поездку `cost` как ось Y. Чтобы сравнивать дисперсию прогнозируемых затрат при каждом значении расстояния поездки, первые 100 прогнозируемых и фактических значений затрат создаются в виде отдельных рядов. Просматривая график видно, что отношение расстояния и затрат почти линейное, а прогнозируемые значения затрат в большинстве случаев очень близки к фактической цене для той же длительности поездки.
-
-```python
-%matplotlib inline
-
-import matplotlib.pyplot as plt
-
-fig = plt.figure(figsize=(14, 10))
-ax1 = fig.add_subplot(111)
-
-distance_vals = [x[4] for x in x_test.values]
-y_actual = y_test.values.flatten().tolist()
-
-ax1.scatter(distance_vals[:100], y_predict[:100],
-            s=18, c='b', marker="s", label='Predicted')
-ax1.scatter(distance_vals[:100], y_actual[:100],
-            s=18, c='r', marker="o", label='Actual')
-
-ax1.set_xlabel('distance (mi)')
-ax1.set_title('Predicted and Actual Cost/Distance')
-ax1.set_ylabel('Cost ($)')
-
-plt.legend(loc='upper left', prop={'size': 12})
-plt.rcParams.update({'font.size': 14})
-plt.show()
-```
-
-![Точечная диаграмма с результатами прогнозов](./media/tutorial-auto-train-models/automl-scatter-plot.png)
-
-Вычислите значение `root mean squared error` результатов. Примените кадр данных `y_test`. Преобразуйте его в список, чтобы сравнить с прогнозируемыми значениями. Функция `mean_squared_error` принимает два массива значений и вычисляет значение среднеквадратической погрешности между ними. Квадратный корень из результата позволяет получить оценку ошибку в тех же единицах, что и для переменной y (**стоимость**). Она обозначает, насколько далеки полученные прогнозы тарифов на такси от фактических тарифов:
+Вычислите значение `root mean squared error` результатов. Преобразуйте кадр данных `y_test` в список для сравнения с прогнозируемыми значениями. Функция `mean_squared_error` принимает два массива значений и вычисляет значение среднеквадратической погрешности между ними. Квадратный корень из результата позволяет получить оценку ошибку в тех же единицах, что и для переменной y (**стоимость**). Она обозначает, насколько далеки полученные прогнозы тарифов на такси от фактических тарифов.
 
 ```python
 from sklearn.metrics import mean_squared_error
 from math import sqrt
 
+y_actual = y_test.values.flatten().tolist()
 rmse = sqrt(mean_squared_error(y_actual, y_predict))
 rmse
 ```
 
-    3.2204936862688798
-
-Чтобы вычислить MAPE (средняя абсолютная погрешность в процентах), запустите следующий код для полных наборов данных `y_actual` и `y_predict`. Эта метрика вычисляет абсолютное отклонение между каждой парой прогнозируемого и фактического значения, а затем суммирует все отклонения. Эта сумма выражается в процентах от общего количества фактических значений:
+Чтобы вычислить среднюю абсолютную погрешность в процентах (MAPE), запустите следующий код с помощью полных наборов данных `y_actual` и `y_predict`. Эта метрика вычисляет абсолютное отклонение между каждой парой прогнозируемого и фактического значения, а затем суммирует все отклонения. Затем эта сумма выражается в процентах от общей суммы фактических значений.
 
 ```python
 sum_actuals = sum_errors = 0
@@ -1175,16 +1045,39 @@ print(1 - mean_abs_percent_error)
 ```
 
     Model MAPE:
-    0.10545153869569586
+    0.14353867606052823
 
     Model Accuracy:
-    0.8945484613043041
+    0.8564613239394718
 
-Из конечных метрик точности прогнозирования вы видите, что модель достаточно хороша в прогнозировании тарифов на такси на основе функций набора данных, обычно в пределах + - 3,00 доллара США. Традиционный процесс разработки модели машинного обучения является очень ресурсоемким и требует значительных предметных знаний и времени для выполнения десятков моделей и сравнения их результатов. Использование автоматического машинного обучения является отличным способом быстро протестировать множество различных моделей для вашего сценария.
+
+Из двух метрик точности прогнозирования вы видите, что модель достаточно хороша в прогнозировании тарифов на такси на основе функций набора данных, обычно в пределах + - 4,00 доллара США и приблизительной погрешностью 15%.
+
+Традиционный процесс разработки модели машинного обучения является очень ресурсоемким и требует значительных предметных знаний и времени для выполнения десятков моделей и сравнения их результатов. Использование автоматического машинного обучения является отличным способом быстро протестировать множество различных моделей для вашего сценария.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-[!INCLUDE [aml-delete-resource-group](../../../includes/aml-delete-resource-group.md)]
+Не выполняйте инструкции из этого раздела, если вы собираетесь изучать другие руководства по Службе машинного обучения Azure.
+
+### <a name="stop-the-notebook-vm"></a>Остановка работы виртуальной машины записных книжек
+
+Если вы использовали облачный сервер записных книжек, завершите работу неиспользуемой виртуальной машины, чтобы сократить расходы.
+
+1. Выберите в своей рабочей области **Виртуальные машины записных книжек**.
+1. Выберите пользователя из списка.
+1. Выберите **Остановить**.
+1. Когда вам снова понадобится использовать сервер, выберите **Запустить**.
+
+### <a name="delete-everything"></a>Удаление всех ресурсов
+
+Если вы не планируете использовать созданные ресурсы, удалите их, чтобы с вас не взималась плата.
+
+1. На портале Azure выберите **Группы ресурсов** в левой части окна.
+1. В списке выберите созданную группу ресурсов.
+1. Выберите **Удалить группу ресурсов**.
+1. Введите имя группы ресурсов. Теперь щелкните **Удалить**.
+
+Вы также можете сохранить группу ресурсов, но удалить одну рабочую область. Отобразите свойства рабочей области и нажмите кнопку **Удалить**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

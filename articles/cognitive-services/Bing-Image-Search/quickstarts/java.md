@@ -11,15 +11,15 @@ ms.subservice: bing-image-search
 ms.topic: quickstart
 ms.date: 07/22/2019
 ms.author: aahi
-ms.custom: seodec2018, seo-java-july2019
-ms.openlocfilehash: a4a8535aa204cbad76d4da4c466c0f4aba99db9a
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.custom: seodec2018, seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 3cd7af766b3881eb1abe054105423aaa3d0591de
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489654"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70124076"
 ---
-# <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-java"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Java
+# <a name="quickstart-search-for-images-with-the-bing-image-search-api-an-azure-cognitive-service"></a>Краткое руководство. Поиск изображений с помощью API "Поиск изображений Bing", службы Azure для когнитивного поиска 
 
 В этом кратком руководстве описано, как отправлять поисковые запросы к API Поиска изображений Bing. Это приложение на Java отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 

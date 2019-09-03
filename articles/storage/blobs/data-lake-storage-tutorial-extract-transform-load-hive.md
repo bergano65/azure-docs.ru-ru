@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 344dddb4e16f23ae40028c090c499d210adb8837
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f58785b17a1e6236636744c32dac07a6c9ed138d
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855458"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992250"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-apache-hive-on-azure-hdinsight"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 
@@ -92,26 +92,26 @@ ms.locfileid: "68855458"
 
    Она извлекает **CSV**-файл.
 
-4. Используйте следующую команду для создания файловой системы Data Lake Storage 2-го поколения.
+4. Используйте следующую команду для создания контейнера Data Lake Storage 2-го поколения.
 
    ```bash
-   hadoop fs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/
+   hadoop fs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/
    ```
 
-   Замените заполнитель `<file-system-name>` именем, которое вы хотите предоставить вашей файловой системе.
+   Замените заполнитель `<container-name>` именем, которое хотите присвоить своему контейнеру.
 
    Замените заполнитель `<storage-account-name>` именем вашей учетной записи хранения.
 
 5. Создайте каталог с помощью следующей команды:
 
    ```bash
-   hdfs dfs -mkdir -p abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data
+   hdfs dfs -mkdir -p abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data
    ```
 
 6. Используйте следующую команду для копирования *CSV*-файла в каталог:
 
    ```bash
-   hdfs dfs -put "<file-name>.csv" abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data/
+   hdfs dfs -put "<file-name>.csv" abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data/
    ```
 
    Возьмите имя файла в кавычки, если оно содержит пробелы или специальные символы.
@@ -128,7 +128,7 @@ ms.locfileid: "68855458"
    nano flightdelays.hql
    ```
 
-2. Измените следующий текст, заменив заполнители `<file-system-name>` и `<storage-account-name>` именем файловой системы и учетной записи хранения. Затем скопируйте и вставьте текст в nano-консоль, нажав клавишу SHIFT и правую кнопку мыши одновременно.
+2. Измените следующий текст, заменив заполнители `<container-name>` и `<storage-account-name>` именем контейнера и учетной записи хранения. Затем скопируйте и вставьте текст в nano-консоль, нажав клавишу SHIFT и правую кнопку мыши одновременно.
 
     ```hiveql
     DROP TABLE delays_raw;
@@ -160,14 +160,14 @@ ms.locfileid: "68855458"
     ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n'
     STORED AS TEXTFILE
-    LOCATION 'abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data';
+    LOCATION 'abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/data';
 
     -- Drop the delays table if it exists
     DROP TABLE delays;
     -- Create the delays table and populate it with data
     -- pulled in from the CSV file (via the external table defined previously)
     CREATE TABLE delays
-    LOCATION 'abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/processed'
+    LOCATION 'abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/processed'
     AS
     SELECT YEAR AS year,
         FL_DATE AS flight_date,
@@ -218,7 +218,7 @@ ms.locfileid: "68855458"
     GROUP BY origin_city_name;
     ```
 
-   Вы получите список городов, рейсы в которых задержаны из-за погодных условий, а также среднее время задержки. Он будет сохранен в `abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. Позже Sqoop считает данные из этого расположения и экспортирует их в базу данных SQL Azure.
+   Вы получите список городов, рейсы в которых задержаны из-за погодных условий, а также среднее время задержки. Он будет сохранен в `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. Позже Sqoop считает данные из этого расположения и экспортирует их в базу данных SQL Azure.
 
 7. Чтобы выйти из Beeline, введите `!quit` в командной строке.
 
@@ -300,7 +300,7 @@ ms.locfileid: "68855458"
 
 ## <a name="export-and-load-the-data"></a>Экспорт и загрузка данных
 
-В предыдущих разделах вы скопировали преобразованные данные в расположение `abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `abfs://<file-system-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output` в созданную в базе данных SQL Azure таблицу.
+В предыдущих разделах вы скопировали преобразованные данные в расположение `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output` в созданную в базе данных SQL Azure таблицу.
 
 1. Чтобы проверить, видно ли в Sqoop базу данных SQL, используйте следующую команду:
 
@@ -313,7 +313,7 @@ ms.locfileid: "68855458"
 2. Для экспорта данных из таблицы **hivesampletable** в таблицу **delays** используйте следующую команду:
 
    ```bash
-   sqoop export --connect 'jdbc:sqlserver://<SERVER_NAME>.database.windows.net:1433;database=<DATABASE_NAME>' --username <ADMIN_LOGIN> --password <ADMIN_PASSWORD> --table 'delays' --export-dir 'abfs://<file-system-name>@.dfs.core.windows.net/tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
+   sqoop export --connect 'jdbc:sqlserver://<SERVER_NAME>.database.windows.net:1433;database=<DATABASE_NAME>' --username <ADMIN_LOGIN> --password <ADMIN_PASSWORD> --table 'delays' --export-dir 'abfs://<container-name>@.dfs.core.windows.net/tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
    ```
 
    Sqoop подключается к базе данных, которая содержит таблицу **delays**, и экспортирует данные из каталога `/tutorials/flightdelays/output` в таблицу **delays**.

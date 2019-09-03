@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/15/2019
 ms.reviewer: jeking
-ms.openlocfilehash: a1e7ee4f81f2b40b804ee69c8366ca87c377e6ac
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 4e4e4d250de823ae8fb78a306bae313f340e7ce9
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855495"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992303"
 ---
 # <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
@@ -88,7 +88,7 @@ ms.locfileid: "68855495"
 
 Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
 
-## <a name="create-storage-account-file-system"></a>Создание файловой системы учетной записи хранения
+## <a name="create-storage-account-container"></a>Создание контейнера учетной записи хранения
 
 В этом разделе показано создание записной книжки в рабочей области Azure Databricks и выполнение фрагментов кода для настройки учетной записи хранения.
 
@@ -113,15 +113,15 @@ ms.locfileid: "68855495"
    spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<password>")
    spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
-   dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
+   dbutils.fs.ls("abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
 
    ```
 
     > [!NOTE]
-    > Этот блок кода напрямую обращается к конечной точке Data Lake 2-го поколения с помощью OAuth, но есть и другие способы подключения рабочей области Databricks к вашей учетной записи Data Lake Storage 2-го поколения. Например, вы можете вставить файловую систему с помощью OAuth или использовать прямой доступ с общим ключом. <br>Примеры таких подходов см. в статье [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
+    > Этот блок кода напрямую обращается к конечной точке Data Lake 2-го поколения с помощью OAuth, но есть и другие способы подключения рабочей области Databricks к вашей учетной записи Data Lake Storage 2-го поколения. Например, вы можете подключить контейнер с помощью OAuth или использовать прямой доступ с общим ключом. <br>Примеры таких подходов см. в статье [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
-5. В этом блоке кода замените значения заполнителя `storage-account-name`, `appID`, `password` и `tenant-id` значениями, полученными в ходе создания субъекта-службы. Задайте значение заполнителя `file-system-name` имени файловой системы.
+5. В этом блоке кода замените значения заполнителя `storage-account-name`, `appID`, `password` и `tenant-id` значениями, полученными в ходе создания субъекта-службы. Задайте значение заполнителя `container-name` для имени контейнера.
 
     > [!NOTE]
     > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
@@ -148,7 +148,7 @@ ms.locfileid: "68855495"
 
 Выполните следующие задачи для выполнения задания SQL Spark на основе данных.
 
-1. Выполните инструкцию SQL для создания временной таблицы, используя данные образца файла данных JSON, **small_radio_json.json**. В указанном ниже фрагменте кода замените значения заполнителя именем файловой системы и учетной записи хранения. Используя созданные ранее заметки, вставьте фрагмент кода в ячейку нового кода в записной книжке, а затем нажмите сочетание клавиш SHIFT + ВВОД.
+1. Выполните инструкцию SQL для создания временной таблицы, используя данные образца файла данных JSON, **small_radio_json.json**. В указанном ниже фрагменте кода замените значения заполнителя именем контейнера и учетной записи хранения. Используя созданные ранее заметки, вставьте фрагмент кода в ячейку нового кода в записной книжке, а затем нажмите сочетание клавиш SHIFT + ВВОД.
 
     ```sql
     %sql
@@ -156,7 +156,7 @@ ms.locfileid: "68855495"
     CREATE TABLE radio_sample_data
     USING json
     OPTIONS (
-     path  "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/small_radio_json.json"
+     path  "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/small_radio_json.json"
     )
     ```
 

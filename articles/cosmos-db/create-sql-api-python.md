@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 84f3e4d0314408b2f3a8417cebd355a842331286
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f085ca6de2c04caa90c34bc1293da1210d2883eb
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855140"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020156"
 ---
 # <a name="azure-cosmos-db-build-a-python-application-using-azure-cosmos-db-sql-api-account"></a>Azure Cosmos DB — создание веб-приложения Python с использованием учетной записи API SQL для Azure Cosmos DB
 
@@ -84,7 +84,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos щелкните **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `CosmosGetStarted.py`.
+1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos выберите **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `CosmosGetStarted.py`.
 
     ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
 
@@ -173,7 +173,7 @@ Azure Cosmos DB — это глобально распределенная мн
    
 ## <a name="run-the-app"></a>Запуск приложения
 
-1. В Visual Studio Code выберите **Вид**>**Палитра команд**. 
+1. В Visual Studio Code выберите **Вид** > **Палитра команд**. 
 
 2. При появлении соответствующего запроса введите **Python: выбрать интерпретатор** и установите нужную версию Python.
 

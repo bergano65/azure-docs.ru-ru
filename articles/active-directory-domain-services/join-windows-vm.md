@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: iainfou
-ms.openlocfilehash: c3c3252ec2fd850a763bbbf089d470df5173843f
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 86e0f09e957df308f3af868d9590951f29d226b1
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612567"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073894"
 ---
 # <a name="tutorial-join-a-windows-server-virtual-machine-to-a-managed-domain"></a>Руководство по Присоединение виртуальной машины Windows Server к управляемому домену
 
@@ -35,9 +35,9 @@ ms.locfileid: "69612567"
 
 * Активная подписка Azure.
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным каталогом или полностью облачным каталогом.
-    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure Active Directory со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
+    * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Учетная запись пользователя, входящая в группу *администраторов Azure AD DC* в клиенте Azure AD.
     * Убедитесь, что в Azure AD Connect была выполнена синхронизация хэша паролей или самостоятельный сброс пароля, чтобы учетная запись могла входить в управляемый домен Azure AD DS.
@@ -153,15 +153,23 @@ ms.locfileid: "69612567"
 1. Чтобы завершить процесс присоединения к управляемому домену Azure AD DS, перезапустите виртуальную машину.
 
 > [!TIP]
-> Вы также можете присоединить виртуальную машину к домену с помощью PowerShell, используя командлет [Add-Computer][add-computer]. Следующий пример присоединяет виртуальную машину к домену *CONTOSO* и перезапускает ее. Укажите учетные данные пользователя, который входит в группу *Администраторы Azure AD DC*, когда появится соответствующий запрос.
+> Вы можете присоединить виртуальную машину к домену с помощью PowerShell, используя командлет [Add-Computer][add-computer]. Следующий пример присоединяет виртуальную машину к домену *CONTOSO* и перезапускает ее. Укажите учетные данные пользователя, который входит в группу *Администраторы Azure AD DC*, когда появится соответствующий запрос.
 >
 > `Add-Computer -DomainName CONTOSO -Restart`
+>
+> Чтобы присоединить к домену виртуальную машину, не подключаясь к ней и не настраивая подключение вручную, вы также можете воспользоваться командлетом Azure PowerShell под названием [Set-AzVmAdDomainExtension][set-azvmaddomainextension].
 
 После перезапуска виртуальной машины Windows Server на нее отправляются все политики, настроенные в управляемом домене Azure AD DS. Также вы после этого сможете войти на виртуальную машину Windows Server, используя соответствующие учетные данные домена.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 В следующем учебнике вы используете эту виртуальную машину Windows Server для установки средств управления, которые позволяют администрировать управляемый домен Azure AD DS. Если вы не хотите продолжать работу с этой серией учебников, воспользуйтесь описанными ниже шагами для очистки ресурсов, то есть [отключения RDP](#disable-rdp) и (или) [удаления виртуальной машины](#delete-the-vm). В противном случае перейдите к [следующему учебнику](#next-steps).
+
+### <a name="un-join-the-vm-from-azure-ad-ds-managed-domain"></a>Отсоединение виртуальной машины от управляемого домена Azure AD DS
+
+Чтобы удалить виртуальную машину из управляемого домена Azure AD DS, выполните шаги еще раз, чтобы [присоединить виртуальную машину к домену](#join-the-vm-to-the-azure-ad-ds-managed-domain). Вместо присоединения к управляемому домену Azure AD DS выберите присоединение к рабочей группе, например к *РАБОЧЕЙ ГРУППЕ* по умолчанию. После перезагрузки виртуальной машины объект-компьютер будет удален из управляемого домена Azure AD DS.
+
+Если [удалить виртуальную машину](#delete-the-vm), не отсоединяя ее от домена, потерянный объект-компьютер останется в Azure AD DS.
 
 ### <a name="disable-rdp"></a>Отключение RDP
 
@@ -214,7 +222,7 @@ ms.locfileid: "69612567"
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Windows Server
-> * Подключение виртуальной машины Windows Server к виртуальной сети Azure
+> * подключение виртуальной машины Windows Server к виртуальной сети Azure;
 > * Присоединение виртуальной машины к управляемому домену Azure AD DS
 
 Чтобы администрировать управляемый домен Azure AD DS, настройте виртуальную машину управления с помощью Центра администрирования Active Directory (ADAC).
@@ -231,3 +239,4 @@ ms.locfileid: "69612567"
 [add-computer]: /powershell/module/microsoft.powershell.management/add-computer
 [jit-access]: ../security-center/security-center-just-in-time.md
 [azure-bastion]: ../bastion/bastion-create-host-portal.md
+[set-azvmaddomainextension]: /powershell/module/az.compute/set-azvmaddomainextension
