@@ -17,6 +17,10 @@
       href: terminology.md
     - name: Роли и требования
       href: concepts-roles-permissions.md
+- name: Примеры
+  items:
+    - name: Azure PowerShell
+      href: samples-powershell.md
 - name: Руководства
   items:
     - name: Мониторинг
@@ -37,6 +41,8 @@
   items:
     - name: .NET
       href: /dotnet/api/overview/azure/datashare
+    - name: Azure PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/az.datashare/?view=azps-2.6.0'
     - name: REST API
       href: /rest/api/datashare
 - name: Ресурсы

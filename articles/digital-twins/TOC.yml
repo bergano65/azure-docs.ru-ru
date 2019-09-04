@@ -73,32 +73,6 @@
   items:
     - name: Клиентская библиотека определяемых пользователем функций
       href: reference-user-defined-functions-client-library.md
-- name: Сопутствующие материалы
-  items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
-        - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Maps
-          href: /azure/azure-maps
-        - name: Аналитика временных рядов
-          href: /azure/time-series-insights
-    - name: Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
     - name: 'Примеры Azure Digital Twins для C# (.NET)'
