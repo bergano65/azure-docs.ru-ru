@@ -1,5 +1,5 @@
 ---
-title: Создайте сертификат Azure Key Vault | Azure Marketplace
+title: Создание сертификата Azure Key Vault | Azure Marketplace
 description: Здесь описано, как зарегистрировать виртуальную машину из виртуального жесткого диска, развернутого в Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: pabutler
-ms.openlocfilehash: 5163aa0a9195aa712fa333667b3f7ccf227469be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c27605d2f9b87a9d4ba3d2326c0ce7ad437d3441
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938388"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240981"
 ---
 # <a name="create-certificates-for-azure-key-vault"></a>Создание сертификатов для Azure Key Vault
 
@@ -201,7 +201,7 @@ ms.locfileid: "64938388"
     "dataType" :"pfx",
     "password": "$certpassword"
     }
-    "@
+"@
             echo $certpassword
             $jsonObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
             $jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
@@ -212,6 +212,6 @@ ms.locfileid: "64938388"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Далее следует [развернуть виртуальную машину из образа ВМ пользователя](./cpp-deploy-vm-user-image.md).

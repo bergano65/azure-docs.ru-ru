@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/06/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: e3c2c7e4f3bb6c4c06d2f445adc5056c854a7503
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 14ced5ed45bcc91e6b6c812f2d1cbb61e139cc4f
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70138554"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278947"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "70138554"
 
 - Модель. Если у вас нет обученной модели, можно использовать модель & файлов зависимостей, предоставленных в [этом руководстве](https://aka.ms/azml-deploy-cloud).
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://aka.ms/aml-sdk)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
 
 ## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
@@ -562,7 +562,7 @@ print(service.state)
 Для развертывания с помощью интерфейса командной строки используйте следующую команду. Замените `mymodel:1` на имя и версию зарегистрированной модели:
 
 ```azurecli-interactive
-az ml model deploy -m mymodel:1 -ic inferenceconfig.json -dc deploymentconfig.json
+az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json
 ```
 
 [!INCLUDE [aml-local-deploy-config](../../../includes/machine-learning-service-local-deploy-config.md)]
@@ -784,7 +784,7 @@ print(response.json())
 
 1. Установка [расширения машинное обучение для Azure pipelines](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml&targetId=6756afbe-7032-4a36-9cb6-2771710cadc2&utm_source=vstsproduct&utm_medium=ExtHubManageList) 
 
-1. Используйте __подключения__ к службам, чтобы настроить подключение субъекта-службы к рабочей области службы машинное обучение Azure для доступа ко всем артефактам. Перейдите в раздел Параметры проекта, щелкните подключения службы и выберите Azure Resource Manager.
+1. Используйте __подключения к службам__ , чтобы настроить подключение субъекта-службы к рабочей области службы машинное обучение Azure для доступа ко всем артефактам. Перейдите в раздел Параметры проекта, щелкните подключения службы и выберите Azure Resource Manager.
 
     [![Представление-служба — подключение](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png) 
 
@@ -923,7 +923,7 @@ resp = requests.post(scoring_uri, input_data, headers=headers)
 print(resp.text)
 ```
 
-Дополнительные примеры клиентов на других языках программирования см. в разделе Использование моделей, развернутых в [качестве веб-служб](how-to-consume-web-service.md).
+Дополнительные примеры клиентов на других языках программирования см. в разделе [Использование моделей, развернутых в качестве веб-служб](how-to-consume-web-service.md).
 
 ### <a name="stop-the-docker-container"></a>Останавливает контейнер DOCKER
 

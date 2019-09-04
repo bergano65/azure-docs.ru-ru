@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 08/29/2019
+ms.date: 09/04/2019
 ms.author: dalek
-ms.openlocfilehash: f2ea87f237fa5cca8a4b1f6773d2b47729cfb5b0
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: f0a3930cfb3ff403e0ce9d9be308370810e2065a
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147552"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277011"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -82,7 +82,7 @@ systemEvents
 | summarize sum(BillingTelemetrySizeInBytes)
 ```
 
-Этот запрос можно использовать в предупреждении [журнала Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) для настройки оповещений на томах данных. 
+Этот запрос можно использовать в [предупреждении журнала Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) для настройки оповещений на томах данных. 
 
 Объем отправляемых данных можно контролировать тремя способами:
 
@@ -119,6 +119,8 @@ systemEvents
 Чтобы изменить ежедневное ограничение, в разделе **Настройка** ресурса Application Insights на странице **использование и оценка затрат** выберите **ежедневное ограничение**.
 
 ![Настройка ограничения ежедневного объема данных телеметрии](./media/pricing/pricing-003.png)
+
+Чтобы [изменить ежедневное ограничение с помощью Azure Resource Manager](../../azure-monitor/app/powershell.md), изменяемым свойством является `dailyQuota`.  С помощью Azure Resource Manager можно также задать `dailyQuotaResetTime` и ежедневное `warningThreshold`ограничение. 
 
 ## <a name="sampling"></a>Выборка
 [Выборка](../../azure-monitor/app/sampling.md) позволяет уменьшить скорость отправки данных телеметрии в ваше приложение. Она позволяет искать связанные события при поиске по журналу диагностики. Она также позволяет сохранить правильные значения числа событий.
@@ -157,7 +159,7 @@ systemEvents
 
 ![Настройка ограничения ежедневного объема данных телеметрии](./media/pricing/pricing-005.png)
 
-Если выставление счетов включено для более длительного хранения, данные, хранящиеся дольше 90 дней, будут выставляться по той же ставке, что и в настоящее время для хранения данных Azure Log Analytics. Дополнительные сведения см. на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). Следите за ходом хранения переменных, проголосуя по [этому предложению](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031). 
+Если выставление счетов включено для более длительного хранения, данные, хранящиеся дольше 90 дней, будут выставляться по той же ставке, что и в настоящее время для хранения данных Azure Log Analytics. Дополнительные сведения см. на [странице цен на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/). Следите за ходом хранения переменных, [проголосуя по этому предложению](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031). 
 
 ## <a name="limits-summary"></a>Сводная таблица ограничений
 

@@ -4,14 +4,14 @@ description: Узнайте, как создать контейнеры в Azure
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/23/2019
+ms.date: 09/01/2019
 ms.author: mjbrown
-ms.openlocfilehash: a88d8f33624278ac6e70b918cec7cef133fe4b34
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 876e35e320e37081cf6e6f89fda4f31af8713571
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093474"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240742"
 ---
 # <a name="create-an-azure-cosmos-container"></a>Создание контейнера Azure Cosmos
 
@@ -25,15 +25,15 @@ ms.locfileid: "70093474"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать контейнер**. После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую.
-   * Введите идентификатор коллекции.
+   * Введите идентификатор контейнера.
    * Введите ключ секции.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![Снимок экрана панели обозревателя данных с выделенным элементом "Новая коллекция"](./media/how-to-create-container/partitioned-collection-create-sql.png)
+![Снимок экрана панели обозреватель данных с выделенным новым контейнером](./media/how-to-create-container/partitioned-collection-create-sql.png)
 
 ### <a id="portal-mongodb"></a>API Azure Cosmos DB для MongoDB
 
@@ -41,15 +41,15 @@ ms.locfileid: "70093474"
 
 1. [Создайте новую учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account) или выберите существующую.
 
-1. Откройте панель **Обозреватель данных** и выберите **Новая коллекция**. После этого предоставьте следующие сведения.
+1. Откройте панель **Обозреватель данных** и выберите **создать контейнер**. После этого предоставьте следующие сведения.
 
    * Укажите, создаете ли вы новую базу данных или используете существующую.
-   * Введите идентификатор коллекции.
+   * Введите идентификатор контейнера.
    * Введите ключ сегмента.
    * Укажите подготавливаемую пропускную способность (например, 1000 ЕЗ/с).
    * Нажмите кнопку **ОК**.
 
-![Снимок экрана API Azure Cosmos DB для MongoDB, диалоговое окно добавления коллекции](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
+![Снимок экрана: Azure Cosmos DB API для MongoDB, диалоговое окно "Добавление контейнера"](./media/how-to-create-container/partitioned-collection-create-mongodb.png)
 
 ### <a id="portal-cassandra"></a>API Cassandra
 

@@ -10,17 +10,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 55ff6d37f18f4ffa2f12e17bd33dd196b77f79af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab2035ec344e07d88e2ac4ffb19cb1b2361f2e92
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473065"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277471"
 ---
 # <a name="copy-data-from-sybase-using-azure-data-factory"></a>Копирование данных из Sybase с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-onprem-sybase-connector.md)
 > * [Текущая версия](connector-sybase.md)
 
@@ -35,7 +35,7 @@ ms.locfileid: "61473065"
 - SAP Sybase SQL Anywhere (ASA) **версии 16 и выше**; IQ и ASE не поддерживаются.
 - копирование данных с использованием **базовой** проверки подлинности или проверки подлинности **Windows**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования этого соединителя Sybase вам нужно:
 
@@ -52,7 +52,7 @@ ms.locfileid: "61473065"
 
 Для связанной службы Sybase поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **Sybase** | Да |
 | server | Имя сервера Sybase. |Да |
@@ -89,13 +89,13 @@ ms.locfileid: "61473065"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. В этом разделе содержится список свойств, поддерживаемых набором данных Sybase.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Sybase.
 
-Чтобы скопировать данные из Sybase, задайте для свойства type набора данных значение **RelationalTable**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из Sybase, поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для набора данных необходимо задать значение **RelationalTable**. | Да |
+| type | Для свойства type набора данных необходимо задать следующее значение: **сибасетабле** | Да |
 | tableName | Имя таблицы в базе данных Sybase. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -104,15 +104,18 @@ ms.locfileid: "61473065"
 {
     "name": "SybaseDataset",
     "properties": {
-        "type": "RelationalTable",
+        "type": "SybaseTable",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Sybase linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
+
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -120,11 +123,11 @@ ms.locfileid: "61473065"
 
 ### <a name="sybase-as-source"></a>Sybase в качестве источника
 
-Чтобы скопировать данные из Sybase, задайте тип источника **RelationalSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из Sybase, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Да |
+| type | Свойству type источника действия копирования необходимо задать значение **сибасесаурце** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
@@ -148,7 +151,7 @@ ms.locfileid: "61473065"
         ],
         "typeProperties": {
             "source": {
-                "type": "RelationalSource",
+                "type": "SybaseSource",
                 "query": "SELECT * FROM MyTable"
             },
             "sink": {
@@ -159,6 +162,8 @@ ms.locfileid: "61473065"
 ]
 ```
 
+Если вы использовали `RelationalSource` типизированный источник, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
+
 ## <a name="data-type-mapping-for-sybase"></a>Сопоставление типов для Sybase
 
 При копировании данных из Sybase используются сопоставления типов данных Sybase с промежуточными типами данных фабрики данных Azure. Дополнительные сведения о том, как действие копирования сопоставляет исходную схему и типы данных для приемника, см. в статье [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md).
@@ -166,5 +171,5 @@ ms.locfileid: "61473065"
 Sybase поддерживает типы T-SQL. Таблицы сопоставлений SQL типов к типам промежуточных данных Фабрики данных Azure см. в разделе [Data type mapping for Azure SQL Database](connector-azure-sql-database.md#data-type-mapping-for-azure-sql-database) (Отображение типа данных для Базы данных Azure SQL) статьи "Copy data to or from Azure SQL Database by using Azure Data Factory" (Копирование данных в базу данных Azure SQL или из нее с использованием Фабрики данных Azure).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 2bfb094994bcc6f41044a08aab6eb0155967638e
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: d3365f0a893c80043c93091c3e4e91382bdcd67e
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231424"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275861"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -30,7 +30,7 @@ ms.locfileid: "70231424"
 
 Этот соединитель больших двоичных объектов Azure поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с поддерживаемой таблицей [источника или приемника](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой таблицей источника или приемника](copy-activity-overview.md)
 - [Поток данных сопоставления](concepts-data-flow-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
@@ -146,7 +146,7 @@ ms.locfileid: "70231424"
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код или ознакомьтесь с дополнительными параметрами [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017). Если вы хотите использовать Polybase для загрузки данных, ознакомьтесь с разрешениями [требуемой базы данных](#required-database-permission).
+4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код или ознакомьтесь с дополнительными параметрами [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017). Если вы хотите использовать Polybase для загрузки данных, ознакомьтесь с [разрешениями требуемой базы данных](#required-database-permission).
 
     ```sql
     EXEC sp_addrolemember db_owner, [your application name];
@@ -196,7 +196,7 @@ ms.locfileid: "70231424"
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
     ```
 
-3. **Предоставьте управляемому удостоверению фабрики данных необходимые разрешения** , как обычно для пользователей SQL и других. Выполните следующий код или ознакомьтесь с дополнительными параметрами [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017). Если вы хотите использовать Polybase для загрузки данных, ознакомьтесь с разрешениями [требуемой базы данных](#required-database-permission).
+3. **Предоставьте управляемому удостоверению фабрики данных необходимые разрешения** , как обычно для пользователей SQL и других. Выполните следующий код или ознакомьтесь с дополнительными параметрами [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017). Если вы хотите использовать Polybase для загрузки данных, ознакомьтесь с [разрешениями требуемой базы данных](#required-database-permission).
 
     ```sql
     EXEC sp_addrolemember db_owner, [your Data Factory name];
@@ -234,7 +234,9 @@ ms.locfileid: "70231424"
 | Свойство  | Описание                                                  | Обязательно для заполнения                    |
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
 | type      | Свойство **type** для набора данных должно иметь значение: **AzureSqlDWTable**. | Да                         |
-| tableName | Имя таблицы или представления в экземпляре хранилища данных SQL Azure, на которое ссылается связанная служба. | "Нет" для источника, "Да" для приемника |
+| schema | Имя схемы. |"Нет" для источника, "Да" для приемника  |
+| table | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
+| tableName | Имя таблицы или представления со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
 
 #### <a name="dataset-properties-example"></a>Пример свойств набора данных
 
@@ -250,7 +252,8 @@ ms.locfileid: "70231424"
         },
         "schema": [ < physical schema, optional, retrievable during authoring > ],
         "typeProperties": {
-            "tableName": "MyTable"
+            "schema": "<schema_name>",
+            "table": "<table_name>"
         }
     }
 }
@@ -429,7 +432,7 @@ Polybase хранилища данных SQL напрямую поддержив
     >[!IMPORTANT]
     >Если в службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать управляемую идентификацию аутентификации — см. статью [влияние использования конечных точек службы виртуальной сети в службе хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в фабрике данных см. в разделе [Проверка подлинности управляемого BLOB-объекта Azure](connector-azure-blob-storage.md#managed-identity) и управляемого [Azure Data Lake Storage 2-го поколения удостоверения](connector-azure-data-lake-storage.md#managed-identity) .
 
-2. **Исходный формат данных** — **Parquet**, **ORC**или текст с **разделителями**, со следующими конфигурациями:
+2. **Исходный формат данных** — **Parquet**, **ORC**или **текст с разделителями**, со следующими конфигурациями:
 
    1. Путь к папке не содержит фильтр с подстановочными знаками.
    2. Имя файла пустое или указывает на один файл. Если указать имя файла с подстановочными знаками в действии копирования, оно `*` может `*.*`иметь только значение или.
@@ -482,7 +485,7 @@ Polybase хранилища данных SQL напрямую поддержив
 Чтобы использовать эту функцию, создайте [связанную службу хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties) , которая ссылается на учетную запись хранения Azure с промежуточным хранилищем BLOB-объектов. Затем укажите `enableStaging` свойства и `stagingSettings` для действия копирования, как показано в следующем коде.
 
 >[!IMPORTANT]
->Если в промежуточной службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать управляемую идентификацию с проверкой подлинности. Ознакомьтесь с [влиянием использования конечных точек службы виртуальной сети в службе хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в фабрике данных см. в статье Идентификация с [помощью управляемого двоичного объекта Azure](connector-azure-blob-storage.md#managed-identity).
+>Если в промежуточной службе хранилища Azure настроена конечная точка службы виртуальной сети, необходимо использовать управляемую идентификацию с проверкой подлинности. Ознакомьтесь с [влиянием использования конечных точек службы виртуальной сети в службе хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Сведения о необходимых конфигурациях в фабрике данных см. в статье [Идентификация с помощью управляемого двоичного объекта Azure](connector-azure-blob-storage.md#managed-identity).
 
 ```json
 "activities":[

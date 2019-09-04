@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 0efb884de9deaa2784e160785c26d78179da6567
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 84a82e5fae7c56a13aeb4603079e9378b38785cb
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966887"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277561"
 ---
 # <a name="copy-data-from-postgresql-by-using-azure-data-factory"></a>Копирование данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -32,7 +32,7 @@ ms.locfileid: "68966887"
 
 В частности, этот соединитель PostgreSQL поддерживает PostgreSQL **версии 7.4 и более поздних**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -58,8 +58,8 @@ ms.locfileid: "68966887"
 
 | Свойство | Описание | Параметры | Обязательное значение |
 |:--- |:--- |:--- |:--- |
-| EncryptionMethod (EM)| Метод, используемый драйвером для шифрования данных, отправленных между драйвером и сервером базы данных. (например, `EncryptionMethod=<0/1/6>;`| 0 (без шифрования) **(по умолчанию)** -1 (SSL) или 6 (RequestSSL) | Нет |
-| ValidateServerCertificate (VSC) | Определяет, проверяет ли драйвер сертификат, отправленный сервером базы данных, когда включено шифрование SSL (метод шифрования = 1). (например, `ValidateServerCertificate=<0/1>;`| 0 (отключено) **(по умолчанию)** -1 (включено) | Нет |
+| EncryptionMethod (EM)| Метод, используемый драйвером для шифрования данных, отправленных между драйвером и сервером базы данных. Например, `EncryptionMethod=<0/1/6>;`| 0 (без шифрования) **(по умолчанию)** -1 (SSL) или 6 (RequestSSL) | Нет |
+| ValidateServerCertificate (VSC) | Определяет, проверяет ли драйвер сертификат, отправленный сервером базы данных, когда включено шифрование SSL (метод шифрования = 1). Например, `ValidateServerCertificate=<0/1>;`| 0 (отключено) **(по умолчанию)** -1 (включено) | Нет |
 
 **Пример.**
 
@@ -139,14 +139,16 @@ ms.locfileid: "68966887"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. Этот раздел содержит список свойств, поддерживаемых набором данных PostgreSQL.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных PostgreSQL.
 
-Чтобы скопировать данные из PostgreSQL, установите свойство type набора данных **RelationalTable**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из PostgreSQL, поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для набора данных необходимо задать значение **RelationalTable**. | Да |
-| tableName | Имя таблицы в базе данных PostgreSQL. | Нет (если свойство query указано в источнике действия) |
+| type | Для свойства type набора данных необходимо задать следующее значение: **постгресклтабле** | Да |
+| schema | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
+| table | Имя таблицы. |Нет (если свойство query указано в источнике действия)  |
+| tableName | Имя таблицы со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Используйте `schema` и`table` для новой рабочей нагрузки. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -155,15 +157,18 @@ ms.locfileid: "68966887"
     "name": "PostgreSQLDataset",
     "properties":
     {
-        "type": "RelationalTable",
+        "type": "PostgreSqlTable",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<PostgreSQL linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
+
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -171,11 +176,11 @@ ms.locfileid: "68966887"
 
 ### <a name="postgresql-as-source"></a>PostgreSQL в качестве источника
 
-Чтобы копировать данные из PostgreSQL, установите тип источника **RelationalSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из PostgreSQL, в разделе **источник** действия копирования поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Да |
+| type | Свойству type источника действия копирования необходимо задать значение **постгресклсаурце** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
 
 > [!NOTE]
@@ -202,7 +207,7 @@ ms.locfileid: "68966887"
         ],
         "typeProperties": {
             "source": {
-                "type": "RelationalSource",
+                "type": "PostgreSqlSource",
                 "query": "SELECT * FROM \"MySchema\".\"MyTable\""
             },
             "sink": {
@@ -212,6 +217,8 @@ ms.locfileid: "68966887"
     }
 ]
 ```
+
+Если вы использовали `RelationalSource` типизированный источник, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

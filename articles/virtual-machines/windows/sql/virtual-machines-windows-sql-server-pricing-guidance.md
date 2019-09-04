@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 116ffa31fb540897f9a769b73c3a6474dda45b88
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d9b4cf755bbf2e225bee813510c083570b0f8064
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101919"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280174"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "70101919"
 
 | Преимущество BYOL | Описание |
 |-----|-----|
-| **Уменьшение затрат** | [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) обеспечивает экономию до 55%. Дополнительные сведения см. в статье [Переключение модели лицензирования] (Virtual-Machines-Windows-SQL-ahb.md |
+| **Уменьшение затрат** | [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) обеспечивает экономию до 55%. Дополнительные сведения см. в разделе [Переключение модели лицензирования](virtual-machines-windows-sql-ahb.md) |
 | **Бесплатная пассивная вторичная реплика** | Еще одно преимущество использования собственной лицензии — [бесплатная лицензия на одну пассивную вторичную реплику](https://azure.microsoft.com/pricing/licensing-faq/) на каждый сервер SQL Server, предназначенную обеспечить высокий уровень доступности. Это наполовину снижает стоимость лицензии на высокодоступное развертывание SQL Server (например, с использованием групп доступности AlwaysOn). Права на запуск пассивной вторичной реплики предоставляются посредством серверов отработки отказа (преимущество Software Assurance). |
 
 Чтобы создать виртуальную машину SQL Server 2017 в Azure с одним из этих образов с использованием собственной лицензии, ищите виртуальные машины с префиксом "{BYOL}":

@@ -10,20 +10,20 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 07/08/2019
-ms.openlocfilehash: 26f965169f1fd01676efd3356534a8ac9f2121f7
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 7afa96c3c4d1a163e323aa0bb50ec361ff74aac3
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036071"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278687"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Развертывание модели в кластере службы Azure Kubernetes
 
 Узнайте, как использовать службу Машинное обучение Azure для развертывания модели в качестве веб-службы в службе Azure Kubernetes Service (AKS). Служба Azure Kubernetes подходит для крупномасштабных производственных развертываний. Используйте службу Kubernetes Azure, если требуется одна или несколько из следующих возможностей:
 
-- __Быстрое время__отклика.
+- __Быстрое время отклика__.
 - __Автоматическое масштабирование__ развернутой службы.
-- Параметры аппаратного ускорения, такие как многопроцессорные и программируемые массивы ШЛЮЗОВ (FPGA).
+- Параметры __аппаратного ускорения__ , такие как многопроцессорные и программируемые массивы ШЛЮЗОВ (FPGA).
 
 > [!IMPORTANT]
 > Масштабирование кластера не предоставляется через пакет SDK для Машинное обучение Azure. Дополнительные сведения о масштабировании узлов в кластере AKS см. [в разделе масштабирование числа узлов в кластере AKS](../../aks/scale-cluster.md).
@@ -42,7 +42,7 @@ ms.locfileid: "70036071"
 
 - Модель машинного обучения, зарегистрированная в вашей рабочей области. Если у вас нет зарегистрированной модели, см. раздел [как и где развертывать модели](how-to-deploy-and-where.md).
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://aka.ms/aml-sdk)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
 
 - В фрагментах кода __Python__ в этой статье предполагается, что установлены следующие переменные:
 
@@ -237,7 +237,7 @@ az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json 
 deployment_config = AksWebservice.deploy_configuration(cpu_cores=1, memory_gb=1, auth_enabled=False)
 ```
 
-Сведения о проверке подлинности в клиентском приложении см. в разделе Использование Машинное обучение Azureной модели, развернутой в [качестве веб-службы](how-to-consume-web-service.md).
+Сведения о проверке подлинности в клиентском приложении см. в разделе [использование машинное обучение Azureной модели, развернутой в качестве веб-службы](how-to-consume-web-service.md).
 
 ### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
 

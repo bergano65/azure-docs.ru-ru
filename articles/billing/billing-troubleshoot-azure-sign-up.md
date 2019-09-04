@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/12/2019
 ms.author: v-miegge
-ms.openlocfilehash: 57dc9c05778563bc0c5df1a8ac8895b51008b01f
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 5032762c1275d3f1c8d1a020a54d20555f8ba3fe
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69657077"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242436"
 ---
 # <a name="troubleshoot-azure-sign-up"></a>Устранение неполадок при регистрации в Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "69657077"
 
 ### <a name="cant-activate-new-azure-in-open-subscription"></a>Не удается активировать новую подписку Azure в открытой подписке
 
-Чтобы создать подписку Azure с открытой подпиской, необходимо иметь допустимый ключ для активации службы Online Service (OSA), с которым связан хотя бы один открытый токен Azure. Если у вас нет ключа OSA, обратитесь к одному из партнеров Майкрософт, перечисленных в [Microsoft Pinpoint](http://pinpoint.microsoft.com/).
+Чтобы создать подписку Azure с открытой подпиской, необходимо иметь допустимый ключ для активации службы Online Service (OSA), с которым связан хотя бы один открытый токен Azure. Если у вас нет ключа OSA, обратитесь к одному из партнеров Майкрософт, перечисленных в [Microsoft Pinpoint](https://pinpoint.microsoft.com/).
 
 ### <a name="error-you-are-not-eligible-for-an-azure-subscription"></a>Ошибка: *Вы не имеете права на подписку Azure.*
 
@@ -118,7 +118,7 @@ ms.locfileid: "69657077"
 
 ### <a name="error-your-current-account-type-is-not-supported"></a>Ошибка: *Текущий тип учетной записи не поддерживается*
 
-Эта проблема может возникать, если учетная запись зарегистрирована в неуправляемом [каталоге Azure AD](../active-directory/users-groups-roles/directory-self-service-signup.md)и не находится в каталоге Azure AD вашей организации. 
+Эта проблема может возникать, если учетная запись зарегистрирована в [неуправляемом каталоге Azure AD](../active-directory/users-groups-roles/directory-self-service-signup.md)и не находится в каталоге Azure AD вашей организации. 
 
 Чтобы устранить эту проблему, зарегистрируйте учетную запись Azure с помощью другой учетной записи или перейдите в неуправляемый каталог AD. Дополнительные сведения см. [в статье получение неуправляемого каталога от имени администратора в Azure Active Directory](../active-directory/users-groups-roles/domains-admin-takeover.md).
  

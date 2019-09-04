@@ -11,12 +11,12 @@ author: nishankgu
 ms.author: nigup
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 110040592474ec432912e7f545abad19ca3ae1ff
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: bc0455b34ebdcb080e0cd702e58d8163228b60ff
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991979"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278071"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Управление квотами для ресурсов Azure и их запрашивание
 
@@ -78,7 +78,7 @@ ms.locfileid: "69991979"
 ### <a name="azure-machine-learning-pipelines"></a>Конвейеры Машинного обучение Azure
 Для Машинное обучение Azure конвейеров существует квота на количество шагов в конвейере и количество выполненных на основе расписания планов опубликованных конвейеров на регион в подписке.
 - Максимально допустимое число шагов в конвейере — 30 000
-- Максимальное количество запусков на основе расписания для опубликованных конвейеров на подписку в месяц: 100 000
+- Максимальное число запусков на основе расписания и опросов больших двоичных объектов для блогов, запускаемых с помощью блога, для подписок на подписку в месяц — 100 000
 
 > [!NOTE]
 > Если вам необходимо увеличить это ограничение, обратитесь в [службу поддержки Майкрософт](https://azure.microsoft.com/support/options/).

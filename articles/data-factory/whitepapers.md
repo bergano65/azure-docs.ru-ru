@@ -1,6 +1,6 @@
 ---
-title: Технические документы, которые описывают фабрики данных Azure
-description: Эти технические документы подробно описаны фабрики данных Azure.
+title: Технические документы, описывающие фабрику данных Azure
+description: Эти технические документы подробно описывают фабрику данных Azure.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
@@ -12,23 +12,24 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/23/2019
-ms.openlocfilehash: b9f8e9b680f7ed3609c5ba977feb50cd3ace286d
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.date: 09/04/2019
+ms.openlocfilehash: 960969b13799eb2e56c2391393a0f9a71749bac8
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542778"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278170"
 ---
-# <a name="azure-data-factory-whitepapers"></a>Технические документы по Azure фабрики данных 
+# <a name="azure-data-factory-whitepapers"></a>Технические документы по фабрике данных Azure 
 
-Технические документы позволяют анализировать фабрики данных на более глубоком уровне. В этой статье предоставляет со списком доступная Техническая документация по фабрике данных Azure.
+Технические документы позволяют более глубоко изучить фабрику данных Azure. В этой статье представлен список доступных технических документов по фабрике данных Azure.
 
 | **Технический документ** | **Описание** |
 | --- | --- |
-|[Фабрика данных Azure — интеграция данных в облаке](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-data-integration-in-the-cloud/Azure_Data_Factory_Data_Integration_in_the_Cloud.pdf) | Этот документ описывает, как фабрики данных Azure позволяет создавать современное хранилище данных, Включить углубленную аналитику для интеллектуальных приложений SaaS и переносить ваши пакеты служб интеграции SQL Server в Azure.|
-|[Перенос данных из реляционного хранилища данных на предприятии в Azure, с помощью фабрики данных Azure](https://azure.microsoft.com/mediahandler/files/resourcefiles/data-migration-from-on-premise-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/Data_migration_from_on-prem_RDW_to_ADLS_using_ADF.pdf) | В этом документе рассматриваются сложности миграции десятки ТБ данных из существующей локальной реляционного хранилища данных (например, Netezza, Oracle, Teradata, SQL server) в Azure (например, хранилище BLOB-объектов или Azure Data Lake Storage) с помощью фабрики данных Azure. Проблемы и приводятся рекомендации проиллюстрированы устойчивости, производительности, масштабируемости, безопасности для пути приема больших данных с фабрикой данных Azure с Azure и управления. |
-|[Фабрика данных Azure: Службы SSIS в облаке](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-ssis-in-the-cloud/Azure_Data_Factory_SSIS_in_the_Cloud.pdf)| В этом документе превысит чего может понадобиться перенести существующие рабочие нагрузки служб SSIS в фабрике данных Azure и адрес Общие соображения и проблемы. Затем мы пошагово технические аспекты создания IR Azure SSIS и затем продемонстрируем способ отправить, выполнять и отслеживать пакеты с помощью фабрики данных Azure, средства, которые вы, вероятно, знакомы с образом SQL Server Management Studio (SSMS). |
-|[Azure data Factory — передача параметров](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-passing-parameters/Azure%20data%20Factory-Whitepaper-PassingParameters.pdf)| В этой статье рассматриваются способы передачи параметров между конвейера и действия также между действиями. |
-|[Azure data Factory — DevOps](https://azure.microsoft.com/mediahandler/files/resourcefiles/whitepaper-adf-on-azuredevops/Azure%20data%20Factory-Whitepaper-DevOps.pdf)| В этом официальном документе рассматриваются некоторые рекомендации по непрерывной интеграции и развертывания фабрики данных Azure. |
+|[Фабрика данных Azure — интеграция данных в облаке](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-data-integration-in-the-cloud/Azure_Data_Factory_Data_Integration_in_the_Cloud.pdf) | В этой статье описывается, как фабрика данных Azure позволяет создавать современное хранилище данных, а также использовать расширенную аналитику для создания интеллектуальных приложений SaaS и переноса пакетов служб интеграции SQL Server в Azure.|
+|[Перенос данных из локального хранилища реляционных данных в Azure с помощью фабрики данных Azure](https://azure.microsoft.com/mediahandler/files/resourcefiles/data-migration-from-on-premise-relational-data-warehouse-to-azure-data-lake-using-azure-data-factory/Data_migration_from_on-prem_RDW_to_ADLS_using_ADF.pdf) | В этой статье рассматривается сложность миграции десятков ТБ данных из существующего локального реляционного хранилища данных (например, Netezza, Oracle, Teradata, SQL Server) в Azure (например, хранилище BLOB-объектов или Azure Data Lake Storage) с помощью фабрики данных Azure. Проблемы и рекомендации проиллюстрированы на основе устойчивости, производительности, масштабируемости, управления и безопасности для пути приема больших данных в Azure с помощью фабрики данных Azure. |
+|[Интеграция данных SAP с помощью фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) | В этом документе содержится сводка о текущей поддержке интеграции данных SAP в фабрике данных Azure, включая целевой сценарий, параметры соединителя SAP и сравнение для различных требований, а также общие сведения о каждом соединителе SAP в фабрике данных. | 
+|[Фабрика данных Azure: Службы SSIS в облаке](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-ssis-in-the-cloud/Azure_Data_Factory_SSIS_in_the_Cloud.pdf)| В этой статье описывается, почему необходимо перенести существующие рабочие нагрузки служб SSIS в фабрику данных Azure и решить общие вопросы и проблемы. Далее мы рассмотрим технические подробности о создании Azure-SSIS IR, а затем покажу, как передавать, выполнять и отслеживать пакеты с помощью фабрики данных Azure, используя средства, которые, возможно, знакомы с SQL Server Management Studio (SSMS). |
+|[Фабрика данных Azure — передача параметров](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-passing-parameters/Azure%20data%20Factory-Whitepaper-PassingParameters.pdf)| В этой статье описывается, как передавать параметры между конвейером и действием, а также между действиями. |
+|[Фабрика данных Azure — DevOps](https://azure.microsoft.com/mediahandler/files/resourcefiles/whitepaper-adf-on-azuredevops/Azure%20data%20Factory-Whitepaper-DevOps.pdf)| В этом документе рассматриваются некоторые рекомендации по непрерывной интеграции и развертыванию фабрики данных Azure. |
 

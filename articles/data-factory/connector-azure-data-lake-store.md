@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: e0626d847b22c11ce5acca5633c9b1291c03742d
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: d64a8431cb0331b58afc635bf8cf9d0fe0f1f225
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839872"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70276049"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage 1-го поколения с помощью фабрики данных Azure или из нее
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -132,7 +132,7 @@ ms.locfileid: "68839872"
 >- **В качестве приемника**. Выбрав **Обозреватель данных** > **Доступ**, предоставьте по крайней мере разрешение **Запись и выполнение** для создания дочерних элементов в папке. Вы можете выбрать добавление в **эту папку и все дочерние элементы** для свойства recursive и добавить в качестве **записи разрешения доступа и записи разрешения по умолчанию**. Если вы используете среду выполнения интеграции Azure для копирования (источник и приемник находятся в облаке), в IAM предоставьте по крайней мере роль **читателя** , чтобы фабрика данных определяла регион для Data Lake Store. Если вы хотите избежать этой роли IAM, явным образом [создайте среду выполнения интеграции Azure](create-azure-integration-runtime.md#create-azure-ir) с расположением Data Lake Store. Свяжите их со связанной службой Data Lake Store, как показано в следующем примере.
 
 >[!NOTE]
->Чтобы получить список папок, начиная с корня, необходимо задать разрешение на доступ управляемого удостоверения на корневом **уровне с разрешением на выполнение**. Это работает, если вы используете:
+>Чтобы получить список папок, начиная с корня, необходимо задать разрешение на доступ управляемого удостоверения на **корневом уровне с разрешением на выполнение**. Это работает, если вы используете:
 >- **Средство копирования данных** для создания конвейера копирования.
 >- **пользовательский интерфейс фабрики данных** для проверки подключения и перемещения по папкам во время разработки.
 >Если у вас есть проблемы с предоставлением разрешения на корневом уровне, во время создания, пропуска проверки соединения и ввода родительского пути с предоставленными разрешениями, выберите Просмотр по указанному пути. Действие копирования работает при условии, что субъект-служба предоставляет соответствующее разрешение на копируемых файлах.
@@ -163,12 +163,12 @@ ms.locfileid: "68839872"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). 
 
-- **Текст и двоичный формат с разделителями Parquet**см. в разделе [набор данных в текстовом и двоичном формате с разделителями Parquet](#format-based-dataset) .
-- Другие форматы, такие как **ORC/Avro/JSON**, см. в разделе [другой формат набора данных](#other-format-dataset) .
+- Для **Parquet, текста с разделителями, Avro и двоичного формата**см. раздел [набор данных Parquet, с разделителями, Avro и двоичного формата](#format-based-dataset) .
+- Другие форматы, например **Формат ORC/JSON**, см. в разделе [другой формат набора данных](#other-format-dataset) .
 
-### <a name="format-based-dataset"></a>Parquet, текстовый и двоичный наборы данных с разделителями
+### <a name="format-based-dataset"></a>Parquet, текстовый набор данных с разделителями, Avro и двоичный формат
 
-Чтобы скопировать данные в **Parquet, разделенный текст или двоичный**формат, см. статью [Формат Parquet](format-parquet.md), [текстовый формат](format-delimited-text.md) с разделителями и [двоичный формат](format-binary.md) , посвященный набору данных на основе формата и поддерживаемым параметрам.
+Чтобы скопировать данные в **Parquet, разделенный текст, Avro или двоичный формат**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md), [Формат Avro](format-avro.md) и [двоичный формат](format-binary.md) в наборе данных на основе формата и поддерживаемых параметрах.
 Для Azure Data Lake Store Gen1 `location` в параметрах набора данных на основе формата поддерживаются следующие свойства:
 
 | Свойство   | Описание                                                  | Обязательно для заполнения |
@@ -209,7 +209,7 @@ ms.locfileid: "68839872"
 
 ### <a name="other-format-dataset"></a>Другой формат набора данных
 
-Чтобы скопировать данные в Azure Data Lake Store Gen1 и обратно в **формате ORC/Avro/JSON**, поддерживаются следующие свойства:
+Чтобы скопировать данные в Azure Data Lake Store Gen1 в **формате ORC/JSON**и обратно, поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -223,7 +223,7 @@ ms.locfileid: "68839872"
 
 
 >[!TIP]
->Чтобы скопировать все файлы в папке, укажите только **folderPath**.<br>Чтобы скопировать отдельный файл с определенным именем, укажите параметр **FolderPath** с именем файла, который является частью папки.<br>Чтобы скопировать подмножество файлов в папке, укажите параметр **FolderPath** с частью папки и **именем файла** с фильтром с подстановочными знаками. 
+>Чтобы скопировать все файлы в папке, укажите только **folderPath**.<br>Чтобы скопировать отдельный файл с определенным именем, укажите параметр **FolderPath** с именем файла **, который является** частью папки.<br>Чтобы скопировать подмножество файлов в папке, укажите параметр **FolderPath** с частью папки и **именем файла** с фильтром с подстановочными знаками. 
 
 **Пример.**
 
@@ -261,12 +261,12 @@ ms.locfileid: "68839872"
 
 ### <a name="azure-data-lake-store-as-source"></a>Azure Data Lake Store в качестве источника
 
-- Чтобы скопировать данные из **Parquet, разделенного текста и двоичного формата**, см. раздел [Source и исходный формат с разделителями Parquet](#format-based-source) .
-- Чтобы скопировать данные из других форматов, таких как **ORC/Avro/JSON**, обратитесь к другому разделу [исходного формата](#other-format-source) .
+- Для копирования из **Parquet, разделенного текста, Avro и двоичного формата**, см. раздел [Parquet, Text с разделителями, Avro и источник двоичного формата](#format-based-source) .
+- Чтобы выполнить копирование из других форматов, таких как **Формат ORC/JSON**, см. [другой раздел исходного формата](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, источник текста и двоичного формата с разделителями
+#### <a name="format-based-source"></a>Parquet, текст с разделителями, Avro и источник двоичного формата
 
-Чтобы скопировать данные из **Parquet, разделенного текстом или двоичного формата**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md) и [двоичный формат](format-binary.md) для источника действия копирования на основе формата и поддерживаемых параметров.  Для Azure Data Lake Store Gen1 `storeSettings` в параметрах в источнике копирования на основе формата поддерживаются следующие свойства:
+Чтобы скопировать данные из **Parquet, разделенного текста, Avro или двоичного**формата, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md), [Формат Avro](format-avro.md) и [двоичный формат](format-binary.md) в отношении источника действия копирования на основе формата и поддерживаемых параметров .  Для Azure Data Lake Store Gen1 `storeSettings` в параметрах в источнике копирования на основе формата поддерживаются следующие свойства:
 
 | Свойство                 | Описание                                                  | Обязательно для заполнения                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
@@ -324,7 +324,7 @@ ms.locfileid: "68839872"
 
 #### <a name="other-format-source"></a>Другой источник формата
 
-Чтобы скопировать данные из Azure Data Lake Store Gen1 в **формате ORC, Avro или JSON**, в разделе **источник** действия копирования поддерживаются следующие свойства.
+Чтобы скопировать данные из Azure Data Lake Store Gen1 в **формате ORC или JSON**, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -366,12 +366,12 @@ ms.locfileid: "68839872"
 
 ### <a name="azure-data-lake-store-as-sink"></a>Azure Data Lake Store в качестве приемника
 
-- Чтобы скопировать в **Parquet текст или двоичный формат**, обратитесь к разделу [Parquet, разделенному тексту и приемнику двоичного формата](#format-based-sink) .
-- Чтобы скопировать данные в другие форматы, например **ORC/Avro/JSON**, обратитесь к разделу [другой приемник формата](#other-format-sink) .
+- Чтобы скопировать в **Parquet, текст с разделителями, Avro или двоичный формат**, см. раздел [Parquet, текст с разделителями, Avro и двоичный формат приемника](#format-based-sink) .
+- Чтобы скопировать данные в другие форматы, такие как **Формат ORC/JSON**, см. раздел [другой приемник формата](#other-format-sink) .
 
-#### <a name="format-based-sink"></a>Parquet, разделенный текст и приемник двоичного формата
+#### <a name="format-based-sink"></a>Parquet, текст с разделителями, Avro и приемник двоичного формата
 
-Чтобы скопировать данные в **Parquet, текст или двоичный формат**с разделителями, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md) и [двоичный формат](format-binary.md) в отношении приемника действия копирования на основе формата и поддерживаемых параметров.  Для Azure Data Lake Store Gen1 `storeSettings` в параметрах в приемнике копирования на основе формата поддерживаются следующие свойства:
+Чтобы скопировать данные в **Parquet, текст с разделителями, Avro или двоичный формат**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md), [Формат Avro](format-avro.md) и [двоичный формат](format-binary.md) в приемнике действия копирования на основе формата и поддерживаемые параметры.  Для Azure Data Lake Store Gen1 `storeSettings` в параметрах в приемнике копирования на основе формата поддерживаются следующие свойства:
 
 | Свойство                 | Описание                                                  | Обязательно для заполнения |
 | ------------------------ | ------------------------------------------------------------ | -------- |
@@ -419,7 +419,7 @@ ms.locfileid: "68839872"
 
 #### <a name="other-format-sink"></a>Другой приемник формата
 
-Чтобы скопировать данные в Azure Data Lake Store Gen1 в **формате ORC, Avro или JSON**, в разделе приемника поддерживаются следующие свойства :
+Чтобы скопировать данные в Azure Data Lake Store Gen1 в **формате ORC или JSON**, в разделе **приемника** поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -465,9 +465,9 @@ ms.locfileid: "68839872"
 
 | folderPath | fileName | recursive | Структура исходной папки и результат фильтрации (извлекаются файлы, выделенные **полужирным** шрифтом)|
 |:--- |:--- |:--- |:--- |
-| `Folder*` | (Пусто, используйте значение по умолчанию) | False | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | (Пусто, используйте значение по умолчанию) | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 | `Folder*` | (Пусто, используйте значение по умолчанию) | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | False | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | `*.csv` | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 | `Folder*` | `*.csv` | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 
 ### <a name="examples-of-behavior-of-the-copy-operation"></a>Примеры поведения операции копирования
@@ -476,12 +476,12 @@ ms.locfileid: "68839872"
 
 | recursive | copyBehavior | Структура папок источника | Результаты цели |
 |:--- |:--- |:--- |:--- |
-| true |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
-| true |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
-| true |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое file1 + file2 + Файл3 + "Файл4" + "Файл5" объединяется в один файл с автоматически сформированным именем файла. |
-| False |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
-| False |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
-| False |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое file1 + file2 объединяется в один файл с автоматически созданным именем файла. автоматически созданное имя для "Файл1"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| true |preserveHierarchy | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
+| true |flattenHierarchy | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
+| true |mergeFiles | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое file1 + file2 + Файл3 + "Файл4" + "Файл5" объединяется в один файл с автоматически сформированным именем файла. |
+| false |preserveHierarchy | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| false |flattenHierarchy | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
+| false |mergeFiles | Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой:<br/><br/>Folder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое file1 + file2 объединяется в один файл с автоматически созданным именем файла. автоматически созданное имя для "Файл1"<br/><br/>Subfolder1 с Файл3, "Файл4" и "Файл5" не забирается. |
 
 ## <a name="preserve-acls-to-data-lake-storage-gen2"></a>Сохранение списков управления доступом в Data Lake Storage 2-го поколения
 

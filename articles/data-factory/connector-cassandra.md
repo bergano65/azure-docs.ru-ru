@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: b42313a83be413a9c34a45fca946ea165f8fc9a3
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 7d3f29327f9a671a631b01ad688da3a523a7b0c8
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967041"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275857"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -38,7 +38,7 @@ ms.locfileid: "68967041"
 >[!NOTE]
 >Для выполнения действия в локальной среде выполнения интеграции Cassandra 3.x поддерживается в IR версии 3.7 и более поздних.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -93,7 +93,7 @@ ms.locfileid: "68967041"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. Этот раздел содержит список свойств, поддерживаемых набором данных Cassandra.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных Cassandra.
 
 Чтобы скопировать данные из Cassandra, установите для свойства type набора данных значение **CassandraTable**. Поддерживаются следующие свойства:
 
@@ -180,17 +180,17 @@ ms.locfileid: "68967041"
 | BIGINT |Int64 |
 | BLOB |Byte[] |
 | Boolean |Boolean |
-| DECIMAL |Десятичное |
-| Double |Double |
-| FLOAT |Единое |
+| DECIMAL |Decimal |
+| DOUBLE |Double |
+| FLOAT |Single |
 | INET |Строковое |
 | INT |Int32 |
 | TEXT |Строковое |
 | TIMESTAMP |DateTime |
-| TIMEUUID |GUID |
-| UUID |GUID |
+| TIMEUUID |Guid |
+| UUID |Guid |
 | VARCHAR |Строковое |
-| VARINT |Десятичное |
+| VARINT |Decimal |
 
 > [!NOTE]
 > Дополнительные сведения о типах коллекций (сопоставлениях, наборах, списках и т. д.) см. в разделе [Работа с коллекциями с использованием виртуальной таблицы](#work-with-collections-using-virtual-table).

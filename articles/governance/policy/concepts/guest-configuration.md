@@ -7,30 +7,28 @@ ms.date: 03/18/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 054f9ed21ee0d7ef725c2b7eee8174c53374b5bc
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 06a767af71f457273e0e20d1248d64c22b3563e7
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232255"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274947"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
 Помимо аудита и [устранения](../how-to/remediate-resources.md) ресурсов Azure, политика Azure может выполнять аудит параметров внутри компьютера. Проверка выполняется с помощью расширения гостевой конфигурации и клиента. Расширение с помощью клиента проверяет такие параметры, как конфигурация операционной системы, конфигурация или наличие приложения, настройки среды и т. д.
 
-В настоящее время Гостевая Конфигурация политики Azure выполняет только аудит параметры числа внутри компьютера.
+В настоящее время Гостевая Конфигурация политики Azure выполняет только аудит параметров, находящихся на компьютере.
 Применение конфигураций пока невозможно.
-
-[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="extension-and-client"></a>Расширение и клиент
 
 Для аудита параметров на компьютере включено [расширение виртуальной машины](../../../virtual-machines/extensions/overview.md) . Расширение скачивает подходящее назначение политики и соответствующее определение конфигурации.
 
-### <a name="limits-set-on-the-exension"></a>Ограничения, установленные для ексенсион
+### <a name="limits-set-on-the-extension"></a>Ограничения, установленные для расширения
 
 Чтобы ограничить расширение, влияющее на приложения, выполняющиеся на компьютере, конфигурация гостевой системы не может превышать 5% использования ЦП.
-Это справедливо Бох для конфигураций, предоставляемых корпорацией Майкрософт в качестве встроенных, и для пользовательских конфигураций, созданных клиентами.
+Это справедливо и для конфигураций, предоставляемых корпорацией Майкрософт в качестве встроенных, и для пользовательских конфигураций, созданных клиентами.
 
 ## <a name="register-guest-configuration-resource-provider"></a>Регистрация поставщика ресурсов гостевой конфигурации
 
@@ -113,7 +111,7 @@ Windows Server Nano Server не поддерживается ни в одной 
   - установки последней версии расширения **Microsoft.GuestConfiguration**;
   - установки [средств проверки](#validation-tools) и зависимостей, если это необходимо.
 
-Если назначение **DeployIfNotExists** не соответствует требованиям, можно использовать [задачу](../how-to/remediate-resources.md#create-a-remediation-task) по исправлению.
+Если назначение **DeployIfNotExists** не соответствует требованиям, можно использовать [задачу по исправлению](../how-to/remediate-resources.md#create-a-remediation-task) .
 
 После того как назначение **DeployIfNotExists** соответствует требованиям, назначение политики **помощью параметров auditifnotexists** использует средства локальной проверки, чтобы определить, является ли назначение конфигурации совместимым или несоответствующим.
 Средство проверки предоставляет результаты клиенту гостевой конфигурации. Клиент перенаправляет результаты в гостевое расширение, чтобы сделать их доступными через поставщик ресурсов гостевой конфигурации.
@@ -144,6 +142,32 @@ Windows: `C:\Packages\Plugins\Microsoft.GuestConfiguration.ConfigurationforWindo
 Linux: `/var/lib/waagent/Microsoft.GuestConfiguration.ConfigurationforLinux-<version>/GCAgent/logs/dsc.log`
 
 Где `<version>` — номер текущей версии.
+
+### <a name="collecting-logs-remotely"></a>Удаленная сбор журналов
+
+Первым шагом в устранении неполадок конфигураций гостевых конфигураций или модулей является `Test-GuestConfigurationPackage` использование командлета, следуя инструкциям в разделе [тестирование гостевого пакета конфигурации](../how-to/guest-configuration-create.md#test-a-guest-configuration-package).  Если это не удалось, сбор журналов клиента может помочь в диагностике проблем.
+
+#### <a name="windows"></a>Windows
+
+Если вы хотите использовать возможность команды запуска виртуальной машины Azure для записи данных из файлов журнала на компьютерах Windows, может оказаться полезным следующий пример сценария PowerShell. Дополнительные сведения о выполнении скрипта на портале Azure или Azure PowerShell см. [в статье запуск сценариев PowerShell в виртуальной машине Windows с помощью команды Run](../../../virtual-machines/windows/run-command.md).
+
+```powershell
+$linesToIncludeBeforeMatch = 0
+$linesToIncludeAfterMatch = 10
+$latestVersion = Get-ChildItem -Path 'C:\Packages\Plugins\Microsoft.GuestConfiguration.ConfigurationforWindows\' | ForEach-Object {$_.FullName} | Sort-Object -Descending | Select-Object -First 1
+Select-String -Path "$latestVersion\dsc\logs\dsc.log" -pattern 'DSCEngine','DSCManagedEngine' -CaseSensitive -Context $linesToIncludeBeforeMatch,$linesToIncludeAfterMatch | Select-Object -Last 10
+```
+
+#### <a name="linux"></a>Linux
+
+Если вы хотите использовать возможность команды запуска виртуальной машины Azure для записи данных из файлов журнала на компьютерах Linux, может быть полезным следующий пример bash скрипта. Дополнительные сведения о выполнении скрипта на портале Azure или Azure CLI см. [в статье запуск сценариев оболочки на виртуальной машине Linux с помощью команды Run](../../../virtual-machines/linux/run-command.md) .
+
+```Bash
+linesToIncludeBeforeMatch=0
+linesToIncludeAfterMatch=10
+latestVersion=$(find /var/lib/waagent/ -type d -name "Microsoft.GuestConfiguration.ConfigurationforLinux-*" -maxdepth 1 -print | sort -z | sed -n 1p)
+egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCManagedEngine' "$latestVersion/GCAgent/logs/dsc.log" | tail
+```
 
 ## <a name="guest-configuration-samples"></a>Примеры настройки гостевой виртуальной машины
 

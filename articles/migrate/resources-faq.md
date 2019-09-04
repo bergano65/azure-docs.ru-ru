@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: snehaa
-ms.openlocfilehash: 03651ecb073d02a373c434b8cb55bdafec6d142a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 46c6ac52e1afb6c1619b814580a1059fd3dfedda
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142218"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279502"
 ---
 # <a name="azure-migrate-frequently-asked-questions-faq"></a>Миграция Azure Часто задаваемые вопросы
 
@@ -27,7 +27,7 @@ ms.locfileid: "70142218"
 
 Служба "миграция Azure" предоставляет централизованный центр для начала миграции, выполнения и мониторинга обнаружения и оценки компьютеров и рабочих нагрузок, а также выполнения и мониторинга миграции компьютеров и рабочих нагрузок в Azure. [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/migrate-tutorial-on-premises-azure) является решением для аварийного восстановления. Миграция сервера в Azure миграция использует Azure Site Recovery на серверной части, чтобы включить сценарии миграции для миграции на локальные компьютеры с помощью операций переноса с миграцией и сдвигом.
 
-## <a name="azure-migrate-appliance-vmwarephysical-servers"></a>Устройство для миграции Azure (VMware или физические серверы)
+## <a name="azure-migrate-appliance"></a>Устройство Миграции Azure
 
 ### <a name="how-does-the-azure-migrate-appliance-connect-to-azure"></a>Как устройство, выполняющее миграцию Azure, подключается к Azure?
 
@@ -87,6 +87,9 @@ ms.locfileid: "70142218"
 ### <a name="how-many-vms-can-i-discover-with-a-single-migration-appliance"></a>Сколько виртуальных машин можно обнаружить с помощью одного устройства миграции?
 
 Вы можете обнаружить до 10 000 виртуальных машин VMware и до 5 000 виртуальных машин Hyper-V с одним устройством миграции. Если в локальной среде имеется больше компьютеров, Узнайте, как масштабировать оценку [Hyper-V](scale-hyper-v-assessment.md) и [VMware](scale-vmware-assessment.md) .
+
+### <a name="can-i-delete-the-azure-migrate-appliance-from-the-project"></a>Можно ли удалить устройство "миграция Azure" из проекта?
+Сейчас удаление устройства из проекта не поддерживается. Единственный способ удалить устройство — удалить группу ресурсов с проектом "миграция Azure", связанную с устройством, но при этом также будут удалены другие зарегистрированные устройства, обнаруженные инвентаризации, оценки и другие артефакты Azure. связан с проектом в группе ресурсов.
 
 ## <a name="azure-migrate-server-assessment"></a>Оценка сервера службы "Миграция Azure"
 
@@ -164,7 +167,7 @@ ms.locfileid: "70142218"
 
 ### <a name="can-i-use-an-existing-workspace-for-dependency-visualization"></a>Можно ли использовать существующую рабочую область для визуализации зависимостей?
 
-Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. Дополнительные сведения см. в разделе «как работает» статьи визуализация [зависимостей](concepts-dependency-visualization.md#how-does-it-work) .
+Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. Дополнительные сведения см. в разделе «как работает» статьи [Визуализация зависимостей](concepts-dependency-visualization.md#how-does-it-work) .
 
 ### <a name="can-i-export-the-dependency-visualization-report"></a>Можно ли экспортировать отчет о визуализации зависимостей?
 
@@ -198,4 +201,4 @@ ms.locfileid: "70142218"
 Миграция сервера в Azure миграция использует модуль репликации Site Recovery для миграции виртуальных машин VMware на основе агентов, миграции виртуальных машин Hyper-V и миграции физических серверов в Azure. Функция без агента для переноса виртуальных машин VMware встроена в серверную миграцию.
 
 ## <a name="next-steps"></a>Следующие шаги
-Ознакомьтесь с обзором службы " [Миграция Azure](migrate-services-overview.md)".
+Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".
