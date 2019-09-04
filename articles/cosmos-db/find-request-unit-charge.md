@@ -4,14 +4,14 @@ description: Узнайте, как определить расходы в ед�
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/14/2019
+ms.date: 09/01/2019
 ms.author: thweiss
-ms.openlocfilehash: 682273524269682f62cd386de1c9161888747f16
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c5699bb851bd0a818a987228155c62683e93f51a
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093709"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240789"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -176,7 +176,7 @@ request_charge = client.last_response_headers['x-ms-request-charge']
 
 1. [Создайте учетную запись Azure Cosmos](create-mongodb-dotnet.md#create-a-database-account) и заполните ее данными или выберите существующую учетную запись, которая уже содержит данные.
 
-1. Перейдите на панель **обозревателя данных** и выберите коллекцию, с которой собираетесь работать.
+1. Перейдите на панель **обозревателя данных** и выберите контейнер, с которым собираетесь работать.
 
 1. Выберите пункт **Создать запрос**.
 

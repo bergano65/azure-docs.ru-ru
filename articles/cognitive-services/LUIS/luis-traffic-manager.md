@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: diberry
-ms.openlocfilehash: 85f6be7a897908ef9198ac71ada809efb7c033bc
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: c4ea9c5663755a4feb1693dd925d99b10c466140
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650542"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70256608"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
@@ -48,7 +48,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 
     ![Снимок экрана портала Azure с двумя ключами LUIS в группе ресурсов luis-traffic-manager](./media/traffic-manager/luis-keys.png)
 
-2. На веб-сайте [Luis][LUIS] в разделе " **Управление** " на странице " **ключи и конечные точки** " назначьте ключи приложению и повторно опубликуйте приложение, нажав кнопку " **опубликовать** " в правом верхнем меню. 
+2. На веб-сайте [Luis][LUIS] в разделе **Управление** на странице **ресурсы Azure** назначьте ключи приложению и повторно опубликуйте приложение, нажав кнопку **опубликовать** в правом верхнем меню. 
 
     В примере URL-адреса в столбце **Конечная точка** используется запрос GET с ключом конечной точки в качестве параметра запроса. Скопируйте URL-адреса конечной точки для двух новых ключей. Они используются для настройки диспетчера трафика далее в этой статье.
 

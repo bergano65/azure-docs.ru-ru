@@ -12,19 +12,18 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 09/04/2018
+ms.date: 09/03/2019
 ms.author: damaerte
-ms.openlocfilehash: f3d7edf21edf116732eceb332cb8725a0dee85dc
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: acdf52022d8498a186ed4cff90284cd6e299d6c0
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742012"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240859"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
-Azure Cloud Shell — это интерактивная доступная браузеру оболочка для управления ресурсами Azure.
-Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы.
-Пользователи Linux могут использовать Bash, а пользователи Windows — PowerShell.
+Azure Cloud Shell — это интерактивная, аутентифицированная, доступная в браузере оболочка для управления ресурсами Azure.
+Она предоставляет гибкие возможности выбора оболочки, которые лучше всего подходят для работы, bash или PowerShell.
 
 Выполните запуск через shell.azure.com, нажав кнопку ниже.
 

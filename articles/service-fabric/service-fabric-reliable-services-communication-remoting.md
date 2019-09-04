@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: f9cd6e2fee738d2d42c790b4eb7b9a876a44b01d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a9ef2cd695f9591f299bb85b95d14d60b987c38d
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60772981"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258695"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -202,7 +202,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 1. Обновите службу версии 1 до версии 2 с помощью указанного атрибута.
 Такое изменение гарантирует, что служба будет ожидать передачу данных от прослушивателей версии 1 и 2.
 
-    a. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
+    1\. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
       ```xml
       <Resources>
         <Endpoints>
@@ -220,7 +220,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
     ```
 
-    c. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватели версий 1 и 2 и клиент версии 2.
+    В. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватели версий 1 и 2 и клиент версии 2.
     ```csharp
     [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2|RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2)]
 
@@ -321,10 +321,15 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 Чтобы обновить версию 1 до версии 2 (с совместимым интерфейсом, или версия 2_1), выполните двухэтапное обновление. Соблюдайте порядок действий в этой процедуре.
 
+> [!NOTE]
+> При обновлении с версии v1 на v2 убедитесь, `Remoting` что пространство имен Обновлено для использования версии 2. Пример: "Microsoft. ServiceFabric. Services. Remoting. v2. FabricTransport. Client"
+>
+>
+
 1. Обновите службу версии 1 до версии 2_1 с помощью указанного ниже атрибута.
 Это изменение гарантирует, что служба будет ожидать передачи данных от прослушивателей версии 1 и 2_1.
 
-    a. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
+    1\. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
       ```xml
       <Resources>
         <Endpoints>
@@ -342,7 +347,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
     ```
 
-    c. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватель версии 1 и 2_1 и клиент версии 2_1.
+    В. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватель версии 1 и 2_1 и клиент версии 2_1.
     ```csharp
    [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1 | RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2_1)]
 
@@ -551,7 +556,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       });
       ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 * [WCF-based communication stack for Reliable Services](service-fabric-reliable-services-communication-wcf.md) (Стек взаимодействия для Reliable Services на основе WCF)

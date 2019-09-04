@@ -9,19 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 87244169aa8e50ddd503086121dd84f5d50c5df4
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 5939886f68a877c4cfad752fe93c4f0eca8f80cf
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932778"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258508"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале [LUIS](https://www.luis.ai) или с помощью [API-интерфейсов](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) разработки LUIS.
 
 ## <a name="using-the-luis-portal"></a>Использование портала LUIS
+
 На портале LUIS приложение можно создать несколькими способами:
 
 * начать с пустого приложения и создать намерения, фрагменты речи и сущности;
@@ -39,6 +40,8 @@ ms.locfileid: "68932778"
 <a name="import-new-app"></a>
 <a name="delete-app"></a>
  
+
+[!INCLUDE [Sign in to LUIS](./includes/sign-in-process.md)]
 
 ## <a name="create-new-app-in-luis"></a>Создание приложения в LUIS
 
@@ -65,7 +68,7 @@ ms.locfileid: "68932778"
 
 Возможны следующие ошибки: 
 
-* Приложение с таким именем уже существует. Чтобы устранить эту проблему, повторно импортируйте приложение и задайте новое имя в поле необязательное **имя** . 
+* Приложение с таким именем уже существует. Чтобы устранить эту проблему, повторно импортируйте приложение и задайте новое имя в поле **необязательное имя** . 
 
 ## <a name="export-app-for-backup"></a>Экспорт приложения для резервного копирования
 

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 79cb276f121c351a9954994038d9d826819edf5d
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1e6d3b78887c9d195fdf0137553860c141bdaaba
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087452"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241063"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)
 
@@ -145,6 +145,9 @@ module.exports = df.orchestrator(function*(context) {
   Если для оркестратора требуется задержка, он может использовать API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) (.NET) или `createTimer` (JavaScript).
 
 * Код оркестратора никогда не должен **запускать асинхронную операцию**, разве что с помощью API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) или API объекта `context.df`. Например, не выполнять `Task.Run` `Task.Delay` или `HttpClient.SendAsync` в .NET либо `setTimeout()` и `setInterval()` в JavaScript. Платформа устойчивых задач выполняет код оркестратора в одном потоке и не может взаимодействовать с другими потоками, которые могут планироваться другими асинхронными API. В `InvalidOperationException` этом случае возникает исключение.
+
+> [!NOTE]
+> API [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) выполняет асинхронный ввод-вывод, который не допускается в функции Orchestrator и может использоваться только в функциях, не являющихся функциями Orchestrator.
 
 * **Следует избегать бесконечных циклов** в коде оркестратора. Так как платформа устойчивых задач сохраняет журнал выполнения в ходе работы функции оркестрации, бесконечный цикл может привести к нехватке памяти для экземпляра оркестратора. Для сценариев с бесконечным циклом используйте API, например [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_) (.NET) или `continueAsNew` (JavaScript), чтобы перезапустить выполнение функции и отменить предыдущий журнал выполнения.
 

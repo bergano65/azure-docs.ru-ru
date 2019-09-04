@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/25/2019
+ms.date: 09/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: dbacec6e8f91480996150e73f2a81dbcde67550b
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: b349576f5e9f5410afc29f48e40c38e12168252d
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494792"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258893"
 ---
 # <a name="resource-property-or-variable-iteration-in-azure-resource-manager-templates"></a>Итерация ресурсов, свойств или переменных в шаблонах Azure Resource Manager
 
@@ -43,13 +43,13 @@ ms.locfileid: "68494792"
 
 Оба варианта использования описаны более подробно в этой статье. См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
 
-Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](resource-group-authoring-templates.md#condition).
+Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](conditional-resource-deployment.md).
 
 ## <a name="copy-limits"></a>Ограничения копирования
 
 Чтобы указать число итераций, необходимо указать значение для свойства Count. Число не может превышать 800.
 
-Число не может быть отрицательным числом. Если вы развертываете шаблон с REST API версии **2019-05-10** или более поздней, можно установить значение счетчика равным нулю. Более ранние версии REST API не поддерживают нулевое значение для счетчика. В настоящее время Azure CLI или PowerShell не поддерживают ноль для подсчета, но эта поддержка будет добавлена в следующем выпуске.
+Число не может быть отрицательным числом. Если вы развертываете шаблон с Azure PowerShell 2,6 или более поздней версии или REST API версией **2019-05-10** или более поздней, можно установить значение счетчика равным нулю. Более ранние версии PowerShell и REST API не поддерживают ноль для счетчика. В настоящее время Azure CLI не поддерживает нуль для подсчета, но эта поддержка будет добавлена в следующем выпуске.
 
 Будьте внимательны при [развертывании полного режима](deployment-modes.md) с помощью команды Copy. При повторном развертывании с полным режимом для группы ресурсов все ресурсы, не указанные в шаблоне после разрешения цикла копирования, удаляются.
 

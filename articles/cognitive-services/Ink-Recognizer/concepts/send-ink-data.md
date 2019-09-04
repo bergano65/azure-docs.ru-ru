@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: a5fe77ace5f745911bb9085dd6996a8d21fe265f
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 0ad961495d44f13522a3c02224a5612aaedaf076
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879036"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274477"
 ---
 # <a name="send-ink-data-to-the-ink-recognizer-api"></a>Отправка рукописного текста в API Распознавателя рукописного текста 
 
@@ -82,7 +82,7 @@ API Распознавателя рукописного текста может 
 
 ## <a name="integrate-the-ink-recognizer-api-with-windows-ink"></a>Интеграция API Распознавателя рукописного текста с Windows Ink
 
-[Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) предоставляет инструменты и технологии, предоставляющие широкие возможности рукописного ввода с диапазона различных устройств. Вы можете объединить платформу Windows Ink с API Распознавания, чтобы создавать приложения, отображающие и интерпретирующие цифровые рукописные мазки кистью.
+[Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) предоставляет инструменты и технологии, предоставляющие широкие возможности рукописного ввода с диапазона различных устройств. Платформу рукописного ввода Windows можно сочетать с API распознавания рукописного ввода для создания приложений, отображающих и восзнающих цифровые рукописные штрихи.
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/29/2019
+ms.date: 09/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: 25741eebc305c18f789497ab0859adf22687eaa5
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 5469bd835b189df66c22a3fc13e91c435b4be73f
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186186"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257714"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -76,7 +76,7 @@ ms.locfileid: "70186186"
 
 В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md). 
 
-**Локальные регионы Azure** — это те, к которым может получить доступ локальная служба [ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
+**Локальные регионы Azure** — это те, к которым может получить доступ [Локальная служба ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
 
 
 ### <a name="production-azure"></a>Рабочая среда Azure
@@ -96,8 +96,8 @@ ms.locfileid: "70186186"
 | **Копенгаген** | [Interxion CPH1](https://www.interxion.com/Locations/copenhagen/) | Н/Д | Interxion |
 | **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | Н/Д | Aryaka Networks, AT & T NetBond, Кологикс, Equinix, Internet2, уровень 3, взаимодействие, Orange, Неутрона сети, Телмекс Унинет, Телиа перевозчик, Telco, Verizon, Zayo|
 | **Денвер** | [Коресите DE1](https://www.coresite.com/data-centers/locations/denver/de1) | Центрально-западная часть США | Коресите, Orange, Zayo |
-| **Дубаи** | Етисалат ОАЭ | Северная часть ОАЭ | Етисалат ОАЭ |
-| **Dubai2** | Du датамена | Северная часть ОАЭ | Du датамена, Орикском |
+| **Дубаи** | [ПККС](https://www.pacificcontrols.net/cloudservices/index.html) | Северная часть ОАЭ | Етисалат ОАЭ |
+| **Dubai2** | [Du датамена](http://datamena.com/solutions/data-centre) | Северная часть ОАЭ | Du датамена, Орикском |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | Северная Европа | Colt, eir, Equinix, Interxion, Megaport |
 | **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | Н/Д | DE-ЦИКС, Interxion, оранжевый |
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | Восточная Азия | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata обмен данными, Телиа, Verizon |
@@ -118,7 +118,7 @@ ms.locfileid: "70186186"
 | **Осака** | [Equinix OS1](https://www.equinix.com/locations/asia-colocation/japan-colocation/osaka-data-centers/os1/) | Западная Япония | Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, NTT Communications, NTT Смартконнект, Softbank " |
 | **Париж** | [Interxion PAR5](https://www.interxion.com/Locations/paris/) | Центральная Франция | CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, оранжевый, Телиа, Zayo |
 | **Перт** | [Некстдк P1](https://www.nextdc.com/data-centres/p1-perth-data-centre) | Н/Д | Orange, Некстдк |
-| **Квебек** | 4Degrees | Восточная Канада | Bell Canada, Megaport |
+| **Квебек** | [Разных](https://vantage-dc.com/data_centers/quebec-city-data-center-campus/) | Восточная Канада | Bell Canada, Megaport |
 | **Сан-Антонио** | [Цирусоне SA1](https://cyrusone.com/locations/texas/san-antonio-texas/) | Центрально-южная часть США | CenturyLink Cloud Connect, Megaport |
 | **Сан-Паулу** | [Equinix SP2](https://www.equinix.com/locations/americas-colocation/brazil-colocation/sao-paulo-data-centers/sp2/) | Южная Бразилия | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
 | **Сиэтл;** | [Equinix SE2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/seattle-data-centers/se2/) | Западная часть США 2 | Aryaka сети, Equinix, связь уровня 3, Orange, Телус, Zayo |

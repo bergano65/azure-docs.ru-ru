@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: b4bd61ea74055a04718d8a9d8d5ccd42671af2ac
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: eead9e0fec8ac4322bc7816de4a4774f8be8129c
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638346"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257955"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Роли сущности для контекстных подтипов
 
@@ -27,7 +27,7 @@ ms.locfileid: "68638346"
 
 ## <a name="machine-learned-entity-example-of-roles"></a>Пример ролей в сущности, занятой компьютером
 
-В utterance «купите билет из **Нью** -Йорка в **Лондоне**, оба Нью-Йорк и Лондон являются городами, но каждый из них имеет свой смысл в предложении. New York — это город отправления, а London — город назначения. 
+В utterance «купите билет из **Нью-Йорка** в **Лондоне**, оба Нью-Йорк и Лондон являются городами, но каждый из них имеет свой смысл в предложении. New York — это город отправления, а London — город назначения. 
 
 ```
 buy a ticket from New York to London
@@ -93,11 +93,11 @@ Schedule the meeting from 8 to 9
 
 ## <a name="entity-roles-versus-collaborator-roles"></a>Роли сущности и роли совместной работы
 
-Роли сущности применяются к модели данных приложения LUIS. Роли [совместной работы](luis-concept-collaborator.md) применяются к уровням доступа на разработку. 
+Роли сущности применяются к модели данных приложения LUIS. Роли [совместной работы или участников](luis-concept-keys.md#contributions-from-other-authors) применяются к уровням доступа для разработки. 
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Практическое [руководство](tutorial-entity-roles.md) . Использование ролей сущностей с сущностями, которые не используются для компьютера
+* [Практическое руководство](tutorial-entity-roles.md) . Использование ролей сущностей с сущностями, которые не используются для компьютера
 * Сведения о добавлении [ролей](luis-how-to-add-entities.md#add-a-role-to-pattern-based-entity)

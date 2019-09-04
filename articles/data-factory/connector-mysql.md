@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: fcf56e8088af25c14c022039bf8862f2dc21c77a
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: d76b51aa5117e662e9ff17bb91516c758de3071c
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172569"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277708"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -144,13 +144,13 @@ ms.locfileid: "70172569"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. В этом разделе содержится список свойств, поддерживаемых набором данных MySQL.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных MySQL.
 
-Чтобы скопировать данные из MySQL, установите свойство типа набора данных **RelationalTable**. Поддерживаются следующие свойства:
+Для копирования данных из MySQL поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для набора данных необходимо задать значение **RelationalTable**. | Да |
+| type | Для свойства type набора данных необходимо задать следующее значение: **мисклтабле** | Да |
 | tableName | Имя таблицы в базе данных MySQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -160,15 +160,18 @@ ms.locfileid: "70172569"
     "name": "MySQLDataset",
     "properties":
     {
-        "type": "RelationalTable",
+        "type": "MySqlTable",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<MySQL linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
+
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -176,11 +179,11 @@ ms.locfileid: "70172569"
 
 ### <a name="mysql-as-source"></a>MySQL в качестве источника
 
-Чтобы копировать данные из MySQL, установите тип источника в действии копирования **RelationalSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из MySQL, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Да |
+| type | Свойству type источника действия копирования необходимо задать значение **мисклсаурце** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
@@ -204,7 +207,7 @@ ms.locfileid: "70172569"
         ],
         "typeProperties": {
             "source": {
-                "type": "RelationalSource",
+                "type": "MySqlSource",
                 "query": "SELECT * FROM MyTable"
             },
             "sink": {
@@ -214,6 +217,8 @@ ms.locfileid: "70172569"
     }
 ]
 ```
+
+Если вы использовали `RelationalSource` типизированный источник, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
 
 ## <a name="data-type-mapping-for-mysql"></a>Сопоставление типов данных для MySQL
 

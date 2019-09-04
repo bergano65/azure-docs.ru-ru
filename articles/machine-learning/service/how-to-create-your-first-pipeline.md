@@ -11,16 +11,16 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: e81cc39157231c98e38305c70e046111ec062732
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 87897c031ff717fb67830cb8fa3bc5fced336418
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128291"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278862"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
-В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://aka.ms/aml-sdk).  Используйте **конвейеры машинного обучения** , чтобы создать рабочий процесс, объединяющий различные фазы машинного обучения, а затем опубликовать этот конвейер в машинное обучение Azure рабочей области, чтобы получить доступ к ним позже или поделиться с другими пользователями.  Конвейеры машинного обучения идеально подходят для сценариев пакетной оценки с использованием различных вычислений, повторного использования действий вместо их перезапуска, а также совместного использования рабочих процессов машинного обучения с другими пользователями. 
+В этой статье вы узнаете, как создать, опубликовать, запустить и отслеживать [конвейер машинного обучения](concept-ml-pipelines.md) с помощью [пакета SDK для машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).  Используйте **конвейеры машинного обучения** , чтобы создать рабочий процесс, объединяющий различные фазы машинного обучения, а затем опубликовать этот конвейер в машинное обучение Azure рабочей области, чтобы получить доступ к ним позже или поделиться с другими пользователями.  Конвейеры машинного обучения идеально подходят для сценариев пакетной оценки с использованием различных вычислений, повторного использования действий вместо их перезапуска, а также совместного использования рабочих процессов машинного обучения с другими пользователями. 
 
 Хотя можно использовать другой тип конвейера, называемый [конвейером Azure](https://docs.microsoft.com/azure/devops/pipelines/targets/azure-machine-learning?context=azure%2Fmachine-learning%2Fservice%2Fcontext%2Fml-context&view=azure-devops&tabs=yaml) для автоматизации задач ML в CI/CD, этот тип конвейера никогда не хранится в рабочей области. [Сравните эти разные конвейеры](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
 
@@ -36,7 +36,7 @@ ms.locfileid: "70128291"
 
 * Создайте [рабочую область Машинного обучения Azure](how-to-manage-workspace.md) для хранения всех ресурсов конвейера.
 
-* [Настройте среду разработки](how-to-configure-environment.md) для установки пакета sdk для машинное обучение Azure или используйте виртуальную [машину записной книжки](tutorial-1st-experiment-sdk-setup.md#azure) с уже установленным пакетом SDK.
+* [Настройте среду разработки](how-to-configure-environment.md) для установки пакета sdk для машинное обучение Azure или используйте [виртуальную машину записной книжки](tutorial-1st-experiment-sdk-setup.md#azure) с уже установленным пакетом SDK.
 
 Начните с подключения рабочей области:
 
@@ -270,9 +270,9 @@ from azureml.pipeline.steps import PythonScriptStep
 
 trainStep = PythonScriptStep(
     script_name="train.py",
-    arguments=["--input", blob_input_data, "--output", processed_data1],
+    arguments=["--input", blob_input_data, "--output", output_data1],
     inputs=[blob_input_data],
-    outputs=[processed_data1],
+    outputs=[output_data1],
     compute_target=compute_target,
     source_directory=project_folder
 )
@@ -318,7 +318,7 @@ steps = [dbStep]
 pipeline1 = Pipeline(workspace=ws, steps=steps)
 ```
 
-Дополнительные сведения см. в справочнике по классам пакета и [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) [Azure-Pipeline-этапах](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
+Дополнительные сведения см. в справочнике по [классам пакета и конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) [Azure-Pipeline-этапах](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -435,7 +435,7 @@ p.disable()
 Чтобы оптимизировать и настроить поведение конвейеров, можно выполнить несколько действий по кэшированию и повторному использованию. Например, можно выбрать один из следующих способов:
 + **Отключите повторное использование по умолчанию выходных данных шага выполнения** , `allow_reuse=False` задав во время [определения шага](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py). Повторное использование является ключом при использовании конвейеров в среде совместной работы, поскольку удаление ненужных запусков обеспечивает гибкость. Однако можно отказаться от повторного использования.
 + **Расширение хэширования за пределы скрипта**для включения абсолютного или относительного пути к элементу исходный_каталог в другие файлы и каталоги с помощью`hash_paths=['<file or directory']` 
-+ Принудительное повторное **Создание выходных данных для всех шагов в запуске** с`pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
++ **Принудительное повторное создание выходных данных для всех шагов в запуске** с`pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
 
 По умолчанию `allow_reuse` для шагов включена поддержка хэширования только основного файла скрипта. Таким образом, если скрипт для данного шага остается неизменным (`script_name`, входами и параметрами), то выходные данные предыдущего шага запускаются повторно, задание не отправляется в вычисление, а результаты предыдущего запуска сразу же становятся доступными для следующего шага. .  
 

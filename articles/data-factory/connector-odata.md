@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 30bad3dd519d622d7e224da7bd53e7c6625014f6
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: a31f0618f7e9dc8fdb0e9b2988d3d3c32fefcf64
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966479"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277670"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "68966479"
 - OData версии 3.0 и 4.0.
 - Копирование данных с использованием одного из следующих типов аутентификации: **Анонимная**, **Базовая**, **Windows**, **Субъект-служба AAD** и **Управляемые удостоверения для ресурсов Azure**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -212,6 +212,7 @@ ms.locfileid: "68966479"
     "properties":
     {
         "type": "ODataResource",
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<OData linked service name>",
             "type": "LinkedServiceReference"
@@ -232,11 +233,11 @@ ms.locfileid: "68966479"
 
 ### <a name="odata-as-source"></a>OData в качестве источника
 
-Чтобы копировать данные из OData, установите тип **источника** **RelationalSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из OData, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство **type** источника действия копирования должно иметь значение **RelationalSource**. | Да |
+| type | Свойство **Type** источника действия копирования должно иметь значение **одатасаурце**. | Да |
 | query | Параметры запроса OData для фильтрации данных. Пример: `"$select=Name,Description&$top=5"`.<br/><br/>**Примечание**. Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример**
@@ -260,7 +261,7 @@ ms.locfileid: "68966479"
         ],
         "typeProperties": {
             "source": {
-                "type": "RelationalSource",
+                "type": "ODataSource",
                 "query": "$select=Name,Description&$top=5"
             },
             "sink": {
@@ -270,6 +271,8 @@ ms.locfileid: "68966479"
     }
 ]
 ```
+
+Если вы использовали `RelationalSource` типизированный источник, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
 
 ## <a name="data-type-mapping-for-odata"></a>Сопоставление типов данных для OData
 

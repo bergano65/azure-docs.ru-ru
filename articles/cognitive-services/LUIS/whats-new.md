@@ -9,20 +9,26 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/22/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: a7f64a07378b5ef0085fe77018d6b202984bc1a3
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: b29fdf4e5b3f2719865820695f659df7e75e19b5
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945825"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70256425"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
 Узнайте о новых возможностях службы. Эти элементы могут выпустить заметки, видео, записи в блоге и другие типы информации. Закладка этой страницы для обновления со службой.  
 
 ## <a name="release-notes"></a>Заметки о выпуске 
+
+### <a name="september-3-2019"></a>3 сентября 2019 г.
+
+* Azure Authoring Resource. [выполните миграцию сейчас](luis-migration-authoring.md).
+* Поддержка турецкого языка для предварительно созданных сущностей
+* Поддержка итальянского языка для datetimeV2
 
 ### <a name="july-23-2019"></a>23 июля 2019 г.
 
@@ -37,7 +43,7 @@ ms.locfileid: "68945825"
 
 ### <a name="june-24-2019"></a>24 июня 2019 г.
 
-* [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md) предварительно созданную сущность для поддержки упорядочивания, например следующего, предыдущего и последнего. Только английский язык.
+* [OrdinalV2 предварительно созданную сущность](luis-reference-prebuilt-ordinal-v2.md) для поддержки упорядочивания, например следующего, предыдущего и последнего. Только английский язык.
 
 ### <a name="may-6-2019---build-conference"></a>6 мая, 2019-//Build Конференция
 

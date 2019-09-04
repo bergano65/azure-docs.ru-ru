@@ -7,12 +7,12 @@ ms.date: 12/11/2018
 ms.topic: troubleshooting
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 8cbefcbadc14c1249d2783f1539e40c99c3be66c
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 14e957986df7a114b8c865ee82e2ac447683dc2c
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231566"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257176"
 ---
 # <a name="troubleshoot-errors-using-azure-blueprints"></a>Устранение неполадок с помощью службы Azure Blueprint
 
@@ -63,7 +63,7 @@ ms.locfileid: "70231566"
 
 #### <a name="resolution"></a>Разрешение
 
-Чтобы передать функцию в качестве параметра, направьте всю строку с `[` так, чтобы параметр схемы был похож на `[[resourceGroup().tags.myTag]`. Escape-символ заставляет схемы обрабатывать значение как строку при обработке. Схемы затем помещают функцию на артефакт, позволяя ему быть динамичным, как и ожидалось. Дополнительные сведения см. в разделе [шаблон файла шаблона-синтаксис](../../../azure-resource-manager/resource-group-authoring-templates.md#syntax).
+Чтобы передать функцию в качестве параметра, направьте всю строку с `[` так, чтобы параметр схемы был похож на `[[resourceGroup().tags.myTag]`. Escape-символ заставляет схемы обрабатывать значение как строку при обработке. Схемы затем помещают функцию на артефакт, позволяя ему быть динамичным, как и ожидалось. Дополнительные сведения см. [в разделе синтаксис и выражения в шаблонах Azure Resource Manager](../../../azure-resource-manager/template-expressions.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

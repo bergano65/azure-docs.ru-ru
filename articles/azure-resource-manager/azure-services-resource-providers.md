@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: tomfitz
-ms.openlocfilehash: b500a7b2c74acbd4e035e710f7e25f1aacd86126
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 3df481245db8d737032d1abf5906a2ffe949a2fe
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194867"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275710"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -102,9 +102,9 @@ ms.locfileid: "70194867"
 | Microsoft.LogAnalytics | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.Logic | [Logic Apps](../logic-apps/index.yml) |
 | Microsoft.MachineLearning | [Машинное обучение Studio](../machine-learning/studio/index.yml) |
-| Microsoft.MachineLearningCompute | [Служба Машинное обучение](../machine-learning/service/index.yml) |
-| Microsoft.MachineLearningModelManagement | [Служба Машинное обучение](../machine-learning/service/index.yml) |
-| Microsoft.MachineLearningServices | [Служба Машинное обучение](../machine-learning/service/index.yml) |
+| Microsoft.MachineLearningCompute | [Служба Машинное обучение](../machine-learning/index.yml) |
+| Microsoft.MachineLearningModelManagement | [Служба Машинное обучение](../machine-learning/index.yml) |
+| Microsoft.MachineLearningServices | [Служба Машинное обучение](../machine-learning/index.yml) |
 | Microsoft.ManagedIdentity | [Управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/index.yml) |
 | Microsoft.ManagedLab | [Службы лаборатории Azure](../lab-services/index.yml) |
 | Microsoft.Management | [Группы управления](/azure/governance/management-groups/) |

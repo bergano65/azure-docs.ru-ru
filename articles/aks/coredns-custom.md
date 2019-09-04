@@ -7,18 +7,18 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
-ms.openlocfilehash: 5a69882f6bb38ac8e005ce5552fe57383a58cc63
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 40c170575e0b6e6264eed8a464ac73012cbe8627
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69542577"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70276501"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка Кореднс с помощью службы Kubernetes Azure
 
 Служба Azure Kubernetes Service (AKS) использует проект [кореднс][coredns] для управления DNS кластера и разрешения для всех кластеров *1.12. x* и более поздних версий. Ранее использовался проект KUBE-DNS. Этот проект KUBE-DNS теперь устарел. Дополнительные сведения о настройке Кореднс и Kubernetes см. в [официальной вышестоящей документации][corednsk8s].
 
-Так как AKS является управляемой службой, вы не можете изменить основную конфигурацию Кореднс ( *корефиле*). Вместо этого используйте Kubernetes *ConfigMap* для переопределения параметров по умолчанию. Чтобы просмотреть AKS кореднс конфигмапс по умолчанию, используйте `kubectl get configmaps -namespace=kube-system coredns -o yaml` команду.
+Так как AKS является управляемой службой, вы не можете изменить основную конфигурацию Кореднс ( *корефиле*). Вместо этого используйте Kubernetes *ConfigMap* для переопределения параметров по умолчанию. Чтобы просмотреть AKS кореднс конфигмапс по умолчанию, используйте `kubectl get configmaps --namespace=kube-system coredns -o yaml` команду.
 
 В этой статье показано, как использовать Конфигмапс для базовых параметров настройки Кореднс в AKS.
 

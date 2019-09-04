@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/25/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: e55b191e937b6c9f8183b3878b264eb50401b3f1
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: a37280fddf34221a9d08501ef55c6b069cd877a4
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69903873"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242753"
 ---
 <a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети. Azure Resource Manager следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **Azure Resource Manager** для каждого региона на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
@@ -51,7 +51,7 @@ ms.locfileid: "69903873"
 | --- | --- | --- |
 | Общедоступные IP-адреса (динамические) | 1 000 для Basic. |Обратитесь в службу поддержки. |
 | Общедоступные IP-адреса (статические) | 1 000 для Basic. |Обратитесь в службу поддержки. |
-| Общедоступные IP-адреса (статические) | 200 для Standard.|Обратитесь в службу поддержки. |
+| Общедоступные IP-адреса (статические) | 1 000 для Standard.|Обратитесь в службу поддержки. |
 | Длина префикса общедоступного IP-адреса | /28 | Обратитесь в службу поддержки. |
 
 #### <a name="load-balancer"></a>Ограничения подсистемы балансировки нагрузки

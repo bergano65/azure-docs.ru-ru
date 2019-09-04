@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 869be11639fd4e957a991cadb44f2714875ddf7e
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: d9aadc477c3f39cfbb108d2f3eece0c9e0b06264
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232720"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70239149"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получение данных о соответствии ресурсов Azure
 
@@ -27,8 +27,6 @@ ms.locfileid: "70232720"
 
 > [!WARNING]
 > Если состояние соответствия указывается как **не зарегистрировано**, убедитесь, что поставщик ресурсов **Microsoft. полициинсигхтс** зарегистрирован и что пользователь имеет соответствующие разрешения управления доступом на основе ролей (RBAC), как описано в [RBAC в Политика Azure](../overview.md#rbac-permissions-in-azure-policy).
-
-[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
 ## <a name="evaluation-triggers"></a>Триггеры оценки
 
@@ -144,7 +142,7 @@ _Общее количество ресурсов_ определяется ка
 
 <a name="change-history-preview"></a>
 
-Если ресурсы определены как несовместимые,существует множество возможных причин. Чтобы определить причину, по которой ресурс не **соответствует требованиям** , или найти ответственного за изменение, см. раздел [Определение несоответствия](./determine-non-compliance.md).
+Если ресурсы определены **как несовместимые, существует**множество возможных причин. Чтобы определить причину, по которой ресурс не **соответствует требованиям** , или найти ответственного за изменение, см. раздел [Определение несоответствия](./determine-non-compliance.md).
 
 ## <a name="command-line"></a>Командная строка
 

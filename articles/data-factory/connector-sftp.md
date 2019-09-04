@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 37bdcb48dcd37bf81aac8f5c2e1213d7f0deb327
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: f51e93ff164c0ec2352c1a57eb698a4374fbe5c9
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966447"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70276922"
 ---
 # <a name="copy-data-from-sftp-server-using-azure-data-factory"></a>Копирование данных с SFTP-сервера с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -39,7 +39,7 @@ ms.locfileid: "68966447"
 - Копирование файлов с использованием **базовой** проверки подлинности или проверки подлинности **SshPublicKey**.
 - Копирование файлов "как есть" или анализ файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -177,12 +177,12 @@ ms.locfileid: "68966447"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). 
 
-- **Текст и двоичный формат с разделителями Parquet**см. в разделе [набор данных в текстовом и двоичном формате с разделителями Parquet](#format-based-dataset) .
-- Другие форматы, такие как **ORC/Avro/JSON**, см. в разделе [другой формат набора данных](#other-format-dataset) .
+- Для **Parquet, текста с разделителями, Avro и двоичного формата**см. раздел [набор данных Parquet, с разделителями, Avro и двоичного формата](#format-based-dataset) .
+- Другие форматы, например **Формат ORC/JSON**, см. в разделе [другой формат набора данных](#other-format-dataset) .
 
-### <a name="format-based-dataset"></a>Parquet, текстовый и двоичный наборы данных с разделителями
+### <a name="format-based-dataset"></a>Parquet, текстовый набор данных с разделителями, Avro и двоичный формат
 
-Чтобы скопировать данные в **Parquet, разделенный текст или двоичный**формат, см. статью [Формат Parquet](format-parquet.md), [текстовый формат](format-delimited-text.md) с разделителями и [двоичный формат](format-binary.md) , посвященный набору данных на основе формата и поддерживаемым параметрам. Следующие свойства поддерживаются для SFTP в `location` параметрах в наборе данных на основе формата:
+Чтобы скопировать данные в **Parquet, разделенный текст или двоичный формат**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md), [Формат Avro](format-avro.md) и [двоичный формат](format-binary.md) в наборе данных на основе формата и поддерживаемых параметрах. Следующие свойства поддерживаются для SFTP в `location` параметрах в наборе данных на основе формата:
 
 | Свойство   | Описание                                                  | Обязательно для заполнения |
 | ---------- | ------------------------------------------------------------ | -------- |
@@ -191,7 +191,7 @@ ms.locfileid: "68966447"
 | fileName   | Имя файла в заданной folderPath. Если вы хотите использовать подстановочные знаки для фильтрации файлов, пропустите этот параметр и укажите в параметрах источника действия. | Нет       |
 
 > [!NOTE]
-> Набор данных типа "Общая папка" с форматом Parquet/Text, упоминаемым в следующем разделе, по-прежнему поддерживается "как есть" для действия копирования, поиска и работы с метаданными для обратной совместимости. Рекомендуется использовать эту новую модель для перемотки, и пользовательский интерфейс создания ADF переключился на создание этих новых типов.
+> Набор **данных типа "** общая папка" с форматом Parquet/Text, упоминаемым в следующем разделе, по-прежнему поддерживается "как есть" для действия копирования, поиска и работы с метаданными для обратной совместимости. Рекомендуется использовать эту новую модель для перемотки, и пользовательский интерфейс создания ADF переключился на создание этих новых типов.
 
 **Пример.**
 
@@ -221,7 +221,7 @@ ms.locfileid: "68966447"
 
 ### <a name="other-format-dataset"></a>Другой формат набора данных
 
-Чтобы скопировать данные из SFTP в **формате ORC/Avro/JSON**, поддерживаются следующие свойства:
+Чтобы скопировать данные из SFTP в **формате ORC/JSON**, поддерживаются следующие свойства:
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -276,12 +276,12 @@ ms.locfileid: "68966447"
 
 ### <a name="sftp-as-source"></a>SFTP в качестве источника
 
-- Чтобы скопировать данные из **Parquet, разделенного текста и двоичного формата**, см. раздел [Source и исходный формат с разделителями Parquet](#format-based-source) .
-- Чтобы скопировать данные из других форматов, таких как **ORC/Avro/JSON**, обратитесь к другому разделу [исходного формата](#other-format-source) .
+- Для копирования из **Parquet, разделенного текста, Avro и двоичного формата**, см. раздел [Parquet, Text с разделителями, Avro и источник двоичного формата](#format-based-source) .
+- Чтобы выполнить копирование из других форматов, таких как **Формат ORC/JSON**, см. [другой раздел исходного формата](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, источник текста и двоичного формата с разделителями
+#### <a name="format-based-source"></a>Parquet, текст с разделителями, Avro и источник двоичного формата
 
-Чтобы скопировать данные из **Parquet, разделенного текстом или двоичного формата**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md) и [двоичный формат](format-binary.md) для источника действия копирования на основе формата и поддерживаемых параметров. Следующие свойства поддерживаются для SFTP в `storeSettings` параметрах в источнике копирования на основе формата:
+Чтобы скопировать данные из **Parquet, разделенного текстом или двоичного формата**, см. статью [Формат Parquet](format-parquet.md), [текстовый формат с разделителями](format-delimited-text.md), [Формат Avro](format-avro.md) и [двоичный формат](format-binary.md) для источника действия копирования на основе формата и поддерживаемые параметры. Следующие свойства поддерживаются для SFTP в `storeSettings` параметрах в источнике копирования на основе формата:
 
 | Свойство                 | Описание                                                  | Обязательно для заполнения                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
@@ -339,7 +339,7 @@ ms.locfileid: "68966447"
 
 #### <a name="other-format-source"></a>Другой источник формата
 
-Чтобы скопировать данные из SFTP в **формате ORC/Avro/JSON**, в разделе **источник** действия копирования поддерживаются следующие свойства.
+Чтобы скопировать данные из SFTP в **формате ORC/JSON**, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -385,9 +385,9 @@ ms.locfileid: "68966447"
 
 | folderPath | fileName | recursive | Структура исходной папки и результат фильтрации (извлекаются файлы, выделенные **полужирным** шрифтом)|
 |:--- |:--- |:--- |:--- |
-| `Folder*` | (пусто, используйте по умолчанию) | False | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | (пусто, используйте по умолчанию) | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 | `Folder*` | (пусто, используйте по умолчанию) | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | False | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*` | `*.csv` | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 | `Folder*` | `*.csv` | true | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 
 ## <a name="next-steps"></a>Следующие шаги

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 94bdeebcecdf924468f022ac95867bd82df5a793
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 1d64a25fc60a1a1cbe1ed04f87a57556b7de0b88
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231319"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70259021"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "70231319"
 
 - Настройте локальную среду выполнения интеграции (версии 3,17 или более поздней). Дополнительные сведения см. [в разделе Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
 
-- Скачайте 64-разрядный [соединитель SAP для Microsoft .NET 3,0](https://support.sap.com/en/product/connectors/msnet.html) с веб-сайта SAP и установите его на компьютере с локальной средой выполнения интеграции. Во время установки убедитесь, что в окне необязательные **шаги установки** выбран параметр **установить сборки в глобальный кэш сборок** .
+- Скачайте 64-разрядный [соединитель SAP для Microsoft .NET 3,0](https://support.sap.com/en/product/connectors/msnet.html) с веб-сайта SAP и установите его на компьютере с локальной средой выполнения интеграции. Во время установки убедитесь, что в окне **необязательные шаги установки** выбран параметр **установить сборки в глобальный кэш сборок** .
 
   ![Установка соединителя SAP для .NET](./media/connector-sap-business-warehouse-open-hub/install-sap-dotnet-connector.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "70231319"
 | `clientId` | Идентификатор клиента в системе SAP.<br/>Допустимое значение: Трехзначный десятичное число, представленное в виде строки. | Да |
 | `language` | Язык, используемый системой SAP.<br/>По умолчанию имеет значение `EN`.| Нет |
 | `userName` | Имя пользователя, имеющего доступ к серверу SAP. | Да |
-| `password` | Пароль пользователя. Пометьте это поле `SecureString` типом, чтобы безопасно хранить его в фабрике данных, или сослаться на [секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| `password` | Пароль пользователя. Пометьте это поле `SecureString` типом, чтобы безопасно хранить его в фабрике данных, или [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | `sncMode` | Индикатор активации SNC для доступа к серверу SAP, на котором расположена таблица.<br/>Используйте, если вы хотите использовать SNC для подключения к серверу SAP.<br/>Допустимые значения `0` : (выкл., по умолчанию) или `1` (вкл.). | Нет |
 | `sncMyName` | SNC-имя инициатора для доступа к серверу SAP, на котором расположена таблица.<br/>Применяется, `sncMode` если включен. | Нет |
 | `sncPartnerName` | SNC-имя коммуникационного партнера для доступа к серверу SAP, на котором расположена таблица.<br/>Применяется, `sncMode` если включен. | Нет |

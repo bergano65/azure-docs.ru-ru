@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
-ms.openlocfilehash: 7c4af8346b5da20c662b5549284a3540d08908f8
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 4ebdf1d14b1f8721a3709a7e8c90f2a1db76b6fc
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072925"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70259128"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
@@ -44,9 +44,9 @@ beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'
 
 ---
 
-### <a name="to-hdinsight-enterprise-security-package-esp-cluster"></a>В кластер HDInsight Корпоративный пакет безопасности (ESP)
+### <a name="to-hdinsight-enterprise-security-package-esp-cluster-using-kerberos"></a>В кластер HDInsight Корпоративный пакет безопасности (ESP) по протоколу Kerberos
 
-При подключении клиента к кластеру корпоративный пакет безопасности (ESP), присоединенному к Azure Active Directory (AAD) на компьютере в той же области кластера, необходимо также указать имя `<AAD-Domain>` домена и имя учетной записи пользователя домена с разрешениями на доступ к кластеру `<username>`:
+При подключении клиента к кластеру корпоративный пакет безопасности (ESP), присоединенному к Azure Active Directory (AAD) — DS на компьютере в той же области кластера, необходимо также указать имя `<AAD-Domain>` домена и имя учетной записи пользователя домена с разрешения на доступ к кластеру `<username>`:
 
 ```bash
 kinit <username>
@@ -57,12 +57,18 @@ beeline -u 'jdbc:hive2://<headnode-FQDN>:10001/default;principal=hive/_HOST@<AAD
 
 ---
 
-### <a name="over-public-internet"></a>Через общедоступный Интернет
+### <a name="over-public-or-private-endpoints"></a>Через общедоступные или частные конечные точки
 
-При подключении к кластеру ESP, не входящему в ESP, или Azure Active Directory (AAD) через общедоступный Интернет, необходимо указать имя учетной записи `admin`для входа в кластер (по умолчанию) и пароль. Например, при использовании Beeline из системы клиента для подключения к адресу `<clustername>.azurehdinsight.net`. Это подключение устанавливается через порт `443` и шифруется с помощью SSL:
+При подключении к кластеру с помощью общедоступных или частных конечных точек необходимо указать имя учетной записи для `admin`входа в кластер (по умолчанию) и пароль. Например, при использовании Beeline из системы клиента для подключения к адресу `<clustername>.azurehdinsight.net`. Это подключение устанавливается через порт `443` и шифруется с помощью SSL:
 
 ```bash
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p password
+```
+
+или для частной конечной точки:
+
+```bash
+beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p password
 ```
 
 Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Замените `password` паролем этой учетной записи.
@@ -73,13 +79,21 @@ beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportM
 
 Apache Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Для разрешения запросов эта служба использует Spark SQL вместо Hive и может обеспечить более высокую производительность в зависимости от запроса.
 
-#### <a name="over-public-internet-with-apache-spark"></a>Через общедоступный Интернет с Apache Spark
+#### <a name="through-public-or-private-endpoints"></a>Через общедоступные или частные конечные точки
 
-Строка подключения, используемая при подключении через Интернет, немного отличается. Вместо содержащего `httpPath=/hive2` `httpPath/sparkhive2`его:
+Используемая строка подключения немного отличается. Вместо содержащего `httpPath=/hive2` `httpPath/sparkhive2`его:
 
 ```bash 
 beeline -u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p password
 ```
+
+или для частной конечной точки:
+
+```bash 
+beeline -u 'jdbc:hive2://clustername-int.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/sparkhive2' -n admin -p password
+```
+
+Замените `clustername` на имя вашего кластера HDInsight. Замените `admin` учетной записью для входа в кластер. Замените `password` паролем этой учетной записи.
 
 ---
 

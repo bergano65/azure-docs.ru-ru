@@ -5,19 +5,19 @@ author: madams0013
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: t-maadam
-ms.openlocfilehash: ddf4411c381971f32e0be5c537cdba69075a2273
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.author: jasonh
+ms.openlocfilehash: 7df0e92bd6dba988e7a8241f7076410c3cafca37
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67877237"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258729"
 ---
 # <a name="how-to-add-a-recipient-to-an-existing-data-share-in-azure-data-share-preview"></a>Как добавить получателя в существующую общую папку данных в предварительной версии Azure Data Share
 
 В этой статье показано, как добавить получателей в уже имеющуюся общую папку данных. 
 
-Сведения о том, как добавлять получателей при создании общего ресурса, см. в руководстве по совместному использованию [данных](share-your-data.md) .
+Сведения о том, как добавлять получателей при создании общего ресурса, см. в руководстве по [совместному использованию данных](share-your-data.md) .
 
 ## <a name="navigate-to-a-sent-data-share"></a>Переход к отправленной общей папке данных
 

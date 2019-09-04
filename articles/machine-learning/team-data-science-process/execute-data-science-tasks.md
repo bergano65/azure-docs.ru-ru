@@ -10,18 +10,18 @@ ms.topic: article
 ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 9d8ae3a95262b1554e7e97fac8375a44743bf4df
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb792034e49b0f8f663eb9ee968ea6fac1372373
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60344671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278614"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
 В типичным задачам обработки и анализа данных относятся изучение, моделирование и развертывание. В этой статье показано, как использовать служебные программы для **интерактивного изучения данных, анализа данных и создания отчетов (IDEAR)** и **автоматического моделирования и создания отчетов (АМАР)** для выполнения типичных задач обработки и анализа данных, в том числе интерактивного изучения данных, анализа данных, создания отчетов и создания моделей. В ней также описаны варианты развертывания модели в рабочей среде с помощью различных платформ данных и наборов средств, в том числе следующих:
 
-- [машинное обучение Azure](../service/index.yml)
+- [машинное обучение Azure](../index.yml)
 - [SQL Server со службами машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/r/r-services)
 - [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
 
@@ -73,7 +73,7 @@ ms.locfileid: "60344671"
 ### <a name="model-management"></a>Управление моделями
 После создания нескольких моделей обычно требуется система для регистрации моделей и управления ими. Обычно требуется сочетание сценариев или интерфейсов API и серверной базы данных или системы управления версиями. Ниже приведено несколько инструментов, которые можно рассмотреть для выполнения этих задач управления:
 
-1. [Служба "Машинное обучение Azure" — служба управления моделями](../service/index.yml)
+1. [Служба "Машинное обучение Azure" — служба управления моделями](../index.yml)
 2. [ModelDB из MIT](https://mitdbg.github.io/modeldb/) 
 3. [SQL Server как система управления моделями](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
 4. [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
@@ -106,7 +106,7 @@ ms.locfileid: "60344671"
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
 

@@ -8,18 +8,22 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ee359b76072da3caee9ae1f5fab3d0fc28d25c0e
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: c06cd53e408ebcae24de487fe1d4d25e14aae11b
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972687"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240715"
 ---
 # <a name="connect-from-on-premises-to-cloudsimple-using-expressroute"></a>Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute
 
 Если у вас уже есть подключение Azure ExpressRoute из внешнего расположения (например, из локальной среды) в Azure, вы можете подключить его к среде Клаудсимпле. Это можно сделать с помощью функции Azure, которая позволяет двум каналам ExpressRoute подключаться друг к другу. Этот метод устанавливает защищенную, частную, высокоскоростную и низкую задержку подключение между двумя средами.
 
 [![Подключение к локальной системе ExpressRoute — Global Reach](media/cloudsimple-global-reach-connection.png)](media/cloudsimple-global-reach-connection.png)
+
+## <a name="before-you-begin"></a>Перед началом работы
+
+Для установления подключения Global Reach из локальной среды требуется блок сетевых адресов **/29** .  Адресное пространство/29 используется для транзитной сети между каналами ExpressRoute.  Транзитная сеть не должна перекрываться ни с одной из ваших виртуальных сетей Azure, локальных сетей или Клаудсимпле частными облаками.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -65,3 +69,8 @@ ms.locfileid: "69972687"
     * Тип проблемы: **Запрос на обслуживание**
     * Подтип проблемы: **Создание подключения ExpressRoute к локальной среде**
     * Укажите идентификатор ресурса и ключ авторизации, которые были скопированы и сохранены в области сведений.
+    * Укажите/29 адресного пространства сети для транзитной сети.
+
+## <a name="next-steps"></a>Следующие шаги
+
+* [Дополнительные сведения о сетевых подключениях Azure](cloudsimple-azure-network-connection.md)  

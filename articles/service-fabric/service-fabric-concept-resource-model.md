@@ -7,12 +7,12 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: atsenthi
-ms.openlocfilehash: 8e39318dcaa31a111908c6be1ae7a51d73eb7478
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 36c0f02202c738ac96d26b748b741cd8eee27380
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69623833"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241825"
 ---
 # <a name="what-is-the-service-fabric-application-resource-model"></a>Что такое модель ресурсов приложения Service Fabric?
 Рекомендуется развертывать Service Fabric приложения на кластере Service Fabric с помощью Azure Resource Manager. Этот метод позволяет описать приложения и службы в JSON и развернуть их в том же шаблоне диспетчер ресурсов, что и кластер. В отличие от развертывания приложений и управления ими с помощью PowerShell или Azure CLI, нет необходимости ждать готовности кластера. Регистрацию, подготовку и развертывание приложения можно выполнить за один шаг. Это рекомендуемая методика управления жизненным циклом приложения в кластере. Дополнительные сведения см. в [рекомендациях](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-service-fabric-resources).
@@ -50,10 +50,10 @@ ms.locfileid: "69623833"
 
 1. В Visual Studio щелкните правой кнопкой мыши проект голосования и выберите пакет.   
 ![Приложение пакета][PackageApplication]  
-2. Откройте только что созданный каталог **.\сервице-фабрик-дотнет-куиккстарт\вотинг\пкг\дебуг** и заархивировать содержимое в файл с именем голосование **. zip** , чтобы файл ApplicationManifest. XML находился в корне ZIP-файла.  
+2. Откройте только что созданный каталог **.\сервице-фабрик-дотнет-куиккстарт\вотинг\пкг\дебуг** и заархивировать содержимое в файл с именем **голосование. zip** , чтобы файл ApplicationManifest. XML находился в корне ZIP-файла.  
 ![ZIP-приложение][ZipApplication]  
 3. Переименуйте расширение файла с ZIP на **sfpkg**.
-4. В портал Azure в контейнере **приложения** вашей учетной записи хранения щелкните **Отправить** и отправить голосование **. sfpkg**.  
+4. В портал Azure в контейнере **приложения** вашей учетной записи хранения щелкните **Отправить** и отправить **голосование. sfpkg**.  
 ![Отправить пакет приложения][UploadAppPkg]
 
 Теперь приложение размещается на промежуточном уровне. Теперь все готово для создания шаблона Azure Resource Manager для развертывания приложения.      
@@ -154,6 +154,10 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 
 * [Моделирование приложения в Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model)
 * [Service Fabric манифесты приложения и службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-and-service-manifests)
+
+## <a name="see-also"></a>См. также
+* [Рекомендации](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
+* [Управление приложениями и службами как ресурсами Azure](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code)
 
 <!--Image references-->
 [CreateStorageAccount]: ./media/service-fabric-application-model/create-storage-account.png

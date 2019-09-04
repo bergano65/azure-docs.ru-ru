@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dapine
-ms.openlocfilehash: eaf689ecb8fd64dca15570179733b7d7539a352e
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: d05f98ae695dd428a28ce49934e05c60de6328bc
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050078"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257046"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -236,7 +236,7 @@ ApiKey={API_KEY}
 
 > [!IMPORTANT]
 > Для выполнения контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
-> Значение apiKey — это **ключ** на странице "ключи и конечные точки" на портале Luis. Он также доступен на `Cognitive Services` странице "ключи ресурсов Azure".  
+> Значение apiKey — это **ключ** на странице **ресурсов Azure** на портале Luis. Он также доступен на странице ключей ресурсов Azure `Cognitive Services` .  
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -329,7 +329,7 @@ curl -X GET \
 Последний контейнер, выпущенный в 2019//Build, будет поддерживать следующее:
 
 * Проверка орфографии Bing: запросы к конечной точке прогнозирования запросов `&spellCheck=true&bing-spell-check-subscription-key={bingKey}` с параметрами строки запроса. Дополнительные сведения см. в [руководстве по проверка орфографии Bing версии 7](luis-tutorial-bing-spellcheck.md) . Если эта функция используется, контейнер отправляет utterance в ресурс Проверка орфографии Bing версии 7.
-* [Новые](luis-reference-prebuilt-domains.md)предварительно созданные домены. Эти корпоративные домены включают сущности, примеры фразы продолжительностью и закономерности. Расширьте эти домены для собственного использования. 
+* [Новые предварительно созданные домены](luis-reference-prebuilt-domains.md). Эти корпоративные домены включают сущности, примеры фразы продолжительностью и закономерности. Расширьте эти домены для собственного использования. 
 
 <a name="unsupported-dependencies"></a>
 

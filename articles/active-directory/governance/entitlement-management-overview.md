@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 07/10/2019
+ms.date: 09/03/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d93a20494886bb7d563439e2699f60bedb646dcd
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 0c99ee1987b592a2e8314d529b118fb26945271e
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69032552"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241697"
 ---
-# <a name="what-is-azure-ad-entitlement-management-preview"></a>Что собой представляет управление правами Azure AD? (Предварительная версия)
+# <a name="what-is-azure-ad-entitlement-management-preview"></a>Что собой представляет управление правами Azure AD? (предварительная версия)
 
 > [!IMPORTANT]
 > Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
@@ -140,7 +140,19 @@ ms.locfileid: "69032552"
 
 Специализированные облака, такие как Azure для государственных организаций, Azure для Германии и Azure для Китая, в настоящее время недоступны для использования в этой предварительной версии.
 
+### <a name="which-users-must-have-licenses"></a>У каких пользователей должны быть лицензии?
+
+У клиента должно быть по крайней мере столько лицензий Azure AD Premium P2, сколько есть активных пользователей — участников. Пользователи активных участников в управлении назначениями включают:
+
+- Пользователь, инициирующий или утверждающий запрос пакета доступа.
+- Пользователь, которому был назначен пакет Access. 
+- Пользователь, Управляющий пакетами доступа.
+
+В рамках лицензий для пользователей-членов можно также разрешить несколько гостевых пользователей взаимодействовать с управлением назначением. Сведения о том, как вычислить количество гостевых пользователей, которые можно включить, см. в разделе [Azure Active Directory рекомендации по лицензированию службы совместной работы B2B](../b2b/licensing-guidance.md).
+
+Сведения о назначении лицензий пользователям см. [в статье назначение или удаление лицензий с помощью портала Azure Active Directory](../fundamentals/license-users-groups.md).
+
 ## <a name="next-steps"></a>Следующие шаги
 
-- [Руководство. Создание первого пакета Access](entitlement-management-access-package-first.md)
+- [Учебник. Создание первого пакета Access](entitlement-management-access-package-first.md)
 - [Распространенные сценарии](entitlement-management-scenarios.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 64bd71d89446a19d2afe56a32b0c7124e897cb48
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 8d7346bb61fad09e3f7c9098809463285ef57e93
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072413"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242481"
 ---
 # <a name="ip-addresses-of-azure-api-management"></a>IP-адреса службы управления API Azure
 
@@ -27,7 +27,9 @@ ms.locfileid: "70072413"
 
 ## <a name="ip-addresses-of-api-management-service"></a>IP-адреса службы управления API
 
-Если служба управления API является службой уровня "Разработчик", "базовый", "Стандартный" или "Премиум", вы можете получить IP-адреса из обзорной панели мониторинга ресурса в портал Azure.
+Каждый экземпляр службы управления API на уровне Developer, Basic, Standard или Premium имеет общедоступные IP-адреса, которые являются эксклюзивными только для этого экземпляра службы (они не используются совместно с другими ресурсами). 
+
+IP-адреса можно получить на панели мониторинга обзора ресурса в портал Azure.
 
 ![IP-адрес управления API](media/api-management-howto-ip-addresses/public-ip.png)
 

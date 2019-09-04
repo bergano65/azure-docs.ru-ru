@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.openlocfilehash: 01238885e68a39ff713bd346a9206668e16e7ee4
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 2d7532c51e2963c0dc9f8d02e7a0e32864e80f92
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195282"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278418"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
 
@@ -49,4 +49,3 @@ ms.locfileid: "70195282"
 Дополнительные примеры использования виртуальной машины для обработки и анализа данных см. здесь:
 
 * [Примеры](dsvm-samples-and-walkthroughs.md)
-

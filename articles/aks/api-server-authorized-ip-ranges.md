@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: fe0c9d7e870b56bf83b70845af9159ea0703c4ab
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 487940bfb5d6e7c5eebf99f804f57c3e17709377
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533628"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70276486"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительный просмотр — безопасный доступ к серверу API с помощью допустимых диапазонов IP-адресов в службе Kubernetes Azure (AKS)
 
@@ -27,6 +27,8 @@ ms.locfileid: "69533628"
 > * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
 ## <a name="before-you-begin"></a>Перед началом работы
+
+В этой статье предполагается, что вы работаете с кластерами, использующими [кубенет] [кубенет].  С помощью [сетевого интерфейса контейнера Azure (CNI)] [CNI-Networking], основанного на кластерах на основе, у вас не будет необходимой таблицы маршрутов для защиты доступа.  Таблицу маршрутов потребуется создать вручную.  Дополнительные сведения см. в разделе [Управление таблицами маршрутов](https://docs.microsoft.com/azure/virtual-network/manage-route-table) .
 
 Допустимые диапазоны IP-адресов сервера API работают только для создаваемых кластеров AKS. В этой статье показано, как создать кластер AKS с помощью Azure CLI.
 

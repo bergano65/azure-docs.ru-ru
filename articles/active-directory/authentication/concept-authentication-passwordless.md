@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ae8f6854241240249cb3b7494872cbbd8fd41e6
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: fc633780d8b816d8fc2e313bb1955a5719979efe
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68823776"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240871"
 ---
-# <a name="what-is-passwordless"></a>Что такое пароль?
+# <a name="what-is-passwordless"></a>Общие сведения о входе без пароля
 
 Многофакторная идентификация (MFA) — это отличный способ защитить организацию, но пользователи прибегают к работе с дополнительным уровнем поверх необходимости запоминать пароли. Методы проверки подлинности без пароля более удобны, так как пароль удаляется и заменяется чем-то, что вы или что вы понимаете.
 
@@ -26,7 +26,7 @@ ms.locfileid: "68823776"
 | --- | --- | --- |
 | Вход без пароля | Телефон или ключ безопасности | Биометрия или ПИН-код |
 
-При проверке подлинности у каждой организации есть свои потребности. В настоящее время корпорация Майкрософт предлагает Windows Hello, а именно для компьютеров Windows. Мы добавляем Microsoft Authenticator приложение и ключи безопасности FIDO2 в семейство, не защищенное паролем.
+При проверке подлинности у каждой организации есть свои потребности. В настоящее время корпорация Майкрософт предлагает Windows Hello для компьютеров под управлением Windows. Мы добавляем Microsoft Authenticator приложение и ключи безопасности FIDO2 в семейство, не защищенное паролем.
 
 ## <a name="microsoft-authenticator-app"></a>Приложение Microsoft Authenticator
 
