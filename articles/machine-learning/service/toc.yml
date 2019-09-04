@@ -290,12 +290,18 @@
               href: ../algorithm-module-reference/edit-metadata.md
             - name: Очистка недостающих данных
               href: ../algorithm-module-reference/clean-missing-data.md
+            - name: Хэширование признаков
+              href: ../algorithm-module-reference/feature-hashing.md
+            - name: Извлечение N-грамм из текста
+              href: ../algorithm-module-reference/extract-n-gram-features-from-text.md
             - name: Добавление столбцов
               href: ../algorithm-module-reference/add-columns.md
             - name: Добавление строк
               href: ../algorithm-module-reference/add-rows.md
             - name: Удаление дублирующихся строк
               href: ../algorithm-module-reference/remove-duplicate-rows.md
+            - name: Preprocess Text
+              href: ../algorithm-module-reference/preprocess-text.md
             - name: Объединение данных
               href: ../algorithm-module-reference/join-data.md
             - name: Разделение данных
