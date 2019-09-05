@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 4864e2c040ad6771ad187269de43d5978fc6324f
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 8a06573e6bcb2d5a6c6c97ad19e168f9c71aaa13
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876056"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308220"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Руководство по публикации разных типов предложений
 
@@ -34,7 +34,7 @@ ms.locfileid: "67876056"
 | **Тип предложения**    | **Описание**  |
 | :------------------- | :-------------------|
 | [**Виртуальные машины**](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) | Тип предложения "Виртуальная машина" используется при развертывании виртуального модуля в подписке, связанной с пользователем. |
-| [**Шаблоны решений**](https://docs.microsoft.com/azure/marketplace/marketplace-solution-templates) | Тип предложения "Шаблон решения" используется, если в решении требуются дополнительные возможности автоматизации развертывания и настройки, недоступные на обычной виртуальной машине. |
+| [**Шаблоны решений**](https://docs.microsoft.com/azure/marketplace/marketplace-solution-templates) | Используйте шаблон решения (также известный как приложение Azure), если решение требует дополнительного развертывания и автоматизации конфигурации за пределами простой виртуальной машины. Шаблоны решений могут использовать различные типы ресурсов Azure, включая, помимо прочего, виртуальные машины.  |
 | [**Управляемые приложения**](https://docs.microsoft.com/azure/marketplace/marketplace-managed-apps) | Тип предложения "Приложение Azure: управляемое приложение" используется в описанных ниже условиях. <br> <ul> <li> Вы развертываете решение на основе подписки для пользователя, применяя либо виртуальную машину, либо целое решение на основе IaaS. </li> <li>Вам или вашему клиенту требуется, чтобы решением управлял партнер. </li> <ul> |
 | [**Приложения SaaS**](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide) | Используйте тип предложения "Приложение SaaS", чтобы предоставить пользователю возможность приобрести ваше техническое решение на основе SaaS в виде подписки. |
 | [**Предложения контейнеров**](https://docs.microsoft.com/azure/marketplace/marketplace-containers) | Используйте тип предложения "Контейнер", если ваше решение представляет собой образ контейнера Docker, подготовленный в виде службы контейнеров Azure на основе Kubernetes. |

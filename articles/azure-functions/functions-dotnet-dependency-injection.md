@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 05/28/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 1dbbb6e7bd88e08520225515c422529dc260e1b2
-ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.openlocfilehash: e31f3dc166177ce36289b97d85d90a9582c9cae5
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68377369"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375999"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
@@ -35,7 +35,7 @@ ms.locfileid: "68377369"
 
 - [Пакет Microsoft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) Version 1.0.28 или более поздней версии
 
-- Необязательно: [Microsoft. Extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) требуется только для регистрации HttpClient при запуске
+- Дополнительно [Microsoft. Extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) требуется только для регистрации HttpClient при запуске
 
 ## <a name="register-services"></a>Регистрация служб
 
@@ -71,7 +71,7 @@ namespace MyNamespace
 
 ## <a name="use-injected-dependencies"></a>Использовать внедренные зависимости
 
-ASP.NET Core использует внедрение конструктора, чтобы сделать зависимости доступными для вашей функции. В следующем примере показано, как `IMyService` зависимости `HttpClient` и вставляются в функцию, активируемую HTTP.
+ASP.NET Core использует внедрение конструктора, чтобы сделать зависимости доступными для вашей функции. В следующем примере показано, как `IMyService` зависимости `HttpClient` и вставляются в функцию, активируемую HTTP. 
 
 ```csharp
 using System;
@@ -112,7 +112,7 @@ namespace MyNamespace
 }
 ```
 
-Использование внедрения конструктора означает, что не следует использовать статические функции, если вы хотите воспользоваться преимуществами внедрения зависимостей.
+Использование внедрения конструктора означает, что не следует использовать статические функции, если вы хотите воспользоваться преимуществами внедрения зависимостей. Для клиента Cosmos это см. [здесь](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/CodeSamples/AzureFunctions/AzureFunctionsCosmosClient.cs).
 
 ## <a name="service-lifetimes"></a>Время существования службы
 

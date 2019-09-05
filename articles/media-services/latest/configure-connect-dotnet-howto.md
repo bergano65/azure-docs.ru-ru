@@ -1,6 +1,6 @@
 ---
-title: Подключение к API v3 служб мультимедиа Azure — .NET
-description: Узнайте, как подключиться к API служб мультимедиа версии 3 с помощью .NET.
+title: Подключение к API служб мультимедиа Azure v3 — .NET
+description: Узнайте, как подключиться к API служб мультимедиа v3 с помощью .NET.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,61 +13,64 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: a256eb787d7e3dbd800ec2e630cac591b07ca0fc
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 3ddf5a1ab37ac0af25379394b4513627139fcbd5
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444169"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307953"
 ---
-# <a name="connect-to-media-services-v3-api---net"></a>Подключение к API v3 служб мультимедиа - .NET
+# <a name="connect-to-media-services-v3-api---net"></a>Подключение к API служб мультимедиа v3 — .NET
 
-В этой статье показано, как соединиться с пакета SDK для .NET v3 для служб мультимедиа Azure с помощью метода под основной учетной записью службы.
+В этой статье показано, как подключиться к пакету SDK .NET для служб мультимедиа Azure v3 с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Запомните имя группы ресурсов и имя учетной записи служб мультимедиа
-- Установите это средство, которое вы хотите использовать для разработки приложений .NET. В этой статье показано, как использовать [2019 г. Visual Studio Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. в разделе [работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другом редакторе кода.
+- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
+- Установите инструмент, который вы хотите использовать для разработки .NET. Действия, описанные в этой статье, показывают, как использовать [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. раздел [Работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другой редактор кода.
+
+> [!IMPORTANT]
+> Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
 
 ## <a name="create-a-console-application"></a>Создание консольного приложение
 
 1. Запустите Visual Studio. 
-1. Из **файл** меню, щелкните **New** > **проекта**. 
-1. Создание **.NET Core** консольное приложение.
+1. В меню **файл** выберите пункт **создать** > **проект**. 
+1. Создайте консольное приложение **.NET Core** .
 
-Предназначен для примера приложения в этом разделе `netcoreapp2.0`. Код использует «асинхронным методом main», который доступен, начиная с C# 7.1. См. в разделе, это [блог](https://blogs.msdn.microsoft.com/benwilli/2017/12/08/async-main-is-available-but-hidden/) для получения дополнительных сведений.
+Пример приложения в этом разделе: targets `netcoreapp2.0`. В коде используется "Async Main", который доступен начиная с C# 7,1. Дополнительные сведения см. в этом [блоге](https://blogs.msdn.microsoft.com/benwilli/2017/12/08/async-main-is-available-but-hidden/) .
 
-## <a name="add-required-nuget-packages"></a>Добавьте необходимые пакеты NuGet
+## <a name="add-required-nuget-packages"></a>Добавление необходимых пакетов NuGet
 
-1. В Visual Studio выберите **средства** > **диспетчер пакетов NuGet** > **консоли диспетчера NuGet**.
-2. В **консоль диспетчера пакетов** окно, используйте `Install-Package` команду, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
+1. В Visual Studio выберите **инструменты** >  > **Диспетчер пакетов NuGet** **консоль диспетчера NuGet**.
+2. В окне **консоли диспетчера пакетов** используйте `Install-Package` команду, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
 
 |Пакет|Описание|
 |---|---|
-|`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последнюю версию пакета служб мультимедиа Azure, проверьте [Microsoft.Azure.Management.Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
+|`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последний пакет служб мультимедиа Azure, проверьте [Microsoft. Azure. Management. Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
 |`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
-|`Microsoft.Extensions.Configuration.EnvironmentVariables`|Чтение значения конфигурации из переменных среды и локальные файлы JSON|
-|`Microsoft.Extensions.Configuration.Json`|Чтение значения конфигурации из переменных среды и локальные файлы JSON
-|`WindowsAzure.Storage`|Пакет SDK для хранилища|
+|`Microsoft.Extensions.Configuration.EnvironmentVariables`|Чтение значений конфигурации из переменных среды и локальных файлов JSON|
+|`Microsoft.Extensions.Configuration.Json`|Чтение значений конфигурации из переменных среды и локальных файлов JSON
+|`WindowsAzure.Storage`|Пакет SDK для службы хранилища|
 
-## <a name="create-and-configure-the-app-settings-file"></a>Создание и настройка файла параметров приложения
+## <a name="create-and-configure-the-app-settings-file"></a>Создание и Настройка файла параметров приложения
 
-### <a name="create-appsettingsjson"></a>Создание appsettings.json
+### <a name="create-appsettingsjson"></a>Создание appSettings. JSON
 
-1. Последовательно выберите go **Общие** > **текстовый файл**.
-1. Назовите его «appsettings.json».
-1. Задайте для свойства «Копировать в выходной каталог» значение «Копировать более позднюю версию» JSON-файл (так что приложение может получить доступ к его при публикации).
+1. Go Go **General** > **Text File**.
+1. Назовите его "appSettings. JSON".
+1. Установите свойство "Копировать в выходной каталог" JSON-файла в значение "Копировать при более поздней версии" (чтобы приложение могло получить доступ к нему при публикации).
 
-### <a name="set-values-in-appsettingsjson"></a>Установленные значения в файле appsettings.json
+### <a name="set-values-in-appsettingsjson"></a>Задание значений в appSettings. JSON
 
-Запустите `az ams account sp create` команды, как описано в разделе [доступа к интерфейсам API](access-api-cli-how-to.md). Эта команда возвращает json, который следует копировать в «appsettings.json».
+Выполните команду, как описано в разделе [API доступа.](access-api-cli-how-to.md) `az ams account sp create` Команда возвращает JSON, который необходимо скопировать в "appSettings. JSON".
  
 ## <a name="add-configuration-file"></a>Добавление файла конфигурации
 
-Для удобства добавьте файл конфигурации, который отвечает за чтение значения из «appsettings.json».
+Для удобства добавьте файл конфигурации, который отвечает за чтение значений из "appSettings. JSON".
 
-1. Добавьте новый класс .cs в проект. Назовите его `ConfigWrapper`. 
-1. Вставьте следующий код в этом файле (в этом примере предполагается, что у вас есть пространство имен является `ConsoleApp1`).
+1. Добавьте в проект новый класс CS. Назовите его `ConfigWrapper`. 
+1. Вставьте в этот файл следующий код (в этом примере предполагается, что у вас `ConsoleApp1`есть пространство имен).
 
 ```csharp
 using System;
@@ -138,9 +141,9 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="connect-to-the-net-client"></a>Подключиться к клиенту .NET
+## <a name="connect-to-the-net-client"></a>Подключение к клиенту .NET
 
-Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В приведенном ниже коде функция GetCredentialsAsync создает объект ServiceClientCredentials, исходя из учетных данных, указанное в локальный файл конфигурации.
+Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В приведенном ниже коде функция Жеткредентиалсасинк создает объект Сервицеклиенткредентиалс на основе учетных данных, указанных в локальном файле конфигурации.
 
 1. Откройте `Program.cs`.
 1. Вставьте следующий код:
@@ -223,7 +226,7 @@ namespace ConsoleApp1
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md) 
 - [Учебник. Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET](stream-live-tutorial-with-api.md)

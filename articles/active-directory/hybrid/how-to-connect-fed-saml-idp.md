@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Использовать поставщика удостоверений SAML 2.0 для единого входа — Azure'
+title: 'Azure AD Connect выполняет следующие функции: Использование поставщика удостоверений SAML 2,0 для единого входа в Azure'
 description: В этом документе описывается использование поставщика удостоверений, совместимого с SAML 2.0, для единого входа.
 services: active-directory
 author: billmath
@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e25060152577e7947a78aa0e8d78c85cc7fd2fad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ff4f1b81f476159c13d3725cd3cb1766aec7dc87
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65138342"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305115"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -41,7 +41,7 @@ ms.locfileid: "65138342"
 >     - почтовый клиент Windows 8 и Windows 8.1;
 >     - почтовый клиент Windows 10.
 
-Все остальные клиенты не поддерживаются в сценарии единого входа с помощью поставщика удостоверений SAML 2.0. Например классический клиент Lync 2010 не может войти в службу с помощью настроенного для единого входа поставщика удостоверений SAML 2.0.
+Все остальные клиенты не поддерживаются в сценарии единого входа с помощью поставщика удостоверений SAML 2.0. Например, клиент Lync 2010 для настольных компьютеров не может войти в службу с помощью поставщика удостоверений SAML 2,0, настроенного для единого входа.
 
 ## <a name="azure-ad-saml-20-protocol-requirements"></a>Требования Azure AD к протоколу SAML 2.0
 В этом документе подробно описываются требования к протоколу и формату сообщений, которые поставщик удостоверений SAML 2.0 должен выполнять для федерации с Azure AD с целью обеспечения единого входа в одну или несколько облачных служб Майкрософт (таких как Office 365). Проверяющей стороной SAML 2.0 (SP-STS) для облачной службы Майкрософт в этом сценарии является Azure AD.
@@ -71,8 +71,8 @@ ms.locfileid: "65138342"
 Привязки — это обязательные параметры взаимодействия, связанные с транспортом. В отношении привязок действуют указанные ниже требования.
 
 1. HTTPS — это обязательный транспорт.
-2.  Azure AD потребуется запрос HTTP POST для отправки токена во время входа.
-3.  Azure AD будет использовать HTTP POST для запроса проверки подлинности поставщика удостоверений и ПЕРЕНАПРАВЛЕНИЯ для выхода сообщение на поставщика удостоверений.
+2.  Во время входа Azure AD потребуется HTTP POST для отправки маркера.
+3.  Azure AD будет использовать HTTP POST для запроса проверки подлинности для поставщика удостоверений и перенаправить сообщение о выходе поставщику удостоверений.
 
 ## <a name="required-attributes"></a>Требуемые атрибуты
 В таблице ниже приведены требования к определенным атрибутам в сообщении SAML 2.0.
@@ -185,7 +185,7 @@ ms.locfileid: "65138342"
 
 
 1. Подключитесь к каталогу Azure AD в качестве администратора клиента: Connect-MsolService.
-2.  Настройте требуемый домен Office 365 для использования федерации с SAML 2.0: `$dom = "contoso.com" $BrandName - "Sample SAML 2.0 IDP" $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" $MyURI = "urn:uri:MySamlp2IDP" $MySigningCert = @" MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" "@ $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" $Protocol = "SAMLP" Set-MsolDomainAuthentication -DomainName $dom -FederationBrandName $dom -Authentication Federated -PassiveLogOnUri $MyURI -ActiveLogOnUri $ecpUrl -SigningCertificate $MySigningCert -IssuerUri $uri -LogOffUri $url -PreferredAuthenticationProtocol $Protocol` 
+2.  Настройте требуемый домен Office 365 для использования федерации с SAML 2.0: `$dom = "contoso.com" $BrandName - "Sample SAML 2.0 IDP" $LogOnUrl = "https://WS2012R2-0.contoso.com/passiveLogon" $LogOffUrl = "https://WS2012R2-0.contoso.com/passiveLogOff" $ecpUrl = "https://WS2012R2-0.contoso.com/PAOS" $MyURI = "urn:uri:MySamlp2IDP" $MySigningCert = @" MIIC7jCCAdagAwIBAgIQRrjsbFPaXIlOG3GTv50fkjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDEyh BREZTIFNpZ25pbmcgLSBXUzIwMTJSMi0wLnN3aW5mb3JtZXIuY29tMB4XDTE0MDEyMDE1MTY0MFoXDT E1MDEyMDE1MTY0MFowMzExMC8GA1UEAxMoQURGUyBTaWduaW5nIC0gV1MyMDEyUjItMC5zd2luZm9yb WVyLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKe+rLVmXy1QwCwZwqgbbp1/kupQ VcjKuKLitVDbssFyqbDTjP7WRjlVMWAHBI3kgNT7oE362Gf2WMJFf1b0HcrsgLin7daRXpq4Qi6OA57 sW1YFMj3sqyuTP0eZV3S4+ZbDVob6amsZIdIwxaLP9Zfywg2bLsGnVldB0+XKedZwDbCLCVg+3ZWxd9 T/jV0hpLIIWr+LCOHqq8n8beJvlivgLmDJo8f+EITnAxWcsJUvVai/35AhHCUq9tc9sqMp5PWtabAEM b2AU72/QlX/72D2/NbGQq1BWYbqUpgpCZ2nSgvlWDHlCiUo//UGsvfox01kjTFlmqQInsJVfRxF5AcC AwEAATANBgkqhkiG9w0BAQsFAAOCAQEAi8c6C4zaTEc7aQiUgvnGQgCbMZbhUXXLGRpjvFLKaQzkwa9 eq7WLJibcSNyGXBa/SfT5wJgsm3TPKgSehGAOTirhcqHheZyvBObAScY7GOT+u9pVYp6raFrc7ez3c+ CGHeV/tNvy1hJNs12FYH4X+ZCNFIT9tprieR25NCdi5SWUbPZL0tVzJsHc1y92b2M2FxqRDohxQgJvy JOpcg2mSBzZZIkvDg7gfPSUXHVS1MQs0RHSbwq/XdQocUUhl9/e/YWCbNNxlM84BxFsBUok1dH/gzBy Sx+Fc8zYi7cOq9yaBT3RLT6cGmFGVYZJW4FyhPZOCLVNsLlnPQcX3dDg9A==" "@ $uri = "http://WS2012R2-0.contoso.com/adfs/services/trust" $Protocol = "SAMLP" Set-MsolDomainAuthentication -DomainName $dom -FederationBrandName $BrandName -Authentication Federated -PassiveLogOnUri $LogOnUrl -ActiveLogOnUri $ecpUrl -SigningCertificate $MySigningCert -IssuerUri $MyURI -LogOffUri $LogOffUrl -PreferredAuthenticationProtocol $Protocol` 
 
 3.  Получить строку сертификата подписи в кодировке base64 можно из файла метаданных IDP. Пример его расположения приведен, но в зависимости от особенностей развертывания оно может быть немного иным.
 
@@ -194,7 +194,7 @@ ms.locfileid: "65138342"
 Дополнительные сведения о командлете Set-MsolDomainAuthentication см. в разделе [https://technet.microsoft.com/library/dn194112.aspx](https://technet.microsoft.com/library/dn194112.aspx).
 
 >[!NOTE]
->Использовать `$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"` только в том случае, если вы настроили расширение ECP для поставщика удостоверений. Клиенты Exchange Online, исключая Outlook Web Application (OWA), используют активную конечную точку на основе метода POST. Если служба токенов безопасности SAML 2.0 реализует активную конечную точку, аналогичную реализации активной конечной точки с помощью расширения ECP для Shibboleth, эти полнофункциональные клиенты могут взаимодействовать со службой Exchange Online.
+>Его необходимо запускать `$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"` , только если вы настроили расширение ECP для поставщика удостоверений. Клиенты Exchange Online, исключая Outlook Web Application (OWA), используют активную конечную точку на основе метода POST. Если служба токенов безопасности SAML 2.0 реализует активную конечную точку, аналогичную реализации активной конечной точки с помощью расширения ECP для Shibboleth, эти полнофункциональные клиенты могут взаимодействовать со службой Exchange Online.
 
 После настройки федерации можно вернуться к управляемой реализации (без поддержки федерации), однако на применение этого изменения требуется до двух часов, а каждому пользователю необходимо назначить новый случайный пароль для входа в облачные службы. Переключение к управляемой реализации может потребоваться в некоторых сценариях для сброса ошибочных параметров. Дополнительные сведения о преобразовании доменов см. в разделе [https://msdn.microsoft.com/library/windowsazure/dn194122.aspx](https://msdn.microsoft.com/library/windowsazure/dn194122.aspx).
 
@@ -209,7 +209,7 @@ ms.locfileid: "65138342"
 
 
 1. Подключитесь к каталогу Azure AD в качестве администратора клиента: Connect-MsolService.
-2.  Создание нового субъекта-пользователя:
+2.  Создайте нового участника-пользователя:
     ```powershell
     New-MsolUser
       -UserPrincipalName elwoodf1@contoso.com
@@ -258,7 +258,7 @@ ms.locfileid: "65138342"
 2.  Чтобы начать загрузку и установку средства, щелкните "Установить сейчас".
 3.  Выберите пункт "Не удается настроить федерацию с Office 365, Azure или другими службами, использующими Azure Active Directory".
 4.  После загрузки и запуска средства откроется окно "Диагностика подключений". Средство предоставляет пошаговые инструкции по тестированию подключения федерации.
-5.  Анализатор подключений откроет поставщика Удостоверений SAML 2.0 для входа в систему, введите учетные данные тестируемого субъекта-пользователя: ![SAML](./media/how-to-connect-fed-saml-idp/saml1.png)
+5.  Анализатор подключений откроет SAML 2,0 IDP для входа, введите учетные данные для тестируемого участника-пользователя: ![SAML](./media/how-to-connect-fed-saml-idp/saml1.png)
 6.  В диалоговом окне "Вход для выполнения тестирования федерации" следует ввести имя учетной записи и пароль клиента Azure AD, который настроен для федерации с поставщиком удостоверений SAML 2.0. Средство попытается выполнить вход, используя эти учетные данные, после чего выведет подробные результаты тестов, выполненных во время попытки входа.
 ![SAML](./media/how-to-connect-fed-saml-idp/saml2.png)
 7. В этом окне показано, что тест не пройден. Щелкнув ссылку "Просмотреть подробные результаты", можно просмотреть сведения о результатах каждого выполненного теста. Также можно сохранить результаты на диск, чтобы поделиться ими.
@@ -271,7 +271,7 @@ ms.locfileid: "65138342"
 Чтобы проверить, правильно ли настроен единый вход, выполните указанные ниже действия.
 
 
-1. На компьютере, присоединенном к домену войдите в облачную службу с тем же именем входа, используемое для корпоративных учетных данных.
+1. На компьютере, присоединенном к домену, войдите в облачную службу, используя то же имя входа, которое вы используете для корпоративных учетных данных.
 2.  Щелкните в поле "Пароль". Если единый вход настроен, поле "Пароль" станет темнее и отобразится следующее сообщение: "Вам нужно войти на веб-сайт &lt;ваша организация&gt;".
 3.  Щелкните ссылку "Sign-in at &lt;ваша организация&gt;" (Войти на веб-сайт "ваша организация"). Если вход возможен, то единый вход настроен.
 

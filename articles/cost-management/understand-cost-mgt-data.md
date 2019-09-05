@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 07/01/2019
+ms.date: 09/04/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: e44acfc66a8faf76068af9c31233e89c45ee02f7
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: b50c7c0fbd2ef2c3825ba4c69232b69188d7ffbb
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68953164"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308297"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -25,7 +25,7 @@ ms.locfileid: "68953164"
 
 ## <a name="supported-microsoft-azure-offers"></a>Поддерживаемые предложения Microsoft Azure
 
-Ниже приведены поддерживаемые в настоящее время [предложения Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) в службе "Управление затратами Azure". Предложение Azure — это тип имеющейся подписки Azure. Данные доступны в оснастке «Управление затратами **»** , начиная с данных, доступных на основе даты. Если подписка изменит предложения, затраты до даты изменения предложения будут недоступны. 
+Ниже приведены поддерживаемые в настоящее время [предложения Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) в службе "Управление затратами Azure". Предложение Azure — это тип имеющейся подписки Azure. Данные доступны в оснастке «Управление затратами **»** , начиная с данных, доступных на основе даты. Если подписка изменит предложения, затраты до даты изменения предложения будут недоступны.
 
 | **Категория**  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** | **Данные, доступные из** |
 | --- | --- | --- | --- | --- |
@@ -41,7 +41,6 @@ ms.locfileid: "68953164"
 | **Оплата по мере использования** | [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p)      | MPN_2014-09-01 | MS-AZR-0025P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Бесплатная пробная версия](https://azure.microsoft.com/offers/ms-azr-0044p) <sup>4</sup>         | FreeTrial_2014-09-01 | MS-AZR-0044P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | [Azure в открытом](https://azure.microsoft.com/offers/ms-azr-0111p) <sup>4</sup>      | AzureInOpen_2014-09-01 | MS-AZR-0111P | 2 октября, 2018<sup>2</sup> |
-| **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p) <sup>4</sup> | AzureForStudents_2018-01-01 | MS-AZR-0170P | 2 октября, 2018<sup>2</sup> |
 | **Оплата по мере использования** | Azure Pass<sup>4</sup>                                                            | AzurePass_2014-09-01 | MS-AZR-0120P, MS-AZR-0122P - MS-AZR-0125P, MS-AZR-0128P - MS-AZR-0130P | 2 октября, 2018<sup>2</sup> |
 | **Visual Studio** | [Visual Studio Enterprise — MPN](https://azure.microsoft.com/offers/ms-azr-0029p) <sup>4</sup>     | MPN_2014-09-01 | MS-AZR-0029P | 2 октября, 2018<sup>2</sup> |
 | **Visual Studio** | [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p) <sup>4</sup>         | MSDN_2014-09-01 | MS-AZR-0059P | 2 октября, 2018<sup>2</sup> |
@@ -66,6 +65,7 @@ _<sup>**4**</sup> исторические данные для подписок,
 | **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
 | **Оплата по мере использования**                 | Начальная версия Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования** | [Azure для учащихся](https://azure.microsoft.com/offers/ms-azr-0170p) <sup>4</sup> | AzureForStudents_2018-01-01 | MS-AZR-0170P |
 | **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
 | **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |

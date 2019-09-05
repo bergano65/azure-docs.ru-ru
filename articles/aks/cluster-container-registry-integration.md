@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: mlearned
-ms.openlocfilehash: 1f07581be8fc416f8aae5eec1460ca3d33bda8f9
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 3c11367945b74db9be20ade86c7bc26901440e4d
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114234"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305160"
 ---
 # <a name="preview---authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Предварительная версия — проверка подлинности с помощью реестра контейнеров Azure из службы Kubernetes Azure
 
@@ -31,13 +31,13 @@ ms.locfileid: "70114234"
 
 Необходимо следующее:
 
-* Роль **владельца** или **администратора учетной записи Azure** в подписке **Azure**
+* Роль **владельца** или **администратора учетной записи Azure** в **подписке Azure**
 * Кроме того, требуется Azure CLI версии 2.0.70 или более поздней, а также расширение AKS-Preview 0.4.8
-* На клиенте должен быть [установлен DOCKER](https://docs.docker.com/install/) , и необходим доступ к концентратору [DOCKER](https://hub.docker.com/) .
+* На клиенте должен быть [установлен DOCKER](https://docs.docker.com/install/) , и необходим доступ к [концентратору DOCKER](https://hub.docker.com/) .
 
 ## <a name="install-latest-aks-cli-preview-extension"></a>Установка последнего расширения AKS CLI Preview
 
-Требуется расширение **AKS-Preview 0.4.8** или более поздняя версия.
+Требуется расширение **AKS-Preview 0.4.13** или более поздняя версия.
 
 ```azurecli
 az extension remove --name aks-preview 
@@ -46,25 +46,33 @@ az extension add -y --name aks-preview
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией записей контроля доступа
 
-Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI создает запись контроля доступа в указанной группе ресурсов и настраивает соответствующую роль **акрпулл** для субъекта-службы. Если *имя записи контроля доступа* не существует в указанной группе ресурсов, автоматически создается имя `aks<resource-group>acr` записи контроля доступа по умолчанию.  Укажите допустимые значения для параметров ниже.  Параметры в квадратных скобках являются необязательными.
+Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже.  Параметры в квадратных скобках являются необязательными.
 ```azurecli
 az login
-az aks create -n myAKSCluster -g myResourceGroup --enable-acr [--acr <acr-name-or-resource-id>]
+az acr create -n myContainerRegistry -g myContainerRegistryResourceGroup --sku basic [in case you do not have an existing ACR]
+az aks create -n myAKSCluster -g myResourceGroup --attach-acr <acr-name-or-resource-id>
 ```
 \* * Идентификатор ресурса записи контроля доступа имеет следующий формат: 
 
-/Subscriptions/< Subscription-d >/resourceGroups/< ресурс-Group-name >/Провидерс/Микрософт.контаинеррегистри/регистриес/<name> 
+/Subscriptions/< Subscription-d >/resourceGroups/< ресурс-Group-name >/Провидерс/Микрософт.контаинеррегистри/регистриес/{наме} 
   
 Выполнение этого шага может занять несколько минут.
 
-## <a name="create-acr-integration-for-existing-aks-clusters"></a>Создание интеграции записей контроля доступа для существующих кластеров AKS
+## <a name="configure-acr-integration-for-existing-aks-clusters"></a>Настройка интеграции записей контроля доступа для существующих кластеров AKS
 
 Интегрируйте существующую запись контроля доступа с существующими кластерами AKS, указав допустимые значения для записей **контроля учетных** записей с именем или записи **контроля доступа (ИД ресурса** ), как показано ниже.
 
 ```azurecli
-az aks update -n myAKSCluster -g myResourceGroup --enable-acr --acr <acrName>
-az aks update -n myAKSCluster -g myResourceGroup --enable-acr --acr <acr-resource-id>
+az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
+az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```
+
+Вы также можете удалить интеграцию между записью контроля доступа и кластером AKS, выполнив следующие
+```azurecli
+az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
+az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
+```
+
 
 ## <a name="log-in-to-your-acr"></a>Вход в запись контроля доступа
 

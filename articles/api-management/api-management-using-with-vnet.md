@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
-ms.openlocfilehash: f79fffe2117de77e4e44dcbbaa782b2ade81e04b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: b89f4d2264924983aac93fb266efd71e46bea6bf
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164187"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305230"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure (виртуальных сетей) позволяют размещать любые ресурсы Azure в сети, не поддерживающей маршрутизацию через Интернет, которая управляет доступом к. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -25,7 +25,7 @@ ms.locfileid: "70164187"
 Службу управления API Azure можно развернуть в пределах виртуальной сети, обеспечив доступ к серверным службам в этой сети. Портал разработчика и шлюз API можно настроить для предоставления доступа как из Интернета, так и только в пределах виртуальной сети.
 
 > [!NOTE]
-> Служба управления API Azure поддерживает классические виртуальные сети и виртуальные сети Azure Resource Manager.
+> URL-адрес документа импорта API должен размещаться на общедоступном адресе в Интернете.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

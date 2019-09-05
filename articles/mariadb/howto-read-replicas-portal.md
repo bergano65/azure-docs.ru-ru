@@ -6,19 +6,16 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: a7e7beb3cdef7551a1bce2a693b8044ea6ed8946
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 939097ccca844e505819f5aad405d6322941b526
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309181"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MariaDB" с помощью портал Azure.
-
-> [!IMPORTANT]
-> Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Реплики чтения (в одном регионе и в разных регионах) сейчас доступны в общедоступной предварительной версии.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,7 +47,7 @@ ms.locfileid: "69907671"
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
    > [!NOTE]
-   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
+   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
 7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 

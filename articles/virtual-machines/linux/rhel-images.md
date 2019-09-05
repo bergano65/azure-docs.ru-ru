@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 8/14/2019
 ms.author: borisb
-ms.openlocfilehash: e18f1db80b8fcb2c8846ce0c7294e1766cfa1ca3
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: accc59ee31ddb7371774da3235cc9ccff24ad641
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70091382"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309225"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
@@ -133,12 +133,12 @@ RHEL-SAP-HANA | 6.7      | RAW    | Агент Linux | RHEL 6.7 for SAP HANA
 |             | 7.3      | Диспетчер логических томов    | Агент Linux | RHEL 7.3 for SAP HANA
 RHEL-SAP-APPS | 6,8      | RAW    | Агент Linux | RHEL 6.8 for SAP Business Applications
 |             | 7.3      | Диспетчер логических томов    | Агент Linux | RHEL 7.3 for SAP Business Applications
-RHEL-HA       | 7.4      | RAW    | Агент Linux | RHEL 7,4 с дополнением высокой доступности
-|             | 7.5      | RAW    | Агент Linux | RHEL 7,5 с дополнением высокой доступности
-|             | 7.6      | RAW    | Агент Linux | RHEL 7,6 с дополнением высокой доступности
-RHEL-SAP-HA   | 7.4      | RAW    | Агент Linux | RHEL 7,4 для SAP с надстройкой с высоким уровнем доступности
-|             | 7.5      | RAW    | Агент Linux | RHEL 7,5 для SAP с надстройкой с высоким уровнем доступности
-|             | 7.6      | RAW    | Агент Linux | RHEL 7,6 для SAP с надстройкой с высоким уровнем доступности
+RHEL-HA       | 7.4      | Диспетчер логических томов    | Агент Linux | RHEL 7,4 с дополнением высокой доступности
+|             | 7.5      | Диспетчер логических томов    | Агент Linux | RHEL 7,5 с дополнением высокой доступности
+|             | 7.6      | Диспетчер логических томов    | Агент Linux | RHEL 7,6 с дополнением высокой доступности
+RHEL-SAP-HA   | 7.4      | Диспетчер логических томов    | Агент Linux | RHEL 7,4 для SAP с надстройкой с высоким уровнем доступности
+|             | 7.5      | Диспетчер логических томов    | Агент Linux | RHEL 7,5 для SAP с надстройкой с высоким уровнем доступности
+|             | 7.6      | Диспетчер логических томов    | Агент Linux | RHEL 7,6 для SAP с надстройкой с высоким уровнем доступности
 
 ### <a name="old-naming-convention"></a>Старое соглашение об именовании
 До изменения соглашения об именовании, которое описано выше, в номерах SKU для семейств образов RHEL 7 и RHEL 6 использовались указанные выше версии.

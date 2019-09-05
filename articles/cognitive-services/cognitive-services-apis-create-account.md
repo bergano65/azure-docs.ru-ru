@@ -9,52 +9,48 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: aahi
-ms.openlocfilehash: c7db2b4d49e3b9297c32d2e11ffe7c7702c17544
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: ae25ffdf3f819c30fdfb1d3110042579f0b197b9
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70274686"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70381777"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
 
-Используйте это краткое руководство для создания ресурса Azure Cognitive Services с помощью портал Azure. После успешного создания Cognitive Services ресурса вы получите конечную точку и ключ, которые можно использовать для проверки подлинности приложений.
+Используйте это краткое руководство для начала работы с Azure Cognitive Services. После создания ресурса "поисковой службы" в портал Azure вы получите конечную точку и ключ для проверки подлинности приложений.
+
+
+[!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Допустимая подписка Azure — [создайте ее бесплатно](https://azure.microsoft.com/free/).
 
-[!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
-
 ## <a name="create-a-new-azure-cognitive-services-resource"></a>Создание нового ресурса Azure Cognitive Services
 
-Перед созданием ресурса Cognitive Services необходимо иметь группу ресурсов Azure, в которой будет содержаться ресурс. При создании нового ресурса можно либо создать новую группу ресурсов, либо использовать существующую. В этой статье показано, как создать новую группу ресурсов.
-
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
-
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreenMulti.png)
-
-2. Как упоминалось ранее, можно создать ресурс Cognitive Services двумя способами — с помощью ресурса нескольких служб или ресурса одной службы.
+1. Создает ресурса.
 
     #### <a name="multi-service-resourcetabmultiservice"></a>[Ресурс с несколькими службами](#tab/multiservice)
 
-    Чтобы создать ресурс с несколькими службами, введите **Cognitive Services** в строке поиска.
-
-    ![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/azureCogServSearchMulti.png)
-
-    На странице Cognitive Services выберите **создать**.
-
-    ![Создание учетной записи Cognitive Services](media/cognitive-services-apis-create-account/azurecogservsearchmulti-2.png)
+    Ресурс с несколькими службами называется **Cognitive Services** на портале. [Создайте ресурс Cognitive Services](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne).
+    
+    В настоящее время эти службы **нельзя** вызывать с помощью ключей нескольких служб: QnA Maker, службы речи, Пользовательское визуальное распознавание и детектор аномалий.
+    
 
     #### <a name="single-service-resourcetabsingleservice"></a>[Ресурс с одной службой](#tab/singleservice)
 
-    Чтобы просмотреть все доступные средства, выберите **AI + машинное обучение**в **Azure Marketplace**. Если вы не видите интересующую вас службу, щелкните **Показать все** и прокрутите до **Cognitive Services**. Щелкните **Подробнее** , чтобы просмотреть весь каталог Cognitive Services.
+    Используйте следующие ссылки, чтобы создать ресурс для доступных Cognitive Services.
 
-    Выбрав интересующую вас службу, нажмите кнопку **создать**.
-    
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
-
+    | Визуальное распознавание                      | Речь                  | Язык                          | Решение             | Поиск                 |
+    |-----------------------------|-------------------------|-----------------------------------|----------------------|------------------------|
+    | [Компьютерное зрение](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision)         | [Службы "Речь"](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)     | [Иммерсивное средство чтения](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesImmersiveReader)              | [Детектор аномалий](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector) | [Версии 7 API Поиск Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7) |
+    | [Пользовательская служба визуального представления](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) | [Распознавание говорящего](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeakerRecognition) | [Распознавание речи (LUIS)](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUIS) | [Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) | [Пользовательский поиск Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingCustomSearch) |
+    | [Распознавание лиц](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFace)                    |                         | [QnA Maker](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker)                     | [Персонализация](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer)     | [Поиск сущностей Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingEntitySearch) |
+    | [Распознаватель рукописного ввода](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesInkRecognizer)        |                         | [Анализ текста](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics)                |                      | [Проверка орфографии Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSpellCheck-v7)   |
+    |           |                         | [Перевод текстов](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation)               |                      | [Автозаполнение Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7)                       |
     ***
+
 3. На странице **Создание** введите приведенные ниже сведения.
 
     #### <a name="multi-service-resourcetabmultiservice"></a>[Ресурс с несколькими службами](#tab/multiservice)
@@ -89,32 +85,23 @@ ms.locfileid: "70274686"
 
 ## <a name="get-the-keys-for-your-resource"></a>Получение ключей для ресурса
 
-После успешного создания ресурса вы получите всплывающее уведомление в правом верхнем углу экрана. В уведомлении щелкните **Переход к ресурсу** , чтобы просмотреть созданный вами ресурс службы. 
+После успешного развертывания ресурса щелкните **"переход к ресурсу"** в разделе **дальнейшие действия**.
 
-![Переход к ресурсу службы "автообслуживание"](media/cognitive-services-apis-create-account/cog-serv-go-to-resource.png)
+![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/resource-next-steps.png)
 
-В открывшейся области быстрого запуска можно получить доступ к конечной точке и ключу.
+В открывшейся области быстрого запуска можно получить доступ к ключу и конечной точке.
 
 ![Получить ключ и конечную точку](media/cognitive-services-apis-create-account/get-cog-serv-keys.png)
 
 [!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
 
-## <a name="pricing-tiers-and-billing"></a>Ценовые категории и выставление счетов
-
-Ценовые категории (и сумма, за которую взимается плата) основываются на количестве отправленных вами транзакций с использованием данных проверки подлинности. Каждая ценовая категория определяет:
-* Максимальное число разрешенных транзакций в секунду (TPS).
-* функции службы, включенные в ценовой категории.
-* Стоимость предопределенного количества транзакций. При превышении этого объема взимается плата за дополнительную плату, указанную в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При удалении группы ресурсов также удаляются все другие ресурсы, содержащиеся в этой группе.
 
-Чтобы удалить группу ресурсов с помощью портала Azure, сделайте следующее:
-
 1. На портале Azure разверните меню слева, чтобы открыть меню служб, и выберите **Resource Groups** (Группы ресурсов), чтобы просмотреть список групп ресурсов.
-2. Выберите группу ресурсов для удаления и щелкните правой кнопкой мыши кнопку Дополнительно (...) в правой части списка.
-3. Выберите **Удалить группу ресурсов** и подтвердите выбор.
+2. Определение группы ресурсов, содержащей ресурс для удаления
+3. Щелкните правой кнопкой мыши список групп ресурсов. Выберите **Удалить группу ресурсов** и подтвердите выбор.
 
 ## <a name="see-also"></a>См. также
 

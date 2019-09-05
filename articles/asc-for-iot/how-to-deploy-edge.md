@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 7171923e4badb3355a64b63515d40e73fadca6b0
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 4e568d2322088d9f6f6b4f9ad6e4b3cd98f25a47
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596363"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376061"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на устройстве IoT Edge
 
@@ -40,7 +40,7 @@ ms.locfileid: "68596363"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- В центре Интернета вещей убедитесь, что устройство зарегистрировано [как устройство IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).
+- В центре Интернета вещей убедитесь, что устройство [зарегистрировано как устройство IOT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).
 
 - Центр безопасности Azure для модуля IoT Edge требует, чтобы на устройстве IoT Edge была установлена [платформа для аудита](https://linux.die.net/man/8/auditd) .
 
@@ -64,14 +64,14 @@ ms.locfileid: "68596363"
 
 1. Нажмите кнопку **создать** , чтобы настроить развертывание. 
 
-1. Выберите подписку Azure центра Интернета вещей, а затем выберите **центр Интернета вещей**.<br>Выберите **развернуть на устройстве** для использования с одним устройством или выберите **развернуть в масштабе** для выбора нескольких устройств и нажмите кнопку **создать**. Дополнительные сведения о развертывании в масштабе см. [в разделе Развертывание](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor). 
+1. Выберите **подписку** Azure центра Интернета вещей, а затем выберите **центр Интернета вещей**.<br>Выберите **развернуть на устройстве** для использования с одним устройством или выберите **развернуть в масштабе** для выбора нескольких устройств и нажмите кнопку **создать**. Дополнительные сведения о развертывании в масштабе см. [в разделе Развертывание](https://docs.microsoft.com/azure/iot-edge/how-to-deploy-monitor). 
 
     >[!Note] 
     >Если выбран параметр **развернуть в масштабе**, добавьте имя и сведения об устройстве, прежде чем перейти к вкладке **Add modules (Добавление модулей** ) в следующих инструкциях.     
 
 Создание IoT Edge развертывания для центра безопасности Azure для Интернета вещей состоит из трех этапов. В следующих разделах описан каждый из этих шагов. 
 
-#### <a name="step-1-add-modules"></a>Шаг 1.: Добавить модули
+#### <a name="step-1-add-modules"></a>Шаг 1. Добавить модули
 
 1. На вкладке **Добавление модулей** в области **модули развертывания** щелкните **азуресекуритицентерфориот**. 
    
@@ -132,17 +132,17 @@ ms.locfileid: "68596363"
    
 1. Нажмите кнопку **Далее**.
 
-#### <a name="step-2-specify-routes"></a>Шаг 2.: Укажите маршруты 
+#### <a name="step-2-specify-routes"></a>Шаг 2. Укажите маршруты 
 
 1. На вкладке **указать маршруты** убедитесь, что у вас есть маршрут (явный или неявный), который будет пересылать сообщения из модуля **азуреиотсекурити** в **$upstream**. 
 1. Нажмите кнопку **Далее**.
 
     ~~~Default implicit route
-    "route": "FROM /messages/* INTO $upstream 
+    "route": "FROM /messages/* INTO $upstream" 
     ~~~
 
     ~~~Explicit route
-    "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream
+    "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream"
     ~~~
 
 #### <a name="step-3-review-deployment"></a>Шаг 3. Проверка развертывания

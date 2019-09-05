@@ -8,23 +8,28 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 09/04/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf45d45481712e30d40bacec9a3c4d80d1ed56b6
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 7e21bd2b20ac48d3719e41b1e93a82cbe5a864b7
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707556"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382580"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Просмотр пользовательских назначений ролей в Azure Active Directory
 
-В этой статье описывается, как просматривать настраиваемые роли, назначенные в Azure Active Directory (Azure AD). В Azure Active Directory (Azure AD) роли можно назначать на уровне каталога или с областью действия одного приложения. Назначения ролей в области каталога добавляются в список отдельных назначений ролей приложений, но назначения ролей в области одного приложения не добавляются в список назначений на уровне каталога.
+В этой статье описывается, как просматривать настраиваемые роли, назначенные в Azure Active Directory (Azure AD). В Azure Active Directory (Azure AD) роли можно назначать в масштабах всей организации или с помощью области одного приложения.
 
-## <a name="view-the-assignments-of-a-role-with-directory-scope-using-the-azure-ad-portal"></a>Просмотр назначений роли с областью действия каталога с помощью портала Azure AD
+- Назначения ролей в масштабе всей организации добавляются в и могут отображаться в списке назначений ролей приложений.
+- Назначения ролей в области одного приложения не добавляются в и не отображаются в списке назначений в области всей Организации.
+
+## <a name="view-role-assignments-in-the-azure-portal"></a>Просмотр назначений ролей в портал Azure
+
+Эта процедура описывает Просмотр назначений роли в масштабе всей Организации.
 
 1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 1. Выберите **Azure Active Directory**, выберите **роли и администраторы**, а затем выберите роль, чтобы открыть ее и просмотреть ее свойства.
@@ -32,9 +37,9 @@ ms.locfileid: "68707556"
 
     ![Просмотр назначений ролей и разрешений при открытии роли из списка](./media/roles-view-assignments/role-assignments.png)
 
-## <a name="view-the-assignments-of-a-role-with-directory-scope-using-azure-ad-powershell"></a>Просмотр назначений роли с областью действия каталога с помощью Azure AD PowerShell
+## <a name="view-role-assignments-using-azure-ad-powershell"></a>Просмотр назначений ролей с помощью Azure AD PowerShell
 
-Вы можете автоматизировать назначение ролей администратора Azure AD пользователям с помощью Azure PowerShell. В этой статье используется модуль [Azure Active Directory PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) .
+В этом разделе описывается Просмотр назначений роли в масштабе всей Организации. В этой статье используется модуль [Azure Active Directory PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Для просмотра назначений области с одним приложением с помощью PowerShell можно использовать командлеты в этой службе для [назначения пользовательских ролей](roles-assign-powershell.md).
 
 ### <a name="prepare-powershell"></a>Подготовка PowerShell
 
@@ -71,7 +76,9 @@ $role = Get-AzureADDirectoryRole -ObjectId "5b3fe201-fa8b-4144-b6f1-875829ff7543
 Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
 ```
 
-## <a name="view-the-assignments-of-a-role-with-directory-scope-using-microsoft-graph-api"></a>Просмотр назначений роли с областью действия каталога с помощью Microsoft Graph API
+## <a name="view-role-assignments-using-microsoft-graph-api"></a>Просмотр назначений ролей с помощью API Microsoft Graph
+
+В этом разделе описывается Просмотр назначений роли в масштабе всей Организации.  Для просмотра назначений области с одним приложением с помощью API Graph можно использовать операции в [назначении пользовательских ролей с API Graph](roles-assign-graph.md).
 
 HTTP-запрос на получение назначения роли для заданного определения роли.
 
@@ -93,18 +100,20 @@ HTTP/1.1 200 OK
 }
 ```
 
-## <a name="view-the-assignments-of-a-role-with-single-application-scope-using-the-azure-ad-portal-preview"></a>Просмотр назначений роли с областью действия одного приложения с помощью портала Azure AD (Предварительная версия)
+## <a name="view-assignments-of-a-role-with-single-application-scope-preview"></a>Просмотр назначений роли с областью действия одного приложения (Предварительная версия)
+
+В этом разделе описывается Просмотр назначений роли с областью действия одного приложения.
 
 1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
-1. Выберите Azure Active Directory, выберите **Регистрация приложений**, а затем выберите регистрацию приложения, чтобы просмотреть его свойства. Может потребоваться выбрать **все приложения** , чтобы просмотреть полный список регистраций приложений в вашей организации Azure AD.
+1. Выберите **Регистрация приложений**, а затем выберите регистрацию приложения, чтобы просмотреть его свойства. Может потребоваться выбрать **все приложения** , чтобы просмотреть полный список регистраций приложений в вашей организации Azure AD.
 
     ![Создание или изменение регистраций приложений на странице Регистрация приложений](./media/roles-create-custom/appreg-all-apps.png)
 
-1. Выберите **роли и администраторы**, а затем выберите роль, чтобы просмотреть ее свойства.
+1. В окне Регистрация приложения выберите **роли и администраторы**, а затем выберите роль, чтобы просмотреть ее свойства.
 
     ![Просмотр назначений ролей регистрации приложений на странице Регистрация приложений](./media/roles-view-assignments/appreg-assignments.png)
 
-1. Выберите **назначения** , чтобы просмотреть назначения для роли.
+1. Выберите **назначения** , чтобы просмотреть назначения для роли. При открытии представления назначения из регистрации приложения отображаются назначения, областью которых является этот ресурс Azure AD.
 
     ![Просмотр назначений ролей регистрации приложений из свойств регистрации приложения](./media/roles-view-assignments/appreg-assignments-2.png)
 

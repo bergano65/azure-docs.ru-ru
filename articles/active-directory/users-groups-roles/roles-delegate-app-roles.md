@@ -10,21 +10,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 08/06/2019
+ms.date: 09/04/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e15fa8c79663fc2517039124f9be8c1ecd57b8a8
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 8b5479bc7f4e65f23a2e2dcf7deb91742fe50610
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68837878"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382491"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Делегирование разрешений регистрации приложения в Azure Active Directory
 
-В этой статье описывается, как использовать разрешения приложения в пользовательских ролях в Azure Active Directory (Azure AD) для решения задач управления приложениями. Azure Active Directory (Azure AD) позволяет делегировать разрешения на создание и Управление приложениями следующими способами.
+В этой статье описывается, как использовать разрешения, предоставленные пользовательскими ролями, в Azure Active Directory (Azure AD) для удовлетворения потребностей управления приложениями. В Azure AD вы можете делегировать разрешения на создание и Управление приложениями следующими способами.
 
 - [Ограничьте круг пользователей, которые могут создавать приложения](#restrict-who-can-create-applications) и управлять создаваемыми ими приложениями. По умолчанию в Azure AD все пользователи могут регистрировать регистрации приложений и управлять всеми аспектами создаваемых ими приложений. Это можно ограничить, разрешая только выбранные пользователи с разрешением.
 - [Назначение одного или нескольких владельцев приложению](#assign-application-owners). Это простой способ предоставить пользователю возможность управлять всеми аспектами конфигурации Azure AD для конкретного приложения.
@@ -40,7 +40,7 @@ ms.locfileid: "68837878"
 ### <a name="to-disable-the-default-ability-to-create-application-registrations-or-consent-to-applications"></a>Отключение возможности по умолчанию для создания регистраций приложений или предоставления согласия для приложений
 
 1. Войдите в свою организацию Azure AD с помощью учетной записи, которая имеет право на роль глобального администратора в вашей организации Azure AD.
-1. Когда вы получите достаточные разрешения, установите одно из следующих значений или оба:
+1. Установите один или оба следующих параметра:
 
     - На [странице Параметры пользователя для вашей организации](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UserSettings)задайте для параметра **Пользователи возможность регистрации приложений** значение нет. Это отключит возможность пользователей создавать регистрации приложений по умолчанию.
     - В параметрах [пользователя для корпоративных приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/)задайте значение Нет для **пользователей, обращающихся к приложениям, которые получают доступ к данным компании от своего имени** . Это отключит возможность по умолчанию для пользователей получать согласие на доступ к данным компании от их имени.

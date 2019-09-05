@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 07/05/2019
 ms.author: yushwang
-ms.openlocfilehash: 343bbf5c84ce97feb7b7d170523845f5a2f7c10d
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 323db6e7274db1a53e49b5bd7d33b2eb3700a62b
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668421"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376421"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -49,7 +49,7 @@ ms.locfileid: "68668421"
 | Cisco |Meraki |Н/Д |Не совместимо |Не совместимо |
 | Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководство по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
 | F5 |Серия BIG-IP |12.0 |[Руководство по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководство по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
-| Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](https://docs.fortinet.com/document/fortigate/6.2.0/azure-cookbook/030680/connecting-a-local-fortigate-to-an-azure-fortigate-via-site-to-site-vpn) |
+| Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](https://docs.fortinet.com/document/fortigate/6.2.0/azure-cookbook/989216/connecting-a-local-fortigate-to-an-azure-vnet-vpn) |
 | Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](https://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
 | Juniper |SRX |PolicyBased: JunOS 10.2<br>RouteBased: JunOS 11.4 |Поддерживается |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |Поддерживается |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
@@ -101,10 +101,10 @@ ms.locfileid: "68668421"
 | &lt;RP_AccessList&gt; |Выбранное имя для данного объекта. Пример: myAzureAccessList. |
 | &lt;RP_IPSecTransformSet&gt; |Выбранное имя для данного объекта. Пример: myIPSecTransformSet. |
 | &lt;RP_IPSecCryptoMap&gt; |Выбранное имя для данного объекта. Пример: myIPSecCryptoMap. |
-| &lt;SP_AzureNetworkIpRange&gt; |Укажите диапазон. Пример 192.168.0.0 |
-| &lt;SP_AzureNetworkSubnetMask&gt; |Укажите маску подсети. Пример 255.255.0.0 |
-| &lt;SP_AzureNetworkIpRange&gt; |Укажите локальный диапазон. Пример 10.2.1.0 |
-| &lt;SP_AzureNetworkSubnetMask&gt; |Укажите локальную маску подсети. Пример 255.255.255.0 |
+| &lt;SP_AzureNetworkIpRange&gt; |Укажите диапазон. Пример: 192.168.0.0 |
+| &lt;SP_AzureNetworkSubnetMask&gt; |Укажите маску подсети. Пример: 255.255.0.0 |
+| &lt;SP_AzureNetworkIpRange&gt; |Укажите локальный диапазон. Пример: 10.2.1.0 |
+| &lt;SP_AzureNetworkSubnetMask&gt; |Укажите локальную маску подсети. Пример: 255.255.255.0 |
 | &lt;SP_AzureGatewayIpAddress&gt; |Эта информация относится к виртуальной сети и находится на портале управления в поле **IP-адрес шлюза**. |
 | &lt;SP_PresharedKey&gt; |Эта информация относится к виртуальной сети и находится на портале управления в разделе «Управление ключами». |
 

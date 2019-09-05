@@ -1,6 +1,6 @@
 ---
-title: Подключение к API v3 служб мультимедиа Azure - Python
-description: Узнайте, как подключиться к API служб мультимедиа версии 3 с Python.
+title: Подключение к API-интерфейсу служб мультимедиа Azure v3 — Python
+description: Узнайте, как подключиться к API служб мультимедиа v3 с помощью Python.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,45 +13,48 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: juliako
-ms.openlocfilehash: 971e36b600a2c6be516e39ce84ca5780a2f23bbd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ceebd88f4988f23bf9cd32bd827aaca67d70461
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60733102"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307859"
 ---
-# <a name="connect-to-media-services-v3-api---python"></a>Подключение к API v3 служб мультимедиа - Python
+# <a name="connect-to-media-services-v3-api---python"></a>Подключение к API служб мультимедиа v3 — Python
 
-В этой статье показано, как соединиться с Python версии 3 пакета SDK служб мультимедиа Azure с помощью субъекта-службы входа, в методе.
+В этой статье показано, как подключиться к пакету SDK для служб мультимедиа Azure v3 для Python с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Скачать Python [python.org](https://www.python.org/downloads/)
-- Не забудьте задать `PATH` переменной среды
+- Скачать Python из [Python.org](https://www.python.org/downloads/)
+- Обязательно задайте `PATH` переменную среды.
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
-- Выполните действия, описанные в [доступ к API](access-api-cli-how-to.md) раздела. Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, вам потребуется в дальнейшем.
+- Выполните действия, описанные в разделе [API Access](access-api-cli-how-to.md) . Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, необходимые на следующем шаге.
+
+> [!IMPORTANT]
+> Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
 
 ## <a name="install-the-modules"></a>Установка модулей
 
-Для работы со службами мультимедиа Azure с помощью Python, необходимо установить эти модули.
+Для работы со службами мультимедиа Azure с помощью Python необходимо установить эти модули.
 
-* `azure-mgmt-resource` Модуль, который включает в себя модули Azure для Active Directory.
-* `azure-mgmt-media` Модуль, который включает в себя сущности служб мультимедиа.
+* `azure-mgmt-resource` Модуль, который включает модули Azure для Active Directory.
+* `azure-mgmt-media` Модуль, который включает сущности служб мультимедиа.
 
-Откройте средство командной строки и используйте следующие команды для установки модулей.
+Откройте программу командной строки и используйте следующие команды для установки модулей.
 
 ```
 pip3 install azure-mgmt-resource
 pip3 install azure-mgmt-media==1.1.1
 ```
 
-## <a name="connect-to-the-python-client"></a>Подключиться к клиенту Python
+## <a name="connect-to-the-python-client"></a>Подключение к клиенту Python
 
-1. Создайте файл с `.py` расширения
-1. Откройте файл в любом редакторе
-1. Добавьте в файл в следующем коде. Код импортирует необходимые модули и создает объект учетных данных Active Directory, необходимые для подключения к службам мультимедиа.
+1. Создание файла с `.py` расширением
+1. Откройте файл в любимом редакторе.
+1. Добавьте следующий код в файл. Код импортирует необходимые модули и создает объект учетных данных Active Directory, необходимый для подключения к службам мультимедиа.
 
-      Задать значения этих переменных на значения, полученные из [доступ к API](access-api-cli-how-to.md)
+      Задайте значения переменных, полученные из [API доступа](access-api-cli-how-to.md) .
 
       ```
       import adal
@@ -96,9 +99,9 @@ pip3 install azure-mgmt-media==1.1.1
       print (client.assets.list(RESOUCE_GROUP_NAME, ACCOUNT_NAME).get(0))
       ```
 
-1. Запустите файл
+1. Запуск файла
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Воспользуйтесь [пакетом SDK для Python](https://aka.ms/ams-v3-python-sdk).
 - Ознакомьтесь со справочной документации по [Python](https://aka.ms/ams-v3-python-ref) Служб мультимедиа.

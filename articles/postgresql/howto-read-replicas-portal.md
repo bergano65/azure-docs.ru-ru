@@ -5,20 +5,17 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 08/21/2019
-ms.openlocfilehash: d0f29e2c01d6295935ac56cb19c37e1ad6bbd21b
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.date: 09/04/2019
+ms.openlocfilehash: bd1317242f84b4d8bd039da89d991a73f6cd3781
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907383"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309315"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
-
-> [!IMPORTANT]
-> Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время доступна в общедоступной предварительной версии.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -70,7 +67,7 @@ ms.locfileid: "69907383"
     ![Выберите расположение](./media/howto-read-replicas-portal/location-replica.png)
 
    > [!NOTE]
-   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
+   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
 6. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 1342616a0d32d8ac68965bc04f1fd3ca60146369
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 1450d6b41d9a193f8069509aacd3343ae646c6ac
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966765"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307019"
 ---
 # <a name="edit-a-knowledge-base-in-qna-maker"></a>Изменение базы знаний в QnA Maker
 
@@ -54,7 +54,7 @@ QnA Maker позволяет управлять содержимым базы з
 
 ## <a name="add-a-qna-pair"></a>Добавление пары QnA
 
-На странице **Параметры** выберите **Добавить пару QnA** , чтобы добавить новую строку в таблицу базы знаний.
+На странице **Правка** выберите **Добавить QnA пару** , чтобы добавить новую строку в таблицу базы знаний.
 
 ![Добавление пары QnA](../media/qnamaker-how-to-edit-kb/add-qnapair.png)
 

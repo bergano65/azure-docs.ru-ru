@@ -7,12 +7,12 @@ ms.author: parthp
 ms.service: marketplace
 ms.topic: guide
 ms.date: 07/05/2019
-ms.openlocfilehash: b1839316f8f11af7e4f365694fc017c262d00a86
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 71a74476bcec6cb2ab3dc5efabe1a550577f0107
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70191725"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383240"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Создание коммерческой учетной записи Marketplace в центре партнеров
 
@@ -20,7 +20,7 @@ ms.locfileid: "70191725"
 
 ## <a name="create-a-partner-center-account"></a>Создание учетной записи центра партнеров
 
-Из этой статьи вы узнаете, как создать учетную запись центра партнеров, в том числе: 
+Из этой статьи вы узнаете, как создать учетную запись центра партнеров, в том числе:
 
 - [Регистрация на странице регистрации в центре партнеров](#to-create-a-commercial-marketplace-account-in-partner-center)
 - [Вход с рабочей учетной записью](#sign-in-with-a-work-account)
@@ -56,11 +56,11 @@ ms.locfileid: "70191725"
 
 #### <a name="provide-your-publisher-profile"></a>Укажите профиль издателя
 
-Ваш профиль издателя включает название вашей компании и идентификатор MPN. Если вы еще не сделали этого, необходимо присоединиться к [Microsoft Partner Network](https://partner.microsoft.com/commercial). После приподключения к Microsoft Partner Network вам будет предоставлен идентификатор MPN. 
+Ваш профиль издателя включает название вашей компании и идентификатор MPN. Если вы еще не сделали этого, необходимо присоединиться к [Microsoft Partner Network](https://partner.microsoft.com/commercial). После приподключения к Microsoft Partner Network вам будет предоставлен идентификатор MPN.
 
-Создайте идентификатор издателя. Идентификатор издателя однозначно определяет вашу компанию и ваши предложения в Marketplace и AppSource. 
+Создайте идентификатор издателя. Идентификатор издателя однозначно определяет вашу компанию и ваши предложения в Marketplace и AppSource.
 
-Убедившись, что данные профиля издателя подтверждены, примите условия и создайте учетную запись центра партнеров, выбрав **принять и продолжить**. 
+Убедившись, что данные профиля издателя подтверждены, примите условия и создайте учетную запись центра партнеров, выбрав **принять и продолжить**.
 
 >[!Important]
 >*Чтобы принять эти условия, необходимо быть полномочным для работы от имени компании.*

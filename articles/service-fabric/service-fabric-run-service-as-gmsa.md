@@ -1,5 +1,5 @@
 ---
-title: Запуск службы Azure Service Fabric под учетной записью gMSA | Документация Майкрософт
+title: Запуск службы Service Fabric Azure в учетной записи gMSA | Документация Майкрософт
 description: Узнайте, как запускать службу в групповой управляемой учетной записи службы в автономном кластере Service Fabric под управлением Windows.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/29/2018
 ms.author: dekapur
-ms.openlocfilehash: 5c3781c2111fff7483a7fb65bd7b2e69c2011d18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d00eceffebb222196191a389058c0feb496e169a
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837748"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307637"
 ---
 # <a name="run-a-service-as-a-group-managed-service-account"></a>Запуск службы в групповой управляемой учетной записи службы
 В автономном кластере Windows Server вы можете запустить службу как групповую управляемую учетную запись службы (gMSA) с помощью политики запуска от имени.  По умолчанию приложения Service Fabric выполняются под учетной записью, используемой процессом Fabric.exe. Запуск приложений в разных учетных записях позволяет изолировать друг от друга выполняемые приложения, даже если они запущены в общей среде. Обратите внимание, что в вашем домене используется локальная служба Active Directory, а не Azure Active Directory (Azure AD). При использовании групповой управляемой учетной записи службы в манифесте приложения не сохраняется ни обычный, ни зашифрованный пароль.  Кроме того, можно запустить службу как [группу или пользователя Active Directory](service-fabric-run-service-as-ad-user-or-group.md).
@@ -28,7 +28,7 @@ ms.locfileid: "60837748"
 
 Предварительные требования:
 - Домену нужен корневой ключ KDS.
-- Домен должен иметь функциональный уровень Windows Server 2012 или выше.
+- В домене должен быть по крайней мере один контроллер домена Windows Server 2012 (или R2).
 
 1. Попросите администратора домена Active Directory создать групповую управляемую учетную запись службы с помощью командлета `New-ADServiceAccount` и убедитесь, что `PrincipalsAllowedToRetrieveManagedPassword` включает в себя все узлы кластера Service Fabric. Значения `AccountName`, `DnsHostName` и `ServicePrincipalName` должны быть уникальными.
 

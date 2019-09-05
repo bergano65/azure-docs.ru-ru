@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6f23a1f8e60567e1c2ed89b27f0eb2bab4ca5912
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 5d607809b6e0356c8807879962927e99f2bd12fd
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061818"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382727"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -138,7 +138,7 @@ ms.locfileid: "70061818"
 * пакет управления развертыванием обновлений.
 
 > [!NOTE]
-> Если у вас есть группа управления Operations Manager 1807 с агентами, настроенными на уровне группы управления, которые будут связаны с рабочей областью, то текущим решением для их отображения является переопределение **исауторегистратионенаблед** на **true** в Правило **Microsoft. IntelligencePacks. AzureAutomation. HybridAgent. init** .
+> Если у вас есть группа управления Operations Manager 1807 или 2019 с агентами, настроенными на уровне группы управления, которые будут связаны с рабочей областью, то текущим решением для их отображения является переопределение **исауторегистратионенаблед** на **true** в правило **Microsoft. IntelligencePacks. AzureAutomation. HybridAgent. init** .
 
 Дополнительные сведения об обновлении пакетов управления решениями см. в разделе [Connect Operations Manager to Azure Monitor Logs](../azure-monitor/platform/om-agents.md).
 
@@ -371,7 +371,7 @@ $ServiceManager.AddService2($ServiceId,7,"")
 |*.blob.core.windows.net|*.blob.core.usgovcloudapi.net|
 |*.azure-automation.net|*.azure-automation.us|
 
-Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в ключе [WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
+Для компьютеров Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые для Центр обновления Windows.  Обновленный список обязательных конечных точек можно найти в [проблемах, связанных с HTTP/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Если у вас есть локальный [Центр обновления Windows сервер](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment), необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 
 Для компьютеров с Red Hat Linux обратитесь к IP-адресам [серверов доставки содержимого RHUI](../virtual-machines/linux/update-infrastructure-redhat.md#the-ips-for-the-rhui-content-delivery-servers) для требуемых конечных точек. Другие дистрибутивы Linux см. в документации поставщика.
 

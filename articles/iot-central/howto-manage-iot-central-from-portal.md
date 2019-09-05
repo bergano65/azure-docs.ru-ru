@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 07/11/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 25751db785bf5d0b67195d1e1db660c0b9b5bf4e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d4d2a843248985c4fe17bf5401b261862d71fecf
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100955"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383038"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
 
@@ -40,6 +40,9 @@ ms.locfileid: "70100955"
 ![Портал управления. Ресурс IoT Central](media/howto-manage-iot-central-from-portal/image0c1.png)
 
 Заполните все поля в форме. Эта форма аналогична форме, которую вы заполнили для создания приложений на веб-сайте [Azure IOT Central Application Manager](https://aka.ms/iotcentral) . Дополнительные сведения см. в кратком руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+
+> [!NOTE]
+> В настоящее время шаблон **предварительной версии приложения** доступен только в **Северной Европе** и в **центральных регионах США** .
 
 ![Портал управления: создание ресурса IoT Central](media/howto-manage-iot-central-from-portal/image1a.png)  
 

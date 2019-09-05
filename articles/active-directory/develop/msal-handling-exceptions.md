@@ -16,12 +16,12 @@ ms.date: 08/19/2019
 ms.author: negoe
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 77a2e571b76044ff9114f6671b187118cf03c0ba
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: fe3ad29cfd113deba5824ce25721dc543c6267c0
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135812"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305048"
 ---
 # <a name="handling-exceptions-and-errors-using-msal"></a>Обработка исключений и ошибок с помощью MSAL
 В библиотеке аутентификации Майкрософт (MSAL) применяются исключения, которые позволяют разработчикам приложений устранять проблемы самостоятельно, не отображая сообщения об ошибках пользователям. Сообщения об исключениях не локализованы.
@@ -179,7 +179,7 @@ myMSALObj.acquireTokenSilent(accessTokenRequest).then(function (accessTokenRespo
 
 При вызове API, требующих условного доступа, вы можете получать запрос утверждений прямо в полученной от API ошибке. В этом случае можно передать утверждения, возвращенные в сообщении об ошибке `claimsRequest` , в поле `AuthenticationParameters.ts` класса, чтобы удовлетворить соответствующую политику. 
 
-Дополнительные сведения см. в статье [запрос дополнительных утверждений]() .
+Дополнительные сведения см. в статье [запрос дополнительных утверждений](active-directory-optional-claims.md) .
 
 ## <a name="retrying-after-errors-and-exceptions"></a>Повторные попытки после ошибок и исключений
 

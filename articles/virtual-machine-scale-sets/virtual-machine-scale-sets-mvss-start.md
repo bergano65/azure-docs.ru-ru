@@ -1,6 +1,6 @@
 ---
 title: Сведения о шаблонах масштабируемых наборов виртуальных машин | Документация Майкрософт
-description: Узнайте, как создать шаблон простой масштабируемый набор для масштабируемых наборов виртуальных машин
+description: Узнайте, как создать шаблон базового масштабируемого набора для масштабируемых наборов виртуальных машин
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
@@ -15,15 +15,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: 8b6a6b78dc74572b22d397b5536efa1394401bbc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 267c715de67df57abd30ac18966b8b3b8440810c
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64868898"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376105"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
-[Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон простой масштабируемый набор и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
+[Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
 
 Этот шаблон должен быть простым. Полные примеры шаблонов масштабируемых наборов можно найти в [репозитории шаблонов быстрого запуска Azure на сайте GitHub](https://github.com/Azure/azure-quickstart-templates). Папки с этими шаблонами содержат строку `vmss`.
 
@@ -131,7 +131,7 @@ ms.locfileid: "64868898"
 ```
 
 ### <a name="choose-type-of-updates"></a>Выбор типа обновления
-Кроме того, нужно указать способ обновления масштабируемого набора. В настоящее время существует три варианта `Manual`, `Rolling` и `Automatic`. Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model).
+Кроме того, нужно указать способ обновления масштабируемого набора. В настоящее время существует три варианта `Manual`:, `Rolling` и. `Automatic` Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model).
 
 ```json
        "properties": {
@@ -204,6 +204,6 @@ ms.locfileid: "64868898"
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]

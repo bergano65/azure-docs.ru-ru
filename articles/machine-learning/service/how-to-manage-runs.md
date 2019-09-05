@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2019
-ms.openlocfilehash: 9b58d6e189c891d0dd2917d7d150f133dc35f917
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: b938d55749373711ddf2a19df12b987276b224ca
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019096"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376293"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -226,7 +226,7 @@ with exp.start_logging() as parent_run:
 
 Дочерние запуски также могут быть отправлены из родительского запуска. Это позволяет создавать иерархии родительских и дочерних приложений, каждый из которых работает в разных целевых объектах вычислений, Соединенных общим родительским ИДЕНТИФИКАТОРом запуска.
 
-Используйте метод ["submit_child ()"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#submit-child-count-none--tag-key-none--tag-values-none-) для отправки дочернего выполнения из родительского запуска. Чтобы сделать это в родительском скрипте выполнения, получите контекст выполнения и отправьте дочерний объект с помощью метода "submit_child" "экземпляра контекста.
+Используйте метод ["submit_child ()"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#submit-child-config--tags-none----kwargs-) для отправки дочернего выполнения из родительского запуска. Чтобы сделать это в родительском скрипте выполнения, получите контекст выполнения и отправьте дочерний объект с помощью метода "submit_child" "экземпляра контекста.
 
 ```python
 ## In parent run script

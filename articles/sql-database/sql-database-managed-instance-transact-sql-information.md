@@ -11,28 +11,30 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 5e9972c5fea7aaa2e6b5270aff87343437b1963e
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 9d99bb6db56a8db9d78952e4cf16465e386358cc
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624011"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383135"
 ---
-# <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между управляемым экземпляром Базы данных SQL Azure и SQL Server
+# <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Отличия T-SQL управляемого экземпляра, ограничения и известные проблемы
 
-В этой статье кратко описаны различия в синтаксисе и поведении между управляемым экземпляром базы данных SQL Azure и локальными ядро СУБД SQL Server. Обсуждаются следующие темы:<a name="Differences"></a>
+В этой статье кратко описаны различия в синтаксисе и поведении между управляемым экземпляром базы данных SQL Azure и локальными ядро СУБД SQL Server. Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
+
+![Перенос](./media/sql-database-managed-instance/migration.png)
+
+Существуют некоторые ограничения PaaS, появившиеся в Управляемый экземпляр и некоторые изменения в поведений по сравнению с SQL Server. Различия делятся на следующие категории:<a name="Differences"></a>
 
 - [Доступность](#availability) включает различия в [Always-On](#always-on-availability) и [Backups](#backup).
 - [Безопасность](#security) включает в себя различия [в аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration) включает различия в [расширении буферного пула](#buffer-pool-extension), параметрах [сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении баз данных](#database-mirroring), [параметрах базы данных](#database-options), [Агент SQL Server](#sql-server-agent)и [параметрах таблиц](#tables).
-- [К функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [полнотекстовые Семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
+- К [функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [полнотекстовые Семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
 - [Параметры среды](#Environment) , такие как виртуальных сетей и конфигурации подсети.
-- [Функции, поведение которых отличается в управляемых экземплярах](#Changes).
-- [Временные ограничения и известные проблемы](#Issues).
 
-Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
+Большинство этих функций являются ограничениями архитектуры и представляют функции служб.
 
-![Перенос](./media/sql-database-managed-instance/migration.png)
+На этой странице также объясняются [временные известные проблемы](#Issues) , обнаруженные в управляемом экземпляре, которые будут разрешены в будущем.
 
 ## <a name="availability"></a>Доступность
 
@@ -336,6 +338,10 @@ WITH PRIVATE KEY (<private_key_options>)
 - `CREATE ASSEMBLY FROM FILE` не поддерживается. См. статью [CREATE ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-assembly-transact-sql).
 - `ALTER ASSEMBLY` не может ссылаться на файлы. См. статью [ALTER ASSEMBLY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-assembly-transact-sql).
 
+### <a name="database-mail-db_mail"></a>Database Mail (db_mail)
+ - `sp_send_dbmail`не удается отправить атачментс @file_attachments с помощью параметра. Локальная файловая система, а также экстенты или хранилище BLOB-объектов Azure недоступны для этой процедуры.
+ - Ознакомьтесь с известными проблемами, `@query` связанными с параметрами и проверкой подлинности.
+ 
 ### <a name="dbcc"></a>DBCC
 
 Недокументированные инструкции DBCC, включенные в SQL Server, не поддерживаются в управляемых экземплярах.
@@ -409,7 +415,7 @@ WITH PRIVATE KEY (<private_key_options>)
 Сведения о настройке репликации см. в [руководстве по репликации](replication-with-sql-database-managed-instance.md).
 
 
-Если репликация включена для базы данных в [группе](sql-database-auto-failover-group.md)отработки отказа, администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном экземпляре после отработки отказа. В этом сценарии необходимы следующие действия.
+Если репликация включена для базы данных в [группе отработки отказа](sql-database-auto-failover-group.md), администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном экземпляре после отработки отказа. В этом сценарии необходимы следующие действия.
 
 1. Останавливает все задания репликации, выполняющиеся в базе данных, если они есть.
 2. Удалите метаданные подписки из издателя, выполнив следующий скрипт в базе данных издателя:
@@ -499,25 +505,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `Extended stored procedures`не поддерживаются, в `sp_addextendedproc`том `sp_dropextendedproc`числе  и. См. раздел [Расширенные хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
 - `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 
-## <a name="Environment"></a>Ограничения среды
-
-### <a name="subnet"></a>Subnet
--  Другие ресурсы (например, виртуальные машины) нельзя поместить в подсеть, в которой развернут управляемый экземпляр. Разверните эти ресурсы с помощью другой подсети.
-- Подсеть должна иметь достаточное количество доступных [IP-адресов](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя в подсети рекомендуется иметь по крайней мере 32 IP-адресов.
-- [Конечные точки службы не могут быть связаны с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что при создании виртуальной сети параметр конечные точки службы отключен.
-- Количество виртуальных ядер и типов экземпляров, которые можно развернуть в регионе, имеет некоторые [ограничения и](sql-database-managed-instance-resource-limits.md#regional-resource-limitations)ограничения.
-- Существуют некоторые [правила безопасности, которые необходимо применить](sql-database-managed-instance-connectivity-architecture.md#network-requirements)к подсети.
-
-### <a name="vnet"></a>Виртуальная сеть
-- Виртуальную сеть можно развернуть с помощью модели ресурсов — классическая модель для виртуальной сети не поддерживается.
-- После создания управляемого экземпляра перемещение управляемого экземпляра или виртуальной сети в другую группу ресурсов или подписку не поддерживается.
-- Некоторые службы, такие как среды службы приложений, приложения логики и управляемые экземпляры (используемые для георепликации, репликации транзакций или с помощью связанных серверов), не могут получить доступ к управляемым экземплярам в разных регионах, если их виртуальных сетей подключены с помощью [глобального пиринг](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Вы можете подключаться к этим ресурсам через ExpressRoute или VNet-VNet через шлюзы виртуальной сети.
-
-### <a name="tempdb-size"></a>Размер tempdb
-
-Максимальный размер `tempdb` файла не может быть больше 24 ГБ на ядро на уровне общего назначения. Максимальный `tempdb` размер критически важный для бизнеса уровня ограничен размером хранилища экземпляра. `Tempdb`Размер файла журнала ограничен 120 ГБ на уровнях общего назначения и критически важный для бизнеса. Некоторые запросы могут возвращать ошибку, если им требуется более 24 ГБ на ядро в `tempdb` или если они создают более 120 ГБ данных журнала.
-
-## <a name="Changes"></a> Изменения в поведении
+### <a name="system-functions-and-variables"></a>Системные функции и переменные
 
 Следующие переменные, функции и представления возвращают различные результаты:
 
@@ -529,17 +517,55 @@ WITH PRIVATE KEY (<private_key_options>)
 - `SUSER_ID` поддерживается. Он возвращает значение NULL, если имя входа Azure AD отсутствует в sys. syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql). 
 - `SUSER_SID` не поддерживается. Возвращаются неверные данные, что является временной известной проблемой. См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql). 
 
-## <a name="Issues"></a> Известные проблемы и ограничения
+## <a name="Environment"></a>Ограничения среды
 
-### <a name="cross-database-service-broker-dialogs-dont-work-after-service-tier-upgrade"></a>Диалоговые окна Service Broker разных баз данных не работают после обновления уровня службы
+### <a name="subnet"></a>Subnet
+-  Другие ресурсы (например, виртуальные машины) нельзя поместить в подсеть, в которой развернут управляемый экземпляр. Разверните эти ресурсы с помощью другой подсети.
+- Подсеть должна иметь достаточное количество доступных [IP-адресов](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя в подсети рекомендуется иметь по крайней мере 32 IP-адресов.
+- [Конечные точки службы не могут быть связаны с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что при создании виртуальной сети параметр конечные точки службы отключен.
+- Количество виртуальных ядер и типов экземпляров, которые можно развернуть в регионе, имеет некоторые [ограничения и](sql-database-managed-instance-resource-limits.md#regional-resource-limitations)ограничения.
+- Существуют некоторые [правила безопасности, которые необходимо применить к подсети](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
+
+### <a name="vnet"></a>Виртуальная сеть
+- Виртуальную сеть можно развернуть с помощью модели ресурсов — классическая модель для виртуальной сети не поддерживается.
+- После создания управляемого экземпляра перемещение управляемого экземпляра или виртуальной сети в другую группу ресурсов или подписку не поддерживается.
+- Некоторые службы, такие как среды службы приложений, приложения логики и управляемые экземпляры (используемые для георепликации, репликации транзакций или с помощью связанных серверов), не могут получить доступ к управляемым экземплярам в разных регионах, если их виртуальных сетей подключены с помощью [глобального пиринг](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Вы можете подключаться к этим ресурсам через ExpressRoute или VNet-VNet через шлюзы виртуальной сети.
+
+### <a name="tempdb"></a>БАЗЕ
+
+Максимальный размер `tempdb` файла не может быть больше 24 ГБ на ядро на уровне общего назначения. Максимальный `tempdb` размер критически важный для бизнеса уровня ограничен размером хранилища экземпляра. `Tempdb`Размер файла журнала ограничен 120 ГБ на уровнях общего назначения и критически важный для бизнеса. Некоторые запросы могут возвращать ошибку, если им требуется более 24 ГБ на ядро в `tempdb` или если они создают более 120 ГБ данных журнала.
+
+### <a name="error-logs"></a>Журналы ошибок
+
+Управляемый экземпляр помещает подробные сведения в журналы ошибок. Существует много внутренних системных событий, которые регистрируются в журнале ошибок. Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [управляемый экземпляр — sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/).
+
+## <a name="Issues"></a>Известные проблемы
+
+### <a name="resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover"></a>Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа
+
+**Дата** Sep 2019
+
+[Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) функция, которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня служб (например, изменение максимального Виртуальное ядро или максимального экземпляра). Размер хранилища).
+
+**Возможное решение**: Запускаются `ALTER RESOURCE GOVERNOR RECONFIGURE` периодически или в рамках задания агента SQL, которое выполняет задачу SQL при запуске экземпляра, если используется [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor).
+
+### <a name="cannot-authenicate-to-external-mail-servers-using-secure-connection-ssl"></a>Не удается карта; она на внешние почтовые серверы с помощью безопасного соединения (SSL)
 
 **Дата** Авг 2019
 
-Диалоговые окна Service Broker разных баз данных не доставляют сообщения после изменения уровня службы. Любое изменение размера хранилища виртуальных ядер или экземпляра в управляемый экземпляр приведет `service_broke_guid` к изменению значения в представлении [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Все `DIALOG` созданные с помощью инструкции [BEGIN DIALOG](https://docs.microsoft.com/en-us/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных по идентификатору GUID, не смогут доставлять сообщения.
+Компонент Database Mail, [настроенный с помощью безопасного подключения (SSL)](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-database-mail) , не может пройти проверку подлинности на некоторых серверах электронной почты за пределами Azure. Это проблема конфигурации безопасности, которая будет устранена в ближайшее время.
 
-**Решение:** Перед обновлением уровня службы и повторной их инициализацией после этого отключите все действия, использующие диалоговые окна межбазовых Service Broker.
+**Решение:** Временное удаление безопасного подключения (SSL) Настройка компонента Database Mail до устранения проблемы. 
 
-### <a name="some-aad-login-types-cannot-be-impersonated"></a>Некоторые типы имен для входа AAD не могут быть олицетворены
+### <a name="cross-database-service-broker-dialogs-must-be-re-initialized-after-service-tier-upgrade"></a>После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker
+
+**Дата** Авг 2019
+
+Межбазовые Service Broker диалоговые окна перестают предоставлять сообщения службам в других базах данных после изменения уровня служб. Сообщения **не теряются** , и их можно найти в очереди отправителя. Любое изменение размера хранилища виртуальных ядер или экземпляра в управляемый экземпляр приведет `service_broke_guid` к изменению значения в представлении [sys. databases](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Все `DIALOG` созданные с помощью инструкции [BEGIN DIALOG](https://docs.microsoft.com/en-us/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных, прекращает доставку сообщений в целевую службу.
+
+**Решение:** Перед обновлением уровня службы и повторной их инициализацией после этого отключите все действия, использующие диалоговые окна межбазовых Service Broker. Если остались сообщения, которые не доставляются после изменения уровня службы, прочтите сообщения из очереди источника и повторно отправьте их в целевую очередь.
+
+### <a name="impersonification-of-aad-login-types-is-not-supported"></a>Имперсонификатион типов входа AAD не поддерживается
 
 **Дата** 2019 июля
 
@@ -553,6 +579,12 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Параметр `@query` в процедуре [sp_send_db_mail](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-send-dbmail-transact-sql) не работает.
 
+### <a name="transactional-replication-must-be-reconfigured-after-geo-failover"></a>После географической отработки отказа необходимо перенастроить репликацию транзакций
+
+**Дата** Мар 2019
+
+Если репликация транзакций включена для базы данных в группе автоматической отработки отказа, администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном ресурсе после отработки отказа в другой регион. Дополнительные сведения см. в разделе [репликация](#replication) .
+
 ### <a name="aad-logins-and-users-are-not-supported-in-tools"></a>Имена входа и пользователей AAD не поддерживаются в средствах
 
 **Дата** Янв 2019
@@ -560,6 +592,12 @@ WITH PRIVATE KEY (<private_key_options>)
 SQL Server Management Studio и SQL Server Data Tools не Фули поддерживать имена входа и пользователей каталога Azure Акктиве.
 - Использование участников сервера Azure AD (имена для входа) и пользователи (общедоступная Предварительная версия) с SQL Server Data Tools в настоящее время не поддерживаются.
 - Создание сценариев для участников сервера Azure AD (имена входа) и пользователей (общедоступная Предварительная версия) не поддерживается в SQL Server Management Studio.
+
+### <a name="temporary-database-is-used-during-restore-operation"></a>Во время операции восстановления используется временная база данных
+
+При восстановлении базы данных в Управляемый экземпляр Служба восстановления сначала создаст пустую базу данных с нужным именем, чтобы выделить имя экземпляра. Через некоторое время эта база данных будет удалена и восстановлена фактическая база данных. База данных, которая находится в состоянии *восстановления* , будет иметь случайное значение идентификатора GUID вместо имени. После завершения процесса восстановления временное имя будет изменено на нужное `RESTORE` имя, указанное в инструкции. На начальном этапе пользователь может получить доступ к пустой базе данных и даже создать таблицы или загрузить данные в эту базу данных. Эта временная база данных будет удалена, когда служба восстановления запустит второй этап.
+
+**Возможное решение**: Не отменяйте доступ к восстанавливаемой базе данных до тех пор, пока не будет отображено завершение восстановления.
 
 ### <a name="tempdb-structure-and-content-is-re-created"></a>Структура и содержимое базы данных TEMPDB создано повторно
 
@@ -588,13 +626,7 @@ SQL Server Management Studio и SQL Server Data Tools не Фули поддер
 
 ### <a name="error-logs-arent-persisted"></a>Журналы ошибок не сохраняются
 
-Журналы ошибок, доступные в управляемом экземпляре, не сохраняются, и их размер не включается в максимальный предел хранилища. Если происходит отработка отказа, журналы ошибок могут автоматически удаляться.
-
-### <a name="error-logs-are-verbose"></a>Журналы ошибок с подробной информацией
-
-Управляемый экземпляр помещает подробные сведения в журналы ошибок, и многие из них не важны. 
-
-**Решение:** Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [управляемый экземпляр — sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/).
+Журналы ошибок, доступные в управляемом экземпляре, не сохраняются, и их размер не включается в максимальный предел хранилища. Если происходит отработка отказа, журналы ошибок могут автоматически удаляться. В журнале ошибок могут содержаться пробелы, так как Управляемый экземпляр были перемещены несколько раз на несколько виртуальных машин.
 
 ### <a name="transaction-scope-on-two-databases-within-the-same-instance-isnt-supported"></a>Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается
 

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2019
 ms.author: magoedte
 ms.openlocfilehash: f395ba5d63463aa177b453d187d025a4461eff28
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 09/05/2019
 ms.locfileid: "69905577"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин (Предварительная версия)
@@ -101,7 +101,7 @@ Azure Monitor для виртуальных машин поддерживает 
 <sup>1</sup> Функция "Производительность" Azure Monitor для виртуальных машин доступна только в Azure Monitor. Она недоступна непосредственно из левой панели виртуальной машины Azure.
 
 >[!NOTE]
->Функция работоспособности Azure Monitor для виртуальных машин не поддерживает вложенную [виртуализацию](../../virtual-machines/windows/nested-virtualization.md) на виртуальной машине Azure.
+>Функция работоспособности Azure Monitor для виртуальных машин не поддерживает [вложенную виртуализацию](../../virtual-machines/windows/nested-virtualization.md) на виртуальной машине Azure.
 >
 
 >[!NOTE]

@@ -7,12 +7,12 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: ef4dfc4370c71eac1978a6f3535b571a5e6009b5
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: b0056df16dccaf1dc7e94aad1a2c6c262ffd89ee
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950141"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383362"
 ---
 # <a name="query-data-in-azure-data-lake-using-azure-data-explorer-preview"></a>Запрос данных в Azure Data Lake с помощью обозреватель данных Azure (Предварительная версия)
 
@@ -50,6 +50,7 @@ Azure обозреватель данных интегрируется с хра
     > * При более детализированном секционировании ожидается повышение производительности. Например, запросы к внешним таблицам с ежедневными секциями будут иметь лучшую производительность, чем запросы с месячными секционированными таблицами.
     > * При определении внешней таблицы с секциями структура хранения должна быть идентичной.
 Например, если таблица определена с Секцией даты в формате гггг/мм/дд (по умолчанию), то путь к файлу хранилища URI должен быть *container1/гггг/мм/дд/all_exported_blobs*. 
+    > * Если внешняя таблица секционирована по столбцу datetime, всегда включайте фильтр времени для закрытого диапазона в запросе (например, запрос `ArchivedProducts | where Timestamp between (ago(1h) .. 10m)` должен выполняться лучше, чем этот (открытый диапазон). `ArchivedProducts | where Timestamp > ago(1h)` 
 
 1. Внешняя таблица отображается в левой области веб-интерфейса.
 

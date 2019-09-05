@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: longl
-ms.openlocfilehash: fd60923351970dfe5aa5705a0508dbd39941ef58
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 23c54a69f709ec97d895ed5965841e43ebdc560c
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68254349"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306551"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
 
@@ -107,7 +107,8 @@ API [Лицо — проверка] проверяет, принадлежат �
 
 В этой статье вы узнали, как указать модель распознавания для использования с разными API-интерфейсами обслуживания лиц. Затем следуйте инструкциям краткого руководства, чтобы приступить к работе с обнаружением лиц.
 
-* [Определение лиц на изображении](../quickstarts/csharp-detect-sdk.md)
+* [Пакет SDK для .NET для лиц](../Quickstarts/csharp-sdk.md)
+* [Пакет SDK для Python для лиц](../Quickstarts/python-sdk.md)
 
 [Обнаружение лиц]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
 [Похожее лицо — Поиск похожих]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237

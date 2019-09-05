@@ -6,19 +6,16 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 7944f985f2317690f3a13add783192c49acbe22f
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: ba0f3bd002b2675c33ea5106ce64c7957c9989d0
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907657"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309124"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-cli"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью Azure CLI
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в том же регионе Azure, что и база данных master в службе "служба MariaDB Azure", используя Azure CLI.
-
-> [!IMPORTANT]
-> Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Реплики чтения (в одном регионе и в разных регионах) сейчас доступны в общедоступной предварительной версии.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -51,7 +48,7 @@ az mariadb server replica create --name mydemoreplicaserver --source-server myde
 ```
 
 > [!NOTE]
-> Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
+> Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.

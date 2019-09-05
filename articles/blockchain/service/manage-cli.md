@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
-ms.openlocfilehash: ee7e529593960c3a7c62021225122370c122b3c4
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 4dd58f2542674633f2d5e2a1724adc7934d7f030
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240974"
+ms.locfileid: "70307044"
 ---
 # <a name="manage-azure-blockchain-service-using-azure-cli"></a>Управление службой Блокчейн Azure с помощью Azure CLI
 
@@ -186,7 +186,7 @@ az role assignment create --role <role> --assignee <assignee> --scope /subscript
 |---------|-------------|
 | **role** | Имя роли Azure AD. |
 | **уполномоченного** | Идентификатор пользователя Azure AD. Например: `user@contoso.com` |
-| **scope** | Область назначения роли. Может быть членом блокчейн узла Transaction. |
+| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
 
 **Пример.**
 
@@ -219,7 +219,7 @@ az role assignment create --role <role> --assignee-object-id <assignee_object_id
 |---------|-------------|
 | **role** | Имя роли Azure AD. |
 | **assigns-Object-ID** | Идентификатор группы Azure AD или идентификатор приложения. |
-| **scope** | Область назначения роли. Может быть членом блокчейн узла Transaction. |
+| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
 
 **Пример.**
 
@@ -242,7 +242,7 @@ az role assignment delete --role <myRole> --assignee <assignee> --scope /subscri
 |---------|-------------|
 | **role** | Имя роли Azure AD. |
 | **уполномоченного** | Идентификатор пользователя Azure AD. Например: `user@contoso.com` |
-| **scope** | Область назначения роли. Может быть членом блокчейн узла Transaction. |
+| **scope** | Область назначения роли. Может быть либо блокчейн элементом, либо узлом транзакции. |
 
 ## <a name="next-steps"></a>Следующие шаги
 

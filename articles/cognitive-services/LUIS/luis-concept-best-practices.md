@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 7a2802bd4daa1a009c610688120c9a56583b054f
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 91ff99f674439580d369aad1490ded85d39d377c
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639272"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382877"
 ---
 # <a name="best-practices-for-building-a-language-understanding-app-with-cognitive-services"></a>Рекомендации по созданию приложения для распознавания речи с использованием Cognitive Services
 Создайте приложение LUIS с помощью процесса создания приложений: 
@@ -84,7 +84,7 @@ ms.locfileid: "68639272"
 
 Добавление функций в начале процесса разработки вашей модели не навредит, однако если вы решите добавить их после использования приложения с реальным трафиком, то сможете с легкостью проследить за изменениями результатов после тестирования модели с помощью выражений. 
 
-Чтобы воспользоваться дополнительным преимуществом [активного обучения](luis-concept-review-endpoint-utterances.md), рекомендуется тестирование с помощью [конечной точки​​](luis-get-started-create-app.md#query-the-endpoint-with-a-different-utterance). [Панель интерактивного тестирования](luis-interactive-test.md) также является допустимой методологией теста. 
+Чтобы воспользоваться дополнительным преимуществом [активного обучения](luis-concept-review-endpoint-utterances.md), рекомендуется тестирование с помощью [конечной точки​​](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint). [Панель интерактивного тестирования](luis-interactive-test.md) также является допустимой методологией теста. 
  
 
 ### <a name="phrase-lists"></a>Списки фраз

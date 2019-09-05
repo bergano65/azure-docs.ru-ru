@@ -14,18 +14,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 40eaabb149e2e897ecd4e1109e0db7c42b990925
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 31137bba8c9b6b88c6a8b9569c02ae887e73e8d0
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101542"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309603"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux 
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом руководстве описывается, как с помощью Azure CLI развернуть базу данных Oracle 12c, используя образ из коллекции Azure Marketplace. 
 
-В этом документе демонстрируется пошаговое создание, установка и настройка Oracle Golden Gate на виртуальной машине Azure.
+В этом документе демонстрируется пошаговое создание, установка и настройка Oracle Golden Gate на виртуальной машине Azure. В этом руководстве две виртуальные машины настраиваются в группе доступности в одном регионе. Этот же учебник можно использовать для настройки шлюза Ораклеголден для виртуальных машин в разных Зоны доступности в одном регионе Azure или для установки виртуальных машин в двух разных регионах.
 
 Перед началом работы убедитесь, что вы установили Azure CLI. Дополнительные сведения см. в [руководстве по установке Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 

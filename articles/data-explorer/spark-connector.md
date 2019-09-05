@@ -7,12 +7,12 @@ ms.reviewer: michazag
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 4/29/2019
-ms.openlocfilehash: 0fe81926327bcccac56718cc0d06e336e1af17fe
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 6a95cbad161906bd12a608880ac694d6bdf1ed27
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165093"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383052"
 ---
 # <a name="azure-data-explorer-connector-for-apache-spark-preview"></a>Соединитель Azure обозреватель данных для Apache Spark (Предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "70165093"
 Соединитель Azure обозреватель данных для Spark реализует источник данных и приемник данных для перемещения данных между кластерами Azure обозреватель данных и Spark для использования обеих возможностей. При использовании Azure Data Explorer и Apache Spark вы можете выполнять сборку быстрых и масштабируемых приложений, ориентированных на управляемые данными сценарии, такие как машинное обучение, сценарий извлечения, преобразования и загрузки (ETL) и Log Analytics. Запись в обозреватель данных Azure может выполняться в пакетном и потоковой режимах.
 Чтение из Azure обозреватель данных поддерживает очистку столбцов и предикаты включение, что сокращает объем передаваемых данных путем фильтрации данных в обозреватель данных Azure.
 
-Соединитель Azure обозреватель данных Spark — это [проект с открытым исходным кодом](https://github.com/Azure/azure-kusto-spark) , который может работать в любом кластере Spark.
+Соединитель Azure обозреватель данных Spark — это [проект с открытым исходным кодом](https://github.com/Azure/azure-kusto-spark) , который может работать в любом кластере Spark. Соединитель Azure обозреватель данных Spark делает Azure обозреватель данных допустимым хранилищем данных для стандартных операций источника и приемника Spark, таких как Write, Read и Вритестреам. 
 
 > [!NOTE]
 > Хотя некоторые из приведенных ниже примеров относятся к кластеру [Azure Databricks](https://docs.azuredatabricks.net/) Spark, соединитель Azure обозреватель данных Spark не принимает прямые зависимости от кирпичей данных или других дистрибутивов Spark.

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
-ms.openlocfilehash: f04dd628ae0999edd202c98521526ae70e1ff0af
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 367027a48dd51dd88de63cb163e05e0e8503755d
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141219"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308586"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -234,7 +234,7 @@ Azure предоставляет широкий набор функций для
 Помимо интерфейсов REST API, многие другие службы Azure также позволяют программно управлять ресурсами из ваших приложений, используя специализированные пакеты SDK для Azure для различных платформ, в том числе пакеты SDK для следующих платформ разработки:
 
 -   [.NET](https://go.microsoft.com/fwlink/?linkid=834925)
--   [Node.js](https://docs.microsoft.com/javascript/azure)
+-   [Node.js](https://docs.microsoft.com/azure/javascript/)
 -   [Java](https://docs.microsoft.com/java/azure)
 -   [PHP](https://github.com/Azure/azure-sdk-for-php/blob/master/README.md)
 -   [Python](/azure/python/)

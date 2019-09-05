@@ -3,19 +3,16 @@ title: Создание шлюза приложений с правилами м
 description: Узнайте, как создать правила маршрутизации на основе URL-пути для шлюза приложений и масштабируемый набор виртуальных машин с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
 ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 01/26/2018
+ms.date: 09/05/2019
 ms.author: victorh
-ms.openlocfilehash: ef80ca290d2bd78ccdcd5e4109f9b1d7ecdab4f8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ebe09e2c10bed1779d9189755f66bbea9bca1d43
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729684"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306261"
 ---
 # <a name="create-an-application-gateway-with-url-path-based-routing-rules-using-azure-powershell"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи Azure PowerShell
 
@@ -38,7 +35,7 @@ ms.locfileid: "66729684"
 
 Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).  
 
@@ -74,7 +71,7 @@ $pip = New-AzPublicIpAddress `
 
 ### <a name="create-the-ip-configurations-and-frontend-port"></a>Создание IP-конфигураций и интерфейсного порта
 
-Свяжите созданную ранее подсеть *myAGSubnet* со шлюзом приложений, используя командлет [New-AzApplicationGatewayIPConfiguration](/powershell/module/az.network/new-azapplicationgatewayipconfiguration). Назначить *myAGPublicIPAddress* шлюз приложений с помощью [New AzApplicationGatewayFrontendIPConfig](/powershell/module/az.network/new-azapplicationgatewayfrontendipconfig).
+Свяжите созданную ранее подсеть *myAGSubnet* со шлюзом приложений, используя командлет [New-AzApplicationGatewayIPConfiguration](/powershell/module/az.network/new-azapplicationgatewayipconfiguration). Назначьте *myAGPublicIPAddress* шлюзу приложений с помощью [New-азаппликатионгатевайфронтендипконфиг](/powershell/module/az.network/new-azapplicationgatewayfrontendipconfig).
 
 ```azurepowershell-interactive
 $vnet = Get-AzVirtualNetwork `
@@ -155,7 +152,7 @@ $appgw = New-AzApplicationGateway `
 
 ### <a name="add-image-and-video-backend-pools-and-port"></a>Добавление внутреннего порта и внутренних пулов для изображений и видео
 
-Можно добавить внутренние пулы с именами *imagesBackendPool* и *videoBackendPool* на шлюз приложений с помощью [AzApplicationGatewayBackendAddressPool добавить](/powershell/module/az.network/add-azapplicationgatewaybackendaddresspool). Добавьте интерфейсный порт для пулов с помощью командлета [Add-AzApplicationGatewayFrontendPort](/powershell/module/az.network/add-azapplicationgatewayfrontendport). Затем отправьте изменения в шлюз приложений с помощью командлета [Set-AzApplicationGateway](/powershell/module/az.network/set-azapplicationgateway).
+Вы можете добавить серверные пулы с именами *imagesBackendPool* и *videoBackendPool* в шлюз приложений с помощью [Add-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/add-azapplicationgatewaybackendaddresspool). Добавьте интерфейсный порт для пулов с помощью командлета [Add-AzApplicationGatewayFrontendPort](/powershell/module/az.network/add-azapplicationgatewayfrontendport). Затем отправьте изменения в шлюз приложений с помощью командлета [Set-AzApplicationGateway](/powershell/module/az.network/set-azapplicationgateway).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -198,7 +195,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-url-path-map"></a>Добавление сопоставления URL-путей
 
-Сопоставления URL-путей гарантируют, что определенные URL-адрес маршрутизируются в определенные внутренние пулы. Можно создать сопоставления URL-адрес с именем *imagePathRule* и *videoPathRule* с помощью [New AzApplicationGatewayPathRuleConfig](/powershell/module/az.network/new-azapplicationgatewaypathruleconfig) и [ Добавить AzApplicationGatewayUrlPathMapConfig](/powershell/module/az.network/add-azapplicationgatewayurlpathmapconfig).
+Сопоставления URL-путей гарантируют, что определенные URL-адрес маршрутизируются в определенные внутренние пулы. Можно создать карты URL-пути с именами *imagePathRule* и *Videopathrule при помощи* с помощью [New-азаппликатионгатевайпасрулеконфиг](/powershell/module/az.network/new-azapplicationgatewaypathruleconfig) и [Add-азаппликатионгатевайурлпасмапконфиг](/powershell/module/az.network/add-azapplicationgatewayurlpathmapconfig).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -237,7 +234,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-routing-rule"></a>Добавление правила маршрутизации
 
-Правило маршрутизации связывает сопоставление URL-адресов с созданным прослушивателем. Можно добавить правило с именем **rule2* с помощью [AzApplicationGatewayRequestRoutingRule добавить](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
+Правило маршрутизации связывает сопоставление URL-адресов с созданным прослушивателем. Правило с именем **Rule2* можно добавить с помощью [Add-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -306,6 +303,7 @@ for ($i=1; $i -le 3; $i++)
     -ImageReferenceOffer WindowsServer `
     -ImageReferenceSku 2016-Datacenter `
     -ImageReferenceVersion latest
+    -OsDiskCreateOption FromImage
   Set-AzVmssOsProfile $vmssConfig `
     -AdminUsername azureuser `
     -AdminPassword "Azure123456!" `
@@ -355,15 +353,15 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ![Тестирование базового URL-адреса в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest.png)
 
-Изменить URL-адрес `http://<ip-address>:8080/video/test.htm`, заменив свой IP-адрес для `<ip-address>`, и вы увидите, что-то, как в следующем примере:
+Измените URL-адрес `http://<ip-address>:8080/video/test.htm`на, подставив IP-адрес `<ip-address>`для, и вы увидите нечто вроде следующего:
 
 ![Тестирование URL-адреса изображений в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-images.png)
 
-Изменить URL-адрес `http://<ip-address>:8080/video/test.htm` и вы увидите, что-то, как в следующем примере:
+Измените URL-адрес `http://<ip-address>:8080/video/test.htm` на, и вы увидите нечто вроде следующего:
 
 ![Тестирование URL-адреса видео в шлюзе приложений](./media/application-gateway-create-url-route-arm-ps/application-gateway-iistest-video.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

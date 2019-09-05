@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: f46757b97fb2dd38be36459e5aafb70f5b5a3bf6
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 3b1b31da68d821ff27fa30e75ec1522b9d4875c8
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932712"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307435"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -38,6 +38,7 @@ ms.locfileid: "68932712"
 | Французский (Франция) |`fr-FR` |-| ✔ |✔ |✔|
 | Французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | Немецкий |`de-DE` |-| ✔ |✔ |✔|
+| Хинди | `hi-IN`|-|-|-|-|
 | Итальянский |`it-IT` |-| ✔ |✔|✔|
 | *[Японский](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |-|   -   |-|Только ключевая фраза|
@@ -88,6 +89,7 @@ ms.locfileid: "68932712"
 |Французский (fr-FR)|✔||||
 |Французский (fr-CA)|✔||||
 |Немецкий|||✔|✔|
+| Хинди |✔|-|-|-|-|
 |Итальянский|✔||||
 |Японский||||✔|
 |Корейский||✔||✔|
