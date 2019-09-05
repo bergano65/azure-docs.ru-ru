@@ -1,7 +1,7 @@
 ---
 title: Руководство по C#. Вызовы API-интерфейсов Cognitive Services в конвейере индексирования — Поиск Azure
 description: В этом руководстве представлен пример извлечения данных, обработки естественного языка и изображений с применением искусственного интеллекта в индексировании службы "Поиск Azure" для извлечения и преобразования данных.
-manager: eladz
+manager: nitinme
 author: MarkHeff
 services: search
 ms.service: search
@@ -9,12 +9,12 @@ ms.subservice: cognitive-search
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: 58252bdbad8e7775add3805c28b2da076c07d9aa
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: ad0710a3492eeecd56989e627211da5d4a5e0e0a
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69636065"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186256"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по C#. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 

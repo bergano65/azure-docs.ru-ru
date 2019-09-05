@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 08/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: a8e19c89cec00bba05eb74e752268e1da43a1ac0
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 822bbd004035d9745535942c508cae6702e5b99b
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035858"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278114"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое Машинное обучение Azure
 
@@ -35,9 +35,12 @@ ms.locfileid: "70035858"
 + [Записные книжки Jupyter](https://jupyter.org), в которых используются [пакеты SDK](https://docs.microsoft.com/azure/machine-learning/service/#reference) для написания собственного кода, например для [этих примеров записных книжек](https://aka.ms/aml-notebooks).
 + [Расширение Visual Studio Code](how-to-vscode-tools.md)
 
+
+> [!VIDEO https://channel9.msdn.com/Events/Connect/Microsoft-Connect--2018/D240/player]
+
 ## <a name="what-can-i-do-with-azure-machine-learning-service"></a>Что можно делать с помощью службы машинного обучения Azure?
 
-Используйте <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK Python для Машинного обучения Azure</a> с пакетами Python с открытым исходным кодом или [графический интерфейс (предварительная версия)](ui-tutorial-automobile-price-train-score.md), чтобы создавать и обучать высокоточные модели машинного и глубокого обучения в рабочей области Службы машинного обучения Azure.
+Используйте <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK Python для Машинного обучения Azure</a> с пакетами Python с открытым исходным кодом или [графический интерфейс (предварительная версия)](ui-tutorial-automobile-price-train-score.md), чтобы создавать и обучать высокоточные модели машинного и глубокого обучения в рабочей области Службы машинного обучения Azure.
 
 Пакеты Python с открытым исходным кодом предлагают такие различные компоненты машинного обучения, как <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>, <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a> и <a href="https://mxnet.io" target="_blank">MXNet</a>.
 
@@ -45,7 +48,7 @@ ms.locfileid: "70035858"
 
 ### <a name="code-first-experience"></a>Модель сode-first
 
-Начните обучение на локальном компьютере с помощью <a href="https://aka.ms/aml-sdk" target="_blank">пакета SDK Python для Машинного обучения Azure</a>, а затем выполните развертывание в облаке. С большинством доступных [целевых объектов вычислений](how-to-set-up-training-targets.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
+Начните обучение на локальном компьютере с помощью <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK Python для Машинного обучения Azure</a>, а затем выполните развертывание в облаке. С большинством доступных [целевых объектов вычислений](how-to-set-up-training-targets.md), например вычислительной средой Машинного обучения Azure и [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), и с [расширенными службами настроек гиперпараметров](how-to-tune-hyperparameters.md) можно создавать более высокий уровень модели быстрее, используя мощные возможности облака.
 
 Также с помощью пакета SDK можно [автоматизировать обучение и настройку модели](tutorial-auto-train-models.md).
 
@@ -63,7 +66,7 @@ ms.locfileid: "70035858"
 
 Имея подходящую модель, вы легко сможете использовать ее в веб-службе, устройстве Интернета вещей или в Power BI. См. дополнительные сведения о [развертывании](how-to-deploy-and-where.md).
 
-Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) или [портал Azure](https://portal.azure.com/).
+Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или [портал Azure](https://portal.azure.com/).
 
 Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-run-batch-predictions.md) на больших объемах данных.
 

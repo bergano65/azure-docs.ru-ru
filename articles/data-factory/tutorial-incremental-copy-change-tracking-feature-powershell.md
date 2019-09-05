@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 117b6d53a3392e8a4f75d5d1966e3f48fb66d5ce
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 36a160ad3c6b925931c6274a44cfb5492d6a562a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966413"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140645"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -235,7 +234,7 @@ ms.locfileid: "68966413"
 ### <a name="create-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных.
 
-1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений **&lt;server&gt;, &lt;database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
+1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений server, database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
 
     ```json
     {

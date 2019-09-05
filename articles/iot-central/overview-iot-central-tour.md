@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 6c06d789e6a005c0079f889cead6a75f4d0baf19
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c4eba3e08e403243e76ac891d3bfcb59f12cad85
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875716"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211907"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Общие сведения о пользовательском интерфейсе Azure IoT Central
 
@@ -39,9 +39,29 @@ ms.locfileid: "69875716"
 
 Меню навигации слева позволяет получать доступ к различным разделам приложения. Меню навигации можно развернуть или свернуть, выбрав **<** или **>** .
 
-| Меню | ОПИСАНИЕ |
-| ---- | ----------- |
-| ![Меню навигации слева](media/overview-iot-central-tour/navigationbar.png) | <ul><li>Кнопка **Панель мониторинга** отображает панель мониторинга приложения. Как сборщик вы можете настроить панель мониторинга для операторов. Пользователи также могут создавать собственные панели мониторинга.</li><li>При нажатии кнопки **Device Explorer** откроется список шаблонов смоделированных и реальных устройств, связанных с каждым шаблоном в приложении. Средство **Device Explorer** позволяет операторам управлять подключенными устройствами.</li><li>Кнопка **Device Sets** (Наборы устройств) позволяет просматривать и создавать наборы устройств. Оператор может создать наборы устройств в качестве логической коллекции устройств, указанных в запросе.</li><li>При нажатии кнопки **Аналитика** отобразятся аналитические сведения, полученные из данных телеметрии устройств и их наборов. Как оператор вы можете создавать настраиваемые представления на основе данных устройства для получения аналитических сведений из приложения.</li><li>Кнопка **Задания** обеспечивает массовое управление устройствами при условии, что вы создали и запустили задания для выполнения обновлений в соответствующем масштабе.</li><li>Кнопка **Шаблоны устройств** показывает средства, которые использует построитель для создания и управления шаблонами устройств.</li><li>Кнопка **Экспорт непрерывных данных** позволяет администратору настроить непрерывный экспорт в другие службы Azure, например в хранилище и очереди.</li><li>При нажатии кнопки **Администрирование** открываются страницы администрирования приложений, на которых администраторы могут полностью управлять параметрами, пользователями и ролями приложения.</li></ul> |
+:::row:::
+  :::column span="":::
+      ![Left navigation menu](media/overview-iot-central-tour/navigationbar.png)
+  :::column-end:::
+  :::column span="2":::
+
+      **Dashboard** displays your application dashboard. As a builder, you can customize the dashboard for your operators. Users can also create their own  dashboards.
+    
+      **Device Explorer** lists the simulated and real devices associated with each device template in the application. As an operator, you use the **Device Explorer** to manage your connected devices.
+    
+      **Device Sets** enables you to view and create device sets. As an operator, you can create device sets as a logical collection of devices specified by a query.
+    
+      **Analytics** shows analytics derived from device telemetry for devices and device sets. As an operator, you can create custom views on top of device data to derive insights from your application.
+    
+      **Jobs** enables bulk device management by having you create and run jobs to perform updates at scale.
+    
+      **Device Templates** shows the tools a builder uses to create and manage device templates.
+    
+      **Continuous Data Export** enables an administrator to configure a continuous export to other Azure services such as storage and queues.
+    
+      **Administration** shows the application administration pages where an administrator can manage application settings, users, and roles.
+   :::column-end:::
+:::row-end:::
 
 ## <a name="search-help-and-support"></a>Поиск, справка и поддержка
 

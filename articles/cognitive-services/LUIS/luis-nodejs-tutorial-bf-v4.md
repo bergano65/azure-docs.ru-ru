@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 06/24/2019
+ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: a06bd5a1a061de82230e93b867ea88e333b3cc93
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 8455a9c9ecff89643e090f1d763a44f97f5779f5
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442553"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70206881"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Руководство по совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js 
 
@@ -47,9 +47,9 @@ ms.locfileid: "67442553"
     |Параметр|Назначение|Предлагаемый параметр|
     |--|--|--|
     |Имя бота|Имя ресурса|`luis-nodejs-bot-` + `<your-name>`, например `luis-nodejs-bot-johnsmith`|
-    |Подписка|Подписка, в которой нужно создать бот.|Основная подписка.
-    |Группа ресурсов|Логическая группа ресурсов Azure|Создайте группу для хранения всех ресурсов, используемых с этим ботом, и назовите эту группу `luis-nodejs-bot-resource-group`.|
-    |Расположение|Регион Azure не обязательно должен совпадать с регионом разработки или публикации LUIS.|`westus`|
+    |Subscription|Подписка, в которой нужно создать бот.|Основная подписка.
+    |Resource group|Логическая группа ресурсов Azure|Создайте группу для хранения всех ресурсов, используемых с этим ботом, и назовите эту группу `luis-nodejs-bot-resource-group`.|
+    |Location|Регион Azure не обязательно должен совпадать с регионом разработки или публикации LUIS.|`westus`|
     |Ценовая категория|Используется для ограничения запросов службы и выставления счетов.|`F0` — уровень "Бесплатный".
     |Имя приложения.|При развертывании бота в облаке имя используется в качестве поддомена (например, humanresourcesbot.azurewebsites.net).|`luis-nodejs-bot-` + `<your-name>`, например `luis-nodejs-bot-johnsmith`|
     |Шаблон бота|Параметры Bot Framework (см. следующую таблицу)|
@@ -70,7 +70,7 @@ ms.locfileid: "67442553"
 
     [![Создание бота веб-приложения](./media/bfv4-nodejs/create-web-app-service.png)](./media/bfv4-nodejs/create-web-app-service.png#lightbox)
 
-    Дождитесь создания службы ботов прежде, чем продолжить.
+    Прежде, чем продолжить, дождитесь создания службы ботов.
 
 ## <a name="the-bot-has-a-language-understanding-model"></a>Бот содержит модель распознавания речи
 
@@ -87,7 +87,7 @@ ms.locfileid: "67442553"
 1. Не выходя из портала Azure для нового бота, выберите **Test in Web Chat** (Тестирование в веб-чате). 
 1. В текстовом поле **Введите сообщение** введите `hello`. Ответом бота будут сведения об платформе ботов, а также примеры запросов для данной модели LUIS, например заказ авиабилетов в Париж. 
 
-    ![Снимок экрана: портал Azure, на котором введен текст "hello".](./media/bfv4-nodejs/ask-bot-question-in-portal-test-in-web-chat.png)
+    ![Снимок экрана портала Azure, на котором введен текст "hello".](./media/bfv4-nodejs/ask-bot-question-in-portal-test-in-web-chat.png)
 
     Для быстрой проверки бота можно выполнить тестирование функциональных возможностей. Для выполнения более сложного тестирования, в которое входит отладка, скачайте код бота и используйте Visual Studio. 
 
@@ -330,23 +330,23 @@ ms.locfileid: "67442553"
     }
     ```
 
-1. В эмуляторе бота введите `Hello` и получите ответ для основного бота, который соответствует ответу, полученному в разделе **Test in Web Chat** (Тестирование в веб-чате).
+1. В эмуляторе бота введите `Hello` и получите такой же ответ от основного бота, который соответствует ответу, полученному при **Тестировании в веб-чате**.
 
     [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 
-## <a name="ask-bot-a-question-for-the-book-flight-intent"></a>Отправка боту запроса с намерением заказа авиабилета
+## <a name="ask-bot-a-question-for-the-book-flight-intent"></a>Вопрос боту о заказе билет на самолет
 
-1. В эмуляторе бота закажите авиабилет, введя следующий речевой фрагмент: 
+1. В эмуляторе бота закажите билет на самолет путем введения следующего речевого фрагмента. 
 
-    ```bot
+    ```console
     Book a flight from Paris to Berlin on March 22, 2020
     ```
 
     Эмулятор бота запросит подтверждение. 
 
-1. Выберите **Да**. Бот ответит сводкой действий. 
-1. Из журнала эмулятора бота выберите строку, которая включает `Luis Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
+1. Выберите **Да**. Бот ответит сводкой своих действий. 
+1. Из журнала эмулятора бота выберите строку, в которой содержится `Luis Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
 
     [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
 

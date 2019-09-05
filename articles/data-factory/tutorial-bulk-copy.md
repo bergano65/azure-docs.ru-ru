@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 88fd480f87c3a33af1d16e57d6687d739dc1ec7d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b5d0807fb03c8518286a369f50df62f0ec0b23c2
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66123422"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140766"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в Базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы Базы данных SQL Azure.
@@ -63,7 +62,7 @@ ms.locfileid: "66123422"
 
 1. Если у вас нет хранилища данных SQL Azure, выполните шаги из раздела [Создание хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-get-started-tutorial.md).
 
-2. Создайте соответствующие схемы таблиц в хранилище данных SQL Azure. [Служебную программу переноса](https://www.microsoft.com/download/details.aspx?id=49100) можно использовать для **миграции схемы** из базы данных SQL Azure в хранилище данных SQL Azure. Фабрика данных Azure используется для миграции и копирования данных на более поздних этапах.
+2. Создайте соответствующие схемы таблиц в хранилище данных SQL Azure. [Служебную программу переноса](https://www.microsoft.com/download/details.aspx?id=49100) можно использовать для **миграции схемы** из Базы данных SQL Azure в хранилище данных SQL Azure. Фабрика данных Azure используется для миграции и копирования данных на более поздних этапах.
 
 ## <a name="azure-services-to-access-sql-server"></a>Доступ служб Azure к серверу SQL Server
 

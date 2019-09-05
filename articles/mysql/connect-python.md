@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 08/08/2019
-ms.openlocfilehash: 5d7414d13b3fb1390b12084f0480e0549a380264
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 0940d307d78236fea1a232c1e7c60a296ba46c62
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68931621"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195157"
 ---
 # <a name="azure-database-for-mysql-use-python-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Python
 Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для MySQL. Здесь используются инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных из платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на языке Python и вы только начали работу с базой данных Azure для MySQL.
@@ -63,8 +63,8 @@ ms.locfileid: "68931621"
 Получите сведения о подключении, необходимые для подключения к базе данных Azure.для MySQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
-3. Щелкните имя сервера.
+2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
+3. Выберите имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
  ![Имя сервера базы данных Azure для MySQL](./media/connect-python/1_server-overview-name-login.png)
 

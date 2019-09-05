@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: ad321dfa3db69c89b8da080673cb3bab02e4af66
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: b3607f0b462efceab322e6eaf616268a34b02fb0
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69905226"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142085"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Работа с предыдущей версией службы "Миграция Azure"
 
@@ -201,7 +201,7 @@ Linux | Azure рекомендует эти [операционные систе
 1. Чтобы присоединить рабочую область Log Analytics к проекту в области **Обзор** > **Основное** щелкните **Требуется настройка**.
 2. Вы можете создать рабочую область или присоединить имеющуюся.
   - Чтобы создать рабочую область, укажите имя. Рабочая область создается в том же [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), что и проект миграции.
-  - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. В списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-configure#supported-azure-regions). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
+  - При подключении имеющейся рабочей области вы можете выбрать нужную из всех доступных рабочих областей в той же подписке, что и проект миграции. В списке указаны только рабочие области, созданные в регионе, в котором [поддерживается решение "Сопоставление служб"](../azure-monitor/insights/vminsights-enable-overview.md#prerequisites). Чтобы подключить рабочую область, необходим доступ к ней с ролью "Читатель".
 
 > [!NOTE]
 > Изменить рабочую область, связанную с проектом миграции, невозможно.

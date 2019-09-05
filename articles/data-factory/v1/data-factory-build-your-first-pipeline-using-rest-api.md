@@ -3,22 +3,20 @@ title: Создание первой фабрики данных (REST) | Док
 description: В этом руководстве вы создадите образец конвейера фабрики данных Azure с помощью REST API фабрики данных.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: 7e0a2465-2d85-4143-a4bb-42e03c273097
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/01/2017
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: ab36d475052aa71427427e1362c74abd031fa414
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 5fe554371e54c6f67ae714084f110319b43fe54c
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839455"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140435"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Руководство по Создание первой фабрики данных Azure с помощью REST API Фабрики данных
 > [!div class="op_single_selector"]

@@ -7,12 +7,12 @@ ms.date: 07/22/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 00e60d41b34531462a4e85623a19f1dd22c6e4e6
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 4fd162020fc7acf6c005302a1cb8038e8de424d7
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816776"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231702"
 ---
 # <a name="deploy-the-iso-27001-blueprint-sample"></a>Развертывание примера схемы ISO 27001
 
@@ -125,7 +125,7 @@ ms.locfileid: "68816776"
 
 Дополнительные статьи о схемах и способах их использования:
 
-- Ознакомьтесь с [жизненным циклом схемы](../../concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](../../concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](../../concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](../../concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](../../concepts/resource-locking.md).

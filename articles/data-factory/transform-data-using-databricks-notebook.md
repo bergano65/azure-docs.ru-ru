@@ -7,17 +7,16 @@ author: nabhishek
 manager: craigg
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/12/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: fad8045ac8bddb236f0f80ad223ebafc7aa7e93a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: b6426017b7608742866cedb08b5ac9298400d433
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002858"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140885"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure
 
@@ -53,7 +52,7 @@ ms.locfileid: "66002858"
 
 1.  На панели **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**.
 
-    Имя фабрики данных Azure должно быть *глобально уникальным*. Если появится следующая ошибка, измените имя фабрики данных. (Например, используйте **\<yourname\>ADFTutorialDataFactory**.) Правила именования для артефактов службы "Фабрика данных" см. в [этой](https://docs.microsoft.com/azure/data-factory/naming-rules) статье.
+    Имя фабрики данных Azure должно быть *глобально уникальным*. Если появится следующая ошибка, измените имя фабрики данных. (Например, используйте **\<yourname\>ADFTutorialDataFactory**.) Правила именования для артефактов службы "Фабрика данных" приведены в статье [Фабрика данных Azure — правила именования](https://docs.microsoft.com/azure/data-factory/naming-rules).
 
     ![Указание имени для новой фабрики данных](media/transform-data-using-databricks-notebook/new-azure-data-factory.png)
 
@@ -111,7 +110,7 @@ ms.locfileid: "66002858"
 
     1.  В поле **Версия кластера** выберите **4.2** (Apache Spark 2.3.1, Scala 2.11).
 
-    1.  В поле **Тип узла кластера** выберите **Standard\_D3\_v2** в категории **Общего назначения (HDD)**. 
+    1.  В поле **Тип узла кластера** выберите **Standard\_D3\_v2** в категории **Общего назначения (HDD)** . 
     
     1.  В поле **Рабочая роль** введите **2**.
     

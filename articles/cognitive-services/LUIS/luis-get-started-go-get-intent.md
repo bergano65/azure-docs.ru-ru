@@ -1,5 +1,5 @@
 ---
-title: Получение намерения (Go) — LUIS
+title: Краткое руководство. Получение намерения (Go) — LUIS
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства по Go вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 07/16/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: c4c2d94544739b0611d19705a669d124295947d8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1fc36b8e1240751ce85d61c761cd069dcdad207e
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563842"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307562"
 ---
 # <a name="quickstart-get-intent-using-go"></a>Краткое руководство. Получение намерения с использованием Go
 

@@ -3,21 +3,20 @@ title: Ветвление в конвейере фабрики данных Azur
 description: Узнайте, как контролировать поток данных в фабрике данных Azure с помощью ветвления и создания цепочки действий.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/20/2019
-ms.author: shlo
-ms.openlocfilehash: 9a03094683a973db16aa949f0610bc7f9914be45
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 264d8e049cc7b714e00aaa77441cdc81a1e0a0c9
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649226"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140738"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -46,7 +45,7 @@ ms.locfileid: "58649226"
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
 * **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * **Visual Studio** 2013, 2015 или 2017. В этом руководстве используется Visual Studio 2017.
-* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)**.
+* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)** .
 * [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые вы используете в следующих шагах: **идентификатор приложения**, **ключ аутентификации** и **идентификатор клиента**. Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
 
 ### <a name="create-blob-table"></a>Создание таблицы больших двоичных объектов
@@ -66,7 +65,7 @@ ms.locfileid: "58649226"
 
 1. Запустите **Visual Studio**.
 2. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**. Требуется .NET версии 4.5.2 или более поздней.
-3. Выберите **Visual C#** -> **Консольное приложение (.NET Framework)** из списка типов проектов справа.
+3. Выберите **Visual C#**  -> **Консольное приложение (.NET Framework)** из списка типов проектов справа.
 4. Введите **ADFv2BranchTutorial** в качестве имени.
 5. Нажмите кнопку **ОК** , чтобы создать проект.
 
@@ -335,7 +334,7 @@ client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobSinkDatasetNa
 
 ![Запрос в окне конструктора приложений логики](media/tutorial-control-flow/logic-app-designer-request.png)
 
-Для действия **Отправка электронного сообщения** настройте способ форматирования электронного сообщения, используя свойства, переданные в схеме запроса текста JSON. Вот пример: 
+Для действия **Отправка электронного сообщения** настройте способ форматирования электронного сообщения, используя свойства, переданные в схеме запроса текста JSON. Вот пример:
 
 ![Конструктор приложения логики. Действие отправки электронной почты](media/tutorial-control-flow/send-email-action.png)
 
@@ -348,7 +347,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 
 ## <a name="fail-email-workflow"></a>Рабочий процесс сбоя отправки сообщения электронной почты 
 
-Клонируйте действие **CopySuccessEmail** и создайте еще один рабочий процесс Logic Apps **CopyFailEmail**. В триггере запроса действие `Request Body JSON schema` такое же. Просто измените формат электронной почты, например `Subject`, чтобы настроить процесс сбоя отправки сообщения электронной почты. Вот пример: 
+Клонируйте действие **CopySuccessEmail** и создайте еще один рабочий процесс Logic Apps **CopyFailEmail**. В триггере запроса действие `Request Body JSON schema` такое же. Просто измените формат электронной почты, например `Subject`, чтобы настроить процесс сбоя отправки сообщения электронной почты. Вот пример:
 
 ![Конструктор приложения логики. Рабочий процесс сбоя отправки сообщения электронной почты](media/tutorial-control-flow/fail-email-workflow.png)
 

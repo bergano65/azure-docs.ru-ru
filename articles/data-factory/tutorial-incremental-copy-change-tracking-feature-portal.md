@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/12/2018
 ms.author: yexu
-ms.openlocfilehash: 41f8769aea841e05887feb6a44511cbf444a7acf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a71c83a190bd7e88edd5008edef670b32905add
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66168941"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140805"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -54,7 +53,7 @@ ms.locfileid: "66168941"
 ## <a name="high-level-solution"></a>Общее решение
 В этом руководстве описано, как создать два конвейера, которые выполняют следующие две операции:  
 
-1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (база данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
+1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (База данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
 
     ![Полная загрузка данных](media/tutorial-incremental-copy-change-tracking-feature-portal/full-load-flow-diagram.png)
 1.  **Добавочная загрузка** — вы создадите конвейер со следующими действиями для периодического выполнения: 
@@ -354,7 +353,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 ``` 
 
 ## <a name="create-a-pipeline-for-the-delta-copy"></a>Создание конвейера для копирования разностных данных
-В этом шаге вы создадите конвейер со следующими действиями для периодического выполнения: **Действия поиска** получают старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передают их в действие копирования. **Действие копирования** копирует вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из базы данных SQL Azure в хранилище BLOB-объектов. **Действие хранимой процедуры** обновляет значение SYS_CHANGE_VERSION для запуска следующего конвейера.
+В этом шаге вы создадите конвейер со следующими действиями для периодического выполнения: **Действия поиска** получают старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передают их в действие копирования. **Действие копирования** копирует вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из Базы данных SQL Azure в хранилище BLOB-объектов. **Действие хранимой процедуры** обновляет значение SYS_CHANGE_VERSION для запуска следующего конвейера.
 
 1. В пользовательском интерфейсе фабрики данных переключитесь на вкладку **Правка**. Щелкните значок **+ (плюс)** в левой панели и выберите **Конвейер**. 
 
@@ -417,7 +416,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
         | ИМЯ | type | Значение | 
         | ---- | ---- | ----- | 
         | CurrentTrackingVersion | Int64 | @{activity('LookupCurrentChangeTrackingVersionActivity').output.firstRow.CurrentChangeTrackingVersion} | 
-        | TableName | Строка | @{activity('LookupLastChangeTrackingVersionActivity').output.firstRow.TableName} | 
+        | TableName | Строка, | @{activity('LookupLastChangeTrackingVersionActivity').output.firstRow.TableName} | 
     
         ![Действие хранимой процедуры — параметры](./media/tutorial-incremental-copy-change-tracking-feature-portal/stored-procedure-parameters.png)
 14. **Соедините действие копирования с действием хранимой процедуры**. Перетащите **зеленую кнопку**, присоединенную к действию "Копирование", на блок действия "Хранимая процедура". 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b997451a25f8a093491a322376db95ea53165893
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 50c6c2a1f8be979d10b77793adb168e6bd276e49
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989162"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258861"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
 
@@ -38,7 +38,7 @@ ms.locfileid: "68989162"
 
 В этом учебнике рассматривается только основной сценарий с использованием условий. Дополнительные сведения можно найти в разделе
 
-* [Структура файла шаблона: условие](./resource-group-authoring-templates.md#condition).
+* [Структура файла шаблона: условие](conditional-resource-deployment.md).
 * [Conditionally deploy a resource in an Azure Resource Manager template](/azure/architecture/building-blocks/extending-templates/conditional-deploy) (Условное развертывание ресурсов в шаблоне Azure Resource Manager).
 * [Функция шаблона: If](./resource-group-template-functions-logical.md#if).
 * [Comparison functions for Azure Resource Manager templates](./resource-group-template-functions-comparison.md) (Функции сравнения для шаблонов Azure Resource Manager)

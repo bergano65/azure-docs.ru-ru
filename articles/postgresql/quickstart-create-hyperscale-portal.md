@@ -8,12 +8,12 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 05/14/2019
-ms.openlocfilehash: 6e9e7d884b7580d7655921134a7ab63b0b1b0dd6
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: fe981167249e24a43a8cb14c51c9b7c1eb081225
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899984"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164017"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-preview-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL" с решением Hyperscale (Citus) (предварительная версия) на портале Azure
 
@@ -88,6 +88,8 @@ SELECT create_distributed_table('github_users', 'user_id');
 Затем загрузите данные из файлов в распределенные таблицы:
 
 ```sql
+SET CLIENT_ENCODING TO 'utf8';
+
 \copy github_events from 'events.csv' WITH CSV
 \copy github_users from 'users.csv' WITH CSV
 ```

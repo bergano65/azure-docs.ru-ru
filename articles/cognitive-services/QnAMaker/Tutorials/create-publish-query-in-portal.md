@@ -1,5 +1,5 @@
 ---
-title: Создание, публикация и получение ответов в QnA Maker
+title: Руководство по Создание, публикация и получение ответов в QnA Maker
 titleSuffix: Azure Cognitive Services
 description: Создайте базу знаний с вопросами и ответами из общедоступных часто задаваемых веб-вопросов. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды cURL. Затем создайте бот и протестируйте его с помощью того же вопроса.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 05/07/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: a13e0cb0e594571344b16d007ef13475b384b73d
-ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
+ms.openlocfilehash: 6cc509b9f9a9087fbe832dbd35b3dfd8d60a6577
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692993"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308067"
 ---
 # <a name="tutorial-from-the-qna-maker-portal-create-a-knowledge-base"></a>Руководство по На портале QnA Maker создайте базу знаний.
 

@@ -11,18 +11,18 @@ author: j-martens
 ms.author: jmartens
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 40a2f8716b438837cf3efe300286ab9053fc8b07
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 22f9ff8c493e850152e1fd74c8787e2cde507685
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035818"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308856"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
 Приложение Azure Machine Learning Workbench и некоторые другие ранние функции устарели и были заменены в выпуске за сентябрь 2018 г. в рамках процесса улучшения [архитектуры](concept-azure-machine-learning-architecture.md).
 
-Этот выпуск содержит множество существенных обновлений, внесенных с учетом отзывов клиентов для улучшения удобства работы. Изменения не коснулись основных функций службы, начиная от запуска эксперимента и кончая развертыванием модели. Но теперь в вашем распоряжении надежный <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK</a> и интерфейс [Azure CLI](reference-azure-machine-learning-cli.md) для выполнения задач и конвейеров машинного обучения.
+Этот выпуск содержит множество существенных обновлений, внесенных с учетом отзывов клиентов для улучшения удобства работы. Изменения не коснулись основных функций службы, начиная от запуска эксперимента и кончая развертыванием модели. Но теперь в вашем распоряжении надежный <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a> и интерфейс [Azure CLI](reference-azure-machine-learning-cli.md) для выполнения задач и конвейеров машинного обучения.
 
 Большинство артефактов, которые были созданы в предыдущей версии Службы машинного обучения Azure, хранятся в вашем локальном или облачном хранилище. Эти артефакты не исчезнут.
 
@@ -37,7 +37,7 @@ ms.locfileid: "70035818"
 Последний выпуск Машинного обучения Azure включает следующие возможности:
 + [Упрощенная модель ресурсов Azure](concept-azure-machine-learning-architecture.md).
 + [Новый пользовательский интерфейс портала](how-to-track-experiments.md) для управления экспериментами и целевыми объектами вычислений.
-+ Новый, более функциональный <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK</a> для Python.
++ Новый, более функциональный <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a> для Python.
 + Обновленное и дополненное [расширение интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) для машинного обучения
 
 Переработанная [архитектура](concept-azure-machine-learning-architecture.md) для упрощения использования. Вместо нескольких ресурсов Azure и учетных записей требуется только [рабочая область Машинного обучения Azure](concept-workspace.md). Новые рабочие области можно быстро создать на [портале Azure](how-to-manage-workspace.md). Рабочая область позволяет нескольким пользователя хранить целевые объекты вычислений для обучения и развертывания, экспериментов с моделями, образов Docker, развернутых моделей и т. д.
@@ -50,7 +50,7 @@ ms.locfileid: "70035818"
 
 С 9 января 2019 г. прекращается поддержка Azure Machine Learning Workbench, Экспериментирования в Машинном обучении Azure, учетных записей Управления моделями, а также соответствующего интерфейса командной строки и пакета SDK.
 
-Все новейшие возможности доступны при использовании нового <a href="https://aka.ms/aml-sdk" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
+Все новейшие возможности доступны при использовании нового <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакета SDK</a>, [интерфейса командной строки](reference-azure-machine-learning-cli.md) и [портала](how-to-manage-workspace.md).
 
 ## <a name="what-about-run-histories"></a>Что будет с журналами выполнения?
 
@@ -100,9 +100,9 @@ run = exp.submit(source_directory=script_folder,
 
 ## <a name="what-about-the-old-sdk-and-cli"></a>Что будет со старым пакетом SDK и интерфейсом командной строки?
 
-Они будут продолжать работать до января. См. описанный выше [график](#timeline). Мы рекомендуем уже сейчас создавать эксперименты и модели с помощью последнего пакета SDK или интерфейса командной строки.
+См. описанный выше [график](#timeline). Мы рекомендуем уже сейчас создавать эксперименты и модели с помощью последнего пакета SDK или интерфейса командной строки.
 
-Использование пакета SDK для Python из последнего выпуска позволяет взаимодействовать со Службой машинного обучения Azure в любой среде Python. Узнайте, как установить последний пакет <a href="https://aka.ms/aml-sdk" target="_blank">SDK</a>. Для взаимодействия со службой в любой среде командной строки, включая среду Cloud Shell портала Azure, можно также использовать [обновленное расширение машинного обучения интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) с богатым набором команд `az ml`.
+Использование пакета SDK для Python из последнего выпуска позволяет взаимодействовать со Службой машинного обучения Azure в любой среде Python. Узнайте, как установить последний пакет <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">SDK</a>. Для взаимодействия со службой в любой среде командной строки, включая среду Cloud Shell портала Azure, можно также использовать [обновленное расширение машинного обучения интерфейса командной строки Azure](reference-azure-machine-learning-cli.md) с богатым набором команд `az ml`.
 
 ## <a name="what-about-visual-studio-code-tools-for-ai"></a>Что будет с Visual Studio Code Tools for AI?
 
@@ -112,7 +112,7 @@ run = exp.submit(source_directory=script_folder,
 
 ## <a name="what-about-domain-packages"></a>Что будет с пакетами домена?
 
-Пакеты домена для компьютерного зрения, анализа текста и прогнозирования нельзя использовать с последней версией Службы машинного обучения Azure. Но вы по-прежнему можете создавать и обучать модели компьютерного зрения, текста и прогнозирования, используя последний <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK</a> для Python Службы машинного обучения Azure. Чтобы узнать, как перенести уже существующие модели, созданные с использованием пакетов компьютерного зрения, анализа текста и прогнозирования, обратитесь сюда: [AML-Packages@microsoft.com](mailto:AML-Packages@microsoft.com).
+Пакеты домена для компьютерного зрения, анализа текста и прогнозирования нельзя использовать с последней версией Службы машинного обучения Azure. Но вы по-прежнему можете создавать и обучать модели компьютерного зрения, текста и прогнозирования, используя последний <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">пакет SDK</a> для Python Службы машинного обучения Azure. Чтобы узнать, как перенести уже существующие модели, созданные с использованием пакетов компьютерного зрения, анализа текста и прогнозирования, обратитесь сюда: [AML-Packages@microsoft.com](mailto:AML-Packages@microsoft.com).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

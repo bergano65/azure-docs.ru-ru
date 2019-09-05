@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/21/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 35e6ad922ab54748165fcf8e273d93ee44bc42cc
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 97b9e0defb3f349a6e202572bc0e3005d5d87e9c
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564529"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141204"
 ---
 # <a name="example-how-to-call-the-computer-vision-api"></a>Пример: вызов API компьютерного зрения
 
@@ -47,19 +47,19 @@ ms.locfileid: "68564529"
 
 Каждый вызов API компьютерного зрения требует ключ подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса.
 
-На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
+На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 1. В качестве примера API компьютерного зрения см. приведенную ниже передачу ключа подписки через параметр строки запроса.
 
-```https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>```
+    ```https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>```
 
 1. Ключ подписки также можно указать в заголовке запроса HTTP.
 
-```ocp-apim-subscription-key: <Your subscription key>```
+    ```ocp-apim-subscription-key: <Your subscription key>```
 
 1. При использовании клиентской библиотеки ключ подписки передается через конструктор класса VisionServiceClient.
 
-```var visionClient = new VisionServiceClient("Your subscriptionKey");```
+    ```var visionClient = new VisionServiceClient("Your subscriptionKey");```
 
 ## <a name="upload-an-image-to-the-computer-vision-api-service-and-get-back-tags-descriptions-and-celebrities"></a>Передача изображения в службу API компьютерного зрения и получение тегов, описаний и знаменитостей
 

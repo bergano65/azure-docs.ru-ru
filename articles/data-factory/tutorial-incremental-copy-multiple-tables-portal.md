@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: b9dafd31ed84298c97932b1cdb5593eb17769ef9
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: d46c460f7158635e520b47517fb3aab005af94a2
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59566011"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140752"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -516,8 +515,8 @@ END
 
         | ИМЯ | type | Значение | 
         | ---- | ---- | ----- |
-        | LastModifiedtime | DateTime | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
-        | TableName | Строка | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
+        | LastModifiedtime | Дата и время | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
+        | TableName | Строка, | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
     
         ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)
 1. Нажмите кнопку **Опубликовать** в области слева. С помощью этого действия выполнится публикация созданных сущностей в службу фабрики данных. 

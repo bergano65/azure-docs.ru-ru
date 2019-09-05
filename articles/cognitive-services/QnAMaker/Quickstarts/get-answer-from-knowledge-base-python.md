@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 05/24/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 71f2cc3ef028d66be7049cf85003d51e6b4baef3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 34c85de456e7ec96f3244d327fd53c91ed90d109
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559808"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306915"
 ---
-# <a name="get-answers-to-a-question-from-a-knowledge-base-with-python"></a>Получение ответов на вопрос из базы знаний с помощью Python
+# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-python"></a>Краткое руководство. Получение ответов на вопрос из базы знаний с помощью Python
 
 В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/data-sources-supported.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties). 
 

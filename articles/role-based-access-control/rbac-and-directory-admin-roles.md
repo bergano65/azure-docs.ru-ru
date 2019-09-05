@@ -15,12 +15,12 @@ ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 1b7183da84b994da8694440183e367f143722002
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: be37768a5cef38ae0dc49e12f1d83ba8005ab961
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295184"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194176"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -81,7 +81,7 @@ RBAC Azure — это система авторизации на основе [
 
 Модель RBAC поддерживается только порталом Azure и API-интерфейсами Azure Resource Manager. Пользователи, группы и приложения, которым назначены роли RBAC, не могут использовать [API классической модели развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md).
 
-На портале Azure сведения о назначении ролей RBAC отображаются в колонке **Управление доступом (IAM)**. Эта колонка представлена в различных разделах портала, в том числе в группах управления, подписках, группах ресурсов и различных ресурсах.
+На портале Azure сведения о назначении ролей RBAC отображаются в колонке **Управление доступом (IAM)** . Эта колонка представлена в различных разделах портала, в том числе в группах управления, подписках, группах ресурсов и различных ресурсах.
 
 ![Колонка "Управление доступом (IAM)" на портале Azure](./media/rbac-and-directory-admin-roles/access-control-role-assignments.png)
 
@@ -97,7 +97,7 @@ RBAC Azure — это система авторизации на основе [
 
 | Роль администратора в Azure AD | Разрешения | Примечания |
 | --- | --- | --- |
-| [Глобальный администратор](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator) | <ul><li>Управление доступа ко всем административным функциям в Azure Active Directory, а также к службам, которые включены в федерацию с Azure Active Directory</li><li>Назначение ролей администратора другим пользователям</li><li>Сброс паролей для любого пользователя и других администраторов</li></ul> | Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. |
+| [Глобальный администратор](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) | <ul><li>Управление доступа ко всем административным функциям в Azure Active Directory, а также к службам, которые включены в федерацию с Azure Active Directory</li><li>Назначение ролей администратора другим пользователям</li><li>Сброс паролей для любого пользователя и других администраторов</li></ul> | Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. |
 | [Администратор пользователей](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
 | [Администратор выставления счетов](../active-directory/users-groups-roles/directory-assign-admin-roles.md#billing-administrator) | <ul><li>Совершение покупок</li><li>Управление подписками</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности службы</li></ul> |  |
 

@@ -3,22 +3,21 @@ title: Общие сведения о фабрике данных — служ�
 description: Сведения о Фабрике данных Azure. Это облачная служба интеграции данных, которая позволяет организовать и автоматизировать перемещение и преобразование данных.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.assetid: cec68cb5-ca0d-473b-8ae8-35de949a009e
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 01/22/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: aed073e7d65f193c4123106ba1ae3f4f442965e1
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 2e508839cd343820a36cc715ebde0f47c2ac4ab1
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67836318"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139509"
 ---
 # <a name="introduction-to-azure-data-factory"></a>Знакомство с Фабрикой данных Azure 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]

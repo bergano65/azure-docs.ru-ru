@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 02/28/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: b903dfea11e5ac2390eb437e699ee8ec790a5061
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9e5bb77c25b4f9fe00b75918812a1d52feff3b2a
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562986"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308214"
 ---
-# <a name="get-answers-to-a-question-from-a-knowledge-base-with-go"></a>Получение ответов на вопрос из базы знаний с помощью Go
+# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-go"></a>Краткое руководство. Получение ответов на вопрос из базы знаний с помощью Go
 
 В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/data-sources-supported.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties). 
 

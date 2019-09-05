@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 45925b1c4252b0ff0080a2c287e7ed2fae444168
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 7611af5f4d5b79ddb2abb7546f2e3ea6c0d4c4c5
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986285"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308410"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -459,6 +459,6 @@ tableSAS = tableSvc.generateSharedAccessSignature('hometasks', { Id: 'user2' });
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * Репозиторий [пакета SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node) на сайте GitHub.
-* [Azure для разработчиков Node.js](https://docs.microsoft.com/javascript/azure/?view=azure-node-latest)
+* [Azure для разработчиков Node.js](https://docs.microsoft.com/azure/javascript/)
 * [Создание веб-приложений Node.js в Azure](../app-service/app-service-web-get-started-nodejs.md)
 * [Создание и развертывание приложения Node.js в облачной службе Azure](../cloud-services/cloud-services-nodejs-develop-deploy-app.md) (с помощью Windows PowerShell)

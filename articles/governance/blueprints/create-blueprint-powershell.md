@@ -7,12 +7,12 @@ ms.date: 08/21/2019
 ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 7f3a3ac2559e23eecbab46cb801f73fb09c20211
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: bfd2d1215e7673f7ff73a0c875973e45362ce6b0
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036602"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231907"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Краткое руководство. Определение и назначение схемы Azure с помощью PowerShell
 
@@ -397,7 +397,7 @@ Remove-AzBlueprintAssignment -Name 'assignMyBlueprint'
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Ознакомьтесь с [жизненным циклом схемы](./concepts/lifecycle.md).
+- Ознакомьтесь со сведениями о [жизненном цикле схем](./concepts/lifecycle.md).
 - Узнайте, как использовать [статические и динамические параметры](./concepts/parameters.md).
 - Научитесь настраивать [последовательность схемы](./concepts/sequencing-order.md).
 - Узнайте, как применять [блокировку ресурсов схемы](./concepts/resource-locking.md).
