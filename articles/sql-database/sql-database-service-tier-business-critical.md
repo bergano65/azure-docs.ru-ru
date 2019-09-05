@@ -10,19 +10,18 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 90989a9105405f1784b3be9ab59f55cd3433feaf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48cde2f96083779bdeb13ba5f39b68c18b395045
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479229"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515374"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Уровень "Критически важный для бизнеса" для Базы данных SQL Azure
 
 > [!NOTE]
-> Уровень "Критически важный для бизнеса" называется уровнем "Премиум" в модели приобретения на основе единиц DTU. Сравнение моделей приобретения на основе виртуальных ядер и единиц DTU см. в статье [Ресурсы и модели приобретения для базы данных SQL Azure](sql-database-purchase-models.md).
+> Уровень "Критически важный для бизнеса" называется уровнем "Премиум" в модели приобретения на основе единиц DTU. Сравнение модели приобретения на основе виртуальных ядер и DTU см. в статье [Ресурсы и модели приобретения для Базы данных SQL Azure](sql-database-purchase-models.md).
 
 База данных SQL Azure основана на архитектуре ядра СУБД SQL Server, которая соответствует облачной среде, чтобы даже в случае сбоя инфраструктуры обеспечить доступность на уровне 99,99 %. Существует три модели архитектуры, которые используются в Базе данных SQL Azure.
 - уровни "Общего назначения" или "Стандартный"; 
@@ -47,9 +46,9 @@ Azure прозрачно обновляет и исправляет базову
 
 Уровень служб "Критически важный для бизнеса" предназначен для приложений, требующих низкой задержки при получении ответов из базового хранилища SSD (в среднем 1–2 мс), быстрого восстановления при сбое базовой инфраструктуры, а также разгрузки отчетов, аналитики и запросов, доступных только для чтения, в бесплатную считываемую вторичную реплику базы данных-источника.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Найти характеристики ресурсов (число ядер, ввод-ВЫВОД, память) уровня "критически важный для бизнеса" в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics)одной базы данных в [модели виртуальное](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute-tier) или [модели на основе DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier), или эластичной пул в [модели виртуальное](sql-database-vcore-resource-limits-elastic-pools.md#business-critical-service-tier-storage-sizes-and-compute-sizes) и [модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
+- Найдите характеристики ресурсов (количество ядер, операций ввода-вывода, памяти) критически важный для бизнеса уровня в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics), отдельной базе данных в модели [Виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute) или [модели DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier)или эластичном пуле в модели [Виртуальное ядро](sql-database-vcore-resource-limits-elastic-pools.md#business-critical-service-tier-storage-sizes-and-compute-sizes) и [DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
 - См. дополнительные сведения об уровнях [Общего назначения](sql-database-service-tier-general-purpose.md) и [Гипермасштабирование](sql-database-service-tier-hyperscale.md).
 - См. дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).
 - Дополнительные сведения об обеспечении высокой доступности и аварийного восстановления см. в руководстве по [обеспечении непрерывности бизнес-процессов](sql-database-business-continuity.md).

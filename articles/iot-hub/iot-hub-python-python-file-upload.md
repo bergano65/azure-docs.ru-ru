@@ -1,22 +1,21 @@
 ---
 title: Отправка файлов с устройств в Центр Интернета вещей с помощью Python | Документация Майкрософт
 description: Сведения об отправке файлов с устройства в облако с помощью пакета SDK для устройств Azure IoT для Python. Отправленные файлы хранятся в контейнере больших двоичных объектов службы хранилища Azure.
-author: kgremban
-manager: philmea
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 01/22/2019
-ms.author: kgremban
-ms.openlocfilehash: 23b0a2ac8e0264ddc1592479759cc8398d9ef5f8
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
-ms.translationtype: MT
+ms.date: 07/30/2019
+ms.author: robinsh
+ms.openlocfilehash: a529933cf4af572deacab1ae3c615ec0a0eca68f
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621267"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667870"
 ---
-# <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub"></a>Передача файлов с устройства в облако с помощью Центра Интернета вещей
+# <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Передача файлов с устройства в облако с помощью центра Интернета вещей (Python)
 
 [!INCLUDE [iot-hub-file-upload-language-selector](../../includes/iot-hub-file-upload-language-selector.md)]
 
@@ -26,7 +25,7 @@ ms.locfileid: "67621267"
 
 * Использование клиента Python для передачи файла через Центр Интернета вещей.
 
-[Отправки данных телеметрии с устройства в центре Интернета вещей](quickstart-send-telemetry-python.md) кратком руководстве базовые функции обмена сообщениями устройства в облако из центра Интернета вещей. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. При передаче файлов с устройства вы можете рассчитывать на безопасность и надежность Центра Интернета вещей.
+Краткое руководство [Отправка данных телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-python.md) демонстрирует базовую функциональность обмена сообщениями между устройством и облаком в центре Интернета вещей. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. При передаче файлов с устройства вы можете рассчитывать на безопасность и надежность Центра Интернета вещей.
 
 > [!NOTE]
 > Пакет SDK для Центра Интернета вещей для Python в настоящее время поддерживает передачу только текстовых файлов, таких как **TXT**.
@@ -35,18 +34,11 @@ ms.locfileid: "67621267"
 
 * **FileUpload.py**, которое отправляет файл в хранилище с помощью пакета SDK для устройств для Python.
 
-> [!NOTE]
-> Существуют пакеты SDK для устройств Azure IoT, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET, JavaScript, Python и Java) в Центре Интернета вещей. Пошаговые инструкции по подключению устройства к Центру Интернета вещей Azure см. в [Центре разработчика для Центра Интернета вещей Azure](https://azure.microsoft.com/develop/iot).
+[!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-Для работы с этим учебником требуется:
+Ниже приведены инструкции по установке необходимых компонентов.
 
-* [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
-
-* Если вы работаете с ОС Windows, потребуется [распространяемый пакет Visual C++](https://www.microsoft.com/download/confirmation.aspx?id=48145), чтобы разрешить использовать собственные библиотеки DLL из Python.
-
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
-
-* Центр Интернета вещей в учетной записи Azure с удостоверением устройства для тестирования функции отправки файлов. 
+[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 

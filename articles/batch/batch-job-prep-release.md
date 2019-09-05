@@ -16,10 +16,10 @@ ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: a85ced787529db7e6d607665d81632ab1c450dfe
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
-ms.translationtype: MT
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68466974"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Выполнение задач подготовки и задач завершения заданий на вычислительных узлах пакетной службы
@@ -31,7 +31,7 @@ ms.locfileid: "68466974"
 
 Задачи подготовки и выпуска заданий предлагают привычные функции пакетной службы, такие как загрузка файлов ([файлы ресурсов][net_job_prep_resourcefiles]), выполнение с повышенными правами, пользовательские переменные среды, максимальная длительность выполнения, число повторных попыток и время хранения файла.
 
-В следующих разделах вы узнаете, как использовать классы [JobPreparationTask][net_job_prep] and [JobReleaseTask][net_job_release] , находящиеся в библиотеке [.NET][api_net] для пакетной службы.
+В следующих разделах вы узнаете, как использовать классы [JobPreparationTask][net_job_prep] и [JobReleaseTask][net_job_release] , находящиеся в библиотеке [.NET пакетной][api_net] службы.
 
 > [!TIP]
 > Задачи подготовки и снятия заданий особенно полезны в средах с общим пулом, в которых пул вычислительных узлов сохраняется между запусками заданий и может совместно использоваться различными заданиями.
@@ -64,7 +64,7 @@ ms.locfileid: "68466974"
 Задача подготовки задания выполняется только на узлах, на которых запланировано выполнение задач. Благодаря этому на узлах, которым не назначены задачи, ненужная задача подготовки выполняться не будет. Это может произойти, если число задач в задании меньше количества узлов в пуле. То же самое происходит, когда включено [параллельное выполнение](batch-parallel-node-tasks.md) , в результате чего некоторые узлы бездействуют, если число задач оказывается меньше, чем общее число возможных параллельных задач. Не выполняя задачи по подготовке заданий на неактивных узлах, вы сократите свои расходы на передачу данных.
 
 > [!NOTE]
-> [JobPreparationTask][net_job_prep_cloudjob] differs from [CloudPool.StartTask][pool_starttask] в этом JobPreparationTask выполняется в начале каждого задания, в то время как StartTask выполняется только при первом присоединении к пулу или перезапуске.
+> [JobPreparationTask][net_job_prep_cloudjob] отличается от [CloudPool. StartTask][pool_starttask] в том, что JobPreparationTask выполняется в начале каждого задания, тогда как StartTask выполняется только при первом присоединении к пулу или перезапуске.
 > 
 > 
 
@@ -79,7 +79,7 @@ ms.locfileid: "68466974"
 > 
 
 ## <a name="job-prep-and-release-tasks-with-batch-net"></a>Задачи подготовки и снятия заданий с использованием пакетной службы .NET
-Чтобы использовать задачу подготовки задания, назначьте свойство [JobPreparationTask][net_job_prep] object to your job's [CloudJob.JobPreparationTask][net_job_prep_cloudjob] . Аналогичным образом инициализируйте [JobReleaseTask][net_job_release] и присвойте его свойству [CloudJob. JobReleaseTask][net_job_prep_cloudjob] задания, чтобы задать задачу выпуска задания.
+Чтобы использовать задачу подготовки задания, назначьте объект [JobPreparationTask][net_job_prep] для свойства [CloudJob. JobPreparationTask][net_job_prep_cloudjob] задания. Аналогичным образом инициализируйте [JobReleaseTask][net_job_release] и присвойте его свойству [CloudJob. JobReleaseTask][net_job_prep_cloudjob] задания, чтобы задать задачу выпуска задания.
 
 В этом фрагменте `myBatchClient` кода является экземпляром [BatchClient][net_batch_client]и `myPool` является существующим пулом в учетной записи пакетной службы.
 
@@ -107,7 +107,7 @@ myJob.JobReleaseTask =
 await myJob.CommitAsync();
 ```
 
-Как упоминалось выше, задача снятия выполняется, когда задание прекращается или удаляется. Завершите задание с помощью [JobOperations. TerminateJobAsync][net_job_terminate]. Delete a job with [JobOperations.DeleteJobAsync][net_job_delete]. Обычно оба эти действия выполняются после завершения задач задания или по истечении времени ожидания, которое было определено.
+Как упоминалось выше, задача снятия выполняется, когда задание прекращается или удаляется. Завершите задание с помощью [JobOperations. TerminateJobAsync][net_job_terminate]. Удаление задания с помощью [JobOperations. DeleteJobAsync][net_job_delete]. Обычно оба эти действия выполняются после завершения задач задания или по истечении времени ожидания, которое было определено.
 
 ```csharp
 // Terminate the job to mark it as Completed; this will initiate the

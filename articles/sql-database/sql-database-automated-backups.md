@@ -11,32 +11,32 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 06/27/2019
-ms.openlocfilehash: c75b19fff478c14ff47996cf9159e48f3ff69724
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.date: 08/22/2019
+ms.openlocfilehash: 551c2c02af7b996a34a138586fd91a77a0455d92
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261193"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904319"
 ---
 # <a name="automated-backups"></a>Автоматическое резервное копирование
 
-База данных SQL автоматически создает резервные копии базы данных, которые хранятся в интервале от 7 до 35 дней, и использует геоизбыточное [хранилище с доступом на чтение Azure (RA-GRS)](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) , чтобы гарантировать их сохранность, даже если центр обработки данных недоступен. Эти резервные копии создаются автоматически. Резервные копии базы данных являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления, так как они защищают данные от случайного повреждения или удаления. Если для правил безопасности требуется, чтобы резервные копии были доступны в течение продолжительного периода времени (до 10 лет), можно настроить [долгосрочное хранение](sql-database-long-term-retention.md) в одноэлементных базах данных и пулах эластичных БД.
+База данных SQL автоматически создает резервные копии базы данных, которые хранятся в интервале от 7 до 35 дней, и использует [геоизбыточное хранилище с доступом на чтение Azure (RA-GRS)](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) , чтобы гарантировать их сохранность, даже если центр обработки данных недоступен. Эти резервные копии создаются автоматически. Резервные копии базы данных являются важной частью любой стратегии непрерывности бизнес-процессов и аварийного восстановления, так как они защищают данные от случайного повреждения или удаления. Если для правил безопасности требуется, чтобы резервные копии были доступны в течение продолжительного периода времени (до 10 лет), можно настроить [долгосрочное хранение](sql-database-long-term-retention.md) в одноэлементных базах данных и пулах эластичных БД.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="what-is-a-sql-database-backup"></a>Резервная копия базы данных SQL
 
-База данных SQL использует технологию SQL Server для создания [полных резервных копий](https://docs.microsoft.com/sql/relational-databases/backup-restore/full-database-backups-sql-server) каждую неделю, разностные [резервные копии](https://docs.microsoft.com/sql/relational-databases/backup-restore/differential-backups-sql-server) каждые 12 часов и [резервные копии журналов транзакций](https://docs.microsoft.com/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) каждые 5-10 минут. Резервные копии хранятся в [хранилищах данных RA-GRS](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) , которые реплицируются в [парный центр обработки](../best-practices-availability-paired-regions.md) данных для защиты от сбоя центра обработки данных. При восстановлении базы данных служба сама определяет, какие резервные копии (полные, разностные или резервные копии журналов транзакций) следует восстановить.
+База данных SQL использует технологию SQL Server для создания [полных резервных копий](https://docs.microsoft.com/sql/relational-databases/backup-restore/full-database-backups-sql-server) каждую неделю, [разностные резервные копии](https://docs.microsoft.com/sql/relational-databases/backup-restore/differential-backups-sql-server) каждые 12 часов и [резервные копии журналов транзакций](https://docs.microsoft.com/sql/relational-databases/backup-restore/transaction-log-backups-sql-server) каждые 5-10 минут. Резервные копии хранятся в [хранилищах данных RA-GRS](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) , которые реплицируются в [парный центр обработки](../best-practices-availability-paired-regions.md) данных для защиты от сбоя центра обработки данных. При восстановлении базы данных служба сама определяет, какие резервные копии (полные, разностные или резервные копии журналов транзакций) следует восстановить.
 
 Эти резервные копии позволяют выполнить следующие операции:
 
 - **Восстановите существующую базу данных до точки во времени в прошлом** в течение срока хранения с помощью портал Azure, Azure PowerShell, Azure CLI или REST API. В одной базе данных и эластичных пулах эта операция создаст новую базу данных на том же сервере, что и исходная база данных. В Управляемый экземпляр эта операция может создать копию базы данных или ту же или другую Управляемый экземпляр в той же подписке.
   - Чтобы настроить политику архивации, **[измените срок хранения резервных копий](#how-to-change-the-pitr-backup-retention-period)** с 7 до 35 дней.
-  - **Измените политику долгосрочного хранения до 10 лет** на отдельная база данных и эластичных пулах с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-configure-long-term-retention-policies-and-restore-backups).
+  - **Измените политику долгосрочного хранения до 10 лет** на отдельная база данных и эластичных пулах с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups).
 - **Восстановление удаленной базы данных до момента ее удаления** или в любое время в течение срока хранения. Удаленную базу данных можно восстановить только на том же логическом сервере или Управляемый экземпляр, где была создана исходная база данных.
 - **Восстановление базы данных в другой географический регион**. Геовосстановление позволяет выполнить восстановление после сбоя в регионе при отсутствии доступа к серверу и базе данных. В результате создается база данных на любом существующем сервере в любой точке мира.
-- **Восстановление базы данных из определенной долгосрочной резервной копии** на отдельная база данных или эластичный пул, если для базы данных настроена политика долгосрочного хранения (LTR). LTR позволяет восстановить старую версию базы данных с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#view-backups-and-restore-from-a-backup-using-azure-portal) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-configure-long-term-retention-policies-and-restore-backups) для удовлетворения запроса на соответствие или запуска старой версии приложения. Дополнительные сведения см. в статье [Storing Azure SQL Database Backups for up to 10 years](sql-database-long-term-retention.md) (Хранение резервных копий баз данных SQL Azure до 10 лет).
+- **Восстановление базы данных из определенной долгосрочной резервной копии** на отдельная база данных или эластичный пул, если для базы данных настроена политика долгосрочного хранения (LTR). LTR позволяет восстановить старую версию базы данных с помощью [портал Azure](sql-database-long-term-backup-retention-configure.md#view-backups-and-restore-from-a-backup-using-azure-portal) или [Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups) для удовлетворения запроса на соответствие или запуска старой версии приложения. Дополнительные сведения см. в статье [Storing Azure SQL Database Backups for up to 10 years](sql-database-long-term-retention.md) (Хранение резервных копий баз данных SQL Azure до 10 лет).
 - Инструкции по восстановлению см. в статье о [восстановлении базы данных из резервной копии](sql-database-recovery-using-backups.md).
 
 > [!NOTE]
@@ -47,7 +47,7 @@ ms.locfileid: "68261193"
 | | Портал Azure | Azure PowerShell |
 |---|---|---|
 | Изменение срока хранения резервной копии | [отдельная база данных](sql-database-automated-backups.md#change-pitr-backup-retention-period-using-the-azure-portal) <br/> [Управляемый экземпляр](sql-database-automated-backups.md#change-pitr-for-a-managed-instance) | [отдельная база данных](sql-database-automated-backups.md#change-pitr-backup-retention-period-using-powershell) <br/>[Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
-| Изменение долгосрочного хранения резервных копий | [Отдельная база данных](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр-н/д  | [отдельная база данных](sql-database-long-term-backup-retention-configure.md#use-powershell-to-configure-long-term-retention-policies-and-restore-backups)<br/>Управляемый экземпляр-н/д  |
+| Изменение долгосрочного хранения резервных копий | [Отдельная база данных](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>Управляемый экземпляр-н/д  | [отдельная база данных](sql-database-long-term-backup-retention-configure.md#use-powershell-to-manage-long-term-backups)<br/>Управляемый экземпляр-н/д  |
 | Восстановление базы данных с точки во времени | [Отдельная база данных](sql-database-recovery-using-backups.md#point-in-time-restore) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase) |
 | Восстановление удаленной базы данных | [Отдельная база данных](sql-database-recovery-using-backups.md#deleted-database-restore-using-the-azure-portal) | [Отдельная база данных](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeleteddatabasebackup) <br/> [Управляемый экземпляр](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldeletedinstancedatabasebackup)|
 | Восстановление базы данных из хранилища BLOB-объектов Azure | Отдельная база данных — н/д <br/>Управляемый экземпляр-н/д  | Отдельная база данных — н/д <br/>[Управляемый экземпляр](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started-restore) |
@@ -82,7 +82,7 @@ ms.locfileid: "68261193"
 Дополнительные сведения см. в разделе [Долгосрочное хранение резервных копий](sql-database-long-term-retention.md).
 
 ## <a name="storage-costs"></a>Затраты на хранение
-Резервные копии баз данных, автоматически созданные за последние 7 дней, будут по умолчанию копироваться в хранилище BLOB-объектов RA-GRS ценовой категории "Стандартный". Хранилище используется для полных резервных копий, созданных за неделю, разностных резервных копий, созданных за день, и резервных копий журналов транзакций, копируемых каждые 5 минут. Размер журнала транзакций зависит от скорости изменения базы данных. Минимальный объем хранилища, соответствующий полному размеру базы данных, предоставляется без дополнительной оплаты. Плата за дополнительное пространство хранилища резервных копий будет взиматься за количество ГБ в месяц.
+Для отдельных баз данных минимальный объем хранилища резервных копий, равный 100% размера базы данных, предоставляется без дополнительной платы. Для эластичных пулов минимальный объем хранилища резервных копий, равный 100% от выделенного хранилища данных для пула, предоставляется без дополнительной платы. Плата за дополнительное пространство хранилища резервных копий будет взиматься за количество ГБ в месяц. Это дополнительное потребление будет зависеть от рабочей нагрузки и размера отдельных баз данных.
 
 Дополнительные сведения о ценах на службу хранилища см. на странице [Обзор цен на хранилище Azure](https://azure.microsoft.com/pricing/details/sql-database/single/). 
 
@@ -144,7 +144,7 @@ Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourceGroup
 PUT https://management.azure.com/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/resourceGroup/providers/Microsoft.Sql/servers/testserver/databases/testDatabase/backupShortTermRetentionPolicies/default?api-version=2017-10-01-preview
 ```
 
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a>Тело запроса
 
 ```json
 {

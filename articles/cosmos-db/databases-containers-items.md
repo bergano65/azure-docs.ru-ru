@@ -4,15 +4,15 @@ description: В этой статье описывается создание и
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 09/01/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 277564208a5e4a209aecf8f976aca6b35ab17781
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: de9b0a372d04b40a24b6dc0a8952722129f4a55f
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467749"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241214"
 ---
 # <a name="work-with-databases-containers-and-items-in-azure-cosmos-db"></a>Работа с базами данных, контейнерами и элементами в Azure Cosmos DB
 
@@ -74,7 +74,7 @@ ms.locfileid: "68467749"
 
 | Сущность Azure Cosmos | API SQL | API Cassandra | API Azure Cosmos DB для MongoDB | API Gremlin | API таблиц |
 | --- | --- | --- | --- | --- | --- |
-|Контейнер Azure Cosmos | Collection | Таблица | Collection | Граф | Таблица |
+|Контейнер Azure Cosmos | Контейнер | Таблица | Collection | Граф | Таблица |
 
 ### <a name="properties-of-an-azure-cosmos-container"></a>Свойства контейнера Azure Cosmos
 
@@ -123,7 +123,10 @@ ms.locfileid: "68467749"
 |\_лицензии | Создано системой | Метка времени последнего обновления элемента | Да | Нет | Нет | Нет | Нет |
 |\_самообслуживания | Создано системой | Адресуемый URI элемента. | Да | Нет | Нет | Нет | Нет |
 |id | Можно использовать | Определяемое пользователем уникальное имя в логической секции. Если пользователь не указал идентификатор, система автоматически создает его. | Да | Да | Да | Да | Да |
-|Определяемые пользователем свойства | Пользовательский | Определяемые пользователем свойства, представленные в собственном представлении API (включая JSON, BSON и CQL) | Да | Да | Да | Да | Да |
+|Определяемые пользователем свойства | Определяемые пользователем маршруты | Определяемые пользователем свойства, представленные в собственном представлении API (включая JSON, BSON и CQL) | Да | Да | Да | Да | Да |
+
+> [!NOTE]
+> Уникальность `id` свойства применяется только в пределах каждой логической секции. Несколько документов могут иметь одно и `id` то же свойство с разными значениями ключа секции.
 
 ### <a name="operations-on-items"></a>Операции с элементами
 

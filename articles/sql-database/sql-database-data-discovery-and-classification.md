@@ -1,37 +1,37 @@
 ---
-title: Azure базы данных SQL и хранилища данных SQL обнаружение и классификация данных | Документация Майкрософт
-description: Azure базы данных SQL и данных обнаружения и классификации
+title: База данных SQL Azure и обнаружение данных хранилища данных SQL & Классификация | Документация Майкрософт
+description: Классификация & базы данных и обнаружения данных SQL Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: vainolo
-ms.author: arib
+author: barmichal
+ms.author: mibar
 ms.reviewer: vanto
-manager: craigg
-ms.date: 03/22/2019
-ms.openlocfilehash: e451b7837a1cff4bbeaecd1573dc860524caf4d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/22/2019
+ms.openlocfilehash: 5aaad8c44328e1cc2aeb7729e3e221665823a467
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65142658"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073013"
 ---
-# <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Azure базы данных SQL и хранилища данных SQL обнаружение и классификация данных
+# <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
-Служба обнаружения и классификации данных (в настоящее время находится на этапе предварительной версии) предоставляет расширенные возможности, встроенные в службу "База данных SQL Azure", для **обнаружения**, **классификации**, **добавления меток** & **защиты** конфиденциальных данных в базах данных.
+Классификация & обнаружения данных предоставляет расширенные возможности, встроенные в базу данных SQL Azure, для **обнаружения**, классификации & и пометки**защиты** конфиденциальных данных в базах данных.
+
 Обнаружение и классификация наиболее конфиденциальных данных (деловых или финансовых, медицинских, персональных данных и т. д.) может играть ключевую роль в концепции защиты информации вашей организации. Она может использоваться в качестве инфраструктуры для следующего:
 
 - Соблюдение стандартов конфиденциальности данных и нормативных требований.
 - Различные сценарии безопасности, такие как мониторинг (аудит) и оповещение об аномальном доступе к конфиденциальным данным.
 - Управление доступом к базам данных, содержащим конфиденциальные данные, и усиление их защиты.
 
-Обнаружение и классификация данных является частью [повышенной безопасности данных](sql-database-advanced-data-security.md) (ADS) предложения, которое представляет собой единую пакет для обеспечения дополнительных возможностей безопасности SQL. Доступ к этой службе можно получить на центральном портале SQL ADS. Там же можете управлять ею.
+Классификация & обнаружения данных является частью предложения [расширенной системы безопасности данных](sql-database-advanced-data-security.md) (ADS), которое является единым пакетом для расширенных возможностей обеспечения безопасности SQL. Доступ к этой службе можно получить на центральном портале SQL ADS. Там же можете управлять ею.
 
 > [!NOTE]
-> Этот документ относится к базе данных SQL Azure и хранилище данных SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. SQL Server (на локальном компьютере), см. в разделе [SQL данных обнаружения и классификации](https://go.microsoft.com/fwlink/?linkid=866999).
+> Этот документ относится к базе данных SQL Azure и хранилищу данных SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Сведения о SQL Server (в локальной среде) см. в разделе [Обнаружение и классификация данных SQL](https://go.microsoft.com/fwlink/?linkid=866999).
 
 ## <a id="subheading-1"></a>Что такое обнаружение и классификация данных?
 
@@ -77,7 +77,7 @@ ms.locfileid: "65142658"
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 
-2. Перейдите к разделу **Расширенная защита данных** под заголовком "Безопасность" в области "База данных SQL Azure". Щелкните, чтобы включить службу "Расширенная защита данных", и выберите карту **Обнаружение и классификация данных (предварительная версия)** .
+2. Перейдите к разделу **Расширенная защита данных** под заголовком "Безопасность" в области "База данных SQL Azure". Щелкните, чтобы включить расширенную защиту данных, а затем щелкните карту **& классификации данных** .
 
    ![Проверка базы данных](./media/sql-data-discovery-and-classification/data_classification.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "65142658"
 
 ![Журнал аудита](./media/sql-data-discovery-and-classification/11_data_classification_audit_log.png)
 
-## <a id="subheading-4"></a>Управлять классификацией данных, с помощью T-SQL
+## <a id="subheading-4"></a>Управление классификацией данных с помощью T-SQL
 
 Используйте T-SQL, чтобы добавить или удалить классификацию столбца или извлечь все классификации для целой базы данных.
 
@@ -144,31 +144,31 @@ ms.locfileid: "65142658"
 - [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
 - [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
-- [Список рекомендуется по базе данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) -возвращает метки рекомендуемые чувствительности заданной базы данных.
+- [List, рекомендованный базой данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) — получение рекомендуемых меток чувствительности для заданной базы данных.
 
-## <a name="manage-data-discovery-and-classification-using-azure-powershell"></a>Управление данных обнаружения и классификации с помощью Azure PowerShell
+## <a name="manage-data-discovery-and-classification-using-azure-powershell"></a>Управление обнаружением и классификацией данных с помощью Azure PowerShell
 
-Чтобы получить все столбцы, рекомендуемые в базе данных Azure SQL и управляемый экземпляр можно использовать PowerShell.
+Вы можете использовать PowerShell для получения всех рекомендуемых столбцов в базе данных SQL Azure и управляемом экземпляре.
 
-### <a name="powershell-cmdlets-for-azure-sql-database"></a>Командлеты PowerShell для базы данных Azure SQL
+### <a name="powershell-cmdlets-for-azure-sql-database"></a>Командлеты PowerShell для базы данных SQL Azure
 
-- [Get-AzSqlDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityclassification)
-- [Set-AzSqlDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesensitivityclassification)
-- [Remove-AzSqlDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasesensitivityclassification)
-- [Get-AzSqlDatabaseSensitivityRecommendation](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityrecommendation)
+- [Get-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityclassification)
+- [Set-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesensitivityclassification)
+- [Remove-Азсклдатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasesensitivityclassification)
+- [Get-Азсклдатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasesensitivityrecommendation)
 
 ### <a name="powershell-cmdlets-for-managed-instance"></a>Командлеты PowerShell для управляемого экземпляра
 
-- [Get-AzSqlInstanceDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityclassification)
-- [Set-AzSqlInstanceDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasesensitivityclassification)
-- [Remove-AzSqlInstanceDatabaseSensitivityClassification](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification)
-- [Get-AzSqlInstanceDatabaseSensitivityRecommendation](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityrecommendation)
+- [Get-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityclassification)
+- [Set-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasesensitivityclassification)
+- [Remove-Азсклинстанцедатабасесенситивитиклассификатион](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification)
+- [Get-Азсклинстанцедатабасесенситивитирекоммендатион](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityrecommendation)
 
 ## <a name="permissions"></a>Разрешения
 
-Следующие встроенные роли можно прочитать классификацию данных к базе данных Azure SQL: `Owner`, `Reader`, `Contributor`, `SQL Security Manager` и `User Access Administrator`.
+Следующие встроенные роли могут считывать `Owner`классификацию данных базы данных SQL Azure:, `Reader`, `Contributor` `SQL Security Manager` и `User Access Administrator`.
 
-Следующие встроенные роли можно изменить классификацию данных к базе данных Azure SQL: `Owner`, `Contributor`, `SQL Security Manager`.
+Следующие встроенные роли могут изменять классификацию данных базы данных SQL Azure: `Owner`, `Contributor`, `SQL Security Manager`.
 
 Дополнительные сведения о [RBAC для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
