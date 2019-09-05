@@ -9,12 +9,8 @@
   items:
     - name: С помощью клиентского пакета SDK
       items:
-        - name: Определение лиц на изображении
-          items:
-            - name: 'C#'
-              href: QuickStarts/csharp-detect-sdk.md
-            - name: Python
-              href: Tutorials/FaceAPIinPythonTutorial.md
+        - name: Пакет SDK для .NET
+          href: Quickstarts/csharp-sdk.md
         - name: Пакет SDK для Python
           href: QuickStarts/python-sdk.md
     - name: Использование REST API
