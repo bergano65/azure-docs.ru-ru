@@ -125,6 +125,14 @@
               href: map-events.md
             - name: Добавление специальных возможностей в приложение
               href: map-accessibility.md
+        - name: Инструменты для рисования
+          items:
+            - name: Добавление панели инструментов рисования
+              href: map-add-drawing-toolbar.md
+            - name: Настройка параметров рисования
+              href: set-drawing-options.md
+            - name: Получение данных о фигуре
+              href: map-get-shape-data.md
         - name: Модуль служб
           items:
             - name: Использование модуля служб
@@ -198,7 +206,7 @@
 - name: Ресурсы
   items:
     - name: Условия использования Azure Maps
-      href: 'https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31'
+      href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps
       href: 'https://azure.microsoft.com/pricing/details/azure-maps'
     - name: Калькулятор цен
@@ -209,6 +217,8 @@
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
     - name: Видео об Azure Maps
       href: 'https://aka.ms/AzureMapsVideos'
+    - name: Примеры использования Azure Maps
+      href: 'https://aka.ms/AzureMapsCaseStudies'
     - name: Глоссарий Azure Maps
       href: glossary.md
     - name: Обновления службы

@@ -712,6 +712,8 @@
       items:
         - name: С помощью Power BI
           href: powerbi-visualize.md
+        - name: Создание динамической панели мониторинга данных о погоде
+          href: create-real-time-weather-dashboard-powerbi.md
         - name: С помощью Qlik Sense
           href: visualize-qlik-sense.md
     - name: Интеграция с другими службами Azure
