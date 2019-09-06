@@ -1,92 +1,103 @@
-### YamlMime:YamlDocument
-abstract:
-  description: 'Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты, используя решения "Машинное обучение Azure".  Руководства, краткие инструкции, справочники по API и примеры использования.'
-documentType: LandingData
-metadata:
-  author: j-martens
-  description: 'Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, которые могут видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.'
-  ms.author: jmartens
-  ms.subservice: core
-  ms.date: 8/14/2019
-  ms.devlang: na
-  ms.service: machine-learning
-  ms.tgt_pltfrm: na
-  ms.topic: landing-page
-  services: machine-learning
-  title: Документация по Службе "Машинное обучение Azure". Руководства и справочник по API | Документация Майкрософт
-sections:
-  - items:
-      - className: cardsM
-        columns: 2
-        items:
-          - href: /azure/machine-learning/service/overview-what-is-azure-ml
-            html: '<p>Узнайте, как эта служба помогает специалистам по обработке и анализу данных разрабатывать и администрировать решения ИИ<br/> с помощью Azure CLI и средств Python, а также библиотек с разными службами обработки данных и службами вычислений Azure. Подробнее</p>'
-            image:
-              src: /azure/machine-learning/media/index/i_machine-learning.svg
-            title: Служба "Машинное обучение Azure"
-        style: cards
-        type: list
-  - items:
-      - text: Начало работы со Службой машинного обучения Azure.
-        type: paragraph
-      - text: 'Обучайте, развертывайте и администрируйте модели ML с помощью портала Azure, простого интерфейса без использования кода:'
-        type: paragraph
-      - items:
-          - html: <a href="service/ui-tutorial-automobile-price-train-score">Обучение первого эксперимента в пользовательском интерфейсе перетаскивания визуального элемента</a>
-          - html: <a href="service/tutorial-first-experiment-automated-ml">Использование автоматического машинного обучения для обучения и развертывания первой модели классификации</a>
-        style: unordered
-        type: list
-      - text: 'Обучайте, развертывайте и администрируйте модели ML с использованием пакета SDK для Python в скриптах и записных книжках:'
-        type: paragraph
-      - items:
-          - html: <a href="service/tutorial-1st-experiment-sdk-setup">Настройка среды и обучение первого эксперимента ML</a>
-          - html: <a href="service/tutorial-train-models-with-aml">Обучение и развертывание моделей классификации изображений</a>
-          - html: <a href="service/tutorial-auto-train-models">Использование автоматизированного Машинного обучения для прогнозирования платы за такси</a>
-        style: unordered
-        type: list
-      - text: 'Использование моделей:'
-        type: paragraph
-      - items:
-          - html: <a href="service/how-to-consume-web-service">Использование модели для запроса и получения данных</a>
-          - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров Машинного обучения</a>
-        style: unordered
-        type: list
-    title: Пошаговые инструкции
-  - items:
-      - className: cardsM
-        columns: 2
-        items:
-          - href: /azure/cognitive-services/
-            html: '<p>API, которые предоставляют интеллектуальные алгоритмы для приложений, веб-сайтов и ботов.</p>'
-            image:
-              src: /azure/machine-learning/media/index/cognitive-services.png
-            title: Cognitive Services
-          - href: /azure/machine-learning/studio/
-            html: "<p>Инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозной аналитики с помощью R или Python.\_</p>"
-            image:
-              src: /azure/machine-learning/media/index/machine-learning-studio.svg
-            title: Студия машинного обучения Azure
-          - href: /sql/advanced-analytics/r/r-services
-            html: <p>Аналитика в базе данных с поддержкой R и Python.</p>
-            image:
-              src: /azure/machine-learning/media/index/logo_sql.png
-            title: Службы машинного обучения SQL Server
-          - href: /machine-learning-server/
-            html: '<p>Гибкая корпоративная платформа машинного обучения, которая поддерживает развертывания R и Python в Windows и Linux, а также в кластерах HDInsight Spark и Hadoop.</p>'
-            image:
-              src: /azure/machine-learning/media/index/ml-server.png
-            title: Microsoft Machine Learning Server
-          - href: /azure/machine-learning/team-data-science-process
-            html: '<p>Командный процесс обработки и анализа данных, который позволяет специалистам эффективно предоставлять решения прогнозной аналитики и интеллектуальные приложения.</p>'
-            image:
-              src: /azure/machine-learning/media/index/tdsp.png
-            title: Процесс обработки и анализа данных группы
-          - href: /azure/machine-learning/data-science-virtual-machine/
-            html: '<p>Эксперименты, выполняемые без установки и настройки программного обеспечения с использованием Виртуальных машин для обработки и анализа данных (DSVM) и виртуальных машин для глубокого обучения (DLVM). Популярные средства аналитики данных, машинного обучения и ИИ являются предварительно установленными.</p>'
-            image:
-              src: /azure/machine-learning/media/index/virtualmachine.svg
-            title: Виртуальная машина для обработки и анализа данных
-        style: cards
-        type: list
-    title: Другие технологии машинного обучения Майкрософт
+### YamlMime:Landing
 title: Документация по Машинному обучению Azure
+summary: Машинное обучение Azure предоставляет веб-интерфейсы и пакеты SDK, чтобы вы могли быстро обучать и развертывать модели машинного обучения и конвейеры в нужном масштабе. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn.
+metadata:
+  title: Документация по Машинному обучению | Azure
+  description: Машинное обучение Azure предоставляет веб-интерфейсы и пакеты SDK для быстрого обучения и развертывания моделей машинного обучения и конвейеров в нужном масштабе. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn.
+  services: machine-learning
+  ms.service: machine-learning
+  ms.subservice: core
+  ms.topic: landing-page
+  ms.collection: collection
+  author: j-martens
+  ms.author: jmartens
+  ms.date: 09/03/2019
+  ms.openlocfilehash: e2c5e592c2330f1e5514c5c59c92ff5c8a3a62b2
+  ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/04/2019
+  ms.locfileid: "70278318"
+landingContent:
+- title: Начало работы с Azure ML
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Эксперименты с записными книжками
+      url: service/tutorial-1st-experiment-sdk-setup.md
+    - text: Эксперимент в графическом интерфейсе
+      url: service/ui-tutorial-automobile-price-train-score.md
+    - text: Автоматизация первого эксперимента
+      url: service/tutorial-first-experiment-automated-ml.md
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Azure ML?
+      url: service/overview-what-is-azure-ml.md
+    - text: архитектура и основные понятия
+      url: service/concept-azure-machine-learning-architecture.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка сред разработки
+      url: service/how-to-configure-environment.md
+    - text: Настройка целевых объектов вычислений для обучения
+      url: service/how-to-set-up-training-targets.md
+- title: Обучение с использованием Python
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание первого эксперимента ML
+      url: service/tutorial-1st-experiment-sdk-setup.md
+    - text: Обучение модели классификации изображений
+      url: service/tutorial-train-models-with-aml.md
+    - text: Прогнозирование платы за такси с использованием автоматизированного решения ML
+      url: service/tutorial-auto-train-models.md
+  - linkListType: how-to-guide
+    links:
+    - text: Обучение с помощью Scikit-learn
+      url: service/how-to-train-scikit-learn.md
+    - text: Обучение с помощью TensorFlow
+      url: service/how-to-train-tensorflow.md
+    - text: Обучение с помощью PyTorch
+      url: service/how-to-train-pytorch.md
+    - text: Обучение с помощью Keras
+      url: service/how-to-train-keras.md
+- title: Обучение в графическом интерфейсе
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Обучение автоматизированного эксперимента ML
+      url: service/tutorial-first-experiment-automated-ml.md
+    - text: Обучение в графическом интерфейсе
+      url: service/ui-tutorial-automobile-price-train-score.md
+  - linkListType: how-to-guide
+    links:
+    - text: 'Графический интерфейс: прогнозирование цен на автомобили'
+      url: service/ui-sample-regression-predict-automobile-price-basic.md
+    - text: 'Графический интерфейс: прогнозирование кредитного риска'
+      url: service/ui-sample-classification-predict-credit-risk-cost-sensitive.md
+    - text: 'Графический интерфейс: прогнозирование задержек'
+      url: service/ui-sample-classification-predict-flight-delay.md
+    - text: 'Графический интерфейс: прогнозирование оттока'
+      url: service/ui-sample-classification-predict-churn.md
+- title: Развертывание моделей и управление ими
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Что собой представляет MLOps?
+      url: service/concept-model-management-and-deployment.md
+    - text: Способ и расположение развертывания
+      url: service/how-to-deploy-and-where.md
+    - text: Прогнозирование в режиме реального времени
+      url: service/how-to-consume-web-service.md
+    - text: Прогнозирование в пакетном режиме
+      url: service/how-to-run-batch-predictions.md
+- title: Справочная документация
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Пакет SDK Azure ML для Python
+      url: https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py
+    - text: Azure ML CLI
+      url: https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest
+    - text: Алгоритмы и модули графического интерфейса
+      url: algorithm-module-reference/module-reference.md

@@ -1,4 +1,4 @@
-- name: Документация по хранилищу очередей Azure
+- name: Документация по Хранилищу очередей Azure
   href: /azure/storage/queues/
 - name: Обзор
   expanded: true

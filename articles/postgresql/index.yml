@@ -1,85 +1,139 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Базе данных Azure для PostgreSQL
+summary: 'База данных Azure для PostgreSQL — это служба реляционных баз данных на основе СУБД PostgreSQL с открытым исходным кодом. Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование. Поддерживаются два варианта развертывания: отдельный сервер и кластер Гипермасштабирования (Citus) (предварительная версия). Вариант "Гипермасштабирование" (Citus) предусматривает горизонтальное масштабирование запросов между несколькими компьютерами с использованием сегментирования. Это решение предназначено для приложений, которым требуется более высокая масштабируемость и производительность. Узнайте, как использовать Базу данных Azure для PostgreSQL, ознакомившись с нашими руководствами по началу работы, примерами и учебными материалами.'
 metadata:
-  document_id: c0fe8cd3-35da-e3e5-718e-8f3cf2f87f34
-  title: Документация по Azure PostgreSQL. Руководства и справочник по API
-  description: "База данных Azure для PostgreSQL\_— это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом."
+  description: База данных Azure для PostgreSQL — это служба реляционных баз данных в облаке Майкрософт, созданная для разработчиков на основе СУБД PostgreSQL с открытым кодом.
   author: rachel-msft
   ms.author: raagyema
+  ms.date: 08/30/2019
   ms.service: postgresql
   ms.topic: landing-page
-  ms.date: 04/26/2019
-abstract:
-  description: "База данных Azure для PostgreSQL\_— это служба реляционных баз данных на основе СУБД PostgreSQL с открытым исходным кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование. Поддерживаются два варианта развертывания: отдельный сервер и \"Гипермасштабирование\" (Citus) (предварительная версия). Вариант \"Гипермасштабирование\" (Citus) предусматривает горизонтальное масштабирование запросов между несколькими компьютерами с использованием сегментирования. Это решение предназначено для приложений, которым требуется более высокая масштабируемость и производительность. Узнайте, как использовать Базу данных Azure для PostgreSQL, ознакомившись с нашими руководствами по началу работы, примерами и учебными материалами."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создать базу данных PostgreSQL с помощью следующих средств:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
-            text: "Отдельный сервер\_— портал Azure"
-            href: /azure/postgresql/quickstart-create-server-database-portal
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/cli.svg'
-            text: "Отдельный сервер\_— Azure CLI"
-            href: /azure/postgresql/quickstart-create-server-database-azure-cli
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
-            text: "\"Гипермасштабирование\" (Citus)\_— портал Azure"
-            href: /azure/postgresql/quickstart-create-hyperscale-portal
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Отдельный сервер:'
-      - type: list
-        style: ordered
-        items:
-          - html: 'Проектирование базы данных: <a href="/azure/postgresql/tutorial-design-database-using-azure-portal">портал Azure</a> | <a href="/azure/postgresql/tutorial-design-database-using-azure-cli">Azure CLI</a>'
-          - html: <a href="/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json">Создание веб-приложения с помощью Python и CLI</a>
-          - html: <a href="/azure/postgresql/tutorial-monitor-and-tune">Мониторинг и настройка службы</a>
-      - type: paragraph
-        text: '"Гипермасштабирование" (Citus) (предварительная версия):'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/postgresql/tutorial-design-database-hyperscale-multi-tenant">Проектирование мультитенантной базы данных</a>
-          - html: <a href="/azure/postgresql/tutorial-design-database-hyperscale-realtime">Проектирование базы данных в реальном времени</a>
-  - title: Развитие навыков с помощью Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Создание сервера Базы данных Azure для PostgreSQL
-            href: /learn/modules/create-azure-db-for-postgresql-server/
-            image:
-              src: /learn/achievements/create-azure-db-for-postgresql-server.svg
-              href: /learn/modules/create-azure-db-for-postgresql-server/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure">Другие интерактивные руководства</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Найдите скрипты для выполнения типовых задач.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/postgresql/sample-scripts-azure-cli">Azure CLI</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/cli/azure/postgres">Azure CLI</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/postgresql">REST API</a></p>
-          - title: Azure Resource Manager
-            html: <p><a href="/azure/templates/microsoft.dbforpostgresql/allversions">Шаблоны Resource Manager</a></p>
+  ms.openlocfilehash: 6d35798d5e87945656acb298ec6fa06518487f3e
+  ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/04/2019
+  ms.locfileid: "70259166"
+landingContent:
+- title: Сведения о Базе данных Azure для PostgreSQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое база данных Azure для PostgreSQL
+      url: overview.md
+  - linkListType: whats-new
+    links:
+    - text: Читайте наш блог
+      url: https://techcommunity.microsoft.com/t5/Azure-Database-for-PostgreSQL/bg-p/ADforPostgreSQL
+- title: Создание отдельного сервера
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание сервера с помощью портала Azure
+      url: quickstart-create-server-database-portal.md
+    - text: Создание сервера с помощью Azure CLI
+      url: quickstart-create-server-database-azure-cli.md
+  - linkListType: learn
+    links:
+    - text: 'Модуль обучения: Создание сервера Базы данных Azure для PostgreSQL'
+      url: /learn/modules/create-azure-db-for-postgresql-server/
+  - linkListType: concept
+    links:
+    - text: Ценовые категории
+      url: concepts-pricing-tiers.md
+    - text: Ограничения
+      url: concepts-limits.md
+    - text: Версии PostgreSQL
+      url: concepts-supported-versions.md
+    - text: Расширения PostgreSQL — отдельный сервер
+      url: concepts-extensions.md
+  - linkListType: tutorial
+    links:
+    - text: Проектирование базы данных с помощью портала Azure
+      url: tutorial-design-database-using-azure-portal.md
+    - text: Проектирование базы данных с помощью Azure CLI
+      url: tutorial-design-database-using-azure-cli.md
+    - text: Создание веб-приложения с помощью Python и CLI
+      url: /azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json
+    - text: Мониторинг и настройка службы
+      url: tutorial-monitor-and-tune.md
+- title: Создание кластера Гипермасштабирования (Citus), предварительная версия
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание кластера Гипермасштабирования (Citus), предварительная версия — портал Azure
+      url: quickstart-create-hyperscale-portal.md
+  - linkListType: tutorial
+    links:
+    - text: Проектирование мультитенантной базы данных
+      url: tutorial-design-database-hyperscale-multi-tenant.md
+    - text: Проектирование базы данных в реальном времени
+      url: tutorial-design-database-hyperscale-realtime.md
+  - linkListType: concept
+    links:
+    - text: Расширения PostgreSQL — Гипермасштабирование
+      url: concepts-hyperscale-extensions.md
+    - text: Общие сведения об узлах
+      url: concepts-hyperscale-nodes.md
+    - text: Общие сведения о распределенных данных
+      url: concepts-hyperscale-distributed-data.md
+    - text: Настройка параметров производительности
+      url: concepts-hyperscale-configuration-options.md
+- title: Подключение к отдельному серверу
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о брандмауэре
+      url: concepts-firewall-rules.md
+    - text: Создание правил брандмауэра
+      url: howto-manage-firewall-using-portal.md
+    - text: Настройка SSL
+      url: concepts-ssl-connection-security.md
+  - linkListType: get-started
+    links:
+    - text: Подключение с использованием Python
+      url: connect-python.md
+    - text: Подключение с использованием Node.js
+      url: connect-nodejs.md
+    - text: Подключение с использованием Java
+      url: connect-java.md
+    - text: Подключение с использованием Ruby
+      url: connect-ruby.md
+    - text: Подключение с использованием PHP
+      url: connect-php.md
+    - text: Подключение с использованием .Net
+      url: connect-csharp.md
+    - text: Подключение с использованием Go
+      url: connect-go.md
+- title: Написание кода с помощью программных интерфейсов
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Скрипты Azure CLI для выполнения распространенных задач
+      url: /azure/postgresql/sample-scripts-azure-cli
+  - linkListType: reference
+    links:
+    - text: Справочник разработчика Azure CLI
+      url: /rest/api/postgresql/
+    - text: Справочник разработчика REST API
+      url: /cli/azure/postgres
+    - text: Шаблоны Azure Resource Manager
+      url: /azure/templates/microsoft.dbforpostgresql/allversions
+- title: Резервное копирование и перенос данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Резервное копирование и восстановление на отдельном сервере
+      url: concepts-backup.md
+  - linkListType: how-to-guide
+    links:
+    - text: Восстановление сервера с помощью портала Azure
+      url: howto-restore-server-portal.md
+    - text: Восстановление сервера с помощью Azure CLI
+      url: howto-restore-server-cli.md
+    - text: Перенос базы данных с помощью дампа и ее восстановление
+      url: howto-migrate-using-dump-and-restore.md
+    - text: Перенос базы данных с помощью экспорта и импорта
+      url: howto-migrate-using-export-and-import.md
+    - text: Миграция с минимальным временем простоя
+      url: howto-migrate-online.md

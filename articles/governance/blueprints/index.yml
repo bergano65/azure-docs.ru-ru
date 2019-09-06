@@ -1,49 +1,103 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по службе Azure Blueprints
+### YamlMime:Landing
+title: Документация по Azure Blueprints
+summary: Упростите развертывание, упаковав артефакты, такие как шаблоны Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
 metadata:
-  title: Документация по Azure Blueprints. Руководства и справочник по API
-  description: 'Azure Blueprints — это служба в Azure, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.'
-  author: DCtheGeek
-  manager: carmonm
+  title: Документация по Azure Blueprints
+  description: Упростите развертывание, упаковав артефакты, такие как шаблоны Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
   ms.service: blueprints
   ms.topic: landing-page
-  ms.date: 06/14/2019
+  ms.collection: collection
+  author: DCtheGeek
   ms.author: dacoulte
-abstract:
-  description: 'Azure Blueprints позволяет развертывать и обновлять воспроизводимые облачные среды с помощью составных артефактов, таких как шаблоны Azure Resource Manager, для подготовки ресурсов, управления доступом на основе ролей и политик.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать и назначать определения схем и управлять ими в Azure.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              alt: Портал Azure
-              src: ./media/portal.svg
-            text: Портал Azure
-            href: create-blueprint-portal.md
-          - image:
-              alt: Azure PowerShell
-              src: ./media/powershell.svg
-            text: Azure PowerShell
-            href: create-blueprint-powershell.md
-          - image:
-              alt: REST
-              src: ./media/rest.svg
-            text: REST
-            href: create-blueprint-rest-api.md
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: '<p><a href="/powershell/module/az.blueprint/#blueprint">Azure PowerShell</a></p>'
-          - title: Языки
-            html: <p><a href="/dotnet/api/overview/azure/blueprints/management">Пакет Azure SDK для .NET</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/blueprints/">Справочник по API</a></p>
+  ms.date: 09/01/2019
+  ms.openlocfilehash: 44d21c07a81dc3fe5912137691b67af1a3e910e2
+  ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/04/2019
+  ms.locfileid: "70239201"
+landingContent:
+- title: Сведения об Azure Blueprints
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Blueprint?
+      url: ./overview.md
+    - text: Этапы развертывания
+      url: ./concepts/deployment-stages.md
+    - text: Жизненный цикл схемы
+      url: ./concepts/lifecycle.md
+  - linkListType: video
+    links:
+    - text: Пятница с Azure. Обзор Azure Blueprints
+      url: https://channel9.msdn.com/Shows/Azure-Friday/An-overview-of-Azure-Blueprints
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание схемы (портал)
+      url: ./create-blueprint-portal.md
+    - text: Создание схемы (PowerShell)
+      url: ./create-blueprint-powershell.md
+    - text: Создание схемы (REST API)
+      url: ./create-blueprint-rest-api.md
+  - linkListType: tutorial
+    links:
+    - text: Использование примера схемы
+      url: ./tutorials/create-from-sample.md
+  - linkListType: deploy
+    links:
+    - text: Индекс примеров схем
+      url: ./samples/index.md
+- title: Настройка схем
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Динамические параметры
+      url: ./concepts/parameters.md
+    - text: Артефакты последовательности
+      url: ./concepts/sequencing-order.md
+    - text: Блокировка развернутых ресурсов
+      url: ./concepts/resource-locking.md
+  - linkListType: tutorial
+    links:
+    - text: Защита новых ресурсов с помощью блокировок
+      url: ./tutorials/protect-new-resources.md
+- title: Расширение до требуемого масштаба
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Обновление существующих схем
+      url: ./how-to/update-existing-assignments.md
+    - text: Управление назначениями с помощью PowerShell
+      url: ./how-to/manage-assignments-ps.md
+    - text: Импорт и экспорт с помощью PowerShell
+      url: ./how-to/import-export-ps.md
+    - text: Реализация операторов схем
+      url: ./how-to/configure-for-blueprint-operator.md
+    - text: Управление схемами как кодом
+      url: https://github.com/Azure/azure-blueprints/blob/master/README.md
+- title: Участие
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Канал на YouTube, посвященный системе управления Azure
+      url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
+    - text: Функция запроса продукта
+      url: https://feedback.azure.com/forums/915958-azure-governance
+    - text: Техническое сообщество по системе управления Azure
+      url: https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Функции для конкретных схем
+      url: ./reference/blueprint-functions.md
+    - text: Модуль PowerShell (PSGallery)
+      url: https://www.powershellgallery.com/packages/Az.Blueprint
+    - text: Azure PowerShell
+      url: /powershell/module/az.blueprint/#blueprint
+    - text: REST API
+      url: /rest/api/blueprints/
+    - text: .NET
+      url: /dotnet/api/overview/azure/blueprints/management

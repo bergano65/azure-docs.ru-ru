@@ -153,6 +153,9 @@
     - name: Управление назначениями с помощью PowerShell
       displayName: 'create, update, remove'
       href: ./how-to/manage-assignments-ps.md
+    - name: Импорт и экспорт с помощью PowerShell
+      displayName: 'import, export, folders'
+      href: ./how-to/import-export-ps.md
     - name: Обновление существующих назначений с помощью портала
       displayName: 'lock, errors'
       href: ./how-to/update-existing-assignments.md

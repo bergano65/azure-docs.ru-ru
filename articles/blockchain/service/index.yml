@@ -1,57 +1,81 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе "Блокчейн Azure"
+summary: Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и администрировать блокчейн-приложения в Azure.
 metadata:
   title: Документация по службе" Блокчейн Azure". Руководства и справочник по API
-  description: 'Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и администрировать блокчейн-приложения в Azure.'
+  description: Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и администрировать блокчейн-приложения в Azure.
   services: azure-blockchain
-  author: patricka
-  manager: femila
   ms.service: azure-blockchain
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 03/13/2019
+  author: PatAltimore
   ms.author: patricka
-abstract:
-  description: 'Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и использовать блокчейн-приложения а в Azure.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создать и подключить участников консорциума в Azure.'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/deploy.svg
-            text: Создание участника консорциума
-            href: /azure/blockchain/service/create-member
-          - image:
-              src: ./media/index/multi-connect.svg
-            text: Подключение с помощью MetaMask
-            href: /azure/blockchain/service/connect-metamask
-          - image:
-              src: ./media/index/cligeneric.svg
-            text: Подключение с помощью geth
-            href: /azure/blockchain/service/connect-geth
-          - image:
-              src: ./media/index/code-blocks.svg
-            text: Подключение с помощью Truffle
-            href: /azure/blockchain/service/connect-truffle
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создавать, настраивать и развертывать блокчейн-приложения в Azure.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/blockchain/service/send-transaction">Создание участника службы "Блокчейн Azure" и отправка транзакции</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/blockchain">REST API</a></p>'
+  ms.date: 08/29/2019
+  ms.openlocfilehash: c5816bb2278c138a8df07c5c289d53a818614d86
+  ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/04/2019
+  ms.locfileid: "70240837"
+landingContent:
+- title: Общие сведения о службе "Блокчейн Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет служба "Блокчейн Azure"?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Блокчейн-сети в частном консорциуме
+      url: consortium.md
+    - text: Доступ к данным и безопасность
+      url: data-security.md
+    - text: Инструменты разработки
+      url: develop.md
+- title: Начало работы
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Создание участника блокчейн-сети — портал
+      url: create-member.md
+    - text: Создание участника блокчейн-сети — CLI
+      url: create-member-cli.md
+  - linkListType: quickstart
+    links:
+    - text: Подключение смарт-контрактов с использованием MetaMask и их развертывание с помощью Remix
+      url: connect-metamask.md
+    - text: Использование Geth для подключения к узлу транзакций
+      url: connect-geth.md
+    - text: Подключение к узлу транзакций с помощью Truffle
+      url: connect-truffle.md
+  - linkListType: tutorial
+    links:
+    - text: Использование смарт-контрактов в службе "Блокчейн Azure"
+      url: send-transaction.md
+  - linkListType: video
+    links:
+    - text: Развертывание и настройка сети
+      url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-I-Deploy-and-configure-your-network
+    - text: Создание и тестирование смарт-контрактов с помощью VS Code
+      url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-II-Write-and-test-smart-contracts-with-VS-Code
+    - text: Отправка данных в реестр
+      url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-III-Send-data-to-the-ledger
+    - text: Публикация событий и данных реестра
+      url: https://channel9.msdn.com/Shows/Blocktalk/Getting-started-with-Azure-Blockchain-Service-Part-IV-Publish-events-and-ledger-data
+- title: Управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление участниками блокчейна — CLI
+      url: manage-cli.md
+    - text: Управление участниками консорциума —PowerShell
+      url: manage-consortium-powershell.md
+    - text: Настройка узлов транзакции
+      url: configure-transaction-nodes.md
+    - text: Настройка доступа к Active Directory
+      url: configure-aad.md
+- title: API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/blockchain

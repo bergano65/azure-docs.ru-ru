@@ -124,13 +124,13 @@
     - name: Планирование приложения
       displayName: 'simple, composite, prebuilt, list, regex, regular expression'
       href: luis-how-plan-your-app.md
-    - name: Создание приложений
+    - name: Ключи разработки и среды выполнения
+      displayName: 'shared, transfer, ownership, author, access, import'
+      href: luis-concept-keys.md
+    - name: Разработка модели приложения
       items:
         - name: Цикл разработки
           href: luis-concept-app-iteration.md
-        - name: Совместная работа
-          displayName: 'shared, transfer, ownership, author, access, import'
-          href: luis-concept-collaborator.md
         - name: Управление версиями
           href: luis-concept-version.md
           displayName: import
@@ -141,10 +141,10 @@
         - name: Сущности
           displayName: 'prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, machine-learn, exact, mixed, roles'
           href: luis-concept-entity-types.md
+        - name: Роли сущности
+          href: luis-concept-roles.md
         - name: Высказывания
           href: luis-concept-utterance.md
-        - name: Роли
-          href: luis-concept-roles.md
         - name: Предварительно созданные модели
           href: luis-concept-prebuilt-model.md
     - name: Повышение производительности приложения
@@ -180,14 +180,7 @@
         - name: Стратегии разработки
           href: luis-concept-enterprise.md
           displayName: import
-    - name: Безопасность
-      items:
-        - name: Доступ к приложениям
-          displayName: 'public, public app, AAD, compliance, ISO, certification, trust center, import'
-          href: luis-concept-security.md
-        - name: Ключи конечной точки и создания
-          href: luis-concept-keys.md
-- name: Инструкции
+- name: Руководства
   items:
     - name: Запуск нового приложения
       href: luis-how-to-start-new-app.md
@@ -248,18 +241,22 @@
       href: luis-how-to-publish-app.md
     - name: Управление приложением
       items:
-        - name: Использование ключей подписки с приложением LUIS
-          displayName: 'azure portal, resource, assign key, add key, out of quota, 403, 429, luis portal, key assignment, subscription'
+        - name: Ключи разработки и среды выполнения
+          displayName: 'azure portal, resource, assign key, add key, out of quota, 403, 429, luis portal, key assignment, subscription, authoring, endpoint, prediction'
           href: luis-how-to-azure-subscription.md
-        - name: Управление версиями
-          href: luis-how-to-manage-versions.md
-          diplayName: 'import, export, container'
-        - name: Управление авторами и участниками совместной работы
+        - name: Переход на ключ разработки
+          items:
+            - name: Обзор
+              href: luis-migration-authoring.md
+            - name: Как осуществить переход
+              href: luis-migration-authoring-steps.md
+        - name: Авторы и участники
           displayName: 'access, transfer, AAD, tenant, Azure AD, consent, RBAC, admin, role-based access control, ownership, import'
           href: luis-how-to-collaborate.md
-        - name: Управление ключом разработки
-          href: luis-how-to-account-settings.md
-        - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
+        - name: Использование версий
+          href: luis-how-to-manage-versions.md
+          diplayName: 'import, export, container'
+        - name: Использование диспетчера трафика
           href: luis-traffic-manager.md
     - name: Миграция API
       items:

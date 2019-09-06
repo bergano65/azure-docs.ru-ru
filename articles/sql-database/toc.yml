@@ -219,10 +219,16 @@
       items:
         - name: Документация по управляемому экземпляру
           href: sql-database-managed-instance-index.yml
-        - name: Возможности управляемого экземпляра
+        - name: Общие сведения об Управляемом экземпляре
           href: sql-database-managed-instance.md
         - name: 'Управляемый экземпляр: вопросы и ответы'
           href: sql-database-managed-instance-faq.md
+        - name: Пулы экземпляров
+          items:
+            - name: Общие сведения о пулах экземпляров
+              href: sql-database-instance-pools.md
+            - name: Руководство по пулам экземпляров
+              href: sql-database-instance-pools-how-to.md
         - name: Справочник по API управления
           href: sql-database-managed-instance-create-manage.md
         - name: Ограничения ресурсов

@@ -14,12 +14,14 @@
   items:
     - name: Расположения и партнеры
       href: virtual-wan-locations-partners.md
-    - name: Архитектура глобальной транзитной сети
-      href: virtual-wan-global-transit-network-architecture.md
-    - name: "Плоскость управления Office\_365 в Виртуальной глобальной сети"
-      href: virtual-wan-office365-overview.md
     - name: Политики IPsec
       href: virtual-wan-ipsec.md
+    - name: Архитектура
+      items:
+        - name: Архитектура глобальной транзитной сети
+          href: virtual-wan-global-transit-network-architecture.md
+        - name: Уровень управления Office 365 в Виртуальной глобальной сети
+          href: virtual-wan-office365-overview.md
 - name: Руководства
   items:
     - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль

@@ -60,9 +60,6 @@
   items:
     - name: Развертывания шаблонов
       href: template-deployment-overview.md
-    - name: Структура файла шаблона
-      displayName: 'parameters,variables,resources,outputs,condition'
-      href: resource-group-authoring-templates.md
     - name: Рекомендации по работе с шаблоном
       href: template-best-practices.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
@@ -85,26 +82,38 @@
   items:
     - name: Создание шаблонов
       items:
-        - name: "Средства разработки\_— VS Code"
+        - name: Использование VS Code
           href: resource-manager-tools-vs-code.md
-        - name: Создание шаблона
-          href: how-to-create-template.md
-        - name: Имя и тип дочернего ресурса
-          href: child-resource-name-type.md
-        - name: Создание групп ресурсов и ресурсов в подписке
-          displayName: subscription level deployment
-          href: deploy-to-subscription.md
-        - name: Определение зависимостей ресурсов
-          href: resource-group-define-dependencies.md
+        - name: Написание выражений шаблонов
+          href: template-expressions.md
+        - name: Параметры
+          href: template-parameters.md
+        - name: Переменные
+          href: template-variables.md
+        - name: Определяемые пользователем функции
+          href: template-user-defined-functions.md
+        - name: Ресурсы
+          items:
+            - name: Имя и тип дочернего ресурса
+              href: child-resource-name-type.md
+            - name: Условное развертывание
+              href: conditional-resource-deployment.md
+            - name: Настройка зависимостей ресурсов
+              href: resource-group-define-dependencies.md
+            - name: Настройка расположения ресурса
+              href: resource-location.md
+            - name: Использование расширений шаблонов
+              href: resource-manager-use-extensions.md
+        - name: outputs
+          href: template-outputs.md
         - name: Разбиение шаблонов на модули
           displayName: 'linked templates, nested templates'
           href: resource-group-linked-templates.md
         - name: Развертывание нескольких экземпляров
           href: resource-group-create-multiple.md
-        - name: Использование расширений шаблонов
-          href: resource-manager-use-extensions.md
-        - name: Обновление ресурсов
-          href: /azure/architecture/building-blocks/extending-templates/update-resource
+        - name: Создание групп ресурсов и ресурсов в подписке
+          displayName: subscription level deployment
+          href: deploy-to-subscription.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
@@ -244,6 +253,9 @@
       href: resource-manager-async-operations.md
 - name: Справочные материалы
   items:
+    - name: Структура файла шаблона
+      displayName: 'parameters,variables,resources,outputs,condition'
+      href: resource-group-authoring-templates.md
     - name: Справочник по шаблонам
       href: /azure/templates/
     - name: Функции шаблонов

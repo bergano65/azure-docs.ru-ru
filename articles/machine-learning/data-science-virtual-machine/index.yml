@@ -1,55 +1,57 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Виртуальной машине для обработки и анализа данных Azure
+summary: Виртуальная машина для обработки и анализа данных (DSVM) — это настраиваемый образ виртуальной машины, содержащий средства для обработки и анализа данных и ML. Такая виртуальная машина позволяет создавать интеллектуальные приложения для расширенной аналитики.
 metadata:
   title: Документация по Виртуальной машине для обработки и анализа данных Azure
-  description: "Узнайте, как использовать Виртуальную машину для анализа и обработки данных,\_— экспериментальную среду в облаке Azure для выполнения соответствующих задач. Популярные средства обработки и анализ данных, а также машинного обучения являются предварительно установленными и настроенными. Эта схема поможет вам начать создавать интеллектуальные приложения для расширенной аналитики."
+  description: Виртуальная машина для обработки и анализа данных — это экспериментальная среда в облаке Azure для выполнения соответствующих задач. Популярные средства обработки и анализа данных и ML предварительно установлены.
   services: machine-learning
-  author: vijetajo
   ms.service: machine-learning
   ms.subservice: data-science-vm
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 08/19/2019
-  ms.author: vijetaj
-abstract:
-  description: "Виртуальная машина для обработки и анализа данных (DSVM)\_— это настраиваемый образ виртуальной машины, содержащий средства для выполнения соответствующих задач. Эту виртуальную машину можно использовать для создания интеллектуальных приложений для расширенной аналитики. <a href=\"overview.md\">Узнайте больше</a>."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как настроить Виртуальную машину для обработки и анализа данных под управлением Windows или Linux:'
-      - type: paragraph
-        text: <b>Виртуальная машина для обработки и анализа данных под управлением Windows</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="provision-vm">Настройка Виртуальной машины для обработки и анализа данных (Windows)</a>
-          - html: <a href="vm-do-ten-things">Использование виртуальной машины для обработки и анализа данных под управлением Windows</a>
-      - type: paragraph
-        text: <b>Виртуальная машина для обработки и анализа данных (Linux Ubuntu или CentOS)</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="linux-dsvm-intro">Настройка виртуальной машины для обработки и анализа данных под управлением (Linux CentOS)</a>
-          - html: <a href="dsvm-ubuntu-intro">Настройка виртуальной машины для обработки и анализа данных под управлением (Ubuntu)</a>
-          - html: <a href="linux-dsvm-walkthrough">Использование виртуальной машины для обработки и анализа данных под управлением Linux</a>
-  - title: Другие технологии Машинного обучения Azure
-    items:
-      - type: paragraph
-        text: 'Другие технологии, доступные в службе "Машинное обучение Azure":'
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Служба машинного обучения
-            href: /azure/machine-learning/service/
-            image:
-              src: media/index/i_machine-learning.svg
-              href: /azure/machine-learning/service/
-          - title: Студия машинного обучения Azure
-            href: /azure/machine-learning/studio/
-            image:
-              src: media/index/machine-learning-studio.svg
-              href: /azure/machine-learning/studio/
+  ms.collection: collection
+  author: j-martens
+  ms.author: jmartens
+  ms.date: 09/03/2019
+  ms.openlocfilehash: c33504124bdef2edf44842581143a8468cbb1e20
+  ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/04/2019
+  ms.locfileid: "70308794"
+landingContent:
+- title: Начало работы с DSVM
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет DSVM?
+      url: overview.md
+    - text: Что собой представляет DSVM с геоинформационной системой и средствами ИИ?
+      url: geo-ai-dsvm-overview.md
+  - linkListType: get-started
+    links:
+    - text: Создание виртуальной машины Windows для обработки и анализа данных
+      url: provision-vm.md
+    - text: Создание виртуальной машины Ubuntu для обработки и анализа данных
+      url: dsvm-ubuntu-intro.md
+    - text: Создание виртуальной машины CentOS для обработки и анализа данных
+      url: linux-dsvm-intro.md
+    - text: Создание виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
+      url: provision-geo-ai-dsvm.md
+- title: Управление DSVM
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание автомасштабируемых пулов DSVM
+      url: dsvm-pools.md
+    - text: Интеграция с Active Directory
+      url: dsvm-common-identity.md
+    - text: Защита учетных данных для доступа к ресурсам
+      url: dsvm-secure-access-keys.md
+- title: Другие технологии Машинного обучения Azure
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Служба машинного обучения
+      url: /azure/machine-learning/
+    - text: Сравнить наши продукты Машинного обучения
+      url: https://docs.microsoft.com/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context
