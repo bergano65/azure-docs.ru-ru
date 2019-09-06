@@ -16,12 +16,12 @@ ms.date: 06/12/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf6190ae35a573ab4b9a37f5cd1f2bd75f06ca46
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
-ms.translationtype: HT
+ms.openlocfilehash: 3c6ad7e305958131c4f544dfa2022e7471e9adac
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667157"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147109"
 ---
 # <a name="check-the-status-of-user-provisioning"></a>Проверка состояния подготовки пользователей
 
@@ -62,7 +62,7 @@ ms.locfileid: "68667157"
 Дополнительные сведения о том, как читать журналы аудита в портал Azure, см. в разделе [руководство по подготовке отчетов](check-status-user-account-provisioning.md).
 
 ## <a name="how-long-will-it-take-to-provision-users"></a>Сколько времени занимает подготовка пользователей?
-При использовании автоматической подготовки пользователей в приложении Azure AD автоматически подготавливает и обновляет учетные записи пользователей в приложении на основе таких объектов, как [Назначение пользователей и групп](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) в регулярно запланированном интервале времени, обычно каждые 10 минут.
+При использовании автоматической подготовки пользователей в приложении Azure AD автоматически подготавливает и обновляет учетные записи пользователей в приложении на основе таких объектов, как [Назначение пользователей и групп](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) в регулярно запланированном интервале времени, обычно каждые 40 минут.
 
 Время, необходимое для подготовки данного пользователя, зависит главным образом от того, выполняет ли задание подготовки начальную синхронизацию или добавочную синхронизацию.
 

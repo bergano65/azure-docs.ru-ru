@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 05/28/2019
 ms.author: alkohli
 ms.openlocfilehash: f5b60d862be0d71f71f770c47d88ad39f2fc6ac7
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 09/05/2019
 ms.locfileid: "66419962"
 ---
 Последнее действие — подготовка устройства для отправки. При выполнении этого действия все общие папки устройства станут недоступными. После запуска этого процесса общие папки станут недоступными.
