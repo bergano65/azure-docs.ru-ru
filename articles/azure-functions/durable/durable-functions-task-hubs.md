@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 40144fb50a01a64bbd67d541562b4fe0842fbf10
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b0a58251530467d788710b0584b15715a207e20f
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097801"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734325"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
 
@@ -101,6 +101,8 @@ ms.locfileid: "70097801"
 
 Ниже приведен предкомпилированный пример C# написания функции, использующей [OrchestrationClientBinding](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationClientAttribute.html) для работы с центром задач, настроенным в качестве параметра приложения:
 
+### <a name="c"></a>C#
+
 ```csharp
 [FunctionName("HttpStart")]
 public static async Task<HttpResponseMessage> Run(
@@ -119,8 +121,9 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-Ниже приведена необходимая конфигурация для JavaScript. Свойство центра задач в файле `function.json` задается с помощью параметра приложения:
+### <a name="javascript"></a>JavaScript
 
+Свойство центра задач в файле `function.json` задается с помощью параметра приложения:
 ```json
 {
     "name": "input",

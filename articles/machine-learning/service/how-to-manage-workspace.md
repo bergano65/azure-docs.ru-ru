@@ -1,5 +1,5 @@
 ---
-title: Создание рабочих областей и управление ими
+title: Создание рабочих областей машинного обучения Azure на портале
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как создавать, просматривать и удалять рабочие области службы машинного обучения Azure на портале Azure.
 services: machine-learning
@@ -11,14 +11,14 @@ ms.author: shipatel
 author: shivp950
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: f103bde99eb5b21d06988f11ac6f17fcf50ceb31
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: df015df3c20cdb99512167e3dc3e455da2762c52
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278270"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744787"
 ---
-# <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Создание рабочих областей службы машинного обучения Azure и управление ими
+# <a name="create-and-manage-azure-machine-learning-service-workspaces-in-the-azure-portal"></a>Создание рабочих областей служб Машинное обучение Azure и управление ими в портал Azure
 
 В этой статье вы выполните создание, просмотр и удаление [**рабочих областей службы машинного обучения Azure**](concept-workspace.md) на портале Azure для [службы "Машинное обучение Azure"](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 

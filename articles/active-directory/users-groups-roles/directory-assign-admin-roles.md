@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 08/23/2019
+ms.date: 09/05/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f860b234db8cb0b40747ba042f1a845f58379597
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: c2eff9c0edf6797c08d0ef9732c903a81a6c764a
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70193875"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733405"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -85,7 +85,7 @@ ms.locfileid: "70193875"
 
 ### <a name="b2c-user-flow-administratorb2c-user-flow-administrator-permissions"></a>[Администратор потока пользователей B2C](#b2c-user-flow-administrator-permissions)
 
-Пользователи с этой ролью могут создавать и администрировать B2C Маршруты пользователей (встроенные политики) на портале Azure. Создавая или редактируя потоки пользователей, эти пользователи могут изменять содержимое HTML/CSS/JavaScript интерфейса пользователя, изменять требования MFA для каждого пользователя, изменять утверждения в маркере и настраивать параметры сеанса для всех политик в клиенте. С другой стороны, эта роль не включает в себя возможность просматривать данные пользователей или вносить изменения в атрибуты, включенные в схему клиента. Изменения в инфраструктурах процедур идентификации (с пользовательскими политиками) также выходят за рамки этой роли.
+Пользователи с этой ролью могут создавать и администрировать B2C Маршруты пользователей (также называемые встроенными политиками) в портал Azure. Создавая или редактируя потоки пользователей, эти пользователи могут изменять содержимое HTML/CSS/JavaScript интерфейса пользователя, изменять требования MFA для каждого пользователя, изменять утверждения в маркере и настраивать параметры сеанса для всех политик в клиенте. С другой стороны, эта роль не включает в себя возможность просматривать данные пользователей или вносить изменения в атрибуты, включенные в схему клиента. Изменения инфраструктуры процедур идентификации (также называемые пользовательскими) также выходят за рамки этой роли.
 
 ### <a name="b2c-user-flow-attribute-administratorb2c-user-flow-attribute-administrator-permissions"></a>[Администратор атрибута потока пользователя B2C](#b2c-user-flow-attribute-administrator-permissions)
 
@@ -194,7 +194,7 @@ In | Может
 Этот администратор управляет интеграцией между клиентами Azure Active Directory и внешними поставщиками удостоверений. С помощью этой роли пользователи могут добавлять новых поставщиков удостоверений и настраивать все доступные параметры (например, путь проверки подлинности, идентификатор службы, назначенные контейнеры ключей). Этот пользователь может разрешить клиенту доверять проверкам подлинности от внешних поставщиков удостоверений. Полученное влияние на взаимодействие с конечными пользователями зависит от типа клиента:
 
 * Клиенты Azure Active Directory для сотрудников и партнеров: Добавление Федерации (например, Gmail) сразу же повлияет на все приглашения гостей, которые еще не были активированы. См. статью [Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B](https://docs.microsoft.com/azure/active-directory/b2b/google-federation).
-* Клиенты Azure Active Directory B2C: Добавление Федерации (например, с помощью Facebook или другой организации Azure AD) не оказывает немедленного воздействия на потоки конечных пользователей, пока поставщик удостоверений не будет добавлен в качестве параметра в потоке пользователя (встроенная политика). Пример см. [в разделе настройка учетная запись Майкрософт в качестве поставщика удостоверений](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app) . Чтобы изменить потоки пользователей, требуется ограниченная роль "B2C User Flow Administrator".
+* Клиенты Azure Active Directory B2C: Добавление Федерации (например, с помощью Facebook или другой организации Azure AD) не оказывает немедленного воздействия на потоки конечных пользователей, пока поставщик удостоверений не будет добавлен в качестве параметра в потоке пользователя (также называемом встроенной политикой). Пример см. [в разделе настройка учетная запись Майкрософт в качестве поставщика удостоверений](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app) . Чтобы изменить потоки пользователей, требуется ограниченная роль "B2C User Flow Administrator".
 
 ### <a name="global-administrator--company-administratorcompany-administrator-permissions"></a>[Глобальный администратор или администратор Организации](#company-administrator-permissions)
 
@@ -229,7 +229,7 @@ In | Может
 * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
 > [!NOTE]
-> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря административным [единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
+> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря [административным единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
 >
 > Эта роль ранее называлась "Администратор паролей" в [портал Azure](https://portal.azure.com/). Мы изменили свое имя на "Администратор службы поддержки", чтобы оно соответствовало имени в Azure AD PowerShell, Azure AD API Graph и Microsoft Graph API.
 
@@ -352,14 +352,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 ### <a name="service-support-administratorservice-support-administrator-permissions"></a>[Администратор службы поддержки](#service-support-administrator-permissions)
 
-Пользователи с этой ролью могут открывать запросы в службу поддержки Майкрософт для Azure и службы Office 365, а также просматривать панель мониторинга службы и центр сообщений в [центре администрирования](https://admin.microsoft.com) [портал Azure](https://portal.azure.com) и Microsoft 365. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+Пользователи с этой ролью могут открывать запросы в службу поддержки Майкрософт для Azure и службы Office 365, а также просматривать панель мониторинга службы и центр сообщений в [центре администрирования](https://admin.microsoft.com) [портал Azure](https://portal.azure.com) и Microsoft 365. Дополнительные сведения [о ролях администратора](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 > [!NOTE]
 > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы поддержки". Это "Администратор службы" в [портал Azure](https://portal.azure.com), в [центре администрирования Microsoft 365](https://admin.microsoft.com)и на портале Intune.
 
 ### <a name="sharepoint-administratorsharepoint-service-administrator-permissions"></a>[Администратор SharePoint](#sharepoint-service-administrator-permissions)
 
-пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
+пользователи с этой ролью имеют глобальные разрешения в Microsoft SharePoint Online при наличии этой службы, возможность создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения [о ролях администратора](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
 > [!NOTE]
 > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы SharePoint". На [портале Azure](https://portal.azure.com) она называется "Администратор SharePoint".
@@ -418,39 +418,49 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
-| microsoft.aad.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/create | Создание приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
-| microsoft.aad.directory/applications/delete | Удаление приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/owners/update | Изменение свойства applications.owners в Azure Active Directory. |
-| microsoft.aad.directory/applications/permissions/update | Изменение свойства applications.permissions в Azure Active Directory. |
-| microsoft.aad.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/create | Создание объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/read | Чтение объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/owners/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/policyAppliedTo/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/owners/update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/permissions/update | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory, приложение, Апппроксяусентикатион/обновление | Обновите свойства проверки подлинности прокси приложения в субъектах-службах в Azure Active Directory. |
+| Microsoft. Directory, приложение, Апппроксюрлсеттингс/обновление | Обновление внутренних и внешних URL-адресов прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Applications/Аппликатионпрокси/Read | Чтение всех свойств прокси приложения. |
+| Microsoft. Directory/Applications/Аппликатионпрокси/Update | Обновите все свойства прокси приложения. |
+| Microsoft. Directory, приложения, аудитория и обновление | Изменение свойства applications.audience в Azure Active Directory. |
+| Microsoft. Directory/приложения, проверка подлинности или обновление | Изменение свойства applications.authentication в Azure Active Directory. |
+| Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
+| Microsoft. Directory/Applications/CREATE | Создание приложений в Azure Active Directory. |
+| Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
+| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
+| Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
+| Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
+| Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/создать | Создание объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/чтение | Чтение объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/обновление | Изменение объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/удаление | Удаление объектов appRoleAssignment в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/все/чтение | Чтение свойств группы соединителей прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/все/обновление | Обновите все свойства группы соединителей прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/создать | Создайте группы соединителей прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Коннекторграупс/удаление | Удалите группы соединителей прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Connectors/все/чтение | Чтение всех свойств соединителя прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/Connectors/CREATE | Создайте соединители прокси приложения в Azure Active Directory. |
+| Microsoft. Directory/политики/Аппликатионконфигуратион/Basic/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/Basic/Update | Обновление свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/создать | Создание политик в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/Owners/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/владельцы/обновление | Обновление свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/policyAppliedTo/чтение | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/создать | Создание объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/учетные данные/обновление | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/удаление | Удаление объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -462,10 +472,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/applications/createAsOwner | Создание приложений в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/appRoleAssignments/createAsOwner | Создание объектов appRoleAssignment в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/oAuth2PermissionGrants/createAsOwner | Создание объектов oAuth2PermissionGrants в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/servicePrincipals/createAsOwner | Создание объектов servicePrincipal в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/Applications/Креатеасовнер | Создание приложений в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/appRoleAssignments/Креатеасовнер | Создание объектов appRoleAssignment в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/oAuth2PermissionGrants/Креатеасовнер | Создание объектов oAuth2PermissionGrants в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/свойства serviceprincipals/Креатеасовнер | Создание объектов servicePrincipal в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
 
 ### <a name="authentication-administrator-permissions"></a>Разрешения администратора проверки подлинности
 
@@ -473,14 +483,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/strongAuthentication/update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Стронгаусентикатион/Update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.aad.directory/users/password/update | Обновите пароли для всех пользователей в организации Office 365. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновите пароли для всех пользователей в организации Office 365. Дополнительные сведения см. в электронной документации. |
 
 ### <a name="azure-information-protection-administrator-permissions"></a>Azure Information Protection разрешения администратора
 
@@ -542,7 +552,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
+| Microsoft. Directory/организация/базовый/обновление | Обновление базовых свойств в организации в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.commerce.billing/allEntities/allTasks | Управление всеми аспектами выставления счетов Office 365. |
@@ -556,38 +566,38 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/applications/audience/update | Изменение свойства applications.audience в Azure Active Directory. |
-| microsoft.aad.directory/applications/authentication/update | Изменение свойства applications.authentication в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/update | Изменение базовых свойств приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/create | Создание приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/credentials/update | Изменение свойства applications.credentials в Azure Active Directory. |
-| microsoft.aad.directory/applications/delete | Удаление приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/owners/update | Изменение свойства applications.owners в Azure Active Directory. |
-| microsoft.aad.directory/applications/permissions/update | Изменение свойства applications.permissions в Azure Active Directory. |
-| microsoft.aad.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/create | Создание объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/basic/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/owners/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/policies/applicationConfiguration/policyAppliedTo/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/delete | Удаление объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/owners/update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/permissions/update | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory, приложения, аудитория и обновление | Изменение свойства applications.audience в Azure Active Directory. |
+| Microsoft. Directory/приложения, проверка подлинности или обновление | Изменение свойства applications.authentication в Azure Active Directory. |
+| Microsoft. Directory/Applications/Basic/Update | Изменение базовых свойств приложений в Azure Active Directory. |
+| Microsoft. Directory/Applications/CREATE | Создание приложений в Azure Active Directory. |
+| Microsoft. Directory/приложения/учетные данные/обновление | Изменение свойства applications.credentials в Azure Active Directory. |
+| microsoft.directory/applications/delete | Удаление приложений в Azure Active Directory. |
+| Microsoft. Directory, приложения, владельцы и обновление | Изменение свойства applications.owners в Azure Active Directory. |
+| Microsoft. Directory/приложения/разрешения/обновление | Изменение свойства applications.permissions в Azure Active Directory. |
+| Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/создать | Создание объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/обновление | Изменение объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/удаление | Удаление объектов appRoleAssignment в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/создать | Создание политик в Azure Active Directory. |
+| Microsoft. Directory/политики/Аппликатионконфигуратион/Basic/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/Basic/Update | Обновление свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/Owners/Read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/владельцы/обновление | Обновление свойства applicationConfiguration в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аппликатионконфигуратион/policyAppliedTo/чтение | Чтение свойства applicationConfiguration в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/создать | Создание объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/учетные данные/обновление | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/удаление | Удаление объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -599,12 +609,12 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/devices/delete | Удаление устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/disable | Отключение устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/enable | Включение устройств в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Devices/Delete | Удаление устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Disable | Отключение устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Enable | Включение устройств в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 
@@ -620,35 +630,35 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.cloudAppSecurity/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.cloudAppSecurity. |
-| microsoft.aad.directory/administrativeUnits/allProperties/allTasks | Создание и удаление объектов administrativeUnit, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/applications/allProperties/allTasks | Создание и удаление приложений, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/allProperties/allTasks | Создание и удаление объектов appRoleAssignment, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/contacts/allProperties/allTasks | Создание и удаление контактов, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/contracts/allProperties/allTasks | Создание и удаление контрактов, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/devices/allProperties/allTasks | Создание и удаление устройств, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoles/allProperties/allTasks | Создание и удаление объектов directoryRole, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoleTemplates/allProperties/allTasks | Создание и удаление объектов directoryRoleTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/domains/allProperties/allTasks | Создание и удаление доменов, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/groups/allProperties/allTasks | Создание и удаление групп, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/allProperties/allTasks | Создание и удаление объектов groupSetting, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/groupSettingTemplates/allProperties/allTasks | Создание и удаление объектов groupSettingTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/loginTenantBranding/allProperties/allTasks | Создание и удаление объектов loginTenantBranding, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/oAuth2PermissionGrants/allProperties/allTasks | Создание и удаление объектов oAuth2PermissionGrant, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/organization/allProperties/allTasks | Создание и удаление организаций, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/policies/allProperties/allTasks | Создание и удаление политик, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/roleAssignments/allProperties/allTasks | Создание и удаление объектов roleAssignment и чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/roleDefinitions/allProperties/allTasks | Создание и удаление объектов roleDefinition и чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/scopedRoleMemberships/allProperties/allTasks | Создание и удаление объектов scopedRoleMembership и чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/serviceAction/activateService | Выполнение действия службы Activateservice в Azure Active Directory. |
-| microsoft.aad.directory/serviceAction/disableDirectoryFeature | Выполнение действия службы Disabledirectoryfeature в Azure Active Directory. |
-| microsoft.aad.directory/serviceAction/enableDirectoryFeature | Выполнение действия службы Enabledirectoryfeature в Azure Active Directory. |
-| microsoft.aad.directory/serviceAction/getAvailableExtentionProperties | Выполнение действия службы Getavailableextentionproperties в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/allProperties/allTasks | Создание и удаление объектов servicePrincipal, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
-| microsoft.aad.directory/subscribedSkus/allProperties/allTasks | Создание и удаление объектов subscribedSku и чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directory/users/allProperties/allTasks | Создание и удаление пользователей, а также чтение и изменение всех свойств в Azure Active Directory. |
-| microsoft.aad.directorySync/allEntities/allTasks | Выполнение любых действий в Azure AD Connect. |
+| Microsoft. Directory/administrativeUnits/Аллпропертиес/Аллтаскс | Создание и удаление объектов administrativeUnit, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Applications/Аллпропертиес/Аллтаскс | Создание и удаление приложений, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/Аллпропертиес/Аллтаскс | Создание и удаление объектов appRoleAssignment, а также чтение и изменение всех свойств в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Аллпропертиес/Аллтаскс | Создание и удаление контактов, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Contracts/Аллпропертиес/Аллтаскс | Создание и удаление контрактов, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Аллпропертиес/Аллтаскс | Создание и удаление устройств, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/directoryRoles/Аллпропертиес/Аллтаскс | Создание и удаление объектов directoryRole, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Директориролетемплатес/Аллпропертиес/Аллтаскс | Создание и удаление объектов directoryRoleTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Domains/Аллпропертиес/Аллтаскс | Создание и удаление доменов, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Groups/Аллпропертиес/Аллтаскс | Создание и удаление групп, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/Аллпропертиес/Аллтаскс | Создание и удаление объектов groupSetting, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингтемплатес/Аллпропертиес/Аллтаскс | Создание и удаление объектов groupSettingTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Логинтенантбрандинг/Аллпропертиес/Аллтаскс | Создание и удаление объектов loginTenantBranding, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/oAuth2PermissionGrants/Аллпропертиес/Аллтаскс | Создание и удаление объектов oAuth2PermissionGrant, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Organization/Аллпропертиес/Аллтаскс | Создание и удаление организаций, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Policies/Аллпропертиес/Аллтаскс | Создание и удаление политик, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/roleAssignments/Аллпропертиес/Аллтаскс | Создание и удаление объектов roleAssignment и чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/roleDefinitions/Аллпропертиес/Аллтаскс | Создание и удаление объектов roleDefinition и чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Скопедролемембершипс/Аллпропертиес/Аллтаскс | Создание и удаление объектов scopedRoleMembership и чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Сервицеактион/Активатесервице | Выполнение действия службы Activateservice в Azure Active Directory. |
+| Microsoft. Directory/Сервицеактион/Дисабледиректорифеатуре | Выполнение действия службы Disabledirectoryfeature в Azure Active Directory. |
+| Microsoft. Directory/Сервицеактион/Енабледиректорифеатуре | Выполнение действия службы Enabledirectoryfeature в Azure Active Directory. |
+| Microsoft. Directory/Сервицеактион/Жетаваилабликстентионпропертиес | Выполнение действия службы Getavailableextentionproperties в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Аллпропертиес/Аллтаскс | Создание и удаление объектов servicePrincipal, а также чтение и изменение всех свойств в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory/Субскрибедскус/Аллпропертиес/Аллтаскс | Создание и удаление объектов subscribedSku и чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Users/Аллпропертиес/Аллтаскс | Создание и удаление пользователей, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Директорисинк/Аллентитиес/Аллтаскс | Выполнение любых действий в Azure AD Connect. |
 | microsoft.aad.identityProtection/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.identityProtection. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.azure.advancedThreatProtection/allEntities/read | Чтение всех ресурсов в microsoft.azure.advancedThreatProtection. |
@@ -725,14 +735,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/policies/conditionalAccess/basic/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/basic/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/owners/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/owners/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/policiesAppliedTo/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
-| microsoft.aad.directory/policies/conditionalAccess/tenantDefault/update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/политики/Кондитионалакцесс/Basic/Read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/Basic/Update | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/создать | Создание политик в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/Owners/Read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/владельцы/обновление | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/ПолиЦиесапплиедто/чтение | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
+| Microsoft. Directory/Policies/Кондитионалакцесс/Тенантдефаулт/обновление | Обновление свойства policies.conditionalAccess в Azure Active Directory. |
 
 ### <a name="crm-service-administrator-permissions"></a>Разрешения администратора службы CRM
 
@@ -790,61 +800,61 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettingTemplates/basic/read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/Basic/Read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингтемплатес/Basic/Read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
 
 ### <a name="directory-readers-permissions"></a>Разрешения для читателей каталога
 Может считывать сведения базового каталога. Предназначено для предоставления доступа приложениям, а не пользователям.
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/administrativeUnits/basic/read | Чтение стандартных свойств для объектов administrativeUnit в Azure Active Directory. |
-| microsoft.aad.directory/administrativeUnits/members/read | Чтение свойства administrativeUnits.members в Azure Active Directory. |
-| microsoft.aad.directory/applications/basic/read | Чтение стандартных свойств приложений в Azure Active Directory. |
-| microsoft.aad.directory/applications/owners/read | Чтение свойства applications.owners в Azure Active Directory. |
-| microsoft.aad.directory/applications/policies/read | Чтение свойства applications.policies в Azure Active Directory. |
-| microsoft.aad.directory/contacts/basic/read | Чтение базовых свойств контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/memberOf/read | Чтение свойства contacts.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/contracts/basic/read | Чтение базовых свойств контрактов в Azure Active Directory. |
-| microsoft.aad.directory/devices/basic/read | Чтение базовых свойств устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/memberOf/read | Чтение свойства devices.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/devices/registeredOwners/read | Чтение свойства devices.registeredOwners в Azure Active Directory. |
-| microsoft.aad.directory/devices/registeredUsers/read | Чтение свойства devices.registeredUsers в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoles/basic/read | Чтение базовых свойств объектов DirectoryRole в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoles/eligibleMembers/read | Чтение свойства directoryroles.eligibleMembers в Azure Active Directory. |
-| microsoft.aad.directory/directoryRoles/members/read | Чтение свойства directoryRoles.members в Azure Active Directory. |
-| microsoft.aad.directory/domains/basic/read | Чтение базовых свойств доменов в Azure Active Directory. |
-| microsoft.aad.directory/groups/appRoleAssignments/read | Чтение свойства Groups.AppRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/read | Чтение базовых свойств в группах в Azure Active Directory. |
-| microsoft.aad.directory/groups/memberOf/read | Чтение свойства groups.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/groups/members/read | Чтение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/owners/read | Чтение свойства groups.owners в Azure Active Directory. |
-| microsoft.aad.directory/groups/settings/read | Чтение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/basic/read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettingTemplates/basic/read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
-| microsoft.aad.directory/oAuth2PermissionGrants/basic/read | Чтение базовых свойств для объектов oAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/organization/basic/read | Чтение базовых свойств в организации в Azure Active Directory. |
-| microsoft.aad.directory/organization/trustedCAsForPasswordlessAuth/read | Чтение свойства оrganizations.trustedCAsForPasswordlessAuth в Azure Active Directory. |
-| microsoft.aad.directory/roleAssignments/basic/read | Чтение базовых свойств roleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/roleDefinitions/basic/read | Чтение базовых свойств roleDefinitions в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignments/read | Чтение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/memberOf/read | Чтение свойства servicePrincipals.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/oAuth2PermissionGrants/basic/read | Чтение свойства servicePrincipals.oAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/ownedObjects/read | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/owners/read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/read | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/subscribedSkus/basic/read | Чтение базовых свойств объектов subscribedSku в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/read | Чтение базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/directReports/read | Чтение свойства users.directReports в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/read | Чтение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/memberOf/read | Чтение свойства users.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/users/ownedDevices/read | Чтение свойства users.ownedDevices в Azure Active Directory. |
-| microsoft.aad.directory/users/ownedObjects/read | Чтение свойства users.ownedObjects в Azure Active Directory. |
-| microsoft.aad.directory/users/registeredDevices/read | Чтение свойства users.registeredDevices в Azure Active Directory. |
+| Microsoft. Directory/administrativeUnits/Basic/Read | Чтение стандартных свойств для объектов administrativeUnit в Azure Active Directory. |
+| Microsoft. Directory/administrativeUnits/Members/Read | Чтение свойства administrativeUnits.members в Azure Active Directory. |
+| Microsoft. Directory/Applications/Basic/Read | Чтение стандартных свойств приложений в Azure Active Directory. |
+| Microsoft. Directory/Applications/Owners/Read | Чтение свойства applications.owners в Azure Active Directory. |
+| Microsoft. Directory, приложения, политики/чтение | Чтение свойства applications.policies в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Basic/Read | Чтение базовых свойств контактов в Azure Active Directory. |
+| Microsoft. Directory/Contacts/memberOf/Read | Чтение свойства contacts.memberOf в Azure Active Directory. |
+| Microsoft. Directory/Contracts/Basic/Read | Чтение базовых свойств контрактов в Azure Active Directory. |
+| Microsoft. Directory/Devices/Basic/Read | Чтение базовых свойств устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/memberOf/Read | Чтение свойства devices.memberOf в Azure Active Directory. |
+| Microsoft. Directory/Devices/registeredOwners/Read | Чтение свойства devices.registeredOwners в Azure Active Directory. |
+| Microsoft. Directory/Devices/registeredUsers/Read | Чтение свойства devices.registeredUsers в Azure Active Directory. |
+| Microsoft. Directory/directoryRoles/Basic/Read | Чтение базовых свойств объектов DirectoryRole в Azure Active Directory. |
+| Microsoft. Directory/directoryRoles/Елигиблемемберс/Read | Чтение свойства directoryroles.eligibleMembers в Azure Active Directory. |
+| Microsoft. Directory/directoryRoles/Members/Read | Чтение свойства directoryRoles.members в Azure Active Directory. |
+| Microsoft. Directory/Domains/Basic/Read | Чтение базовых свойств доменов в Azure Active Directory. |
+| Microsoft. Directory/Groups/appRoleAssignments/чтение | Чтение свойства Groups.AppRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Groups/базовый/чтение | Чтение базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/memberOf/чтение | Чтение свойства groups.memberOf в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Read | Чтение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory/Groups/Owners/Read | Чтение свойства groups.owners в Azure Active Directory. |
+| Microsoft. каталог/группы/параметры/чтение | Чтение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/Basic/Read | Чтение базовых свойств для объектов groupSettings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингтемплатес/Basic/Read | Чтение базовых свойств для объектов groupSettingTemplate в Azure Active Directory. |
+| Microsoft. Directory/oAuth2PermissionGrants/Basic/Read | Чтение базовых свойств для объектов oAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/организация/базовый/чтение | Чтение базовых свойств в организации в Azure Active Directory. |
+| Microsoft. Directory/организация/trustedCAsForPasswordlessAuth/чтение | Чтение свойства оrganizations.trustedCAsForPasswordlessAuth в Azure Active Directory. |
+| Microsoft. Directory/roleAssignments/Basic/Read | Чтение базовых свойств roleAssignments в Azure Active Directory. |
+| Microsoft. Directory/roleDefinitions/Basic/Read | Чтение базовых свойств roleDefinitions в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Read | Чтение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/memberOf/Read | Чтение свойства servicePrincipals.memberOf в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/oAuth2PermissionGrants/Basic/Read | Чтение свойства servicePrincipals.oAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/ownedObjects/Read | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/чтение | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
+| Microsoft. Directory/Субскрибедскус/Basic/Read | Чтение базовых свойств объектов subscribedSku в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Read | Чтение базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/directReports/Read | Чтение свойства users.directReports в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Read | Чтение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory/Users/memberOf/Read | Чтение свойства users.memberOf в Azure Active Directory. |
+| Microsoft. Directory/Users/oAuth2PermissionGrants/Basic/Read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/Users/Овнеддевицес/Read | Чтение свойства users.ownedDevices в Azure Active Directory. |
+| Microsoft. Directory/Users/ownedObjects/Read | Чтение свойства users.ownedObjects в Azure Active Directory. |
+| Microsoft. Directory/Users/registeredDevices/Read | Чтение свойства users.registeredDevices в Azure Active Directory. |
 
 ### <a name="directory-synchronization-accounts-permissions"></a>Разрешения учетных записей синхронизации каталогов
 
@@ -852,34 +862,34 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/organization/dirSync/update | Изменение свойства organization.dirSync в Azure Active Directory. |
-| microsoft.aad.directory/policies/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/read | Чтение базовых свойств политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/owners/read | Чтение свойства policies.owners в Azure Active Directory. |
-| microsoft.aad.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
-| microsoft.aad.directory/policies/policiesAppliedTo/read | Чтение свойства policies.policyAppliedTo в Azure Active Directory. |
-| microsoft.aad.directory/policies/tenantDefault/update | Обновление свойства policies.tenantDefault в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignments/read | Чтение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/create | Создание объектов servicePrincipal в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/credentials/update | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/memberOf/read | Чтение свойства servicePrincipals.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/oAuth2PermissionGrants/basic/read | Чтение свойства servicePrincipals.oAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/owners/read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/owners/update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/ownedObjects/read | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/permissions/update | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/read | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directorySync/allEntities/allTasks | Выполнение любых действий в Azure AD Connect. |
+| Microsoft. Directory/организация, dirSync/обновление | Изменение свойства organization.dirSync в Azure Active Directory. |
+| Microsoft. Каталог/политики/создать | Создание политик в Azure Active Directory. |
+| Microsoft. Каталог/политики/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory/политики/базовый/чтение | Чтение базовых свойств политик в Azure Active Directory. |
+| Microsoft. Directory/политики/базовый/обновление | Обновление базовых свойств политик в Azure Active Directory. |
+| Microsoft. Directory/политики/владельцы/чтение | Чтение свойства policies.owners в Azure Active Directory. |
+| Microsoft. Directory, политики, владельцы и обновление | Изменение свойства policies.owners в Azure Active Directory. |
+| Microsoft. Directory/Policies/ПолиЦиесапплиедто/чтение | Чтение свойства policies.policyAppliedTo в Azure Active Directory. |
+| Microsoft. Directory/Policies/Тенантдефаулт/обновление | Обновление свойства policies.tenantDefault в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Read | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignments/Read | Чтение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/аудитория/обновление | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals, проверка подлинности или обновление | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Read | Чтение базовых свойств для объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Basic/Update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/создать | Создание объектов servicePrincipal в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/учетные данные/обновление | Обновление свойства servicePrincipals.credentials в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/memberOf/Read | Чтение свойства servicePrincipals.memberOf в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/oAuth2PermissionGrants/Basic/Read | Чтение свойства servicePrincipals.oAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Read | Чтение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/Owners/Update | Изменение свойства servicePrincipals.owners в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/ownedObjects/Read | Чтение свойства servicePrincipals.ownedObjects в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/разрешения/обновление | Обновление свойства servicePrincipals.permissions в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/чтение | Чтение свойства servicePrincipals.policies в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| Microsoft. Директорисинк/Аллентитиес/Аллтаскс | Выполнение любых действий в Azure AD Connect. |
 
 ### <a name="directory-writers-permissions"></a>Разрешения для записи каталога
 
@@ -887,22 +897,22 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
-| microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/basic/update | Обновление базовых свойств для объектов groupSettings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/create | Создание свойства groupSettings в Azure Active Directory. |
-| microsoft.aad.directory/groupSettings/delete | Удаление объектов groupSetting в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
+| Microsoft. Directory/Groups/создать | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Креатеасовнер | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/Groups/appRoleAssignments/обновление | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
+| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/Basic/Update | Обновление базовых свойств для объектов groupSettings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/создать | Создание свойства groupSettings в Azure Active Directory. |
+| Microsoft. Directory/Граупсеттингс/удаление | Удаление объектов groupSetting в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory/Users/userPrincipalName/обновление | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 
 ### <a name="exchange-service-administrator-permissions"></a>Разрешения администратора службы Exchange
 
@@ -915,12 +925,12 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.aad.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| Microsoft. Directory/Groups/унифицированный/appRoleAssignments/Update | Обновление свойства groups.unified в Azure Active Directory. |
+| Microsoft. Directory/Groups/унифицированный/базовый/обновление | Обновление основных свойств групп Office 365. |
+| Microsoft. Directory/Groups/унифицированный/создать | Создание групп Office 365. |
+| Microsoft. Directory/Groups/унифицированная или удаленная | Удаление групп Office 365. |
+| Microsoft. Directory/Groups/Unified/Members/Update | Обновление членства в группах Office 365. |
+| Microsoft. Directory/Groups/Unified/Owners/Update | Обновление владельцев в группах Office 365. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -941,16 +951,16 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/users/appRoleAssignments/read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/read | Чтение базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/directReports/read | Чтение свойства users.directReports в Azure Active Directory. |
-| microsoft.aad.directory/users/inviteGuest | Приглашение пользователей-гостей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/read | Чтение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/memberOf/read | Чтение свойства users.memberOf в Azure Active Directory. |
-| microsoft.aad.directory/users/oAuth2PermissionGrants/basic/read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/users/ownedDevices/read | Чтение свойства users.ownedDevices в Azure Active Directory. |
-| microsoft.aad.directory/users/ownedObjects/read | Чтение свойства users.ownedObjects в Azure Active Directory. |
-| microsoft.aad.directory/users/registeredDevices/read | Чтение свойства users.registeredDevices в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Read | Чтение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Read | Чтение базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/directReports/Read | Чтение свойства users.directReports в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвитегуест | Приглашение пользователей-гостей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Read | Чтение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory/Users/memberOf/Read | Чтение свойства users.memberOf в Azure Active Directory. |
+| Microsoft. Directory/Users/oAuth2PermissionGrants/Basic/Read | Чтение свойства users.оAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/Users/Овнеддевицес/Read | Чтение свойства users.ownedDevices в Azure Active Directory. |
+| Microsoft. Directory/Users/ownedObjects/Read | Чтение свойства users.ownedObjects в Azure Active Directory. |
+| Microsoft. Directory/Users/registeredDevices/Read | Чтение свойства users.registeredDevices в Azure Active Directory. |
 
 ### <a name="helpdesk-administrator-permissions"></a>Разрешения администратора службы поддержки
 
@@ -958,9 +968,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -978,28 +988,28 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.aad.directory/devices/basic/update | Обновление базовых свойств устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/devices/create | Создание устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/delete | Удаление устройств в Azure Active Directory. |
-| microsoft.aad.directory/devices/registeredOwners/update | Изменение свойства devices.registeredOwners в Azure Active Directory. |
-| microsoft.aad.directory/devices/registeredUsers/update | Изменение свойства devices.registeredUsers в Azure Active Directory. |
-| microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
-| microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
-| microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.aad.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Basic/Update | Обновление базовых свойств контактов в Azure Active Directory. |
+| Microsoft. Directory/Contacts/CREATE | Создание контактов в Azure Active Directory. |
+| Microsoft. Directory/контакты/удалить | Удаление контактов в Azure Active Directory. |
+| Microsoft. Directory/Devices/Basic/Update | Обновление базовых свойств устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/Devices/CREATE | Создание устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/Delete | Удаление устройств в Azure Active Directory. |
+| Microsoft. Directory/Devices/registeredOwners/Update | Изменение свойства devices.registeredOwners в Azure Active Directory. |
+| Microsoft. Directory/Devices/registeredUsers/Update | Изменение свойства devices.registeredUsers в Azure Active Directory. |
+| Microsoft. Directory/Groups/appRoleAssignments/обновление | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/создать | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Креатеасовнер | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/Groups/удалить | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Хидденмемберс/чтение | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
+| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1026,8 +1036,8 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/usageLocation/update | Изменение свойства Users.UsageLocation в Azure Active Directory. |
+| Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/usageLocation/Update | Изменение свойства Users.UsageLocation в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
@@ -1089,22 +1099,22 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
-| microsoft.aad.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Basic/Update | Обновление базовых свойств контактов в Azure Active Directory. |
+| Microsoft. Directory/Contacts/CREATE | Создание контактов в Azure Active Directory. |
+| Microsoft. Directory/контакты/удалить | Удаление контактов в Azure Active Directory. |
+| Microsoft. Directory/Groups/создать | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Креатеасовнер | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/удаление | Удаление пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory/пользователи/восстановление | Восстановление удаленных пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/userPrincipalName/обновление | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1122,24 +1132,24 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.aad.directory/domains/allTasks | Создание и удаление доменов, а также чтение и изменение стандартных свойств в Azure Active Directory. |
-| microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.aad.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
-| microsoft.aad.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Basic/Update | Обновление базовых свойств контактов в Azure Active Directory. |
+| Microsoft. Directory/Contacts/CREATE | Создание контактов в Azure Active Directory. |
+| Microsoft. Directory/контакты/удалить | Удаление контактов в Azure Active Directory. |
+| Microsoft. Directory/Domains/Аллтаскс | Создание и удаление доменов, а также чтение и изменение стандартных свойств в Azure Active Directory. |
+| Microsoft. Directory/Groups/создать | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/удалить | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
+| Microsoft. Directory/организация/базовый/обновление | Обновление базовых свойств в организации в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/удаление | Удаление пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory/пользователи/восстановление | Восстановление удаленных пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/userPrincipalName/обновление | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1152,7 +1162,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="power-bi-service-administrator-permissions"></a>Разрешения администратора служб Power BI
@@ -1179,14 +1189,14 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/strongAuthentication/update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Стронгаусентикатион/Update | Изменение свойств строгой аутентификации, таких как сведения об учетных данных MFA. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.aad.directory/users/password/update | Обновите пароли для всех пользователей в организации Office 365. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновите пароли для всех пользователей в организации Office 365. Дополнительные сведения см. в электронной документации. |
 
 ### <a name="privileged-role-administrator-permissions"></a>Разрешения администратора привилегированных ролей
 
@@ -1200,11 +1210,11 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.privilegedIdentityManagement/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.aad.privilegedIdentityManagement. |
-| Microsoft. AAD. Directory/свойства serviceprincipals/appRoleAssignedTo/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. appRoleAssignedTo в Azure Active Directory. |
-| Microsoft. AAD. Directory/свойства serviceprincipals/oAuth2PermissionGrants/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. oAuth2PermissionGrants в Azure Active Directory. |
-| microsoft.aad.directory/administrativeUnits/allProperties/allTasks | Создание административных единиц и управление ими (включая членов) |
-| microsoft.aad.directory/roleAssignments/allProperties/allTasks | Создание назначений ролей и управление ими. |
-| microsoft.aad.directory/roleDefinitions/allProperties/allTasks | Создание определений ролей и управление ими. |
+| Microsoft. Directory/свойства serviceprincipals/appRoleAssignedTo/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. appRoleAssignedTo в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/oAuth2PermissionGrants/Аллтаскс | Прочтите и настройте свойство свойства serviceprincipals. oAuth2PermissionGrants в Azure Active Directory. |
+| Microsoft. Directory/administrativeUnits/Аллпропертиес/Аллтаскс | Создание административных единиц и управление ими (включая членов) |
+| Microsoft. Directory/roleAssignments/Аллпропертиес/Аллтаскс | Создание назначений ролей и управление ими. |
+| Microsoft. Directory/roleDefinitions/Аллпропертиес/Аллтаскс | Создание определений ролей и управление ими. |
 
 ### <a name="reports-reader-permissions"></a>Разрешения читателя отчетов
 
@@ -1217,8 +1227,8 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
 
@@ -1266,16 +1276,16 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/create | Создание политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/delete | Удаление политик в Azure Active Directory. |
-| microsoft.aad.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
-| microsoft.aad.directory/policies/tenantDefault/update | Обновление свойства policies.tenantDefault в Azure Active Directory. |
-| microsoft.aad.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| Microsoft. Directory, приложения, политики или обновление | Изменение свойства applications.policies в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| Microsoft. Directory/политики/базовый/обновление | Обновление базовых свойств политик в Azure Active Directory. |
+| Microsoft. Каталог/политики/создать | Создание политик в Azure Active Directory. |
+| Microsoft. Каталог/политики/удаление | Удаление политик в Azure Active Directory. |
+| Microsoft. Directory, политики, владельцы и обновление | Изменение свойства policies.owners в Azure Active Directory. |
+| Microsoft. Directory/Policies/Тенантдефаулт/обновление | Обновление свойства policies.tenantDefault в Azure Active Directory. |
+| Microsoft. Directory/свойства serviceprincipals/политики/обновление | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.identityProtection/allEntities/update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
@@ -1316,9 +1326,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
-| microsoft.aad.directory/devices/bitLockerRecoveryKeys/read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
-| microsoft.aad.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
+| microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Devices/Битлоккеррековерикэйс/Read | Чтение свойства devices.bitLockerRecoveryKeys в Azure Active Directory. |
+| microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
@@ -1354,12 +1364,12 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.aad.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| Microsoft. Directory/Groups/унифицированный/appRoleAssignments/Update | Обновление свойства groups.unified в Azure Active Directory. |
+| Microsoft. Directory/Groups/унифицированный/базовый/обновление | Обновление основных свойств групп Office 365. |
+| Microsoft. Directory/Groups/унифицированный/создать | Создание групп Office 365. |
+| Microsoft. Directory/Groups/унифицированная или удаленная | Удаление групп Office 365. |
+| Microsoft. Directory/Groups/Unified/Members/Update | Обновление членства в группах Office 365. |
+| Microsoft. Directory/Groups/Unified/Owners/Update | Обновление владельцев в группах Office 365. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1426,13 +1436,13 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
-| microsoft.aad.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.aad.directory/groups/unified/basic/update | Обновление основных свойств групп Office 365. |
-| microsoft.aad.directory/groups/unified/create | Создание групп Office 365. |
-| microsoft.aad.directory/groups/unified/delete | Удаление групп Office 365. |
-| microsoft.aad.directory/groups/unified/members/update | Обновление членства в группах Office 365. |
-| microsoft.aad.directory/groups/unified/owners/update | Обновление владельцев в группах Office 365. |
+| Microsoft. Directory/Groups/Хидденмемберс/чтение | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
+| Microsoft. Directory/Groups/унифицированный/appRoleAssignments/Update | Обновление свойства groups.unified в Azure Active Directory. |
+| Microsoft. Directory/Groups/унифицированный/базовый/обновление | Обновление основных свойств групп Office 365. |
+| Microsoft. Directory/Groups/унифицированный/создать | Создание групп Office 365. |
+| Microsoft. Directory/Groups/унифицированная или удаленная | Удаление групп Office 365. |
+| Microsoft. Directory/Groups/Unified/Members/Update | Обновление членства в группах Office 365. |
+| Microsoft. Directory/Groups/Unified/Owners/Update | Обновление владельцев в группах Office 365. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
@@ -1445,32 +1455,32 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 | **Действия** | **Описание** |
 | --- | --- |
-| microsoft.aad.directory/appRoleAssignments/create | Создание объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/delete | Удаление объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/appRoleAssignments/update | Изменение объектов appRoleAssignment в Azure Active Directory. |
-| microsoft.aad.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/create | Создание контактов в Azure Active Directory. |
-| microsoft.aad.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.aad.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
-| microsoft.aad.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.aad.directory/groups/delete | Удаление групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
-| microsoft.aad.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.aad.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.aad.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.aad.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
-| microsoft.aad.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
-| microsoft.aad.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/create | Создание пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/delete | Удаление пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
-| microsoft.aad.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
-| microsoft.aad.directory/users/restore | Восстановление удаленных пользователей в Azure Active Directory. |
-| microsoft.aad.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/создать | Создание объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/удаление | Удаление объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/appRoleAssignments/обновление | Изменение объектов appRoleAssignment в Azure Active Directory. |
+| Microsoft. Directory/Contacts/Basic/Update | Обновление базовых свойств контактов в Azure Active Directory. |
+| Microsoft. Directory/Contacts/CREATE | Создание контактов в Azure Active Directory. |
+| Microsoft. Directory/контакты/удалить | Удаление контактов в Azure Active Directory. |
+| Microsoft. Directory/Groups/appRoleAssignments/обновление | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Groups/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups/создать | Создание групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Креатеасовнер | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| Microsoft. Directory/Groups/удалить | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/Groups/Хидденмемберс/чтение | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
+| Microsoft. Directory/Groups/Members/Update | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory, группы, владельцы и обновление | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. каталог/группы/восстановление | Восстановление групп в Azure Active Directory. |
+| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
+| Microsoft. Directory/Users/appRoleAssignments/Update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. Directory/Users/Ассигнлиценсе | Управление лицензиями для пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Basic/Update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/создание | Создание пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/удаление | Удаление пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Инвалидатеаллрефрештокенс | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/Manager/Update | Изменение свойства users.manager в Azure Active Directory. |
+| Microsoft. Directory, пользователи, пароль или обновление | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
+| Microsoft. Directory/пользователи/восстановление | Восстановление удаленных пользователей в Azure Active Directory. |
+| Microsoft. Directory/Users/userPrincipalName/обновление | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Azure и управление ими. |
 | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |

@@ -1,19 +1,19 @@
 ---
 title: Пользовательский интерфейс Apache Ambari показывает узлы и службы в Azure HDInsight
-description: Пользовательский интерфейс Apache Ambari показывает узлы и службы в Azure HDInsight
+description: Устранение неполадок пользовательского интерфейса Apache Ambari при отображении узлов и служб в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/02/2019
-ms.openlocfilehash: 1227635a193fdf1b55e2c1cc141a837a250ee08c
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: bc65387252fd425256684474f38ec5d783bb45e7
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842521"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734852"
 ---
-# <a name="scenario-apache-ambari-ui-shows-down-hosts-and-services-in-azure-hdinsight"></a>Сценарий: Пользовательский интерфейс Apache Ambari показывает узлы и службы в Azure HDInsight
+# <a name="scenario-apache-ambari-ui-shows-down-hosts-and-services-in-azure-hdinsight"></a>Сценарий. Пользовательский интерфейс Apache Ambari показывает узлы и службы в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

@@ -1,6 +1,6 @@
 ---
 title: Отправка заданий Apache Hadoop в HDInsight
-description: Узнайте, как отправлять задания Apache Hadoop в Azure HDInsight.
+description: Отправка Apache Hadoop заданий в Azure HDInsight с помощью Microsoft .NET SDK, а также в виде фигур или PowerShell
 ms.reviewer: jasonh
 ms.author: hrasheed
 author: hrasheed-msft
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.openlocfilehash: 617eb8c8cfcdc7af5e91d0ed122ccdd21e7b86ff
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: a595d002ebeecee1a8fd62a52f47cab487474494
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508095"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734830"
 ---
 # <a name="submit-apache-hadoop-jobs-in-hdinsight"></a>Отправка заданий Apache Hadoop в HDInsight
 

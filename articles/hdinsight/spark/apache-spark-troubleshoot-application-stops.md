@@ -1,19 +1,19 @@
 ---
-title: Apache Spark приложение потоковой передачи прекращает обработку данных после выполнения в течение 24 дней без известных ошибок в журналах в Azure HDInsight
+title: Apache Spark приложение потоковой передачи остановлено через 24 дня в Azure HDInsight
 description: Приложение потоковой передачи Apache Spark останавливается после выполнения в течение 24 дней, и в файлах журнала ошибок нет.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/29/2019
-ms.openlocfilehash: 002c45c514b5d8207a1aa70ec8e1c749677a239a
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: c513c5df0d83eb0049683f88d85e8a1c41fd0bf0
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68620887"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736297"
 ---
-# <a name="scenario-apache-spark-streaming-application-stops-after-executing-for-24-days-in-azure-hdinsight"></a>Сценарий: Apache Spark приложение потоковой передачи останавливается после выполнения в течение 24 дней в Azure HDInsight
+# <a name="scenario-apache-spark-streaming-application-stops-after-executing-for-24-days-in-azure-hdinsight"></a>Сценарий. Apache Spark приложение потоковой передачи останавливается после выполнения в течение 24 дней в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 

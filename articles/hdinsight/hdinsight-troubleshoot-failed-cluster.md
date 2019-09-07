@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок в работе кластера HDInsight в Azure HDInsight или в случае сбоя.
-description: Диагностика и устранение задержки работы или сбоя кластера HDInsight.
+description: Диагностика и устранение неполадок в работе кластера Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: b7afeee554a1faee9507f0a891803024f3bc11e4
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 8c50068914c1519a5522372310bd0f5863a94b39
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69573603"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735791"
 ---
 # <a name="troubleshoot-a-slow-or-failing-job-on-a-hdinsight-cluster"></a>Устранение неполадок в работе кластера HDInsight
 

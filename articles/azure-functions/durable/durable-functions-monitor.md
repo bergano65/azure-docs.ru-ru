@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ae6c2bd27e9192966ecffb4d4296063201fca970
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 992e3f7aa53fdd006d29c06113cd30b07a406f3b
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098020"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734336"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
@@ -67,7 +67,7 @@ ms.locfileid: "70098020"
 
 Ниже приведен код, реализующий функцию.
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Скрипт C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_Monitor/run.csx)]
 
@@ -103,7 +103,7 @@ Orchestrator требует несколько фрагментов данных
 
 Ниже приведена сама реализация. Как и объекты POCO, используемые для передачи данных, логика для обработки вызова API и анализа ответа JSON абстрагируется в общий класс в C#. Вы можете найти его как часть кода [Visual Studio](#run-the-sample).
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Скрипт C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_GetIsClear/run.csx)]
 
@@ -117,7 +117,7 @@ Orchestrator требует несколько фрагментов данных
 
 Ниже приведен код, который отправляет SMS-сообщение:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Скрипт C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_SendGoodWeatherAlert/run.csx)]
 

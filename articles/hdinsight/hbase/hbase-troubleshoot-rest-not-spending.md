@@ -1,19 +1,19 @@
 ---
 title: Служба "Apache HBase" не отвечает на запросы в Azure HDInsight
-description: Устранение проблемы с HDInsight HBase, не отвечающим на запросы
+description: Устранение проблемы с помощью Apache HBase RESTFUL, не отвечающего на запросы в Azure HDInsight.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/01/2019
-ms.openlocfilehash: 7219f66457e47bba34e750ec74810b8d2edee36e
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 5b1291e6996cb5db366128f829ca2cdf3cad0a9d
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817112"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735316"
 ---
-# <a name="scenario-apache-hbase-rest-not-responding-to-requests-in-azure-hdinsight"></a>Сценарий: Служба "Apache HBase" не отвечает на запросы в Azure HDInsight
+# <a name="scenario-apache-hbase-rest-not-responding-to-requests-in-azure-hdinsight"></a>Сценарий. Служба "Apache HBase" не отвечает на запросы в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

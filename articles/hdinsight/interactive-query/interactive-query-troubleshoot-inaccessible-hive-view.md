@@ -1,19 +1,19 @@
 ---
-title: Apache Hive не удается установить подключение к Apache Zookeeper в Azure HDInsight
+title: Apache Hive не удается установить подключение Apache Zookeeper — Azure HDInsight
 description: Представление Hive недоступно из-за проблем Zookeeper
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/30/2019
-ms.openlocfilehash: d8e94627cefccc0be4cbe35ae09104fb104034f6
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: b5822e69f2e16e5fb24064862a64764e7516dbd7
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817099"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733108"
 ---
-# <a name="scenario-apache-hive-fails-to-establish-a-connection-to-apache-zookeeper-in-azure-hdinsight"></a>Сценарий: Apache Hive не удается установить подключение к Apache Zookeeper в Azure HDInsight
+# <a name="scenario-apache-hive-fails-to-establish-a-connection-to-apache-zookeeper-in-azure-hdinsight"></a>Сценарий. Apache Hive не удается установить подключение к Apache Zookeeper в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании интерактивных компонентов запросов в кластерах Azure HDInsight.
 

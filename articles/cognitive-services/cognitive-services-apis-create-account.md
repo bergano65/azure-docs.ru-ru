@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: aahi
-ms.openlocfilehash: ae25ffdf3f819c30fdfb1d3110042579f0b197b9
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: d0b2c9c7450b8a44ca93a9d9fa8770b7ab3d9282
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70381777"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743852"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
 
@@ -32,12 +32,17 @@ ms.locfileid: "70381777"
 1. Создает ресурса.
 
     #### <a name="multi-service-resourcetabmultiservice"></a>[Ресурс с несколькими службами](#tab/multiservice)
-
+    
     Ресурс с несколькими службами называется **Cognitive Services** на портале. [Создайте ресурс Cognitive Services](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne).
     
-    В настоящее время эти службы **нельзя** вызывать с помощью ключей нескольких служб: QnA Maker, службы речи, Пользовательское визуальное распознавание и детектор аномалий.
+    В настоящее время ресурс с несколькими службами обеспечивает доступ к следующим Cognitive Services:
     
-
+    |                  |                                                      |                    |                               |                  |
+    |------------------|------------------------------------------------------|--------------------|-------------------------------|------------------|
+    | Компьютерное зрение  | Модератор контента                                    | Распознавание лиц               | Распознавание речи (LUIS) | Текстовая аналитика   |
+    | Перевод текстов  | Поиск Bing 7 <br>(Веб, изображение, Новости, видео, визуальный элемент) | Пользовательский поиск Bing | Поиск сущностей Bing            | API автозаполнения Bing |
+    | Проверка орфографии Bing |                                                      |                    |                               |                  |
+    
     #### <a name="single-service-resourcetabsingleservice"></a>[Ресурс с одной службой](#tab/singleservice)
 
     Используйте следующие ссылки, чтобы создать ресурс для доступных Cognitive Services.
@@ -85,13 +90,13 @@ ms.locfileid: "70381777"
 
 ## <a name="get-the-keys-for-your-resource"></a>Получение ключей для ресурса
 
-После успешного развертывания ресурса щелкните **"переход к ресурсу"** в разделе **дальнейшие действия**.
+1. После успешного развертывания ресурса щелкните **"переход к ресурсу"** в разделе **дальнейшие действия**.
 
-![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/resource-next-steps.png)
+    ![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/resource-next-steps.png)
 
-В открывшейся области быстрого запуска можно получить доступ к ключу и конечной точке.
+2. В открывшейся области быстрого запуска можно получить доступ к ключу и конечной точке.
 
-![Получить ключ и конечную точку](media/cognitive-services-apis-create-account/get-cog-serv-keys.png)
+    ![Получить ключ и конечную точку](media/cognitive-services-apis-create-account/get-cog-serv-keys.png)
 
 [!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
 

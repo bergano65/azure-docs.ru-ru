@@ -1,5 +1,5 @@
 ---
-title: Переход на детализированный доступ на основе ролей для конфигураций кластера — Azure HDInsight
+title: Переход на детализированный доступ на основе ролей — конфигурации кластера Azure HDInsight
 description: Изучите изменения, необходимые в процессе миграции, чтобы детально получить доступ к конфигурациям кластера HDInsight на основе ролей.
 author: tylerfox
 ms.author: tyfox
@@ -7,16 +7,16 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/22/2019
-ms.openlocfilehash: 03bea7b9df929914e25ca97b382dc5c120b5a769
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 9eb77b3e4066712aecebee4660d50baf45957cb8
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983037"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733239"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
-Мы представляем некоторые важные изменения для поддержки более детализированного доступа на основе ролей для получения конфиденциальной информации. В рамках этих изменений некоторые действия могут потребоваться **3 сентября 2019,** если вы используете одну из затронутых [сущностей или сценариев](#am-i-affected-by-these-changes).
+Мы представляем некоторые важные изменения для поддержки более детализированного доступа на основе ролей для получения конфиденциальной информации. В рамках этих изменений некоторые действия могут потребоваться **3 сентября 2019,** если вы используете одну из [затронутых сущностей или сценариев](#am-i-affected-by-these-changes).
 
 ## <a name="what-is-changing"></a>Что изменяется?
 

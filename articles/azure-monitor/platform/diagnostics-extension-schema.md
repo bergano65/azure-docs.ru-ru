@@ -6,15 +6,15 @@ author: rboucher
 ms.service: azure-monitor
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 09/20/2018
+ms.date: 09/04/2019
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 1230a9bcea01ef394a6299c50b8d5537850cfee5
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: e8ea8ea749243821e5382fc285e3c38f05d4c6b5
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60527315"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735088"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -54,13 +54,7 @@ ms.locfileid: "60527315"
  Начиная с пакета SDK 2.5 (версия системы диагностики 1.2) для системы диагностики Azure стала использоваться модель расширения. Средства, использующие новые функции, были доступны только в более новых пакетах SDK для Azure, но любая служба, использующая систему диагностики Azure, имела возможность выбрать последнюю доступную версию прямо в Azure. Например, любой пользователь, все еще использующий пакет SDK 2.5, загрузит последнюю версию, отображаемую в предыдущей таблице, даже если он не применяет новые функции.  
 
 ## <a name="schemas-index"></a>Указатель схем  
-Для разных версий системы диагностики Azure используются разные схемы конфигурации.
-
-[Схема конфигурации системы диагностики Azure 1.0](diagnostics-extension-schema-1dot0.md)  
-
-[Схема конфигурации системы диагностики Azure 1.2](diagnostics-extension-schema-1dot2.md)  
-
-[Схема конфигурации системы диагностики версии 1.3 и более поздние версии](diagnostics-extension-schema-1dot3.md)  
+Для разных версий системы диагностики Azure используются разные схемы конфигурации. Схемы 1,0 и 1,2 являются устаревшими. Дополнительные сведения о версии 1,3 и более поздних см. в разделе [Схема конфигурации диагностики 1,3 и более поздних](diagnostics-extension-schema-1dot3.md) версий.  
 
 ## <a name="version-history"></a>Журнал версий
 

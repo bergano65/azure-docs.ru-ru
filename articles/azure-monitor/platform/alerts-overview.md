@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/28/2018
 ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 67318fee540195fc913739d78e80649100c54e70
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
-ms.translationtype: MT
+ms.openlocfilehash: defc317618dfffd0e2b28c75b6168ec1dbda36b7
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034818"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735127"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -53,6 +53,7 @@ ms.locfileid: "70034818"
 **Описание оповещения** представляет собой описание для правила генерации оповещений, заданное пользователем.
 
 **Уровень серьезности** представляет собой уровень серьезности оповещения при выполнении условий, указанных в правиле генерации оповещения. Уровень серьезности может иметь значение от 0 до 4.
+Уровень серьезности 0 = Critical уровень серьезности 1 = Error уровень серьезности 2 = Warning уровень серьезности 3 = информационный уровень серьезности 4 = verbose
 
 **Действие**. Это определенное действие, которое будет выполнено при срабатывании оповещения. Дополнительные сведения см. в разделе [Группы действий](../../azure-monitor/platform/action-groups.md).
 

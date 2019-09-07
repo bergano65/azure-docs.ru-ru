@@ -1,19 +1,19 @@
 ---
-title: Задание потоковой передачи Apache Spark, считывающее данные из кластера Apache Kafka, завершается сбоем с Ноклассдеффаундеррор в Azure HDInsight
+title: Ноклассдеффаундеррор-Apache Spark с данными Apache Kafka в Azure HDInsight
 description: Задание потоковой передачи Apache Spark, считывающее данные из кластера Apache Kafka, завершается сбоем с Ноклассдеффаундеррор в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/29/2019
-ms.openlocfilehash: 986b1dd2e749a0968c744f861feb0ac0bf2376e8
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: b7cbf4d460f872f33c447d0eea8430916d65bd18
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68700487"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736284"
 ---
-# <a name="scenario-apache-spark-streaming-job-that-reads-data-from-an-apache-kafka-cluster-fails-with-a-noclassdeffounderror-in-azure-hdinsight"></a>Сценарий: Задание потоковой передачи Apache Spark, считывающее данные из кластера Apache Kafka, завершается сбоем с Ноклассдеффаундеррор в Azure HDInsight
+# <a name="scenario-apache-spark-streaming-job-that-reads-data-from-an-apache-kafka-cluster-fails-with-a-noclassdeffounderror-in-azure-hdinsight"></a>Сценарий. Задание потоковой передачи Apache Spark, считывающее данные из кластера Apache Kafka, завершается сбоем с Ноклассдеффаундеррор в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 

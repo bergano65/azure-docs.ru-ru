@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: b549e8bf53ca7728b18e04542c7291f0ce720cb0
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 9c65d6055807ee2735f1915e8ca289dc0754535b
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876458"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736395"
 ---
 # <a name="about-networking-in-azure-to-azure-replication"></a>Сети для репликации "Azure — Azure"
 
@@ -113,7 +113,11 @@ login.microsoftonline.com | Требуется для авторизации и 
    Северный Китай 2 | 40.73.35.193 | 40.73.33.230
    Восточный Китай | 42.159.205.45 | 42.159.132.40
    Восточный Китай 2 | 40.73.118.52| 40.73.100.125
-  
+   Северная Германия| 51.116.208.58| 51.116.58.128
+   Центрально-западная Германия | 51.116.156.176 | 51.116.154.192
+   Западная Швейцария | 51.107.231.223| 51.107.154.128
+   Северная Швейцария | 51.107.68.31| 51.107.58.128
+
 ## <a name="example-nsg-configuration"></a>Конфигурация примера группы безопасности сети
 
 В этом примере показано, как настроить правила NSG для репликации виртуальной машины.

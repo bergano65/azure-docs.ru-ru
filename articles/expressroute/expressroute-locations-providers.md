@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5469bd835b189df66c22a3fc13e91c435b4be73f
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 43f858f0e08b622bcd198be3ed0166076a4f0d54
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70257714"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734284"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -83,7 +83,7 @@ ms.locfileid: "70257714"
 | **Location** | **Владелец и адрес** | **Локальные регионы Azure** | **Поставщики услуг** |
 | --- | --- | --- | --- |
 | **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | Западная Европа | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, IX Reach, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, TeleCity Group, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
-| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | Западная Европа | CenturyLink Cloud Connect, DE-ЦИКС, Interxion, Vodafone |
+| **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | Западная Европа | CenturyLink Cloud Connect, DE-ЦИКС, Colt, Interxion, Vodafone |
 | **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | Н/Д | Equinix, Megaport |
 | **Окленд** | [Олбани группа вокус (NZ)](https://www.vocus.co.nz/business/cloud-data-centres) | Н/Д | Деволи, Кордиа, Orange, Spark NZ, Вокус Group NZ |
 | **Пусан** | [LG CNS](https://datacenter.lgcns.com/Contents/En/Menu_1/Locations_1.aspx) | Республика Корея, южный регион | LG CNS |

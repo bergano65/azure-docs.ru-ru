@@ -1,19 +1,19 @@
 ---
-title: Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
+title: Миграция локальных Apache Hadoop кластеров в Azure HDInsight — архитектура
 description: Ознакомьтесь с рекомендациями по архитектуре в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/25/2018
+ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: d1f2b79ff3ae33adb0b6e3ce5a6d96ad38fb1562
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4243100d74515576463a6812e31625ddc0ca1f48
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64693127"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735881"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 
@@ -30,7 +30,7 @@ ms.locfileid: "64693127"
 |Пакетная обработка (ETL/ELT)|Hadoop, Spark|
 |Хранение данных|Hadoop, Spark, Interactive Query|
 |Центр Интернета вещей или потоковая передача|Kafka, Storm, Spark|
-|Обработка транзакций NoSQL|HBase|
+|Обработка транзакций NoSQL|Hbase|
 |Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Интерактивные запросы|
 |Обработка и анализ данных|Службы машинного обучения, Spark|
 
@@ -43,7 +43,7 @@ ms.locfileid: "64693127"
 |[Azure CLI (версия 1.0)](../hdinsight-hadoop-create-linux-clusters-azure-cli.md)||X|||
 |[Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md)||X|||
 |[cURL](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
-|[ПАКЕТ SDK .NET](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)||||X|
+|[Пакет SDK для .NET](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)||||X|
 |[Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python)||||X|
 |[пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
 |[Шаблоны диспетчера ресурсов Azure](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
@@ -104,7 +104,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Не используйте хранилище метаданных, созданное для одной версии кластера HDInsight, с кластерами других версий. Различные версии Hive используют отличающиеся схемы. Например, хранилище метаданных нельзя совместно использовать с кластерами Hive 1.2 и Hive 2.1.
 - Периодически архивируйте пользовательское хранилище метаданных.
 - Разместите хранилище метаданных и кластер HDInsight в одном регионе.
-- Мониторинг хранилища метаданных для производительности и доступности с помощью инструментов мониторинга базы данных SQL Azure, как портал Azure или Azure Monitor журналов.
+- Отслеживайте производительность и доступность хранилище метаданных с помощью средств мониторинга базы данных SQL Azure, таких как портал Azure или журналов Azure Monitor.
 - Выполняйте команду **ANALYZE TABLE** по необходимости, чтобы создать статистику для таблиц и столбцов. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
 ## <a name="best-practices-for-different-workloads"></a>Рекомендации для различных рабочих нагрузок
@@ -120,7 +120,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Рассмотрите использование Ranger RBAC для таблиц Hive и аудита.
 - Рассмотрите вопрос об использовании CosmosDB вместо MongoDB или Cassandra.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Прочитайте следующую статью в этом цикле:
 

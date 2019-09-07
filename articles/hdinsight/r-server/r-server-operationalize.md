@@ -1,6 +1,6 @@
 ---
 title: Ввод в эксплуатацию служб машинного обучения в Azure HDInsight
-description: Сведения о вводе в эксплуатацию служб машинного обучения в Azure HDInsight.
+description: Узнайте, как эксплуатацию модель данных для создания прогнозов с помощью служб ML в Azure HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,20 +8,20 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 36d2ebe00f735089633240914421e2259181e63e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 91407fc76d0a7555a87a8a3dcd1b3ad04ee2af80
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448984"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736219"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
 После того как вы выполните моделирование данных на кластере служб машинного обучения в HDInsight, полученную модель можно ввести в эксплуатацию для предоставления прогнозов. В этой статье описано выполнение этой задачи.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер служб машинного Обучения в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **служб машинного Обучения** для **тип кластера**.
+* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера**.
 
 * Клиент Secure Shell (SSH): Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -64,7 +64,7 @@ ms.locfileid: "67448984"
 
 1. По желанию вы можете запустить диагностический тест, как показано ниже.
 
-    a. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
+    1\. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
 
     ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-1.png)
 
@@ -72,11 +72,11 @@ ms.locfileid: "67448984"
 
     ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-2.png)
 
-    c. Убедитесь, что выходные данные подтверждают работоспособность системы.
+    В. Убедитесь, что выходные данные подтверждают работоспособность системы.
 
     ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-3.png)
 
-    d. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
+    Г. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
 
 ### <a name="long-delays-when-consuming-web-service-on-apache-spark"></a>Длительные задержки при использовании веб-службы в Apache Spark
 
@@ -189,7 +189,7 @@ ms.locfileid: "67448984"
          ]
        }
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление кластером служб машинного обучения в HDInsight](r-server-hdinsight-manage.md)
 * [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)

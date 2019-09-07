@@ -1,19 +1,19 @@
 ---
 title: Сообщение об ошибке запроса не отображается в Apache Hive представлении в Azure HDInsight
-description: Сбой запроса в представлении Hive без подробностей
+description: Запрос завершается ошибкой в Apache Hive представлении без подробной информации об кластере Azure HDInsight.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/30/2019
-ms.openlocfilehash: e87bb42b09135b61dd4cf32c9ae30b0113d800dc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 8f60e918c6ed2d49f2a9949b5ab096fb1e1f44bb
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829038"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733136"
 ---
-# <a name="scenario-query-error-message-not-displayed-in-apache-hive-view-in-azure-hdinsight"></a>Сценарий: Сообщение об ошибке запроса не отображается в Apache Hive представлении в Azure HDInsight
+# <a name="scenario-query-error-message-not-displayed-in-apache-hive-view-in-azure-hdinsight"></a>Сценарий. Сообщение об ошибке запроса не отображается в Apache Hive представлении в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании интерактивных компонентов запросов в кластерах Azure HDInsight.
 

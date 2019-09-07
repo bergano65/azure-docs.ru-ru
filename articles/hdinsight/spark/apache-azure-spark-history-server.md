@@ -1,19 +1,19 @@
 ---
-title: Отладка и диагностика приложений Spark с использованием расширенного сервера журнала Spark в Azure HDInsight
+title: Расширенный сервер журнала Spark для отладки приложений Spark в Azure HDInsight
 description: 'Отладка и диагностика приложений Spark с использованием расширенного сервера журнала Spark: Azure HDInsight'
 ms.service: hdinsight
-author: jejiang
-ms.author: jejiang
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 09/14/2018
-ms.openlocfilehash: 641fc41c25746a67b4b1fe3d5316df17f14f113c
-ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.date: 09/04/2019
+ms.openlocfilehash: 9ba03f6b1e658e08c3d07d7ccb5e2a99e96fe69c
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68377247"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736466"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Отладка и диагностика приложений Apache Spark с использованием расширенного сервера журнала Apache Spark
 
@@ -300,7 +300,7 @@ ms.locfileid: "68377247"
 
 **Использование bash-файла на портале Azure**
 
-1. Запустите [портал Azure](https://ms.portal.azure.com) и выберите свой кластер.
+1. Запустите [портал Azure](https://ms.portal.azure.com)и выберите кластер.
 2. Щелкните **Действия скрипта**, затем — **Отправить новое**. Заполните форму **Отправка действия скрипта**, а затем нажмите кнопку **Создать**.
     
     + **Тип скрипта**: выберите **Пользовательский**.

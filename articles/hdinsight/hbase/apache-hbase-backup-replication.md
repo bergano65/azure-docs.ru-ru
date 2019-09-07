@@ -1,5 +1,5 @@
 ---
-title: Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в Azure HDInsight
+title: Резервное копирование и репликация для Apache HBase и Apache Phoenix в Azure HDInsight
 description: Сведения о настройке резервного копирования и репликации HBase и Phoenix.
 author: ashishthaps
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: e60aef7b1848197f41f96a1b5f5414bb0c8f4a15
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a1b6e850fab5e9b9b651de9d02ee7981d71a343c
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696378"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735897"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -22,7 +22,7 @@ Apache HBase поддерживает несколько способов защ
 * копирование папки `hbase`;
 * экспорт и импорт;
 * Копирование таблиц
-* Моментальные снимки
+* моментальные снимки
 * Репликация
 
 > [!NOTE]  
@@ -153,7 +153,7 @@ CopyTable сканирует все содержимое исходной таб
 
     <destinationAddress> = 10.0.0.9,10.0.0.8,10.0.0.12:2181:/hbase-unsecure
 
-## <a name="snapshots"></a>Моментальные снимки
+## <a name="snapshots"></a>моментальные снимки
 
 Моментальные снимки позволяют создавать резервные копии данных, содержащихся в хранилище HBase, на определенный момент времени. Они имеют минимальные издержки и создаются в течение нескольких секунд. Во время этой операции, которая, по сути, является операцией с метаданными, записываются имена всех файлов, сохраненных на этот момент в хранилище. При создании моментального снимка фактические данные не копируются. Моментальные снимки зависят от постоянных данных, хранящихся в HDFS, где операции обновления, удаления и вставки представляют собой новые данные. Вы можете восстановить (*клонировать*) моментальный снимок в том же кластере или экспортировать его в другой кластер.
 
@@ -206,6 +206,6 @@ CopyTable сканирует все содержимое исходной таб
 
 Чтобы включить репликацию в HDInsight, примените действие скрипта к выполняющемуся исходному кластеру HDInsight. Пошаговые инструкции по включению репликации в кластере или настройке репликации в образцах кластеров, созданных в виртуальных сетях с помощью шаблонов Azure Resource Manager, см. в статье о [Настройке репликации Apache HBase](apache-hbase-replication.md). Эта статья также содержит инструкции по включению репликации метаданных Phoenix.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Настройка репликации Apache HBase](apache-hbase-replication.md)

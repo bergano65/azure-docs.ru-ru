@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3918c37d985c6766fe6ad4601b70ddbd4597b0ba
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 4d8955517450ce3b4efdf30e2790e4be678dfc7b
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087150"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735192"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
@@ -53,7 +53,7 @@ ms.locfileid: "70087150"
 
 Ниже приведен код, реализующий функцию.
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Скрипт C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SmsPhoneVerification/run.csx)]
 
@@ -84,7 +84,7 @@ ms.locfileid: "70087150"
 
 Ниже приведен код, который создает 4-значный код запроса и отправляет SMS-сообщение:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Скрипт C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SendSmsChallenge/run.csx)]
 

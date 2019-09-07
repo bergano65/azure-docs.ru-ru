@@ -1,19 +1,19 @@
 ---
-title: Структурированная потоковая передача Apache Spark из Apache Kafka в Azure Cosmos DB в Azure HDInsight
+title: Apache Spark данных из Apache Kafka в Azure Cosmos DB Azure HDInsight
 description: Узнайте, как использовать структурированную потоковую передачу Apache Spark для чтения данных из Apache Kafka и как сохранить эти данные в Azure Cosmos DB. В этом примере показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
+ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: c2d2f56f2a0686b23a3a907686dcee0760d37365
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 546dd094614a72cada2aff60704c4fc191301ad2
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947072"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734932"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 

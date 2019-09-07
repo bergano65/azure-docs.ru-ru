@@ -1,19 +1,19 @@
 ---
 title: На узле кластера заканчивается свободное место на диске в Azure HDInsight
-description: На узле кластера заканчивается свободное место на диске в Azure HDInsight
+description: Устранение неполадок, связанных с Apache Hadoop места на диске узла кластера в Azure HDInsight.
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/05/2019
-ms.openlocfilehash: 696327a00135ba6b3414c773732b8bc99ce4100c
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 139fb0e77f8f6960e7b13899f9586dd78bf46a92
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842456"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735845"
 ---
-# <a name="scenario-cluster-node-runs-out-of-disk-space-in-azure-hdinsight"></a>Сценарий: На узле кластера заканчивается свободное место на диске в Azure HDInsight
+# <a name="scenario-cluster-node-runs-out-of-disk-space-in-azure-hdinsight"></a>Сценарий. На узле кластера заканчивается свободное место на диске в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

@@ -1,5 +1,5 @@
 ---
-title: Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
+title: Миграция локальных Apache Hadoop кластеров в Azure HDInsight — безопасность
 description: Рекомендации по обеспечению безопасности и операциям DevOps в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: ashishth
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 0e7db970bee44d40831c05e8911b72841d027211
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: c1523ccb3952bce904deac375d11de692ac235ef
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442089"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736138"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 

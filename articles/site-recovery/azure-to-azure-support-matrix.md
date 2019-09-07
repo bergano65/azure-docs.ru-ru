@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: raynew
-ms.openlocfilehash: 92bd53fd0426f896eff8dc63b690167db3ee700b
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: dc98a0ab47e269aa99f21d3f10952cdabe2c897f
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884103"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736044"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -53,6 +53,7 @@ ms.locfileid: "68884103"
 Azure для государственных организаций    | US Gov (Вирджиния), US Gov (Айова), US Gov (Аризона), US Gov (Техас), восточный регион US DoD, центральный регион US DoD 
 Германия | Центральная Германия и северо-восточная Германия
 Китай | Восточный Китай, Северный Китай, Северный Китай 2, Восточный Китай 2
+Ограниченные регионы, зарезервированные для аварийного восстановления в стране |Северная Германия зарезервировано для Центрально-Западная Германия, Западная Швейцария зарезервировано для Северная Швейцария, Южная Французская зарезервировано для центральных клиентов Франции 
 
 >[!NOTE]
 >

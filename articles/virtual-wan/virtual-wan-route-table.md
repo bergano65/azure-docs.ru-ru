@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to work with routing tables for NVA.
-ms.openlocfilehash: fc8dd6770efa1c057a56374ddc0094c2d88d2eb5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 18af56f6924484c6267871cf3fed34f80a8f12a4
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60457617"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744694"
 ---
 # <a name="create-a-virtual-hub-route-table-to-steer-traffic-to-a-network-virtual-appliance"></a>Создание таблицы маршрутов виртуального концентратора для маршрутизации трафика к сетевому виртуальному модулю
 
@@ -36,14 +36,14 @@ ms.locfileid: "60457617"
 
 Убедитесь, что вы выполнили следующие критерии:
 
-1. У вас есть сетевой виртуальный модуль (NVA). Это программное обеспечение независимых производителей по своему усмотрению, которая обычно подготавливается из Azure Marketplace в виртуальной сети.
+1. У вас есть сетевой виртуальный модуль (NVA). Это программное обеспечение стороннего производителя, которое обычно подготавливается из Azure Marketplace в виртуальной сети.
 2. У вас есть частный IP-адрес, присвоенный сетевому интерфейсу виртуального сетевого модуля. 
-3. Невозможно развернуть виртуальный сетевой модуль в виртуального концентратора. Он должен быть развернут в отдельной виртуальной сети (VNet). В этой статье виртуальная сеть обозначена как DMZ VNet.
+3. NVA невозможно развернуть в виртуальном концентраторе. Он должен быть развернут в отдельной виртуальной сети (VNet). В этой статье виртуальная сеть обозначена как DMZ VNet.
 4. К "DMZ VNet" может быть подключена одна или несколько виртуальных сетей. В этой статье такие виртуальные сети обозначены как "косвенные виртуальные сети периферийных зон". Такие виртуальные сети могут подключаться к DMZ VNet с помощью пиринговой связи между виртуальными сетями.
 5. Убедитесь, что у вас уже созданы две виртуальные сети. Они будут использоваться в качестве виртуальных сетей периферийных зон. В этой статье адресные пространства периферийных зон виртуальной сети — 10.0.2.0/24 и 10.0.3.0/24. Если вам нужна информация о том, как создать виртуальную сеть, см. раздел [Краткое руководство. Создание виртуальной сети с помощью PowerShell](../virtual-network/quick-create-powershell.md).
 6. Убедитесь, что ни в одной из виртуальных сетей нет шлюзов виртуальных сетей.
 
-## <a name="signin"></a>1. Вход
+## <a name="signin"></a>1. Войти
 
 Убедитесь, что вы установили последнюю версию командлетов PowerShell для Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Overview of Azure PowerShell](/powershell/azure/install-az-ps) (Обзор Azure PowerShell). Это важно, так как более ранние версии командлетов не содержат текущие значения, необходимые в этом сценарии.
 
@@ -63,7 +63,7 @@ ms.locfileid: "60457617"
    Select-AzSubscription -SubscriptionName "Name of subscription"
    ```
 
-## <a name="rg"></a>2. Создание ресурсов
+## <a name="rg"></a>2. Создать ресурсы
 
 1. Создайте группу ресурсов.
 
@@ -78,7 +78,7 @@ ms.locfileid: "60457617"
 3. Создание виртуального концентратора.
 
    ```powershell
-   New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24"
+   New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24" -Location "West US"
    ```
 
 ## <a name="connections"></a>3. Создание подключений
@@ -119,6 +119,6 @@ $routeTable = New-AzVirtualHubRouteTable -Route @($route1)
 Update-AzVirtualHub -VirtualWanId $virtualWan.Id -ResourceGroupName "testRG" -Name "westushub" -RouteTable $routeTable
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).

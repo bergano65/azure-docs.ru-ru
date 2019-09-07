@@ -1,5 +1,5 @@
 ---
-title: Выполнение рабочих нагрузок Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight
+title: Запуск Машинное обучение Azure рабочих нагрузок на Apache Spark в Azure HDInsight
 description: Узнайте, как выполнять рабочие нагрузки Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: a731d9e0c97cb8431b1294d961ad46ff324f32be
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: aaea8a1af7ad6df89d41dc0e39d13bafbb610224
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141189"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736049"
 ---
 # <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-automl-on-apache-spark-in-azure-hdinsight"></a>Выполнение рабочих нагрузок Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight
 
@@ -76,5 +76,5 @@ dataflow_with_token = dprep.read_csv(
 ## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о мотивации автоматизированного машинного обучения см. в разделе [модели выпуска с помощью автоматизированного машинного обучения Майкрософт.](https://azure.microsoft.com/blog/release-models-at-pace-using-microsoft-s-automl/)
-* Дополнительные сведения об использовании автоматизированных возможностей ML в машинном обучении Azure см. [в статье новые возможности автоматического машинного обучения в службе машинное обучение Azure](https://azure.microsoft.com/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/) .
+* Дополнительные сведения об использовании автоматизированных возможностей ML в машинном [обучении Azure см. в статье новые возможности автоматического машинного обучения в службе машинное обучение Azure](https://azure.microsoft.com/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/) .
 * [Проект AutoML от Microsoft Research](https://www.microsoft.com/research/project/automl/)

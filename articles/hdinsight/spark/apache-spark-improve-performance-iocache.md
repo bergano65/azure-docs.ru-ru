@@ -1,17 +1,17 @@
 ---
-title: Повышение производительности рабочих нагрузок Apache Spark с помощью службы IO Cache для Azure HDInsight (предварительная версия)
+title: Производительность Apache Spark рабочих нагрузок с помощью кэша операций ввода-вывода Azure HDInsight (Предварительная версия)
 description: Узнайте о службе IO Cache для Azure HDInsight и ее использовании для повышения производительности Apache Spark.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 10/15/2018
-ms.openlocfilehash: b77e7e9d5a68439e7f336ecb26e91031d80a7606
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a078fc205403983f4f6484f6a7ccde7f99c4dd58
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695203"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734547"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache-preview"></a>Повышение производительности рабочих нагрузок Apache Spark с помощью службы IO Cache для Azure HDInsight (предварительная версия)
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: f94d3cdbbd1683b20dbe1d370bcac43817458f44
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 69218cedcd5d775fe6e499086663aa124f6bfe25
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70139384"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736008"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Справочник по написанию скриптов JSON фабрики данных Azure
 > [!NOTE]
@@ -4826,7 +4826,7 @@ auto-
 | [Пакетная служба Azure](#azure-batch) |[Настраиваемое действие .NET](#net-custom-activity) |
 | [машинное обучение Azure](#azure-machine-learning) | [Действие выполнения пакета в службе машинного обучения](#machine-learning-batch-execution-activity), [действие обновления ресурса в службе машинного обучения](#machine-learning-update-resource-activity) |
 | [Аналитика озера данных Azure](#azure-data-lake-analytics) |[Аналитика озера данных U-SQL](#data-lake-analytics-u-sql-activity) |
-| [База данных Azure SQL](#azure-sql-database-1), [хранилище данных Azure SQL](#azure-sql-data-warehouse-1), [SQL Server](#sql-server-1) |[Хранимая процедура](#stored-procedure-activity) |
+| [База данных Azure SQL](#azure-sql-database), [хранилище данных Azure SQL](#azure-sql-data-warehouse), [SQL Server](#sql-server-1) |[Хранимая процедура](#stored-procedure-activity) |
 
 ## <a name="on-demand-azure-hdinsight-cluster"></a>Кластер Azure HDInsight по требованию
 Для обработки данных служба фабрики данных Azure автоматически создает кластер HDInsight под управлением Windows/Linux по запросу. Кластер создается в том же регионе, что и учетная запись хранения (свойство linkedServiceName в JSON), связанная с кластером. В этой связанной службе можно выполнить следующие действия по преобразованию: [настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig](#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), действие потоковой передачи Hadoop, [действие Spark](#hdinsight-spark-activity).
@@ -4995,58 +4995,6 @@ auto-
     }
 }
 ```
-
-## <a name="azure-sql-database"></a>База данных SQL Azure
-Связанная служба SQL Azure создается и применяется к [действию хранимой процедуры](#stored-procedure-activity) для вызова хранимой процедуры из конвейера фабрики данных.
-
-### <a name="linked-service"></a>Связанная служба
-Для определения связанной службы Базы данных SQL Azure задайте **AzureSqlDatabase** в качестве **типа** связанной службы и укажите в разделе **typeProperties** следующие свойства:
-
-| Свойство | Описание | Обязательное значение |
-| --- | --- | --- |
-| connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к экземпляру Базы данных SQL Azure. |Да |
-
-#### <a name="json-example"></a>Пример JSON-файла
-
-```json
-{
-    "name": "AzureSqlLinkedService",
-    "properties": {
-        "type": "AzureSqlDatabase",
-        "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-        }
-    }
-}
-```
-
-Дополнительную информацию см. в статье о [связанной службе SQL Azure](data-factory-azure-sql-connector.md#linked-service-properties).
-
-## <a name="azure-sql-data-warehouse"></a>Хранилище данных SQL Azure
-Связанная служба хранилища данных SQL Azure создается и применяется к [действию хранимой процедуры](data-factory-stored-proc-activity.md) для вызова хранимой процедуры из конвейера фабрики данных.
-
-### <a name="linked-service"></a>Связанная служба
-Для определения связанной службы хранилища данных SQL Azure задайте **AzureSqlDW** в качестве **типа** связанной службы и укажите в разделе **typeProperties** следующие свойства:
-
-| Свойство | Описание | Обязательное значение |
-| --- | --- | --- |
-| connectionString |Укажите сведения, необходимые для подключения к экземпляру хранилища данных SQL Azure, для свойства connectionString. |Да |
-
-#### <a name="json-example"></a>Пример JSON-файла
-
-```json
-{
-    "name": "AzureSqlDWLinkedService",
-    "properties": {
-        "type": "AzureSqlDW",
-        "typeProperties": {
-            "connectionString": "Server=tcp:<servername>.database.windows.net,1433;Database=<databasename>;User ID=<username>@<servername>;Password=<password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
-        }
-    }
-}
-```
-
-Дополнительные сведения см. в статье о [соединителе хранилища данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md#linked-service-properties).
 
 ## <a name="sql-server"></a>SQL Server
 Связанная служба SQL Server создается и применяется к [действию хранимой процедуры](data-factory-stored-proc-activity.md) для вызова хранимой процедуры из конвейера фабрики данных.

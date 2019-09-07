@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5d607809b6e0356c8807879962927e99f2bd12fd
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 2a2b62cc0548b0bbedae35f6a0d72ac327723e60
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382727"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743833"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -75,8 +75,7 @@ ms.locfileid: "70382727"
 
 |Операционная система  |Примечания  |
 |---------|---------|
-|Windows Server 2008, Windows Server 2008 R2 RTM    | Поддерживает только оценки обновлений.         |
-|Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)|Требуется .NET Framework 4.5.1 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows PowerShell, начиная с версии 4.0. ([Скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855).)<br/> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1.  ([Скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
+|Windows Server 2019 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2016 (Datacenter/Datacenter Core/Standard)<br><br>Windows Server 2012 R2 (Datacenter/Standard)<br><br>Windows Server 2008 R2 (RTM и SP1 Standard)|**Оценка обновлений**: Поддерживается<br><br>**Установка исправлений**: Требуется Гибридная Рабочая роль Runbook. См. раздел [требования гибридной рабочей роли Runbook](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker)|
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в [статье классификации обновлений в Linux](#linux-2) .          |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |

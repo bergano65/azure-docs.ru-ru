@@ -1,5 +1,5 @@
 ---
-title: Инструменты Azure HDInsight. Настройка интерактивной среды PySpark для Visual Studio Code
+title: Средства Azure HDInsight — PySpark в интерактивной среде для Visual Studio Code
 description: Сведения о создании и отправке запросов и скриптов с помощью средств Azure HDInsight для Visual Studio Code.
 keywords: VScode,средства Azure HDInsight,Hive,Python,PySpark,Spark,HDInsight,Hadoop,LLAP,Interactive Hive,Interactive Query
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.author: jejiang
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: 0e993577bda59ae4fda51d17dc175ec0b0fcd4f5
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 54adb2ec61d77ea429f7da1b88aa9347c1addfe0
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137135"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736416"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
@@ -25,7 +25,7 @@ ms.locfileid: "67137135"
    
    + Установите Python отсюда: [https://www.python.org/downloads/](https://www.python.org/downloads/).
    + Установите pip отсюда: [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/). (Если он не установился при установке Python)
-   + Проверьте правильность установки Python и pip с помощью следующих команд. (Дополнительно)
+   + Проверьте правильность установки Python и pip с помощью следующих команд. (необязательный параметр)
  
         ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "67137135"
 
 4. Перезапустите VS Code, а затем снова перейдите к редактору сценариев, который работает на базе **интерактивной среды PySpark HDInsight**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 ### <a name="demo"></a>Демонстрация
 * HDInsight для VS Code: [Видео](https://go.microsoft.com/fwlink/?linkid=858706)

@@ -1,18 +1,18 @@
 ---
 title: Использование Grafana в Azure HDInsight
-description: Узнайте, как получить доступ к Grafana в Azure HDInsight.
+description: Узнайте, как получить доступ к панели мониторинга Grafana с кластерами Apache Hadoop в Azure HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: be804ac1aea76daf5f17e62dd97b8b57b8fdf1fb
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: a8d79e15a0c967c4b00f337928f00e76f6d296fd
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67458824"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733216"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
 
@@ -66,7 +66,7 @@ ms.locfileid: "67458824"
     
 
 > [!NOTE]  
-> Для других способах создания кластеров и основные сведения о свойствах, используемых в этой статье, см. в разделе [кластеров HDInsight, создайте](../hdinsight-hadoop-provision-linux-clusters.md). 
+> Сведения о других способах создания кластера и о свойствах, используемых в этой статье, см. в разделе [Создание кластеров HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). 
 
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 
@@ -104,11 +104,11 @@ ms.locfileid: "67458824"
 
 3. Выберите **Удалить группу ресурсов**, чтобы удалить группу ресурсов, которая содержит кластер и учетную запись хранения по умолчанию. Обратите внимание, что удаление группы ресурсов приводит к удалению учетной записи хранения. Если вы хотите сохранить учетную запись хранения, удалите только кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этой статьи вы узнали, как с помощью шаблона Resource Manager создать кластер HDInsight под управлением Linux и как выполнять базовые запросы Apache Hive. В следующей статье вы узнаете, как выполнять операции извлечения, преобразования и загрузки с помощью Hadoop в HDInsight.
 
 > [!div class="nextstepaction"]
->[Извлечение, преобразование и загрузка данных с помощью Interactive Query в HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)
+>[Учебник: извлечение, преобразование и загрузка данных с помощью интерактивного запроса в HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)
 
 Если вы готовы приступить к работе с собственными данными и хотите узнать больше о том, как HDInsight сохраняет данные или как получать данные в HDInsight, обратитесь к следующим статьям:
 

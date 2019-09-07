@@ -1,5 +1,5 @@
 ---
-title: Настройка Корпоративного пакета безопасности с помощью доменных служб Azure Active Directory — Azure HDInsight
+title: Корпоративный пакет безопасности с Azure Active Directory в HDInsight
 description: Узнайте, как установить и настроить кластер HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory.
 ms.service: hdinsight
 author: hrasheed-msft
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 1165cbeff1144567e43f408c0866c0b8a571882d
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 76f95e74c8150ac797d20c3166c0e8d6ea085bf9
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125587"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734952"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 

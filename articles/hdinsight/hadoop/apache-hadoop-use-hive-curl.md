@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Hadoop Hive с Curl в HDInsight — Azure
-description: Узнайте, как отправлять задания Apache Pig в HDInsight с помощью Curl.
+description: Узнайте, как удаленно отправлять задания Apache Pig в Azure HDInsight с помощью функции фигурного обучения.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: 334d7b886aa4e2130a12f0c8a7919986fdac55d1
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: e1fbeb48acdfd9d09cad2616aed9793e2ff513ad
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508121"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736086"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
 
@@ -21,42 +21,42 @@ ms.locfileid: "67508121"
 
 Узнайте, как с помощью REST API WebHCat выполнять запросы Apache Hive с Apache Hadoop в кластере Azure HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Клиент REST. В этом документе используется [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) на Windows PowerShell и [Curl](https://curl.haxx.se/) на [Bash](https://docs.microsoft.com/windows/wsl/install-win10).
+* Клиент REST. В этом документе используется [командлет Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) [в Windows PowerShell и](https://curl.haxx.se/) функция [Bash](https://docs.microsoft.com/windows/wsl/install-win10).
 
-* Если вы используете Bash, необходимо также jq, обработчик командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
+* При использовании Bash также потребуется JQ, процессор командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
-## <a name="base-uri-for-rest-api"></a>Базовый универсальный код Ресурса для Rest API
+## <a name="base-uri-for-rest-api"></a>Базовый URI для API-интерфейса RESTful
 
-Базовый универсальный код ресурса (URI) для API REST в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя вашего кластера.  Имена кластеров в URI, **с учетом регистра**.  Хотя имя кластера в полное доменное имя (FQDN) части URI (`CLUSTERNAME.azurehdinsight.net`) не учитывает регистр, другие вхождения этого URI учитывают регистр.
+Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие вхождения в URI учитывают регистр.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 При использовании Curl или любых других средств связи REST с WebHCat нужно выполнять аутентификацию запросов с помощью пароля и имени пользователя администратора кластера HDInsight. REST API защищен с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
 
-### <a name="setup-preserve-credentials"></a>Программа установки (сохранять учетные данные)
-Сохранить свои учетные данные, чтобы избежать повторного ввода их для каждого примера.  Имя кластера будет сохранен в рамках отдельного шага.
+### <a name="setup-preserve-credentials"></a>Установка (сохранение учетных данных)
+Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
-**A. Bash**  
-Измените приведенный ниже скрипт, заменив `PASSWORD` на ваш фактический пароль.  Введите команду.
+**A. Bug**  
+Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
 ```  
 
-**B. PowerShell** выполните приведенный ниже код и введите свои учетные данные во всплывающем окне:
+**B. Выполните** приведенный ниже код PowerShell и введите свои учетные данные во всплывающем окне:
 
 ```powershell
 $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 ```
 
-### <a name="identify-correctly-cased-cluster-name"></a>Определить имя правильно верблюжьим кластера
-Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  При выполнении этих шагов будет Показать фактический регистр и затем сохранить ее в переменной для всех последующих примерах.
+### <a name="identify-correctly-cased-cluster-name"></a>Выявление правильного имени кластера с учетом регистра
+Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Изменение скриптов ниже, чтобы заменить `CLUSTERNAME` именем кластера. Введите команду. (Имя кластера для полного доменного ИМЕНИ выполняется без учета регистра.)
+Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')

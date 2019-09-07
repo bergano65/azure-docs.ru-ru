@@ -1,5 +1,5 @@
 ---
-title: Создание заданий потоковой передачи Spark со строго однократной обработкой событий в Azure HDInsight
+title: Задания потоковой передачи Spark с точностью обработки событий в Azure HDInsight
 description: Сведения о настройке потоковой передачи Spark со строго однократной обработкой событий.
 ms.service: hdinsight
 author: hrasheed-msft
@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 388723624fde73899809b95ff8ae4ee23cf49a9d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ce676031e0cace3f3dffc77fcd71159337938661
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64705104"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735996"
 ---
 # <a name="create-apache-spark-streaming-jobs-with-exactly-once-event-processing"></a>Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий
 
@@ -86,7 +86,7 @@ ms.locfileid: "64705104"
 
 Можно также использовать секционированную файловую систему, например большие двоичные объекты службы хранилища Azure или хранилище Azure Data Lake Storage. В этом случае логике приемника не нужно проверять наличие файла. Если файл, представляющий событие, существует, он просто перезаписывается теми же данными. В противном случае по вычисленному пути создается новый файл.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md)
 * [Создание высокодоступных заданий потоковой передачи Apache Spark в Apache Hadoop YARN](apache-spark-streaming-high-availability.md)

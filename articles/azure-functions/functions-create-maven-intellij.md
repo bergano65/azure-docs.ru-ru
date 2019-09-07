@@ -7,17 +7,17 @@ author: jeffhollan
 manager: jpconnock
 keywords: azure functions, functions, event processing, compute, serverless architecture, java
 ms.service: azure-functions
-ms.devlang: java
 ms.topic: conceptual
+ms.devlang: java
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: da93c60b52edf509900adf89fb688a0596d9763b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5aa0763206289305e98960b6e03ad903eb4547ae
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61342249"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70743982"
 ---
 # <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создание первой функции Azure с помощью Java и IntelliJ
 
@@ -52,8 +52,8 @@ ms.locfileid: "61342249"
 1. Заполните следующие поля в окне **Add Archetype** (Добавить архетип).
     - _GroupId_: com.microsoft.azure
     - _ArtifactId_: azure-functions-archetype
-    - _Версия._ Используйте последнюю версию из [центральный репозиторий](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![Создание проекта Maven из архетипа в IntelliJ IDEA](media/functions-create-first-java-intellij/functions-create-intellij.png)  
+    - _Версия._ Использование последней версии **1,22** из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    ![создание проекта Maven из архетипа в идее IntelliJ](media/functions-create-first-java-intellij/functions-create-intellij.png)  
 1. Нажмите кнопку **ОК**, а затем щелкните **Создать**.
 1. Введите подробные сведения и выберите **Готово**.
 
@@ -87,13 +87,13 @@ Maven создает файлы проекта в новой папке с им�
 1. Чтобы сохранить конфигурацию, заполните поля _Имя_ и _Параметры_, а затем нажмите кнопку **OK**.
 1. После завершения установки для начала отладки выберите **Отладка < Имя конфигурации >** или нажмите комбинацию клавиш SHIFT+F9.
 
-   ![Функции отладки в IntelliJ](media/functions-create-first-java-intellij/debug-configuration-intellij.PNG)
+   ![Функции отладки в IntelliJ](media/functions-create-first-java-intellij/debug-configuration-intellij.png)
 
 1. По завершении остановите отладчик и запущенный процесс. Только один узел функции может быть активным и работать локально одновременно.
 
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
-1. Перед развертыванием функции в Azure необходимо [выполнить вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+1. Прежде чем можно будет развернуть функцию в Azure, необходимо [выполнить вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
    ``` azurecli
    az login
@@ -115,7 +115,7 @@ Maven создает файлы проекта в новой папке с им�
    [INFO] ------------------------------------------------------------------------
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.
