@@ -1,4 +1,4 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -9,7 +9,7 @@
         - name: Управление приложениями
           tocHref: /azure/active-directory/saas-apps/
           topicHref: /azure/active-directory/manage-apps/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -19,4 +19,26 @@
       items:
         - name: Управление приложениями
           tocHref: /azure/active-directory/fundamentals/
+          topicHref: /azure/active-directory/manage-apps/index
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Active Directory
+      tocHref: /azure/active-directory/hybrid/
+      topicHref: /azure/active-directory/index
+      items:
+        - name: Управление приложениями
+          tocHref: /azure/active-directory/hybrid/
+          topicHref: /azure/active-directory/manage-apps/index
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Active Directory
+      tocHref: /azure/active-directory/develop/
+      topicHref: /azure/active-directory/index
+      items:
+        - name: Управление приложениями
+          tocHref: /azure/active-directory/develop/
           topicHref: /azure/active-directory/manage-apps/index

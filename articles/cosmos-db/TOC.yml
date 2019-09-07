@@ -455,6 +455,10 @@
           items:
             - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
+        - name: Справочные материалы
+          items:
+            - name: Заголовки откликов
+              href: gremlin-headers.md
         - name: Руководства
           items:
             - name: Моделирование данных графов
