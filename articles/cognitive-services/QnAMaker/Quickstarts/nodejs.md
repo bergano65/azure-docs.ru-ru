@@ -7,16 +7,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
-ms.topic: quickstart
-ms.date: 08/20/2019
+ms.topic: reference
+ms.date: 09/05/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: a6a8c0118e8179da570ce91b9fa7e3523bae1d3f
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 3882401fe4d470478651fac97c0bfd34c9a0122d
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650563"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390913"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-nodejs"></a>Использование REST API службы QnA Maker с Node.js 
 <a name="HOLTop"></a>
@@ -1761,7 +1761,7 @@ put_alterations (path, content, function (result) {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

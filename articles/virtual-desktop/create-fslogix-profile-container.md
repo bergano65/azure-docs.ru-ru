@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: helohr
-ms.openlocfilehash: 078a29fc1ab66151aa41c3901bb6a3af6479a0ba
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: dd3b68d600edcbbae73fff542e677d3ebc6b16ee
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70233269"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390819"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
 
@@ -24,7 +24,7 @@ ms.locfileid: "70233269"
 
 В этой статье предполагается, что [Пулы узлов](create-host-pools-azure-marketplace.md) уже настроены и сгруппированы в один или несколько клиентов в среде виртуальных рабочих столов Windows. Сведения о настройке клиентов см. [в статье Создание клиента в виртуальном рабочем столе Windows и в](tenant-setup-azure-active-directory.md) [нашей записи блога сообщества Tech](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054).
 
-Инструкции в этом разделе предназначены специально для пользователей виртуальных рабочих столов Windows. Если вы ищете общие рекомендации по настройке Azure NetApp Files и созданию контейнеров профилей Фслогикс за пределами виртуального рабочего стола Windows, ознакомьтесь с кратким руководством по [настройке Azure NetApp Files и созданию тома NFS](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md).
+Инструкции в этом разделе предназначены специально для пользователей виртуальных рабочих столов Windows. Если вы ищете общие рекомендации по настройке Azure NetApp Files и созданию контейнеров профилей Фслогикс за пределами виртуального рабочего стола Windows, ознакомьтесь с [кратким руководством по настройке Azure NetApp Files и созданию тома NFS](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md).
 
 >[!NOTE]
 >В этой статье не рассматриваются рекомендации по защите доступа к Azure NetApp Files общему ресурсу.
@@ -102,7 +102,7 @@ ms.locfileid: "70233269"
 
 После этого необходимо присоединиться к Active Directoryному соединению.
 
-1. Выберите **Active Directory подключения** в меню в левой части страницы, а затем нажмите кнопку Присоединить, чтобы открыть страницу присоединение **Active Directory** .
+1. Выберите **Active Directory подключения** в меню в левой части страницы, а затем нажмите кнопку **присоединить** , чтобы открыть страницу **Присоединение Active Directory** .
 
    ![Снимок экрана меню соединения Active Directory соединения.](media/active-directory-connections-menu.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "70233269"
     - В поле **пул емкости**выберите только что созданный пул ресурсов из раскрывающегося меню.
     - В поле **квота (гиб)** введите размер тома, соответствующий вашей среде.
     - В поле **Виртуальная сеть**выберите существующую виртуальную сеть с подключением к контроллеру домена из раскрывающегося меню.
-    - Вразделе подсеть выберите **создать**. Помните, что эта подсеть будет делегирована в Azure NetApp Files.
+    - В разделе **подсеть**выберите **создать**. Помните, что эта подсеть будет делегирована в Azure NetApp Files.
 
 3.  По завершении выберите **Next: Протокол \> дляоткрытиявкладки** протокол и настройки параметров доступа к тому. \>
 
@@ -157,7 +157,7 @@ ms.locfileid: "70233269"
 
 2. Распакуйте скачанный файл.
 
-3. В файле перейдите к выпускам **x64** > и запустите **фслогиксаппссетуп. exe**. Откроется меню установки.
+3. В файле перейдите к**выпускам** **x64** > и запустите **фслогиксаппссетуп. exe**. Откроется меню установки.
 
 4.  Если у вас есть ключ продукта, введите его в текстовом поле ключ продукта.
 
@@ -167,7 +167,7 @@ ms.locfileid: "70233269"
 
 7. Перейдите в раздел **C\\: Program\\\\Files фслогикс Apps** , чтобы подтвердить установку агента.
 
-8. В меню Пуск запустите regedit от имени администратора.
+8. В меню Пуск запустите **regedit** от имени администратора.
 
 9. Перейдите к разделу **\\Computer\\HKEY_LOCAL_MACHINE\\Software фслогикс**.
 
@@ -175,7 +175,7 @@ ms.locfileid: "70233269"
 
 11.  Создайте значение с именем **Enabled** с типом **REG_DWORD** , установленным в значение типа данных **1**.
 
-12. Создайте значение с именем **вхдлокатионс** с многострочным типом и задайте в качестве его значения данных URI для Azure NetApp Files общего ресурса.
+12. Создайте значение с именем **вхдлокатионс** с **многострочным типом и** задайте в качестве его значения данных URI для Azure NetApp Files общего ресурса.
 
 ## <a name="assign-users-to-session-host"></a>Назначение пользователей узлу сеансов
 
@@ -195,11 +195,11 @@ ms.locfileid: "70233269"
 4. Выполните следующие командлеты, чтобы назначить пользователя группе удаленный рабочий стол.
 
    ```powershell
-   $tenant = "<your-wvd-tenant>"
-   $pool1 = "<wvd-pool>"
-   $appgroup = "Desktop Application Group"
-   $user1 = "<user-principal>"
-   Add-RdsAppGroupUser $tenant $pool1 $appgroup $user1
+   $wvdTenant = "<your-wvd-tenant>"
+   $hostPool = "<wvd-pool>"
+   $appGroup = "Desktop Application Group"
+   $user = "<user-principal>"
+   Add-RdsAppGroupUser $wvdTenant $hostPool $appGroup $user
    ```
 
 ## <a name="make-sure-users-can-access-the-azure-netapp-file-share"></a>Убедитесь, что пользователи имеют доступ к общей папке Azure NetApp

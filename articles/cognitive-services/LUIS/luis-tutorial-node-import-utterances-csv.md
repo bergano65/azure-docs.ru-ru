@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: tutorial
-ms.date: 07/29/2019
+ms.topic: conceptual
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 192c5c7a2d4c671aec0dcf72bef78abd1845b1ea
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
-ms.translationtype: HT
+ms.openlocfilehash: 1bee26dc57fd844703e2c9c97b38b9a433227fbf
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946074"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387937"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
@@ -26,11 +26,11 @@ ms.locfileid: "68946074"
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и в параметрах учетной записи найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* В этом руководстве используется CSV-файл для файлов журнала пользовательских запросов в вымышленной компании. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
+* Эта статья начинается с CSV-файла для гипотетических файлов журналов запросов пользователей. Его можно скачать [здесь](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
 * Установите Node.js последней версии с NPM. Скачать эту версию можно [здесь](https://nodejs.org/en/download/).
 * **(Рекомендуется)** Visual Studio Code для применения функции IntelliSense и отладки. Скачать Visual Studio Code бесплатно можно [здесь](https://code.visualstudio.com/).
 
-Весь код из этого руководства доступен в репозитории GitHub [Azure-Samples](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv). 
+Весь код в этой статье доступен в [репозитории Azure-samples Language Understanding GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv). 
 
 ## <a name="map-preexisting-data-to-intents-and-entities"></a>Сопоставление существующих данных с намерениями и сущностями
 Даже если у вас есть система, которая была создана без учета LUIS, и если она содержит текстовые данные, сопоставляемые с разными задачами, которые хотят выполнять пользователи, вы можете осуществлять сопоставления из существующих категорий пользовательского ввода с намерениями в LUIS. Если вы можете определить важные слова или фразы в речи пользователя, эти слова можно сопоставлять с сущностями.
@@ -144,7 +144,7 @@ const LUIS_versionId = "0.1";
 > node index.js
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```console
 > npm start
@@ -184,7 +184,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)

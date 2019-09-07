@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 86fa7f62230c0ae0530b67ff2384942c876083d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d7b76a58a427b687d0dc36d13cfc00f32196853
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686138"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390133"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации
 
@@ -27,7 +27,7 @@ ms.locfileid: "64686138"
 
 ## <a name="using-autoforwarding"></a>Использование автоматической переадресации
 
-Автоматическую переадресацию можно включить, задав свойства [QueueDescription.ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription.ForwardTo][SubscriptionDescription.ForwardTo] объектов источника [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription], как показано в следующем примере:
+Вы можете включить функцию перенаправления, задав свойства [QueueDescription. ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription. ForwardTo][SubscriptionDescription.ForwardTo] в объектах [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription] для источника, как показано в Следующий пример:
 
 ```csharp
 SubscriptionDescription srcSubscription = new SubscriptionDescription (srcTopic, srcSubscriptionName);
@@ -48,8 +48,10 @@ namespaceManager.CreateSubscription(srcSubscription));
 Если Алиса уйдет в отпуск, то заполнится ее личная очередь, а не очередь раздела ERP. В этом сценарии ни один из разделов ERP не достигнет выделенной квоты, так как торговый представитель не получил ни одного сообщения.
 
 > [!NOTE]
-> При настройке Авто-переадресация, значение AutoDeleteOnIdle в месте назначения автоматически присваивается максимальное значение типа данных.
-> Это делается для убедитесь, что всегда места назначения для пересылки сообщения.
+> При установке автоматической пересылки значение для AutoDeleteOnIdle в **источнике и месте назначения** автоматически устанавливается равным максимальному значению типа данных.
+> 
+>   - На стороне источника пересылка действует как операция получения. Таким образом, источник, в котором настроена автопереадресация, никогда не является "бездействующим".
+>   - На стороне назначения это делается для того, чтобы гарантировать, что для пересылки сообщения всегда существует назначение.
 
 ## <a name="autoforwarding-considerations"></a>Рекомендации по автоматической переадресации
 
@@ -61,7 +63,7 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 Для создания подписки, привязанной к другой очереди или разделу, создатель подписки должен иметь разрешение на **управление** как исходной, так и целевой сущностями. Для отправки сообщений в исходный раздел требуется только разрешение на **отправку** для исходного раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Подробные сведения об автоматической переадресации см. в следующих разделах:
 

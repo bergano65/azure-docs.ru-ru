@@ -12,19 +12,22 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/05/2018
+ms.date: 09/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 8fb3b4ac748fcae2e3aad5b3bfb2a893340dc61a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6cf3d2f82c98a3caab47ff48a600316747932b72
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60694816"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390036"
 ---
 # <a name="configure-a-virtual-network-in-azure-devtest-labs"></a>Настройка виртуальной сети в Azure DevTest Labs
 Как описано в статье [Добавление виртуальной машины с артефактами в лабораторию](devtest-lab-add-vm.md), при создании виртуальной машины в лаборатории можно указать настроенную виртуальную сеть. Например, может потребоваться доступ к ресурсам корпоративной сети с виртуальных машин через виртуальную сеть, которая была настроена с помощью ExpressRoute или через VPN-подключение типа "сеть — сеть".
 
 В этой статье описывается, как добавить существующую виртуальную сеть в настройки виртуальной сети лаборатории, чтобы она предлагалась для выбора при создании виртуальных машин.
+
+> [!NOTE]
+> Дополнительные сведения о затратах, связанных со службой виртуальной сети Azure, см. в статье [цены на виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md#pricing).
 
 ## <a name="configure-a-virtual-network-for-a-lab-using-the-azure-portal"></a>Настройка виртуальной сети для лаборатории с помощью портала Azure
 Ниже пошагово описывается процедура добавления существующей виртуальной сети (и подсети) в лабораторию, чтобы ее можно было использовать при создании виртуальной машины в этой лаборатории. 
@@ -65,6 +68,6 @@ ms.locfileid: "60694816"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После добавления в лабораторию нужной виртуальной сети следует [добавить виртуальную машину в лабораторию](devtest-lab-add-vm.md).
 

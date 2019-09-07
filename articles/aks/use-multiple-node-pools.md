@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: 675d3e2f0dc27e70af497284ce273e87d005a2e1
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 2a18362546ae3c31b06fc5294495d8f5ac5f0be3
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241068"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389939"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительная версия. Создание пулов нескольких узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -47,14 +47,13 @@ az extension update --name aks-preview
 
 ### <a name="register-multiple-node-pool-feature-provider"></a>Регистрация поставщика функций пула узлов с несколькими узлами
 
-Чтобы создать кластер AKS, который может использовать несколько пулов узлов, сначала включите два флага компонентов в подписке. Кластеры пулов с несколькими узлами используют масштабируемый набор виртуальных машин (VMSS) для управления развертыванием и конфигурацией узлов Kubernetes. Зарегистрируйте флаги компонентов *мултиажентпулпревиев* и *вмсспревиев* с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+Чтобы создать кластер AKS, который может использовать несколько пулов узлов, сначала включите в подписке флаг функции. Зарегистрируйте флаг функции *мултиажентпулпревиев* с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 > [!CAUTION]
 > Регистрация компонента в подписке в данный момент невозможна. После включения функций предварительной версии можно использовать значения по умолчанию для всех кластеров AKS, созданных в подписке. Не включайте предварительные версии функций в производственных подписках. Используйте отдельную подписку для тестирования функций предварительной версии и сбора отзывов.
 
 ```azurecli-interactive
 az feature register --name MultiAgentpoolPreview --namespace Microsoft.ContainerService
-az feature register --name VMSSPreview --namespace Microsoft.ContainerService
 ```
 
 > [!NOTE]
@@ -64,7 +63,6 @@ az feature register --name VMSSPreview --namespace Microsoft.ContainerService
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/MultiAgentpoolPreview')].{Name:name,State:properties.state}"
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
 ```
 
 Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
@@ -77,7 +75,7 @@ az provider register --namespace Microsoft.ContainerService
 
 При создании кластеров AKS, поддерживающих несколько пулов узлов, и управлении ими действуют следующие ограничения.
 
-* Пулы с несколькими узлами доступны только для кластеров, созданных после успешной регистрации компонентов *мултиажентпулпревиев* и *вмсспревиев* для вашей подписки. Вы не можете добавлять пулы узлов или управлять ими с помощью существующего кластера AKS, созданного до успешной регистрации этих компонентов.
+* Пулы с несколькими узлами доступны только для кластеров, созданных после успешной регистрации функции *мултиажентпулпревиев* для вашей подписки. Вы не можете добавлять пулы узлов или управлять ими с помощью существующего кластера AKS, созданного до того, как эта функция была успешно зарегистрирована.
 * Пул первого узла удалить нельзя.
 * Не удается использовать надстройку маршрутизации приложений HTTP.
 * Вы не можете добавлять, обновлять и удалять пулы узлов с помощью существующего шаблона диспетчер ресурсов, как и в случае с большинством операций. Вместо этого [Используйте отдельный шаблон диспетчер ресурсов](#manage-node-pools-using-a-resource-manager-template) для внесения изменений в пулы узлов в кластере AKS.

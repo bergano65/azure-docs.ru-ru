@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: mlearned
-ms.openlocfilehash: 6ed50380b47040793e9826b64297bacf6ab12c71
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 7dd3c3904115db4fa3978f39b86023bf9fb0805c
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533591"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390049"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Предварительная версия. Автоматическое масштабирование кластера в соответствии с потребностями приложений в службе Kubernetes Azure (AKS)
 
@@ -40,29 +40,6 @@ az extension add --name aks-preview
 
 # Update the extension to make sure you have the latest version installed
 az extension update --name aks-preview
-```
-
-### <a name="register-scale-set-feature-provider"></a>Регистрация поставщика компонента масштабируемых наборов
-
-Чтобы создать службу AKS, которая использует масштабируемые наборы, необходимо также включить соответствующий флаг компонента в своей подписке. Чтобы зарегистрировать флаг функции *вмсспревиев* , используйте команду [AZ Feature Register][az-feature-register] , как показано в следующем примере:
-
-> [!CAUTION]
-> Регистрация компонента в подписке в данный момент невозможна. После включения функций предварительной версии можно использовать значения по умолчанию для всех кластеров AKS, созданных в подписке. Не включайте предварительные версии функций в производственных подписках. Используйте отдельную подписку для тестирования функций предварительной версии и сбора отзывов.
-
-```azurecli-interactive
-az feature register --name VMSSPreview --namespace Microsoft.ContainerService
-```
-
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверить состояние регистрации можно с помощью команды [AZ Feature List][az-feature-list] .
-
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
-```
-
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
 ```
 
 ## <a name="limitations"></a>Ограничения
@@ -97,7 +74,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="create-an-aks-cluster-and-enable-the-cluster-autoscaler"></a>Создание кластера AKS и включение средства автомасштабирования кластера
 
-Если необходимо создать кластер AKS, используйте команду [AZ AKS Create][az-aks-create] . Чтобы включить и настроить Автомасштабирование кластера в пуле узлов для кластера, используйте параметр *--Enable-Cluster-* Автомасштабирование и укажите Node *--min-Count* и *--Max-Count*.
+Если необходимо создать кластер AKS, используйте команду [AZ AKS Create][az-aks-create] . Чтобы включить и настроить Автомасштабирование кластера в пуле узлов для кластера, используйте параметр *--Enable-Cluster-Автомасштабирование* и укажите Node *--min-Count* и *--Max-Count*.
 
 > [!IMPORTANT]
 > Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе [можно ли изменить ресурсы AKS в группе ресурсов узла?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group)
@@ -127,7 +104,7 @@ az aks create \
 ## <a name="change-the-cluster-autoscaler-settings"></a>Изменение параметров средства автомасштабирования кластера
 
 > [!IMPORTANT]
-> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к разделу Автомасштабирование [с несколькими пулами агентов](##use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать `az aks nodepool` набор команд для изменения свойств пула узлов `az aks`вместо. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните команду `az feature  list -o table` и `Microsoft.ContainerService/multiagentpoolpreview`найдите.
+> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к [разделу Автомасштабирование с несколькими пулами агентов](##use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать `az aks nodepool` набор команд для изменения свойств пула узлов `az aks`вместо. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните команду `az feature  list -o table` и `Microsoft.ContainerService/multiagentpoolpreview`найдите.
 
 На предыдущем шаге, чтобы создать кластер AKS или обновить существующий пул узлов, для параметра минимальное число узлов автомасштабирования кластера было установлено значение *1*, а для параметра Максимальное число узлов — значение *3*. По мере изменения требований приложения вы можете скорректировать настроенное количество узлов для средства автомасштабирования кластера.
 

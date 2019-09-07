@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: derek1ee, LADocs
 ms.topic: article
 ms.date: 05/14/2019
-ms.openlocfilehash: 76b3807727f4b5c9ab0a2c2bc21c45af1f713b83
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 3b51215e0cf48df2d3cd9df85a3d4c5641a17215
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70242446"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390804"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Добавление и выполнение фрагментов кода с помощью встроенного кода в Azure Logic Apps
 
@@ -23,6 +23,7 @@ ms.locfileid: "70242446"
 * Выполняется в JavaScript. В ближайшее время ожидается больше языков.
 * Завершает выполнение через пять секунд или меньше.
 * Обрабатывает данные размером до 50 МБ.
+* Не требует работы с [действиями **переменных** ](../logic-apps/logic-apps-create-variables-store-values.md), которые еще не поддерживаются.
 * Использует Node. js версии 8.11.1. Дополнительные сведения см. в разделе [стандартные встроенные объекты](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects). 
 
   > [!NOTE]

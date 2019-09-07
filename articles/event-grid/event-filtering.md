@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 76a4c16afc9edef0a88ac9f2892de9738fd30289
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9fca0a9fefb5959747a4492139ae422a118db02
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66305056"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390178"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -43,7 +43,7 @@ ms.locfileid: "66305056"
 
 При публикации событий в пользовательских разделах создавайте темы для событий, чтобы подписчикам было проще определить, представляет ли событие для них интерес. Подписчики могут использовать свойство темы для фильтрации и маршрутизации событий. Можно добавить путь к расположению, в котором произошло событие, чтобы подписчики могли выполнять фильтрацию по сегментам этого пути. Путь позволяет подписчикам сузить или расширить область фильтрации. Например, если указать в теме трехсегментный путь, такой как `/A/B/C`, подписчики смогут выполнить фильтрацию по первому сегменту `/A`, чтобы получить широкий набор событий. Эти подписчики получат события с такими темами, как `/A/B/C` или `/A/D/E`. Другие подписчики могут выполнить фильтрацию по `/A/B`, чтобы получить более узкий набор событий.
 
-Используется следующий синтаксис JSON для фильтрации по теме:
+Для фильтрации по теме используется следующий синтаксис JSON:
 
 ```json
 "filter": {
@@ -61,23 +61,40 @@ ms.locfileid: "66305056"
 * ключ — поле в данных события, которое используется для фильтрации (это может быть число, логическое значение или строка);
 * value или values — значения для сравнения с ключом.
 
-При фильтрации по типу события используется такой синтаксис JSON.
+Если указать один фильтр с несколькими значениями, то выполняется операция **или** , поэтому значением ключевого поля должно быть одно из следующих значений. Пример:
 
 ```json
-"filter": {
-  "advancedFilters": [
+"advancedFilters": [
     {
-      "operatorType": "NumberGreaterThanOrEquals",
-      "key": "Data.Key1",
-      "value": 5
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/microsoft.devtestlab/",
+            "/providers/Microsoft.Compute/virtualMachines/"
+        ]
+    }
+]
+```
+
+При указании нескольких различных фильтров выполняется операция **и** , поэтому должно выполняться каждое условие фильтра. Пример: 
+
+```json
+"advancedFilters": [
+    {
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/microsoft.devtestlab/"
+        ]
     },
     {
-      "operatorType": "StringContains",
-      "key": "Subject",
-      "values": ["container1", "container2"]
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/Microsoft.Compute/virtualMachines/"
+        ]
     }
-  ]
-}
+]
 ```
 
 ### <a name="operator"></a>Оператор
@@ -107,7 +124,7 @@ ms.locfileid: "66305056"
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
-* Идентификатор
+* id
 * Раздел
 * Subject
 * EventType
@@ -117,7 +134,7 @@ ms.locfileid: "66305056"
 Для событий в схеме "События в облаке" используются следующие значения для ключа:
 
 * EventId
-* source
+* Source
 * EventType
 * EventTypeVersion;
 * дата события (например Data.key1).
@@ -128,10 +145,10 @@ ms.locfileid: "66305056"
 
 Значения могут быть такими:
 
-* номер
-* string
-* Логическое
-* массив
+* number
+* строка
+* boolean
+* array
 
 ### <a name="limitations"></a>Ограничения
 
@@ -143,7 +160,7 @@ ms.locfileid: "66305056"
 
 Один ключ можно использовать в нескольких фильтрах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о фильтрации событий для Сетки событий с помощью [PowerShell и Azure CLI](how-to-filter-events.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

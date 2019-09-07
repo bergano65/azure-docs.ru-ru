@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/03/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: b33f0dec9e6ec685b19e01ce82cfe4adec88b575
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 9c7f920c6b66995d53ef742a9faf574286a51d69
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258612"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390448"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -38,7 +38,8 @@ ms.locfileid: "70258612"
 
 1. Создайте [политику доступа в Key Vault](../key-vault/key-vault-secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `applicationId`, так как он не совместим с управляемым удостоверением.
 
-    Предоставление доступа к удостоверению приложения в хранилище ключей — это OneTime операция, которая остается одинаковой для всех подписок Azure. Его можно использовать для развертывания требуемого количества сертификатов. 
+    > [!NOTE]
+    > Key Vault ссылки в настоящее время не могут разрешать секреты, хранящиеся в хранилище ключей, с [ограничениями сети](../key-vault/key-vault-overview-vnet-service-endpoints.md).
 
 ## <a name="reference-syntax"></a>Синтаксис ссылок
 

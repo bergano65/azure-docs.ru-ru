@@ -10,14 +10,14 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 07/29/2019
 ms.author: raymondl
-ms.openlocfilehash: 1d94cff3eb3299692fc4172f5bb5211532ef1002
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 2d90fe4d40c51b21deea23675d6b51b972429237
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697819"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390244"
 ---
-# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример Извлечение ключевых фраз с помощью Анализа текста
+# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример: Извлечение ключевых фраз с помощью Анализа текста
 
 [API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз.
 
@@ -68,15 +68,15 @@ ms.locfileid: "68697819"
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1.: Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
 + Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для поиска ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6).
 
-+ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Он должен включать в себя ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`.
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Необходимо включить `/text/analytics/v2.1/keyPhrases` в URL-адрес. Например, `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v2.1/keyPhrases`.
 
-+ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций анализ текста.
++ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 

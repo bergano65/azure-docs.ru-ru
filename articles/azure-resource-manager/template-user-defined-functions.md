@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: tomfitz
-ms.openlocfilehash: 71c166b9c596c3c8628f943ae5c7dbebd9c2d51c
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 227ecb57b125264e7d0eba56e634966d677e0f58
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384142"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387279"
 ---
 # <a name="user-defined-functions-in-azure-resource-manager-template"></a>Определяемые пользователем функции в шаблоне Azure Resource Manager
 
@@ -73,7 +73,7 @@ ms.locfileid: "70384142"
 * Функция не может обращаться к переменным.
 * Функция может использовать только параметры, определенные в самой функции. При использовании функции [Parameters](resource-group-template-functions-deployment.md#parameters) в определяемой пользователем функции вы можете использовать только параметры этой функции.
 * Функция не может вызывать другие функции, определяемые пользователем.
-* Функция не может использовать [ссылки](resource-group-template-functions-resource.md#reference) или функции [списка](resource-group-template-functions-resource.md#list) .
+* Функция не может использовать функцию [Reference](resource-group-template-functions-resource.md#reference) или любую из функций [списка](resource-group-template-functions-resource.md#list) .
 * Для параметров этой функции нельзя задавать значения по умолчанию.
 
 

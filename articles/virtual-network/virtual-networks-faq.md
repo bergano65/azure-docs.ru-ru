@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
 ms.author: kumud
-ms.openlocfilehash: ecb840d97a45479d32079766807b4f2788cc29ec
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 836a9fd0b441ff9669c224dc41537e3c177d7dde
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382905"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389707"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -42,7 +42,7 @@ ms.locfileid: "70382905"
 Да. Вы можете использовать виртуальную сеть без локального подключения. Например, вы можете запустить исключительно в виртуальной сети Azure контроллеры доменов Active Directory для Microsoft Windows Server или фермы SharePoint.
 
 ### <a name="can-i-perform-wan-optimization-between-vnets-or-a-vnet-and-my-on-premises-data-center"></a>Можно ли выполнять оптимизацию глобальной сети между виртуальными сетями или между виртуальной сетью и локальным центром обработки данных?
-Да. Вы можете развернуть [виртуальные сетевые устройства оптимизации глобальной сети](https://azure.microsoft.com/marketplace/?term=wan+optimization), предоставляемые несколькими поставщиками через Azure Marketplace.
+Да. Вы можете развернуть [виртуальные сетевые устройства оптимизации глобальной сети](https://azuremarketplace.microsoft.com/en-us/marketplace/?term=wan%20optimization), предоставляемые несколькими поставщиками через Azure Marketplace.
 
 ## <a name="configuration"></a>Конфигурация
 

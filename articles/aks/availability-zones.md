@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: mlearned
-ms.openlocfilehash: 4c2058072df4fcb068257c3e265dfe365c6d7e65
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 690d22eadf37a24b4679ce10838074533ac65fcb
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69033137"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390072"
 ---
 # <a name="preview---create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Предварительный просмотр. Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности
 
@@ -34,7 +34,7 @@ ms.locfileid: "69033137"
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Для создания кластеров AKS, использующих зоны доступности, требуется расширение CLI *AKS-Preview* версии 0.4.1 или выше. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] :
+Для создания кластеров AKS, использующих зоны доступности, требуется расширение CLI *AKS-Preview* версии 0.4.1 или выше. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] .
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -44,25 +44,21 @@ az extension add --name aks-preview
 az extension update --name aks-preview
 ```
 
-### <a name="register-feature-flags-for-your-subscription"></a>Регистрация флагов функций для подписки
+### <a name="register-the-availabilityzonepreview-feature-flag-for-your-subscription"></a>Регистрация флага функции Аваилабилитизонепревиев для подписки
 
-Чтобы создать кластер AKS с зонами доступности, сначала включите некоторые флаги функций в подписке. Кластеры используют масштабируемый набор виртуальных машин для управления развертыванием и конфигурацией узлов Kubernetes. Для обеспечения устойчивости сетевых компонентов для маршрутизации трафика в кластер также требуется *стандартный* SKU балансировщика нагрузки Azure. Зарегистрируйте флаги компонентов *аваилабилитизонепревиев*, *аксазурестандардлоадбаланцер*и *вмсспревиев* с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+Чтобы создать кластер AKS с зонами доступности, сначала включите флаг функции *аваилабилитизонепревиев* в подписке. Зарегистрируйте флаг функции *аваилабилитизонепревиев* с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 > [!CAUTION]
 > Регистрация компонента в подписке в данный момент невозможна. После включения функций предварительной версии можно использовать значения по умолчанию для всех кластеров AKS, созданных в подписке. Не включайте предварительные версии функций в производственных подписках. Используйте отдельную подписку для тестирования функций предварительной версии и сбора отзывов.
 
 ```azurecli-interactive
 az feature register --name AvailabilityZonePreview --namespace Microsoft.ContainerService
-az feature register --name AKSAzureStandardLoadBalancer --namespace Microsoft.ContainerService
-az feature register --name VMSSPreview --namespace Microsoft.ContainerService
 ```
 
 Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверить состояние регистрации можно с помощью команды [AZ Feature List][az-feature-list] .
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AvailabilityZonePreview')].{Name:name,State:properties.state}"
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKSAzureStandardLoadBalancer')].{Name:name,State:properties.state}"
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
 ```
 
 Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
@@ -90,7 +86,7 @@ az provider register --namespace Microsoft.ContainerService
 * Для кластеров с включенными зонами доступности необходимо использовать стандартные подсистемы балансировки нагрузки Azure для распределения между зонами.
 * Для развертывания стандартных подсистем балансировки нагрузки необходимо использовать Kubernetes версии 1.13.5 или более поздней.
 
-Кластеры AKS, использующие зоны доступности, должны использовать номер SKU " *стандартный* " балансировщика нагрузки Azure. *Базовый* SKU по умолчанию балансировщика нагрузки Azure не поддерживает распределение между зонами доступности. Дополнительные сведения и ограничения стандартного балансировщика нагрузки см. в статье [ограничения предварительной версии балансировщика нагрузки Azure][standard-lb-limitations]уровня "Стандартный".
+Кластеры AKS, использующие зоны доступности, должны использовать номер SKU " *стандартный* " балансировщика нагрузки Azure. *Базовый* SKU по умолчанию балансировщика нагрузки Azure не поддерживает распределение между зонами доступности. Дополнительные сведения и ограничения стандартной подсистемы балансировки нагрузки см. в статье [ограничения стандартного номера SKU для балансировщика нагрузки Azure][standard-lb-limitations].
 
 ### <a name="azure-disks-limitations"></a>Ограничения для дисков Azure
 

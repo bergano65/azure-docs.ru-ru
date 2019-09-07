@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 07176fbe22e70658856dd266687a15d719e78e9f
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 27361017241ba6529b93c24ce7fb95b2c1b22a62
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231087"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389896"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 
@@ -403,11 +403,20 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=amlcompute_submit)]
 
+> [!TIP]
+> В этом примере по умолчанию используется только один узел целевого объекта вычислений для обучения. Чтобы использовать несколько узлов, задайте `node_count` для конфигурации запуска нужное число узлов. Например, следующий код задает количество узлов, используемых для обучения, до четырех:
+>
+> ```python
+> src.run_config.node_count = 4
+> ```
+
 Также вы можете:
 
 * отправить эксперимент с объектом `Estimator`, как показано в разделе [Обучение моделей машинного обучения с использованием средства оценки](how-to-train-ml-models.md);
 * Отправка видеодиска для [настройки параметров](how-to-tune-hyperparameters.md).
 * Отправьте эксперимент с помощью [расширения VS Code](how-to-vscode-tools.md#train-and-tune-models).
+
+Дополнительные сведения см. в документации по [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) и [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) .
 
 ## <a name="create-run-configuration-and-submit-run-using-azure-machine-learning-cli"></a>Создание конфигурации запуска и отправка выполнения с помощью Машинное обучение Azure CLI
 
@@ -480,7 +489,7 @@ max_duration_minutes: 100 # The maximum length of time to run the experiment bef
 az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
 ```
 
-Обратите внимание на раздел arguments в runconfig и *пространстве параметров* в файле config. Они содержат аргументы командной строки, передаваемые в сценарий обучения. Значение в runconfig остается неизменным для каждой итерации, в то время как диапазон в файле конфигурации для работы с ними перебирается. Не указывайте один и тот же аргумент в обоих файлах.
+Обратите внимание на раздел *arguments* в runconfig и *пространстве параметров* в файле config. Они содержат аргументы командной строки, передаваемые в сценарий обучения. Значение в runconfig остается неизменным для каждой итерации, в то время как диапазон в файле конфигурации для работы с ними перебирается. Не указывайте один и тот же аргумент в обоих файлах.
 
 Дополнительные сведения об этих ```az ml``` командах интерфейса командной строки и полном наборе аргументов см. [в справочной документации](reference-azure-machine-learning-cli.md).
 

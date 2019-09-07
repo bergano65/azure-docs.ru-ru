@@ -9,22 +9,22 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 08/23/2019
-ms.openlocfilehash: e402989c6bdbbc90ae10047fcf19f4f2d74328a6
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 0f519471ad9f3d451964ed70afea268946c14e59
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70014806"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390677"
 ---
-| Целевой объект вычисления | Использование | Поддержка GPU | Поддержка FPGA | Описание |
+| Целевой объект вычисления | Назначение | Поддержка GPU | Поддержка FPGA | Описание |
 | ----- | ----- | ----- | ----- | ----- |
-| [&nbsp;Локальная&nbsp;веб-служба](../articles/machine-learning/service/how-to-deploy-and-where.md#local) | Тестирование и отладка | &nbsp; | &nbsp; | Хорошо подходит для ограниченного тестирования и устранения неполадок. Аппаратное ускорение зависит от использования библиотек в локальной системе.
-| [Веб-&nbsp;&nbsp;служба виртуальной машины записных книжек](../articles/machine-learning/service/how-to-deploy-and-where.md#notebookvm) | Тестирование и отладка | &nbsp; | &nbsp; | Хорошо подходит для ограниченного тестирования и устранения неполадок. 
-| [Служба Azure Kubernetes (AKS)](../articles/machine-learning/service/how-to-deploy-and-where.md#aks) | Вывод в режиме реального времени |  [да](../articles/machine-learning/service/how-to-deploy-inferencing-gpus.md)  | [да](../articles/machine-learning/service/how-to-deploy-fpga-web-service.md)   |Подходит для крупномасштабных рабочих развертываний. Обеспечивает быстрое время отклика и автоматическое масштабирование развернутой службы. Автоматическое масштабирование кластера не поддерживается с помощью пакета SDK для Машинное обучение Azure. Чтобы изменить узлы в кластере AKS, используйте пользовательский интерфейс для кластера AKS в портал Azure. AKS — единственный параметр, доступный для визуального интерфейса. |
-| [Экземпляры контейнеров Azure (ACI)](../articles/machine-learning/service/how-to-deploy-and-where.md#aci) | Тестирование или разработка | &nbsp;  | &nbsp; | Хорошо подходит для рабочих нагрузок с низким уровнем масштабирования и ЦП, для которых требуются < 48 ГБ ОЗУ |
+| [&nbsp;Локальная&nbsp;веб-служба](../articles/machine-learning/service/how-to-deploy-and-where.md#local) | Тестирование и отладка | &nbsp; | &nbsp; | Используется для ограниченного тестирования и устранения неполадок. Аппаратное ускорение зависит от использования библиотек в локальной системе.
+| [Веб-&nbsp;&nbsp;служба виртуальной машины записных книжек](../articles/machine-learning/service/how-to-deploy-and-where.md#notebookvm) | Тестирование и отладка | &nbsp; | &nbsp; | Используется для ограниченного тестирования и устранения неполадок.
+| [Служба Azure Kubernetes (AKS)](../articles/machine-learning/service/how-to-deploy-and-where.md#aks) | Вывод в режиме реального времени |  [Да](../articles/machine-learning/service/how-to-deploy-inferencing-gpus.md)  | [Да](../articles/machine-learning/service/how-to-deploy-fpga-web-service.md)   |Используется для крупномасштабных развертываний в реальном масштабе. Обеспечивает быстрое время отклика и автоматическое масштабирование развернутой службы. Автоматическое масштабирование кластера не поддерживается с помощью пакета SDK для Машинное обучение Azure. Чтобы изменить узлы в кластере AKS, используйте пользовательский интерфейс для кластера AKS в портал Azure. AKS — единственный параметр, доступный для визуального интерфейса. |
+| [Экземпляры контейнеров Azure](../articles/machine-learning/service/how-to-deploy-and-where.md#aci); | Тестирование или разработка | &nbsp;  | &nbsp; | Используйте для небольших рабочих нагрузок на основе ЦП, требующих менее 48 ГБ ОЗУ. |
 | [Вычислительная среда Машинного обучения Azure](../articles/machine-learning/service/how-to-run-batch-predictions.md) | Образца Вывод&nbsp;пакета | &nbsp; | &nbsp;  | Выполнение пакетной оценки на бессерверных вычислениях. Поддерживает виртуальные машины с обычным и низким приоритетными уровнями. |
-| [Azure IoT Edge](../articles/machine-learning/service/how-to-deploy-and-where.md#iotedge) | Образца Модуль&nbsp;IOT |  &nbsp; | &nbsp; | Развертывание & обслуживание моделей машинного обучения на устройствах IoT. |
-| [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../articles/databox-online/data-box-edge-overview.md)   | Via IoT Edge |  &nbsp; | да | Развертывание & обслуживание моделей машинного обучения на устройствах IoT. |
+| [Azure IoT Edge](../articles/machine-learning/service/how-to-deploy-and-where.md#iotedge) | Образца Модуль&nbsp;IOT |  &nbsp; | &nbsp; | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
+| [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../articles/databox-online/data-box-edge-overview.md)   | Via IoT Edge |  &nbsp; | Да | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
 
 > [!NOTE]
-> Хотя целевые объекты вычислений, такие как локальные, виртуальные машины и Машинное обучение Azure вычислений, поддерживают GPU для обучения и экспериментирования, использование GPU для вывода поддерживается только в службе Azure Kubernetes.
+> Хотя целевые объекты вычислений, такие как локальные, мобильные виртуальные машины и Машинное обучение Azure вычислений, поддерживают GPU для обучения и экспериментирования, использование GPU для вывода поддерживается только в службе Azure Kubernetes.

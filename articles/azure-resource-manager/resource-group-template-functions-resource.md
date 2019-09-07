@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: tomfitz
-ms.openlocfilehash: 43369131700681de5523043f414129a2e4169f44
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 9e50a2705982a022284e1c54bd5ed7360a2d1663
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306931"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390704"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -42,6 +42,10 @@ ms.locfileid: "70306931"
 | имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
 | версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
 | functionValues |Нет |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
+
+### <a name="valid-uses"></a>Допустимые варианты использования
+
+Функции List можно использовать только в свойствах определения ресурса и в разделе Outputs шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функции List для `input` , так как выражение назначается свойству ресурса. Их нельзя использовать с `count` , так как счетчик должен быть определен до разрешения функции List.
 
 ### <a name="implementations"></a>Варианты реализации решения
 
@@ -264,7 +268,7 @@ ms.locfileid: "70306931"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательное значение | Type | Описание |
+| Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
 | resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
@@ -768,7 +772,7 @@ ms.locfileid: "70306931"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Название | Тип | Значение |
+| Название | Type | Значение |
 | ---- | ---- | ----- |
 | sameRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |

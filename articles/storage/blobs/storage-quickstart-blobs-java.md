@@ -7,19 +7,16 @@ ms.date: 02/04/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: 8cb9a9c6dd2e84318cd4d05bf6e67e127fc39ce3
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 0aa3af754082d91c4a5994e42146d1f1f475f64d
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726365"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390318"
 ---
 # <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-java-v7"></a>Отправка, скачивание и вывод списка больших двоичных объектов с помощью клиентской библиотеки для Java версии 7
 
 Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку для Java версии 7 для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure.
-
-> [!TIP]
-> Последняя версия клиентской библиотеки службы хранилища Azure для Java — версия 10. Корпорация Майкрософт рекомендует по возможности использовать последнюю версию клиентской библиотеки. Чтобы начать работу с использованием версии 10, перейдите к [краткому руководству по отправке, скачиванию и перечислению больших двоичных объектов с помощью пакета SDK службы хранилища для Java версии 10](storage-quickstart-blobs-java-v10.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -7,16 +7,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
-ms.topic: quickstart
-ms.date: 08/20/2019
+ms.topic: reference
+ms.date: 09/05/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: aae59747422fd9dfb53266ee9693c3380c35f73b
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 617878d559c5c89e76c86bfe04fbd24484b911bb
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69647128"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70391024"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-java"></a>Использование REST API службы QnA Maker с Java 
 <a name="HOLTop"></a>
@@ -2128,7 +2128,7 @@ public class PutAlterations {
 
 [Вверх](#HOLTop)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

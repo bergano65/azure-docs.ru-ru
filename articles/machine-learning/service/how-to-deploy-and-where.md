@@ -1,7 +1,7 @@
 ---
 title: Как и где развертываются модели
 titleSuffix: Azure Machine Learning service
-description: 'Сведения о том, как и где следует развертывать модели Службы машинного обучения Azure, в том числе: Экземпляры контейнеров Azure, Службу Azure Kubernetes, Azure IoT Edge и программируемые пользователем вентильные матрицы.'
+description: Узнайте, как и где развертываются модели служб Машинное обучение Azure, включая службы "экземпляры контейнеров Azure", "служба Kubernetes Azure", "Azure IoT Edge" и "программируемые" поля.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,74 +11,74 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 08/06/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 14ced5ed45bcc91e6b6c812f2d1cbb61e139cc4f
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: cf72a83035e318d3a937176bbaaebd8e298d3ad2
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278947"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390680"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
-Узнайте, как развернуть модель машинного обучения в качестве веб-службы в облаке Azure или IoT Edge устройств.
+Узнайте, как развернуть модель машинного обучения в качестве веб-службы в облаке Azure или на Azure IoT Edge устройствах.
 
-Рабочий процесс аналогичен, независимо от того, [где развертывается](#target) модель.
+Рабочий процесс аналогичен независимо от [того, где развертывается](#target) модель:
 
 1. Регистрация модели.
-1. Подготовка к развертыванию (указание ресурсов, использования, целевого объекта вычислений).
+1. Подготовка к развертыванию. (Укажите активы, использование, целевой объект вычислений.)
 1. Разверните модель в целевом объекте вычислений.
 1. Протестируйте развернутую модель, также называемую веб-службой.
 
-Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в статье [Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"](concept-model-management-and-deployment.md).
+Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью службы машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](how-to-manage-workspace.md).
 
-- Модель. Если у вас нет обученной модели, можно использовать модель & файлов зависимостей, предоставленных в [этом руководстве](https://aka.ms/azml-deploy-cloud).
+- Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставленные в [этом руководстве](https://aka.ms/azml-deploy-cloud).
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
 
 ## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
-В следующем коде показано, как подключиться к рабочей области службы Машинное обучение Azure с помощью информации, кэшированной в локальную среду разработки:
-
-**Использование пакета SDK**
-
-```python
-from azureml.core import Workspace
-ws = Workspace.from_config(path=".file-path/ws_config.json")
-```
-
-Дополнительные сведения об использовании пакета SDK для подключения к рабочей области см. в разделе [пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace).
-
-**Использование интерфейса командной строки**
-
-При использовании интерфейса командной строки используйте `-w` параметр или `--workspace-name` , чтобы указать рабочую область для команды.
-
-**Использование VS Code**
-
-При использовании VS Code Рабочая область выбирается с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](how-to-vscode-tools.md#deploy-and-manage-models) в документации по расширению VS Code.
-
-## <a id="registermodel"></a>Регистрация модели
-
-Зарегистрированная модель — это логический контейнер для одного или нескольких файлов, составляющих модель. Например, если имеется модель, которая хранится в нескольких файлах, можно зарегистрировать их как единую модель в рабочей области. После регистрации можно скачать или развернуть зарегистрированную модель и получить все зарегистрированные файлы.
-
-> [!TIP]
-> При регистрации модели вы предоставляете путь к облачному расположению (из обучающего запуска) или к локальному каталогу. Этот путь предназначен только для поиска файлов для отправки в процессе регистрации. Он не должен соответствовать пути, используемому в скрипте записи. Дополнительные сведения см. в разделе [что такое get_model_path](#what-is-get_model_path).
-
-Модели машинного обучения регистрируются в рабочей области Машинное обучение Azure. Модель может быть взята из Машинное обучение Azure или может быть где-либо другим. В следующих примерах показано, как зарегистрировать модель.
-
-### <a name="register-a-model-from-an-experiment-run"></a>Регистрация модели из запуска эксперимента
-
-Фрагменты кода в этом разделе демонстрируют регистрацию модели из обучающего запуска:
-
-> [!IMPORTANT]
-> В этих фрагментах предполагается, что вы ранее выполнили обучающий запуск и получили `run` доступ к объекту (пример пакета SDK) или идентификатору запуска (пример с интерфейсом командной строки). Дополнительные сведения о моделях обучения см. в статье [Создание и использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md).
+В следующем коде показано, как подключиться к рабочей области службы Машинное обучение Azure, используя сведения, кэшированные в локальной среде разработки:
 
 + **Использование пакета SDK**
 
-  При использовании пакета SDK для обучения модели можно получить объект [Run](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master) или [аутомлрун](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master) в зависимости от способа обучения модели. Каждый объект можно использовать для регистрации модели, созданной с помощью запуска эксперимента.
+   ```python
+   from azureml.core import Workspace
+   ws = Workspace.from_config(path=".file-path/ws_config.json")
+   ```
+
+  Дополнительные сведения об использовании пакета SDK для подключения к рабочей области см. в документации по [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#workspace) .
+
++ **Использование интерфейса командной строки**
+
+   При использовании интерфейса командной строки используйте `-w` параметр или `--workspace-name` , чтобы указать рабочую область для команды.
+
++ **Использование VS Code**
+
+   При использовании VS Code рабочую область можно выбрать с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](how-to-vscode-tools.md#deploy-and-manage-models) в документации по расширению VS Code.
+
+## <a id="registermodel"></a>Регистрация модели
+
+Зарегистрированная модель — это логический контейнер для одного или нескольких файлов, составляющих модель. Например, если имеется модель, которая хранится в нескольких файлах, можно зарегистрировать их как единую модель в рабочей области. После регистрации файлов можно скачать или развернуть зарегистрированную модель и получить все зарегистрированные файлы.
+
+> [!TIP]
+> При регистрации модели вы предоставляете путь к облачному расположению (из обучающего запуска) или к локальному каталогу. Этот путь предназначен только для поиска файлов для отправки в ходе процесса регистрации. Он не должен соответствовать пути, используемому в скрипте записи. Дополнительные сведения см. в разделе [что такое get_model_path?](#what-is-get_model_path).
+
+Модели машинного обучения регистрируются в рабочей области Машинное обучение Azure. Модель может поступать из Машинное обучение Azure или в другом месте. В следующих примерах показано, как зарегистрировать модель.
+
+### <a name="register-a-model-from-an-experiment-run"></a>Регистрация модели из запуска эксперимента
+
+В фрагментах кода в этом разделе показано, как зарегистрировать модель из обучающего запуска:
+
+> [!IMPORTANT]
+> Чтобы использовать эти фрагменты кода, необходимо предварительно выполнить обучение и получить доступ к `Run` объекту (пример пакета SDK) или идентификатору запуска (пример с интерфейсом командной строки). Дополнительные сведения о моделях обучения см. в разделе [Настройка целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md).
+
++ **Использование пакета SDK**
+
+  При использовании пакета SDK для обучения модели можно получить либо объект [запуска](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master) , либо объект [аутомлрун](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master) в зависимости от того, как была обучена модель. Каждый объект можно использовать для регистрации модели, созданной с помощью запуска эксперимента.
 
   + Зарегистрировать модель из `azureml.core.Run` объекта:
  
@@ -87,7 +87,7 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
     print(model.name, model.id, model.version, sep='\t')
     ```
 
-    Объект `model_path` ссылается на облачное расположение модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, установите `model_path` в каталог, содержащий файлы. Дополнительные сведения см. в справочнике по [Run. register_model](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none----kwargs-) .
+    `model_path` Параметр ссылается на расположение в облаке модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, задайте `model_path` путь к папке, содержащей файлы. Дополнительные сведения см. в документации по [Run. register_model](https://review.docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py&branch=master#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none----kwargs-) .
 
   + Зарегистрировать модель из `azureml.train.automl.run.AutoMLRun` объекта:
 
@@ -98,9 +98,9 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
         print(run.model_id)
     ```
 
-    В этом примере `metric` параметры и `iteration` не указаны, что приводит к регистрации итерации с лучшей основной метрикой. `model_id` Значение, возвращаемое при выполнении, используется вместо имени модели.
+    В этом примере `metric` параметры и `iteration` не указаны, поэтому будет зарегистрирована итерация с лучшей основной метрикой. `model_id` Значение, возвращаемое при выполнении, используется вместо имени модели.
 
-    Дополнительные сведения см. в справочнике по [аутомлрун. register_model](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master#register-model-description-none--tags-none--iteration-none--metric-none-) .
+    Дополнительные сведения см. в документации по [аутомлрун. register_model](https://review.docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.run.automlrun?view=azure-ml-py&branch=master#register-model-description-none--tags-none--iteration-none--metric-none-) .
 
 + **Использование интерфейса командной строки**
 
@@ -110,19 +110,19 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 
   [!INCLUDE [install extension](../../../includes/machine-learning-service-install-extension.md)]
 
-  Объект `--asset-path` ссылается на облачное расположение модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, установите `--asset-path` в каталог, содержащий файлы.
+  `--asset-path` Параметр ссылается на расположение в облаке модели. В этом примере используется путь к одному файлу. Чтобы включить несколько файлов в регистрацию модели, задайте `--asset-path` путь к папке, содержащей файлы.
 
 + **Использование VS Code**
 
-  Зарегистрируйте модели с помощью любых файлов или папок модели с расширением [VS Code](how-to-vscode-tools.md#deploy-and-manage-models) .
+  Регистрация моделей с помощью любых файлов или папок модели с помощью расширения [VS Code](how-to-vscode-tools.md#deploy-and-manage-models) .
 
 ### <a name="register-a-model-from-a-local-file"></a>Регистрация модели из локального файла
 
-Можно зарегистрировать модель, указав **локальный путь** к модели. Можно указать либо папку, либо отдельный файл. Этот метод можно использовать для регистрации моделей, обученных в службе Машинное обучение Azure, а затем загрузки или моделей, обученных за пределами Машинное обучение Azure.
+Вы можете зарегистрировать модель, указав локальный путь к модели. Можно указать путь либо к папке, либо к одному файлу. С помощью этого метода можно регистрировать модели, обученные в службе Машинное обучение Azure, а затем загружать их. Этот метод также можно использовать для регистрации моделей, обученных за пределами Машинное обучение Azure.
 
 [!INCLUDE [trusted models](../../../includes/machine-learning-service-trusted-model.md)]
 
-+ **Пример ONNX с пакетом SDK для Python:**
++ **Использование пакета SDK и ONNX**
 
     ```python
     import os
@@ -140,7 +140,7 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
                             description = "MNIST image classification CNN from ONNX Model Zoo",)
     ```
 
-  Чтобы включить несколько файлов в регистрацию модели, установите `model_path` в каталог, содержащий файлы.
+  Чтобы включить несколько файлов в регистрацию модели, задайте `model_path` путь к папке, содержащей файлы.
 
 + **Использование интерфейса командной строки**
 
@@ -148,64 +148,63 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
   az ml model register -n onnx_mnist -p mnist/model.onnx
   ```
 
-  Чтобы включить несколько файлов в регистрацию модели, установите `-p` в каталог, содержащий файлы.
+  Чтобы включить несколько файлов в регистрацию модели, задайте `-p` путь к папке, содержащей файлы.
 
 **Оценка времени**. Примерно 10 секунд.
 
-Дополнительные сведения см. в справочной документации по [классу Model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
+Дополнительные сведения см. в документации по [классу Model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
-Дополнительные сведения о работе с моделями, обученными вне Машинное обучение Azure службы, см. [в разделе Развертывание существующей модели](how-to-deploy-existing-model.md).
+Дополнительные сведения о работе с моделями, обученными за пределами службы Машинное обучение Azure, см. [в разделе Развертывание существующей модели](how-to-deploy-existing-model.md).
 
 <a name="target"></a>
 
 ## <a name="choose-a-compute-target"></a>Выбор целевого объекта вычислений
 
-Для размещения развертывания веб-службы можно использовать следующие целевые объекты вычислений или ресурсы вычислений. 
+Для размещения развертывания веб-службы можно использовать следующие целевые объекты вычислений или ресурсы вычислений:
 
 [!INCLUDE [aml-compute-target-deploy](../../../includes/aml-compute-target-deploy.md)]
 
 ## <a name="prepare-to-deploy"></a>Подготовка к развертыванию
 
-Для развертывания модели требуется несколько моментов.
+Для развертывания модели вам потребуются следующие элементы:
 
-* __Скрипт записи__. Этот скрипт принимает запросы, оценивает запрос с помощью модели и возвращает результаты.
-
-    > [!IMPORTANT]
-    > Сценарий записи зависит от модели. Он должен понимать формат данных входящего запроса, формат данных, ожидаемых моделью, и формат данных, возвращаемых клиентам.
-    >
-    > Если данные запроса имеют формат, непригодный для использования в вашей модели, скрипт может преобразовать его в допустимый формат. Он также может преобразовать ответ перед возвратом клиенту.
+* **Скрипт записи**. Этот скрипт принимает запросы, оценивает запросы с помощью модели и возвращает результаты.
 
     > [!IMPORTANT]
-    > Пакет SDK для Машинное обучение Azure не предоставляет возможности развертывания веб-служб или IoT Edge для доступа к хранилищу данных или наборам. Если требуется развернутая модель для доступа к данным, хранящимся за пределами развертывания, например в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
+    > * Сценарий записи зависит от модели. Он должен понимать формат данных входящего запроса, формат данных, ожидаемых моделью, и формат данных, возвращаемых клиентам.
     >
-    > Другой альтернативой, который может работать в вашем сценарии, являются [пакетные прогнозы](how-to-run-batch-predictions.md), которые обеспечивают доступ к хранилищам данных при оценке.
+    >   Если данные запроса имеют формат, непригодный для использования в вашей модели, скрипт может преобразовать его в допустимый формат. Он также может преобразовать ответ перед его возвратом клиенту.
+    >
+    > * Пакет SDK для Машинное обучение Azure не предоставляет веб-службам и IoT Edgeным развертываниям доступ к хранилищу данных или наборам DataSet. Если развернутой модели требуется доступ к данным, хранящимся за пределами развертывания, например данных в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
+    >
+    >   Альтернативой, который может работать в вашем сценарии, является [Прогнозирование пакетной обработки](how-to-run-batch-predictions.md), предоставляющее доступ к хранилищам данных во время оценки.
 
-* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
+* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели.
 
-* __Конфигурация развертывания__ для целевого объекта вычислений, в котором развернута модель. Эта конфигурация описывает такие вещи, как память и требования к ЦП, необходимые для запуска модели.
+* **Конфигурация развертывания** для целевого объекта вычислений, в котором развернута модель. Эта конфигурация описывает такие вещи, как память и требования к ЦП, необходимые для запуска модели.
 
-Эти сущности инкапсулированы в __конфигурацию вывода__и __конфигурацию развертывания__. Конфигурация вывода ссылается на скрипт записи и другие зависимости. Эти конфигурации определяются программно при использовании пакета SDK и в виде файлов JSON при использовании CLI для выполнения развертывания.
+Эти элементы инкапсулированы в *конфигурацию вывода* и *конфигурацию развертывания*. Конфигурация вывода ссылается на скрипт записи и другие зависимости. Эти конфигурации определяются программно при использовании пакета SDK для выполнения развертывания. Они определяются в файлах JSON при использовании интерфейса командной строки.
 
-### <a id="script"></a> 1. Определение скрипта записи & зависимостей
+### <a id="script"></a> 1. Определение скрипта записи и зависимостей
 
-Сценарий записи получает данные, отправленные в развернутую веб-службу, и передает их в модель. Затем он принимает ответ, возвращенный моделью, и возвращает его клиенту. **Сценарий зависит от модели**. Он должен понимать данные, которые предположительно и возвращает модель.
+Сценарий записи получает данные, отправленные в развернутую веб-службу, и передает их в модель. Затем он принимает ответ, возвращенный моделью, и возвращает его клиенту. *Сценарий зависит от модели*. Он должен понимать данные, которые предположительно и возвращает модель.
 
 Скрипт содержит две функции, которые загружают и запускают модель:
 
-* `init()`. Обычно эта функция загружает модель в глобальный объект. Эта функция выполняется только один раз при запуске контейнера DOCKER для веб-службы.
+* `init()`. Как правило, эта функция загружает модель в глобальный объект. Эта функция выполняется только один раз при запуске контейнера DOCKER для веб-службы.
 
-* `run(input_data)`. Эта функция использует модель для прогнозирования значения на основе входных данных. Ко входным и выходным данным для запуска обычно применяется формат JSON для сериализации и десериализации. Вы также можете работать с необработанными двоичными данными. Вы можете преобразовать данные, прежде чем отправлять их в модель или возвращать клиенту.
+* `run(input_data)`. Эта функция использует модель для прогнозирования значения на основе входных данных. Входы и выходы для выполнения обычно используют JSON для сериализации и десериализации. Вы также можете работать с необработанными двоичными данными. Данные можно преобразовать перед отправкой в модель или перед их возвратом клиенту.
 
 #### <a name="what-is-get_model_path"></a>Что такое get_model_path?
 
-При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется вместе с [моделью. Get _model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлам модели в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
+При регистрации модели вы предоставляете имя модели, используемое для управления моделью в реестре. Это имя используется с методом [model. Get _model_path ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) для получения пути к файлу модели или файлам в локальной файловой системе. При регистрации папки или коллекции файлов этот API возвращает путь к каталогу, содержащему эти файлы.
 
-При регистрации модели ей присваивается имя, которое соответствует месту размещения модели: локально или во время развертывания службы.
+При регистрации модели ей присваивается имя. Имя соответствует месту размещения модели: локально или во время развертывания службы.
 
 > [!IMPORTANT]
-> При обучении модели с помощью автоматического машинного обучения `model_id` в качестве имени модели используется значение. Пример регистрации и развертывания модели, обученной с помощью автоматизированного ml, [https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-with-deployment](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-with-deployment)см. в разделе.
+> Если для обучения модели использовалось автоматическое машинное обучение, `model_id` в качестве имени модели используется значение. Пример регистрации и развертывания модели, обученной в автоматизированном машинном обучении, см. в статье [Azure/мачинелеарнингнотебукс](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/classification-with-deployment) на сайте GitHub.
 
-В приведенном ниже примере возвращается путь к одному файлу с именем `sklearn_mnist_model.pkl` (зарегистрированным с именем `sklearn_mnist`):
+В следующем примере возвращается путь к одному файлу с именем `sklearn_mnist_model.pkl` (который был зарегистрирован с именем `sklearn_mnist`):
 
 ```python
 model_path = Model.get_model_path('sklearn_mnist')
@@ -215,7 +214,7 @@ model_path = Model.get_model_path('sklearn_mnist')
 
 #### <a name="optional-automatic-schema-generation"></a>Используемых Автоматическое создание схем
 
-Чтобы автоматически создать схему для веб-службы, укажите образец входных и (или) выходных данных в конструкторе для одного из объектов определенного типа, а тип и образец используются для автоматического создания схемы. Затем служба Машинное обучение Azure создает спецификацию [OpenAPI](https://swagger.io/docs/specification/about/) (Swagger) для веб-службы во время развертывания.
+Чтобы автоматически создать схему для веб-службы, укажите образец входных и (или) выходных данных в конструкторе для одного из объектов определенного типа. Тип и образец используются для автоматического создания схемы. Затем служба Машинное обучение Azure создает спецификацию [OpenAPI](https://swagger.io/docs/specification/about/) (Swagger) для веб-службы во время развертывания.
 
 В настоящее время поддерживаются следующие типы:
 
@@ -224,7 +223,7 @@ model_path = Model.get_model_path('sklearn_mnist')
 * `pyspark`
 * Стандартный объект Python
 
-Чтобы использовать формирование схемы, включите `inference-schema` пакет в файл среды conda.
+Чтобы использовать формирование схемы, включите `inference-schema` пакет в файл среды Conda.
 
 ##### <a name="example-dependencies-file"></a>Пример файла зависимостей
 
@@ -240,16 +239,16 @@ dependencies:
     - inference-schema[numpy-support]
 ```
 
-Если вы хотите использовать автоматическое создание схем, ваш сценарий записи **должен** импортировать `inference-schema` пакеты.
+Если вы хотите использовать автоматическое создание схем, ваш сценарий записи должен импортировать `inference-schema` пакеты.
 
-Определите форматы входных и выходных данных в `input_sample` переменных и `output_sample` , которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах `run()` входных и выходных функций функции. В приведенном ниже примере scikit-учиться используется создание схем.
+Определите форматы входных и выходных данных в `input_sample` переменных и `output_sample` , которые представляют форматы запросов и ответов для веб-службы. Используйте эти примеры в декораторах `run()` входных и выходных функций функции. В следующем примере scikit-учиться используется создание схемы.
 
 ##### <a name="example-entry-script"></a>Пример скрипта записи
 
 В следующем примере показано, как принимать и возвращать данные JSON.
 
 ```python
-#example: scikit-learn and Swagger
+#Example: scikit-learn and Swagger
 import json
 import numpy as np
 from sklearn.externals import joblib
@@ -262,10 +261,10 @@ from inference_schema.parameter_types.numpy_parameter_type import NumpyParameter
 
 def init():
     global model
-    # note here "sklearn_regression_model.pkl" is the name of the model registered under
-    # this is a different behavior than before when the code is run locally, even though the code is the same.
+    # Note that here "sklearn_regression_model.pkl" is the name of the model registered under.
+    # This is a different behavior than before when the code is run locally, even though the code is the same.
     model_path = Model.get_model_path('sklearn_regression_model.pkl')
-    # deserialize the model file back into a sklearn model
+    # Deserialize the model file back into a sklearn model.
     model = joblib.load(model_path)
 
 
@@ -278,14 +277,14 @@ output_sample = np.array([3726.995])
 def run(data):
     try:
         result = model.predict(data)
-        # you can return any datatype as long as it is JSON-serializable
+        # You can return any data type, as long as it is JSON serializable.
         return result.tolist()
     except Exception as e:
         error = str(e)
         return error
 ```
 
-В следующем примере показано, как определить входные данные в виде `<key: value>` словаря с помощью таблицы данных. Этот метод поддерживается для использования развернутой веб-службы из Power BI (дополнительные[сведения об использовании веб-службы из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration)):
+В следующем примере показано, как определить входные данные как `<key: value>` словарь с помощью таблицы данных. Этот метод поддерживается для использования развернутой веб-службы из Power BI. (Дополнительные[сведения об использовании веб-службы из Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).)
 
 ```python
 import json
@@ -303,22 +302,22 @@ from inference_schema.parameter_types.pandas_parameter_type import PandasParamet
 
 def init():
     global model
-    # replace model_name with your actual model name, if needed
+    # Replace model_name with your actual model name, if necessary.
     model_path = Model.get_model_path('model_name')
-    # deserialize the model file back into a sklearn model
+    # Deserialize the model file back into a sklearn model.
     model = joblib.load(model_path)
 
 
 input_sample = pd.DataFrame(data=[{
-    # This is a decimal type sample. Use the data type that reflects this column in your data
+    # This is a decimal type sample. Use the data type that reflects this column in your data.
     "input_name_1": 5.1,
-    # This is a string type sample. Use the data type that reflects this column in your data
+    # This is a string type sample. Use the data type that reflects this column in your data.
     "input_name_2": "value2",
-    # This is a integer type sample. Use the data type that reflects this column in your data
+    # This is an integer type sample. Use the data type that reflects this column in your data.
     "input_name_3": 3
 }])
 
-# This is a integer type sample. Use the data type that reflects the expected result
+# This is an integer type sample. Use the data type that reflects the expected result.
 output_sample = np.array([0])
 
 
@@ -327,25 +326,25 @@ output_sample = np.array([0])
 def run(data):
     try:
         result = model.predict(data)
-        # you can return any datatype as long as it is JSON-serializable
+        # You can return any data type, as long as it is JSON serializable.
         return result.tolist()
     except Exception as e:
         error = str(e)
         return error
 ```
 
-Дополнительные примеры сценариев см. в следующих примерах.
+Дополнительные примеры см. в следующих скриптах:
 
-* Pytorch[https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch)
-* TensorFlow[https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow)
-* Keras[https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras)
-* ONNX[https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/)
+* [PyTorch](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch)
+* [TensorFlow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow);
+* [Keras](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras);
+* [ONNX](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/)
 
 <a id="binary"></a>
 
 #### <a name="binary-data"></a>Двоичные данные
 
-Если ваша модель принимает двоичные данные, например изображения, необходимо изменить файл `score.py`, используемый для развертывания, чтобы обеспечить прием необработанных HTTP-запросов. Чтобы принимать необработанные данные, `AMLRequest` используйте класс в скрипте записи и `@rawhttp` добавьте декоратор в `run()` функцию.
+Если модель принимает двоичные данные, например изображение, необходимо изменить `score.py` файл, используемый для развертывания, чтобы принимать необработанные HTTP-запросы. Чтобы принимать необработанные данные, `AMLRequest` используйте класс в скрипте записи и `@rawhttp` добавьте декоратор в `run()` функцию.
 
 Ниже приведен пример `score.py` , который принимает двоичные данные:
 
@@ -363,13 +362,13 @@ def run(request):
     print("This is run()")
     print("Request: [{0}]".format(request))
     if request.method == 'GET':
-        # For this example, just return the URL for GETs
+        # For this example, just return the URL for GETs.
         respBody = str.encode(request.full_path)
         return AMLResponse(respBody, 200)
     elif request.method == 'POST':
         reqBody = request.get_data(False)
-        # For a real world solution, you would load the data from reqBody
-        # and send to the model. Then return the response.
+        # For a real-world solution, you would load the data from reqBody
+        # and send it to the model. Then return the response.
 
         # For demonstration purposes, this example just returns the posted data as the response.
         return AMLResponse(reqBody, 200)
@@ -378,7 +377,7 @@ def run(request):
 ```
 
 > [!IMPORTANT]
-> `AMLRequest` Класс находится`azureml.contrib` в пространстве имен. Это пространство имен часто меняется, так как мы работаем над улучшением службы. Поэтому все, что доступно в этом пространстве имен, считается предварительными версиями компонентов, поддержка которых корпорацией Майкрософт ограничена.
+> `AMLRequest` Класс находится`azureml.contrib` в пространстве имен. Сущности в этом пространстве имен часто изменяются, так как мы работаем над улучшением службы. Все, что есть в этом пространстве имен, следует рассматривать как предварительную версию, которая не полностью поддерживается корпорацией Майкрософт.
 >
 > Если необходимо протестировать это в локальной среде разработки, можно установить компоненты с помощью следующей команды:
 >
@@ -390,7 +389,7 @@ def run(request):
 
 #### <a name="cross-origin-resource-sharing-cors"></a>Общий доступ к ресурсам между источниками (CORS)
 
-Совместное использование ресурсов в разных источниках позволяет запрашивать ресурсы на веб-странице из другого домена. CORS работает на основе HTTP-заголовков, отправленных с помощью запроса клиента и возвращаемых с ответом службы. Дополнительные сведения о CORS и допустимых заголовках см. в разделе [общий доступ к ресурсам между источниками](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) в Википедии.
+Совместное использование ресурсов в разных источниках позволяет запрашивать ресурсы на веб-странице из другого домена. CORS работает через заголовки HTTP, отправленные с клиентским запросом и возвращаемые с ответом службы. Дополнительные сведения о CORS и допустимых заголовках см. в разделе [общий доступ к ресурсам между источниками](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) в Википедии.
 
 Чтобы настроить развертывание модели для поддержки CORS, используйте `AMLResponse` класс в скрипте записи. Этот класс позволяет задать заголовки для объекта ответа.
 
@@ -406,16 +405,16 @@ def run(request):
     print("This is run()")
     print("Request: [{0}]".format(request))
     if request.method == 'GET':
-        # For this example, just return the URL for GETs
+        # For this example, just return the URL for GETs.
         respBody = str.encode(request.full_path)
         return AMLResponse(respBody, 200)
     elif request.method == 'POST':
         reqBody = request.get_data(False)
-        # For a real world solution, you would load the data from reqBody
-        # and send to the model. Then return the response.
+        # For a real-world solution, you would load the data from reqBody
+        # and send it to the model. Then return the response.
 
         # For demonstration purposes, this example
-        # adds a header and returns the request body
+        # adds a header and returns the request body.
         resp = AMLResponse(reqBody, 200)
         resp.headers['Access-Control-Allow-Origin'] = "http://www.example.com"
         return resp
@@ -424,7 +423,7 @@ def run(request):
 ```
 
 > [!IMPORTANT]
-> `AMLResponse` Класс находится`azureml.contrib` в пространстве имен. Это пространство имен часто меняется, так как мы работаем над улучшением службы. Поэтому все, что доступно в этом пространстве имен, считается предварительными версиями компонентов, поддержка которых корпорацией Майкрософт ограничена.
+> `AMLResponse` Класс находится`azureml.contrib` в пространстве имен. Сущности в этом пространстве имен часто изменяются, так как мы работаем над улучшением службы. Все, что есть в этом пространстве имен, следует рассматривать как предварительную версию, которая не полностью поддерживается корпорацией Майкрософт.
 >
 > Если необходимо протестировать это в локальной среде разработки, можно установить компоненты с помощью следующей команды:
 >
@@ -434,7 +433,7 @@ def run(request):
 
 ### <a name="2-define-your-inferenceconfig"></a>2. Определение Инференцеконфиг
 
-Конфигурация вывода описывает, как настроить модель для выполнения прогнозов. Эта конфигурация не является частью скрипта записи; Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при фактическом развертывании модели.
+Конфигурация вывода описывает, как настроить модель для выполнения прогнозов. Эта конфигурация не является частью сценария записи. Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при развертывании модели.
 
 Конфигурация вывода может использовать Машинное обучение Azure среды для определения зависимостей программного обеспечения, необходимых для развертывания. Среды позволяют создавать, администрировать и повторно использовать зависимости программного обеспечения, необходимые для обучения и развертывания. В следующем примере демонстрируется загрузка среды из рабочей области и ее использование с конфигурацией вывода:
 
@@ -449,7 +448,7 @@ inference_config = InferenceConfig(entry_script="x/y/score.py",
 
 Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
 
-Можно также указать зависимости напрямую, не используя среду. В следующем примере показано, как создать конфигурацию вывода, которая загружает зависимости программного обеспечения из файла conda:
+Можно также указать зависимости напрямую, не используя среду. В следующем примере показано, как создать конфигурацию вывода, которая загружает зависимости программного обеспечения из файла Conda:
 
 ```python
 from azureml.core.model import InferenceConfig
@@ -459,7 +458,7 @@ inference_config = InferenceConfig(runtime="python",
                                    conda_file="env/myenv.yml")
 ```
 
-Дополнительные сведения см. в справочнике по классу [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
+Дополнительные сведения см. в документации по классу [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
 
@@ -473,29 +472,29 @@ inference_config = InferenceConfig(runtime="python",
 az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 ```
 
-В этом примере конфигурация содержит следующие элементы:
+В этом примере конфигурация задает следующие параметры.
 
-* Что для этой модели требуется Python
-* [Скрипт записи](#script), используемый для обработки веб-запросов, отправляемых в развернутую службу
-* Файл conda, описывающий пакеты Python, необходимые для вывода.
+* Для модели требуется Python.
+* [Скрипт записи](#script), используемый для обработки веб-запросов, отправляемых в развернутую службу.
+* Файл Conda, описывающий пакеты Python, необходимые для вывода.
 
 Сведения об использовании пользовательского образа DOCKER с конфигурацией вывода см. в статье [развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md).
 
 ### <a name="3-define-your-deployment-configuration"></a>3. Определение конфигурации развертывания
 
-Перед развертыванием необходимо определить конфигурацию развертывания. __Конфигурация развертывания зависит от целевого объекта вычислений, в котором будет размещена веб-служба__. Например, при локальном развертывании необходимо указать порт, на котором служба принимает запросы. Конфигурация развертывания не является частью скрипта записи. Он используется для определения характеристик целевого объекта вычислений, в котором будет размещаться скрипт модели и записи.
+Перед развертыванием модели необходимо определить конфигурацию развертывания. *Конфигурация развертывания зависит от целевого объекта вычислений, в котором будет размещена веб-служба.* Например, при локальном развертывании модели необходимо указать порт, на котором служба принимает запросы. Конфигурация развертывания не является частью скрипта записи. Он используется для определения характеристик целевого объекта вычислений, в котором будет размещаться скрипт модели и входа.
 
-Также может потребоваться создать ресурс вычислений. Например, если у вас еще нет службы Azure Kubernetes, связанной с вашей рабочей областью.
+Вам также может потребоваться создать вычислительный ресурс, если, например, у вас еще нет экземпляра Azure Kubernetes Service (AKS), связанного с вашей рабочей областью.
 
 В следующей таблице приведен пример создания конфигурации развертывания для каждого целевого объекта вычислений.
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
 | Локальные | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Экземпляр контейнера Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
-Каждый из этих классов для локальных веб-служб, ACI и AKS может быть импортирован из `azureml.core.webservice`:
+Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice`:
 
 ```python
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
@@ -503,10 +502,10 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 #### <a name="profiling"></a>Профилирование.
 
-Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Модель можно профилировать с помощью пакета SDK или интерфейса командной строки. В следующих примерах показано, как использовать профилирование из пакета SDK:
+Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Для профилирования модели можно использовать либо пакет SDK, либо интерфейс командной строки. В следующих примерах показано, как профилировать модель с помощью пакета SDK.
 
 > [!IMPORTANT]
-> При использовании профилирования предоставленная конфигурация определения не может ссылаться на среду Машинное обучение Azure. Вместо этого определите зависимости программного обеспечения с `conda_file` помощью параметра `InferenceConfig` объекта.
+> При использовании профилирования предоставленная конфигурация вывода не может ссылаться на среду Машинное обучение Azure. Вместо этого определите зависимости программного обеспечения с помощью `conda_file` параметра `InferenceConfig` объекта.
 
 ```python
 import json
@@ -530,7 +529,7 @@ print(profiling_results)
 
 Дополнительные сведения об использовании профилирования из CLI см. в разделе [AZ ML Model Profile](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
 
-Дополнительные сведения см. в следующих справочных документах:
+Дополнительные сведения см. в следующих документах:
 
 * [моделпрофиле](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py)
 * [профиль ()](/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-)
@@ -542,7 +541,7 @@ print(profiling_results)
 
 ### <a id="local"></a>Локальное развертывание
 
-Для локального развертывания на локальном компьютере должен быть установлен DOCKER.
+Чтобы развернуть модель локально, на локальном компьютере должен быть установлен DOCKER.
 
 #### <a name="using-the-sdk"></a>Использование пакета SDK
 
@@ -555,11 +554,11 @@ service.wait_for_deployment(show_output = True)
 print(service.state)
 ```
 
-Дополнительные сведения см. в справочной документации по [локалвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py), [model. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config--deployment-config-none--deployment-target-none-)и [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
+Дополнительные сведения см. в документации по [локалвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py), [model. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config--deployment-config-none--deployment-target-none-)и [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
 
 #### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-Для развертывания с помощью интерфейса командной строки используйте следующую команду. Замените `mymodel:1` на имя и версию зарегистрированной модели:
+Чтобы развернуть модель с помощью интерфейса командной строки, используйте следующую команду. Замените `mymodel:1` на имя и версию зарегистрированной модели:
 
 ```azurecli-interactive
 az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json
@@ -567,27 +566,28 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 [!INCLUDE [aml-local-deploy-config](../../../includes/machine-learning-service-local-deploy-config.md)]
 
-Дополнительные сведения см. в справочнике по [развертыванию модели языка AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
+Дополнительные сведения см. в документации по [AZ ml для развертывания модели](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
 
-### <a id="notebookvm"></a>Веб-служба Нотебуквм (DEVTEST)
+### <a id="notebookvm"></a>Веб-служба виртуальной машины записных книжек (разработка и тестирование)
 
 См. раздел [развертывание модели на виртуальных машинах записных книжек](how-to-deploy-local-container-notebook-vm.md).
 
-### <a id="aci"></a>Экземпляры контейнеров Azure (DEVTEST)
+### <a id="aci"></a>Экземпляры контейнеров Azure (разработка и тестирование)
 
 См. раздел [развертывание в службе "экземпляры контейнеров Azure](how-to-deploy-azure-container-instance.md)".
 
-### <a id="aks"></a>Служба Kubernetes Azure (DEVTEST & PRODUCTION)
+### <a id="aks"></a>Служба Kubernetes Azure (разработка, тестирование и Рабочая среда)
 
 См. раздел [Deploy to Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md).
 
 ## <a name="consume-web-services"></a>Использование веб-служб
 
-Каждая развернутая веб-служба предоставляет REST API, что позволяет создавать клиентские приложения на различных языках программирования. Если для службы включен ключ проверки подлинности, необходимо предоставить ключ службы в качестве маркера в заголовке запроса.
-Если вы включили проверку подлинности с помощью маркеров для службы, необходимо предоставить маркер JWT Машинное обучение Azure в качестве токена носителя в заголовке запроса.
+Каждая развернутая веб-служба предоставляет REST API, что позволяет создавать клиентские приложения на различных языках программирования.
+Если для службы включен ключ проверки подлинности, необходимо предоставить ключ службы в качестве маркера в заголовке запроса.
+Если вы включили проверку подлинности маркеров для службы, необходимо предоставить маркер JWT Машинное обучение Azure в качестве токена носителя в заголовке запроса.
 
 > [!TIP]
-> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri) из развернутой веб-службы, например `service.swagger_uri`, чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
+> После развертывания службы можно получить документ JSON схемы. Используйте [свойство swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri) из развернутой веб-службы (например, `service.swagger_uri`), чтобы получить универсальный код ресурса (URI) для файла Swagger локальной веб-службы.
 
 ### <a name="request-response-consumption"></a>Использование запросов и ответов
 
@@ -617,11 +617,11 @@ print(response.elapsed)
 print(response.json())
 ```
 
-Дополнительные сведения см. в статье [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md).
+Дополнительные сведения см. [в статье Создание клиентских приложений для использования веб-служб](how-to-consume-web-service.md).
 
 ### <a name="web-service-schema-openapi-specification"></a>Схема веб-службы (спецификация OpenAPI)
 
-Если вы использовали автоматическое создание схемы в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [Свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). Например, `print(service.swagger_uri)`. Чтобы получить спецификацию, используйте запрос GET (или откройте универсальный код ресурса (URI) в браузере).
+Если вы использовали автоматическое создание схем в развертывании, можно получить адрес спецификации OpenAPI для службы с помощью [Свойства swagger_uri](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservice?view=azure-ml-py#swagger-uri). (Например, `print(service.swagger_uri)`). Используйте запрос GET или откройте универсальный код ресурса (URI) в браузере, чтобы получить спецификацию.
 
 Следующий документ JSON является примером схемы (спецификации OpenAPI), созданной для развертывания:
 
@@ -757,120 +757,125 @@ print(response.json())
 }
 ```
 
-Дополнительные сведения о спецификации см. в [спецификации Open API](https://swagger.io/specification/).
+Дополнительные сведения см. в статье [Спецификация OpenAPI](https://swagger.io/specification/).
 
 Сведения о программе, которая может создавать клиентские библиотеки из спецификации, см. в разделе [Swagger-CodeGen](https://github.com/swagger-api/swagger-codegen).
 
 ### <a id="azuremlcompute"></a>Вывод пакета
 Машинное обучение Azure целевые объекты вычислений создаются и управляются службой Машинное обучение Azure. Их можно использовать для прогнозирования пакетной службы из Машинное обучение Azure конвейеров.
 
-Пошаговое руководство по выводу пакетов с помощью Машинное обучение Azure COMPUTE см. в статье [выполнение пакетных прогнозов](how-to-run-batch-predictions.md) .
+Пошаговое руководство по выводу пакетов с помощью Машинное обучение Azure COMPUTE см. [в разделе Выполнение пакетных прогнозов](how-to-run-batch-predictions.md).
 
 ### <a id="iotedge"></a>Вывод IoT Edge
-Поддержка развертывания на границе доступна в предварительной версии. Дополнительные сведения см. в статье [развертывание машинное обучение Azure как модуля IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning) .
+Поддержка развертывания на границе доступна в предварительной версии. Дополнительные сведения см. в разделе [развертывание машинное обучение Azure как модуля IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning).
 
 
 ## <a id="update"></a>Обновление веб-служб
 
 [!INCLUDE [aml-update-web-service](../../../includes/machine-learning-update-web-service.md)]
 
-## <a name="continuous-model-deployment"></a>Непрерывное развертывание модели 
+## <a name="continuously-deploy-models"></a>Непрерывное развертывание моделей
 
-Вы можете непрерывно развертывать модели с помощью расширения Машинное обучение для [Azure DevOps](https://azure.microsoft.com/services/devops/). С помощью расширения Машинное обучение для Azure DevOps можно активировать конвейер развертывания, когда новая модель машинного обучения регистрируется в рабочей области службы Машинное обучение Azure. 
+Вы можете непрерывно развертывать модели с помощью расширения Машинное обучение для [Azure DevOps](https://azure.microsoft.com/services/devops/). Вы можете использовать расширение Машинное обучение для Azure DevOps, чтобы активировать конвейер развертывания при регистрации новой модели машинного обучения в рабочей области службы Машинное обучение Azure.
 
-1. Подпишитесь на [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops), что обеспечивает непрерывную интеграцию и доставку приложения на любую платформу или любое облако. Azure Pipelines [отличается от конвейеров машинного обучения](concept-ml-pipelines.md#compare). 
+1. Подпишитесь на [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops), что обеспечивает непрерывную интеграцию и доставку приложения на любую платформу или облако. (Обратите внимание, что Azure Pipelines не так же, как [машинное обучение конвейеры](concept-ml-pipelines.md#compare)).
 
 1. [Создайте проект Azure DevOps.](https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops)
 
-1. Установка [расширения машинное обучение для Azure pipelines](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml&targetId=6756afbe-7032-4a36-9cb6-2771710cadc2&utm_source=vstsproduct&utm_medium=ExtHubManageList) 
+1. Установите [расширение машинное обучение для Azure pipelines](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.vss-services-azureml&targetId=6756afbe-7032-4a36-9cb6-2771710cadc2&utm_source=vstsproduct&utm_medium=ExtHubManageList).
 
-1. Используйте __подключения к службам__ , чтобы настроить подключение субъекта-службы к рабочей области службы машинное обучение Azure для доступа ко всем артефактам. Перейдите в раздел Параметры проекта, щелкните подключения службы и выберите Azure Resource Manager.
+1. Используйте подключения к службам, чтобы настроить подключение субъекта-службы к рабочей области службы Машинное обучение Azure, чтобы получить доступ к артефактам. Последовательно выберите пункты Параметры проекта, **подключения к службе**и **Azure Resource Manager**:
 
-    [![Представление-служба — подключение](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png) 
+    [![Выберите Azure Resource Manager](media/how-to-deploy-and-where/view-service-connection.png)](media/how-to-deploy-and-where/view-service-connection-expanded.png)
 
-1. Определите Азуремлворкспаце в качестве __уровня области__ и заполните последующие параметры.
+1. В списке **область уровня области** выберите **азуремлворкспаце**и введите остальные значения:
 
-    ![Просмотр-Azure-Resource-Manager](media/how-to-deploy-and-where/resource-manager-connection.png)
+    ![Выбор Азуремлворкспаце](media/how-to-deploy-and-where/resource-manager-connection.png)
 
-1. Далее, чтобы непрерывно развернуть модель машинного обучения с помощью Azure Pipelines, в разделе конвейеры выберите __выпуск__. Добавьте новый артефакт, выберите артефакт модели AzureML и подключение службы, созданное на предыдущем шаге. Выберите модель и версию для активации развертывания. 
+1. Чтобы непрерывно развернуть модель машинного обучения с помощью Azure Pipelines, в разделе конвейеры выберите **выпуск**. Добавьте новый артефакт, а затем выберите артефакт **модели AzureML** и созданное ранее подключение службы. Выберите модель и версию для активации развертывания:
 
-    [![SELECT-Азуремлмодел-артефакт](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)](media/how-to-deploy-and-where/enable-modeltrigger-artifact-expanded.png)
+    [![Выбор модели AzureML](media/how-to-deploy-and-where/enable-modeltrigger-artifact.png)](media/how-to-deploy-and-where/enable-modeltrigger-artifact-expanded.png)
 
-1. Включите триггер модели для артефакта модели. При включении триггера каждый раз, когда указанная версия (например, в рабочей области регистрируется последняя версия этой модели. конвейер выпуска Azure DevOps запускается. 
+1. Включите триггер модели для артефакта модели. При включении триггера каждый раз, когда указанная версия (то есть самая последняя версия) в этой модели регистрируется в рабочей области, инициируется конвейер выпуска Azure DevOps.
 
-    [![Enable-Model-Trigger](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
+    [![Включение триггера модели](media/how-to-deploy-and-where/set-modeltrigger.png)](media/how-to-deploy-and-where/set-modeltrigger-expanded.png)
 
-Дополнительные примеры проектов и примеры см. в следующем примере репозиториев:
+Дополнительные примеры проектов и примеры см. в этих примерах репозиториев в GitHub:
 
-* [https://github.com/Microsoft/MLOps](https://github.com/Microsoft/MLOps)
-* [https://github.com/Microsoft/MLOpsPython](https://github.com/microsoft/MLOpsPython)
+* [Microsoft/Млопс](https://github.com/Microsoft/MLOps)
+* [Microsoft/Млопсписон](https://github.com/microsoft/MLOpsPython)
 
 ## <a name="package-models"></a>Модели пакетов
 
-В некоторых случаях может потребоваться создать образ DOCKER без развертывания модели. Например, при планировании [развертывания в службе приложений Azure](how-to-deploy-app-service.md). Также можно загрузить образ и запустить его на локальном компьютере DOCKER. Вы даже можете загрузить файлы, используемые для создания образа, проверить их, изменить и выполнить сборку вручную.
+В некоторых случаях может потребоваться создать образ DOCKER без развертывания модели (например, если планируется [развертывание в службе приложений Azure](how-to-deploy-app-service.md)). Также можно загрузить образ и запустить его в локальной установке DOCKER. Может даже потребоваться загрузить файлы, используемые для создания образа, проверить их, изменить и создать образ вручную.
 
-Упаковка модели позволяет выполнять оба действия. Он упаковывает все ресурсы, необходимые для размещения модели в качестве веб-службы, и позволяет скачать полностью созданный образ DOCKER или файлы, необходимые для его создания. Существует два способа использования упаковки модели.
+Упаковка модели позволяет выполнять эти задачи. Он упаковывает все ресурсы, необходимые для размещения модели в качестве веб-службы, и позволяет скачать полностью созданный образ DOCKER или файлы, необходимые для его создания. Существует два способа использования упаковки модели.
 
-* __Скачать упакованную модель__: Вы скачиваете образ DOCKER, содержащий модель и другие файлы, необходимые для размещения его в качестве веб-службы.
-* __Создать dockerfile__: Вы скачиваете dockerfile, модель, сценарий входа и другие ресурсы, необходимые для создания образа DOCKER. Затем можно проверить файлы или внести изменения, прежде чем создавать образ локально.
+**Скачайте упакованную модель:** Скачайте образ DOCKER, содержащий модель и другие файлы, необходимые для размещения его в качестве веб-службы.
 
-Оба пакета можно использовать для получения образа локального DOCKER. 
+**Создайте Dockerfile:** Скачайте Dockerfile, модель, сценарий входа и другие ресурсы, необходимые для создания образа DOCKER. Затем можно проверить файлы или внести изменения, прежде чем создавать образ локально.
+
+Оба пакета можно использовать для получения образа локального DOCKER.
 
 > [!TIP]
-> Создание пакета аналогично развертыванию модели, так как в нем используется Зарегистрированная модель и конфигурация вывода.
+> Создание пакета аналогично развертыванию модели. Вы используете зарегистрированную модель и конфигурацию вывода.
 
 > [!IMPORTANT]
-> Для таких функций, как загрузка полностью созданного образа или создание образа локально, требуется работающий экземпляр [DOCKER](https://www.docker.com) в среде разработки.
+> Чтобы загрузить полностью собранный образ или создать образ локально, необходимо установить [DOCKER](https://www.docker.com) в среде разработки.
 
 ### <a name="download-a-packaged-model"></a>Загрузка упакованной модели
 
-В следующем примере показано, как создать образ, зарегистрированный в реестре контейнеров Azure для вашей рабочей области:
+В следующем примере создается образ, который регистрируется в реестре контейнеров Azure для вашей рабочей области:
 
 ```python
 package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например, `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. После загрузки используйте `docker images` команду, чтобы вывести список локальных образов:
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
+
+`Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
+
+После загрузки модели используйте `docker images` команду, чтобы вывести список локальных образов:
 
 ```text
 REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
 myworkspacef78fd10.azurecr.io/package    20190822181338      7ff48015d5bd        4 minutes ago       1.43GB
 ```
 
-Чтобы запустить локальный контейнер с помощью этого образа, используйте следующую команду для запуска именованного контейнера из оболочки или командной строки. Замените значение идентификатором образа, возвращенным `docker images` из команды: `<imageid>`
+Чтобы запустить локальный контейнер на основе этого образа, используйте следующую команду для запуска именованного контейнера из оболочки или командной строки. Замените значение идентификатором изображения, возвращенным `docker images` командой. `<imageid>`
 
 ```bash
 docker run -p 6789:5001 --name mycontainer <imageid>
 ```
 
-Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что упрощает его работу. После запуска можно отправлять запросы в `http://localhost:6789/score`.
+Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что делает контейнер более легким для его завершения. После запуска контейнера можно отправлять запросы в `http://localhost:6789/score`.
 
-### <a name="generate-dockerfile-and-dependencies"></a>Создание dockerfile и зависимостей
+### <a name="generate-a-dockerfile-and-dependencies"></a>Создание Dockerfile и зависимостей
 
-В следующем примере показано, как загрузить dockerfile, модель и другие ресурсы, необходимые для создания образа локально. `generate_dockerfile=True` Параметр указывает, что нам нужно, чтобы файлы, а не полностью построенные образы:
+В следующем примере показано, как загрузить Dockerfile, модель и другие ресурсы, необходимые для создания образа локально. `generate_dockerfile=True` Параметр указывает, что требуется, чтобы файлы, а не полностью построенные образы.
 
 ```python
 package = Model.package(ws, [model], inference_config, generate_dockerfile=True)
 package.wait_for_creation(show_output=True)
-# Download the package
+# Download the package.
 package.save("./imagefiles")
-# Get the Azure Container Registry that the model/dockerfile uses
+# Get the Azure container registry that the model/Dockerfile uses.
 acr=package.get_container_registry()
 print("Address:", acr.address)
 print("Username:", acr.username)
 print("Password:", acr.password)
 ```
 
-Этот код скачивает файлы, необходимые для сборки образа, в `imagefiles` каталог. Dockerfile, включаемые в файлы сохранения, ссылаются на базовый образ, хранящийся в реестре контейнеров Azure. При создании образа в локальной установке DOCKER необходимо использовать адрес, имя пользователя и пароль для проверки подлинности в этом реестре. Выполните следующие действия, чтобы создать образ с помощью локальной установки docker:
+Этот код скачивает файлы, необходимые для сборки образа, в `imagefiles` каталог. Dockerfile, включаемые в сохраненные файлы, ссылаются на базовый образ, хранящийся в реестре контейнеров Azure. При создании образа в локальной установке DOCKER необходимо использовать адрес, имя пользователя и пароль для проверки подлинности в реестре. Выполните следующие действия, чтобы создать образ с помощью локальной установки docker:
 
-1. Чтобы проверить подлинность DOCKER с помощью реестра контейнеров Azure, из оболочки или сеанса командной строки используйте следующую команду. Замените `<address>`, `<username>` `package.get_container_registry()`и значениями,полученнымиспомощью`<password>` :
+1. Чтобы проверить подлинность DOCKER с помощью реестра контейнеров Azure, из оболочки или сеанса командной строки используйте следующую команду. Замените `<address>`, `<username>` `package.get_container_registry()`и значениями,полученными`<password>` .
 
     ```bash
     docker login <address> -u <username> -p <password>
     ```
 
-2. Чтобы создать образ, используйте следующую команду. Замените `<imagefiles>` на путь к каталогу, в `package.save()` котором сохранены файлы:
+2. Чтобы создать образ, используйте следующую команду. Замените `<imagefiles>` на путь к каталогу, в `package.save()` котором сохранены файлы.
 
     ```bash
     docker build --tag myimage <imagefiles>
@@ -878,7 +883,7 @@ print("Password:", acr.password)
 
     Эта команда задает имя образа в `myimage`.
 
-Чтобы убедиться, что образ создан, используйте `docker images` команду. Вы должны увидеть `myimage` изображение в списке:
+Чтобы убедиться, что образ построен, используйте `docker images` команду. Вы должны увидеть `myimage` изображение в списке:
 
 ```text
 REPOSITORY      TAG                 IMAGE ID            CREATED             SIZE
@@ -892,7 +897,7 @@ myimage         latest              739f22498d64        3 minutes ago       1.43
 docker run -p 6789:5001 --name mycontainer myimage:latest
 ```
 
-Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что упрощает его работу. После запуска можно отправлять запросы в `http://localhost:6789/score`.
+Эта команда запускает последнюю версию образа с именем `myimage`. Он сопоставляет локальный порт 6789 с портом в контейнере, прослушиваемом веб-службой (5001). Он также назначает имя `mycontainer` контейнеру, что делает контейнер более легким для его завершения. После запуска контейнера можно отправлять запросы в `http://localhost:6789/score`.
 
 ### <a name="example-client-to-test-the-local-container"></a>Пример клиента для тестирования локального контейнера
 
@@ -902,28 +907,28 @@ docker run -p 6789:5001 --name mycontainer myimage:latest
 import requests
 import json
 
-# URL for the web service
+# URL for the web service.
 scoring_uri = 'http://localhost:6789/score'
 
-# Two sets of data to score, so we get two results back
+# Two sets of data to score, so we get two results back.
 data = {"data":
         [
             [ 1,2,3,4,5,6,7,8,9,10 ],
             [ 10,9,8,7,6,5,4,3,2,1 ]
         ]
         }
-# Convert to JSON string
+# Convert to JSON string.
 input_data = json.dumps(data)
 
-# Set the content type
+# Set the content type.
 headers = {'Content-Type': 'application/json'}
 
-# Make the request and display the response
+# Make the request and display the response.
 resp = requests.post(scoring_uri, input_data, headers=headers)
 print(resp.text)
 ```
 
-Дополнительные примеры клиентов на других языках программирования см. в разделе [Использование моделей, развернутых в качестве веб-служб](how-to-consume-web-service.md).
+Примеры клиентов на других языках программирования см. в разделе [Использование моделей, развернутых в качестве веб-служб](how-to-consume-web-service.md).
 
 ### <a name="stop-the-docker-container"></a>Останавливает контейнер DOCKER
 
@@ -938,13 +943,13 @@ docker kill mycontainer
 Для удаления развернутой веб-службы используйте `service.delete()`.
 Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
 
-Дополнительные сведения см. в справочной документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--)и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
+Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
 ## <a name="next-steps"></a>Следующие шаги
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
-* [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
+* [Использование Машинное обучение Azureной модели, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
 

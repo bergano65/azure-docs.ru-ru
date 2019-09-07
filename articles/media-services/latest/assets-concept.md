@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 08/29/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 2f2dea922b7a3ba45ad6493ce94f0c52649dfa68
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 3dc1866a3c0339bca0c27fb53894a14581e88490
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70230977"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390494"
 ---
 # <a name="assets"></a>Ресурсы
 
@@ -48,7 +48,7 @@ ms.locfileid: "70230977"
     az storage blob upload -f /path/to/file -c MyContainer -n MyBlob
     ```
 2. Получите URL-адрес SAS с разрешениями на чтение и запись, которые будут использоваться для передачи цифровых файлов в контейнер ресурса. Можно использовать API Служб мультимедиа для вывода [списка URL-адресов контейнеров ресурса](https://docs.microsoft.com/rest/api/media/assets/listcontainersas).
-3. Используйте API службы хранилища Azure или пакеты SDK (например, [REST API службы хранилища](../../storage/common/storage-rest-api-auth.md), [пакет SDK для JAVA](../../storage/blobs/storage-quickstart-blobs-java-v10.md) или [пакет SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) для передачи файлов в контейнер ресурса. 
+3. Используйте API-интерфейсы или пакеты SDK службы хранилища Azure (например, [REST API](../../storage/common/storage-rest-api-auth.md) или [пакет SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) для отправки файлов в контейнер ресурсов. 
 4. Используйте API Служб мультимедиа версии 3, чтобы создать преобразование и задание для обработки входного ресурса. Дополнительные сведения см. в статье [Преобразования и задания](transform-concept.md).
 5. Потоковая передача содержимого из выходного ресурса.
 

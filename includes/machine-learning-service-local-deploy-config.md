@@ -4,21 +4,21 @@ ms.service: machine-learning
 ms.topic: include
 ms.date: 07/26/2019
 ms.author: larryfr
-ms.openlocfilehash: a87773c8f6ddda11b62064758b46d666740a03c2
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ec0f85ff568bcd89d74ccd727d1c5ecfd8aab398
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68556930"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390641"
 ---
 Записи в `deploymentconfig.json` документе соответствуют параметрам для [локалвебсервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описывается сопоставление между сущностями в документе JSON и параметрами метода.
 
 | Сущность JSON | Параметр метода | Описание |
 | ----- | ----- | ----- |
-| `computeType` | Н/Д | Целевой объект вычисления. Для Local значение должно быть `local`. |
+| `computeType` | Н/Д | Целевой объект вычисления. Для локальных целевых объектов значение должно быть `local`. |
 | `port` | `port` | Локальный порт, на который будет предоставляться конечная точка HTTP службы. |
 
-Следующий код JSON представляет собой пример конфигурации развертывания для использования с CLI:
+Этот формат JSON является примером конфигурации развертывания для использования с CLI:
 
 ```json
 {

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: ea7d3f56aa512b8f5998d710451ff3b37659ca13
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 93d5b3de47ec0b3c0494589da0baf87f91a0233a
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697842"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390256"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -92,13 +92,13 @@ ms.locfileid: "68697842"
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1.: Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
 + Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-+ Настройка конечной точки HTTP для извлечения сущностей. Она должна включать ресурс `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1/entities`
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Необходимо включить `/text/analytics/v2.1/entities`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций анализ текста.
 

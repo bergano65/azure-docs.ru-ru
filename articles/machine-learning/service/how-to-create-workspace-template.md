@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/16/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 89c24512e50dedbf10d145088ec77c2e6e303d1e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 34522c9a672de51cfa53ce52c5a6a6506fcd5454
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873151"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390517"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Создание рабочей области для Машинное обучение Azure службы с помощью шаблона Azure Resource Manager
 
@@ -55,6 +55,11 @@ ms.locfileid: "69873151"
 * **Имя рабочего пространства** Службы машинного обучения Azure в удобном для пользователя формате.
 
     Имена для всех остальных служб создаются случайным образом.
+
+> [!TIP]
+> Хотя шаблон, связанный с этим документом, создает новый реестр контейнеров Azure, вы также можете создать новую рабочую область, не создавая реестр контейнеров. Если в рабочей области имеется реестр контейнеров, то он будет создан при выполнении операции, требующей наличия реестра контейнеров. Например, обучение или развертывание модели.
+>
+> Вы также можете сослаться на существующий реестр контейнеров или учетную запись хранения в шаблоне Azure Resource Manager, а не создать новый.
 
 Дополнительные сведения о шаблонах вы найдете в следующих статьях.
 
