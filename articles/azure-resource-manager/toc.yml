@@ -4,6 +4,8 @@
   items:
     - name: Что такое Resource Manager?
       href: resource-group-overview.md
+    - name: Обзор шаблонов
+      href: template-deployment-overview.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -58,8 +60,6 @@
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager'
 - name: Основные понятия
   items:
-    - name: Развертывания шаблонов
-      href: template-deployment-overview.md
     - name: Рекомендации по работе с шаблоном
       href: template-best-practices.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
