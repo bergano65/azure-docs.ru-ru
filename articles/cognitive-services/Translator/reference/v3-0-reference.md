@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: swmachan
-ms.openlocfilehash: ad619ad965cf4b7d94b781818c658152f71250a7
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: cb5a3b8572cebfd6c0731a9e572e966fda280be6
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595001"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772787"
 ---
 # <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
@@ -99,7 +99,7 @@ Authorization: Bearer <Base64-access_token>
 
 Для подписки на API текстовых интерфейсов с несколькими службами требуется регион региона. Выбранный регион является единственным регионом, который можно использовать для перевода текста при использовании ключа подписки с несколькими службами, и должен быть тем же регионом, который вы выбрали при регистрации в подписке с несколькими службами с помощью портал Azure.
 
-Доступные регионы: `australiaeast`, `brazilsouth`, `canadacentral`, `centralindia`, `centraluseuap`, `eastasia`, `eastus`, `eastus2`, `japaneast`, `northeurope`, `southcentralus`, `southeastasia`, `uksouth`, `westcentralus`, `westeurope`, `westus` и `westus2`.
+Доступные регионы: `australiaeast` `brazilsouth` ,,`centraluseuap` ,`eastus2`,,, ,,,`japanwest`, ,`japaneast`, `centralindia` `centralus` `canadacentral` `eastasia` `eastus` `francecentral` `koreacentral`, ,`northcentralus` ,`southcentralus`, ,`uksouth`,,,, и`westus2`. `westeurope` `westcentralus` `southeastasia` `northeurope` `westus` `southafricanorth`
 
 Если секретный ключ передается в строке запроса с параметром `Subscription-Key`, необходимо указать регион с параметром запроса `Subscription-Region`.
 
@@ -165,5 +165,5 @@ Authorization: Bearer <Base64-access_token>
 | 415000| Заголовок Content-Type отсутствует или является недопустимым.|
 | 429000, 429001, 429002| Сервер отклонил запрос, так как клиент превысил лимиты запросов.|
 | 500000| Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
-| 503000| Служба временно недоступна. Повторите попытку. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
+| 503000| Служба временно недоступна. Попробуйте еще раз. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
 

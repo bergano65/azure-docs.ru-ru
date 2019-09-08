@@ -6,16 +6,16 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: cd07656ab4e6e0f684eecf35d241eac539b7a552
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 748c6f08da535013724f68b8be424e50a2d49dfd
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907473"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764433"
 ---
-# <a name="query-performance-insight"></a>Анализ производительности запросов 
+# <a name="query-performance-insight"></a>Сведения о производительности запросов 
 
-**Применимо к:** База данных Azure для PostgreSQL — один сервер 9,6 и 10
+**Применимо к:** База данных Azure для PostgreSQL — версии с одним сервером 9,6, 10, 11
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
 

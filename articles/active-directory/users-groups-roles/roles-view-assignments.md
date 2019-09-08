@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e21bd2b20ac48d3719e41b1e93a82cbe5a864b7
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 923c828a3d7e9e10d79fcf079839b84c2f0e0f77
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382580"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772375"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Просмотр пользовательских назначений ролей в Azure Active Directory
 
@@ -100,9 +100,9 @@ HTTP/1.1 200 OK
 }
 ```
 
-## <a name="view-assignments-of-a-role-with-single-application-scope-preview"></a>Просмотр назначений роли с областью действия одного приложения (Предварительная версия)
+## <a name="view-assignments-of-single-application-scope"></a>Просмотр назначений области одного приложения
 
-В этом разделе описывается Просмотр назначений роли с областью действия одного приложения.
+В этом разделе описывается Просмотр назначений роли с областью действия одного приложения. Эта функция сейчас доступна в виде общедоступной предварительной версии.
 
 1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 1. Выберите **Регистрация приложений**, а затем выберите регистрацию приложения, чтобы просмотреть его свойства. Может потребоваться выбрать **все приложения** , чтобы просмотреть полный список регистраций приложений в вашей организации Azure AD.

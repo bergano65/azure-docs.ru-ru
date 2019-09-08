@@ -6,16 +6,16 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: e1e9e998c2ac4695d955a546d0f02fbc2b517d5e
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 5f1b64753d19158b17d4de1b3fbbe50d30ea0254
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907478"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764665"
 ---
 # <a name="performance-recommendations-in-azure-database-for-postgresql---single-server"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL — один сервер
 
-**Применимо к:** База данных Azure для PostgreSQL — один сервер 9,6 и 10
+**Применимо к:** База данных Azure для PostgreSQL — версии с одним сервером 9,6, 10, 11
 
 Функция рекомендаций по производительности анализирует базы данных, чтобы создать настраиваемые предложения для повышения производительности. Для получения рекомендаций анализ рассматривает различные характеристики базы данных, включая схему. Включите [хранилище запросов](concepts-query-store.md) на сервере, чтобы полностью использовать функцию "рекомендации по повышению производительности". После реализации каких-либо рекомендаций по производительности следует протестировать производительность, чтобы оценить влияние этих изменений. 
 

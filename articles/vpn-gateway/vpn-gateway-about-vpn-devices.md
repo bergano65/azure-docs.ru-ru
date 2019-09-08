@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 07/05/2019
+ms.date: 09/06/2019
 ms.author: yushwang
-ms.openlocfilehash: 323db6e7274db1a53e49b5bd7d33b2eb3700a62b
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: add6fbf0177586bc8969a563260427bc8397d97e
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376421"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773764"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -38,7 +38,7 @@ ms.locfileid: "70376421"
 |**поставщик**          |**Семейство устройств**     |**Минимальная версия ОС** |**Инструкции по настройке PolicyBased** |**Инструкции по настройке RouteBased** |
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Не совместимо  |[Руководство по настройке](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
-| Allied Telesis     |VPN-маршрутизаторы серии AR |Серии AR 5.4.7+               |Скоро выходит     |[Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
+| Allied Telesis     |VPN-маршрутизаторы серии AR |Серии AR 5.4.7+               |Ожидается в ближайшее время     |[Руководство по настройке](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
 | Barracuda Networks, Inc. |Брандмауэр Barracuda NextGen серии F |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Руководство по настройке](https://techlib.barracuda.com/NGF/AzurePolicyBasedVPNGW) |[Руководство по настройке](https://techlib.barracuda.com/NGF/AzureRouteBasedVPNGW) |
 | Barracuda Networks, Inc. |Брандмауэр Barracuda NextGen серии Х |Barracuda Firewall 6.5 |[Руководство по настройке](https://techlib.barracuda.com/BFW/ConfigAzureVPNGateway) |Не совместимо |
 | Check Point |Security Gateway |R80.10 |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
@@ -50,6 +50,7 @@ ms.locfileid: "70376421"
 | Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководство по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
 | F5 |Серия BIG-IP |12.0 |[Руководство по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководство по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
 | Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](https://docs.fortinet.com/document/fortigate/6.2.0/azure-cookbook/989216/connecting-a-local-fortigate-to-an-azure-vnet-vpn) |
+| Хиллстоне сети | Брандмауэры следующего поколения (NGFW) | 5,5 R7  |  | [Руководство по настройке](https://www.hillstonenet.com/wp-content/uploads/How-to-setup-Site-to-Site-VPN-between-Microsoft-Azure-and-an-on-premise-Hillstone-Networks-Security-Gateway.pdf) |
 | Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](https://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
 | Juniper |SRX |PolicyBased: JunOS 10.2<br>RouteBased: JunOS 11.4 |Поддерживается |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |Поддерживается |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
@@ -152,24 +153,24 @@ ms.locfileid: "70376421"
 
 |-  |**Шифрование**|**Authentication**|**Группа PFS**|
 |---| ---          |---               |---          |
-| 1 |GCM AES256    |GCM (AES256)      |Отсутствуют         |
-| 2 |AES256        |SHA1              |Отсутствуют         |
-| 3 |3DES          |SHA1              |Отсутствуют         |
-| 4 |AES256        |SHA256            |Отсутствуют         |
-| 5 |AES128        |SHA1              |Отсутствуют         |
-| 6 |3DES          |SHA256            |Отсутствуют         |
+| 1 |GCM AES256    |GCM (AES256)      |Нет         |
+| 2 |AES256        |SHA1              |Нет         |
+| 3 |3DES          |SHA1              |Нет         |
+| 4 |AES256        |SHA256            |Нет         |
+| 5 |AES128        |SHA1              |Нет         |
+| 6 |3DES          |SHA256            |Нет         |
 
 #### <a name="azure-gateway-as-responder"></a>Шлюз Azure в качестве ответчика
 
 |-  |**Шифрование**|**Authentication**|**Группа PFS**|
 |---| ---          | ---              |---          |
-| 1 |GCM AES256    |GCM (AES256)      |Отсутствуют         |
-| 2 |AES256        |SHA1              |Отсутствуют         |
-| 3 |3DES          |SHA1              |Отсутствуют         |
-| 4 |AES256        |SHA256            |Отсутствуют         |
-| 5 |AES128        |SHA1              |Отсутствуют         |
-| 6 |3DES          |SHA256            |Отсутствуют         |
-| 7 |DES           |SHA1              |Отсутствуют         |
+| 1 |GCM AES256    |GCM (AES256)      |Нет         |
+| 2 |AES256        |SHA1              |Нет         |
+| 3 |3DES          |SHA1              |Нет         |
+| 4 |AES256        |SHA256            |Нет         |
+| 5 |AES128        |SHA1              |Нет         |
+| 6 |3DES          |SHA256            |Нет         |
+| 7 |DES           |SHA1              |Нет         |
 | 8 |AES256        |SHA1              |1            |
 | 9 |AES256        |SHA1              |2            |
 | 10|AES256        |SHA1              |14           |
@@ -184,7 +185,7 @@ ms.locfileid: "70376421"
 | 19|AES256        |SHA256            |14           |
 | 20|AES256        |SHA1              |24           |
 | 21|AES256        |SHA256            |24           |
-| 22|AES128        |SHA256            |Отсутствуют         |
+| 22|AES128        |SHA256            |Нет         |
 | 23|AES128        |SHA256            |1            |
 | 24|AES128        |SHA256            |2            |
 | 25|AES128        |SHA256            |14           |

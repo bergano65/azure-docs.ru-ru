@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: e6f781926e2a30ecf6d34274b20991b81f0bb96d
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 0f8e605db3d647b5907c8c6741e4e2200bf14c4f
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972902"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772364"
 ---
 # <a name="create-and-manage-vlanssubnets-for-your-private-clouds"></a>Создание виртуальных ЛС и подсетей для частных облаков и управление ими
 
@@ -21,7 +21,7 @@ ms.locfileid: "69972902"
 
 ## <a name="create-a-vlansubnet"></a>Создание виртуальной ЛС или подсети
 
-1. [Откройте портал клаудсимпле](monitor-activity.md) и выберите **сеть** в боковом меню.
+1. [Откройте портал клаудсимпле](access-cloudsimple-portal.md) и выберите **сеть** в боковом меню.
 2. Выберите **виртуальные ЛС и подсети**.
 3. Щелкните **создать виртуальную ЛС или подсеть**.
 

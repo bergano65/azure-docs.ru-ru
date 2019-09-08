@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/04/2019
-ms.openlocfilehash: db2457cc3e320ac413cb245f51810b654c63aa22
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.date: 09/06/2019
+ms.openlocfilehash: 6c1104ba340f23a76d5b9b4167f895f5a115152c
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70308995"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773292"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Чтение реплик в базе данных Azure для MariaDB
 
@@ -35,7 +35,9 @@ ms.locfileid: "70308995"
 ## <a name="cross-region-replication"></a>Репликация между регионами
 Вы можете создать реплику чтения в другом регионе на главном сервере. Репликация между регионами может быть полезной для таких сценариев, как планирование аварийного восстановления или передача данных ближе к пользователям.
 
-Главный сервер можно использовать в любом [регионе базы данных Azure для MariaDB](https://azure.microsoft.com/global-infrastructure/services/?products=mariadb).  Главный сервер может иметь реплику в связанном регионе или в регионах универсальной реплики.
+Главный сервер можно использовать в любом [регионе базы данных Azure для MariaDB](https://azure.microsoft.com/global-infrastructure/services/?products=mariadb).  Главный сервер может иметь реплику в связанном регионе или в регионах универсальной реплики. На рисунке ниже показано, какие регионы реплик доступны в зависимости от главного региона.
+
+[![Чтение регионов реплики](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Регионы универсальной реплики
 Вы всегда можете создать реплику чтения в любом из следующих регионов, независимо от того, где находится главный сервер. Это регионы универсальной реплики:

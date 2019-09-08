@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45105501e238f918b8b3d3a6aa95a0d7b6116d9
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: c26e77fdf6e10e53f5acc0271986700c98fa690d
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382797"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772547"
 ---
 # <a name="custom-administrator-roles-in-azure-active-directory-preview"></a>Роли настраиваемого администратора в Azure Active Directory (Предварительная версия)
 
@@ -76,4 +76,4 @@ ms.locfileid: "70382797"
 ## <a name="next-steps"></a>Следующие шаги
 
 - Создание настраиваемых назначений ролей с помощью [портал Azure, Azure AD PowerShell и API Graph](roles-create-custom.md)
-- [Просмотр назначений для пользовательской роли](roles-view-assignments.md#view-assignments-of-a-role-with-single-application-scope-preview)
+- [Просмотр назначений для пользовательской роли](roles-view-assignments.md#view-assignments-of-single-application-scope)

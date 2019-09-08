@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: c56d469360814cb663b4c5c11689961225eebb2d
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 798f95281740213ac23892eb3b54ff780ca18395
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544673"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772349"
 ---
 # <a name="set-up-firewall-tables-and-rules-for-private-clouds"></a>Настройка таблиц и правил брандмауэра для частных облаков
 
@@ -24,7 +24,7 @@ ms.locfileid: "69544673"
 
 ## <a name="add-a-new-firewall-table"></a>Добавление новой таблицы брандмауэра
 
-1. [Откройте портал клаудсимпле](monitor-activity.md) и выберите **сеть** в боковом меню.
+1. [Откройте портал клаудсимпле](access-cloudsimple-portal.md) и выберите **сеть** в боковом меню.
 2. Выберите **таблицы брандмауэра**.
 3. Выберите **создать таблицу брандмауэра**.
 

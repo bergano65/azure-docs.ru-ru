@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: fe9879f9574fe1496ebdf20ac76fe5b759d4ea6a
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+title: Репозитории и образы контейнеров
+services: cognitive-services
+author: IEvangelist
+manager: nitinme
+description: Две таблицы, представляющие реестры контейнеров, репозитории и имена образов для всех предложений службы.
+ms.service: cognitive-services
+ms.topic: include
+ms.date: 09/06/2019
+ms.author: dapine
+ms.openlocfilehash: 600c01fc2a273141b06996369231c2389c5d6d57
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051234"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70775891"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
 В таблицах ниже приведен полный список доступных образов контейнеров, предлагаемых Cognitive Services Azure.
 
-#### <a name="public-container-registry-mcrmicrosoftcom"></a>Общедоступный (реестр `mcr.microsoft.com`контейнеров:)
+#### <a name="public-ungated-container-registry-mcrmicrosoftcom"></a>Открытый "неусловный" (реестр контейнеров: `mcr.microsoft.com`)
 
-В реестре контейнеров Microsoft размещаются все контейнеры общедоступной версии (GA) для Cognitive Services.
+В реестре контейнеров Microsoft размещены все общедоступные контейнеры с неконтролируемыми разворотами для Cognitive Services.
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
@@ -21,9 +30,9 @@ ms.locfileid: "70051234"
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Распознавание языка | `mcr.microsoft.com/azure-cognitive-services/language` |
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Анализ тональности | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
 
-#### <a name="public-preview-container-registry-containerpreviewazurecrio"></a>Общедоступная Предварительная версия `containerpreview.azurecr.io`(реестр контейнеров:)
+#### <a name="public-gated-preview-container-registry-containerpreviewazurecrio"></a>Общедоступная Предварительная версия (реестр контейнеров: `containerpreview.azurecr.io`)
 
-В реестре предварительного просмотра контейнера размещаются все открытые контейнеры для Cognitive Services, которые еще не были выполнены в общедоступной версии. Эти контейнеры требуют формального запроса доступа, чтобы их можно было использовать.
+В реестре предварительного просмотра контейнера размещаются все общедоступные контейнеры с проверкой поCognitive Services. Эти контейнеры требуют формального запроса доступа, чтобы их можно было использовать.
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|

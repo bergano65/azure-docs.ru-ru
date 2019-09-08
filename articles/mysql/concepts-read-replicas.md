@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/04/2019
-ms.openlocfilehash: f567eefee84cf6a01afad4e5245337dd92b8cc48
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.date: 09/06/2019
+ms.openlocfilehash: 7e1f27738ae5a87cfb84fad955f80ad2f2eb910f
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309432"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773318"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -34,7 +34,9 @@ ms.locfileid: "70309432"
 ## <a name="cross-region-replication"></a>Репликация между регионами
 Вы можете создать реплику чтения в другом регионе на главном сервере. Репликация между регионами может быть полезной для таких сценариев, как планирование аварийного восстановления или передача данных ближе к пользователям.
 
-Главный сервер может находиться в любом [регионе базы данных Azure для MySQL](https://azure.microsoft.com/global-infrastructure/services/?products=mysql).  Главный сервер может иметь реплику в связанном регионе или в регионах универсальной реплики.
+Главный сервер может находиться в любом [регионе базы данных Azure для MySQL](https://azure.microsoft.com/global-infrastructure/services/?products=mysql).  Главный сервер может иметь реплику в связанном регионе или в регионах универсальной реплики. На рисунке ниже показано, какие регионы реплик доступны в зависимости от главного региона.
+
+[![Чтение регионов реплики](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Регионы универсальной реплики
 Вы всегда можете создать реплику чтения в любом из следующих регионов, независимо от того, где находится главный сервер. Это регионы универсальной реплики:

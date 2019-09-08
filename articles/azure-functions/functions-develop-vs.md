@@ -8,12 +8,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: glenga
-ms.openlocfilehash: 10c356afc235494b00777561259190ae78b65482
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: ebc900735dfbb25206c4b22e3d20da62d85c61df
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69905679"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773162"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -41,6 +41,8 @@ Visual Studio предоставляет следующие преимущест
 
 > [!NOTE]
 > В Visual Studio 2017 Рабочая нагрузка разработки Azure устанавливает инструменты функций Azure как отдельное расширение. При обновлении Visual Studio 2017 также убедитесь, что вы используете [самую последнюю версию](#check-your-tools-version) средств функций Azure. В следующих разделах показано, как проверить и (при необходимости) обновить расширение средств работы с функциями Azure в Visual Studio 2017. 
+>
+> Если вы используете Visual Studio 2019, пропустите этот раздел.
 
 ### <a name="check-your-tools-version"></a>Проверка версии инструментов в Visual Studio 2017
 
@@ -146,7 +148,7 @@ Visual Studio предоставляет следующие преимущест
 
 Как и триггеры, входные и выходные привязки добавляются к функции в виде атрибутов. Добавьте привязки к функции следующим образом:
 
-1. Убедитесь, что вы [настроили проект для локальной разработки](#configure-the-project-for-local-development).
+1. Убедитесь, что [проект настроен для локальной разработки](#configure-the-project-for-local-development).
 
 2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](./functions-bindings-register.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера Центров событий см. в [справочной статье о привязках Центров событий](functions-bindings-event-hubs.md).
 

@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 07/29/2019
+ms.date: 09/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1dfcc69d90daae5869c3b69c922e99eab3585e14
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 7855b1048826a9146e206226ae7326661e4609cb
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164625"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764401"
 ---
 # <a name="azure-disk-encryption-overview"></a>Общие сведения о шифровании дисков Azure
 
@@ -72,6 +72,7 @@ ms.locfileid: "70164625"
 * служба файлов Azure (общая файловая система);
 * сетевая файловая система (NFS);
 * динамические тома;
+* Контейнеры Windows Server, которые создают динамические тома для каждого контейнера.
 * Временные диски ОС.
 * Шифрование общих и распределенных файловых систем, таких как (но не ограниченных): DFS, GFS, ДРДБ, Цеффс и т. д.
 

@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 12a6af73dc0abc9598184f6c83e9d7652973a99e
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 565c9ad0fbd37b026a1ba555d83b9032d2efcba4
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544452"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773801"
 ---
 # <a name="allocate-public-ip-addresses-for-private-cloud-environment"></a>Выделение общедоступных IP-адресов для среды частного облака
 
 Откройте вкладку общедоступные IP-адреса на странице сеть, чтобы выделить общедоступные для виртуальных машин виртуальные машины в среде частного облака.
 
-1. [Откройте портал клаудсимпле](monitor-activity.md) и выберите **сеть** в боковом меню.
+1. [Откройте портал клаудсимпле](access-cloudsimple-portal.md) и выберите **сеть** в боковом меню.
 2. Выберите **общедоступные IP-адреса**.
 3. Щелкните **новый общедоступный IP-адрес**.
 

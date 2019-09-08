@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: alkarche
-ms.openlocfilehash: e5f856bbd8f6fdec46d947a4c726024a08a2b6e9
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 72e359cf5cfef2072d3511990297f67fc4df92bb
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096039"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773052"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 
@@ -65,7 +65,7 @@ ms.locfileid: "70096039"
 
  
 >[!Note]  
->Если функция использует уровень авторизации *функции, администратора или системы*, вам нужно указать код и идентификатор клиента в соответствии с исходным URL-адресом функции. В этом случае ссылка будет выглядеть так: `"backendurl": "https://localhost/api/httptriggerC#1?code=<keyvalue>&clientId=<keyname>"`
+>Если функция использует уровень авторизации *функции, администратора или системы*, вам нужно указать код и идентификатор клиента в соответствии с исходным URL-адресом функции. В этом случае ссылка будет выглядеть следующим образом: `"backendurl": "https://localhost/api/httptriggerC#1?code=<keyvalue>&clientId=<keyname>"`Рекомендуется хранить эти ключи в [Параметры приложения] и ссылаться на них в прокси-серверах. Это позволяет избежать сохранения секретов в исходном коде. 
 
 ### <a name="request-parameters"></a>Ссылки на параметры запроса
 
@@ -112,7 +112,7 @@ ms.locfileid: "70096039"
 
 Чтобы полностью отключить трассировку, добавьте `"debug":false` для конкретного прокси-сервера в `proxies.json`.
 
-## <a name="advanced-configuration"></a>Расширенная настройка
+## <a name="advanced-configuration"></a>Расширенная конфигурация
 
 Настроенные прокси-серверы хранятся в файле *proxies.json*, расположенном в корневом каталоге приложения-функции. Вы можете вручную изменить этот файл и развернуть его как часть приложения, используя любой из [методов развертывания](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment), поддерживаемых Функциями. 
 

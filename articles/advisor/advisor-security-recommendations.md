@@ -12,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: kasparks
-ms.openlocfilehash: 290af605525d552e73c5f3a7a961593689326946
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1e9c3556d904dd961a2b8f99f84983c35ccf5c6a
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60467686"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772279"
 ---
 # <a name="make-resources-more-secure-with-azure-advisor"></a>Обеспечение более надежной защиты ресурсов с помощью средства "Помощник по Azure"
 
@@ -33,12 +33,12 @@ ms.locfileid: "60467686"
 
 2.  На панели мониторинга Помощника выберите вкладку **Безопасность**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Приступая к работе с Azure Advisor](advisor-get-started.md)
-* [Рекомендации Azure Advisor по затратам](advisor-performance-recommendations.md)
+* [Начало работы с Помощником по Azure](advisor-get-started.md)
+* [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
 
