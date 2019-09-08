@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
-ms.openlocfilehash: e9e37c54668ec0343cbfd45e51e90216955b46c4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d8fed68d9b830df359f8129d55f1b9911f69e8f1
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100023"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70802251"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Общие сведения о приложениях и решениях Oracle в Azure
 
@@ -26,13 +26,13 @@ ms.locfileid: "70100023"
 
 ## <a name="oracle-databases-on-azure-infrastructure"></a>Базы данных Oracle в инфраструктуре Azure
 
-Запуск баз данных Oracle в инфраструктуре Azure с помощью образов Linux, доступных в Azure Marketplace:
+Запуск баз данных Oracle в инфраструктуре Azure с помощью Oracle Database для образов Oracle Linux, доступных в Azure Marketplace:
 
 * Oracle Database 12,1, 12,2 и 18,3 Enterprise Edition 
 
 * Oracle Database 12,1, 12,2 и 18,3 Standard Edition 
 
-Вы также можете создать решение на основе пользовательского образа, созданного с нуля в Azure, или отправить пользовательский образ из локальной среды.
+Вы также можете настроить Oracle Database на неOracle Linuxном образе, доступном в Azure, создать решение на основе пользовательского образа, созданного с нуля в Azure, или отправить пользовательский образ из локальной среды.
 
 При необходимости настройте с несколькими подключенными дисками и увеличьте производительность базы данных, установив автоматическое управление хранилищем (ASM) Oracle.
 
@@ -46,17 +46,23 @@ ms.locfileid: "70100023"
 
 ## <a name="high-availability-and-disaster-recovery-options"></a>Параметры высокого уровня доступности и аварийного восстановления
 
-* Настройте Oracle Data Guard, Active Data Guard или GoldenGate в инфраструктуре Azure в сочетании с [зоны доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности.
+* Настройте [Oracle Data Guard](https://docs.oracle.com/cd/B19306_01/server.102/b14239/concepts.htm#g1049956), [Active Data Guard с фсфо](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dgbkr/index.html), [сегментированием](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/sharding-overview.html) или [золотым шлюзом](https://www.oracle.com/middleware/technologies/goldengate.html) в инфраструктуре Azure в сочетании с [зоны доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности в регионе. Вы также можете настроить эти конфигурации в нескольких регионах Azure для повышения доступности и аварийного восстановления.
 
 * Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) , чтобы управлять аварийным восстановлением для виртуальных машин Oracle Linux и локальных или физических серверов, а также осуществлять управление ими. 
 
-* Включите кластеры реальных приложений Oracle (RAC) в Azure с помощью [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
+* Включите кластеры реальных приложений (RAC) Oracle в Azure с помощью [решения VMware для Azure](https://docs.azure.cloudsimple.com/oracle-rac/) или [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
+
+## <a name="backup-oracle-workloads"></a>Резервные рабочие нагрузки Oracle
+
+* Резервное копирование виртуальных машин Oracle с помощью [Azure Backup](https://docs.microsoft.com/en-us/azure/backup/backup-overview)
+
+* Создайте резервную копию Oracle Database с помощью Oracle RMAN и, при необходимости, используйте [предохранитель BLOB-объекта Azure](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-how-to-mount-container-linux) , чтобы подключить [высокоредудантную учетную запись хранилища больших двоичных объектов Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) и записать в нее резервные копии RMAN для повышения устойчивости.
 
 ## <a name="integration-of-azure-with-oci-preview"></a>Интеграция Azure с OCI (Предварительная версия)
 
 Запускайте приложения Oracle в инфраструктуре Azure, подключенные к серверным базам данных в облачной инфраструктуре Oracle (OCI). Это решение использует следующие возможности: 
 
-* **Сети** между облаками. Используйте прямое соединение между Azure ExpressRoute и Oracle фастконнект для установки соединений с высокой пропускной способностью, частными и низкой задержкой между приложением и уровнем базы данных.
+* **Сети между облаками** . Используйте прямое соединение между Azure ExpressRoute и Oracle фастконнект для установки соединений с высокой пропускной способностью, частными и низкой задержкой между приложением и уровнем базы данных.
 * **Интегрированная идентификация** . Настройте федеративные удостоверения между Azure AD и Oracle идкс, чтобы создать единый источник удостоверений для решений. Включите единый вход для управления ресурсами в OCI и Azure.
 
 ### <a name="deploy-oracle-applications-on-azure"></a>Развертывание приложений Oracle в Azure
@@ -84,4 +90,4 @@ ms.locfileid: "70100023"
 
 * Дополнительные сведения о развертывании [образов виртуальных машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
 
-* Узнайте больше о том, как присоединиться к [Azure с помощью OCI](oracle-oci-overview.md).
+* Узнайте больше о том, как [присоединиться к Azure с помощью OCI](oracle-oci-overview.md).

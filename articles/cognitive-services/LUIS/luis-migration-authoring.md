@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 09/06/2019
 ms.author: diberry
-ms.openlocfilehash: 7fe35edfbfc8f50aa9428e41e7d807a0838417ec
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: bfd11254ffccd5085701071fcdb2116ca368bc82
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259665"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70801458"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
@@ -43,7 +43,7 @@ Language Understanding (LUIS) создание аутентификации из
 Миграция не является: 
 
 * Процесс, который собирает участников совместной работы и автоматически перемещает или добавляет в ресурс разработки Azure. Вы, как владелец приложения, должны выполнить этот шаг. Для этого шага требуются разрешения для соответствующего ресурса.
-* Процесс создания и назначения ресурса среды выполнения прогнозирования. Если требуется ресурс среды выполнения прогнозирования, это [отдельный процесс](/luis-how-to-azure-subscription.md#create-runtime-resource-in-the-azure-portal) , который не изменяется. 
+* Процесс создания и назначения ресурса среды выполнения прогнозирования. Если требуется ресурс среды выполнения прогнозирования, это [отдельный процесс](luis-how-to-azure-subscription.md##create-resources-in-the-azure-portal) , который не изменяется. 
 
 ## <a name="how-are-the-apps-migrating"></a>Как приложения переносятся?
 

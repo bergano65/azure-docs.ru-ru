@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 09/06/2019
 ms.author: juliako
-ms.openlocfilehash: f4a859f1e63866a50167031569dca05de3e9af27
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 618aa58fe8553789c831ca933ae6be73843b93dd
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856310"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70801392"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,7 +34,11 @@ ms.locfileid: "68856310"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
-## <a name="august-2019"></a>2019 августа
+## <a name="september-2019"></a>Сентябрь 2019 г.
+
+Службы мультимедиа v3 сообщают о предварительной версии в 24 часа x 365 дней в реальном времени в реальном времени.
+ 
+## <a name="august-2019"></a>Август 2019 г.
 
 ### <a name="south-africa-regional-pair-is-open-for-media-services"></a>Для служб мультимедиа открыта пара региональных стандартов Южно-Африканского языка 
 
@@ -98,9 +102,9 @@ ms.locfileid: "68856310"
 * [Фацедетекторпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен во встроенные предустановки анализатора.
 * [Контентаваринкодинжекспериментал](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) был добавлен во встроенные предустановки кодировщика. Дополнительные сведения см. в разделе [кодировка с учетом содержимого](cae-experimental.md). 
 
-## <a name="march-2019"></a>Март 2019
+## <a name="march-2019"></a>Март 2019 г.
 
-Динамическая упаковка теперь поддерживает Dolby атмос. Дополнительные сведения см. в разделе аудиокодеки, [Поддерживаемые динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
+Динамическая упаковка теперь поддерживает Dolby атмос. Дополнительные сведения см. в разделе [аудиокодеки, поддерживаемые динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
 
 Теперь можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. Дополнительные сведения см. в разделе [связывание фильтров с указателем потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 
