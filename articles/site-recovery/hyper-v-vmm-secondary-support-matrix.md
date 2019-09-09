@@ -1,23 +1,22 @@
 ---
-title: Матрица поддержки аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью службы Azure Site Recovery | Документация Майкрософт
+title: Таблица поддержки для аварийного восстановления виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с Azure Site Recovery
 description: Общие сведения о поддержке репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт с помощью Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: e8b8f9856fe7e0fa591ceb42aab97e92642b6098
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9c3a19d44a4ac0fba37f4815b65b17c26d257dbc
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399351"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813622"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-hyper-v-vms-to-a-secondary-site"></a>Матрица поддержки аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
 
-В этой статье перечислены поддерживаемые компоненты при использовании [Azure Site Recovery](site-recovery-overview.md) service для репликации виртуальных машин Hyper-V, управляемых в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт. Если нужно реплицировать виртуальные машины Hyper-V в Azure, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
+В этой статье перечислены поддерживаемые возможности при использовании службы [Azure Site Recovery](site-recovery-overview.md) для репликации виртуальных машин Hyper-V, управляемых в облаках System Center Virtual Machine Manager (VMM) на дополнительный сайт. Если нужно реплицировать виртуальные машины Hyper-V в Azure, ознакомьтесь с [этой таблицей поддержки](hyper-v-azure-support-matrix.md).
 
 > [!NOTE]
 > Вы можете выполнить репликацию на дополнительный сайт, только если управление узлами Hyper-V осуществляется в облаках VMM.
@@ -29,7 +28,7 @@ ms.locfileid: "66399351"
 **Операционная система** | **Сведения**
 --- | ---
 Windows Server 2012 R2 | На сервере должны быть установлены последние обновления.
-Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
+Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие узлы Windows Server 2016 и 2012 R2, не поддерживаются.<br/><br/> Развернутые компоненты, обновленные с System Center 2012 R2 VMM 2012 R2 до System Center 2016, сейчас не поддерживаются.
 
 
 ## <a name="replicated-vm-support"></a>Поддержка реплицируемых виртуальных машин
@@ -38,7 +37,7 @@ Windows Server 2016 |  Сейчас облака VMM 2016, сочетающие 
 
 **Версия Windows** | **Hyper-V (с VMM)**
 --- | ---
-Windows Server 2016 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows) на базе Windows Server 2016 
+Windows Server 2016 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows) на базе Windows Server 2016 
 Windows Server 2012 R2 | Любая операционная система на виртуальной машине, [поддерживаемая Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027%28v%3dws.11%29) на базе Windows Server 2012 R2
 
 ## <a name="linux-machine-storage"></a>Хранилище компьютера Linux
@@ -66,7 +65,7 @@ Windows Server 2012 R2 | Любая операционная система на
 Гостевая виртуальная машина — несколько сетевых адаптеров | Да
 
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="host-storage"></a>Хранилище узла
 
@@ -114,7 +113,7 @@ RDM | Н/Д
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Репликация виртуальных машин Hyper-V из облаков VMM на вторичный сайт VMM](tutorial-vmm-to-vmm.md)
 

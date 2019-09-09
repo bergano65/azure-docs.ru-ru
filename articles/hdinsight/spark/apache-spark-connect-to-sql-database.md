@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: 3812cf55a26a12ef110b8acf14edd0e8bfd36851
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 20c4571ee795c280e6c916e3080279a6d13fecce
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236517"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814209"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
 Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Кластер Azure HDInsight Spark**.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
@@ -36,7 +36,7 @@ ms.locfileid: "66236517"
 Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье. 
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
-1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если вы не видите **панели мониторинга кластера**выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
+1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера**не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
     ![Записная книжка Jupyter в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
    
@@ -95,7 +95,7 @@ ms.locfileid: "66236517"
    
     Должен отобразиться следующий результат:
 
-    ![Указание имени для записной книжки](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "Указание имени для записной книжки")
+    ![выходные данные схемы](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "выходные данные схемы")
 
 1. Вы также можете выполнять такие операции, как извлечение первых 10 строк.
 
@@ -146,13 +146,13 @@ ms.locfileid: "66236517"
 
 1. Подключитесь к базе данных SQL Azure с помощью SSMS и убедитесь, что вы видите таблицу `dbo.hvactable`.
 
-    a. Запустите SSMS и подключитесь к базе данных SQL Azure, указав сведения о подключении, как показано на снимке экрана.
+    1\. Запустите SSMS и подключитесь к базе данных SQL Azure, указав сведения о подключении, как показано на снимке экрана.
 
-    ![Подключение к базе данных SQL с помощью SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS")
+    ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
     2\. В обозревателе объектов разверните узел "База данных SQL Azure" и "Таблица", чтобы увидеть созданную таблицу **dbo.hvactable**.
 
-    ![Подключение к базе данных SQL с помощью SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS")
+    ![Подключение к базе данных SQL с помощью SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS2")
 
 1. Выполните запрос в SSMS для просмотра всех столбцов в таблице.
 
@@ -174,7 +174,7 @@ ms.locfileid: "66236517"
        import org.apache.spark.sql.streaming._
        import java.sql.{Connection,DriverManager,ResultSet}
 
-1. Мы выполняем потоковую передачу данных из **HVAC.csv** в hvactable. Файл HVAC.csv находится в кластере в `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Мы выполняем потоковую передачу данных из **HVAC.csv** в hvactable. Файл отопления. csv доступен в кластере по адресу `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
        val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
        val readStreamDf = spark.readStream.schema(userSchema).csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/") 
@@ -229,7 +229,7 @@ ms.locfileid: "66236517"
 
         SELECT COUNT(*) FROM hvactable
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Структурированная потоковая передача Apache Spark в HDInsight для обработки событий из концентраторов событий](apache-spark-eventhub-structured-streaming.md)

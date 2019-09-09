@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Spark для анализа данных в Azure Data Lake Storage 1-го поколения
-description: Выполнение заданий Spark для анализа хранимых данных в Azure Data Lake Storage 1-го поколения
+description: Выполнение заданий Apache Spark для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,18 +8,18 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: 5a98cb2356c25329e091514dd1d6181dfc2690be
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f57d054134b9f2c8b327fe157e7a5b5e3d5ff183
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448658"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813922"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
-В этой статье используется [записной книжки Jupyter](https://jupyter.org/) доступной с кластерами HDInsight Spark для выполнения задания, которое считывает данные из учетной записи хранения Озера данных.
+В этой статье вы используете [Jupyter Notebook](https://jupyter.org/) , доступных в кластерах HDInsight Spark для выполнения задания, считывающего данные из учетной записи Data Lake Storage.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](../../data-lake-store/data-lake-store-get-started-portal.md).
 

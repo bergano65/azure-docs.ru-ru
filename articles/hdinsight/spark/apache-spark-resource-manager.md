@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: dfd926f3e091f4516685fd73f3a6b87949330afb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0d97ca91466516b8722ecca77d19078399a258f7
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706368"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814092"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Управление ресурсами для кластера Apache Spark в Azure HDInsight 
 
@@ -69,10 +69,11 @@ Apache Ambari используется для мониторинга класт�
 ### <a name="change-the-parameters-using-ambari-ui"></a>Изменение параметров с помощью пользовательского интерфейса Ambari
 1. В пользовательском интерфейсе Ambari щелкните **Spark**, выберите пункт **Конфигурации** и разверните категорию **Custom spark-defaults**.
 
-    ![Изменение параметров с помощью Ambari](./media/apache-spark-resource-manager/set-parameters-using-ambari.png)
+    ![Задание параметров с помощью Ambari Custom](./media/apache-spark-resource-manager/set-parameters-using-ambari.png "Задание параметров с помощью Ambari Custom")
 2. Значения по умолчанию позволяют запустить в кластере одновременно четыре приложения Spark. Вы можете изменять эти значения из пользовательского интерфейса, как показано на следующем снимке экрана:
 
-    ![Изменение параметров с помощью Ambari](./media/apache-spark-resource-manager/set-executor-parameters.png)
+    ![Задание параметров с помощью Ambari](./media/apache-spark-resource-manager/set-executor-parameters.png "Задание параметров с помощью Ambari")
+
 3. Чтобы сохранить изменения конфигурации, нажмите кнопку **Сохранить** . В верхней части страницы вы увидите предложение перезапустить все используемые службы. Щелкните **Перезапустить**.
 
     ![Перезапуск служб](./media/apache-spark-resource-manager/restart-services.png)
@@ -104,10 +105,10 @@ Apache Ambari используется для мониторинга класт�
 
 * Разверните категорию **Advanced spark-thrift-sparkconf**, чтобы обновить параметры `spark.dynamicAllocation.minExecutors`, `spark.dynamicAllocation.maxExecutors` и `spark.executor.memory`.
 
-    ![Настройка сервера Thrift Spark](./media/apache-spark-resource-manager/spark-thrift-server-1.png)    
+    ![Настройка сервера Thrift Spark](./media/apache-spark-resource-manager/spark-thrift-server-1.png "Настройка сервера Thrift Spark")
 * Разверните категорию **Custom spark-thrift-sparkconf**, чтобы изменить параметр `spark.executor.cores`.
 
-    ![Настройка сервера Thrift Spark](./media/apache-spark-resource-manager/spark-thrift-server-2.png)
+    ![Настройка параметра сервера Spark Thrift](./media/apache-spark-resource-manager/spark-thrift-server-2.png "Настройка параметра сервера Spark Thrift")
 
 ### <a name="change-the-driver-memory-of-the-spark-thrift-server"></a>Изменение памяти драйверов для сервера Thrift Spark
 Память драйверов сервера Thrift Spark настроена так, что она использует 25 % от размера ОЗУ головного узла, при условии, что общий объем ОЗУ головного узла превышает 14 ГБ. Конфигурацию памяти драйверов можно изменить с помощью пользовательского интерфейса Ambari, как показано на снимке экрана ниже.
@@ -122,13 +123,13 @@ Apache Ambari используется для мониторинга класт�
 1. В пользовательском интерфейсе Ambari на панели слева щелкните **Spark**.
 2. На следующей странице щелкните **Серверы Thrift Spark**.
 
-    ![Перезапуск сервера Thrift](./media/apache-spark-resource-manager/restart-thrift-server-1.png)
+    ![Перезапуск Thrift Server1](./media/apache-spark-resource-manager/restart-thrift-server-1.png "Перезапуск Thrift Server1")
 3. Вы увидите два головных узла, на которых запущен сервер Thrift Spark. Выберите один из этих головных узлов.
 
-    ![Перезапуск сервера Thrift](./media/apache-spark-resource-manager/restart-thrift-server-2.png)
+    ![Перезапуск Thrift Server2](./media/apache-spark-resource-manager/restart-thrift-server-2.png "Перезапуск Thrift Server2")
 4. На следующей странице перечислены все службы, запущенные на выбранном головном узле. Нажмите в этом списке кнопку раскрывающегося списка рядом с сервером Thrift Spark, затем нажмите кнопку **Остановить**.
 
-    ![Перезапуск сервера Thrift](./media/apache-spark-resource-manager/restart-thrift-server-3.png)
+    ![Перезапустить Thrift Server3](./media/apache-spark-resource-manager/restart-thrift-server-3.png "Перезапустить Thrift Server3")
 5. Повторите эти действия на другом головном узле.
 
 ## <a name="restart-the-jupyter-service"></a>Перезапуск службы Jupyter

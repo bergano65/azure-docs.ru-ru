@@ -1,17 +1,17 @@
 ---
 title: ошибка устройства наблюдения "Мягкая блокировка ЦП" из кластера Azure HDInsight
-description: в системных журналах ядра отображаются ошибки устройства наблюдения с мягкими блокировками
+description: В журналах ядра в кластере Azure HDInsight отображаются счетчики производительности "Мягкая блокировка" для ошибок наблюдения
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/05/2019
-ms.openlocfilehash: 9278c174d96cb6b1823c8dbfdcba197b7a3c05cc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 618a871bee762900d4c99700cde42d759506b4b9
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829181"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810581"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Сценарий: "устройство наблюдения: Ошибка: "кратковременная блокировка — ЦП" из кластера Azure HDInsight
 

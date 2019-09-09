@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 09/09/2019
 ms.author: diberry
-ms.openlocfilehash: b29fdf4e5b3f2719865820695f659df7e75e19b5
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 3a32499a85b1cd782c808166c516be7ad9c78913
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70256425"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813282"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
@@ -27,6 +27,8 @@ ms.locfileid: "70256425"
 ### <a name="september-3-2019"></a>3 сентября 2019 г.
 
 * Azure Authoring Resource. [выполните миграцию сейчас](luis-migration-authoring.md).
+    * 500 приложений на ресурс Azure
+    * 100 версий на приложение
 * Поддержка турецкого языка для предварительно созданных сущностей
 * Поддержка итальянского языка для datetimeV2
 

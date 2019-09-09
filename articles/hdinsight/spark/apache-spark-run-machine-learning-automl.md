@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/14/2019
-ms.openlocfilehash: aaea8a1af7ad6df89d41dc0e39d13bafbb610224
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 599fa62d253eda7992d7d7db4f5178d3ce428a9c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736049"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814038"
 ---
-# <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-automl-on-apache-spark-in-azure-hdinsight"></a>Выполнение рабочих нагрузок Машинного обучения Azure с помощью автоматического машинного обучения в Apache Spark в Azure HDInsight
+# <a name="run-azure-machine-learning-workloads-with-automated-machine-learning-on-apache-spark-in-hdinsight"></a>Запуск Машинное обучение Azure рабочих нагрузок с помощью автоматического машинного обучения на Apache Spark в HDInsight
 
 Машинное обучение Azure упрощает и ускоряет создание, обучение и развертывание моделей машинного обучения. В автоматизированном машинном обучении (Аутомл) вы начинаете с обучающих данных, которые имеют определенную целевую функцию, а затем просматриваете сочетания алгоритмов и выбора компонентов, чтобы автоматически выбирать оптимальную модель для данных на основе оценок обучения. HDInsight позволяет клиентам подготавливать кластеры с сотнями узлов. Аутомл, работающий в Spark в кластере HDInsight, позволяет пользователям использовать ресурсы вычислений на этих узлах для выполнения заданий обучения в масштабном режиме и для параллельного выполнения нескольких заданий обучения. Это позволяет пользователям выполнять эксперименты Аутомл при совместном использовании вычислений с другими рабочими нагрузками больших данных.
  

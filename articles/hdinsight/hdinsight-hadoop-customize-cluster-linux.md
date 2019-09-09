@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: 7885b03e9f92fc8e8c5b2c78049760cbed8d4dc7
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c6f55b40b3ee077b81a3cdd6f3add7a2cad23f95
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67703964"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809925"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -29,7 +29,7 @@ ms.locfileid: "67703964"
 
 Дополнительные сведения о работе с разрешениями в присоединенном к домену кластере HDInsight см. в статье [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](./domain-joined/apache-domain-joined-manage.md).
 
-## <a name="access-control"></a>Управление доступом
+## <a name="access-control"></a>Контроль доступа
 
 Если вы не администратор или владелец подписки Azure, ваша учетная запись должна иметь доступ к группе ресурсов, содержащей кластер HDInsight, по крайней мере с правами участника.
 
@@ -46,22 +46,22 @@ ms.locfileid: "67703964"
 
 * Они должны храниться в универсальном коде ресурса (URI), доступном из кластера HDInsight. Возможные места хранения:
     
-    * Для регулярного кластеров:
+    * Для обычных кластеров:
     
-      * Поколение 1 ADLS: Кластер HDInsight субъекта-службы с доступом к Data Lake Storage должен иметь доступ к сценарию с правами на чтение. URI для скриптов, находящихся в Data Lake Storage 1-го поколения, имеет формат `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
+      * ADLS 1-го поколения: Кластер HDInsight субъекта-службы с доступом к Data Lake Storage должен иметь доступ к сценарию с правами на чтение. URI для скриптов, находящихся в Data Lake Storage 1-го поколения, имеет формат `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
       
       * Большой двоичный объект в учетной записи хранения Azure, которая служит основной или дополнительной учетной записью хранения для кластера HDInsight. При создании кластера HDInsight получает доступ к обоим типам учетных записей хранения.
 
         > [!IMPORTANT]  
-        > Не вращаются ключ хранилища для этой учетной записи хранения Azure, так как это вызовет действия последующих скриптов с помощью скриптов, хранящихся на нем переход на другой.
+        > Не поворачивайте ключ хранилища в этой учетной записи хранения Azure, так как это приведет к последующим действиям сценария со скриптами, сохраненными в этом случае.
 
-      * Открытый общий доступ к файлам служба, доступная через пути http://. Примерами являются BLOB-объектов Azure, GitHub, OneDrive.
+      * Общедоступная служба общего доступа к файлам, доступная через пути http://. Примеры: BLOB-объект Azure, GitHub, OneDrive.
 
         Примеры URI см. в разделе [Пример сценариев действий сценария](#example-script-action-scripts).
 
-     * Для кластеров с помощью ESP:
+     * Для кластеров с ESP:
          
-         * Wasb: / / или wasbs: / / или http [s] :// поддерживаются идентификаторы URI.
+         * Поддерживаются wasb://или wasbs://или HTTP [s]://URI.
             
 * Действия можно ограничить выполнением только на определенных типах узлов, например головных или рабочих.
 
@@ -146,7 +146,7 @@ ms.locfileid: "67703964"
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| Имя | Скрипт |
+| Название | Скрипт |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -175,10 +175,10 @@ ms.locfileid: "67703964"
 
     | Свойство | Значение |
     | --- | --- |
-    | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | Имя |Укажите имя для действия сценария. |
+    | Выберите скрипт. | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
+    | Название |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
-    | HEAD/рабочих/ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper** |
+    | Головной/рабочий/ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper** |
     | Параметры |Укажите параметры, если они требуются для сценария. |
 
     Используйте запись __Сохранить это действие сценария__, чтобы сценарий применялся при масштабировании.
@@ -215,7 +215,7 @@ ms.locfileid: "67703964"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе используется [AzHDInsightScriptAction добавить](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) командлет будет вызывать скрипты для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Чтобы использовать эти команды PowerShell, вам потребуется [AZ модуля](https://docs.microsoft.com/powershell/azure/overview).
+В этом разделе описывается использование командлета [Add-аздинсигхтскриптактион](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) для вызова сценариев для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -257,8 +257,8 @@ ms.locfileid: "67703964"
 
     | Свойство | Значение |
     | --- | --- |
-    | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
-    | Имя |Укажите имя для действия сценария. |
+    | Выберите скрипт. | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
+    | Название |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Head, Worker или ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper** |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -269,7 +269,7 @@ ms.locfileid: "67703964"
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-azure-powershell"></a>Применение действия сценария в работающем кластере с помощью Azure PowerShell
 
-Чтобы использовать эти команды PowerShell, вам потребуется [AZ модуля](https://docs.microsoft.com/powershell/azure/overview).
+Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
 Следующий пример демонстрирует применение действия сценария к работающему кластеру:
 
@@ -348,7 +348,7 @@ ms.locfileid: "67703964"
 
 4. Журнал сценариев для этого кластера отображается в разделе "Действия сценария". Эти сведения включают в себя список сохраняемых скриптов. На следующем снимке экрана показано, что в этом кластере был выполнен сценарий Solr. Сохраняемых сценариев на нем не видно.
 
-    ![Действия сценария](./media/hdinsight-hadoop-customize-cluster-linux/script-action-history.png)
+    ![Действия скрипта](./media/hdinsight-hadoop-customize-cluster-linux/script-action-history.png)
 
 5. При выборе сценария в журнале отображается соответствующий раздел **Панель свойств**. В верхней части экрана можно повторно запустить скрипт или изменить его тип.
 
@@ -452,7 +452,7 @@ ms.locfileid: "67703964"
 
 * Журналы хранилища находятся в `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE`.
 
-    ![Снимок экрана операций](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
+    ![Журналы действий скриптов](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
 
     В этом каталоге журналы упорядочены по **головному узлу**, **рабочему узлу** и **узлу zookeeper**. Рассмотрим следующие примеры:
 
