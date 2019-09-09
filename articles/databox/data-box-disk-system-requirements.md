@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: article
-ms.date: 09/03/2019
+ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: f054d0665c49ee048451681a7cc34d2a648a6e9e
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
-ms.translationtype: MT
+ms.openlocfilehash: fb2fd89664517e44cf5128a5c82e583f03087061
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240221"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70307695"
 ---
 ::: zone target="docs"
 
@@ -28,13 +28,13 @@ ms.locfileid: "70240221"
 
 ::: zone target="chromeless"
 
-# <a name="review-prerequisites"></a>Проверка предварительных требований
+## <a name="review-prerequisites"></a>Проверка предварительных требований
 
-1. Вам необходимо заказать диск Data Box с помощью [учебника: Закажите Диск Azure Data Box](data-box-disk-deploy-ordered.md). Вы получили диски и один соединительный кабель на диск.
+1. Следуйте инструкциям, чтобы [ заказать Диск Azure Data Box](data-box-disk-deploy-ordered.md). Вы получили диски, для каждого из которых предусмотрен соединительный кабель.
 2. У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
 
     - Запустите поддерживаемую операционную систему.
-    - Установите другое обязательное программное обеспечение.
+    - Установите другое требуемое программное обеспечение.
 
 ::: zone-end
 
@@ -45,7 +45,7 @@ ms.locfileid: "70240221"
 | **Операционная система** | **Проверенные версии** |
 | --- | --- |
 | Windows Server |2008 R2 с пакетом обновления 1 (SP1) <br> 2012 <br> 2012 R2 <br> 2016 |
-| Windows (64-разрядная версия) |7, 8, 10 |
+| 64-разрядная версия Windows |7, 8, 10 |
 |Linux <br> <li> Ubuntu </li><li> Debian </li><li> Red Hat Enterprise Linux (RHEL) </li><li> CentOS| <br>14.04, 16.04, 18.04 <br> 8.11, 9 <br> 7.0 <br> 6.5, 6.9, 7.0, 7.5 |  
 
 ## <a name="other-required-software-for-windows-clients"></a>Другое необходимое программное обеспечение для клиентов Windows
@@ -66,8 +66,6 @@ ms.locfileid: "70240221"
 - DisLocker;
 - OpenSSL.
 
-::: zone target="docs"
-
 ## <a name="supported-connection"></a>Поддерживаемое подключение
 
 Клиентский компьютер, содержащий данные, должен быть оснащен USB 3.0 или портом более поздней версии. Диски подключаются к этому клиенту с помощью предоставленного кабеля.
@@ -78,7 +76,7 @@ ms.locfileid: "70240221"
 
 | **Учетная запись хранения** | **Примечания** |
 | --- | --- |
-| Классический | Стандарт |
+| Классический | Стандартная |
 | Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
 | Учетная запись хранения больших двоичных объектов | |
 
@@ -86,9 +84,9 @@ ms.locfileid: "70240221"
 > Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
 
 
-## <a name="supported-storage-types-for-upload"></a>Поддерживаемые типы хранилища для отправки
+## <a name="supported-storage-types-for-upload"></a>Поддерживаемые типы хранилищ для загрузки
 
-Ниже приведен список типов хранилищ, поддерживаемых для отправки в Azure с помощью Диск Data Box.
+Ниже приведен список поддерживаемых типов хранилищ для загрузки в Azure с помощью Диск Data Box.
 
 | **Формат файлов** | **Примечания** |
 | --- | --- |
@@ -97,6 +95,7 @@ ms.locfileid: "70240221"
 | Файлы Azure  | |
 | Управляемые диски | |
 
+::: zone target="docs"
 
 ## <a name="next-step"></a>Дальнейшие действия
 
