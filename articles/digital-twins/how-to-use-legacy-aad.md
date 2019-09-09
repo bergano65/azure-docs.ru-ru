@@ -1,26 +1,33 @@
 ---
-title: Использовать устаревшие регистрации AAD приложения для цифрового двойниками Azure | Документация Майкрософт
-description: В этой статье показано, как с помощью предыдущих версий метода создания регистрации приложения с Azure Active Directory для настройки Azure цифровых Двойников.
+title: Использование устаревшей регистрации приложений AAD для Azure Digital двойников | Документация Майкрософт
+description: В этой статье показано, как использовать устаревший метод создания регистрации приложений с помощью Azure Active Directory для программы установки Azure Digital двойников.
 author: alinamstanciu
 manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/28/2019
+ms.date: 08/16/2019
 ms.author: alinast
-ms.openlocfilehash: ed6c540cedd21bb5154f8746050d5eaa9444b818
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: e9689c71c881c7f5f29ac05fea53bb2c27f75591
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484721"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624768"
 ---
-# <a name="register-your-azure-digital-twins-app-with-azure-active-directory-legacy"></a>Регистрация приложения Azure цифровой Двойников с помощью Azure Active Directory прежних версий
+# <a name="register-your-azure-digital-twins-app-with-azure-active-directory-legacy"></a>Регистрация приложения Digital двойников с помощью Azure Active Directory Legacy
 
-В этой статье показано, что можно использовать старые или устаревших способ зарегистрировать пример приложения в Azure Active Directory (Azure AD), таким образом, чтобы он сможет использовать свой экземпляр цифровой Двойников. Вы можете выполнить этот метод в случае нового Azure зарегистрировать приложение AD не подходит для вашей установки.
+В этой статье описывается, как использовать устаревшую колонку **Регистрация приложений (устаревшая версия)** для регистрации примера приложения.
+
+> [!IMPORTANT]
+> * С мая 2019 г. новая колонка **Azure Active Directory** > **Регистрация приложений** заменяет прежнюю колонку **Azure Active Directory** > **Регистрация приложений (прежняя версия)**.
+> * Регистрация приложений, созданная или отображенная в прежней колонке, автоматически появится в новой.
+> * Подробную информацию о переходе на новый интерфейс регистрации приложений Azure см. в статьях [Training guide: App registrations in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide) (Учебное руководство. Регистрация приложений на портале Azure) и [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 [!INCLUDE [Digital Twins legacy AAD](../../includes/digital-twins-permissions-legacy.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-После регистрации приложения с AAD он затем связь с цифровой двойниками экземпляра и помогают при переходе в вашем сценарии. См. в статье [быстрого запуска](quickstart-view-occupancy-dotnet.md#build-application) или [руководстве](tutorial-facilities-setup.md#configure-the-digital-twins-sample) Дополнительные сведения о дальнейших действиях. 
+Продолжайте работу с [кратким](quickstart-view-occupancy-dotnet.md#build-application) [руководством или учебником](tutorial-facilities-setup.md#configure-the-digital-twins-sample).
+
+Узнайте [, как зарегистрировать приложение с помощью новой колонки **Регистрация приложений** ](tutorial-facilities-setup.md#grant-permissions-to-your-app).

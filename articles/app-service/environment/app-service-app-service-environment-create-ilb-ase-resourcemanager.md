@@ -10,17 +10,16 @@ ms.assetid: 091decb6-b0de-42a1-9f2f-c18d9b2e67df
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 35e0dc5dabaf1602b87ec6a8be86ed609f3ea12f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 862887e1e530bfdca4359e914b9a81c9360ac4dd
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130761"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070422"
 ---
 # <a name="how-to-create-an-ilb-ase-using-azure-resource-manager-templates"></a>Создание среды службы приложений с внутренним балансировщиком нагрузки с помощью шаблонов Azure Resource Manager
 
@@ -40,7 +39,7 @@ ms.locfileid: "62130761"
 3. Переданный SSL-сертификат явным образом назначается ASE с внутренним балансировщиком нагрузки в качестве SSL-сертификата по умолчанию.  Этот сертификат будет использоваться для передачи трафика SSL в приложения в среде службы приложений с внутренней подсистемой балансировки нагрузки, если при обращении к ним используется общий корневой домен, назначенный этой среде (например, https://someapp.mycustomrootcomain.com).
 
 ## <a name="creating-the-base-ilb-ase"></a>Создание базовой среды ASE с внутренним балансировщиком нагрузки
-Пример шаблона Azure Resource Manager и соответствующий файл параметров доступны на сайте GitHub [здесь][quickstartilbasecreate].
+Пример Azure Resource Manager шаблона и связанный с ним файл параметров можно найти на [сайте GitHub.][quickstartilbasecreate]
 
 Большинство параметров в файле *azuredeploy.parameters.json* используются при создании как ASE с внутренним балансировщиком нагрузки, так и ASE с привязкой к общедоступному виртуальному IP-адресу.  Ниже приведены параметры с особыми примечаниями и уникальные параметры, используемые при создании ASE с внутренним балансировщиком нагрузки.
 
@@ -69,7 +68,7 @@ ms.locfileid: "62130761"
 
 Затем PFX-файл необходимо преобразовать в строку Base64, так как SSL-сертификат будет загружен с использованием шаблона Azure Resource Manager.  Эти шаблоны представлены в виде текстовых файлов. Такое преобразование требуется, чтобы добавить PFX-файл в качестве параметра шаблона.
 
-В приведенном ниже фрагменте кода Powershell показано, как создать самозаверяющий сертификат, экспортировать его в формате PFX-файла, преобразовать PFX-файл в строку в кодировке Base64 и сохранить эту строку в отдельном файле.  Код PowerShell для преобразования в строку в кодировке Base64 взят из [блога скриптов Powershell][examplebase64encoding].
+В приведенном ниже фрагменте кода Powershell показано, как создать самозаверяющий сертификат, экспортировать его в формате PFX-файла, преобразовать PFX-файл в строку в кодировке Base64 и сохранить эту строку в отдельном файле.  Код PowerShell для кодирования Base64 был адаптирован из [блога сценариев PowerShell][examplebase64encoding].
 
     $certificate = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "*.internal-contoso.com","*.scm.internal-contoso.com"
 
@@ -83,7 +82,7 @@ ms.locfileid: "62130761"
     $fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
     $fileContentEncoded | set-content ($fileName + ".b64")
 
-Когда сертификат SSL будет создан и преобразован в строку в кодировке Base64, можно приступить к [настройке сертификата SSL по умолчанию][configuringDefaultSSLCertificate] с использованием шаблона Azure Resource Manager, размещенного на сайте GitHub.
+После того как SSL-сертификат был успешно создан и преобразован в строку в кодировке Base64, можно использовать пример шаблона Azure Resource Manager на сайте GitHub для [настройки SSL-сертификата по умолчанию][configuringDefaultSSLCertificate] .
 
 Ниже перечислены параметры, содержащиеся в файле *azuredeploy.parameters.json* .
 

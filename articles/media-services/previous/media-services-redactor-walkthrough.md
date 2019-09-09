@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
-ms.openlocfilehash: 3f40c69900b0d7f1c3bf446c1153e21dd7fd4d1b
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: a8db8de6ef062dcf757f3d264379677d6550ea3a
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69014940"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997677"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Пошаговое руководство скрытия лиц с помощью аналитики мультимедиа Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "69014940"
 
 ### <a name="download-and-setup"></a>Скачивание и установка
 
-1. Скачайте инструмент AMSE [отсюда](https://github.com/Azure/Azure-Media-Services-Explorer).
+1. Скачайте средство AMSE для AMS v2 [отсюда.](https://aka.ms/amseforv2)
 1. Войдите в свою учетную запись служб мультимедиа с помощью ключа службы.
 
     Чтобы получить имя учетной записи и сведения о ключе, перейдите на [портал Azure](https://portal.azure.com/) и выберите свою учетную запись AMS. Последовательно выберите "Параметры" > "Ключи". В окне "Управление ключами" отображается имя учетной записи, а также первичный и вторичный ключи. Скопируйте значения имени учетной записи и первичного ключа.

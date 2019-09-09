@@ -1,61 +1,95 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация пользователя по службе автоматизации Azure
+### YamlMime:Landing
+title: Документация по службе автоматизации Azure
 metadata:
-  document_id: null
-  title: Документация по службе автоматизации Azure. Руководства и справочник по API
-  description: Сведения об использовании службы автоматизации Azure
+  document_id: 
+  title: Документация по службе автоматизации Azure
+  description: Сведения об использовании службы автоматизации для настройки и автоматизации задач управления в гибридной среде.
   services: automation
-  author: georgewallace
+  author: bobbytreed
   manager: carmonm
   ms.service: automation
   ms.tgt_pltfrm: na
   ms.topic: landing-page
-  ms.date: 12/13/2017
-  ms.author: gwallace
-abstract:
-  description: 'Сведения об использовании службы автоматизации для настройки и автоматизации задач управления в гибридной среде. Руководства, справочники по API и другая документация, в которой показано, как автоматизировать процессы, управлять обновлениями, настраивать требуемое состояние, отслеживать изменения и собирать данные инвентаризации.'
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как автоматизировать и настроить среды Azure и гибридную среду с помощью службы автоматизации:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/automation/media/index/automation.svg
-            text: Создание учетной записи службы автоматизации
-            href: /azure/automation/automation-quickstart-create-account
-          - image:
-              src: /azure/automation/media/index/runbook.svg
-            text: Создание модуля runbook
-            href: /azure/automation/automation-quickstart-create-runbook
-          - image:
-              src: /azure/automation/media/index/dscconfig.svg
-            text: Создание конфигурации DSC
-            href: /azure/automation/automation-quickstart-dsc-configuration
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как интегрировать и развернуть среду Azure и гибридную среду и управлять ими.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/automation/automation-watchers-tutorial">Настройка задач наблюдателя</a>
-          - html: <a href="/azure/automation/automation-tutorial-update-management">Управление обновлениями на виртуальной машине</a>
-          - html: <a href="/azure/automation/automation-onboard-solutions">Масштабное подключение</a>
-          - html: '<a href="/azure/automation/automation-tutorial-installed-software">Идентификация программного обеспечения, установленного на виртуальной машине</a>'
-          - html: <a href="/azure/automation/automation-tutorial-troubleshoot-changes">Устранение неполадок с изменениями на виртуальной машине</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/module/azurerm.automation">PowerShell</a></p>
-          - title: Languages
-            html: <p><a href="/dotnet/api/microsoft.azure.management.automation">.NET</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/automation">REST API службы автоматизации</a></p>
+  ms.date: 09/06/2019
+  ms.author: robreed
+  ms.openlocfilehash: 3242e2c699e0f99164d6c5ecd2cf61441648b8e8
+  ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/06/2019
+  ms.locfileid: "70743735"
+landingContent:
+- title: Начало работы со службой автоматизации Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое служба автоматизации?
+      url: automation-intro.md
+  - linkListType: get-started
+    links:
+    - text: Создание учетной записи службы автоматизации
+      url: automation-quickstart-create-account.md
+  - linkListType: quickstart
+    links:
+    - text: Создание модуля runbook
+      url: automation-quickstart-create-runbook.md
+- title: Управление обновлениями для виртуальных машин
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о службе "Управление обновлениями"
+      url: automation-update-management.md
+  - linkListType: get-started
+    links:
+    - text: Управление обновлениями для нескольких виртуальных машин
+      url: manage-update-multi.md
+  - linkListType: deploy
+    links:
+    - text: Обновление, инвентаризация и мониторинг изменений на виртуальных машинах Azure
+      url: automation-onboard-solutions.md
+- title: Настройка виртуальных машин с использованием Desired State Configuration
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о State Configuration
+      url: automation-dsc-overview.md
+  - linkListType: concept
+    links:
+    - text: PowerShell DSC
+      url: /powershell/dsc/overview/overview
+  - linkListType: quickstart
+    links:
+    - text: Создание конфигурации DSC с помощью функции групповой политики
+      url: /powershell/dsc/quickstarts/gpo-quickstart
+  - linkListType: tutorial
+    links:
+    - text: Настройка серверов и управление смещением с помощью State Configuration
+      url: tutorial-configure-servers-desired-state.md
+- title: Работа с гибридными средами
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор гибридного компонента Runbook Worker
+      url: automation-hybrid-runbook-worker.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание гибридной рабочей роли Runbook для Windows
+      url: automation-windows-hrw-install.md
+    - text: Развертывание гибридной рабочей роли Runbook для Linux
+      url: automation-linux-hrw-install.md
+    - text: Запуск модулей Runbook в гибридной рабочей роли Runbook
+      url: automation-hrw-run-runbooks.md
+- title: Автоматизация в различных службах
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Отправка сообщения электронной почты из runbook с помощью SendGrid
+      url: automation-send-email.md
+  - linkListType: get-started
+    links:
+    - text: Запуск модуля runbook с помощью оповещений Azure
+      url: automation-create-alert-triggered-runbook.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание шаблона Resource Manager в runbook PowerShell службы автоматизации
+      url: automation-deploy-template-runbook.md

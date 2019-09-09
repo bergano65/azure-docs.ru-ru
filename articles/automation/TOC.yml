@@ -22,6 +22,11 @@
       href: how-to/move-account.md
     - name: Автоматизация подключения служб автоматизации
       href: /azure/architecture/cloud-adoption/operations/azure-server-management/onboarding-automation
+    - name: 'Регионы, в которых поддерживается сопоставление рабочих областей Log Analytics'
+      href: how-to/region-mappings.md
+    - name: Управление данными службы автоматизации Azure
+      href: automation-managing-data.md
+      displayName: backup
 - name: Автоматизация процессов
   items:
     - name: Обзор гибридного компонента Runbook Worker
@@ -39,16 +44,10 @@
       items:
         - name: Создание модуля runbook
           href: automation-quickstart-create-runbook.md
-    - name: Переход
-      items:
-        - name: Подключение нескольких виртуальных машин на портале
-          href: automation-onboard-solutions-from-browse.md
-        - name: Подключение из виртуальной машины Azure
-          href: automation-onboard-solutions-from-vm.md
-        - name: Подключение из учетной записи службы автоматизации
-          href: automation-onboard-solutions-from-automation-account.md
     - name: Руководства
       items:
+        - name: Запуск и остановка виртуальных машин в нерабочее время
+          href: automation-solution-vm-management.md
         - name: Управление модулями runbook
           href: manage-runbooks.md
         - name: Создание модулей runbook
@@ -86,8 +85,6 @@
               href: automation-child-runbooks.md
             - name: Передача объекта JSON в модуль runbook службы автоматизации Azure
               href: automation-pass-json-string.md
-            - name: Запуск и остановка виртуальных машин в нерабочее время
-              href: automation-solution-vm-management.md
         - name: Мониторинг runbook
           items:
             - name: Выходные данные runbook
@@ -98,15 +95,6 @@
               displayName: 'fair share, activity log'
             - name: Обработка ошибок в графических модулях runbook
               href: automation-runbook-graphical-error-handling.md
-            - name: Интеграция системы управления версиями
-              href: source-control-integration.md
-              displayName: 'github, vsts, azure devops, personal access token'
-            - name: Интеграция системы управления версиями (устаревшая версия)
-              href: automation-source-control-integration-legacy.md
-              displayname: github
-            - name: Управление данными службы автоматизации Azure
-              href: automation-managing-data.md
-              displayName: backup
         - name: Гибридная рабочая роль Runbook
           items:
             - name: Развертывание гибридной рабочей роли Runbook для Windows
@@ -120,6 +108,19 @@
             - name: Отслеживание обновленных файлов с помощью задач наблюдателя
               href: automation-watchers-tutorial.md
               displayName: 'hybrid runbook worker, hybrid worker, trigger'
+        - name: Интеграция системы управления версиями
+          items:
+            - name: Интеграция системы управления версиями
+              href: source-control-integration.md
+              displayName: 'github, vsts, azure devops, personal access token'
+            - name: Интеграция системы управления версиями (устаревшая версия)
+              href: automation-source-control-integration-legacy.md
+              displayname: github
+            - name: Интеграция системы управления версиями с помощью GitHub Enterprise
+              href: automation-scenario-source-control-integration-with-github-ent.md
+              displayName: 'CI, runbooks'
+            - name: Интеграция системы управления версиями с помощью Azure DevOps
+              href: automation-scenario-source-control-integration-with-VSTS.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок в гибридной рабочей роли Runbook
@@ -297,7 +298,7 @@
       href: automation-connections.md
     - name: Учетные данные
       href: automation-credentials.md
-    - name: Модули интеграции
+    - name: Модули
       href: automation-integration-modules.md
     - name: Расписания
       href: automation-schedules.md
@@ -321,11 +322,6 @@
       displayName: 'Monitor, Azure Monitor'
     - name: Создание виртуальной машины Amazon Web Service
       href: automation-scenario-aws-deployment.md
-    - name: Интеграция системы управления версиями с помощью GitHub Enterprise
-      href: automation-scenario-source-control-integration-with-github-ent.md
-      displayName: 'CI, runbooks'
-    - name: Интеграция системы управления версиями с помощью Azure DevOps
-      href: automation-scenario-source-control-integration-with-VSTS.md
       displayName: 'VSTS, CI, runbooks'
     - name: Развертывание шаблона Azure Resource Manager в runbook PowerShell службы автоматизации Azure
       href: automation-deploy-template-runbook.md
@@ -348,14 +344,10 @@
   items:
     - name: Azure PowerShell
       href: /powershell/module/azurerm.automation
-    - name: Azure PowerShell (классическая модель)
-      href: /powershell/module/azure/?view=azuresmps-3.7.0
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.automation
     - name: REST
       href: /rest/api/automation
-    - name: REST (классическая модель)
-      href: 'https://msdn.microsoft.com/library/azure/mt163781'
 - name: Ресурсы
   items:
     - name: Вводный видеоролик о службе автоматизации

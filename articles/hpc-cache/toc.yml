@@ -1,0 +1,34 @@
+- name: Документация по Azure HPC Cache
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое Azure HPC Cache?
+      href: hpc-cache-overview.md
+- name: Основные понятия
+  items:
+    - name: Использование агрегированного пространства имен
+      href: hpc-cache-namespace.md
+    - name: Заполнение нового хранилища BLOB-объектов
+      href: hpc-cache-ingest.md
+    - name: Альтернативные методы приема данных
+      items:
+        - name: Заполнение кэша с помощью параллельного копирования
+          href: hpc-cache-ingest-parallelcp.md
+        - name: Заполнение кэша с помощью msrsync
+          href: hpc-cache-ingest-msrsync.md
+        - name: Заполнение кэша с помощью копирования файлов вручную
+          href: hpc-cache-ingest-manual.md
+- name: Руководства
+  items:
+    - name: Предварительные требования
+      href: hpc-cache-prereqs.md
+    - name: Создание кэша
+      href: hpc-cache-create.md
+    - name: Добавление хранилища
+      href: hpc-cache-add-storage.md
+    - name: Подключение к кэшу
+      href: hpc-cache-mount.md
+- name: Ресурсы
+  items:
+    - name: Открытие запроса в службу поддержки
+      href: hpc-cache-support-ticket.md

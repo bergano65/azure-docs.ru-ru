@@ -97,20 +97,12 @@
       items:
         - name: Обзор
           href: platform/alerts-overview.md
-        - name: Классические оповещения
-          href: platform/alerts-classic.overview.md
         - name: Оповещения о метриках
           href: platform/alerts-metric-overview.md
         - name: Оповещения журналов
           href: platform/alerts-unified-log.md
         - name: Оповещения журнала действий
           href: platform/activity-log-alerts.md
-        - name: Общая схема оповещений
-          href: platform/alerts-common-schema.md
-        - name: Правила действий
-          href: platform/alerts-action-rules.md
-        - name: Смарт-группы
-          href: platform/alerts-smartgroups-overview.md
         - name: Анализ изменений
           href: app/change-analysis.md
     - name: Визуализация данных
@@ -516,11 +508,7 @@
                   href: insights/container-insights-troubleshoot.md
             - name: Мониторинг контейнеров Docker и Windows
               href: insights/containers.md
-        - name: Хранилище
-          items:
-            - name: Использование Azure Monitor для службы хранилища
-              href: insights/storage-insights-overview.md
-        - name: Виртуальные машины
+        - name: Операционная система (виртуальные машины и другое)
           items:
             - name: Агенты
               items:
@@ -530,26 +518,38 @@
                   items:
                     - name: Обзор
                       href: platform/diagnostics-extension-overview.md
-                    - name: Отправка в службу хранилища Azure
-                      href: platform/diagnostics-extension-to-storage.md
-                    - name: Отправка в Application Insights
-                      href: platform/diagnostics-extension-to-application-insights.md
-                    - name: Отправка в Центры событий
-                      href: platform/diagnostics-extension-stream-event-hubs.md
-                    - name: Устранение неполадок
-                      href: platform/diagnostics-extension-troubleshooting.md
-                    - name: Подготовка к использованию формата журналов диагностики JSON Lines
-                      href: platform/diagnostic-logs-append-blobs.md
-                    - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины
-                      href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
-                    - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины Linux с помощью агента Telegraf
-                      href: platform/collect-custom-metrics-linux-telegraf.md
-                    - name: Отправка в хранилище метрик гостевой ОС для масштабируемого набора виртуальных машин
-                      href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
-                    - name: Отправка в хранилище метрик гостевой ОС для виртуальной машины
-                      href: platform/collect-custom-metrics-guestos-vm-classic.md
-                    - name: Отправка в хранилище метрик гостевой ОС для облачной службы
-                      href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                    - name: Windows
+                      items:
+                        - name: Журнал версий
+                          href: platform/diagnostics-extension-schema.md
+                        - name: Схема
+                          href: platform/diagnostics-extension-schema-1dot3.md
+                        - name: Отправка в службу хранилища Azure
+                          href: platform/diagnostics-extension-to-storage.md
+                        - name: Отправка в Application Insights
+                          href: platform/diagnostics-extension-to-application-insights.md
+                        - name: Отправка в Центры событий
+                          href: platform/diagnostics-extension-stream-event-hubs.md
+                        - name: Отправка данных в Azure Monitor в качестве пользовательских метрик
+                          items:
+                            - name: Виртуальная машина
+                              href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
+                            - name: Масштабируемый набор виртуальных машин
+                              href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
+                            - name: Классическая виртуальная машина
+                              href: platform/collect-custom-metrics-guestos-vm-classic.md
+                            - name: облачная служба
+                              href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                        - name: Формат журналов диагностики JSON Lines
+                          href: platform/diagnostic-logs-append-blobs.md
+                        - name: Устранение неполадок
+                          href: platform/diagnostics-extension-troubleshooting.md
+                    - name: Linux
+                      items:
+                        - name: Использование с виртуальными машинами
+                          href: ../virtual-machines/extensions/diagnostics-linux.md
+                        - name: Пользовательские метрики с использованием Telegraf
+                          href: platform/collect-custom-metrics-linux-telegraf.md
                 - name: Агенты службы анализа журналов
                   items:
                     - name: Обзор
@@ -645,13 +645,21 @@
               href: platform/computer-groups.md
             - name: Диспетчер конфигураций
               href: platform/collect-sccm.md
-        - name: Базы данных
-          items:
-            - name: Azure SQL
-              href: insights/azure-sql.md
-            - name: SQL Server
-              href: insights/sql-assessment.md
         - name: Ресурсы Azure
+          items:
+            - name: Журналы диагностики
+              items:
+                - name: Обзор
+                  href: platform/diagnostic-logs-overview.md
+                - name: Сбор данных в журналы
+                  href: platform/diagnostic-logs-stream-log-store.md
+                - name: Сбор данных из службы хранилища Azure
+                  href: platform/azure-storage-iis-table.md
+                - name: Архивирование в хранилище
+                  href: platform/archive-diagnostic-logs.md
+                - name: Включение с помощью шаблонов Resource Manager
+                  href: platform/diagnostic-logs-stream-template.md
+        - name: Подписка Azure
           items:
             - name: Журнал действий
               items:
@@ -667,20 +675,6 @@
                   href: platform/activity-log-export.md
                 - name: Схема
                   href: platform/activity-log-schema.md
-            - name: Журналы диагностики
-              items:
-                - name: Обзор
-                  href: platform/diagnostic-logs-overview.md
-                - name: Сбор данных в журналы
-                  href: platform/diagnostic-logs-stream-log-store.md
-                - name: Сбор данных из службы хранилища Azure
-                  href: platform/azure-storage-iis-table.md
-                - name: Архивирование в хранилище
-                  href: platform/archive-diagnostic-logs.md
-                - name: Потоковая передача данных в Центры событий
-                  href: platform/diagnostic-logs-stream-event-hubs.md
-                - name: Включение с помощью шаблонов Resource Manager
-                  href: platform/diagnostic-logs-stream-template.md
             - name: Потоковая передача данных в Центры событий
               href: platform/stream-monitoring-data-event-hubs.md
             - name: Аналитика Key Vault
@@ -689,6 +683,16 @@
               href: ../service-fabric/service-fabric-diagnostics-oms-agent.md
             - name: Мониторинг групп ресурсов
               href: insights/resource-group-insights.md
+        - name: Хранилище
+          items:
+            - name: Использование Azure Monitor для службы хранилища
+              href: insights/storage-insights-overview.md
+        - name: Базы данных
+          items:
+            - name: Azure SQL
+              href: insights/azure-sql.md
+            - name: SQL Server
+              href: insights/sql-assessment.md
         - name: Сети
           items:
             - name: Анализ сетевой активности
@@ -729,18 +733,20 @@
           items:
             - name: Настраиваемые метрики
               href: platform/metrics-custom-overview.md
+            - name: REST API для метрик
+              href: platform/metrics-store-custom-rest-api.md
             - name: API сборщика данных для службы анализа журналов
               href: platform/data-collector-api.md
             - name: 'Пример конвейера, созданного с помощью API сборщика данных для службы анализа журналов'
               href: platform/create-pipeline-datacollector-api.md
-            - name: REST API для метрик
-              href: platform/metrics-store-custom-rest-api.md
         - name: Использование System Center
           items:
             - name: Подключение Operations Manager
               href: platform/om-agents.md
             - name: Оценка Operations Manager
               href: insights/scom-assessment.md
+        - name: Потоковая передача данных в Центры событий
+          href: platform/diagnostic-logs-stream-event-hubs.md
     - name: Анализ данных
       items:
         - name: Метрики
@@ -873,7 +879,7 @@
               href: app/monitor-web-app-availability.md
             - name: Оповещения о метриках
               href: app/alerts.md
-        - name: Правила генерации оповещений метрик платформы
+        - name: Правила генерации оповещений метрик
           items:
             - name: Управление оповещениями метрик
               href: platform/alerts-metric.md
@@ -899,28 +905,40 @@
               href: platform/alerts-activity-log.md
             - name: Перенос событий управления в оповещения журнала действий
               href: platform/migrate-management-alerts.md
-        - name: Группы действий
+        - name: Оповещения о работоспособности службы в журнале действий
           items:
+            - name: Просмотр уведомлений
+              href: platform/service-notifications.md
+            - name: Настройка оповещений о событиях уведомлений
+              href: platform/alerts-activity-log-service-notifications.md
+        - name: Уведомления и действия
+          items:
+            - name: Правила действий (предварительная версия)
+              href: platform/alerts-action-rules.md
             - name: Создание группы действий
               href: platform/action-groups.md
-            - name: Схема веб-перехватчика
-              href: platform/activity-log-alerts-webhook.md
+            - name: Общая схема оповещений
+              href: platform/alerts-common-schema.md
             - name: Определение общей схемы оповещений
               href: platform/alerts-common-schema-definitions.md
+            - name: Интеграция общей схемы оповещений с Logic Apps
+              href: platform/alerts-common-schema-integrations.md
+            - name: Схема веб-перехватчика
+              href: platform/activity-log-alerts-webhook.md
             - name: Поведение оповещений SMS
               href: platform/alerts-sms-behavior.md
-            - name: Ограничение частоты создания оповещений
+            - name: Ограничение частоты отправки уведомлений
               href: platform/alerts-rate-limiting.md
             - name: Создание групп действий с помощью Resource Manager
               href: platform/action-groups-create-resource-manager-template.md
             - name: Реализация действия для приложения логики
               href: platform/action-groups-logic-app.md
-            - name: Интеграция общей схемы оповещений с Logic Apps
-              href: platform/alerts-common-schema-integrations.md
         - name: Решение по управлению оповещениями
           href: platform/alert-management-solution.md
         - name: Пользовательский интерфейс оповещений
           items:
+            - name: Сведения о смарт-группах
+              href: platform/alerts-smartgroups-overview.md
             - name: Управление экземплярами оповещений
               href: platform/alerts-managing-alert-instances.md
             - name: Управление смарт-группами
@@ -931,6 +949,8 @@
               href: platform/alerts-managing-nagios-zabbix-scom.md
         - name: Перенос классических правил генерации оповещений
           items:
+            - name: Сведения о классических оповещениях
+              href: platform/alerts-classic.overview.md
             - name: Подготовка к переносу
               href: platform/alerts-prepare-migration.md
             - name: Основные сведения о средстве миграции
@@ -945,12 +965,6 @@
               href: platform/alerts-enable-template.md
             - name: Классическое оповещение метрики с вызовом веб-перехватчика
               href: platform/alerts-webhooks.md
-        - name: Уведомления о работоспособности службы в журнале действий
-          items:
-            - name: Просмотр уведомлений
-              href: platform/service-notifications.md
-            - name: Настройка оповещений о событиях уведомлений
-              href: platform/alerts-activity-log-service-notifications.md
         - name: API оповещений
           href: platform/api-alerts.md
         - name: Управление ИТ-услугами
@@ -1057,6 +1071,18 @@
               href: app/data-model-metric-telemetry.md
             - name: Контекст
               href: app/data-model-context.md
+            - name: Интеграция с Функциями Azure
+              href: app/azure-functions-supported-features.md
+    - name: Метрики
+      items:
+        - name: Поддерживаемые метрики
+          href: platform/metrics-supported.md
+        - name: Поддерживаемые метрики для новых оповещений
+          href: platform/alerts-metric-near-real-time.md
+    - name: Журналы диагностики
+      items:
+        - name: 'Службы, категории и схемы для журналов диагностики'
+          href: platform/diagnostic-logs-schema.md
     - name: Инфраструктура CLI Azure
       href: /cli/azure/monitor?view=azure-cli-latest
     - name: Использование Azure CLI с Application Insights (предварительная версия)
@@ -1081,25 +1107,6 @@
           href: /azure/templates/microsoft.insights/allversions
         - name: Журналы
           href: /azure/templates/microsoft.operationalinsights/allversions
-    - name: Метрики
-      items:
-        - name: Поддерживаемые метрики
-          href: platform/metrics-supported.md
-        - name: Поддерживаемые метрики для новых оповещений
-          href: platform/alerts-metric-near-real-time.md
-    - name: Журналы диагностики
-      items:
-        - name: 'Службы, категории и схемы для журналов диагностики'
-          href: platform/diagnostic-logs-schema.md
-        - name: Схема расширения Диагностики Azure
-          href: platform/diagnostics-extension-schema.md
-          items:
-            - name: "Версия\_1.3 и более поздняя версия"
-              href: platform/diagnostics-extension-schema-1dot3.md
-            - name: 1.2
-              href: platform/diagnostics-extension-schema-1dot2.md
-            - name: 1
-              href: platform/diagnostics-extension-schema-1dot0.md
     - name: Прекращение поддержки функций и API
       items:
         - name: Классический API автомасштабирования и метрик

@@ -1,0 +1,49 @@
+### YamlMime:Landing
+title: Документация по предварительной версии Azure HPC Cache
+summary: Ускорение доступа к файлам для рабочих нагрузок высокопроизводительных вычислений (HPC) с большим количеством операций чтения с помощью Azure HPC Cache
+metadata:
+  title: Microsoft Azure HPC Cache
+  description: Узнайте, как создать и использовать Azure HPC Cache, чтобы устранить задержку при передаче данных между вычислительными ресурсами и хранилищем. Служба Azure HPC Cache предназначена для рабочих нагрузок с большим количеством операций чтения файлов. С помощью службы можно создать агрегированную виртуальную файловую систему, в которую входит хранилище BLOB-объектов Azure и локальные аппаратные систематизаторы.
+  ms.service: hpc-cache
+  ms.topic: landing-page
+  ms.collection: collection
+  author: ekpgh
+  ms.author: v-erkell
+  ms.date: 08/30/2019
+  ms.openlocfilehash: 4d5935646c3266624395b3b29a34d9cf8d446de7
+  ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/06/2019
+  ms.locfileid: "70774561"
+landingContent:
+- title: Сведения об Azure HPC Cache
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure HPC Cache?
+      url: hpc-cache-overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка необходимых компонентов для Azure HPC Cache
+      url: hpc-cache-prereqs.md
+    - text: Создание кэша
+      url: hpc-cache-create.md
+    - text: Добавление хранилища
+      url: hpc-cache-add-storage.md
+    - text: Подключение клиентов
+      url: hpc-cache-mount.md
+  - linkListType: concept
+    links:
+    - text: Настройка агрегированного пространства имен
+      url: hpc-cache-namespace.md
+    - text: Заполнение нового хранилища BLOB-объектов
+      url: hpc-cache-ingest.md
+- title: Устранение неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Открытие запроса в службу поддержки
+      url: hpc-cache-support-ticket.md

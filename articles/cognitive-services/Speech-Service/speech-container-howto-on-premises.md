@@ -1,5 +1,5 @@
 ---
-title: Использование с Kubernetes и Helm-Speech Service
+title: Использование контейнера службы речи с Kubernetes и Helm
 titleSuffix: Azure Cognitive Services
 description: Используя Kubernetes и Helm для определения образов контейнеров преобразования речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут в кластере Kubernetes в локальной среде.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 7/16/2019
+ms.date: 8/26/2019
 ms.author: dapine
-ms.openlocfilehash: 06f2db708385c4c3fbf8d005b701b633ac52776a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3c8ffcdb08fc99f5d815639e14fb4456fbd035e8
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559137"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066495"
 ---
-# <a name="use-with-kubernetes-and-helm"></a>Использование с Kubernetes и Helm
+# <a name="use-speech-service-container-with-kubernetes-and-helm"></a>Использование контейнера службы речи с Kubernetes и Helm
 
 Одним из вариантов управления речевыми контейнерами в локальной среде является использование Kubernetes и Helm. Используя Kubernetes и Helm для определения образов контейнеров преобразования речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут в кластере Kubernetes в локальной среде. Наконец, мы продемонстрируем, как тестировать развернутые службы и различные параметры конфигурации. Дополнительные сведения о запуске контейнеров DOCKER без оркестрации Kubernetes см. в [статье Установка и запуск контейнеров речевых служб](speech-container-howto.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "68559137"
 
 ### <a name="sharing-docker-credentials-with-the-kubernetes-cluster"></a>Предоставление учетных данных DOCKER в кластере Kubernetes
 
-Чтобы разрешить кластеру `docker pull` Kubernetes настроенные образы `containerpreview.azurecr.io` из реестра контейнеров, необходимо переместить учетные данные DOCKER в кластер. Выполните приведенную ниже  [команду,чтобысоздатьсекретDOCKER-Registryнаосновеучетныхданных,предоставленныхвпредварительныхтребованияхдлядоступакреестру`kubectl create`][kubectl-create] контейнеров.
+Чтобы разрешить кластеру `docker pull` Kubernetes настроенные образы `containerpreview.azurecr.io` из реестра контейнеров, необходимо переместить учетные данные DOCKER в кластер. Выполните приведенную ниже [команду,чтобысоздатьсекретDOCKER-Registryнаосновеучетныхданных,предоставленныхвпредварительныхтребованияхдлядоступакреестру`kubectl create`][kubectl-create] контейнеров.
 
 В выбранном интерфейсе командной строки выполните следующую команду. Обязательно замените `<username>`, `<password>`и `<email-address>` на учетные данные реестра контейнеров.
 
@@ -89,13 +89,13 @@ containerpreview      kubernetes.io/dockerconfigjson        1         30s
 
 ## <a name="configure-helm-chart-values-for-deployment"></a>Настройка значений диаграммы Helm для развертывания
 
-Посетите [центр Microsoft Helm][ms-helm-hub] для всех общедоступных диаграмм Helm, предлагаемых корпорацией Майкрософт. В центре Microsoft Helm вы найдете локальную диаграмму **Cognitive Services речь**. **Локальная Cognitive Services речь** — это диаграмма, которую мы будем устанавливать, но сначала необходимо создать `config-values.yaml` файл с явной конфигурацией. Начнем с добавления репозитория Майкрософт в наш экземпляр Helm.
+Посетите [центр Microsoft Helm][ms-helm-hub] для всех общедоступных диаграмм Helm, предлагаемых корпорацией Майкрософт. В центре Microsoft Helm вы найдете **локальную диаграмму Cognitive Services речь**. **Локальная Cognitive Services речь** — это диаграмма, которую мы будем устанавливать, но сначала необходимо создать `config-values.yaml` файл с явной конфигурацией. Начнем с добавления репозитория Майкрософт в наш экземпляр Helm.
 
 ```console
 helm repo add microsoft https://microsoft.github.io/charts/repo
 ```
 
-Далее предстоит настроить наши значения диаграммы Helm. Скопируйте и вставьте следующий YAML в файл с именем `config-values.yaml`. Дополнительные сведения о настройке Cognitive Servicesной **диаграммы для перевода речи в локальной среде**см. в разделе [Настройка диаграмм Helm](#customize-helm-charts). Замените значения `apikey`исобственными. `billing`
+Далее предстоит настроить наши значения диаграммы Helm. Скопируйте и вставьте следующий YAML в файл с именем `config-values.yaml`. Дополнительные сведения о настройке **Cognitive Servicesной диаграммы для перевода речи в локальной среде**см. в разделе [Настройка диаграмм Helm](#customize-helm-charts). Замените комментарии `# {API_KEY}`исобственнымизначениями. `# {ENDPOINT_URI}`
 
 ```yaml
 # These settings are deployment specific and users can provide customizations
@@ -113,8 +113,8 @@ speechToText:
       - containerpreview # Or an existing secret
     args:
       eula: accept
-      billing: # < Your billing URL >
-      apikey: # < Your API Key >
+      billing: # {ENDPOINT_URI}
+      apikey: # {API_KEY}
 
 # text-to-speech configurations
 textToSpeech:
@@ -129,8 +129,8 @@ textToSpeech:
       - containerpreview # Or an existing secret
     args:
       eula: accept
-      billing: # < Your billing URL >
-      apikey: # < Your API Key >
+      billing: # {ENDPOINT_URI}
+      apikey: # {API_KEY}
 ```
 
 > [!IMPORTANT]
@@ -150,7 +150,7 @@ textToSpeech:
 
 ```console
 helm install microsoft/cognitive-services-speech-onpremise \
-    --version 0.1.0 \
+    --version 0.1.1 \
     --values <config-values.yaml> \
     --name onprem-speech
 ```

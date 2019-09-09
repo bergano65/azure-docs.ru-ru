@@ -73,9 +73,6 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
   items:
-    - name: Глубокое обучение
-      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
-      href: concept-deep-learning-vs-machine-learning.md
     - name: Рабочая область
       href: concept-workspace.md
     - name: Целевой объект вычисления
@@ -111,12 +108,17 @@
           href: how-to-secure-web-service.md
         - name: Повторное создание ключей доступа к хранилищу
           href: how-to-change-storage-access-key.md
+    - name: Глубокое обучение
+      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
+      href: concept-deep-learning-vs-machine-learning.md
 - name: Руководства
   items:
-    - name: Управление рабочими областями
+    - name: Создание рабочих областей и управление ими
       items:
-        - name: Использование портала для управления рабочими областями
+        - name: Использование портала Azure
           href: how-to-manage-workspace.md
+        - name: Использование Azure CLI
+          href: how-to-manage-workspace-cli.md
         - name: Использование шаблона Resource Manager
           displayName: arm
           href: how-to-create-workspace-template.md

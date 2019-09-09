@@ -159,7 +159,7 @@
               href: configure-azure-cni.md
         - name: Создание внутреннего балансировщика нагрузки
           href: internal-lb.md
-        - name: Использование Load Balancer (цен. категория "Стандартный") (предварительная версия)
+        - name: Использование Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard.md
         - name: Использование статического IP-адреса
           href: static-ip.md

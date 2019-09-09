@@ -19,11 +19,11 @@ ms.locfileid: "67721267"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-javascript"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и JavaScript
 
-Используйте это краткое руководство, чтобы начать использовать API Распознавателя рукописного текста для росчерков пера. Это приложение JavaScript отправляет запрос API, содержащий данные росчерка пера в формате JSON, и отображает ответ.
+Используйте это краткое руководство, чтобы начать использовать API Распознавателя рукописного текста для рукописных фрагментов. Это приложение JavaScript отправляет запрос API, содержащий данные рукописного фрагмента в формате JSON, и отображает ответ.
 
 Хотя это приложение создается на языке JavaScript и выполняется в вашем веб-браузере, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные росчерка пера для следующего рукописного образца из JSON-файла.
+Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные рукописного фрагмента для следующего рукописного образца из JSON-файла.
 
 ![изображение рукописного текста](../media/handwriting-sample.jpg)
 
@@ -32,7 +32,7 @@ ms.locfileid: "67721267"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - веб-браузера;
-- Пример данных росчерка пера для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/javascript/InkRecognition/quickstart/example-ink-strokes.json).
+- Пример данных рукописного фрагмента для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/javascript/InkRecognition/quickstart/example-ink-strokes.json).
 
 
 [!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
@@ -161,7 +161,7 @@ ms.locfileid: "67721267"
 
 Это приложение может быть запущено в вашем веб-браузере. Успешный ответ возвращается в формате JSON. Ответ JSON также можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/javascript/InkRecognition/quickstart/example-response.json):
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://go.microsoft.com/fwlink/?linkid=2089907)

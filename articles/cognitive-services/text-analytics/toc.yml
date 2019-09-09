@@ -12,7 +12,7 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Клиент
+    - name: Клиентская библиотека
       items:
         - name: 'C#'
           href: quickstarts/csharp.md
@@ -56,11 +56,11 @@
       href: How-tos/text-analytics-how-to-call-api.md
     - name: Определение языка
       href: How-tos/text-analytics-how-to-language-detection.md
-    - name: Анализ тональности
+    - name: Анализ мнений
       href: How-tos/text-analytics-how-to-sentiment-analysis.md
-    - name: Извлечение ключевых фраз
+    - name: Извлечение ключевой фразы
       href: How-tos/text-analytics-how-to-keyword-extraction.md
-    - name: Вызов API распознавания именованных сущностей
+    - name: Распознавание именованных сущностей
       href: How-tos/text-analytics-how-to-entity-linking.md
     - name: Использование контейнеров
       items:
