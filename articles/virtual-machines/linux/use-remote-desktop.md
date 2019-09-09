@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 05/30/2018
 ms.author: cynthn
-ms.openlocfilehash: 18e8f577a52ff36f5e6c4eb8f9697d301f056911
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1189faf64dc3619d0e4581641c2c66d0b527754a
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70081405"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813445"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
 Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](https://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
@@ -55,7 +55,7 @@ sudo apt-get install xfce4
 После установки среды рабочего стола настройте службу удаленного рабочего стола для прослушивания входящих подключений. [xrdp](http://xrdp.org) — это сервер RDP с открытым исходным кодом, доступный в большинстве дистрибутивов Linux и совместимый с xfce. Установите xrdp на виртуальной машине Ubuntu следующим образом:
 
 ```bash
-sudo apt-get install xrdp=0.6.1-2
+sudo apt-get -y install xrdp
 sudo systemctl enable xrdp
 ```
 

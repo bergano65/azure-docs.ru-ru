@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: robinsh
-ms.openlocfilehash: 1c1921391048fc59f03070d4753f422d9cfc5237
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: dd12f974b9b02d919752dcb932c9ce1709d7315b
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883485"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813791"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -111,7 +111,7 @@ ms.locfileid: "68883485"
 
 1. Если выбрать пункт **Copy connection string for selected device** (Копировать строку подключения для выбранного устройства), то строка подключения устройства будет скопирована в буфер обмена. Сохраните копию строки подключения устройства. Она потребуется вам при запуске примеров приложений, описанных в следующих разделах.
 
-Выполнив описанные выше действия, вы будете готовы к запуску кода. В большинстве примеров в верхней части основного исходного файла есть константа для ввода строки подключения. Например, соответствующая строка из приложения **\_iothub_client Samples\_iothub_convenience_sample** выглядит следующим образом.
+Выполнив описанные выше действия, вы будете готовы к запуску кода. В большинстве примеров в верхней части основного исходного файла есть константа для ввода строки подключения. Например, соответствующая строка из приложения **iothub_client\_Samples\_iothub_convenience_sample** выглядит следующим образом.
 
 ```c
 static const char* connectionString = "[device connection string]";
@@ -121,7 +121,7 @@ static const char* connectionString = "[device connection string]";
 
 В папке **iothub\_client** репозитория [azure-iot-sdk-c](https://github.com/azure/azure-iot-sdk-c) есть папка **samples**. Она содержит приложение с именем **iothub\_client\_sample\_mqtt**.
 
-Версия приложения **\_iothub_client Samples\_iothub_convenience_sample** для Windows включает следующее решение Visual Studio:
+Версия приложения **iothub_client\_Samples\_iothub_convenience_sample** для Windows включает следующее решение Visual Studio:
 
   ![Обозреватель решений Visual Studio](./media/iot-hub-device-sdk-c-intro/iothub-client-sample-mqtt.png)
 
@@ -137,7 +137,7 @@ static const char* connectionString = "[device connection string]";
 
 Для работы с пакетом SDK всегда необходим пакет **Microsoft.Azure.C.SharedUtility** . Так как этот пример использует протокол MQTT, вам также потребуются пакеты **Microsoft.Azure.umqtt** и **Microsoft.Azure.IoTHub.MqttTransport** (для AMQP и HTTP есть эквивалентные пакеты). Так как в рассматриваемом примере используется библиотека **IoTHubClient**, вам также нужно включить в решение пакет **Microsoft.Azure.IoTHub.IoTHubClient**.
 
-Реализацию примера приложения можно найти в файле **\_iothub_client Samples\_iothub_convenience_sample** Source.
+Реализацию примера приложения можно найти в файле **iothub_client\_Samples\_iothub_convenience_sample** Source.
 
 На примере этого приложения мы покажем, что необходимо сделать для использования библиотеки **IoTHubClient**.
 
@@ -217,7 +217,7 @@ do
 static void SendConfirmationCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCallback)
 {
     EVENT_INSTANCE* eventInstance = (EVENT_INSTANCE*)userContextCallback;
-    (void)printf("Confirmation[%d] received for message tracking id = %zu with result = %s\r\n", callbackCounter, eventInstance->messageTrackingId, ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
+    (void)printf("Confirmation[%d] received for message tracking id = %zu with result = %s\r\n", callbackCounter, eventInstance->messageTrackingId, MU_ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
     /* Some device specific action code goes here... */
     callbackCounter++;
     IoTHubMessage_Destroy(eventInstance->messageHandle);
@@ -351,7 +351,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
 
 Большинство из них мы видели в предыдущем примере, но **Microsoft.Azure.IoTHub.Serializer** — это новый пакет. Наличие этого пакета обязательно, если используется библиотека **serializer**.
 
-Реализацию примера приложения можно найти в файле **\_iothub_client Samples\_iothub_convenience_sample** .
+Реализацию примера приложения можно найти в файле **iothub_client\_Samples\_iothub_convenience_sample** .
 
 Следующие разделы содержат описание основных частей этого примера.
 
@@ -475,7 +475,7 @@ void sendCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCal
 
     (void)printf("Message Id: %u Received.\r\n", messageTrackingId);
 
-    (void)printf("Result Call Back Called! Result is: %s \r\n", ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
+    (void)printf("Result Call Back Called! Result is: %s \r\n", MU_ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия) '
-description: Пошаговые инструкции по использованию инструментов HDInsight из набора средств Azure для IntelliJ для удаленной отладки приложений на кластерах HDInsight через SSH.
+description: Руководство по использованию средств HDInsight в Azure Toolkit for IntelliJ для отладки приложений
 keywords: удаленная отладка intellij, ssh, intellij, hdinsight, отладка intellij, отладка
 ms.service: hdinsight
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: aff9f0f70377ebc6e741618b22ff82bc06251521
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: a07dcd58263674aa6fd360e138c0b9c999ea644e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295908"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814146"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 
@@ -65,7 +65,7 @@ ms.locfileid: "68295908"
 
 1. Щелкните **Добавить конфигурацию** , чтобы открыть окно **конфигурации запуска/отладки** .
 
-   ![Меню Edit Configurations (Изменение конфигураций)](./media/apache-spark-intellij-tool-failure-debug/hdinsight-add-new-configuration.png) 
+   ![Изменить конфигурации](./media/apache-spark-intellij-tool-failure-debug/hdinsight-add-new-configuration.png) 
 
 2. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" ( **+** ). Затем выберите параметр **Apache Spark в HDInsight** .
 
@@ -83,7 +83,7 @@ ms.locfileid: "68295908"
 
 6. Идентификатор приложения можно проверить в окне Вывод.
    
-   ![Кнопка удаленного запуска](./media/apache-spark-intellij-tool-failure-debug/hdinsight-remotely-run-result.png)   
+   ![Результат удаленного запуска](./media/apache-spark-intellij-tool-failure-debug/hdinsight-remotely-run-result.png)   
 
 ## <a name="download-failed-job-profile"></a>Скачивание профиля невыполненного задания
 
@@ -91,9 +91,9 @@ ms.locfileid: "68295908"
 
 1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events\\. Spark — сбои\\ Идентификатор\<приложения >** в локальную папку. В окне **действия** отобразится ход загрузки.
 
-   ![Скачать файл сбоя](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
+   ![Сбой загрузки файла file1](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
 
-   ![Скачать файл сбоя](./media/apache-spark-intellij-tool-failure-debug/spark-on-cosmos-doenload-file-2.png)   
+   ![file2 сбоя загрузки](./media/apache-spark-intellij-tool-failure-debug/spark-on-cosmos-doenload-file-2.png)   
 
 ## <a name="configure-local-debugging-environment-and-debug-on-failure"></a>Настройка локальной среды отладки и отладка при сбое
 
@@ -101,13 +101,13 @@ ms.locfileid: "68295908"
 
 2. В IntelliJ идея создайте файл конфигурации **отладки Spark** с ошибкой, выберите файл ФТД из ранее скачанных ресурсов невыполненных заданий для поля **расположение контекста сбоя задания Spark** .
    
-   ![Кнопка удаленного запуска](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-failure-configuration-01.png)
+   ![Конфигурация сбоя создавайте](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-failure-configuration-01.png)
 
 4. Нажмите кнопку "локальный запуск" на панели инструментов. ошибка отобразится в окне "выполнение".
    
-   ![Кнопка удаленного запуска](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuraion-01.png)
+   ![Run-Failure-configuration1](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuraion-01.png)
 
-   ![Кнопка удаленного запуска](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuration.png)
+   ![Run-Failure-configuration2](./media/apache-spark-intellij-tool-failure-debug/local-run-failure-configuration.png)
 
 5. Установите точку останова, как указано в журнале, затем нажмите кнопку локальная отладка, чтобы выполнить локальную отладку так же, как обычные проекты Scala/Java в IntelliJ.
 

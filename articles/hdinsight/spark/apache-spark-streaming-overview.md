@@ -1,6 +1,6 @@
 ---
 title: Потоковая передача Spark в Azure HDInsight
-description: Инструкции по использованию приложений потоковой передачи Spark в кластерах HDInsight Spark.
+description: Использование Apache Spark потоковых приложений в кластерах HDInsight Spark.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: 19d77d4aa49008232a01cd3ac2761a796505a35c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f990e5eb2761f1743c2731f499ecc341990edf53
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712010"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813992"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
 
@@ -145,7 +145,7 @@ stream.foreachRDD { rdd =>
 ssc.start()
 ```
 
-Подождите около 30 секунд после запуска приложения в выше.  Затем можно запрашивать кадр данных периодически, чтобы просмотреть текущий набор значений, в пакете, например с помощью SQL-запроса:
+Подождите около 30 секунд после запуска приложения выше.  Затем можно периодически выполнять запрос к кадру данных, чтобы увидеть текущий набор значений, представленных в пакете, например с помощью запроса SQL:
 
 ```sql
 %%sql
@@ -227,7 +227,7 @@ ssc.start()
 | 1 | 1497316294139 |
 | 2 | 1497316299158
 | 3 | 1497316304178
-| 4\. | 1497316309204
+| 4 | 1497316309204
 | 5 | 1497316314224
 | 6 | 1497316319243
 | 7 | 1497316324260
@@ -251,7 +251,7 @@ ssc.start()
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно закрыть работающее приложение, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)

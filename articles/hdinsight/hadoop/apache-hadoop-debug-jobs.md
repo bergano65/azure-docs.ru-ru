@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: f96171e1c75676a185edf4a1901ef65b7181135a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5ae05b2ad1dc03bad210b1f67834865afd49df3
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720992"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810879"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
 
@@ -32,7 +32,7 @@ ms.locfileid: "64720992"
 * ambariserverlog
 * ambariagentlog
 
-Имена файлов таблиц имеют **u\<Имя_кластера > DDMonYYYYatHHMMSSsss\<имя_таблицы >** .
+Имена файлов таблиц: **u\<имя_кластера >\<ддмониииясхммссссс TableName >** .
 
 Эти таблицы содержат следующие поля:
 
@@ -41,13 +41,13 @@ ms.locfileid: "64720992"
 * EventTimestamp
 * Узел
 * MALoggingHash
-* `Message`
-* Нет
+* Сообщение
+* в
 * PreciseTimeStamp
-* Роль
+* Role
 * RowIndex
 * Клиент
-* TIMESTAMP
+* ВРЕМЕННАЯ МЕТКА
 * TraceLevel
 
 ### <a name="tools-for-accessing-the-logs"></a>Средства для доступа к журналам
@@ -73,7 +73,7 @@ Power Query можно установить со страницы скачива
 5. Щелкните правой кнопкой мыши таблицу hadoopservicelog в области **Навигатор** и выберите **Изменить**. Должны появиться четыре столбца. При необходимости удалите столбцы **Ключ раздела**, **Ключ строки** и **Метка времени**, выделив их, а затем щелкнув **Удалить столбцы** в меню на ленте.
 6. Щелкните значок развертывания для содержимого столбца, чтобы выбрать столбцы, которые требуется импортировать в таблицу Microsoft Excel. В этом пример выбраны столбцы TraceLevel и ComponentName. Они предоставляют базовую информацию о том, с какими компонентами возникли проблемы.
    
-    ![Выбор столбцов для журналов HDInsight Hadoop](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-using-excel-power-query-filter.png)
+    ![Журналы HDInsight Hadoop выбор столбцов Excel](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-using-excel-power-query-filter.png "Журналы HDInsight Hadoop выбор столбцов Excel")
 7. Щелкните **ОК** для импорта данных.
 8. Выберите столбцы **TraceLevel**, Role и **ComponentName**, а затем щелкните **Группировать по** в меню на ленте.
 9. Щелкните **ОК** в диалоговом окне "Группировать".
@@ -93,7 +93,7 @@ Power Query можно установить со страницы скачива
    
         TraceLevel eq 'ERROR'
    
-    ![Выбор столбцов для журналов HDInsight Hadoop](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png)
+    ![Журналы HDInsight Hadoop выбор столбцов и](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png "Журналы HDInsight Hadoop выбор столбцов и")
    
     Сведения о построении фильтра см. в статье [Построение строк фильтра для конструктора таблиц](../../vs-azure-tools-table-designer-construct-filter-strings.md).
 
@@ -120,7 +120,7 @@ Power Query можно установить со страницы скачива
 
 * **Получение сведений о состоянии кластера.** В области слева разверните пункт **Кластер** и нажмите кнопку **Сведения**. Отобразятся сведения о состоянии кластера, например информация об общем объеме выделенной памяти, количестве использованных ядер, состоянии диспетчера кластерных ресурсов, версии кластера и т. д.
   
-    ![Запуск панели мониторинга кластера](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png)
+    ![Запустить панель мониторинга кластера Yarn](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png "Запустить панель мониторинга кластера Yarn")
 * **Получение сведений о состоянии узла.** В области слева разверните пункт **Кластер** и нажмите кнопку **Узлы**. Отобразится список всех узлов в кластере, HTTP-адрес каждого узла, сведения о ресурсах, выделенных для каждого узла и т. д.
 * **Отслеживание состояния задания.** В области слева разверните пункт **Кластер** и нажмите кнопку **Приложения**, чтобы отобразить список всех заданий в кластере. Если необходимо отобразить задания, находящиеся в определенном состоянии (например, новые, отправленные, работающие и т. д.), щелкните соответствующую ссылку в разделе **Приложения**. Кроме того, можно щелкнуть имя задания, чтобы отобразить дополнительные сведения о задании, включая выходные данные, журналы и т. д.
 
@@ -312,7 +312,7 @@ Power Query можно установить со страницы скачива
 * **Описание** Недопустимая конфигурация кластера. Требуемая конфигурация учетной записи WASB не найдена во внешних учетных записях.  
 * **Решение**. Убедитесь, что учетная запись существует и правильно указана в конфигурации, а затем повторите операцию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](../hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md)

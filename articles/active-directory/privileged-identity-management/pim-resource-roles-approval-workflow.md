@@ -1,9 +1,9 @@
 ---
-title: Утверждать или отклонять запросы для ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
+title: Утверждение или отклонение запросов для ролей ресурсов Azure в PIM-Azure Active Directory | Документация Майкрософт
 description: Узнайте, как подтвердить или отклонить запросы для ролей ресурсов в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.devlang: na
@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 04/09/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d2e8b4ae1a01cd299d910c4e88655885c7d00dc
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 8b39434f8763e44a126f74ac9a19596e4413ae9c
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476384"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804274"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-pim"></a>Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM
 
-С помощью Azure Active Directory (Azure AD) Privileged Identity Management (PIM), можно настроить роли, чтобы требовать утверждения для активации и выберите один или несколько пользователей или группы в качестве делегированных утверждающих лиц. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
+С помощью Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM) можно настроить роли, требующие утверждения для активации, и выбрать одного или нескольких пользователей или группы в качестве делегированных утверждающих. Делегированные утверждающие лица имеют 24 часа на утверждение запросов. Если запрос не был утвержден в течение 24 часов, пользователю, наделенному соответствующим правом, необходимо повторно отправить запрос. Продолжительность 24-часового периода для утверждения нельзя изменить.
 
 Выполните действия, описанные в этой статье, чтобы утверждать или отклонять запросы для ролей ресурсов Azure.
 
@@ -38,15 +38,15 @@ ms.locfileid: "67476384"
 
 1. Выберите **Утверждение запросов**.
 
-    ![Утверждение запросов - страница запроса для просмотра ресурсов Azure](./media/pim-resource-roles-approval-workflow/resources-approve-requests.png)
+    ![Утверждение запросов — страница ресурсов Azure, на которой показан запрос на проверку](./media/pim-resource-roles-approval-workflow/resources-approve-requests.png)
 
     В разделе **Запросы на активацию ролей** вы увидите список запросов, ожидающих вашего утверждения.
 
 ## <a name="approve-requests"></a>Утверждение запросов
 
-1. Найдите и щелкните запрос, который требуется утвердить. Утвердить или отклонить, откроется панель.
+1. Найдите и щелкните запрос, который требуется утвердить. Появится панель утверждение или отказ.
 
-    ![Утверждение запросов — утвердить или отклонить панель со сведениями и обоснование поле](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
+    ![Утверждение запросов — область утверждения или запрета с данными и полем обоснования](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
 
 1. В поле **Обоснование** введите причину.
 
@@ -54,13 +54,13 @@ ms.locfileid: "67476384"
 
     Появится уведомление о вашем утверждении.
 
-    ![Утвердить уведомление о том, что запрос был утвержден](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
+    ![Утверждение уведомления с отображением запроса утверждено](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
 
 ## <a name="deny-requests"></a>Отклонение запросов
 
-1. Найдите и щелкните запрос, который требуется отклонить. Утвердить или отклонить, откроется панель.
+1. Найдите и щелкните запрос, который требуется отклонить. Появится панель утверждение или отказ.
 
-    ![Утверждение запросов — утвердить или отклонить панель со сведениями и обоснование поле](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
+    ![Утверждение запросов — область утверждения или запрета с данными и полем обоснования](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
 
 1. В поле **Обоснование** введите причину.
 
@@ -80,8 +80,8 @@ ms.locfileid: "67476384"
 >[!Note]
 >Если администратор ресурсов считает, что не нужно активировать роль для участника, запрос которого был утвержден, он может удалить назначение активной роли в PIM. Хотя администраторы ресурсов не получают уведомления об ожидающих запросах (если только они не являются участниками в списке утверждающих лиц), они могут просмотреть и отменить запросы в режиме ожидания для всех пользователей, просмотрев эти запросы в PIM. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Расширение или возобновление ролей ресурсов Azure в PIM](pim-resource-roles-renew-extend.md)
 - [Уведомления по электронной почте в PIM](pim-email-notifications.md)
-- [Утверждать или отклонять запросы для ролей Azure AD в PIM](azure-ad-pim-approval-workflow.md)
+- [Утверждение или отклонение запросов для ролей Azure AD в PIM](azure-ad-pim-approval-workflow.md)

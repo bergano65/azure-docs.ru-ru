@@ -1,9 +1,9 @@
 ---
-title: Лицензии требования по использованию Azure Active Directory для управления привилегированными пользователями — | Документация Майкрософт
+title: Требования к лицензиям для использования PIM-Azure Active Directory | Документация Майкрософт
 description: Сведения о требованиях к лицензиям для использования Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: markwahl-msft
 ms.assetid: 34367721-8b42-4fab-a443-a2e55cdbf33d
@@ -14,21 +14,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: pim
 ms.date: 01/16/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e16209a185623b6e15650f70141edd6394e337
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 83c31c2731a8e872dfd2750fced8b91d283d0892
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437462"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804059"
 ---
 # <a name="license-requirements-to-use-pim"></a>Требования к лицензиям для использования PIM
 
 Чтобы использовать управление привилегированными пользователями (PIM) в Azure Active Directory (Azure AD), у каталога должна быть допустимая лицензия. Кроме того, лицензии должны быть назначены администраторам и соответствующим пользователям. В этой статье описываются требования к лицензиям для использования PIM.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать PIM, в вашем каталоге должна быть одна из следующих платных или пробных лицензий:
 
@@ -45,7 +45,7 @@ ms.locfileid: "60437462"
 - Администраторы с ролями Azure AD, управляемыми с помощью PIM.
 - Администраторы с ролями ресурсов Azure, управляемыми с помощью PIM.
 - Администраторы, которым назначена привилегированная роль администратора.
-- Пользователи, назначенные право ролей Azure AD управлять с помощью PIM
+- Пользователи, которым назначены роли Azure AD, управляемые с помощью PIM
 - Пользователи, которые могут утверждать или отклонять запросы в PIM.
 - Пользователи, которым назначена роль ресурса Azure с использованием JIT-назначений или прямых назначений (на основе времени).  
 - Пользователи, которые назначены для проверки доступа.
@@ -63,7 +63,7 @@ ms.locfileid: "60437462"
 - Завершаются все действующие проверки доступа для ролей Azure AD, и удаляются параметры конфигурации PIM.
 - PIM больше не будет отправлять сообщения об изменении назначений ролей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Развертывание PIM](pim-deployment-plan.md)
 - [Начало работы с PIM](pim-getting-started.md)

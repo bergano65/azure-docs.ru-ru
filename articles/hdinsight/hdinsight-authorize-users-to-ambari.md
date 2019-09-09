@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: hrasheed
-ms.openlocfilehash: 28f30270ab0a6c057ee583ccebc2a8540980c6cc
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: f5052d7e35c3d1c81a3d958bd6e340b9a6a5a244
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442175"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810694"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
 
@@ -97,7 +97,7 @@ Active Directory пользователи могут входить на узл�
 
 Чтобы просмотреть список разрешений, предоставляемых каждой роли, щелкните синий вопросительный знак рядом с заголовком таблицы **Roles** (Роли) на странице "Roles" (Роли).
 
-![Ссылка "Roles" (Роли) в меню](./media/hdinsight-authorize-users-to-ambari/roles-permissions.png)
+![Меню "роли" ссылки на разрешения](./media/hdinsight-authorize-users-to-ambari/roles-permissions.png "Меню \"роли\" ссылки на разрешения")
 
 На этой странице размещены два разных представления, которые можно использовать для управления ролями пользователей и групп: Block (Блок) и List (Список).
 

@@ -1,6 +1,6 @@
 ---
 title: Управление кластером Служб машинного обучения в HDInsight в Azure
-description: Узнайте, как управлять кластером служб машинного обучения в Azure HDInsight.
+description: Узнайте, как управлять различными задачами в кластере служб ML в Azure HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,20 +8,20 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: fa838f371607f3c0b0f76f81d6755c842a5901f7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 568c4324f3b542e2b913596c1d93ffb72bbbaec7
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448960"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814243"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
-В этой статье вы узнаете, как управлять кластер служб машинного Обучения на Azure HDInsight для выполнения задач, таких как добавление нескольких одновременных пользователей, удаленное подключение к кластеру службы машинного Обучения, изменение контекста вычислений и т. д.
+Из этой статьи вы узнаете, как управлять существующим кластером служб ML в Azure HDInsight для выполнения таких задач, как добавление нескольких параллельных пользователей, удаленное подключение к кластеру служб машинного обучения, изменение контекста вычислений и т. д.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер служб машинного Обучения в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **служб машинного Обучения** для **тип кластера**.
+* Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера**.
 
 
 * Клиент Secure Shell (SSH): Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
@@ -108,7 +108,7 @@ ms.locfileid: "67448960"
 
 ## <a name="use-a-compute-context"></a>Использование контекста вычислений
 
-Контекст вычислений позволяет определить, где будут выполнены вычисления — на локальном компьютере или пограничном узле, или же они будут распределены между узлами в кластере HDInsight.  Пример настройки контекста вычислений с RStudio Server, см. в разделе [выполнить сценарий R в кластере службы машинного Обучения в Azure HDInsight с помощью RStudio Server](machine-learning-services-quickstart-job-rstudio.md).
+Контекст вычислений позволяет определить, где будут выполнены вычисления — на локальном компьютере или пограничном узле, или же они будут распределены между узлами в кластере HDInsight.  Пример настройки контекста вычислений с RStudio Server см. [в статье выполнение скрипта R в кластере служб ML в Azure HDInsight с помощью сервера RStudio](machine-learning-services-quickstart-job-rstudio.md).
 
 ## <a name="distribute-r-code-to-multiple-nodes"></a>Распространение кода R на несколько узлов
 
@@ -213,7 +213,7 @@ ms.locfileid: "67448960"
 
 4. Нажмите кнопку **Создать**, чтобы выполнить скрипт. После завершения выполнения пакеты R будут доступны на всех рабочих узлах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Ввод в эксплуатацию кластера R Server в Azure HDInsight](r-server-operationalize.md)
 * [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)

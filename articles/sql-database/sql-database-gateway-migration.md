@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 1fc6c054b32c62fbebaa2af738e25ef0dec362ac
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 2e578c6bfdfb25eaba3d0c692ff33aa5b0572669
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981285"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305989"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 
@@ -41,11 +41,11 @@ ms.locfileid: "69981285"
 - Восточная Азия
 
 При миграции трафика будет изменен общедоступный IP-адрес, разрешаемый службой DNS для базы данных SQL.
-Вы будете затронуты
+Вы будете затронуты:
 - Жестко запрограммированный IP-адрес для любого шлюза в локальном брандмауэре;
 - Все подсети, использующие Microsoft. SQL в качестве конечной точки службы, но не взаимодействующие с IP-адресами шлюза;
 
-Вы не затронем, если у вас есть 
+Вы не повлияете на следующее:
 - Перенаправление в качестве политики подключения
 - Подключение к базе данных SQL из Azure и использование тегов службы
 - Подключения, выполняемые с помощью поддерживаемых версий драйвера JDBC для SQL Server, не будут оказывать влияния. Поддерживаемые версии JDBC см. в [статье Загрузка драйвера Microsoft JDBC Driver для SQL Server](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).

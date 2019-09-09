@@ -8,18 +8,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5e384520c1b8d6cf5e3b182bbddf41a5f4f7f8f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d6a8ac97aa3896eaf98651f5f1120fcc6bf25516
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707826"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814115"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Отладка заданий Apache Spark в Azure HDInsight
 
 Из этой статьи вы узнаете, как выполнять отслеживание и отладку заданий [Apache Spark](https://spark.apache.org/), запущенных в кластерах HDInsight, с помощью пользовательского интерфейса [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), пользовательского интерфейса Spark и сервера журнала Spark. Вы создадите задание Spark с помощью записной книжки, прилагающейся к кластеру Spark: **Машинное обучение. Прогнозный анализ на основе данных контроля качества пищевых продуктов с использованием MLLib**. С помощью описанных ниже действий вы сможете отслеживать приложение, отправленное любым другим методом, например с помощью **spark-submit**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Необходимо следующее:
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -54,11 +54,11 @@ ms.locfileid: "64707826"
     ![Просмотр исполнителей Spark](./media/apache-spark-job-debugging/view-spark-executors.png)
 3. Щелкните вкладку **Этапы** , чтобы просмотреть этапы, связанные с приложением.
    
-    ![Просмотр этапов Spark](./media/apache-spark-job-debugging/view-spark-stages.png)
+    ![Просмотр этапов Spark](./media/apache-spark-job-debugging/view-spark-stages.png "Просмотр этапов Spark")
    
     Каждый этап может включать несколько задач. Вы можете просмотреть для них статистику выполнения, как показано ниже.
    
-    ![Просмотр этапов Spark](./media/apache-spark-job-debugging/view-spark-stages-details.png) 
+    ![Просмотр сведений о стадиях Spark](./media/apache-spark-job-debugging/view-spark-stages-details.png "Просмотр сведений о стадиях Spark") 
 4. На странице сведений об этапе вы можете открыть визуализацию DAG. Для этого разверните ссылку **Визуализация DAG** в верхней части страницы, как показано ниже.
    
     ![Просмотр этапов Spark в формате визуализации DAG](./media/apache-spark-job-debugging/view-spark-stages-dag-visualization.png)
@@ -87,14 +87,14 @@ ms.locfileid: "64707826"
 
 1. Чтобы открыть сервер журнала Spark, в колонке "Обзор" в разделе **Панели мониторинга кластера** щелкните **Сервер журнала Spark**.
    
-    ![Запуск сервера журнала Spark](./media/apache-spark-job-debugging/launch-spark-history-server.png)
+    ![Запуск Сервер1 журнала Spark](./media/apache-spark-job-debugging/launch-spark-history-server.png "Запуск Сервер1 журнала Spark")
    
    > [!TIP]  
    > Также пользовательский интерфейс сервера журнала Spark можно открыть из пользовательского интерфейса Ambari. Чтобы пользовательский интерфейс Ambari, в колонке "Обзор" в разделе **Панели мониторинга кластера** щелкните **Домашняя страница Ambari**. В пользовательском интерфейсе Ambari щелкните **Spark**, **Быстрые ссылки**, а затем — **Spark History Server UI** (Пользовательский интерфейс сервера журнала Spark).
 
 2. Отобразится список всех завершенных приложений. Выберите идентификатор приложения, чтобы открыть подробные сведения о приложении.
    
-    ![Запуск сервера журнала Spark](./media/apache-spark-job-debugging/view-completed-applications.png)
+    ![Запуск журнала Spark Server2](./media/apache-spark-job-debugging/view-completed-applications.png "Запуск журнала Spark Server2")
 
 ## <a name="see-also"></a>См. также
 *  [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)

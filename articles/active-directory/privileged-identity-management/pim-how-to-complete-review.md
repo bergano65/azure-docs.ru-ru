@@ -1,9 +1,9 @@
 ---
-title: Завершение проверки доступа для ролей Azure AD в PIM — Azure Active Directory | Документация Майкрософт
-description: Узнайте, как завершение проверки доступа для ролей Azure AD в Azure AD Privileged Identity Management (PIM) и просмотр результатов
+title: Выполните проверку доступа к ролям Azure AD в PIM-Azure Active Directory | Документация Майкрософт
+description: Узнайте, как выполнить проверку доступа к ролям Azure AD в Azure AD Privileged Identity Management (PIM) и просмотреть результаты.
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 06/06/2017
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a7fa3bfe159620130bc0962b470cea8e7422646
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e50ccc208219896e89bcc80f40c846f69c759f9b
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602158"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804401"
 ---
-# <a name="complete-an-access-review-of-azure-ad-roles-in-pim"></a>Завершение проверки доступа для ролей Azure AD в PIM
-После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты, запрашивает у пользователя выполнить проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
+# <a name="complete-an-access-review-of-azure-ad-roles-in-pim"></a>Выполнение проверки доступа к ролям Azure AD в PIM
+После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM) автоматически отправит пользователю сообщение с запросом на проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
 
 После окончания периода проверки доступа или после завершения всеми пользователями самостоятельной проверки выполните шаги, описанные в этой статье, для управления проверкой и просмотра результатов.
 
@@ -44,16 +44,16 @@ ms.locfileid: "65602158"
 ### <a name="apply"></a>Применить
 После того, как проверка доступа завершается из-за достижения даты окончания или из-за остановки вручную, реализовать результат проверки можно с помощью кнопки **Применить** . Если в процессе проверки пользователю было отказано в доступе, то этот шаг приведет к удалению назначенной пользователю роли.  
 
-### <a name="export"></a>Экспортировать
+### <a name="export"></a>Экспорт
 Если вы хотите применить результаты проверки доступа вручную, можно экспортировать проверку. При нажатии кнопки **Экспорт** будет скачан CSV-файл. Открыть этот файл можно в Excel или в других программах, поддерживающих CSV-файлы.
 
-### <a name="delete"></a>Delete (Удалить)
+### <a name="delete"></a>Оператор delete
 Если проверка вам больше не нужна, удалите ее. При нажатии кнопки **Удалить** проверка будет удалена из приложения PIM.
 
 > [!IMPORTANT]
 > Учтите, что при удалении проверки предупреждение не выдается. Поэтому убедитесь, что выбрана нужная проверка. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Запустите проверку доступа для ролей Azure AD в PIM](pim-how-to-start-security-review.md)
-- [Выполнение проверки доступа из моих ролей Azure AD в PIM](pim-how-to-perform-security-review.md)
+- [Запуск проверки доступа для ролей Azure AD в PIM](pim-how-to-start-security-review.md)
+- [Выполнение проверки доступа к моим ролям Azure AD в PIM](pim-how-to-perform-security-review.md)

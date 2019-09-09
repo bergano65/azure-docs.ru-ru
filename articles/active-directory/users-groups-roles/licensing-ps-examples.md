@@ -1,6 +1,6 @@
 ---
-title: Примеры PowerShell и Graph для лицензирования группы — Azure Active Directory | Документация Майкрософт
-description: PowerShell и Graph примеры и распространенные сценарии для группового лицензирования Azure Active Directory
+title: Примеры PowerShell и Graph для групп лицензирования — Azure Active Directory | Документация Майкрософт
+description: Примеры PowerShell и Graph и сценарии для лицензирования на основе групп Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
@@ -14,19 +14,19 @@ ms.date: 03/18/2019
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f95c0596d7a2b55867cdb7ed9355006500e89242
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2e6ac548a4b7599857b116e8059acc51c21fdf4e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065493"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812261"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
-Полный набор функций для группового лицензирования доступен через [портала Azure](https://portal.azure.com), и в настоящее время Microsoft Graph и PowerShell поддержка ограничена только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
+Все функции лицензирования на основе групп доступны в [портал Azure](https://portal.azure.com), и в настоящее время PowerShell и Microsoft Graph поддерживают только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
 
 > [!NOTE]
-> Перед запуском командлетов, убедитесь, что вы сначала подключиться к вашей организации, выполнив `Connect-MsolService`  командлета.
+> Прежде чем приступить к выполнению командлетов, убедитесь, что вы сначала подключаются `Connect-MsolService`к своей организации, выполнив  командлет.
 
 > [!WARNING]
 > Данный код предоставляется в качестве примера для демонстрации. Если вы планируете использовать его в своей среде, вам следует протестировать его с небольшим пакетом пользователей или на отдельном тестовом клиенте. Может потребоваться изменить этот код в соответствии с потребностями вашей среды.
@@ -50,10 +50,10 @@ EMSPREMIUM
 > [!NOTE]
 > Данные ограничены сведениями о продукте (номер SKU). Просмотр списка планов обслуживания, отключенных в лицензии, невозможен.
 
-Используйте следующий пример для получения тех же данных из Microsoft Graph.
+Используйте следующий пример, чтобы получить те же данные из Microsoft Graph.
 
 ```
-GET https://graph.microsoft.com/v1.0/groups/99c4216a-56de-42c4-a4ac-e411cd8c7c41$select=assignedLicenses
+GET https://graph.microsoft.com/v1.0/groups/99c4216a-56de-42c4-a4ac-e411cd8c7c41?$select=assignedLicenses
 ```
 Выходные данные:
 ```
@@ -388,7 +388,7 @@ ObjectId                             SkuId       AssignedDirectly AssignedFromGr
 240622ac-b9b8-4d50-94e2-dad19a3bf4b5 contoso:EMS             True              True
 ```
 
-Граф не имеет достаточно прямолинейный способ отображения результатов, но его можно увидеть этот API:
+Граф не имеет удобного способа отображения результата, но его можно увидеть из этого API:
 
 ```powershell
 GET https://graph.microsoft.com/v1.0/users/e61ff361-5baf-41f0-b2fd-380a6a5e406a?$select=licenseAssignmentStates
@@ -617,9 +617,9 @@ UserId                               OperationResult
 aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipping.
 ```
 > [!NOTE]
-> Обновите значения для переменных `$skuId` и `$groupId`  которой предназначена для удаления прямой лицензии в соответствии с тестовой среды перед запуском приведенного выше сценария. 
+> Обновите значения переменных `$skuId` , `$groupId`  которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

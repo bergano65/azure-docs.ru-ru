@@ -1,19 +1,19 @@
 ---
-title: Сведения о переносе локальных и облачных виртуальных машин Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Сведения о миграции локальных компьютеров и виртуальных машин Azure Azure Site Recovery
 description: В этой статье описан процесс переноса локальных и облачных виртуальных машин IaaS Azure в Azure с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 5b7858793ec75d20bb367a6cf49b59fa9906ec9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c043950de9565f96d52c848f96efac80385f2321
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66396486"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814489"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
@@ -25,6 +25,8 @@ ms.locfileid: "66396486"
 - **Миграция в рамках Azure**. Перенос виртуальных машин Azure в другие регионы Azure. 
 - **Перенос AWS**. Перенос экземпляров AWS Windows на виртуальные машины Azure IaaS. 
 
+> [!NOTE]
+> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "миграция Azure". [Узнайте больше](../migrate/migrate-overview.md).
 
 ## <a name="what-do-we-mean-by-migration"></a>Что подразумевает собой перенос?
 
@@ -42,7 +44,7 @@ Azure Site Recovery можно использовать не только для
 **Миграция между регионами Azure** | Вы можете перенести виртуальные машины Azure из одного региона Azure в другой. После завершения миграции можно настроить аварийное восстановление для виртуальных машин Azure в дополнительном регионе, в который был выполнен перенос.
 **Перенос виртуальных машин Amazon Web Services (AWS) в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Для переноса служба Site Recovery обрабатывает экземпляры AWS как физические серверы. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Миграция локальных компьютеров в Azure](migrate-tutorial-on-premises-azure.md)
 - [Перенос виртуальных машин IaaS Azure между регионами Azure с помощью Azure Site Recovery](azure-to-azure-tutorial-migrate.md)

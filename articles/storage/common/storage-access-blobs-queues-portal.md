@@ -9,12 +9,12 @@ ms.date: 03/19/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: abbd436e5d1c88c53af95fd8ba9add20fa67c8e4
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 8d19724883e6c2b3630de6100b1b4ca9fd9250a1
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640894"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813367"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -61,7 +61,7 @@ ms.locfileid: "69640894"
 
 ## <a name="navigate-to-blobs-or-queues-in-the-portal"></a>Переход к BLOB-объектам или очередям на портале
 
-Чтобы просмотреть данные большого двоичного объекта или очереди на портале, перейдите к обзору учетной записи хранения и щелкните ссылки для **больших двоичных объектов** или **очередей**. Кроме того, можно переходить к **службе BLOB-объектов** и **Служба очередей** разделов в меню. 
+Чтобы просмотреть данные большого двоичного объекта или очереди на портале, перейдите к **обзору** учетной записи хранения и щелкните ссылки для **больших двоичных объектов** или **очередей**. Кроме того, можно переходить к **службе BLOB-объектов** и **Служба очередей** разделов в меню. 
 
 ![Переход к данным большого двоичного объекта или очереди в портал Azure](media/storage-access-blobs-queues-portal/blob-queue-access.png)
 

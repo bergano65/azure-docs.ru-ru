@@ -1,6 +1,6 @@
 ---
 title: Управление кластерами HDInsight с помощью корпоративного пакета безопасности — Azure
-description: Дополнительные сведения об управлении кластерами HDInsight с помощью корпоративного пакета безопасности.
+description: Узнайте, как управлять кластерами Azure HDInsight с помощью Корпоративный пакет безопасности.
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: 7fa215f843fd025d26ba0f583b96f3bb7e63c9ed
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: acf11b8107855c6f087f63f592cdbbad3766795e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488727"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811023"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
@@ -34,7 +34,7 @@ ms.locfileid: "68488727"
    
 3. Данные связанного кластера можно просмотреть с помощью команды **перечисления кластеров**. Теперь в этот связанный кластер можно отправить скрипт.
 
-   ![связанный кластер](./media/apache-domain-joined-manage/linked-cluster.png)
+   ![связанный кластер](./media/apache-domain-joined-manage/linked-cluster.png "связанный кластер")
 
 4. Вы также можете удалить связь кластера, введя **HDInsight: Unlink a cluster** (HDInsight: удалить связь кластера) из палитры команд.
 
@@ -43,11 +43,11 @@ ms.locfileid: "68488727"
 Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, `user1@contoso.com`). 
 1. Щелкните **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
 
-   ![контекстное меню связывания кластера](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
+   ![IntelliJ контекстное меню кластера ссылок](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
 
 2. Введите **имя кластера**, **имя пользователя** и **пароль**. В случае сбоя аутентификации проверьте имя пользователя и пароль. При необходимости добавьте учетную запись хранения, ключ хранилища, затем выберите контейнер из контейнера хранилища. Информация о хранилище предназначена для обозревателя хранилищ, который находится в дереве слева
    
-   ![диалоговое окно связывания кластера](./media/apache-domain-joined-manage/link-a-cluster-dialog.png)
+   ![диалоговое окно кластера ссылок IntelliJ](./media/apache-domain-joined-manage/link-a-cluster-dialog.png)
 
    > [!NOTE]  
    > Если кластер зарегистрирован в подписке Azure и связан, используется ключ к хранилищу данных, имя пользователя и пароль для связывания.
@@ -56,22 +56,22 @@ ms.locfileid: "68488727"
    
 3. Если данные введены правильно, связанный кластер отобразится в узле **HDInsight**. Теперь в этот связанный кластер можно отправить приложение.
 
-   ![связанный кластер](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
+   ![IntelliJ связанного кластера](./media/apache-domain-joined-manage/linked-cluster-intellij.png "IntelliJ связанного кластера]")
 
 4. В **обозревателе Azure** также можно удалить связь кластера.
    
-   ![кластер с удаленной связью](./media/apache-domain-joined-manage/unlink.png)
+   ![Несвязанный кластер IntelliJ](./media/apache-domain-joined-manage/unlink.png)
 
 ## <a name="use-eclipse-to-link-to-domain-joined-cluster"></a>Использование Eclipse для связывания присоединенного к домену кластера
 
 Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, `user1@contoso.com`).
 1. Щелкните **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
 
-   ![контекстное меню связывания кластера](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
+   ![Eclipse контекстное меню кластера ссылок](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
 
 2. Введите **имя кластера**, **имя пользователя** и **пароль**, затем нажмите кнопку "ОК", чтобы связать кластер. При необходимости введите учетную запись хранения, ключ к хранилищу данных, а затем выберите в представлении в виде дерева контейнер хранилища для обозревателя хранилищ.
    
-   ![диалоговое окно связывания кластера](./media/apache-domain-joined-manage/link-cluster-dialog.png)
+   ![диалоговое окно "Связывание кластера" Eclipse](./media/apache-domain-joined-manage/link-cluster-dialog.png)
    
    > [!NOTE]  
    > Если кластер зарегистрирован в подписке Azure и связан, используется ключ к хранилищу данных, имя пользователя и пароль для связывания.
@@ -79,11 +79,11 @@ ms.locfileid: "68488727"
 
 3. Если данные введены правильно, связанный кластер отобразится в узле **HDInsight** после нажатия кнопки "ОК". Теперь в этот связанный кластер можно отправить приложение.
 
-   ![связанный кластер](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
+   ![Eclipse связанного кластера](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
 
 4. В **обозревателе Azure** также можно удалить связь кластера.
    
-   ![кластер с удаленной связью](./media/apache-domain-joined-manage/unlink.png)
+   ![несвязанная Eclipse кластеров](./media/apache-domain-joined-manage/unlink.png)
 
 ## <a name="access-the-clusters-with-enterprise-security-package"></a>Получите доступ к кластерам с помощью пакета безопасности предприятия.
 

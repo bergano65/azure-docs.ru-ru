@@ -1,17 +1,17 @@
 ---
 title: Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
-description: Различные исключения OutOfMemoryError для Apache Spark в Azure HDInsight
+description: Различные исключения OutOfMemoryError для кластера Apache Spark в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/15/2019
-ms.openlocfilehash: f6ff654b8e51dfaf2697df69c7f220d41346c2bc
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 6e7157f4e40dbc585d19affaf0c12af2e6ba60c1
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543483"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813915"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
@@ -59,7 +59,7 @@ java.lang.OutOfMemoryError
 
 1. Определите максимальный объем данных, которые будет обрабатывать приложение Spark. Оценка размера в зависимости от максимального размера входных данных — промежуточных данных, полученных путем преобразования входных данных и выходных данных, созданных для преобразования промежуточных данных. Если начальная оценка недостаточна, увеличьте размер и выполните итерацию до подчасти ошибок памяти.
 
-1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев раздел метрики кластера в пользовательском интерфейсе YARN в кластере для значений используемой **памяти** и **Общее использование памяти** и **виртуальных ядер** в сравнении с **VCores Total** (Всего ядер VCore).
+1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев раздел метрики кластера в пользовательском интерфейсе YARN в кластере для значений **используемой памяти** и **Общее использование памяти** и **виртуальных ядер** в сравнении с **VCores Total** (Всего ядер VCore).
 
     ![представление памяти Yarn Core](./media/apache-spark-ts-outofmemory/yarn-core-memory-view.png)
 

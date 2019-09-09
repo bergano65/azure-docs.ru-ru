@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/16/2019
 ms.author: tomfitz
-ms.openlocfilehash: 161539aaec4d3b7162405f437b7fb3dd1f6a00e6
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 361fcc6b60e863ee43d348cedd6b1571f3f563a2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258848"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812905"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
@@ -192,7 +192,7 @@ ms.locfileid: "70258848"
      {
          "name": "[variables('storageAccountName')]",
          "type": "Microsoft.Storage/storageAccounts",
-         "apiVersion": "2016-01-01",
+         "apiVersion": "2019-06-01",
          "location": "[resourceGroup().location]",
          "comments": "This storage account is used to store the VM disks.",
          ...
@@ -203,43 +203,32 @@ ms.locfileid: "70258848"
 * Если вы используете в шаблоне *общедоступную конечную точку* (например, общедоступную конечную точку хранилища BLOB-объектов Azure), то *не следует жестко кодировать* пространство имен. Используйте функцию **reference** для динамического извлечения пространства имен. Вы можете использовать этот подход, чтобы развернуть шаблон в другом общедоступном пространстве имен, не изменяя конечную точку в шаблоне вручную. Задайте для версии API ту же версию, которая указана в учетной записи хранения в вашем шаблоне.
    
    ```json
-   "osDisk": {
-       "name": "osdisk",
-       "vhd": {
-           "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob, variables('vmStorageAccountContainerName'), '/',variables('OSDiskName'),'.vhd')]"
+   "diagnosticsProfile": {
+       "bootDiagnostics": {
+           "enabled": "true",
+           "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
        }
    }
    ```
    
-   Если учетная запись хранения развертывается в том же создаваемом шаблоне, то при указании ссылки на ресурс нет необходимости указывать пространство имен поставщика. В следующем примере показан упрощенный синтаксис.
-   
-   ```json
-   "osDisk": {
-       "name": "osdisk",
-       "vhd": {
-           "uri": "[concat(reference(variables('storageAccountName'), '2016-01-01').primaryEndpoints.blob, variables('vmStorageAccountContainerName'), '/',variables('OSDiskName'),'.vhd')]"
-       }
-   }
-   ```
-   
-   Если в шаблоне имеются другие значения, настроенные для использования общедоступного пространства имен, измените их, указав одну и ту же функцию **reference**. Например, можно задать свойство **storageUri** диагностического профиля виртуальной машины:
+   Если учетная запись хранения развернута в том же создаваемом шаблоне, а имя учетной записи хранения не используется совместно с другим ресурсом в шаблоне, то при ссылке на ресурс не нужно указывать пространство имен поставщика или apiVersion. В следующем примере показан упрощенный синтаксис.
    
    ```json
    "diagnosticsProfile": {
        "bootDiagnostics": {
            "enabled": "true",
-           "storageUri": "[reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob]"
+           "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
        }
    }
    ```
-   
+     
    Вы также можете использовать функцию reference для ссылки на учетную запись хранения в другой группе ресурсов:
 
    ```json
-   "osDisk": {
-       "name": "osdisk", 
-       "vhd": {
-           "uri":"[concat(reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts/', parameters('existingStorageAccountName')), '2016-01-01').primaryEndpoints.blob,  variables('vmStorageAccountContainerName'), '/', variables('OSDiskName'),'.vhd')]"
+   "diagnosticsProfile": {
+       "bootDiagnostics": {
+           "enabled": "true",
+           "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
        }
    }
    ```

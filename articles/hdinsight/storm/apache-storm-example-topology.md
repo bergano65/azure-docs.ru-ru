@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2018
-ms.openlocfilehash: a535510ce56147f708f1cd8219cf898e6e0df36b
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 42819749b019b4b1db77942e22e09ea31a137fe7
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483787"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813850"
 ---
 # <a name="example-apache-storm-topologies-and-components-for-apache-storm-on-hdinsight"></a>Примеры топологий и компонентов для Apache Storm в HDInsight
 
@@ -23,15 +23,14 @@ ms.locfileid: "67483787"
 |:--- |:--- |:--- |
 | [Запись в Azure Data Lake Storage из Apache Storm](apache-storm-write-data-lake-store.md) |Запись в Azure Data Lake Storage |Java |
 | [Источник воронки и сита концентратора событий](https://github.com/apache/storm/tree/master/external/storm-eventhubs) |Источник воронки и сита концентратора событий |Java |
-| [Разработка топологий на платформе Java для Apache Storm в HDInsight][5797064f] |Maven |Java |
+| [Разработка топологий на основе Java для Apache Storm в HDInsight][5797064f] |Maven |Java |
 | [Разработка топологий для Apache Storm в HDInsight на C# с помощью Visual Studio][16fce2d1] |Средства HDInsight для Visual Studio |C#, Java |
-| [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)][844d1d81] |Центры событий; |C# и Java |
-| [Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/) |Центры событий; |Java |
+| [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)][844d1d81] |Концентраторы событий |C# и Java |
+| [Обработка событий из службы "Центры событий" Azure с помощью Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/) |Концентраторы событий |Java |
 | [Обработка данных с датчиков автомобилей из Центров событий с помощью Apache Storm в HDInsight][246ee964] |Центры событий, Cosmos DB, Azure Storage Blob (WASB) |C#, Java |
-| [Извлечения, преобразования и загрузки (ETL) из концентраторов событий Azure для Apache HBase, с помощью Apache Storm в HDInsight][b4b68194] |Центры событий, HBase |C# |
-| [Шаблон C# проект топологии Storm для работы со службами Azure из Apache Storm в HDInsight][ce0c02a2] |Центры событий, Cosmos DB, база данных SQL, HBase, SignalR |C#, Java |
-| [Тестирование масштабируемости для считывания из концентраторов событий Azure с использованием Apache Storm в HDInsight][d6c540e3] |Скорость обработки сообщений, Центры событий, база данных SQL |C#, Java |
-| [Использование Python с Apache Storm в HDInsight](apache-storm-develop-python-topology.md) |Компоненты Python с топологией Flux |Python |
+| [Извлечение, преобразование и загрузка (ETL) из концентраторов событий Azure в Apache HBase с помощью Apache Storm в HDInsight][b4b68194] |Центры событий, HBase |C# |
+| [Проект C# топологии "многошаблонная топология" для работы со службами Azure из Apache Storm в HDInsight][ce0c02a2] |Центры событий, Cosmos DB, база данных SQL, HBase, SignalR |C#, Java |
+| [Показатели масштабируемости для чтения из концентраторов событий Azure с помощью Apache Storm в HDInsight][d6c540e3] |Скорость обработки сообщений, Центры событий, база данных SQL |C#, Java |
 | [Использование Apache Kafka с Apache Storm в HDInsight](../hdinsight-apache-storm-with-kafka.md) | Apache Storm: чтение и запись в Apache Kafka | Java |
 
 > [!WARNING]  
@@ -39,10 +38,14 @@ ms.locfileid: "67483787"
 >
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий.
 
-### <a name="next-steps"></a>Следующие шаги
+## <a name="python-only"></a>Только Python
 
-* [Создавать и отслеживать топологии Apache Storm в HDInsight Azure](./apache-storm-quickstart.md)
-* [Узнайте, как развертывание и управление топологиями Apache Storm с помощью Apache Storm в HDInsight][6eb0d3b8]
+Пример компонентов Python с топологией Flux см. [в статье Использование Python с Apache Storm в HDInsight](apache-storm-develop-python-topology.md) .
+
+## <a name="next-steps"></a>Следующие шаги
+
+* [Учебник: создание и мониторинг топологии Apache Storm в Azure HDInsight](./apache-storm-quickstart.md)
+* [Узнайте, как развертывать топологии Apache Storm и управлять ими с помощью Apache Storm в HDInsight.][6eb0d3b8]
 
 
 [6eb0d3b8]:apache-storm-deploy-monitor-topology-linux.md "Развертывание и администрирование топологий с помощью панели мониторинга Apache Storm и пользовательского интерфейса Storm или средств HDInsight для Visual Studio."

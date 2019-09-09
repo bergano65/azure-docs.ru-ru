@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7df117dbb071081473a5651a953927cee8ddaa03
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: e758707511989cca64fdef45b1c673dd3d96d6d2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801464"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812132"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -161,7 +161,7 @@ ms.locfileid: "70801464"
 | **[Вокус Group NZ](https://www.vocus.co.nz/business/cloud-data-centres)** | Поддерживается | Поддерживается | О., Сидней |
 | **[Vodafone](https://www.vodafone.com/business/global-enterprise/global-connectivity/vodafone-ip-vpn-cloud-connect)** |Поддерживается |Поддерживается |Amsterdam2, Лондон, Сингапур |
 | **Vodafone Idea** | Поддерживается | Поддерживается | Мумбаи, Мумбаи 2 |
-| **[Zayo](https://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Денвер, Лондон, Лос-Анджелес, Монреаль, Нью-Йорк, Париж, Сиэтл, Silicon впадина, Торонто, Вашингтон (округ Колумбия) |
+| **[Zayo](https://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Поддерживается |Поддерживается |Амстердам, Чикаго, Далласе, Денвер, Лондон, Лос-Анджелес, Монреаль, Нью-Йорк, Париж, Сиэтл, Silicon впадина, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |
 
  **+** означает "скоро"
 
@@ -215,6 +215,13 @@ ms.locfileid: "70801464"
   * Убедитесь, что поставщик услуг подключения расширяет границы вашего подключения, сохраняя высокую доступность во избежание влияния единых точек отказа.
 * Закажите канал ExpressRoute с Exchange у вашего поставщика услуг подключения для связи с Майкрософт.
   * Для настройки подключения выполните действия, описанные в статье [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-classic.md) .
+
+## <a name="connectivity-through-satellite-operators"></a>Подключение через вспомогательные операторы
+Если вы используете удаленную и не имеете возможности оптоволоконного подключения или хотите изучить другие варианты подключения, можно проверить следующие вспомогательные операторы. 
+
+* интелсат
+* SES
+* виасат
 
 ## <a name="connectivity-through-additional-service-providers"></a>Подключение через дополнительных поставщиков услуг
 
@@ -278,7 +285,7 @@ ms.locfileid: "70801464"
 | **[Zertia](https://www.zertia.es)**| Level 3 | Мадрид |
 | **[Zirro](https://zirro.com/services/)**| Cologix, Equinix | Монреаль, Торонто |
 
-## <a name="connectivity-through-datacenter-providers"></a>Подключение с помощью поставщиков центров обработки данных
+## <a name="connectivity-through-datacenter-providers"></a>Подключение через поставщиков центров обработки данных
 
 | **Поставщик** | **Exchange** |
 | --- | --- |
@@ -295,7 +302,7 @@ ms.locfileid: "70801464"
 | **[вксчнже](https://www.vxchnge.com/colocation-services/interconnection)** | Доступ IX, Orange |
 | **[T5 Datacenters](https://t5datacenters.com/network-cloud-connect/)** | IX Reach |
 
-## <a name="connectivity-through-national-research-and-education-networks-nren"></a>Подключение через национальные исследовательские и образовательные сети (NREN)
+## <a name="connectivity-through-national-research-and-education-networks-nren"></a>Подключение через местные исследования и сети образования (НРЕН)
 
 | **Поставщик**|
 | --- |

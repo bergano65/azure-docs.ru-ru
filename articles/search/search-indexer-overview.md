@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: af01b6127a8a3e20edfac19ce3b54cecb9d561d1
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: e50d88181a27dcc46da858f220404eb09ad9b4bd
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640588"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308972"
 ---
 # <a name="indexers-in-azure-search"></a>Индексаторы в службе поиска Azure
 
@@ -48,11 +48,7 @@ ms.locfileid: "69640588"
 * [Azure SQL;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md) 
-
-> [!Note]
-> Табличное хранилище Azure не поддерживается для [поиска](cognitive-search-concept-intro.md)с автопоиском.
->
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 В индексаторах реализованы уникальные функции для работы с источниками данных. Поэтому тип индексатора будет определять особенности настройки источника данных или индексатора. Тем не менее всем индексаторам присущи сходные структура и требования. Ниже описаны действия, общие для всех индексаторов.

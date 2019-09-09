@@ -1,6 +1,6 @@
 ---
-title: Журналы запросов Azure Monitor для мониторинга кластеров Azure HDInsight
-description: Узнайте, как выполнять запросы в журналы Azure Monitor для мониторинга заданий, выполняемых в кластере HDInsight.
+title: Запрос журналов Azure Monitor для мониторинга кластеров Azure HDInsight
+description: Узнайте, как выполнять запросы к журналам Azure Monitor для мониторинга заданий, выполняемых в кластере HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,16 +8,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: cbaaed3fff99778bfab1feeacdab02bf8245a85a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 031879ac1d0d2dd1148c0c37ee72c60d093f8a7d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64714701"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809380"
 ---
-# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Журналы запросов Azure Monitor для мониторинга кластеров HDInsight
+# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Запрос журналов Azure Monitor для мониторинга кластеров HDInsight
 
-Узнайте, некоторые базовые сценарии, о том, как использовать журналы Azure Monitor для мониторинга кластеров Azure HDInsight:
+Ознакомьтесь с некоторыми базовыми сценариями использования журналов Azure Monitor для мониторинга кластеров Azure HDInsight.
 
 * [Анализ метрик кластера HDInsight](#analyze-hdinsight-cluster-metrics).
 * [Поиск определенных сообщений журнала](#search-for-specific-log-messages).
@@ -25,9 +25,9 @@ ms.locfileid: "64714701"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Вы должны настроить кластер HDInsight и использовать журналы Azure Monitor и добавили журналы Azure Monitor связанные с кластером HDInsight, решения в рабочую область для мониторинга. Инструкции см. в разделе [журналов использования Azure Monitor с кластерами HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
+* Вы должны настроить кластер HDInsight для использования журналов Azure Monitor и добавить в нее решения для мониторинга Azure Monitor журналов, относящиеся к кластеру HDInsight. Инструкции см. в статье [Использование журналов Azure Monitor с кластерами HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
 
 ## <a name="analyze-hdinsight-cluster-metrics"></a>Анализ метрик кластера HDInsight
 
@@ -35,7 +35,7 @@ ms.locfileid: "64714701"
 
 1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 2. Выберите плитку **Поиск по журналам**.
-3. Введите следующий запрос в поле поиска для поиска всех метрик для всех доступных метрик для всех кластеров HDInsight, настроенных для использования Azure Monitor журналы, а затем выберите **ЗАПУСКА**.
+3. Введите следующий запрос в поле поиска, чтобы найти все метрики всех доступных метрик для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**.
 
         search *
 
@@ -68,7 +68,7 @@ ms.locfileid: "64714701"
 
 1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 2. Выберите плитку **Поиск по журналам**.
-3. Введите следующий запрос для поиска всех сообщений об ошибках для всех кластеров HDInsight, настроенных для использования Azure Monitor журналы, а затем выберите **ЗАПУСКА**. 
+3. Введите следующий запрос, чтобы найти все сообщения об ошибках для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**. 
 
          search "Error"
 
@@ -81,15 +81,15 @@ ms.locfileid: "64714701"
 
     - чтобы просмотреть сообщения об ошибках из определенного рабочего узла, сделайте следующее:
 
-        ![Выходные данные поиска конкретных ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "Выходные данные поиска конкретных ошибок")
+        ![Поиск конкретных ошибок output1](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "Поиск конкретных ошибок output1")
 
     - Чтобы просмотреть ошибку, которая возникла в определенное время, сделайте следующее:
 
-        ![Выходные данные поиска конкретных ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "Выходные данные поиска конкретных ошибок")
+        ![Поиск конкретных ошибок Output2](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "Поиск конкретных ошибок Output2")
 
 6. Чтобы просмотреть определенную ошибку, сделайте следующее. Щелкните **[+]show more** ([+] больше), чтобы просмотреть фактическое сообщение об ошибке.
 
-    ![Выходные данные поиска конкретных ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "Выходные данные поиска конкретных ошибок")
+    ![Поиск конкретных ошибок output3](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "Поиск конкретных ошибок output3")
 
 ## <a name="create-alerts-for-tracking-events"></a>Создание оповещений для отслеживания событий
 
@@ -105,11 +105,11 @@ ms.locfileid: "64714701"
 
 4. Выберите **Новое правило генерации оповещений** в верхней части страницы.
 
-    ![Ввод запроса для создания оповещения](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Ввод запроса для создания оповещения")
+    ![Введите запрос для создания alert1](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Введите запрос для создания alert1")
 
 5. В окне **Создать правило** введите запрос и другие сведения, чтобы создать оповещение, а затем щелкните **Создать правило генерации оповещений**.
 
-    ![Ввод запроса для создания оповещения](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Ввод запроса для создания оповещения")
+    ![Введите запрос для создания alert2](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Введите запрос для создания alert2")
 
 Чтобы изменить или удалить оповещение:
 
@@ -118,11 +118,11 @@ ms.locfileid: "64714701"
 3. Выберите оповещение, которое требуется изменить или удалить.
 4. Доступны следующие варианты: **Сохранить**, **Отменить**, **Отключить** и **Удалить**.
 
-    ![Изменить Удаление оповещения журналов HDInsight Azure Monitor](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
+    ![Предупреждение об удалении журнала Azure Monitor HDInsight](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 
 Дополнительные сведения см. в статье [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md).
 
 ## <a name="see-also"></a>См. также
 
-* [Создавать пользовательские представления с помощью конструктора представлений в Azure Monitor](../azure-monitor/platform/view-designer.md)
-* [Создание, просмотр и управление оповещения метрик с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md)
+* [Создание пользовательских представлений с помощью конструктора представлений в Azure Monitor](../azure-monitor/platform/view-designer.md)
+* [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md)

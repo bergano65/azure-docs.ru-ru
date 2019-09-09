@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: f2b26e3418e264c2613a183570c7e27f75ab5d63
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 1a48088d0d7ef1e14614629340ee477833535861
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70208229"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390392"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure на IoT Edge
 
@@ -121,7 +121,7 @@ New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath
 Для развертывания значением `<storage mount>` может быть **G:/контаинердата: C:/блобрут**. 
 
 ## <a name="granting-directory-access-to-container-user-on-linux"></a>Предоставление доступа к каталогу пользователю контейнера в Linux
-Если вы использовали [Подключение тома](https://docs.docker.com/storage/volumes/) для хранилища в параметрах создания для контейнеров Linux, вам не нужно выполнять никаких дополнительных действий, но если вы использовали привязку [BIND](https://docs.docker.com/storage/bind-mounts/) , то эти действия необходимы для правильной работы службы.
+Если вы использовали [Подключение тома](https://docs.docker.com/storage/volumes/) для хранилища в параметрах создания для контейнеров Linux, вам не нужно выполнять никаких дополнительных действий, но если вы использовали [привязку BIND](https://docs.docker.com/storage/bind-mounts/) , то эти действия необходимы для правильной работы службы.
 
 Следуя принципу минимальных привилегий, чтобы ограничить права доступа для пользователей минимальными разрешениями, необходимыми для выполнения их работы, этот модуль включает пользователя (имя: абсие, идентификатор: 11000) и группа пользователей (имя: абсие, идентификатор: 11000). Если контейнер запускается в качестве **корневого** (пользователь по умолчанию является **корневым**), наша служба будет запущена как пользователь **абсие** с низким уровнем прав. 
 
@@ -173,7 +173,6 @@ sudo chmod -R 700 <blob-dir>
 В следующих примерах краткого руководства используются языки, которые также поддерживаются IoT Edge, поэтому их можно развернуть как IoT Edge модулей вместе с модулем хранилища BLOB-объектов:
 
 - [.NET](../storage/blobs/storage-quickstart-blobs-dotnet.md)
-- [Java](../storage/blobs/storage-quickstart-blobs-java-v10.md)
 - [Python](../storage/blobs/storage-quickstart-blobs-python.md)
     - У нас есть известная проблема при использовании этого пакета SDK, так как эта версия модуля не возвращает время создания большого двоичного объекта. Поэтому несколько методов, таких как List Blobs, не работают. В качестве обходного пути можно задать явную версию API в клиенте больших двоичных объектов на "2017-04-17". <br>Пример: `block_blob_service._X_MS_VERSION = '2017-04-17'`
 - [Node.js](../storage/blobs/storage-quickstart-blobs-nodejs-v10.md)

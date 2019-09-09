@@ -12,16 +12,19 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 7664c2f4fd08e06b51734b5508871b67d1a1b7c9
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 20e5e23e2000095a95913964673ce90a72b87e59
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231406"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813530"
 ---
 # <a name="copy-data-from-netezza-by-using-azure-data-factory"></a>Копирование данных из Netezza с помощью Фабрики данных Azure
 
 Из этой статьи вы узнаете, как с помощью действия копирования в Фабрике данных Azure копировать данные из Netezza. Это продолжение статьи о [действии копирования в Фабрике данных Azure](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
+
+>[!TIP]
+>Сведения о сценарии переноса данных из Netezza в Azure см. в статье [Использование фабрики данных Azure для переноса данных с локального сервера Netezza в Azure](data-migration-guidance-netezza-azure-sqldw.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

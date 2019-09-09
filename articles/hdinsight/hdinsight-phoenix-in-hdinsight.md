@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: ashishth
-ms.openlocfilehash: f07c7b7a6b1eea05ba41a875e9e78f31404c5f32
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 8ba27261f5ba505c37ef4cc82d06b314471440bc
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733202"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811897"
 ---
-# <a name="apache-phoenix-in-hdinsight"></a>Apache Phoenix в HDInsight
+# <a name="apache-phoenix-in-azure-hdinsight"></a>Apache Phoenix в Azure HDInsight
 
 [Apache Phoenix](https://phoenix.apache.org/) — это уровень реляционной базы данных на основе [Apache HBase](hbase/apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix позволяет использовать запросы на базе SQL для HBase. Phoenix использует драйверы JDBC. Это позволяет создавать, удалять, изменять SQL-таблицы, индексы, представления и последовательности, а также вставлять строки по одной или в пакетном режиме. Phoenix использует для сборки запросов компиляцию в машинный код noSQL, а не MapReduce, что позволяет создавать на основе HBase приложения с низким уровнем задержки. Кроме того, Phoenix поддерживает сопроцессоры для выполнения пользовательского кода в адресном пространстве сервера, то есть прямо в месте размещения данных. Такой подход сводит к минимуму трафик между клиентом и сервером.
 

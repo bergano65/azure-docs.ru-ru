@@ -6,12 +6,12 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/14/2019
-ms.openlocfilehash: 096a8f221313b9dfa3e0fe804a10fc12246177ff
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 6c0dc61cac96037406b165d7ebee693bfe709c5d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575721"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811753"
 ---
 # <a name="troubleshoot-by-using-azure-hdinsight"></a>Устранение неполадок при помощи Azure HDInsight
 
@@ -32,3 +32,13 @@ ms.locfileid: "69575721"
 | Журналы и дампы | - [Доступ к журналам приложений Apache Hadoop YARN в Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)<br>- [Включение дампов кучи для служб Apache Hadoop в Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)<br>- [Сведения об анализе журналов Azure HDInsight в этой статье](hdinsight-debug-jobs.md)|
 | Ошибки | - [Понимание и устранение ошибок, полученных из WebHCat в HDInsight](hdinsight-hadoop-templeton-webhcat-debug-errors.md)<br>- [Параметры Apache Hive для устранения ошибки OutofMemory (нехватка памяти)](hdinsight-hadoop-hive-out-of-memory-error-oom.md) |
 | Сервис | - [Оптимизация запросов Apache Hive](hdinsight-hadoop-optimize-hive-query.md)<br>- [Средство HDInsight для IntelliJ](./spark/apache-spark-intellij-tool-plugin.md)<br>- [Средство HDInsight для Eclipse](./spark/apache-spark-eclipse-tool-plugin.md)<br>- [Средство HDInsight для VSCode](hdinsight-for-vscode.md)<br>- [Средство HDInsight для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md) |
+
+## <a name="next-steps"></a>Следующие шаги
+
+Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
+
+* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

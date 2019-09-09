@@ -1,6 +1,6 @@
 ---
 title: Автоматическое масштабирование кластеров Azure HDInsight (Предварительная версия)
-description: Автоматическое масштабирование кластеров с помощью функции автомасштабирования HDInsight
+description: Автоматическое Apache Hadoop масштабирования кластеров с помощью функции автомасштабирования Azure HDInsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: hrasheed
-ms.openlocfilehash: f7e34d2bbad5f5d8e6b063269b7e87c314fdce90
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 877fc3a4e29fc1753d7b4f92091b34d4b2537846
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770702"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810333"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters-preview"></a>Автоматическое масштабирование кластеров Azure HDInsight (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "70770702"
 
 В следующей таблице описаны типы и версии кластеров, совместимые с функцией автомасштабирования.
 
-| Version | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
+| Version | Spark | Hive | LLAP | Hbase | Kafka | Storm | ML |
 |---|---|---|---|---|---|---|---|
 | HDInsight 3,6 без ESP | Да | Да | Нет | Нет | Нет | Нет | Нет |
 | HDInsight 4,0 без ESP | Да | Да | Нет | Нет | Нет | Нет | Нет |
@@ -85,7 +85,7 @@ ms.locfileid: "70770702"
     * **минимального** количества рабочих узлов;  
     * **максимального** количества рабочих узлов.  
 
-    ![Включить параметр автомасштабирования на основе загрузки рабочих узлов](./media/hdinsight-autoscale-clusters/usingAutoscale.png)
+    ![Включить автомасштабирование на основе загрузки рабочих узлов](./media/hdinsight-autoscale-clusters/usingAutoscale.png)
 
 Начальное количество рабочих узлов должно быть в диапазоне между максимальным и минимальным количеством. Это значение определяет начальный размер кластера при его создании. Минимальное количество рабочих узлов должно быть больше нуля.
 
@@ -103,7 +103,7 @@ ms.locfileid: "70770702"
 1. Измените время, когда условие должно вступить в силу, и число узлов, до которого будет масштабироваться кластер.
 1. При необходимости добавьте дополнительные условия.
 
-    ![Включить параметр автомасштабирования на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-schedule-creation.png)
+    ![Включить создание на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-schedule-creation.png)
 
 Число узлов должно быть в диапазоне от 1 до числа рабочих узлов, введенных перед добавлением условий.
 
@@ -111,7 +111,7 @@ ms.locfileid: "70770702"
 
 Для масштабирования на основе нагрузки и на основе расписания выберите тип виртуальной машины для рабочих узлов, щелкнув **Размер рабочего узла** и **размер головного узла**. После выбора типа виртуальной машины для каждого типа узла можно просмотреть диапазон оценочных затрат для всего кластера. Настройте типы виртуальных машин в соответствии с бюджетом.
 
-![Включить параметр автомасштабирования на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-node-size-selection.png)
+![Включить размер узла автомасштабирования на основе расписания рабочего узла](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-node-size-selection.png)
 
 Ваша подписка имеет квоту емкости для каждого региона. Общее число ядер на головных узлах в сочетании с максимальным числом рабочих узлов не может превышать квоту емкости. Тем не менее эта квота — нестрогое ограничение. Вы всегда можете создать запрос в службу поддержки, чтобы легко ее повысить.
 
@@ -189,7 +189,7 @@ ms.locfileid: "70770702"
 #### <a name="using-the-azure-portal"></a>Использование портала Azure
 Чтобы включить Автомасштабирование в работающем кластере, выберите **Размер кластера** в разделе " **Параметры**". Затем щелкните **включить Автомасштабирование**. Выберите нужный тип автомасштабирования и введите параметры масштабирования на основе нагрузки или по расписанию. Наконец, нажмите кнопку **Сохранить**.
 
-![Включить параметр автомасштабирования на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-enable-running-cluster.png)
+![Включение автомасштабирования на основе расписания рабочих узлов в кластере](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-enable-running-cluster.png)
 
 #### <a name="using-the-rest-api"></a>Использование REST API
 Чтобы включить или отключить Автомасштабирование в работающем кластере с помощью REST API, выполните запрос POST к конечной точке автомасштабирования, как показано в следующем фрагменте кода:
@@ -231,7 +231,7 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 
 Состояние кластера, указанное в портал Azure, может помочь в мониторинге действий автомасштабирования.
 
-![Включить параметр автомасштабирования на основе загрузки рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-cluster-status.png)
+![Включить состояние кластера автомасштабирования на основе рабочей нагрузки для рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-cluster-status.png)
 
 Все сообщения о состоянии кластера, которые вы можете увидеть, описаны в списке ниже.
 
@@ -251,7 +251,7 @@ https://management.azure.com/subscriptions/{subscription Id}/resourceGroups/{res
 
 Выберите **метрики** в разделе **мониторинг**. Затем в раскрывающемся списке **Метрика** выберите **Добавить метрику** и **число активных рабочих ролей** . Нажмите кнопку в правом верхнем углу, чтобы изменить диапазон времени.
 
-![Включить параметр автомасштабирования на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-chart-metric.png)
+![Включить метрику автомасштабирования на основе расписания рабочих узлов](./media/hdinsight-autoscale-clusters/hdinsight-autoscale-clusters-chart-metric.png)
 
 
 ## <a name="next-steps"></a>Следующие шаги

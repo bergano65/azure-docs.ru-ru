@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be7801515355452306cd5e7afa709a0681c7c314
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 9766b530b4d795d0f35f097de20155cdd17687ca
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562195"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812398"
 ---
 # <a name="web-app-that-signs-in-users---sign-in"></a>Веб-приложение, которое входит в систему пользователей — вход
 
@@ -28,18 +28,19 @@ ms.locfileid: "68562195"
 
 ## <a name="sign-in"></a>Вход
 
-Код, который мы находился в предыдущей [конфигурации кода приложения](scenario-web-app-sign-user-app-configuration.md) , — это все, что необходимо для реализации выхода. После входа пользователя в приложение вы, вероятно, захотите включить его для выхода из него. ASP.NET Core обрабатывает выход.
+Код, который мы рассматривали в предыдущей [конфигурации](scenario-web-app-sign-user-app-configuration.md) , — это все, что необходимо для реализации входа.
+После входа пользователя в приложение вы, вероятно, захотите включить его для выхода из него. ASP.NET Core обрабатывает выход.
 
 ## <a name="what-sign-out-involves"></a>Что происходит при выходе
 
 Выход из веб-приложения — это больше, чем удаление сведений о учетной записи, выполнившего вход, из состояния веб-приложения.
 Веб-приложение также должно перенаправить пользователя на конечную точку `logout` платформы идентификации Майкрософт для выхода. Когда веб-приложение перенаправляет пользователя на `logout` конечную точку, эта конечная точка удаляет сеанс пользователя из браузера. Если ваше приложение не пойдет в `logout` конечную точку, пользователь повторно получит доступ к вашему приложению, не вводя учетные данные снова, так как у них будет действительный сеанс единого входа с конечной точкой платформы Microsoft Identity.
 
-Дополнительные сведения см. в разделе [Отправка запроса на](v2-protocols-oidc.md#send-a-sign-out-request) выход на [платформе Microsoft Identity и](v2-protocols-oidc.md) в основной документации по протоколу OpenID Connect Connect.
+Дополнительные сведения см. в разделе [Отправка запроса на](v2-protocols-oidc.md#send-a-sign-out-request) выход на [платформе Microsoft Identity и в основной документации по протоколу OpenID Connect Connect](v2-protocols-oidc.md) .
 
 ## <a name="application-registration"></a>Регистрация приложения
 
-Во время регистрации приложения вы зарегистрировали **URI завершающего выхода**. В нашем руководстве вы зарегистрировались `https://localhost:44321/signout-oidc` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка** подлинности". Дополнительные сведения см. [в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp) .
+Во время регистрации приложения вы зарегистрировали **URI завершающего выхода**. В нашем руководстве вы зарегистрировались `https://localhost:44321/signout-oidc` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ". Дополнительные сведения см. [в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp) .
 
 ## <a name="aspnet-core-code"></a>Код ASP.NET Core
 

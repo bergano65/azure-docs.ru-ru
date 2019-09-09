@@ -1,6 +1,6 @@
 ---
 title: Массовая загрузка данных в Apache Phoenix с помощью psql в Azure HDInsight
-description: Используйте средство psql для массовой загрузки данных в таблицы Phoenix.
+description: Использование средства psql для загрузки данных с массовыми загрузками в Apache Phoenix таблицы в Azure HDInsight
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ashishth
-ms.openlocfilehash: fe6705dc3dedd521357f924dd433c7eacf88ba84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 15bb65e004de916862297f91278328cddb16487d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64718641"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810418"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
 
@@ -138,7 +138,7 @@ ms.locfileid: "64718641"
 
 * Избегайте перегрузки региональных серверов. Если значение ключа в строках монотонно возрастает, последовательные операции записи в HBase приводят к перегрузке региональных серверов. Добавив *соль* к ключу строк, вы сможете избежать последовательных операций записи. Phoenix позволяет прозрачно добавлять случайные значения к ключу строк, используя байты соли для конкретных таблиц. Этот механизм описан в статье, ссылка на которую приводится ниже.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Массовая загрузка данных с помощью Apache Phoenix](https://phoenix.apache.org/bulk_dataload.html)
 * [Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight](../hbase/apache-hbase-phoenix-squirrel-linux.md)

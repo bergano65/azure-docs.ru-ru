@@ -1,9 +1,9 @@
 ---
-title: С помощью мониторинга ресурсов можно выполнить проверку доступа в PIM — Azure Active Directory | Документация Майкрософт
+title: Использование панели мониторинга ресурсов для выполнения проверки доступа в PIM-Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как выполнить проверку доступа в Azure Active Directory Privileged Identity Management (PIM) с помощью панели мониторинга ресурсов.
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: markwahl-msft
 ms.service: active-directory
@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: pim
 ms.date: 03/30/2018
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5404d1b85821458aedef64b72ae635ea49aa1ff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e759ba47c16617aa1783ce6fb0e324aa62ee96d
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602451"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804114"
 ---
-# <a name="use-a-resource-dashboard-to-perform-an-access-review-in-pim"></a>С помощью мониторинга ресурсов можно выполнить проверку доступа в PIM
+# <a name="use-a-resource-dashboard-to-perform-an-access-review-in-pim"></a>Использование панели мониторинга ресурсов для выполнения проверки доступа в PIM
 
-На панели мониторинга ресурсов можно использовать для выполнения проверки доступа в Azure Active Directory (Azure AD) Privileged Identity Management (PIM). Панель мониторинга представления администратора содержит четыре основных компонента.
+Панель мониторинга ресурсов можно использовать для выполнения проверки доступа в Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM). Панель мониторинга представления администратора содержит четыре основных компонента.
 
 - Графическое представление активаций ролей ресурсов.
 - Две диаграммы, на которых показано распределение назначений ролей по типу назначения.
@@ -41,6 +41,6 @@ ms.locfileid: "65602451"
 
 Под диаграммами отображается количество пользователей и групп с новыми назначениями ролей за последние 30 дней и список ролей, отсортированных по общему числу назначений (по убыванию).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Запуск проверки доступа для ролей ресурсов Azure в PIM](pim-resource-roles-start-access-review.md) 

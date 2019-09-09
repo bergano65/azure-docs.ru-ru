@@ -1,6 +1,6 @@
 ---
 title: Создание высокодоступных заданий потоковой передачи Spark в YARN в Azure HDInsight
-description: Как настроить потоковую передачу Spark для сценария с высокой доступностью.
+description: Как настроить потоковую передачу Apache Spark для сценария высокой доступности в Azure HDInsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: 79a36ad39284dc66467ba7c500a363668f78b893
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dcd9095a1e5010a3d0dd5ea7ad884e36e24c7c1d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720662"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814010"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
@@ -117,7 +117,7 @@ ms.locfileid: "64720662"
     // to be able to recover on restart, store all offsets in an external database
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md)
 * [Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий](apache-spark-streaming-exactly-once.md)

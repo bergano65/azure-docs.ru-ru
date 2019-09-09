@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
-ms.openlocfilehash: 218085d8d3969218be1a0557fdc477c730879cbe
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 60c725e084a18326cc4bc9cc05d02d103261f5a4
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543706"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809258"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Оптимизация запросов Apache в Hive в Azure HDInsight
 
 В Azure HDInsight существует несколько типов кластеров и технологий, которые могут выполнять запросы Apache Hive. При создании кластера HDInsight выберите для него соответствующий тип, чтобы оптимизировать производительность для требований рабочей нагрузки.
 
-Например, выберите **Interactive Query** тип для оптимизации запросов нерегламентированного, интерактивного кластера. Выберите тип кластера Apache **Hadoop**, чтобы оптимизировать его для запросов Hive, используемых в качестве пакетной обработки. Типы кластера **Spark** и **HBase** также могут выполнять запросы Hive. Дополнительные сведения о выполнении запросов Hive кластерами различных типов см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).
+Например, выберите тип кластера **интерактивных запросов** , чтобы оптимизировать для нерегламентированных интерактивных запросов. Выберите тип кластера Apache **Hadoop**, чтобы оптимизировать его для запросов Hive, используемых в качестве пакетной обработки. Типы кластера **Spark** и **HBase** также могут выполнять запросы Hive. Дополнительные сведения о выполнении запросов Hive кластерами различных типов см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).
 
 По умолчанию производительность кластеров HDInsight типа Hadoop не оптимизирована. В этой статье описывается несколько наиболее распространенных методов оптимизации производительности Hive, которые можно применить к отправке запросов.
 
@@ -29,11 +29,11 @@ ms.locfileid: "67543706"
 
 * Во время создания кластера можно указать количество рабочих узлов при помощи портала Azure, Azure PowerShell или интерфейса командной строки.  Дополнительные сведения см. в статье [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md). На следующем снимке экрана показана рабочая конфигурация узла на портале Azure:
   
-    ![scaleout_1][image-hdi-optimize-hive-scaleout_1]
+    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png "scaleout_1")
     
 * После создания кластера можно также изменить количество рабочих узлов, чтобы масштабировать кластер без необходимости его повторного создания.
 
-    ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
+    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png "scaleout_2")
 
 Дополнительные сведения о масштабировании HDInsight см. в статье [Масштабирование кластеров HDInsight](hdinsight-scaling-best-practices.md).
 
@@ -191,14 +191,13 @@ Hive поддерживает различные форматы. Пример:
 * **Оптимизация объединений** — это оптимизация выполнения запросов Hive с целью повышения эффективности объединений и сокращения действия пользователя. Для получения дополнительных сведений обратитесь к разделу [Оптимизация объединений](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization).
 * **Увеличение модулей сжатия.**
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы узнали некоторые распространенные методы оптимизации запросов Hive. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Использование Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md)
-* [Анализ данных о задержке рейсов с помощью Interactive Query в HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)
+* [Анализ данных о задержке рейсов с помощью интерактивного запроса в HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)
 * [Анализ данных Twitter с помощью Apache Hive в HDInsight](hdinsight-analyze-twitter-data-linux.md)
 
-[image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png
-[image-hdi-optimize-hive-scaleout_2]: ./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png
+
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: f864384dd5b86420fd9edf446b2573421a05f807
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: 84dff3c4948109654cf08fa1390ac4e6bf2717dc
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801505"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812154"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -133,7 +133,7 @@ ms.locfileid: "70801505"
 | **Токио** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | Восточная Япония | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
 | **Торонто** | [Кологикс TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | Центральная Канада | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | Восточная часть США, Восточная часть США 2 | Aryaka сети, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Кологикс, Comcast, Коресите, Equinix, Internet2, между облаком, связь уровня 3, Orange, Неутрона сети, NTT Communications, оранжевый, Паккетфабрик, SES, спринт, Tata Связь, перевозчик Телиа, Verizon, Zayo |
-| **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | Восточная часть США, Восточная часть США 2 |Коресите, ВИАСАТ | 
+| **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | Восточная часть США, Восточная часть США 2 |Коресите, ВИАСАТ, Zayo | 
 | **Цюрих** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | Н/Д | В облаке, Interxion |
 
  **+** означает "скоро"
@@ -184,6 +184,13 @@ ms.locfileid: "70801505"
   * Убедитесь, что поставщик услуг подключения расширяет границы вашего подключения, сохраняя высокую доступность во избежание влияния единых точек отказа.
 * Закажите канал ExpressRoute с Exchange у вашего поставщика услуг подключения для связи с Майкрософт.
   * Для настройки подключения выполните действия, описанные в статье [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-classic.md) .
+
+## <a name="connectivity-through-satellite-operators"></a>Подключение через вспомогательные операторы
+Если вы используете удаленную и не имеете возможности оптоволоконного подключения или хотите изучить другие варианты подключения, можно проверить следующие вспомогательные операторы. 
+
+* интелсат
+* SES
+* виасат
 
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг
 | **Location** | **Exchange** | **Поставщики услуг подключения** |

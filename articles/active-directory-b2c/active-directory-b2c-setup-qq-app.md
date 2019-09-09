@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 11fc41374089c0ab7258dd191a255387713836eb
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 55e4b04814daaaff5bc217a561e9045d313d9675
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622305"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811428"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "69622305"
 ### <a name="register-for-the-qq-developer-program"></a>Регистрация в программе разработчиков QQ
 
 1. Войдите на [портал разработчиков QQ](http://open.qq.com) с учетными данными от учетной записи QQ.
-1. После входа перейдите на страницу [http://open.qq.com/reg](http://open.qq.com/reg), чтобы зарегистрироваться в качестве разработчика.
+1. После входа перейдите на страницу [https://open.qq.com/reg](https://open.qq.com/reg), чтобы зарегистрироваться в качестве разработчика.
 1. Выберите **个人**(Индивидуальный разработчик).
 1. Введите необходимые сведения и щелкните **下一步** (Следующий шаг).
 1. Выполните проверку по электронной почте. После регистрации в качестве разработчика вам придется подождать утверждения в течение нескольких дней.

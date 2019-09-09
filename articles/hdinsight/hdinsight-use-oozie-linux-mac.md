@@ -7,12 +7,12 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: eb6df3bfda131f00c04499dc80c47482229195a5
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: b21847d27dc7f444afaf1b73efa19b0b0087cfe4
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69623917"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811677"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -643,7 +643,7 @@ Oozie REST API позволяет создавать собственные ут
     > [!NOTE]  
     > На этом изображении показаны только сведения об успешных запусках задания, а не сведения об отдельных действиях запланированного рабочего процесса. Для просмотра отдельных действий выберите одну из записей **Action** (Действие).
 
-    ![Информация о действии](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
+    ![Сведения о действиях координатора](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

@@ -1,25 +1,25 @@
 ---
-title: Использование планов восстановления для аварийного восстановления с помощью Azure Site Recovery | Документация Майкрософт
+title: Использование планов восстановления в аварийном восстановлении с помощью Azure Site Recovery
 description: Сведения об использвоании планов восстановления для аварийного восстановления с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 services: site-recovery
 ms.service: site-recovery
-ms.topic: article
-ms.date: 05/30/2019
+ms.topic: conceptual
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 0df9e4b41ff89dd295fe644900b78640a083e985
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 8502e08db48700aefe51a6e4f0e79d1b08f6ca79
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514569"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814439"
 ---
 # <a name="about-recovery-plans"></a>Сведения о планах восстановления
 
 В этой статье описываются планы восстановления [Azure Site Recovery](site-recovery-overview.md).
 
-План восстановления позволяет объединять компьютеры в группы восстановления. План можно настроить, добавив в него порядок, инструкции и задачи. После определения плана с помощью можно выполнить отработку отказа.  Компьютеры можно ссылаться в нескольких планах восстановления, в котором последующие планы пропустит развертывания и запуска компьютера, если она была ранее развернута с помощью другого плана восстановления.
+План восстановления позволяет объединять компьютеры в группы восстановления. План можно настроить, добавив в него порядок, инструкции и задачи. После определения плана с помощью можно выполнить отработку отказа.  На компьютеры можно ссылаться в нескольких планах восстановления, в которых последующие планы пропускают развертывание и запуск компьютера, если он был ранее развернут с помощью другого плана восстановления.
 
 
 ## <a name="why-use-a-recovery-plan"></a>Для чего используется план восстановления?
@@ -83,13 +83,13 @@ ms.locfileid: "67514569"
 
 ## <a name="watch-the-video"></a>Просмотрите видео
 
-Просмотрите краткий пример видео, демонстрирующее при отработке отказа на щелчком для 2 уровневого приложения WordPress.
+Просмотрите краткий пример видео, демонстрирующий отработку отказа по щелчку для двухуровневых WordPress приложения.
     
 > [!VIDEO https://channel9.msdn.com/Series/Azure-Site-Recovery/One-click-failover-of-a-2-tier-WordPress-application-using-Azure-Site-Recovery/player]
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создайте](site-recovery-create-recovery-plans.md) план восстановления.
 - Узнайте больше о [выполнении отработки отказа](site-recovery-failover.md).  

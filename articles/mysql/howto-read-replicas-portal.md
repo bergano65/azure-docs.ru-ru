@@ -5,20 +5,17 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 05/21/2019
-ms.openlocfilehash: 74f27f70c4a0752975a53b3889681d3910b1dd05
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.date: 09/04/2019
+ms.openlocfilehash: 275c7bc8127855712c191141ef681526da7c377b
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69906425"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309503"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью портала Azure
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MySQL" с помощью портал Azure.
-
-> [!IMPORTANT]
-> Реплику чтения можно создать в том же регионе, что и главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время доступна в общедоступной предварительной версии.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,7 +47,7 @@ ms.locfileid: "69906425"
     ![База данных Azure для MySQL — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
    > [!NOTE]
-   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных](concepts-read-replicas.md)сведений о репликах. 
+   > Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
 
 7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 

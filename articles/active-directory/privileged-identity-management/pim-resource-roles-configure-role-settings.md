@@ -1,9 +1,9 @@
 ---
-title: Настройка параметров ролей ресурсов Azure в PIM — Azure Active Directory | Документация Майкрософт
+title: Настройка параметров роли ресурсов Azure в PIM-Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить параметры роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.devlang: na
@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 04/09/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6da92ccd50707e676a1f5d583fe22ae8b3d8b73
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 88645d07ff213b0b7a56f2b081f0aaed01fd2929
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476323"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804205"
 ---
 # <a name="configure-azure-resource-role-settings-in-pim"></a>Настройка параметров роли ресурсов Azure в PIM
 
-При настройке параметров ролей ресурсов Azure, определяются параметры по умолчанию, которые применяются к назначений ролей ресурсов Azure в Azure Active Directory (Azure AD) Privileged Identity Management (PIM). Чтобы настроить рабочий процесс утверждения и указать, кто может утверждать или отклонять запросы, выполните описанные ниже процедуры.
+При настройке параметров роли ресурсов Azure вы определяете параметры по умолчанию, применяемые к назначениям ролей ресурсов Azure в Azure Active Directory (Azure AD) управление привилегированными пользователями (PIM). Чтобы настроить рабочий процесс утверждения и указать, кто может утверждать или отклонять запросы, выполните описанные ниже процедуры.
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
@@ -38,19 +38,19 @@ ms.locfileid: "67476323"
 
 1. Выберите ресурс, которым нужно управлять, например группу управления или подписку.
 
-    ![Список ресурсов, которые могут управляться странице ресурсов Azure](./media/pim-resource-roles-configure-role-settings/resources-list.png)
+    ![Страница ресурсов Azure с перечнем ресурсов, которыми можно управлять](./media/pim-resource-roles-configure-role-settings/resources-list.png)
 
 1. Щелкните **Параметры роли**.
 
-    ![Страница параметров роли, список ролей ресурсов Azure](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
+    ![Страница "Параметры роли" с перечнем ролей ресурсов Azure](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
 
 1. Выберите роль, параметры которой нужно настроить.
 
-    ![Страница сведений параметр роли, со списком несколько параметров назначение и активация](./media/pim-resource-roles-configure-role-settings/resources-role-setting-details.png)
+    ![Страница сведений о параметрах ролей со списком нескольких параметров назначения и активации](./media/pim-resource-roles-configure-role-settings/resources-role-setting-details.png)
 
 1. Щелкните **Изменить**, чтобы открыть панель параметров роли.
 
-    ![Изменить параметры роли с параметрами, чтобы обновить параметры назначение и активация](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
+    ![Страница «Изменение параметров роли» с параметрами для обновления параметров назначения и активации](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
 
     На панели для каждой роли есть ряд параметров, которые можно настроить.
 
@@ -101,7 +101,7 @@ ms.locfileid: "67476323"
 
 Вы можете потребовать, чтобы участники вводили обоснование при активном назначении или при активации. Чтобы требовать обоснование, установите флажки **Require justification on active assignment** (Требовать обоснование для активного назначения) или **Require justification on activation** (Требовать обоснование для активации).
 
-## <a name="require-approval-to-activate"></a>Настройка требования утверждения для активации
+## <a name="require-approval-to-activate"></a>Для активации требуется утверждение
 
 Если необходимо требовать утверждения для активации роли, выполните следующие действия.
 
@@ -109,7 +109,7 @@ ms.locfileid: "67476323"
 
 1. Щелкните **Выбор утверждающих лиц**, чтобы открыть панель выбора пользователя или группы.
 
-    ![Выберите область элемента или группы к Выбор утверждающих лиц](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
+    ![Выберите область элемента или группы, чтобы выбрать утверждающих](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
 
 1. Выберите по крайней мере одного участника или группу и нажмите кнопку **Выбрать**. Вы можете добавить любую комбинацию участников и групп. Нужно выбрать по меньшей мере одно утверждающее лицо. Утверждающих по умолчанию нет.
 
@@ -117,7 +117,7 @@ ms.locfileid: "67476323"
 
 1. После указания всех параметров роли нажмите кнопку **Обновить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначение ролей ресурсам Azure в PIM](pim-resource-roles-assign-roles.md)
 - [Настройка оповещений системы безопасности для ролей ресурсов Azure в PIM](pim-resource-roles-configure-alerts.md)

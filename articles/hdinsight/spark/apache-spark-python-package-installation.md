@@ -7,19 +7,20 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: c07326cc3a4334f1873eef2dc23da05156a93577
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: da871a1fed0663c5654ebcfd61f4189bf2267026
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64574658"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814062"
 ---
-# <a name="use-script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование действия сценария для установки внешних пакетов Python для записных книжек Jupyter в кластерах Apache Spark в HDInsight
+# <a name="script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-on-hdinsight"></a>Действие скрипта для установки внешних пакетов Python для записных книжек Jupyter в Apache Spark в HDInsight
+
 > [!div class="op_single_selector"]
 > * [Использование волшебных команд](apache-spark-jupyter-notebook-use-external-packages.md)
 > * [Использование действия сценария](apache-spark-python-package-installation.md)
 
-Узнайте, как с помощью действий сценария настроить [Apache Spark](https://spark.apache.org/) кластера в HDInsight для использования внешних, предоставленных сообществом **python** пакетов, которые не включены out of box в кластер.
+Узнайте, как использовать действия сценария для настройки кластера [Apache Spark](https://spark.apache.org/) в HDInsight для использования внешних, участвующих в сообществе пакетов **Python** , которые не включены в готовый список в кластере.
 
 > [!NOTE]  
 > Можно также настроить записную книжку Jupyter с помощью волшебной команды `%%configure`, чтобы использовать внешние пакеты. Дополнительные сведения см. в статье [Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight](apache-spark-jupyter-notebook-use-external-packages.md).
@@ -28,7 +29,7 @@ ms.locfileid: "64574658"
 
 В этой статье описано, как установить в кластере пакет [TensorFlow](https://www.tensorflow.org/) с помощью действия скрипта и использовать, например, с помощью записной книжки Jupyter.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Необходимо следующее:
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -54,23 +55,23 @@ ms.locfileid: "64574658"
 
 ## <a name="use-external-packages-with-jupyter-notebooks"></a>Использование внешних пакетов с записными книжками Jupyter
 
-1. Из [портала Azure](https://portal.azure.com/), перейдите к своему кластеру.  
+1. В [портал Azure](https://portal.azure.com/)перейдите к кластеру.  
 
-2. С помощью ваш кластер, в области слева на панели **параметры**выберите **действия скрипта**.
+2. Выбрав кластер, в левой области в разделе **Параметры**выберите **действия скрипта**.
 
-3. Выберите **+ отправить новое**.
+3. Выберите **+ отправить новый**.
 
-4. Введите следующие значения для **Отправка действия скрипта** окна:  
+4. Введите следующие значения в окне **Отправка действия скрипта** :  
 
 
     |Параметр | Значение |
     |---|---|
     |Тип скрипта | Выберите **— Настраиваемый** из раскрывающегося списка.|
-    |ИМЯ |Введите `tensorflow` в текстовое поле.|
+    |Название |Введите `tensorflow` в текстовое поле.|
     |URI bash-скрипта |Введите `https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh` в текстовое поле. |
-    |Типы узлов | Выберите **Head**, и **рабочих** флажки. |
+    |Типы узлов | Установите флажки **головной**и **Рабочий** . |
 
-    `tensorflowinstall.sh` содержит следующие команды:
+    `tensorflowinstall.sh`содержит следующие команды:
 
     ```bash
     #!/usr/bin/env bash
@@ -79,9 +80,9 @@ ms.locfileid: "64574658"
 
 5. Нажмите кнопку **Создать**.  Обратитесь к документации по [использованию настраиваемых действий сценария](../hdinsight-hadoop-customize-cluster-linux.md).
 
-6. Дождитесь завершения сценария.  **Действия скрипта** области укажет **новые действия скрипта можно отправить после завершения выполнения текущей операции кластера** во время выполнения скрипта.  Индикатор хода выполнения можно просмотреть в пользовательском Интерфейсе Ambari **фоновых операций** окна.
+6. Дождитесь завершения сценария.  Панель **действия скрипта** будет указывать, что **новые действия скрипта можно отправить после завершения текущей операции кластера** во время выполнения скрипта.  Индикатор выполнения можно просмотреть в окне **фоновые операции** пользовательского интерфейса Ambari.
 
-7. Откройте записную книжку PySpark Jupyter.  См. в разделе [Создание записной книжки Jupyter в Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) для действия.
+7. Откройте записную книжку PySpark Jupyter.  Пошаговые инструкции см. в статье [Создание записной книжки Jupyter в Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) .
 
     ![Создание записной книжки Jupyter](./media/apache-spark-python-package-installation/hdinsight-spark-create-notebook.png "Создание записной книжки Jupyter")
 

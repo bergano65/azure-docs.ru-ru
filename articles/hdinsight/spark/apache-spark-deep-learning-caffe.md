@@ -1,23 +1,23 @@
 ---
 title: Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
-description: Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
+description: Используйте Caffe на Apache Spark для распределенного глубокого обучения в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: d0d68263485c5ab6e57a349317b1975862470cc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31911c6c2456ab8b4949bab6ef8e541b91fc8a2c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721517"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814197"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 Глубокое обучение используется во всех отраслях, начиная от здравоохранения и заканчивая сферой транспортировки и производством. Компании используют глубокое обучение для решения сложных проблем, таких так [классификация образов](https://blogs.microsoft.com/next/2015/12/10/microsoft-researchers-win-imagenet-computer-vision-challenge/), [распознавание речи](https://googleresearch.blogspot.jp/2015/08/the-neural-networks-behind-google-voice.html), распознавание объектов и машинный перевод. 
 
@@ -175,7 +175,7 @@ Caffe использует "выразительную" архитектуру, 
     # solver mode: CPU or GPU
     solver_mode: CPU
 
-![Конфигурация Caffe](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
+![Caffe config1](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
 
 При необходимости вы можете изменить и другие строки.
 
@@ -184,7 +184,7 @@ Caffe использует "выразительную" архитектуру, 
 - Замените file:/Users/mridul/bigml/demodl/mnist_train_lmdb на wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb.
 - Замените file:/Users/mridul/bigml/demodl/mnist_test_lmdb/ на wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb.
 
-![Конфигурация Caffe](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
+![Caffe Config2](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
 
 Дополнительные сведения об определении сети см. в [документации Caffe по использованию набора данных MNIST](https://caffe.berkeleyvision.org/gathered/examples/mnist.html).
 

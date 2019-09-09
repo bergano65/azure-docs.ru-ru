@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 31738c43756da14ba6c2c92afbcb2882561c8001
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c05e72cd28c78b26b7c23a123b133d10147a4421
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64722877"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810787"
 ---
-# <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-streaming-on-apache-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight
+# <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-on-apache-hadoop-in-hdinsight"></a>Использование C# определяемых пользователем функций с Apache Hive и Apache Pig на Apache Hadoop в HDInsight
 
 Узнайте, как использовать определяемые пользователем функции C# с Apache Hive и Apache Pig в HDInsight.
 
@@ -24,7 +24,7 @@ ms.locfileid: "64722877"
 
 Hive и Pig могут передавать данные во внешние приложения для обработки. Этот процесс называется _потоковой передачей_. При использовании приложения .NET данные передаются в него через поток STDIN, после чего приложение возвращает результаты через поток STDOUT. Для чтения и записи с помощью потоков STDIN и STDOUT можно использовать `Console.ReadLine()` и `Console.WriteLine()` из консольного приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5.
 
@@ -249,7 +249,7 @@ Hive и Pig могут передавать данные во внешние п�
         (2012-02-03 20:11:56 SampleClass5 [TRACE] verbose detail for id 1737534798)
         (2012-02-03 20:11:56 SampleClass7 [DEBUG] detail for id 1475865947)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе мы рассмотрели использование приложения .NET Framework из Hive и Pig в HDInsight. Чтобы узнать об использовании Python с Hive и Pig, ознакомьтесь со статьей [Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight](python-udf-hdinsight.md).
 

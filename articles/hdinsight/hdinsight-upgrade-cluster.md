@@ -1,18 +1,18 @@
 ---
 title: Обновление кластера HDInsight до более новой версии в Azure
-description: Узнайте, как установить новую версию кластера HDInsight.
+description: Ознакомьтесь с рекомендациями по обновлению кластера Azure HDInsight до более новой версии.
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: 4d391c095495a3d0e34a2111d7b4564e6f4f2b8d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f4458b33edb9d55c30de8c5168668743abb33161
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071991"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811643"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.

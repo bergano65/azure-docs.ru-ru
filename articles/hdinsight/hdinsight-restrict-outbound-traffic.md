@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 63e23275a68ddde9385bb252dcb872d02c5cea08
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 829f3e730b4993a6a7f32a9224d3c6c38bd4c06e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405972"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811959"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall-preview"></a>Настройка исходящего сетевого трафика для кластеров Azure HDInsight с помощью брандмауэра (Предварительная версия)
 
@@ -48,7 +48,7 @@ ms.locfileid: "68405972"
 
 Выберите новый брандмауэр **Test-FW01** из портал Azure. Щелкните **правила** в разделе **Параметры** > **коллекция** > правил приложения**Добавить коллекцию правил приложения**.
 
-![Заголовок: Добавление коллекции правил приложений](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
+![Заголовок. Добавление коллекции правил приложений](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
 
 На экране **Добавление коллекции правил приложений** выполните следующие действия.
 
@@ -67,7 +67,7 @@ ms.locfileid: "68405972"
 
 1. Нажмите кнопку **Добавить**.
 
-   ![Заголовок: Введите сведения о коллекции правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
+   ![Заголовок. Введите сведения о коллекции правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
 
 ### <a name="configure-the-firewall-with-network-rules"></a>Настройка брандмауэра с помощью сетевых правил
 
@@ -93,7 +93,7 @@ ms.locfileid: "68405972"
 
 1. Нажмите кнопку **Добавить** , чтобы завершить создание коллекции правил сети.
 
-   ![Заголовок: Введите сведения о коллекции правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
+   ![Заголовок. Введите коллекцию правил приложения](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
 
 ### <a name="create-and-configure-a-route-table"></a>Создание и настройка таблицы маршрутов
 

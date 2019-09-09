@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5559d30921ea44679b4ecd24c77e26be163c18fc
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 53900bcade3f7a283309f5ee1c624c742a62ad3f
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70375911"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812440"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -149,7 +149,7 @@ ms.locfileid: "70375911"
 | ----- | ----- | ----- | ----- |
 | Маршрутизируемый | Федеративный | Начиная с выпуска 1703 | Общедоступная версия |
 | Немаршрутизируемый | Федеративный | Начиная с выпуска 1803 | Общедоступная версия |
-| Маршрутизируемый | Управляется | Не поддерживается | |
+| Маршрутизируемый | Управляется | Начиная с выпуска 1803 | Общедоступная версия Azure AD SSPR в Windows на экране блокировки не поддерживается |
 | Немаршрутизируемый | Управляется | Не поддерживается | |
 
 ## <a name="next-steps"></a>Следующие шаги

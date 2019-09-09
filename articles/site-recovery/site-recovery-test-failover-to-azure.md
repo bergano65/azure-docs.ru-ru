@@ -1,19 +1,18 @@
 ---
-title: Запуск отработки аварийного восстановления в Azure с помощью Azure Site Recovery | Документация Майкрософт
+title: Выполнение перехода на аварийное восстановление в Azure с помощью Azure Site Recovery
 description: Сведения о запуске отработки аварийного восстановления с переносом из локальной среды в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
-services: site-recovery
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 67cbd37becb1fe87a7f4f554f574b6e5219c9243
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8342f60d8a0f91cc4807d25307510c1cbe7ee5c8
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399935"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814371"
 ---
 # <a name="run-a-disaster-recovery-drill-to-azure"></a>Отработка аварийного восстановления в Azure 
 
@@ -113,5 +112,5 @@ ms.locfileid: "66399935"
 
 Для устранения проблем с подключением после отработки отказа выполните шаги, описанные [здесь](site-recovery-failover-to-azure-troubleshoot.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После завершения руководства по аварийному восстановлению ознакомьтесь с другими типами [отработки отказа](site-recovery-failover.md).

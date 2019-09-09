@@ -7,14 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: b9d853cc0de08b64f2e0f5530e153724d9eeddda
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 2c8983b5d6a44834d0c9659877c857fd73805ce6
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277097"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812310"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -87,6 +87,9 @@ ms.locfileid: "70277097"
 * Вы копируете данные из текстового файла и хотите пропустить несколько строк в начале, которые не содержат ни данных, ни заголовка. Укажите `skipLineCount`, чтобы задать число пропускаемых строк. Если остальная часть файла содержит строку заголовка, можно также указать `firstRowAsHeader`. Если указаны `skipLineCount` и `firstRowAsHeader`, сначала пропускаются строки, а затем из входного файла считываются данные заголовка.
 
 ## <a name="json-format"></a>Формат JSON
+
+>[!NOTE]
+>В фабрике данных появился новый набор данных формата JSON. Дополнительные сведения см. в статье [JSON](format-json.md) . Следующие конфигурации в наборе данных хранилища данных на основе файлов по-прежнему поддерживаются "как есть" для обратного компабитилити. Рекомендуется использовать новую модель.
 
 Чтобы **импортировать JSON-файл "как есть" в базу данных Azure Cosmos DB или экспортировать его из нее**, см. раздел "Документы JSON для импорта и экспорта" статьи о [перемещении данных в базу данных Azure Cosmos DB и из нее](connector-azure-cosmos-db.md).
 

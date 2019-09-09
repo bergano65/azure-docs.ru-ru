@@ -1,9 +1,9 @@
 ---
-title: Проверка доступа к Azure AD роли в PIM — Azure Active Directory | Документация Майкрософт
-description: Узнайте, как проверить доступ ролей Azure AD в Azure AD Privileged Identity Management (PIM).
+title: Проверка доступа к ролям Azure AD в PIM-Azure Active Directory | Документация Майкрософт
+description: Узнайте, как просматривать доступ к ролям Azure AD в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 06/21/2018
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3850af026ea13e1920aea65e18358ebb04ef0d25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3bd548041b086eef8d788a696497163c756fd5b7
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65140966"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804422"
 ---
-# <a name="review-access-to-azure-ad-roles-in-pim"></a>Проверка доступа к Azure AD роли в PIM
+# <a name="review-access-to-azure-ad-roles-in-pim"></a>Проверка доступа к ролям Azure AD в PIM
 
-Azure Active Directory (AD) Privileged Identity Management (PIM) упрощает управление привилегированным доступом к ресурсам в Azure AD и остальным сетевым службам Майкрософт, таких как Office 365 или Microsoft Intune.  
+Azure Active Directory (AD) управление привилегированными пользователями (PIM) упрощает управление привилегированным доступом к ресурсам в Azure AD и других веб-службы Майкрософт, например Office 365 или Microsoft Intune.  
 
 Если вам назначена роль администратора, администратор привилегированных ролей вашей организации может попросить вас регулярно подтверждать, что эта роль по-прежнему требуется вам для работы. Вы можете получить сообщение электронной почты, содержащее ссылку для подтверждения, или перейти непосредственно на [портал Azure](https://portal.azure.com). Следуйте указаниям в этой статье, чтобы выполнить самостоятельную проверку назначенных вам ролей.
 
@@ -48,6 +48,6 @@ Azure Active Directory (AD) Privileged Identity Management (PIM) упрощае�
 5. Закройте колонку **Проверка ролей Azure AD** .
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Выполнение проверки доступа своих ролей ресурсов Azure в PIM](pim-resource-roles-perform-access-review.md)

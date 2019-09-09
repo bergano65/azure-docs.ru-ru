@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 591fd2e0f5c6d36ad6b84b1f3ec035488fa02614
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 2caa96e0ad036bbb872de43a7d8736969cf33c42
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733250"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812041"
 ---
-# <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
+# <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Мониторинг производительности кластера в Azure HDInsight
 
 Мониторинг работоспособности и производительности кластера HDInsight важен для обеспечения оптимальной производительности и эффективного использования ресурсов. Мониторинг может также помочь вам обнаружить и устранить ошибки конфигурации кластера и проблемы с пользовательским кодом.
 

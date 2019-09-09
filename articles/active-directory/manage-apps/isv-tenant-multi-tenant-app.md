@@ -1,6 +1,6 @@
 ---
-title: Создание клиента Azure для мультитенантного приложения
-description: Рекомендации для независимых поставщиков программного обеспечения на интеграцию с Azure Active Directory
+title: Создание клиента Azure для приложения с несколькими клиентами
+description: Руководство для независимых поставщиков программного обеспечения при интеграции с Azure Active Directory
 services: active-directory
 author: barbaraselden
 manager: CelesteDG
@@ -12,34 +12,34 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69cc625500af60a753ad8e7db0363954088f3307
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 637adba89445e6974e83486f0641576225ccd268
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659584"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812611"
 ---
-# <a name="create-an-azure-tenant-for-a-multi-tenant-application"></a>Создание клиента Azure для мультитенантного приложения  
+# <a name="create-an-azure-tenant-for-a-multi-tenant-application"></a>Создание клиента Azure для приложения с несколькими клиентами  
 
-Для предоставления доступа к мультитенантного приложения необходимо создать клиент Azure Active Directory для регистрации приложения и включить федерацию удостоверений клиента. См. в разделе [Выбор протокола правой федерации для мультитенантного приложения](isv-choose-multi-tenant-federation.md). Этот клиент позволит тестировать приложения и федерации в среду, аналогичную среды клиентов Azure AD.
+Чтобы предоставить доступ к многоклиентским приложениям, необходимо создать клиент Azure Active Directory для регистрации приложения и включения федерации удостоверений клиента. См. раздел [Выбор правильного протокола Федерации для приложения с несколькими клиентами](isv-choose-multi-tenant-federation.md). Этот клиент позволит протестировать приложение и Федерацию в среде, похожей на клиентские среды Azure AD.
 
-## <a name="costs-of-hosting-a-multi-tenant-application"></a>Затраты на размещение мультитенантного приложения
+## <a name="costs-of-hosting-a-multi-tenant-application"></a>Затраты на размещение приложения с несколькими клиентами
 
-Azure Active Directory доступна в трех SKU, Free, Basic и Premium. [Подробное сравнение функций см. в разделе](https://azure.microsoft.com/pricing/details/active-directory/).
+Azure Active Directory доступен в нескольких выпусках. [См. подробные сведения о сравнении функций](https://azure.microsoft.com/pricing/details/active-directory/).
 
-Можно создать подписку Azure и Azure active directory бесплатно и использовать основные функции.
+Вы можете создать подписку Azure и Azure Active Directory бесплатно и использовать основные функции.
 
 ## <a name="create-your-tenant"></a>Создание клиента
 
-1. Создание вашего клиента. См. в разделе [Настройка среды разработки](../develop/quickstart-create-new-tenant.md).
+1. Создайте клиент. См. раздел [Настройка среды разработки](../develop/quickstart-create-new-tenant.md).
 
-2. Включить и проверить единый вход на доступ к вашему приложению,
+2. Включите и проверьте доступ к приложению для единого входа.
 
-   1\. **Для приложений OIDC или Oath**, [зарегистрировать приложение](../develop/quickstart-register-app.md) как мультитенантное приложение. Выберите учетные записи в любой организации каталоге и параметр личное учетные записи Майкрософт в учетной записи, поддерживаемые типы
+   1\. **Для приложений OIDC или Oath** [зарегистрируйте приложение](../develop/quickstart-register-app.md) в качестве приложения с несколькими клиентами. Выберите учетные записи в любом организационном каталоге и личные учетные записи Майкрософт в списке Поддерживаемые типы учетных записей.
 
-   2\. **SAML и WS-Fed-приложений на основе**, вы [на основе SAML, настроить единый вход](configure-single-sign-on-non-gallery-applications.md) приложения при помощи универсального шаблона SAML в Azure AD.
+   2\. **Для приложений на основе SAML и WS-подач**вы [настраиваете приложения единого входа на основе SAML](configure-single-sign-on-non-gallery-applications.md) с помощью универсального шаблона SAML в Azure AD.
 
-Вы также можете [преобразование приложения одним клиентом для нескольких клиентов](../develop/howto-convert-app-to-be-multi-tenant.md) при необходимости.
+При необходимости можно также [преобразовать приложение с одним клиентом в несколько клиентов](../develop/howto-convert-app-to-be-multi-tenant.md) .
 
 ## <a name="next-steps"></a>Следующие шаги
 

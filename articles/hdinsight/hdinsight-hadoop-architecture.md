@@ -1,6 +1,6 @@
 ---
 title: Архитектура Apache Hadoop в Azure HDInsight
-description: Сведения о компонентах Apache Hadoop для хранения и обработки, используемые в кластерах HDInsight.
+description: Описание Apache Hadoop хранения и обработки в кластерах Azure HDInsight.
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/27/2019
-ms.openlocfilehash: 3fd85232ff7044c699a3e68ce34b267bf50c4dc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d41d671cf773bdab20c3f105c7d1abb6c7bde840
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257860"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810234"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
 
@@ -47,7 +47,7 @@ YARN развертывается во всех типах кластера HDIn
 
 ![YARN в HDInsight](./media/hdinsight-hadoop-architecture/yarn-on-hdinsight.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

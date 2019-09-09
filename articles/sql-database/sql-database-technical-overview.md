@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/08/2019
-ms.openlocfilehash: 8c931521e77123844817dff0e9209f8f95f7ad59
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: f7fc5b32fb18da60816056c72dde8c53d439befe
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279896"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812187"
 ---
 # <a name="what-is-azure-sql-database-service"></a>Что такое служба базы данных SQL Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "70279896"
 ### <a name="purchasing-models-service-tiers-compute-sizes-and-storage-amounts"></a>Модели приобретения, уровни служб, размеры вычислительных операций и объема хранилища
 
 База данных SQL предлагает две модели приобретения.
-- [Модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md) позволяет выбрать количество виртуальных ядер, объем памяти и размер и скорость хранилища. Модель приобретения на основе виртуальных ядер также позволяет применять [Преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/), чтобы добиться снижения затрат. Дополнительные сведения о Преимуществе гибридного использования Azure см. в разделе [База данных SQL Azure: часто задаваемые вопросы](#sql-database-frequently-asked-questions-faq).
+- [Модель приобретения на основе виртуальное ядро](sql-database-service-tiers-vcore.md) позволяет выбрать количество виртуальных ядер, объем памяти, а также объем и скорость хранения. Модель приобретения на основе виртуальных ядер также позволяет применять [Преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/), чтобы добиться снижения затрат. Дополнительные сведения о Преимуществе гибридного использования Azure см. в разделе [База данных SQL Azure: часто задаваемые вопросы](#sql-database-frequently-asked-questions-faq).
 - [Модель приобретения на основе единиц DTU](sql-database-service-tiers-dtu.md) предлагает набор вычислительных операций, памяти и ресурсов ввода-вывода трех уровней обслуживания, каждый из которых предусматривает поддержку различных рабочих нагрузок баз данных. Для каждого объема вычислительных ресурсов на всех уровнях обслуживания предусмотрено отдельное сочетание этих ресурсов, к которым можно добавить ресурсы хранилища.
 
 ### <a name="elastic-pools-to-maximize-resource-utilization"></a>Эластичные пулы для максимального использования ресурсов

@@ -1,19 +1,19 @@
 ---
 title: Локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight
-description: Локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight
+description: Устранение неполадок локального Apache HDFS в защищенном режиме в кластере Apache в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/14/2019
-ms.openlocfilehash: e0fbb93e11c170f80620ac9b1e895650752ad638
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 4c97700fa69c2f2ae235308063ee431a8dbfcbfd
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69511375"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810715"
 ---
-# <a name="scenario-local-hdfs-stuck-in-safe-mode-on-azure-hdinsight-cluster"></a>Сценарий: Локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight
+# <a name="scenario-local-hdfs-stuck-in-safe-mode-on-azure-hdinsight-cluster"></a>Сценарий. Локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 

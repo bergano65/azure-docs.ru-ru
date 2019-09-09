@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.author: hrasheed
-ms.openlocfilehash: 6e8f8e7d8324f23a81cd6ae3284bd6d7cff24117
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 87ac2283e96081297fdd54c1c131aa5b78a5973a
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489844"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814258"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -28,7 +28,7 @@ ms.locfileid: "68489844"
 > 
 > 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 * Комплект разработчика Oracle Java версии 8, который используется для среды выполнения интегрированной среды разработки Eclipse. Его можно скачать с [веб-сайта Oracle](https://aka.ms/azure-jdks).
@@ -48,7 +48,7 @@ ms.locfileid: "68489844"
 
 Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену. 
 
-## <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 1. Запустите интегрированную среду разработки Eclipse и откройте Azure Explorer. В меню **Window** (Окно) выберите пункт **Show View** (Показать представление) и щелкните **Other** (Другие). В открывшемся диалоговом окне разверните **Azure** и щелкните **Azure Explorer**, а затем нажмите кнопку **ОК**.
 
    ![Диалоговое окно Show View (Показать представление)](./media/apache-spark-eclipse-tool-plugin/view-explorer-1.png)
@@ -61,7 +61,7 @@ ms.locfileid: "68489844"
    ![Диалоговое окно выбора подписок](./media/apache-spark-eclipse-tool-plugin/Select-Subscriptions.png)
 1. На вкладке **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight Spark в своей подписке.
    
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-3.png)
+   ![Кластеры HDInsight Spark в Azure Explorer3](./media/apache-spark-eclipse-tool-plugin/view-explorer-3.png)
 1. Далее можно развернуть узел имени кластера, чтобы увидеть ресурсы (например, учетные записи хранения), связанные с ним.
    
    ![Развертывание имени кластера для просмотра ресурсов](./media/apache-spark-eclipse-tool-plugin/view-explorer-4.png)
@@ -235,16 +235,16 @@ ms.locfileid: "68489844"
        
 2. В **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight в своей подписке. Кластеры с пометкой **Role:Reader**, имеют только разрешение роли только для чтения.
 
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-6.png)
+    ![Кластеры HDInsight Spark в Azure Explorer роль читатель](./media/apache-spark-eclipse-tool-plugin/view-explorer-6.png)
 
 3. Щелкните правой кнопкой мыши кластер с разрешением роль только для чтения. Выберите **Link this cluster** (Связать этот кластер) из контекстного меню, чтобы связать кластер. Введите имя пользователя и пароль Ambari.
 
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-7.png)
+    ![Ссылки на кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-7.png)
 
 4. Если кластер связан успешно, HDInsight будет обновлен.
    Этап кластера станет связанным.
   
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-8.png)
+    ![Связывание кластеров HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-8.png)
 
 
 
@@ -254,7 +254,7 @@ ms.locfileid: "68489844"
    
 2. Щелкните **Link this cluster** (Связать этот кластер), чтобы связать кластер.
    
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-9.png)
+    ![Кластеры HDInsight Spark в Azure Explorer9](./media/apache-spark-eclipse-tool-plugin/view-explorer-9.png)
 
 ### <a name="link-cluster-from-spark-submission-window"></a>Связывание кластера с окном отправки Spark
 
@@ -262,23 +262,23 @@ ms.locfileid: "68489844"
 
 2. Щелкните пакет правой кнопкой мыши. Затем выберите **отправить приложение Spark в HDInsight**.
    
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-11.png)
+   ![Отправка кластеров HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-11.png)
 
 3. Выберите кластер с разрешением роль только для чтения для **имени кластера**. Появится сообщение с предупреждением. Можно щелкнуть **связать этот кластер** с кластером.
    
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-15.png)
+   ![Создание кластеров HDInsight Spark в Azure Explorer ссылка](./media/apache-spark-eclipse-tool-plugin/view-explorer-15.png)
    
 ### <a name="view-storage-accounts"></a>Просмотр учетных записей хранения
 
 * Для кластеров с разрешением роли только для чтения щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). 
      
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-13.png)
+   ![Кластеры HDInsight Spark в хранилище Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-13.png)
 
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-12.png)
+   ![Кластеры HDInsight Spark в Azure Explorer запрещены](./media/apache-spark-eclipse-tool-plugin/view-explorer-12.png)
 
 * Для связанных кластеров щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). 
      
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-14.png)
+   ![Кластеры HDInsight Spark в Azure Explorer denied2](./media/apache-spark-eclipse-tool-plugin/view-explorer-14.png)
 
 ## <a name="known-problems"></a>Известные проблемы
 Рекомендуем при связывании кластера указать учетные данные хранилища.
@@ -287,9 +287,9 @@ ms.locfileid: "68489844"
 
 Существует два режима отправки заданий. Если учетные данные хранилища указаны, для отправки задания будет использоваться пакетный режим. В противном случае будет использоваться интерактивный режим. Если кластер занят, может появиться приведенная ниже ошибка.
 
-![Eclipse получает сообщение об ошибке, если кластер занят](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-upload.png)
+![Ошибка при получении Eclipse при занятости кластера](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-upload.png "Ошибка при получении Eclipse при занятости кластера")
 
-![Eclipse получает сообщение об ошибке, если кластер занят](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png)
+![Ошибка получения Eclipse при занятости кластера Yarn](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png "Ошибка получения Eclipse при занятости кластера Yarn")
 
 ## <a name="seealso"></a>Дополнительные материалы
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)

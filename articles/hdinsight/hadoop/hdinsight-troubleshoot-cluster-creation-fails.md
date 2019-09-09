@@ -1,6 +1,6 @@
 ---
 title: Устранение сбоев при создании кластера с помощью Azure HDInsight
-description: Узнайте, как устранять неполадки при создании кластера для Azure HDInsight.
+description: Узнайте, как устранять неполадки при создании кластера Apache для Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/26/2019
-ms.openlocfilehash: 84dc0115edcab07036b43d5fa19310918f7a2408
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 607eacc531166d9d770f31cc64825e8ffea9ca76
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035981"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810681"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "70035981"
 
 ## <a name="permissions-issues"></a>Проблемы с разрешениями
 
-Если вы используете Azure Data Lake Storage 2-го поколения и получаете ошибку ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или **большой двоичный объект хранилища. Роль владельца данных** назначила доступ к управляемому удостоверению, **назначенному пользователю** для подписки. Подробные инструкции см. в разделе [Настройка разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account) .
+Если вы используете Azure Data Lake Storage 2-го поколения и получаете ошибку ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или **большой двоичный объект хранилища. Роль владельца данных** назначила доступ к **управляемому удостоверению, назначенному пользователю** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
 
 Если вы используете Azure Data Lake Storage 1-го поколения, см. инструкции по настройке и настройке [здесь](../hdinsight-hadoop-use-data-lake-store.md). Data Lake Storage 1-го поколения не поддерживается для кластеров HBase и не поддерживается в HDInsight версии 4,0.
 

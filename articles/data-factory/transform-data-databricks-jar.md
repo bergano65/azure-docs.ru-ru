@@ -12,12 +12,12 @@ ms.date: 03/15/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: d299a785d50657ef40c0c49cb2dce33b8939fd02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 924367c6bb85b64bafbcb8feb546eeb490e07a34
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60860994"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812791"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 
@@ -56,15 +56,18 @@ ms.locfileid: "60860994"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|Обязательно для заполнения|
+|Свойство|Описание|Обязательное значение|
 |:--|---|:-:|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
 |type|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
 |mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Да|
-|parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
+|параметры|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Да (по крайней мере один метод, содержащий mainClassName)|
+
+> [!NOTE]
+> **Известная ошибка** . при использовании одного и того же [интерактивного кластера](compute-linked-services.md#example---using-existing-interactive-cluster-in-databricks) для выполнения операций JAR-файла с параллельными модулями данных (без перезапуска кластера) существует известная ошибка в модулях данных, где в параметрах первого действия будут использоваться следующие действия. также. Поэтому в последующие задания передаются неверные параметры. Для устранения этой проблемы используйте вместо этого [кластер заданий](compute-linked-services.md#example---using-new-job-cluster-in-databricks) . 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 

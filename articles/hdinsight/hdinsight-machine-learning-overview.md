@@ -1,6 +1,6 @@
 ---
 title: Общие сведения о машинном обучении в Azure HDInsight
-description: Описание параметров машинного обучения в HDInsight.
+description: Общие сведения о параметрах машинного обучения для работы с большими данными для кластеров в Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: hrasheed
-ms.openlocfilehash: ca69424ecbddc068fdaf8bb5839a647701ee27fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 17615c0005a3cbc5b20cea697b4c75b5ed06ae0a
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686588"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811999"
 ---
 # <a name="machine-learning-on-hdinsight"></a>Машинное обучение в HDInsight
 
@@ -62,6 +62,6 @@ HDInsight позволяет выполнять машинное обучени�
 
 ### <a name="deep-learning-resources"></a>Ресурсы для глубокого обучения
 
-* [Использовать Microsoft Cognitive Toolkit для глубокого обучения модели с кластером Azure HDInsight Spark](spark/apache-spark-microsoft-cognitive-toolkit.md)
+* [Использование модели глубокого обучения Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark](spark/apache-spark-microsoft-cognitive-toolkit.md)
 * [Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения](spark/apache-spark-deep-learning-caffe.md)
-* [Платформы глубокого обучения и искусственного Интеллекта на виртуальной машине обработки и анализа данных (DSVM)](../machine-learning/data-science-virtual-machine/dsvm-deep-learning-ai-frameworks.md)
+* [Платформы глубокого обучения и искусственного интеллекта на виртуальной машине для обработки и анализа данных (DSVM)](../machine-learning/data-science-virtual-machine/dsvm-deep-learning-ai-frameworks.md)
