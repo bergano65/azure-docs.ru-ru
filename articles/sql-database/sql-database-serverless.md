@@ -11,12 +11,12 @@ author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 09/06/2019
-ms.openlocfilehash: 738d6738469960c8b21809b9320c4d034613c4e3
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: ba4e1e933b00aa8ca74be30a6ea5e1a22844b15f
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802379"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858501"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Сервер базы данных SQL Azure (Предварительная версия)
 
@@ -201,7 +201,7 @@ New-AzSqlDatabase `
 В следующем примере база данных перемещается из подготовленного уровня вычислений в бессерверный уровень вычислений. В этом примере явно указываются такие параметры, как минимальное и максимальное количество виртуальных ядер и задержка автоматический приостановки.
 
 ```powershell
-Set-AzSqlDatabase
+Set-AzSqlDatabase `
   -ResourceGroupName $resourceGroupName `
   -ServerName $serverName `
   -DatabaseName $databaseName `

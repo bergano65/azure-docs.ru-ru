@@ -1,21 +1,21 @@
 ---
 title: Настройка брандмауэра базы данных SQL Azure Blockchain Workbench
-description: Дополнительные сведения о настройке брандмауэра базы данных SQL Azure Blockchain Workbench.
+description: Узнайте, как настроить брандмауэр базы данных SQL Azure Блокчейн Workbench Preview.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/09/2019
+ms.date: 09/09/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: d56e7f4750510dc7bb50dbb316dce320b8e8d12b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0153065ca0ccd6cf34456d630d7437d5ea7c5b48
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65510025"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845231"
 ---
 # <a name="configure-the-azure-blockchain-workbench-database-firewall"></a>Настройка брандмауэра базы данных Azure Blockchain Workbench
 
@@ -25,7 +25,7 @@ ms.locfileid: "65510025"
 
 Чтобы подключиться к базе данных, в которой вы хотите настроить правило, сделайте следующее:
 
-1. Войдите на портал Azure с учетной записью с разрешениями **владельца** для ресурсов Azure Blockchain Workbench.
+1. Войдите в портал Azure с учетной записью, имеющей разрешения **владельца** для ресурсов Azure блокчейн Workbench.
 2. В левой области навигации выберите **Группа ресурсов**.
 3. Выберите имя группы ресурсов для развертывания Blockchain Workbench.
 4. Выберите **Тип** для сортировки списка ресурсов, а затем выберите **SQL Server**.
@@ -56,7 +56,7 @@ ms.locfileid: "65510025"
 1. Чтобы сохранить конфигурацию брандмауэра, щелкните **Сохранить**.
 2. Проверьте диапазон IP-адресов, настроенных для базы данных, подключившись с помощью приложения или средства. Например, SQL Server Management Studio.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

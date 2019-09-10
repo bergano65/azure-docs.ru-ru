@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7d7333a9316e4d39fd550872c3df04024a75d21d
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c40fd4f776e0372d7368d182d30cfb2e01a4b0e2
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128332"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858822"
 ---
 # <a name="what-are-ml-pipelines-in-azure-machine-learning-service"></a>Что такое конвейеры машинного обучения в службе Машинное обучение Azure?
 
@@ -54,7 +54,7 @@ ms.locfileid: "70128332"
 
 С помощью Машинное обучение Azure можно использовать различные наборы средств и платформы, такие как PyTorch или TensorFlow, для каждого шага в конвейере. Azure выполняет координацию между различными используемыми [целевыми объектами вычислений](concept-azure-machine-learning-architecture.md), чтобы промежуточные данные можно было легко совместно использовать с нисходящими целевыми объектами вычислений.
 
-Можно [отслеживать метрики для экспериментов в конвейере](https://docs.microsoft.com/azure/machine-learning/service/how-to-track-experiments) непосредственно на портале Azure. После публикации конвейера можно настроить конечную точку RESTFUL, которая позволит перезапустить конвейер из любой платформы или стека.
+[Метрики для экспериментов конвейера можно отслеживаниь](https://docs.microsoft.com/azure/machine-learning/service/how-to-track-experiments) непосредственно в портал Azure или на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com). После публикации конвейера можно настроить конечную точку RESTFUL, которая позволит перезапустить конвейер из любой платформы или стека.
 
 ## <a name="key-advantages"></a>Ключевые преимущества
 

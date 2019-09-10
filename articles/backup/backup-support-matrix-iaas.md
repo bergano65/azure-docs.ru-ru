@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dacurwin
-ms.openlocfilehash: df9e60c8d517c35029e425d50dba81a18c2f1114
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: da987b5e841824dc62f3b740cae2961de9d7b293
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69617363"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872905"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Матрица поддержки для резервного копирования виртуальных машин Azure
 Вы можете использовать [службу Azure Backup](backup-overview.md) для резервного копирования локальных компьютеров и рабочих нагрузок, а также виртуальных машин Azure. В этой статье перечислены параметры поддержки и ограничения при резервном копировании виртуальных машин Azure с помощью Azure Backup.
@@ -151,6 +151,7 @@ ms.locfileid: "69617363"
 Резервное копирование нескольких виртуальных машин | Azure Backup не обеспечивает согласованность данных и приложений на нескольких виртуальных машинах.
 Резервное копирование с [параметрами диагностики](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview)  | Неподдерживаемый. <br/><br/> Если восстановление виртуальной машины Azure с параметрами диагностики запускается с помощью команды [создать новый](backup-azure-arm-restore-vms.md#create-a-vm) , восстановление завершится ошибкой.
 Восстановление виртуальных машин, закрепленных в зонах | Поддерживается (для виртуальной машины, резервная копия которой создается после января 2019 и доступна [Зона доступности](https://azure.microsoft.com/global-infrastructure/availability-zones/) ).<br/><br/>В настоящее время поддерживается восстановление в ту же зону, которая закреплена на виртуальных машинах. Однако если зона недоступна, восстановление завершится ошибкой.
+Виртуальные машины Gen2 | Поддерживается <br> Azure Backup поддерживает резервное копирование и восстановление [виртуальных машин Gen2](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/). При восстановлении этих виртуальных машин из точки восстановления они восстанавливаются как [виртуальные машины Gen2](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/).
 
 
 ## <a name="vm-storage-support"></a>Поддержка хранилища виртуальной машины

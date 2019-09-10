@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 08/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 8f12f07d22387e5625b10e564cd05109e5bc73fc
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: cad04df9ba76ce483a308411949e6f98bab23bf9
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744401"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858555"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Отличия T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -201,7 +201,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="compatibility-levels"></a>Уровни совместимости
 
-- Поддерживаемые уровни совместимости: 100, 110, 120, 130 и 140.
+- Поддерживаемые уровни совместимости: 100, 110, 120, 130, 140 и 150.
 - Уровни совместимости ниже 100 не поддерживаются.
 - Уровень совместимости по умолчанию для новых баз данных — 140. Для восстановленных баз данных уровень совместимости остается неизменным, если он был 100 и выше.
 
@@ -524,7 +524,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - Подсеть должна иметь достаточное количество доступных [IP-адресов](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя в подсети рекомендуется иметь по крайней мере 32 IP-адресов.
 - [Конечные точки службы не могут быть связаны с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что при создании виртуальной сети параметр конечные точки службы отключен.
 - Количество виртуальных ядер и типов экземпляров, которые можно развернуть в регионе, имеет некоторые [ограничения и](sql-database-managed-instance-resource-limits.md#regional-resource-limitations)ограничения.
-- Существуют некоторые [правила безопасности, которые необходимо применить к подсети](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
+- Существуют некоторые [правила безопасности, которые необходимо применить](sql-database-managed-instance-connectivity-architecture.md#network-requirements)к подсети.
 
 ### <a name="vnet"></a>Виртуальная сеть
 - Виртуальную сеть можно развернуть с помощью модели ресурсов — классическая модель для виртуальной сети не поддерживается.

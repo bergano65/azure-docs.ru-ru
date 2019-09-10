@@ -17,12 +17,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 906f2fc8cdac31922e6e93526f65577fe76c4b9c
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 054033c0fc9f1138ef9ecf7eaceca626f6f53423
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532348"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872846"
 ---
 # <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin iOS, с MSAL.NET
 В Xamarin iOS существует несколько аспектов, которые необходимо учитывать при использовании MSAL.NET.
@@ -104,13 +104,23 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 
 Ранее было сказано, что MSAL добавила $ (AppIdentifierPrefix) при каждом использовании `WithIosKeychainSecurityGroup()` API. Это связано с тем, что AppIdentifierPrefix или «идентификатор команды» используются, чтобы обеспечить совместное использование доступа к цепочке ключей только для приложений, созданных одним издателем.
 
-#### <a name="note-keychainsecuritygroup-property-deprecated"></a>Примечание. Нерекомендуемое свойство Кэйчаинсекуритиграуп
+> [!NOTE]
+> **`KeychainSecurityGroup` Свойство является устаревшим.**
+> 
+> Ранее в MSAL 2. x разработчики были вынуждены включать префикс теамид при использовании `KeychainSecurityGroup` свойства.
+>
+>  В MSAL 2.7. x при использовании нового `iOSKeychainSecurityGroup` свойства MSAL будет разрешать префикс теамид во время выполнения. При использовании этого свойства значение не должно содержать префикс Теамид.
+>  Используйте новое `iOSKeychainSecurityGroup` свойство, которое не требует предоставления теамид, так как предыдущее `KeychainSecurityGroup` свойство устарело.
 
-Ранее в MSAL 2. x разработчики вынуждены включать префикс теамид при использовании `KeychainSecurityGroup` свойства.
+### <a name="use-microsoft-authenticator"></a>Использование Microsoft Authenticator
 
-В MSAL 2.7. x при использовании нового `iOSKeychainSecurityGroup` свойства MSAL будет разрешать префикс теамид во время выполнения. При использовании этого свойства значение не должно содержать префикс Теамид.
+Приложение может использовать Microsoft Authenticator (брокер) для включения:
 
-Используйте новое `iOSKeychainSecurityGroup` свойство, которое не требует от разработчиков предоставления теамид, так как предыдущее `KeychainSecurityGroup` свойство устарело.
+- Единый вход (SSO). Пользователям не потребуется входить в каждое приложение.
+- Идентификация устройства. Путем доступа к сертификату устройства, созданному на устройстве при присоединении к рабочей области. Приложение будет готово, если администраторы клиента включают условный доступ, связанный с устройствами.
+- Проверка идентификации приложения. Когда приложение вызывает брокер, ему передается URL-адрес перенаправления, и брокер проверяет его.
+
+Дополнительные сведения о том, как включить брокер, см. в статье [использование Microsoft Authenticator или Microsoft Intune корпоративного портала в приложениях Xamarin iOS и Android](msal-net-use-brokers-with-xamarin-apps.md).
 
 ### <a name="sample-illustrating-xamarin-ios-specific-properties"></a>Пример, иллюстрирующий конкретные свойства Xamarin iOS
 

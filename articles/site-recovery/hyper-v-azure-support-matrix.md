@@ -1,19 +1,18 @@
 ---
-title: Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure | Документация Майкрософт
+title: Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 description: Краткое описание поддерживаемых компонентов и требований для аварийного восстановления виртуальных машин Hyper-V в Azure с помощью службы Azure Site Recovery
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 08/07/2019
+ms.date: 09/10/2019
 ms.author: raynew
-ms.openlocfilehash: b4f9c0ab3ca50b0ce8c9ba27d8773c58a72dcfa9
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 5d7ac7cf00ee59a06a914d312fd58de00515a0b4
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70230968"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873339"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -134,6 +133,7 @@ Blob-блоки | Нет | Нет
 Хранилище уровня "Премиум" | Да | Да
 Служба импорта и экспорта | Нет | Нет
 Брандмауэры службы хранилища Azure для виртуальных сетей, настроенные в целевой учетной записи хранения или кэширования (используемой для хранения данных репликации) | Нет | Нет
+Изменение учетной записи хранения | Нет. Невозможно изменить целевую учетную запись хранения Azure после включения репликации. Чтобы изменить, отключите и снова включите аварийное восстановление. | Нет
 
 
 ## <a name="azure-compute-features"></a>Вычислительные компоненты Azure

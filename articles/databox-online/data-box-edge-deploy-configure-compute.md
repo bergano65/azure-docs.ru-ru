@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 03/19/2019
+ms.date: 09/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Data Box Edge so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 7b3d725eb05c811d3fdd44516c1bde9a8dfbaaac
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: b641ae62ba6e0cdacaeb46b1ffee2f02c7544763
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924332"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277172"
 ---
 # <a name="tutorial-transform-data-with-azure-data-box-edge"></a>Руководство по Преобразование данных с помощью Azure Data Box Edge
 
@@ -61,6 +61,9 @@ ms.locfileid: "64924332"
     
     ![Начало работы с вычислениями](./media/data-box-edge-deploy-configure-compute/configure-compute-3.png)
 
+    > [!NOTE]
+    > Если диалоговое окно **Настройка вычислений** закрыть прежде, чем устройство Data Box Edge будет сопоставлено с Центром Интернета вещей, то Центр Интернета вещей будет создан, но не отобразится в настройках вычислений. 
+    
     При настройке роли вычислений Edge на устройстве Edge создается два устройства — устройство Интернета вещей и устройство IoT Edge. Оба устройства можно просмотреть в ресурсе Центра Интернета вещей. На этом устройстве IoT Edge также запущена среда выполнения IoT Edge. На данный момент доступна только платформа Linux для устройства IoT Edge.
 
 

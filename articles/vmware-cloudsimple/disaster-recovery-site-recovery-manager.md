@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 7af6abefd132df7980bdc6e485734a996761653b
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 151058f23bed674883da57e0b728dc1df4b698d9
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972796"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70846144"
 ---
 # <a name="set-up-private-cloud-as-a-disaster-recovery-target-with-vmware-site-recovery-manager"></a>Настройка частного облака в качестве цели аварийного восстановления с помощью VMware Site Recovery Manager
 
@@ -33,6 +33,8 @@ ms.locfileid: "69972796"
 * Предоставьте собственные лицензии для СРМ, когда частное облако является защищенным сайтом. При использовании в качестве сайта восстановления дополнительные лицензии СРМ для сайта Клаудсимпле не требуются.
 
 Это решение позволяет полностью контролировать vSphere репликацию и СРМ. Привычный интерфейс UI, API и интерфейса командной строки позволяет использовать существующие сценарии и средства.
+
+![Развертывание диспетчера Site Recovery](media/srm-deployment.png)
 
 Вы можете использовать любые версии вра и СРМ, совместимые с частным облаком и локальными средами. В примерах этого руководств используются вра 6,5 и СРМ 6,5. Эти версии совместимы с vSphere 6,5, который поддерживается Клаудсимпле.
 
@@ -172,7 +174,7 @@ ms.locfileid: "69972796"
 
 * Устройство репликации vSphere устанавливается в локальных и частных облачных средах.
 * Устройства репликации vSphere на обоих сайтах соединяются друг с другом.
-* Вы проверили информацию об VMware по предварительным требованиям и рекомендациям. Для СРМ 6,5 можно ознакомиться с предварительными [требованиями и рекомендациями по установке сервера Site Recovery Manager 6,5](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-BB0C03E4-72BE-4C74-96C3-97AC6911B6B8.html).
+* Вы проверили информацию об VMware по предварительным требованиям и рекомендациям. Для СРМ 6,5 можно ознакомиться с [предварительными требованиями и рекомендациями по установке сервера Site Recovery Manager 6,5](https://docs.vmware.com/en/Site-Recovery-Manager/6.5/com.vmware.srm.install_config.doc/GUID-BB0C03E4-72BE-4C74-96C3-97AC6911B6B8.html).
 
 Следующие шаги описывают установку СРМ частного облака.
 

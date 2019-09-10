@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/30/2019
+ms.date: 09/10/2019
 ms.author: barclayn
-ms.openlocfilehash: 9721f22eb73c68f729ced13480370f6593c58510
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: f3cacdad2986de257ae345f4baa9d14ea6c894b2
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70182792"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873189"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Шифрование неактивных данных в Azure
 
@@ -266,7 +266,7 @@ ms.locfileid: "70182792"
 | Power BI                         | Да                | 2048-разрядный RSA (предварительная версия) | -                  |
 | **Analytics**                    |                    |                    |                    |
 | Azure Stream Analytics           | Да                | -                  | -                  |
-| Концентраторы событий                       | Да                | -                  | -                  |
+| Концентраторы событий                       | Да                | Предварительная версия, все длины RSA. | -                  |
 | Azure Analysis Services          | Да                | -                  | -                  |
 | Каталог данных Azure               | Да                | -                  | -                  |
 | Apache Kafka в Azure HDInsight  | Да                | Все длины RSA.   | -                  |

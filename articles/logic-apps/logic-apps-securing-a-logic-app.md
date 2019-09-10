@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 06/28/2019
-ms.openlocfilehash: 15ec46511f1269606e0b0416c7c4a25f93012bec
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 6c16b38cce31c45158a5871c10dbd01339da9203
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736905"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845429"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -440,7 +440,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | Имя параметра | Описание |
 |----------------|-------------|
 | `TemplatePasswordParam` | Параметр шаблона, который принимает пароль, который затем передается в `basicAuthPasswordParam` параметр определения рабочего процесса |
-| `TemplatePasswordParam` | Параметр шаблона, принимающий имя пользователя, которое затем передается в `basicAuthUserNameParam` параметр определения рабочего процесса |
+| `TemplateUsernameParam` | Параметр шаблона, принимающий имя пользователя, которое затем передается в `basicAuthUserNameParam` параметр определения рабочего процесса |
 | `basicAuthPasswordParam` | Параметр определения рабочего процесса, который принимает пароль для обычной проверки подлинности в действии HTTP |
 | `basicAuthUserNameParam` | Параметр определения рабочего процесса, который принимает имя пользователя для обычной проверки подлинности в действии HTTP |
 |||

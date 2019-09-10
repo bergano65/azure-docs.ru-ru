@@ -1,5 +1,5 @@
 ---
-title: Создание рабочей области с помощью Azure CLI
+title: Создание рабочих областей с помощью Azure CLI
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как использовать Azure CLI для создания новой рабочей области службы Машинное обучение Azure.
 services: machine-learning
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: larryfr
 author: Blackmist
 ms.date: 08/30/2019
-ms.openlocfilehash: 1213e9bc3b27b8d5f6f6ef93b6eefa5a8c32be57
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: f398eb8124f45562ebc3c4238c641a6638811394
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70392679"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873493"
 ---
-# <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Создание рабочей области для Машинное обучение Azure службы с помощью шаблона Azure Resource Manager
+# <a name="create-a-workspace-for-azure-machine-learning-service-with-azure-cli"></a>Создание рабочей области для Машинное обучение Azure службы с помощью Azure CLI
 
 Из этой статьи вы узнаете, как создать рабочую область службы Машинное обучение Azure с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с Машинное обучение Azureными ресурсами служб.
 

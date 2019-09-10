@@ -11,12 +11,12 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 7/12/2019
-ms.openlocfilehash: 3c3205b64803ac4ee67997ef546ffd64c89f23b4
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 5918cc3835d00536845a96ed81ef663867291e29
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624832"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858811"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
@@ -278,7 +278,7 @@ print(per_class_imp)
 
 ![Выходные данные консоли объясняемости модели](./media/how-to-auto-train-remote/expl-print.png)
 
-Вы также можете визуализировать важность функции с помощью пользовательского интерфейса мини-приложения, а также пользовательского веб-интерфейса на портале Azure в рабочей области.
+Вы также можете визуализировать важность признаков с помощью пользовательского интерфейса мини-приложения, пользовательского интерфейса на портал Azure или [целевой страницы рабочей области (Предварительная версия)](https://ml.azure.com). 
 
 ![Пользовательский интерфейс объясняемости модели](./media/how-to-auto-train-remote/model-exp.png)
 

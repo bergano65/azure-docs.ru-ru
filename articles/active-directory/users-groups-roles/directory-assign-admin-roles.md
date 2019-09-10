@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2eff9c0edf6797c08d0ef9732c903a81a6c764a
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 54e0648ff9aab12ad6a579fc7f6e45b98a9d6d03
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733405"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861172"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -78,6 +78,12 @@ ms.locfileid: "70733405"
 * Владельцы групп безопасности и групп Office 365, которые могут управлять принадлежностью к группе. Эти группы могут предоставлять доступ к конфиденциальной, частной информации или критически важной конфигурации в Azure AD и другом месте.
 * Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
 * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
+
+### <a name="azure-devops-administratorazure-devops-administrator-permissions"></a>[Администратор DevOps Azure](#azure-devops-administrator-permissions)
+
+Пользователи с этой ролью могут управлять политикой Azure DevOps, чтобы ограничить создание новых организаций DevOps в Azure до набора настраиваемых пользователей и групп AAD. Пользователи с этой ролью могут управлять этой политикой с помощью любой организации Azure DevOps, которая является службой Azure AD компании.
+
+В будущем пользователи этой роли будут управлять всеми политиками Azure DevOps предприятия.
 
 ### <a name="azure-information-protection-administratorazure-information-protection-administrator-permissions"></a>[Администратор Azure Information Protection](#azure-information-protection-administrator-permissions)
 
@@ -229,7 +235,7 @@ In | Может
 * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
 > [!NOTE]
-> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря [административным единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
+> Делегирование административных разрешений на подмножества пользователей и применение политик к подмножеству пользователей возможно благодаря административным [единицам (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
 >
 > Эта роль ранее называлась "Администратор паролей" в [портал Azure](https://portal.azure.com/). Мы изменили свое имя на "Администратор службы поддержки", чтобы оно соответствовало имени в Azure AD PowerShell, Azure AD API Graph и Microsoft Graph API.
 
@@ -491,6 +497,19 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 | Microsoft. Directory, пользователи, пароль или обновление | Обновите пароли для всех пользователей в организации Office 365. Дополнительные сведения см. в электронной документации. |
+
+### <a name="azure-devops-administrator-permissions"></a>Разрешения администратора DevOps для Azure
+
+Может управлять политикой и параметрами организации Azure DevOps.
+
+> [!NOTE]
+> Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании [роли](#azure-devops-administrator) выше.
+>
+>
+
+| **Действия** | **Описание** |
+| --- | --- |
+| Microsoft. Azure. devOps/Аллентитиес/Аллтаскс | Прочтите и настройте Azure DevOps. |
 
 ### <a name="azure-information-protection-administrator-permissions"></a>Azure Information Protection разрешения администратора
 
@@ -1496,6 +1515,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 Администратор приложений | Администратор приложений | 9B895D92-2CD3-44C7-9D02-A6AC2D5EA5C3
 Разработчик приложений | Разработчик приложений | CF1C38E5-3621-4004-A7CB-879624DCED7C
 Администратор проверки подлинности | Администратор проверки подлинности | c4e39bd9-1100-46d3-8c65-fb160da0071f
+Администратор DevOps Azure | Администратор DevOps Azure | e3973bdf-4987-49ae-837a-ba8e231c7286
 Администратор Azure Information Protection | Администратор Azure Information Protection | 7495fdc4-34c4-4d15-a289-98788ce399fd
 Администратор потока пользователей B2C | Администратор потока пользователей B2C | 6e591065-9bad-43ed-90f3-e9424366d2f0
 администратор атрибутов потока пользователей B2C; | администратор атрибутов потока пользователей B2C; | 0f971eea-41eb-4569-a71e-57bb8a3eff1e

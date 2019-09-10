@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, вызывающее веб-интерфейсы API (получить маркер для приложения) — платформе Microsoft identity
-description: Узнайте, как создать веб-приложение, которое вызывает веб-API (получение токена для приложения)
+title: Веб-приложение, вызывающее веб-API (получение маркера для приложения) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, вызывающее веб-API (получение маркера для приложения).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,27 +11,27 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 653db995000308bb3ef78a9183696cd9d8ed1056
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3aa144c76fb0a8e479658efdb5d43361fbbc085c
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074805"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860624"
 ---
-# <a name="web-app-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-интерфейсы API — получение маркера для приложения
+# <a name="web-app-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API — получение маркера для приложения
 
-Теперь вы создали приложение клиентского объекта, используем его, чтобы получить маркер, который затем будет использоваться для вызова веб-API. В ASP.NET или ASP.NET Core вызов веб-API осуществляется в контроллере. Дело:
+Теперь, когда вы создали клиентский объект приложения, вы будете использовать его для получения маркера для вызова веб-API. В ASP.NET или ASP.NET Core вызов веб-API выполняется в контроллере. Это примерно так:
 
-- Получение маркера для веб-API с помощью кэша маркера. Для этого вызовите `AcquireTokenSilent`
-- Вызов API, защищенный маркером доступа
+- Получение маркера для веб-API с помощью кэша маркеров. Чтобы получить этот маркер, вызовите `AcquireTokenSilent`.
+- Вызов защищенного API с помощью маркера доступа.
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-Методы контроллера защищены с помощью `[Authorize]` атрибут, который вынуждает пользователей станут проверенными для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph
+Методы контроллера защищены `[Authorize]` атрибутом, который заставляет пользователей проходить проверку подлинности для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph.
 
 ```CSharp
 [Authorize]
@@ -41,7 +41,7 @@ public class HomeController : Controller
 }
 ```
 
-Ниже приведен упрощенный код действия HomeController, который получает токен для вызова Microsoft Graph.
+Ниже приведен упрощенный код действия HomeController, который получает маркер для вызова Microsoft Graph.
 
 ```CSharp
 public async Task<IActionResult> Profile()
@@ -69,25 +69,25 @@ public async Task<IActionResult> Profile()
 }
 ```
 
-Если вы хотите понять в сведениях о общее количество кода, необходимые для этого сценария, см. на этапе 2 [2-1-Web App вызовы Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph) шаге [ms-identity-aspnetcore-webapp-tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) учебника
+Чтобы лучше понять код, необходимый для этого сценария, см. шаг 2 2-1 ([вызов веб-приложения Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)) в учебнике [MS-Identity-aspnetcore-webapp-Tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) .
 
-Существуют многочисленные дополнительные сложности такие как:
+Существует множество дополнительных сложностей, таких как:
 
-- Реализация кэша маркера для веб-приложения (учебник представить несколько реализаций)
-- Удаление учетной записи из кэша, когда пользователь выполняет масштабирование
-- Вызов несколько интерфейсов API, в том числе добавочное согласие
+- Реализация кэша маркеров для веб-приложения (учебник представляет несколько реализаций)
+- Удаление учетной записи из кэша при выходе пользователя
+- Вызов нескольких API, включая последовательное согласие
 
-## <a name="aspnet"></a>ASP.NET:
+## <a name="aspnet"></a>ASP.NET
 
-В ASP.NET похожи вещи:
+Они похожи в ASP.NET:
 
-- Действие контроллера, защищенные с помощью атрибута [Authorize] извлечет идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` член контроллера (ASP.NET использует `HttpContext.User`)
-- Оттуда он создает MSAL.NET `IConfidentialClientApplication`
-- Вызов ИТ `AcquireTokenSilent` метод конфиденциального клиентского приложения 
+- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор `ClaimsPrincipal` пользователя для члена контроллера. (ASP.NET использует `HttpContext.User`.)
+- После этого он создает MSAL.NET `IConfidentialClientApplication`.
+- Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
 
-код похож на код, показанный для ASP.NET Core
+Код похож на код, показанный для ASP.NET Core.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-web-app-call-api-call-api.md)

@@ -5,15 +5,15 @@ author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/24/2018
+ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 90e841628d989a16f504d2efd7a2c7b18335ff48
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 56138277866d3b2bf02733a2c595a5a232faed8c
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66129523"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844929"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-classic-cloud-services"></a>Отправка метрик гостевых ОС в хранилище метрик Azure Monitor для классических облачных служб 
 
@@ -27,13 +27,15 @@ ms.locfileid: "66129523"
 
 Процесс, описанный в этой статье, выполняется только для счетчиков производительности в облачных службах Azure. Он не подходит для других пользовательских метрик. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Вам необходимы права [администратора службы или соадминистратора](~/articles/billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
 - Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+- Облачная служба должна находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
 
 ## <a name="provision-a-cloud-service-and-storage-account"></a>Подготовка облачной службы и учетной записи хранения 
 

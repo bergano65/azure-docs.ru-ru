@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: bcb76fcbba02bf53b48cc462e3dad8f264db02ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 05626535a2ab2d8da29b8c817ebfe84c257c76aa
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60745966"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845062"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью резервного копирования и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB.
@@ -79,10 +79,6 @@ $ mysqldump -u root -p testdb table1 table2 > testdb_tables_backup.sql
 ```bash
 $ mysqldump -u root -p --databases testdb1 testdb3 testdb5 > testdb135_backup.sql 
 ```
-Чтобы одновременно создать резервную копию всех баз данных на сервере, используйте параметр --all-databases.
-```bash
-$ mysqldump -u root -p --all-databases > alldb_backup.sql 
-```
 
 ## <a name="create-a-database-on-the-target-server"></a>Создание базы данных на целевом сервере
 Создайте пустую базу данных в целевой базе данных Azure для сервера MariaDB, куда необходимо перенести данные. Для этого используйте средство MySQL Workbench, Toad или Navicat. База данных может иметь то же имя, что и база данных, содержащая данные дампа. Вы также можете создать базу данных с другим именем.
@@ -123,7 +119,7 @@ $ mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p te
 5. Нажмите кнопку **обзора**, чтобы найти файл базы данных. 
 6. Нажмите кнопку **Перейти**, чтобы экспортировать резервную копию, выполнить команды SQL и повторно создать базу данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Подключение приложений к базе данных Azure для MariaDB](./howto-connection-string.md).
  
 <!--

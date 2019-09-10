@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 421d41f95eff0ba0fdbca02c588d4a9a0c461a84
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 1ec83541c62d93eee91348531797ecdeb8c9fc6e
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70381062"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873478"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Управление IoT Central из Azure CLI
 
@@ -53,9 +53,9 @@ az iotcentral app create \
 | Параметр         | Описание |
 | ----------------- | ----------- |
 | resource-group    | Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
-| расположение          | По умолчанию эта команда использует расположение из группы ресурсов. Сейчас можно создавать приложение IoT Central в регионах **восточной части США**, **западной части США**, **Северной Европы** или **Западной Европы**. |
+| расположение          | По умолчанию эта команда использует расположение из группы ресурсов. В настоящее время можно создать IoT Centralное приложение в **восточной части США**, **западной части США**, **Северной Европе**или **Западной Европе** , или в географическом регионе **Австралии** . |
 | name              | Имя приложения на портале Azure. |
-| поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
+| Поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
 | sku               | В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 | шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
 | display-name      | Имя приложения, отображаемое на пользовательском интерфейсе. |

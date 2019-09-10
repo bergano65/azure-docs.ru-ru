@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 07/24/2019
-ms.openlocfilehash: 08ceb5d795465a5759d0130618eafdccdc8c3c91
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 3113ad050ec6040d4f7964e940c507024bcf002d
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011522"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844988"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
@@ -24,7 +24,7 @@ ms.locfileid: "70011522"
 Вывод или оценка модели — это этап, в котором для создания прогнозов используется развернутая модель. Использование графических процессоров вместо ЦП обеспечивает преимущества производительности при параллелизуемыеных вычислениях.
 
 > [!IMPORTANT]
-> Вывод GPU поддерживается только в службе Kubernetes Azure.
+> Для развертываний веб-служб вывод GPU поддерживается только в службе Kubernetes Azure. Для вывода с использованием __конвейера машинного обучения__GPU поддерживаются только в машинное обучение Azureных вычислениях. Дополнительные сведения об использовании конвейеров машинного обучения см. в разделе [выполнение пакетных прогнозов](how-to-run-batch-predictions.md). 
 
 > [!TIP]
 > Хотя фрагменты кода в этой статье Уси модель TensorFlow, эту информацию можно применить к любой платформе машинного обучения, которая поддерживает GPU.

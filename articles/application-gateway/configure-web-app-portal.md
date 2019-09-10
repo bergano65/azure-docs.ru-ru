@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 3/11/2019
 ms.author: absha
 ms.openlocfilehash: dee4859c57172a703517848510a31b70ff1f24cd
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "68370430"
 ---
 # <a name="configure-app-service-with-application-gateway"></a>Настройка службы приложений с помощью шлюза приложений
@@ -27,7 +27,7 @@ ms.locfileid: "68370430"
 > - Создание внутреннего пула и добавление в него службы приложений
 > - Создание параметров HTTP и пользовательской проверки с включенными коммутаторами "Выбор имени узла"
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Шлюз приложений: Если у вас нет шлюза приложений, см. раздел [Создание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal) .
 - Служба приложений: Если у вас нет существующей службы приложений, см. [документацию по службе приложений](https://docs.microsoft.com/azure/app-service/).

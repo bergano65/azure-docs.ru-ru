@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 84dff3c4948109654cf08fa1390ac4e6bf2717dc
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: f3bae365692b2165e4944becbe5081bb69bef98b
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812154"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70846114"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -76,7 +76,7 @@ ms.locfileid: "70812154"
 
 В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md). 
 
-**Локальные регионы Azure** — это те, к которым может получить доступ [Локальная служба ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
+**Локальные регионы Azure** — это те, к которым может получить доступ локальная служба [ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
 
 
 ### <a name="production-azure"></a>Рабочая среда Azure
@@ -189,7 +189,7 @@ ms.locfileid: "70812154"
 Если вы используете удаленную и не имеете возможности оптоволоконного подключения или хотите изучить другие варианты подключения, можно проверить следующие вспомогательные операторы. 
 
 * интелсат
-* SES
+* [SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)
 * виасат
 
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг

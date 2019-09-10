@@ -11,12 +11,12 @@ author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: 2edd12435643f88a0923abf0927149993d49e424
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: dead041845c123672d881a8538644b56c34a58a2
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567805"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845600"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>Новый администратор базы данных в облаке. Управление отдельными базами данных и базами данных в пуле в Базе данных SQL Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "68567805"
 
 #### <a name="reserved-ips"></a>Зарезервированные IP-адреса
 
-Как альтернативный вариант, вы можете подготовить [зарезервированные IP-адреса](../virtual-network/virtual-networks-reserved-public-ip.md) виртуальных машин и добавить их в список разрешений в параметрах брандмауэра сервера. Назначая зарезервированные IP-адреса, вы избавляетесь от необходимости обновления правил брандмауэра при изменении IP-адресов.
+Кроме того, можно выполнить инициализацию [зарезервированных](../virtual-network/virtual-networks-reserved-public-ip.md) IP-адресов для виртуальных машин и добавить их в параметры брандмауэра сервера. Назначая зарезервированные IP-адреса, вы избавляетесь от необходимости обновления правил брандмауэра при изменении IP-адресов.
 
 ### <a name="what-port-do-i-connect-to-sql-database-on"></a>Через какой порт устанавливается подключение к службе "База данных SQL"
 

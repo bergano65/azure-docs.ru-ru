@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/18/2019
 ms.author: rogarana
 ms.openlocfilehash: 8b25d2395811a2197aff6d653c5038a4380021e9
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "68669815"
 ---
 К виртуальной машине Azure можно подключить несколько дисков данных. На основе целевых показателей масштабируемости и производительности для дисков данных виртуальной машины можно определить число и тип диска, необходимые для удовлетворения требований к производительности и емкости.

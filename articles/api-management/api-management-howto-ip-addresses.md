@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 8d7346bb61fad09e3f7c9098809463285ef57e93
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 6e12a16b221a8f31d82a002fbc93b090d6f0c577
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70242481"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861253"
 ---
 # <a name="ip-addresses-of-azure-api-management"></a>IP-адреса службы управления API Azure
 
@@ -102,5 +102,6 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/
 * Служба удалена или создана повторно.
 * Подписка на службу переведена в состояние [Приостановлено](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) или [С предупреждением](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) (например, из-за неуплаты), а затем ее действие восстановлено.
 * Виртуальная сеть Azure добавляется в службу или удаляется из нее.
+* Служба управления API переключена между внешним и внутренним режимами развертывания виртуальной сети.
 
 При [развертывании в нескольких регионах](api-management-howto-deploy-multi-region.md)региональные IP-адреса изменяются, если регион освобожден, а затем возобновляется.

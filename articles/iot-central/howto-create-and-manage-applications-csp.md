@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: d7c538bd98b3924b422a93bc67cac405a6e4b7af
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 818285e089ab01c2c603f2b0181fbd6d9179eba1
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70383120"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873455"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Создание приложения Azure IoT Central и управление им поставщиком облачных решений от имени клиента
 
@@ -71,14 +71,14 @@ URL-адрес приложения будет создан автоматиче
 
 ## <a name="region"></a>Район
 
-Выберите регион, в котором вы хотите создать приложение Azure IoT Central. Как правило, следует выбирать регион, расположенный как можно ближе к устройствам, чтобы обеспечить оптимальную производительность.
+Выберите регион или [географию](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите создать приложение IOT Central Azure. Как правило, для достижения оптимальной производительности следует выбирать наиболее близкий к вашим устройствам регион.
 
 > [!NOTE]
 > В настоящее время шаблон **предварительной версии приложения** доступен только в **Северной Европе** и в **центральных регионах США** .
 
-Дополнительные сведения см. в разделе о [регионах Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#azure-regions).
+Дополнительные сведения см. в статье [регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/) и [географические диаграммы Azure](https://azure.microsoft.com/global-infrastructure/geographies/).
 
-Регионы, в которых доступно приложение Azure IoT Central,можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/).
+Регионы, в которых доступно приложение Azure IoT Central,можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=iot-central).
 
 > [!Note]
 > Выбрав регион, вы не можете переместить приложение в другой регион.

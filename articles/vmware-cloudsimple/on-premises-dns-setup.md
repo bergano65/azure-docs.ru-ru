@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ed20dd9068ccdea1fb9cd04801eb0096fed2c922
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 929c923fda8c1c2bddd96d0b4d4e4b6ce6d29de9
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972429"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845309"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
 
@@ -56,18 +56,24 @@ zone “cloudsimple.io”
 
 ### <a name="create-a-zone-on-a-microsoft-windows-dns-server"></a>Создание зоны на DNS-сервере Microsoft Windows
 
-1. Щелкните правой кнопкой мыши DNS-сервер и выберите пункт **создать зону**.  
-![Новая зона](media/DNS01.png)
-2. Выберите **зона** -заглушка и нажмите кнопку **Далее**.
-![Новая зона](media/DNS02.png)
+1. Щелкните правой кнопкой мыши DNS-сервер и выберите пункт **создать зону**. 
+  
+    ![Новая зона](media/DNS01.png)
+2. Выберите **зона-заглушка** и нажмите кнопку **Далее**.
+
+    ![Новая зона](media/DNS02.png)
 3. Выберите подходящий вариант в зависимости от среды и нажмите кнопку **Далее**.
-![Новая зона](media/DNS03.png)
+
+    ![Новая зона](media/DNS03.png)
 4.  Выберите **зону прямого просмотра**и нажмите кнопку **Далее**.
-![Новая зона](media/DNS01.png)
+
+    ![Новая зона](media/DNS01.png)
 5. Введите имя зоны и нажмите кнопку **Далее**.
-![Новая зона](media/DNS05.png)
+
+    ![Новая зона](media/DNS05.png)
 6. Введите IP-адреса DNS-серверов для частного облака, полученного на портале Клаудсимпле.
-![Новая зона](media/DNS06.png)
+
+    ![Новая зона](media/DNS06.png)
 7. Нажмите кнопку **Далее** , если необходимо завершить установку мастера.
 
 ## <a name="create-a-conditional-forwarder"></a>Создание сервера условной пересылки
@@ -91,5 +97,6 @@ zone “cloudsimple.io” {
 
 1. Откройте диспетчер DNS на DNS-сервере.
 2. Щелкните правой кнопкой мыши пункт **серверы условной пересылки** и выберите пункт Добавить новый условный сервер пересылки.
-![Сервер условной пересылки 1 Windows DNS](media/DNS08.png)
+
+    ![Сервер условной пересылки 1 Windows DNS](media/DNS08.png)
 3. Введите домен DNS и IP-адрес DNS-серверов в частном облаке и нажмите кнопку **ОК**.

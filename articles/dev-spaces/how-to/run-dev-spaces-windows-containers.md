@@ -9,12 +9,12 @@ ms.date: 07/25/2019
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 2110636b331f0cf4e74c77f41726ead5bf80a64f
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 6c15534d5d47ba384a0f368f5d212fb1350e5229
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501524"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858608"
 ---
 # <a name="use-azure-dev-spaces-to-interact-with-windows-containers"></a>Использование Azure Dev Spaces для взаимодействия с контейнерами Windows
 
@@ -49,6 +49,9 @@ aksnpwin987654                      Ready    agent   108s   v1.14.1
 ```azurecli-interactive
 kubectl taint node aksnpwin987654 sku=win-node:NoSchedule
 ```
+
+> [!IMPORTANT]
+> При применении таинт к узлу необходимо настроить сопоставление в шаблоне развертывания службы для запуска службы на этом узле. В примере приложения уже настроено [сопоставление][sample-application-toleration-example] с таинт, настроенным в предыдущей команде.
 
 ## <a name="run-your-windows-service"></a>Запуск службы Windows
 
@@ -180,8 +183,8 @@ Service 'webfrontend' port 80 (http) is available via port forwarding at http://
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [helm-installed]: https://github.com/helm/helm/blob/master/docs/install.md
 [sample-application]: https://github.com/Azure/dev-spaces/tree/master/samples/existingWindowsBackend
+[sample-application-toleration-example]: https://github.com/Azure/dev-spaces/blob/master/samples/existingWindowsBackend/mywebapi-windows/charts/templates/deployment.yaml#L24-L27
 [team-development-qs]: ../quickstart-team-development.md
-
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [team-development]: ../team-development-netcore.md
 [using-taints]: ../../aks/use-multiple-node-pools.md#schedule-pods-using-taints-and-tolerations

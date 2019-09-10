@@ -1,25 +1,20 @@
 ---
 title: Общие сведения о маршрутизации содержимого на основе URL-адресов с помощью службы "Шлюз приложений Azure"
-description: Эта статься содержит общие сведения о маршрутизации содержимого на основе URL-адресов, настройки UrlPathMap и правила PathBasedRouting с помощью шлюза приложений.
-documentationcenter: na
+description: В этой статье представлен обзор маршрутизации содержимого на основе URL-адресов шлюза приложений Azure, конфигурации UrlPathMap и правила PathBasedRouting.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 4/23/2018
+ms.date: 09/10/2019
 ms.author: victorh
-ms.openlocfilehash: ee0267146140d095487b293331a7de493ba151c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.openlocfilehash: 0dfeb6a80cbf227f20b24def7641882ad0444489
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61361966"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844595"
 ---
-# <a name="azure-application-gateway-url-path-based-routing-overview"></a>Общие сведения о маршрутизации содержимого на основе URL-пути с помощью шлюза приложений Azure
+# <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
 Маршрутизация на основе URL-путей позволяет направлять трафик в пулы тыловых серверов в зависимости от URL-путей поступающих запросов. 
 
@@ -27,9 +22,9 @@ ms.locfileid: "61361966"
 
 В следующем примере Шлюз приложений обслуживает трафик веб-сайта contoso.com с трех пулов тыловых серверов, например VideoServerPool, ImageServerPool и DefaultServerPool.
 
-![imageURLroute](./media/url-route-overview/figure1.png)
+![imageURLroute](./media/application-gateway-url-route-overview/figure1.png)
 
-Запросы для <http://contoso.com/video/*> направляются в VideoServerPool, а <http://contoso.com/images/*> направляются в ImageServerPool. Если ни один из шаблонов пути не подходит, выбирается пул DefaultServerPool.
+Запросы для http\://contoso.com/video/* направляются в VideoServerPool, а запросы для http\://contoso.com/images/* — в ImageServerPool. Если ни один из шаблонов пути не подходит, выбирается пул DefaultServerPool.
 
 > [!IMPORTANT]
 > Правила обрабатываются в том порядке, в котором они указаны на портале. Мы настоятельно рекомендуем в первую очередь настроить многосайтовые прослушиватели, чтобы настроить базовый прослушиватель.  Это гарантирует, что трафик будет перенаправляться на правильный внутренний сервер. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем.
@@ -67,8 +62,37 @@ ms.locfileid: "61361966"
 }]
 ```
 
-> [!NOTE]
-> PathPattern: Этот параметр является список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая для сопоставления пути, не должна содержать никакого текста после первого символа ? или # — эти символы не допускаются.
+### <a name="pathpattern"></a>PathPattern
+
+PathPattern — это список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая в сопоставитель путей, не должна содержать текст после первого символа "?" или "#", и сами эти символы не допускаются. В остальных случаях все допустимые символы в URL-адресе допускаются и в PathPattern.
+
+Поддерживаемые шаблоны зависят от того, какой Шлюз приложений развернут: версий 1 или 2.
+
+#### <a name="v1"></a>Версия 1
+
+В правилах для путей не учитывается регистр.
+
+|Шаблон пути версии 1  |Поддерживается?  |
+|---------|---------|
+|`/images/*`     |да|
+|`/images*`     |нет|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
+|`/Repos/*/Comments/*`     |нет|
+|`/CurrentUser/Comments/*`     |да|
+
+#### <a name="v2"></a>Версия 2
+
+В правилах для путей учитывается регистр.
+
+|Шаблон пути версии 2  |Поддерживается?  |
+|---------|---------|
+|`/images/*`     |да|
+|`/images*`     |да|
+|`/images/*.jpg`     |нет|
+|`/*.jpg`     |нет|
+|`/Repos/*/Comments/*`     |нет|
+|`/CurrentUser/Comments/*`     |да|
 
 Дополнительные сведения см. в статье [Resource Manager template using URL-based routing](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) (Шаблон Resource Manager с использованием маршрутизации на основе URL-адресов).
 
@@ -97,6 +121,6 @@ ms.locfileid: "61361966"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Ознакомившись с маршрутизацией на основе URL-адресов, создайте шлюз приложений с соответствующими правилами маршрутизации, как указано в статье о [создании шлюза приложений с помощью маршрутизации на основе URL-адресов](tutorial-url-route-powershell.md) .
+Ознакомившись с маршрутизацией на основе URL-адресов, создайте шлюз приложений с соответствующими правилами маршрутизации, как указано в статье о [создании шлюза приложений с помощью маршрутизации на основе URL-адресов](create-url-route-portal.md) .

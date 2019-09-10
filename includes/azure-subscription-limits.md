@@ -9,25 +9,25 @@ ms.date: 05/18/2018
 ms.author: jroth
 ms.custom: include file
 ms.openlocfilehash: e8fe694cc757f5bcb9cf470f17306e8aa0028744
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67185647"
 ---
-| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
+| Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| виртуальных ЦП на [подписки](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |
-| [Соадминистраторы](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |200 |200 |
+| Виртуальных ЦП на [подписку](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |
+| [Соадминистраторов](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |200 |200 |
 | [Учетных записей хранения](../articles/storage/common/storage-create-storage-account.md) на подписку<sup>2</sup> |100 |100 |
 | [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |20 |200 |
 | [Локальные сети](/previous-versions/azure/reference/jj157100(v=azure.100)) на подписку |10 |500 |
 | Серверы DNS на подписку |9 |100 |
 | Зарезервированные IP на подписку |20 |100 |
 | [Территориальные группы](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) на подписку |256 |256 |
-| Длина имени подписки (символов) | 64 | 64 |
+| Длина имени подписки (в символах) | 64 | 64 |
 
-<sup>1</sup>количество мелких экземпляров extra как один виртуальный ЦП подсчете предельного количества виртуальных процессоров, несмотря на использование частичную загрузку ядра ЦП.
+<sup>1</sup> Очень мелкие экземпляры считаются одним виртуальных ЦП в сторону ограничения виртуальных ЦП, несмотря на использование частичного ядра ЦП.
 
 <sup>2</sup>Ограничение учетной записи хранения распространяются на учетные записи хранения класса "Стандартный" и "Премиум". 
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 3f91e09e35eec0685cb4333802b860fb08412cb6
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 5c6e99c62d199c36081113011845a3bf2607bcb3
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019747"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842553"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -31,7 +31,7 @@ ms.locfileid: "70019747"
 * Устройство Raspberry Pi с операционной системой Raspbian. Raspberry Pi должен иметь возможность подключения к Интернету. Дополнительные сведения см. в разделе [Настройка устройства Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
 
 > [!TIP]
-> Дополнительные сведения о настройке устройства Raspberry Pi и подключении к нему см. в статье Приступая к [работе с Raspberry Pi](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi) .
+> Дополнительные сведения о настройке устройства Raspberry Pi и подключении к нему см. в статье [Приступая к работе с Raspberry Pi](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi) .
 
 ## <a name="sample-devkits-application"></a>Пример **приложения Devkits**
 
@@ -70,13 +70,13 @@ ms.locfileid: "70019747"
 
 1. Выполните следующую команду, чтобы установить клиент IoT Central Python:
 
-    ```sh
+    ```bash
     pip install iotc
     ```
 
 1. Скачайте пример кода Python:
 
-    ```sh
+    ```bash
     curl -O https://raw.githubusercontent.com/Azure/iot-central-firmware/master/RaspberryPi/app.py
     ```
 
@@ -85,9 +85,9 @@ ms.locfileid: "70019747"
     > [!TIP]
     > В оболочке на Raspberry Pi можно использовать текстовые редакторы **Nano** или **VI** .
 
-1. Чтобы запустить пример, используйте следующую команду:
+1. Для запуска примера используйте следующую команду:
 
-    ```sh
+    ```bash
     python app.py
     ```
 
@@ -138,9 +138,9 @@ ms.locfileid: "70019747"
 
 ### <a name="properties"></a>Свойства
 
-| Тип            | `Display name` | Имя поля | Тип данных |
+| Type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
-| Свойство устройства | Серийный номер   | dieNumber  | номер    |
+| Свойство устройства | Серийный номер   | dieNumber  | number    |
 | Текст            | Местоположение     | расположение   | Н/Д       |
 
 ## <a name="next-steps"></a>Следующие шаги

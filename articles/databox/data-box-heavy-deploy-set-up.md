@@ -6,17 +6,29 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 3e6bfe4a93ab8c97bcffb84bda08977f8d811fa8
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.localizationpriority: high
+ms.openlocfilehash: f5473ae7bd9ac1615d59d18c996e01902e1adbd6
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592371"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70241414"
 ---
+::: zone target = "docs"
+
 # <a name="tutorial-cable-and-connect-to-your-azure-data-box-heavy"></a>Руководство по Присоединение кабелей и подключение к Azure Data Box Heavy
 
+::: zone-end
+
+::: zone target = "chromeless"
+
+## <a name="get-started-with-azure-data-box-heavy"></a>Начало работы с устройством Azure Data Box Heavy
+
+::: zone-end
+
+::: zone target = "docs"
 
 В этом руководстве описывается, как присоединить кабели к устройству Azure Data Box Heavy, подключить и включить его.
 
@@ -25,6 +37,14 @@ ms.locfileid: "67592371"
 > [!div class="checklist"]
 > * присоединение кабелей к устройству Data Box Heavy;
 > * подключение к устройству Data Box Heavy.
+
+::: zone-end
+
+::: zone target = "chromeless"
+
+Это руководство содержит инструкции по выполнению предварительных требований, подготовке к работе и подключению устройства, копированию данных, их отправке в Azure и последующей проверке отправленных данных.
+
+::: zone-end
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,6 +62,8 @@ ms.locfileid: "67592371"
     - Выберите кабели, совместимые с сетевым интерфейсом [Mellanox MCX314A-BCCT](https://store.mellanox.com/products/mellanox-mcx314a-bcct-connectx-3-pro-en-network-interface-card-40-56gbe-dual-port-qsfp-pcie3-0-x8-8gt-s-rohs-r6.html).
     - При использовании кабеля с пропускной способностью 40 Гбит/с его конец, подключаемый к устройству, должен иметь тип разъема QSFP+.
     - Если используется кабель с пропускной способностью 10 Гбит/с, вам потребуется кабель SFP+. Один его конец подключается к 10-гигабитному коммутатору, а другой — к устройству с использованием адаптера QSFP+ на SFP+ (или адаптера QSA).
+
+::: zone target = "docs"
 
 ## <a name="cable-your-device-for-power"></a>Подключение питания к устройству
 
@@ -65,7 +87,7 @@ ms.locfileid: "67592371"
 
     ![Кабели питания в лотке устройства Data Box Heavy](media/data-box-heavy-deploy-set-up/data-box-heavy-power-cords-tray.png)
 
-6. Затем вам нужно определить различные порты на задней панели устройства. Устройство имеет два узла: **NODE1** и **NODE2**. Каждый узел имеет четыре сетевых интерфейса: **MGMT**, **DATA1**, **DATA2**, **DATA3**. **MGMT** используется для конфигурирования возможностей управления при начальной настройке устройства. **DATA1**–**DATA3** — это порты данных. Порты **MGMT** и **DATA3** работают со скоростью 1 Гбит/с, а порты **DATA1** и **DATA2** поддерживают скорость 40 Гбит/с и 10 Гбит/с. В нижней части двух узлов устройства расположены четыре блока питания (PSU), которые используются совместно этими двумя узлами. Если смотреть на устройство спереди, **блоки питания** располагаются слева направо в следующем порядке: **PSU1**, **PSU2**, **PSU3** и **PSU4**.
+6. Затем вам нужно определить различные порты на задней панели устройства. Устройство имеет два узла: **NODE1** и **NODE2**. Каждый узел имеет четыре сетевых интерфейса: **MGMT**, **DATA1**, **DATA2**, **DATA3**. **MGMT** используется для конфигурирования возможностей управления при начальной настройке устройства. **DATA1**-**DATA3** — это порты данных. Порты **MGMT** и **DATA3** работают со скоростью 1 Гбит/с, а порты **DATA1** и **DATA2** поддерживают скорость 40 Гбит/с и 10 Гбит/с. В нижней части двух узлов устройства расположены четыре блока питания (PSU), которые используются совместно этими двумя узлами. Если смотреть на устройство спереди, **блоки питания** располагаются слева направо в следующем порядке: **PSU1**, **PSU2**, **PSU3** и **PSU4**.
 
     ![Порты устройства Data Box Heavy](media/data-box-heavy-deploy-set-up/data-box-heavy-ports.png)
 
@@ -138,3 +160,5 @@ ms.locfileid: "67592371"
 
 > [!div class="nextstepaction"]
 > [Tutorial: Copy data to Azure Data Box](./data-box-heavy-deploy-copy-data.md) (Руководство. Копирование данных на Azure Data Box)
+
+::: zone-end

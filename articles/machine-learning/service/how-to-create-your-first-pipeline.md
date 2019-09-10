@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 87897c031ff717fb67830cb8fa3bc5fced336418
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 12ba2991f22576dc62559d5c62dc4a0e769d2681
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278862"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858775"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 
@@ -318,7 +318,7 @@ steps = [dbStep]
 pipeline1 = Pipeline(workspace=ws, steps=steps)
 ```
 
-Дополнительные сведения см. в справочнике по [классам пакета и конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) [Azure-Pipeline-этапах](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
+Дополнительные сведения см. в справочнике по классам пакета и [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) [Azure-Pipeline-этапах](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -410,19 +410,21 @@ response = requests.post(published_pipeline1.endpoint,
 ### <a name="view-results-of-a-published-pipeline"></a>Просмотр результатов опубликованного конвейера
 
 Просмотрите список всех опубликованных конвейеров и сведения о их выполнении:
-1. Войдите на [портале Azure](https://portal.azure.com/).  
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. [Просмотрите рабочую область](how-to-manage-workspace.md#view), чтобы найти список конвейеров.
  ![Список конвейеров машинного обучения](./media/how-to-create-your-first-pipeline/list_of_pipelines.png)
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
 
+Эти результаты также доступны на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com).
+
 ### <a name="disable-a-published-pipeline"></a>Отключение опубликованного конвейера
 
 Чтобы скрыть конвейер из списка опубликованных конвейеров, отключите его.
 
 ```
-# Get the pipeline by using its ID in the Azure portal
+# Get the pipeline by using its ID from the Azure portal
 p = PublishedPipeline.get(ws, id="068f4885-7088-424b-8ce2-eeb9ba5381a6")
 p.disable()
 ```
@@ -435,7 +437,7 @@ p.disable()
 Чтобы оптимизировать и настроить поведение конвейеров, можно выполнить несколько действий по кэшированию и повторному использованию. Например, можно выбрать один из следующих способов:
 + **Отключите повторное использование по умолчанию выходных данных шага выполнения** , `allow_reuse=False` задав во время [определения шага](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py). Повторное использование является ключом при использовании конвейеров в среде совместной работы, поскольку удаление ненужных запусков обеспечивает гибкость. Однако можно отказаться от повторного использования.
 + **Расширение хэширования за пределы скрипта**для включения абсолютного или относительного пути к элементу исходный_каталог в другие файлы и каталоги с помощью`hash_paths=['<file or directory']` 
-+ **Принудительное повторное создание выходных данных для всех шагов в запуске** с`pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
++ Принудительное повторное **Создание выходных данных для всех шагов в запуске** с`pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
 
 По умолчанию `allow_reuse` для шагов включена поддержка хэширования только основного файла скрипта. Таким образом, если скрипт для данного шага остается неизменным (`script_name`, входами и параметрами), то выходные данные предыдущего шага запускаются повторно, задание не отправляется в вычисление, а результаты предыдущего запуска сразу же становятся доступными для следующего шага. .  
 

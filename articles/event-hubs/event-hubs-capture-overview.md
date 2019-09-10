@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 4ba3109460616be98b5330ec7175f161a6a3b750
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1531ed86c36182daad61f139ced3a814634e8b6e
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68326169"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845265"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 Центры событий Azure позволяют автоматически записывать определенный объем потоковых данных из Центров событий в учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Storage](https://azure.microsoft.com/services/data-lake-store/) с указанным интервалом времени и размера. Настройка функции "Сбор" выполняется быстро, ее использование не влечет дополнительных административных расходов, а масштабирование осуществляется автоматически на основе [единиц пропускной способности](event-hubs-scalability.md#throughput-units) Центров событий. Функция "Сбор" в Центрах событий — это самый удобный способ передачи потоковых данных в Azure. Он позволяет сосредоточиться на обработке данных, а не на их записи.
@@ -156,7 +156,7 @@ Apache Avro содержит полный начало работы руково
 [support request]: https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade
 [Azure Storage Explorer]: https://azurestorageexplorer.codeplex.com/
 [3]: ./media/event-hubs-capture-overview/event-hubs-capture3.png
-[Avro Tools]: https://www-us.apache.org/dist/avro/avro-1.9.0/java/avro-tools-1.9.0.jar
+[Avro Tools]: https://www.apache.org/dist/avro/stable/java/avro-1.9.1-javadoc.jar
 [Java]: https://avro.apache.org/docs/current/gettingstartedjava.html
 [Python]: https://avro.apache.org/docs/current/gettingstartedpython.html
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md

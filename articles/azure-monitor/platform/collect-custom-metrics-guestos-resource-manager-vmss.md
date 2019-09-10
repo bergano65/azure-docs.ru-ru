@@ -5,15 +5,15 @@ author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/24/2018
+ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 573c205cd2e208a1cb2b526d96fb08ca21331c80
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 8ee8c0c9d9724706f9b46013eba14e878832fd02
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66129628"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844973"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
 
@@ -31,6 +31,7 @@ ms.locfileid: "66129628"
 
 - Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
 
+- Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Настройка Azure Monitor в качестве приемника данных 
 Расширение системы диагностики Azure использует функцию **приемников данных** для маршрутизации метрик и журналов в различные расположения. Ниже показано, как с помощью шаблона Resource Manager и PowerShell развернуть виртуальную машину, используя новый приемник данных Azure Monitor. 

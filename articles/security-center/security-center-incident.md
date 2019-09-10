@@ -2,24 +2,19 @@
 title: Управление инцидентами безопасности в центре безопасности Azure | Документация Майкрософт
 description: Этот документ поможет вам использовать центр безопасности Azure для управления инцидентами безопасности.
 services: security-center
-documentationcenter: na
-author: rkarlin
-manager: barbkess
+author: memildin
+manager: rkarlin
 editor: ''
-ms.assetid: e8feb669-8f30-49eb-ba38-046edf3f9656
 ms.service: security-center
 ms.topic: conceptual
-ms.devlang: na
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 8/27/2019
-ms.author: rkarlin
-ms.openlocfilehash: 9f757d5fb2c8d3a807e325068d386e16a7d6caa7
-ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
+ms.date: 09/09/2019
+ms.author: memildin
+ms.openlocfilehash: c492c4023df30eb51692aa4ae21fb938067c6ebb
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70806571"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873370"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -29,7 +24,7 @@ ms.locfileid: "70806571"
 
 ## <a name="what-is-a-security-incident"></a>Что такое инцидент?
 
-В центре безопасности инцидентом считается совокупность всех оповещений для ресурса, которые соответствуют схемам [этапов нарушения безопасности](https://blogs.technet.microsoft.com/office365security/addressing-your-cxos-top-five-cloud-security-concerns/) . Инциденты отображаются в списке [оповещения системы безопасности](security-center-managing-and-responding-alerts.md) . Щелкните она a инцидент, чтобы просмотреть связанные оповещения, которые позволяют получить дополнительные сведения о каждом вхождении.
+В центре безопасности инцидентом считается совокупность всех оповещений для ресурса, которые соответствуют схемам [этапов нарушения безопасности](https://blogs.technet.microsoft.com/office365security/addressing-your-cxos-top-five-cloud-security-concerns/) . Инциденты отображаются в списке [оповещения системы безопасности](security-center-managing-and-responding-alerts.md) . Щелкните инцидент, чтобы просмотреть связанные с ним предупреждения, которые позволяют получить дополнительные сведения о каждом вхождении.
 
 ## <a name="managing-security-incidents"></a>Управление инцидентами
 

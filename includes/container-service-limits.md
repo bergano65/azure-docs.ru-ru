@@ -9,20 +9,20 @@ ms.date: 10/11/2018
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: a2729af6a689daa551fc01f585324d53a8770a9b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67185650"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Resource | Ограничение по умолчанию |
 | --- | :--- |
-| Максимальное кластеров на подписку | 100 |
-| Максимальное число узлов в кластере | 100 |
-| Максимальное модулей POD на каждом узле: [базовая организация сети][basic-networking] с помощью Kubenet | 110 |
-| Максимальное модулей POD на каждом узле: [Усовершенствованной организации сети] [ advanced-networking] с сетевой интерфейс для контейнера Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
+| Максимальное число кластеров на подписку | 100 |
+| Максимальное число узлов на кластер | 100 |
+| Максимальное число модулей Pod на узел: [Основные сетевые подключения][basic-networking] с кубенет | 110 |
+| Максимальное число модулей Pod на узел: [Расширенная][advanced-networking] работа с сетевыми интерфейсами контейнеров Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
 
-<sup>1</sup>при развертывании кластера Azure Kubernetes Service (AKS) с помощью Azure CLI или шаблона Resource Manager, это значение задается до 250 групп контейнеров POD на каждом узле. После вы уже развернули кластер службы контейнеров AZURE, или если вы развертываете кластер с помощью портала Azure нельзя настроить максимальное модулей POD на каждом узле.<br />
+<sup>1</sup> При развертывании кластера Azure Kubernetes Service (AKS) с Azure CLI или шаблоном диспетчер ресурсов это значение можно настроить до 250 модулей Pod на узел. Вы не можете настроить максимальное число модулей Pod на узел после развертывания кластера AKS или при развертывании кластера с помощью портал Azure.<br />
 
 <!-- LINKS - Internal -->
 [basic-networking]: ../articles/aks/concepts-network.md#kubenet-basic-networking

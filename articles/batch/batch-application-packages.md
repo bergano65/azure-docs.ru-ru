@@ -15,10 +15,10 @@ ms.date: 04/26/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 9c9d6d13efaa07bff2a1eaabe05725a3257cf895
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "70095695"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы
@@ -308,7 +308,7 @@ CloudTask blenderTask = new CloudTask(taskId, commandLine);
 * Новый пакет приложения не будет автоматически установлен на вычислительные узлы, которые во время обновления ссылки на пакет уже существовали в пуле. Для получения нового пакета их необходимо перезагрузить либо заново создать для них образ.
 * Переменные среды, создаваемые при развертывании нового пакета, отражают новые ссылки на пакеты приложения.
 
-В этом примере существующий пул имеет версию 2,7 приложения для наложения , настроенную как одно из его [CloudPool][net_cloudpool]. [ApplicationPackageReferences][net_cloudpool_pkgref]. Чтобы обновить узлы пула с версией 2.76 b, укажите новый [ApplicationPackageReference][net_pkgref] с новой версией и зафиксируйте изменения.
+В этом примере существующий пул имеет версию 2,7 приложения для *наложения* , настроенную как одно из его [CloudPool][net_cloudpool]. [ApplicationPackageReferences][net_cloudpool_pkgref]. Чтобы обновить узлы пула с версией 2.76 b, укажите новый [ApplicationPackageReference][net_pkgref] с новой версией и зафиксируйте изменения.
 
 ```csharp
 string newVersion = "2.76b";

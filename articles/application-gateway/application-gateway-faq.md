@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 08/31/2019
 ms.author: victorh
-ms.openlocfilehash: 3fa97c5738128907b0edad40cedf582e80c33443
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: fd4eef9771ae89e330c99b398ad6d473356213f5
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194474"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858527"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -120,7 +120,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="does-application-gateway-support-autoscaling"></a>Поддерживает ли шлюз приложений Автомасштабирование?
 
-Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Дополнительные сведения см. в статье Автомасштабирование [и избыточное в зону шлюз приложений](application-gateway-autoscaling-zone-redundant.md).
+Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Дополнительные сведения см. в статье [Автомасштабирование и избыточное в зону шлюз приложений](application-gateway-autoscaling-zone-redundant.md).
 
 ### <a name="does-manual-scale-up-or-scale-down-cause-downtime"></a>Происходит ли ручное увеличение или уменьшение масштаба по причине простоя?
 
@@ -353,7 +353,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="can-i-set-alerts-with-application-gateway"></a>Можно ли настроить оповещения для Шлюза приложений?
 
-Да. В шлюзе приложений оповещения настраиваются на основе метрик. Дополнительные сведения см. в статьях [метрики шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics#metrics) и [Получение уведомлений об оповещениях](../monitoring-and-diagnostics/insights-receive-alert-notifications.md).
+Да. В шлюзе приложений оповещения настраиваются на основе метрик. Дополнительные сведения см. в статьях [метрики шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics) и [Получение уведомлений об оповещениях](../monitoring-and-diagnostics/insights-receive-alert-notifications.md).
 
 ### <a name="how-do-i-analyze-traffic-statistics-for-application-gateway"></a>Как анализировать статистику трафика для Шлюза приложений?
 

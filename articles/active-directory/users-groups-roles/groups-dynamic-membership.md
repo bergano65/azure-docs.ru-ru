@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 09/10/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b562ccf81a80219caa9f80bec82f64f7d2510626
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 4b5f85aa99876ef6c3c9193612051085f3e0ffc0
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194612"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872188"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -358,6 +358,11 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
 ## <a name="rules-for-devices"></a>Правила для устройств
 
 Можно также создать правило, которое выбирает объекты устройств для членства в группе. Членами одной группы не могут являться одновременно пользователи и устройства. Атрибут **organizationalUnit** больше не доступен в списке, и его не следует использовать. Эту строку Intune задает в определенных случаях, но она не распознается службой Azure AD. Поэтому устройства не будут добавляться в группы на основе этого атрибута.
+
+> [!NOTE]
+> системлабелс — это атрибут, предназначенный только для чтения и не может быть установлен в Intune.
+>
+> Для Windows 10 правильный формат атрибута deviceOSVersion выглядит следующим образом: (Device. deviceOSVersion-EQ "10,0 (17763)"). Форматирование можно проверить с помощью командлета PowerShell Get-MsolDevice.
 
 Можно использовать следующие атрибуты устройства.
 
