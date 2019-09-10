@@ -1,6 +1,6 @@
 ---
-title: Включить InifinBand с SR-IOV - виртуальных машин Azure | Документация Майкрософт
-description: Сведения о включении InfiniBand с SR-IOV.
+title: Включение Инифинбанд с помощью виртуальных машин Azure SR-IOV | Документация Майкрософт
+description: Узнайте, как включить InfiniBand с помощью SR-IOV.
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
@@ -12,25 +12,25 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: 2e28627359f339a3bf818a15d6a5c8e456fb554a
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 7218fceae71969f204c6c25ba4793a7c94341693
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67797521"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858481"
 ---
-# <a name="enable-infiniband-with-sr-iov"></a>Включить InfiniBand с SR-IOV
+# <a name="enable-infiniband-with-sr-iov"></a>Включение InfiniBand с помощью SR-IOV
 
-— Это самый простой и рекомендуемый способ настройки вашего пользовательского образа виртуальной Машины с помощью InfiniBand (IB) для добавления расширения InfiniBandDriverLinux или InfiniBandDriverWindows виртуальной Машины к развертыванию.
-Сведения об использовании этих расширений виртуальной Машины с [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc#rdma-capable-instances) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#rdma-capable-instances)
+Самый простой и рекомендуемый способ приступить к работе с виртуальными машинами IaaS для HPC — использовать образ ОС виртуальной машины CentOS-HPC 7,6. Если вы используете пользовательский образ виртуальной машины, самый простой способ его настроить с помощью InfiniBand (превышено) — добавить в развертывание расширение виртуальной машины Инфинибанддриверлинукс или Инфинибанддривервиндовс.
+Узнайте, как использовать эти расширения виртуальных машин с [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc#rdma-capable-instances) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#rdma-capable-instances)
 
-Чтобы вручную настроить InfiniBand на SR-IOV включена виртуальными машинами (в настоящее время HB и HC), выполните следующие действия. Эти действия предназначены только для RHEL и CentOS. Для Ubuntu (16.04 и 18.04) и SLES (12 SP4 и 15) драйверы работают хорошо.
+Чтобы вручную настроить InfiniBand на виртуальных машинах с поддержкой SR-IOV (в настоящее время ХБ и HC Series), выполните следующие действия. Эти действия предназначены только для RHEL/CentOS. Для Ubuntu (16,04 и 18,04) и SLES (12 SP4 и 15) драйверы папки "Входящие" работают правильно.
 
-## <a name="manually-install-ofed"></a>Вручную установите OFED
+## <a name="manually-install-ofed"></a>Установка ОФЕД вручную
 
-Установите последние версии драйверов MLNX_OFED ConnectX-5 из [Mellanox](https://www.mellanox.com/page/products_dyn?product_family=26).
+Установите последние версии драйверов MLNX_OFED для ConnectX-5 от [Mellanox](https://www.mellanox.com/page/products_dyn?product_family=26).
 
-Для RHEL и CentOS (7.6 пример ниже):
+Для RHEL/CentOS (пример ниже для 7,6):
 
 ```bash
 sudo yum install -y kernel-devel python-devel
@@ -41,9 +41,9 @@ tar zxvf MLNX_OFED_LINUX-4.5-1.0.1.0-rhel7.6-x86_64.tgz
 sudo ./MLNX_OFED_LINUX-4.5-1.0.1.0-rhel7.6-x86_64/mlnxofedinstall --add-kernel-support
 ```
 
-Для Windows, загрузите и установите драйверы WinOF-2 для ConnectX – 5 из [Mellanox](https://www.mellanox.com/page/products_dyn?product_family=32&menu_section=34)
+Для Windows Скачайте и установите драйверы Виноф-2 для ConnectX-5 от [Mellanox](https://www.mellanox.com/page/products_dyn?product_family=32&menu_section=34) .
 
-## <a name="enable-ipoib"></a>Включить IPoIB
+## <a name="enable-ipoib"></a>Включение IPoIB
 
 ```bash
 sudo sed -i 's/LOAD_EIPOIB=no/LOAD_EIPOIB=yes/g' /etc/infiniband/openib.conf
@@ -55,19 +55,19 @@ then
 fi
 ```
 
-## <a name="assign-an-ip-address"></a>Назначение IP-адресом
+## <a name="assign-an-ip-address"></a>Назначение IP-адреса
 
-Назначьте IP-адрес интерфейсу ib0, с помощью:
+Назначьте IP-адрес интерфейсу IB0, используя один из следующих способов:
 
-- Вручную назначьте IP-адрес интерфейса ib0 (в качестве привилегированного пользователя).
+- Вручную назначьте IP-адрес интерфейсу IB0 (в качестве корневого).
 
     ```bash
     ifconfig ib0 $(sed '/rdmaIPv4Address=/!d;s/.*rdmaIPv4Address="\([0-9.]*\)".*/\1/' /var/lib/waagent/SharedConfig.xml)/16
     ```
 
-Или
+ИЛИ
 
-- Воспользуйтесь WALinuxAgent для назначения IP-адреса и его создания.
+- Используйте WALinuxAgent, чтобы назначить IP-адрес и сделать его постоянным.
 
     ```bash
     yum install -y epel-release

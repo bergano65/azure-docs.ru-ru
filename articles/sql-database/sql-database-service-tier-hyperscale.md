@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/06/2019
-ms.openlocfilehash: d9d70444adee26eab77c0e3d256cd8f340a1b4c8
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 1d70c5d86221213ae3f9a2d31fdf40857cb516be
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981165"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845641"
 ---
 # <a name="hyperscale-service-tier-for-up-to-100-tb"></a>Уровень службы "горизонтальное масштабирование" до 100 ТБ
 
@@ -186,7 +186,7 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 
 2. Щелкните [ **новый запрос в службу поддержки**](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-    ![Колонка "Справка и поддержка Azure"](media/sql-database-service-tier-hyperscale/whitelist-request-screen-1.png)
+    ![Колонка "Справка и поддержка Azure"](media/sql-database-service-tier-hyperscale/request-screen-1.png)
 
 3. Для **типа проблемы**выберите **пределы служб и подписок (квоты)** .
 
@@ -198,13 +198,13 @@ Server=tcp:<myserver>.database.windows.net;Database=<mydatabase>;ApplicationInte
 
 1. Щелкните **указать подробности** .
 
-    ![Сведения о проблеме](media/sql-database-service-tier-hyperscale/whitelist-request-screen-2.png)
+    ![Сведения о проблеме](media/sql-database-service-tier-hyperscale/request-screen-2.png)
 
 8. Выберите **тип квоты базы данных SQL**: **Другой запрос квоты**
 
 9. Заполните следующий шаблон:
 
-    ![Сведения о квотах](media/sql-database-service-tier-hyperscale/whitelist-request-screen-3.png)
+    ![Сведения о квотах](media/sql-database-service-tier-hyperscale/request-screen-3.png)
 
     В шаблоне укажите следующие сведения.
 

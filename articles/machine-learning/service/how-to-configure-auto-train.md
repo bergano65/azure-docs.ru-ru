@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: a73d048a66c70eaf22caf6b33c4a495df6d730dd
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 9a2b030185c821ec9bd577ecdabbc929766f2d14
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997920"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858884"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 
@@ -34,7 +34,7 @@ ms.locfileid: "69997920"
 * Изучение метрик модели
 * регистрация и развертывание модели.
 
-Если вы предпочитаете работать без кода, вы также можете [создать автоматические эксперименты машинного обучения в портал Azure](how-to-create-portal-experiments.md).
+Если вы предпочитаете не использовать код, можно также [создать автоматические эксперименты машинного обучения в портал Azure](how-to-create-portal-experiments.md).
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
@@ -553,13 +553,13 @@ LogisticRegression
     print(per_class_summary)
     ```
 
-Вы можете отобразить диаграмму важности признаков в рабочей области на портале Azure. Отобразите URL-адрес с помощью объекта Run:
+Отобразите URL-адрес для просмотра важности функции с помощью объекта Run:
 
 ```
 automl_run.get_portal_url()
 ```
 
-Вы можете отобразить диаграмму важности признаков в рабочей области на портале Azure. Диаграмма также отображается при использовании `RunDetails` мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) в записной книжке. Дополнительные сведения о диаграммах см. в статье сведения об [автоматических результатах машинного обучения](how-to-understand-automated-ml.md).
+Диаграмму важности функций можно визуализировать в рабочей области в портал Azure или на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com). Диаграмма также отображается при использовании `RunDetails` мини-приложения [Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py) в записной книжке. Дополнительные сведения о диаграммах см. в статье сведения об [автоматических результатах машинного обучения](how-to-understand-automated-ml.md).
 
 ```Python
 from azureml.widgets import RunDetails

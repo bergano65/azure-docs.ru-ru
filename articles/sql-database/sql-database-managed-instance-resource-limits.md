@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 08/27/2019
-ms.openlocfilehash: c0bfbbd8b85f0b3eadf468cdd1261f52bff26abe
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 33e21b54927280e2692a58c311e2de23e257f923
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813387"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845386"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Общие сведения об ограничениях ресурсов управляемого экземпляра базы данных SQL Azure
 
@@ -65,9 +65,9 @@ ms.locfileid: "70813387"
 | Максимальный размер tempdb | 192–1,920 ГБ (24 ГБ на виртуальное ядро)<br/>Добавьте дополнительные виртуальных ядер, чтобы получить больше пространства TempDB. | Ограничивается максимальным размером хранилища экземпляра. Размер файла журнала TempDB в настоящее время ограничен 24 ГБ/Виртуальное ядро. |
 | Выполняющаяся в памяти OLTP | Не поддерживается | Доступно |
 | Максимальное число сеансов | 30 000 | 30 000 |
-| Доступные для чтения реплики | 0 | 1 (входит в цену) |
-| Цены и выставление счетов | Виртуальное ядро, зарезервированное хранилище  <br/> Не оплачено операций ввода-вывода, хранилище резервных копий еще не заряжено. | Виртуальное ядро, зарезервированное хранилище  <br/> Не оплачено операций ввода-вывода, хранилище резервных копий еще не заряжено. | 
-| Модели скидок | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование) | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)|
+| [Реплики только для чтения](sql-database-read-scale-out.md) | 0 | 1 (входит в цену) |
+| Цены и выставление счетов | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | 
+| Модели скидок | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования|
 
 > [!NOTE]
 > - Размеры данных и файла журнала в системных базах данных и базах данных пользователей включаются в размер хранилища экземпляра, который сравнивается с пределом максимального размера хранилища. Используйте системное представление <a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql">sys.master_files</a>, чтобы определить общий объем, используемый базами данных. Журналы ошибок не сохраняются и не включаются в размер. Резервные копии не включаются в размер хранилища.

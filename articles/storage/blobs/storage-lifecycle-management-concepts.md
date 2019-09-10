@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: yzheng
-ms.openlocfilehash: 77ed643afaf5e69f41224af68f5e9f8a93fcace5
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: ea896697c8f6986c4c77f3ce86a62947d9a3327e
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722082"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861412"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "68722082"
 В этой статье показано, как управлять политикой с помощью портала и методов PowerShell.  
 
 > [!NOTE]
-> Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Требуемый обход: `Logging,  Metrics,  AzureServices`. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+> Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Требуемый обход: `AzureServices`. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 ### <a name="azure-portal"></a>портала Azure
 
@@ -435,4 +435,4 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 Узнайте, как восстанавливать данные после случайного удаления:
 
-- [Обратимое удаление для больших двоичных объектов службы хранилища Azure](../blobs/storage-blob-soft-delete.md)
+- [Soft delete for Azure Storage blobs](../blobs/storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)

@@ -6,13 +6,13 @@ author: banisadr
 ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
-ms.date: 01/17/2019
-ms.openlocfilehash: 0042b0bd8c6ed9e9d253c44151dcf0588c742b48
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.date: 07/11/2019
+ms.openlocfilehash: 9d7cef35ef6d1138b037f7c520f21bee86567aa8
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137842"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842578"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
@@ -27,27 +27,39 @@ ms.locfileid: "67137842"
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
+## <a name="install-preview-feature"></a>Установка предварительной версии функции
+
+[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
+
 ## <a name="create-an-event-domain"></a>Создание Домена событий
 
 Чтобы управлять большими наборами разделов, создайте домен событий.
 
-Для интерфейса командной строки Azure:
+# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
 
 ```azurecli-interactive
+# If you haven't already installed the extension, do it now.
+# This extension is required for preview features.
+az extension add --name eventgrid
+
 az eventgrid domain create \
   -g <my-resource-group> \
   --name <my-domain-name> \
   -l <location>
 ```
 
-Для PowerShell используйте команду:
-
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 ```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
 New-AzureRmEventGridDomain `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain-name> `
   -Location <location>
 ```
+---
 
 После успешного создания возвращаются следующие значения:
 
@@ -74,6 +86,7 @@ New-AzureRmEventGridDomain `
 
 Сетка событий имеет две встроенные роли, которые можно использовать для назначения определенным пользователям доступа к различным разделам в пределах домена. Это роль `EventGrid EventSubscription Contributor (Preview)`, которая позволяет создавать и удалять подписки, и роль `EventGrid EventSubscription Reader (Preview)`, которая позволяет только перечислять подписки на события.
 
+# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
 Следующая команда интерфейса командной строки Azure ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
 
 ```azurecli-interactive
@@ -83,6 +96,7 @@ az role assignment create \
   --scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
 ```
 
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 Следующая команда PowerShell ограничивает `alice@contoso.com` созданием и удалением подписок на события только в разделе `demotopic1`:
 
 ```azurepowershell-interactive
@@ -91,6 +105,7 @@ New-AzureRmRoleAssignment `
   -RoleDefinitionName "EventGrid EventSubscription Contributor (Preview)" `
   -Scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
 ```
+---
 
 Дополнительные сведения об управлении доступом для операций службы "Сетка событий" см. в статье [Сетка событий: безопасность и проверка подлинности](./security-authentication.md).
 
@@ -102,7 +117,7 @@ New-AzureRmRoleAssignment `
 
 Как правило, пользователь, которому вы предоставили доступ в предыдущем разделе, создаст подписку. Для упрощения этой статьи создайте подписку. 
 
-Для интерфейса командной строки Azure:
+# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -111,7 +126,7 @@ az eventgrid event-subscription create \
   --endpoint https://contoso.azurewebsites.net/api/updates
 ```
 
-Для PowerShell используйте команду:
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
 ```azurepowershell-interactive
 New-AzureRmEventGridSubscription `
@@ -119,6 +134,8 @@ New-AzureRmEventGridSubscription `
   -EventSubscriptionName <event-subscription> `
   -Endpoint https://contoso.azurewebsites.net/api/updates
 ```
+
+---
 
 Если вам нужна тестовая конечная точка, куда будут отправляться события, вы всегда можете развернуть [предварительно готовое веб-приложение](https://github.com/Azure-Samples/azure-event-grid-viewer), отображающее входящие события. Вы можете отправлять события на веб-сайт тестирования по адресу `https://<your-site-name>.azurewebsites.net/api/updates`.
 
@@ -158,6 +175,7 @@ New-AzureRmEventGridSubscription `
 }]
 ```
 
+# <a name="azure-clitabazurecli"></a>[Интерфейс командной строки Azure](#tab/azurecli)
 Чтобы получить конечную точку домена с помощью Azure CLI, выполните следующую команду:
 
 ```azurecli-interactive
@@ -174,6 +192,7 @@ az eventgrid domain key list \
   -n <my-domain>
 ```
 
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 Чтобы получить конечную точку домена с помощью PowerShell, выполните следующую команду:
 
 ```azurepowershell-interactive
@@ -189,26 +208,10 @@ Get-AzureRmEventGridDomainKey `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain>
 ```
+---
 
 Затем используйте предпочтительный метод создания запроса HTTP POST для публикации событий в домен Сетки событий.
 
-## <a name="search-lists-of-topics-or-subscriptions"></a>Поиск в списках разделов или подписок
-
-Чтобы сделать поиск и управление большим количеством разделов или подписок, API-интерфейсы сетки событий поддерживать список и разбиение на страницы.
-
-### <a name="using-cli"></a>Использование синтаксиса командной строки
-
-Для использования его убедитесь в том, что вы используете версию расширения Azure CLI "Сетка событий" 0.4.1 или более поздней версии.
-
-```azurecli-interactive
-# If you haven't already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
-az eventgrid topic list \
-    --odata-query "contains(name, 'my-test-filter')"
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Общие понятия, касающиеся доменов событий, и сведения об их эффективности см. в [этой статье](event-domains.md).

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0630ca28652b48b3632dbae94c5e16d6adb462c4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 0f295bf3a76d89e811fe9a022a3ccb68fbe7556a
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812290"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858717"
 ---
 # <a name="track-machine-learning-training-metrics-with-azure-machine-learning"></a>Мониторинг метрик обучения машинного обучения с помощью Машинное обучение Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "70812290"
 
 Следующие метрики можно добавить к выполнению во время обучения эксперимента. Чтобы просмотреть подробный список того, что можно отслеживать при выполнении, ознакомьтесь со [справочной документацией по классу Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py).
 
-|Type| Функция Python | Примечания|
+|Тип| Функция Python | Примечания|
 |----|:----|:----|
 |Скалярные значения |Функция:<br>`run.log(name, value, description='')`<br><br>Пример:<br>run.log("accuracy", 0.95) |Запишите числовое или строковое значение в выполнение с заданным именем. Запись метрики в выполнение приводит к тому, что метрика будет сохранена в записи о выполнении в эксперименте.  Одну и ту же метрику можно несколько раз записать в рамках выполнения. Результат будет считаться вектором этой метрики.|
 |Списки|Функция:<br>`run.log_list(name, value, description='')`<br><br>Пример:<br>run.log_list("accuracies", [0.6, 0.7, 0.87]) | Запишите список значений в выполнение с заданным именем.|
@@ -273,7 +273,7 @@ print(run.get_portal_url())
 Метрики обученной модели можно просмотреть с помощью ```run.get_metrics()```. Теперь можно получить все метрики, которые были зарегистрированы в примере выше, чтобы определить оптимальную модель.
 
 <a name="view-the-experiment-in-the-web-portal"></a>
-## <a name="view-the-experiment-in-the-azure-portal"></a>Просмотр эксперимента на портале Azure
+## <a name="view-the-experiment-in-the-azure-portal-or-your-workspace-landing-page-previewhttpsmlazurecom"></a>Просмотр эксперимента на целевой странице портал Azure или [рабочей области (Предварительная версия)](https://ml.azure.com)
 
 После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Доступ к журналу можно получить двумя способами:
 

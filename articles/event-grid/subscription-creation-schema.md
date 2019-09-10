@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/02/2019
 ms.author: babanisa
-ms.openlocfilehash: 9464ab89e08f53f61cb6f5a4b1e91da35b785af0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6129c7f498ce6c52fce4266f693c6a304642f8c3
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822787"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845456"
 ---
 # <a name="event-grid-subscription-schema"></a>Схема подписки для службы "Сетка событий"
 
@@ -42,17 +42,17 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 
 | Свойство | type | Описание |
 | -------- | ---- | ----------- |
-| endpointType | string | Тип конечной точки для подписки (веб-перехватчик или HTTP, концентратор событий либо очередь). | 
-| endpointUrl | string | URL-адрес назначения для событий в подписке на событие. | 
+| endpointType | строка | Тип конечной точки для подписки (веб-перехватчик или HTTP, концентратор событий либо очередь). | 
+| endpointUrl | строка | URL-адрес назначения для событий в подписке на событие. | 
 
 ### <a name="filter-object"></a>Объект filter
 
 | Свойство | type | Описание |
 | -------- | ---- | ----------- |
-| includedEventTypes | массив | Выполняет сопоставление, если тип события, указанный в сообщении о событии, полностью соответствует одному из этих типов. Вызывает ошибку, если имя события не соответствует зарегистрированному имени типа для источника события. По умолчанию соответствует всем типам событий. |
-| subjectBeginsWith | string | Фильтр соответствия префиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. | 
-| subjectEndsWith | string | Фильтр соответствия суффиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. |
-| isSubjectCaseSensitive | string | Управляет сопоставлением с учетом регистра в фильтрах. |
+| includedEventTypes | array | Выполняет сопоставление, если тип события, указанный в сообщении о событии, полностью соответствует одному из этих типов. Вызывает ошибку, если имя события не соответствует зарегистрированному имени типа для источника события. По умолчанию соответствует всем типам событий. |
+| subjectBeginsWith | строка | Фильтр соответствия префиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. | 
+| subjectEndsWith | строка | Фильтр соответствия суффиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. |
+| isSubjectCaseSensitive | строка | Управляет сопоставлением с учетом регистра в фильтрах. |
 
 
 ## <a name="example-subscription-schema"></a>Пример схемы подписки
@@ -68,7 +68,7 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
     },
     "filter": {
       "includedEventTypes": [ "Microsoft.Storage.BlobCreated", "Microsoft.Storage.BlobDeleted" ],
-      "subjectBeginsWith": "blobServices/default/containers/mycontainer/log",
+      "subjectBeginsWith": "/blobServices/default/containers/mycontainer/log",
       "subjectEndsWith": ".jpg",
       "isSubjectCaseSensitive ": "true"
     }
@@ -76,6 +76,6 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о [службе "Сетка событий Azure"](overview.md).
