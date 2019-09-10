@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.custom: aaddev, annaba, identityplatformtop40
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95c337501c46dd9b30ff20d71a9363ab03fdb608
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: f9244dfabef8b13105ef830f9f4543da9cb2cca9
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980441"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842639"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Настройка времени существования маркеров в Azure Active Directory (предварительная версия)
 
@@ -106,7 +106,7 @@ ms.locfileid: "69980441"
 * если политика явно назначена субъекту-службе, применяется именно она;
 * если нет политики, явно назначенной субъекту-службе, применяется политика, явно назначенная родительской организации субъекта-службы;
 * если нет политики, явно назначенной субъекту-службе или организации, применяется политика, назначенная приложению;
-* если нет политики, явно назначенной субъекту-службе, организации или объекту приложения, применяются значения по умолчанию. (См. таблицу в разделе [Свойства для настройки времени жизни маркера](#configurable-token-lifetime-properties).)
+* Если ни одна политика не назначена субъекту-службе, организации или объекту приложения, применяются значения по умолчанию. (См. таблицу в разделе [Свойства для настройки времени жизни маркера](#configurable-token-lifetime-properties).)
 
 Дополнительные сведения о связях между объектами приложения и объектами субъекта-службы см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](app-objects-and-service-principals.md).
 

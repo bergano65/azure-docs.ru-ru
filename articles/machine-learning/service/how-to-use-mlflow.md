@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: d819479c5e4bdbf8287dc7408c0f7813f5e32b13
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: c7bed307373289c6a6f76117fa07ee2ee3242bfc
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900170"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860462"
 ---
 # <a name="track-metrics-and-deploy-models-with-mlflow-and-azure-machine-learning-service-preview"></a>Мониторинг метрик и развертывание моделей с помощью Млфлов и службы Машинное обучение Azure (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "69900170"
  Отслеживание Млфлов предлагает функциональные возможности ведения журнала метрик и хранилища артефактов, которые доступны только в других случаях через [пакет SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
 
-| | Развертывание & отслеживания Млфлов | Пакет SDK для Машинное обучение Azure Python |  Интерфейс командной строки службы "Машинное обучение Azure" | портала Azure|
+| | Развертывание & отслеживания Млфлов | Пакет SDK для Машинное обучение Azure Python |  Интерфейс командной строки службы "Машинное обучение Azure" | Портал Azure или целевая страница рабочей области (Предварительная версия)|
 |---|---|---|---|---|
 | Управление рабочей областью |   | ✓ | ✓ | ✓ |
 | Использование хранилищ данных  |   | ✓ | ✓ | |
@@ -203,7 +203,7 @@ mlflow.log_metric('epoch_loss', loss.item())
 
 ## <a name="view-metrics-and-artifacts-in-your-workspace"></a>Просмотр метрик и артефактов в рабочей области
 
-Метрики и артефакты из журнала Млфлов хранятся в рабочей области. Чтобы просмотреть их в любое время, перейдите в рабочую область и найдите эксперимент по имени на [портал Azure](https://portal.azure.com) или выполнив приведенный ниже код. 
+Метрики и артефакты из журнала Млфлов хранятся в рабочей области. Чтобы просмотреть их в любое время, перейдите к рабочей области и найдите эксперимент по имени в [портал Azure](https://portal.azure.com) или на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com).  Или выполните приведенный ниже код. 
 
 ```python
 run.get_metrics()

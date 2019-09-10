@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: juliako
-ms.openlocfilehash: ff85638a05855d0b755a7b1812ee7025274b559c
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: 6fea7b7d3d3ef3b1a46aeeff0bab8fef2a9bf3ad
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019315"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860349"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "70019315"
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 
-## <a name="a-idissuescurrently-known-issues"></a><a id="issues"/>Известные проблемы
+## <a name="a-idissuesknown-issues"></a><a id="issues"/>Известные проблемы
 ### <a name="a-idgeneral_issuesmedia-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
 
 | Проблемы | Описание |
@@ -41,6 +41,7 @@ ms.locfileid: "70019315"
 | При запросе сущностей за один раз возвращается не больше 1000 сущностей, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. |Используйте Skip и Take (.NET) или top (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. |
 | Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues). |
 | Объекты в пакете SDK .NET для служб мультимедиа не могут быть сериализованы и поэтому не работают с кэшем Azure для Redis. |При попытке сериализации объекта SDK AssetCollection с целью его добавления в кэш Azure для Redis возникает исключение. |
+|REST API отвечает сообщением об ошибке: "при попытке получить фильтр на уровне ресурса или учетной записи" доступ к фильтру невозможен в этой версии API-интерфейса.|Фильтр был создан или изменен с использованием более новой версии API, чем используется для попыток получения фильтра. Это может произойти, если в коде или средствах, используемых клиентом, используются две версии API.  Лучшим решением здесь является обновление кода или средств для использования более новых или двух версий API.|
 
 ## <a name="a-idrest_version_historyrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].

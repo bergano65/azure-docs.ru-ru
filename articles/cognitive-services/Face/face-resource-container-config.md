@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 09/06/2019
 ms.author: dapine
-ms.openlocfilehash: 6dd047b0ba7f9a123ffcc014cff5604466946d07
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 752613becb92711866d520e6fcd46ed3a320353f
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564111"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860268"
 ---
 # <a name="configure-face-docker-containers"></a>Настройка контейнеров Docker распознавания лиц
 
@@ -43,7 +43,7 @@ ms.locfileid: "68564111"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера.  `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера. `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
@@ -53,7 +53,7 @@ ms.locfileid: "68564111"
 
 |Обязательное значение| Название | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0` |
 
 <!-- specific to face only -->
 
@@ -122,10 +122,10 @@ ms.locfileid: "68564111"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](face-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-|Необязательный| Имя | Тип данных | Описание |
+|Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строковое | Контейнеры распознавания лиц не используют этот элемент.|
-|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -139,7 +139,9 @@ ms.locfileid: "68564111"
 | Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
 |{API_KEY} | Ключ конечной точки ресурса Cognitive Services. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{ENDPOINT_URI} | Значение конечной точки, включая маршрутизацию региона и лица.|`https://westcentralus.api.cognitive.microsoft.com/face/v1.0`|
+|{ENDPOINT_URI} | Значение URL-адреса конечной точки.|`https://myresourcename.cognitive.microsoft.com/face/v1.0`|
+
+[!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](face-how-to-install-containers.md#billing).

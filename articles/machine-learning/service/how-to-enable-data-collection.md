@@ -11,12 +11,12 @@ ms.author: marthalc
 author: marthalc
 ms.date: 07/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 81ffe8618e07f2e49e4439ea57e254e5d37974f9
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 16fac492fe4c193ecd7ffa7eeff1e884acb742ae
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227942"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860517"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -48,7 +48,7 @@ ms.locfileid: "68227942"
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -109,7 +109,7 @@ ms.locfileid: "68227942"
 
 Если в **файле среды** и **файле оценки** уже указана служба с установленными зависимостями, вы можете включить сбор данных следующим образом:
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите в [портал Azure](https://portal.azure.com).
 
 1. Перейдите в рабочую область.
 
@@ -144,6 +144,8 @@ ms.locfileid: "68227942"
 
   1. Чтобы применить изменение, нажмите кнопку **Обновить**.
 
+  Вы также можете получить доступ к этим параметрам на [целевой странице рабочей области (Предварительная версия)](https://ml.azure.com).
+
 + Вариант 2 — отключение сбора данных с помощью Python:
 
   ```python 
@@ -172,7 +174,7 @@ ms.locfileid: "68227942"
 
 ### <a name="analyzing-model-data-through-power-bi"></a>Анализ данных модели с помощью Power BI
 
-1. Скачайте [PowerBi Desktop](https://www.powerbi.com) и откройте его.
+1. Скачать и открыть [Power BI Desktop](https://www.powerbi.com)
 
 1. Выберите **Получить данные**, а затем [**Хранилище BLOB-объектов Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
 
@@ -218,7 +220,7 @@ ms.locfileid: "68227942"
 
     [![Таблица базы данных](media/how-to-enable-data-collection/dbtable.PNG)](./media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
-1. Обновите расположение данных. Вот пример:
+1. Обновите расположение данных. Пример:
 
     ```
     file_location = "wasbs://mycontainer@storageaccountname.blob.core.windows.net/modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/*/*/data.csv" 

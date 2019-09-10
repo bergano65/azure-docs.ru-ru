@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.openlocfilehash: d626a7768e7070360a6f0249486bfa83407fe998
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 60ecd71419bbf65cceab257cb97a96929d24ec08
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70192060"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860556"
 ---
 # <a name="understand-automated-machine-learning-results"></a>Общие сведения об автоматических результатах машинного обучения
 
@@ -30,10 +30,10 @@ ms.locfileid: "70192060"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Создайте Автоматический эксперимент машинного обучения с помощью пакета SDK или портал Azure.
+* Создайте Автоматический эксперимент машинного обучения с помощью пакета SDK в портал Azure или на целевой странице рабочей области (Предварительная версия).
 
     * Использование пакета SDK для построения [модели классификации](how-to-auto-train-remote.md) или [модели регрессии](tutorial-auto-train-models.md)
-    * Используйте [портал Azure](how-to-create-portal-experiments.md) для создания модели классификации или регрессии путем передачи соответствующих данных.
+    * Используйте [портал Azure или целевую страницу рабочей области (Предварительная версия)](how-to-create-portal-experiments.md) для создания модели классификации или регрессии путем передачи соответствующих данных.
 
 ## <a name="view-the-run"></a>Просмотр выполнения
 
@@ -41,7 +41,7 @@ ms.locfileid: "70192060"
 
 1. Перейдите в рабочую область.
 
-1. На левой панели рабочей области выберите эксперименты.
+1. На левой панели рабочей области выберите **эксперименты**.
 
    ![Снимок экрана с меню эксперимента](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-menu.png)
 

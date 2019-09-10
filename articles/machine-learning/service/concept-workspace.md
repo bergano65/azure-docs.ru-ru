@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 08/06/2019
-ms.openlocfilehash: cb1fd8e98a5eba350774ff6ccb8f86dcd3e4d734
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ef060c083109a7096b62ebb35f2b49bb37a371b8
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856202"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860500"
 ---
 # <a name="what-is-an-azure-machine-learning-service-workspace"></a>Что такое Рабочая область службы Машинное обучение Azure?
 
@@ -36,7 +36,7 @@ ms.locfileid: "68856202"
 + При создании рабочей области также создаются [связанные ресурсы](#resources) .
 + [Эксперименты](concept-azure-machine-learning-architecture.md#experiments) — это обучающие программы, которые используются для построения моделей.  Вы можете создавать и запускать эксперименты с помощью
     + [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
-    + Раздел [автоматических экспериментов машинного обучения (Предварительная версия)](how-to-create-portal-experiments.md) в портал Azure.
+    + Раздел [автоматических экспериментов машинного обучения (Предварительная версия)](how-to-create-portal-experiments.md) в портал Azure или на целевой странице рабочей области (Предварительная версия).
     + [Визуальный интерфейс (Предварительная версия)](ui-concept-visual-interface.md).
 + [Конвейеры](concept-azure-machine-learning-architecture.md#ml-pipelines) — это многократно используемые рабочие процессы для обучения и повторного обучения модели.
 + [Наборы](concept-azure-machine-learning-architecture.md#datasets-and-datastores) данных помогают в управлении данными, используемыми для обучения модели и создания конвейера.
@@ -49,6 +49,7 @@ ms.locfileid: "68856202"
 
 + В Интернете:
     + [портал Azure](https://portal.azure.com).
+    + [Целевая страница рабочей области (Предварительная версия)](https://ml.azure.com)
     + [Визуальный интерфейс (Предварительная версия)](ui-concept-visual-interface.md)
 + В Python с использованием [пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) для машинное обучение Azure
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/service/reference-azure-machine-learning-cli) машинное обучение Azure
@@ -92,7 +93,7 @@ ms.locfileid: "68856202"
 
 При создании новой рабочей области она автоматически создает несколько ресурсов Azure, которые используются в рабочей области:
 
-+ [Реестр контейнеров Azure.](https://azure.microsoft.com/services/container-registry/) Регистрирует контейнеры Docker, используемые во время обучения и при развертывании модели. Чтобы сократить затраты, запись контроля **доступа выполняется с отложенной** загрузкой до создания образов развертывания.
++ [Реестр контейнеров Azure.](https://azure.microsoft.com/services/container-registry/) Регистрирует контейнеры Docker, используемые во время обучения и при развертывании модели. Чтобы сократить затраты, запись контроля **доступа выполняется с отложенной загрузкой** до создания образов развертывания.
 + [учетную запись хранения,](https://azure.microsoft.com/services/storage/) Используется как хранилище данных по умолчанию для рабочей области.  Записные книжки Jupyter, используемые с виртуальными машинами записных книжек, также хранятся здесь.
 + [Azure Application Insights.](https://azure.microsoft.com/services/application-insights/) Хранит сведения о мониторинге для моделей.
 + [Azure Key Vault.](https://azure.microsoft.com/services/key-vault/) Хранит секреты, используемые целевыми объектами вычисления, и другие конфиденциальные сведения, необходимые рабочей области.

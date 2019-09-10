@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/08/2019
 ms.author: diberry
-ms.openlocfilehash: ee185ca5d2e2cdda89945f0fc1e7aae32030c1be
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
-ms.translationtype: HT
+ms.openlocfilehash: 5828d4f453afeccfaac206195f064e43a20d1ba0
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70803899"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844768"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
@@ -43,7 +43,7 @@ Language Understanding (LUIS) создание аутентификации из
 Миграция не является: 
 
 * Процесс, который собирает участников совместной работы и автоматически перемещает или добавляет в ресурс разработки Azure. Вы, как владелец приложения, должны выполнить этот шаг. Для этого шага требуются разрешения для соответствующего ресурса.
-* Процесс создания и назначения ресурса среды выполнения прогнозирования. Если требуется ресурс среды выполнения прогнозирования, это [отдельный процесс](luis-how-to-azure-subscription.md##create-resources-in-the-azure-portal) , который не изменяется. 
+* Процесс создания и назначения ресурса среды выполнения прогнозирования. Если требуется ресурс среды выполнения прогнозирования, это [отдельный процесс](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) , который не изменяется. 
 
 ## <a name="how-are-the-apps-migrating"></a>Как приложения переносятся?
 
@@ -62,7 +62,9 @@ Language Understanding (LUIS) создание аутентификации из
 
 * **При необходимости**создайте резервную копию приложений из списка приложений Luis Portal, экспортировав каждое приложение или используя [API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40)экспорта.
 * **При необходимости**сохраните список коллаборатор'с для каждого приложения. Этот список электронной почты предоставляется в рамках процесса миграции.
-* **Необходимо иметь** [подписку Azure](https://azure.microsoft.com/free/). В рамках процесса подписки требуются сведения о выставлении счетов. Однако можно использовать бесплатные (F0) ценовые категории при использовании LUIS. В конечном итоге вам может потребоваться платный уровень, так как использование увеличится. 
+* **Необходимо иметь** [подписку Azure](https://azure.microsoft.com/free/). В рамках процесса подписки требуются сведения о выставлении счетов. Однако вы можете использовать ценовую категорию Free (`F0`) при использовании Luis. 
+
+**Разработка приложения Luis предоставляется бесплатно**, обозначается `F0` уровнем. Дополнительные сведения [о ценовых](luis-boundaries.md#key-limits)категориях.
 
 Если у вас нет подписки Azure, [Зарегистрируйтесь](https://azure.microsoft.com/free/). 
 

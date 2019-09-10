@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 08/23/2018
 tags: connectors
-ms.openlocfilehash: 5d0d276096441c780dee4f8b1e95442a1d7e7b25
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: d3c6395f7fd66e1b89fc49536e228249bc4ed2a9
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050917"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70859250"
 ---
 # <a name="manage-excel-online-data-with-azure-logic-apps"></a>Управление данными Excel Online с помощью Azure Logic Apps
 
@@ -53,6 +53,9 @@ ms.locfileid: "70050917"
 1. В разделе триггера выберите **Добавить шаг**.
 
 1. В поле поиска введите слово excel в качестве фильтра. В списке действий выберите любое необходимое действие.
+
+   > [!NOTE]
+   > Конструктор приложений логики не может загрузить таблицы, имеющие 100 или более столбцов. По возможности сократите число столбцов в выбранной таблице, чтобы конструктор мог загрузить таблицу.
 
 1. При появлении запроса войдите в учетную запись Office 365.
 

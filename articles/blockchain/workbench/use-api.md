@@ -1,25 +1,25 @@
 ---
-title: Использование REST API Azure Blockchain Workbench
-description: Сценарии использования API REST Azure Blockchain Workbench
+title: Использование Azure Блокчейн Workbench Preview REST API
+description: Сценарии использования предварительной версии Azure Блокчейн Workbench REST API
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 04/15/2019
+ms.date: 09/05/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 7fa72ad62d7d11c795422a203d13a4dd45484c19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 412b78363be70918969734cd8890a8ee940df431
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60896054"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70843810"
 ---
-# <a name="using-the-azure-blockchain-workbench-rest-api"></a>Использование REST API Azure Blockchain Workbench
+# <a name="using-the-azure-blockchain-workbench-preview-rest-api"></a>Использование предварительной версии Azure Блокчейн Workbench REST API
 
-REST API Azure Blockchain Workbench предоставляет разработчикам и информационным работникам способ создания тесной интеграции для приложений на базе блокчейна. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
+Azure Блокчейн Workbench Preview REST API предоставляет разработчикам и информационным работникам способ создания богатой интеграции с приложениями блокчейн. В этом документе рассматриваются несколько основных методов REST API Workbench. Например, предположим, что разработчику необходимо создать пользовательский клиент на базе блокчейна. Этот клиент на базе блокчейна разрешает зарегистрированным пользователям просматривать назначенные блокчейн-приложения и взаимодействовать с ними. Клиент позволяет пользователям просматривать экземпляры контрактов и выполнять действия со смарт-контрактами. Клиент использует REST API Workbench в контексте зарегистрированного пользователя для выполнения таких действий:
 
 * Список приложений
 * Получение списка рабочих процессов для приложения
@@ -210,8 +210,8 @@ Content-type: application/json
 
 Если пользователь решает изучить контракт, клиент на базе блокчейна может показать доступные пользователю действия, учитывая состояние контракта. В этом примере пользователь просматривает все доступные действия для созданного смарт-контракта.
 
-* Измените: Позволяет пользователю изменить описание и цену актива.
-* Завершить: Пользователь может завершить контракт данных ресурса.
+* Изменений Позволяет пользователю изменять описание и цену ресурса.
+* Заканчива Позволяет пользователю завершить контракт ресурса.
 
 Выполните вызов [GET в API действия контракта](/rest/api/azure-blockchain-workbench/contractsv2/contractactionget):
 
@@ -277,7 +277,7 @@ Content-type: application/json
 
 Затем пользователь может предпринять действия для указанного экземпляра смарт-контракта. В этом случае рассмотрим сценарий, в котором пользователь хочет изменить описание и цену ресурса на следующие значения:
 
-* Описание: «Мой автомобиль обновленные»
+* Описание: "Моя обновленная машина"
 * Цена: 54321
 
 Выполните вызов [POST в API действия контракта](/rest/api/azure-blockchain-workbench/contractsv2/contractactionpost):
@@ -307,7 +307,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Azure Blockchain Workbench REST API](https://docs.microsoft.com/rest/api/azure-blockchain-workbench) (REST API Azure Blockchain Workbench)

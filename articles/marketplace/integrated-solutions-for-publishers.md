@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 08/15/2019
 ms.author: v-qiwe
-ms.openlocfilehash: 63f9112696156f2192669913bb15a82b9a7eede7
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 2d23b2b39844d48c6414d269f8d69d7b96fff272
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69657467"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860308"
 ---
 # <a name="publishing-integrated-solutions"></a>Интегрированные решения для публикации
 
@@ -88,6 +88,6 @@ ms.locfileid: "69657467"
 
 ## <a name="going-to-market-with-your-integrated-solution"></a>Переход на рынке с помощью интегрированного решения 
 
-Когда ваше решение будет активно в Azure Marketplace или AppSource, вы захотите обеспечить осведомленность и создание спроса с помощью маркетинговых действий. Ознакомьтесь с действиями, перечисленными в [плане проекта и временной шкалой](https://aka.ms/AA5qiuc), включая действия, которые партнеры могут делать в своих группах и друг друга. Затем вы получите доступ к [преимуществам перехода на рынок](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits#how-to-access-microsoft-resources) , предоставленным партнерам, опубликованным в Marketplace. Все предложения интегрированных решений могут использовать преимущества пробного уровня.
+Когда ваше решение будет активно в Azure Marketplace или AppSource, вы захотите обеспечить осведомленность и создание спроса с помощью маркетинговых действий. Ознакомьтесь с действиями, перечисленными в [плане проекта и временной шкалой](https://aka.ms/AA5qiuc), включая действия, которые партнеры могут делать в своих группах и друг друга. Затем вы получите доступ к [преимуществам перехода на рынок](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits#list-trial-and-consulting-benefits) , предоставленным партнерам, опубликованным в Marketplace. Все предложения интегрированных решений могут использовать преимущества пробного уровня.
 
 ---

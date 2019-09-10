@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8368fc5369ee6cd93bbf472d4904cd647d66058d
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 692eff26dbbc2289ec589a327dbe58958b414a56
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67673026"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842725"
 ---
 # <a name="tutorial-configure-bonusly-for-automatic-user-provisioning"></a>Учебник. Настройка Bonusly для автоматической подготовки пользователей
 
@@ -30,7 +30,7 @@ ms.locfileid: "67673026"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -39,7 +39,7 @@ ms.locfileid: "67673026"
 * учетная запись пользователя в Bonusly с разрешениями администратора.
 
 > [!NOTE]
-> Интеграция подготовки Azure AD зависит от [Rest API Bonusly](https://bonusly.gelato.io/reference), доступного для разработчиков Bonusly.
+> Интеграция подготовки Azure AD зависит от [Rest API Bonusly](https://konghq.com/solutions/gateway/), доступного для разработчиков Bonusly.
 
 ## <a name="adding-bonusly-from-the-gallery"></a>Добавление Bonusly из коллекции
 
@@ -86,7 +86,7 @@ ms.locfileid: "67673026"
 
 ### <a name="to-configure-automatic-user-provisioning-for-bonusly-in-azure-ad"></a>Чтобы настроить автоматическую подготовку пользователей в Bonusly, сделайте следующее.
 
-1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Bonusly**.
+1. Войдите в [портал Azure](https://portal.azure.com) и выберите **корпоративные приложения**, выберите **все приложения**, а затем выберите **премия**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 

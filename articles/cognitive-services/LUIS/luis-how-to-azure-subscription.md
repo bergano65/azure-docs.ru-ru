@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 09/09/2019
 ms.author: diberry
-ms.openlocfilehash: 36d03e20c9a56d7b317b867f01c1c0b5767c802c
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 5c2e81cd11826a0325cd78384a22ec7eefb3a565
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70256983"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844867"
 ---
 # <a name="using-authoring-and-runtime-resource-keys"></a>Использование ключей ресурсов для разработки и среды выполнения
 
@@ -38,7 +38,7 @@ ms.locfileid: "70256983"
 1. Войдите на [портал Luis](https://www.luis.ai) и примите условия использования.
 1. Начните работу с приложения LUIS, выбрав тип LUISого ключа, который вы хотите использовать: бесплатный пробный ключ или новый ключ создания Azure LUIS. 
 
-    ![Выберите тип Language Understanding ресурса для создания](./media/luis-how-to-azure-subscription/sign-in-create-resource.png)
+    ![Выбор типа ресурса для разработки в службе "Распознавание речи"](./media/luis-how-to-azure-subscription/sign-in-create-resource.png)
 
 1. По завершении процесса выбора ресурсов [Создайте новое приложение](luis-how-to-start-new-app.md#create-new-app-in-luis). 
 
@@ -72,6 +72,38 @@ ms.locfileid: "70256983"
     |Ценовая категория среды выполнения|Ценовая категория определяет максимальное количество транзакций в секунду и месяц.|
 
     После создания обоих ресурсов Назначьте ресурсы на портале LUIS.
+
+## <a name="create-resources-in-azure-cli"></a>Создание ресурсов в Azure CLI
+
+Используйте [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы создать каждый ресурс по отдельности. 
+
+Ресурс `kind`:
+
+* Работы`LUIS.Authoring`
+* Прогнозирующее`LUIS` 
+
+1. Войдите в Azure CLI:
+
+    ```console
+    az login
+    ```
+
+    Откроется браузер, позволяющий выбрать правильную учетную запись и обеспечить проверку подлинности.
+
+1. Создайте ресурс для создания **Luis**, `LUIS.Authoring`тип `my-luis-authoring-resource` которого в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона. 
+
+    ```console
+    az cognitiveservices account create -n my-luis-authoring-resource -g my-resource-group --kind LUIS.Authoring --sku F0 -l westus --yes
+    ```
+
+1. Создайте **ресурс Luis прогнозирующих точек**типа `LUIS` `my-luis-prediction-resource` с именем в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона. Если требуется более высокая пропускная способность, чем уровень Free `F0` , `S0`измените на. Дополнительные сведения о [ценовых категориях и пропускной способности](luis-boundaries.md#key-limits).
+
+    ```console
+    az cognitiveservices account create -n my-luis-prediction-resource -g my-resource-group --kind LUIS --sku F0 -l westus --yes
+    ```
+
+    > [!Note] 
+    > Эти ключи не используются порталом LUIS, пока они **не** назначены на ПОРТАЛе Luis в **ресурсах управления > Azure**.
 
 ## <a name="assign-an-authoring-resource-in-the-luis-portal-for-all-apps"></a>Назначение ресурса для разработки на портале LUIS для всех приложений
 
@@ -186,6 +218,6 @@ ms.locfileid: "70256983"
 ## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
-* Изучите основные понятия, в том числе [ресурсы для разработки](/luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.
+* Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.
 * Сведения [о создании](luis-how-to-azure-subscription.md) ресурсов разработки и среды выполнения
 * Переход на новый [ресурс создания](luis-migration-authoring.md) 
