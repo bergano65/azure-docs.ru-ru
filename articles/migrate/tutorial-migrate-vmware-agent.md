@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/08/2019
+ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1ea736b560e2e910ede203e8ce8c0b157ebbce71
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: aecbaab1ed29a1acfdcb4eec53b88fc266bbab09
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640870"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309410"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -304,6 +304,11 @@ ms.locfileid: "68640870"
 
 
 ## <a name="replicate-vms"></a>Репликация виртуальных машин
+
+Теперь выберите виртуальные машины для миграции.
+
+> [!NOTE]
+> Можно реплицировать до 10 виртуальных машин за раз. Если требуется реплицировать большее число виртуальных машин, выполните одновременную репликацию в пакетах из 10 машин.
 
 1. В проекте службы "Миграция Azure" щелкните **Серверы** и в разделе **Azure Migrate: Server Migration** (Миграция Azure: миграция сервера) выберите **Репликация**.
 

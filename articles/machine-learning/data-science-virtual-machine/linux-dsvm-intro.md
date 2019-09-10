@@ -1,29 +1,22 @@
 ---
-title: Создание виртуальной машины Linux (CentOS) для обработки и анализа данных
-titleSuffix: Azure
+title: Краткое руководство. Создание CentOS Linux
+titleSuffix: Azure Data Science Virtual Machine
 description: Создание и настройка Виртуальной машины Linux в Azure для обработки и анализа данных и машинного обучения.
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: 3bab0ab9-3ea5-41a6-a62a-8c44fdbae43b
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: quickstart
 ms.date: 03/16/2018
-ms.author: vijetaj
-ms.openlocfilehash: c0464253c55aa5e51e8e86686405ea6b107c8382
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 1ab3a527643bc5a567644a937fdd1eb9e31bf567
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047710"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195335"
 ---
-# <a name="provision-a-linux-centos-data-science-virtual-machine-in-azure"></a>Подготовка виртуальной машины Linux (CentOS) в Azure для обработки и анализа данных
+# <a name="quickstart-set-up-a-linux-centos-data-science-virtual-machine-in-azure"></a>Краткое руководство. Настройка Виртуальной машины для обработки и анализа данных CentOS Linux в Azure
 
 Виртуальная машина Linux для обработки и анализа данных (DSVM) — это виртуальная машина Azure на базе CentOS. Linux DSVM включает набор предварительно установленных средств для анализа данных и машинного обучения. 
 
@@ -172,7 +165,7 @@ pip install <package>
 /anaconda/bin/pip install <package>
 ```
 
-Для conda всегда следует указывать имя среды (py35 или root):
+Для Conda всегда следует указывать имя среды (py35 или root):
 
 ```bash
 conda install <package> -n py35

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.author: pafarley
-ms.openlocfilehash: f6cb364c231c2415bf49a24e6e9406a14640b892
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: ada570196c916a8101e8e968d284a3b280199cf3
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68600119"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142815"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
 
@@ -173,6 +173,10 @@ dotnet run
 
 * [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+
+Для удаления из учетной записи обученной пользовательской модели используйте следующий метод:
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_deletemodel)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

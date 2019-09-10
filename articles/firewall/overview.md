@@ -6,15 +6,15 @@ ms.service: firewall
 services: firewall
 ms.topic: overview
 ms.custom: mvc
-ms.date: 08/23/2019
+ms.date: 09/4/2019
 ms.author: victorh
 Customer intent: As an administrator, I want to evaluate Azure Firewall so I can determine if I want to use it.
-ms.openlocfilehash: f65b1d62a9c0e6835421c2ae796f9ea390407c9a
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: c685b2314d15e431ccac3470fd337ca92697e1a5
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69971602"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241181"
 ---
 # <a name="what-is-azure-firewall"></a>Что такое Брандмауэр Azure?
 
@@ -93,6 +93,12 @@ ms.locfileid: "69971602"
 ## <a name="azure-monitor-logging"></a>ведение журналов Azure Monitor;
 
 Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor.
+
+## <a name="pci-soc-and-iso-compliant"></a>Соответствие требованиям PCI, SOC и ISO
+
+Брандмауэр Azure соответствует требованиям стандартов Payment Card Industry Data Security Standard (PCI DSS) и Международной организация по стандартизации (ISO), а также требованиям к отчетам System and Organization Controls (SOC). В настоящее время выполняются требования к отчетам SOC 1, тип 2, SOC 2, тип 2, SOC 3, а также требования стандартов PCI DSS, ISO 27001, 27018, 20000-1, 22301, 9001, 27017.
+
+Дополнительные сведения см. в [этом документе](https://servicetrust.microsoft.com/ViewPage/MSComplianceGuide).
 
 ## <a name="known-issues"></a>Известные проблемы
 

@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 7fa2a5088e2eae039d43ecf0db080190f74cd772
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 7f913eebb2dd3926165a36c37dcb356aa05f2de4
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125224"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172054"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Руководство по Создание и настройка экземпляра доменных служб Azure Active Directory
 
@@ -202,7 +202,7 @@ ms.locfileid: "70125224"
 1. На странице **Изменение пароля** введите существующий (старый) пароль, а затем введите и подтвердите новый пароль.
 1. Нажмите кнопку **Submit** (Отправить).
 
-Новый пароль вступает в силу в Azure AD DS через несколько минут после его изменения. Примерно через 20 минут вы сможете входить на компьютеры, подключенные к управляемому домену, с новым паролем.
+Новый пароль становится работоспособным в Azure AD DS через несколько минут после изменения, позволяя выполнять вход на компьютеры, которые объединены в управляемый домен.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

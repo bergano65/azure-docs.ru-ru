@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 08/05/2019
+ms.date: 08/28/2019
 ms.author: assafi
-ms.openlocfilehash: deb8c742161d59c8926c1ec139978d15b891bd4a
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 6e6f1d5cfe1f5e745e6f780b5cb9f979520a1f91
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019477"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70134919"
 ---
 # <a name="quickstart-text-analytics-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Аналитики текста для .NET
 <a name="HOLTop"></a>
@@ -89,19 +89,36 @@ using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 using Microsoft.Rest;
 ```
 
-В методе приложения `Main` создайте переменные для конечной точки и ключа Azure вашего ресурса. Если вы создали переменную среды после запуска приложения, для доступа к переменной следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, где эта переменная была запущена. Эти методы будут определены позже.
+В классе `Program` приложения создайте переменные для конечной точки Azure вашего ресурса и ключа подписки. В статическом конструкторе эти значения можно получить из переменных среды `TEXT_ANALYTICS_SUBSCRIPTION_KEY` и `TEXT_ANALYTICS_ENDPOINT`. Если вы создали переменные среды после того как изменили приложение, следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, используемые для доступа к этим переменным.
+
+```csharp
+private const string key_var = "TEXT_ANALYTICS_SUBSCRIPTION_KEY";
+private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+private const string endpoint_var = "TEXT_ANALYTICS_ENDPOINT";
+private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+static Program()
+{
+    if (null == subscriptionKey)
+    {
+        throw new Exception("Please set/export the environment variable: " + key_var);
+    }
+    if (null == endpoint)
+    {
+        throw new Exception("Please set/export the environment variable: " + endpoint_var);
+    }
+}
+```
+
+В методе `Main` приложения создайте учетные данные для доступа к конечной точке Анализа текста.  Методы, вызываемые методом `Main`, будут определены позже.
 
 [!INCLUDE [text-analytics-find-resource-information](../includes/find-azure-resource-info.md)]
 
 ```csharp
 static void Main(string[] args)
 {
-    // replace this endpoint with the correct one for your Azure resource. 
-    string endpoint = $"https://westus.api.cognitive.microsoft.com";
-    //This sample assumes you have created an environment variable for your key
-    string key = Environment.GetEnvironmentVariable("TEXT_ANALYTICS_SUBSCRIPTION_KEY");
-
-    var credentials = new ApiKeyServiceClientCredentials(key);
+    var credentials = new ApiKeyServiceClientCredentials(subscriptionKey);
     TextAnalyticsClient client = new TextAnalyticsClient(credentials)
     {
         Endpoint = endpoint
@@ -110,9 +127,11 @@ static void Main(string[] args)
     Console.OutputEncoding = System.Text.Encoding.UTF8;
     SentimentAnalysisExample(client);
     // languageDetectionExample(client);
-    // RecognizeEntitiesExample(client);
+    // entityRecognitionExample(client);
     // KeyPhraseExtractionExample(client);
-    Console.ReadLine();
+    
+    Console.Write("Press any key to exit.");
+    Console.ReadKey();
 }
 ```
 
@@ -263,14 +282,17 @@ Entities:
 Создайте новую функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданного ранее клиента и вызывает его функцию[KeyPhrases()](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.keyphrases?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_KeyPhrases_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_). При успешном выполнении результат будет содержать список обнаруженных ключевых фраз в `KeyPhrases`. В противном случае вернется `errorMessage`. Затем выведите все обнаруженные ключевые фразы.
 
 ```csharp
-var result = client.KeyPhrases("My cat might need to see a veterinarian.");
-
-// Printing key phrases
-Console.WriteLine("Key phrases:");
-
-foreach (string keyphrase in result.KeyPhrases)
+static void KeyPhraseExtractionExample(TextAnalyticsClient client)
 {
-    Console.WriteLine($"\t{keyphrase}");
+    var result = client.KeyPhrases("My cat might need to see a veterinarian.");
+
+    // Printing key phrases
+    Console.WriteLine("Key phrases:");
+
+    foreach (string keyphrase in result.KeyPhrases)
+    {
+        Console.WriteLine($"\t{keyphrase}");
+    }
 }
 ```
 

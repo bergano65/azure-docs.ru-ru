@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 00cca0cbf500ea4e884a9f9334896a18fe7b0978
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: c125941414c73b14138f2b2fc15e470d9ed2d905
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68597853"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137540"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
@@ -46,7 +46,8 @@ ms.locfileid: "68597853"
 
 1. Перейдите в меню для группы ресурсов и щелкните имя подписки API "Компьютерное зрение", которую вы только что создали. Скопируйте URL-адрес в разделе **Конечная точка** в другое расположение, где вы можете легко извлечь его позже. Щелкните **Показать ключи доступа**.
 
-    ![Страница портала Azure с URL-адресом конечной точки и выделенной ссылкой на ключи доступа](../Images/copy-vision-endpoint.png)
+    ![Страница портала Azure с URL-адресом конечной точки и выделенной ссылкой на ключи доступа](../Images/copy-vision-endpoint.png) [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
+
 
 1. В следующем окне скопируйте значение **KEY 1** в буфер обмена.
 

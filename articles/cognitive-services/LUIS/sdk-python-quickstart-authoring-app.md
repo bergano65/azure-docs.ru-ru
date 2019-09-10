@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 08/07/2019
 ms.author: diberry
-ms.openlocfilehash: f5756c479d47e905e0110c9919cf4b5be4e75099
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: f8149372e0a96cda81ef38558ee0bcf87eb53bb3
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932128"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258768"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-python"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 
@@ -37,9 +37,9 @@ ms.locfileid: "68932128"
 
 ## <a name="setting-up"></a>Настройка
 
-### <a name="get-your-language-understanding-luis-authoring-key"></a>Получение ключа разработки LUIS
+### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
 
-Получите ваш [ ключ разработки](luis-how-to-account-settings.md) и [ создайте переменную среды ](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `LUIS_AUTHORING_KEY` и переменную среды для региона ключа `LUIS_REGION`.
+Получите [начальный ключ](luis-how-to-azure-subscription.md#starter-key) и [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `LUIS_AUTHORING_KEY` и переменную среды для региона ключа `LUIS_REGION`.
 
 ### <a name="install-the-python-library-for-luis"></a>Установка библиотеки Python для LUIS
 

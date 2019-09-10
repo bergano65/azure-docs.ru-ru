@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/22/2019
+ms.date: 09/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37a527e8cd83d292d8af8af5acd0c903c63081f2
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 709bf2e413ddb40ae1ed84672cea0c0b71be2ce6
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305945"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-harness"></a>Руководство по Интеграция единого входа Azure Active Directory с Harness
 
@@ -131,17 +131,25 @@ ms.locfileid: "70013849"
 
 ## <a name="configure-harness-sso"></a>Настройка единого входа для приложения Harness
 
-1. Откройте новое окно веб-браузера и войдите на корпоративный сайт Harness с правами администратора.
+1. Для автоматизации настройки в Harness необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-1. В правом верхнем углу страницы выберите **Continuous Security** > **Access Management** > **Authentication Settings** (Непрерывная безопасность > Управление доступом > Параметры аутентификации).
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. Чтобы перейти к приложению Harness после добавления расширения в браузер, щелкните **Настройка Harness**. После этого укажите учетные данные администратора для входа в Harness. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–6.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если необходимо вручную настроить Harness, откройте новое окно веб-браузера, зайдите на корпоративный сайт Harness с правами администратора и выполните следующие действия:
+
+4. В правом верхнем углу страницы выберите **Continuous Security** > **Access Management** > **Authentication Settings** (Непрерывная безопасность > Управление доступом > Параметры аутентификации).
 
     ![Настройка Harness](./media/harness-tutorial/configure01.png)
 
-1. В разделе **SSO Providers** (Поставщики единого входа) щелкните **+ Add SSO Providers** > **SAML** (+ Добавить поставщиков единого входа > SAML).
+5. В разделе **SSO Providers** (Поставщики единого входа) щелкните **+ Add SSO Providers** > **SAML** (+ Добавить поставщиков единого входа > SAML).
 
     ![Настройка Harness](./media/harness-tutorial/configure03.png)
 
-1. Во всплывающем элементе **SAML Provider** (Поставщик SAML) выполните следующие шаги:
+6. Во всплывающем элементе **SAML Provider** (Поставщик SAML) выполните следующие шаги:
 
     ![Настройка Harness](./media/harness-tutorial/configure02.png)
 

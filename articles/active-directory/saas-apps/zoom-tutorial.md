@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zoom | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Zoom | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zoom.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/08/2019
+ms.date: 08/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e36d1bb91e70e21ee1940e189bfedaebafa4412
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: c0d5a87d4723bcc21b75db1b31ada72823abdf02
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68975946"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70171391"
 ---
-# <a name="tutorial-integrate-zoom-with-azure-active-directory"></a>Руководство по Интеграции Zoom с Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zoom"></a>Руководство по Интеграция единого входа Azure Active Directory с Zoom
 
 В этом руководстве описано, как интегрировать Zoom с Azure Active Directory (Azure AD). Интеграция Zoom с Azure AD обеспечивает следующие возможности.
 
@@ -89,50 +89,19 @@ ms.locfileid: "68975946"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/en-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Zoom ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
-
-    ![image](common/edit-attribute.png)
-
-6. В дополнение к описанному выше приложение Zoom ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** в диалоговом окне **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице: 
-
-    | ИМЯ | Пространство имен  |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | Адрес электронной почты  | user.mail  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mail` |
-    | Имя  | user.givenname  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname` |
-    | Фамилия  | user.surname  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` |
-    | номер телефона.  | user.telephonenumber  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/phone` |
-    | Department  | user.department  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/department` |
-    | role |    user.assignedrole |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role` |
-
-    > [!NOTE]
-    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
-
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
-
-    ![image](common/new-save-attribute.png)
-
-    ![image](common/new-attribute-details.png)
-
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
-
-    c. В качестве источника выберите **Атрибут**.
-
-    d. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
-
-    д. Нажмите кнопку **ОК**.
-
-    Е. Выберите команду **Сохранить**.
-
-    > [!NOTE]
-    > Для масштабирования может ожидаться утверждение группы в полезных данных SAML, поэтому если вы создали какую-либо группу, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/en-us) со сведения о группе для соответствующей настройки. [Службе поддержки клиентов Zoom](https://support.zoom.us/hc/en-us) нужно также предоставить идентификатор объекта для соответствующей настройки. См. дополнительные сведения о [получении идентификатора объекта](https://support.zoom.us/hc/en-us/articles/115005887566).
-
-4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. Требуемые URL-адреса можно скопировать из раздела **Настройка Zoom**.
+1. Требуемые URL-адреса можно скопировать из раздела **Настройка Zoom**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+> [!NOTE]
+> См. сведения о [настройке утверждения роли, выданного в токене SAML, для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
+
+> [!NOTE]
+> Zoom может ожидать утверждения группы в полезных данных SAML. Если вы создали группу, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/en-us), предоставив сведения об этой группе для соответствующей настройки. Для этих целей [службе поддержки клиентов Zoom](https://support.zoom.us/hc/en-us) нужно также предоставить идентификатор объекта. Чтобы получить идентификатор объекта, см. инструкции по [настройке Zoom в Azure](https://support.zoom.us/hc/en-us/articles/115005887566).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -242,3 +211,4 @@ ms.locfileid: "68975946"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Попробуйте использовать Zoom с Azure AD](https://aad.portal.azure.com/)

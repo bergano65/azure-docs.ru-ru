@@ -1,22 +1,19 @@
 ---
 title: Создание Функций Azure на Linux с помощью пользовательского образа
 description: Узнайте, как создавать функции Azure под управлением пользовательского образа Linux.
-services: functions
-keywords: ''
 author: ggailey777
 ms.author: glenga
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
-ms.devlang: azure-cli
-manager: jeconnoc
-ms.openlocfilehash: 525cb444ad7b1b78de867f83539ac338ddd144e9
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+manager: gwallace
+ms.openlocfilehash: 80f7185b69a7953656235d3bd622b7f61611de1a
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562930"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210177"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -56,7 +53,7 @@ ms.locfileid: "69562930"
 
 ## <a name="create-the-local-function-app-project"></a>Создание локального проекта приложения-функции
 
-Выполните следующую команду из командной строки, чтобы создать проект приложения-функции в папке `MyFunctionProj` текущего локального каталога.
+Выполните следующую команду из командной строки, чтобы создать проект приложения-функции в папке `MyFunctionProj` текущего локального каталога. Для проекта Python [необходимо работать в виртуальном окружении](functions-create-first-function-python.md#create-and-activate-a-virtual-environment-optional).
 
 ```bash
 func init MyFunctionProj --docker
@@ -68,7 +65,7 @@ func init MyFunctionProj --docker
 
 * `dotnet`. Создает проект библиотеки классов .NET Core (.csproj).
 * `node`. Создает проект JavaScript.
-* `python`. Создает проект Python.
+* `python`. Создает проект Python.  
 
 При выполнении команды вы увидите выходные данные примерно следующего содержания.
 

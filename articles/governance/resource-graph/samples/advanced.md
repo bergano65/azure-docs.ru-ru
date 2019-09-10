@@ -1,19 +1,18 @@
 ---
 title: Примеры расширенных запросов
-description: С помощью Azure Resource Graph можно выполнять расширенные запросы, такие как получение емкости масштабируемого набора виртуальных МАШИН, списка всех используемых тегов и виртуальных машин, соответствующих регулярному выражению.
+description: С помощью Azure Resource Graph можно выполнять расширенные запросы, например для получения емкости масштабируемого набора виртуальных машин, перечисления всех используемых тегов и сопоставления виртуальных машин с использованием регулярных выражений.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/23/2019
+ms.date: 08/29/2019
 ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 7684ae6b4ddb6320efc62ef6f9963bef1b9a66fa
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 33c67f77a26e2a4fc97d7f5483aad53c121e117b
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691983"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70239020"
 ---
 # <a name="advanced-resource-graph-queries"></a>Продвинутые запросы графика ресурсов
 
@@ -25,10 +24,9 @@ ms.locfileid: "64691983"
 > - [Получение сведений о емкости и производительности масштабируемого набора виртуальных машин](#vmss-capacity)
 > - [Вывести список всех названий тегов](#list-all-tags)
 > - [Виртуальные машины, сопоставленные по регулярному выражению](#vm-regex)
+> - [Включение имен клиентов и подписок с DisplayNames](#displaynames)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
-
-[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="language-support"></a>Поддержка языков
 
@@ -72,8 +70,8 @@ Search-AzGraph -Query "project tags | summarize buildschema(tags)"
 
 ## <a name="vm-regex"></a>Виртуальные машины, сопоставленные по регулярному выражению
 
-Этот запрос выполняет поиск виртуальных машин, которые соответствуют [регулярному выражению](/dotnet/standard/base-types/regular-expression-language-quick-reference) (известному как _регулярное выражение_).
-**matches regex\@** позволяет определить регулярное выражение для сопоставления, которое равно `^Contoso(.*)[0-9]+$`. Дополнительные сведения об определении регулярного выражения см. в разделе:
+Этот запрос выполняет поиск виртуальных машин, которые соответствуют [регулярному выражению](/dotnet/standard/base-types/regular-expression-language-quick-reference) (известному как _регулярное выражение_). **matches regex\@** позволяет определить регулярное выражение для сопоставления, которое равно `^Contoso(.*)[0-9]+$`.
+Дополнительные сведения об определении регулярного выражения см. в разделе:
 
 - `^` — Сопоставление должно начаться в начале строки.
 - `Contoso` — Строка с учетом регистра.
@@ -99,6 +97,22 @@ az graph query -q "where type =~ 'microsoft.compute/virtualmachines' and name ma
 ```azurepowershell-interactive
 Search-AzGraph -Query "where type =~ 'microsoft.compute/virtualmachines' and name matches regex @'^Contoso(.*)[0-9]+$' | project name | order by name asc"
 ```
+
+## <a name="displaynames"></a>Включение имен клиентов и подписок с DisplayNames
+
+В этом запросе используется новый параметр **Include** со значением _DisplayNames_ для включения **subscriptionDisplayName** и **tenantDisplayName** в результаты. Этот параметр доступен только в Azure CLI и Azure PowerShell.
+
+```azurecli-interactive
+az graph query -q "limit 1" --include displayNames
+```
+
+```azurepowershell-interactive
+Search-AzGraph -Query "limit 1" -Include DisplayNames
+```
+
+> [!NOTE]
+> Если в запросе не используется **project** для определения возвращаемых свойств, **subscriptionDisplayName** и **tenantDisplayName** автоматически включаются в результаты.
+> Если в запросе используется **project**, каждое из полей _DisplayName_ должно быть явно включено в **project**, иначе они не будут включены в результаты, даже при использовании параметра **Include**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

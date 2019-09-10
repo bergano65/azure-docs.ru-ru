@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a0c0795ff859b6ecf95e1627693c4a7b066081a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 999f947170528c1ae89a1cf44f714e96af7bddbf
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105336"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70136913"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clever"></a>Руководство по Интеграция Azure Active Directory с Clever
 
@@ -120,8 +120,9 @@ ms.locfileid: "67105336"
 
     | ИМЯ | Исходный атрибут|
     | ---------------| --------------- |
-    | clever.teacher.credentials.district_username|user.userprincipalname|
+    | clever.teacher.credentials.district_username|user.userprincipalname |
     | clever.student.credentials.district_username| user.userprincipalname |
+    | clever.staff.credentials.district_username| user.userprincipalname |
     | Firstname  | user.givenname |
     | Lastname  | user.surname |
 
@@ -245,5 +246,5 @@ ms.locfileid: "67105336"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

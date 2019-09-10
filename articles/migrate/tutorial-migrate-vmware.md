@@ -4,15 +4,15 @@ description: Описание выполнения безагентной миг
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/08/2019
+ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 7fba9cbbaa15359e7e4dd95e66645dd5f4022431
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: ec7d10a1d9fec43c149c068fb408211db76d19eb
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640767"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309381"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -126,7 +126,10 @@ ms.locfileid: "68640767"
 
 ## <a name="replicate-vms"></a>Репликация виртуальных машин
 
-По завершении обнаружения можно начать репликацию виртуальных машин VMware в Azure.
+По завершении обнаружения можно начать репликацию виртуальных машин VMware в Azure. 
+
+> [!NOTE]
+> Можно реплицировать до 10 виртуальных машин за раз. Если требуется реплицировать большее число виртуальных машин, выполните одновременную репликацию в пакетах из 10 машин. При миграции без агента можно одновременно запустить до 100 репликаций.
 
 1. В проекте службы "Миграция Azure" щелкните **Серверы** и в разделе **Azure Migrate: Server Migration** (Миграция Azure: миграция сервера) выберите **Репликация**.
 

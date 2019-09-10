@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 09/04/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 15960c39878e0c8ae22f94197ed1937597f1ee02
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: a0c43a43525b208927cc3512872e7f79fddab217
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126126"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307167"
 ---
 ::: zone target="docs"
 
@@ -313,9 +314,9 @@ ms.locfileid: "70126126"
 
 Когда диск будет разблокирован, можно просмотреть содержимое диска.
 
-Дополнительные сведения о том, как настроить диски, см. в разделе [Распаковка Диска Data Box](data-box-disk-deploy-set-up.md#unpack-your-disks).
+Дополнительные сведения о том, как настроить диски, см. в разделе [Распаковка Диска Data Box](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-set-up?context=context/chromeless&linktarget=new).
 
-Дополнительные сведения о том, как разблокировать диски, см. в разделе [Разблокировка дисков на клиенте Windows](data-box-disk-deploy-set-up.md#unlock-disks-on-windows-client).
+Дополнительные сведения о том, как разблокировать диски, см. в разделе [Разблокировка дисков на клиенте Windows](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-set-up?context=context/chromeless&fromOrigin=https://ms.azure.com&linktarget=new).
 
 ::: zone-end
 

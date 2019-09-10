@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 05/07/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 99750971e11171c0b315cac38089c216d42c7ba6
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: 8c21878fc23f3880f6c6e66b1e304c7dd2e9177c
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663661"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306961"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
 
@@ -65,4 +65,8 @@ ms.locfileid: "68663661"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Краткое руководство Personalize content using C#](csharp-quickstart-commandline-feedback-loop.md) (Персонализация содержимого с помощью C#)
+* [Краткое руководство Создание цикла обратной связи с помощью Node.js](quickstart-command-line-feedback-loop-nodejs-sdk.md)
+* [Краткое руководство Создание цикла обратной связи с помощью Python](python-quickstart-commandline-feedback-loop.md)
+* [Сведения о функциях и действиях для запроса ранжирования](concepts-features.md)
+* [Определение оценки для запроса вознаграждения](concept-rewards.md)
 * [Использование интерактивной демонстрации](https://personalizationdemo.azurewebsites.net/)

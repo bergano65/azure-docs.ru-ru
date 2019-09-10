@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: quickstart
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: cbc55433517174c8080b941ca8526e5a4fd3427d
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: b07adc955b7904c6e6a3278480cec5a2be91ec35
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126015"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70232915"
 ---
 ::: zone target="docs"
 
@@ -40,7 +41,7 @@ ms.locfileid: "70126015"
 
 ::: zone target="chromeless"
 
-В этом руководстве описано, как развернуть Диск Azure Data Box на портале Azure. Шаги включают проверку предварительных требований, разблокировку дисков, подключение и копирование данных на диски для отправки данных в Azure.
+В этом руководстве описано, как начать работу с Диском Azure Data Box с помощью портала Azure. Это руководство поможет ответить на следующие вопросы.
 
 ::: zone-end
 
@@ -60,17 +61,16 @@ ms.locfileid: "70126015"
 
 ::: zone target="chromeless"
 
-### <a name="prerequisites"></a>Предварительные требования
-
-- Вы разместили заказ на диск Data Box с помощью статьи [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md).
-- Состояние ваших дисков и заданий на портале обновилось до **Доставлено**.
-- Вы проверили количество полученных дисков и наличие одного кабеля подключения на диск.
-- У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
-
-    - [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients).
-    - другое [необходимое установленное программное обеспечение](data-box-disk-system-requirements.md#other-required-software-for-windows-clients), если это клиент Windows.
+> [!div class="checklist"]
+>
+> - **Проверка предварительных требований.** Проверьте число дисков и кабелей, операционную систему и другое программное обеспечение.
+> - **Подключение и разблокировка.** Подключите устройство и разблокируйте диск для копирования данных.
+> - **Копирование данных на диск и проверка.** Скопируйте данные на диски в созданные папки.
+> - **Возврат дисков.** Верните диски в центр обработки данных Azure и данные будут загружены в вашу учетную запись хранения.
+> - **Проверка данных в Azure.** Перед удалением данных с исходного сервера данных убедитесь, что данные были отправлены в учетную запись хранения.
 
 ::: zone-end
+
 
 ::: zone target="docs"
 

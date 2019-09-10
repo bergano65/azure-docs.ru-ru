@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 09/03/2019
+ms.localizationpriority: high
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 1104c017541b8124366a6121763318f199f3aad5
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: aab97257ff2e917dc264017043d3ca11a2ced1fc
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126087"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240209"
 ---
 ::: zone target="chromeless"
 
@@ -49,18 +50,7 @@ ms.locfileid: "70126087"
     - Для упаковки дисков мы рекомендуем использовать надежную воздушно-пузырчатую пленку.
     - Убедитесь, что содержимое плотно и без зазоров упаковано в коробке.
 
-Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Австралии или стран Азии будут отличаться.
-
-- [Запланируйте отправку UPS, если вы возвращаете устройство в США и Канаду](data-box-disk-deploy-picked-up.md#pick-up-in-us-canada).
-- [Запланируйте отправку DHL для Европы](data-box-disk-deploy-picked-up.md#pick-up-in-europe), посетив соответствующий веб-сайт и указав номер транспортной накладной.
-- [Запланируйте возврат в Австралии](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-picked-up#pick-up-in-australia).
-- [Запланируйте возврат для стран Азии](data-box-disk-deploy-picked-up.md#pick-up-in-asia), например в Японии, Корее и Сингапуре.
-
-::: zone target="chromeless"
-
-Как только диски будут приняты оператором, состояние заказа на портале обновится и отобразится идентификатор для отслеживания.
-
-::: zone-end
+Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Европейского союза (ЕС), Австралии и стран Азии отличаются.
 
 ### <a name="pick-up-in-us-canada"></a>Возврат в США и Канаде
 
@@ -151,9 +141,6 @@ ms.locfileid: "70126087"
 
 1. Распечатайте этикетку отгрузки и прикрепите ее к коробке. Если этикетка повреждена или утеряна, сделайте следующее:
     - Выберите пункт **Обзор > Скачать этикетку отгрузки** и получите этикетку для возврата.
-
-        ![Скачивание транспортной этикетки](media/data-box-disk-deploy-picked-up/download-shipping-label.png)
-
     - Прикрепите этикетку к устройству. Убедитесь, что этикетку видно.
 
 2. Чтобы организовать отправку, сделайте следующее:

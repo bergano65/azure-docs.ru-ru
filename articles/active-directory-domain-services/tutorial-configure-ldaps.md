@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 505a3104968e285a7fe4801db8029dc45647087a
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 2eaae9093614f1512dcd75d23c98bca871bf2850
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011348"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193325"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по настройке защищенного протокола LDAP для управляемого домена доменных служб Azure AD
 
@@ -63,7 +63,7 @@ ms.locfileid: "70011348"
 
 * **Надежный издатель**. Сертификат должен быть выдан центром сертификации, являющимся доверенным для компьютеров, подключающихся к управляемому домену по защищенному протоколу LDAP. Это может быть общедоступный ЦС или ЦС предприятия, который является доверенным для этих компьютеров.
 * **Срок действия**. Сертификат должен быть допустимым в течение по крайней мере следующих 3–6 месяцев. Защищенный доступ LDAP к управляемому домену не будет прерван после истечения срока действия сертификата.
-* **Имя субъекта**. Имя субъекта сертификата должно состоять из имени управляемого домена. Например, если ваш домен имеет имя *contoso.com*, то субъект сертификата должен иметь имя *contoso.com*.
+* **Имя субъекта**. Имя субъекта сертификата должно состоять из имени управляемого домена. Например, если ваш домен имеет имя *contoso.com*, то субъект сертификата должен иметь имя * *.contoso.com*.
     * DNS-имя или альтернативное имя субъекта сертификата должно означать универсальный сертификат, чтобы защищенный протокол LDAP правильно работал в доменных службах Azure AD. Контроллеры домена используют случайные имена и их можно свободно удалять и добавлять в соответствии с требованиями к доступности службы.
 * **Использование ключа**. Сертификат необходимо настроить для *цифровых подписей* и *шифрования ключей*.
 * **Назначение сертификата**. Сертификат должен быть допустимым для аутентификации на сервере SSL.
@@ -78,7 +78,7 @@ $dnsName="contoso.com"
 $lifetime=Get-Date
 
 # Create a self-signed certificate for use with Azure AD DS
-New-SelfSignedCertificate -Subject $dnsName `
+New-SelfSignedCertificate -Subject *.$dnsName `
   -NotAfter $lifetime.AddDays(365) -KeyUsage DigitalSignature, KeyEncipherment `
   -Type SSLServerAuthentication -DnsName *.$dnsName, $dnsName
 ```
@@ -86,7 +86,7 @@ New-SelfSignedCertificate -Subject $dnsName `
 В этом примере выходных данных сообщается, что сертификат успешно создан и сохранен в локальном хранилище сертификатов (*LocalMachine\MY*):
 
 ```output
-PS C:\WINDOWS\system32> New-SelfSignedCertificate -Subject $dnsName `
+PS C:\WINDOWS\system32> New-SelfSignedCertificate -Subject *.$dnsName `
 >>   -NotAfter $lifetime.AddDays(365) -KeyUsage DigitalSignature, KeyEncipherment `
 >>   -Type SSLServerAuthentication -DnsName *.$dnsName, $dnsName.com
 

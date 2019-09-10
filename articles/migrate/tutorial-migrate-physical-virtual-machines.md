@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/09/2019
+ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 728bf785edebcd17599b6a56edea1e26ed2d2fbc
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 9b1944cdad67f9f1b74c8dae95bc9d8409e56f54
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311793"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309468"
 ---
 # <a name="migrate-physical-or-virtualized-servers-to-azure"></a>Перенос физических и виртуализированных серверов в Azure 
 
@@ -255,6 +255,11 @@ ms.locfileid: "68311793"
     ```
 
 ## <a name="replicate-machines"></a>Репликация компьютеров
+
+Теперь выберите виртуальные машины для миграции. 
+
+> [!NOTE]
+> Можно реплицировать до 10 виртуальных машин за раз. Если требуется реплицировать большее число виртуальных машин, выполните одновременную репликацию в пакетах из 10 машин.
 
 1. В проекте службы "Миграция Azure" щелкните **Серверы** и в разделе **Azure Migrate: Server Migration** (Миграция Azure: миграция сервера) выберите **Репликация**.
 

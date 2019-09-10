@@ -7,12 +7,12 @@ ms.topic: overview
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/02/2019
-ms.openlocfilehash: 7fa8562c466c81ebc05360bf06cdde1ee29bed9e
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 0c4bf3143bbf1ceb2f2f3c4a22477daa03690a0e
+ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598988"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70213591"
 ---
 # <a name="what-are-azure-open-datasets-preview-and-how-can-you-use-them"></a>Что представляют собой открытые наборы данных Azure (предварительная версия) и как их использовать?
 
@@ -49,7 +49,7 @@ ms.locfileid: "68598988"
 
 Открытые наборы данных поддерживают службу "Записные книжки Azure" и записные книжки Azure Databricks, с помощью которых вы можете связывать данные со Службой машинного обучения Azure и платформой Azure Databricks. Доступ к наборам данных также можно осуществлять с помощью пакета SDK для Python. 
 
-При этом вам не требуется учетная запись Azure для доступа к открытым наборам данных — это можно сделать в любой среде Python с решением Spark или без него.
+При этом вам не требуется учетная запись Azure для доступа к Открытым наборам данных. Это можно сделать в любой среде Python с решением Spark или без него.
 
 ## <a name="request-or-contribute-datasets"></a>Отправка запроса на наборы данных или их предоставление
 

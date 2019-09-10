@@ -1,19 +1,19 @@
 ---
-title: Ошибка Jupyter Server 404 "не найдена" из-за блокировки межисточникового API в Azure HDInsight
+title: Jupyter Server 404 ошибка из-за блокировки межисточникового API в Azure HDInsight
 description: Ошибка Jupyter Server 404 "не найдена" из-за блокировки межисточникового API в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 07/29/2019
-ms.openlocfilehash: 57ecf081b48097b04d8379119d9a08f0b980494d
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
-ms.translationtype: HT
+ms.openlocfilehash: 291fc7f385f652005f44c3e0cd52d4929e914989
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68664970"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736190"
 ---
-# <a name="scenario-jupyter-server-404-not-found-error-due-to-blocking-cross-origin-api-in-azure-hdinsight"></a>Сценарий: Ошибка Jupyter Server 404 "не найдена" из-за блокировки межисточникового API в Azure HDInsight
+# <a name="scenario-jupyter-server-404-not-found-error-due-to-blocking-cross-origin-api-in-azure-hdinsight"></a>Сценарий. Ошибка Jupyter Server 404 "не найдена" из-за блокировки межисточникового API в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
 

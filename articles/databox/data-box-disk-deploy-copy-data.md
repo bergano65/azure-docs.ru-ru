@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 30f9597e6a42b8bdd35a7d69594a2feb16edae30
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c309a7cb18086526b23c875b41d9d4f4db4bc213
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126188"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70231375"
 ---
 ::: zone target="docs"
 
@@ -26,9 +27,11 @@ ms.locfileid: "70126188"
 
 ## <a name="copy-data-to-azure-data-box-disk-and-validate"></a>Копирование данных на Диск Microsoft Azure Data Box и их проверка
 
-После подключения и разблокировки дисков вы можете скопировать данные с исходного сервера данных на диски. После завершения копирования вам необходимо проверить скопированные данные. Проверка гарантирует, что данные будут успешно отправлены в Azure.
+После подключения и разблокировки дисков вы можете скопировать данные с исходного сервера данных на диски. По завершении копирования данных необходимо их проверить, чтобы убедиться в том, что они будут успешно переданы в Azure.
 
 ::: zone-end
+
+::: zone target="docs"
 
 Это руководство содержит инструкции как копировать данные с главного компьютера, а затем создавать контрольные суммы для проверки целостности данных.
 
@@ -333,6 +336,6 @@ ms.locfileid: "70126188"
 1. Запустите `DataBoxDiskValidation.cmd` для проверки контрольных сумм в папке *DataBoxDiskImport* на диске.
 2. Используйте параметр 2, чтобы проверить файлы и создать контрольные суммы. В зависимости от размера данных, это действие может занять некоторое время. При возникновении ошибок во время проверки и создания контрольной суммы вы получите уведомление и ссылку на журналы ошибок.
 
-    Дополнительные сведения о проверке данных см. в разделе [Validate data](data-box-disk-deploy-copy-data.md#validate-data) (Проверка данных). Если вы сталкиваетесь с ошибками при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
+    Дополнительные сведения о проверке данных см. в разделе [Validate data](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-copy-data#validate-data) (Проверка данных). Если вы сталкиваетесь с ошибками при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
 
 ::: zone-end

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 03/21/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: 73425df1f0cfedd2a681650fc2b536a652b621d5
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 2bec7e490443727fa294e7be9412bb20ae66e691
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206677"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163254"
 ---
 # <a name="tutorial-manage-app-groups-for-windows-virtual-desktop-preview"></a>Руководство по управлению группами приложений для предварительной версии Виртуального рабочего стола Windows
 
@@ -24,7 +24,11 @@ ms.locfileid: "67206677"
 > * создание группы приложений RemoteApp;
 > * предоставление доступа к программам RemoteApp.
 
-Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell.
+Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell. После этого выполните следующий командлет, чтобы войти в учетную запись:
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
 
 ## <a name="create-a-remoteapp-group"></a>Создание группы приложений RemoteApp
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 21c10e142802914bcf3292ef7f25066675e6cdd1
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 9c956f89d890f93a887d2412c74c906095acf4db
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67143920"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164359"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -273,7 +273,7 @@ ms.locfileid: "67143920"
     > [!NOTE]
     > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Скачайте приложение AzureCP на локальной ферме SharePoint по адресу https://yvand.github.io/AzureCP/. Установите и настройте программу. 
 
-11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**: группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
+11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**. Группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
 
 12. В центре администрирования щелкните "Управление приложениями" > "Управление веб-приложениями", а затем выберите веб-приложение, чтобы включить ленту, и щелкните "Политика пользователя".
 
@@ -373,4 +373,4 @@ ms.locfileid: "67143920"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

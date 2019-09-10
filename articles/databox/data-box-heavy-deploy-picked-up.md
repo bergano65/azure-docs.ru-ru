@@ -6,17 +6,29 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 84db33e4c7ac612353c590ac9d2904ac3bc48d38
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.localizationpriority: high
+ms.openlocfilehash: e438fb38afb649f6f4c7f595059ef64800977242
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592389"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70240352"
 ---
+::: zone target = "docs"
+
 # <a name="tutorial-return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Руководство по Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
 
+::: zone-end
+
+::: zone target = "chromeless"
+
+# <a name="return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
+
+::: zone-end
+
+::: zone target = "docs"
 
 В этом руководстве содержатся инструкции по возврату устройства Azure Data Box Heavy и проверке того, корректно ли были переданы данные в Azure.
 
@@ -36,9 +48,25 @@ ms.locfileid: "67592389"
 - Вы завершили работу со статьей [Руководство: Копирование данных в Azure Data Box через SMB](data-box-heavy-deploy-copy-data.md).
 - Задания копирования выполнены. Подготовка к отправке недоступна, если задания копирования не завершены.
 
+
 ## <a name="prepare-to-ship"></a>Подготовка к отправке
 
 [!INCLUDE [data-box-heavy-prepare-to-ship](../../includes/data-box-heavy-prepare-to-ship.md)]
+
+::: zone-end
+
+::: zone target = "chromeless"
+
+## <a name="prepare-to-ship"></a>Подготовка к отправке
+
+Прежде чем приступать к отправке, убедитесь, что задания копирования завершены.
+
+1. Перейдите к странице подготовки к отправке в локальном пользовательском веб-интерфейсе и начните подготовку к отправке.
+2. Отключите устройство от локального веб-интерфейса. Отсоедините кабели от устройства.
+
+Теперь устройство готово к возврату.
+
+::: zone-end
 
 ## <a name="ship-data-box-heavy-back"></a>Возврат устройства Data Box Heavy
 
@@ -50,6 +78,8 @@ ms.locfileid: "67592389"
     3. Убедитесь, что этикетку отгрузки хорошо видно на внешней стороне груза.
     4. Не забудьте удалить с устройства старую этикетку отгрузки с прошлой пересылки.
 3. После того как перевозчик примет посылку с Data Box Heavy и зарегистрирует ее, состояние заказа на портале обновится до **Принято**. Также отображается идентификатор отслеживания.
+
+::: zone target = "docs"
 
 ## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
 
@@ -79,10 +109,25 @@ ms.locfileid: "67592389"
         ![Управляемый диск, подключенный к группам ресурсов](media/data-box-deploy-copy-data-from-vhds/managed-disks-resource-group.png)
 
     - Если вы скопировали VHDX или же динамический или разностный VHD, то VHDX или VHD передается в промежуточную учетную запись хранения в виде страничного BLOB-объекта, но преобразование VHD в управляемый диск не удастся выполнить. Перейдите в промежуточную **учетную запись хранения, выберите BLOB-объекты**, а затем — соответствующий контейнер: SSD (цен. категория "Стандартный"), HDD (цен. категория "Стандартный") или SSD (цен. категория "Премиум"). Виртуальные жесткие диски передаются в виде страничных BLOB-объектов в промежуточную учетную запись хранения.
+    
+::: zone-end
 
-## <a name="erasure-of-data-from-data-box-heavy"></a>Удаление данных с устройства Data Box Heavy
+::: zone target = "chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>Проверка передачи данных в Azure
+
+Когда устройство Data Box Heavy будет подключено к сети центра обработки данных Azure, начнется автоматическая отправка данных в Azure. Служба Data Box уведомляет о завершении копирования данных на портале Azure.
+
+- Проверьте наличие сбоев в журналах ошибок и предпримите соответствующие действия.
+- Прежде чем удалять их из источника, убедитесь, что данные сохранены в учетной записи хранения.
+
+::: zone-end
+
+## <a name="erasure-of-data-from-data-box-heavy"></a>удаление данных с устройства Data Box Heavy.
  
 Когда передача данных в Azure завершится, Data Box удалит данные с дисков согласно рекомендациям [NIST SP 800-88 в редакции 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi). После удаления данных вы можете [скачать журнал заказов](data-box-portal-admin.md#download-order-history).
+
+::: zone target = "docs"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -99,5 +144,7 @@ ms.locfileid: "67592389"
 
 > [!div class="nextstepaction"]
 > [Использование локального веб-интерфейса для администрирования Azure Data Box](./data-box-local-web-ui-admin.md)
+
+::: zone-end
 
 

@@ -17,12 +17,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a2b6d01802fd819471a9cfb382166e6293261ca
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: a130878baa10be426072dfe79284a1d602dfb6ff
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852895"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211855"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -39,11 +39,9 @@ ms.locfileid: "68852895"
 
 > [!div renderon="docs" class="sxs-lookup"]
 >
-> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
-> * [Экспресс-способ] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
-> * [Вручную] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample)
+> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве: оперативно (вариант 1) и вручную (вариант 2).
 >
-> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
 > 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/DotNetCoreDaemonQuickstartPage/sourceType/docs).
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
@@ -80,12 +78,12 @@ ms.locfileid: "68852895"
 
 #### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Скачивание проекта Visual Studio
 
-[Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/msal3x.zip)
+[Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/master.zip)
 
 #### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
-1. Откройте решение в Visual Studio — **daemon-console.sln** (необязательно).
+1. Откройте решение в Visual Studio — **1-Call-MSGraph\daemon-console.sln** (необязательно).
 1. Измените файл **appsettings.json**, заменив значения полей `ClientId`, `Tenant` и `ClientSecret` следующими:
 
     ```json
@@ -145,7 +143,7 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 Если вы используете Visual Studio, для запуска приложения используйте клавишу **F5** или командную строку либо консоль.
 
 ```console
-cd {ProjectFolder}\daemon-console
+cd {ProjectFolder}\daemon-console\1-Call-Graph
 dotnet run
 ```
 
@@ -166,7 +164,7 @@ MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Ident
  MSAL.NET можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующую команду.
 
 ```powershell
-Install-Package Microsoft.Identity.Client -Pre
+Install-Package Microsoft.Identity.Client
 ```
 
 Кроме того, если вы не используете Visual Studio, выполните следующую команду, чтобы добавить MSAL в проект:
@@ -221,8 +219,15 @@ result = await app.AcquireTokenForClient(scopes)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения об управляющих программы см. на главной странице сценария.
+
 > [!div class="nextstepaction"]
-> [Пример управляющей программы .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2)
+> [Создание управляющей программы, которая вызывает веб-API](scenario-daemon-overview.md)
+
+Руководство по управляющим программам:
+
+> [!div class="nextstepaction"]
+> [Руководство по консольной управляющей программе .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2)
 
 Дополнительные сведения о разрешениях и согласии:
 
@@ -233,9 +238,6 @@ result = await app.AcquireTokenForClient(scopes)
 
 > [!div class="nextstepaction"]
 > [Поток учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)
-
-> [!div class="nextstepaction"]
-> [Потоки учетных данных клиента с использованием MSAL.NET](https://aka.ms/msal-net-client-credentials)
 
 Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
 

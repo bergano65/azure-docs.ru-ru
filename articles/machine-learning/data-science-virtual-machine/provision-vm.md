@@ -1,28 +1,22 @@
 ---
-title: Создание виртуальной машины Windows для обработки и анализа данных
-titleSuffix: Azure
+title: Краткое руководство. Создание виртуальной машины Windows
+titleSuffix: Azure Data Science Virtual Machine
 description: Настройка и создание виртуальной машины в Azure для обработки и анализа данных и машинного обучения.
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: e1467c0f-497b-48f7-96a0-7f806a7bec0b
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: quickstart
 ms.date: 02/22/2019
-ms.author: vijetaj
-ms.openlocfilehash: 2b328ccf63259c7faf4debdc07313d24381313a5
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: ac4b9b4d32d05083ceabd41207243eb483648baa
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047687"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278596"
 ---
-# <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
+# <a name="quickstart-set-up-a-windows-data-science-virtual-machine-on-azure"></a>Краткое руководство. Настройка Виртуальной машины Windows для обработки и анализа данных в Azure
 
 Виртуальная машина Microsoft Windows для обработки и анализа данных (DSVM) — это образ виртуальной машины Windows Server 2016 на Azure. Она поставляется с предварительно установленными и настроенными средствами для аналитики данных и машинного обучения.
 
@@ -30,7 +24,7 @@ ms.locfileid: "70047687"
 
 На виртуальной машине DSVM доступны следующие средства:
 
-* Пакет SDK для Python для [службы "Машинное обучение Azure"](../service/index.yml).
+* Пакет SDK для Python для [службы "Машинное обучение Azure"](../index.yml).
 * [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/index) Developer Edition.
 * Дистрибутив Anaconda Python.
 * Jupyter Notebook (с ядрами R, Python и PySpark).
@@ -234,7 +228,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Изучите средства в DSVM, открыв меню **Пуск**.
-* Дополнительные сведения о службе "Машинное обучение Azure" см. в статье [Что такое служба машинного обучения Azure?](../service/overview-what-is-azure-ml.md) и ознакомьтесь с доступными [краткими руководствами и учебниками](../service/index.yml).
+* Дополнительные сведения о службе "Машинное обучение Azure" см. в [этой статье](../service/overview-what-is-azure-ml.md) и [руководствах](../index.yml).
 * В проводнике перейдите к C:\Program Files\Microsoft\ML Server\R_SERVER\library\RevoScaleR\demoScripts, в котором размещены примеры использования библиотеки RevoScaleR в R, поддерживающей анализ данных на корпоративном уровне. 
 * Ознакомьтесь со статьей [10 задач, которые можно выполнить на виртуальной машине для обработки и анализа данных](https://aka.ms/dsvmtenthings).
 * Изучите систематический подход к созданию комплексных аналитических решений с помощью [группового процесса обработки и анализа данных](../team-data-science-process/index.yml).

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 04/05/2019
+ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: f692303140db1441aa34aacef62523d7f596dba1
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: d6628f1522880f650bfd8c728fe46fd050a8e6a0
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204737"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208383"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
@@ -26,7 +26,11 @@ ms.locfileid: "67204737"
 > * Присоединение виртуальных машин к домену Active Directory.
 > * Регистрация виртуальных машин с помощью Виртуального рабочего стола Windows.
 
-Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell.
+Перед началом работы при необходимости [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell. После этого выполните следующий командлет, чтобы войти в учетную запись:
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -40,7 +44,7 @@ ms.locfileid: "67204737"
 2. В окне поиска Marketplace введите **Виртуальный рабочий стол Windows**.
 3. Выберите **Windows Virtual Desktop — Provision a host pool** (Виртуальный рабочий стол Windows — подготовка пула узлов) и щелкните **Создать**.
 
-Следуйте инструкциям из этого руководства, чтобы ввести данные в соответствующих колонках.
+Затем следуйте инструкциям из следующего раздела, чтобы ввести сведения в соответствующих колонках.
 
 ### <a name="basics"></a>Основы
 
@@ -52,6 +56,9 @@ ms.locfileid: "67204737"
 4. Выберите **Создать** и укажите имя новой группы ресурсов
 5. В качестве **расположения** выберите то же расположение, что и для виртуальной сети с подключением к серверу Active Directory.
 6. Нажмите кнопку **ОК**.
+
+>[!IMPORTANT]
+>Если вы используете только доменные службы Azure AD A и решение Azure Active Directory, разверните пул узлов в том же регионе, в котором находятся доменные службы Azure Active Directory, чтобы избежать ошибок, связанных с подключением к домену и учетными данными.
 
 ### <a name="configure-virtual-machines"></a>Настройка виртуальных машин
 
@@ -66,7 +73,7 @@ ms.locfileid: "67204737"
 В колонке **Параметры виртуальной машины** сделайте следующее:
 
 >[!NOTE]
-> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
+> Если вы присоединяете виртуальные машины к среде доменных служб Active Directory (Azure AD DS), убедитесь, что пользователь, который присоединяется к домену, также является участником [группы администраторов AAD DC](../active-directory-domain-services/tutorial-create-instance.md#configure-an-administrative-group).
 
 1. Выберите **Источник образа** и введите соответствующую информацию о том, как его искать и хранить. Если вы решили не использовать управляемые диски, выберите учетную запись хранения, содержащую VHD-файл.
 2. Введите имя участника-пользователя и пароль для учетной записи домена, с использованием которой виртуальные машины будут присоединены к домену Active Directory. Эти же имя пользователя и пароль будут созданы на виртуальных машинах в качестве локальной учетной записи. Позже вы сможете сбросить эти локальные учетные записи.

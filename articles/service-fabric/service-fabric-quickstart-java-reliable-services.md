@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019
-ms.openlocfilehash: a69590adc329361ac1c2191e7a984757af4f69af
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 39bb5191ff0c757fc672d18b4e8e406f91df0509
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977113"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173230"
 ---
-# <a name="quickstart-deploy-a-java-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб Java в Service Fabric
+# <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
 Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
 

@@ -3,18 +3,17 @@ title: Краткое руководство. Создание очереди С
 description: Из этого краткого руководства вы узнаете, как создать очередь Служебной шины Azure с помощью портала Azure. Затем вы выполните отправку и получение сообщений из очереди, используя образец клиентского приложения.
 services: service-bus-messaging
 author: spelluru
-manager: timlt
 ms.service: service-bus-messaging
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 04/10/2019
+ms.date: 09/03/2019
 ms.author: spelluru
-ms.openlocfilehash: 315f8d30b7c7559947c599edd0e18eaa5a99ac22
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: dc9b8260a8ddde6633bc9215d9efff7aaaa71ad3
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513640"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242375"
 ---
 # <a name="quickstart-use-azure-portal-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди служебной шины с помощью портала Azure
 В этом кратком руководстве объясняется, как отправлять и получать сообщения через очередь служебной шины, создав с помощью [портала Azure][Azure portal] пространство имен для обмена сообщениями и очередь в этом пространстве имен, а также как получить учетные данные для авторизации в этом пространстве имен. Далее в этой процедуре демонстрируется отправка и получение сообщений через созданную очередь с применением [библиотеки .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus).
@@ -34,6 +33,18 @@ ms.locfileid: "67513640"
 [!INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
 ## <a name="send-and-receive-messages"></a>Отправка и получение сообщений
+
+> [!NOTE]
+> В этом разделе для отправки и получения сообщений используется пример .NET. Примеры отправки и получения сообщений с использованием других языков программирования см. в [этой статье](service-bus-samples.md). 
+> 
+> Пошаговые инструкции по отправке и приему сообщений с использованием различных языков программирования см. в следующих кратких руководствах:
+> - [.NET](service-bus-dotnet-get-started-with-queues.md)
+> - [Java](service-bus-java-how-to-use-queues.md)
+> - [Пример Node. js с использованием пакета Служебной шины Azure](service-bus-nodejs-how-to-use-queues-new-package.md)
+> - [Пример Node. js с использованием пакета azure-sb](service-bus-nodejs-how-to-use-queues.md)
+> - [PHP](service-bus-php-how-to-use-queues.md)
+> - [Python](service-bus-python-how-to-use-queues.md)
+> - [Ruby](service-bus-ruby-how-to-use-queues.md)
 
 Подготовив пространство имен и очередь и получив необходимые учетные данные, вы можете приступать к отправке и получению сообщений. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/TopicFilters).
 

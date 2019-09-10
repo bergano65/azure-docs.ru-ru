@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 07/28/2019
+ms.date: 08/28/2019
 ms.author: aahi
-ms.openlocfilehash: 3ef7f65bbb27992278eb467f840c1443ac0db0b8
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 669cd43b73bc66289a355f7fbf9c4498d8a7b99a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725894"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135025"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
 <a name="HOLTop"></a>
@@ -49,11 +49,20 @@ import requests
 from pprint import pprint
 ```
 
-Создайте переменные ключа подписки и конечную точку REST API "Анализ текста". Проверьте, совпадает ли регион конечной точки с используемым при регистрации (например, `westcentralus`). Если вы используете ключ бесплатной пробной версии, ничего изменять не нужно.
+Создайте переменные для конечной точки ресурса Azure и ключа подписки. Получите эти значения из переменных среды TEXT_ANALYTICS_SUBSCRIPTION_KEY и TEXT_ANALYTICS_ENDPOINT. Если вы создали переменные среды после начала правки приложения, следует закрыть и повторно открыть редактор, интегрированную среду разработки или оболочку, которые использовались для доступа к этим переменным.
     
 ```python
-subscription_key = "<ADD YOUR KEY HERE>"
-text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/"
+import os
+
+key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
+if not key_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
+subscription_key = os.environ[key_var_name]
+
+endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
+if not endpoint_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
+endpoint = os.environ[endpoint_var_name]
 ```
 
 В приведенных ниже разделах описано, как вызвать каждую функцию API.
@@ -65,7 +74,7 @@ text_analytics_base_url = "https://westcentralus.api.cognitive.microsoft.com/tex
 Добавьте объект `languages` к базовой конечной точке API "Анализ текста", чтобы создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
     
 ```python
-language_api_url = text_analytics_base_url + "languages"
+language_api_url = endpoint + "/text/analytics/v2.1/languages"
 ```
 
 Полезные данные этого API состоят из списка ключей `documents` —кортежей, которые содержат параметр `id` и атрибут `text`. Атрибут `text` содержит текст для анализа, а параметр `id` может иметь любое значение. 
@@ -134,7 +143,7 @@ pprint(languages)
 Чтобы определить тональность (положительные или отрицательные эмоции) набора документов, добавьте объект `sentiment` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
     
 ```python
-sentiment_url = text_analytics_base_url + "sentiment"
+sentiment_url = endpoint + "/text/analytics/v2.1/sentiment"
 ```
 
 Как и в примере распознавания языка, создайте словарь с ключом `documents`, который содержит список документов. Каждый документ представляет собой кортеж, состоящий из `id`, `text` для анализа и `language` для текста. 
@@ -196,7 +205,7 @@ pprint(sentiments)
 Чтобы извлечь ключевые фразы из набора документов, добавьте объект `keyPhrases` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
     
 ```python
-keyphrase_url = text_analytics_base_url + "keyPhrases"
+keyphrase_url = endpoint + "/text/analytics/v2.1/keyphrases"
 ```
 
 Здесь используется та же коллекция документов, что и в примере анализа тональности.
@@ -272,7 +281,7 @@ pprint(key_phrases)
 Чтобы определить известные сущности (люди, места, предметы) в текстовых документах, добавьте объект `entities` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/entities`
     
 ```python
-entities_url = text_analytics_base_url + "entities"
+entities_url = endpoint + "/text/analytics/v2.1/entities"
 ```
 
 Создайте коллекцию документов, как и в предыдущих примерах. 

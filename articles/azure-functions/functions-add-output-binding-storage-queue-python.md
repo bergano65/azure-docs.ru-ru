@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 34ec7c678410b2e0814f8dbb7a69257886cb891d
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 9fdbf3466256c5e24de17541770fa2095fcf38a4
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639167"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70171084"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Добавление привязки очереди службы хранилища Azure к функции Python
 
@@ -194,7 +194,7 @@ curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow54
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Python, обратитесь к статьям [Справочник разработчика Python. Функции Azure](functions-reference-python.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
+Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Python, обратитесь к статьям [Справочник разработчика Python. Функции Azure](functions-reference-python.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md). Полные примеры проектов Функций в Python см. в [этой статье](/samples/browse/?products=azure-functions&languages=python). 
 
 Затем для мониторинга приложения-функции следует включить Application Insights.
 

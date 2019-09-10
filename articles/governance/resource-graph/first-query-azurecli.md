@@ -7,12 +7,12 @@ ms.date: 07/26/2019
 ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: afe32c197b5eab24ba298395bb2c9e83f847d6c5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6fffd9e0bbaea47bfeac56a7972a38df0cbef351
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562584"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164699"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-cli"></a>Краткое руководство. Выполните первый запрос графа ресурсов с помощью Azure CLI
 
@@ -35,7 +35,7 @@ ms.locfileid: "68562584"
    az extension add --name resource-graph
    ```
 
-1. Проверьте установку расширения и номер версии (не ниже **0.1.11**):
+1. Проверьте установку расширения и номер версии (по крайней мере **1.0.0**):
 
    ```azurecli-interactive
    # Check the extension list (note that you may have other extensions installed)

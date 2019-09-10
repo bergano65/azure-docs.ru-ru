@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af98633e1dfdbe6392199ade282a918c6134a033
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: c0b1471abd7e057af919ed274547daf94d356c2b
+ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347405"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70213606"
 ---
 # <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с The Cloud Security Fabric
 
@@ -104,7 +104,7 @@ ms.locfileid: "68347405"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-5. Чтобы изменить параметры в разделе **Подпись**  в соответствии со своими требованиями, нажмите кнопку  **Изменить** , чтобы открыть диалоговое окно  **Сертификат подписи SAML** .
+5. Чтобы изменить параметры в разделе **Подпись** в соответствии со своими требованиями, нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
     ![Ответ знака](./media/ciscocloudlock-tutorial/saml.png)
 
@@ -153,7 +153,7 @@ ms.locfileid: "68347405"
 
 ### <a name="create-the-cloud-security-fabric-test-user"></a>Создание тестового пользователя The Cloud Security Fabric
 
-В этом разделе описано, как создать пользователя B.Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в  [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя B.Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-sso"></a>Проверка единого входа 
 

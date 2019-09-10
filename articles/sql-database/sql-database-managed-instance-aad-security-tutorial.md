@@ -9,12 +9,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: 87bd22ec4f2cfae62d1f80284ad8346ca292d016
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 37098411f465c611dc9d2e2443f369e01d6e338c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567667"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231005"
 ---
 # <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Руководство по Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD
 
@@ -55,10 +55,12 @@ ms.locfileid: "68567667"
 
 ## <a name="limiting-access-to-your-managed-instance"></a>Ограничение доступа к управляемому экземпляру
 
-Доступ к управляемому экземпляру возможен только по частному IP-адресу. Нет доступных конечных точек службы для подключения к управляемому экземпляру из-за пределов его сети. Так же как и в изолированной локальной среде SQL Server, приложениям или пользователям нужен доступ к сети управляемого экземпляра, прежде чем можно будет установить подключение. Дополнительные сведения см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md).
+Доступ к управляемому экземпляру возможен по частному IP-адресу. Так же как и в изолированной локальной среде SQL Server, приложениям или пользователям нужен доступ к сети управляемого экземпляра, прежде чем можно будет установить подключение. Дополнительные сведения см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](sql-database-managed-instance-connect-app.md).
+
+Кроме того, можно настроить конечную точку службы в управляемом экземпляре, которая обеспечит общедоступные подключения таким же образом, как и База данных SQL Azure. Дополнительные сведения см. в статье о [настройке общедоступной конечной точки в управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance-public-endpoint-configure.md).
 
 > [!NOTE] 
-> Так как доступ к управляемым экземплярам возможен только внутри их виртуальной сети, [правила брандмауэра Базы данных SQL](sql-database-firewall-configure.md) не применяются. В управляемых экземплярах есть свой собственный [встроенный брандмауэр](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md).
+> Даже при включенных конечных точках службы [правила брандмауэра Базы данных SQL](sql-database-firewall-configure.md) не применяются. В управляемых экземплярах есть [встроенный брандмауэр](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md), управляющий подключениями.
 
 ## <a name="create-an-azure-ad-server-principal-login-for-a-managed-instance-using-ssms"></a>Создание субъекта сервера (имени для входа) Azure AD для управляемого экземпляра с помощью SSMS
 

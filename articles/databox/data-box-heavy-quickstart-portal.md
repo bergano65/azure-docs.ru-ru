@@ -6,15 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: quickstart
-ms.date: 06/04/2019
+ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 3467b25c085fb86d4aed3918d5446d118f76ffb8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.localizationpriority: high
+ms.openlocfilehash: b2ebb4c5a0df360cede084a90ebe5da041a08aa0
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446733"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70241378"
 ---
+::: zone target = "docs"
+
 # <a name="quickstart-deploy-azure-data-box-heavy-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box Heavy с помощью портала Azure
 
 В этом кратком руководстве описано развертывание Azure Data Box Heavy с помощью портала Azure. Описанные действия охватывают подключение кабелей, настройку и копирование данных в Data Box Heavy таким образом, чтобы они передавались в Azure. Задачи, описанные в этом кратком руководстве, выполняются на портале Azure, а также в локальном веб-интерфейсе устройства.
@@ -55,6 +58,7 @@ ms.locfileid: "67446733"
     - Если используется кабель с пропускной способностью 10 Гбит/с, вам потребуется кабель SFP+. Один его конец подключается к 10-гигабитному коммутатору, а другой — к устройству с использованием адаптера QSFP+ на SFP+ (или адаптера QSA).
 - Кабели питания уложены в лоток на задней стороне устройства.
 
+
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
@@ -69,6 +73,16 @@ ms.locfileid: "67446733"
 4. Введите сведения о заказе и о доставке. Если служба доступна в вашем регионе, укажите адреса электронной почты для уведомлений, просмотрите сводные данные, а затем создайте заказ.
 
 После создания заказа устройство подготавливается к отправке.
+
+::: zone-end
+
+::: zone target = "chromeless"
+
+# <a name="cable-and-connect-to-your-device"></a>Присоединение кабелей и подключение к устройству
+
+Выполнив предварительные требования, можно приступать к подготовке устройства к работе и его подключению.
+
+::: zone-end
 
 ## <a name="cable-for-power"></a>Кабель питания
 
@@ -105,6 +119,9 @@ ms.locfileid: "67446733"
 Это действие занимает около 15–20 минут.
 
 Повторите действия, выполненные с первым узлом, чтобы подсоединить и настроить второй узел на устройстве.  
+
+
+::: zone target = "docs"
 
 ## <a name="copy-data"></a>Копирование данных
 
@@ -157,3 +174,5 @@ ms.locfileid: "67446733"
 
 > [!div class="nextstepaction"]
 > [Администрирование устройства Azure Data Box с помощью портала Azure](data-box-portal-admin.md)
+
+::: zone-end

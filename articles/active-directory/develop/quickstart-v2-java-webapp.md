@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/11/2019
 ms.author: sagonzal
 ms.custom: aaddev
-ms.openlocfilehash: 549b4457ee38504001e83c4b831cd321e1542068
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: f1ceae17195c08af380a7448dd4dbf3bfa3f9de2
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125476"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211880"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -35,13 +35,10 @@ ms.locfileid: "70125476"
 > ## <a name="prerequisites"></a>Предварительные требования
 > Для запуска этого примера потребуется: 
 > - Комплект разработки Java 8 версии или более поздней и Maven.
-> - Клиент Azure Active Directory (Azure AD). Дополнительные сведения о том, как получить клиент Azure AD, см. в статье [Как получить клиент Azure AD.](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant)
 >
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
-> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
-> * Экспресс: [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода.](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
-> * Вручную: [Вариант 2. Регистрация и настройка приложения и примера кода вручную.](#option-2-register-and-manually-configure-your-application-and-code-sample)
+> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве: оперативно (вариант 1) или вручную (вариант 2).
 > 
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
@@ -123,7 +120,7 @@ ms.locfileid: "70125476"
 ### <a name="getting-msal"></a>Получение MSAL
 MSAL4J — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному Платформой удостоверений Майкрософт. Вы можете добавить MSAL4J в приложение с помощью Maven или Gradle для управления зависимостями, внеся следующие изменения в файл pom.xml или build.gradle в приложении. 
 
-```
+```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>msal4j</artifactId>
@@ -139,7 +136,7 @@ compile group: 'com.microsoft.azure', name: 'msal4j', version: '0.5.0-preview'
 ### <a name="msal-initialization"></a>Инициализация Msal
 Вы можете добавить ссылку на MSAL4J, добавив следующий код в начало файла, в котором будет использоваться MSAL4J: 
 
-```
+```Java
 import com.microsoft.aad.msal4j.*;
 ```
 

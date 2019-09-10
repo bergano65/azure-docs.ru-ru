@@ -2,18 +2,18 @@
 title: Руководство по C#. Индексирование нескольких источников данных (Поиск Azure)
 description: Узнайте, как импортировать данные из нескольких источников данных в один индекс Поиска Azure.
 author: RobDixon22
-manager: HeidiSteen
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: tutorial
 ms.date: 06/21/2019
 ms.author: heidist
-ms.openlocfilehash: 2776bcd095c570be500fa6ddb2675820b2259716
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: d55a586d3dfb22b5dad377ff656b8d6a6c940bdb
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840679"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241838"
 ---
 # <a name="c-tutorial-combine-data-from-multiple-data-sources-in-one-azure-search-index"></a>Руководство по C#. Объединение данных из нескольких источников данных в один индекс Поиска Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "68840679"
 
 1. [Войдите на портал Azure](https://portal.azure.com) и перейдите к странице общих сведений об учетной записи Azure Cosmos DB.
 
-1. Щелкните "Добавить контейнер" в строке меню. Выберите "Создать новую базу данных" и укажите для нее имя **hotel-rooms-db**. Введите имя коллекции **hotel-rooms** и имя ключа раздела **/HotelId**. Щелкните **ОК**, чтобы создать базу данных и контейнер.
+1. Щелкните "Добавить контейнер" в строке меню. Выберите "Создать новую базу данных" и укажите для нее имя **hotel-rooms-db**. В качестве имени коллекции введите **hotels**, а имени ключа — **/HotelId**. Щелкните **ОК**, чтобы создать базу данных и контейнер.
 
    ![Добавление контейнера Azure Cosmos DB](media/tutorial-multiple-data-sources/cosmos-add-container.png "Add an Azure Cosmos DB container")
 

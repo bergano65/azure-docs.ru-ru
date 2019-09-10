@@ -1,5 +1,5 @@
 ---
-title: Написание пользовательской функции C# для задания Edge в Azure Stream Analytics с помощью Visual Studio (предварительная версия)
+title: Создание пользовательских функций на C# для заданий Edge в Azure Stream Analytics с помощью Visual Studio (предварительная версия)
 description: Вы узнаете, как писать пользовательские функции на C# для заданий Edge в Stream Analytics с помощью Visual Studio.
 services: stream-analytics
 author: mamccrea
@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5597109a65a8af88bf286977d039656635565ed9
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: cadc603a94d5d17ad2df419f8507c37f9e3272f8
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086915"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173306"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-edge-job-preview"></a>Руководство. Написание определяемой пользователем функции на C# для задания Azure Stream Analytics на IoT Edge (предварительная версия)
 
@@ -63,7 +63,7 @@ ms.locfileid: "53086915"
     |---------|---------|
     |Источник сборки  |  Ссылка на локальный проект или код программной части   |
     |Ресурс  |  Выберите данные текущей учетной записи   |
-    |Подписка  |  Выберите свою подписку.   |
+    |Subscription  |  Выберите свою подписку.   |
     |Учетная запись хранения  |  Выберите учетную запись хранения.   |
     |Контейнер  |  Выберите контейнер, созданный в учетной записи хранения.   |
 

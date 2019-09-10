@@ -2,20 +2,20 @@
 title: Краткое руководство Azure. Настройка и получение секрета из Key Vault с помощью PowerShell | Документация Майкрософт
 description: ''
 services: key-vault
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/07/2019
-ms.author: barclayn
-ms.openlocfilehash: 8d6260d462b4c244dfb41630e06710a1ce8baf6c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.date: 09/03/2019
+ms.author: mbaldwin
+ms.openlocfilehash: 5753384d12d31016dff7a33175899835c8bd1fec
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66726779"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70259259"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell
 
@@ -100,9 +100,9 @@ Remove-AzResourceGroup -Name ContosoResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали Key Vault и сохранили в нем ключ ПО. Чтобы получить дополнительные сведения о Key Vault и о том, как вы можете использовать его в своих приложениях, ознакомьтесь с руководством по веб-приложениям, работающим с Key Vault.
+С помощью этого краткого руководства вы создали Key Vault и сохранили в нем секрет. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
-Чтобы узнать, как считать секрет из хранилища ключей с помощью веб-приложения, используя управляемые удостоверения для ресурсов Azure, см. руководство по
-
-> [!div class="nextstepaction"]
-> [настройке веб-приложения Azure для чтения секретов из хранилища ключей](quick-create-net.md).
+- [Обзор Azure Key Vault](key-vault-overview.md)
+- Справочник по [командлетам Azure PowerShell для Azure Key Vault](/powershell/module/az.keyvault/?view=azps-2.6.0#key_vault)
+- Сведения о [ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)
+- [Рекомендации по Azure Key Vault](key-vault-best-practices.md)

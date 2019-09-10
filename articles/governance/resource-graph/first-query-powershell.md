@@ -7,13 +7,12 @@ ms.date: 01/23/2019
 ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: a8221de15dfa48b4eebcf0fe0df29ea0c3a1868e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 7c47b233e508c22ef7b380acfb7720ad763d8de3
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854968"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241111"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -22,8 +21,6 @@ ms.locfileid: "68854968"
 В конце этого процесса вы добавите модуль к установке Azure PowerShell на свой выбор и выполните первый запрос Resource Graph.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
-
-[!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
 ## <a name="add-the-resource-graph-module"></a>Добавить модуль "График ресурсов"
 
@@ -48,7 +45,7 @@ ms.locfileid: "68854968"
    Install-Module -Name Az.ResourceGraph
    ```
 
-1. Убедитесь, что модуль импортирован и имеет требуемую версию (0.7.3).
+1. Убедитесь, что импортирован модуль последней версии (0.7.5).
 
    ```azurepowershell-interactive
    # Get a list of commands for the imported Az.ResourceGraph module

@@ -13,17 +13,17 @@ ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2e32fb57a5ee34da8c342649cc1740d111723ec
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
-ms.translationtype: HT
+ms.openlocfilehash: d5372ac8b31db91aaac018b203ee8868fa313fd8
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662909"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772984"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
 > [!IMPORTANT]
-> Как было [объявлено ранее](https://azure.microsoft.com/updates/switch-api-preference-log-alerts/), рабочие области log Analytics, созданные после *1 июня 2019* г., смогут управлять правилами генерации оповещений с помощью **только** [REST API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/)Azure счедуледкуерирулес, [Azure Resource Manager шаблона](../../azure-monitor/platform/alerts-log.md#managing-log-alerts-using-azure-resource-template) и [PowerShell. Командлет](../../azure-monitor/platform/alerts-log.md#managing-log-alerts-using-powershell). Клиенты могут легко [переключить свои предпочтительные средства управления правилами генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api) для старых рабочих областей, чтобы использовать Azure Monitor счедуледкуерирулес по умолчанию и получить множество [новых преимуществ](../../azure-monitor/platform/alerts-log-api-switch.md#benefits-of-switching-to-new-azure-api) , таких как возможность использовать собственные командлеты PowerShell, увеличенные лукбакк период времени в правилах, создание правил в отдельной группе ресурсов или подписке и многое другое.
+> Как было [объявлено ранее](https://azure.microsoft.com/updates/switch-api-preference-log-alerts/), рабочие области log Analytics, созданные *после 1 июня 2019* г., смогут управлять правилами генерации оповещений с помощью **только** [REST API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/)Azure счедуледкуерирулес, [Azure Resource Manager шаблона](../../azure-monitor/platform/alerts-log.md#managing-log-alerts-using-azure-resource-template) и [PowerShell. Командлет](../../azure-monitor/platform/alerts-log.md#managing-log-alerts-using-powershell). Клиенты могут легко [переключить свои предпочтительные средства управления правилами генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api) для старых рабочих областей, чтобы использовать Azure Monitor счедуледкуерирулес по умолчанию и получить множество [новых преимуществ](../../azure-monitor/platform/alerts-log-api-switch.md#benefits-of-switching-to-new-azure-api) , таких как возможность использовать собственные командлеты PowerShell, увеличенные лукбакк период времени в правилах, создание правил в отдельной группе ресурсов или подписке и многое другое.
 
 > [!NOTE]
 > Это предварительная версия документации по созданию решений по управлению, доступных в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.
@@ -33,7 +33,7 @@ ms.locfileid: "68662909"
 > [!NOTE]
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)](solutions-creating.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже знаете, как [создать решение по управлению](solutions-creating.md), а также знакомы со структурой [шаблона ARM](../../azure-resource-manager/resource-group-authoring-templates.md) и файла решения.
 
 
@@ -49,7 +49,7 @@ ms.locfileid: "68662909"
 
 В следующей таблице перечислены версии API для ресурсов, используемых в этом примере.
 
-| Тип ресурса | Версия API | Запрос |
+| Тип ресурса | Версия API | query |
 |:---|:---|:---|
 | savedSearches | 2017-03-15-preview | Event &#124; where EventLevelName == "Error"  |
 
@@ -80,7 +80,7 @@ ms.locfileid: "68662909"
 |:--- |:--- |
 | category | Категория для сохраненного поиска.  Сохраненные поиски в одном решении часто будут принадлежать одной категории, поэтому они группируются в консоли. |
 | displayName | Имя, отображаемое для сохраненного поиска на портале. |
-| запрос | Запрос для выполнения. |
+| query | Запрос для выполнения. |
 
 > [!NOTE]
 > В запросе необходимо использовать escape-символы, если он содержит знаки, которые можно интерпретировать как JSON. Например, запрос **AzureActivity | OperationName:"Microsoft.Compute/virtualMachines/write"** в файл решения должен быть записан как **AzureActivity | OperationName:/\"Microsoft.Compute/virtualMachines/write\"** .
@@ -169,30 +169,29 @@ ms.locfileid: "68662909"
 
 В следующей таблице описаны свойства ресурсов действия оповещения.
 
-| Имя элемента | Обязательное значение | description |
+| Имя элемента | Обязательное значение | Описание |
 |:--|:--|:--|
-| Type | Да | Тип действия.  Для действий оповещения это тип **Alert**. |
-| name | Да | Отображаемое имя оповещения.  Это имя, которое отображается в консоли для правила генерации оповещений. |
-| description | Нет | Необязательное описание оповещения. |
-| severity | Да | Серьезность записи оповещения состоит из следующих значений.<br><br> **критический**<br>**предупреждение**<br>**информационный**
-
+| `type` | Да | Тип действия.  Для действий оповещения это тип **Alert**. |
+| `name` | Да | Отображаемое имя оповещения.  Это имя, которое отображается в консоли для правила генерации оповещений. |
+| `description` | Нет | Необязательное описание оповещения. |
+| `severity` | Да | Серьезность записи оповещения состоит из следующих значений.<br><br> **критический**<br>**предупреждение**<br>**информационный**
 
 #### <a name="threshold"></a>Порог
 Это обязательный раздел. Он определяет свойства порога оповещения.
 
-| Имя элемента | Обязательное значение | description |
+| Имя элемента | Обязательное значение | Описание |
 |:--|:--|:--|
-| Operator | Да | Оператор сравнения может содержать следующие значения:<br><br>**gt — больше;<br>lt — меньше.** |
-| Value | Да | Значение для сравнения с результатами. |
+| `Operator` | Да | Оператор сравнения может содержать следующие значения:<br><br>**gt — больше;<br>lt — меньше.** |
+| `Value` | Да | Значение для сравнения с результатами. |
 
 ##### <a name="metricstrigger"></a>MetricsTrigger
 Это необязательный раздел. Он добавляется для оповещения об измерении метрики.
 
-| Имя элемента | Обязательное значение | description |
+| Имя элемента | Обязательное значение | Описание |
 |:--|:--|:--|
-| TriggerCondition | Да | Указывает, задает ли порог общее число нарушений или число последовательных нарушений посредством следующих значений:<br><br>**Total;<br>Consecutive.** |
-| Operator | Да | Оператор сравнения может содержать следующие значения:<br><br>**gt — больше;<br>lt — меньше.** |
-| Value | Да | Определяет, сколько раз должны быть соблюдены условия для активации оповещения. |
+| `TriggerCondition` | Да | Указывает, задает ли порог общее число нарушений или число последовательных нарушений посредством следующих значений:<br><br>**Total;<br>Consecutive.** |
+| `Operator` | Да | Оператор сравнения может содержать следующие значения:<br><br>**gt — больше;<br>lt — меньше.** |
+| `Value` | Да | Определяет, сколько раз должны быть соблюдены условия для активации оповещения. |
 
 
 #### <a name="throttling"></a>Регулирование

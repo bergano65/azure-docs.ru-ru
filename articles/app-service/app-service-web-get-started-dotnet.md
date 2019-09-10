@@ -11,136 +11,127 @@ ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
 ms.topic: quickstart
-ms.date: 09/05/2018
+ms.date: 08/30/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b64fd653a737201921ad481c50e2a72dc00cd912
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: e8c6c21efd1ea406c8293819a2889e198e8455bd
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071752"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242121"
 ---
 # <a name="create-an-aspnet-core-web-app-in-azure"></a>Создание веб-приложения ASP.NET Core в Azure
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения .NET Core в службе приложений на платформе Linux](./containers/quickstart-dotnetcore.md). 
+> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение .NET Core в службе приложений на платформе _Linux_, см. статью [Создание веб-приложения .NET Core в службе приложений на платформе Linux](./containers/quickstart-dotnetcore.md).
 >
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве рассматривается развертывание веб-приложения ASP.NET Core в Службе приложений Azure. В результате будет создана группа ресурсов, состоящая из плана и приложения Службы приложений с развернутым веб-приложением.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.
 
-![](./media/app-service-web-get-started-dotnet/web-app-running-live.png)
+В этом кратком руководстве рассматривается развертывание веб-приложения ASP.NET Core в Службе приложений Azure. В результате будет создана группа ресурсов, состоящая из плана и приложения Службы приложений с развернутым веб-приложением.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и разработка веб-приложений**.
+Для работы с этим руководством установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> с рабочей нагрузкой **ASP.NET и разработка веб-приложений**.
 
-Если у вас уже установлена версия Visual Studio 2017, сделайте следующее:
+Если у вас уже установлена версия Visual Studio 2019, сделайте следующее.
 
-- Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить наличие обновлений**.
-- Добавьте рабочую нагрузку, выбрав **Инструменты** > **Get Tools and Features** (Получить инструменты и компоненты).
+- Установите последние обновления для Visual Studio, выбрав **Справка** > **Проверить обновления**.
+- Добавьте рабочую нагрузку, выбрав **Инструменты** > **Получить средства и компоненты**.
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
-Создайте проект в Visual Studio, последовательно выбрав пункты **Файл > Создать > Проект**. 
+Создайте веб-приложение ASP.NET Core, сделав следующее:
 
-В диалоговом окне **Новый проект** последовательно выберите пункты **Visual C# > Веб > Веб-приложение ASP.NET Core**.
+1. Откройте Visual Studio и выберите **Создать проект**.
 
-Присвойте приложению имя _myFirstAzureWebApp_ и нажмите кнопку **ОК**.
-   
-![Диалоговое окно "Новый проект"](./media/app-service-web-get-started-dotnet/new-project.png)
+1. В окне **Создание проекта** найдите и выберите **Веб-приложение ASP.NET Core** для C#, а затем щелкните **Далее**.
 
-Вы можете развернуть в Azure веб-приложения ASP.NET Core любого типа. Для работы с этим кратким руководством выберите шаблон **Веб-приложение** и убедитесь, что выбран режим **Без аутентификации** и другие параметры не заданы.
-      
-Нажмите кнопку **ОК**.
+1. В окне **Настройка проекта** присвойте приложению имя _myFirstAzureWebApp_ и щелкните **Создать**.
 
-![Диалоговое окно "Новый проект ASP.NET"](./media/app-service-web-get-started-dotnet/razor-pages-aspnet-dialog.png)
+   ![Настройка проекта веб-приложения](./media/app-service-web-get-started-dotnet/configure-web-app-project.png)
 
-В меню последовательно выберите пункты **Отладка > Запуск без отладки**, чтобы запустить веб-приложение локально.
+1. Для работы с этим кратким руководством выберите шаблон **Веб-приложение**. В параметрах аутентификации выберите только значение **Без аутентификации**. Нажмите кнопку **Создать**.
 
-![Локальный запуск приложения](./media/app-service-web-get-started-dotnet/razor-web-app-running-locally.png)
+   ![Выбор Razor Pages ASP.NET Core для этого руководства](./media/app-service-web-get-started-dotnet/aspnet-razor-pages-app.png)
 
-## <a name="launch-the-publish-wizard"></a>Запуск мастера публикации
+    Вы можете развернуть в Azure веб-приложения ASP.NET Core любого типа.
 
-Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
+1. В меню Visual Studio выберите **Отладка** > **Запустить без отладки**, чтобы запустить приложение локально.
 
-![Публикация в обозревателе решений](./media/app-service-web-get-started-dotnet/right-click-publish.png)
+   ![Локальный запуск приложения](./media/app-service-web-get-started-dotnet/razor-web-app-running-locally.png)
 
-Мастер публикации запустится автоматически. Выберите **Служба приложений** > **Опубликовать**, чтобы открыть диалоговое окно **Создать службу приложений**.
+## <a name="publish-your-web-app"></a>Публикация веб-приложения
 
-![Публикация с помощью страницы обзора проекта](./media/app-service-web-get-started-dotnet/publish-to-app-service.png)
+1. Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+1. Выберите **Служба приложений** и щелкните **Опубликовать**.
 
-В диалоговом окне **Создание службы приложений** щелкните **Добавить учетную запись**, а затем войдите в подписку Azure. Если вы уже вошли, выберите нужную учетную запись из раскрывающегося списка.
+   ![Публикация с помощью страницы обзора проекта](./media/app-service-web-get-started-dotnet/publish-app-vs2019.png)
 
-> [!NOTE]
-> Если вы уже выполнили вход, пока не нажимайте кнопку **Создать**.
->
-   
-![Вход в Azure](./media/app-service-web-get-started-dotnet/sign-in-azure.png)
+1. Выбор параметров на странице **создания Службы приложений** зависит от того, вошли ли вы в Azure и есть ли у вас учетная запись Visual Studio, связанная с учетной записью Azure. Выберите **Добавить учетную запись** или **Войти**, чтобы войти в подписку Azure. Если вы уже вошли, выберите нужную учетную запись.
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+   > [!NOTE]
+   > Если вы уже выполнили вход, пока не нажимайте кнопку **Создать**.
+   >
 
-[!INCLUDE [resource group intro text](../../includes/resource-group.md)]
+   ![Вход в Azure](./media/app-service-web-get-started-dotnet/sign-in-azure-vs2019.png)
 
-Рядом с **группой ресурсов** выберите команду **Создать**.
+   [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
 
-Присвойте группе ресурсов имя **myResourceGroup** и нажмите кнопку **ОК**.
+1. В разделе **Группа ресурсов** выберите **Создать**.
 
-## <a name="create-an-app-service-plan"></a>Создание плана службы приложений
+1. В разделе **Новое имя группы ресурсов** введите *myResourceGroup* и щелкните **ОК**.
 
-[!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
+   [!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
 
-Рядом с полем **План размещения** выберите **Создать**. 
+1. В разделе **План размещения** щелкните **Создать**.
 
-В диалоговом окне **Настроить план размещения** используйте параметры из таблицы, которая находится под снимком экрана.
+1. В разделе **Настройка плана размещения** введите значения из следующей таблицы и щелкните **ОК**.
 
-![Создание плана службы приложений](./media/app-service-web-get-started-dotnet/configure-app-service-plan.png)
+   | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+   |-|-|-|
+   |План обслуживания приложения| myAppServicePlan | Имя плана службы приложений. |
+   | Location | Западная Европа | Центр обработки данных, где размещается веб-приложение. |
+   | Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) определяет возможности размещения. |
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ |
-|-|-|-|
-|План обслуживания приложения| myAppServicePlan | Имя плана службы приложений. |
-| Location | Западная Европа | Центр обработки данных, где размещается веб-приложение. |
-| Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) определяет возможности размещения. |
+   ![Создание плана службы приложений](./media/app-service-web-get-started-dotnet/app-service-plan-vs2019.png)
 
-Нажмите кнопку **ОК**.
+1. В поле **Имя** введите уникальное имя приложения, включающее только допустимые символы: `a-z`, `A-Z`, `0-9` и `-`. Вы можете использовать автоматически созданное уникальное имя. URL-адрес веб-приложения: `http://<app_name>.azurewebsites.net`, где `<app_name>` — имя приложения.
 
-## <a name="create-and-publish-the-web-app"></a>Создание и публикация веб-приложения
+   ![Указание имени приложения](./media/app-service-web-get-started-dotnet/web-app-name-vs2019.png)
 
-В поле **Имя приложения** введите уникальное имя (допустимые символы: `a-z`, `0-9` и `-`) или примите уникальное имя, созданное автоматически. URL-адрес веб-приложения: `http://<app_name>.azurewebsites.net`, где `<app_name>` — имя приложения.
-
-Нажмите кнопку **Создать**, чтобы начать создавать ресурсы Azure.
-
-![Указание имени приложения](./media/app-service-web-get-started-dotnet/web-app-name.png)
+1. Нажмите кнопку **Создать**, чтобы начать создавать ресурсы Azure.
 
 Когда мастер завершит работу, веб-приложение ASP.NET Core будет опубликовано в Azure и запущено в браузере по умолчанию.
 
 ![Опубликованное веб-приложение ASP.NET в Azure](./media/app-service-web-get-started-dotnet/web-app-running-live.png)
 
-Имя приложения, указанное [на этапе создания и публикации](#create-and-publish-the-web-app), используется как префикс URL-адреса в формате `http://<app_name>.azurewebsites.net`.
+Имя приложения, указанное на странице **создания приложения в Службе приложений**, используется как префикс URL-адреса в формате `http://<app_name>.azurewebsites.net`.
 
-Поздравляем, ваше веб-приложение ASP.NET Core работает в службе приложений Azure в режиме реального времени.
+**Поздравляем!** Ваше веб-приложение ASP.NET Core работает в Службе приложений Azure в реальном времени.
 
 ## <a name="update-the-app-and-redeploy"></a>Обновление и повторное развертывание приложения
 
-В **обозревателе решений** откройте _Pages/Index.cshtml_.
+1. В **обозревателе решений** в проекте откройте **Страницы** > **Index.cshtml**.
 
-Замените содержимое двух тегов `<div>` кодом, приведенным ниже:
+1. Замените содержимое двух тегов `<div>` кодом, приведенным ниже:
 
-```HTML
-<div class="jumbotron">
-    <h1>ASP.NET in Azure!</h1>
-    <p class="lead">This is a simple app that we’ve built that demonstrates how to deploy a .NET app to Azure App Service.</p>
-</div>
-```
+   ```HTML
+   <div class="jumbotron">
+       <h1>ASP.NET in Azure!</h1>
+       <p class="lead">This is a simple app that we’ve built that demonstrates how to deploy a .NET app to Azure App Service.</p>
+   </div>
+   ```
 
-Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
+1. Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
 
-На странице сводных сведений публикации выберите **Опубликовать**.
-![Страница сводных сведений публикации в Visual Studio](./media/app-service-web-get-started-dotnet/publish-summary-page.png)
+1. На странице **Публикация** со сводными сведениями щелкните **Опубликовать**.
+
+   ![Страница сводных сведений о публикации в Visual Studio](./media/app-service-web-get-started-dotnet/publish-summary-page-vs2019.png)
 
 По завершении публикации Visual Studio открывает в браузере страницу с URL-адресом веб-приложения.
 
@@ -148,17 +139,17 @@ ms.locfileid: "70071752"
 
 ## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления веб-приложением.
+1. Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления веб-приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего приложения Azure.
+1. В меню слева выберите **Службы приложений**, а затем щелкните имя своего приложения Azure.
 
-![Переход к приложению Azure на портале](./media/app-service-web-get-started-dotnet/access-portal.png)
+   ![Переход к приложению Azure на портале](./media/app-service-web-get-started-dotnet/access-portal-vs2019.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. 
+   Отобразится страница обзора вашего веб-приложения. Здесь вы можете выполнять базовые задачи управления: просмотр, завершение, запуск, перезагрузку и удаление.
 
-![Колонка службы приложений на портале Azure](./media/app-service-web-get-started-dotnet/web-app-blade.png)
+   ![Служба приложений на портале Azure](./media/app-service-web-get-started-dotnet/web-app-general-vs2019.png)
 
-В меню слева доступно несколько страниц для настройки приложения. 
+   В меню слева доступно несколько страниц для настройки приложения.
 
 [!INCLUDE [Clean-up section](../../includes/clean-up-section-portal.md)]
 

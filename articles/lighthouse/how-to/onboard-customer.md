@@ -4,15 +4,15 @@ description: Узнайте, как подключить клиента к си�
 author: JnHs
 ms.author: jenhayes
 ms.service: lighthouse
-ms.date: 08/22/2019
+ms.date: 08/29/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 35cf61897d012690f0a0f752a7cb36270e11e10e
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: dabee74dc757a8ccdc4384662f5c9bc09a1e5fbe
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70012060"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165041"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -61,63 +61,8 @@ az account set --subscription <subscriptionId/name>
 az account show
 ```
 
-
-## <a name="ensure-the-customers-subscription-is-registered-for-onboarding"></a>Проверка регистрации подписки клиента для подключения
-
-Каждая подписка должна быть авторизована для подключения путем регистрации поставщика ресурсов **Microsoft.ManagedServices** вручную. Клиент может зарегистрировать подписку, выполнив действия, описанные в статье [Azure resource providers and types](../../azure-resource-manager/resource-manager-supported-services.md) (Поставщики и типы ресурсов Azure).
-
-Клиент может подтвердить, что подписка готова для подключения, одним из следующих способов.
-
-### <a name="azure-portal"></a>Портал Azure
-
-1. Выберите подписку на портале Azure.
-1. Выберите параметр **Поставщики ресурсов**.
-1. Убедитесь, что для поставщика ресурсов **Microsoft.ManagedServices** отображается состояние **Зарегистрировано**.
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell-interactive
-# Log in first with Connect-AzAccount if you're not using Cloud Shell
-
-Set-AzContext -Subscription <subscriptionId>
-Get-AzResourceProvider -ProviderNameSpace 'Microsoft.ManagedServices'
-```
-
-Эта команда должна вернуть результаты следующего вида:
-
-```output
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {registrationDefinitions}
-Locations         : {}
-
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {registrationAssignments}
-Locations         : {}
-
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {operations}
-Locations         : {}
-```
-
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
-
-```azurecli-interactive
-# Log in first with az login if you're not using Cloud Shell
-
-az account set –subscription <subscriptionId>
-az provider show --namespace "Microsoft.ManagedServices" --output table
-```
-
-Эта команда должна вернуть результаты следующего вида:
-
-```output
-Namespace                  RegistrationState
--------------------------  -------------------
-Microsoft.ManagedServices  Registered
-```
+> [!NOTE]
+> При подключении подписки (или одной или нескольких групп ресурсов в подписке) с помощью описанного здесь способа поставщик ресурсов **Microsoft. ManagedServices** будет зарегистрирован для этой подписки.
 
 ## <a name="define-roles-and-permissions"></a>Определение ролей и разрешений
 
@@ -129,8 +74,6 @@ Microsoft.ManagedServices  Registered
 > При назначении ролей должны использоваться [встроенные роли](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) управления доступом на основе ролей (RBAC). В настоящее время все встроенные роли поддерживаются с помощью системы делегированного управления ресурсами Azure, за исключением роли "Владелец" и любых встроенных ролей с разрешением [DataActions](https://docs.microsoft.com/azure/role-based-access-control/role-definitions#dataactions). Встроенная роль "Администратор доступа пользователей" поддерживается для ограниченного использования, как описано ниже. Пользовательские роли и [роли классического администратора подписки](https://docs.microsoft.com/azure/role-based-access-control/classic-administrators) также не поддерживаются.
 
 Чтобы определить авторизации, вам необходимо знать значения идентификатора для каждого пользователя, группы пользователей или субъекта-службы, которым требуется предоставить доступ. Вам также потребуется идентификатор определения роли для каждой встроенной роли, которую вы хотите назначить. Если их у вас еще нет, вы можете получить их одним из следующих способов.
-
-
 
 ### <a name="powershell"></a>PowerShell
 

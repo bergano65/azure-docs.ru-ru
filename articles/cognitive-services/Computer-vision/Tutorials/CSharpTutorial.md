@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 63b5130e3cade54a2fbc432b2391ad3ee1ea8a1a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 3da22d11dce1e535763476d906ac45f3da22bc8d
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004029"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141287"
 ---
 # <a name="sample-explore-an-image-processing-app-with-c"></a>Пример: изучение приложения для обработки изображений с использованием C#
 
@@ -33,7 +33,7 @@ ms.locfileid: "60004029"
 Прежде чем исследовать пример приложения, убедитесь, что выполнены следующие предварительные требования:
 
 * У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
-* У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
+* У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Запишите также URL-адрес конечной точки службы.
 
 ## <a name="get-the-sample-app"></a>Получение примера приложения
 
@@ -79,8 +79,9 @@ git clone --recurse-submodules https://github.com/Microsoft/Cognitive-Face-Windo
 1. При отображении примера приложения выберите **Управление ключами подписки** в области навигации, чтобы перейти на страницу управления ключами подписки.
    ![Страница управления ключами подписки](../Images/Vision_UI_Subscription.PNG)  
 1. Введите ключ подписки в поле **Ключ подписки**.
-1. Введите URL-адрес конечной точки без `/vision/v1.0` для ресурса API компьютерного зрения для ключа подписки в поле **Конечная точка**.  
-   Например, если вы используете ключ подписки из бесплатной пробной версии API компьютерного зрения, введите следующий URL-адрес конечной точки для региона Azure "Центрально-западная часть США": `https://westcentralus.api.cognitive.microsoft.com`
+1. Введите URL-адрес конечной точки в поле **Конечная точка**.  
+   Например, если вы используете ключ подписки из бесплатной пробной версии API "Компьютерное зрение", введите следующий URL-адрес конечной точки: `https://westcentralus.api.cognitive.microsoft.com`
+   [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)].
 1. Если вы не хотите вводить ключ подписки и URL-адрес конечной точки при следующем запуске примера приложения, выберите **Сохранить параметр**, чтобы сохранить ключ подписки и URL-адрес конечной точки на компьютере. Если вы хотите удалить ранее сохраненный ключ подписки и URL-адрес конечной точки, выберите **Удалить параметр**.
 
    > [!NOTE]

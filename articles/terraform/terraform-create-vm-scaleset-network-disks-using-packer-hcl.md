@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/29/2017
-ms.openlocfilehash: 5aff45b4a6b5da62569e0a39c13239a726e6b80b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 08/28/2019
+ms.openlocfilehash: 9a80cb7ba44c86d449e4ff4178a2982db302a717
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001996"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70138342"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Создание масштабируемого набора виртуальных машин Azure из пользовательского образа Packer с помощью Terraform
 
@@ -44,7 +44,7 @@ ms.locfileid: "58001996"
 
 - ```variables.tf``` — этот файл содержит значения переменных, используемых в шаблоне.
 - ```output.tf``` — этот файл описывает параметры, отображающиеся после развертывания.
-- ```vmss.tf``` — этот файл содержит код инфраструктуры, для которой выполняется развертывание.
+- ```vmss.tf``` — этот файл содержит код инфраструктуры, для которой выполняется развертывание.
 
 ##  <a name="create-the-variables"></a>Создание переменных 
 
@@ -124,7 +124,7 @@ resource "azurerm_public_ip" "vmss" {
   name                         = "vmss-public-ip"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.vmss.name}"
-  public_ip_address_allocation = "static"
+  allocation_method            = "static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}"
 
   tags {
@@ -175,11 +175,11 @@ terraform apply
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>Изменение инфраструктуры для добавления масштабируемого набора виртуальных машин
 
 На этом шаге создайте следующие ресурсы в предварительно развернутой сети.
-- Подсистема балансировки нагрузки Azure для обслуживания приложения и подключения к общедоступному IP-адресу, развернутому на шаге 4.
+- Подсистема балансировки нагрузки Azure для обслуживания приложения и подключения к общедоступному IP-адресу, развернутому ранее.
 - Одна подсистема балансировки нагрузки и правила для обслуживания приложения и подключения ее к общедоступному IP-адресу, настроенному ранее.
-- Внутренний пул адресов Azure для присвоения подсистеме балансировки нагрузки. 
-- Порт проверки работоспособности, используемый приложением и настраиваемый в подсистеме балансировки нагрузки. 
-- Масштабируемый набор виртуальных машин, защищенный подсистемой балансировки нагрузки, выполняемый в виртуальной сети, созданной ранее.
+- Внутренний пул адресов Azure для присвоения подсистеме балансировки нагрузки.
+- Порт проверки работоспособности, используемый приложением и настраиваемый в подсистеме балансировки нагрузки.
+- Масштабируемый набор виртуальных машин, защищенный подсистемой балансировки нагрузки и выполняемый в виртуальной сети, созданной ранее.
 - [Nginx](https://nginx.org/) на узлах масштабирования виртуальных машин, установленных из пользовательского образа.
 
 
@@ -290,6 +290,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
       name                                   = "IPConfiguration"
       subnet_id                              = "${azurerm_subnet.vmss.id}"
       load_balancer_backend_address_pool_ids = ["${azurerm_lb_backend_address_pool.bpepool.id}"]
+      primary = true
     }
   }
   
@@ -355,7 +356,7 @@ resource "azurerm_public_ip" "jumpbox" {
   name                         = "jumpbox-public-ip"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.vmss.name}"
-  public_ip_address_allocation = "static"
+  allocation_method            = "static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}-ssh"
 
   tags {

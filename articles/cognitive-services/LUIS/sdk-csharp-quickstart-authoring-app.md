@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 08/12/2019
+ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 11f40d99a36493272cb6cd51e4a339c19cd0358b
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: d7668f49df1caca6b4261424b0d2c025a640d572
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966738"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258784"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-net"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для .NET
 
@@ -37,9 +37,9 @@ ms.locfileid: "68966738"
 
 ## <a name="setting-up"></a>Настройка
 
-### <a name="get-your-language-understanding-luis-authoring-key"></a>Получение ключа разработки LUIS
+### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
 
-Получите [ключ разработки](luis-how-to-account-settings.md) и [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `COGNITIVESERVICE_AUTHORING_KEY`.
+Получите [начальный ключ](luis-how-to-azure-subscription.md#starter-key) и [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `COGNITIVESERVICE_AUTHORING_KEY`.
 
 ### <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
@@ -190,7 +190,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring --v
 
 Перейдите к каталогу приложения и запустите приложение с помощью команды dotnet `run`.
 
-```dotnet
+```console
 dotnet run
 ```
 

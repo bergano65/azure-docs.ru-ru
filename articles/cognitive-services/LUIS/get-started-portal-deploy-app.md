@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 05/07/2019
+ms.date: 09/02/2019
 ms.author: diberry
-ms.openlocfilehash: 5c310c1943eaf23423be873c6172e27c621fe109
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4e9ecdad0fb4d02f160977fa28a484b2a3a5bb30
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564076"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257078"
 ---
 # <a name="quickstart-deploy-an-app-in-the-luis-portal"></a>Краткое руководство. Развертывание приложения на портале LUIS
 
@@ -59,11 +59,11 @@ ms.locfileid: "68564076"
 
 1. Войдите на [портал LUIS](https://www.luis.ai) и выберите приложение **myEnglishApp** из списка приложений.
 
-1. Выберите **Управление** в верхнем правом меню, а затем выберите **Keys and endpoints** (Ключи и конечные точки).
+1. В верхнем правом меню выберите **Manage** (Управление), **Azure Resources** (Ресурсы Azure).
 
-1. Чтобы добавить LUIS, выберите **+ Assign Resource** (+ Присвоить ресурс).
+1. Чтобы добавить LUIS, выберите **Add prediction resource** (Добавить ресурс прогнозирования).
 
-   [![Присвоение ресурса приложению](./media/get-started-portal-deploy-app/assign-resource-button.png)](./media/get-started-portal-deploy-app/assign-resource-button.png#lightbox)
+    <!-- TBD: get screenshot-->
 
 1. Выберите клиент, подписку и группу ресурсов. Выберите **Assign resource** (Присвоить ресурс).
 

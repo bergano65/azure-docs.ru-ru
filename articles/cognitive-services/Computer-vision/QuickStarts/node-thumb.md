@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ca161952cb909a0902e0a441fcdead8ba896982f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 8307b572eb73a96c23f3327cbda4ad2ac3126acc
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67605835"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137719"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-nodejs"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и Node.js
 
@@ -28,7 +28,7 @@ ms.locfileid: "67605835"
 
 - Установите платформу [Node.js](https://nodejs.org) 4.x или более поздней версии.
 - Установите [npm](https://www.npmjs.com/).
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
@@ -45,10 +45,7 @@ ms.locfileid: "67605835"
    1. После успешной установки пакета закройте окно командной строки.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости внесите в код следующие изменения.
-    1. Замените значение `subscriptionKey` своим ключом подписки.
-    1. Замените значение `uriBase` URL-адресом конечной точки для метода [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) из региона Azure, где вы получили ключи подписки, если это необходимо.
-    1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
+1. При необходимости замените значение `imageUrl` URL-адресом другого изображения, анализ которого следует выполнить.
 1. Сохраните код как файл с расширением `.js`. Например, `get-thumbnail.js`.
 1. Откройте окно командной строки.
 1. В командной строке запустите файл с помощью команды `node`. Например, `node get-thumbnail.js`.
@@ -58,14 +55,11 @@ ms.locfileid: "67605835"
 
 const request = require('request');
 
-// Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '<Subscription Key>';
+let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
+let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
+if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
 
-// You must use the same location in your REST call as you used to get your
-// subscription keys. For example, if you got your subscription keys from
-// westus, replace "westcentralus" in the URL below with "westus".
-const uriBase =
-    'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail';
+var uriBase = endpoint + 'vision/v2.0/generateThumbnail';
 
 const imageUrl =
     'https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg';

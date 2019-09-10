@@ -1,29 +1,22 @@
 ---
-title: Создание Виртуальной машины для обработки и анализа данных с ОС Ubuntu Linux
-titleSuffix: Azure
+title: Краткое руководство по Linux (Ubuntu)
+titleSuffix: Azure Data Science Virtual Machine
 description: Создание и настройка виртуальной машины Linux (Ubuntu) в Azure для обработки и анализа данных и машинного обучения.
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-ms.author: vijetaj
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: 3bab0ab9-3ea5-41a6-a62a-8c44fdbae43b
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: quickstart
 ms.date: 08/13/2019
-ms.openlocfilehash: 3aa32d8e42079a1aa4bdd7a18a24f7d5d01f7c3e
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 9b323970e735a3e2a9d2cf418b787ed046c5574d
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011651"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192091"
 ---
-# <a name="provision-the-data-science-virtual-machine-for-linux-ubuntu"></a>Подготовка виртуальной машины Linux (Ubuntu) для обработки и анализа данных
+# <a name="quickstart-set-up-the-data-science-virtual-machine-for-linux-ubuntu"></a>Краткое руководство. Настройка Виртуальной машины Linux (Ubuntu) для обработки и анализа данных
 
 Виртуальная машина для обработки и анализа данных (DSVM) для Linux — это образ виртуальной машины Azure на основе Ubuntu, который позволяет легко начать работу с машинным обучением в Azure, включая глубокое обучение. Доступны следующие инструменты глубокого обучения:
 
@@ -366,7 +359,7 @@ LaTeX устанавливается с помощью пакета texlive вм
 На виртуальной машине установлены следующие инструменты Azure:
 
 * **Azure CLI.** Этот интерфейс командной строки позволяет создавать ресурсы Azure и управлять ими с помощью команд оболочки. Чтобы открыть средства Azure, введите **azure help**. Дополнительные сведения см. на [странице документации по Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
-* **Обозреватель службы хранилища**. Обозреватель службы хранилища — это графический инструмент, который позволяет просматривать объекты, сохраненные в учетной записи хранения Azure, а также передавать и скачивать данные BLOB-объектов Azure. Для доступа к обозревателю хранилищ воспользуйтесь значком рабочего стола. Его можно открыть из командной строки, введя команду **StorageExplorer**. Для этого необходимо выполнить вход в клиенте X2Go или настроить перенаправление X11.
+* **Обозреватель службы хранилища.** Обозреватель службы хранилища — это графический инструмент, который позволяет просматривать объекты, сохраненные в учетной записи хранения Azure, а также передавать и скачивать данные BLOB-объектов Azure. Для доступа к обозревателю хранилищ воспользуйтесь значком рабочего стола. Его можно открыть из командной строки, введя команду **StorageExplorer**. Для этого необходимо выполнить вход в клиенте X2Go или настроить перенаправление X11.
 * **Библиотеки Azure**. Ниже приведены некоторые предварительно установленные библиотеки.
   
   * **Python**. К библиотекам Python для Azure относятся *azure*, *azureml*, *pydocumentdb* и *pyodbc*. Первые три библиотеки позволяют обращаться к службам хранилища Azure, Машинному обучению Azure и Azure Cosmos DB (база данных NoSQL в Azure). Четвертая библиотека, pyodbc, (вместе с драйвером Microsoft ODBC для SQL Server) обеспечивает доступ к SQL Server, Базе данных SQL Azure и хранилищу данных SQL Azure из Python с помощью интерфейса ODBC. Для просмотра всех перечисленных библиотек введите команду **pip list**. Выполните эту команду как в среде Python версии 2.7, так и в среде Python версии 3.5.

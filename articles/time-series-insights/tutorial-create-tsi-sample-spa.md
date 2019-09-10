@@ -4,16 +4,16 @@ description: Описание способов создания одностра
 author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 06/29/2019
+ms.date: 08/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 4d9af918c222107cfca5863309efb391b8e6d2e0
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 031e8074585426584d7ef63a103c9c2b4d90e6c3
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720867"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194212"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения службы "Аналитика временных рядов Azure"
 
@@ -127,6 +127,10 @@ ms.locfileid: "68720867"
 
       [![Область "Профиль публикации" в Visual Studio](media/tutorial-create-tsi-sample-spa/vs-publish-profile-target.png)](media/tutorial-create-tsi-sample-spa/vs-publish-profile-target.png#lightbox)
 
+   1. Опубликуйте новый экземпляр Службы приложений Azure или выберите существующий.
+
+      [![Выбор экземпляра Службы приложений Azure](media/tutorial-create-tsi-sample-spa/vs-publish-select-target.png)](media/tutorial-create-tsi-sample-spa/vs-publish-select-target.png#lightbox)
+
    1. Выберите подписку, которую вы хотите использовать для публикации приложения. Выберите проект **TsiSpaApp**. Нажмите кнопку **ОК**.
 
       [![Область "Профиль публикации" службы приложений в Visual Studio](media/tutorial-create-tsi-sample-spa/vs-publish-profile-app-service.png)](media/tutorial-create-tsi-sample-spa/vs-publish-profile-app-service.png#lightbox)
@@ -137,12 +141,16 @@ ms.locfileid: "68720867"
 
    1. Журнал успешной публикации отображается в области **Выходные данные** в Visual Studio. После завершения развертывания на вкладке браузера откроется запрос для входа в веб-приложение. После успешного входа элементы управления Аналитики временных рядов заполняются данными.
 
+   1. Войдите в веб-приложение, чтобы просмотреть отображаемые визуальные данные Аналитики временных рядов.
+
+      [![Проверка размещенного веб-приложения](media/tutorial-create-tsi-sample-spa/vs-publish-hosted-app.png)](media/tutorial-create-tsi-sample-spa/vs-publish-hosted-app.png#lightbox)
+
 ## <a name="troubleshoot"></a>Устранение неполадок  
 
 Код ошибки и состояние | ОПИСАНИЕ
 ---------------------| -----------
-*AADSTS50011. Для приложения не зарегистрирован адрес ответа* | В регистрации Azure AD отсутствует свойство **URL-адрес ответа**. Перейдите на страницу **Параметры** > **URL-адреса ответа** для регистрации приложения Azure AD. Убедитесь в наличии **URI перенаправления**, который вы могли указать на **шаге 2** или **шаге 4** при [регистрации приложения для использования Azure AD](#register-with-azure-ad).
-*AADSTS50011. The reply url specified in the request does not match the reply urls configured for the application: '\<Application ID GUID>'.* (Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: <глобальный уникальный идентификатор приложения>.) | Значение `postLogoutRedirectUri`, указанное на **шаге 6.б** в разделе [Создание и публикация веб-приложения](#build-and-publish), должно соответствовать значению, указанному в свойстве **Параметры** > **URL-адреса ответа** в регистрации приложения Azure AD. |
+*AADSTS50011. Для приложения не зарегистрирован адрес ответа* | В регистрации Azure AD отсутствует свойство **URL-адрес перенаправления**. Перейдите на страницу **Аутентификация** > **URL-адреса перенаправления** для регистрации приложения Azure AD. Убедитесь в наличии **URI перенаправления**, который вы могли указать на **шаге 2** или **шаге 4** при [регистрации приложения для использования Azure AD](#register-with-azure-ad).
+*AADSTS50011. The reply url specified in the request does not match the reply urls configured for the application: '\<Application ID GUID>'.* (Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: <глобальный уникальный идентификатор приложения>.) | Значение `postLogoutRedirectUri`, указанное на **шаге 6.б** в разделе [Создание и публикация веб-приложения](#build-and-publish), должно соответствовать значению, указанному в разделе **Аутентификация** > **URL-адреса перенаправления** в регистрации приложения Azure AD. |
 Веб-приложение загружается, но на странице входа есть только текст и белый фон без стилей. | Убедитесь, что пути, описанные на **шаге 6** в разделе [Создание и публикация веб-приложения](#build-and-publish), заданы правильно. Если веб-приложение не может найти файлы CSS, страница не будет правильно отображаться.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

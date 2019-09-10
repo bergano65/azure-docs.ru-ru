@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 07/26/2019
 ms.author: pafarley
-ms.openlocfilehash: 011345cca1ed1c763a628c94401320862182c9cc
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: f0bd4a49a35392c25b8985aa68ad4e4b66be026c
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707352"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306521"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
 
@@ -109,6 +109,14 @@ pip install --upgrade azure-cognitiveservices-Face
 
 Примеры кода для других сценариев обнаружения доступны на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/Face/FaceQuickstart.py).
 
+### <a name="display-and-frame-faces"></a>Отображение лиц и их выделение рамкой
+
+Следующий код выводит заданное изображение на экран и отмечает рамкой присутствующие на нем лица с помощью свойства DetectedFace.faceRectangle.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_frame)]
+
+![Молодая женщина, вокруг лица которой нарисован красный прямоугольник](../images/face-rectangle-result.png)
+
 ## <a name="find-similar-faces"></a>Поиск похожих лиц
 
 Следующий код принимает одно обнаруженное лицо и выполняет поиск совпадений в коллекции других лиц. При обнаружении совпадения в консоль выводятся координаты прямоугольника лица, с которым найдено совпадение. 
@@ -135,7 +143,7 @@ pip install --upgrade azure-cognitiveservices-Face
 
 ### <a name="create-persongroup"></a>Создание PersonGroup
 
-Для этого сценария необходимо сохранить следующие изображения в корневом каталоге проекта: https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
+Для выполнения этого сценария необходимо сохранить следующие изображения в корневом каталоге проекта https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
 
 Эта группа изображений содержит три коллекции изображений лиц, соотносящихся с лицами трех разных людей. Код определит три объекта **Person** и соотнесет их с файлами изображений, которые начинаются с префикса `woman`, `man` и `child`.
 
@@ -161,7 +169,7 @@ pip install --upgrade azure-cognitiveservices-Face
 
 ## <a name="identify-a-face"></a>Опознание лица
 
-Следующий код принимает изображение с несколькими лицами и опознает каждое лицо на изображении. Он сравнивает каждое обнаруженное лицо с **PersonGroup**, базой данных различных объектов **Person**, в каждом из которых хранится несколько изображений лиц соответствующего объекта. 
+Следующий код принимает изображение с несколькими лицами и опознает каждое лицо на изображении. Он сравнивает каждое обнаруженное лицо с **PersonGroup**, которая является базой данных объектов **Person** с известными характеристиками лиц.
 
 > [!IMPORTANT]
 > Чтобы выполнить этот пример, сначала необходимо выполнить код из раздела [Создание и обучение на основе изображения группы людей](#create-and-train-a-person-group).
@@ -188,7 +196,7 @@ pip install --upgrade azure-cognitiveservices-Face
 
 Во-первых, у вас должна быть вторая подписка Azure с ресурсом API Распознавания лиц. Для этого выполните инструкции из раздела [Настройка](#setting-up). 
 
-Затем создайте следующие переменные в верхней части скрипта. Кроме того, вам потребуется создать новые переменные среды для идентификатора подписки учетной записи Azure, а также ключ и идентификатор подписки для новой (целевой) учетной записи. 
+Затем создайте следующие переменные в верхней части скрипта. Вам также потребуется создать новые переменные среды для идентификатора подписки учетной записи Azure, ключ, конечную точку и идентификатор подписки для новой (целевой) учетной записи. 
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshotvars)]
 

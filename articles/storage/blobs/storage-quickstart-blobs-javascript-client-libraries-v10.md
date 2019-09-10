@@ -1,22 +1,20 @@
 ---
 title: Краткое руководство. Создание большого двоичного объекта в службе хранилища Azure с помощью JavaScript и HTML в браузере
-description: Узнайте, как использовать экземпляр BlobService для загрузки, получения списка и удаления больших двоичных объектов с помощью JavaScript на странице HTML.
+description: Узнайте, как выполнять загрузку и удаление, а также получать список больших двоичных объектов с помощью JavaScript на странице HTML.
 services: storage
-keywords: storage, javascript, html
 author: KarlErickson
 ms.custom: mvc
 ms.service: storage
 ms.author: karler
-ms.reviewer: seguler
-ms.date: 05/20/2019
+ms.date: 08/29/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: ea5dfe2261be4512d4ba8edda1e7fbd5219a50c0
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: fc6ccaae698043db631c7724c6aabbca16f4328f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986880"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172834"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -38,7 +36,7 @@ ms.locfileid: "68986880"
 
 Вернитесь на портал Azure и выберите вашу учетную запись хранения. Чтобы определить новое правило CORS, перейдите к разделу **Параметры** и выберите ссылку **CORS**. Далее нажмите кнопку **Добавить**, чтобы открыть окно **Добавление правила CORS**. В этом руководстве создается открытое правило CORS:
 
-![Параметры CORS учетной записи хранения больших двоичных объектов](media/storage-quickstart-blobs-javascript-client-libraries/azure-blob-storage-cors-settings.png)
+![Параметры CORS учетной записи хранения больших двоичных объектов](media/storage-quickstart-blobs-javascript-client-libraries-v10/azure-blob-storage-cors-settings.png)
 
 В следующей таблице описывается каждый параметр CORS и объясняются значения, используемые для определения правила.
 

@@ -9,12 +9,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 05/02/2019
-ms.openlocfilehash: 6f72daa4a601df0e3592910645c2f9b35ab64431
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 0218221426351b0b508021fc74693557f200b4e8
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845817"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309263"
 ---
 # <a name="tutorial-build-a-regression-model-with-automated-machine-learning-and-open-datasets"></a>Руководство по Создание регрессионной модели с помощью автоматизированного машинного обучения и открытых наборов данных
 
@@ -1246,7 +1246,7 @@ weather_df.head(10)
 
 Снова вызовите `pandas.Series.dt.normalize` для поля `datetime` в данных о погоде, чтобы обеспечить соответствие с ключом времени в `taxi_holidays_df`. Удалите ненужные столбцы и отфильтруйте записи, в которых значение температура не является числом (`NaN`).
 
-Затем сгруппируйте данные о погоде, чтобы получить агрегированные данные по дням. Определите словарь `aggregations` для определения способов агрегирования данных в каждом поле по дням. Для `snowDepth` и `temperature` примите среднее значение, а для `precipTime` и `precipDepth` — максимальное значение за день. Используйте функцию `groupby()` наряду с агрегированием, чтобы сгруппировать данные. Проверьте данные и убедитесь в том, что для каждого дня имеется только одна запись.
+Затем сгруппируйте данные о погоде, чтобы получить агрегированные данные по дням. Определите словарь с именем `aggregations` для определения способов агрегирования данных в каждом поле по дням. Для `snowDepth` и `temperature` примите среднее значение, а для `precipTime` и `precipDepth` — максимальное значение за день. Используйте функцию `groupby()` наряду с агрегированием, чтобы сгруппировать данные. Проверьте данные и убедитесь в том, что для каждого дня имеется только одна запись.
 
 ```python
 weather_df["datetime"] = weather_df["datetime"].dt.normalize()
