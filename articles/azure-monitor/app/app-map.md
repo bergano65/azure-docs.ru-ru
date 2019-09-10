@@ -272,6 +272,6 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляции телеметрии]https://docs.microsoft.com/azure/application-insights/application-insights-correlation) (.
+* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляции телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.
 * Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в статье [Track Custom Operations](custom-operations-tracking.md) .
