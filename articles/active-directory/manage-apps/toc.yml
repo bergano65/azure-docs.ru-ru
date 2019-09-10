@@ -228,10 +228,14 @@
               href: Customize-application-attributes.md
             - name: Фильтры области
               href: define-conditional-rules-for-provisioning-user-accounts.md
+            - name: 'Пропуск пользователей, которые не входят в текущую область, при удалении'
+              href: skip-out-of-scope-deletions.md
             - name: Проверка состояния подготовки
               href: application-provisioning-when-will-provisioning-finish-specific-user.md
             - name: Отчеты об автоматической подготовке пользователей
               href: check-status-user-account-provisioning.md
+            - name: Экспорт и импорт конфигурации
+              href: export-import-provisioning-configuration.md
         - name: Устранение неполадок с подготовкой пользователей
           items:
             - name: Устранение неполадок с подготовкой пользователей

@@ -132,6 +132,8 @@
           href: using-metrics.md
     - name: Интеграция с другими средствами
       items:
+        - name: Массовое копирование данных с помощью шаблона Фабрики данных Azure
+          href: data-factory-template.md
         - name: Соединитель Apache Spark
           href: spark-connector.md
         - name: Подключение из Databricks с помощью Python

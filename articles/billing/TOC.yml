@@ -71,6 +71,8 @@
               href: billing-prepay-app-service-isolated-stamp.md
             - name: Планы программного обеспечения Azure
               href: ../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/billing/TOC.json
+            - name: Приобретение резервирования с ежемесячными платежами
+              href: billing-monthly-payments-reservations.md
             - name: Возобновление резервирований
               href: billing-reservation-renew.md
         - name: Способ применения скидки

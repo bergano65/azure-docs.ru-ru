@@ -38,7 +38,7 @@ ms.locfileid: "67786649"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Python 3.6+][python]
-* Бесплатный ключ для службы '[Компьютерное зрение'][computervision_resource]. Эти значения необходимы при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов.
+* Бесплатный ключ для службы '[Компьютерное зрение'][computervision_resource]. Эти значения необходимы при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient]. Получить данные значения можно с помощью одного из указанных ниже методов.
 
 ### <a name="if-you-dont-have-an-azure-subscription"></a>Если у вас нет подписки Azure
 
@@ -84,7 +84,7 @@ source cogsrv-vision-env/bin/activate
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
-Установите [пакет][pypi_computervision] SDK Компьютерного зрения Cognitive Services Azure для Python с помощью [pip][pip].
+Установите [пакет][pypi_computervision] SDK Компьютерного зрения Azure Cognitive Services для Python посредством [pip][pip].
 
 ```Bash
 pip install azure-cognitiveservices-vision-computervision
@@ -154,7 +154,7 @@ client = ComputerVisionClient(endpoint, credentials)
 
 ### <a name="analyze-an-image"></a>Анализ изображения
 
-Изображение можно анализировать на определенные особенности с помощью [`analyze_image`][ref_computervisionclient_analyze_image]. Используйте свойство [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы анализа для изображения. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
+Изображение можно анализировать на определенные особенности с помощью [`analyze_image`][ref_computervisionclient_analyze_image]. Используйте свойство [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы анализа, выполняемого на изображении. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
 
 ```Python
 url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"
@@ -216,7 +216,7 @@ for caption in analysis.captions:
 
 ### <a name="get-text-from-image"></a>Получение текста из изображения
 
-Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`batch_read_file`](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python)[`get_read_operation_result` и ](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python). Вызов к `batch_read_file` выполняется асинхронно. Прежде чем извлекать тестовые данные, необходимо проверить результаты вызова `get_read_operation_result` на то, был ли завершен первый вызов с кодами [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста.
+Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`batch_read_file`](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python) и [`get_read_operation_result`](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python). Вызов к `batch_read_file` выполняется асинхронно. Прежде чем извлекать тестовые данные, необходимо проверить результаты вызова `get_read_operation_result` на то, был ли завершен первый вызов с кодами [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста.
 
 ```Python
 # import models
@@ -286,7 +286,7 @@ image.save('thumbnail.jpg')
 
 ### <a name="general"></a>Общие сведения
 
-При взаимодействии с клиентским объектом [ComputerVisionClient][ref_computervisionclient] с помощью пакета SDK для Python используется класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
+При взаимодействии с клиентским объектом [ComputerVisionClient][ref_computervisionclient] используя пакет Python SDK, класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] используется для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
 
 Например, при попытке проанализировать изображение с неверным ключом будет возвращена ошибка `401`. В следующем фрагменте кода [ошибка][ref_httpfailure] корректно обрабатывается путем перехвата исключения и отображения дополнительной информации об этой ошибке.
 
