@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: 1c30d9e70facaf9ab47bd33e5ca1fc1d35c6c979
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 7c4c80950e43f374b40085cb4e1c3e026e5f3abd
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405861"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "68698285"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -47,7 +47,8 @@ ms.locfileid: "68405861"
 * [Шлюз приложений](#application-gateway-limits)
 * [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
-* [Облачные службы Azure](#azure-cloud-services-limits)
+* [Oблачныe службы Azure2}
+* [Azure Cognitive Services](#azure-cognitive-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
 * [База данных Azure для MySQL](#azure-database-for-mysql)
 * [База данных Azure для PostgreSQL](#azure-database-for-postgresql)
@@ -84,7 +85,7 @@ ms.locfileid: "68405861"
 * [Сеть](#networking-limits)
   * [Шлюз приложений](#application-gateway-limits)
   * [Azure DNS](#azure-dns-limits)
-  * [Служба "Передняя дверца Azure"](#azure-front-door-service-limits)
+  * [Azure Front Door Service](#azure-front-door-service-limits)
   * [Брандмауэр Azure](#azure-firewall-limits)
   * [ExpressRoute](#expressroute-limits)
   * [Load Balancer](#load-balancer)
@@ -93,7 +94,7 @@ ms.locfileid: "68405861"
   * [Диспетчер трафика](#traffic-manager-limits)
   * [Виртуальная сеть](#networking-limits)
 * [Центры уведомлений](#notification-hubs-limits)
-* [Группа ресурсов](#resource-group-limits)
+* [группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
 * [Служебная шина](#service-bus-limits)
@@ -103,7 +104,7 @@ ms.locfileid: "68405861"
 * [Хранилище](#storage-limits)
 * [StorSimple System](#storsimple-system-limits)
 * [Анализ потока](#stream-analytics-limits)
-* [Подписка](#subscription-limits)
+* [подписка](#subscription-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 
@@ -184,9 +185,9 @@ ms.locfileid: "68405861"
 <!--like # storage accts -->
 [!INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-Дополнительные сведения об ограничениях учетной записи хранения см. в статье целевые показатели [масштабируемости и производительности службы хранилища Azure](storage/common/storage-scalability-targets.md).
+Дополнительные сведения об ограничениях учетной записи хранения см. в статье [целевые показатели масштабируемости и производительности службы хранилища Azure](storage/common/storage-scalability-targets.md).
 
-#### <a name="storage-resource-provider-limits"></a>Ограничения поставщика ресурсов хранилища 
+#### <a name="storage-resource-provider-limits"></a>Ограничения поставщика ресурсов хранилища
 
 [!INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -194,7 +195,7 @@ ms.locfileid: "68405861"
 [!INCLUDE [storage-blob-scale-targets](../includes/storage-blob-scale-targets.md)]
 
 #### <a name="azure-files-limits"></a>Ограничения службы "Файлы Azure"
-Дополнительные сведения об ограничениях для файлов Azure см. в статье целевые показатели [масштабируемости и производительности службы файлов Azure](storage/files/storage-files-scale-targets.md).
+Дополнительные сведения об ограничениях для файлов Azure см. в статье [целевые показатели масштабируемости и производительности службы файлов Azure](storage/files/storage-files-scale-targets.md).
 
 [!INCLUDE [storage-files-scale-targets](../includes/storage-files-scale-targets.md)]
 
@@ -225,6 +226,9 @@ ms.locfileid: "68405861"
 
 ### <a name="azure-cloud-services-limits"></a>Ограничения облачных служб Azure
 [!INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
+
+### <a name="azure-cognitive-services-limits"></a>Ограничения Cognitive Services Azure
+[!INCLUDE [azure-cloud-services-limits](../includes/azure-cognitive-services-limits.md)]
 
 ### <a name="app-service-limits"></a>Ограничения службы приложений
 Следующие ограничения Службы приложения включают ограничения для веб-приложений, мобильных приложений, приложений API.

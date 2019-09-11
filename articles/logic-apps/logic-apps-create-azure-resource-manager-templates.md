@@ -9,25 +9,27 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 07/26/2019
-ms.openlocfilehash: 7d216a3706c13a5fff312850e244a521ab22ae9e
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
-ms.translationtype: MT
+ms.openlocfilehash: 9e62dd25c3ff16e280eda1ad11053ef520a85e4d
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386542"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706524"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертывания Azure Logic Apps
 
 Чтобы помочь вам автоматизировать создание и развертывание приложения логики, в этой статье описываются способы создания [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для приложения логики. Общие сведения о структуре и синтаксисе шаблона, содержащего определение рабочего процесса и другие ресурсы, необходимые для развертывания, см. в [разделе Обзор: Автоматизируйте развертывание приложений логики с помощью](logic-apps-azure-resource-manager-templates-overview.md)шаблонов Azure Resource Manager.
 
-Azure Logic Apps предоставляет предварительно [созданные приложения логики Azure Resource Manager шаблона](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) , которые можно повторно использовать, не только для создания приложений логики, но и для определения ресурсов и параметров, используемых для развертывания. Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями. Дополнительные сведения о шаблонах Azure Resource Manager см. в следующих разделах:
+Azure Logic Apps предоставляет [готовый шаблон приложения логики Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/blob/master/101-logic-app-create/azuredeploy.json) , который можно повторно использовать, не только для создания приложений логики, но и для определения ресурсов и параметров, используемых для развертывания. Вы можете использовать этот шаблон для собственных бизнес-сценариев или настроить его в соответствии со своими требованиями.
+
+> [!IMPORTANT]
+> Убедитесь, что подключения в шаблоне используют ту же группу ресурсов Azure и расположение, что и приложение логики.
+
+Дополнительные сведения о шаблонах Azure Resource Manager см. в следующих разделах:
 
 * [Структура и синтаксис шаблона Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Шаблоны диспетчера ресурсов Azure](../azure-resource-manager/resource-group-authoring-templates.md)
 * [Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком](../azure-resource-manager/templates-cloud-consistency.md)
-
-> [!IMPORTANT]
-> Подключения в шаблоне должны использовать ту же группу ресурсов и расположение Azure, что и приложение логики.
 
 <a name="visual-studio"></a>
 
@@ -47,6 +49,13 @@ Azure Logic Apps предоставляет предварительно [соз
 Шаблоны диспетчер ресурсов можно создать с помощью Azure PowerShell с модулем [логикапптемплате](https://github.com/jeffhollan/LogicAppTemplateCreator). Этот модуль с открытым исходным кодом сначала оценивает приложение логики и все подключения, используемые приложением логики. Затем модуль создает ресурсы шаблона с необходимыми параметрами для развертывания.
 
 Например, предположим, что у вас есть приложение логики, которое получает сообщение из очереди служебной шины Azure и отправляет данные в базу данных SQL Azure. Модуль сохраняет всю логику оркестрации и параметризовать строки подключения SQL и служебной шины, чтобы вы могли предоставлять и изменять эти значения в зависимости от потребностей развертывания.
+
+В этих примерах показано, как создавать и развертывать приложения логики с помощью шаблонов Azure Resource Manager, Azure Pipelines в Azure DevOps и Azure PowerShell.
+
+* [Пример. Подключение к очередям служебной шины Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетным записям хранения Azure из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Настройка действия приложения-функции для Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетной записи интеграции из Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
 
 ### <a name="install-powershell-modules"></a>Установка модулей PowerShell
 

@@ -30,6 +30,18 @@
           href: event-hubs-dotnet-standard-getstarted-send.md
         - name: Java
           href: event-hubs-java-get-started-send.md
+        - name: Python
+          href: event-hubs-python-get-started-send.md
+        - name: Node.js
+          href: event-hubs-node-get-started-send.md
+        - name: Go
+          href: event-hubs-go-get-started-send.md
+        - name: C (только отправка)
+          href: event-hubs-c-getstarted-send.md
+        - name: Apache Storm (только получение)
+          href: event-hubs-storm-getstarted-receive.md
+        - name: .NET Framework
+          href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Сбор событий
       items:
         - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
@@ -104,46 +116,20 @@
           href: event-hubs-exchange-events-different-protocols.md
         - name: Руководство по программированию
           href: event-hubs-programming-guide.md
+        - name: 'Отправка, получение и запись событий с помощью Python'
+          href: event-hubs-python.md
     - name: Обработка данных
       items:
         - name: Обработка данных с помощью Azure Stream Analytics
           href: process-data-azure-stream-analytics.md
-    - name: Использование клиентских библиотек
+    - name: Интеграция с платформой Spring
       items:
-        - name: .NET Framework
-          items:
-            - name: Отправка и получение событий с помощью .NET Framework
-              href: event-hubs-dotnet-framework-getstarted-send.md
-        - name: Java
-          items:
-            - name: Создание приложения Spring Cloud Stream Binder
-              href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
-              maintainContext: true
-            - name: Использование начального приложения Spring Boot для Apache Kafka
-              href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
-              maintainContext: true
-        - name: Python
-          items:
-            - name: Отправка и получение событий с помощью Python
-              href: event-hubs-python-get-started-send.md
-            - name: 'Отправка, получение и запись событий с помощью Python'
-              href: event-hubs-python.md
-        - name: Node.js
-          items:
-            - name: Отправка и получение событий с помощью Node.js
-              href: event-hubs-node-get-started-send.md
-        - name: Go
-          items:
-            - name: Отправка и получение событий с помощью Go
-              href: event-hubs-go-get-started-send.md
-        - name: C (только отправка)
-          items:
-            - name: Отправка событий с помощью C
-              href: event-hubs-c-getstarted-send.md
-        - name: Apache Storm (только получение)
-          items:
-            - name: Получение событий с помощью Apache Storm
-              href: event-hubs-storm-getstarted-receive.md
+        - name: Создание приложения Spring Cloud Stream Binder
+          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
+          maintainContext: true
+        - name: Использование начального приложения Spring Boot для Apache Kafka
+          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
+          maintainContext: true
     - name: Интеграция с Apache Kafka
       items:
         - name: Создание концентраторов событий с поддержкой Apache Kafka

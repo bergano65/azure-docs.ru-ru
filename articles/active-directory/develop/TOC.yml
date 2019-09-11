@@ -205,6 +205,8 @@
                       href: msal-net-system-browser-android-considerations.md
                     - name: Xamarin iOS
                       href: msal-net-xamarin-ios-considerations.md
+                    - name: Использование брокеров с приложениями Xamarin iOS и Android
+                      href: msal-net-use-brokers-with-xamarin-apps.md
                     - name: Универсальная платформа Windows
                       href: msal-net-uwp-considerations.md
                 - name: Получение маркера для приложения
@@ -225,6 +227,8 @@
                   href: msal-net-migration.md
                 - name: Миграция в MSAL.js
                   href: msal-compare-msal-js-and-adal-js.md
+                - name: Перенос приложений Xamarin из ADAL.NET в MSAL.NET с помощью брокеров
+                  href: msal-net-migration-ios-broker.md
             - name: Поддерживаемые потоки аутентификации
               href: msal-authentication-flows.md
             - name: Получение и кэширование маркеров

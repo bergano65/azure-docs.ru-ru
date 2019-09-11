@@ -346,6 +346,10 @@
       items:
         - name: Написание выражений для сопоставления атрибутов
           href: functions-for-customizing-application-data.md
+    - name: "Агент подготовки Azure\_AD Connect"
+      items:
+        - name: Журнал версий агента подготовки
+          href: provisioning-agent-release-version-history.md
     - name: Прокси приложения для локальных приложений
       items:
         - name: Журнал версий прокси приложения

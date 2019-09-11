@@ -6,6 +6,8 @@
       href: sql-database-technical-overview.md
     - name: Какой вариант SQL следует выбрать?
       href: sql-database-paas-vs-sql-server-iaas.md
+    - name: Сравнение возможностей
+      href: sql-database-features.md
     - name: Заметки о выпуске
       href: sql-database-release-notes.md
     - name: 'Обновления, касающиеся переноса IP-адресов шлюза'
@@ -390,10 +392,8 @@
               href: sql-database-advisor.md
     - name: Функции баз данных
       items:
-        - name: Документация по функциям Базы данных SQL
+        - name: Обзор
           href: sql-database-features-index.yml
-        - name: Сравнение возможностей SQL
-          href: sql-database-features.md
         - name: Возможности при использовании нескольких моделей
           href: sql-database-multi-model-features.md
         - name: В памяти
@@ -534,6 +534,8 @@
           href: sql-database-managed-instance-connect-app.md
     - name: Загрузка и перемещение данных
       items:
+        - name: Восстановление до точки во времени
+          href: sql-database-managed-instance-point-in-time-restore.md
         - name: Перемещение ресурса в новый регион
           href: sql-database-move-resources-across-regions.md
         - name: Копирование базы данных в пределах Azure

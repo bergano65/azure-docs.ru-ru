@@ -18,7 +18,7 @@
       href: architecture.md
     - name: Шаблоны интеграции
       href: integration-patterns.md
-- name: Практические руководства
+- name: Руководства
   expanded: true
   items:
     - name: Развертывание Workbench
@@ -45,7 +45,7 @@
           href: data-sql-management-studio.md
 - name: Справочные материалы
   items:
-    - name: Параметр Configuration
+    - name: Конфигурация
       href: configuration.md
     - name: Представления баз данных
       href: database-views.md
@@ -61,7 +61,7 @@
       href: 'https://github.com/Azure-Samples/blockchain'
     - name: Сообщество
       href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
-    - name: Форум
+    - name: Форум технической поддержки
       href: 'https://aka.ms/workbenchforum'
     - name: Отзыв о продукте
       href: 'https://aka.ms/blockchainuservoice'

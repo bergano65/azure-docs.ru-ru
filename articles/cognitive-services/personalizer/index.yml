@@ -1,61 +1,101 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Персонализатору
+summary: Узнайте, как Персонализатор позволяет приложению выбрать максимально удобный режим работы для пользователей, изучая их поведение в реальном времени.
 metadata:
-  document_id: null
-  title: 'Персонализатор. Учебники, краткие руководства, справочные материалы по API'
-  description: 'Сведения о том, как использовать службу "Персонализатор", с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.'
+  ms.topic: landing-page
+  ms.date: 09/09/2019
+  ms.author: nitinme
   author: nitinme
-  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: personalizer
-  ms.topic: landing-page
-  ms.date: 05/07/2019
-  ms.author: nitinme
-abstract:
-  description: "Персонализатор Azure\_— это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени."
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/personalizer/what-is-personalizer
-            html: <p>Сведения о работе Персонализатора и его использовании.</p>
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Что такое служба "Персонализатор"?
-          - href: /azure/cognitive-services/personalizer/how-personalizer-works
-            html: <p>Сведения о работе цикла обратной связи Персонализатора с API ранжирования и вознаграждения.</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Принцип работы Персонализатора
-          - href: /azure/cognitive-services/personalizer/ethics-responsible-use
-            html: '<p>Внедряйте персонализацию таким образом, чтобы укрепить доверие в своей организации и службе.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Этика и ответственность
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: ''
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ../media/index/logo_Csharp.svg
-            href: csharp-quickstart-commandline-feedback-loop.md
-            text: 'C#'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Интерфейсы REST API
-            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092082">API Персонализатора</a></p>'
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Azure CLI</a></p>'
+  services: cognitive-services
+  title: Документация по Персонализатору
+  titleSuffix: Azure Cognitive Services
+  description: Персонализатор Azure — это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.
+  ms.openlocfilehash: 7c73472231b563c1efa583e356774f755abea3bf
+  ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70845417"
+landingContent:
+- title: Сведения о Персонализаторе
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое служба "Персонализатор"?
+      url: what-is-personalizer.md
+  - linkListType: concept
+    links:
+    - text: Принцип работы Персонализатора
+      url: how-personalizer-works.md
+    - text: В каких сферах можно использовать Персонализатор?
+      url: where-can-you-use-personalizer.md
+    - text: Этика и ответственное использование
+      url: ethics-responsible-use.md
+    - text: Выбор функций и действий для персонализации
+      url: concepts-features.md
+    - text: Как рассчитать вознаграждение
+      url: concept-rewards.md
+    - text: Автономная оценка
+      url: concepts-offline-evaluation.md
+  - linkListType: how-to-guide
+    links:
+    - text: Анализ успешности с помощью автономной оценки
+      url: how-to-offline-evaluation.md
+- title: Разработка с использованием Персонализатора
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование .NET
+      url: csharp-quickstart-commandline-feedback-loop.md
+    - text: Использование Python
+      url: python-quickstart-commandline-feedback-loop.md
+    - text: Node.js
+      url: quickstart-command-line-feedback-loop-nodejs-sdk.md
+  - linkListType: how-to-guide
+    links:
+    - text: Как создать и настроить Персонализатор
+      url: how-to-settings.md
+  - linkListType: reference
+    links:
+    - text: Примеры кода
+      url: https://github.com/Azure-Samples/cognitive-services-personalizer-samples
+    - text: Интерфейсы REST API
+      url: https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank
+    - text: Пакет NuGet
+      url: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/0.8.0-preview
+    - text: Пакет npm
+      url: https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/1.0.0
+    - text: Пакет Pypi
+      url: https://pypi.org/project/azure-cognitiveservices-personalizer/
+  - linkListType: concept
+    links:
+    - text: Масштабируемость и производительность
+      url: concepts-scalability-performance.md
+- title: Сведения об обучении с подкреплением
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое обучение с подкреплением?
+      url: concepts-reinforcement-learning.md
+  - linkListType: concept
+    links:
+    - text: Исследование
+      url: concepts-exploration.md
+    - text: Признаки, действие и контекст
+      url: concepts-features.md
+    - text: Активное обучение
+      url: concept-active-learning.md
+    - text: Вознаграждения
+      url: concept-rewards.md
+- title: Справка и обратная связь
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Устранение неполадок
+      url: troubleshooting.md
+    - text: Публикация вопросов на сайте Stack Overflow
+      url: https://stackoverflow.com/questions/tagged/personalizer
+    - text: Корректирование службы с помощью UserVoice
+      url: https://cognitive.uservoice.com/forums/921562-personalizer

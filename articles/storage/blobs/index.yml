@@ -1,0 +1,153 @@
+### YamlMime:Landing
+title: Документация по службе "Хранилище BLOB-объектов Azure"
+summary: Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+metadata:
+  title: Документация по службе "Хранилище BLOB-объектов Azure"
+  description: Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+  services: storage
+  ms.service: storage
+  ms.subservice: blobs
+  ms.topic: landing-page
+  ms.collection: collection
+  author: normesta
+  ms.author: normesta
+  ms.date: 08/20/2019
+  ms.openlocfilehash: 3bc4bf920f4c780f0b73cdd75e62d8aff77b3c94
+  ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70875577"
+landingContent:
+- title: Сведения о хранилище BLOB-объектов
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Обзор хранилища BLOB-объектов Azure
+      url: storage-blobs-overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование портала Azure
+      url: storage-quickstart-blobs-portal.md
+    - text: Использование Обозревателя службы хранилища
+      url: storage-quickstart-blobs-storage-explorer.md
+  - linkListType: concept
+    links:
+    - text: Общие сведения об учетной записи хранения
+      url: ../common/storage-account-overview.md
+    - text: Избыточность данных
+      url: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Создание учетной записи хранения
+      url: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Создание учетной записи хранения блочных BLOB-объектов
+      url: storage-blob-create-account-block-blob.md
+    - text: Настройка личного домена
+      url: storage-custom-domain-name.md
+- title: Аналитика и полезные сведения
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Data Lake Storage 2-го поколения
+      url: data-lake-storage-introduction.md
+  - linkListType: quickstart
+    links:
+    - text: Анализ данных с помощью Databricks
+      url: data-lake-storage-quickstart-create-databricks-account.md
+  - linkListType: concept
+    links:
+    - text: Обработка больших данных
+      url: data-lake-storage-data-scenarios.md
+    - text: Доступ с использованием нескольких протоколов
+      url: data-lake-storage-multi-protocol-access.md
+    - text: Рекомендации
+      url: data-lake-storage-best-practices.md
+  - linkListType: tutorial
+    links:
+    - text: Извлечение, преобразование и загрузка данных с помощью Azure Databricks
+      url: ../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
+      url: data-lake-storage-tutorial-extract-transform-load-hive.md
+    - text: Вставка данных в таблицы Databricks с помощью Сетки событий
+      url: data-lake-storage-events.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Использование с кластерами Azure HDInsight
+      url: ../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Использование с Power BI
+      url: data-lake-storage-use-power-bi.md
+- title: Разработка приложений
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование .NET
+      url: storage-quickstart-blobs-dotnet.md
+    - text: Использование Python
+      url: storage-quickstart-blobs-python.md
+    - text: Маршрутизация событий в конечную веб-точку
+      url: ../../event-grid/blob-event-quickstart-portal.md
+    - text: Размещение статического веб-сайта
+      url: storage-blob-static-website-how-to.md
+  - linkListType: concept
+    links:
+    - text: Обработка событий
+      url: storage-blob-event-overview.md
+    - text: Статические веб-сайты
+      url: storage-blob-static-website.md
+  - linkListType: tutorial
+    links:
+    - text: Создание веб-приложения для отправки данных изображения
+      url: storage-upload-process-images.md
+- title: Управление безопасностью и идентификацией
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Авторизация доступа к службе хранилища Azure
+      url: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Управление доступом в Data Lake
+      url: data-lake-storage-access-control.md
+  - linkListType: how-to-guide
+    links:
+    - text: Получение доступа к данным большого двоичного объекта с помощью учетной записи Azure AD
+      url: ../common/storage-access-blobs-queues-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Управление правами доступа с помощью RBAC
+      url: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Авторизации доступа к хранилищу BLOB-объектов с помощью управляемого удостоверения
+      url: ../common/storage-auth-aad-msi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+- title: Передача данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Сравнение решений для передачи данных
+      url: ../common/storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Использование Azure Data Box для автономной передачи данных
+      url: ../../databox/data-box-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Передача с помощью AzCopy
+      url: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Передача с помощью Фабрики данных Azure
+      url: ../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+- title: Производительность и масштабирование
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Масштабируемость и производительность
+      url: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - text: Контрольный список производительности и масштабируемости
+      url: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+  - linkListType: tutorial
+    links:
+    - text: Оптимизация для повышения производительности и масштабируемости
+      url: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+- title: Резервное копирование и архивация данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Горячий, холодный и архивный уровни хранилища
+      url: storage-blob-storage-tiers.md
+    - text: Управление жизненным циклом хранилища BLOB-объектов
+      url: storage-lifecycle-management-concepts.md

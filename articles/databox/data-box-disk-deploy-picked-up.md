@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/03/2019
-ms.localizationpriority: high
+ms.date: 09/05/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: aab97257ff2e917dc264017043d3ca11a2ced1fc
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: b982e0bcd87a60e29b11c7123fbe5d675ab017b3
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240209"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390407"
 ---
 ::: zone target="chromeless"
 
@@ -85,12 +85,9 @@ ms.locfileid: "70240209"
 
 В центрах обработки данных Azure в Австралии предусмотрена процедура предварительного уведомления о посылке. Об отправке посылки необходимо заранее предупреждать. При возврате в Австралии выполните следующие действия:
 
-1. На адрес `adbops@microsoft.com` направьте запрос о получении транспортировочной этикетки с идентификатором для посылки или кодом TAU. Подайте запрос по крайней мере за три дня до планируемой даты отправки, чтобы вовремя получить этикетку.
-2. В теме электронного сообщения укажите: *Request for reverse shipping label with TAU code* (Запрос на получение транспортировочной этикетки с кодом TAU для возврата). В запросе укажите следующие сведения: 
-
-    - название заказа;
-    - Адрес
-    - имя контактного лица;
+1. Используйте предоставленную этикетку возврата и убедитесь, что на ней указан код TAU (ссылочный номер). Если предоставленная этикетка отгрузки отсутствует или у вас возникли другие проблемы, отправьте сообщение электронной почты на адрес [операционного отдела Data Box (Азия)](mailto:adbo@microsoft.com). Укажите название заказа в теме письма и опишите возникшую проблему.
+3. Прикрепите этикетку на коробку. 
+4. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference. 
 
 ### <a name="pick-up-in-asia"></a>Возврат в Азии
 

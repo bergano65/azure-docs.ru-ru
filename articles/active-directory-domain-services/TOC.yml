@@ -21,7 +21,7 @@
       href: tutorial-configure-password-hash-sync.md
 - name: Примеры
   items:
-    - name: "Создание экземпляра Azure\_AD с помощью Azure PowerShell"
+    - name: Создание управляемого домена с помощью Azure PowerShell
       href: powershell-create-instance.md
 - name: Основные понятия
   items:
