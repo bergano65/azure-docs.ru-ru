@@ -145,8 +145,8 @@
       href: backup-recovery.md
     - name: Рекомендации по инфраструктуре
       href: infrastructure-example.md
-    - name: Атрибуты безопасности
-      href: virtual-machines-linux-security-attributes.md
+    - name: Встроенные средства управления безопасностью
+      href: virtual-machines-linux-security-controls.md
 - name: Руководства
   items:
     - name: Создание виртуальных машин

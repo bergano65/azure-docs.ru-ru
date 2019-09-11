@@ -131,8 +131,8 @@
           href: service-fabric-application-and-service-security.md
         - name: Безопасность кластера Service Fabric
           href: service-fabric-cluster-security.md
-        - name: Общие атрибуты безопасности Azure
-          href: service-fabric-security-attributes.md
+        - name: Встроенные средства управления безопасностью
+          href: service-fabric-security-controls.md
     - name: Терминология
       href: service-fabric-technical-overview.md
     - name: Создание приложений
