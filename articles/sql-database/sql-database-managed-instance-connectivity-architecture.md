@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 04/16/2019
-ms.openlocfilehash: aac328806e2570bd124626e916c250d481a11311
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d539bd569eee613eb43947e5fd0e3b0614ca5d79
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567584"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858627"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключения для управляемого экземпляра в базе данных SQL Azure
 
@@ -98,16 +98,16 @@ ms.locfileid: "68567584"
 
 | Название       |Порт                        |Протокол|Source           |Назначение|Action|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Any              |MI SUBNET  |Разрешить |
-|mi_subnet   |Any                         |Any     |MI SUBNET        |MI SUBNET  |Разрешить |
-|health_probe|Any                         |Any     |AzureLoadBalancer|MI SUBNET  |Разрешить |
+|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Any              |MI SUBNET  |РАЗРЕШИТЬ |
+|mi_subnet   |Any                         |Any     |MI SUBNET        |MI SUBNET  |РАЗРЕШИТЬ |
+|health_probe|Any                         |Any     |AzureLoadBalancer|MI SUBNET  |РАЗРЕШИТЬ |
 
 ### <a name="mandatory-outbound-security-rules"></a>Обязательные правила безопасности для исходящего трафика
 
-| Имя       |Порт          |Протокол|Source           |Назначение|Action|
+| Название       |Порт          |Протокол|Source           |Назначение|Action|
 |------------|--------------|--------|-----------------|-----------|------|
-|управление  |80, 443, 12000|TCP     |MI SUBNET        |AzureCloud; |Разрешить |
-|mi_subnet   |Any           |Any     |MI SUBNET        |MI SUBNET  |Разрешить |
+|управление  |80, 443, 12000|TCP     |MI SUBNET        |AzureCloud; |РАЗРЕШИТЬ |
+|mi_subnet   |Any           |Any     |MI SUBNET        |MI SUBNET  |РАЗРЕШИТЬ |
 
 > [!IMPORTANT]
 > Убедитесь, что существует только одно правило входящего трафика для портов 9000, 9003, 1438, 1440, 1452 и одно правило исходящего трафика для портов 80, 443 и 12000. Управляемый экземпляр подготовка с помощью Azure Resource Manager развертываний завершится ошибкой, если правила для входящих и исходящих подключений настраиваются отдельно для каждого порта. Если эти порты находятся в разных правилах, развертывание завершится с кодом ошибки`VnetSubnetConflictWithIntendedPolicy`
@@ -238,4 +238,4 @@ ms.locfileid: "68567584"
   - На [портале Azure](sql-database-managed-instance-get-started.md).
   - С помощью [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md).
   - С помощью [шаблона Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-sqlmi-new-vnet/).
-  - С помощью [шаблона Azure Resource Manager (с помощью JumpBox, в котором включена среда SSMS)](https://portal.azure.com/). 
+  - С помощью [шаблона Azure Resource Manager (с помощью JumpBox, в котором включена среда SSMS)](https://azure.microsoft.com/en-us/resources/templates/201-sqlmi-new-vnet-w-jumpbox/). 

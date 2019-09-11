@@ -7,19 +7,19 @@ ms.service: site-recovery
 ms.date: 04/29/2019
 ms.topic: conceptual
 ms.author: asgang
-ms.openlocfilehash: d479a568ddeac29be88d0709b7544ba645274afa
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: cd1c6cf0ff5a963720df7420a5d983d24e7b4d3e
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875661"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861387"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Часто задаваемые вопросы: Аварийное восстановление из Azure в Azure
 
 В этой статье приведены ответы на часто задаваемые вопросы об аварийном восстановлении виртуальных машин Azure в другой регион Azure с помощью [Site Recovery](site-recovery-overview.md). 
 
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="how-is-site-recovery-priced"></a>Как образуются цены на Site Recovery?
 Ознакомьтесь со сведениями о [расценках на Azure Site Recovery](https://azure.microsoft.com/blog/know-exactly-how-much-it-will-cost-for-enabling-dr-to-your-azure-vm/).
@@ -41,7 +41,15 @@ ms.locfileid: "67875661"
 ## <a name="replication"></a>Репликация
 
 ### <a name="can-i-replicate-vms-enabled-through-azure-disk-encryption"></a>Можно ли реплицировать виртуальные машины, включенные с помощью шифрования дисков Azure?
-Да, их можно реплицировать. См. статью [Репликация виртуальных машин с поддержкой шифрования дисков Azure в другой регион Azure](azure-to-azure-how-to-enable-replication-ade-vms.md). В настоящее время Azure Site Recovery поддерживает только виртуальные машины Azure, работающие под управлением ОС Windows и включенные для шифрования с помощью приложений Azure Active Directory (Azure AD).
+
+Да, Site Recovery поддерживает аварийное восстановление виртуальных машин с включенным шифрованием дисков Azure (ADE). При включении репликации все необходимые ключи и секреты шифрования диска копируются из исходного региона в целевой регион в контексте пользователя. Если у вас нет соответствующего разрешения, можно передать администратору безопасности готовый сценарий, чтобы скопировать ключи и секреты.
+
+- Site Recovery поддерживает ADE для виртуальных машин Azure под Windows.
+- Site Recovery поддерживает ADE версии 0,1 со схемой, использующей Azure Active Directory (AAD) и версии 1,1 без AAD. [Узнайте больше](../virtual-machines/extensions/azure-disk-enc-windows.md#extension-schemata).
+- ADE версии 1,1, виртуальные машины Windows должны использовать управляемые диски.
+- Дополнительные [сведения](azure-to-azure-how-to-enable-replication-ade-vms.md) о включении репликации для зашифрованных виртуальных машин.
+
+
 
 ### <a name="can-i-replicate-vms-to-another-subscription"></a>Можно ли реплицировать виртуальные машины в другую подписку?
 Да, вы можете реплицировать виртуальные машины Azure в другую подписку в том же клиенте Azure AD.
