@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 57e5eef8563bca0e27024d6ff5a46b983273df07
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: MT
+ms.openlocfilehash: 5c533c3b0005528eae646744e8e720e2c54436e1
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810661"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70880264"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Использование Apache Ambari для оптимизации конфигураций кластеров HDInsight
 
@@ -146,7 +146,7 @@ Hive обрабатывает данные построчно. Векториз�
 
 Чтобы включить оптимизацию с учетом затрат, перейдите на вкладку **Configs** (Конфигурации) Hive и найдите `parameter hive.cbo.enable`, затем переключите выключатель в положение **On** (Включено).
 
-![Конфигурация оптимизации с учетом затрат](./media/hdinsight-changing-configs-via-ambari/cbo.png)
+![Конфигурация оптимизации с учетом затрат](./media/hdinsight-changing-configs-via-ambari/hdinsight-cbo-config.png)
 
 Приведенные ниже дополнительные параметры позволяют повысить производительность запросов Hive при использовании оптимизации с учетом затрат.
 

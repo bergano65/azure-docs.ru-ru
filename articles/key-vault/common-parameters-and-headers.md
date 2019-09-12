@@ -3,18 +3,18 @@ title: Распространенные параметры и заголовки
 description: В этой статье представлены параметры и заголовки, общие для всех операций, которые можно выполнять для ресурсов Key Vault.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 01ac02ca0e449dcac8fcd05450566fd8138acba3
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 7ec8e1df71e6513b13e9c37174a3363471be01d9
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64696691"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879267"
 ---
 # <a name="common-parameters-and-headers"></a>Распространенные параметры и заголовки
 
@@ -39,10 +39,10 @@ ms.locfileid: "64696691"
    }  
 ```
 
-|Имя элемента | type | Описание |
+|Имя элемента | Тип | Описание |
 |---|---|---|
-| code | string | Тип возникшей ошибки.|
-| message | string | Описание причины ошибки. |
+| code | строка | Тип возникшей ошибки.|
+| message | строка | Описание причины ошибки. |
 
 
 

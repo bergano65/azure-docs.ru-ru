@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: dacurwin
-ms.openlocfilehash: 078c8763a08df339b9291807102e2d187d2a882f
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 26d07ac0b09655e170b53af91f890f21d15afb1b
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827585"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70909796"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
@@ -120,6 +120,12 @@ ms.locfileid: "68827585"
 
 ### <a name="how-do-we-get-faster-restore-performances"></a>Как увеличить производительность восстановления?
 Возможность [мгновенного восстановления](backup-instant-restore-capability.md) помогает ускорить резервное копирование и мгновенное восстановление из моментальных снимков.
+
+### <a name="what-happens-when-we-change-the-key-vault-settings-for-the-encrypted-vm"></a>Что происходит при изменении параметров хранилища ключей для зашифрованной виртуальной машины?
+
+После изменения параметров KeyVault для зашифрованной виртуальной машины резервные копии будут продолжать работать с новым набором данных, однако после восстановления из точки восстановления до изменения потребуется восстановить секреты в KeyVault, прежде чем можно будет создать виртуальную машину из  им. Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/azure/backup/backup-azure-restore-key-secret) .
+
+Операции, такие как закрытый секрет или ключ, не нуждаются в этом шаге, и один и тот же KeyVault можно использовать после восстановления.
 
 ## <a name="manage-vm-backups"></a>Управление резервным копированием виртуальных машин
 

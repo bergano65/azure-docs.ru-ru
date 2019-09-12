@@ -8,22 +8,22 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: d566b57ae12520b9eee26334a67d2e10c05f8040
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a3919cf84714b69776222fa35d3163e0915869f7
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64709080"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881977"
 ---
-# <a name="generate-movie-recommendations-by-using-apache-mahout-with-linux-based-apache-hadoop-in-hdinsight-ssh"></a>Создание списка рекомендуемых фильмов с помощью Apache Mahout и Apache Hadoop в HDInsight (SSH) на платформе Linux
+# <a name="generate-movie-recommendations-using-apache-mahout-with-apache-hadoop-in-hdinsight-ssh"></a>Создание рекомендаций по фильмам с помощью Apache Mahout с Apache Hadoop в HDInsight (SSH)
 
 [!INCLUDE [mahout-selector](../../../includes/hdinsight-selector-mahout.md)]
 
 Узнайте, как использовать библиотеку машинного обучения [Apache Mahout](https://mahout.apache.org) для создания списка рекомендуемых к просмотру фильмов с помощью Azure HDInsight.
 
-Mahout — [машинное Обучение](https://en.wikipedia.org/wiki/Machine_learning) библиотека для Apache Hadoop. Mahout содержит алгоритмы для обработки данных, такие как фильтрация, классификация и кластеризация. В этой статье описано, как создать список рекомендуемых фильмов на основе фильмов, уже просмотренных вашими друзьями, используя подсистему рекомендаций.
+Mahout — это библиотека [машинного обучения](https://en.wikipedia.org/wiki/Machine_learning) для Apache Hadoop. Mahout содержит алгоритмы для обработки данных, такие как фильтрация, классификация и кластеризация. В этой статье описано, как создать список рекомендуемых фильмов на основе фильмов, уже просмотренных вашими друзьями, используя подсистему рекомендаций.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
@@ -47,7 +47,7 @@ Mahout — [машинное Обучение](https://en.wikipedia.org/wiki/Mac
 
 ### <a name="understanding-the-data"></a>Основные сведения о данных
 
-К счастью [GroupLens Research](https://grouplens.org/datasets/movielens/) предоставляет данные рейтинге фильмов в формате, совместимом с Mahout. Эти данные можно найти в хранилище по умолчанию вашего кластера по адресу `/HdiSamples/HdiSamples/MahoutMovieData`.
+С легкостью, [что компания grouplens исследование](https://grouplens.org/datasets/movielens/) предоставляет данные рейтинга для фильмов в формате, совместимом с Mahout. Эти данные можно найти в хранилище по умолчанию вашего кластера по адресу `/HdiSamples/HdiSamples/MahoutMovieData`.
 
 Вы увидите два файла, `moviedb.txt` и `user-ratings.txt`. Файл `user-ratings.txt` используется во время анализа. `moviedb.txt` используется для предоставления понятного описания при просмотре результатов.
 
@@ -190,7 +190,7 @@ hdfs dfs -rm -f -r /temp/mahouttemp
 > `hdfs dfs -rm -f -r /example/data/mahoutout`
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как использовать Mahout, откройте для себя другие способы работы с данными в HDInsight:
 

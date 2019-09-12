@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
 ms.date: 06/20/2019
-ms.openlocfilehash: 2a037a495a1e1ed211bd9a535891ccf75fdb140b
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: e75de16d0e16bc639a0439220a1c9dfe53e1689b
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278180"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879060"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическая обучение модели прогнозирования временных рядов
 
@@ -138,8 +138,12 @@ local_run = experiment.submit(automl_config, show_output=True)
 best_run, fitted_model = local_run.get_output()
 ```
 
-> [!NOTE]
-> Для процедуры перекрестной проверки (ОПС) данные временных рядов могут нарушать базовые статистические предположения канонической стратегии перекрестной проверки на K, поэтому в автоматизированном машинном обучении реализуется процедура проверки отката источника для создания циклы перекрестной проверки для данных временных рядов. Чтобы использовать эту процедуру, укажите `n_cross_validations` параметр `AutoMLConfig` в объекте. Можно обходить проверку и использовать собственные наборы проверки с `X_valid` параметрами и. `y_valid`
+Подробные примеры кода для расширенной настройки прогнозирования см. в [записной книжке по спросу на энергию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand/auto-ml-forecasting-energy-demand.ipynb) , в том числе:
+
+* Обнаружение праздников и добавление признаков
+* Перекрестная проверка последовательного происхождения
+* Настраиваемая задержка
+* Пошаговые агрегатные функции окна
 
 ### <a name="view-feature-engineering-summary"></a>Просмотреть сводные данные по проектированию функций
 

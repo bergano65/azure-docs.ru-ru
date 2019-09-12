@@ -1,22 +1,22 @@
 ---
-title: Руководство по регулированию хранилища ключей Azure
+title: Руководство по регулированию Azure Key Vault
 description: Регулирование Key Vault позволяет ограничить число одновременных вызовов для предотвращения чрезмерного использования ресурсов.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: ''
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 06b96ac6ea0202b74638b9331d754c0e0cc28ad0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f10f40551701cafd94692afc0916972b1fd73aff
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695251"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883047"
 ---
-# <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию хранилища ключей Azure
+# <a name="azure-key-vault-throttling-guidance"></a>Руководство по регулированию Azure Key Vault
 
 Регулирование — это процесс, позволяющий ограничить число одновременных вызовов к службе Azure для предотвращения чрезмерного использования ресурсов. Хранилище ключей Azure (AKV) может обрабатывать большое число запросов. Если это число превышает приемлемое, для обеспечения оптимальной производительности и надежности службы AKV используется регулирование клиентских запросов.
 
@@ -31,7 +31,7 @@ ms.locfileid: "64695251"
 
 ## <a name="how-to-throttle-your-app-in-response-to-service-limits"></a>Регулирование приложения в ответ на ограничения служб
 
-Ниже приведены **рекомендации** следует реализовать во время регулирования службы:
+Ниже приведены рекомендации , которые следует реализовать при регулировании службы.
 - Сократите число операций на один запрос.
 - Уменьшите частоту запросов.
 - Избегайте немедленных повторных попыток. 
@@ -112,7 +112,7 @@ ms.locfileid: "64695251"
 ```
 
 
-Используя этот код в клиенте C\# приложения прост. В следующем примере показан способ, как это сделать с помощью класса HttpClient.
+Использование этого кода в клиентском приложении\# C — это просто. В следующем примере показан способ, как это сделать с помощью класса HttpClient.
 
 ```csharp
 public async Task<Cart> GetCartItems(int page)

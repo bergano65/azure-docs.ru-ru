@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 7a243dd0eca179317309438c31c114c94f94bf00
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 706bcbed39ca2a3fe0a38eba864edb863c31b4ec
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736433"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70884041"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
@@ -46,7 +46,7 @@ ms.locfileid: "70736433"
 
   Для существующих установок в строке меню последовательно выберите **Сервис** > **получить средства и компоненты...** , чтобы открыть Visual Studio Installer.  Затем выберите по меньшей мере рабочие нагрузки **Разработка Azure** или **Хранение и обработка данных**.
 
-  ![Снимок экрана Visual Studio Installer](./media/apache-hadoop-visual-studio-tools-get-started/vs2017_installation.png)
+  ![Снимок экрана Visual Studio Installer](./media/apache-hadoop-visual-studio-tools-get-started/vs-2017-installation.png)
 
 * Visual Studio 2013 и 2015  
   [Загрузка средств Data Lake](https://www.microsoft.com/download/details.aspx?id=49504). Выберите версию средств Data Lake, которая соответствует вашей версии Visual Studio.  
@@ -195,13 +195,13 @@ ms.locfileid: "70736433"
 
       Убедитесь, что выбран вариант **Интерактивный** , и нажмите кнопку **выполнить**.
 
-      ![Снимок экрана запроса и выполнения](./media/apache-hadoop-visual-studio-tools-get-started/execute.png)  
+      ![Снимок экрана запроса и выполнения](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-execute.png)  
 
     * **Пакетная служба**  
 
       Убедитесь, что выбран **пакет** , и нажмите кнопку **Отправить**.  Если выбран параметр дополнительные отправки, настройте **имя задания**, **аргументы**, **дополнительные конфигурации**и **Каталог состояния** для скрипта.
 
-      ![Снимок экрана запроса и пакетной службы](./media/apache-hadoop-visual-studio-tools-get-started/batch.png)  
+      ![Снимок экрана запроса и пакетной службы](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-batch.png)  
 
       ![Снимок экрана запроса Hive в HDInsight Hadoop](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-submit-jobs-advanced.png "Отправка запросов")
 
@@ -224,7 +224,7 @@ ms.locfileid: "70736433"
 
 Сводка по заданию незначительно различается в **пакете** и в **интерактивном** режиме.
 
-![Сводка по заданию](./media/apache-hadoop-visual-studio-tools-get-started/jobSummary.png "Сводка по заданию Hive")
+![Сводка по заданию](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-summary.png "Сводка по заданию Hive")
 
 Используйте кнопку **Обновить** , чтобы обновить состояние до тех пор, пока состояние задания не изменится на **завершено**.  
 
@@ -232,7 +232,7 @@ ms.locfileid: "70736433"
 
 * Сведения о задании из **интерактивного** режима см. в разделе **выходные данные** табуляции и **HiveServer2 Output**.
 
-  ![сведения о задании](./media/apache-hadoop-visual-studio-tools-get-started/tabs.png "Сведения о задании Hive")
+  ![сведения о задании](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-details.png "Сведения о задании Hive")
 
 ### <a name="view-job-graph"></a>Просмотр графа задания
 

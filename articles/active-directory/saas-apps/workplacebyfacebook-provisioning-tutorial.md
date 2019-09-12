@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Workplace by Facebook для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Workplace by Facebook для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72c2e23b0d60ca242549ebf2c058ea8f44f2b1c8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f040ff4c8e59f764676aa6fdd9460ec94641684a
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60520141"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881796"
 ---
-# <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по Настройка Workplace by Facebook для автоматической подготовки пользователей
+# <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Учебник. Настройка Workplace by Facebook для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Workplace by Facebook и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Workplace by Facebook.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workplace by Facebook, вам потребуется:
 
@@ -76,7 +76,7 @@ Azure AD поддерживает автоматическую синхрони�
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически). 
 
-    ![Подготовка](./media/workplacebyfacebook-provisioning-tutorial/provisioning.png)
+    ![Идет подготовка](./media/workplacebyfacebook-provisioning-tutorial/provisioning.png)
 
 5. В разделе **Учетные данные администратора** введите маркер доступа администратора из Workplace by Facebook и укажите URL-адрес клиента, `https://www.facebook.com/scim/v1/`. Ознакомьтесь с [инструкциями](https://developers.facebook.com/docs/workplace/integrations/custom-integrations/apps) по созданию маркера доступа для Workplace. 
 
@@ -97,6 +97,9 @@ Azure AD поддерживает автоматическую синхрони�
 Дополнительные сведения о настройке автоматической подготовки см. по адресу [https://developers.facebook.com/docs/facebook-at-work/provisioning/cloud-providers](https://developers.facebook.com/docs/facebook-at-work/provisioning/cloud-providers).
 
 Теперь можно создать тестовую учетную запись. Подождите примерно 20 минут, чтобы убедиться, что учетная запись была синхронизирована с Workplace by Facebook.
+
+> [!NOTE]
+> Мы тесно работаем с Рабочей группой Facebook, чтобы убедиться, что приложение Azure AD утверждено и соответствует новым рекомендациям.   
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

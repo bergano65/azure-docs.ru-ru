@@ -1,5 +1,5 @@
 - name: Azure IoT
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Введение

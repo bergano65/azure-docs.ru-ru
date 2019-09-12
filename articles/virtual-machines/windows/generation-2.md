@@ -11,14 +11,14 @@ ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 05/23/2019
+ms.date: 09/10/2019
 ms.author: lahugh
-ms.openlocfilehash: fd794662ef41112cb04bdfde087253c8abdb6983
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 5e342418dc6cc9ed0a3bbbfaad42801d5ffe9e9d
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70079385"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900257"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Поддержка виртуальных машин поколения 2 (Предварительная версия) в Azure
 
@@ -38,14 +38,18 @@ ms.locfileid: "70079385"
 Виртуальные машины поколения 1 поддерживаются всеми размерами виртуальных машин в Azure. Теперь Azure предоставляет поддержку предварительной версии 2 для следующей выбранной серии виртуальных машин:
 
 * [Серия B](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable)
+* [Серия DC](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dc-series)
 * Серии [Dsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv2-series) и [Dsv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv3-series-1)
 * [Серия Esv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#esv3-series)
 * [Серия серия fsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-compute#fsv2-series-1)
 * [Серия GS](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#gs-series)
+* [Серия ХБ](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#hb-series)
+* [Серия HC](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#hc-series)
 * Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#ls-series) и [Lsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-storage#lsv2-series)
 * [Серия Mv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series)
 * Серии [NCv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv2-series) и [NCv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv3-series)
 * [Серия ND](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nd-series)
+* [Серия NVv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1)
 
 ## <a name="generation-2-vm-images-in-azure-marketplace"></a>Образы виртуальных машин поколения 2 в Azure Marketplace
 
@@ -55,6 +59,8 @@ ms.locfileid: "70079385"
 * Windows Server 2016 Datacenter
 * Windows Server 2012 R2 Datacenter
 * Windows Server 2012 Datacenter
+* SUSE Linux Enterprise Server 15 с пакетом обновления 1
+* SUSE Linux Enterprise Server 12 SP4
 
 ## <a name="on-premises-vs-azure-generation-2-vms"></a>Локальная среда и Виртуальные машины Azure поколения 2
 
@@ -121,6 +127,21 @@ ms.locfileid: "70079385"
 
 * **Есть ли разница в ценах между виртуальными машинами поколения 1 и 2?**  
    Нет.
+
+* **У меня есть VHD-файл из локальной виртуальной машины поколения 2. Можно ли использовать этот VHD-файл для создания виртуальной машины поколения 2 в Azure?**
+  Да, вы можете перенести VHD-файл версии 2 в Azure и использовать его для создания виртуальной машины поколения 2. Для этого выполните следующие действия.
+    1. Отправьте VHD-файл в учетную запись хранения в том же регионе, где вы хотите создать виртуальную машину.
+    1. Создайте управляемый диск из VHD-файла. Задайте для свойства создание HyperV значение v2. Следующие команды PowerShell задают свойство создания HyperV при создании управляемого диска.
+
+        ```powershell
+        $sourceUri = 'https://xyzstorage.blob.core.windows.net/vhd/abcd.vhd'. #<Provide location to your uploaded .vhd file>
+        $osDiskName = 'gen2Diskfrmgenvhd'  #<Provide a name for your disk>
+        $diskconfig = New-AzDiskConfig -Location '<location>' -DiskSizeGB 127 -AccountType Standard_LRS -OsType Windows -HyperVGeneration "V2" -SourceUri $sourceUri -CreateOption 'Import'
+        New-AzDisk -DiskName $osDiskName -ResourceGroupName '<Your Resource Group>' -Disk $diskconfig
+        ```
+
+    1. После того как диск будет доступен, создайте виртуальную машину, присоединив этот диск. Созданная виртуальная машина будет виртуальной машиной поколения 2.
+    При создании виртуальной машины поколения 2 можно при необходимости обобщить образ этой виртуальной машины. Обобщение образа, вы можете использовать его для создания нескольких виртуальных машин.
 
 * **Разделы справки увеличить размер диска ОС?**  
   Диски ОС размером более 2 ТБ являются новыми для виртуальных машин поколения 2. По умолчанию диски ОС имеют размер менее 2 ТБ для виртуальных машин поколения 2. Размер диска можно увеличить до рекомендуемого максимума в 4 ТБ. Чтобы увеличить размер диска ОС, используйте Azure CLI или портал Azure. Сведения о том, как программно расширять диски, см. [в разделе изменение размера диска](expand-os-disk.md).

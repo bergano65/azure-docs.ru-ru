@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: 546dd094614a72cada2aff60704c4fc191301ad2
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
-ms.translationtype: MT
+ms.openlocfilehash: b95af36ed8f8b6c9749711e2ebbf6ef8aa88f001
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734932"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885899"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -44,7 +44,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
     
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-spark-scala-kafka-cosmosdb%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="https://azuredeploy.net/deploybutton.png" alt="Deploy to Azure"/>
+    <img src="./media/apache-kafka-spark-structured-streaming-cosmosdb/resource-manager-deploy.png" alt="Deploy to Azure"/>
     </a>
 
     Шаблон Azure Resource Manager находится в репозитории GitHub для этого проекта ([https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb)).
@@ -67,7 +67,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 2. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
    
-    ![Настраиваемое развертывание в HDInsight](./media/apache-kafka-spark-structured-streaming-cosmosdb/parameters.png)
+    ![Настраиваемое развертывание в HDInsight](./media/apache-kafka-spark-structured-streaming-cosmosdb/hdi-custom-parameters.png)
 
     * **Подписка**: Выберите подписку Azure.
    

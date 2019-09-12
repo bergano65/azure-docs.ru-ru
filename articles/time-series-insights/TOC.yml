@@ -59,7 +59,7 @@
           href: time-series-insights-update-storage-ingress.md
         - name: Варианты использования
           href: time-series-insights-update-use-cases.md
-        - name: Моделирование данных
+        - name: Модель временных рядов
           href: time-series-insights-update-tsm.md
         - name: Запрашивание данных
           href: time-series-insights-update-tsq.md
