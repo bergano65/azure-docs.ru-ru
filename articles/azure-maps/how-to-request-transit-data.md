@@ -1,66 +1,76 @@
 ---
-title: Для запроса данных, передаваемых в "карты Azure" | Документация Майкрософт
-description: Запрос данных общественного, с помощью службы Azure Maps Mobility service.
+title: Запрос передачи данных в Azure Maps | Документация Майкрософт
+description: Запросите общедоступные транзитные данные с помощью службы мобильности Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 06/05/2019
+ms.date: 09/06/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: e8250763153f7c5b71f3906a560365dadfd55694
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: c4e87b2e7e0d9154d0cb649d334daa394cd51935
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66735576"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70802306"
 ---
-# <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Запрос данных общественного, с помощью службы Azure Maps Mobility Service 
+# <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Запрос общедоступных транзитных данных с помощью службы Azure Maps Mobility Service 
 
-В этой статье показано, как использовать карты Azure [службы Mobility Service](https://aka.ms/AzureMapsMobilityService) общественного запрашивать данные, включая останавливается, маршрутизации и командировки оценки времени.
+В этой статье показано, как использовать [службу Azure Maps Mobility Service](https://aka.ms/AzureMapsMobilityService) для запроса общедоступных транзитных данных, включая остановки, сведения о маршрутах и оценки времени поездки.
 
-В этой статье вы узнаете как:
+В этой статье вы узнаете, как:
 
-* Получить идентификатор области metro с помощью [API получения для области «METRO»](https://aka.ms/AzureMapsMobilityMetro)
-* Запросить рядом пути перестает использовать [Получение близлежащих передаче](https://aka.ms/AzureMapsMobilityNearbyTransit) службы.
-* Запрос [получить API маршрутов передаче](https://aka.ms/AzureMapsMobilityTransitRoute) на планирование маршрута с помощью общественного.
+* Получение идентификатора области Metro с помощью [API-интерфейса «получить область Metro](https://aka.ms/AzureMapsMobilityMetro) »
+* Запрос, находящихся поблизости, перестает использовать службу [получения ближайших транзитных](https://aka.ms/AzureMapsMobilityNearbyTransit) услуг.
+* Запрос на [Получение API транзитных маршрутов](https://aka.ms/AzureMapsMobilityTransitRoute) для планирования маршрута с помощью общедоступного транзита.
 * Запросить геометрического пути маршрута и подробное расписание для маршрута с помощью [API маршрута пути получения](https://aka.ms/https://azure.microsoft.com/services/azure-maps/).
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы сделать все вызовы службы карт Azure общественного API-интерфейсов, необходимо Maps учетной записи и ключ. Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
+Для выполнения любых вызовов Azure Maps общедоступных транзитных API-интерфейсов требуется учетная запись Maps и ключ. Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
 
 В этой статье для создания вызовов REST используется [приложение Postman](https://www.getpostman.com/apps). Вы можете использовать любую среду разработки API.
 
 
-## <a name="get-a-metro-area-id"></a>Регистрационный номер плательщика metro области
+## <a name="get-a-metro-area-id"></a>Получить идентификатор области метро
 
-Чтобы запросить сведения о пути для определенного большого города, вам потребуется `metroId` для области, чтобы отправить запрос данных, передаваемых для. [Получение области API Metro](https://aka.ms/AzureMapsMobilityMetro) позволяет запрашивать зонах метро, в которых доступна служба Mobility Service Azure Maps. Ответ содержит сведения, такие как `metroId`, `metroName` и представлением metro области геометрии в формате GeoJSON.
+Чтобы запросить транзитную информацию для определенной области города, потребуется `metroId` для области, для которой нужно запросить транзитные данные. [Интерфейс API для Metro Area](https://aka.ms/AzureMapsMobilityMetro) позволяет запрашивать области метро, в которых доступна Azure Mapsная служба Mobility Service. Ответ включает такие сведения, `metroId` `metroName` как и представление геометрии области Metro в формате геоjson.
 
-Сделаем запрос на получение области «METRO» для идентификатора Seattle Tacoma metro области. Чтобы идентификатор запроса для metro области, выполните следующие действия:
+Давайте создадим запрос, чтобы получить область Metro для идентификатора области метро "Сиэтл — Tacoma". Чтобы запросить идентификатор для области Metro, выполните следующие действия.
 
-1. Создайте коллекцию, в которой будут храниться запросы. В приложении Postman, выберите **New**. В **Create New** выберите **коллекции**. Имя коллекции и выберите **создать** кнопки.
+1. Создайте коллекцию для хранения запросов. В приложении POST выберите **создать**. В окне **создать новое** выберите **коллекция**. Присвойте имя коллекции и нажмите кнопку **создать** .
 
-2. Чтобы создать запрос, выберите **New** еще раз. В **Create New** выберите **запроса**. Введите **имя запроса** для запроса, выберите коллекцию, созданную на предыдущем шаге, как расположение, в котором следует сохранить запрос, а затем выберите **Сохранить**.
+2. Чтобы создать запрос, нажмите кнопку **создать** еще раз. В окне **создать новое** выберите **запрос**. Введите **имя запроса** для запроса, выберите коллекцию, созданную на предыдущем шаге, в качестве расположения для сохранения запроса, а затем нажмите кнопку **сохранить**.
     
-    ![Создайте запрос в Postman](./media/how-to-request-transit-data/postman-new.png)
+    ![Создание запроса в POST](./media/how-to-request-transit-data/postman-new.png)
 
-3. Выберите метод GET HTTP на вкладку «Конструктор» и введите следующий URL-адрес, чтобы создать запрос GET.
+3. Выберите метод получения HTTP на вкладке Построитель и введите следующий URL-адрес для создания запроса GET.
 
     ```HTTP
     https://atlas.microsoft.com/mobility/metroArea/id/json?subscription-key={subscription-key}&api-version=1.0&query=47.63096,-122.126
     ```
 
-4. После успешного запроса вы получите следующий ответ:
+4. После успешного выполнения запроса вы получите следующий ответ:
 
     ```JSON
     {
         "results": [
             {
-                "metroId": "522",
+                "metroId": 522,
                 "metroName": "Seattle–Tacoma–Bellevue, WA",
+                "viewport": {
+                    "topLeftPoint": {
+                        "latitude": 48.5853,
+                        "longitude": -124.80934
+                    },
+                    "btmRightPoint": {
+                        "latitude": 46.90534,
+                        "longitude": -121.55032
+                    }
+                },
                 "geometry": {
                     "type": "Polygon",
                     "coordinates": [
@@ -77,18 +87,9 @@ ms.locfileid: "66735576"
                                 -121.96308,
                                 47.17671
                             ],
-                            [
-                                -121.95725,
-                                47.18314
-                            ],
                             ...,
                             ...,
                             ...,
-                            ...,
-                            [
-                                -122.18711,
-                                47.15571
-                            ],
                             [
                                 -122.01525,
                                 47.16008
@@ -103,51 +104,42 @@ ms.locfileid: "66735576"
                             ]
                         ]
                     ]
-                },
-                "viewport": {
-                    "topLeftPoint": {
-                        "latitude": 48.5853,
-                        "longitude": -124.80934
-                    },
-                    "btmRightPoint": {
-                        "latitude": 46.90534,
-                        "longitude": -121.55032
-                    }
                 }
             }
         ]
     }
     ```
 
-5. Копировать `metroId`, для последующего использования.
+5. `metroId`Скопируйте, чтобы использовать его позже.
 
-## <a name="request-nearby-transit-stops"></a>Запрос ближайших останавливается пути
+## <a name="request-nearby-transit-stops"></a>Запрос нахождения ближайших транзитных точек останавливается
 
-Карты Azure [Получение близлежащих передаче](https://aka.ms/AzureMapsMobilityNearbyTransit) служба позволяет выполнять поиск объектов пути, например, общественного останавливает и общие велосипеды вокруг данного места, возвращая транзитных сведения об объекте. Далее будет сделать запрос к службе для поиска близлежащих общественного остановится в течение 300 метрах radius вокруг заданную расположением. В запросе, нам нужно включать `metroId` получили в ранее.
+Служба Azure Maps [Получение ближайших транзитных](https://aka.ms/AzureMapsMobilityNearbyTransit) услуг позволяет выполнять поиск по транзитным объектам, например, при общем транзитном транспорте прекращается и общие велосипеды по заданному расположению возвращают сведения о транзитном объекте. Далее мы выполним запрос к службе для поиска ближайших общественных транзитных мест в пределах радиуса 300 метров в указанном расположении. В запросе необходимо включить объект, `metroId` полученный ранее.
 
-Чтобы сделать запрос к [Получение близлежащих передаче](https://aka.ms/AzureMapsMobilityNearbyTransit), выполните следующие действия:
+Чтобы выполнить запрос на [транзитное](https://aka.ms/AzureMapsMobilityNearbyTransit)подключение, выполните следующие действия:
 
-1. В Postman щелкните **новый запрос** | **запроса GET** и назовите его **Получение близлежащих останавливает**.
+1. В окне POST щелкните **новый запрос** | **получить запрос** и назовите его **Get поблизости**.
 
-2. На вкладке Builder, выберите **получить** метод HTTP, введите следующий URL-адрес запроса для конечной точки API и щелкните **отправки**.
+2. На вкладке Построитель выберите метод **Get** HTTP, введите следующий URL-адрес запроса для КОНЕЧНОЙ точки API и нажмите кнопку **Отправить**.
 
     ```HTTP
     https://atlas.microsoft.com/mobility/transit/nearby/json?subscription-key={subscription-key}&api-version=1.0&metroId=522&query=47.63096,-122.126&radius=300&objectType=stop
     ```
 
-3. После успешного запроса ответа структуры должна выглядеть как показано ниже:
+3. После успешного запроса структура ответа должна выглядеть следующим образом:
 
     ```JSON
     {
         "results": [
             {
-                "id": "2060603",
-                "type": "Stop",
+                "id": "522---2060603",
+                "type": "stop",
                 "objectDetails": {
                     "stopKey": "71300",
-                    "stopName": "Ne 24th St & 162nd Ave Ne",
-                    "mainTransitType": "BUS",
-                    "mainAgencyId": 5872,
+                    "stopName": "NE 24th St & 162nd Ave NE",
+                    "stopCode": "71300",
+                    "mainTransitType": "Bus",
+                    "mainAgencyId": "522---5872",
                     "mainAgencyName": "Metro Transit"
                 },
                 "position": {
@@ -156,23 +148,24 @@ ms.locfileid: "66735576"
                 },
                 "viewport": {
                     "topLeftPoint": {
-                        "latitude": 47.63241381296315,
-                        "longitude": -122.12659096560266
+                        "latitude": 47.632413,
+                        "longitude": -122.12659
                     },
                     "btmRightPoint": {
-                        "latitude": 47.630594172088166,
-                        "longitude": -122.12395908007201
+                        "latitude": 47.630594,
+                        "longitude": -122.123959
                     }
                 }
             },
             {
-                "id": "2061020",
-                "type": "Stop",
+                "id": "522---2061020",
+                "type": "stop",
                 "objectDetails": {
                     "stopKey": "68372",
-                    "stopName": "Ne 24th St & 160th Ave Ne",
-                    "mainTransitType": "BUS",
-                    "mainAgencyId": 5872,
+                    "stopName": "NE 24th St & 160th Ave NE",
+                    "stopCode": "68372",
+                    "mainTransitType": "Bus",
+                    "mainAgencyId": "522---5872",
                     "mainAgencyName": "Metro Transit"
                 },
                 "position": {
@@ -181,23 +174,24 @@ ms.locfileid: "66735576"
                 },
                 "viewport": {
                     "topLeftPoint": {
-                        "latitude": 47.632318791818726,
-                        "longitude": -122.12845199584025
+                        "latitude": 47.632318,
+                        "longitude": -122.128451
                     },
                     "btmRightPoint": {
-                        "latitude": 47.63049919323126,
-                        "longitude": -122.12582004983427
+                        "latitude": 47.630499,
+                        "longitude": -122.12582
                     }
                 }
             },
             {
-                "id": "2060604",
-                "type": "Stop",
+                "id": "522---2060604",
+                "type": "stop",
                 "objectDetails": {
                     "stopKey": "71310",
-                    "stopName": "Ne 24th St & 160th Ave Ne",
-                    "mainTransitType": "BUS",
-                    "mainAgencyId": 5872,
+                    "stopName": "NE 24th St & 160th Ave NE",
+                    "stopCode": "71310",
+                    "mainTransitType": "Bus",
+                    "mainAgencyId": "522---5872",
                     "mainAgencyName": "Metro Transit"
                 },
                 "position": {
@@ -206,68 +200,73 @@ ms.locfileid: "66735576"
                 },
                 "viewport": {
                     "topLeftPoint": {
-                        "latitude": 47.632474784183636,
-                        "longitude": -122.12912401149087
+                        "latitude": 47.632474,
+                        "longitude": -122.129124
                     },
                     "btmRightPoint": {
-                        "latitude": 47.630655200865796,
-                        "longitude": -122.12649203418405
+                        "latitude": 47.630655,
+                        "longitude": -122.126492
                     }
                 }
             }
         ]
-    }    
+    }   
     ```
 
-Если вы заметили структуре ответа внимательно, можно увидеть, что он содержит параметры каждого объекта пути, такие как `id`, `type`, `stopName`, `mainTransitType`, `mainAgencyName` и положение (координаты) объекта.
+При тщательном наблюдении за структурой ответа можно увидеть, что она содержит параметры каждого транзитного объекта, `id`например `type` `stopName`, `mainTransitType` `mainAgencyName` ,, и положения (координат) объекта.
 
-Для понимания, мы будем использовать `id` одного останавливается шины как точку отсчета для наш маршрут в следующем разделе.  
+В целях понимания мы будем использовать `id` одну из шин в качестве источника для нашего маршрута в следующем разделе.  
 
 
-## <a name="request-a-transit-route"></a>Запрос маршрута пути
+## <a name="request-a-transit-route"></a>Запрос транзитного маршрута
 
-Карты Azure [получить API маршрутов передаче](https://aka.ms/AzureMapsMobilityTransitRoute) позволяет Планирование поездки, возвращая лучше всего возможные параметры маршрута между источником и назначением. Служба предоставляет разнообразные режимах движения, включая прохода, велосипед и общественного. Затем средство поиска маршрута из ближайшего остановки пространства стрелки в Сиэтле.
+API Azure Maps [получения транзитных маршрутов](https://aka.ms/AzureMapsMobilityTransitRoute) позволяет планировать поездку, возвращая лучшие возможные варианты маршрута между источником и назначением. Служба предоставляет разнообразные режимы поездок, в том числе прохождение, поездкам и общедоступное транзитное перемещение. Далее мы будем искать маршрут от ближайшей позиции шины до пробела в Сиэтле.
 
-### <a name="get-location-coordinates-for-destination"></a>Получить координаты местоположения для назначения
+### <a name="get-location-coordinates-for-destination"></a>Получение координат расположения для назначения
 
-Для Получение расположения координаты для пространства стрелки, позволяет использовать карты Azure [нечеткого поиска службы](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy).
+Для получения координат места расположения стрелки «Стрелка» позволяет использовать Azure Maps [Нечеткие служба поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy).
 
-Чтобы сделать запрос к службе поиска нечетких соответствий, выполните следующие действия:
+Чтобы выполнить запрос к службе поиска нечетких запросов, выполните следующие действия:
 
-1. В Postman щелкните **новый запрос** | **запроса GET** и назовите его **получить координаты расположения**.
+1. В окне POST щелкните **создать запрос** | **получить запрос** и назовите его « **Получение координат расположения**».
 
-2.  На вкладке Builder, выберите **получить** метод HTTP, введите следующий URL-адрес запроса и нажмите кнопку **отправки**.
+2.  На вкладке Построитель выберите метод **Get** HTTP, введите следующий URL-адрес запроса и нажмите кнопку **Отправить**.
  
     ```HTTP
     https://atlas.microsoft.com/search/fuzzy/json?subscription-key={subscription-key}&api-version=1.0&query=space needle
     ```
     
-3. Если вы внимательно прочтите ответ, он содержит несколько мест, в результатах для стрелки пространства и также содержит сведения о расположении координаты для каждого из них в разделе **позиции**. Копировать `lat` и `lon` начиная с позиции для первого результата.
+3. Если взглянуть на ответ внимательно, он содержит несколько расположений в результатах стрелки, а также содержит сведения о координатах расположения для каждого из них в **позиции**. Скопируйте значение `lat` и `lon` из расположения для первого результата.
     
    ```JSON
    {
         "summary": {
             "query": "space needle",
             "queryType": "NON_NEAR",
-            "queryTime": 61,
+            "queryTime": 35,
             "numResults": 8,
             "offset": 0,
-            "totalResults": 24,
+            "totalResults": 11,
             "fuzzyLevel": 1
         },
         "results": [
             {
                 "type": "POI",
-                "id": "US/POI/p0/8309323",
-                "score": 4.674,
-                "info": "search:ta:840539000511573-US",
+                "id": "US/POI/p0/6993440",
+                "score": 4.67369,
+                "info": "search:ta:840539001406144-US",
                 "poi": {
                     "name": "Space Needle",
                     "phone": "+(1)-(206)-9052100",
+                    "categorySet": [
+                        {
+                            "id": 7376009
+                        }
+                    ],
                     "url": "www.spaceneedle.com",
                     "categories": [
                         "important tourist attraction",
-                        "monument"
+                        "tower"
                     ],
                     "classifications": [
                         {
@@ -279,7 +278,7 @@ ms.locfileid: "66735576"
                                 },
                                 {
                                     "nameLocale": "en-US",
-                                    "name": "monument"
+                                    "name": "tower"
                                 }
                             ]
                         }
@@ -295,9 +294,10 @@ ms.locfileid: "66735576"
                     "countrySubdivision": "WA",
                     "postalCode": "98109",
                     "countryCode": "US",
-                    "country": "United States Of America",
+                    "country": "United States",
                     "countryCodeISO3": "USA",
                     "freeformAddress": "400 Broad St, Seattle, WA 98109",
+                    "localName": "Seattle",
                     "countrySubdivisionName": "Washington"
                 },
                 "position": {
@@ -327,183 +327,165 @@ ms.locfileid: "66735576"
             ...,
             ...,
             ...
-            
         ]
     }
     ``` 
     
 
-### <a name="request-route"></a>Запрос маршрута
+### <a name="request-route"></a>Маршрут запроса
 
-Чтобы сделать запрос маршрута, выполните следующие шаги:
+Чтобы выполнить запрос маршрута, выполните следующие действия:
 
-1. В Postman щелкните **новый запрос** | **запроса GET** и назовите его **сведения о маршруте Get**.
+1. В окне POST щелкните **создать запрос** | **получить запрос** и назовите его **получить сведения о маршруте**.
 
-2. На вкладке Builder, выберите **получить** метод HTTP, введите следующий URL-адрес запроса для конечной точки API и щелкните **отправки**.
+2. На вкладке Построитель выберите метод **Get** HTTP, введите следующий URL-адрес запроса для КОНЕЧНОЙ точки API и нажмите кнопку **Отправить**.
 
-    Мы будет запрашивать маршрутов общественного для шины, указав `modeType` и `transitType` параметров. Запрос на URL-адрес содержит расположения, полученные в предыдущих разделах. Как `originType` теперь у нас есть **stopId** и в качестве `destionationType` у нас есть **позиции**.
+    Мы зазапрашиваем открытые транзитные маршруты для шины, указав `modeType` параметры `transitType` и. URL-адрес запроса содержит расположения, полученные в предыдущих разделах. Так `originType` как у нас теперь есть стопид `destionationType` , и, так как у нас есть **Местоположение**.
 
-    См. в разделе [список параметров URI](https://aka.ms/AzureMapsMobilityTransitRoute#uri-parameters) можно использовать в ваш запрос на [получить API маршрутов передаче](https://aka.ms/AzureMapsMobilityTransitRoute). 
+    См. [список параметров URI](https://aka.ms/AzureMapsMobilityTransitRoute#uri-parameters) , которые можно использовать в запросе к [API получения транзитных маршрутов](https://aka.ms/AzureMapsMobilityTransitRoute). 
   
     ```HTTP
-    https://atlas.microsoft.com/mobility/transit/route/json?subscription-key={subscription-key}&api-version=1.0&metroId=522&originType=stopId&origin=2060603&destionationType=position&destination=47.62039,-122.34928&modeType=publicTransit&transitType=bus
+    https://atlas.microsoft.com/mobility/transit/route/json?subscription-key={subscription-key}&api-version=1.0&metroId=522&originType=stopId&origin=522---2060603&destionationType=position&destination=47.62039,-122.34928&modeType=publicTransit&transitType=bus
     ```
 
-3. После успешного запроса структура ответ должен выглядеть как показано ниже:
+3. После успешного запроса структура ответа должна выглядеть следующим образом:
 
     ```JSON
     {
         "results": [
             {
-                "itineraryId": "302c38dd-6585-4fa1-bf78-44ebbc183e0c---2019040384C30774B4B94F178E7748644A476596:0---522",
-                "departureTime": "2019-04-03T14:21:34-07:00",
-                "arrivalTime": "2019-04-03T15:15:53-07:00",
-                "travelTimeInSeconds": 3259,
-                "numberOfLegs": 10,
+                "itineraryId": "cb6b6b6f-5cda-451e-b68d-2e97971dd60c---20190906BBBEC4D2219A436A9D794224978C9BBF:0---522",
+                "departureTime": "2019-09-07T01:01:50Z",
+                "arrivalTime": "2019-09-07T02:16:33Z",
+                "travelTimeInSeconds": 4483,
+                "numberOfLegs": 8,
                 "legs": [
                     {
-                        "legType": "Walk",
-                        "legStartTime": "2019-04-03T14:21:34-07:00",
-                        "legEndTime": "2019-04-03T14:28:19-07:00",
-                        "caption": "156th Avenue Northeast",
-                        "lengthInMeters": 497
-                    },
-                    {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T14:28:19-07:00",
-                        "legEndTime": "2019-04-03T14:29:20-07:00",
-                        "caption": "245"
+                        "legStartTime": "2019-09-07T01:01:50Z",
+                        "legEndTime": "2019-09-07T01:01:50Z",
+                        "caption": "249"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T14:29:20-07:00",
-                        "legEndTime": "2019-04-03T14:32:00-07:00",
-                        "caption": "245",
-                        "lengthInMeters": 1350
-                    },
-                    {
-                        "legType": "Walk",
-                        "legStartTime": "2019-04-03T14:32:01-07:00",
-                        "legEndTime": "2019-04-03T14:33:07-07:00",
-                        "caption": "156th Avenue Northeast",
-                        "lengthInMeters": 63
+                        "legStartTime": "2019-09-07T01:01:50Z",
+                        "legEndTime": "2019-09-07T01:26:00Z",
+                        "caption": "249",
+                        "lengthInMeters": 9139
                     },
                     {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T14:33:07-07:00",
-                        "legEndTime": "2019-04-03T14:38:00-07:00",
-                        "caption": "545"
+                        "legStartTime": "2019-09-07T01:26:00Z",
+                        "legEndTime": "2019-09-07T01:28:00Z",
+                        "caption": "255"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T14:38:00-07:00",
-                        "legEndTime": "2019-04-03T14:59:47-07:00",
-                        "caption": "545",
-                        "lengthInMeters": 16441
+                        "legStartTime": "2019-09-07T01:28:00Z",
+                        "legEndTime": "2019-09-07T01:57:21Z",
+                        "caption": "255",
+                        "lengthInMeters": 13136
                     },
                     {
                         "legType": "Walk",
-                        "legStartTime": "2019-04-03T14:59:48-07:00",
-                        "legEndTime": "2019-04-03T15:03:53-07:00",
+                        "legStartTime": "2019-09-07T01:57:22Z",
+                        "legEndTime": "2019-09-07T02:01:27Z",
                         "caption": "Denny Way",
                         "lengthInMeters": 308
                     },
                     {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T15:03:53-07:00",
-                        "legEndTime": "2019-04-03T15:07:26-07:00",
+                        "legStartTime": "2019-09-07T02:01:27Z",
+                        "legEndTime": "2019-09-07T02:06:33Z",
                         "caption": "8"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T15:07:26-07:00",
-                        "legEndTime": "2019-04-03T15:12:12-07:00",
+                        "legStartTime": "2019-09-07T02:06:33Z",
+                        "legEndTime": "2019-09-07T02:12:41Z",
                         "caption": "8",
-                        "lengthInMeters": 1057
+                        "lengthInMeters": 1060
                     },
                     {
                         "legType": "Walk",
-                        "legStartTime": "2019-04-03T15:12:13-07:00",
-                        "legEndTime": "2019-04-03T15:15:53-07:00",
-                        "caption": "47.6205,-122.3493",
-                        "lengthInMeters": 268
+                        "legStartTime": "2019-09-07T02:12:42Z",
+                        "legEndTime": "2019-09-07T02:16:33Z",
+                        "lengthInMeters": 251
                     }
                 ]
             },
             ...,
             {
-                "itineraryId": "302c38dd-6585-4fa1-bf78-44ebbc183e0c---2019040384C30774B4B94F178E7748644A476596:2---522",
-                "departureTime": "2019-04-03T14:21:34-07:00",
-                "arrivalTime": "2019-04-03T15:19:18-07:00",
-                "travelTimeInSeconds": 3464,
+                "itineraryId": "cb6b6b6f-5cda-451e-b68d-2e97971dd60c---20190906BBBEC4D2219A436A9D794224978C9BBF:2---522",
+                "departureTime": "2019-09-07T00:49:32Z",
+                "arrivalTime": "2019-09-07T02:20:06Z",
+                "travelTimeInSeconds": 5434,
                 "numberOfLegs": 10,
                 "legs": [
                     {
-                        "legType": "Walk",
-                        "legStartTime": "2019-04-03T14:21:34-07:00",
-                        "legEndTime": "2019-04-03T14:28:19-07:00",
-                        "caption": "156th Avenue Northeast",
-                        "lengthInMeters": 497
-                    },
-                    {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T14:28:19-07:00",
-                        "legEndTime": "2019-04-03T14:29:20-07:00",
-                        "caption": "245"
+                        "legStartTime": "2019-09-07T00:49:32Z",
+                        "legEndTime": "2019-09-07T00:49:32Z",
+                        "caption": "226"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T14:29:20-07:00",
-                        "legEndTime": "2019-04-03T14:32:00-07:00",
-                        "caption": "245",
-                        "lengthInMeters": 1350
-                    },
-                    {
-                        "legType": "Walk",
-                        "legStartTime": "2019-04-03T14:32:01-07:00",
-                        "legEndTime": "2019-04-03T14:33:07-07:00",
-                        "caption": "156th Avenue Northeast",
-                        "lengthInMeters": 63
+                        "legStartTime": "2019-09-07T00:49:32Z",
+                        "legEndTime": "2019-09-07T01:15:00Z",
+                        "caption": "226",
+                        "lengthInMeters": 6792
                     },
                     {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T14:33:07-07:00",
-                        "legEndTime": "2019-04-03T14:38:00-07:00",
-                        "caption": "545"
+                        "legStartTime": "2019-09-07T01:15:00Z",
+                        "legEndTime": "2019-09-07T01:20:00Z",
+                        "caption": "241"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T14:38:00-07:00",
-                        "legEndTime": "2019-04-03T15:01:00-07:00",
-                        "caption": "545",
-                        "lengthInMeters": 17400
-                    },
-                    {
-                        "legType": "Walk",
-                        "legStartTime": "2019-04-03T15:01:01-07:00",
-                        "legEndTime": "2019-04-03T15:04:59-07:00",
-                        "caption": "3rd Avenue",
-                        "lengthInMeters": 269
+                        "legStartTime": "2019-09-07T01:20:00Z",
+                        "legEndTime": "2019-09-07T01:28:00Z",
+                        "caption": "241",
+                        "lengthInMeters": 3397
                     },
                     {
                         "legType": "Wait",
-                        "legStartTime": "2019-04-03T15:04:59-07:00",
-                        "legEndTime": "2019-04-03T15:09:14-07:00",
+                        "legStartTime": "2019-09-07T01:28:00Z",
+                        "legEndTime": "2019-09-07T01:33:00Z",
+                        "caption": "550"
+                    },
+                    {
+                        "legType": "Bus",
+                        "legStartTime": "2019-09-07T01:33:00Z",
+                        "legEndTime": "2019-09-07T01:58:00Z",
+                        "caption": "550",
+                        "lengthInMeters": 12899
+                    },
+                    {
+                        "legType": "Walk",
+                        "legStartTime": "2019-09-07T01:58:01Z",
+                        "legEndTime": "2019-09-07T01:59:21Z",
+                        "caption": "4th Avenue South",
+                        "lengthInMeters": 99
+                    },
+                    {
+                        "legType": "Wait",
+                        "legStartTime": "2019-09-07T01:59:21Z",
+                        "legEndTime": "2019-09-07T02:01:00Z",
                         "caption": "33"
                     },
                     {
                         "legType": "Bus",
-                        "legStartTime": "2019-04-03T15:09:14-07:00",
-                        "legEndTime": "2019-04-03T15:12:52-07:00",
+                        "legStartTime": "2019-09-07T02:01:00Z",
+                        "legEndTime": "2019-09-07T02:13:29Z",
                         "caption": "33,24",
-                        "lengthInMeters": 947
+                        "lengthInMeters": 2447
                     },
                     {
                         "legType": "Walk",
-                        "legStartTime": "2019-04-03T15:12:53-07:00",
-                        "legEndTime": "2019-04-03T15:19:18-07:00",
-                        "caption": "47.6205,-122.3493",
-                        "lengthInMeters": 474
+                        "legStartTime": "2019-09-07T02:13:30Z",
+                        "legEndTime": "2019-09-07T02:20:06Z",
+                        "lengthInMeters": 457
                     }
                 ]
             }
@@ -511,268 +493,300 @@ ms.locfileid: "66735576"
     }
     ```
 
-4. Если вы заметили тщательно, существует несколько **шины** маршруты в ответе. Каждый маршрут имеет уникальный **маршрута идентификатор** и сводки, описание каждого участка маршрута. Далее мы будет сведения о запросе для быстрый маршрута с помощью `itineraryId` в ответе.
+4. Если вы следите за осторожностью, в ответе есть несколько маршрутов **шины** . Каждый маршрут имеет уникальный **идентификатор** и сводку, описывающую каждую часть маршрута. Далее мы будем запрашивать сведения о быстром маршруте `itineraryId` , используя в ответе.
 
-## <a name="request-fastest-route-itinerary"></a>Запрос на быстрый маршрута маршрута
+## <a name="request-fastest-route-itinerary"></a>Запрашивать самый быстрый маршрут маршрутов
 
-Карты Azure [получить расписание передачи](https://aka.ms/AzureMapsMobilityTransitItinerary) служба позволяет запрашивать данные для определенного маршрута по этому маршруту **маршрута идентификатор** возвращаемые [получить API маршрутов передаче](https://aka.ms/AzureMapsMobilityTransitRoute) Служба. Для создания запроса, выполните следующие шаги:
+Служба Azure Maps [получить путевые](https://aka.ms/AzureMapsMobilityTransitItinerary) маршруты позволяет запрашивать данные для конкретного маршрута, используя **идентификатор** маршрута, возвращенный службой [API получения транзитных маршрутов](https://aka.ms/AzureMapsMobilityTransitRoute) . Чтобы выполнить запрос, выполните следующие действия:
 
-1. В Postman щелкните **новый запрос** | **запроса GET** и назовите его **сведения о передаче получить**.
+1. В окне POST щелкните **создать запрос** | **получить запрос** и назовите его **получить сведения о транзитном транспорте**.
 
-2. На вкладке Builder, выберите **получить** метод HTTP, введите следующий URL-адрес запроса для конечной точки API и щелкните **отправки**.
+2. На вкладке Построитель выберите метод **Get** HTTP, введите следующий URL-адрес запроса для КОНЕЧНОЙ точки API и нажмите кнопку **Отправить**.
 
-    Мы определим `detailType` параметр **geometry** таким образом, ответ содержит сведения о stop для общественного и включить в свою очередь навигации для обхода и bike конечностей маршрута.
+    Мы будем присвоить `detailType` параметру значение **Geometry** , чтобы ответ содержал сведения об ошибке для общедоступного транзита и последующего включения навигации для прохода и нахождения велосипеда маршрута.
 
     ```HTTP
     https://atlas.microsoft.com/mobility/transit/itinerary/json?api-version=1.0&subscription-key={subscription-key}&query={itineraryId}&detailType=geometry
     ```
     
-3. После успешного запроса структура ответ должен выглядеть как показано ниже:
+3. После успешного запроса структура ответа должна выглядеть следующим образом:
 
     ```JSON
     {
-    "departureTime": "2019-05-01T11:16:56-07:00",
-    "arrivalTime": "2019-05-01T12:23:45-07:00",
-    "legs": [
-                {
-                    "legType": "Walk",
-                    "legStartTime": "2019-05-01T11:16:56-07:00",
-                    "legEndTime": "2019-05-01T11:24:06-07:00",
-                    "walkingSteps": [
-                        {
-                            "direction": {
-                                "relativeDirection": "left"
-                            },
-                            "streetName": "Northeast 24th Street"
+        "departureTime": "2019-09-07T01:01:50Z",
+        "arrivalTime": "2019-09-07T02:16:33Z",
+        "legs": [
+            {
+                "legType": "Wait",
+                "legStartTime": "2019-09-07T01:01:50Z",
+                "legEndTime": "2019-09-07T01:01:50Z",
+                "lineGroup": {
+                    "lineGroupId": "522---666077",
+                    "agencyId": "522---5872",
+                    "agencyName": "Metro Transit",
+                    "lineNumber": "249",
+                    "caption1": "Overlake TC - South Bellevue P&R",
+                    "caption2": "249 Overlake TC - South Bellevue P&R",
+                    "color": "347E5D",
+                    "transitType": "Bus"
+                },
+                "line": {
+                    "lineId": "522---3760143",
+                    "lineGroupId": "522---666077",
+                    "direction": "backward",
+                    "agencyId": "522---5872",
+                    "lineNumber": "249",
+                    "lineDestination": "South Bellevue S Kirkland P&R"
+                },
+                "stops": [
+                    {
+                        "stopId": "522---2060603",
+                        "stopKey": "71300",
+                        "stopName": "NE 24th St & 162nd Ave NE",
+                        "stopCode": "71300",
+                        "position": {
+                            "latitude": 47.631504,
+                            "longitude": -122.125275
                         },
-                        {
-                            "direction": {
-                                "relativeDirection": "right"
-                            },
-                            "streetName": "156th Avenue Northeast"
-                        }
-                    ],
-                    "walkingOrigin": {
-                        "latitude": 47.63096,
-                        "longitude": -122.126
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
                     },
-                    "walkingDestination": {
-                        "latitude": 47.631843,
-                        "longitude": -122.132294
-                    },
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [
-                            [
-                                -122.126,
-                                47.63096
-                            ],
-                            [
-                                -122.12645,
-                                47.63099
-                            ],
-                            ...,
-                            ...,
-                            [
-                                -122.1323,
-                                47.63184
-                            ]
-                        ]
+                    {
+                        "stopId": "522---2061703",
+                        "stopKey": "74450",
+                        "stopName": "South Kirkland P&R & 108th Ave NE",
+                        "stopCode": "74450",
+                        "position": {
+                            "latitude": 47.643852,
+                            "longitude": -122.196693
+                        },
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
                     }
+                ],
+                "waitOnVehicle": false
+            },
+            {
+                "legType": "Bus",
+                "legStartTime": "2019-09-07T01:01:50Z",
+                "legEndTime": "2019-09-07T01:26:00Z",
+                "lineGroup": {
+                    "lineGroupId": "522---666077",
+                    "agencyId": "522---5872",
+                    "agencyName": "Metro Transit",
+                    "lineNumber": "249",
+                    "caption1": "Overlake TC - South Bellevue P&R",
+                    "caption2": "249 Overlake TC - South Bellevue P&R",
+                    "color": "347E5D",
+                    "transitType": "Bus"
                 },
-                {
-                    "legType": "Wait",
-                    "legStartTime": "2019-05-01T11:24:06-07:00",
-                    "legEndTime": "2019-05-01T11:25:07-07:00",
-                    "lineGroup": {
-                        "lineGroupId": 666074,
-                        "agencyId": 5872,
-                        "agencyName": "Metro Transit",
-                        "lineNumber": "245",
-                        "caption1": "Kirkland Transit Center - Crossroads - Factoria",
-                        "caption2": "245 Kirkland Transit Center - Crossroads - Factoria",
-                        "color": "347E5D",
-                        "transitType": "Bus"
-                    },
-                    "line": {
-                        "lineId": 2756624,
-                        "lineGroupId": 666074,
-                        "direction": "forward",
-                        "agencyId": 5872,
-                        "lineNumber": "245",
-                        "destination": "Kirkland Crossroads"
-                    },
-                    "stops": [
-                        {
-                            "stopId": 2061109,
-                            "stopKey": "68788",
-                            "stopName": "156th Ave NE & NE 24th St",
-                            "position": {
-                                "latitude": 47.631844,
-                                "longitude": -122.132248
-                            },
-                            "mainTransitType": "Bus",
-                            "mainAgencyId": 5872
-                        },
-                        {
-                            "stopId": 2061059,
-                            "stopKey": "68498",
-                            "stopName": "156th Ave NE & Overlake Transit Center - Bay 8",
-                            "position": {
-                                "latitude": 47.643986,
-                                "longitude": -122.132187
-                            },
-                            "mainTransitType": "Bus",
-                            "mainAgencyId": 5872
-                        }
-                    ],
-                    "waitOnVehicle": "false"
+                "line": {
+                    "lineId": "522---3760143",
+                    "lineGroupId": "522---666077",
+                    "direction": "backward",
+                    "agencyId": "522---5872",
+                    "lineNumber": "249",
+                    "lineDestination": "South Bellevue S Kirkland P&R"
                 },
-                {
-                    "legType": "Bus",
-                    "legStartTime": "2019-05-01T11:25:07-07:00",
-                    "legEndTime": "2019-05-01T11:30:00-07:00",
-                    "lineGroup": {
-                        "lineGroupId": 666074,
-                        "agencyId": 5872,
-                        "agencyName": "Metro Transit",
-                        "lineNumber": "245",
-                        "caption1": "Kirkland Transit Center - Crossroads - Factoria",
-                        "caption2": "245 Kirkland Transit Center - Crossroads - Factoria",
-                        "color": "347E5D",
-                        "transitType": "Bus"
-                    },
-                    "line": {
-                        "lineId": 2756624,
-                        "lineGroupId": 666074,
-                        "direction": "forward",
-                        "agencyId": 5872,
-                        "lineNumber": "245",
-                        "destination": "Kirkland Crossroads"
-                    },
-                    "stops": [
-                        {
-                            "stopId": 2061109,
-                            "stopKey": "68788",
-                            "stopName": "156th Ave NE & NE 24th St",
-                            "position": {
-                                "latitude": 47.631844,
-                                "longitude": -122.132248
-                            },
-                            "mainTransitType": "Bus",
-                            "mainAgencyId": 5872
+                "stops": [
+                    {
+                        "stopId": "522---2060603",
+                        "stopKey": "71300",
+                        "stopName": "NE 24th St & 162nd Ave NE",
+                        "stopCode": "71300",
+                        "position": {
+                            "latitude": 47.631504,
+                            "longitude": -122.125275
                         },
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
+                    },
+                    {
+                        "stopId": "522---2060604",
+                        "stopKey": "71310",
+                        "stopName": "NE 24th St & 160th Ave NE",
+                        "stopCode": "71310",
+                        "position": {
+                            "latitude": 47.631565,
+                            "longitude": -122.127808
+                        },
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
+                    },
+                    ...,
+                    ...,
+                    {
+                        "stopId": "522---2061704",
+                        "stopKey": "74451",
+                        "stopName": "Northup Way & NE 33rd Pl",
+                        "stopCode": "74451",
+                        "position": {
+                            "latitude": 47.640911,
+                            "longitude": -122.194443
+                        },
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
+                    },
+                    {
+                        "stopId": "522---2061703",
+                        "stopKey": "74450",
+                        "stopName": "South Kirkland P&R & 108th Ave NE",
+                        "stopCode": "74450",
+                        "position": {
+                            "latitude": 47.643852,
+                            "longitude": -122.196693
+                        },
+                        "mainTransitType": "Bus",
+                        "mainAgencyId": "522---5872"
+                    }
+                ],
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -122.12527,
+                            47.63143
+                        ],
+                        [
+                            -122.12529,
+                            47.63143
+                        ],
+                        [
+                            -122.12561,
+                            47.63144
+                        ],
+                        [
+                            -122.12701,
+                            47.63148
+                        ],
                         ...,
                         ...,
-                        {
-                            "stopId": 2061059,
-                            "stopKey": "68498",
-                            "stopName": "156th Ave NE & Overlake Transit Center - Bay 8",
-                            "position": {
-                                "latitude": 47.643986,
-                                "longitude": -122.132187
-                            },
-                            "mainTransitType": "Bus",
-                            "mainAgencyId": 5872
-                        }
-                    ],
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [
-                            [
-                                -122.13235,
-                                47.63184
-                            ],
-                            ...,
-                            ...,
-                            [
-                                -122.1323,
-                                47.64398
-                            ]
+                        ...,
+                        [
+                            -122.19601,
+                            47.64304
+                        ],
+                        [
+                            -122.19584,
+                            47.64315
+                        ],
+                        [
+                            -122.19677,
+                            47.6438
                         ]
-                    }
-                },
-                ...,
-                ...,
-                ...,
-                {
-                    "legType": "Tram",
-                    "legStartTime": "2019-05-01T12:20:00-07:00",
-                    "legEndTime": "2019-05-01T12:22:00-07:00",
-                    "lineGroup": {
-                        "lineGroupId": 4083239,
-                        "agencyId": 1360766,
-                        "agencyName": "Seattle Monorail",
-                        "lineNumber": "Monorail",
-                        "caption1": "Seattle Center - Westlake Center",
-                        "caption2": "MONORAIL Seattle Center - Westlake Center",
-                        "color": "00AEEF",
-                        "transitType": "Tram"
-                    },
-                    "line": {
-                        "lineId": 3769726,
-                        "lineGroupId": 4083239,
-                        "direction": "backward",
-                        "agencyId": 1360766,
-                        "lineNumber": "Monorail",
-                        "destination": "Seattle Center"
-                    },
-                    "stops": [
-                        {
-                            "stopId": 32962125,
-                            "stopName": "Westlake Station",
-                            "position": {
-                                "latitude": 47.611417,
-                                "longitude": -122.337089
-                            },
-                            "mainTransitType": "Tram",
-                            "mainAgencyId": 1360766
-                        },
-                        {
-                            "stopId": 32962134,
-                            "stopName": "Seattle Center",
-                            "position": {
-                                "latitude": 47.62123,
-                                "longitude": -122.349746
-                            },
-                            "mainTransitType": "Tram",
-                            "mainAgencyId": 1360766
-                        }
-                    ],
-                    "geometry": {
-                        "type": "LineString",
-                        "coordinates": [
-                            [
-                                -122.3369,
-                                47.61201
-                            ],
-                            ...,
-                            ...,
-                            [
-                                -122.34973,
-                                47.6212
-                            ]
-                        ]
-                    }
-                },
-                {
-                    "legType": "PathWayWalk",
-                    "legStartTime": "2019-05-01T12:22:00-07:00",
-                    "legEndTime": "2019-05-01T12:23:45-07:00"
+                    ]
                 }
-          ]
+            },
+            ...,
+            ...,
+            ...,
+            {
+                "legType": "Walk",
+                "legStartTime": "2019-09-07T02:12:42Z",
+                "legEndTime": "2019-09-07T02:16:33Z",
+                "steps": [
+                    {
+                        "direction": {
+                            "relativeDirection": "depart"
+                        },
+                        "streetName": "Denny Way"
+                    },
+                    {
+                        "direction": {
+                            "relativeDirection": "right"
+                        },
+                        "streetName": "4th Avenue North"
+                    },
+                    {
+                        "direction": {
+                            "relativeDirection": "right"
+                        },
+                        "streetName": "Broad Street"
+                    }
+                ],
+                "origin": {
+                    "position": {
+                        "latitude": 47.618578,
+                        "longitude": -122.348058
+                    }
+                },
+                "destination": {
+                    "position": {
+                        "latitude": 47.62039,
+                        "longitude": -122.34928
+                    }
+                },
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -122.34806,
+                            47.61857
+                        ],
+                        [
+                            -122.3481,
+                            47.61857
+                        ],
+                        [
+                            -122.34894,
+                            47.61858
+                        ],
+                        [
+                            -122.34892,
+                            47.61964
+                        ],
+                        [
+                            -122.34877,
+                            47.61975
+                        ],
+                        [
+                            -122.3492,
+                            47.62001
+                        ],
+                        [
+                            -122.34918,
+                            47.62003
+                        ],
+                        [
+                            -122.34917,
+                            47.62006
+                        ],
+                        [
+                            -122.34916,
+                            47.62008
+                        ],
+                        [
+                            -122.34916,
+                            47.62008
+                        ],
+                        [
+                            -122.34916,
+                            47.62008
+                        ],
+                        [
+                            -122.34916,
+                            47.62008
+                        ],
+                        [
+                            -122.34928,
+                            47.62039
+                        ]
+                    ]
+                }
+            }
+        ]
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о запросе данных в реальном времени, использующие службу Mobility Service:
-
-> [!div class="nextstepaction"]
-> [Как запросить данные в реальном времени](how-to-request-real-time-data.md)
-
-Изучите документацию по API службы мобильности Azure Maps
+Узнайте, как запрашивать данные в режиме реального времени с помощью службы Mobility Service:
 
 > [!div class="nextstepaction"]
-> [Документация по API службы мобильности](https://aka.ms/AzureMapsMobilityService)
+> [Как запросить данные в режиме реального времени](how-to-request-real-time-data.md)
+
+Изучите документацию по API службы Mobility Service Azure Maps
+
+> [!div class="nextstepaction"]
+> [Документация по API службы Mobility Service](https://aka.ms/AzureMapsMobilityService)
 

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 08/28/2019
 ms.author: aahi
-ms.openlocfilehash: 669cd43b73bc66289a355f7fbf9c4498d8a7b99a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: e763c1a5bebddcb76647b4ecff02506fc41f6a47
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135025"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387386"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
 <a name="HOLTop"></a>
@@ -71,7 +71,7 @@ endpoint = os.environ[endpoint_var_name]
 
 ## <a name="detect-languages"></a>Распознавание языков
 
-Добавьте объект `languages` к базовой конечной точке API "Анализ текста", чтобы создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
+Добавьте объект `/text/analytics/v2.1/languages` к базовой конечной точке API "Анализ текста", чтобы создать URL-адрес распознавания языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`
     
 ```python
 language_api_url = endpoint + "/text/analytics/v2.1/languages"
@@ -140,7 +140,7 @@ pprint(languages)
 
 ## <a name="analyze-sentiment"></a>Анализ тональности
 
-Чтобы определить тональность (положительные или отрицательные эмоции) набора документов, добавьте объект `sentiment` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
+Чтобы определить тональность (положительные или отрицательные эмоции) набора документов, добавьте объект `/text/analytics/v2.1/sentiment` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/sentiment`
     
 ```python
 sentiment_url = endpoint + "/text/analytics/v2.1/sentiment"
@@ -202,7 +202,7 @@ pprint(sentiments)
 
 ## <a name="extract-key-phrases"></a>Извлечение ключевых фраз
  
-Чтобы извлечь ключевые фразы из набора документов, добавьте объект `keyPhrases` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
+Чтобы извлечь ключевые фразы из набора документов, добавьте объект `/text/analytics/v2.1/keyPhrases` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/keyPhrases`
     
 ```python
 keyphrase_url = endpoint + "/text/analytics/v2.1/keyphrases"
@@ -278,7 +278,7 @@ pprint(key_phrases)
 
 ## <a name="identify-entities"></a>Определение сущностей
 
-Чтобы определить известные сущности (люди, места, предметы) в текстовых документах, добавьте объект `entities` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/entities`
+Чтобы определить известные сущности (люди, места, предметы) в текстовых документах, добавьте объект `/text/analytics/v2.1/entities` к базовой конечной точке API "Анализ текста". Это позволит создать URL-адрес распознавания языка. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
     
 ```python
 entities_url = endpoint + "/text/analytics/v2.1/entities"

@@ -9,12 +9,12 @@ ms.subservice: cognitive-search
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: ad0710a3492eeecd56989e627211da5d4a5e0e0a
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 260f6a6141903ea1fd7edcfe2e031091bba322be
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186256"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744757"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по C#. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -66,7 +66,7 @@ ms.locfileid: "70186256"
 
 ## <a name="prepare-sample-data"></a>Подготовка примера данных
 
-Конвейер обогащения извлекает данные из источников данных Azure. Исходные данные должны поступать из поддерживаемого типа источника данных [индексатора службы "Поиск Azure"](search-indexer-overview.md). Хранилище таблиц Azure не поддерживается для когнитивного поиска. В этом упражнении используется хранилище BLOB-объектов, чтобы продемонстрировать несколько типов содержимого.
+Конвейер обогащения извлекает данные из источников данных Azure. Исходные данные должны поступать из поддерживаемого типа источника данных [индексатора службы "Поиск Azure"](search-indexer-overview.md). В этом упражнении используется хранилище BLOB-объектов, чтобы продемонстрировать несколько типов содержимого.
 
 1. [Войдите на портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, выберите **Большие двоичные объекты**, а затем щелкните **Контейнер**.
 

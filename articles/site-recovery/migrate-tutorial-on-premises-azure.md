@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: df4f89bd1b2e3c0423f5d758cfa637e4da9e04d0
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 7534313a5862ececf4757be807e59b6df39f6430
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66396540"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873358"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "66396540"
 2. Подготовьте локальные серверы [VMware](vmware-azure-tutorial-prepare-on-premises.md) или [Hyper-V](hyper-v-prepare-on-premises-tutorial.md). Если вы переносите физические компьютеры, вам не нужно ничего подготавливать. Просто проверьте [матрицу поддержки](vmware-physical-azure-support-matrix.md).
 
 
-## <a name="select-a-replication-goal"></a>Выбор цели репликации
+## <a name="select-a-protection-goal"></a>Выбор целевого объекта защиты
 
 Выберите целевые объекты и место для репликации.
 1. Щелкните **Хранилища служб восстановления** > хранилище.

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 3790b543a1a6dcbb793dbf661441700e6fa24232
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 4404f785116110d99dc242d2dae39c4a462f45e9
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611874"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376250"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -71,7 +71,7 @@ ms.locfileid: "69611874"
 
     Сведения о создании наиболее часто используемых сетевых ресурсов на основе конфигурации исходной виртуальной машины см. в следующих документах.
     - [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
-    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer)
     -  [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     - Сведения о других сетевых компонентах см. в [документации по сетям](https://docs.microsoft.com/azure/#pivot=products&panel=network).
 

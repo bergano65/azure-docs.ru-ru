@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 6e26f9d344a4c11c335d1ea34998c848cbe3598a
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: a9e8ddcca727c4c457e4d92a880fb0cafe5ca6f8
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66753748"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375743"
 ---
 # <a name="move-azure-vms-into-availability-zones"></a>Перенос виртуальных машин Azure в Зоны доступности
 Зоны доступности в Azure помогают защитить приложения и данные от сбоев центра обработки данных. Каждая зона доступности состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение Зон доступности в пределах региона помогает защитить приложения и данные от сбоев центра обработки данных. С помощью Зон доступности Azure предлагает Соглашение об уровне обслуживания, гарантирующее доступность виртуальных машин на уровне 99,99 %. Как упоминалось в статье [Что такое Зоны доступности в Azure?](https://docs.microsoft.com/azure/availability-zones/az-overview#services-support-by-region), Зоны доступности поддерживаются не во всех регионах.
@@ -68,8 +68,8 @@ ms.locfileid: "66753748"
      Сведения о создании наиболее часто используемых сетевых ресурсов на основе конфигурации исходной виртуальной машины см. в следующих документах.
 
     - [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
-    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-    - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer)
+    - [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     
    Сведения о других сетевых компонентах см. в [документации](https://docs.microsoft.com/azure/#pivot=products&panel=network) по сетям.
 

@@ -8,18 +8,18 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: d6b6dd333d04457a68c3f2452d3cc538a32b61f6
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: ff135473443589650d90bfb7f3e5aa248f72e821
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230291"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861270"
 ---
 # <a name="tutorial-configure-a-cluster-in-azure-hdinsight-using-ansible"></a>Руководство по настройке кластера в Azure HDInsight с помощью Ansible
 
 [!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
 
-[Azure HDInsight](/azure/hdinsight/) — это служба аналитики на основе Hadoop для обработки данных. HDInsight — это инструмент ETL (извлечение, преобразование, загрузка), предназначенное для работы с большими данными, структурированными и неструктурированными. HDInsight поддерживает несколько [типов кластера](/azure/hdinsight/hadoop/apache-hadoop-introduction#cluster-types-in-hdinsight), которые поддерживают разные наборы компонентов. 
+[Azure HDInsight](/azure/hdinsight/) — это служба аналитики на основе Hadoop для обработки данных. HDInsight — это инструмент ETL (извлечение, преобразование, загрузка), предназначенное для работы с большими данными, структурированными и неструктурированными. HDInsight поддерживает несколько [типов кластера](/azure/hdinsight/hadoop/apache-hadoop-introduction), которые поддерживают разные наборы компонентов. 
 
 [!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
 
@@ -204,7 +204,7 @@ ms.locfileid: "65230291"
 
 ## <a name="get-the-sample-playbook"></a>Получение примера сборника схем
 
-Существуют два способа получить полный пример сборника схем.
+Существует два способа получения полного примера сборника схем:
 - [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/hdinsight_create.yml) и сохраните его в `hdinsight_create.yml`.
 - Создайте файл с именем `hdinsight_create.yml` и скопируйте в него следующее содержимое.
 

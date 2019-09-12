@@ -1,5 +1,5 @@
 ---
-title: Application Insights (C#) — LUIS
+title: Руководство по Application Insights (C#) — LUIS
 titleSuffix: Azure Cognitive Services
 description: В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии Application Insights.
 services: cognitive-services
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 06/16/2019
+ms.date: 09/06/2019
 ms.author: diberry
-ms.openlocfilehash: bc8cf9973ed6889b0820e5ada5565d0541532fa3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 51860efdcc440d6b8a4ea57777ad31fa718657b5
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560062"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772823"
 ---
-# <a name="add-luis-results-to-application-insights-from-a-bot-in-c"></a>Добавление результатов LUIS в Application Insights из бота C#
+# <a name="tutorial-add-luis-results-to-application-insights-from-a-bot-in-c"></a>Руководство по Добавление результатов LUIS в Application Insights из бота C#
 
 В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Полученные данные можно запрашивать (используя язык Kusto или Power Bi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в реальном времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
@@ -160,7 +160,7 @@ ms.locfileid: "68560062"
 1. В Visual Studio выполните сборку и запуск бота. 
 1. Запустите эмулятор бота и откройте бота. Этот [шаг](luis-csharp-tutorial-bf-v4.md#use-the-bot-emulator-to-test-the-bot) описан в предыдущем руководстве.
 
-1. Задайте боту вопрос. Этот [шаг](luis-csharp-tutorial-bf-v4.md#ask-bot-a-question-for-the-book-flight-intent) описан в предыдущем руководстве.
+1. Задайте боту вопрос. Этот [шаг](luis-csharp-tutorial-bf-v4.md##use-the-bot-emulator-to-test-the-bot) описан в предыдущем руководстве.
 
 ## <a name="view-luis-entries-in-application-insights"></a>Просмотр записей LUIS в Application Insights
 

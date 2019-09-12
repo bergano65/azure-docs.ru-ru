@@ -1,5 +1,5 @@
 ---
-title: Простая сущность и список фраз — LUIS
+title: Руководство по Простая сущность и список фраз — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как извлечь данные машинного обучения о названии должности из высказывания с помощью простой сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 07/16/2019
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: 1b731d8000e748813649ea32c91b9566a8bc245a
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 87e4fe3671f419383cb342fdb7dca55a8d2eb45d
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648607"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376266"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 

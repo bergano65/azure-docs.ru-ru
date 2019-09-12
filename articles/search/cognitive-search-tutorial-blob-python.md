@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 06/04/2019
 ms.author: v-lilei
-ms.openlocfilehash: 2cde1fe258d2caf7e7dc9d8ede582364f42c676b
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: c21b4d525e395dfb032a89631eb34156fe3e5b23
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648888"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744720"
 ---
 # <a name="python-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Учебник по Python. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -67,7 +67,7 @@ ms.locfileid: "69648888"
 
 ## <a name="prepare-sample-data"></a>Подготовка примера данных
 
-Конвейер обогащения извлекает данные из источников данных Azure. Исходные данные должны поступать из поддерживаемого типа источника данных [индексатора службы "Поиск Azure"](search-indexer-overview.md). Хранилище таблиц Azure не поддерживается для когнитивного поиска. В этом упражнении используется хранилище BLOB-объектов, чтобы продемонстрировать несколько типов содержимого.
+Конвейер обогащения извлекает данные из источников данных Azure. Исходные данные должны поступать из поддерживаемого типа источника данных [индексатора службы "Поиск Azure"](search-indexer-overview.md). В этом упражнении используется хранилище BLOB-объектов, чтобы продемонстрировать несколько типов содержимого.
 
 1. [Войдите на портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, выберите **Большие двоичные объекты**, а затем щелкните **Контейнер**.
 
@@ -473,6 +473,7 @@ pprint(json.dumps(r.json(), indent=1))
 Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
 
 Можно использовать методы GET или POST, в зависимости от сложности и длины строки запроса. Дополнительные сведения см. в статье [Отправка запросов в индекс службы поиска Azure с помощью REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+
 <a name="reset"></a>
 
 ## <a name="reset-and-rerun"></a>Сброс и повторный запуск

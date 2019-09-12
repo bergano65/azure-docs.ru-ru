@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 09/06/2019
 ms.author: pafarley
-ms.openlocfilehash: 366c0c50cee521c5e70496403fd77211a875065f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 740b3fae81521fec2cba31e3b8fd161f767c4380
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606761"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858971"
 ---
 # <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство по Создание приложения Android для обнаружения и выделения лиц на изображении
 
@@ -37,7 +37,8 @@ ms.locfileid: "67606761"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 - Интерфейс [Android Studio](https://developer.android.com/studio/) с уровнем API не ниже 22 (требуется для клиентской библиотеки службы распознавания лиц).
 
 ## <a name="create-the-android-studio-project"></a>Создание проекта Android Studio
@@ -56,17 +57,17 @@ ms.locfileid: "67606761"
 
 Откройте файл *activity_main.xml*. В редакторе макетов выберите вкладку **Text** (Текст) и замените ее содержимое следующим кодом.
 
-[!code-xml[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/res/layout/activity_main.xml?range=1-18)]
+[!code-xml[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/res/layout/activity_main.xml?name=snippet_activitymain)]
 
 ### <a name="create-the-main-class"></a>Создание главного класса
 
 Откройте файл *MainActivity.java* и замените имеющиеся инструкции `import` в этом окне следующим кодом.
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=3-11)]
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_imports)]
 
 Замените содержимое файла класса **MainActivity** следующим кодом: Создается обработчик событий для элемента **Button**, который запускает новое действие, позволяя пользователю выбрать изображение. Изображение отображается в **ImageView**.
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=29-68)]
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_mainactivity_methods)]
 
 ### <a name="try-the-app"></a>Использование приложения
 
@@ -86,17 +87,15 @@ ms.locfileid: "67606761"
 
 В файл **MainActivity.java** добавьте следующие операторы `import`.
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=13-14)]
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_face_imports)]
 
 Затем вставьте следующий код в класс **MainActivity** над методом **onCreate**:
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=17-27)]
-
-Замените `<Subscription Key>` ключом своей подписки. Кроме того, замените `<API endpoint>` конечной точкой API распознавания лиц, используя соответствующий идентификатор региона для ключа (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Ключи бесплатной пробной подписки создаются в регионе **westus**.
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_mainactivity_fields)]
 
 В области **Project** (Проект) разверните раздел **app** (приложение), затем **manifests** (манифесты) и откройте файл *AndroidManifest.xml*. Добавьте следующий элемент в качестве непосредственного дочернего элемента для элемента `manifest`:
 
-[!code-xml[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/AndroidManifest.xml?range=5)]
+[!code-xml[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/AndroidManifest.xml?name=snippet_manifest_entry)]
 
 ## <a name="upload-image-and-detect-faces"></a>Передача изображений и определение лиц
 
@@ -106,13 +105,13 @@ ms.locfileid: "67606761"
 
 Вставьте следующие два метода в класс **MainActivity**. Обратите внимание, что после завершения определения лиц приложение вызывает метод **drawFaceRectanglesOnBitmap** для изменения **ImageView**. Вы определите этот метод далее.
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=70-150)]
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_detection_methods)]
 
 ## <a name="draw-face-rectangles"></a>Рисование прямоугольников для лиц
 
 Вставьте следующий вспомогательный метод в класс **MainActivity**. Этот метод рисует прямоугольник вокруг каждого распознанного лица, используя координаты прямоугольника каждого экземпляра **Face**.
 
-[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?range=152-173)]
+[!code-java[](~/cognitive-services-face-android-detect/FaceTutorial/app/src/main/java/com/contoso/facetutorial/MainActivity.java?name=snippet_drawrectangles)]
 
 Наконец, раскомментируйте вызов метода **detectAndFrame** в методе **onActivityResult**.
 

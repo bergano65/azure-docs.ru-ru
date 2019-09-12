@@ -5,15 +5,15 @@ author: rayne-wiselman
 ms.service: site-recovery
 services: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 07a5ee6ccdaecc78c9a8e61ae9e64a5264e3a875
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 6064c32e14ffba7edd51c2dae7787067d14e33c9
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66418354"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814355"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
 
@@ -91,7 +91,7 @@ ms.locfileid: "66418354"
 7. Оставьте значения по умолчанию: базовые средства защиты от атак DDoS и отсутствие конечной точки службы в сети.
 8. Нажмите кнопку **Создать**.
 
-![Создать виртуальную сеть](media/tutorial-prepare-azure/create-network.png)
+![Создание виртуальной сети](media/tutorial-prepare-azure/create-network.png)
 
 Создание виртуальной сети занимает несколько секунд. После завершения этого процесса она отобразится на панели мониторинга портала Azure.
 

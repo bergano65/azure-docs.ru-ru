@@ -1,5 +1,5 @@
 ---
-title: Изменение и обучение приложения с помощью Python — LUIS
+title: Краткое руководство. Изменение и обучение приложения с помощью Python — LUIS
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства по Python вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 05/29/2019
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: 96f4d251b0ccc76ef33c86f6661cc9b94098a967
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 32c87c0ec78c57aee83b15f13a4d5240eedc1239
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560534"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375403"
 ---
 # <a name="quickstart-change-model-using-python"></a>Краткое руководство. Изменение модели с помощью Python
 

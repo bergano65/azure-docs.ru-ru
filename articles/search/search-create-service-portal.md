@@ -1,22 +1,22 @@
 ---
-title: Создание службы "Поиск Azure" на портале — Поиск Azure
+title: Краткое руководство. Создание службы "Поиск Azure" на портале — Поиск Azure
 description: Подготовка ресурса службы "Поиск Azure" на портале Azure. Выберите группы ресурсов, регионы, а также номер SKU или ценовую категорию.
 manager: nitinme
 author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 08/09/2019
+ms.date: 09/10/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 0aabf10b3be8f2f13abbba15d514a008f193646c
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 483810f89ea4bbb3a68e616929bd7d752c4d509f
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69649945"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883853"
 ---
-# <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
+# <a name="quickstart-create-an-azure-search-service-in-the-portal"></a>Краткое руководство. Создание службы "Поиск Azure" на портале
 
 Поиск Azure — это автономный ресурс, используемый для добавления поиска в пользовательские приложения. Хотя поиск Azure легко интегрируется со многими другими службами Azure, вы также можете использовать его автономно или интегрировать его с приложениями на серверах, или с программным обеспечением, работающим на других облачных платформах.
 

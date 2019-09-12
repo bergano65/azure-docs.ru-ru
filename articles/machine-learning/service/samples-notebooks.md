@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2ea124ecf6786142ac1703dab1e267b225751079
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 14962b936d1c09a6c50daa7bec460ce11dbefe5d
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035939"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860391"
 ---
 # <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Использование записных книжек Jupyter в Службе машинного обучения Azure
 
@@ -27,7 +27,6 @@ ms.locfileid: "70035939"
 - [Виртуальная машина Notebook Машинного обучения Azure](#notebookvm)
 - [Сервер собственных записных книжек](#byo)
 - [Виртуальные машины для обработки и анализа данных](#dsvm)
-- [Записные книжки Azure](#aznb)
 
 > [!NOTE]
 > Клонировав репозиторий, вы получите руководства по работе с записными книжками в папке **tutorials**, а сами записные книжки, связанные с определенными функциями, — в папке **how-to-use-azureml**.
@@ -53,13 +52,6 @@ ms.locfileid: "70035939"
 Виртуальная машина для анализа и обработки данных (DSVM) — это созданный и настроенный образ специализированной виртуальной машины. Если вы [создаете DSVM](how-to-configure-environment.md#dsvm), сервер с пакетом SDK и записными книжками устанавливается и настраивается автоматически. Но вас все равно нужно создать рабочую область и клонировать репозиторий с примером.
 
 [!INCLUDE [aml-dsvm-server](../../../includes/aml-dsvm-server.md)]
-
-<a name="aznb"></a>
-## <a name="get-samples-on-azure-notebooks"></a>Получение примеров в службе "Записные книжки Azure"
-
-Для [Записных книжек Azure](https://notebooks.azure.com/) сервер с пакетом SDK и записными книжками устанавливается и настраивается автоматически. Записные книжки Azure предоставляет полностью управляемую упрощенную среду для работы с записными книжками.
-
-Чтобы открыть репозиторий с примерами Записных книжек Azure, перейдите к рабочей области Машинного обучения Azure на [портале Azure](https://portal.azure.com). В разделе **Обзор** щелкните **Начало работы в Записных книжках Azure**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

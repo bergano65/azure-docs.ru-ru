@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/06/2018
 ms.author: banders
 ms.openlocfilehash: 25d9b48696dc2a83ea0ba77c1be2c7aad7627fff
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68443145"
 ---
 # <a name="review-enterprise-enrollment-billing-using-rest-apis"></a>Проверка данных для выставления счетов по регистрации учетных записей корпоративных пользователей с помощью REST API
@@ -41,15 +41,15 @@ Authorization: Bearer
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|Описание|  
+|Заголовок запроса|ОПИСАНИЕ|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
 В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
 
-## <a name="response"></a>Отклик  
+## <a name="response"></a>Ответ  
 
 Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список затрат с подробными сведениями для учетной записи.
 
@@ -94,14 +94,14 @@ Authorization: Bearer
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|Описание|  
+|Заголовок запроса|ОПИСАНИЕ|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
 В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
-### <a name="response"></a>Отклик  
+### <a name="response"></a>Ответ  
 
 Код состояния 200 (ОК) возвращается для успешного ответа, который содержит список подробной информации об использовании и стоимости за данный расчетный период и идентификатор счета для отдела.
 
@@ -150,14 +150,14 @@ Authorization: Bearer
 
 Ниже приведены обязательные заголовки. 
 
-|Заголовок запроса|Описание|  
+|Заголовок запроса|ОПИСАНИЕ|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Принимает действующий [ключ API](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based) `Bearer`. |  
 
 В этом примере показан синхронный вызов, который возвращает сведения о текущем цикле выставления счетов. Из соображений производительности синхронные вызовы возвращают сведения только за последний месяц.  Вы также можете обращаться к API [асинхронно](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-usage-detail#asynchronous-call-polling-based), чтобы получить данные за 36 месяцев.
 
-### <a name="response"></a>Отклик  
+### <a name="response"></a>Ответ  
 
 Код состояния 200 (ОК) возвращается для успешного ответа, который содержит список подробной информации об использовании и стоимости за данный расчетный период и идентификатор счета для отдела.
 
@@ -189,7 +189,7 @@ Authorization: Bearer
 
 Этот пример приведен в сокращенном виде. Полное описание каждого поля ответа и обработки ошибок см. в разделе [Usage Details - List By Enrollment Account](/rest/api/consumption/usagedetails/list#enrollmentaccountusagedetailslist) (Подробные сведения об использовании, список для учетной записи регистрации).
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дополнительная информация 
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
 - Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)   
 - [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   

@@ -13,12 +13,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 06/03/2019
 ms.author: mbullwin
-ms.openlocfilehash: d702b2f76531bad53e3fd98645d2b6bbf0582c54
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 0f0f4da38b6b9b315508d956075840907fd46fd4
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774740"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883792"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Application Insights — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга вашего работающего веб-приложения. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
@@ -28,7 +28,7 @@ Application Insights — это расширяемая служба управл
 
 Вы можете инструментировать не только приложение веб-службы, но и любые фоновые компоненты, а также JavaScript на веб-страницах. 
 
-![Инструментирование Application Insights в приложении отправляет данные телеметрии в ресурс Application Insights.](./media/app-insights-overview/01-scheme.png)
+![Инструментирование Application Insights в приложении отправляет данные телеметрии в ресурс Application Insights.](./media/app-insights-overview/diagram.png)
 
 Кроме того, можно извлечь данные телеметрии из сред размещения, например данные счетчиков производительности, диагностики Azure или журналов Docker. Вы также можете настроить веб-тесты, которые периодически отправляют искусственные запросы в веб-службу.
 
@@ -139,12 +139,6 @@ Application Insights — одна из многих служб, размещен
   * [UserVoice](https://feedback.azure.com/forums/357324-application-insights/filters/top)
 * Блог:
   * [Блог Application Insights](https://azure.microsoft.com/blog/tag/application-insights)
-
-## <a name="videos"></a>Видео
-
-- Внешнее видео: [Configuring Application Insights with an ASP.NET application](https://www.youtube.com/watch?v=blnGAVgMAfA) (Настройка Application Insights с помощью приложения ASP.NET).
-- Внешнее видео: [Configuring Application Insights with ASP.NET Core and Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) (Настройка Application Insights с помощью ASP.NET Core и Visual Studio).
-- Внешнее видео: [Configuring Application Insights with ASP.NET Core and Visual Studio Code](https://youtu.be/ygGt84GDync) (Настройка Application Insights с помощью ASP.NET Core и Visual Studio Code).
 
 <!--Link references-->
 

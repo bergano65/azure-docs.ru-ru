@@ -1,5 +1,5 @@
 ---
-title: Application Insights (Node.js) — LUIS
+title: Руководство по Application Insights (Node.js) — LUIS
 titleSuffix: Azure Cognitive Services
 description: В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии Application Insights.
 services: cognitive-services
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 06/16/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 72ce681b6b0e4109151b987a5f8cc4bc050aafa0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f488cfaf1e55edd8ae0d2bfd177553deb2677f8b
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563282"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387912"
 ---
-# <a name="add-luis-results-to-application-insights-from-a-bot-in-nodejs"></a>Добавление результатов LUIS, полученных бота Node.js, в Application Insights
+# <a name="tutorial-add-luis-results-to-application-insights-from-a-bot-in-nodejs"></a>Руководство по Добавление результатов LUIS, полученных бота Node.js, в Application Insights
 В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Полученные данные можно запрашивать (используя язык Kusto или Power Bi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в реальном времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:

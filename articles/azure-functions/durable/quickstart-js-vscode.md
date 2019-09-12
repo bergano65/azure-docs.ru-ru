@@ -7,17 +7,16 @@ author: ColbyTresness
 manager: jeconnoc
 keywords: функции azure, функции, обработка событий, вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.author: glenga
 ms.reviewer: azfuncdf, cotresne
-ms.openlocfilehash: c54a5631222a6de261e9805f284a4dfa2801750f
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 9471ca3047090753c30c758f4f41c8558cdf4dd2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612922"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70744062"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 

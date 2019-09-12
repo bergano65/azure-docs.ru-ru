@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/06/2018
 ms.author: banders
 ms.openlocfilehash: 8cfa429b18fb282f5c1f85d2fd1637704653b855
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68443051"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
@@ -45,12 +45,12 @@ Authorization: Bearer
 
 Ниже приведены обязательные заголовки.
 
-|Заголовок запроса|Описание|
+|Заголовок запроса|ОПИСАНИЕ|
 |--------------------|-----------------|
-|*Content-Type:*|Обязательный. Задайте значение `application/json`.|
-|*Authorization:*|Обязательный. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|
+|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 
 Код состояния 200 (ОК) возвращается в случае успешного ответа, который содержит список затрат с подробными сведениями для учетной записи.
 
@@ -81,7 +81,7 @@ Authorization: Bearer
 
 Каждый элемент в разделе **value** представляет сведения об использовании службы:
 
-|Свойство ответа|Описание|
+|Свойство ответа|ОПИСАНИЕ|
 |----------------|----------|
 |**subscriptionGuid** | Глобальный уникальный идентификатор для подписки. |
 |**startDate** | Дата начала использования. |
@@ -107,7 +107,7 @@ Authorization: Bearer
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - Ознакомьтесь со статьей [Обзор API-интерфейсов отчетов для корпоративных клиентов](https://docs.microsoft.com/azure/billing/billing-enterprise-api)
 - Подробнее о [REST API выставления счетов для корпоративных клиентов](https://docs.microsoft.com/rest/api/billing/)
 - [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 10966a7e658e02f04137b594fc12ec09cb676cf8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: ec78e4c260c2ca5e0469f9373f60d8bca29ada7f
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65793723"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375717"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -67,8 +67,8 @@ ms.locfileid: "65793723"
    При включении репликации для исходной виртуальной машины служба Azure Site Recovery автоматически обнаруживает и создает виртуальную сеть и учетную запись хранения. Вы также можете предварительно создать эти ресурсы и присвоить их виртуальной машине как часть шага при включении репликации. Тем не менее, другие ресурсы в целевом регионе придется создать вручную. Сведения о создании часто используемых сетевых ресурсов на основе конфигурации исходной виртуальной машины см. в следующих статьях:
 
    - [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
-   - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-   - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+   - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer)
+   - [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     
    Сведения о других сетевых компонентах см. в [документации по сетям Azure](https://docs.microsoft.com/azure/#pivot=products&panel=network). 
 
@@ -84,7 +84,7 @@ ms.locfileid: "65793723"
 3. В поле **Имя** укажите понятное имя **ContosoVMVault**. Если у вас есть несколько подписок, выберите нужную.
 4. Создайте группу ресурсов **ContosoRG**.
 5. Укажите регион Azure. Список поддерживаемых регионов указан на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-6. Для хранилища Служб восстановления выберите **Обзор** > **ConsotoVMVault** > **+Реплицировать**.
+6. Для хранилища Служб восстановления выберите **Обзор** > **ConsotoVMVault** >  **+Реплицировать**.
 7. В поле **Источник** выберите **Azure**.
 8. В поле **Исходное расположение** выберите исходный регион Azure, в котором сейчас запущены виртуальные машины.
 9. Выберите модель развертывания с помощью Azure Resource Manager. Затем выберите настройку **Исходная подписка** и **Исходная группа ресурсов**.

@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 8a0b974e9b64d477e53c37757b4f2fa952befba2
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 09e9a89fc79763eee5d154ba589b599fe8a180b2
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061861"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743396"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -54,7 +54,7 @@ ms.locfileid: "70061861"
 
 Эта статья является продолжением статьи [Руководство. Создание приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) или [Руководство по созданию приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md). Если вы еще не ознакомились с этими руководствами, сначала изучите одно из них. Кроме того, вы можете адаптировать шаги для своего собственного приложения .NET с Базой данных SQL.
 
-Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../sql-database/sql-database-firewall-configure.md#manage-server-level-ip-firewall-rules-using-the-azure-portal).
+Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../sql-database/sql-database-firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

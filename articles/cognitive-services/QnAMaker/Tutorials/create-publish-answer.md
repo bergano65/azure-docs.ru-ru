@@ -1,5 +1,5 @@
 ---
-title: Создание, публикация и получение ответа — QnA Maker
+title: Руководство по Создание, публикация и получение ответа — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве с использованием REST содержатся сведения о программном создании и публикации базы знаний, а также о создании ответа на вопрос из базы знаний.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 08/20/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: f81492dcdd095762127baabda14da602c6698ef6
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: e5b8cd01a64274e58927a5647897b1f9d86f7c24
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69646985"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390871"
 ---
 # <a name="tutorial-using-c-create-knowledge-base-then-answer-question"></a>Руководство. Создание базы знаний и получение ответа на вопрос с использованием C#
 

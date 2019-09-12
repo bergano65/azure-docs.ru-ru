@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: f8488195ed9e115843c2dc551af52d5da010ffe7
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 286b75166e6216513afc46e5779b8a2f969aeaf6
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036716"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858911"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -48,7 +48,7 @@ ms.locfileid: "69036716"
 
 Для этого вам потребуются следующие компоненты:
 
-* подписка Azure Cognitive Services; [ключ Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#multi-service-resource);
+* подписка Azure Cognitive Services; [ключ Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#create-a-new-azure-cognitive-services-resource);
 * компьютер с Windows;
 * [Visual Studio 2019](https://www.visualstudio.com/downloads/) — Community или Enterprise
 

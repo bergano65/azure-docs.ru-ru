@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: tutorial
-ms.date: 04/17/2019
+ms.date: 09/04/2019
 ms.author: pafarley
-ms.openlocfilehash: c125941414c73b14138f2b2fc15e470d9ed2d905
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 8ecf5fb7d54e7c9411c1153610d3a637477285bf
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70137540"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382970"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Руководство по Создание метаданных изображений в службе хранилища Azure с помощью API компьютерного зрения
 
@@ -42,7 +42,7 @@ ms.locfileid: "70137540"
 
 Вам необходимо будет создать ресурс API компьютерного зрения для учетной записи Azure. Этот ресурс управляет вашим доступ к службе API компьютерного зрения Azure. 
 
-1. Чтобы создать ресурс API "Компьютерное зрение", следуйте инструкциям из раздела [Подписка на одну службу](../../cognitive-services-apis-create-account.md#single-service-resource).
+1. Чтобы создать ресурс API "Компьютерное зрение", следуйте инструкциям из раздела [Подписка на одну службу](../../cognitive-services-apis-create-account.md).
 
 1. Перейдите в меню для группы ресурсов и щелкните имя подписки API "Компьютерное зрение", которую вы только что создали. Скопируйте URL-адрес в разделе **Конечная точка** в другое расположение, где вы можете легко извлечь его позже. Щелкните **Показать ключи доступа**.
 

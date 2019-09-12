@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/29/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: f7dce448b01c211441fd1e0fd530ff6ad062c303
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 08c1a8940bedb1093f618c8de53abc78f81c10dd
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114875"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918789"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-the-azure-portal"></a>Руководство по Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью портала Azure
 
@@ -102,7 +102,7 @@ ms.locfileid: "70114875"
 4. В поле **Имя** введите **VNet-Spoke**.
 5. В поле **Адресное пространство** введите **10.6.0.0/16**.
 6. В качестве **подписки** выберите свою подписку.
-7. Для параметра **Группа ресурсов** выберите **Test-FW-RG**.
+7. В поле **Группа ресурсов** выберите **FW-Hybrid-Test**.
 8. В поле **Расположение** выберите использованное ранее расположение.
 9. В разделе **Подсеть** в поле **Имя** введите **SN-Workload**.
 10. В поле **Диапазон адресов** введите **10.6.0.0/24**.
@@ -160,7 +160,7 @@ ms.locfileid: "70114875"
    |Параметр  |Значение  |
    |---------|---------|
    |Subscription     |\<ваша подписка\>|
-   |Resource group     |**FW-Hybrid-Test** |
+   |группа ресурсов.     |**FW-Hybrid-Test** |
    |ИМЯ     |**AzFW01**|
    |Location     |Выберите использованное ранее расположение|
    |Выберите виртуальную сеть     |**Использовать существующую**.<br> **VNet-hub**|

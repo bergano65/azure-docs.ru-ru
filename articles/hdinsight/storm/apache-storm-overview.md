@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: overview
 ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 00c536120ed9507d5ecc6fe930429d12514945b3
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 0540d8a83a8dc1da9bc763bce0b30463889cfe90
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483823"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915039"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
@@ -64,7 +64,7 @@ Storm работает с топологиями, а не заданиями [Ap
 
 По умолчанию для кластеров Apache Storm используется только один узел Nimbus, но кластер Storm в HDInsight имеет два. При сбое основного узла кластер Storm переключится на дополнительный на время восстановления основного узла. На схеме ниже показана конфигурация потока задач для Storm в HDInsight.
 
-![Схема с контролерами и компонентами Nimbus и Zookeeper](./media/apache-storm-overview/nimbus.png)
+![Схема с контролерами и компонентами Nimbus и Zookeeper](./media/apache-storm-overview/storm-diagram-nimbus.png)
 
 ## <a name="ease-of-creation"></a>Простота создания
 

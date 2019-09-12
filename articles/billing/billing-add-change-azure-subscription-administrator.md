@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: 000315a2d751a05d3e401ee1bb9f593c6e321194
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "64922899"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
@@ -65,13 +65,13 @@ ms.locfileid: "64922899"
 
     Через несколько секунд пользователю будет назначена роль владельца в области действия подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое управление доступом на основе ролей (RBAC)?](../role-based-access-control/overview.md)
 * [Сведения о различных ролях в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
-* [Руководство. Связывание или добавление подписки Azure в клиент Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+* [How to: Связывание или добавление подписки Azure в клиент Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 * [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
 
-## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Обращение в службу поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

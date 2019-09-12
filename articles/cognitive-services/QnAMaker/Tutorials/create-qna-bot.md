@@ -1,5 +1,5 @@
 ---
-title: Создание бота QnA с помощью службы Azure Bot — QnA Maker
+title: Руководство по Создание бота QnA с помощью службы Azure Bot — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: Создайте чат-бот QnA на странице публикации для существующей базы знаний. Этот бот использует пакет SDK Bot Framework версии 4. Нет необходимости писать код для сборки бота, весь код уже доступен для вас.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 07/31/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 4bb987a5a091871bec2c0cc8cec6d9ab804bb244
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: ea6e0d266c181d930f3d18171b09d222e53da7ab
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697993"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390907"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>Руководство по Создание бота QnA с помощью службы Azure Bot версии 4
 
@@ -51,7 +51,7 @@ ms.locfileid: "68697993"
     |--|--|--|
     |Имя бота|`my-tutorial-kb-bot`|Это — имя ресурса Azure для бота.|
     |Subscription|Просмотрите назначение.|Выберите ту же подписку, которую вы использовали для создания ресурсов QnA Maker.|
-    |Resource group|`my-tutorial-rg`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
+    |группа ресурсов.|`my-tutorial-rg`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
     |Location|`west us`|Расположение ресурса Azure бота.|
     |Ценовая категория|`F0`|Уровень "Бесплатный" для службы ботов Azure.|
     |Имя приложения.|`my-tutorial-kb-bot-app`|Это — веб-приложение для поддержки только вашего бота. Оно не должно совпадать с именем приложения, которое уже используется службой QnA Maker. Общий доступ к веб-приложению QnA Maker ни с каким другим ресурсом не поддерживается.|

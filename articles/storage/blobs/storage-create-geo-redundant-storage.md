@@ -10,12 +10,12 @@ ms.author: tamram
 ms.reviewer: artek
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 124b10607f710ddfb76787eac09dea7ec6ffc03c
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 3302402ae791ac17b8ac09ab91b061a558eb7c75
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173053"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390364"
 ---
 # <a name="tutorial-build-a-highly-available-application-with-blob-storage"></a>Руководство по Создание высокодоступного приложения с помощью хранилища BLOB-объектов
 
@@ -50,11 +50,6 @@ RA-GRS функционирует, реплицируя транзакции и�
 * установите [Python](https://www.python.org/downloads/);
 * Загрузите и установите [пакет SDK службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
 
-# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
-
-* Установите и настройте [Maven](https://maven.apache.org/download.cgi) для работы из командной строки.
-* Установите и настройте [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 
 * Установите [Node.js](https://nodejs.org).
@@ -83,7 +78,7 @@ RA-GRS функционирует, реплицируя транзакции и�
    | **Account kind** (Тип учетной записи) | Хранилище версии 2 | Дополнительные сведения о типах учетных записей см. в разделе [Типы учетных записей хранения](../common/storage-introduction.md#types-of-storage-accounts). |
    | **Производительность** | Стандартная | Значения Standard достаточно для примера сценария. |
    | **Репликация**| Геоизбыточное хранилище с доступом для чтения (RA-GRS) | Это значение необходимо для работы примера. |
-   |**Подписка** | Ваша подписка |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |
+   |**подписка** | Ваша подписка |Дополнительные сведения о подписках см. [здесь](https://account.azure.com/Subscriptions). |
    |**ResourceGroup** | myResourceGroup |Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
    |**Местоположение.** | Восточная часть США | Выберите расположение. |
 
@@ -105,14 +100,6 @@ git clone https://github.com/Azure-Samples/storage-dotnet-circuit-breaker-patter
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-python-circuit-breaker-pattern-ha-apps-using-ra-grs.git
-```
-
-# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
-
-[Скачайте пример проекта](https://github.com/Azure-Samples/storage-java-V10-ha-ra-grs) и извлеките файл storage-java-ragrs.zip. Вы также можете использовать команду [git](https://git-scm.com/), чтобы загрузить копию приложения в среду разработки. Пример проекта содержит простое приложение Java.
-
-```bash
-git clone https://github.com/Azure-Samples/storage-java-V10-ha-ra-grs
 ```
 
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
@@ -165,24 +152,6 @@ setx accountname "<youraccountname>"
 setx accountkey "<youraccountkey>"
 ```
 
-# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
-
-Этот пример требует безопасного хранения имени и ключа учетной записи хранения. Храните их в переменных среды локального компьютера, на котором будет выполняться пример. Чтобы создать переменные среды, в зависимости от операционной системы, используйте либо пример для Linux, либо для Windows. В Windows переменная среды доступна только после перезагрузки **командной строки** или используемой оболочки.
-
-### <a name="linux-example"></a>Пример Linux
-
-```
-export AZURE_STORAGE_ACCOUNT="<youraccountname>"
-export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
-```
-
-### <a name="windows-example"></a>Пример Windows
-
-```powershell
-setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
-setx AZURE_STORAGE_ACCESS_KEY "<youraccountkey>"
-```
-
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 
 Чтобы запустить этот пример, необходимо добавить учетные данные учетной записи хранения в файл `.env.example`, а затем переименовать его на `.env`.
@@ -222,49 +191,6 @@ AZURE_STORAGE_ACCOUNT_ACCESS_KEY=<replace with your storage account access key>
 
 Перед скачиванием определяется функция [retry_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) и [response_callback](https://docs.microsoft.com/python/api/azure.storage.common.storageclient.storageclient?view=azure-python) для объекта службы. Эти функции определяют обработчики событий, которые срабатывают при успешном завершении скачивания или при сбое и повторной попытке.
 
-# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
-
-Чтобы запустить пример, используйте Maven в командной строке.
-
-1. Откройте оболочку и перейдите в папку **storage-blobs-java-v10-quickstart** в клонированном каталоге.
-2. Укажите `mvn compile exec:java`.
-
-Этот пример создает тестовый файл в каталоге по умолчанию. Для пользователей Windows этим каталогом является **AppData\Local\Temp**. В этом примере представлены следующие варианты команд, которые можно ввести:
-
-- Введите **P** для выполнения операции put blob. Эта команда передает временный файл в учетную запись хранения.
-- Введите **L** для выполнения операции list blob. Эта команда выводит список больших двоичных объектов, которые находятся в контейнере в этот момент.
-- Введите **G** для выполнения операции get blob. Эта команда позволяет скачать файл из учетной записи хранения на локальный компьютер.
-- Введите **D** для выполнения операции delete blob. Эта команда удаляет большой двоичный объект из учетной записи хранения.
-- Введите **E** для закрытия приложения. Эта команда также удаляет все ресурсы, созданные в примере.
-
-В этом примере показаны выходные данные при запуске приложения на системе Windows.
-
-```
-Created quickstart container
-Enter a command
-(P)utBlob | (L)istBlobs | (G)etBlob | (D)eleteBlobs | (E)xitSample
-# Enter a command :
-P
-Uploading the sample file into the container: https://<storageaccount>.blob.core.windows.net/quickstart
-# Enter a command :
-L
-Listing blobs in the container: https://<storageaccount>.blob.core.windows.net/quickstart
-Blob name: SampleBlob.txt
-# Enter a command :
-G
-Get the blob: https://<storageaccount>.blob.core.windows.net/quickstart/SampleBlob.txt
-The blob was downloaded to C:\Users\<useraccount>\AppData\Local\Temp\downloadedFile13097087873115855761.txt
-# Enter a command :
-D
-Delete the blob: https://<storageaccount>.blob.core.windows.net/quickstart/SampleBlob.txt
-
-# Enter a command :
->> Blob deleted: https://<storageaccount>.blob.core.windows.net/quickstart/SampleBlob.txt
-E
-Cleaning up the sample and exiting!
-```
-
-Вы управляете образцом, поэтому введите команды для выполнения кода. Во входных данных учитывается регистр.
 
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
 
@@ -389,18 +315,6 @@ def response_callback(response):
         if secondary_read_count >= secondary_threshold:
             blob_client.location_mode = LocationMode.PRIMARY
             secondary_read_count = 0
-```
-
-# <a name="java-v10-sdktabjava-v10"></a>[Пакет SDK для Java версии 10](#tab/java-v10)
-
-При использовании пакета SDK для Java версии 10 не нужно определять обработчики обратных вызовов. Этот пакет содержит ряд фундаментальных отличий от версии 7. Вместо LocationMode у нас есть дополнительный **конвейер**. Вы можете определить дополнительный конвейер через **RequestRetryOptions**. Если он определен, приложение сможет автоматически переключаться на него, если ему не удается получить доступ к данным через основной конвейер.
-
-```java
-// We create pipeline options here so that they can be easily used between different pipelines
-PipelineOptions myOptions = new PipelineOptions();
-myOptions.withRequestRetryOptions(new RequestRetryOptions(RetryPolicyType.EXPONENTIAL, 3, 10, 500L, 1000L, accountName + "-secondary.blob.core.windows.net"));
-// We are using a default pipeline here, you can learn more about it at https://github.com/Azure/azure-storage-java/wiki/Azure-Storage-Java-V10-Overview
-final ServiceURL serviceURL = new ServiceURL(new URL("https://" + accountName + ".blob.core.windows.net"), StorageURL.createPipeline(creds, myOptions));
 ```
 
 # <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)

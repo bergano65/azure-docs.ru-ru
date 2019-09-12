@@ -1,5 +1,5 @@
 ---
-title: Руководство по составным сущностям — LUIS
+title: Руководство по Руководство по составным сущностям — LUIS
 titleSuffix: Azure Cognitive Services
 description: Добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 698635b3f216c556e1e36a033703b8786a028e38
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: f20661a74397487e141e69681f207418db8ac386
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946129"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70388035"
 ---
 # <a name="tutorial-group-and-extract-related-data"></a>Руководство по Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.

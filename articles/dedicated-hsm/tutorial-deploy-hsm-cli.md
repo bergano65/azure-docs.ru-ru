@@ -3,8 +3,8 @@ title: Руководство по развертыванию в существ�
 description: В руководстве описано развертывание выделенного устройства HSM с помощью CLI в существующей виртуальной сети
 services: dedicated-hsm
 documentationcenter: na
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 editor: ''
 ms.service: key-vault
 ms.topic: tutorial
@@ -12,13 +12,13 @@ ms.custom: mvc, seodec18
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2018
-ms.author: barclayn
-ms.openlocfilehash: 84beac4eca44a274eecc032e4816e3ff57aeafe2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: mbaldwin
+ms.openlocfilehash: 1d8649fc271801748723f484515f5fd2f708f95e
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60688460"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881046"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-cli"></a>Руководство. Развертывание устройств HSM в существующей виртуальной сети с помощью CLI
 

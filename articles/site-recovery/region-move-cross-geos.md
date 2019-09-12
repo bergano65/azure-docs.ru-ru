@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 63150b8924438df8d77fdd088811d9fbe3ec2d84
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: bff6268507c0d2ec0aa1eac0c7e2e9d2513ded58
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967307"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376126"
 ---
 # <a name="move-azure-vms-between-azure-government-and-public-regions"></a>Перенос виртуальных машин Azure между общедоступными регионами и регионами Azure для государственных организаций 
 
@@ -98,8 +98,8 @@ ms.locfileid: "68967307"
      Чтобы создать нужные вам наиболее часто используемые сетевые ресурсы, в зависимости от конфигурации исходной виртуальной машины, перейдите по следующим ссылкам.
 
     - [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
-    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-    - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer)
+    - [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     
     Сведения о других сетевых компонентах см. в [документации по сетям](https://docs.microsoft.com/azure/#pivot=products&panel=network). 
 

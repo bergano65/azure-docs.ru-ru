@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 03/18/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 11eae0e3bae501cdf39d7fe1d5d39524c1f83e6c
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: c5399f46106d94d593a15530ee0c223a3f5f3eaf
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035998"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70802052"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
 
@@ -287,7 +287,7 @@ echo "Linked template URI with SAS token: $templateURI"
 
 Так как учетная запись хранения теперь определяется в связанном шаблоне, необходимо обновить следующие два элемента ресурса `Microsoft.Compute/virtualMachines`.
 
-* Перенастройте элемент `dependOn`. Определение учетной записи хранения перемещается на связанный шаблон.
+* Перенастройте элемент `dependsOn`. Определение учетной записи хранения перемещается на связанный шаблон.
 * Перенастройте элемент `properties/diagnosticsProfile/bootDiagnostics/storageUri`. В разделе [Создать связанный шаблон](#create-the-linked-template) вы добавили значение выходных данных.
 
     ```json
