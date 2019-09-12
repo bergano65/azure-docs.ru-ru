@@ -9,11 +9,11 @@ ms.date: 04/24/2018
 ms.author: lizross
 ms.custom: include file
 ms.openlocfilehash: f2927bb10c282218e378f0f12a22cb1bfcdc9154
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67112989"
 ---
 >[!NOTE] 
->Дополнительные сведения о просмотре и удалении персональных данных см. [в статье запросы к субъекту данных Azure для GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). Дополнительные сведения о GDPR см. в [разделе GDPR портала доверия службы](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+>См. сведения о просмотре и удалении персональных данных в руководстве по [созданию запросов субъектов данных Azure в соответствии с GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). См. сведения о [GDPR на портале Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).

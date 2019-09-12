@@ -255,6 +255,10 @@
           href: manage-public-ip-address-prefix.md
     - name: Устранение неполадок
       items:
+        - name: Устранение неполадок с пирингом виртуальной сети
+          href: virtual-network-troubleshoot-peering-issues.md
+        - name: Настройка и проверка VPN-подключений и подключений между виртуальными сетями
+          href: virtual-network-configure-vnet-connections.md
         - name: Группы безопасности сети
           href: diagnose-network-traffic-filter-problem.md
         - name: Маршруты

@@ -123,8 +123,6 @@
       href: billing-how-to-change-azure-account-profile.md
     - name: Доступ к данным для выставления счетов
       href: billing-manage-access.md
-    - name: Роли EA в Azure
-      href: billing-understand-ea-roles.md
     - name: Роли для клиентского соглашения Майкрософт в Azure
       href: billing-understand-mca-roles.md
     - name: Привязка идентификатора партнера
@@ -133,8 +131,26 @@
       href: billing-view-all-accounts.md
     - name: Упорядочение затрат с помощью разделов счетов
       href: billing-mca-section-invoice.md
-    - name: Задачи EA в клиентском соглашении Майкрософт
-      href: billing-mca-enterprise-operations.md
+    - name: Управление EA
+      items:
+        - name: Начало работы на портале Azure EA
+          href: billing-ea-portal-get-started.md
+        - name: Роли EA в Azure
+          href: billing-understand-ea-roles.md
+        - name: Администрирование портала Azure EA
+          href: billing-ea-portal-administration.md
+        - name: Соглашения и поправки для Azure EA
+          href: billing-ea-portal-agreements.md
+        - name: Счета на корпоративную регистрацию
+          href: billing-ea-portal-enrollment-invoices.md
+        - name: REST API Azure Enterprise
+          href: billing-ea-portal-rest-apis.md
+        - name: Зарезервированные экземпляры виртуальной машины Azure EA
+          href: billing-ea-portal-vm-reservations.md
+        - name: Устранение неполадок с доступом к порталу Azure EA
+          href: billing-ea-portal-troubleshoot.md
+        - name: Задачи EA в клиентском соглашении Майкрософт
+          href: billing-mca-enterprise-operations.md
     - name: Решение проблемы просроченных платежей
       href: billing-azure-subscription-past-due-balance.md
     - name: Настройка учетных записей выставления счетов для клиентского соглашения Майкрософт

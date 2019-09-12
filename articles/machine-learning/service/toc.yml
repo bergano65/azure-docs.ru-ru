@@ -152,18 +152,20 @@
         - name: Настройка сред обучения
           displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
           href: how-to-set-up-training-targets.md
-        - name: Создание средств оценки при обучении модели
-          href: how-to-train-ml-models.md
-        - name: Использование Scikit-learn
-          href: how-to-train-scikit-learn.md
-        - name: Использование класса TensorFlow
-          href: how-to-train-tensorflow.md
-        - name: Использование Keras
-          href: how-to-train-keras.md
-        - name: Использование класса PyTorch
-          href: how-to-train-pytorch.md
-        - name: Использование Chainer
-          href: how-to-train-chainer.md
+        - name: Использование средств оценки для обучения
+          items:
+            - name: Создание средств оценки при обучении модели
+              href: how-to-train-ml-models.md
+            - name: Использование Scikit-learn
+              href: how-to-train-scikit-learn.md
+            - name: Использование класса TensorFlow
+              href: how-to-train-tensorflow.md
+            - name: Использование Keras
+              href: how-to-train-keras.md
+            - name: Использование класса PyTorch
+              href: how-to-train-pytorch.md
+            - name: Использование Chainer
+              href: how-to-train-chainer.md
         - name: Настройка гиперпараметров
           displayName: parameter
           href: how-to-tune-hyperparameters.md
@@ -189,7 +191,7 @@
         - name: Использование автоматического машинного обучения (Python)
           displayName: SDK automl
           href: how-to-configure-auto-train.md
-        - name: Использование автоматического машинного обучения (портал Azure)
+        - name: Использование автоматизированного машинного обучения (целевая страница рабочей области)
           href: how-to-create-portal-experiments.md
         - name: Использование удаленных целевых объектов вычислений
           displayName: automl automated auto ml

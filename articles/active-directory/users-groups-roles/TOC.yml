@@ -40,6 +40,16 @@
           href: /azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Управление профилями пользователей
           href: /azure/active-directory/fundamentals/active-directory-users-profile-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Операции массовой обработки данных (предварительная версия)
+          items:
+            - name: Скачивание пользователей (предварительная версия)
+              href: users-bulk-download.md
+            - name: Операции массового импорта (предварительная версия)
+              href: users-bulk-add.md
+            - name: Операции массового удаления пользователей (предварительная версия)
+              href: users-bulk-delete.md
+            - name: Операции массового восстановления пользователей (предварительная версия)
+              href: users-bulk-restore.md
         - name: Обмен учетными записями пользователей
           href: users-sharing-accounts.md
         - name: Назначение пользователям ролей администратора
@@ -74,8 +84,8 @@
       items:
         - name: Управление доступом с помощью групп
           href: /azure/active-directory/fundamentals/active-directory-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: Управление группами на портале Azure
-          href: /azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Списки групп и элементов поиска (предварительная версия)
+          href: groups-members-owners-search.md
         - name: "Управление группами в PowerShell для Graph (версия\_2)"
           href: groups-settings-v2-cmdlets.md
         - name: Управление группами в PowerShell MSOnline
@@ -84,8 +94,20 @@
           href: /azure/active-directory/fundamentals/active-directory-groups-members-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Управление владельцами групп
           href: /azure/active-directory/fundamentals/active-directory-accessmanagement-managing-group-owners?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Операции массовой обработки данных (предварительная версия)
+          items:
+            - name: Операции массового импорта участников (предварительная версия)
+              href: groups-bulk-import-members.md
+            - name: Операции массового скачивания участников (предварительная версия)
+              href: groups-bulk-download-members.md
+            - name: Операции массового удаления участников (предварительная версия)
+              href: groups-bulk-remove-members.md
+            - name: Операции массового скачивания списка групп (предварительная версия)
+              href: groups-bulk-download.md
         - name: Управление группами в группах
           href: /azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Создание группы (портал Azure)
+          href: /azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Включение доступа для групп в приложениях SaaS
           href: groups-saasapps.md
         - name: Рекомендации по именованию групп
