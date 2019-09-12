@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 7a278196b2f4edc35ebc8c4dc77116363e9f7901
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 2e79f38fb6495d75e0438fa3622cc226886c0773
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811813"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885548"
 ---
-# <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
+# <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
 HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта эластичность позволяет сжимать кластер после часов или выходных дней и увеличивать его во время пиковых бизнес-требований.
 

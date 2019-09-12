@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: e5ae05b2ad1dc03bad210b1f67834865afd49df3
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 751d5b47006f5c99a747503ad4f052b3e03a043c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810879"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882431"
 ---
-# <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
+# <a name="analyze-apache-hadoop-logs-in-azure-hdinsight"></a>Анализ журналов Apache Hadoop в Azure HDInsight
 
 У каждого кластера Apache Hadoop в Azure HDInsight есть учетная запись хранения Azure, которая используется в качестве файловой системы по умолчанию. Эта учетная запись называется учетной записью хранения по умолчанию. Для хранения журналов кластер использует хранилище таблиц Azure и хранилище BLOB-объектов в учетной записи хранения по умолчанию.  Для получения учетной записи хранения по умолчанию для кластера обратитесь к [этому разделу](../hdinsight-administer-use-portal-linux.md#find-the-storage-accounts). Журналы сохраняются в учетной записи хранения даже после удаления кластера.
 

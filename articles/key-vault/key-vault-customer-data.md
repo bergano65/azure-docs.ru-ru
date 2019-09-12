@@ -2,19 +2,19 @@
 title: Функции данных клиентов в Azure Key Vault | Документация Майкрософт
 description: Сведения о данных клиентов в Key Vault
 services: key-vault
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: reference
 ms.date: 01/07/2019
-ms.author: barclayn
-ms.openlocfilehash: f044c0da1cb1ed3f3c7f118764cc0e685cb3998f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mbaldwin
+ms.openlocfilehash: 67e1aeab4211249075b51bd0138d7875756a3483
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64687029"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883323"
 ---
 # <a name="azure-key-vault-customer-data-features"></a>Функции данных клиентов в Azure Key Vault
 
@@ -50,7 +50,7 @@ Azure Key Vault получает данные о клиентах во врем�
 
 Журналы диагностики Azure Key Vault, которые содержат персональные данные, можно получить, выполнив запрос на экспорт на портале конфиденциальности пользователей. Этот запрос должен быть отправлен администратором клиента.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Ведение журнала хранилища ключей Azure](key-vault-logging.md)
 

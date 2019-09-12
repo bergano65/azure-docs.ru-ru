@@ -8,12 +8,12 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 07/19/2019
 ms.author: bwren
-ms.openlocfilehash: cf2aee475f5d3933421de45fa5b2ade687bed62f
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 18e6e162764ce190a1953a4126e4f9ef2eb717f5
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348082"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899512"
 ---
 # <a name="get-started-with-log-analytics-in-azure-monitor"></a>Начало работы с Log Analytics в Azure Monitor
 
@@ -162,7 +162,7 @@ Event
 ![Интеллектуальная диагностика](media/get-started-portal/smart-diagnostics.png)
 
 ## <a name="pin-to-dashboard"></a>Закрепить на панели мониторинга
-Вы можете закрепить диаграмму или таблицу на одной из общих панелей мониторинга Azure. Для этого просто щелкните значок закрепления.
+Вы можете закрепить диаграмму или таблицу на одной из общих панелей мониторинга Azure. Для этого просто щелкните значок закрепления. Обратите внимание, что этот значок переместился в верхнюю часть окна Log Analytics, что отличается от снимка экрана ниже.
 
 ![Закрепить на панели мониторинга](media/get-started-portal/pin-dashboard.png)
 

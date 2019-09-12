@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 06/08/2019
+ms.date: 09/10/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 590b84acd57199b291aa44f7120507023ffd026a
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: e1fc58db8f933ae122801f492fbbafdb905c7dda
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70389753"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910406"
 ---
 # <a name="encoding-with-media-services"></a>Кодирование с помощью Служб мультимедиа
 
@@ -30,7 +30,7 @@ ms.locfileid: "70389753"
 
 На следующей схеме показан рабочий процесс для кодирования по запросу с динамической упаковкой.
 
-![Динамическая упаковка](./media/dynamic-packaging-overview/media-services-dynamic-packaging.png)
+![Динамическая упаковка](./media/dynamic-packaging-overview/media-services-dynamic-packaging.svg)
 
 В этой статье содержатся рекомендации о том, как закодировать содержимое с помощью Служб мультимедиа версии 3.
 

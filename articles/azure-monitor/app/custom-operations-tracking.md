@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 45eebe5bce819fa59f2ed6779e845afa6b3efaa5
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 34658fb1db84ff09a4c3d22ea95f5bfc7384721d
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276860"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883638"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -125,7 +125,10 @@ public class ApplicationInsightsMiddleware : OwinMiddleware
 Протокол HTTP для корреляции также объявляет заголовок `Correlation-Context`. Однако здесь он опускается для простоты.
 
 ## <a name="queue-instrumentation"></a>Инструментирование очереди
-Пока есть [протокол HTTP для корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md), который передает сведения о корреляции с помощью HTTP-запроса, каждый протокол очереди должен определить, как одни и те же сведения передаются вместе с сообщением очереди. Некоторые протоколы очереди (например, AMQP) разрешают передавать дополнительные метаданные. Другим протоколам (например, очереди службы хранилища Azure) требуется контекст для кодирования в полезных данных сообщения.
+Хотя существует [контекст трассировки W3C](https://www.w3.org/TR/trace-context/) и [протокол HTTP для корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md) для передачи сведений о корреляции с HTTP-запросом, каждый протокол очереди должен определять, как передаются одни и те же сведения в сообщении очереди. Некоторые протоколы очереди (например, AMQP) разрешают передавать дополнительные метаданные. Другим протоколам (например, очереди службы хранилища Azure) требуется контекст для кодирования в полезных данных сообщения.
+
+> [!NOTE]
+> * **Трассировка между компонентами еще не поддерживается для очередей** При использовании протокола HTTP, если производитель и потребитель отправляют данные телеметрии в разные Application Insights ресурсы, процесс диагностики транзакций и схема приложений показывают транзакции и сквозную карту. В случае очередей это еще не поддерживается. 
 
 ### <a name="service-bus-queue"></a>Очередь служебной шины
 Application Insights отслеживает вызовы обмена сообщениями в службе "Служебная шина" с новым [клиентом службы "Служебная шина Microsoft Azure" для .NET](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/) версии 3.0.0 и выше.
@@ -142,7 +145,8 @@ public async Task Enqueue(string payload)
     // StartOperation is a helper method that initializes the telemetry item
     // and allows correlation of this operation with its parent and children.
     var operation = telemetryClient.StartOperation<DependencyTelemetry>("enqueue " + queueName);
-    operation.Telemetry.Type = "Queue";
+    
+    operation.Telemetry.Type = "Azure Service Bus";
     operation.Telemetry.Data = "Enqueue " + queueName;
 
     var message = new BrokeredMessage(payload);
@@ -179,7 +183,7 @@ public async Task Process(BrokeredMessage message)
 {
     // After the message is taken from the queue, create RequestTelemetry to track its processing.
     // It might also make sense to get the name from the message.
-    RequestTelemetry requestTelemetry = new RequestTelemetry { Name = "Dequeue " + queueName };
+    RequestTelemetry requestTelemetry = new RequestTelemetry { Name = "process " + queueName };
 
     var rootId = message.Properties["RootId"].ToString();
     var parentId = message.Properties["ParentId"].ToString();
@@ -228,7 +232,7 @@ public async Task Process(BrokeredMessage message)
 public async Task Enqueue(CloudQueue queue, string message)
 {
     var operation = telemetryClient.StartOperation<DependencyTelemetry>("enqueue " + queue.Name);
-    operation.Telemetry.Type = "Queue";
+    operation.Telemetry.Type = "Azure queue";
     operation.Telemetry.Data = "Enqueue " + queue.Name;
 
     // MessagePayload represents your custom message and also serializes correlation identifiers into payload.
@@ -274,38 +278,18 @@ public async Task Enqueue(CloudQueue queue, string message)
 #### <a name="dequeue"></a>Выведение из очереди
 Так же, как и `Enqueue`, фактические HTTP-запросы к очереди службы хранилища Azure автоматически отслеживаются Application Insights. Однако операция `Enqueue` предположительно выполняется в контексте родительского элемента, такого как контекст входящего запроса. Пакеты SDK Application Insights автоматически сопоставляют такие операции (и их части HTTP) с родительским запросом и другими данными телеметрии, переданными в той же области.
 
-С операцией `Dequeue` все не так просто. Пакет SDK Application Insights автоматически отслеживает HTTP-запросы. Тем не менее ему не известен контекст корреляции, пока выполняется анализ сообщения. Невозможно сопоставить HTTP-запрос для получения сообщения с остальной частью данных телеметрии.
-
-Зачастую может быть удобно сопоставить HTTP-запрос с очередью и другими трассировками. В следующем примере показано, как это сделать.
+С операцией `Dequeue` все не так просто. Пакет SDK Application Insights автоматически отслеживает HTTP-запросы. Тем не менее ему не известен контекст корреляции, пока выполняется анализ сообщения. Невозможно сопоставить HTTP-запрос для получения сообщения с остальными данными телеметрии, особенно если получено более одного сообщения.
 
 ```csharp
 public async Task<MessagePayload> Dequeue(CloudQueue queue)
 {
-    var telemetry = new DependencyTelemetry
-    {
-        Type = "Queue",
-        Name = "Dequeue " + queue.Name
-    };
-
-    telemetry.Start();
-
+    var operation = telemetryClient.StartOperation<DependencyTelemetry>("dequeue " + queue.Name);
+    operation.Telemetry.Type = "Azure queue";
+    operation.Telemetry.Data = "Dequeue " + queue.Name;
+    
     try
     {
         var message = await queue.GetMessageAsync();
-
-        if (message != null)
-        {
-            var payload = JsonConvert.DeserializeObject<MessagePayload>(message.AsString);
-
-            // If there is a message, we want to correlate the Dequeue operation with processing.
-            // However, we will only know what correlation ID to use after we get it from the message,
-            // so we will report telemetry after we know the IDs.
-            telemetry.Context.Operation.Id = payload.RootId;
-            telemetry.Context.Operation.ParentId = payload.ParentId;
-
-            // Delete the message.
-            return payload;
-        }
     }
     catch (StorageException e)
     {
@@ -317,8 +301,7 @@ public async Task<MessagePayload> Dequeue(CloudQueue queue)
     finally
     {
         // Update status code and success as appropriate.
-        telemetry.Stop();
-        telemetryClient.TrackDependency(telemetry);
+        telemetryClient.StopOperation(operation);
     }
 
     return null;
@@ -333,7 +316,8 @@ public async Task<MessagePayload> Dequeue(CloudQueue queue)
 public async Task Process(MessagePayload message)
 {
     // After the message is dequeued from the queue, create RequestTelemetry to track its processing.
-    RequestTelemetry requestTelemetry = new RequestTelemetry { Name = "Dequeue " + queueName };
+    RequestTelemetry requestTelemetry = new RequestTelemetry { Name = "process " + queueName };
+    
     // It might also make sense to get the name from the message.
     requestTelemetry.Context.Operation.Id = message.RootId;
     requestTelemetry.Context.Operation.ParentId = message.ParentId;
@@ -368,8 +352,15 @@ public async Task Process(MessagePayload message)
 - Остановите `Activity`.
 - Используйте `Start/StopOperation` или вручную вызовите телеметрию `Track`.
 
+### <a name="dependency-types"></a>Типы зависимостей
+
+Application Insights использует тип зависимости для пользовательского интерфейса настроить. Для очередей он распознает следующие `DependencyTelemetry` типы, улучшающие [возможности диагностики транзакций](/azure-monitor/app/transaction-diagnostics):
+- `Azure queue`для очередей службы хранилища Azure
+- `Azure Event Hubs`для концентраторов событий Azure
+- `Azure Service Bus`для служебной шины Azure
+
 ### <a name="batch-processing"></a>Пакетная обработка
-Некоторые очереди поддерживают вывод из очереди нескольких сообщений с помощью одного запроса. Обработка таких сообщений предположительно является независимой и относится к разным логическим операциям. В этом случае невозможно сопоставить операцию `Dequeue` с обработкой конкретного сообщения.
+Некоторые очереди поддерживают вывод из очереди нескольких сообщений с помощью одного запроса. Обработка таких сообщений предположительно является независимой и относится к разным логическим операциям. Невозможно сопоставить `Dequeue` операцию с определенным сообщением, которое обрабатывается.
 
 Обработка каждого сообщения должна выполняться в собственном асинхронном потоке управления. Дополнительные сведения см. в разделе [Отслеживание исходящих зависимостей](#outgoing-dependencies-tracking).
 
@@ -495,6 +486,7 @@ public async Task RunAllTasks()
 ## <a name="next-steps"></a>Следующие шаги
 
 - Изучите основы [корреляции данных телеметрии](correlation.md) в Application Insights.
+- Узнайте, как коррелированные данные заключаются в [диагностике транзакций](/azure-monitor/app/transaction-diagnostics) и [схеме приложений](/azure-monitor/app/app-map).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлены типы данных и модель данных для Application Insights.
 - Передача настраиваемых [событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md) в Application Insights.
 - Изучите стандартную [конфигурацию](configuration-with-applicationinsights-config.md#telemetry-initializers-aspnet) коллекции свойств контекста.

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: hrasheed
-ms.openlocfilehash: bded3ac97732a7cd18411cc9f4ef1707dbdf68e3
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
-ms.translationtype: MT
+ms.openlocfilehash: d53468ae544b02798d7fcd74370d1d3dbdcbd5e0
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735823"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882092"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Выполнение запросов Apache Hive с использованием средств Data Lake для Visual Studio
 
@@ -71,7 +71,7 @@ ms.locfileid: "70735823"
 
    С помощью расширенной отправки можно настроить **имя задания**, **аргументы**, **дополнительные конфигурации** и **каталог состояния** скрипта.
 
-    ![Снимок экрана запроса Hive в HDInsight Hadoop](./media/apache-hadoop-use-hive-visual-studio/hdinsight.visual.studio.tools.submit.jobs.advanced.png "Отправка запросов")
+    ![Снимок экрана запроса Hive в HDInsight Hadoop](./media/apache-hadoop-use-hive-visual-studio/vs-tools-submit-jobs-advanced.png "Отправка запросов")
 
 ### <a name="hive-application"></a>Приложение Hive
 
@@ -115,11 +115,11 @@ ms.locfileid: "70735823"
 
 6. На панели инструментов выберите **Кластер HDInsight**, который вы хотите использовать для этого запроса. Щелкните **Отправить**, чтобы выполнить инструкции как задание Hive.
 
-   ![Панель отправки](./media/apache-hadoop-use-hive-visual-studio/toolbar.png)
+   ![Панель отправки](./media/apache-hadoop-use-hive-visual-studio/hdinsight-toolbar-submit.png)
 
 7. Отобразится **сводка по заданию Hive** и информация о его выполнении. Воспользуйтесь ссылкой **Обновить**, чтобы обновить информацию о задании. Обновляйте ее до тех пор, пока **состояние задания** не изменится на **Завершено**.
 
-   ![Сводка по завершенному заданию](./media/apache-hadoop-use-hive-visual-studio/jobsummary.png)
+   ![Сводка по завершенному заданию](./media/apache-hadoop-use-hive-visual-studio/hdinsight-job-summary.png)
 
 8. Воспользуйтесь ссылкой **Выходные данные задания** , чтобы просмотреть выходные данные этого задания. Они содержат `[ERROR] 3`. Это значение, возвращенное данным запросом.
 

@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: acf11b8107855c6f087f63f592cdbbad3766795e
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: MT
+ms.openlocfilehash: c8103f5d0df7a71df5141ece3a8d67f308a562e1
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811023"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70884227"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
@@ -60,7 +60,7 @@ ms.locfileid: "70811023"
 
 4. В **обозревателе Azure** также можно удалить связь кластера.
    
-   ![Несвязанный кластер IntelliJ](./media/apache-domain-joined-manage/unlink.png)
+   ![Несвязанный кластер IntelliJ](./media/apache-domain-joined-manage/hdinsight-unlink-cluster.png)
 
 ## <a name="use-eclipse-to-link-to-domain-joined-cluster"></a>Использование Eclipse для связывания присоединенного к домену кластера
 
@@ -83,7 +83,7 @@ ms.locfileid: "70811023"
 
 4. В **обозревателе Azure** также можно удалить связь кластера.
    
-   ![несвязанная Eclipse кластеров](./media/apache-domain-joined-manage/unlink.png)
+   ![несвязанная Eclipse кластеров](./media/apache-domain-joined-manage/hdinsight-unlink-cluster.png)
 
 ## <a name="access-the-clusters-with-enterprise-security-package"></a>Получите доступ к кластерам с помощью пакета безопасности предприятия.
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
-ms.openlocfilehash: 60c725e084a18326cc4bc9cc05d02d103261f5a4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: d545cd997b35cfa5e7fec58b17507ce63097fd20
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809258"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898847"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Оптимизация запросов Apache в Hive в Azure HDInsight
 
@@ -29,11 +29,11 @@ ms.locfileid: "70809258"
 
 * Во время создания кластера можно указать количество рабочих узлов при помощи портала Azure, Azure PowerShell или интерфейса командной строки.  Дополнительные сведения см. в статье [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md). На следующем снимке экрана показана рабочая конфигурация узла на портале Azure:
   
-    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png "scaleout_1")
+    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-scaleout-1.png "scaleout_1")
     
 * После создания кластера можно также изменить количество рабочих узлов, чтобы масштабировать кластер без необходимости его повторного создания.
 
-    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png "scaleout_2")
+    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-scaleout-2.png "scaleout_2")
 
 Дополнительные сведения о масштабировании HDInsight см. в статье [Масштабирование кластеров HDInsight](hdinsight-scaling-best-practices.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "70809258"
 
 [Apache Tez](https://tez.apache.org/) — это механизм выполнения, альтернативный механизму MapReduce. При подготовке кластеров HDInsight под управлением Linux платформа Tez включена по умолчанию.
 
-![tez_1][image-hdi-optimize-hive-tez_1]
+![tez_1](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-tez-engine.png)
 
 Tez работает быстрее, так как:
 
@@ -65,7 +65,7 @@ Tez работает быстрее, так как:
 
 Секционирование данных в Hive реализуется путем реорганизации необработанных данных в новые каталоги. Каждой секции присвоен собственный каталог файлов. Секционирование определяется пользователем. Следующая схема иллюстрирует секционирование таблицы Hive по столбцу *Год*. Для каждого года создается новый каталог.
 
-![Секционирование данных в Hive][image-hdi-optimize-hive-partitioning_1]
+![Секционирование данных в Hive](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-partitioning.png)
 
 Некоторые рекомендации для выполнения секционирования:
 
@@ -197,7 +197,3 @@ Hive поддерживает различные форматы. Пример:
 * [Использование Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md)
 * [Анализ данных о задержке рейсов с помощью интерактивного запроса в HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)
 * [Анализ данных Twitter с помощью Apache Hive в HDInsight](hdinsight-analyze-twitter-data-linux.md)
-
-
-[image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
-[image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png

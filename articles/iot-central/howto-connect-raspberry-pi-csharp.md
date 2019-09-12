@@ -3,17 +3,17 @@ title: Подключение Raspberry Pi к приложению Azure IoT Cen
 description: Как разработчик устройства, как подключить Raspberry Pi к приложению Azure IoT Central с помощью C#.
 author: viv-liu
 ms.author: viviali
-ms.date: 04/15/2019
+ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 9395fa5ba5ae8dfa6ff03aabd1a27942ca4fa60a
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 7a66925dceee4bf90bc6a5cd155f99347bbd124e
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195190"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70886014"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -356,9 +356,9 @@ ms.locfileid: "70195190"
 
 ### <a name="properties"></a>Свойства
 
-| Тип            | `Display name` | Имя поля | Тип данных                              |
+| Type            | `Display name` | Имя поля | Тип данных                              |
 | --------------- | ------------ | ---------- | -------------------------------------- |
-| Свойство устройства | Серийный номер   | dieNumber  | номер                                 |
+| Свойство устройства | Серийный номер   | dieNumber  | number                                 |
 | Местоположение        | Местоположение     | расположение   | {Широта: float, Long: float, Alt?: float} |
 
 ## <a name="next-steps"></a>Следующие шаги

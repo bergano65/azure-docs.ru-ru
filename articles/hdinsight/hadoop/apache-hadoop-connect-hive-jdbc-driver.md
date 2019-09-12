@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: hrasheed
-ms.openlocfilehash: 36233dc986752ded409389a0a8e267c92a40b5a5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 689926d0dbaebaaf56c8238e8fed7a691e8cacf4
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562588"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882474"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "68562588"
 
 Дополнительные сведения об интерфейсе JDBC Hive см. в статье [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер HDInsight Hadoop. Дополнительные сведения о создании кластера см. в статье [Приступая к работе с Hadoop в HDInsight](apache-hadoop-linux-tutorial-get-started.md).
 * [Пакет Java Developer Kit (JDK) версии 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) или более поздней.
@@ -63,11 +63,11 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 3. Запустите приложение SQuirreL SQL. В левой части окна выберите **Драйверы**.
 
-    ![Вкладка "Драйверы" в левой части окна](./media/apache-hadoop-connect-hive-jdbc-driver/squirreldrivers.png)
+    ![Вкладка "Драйверы" в левой части окна](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-squirreldrivers.png)
 
 4. Среди значков в верхней части диалогового окна **Drivers** (Драйверы) щелкните значок **+** для создания драйвера.
 
-    ![Значки драйверов](./media/apache-hadoop-connect-hive-jdbc-driver/driversicons.png)
+    ![Значки драйверов](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-driversicons.png)
 
 5. В диалоговом окне Add Driver (Добавление драйвера) укажите следующие сведения.
 
@@ -76,13 +76,13 @@ SQuirreL SQL — клиент JDBC, который можно использов
     * **Путь к дополнительным классам.** Используйте кнопку **Добавить** , чтобы добавить все скачанные ранее JAR-файлы.
     * **Имя класса:** org.apache.hive.jdbc.HiveDriver.
 
-   ![диалоговое окно "Добавить драйвер"](./media/apache-hadoop-connect-hive-jdbc-driver/adddriver.png)
+   ![диалоговое окно "Добавить драйвер"](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-add-driver.png)
 
    Нажмите кнопку **ОК** , чтобы сохранить эти параметры.
 
 6. В левой части окна SQuirreL SQL выберите **Псевдонимы**. Затем щелкните значок, чтобы создать псевдоним подключения. **+**
 
-    ![добавление нового псевдонима](./media/apache-hadoop-connect-hive-jdbc-driver/aliases.png)
+    ![добавление нового псевдонима](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-new-aliases.png)
 
 7. В диалоговом окне **Добавить псевдоним** укажите следующие значения.
 
@@ -98,7 +98,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
     * **Пароль**. Пароль для учетной записи входа кластера.
 
-   ![диалоговое окно "Добавить псевдоним"](./media/apache-hadoop-connect-hive-jdbc-driver/addalias.png)
+   ![диалоговое окно "Добавить псевдоним"](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-addalias-dialog.png)
 
     > [!IMPORTANT] 
     > Нажмите кнопку **Проверить**, чтобы убедиться, что подключение работает. При появлении диалогового окна **Connect to: Hive on HDInsight** (Подключение: Hive в HDInsight) выберите **Подключиться**, чтобы выполнить проверку. Если проверка пройдет успешно, вы увидите диалоговое окно **Connection successful** (Подключение выполнено успешно). При возникновении ошибки см. раздел [Устранение неполадок](#troubleshooting).
@@ -107,7 +107,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 8. В раскрывающемся списке **Подключиться к** в верхней части окна SQuirreL SQL выберите **Hive on HDInsight** (Hive в HDInsight). При появлении запроса выберите **Подключиться**.
 
-    ![диалоговое окно подключения](./media/apache-hadoop-connect-hive-jdbc-driver/connect.png)
+    ![диалоговое окно подключения](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-connect-dialog.png)
 
 9. После подключения введите следующий запрос в диалоговом окне SQL-запрос, а затем щелкните значок **запуска** (работающего человека). В области результатов должны появиться результаты запроса.
 
@@ -115,7 +115,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
     select * from hivesampletable limit 10;
     ```
 
-    ![диалоговое окно запроса SQL с результатами запроса](./media/apache-hadoop-connect-hive-jdbc-driver/sqlquery.png)
+    ![диалоговое окно запроса SQL с результатами запроса](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-sqlquery-dialog.png)
 
 ## <a name="connect-from-an-example-java-application"></a>Подключение из примера приложения Java
 
