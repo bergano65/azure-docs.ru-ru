@@ -58,8 +58,8 @@
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
-    - name: Общие атрибуты безопасности Azure
-      href: expressroute-security-attributes.md
+    - name: Встроенные средства управления безопасностью
+      href: expressroute-security-controls.md
     - name: Проектирование для обеспечения высокого уровня доступности
       href: designing-for-high-availability-with-expressroute.md
     - name: Проектирование для включения аварийного восстановления

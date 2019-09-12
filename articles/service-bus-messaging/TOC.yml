@@ -108,9 +108,9 @@
                   href: service-bus-managed-service-identity.md
                 - name: Аутентификация из приложения
                   href: authenticate-application.md
-        - name: Общие атрибуты безопасности Azure
-          href: service-bus-messaging-security-attributes.md
-- name: Практические руководства
+        - name: Встроенные средства управления безопасностью
+          href: service-bus-messaging-security-controls.md
+- name: Руководства
   items:
     - name: Создание пространства имен
       href: service-bus-create-namespace-portal.md

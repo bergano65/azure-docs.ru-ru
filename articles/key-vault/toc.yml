@@ -62,8 +62,8 @@
       items:
         - name: Общие сведения о безопасности
           href: overview-security.md
-        - name: Общие атрибуты безопасности
-          href: key-vault-security-attributes.md
+        - name: Встроенные средства управления безопасностью
+          href: key-vault-security-controls.md
         - name: Системы безопасности
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
@@ -90,9 +90,7 @@
           href: create-certificate.md
         - name: Мониторинг и администрирование процесса создания сертификатов
           href: create-certificate-scenarios.md
-    - name: Общие атрибуты безопасности Azure
-      href: key-vault-security-attributes.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md

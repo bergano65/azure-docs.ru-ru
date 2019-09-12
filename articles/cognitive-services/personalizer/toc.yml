@@ -6,6 +6,9 @@
     - name: Что такое служба "Персонализатор"?
       href: what-is-personalizer.md
       displayName: 'loop, context, feature, action, rank, reward, developer, use case'
+    - name: Новые возможности
+      href: whats-new.md
+      displayName: 'release notes, service updates, videos'
 - name: Краткие руководства
   items:
     - name: 'Использование C#'

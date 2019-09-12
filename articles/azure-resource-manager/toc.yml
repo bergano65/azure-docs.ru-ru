@@ -76,9 +76,9 @@
           href: deployment-manager-health-check.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: resource-manager-deployment-model.md
-    - name: Общие атрибуты безопасности Azure
-      href: azure-resource-manager-security-attributes.md
-- name: Руководства
+    - name: Встроенные средства управления безопасностью
+      href: azure-resource-manager-security-controls.md
+- name: Практическое руководство
   items:
     - name: Создание шаблонов
       items:

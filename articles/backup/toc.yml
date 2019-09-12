@@ -80,9 +80,9 @@
       href: backup-azure-backup-server-import-export-.md
     - name: Замена ленточных библиотек
       href: backup-azure-backup-cloud-as-tape.md
-    - name: Общие атрибуты безопасности Azure
-      href: backup-security-attributes.md
-- name: Руководства
+    - name: Встроенные средства управления безопасностью
+      href: backup-security-controls.md
+- name: Практическое руководство
   items:
     - name: Azure Backup Server
       items:

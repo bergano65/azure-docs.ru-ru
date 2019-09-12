@@ -29,7 +29,7 @@
     - name: Клиентские библиотеки
       href: analysis-services-data-providers.md
     - name: Уровень совместимости
-      href: analysis-services-compat-level.md
+      href: 'https://docs.microsoft.com/analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services'
     - name: Подключение к локальным источникам данных
       href: analysis-services-gateway.md
     - name: Подключение к серверам

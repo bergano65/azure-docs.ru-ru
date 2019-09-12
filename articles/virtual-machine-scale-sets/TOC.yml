@@ -163,8 +163,8 @@
           maintainContext: true
     - name: Вопросы и ответы о масштабируемых наборах
       href: virtual-machine-scale-sets-faq.md
-    - name: Атрибуты безопасности
-      href: virtual-machine-scale-sets-security-attributes.md
+    - name: Встроенные средства управления безопасностью
+      href: virtual-machine-scale-sets-security-controls.md
 - name: Практическое руководство
   items:
     - name: Планирование и проектирование

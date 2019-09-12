@@ -142,8 +142,8 @@
       href: backup-recovery.md
     - name: Пример инфраструктуры
       href: infrastructure-example.md
-    - name: Атрибуты безопасности
-      href: virtual-machines-windows-security-attributes.md
+    - name: Встроенные средства управления безопасностью
+      href: virtual-machines-windows-security-controls.md
 - name: Руководства
   items:
     - name: Создание виртуальных машин

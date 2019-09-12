@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по выделенному устройству HSM Azure
+title: Документация по Выделенному устройству HSM Azure
 metadata:
-  title: "Документация по выделенному устройству HSM Azure. Руководства и справочник по API\_| Документация Майкрософт"
+  title: "Документация по Выделенному устройству HSM Azure. Руководства и справочник по API\_| Документация Майкрософт"
   meta.description: 'Learn how to use Azure Dedicated HSM to create and maintain keys that access and encrypt your cloud resources, apps, and solutions. Tutorials, API references, and more.'
   services: dedicated-hsm
-  author: barclayn
-  manager: barbkess
+  author: msmbaldwin
+  manager: rkarlin
   layout: LandingPage
   ms.assetid: null
   ms.service: dedicated-hsm
@@ -14,9 +14,9 @@ metadata:
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 11/21/2018
-  ms.author: barclayn
+  ms.author: mbaldwin
 abstract:
-  description: Сведения о функциях выделенного устройства HSM и его пригодности для используемой среды.
+  description: Сведения о функциях Выделенного устройства HSM и его пригодности для используемой среды.
 sections:
   - items:
       - type: list
@@ -25,16 +25,16 @@ sections:
         columns: 3
         items:
           - href: /azure/dedicated-hsm/overview
-            html: <p>Сведения о возможностях выделенного устройства HSM Azure.</p>
+            html: <p>Сведения о возможностях Выделенного устройства HSM Azure.</p>
             image:
               src: media/index/hsm.svg
-            title: Общие сведения о выделенном устройстве HSM Azure
+            title: Общие сведения о Выделенном устройстве HSM Azure
           - href: /azure/dedicated-hsm/faq
-            html: <p>Рекомендации по проектированию при использовании выделенного устройства HSM</p>
+            html: <p>Рекомендации по проектированию при использовании Выделенного устройства HSM</p>
             image:
               src: media/index/guide.svg
             title: Выбор архитектуры развертывания
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: ''
@@ -43,7 +43,7 @@ sections:
         items:
           - image:
               src: media/index/cli.svg
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: /azure/dedicated-hsm/tutorial-deploy-hsm-cli
           - image:
               src: media/index/logo_powershell.svg

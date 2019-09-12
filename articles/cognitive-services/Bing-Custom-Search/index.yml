@@ -6,14 +6,14 @@ metadata:
   titleSuffix: Azure Cognitive Services
   description: 'Узнайте, как с помощью портала и API Пользовательского поиска Bing создавать пользовательские экземпляры службы поиска'
   services: cognitive-services
-  author: v-deken
+  author: aahill
   manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: bing-custom-search
   ms.topic: landing-page
   ms.date: 07/25/2019
-  ms.author: v-deken
+  ms.author: aahill
 abstract:
   description: 'Создавайте экземпляры службы поиска для интересующих вас тем с помощью API Пользовательского поиска Bing. Укажите домены и веб-страницы для поиска и настройте приоритет, чтобы полностью персонализировать свой интерфейс поиска.'
 sections:
