@@ -42,8 +42,8 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 
 | Свойство | type | Описание |
 | -------- | ---- | ----------- |
-| endpointType | строка | Тип конечной точки для подписки (веб-перехватчик или HTTP, концентратор событий либо очередь). | 
-| endpointUrl | строка | URL-адрес назначения для событий в подписке на событие. | 
+| endpointType | string | Тип конечной точки для подписки (веб-перехватчик или HTTP, концентратор событий либо очередь). | 
+| endpointUrl | string | URL-адрес назначения для событий в подписке на событие. | 
 
 ### <a name="filter-object"></a>Объект filter
 
