@@ -6,14 +6,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 10/15/2018
-ms.openlocfilehash: a078fc205403983f4f6484f6a7ccde7f99c4dd58
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 401ccda62805cbdebc99317c925aeb1b0ffc66bb
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734547"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915375"
 ---
-# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache-preview"></a>Повышение производительности рабочих нагрузок Apache Spark с помощью службы IO Cache для Azure HDInsight (предварительная версия)
+# <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight 
 
 IO Cache — это служба кэширования данных для Azure HDInsight, который повышает производительность заданий Apache Spark. IO Cache также поддерживает рабочие нагрузки [Apache Tez](https://tez.apache.org/) и [Apache Hive](https://hive.apache.org/), которые могут выполняться в кластерах [Apache Spark](https://spark.apache.org/). IO Cache использует компонент кэширования с открытым исходным кодом RubiX. Локальный дисковый кэш RubiX предназначен для использования с модулями аналитики больших данных, которые получают данные из систем облачного хранения. RubiX выделяется в ряду систем кэширования, поскольку использует для хранения данных не оперативную память, а твердотельные накопители (SSD). Служба IO Cache запускает серверы метаданных RubiX на каждом рабочем узле кластера и управляет ими. Она также настраивает прозрачное использование кэша RubiX для всех служб кластера.
 

@@ -8,25 +8,25 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: ac1a4c77589f4ef88c9ee862cb871b376ca8a0fe
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1c219c85836eb4730fa90918385555c433a12449
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483853"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915096"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
 С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий [Apache Storm](https://storm.apache.org/), работающих в Storm в кластерах HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache Storm в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **Storm** для **тип кластера**.
+* Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
 
-* (Необязательно) Знакомство с SSH и SCP: Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* Используемых Знакомство с SSH и SCP: Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* (Необязательно) Visual Studio: Пакет SDK для Azure 2.5.1 или более поздней версии и средства Azure Data Lake для Visual Studio. Дополнительные сведения см. в статье [Приступая к работе с инструментами Azure Data Lake (в HDInsight) для Visual Studio для выполнения запроса Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
+* Используемых Visual Studio: Пакет SDK для Azure 2.5.1 или более поздней версии и средства Azure Data Lake для Visual Studio. Дополнительные сведения см. в статье [Приступая к работе с инструментами Azure Data Lake (в HDInsight) для Visual Studio для выполнения запроса Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 
     Одна из следующих версий Visual Studio:
 
@@ -54,7 +54,7 @@ ms.locfileid: "67483853"
 
 3. В диалоговом окне **Новый проект** разверните **Установленные** > **Шаблоны** и выберите **HDInsight**. В списке шаблонов выберите **Пример Storm**. В нижней части диалогового окна введите имя приложения.
 
-    ![image](./media/apache-storm-deploy-monitor-topology-linux/sample.png)
+    ![image](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-sample1.png)
 
 4. В **обозревателе решений** щелкните правой кнопкой мыши проект и выберите **Submit to Storm on HDInsight** (Отправить в Storm в HDInsight).
 
@@ -90,7 +90,7 @@ ms.locfileid: "67483853"
 
 После отправки топологии с помощью Visual Studio отображается представление **Топологии Storm**. Выберите топологию в списке, чтобы просмотреть информацию о выполняемой топологии.
 
-![мониторинг Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/vsmonitor.png)
+![мониторинг Visual Studio](./media/apache-storm-deploy-monitor-topology-linux/visual-studio-monitor.png)
 
 > [!NOTE]  
 > Можно также просмотреть **топологии Storm** в **обозревателе серверов**. Для этого разверните **Azure** > **HDInsight**, затем щелкните правой кнопкой мыши топологию Storm в кластере HDInsight и выберите **Просмотреть топологии Storm**.
@@ -101,7 +101,7 @@ ms.locfileid: "67483853"
 
 Деактивация топологии приостанавливает ее до завершения или повторной активации. Для этих операций используйте кнопки __Отключить__ и __Активировать повторно__ в верхней части окна __Topology Summary__ (Сводка топологии).
 
-### <a name="rebalance"></a>Повторная балансировка
+### <a name="rebalance"></a>Перераспределить
 
 Повторная балансировка топологии позволяет системе пересмотреть параллелизм топологии. Например, если вы изменили размер кластера, добавив дополнительные узлы, повторная балансировка позволит топологии использовать новые узлы.
 
@@ -209,7 +209,7 @@ ms.locfileid: "67483853"
 
 ### <a name="base-uri"></a>Базовый универсальный код ресурса
 
-Базовый URI для REST API в кластерах HDInsight под управлением Linux доступен на головном узле по адресу **https:\//HEADNODEFQDN:8744/api/v1/** . Доменное имя головного узла формируется при создании кластера и не является статическим.
+Базовый URI для REST API в кластерах HDInsight под управлением Linux доступен на головном узле по адресу **https:\//хеаднодефкдн: 8744/API/V1/** . Доменное имя головного узла формируется при создании кластера и не является статическим.
 
 Полное доменное имя (FQDN) головного узла кластера можно получить несколькими способами.
 
@@ -217,7 +217,7 @@ ms.locfileid: "67483853"
 * **Из веб-интерфейса Ambari**. В верхней части страницы выберите **Services** (Службы), а затем — **Storm**. На вкладке **Summary** (Сводка) выберите **Storm UI Server** (Сервер пользовательского интерфейса Storm). Полное доменное имя узла, на котором размещены пользовательский интерфейс Storm и REST API, отображено в верхней части страницы.
 * **Из интерфейса REST API Ambari**. Используйте команду `curl -u admin -G "https:\//CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"`, чтобы получить сведения об узле с выполняемыми пользовательскими интерфейсами Storm и REST API. Замените **CLUSTERNAME** именем кластера. При появлении запроса введите пароль (администратора), чтобы войти в учетную запись. Запись host_name в ответе будет содержать полное доменное имя узла.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Проверка подлинности
 
 Для запросов REST API необходимо использовать **обычную проверку подлинности**с помощью имени и пароля администратора кластера HDInsight.
 

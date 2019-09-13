@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 83e9e1364293601337f854f083bbb279361e29c5
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: aa18c4a078edf579e8d9c4c09df99100dfcea148
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810998"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918327"
 ---
 # <a name="enterprise-security-package-configurations-with-azure-active-directory-domain-services-in-hdinsight"></a>Корпоративный пакет безопасности конфигураций с помощью доменных служб Azure Active Directory в HDInsight
 
@@ -74,7 +74,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
 
-![Поиск IP-адресов для локальных DNS-серверов](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-dns.png)
+![Поиск IP-адресов для локальных DNS-серверов](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-dns1.png)
 
 Измените конфигурацию DNS-серверов в виртуальной сети Azure AD DS, чтобы использовать эти настраиваемые IP-адреса, выбрав **DNS-серверы** в категории **Параметры**. Затем щелкните переключатель рядом с параметром **Custom** (Пользовательский), введите в указанное ниже текстовое поле первый IP-адрес и нажмите кнопку **Сохранить**. Добавьте дополнительные IP-адреса, используя те же шаги.
 

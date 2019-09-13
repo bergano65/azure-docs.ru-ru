@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: dd1a46ea008ce5f8fb02dd468b27494d231717f0
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 53399fbdeba44b184ef4e76c89affefd29dbc413
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483921"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915334"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -103,11 +103,11 @@ topologyBuilder.SetJavaBolt(
 
 ## <a name="download-the-completed-project"></a>Скачивание полного примера проекта
 
-Можно загрузить полную версию проекта, созданного в этой статье из [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Тем не менее по-прежнему необходимо указать параметры конфигурации, выполнив действия, описанные в этой статье.
+Вы можете скачать полную версию проекта, созданного в этой статье, из [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Однако вам по-прежнему необходимо предоставить параметры конфигурации, выполнив действия, описанные в этой статье.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Apache Storm в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **Storm** для **тип кластера**.
+* Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
     > [!WARNING]  
     > Для примера, используемого в этом документе, требуется кластер Storm в HDInsight версии 3.5 или 3.6. Это не будет работать с более старыми версиями HDInsight из-за критических изменений имени класса. Версию этого примера, которая работает со старыми кластерами, можно найти на сайте [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases).
@@ -135,12 +135,12 @@ topologyBuilder.SetJavaBolt(
 
 1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Воспользуйтесь ссылкой **+ Добавить**, чтобы добавить следующие политики.
 
-   | ИМЯ | Разрешения |
+   | Название | Разрешения |
    | --- | --- |
-   | writer |Отправка |
-   | reader |Прослушивание |
+   | writer |Отправить |
+   | reader |Прослушать |
 
-    ![Снимок экрана окна политик общего доступа](./media/apache-storm-develop-csharp-event-hub-topology/sas.png)
+    ![Снимок экрана окна политик общего доступа](./media/apache-storm-develop-csharp-event-hub-topology/share-access-policies.png)
 
 2. Выберите политики **reader** и **writer**. Скопируйте и сохраните значение первичного ключа для обеих политик, так как они будут использоваться позже.
 
@@ -182,15 +182,15 @@ topologyBuilder.SetJavaBolt(
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши проект **EventHubReader** и выберите пункт **Отправить в Storm в HDInsight**.
 
-    ![Снимок экрана с обозревателем решений с выделенной функцией "Отправить в Storm в HDInsight"](./media/apache-storm-develop-csharp-event-hub-topology/submittostorm.png)
+    ![Снимок экрана с обозревателем решений с выделенной функцией "Отправить в Storm в HDInsight"](./media/apache-storm-develop-csharp-event-hub-topology/submit-to-apache-storm.png)
 
 2. В диалоговом окне **Submit Topology** (Отправка топологии) выберите **кластер Storm**. Разверните узел **Дополнительные конфигурации**, выберите **Java File Paths** (Пути к файлам Java), щелкните **...** и укажите каталог, содержащий скачанный ранее JAR-файл. Теперь нажмите кнопку **Отправить**.
 
-    ![Снимок экрана с диалоговым окном Submit Topology (Отправка топологии)](./media/apache-storm-develop-csharp-event-hub-topology/submit.png)
+    ![Снимок экрана с диалоговым окном Submit Topology (Отправка топологии)](./media/apache-storm-develop-csharp-event-hub-topology/submit-storm-topology.png)
 
 3. После отправки топологии отобразится **средство просмотра топологий Storm**. Чтобы просмотреть статистику для топологии, выберите топологию **EventHubReader** в левой панели.
 
-    ![Снимок экрана средства просмотра топологий Storm](./media/apache-storm-develop-csharp-event-hub-topology/topologyviewer.png)
+    ![Снимок экрана средства просмотра топологий Storm](./media/apache-storm-develop-csharp-event-hub-topology/storm-topology-viewer.png)
 
 4. В **обозревателе решений** щелкните правой кнопкой мыши проект **EventHubWriter** и выберите пункт **Отправить в Storm в HDInsight**.
 
@@ -212,13 +212,13 @@ topologyBuilder.SetJavaBolt(
 
 Чтобы остановить топологии, выберите каждую из них в **средстве просмотра топологий Storm**, а затем выберите элемент **Прервать**.
 
-![Снимок экрана средства просмотра топологии Storm с выделенной кнопкой "Прервать"](./media/apache-storm-develop-csharp-event-hub-topology/killtopology.png)
+![Снимок экрана средства просмотра топологии Storm с выделенной кнопкой "Прервать"](./media/apache-storm-develop-csharp-event-hub-topology/kill-storm-topology1.png)
 
 ## <a name="delete-your-cluster"></a>Удаление кластера
 
 [!INCLUDE [delete-cluster-warning](../../../includes/hdinsight-delete-cluster-warning.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе рассмотрено использование объектов spout и bolt Java службы Центров событий из топологии C# для работы с данными в Центрах событий Azure. Дополнительные сведения о создании топологий C# см. в следующих статьях:
 

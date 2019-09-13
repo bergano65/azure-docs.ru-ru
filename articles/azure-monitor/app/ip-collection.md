@@ -8,14 +8,14 @@ ms.assetid: 0e3b103c-6e2a-4634-9e8c-8b85cf5e9c84
 ms.service: application-insights
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 07/31/2019
+ms.date: 09/11/2019
 ms.author: mbullwin
-ms.openlocfilehash: 3a504fe4475cee8e2949ee121c632b792f349758
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 49534cbce7bb0bbf540416785e31b451509d5bf6
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68694292"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916163"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка географического расположения и IP-адресов
 
@@ -36,10 +36,9 @@ IP-адреса отправляются в Application Insights в состав
 
 Хотя поведение по умолчанию сводится к уменьшению количества персональных данных, мы по-прежнему предоставляем гибкость для сбора и хранения данных IP-адресов. Прежде чем сохранять персональные данные, такие как IP-адреса, настоятельно рекомендуется проверить, что это не нарушает требования соответствия или местные нормы, на которые вы можете столкнуться. Дополнительные сведения об обработке персональных данных в Application Insights см. в [руководстве по личным данным](https://docs.microsoft.com/azure/azure-monitor/platform/personal-data-mgmt).
 
-## <a name="storing-partial-ip-address-data"></a>Хранение данных с частичным IP-адресом
+## <a name="storing-ip-address-data"></a>Хранение данных IP-адреса
 
-Чтобы включить частичную коллекцию и хранилище IP-адресов, `DisableIpMasking` свойству компонента Application Insights необходимо `true`присвоить значение. Это свойство можно задать либо с помощью шаблонов Azure Resource Manager, либо путем вызова REST API. IP-адреса будут записаны с последним нулевым октетом.
-
+Чтобы включить сбор и хранение IP-адресов, `DisableIpMasking` свойству компонента Application Insights необходимо `true`присвоить значение. Это свойство можно задать либо с помощью шаблонов Azure Resource Manager, либо путем вызова REST API. 
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 
@@ -92,7 +91,7 @@ IP-адреса отправляются в Application Insights в состав
 
     В этом случае не будет приобретено ничего нового, мы просто обновляем конфигурацию существующего ресурса Application Insights.
 
-6. После завершения развертывания будут записаны новые данные телеметрии с первыми тремя октетами, заполненными IP-адресом и последним октетом.
+6. После завершения развертывания будут записаны новые данные телеметрии.
 
     Если вы снова выберете и измените шаблон, вы увидите только шаблон по умолчанию и не увидите вновь добавленное свойство и связанное с ним значение. Если вы не видите данные IP-адреса и хотите подтвердить, `"DisableIpMasking": true` что установлен. Выполните следующую команду PowerShell: (Замените `Fabrikam-dev` именем соответствующего ресурса и группы ресурсов.)
     
@@ -128,7 +127,7 @@ Content-Length: 54
 
 ## <a name="telemetry-initializer"></a>Инициализатор телеметрии
 
-Если необходимо записать весь IP-адрес, а не только первые три октета, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) , чтобы скопировать IP-адрес в настраиваемое поле, которое не будет маскироваться.
+Если вам требуется более гибкая альтернатива `DisableIpMasking` , чем запись всех IP-адресов или их части, можно использовать [инициализатор телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) , чтобы скопировать весь IP-адрес или его часть в настраиваемое поле. 
 
 ### <a name="aspnet--aspnet-core"></a>ASP.NET/ASP.NET Core
 
@@ -205,7 +204,7 @@ appInsights.defaultClient.addTelemetryProcessor((envelope) => {
 });
 ```
 
-### <a name="client-side-javascript"></a>JavaScript на стороне клиента
+### <a name="client-side-javascript"></a>Клиентская часть JavaScript
 
 В отличие от пакетов SDK на стороне сервера, клиентский пакет JavaScript на стороне клиента не вычисляет IP-адрес. По умолчанию вычисление IP-адресов для телеметрии на стороне клиента выполняется в конечной точке приема в Azure при получении данных телеметрии. Это означает, что если вы отправите клиентские данные на прокси-сервер и затем перейдете в конечную точку приема, в вычислении IP-адресов может отображаться IP-адрес прокси-сервера, а не клиент. Если прокси-сервер не используется, это не должно быть проблемой.
 

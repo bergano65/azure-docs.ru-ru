@@ -9,12 +9,12 @@ ms.workload: core
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: shvija
-ms.openlocfilehash: 9018df73c85486f5ffc9b16c1dbb70d4d99fcc65
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 22726ed8acae69adc09389b8f5f28df594a570a3
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360179"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915425"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-using-python"></a>Отправка событий или получение событий из концентраторов событий с помощью Python
 
@@ -25,7 +25,7 @@ ms.locfileid: "68360179"
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs-python/tree/master/examples), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
@@ -42,6 +42,9 @@ pip install azure-eventhub
 ```
 
 ## <a name="send-events"></a>Отправка событий
+
+> [!NOTE]
+> Этот код в этом разделе предназначен для текущей стабильной версии (1.3.1) пакета SDK для концентраторов событий. Если вы ищете пример кода, в котором используется предварительная версия пакета SDK, см. [эту страницу](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhubs/examples).
 
 ### <a name="create-a-python-script-to-send-events"></a>Создание сценария Python для отправки событий
 

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/30/2019
+ms.date: 09/11/2019
 ms.author: magoedte
-ms.openlocfilehash: d2aa25af4ebf721d04ada46ffab37107bf73113b
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: bd4016d91000ee23023eaa64872bff9a057058d1
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861115"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916048"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин (Предварительная версия)
 
@@ -93,10 +93,10 @@ Azure Monitor для виртуальных машин поддерживает 
 |Windows 8 | X | X | |
 |Windows 7 с пакетом обновления 1 (SP1); | X | X | |
 |Red Hat Enterprise Linux (RHEL) 6, 7| X | X| X |
-|Ubuntu 14,04, 16,04, 18,04 | X | X | X |
-|CentOS Linux 6, 7 | X | X | X |
+|Ubuntu 18,04, 16,04 | X | X | X |
+|CentOS Linux 7, 6 | X | X | X |
 |SUSE Linux Enterprise Server (SLES) 12 | X | X | X |
-|Debian 8, 9,4 | X<sup>1</sup> | | X |
+|Debian 9.4, 8 | X<sup>1</sup> | | X |
 
 <sup>1</sup> Функция "Производительность" Azure Monitor для виртуальных машин доступна только в Azure Monitor. Она недоступна непосредственно из левой панели виртуальной машины Azure.
 
@@ -110,45 +110,51 @@ Azure Monitor для виртуальных машин поддерживает 
 > - Нестандартные версии ядра, такие как расширение физических адресов (PAE) и Xen, не поддерживаются ни в одном дистрибутиве Linux. Например, система со строкой версии *2.6.16.21-0.8-xen* не поддерживается.
 > - Пользовательские ядра, включая перекомпиляции стандартных ядер, не поддерживаются.
 > - Поддерживается ядро Центосплус.
+> - Для уязвимости устранением рисков Spectre необходимо исправление ядра Linux. Дополнительные сведения см. в поставщике дистрибутива Linux.
 
 #### <a name="red-hat-linux-7"></a>Red Hat Linux 7
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 7.4 | 3.10.0-693 |
-| 7.5 | 3.10.0-862 |
 | 7.6 | 3.10.0-957 |
+| 7.5 | 3.10.0-862 |
+| 7.4 | 3.10.0-693 |
 
 #### <a name="red-hat-linux-6"></a>Red Hat Linux 6
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 6.9 | 2.6.32-696 |
 | 6.10 | 2.6.32-754 |
+| 6.9 | 2.6.32-696 |
 
 #### <a name="centosplus"></a>центосплус
+
 | Версия ОС | Версия ядра |
 |:--|:--|
-| 6.9 | 2.6.32 — 696.18.7<br>2.6.32 — 696.30.1 |
-| 6.10 | 2.6.32 — 696.30.1<br>2.6.32 — 754.3.5 |
+| 6.10 | 2.6.32 — 754.3.5<br>2.6.32 — 696.30.1 |
+| 6.9 | 2.6.32 — 696.30.1<br>2.6.32 — 696.18.7 |
 
 #### <a name="ubuntu-server"></a>Сервер Ubuntu
 
 | Версия ОС | Версия ядра |
 |:--|:--|
-| Ubuntu 18.04 | ядро 4,15.\*<br>4,18 * |
-| Ubuntu 16.04.3 | ядро 4.15.* |
-| 16.04 | 4.4.\*<br>4.8.\*<br>4.10.\*<br>4.11.\*<br>4.13.\* |
-| 14.04 | 3.13.\*<br>4.4.\* |
+| 18,04 | 5,0 (включает ядро, настроенное Azure)<br>4,18 *<br>4,15* |
+| 16.04.3 | 4,15. * |
+| 16.04 | 4.13.\*<br>4.11.\*<br>4.10.\*<br>4.8.\*<br>4.4.\* |
 
 #### <a name="suse-linux-12-enterprise-server"></a>SUSE Linux 12 Enterprise Server
 
-| Версия ОС | Версия ядра
+| Версия ОС | Версия ядра |
 |:--|:--|
-|12 с пакетом обновления 2 | 4.4.* |
+|12 SP4 | 4,12. * (включает в себя настраиваемый в Azure ядро) |
 |12 с пакетом обновления 3 | 4.4.* |
-|12 SP4 | 4.4.* |
-|12 SP4 | Ядро, настраиваемое Azure |
+|12 с пакетом обновления 2 | 4.4.* |
+
+#### <a name="debian"></a>Debian 
+
+| Версия ОС | Версия ядра |
+|:--|:--|
+| 9 | 4,9 | 
 
 ### <a name="the-microsoft-dependency-agent"></a>Microsoft Dependency Agent
 

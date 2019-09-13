@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: b6343931287ed59363db2715641ca63a814a9c32
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 6619fd842f225a6d362a4b308dde6e35b43677c9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638797"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915759"
 ---
 # <a name="render-custom-data-on-a-raster-map"></a>Отображение пользовательских данных на растровой карте
 
@@ -27,7 +27,8 @@ ms.locfileid: "68638797"
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure";
 
-Для выполнения процедур, описанных в этой статье, необходимо сначала [создать учетную запись Azure Maps](how-to-manage-account-keys.md) в ценовой категории S1.
+Для выполнения процедур, описанных в этой статье, необходимо сначала создать учетную запись Azure Maps, следуя инструкциям в разделе [Управление учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) , и выполните действия, описанные в разделе [Получение первичного ключа](./tutorial-search-location.md#getkey) для получения первичного ключа подписки для вашей учетной записи.
+
 
 ## <a name="render-pushpins-with-labels-and-a-custom-image"></a>Отрисовка канцелярских кнопок с метками и пользовательским изображением
 
@@ -145,7 +146,7 @@ ms.locfileid: "68638797"
    https://atlas.microsoft.com/mapData/{uploadStatusId}/status?api-version=1.0&subscription-key={Subscription-key}
    ```
 
-6. Чтобы получить, udId откройте новую вкладку в приложении POST и выберите получить метод HTTP на вкладке Построитель и выполните запрос GET на URI состояния. Если передача данных прошла успешно, вы получите udId в тексте ответа. Скопируйте udId.
+6. Чтобы получить, udId откройте новую вкладку в приложении POST и выберите получить метод HTTP на вкладке Построитель и выполните запрос GET на URI состояния. Если передача данных прошла успешно, вы получите в тексте ответа значение udId. Скопируйте udId.
 
    ```JSON
    {

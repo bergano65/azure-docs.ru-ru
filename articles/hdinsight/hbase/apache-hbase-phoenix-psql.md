@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ashishth
-ms.openlocfilehash: 15bb65e004de916862297f91278328cddb16487d
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 43465a1c31b953620c45dfe759de7b6e1b4dc3c9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810418"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917278"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
 
@@ -29,7 +29,7 @@ ms.locfileid: "70810418"
 
 Прежде чем загружать данные, убедитесь, что Phoenix включен и для запросов правильно настроены параметры времени ожидания.  Откройте панель мониторинга [Apache Ambari](https://ambari.apache.org/) для кластера HDInsight, выберите HBase и откройте вкладку настройки.  Прокрутите вниз и убедитесь, что Apache Phoenix включен, проверив указанный на следующем рисунке параметр `enabled`:
 
-![Параметры кластера HDInsight для Apache Phoenix](./media/apache-hbase-phoenix-psql/ambari-phoenix.png)
+![Параметры кластера HDInsight для Apache Phoenix](./media/apache-hbase-phoenix-psql/apache-ambari-phoenix.png)
 
 ### <a name="use-psql-to-bulk-load-tables"></a>Использование `psql` для массовой загрузки таблиц
 

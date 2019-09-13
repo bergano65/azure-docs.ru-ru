@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 8ed854a5775dfc20e258c14de51fe2066fa6caad
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 68bbe22a4a6f7697c2bfab291412aae85efc32e9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810269"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917016"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -59,7 +59,7 @@ ms.locfileid: "70810269"
     ![Меню портала для приложений HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png)
 5. В меню выберите пункт **+ Добавить** . Можно просмотреть список доступных приложений.  Если **+ Добавить** неактивно, это означает, что для этой версии кластера HDInsight нет приложений.
    
-    ![Доступные приложения HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-list.png)
+    ![Доступные приложения HDInsight](./media/hdinsight-apps-install-applications/hdinsight-apps-list1.png)
 6. Выберите одно из доступных приложений, а затем следуйте инструкциям, чтобы принять условия лицензионного соглашения.
 
 Состояние установки можно увидеть в уведомлениях портала (щелкните значок колокольчика в верхней части портала). После установки приложение отобразится в списке "Установленные приложения".

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 9d81e5e69837f6074d94278f4e54f9178a656335
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: c8fc7c931f31e1ff58f41faa9a29f7e77e9655fd
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433788"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917318"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
 Узнайте, как создавать кластеры Azure HDInsight Apache HBase в [виртуальной сети Azure][1].
@@ -24,7 +24,7 @@ ms.locfileid: "67433788"
 * повышение производительности без необходимости организации пропуска трафика через множество шлюзов и подсистемы балансировки нагрузки;
 * возможность обработки конфиденциальной информации более безопасным способом, без необходимости организации общедоступной конечной точки.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этой статьей необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
@@ -36,7 +36,7 @@ ms.locfileid: "67433788"
 > [!NOTE]  
 > Некоторые свойства жестко заданы в шаблоне. Пример:
 >
-> * **Расположение**: Восток США 2
+> * **Расположение**: Восточная часть США 2
 > * **Версия кластера**: 3.6
 > * **Число рабочих узлов кластера**: 2
 > * **Учетная запись хранения по умолчанию**: уникальная строка
@@ -46,12 +46,11 @@ ms.locfileid: "67433788"
 > * **Диапазон адресов подсети**: 10.0.0.0/24
 >
 > Заполнитель &lt;имя_кластера> будет заменен именем кластера, которое вы укажете при использовании шаблона.
->
->
 
-1. Щелкните следующее изображение, чтобы открыть шаблон на портале Azure. Шаблон находится в [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-linux-vnet/).
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-provision-vnet/deploy-to-azure.png" alt="Deploy to Azure"></a>
+1. Щелкните следующее изображение, чтобы открыть шаблон на портале Azure. Шаблон находится на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-linux-vnet/).
+
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-provision-vnet/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 2. В колонке **Настраиваемое развертывание** укажите следующие свойства.
 
    * **Подписка**: Выберите подписку Azure, которая использовалась для создания кластера HDInsight, зависимой учетной записи хранения и виртуальной сети Azure.
@@ -63,7 +62,7 @@ ms.locfileid: "67433788"
    * **Я принимаю указанные выше условия**. Установите этот флажок.
 3. Щелкните **Приобрести**. Процесс создания кластера занимает около 20 минут. Когда кластер будет создан, щелкните его колонку на портале, чтобы открыть его.
 
-После завершения статьи, может потребоваться удалить кластер. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Инструкции по удалению кластера см. в статье [Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure](../hdinsight-administer-use-portal-linux.md#delete-clusters).
+После завершения статьи может потребоваться удалить кластер. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. Инструкции по удалению кластера см. в статье [Управление кластерами Apache Hadoop для Windows в HDInsight с помощью портала Azure](../hdinsight-administer-use-portal-linux.md#delete-clusters).
 
 Чтобы начать работу с новым кластером HBase, выполните процедуры, которые представлены в статье [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md).
 
@@ -215,7 +214,7 @@ ms.locfileid: "67433788"
     3. Expand **Computer Configuration**, expand **Administrative Templates**, expand **Network**, and then click **DNS Client**.
     - Set **Primary DNS Suffix** to the value obtained in step 2:
 
-        ![hdinsight.hbase.primary.dns.suffix](./media/apache-hbase-provision-vnet/PrimaryDNSSuffix.png)
+        ![hdinsight.hbase.primary.dns.suffix](./media/apache-hbase-provision-vnet/hdi-primary-dns-suffix.png)
     4. Click **OK**.
     5. Reboot the virtual machine.
 -->
@@ -232,7 +231,7 @@ ms.locfileid: "67433788"
 > [!NOTE]  
 > Чтобы получить дополнительную информацию о разрешении имен в виртуальных сетях Azure, а также об использовании своего​ собственного DNS-сервера, ознакомьтесь со статьей [Разрешение имен для ВМ и экземпляров ролей](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы узнали, как создать кластер Apache HBase. Дополнительные сведения см. на следующих ресурсах:
 
 * [Приступая к работе с HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md)

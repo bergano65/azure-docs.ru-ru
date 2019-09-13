@@ -1,19 +1,19 @@
 ---
 title: Создание кластеров Apache Hadoop с помощью .NET в Azure HDInsight
 description: Узнайте, как создавать кластеры Apache Hadoop, Apache HBase, Apache Storm или Apache Spark на платформе Linux в HDInsight с помощью пакета SDK для HDInsight .NET.
-author: mamccrea
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.author: mamccrea
-ms.openlocfilehash: d560c61339bd608ab9385f99583613526156ca41
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.author: hrasheed
+ms.openlocfilehash: fccb29167dc04bf75a85935eeb57b0420b151f64
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508059"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916488"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "67508059"
 >
 > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -368,7 +368,7 @@ static void Main(string[] args)
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы успешно создали кластер HDInsight, обратитесь к следующим статьям, чтобы научиться работать с кластером. 
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop

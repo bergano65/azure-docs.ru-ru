@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72f7776fde4558a49830ecbf14c77fa50e80bf36
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
-ms.translationtype: HT
+ms.openlocfilehash: b1d0f94e9cf9b91bc365586dafc147dc73b17876
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910966"
+ms.locfileid: "70914757"
 ---
 # <a name="bulk-download-a-list-of-groups-preview-in-azure-active-directory"></a>Выполнить пакетную загрузку списка групп (Предварительная версия) в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "70910966"
 
 ## <a name="bulk-download-service-limits"></a>Ограничения службы пакетного скачивания
 
-Каждое групповое действие по созданию списка групп может выполняться в течение одного часа. Это позволяет создавать и скачивать список по крайней мере 300 000 групп.
+Каждое групповое действие по скачиванию списка групп может выполняться в течение одного часа. Это позволяет скачать список по крайней мере 300 000 групп.
 
 ## <a name="to-download-a-list-of-groups"></a>Загрузка списка групп
 
