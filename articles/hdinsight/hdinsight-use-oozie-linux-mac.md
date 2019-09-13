@@ -7,12 +7,12 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: b21847d27dc7f444afaf1b73efa19b0b0087cfe4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: d601dc1efe8dc3f6f2678f5d4df03f172146cd07
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811677"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900614"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -304,7 +304,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
     |admin| Имя входа для кластера HDInsight, если не является администратором.|
     |Имя| Имя сервера базы данных SQL Azure.|
     |sqlLogin| Имя входа сервера базы данных SQL Azure.|
-    |sqlPassword| Пароль для входа на сервер базы данных SQL Azure.|
+    |SqlPassword| Пароль для входа на сервер базы данных SQL Azure.|
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -510,29 +510,29 @@ Oozie REST API позволяет создавать собственные ут
 
 3. В левой части страницы выберите **Oozie** > **Быстрые ссылки** > **Oozie Web UI** (Веб-интерфейс Oozie).
 
-    ![Изображение меню](./media/hdinsight-use-oozie-linux-mac/ooziewebuisteps.png)
+    ![Изображение меню](./media/hdinsight-use-oozie-linux-mac/hdi-oozie-web-ui-steps.png)
 
 4. По умолчанию в веб-интерфейсе Oozie отображаются запущенные задания рабочих процессов. Чтобы просмотреть все задания рабочего процесса, выберите **All Jobs** (Все задания).
 
-    ![Отображаются все задания](./media/hdinsight-use-oozie-linux-mac/ooziejobs.png)
+    ![Отображаются все задания](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-jobs.png)
 
 5. Чтобы просмотреть дополнительные сведения о задании, выберите это задание.
 
-    ![Информация о работе](./media/hdinsight-use-oozie-linux-mac/jobinfo.png)
+    ![Информация о работе](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-info.png)
 
 6. На вкладке **Job Info** (Сведения о задании) можно просмотреть базовую информацию о задании, а также отдельные действия в рамках задания. С помощью вкладок вверху можно просмотреть **определение задания**, **конфигурацию задания**, обратиться к **журналу задания** или просмотреть направленный ациклический граф (DAG) задания в разделе **Job DAG** (Направленный ациклический граф задания).
 
    * **Журнал задания**. Нажмите кнопку **Get Logs** (Получить журналы) для просмотра всех журналов задания или воспользуйтесь полем **Enter Search Filter** (Введите фильтр поиска) для выбора журналов с помощью фильтра.
 
-       ![Журнал заданий](./media/hdinsight-use-oozie-linux-mac/joblog.png)
+       ![Журнал заданий](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-log.png)
 
    * **Направленный ациклический граф задания**. DAG представляет собой графическое представление путей данных рабочего процесса.
 
-       ![Направленный ациклический граф задания](./media/hdinsight-use-oozie-linux-mac/jobdag.png)
+       ![Направленный ациклический граф задания](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-dag.png)
 
 7. Выбрав одно из действий на вкладке **Job Info** (Сведения о задании), вы увидите информацию об этом действии. Например, выберите действие **RunSqoopExport**.
 
-    ![Информация о действии](./media/hdinsight-use-oozie-linux-mac/action.png)
+    ![Информация о действии](./media/hdinsight-use-oozie-linux-mac/oozie-job-action-info.png)
 
 8. Вы можете просмотреть подробную информацию о действии, например ссылку на **URL-адрес консоли**. Используйте эту ссылку для просмотра сведений о задании в средстве отслеживания заданий.
 
@@ -632,18 +632,18 @@ Oozie REST API позволяет создавать собственные ут
 
 7. Если вы зайдете в веб-интерфейс Oozie и выберете вкладку **Coordinator Jobs** (Задания координатора), то увидите похожую информацию:
 
-    ![Вкладка Coordinator Jobs (Задания координатора)](./media/hdinsight-use-oozie-linux-mac/coordinatorjob.png)
+    ![Вкладка Coordinator Jobs (Задания координатора)](./media/hdinsight-use-oozie-linux-mac/coordinator-jobs-tab.png)
 
     Запись **Next Materialization** (Следующая материализация) определяет момент следующего запуска задания.
 
 8. Как и для предыдущих заданий рабочего процесса, если вы выберете это задание в веб-интерфейсе, то увидите информацию о нем:
 
-    ![Информация о задании координатора](./media/hdinsight-use-oozie-linux-mac/coordinatorjobinfo.png)
+    ![Информация о задании координатора](./media/hdinsight-use-oozie-linux-mac/coordinator-job-info.png)
 
     > [!NOTE]  
     > На этом изображении показаны только сведения об успешных запусках задания, а не сведения об отдельных действиях запланированного рабочего процесса. Для просмотра отдельных действий выберите одну из записей **Action** (Действие).
 
-    ![Сведения о действиях координатора](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
+    ![Сведения о действиях координатора](./media/hdinsight-use-oozie-linux-mac/coordinator-action-job.png)
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -747,7 +747,7 @@ Oozie REST API позволяет создавать собственные ут
 
 [cindygross-hive-tables]: https://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-[img-workflow-diagram]: ./media/hdinsight-use-oozie-linux-mac/HDI.UseOozie.Workflow.Diagram.png
+[img-workflow-diagram]: ./media/hdinsight-use-oozie-linux-mac/oozie-workflow-diagram.png
 [img-preparation-output]: ./media/hdinsight-use-oozie-linux-mac/HDI.UseOozie.Preparation.Output1.png
 [img-runworkflow-output]: ./media/hdinsight-use-oozie/HDI.UseOozie.RunWF.Output.png
 

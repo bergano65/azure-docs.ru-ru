@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: yzheng
-ms.openlocfilehash: ea896697c8f6986c4c77f3ce86a62947d9a3327e
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: e4d961603ab0ade1bb175161fffd7f085a1f644b
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861412"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934087"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "70861412"
 В этой статье показано, как управлять политикой с помощью портала и методов PowerShell.  
 
 > [!NOTE]
-> Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Требуемый обход: `AzureServices`. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+> Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Вы можете разблокировать эти запросы, предоставив исключения для доверенных служб Майкрософт. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 ### <a name="azure-portal"></a>портала Azure
 

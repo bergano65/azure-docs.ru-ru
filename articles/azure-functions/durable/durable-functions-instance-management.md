@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3db0cd3dd01e3f5f6af6b4b668d1ccac094624a2
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 0df6f5f9728a8e48a3257e56ddf8ad23906dc92c
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735170"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933319"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Управление экземплярами в Устойчивых функциях в Azure
 
@@ -31,9 +31,6 @@ ms.locfileid: "70735170"
 Метод [стартневасинк](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_StartNewAsync_) в [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) (.NET) `startNew` `DurableOrchestrationClient` или (JavaScript) запускает новый экземпляр. Экземпляры этого класса запрашиваются с помощью `orchestrationClient` привязки. На внутреннем уровне этот метод ставит в очередь управления сообщение, которое инициирует запуск функции с заданным именем и привязкой к триггеру `orchestrationTrigger`.
 
 Эта асинхронная операция завершается после успешного планирования процесса оркестрации. Процесс оркестрации должен запуститься в течение 30 секунд. Если он занимает больше времени, вы `TimeoutException`увидите.
-
-> [!WARNING]
-> При локальной разработке в `WEBSITE_HOSTNAME` JavaScript задайте для переменной `localhost:<port>` среды значение (например,), `localhost:7071`чтобы использовать методы в. `DurableOrchestrationClient` Дополнительные сведения об этом требовании см. в [описании проблемы на сайте GitHub](https://github.com/Azure/azure-functions-durable-js/issues/28).
 
 ### <a name="net"></a>.NET
 
@@ -361,7 +358,7 @@ func durable terminate --id 0ab8c55a66644d68a3a8b220b12d209c --reason "It was ti
 
 ## <a name="send-events-to-instances"></a>Отправка событий в экземпляры
 
-В некоторых случаях очень важно, чтобы функции Orchestrator могли ожидать и прослушивать внешние события. Сюда входят [функции](durable-functions-concepts.md#monitoring) и функции мониторинга, ожидающие [взаимодействия человека](durable-functions-concepts.md#human).
+В некоторых случаях очень важно, чтобы функции Orchestrator могли ожидать и прослушивать внешние события. Сюда входят [функции](durable-functions-overview.md#monitoring) и функции мониторинга, ожидающие [взаимодействия человека](durable-functions-overview.md#human).
 
 Отправка уведомлений о событиях в выполняемые экземпляры с помощью метода [RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_) класса [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) (.NET `raiseEvent` ) или метода `DurableOrchestrationClient` класса (JavaScript). Чтобы обрабатывать эти уведомления, экземпляр должен ожидать вызова при помощи функции [WaitForExternalEvent](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_WaitForExternalEvent_) (.NET) или `waitForExternalEvent` (JavaScript).
 
@@ -534,14 +531,14 @@ modules.exports = async function(context, ctx) {
 
 ## <a name="rewind-instances-preview"></a>Перемотка экземпляров (Предварительная версия)
 
-При возникновении сбоя оркестрации в случае непредвиденной причины можно *Перемотать* экземпляр на предыдущее работоспособное состояние, используя API, созданный для этой цели.
+При возникновении сбоя оркестрации в случае непредвиденной причины можно перемотать экземпляр на предыдущее работоспособное состояние, используя API, созданный для этой цели.
 
 > [!NOTE]
 > Этот API не является заменой правильной политики повторов и обработки ошибок. Вместо этого его следует применять исключительно в тех случаях, когда причини сбоя экземпляра оркестрации неизвестные. Дополнительные сведения об обработке ошибок и политиках повтора см. в разделе [Обработка ошибок](durable-functions-error-handling.md) .
 
 Используйте API [ревиндасинк](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RewindAsync_System_String_System_String_) (.NET) или `rewindAsync` (JavaScript), чтобы перевести согласование обратно в состояние *выполнения* . Повторный запуск действия или сбоев при взаимодействии, вызвавших сбой оркестрации.
 
-Например, предположим, что у вас есть рабочий процесс, включающий серию [утверждений человека](durable-functions-concepts.md#human). Предположим, что существует ряд функций действий, которые уведомляют пользователей о необходимости их утверждения и ожидают ответа в режиме реального времени. После того как все действия по утверждению получили ответы или истекло время ожидания, предположим, что другое действие завершается сбоем из-за неправильной настройки приложения, например неверной строки подключения к базе данных. Как результат — сбой оркестрации в рабочем процессе. С помощью API `rewindAsync` -интерфейса(.NET)или(JavaScript)Администраторприложенияможетисправитьошибкуконфигурациииперемотатьнеудачноесогласованиеобратновсостояние`RewindAsync` непосредственно перед сбоем. Ни один из действий человека не требует повторного утверждения, и теперь согласование может завершиться успешно.
+Например, предположим, что у вас есть рабочий процесс, включающий серию [утверждений человека](durable-functions-overview.md#human). Предположим, что существует ряд функций действий, которые уведомляют пользователей о необходимости их утверждения и ожидают ответа в режиме реального времени. После того как все действия по утверждению получили ответы или истекло время ожидания, предположим, что другое действие завершается сбоем из-за неправильной настройки приложения, например неверной строки подключения к базе данных. Как результат — сбой оркестрации в рабочем процессе. С помощью API `rewindAsync` -интерфейса(.NET)или(JavaScript)Администраторприложенияможетисправитьошибкуконфигурациииперемотатьнеудачноесогласованиеобратновсостояние`RewindAsync` непосредственно перед сбоем. Ни один из действий человека не требует повторного утверждения, и теперь согласование может завершиться успешно.
 
 > [!NOTE]
 > Функция *перемотки назад* не поддерживает Перемотка экземпляров оркестрации, использующих устойчивые таймеры.
@@ -627,7 +624,7 @@ public static Task Run(
 ```
 
 > [!NOTE]
-> Для успешного завершения процесса функции, запускаемого по времени, состояние среды выполнения должно быть " **завершено** **", "завершено**" или " **сбой**".
+> Для успешного завершения процесса функции, запускаемого по времени, состояние среды выполнения должно быть " **завершено**", "завершено" или " **сбой**".
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
@@ -661,4 +658,7 @@ func durable delete-task-hub --task-hub-name UserTest
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> Узнайте, как использовать [HTTP-интерфейсы API для управления экземплярами](durable-functions-http-api.md)
+> [Сведения об обработке управления версиями](durable-functions-versioning.md)
+
+> [!div class="nextstepaction"]
+> [Встроенная Справочник по HTTP API для управления экземплярами](durable-functions-http-api.md)

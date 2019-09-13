@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: 38d3c61acee9dca18ab1f863d878e02f7437a600
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a93f8286c6927a3e87e03fb73e680c9638285336
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433719"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917792"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "67433719"
 
 Репликация кластера использует методологию source-push. Кластер HBase может быть исходным, кластером назначения или выполнять обе роли одновременно. Репликация выполняется асинхронно. Целью репликации в конечном итоге является согласованность. При получении источником изменения в семействе столбцов с включенной репликацией такое изменение распространяется на все кластеры назначения. При репликации данных с одного кластера на другой исходный кластер и все кластеры, которые уже потребили данные, отслеживаются для предотвращения циклических репликаций.
 
-В этой статье можно настроить репликацию источник назначение. Другие топологии кластеров см. в [справочном руководстве по Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
+В этой статье описано, как настроить репликацию источника и назначения. Другие топологии кластеров см. в [справочном руководстве по Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
 
 Примеры использования репликации HBase для одной виртуальной сети:
 
@@ -38,8 +38,8 @@ ms.locfileid: "67433719"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Технические условия
-Перед началом работы в этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+## <a name="prerequisites"></a>Предварительные требования
+Прежде чем приступать к этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
 
@@ -60,7 +60,7 @@ ms.locfileid: "67433719"
 
 Для использования шаблона, который создает две виртуальные сети в двух разных регионах и соединяет их с помощью VPN-подключения, нажмите кнопку **Развернуть в Azure**. Определение шаблона хранится в [общедоступном хранилище BLOB-объектов](https://hditutorialdata.blob.core.windows.net/hbaseha/azuredeploy.json).
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhbaseha%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-replication/deploy-to-azure.png" alt="Deploy to Azure"></a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhbaseha%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-replication/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 
 Ниже приведены некоторые жестко заданные значения в шаблоне.
 
@@ -68,7 +68,7 @@ ms.locfileid: "67433719"
 
 | Свойство | Значение |
 |----------|-------|
-| Location | Запад США |
+| Местоположение | Западная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -78,14 +78,14 @@ ms.locfileid: "67433719"
 | Имя шлюза. | vnet1gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | базовая; |
+| Gateway SKU | Стандартная |
 | Gateway IP | vnet1gwip |
 
 **VNet 2**
 
 | Свойство | Значение |
 |----------|-------|
-| Location | East US |
+| Местоположение | East US |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -95,7 +95,7 @@ ms.locfileid: "67433719"
 | Имя шлюза. | vnet2gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | базовая; |
+| Gateway SKU | Стандартная |
 | Gateway IP | vnet1gwip |
 
 ## <a name="setup-dns"></a>Настройка службы доменных имен (DNS)
@@ -135,7 +135,7 @@ ms.locfileid: "67433719"
     sudo apt-get install bind9 -y
     ```
 
-3. Настройте Bind на переадресацию запросов разрешения имен DNS-сервера в локальной среде. Чтобы сделать это, в качестве содержимого файла `/etc/bind/named.conf.options` добавьте следующий текст:
+3. Настройте привязку, чтобы перенаправить запросы на разрешение имен на локальный DNS-сервер. Чтобы сделать это, в качестве содержимого файла `/etc/bind/named.conf.options` добавьте следующий текст:
 
     ```
     acl goodclients {
@@ -260,7 +260,7 @@ sudo service bind9 status
 В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
-- **Тип кластера.** HBase
+- **Тип кластера.** Hbase
 - **Версия.** HBase 1.1.2 (HDI 3.6)
 - **Расположение.** Используйте расположение, в котором находится виртуальная сеть.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
 - **Хранилище** Создайте учетную запись хранения для кластера.
@@ -301,7 +301,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|ИМЯ|Описание|
+|Название|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -310,7 +310,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|ИМЯ|Описание|
+|Название|Описание|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -386,7 +386,7 @@ sudo service bind9 status
 - **Отключение репликации для всех таблиц:**
 
         -m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all
-  или
+  или диспетчер конфигурации служб
 
         --src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>
 
@@ -394,7 +394,7 @@ sudo service bind9 status
 
         -m hn1 -s <source hbase cluster name> -sp <source cluster Ambari password> -t "table1;table2;table3"
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 

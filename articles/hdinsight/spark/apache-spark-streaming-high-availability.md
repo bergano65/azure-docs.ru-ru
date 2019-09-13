@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: dcd9095a1e5010a3d0dd5ea7ad884e36e24c7c1d
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 9424ebbd4ed2e1536a10d77a88257bad948628e2
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814010"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915382"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
@@ -29,7 +29,7 @@ ms.locfileid: "70814010"
 
 Ядро Spark использует *устойчивые распределенные наборы данных* (RDD). Эти наборы данных распределяют данные по нескольким узлам кластера, где каждый узел обычно хранит свои данные в памяти для повышения производительности. Каждый набор данных RDD представляет события, собранные за интервал пакетной обработки. По истечении интервала пакетной обработки потоковая передача Spark формирует новый набор данных RDD со всеми данными, созданными за этот интервал. Этот непрерывный набор RDD собирается в поток DStream. Приложение потоковой передачи Spark обрабатывает данные, хранящиеся в каждом наборе данных RDD в пакете.
 
-![Поток DStream Spark](./media/apache-spark-streaming-high-availability/DStream.png)
+![Поток DStream Spark](./media/apache-spark-streaming-high-availability/apache-spark-dstream.png)
 
 ## <a name="spark-structured-streaming-jobs"></a>Задания структурированной потоковой передачи Spark
 

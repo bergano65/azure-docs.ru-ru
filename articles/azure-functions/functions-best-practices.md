@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 10/16/2017
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 19e088eee878695d24678d1df17b2848a4be1e01
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2782781fdfd560c0c8f322e362fcf74c796664bd
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097540"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933056"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "70097540"
 
 ### <a name="cross-function-communication"></a>Взаимодействие функций
 
-[Устойчивые функции](durable/durable-functions-concepts.md) и [Azure Logic Apps](../logic-apps/logic-apps-overview.md) используются для управления переходами состояний и обмена данными между несколькими функциями.
+[Устойчивые функции](durable/durable-functions-overview.md) и [Azure Logic Apps](../logic-apps/logic-apps-overview.md) используются для управления переходами состояний и обмена данными между несколькими функциями.
 
 Если для интеграции нескольких функций не используются устойчивые функции или Logic Apps, для обмена данными между функциями лучше всего использовать очереди хранилища,  так как они дешевле и их гораздо проще подготовить к работе. 
 

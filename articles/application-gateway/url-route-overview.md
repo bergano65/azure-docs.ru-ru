@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.date: 09/10/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 0dfeb6a80cbf227f20b24def7641882ad0444489
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 2234ae4ce8257559f78d6aa50ecae59ae742ba33
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844595"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910007"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -83,7 +83,7 @@ PathPattern — это список шаблонов пути для сопос
 
 #### <a name="v2"></a>Версия 2
 
-В правилах для путей учитывается регистр.
+В правилах для путей не учитывается регистр.
 
 |Шаблон пути версии 2  |Поддерживается?  |
 |---------|---------|

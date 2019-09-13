@@ -8,12 +8,12 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 8e61f52282bcbc62a3eb069272cd7c1f3e329d3b
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 43d91bff6b8b67e79a9549c1524f918166c9adc4
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172705"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933994"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Запрос данных в Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "70172705"
 
 ## <a name="connect-to-the-proxy"></a>Подключение к прокси-серверу
 
-1. Прежде чем подключиться к кластеру Log Analytics или Application Insights , убедитесь, что в меню слева находится собственный кластер Azure обозреватель данных (например, "справочный кластер)".
+1. Прежде чем подключиться к кластеру Log Analytics или Application Insights, убедитесь, что в меню слева находится собственный кластер Azure обозреватель данных (например, " *Справочный* кластер)".
 
     ![ADX собственный кластер](media/adx-proxy/web-ui-help-cluster.png)
 
@@ -107,7 +107,7 @@ union <ADX table>, cluster(CL1).database(<workspace-name>).<table name>
 
 ![Перекрестный запрос от прокси-сервера Azure обозреватель данных](media/adx-proxy/cross-query-adx-proxy.png)
 
-При использовании оператора вместо объединения может потребоваться указание на его выполнение в собственном кластере Azure обозреватель данных (а не на прокси-сервере). [ `join` ](/azure/kusto/query/joinoperator) 
+При использовании [`hint`](/azure/kusto/query/joinoperator#join-hints) оператора вместо объединения, может потребоваться, чтобы запустить его в собственном кластере Azure обозреватель данных (а не на прокси-сервере). [ `join` ](/azure/kusto/query/joinoperator) 
 
 ## <a name="additional-syntax-examples"></a>Дополнительные примеры синтаксиса
 

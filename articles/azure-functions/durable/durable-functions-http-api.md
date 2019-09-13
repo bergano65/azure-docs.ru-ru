@@ -1,5 +1,5 @@
 ---
-title: API HTTP в устойчивых функциях — Azure
+title: API-интерфейсы HTTP в Устойчивые функции — функции Azure
 description: Сведения о том, как внедрять API HTTP в расширении устойчивых функций для Функций Azure.
 services: functions
 author: cgillum
@@ -7,47 +7,86 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 07/08/2019
+ms.date: 09/07/2019
 ms.author: azfuncdf
-ms.openlocfilehash: b34fd30b8e43e674b0b346672366d680d99ebd5c
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: c81eccaa2b3a4335f034b9667f6e7be317635f43
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734272"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933385"
 ---
-# <a name="http-apis-in-durable-functions-azure-functions"></a>API HTTP в устойчивых функциях (Функции Azure)
+# <a name="http-api-reference"></a>Справочник по API HTTP
 
-Расширение устойчивых задач предоставляет набор API HTTP, которые могут использоваться для выполнения следующих задач:
+Расширение Устойчивые функции предоставляет набор встроенных API HTTP, которые можно использовать для выполнения задач управления в [оркестрации](durable-functions-types-features-overview.md#orchestrator-functions), [сущностях](durable-functions-types-features-overview.md#entity-functions)и [центрах задач](durable-functions-task-hubs.md). Эти API HTTP являются веб-перехватчиками расширяемости, которые разрешены узлом функций Azure, но обрабатываются непосредственно с помощью расширения Устойчивые функции.
 
-* получение состояния экземпляра оркестрации;
-* отправка события в ожидающий экземпляр оркестрации;
-* завершение работающего экземпляра оркестрации.
+Все API-интерфейсы HTTP, реализованные с помощью расширения, должны иметь следующие параметры. Тип данных всех параметров — `string`.
 
-Каждый из этих API HTTP является операцией веб-перехватчика, обрабатываемой напрямую расширением устойчивых задач. Они не относятся к какой-либо функции в приложении-функции.
+| Параметр        | Тип параметра  | Описание |
+|------------------|-----------------|-------------|
+| **`taskHub`**    | Строка запроса    | Имя [центра задач](durable-functions-task-hubs.md). Если не указано, предполагается имя центра задач текущего приложения-функции. |
+| **`connection`** | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
+| **`systemKey`**  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
 
-> [!NOTE]
-> Эти операции также могут быть вызваны напрямую с помощью API управления экземплярами в классе [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html). Дополнительные сведения см. в [статье об управлении экземплярами](durable-functions-instance-management.md).
+`systemKey`— Это ключ авторизации, автоматически сформированный узлом функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Самый простой способ обнаружения значения `systemKey` — с помощью API `CreateCheckStatusResponse`, упомянутого ранее.
 
-## <a name="http-api-url-discovery"></a>Обнаружение URL-адреса API HTTP
+В следующих нескольких разделах рассматриваются определенные API HTTP, поддерживаемые расширением, и приведены примеры их использования.
 
-Класс [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) предоставляет API [CreateCheckStatusResponse](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateCheckStatusResponse_), который можно использовать для создания полезных данных ответа HTTP, содержащих ссылки на все поддерживаемые операции. Ниже приведен пример функции HTTP-триггера, в котором показано, как использовать этот API:
+## <a name="start-orchestration"></a>Начать оркестрации
 
-### <a name="precompiled-c"></a>Предкомпилированный код C#
+Начинает выполнять новый экземпляр указанной функции Orchestrator.
 
-[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
+### <a name="request"></a>Запрос
 
-### <a name="c-script"></a>Скрипт C#
+Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
-[!code-csharp[Main](~/samples-durable-functions/samples/csx/HttpStart/run.csx)]
+```http
+POST /admin/extensions/DurableTaskExtension/orchestrators/{functionName}/{instanceId?}
+     ?taskHub={taskHub}
+     &connection={connectionName}
+     &code={systemKey}
+```
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+В версии 2. x среды выполнения функций формат URL-адреса имеет те же параметры, но с немного отличающимся префиксом:
 
-[!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
+```http
+POST /runtime/webhooks/durabletask/orchestrators/{functionName}/{instanceId?}
+     ?taskHub={taskHub}
+     &connection={connectionName}
+     &code={systemKey}
+```
 
-Эти примеры функций создают следующие данные ответа JSON. Тип данных всех полей — `string`.
+Параметры запроса для этого API включают набор по умолчанию, упомянутый ранее, а также следующие уникальные параметры:
 
-| Поле                   |Описание                           |
+| Поле              | Тип параметра  | Описание |
+|--------------------|-----------------|-------------|
+| **`functionName`** | URL             | Имя запускаемой функции Orchestrator. |
+| **`instanceId`**   | URL             | Необязательный параметр. Идентификатор экземпляра оркестрации. Если не указано, функция Orchestrator будет начинаться с идентификатора случайного экземпляра. |
+| **`{content}`**    | Содержимое запроса | Необязательный элемент. Входные данные функции Orchestrator в формате JSON. |
+
+### <a name="response"></a>Отклик
+
+Может быть возвращено несколько кодов состояния.
+
+* **HTTP 202 (Accepted)** (HTTP 202 (принято)): Выполнение указанной функции Orchestrator запланировано на запуск. Заголовок `Location` ответа содержит URL-адрес для опроса состояния оркестрации.
+* **HTTP 400 (Bad Request)** (HTTP 400 (недопустимый запрос)): Указанная функция Orchestrator не существует, указан недопустимый идентификатор экземпляра или содержимое запроса не является допустимым JSON.
+
+Ниже приведен пример запроса, который запускает `RestartVMs` функцию Orchestrator и включает полезные данные объекта JSON:
+
+```http
+POST /runtime/webhooks/durabletask/orchestrators/RestartVMs?code=XXX
+Content-Type: application/json
+Content-Length: 83
+
+{
+    "resourceGroup": "myRG",
+    "subscriptionId": "111deb5d-09df-4604-992e-a968345530a9"
+}
+```
+
+Полезные данные ответа для вариантов **HTTP 202** — это объект JSON со следующими полями:
+
+| Поле                       | Описание                          |
 |-----------------------------|--------------------------------------|
 | **`id`**                    |Идентификатор экземпляра оркестрации. |
 | **`statusQueryGetUri`**     |URL-адрес состояния экземпляра оркестрации. |
@@ -56,66 +95,38 @@ ms.locfileid: "70734272"
 | **`purgeHistoryDeleteUri`** |URL-адрес "Очистка журнала" экземпляра оркестрации. |
 | **`rewindPostUri`**         |образца URL-адрес "перемотки" экземпляра оркестрации. |
 
-Вот пример ответа на запрос:
+Тип данных всех полей — `string`.
+
+Ниже приведен пример полезных данных ответа для экземпляра оркестрации с `abc123` идентификатором (для удобочитаемости).
 
 ```http
-HTTP/1.1 202 Accepted
-Content-Length: 923
-Content-Type: application/json; charset=utf-8
-Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX
-
 {
-    "id":"34ce9a28a6834d8492ce6a295f1a80e2",
-    "statusQueryGetUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
-    "sendEventPostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
-    "terminatePostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX",
-    "purgeHistoryDeleteUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2?taskHub=DurableFunctionsHub&connection=Storage&code=XXX"
-    "rewindPostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/rewind?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX"
+    "id": "abc123",
+    "purgeHistoryDeleteUri": "http://localhost:7071/runtime/webhooks/durabletask/instances/abc123?code=XXX",
+    "sendEventPostUri": "http://localhost:7071/runtime/webhooks/durabletask/instances/abc123/raiseEvent/{eventName}?code=XXX",
+    "statusQueryGetUri": "http://localhost:7071/runtime/webhooks/durabletask/instances/abc123?code=XXX",
+    "terminatePostUri": "http://localhost:7071/runtime/webhooks/durabletask/instances/abc123/terminate?reason={text}&code=XXX"
 }
 ```
 
-> [!NOTE]
-> Формат URL-адресов веб-перехватчиков может отличаться в зависимости от того, какая версия узла Функций Azure выполняется. Приведенный выше пример использует формат адресов для узла Функций Azure 2.x.
+HTTP-ответ должен быть совместим с *шаблоном объекта-получателя опроса*. Он также включает следующие важные заголовки ответа:
 
-## <a name="async-operation-tracking"></a>Отслеживание асинхронных операций
+* **Расположение.** URL-адрес конечной точки состояния. Этот URL-адрес содержит то же значение `statusQueryGetUri` , что и поле.
+* **Повтор-после**: Количество секунд ожидания между операциями опроса. Значение по умолчанию — `10`.
 
-Упомянутый ранее HTTP-ответ предназначен для помощи в реализации долго выполняющихся асинхронных API-интерфейсов HTTP с устойчивыми функциями. Это иногда называется *шаблоном опрашивающего объекта-получателя*. Поток клиента или сервера работает следующим образом:
+Дополнительные сведения о шаблоне асинхронного опроса HTTP см. в документации по [отслеживанию HTTP-операций](durable-functions-http-features.md#async-operation-tracking) асинхронного выполнения.
 
-1. Клиент отправляет запрос HTTP для запуска длительного процесса, например функции оркестратора.
-2. Целевой триггер HTTP возвращает ответ HTTP 202 с заголовком `Location` со значением `statusQueryGetUri`.
-3. Клиент отправляет URL-адрес в заголовке `Location`. Он продолжает просматривать ответы HTTP 202 с заголовком `Location`.
-4. При завершении (или сбое) экземпляра конечная точка в заголовке `Location` возвращает ответ HTTP 200.
-
-Этот протокол позволяет согласовать долго выполняющиеся процессы с помощью внешних клиентов или служб, которые поддерживают опрос конечной точки HTTP и используют заголовок `Location`. Ключевые компоненты уже встроены в API HTTP устойчивых функций.
-
-> [!NOTE]
-> По умолчанию все действия на основе HTTP, предоставляемые [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/), поддерживают стандартную модель асинхронных операций. Эта возможность позволяет внедрять долго выполняющиеся устойчивые функции в рамках рабочего процесса Logic Apps. Дополнительные сведения о поддержке Logic Apps для асинхронных шаблонов HTTP см. в разделе [Модель асинхронных операций](../../logic-apps/logic-apps-workflow-actions-triggers.md#asynchronous-patterns).
-
-## <a name="http-api-reference"></a>Справочник по API HTTP
-
-Все API HTTP, реализованные с помощью расширения, принимают следующие параметры. Тип данных всех параметров — `string`.
-
-| Параметр        | Тип параметра  | Описание |
-|------------------|-----------------|-------------|
-| **`taskHub`**    | Строка запроса    | Имя [центра задач](durable-functions-task-hubs.md). Если не указано, предполагается имя центра задач текущего приложения-функции. |
-| **`connection`** | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
-| **`systemKey`**  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
-
-`systemKey` — это ключ авторизации, автоматически создаваемый узлом Функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Самый простой способ обнаружения значения `systemKey` — с помощью API `CreateCheckStatusResponse`, упомянутого ранее.
-
-В следующих нескольких разделах рассматриваются определенные API HTTP, поддерживаемые расширением, и приведены примеры их использования.
-
-### <a name="get-instance-status"></a>Получение состояния экземпляра
+## <a name="get-instance-status"></a>Получение состояния экземпляра
 
 Возвращает состояние определенного экземпляра оркестрации.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
 ```http
 GET /admin/extensions/DurableTaskExtension/instances/{instanceId}
-    ?taskHub={taskHub
+    ?taskHub={taskHub}
     &connection={connectionName}
     &code={systemKey}
     &showHistory=[true|false]
@@ -145,9 +156,9 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}
 | **`showHistoryOutput`** | Строка запроса    | Необязательный параметр. Если задано `true`значение, выходные данные функции будут включаться в журнал выполнения оркестрации.|
 | **`createdTimeFrom`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, созданных в или после заданной метки времени ISO8601.|
 | **`createdTimeTo`**     | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, созданных в или перед заданной отметкой времени ISO8601.|
-| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
+| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Список возможных значений состояния среды выполнения см. в статье [запросы экземпляров](durable-functions-instance-management.md) . |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Может быть возвращено несколько кодов состояния.
 
@@ -226,14 +237,14 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}
 
 Ответ **HTTP 202** также включает заголовок ответа **Location**, который ссылается на тот же URL-адрес, что и поле `statusQueryGetUri`, упомянутое ранее.
 
-### <a name="get-all-instances-status"></a>Получение состояния всех экземпляров
+## <a name="get-all-instances-status"></a>Получение состояния всех экземпляров
 
 Можно также запросить состояние всех экземпляров, удалив `instanceId` из запроса "получение состояния экземпляра". В этом случае основные параметры аналогичны параметру "получить состояние экземпляра". Также поддерживаются параметры строки запроса для фильтрации.
 
-Следует помнить, что `connection` и `code` являются дополнительными. Если у вас есть анонимная проверка подлинности на функцию, кода не требуется.
+Следует помнить, что `connection` и `code` являются дополнительными. При наличии анонимной проверки подлинности для функции `code` не требуется.
 Если вы не хотите использовать другую строку подключения к хранилищу, не определенную в параметре приложения AzureWebJobsStorage, можно спокойно проигнорировать параметр строки запроса подключения.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -273,10 +284,10 @@ GET /runtime/webhooks/durableTask/instances?
 | **`showHistoryOutput`** | Строка запроса    | Необязательный параметр. Если задано `true`значение, выходные данные функции будут включаться в журнал выполнения оркестрации.|
 | **`createdTimeFrom`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, созданных в или после заданной метки времени ISO8601.|
 | **`createdTimeTo`**     | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, созданных в или перед заданной отметкой времени ISO8601.|
-| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
+| **`runtimeStatus`**     | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Список возможных значений состояния среды выполнения см. в статье [запросы экземпляров](durable-functions-instance-management.md) . |
 | **`top`**               | Строка запроса    | Необязательный параметр. Если указано, ограничивает количество экземпляров, возвращаемых запросом. |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Вот пример полезных данных ответа, включая состояние оркестрации (в удобном для чтения формате):
 
@@ -337,11 +348,11 @@ GET /runtime/webhooks/durableTask/instances?
 
 Если задать значение маркера продолжения в заголовке следующего запроса, можно получить следующую страницу результатов. Это имя заголовка запроса также `x-ms-continuation-token`является.
 
-### <a name="purge-single-instance-history"></a>Очистить журнал одного экземпляра
+## <a name="purge-single-instance-history"></a>Очистить журнал одного экземпляра
 
 Удаляет журнал и связанные с ним артефакты для указанного экземпляра оркестрации.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -367,7 +378,7 @@ DELETE /runtime/webhooks/durabletask/instances/{instanceId}
 |-------------------|-----------------|-------------|
 | **`instanceId`**  | URL             | Идентификатор экземпляра оркестрации. |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Могут возвращаться следующие значения кода состояния HTTP.
 
@@ -388,11 +399,11 @@ DELETE /runtime/webhooks/durabletask/instances/{instanceId}
 }
 ```
 
-### <a name="purge-multiple-instance-history"></a>Очистка журнала нескольких экземпляров
+## <a name="purge-multiple-instance-histories"></a>Очистка журналов нескольких экземпляров
 
 Кроме того, можно удалить журнал и связанные с ним артефакты для нескольких экземпляров в центре задач, `{instanceId}` удалив из запроса "Очистка журнала единственных экземпляров". Чтобы выборочно очистить журнал экземпляров, используйте те же фильтры, которые описаны в запросе "получение состояния всех экземпляров".
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -424,12 +435,12 @@ DELETE /runtime/webhooks/durabletask/instances
 |-----------------------|-----------------|-------------|
 | **`createdTimeFrom`** | Строка запроса    | Фильтрует список удаленных экземпляров, созданных в или после указанной метки времени ISO8601.|
 | **`createdTimeTo`**   | Строка запроса    | Необязательный параметр. При указании фильтрует список удаленных экземпляров, созданных в или до указанной метки времени ISO8601.|
-| **`runtimeStatus`**   | Строка запроса    | Необязательный параметр. Если этот параметр указан, список удаленных экземпляров фильтруется в зависимости от их состояния выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
+| **`runtimeStatus`**   | Строка запроса    | Необязательный параметр. Если этот параметр указан, список удаленных экземпляров фильтруется в зависимости от их состояния выполнения. Список возможных значений состояния среды выполнения см. в статье [запросы экземпляров](durable-functions-instance-management.md) . |
 
 > [!NOTE]
 > Эта операция может быть очень дорогостоящей в плане операций ввода-вывода службы хранилища Azure при наличии большого количества строк в таблицах экземпляров и журнала. Дополнительные сведения об этих таблицах можно найти в документации по [производительности и масштабированию в устойчивые функции (функции Azure)](durable-functions-perf-and-scale.md#instances-table) .
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Могут возвращаться следующие значения кода состояния HTTP.
 
@@ -450,11 +461,11 @@ DELETE /runtime/webhooks/durabletask/instances
 }
 ```
 
-### <a name="raise-event"></a>Вызов события
+## <a name="raise-event"></a>Вызов события
 
 Отправляет сообщение уведомления о событии в выполняющийся экземпляр оркестрации.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -482,7 +493,7 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
 | **`eventName`**   | URL             | Имя события, которое ожидает целевой экземпляр оркестрации. |
 | **`{content}`**   | Содержимое запроса | Полезные данные события в формате JSON. |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Может быть возвращено несколько кодов состояния.
 
@@ -503,11 +514,11 @@ Content-Length: 6
 
 Ответы этого API не содержат какого-либо содержимого.
 
-### <a name="terminate-instance"></a>Завершение экземпляра
+## <a name="terminate-instance"></a>Завершение экземпляра
 
 Завершите выполнение экземпляра оркестрации.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -536,7 +547,7 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate
 | **`instanceId`**  | URL             | Идентификатор экземпляра оркестрации. |
 | **`reason`**      | Строка запроса    | Необязательный элемент. Причина завершения работы экземпляра оркестрации. |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Может быть возвращено несколько кодов состояния.
 
@@ -552,11 +563,11 @@ POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7
 
 Ответы этого API не содержат какого-либо содержимого.
 
-### <a name="rewind-instance-preview"></a>Экземпляр перемотки (предварительная версия)
+## <a name="rewind-instance-preview"></a>Экземпляр перемотки (предварительная версия)
 
 Восстанавливает сбойный экземпляр оркестрации в рабочем состоянии путем воспроизведения последних неудачных операций.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Для версии 1. x среды выполнения функций запрос форматируется следующим образом (для ясности отображается несколько строк):
 
@@ -585,7 +596,7 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind
 | **`instanceId`**  | URL             | Идентификатор экземпляра оркестрации. |
 | **`reason`**      | Строка запроса    | Необязательный элемент. Причина перемотки экземпляра оркестрации. |
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Может быть возвращено несколько кодов состояния.
 
@@ -601,11 +612,14 @@ POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7
 
 Ответы этого API не содержат какого-либо содержимого.
 
-### <a name="signal-entity-preview"></a>Объект Signal (Предварительная версия)
+## <a name="signal-entity"></a>Объект сигнала
 
 Отправляет односторонняя сообщение операции в [устойчивую сущность](durable-functions-types-features-overview.md#entity-functions). Если сущность не существует, она будет создана автоматически.
 
-#### <a name="request"></a>Запрос
+> [!NOTE]
+> Надежные сущности доступны начиная с Устойчивые функции 2,0.
+
+### <a name="request"></a>Запрос
 
 HTTP-запрос форматируется следующим образом (для ясности показаны несколько строк):
 
@@ -635,7 +649,7 @@ Content-Type: application/json
 5
 ```
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Эта операция имеет несколько возможных ответов:
 
@@ -645,11 +659,11 @@ Content-Type: application/json
 
 Успешный HTTP-запрос не содержит никакого содержимого в ответе. Неудачный HTTP-запрос может содержать сведения об ошибке в формате JSON в содержимом ответа.
 
-### <a name="query-entity-preview"></a>Сущность запроса (Предварительная версия)
+## <a name="query-entity"></a>Сущность запроса
 
 Возвращает состояние указанной сущности.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 HTTP-запрос форматируется следующим образом (для ясности показаны несколько строк):
 
@@ -660,7 +674,7 @@ GET /runtime/webhooks/durabletask/entities/{entityType}/{entityKey}
     &code={systemKey}
 ```
 
-#### <a name="response"></a>Отклик
+### <a name="response"></a>Отклик
 
 Эта операция имеет два возможных ответа:
 
@@ -669,8 +683,8 @@ GET /runtime/webhooks/durabletask/entities/{entityType}/{entityKey}
 
 Успешный ответ содержит сериализованное в JSON состояние сущности в качестве ее содержимого.
 
-#### <a name="example"></a>Пример
-Ниже приведен пример HTTP-запроса, который получает состояние существующей `Counter` сущности с именем: `steps`
+### <a name="example"></a>Пример
+В следующем примере HTTP-запрос получает состояние существующей `Counter` сущности с именем: `steps`
 
 ```http
 GET /runtime/webhooks/durabletask/entities/Counter/steps
@@ -687,4 +701,4 @@ GET /runtime/webhooks/durabletask/entities/Counter/steps
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Обработка ошибок в устойчивых функциях (Функции Azure)](durable-functions-error-handling.md)
+> [Узнайте, как использовать Application Insights для мониторинга устойчивых функций](durable-functions-diagnostics.md)

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: c6f55b40b3ee077b81a3cdd6f3add7a2cad23f95
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 226a3b0ffa4b770d1738e69fd04592476b9f4075
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809925"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935287"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -165,11 +165,11 @@ ms.locfileid: "70809925"
 
 3. В колонке __Дополнительные параметры__ выберите __Действия скрипта__. В колонке __Действия сценария__ выберите __+ Submit new__ (+Отправить новое).
 
-    ![Отправка нового действия скрипта](./media/hdinsight-hadoop-customize-cluster-linux/add-script-action.png)
+    ![Отправка нового действия скрипта](./media/hdinsight-hadoop-customize-cluster-linux/add-new-script-action.png)
 
 4. Используйте запись __Выберите сценарий__, чтобы выбрать готовый сценарий. Чтобы использовать настраиваемый сценарий, выберите __Настраиваемый__. Затем укажите __имя__ и __универсальный код ресурса (URI) Bash-сценария__ своего сценария.
 
-    ![Добавление скрипта в форме выбора скрипта](./media/hdinsight-hadoop-customize-cluster-linux/select-script.png)
+    ![Добавление скрипта в форме выбора скрипта](./media/hdinsight-hadoop-customize-cluster-linux/hdinsight-select-script.png)
 
     В приведенной ниже таблице описываются элементы формы.
 
@@ -185,7 +185,7 @@ ms.locfileid: "70809925"
 
 5. Чтобы сохранить скрипт, нажмите кнопку __Создать__. Чтобы добавить еще один сценарий, вы можете использовать элемент __+ Submit new__ (+ Отправить новый).
 
-    ![Несколько действий скриптов](./media/hdinsight-hadoop-customize-cluster-linux/multiple-scripts.png)
+    ![Несколько действий скриптов](./media/hdinsight-hadoop-customize-cluster-linux/multiple-scripts-actions.png)
 
     Завершив добавление сценариев, нажмите кнопку __Выбрать__, а затем — кнопку __Далее__, чтобы вернуться в раздел __Сводка по кластерам__.
 
@@ -251,7 +251,7 @@ ms.locfileid: "70809925"
 
 4. Используйте запись __Выберите сценарий__, чтобы выбрать готовый сценарий. Чтобы использовать настраиваемый сценарий, выберите __Настраиваемый__. Затем укажите __имя__ и __универсальный код ресурса (URI) Bash-сценария__ своего сценария.
 
-    ![Добавление скрипта в форме выбора скрипта](./media/hdinsight-hadoop-customize-cluster-linux/select-script.png)
+    ![Добавление скрипта в форме выбора скрипта](./media/hdinsight-hadoop-customize-cluster-linux/hdinsight-select-script.png)
 
     В приведенной ниже таблице описываются элементы формы.
 
@@ -356,7 +356,7 @@ ms.locfileid: "70809925"
 
 6. Вы также можете использовать многоточие **…** справа от записей в разделе "Действия сценария" для выполнения действий.
 
-    ![Действия сценариев, многоточие](./media/hdinsight-hadoop-customize-cluster-linux/deletepromoted.png)
+    ![Действия сценариев, многоточие](./media/hdinsight-hadoop-customize-cluster-linux/hdi-delete-promoted-sa.png)
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -438,11 +438,11 @@ ms.locfileid: "70809925"
 
 2. В панели вверху страницы выберите запись **ops**. Появится список текущих и предыдущих операций, выполняемых в кластере с помощью Ambari.
 
-    ![Веб-панель Ambari с выбранной записью ops](./media/hdinsight-hadoop-customize-cluster-linux/ambari-nav.png)
+    ![Веб-панель Ambari с выбранной записью ops](./media/hdinsight-hadoop-customize-cluster-linux/hdi-apache-ambari-nav.png)
 
 3. Найдите записи, для которых в столбце **Операции** указано **run\_customscriptaction**. Такие записи создаются при выполнении действий сценариев.
 
-    ![Снимок экрана операций](./media/hdinsight-hadoop-customize-cluster-linux/ambariscriptaction.png)
+    ![Снимок экрана операций](./media/hdinsight-hadoop-customize-cluster-linux/ambari-script-action.png)
 
     Для просмотра выходных данных **STDOUT** и **STDERR** выберите запись **run\customscriptaction** и перейдите по ссылкам. Эти выходные данные формируются при запуске сценария и могут содержать полезные сведения.
 
@@ -452,7 +452,7 @@ ms.locfileid: "70809925"
 
 * Журналы хранилища находятся в `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE`.
 
-    ![Журналы действий скриптов](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
+    ![Журналы действий скриптов](./media/hdinsight-hadoop-customize-cluster-linux/script-action-logs-in-storage.png)
 
     В этом каталоге журналы упорядочены по **головному узлу**, **рабочему узлу** и **узлу zookeeper**. Рассмотрим следующие примеры:
 
@@ -520,4 +520,4 @@ sudo pip install azure-storage==0.20.0
 * [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)
 * [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)
 
-[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Этапы создания кластера"
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/cluster-provisioning-states.png "Этапы создания кластера"

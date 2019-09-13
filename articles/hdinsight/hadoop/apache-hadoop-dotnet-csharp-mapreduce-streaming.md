@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: b06f19736c4d50ab7d246a5c71da04ada95b6f98
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7f82ad65ecc805d5a45c78e8b190dd0eee4c340c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64727366"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882329"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -42,7 +42,7 @@ ms.locfileid: "64727366"
 
 Дополнительные сведения см. в разделе [Потоковая передача Hadoop](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5. В этом руководстве используется Visual Studio 2017.
 
@@ -152,7 +152,7 @@ namespace reducer
 
 4. Разверните кластер HDInsight, в который нужно развернуть это приложение. Отобразится запись с текстом __(Учетная запись хранения по умолчанию)__ .
 
-    ![В обозревателе серверов отображается учетная запись хранения для кластера](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/storage.png)
+    ![В обозревателе серверов отображается учетная запись хранения для кластера](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/hdinsight-storage-account.png)
 
     * Если эту запись можно развернуты, то для кластера в качестве хранилища по умолчанию используется __учетная запись хранения Azure__. Чтобы просмотреть файлы в хранилище по умолчанию кластера, разверните эту запись, а затем дважды щелкните запись __(Контейнер по умолчанию)__ .
 
@@ -162,7 +162,7 @@ namespace reducer
 
    * Если используется __учетная запись хранения Azure__, щелкните значок передачи и перейдите в папку **bin\debug** проекта **mapper**. Выберите файл **mapper.exe** и нажмите кнопку **OK**.
 
-       ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/upload.png)
+        ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/hdinsight-upload-icon.png)
     
    * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
 
@@ -194,12 +194,12 @@ namespace reducer
 
      Ниже перечислены функции каждого из параметров.
 
-   * `hadoop-streaming.jar`: JAR-файл, содержащий функции потоковой передачи MapReduce.
-   * `-files`: добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `abfs:///`, `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
-   * `-mapper`: задает файл, который реализует модуль сопоставления.
-   * `-reducer`: задает файл, который реализует модуль редукции.
-   * `-input`: входные данные.
-   * `-output`: выходной каталог.
+   * `hadoop-streaming.jar`. JAR-файл, содержащий функции потоковой передачи MapReduce.
+   * `-files`. добавляет файлы `mapper.exe` и `reducer.exe` в это задание. `abfs:///`, `adl:///` или `wasb:///` перед именем файла — это путь к корню хранилища по умолчанию для кластера.
+   * `-mapper`. задает файл, который реализует модуль сопоставления.
+   * `-reducer`. задает файл, который реализует модуль редукции.
+   * `-input`. входные данные.
+   * `-output`. выходной каталог.
 
 3. После завершения задания MapReduce просмотрите результаты с помощью следующей команды.
 
@@ -237,7 +237,7 @@ namespace reducer
     yourselves      3
     youth   17
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании MapReduce с HDInsight см. в разделе [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 

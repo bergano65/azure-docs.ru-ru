@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: c692b1c5b77b95e5487a847b46473906135c3d86
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: aeb00b84ac254232e0d68fd9631fb539a928e67d
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261146"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931892"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -55,7 +55,7 @@ ms.locfileid: "68261146"
 
 ## <a name="install-mobility-agent-through-ui"></a>Установка агента мобильности с помощью пользовательского интерфейса
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Предварительное требование
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -83,7 +83,7 @@ ms.locfileid: "68261146"
 
 ## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента мобильности с помощью командной строки
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Предварительное требование
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -119,7 +119,7 @@ ms.locfileid: "68261146"
 журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
 /Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 /InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
-/Platform | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
+/Platform | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
 /Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
@@ -158,7 +158,7 @@ ms.locfileid: "68261146"
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 -d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
 -v | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
--q | Необязательный. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+-q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**

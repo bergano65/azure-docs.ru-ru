@@ -6,14 +6,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 06/18/2019
+ms.date: 09/11/2019
 ms.author: dacurwin
-ms.openlocfilehash: 3c16d8b5f1611c6c05e60d65551f73eb2d395668
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 847a4ec7da3c9b00753e5d07baf2952b31d2b5bb
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69872911"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934850"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -35,9 +35,8 @@ SQL Server базы данных — это критически важные р
 
 1. Выявление или создание [хранилища служб восстановления](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) в том же регионе или в локальной службе, что и виртуальная машина, на которой размещен экземпляр SQL Server.
 2. Убедитесь, что виртуальная машина подключена [к сети](backup-sql-server-database-azure-vms.md#establish-network-connectivity).
-3. Убедитесь, что SQL Server базы данных соответствуют рекомендациям по [именованию баз данных для Azure Backup](#database-naming-guidelines-for-azure-backup).
-4. В частности для SQL 2008 и 2008 R2, [добавьте раздел реестра](#add-registry-key-to-enable-registration) для включения регистрации сервера. Этот шаг не потребуется, если функция является общедоступной.
-5. Убедитесь, что для базы данных не включены другие решения резервного копирования. Отключите все остальные SQL Server резервные копии, прежде чем создавать резервную копию базы данных.
+3. Убедитесь, что SQL Server базы данных соответствуют [рекомендациям по именованию баз данных для Azure Backup](#database-naming-guidelines-for-azure-backup).
+4. Убедитесь, что для базы данных не включены другие решения резервного копирования. Отключите все остальные SQL Server резервные копии, прежде чем создавать резервную копию базы данных.
 
 > [!NOTE]
 > Вы можете включить Azure Backup для виртуальной машины Azure, а также для SQL Server базы данных, работающей на виртуальной машине, без конфликтов.
@@ -98,22 +97,6 @@ SQL Server базы данных — это критически важные р
 
 Псевдонимы доступны для неподдерживаемых символов, но рекомендуется избегать их использования. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN) (Общие сведения о модели данных службы таблиц).
 
-### <a name="add-registry-key-to-enable-registration"></a>Добавление раздела реестра для включения регистрации
-
-1. Открыть программу regedit
-2. Создайте путь к каталогу реестра: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WorkloadBackup\TestHook (необходимо создать ключ Тессук в разделе Ворклоадбаккуп, который, в свою очередь, должен быть создан в корпорации Майкрософт).
-3. В разделе путь к каталогу реестра создайте новое строковое значение с именем строки **AzureBackupEnableWin2K8R2SP1** и значением: **Условия**
-
-    ![Regedit для включения регистрации](media/backup-azure-sql-database/reg-edit-sqleos-bkp.png)
-
-Кроме того, этот шаг можно автоматизировать, запустив reg file с помощью следующей команды:
-
-```csharp
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WorkloadBackup\TestHook]
-"AzureBackupEnableWin2K8R2SP1"="True"
-```
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
@@ -212,7 +195,7 @@ Windows Registry Editor Version 5.00
 
 Чтобы создать политику резервного копирования, выполните следующее.
 
-1. В хранилище выберите **политики** > архивации**Добавить**.
+1. В хранилище выберите >  **политики архивации** **Добавить**.
 2. В окне **Добавить**выберите **SQL Server на виртуальной машине Azure** , чтобы определить тип политики.
 
    ![Выбор типа для новой политики резервного копирования](./media/backup-azure-sql-database/policy-type-details.png)
@@ -261,18 +244,6 @@ Windows Registry Editor Version 5.00
     - В серверной части Azure Backup использует собственное сжатие резервных копий SQL.
 
 14. После внесения изменений в политику резервного копирования нажмите кнопку **ОК**.
-
-
-### <a name="modify-policy"></a>Изменение политики
-Измените политику, чтобы изменить периодичность резервного копирования или диапазон хранения.
-
-> [!NOTE]
-> Любые изменения в сроке хранения будут применены ретроспективели ко всем старым точкам восстановления, кроме новых.
-
-На панели мониторинга хранилища перейдите к разделу **Управление** > **политиками архивации** и выберите политику, которую нужно изменить.
-
-  ![Управление политикой архивации](./media/backup-azure-sql-database/modify-backup-policy.png)
-
 
 ## <a name="enable-auto-protection"></a>Включение автоматической защиты  
 

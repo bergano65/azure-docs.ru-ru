@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/15/2019
-ms.openlocfilehash: 6e7157f4e40dbc585d19affaf0c12af2e6ba60c1
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 69f897d1f279279c067eeff30ac711f85d3bb89b
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813915"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915204"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
@@ -119,11 +119,11 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 
 Это можно сделать в пользовательском интерфейсе браузера Ambari, выбрав раздел Spark2/config/Advanced Spark2-env.
 
-![Расширенный раздел spark2-env](./media/apache-spark-ts-outofmemory-heap-space/image01.png)
+![Расширенный раздел spark2-env](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image01.png)
 
 Добавьте следующее свойство, чтобы изменить объем памяти сервера журнала Spark с 1 ГБ на 4G `SPARK_DAEMON_MEMORY=4g`:.
 
-![Spark, свойство](./media/apache-spark-ts-outofmemory-heap-space/image02.png)
+![Spark, свойство](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image02.png)
 
 Не забудьте перезапустить все затронутые службы из Ambari.
 

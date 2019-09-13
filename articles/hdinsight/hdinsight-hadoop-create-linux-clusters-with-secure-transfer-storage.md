@@ -8,19 +8,19 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/24/2018
-ms.openlocfilehash: 72e8b1331005db59be572e033bfaaaf5ceeea0b3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f3c6eabeac74df8ea88cf1a0670af9624e98771a
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433603"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935170"
 ---
 # <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
 Функция [Secure transfer required](../storage/common/storage-require-secure-transfer.md) (Необходима безопасная передача) усиливает безопасность учетной записи хранения Azure путем принудительной передачи всех запросов к вашей учетной записи через безопасное подключение. Эта функция и схема wasbs поддерживаются только кластером HDInsight версии 3.6 или более новым.
 
-## <a name="prerequisites"></a>Технические условия
-Перед началом работы с этой статьей необходимо иметь:
+## <a name="prerequisites"></a>Предварительные требования
+Прежде чем приступать к этой статье, необходимо:
 
 * **Подписка Azure**: чтобы создать бесплатную пробную учетную запись (на один месяц), перейдите по адресу [azure.microsoft.com/free](https://azure.microsoft.com/free).
 * **Учетная запись хранения Azure с включенной безопасной передачей**. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md).
@@ -31,11 +31,11 @@ ms.locfileid: "67433603"
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
-В этом разделе вы создадите в HDInsight кластер Hadoop, используя [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md). Шаблон можно найти на сайте [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-with-existing-default-storage-account/). Знакомство с шаблонами Resource Manager не является обязательным для работы с этой статьей. Для других способах создания кластеров и основные сведения о свойствах, используемых в этой статье, см. в разделе [кластеров HDInsight, создайте](hdinsight-hadoop-provision-linux-clusters.md).
+В этом разделе вы создадите в HDInsight кластер Hadoop, используя [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md). Шаблон можно найти на сайте [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-with-existing-default-storage-account/). Знакомство с шаблонами Resource Manager не является обязательным для работы с этой статьей. Сведения о других способах создания кластера и о свойствах, используемых в этой статье, см. в разделе [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 1. Щелкните следующее изображение, чтобы войти в Azure и открыть шаблон Resource Manager на портале Azure.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-existing-default-storage-account%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hadoop-linux-tutorial-get-started/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-existing-default-storage-account%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 
 2. Следуйте инструкциям, чтобы создать кластер со следующими характеристиками: 
 
@@ -60,14 +60,14 @@ ms.locfileid: "67433603"
 - Создайте кластер с помощью [портала Azure](https://portal.azure.com) и укажите связанную учетную запись хранения.
 - Используйте действия скриптов для добавления дополнительных учетных записей хранения с включенной безопасной передачей в имеющийся кластер HDInsight. Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-В этой статье вы узнали, как создать кластер HDInsight и включать безопасную передачу для учетных записей хранения.
+## <a name="next-steps"></a>Следующие шаги
+В этой статье вы узнали, как создать кластер HDInsight и включить безопасную пересылку учетных записей хранения.
 
 Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:
 
-* Дополнительные сведения об использовании [Apache Hive](https://hive.apache.org/) с HDInsight, включая выполнение запросов Hive из Visual Studio, см. в разделе [использование Apache Hive с HDInsight][hdinsight-use-hive].
-* Дополнительные сведения о [Apache Pig](https://pig.apache.org/), язык, используемый для преобразования данных, см. в разделе [использование Apache Pig с HDInsight][hdinsight-use-pig].
-* Дополнительные сведения о [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html), см. в разделе, способе записи программ, которые обрабатывают данные в Hadoop, [использование Apache Hadoop MapReduce в HDInsight][hdinsight-use-mapreduce].
+* Дополнительные сведения об использовании [Apache Hive](https://hive.apache.org/) с hdinsight, в том числе о выполнении запросов Hive из Visual Studio, см. в статье [использование Apache Hive с hdinsight][hdinsight-use-hive].
+* Сведения о языке [Apache Pig](https://pig.apache.org/), который используется для преобразования данных, см. в статье [использование Apache Pig с HDInsight][hdinsight-use-pig].
+* Дополнительные сведения о [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)— способах написания программ, обрабатывающих данные в Hadoop, см. в статье [использование Apache Hadoop MapReduce с HDInsight][hdinsight-use-mapreduce].
 * Дополнительные сведения об анализе данных в HDInsight с помощью средств HDInsight для Visual Studio см. в статье [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio](hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 
 Чтобы узнать, как HDInsight хранит данные или получает их, ознакомьтесь со следующими статьями:

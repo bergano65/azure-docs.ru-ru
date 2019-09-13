@@ -4,16 +4,16 @@ description: Узнайте, как управлять кластерами Azur
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
-ms.reviewer: mamccrea
+ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: c8103f5d0df7a71df5141ece3a8d67f308a562e1
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: HT
+ms.openlocfilehash: e5062ce27e1e9367a262d263070ab01f899dfc54
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/11/2019
-ms.locfileid: "70884227"
+ms.locfileid: "70918916"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
@@ -34,7 +34,7 @@ ms.locfileid: "70884227"
    
 3. Данные связанного кластера можно просмотреть с помощью команды **перечисления кластеров**. Теперь в этот связанный кластер можно отправить скрипт.
 
-   ![связанный кластер](./media/apache-domain-joined-manage/linked-cluster.png "связанный кластер")
+   ![связанный кластер](./media/apache-domain-joined-manage/hdinsight-linked-cluster.png "связанный кластер")
 
 4. Вы также можете удалить связь кластера, введя **HDInsight: Unlink a cluster** (HDInsight: удалить связь кластера) из палитры команд.
 
@@ -71,7 +71,7 @@ ms.locfileid: "70884227"
 
 2. Введите **имя кластера**, **имя пользователя** и **пароль**, затем нажмите кнопку "ОК", чтобы связать кластер. При необходимости введите учетную запись хранения, ключ к хранилищу данных, а затем выберите в представлении в виде дерева контейнер хранилища для обозревателя хранилищ.
    
-   ![диалоговое окно "Связывание кластера" Eclipse](./media/apache-domain-joined-manage/link-cluster-dialog.png)
+   ![диалоговое окно "Связывание кластера" Eclipse](./media/apache-domain-joined-manage/link-cluster-dialog1.png)
    
    > [!NOTE]  
    > Если кластер зарегистрирован в подписке Azure и связан, используется ключ к хранилищу данных, имя пользователя и пароль для связывания.

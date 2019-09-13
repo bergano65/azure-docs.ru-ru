@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 09/11/2019
 ms.author: raynew
-ms.openlocfilehash: fd24d0d9f05855cf22da547f95b16da0a8d2c788
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 47914a635afe754cb4205a1e089622a69b706b51
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69617647"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910438"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -245,6 +245,10 @@ Blob-блоки | Нет
 Диск FC | Не поддерживается. | Если не поддерживается, проверка завершается ошибкой.
 BitLocker | Не поддерживается. | Прежде чем включать репликацию для компьютера, необходимо отключить BitLocker. |
 Имя виртуальной машины | От 1 до 63 символов.<br/><br/> при этом допустимы только буквы, цифры и дефисы<br/><br/> Имя компьютера должно начинаться и заканчиваться буквой или цифрой. |  Обновите значение в свойствах компьютера в службе Site Recovery.
+
+## <a name="resource-group-limits"></a>Ограничения группы ресурсов
+
+Сведения о количестве виртуальных машин, которые можно защитить в одной группе ресурсов, см. в статье [ограничения подписки и квоты](https://docs.microsoft.com/azure/azure-subscription-service-limits#resource-group-limits) .
 
 ## <a name="churn-limits"></a>Ограничения на обновление
 

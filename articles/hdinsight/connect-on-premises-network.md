@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2019
-ms.openlocfilehash: ced0655d2e8ff012b3043dd123a8483674b4c472
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 1ed722ad68280226387b98b3fefb77647f5cd825
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404548"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918527"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 
@@ -67,7 +67,7 @@ ms.locfileid: "68404548"
   
 2. В меню слева выберите пункт **+ создать ресурс** > **COMPUTE** > **Ubuntu Server 18,04 LTS**.
 
-    ![Создание виртуальной машины Ubuntu](./media/connect-on-premises-network/create-ubuntu-vm.png)
+    ![Создание виртуальной машины Ubuntu](./media/connect-on-premises-network/create-ubuntu-virtual-machine.png)
 
 3. На вкладке __Основные сведения__ задайте следующие параметры.  
   
@@ -84,7 +84,7 @@ ms.locfileid: "68404548"
     |Пароль или открытый ключ SSH | Соответствующее поле определяется выбранным **типом проверки подлинности**.  Введите соответствующее значение.|
     |Общедоступные входящие порты|Выберите **Разрешить выбранные порты**. Затем выберите **SSH (22)** в раскрывающемся списке **выберите входящие порты** .|
 
-    ![Базовая конфигурация виртуальной машины](./media/connect-on-premises-network/vm-basics.png)
+    ![Базовая конфигурация виртуальной машины](./media/connect-on-premises-network/virtual-machine-basics.png)
 
     Оставьте значения других параметров по умолчанию и откройте вкладку **Сеть**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "68404548"
 
 2. Запишите значения **ОБЩЕДОСТУПНЫЙ IP-АДРЕС/ИМЯ DNS** и **ЧАСТНЫЙ IP-АДРЕС**. Они вам еще пригодятся.
 
-   ![Общедоступные и частные IP-адреса](./media/connect-on-premises-network/vm-ip-addresses.png)
+   ![Общедоступные и частные IP-адреса](./media/connect-on-premises-network/virtual-machine-ip-addresses.png)
 
 ### <a name="install-and-configure-bind-dns-software"></a>Установка и настройка Bind (программное обеспечение DNS)
 
@@ -268,7 +268,7 @@ nslookup dnsproxy.icb0d0thtw0ebifqt0g1jycdxd.ex.internal.cloudapp.net 196.168.0.
 
 В этом примере локальный DNS-сервер по адресу 196.168.0.4 используется для разрешения имен пользовательского DNS-сервера. Замените IP-адрес IP-адресом локального DNS-сервера. Замените адрес `dnsproxy` полным доменным именем пользовательского DNS-сервера.
 
-## <a name="optional-control-network-traffic"></a>Необязательно: Управление сетевым трафиком
+## <a name="optional-control-network-traffic"></a>Дополнительно Управление сетевым трафиком
 
 Для управления сетевым трафиком можно использовать группы безопасности сети или определяемые пользователем маршруты. Группы безопасности сети позволяют фильтровать входящий и исходящий трафик, а также разрешать или запрещать его. Определяемые пользователем маршруты позволяют управлять потоком трафика между ресурсами в виртуальной сети, Интернете и локальной сети.
 

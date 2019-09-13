@@ -4,16 +4,16 @@ description: Обзор конечных точек служб для вирту
 services: key-vault
 author: amitbapat
 ms.author: ambapat
-manager: barbkess
+manager: rkarlin
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: 45499dac3cc50e2b6e79f9ebcb1bc3e7b4330beb
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 2617ae7bd1c761ae7977eac518c2e40ca55da00c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165850"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883240"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -53,7 +53,7 @@ ms.locfileid: "67165850"
 > Следует учитывать следующие ограничения конфигурации:
 > * Допускается не более 127 правил виртуальной сети и 127 правил IPv4. 
 > * Не поддерживаются малые диапазоны адресов с префиксом /31 или /32. Такие диапазоны следует настраивать в отдельных правилах для IP-адресов.
-> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, начинающиеся с **10.** , **172.16-31**, и **192.168.** . 
+> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, начинающиеся с **10.** , **172.16-31**и **192,168.** . 
 > * Сейчас поддерживаются только IPV4-адреса.
 
 ## <a name="trusted-services"></a>Доверенные службы
@@ -65,22 +65,22 @@ ms.locfileid: "67165850"
 |Служба развертывания виртуальных машин Azure|[Развертывание сертификатов на виртуальных машинах из хранилища ключей, управляемого пользователем](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/)|
 |Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).|
 |Служба шифрования томов для шифрования дисков Azure|Разрешение доступа к ключу BitLocker (виртуальная машина Windows), парольной фразе DM (виртуальная машина Linux) и ключу шифрования ключей во время развертывания виртуальной машины. Это позволяет включить [шифрование дисков Azure](../security/azure-security-disk-encryption.md).|
-|Служба архивации Azure|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
+|Azure Backup|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](https://support.office.com/article/Controlling-your-data-in-Office-365-using-Customer-Key-f2cd475a-e592-46cf-80a3-1bfb0fa17697).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](https://docs.microsoft.com/azure/information-protection/what-is-information-protection)|
 |Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
-|Базы данных SQL Azure|[Прозрачное шифрование данных с поддержкой использования собственных ключей для Базы данных SQL Azure и Хранилища данных SQL Azure](../sql-database/transparent-data-encryption-byok-azure-sql.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current)|
-|Хранилище Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
-|Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
+|База данных SQL Azure|[Прозрачное шифрование данных с поддержкой использования собственных ключей для Базы данных SQL Azure и Хранилища данных SQL Azure](../sql-database/transparent-data-encryption-byok-azure-sql.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current)|
+|Служба хранилища Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
+|Azure Data Lake Store|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](../azure-databricks/what-is-azure-databricks.md).|
-|Cлужба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
+|Управление API Azure|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
 
 
 
 > [!NOTE]
 > Настройте политики доступа в Key Vault так, чтобы разрешить доступ к Key Vault соответствующим службам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Защита хранилища ключей](key-vault-secure-your-key-vault.md)
 * [Настройка брандмауэров и виртуальных сетей Azure Key Vault](key-vault-network-security.md)

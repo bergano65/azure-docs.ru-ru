@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 2caa96e0ad036bbb872de43a7d8736969cf33c42
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: MT
+ms.openlocfilehash: 706f0333f1cca984b44e0fc96a5b014d4157ce4c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812041"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879698"
 ---
 # <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Мониторинг производительности кластера в Azure HDInsight
 
@@ -68,7 +68,7 @@ YARN позволяет выделять ресурсы для этих очер
 
 В пользовательском интерфейсе Resource Manager в меню слева выберите **Scheduler** (Планировщик). Список очередей отобразится в разделе *Application Queues* (Очереди приложений). Здесь можно просмотреть емкость, используемую для каждой из очередей, узнать, насколько хорошо задания распределены между ними, и имеются ли задания, которым не хватает ресурсов.
 
-![Ссылка в меню "Resource Manager UI" (Пользовательский интерфейс Resource Manager)](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui.png)
+![диспетчер ресурсов меню пользовательского интерфейса](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui.png)
 
 ## <a name="storage-throttling"></a>Регулирование хранилища
 

@@ -8,15 +8,15 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: stevestein
-ms.author: sstein
+ms.author: sashan
 ms.reviewer: carlrab
-ms.date: 08/29/2019
-ms.openlocfilehash: cdbc79ca6764dd49f427b395dbaf8502c58bf63a
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.date: 09/04/2019
+ms.openlocfilehash: de56e66046bb61ac31c1842ae6ce7a9c6720760d
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173434"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934201"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
@@ -72,7 +72,8 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 - Роль участника SQL Server или
 - Пользовательская роль в исходной и целевой базах данных со следующим разрешением:
 
-   Microsoft. SQL/Servers/databases/Read Microsoft. SQL/Servers/databases/Write
+   Microsoft.Sql/servers/databases/read   
+   Microsoft.Sql/servers/databases/write   
 
 Чтобы отменить копирование базы данных, необходимо иметь следующие роли.
 
@@ -80,7 +81,23 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 - Роль участника SQL Server или
 - Пользовательская роль в исходной и целевой базах данных со следующим разрешением:
 
-   Microsoft. SQL/Servers/databases/Read Microsoft. SQL/Servers/databases/Write
+   Microsoft.Sql/servers/databases/read   
+   Microsoft.Sql/servers/databases/write   
+   
+Для управления копированием базы данных с помощью портал Azure также необходимы следующие разрешения.
+
+&nbsp;&nbsp; Microsoft.Resources/Subscriptions/&nbsp; Resources/Read   
+&nbsp;&nbsp; Microsoft.Resources/Subscriptions/&nbsp; Resources/Write   
+&nbsp;&nbsp; Microsoft.Resources&nbsp; /deployments/Read   
+&nbsp;&nbsp; Microsoft.Resources&nbsp; /deployments/Write   
+&nbsp;&nbsp; Microsoft.Resources/deployments&nbsp; /оператионстатусес/Read    
+
+Если вы хотите просмотреть операции в развертываниях в группе ресурсов на портале, операции с несколькими поставщиками ресурсов, включая операции SQL, понадобятся вам следующие дополнительные роли RBAC: 
+
+&nbsp;&nbsp; Microsoft.Resources/Subscriptions/resourcegroups/deployments&nbsp; /Operations/Read   
+&nbsp;&nbsp; Microsoft.Resources/Subscriptions/resourcegroups/deployments&nbsp; /оператионстатусес/Read
+
+
 
 ## <a name="copy-a-database-by-using-transact-sql"></a>Копирование базы данных с помощью Transact-SQL
 

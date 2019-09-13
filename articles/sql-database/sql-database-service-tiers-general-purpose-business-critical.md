@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 02/23/2019
-ms.openlocfilehash: 809abcf1046a5fe2c351ec56f4efd5bb0a737427
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
-ms.translationtype: HT
+ms.openlocfilehash: 8709d88c4d21a40ac8ebb27e5c1669d8f5fa3555
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910501"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934229"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "70910501"
 
 | | Тип ресурса | Общего назначения |  Гипермасштабирование | Критические задачи для бизнеса |
 |:---:|:---:|:---:|:---:|:---:|
-| **Оптимально для** | |  Большинства рабочих нагрузок. Предлагает бюджетные сбалансированные варианты вычислительных ресурсов и ресурсов хранилища. | Приложения данных с высокими требованиями к емкости данных и возможностью автоматического масштабирования ресурсов хранилища и быстрого масштабирования вычислительных ресурсов. | Приложения OLTP с большим количеством транзакций и минимальной задержкой операций ввода-вывода. Предлагает самую высокую отказоустойчивость к сбоям благодаря использованию нескольких изолированных реплик.|
+| **Оптимально для** | |  Большинства рабочих нагрузок. Предлагает бюджетные сбалансированные варианты вычислительных ресурсов и ресурсов хранилища. | Приложения данных с большими требованиями к емкости данных, возможность автоматического масштабирования хранилища до 100 ТБ и комплексное масштабирование вычислительных ресурсов. | Приложения OLTP с большим количеством транзакций и минимальной задержкой операций ввода-вывода. Предлагает самую высокую отказоустойчивость к сбоям благодаря использованию нескольких изолированных реплик.|
 |  **Доступно в типе ресурса:** ||Отдельная база данных / эластичный пул / управляемый экземпляр | Отдельная база данных | Отдельная база данных / эластичный пул / управляемый экземпляр |
 | **Объем вычислительных ресурсов**|Отдельная база данных / эластичный пул | От 1 до 80 виртуальных ядер | от 1 до 80 виртуальных ядер | От 1 до 80 виртуальных ядер |
 | | Управляемый экземпляр | 4, 8, 16, 24, 32, 40, 64, 80 виртуальных ядер | Н/Д | 4, 8, 16, 24, 32, 40, 64, 80 виртуальных ядер |
@@ -48,12 +48,17 @@ ms.locfileid: "70910501"
 | | Управляемый экземпляр  | [24 ГБ на виртуальное ядро](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | До 4 ТБ — [ограничено размером хранилища](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
 | **Пропускная способность ввода-вывода** | Отдельная база данных | [500 операций ввода-вывода в секунду на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | Действующие операции ввода-вывода будут зависеть от рабочей нагрузки. | [4000 операций ввода-вывода в секунду на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute)|
 | | Управляемый экземпляр | [100 — 250 МБ/с и 500-7500 операций ввода-вывода на файл](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | [1375 операций ввода-вывода в секунду на виртуальное ядро](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
-| **Пропускная способность записи** | Отдельная база данных | [1,875 МБ/с на виртуальное ядро (Макс. 30 МБ/с](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | Масштабирование — многоуровневая архитектура с кэшированием на нескольких уровнях. Действующие операции ввода-вывода будут зависеть от рабочей нагрузки. | [6 МБ/с на виртуальное ядро (Макс. 96 МБ/с)](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute) |
+| **Пропускная способность записи в журнал** | Отдельная база данных | [1,875 МБ/с на виртуальное ядро (Макс. 30 МБ/с)](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | 100 МБ/с | [6 МБ/с на виртуальное ядро (Макс. 96 МБ/с)](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute) |
 | | Управляемый экземпляр | [3 МБ/с на виртуальное ядро (максимум 22 Мб/с)](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | [4 МБ/с на виртуальное ядро (Макс. 48 МБ/с)](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
-|**Доступность**|Все| 99,99 % |  [99,95% с одной вторичной репликой, 99,99% с дополнительными репликами](sql-database-service-tier-hyperscale-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99 % <br/> 99,995% (избыточная отдельная база данных в зонах) |
+|**Доступность**|Все| 99,99 % |  [99,95% с одной вторичной репликой, 99,99% с дополнительными репликами](sql-database-service-tier-hyperscale-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99 % <br/> [99,995% с избыточной зоной, отдельной базой данных](https://azure.microsoft.com/blog/understanding-and-leveraging-azure-sql-database-sla/) |
 |**Резервные копии**|Все|Геоизбыточное хранилище с доступом на чтение, 7–35 дней (7 дней по умолчанию)| RA-GRS, 7 дней, постоянное восстановление на момент времени (PITR) | Геоизбыточное хранилище с доступом на чтение, 7–35 дней (7 дней по умолчанию) |
-|**Выполняющаяся в памяти OLTP** | | Н/Д | Доступно | Н/Д |
-|**Встроенные реплики только для чтения**| | 0 | 1 | 0 - 4 |
+|**Выполняющаяся в памяти OLTP** | | Н/Д | Н/Д | Доступно |
+|**Реплики только для чтения**| | 0  | 0 - 4 | 1 (встроенный, включается в цену) |
+|**Цены и выставление счетов** | Отдельная база данных | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>В операциях ввода-вывода не начислена. | [Виртуальное ядро для каждой реплики и используемого хранилища](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>В операциях ввода-вывода не начислена. |
+|| Управляемый экземпляр | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | Н/Д | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | 
+|**Модели скидок**| | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования|
+
+Дополнительные сведения см. в описании подробных различий между уровнями служб в [одной базе данных (Виртуальное ядро)](sql-database-vcore-resource-limits-single-databases.md), [отдельными пулами баз данных (Виртуальное ядро)](sql-database-dtu-resource-limits-single-databases.md), [единственной базой данных (DTU)](sql-database-dtu-resource-limits-single-databases.md), [отдельными пулами баз данных (DTU)](sql-database-dtu-resource-limits-single-databases.md)и [управляемый экземпляр](sql-database-managed-instance-resource-limits.md) см.
 
 > [!NOTE]
 > Дополнительные сведения о уровне службы "виртуальное ядро" в модели приобретения на основе служб см. в статье [масштабирование уровня службы](sql-database-service-tier-hyperscale.md). Сравнение модели приобретения на основе виртуальных ядер и DTU см. в статье [Ресурсы и модели приобретения для Базы данных SQL Azure](sql-database-purchase-models.md).

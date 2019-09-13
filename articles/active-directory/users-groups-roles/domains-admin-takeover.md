@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a756f0d9fe3669ab9d0f2b4576a35be5d2112a87
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: c05e1dc720f49eb190ccdbe1826a1a347fba7fa1
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872210"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914774"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "70872210"
 
 3. В сообщении электронной почты с подтверждением от Power BI выберите **Yes, that's me** (Да, это я).
 
-4. Войдите в [центр администрирования Microsoft 365](https://admin.microsoft.com) с помощью учетной записи пользователя Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
+4. Войдите в [центр администрирования Microsoft 365](https://portal.office.com/admintakeover) с помощью учетной записи пользователя Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
   
    ![Первый снимок экрана для "Become the Admin" (Стать администратором)](./media/domains-admin-takeover/become-admin-first.png)
   

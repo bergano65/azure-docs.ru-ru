@@ -3,21 +3,21 @@ title: Мониторинг и администрирование процесс
 description: Сценарии, демонстрирующие ряд возможностей для создания, мониторинга и взаимодействия с процессом создания сертификата с помощью Key Vault.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3d86960e726ae18fba8d171ab9f85d7c991b4e40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9f88af7027f6c907b5b55eb9aac545d98e2fbb7a
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64729232"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70880837"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Мониторинг и администрирование процесса создания сертификатов
-Область применения: Таблицы Azure
+Область применения: Azure
 
 В этой статье описаны 
 
@@ -39,7 +39,7 @@ ms.locfileid: "64729232"
 
 |Метод|URI запроса|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|ПОМЕСТИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
 Для следующего примера необходимо, чтобы объект с именем mydigicert уже был доступен в хранилище ключей с поставщиком издателя DigiCert. Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.
 
@@ -59,7 +59,7 @@ ms.locfileid: "64729232"
 }
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -87,14 +87,14 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
 > [!NOTE]
 > Если *request_id* указан в запросе, он действует как фильтр. Если *request_id* в запросе и ожидающем объекте различается, возвращается код состояния HTTP 404.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -122,11 +122,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -154,11 +154,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -193,11 +193,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 404, ReasonPhrase: 'Not Found'
@@ -226,7 +226,7 @@ StatusCode: 404, ReasonPhrase: 'Not Found'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|ПОМЕСТИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 
@@ -243,7 +243,7 @@ StatusCode: 404, ReasonPhrase: 'Not Found'
 }
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 409, ReasonPhrase: 'Conflict'
@@ -263,7 +263,7 @@ StatusCode: 409, ReasonPhrase: 'Conflict'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
+|ПОМЕСТИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 
@@ -274,7 +274,7 @@ StatusCode: 409, ReasonPhrase: 'Conflict'
 
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```json
 StatusCode: 403, ReasonPhrase: 'Forbidden'
@@ -297,7 +297,7 @@ StatusCode: 403, ReasonPhrase: 'Forbidden'
 ### <a name="request"></a>Запрос
 PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
@@ -308,7 +308,7 @@ PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-ve
 
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -337,11 +337,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ### <a name="request"></a>Запрос
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
-Или
+ИЛИ
 
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -362,7 +362,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|ПОМЕСТИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 
@@ -380,7 +380,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ```
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -402,7 +402,7 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 |Метод|URI запроса|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
+|ПОМЕСТИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 
@@ -413,11 +413,11 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ```
 
-|Имя элемента|Обязательно для заполнения|type|Version|Описание|
+|Имя элемента|Обязательное значение|Type|Version|Описание|
 |------------------|--------------|----------|-------------|-----------------|
-|x5c|Да|массив|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|
+|x5c|Да|array|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
 ```
 StatusCode: 201, ReasonPhrase: 'Created'
