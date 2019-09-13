@@ -1,93 +1,126 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по API Пользовательского визуального распознавания
+### YamlMime:Landing
+title: Документация по Пользовательскому визуальному распознаванию
+summary: Пользовательское визуальное распознавание Azure — это когнитивная служба, которая позволяет создавать, развертывать и улучшать пользовательские классификаторы изображений. Классификатор изображений — это служба ИИ, которая присваивает изображениям метки (соответствующие классам) по их визуальным характеристикам.
 metadata:
-  title: 'Документация по API Пользовательского визуального распознавания. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
-  description: 'Сведения о создании, развертывании и улучшении классификаторов пользовательских изображений с помощью Пользовательского визуального распознавания. В руководствах описано, как создавать приложения, использующие API.'
+  title: Документация по Пользовательскому визуальному распознаванию
+  description: Пользовательское визуальное распознавание Azure — это когнитивная служба, которая позволяет создавать, развертывать и улучшать пользовательские классификаторы изображений. Классификатор изображений — это служба ИИ, которая присваивает изображениям метки (соответствующие классам) по их визуальным характеристикам.
   services: cognitive-services
-  author: nitinme
-  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: custom-vision
   ms.topic: landing-page
-  ms.date: 12/20/2018
-  ms.author: nitinme
-abstract:
-  description: 'Облачный API Пользовательского визуального распознавания предоставляет разработчикам возможность создавать, развертывать и улучшать классификаторы пользовательских изображений. Классификатор изображений — это служба искусственного интеллекта, которая сортирует изображения по тегам в соответствии с определенными характеристиками.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ../media/index/custom-vision-landing-page-video.png
-      width: 250
-    title: 'Определение уникальных образов и обучение (26:10)'
-    href: 'https://channel9.msdn.com/Shows/AI-Show/Azure-Custom-Vision-How-to-Train-and-Identify-Unique-Designs-or-Image-Content'
-    width: 250
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/Custom-Vision-Service/home
-            html: <p>Подробнее об API Пользовательского визуального распознавания.</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Что собой представляет Пользовательское визуальное распознавание
-          - href: /azure/cognitive-services/Custom-Vision-Service/getting-started-build-a-classifier
-            html: '<p>Узнайте, как создать классификатор.</p>'
-            image:
-              src: ../media/index/i_tasks.svg
-            title: Построение классификатора
-          - href: /azure/cognitive-services/Custom-Vision-Service/export-your-model
-            html: '<p>Узнайте, как для экспортировать модель на мобильное устройство.</p>'
-            image:
-              src: ../media/index/i_tasks.svg
-            title: Экспорт моделей на мобильные устройства
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как приступить к работе с Пользовательским визуальным распознаванием, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>'
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: media/index/logo_csharp.svg
-          - image:
-              src: media/index/logo_python.svg
-          - image:
-              src: media/index/logo_java.svg
-        rows:
-          - title: Классификация изображений
-            values:
-              - href: csharp-tutorial
-              - href: python-tutorial
-              - href: java-tutorial
-          - title: Обнаружение объектов
-            values:
-              - href: csharp-tutorial-od
-              - href: python-tutorial-od
-              - href: java-tutorial-od
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Поиск примеров для API Пользовательского визуального распознавания:'
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://azure.microsoft.com/resources/samples/?sort=Relevance&service=cognitive-services&term=Custom+Vision">Примеры кода</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Программные интерфейсы
-            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=865446">Обучение</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=865445">Прогнозирование</a></p>'
-          - title: SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customvision?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/customvision/training">Go — обучение</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction">Go — прогнозирование</a></p>'
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
+  author: PatrickFarley
+  ms.author: pafarley
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 25ac2e195afc1349ad257408e8339d169c104de1
+  ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/12/2019
+  ms.locfileid: "70931097"
+landingContent:
+- title: Сведения о Пользовательском визуальном распознавании
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет Пользовательское визуальное распознавание
+      url: home.md
+  - linkListType: video
+    links:
+    - text: Определение уникальных образов и обучение
+      url: https://channel9.msdn.com/Shows/AI-Show/Azure-Custom-Vision-How-to-Train-and-Identify-Unique-Designs-or-Image-Content
+- title: Создание классификатора изображений
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование веб-портала
+      url: getting-started-build-a-classifier.md
+    - text: С помощью пакета SDK для .NET
+      url: csharp-tutorial.md
+    - text: С помощью пакета SDK для Python
+      url: python-tutorial.md
+    - text: Использование пакета SDK для Java
+      url: java-tutorial.md
+    - text: Использование пакета SDK для Node.js
+      url: node-tutorial.md
+    - text: Использование пакета SDK для Go
+      url: go-tutorial.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование API прогнозирования
+      url: use-prediction-api.md
+- title: Создание средства обнаружения объектов
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование веб-портала
+      url: get-started-build-detector.md
+    - text: С помощью пакета SDK для .NET
+      url: csharp-tutorial-od.md
+    - text: С помощью пакета SDK для Python
+      url: python-tutorial-od.md
+    - text: Использование пакета SDK для Java
+      url: java-tutorial-od.md
+    - text: Использование пакета SDK для Node.js
+      url: node-tutorial-object-detection.md
+    - text: Использование пакета SDK для Go
+      url: go-tutorial-object-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Средство обнаружения логотипов для мобильных устройств
+      url: logo-detector-mobile.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование API прогнозирования
+      url: use-prediction-api.md
+- title: Тестирование и улучшение моделей
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Тестирование модели
+      url: test-your-model.md
+    - text: Улучшение модели
+      url: getting-started-improving-your-classifier.md
+- title: Экспорт моделей
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Экспорт модели на мобильное устройство
+      url: export-your-model.md
+    - text: Использование модели ONNX с Windows ML
+      url: custom-vision-onnx-windows-ml.md
+    - text: Запуск модели TensorFlow в среде Python
+      url: export-model-python.md
+  - linkListType: tutorial
+    links:
+    - text: Средство обнаружения логотипов для мобильных устройств
+      url: logo-detector-mobile.md
+- title: Поддержка актуальности проекта
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Перемещение проекта ограниченной пробной версии в Azure
+      url: move-your-project-to-azure.md
+    - text: Обновление приложения до API 3.0
+      url: update-application-to-3.0-sdk.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API обучения
+      url: https://go.microsoft.com/fwlink/?linkid=865446
+    - text: API прогнозирования
+      url: https://go.microsoft.com/fwlink/?linkid=865445
+    - text: Пакет SDK для .NET
+      url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet
+    - text: Пакет SDK для Python
+      url: https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/?view=azure-python
+    - text: Пакет SDK для Java
+      url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customvision?view=azure-java-stable
+    - text: Пакет SDK для Go (обучение)
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/customvision/training
+    - text: Пакет SDK для Go (прогнозирование)
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
+    - text: Интерфейс командной строки Azure (CLI)
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest

@@ -1,14 +1,14 @@
-- name: Документация по Azure Advisor
+- name: Документация по Помощнику по Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Azure Advisor?
+    - name: Что такое Помощник по Azure?
       href: advisor-overview.md
 - name: Учебники
   items:
     - name: Начало работы с Помощником
       href: advisor-get-started.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Повышение уровня доступности приложения Azure
       href: advisor-high-availability-recommendations.md
@@ -22,6 +22,8 @@
       href: view-recommendations.md
     - name: Разрешения и блокировка действий
       href: permissions.md
+    - name: Настройка оповещений для рекомендаций
+      href: advisor-alerts.md
 - name: Справочные материалы
   items:
     - name: Центр безопасности
@@ -32,7 +34,7 @@
       href: 'https://docs.microsoft.com/azure/app-service/app-service-best-practices'
     - name: REST API
       href: 'https://docs.microsoft.com/rest/api/advisor/'
-    - name: Интерфейс командной строки
+    - name: CLI
       href: 'https://docs.microsoft.com/cli/azure/advisor?view=azure-cli-latest'
     - name: PowerShell
       href: 'https://docs.microsoft.com/powershell/module/az.advisor/?view=azps-1.2.0'
@@ -46,11 +48,11 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=advisor'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=advisor'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=advisor'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=azure+advisor'
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=advisor'

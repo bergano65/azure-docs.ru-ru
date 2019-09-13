@@ -13,6 +13,8 @@
       href: create-member-cli.md
     - name: Подключение к узлу транзакций
       items:
+        - name: Использование VS Code
+          href: connect-vscode.md
         - name: Использование MetaMask
           href: connect-metamask.md
         - name: Использование Geth

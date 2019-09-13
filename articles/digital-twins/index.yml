@@ -1,31 +1,75 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Digital Twins (предварительная версия)
+summary: Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также создавать пространственные интеллектуальные решения для Интернета вещей. Изучите краткое руководство и пошаговые инструкции, с помощью которых вы сможете подробно рассмотреть основные понятия, научиться отслеживать условное интеллектуальное здание и создать решение следующего поколения для Интернета вещей, которое моделирует физическое окружение.
 metadata:
   title: Документация по Azure Digital Twins (предварительная версия). Руководства и справочник по API | Документация Майкрософт
   description: Создавайте пространственные интеллектуальные решения с помощью Azure Digital Twins.
-  author: dsk-2015
-  manager: timlt
-  ms.service: digital-twins
   services: digital-twins
+  ms.service: digital-twins
+  ms.subservice: digital-twins
   ms.topic: landing-page
-  ms.date: 10/15/2018
-  ms.author: dkshir
-abstract:
-  description: 'Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также создавать пространственные интеллектуальные решения для Интернета вещей. Изучите краткое руководство и пошаговые инструкции, с помощью которых вы сможете подробно рассмотреть основные понятия, научиться отслеживать условное интеллектуальное здание и создать решение следующего поколения для Интернета вещей, которое моделирует физическое окружение.'
-sections:
-  - title: Пятиминутное руководство по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как <a href="quickstart-view-occupancy-dotnet">найти помещения с хорошим качеством воздуха с помощью примеров Azure Digital Twins для .NET</a>.'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Сведения о том, как настроить и использовать ваше решение Azure Digital Twins для мониторинга помещений.'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/digital-twins/tutorial-facilities-setup">Подготовка примера здания</a>
-          - html: <a href="/azure/digital-twins/tutorial-facilities-udf">Мониторинг рабочих условий в здании</a>
-          - html: <a href="/azure/digital-twins/tutorial-facilities-events">Получение уведомлений от системы управления зданием</a>
-          - html: <a href="/azure/digital-twins/tutorial-facilities-analyze">Анализ событий в здании</a>
+  ms.collection: collection
+  author: KingdomOfEnds
+  ms.author: v-adgera
+  ms.date: 09/03/2019
+  ms.openlocfilehash: 090a18b77de3ca89ecd054ce28ec9e8b0a17dd1f
+  ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/12/2019
+  ms.locfileid: "70930702"
+landingContent:
+- title: Сведения об Azure Digital Twins
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Digital Twins?
+      url: about-digital-twins.md
+  - linkListType: concept
+    links:
+    - text: Основные сведения об объектной модели и графе пространственной аналитики в Digital Twins
+      url: concepts-objectmodel-spatialgraph.md
+  - linkListType: video
+    links:
+    - text: Знакомство с Azure Digital Twins
+      url: https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Digital-Twins-Introduction
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Поиск доступных помещений
+      url: quickstart-view-occupancy-dotnet.md
+  - linkListType: tutorial
+    links:
+    - text: Развертывание и настройка
+      url: tutorial-facilities-setup.md
+    - text: Подготовка и мониторинг условий
+      url: tutorial-facilities-udf.md
+    - text: Получение уведомления с помощью Logic Apps
+      url: tutorial-facilities-events.md
+    - text: Визуализация событий с помощью TSI
+      url: tutorial-facilities-analyze.md
+- title: Разработка с использованием Azure Digital Twins
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Возможность подключения устройств и входящие данные телеметрии
+      url: concepts-device-ingress.md
+    - text: Обработка данных и определяемые пользователем функции
+      url: concepts-user-defined-functions.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка Postman
+      url: how-to-configure-postman.md
+    - text: Создание функций, определяемых пользователем
+      url: how-to-user-defined-functions.md
+- title: Справочник по API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Клиентская библиотека определяемых пользователем функций
+      url: reference-user-defined-functions-client-library.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование Swagger с Digital Twins
+      url: how-to-use-swagger.md

@@ -19,8 +19,10 @@
     - name: 'Создание устойчивой функции: JavaScript'
       displayName: 'get started, chaining'
       href: quickstart-js-vscode.md
-- name: Руководства
+- name: Учебники
   items:
+    - name: Цепочка функций
+      href: durable-functions-sequence.md
     - name: Объединение и развертывание
       href: durable-functions-cloud-backup.md
     - name: Мониторы
@@ -37,46 +39,56 @@
       href: ../functions-cli-samples.md
 - name: Основные понятия
   items:
-    - name: Шаблоны и основные понятия
-      href: durable-functions-concepts.md
-    - name: Типы функций и возможности
+    - name: Типы функций
       href: durable-functions-types-features-overview.md
-    - name: Привязки
-      href: durable-functions-bindings.md
+    - name: Взаимодействия
+      href: durable-functions-orchestrations.md
+    - name: Ограничения кода оркестратора
+      href: durable-functions-code-constraints.md
+    - name: Вложенные оркестрации
+      href: durable-functions-sub-orchestrations.md
+    - name: Настраиваемое значение состояния оркестрации
+      href: durable-functions-custom-orchestration-status.md
     - name: Таймеры
       href: durable-functions-timers.md
     - name: Внешние события
       href: durable-functions-external-events.md
-    - name: Вложенные оркестрации
-      href: durable-functions-sub-orchestrations.md
+    - name: Обработка ошибок
+      href: durable-functions-error-handling.md
+    - name: Нескончаемые оркестрации
+      href: durable-functions-eternal-orchestrations.md
+    - name: Оркестрации singleton
+      href: durable-functions-singletons.md
+    - name: Функции HTTP
+      href: durable-functions-http-features.md
+    - name: Сущности с отслеживанием состояния
+      href: durable-functions-entities.md
     - name: Центры задач
       href: durable-functions-task-hubs.md
-    - name: Надежное выполнение
-      href: durable-functions-checkpointing-and-replay.md
+    - name: Управление экземплярами
+      href: durable-functions-instance-management.md
     - name: Управление версиями
       href: durable-functions-versioning.md
-- name: Практические руководства
+    - name: Производительность и масштаб
+      href: durable-functions-perf-and-scale.md
+    - name: Высокий уровень доступности
+      href: durable-functions-disaster-recovery-geo-distribution.md
+- name: Справочные материалы
   items:
-    - name: Планирование и проектирование
-      items:
-        - name: Цепочка функций
-          href: durable-functions-sequence.md
-        - name: Нескончаемые оркестрации
-          href: durable-functions-eternal-orchestrations.md
-        - name: Оркестрации singleton
-          href: durable-functions-singletons.md
-        - name: Производительность и масштаб
-          href: durable-functions-perf-and-scale.md
-        - name: Высокий уровень доступности
-          href: durable-functions-disaster-recovery-geo-distribution.md
+    - name: Параметры файла host.json
+      href: 'durable-functions-bindings.md#host-json'
+    - name: Привязки
+      href: durable-functions-bindings.md
+    - name: API HTTP
+      href: durable-functions-http-api.md
+- name: Руководства
+  items:
     - name: Разработка
       items:
         - name: Создание на портале Azure
           href: durable-functions-create-portal.md
         - name: Управление подключениями
           href: ../manage-connections.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
-        - name: Обработка ошибок
-          href: durable-functions-error-handling.md
         - name: Модульное тестирование
           href: durable-functions-unit-testing.md
         - name: Создание в качестве веб-заданий
@@ -89,24 +101,14 @@
           href: ../deployment-zip-push.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
         - name: Запуск из пакета
           href: ../run-functions-from-deployment-package.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
-    - name: Управление
-      items:
-        - name: Управление экземплярами
-          href: durable-functions-instance-management.md
     - name: Мониторинг
-      items:
-        - name: Мониторинг функций
-          href: ../functions-monitoring.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
-        - name: Настраиваемое значение состояния оркестрации
-          href: durable-functions-custom-orchestration-status.md
-    - name: Устранение неполадок
       items:
         - name: Диагностика
           href: durable-functions-diagnostics.md
-- name: Справочные материалы
-  items:
-    - name: API HTTP
-      href: durable-functions-http-api.md
+        - name: Мониторинг
+          href: ../functions-monitoring.md?toc=%2fazure%2fazure-functions%2fdurable%2ftoc.json
+        - name: Цены
+          href: durable-functions-billing.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn
@@ -117,7 +119,7 @@
       href: 'https://azure.microsoft.com/pricing/details/functions/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Видео
       href: 'https://www.youtube.com/c/AzureFunctions'

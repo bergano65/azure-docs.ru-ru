@@ -1,66 +1,116 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Databricks
+summary: Ознакомьтесь со сведениями об Azure Databricks, платформе для аналитики на базе Apache Spark. Платформа настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область для совместной работы инженеров, бизнес-аналитиков, а также специалистов по обработке и анализу данных.
 metadata:
   title: Документация по Azure Databricks
-  description: 'Узнайте, как использовать Azure Databricks, из кратких руководств и других материалов, ссылки на которые приведены здесь. Azure Databricks — это платформа аналитики на основе Apache Spark, оптимизированная для платформы облачных служб Microsoft Azure.'
+  description: Ознакомьтесь со сведениями об Azure Databricks, платформе для аналитики на базе Apache Spark. Платформа настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область для совместной работы инженеров, бизнес-аналитиков, а также специалистов по обработке и анализу данных.
   services: azure-databricks
-  author: mamccrea
   ms.service: azure-databricks
   ms.topic: landing-page
-  ms.date: 05/07/2019
+  ms.collection: collection
+  author: mamccrea
   ms.author: mamccrea
-abstract:
-  description: 'Узнайте, как использовать Azure Databricks, платформу для аналитики на базе Apache Spark. Платформа настраивается одним щелчком, упрощает рабочие процессы и предоставляет интерактивную рабочую область, в которой могут совместно работать инженеры данных, бизнес-аналитики, а также специалисты по обработке и анализу данных. В кратких руководствах и учебных материалах объясняется, как приступить к работе с Azure Databricks и интегрировать ее с другими службами Azure.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video.png
-      width: 250
-    title: 'Общие сведения об Azure Databricks (3:38)'
-    href: 'https://azure.microsoft.com/resources/videos/connect-2017-introduction-to-azure-databricks/'
-    width: 250
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, как создать рабочую область Azure Databricks и кластер Spark, а затем запускать задания с помощью следующих средств:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/azure-databricks/media/index/portal.svg
-            text: Портал Azure
-            href: /azure/azure-databricks/quickstart-create-databricks-workspace-portal
-          - image:
-              src: /azure/azure-databricks/media/index/logo_azure_resource_manager.svg
-            text: Шаблон Resource Manager
-            href: /azure/azure-databricks/quickstart-create-databricks-workspace-resource-manager-template
-          - image:
-              src: /azure/azure-databricks/media/index/virtualnetwork.svg
-            text: Виртуальная сеть
-            href: /azure/azure-databricks/quickstart-create-databricks-workspace-vnet-injection
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Сведения о работе с Azure Databricks:'
-      - type: list
-        style: ordered
-        items:
-          - html: '<a href="/azure/azure-databricks/vnet-injection-sql-server">Отправка запроса к экземпляру SQL Server, запущенному в контейнере Docker</a>'
-          - html: "<a href=\"/azure/azure-databricks/service-endpoint-cosmosdb\">Использование конечной точки службы Cosmos\_DB</a>"
-          - html: '<a href="/azure/azure-databricks/databricks-extract-load-sql-data-warehouse">Извлечение, преобразование и загрузка данных</a>'
-          - html: <a href="/azure/azure-databricks/databricks-stream-from-eventhubs">Потоковая передача данных из Центров событий</a>
-          - html: <a href="/azure/azure-databricks/databricks-sentiment-analysis-cognitive-services">Анализ тональности с помощью Cognitive Services</a>
-          - html: '<a href="https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html" target="_blank">Потоковая передача данных из HDInsight Kafka</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: <p><a href="/rest/api/databricks">REST API</a></p>
-          - title: Диспетчер ресурсов
-            html: <p><a href="/azure/templates/microsoft.databricks/workspaces">Шаблон</a></p>
+  ms.date: 09/11/2019
+  ms.openlocfilehash: 40a023ee9498f8d5c487ab7317bc020260b98cce
+  ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/12/2019
+  ms.locfileid: "70933531"
+landingContent:
+- title: Сведения об Azure Databricks
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Databricks?
+      url: what-is-azure-databricks.md
+  - linkListType: concept
+    links:
+    - text: Часто задаваемые вопросы
+      url: frequently-asked-questions-databricks.md
+  - linkListType: reference
+    links:
+    - text: Заметки о выпуске
+      url: https://docs.azuredatabricks.net/release-notes/index.html
+  - linkListType: learn
+    links:
+    - text: Знакомство с Azure Databricks
+      url: https://docs.microsoft.com/learn/modules/intro-to-azure-databricks
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание рабочей области Databricks с помощью портала Azure
+      url: quickstart-create-databricks-workspace-portal.md
+    - text: Выполнение задания Apache Spark в Databricks с помощью шаблона Azure Resource Manager
+      url: quickstart-create-databricks-workspace-resource-manager-template.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание кластера Apache Spark
+      url: https://docs.azuredatabricks.net/user-guide/clusters/index.html
+    - text: Подключение к источникам данных
+      url: databricks-connect-to-data-sources.md
+    - text: Использование интерфейса командной строки Databricks через Azure Cloud Shell
+      url: databricks-cli-from-azure-cloud-shell.md
+  - linkListType: reference
+    links:
+    - text: Шаблон Azure Resource Manager
+      url: /azure/templates/microsoft.databricks/workspaces
+- title: Разработка архитектуры решений Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Запуск записной книжки в Фабрике данных Azure
+      url: ../data-factory/transform-data-using-databricks-notebook.md
+    - text: Анализ тональности с помощью Cognitive Services
+      url: databricks-sentiment-analysis-cognitive-services.md
+    - text: Использование конечной точки службы Cosmos DB
+      url: service-endpoint-cosmosdb.md
+    - text: Получение доступа к хранилищу с помощью Azure Key Vault
+      url: store-secrets-azure-key-vault.md
+    - text: Выполнение операций ETL с помощью Azure Data Lake Storage 2-го поколения и Хранилища данных SQL
+      url: databricks-extract-load-sql-data-warehouse.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение к Excel, R и Python
+      url: connect-databricks-excel-python-r.md
+- title: Использование виртуальной сети
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание рабочей области Databricks в виртуальной сети
+      url: quickstart-create-databricks-workspace-vnet-injection.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание Azure Databricks в виртуальной сети
+      url: vnet-injection.md
+  - linkListType: tutorial
+    links:
+    - text: Обращение к контейнеру Docker Linux для SQL Server в виртуальной сети из записной книжки Azure Databricks
+      url: vnet-injection-sql-server.md
+- title: Потоковая передача данных
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Работа с данными потоковой передачи в Azure Databricks
+      url: https://docs.microsoft.com/learn/modules/streaming-in-azure-databricks/
+  - linkListType: tutorial
+    links:
+    - text: Потоковая передача данных с помощью Центров событий
+      url: databricks-stream-from-eventhubs.md
+    - text: Потоковая передача данных из HDInsight Kafka
+      url: https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html
+- title: Руководства для разработчиков
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Глубокое обучение с использованием Azure Databricks
+      url: https://docs.microsoft.com/learn/modules/deep-learning-in-azure-databricks
+    - text: Анализ текста
+      url: https://docs.microsoft.com/learn/modules/perform-text-analytics-with-azure-databricks
+  - linkListType: reference
+    links:
+    - text: REST API Databricks
+      url: /rest/api/databricks
+    - text: Руководство для разработчиков R
+      url: ../machine-learning/r-developers-guide.md

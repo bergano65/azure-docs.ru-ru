@@ -37,10 +37,12 @@
       href: concepts-limits-quotas.md
 - name: Руководства
   items:
-    - name: Использование IoT Device Workbench
-      href: howto-use-iot-device-workbench.md
+    - name: Разработка с использованием Visual Studio и Visual Studio Code
+      href: howto-develop-with-vs-vscode.md
     - name: Установка обозревателя IoT
       href: howto-install-iot-explorer.md
+    - name: "Установка расширения Azure\_CLI"
+      href: howto-install-pnp-cli.md
     - name: Подключение к порталу IoT
       href: howto-onboard-portal.md
     - name: Модели (управление)

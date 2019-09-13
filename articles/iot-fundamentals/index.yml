@@ -1,0 +1,173 @@
+### YamlMime:Hub
+title: Документация по Центру Интернета вещей Azure
+summary: Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.
+brand: azure
+metadata:
+  title: Документация по Центру Интернета вещей Azure
+  description: Azure IoT — это коллекция управляемых корпорацией Майкрософт облачных служб, которые позволяют подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими.
+  ms.service: iot-fundamentals
+  ms.topic: hub-page
+  author: philmea
+  ms.author: philmea
+  ms.date: 09/04/2019
+  ms.openlocfilehash: e74fbe6e358c3a230fe466f3e73850022574a868
+  ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/11/2019
+  ms.locfileid: "70919046"
+highlightedContent:
+  items:
+  - title: Что такое Azure IoT?
+    itemType: overview
+    url: ../iot-fundamentals/iot-introduction.md
+  - title: Установка средств VS Code для Интернета вещей Azure
+    itemType: download
+    url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+  - title: Обзор примеров кода для Интернета вещей Azure
+    itemType: overview
+    url: https://docs.microsoft.com/en-us/samples/browse/?term=iot
+  - title: Защита развертывания Интернета вещей Azure
+    itemType: concept
+    url: ../iot-fundamentals/security-recommendations.md
+  - title: Эталонная архитектура Интернета вещей Azure
+    itemType: architecture
+    url: https://docs.microsoft.com/azure/architecture/reference-architectures/iot/
+  - title: Интернет вещей Azure в Microsoft Learn
+    itemType: learn
+    url: https://docs.microsoft.com/en-us/learn/browse/?products=azure&term=iot
+conceptualContent:
+  title: Начало разработки решения для Интернета вещей
+  summary: Интернет вещей Azure предоставляет облачные и пограничные платформы Интернета вещей, а также полностью управляемые решения Интернета вещей
+  items:
+  - title: Создание собственного решения Интернета вещей с помощью Центра Интернета вещей
+    links:
+    - url: ../iot-hub/about-iot-hub.md
+      itemType: overview
+      text: Что такое Центр Интернета вещей в Azure?
+    - url: ../iot-hub/quickstart-send-telemetry-c.md
+      itemType: quickstart
+      text: Отправка данных телеметрии с устройства
+    - url: ../iot-hub/quickstart-control-device-node.md
+      itemType: quickstart
+      text: Управление устройством из облака
+    footerLink:
+      url: ../iot-hub/index.yml
+      text: Дополнительные сведения
+  - title: Развертывание полностью управляемого решения Интернета вещей с помощью IoT Central
+    links:
+    - url: ../iot-central/overview-iot-central.md
+      itemType: overview
+      text: Сведения об Azure IoT Central
+    - url: ../iot-central/quick-deploy-iot-central.md
+      itemType: quickstart
+      text: Создание приложения IoT Central
+    - url: ../iot-central/tutorial-define-device-type.md
+      itemType: tutorial
+      text: Определение типа устройства
+    footerLink:
+      url: ../iot-central/index.yml
+      text: Дополнительные сведения
+  - title: Настройка готового решения для Интернета вещей с помощью акселераторов решений Azure IoT
+    links:
+    - url: ../iot-accelerators/about-iot-accelerators.md
+      itemType: overview
+      text: Что такое акселераторы решений Интернета вещей Azure?
+    - url: ../iot-accelerators/quickstart-remote-monitoring-deploy.md
+      itemType: quickstart
+      text: Пробное использование решения для удаленного мониторинга
+    - url: ../iot-accelerators/quickstart-connected-factory-deploy.md
+      itemType: quickstart
+      text: Пробное использование решения подключенной фабрики
+    footerLink:
+      url: ../iot-accelerators/index.md
+      text: Дополнительные сведения
+  - title: Выполнение облачной аналитики на устройствах с помощью Azure IoT Edge
+    links:
+    - url: ../iot-edge/about-iot-edge.md
+      itemType: overview
+      text: Что такое Azure IoT Edge?
+    - url: ../iot-edge/quickstart-linux.md
+      itemType: quickstart
+      text: Развертывание модуля IoT Edge на устройстве с Linux
+    - url: ../iot-edge/quickstart.md
+      itemType: quickstart
+      text: Развертывание модуля IoT Edge на устройстве с Windows
+    footerLink:
+      url: ../iot-edge/index.yml
+      text: Дополнительные сведения
+  - title: Создание интеллектуальных инфраструктур с возможностью подключения с помощью Azure Digital Twins
+    links:
+    - url: ../digital-twins/about-digital-twins.md
+      itemType: overview
+      text: Что такое Azure Digital Twins?
+    - url: ../digital-twins/quickstart-view-occupancy-dotnet.md
+      itemType: quickstart
+      text: Поиск пустых помещений в здании
+    - url: ../digital-twins/tutorial-facilities-setup.md
+      itemType: tutorial
+      text: Мониторинг офисного здания
+    footerLink:
+      url: ../digital-twins/index.yml
+      text: Дополнительные сведения
+  - title: Безопасная подготовка устройств в нужном масштабе с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
+    links:
+    - url: ../iot-dps/about-iot-dps.md
+      itemType: overview
+      text: Что собой представляет Служба подготовки устройств к добавлению в Центр Интернета вещей?
+    - url: ../iot-dps/quick-setup-auto-provision-cli.md
+      itemType: quickstart
+      text: Настройка службы
+    - url: ../iot-dps/quick-create-simulated-device.md
+      itemType: quickstart
+      text: Подготовка устройства TPM
+    footerLink:
+      url: ../iot-dps/index.yml
+      text: Дополнительные сведения
+  - title: Изучение и анализ данных устройства с помощью службы "Аналитика временных рядов Azure"
+    links:
+    - url: ../time-series-insights/time-series-insights-update-overview.md
+      itemType: overview
+      text: Что собой представляет служба "Аналитика временных рядов Azure"
+    - url: ../time-series-insights/time-series-quickstart.md
+      itemType: quickstart
+      text: Знакомство со службой "Аналитика временных рядов"
+    - url: ../time-series-insights/tutorial-create-tsi-sample-spa.md
+      itemType: tutorial
+      text: Создание веб-приложения службы "Аналитика временных рядов"
+    footerLink:
+      url: ../time-series-insights/index.yml
+      text: Дополнительные сведения
+  - title: Обеспечение мобильности на предприятии с помощью Azure Maps
+    links:
+    - url: ../azure-maps/about-azure-maps.md
+      itemType: overview
+      text: Что такое Azure Maps?
+    - url: ../azure-maps/quick-demo-map-app.md
+      itemType: quickstart
+      text: Создание карты с интерактивным поиском
+    - url: ../azure-maps/tutorial-route-location.md
+      itemType: tutorial
+      text: Создание маршрута к точке интереса
+    footerLink:
+      url: ../azure-maps/index.yml
+      text: Дополнительные сведения
+tools:
+  title: Пакеты SDK для Центра Интернета вещей Azure
+  summary: Справочная документация по пакетам SDK для Интернета вещей Azure
+  items:
+  - title: Справочник по пакету SDK Интернета вещей Azure для C
+    imageSrc: https://docs.microsoft.com/media/logos/logo_c.svg
+    url: https://docs.microsoft.com/en-us/azure/iot-hub/iot-c-sdk-ref/
+  - title: Пакет SDK Интернета вещей Azure для Python (предварительная версия)
+    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
+    url: https://github.com/Azure/azure-iot-sdk-python
+  - title: Справочник по пакету SDK Интернета вещей Azure для Node.js
+    imageSrc: https://docs.microsoft.com/media/logos/logo_nodejs.svg
+    url: https://docs.microsoft.com/en-us/javascript/api/overview/azure/iot-hub?view=azure-node-latest
+  - title: Справочник по пакету SDK Интернета вещей Azure для Java
+    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
+    url: https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.sdk.iot.service?view=azure-java-stable
+  - title: Справочник по пакету SDK Интернета вещей Azure для .NET
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/en-us/dotnet/api/overview/azure/iot?view=azure-dotnet

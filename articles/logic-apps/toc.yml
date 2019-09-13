@@ -15,7 +15,7 @@
       href: quickstart-create-logic-apps-visual-studio-code.md
 - name: Учебники
   items:
-    - name: Регулярная проверка трафика
+    - name: Создание рабочих процессов на основе расписания
       href: tutorial-build-schedule-recurring-logic-app-workflow.md
     - name: Управление запросами для списка рассылки
       href: tutorial-process-mailing-list-subscriptions-workflow.md

@@ -19,7 +19,7 @@
           href: tutorial-facilities-udf.md
         - name: Получение уведомления с помощью Logic Apps
           href: tutorial-facilities-events.md
-        - name: Визуализация событий с помощью TSI
+        - name: Визуализация событий с помощью службы "Аналитика временных рядов"
           href: tutorial-facilities-analyze.md
 - name: Основные понятия
   items:
