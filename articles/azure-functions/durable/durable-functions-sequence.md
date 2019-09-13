@@ -9,16 +9,16 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 1168963c0698c6bdafe20babe2e5143585bf90a8
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ee5b18ddc734335ddac2a7d3352de0e4388f445d
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087109"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933256"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
-Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье описываются цепочки последовательности, создаваемой по завершении "Краткого руководства по Устойчивым функциям" (для [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md)). Дополнительные сведения об Устойчивых функциях см. в разделе [Durable Functions patterns and technical concepts](durable-functions-concepts.md) (Шаблоны устойчивых функций и технические концепции).
+Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье описываются цепочки последовательности, создаваемой по завершении "Краткого руководства по Устойчивым функциям" (для [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md)). Дополнительные сведения об Устойчивых функций см. в статье, посвященной [обзору Устойчивых функций](durable-functions-overview.md).
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -141,7 +141,7 @@ Content-Type: application/json; charset=utf-8
 > [!NOTE]
 > Конечная точка HTTP POST, которая запустила функцию оркестратора, реализована в этом примере как функция с именем HttpStart и активацией по HTTP-запросу. Вы можете использовать аналогичную логику запуска и для других типов триггеров, например `queueTrigger`, `eventHubTrigger` или `timerTrigger`.
 
-Просмотрите журналы выполнения функции. Функция `E1_HelloSequence` была запущена и завершена несколько раз в соответствии с логикой повторов, описанной в [этом обзоре](durable-functions-concepts.md). С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
+Просмотрите журналы выполнения функции. Функция была запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации.](durable-functions-orchestrations.md#reliability) `E1_HelloSequence` С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
 
 ## <a name="visual-studio-sample-code"></a>Пример кода для Visual Studio
 

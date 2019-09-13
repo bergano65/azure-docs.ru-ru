@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/08/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: 5828d4f453afeccfaac206195f064e43a20d1ba0
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 8e732496c4523646f02ef461b7d3c52314c28dae
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844768"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932834"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
@@ -35,7 +35,8 @@ Language Understanding (LUIS) создание аутентификации из
 
 Миграция включает в себя:
 
-* **Все** приложения владельца.
+* Все пользователи LUIS, владельцы и участники.
+* **Все** приложения.
 * **Односторонняя** миграция.
 
 Владелец не может выбрать подмножество приложений для миграции, и процесс будет необратимым. 
@@ -87,13 +88,17 @@ Language Understanding (LUIS) создание аутентификации из
 
 ## <a name="migration-for-the-app-contributor"></a>Миграция для участника приложения
 
+Каждый пользователь LUIS должен выполнить миграцию, включая участников совместной работы или участников. 
+
 ### <a name="before-the-app-is-migrated"></a>Перед миграцией приложения
 
 Вы можете экспортировать приложение, на котором вы являетесь членом совместной работы, а затем импортировать его обратно в LUIS. В процессе импорта создается новое приложение с новым ИДЕНТИФИКАТОРом приложения, владельцем которого вы являетесь.
 
 ### <a name="after-the-app-is-migrated"></a>После переноса приложения
 
-Если после миграции требуется доступ к исходному приложению, необходимо добавить его в ресурс разработчика Azure в качестве участника совместной работы с владельцем приложения.  
+Владельцу приложения необходимо [Добавить ваш адрес электронной почты в ресурс разработки Azure в качестве участника совместной работы](luis-how-to-collaborate.md#add-contributor-to-azure-authoring-resource). 
+
+После завершения процесса миграции все приложения, которыми вы владеете, будут доступны на странице **Мои приложения** на портале Luis.  
 
 ## <a name="next-steps"></a>Следующие шаги
 

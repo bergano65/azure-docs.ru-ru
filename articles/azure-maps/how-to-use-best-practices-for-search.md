@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 996a084fd653b2100d94313e8801d915b4bf2cf3
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 25615ae8bc9bc8cadbe973f3a1859c2d43b067a9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348177"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915577"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Рекомендации по использованию Azure Maps Служба поиска
 
@@ -25,9 +25,9 @@ Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/
 * Чтение структуры ответа на поиск адреса
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнять вызовы к API службы "Карты", вам потребуется учетная запись и ключ службы "Карты". Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
+Чтобы выполнять вызовы к API службы "Карты", вам потребуется учетная запись и ключ службы "Карты". Чтобы получить сведения о создании учетной записи, следуйте инструкциям в статье [Управление учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) и выполните действия, описанные в статье [Получение первичного ключа](./tutorial-search-location.md#getkey) для получения первичного ключа подписки для вашей учетной записи.
 
 > [!Tip]
 > Чтобы выполнить запрос к службе поиска, можно использовать [приложение posts](https://www.getpostman.com/apps) для создания вызовов RESTful или использовать любую предпочтительную среду разработки API.
@@ -689,7 +689,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 Если тип отклика — **Geometry**, он может содержать идентификатор геометрии, возвращаемый в объекте **DataSources** в области "Geometry" и "ID". Например, [Служба получения многоугольников](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon) позволяет запрашивать геометрические данные в формате геоjson, например в городе или в аэропорту для набора сущностей. Эти граничные данные можно использовать для [геозоны](https://docs.microsoft.com/azure/azure-maps/tutorial-geofence) или [поиска интереса внутри геометрии](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry).
 
 
-[Адрес поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) или ответы API нечеткого [поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) могут содержать **идентификатор геометрии** , возвращаемый в объекте DataSources в области "Geometry" и "ID".
+[Адрес поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchaddress) или ответы API [нечеткого поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) могут содержать **идентификатор геометрии** , возвращаемый в объекте DataSources в области "Geometry" и "ID".
 
 
 ```JSON 

@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 08/27/2019
-ms.openlocfilehash: 33e21b54927280e2692a58c311e2de23e257f923
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 0dea447ed44a61b20faf9a0a1690b2bbdd674b30
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845386"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930621"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Общие сведения об ограничениях ресурсов управляемого экземпляра базы данных SQL Azure
 
@@ -58,6 +58,7 @@ ms.locfileid: "70845386"
 | Максимальное количество баз данных на экземпляр | 100 | 100 |
 | Максимальное число файлов базы данных на экземпляр | До 280 | 32 767 файлов для одной базы данных |
 | Максимальный размер файла | 8 ТБ | 4 TБ |
+| Максимальный размер файла журнала | 2 ТБ | 2 ТБ |
 | Операции ввода-вывода в секунду для данных или журнала (приблизительно) | 500–7,500 МБ/с на каждый файл<br/>\*[Увеличение размера файла для получения дополнительных операций ввода-вывода](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 5,5 k-110 K (1375/Виртуальное ядро)<br/>Добавьте дополнительные виртуальных ядер, чтобы получить лучшую производительность ввода-вывода. |
 | Ограничение пропускной способности записи в журнал | 3 МБ/с на виртуальное ядро<br/>Максимум 22 Мб/с на экземпляр | 4 МБ/с на виртуальное ядро<br/>Максимум 48 МБ/с на экземпляр|
 | Пропускная способность данных (приблизительно) | 100–250 МБ/с на каждый файл<br/>\*[Увеличьте размер файла, чтобы получить лучшую производительность ввода-вывода](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | Н/Д |
@@ -66,8 +67,6 @@ ms.locfileid: "70845386"
 | Выполняющаяся в памяти OLTP | Не поддерживается | Доступно |
 | Максимальное число сеансов | 30 000 | 30 000 |
 | [Реплики только для чтения](sql-database-read-scale-out.md) | 0 | 1 (входит в цену) |
-| Цены и выставление счетов | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | 
-| Модели скидок | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования|
 
 > [!NOTE]
 > - Размеры данных и файла журнала в системных базах данных и базах данных пользователей включаются в размер хранилища экземпляра, который сравнивается с пределом максимального размера хранилища. Используйте системное представление <a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql">sys.master_files</a>, чтобы определить общий объем, используемый базами данных. Журналы ошибок не сохраняются и не включаются в размер. Резервные копии не включаются в размер хранилища.

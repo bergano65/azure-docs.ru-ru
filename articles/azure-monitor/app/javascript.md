@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 08/15/2019
+ms.date: 09/12/2019
 ms.author: mbullwin
-ms.openlocfilehash: f72feeefeb896c9006f767f8724d9ca3b3640c1e
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: f3b093b8d5f772bad759d3384405f4ca9f0cee15
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035228"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933758"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -103,7 +103,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 | Название | Значение по умолчанию | Описание |
 |------|---------|-------------|
-| instrumentationKey | null | **Обязательный**<br>Ключ инструментирования, полученный из портал Azure. |
+| InstrumentationKey | null | **Обязательный**<br>Ключ инструментирования, полученный из портал Azure. |
 | accountId | null | Необязательный идентификатор учетной записи, если приложение группирует пользователей в учетные записи. Без пробелов, запятых, точек с запятой, знаков равенства или вертикальных линий |
 | сессионреневалмс | 1800000 | Сеанс регистрируется, если пользователь неактивен в течение этого периода времени в миллисекундах. Значение по умолчанию — 30 минут. |
 | сессионекспиратионмс | 86400000 | Сеанс заносится в журнал, если он продолжался в течение этого времени (в миллисекундах). По умолчанию — 24 часа |
@@ -143,14 +143,14 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 По умолчанию этот пакет SDK **не** будет управлять изменением маршрута на основе состояния, которое происходит в одностраничных приложениях. Чтобы включить автоматическое отслеживание изменений маршрута для одностраничного приложения, можно добавить `enableAutoRouteTracking: true` в конфигурацию установки.
 
-В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions) , который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные](https://github.com/microsoft/ApplicationInsights-JS/tree/master/vNext/extensions/applicationinsights-react-js)с реагированием.
+В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions) , который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
 
 ## <a name="react-extensions"></a>Модули реагирования
 
 | Расширения |
 |---------------|
-| [Них](https://github.com/microsoft/ApplicationInsights-JS/tree/master/vNext/extensions/applicationinsights-react-js)|
-| [React Native](https://github.com/microsoft/ApplicationInsights-JS/tree/master/vNext/extensions/applicationinsights-react-native)|
+| [Них](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md)|
+| [React Native](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-native/README.md)|
 
 ## <a name="explore-browserclient-side-data"></a>Изучение данных в браузере и на стороне клиента
 

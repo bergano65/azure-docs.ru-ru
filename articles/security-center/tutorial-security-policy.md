@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/18/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 4550532d36753d9b8ed472193bc833855ddd34c9
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: 1820c31053c13a0f3039812b31df415bc9fa4fdc
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314919"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910378"
 ---
 # <a name="working-with-security-policies"></a>Использование политик безопасности
 
@@ -131,7 +131,7 @@ ms.locfileid: "68314919"
 
 - **Назначение** — это приложение инициативы или политика для определенной области (Группа управления, подписка и т. д.). 
 
-В Центре безопасности Azure есть встроенная инициатива, которая содержит все его политики безопасности. Чтобы оценить политики Центра безопасности для ресурсов Azure, следует создать назначение в группе управления или подписке, которую вы хотите оценить.  
+В Центре безопасности Azure есть встроенная инициатива, которая содержит все его политики безопасности. Чтобы оценить политики Центра безопасности для ресурсов Azure, следует создать назначение в группе управления или подписке, которую вы хотите оценить.
 
 Встроенные инициативы имеют все политики Центра безопасности Azure, которые включены по умолчанию. Вы можете исключить определенные политики из встроенной инициативы, например можно применить все политики Центра безопасности Azure, кроме **брандмауэра веб-приложения**, изменив значение параметра действия политики на **Отключено**. 
 
@@ -225,13 +225,13 @@ ms.locfileid: "68314919"
 |----|----|----|
 |Шифрование SQL |Мониторинг баз данных SQL без шифрования в Центре безопасности Azure |sqlEncryptionMonitoringEffect| 
 |Аудит SQL |Мониторинг баз данных SQL без аудита в Центре безопасности Azure |sqlAuditingMonitoringEffect|
-|Обновление системы |Мониторинг отсутствия обновлений системы в Центре безопасности Azure |systemUpdatesMonitoringEffect|
+|Обновления системы |Мониторинг отсутствия обновлений системы в Центре безопасности Azure |systemUpdatesMonitoringEffect|
 |Шифрование хранилища |Аудит отсутствия шифрования больших двоичных объектов для учетных записей хранения |storageEncryptionMonitoringEffect|
 |JIT-доступ к сети |Мониторинг возможного JIT-доступа к сети в Центре безопасности Azure |jitNetworkAccessMonitoringEffect |
-|Адаптивные элементы управления приложениями |Мониторинг возможных списков разрешенных приложений в Центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
+|Адаптивное управление приложениями |Мониторинг возможных списков разрешенных приложений в Центре безопасности Azure |adaptiveApplicationControlsMonitoringEffect|
 |Группы безопасности сети |Мониторинг нестрогого доступа к сети в Центре безопасности Azure |networkSecurityGroupsMonitoringEffect| 
-|Конфигурации системы безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 
-|Защита конечных точек |Мониторинг отсутствия Endpoint Protection в Центре безопасности Azure |endpointProtectionMonitoringEffect |
+|Конфигурации безопасности |Мониторинг уязвимостей ОС в Центре безопасности Azure |systemConfigurationsMonitoringEffect| 
+|Endpoint Protection |Мониторинг отсутствия Endpoint Protection в Центре безопасности Azure |endpointProtectionMonitoringEffect |
 |Шифрование дисков |Мониторинг незашифрованных дисков виртуальных машин в Центре безопасности Azure |diskEncryptionMonitoringEffect|
 |Оценка уязвимостей |Мониторинг уязвимостей виртуальных машин в Центре безопасности Azure |vulnerabilityAssessmentMonitoringEffect|
 |Брандмауэр веб-приложения |Мониторинг незащищенных веб-приложений в Центре безопасности Azure |webApplicationFirewallMonitoringEffect |

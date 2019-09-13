@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5c533c3b0005528eae646744e8e720e2c54436e1
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: HT
+ms.openlocfilehash: d34cb7b8bfae14c25950cc4d77c6625c675e813b
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70880264"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934616"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Использование Apache Ambari для оптимизации конфигураций кластеров HDInsight
 
@@ -23,7 +23,7 @@ HDInsight предоставляет кластеры [Apache Hadoop](https://ha
 
 Войдите в Ambari по адресу `https://CLUSTERNAME.azurehdidnsight.net` с помощью учетных данных кластера. Начальный экран отображает панель мониторинга с общими сведениями.
 
-![Панель мониторинга Ambari](./media/hdinsight-changing-configs-via-ambari/ambari-dashboard.png)
+![Панель мониторинга Ambari](./media/hdinsight-changing-configs-via-ambari/apache-ambari-dashboard.png)
 
 С помощью пользовательского веб-интерфейса Ambari можно управлять узлами, службами, оповещениями, конфигурациями и представлениями. Ambari невозможно использовать для создания кластера HDInsight, обновления служб, управления стеками и версиями, прекращения или возобновления использования узлов, а также для добавления служб в кластер.
 
@@ -31,7 +31,7 @@ HDInsight предоставляет кластеры [Apache Hadoop](https://ha
 
 Параметры конфигурации помогают настроить определенную службу. Чтобы изменить параметры конфигурации службы, выберите службу на боковой панели **Services** (Службы) (слева) и перейдите на вкладку **Configs** (Конфигурации) на странице сведений о службе.
 
-![Боковая панель "Services" (Службы)](./media/hdinsight-changing-configs-via-ambari/services-sidebar.png)
+![Боковая панель "Services" (Службы)](./media/hdinsight-changing-configs-via-ambari/ambari-services-sidebar.png)
 
 ### <a name="modify-namenode-java-heap-size"></a>Изменение размера кучи NameNode Java
 
@@ -41,15 +41,15 @@ HDInsight предоставляет кластеры [Apache Hadoop](https://ha
 
 1. Выберите **HDFS** на боковой панели "Services" (Службы) и перейдите на вкладку **Configs** (Конфигурации).
 
-    ![Конфигурация HDFS](./media/hdinsight-changing-configs-via-ambari/hdfs-config.png)
+    ![Конфигурация HDFS](./media/hdinsight-changing-configs-via-ambari/ambari-apache-hdfs-config.png)
 
 1. Найдите параметр **NameNode Java heap size** (Размер кучи NameNode Java). Можно также использовать текстовое поле **фильтра**, чтобы ввести и найти конкретное значение. Щелкните значок **пера** рядом с именем параметра.
 
-    ![Размер кучи NameNode Java](./media/hdinsight-changing-configs-via-ambari/java-heap-size.png)
+    ![Размер кучи NameNode Java](./media/hdinsight-changing-configs-via-ambari/ambari-java-heap-size.png)
 
 1. Введите новое значение в текстовом поле и нажмите клавишу **ВВОД**, чтобы сохранить изменения.
 
-    ![Изменить NameNode кучу Java Size1](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit.png)
+    ![Изменить NameNode кучу Java Size1](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit1.png)
 
 1. Размер кучи Java NameNode изменяется на 1 ГБ с 2 ГБ.
 
@@ -57,7 +57,7 @@ HDInsight предоставляет кластеры [Apache Hadoop](https://ha
 
 1. Сохраните изменения, нажав зеленую кнопку **Save** (Сохранить) в верхней части экрана конфигурации.
 
-    ![Сохранить изменения](./media/hdinsight-changing-configs-via-ambari/save-changes.png)
+    ![Сохранить изменения](./media/hdinsight-changing-configs-via-ambari/ambari-save-changes1.png)
 
 ## <a name="apache-hive-optimization"></a>Оптимизация Apache Hive
 
@@ -72,11 +72,11 @@ Hive предоставляет две подсистемы выполнения
 
 1. На вкладке **Configs** (Конфигурации) Hive в поле фильтра введите **execution engine**.
 
-    ![Поиск подсистемы выполнения](./media/hdinsight-changing-configs-via-ambari/search-execution.png)
+    ![Поиск подсистемы выполнения](./media/hdinsight-changing-configs-via-ambari/ambari-search-execution.png)
 
 1. Свойство **Optimization** (Оптимизация) по умолчанию имеет значение **Tez**.
 
-    ![Оптимизация Tez](./media/hdinsight-changing-configs-via-ambari/optimization-tez.png)
+    ![Оптимизация Tez](./media/hdinsight-changing-configs-via-ambari/optimization-apache-tez.png)
 
 ### <a name="tune-mappers"></a>Настройка модулей сопоставления
 
@@ -93,7 +93,7 @@ Hadoop пытается разделить (*сопоставить*) отдел
 
 1. Задайте для обоих параметров значение **33 554 432** байтов (32 МБ).
 
-    ![Размеры группирования Tez](./media/hdinsight-changing-configs-via-ambari/tez-grouping-size.png)
+    ![Размеры группирования Tez](./media/hdinsight-changing-configs-via-ambari/apache-tez-grouping-size.png)
  
 Эти изменения влияют на все задания Tez на сервере. Чтобы получить оптимальные результаты, выберите соответствующие значения параметров.
 
@@ -109,7 +109,7 @@ Hadoop пытается разделить (*сопоставить*) отдел
 
 1. Чтобы изменить этот параметр, перейдите на вкладку **Configs** (Конфигурации) Hive и найдите параметр **Data per Reducer** (Данные на модуль сжатия) на странице "Settings" (Параметры).
 
-    ![Параметр "Data per Reducer" (Данные на модуль сжатия)](./media/hdinsight-changing-configs-via-ambari/data-per-reducer.png)
+    ![Параметр "Data per Reducer" (Данные на модуль сжатия)](./media/hdinsight-changing-configs-via-ambari/ambari-data-per-reducer.png)
  
 1. Выберите **Edit** (Изменить), чтобы изменить значение параметра на 128 МБ (134 217 728 байтов), и нажмите клавишу **ВВОД**, чтобы сохранить изменение.
 
@@ -127,7 +127,7 @@ Hadoop пытается разделить (*сопоставить*) отдел
  
 1.  Чтобы ограничить число заданий, выполняемых параллельно, измените `hive.exec.parallel.thread.number` свойство. Значение по умолчанию — 8.
 
-    ![Параллельное выполнение в Hive](./media/hdinsight-changing-configs-via-ambari/hive-exec-parallel.png)
+    ![Параллельное выполнение в Hive](./media/hdinsight-changing-configs-via-ambari/apache-hive-exec-parallel.png)
 
 
 ### <a name="enable-vectorization"></a>Включение векторизации
@@ -373,7 +373,7 @@ Pig создает временные файлы во время выполне�
 
 1. Измените значение по умолчанию на 5000 МБ.
 
-    ![HBASE_HEAPSIZE](./media/hdinsight-changing-configs-via-ambari/hbase-heapsize.png)
+    ![HBASE_HEAPSIZE](./media/hdinsight-changing-configs-via-ambari/ambari-hbase-heapsize.png)
 
 
 ### <a name="optimize-read-heavy-workloads"></a>Оптимизация рабочих нагрузок с интенсивными операциями чтения

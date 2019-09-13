@@ -7,27 +7,16 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: helohr
-ms.openlocfilehash: bd5ec1e75fa1669b0ca33e4cb4629793b09a9bad
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: ddfe5c855b6cd0171494f1af20dc5eb4ae571a6e
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036127"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918998"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
 В этой статье указаны партнеры виртуальных рабочих столов Windows в алфавитном порядке.
-
-## <a name="active-cypher"></a>Активные шифр
-
-![Логотип Active шифр](./media/partners/active-cypher.png)
-
-Active шифр — это поставщик услуг, добавленный в виртуальные рабочие столы Windows, который обеспечивает технологию шифрования для защиты предприятия от нарушений и потери данных. Благодаря Active шифр технология инновационного шифрования поддерживает общую стратегию защиты файлов для запуска виртуальных рабочих столов Windows в Azure.
-
-При использовании с виртуальным рабочим столом Windows Active шифр предоставляет дополнительные возможности для включения специальных возможностей и мобильности данных пользователя, предотвращая непреднамеренное снижение потери данных. С помощью Active шифр существующие политики безопасности групп и разрешения в Azure Information Protection можно использовать для шифрования файлов пользователей при использовании виртуального рабочего стола Windows.
-
-- [Ознакомьтесь с кратким обзорным решением.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oNLu)
-- [Перейдите на веб-сайт партнера.](https://activecypher.com/)
 
 ## <a name="cloudjumper"></a>клауджумпер
 

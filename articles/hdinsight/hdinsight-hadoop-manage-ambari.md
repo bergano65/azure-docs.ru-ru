@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: hrasheed
-ms.openlocfilehash: d0641a1c058db59acd5e9a64b10bb57b334f82bd
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 3ca9c12caa7fa9b54cd63c2655166d95477dffa2
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442053"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885270"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari
 
@@ -76,7 +76,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 Оповещения разбиты на несколько групп по умолчанию, которые можно просмотреть на странице **Оповещения** .
 
-![страница «Оповещения»](./media/hdinsight-hadoop-manage-ambari/alerts.png)
+![страница «Оповещения»](./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png)
 
 Группами можно управлять с помощью меню **Действия**, а также выбрав **Manage Alert Groups** (Управление группами оповещений).
 
@@ -92,11 +92,11 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 На вкладке **Метрики** панели мониторинга содержится ряд мини-приложений, которые позволяют легко определить состояние кластера с первого взгляда. Если щелкнуть некоторые мини-приложения, например **Загрузка ЦП**, отобразится дополнительная информация.
 
-![панель мониторинга с метриками](./media/hdinsight-hadoop-manage-ambari/metrics.png)
+![панель мониторинга с метриками](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
 
 На вкладке **Тепловые карты** метрики отображаются в виде цветных тепловых карт с переходом от зеленого к красному.
 
-![панель мониторинга с тепловыми картами](./media/hdinsight-hadoop-manage-ambari/heatmap.png)
+![панель мониторинга с тепловыми картами](./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png)
 
 Для получения дополнительных сведений об узлах кластера выберите **Узлы**. Затем выберите конкретный узел, который вас интересует.
 
@@ -142,7 +142,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 На странице **Узлы** перечислены все узлы в кластере. Для управления узлами, сделайте следующее.
 
-![страница «Узлы»](./media/hdinsight-hadoop-manage-ambari/hosts.png)
+![страница «Узлы»](./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png)
 
 > [!NOTE]  
 > В кластерах HDInsight не следует использовать добавление, списание и восстановление списанного узла.

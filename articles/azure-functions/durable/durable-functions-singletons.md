@@ -7,14 +7,14 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: d9bf9687f60e649fee98869ef263117177ad5efd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ba35999d5a7193ba691b14005dc8271120ac2be7
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097926"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933227"
 ---
 # <a name="singleton-orchestrators-in-durable-functions-azure-functions"></a>Одноэлементные экземпляры в устойчивых функциях (Функции Azure)
 
@@ -113,9 +113,6 @@ module.exports = async function(context, req) {
 
 По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. Но в этом случае идентификатор экземпляра передается в данных маршрута с URL-адреса. Этот код вызывает [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetStatusAsync_) (C#) или `getStatus` (JavaScript), чтобы проверить, запущен ли экземпляр с указанным идентификатором. Если нет, такой экземпляр создается.
 
-> [!WARNING]
-> При локальной разработке на языке JavaScript необходимо задать для переменной среды `WEBSITE_HOSTNAME` значение `localhost:<port>`, например `localhost:7071`, чтобы использовать методы для `DurableOrchestrationClient`. Дополнительные сведения об этом требовании см. в [описании проблемы на сайте GitHub](https://github.com/Azure/azure-functions-durable-js/issues/28).
-
 > [!NOTE]
 > В этом примере содержится потенциальное состояние гонки. Если два экземпляра **HttpStartSingle** выполняются параллельно, оба вызова функции сообщат об успешном выполнении, но фактически запустится только один экземпляр оркестрации. В зависимости от применяемых требований это может привести к нежелательным побочным эффектам. Поэтому важно, чтобы два запроса не выполняли одновременно эту функцию триггера.
 
@@ -124,4 +121,4 @@ module.exports = async function(context, req) {
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Сведения о вызове вложенных оркестраций](durable-functions-sub-orchestrations.md)
+> [Сведения о собственных функциях HTTP оркестрации](durable-functions-http-features.md)

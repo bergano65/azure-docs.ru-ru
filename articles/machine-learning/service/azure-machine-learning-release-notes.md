@@ -10,12 +10,12 @@ ms.author: jmartens
 author: j-martens
 ms.date: 08/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6aca340994f10bd546a25e577258d90d7b7b1368
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 2721e134e03d3d622e61085dc39a2914098ba570
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860946"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930735"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "70860946"
 
 ## <a name="2019-09-09"></a>2019-09-09
 
-### <a name="new-web-experience-for-azure-machine-learning-workspaces-preview"></a>Новый веб-интерфейс для Машинное обучение Azure рабочих областей (Предварительная версия)
+### <a name="new-web-experience-preview-for-azure-machine-learning-workspaces"></a>Новый интерфейс веб-интерфейса (Предварительная версия) для Машинное обучение Azure рабочих областей 
 Новый веб-интерфейс позволяет специалистам по обработке и анализу данных выполнять комплексный жизненный цикл машинного обучения от готовитесь и визуализировать данные для обучения и развертывания моделей в одном месте. 
 
 ![Пользовательский интерфейс рабочей области Машинное обучение Azure (Предварительная версия)](./media/azure-machine-learning-release-notes/new-ui-for-workspaces.jpg)
@@ -34,7 +34,7 @@ ms.locfileid: "70860946"
 
 С помощью нового интерфейса Машинное обучение Azure теперь можно:
 + Управляйте своими записными книжками или свяжите их с Jupyter
-+ Запуск автоматических экспериментов ML
++ [Запуск автоматических экспериментов ML](tutorial-first-experiment-automated-ml.md)
 + [Создание наборов данных из локальных файлов, хранилищ данных, & веб-файлов](how-to-create-register-datasets.md)
 + Изучение & подготовки наборов данных для создания модели
 + Отслеживание смещения данных для моделей 

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: azfuncdf
-ms.openlocfilehash: ed0fe22903412d4164fb3a85dbd9afafdc7023e6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 53f561283d4d07d58bd03b59a24a30d8010caaf0
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098004"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933289"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Производительность и масштабирование в устойчивых функциях (Функции Azure)
 
@@ -243,4 +243,4 @@ ms.locfileid: "70098004"
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Create your first durable function in C#](durable-functions-create-first-csharp.md) (Создание устойчивой функции: C#)
+> [Сведения об аварийном восстановлении и географическом распределении](durable-functions-disaster-recovery-geo-distribution.md)

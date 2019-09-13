@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 08/06/2019
+ms.date: 09/12/2019
 ms.author: raynew
-ms.openlocfilehash: dc98a0ab47e269aa99f21d3f10952cdabe2c897f
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 950ad6d5f55186b63f879bac3f0675c501b57276
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736044"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934436"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -72,6 +72,7 @@ Azure для государственных организаций    | US Gov (
 **Параметр** | **Поддержка** | **Сведения**
 --- | --- | ---
 Учетные записи хранения общего назначения версии 2 ("горячего" и "холодного" уровней доступа) | Поддерживается | Использование GPv2 не рекомендуется, так как затраты на транзакции для версии 2 значительно выше, чем у учетных записей хранения v1.
+Хранилище уровня "Премиум" | Не поддерживается | Учетные записи хранения уровня "Стандартный" используются для хранения кэша в целях оптимизации затрат.
 Брандмауэры службы хранилища Azure для виртуальных сетей  | Поддерживается | Если в целевой учетной записи хранения или в учетной записи хранения кэша включен брандмауэр, убедитесь, что задан параметр [Разрешить доверенным службам Майкрософт обходить этот брандмауэр](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 

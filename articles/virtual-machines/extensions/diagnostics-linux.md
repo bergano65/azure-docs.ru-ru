@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: gwallace
-ms.openlocfilehash: 19aa0877c7c37083a6206e094aced40542d0ef72
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c4028ff4fef5472ba2a964f70db6d4fe11eeaba6
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092684"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918796"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -59,10 +59,10 @@ ms.locfileid: "70092684"
 
 ### <a name="sample-installation"></a>Пример установки
 
-Укажите нужные параметры в первых трех строках, а затем выполните этот скрипт как привилегированный пользователь:
+Заполните правильные значения переменных в первом разделе перед выполнением:
 
 ```bash
-# Set your Azure VM diagnostic parameters correctly below
+# Set your Azure VM diagnostic variables correctly below
 my_resource_group=<your_azure_resource_group_name_containing_your_azure_linux_vm>
 my_linux_vm=<your_azure_linux_vm_name>
 my_diagnostic_storage_account=<your_azure_storage_account_for_storing_vm_diagnostic_data>

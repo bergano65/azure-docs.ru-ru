@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 91407fc76d0a7555a87a8a3dcd1b3ad04ee2af80
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: f9dbddcba1545e0a110faa9fbf8e3de9ff189525
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736219"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879493"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
@@ -50,31 +50,31 @@ ms.locfileid: "70736219"
 
 1. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана, чтобы **настроить ML Server для ввода в эксплуатацию**.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/admin-util-one-box-1.png)
+    ![одна рамка OP1](./media/r-server-operationalize/admin-util-one-box-1.png)
 
 1. Теперь вам предлагаются доступные методы для ввода в эксплуатацию ML Server. Выберите первый из представленных вариантов, введя символ **A**.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/admin-util-one-box-2.png)
+    ![одна рамка OP2](./media/r-server-operationalize/admin-util-one-box-2.png)
 
 1. В ответ на соответствующий запрос дважды введите пароль пользователя с правами локального администратора.
 
 1. Выходные данные сообщат, что операция выполнена успешно. Также вам будет предложено еще одно меню для выбора параметров. Выберите E, чтобы вернуться к главному меню.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/admin-util-one-box-3.png)
+    ![одна рамка OP3](./media/r-server-operationalize/admin-util-one-box-3.png)
 
 1. По желанию вы можете запустить диагностический тест, как показано ниже.
 
     1\. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-1.png)
+    ![diagnostic1](./media/r-server-operationalize/diagnostic-1.png)
 
     2\. В меню диагностических тестов выберите вариант **A**. Когда появится запрос, введите пароль пользователя с правами локального администратора.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-2.png)
+    ![diagnostic2](./media/r-server-operationalize/diagnostic-2.png)
 
     В. Убедитесь, что выходные данные подтверждают работоспособность системы.
 
-    ![Универсальная конфигурация](./media/r-server-operationalize/diagnostic-3.png)
+    ![diagnostic3](./media/r-server-operationalize/diagnostic-3.png)
 
     Г. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
 

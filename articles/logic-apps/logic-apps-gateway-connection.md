@@ -9,16 +9,16 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 07/01/2019
-ms.openlocfilehash: 65c1d427939dc39aebece24b923bc4ebfbf136bb
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: ed2ba70b803940700044e900a1b2bb6607c0f051
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861039"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934073"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
-Чтобы получить доступ к источникам данных из ваших логических приложений, создайте ресурс локального шлюза данных на портале Azure. Затем приложения логики могут использовать [локальные соединители](../logic-apps/logic-apps-gateway-install.md#supported-connections). В этой статье показано, как создать ресурс шлюза Azure *после* [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). Дополнительные сведения о работе шлюза см. в разделе [как работает шлюз](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service).
+Чтобы получить доступ к источникам данных из ваших логических приложений, создайте ресурс локального шлюза данных на портале Azure. Затем приложения логики могут использовать [локальные соединители](../connectors/apis-list.md#on-premises-connectors). В этой статье показано, как создать ресурс шлюза Azure после [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). Дополнительные сведения о шлюзе см. [в разделе Работа шлюза](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service).
 
 > [!TIP]
 > Чтобы подключиться к виртуальным сетям Azure, вместо этого рассмотрите возможность создания среды службы интеграции. Для этого см. статью [*Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)* ](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). 
@@ -29,6 +29,27 @@ ms.locfileid: "70861039"
 * [Управление локальным шлюзом данных в Microsoft Flow](https://flow.microsoft.com/documentation/gateway-manage/)
 * [Управление локальным шлюзом данных в PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
+
+<a name="supported-connections"></a>
+
+## <a name="supported-data-sources"></a>Поддерживаемые источники данных
+
+Для Azure Logic Apps локальный шлюз данных поддерживает [локальные соединители](../connectors/apis-list.md#on-premises-connectors) для этих источников данных:
+
+* BizTalk Server 2016
+* Файловая система
+* IBM DB2  
+* IBM Informix
+* IBM MQ
+* MySQL
+* Oracle Database
+* PostgreSQL
+* SAP
+* SharePoint Server
+* SQL Server
+* Teradata
+
+Хотя сам шлюз не требует дополнительных затрат, [модель ценообразования Logic Apps](../logic-apps/logic-apps-pricing.md) применяется к этим соединителям и другим операциям в Azure Logic Apps.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -135,6 +156,13 @@ ms.locfileid: "70861039"
 <a name="faq"></a>
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+**Вопрос**. Почему при создании ресурса шлюза в Azure процесс его установки не отображается? <br/>
+**Ответ**. Такая ошибка может произойти по нескольким причинам.
+
+* Установка шлюза уже зарегистрирована и заявлена другим ресурсом шлюза в Azure. Установки шлюзов не отображаются в списке экземпляров после создания ресурсов для шлюзов. Чтобы проверить регистрации шлюзов на портале Azure, необходимо просмотреть все ресурсы Azure с типом **Локальные шлюзы данных** для *всех* подписок Azure.
+
+* Идентификаторы пользователя, который установил шлюз в Azure AD, и пользователя, который вошел на портал Azure, отличаются. Убедитесь, что для входа в систему и установки шлюза использовался один и тот же идентификатор.
 
 [!INCLUDE [existing-gateway-location-changed](../../includes/logic-apps-existing-gateway-location-changed.md)]
 

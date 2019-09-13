@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
 ms.author: atsenthi
-ms.openlocfilehash: 94b2b807eb68d628165ca8fa4011b8f3e41d3c6d
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 123e63fb79ba966e4e17b0c55440049a79add905
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599642"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931173"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
 Служба DNS является необязательной системной службой, которую можно включить в кластере для обнаружения других служб с помощью протокола DNS. 
@@ -179,7 +179,7 @@ DNS-имя службы можно задать при ее создании с 
 Описание
 
 - *First-Label-Of-Partitioned-Service-DNSName* — это первая часть DNS-имени службы.
-- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. По умолчанию используется значение "-". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
+- *PartitionPrefix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — "--". Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Target-Partition-Name* — это имя секции. 
 - *PartitionSuffix* — это значение, которое можно задать в разделе DnsService манифеста кластера или с помощью шаблона Resource Manager кластера. Значение по умолчанию — пустая строка. Дополнительные сведения см. в разделе [параметров служб DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
 - *Remaining-Partitioned-Service-DNSName* — это оставшаяся часть DNS-имени службы.

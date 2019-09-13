@@ -2,8 +2,8 @@
 title: Высокий уровень доступности выделенного устройства HSM Azure | Документация Майкрософт
 description: Пример высокого уровня доступности выделенного устройства HSM Azure и общие рекомендации
 services: dedicated-hsm
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 ms.custom: mvc, seodec18
 ms.service: key-vault
 ms.workload: identity
@@ -11,13 +11,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/27/2019
-ms.author: barclayn
-ms.openlocfilehash: bf55761bb58e309f919e08530fe047a137756323
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.author: mbaldwin
+ms.openlocfilehash: 536ef62acad900090924598edfa45450b2a8c951
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656540"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882246"
 ---
 # <a name="azure-dedicated-hsm-high-availability"></a>Высокая доступность выделенного устройства HSM Azure
 

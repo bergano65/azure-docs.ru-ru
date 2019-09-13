@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: da871a1fed0663c5654ebcfd61f4189bf2267026
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: ce5dc7e17020e1e4564ebe1f531645f7329718dc
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814062"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900692"
 ---
 # <a name="script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-on-hdinsight"></a>Действие скрипта для установки внешних пакетов Python для записных книжек Jupyter в Apache Spark в HDInsight
 
@@ -97,7 +97,7 @@ ms.locfileid: "70814062"
 
     Результат должен выглядеть следующим образом:
     
-    ![Выполнение кода TensorFlow](./media/apache-spark-python-package-installation/execution.png "Выполнение кода TensorFlow")
+    ![Выполнение кода TensorFlow](./media/apache-spark-python-package-installation/tensorflow-execution.png "Выполнение кода TensorFlow")
 
 > [!NOTE]  
 > В кластере имеются два установленных компонента Python. Spark будет использовать компонент Python Anaconda, расположенный в `/usr/bin/anaconda/bin`, и среду Python 2.7 по умолчанию. Чтобы использовать Python 3.x и установить пакеты в ядре PySpark3, укажите путь к исполняемому файлу `conda` для этой среды и параметр `-n`, чтобы задать среду. Например, команда `/usr/bin/anaconda/envs/py35/bin/conda install -c conda-forge ggplot -n py35` устанавливает пакет `ggplot` в среде Python 3.5 с использованием канала `conda-forge`.

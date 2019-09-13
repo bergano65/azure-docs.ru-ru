@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 226862c51417e311bc39feefa9f5e860d55b7dc1
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 51f0e223abd7103663fddd8c06dcdf0be549c671
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034107"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70930809"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Использование Spark & средств Hive для Visual Studio Code
 
@@ -56,7 +56,7 @@ ms.locfileid: "70034107"
 
 2. В представлении **обозревателя** выберите папку **хдексампле** , а затем щелкните значок **новый файл** рядом с рабочей папкой:
 
-   ![Создание файла](./media/hdinsight-for-vscode/new-file.png)
+   ![Создание файла](./media/hdinsight-for-vscode/visual-studio-code-new-file.png)
 
 3. Присвойте новому файлу имя с помощью команды `.hql` (запросы Hive) `.py` или расширения файла (скрипт Spark). В этом примере используется файл **HelloWorld.hql**.
 
@@ -131,7 +131,7 @@ ms.locfileid: "70034107"
 
 3. Просмотрите представление **вывода**. В этом представлении отображается связанный кластер (или кластеры) и все кластеры в подписке Azure.
 
-    ![Установка конфигурации кластера по умолчанию](./media/hdinsight-for-vscode/list-cluster-result.png)
+    ![Установка конфигурации кластера по умолчанию](./media/hdinsight-for-vscode/list-cluster-result1.png)
 
 ## <a name="set-the-default-cluster"></a>Настройка кластера по умолчанию
 
@@ -280,7 +280,7 @@ ms.locfileid: "70034107"
 
 + Параметры проекта:
 
-    ![Конфигурация Livy](./media/hdinsight-for-vscode/hdi-livyconfig.png)
+    ![Конфигурация Livy](./media/hdinsight-for-vscode/hdi-apache-livy-config.png)
 
     >[!NOTE]
     >Для параметров **дривермемори** и **ексекутормемори** задайте значение и единицу. Пример: 1 ГБ или 1024m.
@@ -292,19 +292,19 @@ ms.locfileid: "70034107"
 
     | name | description | type | 
     | :- | :- | :- | 
-    | Файл | Файл, содержащий выполнение приложения | Путь (обязательно) |
+    | Файл | Файл, содержащий выполнение приложения | путь (обязательно) |
     | proxyUser | Пользователь для олицетворения при выполнении задания | Строковое |
     | className | Основной класс Java или Spark приложения | Строковое |
-    | args | Аргументы командной строки для приложения | Список строк |
-    | jars | JAR для использования в этом сеансе | Список строк | 
-    | pyFiles | Файлы Python для использования в этом сеансе | Список строк |
-    | files | Файлы, используемые в этом сеансе | Список строк |
+    | args | Аргументы командной строки для приложения | список строк |
+    | jars | JAR для использования в этом сеансе | список строк | 
+    | pyFiles | Файлы Python для использования в этом сеансе | список строк |
+    | files | файлы, используемые в этом сеансе | список строк |
     | driverMemory | Объем памяти для процесса драйвера | Строковое |
     | driverCores | Число ядер для процесса драйвера | int |
     | executorMemory | Объем памяти для каждого процесса исполнителя | Строковое |
     | executorCores | Число ядер для каждого исполнителя | int |
     | numExecutors | Количество исполнителей для запуска в этом сеансе | int |
-    | archives | Архивы для использования в этом сеансе | Список строк |
+    | archives | Архивы для использования в этом сеансе | список строк |
     | queue | Имя очереди YARN для отправки| Строковое |
     | name | Имя этого сеанса | Строковое |
     | conf | Свойства конфигурации Spark. | Сопоставление key=val |
@@ -317,7 +317,7 @@ ms.locfileid: "70034107"
     | id | Идентификатор сеанса | int | 
     | appId | Идентификатор приложения для этого сеанса | Строковое |
     | appInfo | Подробные сведения о приложении | Сопоставление key=val |
-    | журнал | Строки журнала | Список строк |
+    | журнал | Строки журнала | список строк |
     | state |Пакетное состояние | Строковое |
 
     >[!NOTE]
@@ -409,7 +409,7 @@ ms.locfileid: "70034107"
   >
   >Для проверки связанного `Spark / Hive: List Cluster` кластера можно использовать:
   >
-  >![& Spark средства Hive для связанного модуля чтения Visual Studio Code](./media/hdinsight-for-vscode/list-cluster-result.png)
+  >![& Spark средства Hive для связанного модуля чтения Visual Studio Code](./media/hdinsight-for-vscode/list-cluster-result1.png)
 
 ## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage 2-го поколения
 

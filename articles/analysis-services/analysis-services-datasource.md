@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 09/10/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7abd0ac3d95825594dffe385bccc1672d0f71c5f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 096f8b3aa6ae66e65bbbd9ea6e2204af619199dd
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66142560"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899404"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -34,7 +34,7 @@ ms.locfileid: "66142560"
 ||||
 
 <a name="tab1400a">1</a> Только табличная модель 1400 и более поздние.   
-<a name="azsqlmanaged">2</a> Поддерживается Управляемый экземпляр Базы данных SQL Azure. Так как управляемый экземпляр работает в виртуальной сети Azure с частным IP-адресом, требуется локальный шлюз данных. В настоящее время Azure SQL управляемый экземпляр базы данных с общедоступной конечной точки не поддерживается.   
+<a name="azsqlmanaged">2</a> Поддерживается Управляемый экземпляр Базы данных SQL Azure. Поскольку управляемый экземпляр работает в виртуальной сети Azure с частным IP-адресом, на экземпляре должна быть включена общедоступная конечная точка. Если этот флажок не установлен, требуется локальный шлюз данных.    
 <a name="databricks">3</a> Экземпляр Azure Databricks, использующий соединитель Spark, в настоящее время не поддерживается.   
 <a name="gen2">4</a> ADLS 2-го поколения в настоящее время не поддерживается.
 
@@ -50,7 +50,7 @@ ms.locfileid: "66142560"
 
 |Источник данных | Поставщик с размещением в памяти | Поставщик DirectQuery |
 |  --- | --- | --- |
-| SQL Server; |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
+| SQL Server |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
 | хранилище данных SQL Server. |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
 | Oracle | Поставщик OLE DB для Oracle, поставщик данных Oracle для .NET |Поставщик данных Oracle для .NET |
 | Teradata |Поставщик OLE DB для Teradata, поставщик данных Teradata для .NET |Поставщик данных Teradata для .NET |
@@ -62,7 +62,7 @@ ms.locfileid: "66142560"
 |---------|
 |База данных Access     |  
 |Active Directory<sup>[1](#tab1400b)</sup>     |  
-|Analysis Services     |  
+|Службы Analysis Services     |  
 |Система платформы аналитики     |  
 |CSV-файл  |
 |Dynamics CRM<sup>[1](#tab1400b)</sup>     |  
@@ -76,19 +76,19 @@ ms.locfileid: "66142560"
 |Канал OData<sup>[1](#tab1400b)</sup>     |  
 |Запрос ODBC     | 
 |OLE DB     |   
-|База данных SQL Postgre<sup>[1](#tab1400b)</sup>    | 
+|База данных PostgreSQL<sup>[1](#tab1400b)</sup>    | 
 |Объекты Salesforce<sup>[1](#tab1400b)</sup> |  
 |Отчеты Salesforce<sup>[1](#tab1400b)</sup> |
 |SAP HANA<sup>[1](#tab1400b)</sup>    |  
 |SAP Business Warehouse<sup>[1](#tab1400b)</sup>    |  
-|Список SharePoint<sup>[1](#tab1400b)</sup>, <sup> [2](#filesSP)</sup>     |   
+|SharePoint List<sup>[1](#tab1400b)</sup>, <sup>[2](#filesSP)</sup>     |   
 |База данных Sybase     |  
-|TXT-файла  |
+|TXT, файл  |
 |Таблица XML<sup>[1](#tab1400b)</sup>    |  
 ||
  
 <a name="tab1400b">1</a> Только табличная модель 1400 и более поздние.   
-<a name="filesSP">2</a> -файлы в локальному сайту SharePoint не поддерживаются.
+<a name="filesSP">2</a> — файлы в локальной среде SharePoint не поддерживаются.
 
 ## <a name="specifying-a-different-provider"></a>Указание другого поставщика
 
@@ -114,7 +114,7 @@ ms.locfileid: "66142560"
 
 * При использовании проверки подлинности SQL олицетворением должна быть учетная запись службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Локальный шлюз](analysis-services-gateway.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)   
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/08/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: aa0c34a361ce191618d7b84e7a96557f2344284a
-ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
+ms.openlocfilehash: 7e79d3119f5d2d0fe1894de0ab9535dd988706f8
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70803965"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935201"
 ---
 # <a name="steps-to-migrate-to-the-azure-authoring-resource"></a>Шаги для перехода на ресурс разработки Azure
 
@@ -95,11 +95,22 @@ ms.locfileid: "70803965"
 
     ![Выберите элемент подписка и ресурс для разработки LUIS, чтобы просмотреть приложения, которые вы можете создать.](./media/migrate-authoring-key/app-list-by-subscription-and-resource.png)
 
+
+## <a name="app-contributor-begins-the-migration-process"></a>Участник приложения начинает процесс миграции
+
+Выполните те же действия, что и у владельца приложения для миграции. Этот процесс создает новый ресурс для создания нового типа `LUIS.Authoring`. 
+
+Необходимо перенести учетную запись, чтобы добавить ее в качестве участника в перенесенные приложения, принадлежащие другим пользователям.  
+
 ## <a name="after-the-migration-process-add-contributors-to-your-authoring-resource"></a>После завершения процесса миграции добавьте участников в свой ресурс разработки.
 
 [!INCLUDE [Manage contributors for the Azure authoring resource for language understanding](./includes/manage-contributors-authoring-resource.md)]
 
 Узнайте [, как добавить участников](luis-how-to-collaborate.md). 
+
+## <a name="troubleshooting-errors-with-the-migration-process"></a>Устранение ошибок в процессе миграции
+
+Если на портале `MissingSubscriptionRegistration` Luis появляется сообщение об ошибке с красной панелью уведомлений во время процесса миграции, создайте ресурс «неработающая служба» в [портал Azure](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](luis-how-to-azure-subscription.md#create-resources-in-azure-cli). Узнайте больше о [причинах этой ошибки](../../azure-resource-manager/resource-manager-register-provider-errors.md#cause).
 
 ## <a name="next-steps"></a>Следующие шаги
 

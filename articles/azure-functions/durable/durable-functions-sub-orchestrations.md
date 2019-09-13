@@ -7,14 +7,14 @@ manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 09/07/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 868efad58e14fd817729f0aa9ac785bc0f960867
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 74f33a1ce1026424a6cdb97699223aeb5ff8277f
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087034"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933133"
 ---
 # <a name="sub-orchestrations-in-durable-functions-azure-functions"></a>Вложенные оркестрации в устойчивых функциях (Функции Azure)
 
@@ -118,7 +118,10 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+> [!NOTE]
+> Подсогласования должны быть определены в том же приложении-функции, что и родительское согласование. Если необходимо вызвать и подождать согласования в другом приложении-функции, рассмотрите возможность использования встроенной поддержки API HTTP и шаблона потребителя опроса HTTP 202. Дополнительные сведения см. в разделе [функции HTTP](durable-functions-http-features.md) .
+
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Узнайте, что такое концентраторы задач и как их настраивать](durable-functions-task-hubs.md)
+> [Узнайте, как задать пользовательское состояние оркестрации](durable-functions-custom-orchestration-status.md)

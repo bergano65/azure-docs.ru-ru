@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: cfa6a363725c35083b32d6de1dd1371777f91907
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7133e8bc7d04b3653b6b788347b7bc5176087f4c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240304"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883477"
 ---
 # <a name="client-and-server-versioning-in-mobile-apps-and-mobile-services"></a>Управление версиями клиента и сервера в мобильных приложениях и мобильных службах
 Последняя версия мобильных служб Azure — компонент **Мобильные приложения** службы приложений Azure.
@@ -28,8 +28,6 @@ ms.locfileid: "66240304"
 Другими словами, пакет SDK клиента *мобильных приложений* необходимо использовать с пакетом SDK сервера *мобильных приложений* (точно так же и для *мобильных служб*). Этот контракт реализуется посредством специального значения заголовка, используемого пакетами SDK для клиента и сервера, `ZUMO-API-VERSION`.
 
 Примечание. Когда в этом документе упоминается внутренний сервер *мобильных служб*, он не обязательно должен размещаться в мобильных службах. Теперь можно выполнить миграцию мобильной службы для работы в службе приложений без внесения изменений в код, однако служба по-прежнему будет использовать версии пакета SDK для *мобильных служб*.
-
-Дополнительные сведения о переносе в службу приложений без изменения кода, см. в статье [миграции мобильной службы в службе приложений Azure].
 
 ## <a name="header-specification"></a>Спецификация заголовка
 Ключ `ZUMO-API-VERSION` можно указать в заголовке HTTP или в строке запроса. Его значение представляет строку версии в формате **x.y.z**.
@@ -67,10 +65,10 @@ POST https://service.azurewebsites.net/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 | Node.js |[azure-mobile-apps)](https://www.npmjs.com/package/azure-mobile-apps) |2.0.0 |
 
 ### <a name="behavior-of-mobile-apps-backends"></a>Поведение внутренних серверов мобильных приложений
-| ZUMO-API-VERSION | Значение параметра MS_SkipVersionCheck | Ответ |
+| ZUMO-API-VERSION | Значение параметра MS_SkipVersionCheck | Отклик |
 | --- | --- | --- |
-| x.y.z или значение NULL |Истина |200 – OK |
-| Null |False/не указан |400 – неверный запрос |
+| x.y.z или значение NULL |True |200 – OK |
+| NULL |False/не указан |400 – неверный запрос |
 | 1.x.y |False/не указан |400 – неверный запрос |
 | 2.0.0-2.x.y |False/не указан |200 – OK |
 | 3.0.0-3.x.y |False/не указан |400 – неверный запрос |

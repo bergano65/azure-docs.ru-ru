@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: hrasheed
-ms.openlocfilehash: d53468ae544b02798d7fcd74370d1d3dbdcbd5e0
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: HT
+ms.openlocfilehash: 129f200bc9f61d70f4403b1154978d57e09fee26
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/11/2019
-ms.locfileid: "70882092"
+ms.locfileid: "70917482"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Выполнение запросов Apache Hive с использованием средств Data Lake для Visual Studio
 
@@ -59,7 +59,7 @@ ms.locfileid: "70882092"
 
 6. Чтобы выполнить тот же запрос в **пакетном** режиме, переключите раскрывающийся список с **интерактивного** на **пакет**. Обратите внимание, что кнопка выполнения меняется с **EXECUTE** на **Submit**.
 
-    ![Снимок экрана "Отправка запроса Hive"](./media/apache-hadoop-use-hive-visual-studio/vs-batch-query.png)
+    ![Снимок экрана "Отправка запроса Hive"](./media/apache-hadoop-use-hive-visual-studio/visual-studio-batch-query.png)
 
     Редактор Hive поддерживает технологию IntelliSense. Средства Data Lake для Visual Studio поддерживают загрузку удаленных метаданных при редактировании скрипта Hive. Например, если ввести `SELECT * FROM`, IntelliSense выводит список всех предлагаемых имен таблиц. Если указано имя таблицы, IntelliSense выведет список имен столбцов. Эти инструменты поддерживают почти все инструкции, подзапросы и встроенные определяемые пользователем функции Hive DML. IntelliSense предлагает только метаданные кластеров, выбранных на панели инструментов HDInsight.
 

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 1b1e9338f92aaefab8e7754139066ac03e8b8213
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: c39db870e44d4e810817b70e2793b8805088180e
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142630"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932541"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -44,6 +44,11 @@ ms.locfileid: "70142630"
 
 > [!NOTE]
 > Если вы используете .NET Core, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
+
+### <a name="a-name260260"></a><a name="2.6.0"/>2.6.0
+
+* Добавлен Портреусеполици в ConnectionPolicy
+* Фиксированный NTDLL! Ошибка Ртлжетверсион TypeLoadException при использовании пакета SDK в приложении UWP
 
 ### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
 
@@ -267,6 +272,7 @@ ms.locfileid: "70142630"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.6.0](#2.6.0) |30 августа 2019 г. |--- |
 | [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |
 | [2.4.0](#2.4.0) |05 мая 2005 г., 2019 |--- |

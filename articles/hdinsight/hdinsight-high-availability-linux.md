@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: 1828efb410849677e859d341e4e16e4f5d4ca681
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1bfc17d343f6e788d22cd158fcb849c5895b019f
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68405992"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879780"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -106,7 +106,7 @@ ms.locfileid: "68405992"
 
 Открыв страницу Ambari, слева вы увидите список установленных служб.
 
-![Установленные службы](./media/hdinsight-high-availability-linux/services.png)
+![Установленные службы](./media/hdinsight-high-availability-linux/hdinsight-installed-services.png)
 
 Существует ряд значков, которые могут отображаться рядом со службой и указывать ее состояние. Все оповещения, связанные с той или иной службой, можно просмотреть, щелкнув ссылку **Оповещения** в верхней части страницы.  Ambari предлагает несколько предопределенных предупреждений.
 
@@ -155,11 +155,11 @@ ms.locfileid: "68405992"
 
 На странице службы содержатся сведения о состоянии и конфигурации каждой службы, но не указывается, на каком головном узле она работает. Чтобы просмотреть эти сведения, щелкните ссылку **Узлы** в верхней части страницы. На странице отобразятся все узлы кластера, включая головные узлы.
 
-![список узлов](./media/hdinsight-high-availability-linux/hosts.png)
+![список узлов](./media/hdinsight-high-availability-linux/hdinsight-hosts-list.png)
 
 Выберите ссылку на один из головных узлов, чтобы отобразить работающие на нем службы и компоненты.
 
-![Состояние компонента](./media/hdinsight-high-availability-linux/nodeservices.png)
+![Состояние компонента](./media/hdinsight-high-availability-linux/hdinsight-node-services.png)
 
 Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
@@ -241,7 +241,7 @@ URL-адрес указывает, что сейчас служба работа
 
 Через веб-Интерфейс Ambari выберите службу, для которой вы хотите просмотреть журналы (например, YARN). Затем в разделе **Быстрые ссылки** выберите головной узел, для которого нужно просмотреть журналы.
 
-![Использование быстрых ссылок для просмотра журналов](./media/hdinsight-high-availability-linux/viewlogs.png)
+![Использование быстрых ссылок для просмотра журналов](./media/hdinsight-high-availability-linux/quick-links-view-logs.png)
 
 ## <a name="how-to-configure-the-node-size"></a>Настройка размера узла
 
@@ -251,7 +251,7 @@ URL-адрес указывает, что сейчас служба работа
 
 * **Портал Azure**: При создании кластера можно задать размер для узлов этого кластера:
 
-    ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/headnodesize.png)
+    ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/hdinsight-headnodesize.png)
 
 * **Azure CLI.** При использовании команды [AZ hdinsight Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) можно задать размер головного, рабочего и ZooKeeper узлов с помощью `--headnode-size`параметров, `--workernode-size`и `--zookeepernode-size` .
 
