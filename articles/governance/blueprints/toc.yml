@@ -32,9 +32,15 @@
       href: ./samples/index.md
     - name: Canada Federal PBMM
       items:
+        - name: Обзор
+          displayName: 'standards, canada, federal, pbmm'
+          href: ./samples/canada-federal-pbmm/index.md
         - name: Сопоставление элементов управления
           displayName: 'standards, canada, federal, pbmm'
           href: ./samples/canada-federal-pbmm/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, canada, federal, pbmm'
+          href: ./samples/canada-federal-pbmm/deploy.md
     - name: Тест производительности CIS для платформ Microsoft Azure
       items:
         - name: Обзор

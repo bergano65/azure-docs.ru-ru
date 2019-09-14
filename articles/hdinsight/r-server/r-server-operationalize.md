@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: f9dbddcba1545e0a110faa9fbf8e3de9ff189525
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 4980b4d3a4ec7165a4aba3d02561f6c666150924
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879493"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967667"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
@@ -66,15 +66,15 @@ ms.locfileid: "70879493"
 
     1\. В главном меню выберите **6**, чтобы выполнить диагностические тесты.
 
-    ![diagnostic1](./media/r-server-operationalize/diagnostic-1.png)
+    ![diagnostic1](./media/r-server-operationalize/hdinsight-diagnostic1.png)
 
     2\. В меню диагностических тестов выберите вариант **A**. Когда появится запрос, введите пароль пользователя с правами локального администратора.
 
-    ![diagnostic2](./media/r-server-operationalize/diagnostic-2.png)
+    ![diagnostic2](./media/r-server-operationalize/hdinsight-diagnostic2.png)
 
     В. Убедитесь, что выходные данные подтверждают работоспособность системы.
 
-    ![diagnostic3](./media/r-server-operationalize/diagnostic-3.png)
+    ![diagnostic3](./media/r-server-operationalize/hdinsight-diagnostic3.png)
 
     Г. Из предложенного меню выберите вариант **E**, чтобы вернуться к главному меню, а затем введите **8** для выхода из служебной программы администрирования.
 

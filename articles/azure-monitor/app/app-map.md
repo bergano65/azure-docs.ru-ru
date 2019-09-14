@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: ce44be5bae5aaa8f86d04068cce1c4bc919b0893
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: f895aa9aa4bc66c32f10d290b7ee708345be8c9b
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126973"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983767"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -272,6 +272,6 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляции телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
+* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.
 * Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в статье [Track Custom Operations](custom-operations-tracking.md) .

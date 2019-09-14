@@ -7,16 +7,16 @@ author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/21/2019
+ms.date: 09/12/2019
 ms.author: dapine
-ms.openlocfilehash: 1a14ea186b3e1127928a36600d1047a633aea568
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 1e2001c1f4cb2da195a3dcd0ca8fe198de8dd264
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051890"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968609"
 ---
-## <a name="verify-the-key-phrase-extraction-container-instance"></a>Проверка экземпляра контейнера извлечение ключевых фраз
+### <a name="verify-the-key-phrase-extraction-container-instance"></a>Проверка экземпляра контейнера извлечение ключевых фраз
 
 1. Перейдите на вкладку **Обзор** и скопируйте IP-адрес.
 1. Откройте новую вкладку браузера и введите IP-адрес. Например, введите `http://<IP-address>:5000 (http://55.55.55.55:5000`). Откроется домашняя страница контейнера, в которой вы узнаете, что контейнер выполняется.

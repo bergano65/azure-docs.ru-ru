@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 135855ee33f783e85b398c7f9716c2c897633de9
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: a0c9c729081da9f6c7b8f549a4906d432af6ecb2
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779543"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961641"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -212,7 +212,7 @@ Azure предоставляет разрешение имен для служб
 
 В качестве управляемой службы HDInsight требует неограниченного доступа к службе работоспособности и управления службой хранилища HDInsight как для входящего, так и для исходящего трафика из виртуальной сети. При использовании группы безопасности сети необходимо убедиться, что эти службы по-прежнему могут взаимодействовать с кластером HDInsight.
 
-![Схема сущностей HDInsight, созданных в настраиваемой виртуальной сети Azure](./media/hdinsight-virtual-network-architecture/vnet-diagram.png)
+![Схема сущностей HDInsight, созданных в настраиваемой виртуальной сети Azure](./media/hdinsight-plan-virtual-network-deployment/hdinsight-vnet-diagram.png)
 
 ### <a name="hdinsight-with-network-security-groups"></a>HDInsight с группами безопасности сети
 
@@ -220,7 +220,7 @@ Azure предоставляет разрешение имен для служб
 
 1. Определите регион Azure, который планируется использовать для HDInsight.
 
-2. Определите IP-адреса, необходимые для HDInsight. Дополнительные сведения см. в разделе [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md).
+2. Определите IP-адреса, необходимые для HDInsight. Дополнительные сведения см. в статье [HDInsight management IP addresses](hdinsight-management-ip-addresses.md) (IP-адреса управления HDInsight).
 
 3. Создайте или измените группы безопасности сети для подсети, в которую планируется установить HDInsight.
 

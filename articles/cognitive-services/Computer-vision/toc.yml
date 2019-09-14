@@ -7,6 +7,14 @@
       href: Home.md
 - name: Краткие руководства
   items:
+    - name: С помощью клиентского пакета SDK
+      items:
+        - name: Пакет SDK для .NET
+          href: quickstarts-sdk/csharp-sdk.md
+        - name: Пакет SDK для Python
+          href: quickstarts-sdk/python-sdk.md
+        - name: Пакет SDK для Java
+          href: quickstarts-sdk/java-sdk.md
     - name: Использование REST API
       items:
         - name: Анализ удаленного изображения
@@ -75,18 +83,6 @@
           items:
             - name: Python
               href: QuickStarts/python-domain.md
-    - name: С помощью пакета SDK для .NET
-      items:
-        - name: Анализ изображения
-          href: quickstarts-sdk/csharp-analyze-sdk.md
-        - name: Создание эскизов
-          href: quickstarts-sdk/csharp-thumb-sdk.md
-        - name: Извлечение текста
-          href: quickstarts-sdk/csharp-hand-text-sdk.md
-    - name: С помощью пакета SDK для Python
-      href: quickstarts-sdk/python-sdk.md
-    - name: Использование пакета SDK для Java
-      href: quickstarts-sdk/java-sdk.md
 - name: Учебники
   items:
     - name: Создание метаданных для изображений
