@@ -8,12 +8,12 @@ ms.topic: sample
 ms.service: blueprints
 manager: carmonm
 ms.custom: fasttrack-new
-ms.openlocfilehash: b78f81e16afbd044306c6697e0d8823bdd02b81a
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: aa25bbb54893fa84bb345a317850df4125faed25
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232880"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003294"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-foundation-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы CAF Foundation
 
@@ -27,7 +27,7 @@ ms.locfileid: "70232880"
 
 Эта реализация содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую базовую среду корпоративного уровня. Эта среда включает следующие компоненты:
 
-- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
+- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска безопасного развертывания в [учетную запись хранения](../../../../storage/common/storage-introduction.md) для диагностического ведения журналов;
 - развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок.
 - В схеме также определяются и развертываются [политики Azure](../../../policy/overview.md) для выполнения следующих задач: 

@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 01/17/2019
-ms.openlocfilehash: 4d4fe32b5f457e2b223132006afd20bfe3161bbd
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 08/14/2019
+ms.openlocfilehash: e522cba88eaf9cb63ef7ef2f20e3b72691261073
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142603"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002404"
 ---
 # <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Непрерывные интеграция и поставка в Фабрике данных Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "70142603"
 
 1.  В [пользовательском интерфейсе Azure DevOps](https://dev.azure.com/)откройте проект, настроенный с помощью фабрики данных.
 
-1.  В левой части страницы щелкните конвейеры, а затем выберите выпуски.
+1.  В левой части страницы щелкните **конвейеры** , а затем выберите **выпуски**.
 
     ![](media/continuous-integration-deployment/continuous-integration-image6.png)
 
@@ -426,7 +426,7 @@ else {
 * В `typeProperties`разделе два свойства являются параметризованными. Первый из них — `maxConcurrency`, для которого задано значение по умолчанию и тип.`string` Он имеет имя `<entityName>_properties_typeProperties_maxConcurrency`параметра по умолчанию.
 * `recurrence` Свойство также является параметризованным. В нем все свойства на этом уровне указываются для параметризации в виде строк, значения по умолчанию и имена параметров. Исключением является `interval` свойство, параметризованное как тип числа, с именем параметра с суффиксом `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Аналогично, `freq` свойство является строкой и параметризовано как строка. `freq` Однако свойство является параметризованным без значения по умолчанию. Имя сокращено и суффиксы. Например, `<entityName>_freq`.
 
-#### <a name="linkedservices"></a>LinkedServices
+#### <a name="linkedservices"></a>linkedServices
 
 * Связанные службы являются уникальными. Так как связанные службы и наборы данных имеют широкий спектр типов, можно указать настройку для конкретного типа. В этом примере будут применены все связанные службы `AzureDataLakeStore`типа, заданный шаблон, а для всех остальных (Via \*) будет применен другой шаблон.
 * Свойство будет параметризовано `securestring` как значение, оно не будет иметь значения по умолчанию, и оно получит сокращенное имя параметра с `connectionString`суффиксом. `connectionString`

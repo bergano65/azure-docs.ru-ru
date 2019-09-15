@@ -9,18 +9,20 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 55e8121152aa281ab1025f1e8ded53c4b00c3d44
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ed41ccea0754f3eeffdd0248bac567859db1492c
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566941"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001509"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
 В этой статье перечислены функции базы данных SQL, которые в настоящее время доступны в общедоступной предварительной версии. Сведения об обновлениях и улучшениях базы данных SQL см. в статье [обновления службы базы данных SQL](https://azure.microsoft.com/updates/?product=sql-database). Обновления и улучшения других служб Azure см. в разделе [обновления служб](https://azure.microsoft.com/updates).
 
 ## <a name="features-in-public-preview"></a>Возможности общедоступной предварительной версии
+
+### <a name="single-databasetabsingle-database"></a>[Отдельная база данных](#tab/single-database)
 
 | Компонент | Подробнее |
 | ---| --- |
@@ -34,14 +36,29 @@ ms.locfileid: "68566941"
 |Обратная связь выделения памяти (режим строки) (на уровне совместимости 150)|Дополнительные сведения см. в разделе [обратная связь предоставления памяти (режим строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
 | Редактор запросов в портал Azure |Дополнительные сведения см. в разделе [Использование редактора запросов SQL портал Azure для подключения и запроса данных](sql-database-connect-query-portal.md).|
 | Службы R/машинное обучение с отдельными базами данных и эластичными пулами |Дополнительные сведения см. [в разделе службы машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database).|
-| Повторное создание удаленных баз данных с помощью управляемых экземпляров |Дополнительные сведения см. [в статье повторное создание удаленных баз данных в Azure SQL управляемый экземпляр](https://medium.com/azure-sqldb-managed-instance/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266).|
-| Репликация с управляемыми экземплярами |Дополнительные сведения см. [в статье Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md).|
-| Уровень бессерверных вычислений | Дополнительные сведения см. в разделе несерверная [база данных SQL (Предварительная версия)](sql-database-serverless.md).|
+| Уровень бессерверных вычислений | Дополнительные сведения см. в разделе [несерверная база данных SQL (Предварительная версия)](sql-database-serverless.md).|
 |Аналитика SQL|Дополнительные сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md).|
 |Отложенная компиляция табличной переменной (на уровне совместимости 150)|Дополнительные сведения см. в разделе [табличная переменная Отложенная компиляция](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
-| Обнаружение угроз с помощью управляемых экземпляров |Дополнительные сведения см. [в статье Настройка обнаружения угроз в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-threat-detection.md).|
-| Прозрачное шифрование данных (TDE) с помощью создание собственных ключей (BYOK) с управляемыми экземплярами |Дополнительные сведения см. [в разделе прозрачное шифрование данных Azure SQL с управляемыми клиентом ключами в Azure Key Vault: Поддержка](transparent-data-encryption-byok-azure-sql.md)создание собственных ключей.|
 | &nbsp; |
+
+### <a name="managed-instancetabmanaged-instance"></a>[Управляемый экземпляр](#tab/managed-instance)
+
+| Компонент | Подробнее |
+| ---| --- |
+| <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
+| <a href="https://aka.ms/managed-instance-tde-byok">Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)</a> |Дополнительные сведения см. [в разделе прозрачное шифрование данных Azure SQL с управляемыми клиентом ключами в Azure Key Vault: Поддержка](transparent-data-encryption-byok-azure-sql.md)создание собственных ключей.|
+| <a href="https://aka.ms/managed-instance-failover-groups">Геораспределенные группы отработки отказа</a> | Сохраните копию экземпляра в другом регионе и убедитесь, что данные будут доступны даже в региональной ситуации. |
+| <a href="https://aka.ms/managed-instance-aadlogins">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена входа на уровне сервера, используя инструкцию <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Create login из внешнего поставщика</a> . |
+| [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) | Репликация изменений из таблиц в другие базы данных, размещенные на управляемых экземплярах, отдельных базах данных или SQL Server экземплярах, или при изменении некоторых строк в других управляемых экземплярах или экземплярах SQL Server. Дополнительные сведения см. [в статье Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md). |
+| Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в управляемом экземпляре базы данных SQL Azure](sql-database-managed-instance-threat-detection.md).|
+| Повторное создание удаленных баз данных с помощью управляемых экземпляров |Дополнительные сведения см. [в статье повторное создание удаленных баз данных в Azure SQL управляемый экземпляр](https://medium.com/azure-sqldb-managed-instance/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266).|
+| &nbsp; |
+
+---
+
+## <a name="fixed-known-issues"></a>Исправлены известные проблемы
+
+- **2019 августа** — автономные базы данных полностью поддерживаются в управляемом экземпляре.
 
 ## <a name="updates"></a>Обновления
 

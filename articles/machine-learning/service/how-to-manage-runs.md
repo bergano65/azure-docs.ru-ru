@@ -1,6 +1,6 @@
 ---
 title: Запуск, отслеживание и отмена обучающих запусков в Python
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте, как начать, задать состояние, отмечать и упорядочивать эксперименты машинного обучения.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2019
-ms.openlocfilehash: b938d55749373711ddf2a19df12b987276b224ca
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 6615b5c277577ee2238434591c61362885f2fec6
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376293"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002731"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 
@@ -33,9 +33,9 @@ ms.locfileid: "70376293"
 
 Вам потребуются следующие элементы:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
-* [Рабочая область службы машинное обучение Azure](how-to-manage-workspace.md).
+* [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
 * Машинное обучение Azure SDK для Python (версия 1.0.21 или более поздняя). Чтобы установить или обновить последнюю версию пакета SDK, см. статью [Установка или обновление пакета SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
@@ -45,7 +45,7 @@ ms.locfileid: "70376293"
     print(azureml.core.VERSION)
     ```
 
-* Расширение [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) и [CLI для службы машинное обучение Azure](reference-azure-machine-learning-cli.md).
+* Расширение [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) и [CLI для машинное обучение Azure](reference-azure-machine-learning-cli.md).
 
 ## <a name="start-a-run-and-its-logging-process"></a>Запуск запуска и процесса ведения журнала
 
@@ -79,7 +79,7 @@ notebook_run.log(name="message", value="Hello from run!")
     az login
     ```
 
-1. Подключите конфигурацию рабочей области к папке, содержащей сценарий обучения. Замените `myworkspace` рабочей областью службы машинное обучение Azure. Замените `myresourcegroup` на группу ресурсов Azure, содержащую рабочую область:
+1. Подключите конфигурацию рабочей области к папке, содержащей сценарий обучения. Замените `myworkspace` рабочей областью машинное обучение Azure. Замените `myresourcegroup` на группу ресурсов Azure, содержащую рабочую область:
 
     ```azurecli-interactive
     az ml folder attach -w myworkspace -g myresourcegroup
@@ -253,7 +253,7 @@ print(parent_run.get_children())
 
 ## <a name="tag-and-find-runs"></a>Теги и поиск запусков
 
-В Машинное обучение Azure Service можно использовать свойства и теги для упорядочения и запроса своих запусков для получения важной информации.
+В Машинное обучение Azure можно использовать свойства и теги для упорядочения и запроса своих запусков для получения важной информации.
 
 ### <a name="add-properties-and-tags"></a>Добавление свойств и тегов
 

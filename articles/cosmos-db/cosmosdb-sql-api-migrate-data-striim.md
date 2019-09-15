@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 27961413d0dddc165f90ebde1c5e1aee6b8d9fd3
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 36ba9e2d3385184f32876a6d067b58f7c21a90bd
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981832"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003285"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-sql-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API SQL с помощью Стриим
  
@@ -24,7 +24,7 @@ ms.locfileid: "69981832"
 
 * Если у вас еще нет [подписки Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
-* База данных Oracle, выполняющаяся локально с некоторыми данными в ней.
+* База данных Oracle, работающая в локальной среде, с некоторыми данными.
 
 ## <a name="deploy-the-striim-marketplace-solution"></a>Развертывание решения Стриим Marketplace
 
@@ -48,7 +48,7 @@ ms.locfileid: "69981832"
 
    После заполнения формы нажмите кнопку **ОК** , чтобы продолжить.
 
-1. В области **параметры доступа Стриим** настройте общедоступный **IP-адрес** (выберите значения по умолчанию), **доменное имя для Стриим**, **пароль администратора** , который вы хотите использовать для входа в пользовательский интерфейс Стриим. Настройте ВИРТУАЛЬную сеть и подсети (выберите значения по умолчанию). После заполнения сведений нажмите кнопку **ОК** , чтобы продолжить.
+1. В области **параметры доступа Стриим** настройте **общедоступный IP-адрес** (выберите значения по умолчанию), **доменное имя для Стриим**, **пароль администратора** , который вы хотите использовать для входа в пользовательский интерфейс Стриим. Настройте ВИРТУАЛЬную сеть и подсети (выберите значения по умолчанию). После заполнения сведений нажмите кнопку **ОК** , чтобы продолжить.
 
    ![Параметры доступа Стриим](./media/cosmosdb-sql-api-migrate-data-striim/striim-access-settings.png)
 
@@ -179,7 +179,7 @@ ms.locfileid: "69981832"
 
    ![Использовать параметр по умолчанию](./media/cosmosdb-sql-api-migrate-data-striim/deploy-using-default-option.png)
 
-1. После развертывания можно просмотреть поток для просмотра данных, передаваемых по. Щелкните значок **волна** и проводим рядом с ним. Нажмите кнопку развернутая в верхней строке меню и выберите **запустить приложение**.
+1. После развертывания можно просмотреть поток для просмотра данных, передаваемых по. Щелкните значок **волна** и проводим рядом с ним. Нажмите кнопку **Развернутая** в верхней строке меню и выберите **запустить приложение**.
 
    ![Запуск приложения](./media/cosmosdb-sql-api-migrate-data-striim/start-app.png)
 
@@ -193,7 +193,7 @@ ms.locfileid: "69981832"
 
    ![Проверка перенесенных данных в Azure](./media/cosmosdb-sql-api-migrate-data-striim/portal-validate-results.png)
 
-С помощью решения Стриим в Azure можно непрерывно переносить данные в Azure Cosmos DB из различных источников, таких как Oracle, Cassandra, MongoDB и других, для Azure Cosmos DB. Чтобы устранить проблемы при настройке пути миграции с помощью Стриим, отправьте запрос в службу поддержки на [веб-сайте Стриим](https://go2.striim.com/request-support-striim).
+С помощью решения Стриим в Azure можно непрерывно переносить данные в Azure Cosmos DB из различных источников, таких как Oracle, Cassandra, MongoDB и других, для Azure Cosmos DB. Дополнительные сведения см. на [веб-сайте Стриим](https://www.striim.com/), [Загрузите бесплатную 30-дневную пробную версию Стриим](https://go2.striim.com/download-free-trial)и в случае возникновения проблем при настройке пути миграции с помощью Стриим отправьте [запрос в службу поддержки.](https://go2.striim.com/request-support-striim)
 
 ## <a name="next-steps"></a>Следующие шаги
 

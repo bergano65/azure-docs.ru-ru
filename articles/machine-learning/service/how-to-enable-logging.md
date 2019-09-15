@@ -1,7 +1,7 @@
 ---
-title: Настройка функции ведения журналов для Службы машинного обучения
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как настроить ведение журнала в Службе машинного обучения Azure с использованием стандартного пакета ведения журнала для Python и с помощью собственных функций пакета SDK.
+title: Включение ведения журнала в Машинное обучение Azure
+titleSuffix: Azure Machine Learning
+description: Узнайте, как включить ведение журнала в Машинное обучение Azure с помощью пакета ведения журнала Python по умолчанию, а также с помощью функций, характерных для пакета SDK.
 ms.author: trbye
 author: trevorbye
 services: machine-learning
@@ -10,14 +10,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
 ms.date: 07/12/2019
-ms.openlocfilehash: 9deb369dc812616cd7256bbab4101531ca08f127
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 80508a31db8d86569c52df98697ceb62520059d2
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847929"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002757"
 ---
-# <a name="enable-logging-in-azure-machine-learning-service"></a>Настройка функции ведения журналов для Службы машинного обучения
+# <a name="enable-logging-in-azure-machine-learning"></a>Включение ведения журнала в Машинное обучение Azure
 
 Пакет SDK Python для Машинного обучения Azure позволяет настроить ведение журнала, используя стандартный пакет ведения журнала для Python или собственные функции пакета SDK. Можно вести журналы как локально, так и в рабочей области на портале. Журналы предоставляют разработчикам сведения о состоянии приложения в реальном времени и могут помочь в диагностике ошибок или предупреждений. Из этой статьи вы узнаете:
 
@@ -27,7 +27,7 @@ ms.locfileid: "68847929"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-[Создайте рабочую область Службы машинного обучения Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
+[Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 

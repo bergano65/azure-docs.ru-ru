@@ -1,6 +1,6 @@
 ---
 title: Общие сведения об автоматизированных результатах ML
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте, как просматривать и анализировать диаграммы и метрики для каждого из автоматических запусков машинного обучения.
 services: machine-learning
 author: nilesha
@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/22/2019
-ms.openlocfilehash: 60ecd71419bbf65cceab257cb97a96929d24ec08
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 56d8dff7d158cedb4ab33e811cf5134cdbc475ab
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860556"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999448"
 ---
 # <a name="understand-automated-machine-learning-results"></a>Общие сведения об автоматических результатах машинного обучения
 
@@ -28,7 +28,7 @@ ms.locfileid: "70860556"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * Создайте Автоматический эксперимент машинного обучения с помощью пакета SDK в портал Azure или на целевой странице рабочей области (Предварительная версия).
 

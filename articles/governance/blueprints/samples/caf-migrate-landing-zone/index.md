@@ -8,12 +8,12 @@ ms.topic: sample
 ms.service: blueprints
 manager: carmonm
 ms.custom: fasttrack-new
-ms.openlocfilehash: dc30aeae842cf9c3cd39422517ed49773c524f1e
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 81bde54c65cf3ed25da634c38b7b99e72a187e00
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232836"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002451"
 ---
 # <a name="overview-of-the-microsoft-cloud-adoption-framework-for-azure-migration-landing-zone-blueprint-sample"></a>Общие сведения об использовании Microsoft Cloud Adoption Framework с примером схемы зоны размещения для миграции в соответствии с CAF
 
@@ -29,7 +29,7 @@ ms.locfileid: "70232836"
 
 Эта среда содержит несколько служб Azure, которые обеспечивают защищенную, полностью отслеживаемую систему управления корпоративного уровня. Эта среда включает следующие компоненты:
 
-- экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения сертификатов, ключей и секретов, используемых для виртуальных машин, которые развернуты в среде общих служб;
+- экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md) для размещения сертификатов, ключей и секретов, используемых для виртуальных машин, которые развернуты в среде общих служб;
 - развернутую службу [Log Analytics](../../../../azure-monitor/overview.md), которая обеспечивает регистрацию всех действий и служб в центральном расположении с момента запуска миграции;
 - развернутый [Центр безопасности Azure](../../../../security-center/security-center-intro.md) (стандартная версия), который обеспечивает защиту от угроз для перенесенных рабочих нагрузок;
 - развернутую [виртуальную сеть Azure](../../../../virtual-network/virtual-networks-overview.md), которая предоставляет изолированную сеть и подсети для виртуальной машины;

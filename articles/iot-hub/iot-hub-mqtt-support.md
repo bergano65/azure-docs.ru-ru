@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: robinsh
-ms.openlocfilehash: 9a6b3a538304f2d09941650e3087130c21422dc0
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 6a43b721b70858d82083538638853c5bbdf1531d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946352"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004138"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -48,7 +48,7 @@ ms.locfileid: "68946352"
 | [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |IotHubClientProtocol.MQTT |
 | [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) |MQTT_Protocol |
 | [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) |TransportType.Mqtt |
-| [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples) |IoTHubTransportProvider.MQTT |
+| [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples) |Всегда поддерживает MQTT по умолчанию |
 
 ### <a name="migrating-a-device-app-from-amqp-to-mqtt"></a>Переход от AMQP на MQTT в приложении устройства
 
@@ -59,6 +59,8 @@ ms.locfileid: "68946352"
 * AMQP возвращает ошибки для многих условий, а MQTT завершает подключение. В результате может потребоваться изменить логику обработки исключений.
 
 * MQTT не поддерживает операции *отклонения* при получении [сообщений, отправляемых из облака на устройство](iot-hub-devguide-messaging.md). Если серверное приложение должно получить ответ от приложения устройства, рассмотрите возможность использования [прямых методов](iot-hub-devguide-direct-methods.md).
+
+* AMQP не поддерживается в пакете SDK для Python
 
 ## <a name="using-the-mqtt-protocol-directly-as-a-device"></a>Непосредственное использование протокола MQTT (как устройство)
 
@@ -275,7 +277,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Сообщение о состоянии | Описание |
+|Status | Описание |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 429 | Слишком много запросов (регулируется) в соответствии с [регулированием центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
@@ -306,7 +308,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Сообщение о состоянии | Описание |
+|Status | Описание |
 | ----- | ----------- |
 | 200 | Success |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |

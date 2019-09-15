@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 08/07/2019
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: b451e501b216b02ecb052ee159d0e26343af7901
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: e5bfd2fc127774b9630e87ab4f51241e82ed7c87
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910228"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999069"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
@@ -61,7 +61,7 @@ ms.locfileid: "70910228"
     > [!TIP]
     > Вместо облачного реестра можно использовать локальный реестр Docker для создания прототипов и тестирования.
 
-Если вы не разрабатываете свой модуль на языке C, вам также потребуется [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/) на основе Python, чтобы настроить локальную среду разработки для отладки, запуска и тестирования решения IoT Edge. Если вы этого еще не сделали, установите [Python (2.7 или 3.6) и Pip](https://www.python.org/), а затем установите **iotedgehubdev**, выполнив эту команду в своем терминале.
+Если вы не разрабатываете свой модуль на языке C, вам также потребуется [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/) на основе Python, чтобы настроить локальную среду разработки для отладки, запуска и тестирования решения IoT Edge. Установите [Python (2.7/3.6 +) и PIP](https://www.python.org/) , а затем установите **иотеджехубдев** , выполнив эту команду в терминале, если вы еще этого не сделали.
 
    ```cmd
    pip install --upgrade iotedgehubdev
@@ -269,22 +269,22 @@ Visual Studio Code принимает предоставленные сведе�
       ptvsd.break_into_debugger()
       ```
 
-     Например, если вы хотите отладить метод `receive_message_callback`, вставьте эту строку кода следующим образом:
+     Например, если вы хотите выполнить отладку `receive_message_listener` функции, вставьте следующую строку кода, как показано ниже:
 
       ```python
-      def receive_message_callback(message, hubManager):
+      def receive_message_listener(client):
           ptvsd.break_into_debugger()
-          global RECEIVE_CALLBACKS
-          message_buffer = message.get_bytearray()
-          size = len(message_buffer)
-          print ( "    Data: <<<%s>>> & Size=%d" % (message_buffer[:size].decode ('utf-8'), size) )
-          map_properties = message.properties()
-          key_value_pair = map_properties.get_internals()
-          print ( "    Properties: %s" % key_value_pair )
-          RECEIVE_CALLBACKS += 1
-          print ( "    Total calls received: %d" % RECEIVE_CALLBACKS )
-          hubManager.forward_event_to_output("output1", message, 0)
-          return IoTHubMessageDispositionResult.ACCEPTED
+          global RECEIVED_MESSAGES
+          while True:
+              message = client.receive_message_on_input("input1")   # blocking call
+              RECEIVED_MESSAGES += 1
+              print("Message received on input1")
+              print( "    Data: <<{}>>".format(message.data) )
+              print( "    Properties: {}".format(message.custom_properties))
+              print( "    Total calls received: {}".format(RECEIVED_MESSAGES))
+              print("Forwarding message to output1")
+              client.send_message_to_output(message, "output1")
+              print("Message successfully forwarded")
       ```
 
 1. В строке командной палитры Visual Studio Code выполните следующие действия:

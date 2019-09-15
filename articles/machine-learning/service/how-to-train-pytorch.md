@@ -1,6 +1,6 @@
 ---
 title: Обучение нейронной сети для глубокого обучения с помощью PyTorch
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика PyTorch Машинное обучение Azure.  Примеры сценариев классифицируют Chicken и Турция изображений для создания нейронной сети глубокого обучения на основе руководства по переносу PyTorch.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ author: maxluk
 ms.reviewer: peterlu
 ms.date: 08/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: d7ac3675ec9d90fc51bc9e3c72b76d8fb80312a8
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: c688f5a59a9a6d980f50a726f9da4dc4379ce073
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966787"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002571"
 ---
 # <a name="train-pytorch-deep-learning-models-at-scale-with-azure-machine-learning"></a>Обучить модели глубокого обучения Pytorch в масштабе с помощью Машинное обучение Azure
 
@@ -26,9 +26,9 @@ ms.locfileid: "68966787"
 
 Независимо от того, где вы изучаете модель PyTorch глубокого обучения или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-Дополнительные сведения о [глубоком обучении и машинном](concept-deep-learning-vs-machine-learning.md)обучении.
+Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -67,7 +67,7 @@ from azureml.train.dnn import PyTorch
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-[Рабочая область службы машинное обучение Azure](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) создав объект.
+[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) создав объект.
 
 Создайте объект рабочей области из `config.json` файла, созданного в [разделе Предварительные требования](#prerequisites).
 
@@ -93,7 +93,7 @@ experiment = Experiment(ws, name=experiment_name)
 
 ### <a name="prepare-training-scripts"></a>Подготовка сценариев обучения
 
-В этом руководстве обучающий сценарий `pytorch_train.py`уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения, как есть, и запустить его со службой Машинное обучение Azure.
+В этом руководстве обучающий сценарий `pytorch_train.py`уже предоставлен. На практике вы можете использовать любой пользовательский сценарий обучения, как есть, и запустить его с помощью Машинное обучение Azure.
 
 Отправьте сценарий обучения Pytorch, `pytorch_train.py`.
 
@@ -101,7 +101,7 @@ experiment = Experiment(ws, name=experiment_name)
 shutil.copy('pytorch_train.py', project_folder)
 ```
 
-Тем не менее, если вы хотите использовать функции отслеживания служб Машинное обучение Azure и метрики, необходимо добавить небольшой код объема в обучающий сценарий. Примеры отслеживания метрик можно найти в `pytorch_train.py`.
+Тем не менее, если вы хотите использовать возможности отслеживания Машинное обучение Azure и метрик, вам придется добавить небольшой объем кода в сценарий обучения. Примеры отслеживания метрик можно найти в `pytorch_train.py`.
 
 ## <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
@@ -189,7 +189,7 @@ for f in run.get_file_names():
 
 ## <a name="distributed-training"></a>Распределенное обучение
 
-[`PyTorch`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py) Оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания PyTorch, а Машинное обучение Azure служба будет управлять согласованием.
+[`PyTorch`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py) Оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания PyTorch, а Машинное обучение Azure будет управлять согласованием.
 
 ### <a name="horovod"></a>Horovod
 [Хоровод](https://github.com/uber/horovod) — это платформа с открытым исходным кодом, которая сокращает структуру для распределенного обучения, разработанного Uber. Он предоставляет простой путь к распределенным заданиям PyTorch GPU.
@@ -222,7 +222,7 @@ import horovod
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы обучили и зарегистрировали нейронную сеть глубокого обучения с помощью PyTorch в службе Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
+В этой статье вы обучили и зарегистрировали нейронную сеть глубокого обучения с помощью PyTorch на Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о развертывании модели.
 
 > [!div class="nextstepaction"]
 > [Как и где развертываются модели](how-to-deploy-and-where.md)

@@ -15,16 +15,16 @@ ms.date: 10/16/2018
 ms.author: cephalin
 ms.reviewer: apurvajo
 ms.custom: seodec18
-ms.openlocfilehash: d6d3e91bef6c4f837b068d755994b2f3268600da
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 7c899bae6cf36e68664a3ce60939f72a4b5bd1ab
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074038"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001205"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
-В этом руководстве описано, как защитить свои [приложения службы приложений](https://docs.microsoft.com/azure/app-service/) или [приложения функций](https://docs.microsoft.com/azure/azure-functions/) с помощью созданного (приобретенного) сертификата службы приложений в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis), а затем связать его с приложением службы приложений.
+В этом руководстве описано, как защитить свои [приложения службы приложений](https://docs.microsoft.com/azure/app-service/) или [приложения функций](https://docs.microsoft.com/azure/azure-functions/) с помощью созданного (приобретенного) сертификата службы приложений в [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview), а затем связать его с приложением службы приложений.
 
 > [!TIP]
 > Сертификаты службы приложений можно использовать для любой службы Azure или сторонней службы, а не только в службах приложений. Для этого нужно создать локальную копию (PFX-файл) сертификата службы приложений, чтобы использовать ее с любой службой. Дополнительные сведения см. в записи блога о [создании локальной копии (PFX-файла) сертификата службы приложения](https://blogs.msdn.microsoft.com/benjaminperkins/2017/04/12/export-an-azure-app-service-certificate-pfx-powershell/).
@@ -64,7 +64,7 @@ ms.locfileid: "70074038"
 
 ![вставить изображение для готовности к размещению в хранилище ключей](./media/app-service-web-purchase-ssl-web-site/ReadyKV.png)
 
-[Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) — это служба Azure, которая помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Данное хранилище можно выбрать для сертификатов службы приложений.
+[Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) — это служба Azure, которая помогает защитить криптографические ключи и секреты, используемые облачными приложениями и службами. Данное хранилище можно выбрать для сертификатов службы приложений.
 
 Чтобы создать новое хранилище или выбрать существующее, на странице **Состояние Key Vault** щелкните **Репозиторий Key Vault**. Если был выбран вариант создать новое хранилище, то для его настройки используйте сведения из следующей таблицы, а затем щелкните "Создать". Узнайте, как создать хранилище ключей в той же подписке и группе ресурсов.
 

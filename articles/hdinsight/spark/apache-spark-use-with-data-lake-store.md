@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: f57d054134b9f2c8b327fe157e7a5b5e3d5ff183
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: b8e830cb187b375e17b3dc33c582126adfa32f3e
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813922"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002487"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
@@ -25,7 +25,6 @@ ms.locfileid: "70813922"
 
 * Кластер Azure HDInsight Spark с Data Lake Storage 1-го поколения в качестве хранилища. Следуйте указаниям, приведенным здесь — [Краткое руководство. по настройке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
-    
 ## <a name="prepare-the-data"></a>Подготовка данных
 
 > [!NOTE]  
@@ -57,7 +56,7 @@ ms.locfileid: "70813922"
 
 ## <a name="use-an-hdinsight-spark-cluster-with-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark с Data Lake Storage 1-го поколения
 
-1. На начальной панели [портала Azure](https://portal.azure.com/) щелкните плитку кластера Apache Spark (если она закреплена на начальной панели). Кроме того, вы можете перейти к кластеру, последовательно щелкнув **Просмотреть все** > **Кластеры HDInsight**.
+1. На [портал Azure](https://portal.azure.com/)в начальной панели щелкните плитку для кластера Apache Spark (если он закреплен в начальной панели). Кроме того, вы можете перейти к кластеру, последовательно щелкнув **Просмотреть все** > **Кластеры HDInsight**.
 
 2. В колонке кластера Spark щелкните **Быстрые ссылки**, затем в колонке **Панель мониторинга кластера** выберите **Записная книжка Jupyter**. При появлении запроса введите учетные данные администратора для кластера.
 
@@ -120,7 +119,7 @@ ms.locfileid: "70813922"
 
      Результаты также можно просмотреть и в других визуализациях. Например, диаграмма областей для тех же выходных данных будет выглядеть следующим образом.
 
-     ![Диаграмма с областями, показывающая результат запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output.png "Диаграмма с областями, показывающая результат запроса")
+     ![Диаграмма с областями, показывающая результат запроса](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Диаграмма с областями, показывающая результат запроса")
 
 8. Завершив работу с приложением, следует закрыть записную книжку, чтобы освободить ресурсы. Для этого в записной книжке в меню **Файл** выберите пункт **Close and Halt** (Закрыть и остановить). Это завершит работу записной книжки и закроет ее.
 

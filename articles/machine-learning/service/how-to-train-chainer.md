@@ -1,6 +1,6 @@
 ---
 title: Обучение нейронной сети для глубокого обучения с помощью формирователя цепочки
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте, как выполнять сценарии обучения PyTorch в масштабе предприятия с помощью класса оценщика цепочки Машинное обучение Azure.  Пример сценария классифицирует рукописные цифры для создания нейронной сети глубокого обучения с помощью библиотеки Python на основе NumPy.
 services: machine-learning
 ms.service: machine-learning
@@ -10,24 +10,24 @@ ms.author: maxluk
 author: maxluk
 ms.reviewer: sdgilley
 ms.date: 08/02/2019
-ms.openlocfilehash: bc14ba2bcaa80236717c062abd1dc8a63b58305c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 91e638793d77a6d38f9813345829720d98545293
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966832"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002722"
 ---
-# <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning-service"></a>Обучение и регистрация моделей цепочек в масштабе с помощью службы Машинное обучение Azure
+# <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Обучение и регистрация моделей цепочек в масштабе с помощью Машинное обучение Azure
 
 Из этой статьи вы узнаете, как выполнять сценарии обучения для программы [цепочка](https://chainer.org/) в масштабах предприятия с помощью класса [оценщика цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) машинное обучение Azure. В примере обучающего скрипта в этой статье используется популярный [набор данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр с помощью глубокой нейронной сети (DNN), созданной с помощью библиотеки Python, которая выполняется поверх [NumPy](https://www.numpy.org/).
 
 Независимо от того, обходите ли вы модель цепочки глубокого обучения с нуля или используете существующую модель в облаке, вы можете использовать Машинное обучение Azure для масштабирования заданий обучения с открытым исходным кодом с помощью эластичных облачных ресурсов. Вы можете создавать, развертывать, выполнять версии и отслеживать модели производственного уровня с помощью Машинное обучение Azure. 
 
-Дополнительные сведения о [глубоком обучении и машинном](concept-deep-learning-vs-machine-learning.md)обучении.
+Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Запустите этот код в любой из этих сред:
 
@@ -60,7 +60,7 @@ print("SDK version:", azureml.core.VERSION)
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-[Рабочая область службы машинное обучение Azure](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) создав объект.
+[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) создав объект.
 
 Создайте объект рабочей области, читая `config.json` файл, созданный в [разделе Предварительные требования](#prerequisites):
 
@@ -209,7 +209,7 @@ for f in run.get_file_names():
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы обучили и зарегистрировали нейронную сеть для глубокого обучения, использующую цепочку Машинное обучение Azure службы. Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
+В этой статье вы обучили и зарегистрировали нейронную сеть для глубокого обучения, использующую цепочку Машинное обучение Azure. Чтобы узнать, как развернуть модель, перейдите к статье о [развертывании модели](how-to-deploy-and-where.md) .
 
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 

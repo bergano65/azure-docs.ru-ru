@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: 9424ebbd4ed2e1536a10d77a88257bad948628e2
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: e4414a64b2ee34ec16fde56dd750f2faa26b2e09
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915382"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002982"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
@@ -21,7 +21,7 @@ ms.locfileid: "70915382"
 
 Потоковая передача Spark создает долго выполняющиеся задания, в течение которых можно применить преобразования к данным, а затем передать результаты в файловые системы, базы данных, панели мониторинга и консоль. При такой передаче выполняется обработка микропакетов данных — сначала выполняется сбор пакета событий через определенный интервал времени, а затем этот пакет отправляется на обработку и формирование выходных результатов. Интервалы времени для обработки пакета обычно определяются в долях секунды.
 
-![Потоковая передача Spark](./media/apache-spark-streaming-high-availability/spark-streaming.png)
+![Потоковая передача Spark](./media/apache-spark-streaming-high-availability/apache-spark-streaming.png)
 
 ## <a name="dstreams"></a>Потоки DStream
 
@@ -57,7 +57,7 @@ ms.locfileid: "70915382"
 
 В HDInsight работа кластера координируется согласователем *Yet Another Resource Negotiator* (YARN). Проектирование заданий потоковой передачи Spark высокого уровня доступности включает методы для потоковой передачи Spark и компонентов YARN.  Ниже приведен пример конфигурации, в которой используется YARN. 
 
-![Архитектура YARN](./media/apache-spark-streaming-high-availability/yarn-arch.png)
+![Архитектура YARN](./media/apache-spark-streaming-high-availability/hdi-yarn-architecture.png)
 
 В следующих разделах описываются рекомендации по проектированию этой конфигурации.
 

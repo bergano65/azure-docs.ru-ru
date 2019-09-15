@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 33128cbece3b217778182b3831b02e2f3f654f3b
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: c01f695210ebbd69a26b957e846ff645b1dea5bb
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853212"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999011"
 ---
 # <a name="microsoft-identity-platform-integration-checklist"></a>Контрольный список интеграции платформы идентификации Майкрософт
 
@@ -66,7 +66,7 @@ ms.locfileid: "68853212"
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Если приложение зарегистрировано в каталоге, сократите и вручную проведите наблюдение за списком владельцев регистрации приложений. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не включайте поддержку [потока неявного предоставления OAuth2](v2-oauth2-implicit-grant-flow.md) , если это не требуется явным образом. Сведения о допустимом сценарии см. [здесь](v1-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не используйте [поток учетных данных пароля владельца ресурса (ропк)](v2-oauth-ropc.md), который напрямую обрабатывает пароли пользователей. Этот поток требует высокого уровня доверия и раскрытия пользователей, и его следует использовать, только если другие, более безопасные, потоки использовать нельзя. |
-| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Защитите свои учетные данные приложения и управляйте ими. Используйте [учетные данные сертификата](active-directory-certificate-credentials.md), а не пароль (секреты клиента). Если необходимо использовать учетные данные пароля, не устанавливайте их вручную. Не храните учетные данные в коде или конфигурации и никогда не разрешите им обрабатывать их. По возможности используйте [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) или [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) для хранения и регулярного смены учетных данных. |
+| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Защитите свои учетные данные приложения и управляйте ими. Используйте [учетные данные сертификата](active-directory-certificate-credentials.md), а не пароль (секреты клиента). Если необходимо использовать учетные данные пароля, не устанавливайте их вручную. Не храните учетные данные в коде или конфигурации и никогда не разрешите им обрабатывать их. По возможности используйте [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) или [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) для хранения и регулярного смены учетных данных. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Убедитесь, что приложение запрашивает разрешения с минимальными правами доступа. Запрашивать только разрешения, необходимые приложению, и только тогда, когда это необходимо. Изучите различные [типы разрешений](v1-permissions-and-consent.md#types-of-permissions). При необходимости используйте только разрешения приложения. по возможности используйте делегированные разрешения. Полный список разрешений Microsoft Graph см. в этом [справочнике по разрешениям](https://docs.microsoft.com/graph/permissions-reference). |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Если вы защищаете API с помощью платформы Microsoft Identity, тщательно обдумайте предоставляемые им разрешения. Подумайте, какова правильная степень гранулярности для вашего решения и какие разрешения требуются для предоставления согласия администратора. Проверьте наличие ожидаемых разрешений во входящих маркерах перед принятием решений об авторизации. |
 
@@ -75,7 +75,7 @@ ms.locfileid: "68853212"
 |   |   |
 |---|---|
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Используйте современные решения проверки подлинности (OAuth 2,0, [OpenID Connect Connect](v2-protocols-oidc.md)) для безопасного входа пользователей. |
-| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не реализуйте сами протоколы — используйте [поддерживаемые корпорацией Майкрософт библиотеки проверки](reference-v2-libraries.md) подлинности (MSAL, по промежуточного слоя сервера). Убедитесь, что вы используете последнюю версию библиотеки проверки подлинности, интегрированную с. |
+| ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Не реализуйте сами протоколы — используйте [поддерживаемые корпорацией Майкрософт библиотеки проверки подлинности](reference-v2-libraries.md) (MSAL, по промежуточного слоя сервера). Убедитесь, что вы используете последнюю версию библиотеки проверки подлинности, интегрированную с. |
 | ![Установка](./media/active-directory-integration-checklist/checkbox-two.svg) | Если данные, необходимые для приложения, доступны через [Microsoft Graph](https://developer.microsoft.com/graph), запросите разрешения для этих данных, используя конечную точку Microsoft Graph, а не отдельный API. |
 
 ### <a name="end-user-experience"></a>Возможности для пользователей

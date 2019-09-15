@@ -9,12 +9,12 @@ ms.date: 07/22/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 58c88e9b7cf2e0f80c88d32e02d13096a9623a4b
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: ed668f744716b062fd70d2f63d89152f6fc8a902
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914023"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999140"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -44,7 +44,7 @@ ms.locfileid: "70914023"
 
 - Скачайте и установите [Docker Community Edition](https://docs.docker.com/install/) на компьютере разработки для сборки и запуска образов модуля. Вам необходимо настроить Docker CE для работы в режиме контейнера в Linux или Windows.
 
-- Настройте локальную среду разработки для отладки, запуска и тестирования решения IoT Edge, установив [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/). Установите [Python (2.7 или 3.6) и Pip](https://www.python.org/), а затем установите пакет **iotedgehubdev**, выполнив следующую команду в своем терминале. Используйте версию средства разработки Azure IoT EdgeHub выше версии 0.3.0.
+- Настройте локальную среду разработки для отладки, запуска и тестирования решения IoT Edge, установив [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/). Установите [Python (2.7/3.6 +) и PIP](https://www.python.org/) , а затем установите пакет **иотеджехубдев** , выполнив в терминале следующую команду. Используйте версию средства разработки Azure IoT EdgeHub выше версии 0.3.0.
 
    ```cmd
    pip install --upgrade iotedgehubdev

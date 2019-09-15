@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: 2d369af7c11473d811677f33f9112d41260fcecf
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 48f19e5da8c7703cc597518246c2f62ebce3ae17
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736018"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003175"
 ---
 # <a name="configure-apache-spark-settings"></a>Настройка параметров Apache Spark
 
@@ -44,11 +44,11 @@ ms.locfileid: "70736018"
 Кластер Spark любой версии содержит параметры конфигурации по умолчанию.  Вы можете изменить их, используя настраиваемый файл конфигурации Spark.  Ниже приведен пример такого файла.
 
 ```
-    spark.hadoop.io.compression.codecs org.apache.hadoop.io.compress.GzipCodec
-    spark.hadoop.mapreduce.input.fileinputformat.split.minsize 1099511627776
-    spark.hadoop.parquet.block.size 1099511627776
-    spark.sql.files.maxPartitionBytes 1099511627776
-    spark.sql.files.openCostInBytes 1099511627776
+spark.hadoop.io.compression.codecs org.apache.hadoop.io.compress.GzipCodec
+spark.hadoop.mapreduce.input.fileinputformat.split.minsize 1099511627776
+spark.hadoop.parquet.block.size 1099511627776
+spark.sql.files.maxPartitionBytes 1099511627776
+spark.sql.files.openCostInBytes 1099511627776
 ```
 
 В примере выше переопределяется несколько значений по умолчанию для пяти параметров конфигурации Spark.  К ним относятся кодек сжатия, минимальный размер разделения для заданий MapReduce в Apache Hadoop, размер блоков Parquet, а также раздел Spar SQL и значения по умолчанию для размеров открытых файлов.  Мы выбрали эти изменения конфигурации, так как они лучше подходят для используемых данных и заданий (в этом примере геномные данные).
@@ -63,7 +63,7 @@ ms.locfileid: "70736018"
 
 Чтобы просмотреть значения конфигурации для Apache Spark, выберите **Config History** (История конфигураций), а затем — **Spark2**.  Перейдите на вкладку **Configs** (Конфигурации), а затем в списке служб щелкните ссылку `Spark` (или `Spark2` в зависимости от вашей версии).  Отобразится список значений конфигурации для вашего кластера:
 
-![Конфигурации Spark](./media/apache-spark-settings/spark-config.png)
+![Конфигурации Spark](./media/apache-spark-settings/spark-configurations.png)
 
 Чтобы просмотреть и изменить отдельные значения конфигурации Spark, щелкните ссылку со словом "Spark" в названии.  Конфигурации для Spark содержат как пользовательские, так и расширенные значения конфигурации в следующих категориях:
 
@@ -82,7 +82,7 @@ ms.locfileid: "70736018"
 
 На следующей схеме показаны ключевые объекты Spark. К ним относятся программа драйвера и связанный с ней контекст Spark, а также диспетчер кластера и его рабочие узлы *n*.  Каждый рабочий узел включает в себя исполнитель, кэш и экземпляры задач *n*.
 
-![Объекты кластера](./media/apache-spark-settings/spark-arch.png)
+![Объекты кластера](./media/apache-spark-settings/hdi-spark-architecture.png)
 
 Задания Spark используют рабочие ресурсы, в частности память, поэтому для исполнителей рабочего узла необходимо настроить значения конфигурации Spark.
 
@@ -93,7 +93,7 @@ ms.locfileid: "70736018"
 
 Другим источником информации о ресурсах, используемых исполнителями Spark, является пользовательский интерфейс приложения Spark.  В пользовательском интерфейсе Spark выберите вкладку **Executors** (Исполнители), чтобы отобразить сводные и подробные представления конфигурации и ресурсов, потребляемых исполнителями.  Эти представления могут помочь определить, для чего следует изменить значения по умолчанию исполнителей Spark: для всего кластера или для определенного набора заданий.
 
-![Исполнители Spark](./media/apache-spark-settings/spark-executors.png)
+![Исполнители Spark](./media/apache-spark-settings/apache-spark-executors.png)
 
 Кроме того, можно использовать REST API Ambari для проверки параметров конфигурации кластера HDInsight и Spark программным способом.  Дополнительные сведения см. в [справочнике по API Apache Ambari на сайте GitHub](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
@@ -105,7 +105,7 @@ ms.locfileid: "70736018"
 
 Ниже приведен пример двух рабочих узлов с разными значениями конфигурации.
 
-![Конфигурации двух узлов](./media/apache-spark-settings/executor-config.png)
+![Конфигурации двух узлов](./media/apache-spark-settings/executor-configuration.png)
 
 Ниже приведен список ключевых параметров памяти исполнителя Spark.
 
@@ -116,7 +116,7 @@ ms.locfileid: "70736018"
 
 YARN управляет максимальным объемом памяти, используемой контейнерами на всех узлах Spark. На следующей схеме показаны отношения между объектами конфигурации YARN и Spark для каждого узла.
 
-![Управление памятью Spark в YARN](./media/apache-spark-settings/yarn-spark-memory.png)
+![Управление памятью Spark в YARN](./media/apache-spark-settings/hdi-yarn-spark-memory.png)
 
 ## <a name="change-parameters-for-an-application-running-in-jupyter-notebook"></a>Изменение параметров для приложения, запущенного в записной книжке Jupyter
 
@@ -136,8 +136,8 @@ YARN управляет максимальным объемом памяти, и
 В следующем коде показано, как изменить конфигурацию для приложения, работающего в записной книжке Jupyter.
 
 ```
-    %%configure
-    {"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
+%%configure
+{"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
 ```
 
 ## <a name="conclusion"></a>Заключение

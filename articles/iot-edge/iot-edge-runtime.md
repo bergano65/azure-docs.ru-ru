@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 2b5f44471187f4031642fd674381e672453b7197
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 677ff7ffab22eebdace67151d703ba83c2146602
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884261"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998612"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре
 
@@ -71,7 +71,7 @@ IoT Edge среда выполнения — это набор программ,
    await client.SetInputMessageHandlerAsync(“input1”, messageProcessor, userContext);
    ```
 
-Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [node. js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 Разработчик решений отвечает за указание правил, определяющих, как центр IoT Edge передает сообщения между модулями. Правила маршрутизации определяются в облаке и помещаются в центр IoT Edge в его двойник устройства. Тот же синтаксис для маршрутов Центра Интернета вещей используется при определении маршрутов между модулями в Azure IoT Edge. Дополнительные сведения см. в статьях о [развертывании модулей и установке маршрутов в IOT Edge](module-composition.md).   
 

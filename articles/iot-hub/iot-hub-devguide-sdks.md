@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: e51313bbed21459de9f717edd123887caed18f4b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7113914fe8681ca099fc0f3fc1e4a7d064c19480
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60400666"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000251"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Понимание и использование пакетов SDK для Центра Интернета вещей Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "60400666"
 * [Справочник по модулям](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h).
 * [Перенос пакета SDK C для других платформ](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)
 * [Документация для разработчиков](https://github.com/Azure/azure-iot-sdk-c/tree/master/doc) содержит сведения о кроссплатформенной компиляции, начале работы на различных платформах и т. д.
-* [Azure пакет SDK для C для центра Интернета вещей данные о потреблении](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
+* [Сведения о потреблении ресурсов пакета SDK для центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
 
 Пакет SDK для устройств Azure IoT для Java: 
 
@@ -77,9 +77,9 @@ ms.locfileid: "60400666"
 
 Пакет SDK для устройств Azure IoT для Python: 
 
-* установка из [pip](https://pypi.python.org/pypi/azure-iothub-device-client/);
+* установка из [pip](https://pypi.org/project/azure-iot-device/);
 * [Исходный код](https://github.com/Azure/azure-iot-sdk-python).
-* Справочник по API: см. [Справочная документация по API для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
+* [Справочник по API](https://docs.microsoft.com/python/api/azure-iot-device)
 
 Пакет SDK для устройств Центра Интернета вещей для iOS: 
 
@@ -112,7 +112,7 @@ ms.locfileid: "60400666"
 Пакет SDK для службы Центра Интернета вещей для Пакет SDK для Python: 
 
 * скачивание из [pip](https://pypi.python.org/pypi/azure-iothub-service-client/);
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-python).
+* [Исходный код](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated).
 
 Пакет SDK для службы Центра Интернета вещей для C: 
 
@@ -157,10 +157,10 @@ ms.locfileid: "60400666"
 
 Устройство подготовки Azure и пакеты SDK службы для Python:
 
-* [Исходный код](https://github.com/Azure/azure-iot-sdk-python).
-* Скачивание [пакета SDK для устройств](https://pypi.org/project/azure-iot-provisioning-device-client/) и [пакета SDK службы](https://pypi.org/project/azure-iothub-provisioningserviceclient/) из pip
+* [Исходный код](https://github.com/Azure/azure-iot-device).
+* Скачивание [пакета SDK для устройств](https://pypi.org/project/azure-iot-device/) и [пакета SDK службы](https://pypi.org/project/azure-iothub-provisioningserviceclient/) из pip
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Пакеты SDK для Azure IoT также предоставляют набор инструментов для разработки:
 * [iothub-diagnostics](https://github.com/Azure/iothub-diagnostics) — средство кроссплатформенной командной строки для диагностирования проблем, связанных с подключением к Центру Интернета вещей;

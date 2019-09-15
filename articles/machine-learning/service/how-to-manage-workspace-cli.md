@@ -1,7 +1,7 @@
 ---
 title: Создание рабочих областей с помощью Azure CLI
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать Azure CLI для создания новой рабочей области службы Машинное обучение Azure.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать Azure CLI для создания новой Машинное обучение Azure рабочей области.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.author: larryfr
 author: Blackmist
 ms.date: 08/30/2019
-ms.openlocfilehash: f398eb8124f45562ebc3c4238c641a6638811394
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 75487906e4323ea12a47d75164617212bd3e65d9
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873493"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002633"
 ---
-# <a name="create-a-workspace-for-azure-machine-learning-service-with-azure-cli"></a>Создание рабочей области для Машинное обучение Azure службы с помощью Azure CLI
+# <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Создание рабочей области для Машинное обучение Azure с Azure CLI
 
-Из этой статьи вы узнаете, как создать рабочую область службы Машинное обучение Azure с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с Машинное обучение Azureными ресурсами служб.
+Из этой статьи вы узнаете, как создать Машинное обучение Azure рабочую область с помощью Azure CLI. Azure CLI предоставляет команды для управления ресурсами Azure. Расширение машинного обучения для интерфейса командной строки предоставляет команды для работы с Машинное обучение Azureными ресурсами.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Если у вас ее нет, опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+* **Подписка Azure**. Если у вас ее нет, попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
 * Для использования команд интерфейса командной строки в этом документе из **локальной среды**требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -53,7 +53,7 @@ az extension add -n azure-cli-ml
 
 ## <a name="create-a-workspace"></a>Создать рабочую область
 
-Рабочая область службы Машинное обучение Azure зависит от следующих служб или сущностей Azure:
+Машинное обучение Azure рабочей области полагаются следующие службы или сущности Azure:
 
 > [!IMPORTANT]
 > Если вы не укажете существующую службу Azure, она будет создана автоматически во время создания рабочей области. Необходимо всегда указывать группу ресурсов.
@@ -68,10 +68,10 @@ az extension add -n azure-cli-ml
 
 ### <a name="create-a-resource-group"></a>Создать группу ресурсов
 
-Рабочая область службы Машинное обучение Azure должна быть создана внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Чтобы __создать новую группу ресурсов__, используйте следующую команду. Замените `<resource-group-name>` именем, которое будет использоваться для этой группы ресурсов. Замените `<location>` на регион Azure, который будет использоваться для этой группы ресурсов:
+Рабочая область Машинное обучение Azure должна быть создана внутри группы ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. Чтобы __создать новую группу ресурсов__, используйте следующую команду. Замените `<resource-group-name>` именем, которое будет использоваться для этой группы ресурсов. Замените `<location>` на регион Azure, который будет использоваться для этой группы ресурсов:
 
 > [!TIP]
-> Необходимо выбрать регион, в котором доступна служба Машинное обучение Azure. Дополнительные сведения см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service).
+> Необходимо выбрать регион, в котором доступна Машинное обучение Azure. Дополнительные сведения см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service).
 
 ```azurecli-interactive
 az group create --name <resource-group-name> --location <location>
@@ -170,7 +170,7 @@ az ml workspace create -w <workspace-name> -g <resource-group-name>
     `"/subscriptions/<service-GUID>/resourceGroups/<resource-group-name>/providers/Microsoft.ContainerRegistry/registries/<acr-name>"`
 
     > [!IMPORTANT]
-    > В реестре контейнеров должна быть включена [учетная запись администратора](/azure/container-registry/container-registry-authentication#admin-account) , прежде чем ее можно будет использовать в рабочей области службы машинное обучение Azure.
+    > В реестре контейнеров должна быть включена [учетная запись администратора](/azure/container-registry/container-registry-authentication#admin-account) , прежде чем ее можно будет использовать с рабочей областью машинное обучение Azure.
 
 Получив идентификаторы ресурсов, которые вы хотите использовать с рабочей областью, используйте команду Base `az workspace create -w <workspace-name> -g <resource-group-name>` и добавьте параметры и идентификаторы для существующих ресурсов. Например, следующая команда создает рабочую область, которая использует существующий реестр контейнеров:
 
@@ -302,7 +302,7 @@ az ml workspace update -w <workspace-name> -g <resource-group-name>
 az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user> --role <role>
 ```
 
-Дополнительные сведения об управлении доступом на основе ролей (RBAC) с помощью службы Машинное обучение Azure см. в разделе [Manage Users and Roles](how-to-assign-roles.md).
+Дополнительные сведения об управлении доступом на основе ролей (RBAC) с Машинное обучение Azure см. в разделе [Manage Users and Roles](how-to-assign-roles.md).
 
 Дополнительные сведения см. в документации по [общей рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-share) .
 

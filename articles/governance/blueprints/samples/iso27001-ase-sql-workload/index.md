@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 8877c29341c95d5cd0fe8e35887c44594e0b6d41
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: cee3867449aea1cb1c59ac5a7c3be57291d1aebc
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231765"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000140"
 ---
 # <a name="overview-of-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Обзор примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001
 
@@ -36,7 +36,7 @@ ms.locfileid: "70231765"
 - Служба [Политики Azure](../../../policy/overview.md), которая позволяет ограничить список служб, развертываемых в среде, и запретить создание общедоступных IP-адресов (PIP).
 - Виртуальная сеть с одной подсетью и обратным пиринговым подключением к существующей среде [общих служб](../iso27001-shared/index.md) для принудительной передачи всего трафика через брандмауэр [общих служб](../iso27001-shared/index.md). В виртуальной сети размещаются следующие ресурсы:
   - Экземпляры [Среды службы приложений Azure](../../../../app-service/environment/intro.md), которые можно использовать для размещения веб-приложений, веб-интерфейсов API или функций.
-  - Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md), использующий конечную точку службы виртуальной сети, для хранения секретов приложений, которые работают в среде рабочей нагрузки.
+  - Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md), использующий конечную точку службы виртуальной сети, для хранения секретов приложений, которые работают в среде рабочей нагрузки.
   - Экземпляр [Базы данных SQL Azure](../../../../sql-database/sql-database-technical-overview.md), использующий конечную точку службы виртуальной сети, для размещения баз данных для приложений в среде рабочей нагрузки.
 
 ## <a name="next-steps"></a>Дальнейшие действия

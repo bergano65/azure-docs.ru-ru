@@ -6,12 +6,12 @@ ms.author: jahender
 ms.date: 4/9/2019
 ms.topic: article
 ms.service: security
-ms.openlocfilehash: 3a27eac3d4609f1054b0ef6a9417fe2f1ca53ae4
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: a12f5643c96b855d07bd038fcc96100a87f1252d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656649"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001879"
 ---
 # <a name="secure-azure-computing-architecture"></a>Безопасная архитектура вычислительных ресурсов Azure
 
@@ -118,7 +118,7 @@ ms.locfileid: "69656649"
     - [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview )
     - [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) 
     - [Наблюдатель за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) 
-    - [Хранилище ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) 
+    - [Хранилище ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-overview) 
     - [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
     - [Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/overview)
     - [Брандмауэр Azure](https://docs.microsoft.com/azure/firewall/overview) 

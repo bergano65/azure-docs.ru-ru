@@ -1,19 +1,19 @@
 ---
 title: Константы SQL в Azure Cosmos DB
-description: Дополнительные сведения о константах SQL в Azure Cosmos DB
+description: Сведения о константах SQL в Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tisande
-ms.openlocfilehash: ed337c8330eb8b3e4ad97c92cca1d0c5977f9588
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 41cafeb76b7b9481a78ffcff179676d0aa7bf6fd
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342913"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002043"
 ---
-# <a name="azure-cosmos-db-sql-query-constants"></a>Azure Cosmos DB SQL запроса константы  
+# <a name="azure-cosmos-db-sql-query-constants"></a>Константы запроса SQL Azure Cosmos DB  
 
  Константа (также известная как литерал или скаляр) — это символ, представляющий определенное значение данных. Формат константы зависит от типа данных значения, которое она представляет.  
   
@@ -26,10 +26,10 @@ ms.locfileid: "67342913"
 |**Логический**|Доступные значения: **false**, **true**|  
 |**Число**|Число с плавающей запятой двойной точности, стандарт IEEE 754.|  
 |**Строка**|Последовательности из нуля или более знаков Юникода. Строки необходимо заключить в одинарные или двойные кавычки.|  
-|**Массив**|Последовательность из нуля или более элементов. Каждый элемент может быть любой скалярный тип данных, за исключением **Undefined**.|  
+|**Массив**|Последовательность из нуля или более элементов. Каждый элемент может быть значением любого скалярного типа данных, за исключением **неопределенного**.|  
 |**Объект**|Неупорядоченный набор из нуля или более пар "имя — значение". Имя является строкой Юникода. Значение может иметь любой скалярный тип данных (за исключением типа **Неопределенное**).|  
   
-## <a name="bk_syntax"></a>Синтаксис
+## <a name="bk_syntax"></a>Syntax
   
 ```sql  
 <constant> ::=  
@@ -59,7 +59,7 @@ ms.locfileid: "67342913"
   
 ```  
   
-##  <a name="bk_arguments"></a> Аргументы
+##  <a name="bk_arguments"></a>Даваемых
   
 * `<undefined_constant>; Undefined`  
   
@@ -116,7 +116,7 @@ ms.locfileid: "67342913"
 |\t|TAB|U+0009|  
 |\uXXXX|Символ Юникода, определяемый 4 шестнадцатеричными цифрами.|U+XXXX|  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-dotnet)
-- [Данные документов модели](modeling-data.md)
+- [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
+- [Данные документа модели](modeling-data.md)

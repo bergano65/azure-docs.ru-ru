@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: jingwang
-ms.openlocfilehash: 735013046f65a9dba345c52db883df0b114ba7f2
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 3f46c54edff2bc765e75742848f83d30e7aa7c09
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892052"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003403"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
-Учетные данные для хранилищ данных и вычислительных ресурсов можно хранить в [Azure Key Vault](../key-vault/key-vault-whatis.md). Фабрика данных Azure извлекает учетные данные при выполнении действия, которое использует хранилище данных или вычислительный ресурс.
+Учетные данные для хранилищ данных и вычислительных ресурсов можно хранить в [Azure Key Vault](../key-vault/key-vault-overview.md). Фабрика данных Azure извлекает учетные данные при выполнении действия, которое использует хранилище данных или вычислительный ресурс.
 
 Сейчас эта функция поддерживается для всех видов действий, кроме пользовательских действий. Дополнительные сведения о настройке соединителя см. в разделе "Свойства связанной службы" [в статьях, посвященных каждому типу соединителей](copy-activity-overview.md#supported-data-stores-and-formats).
 

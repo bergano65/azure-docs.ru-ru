@@ -1,7 +1,7 @@
 ---
 title: Справочник по геопространственной функции OData — Поиск Azure
 description: Геопространственные функции OData, Geo. Distance и Geo. INTERSECT в запросах поиска Azure.
-ms.date: 06/13/2019
+ms.date: 09/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -19,18 +19,21 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 9585a9a7ea976ed32ccb8eed1e69877339196f87
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 03220786c65ab510a632252b20d593cd96a90494
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69647563"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003447"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-search---geodistance-and-geointersects"></a>Геопространственные функции OData в службе поиска Azure — `geo.distance` и`geo.intersects`
 
 Поиск Azure поддерживает геопространственные запросы в [выражениях фильтра OData](query-odata-filter-orderby-syntax.md) с `geo.distance` помощью функций `geo.intersects` и. `geo.distance` Функция возвращает расстояние в километрах между двумя точками, одно из которых является переменной поля или диапазона, а второй — константой, передаваемой в качестве части фильтра. `geo.intersects` Функция возвращает`true` , если заданная точка находится внутри заданного многоугольника, где точка — это поле или переменная диапазона, а многоугольник — как константа, передаваемая как часть фильтра.
 
-Функция также может использоваться в параметре [ **$OrderBy** ](search-query-odata-orderby.md) для сортировки результатов поиска по расстоянию от заданной точки. `geo.distance` Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании `geo.distance` в **$OrderBy**поле, к которому оно применяется, должно иметь тип `Edm.GeographyPoint` , а также быть **сортируемый**.
+Функция также может использоваться в [параметре **$OrderBy** ](search-query-odata-orderby.md) для сортировки результатов поиска по расстоянию от заданной точки. `geo.distance` Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании `geo.distance` в **$OrderBy**поле, к которому оно применяется, должно иметь тип `Edm.GeographyPoint` , а также быть **сортируемый**.
+
+> [!NOTE]
+> При использовании `geo.distance` в параметре **$OrderBy** поле, передаваемое в функцию, должно содержать только одну географическую точку. Иными словами, он должен иметь тип `Edm.GeographyPoint` , а не. `Collection(Edm.GeographyPoint)` Невозможно выполнить сортировку по полям коллекции в службе поиска Azure.
 
 ## <a name="syntax"></a>Синтаксис
 

@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3cd8cd0b72f1b3ccea557ce0e12394081329dc5b
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 71b7e4bd9406e7fb300ebccd86908820b7628c29
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883301"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000759"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "70883301"
 Эта функция недоступна для Китая.
 
 > [!NOTE]
-> Дополнительные сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](key-vault-whatis.md)  
+> Дополнительные сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](key-vault-overview.md)  
 > Указания по началу работы, включая создание хранилища для ключей, защищенных модулем HSM, см. в [этой статье](key-vault-overview.md).
 
 Дополнительные сведения о создании и передаче ключей, защищенных аппаратным модулем безопасности, через Интернет:

@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: b590eeb86972a8e769fc240b1935c6c8ed32530a
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: e723fab12c6ba88ec5698a697ba1ddd774eed7e2
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231731"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000517"
 ---
 # <a name="overview-of-the-iso-27001-shared-services-blueprint-sample"></a>Обзор примера схемы "ISO 27001: общие службы"
 
@@ -38,7 +38,7 @@ ms.locfileid: "70231731"
   - jumpbox или узел-бастион, используемый для управления, доступ к которому можно получить, развернув [Брандмауэр Azure](../../../../firewall/overview.md) в подсети стека входящего трафика;
   - две виртуальные машины, в которых работают доменные службы Active Directory (ADDS) и DNS, доступные только с использованием jumpbox и настраиваемые только для репликации AD через подключение VPN или [ExpressRoute](../../../../expressroute/expressroute-introduction.md) (не развертывается схемой);
   - использование [Наблюдателя за сетями Azure](../../../../network-watcher/network-watcher-monitoring-overview.md) и стандартной защиты от атак DDoS.
-- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
+- Экземпляр [Azure Key Vault](../../../../key-vault/key-vault-overview.md) для размещения секретов, используемых для виртуальных машин, которые развернуты в среде общих служб
 
 Все эти элементы соответствуют проверенным на практике рекомендациям, опубликованным в [Центре архитектуры Azure (эталонные архитектуры)](/azure/architecture/reference-architectures/).
 

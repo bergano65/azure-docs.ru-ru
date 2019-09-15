@@ -1,7 +1,7 @@
 ---
 title: Настройка Application Insights Azure для мониторинга моделей машинного обучения
-titleSuffix: Azure Machine Learning service
-description: Мониторинг веб-служб, развернутых со службой Машинное обучение Azure, с помощью Application Insights Azure
+titleSuffix: Azure Machine Learning
+description: Мониторинг веб-служб, развернутых с помощью Машинное обучение Azure Azure Application Insights
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: marthalc
 author: marthalc
 ms.date: 07/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: ff9261e2720ed80fc96131cea69d2985c8e0883e
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 785507e9ae12d8da564a223c8cdf544a98b8de61
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858760"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002869"
 ---
 # <a name="monitor-your-azure-machine-learning-models-with-application-insights"></a>Мониторинг моделей машинного обучения в Azure с помощью Application Insights
 
-В этой статье описано, как настроить Azure Application Insights для службы машинного обучения Azure. Application Insights можно использовать для отслеживания следующих параметров:
+Из этой статьи вы узнаете, как настроить Azure Application Insights для Машинное обучение Azure. Application Insights можно использовать для отслеживания следующих параметров:
 * частоты запросов, времени отклика и частоты сбоев;
 * частоты зависимостей, времени отклика и частоты сбоев;
 * Исключения.
@@ -30,7 +30,7 @@ ms.locfileid: "70858760"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. В руководстве по [настройке среды разработки](how-to-configure-environment.md) описано, как получить эти обязательные компоненты.
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. руководство по [обучению модели классификации изображений](tutorial-train-models-with-aml.md).
@@ -111,7 +111,7 @@ ms.locfileid: "70858760"
  
 
 ## <a name="evaluate-data"></a>Данные оценки
-Данные службы будут храниться в учетной записи Application Insights в той же группе ресурсов, что и рабочая среда службы машинного обучения Azure.
+Данные службы хранятся в учетной записи Application Insights в той же группе ресурсов, что и Машинное обучение Azure.
 Чтобы их просмотреть:
 1. Откройте рабочее пространство Службы машинного обучения на [портале Azure](https://portal.azure.com) и щелкните ссылку Application Insights.
 

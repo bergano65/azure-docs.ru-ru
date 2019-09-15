@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: cdb1b49af5d3a85dc1853e5964c1cdfdd5c3a7cd
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 679de2d3a5519e57978239ddd75a4b9fa2ffef3c
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716675"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998757"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -37,7 +37,6 @@ ms.locfileid: "68716675"
 - [Поставщик RESTful](restful-technical-profile.md) — вызов служб REST API Services, таких как проверка вводимых пользователем данных, обогащение пользовательской информации или интеграция с бизнес-приложениями.
 - [SAML2](saml-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу SAML.
 - [Самостоятельное подтверждение](self-asserted-technical-profile.md): взаимодействие с пользователем. Например, получение учетных данных пользователя для входа, а затем отображение страницы регистрации или сброса пароля.
-- **WsFed**: федерация с любым поставщиком удостоверений по протоколу WsFed.
 - [Управление сеансами](active-directory-b2c-reference-sso-custom.md): работа с различными типами сеансов.
 - **Application Insights**.
 
