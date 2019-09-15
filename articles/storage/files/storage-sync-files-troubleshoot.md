@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: c6b9c0a8615960772ccac824c293b5f4ea6cfe55
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 78e113f881d1f62c9848ba40f039fa19eeb09055
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129196"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996452"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -395,6 +395,18 @@ PerItemErrorCount: 1006.
     ```
 2. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
 3. [Убедитесь, что параметры брандмауэра и виртуальной сети в учетной записи хранения настроены должным образом (если они включены).](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=azure-portal#configure-firewall-and-virtual-network-settings)
+
+<a id="-2134364022"></a><a id="storage-unknown-error"></a>**При доступе к учетной записи хранения произошла неизвестная ошибка.**  
+
+| | |
+|-|-|
+| **HRESULT** | 0x80c8308a |
+| **HRESULT (десятичное число)** | — 2134364022 |
+| **Строка ошибки** | ECS_E_STORAGE_ACCOUNT_UNKNOWN_ERROR |
+| **Требуются действия по исправлению** | Да |
+
+1. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
+2. [Убедитесь, что параметры брандмауэра и виртуальной сети в учетной записи хранения настроены должным образом (если они включены).](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=azure-portal#configure-firewall-and-virtual-network-settings)
 
 <a id="-1906441138"></a>**Сбой синхронизации из-за проблемы с базой данных синхронизации.**  
 

@@ -3,16 +3,17 @@ title: Использование Caffe в кластере Azure HDInsight Spar
 description: Используйте Caffe на Apache Spark для распределенного глубокого обучения в Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: 31911c6c2456ab8b4949bab6ef8e541b91fc8a2c
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: bb234e5b34bd8046c4e65d7cc6812cde0db3b5b2
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814197"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995617"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 
@@ -65,7 +66,7 @@ HDInsight — это платформа PaaS, предоставляющая р
 
 Чтобы приступить к работе, вы можете выполнить это действие сценария в кластере для всех рабочих и головных узлов (для HDInsight 3.5). Можно выполнить действия сценария в существующем кластере или использовать их во время создания кластера. Дополнительные сведения о действиях сценария см. в [этой документации](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
-![Действия скриптов для установки зависимостей](./media/apache-spark-deep-learning-caffe/Script-Action-1.png)
+![Действия скриптов для установки зависимостей](./media/apache-spark-deep-learning-caffe/submit-script-action.png)
 
 
 ## <a name="step-2-build-caffe-on-apache-spark-for-hdinsight-on-the-head-node"></a>Шаг 2. Создание Caffe в Apache Spark для Azure HDInsight на головном узле
@@ -175,7 +176,8 @@ Caffe использует "выразительную" архитектуру, 
     # solver mode: CPU or GPU
     solver_mode: CPU
 
-![Caffe config1](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
+![Caffe config1](./media/apache-spark-deep-learning-caffe/caffe-configuration1.png
+)
 
 При необходимости вы можете изменить и другие строки.
 
@@ -184,7 +186,7 @@ Caffe использует "выразительную" архитектуру, 
 - Замените file:/Users/mridul/bigml/demodl/mnist_train_lmdb на wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb.
 - Замените file:/Users/mridul/bigml/demodl/mnist_test_lmdb/ на wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb.
 
-![Caffe Config2](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
+![Caffe Config2](./media/apache-spark-deep-learning-caffe/caffe-configuration2.png)
 
 Дополнительные сведения об определении сети см. в [документации Caffe по использованию набора данных MNIST](https://caffe.berkeleyvision.org/gathered/examples/mnist.html).
 
@@ -204,15 +206,15 @@ Caffe использует "выразительную" архитектуру, 
 
     https://yourclustername.azurehdinsight.net/yarnui
    
-![Пользовательский интерфейс YARN](./media/apache-spark-deep-learning-caffe/YARN-UI-1.png)
+![Пользовательский интерфейс YARN](./media/apache-spark-deep-learning-caffe/apache-yarn-window-1.png)
 
 Здесь вы можете просмотреть сведения о количестве выделенных ресурсов для этого конкретного приложения. Щелкнув ссылку "Планировщик", вы увидите, что для этого приложения запущено девять контейнеров. Восемь из них используются в качестве исполнителей, а один для обработки драйвера. 
 
-![Планировщик YARN](./media/apache-spark-deep-learning-caffe/YARN-Scheduler.png)
+![Планировщик YARN](./media/apache-spark-deep-learning-caffe/apache-yarn-scheduler.png)
 
 При сбое можно проверить журналы драйвера или контейнера. Чтобы просмотреть журналы драйвера, в пользовательском интерфейсе YARN щелкните идентификатор приложения, а затем нажмите кнопку "Журналы". Журналы драйвера записываются в поток stderr.
 
-![Пользовательский интерфейс YARN 2](./media/apache-spark-deep-learning-caffe/YARN-UI-2.png)
+![Пользовательский интерфейс YARN 2](./media/apache-spark-deep-learning-caffe/apache-yarn-window-2.png)
 
 Например, в некоторых журналах вы можете увидеть указанные ниже сообщения об ошибках, указывающие на наличие слишком большого числа исполнителей.
 

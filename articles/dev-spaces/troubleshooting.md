@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 6ab2e0866c4e6c5cc8f89cb490504f6ca6a076fc
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: b16a7d874f15747c14df1d728be824fac76de2be
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019648"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993961"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -445,7 +445,7 @@ azure-cli                         2.0.60 *
 
 ### <a name="reason"></a>Причина
 
-При запуске службы в пространстве разработки этот модуль служб внедряется в [дополнительные контейнеры для инструментирования](how-dev-spaces-works.md#prepare-your-aks-cluster) , а все контейнеры в Pod должны иметь ограничения ресурсов и запросы, настроенные для горизонтального автомасштабирования Pod. 
+При запуске службы в пространстве разработки этот модуль служб [внедряется в дополнительные контейнеры для инструментирования](how-dev-spaces-works.md#prepare-your-aks-cluster) , а все контейнеры в Pod должны иметь ограничения ресурсов и запросы, настроенные для горизонтального автомасштабирования Pod. 
 
 
 Запросы и ограничения ресурсов могут быть применены к внедренному контейнеру (девспацес-proxy) путем добавления `azds.io/proxy-resources` заметки в спецификацию Pod. Значение должно быть задано для объекта JSON, представляющего раздел Resources в спецификации контейнера для учетной записи-посредника.
@@ -456,3 +456,40 @@ azure-cli                         2.0.60 *
 ```
 azds.io/proxy-resources: "{\"Limits\": {\"cpu\": \"300m\",\"memory\": \"400Mi\"},\"Requests\": {\"cpu\": \"150m\",\"memory\": \"200Mi\"}}"
 ```
+
+## <a name="error-unauthorized-authentication-required-when-trying-to-use-a-docker-image-from-a-private-registry"></a>Ошибка "не авторизовано: требуется проверка подлинности" при попытке использовать образ DOCKER из частного реестра
+
+### <a name="reason"></a>Причина
+
+Вы используете образ DOCKER из частного реестра, требующего проверки подлинности. Вы можете разрешить модулям разработки выполнять проверку подлинности и извлечение образов из этого частного реестра с помощью [имажепуллсекретс](https://kubernetes.io/docs/concepts/configuration/secret/#using-imagepullsecrets).
+
+### <a name="try"></a>Попытка
+
+Чтобы использовать Имажепуллсекретс, [Создайте секрет Kubernetes](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod) в пространстве имен, где используется образ. Затем укажите секрет в качестве Имажепуллсекрет в `azds.yaml`.
+
+Ниже приведен пример указания Имажепуллсекретс в `azds.yaml`.
+
+```
+kind: helm-release
+apiVersion: 1.1
+build:
+  context: $BUILD_CONTEXT$
+  dockerfile: Dockerfile
+install:
+  chart: $CHART_DIR$
+  values:
+  - values.dev.yaml?
+  - secrets.dev.yaml?
+  set:
+    # Optional, specify an array of imagePullSecrets. These secrets must be manually created in the namespace.
+    # This will override the imagePullSecrets array in values.yaml file.
+    # If the dockerfile specifies any private registry, the imagePullSecret for the registry must be added here.
+    # ref: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    #
+    # This uses credentials from secret "myRegistryKeySecretName".
+    imagePullSecrets:
+      - name: myRegistryKeySecretName
+```
+
+> [!IMPORTANT]
+> Установка имажепуллсекретс в `azds.yaml` приведет к переопределению имажепуллсекретс `values.yaml`, указанного в.

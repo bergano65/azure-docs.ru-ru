@@ -1,6 +1,6 @@
 ---
 title: 'Набор средств Azure Toolkit for IntelliJ. Удаленная отладка приложений в HDInsight Spark '
-description: Узнайте, как использовать средства HDInsight в наборе средств Azure для IntelliJ для удаленной отладки приложений Spark, выполняемых в кластерах HDInsight через VPN.
+description: Узнайте, как использовать средства HDInsight в Azure Toolkit for IntelliJ для удаленной отладки приложений Spark, работающих в кластерах HDInsight через VPN.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: 28f154c4bd8bb1675eac509bd9d6dab9bb6af026
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 404f96e91db8df0dd4246b7d744e463ce0e457a1
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67066230"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70994093"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ
 
@@ -27,7 +27,8 @@ ms.locfileid: "67066230"
 1. Создание приложения Scala в IntelliJ IDEA и его настройка для удаленной отладки.
 1. Запуск и отладка приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
+
 * **Подписка Azure**. Чтобы узнать больше, ознакомьтесь с [получением бесплатной пробной учетной записи Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Кластер Apache Spark в HDInsight**. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 * **Комплект разработчика Oracle Java**. Его можно установить с [веб-сайта Oracle](https://aka.ms/azure-jdks).
@@ -37,6 +38,7 @@ ms.locfileid: "67066230"
 * **Обработка исключений**. При запуске приложения Spark Scala для удаленной отладки на компьютере Windows может возникнуть исключение. Это исключение описывается в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356) и порождается из-за отсутствия файла WinUtils.exe в Windows. Чтобы обойти эту ошибку, нужно [скачать этот исполняемый файл](https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например в папку **C:\WinUtils\bin**. Добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
 
 ## <a name="step-1-create-an-azure-virtual-network"></a>Шаг 1. Создание виртуальной сети Azure
+
 Следуйте инструкциям по созданию виртуальной сети Azure по ссылкам ниже. Затем проверьте сетевое подключение между своим компьютером и этой виртуальной сетью.
 
 * [Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью портала Azure](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
@@ -44,35 +46,45 @@ ms.locfileid: "67066230"
 * [Настройка подключения к виртуальной сети типа "точка — сеть" с помощью PowerShell](../../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md)
 
 ## <a name="step-2-create-an-hdinsight-spark-cluster"></a>Шаг 2. Создание кластера HDInsight Spark
+
 Рекомендуется создать в Azure HDInsight кластер Apache Spark в составе созданной вами виртуальной сети Azure. Воспользуйтесь сведениями из статьи [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). На этапе дополнительной настройки выберите виртуальную сеть Azure, созданную на предыдущем шаге.
 
 ## <a name="step-3-verify-the-connectivity-between-the-cluster-head-node-and-your-desktop"></a>Шаг 3. Проверка подключения между головным узлом кластера и компьютером
+
 1. Прежде всего необходимо получить IP-адрес головного узла. Откройте пользовательский интерфейс Ambari для кластера. В колонке кластера щелкните **Панель мониторинга**.
 
-    ![Выбор панели мониторинга в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-ambari-ui.png)
+    ![Выбор панели мониторинга в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/launch-apache-ambari.png)
+
 1. В пользовательском интерфейсе Ambari выберите **Hosts** (Узлы).
 
-    ![Выборе "Hosts" (Узлы) в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-hosts.png)
+    ![Выборе "Hosts" (Узлы) в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/apache-ambari-hosts1.png)
+
 1. Отобразится список головных узлов, рабочих узлов и узлов zookeeper. Головные узлы отличаются наличием префикса **hn**\*. Выберите первый головной узел.
 
-    ![Поиск головного узла в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/cluster-headnodes.png)
+    ![Поиск головного узла в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-cluster-headnodes.png)
+
 1. В области **Summary** (Сводка) в нижней части открывшейся страницы скопируйте значения **IP Address** (IP-адрес) и **Hostname** (Имя узла) для головного узла.
 
-    ![Поиск IP-адреса в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address.png)
+    ![Поиск IP-адреса в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/headnode-ip-address1.png)
+
 1. Добавьте IP-адрес и имя головного узла в файл **hosts** на компьютер, на котором вы собираетесь выполнять и удаленно отлаживать задание Spark. Это обеспечит обмен данными с головным узлом с помощью IP-адреса и имени узла.
 
-   a. Откройте Блокнот с повышенным уровнем разрешений. В меню **Файл** выберите **Открыть** и найдите папку с файлом hosts. На компьютере Windows это папка **C:\Windows\System32\Drivers\etc\hosts**.
+   1\. Откройте Блокнот с повышенным уровнем разрешений. В меню **Файл** выберите **Открыть** и найдите папку с файлом hosts. На компьютере Windows это папка **C:\Windows\System32\Drivers\etc\hosts**.
 
    2\. Добавьте в файл **hosts** следующие данные.
 
-           # For headnode0
-           192.xxx.xx.xx hn0-nitinp
-           192.xxx.xx.xx hn0-nitinp.lhwwghjkpqejawpqbwcdyp3.gx.internal.cloudapp.net
+    ```
+    # For headnode0
+    192.xxx.xx.xx hn0-nitinp
+    192.xxx.xx.xx hn0-nitinp.lhwwghjkpqejawpqbwcdyp3.gx.internal.cloudapp.net
+    
+    # For headnode1
+    192.xxx.xx.xx hn1-nitinp
+    192.xxx.xx.xx hn1-nitinp.lhwwghjkpqejawpqbwcdyp3.gx.internal.cloudapp.net
+    ```
 
-           # For headnode1
-           192.xxx.xx.xx hn1-nitinp
-           192.xxx.xx.xx hn1-nitinp.lhwwghjkpqejawpqbwcdyp3.gx.internal.cloudapp.net
 1. На компьютере, подключенном к виртуальной сети Azure и используемом кластером HDInsight, проверьте связь с головными узлами при помощи IP-адреса и имени узла.
+
 1. Установите SSH-подключение к головному узлу кластера, следуя инструкциям из раздела [Подключение к кластеру HDInsight на основе Linux](../hdinsight-hadoop-linux-use-ssh-unix.md). Проверьте связь головного узла кластера с компьютером при помощи IP-адреса. Проверьте подключение к обоим IP-адресам, назначенным компьютеру:
 
     - IP-адресу сетевого подключения и
@@ -81,11 +93,12 @@ ms.locfileid: "67066230"
 1. Повторите эти действия на другом головном узле.
 
 ## <a name="step-4-create-an-apache-spark-scala-application-by-using-hdinsight-tools-in-azure-toolkit-for-intellij-and-configure-it-for-remote-debugging"></a>Шаг 4. Создание приложения Apache Spark Scala с помощью средств HDInsight в Azure Toolkit for IntelliJ и его настройка для удаленной отладки
+
 1. Откройте IntelliJ IDEA и создайте проект. В диалоговом окне **Новый проект** сделайте следующее:
 
     ![Выбор шаблона нового проекта в IntelliJ IDEA](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-hdi-scala-app.png)
 
-    a. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
+    1\. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
 
     2\. Щелкните **Далее**.
 1. В следующем диалоговом окне **New Project** (Новый проект) выполните приведенные ниже действия, после чего щелкните **Finish** (Готово).
@@ -100,102 +113,123 @@ ms.locfileid: "67066230"
   
 1. Проект Spark автоматически создаст артефакт. Чтобы просмотреть артефакт, сделайте следующее:
 
-    a. В меню **File** (Файл) выберите **Project Structure** (Структура проекта).
+    1\. В меню **File** (Файл) выберите **Project Structure** (Структура проекта).
 
     2\. В диалоговом окне **Project Structure** (Структура проекта) щелкните **артефакты**, чтобы просмотреть созданный по умолчанию артефакт. Вы также можете создать собственный артефакт, щелкнув значок "плюс" ( **+** ).
 
-   ![Создание JAR-файла](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/default-artifact.png)
+   ![Создание JAR-файла](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-default-artifact.png)
 
 
 1. Добавьте библиотеки в проект. Чтобы добавить библиотеку, выполните следующее.
 
-    a. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля). 
+    1\. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля). 
 
     2\. В диалоговом окне **Project Structure** (Структура проекта) выберите **Libraries** (Библиотеки), щелкните символ ( **+** ), а затем выберите **From Maven** (Из Maven).
 
-    ![Добавление библиотеки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/add-library.png)
+    ![Добавление библиотеки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-add-library.png)
 
-    c. В диалоговом окне **Download Library from Maven Repository** (Скачивание библиотеки из репозитория Maven) найдите и добавьте перечисленные ниже библиотеки.
+    В. В диалоговом окне **Download Library from Maven Repository** (Скачивание библиотеки из репозитория Maven) найдите и добавьте перечисленные ниже библиотеки.
 
    * `org.scalatest:scalatest_2.10:2.2.1`
    * `org.apache.hadoop:hadoop-azure:2.7.1`
+
 1. Скопируйте файлы `yarn-site.xml` и `core-site.xml` с головного узла кластера и добавьте их в проект. Выполните указанные ниже команды, чтобы скопировать файлы. Для выполнения приведенных далее команд `scp` можно использовать [Cygwin](https://cygwin.com/install.html). Это позволит копировать файлы с головных узлов кластера.
 
-        scp <ssh user name>@<headnode IP address or host name>://etc/hadoop/conf/core-site.xml .
+    ```bash
+    scp <ssh user name>@<headnode IP address or host name>://etc/hadoop/conf/core-site.xml .
+    ```
 
     Так как мы уже добавили IP-адреса и имена головных узлов кластера в файл hosts на компьютере, можно использовать команды `scp`, как показано ниже.
 
-        scp sshuser@hn0-nitinp:/etc/hadoop/conf/core-site.xml .
-        scp sshuser@hn0-nitinp:/etc/hadoop/conf/yarn-site.xml .
+    ```bash
+    scp sshuser@hn0-nitinp:/etc/hadoop/conf/core-site.xml .
+    scp sshuser@hn0-nitinp:/etc/hadoop/conf/yarn-site.xml .
+    ```
 
     Чтобы добавить эти файлы в проект, скопируйте их в папку **/src** дерева проектов, например `<your project directory>\src`.
+
 1. Обновите файл `core-site.xml`, чтобы внести описанные ниже изменения.
 
-   a. Замените зашифрованный ключ. Файл `core-site.xml` содержит зашифрованный ключ учетной записи хранения, связанной с кластером. В файле `core-site.xml`, добавленном в проект, замените зашифрованный ключ фактическим ключом к хранилищу данных, связанным с учетной записью хранения, используемой по умолчанию. Дополнительные сведения см. в разделе [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
+   1\. Замените зашифрованный ключ. Файл `core-site.xml` содержит зашифрованный ключ учетной записи хранения, связанной с кластером. В файле `core-site.xml`, добавленном в проект, замените зашифрованный ключ фактическим ключом к хранилищу данных, связанным с учетной записью хранения, используемой по умолчанию. Дополнительные сведения см. в разделе [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
 
-           <property>
-                 <name>fs.azure.account.key.hdistoragecentral.blob.core.windows.net</name>
-                 <value>access-key-associated-with-the-account</value>
-           </property>
+    ```xml
+    <property>
+            <name>fs.azure.account.key.hdistoragecentral.blob.core.windows.net</name>
+            <value>access-key-associated-with-the-account</value>
+    </property>
+    ```
+
    2\. Удалите из файла `core-site.xml` указанные ниже записи.
 
-           <property>
-                 <name>fs.azure.account.keyprovider.hdistoragecentral.blob.core.windows.net</name>
-                 <value>org.apache.hadoop.fs.azure.ShellDecryptionKeyProvider</value>
-           </property>
+    ```xml
+    <property>
+            <name>fs.azure.account.keyprovider.hdistoragecentral.blob.core.windows.net</name>
+            <value>org.apache.hadoop.fs.azure.ShellDecryptionKeyProvider</value>
+    </property>
 
-           <property>
-                 <name>fs.azure.shellkeyprovider.script</name>
-                 <value>/usr/lib/python2.7/dist-packages/hdinsight_common/decrypt.sh</value>
-           </property>
+    <property>
+            <name>fs.azure.shellkeyprovider.script</name>
+            <value>/usr/lib/python2.7/dist-packages/hdinsight_common/decrypt.sh</value>
+    </property>
 
-           <property>
-                 <name>net.topology.script.file.name</name>
-                 <value>/etc/hadoop/conf/topology_script.py</value>
-           </property>
-   c. Сохраните файл.
+    <property>
+            <name>net.topology.script.file.name</name>
+            <value>/etc/hadoop/conf/topology_script.py</value>
+    </property>
+    ```
+
+   В. Сохраните файл.
+
 1. Добавьте класс main для своего приложения. В **обозревателе проектов** щелкните правой кнопкой мыши **src**, наведите указатель мыши на пункт **New** (Создать) и выберите **Scala Class** (Класс Scala).
 
     ![Выбор класса main](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code.png)
+
 1. В диалоговом окне **Create New Scala Class** (Создание класса Scala) введите имя, в поле **Kind** (Вид) выберите **Object** (Объект) и нажмите кнопку **ОК**.
 
     ![Создание класса Scala](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-spark-scala-code-object.png)
+
 1. Скопируйте приведенный ниже код и вставьте его в файл `MyClusterAppMain.scala` . Этот код создает контекст Spark и открывает метод `executeJob` из объекта `SparkSample`.
 
-        import org.apache.spark.{SparkConf, SparkContext}
+    ```scala
+    import org.apache.spark.{SparkConf, SparkContext}
 
-        object SparkSampleMain {
-          def main (arg: Array[String]): Unit = {
-            val conf = new SparkConf().setAppName("SparkSample")
-                                      .set("spark.hadoop.validateOutputSpecs", "false")
-            val sc = new SparkContext(conf)
+    object SparkSampleMain {
+        def main (arg: Array[String]): Unit = {
+        val conf = new SparkConf().setAppName("SparkSample")
+                                    .set("spark.hadoop.validateOutputSpecs", "false")
+        val sc = new SparkContext(conf)
 
-            SparkSample.executeJob(sc,
-                                   "wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv",
-                                   "wasb:///HVACOut")
-          }
+        SparkSample.executeJob(sc,
+                            "wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv",
+                            "wasb:///HVACOut")
         }
+    }
+        ```
 
-1. Повторите шаги 8 и 9, чтобы добавить новый объект Scala с именем `*SparkSample`. Добавьте в этот класс приведенный ниже код. Этот код считывает данные из файла HVAC.csv (доступного для всех кластеров HDInsight Spark). Он извлекает строки, содержащие только одну цифру в седьмом столбце CSV-файла, и записывает результат в **/HVACOut** в используемом по умолчанию контейнере хранилища для кластера.
+1. Repeat steps 8 and 9 to add a new Scala object called `*SparkSample`. Add the following code to this class. This code reads the data from the HVAC.csv (available in all HDInsight Spark clusters). It retrieves the rows that only have one digit in the seventh column in the CSV file, and then writes the output to **/HVACOut** under the default storage container for the cluster.
 
-        import org.apache.spark.SparkContext
+    ```scala
+    import org.apache.spark.SparkContext
 
-        object SparkSample {
-         def executeJob (sc: SparkContext, input: String, output: String): Unit = {
-           val rdd = sc.textFile(input)
+    object SparkSample {
+        def executeJob (sc: SparkContext, input: String, output: String): Unit = {
+        val rdd = sc.textFile(input)
 
-           //find the rows which have only one digit in the 7th column in the CSV
-           val rdd1 =  rdd.filter(s => s.split(",")(6).length() == 1)
+        //find the rows which have only one digit in the 7th column in the CSV
+        val rdd1 =  rdd.filter(s => s.split(",")(6).length() == 1)
 
-           val s = sc.parallelize(rdd.take(5)).cartesian(rdd).count()
-           println(s)
+        val s = sc.parallelize(rdd.take(5)).cartesian(rdd).count()
+        println(s)
 
-           rdd1.saveAsTextFile(output)
-           //rdd1.collect().foreach(println)
+        rdd1.saveAsTextFile(output)
+        //rdd1.collect().foreach(println)
          }
-        }
+    }
+    ```
+
 1. Повторите шаги 8 и 9, чтобы добавить новый класс `RemoteClusterDebugging`. Этот класс реализует платформу тестирования Spark, которая используется для отладки приложений. Добавьте в класс `RemoteClusterDebugging` приведенный ниже код.
 
+    ```scala
         import org.apache.spark.{SparkConf, SparkContext}
         import org.scalatest.FunSuite
 
@@ -215,11 +249,13 @@ ms.locfileid: "67066230"
              "wasb:///HVACOut")
          }
         }
+    ```
 
      Необходимо обратить внимание на несколько важных моментов.
 
       * Для `.set("spark.yarn.jar", "wasb:///hdp/apps/2.4.2.0-258/spark-assembly-1.6.1.2.4.2.0-258-hadoop2.7.1.2.4.2.0-258.jar")`убедитесь, что JAR-файл сборки Spark доступен в хранилище кластера по указанному пути.
       * Для `setJars` укажите расположение, в котором будет создан JAR-файл артефакта. Обычно это `<Your IntelliJ project directory>\out\<project name>_DefaultArtifact\default_artifact.jar`.
+
 1. В классе `*RemoteClusterDebugging` щелкните правой кнопкой мыши ключевое слово `test` и выберите **Create RemoteClusterDebugging Configuration** (Создать конфигурацию RemoteClusterDebugging).
 
     ![Создание удаленной конфигурации](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-remote-config.png)
@@ -227,20 +263,25 @@ ms.locfileid: "67066230"
 1. В диалоговом окне **Create RemoteClusterDebugging Configuration** (Создание конфигурации RemoteClusterDebugging) введите имя конфигурации, а затем выберите **Test kind** (Тестовая) для параметра **Test name** (Имя теста). Оставьте значения всех остальных параметров по умолчанию. Нажмите кнопку **Apply** (Применить), а затем нажмите кнопку **ОК**.
 
     ![Добавление сведений о конфигурации](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/provide-config-value.png)
+
 1. В строке меню должен отобразиться раскрывающийся список конфигурации **Remote Run** (Удаленный запуск).
 
-    ![Раскрывающийся список удаленного запуска](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/config-run.png)
+    ![Раскрывающийся список удаленного запуска](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-config-remote-run.png)
 
 ## <a name="step-5-run-the-application-in-debug-mode"></a>Шаг 5. Запуск приложения в режиме отладки
+
 1. В проекте IntelliJ IDEA откройте `SparkSample.scala` и создайте точку останова рядом с `val rdd1`. В контекстном меню **Create Breakpoint for** (Создание точки останова для) выберите **line in function executeJob** (Встроенная функция executeJob).
 
-    ![Добавление точки останова](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/create-breakpoint.png)
+    ![Добавление точки останова](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-create-breakpoint.png)
+
 1. Нажмите кнопку **Debug Run** (Запуск отладки) рядом с раскрывающимся списком конфигурации **Remote Run** (Удаленный запуск), чтобы запустить приложение.
 
-    ![Нажатие кнопки "Debug Run" (Запуск отладки)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode.png)
+    ![Нажатие кнопки "Debug Run" (Запуск отладки)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-run-mode-button.png)
+
 1. Когда выполнение программы достигнет точки останова, на нижней панели отобразится вкладка **Debugger** (Отладчик).
 
-    ![Просмотр вкладки "Debugger" (Отладчик)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch.png)
+    ![Просмотр вкладки "Debugger" (Отладчик)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/intellij-debugger-tab.png)
+
 1. Чтобы добавить контрольное значение, щелкните значок ( **+** ).
 
     ![Щелчок значка "+"](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png)
@@ -250,31 +291,38 @@ ms.locfileid: "67066230"
     ![Запуск программы в режиме отладки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable-value.png)
 
     Как видно на предыдущем рисунке, во время выполнения можно создавать запросы на терабайты данных и отлаживать работу приложения. Например, в результатах на предыдущем рисунке можно увидеть, что первая строка выходных данных является заголовком. На основе этих выходных данных можно изменить код приложения, чтобы пропустить строку заголовка, если требуется.
+
 1. Теперь можно щелкнуть значок **Resume Program** (Возобновить выполнение программы), чтобы продолжить выполнение приложения.
 
-    ![Выбор "Resume Program" (Возобновить выполнение программы)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-run.png)
+    ![Выбор "Resume Program" (Возобновить выполнение программы)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-continue-remote-run.png)
+
 1. Если работа приложения завершится успешно, отобразится результат, подобный приведенному ниже.
 
-    ![Вывод на консоль](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete.png)
+    ![Вывод на консоль](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-complete-window.png)
 
 ## <a name="seealso"></a>Дальнейшие действия
+
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="demo"></a>Демонстрация
+
 * Создание проекта Scala (видео): [Создание приложений Apache Spark Scala](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
 * Удаленная отладка (видео): [Удаленная отладка приложений Apache Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ)
 
 ### <a name="scenarios"></a>Сценарии
+
 * [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
 * [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
+
 * [Создание автономного приложения с использованием Scala](../hdinsight-apache-spark-create-standalone-application.md)
 * [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
+
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
 * [Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](../hdinsight-apache-spark-eclipse-tool-plugin.md)
@@ -284,5 +332,6 @@ ms.locfileid: "67066230"
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 
 ### <a name="manage-resources"></a>Управление ресурсами
+
 * [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)

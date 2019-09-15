@@ -1,6 +1,6 @@
 ---
 title: 'Пример визуального интерфейса #6: Классификация для прогнозирования задержек рейсов'
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: В этой статье показано, как создать модель машинного обучения для прогнозирования задержек рейсов с помощью визуального интерфейса перетаскивания и пользовательского кода R.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: peterlu
 ms.date: 07/02/2019
-ms.openlocfilehash: 4c0a990ae3f45fc7b08c157f180d8ecf805c24e6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 3d1363d24aa6e5f8875ba90513a8d9d5b951c9db
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990022"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997112"
 ---
 # <a name="sample-6---classification-predict-flight-delays-using-r"></a>Пример 6. Классификация: Прогнозирование задержек рейсов с помощью языка R
 
@@ -27,7 +27,7 @@ ms.locfileid: "68990022"
 
 [![График эксперимента](media/ui-sample-classification-predict-flight-delay/experiment-graph.png)](media/ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 

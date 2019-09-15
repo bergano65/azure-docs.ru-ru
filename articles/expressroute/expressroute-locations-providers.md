@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/09/2019
+ms.date: 09/12/2019
 ms.author: cherylmc
-ms.openlocfilehash: f3bae365692b2165e4944becbe5081bb69bef98b
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 17d1a8e2e98f1b2967b4f2e33e14ee187a765190
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70846114"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995719"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -82,7 +82,7 @@ ms.locfileid: "70846114"
 ### <a name="production-azure"></a>Рабочая среда Azure
 | **Location** | **Владелец и адрес** | **Локальные регионы Azure** | **Поставщики услуг** |
 | --- | --- | --- | --- |
-| **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | Западная Европа | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, IX Reach, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, TeleCity Group, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
+| **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | Западная Европа | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, Colt, Equinix, Еунетворкс, ГÉАНТ, в облаке, Interxion, КПН, IX REACH, связь уровня 3, Orange, NTT связь, оранжевый, Tata Communications, Телефоника, Telenor, Телиа, Verizon, Zayo |
 | **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | Западная Европа | CenturyLink Cloud Connect, DE-ЦИКС, Colt, Interxion, Vodafone |
 | **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | Н/Д | Equinix, Megaport |
 | **Окленд** | [Олбани группа вокус (NZ)](https://www.vocus.co.nz/business/cloud-data-centres) | Н/Д | Деволи, Кордиа, Orange, Spark NZ, Вокус Group NZ |
@@ -190,21 +190,21 @@ ms.locfileid: "70846114"
 
 * интелсат
 * [SES](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)
-* виасат
+* [виасат](http://www.directcloud.viasatbusiness.com/)
 
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг
 | **Location** | **Exchange** | **Поставщики услуг подключения** |
 | --- | --- | --- |
-| **Амстердам** | Equinix, Interxion, связь уровня 3, город | Бикс, Клаудкспресс, Еурофибер, Фаствеб S. p. A, залива Bridge International, Калаам телекоммуникации Бахрейн B. S. C, Маиноне, Нианет, POST-Люксембург, Проксимус, TDC Ерхверв, телекоммуникационной Italia живы, Telekom Deutschland GmbH, Телиа |
+| **Амстердам** | Equinix, Interxion, Обмен данными уровня 3 | Бикс, Клаудкспресс, Еурофибер, Фаствеб S. p. A, залива Bridge International, Калаам телекоммуникации Бахрейн B. S. C, Маиноне, Нианет, POST-Люксембург, Проксимус, TDC Ерхверв, телекоммуникационной Italia живы, Telekom Deutschland GmbH, Телиа |
 | **Атланта** | Equinix| Самые Castle
 | **Кейптаун** | Teraco | MTN |
 | **Чикаго** | Equinix| Самые Castle, спектр для предприятий, Виндстреам |
 | **Даллас** | Equinix, Megaport | Акстел, C3ntro, телекоммуникации, Кокс Business, самые Castle, обнаруженные данные, спектр предприятий, |
-| **Франкфурт** | Interxion, город проживания | Бикс, Циниа, Нианет, КСК AG, Telekom Deutschland GmbH |
+| **Франкфурт** | Interxion | Бикс, Циниа, Нианет, КСК AG, Telekom Deutschland GmbH |
 | **Гамбург** | Equinix | Cinia |
 | **Гонконг, САР** | Equinix | Chief, Macroview Telecom |
 | **Йоханнесбург** | Teraco | MTN |
-| **Лондон** | BICS, Equinix, euNetworks, Telecity | Безек International Ltd., Кореазуре, Эпсилон, ограниченная, экспоненциальная E, ХСО, Нексжен сетей, Проксимус, Тамарес телекоммуникации, Заину |
+| **Лондон** | Бикс, Equinix, Еунетворкс| Безек International Ltd., Кореазуре, Эпсилон, ограниченная, экспоненциальная E, ХСО, Нексжен сетей, Проксимус, Тамарес телекоммуникации, Заину |
 | **Лос-Анджелес** | Equinix |Самые Castle, спектр для предприятий, переtelco |
 | **Мадрид** | Level3 | Zertia |
 | **Монреаль** | Cologix, Equinix | Airgate Technologies, Inc. Технологии аптум, Рожерс, Зирро |

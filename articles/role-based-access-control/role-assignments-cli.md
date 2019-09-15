@@ -11,21 +11,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/17/2019
+ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: bc5deb614e2ac6e47ff3bf241943df92d97699b2
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 1b898f42fa6f66fba7c84daa67769249642bd986
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295177"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996481"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-cli"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI
 
 [Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам Azure. Из этой статьи вы узнаете, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure CLI.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для управления доступом необходим один из следующих инструментов:
 
@@ -89,9 +89,9 @@ az role definition list --custom-role-only false --output json | jq '.[] | {"rol
 ...
 ```
 
-## <a name="list-a-role-definition"></a>Получение списка определений роли
+## <a name="list-a-role-definition"></a>Вывод определения роли
 
-Чтобы получить список определений ролей, используйте [списка определений роли az](/cli/azure/role/definition#az-role-definition-list):
+Чтобы получить список определений ролей, используйте команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list):
 
 ```azurecli
 az role definition list --name <role_name>
@@ -137,7 +137,7 @@ az role definition list --name "Contributor"
 
 ### <a name="list-actions-of-a-role"></a>Вывод списка действий роли
 
-В следующем примере перечисляются только *действия* и *notActions* из *участник* роли:
+В следующем примере перечисляются только *действия* и *неизменность* роли *участника* :
 
 ```azurecli
 az role definition list --name "Contributor" --output json | jq '.[] | {"actions":.permissions[0].actions, "notActions":.permissions[0].notActions}'
@@ -156,7 +156,7 @@ az role definition list --name "Contributor" --output json | jq '.[] | {"actions
 }
 ```
 
-В следующем примере перечисляются только действия *участник виртуальных машин* роли:
+В следующем примере перечисляются только действия роли *участника виртуальной машины* :
 
 ```azurecli
 az role definition list --name "Virtual Machine Contributor" --output json | jq '.[] | .permissions[0].actions'
@@ -192,9 +192,9 @@ az role definition list --name "Virtual Machine Contributor" --output json | jq 
 az role assignment list --assignee <assignee>
 ```
 
-По умолчанию будет отображаться только прямые назначения, в пределах подписки. Чтобы просмотреть назначения в пределах ресурсов или группы, используйте `--all` и просмотреть унаследованные asisgnments, с помощью `--include-inherited`.
+По умолчанию будут отображаться только прямые назначения, ограниченные по подписке. Для просмотра назначений, ограниченных ресурсом или группой `--all` , используйте и для просмотра наследуемых назначений используйте. `--include-inherited`
 
-В следующем примере перечисляются назначения ролей, назначенные непосредственно *patlong\@contoso.com* пользователя:
+В следующем примере перечисляются назначения ролей, назначенные непосредственно пользователю *патлонг\@contoso.com* :
 
 ```azurecli
 az role assignment list --all --assignee patlong@contoso.com --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
@@ -213,26 +213,28 @@ az role assignment list --all --assignee patlong@contoso.com --output json | jq 
 }
 ```
 
-### <a name="list-role-assignments-for-a-resource-group"></a>Вывод списка назначений ролей для группы ресурсов
+### <a name="list-role-assignments-at-a-resource-group-scope"></a>Вывод списка назначений ролей в области группы ресурсов
 
-Чтобы вывести список назначений ролей, имеющихся в группе ресурсов, используйте команду [az role assignment list](/cli/azure/role/assignment#az-role-assignment-list).
+Чтобы получить список назначений ролей, существующих в области группы ресурсов, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list).
 
 ```azurecli
 az role assignment list --resource-group <resource_group>
 ```
 
-В следующем примере перечисляются назначения ролей для *pharma-sales* группы ресурсов:
+В следующем примере перечислены назначения ролей для группы ресурсов *Pharma-Sales* .
 
 ```azurecli
-az role assignment list --resource-group pharma-sales --output json | jq '.[] | {"roleDefinitionName":.roleDefinitionName, "scope":.scope}'
+az role assignment list --resource-group pharma-sales --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
 
 ```Output
 {
+  "principalName": "patlong@contoso.com",
   "roleDefinitionName": "Backup Operator",
   "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales"
 }
 {
+  "principalName": "patlong@contoso.com",
   "roleDefinitionName": "Virtual Machine Contributor",
   "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/pharma-sales"
 }
@@ -240,44 +242,68 @@ az role assignment list --resource-group pharma-sales --output json | jq '.[] | 
 ...
 ```
 
-## <a name="grant-access"></a>Предоставление доступа
+### <a name="list-role-assignments-at-a-subscription-scope"></a>Вывод списка назначений ролей в области действия подписки
+
+Чтобы получить список всех назначений ролей в области действия подписки, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list). Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или использовать команду [AZ Account List](/cli/azure/account#az-account-list).
+
+```azurecli
+az role assignment list --subscription <subscription_name_or_id>
+```
+
+```Example
+az role assignment list --subscription 00000000-0000-0000-0000-000000000000 --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
+```
+
+### <a name="list-role-assignments-at-a-management-group-scope"></a>Вывод списка назначений ролей в области группы управления
+
+Чтобы получить список всех назначений ролей в области группы управления, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list). Чтобы получить идентификатор группы управления, его можно найти в колонке " **группы управления** " в портал Azure или можно использовать команду [AZ Account Management-Group List](/cli/azure/ext/managementgroups/account/management-group#ext-managementgroups-az-account-management-group-list).
+
+```azurecli
+az role assignment list --scope /providers/Microsoft.Management/managementGroups/<group_id>
+```
+
+```Example
+az role assignment list --scope /providers/Microsoft.Management/managementGroups/marketing-group --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
+```
+
+## <a name="grant-access"></a>Разрешить доступ
 
 При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
 
-### <a name="create-a-role-assignment-for-a-user"></a>Создание назначения ролей для пользователя
+### <a name="create-a-role-assignment-for-a-user-at-a-resource-group-scope"></a>Создание назначения роли для пользователя в области действия группы ресурсов
 
-Для создания назначения ролей для пользователя в пределах группы ресурсов используйте команду [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create).
+Чтобы предоставить пользователю доступ к области группы ресурсов, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create).
 
 ```azurecli
 az role assignment create --role <role_name_or_id> --assignee <assignee> --resource-group <resource_group>
 ```
 
-В следующем примере назначается *участник виртуальных машин* роль *patlong\@contoso.com* пользователь на сайте *pharma-sales* области действия группы ресурсов:
+В следующем примере роль *участника виртуальной машины* назначается пользователю *\@патлонг contoso.com* в области группы ресурсов *Pharma-Sales* :
 
 ```azurecli
 az role assignment create --role "Virtual Machine Contributor" --assignee patlong@contoso.com --resource-group pharma-sales
 ```
 
-### <a name="create-a-role-assignment-using-the-unique-role-id"></a>Создать назначение роли, используя уникальный идентификатор
+### <a name="create-a-role-assignment-using-the-unique-role-id"></a>Создание назначения роли с помощью уникального идентификатора роли
 
-Существует несколько раз, когда имя роли, может изменяться, например:
+Существует несколько случаев, когда имя роли может измениться, например:
 
-- Вы используете собственную настраиваемую роль, и вы хотите изменить имя.
-- При использовании предварительной версии роли, обладающей **(Предварительная версия)** в имени. При отпускании роль, роль будет переименован.
+- Вы используете собственную пользовательскую роль и решили изменить ее имя.
+- Вы используете роль предварительного просмотра с именем **(Предварительная версия)** . При освобождении роли роль переименовывается.
 
 > [!IMPORTANT]
-> Предварительная версия предоставляется без соглашения об уровне обслуживания, и не рекомендуется для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Даже если роль переименовывается, идентификатор роли остается неизменным. Если вы используете сценарии или автоматизации для создания назначений ролей, рекомендуется использовать уникальный идентификатор вместо имени роли. Таким образом Если роль переименовывается, сценарии чаще для работы.
+Даже если роль переименована, идентификатор роли не изменяется. Если вы используете скрипты или автоматизацию для создания назначений ролей, рекомендуется использовать уникальный идентификатор роли вместо имени роли. Таким образом, если роль переименована, скорее всего, сценарии будут работать.
 
-Чтобы создать назначение ролей, используя уникальный идентификатор вместо имени роли, используйте [Создание назначений ролей az](/cli/azure/role/assignment#az-role-assignment-create).
+Чтобы создать назначение ролей, используя уникальный идентификатор роли вместо имени роли, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create).
 
 ```azurecli
 az role assignment create --role <role_id> --assignee <assignee> --resource-group <resource_group>
 ```
 
-В следующем примере назначается [участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) роль *patlong\@contoso.com* пользователь на сайте *pharma-sales* области действия группы ресурсов. Чтобы получить уникальный идентификатор, можно использовать [списка определений роли az](/cli/azure/role/definition#az-role-definition-list) или см. в разделе [встроенных ролей ресурсов Azure](built-in-roles.md).
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *\@патлонг contoso.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
 
 ```azurecli
 az role assignment create --role 9980e02c-c2be-4d73-94e8-173b1dc7cf3c --assignee patlong@contoso.com --resource-group pharma-sales
@@ -285,39 +311,67 @@ az role assignment create --role 9980e02c-c2be-4d73-94e8-173b1dc7cf3c --assignee
 
 ### <a name="create-a-role-assignment-for-a-group"></a>Создание назначения ролей для группы
 
-Для создания назначения ролей для группы используйте команду [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create).
+Чтобы предоставить доступ к группе, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create). Чтобы получить идентификатор группы, можно использовать команду [az ad group list](/cli/azure/ad/group#az-ad-group-list) или [az ad group show](/cli/azure/ad/group#az-ad-group-show).
 
 ```azurecli
 az role assignment create --role <role_name_or_id> --assignee-object-id <assignee_object_id> --resource-group <resource_group> --scope </subscriptions/subscription_id>
 ```
 
-В следующем примере роль *Читатель* присваивается группе *Ann Mack Team* с идентификатором 22222222-2222-2222-2222-222222222222 в пределах подписки. Чтобы получить идентификатор группы, можно использовать команду [az ad group list](/cli/azure/ad/group#az-ad-group-list) или [az ad group show](/cli/azure/ad/group#az-ad-group-show).
+В следующем примере роль *читателя* назначается группе рабочей группы *Анна Mack* с идентификатором 22222222-2222-2222-2222-222222222222 в области действия подписки.
 
 ```azurecli
 az role assignment create --role Reader --assignee-object-id 22222222-2222-2222-2222-222222222222 --scope /subscriptions/00000000-0000-0000-0000-000000000000
 ```
 
-В следующем примере роль *Участник виртуальной машины* присваивается группе *Ann Mack Team* с идентификатором 22222222-2222-2222-2222-222222222222 в пределах ресурса для виртуальной сети с именем *pharma-sales-project-network*.
+В следующем примере роль *участника виртуальной машины* назначается группе группы *Анна Mack* с идентификатором 22222222-2222-2222-2222-222222222222 в области действия ресурса для виртуальной сети с именем *Pharma-Sales-Project-Network*.
 
 ```azurecli
 az role assignment create --role "Virtual Machine Contributor" --assignee-object-id 22222222-2222-2222-2222-222222222222 --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/pharma-sales/providers/Microsoft.Network/virtualNetworks/pharma-sales-project-network
 ```
 
-### <a name="create-a-role-assignment-for-an-application"></a>Создание назначения ролей для приложения
+### <a name="create-a-role-assignment-for-an-application-at-a-resource-group-scope"></a>Создание назначения роли для приложения в области группы ресурсов
 
-Чтобы создать роль для приложения, используйте команду [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create).
+Чтобы предоставить доступ к приложению, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create). Чтобы получить идентификатор объекта приложения, можно использовать команду [az ad app list](/cli/azure/ad/app#az-ad-app-list) или [az ad app show](/cli/azure/ad/app#az-ad-app-show).
 
 ```azurecli
-az role assignment create --role <role_name_or_id> --assignee-object-id <assignee_object_id> --resource-group <resource_group> --scope </subscriptions/subscription_id>
+az role assignment create --role <role_name_or_id> --assignee-object-id <assignee_object_id> --resource-group <resource_group>
 ```
 
-В следующем примере назначается *участник виртуальных машин* роли для приложения с Идентификатором объекта 44444444-4444-4444-4444-444444444444 *pharma-sales* области действия группы ресурсов. Чтобы получить идентификатор объекта приложения, можно использовать команду [az ad app list](/cli/azure/ad/app#az-ad-app-list) или [az ad app show](/cli/azure/ad/app#az-ad-app-show).
+В следующем примере роль *участника виртуальной машины* назначается приложению с идентификатором объекта 44444444-4444-4444-4444-444444444444 в области группы ресурсов *Pharma-Sales* .
 
 ```azurecli
 az role assignment create --role "Virtual Machine Contributor" --assignee-object-id 44444444-4444-4444-4444-444444444444 --resource-group pharma-sales
 ```
 
-## <a name="remove-access"></a>Запрет доступа
+### <a name="create-a-role-assignment-for-a-user-at-a-subscription-scope"></a>Создание назначения роли для пользователя в области подписки
+
+Чтобы предоставить доступ пользователю в области подписки, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create). Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или использовать команду [AZ Account List](/cli/azure/account#az-account-list).
+
+```azurecli
+az role assignment create --role <role_name_or_id> --assignee <assignee> --subscription <subscription_name_or_id>
+```
+
+В следующем примере роль *читателя* назначается пользователю *аннм\@example.com* в области действия подписки.
+
+```azurecli
+az role assignment create --role "Reader" --assignee annm@example.com --subscription 00000000-0000-0000-0000-000000000000
+```
+
+### <a name="create-a-role-assignment-for-a-user-at-a-management-group-scope"></a>Создание назначения роли для пользователя в области группы управления
+
+Чтобы предоставить пользователю доступ к области группы управления, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create). Чтобы получить идентификатор группы управления, его можно найти в колонке " **группы управления** " в портал Azure или можно использовать команду [AZ Account Management-Group List](/cli/azure/ext/managementgroups/account/management-group#ext-managementgroups-az-account-management-group-list).
+
+```azurecli
+az role assignment create --role <role_name_or_id> --assignee <assignee> --scope /providers/Microsoft.Management/managementGroups/<group_id>
+```
+
+В следующем примере роль *читателя выставления счетов* назначается пользователю *\@(Alain example.com* в области группы управления.
+
+```azurecli
+az role assignment create --role "Billing Reader" --assignee alain@example.com --scope /providers/Microsoft.Management/managementGroups/marketing-group
+```
+
+## <a name="remove-access"></a>Remove access
 
 При использовании RBAC, чтобы удалить доступ, нужно удалить назначение роли с помощью команды [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete):
 
@@ -325,19 +379,25 @@ az role assignment create --role "Virtual Machine Contributor" --assignee-object
 az role assignment delete --assignee <assignee> --role <role_name_or_id> --resource-group <resource_group>
 ```
 
-В следующем примере удаляется *участник виртуальных машин* назначение роли *patlong\@contoso.com* пользователя на *pharma-sales* Группа ресурсов:
+В следующем примере удаляется назначение роли *участника виртуальной машины* из пользователя *патлонг\@contoso.com* в группе ресурсов *Pharma-Sales* .
 
 ```azurecli
 az role assignment delete --assignee patlong@contoso.com --role "Virtual Machine Contributor" --resource-group pharma-sales
 ```
 
-В следующем примере роль *Читатель* удаляется для группы *Ann Mack Team* с идентификатором 22222222-2222-2222-2222-222222222222 в пределах подписки. Чтобы получить идентификатор группы, можно использовать команду [az ad group list](/cli/azure/ad/group#az-ad-group-list) или [az ad group show](/cli/azure/ad/group#az-ad-group-show).
+В следующем примере удаляется роль *читателя* из группы группы *Анна Mack* с идентификатором 22222222-2222-2222-2222-222222222222 в области действия подписки. Чтобы получить идентификатор группы, можно использовать команду [az ad group list](/cli/azure/ad/group#az-ad-group-list) или [az ad group show](/cli/azure/ad/group#az-ad-group-show).
 
 ```azurecli
-az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role "Reader" --scope /subscriptions/00000000-0000-0000-0000-000000000000
+az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role "Reader" --subscription 00000000-0000-0000-0000-000000000000
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+В следующем примере роль *читателя выставления счетов* удаляется из пользователя *\@(Alain example.com* в области группы управления. Чтобы получить идентификатор группы управления, можно использовать команду [AZ Account Management-Group List](/cli/azure/ext/managementgroups/account/management-group#ext-managementgroups-az-account-management-group-list).
 
-- [Руководство. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+```azurecli
+az role assignment delete --assignee alain@example.com --role "Billing Reader" --scope /providers/Microsoft.Management/managementGroups/marketing-group
+```
+
+## <a name="next-steps"></a>Следующие шаги
+
+- [Учебник. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

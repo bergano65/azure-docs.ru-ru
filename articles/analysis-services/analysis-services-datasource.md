@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 09/10/2019
+ms.date: 09/13/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 096f8b3aa6ae66e65bbbd9ea6e2204af619199dd
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 81fc73ffd61a49eae1c4f107733b6f9f53efbb4f
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899404"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993388"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -42,7 +42,7 @@ ms.locfileid: "70899404"
 **Поставщик**   
 Для размещенных в памяти моделей и моделей DirectQuery, подключающихся к источникам данных Azure, используется поставщик данных .NET Framework для SQL Server.
 
-## <a name="on-premises-data-sources"></a>Локальные источники данных
+## <a name="other-data-sources"></a>Другие источники данных
 
 Для подключения к локальным источникам данных с сервера автономной системы Azure требуется локальный шлюз. При использовании шлюза требуются 64-разрядные поставщики.
 
@@ -113,6 +113,10 @@ ms.locfileid: "70899404"
 Для облачных источников данных
 
 * При использовании проверки подлинности SQL олицетворением должна быть учетная запись службы.
+
+## <a name="oauth-credentials"></a>Учетные данные OAuth
+
+Для табличных моделей на уровне совместимости 1400 и выше, база данных SQL Azure, хранилище данных SQL Azure, Dynamics 365 и список SharePoint поддерживают учетные данные OAuth. Azure Analysis Services управляет обновлением маркера для источников данных OAuth во избежание истечения времени ожидания для длительных операций обновления. Чтобы создать допустимые токены, задайте учетные данные с помощью SSMS.
 
 ## <a name="next-steps"></a>Следующие шаги
 [Локальный шлюз](analysis-services-gateway.md)   

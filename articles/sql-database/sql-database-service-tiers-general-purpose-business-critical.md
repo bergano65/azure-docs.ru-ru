@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 02/23/2019
-ms.openlocfilehash: 8709d88c4d21a40ac8ebb27e5c1669d8f5fa3555
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 41acef4ebe13ac6152d795db4adfae5a6ae1ad91
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934229"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995430"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 
@@ -46,8 +46,6 @@ ms.locfileid: "70934229"
 | | Управляемый экземпляр  | От 32 ГБ до 8 ТБ | Н/Д | От 32 ГБ до 4 ТБ |
 | **Размер базы данных TempDB** | Отдельная база данных / эластичный пул | [32 ГБ на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | [32 ГБ на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier-for-provisioned-compute) | [32 ГБ на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute) |
 | | Управляемый экземпляр  | [24 ГБ на виртуальное ядро](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | До 4 ТБ — [ограничено размером хранилища](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
-| **Пропускная способность ввода-вывода** | Отдельная база данных | [500 операций ввода-вывода в секунду на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | Действующие операции ввода-вывода будут зависеть от рабочей нагрузки. | [4000 операций ввода-вывода в секунду на виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute)|
-| | Управляемый экземпляр | [100 — 250 МБ/с и 500-7500 операций ввода-вывода на файл](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | [1375 операций ввода-вывода в секунду на виртуальное ядро](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
 | **Пропускная способность записи в журнал** | Отдельная база данных | [1,875 МБ/с на виртуальное ядро (Макс. 30 МБ/с)](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier-for-provisioned-compute) | 100 МБ/с | [6 МБ/с на виртуальное ядро (Макс. 96 МБ/с)](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute) |
 | | Управляемый экземпляр | [3 МБ/с на виртуальное ядро (максимум 22 Мб/с)](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) | Н/Д | [4 МБ/с на виртуальное ядро (Макс. 48 МБ/с)](sql-database-managed-instance-resource-limits.md#service-tier-characteristics) |
 |**Доступность**|Все| 99,99 % |  [99,95% с одной вторичной репликой, 99,99% с дополнительными репликами](sql-database-service-tier-hyperscale-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99 % <br/> [99,995% с избыточной зоной, отдельной базой данных](https://azure.microsoft.com/blog/understanding-and-leveraging-azure-sql-database-sla/) |

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: cda974a71c0d24bda9422fb8444fbf4dec0088f9
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 673c83c861e1f044a521786a903dd7b21db8c170
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885109"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995562"
 ---
 # <a name="optimize-apache-spark-jobs-in-hdinsight"></a>Оптимизация заданий Apache Spark в HDInsight
 
@@ -96,7 +96,7 @@ Spark обеспечивает собственные механизмы кэш�
 
 Если вы используете [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html), эта платформа управляет максимальным объемом памяти, используемой всеми контейнерами на всех узлах Spark.  На схеме ниже показаны ключевые объекты и их связи.
 
-![Управление памятью Spark в YARN](./media/apache-spark-perf/yarn-spark-memory.png)
+![Управление памятью Spark в YARN](./media/apache-spark-perf/apache-yarn-spark-memory.png)
 
 При получении сообщений о нехватке памяти сделайте следующее:
 

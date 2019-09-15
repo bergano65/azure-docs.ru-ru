@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 8fd3aedd2e371e511730fd98751ae3214545c489
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: c1422b6411fc60383cffa6c3082108bb940c4343
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034581"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996215"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и пакет SDK для .NET Standard: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
@@ -41,6 +41,9 @@ ms.locfileid: "70034581"
 
 ## <a name="release-notes-for-100-series"></a>Заметки о выпуске для серии 1.0.0
 Серия 1.0.0 использует зависимость от [Microsoft. Azure. DocumentDB. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
+
+### <a name="a-name105105"></a><a name="1.0.5"/>1.0.5
+* Познакомьтесь с новой конфигурацией в разделе Таблеклиентконфигуратион, чтобы использовать исполнитель RESTful для взаимодействия с Cosmos DB API таблиц
 
 ### <a name="a-name105-preview105-preview"></a><a name="1.0.5-preview"/>1.0.5 — Предварительная версия
 * Исправления ошибок
@@ -92,6 +95,7 @@ ms.locfileid: "70034581"
 ### <a name="100-series"></a>Серия 1.0.0
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.0.5](#1.0.5) |13 сентября 2019 г. |--- |
 | [1.0.5 — Предварительная версия](#1.0.5-preview) |Аугуест 20, 2019 |--- |
 | [1.0.4](#1.0.4) |Аугуест 12, 2019 |--- |
 | [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |

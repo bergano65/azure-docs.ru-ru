@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/01/2019
-ms.openlocfilehash: 889c2e75e9eee0586c709b032dbb6d1c58d45102
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 09/13/2019
+ms.openlocfilehash: 5ef11e86b85a537a809352325d56ac3ff983c2c1
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142050"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993047"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -22,6 +22,8 @@ ms.locfileid: "70142050"
 
 - **Гибридная синхронизация данных.** С помощью репликации входных данных можно обеспечить синхронизацию данных между локальными серверами и базой данных Azure для MySQL. Эта синхронизация полезна при создании гибридных приложений. Этот метод удобен, если у вас есть локальный сервер базы данных, но вы хотите переместить данные в регион, который расположен ближе к пользователям.
 - **Многооблачная синхронизация**. Для сложных облачных решений репликацию входных данных можно использовать, чтобы синхронизировать данные между базой данных Azure для MySQL и различными облачными поставщиками, включая виртуальные машины и службы баз данных, размещенные в этих облаках.
+ 
+Для сценариев миграции используйте [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/)(DMS).
 
 ## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
@@ -37,7 +39,7 @@ ms.locfileid: "70142050"
 - Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
 - Убедитесь, что IP-адрес главного сервера был добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MySQL. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
-- Убедитесь, что главный сервер имеет общедоступный **IP-адрес** или что DNS общедоступна.
+- Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
 ### <a name="other"></a>Другой
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
@@ -46,3 +48,4 @@ ms.locfileid: "70142050"
 ## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
+- Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

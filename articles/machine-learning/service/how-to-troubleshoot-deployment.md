@@ -1,7 +1,7 @@
 ---
 title: Руководство по устранению неполадок с развертыванием
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure, используя службу Машинное обучение Azure.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как обойти и устранить распространенные ошибки развертывания DOCKER с помощью службы Kubernetes Azure и экземпляров контейнеров Azure, используя Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,18 +11,18 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 07/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5ec92e34ffa68718525e9b407dc9e58f4c409975
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 08b9434dbcca96ff57e2c8182693023a5eb2eea9
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183536"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997164"
 ---
-# <a name="troubleshooting-azure-machine-learning-service-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
+# <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
-Узнайте, как обойти или устранить распространенные ошибки развертывания DOCKER с помощью службы "экземпляры контейнеров Azure" (ACI) и Azure Kubernetes Service (AKS), используя службу Машинное обучение Azure.
+Узнайте, как обойти или устранить распространенные ошибки развертывания DOCKER с помощью службы "экземпляры контейнеров Azure" (ACI) и Azure Kubernetes Service (AKS), используя Машинное обучение Azure.
 
-При развертывании модели в службе машинного обучения Azure система выполняет ряд задач. Ниже перечислены задачи развертывания.
+При развертывании модели в Машинное обучение Azure система выполняет ряд задач. Ниже перечислены задачи развертывания.
 
 1. Регистрация модели в реестре моделей рабочей области.
 
@@ -346,7 +346,7 @@ def run(input_data):
 
         ```json
         {
-            "name": "Azure Machine Learning service: Docker Debug",
+            "name": "Azure Machine Learning: Docker Debug",
             "type": "python",
             "request": "attach",
             "port": 5678,
@@ -479,7 +479,7 @@ myregistry.azurecr.io/myimage:1
     docker run --rm --name debug -p 8000:5001 -p 5678:5678 debug:1
     ```
 
-1. Чтобы присоединить VS Code к PTVSD в контейнере, откройте VS Code и используйте клавишу F5 иливыберите Отладка. При появлении запроса выберите __службу машинное обучение Azure: Конфигурация отладки__ DOCKER. Можно также выбрать значок отладки на боковой панели, __машинное обучение Azure службы: Запись отладки__ DOCKER из раскрывающегося меню Отладка, а затем с помощью зеленой стрелки присоединить отладчик.
+1. Чтобы присоединить VS Code к PTVSD в контейнере, откройте VS Code и используйте клавишу F5 иливыберите Отладка. При появлении запроса выберите __машинное обучение Azure: Конфигурация отладки__ DOCKER. Можно также выбрать значок отладки на боковой панели, __машинное обучение Azure: Запись отладки__ DOCKER из раскрывающегося меню Отладка, а затем с помощью зеленой стрелки присоединить отладчик.
 
     ![Значок "Отладка", кнопка "начать отладку" и селектор конфигурации](media/how-to-troubleshoot-deployment/start-debugging.png)
 

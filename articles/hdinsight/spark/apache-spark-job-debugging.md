@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: d6a8ac97aa3896eaf98651f5f1120fcc6bf25516
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: c71bf9be94799c2b109d57393e70e99a0710e252
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814115"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995519"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Отладка заданий Apache Spark в Azure HDInsight
 
@@ -29,14 +29,14 @@ ms.locfileid: "70814115"
 ## <a name="track-an-application-in-the-yarn-ui"></a>Отслеживание приложения в пользовательском интерфейсе YARN
 1. Запустите пользовательский интерфейс YARN. Щелкните **Yarn** в разделе **Панели мониторинга кластера**.
    
-    ![Запуск пользовательского интерфейса YARN](./media/apache-spark-job-debugging/launch-yarn-ui.png)
+    ![Запуск пользовательского интерфейса YARN](./media/apache-spark-job-debugging/launch-apache-yarn-ui.png)
    
    > [!TIP]  
    > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский Интерфейс Ambari, в разделе **Панели мониторинга кластера** щелкните **Домашняя страница Ambari**. В пользовательском интерфейсе Ambari щелкните **YARN**, затем — **Quick Links** (Быстрые ссылки). Щелкните активный Resource Manager и щелкните **ResourceManager UI** (Пользовательский интерфейс Resource Manager). 
 
 2. Так как вы запустили задание Spark с помощью записных книжек Jupyter, приложение получило имя **remotesparkmagics** (это стандартное имя для всех приложений, запускаемых из записных книжек). Нажмите идентификатор приложения рядом с именем приложения, чтобы посмотреть дополнительные сведения о задании. Откроется представление приложения.
    
-    ![Поиск идентификатора приложения Spark](./media/apache-spark-job-debugging/find-application-id.png)
+    ![Поиск идентификатора приложения Spark](./media/apache-spark-job-debugging/find-application-id1.png)
    
     Для приложений, которые запущены из записных книжек Jupyter, состояние всегда будет иметь значение **Запущено** , пока вы не выйдете из записной книжки.
 3. Из представления приложения вы можете ознакомиться с подробными сведениями о контейнерах, связанных с приложением, а также изучить журналы (stdout и stderr). Пользовательский интерфейс Spark можно запустить, щелкнув ссылку в графе **URL-адрес отслеживания**, как показано ниже. 
@@ -48,13 +48,13 @@ ms.locfileid: "70814115"
 
 1. Чтобы запустить пользовательский интерфейс Spark, щелкните ссылку **URL-адрес отслеживания**в представлении приложения, как показано на снимке экрана выше. Здесь вы увидите все задания Spark, созданные приложением, которое запущено в записной книжке Jupyter.
    
-    ![Просмотр заданий Spark](./media/apache-spark-job-debugging/view-spark-jobs.png)
+    ![Просмотр заданий Spark](./media/apache-spark-job-debugging/view-apache-spark-jobs.png)
 2. Щелкните вкладку **Исполнители** , чтобы увидеть сведения о вычислениях и хранении для каждого исполнителя. Также можно получить стек вызовов, щелкнув ссылку **Дамп потока** .
    
     ![Просмотр исполнителей Spark](./media/apache-spark-job-debugging/view-spark-executors.png)
 3. Щелкните вкладку **Этапы** , чтобы просмотреть этапы, связанные с приложением.
    
-    ![Просмотр этапов Spark](./media/apache-spark-job-debugging/view-spark-stages.png "Просмотр этапов Spark")
+    ![Просмотр этапов Spark](./media/apache-spark-job-debugging/view-apache-spark-stages.png "Просмотр этапов Spark")
    
     Каждый этап может включать несколько задач. Вы можете просмотреть для них статистику выполнения, как показано ниже.
    

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/19/2019
+ms.date: 09/12/2019
 ms.author: magoedte
-ms.openlocfilehash: 650729269370bfcd6608b82fc14c3306da1ed222
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 0153d39e1307458baa920d8e9107c8931242014e
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624434"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996272"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -49,17 +49,51 @@ az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingMana
 provisioningState       : Succeeded
 ```
 
-Если вместо этого потребуется выполнить интеграцию в существующую рабочую область, то для ее указания используйте следующую команду.
+### <a name="integrate-with-an-existing-workspace"></a>Интеграция с существующей рабочей областью
 
-```azurecli
-az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG --workspace-resource-id <ExistingWorkspaceResourceID> 
-```
+Если вы предпочитаете интегрировать с существующей рабочей областью, выполните следующие действия, чтобы сначала указать полный идентификатор ресурса log Analytics рабочей области, необходимой для `--workspace-resource-id` параметра, а затем выполнить команду, чтобы включить надстройку мониторинга для Указанная Рабочая область.  
 
-Результат должен выглядеть так:
+1. Перечислите все подписки, к которым у вас есть доступ, с помощью следующей команды:
 
-```azurecli
-provisioningState       : Succeeded
-```
+    ```azurecli
+    az account list --all -o table
+    ```
+
+    Результат должен выглядеть так:
+
+    ```azurecli
+    Name                                  CloudName    SubscriptionId                        State    IsDefault
+    ------------------------------------  -----------  ------------------------------------  -------  -----------
+    Microsoft Azure                       AzureCloud   68627f8c-91fO-4905-z48q-b032a81f8vy0  Enabled  True
+    ```
+
+    Скопируйте значение для **SubscriptionId**.
+
+2. Перейдите к подписке, в которой размещена рабочая область Log Analytics, с помощью следующей команды:
+
+    ```azurecli
+    az account set -s <subscriptionId of the workspace>
+    ```
+
+3. В следующем примере отображается список рабочих областей в подписках в формате JSON по умолчанию. 
+
+    ```
+    az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
+    ```
+
+    В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
+ 
+4. Выполните следующую команду, чтобы включить надстройку мониторинга, заменив значение `--workspace-resource-id` параметра. Строковое значение должно быть заключено в двойные кавычки:
+
+    ```azurecli
+    az aks enable-addons -a monitoring -n ExistingManagedCluster -g ExistingManagedClusterRG --workspace-resource-id  “/subscriptions/<SubscriptionId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<WorkspaceName>”
+    ```
+
+    Результат должен выглядеть так:
+
+    ```azurecli
+    provisioningState       : Succeeded
+    ```
 
 ## <a name="enable-using-terraform"></a>Включение с помощью Terraform
 

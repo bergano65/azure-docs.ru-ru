@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 07/11/2019
-ms.openlocfilehash: 28c2c01e85120ec17e6f782fb0686a627d50d0d0
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 09/13/2019
+ms.openlocfilehash: 3ceb8b4f3c2c50ac0ac3bd12831b5497f9a05afb
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70136747"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993040"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
@@ -37,7 +37,7 @@ ms.locfileid: "70136747"
 - Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mariadb.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mariadb/howto-data-in-replication#link-the-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
 - Убедитесь, что IP-адрес главного сервера добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MariaDB. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mariadb/howto-manage-firewall-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
-- Убедитесь, что главный сервер имеет **общедоступный IP-адрес** или что DNS является общедоступной.
+- Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
 ### <a name="other"></a>Другой
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.

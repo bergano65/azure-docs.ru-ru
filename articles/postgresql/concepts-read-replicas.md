@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 1571fc449bd40063c531f9942fe9b51da56f783c
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: e276340041e69101190645caad9dbf6de57abd95
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764341"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996496"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Чтение реплик в базе данных Azure для PostgreSQL — один сервер
 
@@ -173,4 +173,4 @@ Postgres требует, чтобы параметр `max_connections` на ре
 
 ## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения см. в статье [Создание реплик чтения и управление ими с помощью портала Azure](howto-read-replicas-portal.md).
-* Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI](howto-read-replicas-cli.md).
+* Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

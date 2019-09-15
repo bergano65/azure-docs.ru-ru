@@ -1,7 +1,7 @@
 ---
 title: Графический интерфейс
-titleSuffix: Azure Machine Learning service
-description: Узнайте о терминах, концепциях и рабочем процессе, которые составляют визуальный интерфейс (Предварительная версия) для службы Машинное обучение Azure.
+titleSuffix: Azure Machine Learning
+description: Узнайте о терминах, концепциях и рабочем процессе, которые составляют визуальный интерфейс (Предварительная версия) для Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/15/2019
-ms.openlocfilehash: 70141e3ad438ff7ff6d4486e6c27ff4163416e95
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 65daf1468d27825d9904a14e42e43796d3985321
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860399"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996525"
 ---
-# <a name="what-is-the-visual-interface-for-azure-machine-learning-service"></a>Что такое визуальный интерфейс для службы Машинное обучение Azure? 
+# <a name="what-is-the-visual-interface-for-azure-machine-learning"></a>Что такое визуальный интерфейс для Машинное обучение Azure? 
 
-Визуальный интерфейс (Предварительная версия) для службы Машинное обучение Azure позволяет выполнять подготовку, обучение, тестирование, развертывание, управление и мониторинг моделей машинного обучения без написания кода.
+Визуальный интерфейс (Предварительная версия) для Машинное обучение Azure позволяет выполнять подготовку, обучение, тестирование, развертывание, управление и мониторинг моделей машинного обучения без написания кода.
 
 Программирование не требуется, вы визуально подключаете [наборы данных](#dataset) и [модули](#module) для создания модели.
 
-Визуальный интерфейс использует [рабочую область](concept-workspace.md) службы машинное обучение Azure для:
+Визуальный интерфейс использует [рабочую область](concept-workspace.md) машинное обучение Azure для:
 
 + Запись артефактов [экспериментов](#experiment) в рабочую область.
 + Доступ к [наборам данных](#dataset).

@@ -1,7 +1,7 @@
 ---
 title: Расширение интерфейса командной строки для Машинного обучения
-titleSuffix: Azure Machine Learning service
-description: Узнайте о расширении интерфейса командной строки для службы Машинного обучения Azure. Azure CLI — это кроссплатформенная программа командной строки, которая позволяет работать с ресурсами в облаке Azure. Расширение Машинного обучения позволяет работать со службой "Машинное обучение Azure".
+titleSuffix: Azure Machine Learning
+description: Узнайте о расширении интерфейса командной строки для службы Машинного обучения Azure. Azure CLI — это кроссплатформенная программа командной строки, которая позволяет работать с ресурсами в облаке Azure. Расширение Машинное обучение позволяет работать с Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: jordane
 author: jpe316
 ms.date: 08/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6c5068512f8ba26f7710bca7c0fccb98e0a5be33
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 85ebcc36d32b86ec2640ce7ce02190deaab19d6b
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69996749"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997080"
 ---
-# <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
+# <a name="use-the-cli-extension-for-azure-machine-learning"></a>Использование расширения CLI для Машинное обучение Azure
 
-CLI для Машинного обучения Azure является расширением кроссплатформенного интерфейса командной строки для платформы Azure ([Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)). Это расширение предоставляет команды для работы со службой Машинное обучение Azure. Она позволяет автоматизировать действия машинного обучения. В следующем списке приведены некоторые примеры действий, которые можно выполнить с помощью расширения CLI.
+CLI для Машинного обучения Azure является расширением кроссплатформенного интерфейса командной строки для платформы Azure ([Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)). Это расширение предоставляет команды для работы с Машинное обучение Azure. Она позволяет автоматизировать действия машинного обучения. В следующем списке приведены некоторые примеры действий, которые можно выполнить с помощью расширения CLI.
 
 + выполнять эксперименты для создания моделей машинного обучения;
 
@@ -32,7 +32,7 @@ CLI для Машинного обучения Azure является расши
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
@@ -86,7 +86,7 @@ az extension remove -n azure-cli-ml
     az group create -n myresourcegroup -l westus2
     ```
 
-+ Создайте рабочую область Службы машинного обучения Azure.
++ Создайте рабочую область Машинное обучение Azure:
 
     ```azurecli-interactive
     az ml workspace create -w myworkspace -g myresourcegroup
@@ -163,7 +163,7 @@ az extension remove -n azure-cli-ml
 
 ## <a name="environment-management"></a>Управление средой
 
-Следующие команды демонстрируют создание, регистрацию и перечисление [сред](how-to-configure-environment.md) службы машинное обучение Azure для рабочей области.
+Следующие команды демонстрируют создание, регистрацию и перечисление Машинное обучение Azure [окружений](how-to-configure-environment.md) для рабочей области.
 
 + Создание файлов формирования шаблонов для среды:
 

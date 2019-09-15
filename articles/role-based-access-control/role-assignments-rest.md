@@ -1,5 +1,5 @@
 ---
-title: Управление доступом к ресурсам Azure с помощью RBAC и REST API Azure | Документация Майкрософт
+title: Управление доступом к ресурсам Azure с помощью RBAC и REST API в Azure | Документация Майкрософт
 description: Узнайте, как управлять доступом пользователей, групп и приложений к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и REST API. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: na
@@ -12,15 +12,15 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/28/2019
+ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 3602e4ca83e828270ebef56c688670b896ca58a4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 86ee030e8c97cf3033b9d2d76b8125c64ecf8065
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472729"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996471"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-rest-api"></a>Управление доступом к ресурсам Azure с помощью RBAC и REST API
 
@@ -38,25 +38,24 @@ ms.locfileid: "66472729"
 
 1. Внутри URI замените *{scope}* областью, для которой требуется вывести список назначений ролей.
 
-    | `Scope` | type |
+    | `Scope` | Тип |
     | --- | --- |
-    | `subscriptions/{subscriptionId}` | Подписка |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
-    
-       
-     > [!NOTE]
-     > В приведенном выше примере используется поставщик ресурсов — Microsoft.web ссылающийся на экземпляр службы приложений. Аналогичным образом можно использовать любой другой поставщик ресурсов и построения URI области. Чтобы понять сведения см. [поставщики и типы ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) и поддерживаемых [операции поставщиков ресурсов Azure RM](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations).  
+    | `providers/Microsoft.Management/managementGroups/{groupId1}` | Группа управления |
+    | `subscriptions/{subscriptionId1}` | Подписка |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
+
+    В предыдущем примере Microsoft. Web — это поставщик ресурсов, который ссылается на экземпляр службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область. Дополнительные сведения см. в статьях [поставщики ресурсов Azure и типы](../azure-resource-manager/resource-manager-supported-services.md) и поддерживаемые [операции Azure Resource Manager поставщика ресурсов](resource-provider-operations.md).  
      
 1. Замените *{filter}* условием, по которому требуется отфильтровать список назначений ролей.
 
-    | Фильтр | Описание |
+    | Filter | Описание |
     | --- | --- |
-    | `$filter=atScope()` | Выводит список назначений ролей для только указанной области, не включая назначения ролей внутренних областей. |
+    | `$filter=atScope()` | Выводит список назначений ролей только для указанной области, не включая назначения ролей в подобластях. |
     | `$filter=principalId%20eq%20'{objectId}'` | Выводит список назначений ролей для указанного пользователя, группы или субъекта-службы. |
-    | `$filter=assignedTo('{objectId}')` | Выводит список назначений ролей для указанного пользователя или субъекта-службы. Если пользователь входит в группу, содержащую назначение ролей, назначение этой роли также перечислены. Этот фильтр является транзитивным для групп, что означает, что если пользователь является членом группы и группы является членом другой группы, имеющей назначение ролей, назначение этой роли также присутствует. Этот фильтр принимает только идентификатор объекта для пользователя или субъекта-службы. Невозможно передать идентификатор объекта для группы. |
+    | `$filter=assignedTo('{objectId}')` | Выводит список назначений ролей для указанного пользователя или субъекта-службы. Если пользователь является членом группы, у которой есть назначение ролей, также отображается это назначение роли. Этот фильтр является транзитивным для групп. Это означает, что если пользователь является членом группы, а эта группа является членом другой группы, имеющей назначение ролей, также будет указано назначение роли. Этот фильтр принимает только идентификатор объекта для пользователя или субъекта-службы. Невозможно передать идентификатор объекта для группы. |
 
-## <a name="grant-access"></a>Предоставление доступа
+## <a name="grant-access"></a>Разрешить доступ
 
 При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей. Чтобы создать назначение роли, используйте REST API [Назначения ролей — создание](/rest/api/authorization/roleassignments/create) и укажите субъект безопасности, определение роли и область. Чтобы вызвать этот API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/write`. Из встроенных ролей эту операцию могут выполнять только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
@@ -73,29 +72,37 @@ ms.locfileid: "66472729"
     ```json
     {
       "properties": {
-        "roleDefinitionId": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
+        "roleDefinitionId": "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
         "principalId": "{principalId}"
       }
     }
     ```
-    
+
 1. Внутри URI замените *{scope}* областью для назначения роли.
 
-    | `Scope` | type |
+    | `Scope` | Тип |
     | --- | --- |
-    | `subscriptions/{subscriptionId}` | Подписка |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `providers/Microsoft.Management/managementGroups/{groupId1}` | Группа управления |
+    | `subscriptions/{subscriptionId1}` | Подписка |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Resource |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
 
-1. В тексте запроса замените *{subscriptionId}* своим идентификатором подписки.
+1. В тексте запроса замените *{Scope}* областью для назначения роли.
+
+    | `Scope` | Type |
+    | --- | --- |
+    | `providers/Microsoft.Management/managementGroups/{groupId1}` | Группа управления |
+    | `subscriptions/{subscriptionId1}` | Подписка |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Resource |
 
 1. Замените *{roleDefinitionId}* идентификатором определения роли.
 
 1. Замените *{principalId}* идентификатором объекта для пользователя, группы или субъекта-службы, которым будет назначена роль.
 
-## <a name="remove-access"></a>Запрет доступа
+## <a name="remove-access"></a>Remove access
 
 В RBAC, чтобы удалить доступ, нужно удалить назначение роли. Чтобы удалить назначение роли, используйте REST API [Назначения ролей — удаление](/rest/api/authorization/roleassignments/delete). Чтобы вызвать этот API, нужен доступ к операции `Microsoft.Authorization/roleAssignments/delete`. Из встроенных ролей эту операцию могут выполнять только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
@@ -109,15 +116,16 @@ ms.locfileid: "66472729"
 
 1. Внутри URI замените *{scope}* областью для удаления назначения роли.
 
-    | `Scope` | type |
+    | `Scope` | Type |
     | --- | --- |
-    | `subscriptions/{subscriptionId}` | Подписка |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `providers/Microsoft.Management/managementGroups/{groupId1}` | Группа управления |
+    | `subscriptions/{subscriptionId1}` | Подписка |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Resource |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

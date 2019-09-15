@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/22/2019
-ms.openlocfilehash: 215660b0f0b8748461849f20e65a3585f939085e
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 8f684a9c0c40774c8c17a08801997c569be74c8d
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858796"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993340"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в Машинное обучение Azure
 
@@ -76,7 +76,12 @@ workspace = Workspace.from_config()
 # retrieve an existing datastore in the workspace by name
 datastore = Datastore.get(workspace, datastore_name)
 ```
+
 ### <a name="create-tabulardatasets"></a>Создание Табулардатасетс
+
+Табулардатасетс можно создать с помощью пакета SDK или целевой страницы рабочей области (Предварительная версия).
+
+#### <a name="sdk"></a>SDK 
 
 `from_delimited_files()` Используйте`TabularDatasetFactory` метод класса для чтения файлов в формате CSV или TSV и создания незарегистрированного табулардатасет. При чтении из нескольких файлов результаты будут объединены в одно табличное представление.
 
@@ -103,7 +108,18 @@ titanic_ds.take(3).to_pandas_dataframe()
 1|2|1|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|В
 2|3|1|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
+#### <a name="workspace-landing-page"></a>Целевая страница рабочей области 
+
+Войдите на [целевую страницу рабочей области](https://ml.azure.com) , чтобы создать набор данных через веб-интерфейс. В настоящее время Целевая страница рабочей области поддерживает только создание Табулардатасетс.
+
+Следующая анимация показывает, как создать набор данных на целевой странице рабочей области. 
+
+Сначала выберите **наборы данных** в разделе **активы** в левой области. Затем выберите **+ создать набор данных** , чтобы выбрать источник набора данных. Это может быть локальный файл, хранилище данных или общедоступные URL-адреса. **Параметры, предварительный просмотр** и формы **схемы** являются интеллектуальным заполнением на основе типа файла. Нажмите кнопку **Далее** , чтобы проверить их или настроить набор данных перед созданием. Нажмите кнопку **Готово** , чтобы завершить создание набора данных. 
+
+![Создание набора данных с помощью пользовательского интерфейса](media/how-to-create-register-datasets/create-dataset-ui.gif)
+
 ### <a name="create-filedatasets"></a>Создание Филедатасетс
+
 `from_files()` Используйте`FileDatasetFactory` метод класса для загрузки файлов в любом формате и создания незарегистрированного филедатасет.
 
 ```Python
@@ -134,6 +150,9 @@ titanic_ds = titanic_ds.register(workspace = workspace,
                                  description = 'titanic training data')
 ```
 
+>[!Note]
+> Наборы данных, созданные с помощью целевой страницы рабочей области, автоматически регистрируются в рабочей области. 
+
 ## <a name="version-datasets"></a>Наборы данных версий
 
 Вы можете зарегистрировать новый набор данных с тем же именем, создав новую версию. Версия набора данных — это способ закладки состояния данных, чтобы можно было применить определенную версию набора данных для эксперимента или будущего воспроизведения. Типичные сценарии, которые следует учитывать при управлении версиями: 
@@ -141,7 +160,7 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 * При применении различных подходов к подготовке данных или проектированию компонентов.
 
 ```Python
-# create a TabularDataset from new Titanic training data
+# create a TabularDataset from Titanic training data
 web_paths = [
             'https://dprepdata.blob.core.windows.net/demo/Titanic.csv',
             'https://dprepdata.blob.core.windows.net/demo/Titanic2.csv'

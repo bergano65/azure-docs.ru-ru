@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/20/2018
+ms.date: 09/13/2019
 ms.author: magattus
-ms.openlocfilehash: 2fd3d2f8fbc98d8c7b19cbcc365748cc088d76fd
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 8704d715a20b94dc170f232b07a0acd54bb1e6f1
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594095"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996805"
 ---
 # <a name="understanding-azure-cdn-billing"></a>Общие сведения о выставлении счетов в Azure CDN
 
@@ -57,9 +57,12 @@ ms.locfileid: "67594095"
 
 - Фактическое количество использованных ГБ: фактический объем хранения исходных объектов.
 
+- являются транзакционными при необходимости осуществляются для заполнения кэша.
+
 - Передача в ГБ: количество передаваемых данных для заполнения кэша CDN.
 
-- Транзакции: при необходимости осуществляются для заполнения кэша.
+> [!NOTE]
+> Начиная с 2019 октября, если вы используете Azure CDN от Майкрософт, затраты на перенос данных из источников, размещенных в Azure в CDN, не взимается. Azure CDN от Verizon и Azure CDN из Akamai подчиняются указанным ниже тарифам.
 
 Дополнительную информацию о выставлении счетов на службу хранилища см. в записи блога [Understanding Windows Azure Storage Billing – Bandwidth, Transactions, and Capacity](https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/) (Общие сведения о выставлении счетов за использование службы хранилища Azure Windows — пропускная способность, транзакции и емкость).
 
@@ -83,6 +86,36 @@ ms.locfileid: "67594095"
 - Количество узлов, которым необходимо загрузить объект. Каждый раз, когда узел загружает объект из источника, он выполняет транзакцию, подлежащую оплате. В результате использование более глобального содержимого, к которому имеет доступ большое количество узлов, приводит к увеличению количества оплачиваемых транзакций.
 
 - Влияние срока жизни. Чем длиннее срок жизни объекта, тем реже нужно извлекать его из источника. Это также означает, что такие клиенты, как браузеры, могут кэшировать объект дольше, что может уменьшить число транзакций в CDN.
+
+## <a name="which-origin-services-are-eligible-for-free-data-transfer-with-azure-cdn-from-microsoft"></a>Какие службы источника имеют право на бесплатную пересылку данных с Azure CDN от Майкрософт? 
+Если вы используете одну из следующих служб Azure в качестве источника CDN, вы не будете получать оплату за перенос данных из источника в POP CDN. 
+
+- Служба хранилища Azure
+- Службы мультимедиа Azure
+- Виртуальные машины Azure
+- Виртуальная сеть
+- Load Balancer
+- Шлюз приложений
+- Azure DNS
+- ExpressRoute
+- VPN-шлюз
+- Диспетчер трафика
+- Наблюдатель за сетями
+- Брандмауэр Azure
+- Azure Front Door Service
+- Бастион Azure
+- Служба приложений Azure.
+- Функции Azure
+- Фабрика данных Azure
+- Управление API Azure
+- Пакетная служба Azure 
+- Azure Data Explorer
+- HDInsight
+- Azure Cosmos DB
+- Azure Data Lake Store
+- Служба машинного обучения 
+- База данных SQL Azure
+- Кэш Azure для Redis
 
 ## <a name="how-do-i-manage-my-costs-most-effectively"></a>Как эффективней управлять расходами?
 Установите самый длинный срок жизни для своего содержимого. 

@@ -7,14 +7,14 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 08/15/2019
 ms.author: v-qiwe
-ms.openlocfilehash: 2d23b2b39844d48c6414d269f8d69d7b96fff272
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 13a7769e310bcd0cb28eddbf9dded3fe1d62eec7
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860308"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993683"
 ---
-# <a name="publishing-integrated-solutions"></a>Интегрированные решения для публикации
+# <a name="publishing-integrated-solutions"></a>Публикация интегрированных решений
 
 Интегрированное решение сочетает в себе несколько технологий решения "точка поставщика", а также развертывание и службы системного интегратора (SI) в единое Объединенное предложение, представленное в Marketplace в качестве [предложения консультационных услуг](https://docs.microsoft.com/azure/marketplace/consulting-services).
 
@@ -89,5 +89,9 @@ ms.locfileid: "70860308"
 ## <a name="going-to-market-with-your-integrated-solution"></a>Переход на рынке с помощью интегрированного решения 
 
 Когда ваше решение будет активно в Azure Marketplace или AppSource, вы захотите обеспечить осведомленность и создание спроса с помощью маркетинговых действий. Ознакомьтесь с действиями, перечисленными в [плане проекта и временной шкалой](https://aka.ms/AA5qiuc), включая действия, которые партнеры могут делать в своих группах и друг друга. Затем вы получите доступ к [преимуществам перехода на рынок](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits#list-trial-and-consulting-benefits) , предоставленным партнерам, опубликованным в Marketplace. Все предложения интегрированных решений могут использовать преимущества пробного уровня.
+
+## <a name="next-steps"></a>Следующие шаги
+
+Сведения о приобретении интегрированного решения в Marketplace см. в статье [интегрированные решения](https://docs.microsoft.com/azure/marketplace/integrated-solutions) .
 
 ---

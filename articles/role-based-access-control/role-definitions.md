@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/18/2019
+ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 4bf2e057f4c5dad650834f9b42c75be3aedec46e
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 1cd5325be7def4bc631d994f8811734e6c3cf545
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142845"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996434"
 ---
 # <a name="understand-role-definitions-for-azure-resources"></a>Общие сведения об определениях ролей для ресурсов Azure
 
@@ -213,16 +213,18 @@ AssignableScopes []
 
 ## <a name="assignablescopes"></a>AssignableScopes
 
-`AssignableScopes` Свойство определяет области (подписки, группы ресурсов или ресурсы), для которых доступно определение этой роли. Роль можно сделать доступной для назначения только в подписках или группах ресурсов, которым он необходим, и не будет перегружать взаимодействие с пользователем для остальных подписок или групп ресурсов. Необходимо использовать по крайней мере одну подписку, группу ресурсов или идентификатор ресурса.
+`AssignableScopes` Свойство определяет области (группы управления, подписки, группы ресурсов или ресурсы), для которых доступно определение этой роли. Роль можно сделать доступной для назначения только в группах управления, подписках или группах ресурсов, которым он необходим. Необходимо использовать по крайней мере одну группу управления, подписку, группу ресурсов или один идентификатор ресурса.
 
 Для встроенных ролей в качестве `AssignableScopes` задана корневая область (`"/"`). Корневая область указывает, что роль доступна для назначения во всех областях. Примеры допустимых назначаемых областей:
 
-| Сценарий | Пример |
+| Роль доступна для назначения | Пример |
 |----------|---------|
-| Роль доступна для назначения в одной подписке | `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e"` |
-| Роль доступна для назначения в двух подписках | `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e", "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624"` |
-| Роль доступна для назначения только в группе сетевых ресурсов | `"/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network"` |
-| Роль доступна для назначения во всех областях (применяется только к встроенным ролям). | `"/"` |
+| Одна подписка | `"/subscriptions/{subscriptionId1}"` |
+| Две подписки | `"/subscriptions/{subscriptionId1}", "/subscriptions/{subscriptionId2}"` |
+| Группа сетевых ресурсов | `"/subscriptions/{subscriptionId1}/resourceGroups/Network"` |
+| Одна группа управления | `"/providers/Microsoft.Management/managementGroups/{groupId1}"` |
+| Группа управления и подписка | `"/providers/Microsoft.Management/managementGroups/{groupId1}", /subscriptions/{subscriptionId1}",` |
+| Все области (применимо только к встроенным ролям) | `"/"` |
 
 Для дополнительных сведений об `AssignableScopes` для пользовательских ролей см. статью [Пользовательские роли в Azure](custom-roles.md).
 

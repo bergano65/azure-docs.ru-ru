@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: bd1317242f84b4d8bd039da89d991a73f6cd3781
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 0ff6cd50a5a6cb1599a2248fbc61b0b6b307e791
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309315"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995457"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
@@ -179,4 +179,4 @@ ms.locfileid: "70309315"
  
 ## <a name="next-steps"></a>Следующие шаги
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
-* Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI](howto-read-replicas-cli.md).
+* Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

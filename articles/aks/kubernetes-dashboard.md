@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: mlearned
-ms.openlocfilehash: 5aa8268fee7d43ad13ea8710760ba493683f502e
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: f150103c8e9534bfd1bb93d20e3d65d715767184
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126889"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996965"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -36,34 +36,47 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 Эта команда создает прокси-сервер между системой разработки и API Kubernetes и открывает панель мониторинга Kubernetes в веб-браузере. Если веб-браузер не открывается на панели мониторинга Kubernetes, скопируйте и вставьте URL-адрес, указанный в Azure CLI, обычно `http://127.0.0.1:8001`.
 
-![Страница входа веб-панели мониторинга Kubernetes](./media/kubernetes-dashboard/dashboard-login.png)
+<!--
+![The login page of the Kubernetes web dashboard](./media/kubernetes-dashboard/dashboard-login.png)
 
-Вы можете войти на панель мониторинга кластера, выполнив следующие действия.
+You have the following options to sign in to your cluster's dashboard:
 
-* [Файл kubeconfig][kubeconfig-file]. Файл kubeconfig можно создать с помощью команды [AZ AKS Get-credentials][az-aks-get-credentials].
-* Маркер, например [маркер учетной записи службы][aks-service-accounts] или маркер пользователя. В [кластерах с поддержкой AAD][aad-cluster]этот маркер будет маркером AAD. Вы можете использовать `kubectl config view` для перечисления маркеров в файле kubeconfig. Дополнительные сведения о создании токена AAD для использования с кластером AKS см. [в разделе интеграция Azure Active Directory со службой Kubernetes Azure с помощью Azure CLI][aad-cluster].
-* Учетная запись службы панели мониторинга по умолчанию, которая используется, если нажать кнопку *пропустить*.
+* A [kubeconfig file][kubeconfig-file]. You can generate a kubeconfig file using [az aks get-credentials][az-aks-get-credentials].
+* A token, such as a [service account token][aks-service-accounts] or user token. On [AAD-enabled clusters][aad-cluster], this token would be an AAD token. You can use `kubectl config view` to list the tokens in your kubeconfig file. For more details on creating an AAD token for use with an AKS cluster see [Integrate Azure Active Directory with Azure Kubernetes Service using the Azure CLI][aad-cluster].
+* The default dashboard service account, which is used if you click *Skip*.
 
 > [!WARNING]
-> Никогда не предоставляйте панель мониторинга Kubernetes в открытом виде, независимо от используемого метода проверки подлинности.
+> Never expose the Kubernetes dashboard publicly, regardless of the authentication method used.
 > 
-> При настройке проверки подлинности для панели мониторинга Kubernetes рекомендуется использовать маркер для учетной записи службы панели мониторинга по умолчанию. Маркер позволяет каждому пользователю использовать собственные разрешения. Использование учетной записи службы панели мониторинга по умолчанию может позволить пользователю обходить свои собственные разрешения и использовать вместо этого учетную запись службы.
+> When setting up authentication for the Kubernetes dashboard, it is recommended that you use a token over the default dashboard service account. A token allows each user to use their own permissions. Using the default dashboard service account may allow a user to bypass their own permissions and use the service account instead.
 > 
-> Если вы решили использовать учетную запись службы панели мониторинга по умолчанию, и кластер AKS использует RBAC, необходимо создать *клустерролебиндинг* , прежде чем станет возможен правильный доступ к панели мониторинга. По умолчанию панель мониторинга Kubernetes развертывается с минимальными правами доступа на чтение и отображает сообщения об ошибках доступа RBAC. Администратор кластера может предоставить дополнительный доступ к учетной записи службы *kubernetes-dashboard*, однако это может послужить вектором для эскалации привилегий. Вы также можете интегрировать аутентификацию Azure Active Directory, чтобы предоставить более детальный уровень доступа.
+> If you do choose to use the default dashboard service account and your AKS cluster uses RBAC, a *ClusterRoleBinding* must be created before you can correctly access the dashboard. By default, the Kubernetes dashboard is deployed with minimal read access and displays RBAC access errors. A cluster administrator can choose to grant additional access to the *kubernetes-dashboard* service account, however this can be a vector for privilege escalation. You can also integrate Azure Active Directory authentication to provide a more granular level of access.
 >
-> Чтобы создать привязку, используйте команду [kubectl Create клустерролебиндинг][kubectl-create-clusterrolebinding] , как показано в следующем примере. **Этот пример привязки не применяет дополнительные компоненты проверки подлинности и может привести к небезопасному использованию.**
+> To create a binding, use the [kubectl create clusterrolebinding][kubectl-create-clusterrolebinding] command as shown in the following example. **This sample binding does not apply any additional authentication components and may lead to insecure use.**
 >
 > ```console
 > kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 > ```
 > 
-> Теперь можно просматривать панели мониторинга Kubernetes в кластере с поддержкой RBAC. Чтобы запустить панель мониторинга Kubernetes, используйте команду [AZ AKS Browse][az-aks-browse] , как описано в предыдущем шаге.
+> You can now access the Kubernetes dashboard in your RBAC-enabled cluster. To start the Kubernetes dashboard, use the [az aks browse][az-aks-browse] command as detailed in the previous step.
 >
-> Если кластер не использует RBAC, не рекомендуется создавать *клустерролебиндинг*.
+> If your cluster does not use RBAC, it is not recommended to create a *ClusterRoleBinding*.
+> 
+> For more information on using the different authentication methods, see the Kubernetes dashboard wiki on [access controls][dashboard-authentication].
+
+After you choose a method to sign in, the Kubernetes dashboard is displayed. If you chose to use *token* or *skip*, the Kubernetes dashboard will use the permissions of the currently logged in user to access the cluster.
+-->
+
+> [!IMPORTANT]
+> Если кластер AKS использует RBAC, необходимо создать *ClusterRoleBinding*(связи кластерных ролей) прежде чем правильно подключиться к панели мониторинга. По умолчанию панель мониторинга Kubernetes развертывается с минимальными правами доступа на чтение и отображает сообщения об ошибках доступа RBAC. Сейчас панель мониторинга Kubernetes не поддерживает пользовательские учетные данные для определения уровня доступа. Вместо этого она использует роли, предоставленные учетной записи службы. Администратор кластера может предоставить дополнительный доступ к учетной записи службы *kubernetes-dashboard*, однако это может послужить вектором для эскалации привилегий. Вы также можете интегрировать аутентификацию Azure Active Directory, чтобы предоставить более детальный уровень доступа.
+> 
+> Чтобы создать привязку, используйте команду [kubectl Create клустерролебиндинг][kubectl-create-clusterrolebinding] . В следующем примере показано, как создать пример привязки, однако этот пример привязки не применяет какие-либо дополнительные компоненты проверки подлинности и может привести к небезопасному использованию. Панель мониторинга Kubernetes доступна для любого пользователя, имеющего доступ к URL-адресу. Не предоставляйте публичный доступ к панели мониторинга Kubernetes.
+>
+> ```console
+> kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+> ```
 > 
 > Дополнительные сведения об использовании различных методов проверки подлинности см. на вики-сайте панели мониторинга Kubernetes в разделе [элементы управления доступом][dashboard-authentication].
-
-После выбора метода для входа отображается панель мониторинга Kubernetes. Если вы решили использовать *токен* или *пропустить*, панель мониторинга Kubernetes будет использовать для доступа к кластеру разрешения текущего пользователя, вошедшего в систему.
 
 ![Страница "Обзор" веб-панели мониторинга Kubernetes](./media/kubernetes-dashboard/dashboard-overview.png)
 

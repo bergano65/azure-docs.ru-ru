@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 08/06/2019
+ms.date: 09/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: cf72a83035e318d3a937176bbaaebd8e298d3ad2
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: ff3a19a543f87833420f585bbdf7891cc7589746
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390680"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997203"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -764,7 +764,7 @@ print(response.json())
 ### <a id="azuremlcompute"></a>Вывод пакета
 Машинное обучение Azure целевые объекты вычислений создаются и управляются службой Машинное обучение Azure. Их можно использовать для прогнозирования пакетной службы из Машинное обучение Azure конвейеров.
 
-Пошаговое руководство по выводу пакетов с помощью Машинное обучение Azure COMPUTE см. [в разделе Выполнение пакетных прогнозов](how-to-run-batch-predictions.md).
+Пошаговое руководство по выводу пакетов с помощью Машинное обучение Azure COMPUTE см. [в разделе Выполнение пакетных прогнозов](tutorial-pipeline-batch-scoring-classification.md).
 
 ### <a id="iotedge"></a>Вывод IoT Edge
 Поддержка развертывания на границе доступна в предварительной версии. Дополнительные сведения см. в разделе [развертывание машинное обучение Azure как модуля IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning).
@@ -804,6 +804,19 @@ print(response.json())
 
 * [Microsoft/Млопс](https://github.com/Microsoft/MLOps)
 * [Microsoft/Млопсписон](https://github.com/microsoft/MLOpsPython)
+
+## <a name="download-a-model"></a>Загрузка модели
+Если вы хотите загрузить модель для использования в собственной среде выполнения, это можно сделать с помощью следующих команд SDK/CLI:
+
+TOOL
+```python
+model_path = Model(ws,'mymodel').download()
+```
+
+CLI:
+```azurecli-interactive
+az ml model download --model-id mymodel:1 --target-dir model_folder
+```
 
 ## <a name="package-models"></a>Модели пакетов
 
