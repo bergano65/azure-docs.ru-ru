@@ -1,5 +1,5 @@
 - name: Документация по Data Lake Analytics
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Что такое Data Lake Analytics?
@@ -14,17 +14,17 @@
       href: data-lake-analytics-data-lake-tools-for-vscode.md
     - name: Azure PowerShell
       href: data-lake-analytics-get-started-powershell.md
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: data-lake-analytics-get-started-cli.md
-- name: Руководства
+- name: Практическое руководство
   items:
     - name: Управление службой Data Lake Analytics
       items:
         - name: Портал Azure
           href: data-lake-analytics-manage-use-portal.md
-        - name: Команда
+        - name: Командная строка
           items:
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: data-lake-analytics-manage-use-cli.md
             - name: Azure PowerShell
               href: data-lake-analytics-manage-use-powershell.md
@@ -72,7 +72,7 @@
               href: data-lake-analytics-u-sql-programmability-guide.md
         - name: Visual Studio
           items:
-            - name: Install
+            - name: Установка
               href: data-lake-analytics-data-lake-tools-install.md
             - name: Локальный запуск
               href: data-lake-analytics-data-lake-tools-local-run.md
@@ -106,7 +106,7 @@
               href: data-lake-tools-for-vscode-local-run-and-debug.md
     - name: Планирование заданий U-SQL
       items:
-        - name: Планирование заданий с помощью SSIS
+        - name: Планирование заданий с помощью Integration Services
           href: data-lake-analytics-schedule-jobs-ssis.md
     - name: Непрерывные интеграция и развертывание
       items:
@@ -132,7 +132,7 @@
       href: /rest/api/datalakeanalytics/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.datalakeanalytics/allversions
-    - name: Интерфейс командной строки
+    - name: CLI
       href: 'https://docs.microsoft.com/cli/azure/dla'
 - name: Ресурсы
   items:
