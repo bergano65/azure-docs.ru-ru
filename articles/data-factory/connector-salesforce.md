@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 625f31252942c3d8dea9ca9b4772af19f60e17ab
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 08d1afb4175a61b70d8e04b19db187bcc87dd129
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68720712"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010516"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -28,6 +28,12 @@ ms.locfileid: "68720712"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
+Этот соединитель Salesforce поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
+
+
 Данные из Salesforce можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. В свою очередь, данные из любого хранилища данных, поддерживаемого в качестве источника, можно скопировать в Salesforce. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
 В частности, этот соединитель Salesforce поддерживает следующее.
@@ -37,7 +43,7 @@ ms.locfileid: "68720712"
 
 Соединитель Salesforce создан на основе API-интерфейса SalesForce RESTFUL и групповой информации с [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из и [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -318,15 +324,15 @@ ms.locfileid: "68720712"
 |:--- |:--- |
 | Auto Number |Строковое |
 | Checkbox |логический |
-| Currency |Десятичное |
+| Currency |Decimal |
 | Date |DateTime |
 | Date/Time |DateTime |
 | Адрес эл. почты |Строковое |
 | Id |Строковое |
 | Lookup Relationship |Строковое |
 | Multi-Select Picklist |Строковое |
-| Number |Десятичное |
-| Percent |Десятичное |
+| Number |Decimal |
+| Percent |Decimal |
 | Phone |Строковое |
 | Picklist |Строковое |
 | Текст |Строковое |
@@ -335,6 +341,11 @@ ms.locfileid: "68720712"
 | Text Area (Rich) |Строковое |
 | Text (Encrypted) |Строковое |
 | URL |Строковое |
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

@@ -11,12 +11,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: b145b341a4db503a00d517decf6406e26f23c3cd
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: cc12579a4932894b730b04cdc77acc0151168bdb
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802455"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010219"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -94,6 +94,9 @@ ms.locfileid: "70802455"
     ![варианты хранилищ](./media/sql-database-auditing-get-started/auditing-select-destination.png)
 
 6. Чтобы настроить запись журналов аудита в учетную запись хранения, выберите **Хранилище** и щелкните **Сведения о хранилище**. Выберите учетную запись хранения Azure, в которой будут храниться журналы, и укажите срок хранения. Старые журналы будут удалены. Затем нажмите кнопку **ОК**.
+
+   > [!IMPORTANT]
+   > Значение по умолчанию для срока хранения равно 0 (неограниченный срок хранения). Это значение можно изменить, переместив ползунок **retention (дни)** в **параметрах хранилища** при настройке учетной записи хранения для аудита.
 
     ![учетная запись хранения](./media/sql-database-auditing-get-started/auditing_select_storage.png)
 

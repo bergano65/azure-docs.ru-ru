@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: 37e6a3ee9f793a475cf9d775e99da989e82957dc
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 4b6e5d90d72e84f3a8a54ea0aadcad687b598b2d
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813489"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010350"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -27,6 +27,12 @@ ms.locfileid: "70813489"
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные в SQL Server базу данных и в нее. Она основана на статье [Обзор действия копирования](copy-activity-overview.md) , в которой представлен общий обзор действия копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель SQL Server поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
+- [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
 
 Данные из базы данных SQL Server можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Или можно скопировать данные из любого поддерживаемого исходного хранилища данных в базу данных SQL Server. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -526,6 +532,14 @@ END
 
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal, Фабрика данных Azure поддерживает точность до 28. Если для ваших данных требуется точность больше 28, попробуйте преобразовать их в строковые данные в SQL-запросе.
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
+## <a name="getmetadata-activity-properties"></a>Свойства действия с метаданными
+
+Дополнительные сведения о свойствах см. в статье [действие с операциями](control-flow-get-metadata-activity.md) с помощью метаданных. 
 
 ## <a name="troubleshoot-connection-issues"></a>Устранение неполадок с подключением
 

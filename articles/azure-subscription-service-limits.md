@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: 7c4c80950e43f374b40085cb4e1c3e026e5f3abd
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 0f036462eb9b37b4ec783bcf8957d307cc55f7ac
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "68698285"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018520"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
@@ -89,8 +89,9 @@ ms.locfileid: "68698285"
   * [Брандмауэр Azure](#azure-firewall-limits)
   * [ExpressRoute](#expressroute-limits)
   * [Load Balancer](#load-balancer)
-  * [Общедоступный IP-адрес](#publicip-address)
   * [Наблюдатель за сетями](#network-watcher-limits)
+  * [Общедоступный IP-адрес](#publicip-address)
+  * [Частная ссылка](#private-link-limits)
   * [Диспетчер трафика](#traffic-manager-limits)
   * [Виртуальная сеть](#networking-limits)
 * [Центры уведомлений](#notification-hubs-limits)
@@ -168,6 +169,9 @@ ms.locfileid: "68698285"
 
 #### <a name="network-watcher-limits"></a>Пределы наблюдателя за сетями
 [!INCLUDE [network-watcher-limits](../includes/network-watcher-limits.md)]
+
+#### <a name="private-link-limits"></a>Ограничения для частных ссылок
+[!INCLUDE [private-link-limits](../includes/private-link-limits.md)]
 
 #### <a name="traffic-manager-limits"></a>Ограничения диспетчера трафика
 [!INCLUDE [traffic-manager-limits](../includes/traffic-manager-limits.md)]

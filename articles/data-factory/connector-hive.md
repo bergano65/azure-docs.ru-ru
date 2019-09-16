@@ -12,18 +12,23 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 40f97c3b31a7e49c9a5ecc790e3cc762572ecaa3
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 120aed4277abfb2ea977670c107a4ee759bd3524
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276371"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71009143"
 ---
 # <a name="copy-data-from-hive-using-azure-data-factory"></a>Копирование данных из Hive с помощью фабрики данных Azure 
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Hive. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель Hive поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из Hive можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -46,14 +51,14 @@ ms.locfileid: "70276371"
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать следующее значение: **Hive** | Да |
-| host | IP-адрес или имя узла сервера Hive, разделенные ";" для нескольких узлов (только при включенном режиме serviceDiscoveryMode).  | Да |
+| host | IP-адрес или имя узла сервера Hive, разделенные точкой с запятой ";" для нескольких узлов (только если включен параметр Сервицедисковеримоде).  | Да |
 | port | TCP-порт, используемый сервером Hive для прослушивания клиентских подключений. При подключении к Azure HDInsights укажите порт 443. | Да |
 | serverType | Тип сервера Hive. <br/>Допустимые значения: **HiveServer1**, **HiveServer2**, **HiveThriftServer** | Нет |
 | thriftTransportProtocol | Транспортный протокол для использования в слое Thrift. <br/>Допустимые значения: **Binary**, **SASL**, **HTTP** | Нет |
 | authenticationType | Метод проверки подлинности, используемый для доступа к серверу Hive. <br/>Допустимые значения: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Да |
 | serviceDiscoveryMode | Значение true, если служба ZooKeeper используется, значение false — если нет.  | Нет |
 | zooKeeperNameSpace | Пространство имен на ZooKeeper, в которое добавлены 2 узла сервера Hive.  | Нет |
-| useNativeQuery | Определяет, использует ли драйвер собственные запросы HiveQL или преобразует их в эквивалентную форму в HiveQL.  | Нет |
+| useNativeQuery | Указывает, использует ли драйвер собственные запросы HiveQL или преобразует их в эквивалентную форму в HiveQL.  | Нет |
 | username | Имя пользователя, которое позволяет получить доступ к серверу Hive.  | Нет |
 | password | Пароль, соответствующий пользователю. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
 | httpPath | Частичный URL-адрес, соответствующий серверу Hive.  | Нет |
@@ -159,6 +164,11 @@ ms.locfileid: "70276371"
     }
 ]
 ```
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

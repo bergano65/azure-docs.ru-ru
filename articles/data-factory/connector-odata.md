@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: a31f0618f7e9dc8fdb0e9b2988d3d3c32fefcf64
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 2d61963f85bc5d2ec6398c8b7439689e7125f9c6
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277670"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010650"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 
@@ -28,6 +28,11 @@ ms.locfileid: "70277670"
 В этой статье описывается, как с помощью действия копирования в Фабрике данных Azure копировать данные из источника OData. Это продолжение статьи о [действии копирования в Фабрике данных Azure](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель OData поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из источника OData можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -299,6 +304,10 @@ ms.locfileid: "70277670"
 > [!NOTE]
 > Сложные типы данных OData (например **объекты**), не поддерживаются.
 
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

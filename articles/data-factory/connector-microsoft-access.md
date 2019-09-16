@@ -12,18 +12,23 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/27/2019
 ms.author: jingwang
-ms.openlocfilehash: 796d2a4730f5de8d2f294fb2b30a0616b81f3e59
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 9b7f63606733c8be1a6f9593db0862d39e432d68
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276238"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010058"
 ---
 # <a name="copy-data-from-and-to-microsoft-access-data-stores-using-azure-data-factory"></a>Копирование данных из хранилищ данных Microsoft Access и обратно с помощью фабрики данных Azure
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure копировать данные из хранилища данных Microsoft Access. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель Microsoft Access поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой исходной матрицей](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из источника Microsoft Access можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -157,6 +162,10 @@ ms.locfileid: "70276238"
     }
 ]
 ```
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

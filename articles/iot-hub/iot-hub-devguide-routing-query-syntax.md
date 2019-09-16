@@ -57,7 +57,7 @@ ms.locfileid: "69877076"
 | contentEncoding | string | Пользователь указывает тип кодирования сообщений. Допустимые значения: UTF-8, UTF-16, UTF-32, если contentType имеет значение application/JSON. |
 | iothub-connection-device-id | string | Это значение задается Центром Интернета вещей и определяет идентификатор устройства. Чтобы запросить, используйте `$connectionDeviceId`. |
 | iothub-enqueuedtime | string | Это значение задается центром Интернета вещей и представляет фактическое время постановки сообщения в очередь в формате UTC. Чтобы запросить, используйте `enqueuedTime`. |
-| iothub-interface-name | string | Это значение задается пользователем и представляет имя интерфейса Digital двойника, который реализует сообщение телеметрии. Чтобы запросить, используйте `$interfaceName`. Эта функция доступна как часть общедоступной [предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |
+| iothub-Interface-Name | string | Это значение задается пользователем и представляет имя интерфейса Digital двойника, который реализует сообщение телеметрии. Чтобы запросить, используйте `$interfaceName`. Эта функция доступна как часть общедоступной [предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |
 
 Как описано в разделе [Сообщения центра Интернета вещей](iot-hub-devguide-messages-construct.md), существуют дополнительные системные свойства в сообщении. В дополнение к **contentType**, **contentEncoding** и **enqueuedTime** также можно запросить **connectionDeviceId** и  **connectionModuleId**.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 3082c568b3ce3fa5199c7a7d0d082db36720d293
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 561f383327738c9a2ab29f2907f00ace1eec6def
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70233020"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010275"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB (API SQL) или из нее с помощью Фабрики данных Azure
 
@@ -31,6 +31,11 @@ ms.locfileid: "70233020"
 >Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него. Сведения о MongoDB см. в статье [Копирование данных в API службы Azure Cosmos DB для MongoDB или из него с помощью Фабрики данных Azure](connector-azure-cosmos-db-mongodb-api.md). Другие типы API сейчас не поддерживаются.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель Azure Cosmos DB (API SQL) поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные можно скопировать из Azure Cosmos DB (SQL API) в любое поддерживаемое хранилище данных — приемник или скопировать данные из любого исходного хранилища данных в Azure Cosmos DB (SQL API). Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -251,6 +256,9 @@ ms.locfileid: "70233020"
     }
 ]
 ```
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="import-or-export-json-documents"></a>Импорт или экспорт документов JSON
 
