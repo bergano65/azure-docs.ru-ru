@@ -34,7 +34,7 @@ ms.locfileid: "70141998"
 
 1. Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
 
-   [Создание среды "аналитика временных рядов" ![](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
+   [![Создание среды "аналитика временных рядов" ](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
 
 1. На странице **Аналитика временных рядов** выберите **Создать**.
 
