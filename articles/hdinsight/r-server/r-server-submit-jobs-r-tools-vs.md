@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 0ae717487f1538536601c8578e744d976798bf76
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 2d53f1bfc6eade535bfb1b3bb07d5115ffe5fc80
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899933"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967945"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
 
@@ -55,7 +55,8 @@ ms.locfileid: "70899933"
 5. Откройте файл `1-Getting Started with R.R` в папке решений `A first look at R`.
 6. Начиная сверху файла, нажимайте клавиши CTRL+ENTER, чтобы по очереди отправлять каждую строку в интерактивное окно R. Для некоторых строк это может занять определенное время, так как код в них устанавливает новые пакеты.
     * Кроме того, вы можете выбрать все строки в файле R (CTRL+A) и выполнить их все (CTRL+ENTER) либо на панели инструментов выбрать значок выполнения в интерактивном режиме.
-        ![Выполнение в интерактивном режиме](./media/r-server-submit-jobs-r-tools-vs/execute-interactive.png)
+
+        ![Выполнить интерактивный](./media/r-server-submit-jobs-r-tools-vs/execute-interactive1.png)
 
 7. Когда все строки в сценарии будут выполнены, у вас должен быть следующий результат:
 
@@ -82,20 +83,20 @@ ms.locfileid: "70899933"
     # Create the Spark Cluster compute context
     mySparkCluster <- RxSpark(
           sshUsername = mySshUsername,
-      sshHostname = mySshHostname,
-      sshSwitches = mySshSwitches,
-      sshProfileScript = mySshProfileScript,
-      consoleOutput = TRUE,
-      hdfsShareDir = myHdfsShareDir,
-      shareDir = myShareDir,
-      sshClientDir = mySshClientDir
+          sshHostname = mySshHostname,
+          sshSwitches = mySshSwitches,
+          sshProfileScript = mySshProfileScript,
+          consoleOutput = TRUE,
+          hdfsShareDir = myHdfsShareDir,
+          shareDir = myShareDir,
+          sshClientDir = mySshClientDir
     )
-    
+
     # Set the current compute context as the Spark compute context defined above
     rxSetComputeContext(mySparkCluster)
     ```
-    
-    ![Настройка контекста Spark](./media/r-server-submit-jobs-r-tools-vs/spark-context.png)
+
+   ![Настройка контекста Spark](./media/r-server-submit-jobs-r-tools-vs/apache-spark-context.png)
 
 1. В интерактивном окне R выполните следующие команды:
 
@@ -107,13 +108,12 @@ ms.locfileid: "70899933"
 
     Должен отобразиться результат, аналогичный приведенному ниже:
 
-    ![Успешное выполнение команды rx](./media/r-server-submit-jobs-r-tools-vs/rx-commands.png)
-
+    ![Успешное выполнение](./media/r-server-submit-jobs-r-tools-vs/successful-rx-commands.png) команды RX
 1. Убедитесь, что команда `rxHadoopCopy` успешно скопировала файл `people.json` из папки данных для примера в недавно созданную папку `/user/RevoShare/newUser`:
 
     1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
 
-        ![Учетные записи хранения](./media/r-server-submit-jobs-r-tools-vs/storage-accounts.png)
+        ![Учетные записи хранения](./media/r-server-submit-jobs-r-tools-vs/hdinsight-storage-accounts.png)
 
     2. Выберите учетную запись хранения по умолчанию для своего кластера, записав имя контейнера и каталога.
 
@@ -123,7 +123,7 @@ ms.locfileid: "70899933"
 
     4. Выберите имя контейнера вашего кластера, перейдите в папку **пользователя** (возможно, внизу списка нужно будет нажать *Загрузить еще*), выберите *RevoShare*, а затем — **newUser**. Файл `people.json` должен появиться в папке `newUser`.
 
-        ![Скопированный файл](./media/r-server-submit-jobs-r-tools-vs/copied-file.png)
+        ![Скопированный файл](./media/r-server-submit-jobs-r-tools-vs/hdinsight-copied-file.png)
 
 1. После этого остановите выполнение текущего контекста Apache Spark. Одновременное выполнение нескольких контекстов не поддерживается.
 

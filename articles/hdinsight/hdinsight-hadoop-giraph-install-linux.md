@@ -1,18 +1,18 @@
 ---
-title: Установка и использование Giraph в кластерах Azure HDInsight
-description: Узнайте, как установить Giraph в кластерах HDInsight с помощью действий сценария. Giraph можно использовать для выполнения обработки в Apache Hadoop в облаке Azure graph.
+title: Установка и использование Giraph в Azure HDInsight
+description: Узнайте, как установить Giraph в кластерах HDInsight с помощью действий сценария. Giraph можно использовать для обработки графов в Apache Hadoop в облаке Azure.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: aa13d8dfc65f020f3f27183423913933cd0b9404
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f1ca536ffa2166df4ef6cf51654b7b410e72ea66
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64697602"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962081"
 ---
 # <a name="install-apache-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов
 
@@ -111,7 +111,7 @@ ms.locfileid: "64697602"
 
     В визуальной форме и с использованием значения (или веса) в качестве расстояния между объектами данные могут выглядеть, как показано на следующей схеме.
 
-    ![tiny_graph.txt начерчен в виде кругов с линиями различной длины между](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph.png)
+    ![tiny_graph.txt начерчен в виде кругов с линиями различной длины между](./media/hdinsight-hadoop-giraph-install-linux/hdinsight-giraph-graph.png)
 
 3. Чтобы сохранить файл, нажмите **CTRL+X**, затем **Y** и **ВВОД**.
 
@@ -143,7 +143,7 @@ ms.locfileid: "64697602"
 
     Дополнительные сведения об этих и других параметрах, которые используются в примерах Giraph, см. в [кратком руководстве по Giraph](https://giraph.apache.org/quick_start.html).
 
-6. После завершения задания результаты сохраняются в **/example/out/shortestpaths** каталога. Имена выходных файлов будут начинаться с **part-m-** и заканчиваться числом, указывающим номер файла (первый, второй и т. д.). Чтобы просмотреть выходные данные, используйте следующую команду:
+6. После завершения задания результаты сохраняются в каталоге **/ексампле/аут/шортестпасс** . Имена выходных файлов будут начинаться с **part-m-** и заканчиваться числом, указывающим номер файла (первый, второй и т. д.). Чтобы просмотреть выходные данные, используйте следующую команду:
 
     ```bash
     hdfs dfs -text /example/output/shortestpaths/*
@@ -161,8 +161,8 @@ ms.locfileid: "64697602"
 
     При визуализации данных можно проверить результаты, проходя кратчайшие пути между ID 1 и всеми другими объектами. Кратчайший путь между ID 1 и ID 4 — это 5. Это значение представляет собой общее расстояние между объектами <span style="color:orange">ID 1 и ID 3</span> и между объектами <span style="color:red">ID 3 и ID 4</span>.
 
-    ![Представление объектов в виде кругов с кратчайшими путями между ними](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph-out.png)
+    ![Представление объектов в виде кругов с кратчайшими путями между ними](./media/hdinsight-hadoop-giraph-install-linux/hdinsight-giraph-graph-out.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Установка и использование Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md).

@@ -17,12 +17,12 @@ ms.date: 07/29/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74b2d80d21822758991ad8b3bc1d3bb44e2257f4
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 3d48aa3ead28ab0b0a22478a0c4183995483058a
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129813"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983500"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "70129813"
 
 С вашим клиентом должна быть связана лицензия Azure AD Premium, чтобы просмотреть отчет о действиях по подготовке. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). 
 
-## <a name="provisioning-logs"></a>Журналы подготовки
+## <a name="provisioning-logs"></a>Подготовка журналов
 
 Журналы подготовки предоставляют ответы на следующие вопросы:
 
@@ -85,7 +85,7 @@ ms.locfileid: "70129813"
 
 Чтобы получить более подробную информацию, выберите элемент в списке.
 
-![Подробные сведения](./media/concept-provisioning-logs/detailed-information.png "Подробные сведения")
+![Подробные сведения](./media/concept-provisioning-logs/steps.png "Фильтр")
 
 
 ## <a name="filter-provisioning-activities"></a>Фильтрация действий по подготовке
@@ -124,7 +124,7 @@ ms.locfileid: "70129813"
 - Другой
 
 Фильтр **дат** позволяет определить интервал времени для возвращаемых данных.  
-Возможные значения:
+Доступны следующие значения:
 
 - 1 месяц
 - 7 дней

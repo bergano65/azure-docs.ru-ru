@@ -3,20 +3,20 @@ title: Поддерживаемые языки в API перевода речи
 titlesuffix: Azure Cognitive Services
 description: Список языков, поддерживаемых в API перевода речи.
 services: cognitive-services
-author: swmachan
+author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-speech
 ms.topic: conceptual
 ms.date: 3/5/2018
-ms.author: swmachan
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ed8f693e4dc0344a0117ae9d6992b925992ef0c4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2f5b48f2dbc2d109c03613676c6a119fd971603b
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446926"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965444"
 ---
 # <a name="languages-supported-by-the-translator-speech-api"></a>Языки, поддерживаемые в API перевода речи
 
@@ -41,7 +41,7 @@ API перевода речи поддерживает следующие язы
 
 | Язык с поддержкой текста    | Код языка |
 |:----------- |:-------------:|
-| Африкаанс      | `af`          |
+| африкаанс      | `af`          |
 | Арабский       | `ar`          |
 | Бенгальский      | `bn`          |
 | Боснийский (латиница)      | `bs`          |
@@ -49,15 +49,15 @@ API перевода речи поддерживает следующие язы
 | Кантонский (традиционное письмо)      | `yue`          |
 | Каталанский      | `ca`          |
 | Китайский (упрощенное письмо)      | `zh-Hans`          |
-| Китайский (традиционное письмо)      | `zh-Hant`          |
+| Китайская (традиционное письмо)      | `zh-Hant`          |
 | Хорватский      | `hr`          |
 | Чешский      | `cs`          |
 | Датский      | `da`          |
-| Нидерландский      | `nl`          |
+| Голландский      | `nl`          |
 | Английский      | `en`          |
 | Эстонский      | `et`          |
 | Фиджийский      | `fj`          |
-| Филиппинский      | `fil`          |
+| филиппинский      | `fil`          |
 | Финский      | `fi`          |
 | Французский      | `fr`          |
 | Немецкий      | `de`          |
@@ -67,7 +67,7 @@ API перевода речи поддерживает следующие язы
 | Хинди      | `hi`          |
 | Хмонг дау      | `mww`          |
 | Венгерский      | `hu`          |
-|Исландский|`is`          |
+|исландский|`is`          |
 | Индонезийский      | `id`          |
 | Итальянский      | `it`          |
 | Японский      | `ja`          |
@@ -79,9 +79,9 @@ API перевода речи поддерживает следующие язы
 | Литовский      | `lt`          |
 | Малагасийский      | `mg`          |
 | Малайский      | `ms`          |
-| Мальтийский      | `mt`          |
+| мальтийский      | `mt`          |
 | Норвежский      | `nb`          |
-| Персидский      | `fa`          |
+| персидский      | `fa`          |
 | Польский      | `pl`          |
 | Португальский      | `pt`          |
 | Керетарский диалект отоми      | `otq`          |
@@ -102,7 +102,7 @@ API перевода речи поддерживает следующие язы
 | Украинский      | `uk`          |
 | Урду      | `ur`          |
 | Вьетнамский      | `vi`          |
-| Валлийский      | `cy`          |
+| валлийский      | `cy`          |
 | Юкатекский майя      | `yua`          |
 
 ## <a name="access-the-list-programmatically"></a>Доступ к списку программным способом

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: tomfitz
-ms.openlocfilehash: 694bd3b5f14ac37229763b33fb97c17bd4e573d4
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 4305213d272172cb89bfdd207b6c8106af3f4939
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69893806"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983933"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Создание файла параметров диспетчер ресурсов
 
@@ -204,6 +204,6 @@ ms.locfileid: "69893806"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
+- Сведения о том, как определить параметры в шаблоне, см. в разделе [Параметры в Azure Resource Manager Templates](template-parameters.md).
 - Дополнительные сведения об использовании значений из хранилища ключей см. в разделе [использование Azure Key Vault для передачи безопасного значения параметра во время развертывания](resource-manager-keyvault-parameter.md).
-
+- Дополнительные сведения о параметрах см. [в разделе Параметры в Azure Resource Manager Templates](template-parameters.md).

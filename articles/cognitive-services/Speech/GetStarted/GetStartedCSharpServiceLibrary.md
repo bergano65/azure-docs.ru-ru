@@ -3,20 +3,20 @@ title: Начало работы с API распознавания речи Micr
 titlesuffix: Azure Cognitive Services
 description: Используйте библиотеку службы "Распознавание речи Bing" для преобразования устной речи в текст.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 0f445d1fff48ee7a04c0b1c1d64c808f87d824b7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 71c3e471a8844eb6c6b70921e40c94338a084a8b
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515238"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965859"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-service-library-in-c35-for-net-windows"></a>Краткое руководство. Использование библиотеки службы "Распознавание речи Bing" в C&#35; для .NET на платформе Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "60515238"
 
 В следующих разделах описывается, как устанавливать, создавать и запускать пример приложения C# с помощью библиотеки службы C#.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 
@@ -89,10 +89,10 @@ API распознавания речи поддерживает аудио/WAV-
 
 Чтобы создать SpeechClient, необходимо сначала создать объект Preferences. Объект Preferences — это набор параметров, предназначенных для настройки поведения службы распознавания речи. Он состоит из таких полей:
 
-* `SpeechLanguage`: языковой стандарт аудиозаписи, отправленный в службу распознавания речи.
-* `ServiceUri`: конечная точка, используемая для вызова службы распознавания речи.
-* `AuthorizationProvider`: реализация IAuthorizationProvider, которую используют для получения токенов и доступа к службе распознавания речи. Хотя этот образец предоставляет поставщик авторизации Cognitive Services, мы настоятельно рекомендуем создать собственную реализацию, чтобы осуществить кэширование маркеров.
-* `EnableAudioBuffering`: Дополнительный параметр См. [Управление соединениями](#connection-management).
+* `SpeechLanguage`. языковой стандарт аудиозаписи, отправленный в службу распознавания речи.
+* `ServiceUri`. конечная точка, используемая для вызова службы распознавания речи.
+* `AuthorizationProvider`. реализация IAuthorizationProvider, которую используют для получения токенов и доступа к службе распознавания речи. Хотя этот образец предоставляет поставщик авторизации Cognitive Services, мы настоятельно рекомендуем создать собственную реализацию, чтобы осуществить кэширование маркеров.
+* `EnableAudioBuffering`. Дополнительный параметр См. [Управление соединениями](#connection-management).
 
 ### <a name="speech-input"></a>Ввод речи
 

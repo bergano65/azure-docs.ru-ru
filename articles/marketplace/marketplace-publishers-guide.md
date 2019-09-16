@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 58591302280c67dbd0f69ebe0bc47cf95c8bfc18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd6b09a1130e50fae7bd83579a0f176af0b5b9cd
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956747"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962621"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
 
@@ -52,7 +52,7 @@ Marketplace — это стартовая площадка для маркети
 
 Получайте сведения о производительности своих предложений из аналитической информации, доступной через Marketplace. Получайте больше сведений об эффективности кампаний, заказах и выплатах, а также о возможностях повысить эффективность маркетинговой кампании для продвигаемого решения.
 
-### <a name="marketplace-go-to-market-benefits"></a>Преимущества выхода на рынок с Marketplace 
+### <a name="commercial-marketplace-benefits"></a>Преимущества коммерческой Marketplace 
 
 Новые предложения в Marketplace получают целый ряд бесплатных преимуществ, которые помогают партнерам развивать свой бизнес в Marketplace. Эти преимущества подразделяются на следующие категории: 
 
@@ -62,10 +62,10 @@ Marketplace — это стартовая площадка для маркети
 
 *   Совместные продажи: Marketplace — это отправная точка, с которой можно не только начать свой путь к продажам совместно с Майкрософт, но и ускорить этот процесс. Доступ к программам и поддержке позволит создать возможности для совместных продаж с Майкрософт.
 
-Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  См. в разделе [как создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения.
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  Дополнительные сведения см. [в статье Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
 
-Дополнительные сведения о преимуществах Майкрософт по выходу на рынок и способах расширения бизнеса в Marketplace см. [здесь](https://partner.microsoft.com/reach-customers/gtm).
+Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите подробные сведения по облачным магазинам, изучив оглавление слева. 

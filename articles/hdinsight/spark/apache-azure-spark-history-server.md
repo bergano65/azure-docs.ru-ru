@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 9ba03f6b1e658e08c3d07d7ccb5e2a99e96fe69c
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: fad2c83138f211e83e9462182d33f6169cbdb833
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736466"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968134"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Отладка и диагностика приложений Apache Spark с использованием расширенного сервера журнала Apache Spark
 
@@ -47,23 +47,23 @@ ms.locfileid: "70736466"
 
 + Просмотрите вкладки **Входные данные**, **Выходные данные** и **Операции с таблицей**, выбрав их по отдельности.
 
-    ![Вкладки данных](./media/apache-azure-spark-history-server/sparkui-data-tabs.png)
+    ![Вкладки данных](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
 
 + Скопируйте все строки, нажав кнопку **Копировать**.
 
-    ![Копирование данных](./media/apache-azure-spark-history-server/sparkui-data-copy.png)
+    ![Копирование данных](./media/apache-azure-spark-history-server/apache-spark-data-copy.png)
 
 + Сохраните все данные в виде CSV-файла, нажав кнопку **csv**.
 
-    ![Сохранение данных](./media/apache-azure-spark-history-server/sparkui-data-save.png)
+    ![Сохранение данных](./media/apache-azure-spark-history-server/apache-spark-data-save.png)
 
 + Выполните поиск, введя ключевые слова в поле **Поиск**. Результат поиска сразу же отобразится.
 
-    ![Поиск данных](./media/apache-azure-spark-history-server/sparkui-data-search.png)
+    ![Поиск данных](./media/apache-azure-spark-history-server/apache-spark-data-search.png)
 
 + Щелкните заголовок столбца, чтобы отсортировать таблицу, щелкните знак "плюс", чтобы развернуть строку для отображения дополнительных сведений, или щелкните знак "минус", чтобы свернуть строку.
 
-    ![Таблица данных](./media/apache-azure-spark-history-server/sparkui-data-table.png)
+    ![Таблица данных](./media/apache-azure-spark-history-server/apache-spark-data-table.png)
 
 + Загрузите один файл, нажав кнопку **Частичная загрузка**, которая находится справа. После этого выбранный файл загрузится локально. Если файл больше не существует, откроется новая вкладка с сообщениями об ошибке.
 
@@ -75,7 +75,7 @@ ms.locfileid: "70736466"
 
 + Щелкните число, указанное под таблицей, чтобы переходить между страницами, если на одной странице отображается слишком много строк. 
 
-    ![Страница данных](./media/apache-azure-spark-history-server/sparkui-data-page.png)
+    ![Страница данных](./media/apache-azure-spark-history-server/apache-spark-data-page.png)
 
 + Наведите указатель мыши на вопросительный знак рядом с заголовком "Данные", чтобы увидеть подсказку, или щелкните вопросительный знак, чтобы получить дополнительные сведения.
 
@@ -93,7 +93,7 @@ ms.locfileid: "70736466"
 
 + По умолчанию отображаются все задания. Их можно отфильтровать по **идентификатору задания**.
 
-    ![идентификатор задания графа](./media/apache-azure-spark-history-server/sparkui-graph-jobid.png)
+    ![идентификатор задания графа](./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png)
 
 + По умолчанию выбрано значение **Выполнение**. Пользователь может проверить поток данных, выбрав **Read/Written** (Прочитано и записано) в раскрывающемся списке **Отображать**.
 
@@ -211,15 +211,15 @@ ms.locfileid: "70736466"
 5. Это свойство задает значение **false**.
 6. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**.
 
-    ![отключение функции](./media/apache-azure-spark-history-server/sparkui-turn-off.png)
+    ![отключение функции](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
 
 7. Щелкните **Spark2** на левой панели, на вкладке **Summary** (Сводка) щелкните **Spark2 History Server** (Сервер журнала Spark2).
 
-    ![перезапуск сервера1](./media/apache-azure-spark-history-server/sparkui-restart-1.png) 
+    ![перезапуск сервера1](./media/apache-azure-spark-history-server/apache-spark-restart1.png) 
 
 8. Перезапустите сервер журнала, выбрав пункт **перезапуска** для **сервера журнала Spark2**.
 
-    ![перезапуск сервера2](./media/apache-azure-spark-history-server/sparkui-restart-2.png)  
+    ![перезапуск сервера2](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
 
 9. Обновите веб-интерфейс сервера журнала Spark. Он будет возвращен к версии для сообщества.
 
@@ -236,7 +236,7 @@ ms.locfileid: "70736466"
 
 3. Укажите название и описание ошибки, перетащите ZIP-файл в поле редактирования, а затем нажмите кнопку **Submit new issue** (Отправить новую проблему).
 
-    ![сообщить о проблеме](./media/apache-azure-spark-history-server/sparkui-file-issue.png)
+    ![сообщить о проблеме](./media/apache-azure-spark-history-server/apache-spark-file-issue.png)
 
 
 ### <a name="3-upgrade-jar-file-for-hotfix-scenario"></a>3. Обновления JAR-файла для сценария исправления
@@ -314,7 +314,7 @@ ms.locfileid: "70736466"
    + Установите флажки **Головной** и **Рабочий**.
    + **Параметры**: задайте параметры согласно использованию в bash.
 
-     ![отправка журнала или обновление исправлений](./media/apache-azure-spark-history-server/sparkui-upload2.png)
+     ![отправка журнала или обновление исправлений](./media/apache-azure-spark-history-server/apache-spark-upload1.png)
 
 
 ## <a name="known-issues"></a>Известные проблемы

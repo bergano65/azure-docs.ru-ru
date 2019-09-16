@@ -3,20 +3,20 @@ title: Как выбрать режим распознавания в служб
 titlesuffix: Azure Cognitive Services
 description: Выбор оптимального режима распознавания в службе "Распознавание речи Bing".
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 99e69691d9904285ecff356523813b426c98fca2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1860acb571c837a5eb4c75be69a96d1b22682118
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515021"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965674"
 ---
 # <a name="bing-speech-recognition-modes"></a>Режимы распознавания речи в службе "Распознавание речи Bing"
 
@@ -24,7 +24,7 @@ ms.locfileid: "60515021"
 
 Интерфейсы API Bing для преобразования речи в текст поддерживают несколько режимов распознавания речи. Выберите для вашего приложения режим, который дает наилучшие результаты распознавания.
 
-| Режим | Описание |
+| Mode | Описание |
 |---|---|
 | *интерактивный* | Распознавание "Команды и элемента управления" для интерактивных сценариев пользовательских приложений. Пользователи произносят короткие фразы, которые подразумеваются как команды приложению. |
 | *диктовка* | Непрерывное распознавание для сценариев диктовки. Пользователи произносят более длинные предложения, которые отображаются в виде текста. Пользователи используют более формальный стиль речи. |

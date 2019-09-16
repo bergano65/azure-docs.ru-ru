@@ -1,5 +1,5 @@
 ---
-title: Журналы Azure Monitor для Apache Kafka — Azure HDInsight
+title: Журналы Azure Monitor для Apache Kafka Azure HDInsight
 description: Узнайте, как использовать журналы Azure Monitor для анализа журналов из кластера Apache Kafka в Azure HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
@@ -8,39 +8,39 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2019
-ms.openlocfilehash: 1e141aea3b22bfdcb981513f03e595b6c2f15466
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 44eea1bc6390e743aff104550e5b6d7e97c45929
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147971"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960114"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
-Узнайте, как использовать журналы Azure Monitor для анализа журналов, созданных в Apache Kafka в HDInsight.
+Узнайте, как использовать журналы Azure Monitor для анализа журналов, созданных Apache Kafka в HDInsight.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="enable-azure-monitor-logs-for-apache-kafka"></a>Включить журналы Azure Monitor для Apache Kafka
+## <a name="enable-azure-monitor-logs-for-apache-kafka"></a>Включение Azure Monitor журналов для Apache Kafka
 
-Действия, чтобы включить журналы Azure Monitor для HDInsight одинаковы для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
+Действия по включению журналов Azure Monitor для HDInsight одинаковы для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
 
-1. Создание рабочей области Log Analytics. Дополнительные сведения см. в разделе [журналы в Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) документа.
+1. Создание рабочей области Log Analytics. Дополнительные сведения см. в разделе [журналы в Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) документе.
 
 2. Создание Kafka в кластере HDInsight. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka (предварительная версия) в HDInsight](apache-kafka-get-started.md).
 
-3. Настройка кластера Kafka и использовать журналы Azure Monitor. Дополнительные сведения см. в разделе [журналов использования Azure Monitor для мониторинга HDInsight](../hdinsight-hadoop-oms-log-analytics-tutorial.md) документа.
+3. Настройте кластер Kafka для использования журналов Azure Monitor. Дополнительные сведения см. в разделе [Использование журналов Azure Monitor для мониторинга документа HDInsight](../hdinsight-hadoop-oms-log-analytics-tutorial.md) .
 
 > [!IMPORTANT]  
-> Может занять около 20 минут, прежде чем данные будут доступны для журналов Azure Monitor.
+> Доступ к данным для журналов Azure Monitor может занять около 20 минут.
 
 ## <a name="query-logs"></a>Журналы запросов
 
 1. На [портале Azure](https://portal.azure.com) выберите рабочую область Log Analytics.
 
-2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса, а затем выберите **запуска**. Ниже приведены некоторые примеры поисковых запросов:
+2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
 
-* Использование дискового пространства:
+* Использование диска:
 
     ```kusto
     Perf 
@@ -91,11 +91,11 @@ ms.locfileid: "65147971"
     | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |
     | metrics\_kafka\_CL | Метрики Kafka JMX |
     
-    ![Окно поиска сведений об использовании ЦП](./media/apache-kafka-log-analytics-operations-management/kafka-cpu-usage.png)
+    ![Окно поиска сведений об использовании ЦП](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о Azure Monitor, см. в разделе [Обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md), и [журналы запросов Azure Monitor для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
+Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 
 Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 

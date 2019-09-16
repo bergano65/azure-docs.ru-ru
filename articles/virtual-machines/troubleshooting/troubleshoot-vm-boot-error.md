@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2019
 ms.author: tiag
-ms.openlocfilehash: 14bf7b289f3d03dd1437a18b0b5bd35fdec567ea
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 9995b9049378a0ab4f3450ec577d034598d171e9
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70143314"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984839"
 ---
 # <a name="vm-boot-error"></a>Ошибка загрузки виртуальной машины
 
@@ -33,7 +33,7 @@ ms.locfileid: "70143314"
 
 ### <a name="error---unknown-filesystem"></a>Ошибка-неизвестная файловая система
 
-* Если вы получаете ошибку неизвестная файловая система, эта ошибка может возникать из-за повреждения файловой системы в загрузочном разделе или неверной конфигурации ядра.
+* Если вы получаете ошибку **неизвестная**файловая система, эта ошибка может возникать из-за повреждения файловой системы в загрузочном разделе или неверной конфигурации ядра.
 
    * При возникновении проблем с файловой системой выполните действия, описанные в статье [восстановление Linux: Не удается выполнить подключение SSH к виртуальной машине Linux из-за ошибок файловой системы](https://blogs.msdn.microsoft.com/linuxonazure/2016/09/13/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck-inodes/)(fsck, индексных дескрипторов).
    * Для проблем с ядром выполните действия, описанные в [статье восстановление Linux: Устранение проблем без загрузок, связанных с](https://blogs.msdn.microsoft.com/linuxonazure/2016/10/09/linux-recovery-manually-fixing-non-boot-issues-related-to-kernel-problems/)проблемами ядра [или восстановлением Linux, вручную. Устранение проблем без загрузок, связанных с проблемами](https://blogs.msdn.microsoft.com/linuxonazure/2016/10/09/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/)ядра, с помощью чрут.
@@ -48,11 +48,11 @@ ms.locfileid: "70143314"
 
     2. Затем выполните следующую команду, чтобы повторно создать конфигурацию:`grub2-mkconfig -o /boot/grub2/grub.cfg`
 
-   * Если отсутствующий файл имеет `/boot/grub/menu.lst`значение, эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Необходимо будет запустить старый сервер и выполнить тестирование, чтобы убедиться, что указаны правильные команды.
+   * Если отсутствующий файл имеет `/boot/grub/menu.lst`значение, эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут отличаться. Необходимо будет запустить старый сервер и выполнить тестирование, чтобы убедиться, что указаны правильные команды.
 
 ### <a name="error---no-such-partition"></a>Ошибка-отсутствует такой раздел
 
-* Если вы получаете ошибку **без такого раздела**, обратитесь к сценарию [case: "нет такой секции" при попытке запустить виртуальную машину после попытки расширения диска операционной системы](https://blogs.technet.microsoft.com/shwetanayak/2017/03/12/case-scenario-no-such-partition-error-while-trying-to-start-the-vm-after-attempting-to-extend-the-os-drive/).
+* Если вы получаете ошибку **без такого раздела**, обратитесь к [сценарию case: "нет такой секции" при попытке запустить виртуальную машину после попытки расширения диска операционной системы](https://blogs.technet.microsoft.com/shwetanayak/2017/03/12/case-scenario-no-such-partition-error-while-trying-to-start-the-vm-after-attempting-to-extend-the-os-drive/).
 
 ### <a name="error---grubcfg-file-not-found"></a>Ошибка-файл GRUB. cfg не найден
 

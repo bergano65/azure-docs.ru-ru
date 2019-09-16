@@ -15,12 +15,12 @@ ms.date: 08/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: c3ca873cb4dd49d77ba818b3d05c3aa41e89276f
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: eb7c2cb4a20c89f3a54f23e354d56e5dc3711ef0
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982722"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967102"
 ---
 # <a name="troubleshoot-rbac-for-azure-resources"></a>Устранение неполадок RBAC в Azure
 
@@ -182,6 +182,8 @@ Azure Resource Manager иногда кэширует конфигурации и
 Пользователь с ролью читателя может щелкнуть вкладку **Функции платформы** и выбрать **Все параметры**, чтобы просмотреть некоторые параметры, связанные с приложением-функцией (так же, как для веб-приложения), но не может изменить эти параметры. Для доступа к этим возможностям потребуется роль [участника](built-in-roles.md#contributor) .
 
 ## <a name="next-steps"></a>Следующие шаги
-* [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md)
-* [Просмотр журналов действий для изменений RBAC в ресурсах Azure](change-history-report.md)
+
+- [Устранение неполадок для гостевых пользователей](role-assignments-external-users.md#troubleshoot)
+- [Управление доступом к ресурсам Azure с помощью RBAC и портала Azure](role-assignments-portal.md)
+- [Просмотр журналов действий для изменений RBAC в ресурсах Azure](change-history-report.md)
 

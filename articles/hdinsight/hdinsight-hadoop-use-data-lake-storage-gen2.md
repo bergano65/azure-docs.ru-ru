@@ -7,12 +7,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/27/2019
 ms.author: hrasheed
-ms.openlocfilehash: 40caabc08b08e4c9268bf60d588819ce81717986
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
-ms.translationtype: HT
+ms.openlocfilehash: a8ef347b874bf01fc2832d0a785f6fcec58ef095
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900270"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961225"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -56,7 +56,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 1. Нажмите кнопку **Создать**.
 1. На экране **Создание учетной записи хранения** выполните следующие действия.
     1. Выберите подходящую подписку и группу ресурсов.
-    1. Введите имя учетной записи Data Lake Storage 2-го поколения. Дополнительные сведения об именовании учетной записи хранения конветионс см. в разделе [соглашения об именовании для ресурсов Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage).
+    1. Введите имя учетной записи Data Lake Storage 2-го поколения. Дополнительные сведения о соглашениях об именовании учетных записей хранения см. в разделе [соглашения об именовании для ресурсов Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage).
     1. Перейдите на вкладку **Дополнительно** .
     1. Щелкните **включено** рядом с **иерархическим пространством имен** в разделе **Data Lake Storage 2-го поколения**.
     1. Щелкните **Review + create** (Просмотреть и создать).
@@ -64,7 +64,7 @@ Data Lake Storage 2-го поколения доступен в качестве
 
 Дополнительные сведения о других параметрах во время создания учетной записи [хранения см. в разделе Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
-![Снимок экрана, на котором показано создание учетной записи хранения на портале Azure](./media/hdinsight-hadoop-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
+![Снимок экрана, на котором показано создание учетной записи хранения на портале Azure](./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
 
 ### <a name="set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account"></a>Настройка разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения
 
@@ -73,12 +73,12 @@ Data Lake Storage 2-го поколения доступен в качестве
 1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com).
 1. Выберите учетную запись хранения, а затем щелкните **Управление доступом (IAM)** , чтобы отобразить параметры управления доступом для учетной записи. Выберите вкладку **Назначения ролей**, чтобы просмотреть список назначений ролей.
     
-    ![Снимок экрана с параметрами управления доступом к хранилищу](./media/hdinsight-hadoop-data-lake-storage-gen2/portal-access-control.png)
+    ![Снимок экрана с параметрами управления доступом к хранилищу](./media/hdinsight-hadoop-use-data-lake-storage-gen2/portal-access-control.png)
     
 1. Нажмите кнопку **+ добавить назначение роли** , чтобы добавить новую роль.
 1. В окне **Добавление назначения ролей** выберите роль **владельца данных BLOB-объекта хранилища** . Затем выберите подписку с управляемым удостоверением и учетной записью хранения. Затем найдите управляемое удостоверение, назначаемое пользователем, которое было создано ранее. Наконец, выберите управляемое удостоверение, которое будет отображаться в разделе **Выбранные элементы**.
     
-    ![Снимок экрана, на котором показано, как назначить роль RBAC](./media/hdinsight-hadoop-data-lake-storage-gen2/add-rbac-role3.png)
+    ![Снимок экрана, на котором показано, как назначить роль RBAC](./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png)
     
 1. Щелкните **Сохранить**. Выбранное пользователем удостоверение теперь отображается под выбранной ролью.
 1. После завершения первоначальной настройки вы можете создать кластер на портале. Кластер должен быть расположен в том же регионе Azure, что и учетная запись хранения. В разделе меню создания кластера **Хранилище** выберите следующие параметры:
@@ -86,11 +86,11 @@ Data Lake Storage 2-го поколения доступен в качестве
     * В качестве **основного типа хранилища**выберите **Azure Data Lake Storage 2-го поколения**.
     * В разделе **выберите учетную запись хранения**найдите и выберите только что созданную учетную запись хранения data Lake Storage 2-го поколения.
         
-        ![Параметры хранилища для Azure Data Lake Storage 2-го поколения с Azure HDInsight](./media/hdinsight-hadoop-data-lake-storage-gen2/primary-storage-type-adls-gen2.png)
+        ![Параметры хранилища для Azure Data Lake Storage 2-го поколения с Azure HDInsight](./media/hdinsight-hadoop-use-data-lake-storage-gen2/primary-storage-type-adls-gen2.png)
     
     * В разделе **удостоверение**выберите правильную подписку и вновь созданное назначенное пользователем управляемое удостоверение.
         
-        ![Параметры удостоверения для Azure Data Lake Storage 2-го поколения с HDInsight](./media/hdinsight-hadoop-data-lake-storage-gen2/managed-identity-cluster-creation.png)
+        ![Параметры удостоверения для Azure Data Lake Storage 2-го поколения с HDInsight](./media/hdinsight-hadoop-use-data-lake-storage-gen2/managed-identity-cluster-creation.png)
         
 > [!Note]
 > Чтобы добавить вторичную учетную запись Data Lake Storage 2-го поколения, на уровне учетной записи хранения просто назначьте управляемое удостоверение, созданное ранее, в новую учетную запись хранения Data Lake Storage 2-го поколения, которую вы хотите добавить. Рекомендуем добавить дополнительную учетную запись Data Lake Storage 2-го поколения с помощью колонки "дополнительные учетные записи хранения" в HDInsight не поддерживается. 

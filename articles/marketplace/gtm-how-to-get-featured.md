@@ -7,18 +7,18 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5194bdcd5b77b0527ccdefc1af85bf03bdac2cab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a99237ec52d302dbb7fc3914c6abfff5fecf4523
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938173"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962756"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
 В Microsoft Azure Marketplace и AppSource есть разделы **рекомендуемых приложений**, в которых можно разместить приложения:
 
-* Во-первых, если у вас есть предложение пробной версии или транзакции, вы можете использовать свое преимущество "повышения категории" в преимуществах выхода на рынок.
+* Во-первых, если у вас есть ПРОБная версия или предложение по транзакции, вы можете использовать преимущества "повышения категории" через [преимущества коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
 * Во-вторых, просмотрите список лучших методик и критерии ниже, чтобы получить место.
 
 Алгоритм выбора рекомендуемых приложений создает оценку в приложении корпорацией Майкрософт, такую как кредитная оценка человека в США.  Еженедельный выбор рекомендуемых приложений будет основываться на вычислении производительности службы и приложения.
@@ -42,9 +42,9 @@ ms.locfileid: "64938173"
 
 Служба поддержки GTM также содержит полную библиотеку шаблонов самостоятельного устранения неполадок, веб-содержимое, обучающие материалы и средства для дальнейшего продвижения ваших публикаций и бизнеса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
+Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
 
 Войдите на [портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать и настроить предложение.
 

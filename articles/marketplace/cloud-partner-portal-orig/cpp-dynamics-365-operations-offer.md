@@ -1,5 +1,5 @@
 ---
-title: Dynamics 365 для Finance and Operations предложения для Azure Marketplace
+title: Dynamics 365 для финансового предложения и предложений по эксплуатации в Azure Marketplace
 description: В этой статье описывается создание предложения Dynamics 365 for Finance and Operations на портале Cloud Partner.
 services: Azure Marketplace, Cloud Partner Portal,
 author: v-miclar
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: pabutler
-ms.openlocfilehash: bd7a78730186e4ea3d34449fd7977f7575bb8180
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bd19723b80fdf4e4fc7e4581a9b8dcb80ca42045
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64935225"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962907"
 ---
 # <a name="dynamics-365-for-finance-and-operations-offer"></a>Предложение Dynamics 365 for Finance and Operations
 
@@ -23,7 +23,7 @@ ms.locfileid: "64935225"
 
 Чтобы разработать приложение Dynamics 365 for Finance and Operations и опубликовать его в AppSource, выполните следующие шаги.
 
-1. Перед началом работы необходимо получить [сертификат центра разработчиков](https://dev.windows.com/en-us/registration?accountProgram=Azure).
+1. Перед началом работы необходимо получить [сертификат центра разработчиков](https://dev.windows.com/registration?accountProgram=Azure).
 2. Обновите код.
 3. Скомпилируйте, запакуйте и разверните данные с помощью службы [Lifecycle Services](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lifecycle-services/lcs) (LCS).
 4. Создайте методику реализации в LCS.
@@ -36,7 +36,7 @@ ms.locfileid: "64935225"
 В последующих статьях этого раздела эти шаги описываются более подробно.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Необходимо убедиться, что соблюдены технические и бизнес-[требования](./pre-requisites.md) к этому типу предложений.
 

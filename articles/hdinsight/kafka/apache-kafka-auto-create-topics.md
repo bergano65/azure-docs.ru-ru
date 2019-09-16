@@ -3,16 +3,17 @@ title: Включение автоматического создания раз
 description: Узнайте, как настроить автоматическое создание разделов в Apache Kafka в HDInsight. В Kafka вы можете указать для параметра auto.create.topics.enable значение true, используя Ambari или создавая кластер с помощью PowerShell или шаблонов Resource Manager.
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/18/2018
-ms.openlocfilehash: 4f40a625b10243ca13163e549a51a760cf105917
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
-ms.translationtype: HT
+ms.openlocfilehash: 5d990a1c39495090fed1c78f1ddf5e879490e6c4
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900432"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960651"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Настройка автоматического создания разделов в Apache Kafka в HDInsight
 
@@ -34,11 +35,11 @@ ms.locfileid: "70900432"
 
 3. В списке в левой части страницы выберите службу Kafka.
 
-    ![Список служб](./media/apache-kafka-auto-create-topics/service-list.png)
+    ![Список служб](./media/apache-kafka-auto-create-topics/hdinsight-service-list.png)
 
 4. Выберите "Конфигурации" в середине страницы.
 
-    ![Вкладка конфигураций службы](./media/apache-kafka-auto-create-topics/service-config.png)
+    ![Вкладка конфигураций службы](./media/apache-kafka-auto-create-topics/hdinsight-service-config.png)
 
 5. В поле "Фильтр" введите значение параметра `auto.create`. 
 

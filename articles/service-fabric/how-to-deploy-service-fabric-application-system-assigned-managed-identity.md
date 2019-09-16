@@ -7,12 +7,12 @@ ms.service: service-fabric
 ms.topic: article
 ms.date: 07/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: 9f6f3d43f80b3c69b0c1106b8e395b4d8f5d32ab
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: cf04efd8dac3ba4d252701d79c65b1bf56619fe0
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640703"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968244"
 ---
 # <a name="deploy-service-fabric-application-with-system-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным системой (Предварительная версия)
 
@@ -78,7 +78,7 @@ ms.locfileid: "69640703"
 
     Этот элемент назначает службе удостоверение приложения. без этого назначения Служба не сможет получить доступ к удостоверениям приложения. В приведенном выше `SystemAssigned` фрагменте удостоверение (которое является зарезервированным ключевым словом) сопоставляется с определением службы под понятным именем `WebAdmin`.
 
-3. Обновите манифест службы, чтобы добавить элемент **ManagedIdentity** в раздел Resources с именем, соответствующим `ServiceIdentityRef` значению параметра из `IdentityBindingPolicy` определения в манифесте приложения:
+3. Обновите манифест службы, чтобы добавить элемент **ManagedIdentity** в раздел **Resources** с именем, соответствующим `ServiceIdentityRef` значению параметра из `IdentityBindingPolicy` определения в манифесте приложения:
 
     **ServiceManifest. XML**
 
@@ -93,15 +93,9 @@ ms.locfileid: "69640703"
     Это эквивалентное сопоставление удостоверения со службой, как описано выше, но с точки зрения определения службы. На этот идентификатор ссылается понятное имя (`WebAdmin`), как объявлено в манифесте приложения.
 
 ## <a name="next-steps"></a>Следующие шаги
-
 * Проверка [поддержки управляемого удостоверения](./concepts-managed-identity.md) в Azure Service Fabric
-
 * [Развертывание нового](./configure-new-azure-service-fabric-enable-managed-identity.md) Кластер Azure Service Fabric с поддержкой управляемых удостоверений 
-
 * [Включение управляемого удостоверения](./configure-existing-cluster-enable-managed-identity-token-service.md) в существующем кластере Azure Service Fabric
-
-* Использование управляемого удостоверения приложения Service Fabric [из исходного кода](./how-to-managed-identity-service-fabric-app-code.md)
-
+* Использование [управляемого удостоверения приложения Service Fabric из исходного кода](./how-to-managed-identity-service-fabric-app-code.md)
 * [Развертывание приложения Service Fabric Azure с помощью управляемого удостоверения, назначенного пользователем](./how-to-deploy-service-fabric-application-user-assigned-managed-identity.md)
-
 * [Предоставление приложению Azure Service Fabric доступа к другим ресурсам Azure](./how-to-grant-access-other-resources.md)

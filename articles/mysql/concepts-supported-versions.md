@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 08/09/2019
-ms.openlocfilehash: 28d635dc5042799790d032ef4b46bf28118cb326
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.date: 09/12/2019
+ms.openlocfilehash: 25251b617522840412a4868331e155285f64a18c
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947173"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962580"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 
@@ -26,15 +26,15 @@ MySQL использует схему именования X.Y.Z. X являет
 
 ## <a name="mysql-version-56"></a>MySQL версии 5.6
 
-Выпуск для исправления ошибок: 5.6.42
+Выпуск для исправления ошибок: 5.6.44
 
-Дополнительные сведения об улучшениях и исправлениях в MySQL 5.6.42 см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-42.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-44.html) MySQL.
 
 ## <a name="mysql-version-57"></a>MySQL версии 5.7
 
-Выпуск для исправления ошибок: 5.7.24
+Выпуск для исправления ошибок: 5.7.26
 
-Дополнительные сведения об улучшениях и исправлениях в MySQL 5.7.24 см. [в заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-24.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-26.html) MySQL.
 
 ## <a name="mysql-version-80"></a>MySQL версии 8,0
 
@@ -43,7 +43,7 @@ MySQL использует схему именования X.Y.Z. X являет
 
 Выпуск для исправления ошибок: 8.0.15
 
-Дополнительные сведения об улучшениях и исправлениях в MySQL 8.0.15 см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) MySQL.
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) MySQL.
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет установкой исправлений для обновления версии исправлений. Например, с версии 5.7.20 до 5.7.21.  

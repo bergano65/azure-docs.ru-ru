@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6878d3b4fc8648db540d016389747eceb45d936a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: eb3ce47e5ffed697392065a1faacbbfaec19f4d1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67436174"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983673"
 ---
 # <a name="using-azure-batch-with-render-farm-managers"></a>Использование пакетной службы Azure с диспетчерами фермы рендеринга
 
@@ -26,9 +26,15 @@ Azure предоставляет встроенную поддержку или 
 * [Royal Render](https://www.royalrender.de/);
 * [Thinkbox Deadline](https://deadline.thinkboxsoftware.com/).
 
+## <a name="azure-render-hub"></a>Центр подготовки отчетов Azure
+
+Центр подготовки отчетов Azure упрощает создание и Управление фермами визуализации Azure.  В концентраторе отрисовки имеется собственная поддержка Пипелинефкс Кубе и крайнего срока 10.  Дополнительные сведения и подробные инструкции см. [в репозитории GitHub](https://github.com/Azure/azure-render-hub).
+
 ## <a name="using-azure-with-pipelinefx-qube"></a>Использование Azure с PipelineFX Qube
 
-Соответствующие скрипты и инструкции по использованию виртуальных машин пула пакетной службы Azure в качестве рабочих ролей Qube вы можете получить в [репозитории GitHub](https://github.com/Azure/azure-qube).
+Центр подготовки отчетов Azure поддерживает популярные диспетчеры рендеринга, включая крайний срок.  Инструкции по развертыванию и использованию концентратора визуализации см. [в репозитории GitHub](https://github.com/Azure/azure-render-hub).
+
+Сценарии и инструкции по включению использования виртуальных машин пула пакетной службы Azure в качестве рабочих ролей Кубе также доступны в [репозитории GitHub](https://github.com/Azure/azure-qube).
 
 ## <a name="using-azure-with-royal-render"></a>Использование Azure с Royal Render
 
@@ -38,8 +44,8 @@ Azure предоставляет встроенную поддержку или 
 
 ## <a name="using-azure-with-thinkbox-deadline"></a>Использование Azure с Thinkbox Deadline
 
-Соответствующие скрипты и инструкции по использованию виртуальных машин пула пакетной службы Azure в качестве ведомых узлов Deadline вы можете получить в [репозитории GitHub](https://github.com/Azure/azure-deadline).
+Центр подготовки отчетов Azure поддерживает популярные диспетчеры рендеринга, включая крайний срок.  Инструкции по развертыванию и использованию концентратора визуализации см. [в репозитории GitHub](https://github.com/Azure/azure-render-hub).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Попробуйте настроить интеграцию пакетной службы Azure с используемым диспетчером рендеринга, применяя соответствующий подключаемый модуль и инструкции на сайте GitHub, если потребуется.

@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7e97bd50e3d37218e0f88f722387fd1a53167e27
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 675d8ecd3d6a3310a9b102df37df18bed02df3de
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60534169"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70958810"
 ---
 # <a name="use-gateway-for-data-sources-on-an-azure-virtual-network-vnet"></a>Использование шлюза для источников данных в виртуальной сети Azure
 
@@ -21,10 +21,12 @@ ms.locfileid: "60534169"
 
 ## <a name="server-access-to-vnet-data-sources"></a>Доступ сервера к источникам данных виртуальной сети
 
-Если доступ к источникам данных осуществляется через виртуальную сеть, сервер служб Azure Analysis Services должен подключаться к этим источникам данных так, как если бы они размещались в вашей локальной среде. Свойство сервера **AlwaysUseGateway** позволяет указать сервер для доступа ко всем источникам данных через [локальный шлюз](analysis-services-gateway.md). 
+Если доступ к источникам данных осуществляется через виртуальную сеть, сервер служб Azure Analysis Services должен подключаться к этим источникам данных так, как если бы они размещались в вашей локальной среде. Можно настроить свойство сервера **AlwaysUseGateway** , чтобы указать сервер для доступа ко всем источникам данных через [локальный шлюз](analysis-services-gateway.md). 
+
+Управляемый экземпляр Базы данных SQL Azure источники данных выполняются в виртуальной сети Azure с частным IP-адресом. Если на экземпляре включена общедоступная конечная точка, шлюз не требуется. Если общедоступная конечная точка не включена, требуется локальный шлюз данных, а свойство AlwaysUseGateway должно иметь значение true.
 
 > [!NOTE]
-> Это свойство действует только в тех случаях, если установлен и настроен [локальный шлюз данных](analysis-services-gateway.md). Шлюз может находиться в виртуальной сети.
+> Это свойство действует, только если установлен и настроен [локальный шлюз данных](analysis-services-gateway.md) . Шлюз может находиться в виртуальной сети.
 
 ## <a name="configure-alwaysusegateway-property"></a>Настройка свойства AlwaysUseGateway
 

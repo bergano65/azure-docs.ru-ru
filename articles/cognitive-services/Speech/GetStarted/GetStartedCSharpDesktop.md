@@ -3,20 +3,20 @@ title: Приступая к работе с API распознавания ре
 titlesuffix: Azure Cognitive Services
 description: Разрабатывайте простые Windows-приложения, которые используют API распознавания речи Bing для преобразования устной речи в текст.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 5f3b70a2dd9816210ed61280be38504a3980d205
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3160ccc1c8741d87fcee94a6face48551a79052d
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515353"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966902"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-c35-for-net-on-windows"></a>Краткое руководство. Использование API распознавания речи Bing в C# для .NET на платформе Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "60515353"
 
 В следующих разделах описывается, как устанавливать, создавать и запускать пример приложения C# с помощью рабочей библиотеки C#.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="platform-requirements"></a>Требования платформы
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: cd67f435ff390267e01acd99594b9063db4c4ee1
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: 376c2efbf3269092d0534870108ef6d753f8743e
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69559085"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962523"
 ---
 # <a name="personalizer-settings"></a>Параметры Персонализатора
 
@@ -67,7 +67,7 @@ ms.locfileid: "69559085"
 
 Высокая частота обновления модели полезна в ситуациях, когда необходимо внимательно отслеживать изменения в поведении пользователей. Это могут быть сайты с новостями, вирусным содержимым или торговлей в режиме реального времени. В таких сценариях модель можно обновлять каждые 15 минут. В большинстве других случаев целесообразно задать меньшую частоту обновления. Ежеминутное обновление будет полезно при отладке кода приложения с помощью Персонализатора, выполнении демонстраций или интерактивном тестировании аспектов машинного обучения.
 
-![Параметр "Частота обновления модели" задает частоту повторного обучения новой модели Персонализатора.](media/settings/configure-model-update-frequency-settings.png)
+![Параметр "Частота обновления модели" задает частоту повторного обучения новой модели Персонализатора.](media/settings/configure-model-update-frequency-settings-15-minutes.png)
 
 После изменения этого параметра обязательно выберите **Сохранить**.
 

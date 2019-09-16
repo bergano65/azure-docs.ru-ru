@@ -1,22 +1,17 @@
 ---
 title: Рекомендации по работе с шаблонами Azure Resource Manager
 description: Описание рекомендуемых подходов для разработки шаблонов Azure Resource Manager. Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/16/2019
+ms.date: 09/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 361fcc6b60e863ee43d348cedd6b1571f3f563a2
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: bd3167b7f0daf7ebd595b2c33b1147140415c3de
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812905"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983830"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
 
@@ -47,7 +42,8 @@ ms.locfileid: "70812905"
 Если регион группы ресурсов временно недоступен, вы не сможете обновить ресурсы в группе ресурсов, так как недоступны их метаданные. Ресурсы в других регионах будут работать должным образом, но обновить их не получится. Чтобы свести риск к минимуму, размещайте группу ресурсов и ресурсы в одном регионе.
 
 ## <a name="parameters"></a>Параметры
-[Здесь](resource-group-authoring-templates.md#parameters) приведены некоторые рекомендации по работе с параметрами.
+
+[Здесь](template-parameters.md) приведены некоторые рекомендации по работе с параметрами.
 
 ### <a name="general-recommendations-for-parameters"></a>Общие рекомендации по работе с параметрами
 
@@ -149,7 +145,7 @@ ms.locfileid: "70812905"
 
 ## <a name="variables"></a>Переменные
 
-Ниже приведены некоторые рекомендации по работе с [переменными](resource-group-authoring-templates.md#variables).
+Ниже приведены некоторые рекомендации по работе с [переменными](template-variables.md).
 
 * Имена переменных следует заменять регистром Camel.
 
@@ -286,7 +282,7 @@ ms.locfileid: "70812905"
 
 ## <a name="outputs"></a>Выходные данные
 
-Если вы используете шаблон, чтобы создать общедоступные IP-адреса, добавьте раздел [outputs](resource-group-authoring-templates.md#outputs), который возвращает сведения об IP-адресе и полное доменное имя (FQDN). С помощью этих выходных данных можно легко получить сведения об общедоступных IP-адресах и полных доменных именах после развертывания.
+Если вы используете шаблон, чтобы создать общедоступные IP-адреса, добавьте раздел [outputs](template-outputs.md), который возвращает сведения об IP-адресе и полное доменное имя (FQDN). С помощью этих выходных данных можно легко получить сведения об общедоступных IP-адресах и полных доменных именах после развертывания.
 
 ```json
 "outputs": {

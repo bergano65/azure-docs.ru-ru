@@ -3,20 +3,20 @@ title: Приступая к работе с API распознавания ре
 titlesuffix: Azure Cognitive Services
 description: Использование REST для доступа к API распознавания речи в Microsoft Cognitive Services для преобразование устной речи в текст.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ead4026ecec4878c69bc21a9ebc989eaf3d69a13
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e962a12c6c27737f95e78e80036e51bac41147d5
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515138"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965782"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Краткое руководство. Использование REST API распознавания речи Bing
 
@@ -24,7 +24,7 @@ ms.locfileid: "60515138"
 
 С помощью облачной службы "Распознавание речи Bing" можно разрабатывать приложения, использующие REST API для преобразования устной речи в текст.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="subscribe-to-the-speech-api-and-get-a-free-trial-subscription-key"></a>Подписка на API распознавания речи и получение ключа бесплатной пробной версии подписки
 
@@ -66,9 +66,9 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 
 | Режим распознавания  | Язык | Формат выходных данных | URI службы |
 |---|---|---|---|
-| `interactive` | pt-BR | значение по умолчанию | https:\//speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
-| `conversation` | en-US | Подробно | https:\//speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US & format = подробные |
-| `dictation` | fr-FR | Простая | https:\//speech.platform.bing.com/speech/recognition/dictation/cognitiveservices/v1?language=fr-FR & format = простой |
+| `interactive` | pt-BR | Значение по умолчанию | HTTPS:\//Speech.Platform.Bing.com/Speech/Recognition/Interactive/cognitiveservices/v1?Language=pt-br |
+| `conversation` | en-US | Подробные | HTTPS:\//Speech.Platform.Bing.com/Speech/Recognition/CONVERSATION/cognitiveservices/v1?Language=en-US&format=Detailed |
+| `dictation` | fr-FR | Простая | HTTPS:\//Speech.Platform.Bing.com/Speech/Recognition/Dictation/cognitiveservices/v1?Language=fr-FR&format=Simple |
 
 > [!NOTE]
 > Служба универсального кода ресурса (URI) необходима только в том случае, когда приложение использует REST API для вызова службы распознавания речи. Если используется одна из [клиентских библиотек](GetStartedClientLibraries.md), нет необходимости знать, какая служба универсального кода ресурса (URI) используется. Клиентские библиотеки могут использовать различные службы универсального кода ресурса (URI), которые используются только для определенной клиентской библиотеки. Дополнительные сведения см. в документации к нужной клиентской библиотеке.
@@ -77,8 +77,8 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 
 В заголовке запроса необходимо установить следующие поля.
 
-- `Ocp-Apim-Subscription-Key`: Каждый раз при вызове службы в заголовок `Ocp-Apim-Subscription-Key` необходимо вводить ключ подписки. Служба речи также поддерживает маркеры авторизации вместо ключей подписки. Дополнительные сведения см. в разделе [Authenticate to the Speech API](../How-to/how-to-authentication.md) (Аутентификация в API речи).
-- `Content-type`: Поле `Content-type` описывает формат и кодек звукового потока. В настоящее время поддерживаются только файлы формата WAV (Один канал PCM (канал импульсно-кодовой модуляции), 16 кГц). Значением параметра Content-type для данного формата будет `audio/wav; codec=audio/pcm; samplerate=16000`.
+- `Ocp-Apim-Subscription-Key`. Каждый раз при вызове службы в заголовок `Ocp-Apim-Subscription-Key` необходимо вводить ключ подписки. Служба речи также поддерживает маркеры авторизации вместо ключей подписки. Дополнительные сведения см. в разделе [Authenticate to the Speech API](../How-to/how-to-authentication.md) (Аутентификация в API речи).
+- `Content-type`. Поле `Content-type` описывает формат и кодек звукового потока. В настоящее время поддерживаются только файлы формата WAV (Один канал PCM (канал импульсно-кодовой модуляции), 16 кГц). Значением параметра Content-type для данного формата будет `audio/wav; codec=audio/pcm; samplerate=16000`.
 
 Поле `Transfer-Encoding` является необязательным. Если вы зададите значение `chunked` для этого поля, то сможете разделить звук на мелкие блоки. Для получения дополнительных сведений см. раздел [Chunked transfer encoding](../How-to/how-to-chunked-transfer.md) (Поблочная передача кодировки).
 

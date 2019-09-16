@@ -9,14 +9,14 @@ displayName: chat history, history, chat logs, logs
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 08/30/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: ebc06057dfa4bce72821ddf807cda46270e8ff3e
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 5c55084a57e46931049841f5011941b2115e9e69
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70206836"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961536"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Получение аналитических данных о базе знаний
 
@@ -26,9 +26,7 @@ QnA Maker сохраняет все журналы чатов и другие д
 
     ![Выбор ресурса Application Insights](../media/qnamaker-how-to-analytics-kb/resources-created.png)
 
-2. Нажмите кнопку **Аналитика**. Откроется новое окно, в котором можно запросить данные телеметрии QnA Maker.
-
-    ![Выбор функции аналитики](../media/qnamaker-how-to-analytics-kb/analytics.png)
+2. Выберите **Log (Analytics)** . Откроется новое окно, в котором можно запросить данные телеметрии QnA Maker.
 
 3. Вставьте следующий запрос и выполните его.
 
@@ -48,7 +46,7 @@ QnA Maker сохраняет все журналы чатов и другие д
 
     Щелкните **Запуск**, чтобы выполнить запрос.
 
-    ![Запустить запрос](../media/qnamaker-how-to-analytics-kb/run-query.png)
+    [![Выполнение запроса для определения вопросов, ответов и оценок пользователей](../media/qnamaker-how-to-analytics-kb/run-query.png)](../media/qnamaker-how-to-analytics-kb/run-query.png#lightbox)
 
 ## <a name="run-queries-for-other-analytics-on-your-qna-maker-knowledge-base"></a>Выполнение запросов для получения других аналитических данных о базе знаний QnA Maker
 

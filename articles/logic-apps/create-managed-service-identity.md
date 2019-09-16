@@ -9,12 +9,12 @@ ms.service: logic-apps
 ms.suite: integration
 ms.topic: article
 ms.date: 03/29/2019
-ms.openlocfilehash: bb1443afa14f2a23b807af52ab8fef6ac41ea200
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: HT
+ms.openlocfilehash: d6cf19a07829afea924d3d799b1309cfc5f6329f
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934038"
+ms.locfileid: "70959969"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам с помощью управляемых удостоверений в Azure Logic Apps
 
@@ -23,7 +23,7 @@ ms.locfileid: "70934038"
 > [!NOTE]
 > Приложение логики может использовать управляемые удостоверения только с соединителями, поддерживающими управляемые удостоверения. В настоящее время управляемые удостоверения поддерживаются только соединителем HTTP.
 >
-> В настоящее время в каждой подписке Azure может быть не более 10 рабочих процессов приложения логики с назначенными системой управляемыми удостоверениями.
+> В настоящее время в каждой подписке Azure можно использовать до 100 рабочих процессов приложения логики с управляемыми удостоверениями, назначенными системой.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -168,7 +168,7 @@ ms.locfileid: "70934038"
    > 
    > В свойстве **Аудитория** значение идентификатора ресурса должно точно совпадать со значением, ожидаемым Azure AD, включая все необходимые знаки косой черты. 
    > Эти значения идентификатор ресурса можно найти в этой [таблице, описывающей службы Azure, поддерживающие Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). 
-   > Например, если вы используете идентификатор ресурса Azure Resoruce Manager, убедитесь, что в URI есть знак косой черты.
+   > Например, если вы используете Azure Resource Manager идентификатор ресурса, убедитесь, что URI содержит косую черту.
 
 1. Продолжите создание приложения логики нужным образом.
 

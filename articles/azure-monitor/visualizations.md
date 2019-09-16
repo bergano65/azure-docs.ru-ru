@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 4e9bb9bd86e22efa5dd514e742481911b09c5e17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6390384220830d473b56f4082a98dfaa8aa686d1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61088296"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984190"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -29,14 +29,14 @@ ms.locfileid: "61088296"
 ## <a name="azure-dashboards"></a>Панели мониторинга Azure
 [Панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md) являются основной технологией представления данных в Azure. Они особенно полезны тем, что централизованно отображают сведения об инфраструктуре и службах Azure, позволяя быстро выявлять серьезные проблемы.
 
-![панель мониторинга](media/visualizations/dashboard.png)
+![Информационная панель](media/visualizations/dashboard.png)
 
 ### <a name="advantages"></a>Преимущества
-- Глубокая интеграция в Azure. Визуализации можно закрепить на панели мониторинга из нескольких страниц Azure, включая обозреватель метрик, Log Analytics и Application Insights.
+- Глубокая интеграция в Azure. Визуализации можно закреплять на панелях мониторинга из нескольких страниц Azure, включая обозреватель метрик, Log Analytics и Application Insights.
 - Поддержка метрик и журналов.
-- Объединение данных из нескольких источников, включая выходные данные из [обозревателя метрик](platform/metrics-charts.md), [журнал запросов](log-query/log-query-overview.md), и [сопоставляет](app/app-map.md) и доступности в Application Insights.
+- Объедините данные из нескольких источников, включая выходные данные из [обозревателя метрик](platform/metrics-charts.md), [журналы запросов](log-query/log-query-overview.md), а также [карты](app/app-map.md) и доступность в Application Insights.
 - Возможность использования личных или общих панелей мониторинга. Интеграция с [проверкой подлинности на основе ролей (RBAC)](../role-based-access-control/overview.md) Azure.
-- Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Обновление журналов за одну минуту.
+- Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Журналы обновляются каждый час с возможностью ручного обновления по запросу, щелкнув значок "Обновить" в данной визуализации или обновив полную панель мониторинга.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.
 - Гибкие варианты выбора макета.
 - Полноэкранный режим.
@@ -53,7 +53,7 @@ ms.locfileid: "61088296"
 ## <a name="azure-monitor-views"></a>Представления Azure Monitor
 [Представления в Azure Monitor](platform/view-designer.md) позволяют создавать пользовательские визуализации на основе данных журналов. Они используются в [решениях для мониторинга](insights/solutions.md) для представления собираемых данных.
 
-![Просмотр](media/visualizations/view.png)
+![Вид](media/visualizations/view.png)
 
 ### <a name="advantages"></a>Преимущества
 - Широкие возможности визуализации данных журналов.
@@ -136,11 +136,11 @@ ms.locfileid: "61088296"
 - Значительные инженерные работы.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-platform.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
 - Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
-- Дополнительные сведения о [книг](../azure-monitor/app/usage-workbooks.md).
+- Сведения о [книгах](../azure-monitor/app/usage-workbooks.md).
 - Дополнительные сведения об [импорте данных журналов в Power BI](../azure-monitor/platform/powerbi.md).
 - Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](../azure-monitor/platform/grafana-plugin.md).
 

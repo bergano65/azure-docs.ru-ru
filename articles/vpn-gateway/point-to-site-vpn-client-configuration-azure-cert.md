@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 08/13/2019
+ms.date: 09/12/2019
 ms.author: cherylmc
-ms.openlocfilehash: 07d48ed195f74c9aef5d34de1925ab8fc2a3ae21
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 095c7c4bf2a0fb08c0a7fe7e0a8118e76732c9c7
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899872"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961591"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -149,7 +149,7 @@ ms.locfileid: "69899872"
 7. В разделе **Client** (Клиент) подключения для параметра **Authentication** (Аутентификация) выберите **Certificate/private key** (Сертификат/закрытый ключ). Для параметров **Certificate** (Сертификат ) и **Private key** (Закрытый ключ) выберите созданные ранее сертификат и закрытый ключ. В разделе **Options** (Параметры) выберите **Request an inner IP address** (Запросить внутренний IP-адрес). Нажмите кнопку **Добавить**.
 
    ![Запрос внутреннего IP-адреса](./media/point-to-site-vpn-client-configuration-azure-cert/turnon.png)
-8. Включите подключение.
+8. **Включите подключение.**
 
 ## <a name="linuxinstallcli"></a>Linux (strongSwan CLI)
 

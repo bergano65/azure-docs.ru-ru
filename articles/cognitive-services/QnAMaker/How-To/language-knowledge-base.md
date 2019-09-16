@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 08/20/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: 63eb13dd131fcc1c424c02fdac10f531cc9f0282
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 5e50c814fef24aa799549d055ad6496f5bdf05e0
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876622"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961477"
 ---
 # <a name="language-support-of-knowledge-base-content-for-qna-maker"></a>Языковая поддержка содержимого базы знаний для QnA Maker
 
@@ -29,19 +29,11 @@ QnA Maker поддерживает содержимое базы знаний н
 
     ![Выбор ресурса "Поиск Azure"](../media/qnamaker-how-to-language-kb/select-azsearch.png)
 
-1. Выберите индекс **testkb**. Этот индекс поиска Azure всегда создается первым. Он содержит сохраненное содержимое всех баз знаний в этой службе. 
+1. Выберите **индексы**, а затем выберите индекс **тесткб** . Это первый созданный индекс поиска Azure, который содержит сохраненное содержимое всех баз знаний в этой службе. 
 
-    ![Выбор Test KB (Тестовая база знаний)](../media/qnamaker-how-to-language-kb/select-testkb.png)
+1. Выберите **поля** , чтобы просмотреть поля в индексе.
 
-1. В разделе Выбор **полей** отображаются сведения о _тесткб_ .
-
-    ![Выбрать поля](../media/qnamaker-how-to-language-kb/selectfields.png)
-
-1. Установите флажок **Анализатор** для просмотра сведений о языке.
-
-    ![Выбор флажка "Анализатор"](../media/qnamaker-how-to-language-kb/select-analyzer.png)
-
-1. Следует убедиться, что _анализатор_ настроен на конкретный язык. Этот язык был автоматически обнаружен на этапе создания базы знаний из импортированных файлов и URL-адресов. После создания ресурса изменить этот язык нельзя.
+1. В столбце `questions` _анализатора_ полей и `answer` задан конкретный язык. Этот язык был автоматически обнаружен на этапе создания базы знаний из импортированных файлов и URL-адресов. После создания ресурса изменить этот язык нельзя.
 
     ![Выбранный флажок "Анализатор"](../media/qnamaker-how-to-language-kb/selected-analyzer.png)
 

@@ -4,15 +4,16 @@ description: Ознакомьтесь с рекомендациями по об�
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
+ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: f4458b33edb9d55c30de8c5168668743abb33161
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: a62da0d27d21589f7b75a89cc184ce9f456f1fed
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811643"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960705"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
@@ -23,7 +24,7 @@ ms.locfileid: "70811643"
 ## <a name="upgrade-tasks"></a>Задачи обновления
 Рабочий процесс для обновления кластера HDInsight выглядит так.
 
-![Схема рабочего процесса](./media/hdinsight-upgrade-cluster/upgrade-workflow.png)
+![Схема рабочего процесса](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
 
 1. Ознакомьтесь со всеми разделами этого документа. Там описаны изменения, которые могут потребоваться при обновлении кластера HDInsight.
 2. Создайте кластер как среду тестирования и контроля качества. См. дополнительные сведения о [создании кластеров под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: 93d5b3de47ec0b3c0494589da0baf87f91a0233a
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 642b21624ce3ffc993d5f29a413845044d703fd7
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390256"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984265"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -39,7 +39,7 @@ ms.locfileid: "70390256"
 
 ## <a name="supported-types-for-named-entity-recognition"></a>Поддерживаемые типы распознанных именованных сущностей
 
-| Тип  | SubType | Пример |
+| Type  | SubType | Пример |
 |:-----------   |:------------- |:---------|
 | Пользователь        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
 | Местоположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
@@ -47,7 +47,6 @@ ms.locfileid: "70390256"
 | Количество      | Число        | "6", "шесть"     |
 | Количество      | Процент    | "50 %", "пятьдесят процентов"|
 | Количество      | Порядковый номер       | "2-й", "второй"     |
-| Количество      | Диапазон чисел   | "4–8"     |
 | Количество      | Время существования           | "90 дней", "30 лет"    |
 | Количество      | Валюта      | "10,99 долл. США"     |
 | Количество      | Измерение     | "10 миль", "40 см"     |
@@ -59,7 +58,6 @@ ms.locfileid: "70390256"
 | DateTime      | Диапазон времени     | "6:00–17:00"     |
 | DateTime      | Продолжительность      | "1 минута и 45 секунд"   |
 | DateTime      | Набор           | "каждый вторник"     |
-| DateTime      | Часовой пояс      |    |
 | URL           | Недоступно\*         | "https:\//www.Bing.com"    |
 | Адрес эл. почты         | Недоступно\*         | "support@contoso.com" |
 

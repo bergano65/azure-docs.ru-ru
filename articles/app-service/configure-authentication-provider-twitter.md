@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 04/19/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: d49b8bf9c62813023c1a1e06e0f8fc0d7809f48d
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: f7154da76b41198c208d02b8c563ba26ff8101a1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232051"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983602"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-twitter-login"></a>Как настроить приложение службы приложений для использования имени для входа Twitter
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "70232051"
 ## <a name="register"> </a>Регистрация приложения в Twitter
 1. Перейдите на [портал Azure]и перейдите к своему приложению. Скопируйте свой **URL-адрес**. Он будет использоваться для настройки приложения Twitter.
 2. Перейдите на веб-сайт [Twitter Developers] (Разработчики Twitter), войдите с помощью учетных данных учетной записи Twitter и щелкните **Create New App**(Создать приложение).
-3. Введите **имя** и **описание** для нового приложения в соответствующих полях. Вставьте **URL-адрес** приложения в поле **Веб-сайт**. Затем в поле **URL-адрес обратного вызова**введите URL-адрес приложения службы приложений и добавьте путь `/.auth/login/aad/callback`к нему. Например, `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Убедитесь, что используете схему HTTPS.
+3. Введите **имя** и **описание** для нового приложения в соответствующих полях. Вставьте **URL-адрес** приложения в поле **Веб-сайт**. Затем в поле **URL-адрес обратного вызова**введите URL-адрес приложения службы приложений и добавьте путь `/.auth/login/twitter/callback`к нему. Например, `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Убедитесь, что используете схему HTTPS.
 4. В нижней части страницы прочтите и примите условия. Затем щелкните **Создать приложение Twitter**. Отобразятся сведения о приложении.
 5. Откройте вкладку **Параметры**, установите флажок **Allow this application to be used to sign in with Twitter** (Разрешить использовать это приложение для входа в Twitter), а затем щелкните **Обновить параметры**.
 6. Откройте вкладку **Ключи и токены доступа** . Запишите значения полей **Consumer Key (API Key)** (Ключ потребителя (ключ API)) и **Consumer secret (API Secret)** (Секрет потребителя (секрет API)).

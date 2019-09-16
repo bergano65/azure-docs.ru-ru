@@ -6,12 +6,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 8bfe249b0295bc860cf17a006c3787ff8afa676b
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 15ef18663a42153c11a55d4c5963d47f0e2514d6
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69573711"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961682"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight
 
@@ -33,27 +33,27 @@ ms.locfileid: "69573711"
 
 1. Выберите значок **просмотров Ambari**, а затем выберите шаблон сетки. После этого выберите **диспетчер очереди YARN**.
 
-    ![Выбор значка просмотров Ambari](media/hdinsight-troubleshoot-yarn/create-queue-1.png)
+    ![Выбор значка просмотров Ambari](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-1.png)
 2. Выберите очередь **по умолчанию**.
 
-    ![Выбор очереди default](media/hdinsight-troubleshoot-yarn/create-queue-2.png)
+    ![Выбор очереди default](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-2.png)
 3. Для очереди **default** измените **емкость** с 50 % на 25 %. Для очереди **thriftsvr** измените **емкость** на 25 %.
 
-    ![Изменение емкости до 25 % для очередей default и thriftsvr](media/hdinsight-troubleshoot-yarn/create-queue-3.png)
+    ![Изменение емкости до 25 % для очередей default и thriftsvr](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-3.png)
 4. Нажмите кнопку **Add Queue** (Добавить очередь), чтобы создать очередь.
 
-    ![Выбор кнопки Add Queue (Добавить очередь)](media/hdinsight-troubleshoot-yarn/create-queue-4.png)
+    ![Выбор кнопки Add Queue (Добавить очередь)](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-4.png)
 
 5. Присвойте имя новой очереди.
 
-    ![Имя Spark для новой очереди](media/hdinsight-troubleshoot-yarn/create-queue-5.png)  
+    ![Имя Spark для новой очереди](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-5.png)  
 
 6. Оставьте значение **емкости** 50 %, а затем выберите кнопку **Действия**.
 
-    ![Выбор кнопки "Действия"](media/hdinsight-troubleshoot-yarn/create-queue-6.png)  
+    ![Выбор кнопки "Действия"](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-6.png)  
 7. Выберите команду **Save and Refresh Queues** (Сохранить и обновить очереди).
 
-    ![Выбор Save and Refresh Queues (Сохранить и обновить очереди)](media/hdinsight-troubleshoot-yarn/create-queue-7.png)  
+    ![Выбор Save and Refresh Queues (Сохранить и обновить очереди)](media/hdinsight-troubleshoot-yarn/apache-yarn-create-queue-7.png)  
 
 После применения эти изменения сразу же появятся на пользовательском интерфейсе планировщика YARN.
 

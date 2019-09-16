@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 08/21/2019
-ms.openlocfilehash: 950294094584958e83f6a16630a6e1f897785e46
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.date: 09/12/2019
+ms.openlocfilehash: e5d1dbc8c212d4cdefb12fb740a454324d3adfa1
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69897289"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962923"
 ---
 # <a name="supported-azure-database-for-mariadb-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MariaDB
 
@@ -26,20 +26,20 @@ MariaDB использует схему именования X. Y. Z. X — ос
 
 ## <a name="mariadb-version-102"></a>MariaDB версии 10,2
 
-Версия исправления: 10.2.23
+Версия исправления: 10.2.25
 
-Дополнительные сведения об улучшениях и исправлениях в MariaDB 10.2.23 см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10223-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10225-release-notes/) .
 
 ## <a name="mariadb-version-103"></a>MariaDB версии 10,3
 
-Версия исправления: 10.3.14
+Версия исправления: 10.3.16
 
-Дополнительные сведения об улучшениях и исправлениях в MariaDB 10.3.14 см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10314-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10316-release-notes/) .
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет обновлениями для обновлений исправлений. Например, 10.2.21 в 10.2.23.  
 
-Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с MariaDB 10,2 до MariaDB 10,3 не поддерживается. Если вы хотите выполнить обновление с 10,2 до 10,3, сделайте [дамп и](./howto-migrate-dump-restore.md) восстановите его на сервере, который был создан с использованием новой версии модуля.
+Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с MariaDB 10,2 до MariaDB 10,3 не поддерживается. Если вы хотите выполнить обновление с 10,2 до 10,3, сделайте [дамп и восстановите](./howto-migrate-dump-restore.md) его на сервере, который был создан с использованием новой версии модуля.
 
 ## <a name="next-steps"></a>Следующие шаги
 

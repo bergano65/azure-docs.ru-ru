@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: pafarley
-ms.openlocfilehash: b4bcd07cf7549029d09f5acd58fdf8f92fffed74
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: c3a80cbdd166f77681665ee3675c1a71ce3a9bd6
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945301"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967089"
 ---
 # <a name="detect-popular-brands-in-images"></a>Обнаружение популярных торговых марок в изображениях
 
@@ -76,5 +76,5 @@ ms.locfileid: "68945301"
 
 Функция обнаружения торговых марок является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Brands` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"brands"` раздела.
 
-* [Краткое руководство Анализ изображений с помощью пакета SDK для .NET](./quickstarts-sdk/csharp-analyze-sdk.md)
+* [Краткое руководство Пакет SDK для Компьютерное зрение .NET](./quickstarts-sdk/csharp-sdk.md)
 * [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)

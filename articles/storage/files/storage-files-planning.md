@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 30842c787e2009b4919fef916f3c5e1f73a79bf2
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 4c13c0b7601257c120c46ec341156a8e8bba332f
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918820"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967786"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Планирование развертывания службы файлов Azure
 
@@ -211,6 +211,7 @@ GRS реплицирует данные в другой центр обрабо�
 |Восточная Австралия |LRS     |Нет    |Да|
 |Юго-восточная Австралия|LRS     |Нет    |Пока нет|
 |Центральная Индия  |LRS     |Нет    |Пока нет|
+|Восточная Азия      |LRS     |Нет    |Пока нет|
 |East US        |LRS     |Нет    |Пока нет|
 |Центральная Франция |LRS, ZRS|Нет    |LRS-Да, ZRS — еще не|
 |Южная Франция   |LRS     |Нет    |Да|

@@ -5,14 +5,14 @@ services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
 ms.service: marketplace
 ms.topic: article
-ms.date: 09/04/2019
+ms.date: 09/10/2019
 ms.author: v-qiwe
-ms.openlocfilehash: d1a0f3ea46922b8a684c269c13df068e0c879cbd
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: c09e685d10764470d328e7c66293551287b5b1b2
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309032"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962673"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Преимущества коммерческого рынка
 
@@ -74,7 +74,7 @@ ms.locfileid: "70309032"
 
 Подробное описание всех этих преимуществ можно найти в [колоде по программе Marketplace](https://aka.ms/marketplacerewards).
 
-Помимо преимуществ, партнеры бизнес-приложений с предложениями Dynamics публикуются в Microsoft AppSource имеют доступ к дополнительному программированию с помощью [ISV Connect](https://partner.microsoft.com/en-us/solutions/business-applications/isv-overview). Сюда входит техническая, маркетинговая и поддержка продаж, которая специализируется на требованиях партнеров бизнес-приложений.
+Помимо преимуществ, партнеры бизнес-приложений с предложениями Dynamics публикуются в Microsoft AppSource имеют доступ к дополнительному программированию с помощью [ISV Connect](https://partner.microsoft.com/solutions/business-applications/isv-overview). Сюда входит техническая, маркетинговая и поддержка продаж, которая специализируется на требованиях партнеров бизнес-приложений.
 
 ## <a name="marketplace-rewards-requirements-and-restrictions"></a>Требования и ограничения Marketplace
 
@@ -101,9 +101,9 @@ ms.locfileid: "70309032"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Если вы создали предложение в Портал Cloud Partner, войдите, чтобы создать или настроить предложение.
+Если вы создали предложение в [портал Cloud Partner](https://cloudpartner.azure.com), войдите, чтобы создать или настроить предложение.
 
-Если вы создали предложение в центре партнеров, войдите в систему, чтобы создать или настроить предложение.
+Если вы создали предложение в [центре партнеров](https://partner.microsoft.com/en-us/dashboard/commercial-marketplace/overview), войдите в систему, чтобы создать или настроить предложение.
 
 Ознакомьтесь с [доступными ресурсами по самостоятельному обслуживанию](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/).
 

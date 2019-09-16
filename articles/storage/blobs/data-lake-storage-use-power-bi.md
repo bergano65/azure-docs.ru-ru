@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: normesta
 ms.reviewer: bensack
-ms.openlocfilehash: 59574f0a07f4ecc145f2b0efd430e65cbdebcc65
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: d76ea317271ae0e8eb0d54fcfee5dc005d836fc1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991577"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984958"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen2-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Power BI
 
@@ -28,7 +28,7 @@ ms.locfileid: "69991577"
 > * Учетная запись хранения с иерархическим пространством имен. Чтобы создать его, выполните [следующие](data-lake-storage-quickstart-create-account.md) инструкции.
 > В этой статье предполагается, что вы создали учетную запись с именем `myadlsg2`.
 > * Образец файла данных с именем `Drivers.txt` , который находится в вашей учетной записи хранения.
-> Вы можете скачать этот пример из [репозитория Git Azure Data Lake](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceDataDrivers.txt), а затем передать этот файл в учетную запись хранения.
+> Вы можете скачать этот пример из [репозитория Git Azure Data Lake](https://github.com/Azure/usql/tree/master/Examples/Samples/Data/AmbulanceData/Drivers.txt), а затем передать этот файл в учетную запись хранения.
 > * **Power BI Desktop**. Это средство можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45331). 
 
 ## <a name="create-a-report-in-power-bi-desktop"></a>Создание отчета в Power BI Desktop

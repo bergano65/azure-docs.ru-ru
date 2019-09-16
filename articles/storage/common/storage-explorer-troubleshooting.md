@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 69631b39403dedab56ed75cb145d464c0e1f747c
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: HT
+ms.openlocfilehash: 3a95d52f2a0aa07094f91b0653fcb94ff1f88d44
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 09/12/2019
-ms.locfileid: "70935344"
+ms.locfileid: "70958998"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок Обозреватель службы хранилища Azure
 
@@ -264,6 +264,7 @@ ms.locfileid: "70935344"
 1. Откройте средство управления локальными учетными данными, найдите сохраненные учетные данные.
 2. Ищите записи с ключом `<connection_type_key>/<corrupted_connection_name>` (например, `StorageExplorer_CustomConnections_Accounts_v1/account1`).
 3. Удалите эти записи и добавьте соединения обратно.
+---
 
 Если после выполнения этих действий вы по-прежнему полагаетесь на эту ошибку или хотите поделиться тем, что вы думаете о повреждении подключений, [откройте](https://github.com/microsoft/AzureStorageExplorer/issues) на странице GitHub ошибку.
 

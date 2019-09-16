@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: pabutler
-ms.openlocfilehash: 98d33dd1aad726d4da8499006166dfd2c043378f
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 40170540458b7bc7ddb30f88117d472858937e8c
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977157"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962933"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -99,7 +99,7 @@ ms.locfileid: "68977157"
 > [!Note]
 > Важно соблюдать формат строки. Без префикса **pid-** вы не сможете получить нужные данные. Разные пакеты SDK выполняют отслеживание по-разному. Чтобы реализовать этот метод, изучите сведения о поддержке и процессах отслеживания для выбранного пакета SDK Azure.
 
-#### <a name="example-the-python-sdk"></a>Пример Пакет SDK для Python
+#### <a name="example-the-python-sdk"></a>Пример: Пакет SDK для Python
 
 В Python используется атрибут **config**. Этот атрибут можно добавить только в UserAgent. Ниже приведен пример:
 
@@ -247,7 +247,7 @@ foreach ($deployment in $deployments){
 
 ## <a name="report"></a>Сообщить
 
-Отчет о соотношении использования клиентов можно найти в информационной панели анализ центра партнеров. ([https://partner.microsoft.com/en-us/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Чтобы просмотреть отчет, необходимо использовать учетные данные центра партнеров для входа. При возникновении проблем с отчетом или входом создайте запрос в службу поддержки, следуя инструкциям в разделе Получение поддержки.
+Отчет о соотношении использования клиентов можно найти в информационной панели анализ центра партнеров. ([https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Чтобы просмотреть отчет, необходимо использовать учетные данные центра партнеров для входа. При возникновении проблем с отчетом или входом создайте запрос в службу поддержки, следуя инструкциям в разделе Получение поддержки.
 
 Выберите пункт Отслеживание шаблона в раскрывающемся списке типа ассоциации партнера, чтобы просмотреть отчет.
 
@@ -269,7 +269,7 @@ foreach ($deployment in $deployments){
 
 В зависимости от ваших проблем существует два канала поддержки.
 
-При возникновении проблем в центре партнеров, например при просмотре отчета о сопоставлении использования клиентов или входе в систему, создайте запрос в службу поддержки у группы поддержки центра партнеров:[https://partner.microsoft.com/en-US/support](https://partner.microsoft.com/support)
+При возникновении проблем в центре партнеров, например при просмотре отчета о сопоставлении использования клиентов или входе в систему, создайте запрос в службу поддержки у группы поддержки центра партнеров:[https://partner.microsoft.com/support](https://partner.microsoft.com/support)
 
 ![](./media/marketplace-publishers-guide/partner-center-log-in-support.png)
 

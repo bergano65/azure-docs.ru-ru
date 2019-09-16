@@ -11,15 +11,15 @@ ms.service: batch
 ms.workload: ''
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/01/2019
+ms.date: 09/12/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: f894a7438c56c3830eb62c516447195f10fc3b76
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e3d96ad7783c43dba6b69f6b11acccf790d0d6c9
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70094674"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983749"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -45,16 +45,18 @@ ms.locfileid: "70094674"
 | Серия Av2 | Все размеры | Any |
 | Серия B | Отсутствуют | Недоступен |
 | Серии DC | Отсутствуют | Недоступен |
-| Серия Dv2, Dsv2 | Все размеры | Any |
+| Серия Dv2, DSv2 | Все размеры | Any |
 | Серия Dv3, Dsv3 | Все размеры | Any |
-| [Оптимизированные для памяти размеры](../virtual-machines/linux/sizes-memory.md) | Отсутствуют | Недоступен |
+| Серия Ev3, Esv3 | Все размеры | Any |
 | Серия Fsv2 | Все размеры | Any |
 | Серия H | Все размеры | Any |
 | Серия ХБ<sup>2</sup> | Все размеры | Any |
 | Серия HC<sup>2</sup> | Все размеры | Any |
 | Серия Ls | Все размеры | Any |
 | Серия Lsv2 | Отсутствуют | Недоступен |
-| Серия M | Standard_M64ms (только с низким приоритетом), Standard_M128s (только с низким приоритетом) | Any |  
+| Серия M | Standard_M64ms (только с низким приоритетом), Standard_M128s (только с низким приоритетом) | Any |
+| Серия Mv2 | Отсутствуют | Недоступен |
+| Серия NC | Все размеры | Any |
 | Серия NCv2<sup>2</sup> | Все размеры | Any |
 | Серия NCv3<sup>2</sup> | Все размеры | Any |
 | Серия ND<sup>2</sup> | Все размеры | Any |

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: f58c847f512f2db72fdca823637192c3b638b1ae
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: HT
+ms.openlocfilehash: 9a7008ca7967135209b8fc2c341998570a2679be
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879342"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960836"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
@@ -31,11 +31,11 @@ ms.locfileid: "70879342"
 
 2. Выберите **All users** (Все пользователи) в левом меню, а затем щелкните **New user** (Новый пользователь).
 
-    ![Панель All users (Все пользователи)](./media/hdinsight-sync-aad-users-to-cluster/aad-users.png)
+    ![Панель All users (Все пользователи)](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
 
 3. Заполните форму нового пользователя. Выберите группы, созданные для назначения разрешений на основе кластеров. В этом примере создайте группу с именем HiveUsers, которой можно назначить новых пользователей. [Примеры инструкций](hdinsight-domain-joined-configure.md) для создания кластера ESP включают в себя добавление двух групп: `HiveUsers` и `AAD DC Administrators`.
 
-    ![Панель New user (Новый пользователь)](./media/hdinsight-sync-aad-users-to-cluster/aad-new-user.png)
+    ![Панель New user (Новый пользователь)](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
 4. Нажмите кнопку **Создать**.
 
@@ -131,11 +131,11 @@ ms.locfileid: "70879342"
 
 1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
 
-    ![Управление Ambari](./media/hdinsight-sync-aad-users-to-cluster/manage-ambari.png)
+    ![Управление Ambari](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
 
 2. Выберите **Пользователи** в группе меню **User + Group Management** (Управление пользователями и группами) в левой части страницы.
 
-    ![Пункт меню "Пользователи"](./media/hdinsight-sync-aad-users-to-cluster/users-link.png)
+    ![Пункт меню "Пользователи"](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-users-menu-item.png)
 
 3. Новый пользователь должен быть указан в таблице "Пользователи". Для типа необходимо задать значение `LDAP`, а не `Local`.
 

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 3ff9cfbd312e672fb89afb4838ad9f8aa6574370
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: d31eb9ccb5df9137bebb877cce169cf657113d30
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900011"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967776"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
@@ -31,7 +31,7 @@ ms.locfileid: "70900011"
 
 Вы можете включить несколько одновременно работающих пользователей в кластер служб машинного обучения в HDInsight, добавив дополнительных пользователей в граничном узле, на котором выполняется версия RStudio Community. При создании кластера HDInsight необходимо указать двух пользователей: для HTTP и SSH.
 
-![Параллельное подключение пользователя 1](./media/r-server-hdinsight-manage/concurrent-users-1.png)
+![Параллельное подключение пользователя 1](./media/r-server-hdinsight-manage/hdi-concurrent-users1.png)
 
 - **Имя пользователя для входа в кластер** — пользователь HTTP для проверки подлинности с помощью шлюза HDInsight, который применяется для защиты созданных вами кластеров HDInsight. Эти учетные данные пользователя HTTP нужны для доступа к пользовательскому интерфейсу Apache Ambari, пользовательскому интерфейсу Apache Hadoop YARN, а также другим компонентам пользовательского интерфейса.
 - **Имя пользователя Secure Shell (SSH)**  — пользователь SSH для доступа к кластеру через безопасную оболочку. Этот пользователь применяется в системе Linux для всех головных, рабочих и граничных узлов. Таким образом, с помощью безопасной оболочки вы можете получить доступ к любому узлу в удаленном кластере.
@@ -66,7 +66,7 @@ ms.locfileid: "70900011"
 
 Выходные данные показаны на снимке экрана ниже.
 
-![Параллельное подключение пользователя 3](./media/r-server-hdinsight-manage/concurrent-users-2.png)
+![Параллельное подключение пользователя 3](./media/r-server-hdinsight-manage/hdi-concurrent-users2.png)
 
 При появлении запроса на ввод текущего пароля Kerberos нажмите клавишу **ВВОД**, чтобы игнорировать его. Параметр `-m` в команде `useradd` указывает, что система создаст домашнюю папку пользователя, которая обязательна для версии RStudio Community.
 

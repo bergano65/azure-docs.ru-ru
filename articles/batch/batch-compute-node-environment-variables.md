@@ -9,14 +9,14 @@ ms.service: batch
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
-ms.date: 08/13/2019
+ms.date: 09/12/2019
 ms.author: lahugh
-ms.openlocfilehash: 916dceb7c5e4314df98407b4e8fa4ed75cdb308c
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 995dfeaf26180b74f135ed2b74fa40faf3a12c08
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095278"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70958787"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Переменные среды среды выполнения пакетной службы Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "70095278"
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |
-| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на расположение, в которое был загружен пакет (папка). | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
+| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "Foo" версии "1" установлено в пуле, переменная окружения будет AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на расположение, в которое был загружен пакет (папка). При использовании версии пакета приложения по умолчанию используйте переменную среды AZ_BATCH_APP_PACKAGE без номеров версий. | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
 | AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
 | AZ_BATCH_CERTIFICATES_DIR       | Каталог в рабочем [каталоге задачи][files_dirs] , в котором хранятся сертификаты для вычислений-узлов Linux. Эта переменная среды не применяется к вычисленным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
 | AZ_BATCH_HOST_LIST              | Список узлов, выделенных задаче с [несколькими экземплярами][multi_instance] в формате `nodeIP,nodeIP`. | Основные задачи и подзадачи с несколькими экземплярами. | `10.0.0.4,10.0.0.5` |

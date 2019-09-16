@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: 3b242ff8ee3e635493cd501cf37ffc7c78a57d91
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 87dca4cf06bd8c5982e5f83a2498496c4bec69fd
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69563321"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984876"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Описание выходных данных из Azure Stream Analytics
 
@@ -173,7 +173,7 @@ Stream Analytics определяет схему модели данных на 
 -----------------|-------|--------|----------|-------
 Int64 | Int64 | Строковое | Строковое | Double
 Double | Double | Строковое | Строковое | Double
-Строковое | Строковое | Строковое | Строковое | Строковое 
+Строковое | String | String | String | Строковое 
 DateTime | Строковое | Строковое |  DateTime | Строковое
 
 ## <a name="table-storage"></a>Табличное хранилище
@@ -310,7 +310,7 @@ Azure Stream Analytics вызывает Функции Azure через триг
 | Раздел служебной шины Azure | Да | Выбран автоматически. Количество разделов [основано на размере и номере SKU служебной шины](../service-bus-messaging/service-bus-partitioning.md). Ключ секции — это уникальное целочисленное значение для каждой секции.| Совпадает с количеством секций в разделе выходных данных.  |
 | Очередь служебной шины Azure | Да | Выбран автоматически. Количество разделов [основано на размере и номере SKU служебной шины](../service-bus-messaging/service-bus-partitioning.md). Ключ секции — это уникальное целочисленное значение для каждой секции.| Совпадает с количеством секций в очереди выходных данных. |
 | Azure Cosmos DB | Да | На основе предложения PARTITION BY в запросе. | Соответствует секционированию входных данных для [полностью распараллеливаемых запросов](stream-analytics-scale-jobs.md). |
-| Функции Azure | Нет | Отсутствуют | Не применяется |
+| Функции Azure | Да | На основе предложения PARTITION BY в запросе. | Соответствует секционированию входных данных для [полностью распараллеливаемых запросов](stream-analytics-scale-jobs.md). |
 
 Количество модулей записи вывода также можно контролировать с помощью `INTO <partition count>` предложения (см. [в](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics#into-shard-count)) в запросе, что может оказаться полезным при достижении требуемой топологии задания. Если выходной адаптер не секционирован, нехватка данных в одном входном разделе приведет к задержке вплоть до установленного допустимого интервала. В таких случаях выходные данные объединяются в один модуль записи, что может вызвать узкие места в конвейере. Дополнительные сведения о политике с поздним получением см. в разделе [Azure Stream Analytics рекомендации по упорядочиванию событий](stream-analytics-out-of-order-and-late-events.md).
 

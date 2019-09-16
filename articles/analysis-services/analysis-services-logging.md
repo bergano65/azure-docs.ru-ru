@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 357e7975b1c4fe44d86b7e29e96a9abb6ab63c35
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 6b311135832e1ec861cf6e14e5ad7e82574294bf
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932269"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70959072"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -43,7 +43,7 @@ ms.locfileid: "68932269"
 |Запросы     |   Query End      |
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
-|Ошибки и предупреждения     |   Error      |
+|Ошибки и предупреждения     |   Ошибка      |
 |Обзор     |   Discover End      |
 |Уведомление     |    Уведомление     |
 |Сеанс     |  Session Initialize       |
@@ -67,7 +67,7 @@ ms.locfileid: "68932269"
 
 ### <a name="all-metrics"></a>Все метрики
 
-Категория "Метрики" позволяет регистрировать [метрики сервера](analysis-services-monitor.md#server-metrics), отображенные в списке "Метрики".
+В категории метрики регистрируются те же [метрики сервера](analysis-services-monitor.md#server-metrics) , что и в таблице азуреметрикс. Если вы используете [горизонтальное масштабирование](analysis-services-scale-out.md) запросов и вам нужно разделить метрики для каждой реплики чтения, используйте вместо этого таблицу AzureDiagnostics, где **OperationName** равно **логметрик**.
 
 ## <a name="setup-diagnostics-logging"></a>Настройка ведения журнала диагностики
 
@@ -161,27 +161,53 @@ ms.locfileid: "68932269"
 
 В конструкторе запросов разверните **LogManagement** > **AzureDiagnostics**. AzureDiagnostics включает в себя события "Подсистема" и "Служба". Обратите внимание на то, что запрос создается в режиме реального времени. Поле "EventClass\_s" содержит имена событий xEvent, которые могут быть вам знакомы, если вы использовали события xEvent для локального входа. Щелкните поле **EventClass\_s** или одно из имен событий, и рабочая область Log Analytics продолжит создание запроса. Не забудьте сохранить запросы для последующего повторного использования.
 
-### <a name="example-query"></a>Пример запроса
-Этот запрос вычисляет и возвращает ЦП для каждого события окончания или обновления запроса для шаблона базы данных и сервера.
+### <a name="example-queries"></a>Примеры запросов
+
+#### <a name="example-1"></a>Пример 1
+
+Следующий запрос возвращает длительность каждого события конца запроса для базы данных и сервера модели. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s. Группирование по RootActivityId_g сокращает количество строк, извлеченное из REST API система диагностики Azure, и помогает оставаться в пределах ограничений, как описано в разделе [log Analytics Limits Rate](https://dev.loganalytics.io/documentation/Using-the-API/Limits).
 
 ```Kusto
-let window =  AzureDiagnostics
-   | where ResourceProvider == "MICROSOFT.ANALYSISSERVICES" and ServerName_s =~"MyServerName" and DatabaseName_s == "Adventure Works Localhost" ;
+let window = AzureDiagnostics
+   | where ResourceProvider == "MICROSOFT.ANALYSISSERVICES" and Resource =~ "MyServerName" and DatabaseName_s =~ "MyDatabaseName" ;
 window
 | where OperationName has "QueryEnd" or (OperationName has "CommandEnd" and EventSubclass_s == 38)
 | where extract(@"([^,]*)", 1,Duration_s, typeof(long)) > 0
 | extend DurationMs=extract(@"([^,]*)", 1,Duration_s, typeof(long))
-| extend Engine_CPUTime=extract(@"([^,]*)", 1,CPUTime_s, typeof(long))
-| project  StartTime_t,EndTime_t,ServerName_s,OperationName,RootActivityId_g ,TextData_s,DatabaseName_s,ApplicationName_s,Duration_s,EffectiveUsername_s,User_s,EventSubclass_s,DurationMs,Engine_CPUTime
-| join kind=leftouter (
-window
-    | where OperationName == "ProgressReportEnd" or (OperationName == "VertiPaqSEQueryEnd" and EventSubclass_s  != 10) or OperationName == "DiscoverEnd" or (OperationName has "CommandEnd" and EventSubclass_s != 38)
-    | summarize sum_Engine_CPUTime = sum(extract(@"([^,]*)", 1,CPUTime_s, typeof(long))) by RootActivityId_g
-    ) on RootActivityId_g
-| extend totalCPU = sum_Engine_CPUTime + Engine_CPUTime
-
+| project  StartTime_t,EndTime_t,ServerName_s,OperationName,RootActivityId_g,TextData_s,DatabaseName_s,ApplicationName_s,Duration_s,EffectiveUsername_s,User_s,EventSubclass_s,DurationMs
+| order by StartTime_t asc
 ```
 
+#### <a name="example-2"></a>Пример 2
+
+Следующий запрос возвращает сведения о потреблении памяти и QPU для сервера. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s.
+
+```Kusto
+let window = AzureDiagnostics
+   | where ResourceProvider == "MICROSOFT.ANALYSISSERVICES" and Resource =~ "MyServerName";
+window
+| where OperationName == "LogMetric" 
+| where name_s == "memory_metric" or name_s == "qpu_metric"
+| project ServerName_s, TimeGenerated, name_s, value_s
+| summarize avg(todecimal(value_s)) by ServerName_s, name_s, bin(TimeGenerated, 1m)
+| order by TimeGenerated asc 
+```
+
+#### <a name="example-3"></a>Пример 3
+
+Следующий запрос возвращает счетчики производительности подсистемы Analysis Services "Прочитано строк/с" для сервера.
+
+```Kusto
+let window =  AzureDiagnostics
+   | where ResourceProvider == "MICROSOFT.ANALYSISSERVICES" and Resource =~ "MyServerName";
+window
+| where OperationName == "LogMetric" 
+| where parse_json(tostring(parse_json(perfobject_s).counters))[0].name == "Rows read/sec" 
+| extend Value = tostring(parse_json(tostring(parse_json(perfobject_s).counters))[0].value) 
+| project ServerName_s, TimeGenerated, Value
+| summarize avg(todecimal(Value)) by ServerName_s, bin(TimeGenerated, 1m)
+| order by TimeGenerated asc 
+```
 
 Можно использовать сотни запросов. Дополнительные сведения о запросах см. в статье [Начало работы с запросами журналов Azure Monitor](../azure-monitor/log-query/get-started-queries.md).
 
@@ -190,7 +216,7 @@ window
 
 В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-Аздиагностиксеттинг включите ведение журнала диагностики, отправив выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).

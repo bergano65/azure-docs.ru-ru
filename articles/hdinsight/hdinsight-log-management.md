@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5264491220a4b0756a2a9f0a96aae4ed67809618
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
-ms.translationtype: HT
+ms.openlocfilehash: 4e9a6a9ca435971d64ec8f59203a518287e6db4e
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879473"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960995"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -79,11 +79,11 @@ Apache Ambari упрощает конфигурацию кластера HDInsig
 
 Чтобы открыть список просмотров службы, на странице портала Azure для HDInsight выберите область **Просмотры Ambari**.  Этот список меняется в зависимости от установленных библиотек.  Например, могут появиться диспетчер очередей YARN, представления Hive и Tez.  Выберите ссылку на службу для просмотра сведений о конфигурации и службе.  На странице **стека и версии** пользовательского интерфейса Ambari содержатся сведения о конфигурации служб в кластере и история версий служб. Чтобы перейти к этому разделу, в пользовательском интерфейсе Ambari выберите меню **Администратор**, а затем — **Stacks and Versions** (Стеки и версии).  Выберите вкладку **версий**, чтобы просмотреть сведения о версии службы:
 
-![Стек и версии](./media/hdinsight-log-management/stack-versions.png)
+![Стек и версии](./media/hdinsight-log-management/ambari-stack-versions.png)
 
-С помощью пользовательского интерфейса Ambari вы можете загрузить конфигурацию для любых служб, запущенных на конкретном узле в кластере.  Выберите меню **Узлы**, а затем перейдите по ссылке на нужный узел. На странице этого узла выберите **Host Actions** (Действия на узле), а затем **Download Client Configs** (Скачать конфигурацию клиента). 
+С помощью пользовательского интерфейса Ambari вы можете загрузить конфигурацию для любых служб, запущенных на конкретном узле в кластере.  Выберите меню **Узлы**, а затем перейдите по ссылке на нужный узел. На странице этого узла выберите **Host Actions** (Действия на узле), а затем **Download Client Configs** (Скачать конфигурацию клиента).
 
-![Конфигурация узла клиента](./media/hdinsight-log-management/client-configs.png)
+![Конфигурация узла клиента](./media/hdinsight-log-management/download-client-configs.png)
 
 ### <a name="view-the-script-action-logs"></a>Просмотр журналов действий сценария
 

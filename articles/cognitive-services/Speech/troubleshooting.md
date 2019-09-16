@@ -3,20 +3,20 @@ title: Устранение неполадок Распознавания реч
 titlesuffix: Azure Cognitive Services
 description: Как устранить проблемы при использовании Распознавания речи Bing.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: f222d9d4cf6c56dea0832938dcb132cf711491bc
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 1213045867f84efd6d77aebff12b8c8725d82d08
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934059"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965563"
 ---
 # <a name="troubleshooting-bing-speech"></a>Устранение неполадок Распознавания речи Bing
 
@@ -131,7 +131,7 @@ curl -v -X POST "https://speech.platform.bing.com/speech/recognition/interactive
 
 ## <a name="the-recognitionstatus-in-the-response-is-initialsilencetimeout"></a>`RecognitionStatus` в ответе — `InitialSilenceTimeout`
 
-Аудиоданные обычно являются причиной возникновения проблемы. Например,
+Аудиоданные обычно являются причиной возникновения проблемы. Например, примененная к объекту директива
 
 - аудио имеет длительное время тишины в начале. Служба прекратит распознавание через несколько секунд и вернет `InitialSilenceTimeout`.
 - Аудио использует неподдерживаемый формат кодека, что приводит к тому, что аудиоданные воспринимаются как тишина.
