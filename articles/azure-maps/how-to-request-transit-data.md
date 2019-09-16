@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: c4e87b2e7e0d9154d0cb649d334daa394cd51935
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
-ms.translationtype: HT
+ms.openlocfilehash: b28788ac7b3ce4e1997b71c683f8e0445406a391
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802306"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915617"
 ---
 # <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Запрос общедоступных транзитных данных с помощью службы Azure Maps Mobility Service 
 
@@ -30,7 +30,7 @@ ms.locfileid: "70802306"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения любых вызовов Azure Maps общедоступных транзитных API-интерфейсов требуется учетная запись Maps и ключ. Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
+Для выполнения любых вызовов Azure Maps общедоступных транзитных API-интерфейсов требуется учетная запись Maps и ключ. Чтобы получить сведения о создании учетной записи, следуйте инструкциям в статье [Управление учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) и выполните действия, описанные в статье [Получение первичного ключа](./tutorial-search-location.md#getkey) для получения первичного ключа подписки для вашей учетной записи.
 
 В этой статье для создания вызовов REST используется [приложение Postman](https://www.getpostman.com/apps). Вы можете использовать любую среду разработки API.
 

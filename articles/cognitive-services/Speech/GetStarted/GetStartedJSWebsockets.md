@@ -3,20 +3,20 @@ title: Приступая к работе с API распознавания ре
 titlesuffix: Azure Cognitive Services
 description: Используйте API распознавания речи Bing в Cognitive Services для разработки приложений, которые непрерывно преобразовывают устную речь в текст.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 17901ad40a48e9ee8d1a8b872b04ad52b75b3a52
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eef1a4885b77ae94f11d3d5bda5ded9b70ed63a4
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515208"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965813"
 ---
 # <a name="get-started-with-the-speech-recognition-api-in-javascript"></a>Приступите к работе с API распознавания речи в JavaScript
 
@@ -24,7 +24,7 @@ ms.locfileid: "60515208"
 
 Вы можете разрабатывать приложения, которые преобразуют разговорное аудио в текст с помощью API распознавания речи. Клиентская библиотека JavaScript использует [Протокол службы распознавания речи WebSocket](../API-Reference-REST/websocketprotocol.md), который позволяет вам одновременно разговаривать и получать транскрибированный текст. Эта статья поможет вам начать работу с API распознавания речи в JavaScript.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="subscribe-to-the-speech-recognition-api-and-get-a-free-trial-subscription-key"></a>Подпишитесь на API распознавания речи и получите ключ бесплатной пробной версии подписки
 
@@ -60,7 +60,7 @@ cd SpeechToText-WebSockets-Javascript && npm run bundle
 
 Откройте `samples\browser\Sample.html` в предпочитаемом браузере.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Более подробную информацию о том, как включить SDK на своей собственной веб-странице, можно найти [здесь](https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript).
 
