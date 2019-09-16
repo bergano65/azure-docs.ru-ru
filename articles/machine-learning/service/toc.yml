@@ -1,9 +1,9 @@
-- name: Документация по Машинному обучению Azure
+- name: Документация по машинному обучению Azure
   href: ../index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое Машинное обучение Azure
+    - name: Что такое служба "Машинное обучение Microsoft Azure"?
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
     - name: Архитектура и термины
@@ -31,6 +31,11 @@
             - name: Автоматическое обучение модели машинного обучения
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
+        - name: Пакетная оценка с использованием конвейеров (дополнительные сведения)
+          items:
+            - name: Пакетная оценка модели классификации
+              displayName: pipelines
+              href: tutorial-pipeline-batch-scoring-classification.md
     - name: Графический интерфейс
       items:
         - name: 1. Обучение регрессионной модели
@@ -122,7 +127,7 @@
         - name: Использование шаблона Resource Manager
           displayName: arm
           href: how-to-create-workspace-template.md
-    - name: "Настройка среды разработки\_"
+    - name: Настройка среды разработки
       items:
         - name: Настройка сред разработки
           displayName: 'local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB'

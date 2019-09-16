@@ -236,7 +236,7 @@
         - name: Начало работы
           href: automation-dsc-getting-started.md
           displayName: DSC
-        - name: Управление конфигурацией Linux
+        - name: Управление конфигурацией компьютера
           href: automation-quickstart-dsc-configuration.md
           displayName: 'DSC, state configuration, config, node configuration, node'
     - name: Переход

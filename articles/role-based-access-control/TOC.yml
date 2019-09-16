@@ -34,12 +34,14 @@
       href: pim-azure-resource.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Управление доступом
       items:
-        - name: Microsoft Azure
+        - name: Портал
           href: role-assignments-portal.md
+        - name: "Портал\_— гостевые пользователи"
+          href: role-assignments-external-users.md
         - name: PowerShell
           href: role-assignments-powershell.md
         - name: Azure CLI
@@ -56,7 +58,7 @@
           href: deny-assignments-portal.md
         - name: PowerShell
           href: deny-assignments-powershell.md
-        - name: "REST\_API"
+        - name: REST API
           href: deny-assignments-rest.md
     - name: Пользовательские роли
       items:
@@ -72,8 +74,6 @@
       href: change-history-report.md
     - name: Повышение прав доступа для управления всеми подписками
       href: elevate-access-global-admin.md
-    - name: Управление доступом внешних пользователей
-      href: role-assignments-external-users.md
     - name: Администраторы классической подписки
       href: classic-administrators.md
     - name: Устранение неполадок

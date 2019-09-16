@@ -614,6 +614,12 @@
       items:
         - name: Обработка текстовых файлов с фиксированной шириной
           href: how-to-fixed-width.md
+    - name: Перенос рабочих нагрузок SSIS из локальных систем
+      items:
+        - name: Обзор переноса рабочих нагрузок SSIS
+          href: scenario-ssis-migration-overview.md
+        - name: Перенос базы данных SSIS в управляемый экземпляр Базы данных SQL Azure
+          href: scenario-ssis-migration-ssisdb-mi.md
 - name: Справочные материалы
   items:
     - name: .NET

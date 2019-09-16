@@ -253,6 +253,10 @@
           href: virtual-network-public-ip-address.md
         - name: Префикс общедоступного IP-адреса
           href: manage-public-ip-address-prefix.md
+    - name: Перемещение между регионами
+      items:
+        - name: "Виртуальные сети\_— портал"
+          href: virtual-network-azure-to-azure-migrate-vnet-portal.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок с пирингом виртуальной сети

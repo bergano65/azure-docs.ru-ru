@@ -81,6 +81,8 @@
       href: search-lucene-query-architecture.md
     - name: Когнитивный поиск
       href: cognitive-search-concept-intro.md
+    - name: Наборы навыков
+      href: cognitive-search-working-with-skillsets.md
     - name: Хранилище знаний
       href: knowledge-store-concept-intro.md
     - name: Проекции
@@ -166,9 +168,7 @@
         - name: Моделирование сложных типов данных
           href: search-howto-complex-data-types.md
         - name: Моделирование реляционных данных
-          href: search-example-adventureworks-modeling.md
-        - name: Моделирование многоуровневых аспектов
-          href: search-example-adventureworks-multilevel-faceting.md
+          href: index-sql-relational-data.md
     - name: Загрузка данных
       items:
         - name: Общие сведения об импорте данных
@@ -241,10 +241,14 @@
           href: cognitive-search-resources-documentation.md
     - name: Хранилище знаний (предварительная версия)
       items:
-        - name: "Подключение с помощью Power\_BI"
-          href: knowledge-store-connect-powerbi.md
+        - name: Создание хранилища знаний на портале Azure
+          href: knowledge-store-create-portal.md
         - name: Создание с помощью REST и Postman
           href: knowledge-store-howto.md
+        - name: Просмотр данных с помощью Обозревателя службы хранилища
+          href: knowledge-store-view-storage-explorer.md
+        - name: Подключение с помощью Power BI
+          href: knowledge-store-connect-power-bi.md
     - name: Запрашивание данных
       items:
         - name: Создание простого запроса
@@ -273,6 +277,8 @@
           href: search-query-troubleshoot-collection-filters.md
         - name: Основные сведения о фильтрах коллекций
           href: search-query-understand-collection-filters.md
+        - name: Пример многоуровневых аспектов
+          href: search-example-adventureworks-multilevel-faceting.md
     - name: Обработка результатов
       items:
         - name: Функции страниц

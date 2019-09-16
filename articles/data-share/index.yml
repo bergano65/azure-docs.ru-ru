@@ -1,63 +1,61 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Azure Data Share (предварительная версия)
+summary: Azure Data Share (предварительная версия) — это безопасная и надежная служба для обмена данными со сторонними организациями.
 metadata:
-  title: 'Документация по Azure Data Share (предварительная версия): руководства и инструкции'
-  description: "Azure Data Share (предварительная версия)\_— это безопасная и надежная служба для обмена данными со сторонними организациями."
-  author: joannapea
-  ms.author: joanpo
+  title: Azure Data Share (предварительная версия)
+  description: Azure Data Share (предварительная версия) — это безопасная и надежная служба для обмена данными со сторонними организациями.
+  services: service
   ms.service: data-share
+  ms.subservice: subservice
   ms.topic: landing-page
-  ms.date: 07/10/2019
-abstract:
-  description: "<p>Azure Data Share (предварительная версия)\_— это безопасная и надежная служба для обмена данными со сторонними организациями. Выберите наборы данных, к которым вы хотите предоставить доступ, добавьте получателей и начните совместно использовать данные с возможностью определять, отслеживать и контролировать связи при общем доступе к данным. </p><p>Узнайте, как использовать Azure Data Share, из наших руководств и другой документации.</p>"
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/azure-friday.png
-      width: 250
-    title: Azure Data Share в программе "Пятница с Azure"
-    href: 'https://channel9.msdn.com/Shows/Azure-Friday/Share-data-simply-and-securely-using-Azure-Data-Share/player?format=ny'
-    width: 250
-sections:
-  - title: Руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как отслеживать общие папки с данными, настраивать сопоставление наборов данных, добавлять получателей и выполнять другие действия, ознакомившись с одним из следующих практических руководств:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/data-share/media/index/portal.svg
-            text: Мониторинг в Azure Data Share
-            href: /azure/data-share/how-to-monitor
-          - image:
-              src: /azure/data-share/media/index/portal.svg
-            text: Настройка сопоставления набора данных
-            href: /azure/data-share/how-to-configure-mapping
-          - image:
-              src: /azure/data-share/media/index/portal.svg
-            text: Устранение неполадок в Azure Data Share
-            href: /azure/data-share/data-share-troubleshoot
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как предоставить общий доступ к данным с помощью Azure Data Share'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="share-your-data">Совместное использование данных с помощью Azure Data Share</a>
-          - html: <a href="subscribe-to-data-share">Прием и получение данных с помощью Azure Data Share</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Языки
-            html: <p><a href="/dotnet/api/overview/azure/datashare">.NET</a></p>
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.datashare/?view=azps-2.6.0">Azure PowerShell</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/datashare">REST API</a></p>
+  ms.collection: collection
+  author: hrasheed-msft
+  ms.author: hrasheed
+  ms.date: 09/13/2019
+  ms.openlocfilehash: 7e44541fae4cb9987f4c2e3b68a6ec3ff61c1bcf
+  ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/14/2019
+  ms.locfileid: "70993939"
+landingContent:
+- title: Сведения об Azure Data Share
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Data Share?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Понятия Azure Data Share
+      url: terminology.md
+    - text: Роли и требования для Azure Data Share
+      url: concepts-roles-permissions.md
+- title: Совместное использование данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Совместное использование данных с помощью Azure Data Share
+      url: share-your-data.md
+    - text: Прием и получение данных с помощью Azure Data Share
+      url: subscribe-to-data-share.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка сопоставления наборов данных
+      url: how-to-configure-mapping.md
+    - text: Добавление наборов данных
+      url: how-to-add-datasets.md
+- title: Отслеживание и управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Мониторинг в Azure Data Share
+      url: how-to-monitor.md
+    - text: Устранение распространенных неполадок
+      url: data-share-troubleshoot.md
+    - text: Добавление наборов данных
+      url: how-to-add-datasets.md
+    - text: Удаление приглашения
+      url: how-to-delete-invitation.md
+    - text: Отмена подписки на общую папку
+      url: how-to-revoke-share-subscription.md

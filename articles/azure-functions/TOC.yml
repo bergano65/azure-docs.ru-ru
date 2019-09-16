@@ -98,6 +98,10 @@
       href: functions-premium-plan.md
     - name: Развернутые приложения
       href: functions-deployment-technologies.md
+    - name: События и обмен сообщениями
+      items:
+        - name: Разработка функций для формирования идентичных входных данных
+          href: functions-idempotent.md
     - name: Триггеры и привязки
       items:
         - name: Сведения о триггерах и привязках

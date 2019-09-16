@@ -4,6 +4,8 @@
   items:
     - name: О портале Azure
       href: azure-portal-overview.md
+    - name: Начало работы с центром кратких руководств Azure
+      href: azure-portal-quickstart-center.md
     - name: Поддерживаемые браузеры и устройства
       href: azure-portal-supported-browsers-devices.md
 - name: Основные понятия
@@ -25,7 +27,7 @@
     - name: Экспорт или удаление параметров пользователя
       href: azure-portal-export-delete-settings.md
     - name: Серия видеоинструкций по работе с порталом Azure
-      href: 'https://www.youtube.com/playlist?list=PLLasX02E8BPBKgXP4oflOL29TtqTzwhxR'
+      href: azure-portal-video-series.md
 - name: Справочные материалы
   items:
     - name: Сочетания клавиш

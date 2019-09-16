@@ -1,10 +1,10 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по API Детектора аномалий
+summary: Узнайте, как с помощью API "Детектор аномалий" динамически отслеживать данные и обнаруживать аномалии с использованием машинного обучения. Получайте представление о данных независимо от тома, отрасли или сценария.
 metadata:
-  title: 'API Детектора аномалий. Учебники, краткие руководства, справочные материалы по API'
+  title: API Детектора аномалий. Учебники, краткие руководства, справочные материалы по API
   titleSuffix: Azure Cognitive Services
-  description: 'API Детектора аномалий позволяет динамически отслеживать данные и обнаруживать аномалии с помощью машинного обучения. Получайте представление о данных независимо от тома, отрасли или сценария.'
+  description: API Детектора аномалий позволяет динамически отслеживать данные и обнаруживать аномалии с помощью машинного обучения. Получайте представление о данных независимо от тома, отрасли или сценария.
   services: cognitive-services
   author: aahill
   manager: nitinme
@@ -12,62 +12,102 @@ metadata:
   ms.service: cognitive-services
   ms.subservice: anomaly-detector
   ms.topic: landing-page
-  ms.date: 03/26/2019
+  ms.date: 09/10/2019
   ms.author: aahi
-abstract:
-  description: 'API Детектора аномалий позволяет легко внедрять функции обнаружения аномалий в приложения, чтобы пользователи могли быстро выявлять проблемы и минимизировать потери и последствия для клиентов. Опыт работы с машинным обучением не требуется. Выполнив один вызов API, вы можете активировать эту предварительно обученную модель ИИ. Она принимает данные временных рядов для всех типов и томов, выбирает наиболее подходящую модель обнаружения аномалий для полученных данных, обеспечивая высокую точность, а также автоматически определяет инциденты по мере их возникновения. Вы можете настроить службу для обнаружения аномалий любого масштаба.  Используйте Детектор аномалий для определения инцидентов, связанных с бизнесом, отслеживания трафика на устройствах Интернета вещей, контроля мошенничества, реагирования на изменения на рынках и многое другое.'
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/cognitive-services/anomaly-detector/overview
-            html: <p>Узнайте больше об API Детектора аномалий</p>
-            image:
-              src: ../media/index/i_overview.svg
-            title: Общие сведения об API Детектора аномалий
-          - href: /azure/cognitive-services/anomaly-detector/concepts/anomaly-detection-best-practices
-            html: '<p>Оптимизируйте результаты работу Детектора аномалий, используя рекомендации по работе с API</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Рекомендации по использованию API Детектора аномалий
-          - href: /azure/cognitive-services/anomaly-detector/how-to/identify-anomalies
-            html: '<p>Настройте порог обнаружения аномалий, используйте разные режимы обнаружения и многое другое.</p>'
-            image:
-              src: ../media/index/i_guidelines.svg
-            title: Использование API обнаружения аномалий
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Обнаруживайте аномалии в данных временных рядов с помощью:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/logo_Csharp.svg
-            href: quickstarts/detect-data-anomalies-csharp
-            text: 'C#'
-          - image:
-              src: media/logo_Java.svg
-            href: quickstarts/detect-data-anomalies-java
-            text: Java
-          - image:
-              src: media/logo_python.svg
-            href: quickstarts/detect-data-anomalies-python
-            text: Python
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST API
-            html: '<p><a href="https://aka.ms/anomaly-detector-rest-api-ref">API Детектора аномалий</a></p>'
-          - title: Пакеты SDK
-            html: '<p><a href="https://aka.ms/anomaly-detector-dotnet-ref">.NET</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2089915">GO</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2090370">Python</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2090788">Node.js</a></p>'
-          - title: PowerShell
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: CLI
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
+  ms.openlocfilehash: 61db0fe16557b582ad43cd2eddbe8e421a0b743a
+  ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/13/2019
+  ms.locfileid: "70967071"
+landingContent:
+- title: Узнайте больше об API "Детектор аномалий"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения об API Детектора аномалий
+      url: overview.md
+  - linkListType: get-started
+    links:
+    - text: Демонстрация Детектора аномалий
+      url: https://aka.ms/adDemo
+  - linkListType: video
+    links:
+    - text: Общие сведения об API "Детектор аномалий"
+      url: https://channel9.msdn.com/Shows/AI-Show/Introducing-Azure-Anomaly-Detector?WT.mc_id=ai-c9-niner
+    - text: Алгоритмы, используемые API обнаружения аномалий
+      url: https://www.youtube.com/embed/ERTaAnwCarM
+  - linkListType: reference
+    links:
+    - text: Алгоритмы, используемые при обнаружении аномалий (технический документ)
+      url: https://arxiv.org/abs/1906.03821
+- title: Обнаружение аномалий в данных
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Использование C#
+      url: quickstarts/detect-data-anomalies-csharp-sdk.md
+    - text: Использование Python
+      url: quickstarts/detect-data-anomalies-python-sdk.md
+  - linkListType: tutorial
+    links:
+    - text: визуализации аномалий c помощью пакетного обнаружения и Power BI
+      url: tutorials/batch-anomaly-detection-powerbi.md
+    - text: Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
+      url: tutorials/batch-anomaly-detection-powerbi.md
+  - linkListType: video
+    links:
+    - text: Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
+      url: https://channel9.msdn.com/Shows/AI-Show/Anomaly-detection-on-streaming-data-using-Azure-Databricks
+- title: Оптимизация результатов обнаружения
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Настройте режимы и параметры обнаружения аномалий для своих данных.
+      url: how-to/identify-anomalies.md
+    - text: Оптимизируйте результаты обнаружения аномалий с помощью рекомендаций.
+      url: concepts/anomaly-detection-best-practices.md
+  - linkListType: video
+    links:
+    - text: Рекомендации по работе с Детектором аномалий
+      url: https://channel9.msdn.com/Shows/AI-Show/Anomaly-Detector-v10-Best-Practices
+- title: Использование контейнеров Docker
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Установка и запуск контейнеров Детектора аномалий
+      url: anomaly-detector-container-howto.md
+    - text: Настройка контейнеров Детектора аномалий
+      url: anomaly-detector-container-configuration.md
+    - text: Развертывание экземпляра контейнера в Azure
+      url: how-to/deploy-anomaly-detection-on-container-instances.md
+  - linkListType: video
+    links:
+    - text: Включение Детектора аномалий в локальной среде с использованием контейнеров
+      url: https://channel9.msdn.com/Shows/AI-Show/Bring-Anomaly-Detector-on-premise-with-containers-support
+- title: Участие в сообществе Детектора аномалий
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Присоединение к группе консультантов по Детектору аномалий в Microsoft Teams
+      url: https://aka.ms/adadvisorsjoin
+    - text: Избранное создаваемое пользователями содержимое
+      url: user-generated-content.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: REST API
+      url: https://aka.ms/anomaly-detector-rest-api-ref
+    - text: Пакет SDK для .NET
+      url: https://aka.ms/anomaly-detector-dotnet-ref
+    - text: Пакет SDK для Python
+      url: https://go.microsoft.com/fwlink/?linkid=2090370
+    - text: Пакет SDK для GO
+      url: https://go.microsoft.com/fwlink/?linkid=2089915
+    - text: Пакет SDK для Node.js
+      url: https://go.microsoft.com/fwlink/?linkid=2090788
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
+    - text: Инфраструктура CLI Azure
+      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list

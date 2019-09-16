@@ -89,7 +89,7 @@
       items:
         - name: Развертывание Azure AD Application Proxy
           href: deploy-azure-app-proxy.md
-        - name: Настройка поддержки синхронизации профилей для сервера SharePoint
+        - name: Включение синхронизации профилей для SharePoint Server
           href: deploy-sp-profile-sync.md
     - name: Устранение неполадок
       items:

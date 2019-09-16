@@ -58,6 +58,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=key-vault'
 - name: Основные понятия
   items:
+    - name: Основные понятия
+      href: basic-concepts.md
     - name: Безопасность
       items:
         - name: Общие сведения о безопасности
@@ -68,8 +70,6 @@
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
           href: key-vault-secure-your-key-vault.md
-    - name: Что такое Key Vault?
-      href: key-vault-whatis.md
     - name: Обратимое удаление
       href: key-vault-ovw-soft-delete.md
     - name: Регулирование
@@ -90,8 +90,10 @@
           href: create-certificate.md
         - name: Мониторинг и администрирование процесса создания сертификатов
           href: create-certificate-scenarios.md
-- name: Практические руководства
+- name: Руководства
   items:
+    - name: Использование управляемого удостоверения Службы приложений
+      href: managed-identity.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
     - name: Доступ за брандмауэрами
