@@ -12,12 +12,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: 4bb57190a310e1ea4b8e5c511f1acd90f53b8f09
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 968e356947e99c3b6c4fe9d5acd2efed264be5b0
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813460"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010113"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage 1-го поколения с помощью фабрики данных Azure или из нее
 > [!div class="op_single_selector" title1="Выберите версию фабрики данных Azure, которую вы используете:"]
@@ -30,10 +30,11 @@ ms.locfileid: "70813460"
 
 Этот соединитель Azure Data Lake Storage 1-го поколения поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника или приемника](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md) 
 - [Поток данных сопоставления](concepts-data-flow-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
+- [Удалить действие](delete-activity.md)
 
 В частности, с помощью этого соединителя можно:
 
@@ -490,6 +491,18 @@ ms.locfileid: "70813460"
 ## <a name="mapping-data-flow-properties"></a>Сопоставление свойств потока данных
 
 Дополнительные сведения о преобразовании [источника](data-flow-source.md) и [преобразования приемников](data-flow-sink.md) в функции потока данных сопоставления.
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
+## <a name="getmetadata-activity-properties"></a>Свойства действия с метаданными
+
+Дополнительные сведения о свойствах см. в статье [действие с операциями](control-flow-get-metadata-activity.md) с помощью метаданных. 
+
+## <a name="delete-activity-properties"></a>Свойства действия удаления
+
+Чтобы получить сведения о свойствах, проверьте [действие Удалить](delete-activity.md) .
 
 ## <a name="next-steps"></a>Следующие шаги
 

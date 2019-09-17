@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 829f3e730b4993a6a7f32a9224d3c6c38bd4c06e
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 070365c79e14b80c50c70aa3277a6eddd9286a37
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811959"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018743"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall-preview"></a>Настройка исходящего сетевого трафика для кластеров Azure HDInsight с помощью брандмауэра (Предварительная версия)
 
@@ -63,7 +63,8 @@ ms.locfileid: "70811959"
    | **Name** | **Исходный адрес** | **Протокол: порт** | **Целевые полные доменные имена** | **Примечания** |
    | --- | --- | --- | --- | --- |
    | Rule_2 | * | HTTPS: 443 | login.windows.net | Разрешает действие входа Windows |
-   | Rule_3 | * | HTTPS: 443, http: 80 | < storage_account_name. BLOB. Core. Windows. NET > | Если кластер создается с помощью WASB, добавьте правило для WASB. Чтобы использовать только HTTPS-подключения, убедитесь, что в учетной записи хранения включено ["требуется безопасное перемещение"](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) . |
+   | Rule_3 | * | HTTPS: 443 | login.microsoftonline.com | Разрешает действие входа Windows |
+   | Rule_4 | * | HTTPS: 443, http: 80 | < storage_account_name. BLOB. Core. Windows. NET > | Если кластер создается с помощью WASB, добавьте правило для WASB. Чтобы использовать только HTTPS-подключения, убедитесь, что в учетной записи хранения включено ["требуется безопасное перемещение"](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) . |
 
 1. Нажмите кнопку **Добавить**.
 

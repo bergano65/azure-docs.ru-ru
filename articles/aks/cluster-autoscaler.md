@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: mlearned
-ms.openlocfilehash: 5671c3e36a49680b72b1f7b138cbd6e9c0bc4313
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 877d0a17b9ff06e9b9ac2c843c1847c9cb9726e4
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914851"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018715"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Предварительная версия. Автоматическое масштабирование кластера в соответствии с потребностями приложений в службе Kubernetes Azure (AKS)
 
@@ -104,7 +104,7 @@ az aks create \
 ## <a name="change-the-cluster-autoscaler-settings"></a>Изменение параметров средства автомасштабирования кластера
 
 > [!IMPORTANT]
-> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к [разделу Автомасштабирование с несколькими пулами агентов](##use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать `az aks nodepool` набор команд для изменения свойств пула узлов `az aks`вместо. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните команду `az feature  list -o table` и `Microsoft.ContainerService/multiagentpoolpreview`найдите.
+> Если в вашей подписке включена функция *пулов с несколькими агентами* , перейдите к [разделу Автомасштабирование с несколькими пулами агентов](#use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Для кластеров с несколькими пулами агентов необходимо использовать `az aks nodepool` набор команд для изменения свойств пула узлов `az aks`вместо. В приведенных ниже инструкциях предполагается, что вы не включили несколько пулов узлов. Чтобы проверить, включен ли он, выполните команду `az feature  list -o table` и `Microsoft.ContainerService/multiagentpoolpreview`найдите.
 
 На предыдущем шаге, чтобы создать кластер AKS или обновить существующий пул узлов, для параметра минимальное число узлов автомасштабирования кластера было установлено значение *1*, а для параметра Максимальное число узлов — значение *3*. По мере изменения требований приложения вы можете скорректировать настроенное количество узлов для средства автомасштабирования кластера.
 

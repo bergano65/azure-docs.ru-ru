@@ -4,15 +4,16 @@ description: Получите ответы на распространенные
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 143a941b8266734a8415c71daafc07681bc13b80
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 8931f9b09836d30f95e25cee245932475c3cf64c
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70049535"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018394"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -26,49 +27,49 @@ ms.locfileid: "70049535"
 
 1. Перейдите к **Spark2** > **configs**.
 
-    ![Выбор вкладки "Конфигурации"](./media/apache-troubleshoot-spark/update-config-2.png)
+    ![Выбор вкладки "Конфигурации"](./media/apache-troubleshoot-spark/apache-spark-ambari-config2.png)
 
 1. В списке конфигураций выберите и разверните пользовательский параметр **-spark2 — значения по умолчанию**.
 
 1. Найдите параметр значения, который необходимо настроить, например **spark.executor.memory**. В этом случае значение **9728m** слишком велико.
 
-    ![Выбор конфигурации custom-spark-defaults](./media/apache-troubleshoot-spark/update-config-4.png)
+    ![Выбор конфигурации custom-spark-defaults](./media/apache-troubleshoot-spark/apache-spark-ambari-config4.png)
 
 1. Задайте для этого параметра рекомендуемое значение. Рекомендуется использовать значение **2048m**.
 
 1. Сохраните это значение, а затем сохраните конфигурацию. Щелкните **Сохранить**.
 
-    ![Изменение значения на 2048m](./media/apache-troubleshoot-spark/update-config-6a.png)
+    ![Изменение значения на 2048m](./media/apache-troubleshoot-spark/apache-spark-ambari-config6a.png)
 
     Запишите примечание об изменениях конфигурации, а затем нажмите кнопку **Сохранить**.
 
-    ![Примечание об изменениях](./media/apache-troubleshoot-spark/update-config-6c.png)
+    ![Примечание об изменениях](./media/apache-troubleshoot-spark/apache-spark-ambari-config6c.png)
 
     Если нужно будет пересмотреть какую-либо конфигурацию, вы получите оповещение. Проверьте элементы, а затем нажмите кнопку **Proceed Anyway** (Продолжить).
 
-    ![Нажатие кнопки "Proceed Anyway" (Продолжить)](./media/apache-troubleshoot-spark/update-config-6b.png)
+    ![Нажатие кнопки "Proceed Anyway" (Продолжить)](./media/apache-troubleshoot-spark/apache-spark-ambari-config6b.png)
 
 1. При каждом сохранении конфигурации вам будет предложено перезапустить службу. Нажмите кнопку **Перезапустить**.
 
-    ![Нажатие кнопки "Перезапустить"](./media/apache-troubleshoot-spark/update-config-7a.png)
+    ![Нажатие кнопки "Перезапустить"](./media/apache-troubleshoot-spark/apache-spark-ambari-config7a.png)
 
     Подтвердите перезапуск.
 
-    ![Нажатие кнопки "Confirm Restart All" (Подтвердить перезапуск всех)](./media/apache-troubleshoot-spark/update-config-7b.png)
+    ![Нажатие кнопки "Confirm Restart All" (Подтвердить перезапуск всех)](./media/apache-troubleshoot-spark/apache-spark-ambari-config7b.png)
 
     Вы можете просмотреть запущенные процессы.
 
-    ![Просмотр запущенных процессов](./media/apache-troubleshoot-spark/update-config-7c.png)
+    ![Просмотр запущенных процессов](./media/apache-troubleshoot-spark/apache-spark-ambari-config7c.png)
 
 1. Вы можете добавить конфигурации. В списке конфигураций выберите **Custom-spark2-defaults**, а затем щелкните **Добавить свойство**.
 
-    ![Выбор "Добавить свойство"](./media/apache-troubleshoot-spark/update-config-8.png)
+    ![Выбор "Добавить свойство"](./media/apache-troubleshoot-spark/apache-spark-ambari-config8.png)
 
 1. Определите новое свойство. Вы можете определить отдельное свойство с помощью диалогового окна для определенных параметров, например тип данных. Или вы можете определить несколько свойств с одним определением на строку.
 
     В этом примере свойство **spark.driver.memory** определяется со значением **4 ГБ**.
 
-    ![Определение нового свойства](./media/apache-troubleshoot-spark/update-config-9.png)
+    ![Определение нового свойства](./media/apache-troubleshoot-spark/apache-spark-ambari-config9.png)
 
 1. Сохраните конфигурацию и перезапустите службу, как описано на шагах 6 и 7.
 

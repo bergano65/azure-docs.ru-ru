@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: 0c8c2f2adb11a30b438fb41dca07519b2f74baf7
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 29f5b9b704bcf4648e9c24516d8eff5429a0ce1d
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813586"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71009956"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -28,7 +28,7 @@ ms.locfileid: "70813586"
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Этот соединитель больших двоичных объектов Azure поддерживается для следующих действий:
+Этот соединитель хранилища данных SQL Azure поддерживается для следующих действий:
 
 - [Действие копирования](copy-activity-overview.md) с [поддерживаемой таблицей источника или приемника](copy-activity-overview.md)
 - [Поток данных сопоставления](concepts-data-flow-overview.md)
@@ -440,7 +440,7 @@ Polybase хранилища данных SQL напрямую поддержив
    3. `rowDelimiter`**по умолчанию**, **\n**, **\r\n**или **\r**.
    4. `nullValue`принимает значение по умолчанию или задает **пустую строку** (""), `treatEmptyAsNull` а принимает значение по умолчанию или значение true.
    5. `encodingName`по умолчанию используется значение **UTF-8**.
-   6. `quoteChar`, `escapeChar` и`skipLineCount` не указаны. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
+   6. `quoteChar`, `escapeChar` и`skipLineCount` не указаны. Поддержка polybase пропускает строку заголовка, которая может быть настроена `firstRowAsHeader` как в ADF.
    7. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
 
 3. Если источником является папка, `recursive` в действии копирования должно быть задано значение true.
@@ -625,6 +625,14 @@ All columns of the table must be specified in the INSERT BULK statement.
 | uniqueidentifier                      | Guid                           |
 | varbinary                             | Byte[]                         |
 | varchar                               | String, Char[]                 |
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
+## <a name="getmetadata-activity-properties"></a>Свойства действия с метаданными
+
+Дополнительные сведения о свойствах см. в статье [действие с операциями](control-flow-get-metadata-activity.md) с помощью метаданных. 
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

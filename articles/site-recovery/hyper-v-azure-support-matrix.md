@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: raynew
-ms.openlocfilehash: 5d7ac7cf00ee59a06a914d312fd58de00515a0b4
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 75a8207cd214a63258ddb167b887fe83b7aa032a
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873339"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71008827"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -132,7 +132,7 @@ Blob-блоки | Нет | Нет
 Шифрование неактивных данных (SSE)| Да | Да
 Хранилище уровня "Премиум" | Да | Да
 Служба импорта и экспорта | Нет | Нет
-Брандмауэры службы хранилища Azure для виртуальных сетей, настроенные в целевой учетной записи хранения или кэширования (используемой для хранения данных репликации) | Нет | Нет
+Учетные записи хранения Azure с включенным брандмауэром | Нет  | Да. Для целевого хранилища и кэша.
 Изменение учетной записи хранения | Нет. Невозможно изменить целевую учетную запись хранения Azure после включения репликации. Чтобы изменить, отключите и снова включите аварийное восстановление. | Нет
 
 

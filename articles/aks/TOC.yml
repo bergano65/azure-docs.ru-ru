@@ -199,7 +199,7 @@
           href: ../governance/policy/concepts/rego-for-aks.md?toc=/azure/aks/toc.json
         - name: Обновление учетных данных субъекта-службы кластера
           href: update-credentials.md
-        - name: Ограничение и администрирование исходящего трафика кластера (предварительная версия)
+        - name: Ограничение и администрирование исходящего трафика кластера
           href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:

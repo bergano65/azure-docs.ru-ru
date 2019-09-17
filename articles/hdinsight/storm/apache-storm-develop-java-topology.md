@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 3cdf2255208069e20f5a230cc2acd82a628fdcfd
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 41ed51fc0cec9843525275613cca211d2e1bf409
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840209"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018609"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -25,7 +25,7 @@ ms.locfileid: "68840209"
 > [!NOTE]  
 > Полная версия примеров топологии Storm, созданных в этом документе, доступна по адресу [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks)
 
@@ -487,7 +487,7 @@ public class WordCount extends BaseBasicBolt {
 
 На рисунке ниже приведена базовая диаграмма компонентов этой топологии.
 
-![диаграмма, показывающая упорядочение воронок и сит](./media/apache-storm-develop-java-topology/wordcount-topology.png)
+![диаграмма, показывающая упорядочение воронок и сит](./media/apache-storm-develop-java-topology/word-count-topology1.png)
 
 Чтобы реализовать топологию, введите следующую команду, чтобы создать и открыть новый файл `WordCountTopology.java`:
 

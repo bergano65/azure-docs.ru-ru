@@ -204,7 +204,7 @@
     - name: Учебники
       items:
         - name: Эталонные образцы архитектуры
-          href: /azure/architecture/reference-architectures/app-service-web-app/
+          href: /azure/architecture/reference-architectures/app-service-web-app/basic-web-app
         - name: Скрипты развертывания
           href: 'https://azure.microsoft.com/documentation/scripts/'
     - name: Устранение неполадок

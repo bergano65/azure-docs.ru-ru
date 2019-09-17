@@ -12,18 +12,23 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: jingwang
-ms.openlocfilehash: 729ea0fa667a11f710fd815003bc0995cb08ae70
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: ac9b12f07a27b3bb8ff66d8a5637cb656e06abc6
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842560"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010565"
 ---
 # <a name="copy-data-from-and-to-salesforce-service-cloud-by-using-azure-data-factory"></a>Копирование данных из службы Salesforce в облако и обратно с помощью фабрики данных Azure
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure копировать данные в облако службы Salesforce и обратно. Это продолжение [статьи с обзором действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+
+Этот соединитель облачных служб Salesforce поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из облака службы Salesforce можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Вы также можете копировать данные из любого поддерживаемого исходного хранилища данных в облако службы Salesforce. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -222,7 +227,7 @@ ms.locfileid: "68842560"
 
 ### <a name="salesforce-service-cloud-as-a-sink-type"></a>Облако службы Salesforce в качестве типа приемника
 
-Чтобы скопировать данные в облако службы Salesforce, в разделе приемника действия копирования поддерживаются следующие свойства.
+Чтобы скопировать данные в облако службы Salesforce, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
 | Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -309,15 +314,15 @@ ms.locfileid: "68842560"
 |:--- |:--- |
 | Auto Number |Строковое |
 | Checkbox |логический |
-| Currency |Десятичное |
+| Currency |Decimal |
 | Date |DateTime |
 | Date/Time |DateTime |
 | Адрес эл. почты |Строковое |
 | Id |Строковое |
 | Lookup Relationship |Строковое |
 | Multi-Select Picklist |Строковое |
-| Number |Десятичное |
-| Percent |Десятичное |
+| Number |Decimal |
+| Percent |Decimal |
 | Phone |Строковое |
 | Picklist |Строковое |
 | Текст |Строковое |
@@ -326,6 +331,11 @@ ms.locfileid: "68842560"
 | Text Area (Rich) |Строковое |
 | Text (Encrypted) |Строковое |
 | URL |Строковое |
+
+## <a name="lookup-activity-properties"></a>Свойства действия поиска
+
+Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+
 
 ## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

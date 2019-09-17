@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, sstein
 ms.date: 05/10/2019
-ms.openlocfilehash: 2ddef73121ef2f6c145516ca114989aa12b8003c
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 3cad1a73dd98928ed12748e2acffaea158dc5924
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873509"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010299"
 ---
 # <a name="azure-sql-database-features"></a>Функции базы данных SQL Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "70873509"
 
 В следующей таблице перечислены основные функции SQL Server и приведены сведения о том, является ли эта функция частичной или полностью поддерживаемой в Управляемый экземпляр или отдельная база данных и эластичных пулах, со ссылкой на дополнительные сведения о функции.
 
-| **Функция SQL** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры** |
+| **Функция SQL** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры и пулы экземпляров** |
 | --- | --- | --- |
 | [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). |
 | [Группы доступности Always On](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](sql-database-business-continuity.md). | [Высокий уровень доступности](sql-database-high-availability.md) включается в каждую базу данных и [не может управляться пользователем](sql-database-managed-instance-transact-sql-information.md#always-on-availability). Сведения об аварийном восстановлении см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](sql-database-business-continuity.md). |
@@ -112,7 +112,7 @@ ms.locfileid: "70873509"
 
 Платформа Azure предоставляет ряд возможностей PaaS, которые добавлены в качестве дополнительного значения для стандартных функций базы данных. Существует ряд внешних служб, которые можно использовать со службой базы данных SQL Azure. 
 
-| **Функция платформы** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры** |
+| **Функция платформы** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры и пулы экземпляров** |
 | --- | --- | --- |
 | [Активная георепликация](sql-database-active-geo-replication.md) | Да — все уровни служб, кроме горизонтального масштабирования | Нет, в качестве альтернативы см. раздел [группы автоматической отработки отказа (Предварительная версия)](sql-database-auto-failover-group.md) |
 | [Группы автоматической отработки отказа](sql-database-auto-failover-group.md) | Да — все уровни служб, кроме горизонтального масштабирования | Да, [в общедоступной предварительной версии](sql-database-auto-failover-group.md)|
@@ -131,7 +131,7 @@ ms.locfileid: "70873509"
 | [Управление на основе политик](https://docs.microsoft.com/sql/relational-databases/policy-based-management/administer-servers-by-using-policy-based-management) | Нет | Нет |
 | Общедоступный IP-адрес | Да. Доступ можно ограничить с помощью конечных точек брандмауэра или службы.  | Да. Необходимо включить явным образом, а порт 3342 должен быть включен в правилах NSG. При необходимости общедоступный IP-адрес можно отключить. Дополнительные сведения см. в разделе общедоступная [Конечная точка](sql-database-managed-instance-public-endpoint-securely.md) . | 
 | [Восстановление базы данных до точки во времени](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-sql-server-database-to-a-point-in-time-full-recovery-model) | Да — все уровни служб, отличные от горизонтального масштабирования — см. в разделе [Восстановление базы данных SQL](sql-database-recovery-using-backups.md#point-in-time-restore) . | Да. Дополнительные сведения см. в разделе [Восстановление до точки во времени](sql-database-recovery-using-backups.md#point-in-time-restore). |
-| Пулы ресурсов | Да, как [эластичные пулы](sql-database-elastic-pool.md) | Нет. Один управляемый экземпляр может иметь несколько баз данных, совместно использующих один и тот же пул ресурсов. Управляемые экземпляры не могут совместно использовать ресурсы. |
+| Пулы ресурсов | Да, как [эластичные пулы](sql-database-elastic-pool.md) | Да. Один управляемый экземпляр может иметь несколько баз данных, совместно использующих один и тот же пул ресурсов. Кроме того, можно развернуть несколько управляемых экземпляров в [пулах экземпляров (Предварительная версия)](sql-database-instance-pools.md) , которые могут совместно использовать ресурсы. |
 | Увеличение или уменьшение масштаба (в сети) | Да, можно изменить DTU или зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. | Да, вы можете изменить зарезервированный виртуальных ядер или максимальный объем хранилища с минимальным временем простоя. |
 | Псевдоним SQL | Да, см. раздел [псевдоним DNS](dns-alias-overview.md) | Нет |
 | [Аналитика SQL](https://docs.microsoft.com/azure/azure-monitor/insights/azure-sql) | Да | Да |
@@ -146,7 +146,7 @@ ms.locfileid: "70873509"
 ## <a name="tools"></a>Сервис
 База данных SQL Azure поддерживает различные средства работы с данными, которые могут помочь в управлении данными.
 
-| **Средство** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры** |
+| **Средство** | **Отдельные базы данных и эластичные пулы** | **Управляемые экземпляры и пулы экземпляров** |
 | --- | --- | --- |
 | портала Azure | Да | Да |
 | Azure CLI | Да | Да|
@@ -167,7 +167,7 @@ ms.locfileid: "70873509"
 
 Для перемещения данных между базами данных SQL Server, отдельная база данных и Управляемый экземпляр можно использовать различные методы миграции. Некоторые методы находятся в **сети** и отправляют все изменения, внесенные в источник во время выполнения миграции, в то время как в **автономных** методах необходимо прерывать рабочую нагрузку, изменяющую данные в источнике во время выполнения миграции.
 
-| **Source** | **Единственная база данных и эластичный пул** | **Управляемый экземпляр** |
+| **Source** | **Единственная база данных и эластичный пул** | **Пулы Управляемый экземпляр и экземпляров** |
 | --- | --- | --- |
 | SQL Server (локальный, AzureVM, Amazon RDS) | **В сети**. [Служба миграции данных (DMS)](https://docs.microsoft.com/sql/dma/dma-overview), [репликация транзакций](sql-database-managed-instance-transactional-replication.md) <br/> **Работа** [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp | **В сети**. [Служба миграции данных (DMS)](https://docs.microsoft.com/sql/dma/dma-overview), [репликация транзакций](sql-database-managed-instance-transactional-replication.md) <br/> **Работа** Собственная архивация, восстановление, [файл BACPAC (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp, [репликация моментальных снимков](sql-database-managed-instance-transactional-replication.md) |
 | Отдельная база данных | **Работа** [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp | **Работа** [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database), bcp |
@@ -183,3 +183,4 @@ ms.locfileid: "70873509"
 Дополнительные сведения о разновидностях базы данных SQL Azure см. в следующих статьях:
 - [Что такое база данных SQL?](sql-database-technical-overview.md)
 - [Общие сведения об Управляемом экземпляре](sql-database-managed-instance.md)
+- [Что такое пулы Управляемый экземпляр?](sql-database-instance-pools.md)

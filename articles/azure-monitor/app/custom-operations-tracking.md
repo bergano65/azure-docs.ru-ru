@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 34658fb1db84ff09a4c3d22ea95f5bfc7384721d
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 91467f99e7932ce7ffcd5b3300f8544fb848ccfa
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883638"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71019079"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -486,7 +486,7 @@ public async Task RunAllTasks()
 ## <a name="next-steps"></a>Следующие шаги
 
 - Изучите основы [корреляции данных телеметрии](correlation.md) в Application Insights.
-- Узнайте, как коррелированные данные заключаются в [диагностике транзакций](/azure-monitor/app/transaction-diagnostics) и [схеме приложений](/azure-monitor/app/app-map).
+- Узнайте, как коррелированные данные заключаются в [диагностике транзакций](../../azure-monitor/app/transaction-diagnostics.md) и [схеме приложений](../../azure-monitor/app/app-map.md).
 - В [этой статье](../../azure-monitor/app/data-model.md) представлены типы данных и модель данных для Application Insights.
 - Передача настраиваемых [событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md) в Application Insights.
 - Изучите стандартную [конфигурацию](configuration-with-applicationinsights-config.md#telemetry-initializers-aspnet) коллекции свойств контекста.

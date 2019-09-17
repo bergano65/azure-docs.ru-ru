@@ -11,12 +11,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: 0bba755ec5683e988bb8ae3f2308a1c298b228b0
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: b85793223e23aa3d668d6f86494da3ee78c43e91
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000565"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71009992"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Классификация & базы данных SQL Azure и хранилища данных SQL
 
@@ -142,10 +142,13 @@ ms.locfileid: "71000565"
 
 Также интерфейсы REST API можно использовать для программного управления классификациями. Опубликованные интерфейсы REST API поддерживают следующие операции:
 
-- [Create или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate). Создание или обновление метки конфиденциальности данного столбца.
+- [CREATE или Update](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/createorupdate) — создает или обновляет метку чувствительности данного столбца.
 - [Delete](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/delete). Удаление метки конфиденциальности данного столбца.
+- [Disable рекомендация](https://docs.microsoft.com/en-us/rest/api/sql/sensitivitylabels/disablerecommendation) — отключает рекомендации по конфиденциальности для данного столбца
+- [Включить рекомендацию](https://docs.microsoft.com/en-us/rest/api/sql/sensitivitylabels/enablerecommendation) — включает рекомендации по конфиденциальности для данного столбца (рекомендации включены по умолчанию для всех столбцов).
 - [Get](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/get). Получение метки конфиденциальности данного столбца.
 - [List Current By Database](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listcurrentbydatabase). Получение списка текущих меток конфиденциальности для конкретной базы данных.
+
 - [List, рекомендованный базой данных](https://docs.microsoft.com/rest/api/sql/sensitivitylabels/listrecommendedbydatabase) — получение рекомендуемых меток чувствительности для заданной базы данных.
 
 ## <a name="manage-data-discovery-and-classification-using-azure-powershell"></a>Управление обнаружением и классификацией данных с помощью Azure PowerShell

@@ -8,12 +8,12 @@ manager: rkarlin
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: 2617ae7bd1c761ae7977eac518c2e40ca55da00c
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: b39482f5c753fbfe6cc6663dda4f5381300c2c21
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883240"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017250"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -60,7 +60,7 @@ ms.locfileid: "70883240"
 
 Ниже приведен список **доверенных служб**, которые получают доступ к хранилищу ключей, если включен соответствующий параметр.
 
-|Доверенная служба|Сценарии использования|
+|Доверенная служба|Поддерживаемые сценарии использования|
 | --- | --- |
 |Служба развертывания виртуальных машин Azure|[Развертывание сертификатов на виртуальных машинах из хранилища ключей, управляемого пользователем](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/)|
 |Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).|
