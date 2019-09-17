@@ -1,73 +1,215 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Stream Analytics
+### YamlMime:Landing
+title: Документация по Azure Stream Analytics
+summary: Azure Stream Analytics — это полностью управляемая служба аналитики в режиме реального времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
 metadata:
-  title: Документация по Azure Stream Analytics. Руководства и справочник по API
-  meta.description: 'Learn how to run IoT analytics in the cloud with fully-managed event processing. Analyze data in real time from applications, sensors, devices, and more.'
-  services: stream-analytics
-  author: mamccrea
-  ms.author: mamccrea
+  title: Документация по Azure Stream Analytics
+  description: Azure Stream Analytics — это полностью управляемая служба аналитики в режиме реального времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+  services: service
   ms.service: stream-analytics
   ms.topic: landing-page
-  ms.date: 06/21/2019
-abstract:
-  description: "Stream Analytics\_— это полностью управляемая служба PaaS, которая позволяет анализировать и обрабатывать стремительно перемещающиеся потоки данных с устройств Интернета вещей и из приложений, сведения о посещениях и\_т.\_д. в режиме реального времени, а также при необходимости активировать оповещения и действия. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ./media/index/streaming-analytics-thumbnail.png
-      width: 250
-    title: "Azure Stream Analytics помогает принимать решения в реальном времени, откуда бы ни поступали данные\_— из облака или с интеллектуальных пограничных устройств. (1:02:11)"
-    href: 'https://azure.microsoft.com/resources/videos/build-2019-from-cloud-to-the-intelligent-edge-drive-real-time-decisions-with-azure-stream-analytics/'
-    width: 250
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Сведения о развертывании задания Azure Stream Analytics:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: media/index/stream-analytics.svg
-            text: Портал Azure
-            href: 'https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal'
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: PowerShell
-            href: 'https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-powershell'
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-            text: Visual Studio
-            href: 'https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-vs'
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Visual Studio Code
-            href: 'https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code'
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Сведения о развертывании, администрировании и мониторинге задания Azure Stream Analytics:'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="stream-analytics-manage-job">Создание задания Stream Analytics для анализа данных телефонных звонков и визуализации результатов на панели мониторинга Power BI</a>
-          - html: <a href="stream-analytics-with-azure-functions">Запуск решения "Функции Azure" из заданий Azure Stream Analytics</a>
-          - html: <a href="stream-analytics-javascript-user-defined-functions">Запуск определяемых пользователем функций JavaScript в заданиях Azure Stream Analytics</a>
-          - html: <a href="stream-analytics-tools-visual-studio-cicd-vsts">Развертывание заданий Azure Stream Analytics с помощью CI/CD и Azure Pipelines</a>
-          - html: '<a href="stream-analytics-edge-csharp-udf">Написание определяемой пользователем функции C# для задания Azure Stream Analytics Edge (предварительная версия)</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Предварительный просмотр
-            html: '<p><a href="stream-analytics-previews#public-previews">Общедоступные предварительные версии</a></p><p><a href="stream-analytics-previews#other-previews">Закрытые предварительные версии</a></p>'
-          - title: Командная строка
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.streamanalytics/#stream_analytics">Azure PowerShell</a></p>'
-          - title: Языки
-            html: '<p><a href="/dotnet/api/microsoft.azure.management.streamanalytics?view=azuremgmtstreamanalytics-1.8.3">.NET</a></p><p><a href="https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference">Язык запросов Stream Analytics</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/streamanalytics">Справочник по REST API</a></p>
+  author: mamccrea
+  ms.author: mamccrea
+  ms.date: 09/16/2019
+  ms.openlocfilehash: a4573c9f6938db56eba80da084004a620a54e9e4
+  ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/16/2019
+  ms.locfileid: "71018860"
+landingContent:
+- title: Сведения об Azure Stream Analytics
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание задания с помощью портала Azure
+      url: stream-analytics-quick-create-portal.md
+  - linkListType: overview
+    links:
+    - text: Знакомство с Azure Stream Analytics
+      url: stream-analytics-introduction.md
+    - text: Шаблоны решений Azure Stream Analytics
+      url: stream-analytics-solution-patterns.md
+  - linkListType: whats-new
+    links:
+    - text: Уровни совместимости Stream Analytics
+      url: stream-analytics-compatibility-level.md
+    - text: Предварительная версия функций Stream Analytics
+      url: stream-analytics-previews.md
+  - linkListType: concept
+    links:
+    - text: Выбор технологии анализа потоковой передачи
+      url: streaming-technologies.md
+    - text: Выбор средства разработки для заданий
+      url: feature-comparison.md
+- title: Подключение задания к источнику данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о типах входных данных
+      url: stream-analytics-add-inputs.md
+  - linkListType: concept
+    links:
+    - text: Входные потоковые данные
+      url: stream-analytics-define-inputs.md
+    - text: Присоединение эталонных данных для уточняющих запросов
+      url: stream-analytics-use-reference-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование эталонных данных из Базы данных SQL
+      url: sql-reference-data.md
+    - text: Устранение неполадок с входными подключениями
+      url: stream-analytics-troubleshoot-input.md
+    - text: Обработка событий Центров событий в Apache Kafka
+      url: ../event-hubs/event-hubs-kafka-stream-analytics.md
+    - text: Обработка данных из Центров событий Azure
+      url: ../event-hubs/process-data-azure-stream-analytics.md
+- title: Отправка данных в приемник выходных данных
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о типах выходных данных
+      url: stream-analytics-define-outputs.md
+  - linkListType: concept
+    links:
+    - text: Вывод в Cosmos DB
+      url: stream-analytics-documentdb-output.md
+    - text: Вывод в Базу данных SQL Azure
+      url: stream-analytics-sql-output-perf.md
+    - text: Секционирование выходных данных пользовательского большого двоичного объекта
+      url: stream-analytics-custom-path-patterns-blob-storage-output.md
+    - text: Политики обработки ошибок вывода
+      url: stream-analytics-output-error-policy.md
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок с исходящими подключениями
+      url: stream-analytics-troubleshoot-output.md
+- title: Мониторинг задания и устранение возникших с ним неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Вводные сведения о мониторинге
+      url: stream-analytics-monitoring.md
+    - text: Мониторинг заданий с помощью Azure PowerShell
+      url: stream-analytics-monitor-and-manage-jobs-use-powershell.md
+    - text: Создание монитора заданий с помощью пакета SDK Azure для .NET
+      url: stream-analytics-monitor-jobs.md
+    - text: Мониторинг заданий и управление ими в Visual Studio
+      url: stream-analytics-monitor-jobs-use-vs.md
+    - text: Устранение неполадок с помощью журналов диагностики
+      url: stream-analytics-job-diagnostic-logs.md
+    - text: Отладка с использованием схемы заданий
+      url: stream-analytics-job-diagram-with-metrics.md
+    - text: Устранение ошибок в данных
+      url: data-errors.md
+- title: Обзор темпоральных концепций
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Стандартные шаблоны запросов
+      url: stream-analytics-stream-analytics-query-patterns.md
+    - text: Общие сведения об обработке времени в Stream Analytics
+      url: stream-analytics-time-handling.md
+    - text: Внутренние контрольные точки и воспроизведение
+      url: stream-analytics-concepts-checkpoint-replay.md
+- title: Преобразование данных с помощью запросов Stream Analytics
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о функциях для работы с временными окнами
+      url: stream-analytics-window-functions.md
+    - text: Общие сведения о геопространственных функциях
+      url: stream-analytics-geospatial-functions.md
+    - text: Анализ данных JSON и Avro
+      url: stream-analytics-parsing-json.md
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение неполадок с логикой запросов
+      url: stream-analytics-troubleshoot-query.md
+    - text: Написание определяемых пользователем статистических выражений JavaScript
+      url: stream-analytics-javascript-user-defined-aggregates.md
+    - text: Разработка определяемых пользователем функций .NET для заданий IoT Edge
+      url: stream-analytics-edge-csharp-udf-methods.md
+  - linkListType: tutorial
+    links:
+    - text: Выполнение определяемой пользователем функции JavaScript
+      url: stream-analytics-javascript-user-defined-functions.md
+    - text: Выполнение определяемой пользователем функции C# в задании Edge в Stream Analytics
+      url: stream-analytics-edge-csharp-udf.md
+- title: Анализ с использованием машинного обучения
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Обнаружение аномалий с помощью машинного обучения
+      url: stream-analytics-machine-learning-anomaly-detection.md
+    - text: Анализ тональности с использованием Студии машинного обучения Azure
+      url: stream-analytics-machine-learning-integration-tutorial.md
+    - text: Масштабирование заданий с помощью функций Студии машинного обучения
+      url: stream-analytics-scale-with-machine-learning-functions.md
+- title: Создание заданий и управление ими с помощью средств разработчика
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Изучение заданий с использованием Visual Studio Code
+      url: vscode-local-run.md
+    - text: Тестовые запросы с использованием демонстрационных данных в Visual Studio Code
+      url: vscode-local-run.md
+    - text: Установка средств для Visual Studio
+      url: stream-analytics-tools-for-visual-studio-install.md
+    - text: Тестовые запросы с использованием демонстрационных данных в Visual Studio
+      url: stream-analytics-vs-tools-local-run.md
+    - text: Тестовые запросы с использованием фактических данных в Visual Studio
+      url: stream-analytics-live-data-local-testing.md
+    - text: Просмотр заданий в Visual Studio
+      url: stream-analytics-tools-for-visual-studio-edge-jobs.md
+    - text: Разработка задания IoT Edge в Visual Studio
+      url: stream-analytics-tools-for-visual-studio-edge-jobs.md
+- title: Поработайте с решениями Stream Analytics и соответствующими руководствами
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание задания и управление им
+      url: stream-analytics-manage-job.md
+    - text: Активация функции Azure
+      url: stream-analytics-with-azure-functions.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание решений с использованием геозон и геопространственного агрегирования
+      url: geospatial-scenarios.md
+    - text: Выполнение заданий в IoT Edge
+      url: stream-analytics-edge.md
+    - text: Создание решения для анализа тональности
+      url: stream-analytics-twitter-sentiment-analysis-trends.md
+    - text: Выявление мошенничества в реальном времени
+      url: stream-analytics-real-time-fraud-detection.md
+    - text: Создание решения для Интернета вещей
+      url: stream-analytics-build-an-iot-solution-using-stream-analytics.md
+    - text: Моделирование высокочастотного трейдинга
+      url: stream-analytics-high-frequency-trading.md
+    - text: Оповещение на основе правил с настраиваемыми порогами
+      url: stream-analytics-threshold-based-rules.md
+- title: Развертывание заданий Stream Analytics
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание задания с CI/CD с использованием Azure Pipelines
+      url: stream-analytics-tools-visual-studio-cicd-vsts.md
+  - linkListType: how-to-guide
+    links:
+    - text: Настройка конвейера CI/CD с использованием Visual Studio Code
+      url: setup-cicd-vs-code.md
+    - text: Настройка конвейера CI/CD с использованием Visual Studio
+      url: stream-analytics-tools-for-visual-studio-cicd.md
+    - text: Настройка CI/CD для заданий IoT Edge с помощью интерфейсов REST API
+      url: stream-analytics-cicd-api.md
+- title: Масштабирование заданий Stream Analytics
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Масштабирование с помощью единиц потоковой передачи
+      url: stream-analytics-streaming-unit-consumption.md
+    - text: Масштабирование с помощью параллелизации запросов
+      url: stream-analytics-parallelization.md
+    - text: Масштабирование заданий для повышения пропускной способности
+      url: stream-analytics-scale-jobs.md
+    - text: Оптимизация обработки путем повторного секционирования
+      url: repartition.md

@@ -1,0 +1,55 @@
+### YamlMime:Landing
+title: Документация по Приватному каналу
+summary: Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через частную конечную точку виртуальной сети.  Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети собственную службу "Приватный канал" и предоставлять ее клиентам в частном порядке.
+metadata:
+  title: Документация по Приватному каналу — краткие руководства, инструкции и справочники по API
+  description: Узнайте, как использовать службу "Приватный канал Azure". Краткие руководства и другие учебные материалы помогут развернуть службу "Приватный канал".
+  ms.service: virtual-network
+  ms.topic: landing-page
+  ms.collection: collection
+  author: KumudD
+  ms.author: kumud
+  ms.date: 09/16/2019
+  ms.openlocfilehash: 867c20b96f8a48aeb52e455d718057e686ddfcbe
+  ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/16/2019
+  ms.locfileid: "71020217"
+landingContent:
+- title: Сведения о Приватном канале Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Приватный канал?
+      url: private-link-overview.md
+- title: Подключение к службе Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что собой представляет частная конечная точка?
+      url: private-endpoint-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание частной конечной точки
+      url: create-private-endpoint-portal.md
+- title: Создание собственной службы "Приватный канал"
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что собой представляет служба "Приватный канал"?
+      url: private-link-service-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание службы "Приватный канал"
+      url: create-private-link-service-powershell.md
+- title: Справочные материалы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure CLI
+      url: /cli/azure/network
+    - text: Azure PowerShell
+      url: /powershell/module/az.network
+    - text: REST
+      url: /rest/api/virtualnetwork/privatelinkservices

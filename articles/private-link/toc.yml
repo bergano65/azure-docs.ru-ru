@@ -1,0 +1,78 @@
+- name: Документация по Приватному каналу Azure
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет Приватный канал Azure?
+      href: private-link-overview.md
+- name: Краткие руководства
+  items:
+    - name: Создание частной конечной точки
+      items:
+        - name: Портал Azure
+          href: create-private-endpoint-portal.md
+        - name: Azure CLI
+          href: create-private-endpoint-cli.md
+        - name: Azure PowerShell
+          href: create-private-endpoint-powershell.md
+    - name: Создание службы "Приватный канал"
+      items:
+        - name: Azure PowerShell
+          href: create-private-link-service-powershell.md
+        - name: Azure CLI
+          href: create-private-link-service-cli.md
+- name: Основные понятия
+  items:
+    - name: Частная конечная точка
+      href: private-endpoint-overview.md
+    - name: Служба "Приватный канал"
+      href: private-link-service-overview.md
+- name: Практическое руководство
+  items:
+    - name: Частное подключение к учетной записи хранения
+      href: create-private-endpoint-storage-portal.md
+    - name: Отключение сетевых политик для частной конечной точки
+      href: disable-private-endpoint-network-policy.md
+    - name: Отключение сетевых политик для службы "Приватный канал"
+      href: disable-private-link-service-network-policy.md
+    - name: Управление частными конечными точками
+      href: manage-private-endpoint.md
+- name: Справочные материалы
+  items:
+    - name: Azure CLI
+      href: /cli/azure/network
+    - name: Azure PowerShell
+      href: /powershell/module/az.network
+    - name: .NET
+      href: /api/overview/azure/virtual-network
+    - name: Java
+      href: /java/api/
+    - name: Node.js
+      href: 'https://docs.microsoft.com/javascript/azure#azure-sdk'
+    - name: Python
+      href: 'https://azure.microsoft.com/develop/python/'
+    - name: REST
+      href: /rest/api/virtualnetwork/privateendpoints
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.network/allversions
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?service=virtual-network'
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог о сетях
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Форум по сетям
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Отзыв о работе сети
+      href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/virtual-network'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-virtual-network'
+    - name: Часто задаваемые вопросы
+      href: private-link-faq.md
