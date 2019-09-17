@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: dc17cb48f7e06757dacdca5f291ed4604bfc10ee
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
-ms.translationtype: MT
+ms.openlocfilehash: 923859fdb0b398d04e710810a96c33fb1c3cd9da
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414403"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698571"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -79,7 +79,7 @@ IoT Edge поддерживает несколько операционных с
 | Python | Visual Studio Code |
 
 >[!NOTE]
->Поддержка разработки и отладки для устройств ARM64 Linux доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Дополнительные сведения см. [в разделе Разработка и отладка модулей ARM64 IOT EDGE в Visual Studio Code (Предварительная версия)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview).
+>Поддержка разработки и отладки для устройств ARM64 Linux доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Подробные сведения см. в статье [Develop and debug ARM64 IoT Edge modules in Visual Studio Code (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) (Разработка и отладка модулей IoT Edge для устройств ARM64 в Visual Studio Code (предварительная версия)).
 
 ### <a name="windows"></a>Windows
 
@@ -98,4 +98,4 @@ IoT Edge поддерживает несколько операционных с
 
 [Использование Visual Studio Code для разработки модулей для IoT Edge](how-to-vs-code-develop-module.md)
 
-[Изучение и использование пакетов SDK для центра Интернета вещей Azure](/iot-hub/iot-hub-devguide-sdks.md)
+[Изучение и использование пакетов SDK для центра Интернета вещей Azure](../iot-hub/iot-hub-devguide-sdks.md)
