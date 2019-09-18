@@ -1,6 +1,6 @@
 ---
 title: Где сохранять & записывать файлы экспериментов
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте, где сохранять входные файлы эксперимента и где записывать выходные файлы, чтобы избежать ошибок ограничений хранилища и экспериментов.
 services: machine-learning
 author: rastala
@@ -12,12 +12,12 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: 7d5e147173e766d0da54aa3422faef4b6035b914
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 77f816400709262fab8cb9bd351bdcde73377e09
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114515"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034291"
 ---
 # <a name="where-to-save-and-write-files-for-azure-machine-learning-experiments"></a>Где можно сохранять и записывать файлы для экспериментов Машинное обучение Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "70114515"
 
 По этой причине рекомендуется:
 
-* **Сохранение файлов в [хранилище данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py)машинное обучение Azure.** Это предотвращает проблемы с задержкой в экспериментах и имеет преимущества доступа к данным из удаленного целевого объекта вычислений, что означает, что проверка подлинности и подключение управляются службой Машинное обучение Azure. Узнайте больше о том, как указать хранилище данных в качестве исходного каталога, а также отправить файлы в хранилище в [данные Access из вашей](how-to-access-data.md) статьи.
+* **Сохранение файлов в [хранилище данных](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py)машинное обучение Azure.** Это предотвращает проблемы с задержкой в экспериментах и имеет преимущества доступа к данным из удаленного целевого объекта вычислений, что означает, что проверка подлинности и подключение управляются Машинное обучение Azure. Узнайте больше о том, как указать хранилище данных в качестве исходного каталога, а также отправить файлы в хранилище в [данные Access из вашей](how-to-access-data.md) статьи.
 
 * **Если вам требуется только несколько файлов данных и скриптов зависимости и не можете использовать хранилище,** поместите файлы в тот же каталог папки, в котором находится сценарий обучения. Укажите эту папку `source_directory` непосредственно в обучающем скрипте или в коде, который вызывает сценарий обучения.
 

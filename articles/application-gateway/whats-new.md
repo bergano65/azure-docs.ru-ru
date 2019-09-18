@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: overview
 ms.date: 4/30/2019
 ms.author: victorh
-ms.openlocfilehash: 2a494b924107baeabbcf412af7e1bbdb1db0f753
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 6755825aa123b3d7d1eed23291790ff3dc477ac5
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752022"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382479"
 ---
 # <a name="whats-new-in-azure-application-gateway"></a>Новые возможности в службе "Шлюз приложений Azure"
 
@@ -27,6 +27,7 @@ ms.locfileid: "66752022"
 
 |Функция  |ОПИСАНИЕ  |Дата добавления  |
 |---------|---------|---------|
+|Дополнительные метрики |Мы добавили следующие метрики, которые помогут вам отслеживать SKU Шлюза приложений v2: [связанные со временем метрики](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics#timing-metrics), состояние ответа внутренней службы, байт получено, байт отправлено, TLS-протокол клиента и текущие единицы вычислений. См. раздел [Metrics supported by Application Gateway V2 SKU](https://docs.microsoft.com/azure/application-gateway/application-gateway-metrics#metrics-supported-by-application-gateway-v2-sku) (Метрики, поддерживаемые SKU Шлюза приложений V2). |Август 2019 г. |
 |Настраиваемые правила WAF |WAF_v2 Шлюза приложений теперь поддерживает создание настраиваемых правил. См. сведения о [настраиваемых правилах Шлюза приложений](custom-waf-rules-overview.md). |Июнь 2019 г. |
 |Автомасштабирование, избыточность между зонами, поддержка статического виртуального IP-адреса (общедоступная версия) |Номер SKU общедоступной версии v2, который поддерживает автоматическое масштабирование, избыточность между зонами, обеспечивает повышенную производительность и поддерживает статические виртуальные IP-адреса, Key Vault, повторное создание заголовков. См. [документацию по автомасштабированию Шлюза приложений](application-gateway-autoscaling-zone-redundant.md). |Апрель 2019 г. |
 |Интеграция с Key Vault |Шлюз приложений теперь поддерживает интеграцию с Key Vault (в общедоступной предварительной версии) для сертификатов сервера, подключенных к прослушивателям с включенной поддержкой HTTPS. См. статью о [завершение SSL-запросов с помощью сертификатов из Key Vault](key-vault-certs.md). |Апрель 2019 г. |

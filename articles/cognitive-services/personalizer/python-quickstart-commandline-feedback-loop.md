@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: quickstart
-ms.date: 08/09/2019
+ms.date: 09/06/2019
 ms.author: diberry
-ms.openlocfilehash: ca1478801ad704888266175a23b6f436d067dd10
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 404ee6fd51493735b8f96e98276f71d1d2f91158
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950894"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70882874"
 ---
 # <a name="quickstart-personalize-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Персонализатора для Python
 
@@ -46,6 +46,9 @@ ms.locfileid: "68950894"
 
 * `PERSONALIZER_KEY` — для ключа ресурса.
 * `PERSONALIZER_ENDPOINT` — для конечной точки ресурса.
+
+На портале Azure ключ и значения конечных точек можно найти на странице **Быстрый запуск**.
+
 
 ### <a name="install-the-python-library-for-personalizer"></a>Установка библиотеки Python для персонализации
 
@@ -108,6 +111,8 @@ pip install azure-cognitiveservices-personalizer
 ## <a name="get-content-choices-represented-as-actions"></a>Получение вариантов содержимого, представленных в виде действий
 
 Действия представляют выборы содержимого, которые Персонализатор должен ранжировать. Добавьте следующие методы в класс Program, чтобы получить из командной строки пользовательские входные данные о времени суток и текущем предпочтении в пище.
+
+[!code-python[Present time out day preference to the user](~/samples-personalizer/quickstarts/python/sample.py?name=getActions)]
 
 [!code-python[Present time out day preference to the user](~/samples-personalizer/quickstarts/python/sample.py?name=createUserFeatureTimeOfDay)]
 

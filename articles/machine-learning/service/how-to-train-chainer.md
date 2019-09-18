@@ -10,12 +10,12 @@ ms.author: maxluk
 author: maxluk
 ms.reviewer: sdgilley
 ms.date: 08/02/2019
-ms.openlocfilehash: 91e638793d77a6d38f9813345829720d98545293
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 79c0cadc1b266a6d160cd36fc21dcaf36637a2b1
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002722"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076421"
 ---
 # <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning"></a>Обучение и регистрация моделей цепочек в масштабе с помощью Машинное обучение Azure
 
@@ -84,7 +84,7 @@ os.makedirs(project_folder, exist_ok=True)
 
 Чтобы использовать возможности отслеживания и метрик машинного обучения Azure, добавьте небольшой объем кода машинного обучения Azure в сценарий обучения.  В обучающем скрипте **chainer_mnist. копировать** показано, как зарегистрировать некоторые метрики в машинном обучении Azure с помощью `Run` объекта в скрипте.
 
-Предоставленный Скрипт обучения использует примеры данных из `datasets.mnist.get_mnist` функции Chain.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md#upload-dataset-and-scripts) , чтобы сделать данные доступными во время обучения.
+Предоставленный Скрипт обучения использует примеры данных из `datasets.mnist.get_mnist` функции Chain.  Для собственных данных может потребоваться выполнить такие действия, как [Передача набора данных и скриптов](how-to-train-keras.md) , чтобы сделать данные доступными во время обучения.
 
 Скопируйте обучающий сценарий **chainer_mnist.** Copy в каталог проекта.
 

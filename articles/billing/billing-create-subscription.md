@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: banders
 ms.openlocfilehash: f907ebcfc1efc2e6eb9b458f83ab11d868871946
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "60615809"
 ---
 # <a name="create-an-additional-subscription-in-the-azure-portal"></a>Создание дополнительной подписки на портале Azure
@@ -41,7 +41,7 @@ ms.locfileid: "60615809"
 
 Дополнительные подписки можно также создать программными средствами. См. дополнительные сведения о [программными средствами](../azure-resource-manager/programmatically-create-subscription.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Добавление или изменение администраторов подписки Azure](billing-add-change-azure-subscription-administrator.md)
 - [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md?toc=/azure/billing/TOC.json)
@@ -50,4 +50,4 @@ ms.locfileid: "60615809"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

@@ -1,5 +1,5 @@
 ---
-title: Руководство по использованию Apache Storm для чтения и записи данных с помощью Apache Kafka — Azure HDInsight
+title: Руководство по Использование Apache Storm для чтения и записи данных с помощью Apache Kafka в Azure HDInsight
 description: Узнайте, как создать конвейер потоковой передачи с помощью Apache Storm и Apache Kafka в HDInsight. В этом руководстве используются компоненты KafkaBolt и KafkaSpout, чтобы выполнять потоковую передачу данных из Kafka.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 181d052501b9c418fad10a2069dde928a7ff9f38
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 6b370c88e8b230c87bcbadf11d52337bd73b72e2
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840240"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917056"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
@@ -380,7 +380,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 На следующей схеме показано, как происходит обмен данными между Storm и Kafka:
 
-![Схема кластеров Storm и Kafka в виртуальной сети Azure](./media/hdinsight-apache-storm-with-kafka/storm-kafka-vnet.png)
+![Схема кластеров Storm и Kafka в виртуальной сети Azure](./media/hdinsight-apache-storm-with-kafka/apache-storm-kafka-vnet.png)
 
 > [!NOTE]  
 > Другие службы в кластере, например SSH и [Apache Ambari](https://ambari.apache.org/), могут быть доступны через Интернет. Дополнительные сведения об общих портах, доступных в HDInsight, см. в статье [Порты и универсальные коды ресурсов (URI), используемые кластерами HDInsight](hdinsight-hadoop-port-settings-for-services.md).
@@ -389,7 +389,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-storm-java-kafka%2Fmaster%2Fcreate-kafka-storm-clusters-in-vnet.json" target="_blank"><img src="./media/hdinsight-apache-storm-with-kafka/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-storm-java-kafka%2Fmaster%2Fcreate-kafka-storm-clusters-in-vnet.json" target="_blank"><img src="./media/hdinsight-apache-storm-with-kafka/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
    
     Шаблон Azure Resource Manager доступен по адресу **https://github.com/Azure-Samples/hdinsight-storm-java-kafka/blob/master/create-kafka-storm-clusters-in-vnet.json** . Он создает перечисленные ниже ресурсы.
     
@@ -409,7 +409,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
       | Параметр | Значение |
       | --- | --- |
       | Subscription | Ваша подписка Azure. |
-      | Resource group | Группа ресурсов, в которой содержатся ресурсы. |
+      | группа ресурсов. | Группа ресурсов, в которой содержатся ресурсы. |
       | Location | Регион Azure, в котором создаются ресурсы. |
       | Kafka Cluster Name (Имя кластера Kafka) | Имя кластера Kafka. |
       | Имя кластера Storm | Имя кластера Storm. |
@@ -471,9 +471,9 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     Возвращаемое значение аналогично приведенному ниже тексту.
 
-        ```output
-        wn0-kafka.53qqkiavjsoeloiq3y1naf4hzc.ex.internal.cloudapp.net:9092,wn1-kafka.53qqkiavjsoeloiq3y1naf4hzc.ex.internal.cloudapp.net:9092
-        ```
+    ```output
+    wn0-kafka.53qqkiavjsoeloiq3y1naf4hzc.ex.internal.cloudapp.net:9092,wn1-kafka.53qqkiavjsoeloiq3y1naf4hzc.ex.internal.cloudapp.net:9092
+     ```
 
     > [!IMPORTANT]  
     > Хотя в кластер может содержать более двух узлов брокера, вам необязательно указывать полный список всех узлов на клиентах. Достаточно указать один или два.

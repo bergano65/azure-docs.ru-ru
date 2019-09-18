@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: hrasheed
-ms.openlocfilehash: 3ab2bf0334b58f3a5ac8ad4abacfcc45e0366240
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: da4d1ed7dec8b3b0bc61dd2959a868d03875039c
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70917743"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077011"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -34,7 +34,7 @@ ms.locfileid: "70917743"
 
 3. В списке представлений выберите __Представление Hive__.
 
-    ![Выбрано представление Hive](./media/apache-hadoop-use-hive-ambari-view/select-apache-hive-view.png)
+    ![Выберите Apache Hive представление Apache Ambari](./media/apache-hadoop-use-hive-ambari-view/select-apache-hive-view.png)
 
     Страница представления Hive выглядит следующим образом:
 
@@ -98,25 +98,25 @@ ms.locfileid: "70917743"
 Чтобы отобразить пользовательский интерфейс Tez для запроса, выберите вкладку **Пользовательский интерфейс Tez** под листом.
 
 > [!IMPORTANT]  
-> Tez используется не для всех запросов. Многие запросы можно разрешить и без применения Tez. 
+> Tez используется не для всех запросов. Многие запросы можно разрешить и без применения Tez.
 
 ## <a name="view-job-history"></a>Просмотр журнала заданий
 
 На вкладке __Задания__ отображается журнал запросов Hive.
 
-![Изображение журнала заданий](./media/apache-hadoop-use-hive-ambari-view/apache-hive-job-history.png)
+![Журнал вкладок Apache Hive просмотра заданий](./media/apache-hadoop-use-hive-ambari-view/apache-hive-job-history.png)
 
 ## <a name="database-tables"></a>Таблицы базы данных
 
 Вкладку __Таблицы__ можно использовать для работы с таблицами в базе данных Hive.
 
-![Изображение вкладки "Таблицы"](./media/apache-hadoop-use-hive-ambari-view/hdinsight-tables-tab.png)
+![Изображение вкладки «Apache Hive таблицы»](./media/apache-hadoop-use-hive-ambari-view/hdinsight-tables-tab.png)
 
 ## <a name="saved-queries"></a>Сохраненные запросы
 
 На вкладке **Запрос** можно при желании сохранять запросы. После сохранения запроса можно повторно использовать его из вкладки __Saved Queries__ (Сохраненные запросы).
 
-![Изображение вкладки "Сохраненные запросы"](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
+![Вкладка «Просмотр сохраненных запросов Apache Hive»](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
 
 > [!TIP]  
 > Запросы сохраняются в системе хранения данных кластера по умолчанию. Сохраненные запросы можно найти в следующем расположении: `/user/<username>/hive/scripts`. Они хранятся в виде обычных текстовых файлов `.hql`.
@@ -129,7 +129,7 @@ ms.locfileid: "70917743"
 
 Объявлять и сохранять наборы определяемых пользователем функций можно с помощью вкладки **UDF** вверху представления Hive. Эти функции могут использоваться в **редакторе запросов**.
 
-![Изображение вкладки "Определяемая пользователем функция"](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
+![Apache Hive просмотре вкладки пользовательских функций](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
 
 После добавления в представление Hive UDF в нижней части **редактора запросов** появляется кнопка **Insert udfs** (Вставить определяемые пользователем функции). Нажав эту кнопку, вы увидите раскрывающийся список функций, определенных в представлении Hive. Выбирая определяемую пользователем функцию, вы добавляете в запрос соответствующие инструкции HiveQL.
 

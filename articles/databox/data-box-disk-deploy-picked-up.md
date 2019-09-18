@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 09/11/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: b982e0bcd87a60e29b11c7123fbe5d675ab017b3
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 03ca6163b4f788d50f7f27a2fcaf2c9b6c02d84c
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390407"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910119"
 ---
 ::: zone target="chromeless"
 
@@ -52,7 +52,7 @@ ms.locfileid: "70390407"
 
 Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Европейского союза (ЕС), Австралии и стран Азии отличаются.
 
-### <a name="pick-up-in-us-canada"></a>Возврат в США и Канаде
+### <a name="in-us-or-canadatabin-us-or-canada"></a>[США и Канада](#tab/in-us-or-canada)
 
 Если вы возвращаете устройство в США или Канаде, выполните следующие действия:
 
@@ -68,7 +68,7 @@ ms.locfileid: "70390407"
     - Если номер для отслеживания не указан, UPS потребует дополнительную плату во время приема посылки.
     - Вместо планирования отправки с курьером вы также можете оставить Диск Data Box в ближайшем отделении этой курьерской службы.
 
-### <a name="pick-up-in-europe"></a>Возврат в Европе
+### <a name="in-europetabin-europe"></a>[Европа](#tab/in-europe)
 
 Если вы возвращаете устройство в Европе, выполните следующие действия:
 
@@ -81,7 +81,7 @@ ms.locfileid: "70390407"
 4. Перейдите на веб-сайт DHL Экспресс страны/региона и выберите **Book a Courier Collection > eReturn Shipment** (Забронировать приезд курьера > Отправка eReturn).    
 3. Укажите номер накладной и нажмите **Расписание отправки**, чтобы оформить отправку.
 
-### <a name="pick-up-in-australia"></a>Возврат в Австралии
+### <a name="in-australiatabin-australia"></a>[Австралия](#tab/in-australia)
 
 В центрах обработки данных Azure в Австралии предусмотрена процедура предварительного уведомления о посылке. Об отправке посылки необходимо заранее предупреждать. При возврате в Австралии выполните следующие действия:
 
@@ -89,9 +89,9 @@ ms.locfileid: "70390407"
 3. Прикрепите этикетку на коробку. 
 4. Закажите через Интернет возврат по ссылке https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference. 
 
-### <a name="pick-up-in-asia"></a>Возврат в Азии
+### <a name="in-japan-koreatabin-japan-korea"></a>[Япония и Корея](#tab/in-japan-korea)
 
-Инструкции по возврату для Японии, Кореи и Сингапура будут отличаться.
+Ниже приведены инструкции по получению устройства в Японии и Кореи.
 
 #### <a name="pick-up-in-japan"></a>Возврат в Японии
 
@@ -134,7 +134,8 @@ ms.locfileid: "70390407"
     3. Если курьер не явился за посылкой, обратитесь на горячую линию *Quantium Solutions International*, чтобы организовать доставку иным способом. 
     4. Вы получите устное подтверждение, если запрос выполнен по телефону.
 
-#### <a name="pick-up-in-singapore"></a>Возврат в Сингапуре
+
+### <a name="in-singaporetabin-singapore"></a>[Сингапур](#tab/in-singapore)
 
 1. Распечатайте этикетку отгрузки и прикрепите ее к коробке. Если этикетка повреждена или утеряна, сделайте следующее:
     - Выберите пункт **Обзор > Скачать этикетку отгрузки** и получите этикетку для возврата.

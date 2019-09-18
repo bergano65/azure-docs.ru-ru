@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: bwren
-ms.openlocfilehash: 4b3116230a085bfbb9a6139fbada4179d802bf5e
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 75beb7b66863efd2fb3679f034a3663dca4a6d2f
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296066"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076698"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
 
@@ -26,11 +26,11 @@ ms.locfileid: "67296066"
 
 ## <a name="create-a-function"></a>Создание функции
 
-Создание функции с помощью Log Analytics на портале Azure, щелкнув **Сохранить** и затем указав сведения в следующей таблице.
+Создайте функцию с Log Analytics в портал Azure, нажав кнопку **сохранить** , а затем указав сведения в следующей таблице.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |:---|:---|
-| Name           | Отображаемое имя для запроса в **обозревателе запросов**. |
+| Название           | Отображаемое имя для запроса в **обозревателе запросов**. |
 | Сохранить как        | Функция |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
@@ -38,8 +38,6 @@ ms.locfileid: "67296066"
 > [!NOTE]
 > Функция в Azure Monitor не может содержать другую функцию.
 
-> [!NOTE]
-> Функции можно сохранять в запросах Azure Monitor, но это пока недоступно для запросов Application Insights.
 
 
 
@@ -62,7 +60,7 @@ Update
 security_updates_last_day | where Title contains "SQL"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
 - [Работа со строками](string-operations.md)

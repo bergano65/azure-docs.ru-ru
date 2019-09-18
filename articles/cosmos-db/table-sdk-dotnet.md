@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: aa9752cdc2148036b3edff8a6002dc81ebff6312
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 5e98c40384207c77b4ea7e9557a7d1ebebd95e47
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036298"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058590"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
 
@@ -38,6 +38,10 @@ ms.locfileid: "69036298"
 >
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name212212"></a><a name="2.1.2"/>2.1.2
+
+* Исправления ошибок
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
 
@@ -85,6 +89,7 @@ ms.locfileid: "69036298"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.1.2](#2.1.2) |16 сентября 2019 г.| |
 | [2.1.0](#2.1.0) |22 января 2019 г.|01 апреля, 2020 |
 | [2.0.0](#2.0.0) |26 сентября 2018 г.|01 марта 2020 г. |
 | [1.1.3](#1.1.3) |17 июля 2018 г.|01 декабря 2019 г. |

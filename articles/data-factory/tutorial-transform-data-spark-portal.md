@@ -11,12 +11,12 @@ ms.date: 01/10/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 34c8c49166ea13d67c1f3d51805671c63dbb352b
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: d13e0b95d57e3063292319961d5e1138f994076e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312287"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812280"
 ---
 # <a name="transform-data-in-the-cloud-by-using-a-spark-activity-in-azure-data-factory"></a>Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure
 В этом руководстве вы создадите конвейер фабрики данных Azure с помощью портала Azure. Конвейер преобразует данные с помощью действия Spark и связанной службы Azure HDInsight по запросу. 
@@ -91,7 +91,7 @@ ms.locfileid: "67312287"
       
    ![Панель "Новая фабрика данных"](./media/tutorial-transform-data-spark-portal/new-azure-data-factory.png)
  
-   Имя фабрики данных Azure должно быть *глобально уникальным*. Если появится следующая ошибка, измените имя фабрики данных. (Например, используйте **&lt;yourname&gt;ADFTutorialDataFactory**.) Правила именования для артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+   Имя фабрики данных Azure должно быть *глобально уникальным*. Если появится следующая ошибка, измените имя фабрики данных. (Например, используйте **&lt;yourname&gt;ADFTutorialDataFactory**.) Правила именования для артефактов службы "Фабрика данных" приведены в статье [Фабрика данных Azure — правила именования](naming-rules.md).
   
    ![Ошибка "Имя недоступно"](./media/tutorial-transform-data-spark-portal/name-not-available-error.png)
 1. В поле **Подписка** выберите подписку Azure, в рамках которой вы хотите создать фабрику данных. 
@@ -153,7 +153,7 @@ ms.locfileid: "67312287"
    
    д. В поле **Идентификатор субъекта-службы** введите идентификатор субъекта-службы, имеющего права на создание кластера HDInsight. 
    
-      Этому субъекту-службе должна быть назначена роль участника подписки или группы ресурсов, в которой создается кластер. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md).
+      Этому субъекту-службе должна быть назначена роль участника подписки или группы ресурсов, в которой создается кластер. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). **Идентификатор субъекта-службы** —это эквивалент *идентификатора приложения*, а **ключ субъекта-службы** — значения *секрета клиента*.
    
    Е. Введите ключ в поле **Ключ субъекта-службы**. 
    

@@ -1,17 +1,17 @@
 ---
-title: Создание кэша HPC для Azure
-description: Создание экземпляра кэша Azure HPC
+title: Создание Azure HPC Cache
+description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: v-erkell
-ms.openlocfilehash: 41361a3513c052d960726498d55745bf09afdfbb
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: c3d14eaefaa1f317cb061273866ffee83747f12b
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775199"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71036844"
 ---
 # <a name="configure-aggregated-namespace"></a>Настройка агрегированного пространства имен
 <!-- change link in GUI -->
@@ -37,7 +37,7 @@ ms.locfileid: "70775199"
     /goldline
     /goldline/templates
 
-Анализируемые данные скопированы в контейнер хранилища BLOB-объектов Azure с именем "sourcecollection" с помощью [служебной программы клфслоад](hpc-cache-ingest.md#pre-load-data-in-blob-storage-with-clfsload)).
+Анализируемые данные скопированы в контейнер хранилища BLOB-объектов Azure с именем "sourcecollection" с помощью [служебной программы клфслоад](hpc-cache-ingest.md#pre-load-data-in-blob-storage-with-clfsload).
 
 Чтобы обеспечить простой доступ через кэш, рассмотрите возможность создания целевых объектов хранилища с использованием этих виртуальных путей к пространству имен:
 

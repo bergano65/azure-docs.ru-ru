@@ -1,18 +1,18 @@
 ---
 title: Краткое руководство. Настройка Apache Kafka в HDInsight с помощью Azure Resource Manager
-description: В этом кратком руководстве вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью портала Azure. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
+description: Из этого краткого руководства вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью шаблона Resource Manager. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: 75b774a59d3a2a94f1f1132a79c26dcca7b4b6f7
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 399d1146dc71f4670ee0c9bfa497f34911ade638
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780782"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811453"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью шаблонов Resource Manager
 
@@ -41,7 +41,7 @@ API Kafka доступен только ресурсам, размещенным
     | Свойство | Значение |
     | --- | --- |
     | Subscription | Вашу подписку Azure. |
-    | Resource group | Группа ресурсов, в которой будет создан кластер. |
+    | группа ресурсов. | Группа ресурсов, в которой будет создан кластер. |
     | Location | Регион Azure, в котором будет создан кластер. |
     | Имя кластера, | Имя кластера Kafka. |
     | Имя пользователя для входа в кластер | Имя учетной записи для входа в службы на основе HTTPS, размещенные в кластере. |

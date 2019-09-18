@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Начало работы с Apache Hadoop и Apache Hive с помощью портала Azure — Azure HDInsight
+title: Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с помощью портала Azure
 description: В этом кратком руководстве для создания кластера Hadoop в HDInsight используется портал Azure
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: quickstart
 ms.date: 07/02/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5becea8c9cb525d86dac09ead40ab1604abdbbed
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: be7ff67f07ed8eaeb3f04a15c6185191bf107cf2
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70207382"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918505"
 ---
 # <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-azure-portal"></a>Краткое руководство. Создание кластера Apache Hadoop в Azure HDInsight с помощью портала Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "70207382"
 
 1. На портале Azure последовательно выберите **Создать ресурс** > **Аналитика** > **HDInsight**.
 
-    ![Databricks на портале Azure](./media/apache-hadoop-linux-create-cluster-get-started-portal/create-hdinsight.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](./media/apache-hadoop-linux-create-cluster-get-started-portal/create-hdinsight-cluster.png "Databricks on Azure portal")
 
 1. В разделе **HDInsight** > **Быстрое создание** > **Основные сведения** введите или выберите следующие значения:
 
@@ -46,10 +46,10 @@ ms.locfileid: "70207382"
     |Имя для входа и пароль для кластера    | Имя для входа по умолчанию — **admin**. Длина пароля должна составлять не менее 10 символов. Пароль должен содержать по меньшей мере одну цифру, одну прописную и одну строчную буквы, а также один специальный символ (кроме ' " ` \)). Ни в коем случае **не вводите** распространенные пароли, например Pass@word1.|
     |Имя пользователя для Secure Shell (SSH) | Имя пользователя по умолчанию — **sshuser**.  Можно указать другое имя пользователя SSH. |
     |Использование пароля для входа в кластер для SSH| Установите этот флажок, чтобы использовать одинаковый пароль для пользователя SSH и имени для входа для кластера.|
-    |Resource group     | Создайте новую группу ресурсов или выберите имеющуюся группу ресурсов.  Группа ресурсов — это контейнер компонентов Azure.  В данном случае группа ресурсов содержит кластер HDInsight и зависимую учетную запись хранения Azure. |
+    |группа ресурсов.     | Создайте новую группу ресурсов или выберите имеющуюся группу ресурсов.  Группа ресурсов — это контейнер компонентов Azure.  В данном случае группа ресурсов содержит кластер HDInsight и зависимую учетную запись хранения Azure. |
     |Location    | Выберите расположение Azure для создания кластера.  Выберите ближайшее к себе расположение для повышения производительности. |
 
-    ![Ввод базовых значений для начала работы с кластером HDInsight на платформе Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/quick-create-basics.png "Ввод базовых значений для создания кластера HDInsight")
+    ![Ввод базовых значений для начала работы с кластером HDInsight на платформе Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/quick-create-basics1.png "Ввод базовых значений для создания кластера HDInsight")
 
 1. Выберите **Тип кластера**, чтобы открыть страницу **Конфигурация кластера**, а затем задайте следующие значения:
 
@@ -58,7 +58,7 @@ ms.locfileid: "70207382"
     |Тип кластера     | Выберите **Hadoop**. |
     |Version (версия)     | Выберите **Hadoop 2.7.3 (HDI 3.6)** .|
 
-    ![Ввод базовых значений для начала работы с кластером HDInsight на платформе Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/cluster-configuration-hadoop.png "Ввод базовых значений для создания кластера HDInsight")
+    ![Конфигурация кластера HDInsight на платформе Linux для начала работы](./media/apache-hadoop-linux-create-cluster-get-started-portal/cluster-configuration-hadoop.png "Конфигурация кластера HDInsight на платформе Linux для начала работы")
 
     Щелкните **Выбрать**, а затем выберите **Далее**, чтобы перейти к параметрам хранения.
 
@@ -82,7 +82,7 @@ ms.locfileid: "70207382"
 
 1. После создания кластера на портале Azure отобразится страница с общими сведениями об этом кластере.
 
-    ![Параметры кластера при начале работы с HDInsight под управлением Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/cluster-overview.png "Свойства кластера HDInsight")    
+    ![Параметры кластера при начале работы с HDInsight под управлением Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/cluster-settings-overview.png "Свойства кластера HDInsight")    
 
     У каждого кластера есть зависимость [учетной записи хранения Azure](../hdinsight-hadoop-use-blob-storage.md) или [учетной записи Azure Data Lake](../hdinsight-hadoop-use-data-lake-store.md). Она называется учетной записью хранения по умолчанию. Кластер HDInsight должен находиться в том же регионе Azure, что и его учетная запись хранения, используемая по умолчанию. Удаление кластеров не приведет к удалению учетной записи хранения.
 
@@ -95,13 +95,13 @@ ms.locfileid: "70207382"
 
 1. Чтобы открыть Ambari, на предыдущем экране выберите **Панель мониторинга кластера**.  Вы можете также перейти по адресу `https://ClusterName.azurehdinsight.net`, где `ClusterName` — это кластер, созданный в предыдущем разделе.
 
-    ![Панель мониторинга кластера для начала работы с кластером HDInsight на платформе Linux](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-open-cluster-dashboard.png "Панель мониторинга кластера для начала работы с кластером HDInsight на платформе Linux")
+    ![Панель мониторинга кластера для начала работы с кластером HDInsight на платформе Linux](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdinsight-linux-get-started-open-cluster-dashboard.png "Панель мониторинга кластера для начала работы с кластером HDInsight на платформе Linux")
 
 2. Введите имя пользователя Hadoop и пароль, указанные при создании кластера. Имя пользователя по умолчанию — **admin**.
 
 3. Откройте **представление Hive**, как показано на снимке экрана ниже:
 
-    ![Выбор представлений Ambari](./media/apache-hadoop-linux-tutorial-get-started/selecthiveview.png "Меню средства просмотра Hive в HDInsight")
+    ![Выбор представлений Ambari](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdi-select-hive-view.png "Меню средства просмотра Hive в HDInsight")
 
 4. На вкладке **Запрос** вставьте следующие инструкции HiveQL:
 
@@ -109,13 +109,13 @@ ms.locfileid: "70207382"
     SHOW TABLES;
     ```
 
-    ![Представления Hive в HDInsight](./media/apache-hadoop-linux-tutorial-get-started/hiveview-1.png "Редактор запросов представления Hive в HDInsight")
+    ![Представления Hive в HDInsight](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdi-apache-hive-view1.png "Редактор запросов представления Hive в HDInsight")
 
 5. Нажмите кнопку **Выполнить**. Под вкладкой **Запрос** появится вкладка **Результаты** с информацией о задании. 
 
     Когда запрос будет выполнен, на вкладке **Запрос** появятся результаты этой операции. Вы увидите одну таблицу с именем **hivesampletable**. Этот пример таблицы Hive входит в состав всех кластеров HDInsight.
 
-    ![Представления Hive в HDInsight](./media/apache-hadoop-linux-tutorial-get-started/hiveview.png "Редактор запросов представления Hive в HDInsight")
+    ![Результаты представления Hive в HDInsight](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdinsight-hive-views.png "Результаты представления Hive в HDInsight")
 
 6. Повторите шаги 4 и 5 и выполните следующий запрос:
 
@@ -125,7 +125,7 @@ ms.locfileid: "70207382"
 
 7. Вы также можете сохранить результаты запроса. Нажмите кнопку меню справа и укажите, как это следует сделать: скачать результаты в качестве CSF-файла или сохранить их в учетной записи хранения, связанной с кластером.
 
-    ![Сохранение результата запроса Hive](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-linux-hive-view-save-results.png "Сохранение результата запроса Hive")
+    ![Сохранение результата запроса Hive](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdinsight-linux-hive-view-save-results.png "Сохранение результата запроса Hive")
 
 Когда задание Hive будет завершено, вы сможете [экспортировать результаты в базу данных SQL Azure или базу данных SQL Server](apache-hadoop-use-sqoop-mac-linux.md) либо [визуализировать их с помощью Excel](apache-hadoop-connect-excel-power-query.md). Дополнительные сведения об использовании Hive в HDInsight см. в руководстве по [Apache Hive и HiveQL в Azure HDInsight](hdinsight-use-hive.md).
 
@@ -140,7 +140,7 @@ ms.locfileid: "70207382"
 
 1. Вернитесь на вкладку браузера, на которой открыт портал Azure. Откройте страницу обзора кластера. Если требуется удалить кластер и сохранить учетную запись хранения по умолчанию, щелкните **Удалить**.
 
-    ![Удаление кластера HDInsight](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-delete-cluster.png "Удаление кластера HDInsight")
+    ![Удаление кластера HDInsight](./media/apache-hadoop-linux-create-cluster-get-started-portal/hdinsight-delete-cluster.png "Удаление кластера HDInsight")
 
 2. Если вам нужно удалить кластер и учетную запись хранения по умолчанию, выберите имя группы ресурсов (выделено на предыдущем снимке экрана), чтобы открыть страницу группы ресурсов.
 

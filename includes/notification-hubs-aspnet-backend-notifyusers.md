@@ -5,15 +5,15 @@ services: notification-hubs
 author: spelluru
 ms.service: notification-hubs
 ms.topic: include
-ms.date: 03/22/2019
+ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 590ba4b7a61fa437767d99ac6b9ae3e0fa94edc3
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 60d5d8efb10cce54743038599238cc6f61922369
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227802"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934104"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
 
@@ -185,6 +185,9 @@ ms.locfileid: "68227802"
         }
     }
     ```
+    > [!IMPORTANT]
+    > Прежде чем продолжить, введите **имя** и **DefaultFullSharedAccessSignature** вашего концентратора. 
+    
 7. Теперь создайте новый контроллер с именем **RegisterController**. В обозревателе решений щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**.
 
 8. Щелкните элемент **Контроллер Web API 2 — пустой** и нажмите кнопку **Добавить**.

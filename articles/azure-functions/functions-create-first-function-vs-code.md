@@ -7,17 +7,16 @@ author: ggailey777
 manager: jeconnoc
 keywords: функции azure, функции, обработка событий, вычисления, независимая архитектура
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 06/25/2019
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: fcf9f1d6420dbbde359d386bc3b67a0866aca30d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 52f682f7c7f06056be122b33d27592a55a01be94
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444624"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70744070"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
@@ -27,7 +26,7 @@ ms.locfileid: "67444624"
 
 ![Код функций Azure в проекте Visual Studio](./media/functions-create-first-function-vs-code/functions-vscode-intro.png)
 
-Сейчас расширение поддерживает функции C#, JavaScript и Java. Поддержка Python сейчас предоставляется в предварительной версии. Шаги, описанные этой и следующей статьях, предназначены лишь для функций JavaScript и C#. Сведения о создании и публикации функций Python с помощью Visual Studio Code см. в статье [Deploy Python to Azure Functions](https://code.visualstudio.com/docs/python/tutorial-azure-functions) (Развертывание Python в Функции Azure). Сведения о создании и публикации функций PowerShell с помощью Visual Studio Code см. в статье [Создание первой функции PowerShell в Azure (предварительная версия)](functions-create-first-function-powershell.md). 
+Сейчас это расширение поддерживает функции C#, JavaScript, Java и Python. Шаги, описанные этой и следующей статьях, предназначены лишь для функций JavaScript и C#. Сведения о создании и публикации функций Python с помощью Visual Studio Code см. в статье [Deploy Python to Azure Functions](https://code.visualstudio.com/docs/python/tutorial-azure-functions) (Развертывание Python в Функции Azure). Сведения о создании и публикации функций PowerShell с помощью Visual Studio Code см. в статье [Создание первой функции PowerShell в Azure (предварительная версия)](functions-create-first-function-powershell.md). 
 
 Расширение сейчас доступно в режиме предварительной версии. Дополнительные сведения см. в разделе [Расширение "Функции Azure" для Visual Studio Code].
 
@@ -64,11 +63,11 @@ ms.locfileid: "67444624"
 
 ## <a name="run-the-function-in-azure"></a>Запуск функции в Azure
 
-1. Скопируйте URL-адрес HTTP-триггера на панели **Output** (Выходные данные). Как и в предыдущем случае, добавьте строку запроса `?name=<yourname>` в конец этого URL-адреса и выполните запрос.
+1. Скопируйте URL-адрес HTTP-триггера на панели **Output** (Выходные данные). Этот URL-адрес содержит ключ функции, который передается в параметр запроса `code`. Как и в предыдущем случае, добавьте строку запроса `?name=<yourname>` в конец этого URL-адреса и выполните запрос.
 
     URL-адрес для вызова функции, активируемой HTTP-запросом, должен быть указан в таком формате:
 
-        http://<functionappname>.azurewebsites.net/api/<functionname>?name=<yourname> 
+        http://<functionappname>.azurewebsites.net/api/<functionname>?code=<function_key>&name=<yourname> 
 
 1. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. Ниже показан ответ в браузере на удаленный запрос GET, возвращаемый функцией: 
 

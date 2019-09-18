@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: 6df78a46e6bc8055f8cce89e199d01ad631e178e
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 896e1fb3e93fc0a542f0dca75cc1d87b3a2c237c
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306196"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057895"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -309,6 +309,8 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 |details.data     | Определенные данные из запроса, которые соответствуют правилу.         |
 |details.file     | Файл конфигурации, содержащий правило.        |
 |details.line     | Номер строки в файле конфигурации, активировавшей событие.       |
+|имя узла   | Имя узла или IP-адрес шлюза приложений.    |
+|transactionId  | Уникальный идентификатор для данной транзакции, который помогает сгруппировать несколько нарушений правил, произошедших в одном запросе.   |
 
 ```json
 {
@@ -333,6 +335,8 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
       "file": "rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf",
       "line": "865"
     }
+    "hostname": "40.90.218.100", 
+    "transactionId": "AYAcUqAcAcAcAcAcASAcAcAc"
   }
 } 
 

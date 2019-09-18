@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: b4d50c39bf670cb8c14d9dbe4feb2fc18c89bf0a
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 201e86908b61efa72eed76346f70cfc55e08d03c
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70917236"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076801"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
@@ -40,9 +40,9 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 Хотя виртуальную сеть Azure, а также кластеры Kafka и Spark можно создать вручную, проще использовать шаблон Azure Resource Manager. Выполните следующие действия, чтобы развернуть виртуальную сеть Azure, а также кластеры Kafka и Spark в подписке Azure.
 
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
-    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-kafka-spark-cluster-in-vnet-v4.1.json" target="_blank"><img src="./media/hdinsight-apache-spark-with-kafka/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
-    
+
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-kafka-spark-cluster-in-vnet-v4.1.json" target="_blank"><img src="./media/hdinsight-apache-spark-with-kafka/hdi-deploy-to-azure1.png" alt="Deploy to Azure button for new cluster"></a>
+
     Шаблон Azure Resource Manager доступен по адресу **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-spark-cluster-in-vnet-v4.1.json** .
 
     > [!WARNING]  
@@ -51,10 +51,10 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     Этот шаблон создает кластер HDInsight 3.6 для Kafka и Spark.
 
 2. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
-   
-    ![Настраиваемое развертывание в HDInsight](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
-   
-    * **Группа ресурсов**. Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.
+
+    ![Параметры настраиваемого развертывания HDInsight](./media/hdinsight-apache-spark-with-kafka/hdinsight-parameters.png)
+
+    * **Группа ресурсов.** Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.
 
     * **Расположение.** Выберите близкое к вам географическое расположение.
 

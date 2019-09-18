@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 5/31/2019
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 11a5955d516d3a4144d9b63eec78d9c5741aaab9
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 90ccd6c827371d9bf72391e2b24c7dcef31f36c9
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "67615267"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844630"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
@@ -46,6 +46,8 @@ ms.locfileid: "67615267"
      По завершении выберите **Next: Scale** (Далее: масштаб).
 
 2. На странице **Масштаб** оставьте значения по умолчанию. В нижней части страницы щелкните **Next: Authentication** (Далее: аутентификация).
+> [!CAUTION]
+> При создании новых субъектов-служб AAD может потребоваться несколько минут на их распространение и запуск, а также поиск субъектом-службой ошибок и сбоев проверки на портале Azure. Если таковые будут обнаружены, см.[эту статью](troubleshooting.md#im-receiving-errors-that-my-service-principal-was-not-found-when-i-try-to-create-a-new-cluster-without-passing-in-an-existing-one) для их устранения.
 3. На странице **Аутентификация** настройте следующие параметры.
    - Создайте новый субъект-службу, оставив в поле **Субъект-служба** значение **Субъект-служба по умолчанию (новый)** . Можно также выбрать *Настроить субъект-службу*, чтобы использовать существующий субъект-службу. При использовании существующего имени субъекта-службы необходимо указать для него идентификатор клиента и секрет.
    - Включите параметр для элементов управления доступом на основе ролей (RBAC) Kubernetes. Это обеспечит более точный контроль доступа к ресурсам Kubernetes, развернутым в кластере AKS.

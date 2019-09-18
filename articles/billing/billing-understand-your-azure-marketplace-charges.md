@@ -13,21 +13,21 @@ ms.date: 07/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 278e873d01eb3dd7d614d771e5b50b8fe624800a
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490355"
 ---
-# <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешних служб Azure
-Внешние службы публикуются сторонними поставщиками в Azure marketplace. Например SendGrid является внешней службы, которые можно приобрести в Azure, но не публикуется корпорацией Майкрософт. Некоторые продукты корпорации Майкрософт слишком продаются через Azure marketplace.
+# <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure
+Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, SendGrid — это внешняя служба, которую можно приобрести в Azure, но которая не опубликована корпорацией Майкрософт. Некоторые продукты Майкрософт также продаются через Azure Marketplace.
 
 ## <a name="how-external-services-are-billed"></a>Как выставляются счета за внешние службы
 
-- Если у вас есть [соглашении клиента Microsoft](#check-access), сторонних служб взимается с остальной частью служб Azure.
-- Если у вас нет клиента соглашение Microsoft, на внешние службы выставляются отдельно из служб Azure.
-- У каждой внешней службы своя модель выставления счетов. Некоторые службы тарифицируются в режиме по мере использования, а другие имеют фиксированное ежемесячных выплатах.
-- Для оплаты внешних служб невозможно использовать бесплатные кредитные средства. Если вы используете подписку Azure, включающую [бесплатные кредиты](https://azure.microsoft.com/pricing/spending-limits/), их нельзя использовать для оплаты из внешних служб. При подготовке новой внешней службы или ресурса отображается предупреждение.
+- Если у вас есть [Клиентское соглашение Майкрософт](#check-access), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure.
+- Если у вас нет Клиентского соглашения Майкрософт, счета за внешние службы оплачиваются отдельно от служб Azure.
+- У каждой внешней службы своя модель выставления счетов. Некоторые службы оплачиваются по мере использования, в то время как для других установлена фиксированная ежемесячная оплата.
+- Для оплаты внешних служб невозможно использовать бесплатные кредитные средства. Если вы используете подписку Azure, которая включает в себя [бесплатные деньги на счете](https://azure.microsoft.com/pricing/spending-limits/), то ими невозможно оплачивать счета за внешние службы. При подготовке новой внешней службы или ресурса отображается предупреждение.
 
     ![Предупреждение о покупке Marketplace](./media/billing-understand-your-azure-marketplace-charges/credit-warning.png)
 
@@ -48,33 +48,33 @@ You can view a list of the external services that are on each subscription withi
 
     ![View external services billing history](./media/billing-understand-your-azure-marketplace-charges/billing-overview-blade.png) -->
 
-## <a name="view-and-download-invoices"></a>Просматривать и скачивать счета
+## <a name="view-and-download-invoices"></a>Просмотр и скачивание счетов
 
-Если у вас есть [соглашении клиента Microsoft](#check-access), плату за сторонних находятся в одном счете как расходах на Azure. Узнайте, как [просматривать и скачивать счета Azure](billing-download-azure-invoice.md) на портале Azure, чтобы увидеть ориентировочную стоимости независимых производителей.
+Если у вас есть [Клиентское соглашение Майкрософт](#check-access), ваши расходы на сторонних поставщиков будут включены в счет, вместе с расходами за Azure. Узнайте, как [просмотреть и скачать свой счет Azure](billing-download-azure-invoice.md) из портала Azure, чтобы узнать о ваших расходах на сторонних поставщиков.
 
-Если у вас нет клиента соглашение Microsoft, у вас есть отдельные счета для независимых производителей расходов. Можно просматривать и скачивать счета в Azure Marketplace на портале Azure, выполнив следующие действия:
+Если у вас нет Клиентского соглашения Майкрософт, вы получите отдельный счет на оплату услуг сторонних поставщиков. Вы можете просмотреть и скачать счета для Azure Marketplace из портала Azure, выполнив следующие действия:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Поиск **Cost Management + выставление счетов**.
-1. В меню слева выберите **счета-фактуры**.
-1. Щелкните **Azure Marketplace и резервирование** вкладки.  ![Изображение Azure marketplace и резервирования](./media/billing-understand-your-azure-marketplace-charges/invoice-tabs.png)
-1. В раскрывающемся списке подписок выберите подписку, которая содержит внешние службы, чтобы просмотреть счета-фактуры для.
+1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
+1. В меню слева выберите **Счета**.
+1. Щёлкните вкладку **Azure Marketplace и резервирования**.  ![Изображение вкладки "Azure Marketplace и резервирования"](./media/billing-understand-your-azure-marketplace-charges/invoice-tabs.png)
+1. В раскрывающемся списке подписки выберите подписку, содержащую внешние службы, для которых требуется просмотреть счета.
 
-## <a name="external-spending-for-ea-customers"></a>Внешние предельную сумму расходов для клиентов EA
+## <a name="external-spending-for-ea-customers"></a>Внешние расходы для клиентов с соглашением Enterprise
 
 Клиенты с соглашением Enterprise могут просматривать данные о расходах на внешние службы и скачивать отчеты на портале EA. Чтобы приступить к работе, см. статью [Azure Marketplace for EA Customers](https://ea.azure.com/helpdocs/azureMarketplace) (Azure Marketplace для клиентов с соглашением Enterprise).
 
-## <a name="manage-payment-for-external-services"></a>Управление оплаты для внешних служб
+## <a name="manage-payment-for-external-services"></a>Управление платежами за внешние службы
 
-При приобретении внешней службы, вы выбираете подписку Azure для ресурса. Метод оплаты подписки Azure, выбранный становится способ оплаты для внешней службы. Чтобы изменить способ оплаты для внешней службы, необходимо выполнить [изменить метод оплаты подписки Azure](billing-how-to-change-credit-card.md) привязаны к этой внешней службы. Можно выяснить, какие подписки принимается равным заказ внешней службы, выполнив следующие действия:
+При покупке внешней службы вы выбираете для ресурса подписку Azure. Метод оплаты выбранной подписки Azure станет методом оплаты для внешней службы. Чтобы изменить метод оплаты для внешней службы, необходимо [изменить метод оплаты подписки Azure](billing-how-to-change-credit-card.md), привязанный к этой внешней службе. Выполнив следующие действия можно определить, к какой подписке привязан порядок внешней службы:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Щелкните **все ресурсы** в левом меню навигации.
-     ![Снимок экрана: пункт меню все ресурсы](./media/billing-understand-your-azure-marketplace-charges/all-resources.png)
-1. Поиск вашей внешней службы.
-1. Найдите имя подписки в **подписки** столбца.
-    ![Снимок экрана: имя подписки для ресурса](./media/billing-understand-your-azure-marketplace-charges/sub-selected.png)
-1. Щелкните имя подписки и [обновить метод оплаты активным](billing-how-to-change-credit-card.md).
+1. Щелкните **Все ресурсы** в меню навигации слева.
+     ![снимок экрана: пункт меню "Все ресурсы"](./media/billing-understand-your-azure-marketplace-charges/all-resources.png)
+1. Найдите необходимую внешнюю службу.
+1. Найдите название подписки в столбце **Подписка**.
+    ![снимок экрана: название подписки на ресурс](./media/billing-understand-your-azure-marketplace-charges/sub-selected.png)
+1. Щелкните название подписки и [обновите активный метод оплаты](billing-how-to-change-credit-card.md).
 
 <!-- Update your payment methods for external service orders from the [Account Center](https://account.windowsazure.com/).
 
@@ -98,22 +98,22 @@ You can view a list of the external services that are on each subscription withi
 Если вы хотите отменить заказ внешней службы, то удалите соответствующий ресурс на [портале Azure](https://portal.azure.com).
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Щелкните **все ресурсы** в левом меню навигации.
-    ![Снимок экрана: пункт меню все ресурсы](./media/billing-understand-your-azure-marketplace-charges/all-resources.png)
-1. Поиск вашей внешней службы.
-1. Установите флажок рядом с ресурс, который требуется удалить.
-1. Выберите **удалить** на панели команд.
-    ![Снимок экрана кнопки "Удалить"](./media/billing-understand-your-azure-marketplace-charges/delete-button.png)
-1. Тип *«Да»* в колонке подтверждения.
-    ![Удалить ресурс](./media/billing-understand-your-azure-marketplace-charges/delete-resource.PNG)
+1. Щелкните **Все ресурсы** в меню навигации слева.
+    ![Снимок экрана: пункт меню "Все ресурсы"](./media/billing-understand-your-azure-marketplace-charges/all-resources.png)
+1. Найдите необходимую внешнюю службу.
+1. Установите флажок рядом с ресурсом, который необходимо удалить.
+1. На панели команд выберите **Delete** (Удалить).
+    ![Снимок экрана: кнопка "Delete" (Удалить)](./media/billing-understand-your-azure-marketplace-charges/delete-button.png)
+1. Введите *"Да"* в колонке подтверждения.
+    ![Удаление ресурса](./media/billing-understand-your-azure-marketplace-charges/delete-resource.PNG)
 1. Нажмите кнопку **Delete**(Удалить).
 
-## <a name="check-access"></a>Проверки доступа
+## <a name="check-access"></a>Проверка доступа
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Начало анализа затрат](../cost-management/quick-acm-cost-analysis.md)

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 8/27/2019
+ms.date: 09/10/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 5b78dc8b815802502cda5baf2bf5e9646922d671
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 194b90ab27d02c1fa3eb05bb3ddd78395d351599
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70241433"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898174"
 ---
 ::: zone target="docs"
 
@@ -77,7 +77,7 @@ ms.locfileid: "70241433"
 
 ::: zone-end
 
-## <a name="ship-in-us-canada-europe"></a>Отправка в США, Канаде, Европе
+## <a name="in-us-canada-europetabin-us-canada-europe"></a>[В США, Канаде, Европе](#tab/in-us-canada-europe)
 
 Если вы возвращаете устройство в США или Канаде, выполните следующие действия:
 
@@ -94,7 +94,7 @@ ms.locfileid: "70241433"
 4. После того как курьер примет и проверит Data Box, состояние заказа на портале обновится до **Принято курьером**. Также отображается идентификатор отслеживания.
 
 
-## <a name="ship-in-australia"></a>Отправка в Австралии
+## <a name="in-australiatabin-australia"></a>[В Австралии](#tab/in-australia)
 
 В центрах обработки данных Azure в Австралии предусмотрена процедура предварительного уведомления о посылке. Об отправке посылки необходимо заранее предупреждать. Выполните следующие действия для отправки в Австралии.
 
@@ -126,7 +126,7 @@ ms.locfileid: "70241433"
 - Отправьте электронное письмо для создания запроса на вывоз.
 - Сообщите название заказа по телефону.
 
-## <a name="ship-in-japan"></a>Отправка в Японию 
+## <a name="in-japantabin-japan"></a>[В Японии](#tab/in-japan) 
 
 1. Сохраните оригинальную коробку, использованную для доставки устройства, для обратной отправки.
 2. Выключите устройство и отсоедините кабели.

@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: af5b16448a39e0106dbc04724607ff603483484c
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: bfdad0d81599035e7d8c270ec4e8ee8d6a45125e
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997748"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858924"
 ---
 # <a name="what-is-azure-iot-central-preview-features"></a>Что такое IoT Central Azure (предварительные версии функций)?
 
@@ -62,7 +62,8 @@ Azure IoT Central в сравнении со стандартным проект
 - Типы схем массивов не поддерживаются.
 - Экспорт шаблона приложения и его копия не поддерживаются.
 - Поддерживаются только пакет SDK для устройств C, а также пакеты SDK для службы и устройства Node.js.
-- Доступно только в избранных регионах.
+- Он доступен только в регионах Северная Европа и центральная часть США.
+- У моделей возможностей устройства все интерфейсы должны быть указаны в одном файле.
 
 ## <a name="personas"></a>Люди
 

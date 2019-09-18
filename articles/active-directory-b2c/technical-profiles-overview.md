@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 679de2d3a5519e57978239ddd75a4b9fa2ffef3c
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: f90b69cde4a961457c987f004e2605e6884bf323
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998757"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063327"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Технический профиль предоставляет платформу со встроенным механизмом обмена данными с различными типами служб с помощью пользовательской политики Azure Active Directory (Azure AD) B2C. Технические профили служат для обмена данными с клиентом Azure AD B2C, создания пользователя или чтения его профиля. Технический профиль поддерживает самостоятельное подтверждение для взаимодействия с пользователем. Например, он может получать учетные данные пользователя для входа, а затем отображать страницу регистрации или сброса пароля.
+Технический профиль предоставляет платформу со встроенным механизмом взаимодействия с другими типами сторон с помощью настраиваемой политики в Azure Active Directory B2C (Azure AD B2C). Технические профили служат для обмена данными с клиентом Azure AD B2C, создания пользователя или чтения его профиля. Технический профиль поддерживает самостоятельное подтверждение для взаимодействия с пользователем. Например, он может получать учетные данные пользователя для входа, а затем отображать страницу регистрации или сброса пароля.
 
 ## <a name="type-of-technical-profiles"></a>Типы технических профилей
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Создание приложения Scala Maven для Spark в Azure HDInsight с помощью IntelliJ
+title: Руководство по Приложение Scala с использованием Maven для Spark с IntelliJ в Azure HDInsight
 description: 'Учебник: создание приложения Spark, написанного на Scala, с использованием Apache Maven в качестве системы сборки и имеющегося архетипа Maven для Scala, который предоставляется IntelliJ IDEA.'
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 06/26/2019
-ms.openlocfilehash: 263eea88182a947eccc8a57450432fce8d2fcfc9
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 3ffb28ba6c2e6170198a0a360315b7d71f059c34
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839718"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899895"
 ---
 # <a name="tutorial-create-a-scala-maven-application-for-apache-spark-in-hdinsight-using-intellij"></a>Руководство по Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ
 
@@ -177,27 +177,27 @@ ms.locfileid: "68839718"
 
     2. В окне **Project Structure** (Структура проекта) выберите **Artifacts** (Артефакты) > **символ "плюс" +**  > **JAR** > **From modules with dependencies...** (Из модулей с зависимостями...).
 
-        ![Создание JAR-файла](./media/apache-spark-create-standalone-application/create-jar-1.png)
+        ![Создание JAR1](./media/apache-spark-create-standalone-application/create-jar-1.png)
 
     3. В окне **Create JAR from Modules** (Создание JAR-файла на основе модулей) выберите значок папки в текстовом поле **Main Class** (Основной класс).
 
     4. В окне **Select Main Class** (Выбор основного класса) выберите класс, который отображается по умолчанию, и щелкните **ОК**.
 
-        ![Создание JAR-файла](./media/apache-spark-create-standalone-application/create-jar-2.png)
+        ![Создание JAR2](./media/apache-spark-create-standalone-application/create-jar-2.png)
 
     5. В окне **Create JAR from Modules** (Создание JAR-файла на основе модулей) выберите вариант **extract to the target JAR** (Извлечь в целевой JAR-файл) и щелкните **ОК**.  В результате будет создан один JAR-файл, содержащий все зависимости.
 
-        ![Создание JAR-файла](./media/apache-spark-create-standalone-application/create-jar-3.png)
+        ![Создание JAR3](./media/apache-spark-create-standalone-application/create-jar-3.png)
 
     6. На вкладке **Макет выходных данных** содержится список всех JAR-файлов, которые включены в проект Maven. Здесь можно выбрать и удалить файлы, от которых не зависит работа приложения Scala. Для создаваемого приложения можно удалить все файлы, кроме последнего (**SparkSimpleApp compile output** (Выходные данные компиляции SparkSimpleApp)). Выберите JAR-файлы, которые нужно удалить, и щелкните значок минус **-** .
 
-        ![Создание JAR-файла](./media/apache-spark-create-standalone-application/delete-output-jars.png)
+        ![Создание JAR4](./media/apache-spark-create-standalone-application/delete-output-jars.png)
 
         Убедитесь, что установлен флажок **Include in project build** (Включить в сборку проекта), чтобы JAR-файл создавался при каждом создании и обновлении проекта. Нажмите кнопку **Apply** (Применить), а затем — **ОК**.
 
     7. Чтобы создать JAR-файл, выберите **Build** (Сборка) > **Build Artifacts** (Артефакты сборки)  > **Build** (Сборка). Компиляция проекта займет около 30 секунд.  Выходной JAR-файл будет создан в разделе **\out\artifacts**.
 
-        ![Создание JAR-файла](./media/apache-spark-create-standalone-application/output.png)
+        ![output](./media/apache-spark-create-standalone-application/hdi-artifact-output-jar.png)
 
 ## <a name="run-the-application-on-the-apache-spark-cluster"></a>Запуск приложения в кластере Apache Spark
 

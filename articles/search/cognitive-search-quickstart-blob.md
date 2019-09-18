@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание индекса с расширением ИИ на портале Azure — Поиск Azure
+title: Краткое руководство. Функция обогащения ИИ Когнитивного поиска на портале Azure — Поиск Azure
 description: Извлечение данных, обработка естественного языка и изображений на портале индексирования в службе "Поиск Azure" с использованием портала Azure и примера данных.
 manager: nitinme
 author: HeidiSteen
@@ -7,16 +7,16 @@ services: search
 ms.service: search
 ms.subservice: cognitive-search
 ms.topic: quickstart
-ms.date: 07/09/2019
+ms.date: 09/10/2019
 ms.author: heidist
-ms.openlocfilehash: a4654e5895e9c7768b9fa6b975ef848294bcc8cc
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: ff32be5410876d1ba61b3bce2fd5f57868745e50
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648907"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881090"
 ---
-# <a name="quickstart-create-an-ai-indexing-pipeline-using-cognitive-skills-in-azure-search"></a>Краткое руководство. Создание конвейера индексирования ИИ с помощью когнитивных навыков в Поиске Azure
+# <a name="quickstart-create-an-ai-enrichment-pipeline-using-cognitive-skills-in-azure-search"></a>Краткое руководство. Создание конвейера обогащения ИИ с помощью когнитивных навыков в Поиске Azure
 
 Служба "Поиск Azure" интегрируется с [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/), добавляя навыки извлечения данных, обработки естественного языка и изображений в конвейер индексирования службы "Поиск Azure" и упрощая поиск содержимого, по которому не выполняется обычный поиск или которое не структурировано. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "69648907"
 
 [Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) предоставляет функции искусственного интеллекта. В данном кратком руководстве описаны шаги по добавлению этих ресурсов как встроенных при указании конвейера. Заранее настраивать учетные записи необязательно.
 
-Службы Azure должны предоставлять входные данные в конвейер индексирования. Вы можете использовать любой источник данных, поддерживаемый [индексаторами службы "Поиск Azure"](search-indexer-overview.md), за исключением Хранилища таблиц Azure, которое не поддерживается для индексации ИИ. В этом кратком руководстве в качестве контейнера для исходных файлов данных используется [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). 
+Службы Azure должны предоставлять входные данные в конвейер индексирования. Для отчетов можно использовать любой источник данных, поддерживаемый [индексаторами Поиска Azure](search-indexer-overview.md). В этом кратком руководстве в качестве контейнера для исходных файлов данных используется [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). 
 
 ### <a name="set-up-azure-blob-service-and-load-sample-data"></a>Настройка службы BLOB-объектов Azure и загрузка примера данных
 

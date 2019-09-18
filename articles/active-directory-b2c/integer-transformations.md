@@ -10,27 +10,27 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 976cf55dd8f1c11d1ea605b25086fa644afec980
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d82f7fecfb35c63d586993fed73a83209782a890
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510803"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064215"
 ---
 # <a name="integer-claims-transformations"></a>Преобразования целочисленных утверждений
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приведены примеры использования преобразований целочисленных утверждений для схемы инфраструктуры процедур идентификации в Azure Active Directory (Azure AD) B2C. Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приводятся примеры использования преобразования целочисленных утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
-## <a name="convertnumbertostringclaim"></a>ConvertNumberToStringClaim 
+## <a name="convertnumbertostringclaim"></a>ConvertNumberToStringClaim
 
 Преобразует тип данных "длинное целое" в тип данных "строка".
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | long | ClaimType для преобразования в строку. |
-| outputClaim | outputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | outputClaim | строка | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В этом примере утверждение `numericUserId` с типом значения "длинное целое" преобразуется в утверждение `UserId` с типом значения "строка".
 
@@ -49,6 +49,6 @@ ms.locfileid: "66510803"
 
 - Входящие утверждения:
     - **inputClaim**: 12334 (длинное)
-- Исходящие утверждения: 
+- Исходящие утверждения:
     - **outputClaim**: "12334" (строковое)
 

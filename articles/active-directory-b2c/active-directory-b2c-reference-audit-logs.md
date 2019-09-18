@@ -11,12 +11,12 @@ ms.date: 09/14/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: cbb748e9856b6de9004d57e4393e205ddfcfffb4
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c216512aef117a332d3aabfc83ec5615b70b202c
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998804"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033831"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -92,12 +92,13 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 * Microsoft Graph
   * Приклад Прочитать все данные журнала аудита
 
-Вы можете включить эти разрешения в существующую регистрацию приложения в клиенте B2C или создать новую, специально для использования с автоматизацией журналов аудита.
+Эти разрешения можно включить для существующей регистрации Azure Active Directory приложения в клиенте B2C или создать новую, специально для использования с автоматизацией журналов аудита.
 
 Чтобы создать новое приложение, назначьте необходимые разрешения API и создайте секрет клиента, выполните следующие действия.
 
-1. Зарегистрировать приложение
-    1. Войдите в [портал Azure](https://portal.azure.com), перейдите в каталог, содержащий ваш клиент Azure AD B2C, а затем перейдите к **Azure AD B2C**.
+1. Регистрация приложения в Azure Active Directory
+    1. Войдите в [портал Azure](https://portal.azure.com) и перейдите в каталог, содержащий клиент Azure AD B2C.
+    1. В меню слева выберите **Azure Active Directory** (*не* Azure AD B2C). Или выберите **все службы**, а затем найдите и выберите **Azure Active Directory**.
     1. В разделе **Управление** в меню слева выберите **Регистрация приложений (устаревший)** .
     1. Выбор **регистрации нового приложения**
     1. Введите имя приложения. Например, *Приложение журнала аудита*.

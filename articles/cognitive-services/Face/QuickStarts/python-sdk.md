@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 07/26/2019
 ms.author: pafarley
-ms.openlocfilehash: f0bd4a49a35392c25b8985aa68ad4e4b66be026c
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 2a74dbe9c306c1bf2420fdaac78a9b9183cacab1
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306521"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376137"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
 
@@ -26,6 +26,7 @@ ms.locfileid: "70306521"
 * Поиск похожих лиц
 * создание и обучение на основе изображения группы людей;
 * опознание лиц;
+* Проверка лиц
 * создание моментального снимка для переноса данных.
 
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=Face&sort=0)
@@ -90,6 +91,7 @@ pip install --upgrade azure-cognitiveservices-Face
 * [поиск похожих лиц](#find-similar-faces);
 * [создание и обучение на основе изображения группы людей](#create-and-train-a-person-group);
 * [опознание лица](#identify-a-face);
+* [Проверка лиц](#verify-faces)
 * [создание моментального снимка для переноса данных](#take-a-snapshot-for-data-migration).
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
@@ -186,7 +188,33 @@ pip install --upgrade azure-cognitiveservices-Face
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_identify)]
 
-## <a name="take-a-snapshot-for-data-migration"></a>Создание моментального снимка для переноса данных
+## <a name="verify-faces"></a>Проверка лиц
+
+Операция проверки принимает идентификатор лица, идентификатор другого лица или объекта **Person**, а затем определяет, связаны ли они с одним и тем же человеком.
+
+Следующий код определяет лица на двух исходных изображениях, а затем сопоставляет их с лицом, определенным на целевом изображении.
+
+### <a name="get-test-images"></a>Получение тестовых изображений
+
+Следующий код блокирует объявление переменных, которые указывают на исходное и целевое изображения для операции проверки.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_verify_baseurl)]
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_verify_photos)]
+
+### <a name="detect-faces-for-verification"></a>Определение лиц для проверки
+
+Следующий код определяет лица на исходном и целевом изображениях и сохраняет их в переменных.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_verify_detect)]
+
+### <a name="get-verification-results"></a>Получение результатов проверки
+
+Следующий код сравнивает все исходные изображения с целевым изображением и выводит сообщение, которое указывает, связаны ли они с одним и тем же человеком.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_verify)]
+
+## <a name="take-a-snapshot-for-data-migration"></a>создание моментального снимка для переноса данных.
 
 Функция моментальных снимков позволяет перемещать сохраненные данные о лицах, например обученный объект **PersonGroup**, в другую подписку Azure Cognitive Services. Эту функцию можно использовать, если вы, например, создали объект **PersonGroup** в бесплатной пробной подписке и теперь хотите перенести его в платную подписку. Подробный обзор функции создания моментальных снимков см. в руководстве по [переносу данных о лицах](../Face-API-How-to-Topics/how-to-migrate-face-data.md).
 

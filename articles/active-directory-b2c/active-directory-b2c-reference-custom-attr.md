@@ -10,21 +10,21 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a9ac3800d60b063c620cfc774d7a0c642f6f6821
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: e6b0eac0b8cf7f61d76f90a4f769ba11abab6999
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835391"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065676"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Определение настраиваемых атрибутов в Azure Active Directory B2C
 
- Каждое приложение, взаимодействующее с клиентами, имеет свои уникальные требования к сбору информации. Клиент Azure Active Directory (Azure AD) B2C поставляется со встроенным набором информации, сохраняемой в атрибутах, например "Given Name", "Surname", "City" и "Postal Code". С помощью Azure AD B2C можно расширить набор атрибутов, хранящихся в каждой учетной записи клиента.
+ Каждое приложение, взаимодействующее с клиентами, имеет свои уникальные требования к сбору информации. Клиент Azure Active Directory B2C (Azure AD B2C) поставляется со встроенным набором данных, хранящихся в атрибутах, таких как имя, фамилия, город и почтовый индекс. С помощью Azure AD B2C можно расширить набор атрибутов, хранящихся в каждой учетной записи клиента.
 
  Вы можете создать настраиваемые атрибуты на [портале Azure](https://portal.azure.com/) и использовать их в потоках пользователей регистрации, регистрации или входа в систему, а также редактирования профиля. Можно также читать и записывать эти атрибуты с помощью [API Graph Azure AD](active-directory-b2c-devquickstarts-graph-dotnet.md). Настраиваемые атрибуты в Active Directory B2C используют [расширения схемы каталога API Graph Azure AD](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions).
 
 > [!NOTE]
-> Поддержка новых [Microsoft Graph API](https://docs.microsoft.com/graph/overview?view=graph-rest-1.0) для выполнения запросов к Azure AD B2C клиент находится на стадии разработки.
+> Поддержка более новых [Microsoft Graph API](https://docs.microsoft.com/graph/overview?view=graph-rest-1.0) для запросов Azure AD B2C клиента все еще находится в разработке.
 >
 
 ## <a name="create-a-custom-attribute"></a>Создание настраиваемого атрибута
@@ -36,7 +36,7 @@ ms.locfileid: "67835391"
 
     Выберите каталог, содержащий ваш клиент.
 
-    ![Они выделены фильтр каталога и подписки клиента B2C](./media/active-directory-b2c-reference-custom-attr/select-directory.PNG)
+    ![Клиент B2C, выделенный в каталоге и фильтре подписок](./media/active-directory-b2c-reference-custom-attr/select-directory.PNG)
 
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 4. Выберите **Атрибуты пользователя**, а затем щелкните **Добавить**.
@@ -56,5 +56,5 @@ ms.locfileid: "67835391"
 5. Щелкните **Утверждения приложения** и выберите настраиваемый атрибут.
 6. Нажмите кнопку **Сохранить**.
 
-После создания нового пользователя с помощью потока пользователя, который использует только что созданный пользовательский атрибут, объект можно запросить в [Azure AD Graph Explorer](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api-quickstart). Кроме того, вы можете использовать [ **выполнения потока пользователя** ](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) функцию на поток пользователя, чтобы проверить взаимодействие с пользователем. Теперь вы увидите **ShoeSize** в списке атрибутов, собираемых в процессе регистрации, а также в токене, возвращаемом в приложение.
+После создания нового пользователя с помощью пользовательского потока, который использует только что созданный настраиваемый атрибут, этот объект можно запросить в [Azure AD Graph Explorer](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api-quickstart). Кроме того, можно использовать функцию « [**Запуск потока пользователя**](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) » в потоке пользователя, чтобы проверить работу клиента. Теперь вы увидите **ShoeSize** в списке атрибутов, собираемых в процессе регистрации, а также в токене, возвращаемом в приложение.
 

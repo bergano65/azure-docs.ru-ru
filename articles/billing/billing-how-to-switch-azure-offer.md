@@ -1,6 +1,6 @@
 ---
 title: Изменение предложения подписки Azure
-description: Узнайте о том, как изменить подписку Azure и переключиться на другое предложение, используя Центр учетных записей Azure.
+description: Сведения о смене подписки Azure и переключении на другое предложение с помощью Центра управления учетной записью Azure.
 author: bandersmsft
 manager: amberb
 tags: billing,top-support-issue
@@ -12,21 +12,21 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: 8e87bcb9f7d05fd5041623693c96f8c737758c32
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490985"
 ---
-# <a name="change-your-azure-subscription-to-a-different-offer"></a>Изменить подписку Azure на другое предложение
+# <a name="change-your-azure-subscription-to-a-different-offer"></a>Изменение подписки Azure на другое предложение
 
-Клиентом [отдельной подписки с оплатой](https://azure.microsoft.com/offers/ms-azr-0003p/), вы можете переключить свою подписку Azure на другое предложение в [Центр управления учетной записью](https://account.windowsazure.com/Subscriptions). Например, с помощью этой функции вы можете воспользоваться преимуществами [ежемесячных кредитов для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+В качестве клиента с [индивидуальной подпиской с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) вы можете переключить подписку Azure на другое предложение в [Центре управления учетной записью](https://account.windowsazure.com/Subscriptions). Например, с помощью этой функции вы можете воспользоваться преимуществами [ежемесячных кредитов для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-**Просто хотите повысить уровень подписки с бесплатной пробной версии?** См. в разделе [Повысьте уровень подписки](billing-upgrade-azure-subscription.md).
+**Просто хотите повысить уровень подписки с бесплатной пробной версии?** См. статью [Обновление подписки](billing-upgrade-azure-subscription.md).
 
 ## <a name="whats-supported"></a>Поддерживаемые функции
 
-Вы можете переключиться из отдельной подписки с оплатой для:
+Вы можете переключить отдельную подписку с оплатой по мере использования на следующие предложения:
 
 - [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
@@ -47,8 +47,8 @@ ms.locfileid: "67490985"
 >
 
 1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions).
-1. Выберите отдельные подписки с оплатой.
-1. Щелкните **Переключиться на другое предложение**. Параметр доступен только в том случае, если вы используете отдельные подписки с оплатой и завершения первого расчетного периода.
+1. Выберите отдельную подписку с оплатой по мере использования.
+1. Щелкните **Переключиться на другое предложение**. Параметр доступен, только если у вас есть отдельная подписка с оплатой по мере использования и вы закрыли первый период выставления счетов.
 
    ![Обратите внимание на кнопку "Переключить предложение" в правой части страницы.](./media/billing-how-to-switch-azure-offer/switchbutton.png)
 1. **Выберите нужное предложение** в списке предложений, на которые можно переключить вашу подписку. Список доступных предложений будет зависеть от членства вашей учетной записи. Если список пуст, проверьте [список доступных предложений, на которые вы можете переключить подписку](#whats-supported), и убедитесь, что ваша учетная запись имеет правильное членство.
@@ -57,33 +57,33 @@ ms.locfileid: "67490985"
 1. При переходе на некоторые предложения может появляться уведомление о последствиях перехода. Внимательно ознакомьтесь с этим списком и выполните указанные действия, прежде чем продолжить.
 
    ![Просмотрите примечания.](./media/billing-how-to-switch-azure-offer/thingstonote.png)
-1. Вы можете переименовать подписку. По умолчанию он будет присвоено имя нового предложения. Чтобы завершить процедуру, щелкните **Переключить предложение** .
+1. Вы можете переименовать подписку. По умолчанию ей присваивается имя нового предложения. Чтобы завершить процедуру, щелкните **Переключить предложение** .
 
    ![Нажмите зеленую кнопку.](./media/billing-how-to-switch-azure-offer/confirmpage.png)
 1. Готово! Подписка переведена на новое предложение.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
-Ниже разделах даны ответы на часто задаваемые вопросы.
+В следующих разделах даются ответы на часто задаваемые вопросы.
 
 ### <a name="what-is-an-azure-offer"></a>Что такое предложение Azure?
 
-Предложение Azure — это *тип* имеющейся подписки Azure. Например [подписку с оплатой](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure с открытой лицензией](https://azure.microsoft.com/offers/ms-azr-0111p/), и [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) все предложения Azure. Для каждого предложения определены разные [условия](https://azure.microsoft.com/support/legal/offer-details/), а в некоторых предложениях предусмотрены особые преимущества. Предложение для подписки можно найти на странице подписки Центра управления учетной записью. Щелкните имя предложения, чтобы получить дополнительные сведения.
+Предложение Azure — это *тип* имеющейся подписки Azure. Например, [подписка с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure с открытой лицензией](https://azure.microsoft.com/offers/ms-azr-0111p/) и [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) — все это предложения Azure. Для каждого предложения определены разные [условия](https://azure.microsoft.com/support/legal/offer-details/), а в некоторых предложениях предусмотрены особые преимущества. Предложение для подписки можно найти на странице подписки Центра управления учетной записью. Щелкните имя предложения, чтобы получить дополнительные сведения.
 
    ![Щелкните ссылку "Предложение" в Центре управления учетной записью, чтобы получить дополнительные сведения.](./media/billing-how-to-switch-azure-offer/offerlink.png)
 
 ### <a name="why-dont-i-see-the-button"></a>Почему кнопка не отображается?
 
-Могут отобразиться не **переключиться на другое предложение** параметр, если:
+Параметр **Переключиться на другое предложение** может не отображаться в перечисленных ниже случаях.
 
-* У вас нет [подписки с оплатой](https://azure.microsoft.com/offers/ms-azr-0003p/). Можно преобразовать в настоящее время только подписки с оплатой на другое предложение.
-  * Если у вас есть [бесплатной пробной версии](https://azure.microsoft.com/free/), узнайте, как [обновление до оплаты по мере использования](billing-upgrade-azure-subscription.md).
+* У вас нет [подписки с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Сейчас перейти на другое предложение можно только в подписках с оплатой по мере использования.
+  * Если вы используете [бесплатную пробную версию](https://azure.microsoft.com/free/), узнайте, как [перейти на предложение с оплатой по мере использования](billing-upgrade-azure-subscription.md).
   * Чтобы переключить предложение из другой подписки, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
-* Вы по-прежнему в ваш первый расчетный период; необходимо дождаться первого расчетного периода до конца, прежде чем вы сможете изменить предложение.
+* Еще не завершился ваш первый расчетный период, дождитесь его завершения, чтобы изменить предложение.
 
 ### <a name="why-do-i-see-there-are-no-offers-available-in-your-region-or-country-at-this-time"></a>Почему отображается сообщение: "На данный момент предложения для вашей страны или вашего региона отсутствуют"?
 
 * Возможно, у вас нет права на изменение предложения. Проверьте [список доступных предложений, на которые можно перейти](#whats-supported), и убедитесь в том, что у вас активированы правильные преимущества в Visual Studio или BizSpark.
-* Некоторые предложения не могут быть доступны во всех странах и регионах.
+* Некоторые предложения могут быть доступны не во всех странах/регионах.
 
 ### <a name="what-does-switching-azure-offers-do-to-my-service-and-billing"></a>Как переключение предложений Azure повлияет на мою службу и выставление счетов?
 
@@ -101,7 +101,7 @@ ms.locfileid: "67490985"
 
 В день смены предложения выставляется счет за все непогашенные задолженности. После этого счет за подписку будет выставляться по тарифам нового предложения. Дата взыскания годовой абонентской платы изменится в соответствии с датой смены предложения. Данные по платежам и использованию ресурсов до смены предложения не сохраняются, поэтому рекомендуем скачать их копию перед сменой тарифа.
 
-### <a name="can-i-migrate-from-a-subscription-with-pay-as-you-go-rates-to-cloud-solution-providerhttpspartnermicrosoftcomsolutionscloud-reseller-overview-csp-or-enterprise-agreementhttpsazuremicrosoftcompricingenterprise-agreement-ea"></a>Можно ли перенести из подписки с оплатой для [поставщика облачных решений](https://partner.microsoft.com/Solutions/cloud-reseller-overview) (CSP) или [соглашения Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/) (EA)?
+### <a name="can-i-migrate-from-a-subscription-with-pay-as-you-go-rates-to-cloud-solution-providerhttpspartnermicrosoftcomsolutionscloud-reseller-overview-csp-or-enterprise-agreementhttpsazuremicrosoftcompricingenterprise-agreement-ea"></a>Могу ли я перейти с подписки с оплатой по мере использования на [поставщика облачных решений](https://partner.microsoft.com/Solutions/cloud-reseller-overview) (CSP) или [Соглашение Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/) (EA)?
 
 * Инструкции по переходу на CSP см. в статье [Migrate Azure subscriptions from pay-as-you-go to Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/migration/migration-from-payg-to-csp) (Перенос подписки Azure из подписки с оплатой по мере использования в Azure CSP).
 * Чтобы перейти к предложению "Соглашение Enterprise", попросите своего администратора регистрации добавить вашу учетную запись в соглашение Enterprise. Следуйте инструкциям в электронном сообщении с приглашением, чтобы перевести подписки на регистрацию в соглашении Enterprise. Дополнительные сведения см. в статье [Associate an Existing Account](https://ea.azure.com/helpdocs/associateExistingAccount) (Связывание имеющейся учетной записи) на портале EA.
@@ -115,5 +115,5 @@ ms.locfileid: "67490985"
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Начало анализа затрат](../cost-management/quick-acm-cost-analysis.md)

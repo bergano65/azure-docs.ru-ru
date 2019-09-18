@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 08/30/2019
 ms.author: jingwang
-ms.openlocfilehash: fbf6ddc2db0312b2dfd34e79aa04c246ce2ac8d6
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: e7952192a0c3150e6c323370653544ea9ad97b62
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70174655"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71032745"
 ---
 | Категория              | Хранилище данных                                                   | [Действие копирования](../articles/data-factory/copy-activity-overview.md)  (источник или приемник) | [Поток данных сопоставления](../articles/data-factory/concepts-data-flow-overview.md) | [Действие поиска](../articles/data-factory/control-flow-lookup-activity.md) | [Действие получения метаданных](../articles/data-factory/control-flow-get-metadata-activity.md) | [Удалить действие](../articles/data-factory/delete-activity.md) |
 | :-------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | :----------------------------------------------------------- |
@@ -21,7 +21,7 @@ ms.locfileid: "70174655"
 | &nbsp;                | [Хранилище Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) | ✓/✓                                                          | ✓ <br> <small>Поддерживаемые форматы: Текст с разделителями, Parquet</small>                  | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) | ✓/✓                                                          |                                                              | ✓                                                            |                                                              |                                                              |
-| &nbsp;                | [База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
+| &nbsp;                | [База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) | ✓/✓                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [Хранилище файлов Azure](../articles/data-factory/connector-azure-file-storage.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [база данных SQL Azure;](../articles/data-factory/connector-azure-sql-database.md) | ✓/✓                                                           | ✓                                                            | ✓                                                            | ✓                                                            |                                                              |
 | &nbsp;                | [Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            |                                                              |

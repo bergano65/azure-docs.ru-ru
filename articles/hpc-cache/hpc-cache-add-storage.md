@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: v-erkell
-ms.openlocfilehash: 4554214b74b4d09fa40e355270208bebda4076b7
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: ca8e13e322c3e192b697248f1252b65f6cbeda7f
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775264"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037219"
 ---
 # <a name="add-storage"></a>Добавление хранилища
 
@@ -27,13 +27,15 @@ ms.locfileid: "70775264"
 
 Используйте вкладку **целевые объекты хранилища** мастера создания кэша, чтобы определить хранилище в то же время, когда создается экземпляр кэша.
 
-![снимок экрана: страница "целевые объекты хранилища"](media/create-targets.png)
+![снимок экрана: страница целевых объектов хранилища](media/hpc-cache-storage-targets-pop.png)
 
 Щелкните ссылку **добавить целевой объект хранилища** , чтобы добавить хранилище.
 
 ## <a name="add-storage-targets-from-the-cache"></a>Добавление целевых объектов хранилища из кэша
 
 В портал Azure откройте экземпляр кэша и щелкните **целевые объекты хранилища** на левой боковой панели. На странице целевой объект хранилища перечисляются все существующие целевые объекты и добавляется ссылка для добавления новой.
+
+![снимок экрана: ссылка на целевые объекты хранилища на боковой панели под заголовком Настройка, между параметрами заголовков категорий и мониторингом](media/hpc-cache-storage-targets-sidebar.png)
 
 ## <a name="add-a-new-azure-blob-storage-target"></a>Добавление нового целевого объекта хранилища BLOB-объектов Azure
 
@@ -52,15 +54,13 @@ ms.locfileid: "70775264"
 
 * **Путь к виртуальному пространству имен** — задайте для этого целевого сервера путь к файлу FilePath. Дополнительные сведения о функции виртуального пространства имен см. в статье [Настройка агрегированного пространства имен](hpc-cache-namespace.md) .
 
-<!--  The namespace path value must end with a slash (``/``) and should not start with one.  -->
-
 По завершении нажмите кнопку **ОК** , чтобы добавить целевой объект хранилища.
 
 ### <a name="add-the-access-control-roles-to-your-account"></a>Добавление ролей контроля доступа в учетную запись
 
 Кэш Azure HPC использует [Управление доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/index) для авторизации приложения кэша на доступ к учетной записи хранения для целевых объектов хранилища BLOB-объектов Azure.
 
-Владелец учетной записи хранения должен явным образом добавить участника [промежуточных учетных записей хранения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor) и [участника данных большого двоичного объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) для пользователя "поставщик ресурсов сторажекаче".
+Владелец учетной записи хранения должен явным образом добавить [участника учетной записи хранения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor) ролей и [участника данных большого двоичного объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) для пользователя "поставщик ресурсов сторажекаче".
 
 Это можно сделать заранее или щелкнув ссылку на странице, где вы добавите целевой объект хранилища BLOB-объектов.
 
@@ -127,5 +127,5 @@ ms.locfileid: "70775264"
 
 После создания целевых объектов хранилища рассмотрите одну из следующих задач.
 
-* [Подключение кэша HPC для Azure](hpc-cache-mount.md)
+* [Mount the Azure HPC Cache](hpc-cache-mount.md) (Подключение Azure HPC Cache)
 * [Перемещение данных в хранилище BLOB-объектов Azure](hpc-cache-ingest.md)

@@ -4,42 +4,27 @@ description: Как открыть запрос справки для кэша H
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 09/06/2019
+ms.date: 09/12/2019
 ms.author: v-erkell
-ms.openlocfilehash: a252243ae84516fe06a89ef1119c4b4ce58dbeef
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: d845195940fdba81562acf4c0cfe9069245bd34c
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775628"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71036893"
 ---
 # <a name="open-a-support-ticket-for-azure-hpc-cache"></a>Отправьте запрос в службу поддержки для кэша HPC Azure
 
 Чтобы открыть запрос в службу поддержки, используйте портал Azure. Перейдите к экземпляру кэша, а затем щелкните ссылку **создать запрос в службу поддержки** , которая отображается в нижней части боковой панели.
 
-> [!NOTE]
-> В течение периода действия предварительной версии вы также можете использовать [эту ссылку](<https://support.microsoft.com/supportforbusiness/productselection?sapId=6b415938-2927-0d9d-6c3c-fbacea64e42d>) , чтобы открыть обращение в службу поддержки для продукта кэш Azure HPC (Предварительная версия).
+Чтобы открыть билет, если у вас нет активного кэша, воспользуйтесь главной страницей **Справка и поддержка** из портал Azure. Щелкните **новый запрос в службу поддержки** и выберите **Техническая** для получения справки по кэшу Azure HPC.
 
-<!-- add screenshot of form with thing to select product etc. -->
+Выберите подписку из списка.
 
-<!-- 
-[ xxx update procedure - this is copied from Azure FXT Edge Filer but Azure HPC Cache has context, you don't need to fill in everything xxx ]
+Чтобы найти службу предварительной версии кэша Azure HPC, нажмите кнопку **все службы** и выполните поиск HPC.
 
-1. Open the [Azure portal](https://portal.azure.com/) and sign in.
-1. In the left panel, scroll to the bottom and click **Help + support**.
-1. Click **New support request**. 
+![Снимок экрана с описанием запроса на поддержку — вкладка "Основные сведения"](media/hpc-cache-support-request.png)
 
-   ![Screenshot of blank support request form](media/fxt-support-blank.png)
+Заполните остальные поля данными и предпочтениями, а затем отправьте билет, когда будете готовы.
 
-1. Fill out the request form.  
-    1. In the **Basics** tab, choose the **Issue type** ``Technical``. 
-    1. Select your subscription. 
-    1. Under **Service**, select **Azure FXT Edge Filer**. You might need to click the **All services** filter control to find it. 
-    1. Enter a **Summary** and choose the **Problem type**. 
-    ![Screenshot of blank support request form](media/fxt-support-populated.png) 
-    1. Click **Next** to continue. 
-1. In the **Details** tab, add more information about the problem and how to contact you. You can upload a file related to the problem. 
-1. In **Review + create**, check the information and click the **Create** button to submit your request.
-
-After you submit the request, you will receive a confirmation email with a ticket number. A support staff member will contact you about the request.
--->
+После отправки запроса вы получите по электронной почте подтверждение с номером билета. Сотрудник службы поддержки свяжется с вами по запросу.

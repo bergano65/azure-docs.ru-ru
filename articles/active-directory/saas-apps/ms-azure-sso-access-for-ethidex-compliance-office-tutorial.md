@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/29/2019
+ms.date: 09/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa0ec97683fe8597ced234fe4b7251a4daeed49f
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 00cbb5ff4b9354d0d1702161460b2646669f34c2
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70174370"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844371"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ms-azure-sso-access-for-ethidex-compliance-office"></a>Руководство по Интеграция единого входа Azure Active Directory с доступом к Microsoft Azure с единым входом для Ethidex Compliance Office™
 
@@ -80,8 +80,14 @@ ms.locfileid: "70174370"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `com.ethidex.prod.<CLIENTID>`.
+
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.ethidex.com/saml2/sp/acs/<CLIENTID>`.
+
+    > [!NOTE]
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь в [службу поддержки доступа с единым входом в MS Azure для Ethidex Compliance Office™](mailto:support@ethidex.com), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Доступ к Microsoft Azure с единым входом для Ethidex Compliance Office™ ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 

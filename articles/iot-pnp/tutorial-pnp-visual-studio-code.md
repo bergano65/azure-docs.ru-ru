@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: baf694fbc3176732d43094c8d20ee112af927f16
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: b890fe1a9ef30e18a54ced9f48015bed39298807
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186471"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858882"
 ---
 # <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство по созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
 
@@ -35,10 +35,10 @@ ms.locfileid: "70186471"
 Для работы с моделью возможностей устройства в этом учебнике вам потребуется следующее.
 
 * [Visual Studio Code](https://code.visualstudio.com/download). VS Code предоставляется для нескольких платформ.
-* Расширение Azure IoT Device Workbench для VS Code. Чтобы установить расширение Azure IoT Device Workbench в VS Code, выполните следующие действия:
+* Пакет расширения [Azure IoT Tools для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools). Выполните следующие действия, чтобы установить пакет расширения в VS Code:
 
     1. В VS Code выберите вкладку **Расширения**.
-    1. Выполните поиск по запросу **Azure IoT Device Workbench**.
+    1. Выполните поиск **Azure IoT Tools**.
     1. Щелкните **Установить**.
 
 Для создания кода на языке C для этого учебника в среде ОС Windows вам потребуется следующее.
@@ -61,7 +61,7 @@ ms.locfileid: "70186471"
 
 ## <a name="model-your-device"></a>Моделирование устройства
 
-Для создания модели возможностей устройства используется _язык определения цифрового двойника_. Эта модель обычно состоит из нескольких файлов определения _интерфейсов_ и одного файла модели. **Расширение Azure IOT Device Workbench для VS Code** содержит средства для создания и редактирования этих файлов в формате JSON.
+Для создания модели возможностей устройства используется _язык определения цифрового двойника_. Эта модель обычно состоит из нескольких файлов определения _интерфейсов_ и одного файла модели. **Azure IoT Tools для VS Code** включает в себя средства, которые упрощают создание и редактирование таких JSON-файлов.
 
 ### <a name="create-the-interface-file"></a>Создание файла интерфейса
 
@@ -298,7 +298,7 @@ ms.locfileid: "70186471"
 
 ## <a name="generate-code"></a>Создание кода
 
-Вы можете использовать **расширение Azure IOT Device Workbench для VS Code**, чтобы создать на основе модели каркас кода на языке C. Для создания каркаса кода C в VS Code выполните следующее.
+Вы можете использовать **Azure IoT Tools для VS Code**, чтобы создать на основе модели схему кода на языке C. Для создания каркаса кода C в VS Code выполните следующее.
 
 1. Нажмите сочетание клавиш **CTRL+SHIFT+P**, чтобы открыть палитру команд.
 

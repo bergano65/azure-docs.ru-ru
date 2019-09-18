@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/24/2019
-ms.openlocfilehash: 0b3af3d29e6e938f0301d751a79170c7c1964b45
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 09/10/2019
+ms.openlocfilehash: 8944a5adbe1b9e129b4a95c64aaa7a75fb96ac82
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243800"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845579"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство по Сетевой перенос Oracle в Базу данных Azure для PostgreSQL с помощью DMS (предварительная версия)
 
@@ -166,27 +166,6 @@ ms.locfileid: "66243800"
 
     Вы должны получить ответ `'YES'`.
 
-> [!IMPORTANT]
-> Для общедоступной предварительной версии этого сценария Azure Database Migration Service поддерживает Oracle версии 10g или 11g. Клиентам, которые используют версию Oracle 12c или более позднюю, следует учитывать, что для подключения драйвера ODBC к Oracle требуется протокол аутентификации не ниже версии 8. Для источника Oracle версии 12c или более поздней необходимо настроить протокол аутентификации следующим образом:
->
-> * Обновите файл SQLNET.ORA:
->
->    ```
->    SQLNET.ALLOWED_LOGON_VERSION_CLIENT = 8
->    SQLNET.ALLOWED_LOGON_VERSION_SERVER = 8
->    ```
->
-> * Перезагрузите компьютер, чтобы изменения настроек вступили в силу.
-> * Измените пароли для существующих пользователей:
->
->    ```
->    ALTER USER system IDENTIFIED BY {pswd}
->    ```
->
->   Дополнительные сведения см. на [этой странице](http://www.dba-oracle.com/t_allowed_login_version_server.htm).
->
-> Не забывайте также, что изменение протокола аутентификации может повлиять на аутентификацию клиента.
-
 ## <a name="assess-the-effort-for-an-oracle-to-azure-database-for-postgresql-migration"></a>Оценка мероприятий для перехода с Oracle на Базу данных Azure для PostgreSQL
 
 Мы рекомендуем использовать ora2pg для оценки требуемых мероприятий с целью перехода с Oracle на Базу данных Azure для PostgreSQL. С помощью директивы `ora2pg -t SHOW_REPORT` создайте отчет, перечисляющий все объекты Oracle с оценкой стоимости миграции (в днях работы разработчика) и некоторые объекты базы данных, для которых потребуется особое внимание в процессе миграции.
@@ -215,67 +194,60 @@ psql -f %namespace%\schema\sequences\sequence.sql -h server1-server.postgres.dat
 
 ## <a name="set-up-the-schema-in-azure-database-for-postgresql"></a>Настройка схемы в Базе данных Azure для PostgreSQL
 
-По умолчанию Oracle хранит значения schema.table.column в верхнем регистре, а PostgreSQL использует для schema.table.column нижний регистр. Чтобы Azure Database Migration Service могла начать перемещение данных из Oracle в данных Базу данных Azure для PostgreSQL, для schema.table.column необходимо настроить тот же формат регистра, что и в исходной базе данных Oracle.
+Схемы таблиц Oracle, хранимые процедуры, пакеты и другие объекты базы данных можно преобразовать, чтобы сделать их совместимыми c Postgres, используя ora2pg перед запуском конвейера миграции в Azure Database Migration Service. Ниже приведены ссылки на сведения о работе с ora2pg:
 
-Например, если в источнике Oracle используется схема вида "HR"."EMPLOYEES"."EMPLOYEE_ID", этот же формат нужно указать и для PostgreSQL.
+* [Step-by-Step Guide to Install ora2pg on Windows](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows.pdf) (Пошаговое руководство по установке ora2pg в Windows)
+* [Oracle to Azure Database for PostgreSQL Migration Cookbook](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf) (Руководство по миграции Oracle в Базу данных Azure для PostgreSQL)
 
-Чтобы проверить совпадение форматов для schema.table.column в Oracle и Базе данных Azure для PostgreSQL, мы рекомендуем выполнить следующие действия.
+Azure Database Migration Service также может создать схему таблицы PostgreSQL. Служба обращается к схеме таблицы в подключенном источнике Oracle и создает совместимую схему таблицы в Базе данных Azure для PostgreSQL. Не забудьте проверить формат схемы в Базе данных Azure для PostgreSQL после того, как Azure Database Migration Service завершит создание схемы и перемещение данных.
+
+> [!IMPORTANT]
+> Azure Database Migration Service создает только схему таблицы; другие объекты базы данных, такие как хранимые процедуры, пакеты, индексы и т. д., не создаются.
+
+Удалите внешний ключ в целевой базе данных, чтобы выполнить полную загрузку данных. В разделе **Перенос примера схемы** [этой статьи](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) приводится скрипт, который можно использовать для удаления внешнего ключа. Примените Azure Database Migration Service для запуска полной загрузки и синхронизации.
+
+### <a name="when-the-postgresql-table-schema-already-exists"></a>Если схема таблицы PostgreSQL уже существует
+
+При создании схемы PostgreSQL с помощью таких средств, как ora2pg, перед началом перемещения данных с помощью Azure Database Migration Service сопоставьте исходные таблицы с целевыми в Azure Database Migration Service.
+
+1. При создании проекта миграции Oracle в Базу данных Azure для PostgreSQL вам будет предложено выбрать целевую базу данных и целевую схему на шаге выбора схем. Заполните целевую базу данных и целевую схему.
+
+   ![Отображение подписок на портале](media/tutorial-oracle-azure-postgresql-online/dms-map-to-target-databases.png)
+
+2. На экране **Параметры миграции** представлен список таблиц в источнике Oracle. Azure Database Migration Service пытается сопоставить таблицы в исходной и целевой таблицах на основе имени таблицы. Если существует несколько совпадающих целевых таблиц с различными регистрами, можно выбрать целевую таблицу для сопоставления.
+
+    ![Отображение подписок на портале](media/tutorial-oracle-azure-postgresql-online/dms-migration-settings.png)
 
 > [!NOTE]
-> Но вы можете выбрать любой другой подход, чтобы настроить схему в верхнем регистре. Мы стремимся улучшить и автоматизировать этот шаг.
+> Если необходимо сопоставлять имена исходных таблиц с таблицами с разными именами, напишите по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) и мы можем предоставить скрипт для автоматизации процесса.
 
-1. Экспортируйте схему с помощью ora2pg в нижнем регистре. В SQL-скрипт создания таблиц вручную добавьте схему в верхнем регистре (SCHEMA).
-2. Импортируйте все остальные объекты Oracle, в том числе триггеры, последовательности, процедуры, типы и функции, в Базу данных Azure для PostgreSQL.
-3. Чтобы преобразовать TABLE и COLUMN в верхний регистр, выполните следующий скрипт:
+### <a name="when-the-postgresql-table-schema-doesnt-exist"></a>Если схема таблицы PostgreSQL не существует
 
-   ```
-   -- INPUT: schema name
-   set schema.var = “HR”;
+Если целевая база данных PostgreSQL не содержит никаких сведений о схеме таблицы, Azure Database Migration Service преобразует исходную схему и воссоздает ее в целевой базе данных. Помните, Azure Database Migration Service создает только схему таблицы, а не другие объекты базы данных, такие как хранимые процедуры, пакеты и индексы.
+Чтобы служба Azure Database Migration Service создала схему, убедитесь, что целевая среда включает схему без таблиц. Если Azure Database Migration Service обнаруживает любую таблицу, служба предполагает, что схема была создана внешним средством, например ora2pg.
 
-   -- Generate statements to rename tables and columns
-   SELECT 1, 'SET search_path = "' ||current_setting('schema.var')||'";'
-   UNION ALL 
-   SELECT 2, 'alter table "'||c.relname||'" rename '||a.attname||' to "'||upper(a.attname)||'";'
-   FROM pg_class c
-   JOIN pg_attribute a ON a.attrelid = c.oid
-   JOIN pg_type t ON a.atttypid = t.oid
-   LEFT JOIN pg_catalog.pg_constraint r ON c.oid = r.conrelid
-    AND r.conname = a.attname
-   WHERE c.relnamespace = (select oid from pg_namespace where nspname=current_setting('schema.var')) AND a.attnum > 0 AND c.relkind ='r'
-   UNION ALL
-   SELECT 3, 'alter table '||c.relname||' rename to "'||upper(c.relname)||'";'
-   FROM pg_catalog.pg_class c
-    LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-   WHERE c.relkind ='r' AND n.nspname=current_setting('schema.var')
-   ORDER BY 1;
-   ```
+> [!IMPORTANT]
+> Azure Database Migration Service требует, чтобы все таблицы создавались одинаково, используя Azure Database Migration Service или такое средство, как ora2pg, но не оба.
 
-* Удалите внешний ключ в целевой базе данных, чтобы выполнить полную загрузку данных. В разделе **Перенос примера схемы** [этой статьи](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) приводится скрипт, который можно использовать для удаления внешнего ключа.
-* Примените Azure Database Migration Service для запуска полной загрузки и синхронизации.
-* Когда данные в целевом экземпляре Базы данных Azure для PostgreSQL будут приведены в соответствие с источником, выполните прямой перенос базы данных в Azure Database Migration Service.
-* Чтобы перевести элементы SCHEMA, TABLE и COLUMN в нижний регистр (если вы решили использовать этот формат для запросов приложения к Базе данных Azure для PostgreSQL), выполните следующий скрипт:
+Чтобы начать работу:
 
-  ```
-  -- INPUT: schema name
-  set schema.var = hr;
-  
-  -- Generate statements to rename tables and columns
-  SELECT 1, 'SET search_path = "' ||current_setting('schema.var')||'";'
-  UNION ALL
-  SELECT 2, 'alter table "'||c.relname||'" rename "'||a.attname||'" to '||lower(a.attname)||';'
-  FROM pg_class c
-  JOIN pg_attribute a ON a.attrelid = c.oid
-  JOIN pg_type t ON a.atttypid = t.oid
-  LEFT JOIN pg_catalog.pg_constraint r ON c.oid = r.conrelid
-     AND r.conname = a.attname
-  WHERE c.relnamespace = (select oid from pg_namespace where nspname=current_setting('schema.var')) AND a.attnum > 0 AND c.relkind ='r'
-  UNION ALL
-  SELECT 3, 'alter table "'||c.relname||'" rename to '||lower(c.relname)||';'
-  FROM pg_catalog.pg_class c
-     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-  WHERE c.relkind ='r' AND n.nspname=current_setting('schema.var')
-  ORDER BY 1;
-  ```
+1. Создайте схему в целевой базе данных в соответствии с требованиями приложения. По умолчанию имена схемы и столбцов таблицы PostgreSQL написаны в нижнем регистре. С другой стороны, названия схемы и столбцов таблицы Oracle по умолчанию записаны в верхнем регистре.
+2. На шаге выбора схем укажите целевую базу данных и целевую схему.
+3. На основе схемы, создаваемой в Базе данных Azure для PostgreSQL, Azure Database Migration Service использует следующие правила преобразования:
+
+    Если имя схемы в источнике Oracle совпадает с именем в Базе данных Azure для PostgreSQL, то Azure Database Migration Service *создает схему таблицы, используя тот же регистр, что и в целевом объекте*.
+
+    Например:
+
+    | Исходная схема Oracle | Целевая PostgreSQL Database.Schema | schema.table.column, созданная DMS |
+    | ------------- | ------------- | ------------- |
+    | HR | targetHR.public | public.countries.country_id |
+    | HR | targetHR.trgthr | trgthr.countries.country_id |
+    | HR | targetHR.TARGETHR | “TARGETHR”.”COUNTRIES”.”COUNTRY_ID” |
+    | HR | targetHR.HR | “HR”.”COUNTRIES”.”COUNTRY_ID” |
+    | HR | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
+
+    *Чтобы создать схему со смешанными регистрами и имена таблиц в целевом PostgreSQL, свяжитесь с нами по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 03/21/2019
+ms.date: 09/06/2019
 ms.author: helohr
-ms.openlocfilehash: cd80ed3c3db2453a333c87ed706dd358ba248b47
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 66441e852ebe0a391a5807b90eeadae230130815
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69516185"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734455"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-preview"></a>Руководство по Создание арендатора предварительной версии Виртуального рабочего стола Windows
 
@@ -49,7 +49,7 @@ ms.locfileid: "69516185"
    >https://login.microsoftonline.com/{tenant}/adminconsent?client_id=5a0aa725-4958-4b0c-80a9-34562e23f3b7&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback
    >```
 
-2. Войдите на страницу предоставления согласия для Виртуального рабочего стола Windows с учетными данными администратора. Например, для организации Contoso учетная запись администратора может быть такой: admin@contoso.com или admin@contoso.onmicrosoft.com.  
+2. Войдите на страницу предоставления согласия для Виртуального рабочего стола Windows с учетными данными администратора. Например, для организации Contoso учетная запись администратора может быть такой: admin@contoso.com или admin@contoso.onmicrosoft.com.
 3. Нажмите кнопку **Принять**.
 4. Подождите одну минуту, чтобы служба Azure AD зарегистрировала согласие.
 5. Откройте браузер и начните процесс предоставления согласия администратора для [клиентского приложения Виртуального рабочего стола Windows](https://login.microsoftonline.com/common/adminconsent?client_id=fa4345a4-a730-4230-84a8-7d9651b86739&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback).
@@ -78,6 +78,7 @@ ms.locfileid: "69516185"
    ![Снимок экрана пользователей и групп, назначенных для управления корпоративным приложением "Виртуальный рабочий стол Windows". На снимке экрана показано только одно назначение для "Доступ по умолчанию".](media/tenant-default-access.png)
 5. Выберите **Добавить пользователя**, а затем в колонке **Добавление назначения** щелкните **Пользователи и группы**.
 6. Найдите учетную запись пользователя, который будет создавать арендатор Виртуального рабочего стола Windows. Для упрощения можно использовать учетную запись глобального администратора.
+   - Если вы используете поставщик удостоверений Майкрософт, например contosoadmin@live.com или contosoadmin@outlook.com, может оказаться, что вы не сможете войти в Виртуальный рабочий стол Windows. Рекомендуется использовать учетную запись с указанием определенного домена, например admin@contoso.com или admin@contoso.onmicrosoft.com.
 
    ![Снимок экрана выбора пользователя для добавления в качестве "TenantCreator".](media/tenant-assign-user.png)
 

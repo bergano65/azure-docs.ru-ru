@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: aahi
-ms.openlocfilehash: e57bb55f5bbeba9cb476672723511a4d19c46165
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: cd00f49aea08e5c94a9206b64f66f4424ef3ca04
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70383255"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057654"
 ---
-# <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
+# <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейса командной строки Azure (CLI)
 
 Используйте это краткое руководство для начала работы с Azure Cognitive Services с помощью [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Cognitive Services представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, созданными в подписке Azure. После создания ресурса используйте ключи и конечную точку, созданные для проверки подлинности приложений. 
 
@@ -79,7 +79,7 @@ az group create \
 
 ### <a name="vision"></a>Визуальное распознавание
 
-| Служба                    | Kind                      |
+| Служба                    | Тип                      |
 |----------------------------|---------------------------|
 | Компьютерное зрение            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
@@ -90,7 +90,7 @@ az group create \
 
 ### <a name="search"></a>Поиск
 
-| Служба            | Kind                  |
+| Служба            | Тип                  |
 |--------------------|-----------------------|
 | Автозаполнение Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
@@ -100,14 +100,14 @@ az group create \
 
 ### <a name="speech"></a>Речь
 
-| Служба            | Kind                 |
+| Служба            | Тип                 |
 |--------------------|----------------------|
 | Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
 
-| Служба            | Kind                |
+| Служба            | Тип                |
 |--------------------|---------------------|
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
@@ -117,7 +117,7 @@ az group create \
 
 ### <a name="decision"></a>Решение
 
-| Служба           | Kind               |
+| Служба           | Тип               |
 |-------------------|--------------------|
 | Детектор аномалий  | `AnomalyDetector`  |
 | Модератор контента | `ContentModerator` |
@@ -138,7 +138,7 @@ az cognitiveservices account list-kinds
 ```azurecli-interactive
 az cognitiveservices account create \
     --name anomaly-detector-resource \
-    --group cognitive-services-resource-group \
+    --resource-group cognitive-services-resource-group \
     --kind AnomalyDetector \
     --sku F0 \
     --location westus2 \

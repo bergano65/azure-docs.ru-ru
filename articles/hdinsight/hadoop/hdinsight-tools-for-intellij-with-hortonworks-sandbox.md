@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5234835f5fbfd5617e6b0440ff38fa900051470a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 783d7fc8bc26ce2c715c774e63ecf60c5b75a439
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67450108"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076258"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
@@ -22,7 +22,7 @@ ms.locfileid: "67450108"
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) — это интегрированная среда разработки (IDE) Java для создания программного обеспечения для компьютеров. После разработки и тестирования приложений в песочнице Hortonworks их можно переместить в [Azure HDInsight](apache-hadoop-introduction.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -55,7 +55,7 @@ ms.locfileid: "67450108"
       * **Maven.** Для поддержки мастера создания проекта Scala.
       * **SBT.** Для управления зависимостями и сборки проекта Scala.
 
-   ![Диалоговое окно нового проекта](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
+   ![IntelliJ создать новый проект Scala](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
 
 2. Щелкните **Далее**.
 3. В диалоговом окне **New Project** (Новый проект) выполните следующие шаги:
@@ -142,11 +142,11 @@ ms.locfileid: "67450108"
 2. Затем сделайте следующее:
 
     1. В раскрывающемся списке **Spark cluster (Linux only)** (Кластер Spark (только для Linux)) выберите локальную песочницу Hortonworks.
-    2. В поле **Main class name** (Имя класса Main) выберите или введите имя класса Main. В этой статье называется **GroupByTest**.
+    2. В поле **Main class name** (Имя класса Main) выберите или введите имя класса Main. В этой статье имя — **GroupByTest**.
 
 3. Нажмите кнопку **Submit** (Отправить). Журналы отправки заданий отображаются в окне инструмента отправки Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [создавать приложения Apache Spark для кластера HDInsight Spark на платформе Linux с помощью средств HDInsight в Azure Toolkit for IntelliJ](../spark/apache-spark-intellij-tool-plugin.md).
 

@@ -11,12 +11,12 @@ ms.date: 01/22/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: f273237431373aa69423ba244d4e7c509ffe7bfe
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.openlocfilehash: 7c7b2b75bdf8aa2be0ea9dd2b60453c2480fc1d2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57577115"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813430"
 ---
 # <a name="transform-data-in-the-cloud-by-using-spark-activity-in-azure-data-factory"></a>Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure
 В этом руководстве вы используете Azure PowerShell для создания конвейера фабрики данных, который преобразовывает данные с помощью действия Spark и служба, связанная по запросу HDInsight. В этом руководстве вы выполните следующие шаги:
@@ -137,7 +137,7 @@ ms.locfileid: "57577115"
 
 - **hostSubscriptionId**. Замените значение &lt;&gt; на идентификатор подписки Azure. В этой подписке создается кластер HDInsight по требованию. 
 - **tenant.** Замените &lt;tenantID&gt; на идентификатор своего клиента Azure. 
-- **servicePrincipalId**, **servicePrincipalKey**. Замените &lt;servicePrincipalID&gt; и &lt;servicePrincipalKey&gt; на идентификатор и ключ субъекта-службы в Azure Active Directory. Этому субъекту-службе должна быть назначена роли участника подписки или группы ресурсов, в которой создается кластер. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). 
+- **servicePrincipalId**, **servicePrincipalKey**. Замените &lt;servicePrincipalID&gt; и &lt;servicePrincipalKey&gt; на идентификатор и ключ субъекта-службы в Azure Active Directory. Этому субъекту-службе должна быть назначена роли участника подписки или группы ресурсов, в которой создается кластер. Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). **Идентификатор субъекта-службы** —это эквивалент *идентификатора приложения*, а **ключ субъекта-службы** — значения *секрета клиента*.
 - **clusterResourceGroup.** Замените &lt;resourceGroupOfHDICluster&gt; на имя группы ресурсов, в которой необходимо создать кластер HDInsight. 
 
 > [!NOTE]

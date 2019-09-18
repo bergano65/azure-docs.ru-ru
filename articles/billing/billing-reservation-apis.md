@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 08/02/2019
 ms.author: banders
 ms.openlocfilehash: 36bc403c4000e58541f22c2cb44f77a28e81cb72
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68779900"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
@@ -30,9 +30,9 @@ ms.locfileid: "68779900"
 
 ## <a name="buy-a-reservation"></a>Покупка резервирования
 
-Вы можете приобрести резервирование Azure и планы программного обеспечения программным путем с помощью API-интерфейсов RESTFUL. Дополнительные сведения см. в разделе [заказ на резервирование — API покупки](/rest/api/reserved-vm-instances/reservationorder/purchase).
+Вы можете покупать резервирование и планы программного обеспечения Azure с помощью интерфейсов REST API. Дополнительные сведения см. в статье [Reservation Order — Purchase](/rest/api/reserved-vm-instances/reservationorder/purchase) (Заказ на резервирование — покупка).
 
-Ниже приведен пример запроса на покупку с помощью REST API.
+Здесь приведен пример запроса для совершения покупки с помощью REST API:
 
 ```
 PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/<GUID>?api-version=2019-04-01
@@ -61,7 +61,7 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 }
 ```
 
-Вы также можете приобрести резервирование в портал Azure. Дополнительные сведения см. в следующих статьях:
+Резервирование можно приобрести на портале Azure. Дополнительные сведения см. в следующих статьях:
 
 Планы обслуживания:
 - [Виртуальная машина](../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json)
@@ -84,7 +84,7 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 - Убедитесь, что виртуальные машины, создаваемые в вашей организации, соответствует размеру виртуальной машины, указанному для резервирования.
 - Убедитесь, что включена гибкость размера экземпляра. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
 - Измените область резервирования на общую, чтобы она применялась шире. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
-- Обменяйте неиспользуемое количество. Дополнительные сведения см. в разделе [Управление резервированиями](billing-manage-reserved-vm-instance.md).
+- Обменяйте неиспользуемое количество. Дополнительные сведения см. в статье [Manage Reservations for Azure resources](billing-manage-reserved-vm-instance.md) (Управление зарезервированными ресурсами в Azure).
 
 ## <a name="give-access-to-reservations"></a>Предоставление доступа к резервированиям
 
@@ -104,11 +104,11 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 
 ## <a name="change-scope-for-a-reservation"></a>Изменение области резервирования
 
-Областью резервирования может быть одна подписка, одна группа ресурсов или все подписки в контексте выставления счетов. Если задать для области значение одна подписка или одна группа ресурсов, то резервирование будет сопоставляться с выполняемыми ресурсами в выбранной подписке. Если удалить или переместить подписку или группу ресурсов, резервирование не будет использоваться.  Если указывать общую область, то Azure сопоставляет резервирование с ресурсами, работающими во всех подписках в контексте выставления счетов. Контекст выставления счетов зависит от подписки, использованной для покупки резервирования. Вы можете выбрать область при покупке или изменить ее в любое время после покупки. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
+Областью резервирования может быть одна или все подписки, а также отдельная группа ресурсов в контексте выставления счетов. Если указывать область для одной подписки или отдельной группы ресурсов, резервирование сопоставляется с работающими в подписке ресурсами. Если удалить или переместить подписку или группу ресурсов, резервирование не будет использоваться.  Если указывать общую область, то Azure сопоставляет резервирование с ресурсами, работающими во всех подписках в контексте выставления счетов. Контекст выставления счетов зависит от подписки, использованной для покупки резервирования. Вы можете выбрать область при покупке или изменить ее в любое время. Дополнительные сведения см. в разделе [Изменение области для резервирования](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
 
 Чтобы программно изменить область, используйте API [обновления резервирования](/rest/api/reserved-vm-instances/reservation/update).
 
-## <a name="learn-more"></a>Подробнее...
+## <a name="learn-more"></a>Подробнее
 
 - [Общие сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
 - [Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure](billing-understand-vm-reservation-charges.md)

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по Node.js. Создание, загрузка индексов и отправка запросов к ним с помощью REST API Поиска Azure в службе "Поиск Azure"
+title: Краткое руководство. Создание индекса службы "Поиск Azure" в Node.js с помощью интерфейсов REST API
 description: Пример для Поиска Azure на Node.js, который демонстрирует создание, загрузку данных и выполнение запросов из JavaScript.
 author: lobrien
 manager: nitinme
@@ -8,16 +8,16 @@ services: search
 ms.service: search
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 07/30/2019
+ms.date: 09/10/2019
 ms.author: laobri
-ms.openlocfilehash: b22a6371522674895465afac88e68f556ab09bcb
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 4e17247ea412b5472a0c23fd74ff7e53f375710d
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656303"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881499"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-nodejs"></a>Краткое руководство. Создание индекса службы "Поиск Azure" с помощью Node.js
+# <a name="quickstart-create-an-azure-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Поиск Azure" в Node.js с помощью интерфейсов REST API
 > [!div class="op_single_selector"]
 > * [JavaScript](search-get-started-nodejs.md)
 > * [C#](search-get-started-dotnet.md)

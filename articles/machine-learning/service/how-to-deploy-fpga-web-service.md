@@ -1,7 +1,7 @@
 ---
 title: Что такое FPGA — как развернуть
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как развернуть веб-службу с моделью, работающей в FPGA со службой Машинное обучение Azure, для вывода невысокой задержки.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как развернуть веб-службу с моделью, работающей в FPGA, с Машинное обучение Azure для вывода с высокой задержкой.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: tedway
 author: tedway
 ms.date: 07/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8f95846844f9ff498b1b99a0b7a375f1c883457d
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 929ca8e16db73be5cfa226b5d55a30dbb7b2bc99
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860465"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034453"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 
-В этой статье приведены общие сведения о программируемых массивах шлюзов (FPGA) и показано, как развертывать модели с помощью службы Машинное обучение Azure в Azure FPGA. 
+В этой статье содержатся общие сведения о программируемых массивах шлюзов (FPGA) и показано, как развертывать модели с помощью Машинное обучение Azure в Azure FPGA. 
 
 ППВМ содержат массив программируемых логических блоков и иерархию настраиваемых взаимоподключений. Взаимоподключения позволяют настраивать эти блоки различными способами после производства. В отличие от других микросхем, ППВМ обеспечивают сочетание программируемости и производительности.
 
@@ -28,7 +28,7 @@ ms.locfileid: "70860465"
 
 На схеме и в таблице ниже показано сравнение ППВМ и других процессоров.
 
-![Схема сравнения ППВМ Службы машинного обучения Azure](./media/concept-accelerate-with-fpgas/azure-machine-learning-fpga-comparison.png)
+![Схема сравнения Машинное обучение Azure FPGA](./media/concept-accelerate-with-fpgas/azure-machine-learning-fpga-comparison.png)
 
 |Процессор||Описание|
 |---|:-------:|------|
@@ -89,7 +89,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure.  Если у вас ее нет, создайте бесплатную учетную запись перед началом работы. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+- Подписка Azure.  Если у вас ее нет, создайте бесплатную учетную запись перед началом работы. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 - Квота FPGA. Используйте Azure CLI, чтобы проверить, есть ли у вас квота:
 
@@ -112,7 +112,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
     Если у вас нет квоты, отправьте запрос по адресу [https://aka.ms/accelerateAI](https://aka.ms/accelerateAI).
 
-- Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения см. [в разделе Создание рабочей области](how-to-manage-workspace.md).
+- Должны быть установлены рабочая область машинного обучения Azure и пакет SDK машинного обучения Azure для Python. Дополнительные сведения см. [в разделе Создание рабочей области](how-to-manage-workspace.md).
  
 - Пакет SDK для Python для моделей с аппаратным ускорением:
 

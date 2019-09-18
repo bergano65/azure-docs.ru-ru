@@ -1,6 +1,6 @@
 ---
 title: Визуализация экспериментов с помощью TensorBoard
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Запустите TensorBoard для визуализации журналов запуска экспериментов и выявления потенциальных областей для настройки и повторного обучения параметров.
 services: machine-learning
 ms.service: machine-learning
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: maxluk
 ms.author: maxluk
 ms.date: 06/28/2019
-ms.openlocfilehash: 2e4527ba167076935505b668a7879e5f1446b25e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b96b80a735c0caee8a3aabaf19b04fd0e153ba6b
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856074"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034334"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинное обучение Azure
 
-Из этой статьи вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [ `tensorboard` пакета](https://docs.microsoft.com/python/api/azureml-tensorboard/?view=azure-ml-py) в основном пакете SDK для службы машинное обучение Azure. Проверив запуски экспериментов, вы сможете лучше настраивать и переучить модели машинного обучения.
+Из этой статьи вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [ `tensorboard` пакета](https://docs.microsoft.com/python/api/azureml-tensorboard/?view=azure-ml-py) в основном пакете SDK машинное обучение Azure. Проверив запуски экспериментов, вы сможете лучше настраивать и переучить модели машинного обучения.
 
 [TensorBoard](https://www.tensorflow.org/tensorboard/r1/overview) — это набор веб-приложений для изучения и понимания структуры и производительности экспериментов.
 
@@ -27,7 +27,7 @@ ms.locfileid: "68856074"
 
 + Для экспериментов, которые не выводят нестандартно TensorBoard файлы, например Scikit-учиться или машинное обучение Azure, используйте [ `export_to_tensorboard()` метод](#export) для экспорта журналов выполнения в качестве TensorBoard и запуска TensorBoard из него. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Чтобы запустить TensorBoard и просмотреть журналы запуска экспериментов, в экспериментах необходимо включить ранее ведение журнала для контроля метрик и производительности.  
 
@@ -43,7 +43,7 @@ ms.locfileid: "68856074"
 
     * Ваш собственный сервер записных книжек Жуптер
           * [Установка пакета SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) с `tensorboard` дополнительными
-          * [Создайте рабочую область Службы машинного обучения Azure](how-to-manage-workspace.md).  
+          * [Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md).  
           * [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
   
 <a name="direct"></a>
@@ -71,7 +71,7 @@ if not path.exists(exp_dir):
 
 ### <a name="download-tensorflow-demo-experiment-code"></a>Скачать демонстрационный код эксперимента TensorFlow
 
-В репозитории TensorFlow есть демонстрационная версия MNIST с расширенными инструментами TensorBoard. Для работы со службой Машинное обучение Azure не нужно вносить изменения в код этой демонстрационной версии. В следующем коде мы скачиваем код MNIST и сохраняем его в созданной папке эксперимента.
+В репозитории TensorFlow есть демонстрационная версия MNIST с расширенными инструментами TensorBoard. Для работы с Машинное обучение Azure не нужно вносить изменения в код этой демонстрационной версии. В следующем коде мы скачиваем код MNIST и сохраняем его в созданной папке эксперимента.
 
 ```python
 import requests

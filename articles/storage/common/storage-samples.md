@@ -1,18 +1,18 @@
 ---
 title: Примеры кода для службы хранилища Azure | Документация Майкрософт
-description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с BLOB-объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET, Java, Node.js и C++.
+description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с BLOB-объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET, Java, Python, Node.js и C++.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 06/03/2017
+ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: ad2881221d1c748016ff4f026ac8ffb3ed683f43
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 03a036ce5381130af4bbcea88c87d77cd93cf6a9
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721770"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743889"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -20,13 +20,6 @@ ms.locfileid: "68721770"
 
 ## <a name="azure-code-samples-library"></a>Библиотека примеров кода Azure
 Библиотека [примеров кода Azure](https://azure.microsoft.com/documentation/samples/?service=storage) содержит примеры для службы хранилища Azure, которые можно скачать и запустить локально. Пример библиотеки кода содержит пример кода в формате ZIP. Кроме того, можно просмотреть и клонировать репозиторий GitHub для каждого примера.
-
-<!--## Getting started samples-->
-<!-- after our quick starts are available, replace this link with a link to one of those. 
-Had to remove this article, it refers to the VS quickstarts, and they've stopped publishing them. Robin --> 
-<!--* [Get started with Azure Storage in five minutes](storage-getting-started-guide.md)
-* [Visual Studio Quick Starts for Azure Storage](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts)
--->
 
 ## <a name="net-samples"></a>Примеры для .NET
 Для просмотра примеров .NET загрузите [Клиентскую библиотеку хранилища .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) на NuGet. Клиентская библиотека хранилища .NET также доступна в [пакете Azure SDK для .NET](https://azure.microsoft.com/downloads/).
@@ -37,6 +30,12 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 Для просмотра примеров Java загрузите [Клиентскую библиотеку хранилища Java](https://github.com/azure/azure-storage-java).
 
 * [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+
+## <a name="python-samples"></a>Примеры для Python
+Для просмотра примеров Python скачайте [клиентскую библиотеку хранилища Python](https://github.com/azure/azure-storage-python).
+
+* [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
+
 
 ## <a name="nodejs-samples"></a>Примеры для Node.js
 Для просмотра примеров Node.js загрузите [Клиентскую библиотеку хранилища Node.js](https://github.com/Azure/azure-storage-node).
@@ -60,8 +59,9 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 
 | Язык | Справочник по API | Исходный код |
 |----------|---------------|-------------|
-| .NET | [Справочник по клиентской библиотеке .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
+| .NET | [Справочник по клиентской библиотеке .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
 | Java | [Справочник по клиентской библиотеке Java](https://docs.microsoft.com/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |
+| Python | [Справочник по клиентской библиотеке Python](https://azure-storage.readthedocs.io/) | [Исходный код для клиентской библиотеки хранилища Python](https://github.com/Azure/azure-storage-p[ython]) |
 | Node.js | [Справочник по клиентской библиотеке Node.js](https://azure.github.io/azure-storage-node) | [Исходный код для клиентской библиотеки хранилища Node.js](https://github.com/Azure/azure-storage-node) |
 | C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-storage-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-storage-cpp)|
 
@@ -71,3 +71,4 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 
 * [Примеры для службы хранилища Azure с использованием .NET](storage-samples-dotnet.md)
 * [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)

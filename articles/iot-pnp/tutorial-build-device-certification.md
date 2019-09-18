@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 151f6609375063a68a848f4c799af0b459124f23
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 019b2ba0fd87610195ca9e6c7cb749be9542bd72
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047905"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858857"
 ---
 # <a name="build-an-iot-plug-and-play-preview-device-thats-ready-for-certification"></a>Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "70047905"
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
-- [Расширение Azure IoT Workbench для VS Code](https://github.com/Azure/Azure-IoT-PnP-Preview/blob/master/VSCode/README.md#installation).
+- Пакет расширения [Azure IoT Tools для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
 Кроме того, вам потребуется устройство IoT Plug and Play, созданное при изучении статьи [Quickstart: Use a device capability model to create an IoT Plug and Play device](quickstart-create-pnp-device.md) (Краткое руководство по созданию устройства с помощью модели возможностей устройств).
 

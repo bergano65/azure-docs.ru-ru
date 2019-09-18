@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок представления расходов предприятия в Azure
+title: Устранение неполадок с представлениями корпоративных затрат в Azure
 description: Узнайте, как устранить все проблемы, связанные с представлением организационных затрат в пределах портала Azure.
 author: bandersmsft
 manager: amberb
@@ -12,10 +12,10 @@ ms.date: 07/01/2019
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 83f7f424b265582a3830c02973cbbb9962ddfbfb
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67491278"
 ---
 # <a name="troubleshoot-enterprise-cost-views"></a>Устранение неполадок в представлении затрат на условиях соглашения Enterprise
@@ -39,11 +39,11 @@ ms.locfileid: "67491278"
 
 ## <a name="asset-is-unavailable"></a>Ресурс недоступен
 
-Если вы получаете сообщение об ошибке **этот ресурс недоступен** при попытке доступа к подписке или группе управления, у вас нет определенная роль, чтобы просмотреть этот элемент.  
+Если при попытке получить доступ к подписке или группе управления вы получили сообщение об ошибке, констатирующее, что **ресурс недоступен**, значит вам не назначена определенная роль, чтобы просмотреть этот элемент.  
 
 ![Снимок экрана: сообщение "ресурс недоступен".](media/billing-enterprise-mgmt-groups/asset-not-found.png)
 
 Чтобы получить доступ, попросите администратора подписки Azure или группы управления. Дополнительные сведения см. в статье [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

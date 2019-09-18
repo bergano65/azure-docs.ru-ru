@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/11/2019
-ms.openlocfilehash: 1e30650f932d15d23d7ffe7bd9b9fe07e9872511
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 64062aeab9a807d2aee7f4bca05d4019a3d9b736
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69891615"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858633"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-visual-interface"></a>Руководство по развертыванию модели машинного обучения с помощью графического интерфейса
 
@@ -118,6 +118,8 @@ ms.locfileid: "69891615"
 1. Выберите **Развертывания**, после чего будут перечислены все веб-службы, использующие модель. Выберите имя веб-службы. После этого вы перейдете на страницу сведений о веб-службе. На этой странице можно получить более подробные сведения о веб-службе.
 
     [![Снимок экрана с подробным отчетом о выполнении](./media/ui-tutorial-automobile-price-deploy/deployment-details.png)](./media/ui-tutorial-automobile-price-deploy/deployment-details.png#lightbox)
+
+Эти модели и развертывания можно также найти в разделах **моделей** и **конечных точек** на [целевой странице рабочей области (предварительная версия)](https://ml.azure.com).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

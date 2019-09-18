@@ -1,31 +1,31 @@
 ---
 title: Краткое руководство. Распознавание речи с помощью C# (UWP) в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы преобразуете речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2017.
+description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы преобразуете речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2019.
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/23/2019
+ms.date: 08/19/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 5ea75f1956b70b6bfebebcf29e27542eba0ca0cf
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: fe5ff376a7895e2ca5246c0b9eb575752b07c7a1
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839949"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382285"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении для универсальной платформы Windows с помощью пакета SDK службы "Речь"
 
-Кроме того, доступны краткие руководства по [преобразованию текста в речь](quickstart-text-to-speech-csharp-uwp.md), [переводу речи](quickstart-translate-speech-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
+Также доступны краткие руководства по [синтезу речи](quickstart-text-to-speech-csharp-uwp.md), [переводу речи](quickstart-translate-speech-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
 
 При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows (Windows 1709 или более поздней версии) с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services. Программа будет преобразовывать речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
+Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services. Программа преобразовывает речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019 (любого выпуска).
 
 > [!NOTE]
 > Универсальная платформа Windows позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройств.
@@ -34,8 +34,8 @@ ms.locfileid: "68839949"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -43,37 +43,43 @@ ms.locfileid: "68839949"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Пользовательский интерфейс приложения определяется с помощью XAML. Откройте `MainPage.xaml` в обозревателе решений. В представлении XAML конструктора вставьте следующий фрагмент кода XAML в тег Grid (между `<Grid>` и `</Grid>`).
+Теперь добавьте XAML-код, определяющий пользовательский интерфейс приложения, и добавьте реализацию C# кода программной части.
+
+1. Откройте `MainPage.xaml` в **обозревателе решений**.
+
+1. В представлении XAML конструктора вставьте следующий фрагмент кода XAML в тег **Grid** (между `<Grid>` и `</Grid>`):
 
    [!code-xml[UI elements](~/samples-cognitive-services-speech-sdk/quickstart/csharp-uwp/helloworld/MainPage.xaml#StackPanel)]
 
-1. Откройте исходный файл с кодом `MainPage.xaml.cs` (он находится в группе `MainPage.xaml`). Замените все содержимое приведенным ниже кодом.
+1. В **Обозревателе решений** откройте исходный файл кода программной части `MainPage.xaml.cs`. (Он сгруппирован в `MainPage.xaml`.)
+
+1. Замените все содержимое следующим фрагментом кода:
 
    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp-uwp/helloworld/MainPage.xaml.cs#code)]
 
-1. В обработчике `SpeechRecognitionFromMicrophone_ButtonClicked` этого файла замените строку `YourSubscriptionKey` своим ключом подписки.
+1. В обработчике `SpeechRecognitionFromMicrophone_ButtonClicked` исходного файла найдите строку `YourSubscriptionKey` и замените ее своим ключом подписки.
 
-1. В обработчике `SpeechRecognitionFromMicrophone_ButtonClicked` замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. В обработчике `SpeechRecognitionFromMicrophone_ButtonClicked` найдите строку `YourServiceRegion` и замените ее названием [региона](regions.md), связанного с вашей подпиской. (Например, используйте `westus` для подписки с бесплатной пробной версией.)
 
-1. Сохраните все внесенные в проект изменения.
+1. В строке меню выберите **Файл** > **Сохранить все**, чтобы сохранить изменения.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+Теперь все готово для сборки и тестирования приложения.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-uwp-08-build.png "Успешная сборка")
+1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. Выберите **Отладка** > **Начать отладку**(или нажмите клавишу **F5**), чтобы запустить приложение. Откроется окно **helloworld**.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-uwp-09-start-debugging.png "Start the app into debugging")
+   ![Пример приложения для распознавания речи в UWP на языке C# — краткое руководство](media/sdk/qs-csharp-uwp-helloworld-window.png)
 
-1. Откроется окно. Выберите**Включить микрофон** и подтвердите разрешение в появившемся окне запроса.
+1. Выберите **Включить микрофон**, а когда появится запрос на разрешение доступа, выберите **Да**.
 
-    ![Снимок экрана запроса разрешения](media/sdk/qs-csharp-uwp-10-access-prompt.png "Запуск отладки приложения")
+   ![Запрос на разрешение доступа к микрофону](media/sdk/qs-csharp-uwp-10-access-prompt.png)
 
-1. Щелкните **Распознавание речи с помощью микрофона** и произнесите фразу или предложение на английском языке в микрофон вашего устройства. Ваша речь передается в службу "Речь" и преобразовывается в текст, который появляется в том же окне.
+1. Щелкните **Распознавание речи с помощью микрофона** и произнесите фразу или предложение на английском языке в микрофон вашего устройства. Ваша речь передается в службу "Речь" и преобразуется в текст, который появляется в том же окне.
 
-    ![Снимок экрана пользовательского интерфейса распознавания речи](media/sdk/qs-csharp-uwp-11-ui-result.png)
+   ![Пользовательский интерфейс распознавания речи](media/sdk/qs-csharp-uwp-11-ui-result.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -82,6 +88,5 @@ ms.locfileid: "68839949"
 
 ## <a name="see-also"></a>См. также
 
-- [Translate speech using Speech service](how-to-translate-speech-csharp.md) (Перевод речи с помощью службы распознавания речи)
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [Краткое руководство Перевод речи с помощью пакета SDK службы "Речь" для C# (UWP)](quickstart-translate-speech-uwp.md)
+- [Train a model for Custom Speech](how-to-custom-speech-train-model.md) (Обучение модели для Пользовательского распознавания речи)

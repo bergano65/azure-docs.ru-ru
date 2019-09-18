@@ -1,20 +1,19 @@
 ---
-title: Настройка аварийного восстановления для виртуальных машин Hyper-V между локальными сайтами с помощью службы Azure Site Recovery | Документация Майкрософт
+title: Настройка аварийного восстановления для виртуальных машин Hyper-V между локальными сайтами с помощью службы Azure Site Recovery
 description: Сведения о настройке аварийного восстановления для виртуальных машин Hyper-V между локальными сайтами с помощью службы Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 067040349a5d435860492497dddbf39aad2635eb
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: a2eb8bf10454ee01953ddd37025f0c0048d00a0a
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66398403"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813762"
 ---
 # <a name="set-up-disaster-recovery-for-hyper-v-vms-to-a-secondary-on-premises-site"></a>Настройка аварийного восстановления для виртуальных машин Hyper-V на дополнительный локальный сайт
 
@@ -156,4 +155,4 @@ ms.locfileid: "66398403"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Run a disaster recovery drill to Azure](hyper-v-vmm-test-failover.md) (Выполнение отработки аварийного восстановления в Azure)
+[Выполнение отработки аварийного восстановления](hyper-v-vmm-test-failover.md)

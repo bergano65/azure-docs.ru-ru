@@ -1,18 +1,18 @@
 ---
-title: 'Учебник: настройка политик Apache HBase в HDInsight с Корпоративным пакетом безопасности — Azure'
+title: Руководство по настройке Apache HBase с Корпоративным пакетом безопасности — Azure
 description: 'Учебник: сведения о настройке политик Apache Ranger для HBase в Azure HDInsight с Корпоративным пакетом безопасности.'
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
-ms.date: 06/18/2019
-ms.openlocfilehash: 04592ba307cd696c20778d4a79f03be2eb0ac987
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.date: 09/04/2019
+ms.openlocfilehash: 72e268628560618fb6fa47843f5125d9126a9f3e
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274399"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885157"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
 
@@ -100,7 +100,7 @@ ms.locfileid: "67274399"
 
 2. На экране **List of Policies** (Список политик) отобразятся все политики Ranger, созданные для этого кластера. Может быть указана одна предварительно настроенная политика. Щелкните **Add New Policy** (Добавить новую политику).
 
-    ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png)
+    ![Список политик Apache Ranger HBase](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png)
 
 3. На экране **Create Policy** (Создание политики) введите следующие значения.
 
@@ -119,7 +119,7 @@ ms.locfileid: "67274399"
    * `*` обозначает ноль или более вхождений символов.
    * `?` означает один символ.
 
-   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png)
+   ![Создание политики Ranger для пользователей sales](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png)
 
    >[!NOTE]
    >Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
@@ -138,7 +138,7 @@ ms.locfileid: "67274399"
    |Выберите пользователя  | marketing_user1 |
    |Разрешения  | Чтение |
 
-   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
+   ![Создание политики Ranger для пользователей marketing](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
 
 6. Щелкните **Добавить**, чтобы сохранить политику.
 
@@ -146,7 +146,7 @@ ms.locfileid: "67274399"
 
 В зависимости от настроенных политик Ranger, пользователь **sales_user1** может просматривать все данные столбцов в семействах столбцов `Name` и `Contact`. Пользователь **marketing_user1** может просматривать данные только в семействе столбцов `Contact`.
 
-### <a name="access-data-as-salesuser1"></a>Получение доступа к данным как пользователь sales_user1
+### <a name="access-data-as-sales_user1"></a>Получение доступа к данным как пользователь sales_user1
 
 1. Откройте новое подключение SSH к кластеру. Чтобы войти в кластер, выполните следующую команду:
 
@@ -188,7 +188,7 @@ ms.locfileid: "67274399"
     2 row(s) in 0.1000 seconds
     ```
 
-### <a name="access-data-as-marketinguser1"></a>Получение доступа к данным как пользователь marketing_user1
+### <a name="access-data-as-marketing_user1"></a>Получение доступа к данным как пользователь marketing_user1
 
 1. Откройте новое подключение SSH к кластеру. Выполните следующую команду, чтобы войти от имени пользователя **marketing_user1**.
 

@@ -9,12 +9,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: e05dbc570836741a69ed229fc93eb32a7dfd01dd
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 523c722edd3e76a291ae753ec7c3482e19ca7e24
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503180"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845717"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
@@ -84,7 +84,7 @@ az aks create -g MyResourceGroup -n MyAKS --location <region> --disable-rbac --g
 Для разработчиков .NET Core и Node.js, которые используют VS Code, доступны широкие возможности, такие как функция отладки Kubernetes.
 
 1. Если у вас не установлен язык [VS Code](https://code.visualstudio.com/Download), установите его.
-1. Скачайте и установите [ расширение VS Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Один раз щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code. 
+1. Скачайте и установите расширение [VS Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) и расширения для работы с [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). Для каждого расширения щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code.
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 

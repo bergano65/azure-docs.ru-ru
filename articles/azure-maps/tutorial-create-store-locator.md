@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 4cc21a4dbab7d5114eed8414c6530eab5f42bb00
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 2b68da881edd0406a85692d6e0586427a57b7806
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478859"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916440"
 ---
 # <a name="create-a-store-locator-by-using-azure-maps"></a>Создание указателя магазинов с помощью Azure Maps
 
@@ -35,7 +35,7 @@ ms.locfileid: "68478859"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить действия, описанные в этом руководстве, сначала [создайте учетную запись Azure Maps](./tutorial-search-location.md#createaccount) и [получите для нее ключ подписки](./tutorial-search-location.md#getkey).
+Чтобы выполнить действия, описанные в этом руководстве, сначала [создайте учетную запись Azure Maps](./tutorial-search-location.md#createaccount) и выполните инструкции из раздела [Получение первичного ключа для учетной записи](./tutorial-search-location.md#getkey).
 
 ## <a name="design"></a>Проектирование
 

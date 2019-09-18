@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 07/04/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 011fb262ff91c56269c5b7dc9adf4aaeab9acbd5
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 612d2e3a9a5a324f7d6d8e1b63b6b7e297047239
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68229054"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063837"
 ---
 # <a name="select-a-page-layout-in-azure-active-directory-b2c-using-custom-policies"></a>Выбор макета страницы в Azure Active Directory B2C с помощью настраиваемых политик
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Вы можете включить клиентский код JavaScript Azure Active Directory в политиках B2C (Azure AD), независимо от того, используете ли вы пользовательские потоки или пользовательские политики. Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](active-directory-b2c-overview-custom.md), выбрать макет страницы и использовать [b2clogin.com](b2clogin.md) в запросах.
+Вы можете включить клиентский код JavaScript в политиках Azure Active Directory B2C (Azure AD B2C) независимо от того, используете ли вы пользовательские потоки или пользовательские политики. Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](active-directory-b2c-overview-custom.md), выбрать макет страницы и использовать [b2clogin.com](b2clogin.md) в запросах.
 
 Макет страницы — это ассоциация элементов, которые Azure AD B2C предоставляет и предоставленное вами содержимое.
 

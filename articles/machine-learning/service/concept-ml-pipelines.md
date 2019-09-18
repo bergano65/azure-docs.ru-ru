@@ -1,6 +1,6 @@
 ---
 title: Что такое конвейеры машинного обучения
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: В этой статье описываются конвейеры машинного обучения, которые можно создать с помощью пакета SDK для службы "Машинное обучение Azure" для Python, и преимущества их использования. Конвейеры машинного обучения используются специалистами по обработке и анализу данных для создания, оптимизации и администрирования рабочих процессов машинного обучения.
 services: machine-learning
 ms.service: machine-learning
@@ -11,16 +11,16 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2547ca3af3039af53cb5fd5b244669b9152c21b3
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 07efde7c3664ba1866e59f23c31b9c385ed9c366
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70993286"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71035490"
 ---
-# <a name="what-are-ml-pipelines-in-azure-machine-learning-service"></a>Что такое конвейеры машинного обучения в службе Машинное обучение Azure?
+# <a name="what-are-ml-pipelines-in-azure-machine-learning"></a>Что такое конвейеры машинного обучения в Машинное обучение Azure?
 
-Узнайте о конвейерах машинного обучения, которые можно создавать и администрировать с помощью службы Машинное обучение Azure. 
+Узнайте о конвейерах машинного обучения, которые можно создавать и администрировать с помощью Машинное обучение Azure. 
 
 При помощи конвейеров машинного обучения ученые и инженеры, работающие с данными, а также ИТ-специалисты могут совместно выполнять следующие действия:
 + подготовка данных, в частности нормализация и преобразование;
@@ -30,7 +30,7 @@ ms.locfileid: "70993286"
 
 Узнайте, как [создать свой первый конвейер](how-to-create-your-first-pipeline.md).
 
-![Конвейеры машинного обучения в Службе машинного обучения Azure](./media/concept-ml-pipelines/pipeline-flow.png)
+![Конвейеры машинного обучения в Машинное обучение Azure](./media/concept-ml-pipelines/pipeline-flow.png)
 
 <a name="compare"></a>
 ### <a name="which-azure-pipeline-technology-should-i-use"></a>Какую технологию конвейера Azure следует использовать?

@@ -1,21 +1,21 @@
 ---
-title: 'Учебник по Azure Toolkit for IntelliJ: создание приложений Spark для кластера HDInsight'
+title: 'Учебник по Azure Toolkit for IntelliJ: Приложение Spark для кластера HDInsight'
 description: Учебник. Разработка приложений Spark на языке Scala и их отправка в кластер HDInsight Spark с помощью Azure Toolkit for IntelliJ.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
-ms.date: 06/26/2019
+ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: 32f5ff2ebc9d938b1936d7f2929af83d552a543d
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: b13eb6f61aed37344e0df3c864e021f68a4ca85b
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489861"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900285"
 ---
-# <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Руководство по Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
+# <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-hdinsight-cluster"></a>Руководство по Использование Azure Toolkit for IntelliJ для создания приложений Apache Spark для кластера HDInsight
 
 В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в кластер HDInsight Spark непосредственно из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
 
@@ -135,27 +135,27 @@ ms.locfileid: "68489861"
 
 1. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer**.
        
-   ![Ссылка на Azure Explorer](./media/apache-spark-intellij-tool-plugin/show-azure-explorer.png)
+   ![Отображение Azure Explorer](./media/apache-spark-intellij-tool-plugin/show-azure-explorer.png)
 
 2. В Azure Explorer щелкните правой кнопкой мыши узел **Azure**, а затем выберите **Войти**.
    
-   ![Ссылка на Azure Explorer](./media/apache-spark-intellij-tool-plugin/explorer-rightclick-azure.png)
+   ![Щелчок правой кнопкой мыши в Azure Explorer](./media/apache-spark-intellij-tool-plugin/explorer-rightclick-azure.png)
 
 3. В диалоговом окне **Вход в Azure** выберите **Имя пользователя устройства**, а затем — **Войти**.
 
-    ![Диалоговое окно входа в Azure](./media/apache-spark-intellij-tool-plugin/view-explorer-2.png)
+    ![Вид Azure Explorer 2](./media/apache-spark-intellij-tool-plugin/view-explorer-2.png)
 
 4. В диалоговом окне **Azure Device Login** (Вход в систему устройства Azure) щелкните **Copy&Open** (Копировать и открыть).
    
-   ![Диалоговое окно входа в Azure](./media/apache-spark-intellij-tool-plugin/view-explorer-5.png)
+   ![Вид Azure Explorer 5](./media/apache-spark-intellij-tool-plugin/view-explorer-5.png)
 
 5. В интерфейсе браузера вставьте код и нажмите кнопку **Далее**.
    
-   ![Диалоговое окно входа в Azure](./media/apache-spark-intellij-tool-plugin/view-explorer-6.png)
+   ![Вид Azure Explorer 6](./media/apache-spark-intellij-tool-plugin/view-explorer-6.png)
 
 6. Введите учетные данные Azure и закройте браузер.
    
-   ![Диалоговое окно входа в Azure](./media/apache-spark-intellij-tool-plugin/view-explorer-7.png)
+   ![Вид Azure Explorer 7](./media/apache-spark-intellij-tool-plugin/view-explorer-7.png)
 
 7. После входа в диалоговом окне **Select Subscriptions** (Выбор подписок) будут перечислены все подписки Azure, связанные с указанными учетными данными. Выберите свою подписку, а затем нажмите кнопку **Выбрать**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "68489861"
 
 8. В **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight Spark в своей подписке.
 
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-3.png)
+    ![Вид Azure Explorer 3](./media/apache-spark-intellij-tool-plugin/view-explorer-3.png)
 
 9.  Далее можно развернуть узел имени кластера, чтобы увидеть ресурсы (например, учетные записи хранения), связанные с ним.
 
@@ -213,7 +213,7 @@ ms.locfileid: "68489861"
 
 2. В **обозревателе Azure** также можно удалить связь кластера.
 
-   ![кластер с удаленной связью](./media/apache-spark-intellij-tool-plugin/unlink.png)
+   ![кластер с удаленной связью](./media/apache-spark-intellij-tool-plugin/hdi-unlinked-cluster.png)
 
 ## <a name="run-a-spark-scala-application-on-an-hdinsight-spark-cluster"></a>Запуск приложения Spark Scala в кластере HDInsight Spark
 
@@ -377,17 +377,17 @@ ms.locfileid: "68489861"
        
 2. В **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight в своей подписке. Кластеры с пометкой **Role:Reader**, имеют только разрешение роли только для чтения.
 
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-15.png)
+    ![Вид Azure Explorer 15](./media/apache-spark-intellij-tool-plugin/view-explorer-15.png)
 
 3. Щелкните правой кнопкой мыши кластер с разрешением роли только для чтения. Выберите **Link this cluster** (Связать этот кластер) из контекстного меню, чтобы связать кластер. Введите имя пользователя и пароль Ambari.
 
   
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-11.png)
+    ![Вид Azure Explorer 11](./media/apache-spark-intellij-tool-plugin/view-explorer-11.png)
 
 4. Если кластер связан успешно, HDInsight будет обновлен.
    Этап кластера станет связанным.
   
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-8.png)
+    ![Вид Azure Explorer 8](./media/apache-spark-intellij-tool-plugin/view-explorer-8.png)
 
 ### <a name="link-cluster-by-expanding-jobs-node"></a>Связывание кластера путем развертывания узла "Задания"
 
@@ -395,7 +395,7 @@ ms.locfileid: "68489861"
    
 2. Щелкните **Link this cluster** (Связать этот кластер), чтобы связать кластер.
    
-    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-9.png)
+    ![Вид Azure Explorer 9](./media/apache-spark-intellij-tool-plugin/view-explorer-9.png)
 
 ### <a name="link-cluster-from-rundebug-configurations-window"></a>Связывание кластера из окна Run/Debug Configurations (Конфигурации запуска и отладки)
 
@@ -403,21 +403,21 @@ ms.locfileid: "68489861"
    
 2. Выберите кластер, у которого есть разрешение роли только для чтения для **Spark clusters(Linux only)** (Кластеры Spark (только Linux)). Появится сообщение с предупреждением. Вы можете щелкнуть **Link this cluster** (Связать этот кластер), чтобы связать кластер.
    
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/create-config-1.png)
+   ![Создание конфигурации 1](./media/apache-spark-intellij-tool-plugin/create-config-1.png)
    
 ### <a name="view-storage-accounts"></a>Просмотр учетных записей хранения
 
 * Для кластеров с разрешением роли только для чтения щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). Выберите **Открыть обозреватель службы хранилища Azure**, чтобы открыть Обозреватель службы хранилища.
      
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-14.png)
+   ![Вид Azure Explorer 14](./media/apache-spark-intellij-tool-plugin/view-explorer-14.png)
 
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-10.png)
+   ![Вид Azure Explorer 10](./media/apache-spark-intellij-tool-plugin/view-explorer-10.png)
 
 * Для связанных кластеров щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). Выберите **Открыть обозреватель службы хранилища Azure**, чтобы открыть Обозреватель службы хранилища.
      
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-13.png)
+   ![Вид Azure Explorer 13](./media/apache-spark-intellij-tool-plugin/view-explorer-13.png)
 
-   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-intellij-tool-plugin/view-explorer-12.png)
+   ![Вид Azure Explorer 12](./media/apache-spark-intellij-tool-plugin/view-explorer-12.png)
 
 ## <a name="convert-existing-intellij-idea-applications-to-use-azure-toolkit-for-intellij"></a>Преобразование имеющихся приложений IntelliJ IDEA для использования набора средств Azure для IntelliJ
 

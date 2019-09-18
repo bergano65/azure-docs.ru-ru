@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 04/12/2019
+ms.date: 09/09/2019
 ms.author: helohr
-ms.openlocfilehash: 44c823653ecbad1c4dd1fd35b676c8a6d8bd1620
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: a9b5eecd97b078c9446e28d971f900c4cf65130f
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206662"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845536"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
 
@@ -38,13 +38,9 @@ ms.locfileid: "67206662"
     Install-Module AzureAD
     ```
 
-2. Запустите указанные ниже командлеты, заменив значения в кавычках значениями для своего сеанса.
+2. [Скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview).
 
-    ```powershell
-    $myTenantName = "<my-tenant-name>"
-    ```
-
-3. Вам нужно выполнить все инструкции в этой статье в рамках одного сеанса PowerShell. Если вы закроете оно и продолжите позже, операция, возможно, не будет выполнена.
+3. Вам нужно выполнить все инструкции в этой статье в рамках одного сеанса PowerShell. Этот процесс может не выполняться при прерывании сеанса PowerShell путем закрытия окна и его повторного открытия.
 
 ## <a name="create-a-service-principal-in-azure-active-directory"></a>Создание субъекта-службы в Azure Active Directory
 
@@ -56,34 +52,9 @@ $aadContext = Connect-AzureAD
 $svcPrincipal = New-AzureADApplication -AvailableToOtherTenants $true -DisplayName "Windows Virtual Desktop Svc Principal"
 $svcPrincipalCreds = New-AzureADApplicationPasswordCredential -ObjectId $svcPrincipal.ObjectId
 ```
-
-## <a name="create-a-role-assignment-in-windows-virtual-desktop-preview"></a>Создание назначения роли в предварительной версии Виртуального рабочего стола Windows
-
-Теперь, создав субъект-службу, вы можете воспользоваться им для входа в Виртуальный рабочий стол Windows. Обязательно войдите с учетной записью, у которой есть разрешения на создание назначений ролей.
-
-Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
-
-Запустите указанные ниже командлеты PowerShell, чтобы подключиться к Виртуальному рабочему столу Windows и создать назначение роли для субъекта-службы.
-
-```powershell
-Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
-New-RdsRoleAssignment -RoleDefinitionName "RDS Owner" -ApplicationId $svcPrincipal.AppId -TenantName $myTenantName
-```
-
-## <a name="sign-in-with-the-service-principal"></a>Вход с помощью субъекта-службы
-
-После создания назначения ролей для субъекта-службы удостоверьтесь, что субъект-служба может войти в Виртуальный рабочий стол Windows, запустив следующий командлет:
-
-```powershell
-$creds = New-Object System.Management.Automation.PSCredential($svcPrincipal.AppId, (ConvertTo-SecureString $svcPrincipalCreds.Value -AsPlainText -Force))
-Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $creds -ServicePrincipal -AadTenantId $aadContext.TenantId.Guid
-```
-
-Войдя, убедитесь, что все работает правильно, протестировав несколько командлетов PowerShell в Виртуальном рабочем столе Windows с использованием субъекта-службы.
-
 ## <a name="view-your-credentials-in-powershell"></a>Просмотр учетных данных в PowerShell
 
-Прежде чем завершить сеанс PowerShell, просмотрите свои учетные данные и запишите их для дальнейшего использования. Особенно это касается пароля, так как вы не сможете получить его после закрытия этого сеанса PowerShell.
+Прежде чем создавать назначение ролей для субъекта-службы, просмотрите учетные данные и запишите их для дальнейшего использования. Особенно это касается пароля, так как вы не сможете получить его после закрытия этого сеанса PowerShell.
 
 Ниже приведены учетные данные, которые вам нужно записать, и командлеты, которые необходимо запустить, чтобы получить их.
 
@@ -104,6 +75,36 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $
     ```powershell
     $svcPrincipal.AppId
     ```
+
+## <a name="create-a-role-assignment-in-windows-virtual-desktop-preview"></a>Создание назначения роли в предварительной версии Виртуального рабочего стола Windows
+
+Затем необходимо создать назначение ролей, чтобы субъект-служба мог войти в Виртуальный рабочий стол Windows. Обязательно войдите с учетной записью, у которой есть разрешения создавать назначения ролей.
+
+Сначала [скачайте и импортируйте модуль PowerShell для Виртуального рабочего стола Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) для использования в сеансе PowerShell (если вы еще это не сделали).
+
+Выполните следующие командлеты PowerShell, чтобы подключиться к Виртуальному рабочему столу Windows и отобразить клиенты.
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+Get-RdsTenant
+```
+
+Когда вы обнаружите имя клиента, для которого нужно создать назначение ролей, включите это имя в следующий командлет:
+
+```powershell
+New-RdsRoleAssignment -RoleDefinitionName "RDS Owner" -ApplicationId $svcPrincipal.AppId -TenantName $myTenantName
+```
+
+## <a name="sign-in-with-the-service-principal"></a>Вход с помощью субъекта-службы
+
+После создания назначения ролей для субъекта-службы удостоверьтесь, что субъект-служба может войти в Виртуальный рабочий стол Windows, запустив следующий командлет:
+
+```powershell
+$creds = New-Object System.Management.Automation.PSCredential($svcPrincipal.AppId, (ConvertTo-SecureString $svcPrincipalCreds.Value -AsPlainText -Force))
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $creds -ServicePrincipal -AadTenantId $aadContext.TenantId.Guid
+```
+
+Войдя, убедитесь, что все работает правильно, протестировав несколько командлетов PowerShell в Виртуальном рабочем столе Windows с использованием субъекта-службы.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

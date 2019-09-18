@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 706bcbed39ca2a3fe0a38eba864edb863c31b4ec
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 44a076ee6979e207ac3992f76d3b89cc188d53b8
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70884041"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076298"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-apache-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio
 
@@ -83,7 +83,7 @@ ms.locfileid: "70884041"
 
 4. В обозреватель сервера отображается список существующих кластеров HDInsight. Если кластеров нет в наличии, их можно создать с помощью портала Azure, оболочки Azure PowerShell или пакета SDK для HDInsight. Дополнительные сведения см. в статье [Создание кластеров Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 
-   ![Снимок экрана со списком кластеров для средств Data Lake для Visual Studio в обозревателе сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-server-explorer.png "Список кластеров для средств Data Lake для Visual Studio в обозревателе сервера")
+   ![Список кластеров средств Data Lake для Visual Studio в обозреватель сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-server-explorer.png "Список кластеров средств Data Lake для Visual Studio в обозреватель сервера")
 
 5. Разверните кластер HDInsight. Отобразятся **базы данных Hive**, учетная запись хранения по умолчанию, связанные учетные записи хранения и **журнал службы Hadoop** . Развертывание объектов можно продолжить.
 
@@ -113,11 +113,11 @@ ms.locfileid: "70884041"
 ## <a name="explore-linked-resources"></a>Анализ связанных ресурсов
 В обозревателе сервера отобразятся учетная запись хранения по умолчанию и все связанные учетные записи хранения. Если развернуть учетную запись хранения по умолчанию, отобразятся контейнеры в учетной записи хранения. Учетная запись хранения по умолчанию и контейнер по умолчанию отмечены. Можно просмотреть содержимое любого контейнера, щелкнув его правой кнопкой мыши.
 
-![Снимок экрана со списком связанных ресурсов для средств Data Lake для Visual Studio в обозревателе сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-linked-resources.png "Список связанных ресурсов")
+![Средства Data Lake для связанных ресурсов Visual Studio в обозреватель сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-linked-resources.png "Перечисление связанных ресурсов")
 
 Когда контейнер откроется, с помощью следующих кнопок вы сможете передавать, удалять и скачивать большие двоичные объекты.
 
-![Снимок экрана операций с большими двоичными объектами для средств Data Lake для Visual Studio в обозревателе сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-blob-operations.png "Обновление, удаление и загрузка больших двоичных объектов в обозревателе сервера")
+![Data Lake инструментов для операций с BLOB-объектами Visual Studio в обозреватель сервера](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-blob-operations.png "Отправка, удаление и скачивание больших двоичных объектов в обозреватель сервера")
 
 ## <a name="run-interactive-apache-hive-queries"></a>Выполнение интерактивных запросов Apache Hive
 [Apache Hive](https://hive.apache.org) — это инфраструктура хранилища данных, встроенная в Hadoop. Hive используется, чтобы обобщать, запрашивать и анализировать данные. Средства Data Lake для Visual Studio поддерживают выполнение запросов Hive из Visual Studio. Дополнительные сведения о Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hdinsight-use-hive.md).
@@ -201,7 +201,7 @@ ms.locfileid: "70884041"
 
       Убедитесь, что выбран **пакет** , и нажмите кнопку **Отправить**.  Если выбран параметр дополнительные отправки, настройте **имя задания**, **аргументы**, **дополнительные конфигурации**и **Каталог состояния** для скрипта.
 
-      ![Снимок экрана запроса и пакетной службы](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-batch.png)  
+      ![Параметры запросов и пакетной службы Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-query-batch.png)  
 
       ![Снимок экрана запроса Hive в HDInsight Hadoop](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-submit-jobs-advanced.png "Отправка запросов")
 
@@ -224,7 +224,7 @@ ms.locfileid: "70884041"
 
 Сводка по заданию незначительно различается в **пакете** и в **интерактивном** режиме.
 
-![Сводка по заданию](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-summary.png "Сводка по заданию Hive")
+![Отображение вкладки "Сводка заданий Apache Hive"](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-summary.png "Сводка по заданию Hive")
 
 Используйте кнопку **Обновить** , чтобы обновить состояние до тех пор, пока состояние задания не изменится на **завершено**.  
 
@@ -232,7 +232,7 @@ ms.locfileid: "70884041"
 
 * Сведения о задании из **интерактивного** режима см. в разделе **выходные данные** табуляции и **HiveServer2 Output**.
 
-  ![сведения о задании](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-details.png "Сведения о задании Hive")
+  ![Сведения о задании Apache Hive Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-job-details.png "Сведения о задании Hive")
 
 ### <a name="view-job-graph"></a>Просмотр графа задания
 
@@ -242,14 +242,13 @@ ms.locfileid: "70884041"
 
 Граф задания может не отображаться, даже если в качестве подсистемы выполнения указан Tez, если приложение Tez не запускается.  Это может произойти из-за того, что задание не содержит DML-инструкции или инструкции DML могут возвращаться без запуска приложения Tez. Например, `SELECT * FROM table1` не запустит приложение Tez.
 
-![Граф задания](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-fast-path-hive-execution.png "Сводка по заданию Hive")
-
+![Граф заданий Visual Studio Apache Hive](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-fast-path-hive-execution.png "Сводка по заданию Hive")
 
 ### <a name="task-execution-detail"></a>Сведения о выполнении задачи
 
 На графе задания можно выбрать **сведения о выполнении задачи** для получения структурированных и наглядных сведений о заданиях Hive. Но можно также получить и дополнительные сведения. При появлении проблем с производительностью представление можно использовать для получения дополнительных сведений о проблеме. Например, вы можете получить сведения о работе всех задач и подробную информацию о каждой задаче (чтение и запись данных, время запланированного запуска и завершения и т. д.). Эти наглядные сведения помогут вам изменить конфигурацию задания или архитектуру системы.
 
-![Снимок экрана средств Data Lake для Visual Studio: представление выполнения заданий](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-task-execution-view.png "Представление выполнения заданий")
+![Окно представления выполнения задач Data Lake инструменты Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight-visual-studio-tools-task-execution-view.png "Представление выполнения задач")
 
 
 ### <a name="view-hive-jobs"></a>Просмотр заданий Hive

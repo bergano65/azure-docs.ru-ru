@@ -5,15 +5,15 @@ services: notification-hubs
 author: spelluru
 ms.service: notification-hubs
 ms.topic: include
-ms.date: 02/05/2019
+ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: fef6122eceda213fb6353ada53033d0d1e27fd7e
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: ccb5e40738680181e7339b8652d029597c7d0bd4
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509080"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935093"
 ---
 1. Войдите в [консоль Firebase](https://firebase.google.com/console/). Создайте проект Firebase, если его еще нет.
 2. После создания проекта выберите **Add Firebase to your Android app** (Добавить Firebase в приложение Android). 
@@ -33,10 +33,11 @@ ms.locfileid: "67509080"
         ```
         classpath 'com.google.gms:google-services:4.0.1'
         ```
-    2. В файл build.gradle уровня приложения (&lt;projectapp&gt;/&lt;-module&gt;/build.gradle) добавьте в раздел **dependencies** следующий текст. 
+    2. В файле build.gradle уровня приложения (&lt;projectapp&gt;/&lt;-module&gt;/build.gradle) добавьте в раздел **dependencies** следующий текст. 
 
         ```
-        implementation 'com.google.firebase:firebase-core:16.0.1'
+        implementation 'com.google.firebase:firebase-core:16.0.8'
+        implementation 'com.google.firebase:firebase-messaging:17.3.4'
         ```
 
     3. Добавьте следующую строку в конец файла build.gradle уровня приложения после раздела с зависимостями. 

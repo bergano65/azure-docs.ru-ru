@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 112d0bd4b6802179692d0d177775027e552d1170
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b4e9b72be5d03e0b3441983ca991a16688f5f4cd
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085326"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916461"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Настройка геозоны с использованием Azure Maps
 
@@ -36,7 +36,7 @@ ms.locfileid: "58085326"
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure"; 
 
-Для выполнения заданий из этого руководства вам сначала необходимо узнать, как [управлять учетной записью и ключами](how-to-manage-account-keys.md), чтобы создать учетную запись Azure Maps ценовой категории S1.
+Работа с этим руководством предполагает, что вы выполните инструкции [по управлению учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account), чтобы создать подписку Azure Maps в ценовой категорией S1, а также инструкции из раздела [Получение первичного ключа для учетной записи](./tutorial-search-location.md#getkey).
 
 ## <a name="upload-geofences"></a>Отправка данных о геозоне
 

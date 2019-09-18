@@ -1,5 +1,5 @@
 ---
-title: Руководство по выполнению операций извлечения, преобразования и загрузки (ETL) с использованием интерактивного запроса в Azure HDInsight
+title: Руководство по Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием интерактивного запроса в Azure HDInsight
 description: 'Учебник: сведения об извлечении данных из необработанного набора данных в формате CSV, их преобразовании с помощью интерактивного запроса в HDInsight и загрузке преобразованных данных в базу данных SQL Azure с помощью Apache Sqoop.'
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/02/2019
 ms.author: hrasheed
 ms.custom: hdinsightactive,mvc
-ms.openlocfilehash: fbab8502c088c2ae7a4b8e87285d7e4cac1de4c0
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 9ff215bb687ea2b6aa32ecb01dba7a61385b15a4
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807388"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735832"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Руководство по извлечению, преобразованию и загрузке данных с помощью интерактивного запроса в Azure HDInsight
 

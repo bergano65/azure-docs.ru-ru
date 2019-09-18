@@ -8,24 +8,24 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
-ms.date: 07/01/2019
-ms.openlocfilehash: c6994127b504cba31df051c757295f3e575bc23f
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: MT
+ms.date: 09/01/2019
+ms.openlocfilehash: 3a197ab8d8c44229328c63330bcbc99fb2e64f01
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931222"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077271"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
-Прежде чем можно будет [подключиться к локальным источникам данных из Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), скачайте и установите локальный шлюз данных на локальном компьютере. Шлюз работает как мост, обеспечивающий быструю пересылку данных и шифрование между источниками данных в локальной среде и приложениями логики. Вы можете использовать ту же установку шлюза с другими облачными службами, такими как Power BI, Microsoft Flow, PowerApps и Azure Analysis Services. Сведения об использовании шлюза с этими службами см. в следующих статьях:
+Прежде чем можно будет [подключиться к локальным источникам данных из Azure Logic Apps](../logic-apps/logic-apps-gateway-connection.md), скачайте и установите локальный [шлюз данных](https://aka.ms/on-premises-data-gateway-installer) на локальном компьютере. Шлюз работает как мост, обеспечивающий быструю пересылку данных и шифрование между источниками данных в локальной среде и приложениями логики. Вы можете использовать ту же установку шлюза с другими облачными службами, такими как Power BI, Microsoft Flow, PowerApps и Azure Analysis Services. Сведения об использовании шлюза с этими службами см. в следующих статьях:
 
 * [Локальный шлюз данных](https://powerbi.microsoft.com/documentation/powerbi-gateway-onprem/)
 * [Управление локальным шлюзом данных в PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
 * [Управление локальным шлюзом данных в Microsoft Flow](https://flow.microsoft.com/documentation/gateway-manage/)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы получить доступ к локальным источникам данных из Azure Logic Apps. Дополнительные сведения о [работе шлюза данных см](#gateway-cloud-service) . Далее в этом разделе.
+В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы получить доступ к локальным источникам данных из Azure Logic Apps. Дополнительные сведения о [работе шлюза данных см](#gateway-cloud-service) . Далее в этом разделе. Дополнительные сведения о шлюзе см. [в статье что такое локальный шлюз](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
 
 <a name="requirements"></a>
 
@@ -264,8 +264,8 @@ ms.locfileid: "70931222"
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/service-gateway-onprem-faq)
-* [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway-service-gateway-tshoot)
+* [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)
+* [Устранение неполадок локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/gateway-service-gateway-tshoot)
 * [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
 ## <a name="next-steps"></a>Следующие шаги

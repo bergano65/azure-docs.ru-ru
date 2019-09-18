@@ -3,7 +3,7 @@ title: Azure монитор состояния v2. Приступая к раб�
 description: Краткое руководство по монитор состояния v2. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: a0c836c8ef947e190a0090b3435eec1c53ded436
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: d9c354edac3cbd3faccaa261654e56f858befdf6
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326258"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058237"
 ---
-# <a name="get-started-with-status-monitor-v2"></a>Начало работы с монитор состояния v2
+# <a name="get-started-with-status-monitor-v2"></a>Начало работы с монитором состояний версии 2
 
 Эта статья содержит команды краткого руководства, которые должны работать в большинстве сред.
 Инструкции зависят от коллекция PowerShell распространения обновлений.
