@@ -4,26 +4,26 @@ ms.service: azure
 ms.topic: include
 ms.date: 06/13/2019
 ms.author: sttramer
-ms.openlocfilehash: 75860e5f53c8a8539632d27dd6202c7fa53ad76a
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: fdb4ddc43c1fcde55da8186bd2c09b709eb41374
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047971"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71055231"
 ---
 ## <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
 В Azure есть Azure Cloud Shell, интерактивная оболочка среды, с которой можно работать в браузере. Для работы со службами Azure в Cloud Shell можно использовать `bash` и `PowerShell`. Для запуска кода из этой статьи можно использовать предварительно установленные команды Cloud Shell. Ничего дополнительного в локальной среде устанавливать не нужно.
 
-Чтобы запустить Azure Cloud Shell, сделайте вот что:
+Чтобы запустить Azure Cloud Shell, выполните следующие действия:
 
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
-| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При нажатии кнопки **Попробовать** код не копируется в Cloud Shell автоматически. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | [![Запуск Cloud Shell в новом окне](media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
-| На [портале Azure](https://portal.azure.com) в правом верхнем углу в строке меню нажмите кнопку **Cloud Shell**. | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При нажатии кнопки **Попробовать** код не копируется в Cloud Shell автоматически. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/hdi-azure-cli-try-it.png) |
+| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | [![Запуск Cloud Shell в новом окне](media/cloud-shell-try-it/hdi-launch-cloud-shell.png)](https://shell.azure.com) |
+| На [портале Azure](https://portal.azure.com) в правом верхнем углу в строке меню нажмите кнопку **Cloud Shell**. | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/hdi-cloud-shell-menu.png) |
 
-Чтобы выполнить код из этой статьи в Azure Cloud Shell, сделайте вот что:
+Чтобы выполнить код из этой статьи в Azure Cloud Shell, выполните следующие действия:
 
 1. Запустите Cloud Shell.
 

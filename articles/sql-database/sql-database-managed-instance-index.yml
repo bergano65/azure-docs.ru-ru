@@ -62,26 +62,6 @@ sections:
           - title: Расширенные функции безопасности
             href: /azure/sql-database/sql-database-security-index
             html: <p>Защитите экземпляр и базы данных с помощью встроенных возможностей безопасности Базы данных SQL Azure.<p>
-  - title: Новые и предварительные версии функций
-    items:
-      - type: paragraph
-        text: 'Мы непрерывно улучшаем управляемый экземпляр, добавляя новые возможности:'
-      - type: list
-        style: unordered
-        items:
-          - html: "<a href=\"/azure/sql-database/sql-database-instance-pools\">Пулы экземпляров</a> (предварительная версия)\_— удобный и экономичный способ переноса небольших экземпляров SQL в облако."
-          - html: "<a href=\"https://aka.ms/four-cores-sql-mi-update\">4\_виртуальных ядра на базе оборудования 5-го поколения</a>."
-          - html: 'Поддержка подписок с <a href="https://aka.ms/sql-mi-visual-studio-subscribers" >ежемесячным поступлением денег на счет в Azure для подписчиков Visual Studio</a>.'
-          - html: "Поддержка <a href=\"https://docs.microsoft.com/sharepoint/administration/deploy-azure-sql-managed-instance-with-sharepoint-servers-2016-2019\">SharePoint\_2016 и SharePoint\_2019</a>, а также <a href=\"https://docs.microsoft.com/business-applications-release-notes/october18/dynamics365-business-central/support-for-azure-sql-database-managed-instance\">Dynamics\_365 Business Central</a>."
-          - html: '<a href="https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-timezone">Настройка часового пояса</a> во время создания экземпляра.'
-          - html: 'Создание экземпляров с помощью <a href="https://aka.ms/managed-instance-collation">предпочитаемых параметров сортировки уровня сервера</a>.'
-          - html: 'Функция геовосстановления позволяет <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">восстановить базу данных в другом центре обработки данных с помощью PowerShell</a>.'
-          - html: '<a href="https://medium.com/@jocapc/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266">Повторное создание удаленных баз данных с помощью PowerShell</a> (предварительная версия).'
-          - html: Управляемые экземпляры защищены с помощью <a href="sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md">встроенного брандмауэра</a>.
-          - html: '<a href="https://aka.ms/managed-instance-tde-byok">Использование собственных ключей шифрования</a> при переносе локальных баз данных, в которых уже включено прозрачное шифрование данных (предварительная версия).'
-          - html: 'Использование <a href="https://aka.ms/managed-instance-failover-groups">географически распределенных групп отработки отказа</a> для сохранения копии экземпляра в другом регионе и обеспечение доступности данных даже в сценарии региональной аварии (предварительная версия).'
-          - html: "<a href=\"https://aka.ms/managed-instance-configurable-backup-retention\">Настройка периода хранения резервных копий (до 35\_дней)</a> для восстановления на момент времени. Обратите внимание, что долгосрочное хранение резервных копий (до 10\_лет) по-прежнему не включено, поэтому можно использовать <a href=\"https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server\">резервные копии только для копирования</a> в качестве альтернативы."
-          - html: 'Создание <a href="https://aka.ms/managed-instance-aadlogins">субъектов сервера AAD на уровне экземпляра (имен для входа) </a> с помощью операции <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени для входа из внешнего поставщика</a> (предварительная версия).'
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
