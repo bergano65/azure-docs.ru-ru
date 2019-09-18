@@ -35,8 +35,6 @@
   items:
     - name: Подключение устройств
       items:
-        - name: Формирование строки подключения устройства
-          href: howto-generate-connection-string.md
         - name: Подготовка и подключение приложения Node.js (универсальное приложение)
           href: howto-connect-nodejs.md
         - name: Подготовка и подключение MXChip IoT DevKit
