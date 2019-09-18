@@ -10,17 +10,17 @@ ms.workload: identity
 ms.date: 01/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5cc6c8b4947f8c5ebeb27be2dc82f323f84a6902
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 892f47b6acf22c62ce2290e2ede9d0bcd21eefc8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835421"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065898"
 ---
 # <a name="link-an-azure-subscription-to-an-azure-active-directory-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure Active Directory B2C
 
 > [!IMPORTANT]
-> Актуальные сведения о выставлении счетов за использование, а также о ценах на Azure Active Directory (Azure AD) B2C см. на [этой странице](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+> Последние сведения о выставлении счетов на использование и ценах на Azure Active Directory B2C (Azure AD B2C) см. в разделе [цены на Azure AD B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
 Счета за использование Azure AD B2C выставляются для подписки Azure. Администратор созданного клиента Azure AD B2C должен явным образом связать созданный клиент Azure AD B2C с подпиской Azure. В этой статье показано, как это сделать.
 
@@ -45,9 +45,9 @@ ms.locfileid: "67835421"
 
 ## <a name="find-azure-ad-b2c-in-the-azure-marketplace"></a>Поиск Azure AD B2C в Azure Marketplace
 
-Нажмите кнопку **Создать ресурс**. В **поиск по Marketplace** введите `Active Directory B2C`.
+Нажмите кнопку **Создать ресурс**. В поле **Поиск в Marketplace** введите `Active Directory B2C`.
 
-![Снимок экрана портала с помощью «Active Directory B2C» в Marketplace поиск](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
+![Снимок экрана портала с "Active Directory B2C" в поиске в Marketplace](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
 
 В списке результатов выберите **Azure AD B2C**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "67835421"
 
 Выберите группу ресурсов и расположение группы ресурсов. Этот выбор не оказывает влияния на расположение, производительность и статус оплаты для этого клиента B2C.
 
-![Страница создания ресурса Azure AD B2C на портале Azure](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
+![Страница создания Azure AD B2C ресурсов в портал Azure](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
 
 ## <a name="manage-your-azure-ad-b2c-tenant-resources"></a>Управление ресурсами клиента Azure AD B2C
 
@@ -80,15 +80,15 @@ ms.locfileid: "67835421"
 - Отправить запрос на техническую поддержку.
 - для перемещения ресурса "Клиент B2C" в другую подписку Azure или в другую группу ресурсов.
 
-![Параметры ресурсов B2C на портале Azure](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.PNG)
+![Страница параметров ресурсов B2C в портал Azure](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.PNG)
 
-## <a name="change-the-azure-ad-b2c-tenant-billing-subscription"></a>Смена клиента Azure AD B2C, выставления счетов подписки
+## <a name="change-the-azure-ad-b2c-tenant-billing-subscription"></a>Изменение подписки на выставление счетов клиента Azure AD B2C
 
-Клиенты Azure AD B2C можно переместить в другую подписку, если исходная и целевая подписка существует в одном клиенте Azure Active Directory.
+Azure AD B2C клиенты могут быть перемещены в другую подписку, если исходная и Целевая подписки существуют в одном клиенте Azure Active Directory.
 
-Узнайте, как переместить ресурсы Azure, таких как клиент Azure AD B2C в другую подписку, см. в разделе [перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
+Чтобы узнать, как переместить ресурсы Azure, такие как клиент Azure AD B2C, в другую подписку, см. статью [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 
-Прежде чем начать перемещение, не забудьте прочитать всю статью, чтобы полностью понять ограничения и требования для такого перехода. В дополнение к инструкциям по перемещению ресурсы он включает критически важные сведения, как и контрольный список до перемещения и проверке операции перемещения.
+Прежде чем начать перемещение, обязательно прочитайте всю статью, чтобы полностью понять ограничения и требования для такого перемещения. Помимо инструкций по перемещению ресурсов, она включает в себя важную информацию, например контрольный список перед перемещением и проверку операции перемещения.
 
 ## <a name="known-issues"></a>Известные проблемы
 

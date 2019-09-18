@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: df47b4fc5b8048f76f94486e213285896dab9cb9
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 042c4fa18ce583f714bbe71f522b1f8f1af3dfdb
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874095"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066125"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Запрос маркера доступа в Azure Active Directory B2C
 
-*Маркер доступа* содержит утверждения, которые можно использовать в Azure Active Directory (Azure AD) B2C для обнаружения предоставленных разрешений интерфейсам API. При вызове сервера ресурсов в HTTP-запросе должен присутствовать маркер доступа. Маркер доступа обозначается как **ACCESS_TOKEN** в ответах от Azure AD B2C.
+*Маркер доступа* содержит утверждения, которые можно использовать в Azure Active Directory B2C (Azure AD B2C) для обнаружения предоставленных разрешений интерфейсам API. При вызове сервера ресурсов в HTTP-запросе должен присутствовать маркер доступа. Маркер доступа обозначается как **ACCESS_TOKEN** в ответах от Azure AD B2C.
 
 В этой статье показано, как запросить маркер доступа для веб-приложения и веб-API. Дополнительные сведения о токенах в Azure AD B2C см. в разделе [Общие сведения о токенах в Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).
 
@@ -52,7 +52,7 @@ scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fapi%2Fread%20openid%20offline_acce
 Если запросить больше областей, чем предоставлено для клиентского приложения, вызов будет выполнен, если предоставлено по крайней мере одно разрешение. Утверждение **SCP** в результирующем маркере доступа заполняется только предоставленными разрешениями. В стандарте OpenID Connect Connect задано несколько специальных значений области. Следующие области представляют разрешение на доступ к профилю пользователя:
 
 - **OpenID Connect** — запрашивает маркер идентификатора.
-- **offline_access** — запрашивает маркер обновления с помощью [потоков кода проверки](active-directory-b2c-reference-oauth-code.md)подлинности.
+- **offline_access** — запрашивает маркер обновления с помощью [потоков кода проверки подлинности](active-directory-b2c-reference-oauth-code.md).
 
 Если параметр **response_type** в `/authorize` запросе содержит `token`, то параметр **области** должен включать по крайней мере одну область ресурсов, отличную `offline_access` от `openid` , и которая будет предоставлена. В противном случае запрос завершится ошибкой. `/authorize`
 

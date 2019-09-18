@@ -1,7 +1,7 @@
 ---
 title: Создание рабочих областей машинного обучения Azure на портале
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как создавать, просматривать и удалять рабочие области службы машинного обучения Azure на портале Azure.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как создавать, просматривать и удалять рабочие области Машинное обучение Azure в портал Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,20 +11,20 @@ ms.author: shipatel
 author: shivp950
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: df015df3c20cdb99512167e3dc3e455da2762c52
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 776b873e089c331f2f2867c94e542903075be4f7
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744787"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034511"
 ---
-# <a name="create-and-manage-azure-machine-learning-service-workspaces-in-the-azure-portal"></a>Создание рабочих областей служб Машинное обучение Azure и управление ими в портал Azure
+# <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Создание рабочих областей Машинное обучение Azure и управление ими в портал Azure
 
-В этой статье вы выполните создание, просмотр и удаление [**рабочих областей службы машинного обучения Azure**](concept-workspace.md) на портале Azure для [службы "Машинное обучение Azure"](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
+В этой статье вы создадите, просмотрите и удалите [**машинное обучение Azure рабочие области**](concept-workspace.md) в портал Azure для [машинное обучение Azure](overview-what-is-azure-ml.md).  Портал — самый простой способ начать работу с рабочими областями, но по мере необходимости изменения или требования к автоматизации можно также создавать и удалять рабочие области [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md) [с кодом Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) или с [помощью расширения VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 
 ## <a name="create-a-workspace"></a>Создать рабочую область
 
-Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
+Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree) уже сегодня.
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "70744787"
 
 1. Выберите **рабочие области службы машинное обучение**.
 
-   ![Поиск рабочей области службы Машинное обучение Azure](media/how-to-manage-workspace/all-services.png)
+   ![Поиск Машинное обучение Azure рабочей области](media/how-to-manage-workspace/all-services.png)
 
 1. Просмотрите список найденных рабочих областей. Можно выполнять фильтрацию на основе подписки, групп ресурсов и расположений.  
 
@@ -66,7 +66,7 @@ ms.locfileid: "70744787"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Воспользуйтесь полным руководством, чтобы научиться применять рабочую область для создания, обучения и развертывания моделей, используя службу "Машинное обучение Azure".
+Ознакомьтесь с руководством по полной длине, чтобы узнать, как использовать рабочую область для создания, обучения и развертывания моделей с помощью Машинное обучение Azure.
 
 > [!div class="nextstepaction"]
-> [Руководство. Обучение моделей](tutorial-train-models-with-aml.md)
+> [Учебник. Обучение моделей](tutorial-train-models-with-aml.md)

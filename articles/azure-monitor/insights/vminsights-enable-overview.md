@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/11/2019
+ms.date: 09/17/2019
 ms.author: magoedte
-ms.openlocfilehash: bd4016d91000ee23023eaa64872bff9a057058d1
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: f3aca6f62ff529dc2ea8356e18a0162e7d9a85d8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70916048"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71067052"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин (Предварительная версия)
 
@@ -45,10 +45,13 @@ Azure Monitor для виртуальных машин поддерживает 
 - Центрально-западная часть США
 - Западная часть США 2<sup>1</sup>
 - East US
+- Восток США 2<sup>1</sup>
 - Центральная Канада
 - Южная часть Соединенного Королевства
+- Северная Европа<sup>1</sup>
 - Западная Европа
 - Юго-Восточная Азия
+- Восточная Япония<sup>1</sup>
 - Восточная Австралия<sup>1</sup>
 - Юго-Восточная Австралия<sup>1</sup>
 

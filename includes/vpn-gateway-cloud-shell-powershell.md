@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 3ef848d12e3a39c3bd83ea44fcb86d67bbdb38dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d1e12a5cbdf145bb95fc2166a20ca1e9a77539cf
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66736008"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059793"
 ---
 В этой статье используются командлеты PowerShell. Для запуска командлетов можно использовать Azure Cloud Shell, интерактивную оболочку среды, размещенную в Azure и работающую в браузере. В Azure Cloud Shell предустановлены командлеты Azure PowerShell.
 
@@ -23,7 +23,7 @@ ms.locfileid: "66736008"
 
 |  |   |
 |-----------------------------------------------|---|
-| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| В браузере перейдите по адресу [shell.azure.com](https://shell.azure.com). | [![Запуск кнопки Azure Cloud Shell](./media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
-| Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/hdi-azure-cli-try-it.png) |
+| В браузере перейдите по адресу [shell.azure.com](https://shell.azure.com). | [![Запуск кнопки Azure Cloud Shell](./media/cloud-shell-try-it/hdi-launch-cloud-shell.png)](https://shell.azure.com) |
+| Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/hdi-cloud-shell-menu.png) |
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 7f82ad65ecc805d5a45c78e8b190dd0eee4c340c
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 5784fb4f4ab0f46d2db7e5e8cfe9deeafabb4e90
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70882329"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066943"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -162,7 +162,7 @@ namespace reducer
 
    * Если используется __учетная запись хранения Azure__, щелкните значок передачи и перейдите в папку **bin\debug** проекта **mapper**. Выберите файл **mapper.exe** и нажмите кнопку **OK**.
 
-        ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/hdinsight-upload-icon.png)
+        ![Значок отправки HDInsight для модуля сопоставления](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/hdinsight-upload-icon.png)
     
    * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
 

@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 42129870c6ab2bb5e58bdf9aaa323a3d64b479f8
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 12ddbe9f43baf68f6c11c9b720a0f684316af46a
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69644922"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065320"
 ---
 # <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Добавление REST API обмена утверждениями в пользовательские политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Вы можете добавить взаимодействие с API RESTFUL к [пользовательским политикам](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C. В этой статье показано, как создать Azure AD B2C пути взаимодействия пользователя, взаимодействующего со службами RESTFUL.
+Вы можете добавить взаимодействие с API RESTFUL к [пользовательским политикам](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C). В этой статье показано, как создать Azure AD B2C пути взаимодействия пользователя, взаимодействующего со службами RESTFUL.
 
 Взаимодействие включает обмен данными между утверждениями REST API и Azure AD B2C. Обмен утверждениями имеет следующие характеристики.
 
@@ -117,7 +117,7 @@ public class ResponseContent
 
 Элемент **inputclaim** определяет утверждения, которые отправляются в службу RESTful. В этом примере значение утверждения `givenName` отправляется в службу RESTful в качестве утверждения. `email` Элемент **OutputClaims** определяет утверждения, ожидаемые от службы RESTful.
 
-Комментарии выше `AuthenticationType` и `AllowInsecureAuthInProduction` указывают изменения, которые необходимо внести при переходе в рабочую среду. Чтобы узнать, как защитить интерфейсы API RESTFUL для рабочей среды, см. статью Защита API RESTful [с помощью базовой проверки](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) подлинности и [защищенных API-интерфейсов RESTful с проверкой подлинности сертификата](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
+Комментарии выше `AuthenticationType` и `AllowInsecureAuthInProduction` указывают изменения, которые необходимо внести при переходе в рабочую среду. Чтобы узнать, как защитить интерфейсы API RESTFUL для рабочей среды, см. статью Защита API RESTful [с помощью базовой проверки подлинности](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) и [защищенных API-интерфейсов RESTful с проверкой подлинности сертификата](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
 
 ## <a name="add-the-claim-definition"></a>Добавление определения утверждения
 

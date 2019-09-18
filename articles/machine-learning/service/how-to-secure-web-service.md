@@ -1,7 +1,7 @@
 ---
 title: Защита веб-служб с помощью SSL
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как защитить веб-службу, развернутую с помощью службы Машинное обучение Azure, включив протокол HTTPS. Протокол HTTPS обеспечивает защиту данных от клиентов с помощью протокола TLS, заменяющего протоколы SSL. Клиенты также используют протокол HTTPS для проверки удостоверения веб-службы.
+titleSuffix: Azure Machine Learning
+description: Узнайте, как защитить веб-службу, развернутую с помощью Машинное обучение Azure, включив HTTPS. Протокол HTTPS обеспечивает защиту данных от клиентов с помощью протокола TLS, заменяющего протоколы SSL. Клиенты также используют протокол HTTPS для проверки удостоверения веб-службы.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: aashishb
 author: aashishb
 ms.date: 08/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8805e065c92b42013c1e56f20b4a032d280cb8ac
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: ce60806c26359ae682f5ab468e4f4265d3572c87
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772524"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034378"
 ---
 # <a name="use-ssl-to-secure-a-web-service-through-azure-machine-learning"></a>Использование SSL для защиты веб-службы с помощью Машинное обучение Azure
 
-В этой статье показано, как защитить веб-службу, развернутую с помощью службы Машинное обучение Azure.
+В этой статье показано, как защитить веб-службу, развернутую с помощью Машинное обучение Azure.
 
 [Протокол HTTPS](https://en.wikipedia.org/wiki/HTTPS) используется для ограничения доступа к веб-службам и защиты данных, отправляемых клиентами. Протокол HTTPS обеспечивает безопасность обмена данными между клиентом и веб-службой путем шифрования обмена данными между ними. Шифрование использует [протокол TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). Протокол TLS иногда по-прежнему называется *SSL* (SSL), который был предшественником TLS.
 
@@ -151,7 +151,7 @@ aci_config = AciWebservice.deploy_configuration(
 
   Обновите DNS общедоступного IP-адреса кластера AKS на вкладке **Конфигурация** в разделе **Параметры** в левой области. (См. следующее изображение.) Общедоступный IP-адрес — это тип ресурса, который создается в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
-  [![Служба Машинное обучение Azure: Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
+  [![Машинное обучение Azure: Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)](./media/how-to-secure-web-service/aks-public-ip-address-expanded.png)
 
 ## <a name="update-the-ssl-certificate"></a>Обновление SSL-сертификата
 

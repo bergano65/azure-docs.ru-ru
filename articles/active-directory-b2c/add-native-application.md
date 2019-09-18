@@ -10,19 +10,19 @@ ms.custom: mvc
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: b4e9b95cb226aeec686816d0ed7160062e110c62
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6fc953d5c6109fbc6eacbd946ecd112db4639fa5
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511820"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064591"
 ---
 # <a name="add-a-native-client-application-to-your-azure-active-directory-b2c-tenant"></a>Добавление собственного клиентского приложения в клиент Azure Active Directory B2C.
 
 Ресурсы собственного клиентского приложения необходимо зарегистрировать в клиенте. После этого его можно будет связать с Azure Active Directory B2C.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните **Приложения**, а затем выберите **Добавить**.
 2. Введите имя приложения. Например, *nativeapp1*.

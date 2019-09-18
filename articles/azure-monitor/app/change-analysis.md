@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cawa
-ms.openlocfilehash: a08fc7d7822b4aeddafb588fdb73e86559ce2b12
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 84e423ac055c074028df217060a548b932823496
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68849171"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033378"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Использование анализа изменений приложений (Предварительная версия) в Azure Monitor
 
@@ -87,57 +87,39 @@ ms.locfileid: "68849171"
 
 ### <a name="enable-change-analysis-at-scale"></a>Включить анализ изменений в масштабе
 
-Если ваша подписка включает множество веб-приложений, включение службы на уровне веб-приложения будет неэффективным. В этом случае выполните следующие альтернативные инструкции.
+Если ваша подписка включает множество веб-приложений, включение службы на уровне веб-приложения будет неэффективным. Выполните следующий скрипт, чтобы включить все веб-приложения в подписке.
 
-### <a name="register-the-change-analysis-resource-provider-for-your-subscription"></a>Регистрация поставщика ресурсов для анализа изменений для подписки
+Предварительные требования:
+* Модуль PowerShell AZ. Следуйте инструкциям по [установке модуля Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-2.6.0)
 
-1. Зарегистрируйте флаг функции анализа изменений (Предварительная версия). Так как флаг компонента находится на этапе предварительной версии, его необходимо зарегистрировать, чтобы сделать его видимым для вашей подписки:
+Выполните следующий скрипт:
 
-   1. Откройте [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/).
+```PowerShell
+# Log in to your Azure subscription
+Connect-AzAccount
 
-      ![Снимок экрана Cloud Shell изменений](./media/change-analysis/cloud-shell.png)
+# Get subscription Id
+$SubscriptionId = Read-Host -Prompt 'Input your subscription Id'
 
-   1. Измените тип оболочки на **PowerShell**.
+# Make Feature Flag visible to the subscription
+Set-AzContext -SubscriptionId $SubscriptionId
 
-      ![Снимок экрана Cloud Shell изменений](./media/change-analysis/choose-powershell.png)
+# Register resource provider
+Register-AzResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis"
 
-   1. Выполните следующую команду PowerShell:
 
-        ``` PowerShell
-        Set-AzContext -Subscription <your_subscription_id> #set script execution context to the subscription you are trying to enable
-        Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.ChangeAnalysis" -ListAvailable #Check for feature flag availability
-        Register-AzureRmProviderFeature -FeatureName PreviewAccess -ProviderNamespace Microsoft.ChangeAnalysis #Register feature flag
-        ```
+# Enable each web app
+$webapp_list = Get-AzWebApp | Where-Object {$_.kind -eq 'app'}
+foreach ($webapp in $webapp_list)
+{
+    $tags = $webapp.Tags
+    $tags[“hidden-related:diagnostics/changeAnalysisScanEnabled”]=$true
+    Set-AzResource -ResourceId $webapp.Id -Tag $tags -Force
+}
 
-1. Зарегистрируйте поставщик ресурсов для анализа изменений для подписки.
+```
 
-   - Перейдите к разделу **подписки**и выберите подписку, которую необходимо включить в службе изменений. Затем выберите поставщики ресурсов:
 
-        ![Снимок экрана, показывающий, как зарегистрировать поставщик ресурсов для анализа изменений](./media/change-analysis/register-rp.png)
-
-       - Выберите **Microsoft. чанжеаналисис**. Затем в верхней части страницы выберите **зарегистрировать**.
-
-       - После включения поставщика ресурсов можно задать скрытый тег в веб-приложении, чтобы обнаружить изменения на уровне развертывания. Чтобы задать скрытый тег, следуйте инструкциям в разделе **не удалось получить сведения об анализе изменений**.
-
-   - Кроме того, для регистрации поставщика ресурсов можно использовать сценарий PowerShell:
-
-        ```PowerShell
-        Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState #Check if RP is ready for registration
-
-        Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis" #Register the Change Analysis RP
-        ```
-
-        Чтобы использовать PowerShell для установки скрытого тега в веб-приложении, выполните следующую команду:
-
-        ```powershell
-        $webapp=Get-AzWebApp -Name <name_of_your_webapp>
-        $tags = $webapp.Tags
-        $tags[“hidden-related:diagnostics/changeAnalysisScanEnabled”]=$true
-        Set-AzResource -ResourceId <your_webapp_resourceid> -Tag $tag
-        ```
-
-     > [!NOTE]
-     > После добавления скрытого тега может потребоваться подождать до 4 часов, прежде чем начать просмотр изменений. Результаты откладываются, поскольку анализ изменений сканирует веб-приложение только каждые 4 часа. 4-часовое расписание ограничивает влияние сканирования на производительность.
 
 ## <a name="next-steps"></a>Следующие шаги
 

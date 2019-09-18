@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a5f15aa5264c0abf87cb15f0468e8a3a924e0b5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ef28520edd8500be0da52996e6484a0407fb03c8
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562355"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056446"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -31,45 +31,44 @@ ms.locfileid: "68562355"
 
 Область запроса учетных данных клиента — это имя ресурса, за которым следует `/.default`. Эта нотация указывает, что Azure AD будет использовать **разрешения уровня приложения** , объявленные статически во время регистрации приложения. Кроме того, как было показано ранее, эти разрешения API должны быть предоставлены администратором клиента.
 
-### <a name="net"></a>.NET
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 ```CSharp
 ResourceId = "someAppIDURI";
 var scopes = new [] {  ResourceId+"/.default"};
 ```
 
-### <a name="python"></a>Python
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В MSAL. Python файл конфигурации будет выглядеть, как в следующем фрагменте кода:
 
-```Python
+```Json
 {
-    "authority": "https://login.microsoftonline.com/organizations",
-    "client_id": "your_client_id",
-    "secret": "This is a sample only. You better NOT persist your password."
-    "scope": ["https://graph.microsoft.com/.default"]
+    "scope": ["https://graph.microsoft.com/.default"],
 }
 ```
 
-### <a name="java"></a>Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 ```Java
-public final static String KEYVAULT_DEFAULT_SCOPE = "https://vault.azure.net/.default";
+final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
 ```
 
-### <a name="all"></a>Все
-
-Область, используемая для учетных данных клиента, всегда должна быть resourceId + "/.дефаулт"
+---
 
 ### <a name="case-of-azure-ad-v10-resources"></a>Ресурсы Azure AD (v 1.0)
 
+Область, используемая для учетных данных клиента, всегда должна быть resourceId + "/.дефаулт"
+
 > [!IMPORTANT]
-> Для MSAL (конечная точка платформы Microsoft Identity), запрашивающей маркер доступа для ресурса, принимающего маркер доступа версии 1.0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса.
+> Для MSAL с запросом маркера доступа для ресурса, принимающего маркер доступа v 1.0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все перед последней косой чертой и используя ее в качестве идентификатора ресурса.
 > Таким образом, если, как и **https://database.windows.net** в Azure SQL (), ресурс ожидает, что аудитория заканчивается косой чертой `https://database.windows.net/` (для Azure SQL:), необходимо запросить область `https://database.windows.net//.default` (Обратите внимание на двойную косую черту). См. также раздел MSAL.NET Issue [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Конечная косая черта ресурса не указана, что привело к сбою проверки подлинности SQL.
 
 ## <a name="acquiretokenforclient-api"></a>API Аккуиретокенфорклиент
 
-### <a name="net"></a>.NET
+Чтобы получить маркер для приложения, вы будете использовать `AcquireTokenForClient` или эквивалент в зависимости от платформ.
+
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 ```CSharp
 using Microsoft.Identity.Client;
@@ -98,13 +97,12 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 }
 ```
 
-#### <a name="application-token-cache"></a>Кэш маркеров приложений
-
-В MSAL.NET использует `AcquireTokenForClient` **кэш маркеров приложений** (все остальные методы аккуиретокенкскс, использующие кэш пользовательских маркеров `AcquireTokenSilent` ), `AcquireTokenForClient` не вызывают метод, так как `AcquireTokenSilent` использует кэш **пользовательских** маркеров. `AcquireTokenForClient`проверяет сам кэш маркера **приложения** и обновляет его.
-
-### <a name="python"></a>Python
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 ```Python
+# The pattern to acquire a token looks like this.
+result = None
+
 # Firstly, looks up a token from cache
 # Since we are looking for token for the current app, NOT for an end user,
 # notice we give account parameter as None.
@@ -113,20 +111,42 @@ result = app.acquire_token_silent(config["scope"], account=None)
 if not result:
     logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
     result = app.acquire_token_for_client(scopes=config["scope"])
+
+if "access_token" in result:
+    # Call a protected API with the access token
+    print(result["token_type"])
+    print(result["expires_in"])  # You don't normally need to care about this.
+                                 # It will be good for at least 5 minutes.
+else:
+    print(result.get("error"))
+    print(result.get("error_description"))
+    print(result.get("correlation_id"))  # You may need this when reporting a bug
 ```
 
-### <a name="java"></a>Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 ```Java
-ClientCredentialParameters parameters = ClientCredentialParameters
-        .builder(Collections.singleton(KEYVAULT_DEFAULT_SCOPE))
+ClientCredentialParameters clientCredentialParam = ClientCredentialParameters.builder(
+        Collections.singleton(GRAPH_DEFAULT_SCOPE))
         .build();
 
-CompletableFuture<AuthenticationResult> future = cca.acquireToken(parameters);
+CompletableFuture<IAuthenticationResult> future = app.acquireToken(clientCredentialParam);
 
-// You can complete the future in many different ways. Here we use .get() for simplicity
-AuthenticationResult result = future.get();
+BiConsumer<IAuthenticationResult, Throwable> processAuthResult = (res, ex) -> {
+    if (ex != null) {
+        System.out.println("Oops! We have an exception - " + ex.getMessage());
+    }
+    System.out.println("Returned ok - " + res);
+    System.out.println("ID Token - " + res.idToken());
+
+    /* call a protected API with res.accessToken() */
+};
+
+future.whenCompleteAsync(processAuthResult);
+future.join();
 ```
+
+---
 
 ### <a name="protocol"></a>Протокол
 
@@ -159,9 +179,11 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 &grant_type=client_credentials
 ```
 
-### <a name="learn-more-about-the-protocol"></a>Дополнительные сведения о протоколе
-
 Дополнительные сведения см. в документации по протоколу: [Платформа удостоверений Майкрософт и поток учетных данных клиента OAuth 2,0](v2-oauth2-client-creds-grant-flow.md).
+
+## <a name="application-token-cache"></a>Кэш маркеров приложений
+
+В MSAL.NET использует `AcquireTokenForClient` **кэш маркеров приложений** (все остальные методы аккуиретокенкскс, использующие кэш пользовательских маркеров `AcquireTokenSilent` ), `AcquireTokenForClient` не вызывают метод, так как `AcquireTokenSilent` использует кэш **пользовательских** маркеров. `AcquireTokenForClient`проверяет сам кэш маркера **приложения** и обновляет его.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

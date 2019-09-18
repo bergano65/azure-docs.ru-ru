@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 89dd592e6e5ea1ce71277035654068ce2f782890
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: bddbd9b588d8ffc2ace3a937fa2c72876eb5e4e9
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622203"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065215"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Amazon через Azure Active Directory B2C
 
 ## <a name="create-an-amazon-application"></a>Создание приложения Amazon
 
-Чтобы использовать учетную запись Amazon в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться [https://www.amazon.com/](https://www.amazon.com/)по адресу.
+Чтобы использовать учетную запись Amazon в качестве [поставщика удостоверений](active-directory-b2c-reference-oauth-code.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться [https://www.amazon.com/](https://www.amazon.com/)по адресу.
 
 1. Выполните вход в [Amazon Developer Center](https://login.amazon.com/) с учетными данными от учетной записи Amazon.
 1. Если это еще не сделано, нажмите кнопку **Sign Up**(Регистрация), выполните действия для регистрации разработчика и примите условия политики.

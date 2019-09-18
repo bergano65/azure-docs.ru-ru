@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2ed1426bea920d1ef30fb28ff4a975d1268c12ff
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 83f8051fa31b6431d4a8515e2c0912cc1872a402
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67846928"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064390"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
-Из этой статьи вы узнаете, как настроить [время существования и совместимость маркера](active-directory-b2c-reference-tokens.md) в Azure Active Directory (Azure AD) B2C.
+Из этой статьи вы узнаете, как настроить [время существования и совместимость маркера](active-directory-b2c-reference-tokens.md) в Azure Active Directory B2C (Azure AD B2C).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,7 +30,7 @@ ms.locfileid: "67846928"
 Время существования маркера можно настроить в любом потоке пользователя.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий клиент Azure AD B2C.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **потоки пользователя (политики)** .
 5. Откройте созданный ранее поток пользователя.

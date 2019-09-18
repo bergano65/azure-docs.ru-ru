@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 04a37e6faf51787457d7ca4ab8434fd253deb2ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6454d380b0f34e940951e3de44d1dee0ff6b597f
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509158"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065531"
 ---
 # <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В Azure Active Directory B2C (Azure AD) можно настроить требования к сложности паролей, которые пользователи указывают при создании учетной записи. По умолчанию Azure AD B2C использует **надежные** пароли. В этой статье рассказывается о настройке сложности пароля в [настраиваемых политиках](active-directory-b2c-overview-custom.md). Вы также можете настроить сложность пароля в [пользовательских потоках](active-directory-b2c-reference-password-complexity.md).
+В Azure Active Directory B2C (Azure AD B2C) можно настроить требования к сложности для паролей, предоставляемых пользователем при создании учетной записи. По умолчанию Azure AD B2C использует **надежные** пароли. В этой статье рассказывается о настройке сложности пароля в [настраиваемых политиках](active-directory-b2c-overview-custom.md). Вы также можете настроить сложность пароля в [пользовательских потоках](active-directory-b2c-reference-password-complexity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -112,7 +112,7 @@ ms.locfileid: "66509158"
 ### <a name="upload-the-files"></a>Передача файлов
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **Инфраструктура процедур идентификации**.
 5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
@@ -126,7 +126,7 @@ ms.locfileid: "66509158"
 3. Щелкните **Запустить сейчас**.
 4. Выберите **Зарегистрироваться сейчас**, введите адрес электронной почты и новый пароль. Отображаются рекомендации по ограничению для пароля. Введите данные пользователя и нажмите **Создать**. Вы увидите содержимое возвращенного маркера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [настроить сложность пароля в настраиваемых политиках в Azure Active Directory B2C](active-directory-b2c-reference-password-change-custom.md).
 

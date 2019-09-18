@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/07/2019
 ms.author: azfuncdf
-ms.openlocfilehash: c81eccaa2b3a4335f034b9667f6e7be317635f43
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 094ae511337556ef0c67c86f6d8692cae005430a
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933385"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033968"
 ---
 # <a name="http-api-reference"></a>Справочник по API HTTP
 
@@ -28,7 +28,7 @@ ms.locfileid: "70933385"
 | **`connection`** | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
 | **`systemKey`**  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
 
-`systemKey`— Это ключ авторизации, автоматически сформированный узлом функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Самый простой способ обнаружения значения `systemKey` — с помощью API `CreateCheckStatusResponse`, упомянутого ранее.
+`systemKey`— Это ключ авторизации, автоматически сформированный узлом функций Azure. В частности, он предоставляет доступ к API расширения устойчивых задач и им можно управлять так же, как и [другими ключами авторизации](https://github.com/Azure/azure-webjobs-sdk-script/wiki/Key-management-API). Вы можете создавать URL-адреса, содержащие `taskHub`правильные `connection`значения строк `systemKey` запросов, и, используя API `CreateCheckStatusResponse` [привязки клиента оркестрации](durable-functions-bindings.md#orchestration-client) , `createCheckStatusResponse` такие как API- `CreateHttpManagementPayload` интерфейсы и в .NET, или `createHttpManagementPayload` API в JavaScript.
 
 В следующих нескольких разделах рассматриваются определенные API HTTP, поддерживаемые расширением, и приведены примеры их использования.
 

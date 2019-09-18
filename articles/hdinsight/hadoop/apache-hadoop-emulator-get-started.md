@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: a1d31eb3fa6e37302e1afa5ebd36d04f75830dea
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 9515f0ecae92e6350924b3856aa6cbf20e608d51
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918173"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066695"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с Apache Hadoop песочницой, эмулятором на виртуальной машине
 
@@ -42,7 +42,7 @@ ms.locfileid: "70918173"
 1. В меню **Файл** щелкните **Import Appliance** (Импорт устройства), а затем укажите образ песочницы Hortonworks.
 1. Выберете песочницу Hortonworks, щелкните **Start** (Запустить) > **Normal Start** (Обычный запуск). После завершения процесса загрузки в виртуальной машине отобразятся инструкции для входа.
 
-    ![Normal Start](./media/apache-hadoop-emulator-get-started/virtualbox-normal-start.png)
+    ![нормальное начало диспетчера VirtualBox](./media/apache-hadoop-emulator-get-started/virtualbox-normal-start.png)
 
 1. Откройте веб-браузер и перейдите по отображаемому URL-адресу (обычно `http://127.0.0.1:8888`).
 

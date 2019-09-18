@@ -1,7 +1,7 @@
 ---
 title: Доступ к данным в службах хранилища Azure
-titleSuffix: Azure Machine Learning service
-description: Узнайте, как использовать хранилища данных для доступа к службам хранилища Azure во время обучения со службой Машинное обучение Azure
+titleSuffix: Azure Machine Learning
+description: Узнайте, как использовать хранилища данных для доступа к службам хранилища Azure во время обучения с помощью Машинное обучение Azure
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 08/2/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7b800a7ef38624dbe89a61dd04e2bd97b02066bb
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: eaed6e7b0ea044ba39a1055ad14de13d5deb9b05
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70191927"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71035296"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 
@@ -232,7 +232,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 ## <a name="access-data-during-scoring"></a>Доступ к данным во время оценки
 
-Служба Машинное обучение Azure предоставляет несколько способов использования моделей для оценки. Некоторые из этих методов не предоставляют доступ к хранилищам данных. Используйте следующую таблицу, чтобы понять, какие методы позволяют получать доступ к хранилищам данных во время оценки.
+Машинное обучение Azure предоставляет несколько способов использования моделей для оценки. Некоторые из этих методов не предоставляют доступ к хранилищам данных. Используйте следующую таблицу, чтобы понять, какие методы позволяют получать доступ к хранилищам данных во время оценки.
 
 | Метод | Доступ к хранилищу данных | Описание |
 | ----- | :-----: | ----- |

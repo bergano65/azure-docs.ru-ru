@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 7e0143a25c0bb25b936d072cc2652e8b38a0be66
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: a48c2fdcce5126747f00cd3b901839864d438346
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302717"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058281"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
-В этой статье описано, как включить Application Insights для [ASP.NET Core](https://docs.microsoft.com/aspnet/core) приложения. После выполнения инструкций, описанных в этой статье, Application Insights соберет запросы, зависимости, исключения, счетчики производительности, пульсы и журналы из приложения ASP.NET Core. 
+В этой статье описано, как включить Application Insights для [ASP.NET Core](https://docs.microsoft.com/aspnet/core) приложения. После выполнения инструкций, описанных в этой статье, Application Insights соберет запросы, зависимости, исключения, счетчики производительности, пульсы и журналы из приложения ASP.NET Core.
 
 В качестве примера мы будем использовать [приложение MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) , предназначенное `netcoreapp2.2`для. Эти инструкции можно применить ко всем ASP.NET Coreным приложениям.
 
@@ -35,7 +35,10 @@ ms.locfileid: "68302717"
 * **Платформа размещения**: Функция веб-приложений службы приложений Azure, виртуальная машина Azure, Docker, служба Azure Kubernetes Service (AKS) и т. д.
 * **ИНТЕГРИРОВАННАЯ СРЕДА РАЗРАБОТКИ**: Visual Studio, VS Code или Командная строка.
 
-## <a name="prerequisites"></a>предварительные требования
+> [!NOTE]
+> Если вы используете ASP.NET Core 3,0-Preview вместе с Application Insights, используйте версию [2.8.0-бета](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0-beta2) или более позднюю. Это единственная известная версия, хорошо работающая с ASP.NET Core 3,0. Кроме того, подключение на основе Visual Studio еще не поддерживается для приложений ASP.NET Core 3,0.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](https://docs.microsoft.com/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
@@ -57,7 +60,7 @@ ms.locfileid: "68302717"
 
      ![Снимок экрана, на котором показано, где выбрать пакет Application Insights для обновления](./media/asp-net-core/update-nuget-package.png)
 
-6. Если вы применяете необязательную подсказку и добавили проект в систему управления  > версиями, перейдите к просмотру**Team Explorer** > **изменений**. Затем выберите каждый файл, чтобы просмотреть различие изменений, внесенных Application Insights телеметрии.
+6. Если вы применяете необязательную подсказку и добавили проект в систему управления > версиями, перейдите к просмотру**Team Explorer** > **изменений**. Затем выберите каждый файл, чтобы просмотреть различие изменений, внесенных Application Insights телеметрии.
 
 ## <a name="enable-application-insights-server-side-telemetry-no-visual-studio"></a>Включить телеметрию на стороне сервера Application Insights (без Visual Studio)
 
@@ -123,31 +126,62 @@ ms.locfileid: "68302717"
 
 Запустите приложение и выполните запросы к нему. Теперь данные телеметрии должны передаваться в Application Insights. Пакет SDK для Application Insights автоматически собирает следующие данные телеметрии.
 
-|Запросы и зависимости |Сведения|
+|Запросы и зависимости |Подробнее|
 |---------------|-------|
-|Requests | Входящие веб-запросы к приложению. |
+|Запрошено | Входящие веб-запросы к приложению. |
 |HTTP или HTTPS | Вызовы метода выполняются `HttpClient`с помощью. |
 |SQL | Вызовы метода выполняются `SqlClient`с помощью. |
 |[Хранилище Azure](https://www.nuget.org/packages/WindowsAzure.Storage/) | Вызовы, выполняемые с помощью клиента службы хранилища Azure. |
 |[Пакет SDK для клиента EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Версия 1.1.0 и более поздние версии. |
 |[Пакет SDK для клиента ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Версия 3.0.0 и более поздние версии. |
-|Azure Cosmos DB | Отслеживание автоматически, только если используется HTTP/HTTPS. Application Insights не захватывает режим TCP. |
+|Azure Cosmos DB | Отслеживание автоматически, только если используется HTTP/HTTPS. Application Insights не захватывает режим TCP. |
 
 ### <a name="performance-counters"></a>Счетчики производительности
 
 Поддержка [счетчиков производительности](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/) в ASP.NET Core ограничена:
 
-   * Версии пакета SDK 2.4.1 и более поздних версий собираются счетчики производительности, если приложение выполняется в веб-приложениях (Windows).
-   * Версии пакета SDK 2.7.0-beta3 и более поздних версий собираются счетчики производительности, если приложение `NETSTANDARD2.0` выполняется в Windows и целевые или более поздние версии.
-   * Для приложений, предназначенных для .NET Framework, все версии пакетов SDK поддерживают счетчики производительности.
- 
-Эта статья будет обновлена при добавлении поддержки счетчика производительности в Linux.
+* Версии пакета SDK 2.4.1 и более поздних версий собираются счетчики производительности, если приложение выполняется в веб-приложениях Azure (Windows).
+* Версии пакета SDK 2.7.1 и более поздних версий собираются счетчики производительности, если приложение `NETSTANDARD2.0` выполняется в Windows и целевые или более поздние версии.
+* Для приложений, предназначенных для .NET Framework, все версии пакетов SDK поддерживают счетчики производительности.
+* Версии пакета SDK 2.8.0-beta3 и более поздних версий поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживается никакой другой счетчик. Рекомендуемый способ получения системных счетчиков в Linux (и других средах, отличных от Windows) — с помощью [евенткаунтерс](#eventcounter)
+
+### <a name="eventcounter"></a>евенткаунтер
+
+[Евенткаунтер](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md)— это кросс-платформенный метод для публикации и использования счетчиков в .NET и .NET Core. Хотя эта функция существовала раньше, встроенные поставщики, которые опубликовали эти счетчики, отсутствовали. Начиная с .NET Core 3,0, несколько счетчиков публикуются из окна, например счетчики среды CLR, ASP.NET Core счетчики и т. д.
+
+Версии пакета SDK 2.8.0-beta3 и более поздних версий поддерживают коллекцию Евенткаунтерс. По умолчанию пакет SDK собирает следующие счетчики, и эти счетчики можно запрашивать либо в обозреватель метрик, либо с помощью аналитического запроса в таблице PerformanceCounter. Имена счетчиков будут иметь вид "Category | Счетчик ".
+
+|Категория | Счетчик|
+|---------------|-------|
+|System. Runtime | Использование ЦП |
+|System. Runtime | Рабочий набор |
+|System. Runtime | GC-heap-размер |
+|System. Runtime | Gen-0-GC-Count |
+|System. Runtime | Gen-1-GC-Count |
+|System. Runtime | Gen-2-GC-Count |
+|System. Runtime | время сборки мусора |
+|System. Runtime | Gen-0-size |
+|System. Runtime | Gen-1-size |
+|System. Runtime | Gen-2-size |
+|System. Runtime | LOH-размер |
+|System. Runtime | ставка распределения |
+|System. Runtime | число сборок |
+|System. Runtime | число исключений |
+|System. Runtime | ThreadPool — число потоков |
+|System. Runtime | монитор-блокировка-состязание-количество |
+|System. Runtime | ThreadPool — длина очереди |
+|System. Runtime | ThreadPool — завершено — количество элементов |
+|System. Runtime | Счетчик "активный — таймер" |
+|Microsoft. AspNetCore. Hosting | запросов в секунду |
+|Microsoft. AspNetCore. Hosting | Всего запросов |
+|Microsoft. AspNetCore. Hosting | текущие запросы |
+|Microsoft. AspNetCore. Hosting | Неудачные запросы |
 
 ### <a name="ilogger-logs"></a>Журналы ILogger
 
 [Журналы ILogger](https://docs.microsoft.com/azure/azure-monitor/app/ilogger) с уровнем серьезности `Warning` или выше автоматически фиксируются в пакетах SDK 2.7.0-beta3 и более поздних версий.
 
-### <a name="live-metrics"></a>Динамические метрики
+### <a name="live-metrics"></a>Интерактивные метрики
 
 На портале может потребоваться несколько минут, прежде чем начнется отображение телеметрических данных. Чтобы быстро убедиться в том, что все работает, лучше использовать [динамические метрики](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream) при выполнении запросов к выполняющемуся приложению.
 
@@ -197,7 +231,17 @@ ms.locfileid: "68302717"
     }
 ```
 
-Дополнительные сведения см. в разделе [Настраиваемые параметры в `ApplicationInsightsServiceOptions` ](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs).
+Полный список параметров в`ApplicationInsightsServiceOptions`
+
+|Параметр | Описание | Значение по умолчанию
+|---------------|-------|-------
+|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
+|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
+|енаблехеартбеат | Функция включения и отключения пульса (периодически (по умолчанию — 15 минут) отправляет настраиваемую метрику с именем "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | true
+|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | true
+|Рекуестколлектионоптионс. Траккексцептионс | Включение и отключение отчетов о необработанном отслеживании исключений модулем сбора запросов. | false в NETSTANDARD 2.0 (поскольку исключения отправляются с помощью Аппликатионинсигхтслогжерпровидер), в противном случае — значение true.
+
+См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
 ### <a name="sampling"></a>Выборка
 
@@ -259,16 +303,17 @@ ms.locfileid: "68302717"
 
 ### <a name="configuring-or-removing-default-telemetrymodules"></a>Настройка или удаление Телеметримодулес по умолчанию
 
-Application Insights использует модули телеметрии для [автоматического сбора полезной информации](https://docs.microsoft.com/azure/azure-monitor/app/auto-collect-dependencies) о конкретных рабочих нагрузках без необходимости дополнительной настройки.
+Application Insights использует модули телеметрии для автоматического сбора полезных данных телеметрии о конкретных рабочих нагрузках, не требуя ручного отслеживания пользователем.
 
 Следующие модули автоматической коллекции включены по умолчанию. Эти модули отвечают за автоматическое сбор данных телеметрии. Их можно отключить или настроить для изменения их поведения по умолчанию.
 
-* `RequestTrackingTelemetryModule`
-* `DependencyTrackingTelemetryModule`
-* `PerformanceCollectorModule`
-* `QuickPulseTelemetryModule`
-* `AppServicesHeartbeatTelemetryModule`
-* `AzureInstanceMetadataTelemetryModule`
+* `RequestTrackingTelemetryModule`— Собирает RequestTelemetry из входящих веб-запросов.
+* `DependencyTrackingTelemetryModule`— Собирает DependencyTelemetry из исходящих вызовов HTTP и вызовов SQL.
+* `PerformanceCollectorModule`— Собирает данные счетчиков производительности Windows.
+* `QuickPulseTelemetryModule`— Собирает данные телеметрии для отображения на портале динамических метрик.
+* `AppServicesHeartbeatTelemetryModule`— Собирает сведения о среде службы приложений Azure, в которой размещается приложение, — накапливает Сердечки (которые отправляются как пользовательские метрики).
+* `AzureInstanceMetadataTelemetryModule`— Собирает неритми сердца (которые отправляются в качестве пользовательских метрик), о среде виртуальной машины Azure, в которой размещено приложение.
+* `EventCounterCollectionModule`— Собирает [евенткаунтерс.](#eventcounter). Этот модуль является новой функцией и доступен в пакете SDK версии 2.8.0-beta3 и более поздних версий.
 
 Чтобы настроить любое значение `TelemetryModule`по умолчанию, используйте `ConfigureTelemetryModule<T>` метод `IServiceCollection`расширения для, как показано в следующем примере.
 
@@ -286,6 +331,15 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
                         {
                             module.EnableW3CHeadersInjection = true;
                         });
+
+        // The following removes all default counters from EventCounterCollectionModule, and adds a single one.
+        services.ConfigureTelemetryModule<EventCounterCollectionModule>(
+                            (module, o) =>
+                            {
+                                module.Counters.Clear();
+                                module.Counters.Add(new EventCounterCollectionRequest("System.Runtime", "gen-0-size"));
+                            }
+                        );
 
         // The following removes PerformanceCollectorModule to disable perf-counter collection.
         // Similarly, any other default modules can be removed.
@@ -331,6 +385,8 @@ using Microsoft.ApplicationInsights.Channel;
     }
 ```
 
+Обратите внимание, что указанные выше данные не предотвращают сбор данных телеметрии для модулей автоматического сбора данных. С помощью описанного выше подхода отключается только отправка данных телеметрии в Application Insights. Если не требуется определенный модуль автоматического сбора данных, лучше [удалить модуль телеметрии](#configuring-or-removing-default-telemetrymodules) .
+
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ### <a name="how-can-i-track-telemetry-thats-not-automatically-collected"></a>Как можно отвестить данные телеметрии, которые не собираются автоматически?
@@ -366,6 +422,8 @@ public class HomeController : Controller
 
 Да, включение Application Insights с этим методом является допустимым. Этот метод используется в адаптации Visual Studio и в расширениях веб-приложений. Однако рекомендуется использовать `services.AddApplicationInsightsTelemetry()` , так как он предоставляет перегрузки для управления некоторой конфигурацией. Оба метода выполняют одни и те же функции, поэтому, если не нужно применять пользовательскую конфигурацию, можно вызвать любой из этих методов.
 
+`IWebHostBuilder`заменяется `IHostBuilder` на в ASP.NET Core 3,0, и во избежание путаницы Application Insights Version 2.8.0-beta3/назад помечает метод UseApplicationInsights () как устаревший и будет удален в следующей основной версии.
+
 ### <a name="im-deploying-my-aspnet-core-application-to-web-apps-should-i-still-enable-the-application-insights-extension-from-web-apps"></a>Я развертываю приложение ASP.NET Core в веб-приложениях. Следует ли по-прежнему включать расширение Application Insights из веб-приложений?
 
 Если пакет SDK устанавливается во время сборки, как показано в этой статье, вам не нужно включать [расширение Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps) на портале службы приложений. Даже если расширение установлено, оно будет восстановлено при обнаружении того, что пакет SDK уже добавлен в приложение. Если включить Application Insights из расширения, вам не нужно устанавливать и обновлять пакет SDK. Но если вы включили Application Insights, следуя инструкциям в этой статье, вы получите большую гибкость, поскольку:
@@ -375,6 +433,7 @@ public class HomeController : Controller
        * Все режимы публикации, включая автономные или зависящие от платформы.
        * Все целевые платформы, включая полный .NET Framework.
        * Все варианты размещения, включая веб-приложения, виртуальные машины, Linux, контейнеры, службу Azure Kubernetes и размещение без Azure.
+       * Все версии .NET Core, включая предварительные версии.
    * Вы можете просматривать данные телеметрии локально при отладке из Visual Studio.
    * Вы можете отвести отслеживание дополнительных пользовательских данных телеметрии `TrackXXX()` с помощью API.
    * Вы полностью контролируете конфигурацию.

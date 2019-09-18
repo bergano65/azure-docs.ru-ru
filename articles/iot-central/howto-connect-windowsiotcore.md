@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: b14d6f70f4c4163f16c8275f4e071da6a9e0bc78
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 3513dc0a1928168d6313e9d49a8f3d5d27aca781
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019823"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066336"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -43,13 +43,27 @@ ms.locfileid: "70019823"
 
 ## <a name="add-a-real-device"></a>Добавление реального устройства
 
-В приложении IoT Central Azure используйте страницу **Device Explorer** , чтобы добавить реальное устройство из шаблона устройства **Windows 10 IOT базовая** . Запишите сведения о подключении устройства (**идентификатор области**, **идентификатор устройства**и **первичный ключ**). Дополнительные сведения см. в разделе [Получение сведений о подключении](howto-generate-connection-string.md#get-connection-information).
+В приложении IoT Central Azure используйте страницу **Device Explorer** , чтобы добавить реальное устройство из шаблона устройства **Windows 10 IOT базовая** . Запишите сведения о подключении устройства (**идентификатор области**, **идентификатор устройства**и **первичный ключ**).
 
 ## <a name="prepare-the-device"></a>Подготовка устройства
 
-Для подключения устройства к IoT Central требуется строка подключения.
+Для подключения устройства к IoT Central требуется строка подключения:
 
-[!INCLUDE [iot-central-howto-connection-string](../../includes/iot-central-howto-connection-string.md)]
+1. Создайте строку подключения с помощью служебной программы командной строки `dps-keygen`:
+
+    Чтобы установить [служебную программу генератора ключей](https://github.com/Azure/dps-keygen), выполните следующую команду:
+
+    ```cmd/sh
+    npm i -g dps-keygen
+    ```
+
+1. Чтобы создать строку подключения, выполните следующую команду, используя сведения о подключении, которые вы записали ранее:
+
+    ```cmd/sh
+    dps-keygen -di:<Device ID> -dk:<Primary or Secondary Key> -si:<Scope ID>
+    ```
+
+1. Скопируйте строку подключения в выходных данных `dps-keygen`, чтобы использовать ее в коде устройства.
 
 Чтобы код устройства может получить доступ к строке подключения, сохраните его в файле **Connection. String. iothub** в папке `C:\Data\Users\DefaultAccount\Documents\` на устройстве Windows 10 IOT базовая.
 
@@ -66,7 +80,7 @@ ms.locfileid: "70019823"
 Чтобы развернуть и запустить пример приложения на устройстве, можно использовать [портал устройств Windows](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal):
 
 1. Используйте веб-браузер для перехода на портал устройств Windows на устройстве.
-1. Чтобы развернуть и запустить клиентское приложение **центра Интернета вещей Azure** , выберите **приложения > примеры для быстрого запуска**. Затем выберите **клиент центра Интернета вещей Azure**.
+1. Чтобы развернуть и запустить **клиентское приложение центра Интернета вещей Azure** , выберите **приложения > примеры для быстрого запуска**. Затем выберите **клиент центра Интернета вещей Azure**.
 1. Затем выберите **развернуть и запустить**.
 
     ![Развертывание и запуск](media/howto-connect-windowsiotcore/quick-run.png)
@@ -106,9 +120,9 @@ ms.locfileid: "70019823"
 
 ### <a name="properties"></a>Свойства
 
-| Type            | `Display name` | Имя поля | Тип данных |
+| Тип            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
-| Свойство устройства | Серийный номер   | dieNumber  | номер    |
+| Свойство устройства | Серийный номер   | dieNumber  | number    |
 | Текст            | Местоположение     | расположение   | Н/Д       |
 
 ## <a name="next-steps"></a>Следующие шаги

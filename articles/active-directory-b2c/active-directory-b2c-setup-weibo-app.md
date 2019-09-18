@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 428149fbc015037fa8c92bad6fe72cbd97aad5d7
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 4a019c3f197f123486dd28dc2bdb46e34f6cabc4
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622243"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064916"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "69622243"
 
 ## <a name="create-a-weibo-application"></a>Создание приложения Weibo
 
-Чтобы использовать учетную запись Weibo в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us)адресу.
+Чтобы использовать учетную запись Weibo в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us)адресу.
 
 1. Выполните вход на [портал разработчиков Weibo](https://open.weibo.com/) с учетными данными от учетной записи Weibo.
 1. После входа щелкните отображаемое имя в правом верхнем углу.

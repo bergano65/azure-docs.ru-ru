@@ -4,7 +4,7 @@ description: Как изменить параметры DNS-сервера в в
 services: virtual-network
 documentationcenter: na
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: tysonn
 tags: azure-service-management
 ms.assetid: a8905927-92ac-42b5-8c33-8e42c000692c
@@ -15,15 +15,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/23/2016
 ms.author: genli
-ms.openlocfilehash: 36f7ed9b02b66718327c1a05a6cf29eedf39e7a5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c15d73673c19383deabe15ef30026990dfd138b9
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60232860"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059093"
 ---
 # <a name="specifying-dns-settings-in-a-virtual-network-configuration-file"></a>Задание параметров DNS в файле конфигурации виртуальной сети
-Файл конфигурации сети состоит из двух элементов, которые можно использовать для задания параметров системы доменных имен (DNS): **DnsServers** и **DnsServerRef**. Список DNS-серверов можно добавить, задав их IP-адреса и ссылочные имена в элементе **DnsServers** . После этого в элементе **DnsServerRef** можно указать записи DNS-серверов из элемента DnsServers, которые будут применяться для различных сетевых сайтов в виртуальной сети.
+Файл конфигурации сети содержит два элемента, которые можно использовать для указания параметров системы доменных имен (DNS): **DnsServers** и **DnsServerRef**. Список DNS-серверов можно добавить, задав их IP-адреса и ссылочные имена в элементе **DnsServers** . После этого в элементе **DnsServerRef** можно указать записи DNS-серверов из элемента DnsServers, которые будут применяться для различных сетевых сайтов в виртуальной сети.
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
@@ -64,7 +64,7 @@ ms.locfileid: "60232860"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь со [схемой конфигурации виртуальной сети Azure](https://go.microsoft.com/fwlink/?LinkId=248093).
 * Ознакомьтесь со [схемой конфигурации службы Azure](https://msdn.microsoft.com/library/windowsazure/ee758710).
 * [Настройка виртуальной сети с помощью файлов конфигурации сети](virtual-networks-using-network-configuration-file.md).
