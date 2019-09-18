@@ -104,6 +104,8 @@
               href: concepts-monitoring.md
             - name: Журналы сервера
               href: concepts-server-logs.md
+            - name: Журналы аудита
+              href: concepts-audit.md
             - name: Хранилище запросов
               items:
                 - name: Хранилище запросов

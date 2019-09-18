@@ -1,5 +1,5 @@
 ---
-title: Документация по Azure Data Lake Storage Gen1. Руководства и справочник по API | Документация Майкрософт
+title: Документация по Azure Data Lake Storage 1-го поколения. Руководства и справочник по API | Документация Майкрософт
 description: Узнайте, как настраивать, администрировать и обращаться к гипермасштабируемому совместимому с Hadoop репозиторию Data Lake для анализа данных любого объема и типа с любой скоростью приема.
 services: data-lake-store
 author: twooley
@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 24d6f41e2415d9a8a6113135bf11c98b1e19f1f7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ac2c34b8de4ac9f66f1618d854e26aa431d35184
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60195392"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088941"
 ---
-# <a name="azure-data-lake-storage-gen1-documentation"></a>Документация по Azure Data Lake Storage Gen1
+# <a name="azure-data-lake-storage-gen1-documentation"></a>Документация по Azure Data Lake Storage 1-го поколения
 
 Платформа Azure Data Lake Storage 2-го поколения теперь общедоступна. Мы рекомендуем приступить к ее использованию уже сегодня. См. дополнительные сведения на [странице продукта](https://aka.ms/adlsgen2-product).
 
-Узнайте, как использовать Azure Data Lake Storage Gen1 (ранее — Azure Data Lake Store) для создания гипермасштабируемого совместимого с Hadoop репозитория и анализа данных любого объема и типа с любой скоростью приема. Руководства, справочники по API и другая документация, в которой показано, как настраивать, администрировать и вызывать репозиторий Data Lake для оперативной и произвольной аналитики.
+Узнайте, как использовать Azure Data Lake Storage 1-го поколения (ранее — Azure Data Lake Store) для создания гипермасштабируемого совместимого с Hadoop репозитория и анализа данных любого объема и типа с любой скоростью приема. Руководства, справочники по API и другая документация, в которой показано, как настраивать, администрировать и вызывать репозиторий Data Lake для оперативной и произвольной аналитики.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -36,7 +36,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Дополнительные сведения о Data Lake Storage Gen1</h3>
+                        <h3>Дополнительные сведения о Data Lake Storage 1-го поколения</h3>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Библиотека видеоматериалов по Data Lake Storage Gen1</h3>
+                        <h3>Библиотека видео по Data Lake Storage 1-го поколения</h3>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью портала Azure</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью портала Azure</h3>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью PowerShell</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью PowerShell</h3>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью Azure CLI</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью Azure CLI</h3>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью .NET</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью .NET</h3>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью Java</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью Java</h3>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@ ms.locfileid: "60195392"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Начало работы с Data Lake Storage Gen1 с помощью Node.js</h3>
+                        <h3>Начало работы с Data Lake Storage 1-го поколения с помощью Node.js</h3>
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@ ms.locfileid: "60195392"
                     <div class="cardText">
                         <h3>Командная строка</h3>
                         <p><a href="/powershell/module/az.datalakestore/">PowerShell</a></p>
-                        <p><a href="/cli/azure/dls">Интерфейс командной строки Azure</a></p>
+                        <p><a href="/cli/azure/dls">Azure CLI</a></p>
                     </div>
                 </div>
             </div>
@@ -193,11 +193,11 @@ ms.locfileid: "60195392"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Languages</h3>
+                        <h3>Языки</h3>
                         <p><a href="/dotnet/api/overview/azure/data-lake-store">.NET</a></p>
                         <p><a href="/java/api/overview/azure/datalake">Java</a></p>
                         <p><a href="https://www.npmjs.com/package/azure-arm-datalake-store">Node.js</a></p>
-                        <p><a href="https://docs.microsoft.com/python/api/azure.mgmt.datalake.store?view=azure-python">Python (управление учетными записями)</a></p>
+                        <p><a href="/python/api/azure-mgmt-datalake-store/">Python (управление учетными записями)</a></p>
                         <p><a href="https://azure-datalake-store.readthedocs.io/en/latest">Python (управление файловой системой)</a></p>
                     </div>
                 </div>
