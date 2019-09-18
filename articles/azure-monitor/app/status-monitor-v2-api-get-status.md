@@ -3,7 +3,7 @@ title: 'Справочник по API Azure монитор состояния v2
 description: Справочник по API монитор состояния v2. Get-Аппликатионинсигхтсмониторингстатус. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 50703ede205b42032e9618c1b16b0de2bd7f3a23
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: c3982e7eb78c1113c73a8e7e9d7b00ad403ac486
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68424138"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058253"
 ---
 # <a name="status-monitor-v2-api-get-applicationinsightsmonitoringstatus"></a>API монитор состояния v2: Get-Аппликатионинсигхтсмониторингстатус
 
@@ -34,7 +34,7 @@ ms.locfileid: "68424138"
 
 ## <a name="examples"></a>Примеры
 
-### <a name="example-application-status"></a>Пример Состояние приложения
+### <a name="example-application-status"></a>Пример: Состояние приложения
 
 Выполните команду `Get-ApplicationInsightsMonitoringStatus` , чтобы отобразить состояние мониторинга веб-сайтов.
 
@@ -80,7 +80,7 @@ AppAlreadyInstrumented : true
 - **DemoWebApp333** был вручную инструментирован с помощью пакета SDK для Application Insights. Монитор состояния обнаружил пакет SDK и не отслеживает этот сайт.
 
 
-### <a name="example-powershell-module-information"></a>Пример Сведения о модуле PowerShell
+### <a name="example-powershell-module-information"></a>Пример: Сведения о модуле PowerShell
 
 Выполните команду `Get-ApplicationInsightsMonitoringStatus -PowerShellModule` , чтобы отобразить сведения о текущем модуле:
 
@@ -134,7 +134,7 @@ ApplicationInsightsSdkPath (Exists: True)
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Runtime\Microsoft.ApplicationInsights.dll
 ```
 
-### <a name="example-runtime-status"></a>Пример Состояние среды выполнения
+### <a name="example-runtime-status"></a>Пример: Состояние среды выполнения
 
 Вы можете проверить процесс на инструментированном компьютере, чтобы узнать, загружены ли все библиотеки DLL. Если наблюдение работает, необходимо загрузить не менее 12 библиотек DLL.
 

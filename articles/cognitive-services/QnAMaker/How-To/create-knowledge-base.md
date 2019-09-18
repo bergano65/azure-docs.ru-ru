@@ -1,26 +1,26 @@
 ---
-title: Создание базы знаний — QnA Maker
+title: Краткое руководство. Создание базы знаний с помощью QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Используйте портал службы API службы QnA Maker, чтобы добавить базу знаний с помощью ХИ2ТЕСТ-Chat. Ваше приложение станет более привлекательным. Добавьте в базу знаний заранее заданный набор самых интересных бесед. Он может стать основой для бесед бота, а также сэкономить время и затраты на их создание.
+description: Используйте портал службы API QnA Maker, чтобы добавить или создать базу знаний с беседой. Ваше приложение станет более привлекательным. Добавьте в базу знаний заранее заданный набор самых интересных бесед. Он может стать основой для бесед бота, а также сэкономить время и затраты на их создание.
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
-ms.topic: conceptual
-ms.date: 08/30/2019
+ms.topic: quickstart
+ms.date: 09/04/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 322a1d25ed434d8be674288b1b13d6ecf961590b
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
-ms.translationtype: MT
+ms.openlocfilehash: 798bbb725d4764c5ec7a1d69770e9508af0fdf5a
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70193563"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376212"
 ---
-# <a name="quickstart-create-a-knowledge-base-using-the-qna-maker-api-service-portal"></a>Краткое руководство. Создание базы знаний с помощью портала службы API службы QnA Maker
+# <a name="quickstart-create-a-knowledge-base-using-the-qna-maker-api-service-portal"></a>Краткое руководство. Создание базы знаний с помощью портала службы API QnA Maker
 
-Портал служб API службы QnA Maker упрощает добавление существующих источников данных при создании базы знаний. Новую базу знаний QnA Maker можно создать, используя такие типы документов:
+Портал службы API QnA Maker упрощает добавление существующих источников данных при создании базы знаний. Новую базу знаний QnA Maker можно создать, используя такие типы документов:
 
 <!-- added for scanability -->
 * страницы часто задаваемых вопросов;
@@ -45,11 +45,11 @@ ms.locfileid: "70193563"
 
     ![Настройка источников данных](../media/qnamaker-how-to-create-kb/set-data-sources.png)
 
-1. Присвойте службе **имя** , например `my first kb`. Поддерживаются повторяющиеся имена, а также специальные знаки.
+1. Укажите **имя** службы, например `my first kb`. Поддерживаются повторяющиеся имена, а также специальные знаки.
 
-1. Добавьте страницу устранения неполадок QnA Maker как URL-адрес `https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/troubleshooting`:, а `+ Add URL`затем выберите. Дополнительные сведения о поддерживаемых типах источников приведены [здесь](../Concepts/data-sources-supported.md). В этом кратком руководстве **не нужно загружать файлы** для извлекаемых данных. Ознакомьтесь со [сведениями о ценах](https://aka.ms/qnamaker-pricing), чтобы узнать, сколько документов можно добавить.
+1. Добавьте страницу устранения неполадок с QnA Maker как URL-адрес `https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/troubleshooting`, а затем выберите `+ Add URL`. Дополнительные сведения о поддерживаемых типах источников приведены [здесь](../Concepts/data-sources-supported.md). Для работы с этим кратким руководством вам **не нужно отправлять файлы** для извлекаемых данных. Ознакомьтесь со [сведениями о ценах](https://aka.ms/qnamaker-pricing), чтобы узнать, сколько документов можно добавить.
 
-1. Добавьте  **_Professional_ ХИ2ТЕСТ-Chat** в базу знаний. 
+1. Добавьте **_профессиональную_ беседу** в свою базу знаний. 
 
 1. Выберите **Create your KB** (Создать базу знаний).
 
@@ -59,15 +59,15 @@ ms.locfileid: "70193563"
 
     ![Извлечение](../media/qnamaker-how-to-create-kb/hang-tight-extraction.png)
 
-1. После успешного создания базы знаний вы будете перенаправлены на страницу базы **знаний** .
+1. По завершении вы будете перенаправлены на страницу **базы знаний**.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Когда вы закончите работу с базой знаний, удалите ее на портале QnA Maker.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 
-Для мер экономии затрат можно [предоставить общий доступ к](set-up-qnamaker-service-azure.md#share-existing-services-with-qna-maker) некоторым, но не всем ресурсам Azure, созданным для QnA Maker.
+Для экономии затрат вы можете [предоставить общий доступ](set-up-qnamaker-service-azure.md#share-existing-services-with-qna-maker) к некоторым (не всем) ресурсам Azure, созданным для QnA Maker.
 
 > [!div class="nextstepaction"]
-> [Добавление вопросов с помощью метаданных](../quickstarts/add-question-metadata-portal.md)
+> [Добавление вопросов с использованием метаданных](../quickstarts/add-question-metadata-portal.md)

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: hrasheed
-ms.openlocfilehash: 4e6825b40700fe3bd24631094a2a6060d94524cc
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: fa40f206447f631c78052bda085b26a56e481194
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70882305"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066923"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-on-apache-hadoop-in-hdinsight"></a>Использование C# определяемых пользователем функций с Apache Hive и Apache Pig на Apache Hadoop в HDInsight
 
@@ -171,7 +171,7 @@ Hive и Pig могут передавать данные во внешние п�
 
    * Если используется __учетная запись хранения Azure__, щелкните значок передачи и перейдите в папку **bin\debug** проекта **HiveCSharp**. Наконец, выберите файл **HiveCSharp.exe** и нажмите кнопку **OK**.
 
-       ![значок отправки](./media/apache-hadoop-hive-pig-udf-dotnet-csharp/hdinsight-upload-icon.png)
+       ![Значок отправки HDInsight для нового проекта](./media/apache-hadoop-hive-pig-udf-dotnet-csharp/hdinsight-upload-icon.png)
     
    * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **HiveCSharp.exe** и нажмите кнопку **Открыть**.
 

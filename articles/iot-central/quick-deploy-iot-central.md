@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 0d5f04d9c0cc6dcd8a784ae7a816d93e2aab30aa
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: eb6759d95ab0fb7afd3b6179babf052dfb029ff2
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099486"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873443"
 ---
 # <a name="create-an-azure-iot-central-application"></a>Создание приложения Azure IoT Central
 
@@ -37,7 +37,7 @@ ms.locfileid: "70099486"
    - За приложения **с оплатой по мере использования** плата взимается за каждое устройство, а первые 5 устройств предоставляются бесплатно. При создании приложения **с оплатой по мере использования** необходимо выбрать *каталог*, *подписку Azure* и *регион*.
       - *Каталог* — Azure Active Directory (AD) для создания приложения. Он содержит удостоверения пользователей, учетные данные и другие сведения об организации. Если у вас нет клиента Azure Active Directory, он будет создан автоматически при создании подписки Azure.
       - *Подписка Azure* позволяет создавать экземпляры служб Azure. IoT Central подготовит ресурсы в вашей подписке. Если у вас еще нет подписки, создайте ее на [странице входа в Azure](https://aka.ms/createazuresubscription). После создания подписки Azure перейдите на страницу **Создание приложения**. В раскрывающемся списке **Подписка Azure** отобразится новая подписка.
-      - *Регион* — физическое расположение, в котором вы хотите создать приложение. Как правило, для получения оптимальной производительности следует выбирать регион, ближайший к устройствам. Регионы, в которых доступна служба Azure IoT Central, можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/services/). Выбрав регион, вы не сможете переместить приложение в другой регион.
+      - *Регион* — физическое расположение или [географическая область](https://azure.microsoft.com/global-infrastructure/geographies/), где вы хотите создать приложение. Как правило, следует выбирать регион, расположенный как можно ближе к устройствам, чтобы обеспечить оптимальную производительность. Регионы, в которых доступно приложение Azure IoT Central,можно просмотреть на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=iot-central). Выбрав регион, вы не сможете переместить приложение в другой регион.
 
       Узнайте больше о ценах на службу Azure IoT Central на [этой странице](https://azure.microsoft.com/pricing/details/iot-central/).
 

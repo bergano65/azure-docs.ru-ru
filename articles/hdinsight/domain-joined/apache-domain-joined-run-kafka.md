@@ -1,18 +1,18 @@
 ---
-title: Учебник. Настройка политик Apache Kafka в HDInsight с использованием Корпоративного пакета безопасности Azure
+title: Руководство. Apache Kafka с Корпоративным пакетом безопасности в Azure HDInsight
 description: 'Учебник: сведения о настройке политик Apache Ranger для Kafka в Azure HDInsight с корпоративным пакетом безопасности.'
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
-ms.date: 06/24/2019
-ms.openlocfilehash: ba16a975aa3b1e60393006ef49a7e422c572931e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 09/04/2019
+ms.openlocfilehash: 6cac4bd05f2acf5b11a8235a4bc1e0d09e0c4dc7
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441371"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885935"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
@@ -64,7 +64,7 @@ ms.locfileid: "67441371"
    * \* обозначает ноль или более вхождений символов.
    * ? означает один символ
 
-   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
+   ![Политика создания пользовательского интерфейса администратора Apache Ranger1](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
 
    Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
 
@@ -79,7 +79,7 @@ ms.locfileid: "67441371"
    |Выберите пользователя  |  marketing_user1 |
    |Разрешения  | публикация, использование, создание |
 
-   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png)  
+   ![Политика создания пользовательского интерфейса администратора Apache Ranger2](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png)  
 
 6. Щелкните **Добавить**, чтобы сохранить политику.
 

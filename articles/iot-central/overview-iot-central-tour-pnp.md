@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 4a0c9d16474ddf032ff88382bc240713bc734ff8
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: 82996db232fde0424ccc8e3e478a70a5892231e6
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211898"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70884827"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui-preview-features"></a>Общие сведения о пользовательском интерфейсе Azure IoT Central (предварительные версии функций)
 
@@ -44,24 +44,23 @@ ms.locfileid: "70211898"
       ![Left navigation menu](media/overview-iot-central-tour-pnp/navigationbar.png)
   :::column-end:::
   :::column span="2":::
+     **Панель мониторинга** — отображается панель мониторинга приложения. Как сборщик вы можете настроить панель мониторинга для операторов. Пользователи также могут создавать собственные панели мониторинга.
+     
+     **Устройства** — перечислены шаблоны имитированных и реальных устройств, связанных с каждым шаблоном устройства в приложении. Средство **Device Explorer** позволяет операторам управлять подключенными устройствами.
 
-      **Dashboard** displays your application dashboard. As a builder, you can customize the dashboard for your operators. Users can also create their own  dashboards.
-    
-      **Devices** lists the simulated and real devices associated with each device template in the application. As an operator, you use the **Device Explorer** to manage your connected devices.
-    
-      **Device groups** lets you view and create device groups. As an operator, you can create device groups as a logical collections of devices specified by a query.
+     **Группы устройств** — можно просматривать и создавать группы устройств. Оператор может создавать группы устройств в качестве логической коллекции устройств, указанных в запросе.
 
-      **Rules** lets you edit rules that fire based on device telemetry and trigger customizable actions.
-    
-      **Analytics** shows analytics derived from device telemetry for devices and device groups. As an operator, you can create custom views on top of device data to derive insights from your application.
-    
-      **Jobs** enables bulk device management by having you create and run jobs to update your devices at scale.
-    
-      **Device templates** shows the tools a builder uses to create and manage device templates.
-    
-      **Data export** enables an administrator to configure a continuous export to other Azure services such as storage and queues.
-    
-      **Administration** shows the application administration pages where an administrator can manage application settings, users, and roles.
+     **Правила** — можно изменить правила, которые запускаются на основе телеметрии устройства и активируют настраиваемые действия.
+
+     **Аналитика** — отображаются аналитические сведения на основе данных телеметрии устройств и их групп. Как оператор вы можете создавать настраиваемые представления на основе данных устройства для получения аналитических сведений из приложения.
+
+     **Задания** — можно массово управлять устройствами при условии, что вы создали и запустили задания для обновления устройств в соответствующем масштабе.
+
+     **Шаблоны устройств** — отображаются средства, которые сборщик использует для создания шаблонов устройств и управления ими.
+
+     **Экспорт данных** — администратор может настроить непрерывный экспорт в другие службы Azure, например в хранилище и очереди.
+
+     **Администрирование** — отображаются страницы администрирования приложений, на которых администраторы могут полностью управлять параметрами, пользователями и ролями приложения.
    :::column-end:::
 :::row-end:::
 

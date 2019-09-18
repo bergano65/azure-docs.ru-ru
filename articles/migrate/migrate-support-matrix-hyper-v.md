@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/17/2019
 ms.author: raynew
-ms.openlocfilehash: 97972be655a6a03cfe29d8589a144d1e027b86fc
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 0d0329be0b7f864edbfc3c2aabc08f1742359670
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066781"
 ---
 # <a name="support-matrix-for-hyper-v-assessment-and-migration"></a>Таблица поддержки для оценки и переноса виртуальных машин Hyper-V
 
@@ -27,9 +27,9 @@ ms.locfileid: "70376096"
 **Развертывание** | **Дополнительно***
 --- | ---
 **Оценка локальных виртуальных машин Hyper-V** | [Настройте](tutorial-prepare-hyper-v.md) первую оценку.<br/><br/> [Выполните](scale-hyper-v-assessment.md) крупномасштабную оценку.
-**Перенос виртуальных машин Hyper-V в Azure.** | [Попробуйте выполнить](tutorial-migrate-hyper-v.md) миграцию в Azure. 
+**Перенос виртуальных машин Hyper-V в Azure.** | [Попробуйте выполнить](tutorial-migrate-hyper-v.md) миграцию в Azure.
 
-Миграция серверов Hyper-V, управляемых с помощью System Center Virtual Machine Manager (VMM), не поддерживается миграцией сервера "миграция Azure". 
+Миграция серверов Hyper-V, управляемых с помощью System Center Virtual Machine Manager (VMM), не поддерживается миграцией сервера "миграция Azure".
 
 ## <a name="azure-migrate-projects"></a>Проекты службы "миграция Azure"
 
@@ -44,10 +44,13 @@ ms.locfileid: "70376096"
   Azure для государственных организаций | US Gov (Вирджиния)
   Азиатско-Тихоокеанский регион | Восточная Азия или Юго-Восточная Азия
   Австралия | Юго-Восточная часть Восточная Австралия или Австралии
+  Бразилия | Южная Бразилия
   Канада | Центральная Канада или Восточная Канада
   Европа | Северная или Западная Европа
+  Франция | Центральная Франция
   Индия | Центральная Индия или Южная Индия
   Япония |  Восточная Япония или Западная Япония
+  Корея, Республика | Центральная Корея или Южная Корея
   Соединенное Королевство | Южная часть Соединенного Королевства или западная часть Соединенного Королевства
   США | Центральная часть США или Западная часть США 2
 

@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.custom: seo-java-august2019
-ms.openlocfilehash: 110c4a343909a81e092b147b79ed69d6bd5c2d9c
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: a34cb8e13d32cbeb6d289869dca3a8cb1391d68f
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981759"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390854"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-sql-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API SQL для Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "69981759"
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
 
-В этом кратком руководстве вы узнаете, как создавать ресурсы учетной записи [API SQL](sql-api-introduction.md) для Azure Cosmos DB и управлять bvb с помощью приложения Java. Сначала создайте учетную запись API SQL для Azure Cosmos DB с помощью портала Azure, затем создайте приложение Java с использованием [пакета SDK Java для SQL](sql-api-sdk-async-java.md) и добавьте ресурсы в учетную запись Cosmos DB с помощью приложения Java. Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Выполнив инструкции из этого руководства, вы узнаете, как создавать и изменять базы данных и контейнеры Cosmos с помощью пользовательского интерфейса или программных средств (по вашему выбору).
+Из этого краткого руководства вы узнаете, как использовать приложение Java для создания базы данных документов из учетной записи API SQL для Azure Cosmos DB и управления ею. Сначала создайте учетную запись API SQL для Azure Cosmos DB с помощью портала Azure, затем создайте приложение Java с использованием пакета SDK Java для SQL и добавьте ресурсы в учетную запись Cosmos DB с помощью приложения Java. Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Выполнив инструкции из этого руководства, вы узнаете, как создавать и изменять базы данных и контейнеры Cosmos DB с помощью пользовательского интерфейса или программных средств (по вашему выбору).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

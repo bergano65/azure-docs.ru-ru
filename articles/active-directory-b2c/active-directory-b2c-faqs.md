@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 08/31/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8bd1bee82941953e96eed1defa04c9fddef3e293
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: d852b786c1cc1c1eb9d39b931f9b8a142f969815
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809201"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065874"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C. Часто задаваемые вопросы
 
-На этой странице вы найдете ответы на часто задаваемые вопросы об Azure Active Directory (Azure AD) B2C. Следите за обновлениями.
+На этой странице приведены часто задаваемые вопросы о Azure Active Directory B2C (Azure AD B2C). Следите за обновлениями.
 
 ### <a name="why-cant-i-access-the-azure-ad-b2c-extension-in-the-azure-portal"></a>Почему я не могу получить доступ к расширению Azure AD B2C на портале Azure?
 

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: gwallace
-ms.openlocfilehash: cb7f5a10169c8baaecae0fc1916a439d61bfbf7c
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 28169bfb8dead65c543a3752a709f33487854e60
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70170882"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844726"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
 
@@ -38,7 +38,13 @@ ms.locfileid: "70170882"
 
 ## <a name="create-and-activate-a-virtual-environment-optional"></a>Создание и активация виртуальной среды (необязательно)
 
-Чтобы локально разрабатывать и тестировать функции Python, рекомендуется использовать среду Python 3.6. Для создания и активации виртуальной среды с именем `.venv` выполните следующие команды.
+Чтобы локально разрабатывать и тестировать функции Python, рекомендуется использовать среду Python 3.6. Для создания и активации виртуальной среды с именем `.venv` выполните следующие команды. 
+
+> [!NOTE]
+> Если модуль venv не был установлен Python для вашего дистрибутива Linux, вы можете установить его с помощью следующей команды:
+> ```command
+> sudo apt-get install python3-venv
+>
 
 ### <a name="bash"></a>Bash:
 

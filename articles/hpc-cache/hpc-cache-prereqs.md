@@ -4,25 +4,25 @@ description: Необходимые условия для использован
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 08/30/2019
+ms.date: 09/06/2019
 ms.author: v-erkell
-ms.openlocfilehash: 7bd1268784df50168e03673ac809b3a5854e2be7
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 50c60e38b58815be04cfb892c3622b9579529e67
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70775342"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71036871"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Необходимые условия для кэша HPC для Azure
 
 Прежде чем использовать портал Azure для создания нового кэша Azure HPC, убедитесь, что среда соответствует этим требованиям.
 
-## <a name="azure-subscription"></a>Подписка на Azure
+## <a name="azure-subscription"></a>Подписка Azure
 
 Рекомендуется использовать платную подписку.
 
 > [!NOTE]
-> Во время общедоступной предварительной версии группа кэша HPC Azure должна добавить подписку в список доступа, прежде чем ее можно будет использовать для создания экземпляра кэша. Эта процедура позволяет гарантировать, что каждый клиент получает высококачественное реагирование из своих тестовых кэшей. Заполните [эту форму](https://aka.ms/onboard-hpc-cache) , чтобы запросить доступ.
+> Во время предварительной версии группа кэша HPC Azure должна добавить подписку в список доступа, прежде чем ее можно будет использовать для создания экземпляра кэша. Эта процедура позволяет гарантировать, что каждый клиент получает высококачественное реагирование из своих тестовых кэшей. Заполните [эту форму](https://aka.ms/onboard-hpc-cache) , чтобы запросить доступ.
 
 ## <a name="network-infrastructure"></a>Сетевая инфраструктура
 

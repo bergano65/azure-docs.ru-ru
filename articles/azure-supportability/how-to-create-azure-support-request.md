@@ -14,27 +14,27 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2016
 ms.author: gangan
-ms.openlocfilehash: f6d9e683e1feff670c26b01a31ce977557295bff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 462a14d7845c6723a3482e50b01c50e3d913beee
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62129065"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71072083"
 ---
 # <a name="how-to-create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 ## <a name="summary"></a>Сводка
 Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure ([https://portal.azure.com](https://portal.azure.com)).
 
 > [!NOTE]
-> Портал Azure для Германии: [https://portal.microsoftazure.de](https://portal.microsoftazure.de) .  
-> Портал Azure для государственных учреждений США: [https://portal.azure.us](https://portal.azure.us).
+> Портал Azure для коммерческих [https://portal.azure.com](https://portal.azure.com) используется портал Azure для Германии[https://portal.microsoftazure.de](https://portal.microsoftazure.de)   
+> портал Azure для государственных организаций США[https://portal.azure.us](https://portal.azure.us)
 
 
 Основываясь на отзывах клиентов, мы обновили процедуру работы с запросами на поддержку, чтобы сосредоточиться на трех основных целях:
 
-* **Упрощенный**: Уменьшите щелчков мышью и колонок, чтобы упростить процесс отправки запрос в службу поддержки.
-* **Встроенная**: При устранении проблемы с ресурсом Azure, следует открыть запрос в службу поддержки для этого ресурса без переключения контекста.
-* **Эффективный**. Собирайте ключевую информацию инженеру службы поддержки необходимо эффективно решить вашу проблему.
+* **Оптимизация**: Сократите число щелчков и колонок, чтобы упростить процесс отправки запроса в службу поддержки.
+* **Интеграция**: При устранении проблемы с ресурсом Azure необходимо просто открыть запрос в службу поддержки для этого ресурса без переключения контекста.
+* **Эффективный**. Соберите сведения о ключе, необходимые инженеру службы поддержки для эффективного устранения проблемы.
 
 ## <a name="getting-started"></a>Приступая к работе
 Запрос на поддержку можно создать в верхнем меню навигации или непосредственно из колонки ресурсов.
@@ -51,10 +51,10 @@ ms.locfileid: "62129065"
 
 ![Контекст](./media/how-to-create-azure-support-request/Incontext.png)
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 Первый шаг при отправке запроса на поддержку заключается в сборе сведений о возникшей проблеме и вашем плане поддержки.
 
-Давайте рассмотрим пример: Возникли технические трудности с виртуальной машиной и кажется, проблемы с сетевыми подключениями.
+Возьмем пример: У вас возникли технические трудности с виртуальной машиной и подозрительная неполадка с сетевым подключением.
 После выбора службы ("виртуальная машина под управлением Windows") и ресурса (имя виртуальной машины) в первом шаге мастера начинается процедура оказания помощи.
 
 ![Колонка «Основные»](./media/how-to-create-azure-support-request/Basics.png)
@@ -76,7 +76,7 @@ ms.locfileid: "62129065"
 ## <a name="related-help"></a>Связанные материалы
 Мы предложим решение, которое может помочь вам устранить проблему, на основе выбранных вами категории и типа проблемы.
 
-![Связанные материалы](./media/how-to-create-azure-support-request/RelatedHelp.png)
+![Справка по этой теме](./media/how-to-create-azure-support-request/RelatedHelp.png)
 
 Кроме того, исходя из текстового описания проблемы, мы предложим решения для самостоятельного устранения, вытекающие из контекста.
 
@@ -127,8 +127,8 @@ ms.locfileid: "62129065"
 
 ![VID-2](./media/how-to-create-azure-support-request/VID-2.png)
 
-## <a name="feedback"></a>Отзыв
+## <a name="feedback"></a>Отзывы
 Мы всегда рады вашим отзывам и предложениям! Отправьте нам свои [предложения](https://feedback.azure.com/forums/266794-support-feedback). Кроме того, с нами можно связаться через [Twitter](https://twitter.com/azuresupport) или [форумы MSDN](https://social.msdn.microsoft.com/Forums/azure).
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Подробнее...
 [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq)

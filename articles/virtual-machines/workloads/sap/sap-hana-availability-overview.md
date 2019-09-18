@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cc0d6b07e1e61baa28ceb8e7198ef15f0f831fb7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fe4a47161e86614807e69b613b49e8808a35e041
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70078658"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077233"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure
 
@@ -58,10 +58,11 @@ ms.locfileid: "70078658"
 
 Для разных компонентов Azure, таких как сеть, хранилище и виртуальные машины, предлагаются разные соглашения об уровне обслуживания. Все эти соглашения документированы. Дополнительные сведения см. на странице [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/). 
 
-Для виртуальных машин [здесь](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_6/) описаны два разных соглашения об уровне обслуживания, применяемые для двух разных конфигураций:
+[SLA для виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) описывает три разных соглашения об уровне обслуживания для трех различных конфигураций:
 
-- Одна виртуальная машина, у которой диск ОС и все диски с данными размещены на [дисках SSD ценовой категории "Премиум"](../../windows/disks-types.md). Этот вариант гарантирует время работоспособности на уровне 99,9 % в месяц.
+- Одна виртуальная машина, у которой диск ОС и все диски с данными размещены на [дисках SSD ценовой категории "Премиум"](../../wi https://azure.microsoft.com/en-us/support/legal/sla/virtual-machines/v1_8/ows/disks-types.md). Этот вариант гарантирует время работоспособности на уровне 99,9 % в месяц.
 - Несколько (не менее двух) виртуальных машин, организованных в [группу доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Этот вариант гарантирует время работоспособности на уровне 99,95 % в месяц.
+- Несколько (по крайней мере, две) виртуальные машины, упорядоченные в [зоне доступность](https://docs.microsoft.com/azure/availability-zones/az-overview). Этот параметр обеспечивает ежемесячное время бесперебойной работы 99,99%.
 
 Сравните свои требования к уровню доступности с теми параметрами, которые предложены в соглашениях об уровне обслуживания для компонентов Azure. По результатам этого анализа выберите такой сценарий SAP HANA, который обеспечит необходимый уровень доступности.
 

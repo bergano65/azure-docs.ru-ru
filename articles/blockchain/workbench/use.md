@@ -1,21 +1,21 @@
 ---
-title: Использование приложений в Azure Blockchain Workbench
-description: Руководство по использованию контрактов приложения в Azure Blockchain Workbench.
+title: Использование приложений в Azure Blockchain Workbench (предварительная версия)
+description: Из этого руководства вы узнаете, как использовать контракты приложений в Azure Blockchain Workbench (предварительная версия).
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 04/15/2019
+ms.date: 09/05/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 89c83ed6d02a60978bd54fb97d37063e34f6c0c7
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: e1ba09c4fbba6492e2d5f870a6c31a3d5a6d8956
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578856"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845141"
 ---
 # <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Руководство по Использование приложений в Azure Blockchain Workbench
 
@@ -67,7 +67,7 @@ Blockchain Workbench позволяет создавать контракты и
 
     ![Сведения о контракте](./media/use/contract-details.png)
 
-    | Раздел  | ОПИСАНИЕ  |
+    | Section  | ОПИСАНИЕ  |
     |---------|---------|
     | Status | Отображение текущего состояния по стадиям контракта |
     | Сведения | Текущие значения контракта |

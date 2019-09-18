@@ -4,7 +4,7 @@ description: Объясняется, почему изменяются имен�
 services: virtual-machines-linux
 documentationcenter: ''
 author: genlin
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 0350b6bdc990ed6c2de60e3e98c3768b18d0d636
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7d8a7e7e88837214042fb8f1c109c0b93bfe771b
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710416"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058203"
 ---
 # <a name="troubleshoot-linux-vm-device-name-changes"></a>Устранение неполадок при изменении имени устройства виртуальной машины Linux
 
@@ -46,7 +46,7 @@ ms.locfileid: "67710416"
 
 После установки агента Azure Linux на виртуальной машине он использует правила Udev для формирования набора символических ссылок в пути /dev/disk/azure. Приложения и сценарии используют правила Udev для идентификации дисков, подключенных к виртуальной машине, вместе с типом диска и LUN диска.
 
-Если уже изменялся в fstab таким образом, что ваша виртуальная машина не загружается, и вы не можете подключиться по протоколу SSH к виртуальной Машине, можно использовать [последовательной консоли виртуальной Машины](./serial-console-linux.md) ввести [однопользовательский режим](./serial-console-grub-single-user-mode.md) и изменения в fstab.
+Если вы уже изменили fstab таким образом, что виртуальная машина не загружается и вы не можете SSH-подключение к виртуальной машине, вы можете использовать [последовательную консоль виртуальной машины](./serial-console-linux.md) для входа в [однопользовательский режим](./serial-console-grub-single-user-mode.md) и изменения fstab.
 
 ### <a name="identify-disk-luns"></a>Определение LUN диска
 
@@ -152,8 +152,8 @@ ms.locfileid: "67710416"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Ubuntu: С помощью UUID](https://help.ubuntu.com/community/UsingUUID)
-- [Red Hat: Постоянного именования](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
-- [Linux: UUID может сделать для вас](https://www.linux.com/news/what-uuids-can-do-you)
-- [Udev: Общие сведения об управлении устройствами в современной системе Linux](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system)
+- [Ubuntu Использование UUID](https://help.ubuntu.com/community/UsingUUID)
+- [Red Hat: Постоянное именование](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
+- [Linux Возможные UUID](https://www.linux.com/news/what-uuids-can-do-you)
+- [Udev Общие сведения об управлении устройствами в современной системе Linux](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system)
 

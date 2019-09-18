@@ -3,17 +3,17 @@ title: Подключение универсального клиентског�
 description: Как разработчик устройств, как подключить универсальное устройство Node. js к приложению Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 06/14/2019
+ms.date: 09/12/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 3b73344a233182fe8366795cfa111b706c6d06ac
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 75b900ecb37ae8d092d4e37129b7f39f801c470d
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876230"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066446"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)
 
@@ -25,8 +25,8 @@ ms.locfileid: "69876230"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
-1. Компьютер для разработки с установленным [Node.js](https://nodejs.org/) 4.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
+- Приложение Azure IoT Central. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
+- Компьютер для разработки с установленным [Node.js](https://nodejs.org/) 4.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
 
 ## <a name="create-a-device-template"></a>Создание шаблона устройства
 
@@ -66,7 +66,7 @@ ms.locfileid: "69876230"
 
 | Название | Имя поля  | severity |
 | ------------ | ----------- | -------- |
-| Перегрев  | overheat    | Error    |
+| Перегрев  | overheat    | Ошибка    |
 
 > [!NOTE]
 > Для измерения событий используется строковый тип данных.
@@ -111,13 +111,13 @@ ms.locfileid: "69876230"
 
 | Название    | Имя поля     | Время ожидания по умолчанию | Тип данных |
 | --------------- | -------------- | --------------- | --------- |
-| Оставшего       | оставшего      | 30              | номер    |
+| Оставшего       | оставшего      | 30              | number    |
 
 Добавьте следующее поле ввода в команду обратного отсчета:
 
 | Название    | Имя поля     | Тип данных | Значение |
 | --------------- | -------------- | --------- | ----- |
-| Число из      | каунтфром      | номер    | 10    |
+| Число из      | каунтфром      | number    | 10    |
 
 Введите имена полей точно так же, как показано в таблицах в шаблоне устройства. Если имена полей не совпадают с именами свойств в соответствующем коде устройства, устройство не сможет обработать команду.
 
@@ -125,11 +125,13 @@ ms.locfileid: "69876230"
 
 В приложении IoT Central Azure добавьте реальное устройство в шаблон устройства, созданный в предыдущем разделе.
 
-Затем следуйте инструкциям в руководстве по добавлению устройства, чтобы [создать строку подключения для реального устройства](tutorial-add-device.md#generate-connection-string). Используйте эту строку подключения в следующем разделе:
+Запишите сведения о подключении устройства на странице **подключения устройства** : **Идентификатор области**, **идентификатор устройства**и **первичный ключ**. Эти значения можно добавить в код устройства далее в этом пошаговом руководство.
+
+![Сведения о подключении устройства](./media/howto-connect-nodejs/device-connection.png)
 
 ### <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
-Ниже показано, как создать клиентское приложение, реализующее реальное устройство, добавленное в приложение. Здесь приложение Node.js представляет реальное устройство. 
+Ниже показано, как создать клиентское приложение, реализующее реальное устройство, добавленное в приложение. Здесь приложение Node.js представляет реальное устройство.
 
 1. Создайте на компьютере папку с именем `connected-air-conditioner-adv`. Перейдите к этой папке в среде командной строки.
 
@@ -137,7 +139,7 @@ ms.locfileid: "69876230"
 
     ```cmd/sh
     npm init
-    npm install azure-iot-device azure-iot-device-mqtt --save
+    npm install azure-iot-device azure-iot-device-mqtt azure-iot-provisioning-device-mqtt azure-iot-security-symmetric-key --save
     ```
 
 1. Создайте файл **ConnectedAirConditioner.js** в папке `connected-air-conditioner-adv`.
@@ -148,22 +150,31 @@ ms.locfileid: "69876230"
     "use strict";
 
     // Use the Azure IoT device SDK for devices that connect to Azure IoT Central.
-    var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
+    var iotHubTransport = require('azure-iot-device-mqtt').Mqtt;
+    var Client = require('azure-iot-device').Client;
     var Message = require('azure-iot-device').Message;
-    var ConnectionString = require('azure-iot-device').ConnectionString;
+    var ProvisioningTransport = require('azure-iot-provisioning-device-mqtt').Mqtt;
+    var SymmetricKeySecurityClient = require('azure-iot-security-symmetric-key').SymmetricKeySecurityClient;
+    var ProvisioningDeviceClient = require('azure-iot-provisioning-device').ProvisioningDeviceClient;
     ```
 
 1. Добавьте следующие объявления переменных в файл:
 
     ```javascript
-    var connectionString = '{your device connection string}';
+    var provisioningHost = 'global.azure-devices-provisioning.net';
+    var idScope = '{your Scope ID}';
+    var registrationId = '{your Device ID}';
+    var symmetricKey = '{your Primary Key};
+    var provisioningSecurityClient = new SymmetricKeySecurityClient(registrationId, symmetricKey);
+    var provisioningClient = ProvisioningDeviceClient.create(provisioningHost, idScope, new ProvisioningTransport(), provisioningSecurityClient);
+    var hubClient;
+
     var targetTemperature = 0;
     var locLong = -122.1215;
     var locLat = 47.6740;
-    var client = clientFromConnectionString(connectionString);
     ```
 
-    Обновите заполнитель `{your device connection string}` , указав [строку подключения устройства](tutorial-add-device.md#generate-connection-string). В этом примере вы инициализируем `targetTemperature` нулевое значение. Вы можете использовать текущее считывание с устройства или значения из двойникаа устройства.
+    Обновите заполнители `{your Scope ID}`, `{your Device ID}`и `{your Primary Key}` с помощью значений, которые были сделаны ранее. В этом примере вы инициализируем `targetTemperature` нулевое значение. Вы можете использовать текущее считывание с устройства или значения из двойникаа устройства.
 
 1. Чтобы отправить измерения телеметрии, состояния, события и расположения в приложение IoT Central Azure, добавьте в файл следующую функцию:
 
@@ -187,7 +198,7 @@ ms.locfileid: "69876230"
             lat: locationLat }
         });
       var message = new Message(data);
-      client.sendEvent(message, (err, res) => console.log(`Sent message: ${message.getData()}` +
+      hubClient.sendEvent(message, (err, res) => console.log(`Sent message: ${message.getData()}` +
         (err ? `; error: ${err.toString()}` : '') +
         (res ? `; status: ${res.constructor.name}` : '')));
     }
@@ -262,14 +273,14 @@ ms.locfileid: "69876230"
     // Handle countdown command
     function onCountdown(request, response) {
       console.log('Received call to countdown');
-
+    
       var countFrom = (typeof(request.payload.countFrom) === 'number' && request.payload.countFrom < 100) ? request.payload.countFrom : 10;
-
+    
       response.send(200, (err) => {
         if (err) {
           console.error('Unable to send method response: ' + err.toString());
         } else {
-          client.getTwin((err, twin) => {
+          hubClient.getTwin((err, twin) => {
             function doCountdown(){
               if ( countFrom >= 0 ) {
                 var patch = {
@@ -282,7 +293,7 @@ ms.locfileid: "69876230"
                 setTimeout(doCountdown, 2000 );
               }
             }
-
+    
             doCountdown();
           });
         }
@@ -301,13 +312,13 @@ ms.locfileid: "69876230"
         console.log('Device successfully connected to Azure IoT Central');
 
         // Create handler for countdown command
-        client.onDeviceMethod('countdown', onCountdown);
+        hubClient.onDeviceMethod('countdown', onCountdown);
 
         // Send telemetry measurements to Azure IoT Central every 1 second.
         setInterval(sendTelemetry, 1000);
 
         // Get device twin from Azure IoT Central.
-        client.getTwin((err, twin) => {
+        hubClient.getTwin((err, twin) => {
           if (err) {
             console.log(`Error getting device twin: ${err.toString()}`);
           } else {
@@ -325,8 +336,20 @@ ms.locfileid: "69876230"
       }
     };
 
-    // Start the device (connect it to Azure IoT Central).
-    client.open(connectCallback);
+    // Start the device (register and connect to Azure IoT Central).
+    provisioningClient.register((err, result) => {
+      if (err) {
+        console.log('Error registering device: ' + err);
+      } else {
+        console.log('Registration succeeded');
+        console.log('Assigned hub=' + result.assignedHub);
+        console.log('DeviceId=' + result.deviceId);
+        var connectionString = 'HostName=' + result.assignedHub + ';DeviceId=' + result.deviceId + ';SharedAccessKey=' + symmetricKey;
+        hubClient = Client.fromConnectionString(connectionString, iotHubTransport);
+
+        hubClient.open(connectCallback);
+      }
+    });
     ```
 
 ## <a name="run-your-nodejs-application"></a>Запуск приложения Node.js

@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 6d26cedb0dd836846d7e9f00539fe101c944f478
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 1edb83fcbe03fd113c59986bdbb6afcf2a0970bb
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442212"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916128"
 ---
 # <a name="start-monitoring-your-aspnet-web-application"></a>Запуск мониторинга веб-приложения ASP.NET
 
@@ -47,7 +47,9 @@ ms.locfileid: "67442212"
 
 4. Выберите свою подписку и щелкните **Зарегистрироваться**.
 
-5. Запустите приложение, выбрав в меню **Отладить** пункт **Начать отладку** или нажав клавишу F5.
+5. Выберите **Project (Проект)**  > **Manage NuGet Packages (Управление пакетами NuGet)**  > **Package source: nuget.org (Источник пакета: nuget.org)**  > **Update the Application Insights SDK packages to the latest stable release** (Обновить пакеты SDK Application Insights до последней стабильной версии).
+
+6. Запустите приложение, выбрав в меню **Отладить** пункт **Начать отладку** или нажав клавишу F5.
 
 ## <a name="confirm-app-configuration"></a>Подтверждение настройки приложения
 

@@ -8,27 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 08/19/2019
 ms.author: wolfma
-ms.openlocfilehash: c795f1581ae36f100065c39cd47bc4efc564b9fe
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: a9c43e1d27a396a2c3e9123ce5ce538296c6870c
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607885"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70381898"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь"
 
-Также доступны краткие руководства по [преобразованию текста в речь](quickstart-text-to-speech-cpp-windows.md) и [переводу речи](quickstart-translate-speech-cpp-windows.md).
+Также доступны краткие руководства по [синтезу речи](quickstart-text-to-speech-cpp-windows.md), [переводу речи](quickstart-translate-speech-cpp-windows.md).
 
-При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
+При необходимости переключитесь на другой язык программирования и среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этой статье вы создадите консольное приложение C++ для Windows. Вы будете использовать [пакет SDK для службы "Речь"](speech-sdk.md) в Cognitive Services, чтобы преобразовать речь с микрофона вашего ПК в текст в реальном времени. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
+В этой статье вы создадите консольное приложение C++ для Windows. Вы будете использовать [пакет SDK для службы "Речь"](speech-sdk.md) в Cognitive Services, чтобы преобразовать речь с микрофона вашего ПК в текст в реальном времени. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019 (любого выпуска).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам потребуется ключ подписки службы "Речь". Его можно получить бесплатно. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
+Для работы с этим кратким руководством вам потребуется ключ подписки службы "Речь". Получить бесплатно Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -36,7 +36,9 @@ ms.locfileid: "68607885"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Откройте исходный файл *helloworld.cpp*. Замените весь код ниже первого оператора включения (`#include "stdafx.h"` или `#include "pch.h"`) следующим кодом.
+1. Откройте исходный файл **helloworld.cpp**.
+
+1. Замените все содержимое следующим фрагментом кода:
 
    [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/cpp-windows/helloworld/helloworld.cpp#code)]
 
@@ -44,21 +46,17 @@ ms.locfileid: "68607885"
 
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
-1. Сохраните внесенные в проект изменения.
+1. В строке меню выберите **Файл** > **Сохранить все**.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+1. В строке меню выберите **Сборка** > **Построить решение**, чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-   ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-cpp-windows-06-build.png)
+1. Выберите **Отладка** > **Начать отладку** (или нажмите клавишу **F5**), чтобы запустить приложение **helloworld**.
 
-1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. Произнесите фразу или предложение на английском языке. Приложение передает речь в речевую службу, которая расшифровывает речь в текст и отправляет его обратно в приложение для отображения.
 
-   ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-cpp-windows-07-start-debugging.png)
-
-1. Появится всплывающее окно консоли с запросом произнести что-либо. Произнесите фразу или предложение на английском языке. Ваша речь передается в службу "Речь" и преобразовывается в текст, который появляется в том же окне.
-
-   ![Снимок экрана выходных данных консоли после успешного распознавания](media/sdk/qs-cpp-windows-08-console-output-release.png)
+   ![Вывод на консоль после успешного распознавания](media/sdk/qs-cpp-windows-08-console-output-release.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -69,5 +67,4 @@ ms.locfileid: "68607885"
 
 ## <a name="see-also"></a>См. также
 
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [Train a model for Custom Speech](how-to-custom-speech-train-model.md) (Обучение модели для Пользовательского распознавания речи)

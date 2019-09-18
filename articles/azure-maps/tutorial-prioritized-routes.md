@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ad67b17d76e811d5977955c40f444c4b7c0a01e3
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 664a2a77203ae1bebd95391fa6a4ae906121465a
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478847"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916309"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "68478847"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем продолжить, выполните действия из первого руководства, чтобы [создать учетную запись службы "Карты Azure"](./tutorial-search-location.md#createaccount) и [получить для нее ключ подписки](./tutorial-search-location.md#getkey).
+Прежде чем продолжить, выполните инструкции [по управлению учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account), чтобы создать подписку Azure Maps в ценовой категории S1, и выполните инструкции из раздела о [получении первичного ключа для учетной записи](./tutorial-search-location.md#getkey).
 
 ## <a name="create-a-new-map"></a>Создание карты
 

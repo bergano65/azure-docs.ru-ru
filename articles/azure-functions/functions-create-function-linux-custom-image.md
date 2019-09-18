@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
 manager: gwallace
-ms.openlocfilehash: 80f7185b69a7953656235d3bd622b7f61611de1a
-ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
+ms.openlocfilehash: 1865b1b96b5b8794f1518d639825ccd2f1dcd090
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70210177"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773131"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -143,9 +143,8 @@ docker run -p 8080:80 -it <docker-ID>/mydockerimage:v1.0.0
 
 ![Выполните локальное тестирование приложения-функции.](./media/functions-create-function-linux-custom-image/run-image-local-success.png)
 
-При необходимости можно протестировать функцию снова, на этот раз в локальном контейнере с помощью следующего URL-адреса:
-
-`http://localhost:8080/api/myhttptrigger?name=<yourname>`
+> [!NOTE]
+> На этом этапе при попытке вызвать конкретную функцию HTTP выдается ответ с сообщением об ошибке HTTP 401. Это происходит потому, что функция выполняется в локальном контейнере, как если бы это была среда Azure, а это означает, что ключ функции является обязательным. Так как контейнер еще не опубликован в приложении-функции, ключ функции недоступен. Позже вы увидите, что при использовании Core Tools для публикации контейнера будут показаны ключи функции. Если вы хотите протестировать функцию, выполняемую в локальном контейнере, можно изменить [ключ авторизации](functions-bindings-http-webhook.md#authorization-keys) на `anonymous`. 
 
 Когда вы закончите проверку приложения-функции, остановите обработку в контейнере. Теперь этот пользовательский образ следует передать в учетную запись концентратора Docker.
 
@@ -159,7 +158,7 @@ docker run -p 8080:80 -it <docker-ID>/mydockerimage:v1.0.0
 docker login --username <docker-id>
 ```
 
-При успешном выполнении входа появится сообщение "Вход выполнен". После успешного входа примените команду [docker push](https://docs.docker.com/engine/reference/commandline/push/), чтобы передать образ в концентратор Docker.
+При успешном выполнении входа появится соответствующее сообщение. После успешного входа примените команду [docker push](https://docs.docker.com/engine/reference/commandline/push/), чтобы передать образ в концентратор Docker.
 
 ```bash
 docker push <docker-id>/mydockerimage:v1.0.0
@@ -209,7 +208,7 @@ az functionapp create --name <app_name> --storage-account  <storage_name>  --res
 
 ## <a name="configure-the-function-app"></a>Настройка приложения-функции
 
-Функции нужно предоставить строку подключения для подключения к учетной записи хранения по умолчанию. Если вы публикуете пользовательский образ в учетной записи частного контейнера, задайте эти параметры приложения через переменные среды в файле Dockerfile, используя [инструкции ENV](https://docs.docker.com/engine/reference/builder/#env) или что-либо подобное.
+Функции нужно предоставить строку подключения для подключения к учетной записи хранения по умолчанию. Если вы публикуете пользовательский образ в учетной записи частного контейнера, задайте эти параметры приложения как переменные среды в файле Dockerfile, используя [инструкции ENV](https://docs.docker.com/engine/reference/builder/#env) или что-либо подобное.
 
 В нашем случае `<storage_name>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/20/2019
+ms.date: 09/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce0882be0419cbbbc7d94cb8d517e27bdb06a780
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: e7d0810c393cf9b6060f456c5ff01d03673b62a9
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013939"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861303"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-watch-by-colors"></a>Руководство по Интеграция единого входа Azure Active Directory с Watch by Colors
 
@@ -56,7 +56,6 @@ ms.locfileid: "70013939"
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **Watch by Colors**.
 1. Выберите **Watch by Colors** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
-
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-watch-by-colors"></a>Настройка и проверка единого входа Azure AD для Watch by Colors
 
@@ -123,13 +122,21 @@ ms.locfileid: "70013939"
 
 ## <a name="configure-watch-by-colors-sso"></a>Настройка единого входа для Watch by Colors
 
-1. Откройте новое окно веб-браузера, зайдите на сайт Watch by Colors с правами администратора и выполните следующие действия.
+1. Чтобы автоматизировать настройку в Watch by Colors, необходимо установить **расширение браузера My Apps Secure Sign-in**, щелкнув **Установить расширение**.
 
-1. В правом верхнем углу страницы щелкните **профиль** > **Account Settings** > **SSO (Single Sign On)** (Параметры учетной записи > Единый вход).
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. После добавления расширения в браузере щелкните **Настройка Watch by Colors**, чтобы перейти к приложению Watch by Colors. После этого укажите учетные данные администратора для входа в Watch by Colors. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–5.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Watch by Colors вручную, откройте новое окно веб-браузера, войдите на свой корпоративный сайт Watch by Colors в качестве администратора и выполните следующие действия:
+
+4. В правом верхнем углу страницы щелкните **профиль** > **Account Settings** > **SSO (Single Sign On)** (Параметры учетной записи > Единый вход).
 
     ![Настройка Watch by Colors](./media/watch-by-colors-tutorial/config01.png)
 
-1. На странице **SSO (Single Sign On)** (Единый вход) сделайте следующее:
+5. На странице **SSO (Single Sign On)** (Единый вход) сделайте следующее:
 
     ![Настройка Watch by Colors](./media/watch-by-colors-tutorial/config02.png)
 
@@ -183,5 +190,5 @@ ms.locfileid: "70013939"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Попробуйте использовать Slack с Azure AD](https://aad.portal.azure.com/)
+- [Попробуйте использовать Watch by Colors с Azure AD](https://aad.portal.azure.com/)
 

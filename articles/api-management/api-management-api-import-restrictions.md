@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 1a1196da62b9d28280150dd1ddf1582db64a93d4
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d1c80e2ab9ae6a893b1adea6bd68e9b585288d8b
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073796"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71074958"
 ---
 # <a name="api-import-restrictions-and-known-issues"></a>Ограничения и известные проблемы при импорте API
 
@@ -49,9 +49,6 @@ ms.locfileid: "70073796"
 -   Если указано много **серверов**, Управление API попытается выбрать первый URL-адрес с протоколом HTTPS. Если нет ни одного URL-адреса с протоколом HTTPS, тогда подходит первый URL-адрес с протоколом HTTP. Если нет ни одного URL-адреса с протоколом HTTP, тогда URL-адрес сервера будет пустым.
 -   **Примеры** не поддерживаются, но **пример** поддерживается.
 -   **Многокомпонентные и многоформные данные** не поддерживаются.
-
-> [!IMPORTANT]
-> Важные сведения и советы, связанные с импортом OpenAPI, см. в этом [документе](https://blogs.msdn.microsoft.com/apimanagement/2018/04/11/important-changes-to-openapi-import-and-export/).
 
 ## <a name="wsdl"> </a>WSDL
 

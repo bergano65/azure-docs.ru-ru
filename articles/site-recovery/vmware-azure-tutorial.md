@@ -1,20 +1,19 @@
 ---
-title: Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware с помощью Azure Site Recovery | Документация Майкрософт
+title: Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware с помощью Azure Site Recovery
 description: Сведения о настройке аварийного восстановления в Azure для локальных виртуальных машин VMware с помощью Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: e93dbc072de7208927eba9e45c09143b56f52a9b
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 268def74a354b19427849738549fbc0c6b197746
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66418304"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813400"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-vmware-vms"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин VMware
 
@@ -195,4 +194,4 @@ ms.locfileid: "66418304"
 ## <a name="next-steps"></a>Дополнительная информация
 После включения репликации запустите тестирование, чтобы убедиться, что все работает как положено.
 > [!div class="nextstepaction"]
-> [Run a disaster recovery drill to Azure](site-recovery-test-failover-to-azure.md) (Выполнение отработки аварийного восстановления в Azure)
+> [Выполнение отработки аварийного восстановления](site-recovery-test-failover-to-azure.md)

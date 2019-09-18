@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: 19654a4902ae64e5de63ffc93a8d143cc518e254
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 60ae2136c3fa934c178de95f51d490e570f45faa
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697731"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845345"
 ---
 # <a name="example-detect-sentiment-with-text-analytics"></a>Пример: Определение тональности в службе "Анализ текста"
 
@@ -80,7 +80,7 @@ ms.locfileid: "68697731"
 
 + Создайте запрос POST. Чтобы изучить документацию по API для этого запроса, см. статью [API анализа тональности (версия 2.1)](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9).
 
-+ Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или созданного при [установке и запуске контейнеров анализа текста](text-analytics-how-to-install-containers.md) экземпляра. Он должен включать в себя ресурс `/sentiment`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`.
++ Задайте конечную точку HTTP для анализа тональности с помощью ресурса API анализа текста в Azure или созданного при [установке и запуске контейнеров анализа текста](text-analytics-how-to-install-containers.md) экземпляра. В URL-адрес необходимо добавить `/text/analytics/v2.1/sentiment`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/sentiment`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
@@ -139,8 +139,8 @@ ms.locfileid: "68697731"
 > [!NOTE]
 > * Формат запроса и [ограничения данных](../overview.md#data-limits) для анализа тональности версии 3 по сравнению с предыдущей версией не изменились.
 > * Сейчас анализ тональности версии 3:
->    * поддерживает только английский язык;
->    * доступен в следующих регионах: `Central US`, `Central Canada` и `East Asia`.
+>    * В настоящее время поддерживаются английский, китайский (упрощенное письмо) и японский языки.
+>    * Анализ тональности доступен в таких регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`, `Southeast Asia`, `South Central US`, `UK South`, `West Europe` и `West US 2`.
 
 |Функция |ОПИСАНИЕ  |
 |---------|---------|

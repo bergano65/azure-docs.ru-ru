@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d01e8ce894bfb1ece3555eddc714d2d3a80e44b5
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 414dc4e69fda8ccd79b5a48b19bccee35bd11a45
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164855"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063707"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-В Azure Active Directory (Azure AD) B2C поток учетных данных пароля владельца ресурса (ROPC) — это процесс стандартной проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
+В Azure Active Directory B2C (Azure AD B2C) поток учетных данных для пароля владельца ресурса (РОПК) является стандартным потоком проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
 В потоке ROPC поддерживаются следующие параметры.
 
@@ -35,14 +35,14 @@ ms.locfileid: "67164855"
 - **Одностраничное приложение** — клиентское приложение, написанное главным образом на JavaScript. Часто приложение создается с помощью таких платформ, как AngularJS, Ember.js или Durandal.
 - **Поток конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
 5. Укажите имя приложения, например *ROPC_Auth_app*.
@@ -88,7 +88,7 @@ ms.locfileid: "67164855"
           <OutputClaim ClaimTypeReferenceId="sub" TransformationClaimType="createdClaim" />
         </OutputClaims>
       </ClaimsTransformation>
-    
+
       <ClaimsTransformation Id="AssertRefreshTokenIssuedLaterThanValidFromDate" TransformationMethod="AssertDateTimeIsGreaterThan">
         <InputClaims>
           <InputClaim ClaimTypeReferenceId="refreshTokenIssuedOnDateTime" TransformationClaimType="leftOperand" />
@@ -140,7 +140,7 @@ ms.locfileid: "67164855"
     </TechnicalProfile>
     ```
 
-    Замените **DefaultValue** из **client_id** с Идентификатором приложения ProxyIdentityExperienceFramework приложения, созданный в работе с предыдущим руководством. Затем замените **DefaultValue** из **код_ресурса** с Идентификатором приложения IdentityExperienceFramework приложения, которое также было создано в работе с предыдущим руководством.  
+    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданного в учебнике по необходимым условиям. Затем замените **DefaultValue** для **resource_id** идентификатором приложения IdentityExperienceFramework, которое также было создано в учебнике по необходимым компонентам.
 
 5. Добавьте следующие элементы **ClaimsProvider** с техническими профилями в элемент **ClaimsProviders**.
 
@@ -245,7 +245,7 @@ ms.locfileid: "67164855"
 2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Идентификатор политики — это имя вашей политики. Например, **B2C_1A_ROPC_Auth**.
 3. Измените значение атрибута **ReferenceId** в **DefaultUserJourney** на `ResourceOwnerPasswordCredentials`.
 4. Измените элемент **OutputClaims**, чтобы он содержал только следующие утверждения.
-    
+
     ```XML
     <OutputClaim ClaimTypeReferenceId="sub" />
     <OutputClaim ClaimTypeReferenceId="objectId" />
@@ -255,7 +255,7 @@ ms.locfileid: "67164855"
     ```
 
 5. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-6. Включить **перезаписать политику, в том случае, если он существует**, а затем найдите и выберите *ROPC_Auth.xml* файла.
+6. Включите **Перезапись политики, если она существует**, а затем найдите и выберите файл *ROPC_Auth. XML* .
 7. Щелкните **Отправить**.
 
 ## <a name="test-the-policy"></a>Проверка политики
@@ -267,12 +267,12 @@ ms.locfileid: "67164855"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
 | username | `user-account` |
 | password | `password1` |
 | grant_type | password |
-| scope | openid `application-id` offline_access |
+| область | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
 
@@ -312,12 +312,12 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | `application-id` |
-| resource | `application-id` |
+| ресурс | `application-id` |
 | refresh_token | `refresh-token` |
 
 - Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.
@@ -345,7 +345,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Azure AD B2C соответствует стандартам OAuth 2.0 для учетных данных пароля владельца ресурса общедоступного клиента и должен быть совместим с большинством клиентских пакетов SDK. См. последние [рекомендации по реализации собственного пакета SDK для приложений OAuth 2.0 и OpenID Connect](https://appauth.io/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. полный пример такого сценария в [начальном пакете настраиваемой политики Azure Active Directory B2C](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/source/aadb2c-ief-ropc).
 - Дополнительные сведения о маркерах, которые используются Azure Active Directory B2C, см. в [справочнике по маркерам](active-directory-b2c-reference-tokens.md).

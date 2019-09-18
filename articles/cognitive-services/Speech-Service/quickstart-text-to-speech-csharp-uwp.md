@@ -1,27 +1,27 @@
 ---
 title: Краткое руководство. Синтез речи с помощью C# (UWP) в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы синтезируете речь из текста в режиме реального времени через микрофон устройства. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2017.
+description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы синтезируете речь из текста в режиме реального времени через микрофон устройства. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2019.
 services: cognitive-services
 author: yinhew
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 6/24/2019
+ms.date: 08/19/2019
 ms.author: yinhew
-ms.openlocfilehash: 5e1f8aea1b00cbba7fec6c7ca416a965458ab526
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 65b65c9af377b6a9951f9f328e0732850d3b9c1d
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607758"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382222"
 ---
 # <a name="quickstart-synthesize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Синтез речи в приложении для универсальной платформы Windows с помощью пакета SDK службы "Речь"
 
 Кроме того, доступны краткие руководства по [распознаванию речи](quickstart-csharp-uwp.md), [переводу речи](quickstart-translate-speech-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
 
-Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows (Windows 1709 или более поздней версии) с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services. Программа синтезирует речь из текста в режиме реального времени через микрофон устройства. Приложение создается с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio версии 2017 и выше (любого выпуска).
+Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services. Эта программа синтезирует речь из текста в режиме реального времени и выводит ее на динамик устройства. Вы создадите приложение с помощью [пакета SDK службы "Речь" для NuGet](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2019 (любого выпуска).
 
 > [!NOTE]
 > Универсальная платформа Windows позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройств.
@@ -30,8 +30,8 @@ ms.locfileid: "68607758"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+* Ключ подписки Azure для службы "Речь". [Получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -39,33 +39,39 @@ ms.locfileid: "68607758"
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
-1. Пользовательский интерфейс приложения определяется с помощью XAML. Откройте `MainPage.xaml` в обозревателе решений. В представлении XAML конструктора вставьте следующий фрагмент кода XAML в тег Grid (между `<Grid>` и `</Grid>`).
+Теперь добавьте XAML-код, определяющий пользовательский интерфейс приложения, и добавьте реализацию C# кода программной части.
+
+1. Откройте `MainPage.xaml` в **обозревателе решений**.
+
+1. В представлении XAML конструктора вставьте следующий фрагмент кода XAML в тег **Grid** (между `<Grid>` и `</Grid>`):
 
    [!code-xml[UI elements](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/csharp-uwp/helloworld/MainPage.xaml#StackPanel)]
 
-1. Откройте исходный файл с кодом `MainPage.xaml.cs` (он находится в группе `MainPage.xaml`). Замените все содержимое приведенным ниже кодом.
+1. В **Обозревателе решений**откройте исходный файл кода программной части`MainPage.xaml.cs`. (Он сгруппирован в `MainPage.xaml`.)
+
+1. Замените все содержимое следующим кодом:
 
    [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/csharp-uwp/helloworld/MainPage.xaml.cs#code)]
 
-1. В обработчике `Speak_ButtonClicked` этого файла замените строку `YourSubscriptionKey` своим ключом подписки.
+1. В обработчике `Speak_ButtonClicked` исходного файла найдите строку `YourSubscriptionKey` и замените ее своим ключом подписки.
 
-1. В обработчике `Speak_ButtonClicked` замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+1. В обработчике `Speak_ButtonClicked` найдите строку `YourServiceRegion` и замените ее названием [региона](regions.md), связанного с вашей подпиской. (Например, используйте `westus` для подписки с бесплатной пробной версией.)
 
-1. Сохраните все внесенные в проект изменения.
+1. В строке меню выберите **Файл** > **Сохранить все**, чтобы сохранить изменения.
 
-## <a name="build-and-run-the-app"></a>Создание и запуск приложения
+## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
-1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок.
+Теперь все готово для сборки и тестирования приложения.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Собрать решение"](media/sdk/qs-csharp-uwp-08-build.png "Успешная сборка")
+1. В строке меню выберите **Сборка** > **Построить решение**,чтобы создать приложение. Теперь код должен компилироваться без ошибок.
 
-1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
+1. Выберите **Отладка** > **Начать отладку**(или нажмите клавишу **F5**), чтобы запустить приложение. Откроется окно **helloworld**.
 
-    ![Снимок экрана приложения Visual Studio с выделенным параметром "Начать отладку"](media/sdk/qs-csharp-uwp-09-start-debugging.png "Start the app into debugging")
+   ![Пример приложения для синтеза речи в UWP на языке C# — краткое руководство](media/sdk/qs-text-to-speech-uwp-helloworld-window.png)
 
 1. Введите любой текст в текстовое поле и нажмите кнопку **Speak** (Сказать). Введенный текст передается в службы "Речь" и синтезируется в речь, которая воспроизводится через динамик.
 
-    ![Снимок экрана пользовательского интерфейса для синтеза речи](media/sdk/qs-tts-csharp-uwp-ui-result.png)
+    ![Пользовательский интерфейс для синтеза речи](media/sdk/qs-tts-csharp-uwp-ui-result.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -74,5 +80,5 @@ ms.locfileid: "68607758"
 
 ## <a name="see-also"></a>См. также
 
-- [Настройка голосов](how-to-customize-voice-font.md)
+- [Создание и использование настраиваемых голосовых моделей](how-to-custom-voice-create-voice.md)
 - [Запись образцов голосов](record-custom-voice-samples.md)

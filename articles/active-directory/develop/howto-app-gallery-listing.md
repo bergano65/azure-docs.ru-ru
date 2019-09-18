@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/06/2019
+ms.date: 09/16/2019
 ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cf3eead3a56297efa3bea90ef48eb464ad63da0
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: ba4beeff5484f774e801842f06d694af456c4e96
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70898515"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033754"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство. Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -48,12 +48,7 @@ ms.locfileid: "70898515"
 
 - Для выполнения единого входа с защитой паролем приложение должно поддерживать аутентификацию с помощью формы, чтобы обеспечить хранение паролей для правильной работы функции единого входа.
 
-- Для автоматических запросов на подготовку пользователей приложение должно находиться в коллекции со включенной функцией единого входа, использующей SAML 2.0/WS-Fed. Вы можете запросить функции единого входа и подготовки пользователей на портале, если они еще не указаны.
-
 - Необходима постоянная учетная запись для тестирования с зарегистрированным по крайней мере двумя пользователями.
-
-> [!NOTE]
-> Мы работаем с большим количеством запросов соединителя SCIM, поэтому мы перестали создавать новые запросы на портале. Следите за запросами, пока не появится уведомление. Приносим извинения за эту задержку и все неудобства, которые могли быть вызваны.
 
 ## <a name="submit-the-request-in-the-portal"></a>Отправка запроса на портале
 

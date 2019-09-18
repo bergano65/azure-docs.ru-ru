@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 09cdc2fb5dba152e467164fd757225c7a9183264
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: b0472b10de3641f1575f7f9a5c223ab5032f0e16
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68369397"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066150"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, которые можно использовать в Active Directory B2C
 
-Служба Azure Active Directory (Azure AD) B2C поддерживает проверку подлинности для различных архитектур современных приложений. Все они основаны на стандартных отраслевых протоколах: [OAuth 2.0](active-directory-b2c-reference-protocols.md) или [OpenID Connect](active-directory-b2c-reference-protocols.md). В этой статье описываются типы приложений, которые можно создавать независимо от предпочитаемого языка или платформы. Это также поможет понять сценарии высокого уровня, прежде чем приступать к созданию приложений.
+Azure Active Directory B2C (Azure AD B2C) поддерживает проверку подлинности для различных современных архитектур приложений. Все они основаны на стандартных отраслевых протоколах: [OAuth 2.0](active-directory-b2c-reference-protocols.md) или [OpenID Connect](active-directory-b2c-reference-protocols.md). В этой статье описываются типы приложений, которые можно создавать независимо от предпочитаемого языка или платформы. Это также поможет понять сценарии высокого уровня, прежде чем приступать к созданию приложений.
 
 Каждое приложение, которое использует Azure AD B2C, должно быть зарегистрировано в [клиенте Azure AD B2C](active-directory-b2c-get-started.md) с помощью [портала Azure](https://portal.azure.com/). Процесс регистрации собирает и присваивает следующие значения.
 
@@ -132,12 +132,12 @@ Accept: application/json
 
 Не следует изменять приложения Azure AD B2C следующим образом:
 
-- с помощью других порталов для управления приложениями, таких как  [портал регистрации приложений](https://apps.dev.microsoft.com/);
+- с помощью других порталов для управления приложениями, таких как  [портал регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade);
 - с помощью API Graph или PowerShell.
 
 При редактировании приложения Azure AD B2C не на портале Azure оно становится неисправным и больше не может использоваться с Azure AD B2C. Удалите приложение и создайте его заново.
 
-Чтобы удалить приложение, перейдите на [портал регистрации приложений](https://apps.dev.microsoft.com/) и удалите его. Приложения отображаются только для владельцев. Прав администратора клиента недостаточно.
+Чтобы удалить приложение, перейдите на [портал регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) и удалите его. Приложения отображаются только для владельцев. Прав администратора клиента недостаточно.
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -1,21 +1,21 @@
 ---
-title: Руководство. Включение в веб-приложении аутентификации c помощью Azure Active Directory B2C | Документация Майкрософт
+title: Руководство. Включение в веб-приложении аутентификации c помощью Azure Active Directory B2C
 description: Руководство по предоставлению пользователю данных для входа в веб-приложение ASP.NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.author: marsma
-ms.date: 02/04/2019
+ms.date: 09/12/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: bcfd1ef02c68de7709cb8642b94f23a6884ea156
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 2066a7848efaf067dddde3d5db1decfc88d94436
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464761"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914220"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -32,8 +32,8 @@ ms.locfileid: "68464761"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении.
-- Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
+* [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении.
+* Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
 ## <a name="update-the-application"></a>Обновление приложения
 
@@ -58,15 +58,21 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 
 Пример решения состоит из следующих двух проектов:
 
-- **TaskWebApp** — создание и изменение списка задач. Пример использует поток пользователя **регистрации или входа** для регистрации пользователей или входа в систему.
+- **TaskWebApp** — создание и изменение списка задач. Пример использует поток пользователя **регистрации или входа** для регистрации пользователей и входа в систему.
 - **TaskService** — это веб-API, поддерживающий функции создания, чтения, обновления и удаления списка задач. API защищен с помощью Azure AD B2C и вызывается TaskWebApp.
 
-Для использования приложения, зарегистрированного в клиенте, измените данные в примере, в частности укажите идентификатор приложения и ключ, записанные ранее. Кроме того, необходимо также настроить созданные потоки пользователя. Пример определяет значения конфигурации, такие как параметры, в файле Web.config. Чтобы изменить параметры:
+Для использования приложения, зарегистрированного в клиенте, измените данные в примере, в частности укажите идентификатор приложения и ключ, записанные ранее. Кроме того, необходимо также настроить созданные потоки пользователя. Пример определяет значения конфигурации, такие как параметры, в файле *Web.config*.
+
+Обновите параметры в файле Web.config для работы с пользовательским потоком:
 
 1. Откройте решение **B2C-WebAPI-DotNet** в Visual Studio.
-2. В проекте **TaskWebApp** откройте файл **Web.config**. Замените значение `ida:Tenant` именем клиента, которого вы создали. Замените значение `ida:ClientId` идентификатором приложения, которого вы записали. Замените значение `ida:ClientSecret` ключом, который вы записали. Перед добавлением секрета клиента в файл Web. config необходимо выполнить его кодирование в формате XML.
-3. В файле **Web.config** замените значение для `ida:SignUpSignInPolicyId` значением `b2c_1_signupsignin1`. Замените значение для `ida:EditProfilePolicyId` значением `b2c_1_profileediting1`. Замените значение для `ida:ResetPasswordPolicyId` значением `b2c_1_passwordreset1`.
-
+1. В проекте **TaskWebApp** откройте файл **Web.config**.
+    1. Замените значение `ida:Tenant` и `ida:AadInstance` именем клиента, которого вы создали.
+    1. Замените значение `ida:ClientId` идентификатором приложения, который вы записали.
+    1. Замените значение `ida:ClientSecret` ключом, который вы записали. Перед добавлением секрета клиента в файл Web. config необходимо выполнить его кодирование в формате XML.
+    1. Замените значение `ida:SignUpSignInPolicyId` на `b2c_1_signupsignin1`.
+    1. Замените значение `ida:EditProfilePolicyId` на `b2c_1_profileediting1`.
+    1. Замените значение `ida:ResetPasswordPolicyId` на `b2c_1_passwordreset1`.
 
 ## <a name="run-the-sample"></a>Запуск примера
 

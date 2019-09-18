@@ -14,19 +14,19 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
-ms.custom: mvc, devcenter, seo-java-august2019
-ms.openlocfilehash: 9314acfa56aac50265ee45b356ae00f89f70446f
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 2aa5879ee3960bd5d26855ac7e7c3e12994ee54e
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173202"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861346"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-app-on-azure-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Azure Service Fabric
 
-Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
+В этом руководстве объясняется, как развернуть приложение Java Spring Boot в Azure Service Fabric. Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими. 
 
-В этом руководстве объясняется, как развернуть приложение Spring Boot в Service Fabric. Это краткое руководство использует пример [Начало работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring Boot. В этом кратком руководстве приведены пошаговые инструкции по развертыванию Spring Boot в виде приложения Service Fabric с использованием знакомых средств командной строки. Когда вы завершите работу с руководством, у вас будет пример Spring Boot, работающий на Service Fabric.
+Это краткое руководство использует пример [Начало работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring Boot. В этом кратком руководстве приведены пошаговые инструкции по развертыванию Spring Boot в виде приложения Service Fabric с использованием знакомых средств командной строки. Когда вы завершите работу с руководством, у вас будет пример Spring Boot, работающий на Service Fabric.
 
 ![Снимок экрана приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsflocalhost.png)
 

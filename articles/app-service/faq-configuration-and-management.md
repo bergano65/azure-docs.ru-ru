@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 0b78b05e30185487df0b06d861b60b63741dc938
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 217601a430b40772eaf1f24c8e1501bc4b4fcae5
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073192"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71055312"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "70073192"
     * Значение = *требуемый часовой пояс*
 3. Щелкните **Сохранить**.
 
-Вы найдете принятые значения в столбце **Timezone** (часовой пояс) в статье [Default Time Zones](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) (Часовые пояса по умолчанию).
+Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с помощью параметра «имя БД»: America/Адак.
 
 ## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>Почему при выполнении непрерывных веб-заданий иногда происходят сбои?
 
@@ -96,7 +96,7 @@ ms.locfileid: "70073192"
 
 ## <a name="can-i-export-my-app-service-certificate-to-use-outside-azure-such-as-for-a-website-hosted-elsewhere"></a>Можно ли экспортировать сертификат службы приложений для использования за пределами Azure, например для веб-сайтов в других расположениях? 
 
-Сертификаты службы приложений считаются ресурсами Azure. Они не предназначены для использования за пределами служб Azure. Для использования вне Azure их экспортировать нельзя. Дополнительные сведения см. в статье [FAQs for App Service certificates and custom domains](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview) (Вопросы и ответы по сертификатам службы приложений и личным доменам).
+Да, вы можете экспортировать их для использования за пределами Azure. Дополнительные сведения см. в статье [FAQs for App Service certificates and custom domains](https://social.msdn.microsoft.com/Forums/azure/f3e6faeb-5ed4-435a-adaa-987d5db43b80/faq-on-app-service-certificates-and-custom-domains?forum=windowsazurewebsitespreview) (Вопросы и ответы по сертификатам службы приложений и личным доменам).
 
 ## <a name="can-i-export-my-app-service-certificate-to-use-with-other-azure-cloud-services"></a>Можно ли экспортировать сертификат службы приложений для использования с другими облачными службами Azure?
 

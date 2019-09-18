@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: c449b74a9d6185b0616f62d31926feb6ff218cbb
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: d0d5c482e2faf5e4a2c2918a64bd56e4aa814323
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400085"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814501"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -28,6 +28,9 @@ ms.locfileid: "66400085"
 > * отработка отказа в Azure и завершение миграции.
 
 В разделе "Ограничения и известные проблемы" перечислены некоторые ограничения и обходные пути для проблем, которые могут возникнуть во время переноса компьютеров Windows Server 2008 в Azure. 
+
+> [!NOTE]
+> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Узнайте больше](../migrate/migrate-services-overview.md).
 
 
 ## <a name="supported-operating-systems-and-environments"></a>Поддерживаемые операционные системы и среды
@@ -83,7 +86,7 @@ ms.locfileid: "66400085"
 
 Выполните следующие задачи для подготовки подписки Azure и локальной среды VMware или физического окружения.
 
-1. [Подготовка Azure](tutorial-prepare-azure.md).
+1. [Подготовка Azure](tutorial-prepare-azure.md)
 2. Подготовка локальной среды [VMware](vmware-azure-tutorial-prepare-on-premises.md).
 
 

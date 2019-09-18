@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3c8efc4b7bbee6b3209160b570e3e70bfccfc72e
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 527c7120ad2d890c8abf32d29827ed7454b0ebfd
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70964504"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065299"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье описывается включение входа для пользователей из организации Azure Active Directory (Azure AD) с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C.
+В этой статье показано, как включить вход для пользователей из Организации Azure Active Directory (Azure AD) с помощью [настраиваемых политик](active-directory-b2c-overview-custom.md) в Azure Active Directory B2C (Azure AD B2C).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

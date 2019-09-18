@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: b1231a406ac20512e9ce92032379d697c3346af3
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: c81c0de98442f576145f2c2e12f0b2053b80e83a
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70882831"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033599"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -32,9 +32,11 @@ ms.locfileid: "70882831"
 * Рабочая станция с Office 2010 Professional Plus или более поздней версии или Excel 2010 или более поздней версии.
 
 ## <a name="install-microsoft-hive-odbc-driver"></a>Установка драйвера Microsoft Hive ODBC
+
 Скачайте и установите [Microsoft Hive ODBC Driver](https://go.microsoft.com/fwlink/?LinkID=286698) версию, соответствующую версии приложения, в котором будет использоваться драйвер ODBC.  Для этой статьи используется драйвер для Office Excel.
 
 ## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
+
 Ниже показано, как создать источник данных Hive ODBC.
 
 1. В Windows откройте "Пуск > Средства администрирования Windows > Источники данных ODBC" (32-разрядная или 64-разрядная версия).  В результате откроется окно **Администратор источников данных ODBC**.
@@ -65,7 +67,7 @@ ms.locfileid: "70882831"
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
    |  Длина столбца строки по умолчанию, длина столбца двоичного кода, масштаб столбца десятичных значений |Длина и точность типа данных может повлиять на способ выведения данных. Это приведет к возврату недопустимой информации из-за потери точности и (или) усечения. |
 
-    ![Дополнительные параметры](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Дополнительные параметры конфигурации DSN")
+    ![Расширенные параметры конфигурации DSN](./media/apache-hadoop-connect-excel-hive-odbc-driver/hiveodbc-datasource-advancedoptions1.png "Расширенные параметры конфигурации DSN")
 
 1. Щелкните **Тест** для проверки источника данных. При правильной настройке источника данных в результатах теста отображается **Успешно!** .  
 
@@ -83,7 +85,7 @@ ms.locfileid: "70882831"
 
 2. На вкладке **Данные** перейдите к разделу **Получить данные** > **Из других источников** > **Из ODBC**, чтобы открыть окно **Из ODBC**.
 
-    ![Открытие мастера подключения к данным](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Открытие мастера подключения к данным")
+    ![Открытие мастера подключения к данным Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/simbahiveodbc-excel-dataconnection1.png "Открытие мастера подключения к данным Excel")
 
 3. В раскрывающемся списке выберите имя источника данных, созданное в последнем разделе, и нажмите кнопку **ОК**.
 
@@ -91,7 +93,7 @@ ms.locfileid: "70882831"
 
 5. В окне **Навигатор** перейдите к **HIVE** > **по умолчанию** > **hivesampletable**, а затем нажмите кнопку **Загрузить**. Для импорта данных в Excel потребуется несколько секунд.
 
-    ![Навигатор ODBC Hive в HDInsight](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Открытие мастера подключения данных")
+    ![Навигатор по ODBC для Hive в HDInsight Excel](./media/apache-hadoop-connect-excel-hive-odbc-driver/hdinsight-hive-odbc-navigator.png "Навигатор по ODBC для Hive в HDInsight Excel")
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 description: Коллективная разработка в Kubernetes с использованием контейнеров и микрослужб Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: cb1cc62125e668544eb4af9f84b477b273bfe30e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 0abfe655e30b62829a7d353b6da85bb51e378f6d
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706257"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842588"
 ---
 # <a name="quickstart-team-development-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces
 
@@ -39,7 +39,7 @@ ms.locfileid: "67706257"
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
-az aks create -g MyResourceGroup -n MyAKS --location eastus --node-vm-size Standard_DS2_v2 --node-count 1 --disable-rbac --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location eastus --disable-rbac --generate-ssh-keys
 ```
 
 Также создается кластер *MyAKS* с одним узлом, для которого установлен размер *Standard_DS2_v2* и отключен RBAC.
@@ -146,12 +146,12 @@ azds space select -n dev/azureuser2 -y
 
 ```cmd
 $ azds space list
-Name            Selected
---------------  --------
-default         False
-dev             False
-dev/azureuser1  False
-dev/azureuser2  True
+   Name            DevSpacesEnabled
+-  --------------  ----------------
+   default         False
+   dev             True
+   dev/azureuser1  True
+*  dev/azureuser2  True
 ```
 
 Команда `azds list-uris` отображает URL-адреса для примера приложения в выбранном пространстве разработки, то есть в *dev/azureuser2*.
@@ -201,6 +201,9 @@ Service 'bikesharingweb' port 80 (http) is available at http://localhost:54256
 Перейдите к службе *bikesharingweb* из пространства разработки *dev/azureuser2* по общедоступному URL-адресу, который отображается в выходных данных команды `azds up`. Выберите пользователя *Aurelia Briggs (customer)* . Убедитесь, что в верхнем правом углу отображается обновленный текст. Возможно, потребуется обновить страницу или очистить кэш браузера, если вы не увидите изменения сразу.
 
 ![Обновленный пример приложения Azure Dev Spaces для аренды велосипедов](media/quickstart-team-development/bikeshare-update.png)
+
+> [!NOTE]
+> При переходе к службе во время выполнения `azds up` сведения о трассировке HTTP-запросов также отображаются в выходных данных команды `azds up`. Такая трассировка поможет вам в устранении проблем и отладке службы. Ее можно отключить с помощью команды `--disable-http-traces` при запуске `azds up`.
 
 ## <a name="verify-other-dev-spaces-are-unchanged"></a>Проверка неизменности остальных пространств разработки
 

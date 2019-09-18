@@ -16,7 +16,7 @@ metadata:
   manager: craigg
   ms.date: 04/26/2019
 abstract:
-  description: "База данных SQL Azure — это реляционная база данных, предоставляемая по модели \"как услуга\" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL\_— это высокопроизводительная, простая в использовании, надежная и безопасная база данных, с помощью которой можно выполнять сборку новых приложений, веб-сайтов и микрослужб, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств."
+  description: "База данных SQL Azure — это реляционная база данных, предоставляемая по модели \"как услуга\" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL\_— это высокопроизводительная, простая в использовании, надежная и безопасная база данных, с помощью которой можно выполнять сборку новых приложений, веб-сайтов и микрослужб, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать Базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств."
   aside:
     image:
       alt: null
@@ -33,9 +33,9 @@ sections:
         className: cardsM
         columns: 3
         items:
-          - title: Пулы эластичных БД
+          - title: Эластичные пулы
             href: /azure/sql-database/sql-database-elastic-pool
-            html: <p>Эластичные пулы баз данных SQL — это простое и экономичное решение для администрирования и масштабирования нескольких баз данных с отличными и непредсказуемыми требованиями к ресурсам.</p>
+            html: <p>Эластичные пулы Базы данных SQL — это простое и экономичное решение для администрирования и масштабирования нескольких баз данных с отличными и непредсказуемыми требованиями к ресурсам.</p>
             image:
               src: media/index/i_elasticpool.svg
           - title: Сервер базы данных SQL
@@ -63,19 +63,6 @@ sections:
             html: '<p>Защитите свою базу данных с помощью аутентификации Azure AD, виртуальных сетей, брандмауэров и подключений с использованием Always Encrypted. Выявляйте угрозы и уязвимости благодаря встроенным средствам безопасности.</p>'
             image:
               src: media/index/i_security.svg
-  - title: Новые и предварительные версии функций
-    items:
-      - type: paragraph
-        text: 'Мы непрерывно улучшаем Базу данных SQL, добавляя в нее новые возможности, и хотели бы услышать ваши отзывы, касающиеся следующих новых функций.'
-      - type: list
-        style: unordered
-        items:
-          - html: "Уровень <a href=\"sql-database-service-tier-hyperscale\">Гипермасштабирование</a> (предварительная версия), который поддерживает базы данных объемом до 100\_ТБ и несколько реплик для чтения."
-          - html: 'Новые функции <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">интеллектуальной обработки запросов</a> (предварительная версия) SQL Server 2019, такие как <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#table-variable-deferred-compilation">отложенная компиляция табличных переменных</a>, <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#batch-mode-on-rowstore">пакетный режим для таблиц rowstore</a> и <a href="https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=azuresqldb-current&toc=%2Fazure%2Fsql-database%2Ftoc.json">встраивание скалярных определяемых пользователем функций</a>.'
-          - html: 'Новые функции языка Transact-SQL (предварительная версия), такие как <a href="https://docs.microsoft.com/sql/t-sql/functions/approx-count-distinct-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">статистическое выражение APPROX_COUNT_DISTINCT</a> и <a href="https://docs.microsoft.com/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">операция массового импорта из хранилища BLOB-объектов</a>.'
-          - html: "Новые операции <a href=\"https://docs.microsoft.com/sql/t-sql/statements/create-columnstore-index-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#online--on--off\">выполнения сборки</a> и перестройки кластеризованного индекса columnstore (предварительная версия) в SQL Server\_2019 Online."
-          - html: '<a href="https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview">Краткое руководство. Использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)</a>.'
-          - html: '(Предварительная версия) Новый <a href="https://docs.microsoft.com/azure/sql-database/sql-database-serverless">уровня бессерверных вычислений</a> обеспечивает автоматическое масштабирование вычислений и спецификаций в секунду для использования вычислительных ресурсов.'
   - title: 5-минутные краткие руководства
     items:
       - type: paragraph
@@ -88,7 +75,7 @@ sections:
             title: Портал Azure
           - image:
               src: media/index/cli.svg
-            title: Инфраструктура CLI Azure
+            title: Azure CLI
           - image:
               src: media/index/logo_powershell.svg
             title: PowerShell
@@ -119,7 +106,7 @@ sections:
               - href: null
               - href: /azure/sql-database/scripts/sql-database-scale-pool-cli
               - href: /azure/sql-database/scripts/sql-database-monitor-and-scale-pool-powershell
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создавать, переносить базы данных и управлять ими с помощью Базы данных SQL.'
@@ -134,7 +121,7 @@ sections:
   - title: Примеры
     items:
       - type: paragraph
-        text: Поиск скриптов для выполнения типовых задач.
+        text: Найдите скрипты для выполнения типовых задач.
       - type: list
         style: unordered
         className: spaced noBullet

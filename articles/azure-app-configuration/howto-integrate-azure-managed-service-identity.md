@@ -1,6 +1,6 @@
 ---
-title: Интеграция с Azure управляемые удостоверения | Документация Майкрософт
-description: Сведения об использовании Azure управляемые удостоверения для проверки подлинности, а также получить доступ к конфигурации приложений Azure
+title: Интеграция с управляемыми удостоверениями Azure | Документация Майкрософт
+description: Узнайте, как использовать управляемые удостоверения Azure для проверки подлинности с помощью и получения доступа к конфигурации приложений Azure.
 services: azure-app-configuration
 documentationcenter: ''
 author: yegu-ms
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 3977991386dbcd07e92f21d1ac541f486b4f7f0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4318c4b4d8f1b1f0974d0fae0a2ae5bd6e94b593
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66393651"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076534"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>интеграции с управляемыми удостоверениями Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "66393651"
 > * предоставление доступа к службе "Конфигурация приложений" с помощью управляемого удостоверения;
 > * настройка приложения на использование управляемого удостоверения при подключении к службе "Конфигурация приложений".
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством требуется:
 
@@ -49,11 +49,13 @@ ms.locfileid: "66393651"
 
 Чтобы настроить управляемое удостоверение на портале, сначала необходимо создать обычное приложение, а затем активировать соответствующую функцию.
 
-1. Создайте приложение на [портале Azure](https://portal.azure.com) обычным образом. Перейдите к нему на портале.
+1. Создайте экземпляр служб приложений в [портал Azure](https://portal.azure.com) , как обычно. Перейдите к нему на портале.
 
 2. Прокрутите вниз до группы **параметров** в левой панели и выберите **Удостоверение**.
 
 3. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл.** и выберите **Сохранить**.
+
+4. Ответьте **Да** при появлении запроса на включение управляемого удостоверения, назначенного системой.
 
     ![Настройка управляемого удостоверения в службе приложений](./media/set-managed-identity-app-service.png)
 
@@ -75,7 +77,9 @@ ms.locfileid: "66393651"
 
 ## <a name="use-a-managed-identity"></a>Использование управляемого удостоверения
 
-1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените заполнитель *\<<service_endpoint>* (со скобками) URL-адресом вашего хранилища конфигураций приложений:
+1. Найдите URL-адрес хранилища конфигурации приложения, перейдя на экран настройки в портал Azure, а затем перейдя на вкладку **ключи доступа** .
+
+2. Откройте *appsettings.json* и добавьте следующий скрипт. *Замените\<service_endpoint >* , включая квадратные скобки, URL-адресом хранилища конфигурации приложения. 
 
     ```json
     "AppConfig": {
@@ -83,7 +87,7 @@ ms.locfileid: "66393651"
     }
     ```
 
-2. Откройте файл *Program.cs* и обновите метод `CreateWebHostBuilder`, заменив метод `config.AddAzureAppConfiguration()`.
+3. Откройте файл *Program.cs* и обновите метод `CreateWebHostBuilder`, заменив метод `config.AddAzureAppConfiguration()`.
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -110,6 +114,13 @@ ms.locfileid: "66393651"
 [!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user-no-h.md)]
 
 ### <a name="enable-local-git-with-kudu"></a>Включить локальный Git с помощью Kudu
+Если у вас еще нет локального репозитория Git для приложения, необходимо инициализировать его, выполнив следующие команды из каталога проекта приложения:
+
+```cmd
+git init
+git add .
+git commit -m "Initial version"
+```
 
 Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки Kudu, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell.
 
@@ -193,7 +204,7 @@ http://<app_name>.azurewebsites.net
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Примеры интерфейса командной строки](./cli-samples.md)

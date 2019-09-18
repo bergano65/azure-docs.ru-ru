@@ -5,7 +5,7 @@ keywords: в SSH-подключении отказано, ошибка SSH, Azur
 services: virtual-machines-linux
 documentationcenter: ''
 author: genlin
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue,azure-service-management,azure-resource-manager
 ms.assetid: b8e8be5f-e8a6-489d-9922-9df8de32e839
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 41265973df21be289e63cbd6ed2703febc50cff2
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 3807f713065d16d4c6743c65f6a770d158ac7191
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70090495"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058501"
 ---
 # <a name="detailed-ssh-troubleshooting-steps-for-issues-connecting-to-a-linux-vm-in-azure"></a>Подробные инструкции по устранению неполадок SSH-подключений к виртуальной машине Linux в Azure
 Клиенту SSH не всегда удается получить доступ к SSH-службе на виртуальной машине по многим причинам. Если вы использовали более [общие действия по устранению неполадок SSH](troubleshoot-ssh-connection.md), то необходимы более конкретные действия для устранения проблемы подключения. В этой статье подробно изложено, как определить, где происходит сбой подключения SSH и как его устранить.

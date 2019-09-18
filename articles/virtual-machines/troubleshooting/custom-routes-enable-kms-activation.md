@@ -4,7 +4,7 @@ description: Узнайте, как использовать настраива�
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue, azure-resource-manager
 ms.service: virtual-machines-windows
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: 8c0c8f5543af425091c821f28d08fcab01118fd4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d554629c4a03b81ee3c04d27f6365c1a8734c952
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70090447"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058195"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -53,7 +53,7 @@ IP-адрес сервера управления ключами для глоб
 [!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 > [!NOTE] 
-> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с исходящими [подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
+> Активация использует общедоступные IP-адреса и будет зависеть от конфигурации "Стандартный" SKU Load Balancer. Внимательно ознакомьтесь с [исходящими подключениями в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , чтобы узнать о требованиях.
 
 1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:

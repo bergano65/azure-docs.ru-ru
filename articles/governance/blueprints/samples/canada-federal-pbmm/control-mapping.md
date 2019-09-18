@@ -7,18 +7,21 @@ ms.date: 08/21/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 96b58a84befcd4a5661804b1265eae119f09977f
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 068e3253dbcb7ef8d0a5c0191ac1a0b75bd8c0e9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232815"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918766"
 ---
 # <a name="control-mapping-of-the-canada-federal-pbmm-blueprint-sample"></a>Сопоставление элементов управления на примере схемы Canada Federal PBMM
 
 В статье приводится сопоставление примера схемы для профиля управления безопасностью Canada Federal PBMM с элементами управления безопасностью Canada Federal PBMM. Дополнительные сведения об элементах управления безопасностью см. в описании [профиля управления безопасностью Canada Federal PBMM](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/cloud-services/government-canada-security-control-profile-cloud-based-it-services.html#toc4).
 
 Следующие сопоставления выполняются для элементов управления безопасностью **Canada Federal PBMM**. Используйте панель навигации справа для перехода непосредственно к сопоставлению конкретных элементов управления. Многие сопоставленные элементы управления реализуются с помощью инициативы [Политика Azure](../../../policy/overview.md). Чтобы просмотреть полную инициативу, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения**. Найдите и выберите функцию **\[Предварительная версия\]: Audit Canada Federal PBMM controls** (Аудит элементов управления Canada Federal PBMM). Это встроенная инициатива политики.
+
+> [!IMPORTANT]
+> Каждый элемент управления ниже связан с одним или несколькими определениями [Политики Azure](../../../policy/overview.md). Такие политики помогут вам в [оценке соответствия](../../../policy/how-to/get-compliance-data.md) с помощью элементов управления, но часто полное или точное соответствие между элементом управления и одной или несколькими политиками отсутствует. Поэтому состояние **Соответствует** в Политике Azure применимо только к самим политикам и не означает полное соответствие всем требованиям элемента управления. Кроме того, стандарт соответствия включает элементы управления, которые в настоящее время не учитываются какими-либо определениями Политики Azure. То есть сведения о соответствии в Политике Azure дают только частичную картину общего состояния соответствия. Связи между элементами управления и определениями Политики Azure для этого примера схемы соответствия могут измениться в будущем. Историю изменений можно просмотреть на странице [журнала фиксаций в GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/canada-federal-pbmm/control-mapping.md).
 
 ## <a name="location-constraints"></a>Ограничения расположения
 

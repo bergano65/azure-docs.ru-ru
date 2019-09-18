@@ -15,18 +15,18 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95aeeacfd85dd79453bff4e365e5b050039f77b9
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: MT
+ms.openlocfilehash: 7b898a93b87811fa5139e148a3273d7051af851b
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852469"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056294"
 ---
-# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: Веб-приложение, которое поддерживает вход пользователей
+# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий. Веб-приложение, которое поддерживает вход пользователей
 
 Узнайте все, что нужно для создания веб-приложения, которое входит в состав пользователей платформы Microsoft Identity.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
@@ -55,7 +55,7 @@ ms.locfileid: "68852469"
 
 ## <a name="specifics"></a>Особенности
 
-- Во время регистрации приложения необходимо указать одно или несколько (при развертывании приложения в нескольких расположениях) URI ответа. В некоторых случаях (ASP.NET/ASP.NET Core) необходимо включить IDToken. Наконец, необходимо настроить универсальный код ресурса (URI) выхода, чтобы приложение передействовало на выход пользователей.
+- Во время регистрации приложения необходимо указать одно или несколько (при развертывании приложения в нескольких расположениях) URI ответа. В некоторых случаях (ASP.NET/ASP.NET Core) необходимо включить маркер идентификации. Наконец, необходимо настроить универсальный код ресурса (URI) выхода, чтобы приложение передействовало на выход пользователей.
 - В коде для вашего приложения необходимо предоставить центр, в котором веб-приложение делегирует вход. Может потребоваться настроить проверку маркера (в частности, в сценариях ISV).
 - Веб-приложения поддерживают любые типы учетных записей. Дополнительные сведения см. в разделе [Поддерживаемые типы учетных записей](v2-supported-account-types.md).
 

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 06/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 94d34c8a9a3480032a79d100af883a85868d327e
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 878e79097114f60aff084d60c835661196cec5ce
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478470"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076003"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -51,7 +51,7 @@ ms.locfileid: "67478470"
 |Glibc |Библиотека C GNU| 2.5-12 |
 |Openssl| Библиотеки OpenSSL | 1.0 (поддерживается TLS 1.1 и TLS 1.2)|
 |Curl | Веб-клиент cURL | 7.15.5|
-|Python-ctypes | |
+|Python-ctypes | Требуется Python 2. x |
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)).  | 6.0.0 |
@@ -62,7 +62,7 @@ ms.locfileid: "67478470"
 
 1. Включите решение **Гибридная рабочая роль службы автоматизации** в Azure одним из следующих методов:
 
-   * Добавить **гибридной рабочей роли службы автоматизации** решения в подписку с помощью процедуры на [добавить Azure Monitor регистрирует решения в рабочую область](../log-analytics/log-analytics-add-solutions.md).
+   * Добавьте решение **Гибридная Рабочая роль службы автоматизации** в подписку с помощью процедуры, описанной в разделе [Добавление Azure Monitor журналов решения в рабочую область](../log-analytics/log-analytics-add-solutions.md).
    * Выполните следующий командлет:
 
         ```azurepowershell-interactive
@@ -86,11 +86,11 @@ ms.locfileid: "67478470"
 1. После завершения выполнения команды на странице **Группы гибридных рабочих ролей** на портале Azure отображается новая группа и количество элементов. Если указать имеющуюся группу, количество элементов в ней увеличивается. Вы можете выбрать группу из списка на странице **Группы гибридных рабочих ролей** и щелкнуть плитку **Гибридные рабочие роли**. На странице **Гибридные рабочие роли** отображается список элементов группы.
 
 > [!NOTE]
-> Если вы используете расширение виртуальной машины Azure Monitor для Linux для виртуальных Машин Azure рекомендуется использовать значение `autoUpgradeMinorVersion` значение false, как автоматическое обновление версий может привести к проблемам гибридной рабочей роли Runbook. Чтобы узнать, как вручную обновить расширения, см. в разделе [развертывания Azure CLI ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
+> Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, мы рекомендуем задать `autoUpgradeMinorVersion` значение false, так как автоматическое обновление версий может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
 ## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
 
-По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр своим идентификатором рабочей области log analytics
+По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При выполнении модуля runbook для рабочей роли без подписи вы увидите сообщение об ошибке проверки подписи. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр ИДЕНТИФИКАТОРом рабочей области log Analytics.
 
  ```bash
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>
@@ -114,7 +114,7 @@ ms.locfileid: "67478470"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
 * Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".

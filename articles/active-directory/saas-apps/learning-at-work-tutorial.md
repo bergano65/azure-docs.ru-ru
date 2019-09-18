@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f04e6f8df55059e2aa2981f85f40e487c6f0f8b
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 3249957fa20c208d0fd06c676200753163d4bfc8
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68823686"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376076"
 ---
 # <a name="tutorial-integrate-learning-at-work-with-azure-active-directory"></a>Руководство по интеграции Azure Active Directory с Learning at Work
 
@@ -90,9 +90,9 @@ ms.locfileid: "68823686"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Learning at Work](https://www.learninga-z.com/site/contact/support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Learning at Work ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**.
+5. Приложение Learning at Work ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**.
 
-    Вы можете обновить значение **nameidentifier** в Azure AD на основе настроек вашей организации. Это значение должно совпадать с **идентификатором пользователя** в облаке SABA. Для этого вам нужно отредактировать сопоставление атрибутов, щелкнув значок **Редактировать** и выполнив необходимые изменения.
+    Вы можете обновить значение **nameidentifier** в Azure AD в зависимости от настроек своей организации. Это значение должно совпадать с **идентификатором пользователя** в облаке SABA. Для этого вам нужно отредактировать сопоставление атрибутов, щелкнув значок **Редактировать** и внеся необходимые изменения.
 
     ![image](common/edit-attribute.png)
 
@@ -140,7 +140,7 @@ ms.locfileid: "68823686"
 
 ### <a name="create-learning-at-work-test-user"></a>Создание тестового пользователя Learning at Work
 
-В этом разделе описано, как создать пользователя B. Simon в приложении Learning at Work. Обратитесь в  [группу поддержки Learning at Work](https://www.learninga-z.com/site/contact/support), чтобы добавить пользователей на платформу Learning at Work. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя B. Simon в приложении Learning at Work. Обратитесь в [службу поддержки Learning at Work](https://www.learninga-z.com/site/contact/support), чтобы добавить пользователей на платформу Learning at Work. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-sso"></a>Проверка единого входа 
 

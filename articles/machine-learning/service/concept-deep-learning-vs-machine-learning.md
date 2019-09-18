@@ -1,6 +1,6 @@
 ---
 title: Сравнение глубокого обучения и машинного обучения
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Узнайте о глубоком обучении и машинном обучении и о том, как обе концепции связаны с искусственным интеллектом. Глубокое обучение можно применять в таких сценариях, как обнаружение мошенничества, распознавание речи и лиц, тональности Analytics и прогнозирование временных рядов.
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
 ms.date: 08/07/2019
-ms.openlocfilehash: 3b0546c42ddd5252b35d1a77d7b152733beec233
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: cff31916f837141ae54f3c14dd125be6a92a5008
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240959"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71035503"
 ---
 # <a name="deep-learning-vs-machine-learning"></a>Сравнение глубокого обучения и машинного обучения
 
@@ -106,9 +106,9 @@ ms.locfileid: "70240959"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В следующих статьях показано, как использовать технологию глубокого обучения в [службе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/?WT.mc_id=docs-article-lazzeri).
+В следующих статьях показано, как использовать технологию глубокого обучения в [машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/?WT.mc_id=docs-article-lazzeri).
 
 - [Классификация рукописных цифр с помощью модели TensorFlow](https://docs.microsoft.com/azure/machine-learning/service/how-to-train-tensorflow?WT.mc_id=docs-article-lazzeri)
 - [Классификация рукописных цифр с помощью средства оценки TensorFlow и keras](https://docs.microsoft.com/azure/machine-learning/service/how-to-train-keras?WT.mc_id=docs-article-lazzeri)
 - [Классификация изображений с помощью модели Pytorch](https://docs.microsoft.com/azure/machine-learning/service/how-to-train-pytorch?WT.mc_id=docs-article-lazzeri)
-- [Классификация рукописных цифр с помощью модели цепочки](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-train-chainer?WT.mc_id=docs-article-lazzeri)
+- [Классификация рукописных цифр с помощью модели цепочки](https://docs.microsoft.com/azure/machine-learning/service/how-to-train-chainer?WT.mc_id=docs-article-lazzeri)

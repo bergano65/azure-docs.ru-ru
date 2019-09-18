@@ -8,19 +8,19 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 3ad2372f9a9f90e4502b304a08477771fd6ef385
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 0e019a9229b671be2fb73e758bd39f33657bc2d4
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69880388"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037425"
 ---
 # <a name="set-up-cloudsimple-private-cloud-as-a-disaster-recovery-site-for-on-premises-vmware-workloads"></a>Настройка частного облака Клаудсимпле в качестве сайта аварийного восстановления для локальных рабочих нагрузок VMware
 
 Частное облако Клаудсимпле можно настроить как сайт восстановления для локальных приложений, чтобы обеспечить непрерывность бизнес-процессов в случае аварии. Решение для восстановления основано на виртуальной репликации Zerto в качестве платформы для репликации и оркестрации. Критически важные виртуальные машины инфраструктуры и приложений можно непрерывно реплицировать из локального vCenter в частное облако. Вы можете использовать частное облако для тестирования отработки отказа и обеспечения доступности приложения во время аварии. Аналогичный подход можно выполнить, чтобы настроить частное облако в качестве первичного сайта, защищенного сайтом восстановления в другом расположении.
 
 > [!NOTE]
-> Рекомендации по изменению размера среды аварийного восстановления см. в статье Zerto. рекомендации по выбору [размера документа для виртуальной репликации Zerto](http://s3.amazonaws.com/zertodownload_docs/5.5U3/Zerto%20Virtual%20Replication%20Sizing.pdf) .
+> Рекомендации по изменению размера среды аварийного восстановления см. в статье Zerto. рекомендации по выбору [размера документа для виртуальной репликации Zerto](https://s3.amazonaws.com/zertodownload_docs/5.5U3/Zerto%20Virtual%20Replication%20Sizing.pdf) .
 
 Решение Клаудсимпле:
 

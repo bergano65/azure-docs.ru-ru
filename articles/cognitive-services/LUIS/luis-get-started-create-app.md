@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 09/03/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 5e635064af21996b7bd87b9da0f6b1ec9aa29378
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 1704b62cae6375d376fc43fb7a2940cd9c717072
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307791"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382505"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -80,7 +80,7 @@ Turn off the lights
 
 Убедитесь, что намерение с самой высокой оценкой для этого тестового высказывания выбрано правильно.
 
-В нашем примере Turn off the lights (Выключить свет) правильно распознано как намерение HomeAutomation.TurnOff.
+В нашем примере `Turn off the lights` правильно распознано как намерение с высокой оценкой **HomeAutomation.TurnOff**.
 
 [![Снимок экрана с выделенной фразой на панели тестирования](media/luis-quickstart-new-app/test.png "Screenshot of Test panel with utterance highlighted")](media/luis-quickstart-new-app/test.png)
 
@@ -97,83 +97,134 @@ Turn off the lights
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
+## <a name="query-the-v2-api-prediction-endpoint"></a>Запрос конечной точки прогнозирования API V2
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
 
-2. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. Браузер отображает ответ JSON от API версии V2 для конечной точки HTTP.
+1. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. Браузер отображает ответ JSON от **API V2** для конечной точки HTTP.
+
+    ```json
+    {
+      "query": "turn off the living room light",
+      "topScoringIntent": {
+        "intent": "HomeAutomation.TurnOff",
+        "score": 0.9753089
+      },
+      "intents": [
+        {
+          "intent": "HomeAutomation.TurnOff",
+          "score": 0.9753089
+        },
+        {
+          "intent": "HomeAutomation.QueryState",
+          "score": 0.01027893
+        },
+        {
+          "intent": "HomeAutomation.TurnUp",
+          "score": 0.006881481
+        },
+        {
+          "intent": "HomeAutomation.SetDevice",
+          "score": 0.006786365
+        },
+        {
+          "intent": "HomeAutomation.TurnDown",
+          "score": 0.005145787
+        },
+        {
+          "intent": "HomeAutomation.TurnOn",
+          "score": 0.004114749
+        },
+        {
+          "intent": "None",
+          "score": 0.000598924
+        }
+      ],
+      "entities": [
+        {
+          "entity": "living room",
+          "type": "HomeAutomation.Location",
+          "startIndex": 13,
+          "endIndex": 23,
+          "score": 0.94558233
+        },
+        {
+          "entity": "living room light",
+          "type": "HomeAutomation.DeviceName",
+          "startIndex": 13,
+          "endIndex": 29,
+          "resolution": {
+            "values": [
+              "living room light"
+            ]
+          }
+        },
+        {
+          "entity": "light",
+          "type": "HomeAutomation.DeviceType",
+          "startIndex": 25,
+          "endIndex": 29,
+          "resolution": {
+            "values": [
+              "light"
+            ]
+          }
+        }
+      ]
+    }
+    ```
+    
+## <a name="query-the-v3-api-prediction-endpoint"></a>Запрос конечной точки прогнозирования API V3
+
+Для [запроса API V3](luis-migration-api-v3.md) в браузере измените HTTPS-запрос метода GET, изменив значения в угловых скобках для ваших значений. 
+
+**URL-адрес V2 с методом GET**:
+
+https://\<регион>.api.cognitive.microsoft.com/luis/**v2.0**/apps/\<идентификатор_приложения>?verbose=true&subscription-key=\<ВАШ_КЛЮЧ&**q=\<текстовый-фрагмент-пользователя>**
+
+**URL-адрес V3 с методом GET**:
+
+https://\<регион>.api.cognitive.microsoft.com/luis/**v3.0-preview**/apps/\<идентификатор_приложения>/**slots**/**production**/**predict**?verbose=true&subscription-key=\<ВАШ_КЛЮЧ>&**query=\<текстовый-фрагмент-пользователя>**
+
+Браузер отображает ответ JSON от **API V3** для конечной точки HTTP.
 
 ```json
 {
-  "query": "turn off the living room light",
-  "topScoringIntent": {
-    "intent": "HomeAutomation.TurnOff",
-    "score": 0.9753089
-  },
-  "intents": [
-    {
-      "intent": "HomeAutomation.TurnOff",
-      "score": 0.9753089
-    },
-    {
-      "intent": "HomeAutomation.QueryState",
-      "score": 0.01027893
-    },
-    {
-      "intent": "HomeAutomation.TurnUp",
-      "score": 0.006881481
-    },
-    {
-      "intent": "HomeAutomation.SetDevice",
-      "score": 0.006786365
-    },
-    {
-      "intent": "HomeAutomation.TurnDown",
-      "score": 0.005145787
-    },
-    {
-      "intent": "HomeAutomation.TurnOn",
-      "score": 0.004114749
-    },
-    {
-      "intent": "None",
-      "score": 0.000598924
+    "query": "turn off the lights",
+    "prediction": {
+        "normalizedQuery": "turn off the lights",
+        "topIntent": "HomeAutomation.TurnOff",
+        "intents": {
+            "HomeAutomation.TurnOff": {
+                "score": 0.99649024
+            }
+        },
+        "entities": {
+            "HomeAutomation.DeviceType": [
+                [
+                    "light"
+                ]
+            ],
+            "$instance": {
+                "HomeAutomation.DeviceType": [
+                    {
+                        "type": "HomeAutomation.DeviceType",
+                        "text": "lights",
+                        "startIndex": 13,
+                        "length": 6,
+                        "modelTypeId": 5,
+                        "modelType": "List Entity Extractor",
+                        "recognitionSources": [
+                            "model"
+                        ]
+                    }
+                ]
+            }
+        }
     }
-  ],
-  "entities": [
-    {
-      "entity": "living room",
-      "type": "HomeAutomation.Location",
-      "startIndex": 13,
-      "endIndex": 23,
-      "score": 0.94558233
-    },
-    {
-      "entity": "living room light",
-      "type": "HomeAutomation.DeviceName",
-      "startIndex": 13,
-      "endIndex": 29,
-      "resolution": {
-        "values": [
-          "living room light"
-        ]
-      }
-    },
-    {
-      "entity": "light",
-      "type": "HomeAutomation.DeviceType",
-      "startIndex": 25,
-      "endIndex": 29,
-      "resolution": {
-        "values": [
-          "light"
-        ]
-      }
-    }
-  ]
 }
 ```
-    
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]

@@ -10,16 +10,16 @@ ms.topic: article
 ms.date: 08/23/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 651c15c8206f7956bb35520f9c5837cb0c9308f9
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 06b2c273f41bfa74ee968b6fd6676e83767ce8b2
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980707"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063257"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Учебник. Зарегистрировать приложение в Azure Active Directory B2C
 
-Чтобы [приложения](active-directory-b2c-apps.md) могли взаимодействовать с Azure Active Directory (Azure AD) B2C, их нужно зарегистрировать в клиенте, которым вы управляете. В этом руководстве показано, как зарегистрировать веб-приложение с помощью портала Azure.
+Прежде чем [приложения](active-directory-b2c-apps.md) смогут взаимодействовать с Azure Active Directory B2C (Azure AD B2C), они должны быть зарегистрированы в управляемом клиенте. В этом руководстве показано, как зарегистрировать веб-приложение с помощью портала Azure.
 
 В этой статье раскрываются следующие темы:
 
@@ -35,7 +35,7 @@ ms.locfileid: "69980707"
 
 ## <a name="register-a-web-application"></a>Регистрация веб-приложения
 
-1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните **Приложения**, а затем выберите **Добавить**.
 1. Введите имя приложения. Например, *webapp1*.

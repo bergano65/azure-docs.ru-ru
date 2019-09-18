@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: mlearned
-ms.openlocfilehash: 30587af098b5ced7962dc45d6a059184f8b5f319
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 8e00053d5ce7c481b026d2fe0ce590d7b8799d8a
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914895"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71075460"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -149,7 +149,7 @@ az aks create \
 > Если вы получаете сообщение об ошибке проверки пароля, попробуйте создать группу ресурсов в другом регионе.
 > Затем попытайтесь создать кластер с новой группой ресурсов.
 
-Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON.
+Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON. Время от времени для инициализации кластера может потребоваться больше нескольких минут. В таких случаях допускайте до 10 минут. 
 
 ## <a name="add-a-windows-server-node-pool"></a>Добавление пула узлов Windows Server
 
@@ -264,7 +264,7 @@ service/sample created
 
 ## <a name="test-the-application"></a>Тестирование приложения
 
-При запуске приложения Служба Kubernetes предоставляет внешний интерфейс приложения в Интернете. Процесс создания может занять несколько минут.
+При запуске приложения Служба Kubernetes предоставляет внешний интерфейс приложения в Интернете. Процесс создания может занять несколько минут. Время от времени для инициализации службы может потребоваться больше нескольких минут. В таких случаях допускайте до 10 минут.
 
 Чтобы отслеживать ход выполнения, используйте команду [kubectl get service][kubectl-get] с аргументом `--watch`.
 

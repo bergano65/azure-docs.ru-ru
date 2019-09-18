@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 14aff313ece93feabc39194ba6859e3bca6be3bc
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 134ca92671a41eb53201101a3622215466a60c09
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622403"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065095"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
 ## <a name="create-a-microsoft-account-application"></a>Создание приложения для учетной записи Майкрософт
 
-Чтобы использовать учетная запись Майкрософт в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) в Azure Active Directory (Azure AD) B2C, необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас еще нет учетная запись Майкрософт, его можно получить по адресу [https://www.live.com/](https://www.live.com/).
+Чтобы использовать учетная запись Майкрософт в качестве [поставщика удостоверений](active-directory-b2c-reference-oidc.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас еще нет учетная запись Майкрософт, его можно получить по адресу [https://www.live.com/](https://www.live.com/).
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.

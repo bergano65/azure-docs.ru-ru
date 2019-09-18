@@ -1,25 +1,27 @@
 ---
-title: Общие сведения об Azure Blockchain Workbench
-description: Общие сведения об Azure Blockchain Workbench и его функциональных возможностях.
+title: Общие сведения о предварительной версии Azure Blockchain Workbench
+description: Общие сведения о предварительной версии Azure Blockchain Workbench и ее функциональных возможностях.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/20/2019
+ms.date: 09/05/2019
 ms.topic: overview
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 16e2497f4e26d16c008161477fd7d573e59e84db
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 097185502321c8810214ed737047bdf596d18bdb
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955198"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844107"
 ---
 # <a name="what-is-azure-blockchain-workbench"></a>Что такое Azure Blockchain Workbench?
 
-Azure Blockchain Workbench — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Azure Blockchain Workbench предоставляет формирование шаблонов инфраструктуры для создания приложений блокчейн, позволяя разработчикам сосредоточиться на создании бизнес-логики и смарт-контрактов. Эта служба также упрощает процесс создания приложений блокчейн путем интеграции нескольких служб и возможностей Azure для автоматизации типичных задач разработки.
+Azure Blockchain Workbench (предварительная версия) — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Azure Blockchain Workbench предоставляет формирование шаблонов инфраструктуры для создания приложений блокчейн, позволяя разработчикам сосредоточиться на создании бизнес-логики и смарт-контрактов. Эта служба также упрощает процесс создания приложений блокчейн путем интеграции нескольких служб и возможностей Azure для автоматизации типичных задач разработки.
+
+[!INCLUDE [Preview note](./includes/preview.md)]
 
 ## <a name="create-blockchain-applications"></a>Создание блокчейн-приложений
 

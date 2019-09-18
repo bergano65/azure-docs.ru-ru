@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ae6d55180785c9407662776a95fcba31f8ba5275
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: e29e2e3e61594870cc9d704d64b1040a4211a520
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835210"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066224"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье описано, как использовать новую запись, предоставляемую пользователем (утверждение), при регистрации пользователя в Azure Active Directory (Azure AD) B2C.  Вы настроите запись как раскрывающийся список и определить, является ли это обязательно.
+В этой статье вы добавите новую запись, предоставленную пользователем (заявка), в путь взаимодействия пользователя для регистрации в Azure Active Directory B2C (Azure AD B2C).  Вы настраиваете запись в виде раскрывающегося списка и определяете, является ли она обязательной.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,12 +29,12 @@ ms.locfileid: "67835210"
 
 ## <a name="add-claims"></a>Добавление утверждений
 
-При регистрации или входе пользователя собираются соответствующие исходные данные. Дополнительные утверждения можно собрать позже при редактировании профиля. Каждый раз, когда Azure AD B2C собирает сведения непосредственно от пользователя интерактивном режиме, инфраструктура процедур идентификации использует его самоподтвержденным поставщиком.
+При регистрации или входе пользователя собираются соответствующие исходные данные. Дополнительные утверждения можно собрать позже при редактировании профиля. Когда Azure AD B2C собирает информацию непосредственно из пользователя в интерактивном режиме, инфраструктура процедур идентификации использует его самостоятельно утвержденный поставщик.
 
 
 ### <a name="define-the-claim"></a>Определение утверждения
 
-Давайте попросим пользователя свой Город. Добавьте следующий элемент в элемент **ClaimsSchema** в файле политики TrustFrameworkBase:
+Давайте задаем пользователя в своем городе. Добавьте следующий элемент в элемент **ClaimsSchema** в файле политики TrustFrameworkBase:
 
 ```xml
 <ClaimType Id="city">
@@ -79,7 +79,7 @@ ms.locfileid: "67835210"
 
 #### <a name="dropdownsingleselect"></a>DropdownSingleSelect
 
-![Элемент управления dropdown одиночного выбора, отображаются несколько вариантов](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
+![Элемент управления "раскрывающийся список с одним выделением" с несколькими параметрами](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -96,7 +96,7 @@ ms.locfileid: "67835210"
 
 #### <a name="checkboxmultiselect"></a>CheckboxMultiSelect
 
-![Элемент управления checkbox множественного выбора, отображаются несколько вариантов](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
+![Элемент управления CheckBox множественного выбора, отображающий несколько параметров](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -261,7 +261,7 @@ ms.locfileid: "67835210"
 ## <a name="test-the-custom-policy"></a>Проверка пользовательской политики
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Убедитесь, что используете каталог, содержащий клиент организации Azure AD, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, который содержит ваш клиент Azure AD.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 4. Выберите **Identity Experience Framework (предварительная версия)** .
 5. Выберите **Отправка пользовательской политики** и отправьте два файла политики, которые вы изменили ранее.
@@ -294,7 +294,7 @@ ms.locfileid: "67835210"
 }
 ```
 
-## <a name="optional-remove-email-verification"></a>Необязательно: отключение проверки по электронной почте
+## <a name="optional-remove-email-verification"></a>Дополнительно отключение проверки по электронной почте
 
 Чтобы пропустить проверку по электронной почте, можно удалить `PartnerClaimType="Verified.Email"`. В таком случае адрес электронной почты нужно будет указывать, но он не будет проверяться, если не удалить фрагмент Required = true.  Подумайте, подходит ли этот вариант в вашем случае.
 

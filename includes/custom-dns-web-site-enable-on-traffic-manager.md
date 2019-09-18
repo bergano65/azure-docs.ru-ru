@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: cephalin
-ms.openlocfilehash: 67b9c0ba2566206b0e70db51844b21e5d5d3c261
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: ddeb46a2c7bc7f24f55c22f446926529cee7b598
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185864"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059801"
 ---
 После завершения распространения записей для вашего доменного имени необходимо воспользоваться браузером, чтобы удостовериться, что пользовательское доменное имя может использоваться для доступа к веб-приложению в службе приложений Azure.
 
@@ -30,7 +30,7 @@ ms.locfileid: "67185864"
    
     ![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 3. В колонке **Личные домены** щелкните **Добавить имя узла**.
-4. В текстовом поле **Имя узла** введите доменное имя диспетчера трафика для связывания с этим веб-приложением.
+4. Используйте текстовые поля **имя узла** , чтобы ввести имя пользовательского домена, связываемое с этим веб-приложением.
    
     ![](./media/custom-dns-web-site/dncmntask-cname-8.png)
 5. Нажмите кнопку **Проверить** , чтобы сохранить конфигурацию доменного имени.

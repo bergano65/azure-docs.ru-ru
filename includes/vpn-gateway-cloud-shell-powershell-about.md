@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 01358d13d30358a9950cbe35622df065fc5a6de5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fe7e617ae2263f1388feef3754f6cd16130ed436
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67133429"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059792"
 ---
 В этой статье используются командлеты PowerShell. Для запуска командлетов можно использовать Azure Cloud Shell, интерактивную оболочку среды, размещенную в Azure и работающую в браузере. В Azure Cloud Shell предустановлены командлеты Azure PowerShell.
 
@@ -23,10 +23,10 @@ ms.locfileid: "67133429"
 
 |  |   |
 |-----------------------------------------------|---|
-| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| В браузере перейдите по адресу [shell.azure.com](https://shell.azure.com). | [![Запуск кнопки Azure Cloud Shell](./media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com) |
-| Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/hdi-azure-cli-try-it.png) |
+| В браузере перейдите по адресу [shell.azure.com](https://shell.azure.com). | [![Запуск кнопки Azure Cloud Shell](./media/cloud-shell-try-it/hdi-launch-cloud-shell.png)](https://shell.azure.com) |
+| Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/hdi-cloud-shell-menu.png) |
 
-**PowerShell запущен локально**
+**Локальное выполнение PowerShell**
 
-Можно также установить и запустить командлеты Azure PowerShell локально на компьютере. Командлеты PowerShell часто обновляются. Если вы не используете последнюю версию, значения, указанные в инструкциях по может завершиться ошибкой. Чтобы найти версии Azure PowerShell, установленных на компьютере, используйте `Get-Module -ListAvailable Az` командлета. Чтобы установить или обновить, см. в разделе [установить модуль Azure PowerShell](/powershell/azure/install-az-ps).
+Можно также установить и запустить командлеты Azure PowerShell локально на компьютере. Командлеты PowerShell часто обновляются. Если вы не используете последнюю версию, значения, указанные в инструкциях, могут завершиться ошибкой. Чтобы узнать, какие версии Azure PowerShell установлены на компьютере, используйте `Get-Module -ListAvailable Az` командлет. Сведения об установке или обновлении см. в разделе [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).

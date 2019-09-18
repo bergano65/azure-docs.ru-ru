@@ -3,191 +3,80 @@ title: Примеры для службы хранилища Azure с испол
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 05/03/2019
+ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: cec6b0498adf55428fade7ae00db6550496a20bd
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 57249bd2fa4d3c8aefe19a85ec9a2b6b584b00d2
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721858"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743955"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
-## <a name="net-sample-index"></a>Указатель по примерам для .NET
-
 В таблице ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
-<table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody> 
-<tr> 
-<td rowspan="16"><b>Большой двоичный объект</b></td>
-<td>Добавление больших двоичных объектов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs#L1144">Приступая к работе с большими двоичными объектами</a></td> 
-</tr> 
-<tr> 
-<td>Блочный BLOB-объект</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Веб-приложение фотоальбома для хранилища BLOB-объектов Azure</a></td>
-</tr> 
-<tr> 
-<td>Шифрование на стороне клиента</td>
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/BlobGettingStarted/Program.cs">Примеры шифрования больших двоичных объектов</a></td>
-</tr> 
-<tr> 
-<td>Копирование BLOB-объекта</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>Create Container (Создание контейнера)</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Веб-приложение фотоальбома для хранилища BLOB-объектов Azure</a></td>
-</tr> 
-<tr> 
-<td>Delete BLOB (Удаление BLOB-объекта)</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Веб-приложение фотоальбома для хранилища BLOB-объектов Azure</a></td>
-</tr> 
-<tr> 
-<td>Delete Container (Удаление контейнера)</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>Метаданные, свойства и статистика больших двоичных объектов</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>ACL, метаданные и свойства контейнера</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Веб-приложение фотоальбома для хранилища BLOB-объектов Azure</a></td>
-</tr> 
-<tr> 
-<td>Get Page Ranges (Получение диапазона страницы)</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>Аренда большого двоичного объекта и контейнера</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>Список больших двоичных объектов и контейнеров</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr> 
-<tr> 
-<td>Страничный BLOB-объект</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr>
-<tr> 
-<td>SAS</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr>   
-<tr> 
-<td>Свойства службы</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Приступая к работе с большими двоичными объектами</a></td>
-</tr>           
-<tr> 
-<td>Создание моментального снимка большого двоичного объекта</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-back-up-with-incremental-snapshots/blob/master/Program.cs">Backup Azure Virtual Machine Disks with Incremental Snapshots</a> (Резервное копирование дисков виртуальной машины Azure с помощью добавочных моментальных снимков)</td>
-</tr> 
-<tr> 
-<td rowspan="9"><b>File</b></td>
-<td>Создание общих папок, каталогов и файлов</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr>
-<tr> 
-<td>Удаление общих папок, каталогов и файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/master/FileStorage/GettingStarted.cs">Приступая к работе со службой файлов Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Метаданные и свойства каталога</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr> 
-<tr> 
-<td>Скачивание файлов</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr> 
-<tr> 
-<td>Метрики, метаданные и свойства файла</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr> 
-<tr> 
-<td>Свойства службы файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr> 
-<tr> 
-<td>Список каталогов и файлов</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr>
-<tr> 
-<td>Список общих папок</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr>
-<tr> 
-<td>Статистика, метаданные и свойства общей папки</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Пример хранилища файлов .NET для службы хранилища Azure</a></td> 
-</tr>
-<tr> 
-<td rowspan="8"><b>Очередь</b></td>
-<td>Добавление сообщения</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Шифрование на стороне клиента</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/QueueGettingStarted/Program.cs">Очередь шифрования на стороне клиента .NET для службы хранилища Azure</a></td> 
-</tr> 
-<tr> 
-<td>Создание очередей</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Удаление сообщения и очереди</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Просмотр сообщения</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>ACL, метаданные и статистика очереди</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Свойства службы очередей</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td>Сообщение об обновлении</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Приступая к работе со службой очередей Azure в .NET</a></td> 
-</tr> 
-<tr> 
-<td rowspan="7"><b>Таблица</b></td>
-<td>Создание таблицы</td> 
-<td><a href="https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262">Управление параллелизмом с помощью службы хранилища Azure: пример приложения</a></td> 
-</tr> 
-<tr> 
-<td>Удаление сущности или таблицы</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a> (Приступая к работе с хранилищем таблиц Azure в .NET)</td> 
-</tr> 
-<tr> 
-<td>Вставка, слияние или замена сущностей</td> 
-<td><a href="https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262">Управление параллелизмом с помощью службы хранилища Azure: пример приложения</a></td> 
-</tr> 
-<tr> 
-<td>Query Entities (Сущности запроса)</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a> (Приступая к работе с хранилищем таблиц Azure в .NET)</td> 
-</tr> 
-<tr> 
-<td>Запросы к таблицам</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a> (Приступая к работе с хранилищем таблиц Azure в .NET)</td> 
-</tr> 
-<tr> 
-<td>Свойства и ACL таблицы</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/AdvancedSamples.cs">Getting Started with Azure Table Storage in .NET</a> (Приступая к работе с хранилищем таблиц Azure в .NET)</td> 
-</tr> 
-<tr> 
-<td>Update Entity (Обновление сущности)</td> 
-<td><a href="https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262">Управление параллелизмом с помощью службы хранилища Azure: пример приложения</a></td> 
-</tr> 
-</tbody> 
-</table>
-<br/>
+## <a name="blob-samples"></a>Примеры больших двоичных объектов
+
+| **Сценарий** | **Пример кода** |
+|--------------|-----------------|
+| Добавление больших двоичных объектов | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs#L1144) |
+| Блочный BLOB-объект | [Веб-приложение фотоальбома для хранилища BLOB-объектов Azure](https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs) |
+| Шифрование на стороне клиента | [Примеры шифрования больших двоичных объектов](https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/BlobGettingStarted/Program.cs) |
+| Копирование BLOB-объекта | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Create Container (Создание контейнера) | [Веб-приложение фотоальбома для хранилища BLOB-объектов Azure](https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs) |
+| Delete BLOB (Удаление BLOB-объекта) | [Веб-приложение фотоальбома для хранилища BLOB-объектов Azure](https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs) |
+| Delete Container (Удаление контейнера) | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Метаданные, свойства и статистика больших двоичных объектов | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| ACL, метаданные и свойства контейнера | [Веб-приложение фотоальбома для хранилища BLOB-объектов Azure](https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs) |
+| Get Page Ranges (Получение диапазона страницы) | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Аренда большого двоичного объекта и контейнера | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Список больших двоичных объектов и контейнеров | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs) |
+| Страничный BLOB-объект | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs) |
+| SAS | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Свойства службы | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
+| Создание моментального снимка большого двоичного объекта | [Backup Azure Virtual Machine Disks with Incremental Snapshots](https://github.com/Azure-Samples/storage-blob-dotnet-back-up-with-incremental-snapshots/blob/master/Program.cs) (Резервное копирование дисков виртуальной машины Azure с помощью добавочных моментальных снимков) |
+
+## <a name="file-samples"></a>Примеры файлов
+
+| **Сценарий** | **Пример кода** |
+|--------------|-----------------|
+| Создание общих папок, каталогов и файлов | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs) |
+| Удаление общих папок, каталогов и файлов | [Приступая к работе со службой файлов Azure в .NET](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/master/FileStorage/GettingStarted.cs) |
+| Метаданные и свойства каталога | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
+| Скачивание файлов | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs) |
+| Метрики, метаданные и свойства файла | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
+| Свойства службы файлов | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
+| Список каталогов и файлов | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs) |
+| Список общих папок | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
+| Статистика, метаданные и свойства общей папки | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
+
+## <a name="queue-samples"></a>Примеры очередей
+
+| **Сценарий** | **Пример кода** |
+|--------------|-----------------|
+| Добавление сообщения | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
+| Шифрование на стороне клиента | [Очередь шифрования на стороне клиента .NET для службы хранилища Azure](https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/QueueGettingStarted/Program.cs) |
+| Создание очередей | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
+| Удаление сообщения и очереди | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
+| Просмотр сообщения | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
+| ACL, метаданные и статистика очереди | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs) |
+| Свойства службы очередей | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs) |
+| Сообщение об обновлении | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
+
+## <a name="table-samples"></a>Примеры таблиц
+
+| **Сценарий** | **Пример кода** |
+|--------------|-----------------|
+| Создание таблицы | [Управление параллелизмом с помощью службы хранилища Azure: пример приложения](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262) |
+| Удаление сущности или таблицы | [Getting Started with Azure Table Storage in .NET](https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs) (Приступая к работе с хранилищем таблиц Azure в .NET) |
+| Вставка, слияние или замена сущностей | [Управление параллелизмом с помощью службы хранилища Azure: пример приложения](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262) |
+| Query Entities (Сущности запроса) | [Getting Started with Azure Table Storage in .NET](https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs) (Приступая к работе с хранилищем таблиц Azure в .NET) |
+| Запросы к таблицам | [Getting Started with Azure Table Storage in .NET](https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs) (Приступая к работе с хранилищем таблиц Azure в .NET) |
+| Свойства и ACL таблицы | [Getting Started with Azure Table Storage in .NET](https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/AdvancedSamples.cs) (Приступая к работе с хранилищем таблиц Azure в .NET) |
+| Update Entity (Обновление сущности) | [Управление параллелизмом с помощью службы хранилища Azure: пример приложения](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114/sourcecode?fileId=123913&pathId=50196262) |
 
 ## <a name="azure-code-samples-library"></a>Библиотека примеров кода Azure
 
@@ -209,4 +98,5 @@ ms.locfileid: "68721858"
 Дополнительные сведения о примерах для других языков см. здесь:
 
 * Java: [Примеры для службы хранилища Azure с использованием Java](storage-samples-java.md)
+* Python: [Примеры для работы со службой хранилища Azure с помощью Python](storage-samples-python.md)
 * Остальные языки: [Примеры для службы хранилища Azure](../storage-samples.md)

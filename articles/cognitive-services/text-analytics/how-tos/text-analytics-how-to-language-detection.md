@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: 361dc10aad6f65230e1e0f4c563534d44b45f902
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: d34f3a03e1bcd35c270d13c4dda57d0394a36e4b
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68697812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387791"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Пример: Определение языка с помощью API "Анализ текста"
 
@@ -69,7 +69,7 @@ ms.locfileid: "68697812"
 
 + Создайте запрос POST. Для изучения документации по API для этого запроса см. [API Распознавание языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
 
-+ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). Он должен включать в себя ресурс `/languages`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`.
++ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v2.1/languages`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 

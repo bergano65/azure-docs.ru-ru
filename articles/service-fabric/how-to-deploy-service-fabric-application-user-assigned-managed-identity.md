@@ -7,12 +7,12 @@ ms.service: service-fabric
 ms.topic: article
 ms.date: 08/09/2019
 ms.author: atsenthi
-ms.openlocfilehash: f8dfaa39f02aefbdda1f34afa5011ce5fadbae49
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 0cc1e51a4d5f9ad54866066a4247e1588da381a6
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624917"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037491"
 ---
 # <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с помощью управляемого удостоверения, назначенного пользователем (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "69624917"
 
 ## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
 
-Чтобы включить приложение с удостоверением, назначенным пользователем, сначала добавьте свойство **Identity** в ресурс приложения с типом **усерассигнед** и назначенными пользователем удостоверениями. Затем добавьте раздел **манажедидентитиес** в раздел **Properties** для ресурса **приложения** , который содержит список понятных имен для сопоставления principalId для каждого назначенного пользователем удостоверения.
+Чтобы включить приложение с удостоверением, назначенным пользователем, сначала добавьте свойство **Identity** в ресурс приложения с типом **усерассигнед** и назначенными пользователем удостоверениями. Затем добавьте раздел **манажедидентитиес** в раздел **Properties** для ресурса **приложения** , который содержит список понятных имен для сопоставления principalId для каждого назначенного пользователем удостоверения. Дополнительные сведения о назначенных пользователем удостоверениях см. [в статье Создание, перечисление или удаление назначенного пользователем управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell).
 
 ### <a name="application-template"></a>Шаблон приложения
 
@@ -90,7 +90,7 @@ ms.locfileid: "69624917"
       </ServiceManifestImport>
     ```
 
-3. Обновите манифест службы, чтобы добавить **ManagedIdentity** в раздел Resources с `ServiceIdentityRef` именем, соответствующим в `IdentityBindingPolicy` манифесте приложения:
+3. Обновите манифест службы, чтобы добавить **ManagedIdentity** в раздел **Resources** с `ServiceIdentityRef` именем, соответствующим в `IdentityBindingPolicy` манифесте приложения:
 
     **ServiceManifest. XML**
 

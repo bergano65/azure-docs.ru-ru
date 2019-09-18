@@ -14,19 +14,19 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
-ms.custom: mvc, devcenter, seo-java-august2019
-ms.openlocfilehash: 39bb5191ff0c757fc672d18b4e8e406f91df0509
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: ca6a1063f6ddd5c42d0d08f43b87a3387cc46a14
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70173230"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70859270"
 ---
 # <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
-Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
+В этом кратком руководстве показано, как развернуть первое приложение Java в Azure Service Fabric с использованием интегрированной среды разработки Eclipse на компьютере разработчика Linux. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере.
 
-В этом кратком руководстве показано, как развернуть первое приложение Java в Service Fabric с использованием интегрированной среды разработки Eclipse на компьютере разработчика Linux. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере.
+Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими.
 
 ![Снимок экрана приложения](./media/service-fabric-quickstart-java/votingapp.png)
 
