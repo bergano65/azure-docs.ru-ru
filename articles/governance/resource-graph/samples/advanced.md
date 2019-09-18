@@ -51,7 +51,7 @@ az graph query -q "where type=~ 'microsoft.compute/virtualmachinescalesets' | wh
 Search-AzGraph -Query "where type=~ 'microsoft.compute/virtualmachinescalesets' | where name contains 'contoso' | project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name | order by Capacity desc"
 ```
 
-## <a name="list-all-tags">Вывести список всех названий тегов</a>
+## <a name="list-all-tags"></a>Вывести список всех названий тегов
 
 Этот запрос начинается с тега и строит объект JSON, перечисляющий все уникальные имена тегов и их соответствующие типы.
 

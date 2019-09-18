@@ -51,7 +51,7 @@ ms.locfileid: "70999448"
 
 1. В нижней таблице выберите **номер запуска**.
 
-   [ Запуститьэксперимент![](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run-expanded.png))
+   [![Запуститьэксперимент](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run.png)](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-experiment-run-expanded.png))
 
 1. В таблице итерации выберите **номер итерации** для модели, которую необходимо исследовать далее.
 
