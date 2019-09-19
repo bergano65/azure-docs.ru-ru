@@ -134,7 +134,7 @@ ms.locfileid: "70916273"
 Существуют и другие статьи, к которым можно обратиться, если вас интересуют такие темы, как:
 
 * [инструментирование веб-приложения во время выполнения;](../../azure-monitor/app/monitor-performance-live-website-now.md)
-* [Oблачныe службы Azure2}
+* [Oблачныe службы Azure2](../../azure-monitor/app/cloudservices.md)
 
 ### <a name="more-telemetry"></a>Дополнительные данные телеметрии
 

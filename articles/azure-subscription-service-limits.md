@@ -47,7 +47,7 @@ ms.locfileid: "71018520"
 * [Шлюз приложений](#application-gateway-limits)
 * [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
-* [Oблачныe службы Azure2}
+* [Oблачныe службы Azure2](#azure-cloud-services-limits)
 * [Azure Cognitive Services](#azure-cognitive-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
 * [База данных Azure для MySQL](#azure-database-for-mysql)

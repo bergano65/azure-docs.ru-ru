@@ -44,7 +44,7 @@ ms.locfileid: "70744083"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед установкой и запуском расширения ["функции]Azure" для функций azure[для Visual Studio Code]необходимо соблюдать следующие требования.
+Перед установкой и запуском расширения [функцииAzure для функций azure][расширение "функции azure" для visual studio code]необходимо соблюдать следующие требования.
 
 * [Visual Studio Code](https://code.visualstudio.com/) , установленный на одной из [поддерживаемых платформ](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
 
