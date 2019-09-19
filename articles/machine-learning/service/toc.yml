@@ -152,6 +152,9 @@
         - name: Добавление и регистрация наборов данных
           displayName: 'data, dataset'
           href: how-to-create-register-datasets.md
+        - name: Обучение с наборами данных
+          displayName: 'data, dataset'
+          href: how-to-train-with-datasets.md
     - name: Обучение моделей
       items:
         - name: Настройка сред обучения

@@ -73,7 +73,7 @@ sections:
       - type: list
         style: cards
         className: cardsM
-        columns: 3
+        columns: 2
         items:
           - href: /azure/sql-database/sql-database-single-index
             html: '<p>Используйте отдельную базу данных под управлением сервера Базы данных SQL для своих приложений SaaS и микрослужб, которым требуются отдельные базы данных с прогнозируемой производительностью.</p>'
@@ -90,6 +90,11 @@ sections:
             image:
               src: media/index/i_mi.svg
             title: Управляемый экземпляр
+          - href: /azure/sql-database/sql-database-instance-pools
+            html: '<p>Используйте пулы управляемых экземпляров как простое и экономичное решение для развертывания нескольких быстро масштабируемых управляемых экземпляров, совместно использующих ресурсы.</p>'
+            image:
+              src: media/index/i_instancepool.png
+            title: Пул экземпляров
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
@@ -128,6 +133,12 @@ sections:
               - href: 'https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44'
               - href: /azure/sql-database/scripts/sql-database-create-configure-managed-instance-powershell
               - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet'
+          - title: Создание пула экземпляров
+            values:
+              - href: null
+              - href: null
+              - href: '/azure/sql-database/sql-database-instance-pools-how-to#create-an-instance-pool'
+              - href: null
   - title: Пошаговые руководства и учебные материалы
     items:
       - type: paragraph

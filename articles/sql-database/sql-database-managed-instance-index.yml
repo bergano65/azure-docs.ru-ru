@@ -44,6 +44,9 @@ sections:
           - title: интеграция с виртуальной сетью;
             href: /azure/sql-database/sql-database-managed-instance-connectivity-architecture
             html: <p>Защищенная служба размещена в частной виртуальной сети Azure с использованием частных IP-адресов.</p>
+          - href: /azure/sql-database/sql-database-instance-pools
+            html: '<p>Экономичное решение для развертывания нескольких управляемых экземпляров, совместно использующих ресурсы.</p>'
+            title: Пулы экземпляров
           - title: Простой переход
             href: /azure/sql-database/sql-database-managed-instance-get-started-restore
             html: <p>Легко переносите локальные базы данных в облако Azure с помощью исходного восстановления.</p>
@@ -59,9 +62,6 @@ sections:
           - title: Уровни службы
             href: /azure/sql-database/sql-database-service-tiers-general-purpose-business-critical
             html: <p>В зависимости от бизнес-потребностей можно выбрать между уровнями служб "Общего назначения" и "Критически важный для бизнеса".</p>
-          - title: Расширенные функции безопасности
-            href: /azure/sql-database/sql-database-security-index
-            html: <p>Защитите экземпляр и базы данных с помощью встроенных возможностей безопасности Базы данных SQL Azure.<p>
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
@@ -93,6 +93,12 @@ sections:
               - href: null
               - href: 'https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44'
               - href: '/powershell/module/az.sql/set-azsqlinstance#examples'
+              - href: null
+          - title: Создание нового пула экземпляров
+            values:
+              - href: null
+              - href: null
+              - href: '/azure/sql-database/sql-database-instance-pools-how-to#create-an-instance-pool'
               - href: null
           - title: Настройка сетевой среды Azure
             values:

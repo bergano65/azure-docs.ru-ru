@@ -100,7 +100,9 @@
       href: acs-aks-migration.md
     - name: Поддерживаемая версия Kubernetes
       href: supported-kubernetes-versions.md
-- name: Практические руководства
+    - name: Усиление защиты ОС узла
+      href: security-hardened-vm-host-image.md
+- name: Руководства
   items:
     - name: Операции с кластером
       items:
@@ -116,7 +118,7 @@
         - name: Удаление кластера AKS
           href: '/cli/azure/aks#az-aks-delete'
           maintainContext: true
-        - name: Создание ACR для кластера AKS (предварительная версия)
+        - name: Создание ACR для кластера AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
           items:

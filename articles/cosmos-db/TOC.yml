@@ -666,6 +666,8 @@
           href: how-to-configure-change-feed-start-time.md
         - name: Использование оценщика канала изменений
           href: how-to-use-change-feed-estimator.md
+        - name: Миграция из библиотеки обработчика веб-канала изменений
+          href: how-to-migrate-from-change-feed-library.md
     - name: Встроенная аналитика с помощью Apache Spark
       items:
         - name: Соединитель Spark для Azure Databricks

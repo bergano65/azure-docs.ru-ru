@@ -255,8 +255,18 @@
           href: manage-public-ip-address-prefix.md
     - name: Перемещение между регионами
       items:
+        - name: "Группы безопасности сети\_— портал"
+          href: move-across-regions-nsg-portal.md
+        - name: "Группы безопасности сети\_— PowerShell"
+          href: move-across-regions-nsg-powershell.md
         - name: "Виртуальные сети\_— портал"
           href: virtual-network-azure-to-azure-migrate-vnet-portal.md
+        - name: "Виртуальные сети\_— PowerShell"
+          href: virtual-network-azure-to-azure-migrate-vnet-powershell.md
+        - name: "Общедоступные IP-адреса\_— портал"
+          href: move-across-regions-publicip-portal.md
+        - name: "Общедоступные IP-адреса\_— PowerShell"
+          href: move-across-regions-publicip-powershell.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок с пирингом виртуальной сети

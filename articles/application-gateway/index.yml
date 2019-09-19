@@ -1,69 +1,69 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Документация по Шлюзу приложений
+### YamlMime:Landing
+title: Документация по Шлюзу приложений Azure
+summary: Узнайте, как создавать шлюзы приложений. В этой статье описано, как планировать, развертывать и администрировать веб-трафик в ресурсах Azure.
 metadata:
-  title: Документация по Шлюзу приложений Azure. Руководства и справочник по API
-  meta.description: 'Learn how to create application gateways. Documentation helps you plan, deploy, and manage web traffic to your Azure resources.'
+  title: Документация по Шлюзу приложений Azure
+  description: Сведения о развертывании Брандмауэра Azure — облачной службы безопасности сети.
   services: application-gateway
-  author: vhorne
   ms.service: application-gateway
   ms.topic: landing-page
-  ms.date: 5/20/2019
+  author: vhorne
   ms.author: victorh
-abstract:
-  description: 'Узнайте, как развертывать Шлюз приложений, контроллер доставки приложений (ADC) в качестве службы. Руководства, справочники по API и другая документация, в которой показано, как настроить маршрутизацию на уровне приложений и службы балансировки нагрузки для создания масштабируемых веб-интерфейсов с высоким уровнем доступности.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Сведения об управлении веб-трафиком к ресурсам с помощью Шлюза приложений:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/application-gateway/media/index/portal.svg'
-            text: Портал Azure
-            href: 'https://docs.microsoft.com/azure/application-gateway/quick-create-portal'
-          - image:
-              src: 'https://docs.microsoft.com/azure/application-gateway/media/index/logo_powershell.svg'
-            text: Azure PowerShell
-            href: 'https://docs.microsoft.com/azure/application-gateway/quick-create-powershell'
-          - image:
-              src: 'https://docs.microsoft.com/azure/application-gateway/media/index/cli.svg'
-            text: Azure CLI
-            href: 'https://docs.microsoft.com/azure/application-gateway/quick-create-cli'
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Сведения о развертывании, администрировании и мониторинге шлюзов приложений в Azure'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/application-gateway/application-gateway-web-application-firewall-portal">Создание шлюза приложений с брандмауэром веб-приложения</a>
-          - html: <a href="/azure/application-gateway/create-ssl-portal">Настройка шлюза приложений с завершением SSL-запросов</a>
-          - html: <a href="/azure/application-gateway/create-multiple-sites-portal">Создание и настройка шлюза приложений для размещения нескольких веб-сайтов</a>
-          - html: <a href="/azure/application-gateway/create-url-route-portal">Создание шлюза приложений с правилами маршрутизации на основе пути</a>
-          - html: <a href="/azure/application-gateway/tutorial-url-redirect-cli">Создание шлюза приложений с перенаправлением на основе URL-пути</a>
-          - html: '<a href="/azure/application-gateway/tutorial-autoscale-ps">Создание шлюза приложений, который улучшает доступ к веб-приложениям</a>'
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Управление веб-трафиком с помощью шлюза приложений
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: "<a href=\"/azure/application-gateway/cli-samples\">Azure\_CLI</a>"
-          - html: <a href="/azure/application-gateway/powershell-samples">Azure PowerShell</a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Командная строка
-            html: <p><a href="/powershell/resourcemanager">Azure PowerShell</a></p><p><a href="/cli/azure/network/application-gateway">Azure CLI</a></p>
-          - title: Языки
-            html: '<p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p><p><a href="/javascript/api/azure-arm-network/ApplicationGateways">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/azure-mgmt-network/azure.mgmt.network.v2018_08_01.operations.applicationgatewaysoperations">Python</a></p>'
-          - title: REST
-            html: "<p><a href=\"https://msdn.microsoft.com/library/mt684941\">Полный справочник по REST\_API</a></p>"
+  ms.date: 09/18/2019
+  ms.openlocfilehash: ff940f474c6d5d6fd96a03c45be18de39f065b97
+  ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/17/2019
+  ms.locfileid: "71076029"
+landingContent:
+- title: Информация о Шлюзе приложений
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое шлюз приложений Azure?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Часто задаваемые вопросы
+      url: application-gateway-faq.md
+- title: Развертывание Шлюза приложений
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Маршрутизация веб-трафика с помощью Шлюза приложений
+      url: quick-create-portal.md
+- title: Развертывание с SSL-терминацией
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: SSL-терминация и сквозное SSL-подключение к Шлюзу приложений
+      url: ssl-overview.md
+    - text: Общие сведения о политике SSL
+      url: application-gateway-ssl-policy-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Настройка шлюза приложений с использованием SSL-терминации
+      url: create-ssl-portal.md
+- title: Автоматическое масштабирование и Шлюз приложений, избыточный между зонами
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Автоматическое масштабирование и Шлюз приложений, избыточный между зонами, версии 2
+      url: application-gateway-autoscaling-zone-redundant.md
+  - linkListType: tutorial
+    links:
+    - text: Создание шлюза приложений, который улучшает доступ к веб-приложениям
+      url: tutorial-autoscale-ps.md
+- title: Устранение неполадок со шлюзом приложений
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Работоспособности ресурсов Шлюза приложений
+      url: resource-health-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование Log Analytics для проверки журналов брандмауэра веб-приложения Шлюза приложений
+      url: log-analytics.md
+    - text: Проблемы с работоспособностью серверной части в Шлюзе приложений
+      url: application-gateway-backend-health-troubleshooting.md

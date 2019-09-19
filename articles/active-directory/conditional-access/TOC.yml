@@ -19,10 +19,10 @@
 - name: Основные понятия
   expanded: false
   items:
-    - name: Включение условного доступа
-      href: howto-conditional-access-adoption-kit.md
     - name: Распространенные политики условного доступа
       href: concept-conditional-access-policy-common.md
+    - name: Компоненты политики условного доступа
+      href: concept-conditional-access-policies.md
     - name: Условия
       href: conditions.md
     - name: Условия расположения

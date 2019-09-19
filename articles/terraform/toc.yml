@@ -4,14 +4,14 @@
   items:
     - name: Сведения о Terraform в Azure
       href: terraform-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
-    - name: Создание приложения на базе нескольких служб
-      href: terrafom-quickstart.md
     - name: Установка и настройка Terraform
       href: /azure/virtual-machines/linux/terraform-install-configure
       maintainContext: true
+    - name: Создание приложения на базе нескольких служб
+      href: terrafom-quickstart.md
     - name: Создание виртуальной машины Linux
       href: /azure/virtual-machines/linux/terraform-create-complete-vm
       maintainContext: true
@@ -25,7 +25,7 @@
       items:
         - name: Создание кластера Kubernetes с помощью AKS
           href: terraform-create-k8s-cluster-with-tf-and-aks.md
-        - name: Создание кластера Kubernetes с помощью AKS со шлюзом приложений в качестве контроллера входящего трафика
+        - name: Создание кластера Kubernetes с помощью AKS со Шлюзом приложений в качестве контроллера входящего трафика
           href: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
     - name: Инфраструктура
       items:
@@ -67,19 +67,15 @@
   items:
     - name: Шаблоны конфигурации
       href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
-- name: Основные понятия
+- name: Руководства
   items:
-    - name: Интеграция Azure Cloud Shell
-      href: terraform-cloud-shell.md
-- name: Практические руководства
-  items:
-    - name: Хранение состояния в Службе хранилища Azure
+    - name: Хранение состояния в службе хранилища Azure
       href: terraform-backend.md
 - name: Справочные материалы
   items:
     - name: Реестр модулей Azure
       href: 'https://registry.terraform.io/modules/Azure'
-    - name: Справочник по Terraform
+    - name: Поставщик Terraform Azure
       href: 'https://aka.ms/terraform'
 - name: Ресурсы
   items:

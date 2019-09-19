@@ -123,6 +123,14 @@
       href: load-balancer-query-metrics-rest-api.md
     - name: Настройка высокодоступных портов для внутренней службы Azure Load Balancer
       href: load-balancer-configure-ha-ports.md
+    - name: Перемещение между регионами
+      items:
+        - name: "Внешний балансировщик нагрузки\_— портал"
+          href: move-across-regions-external-load-balancer-portal.md
+        - name: "Внешний балансировщик нагрузки\_— PowerShell"
+          href: move-across-regions-external-load-balancer-powershell.md
+        - name: "Внутренний балансировщик нагрузки\_— PowerShell"
+          href: move-across-regions-internal-load-balancer-powershell.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок Azure Load Balancer

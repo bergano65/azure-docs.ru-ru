@@ -51,7 +51,9 @@
           href: data-box-edge-contact-microsoft-support.md
     - name: Заметки о выпуске
       items:
-        - name: "1905\_— текущая версия"
+        - name: 1906 (текущий)
+          href: data-box-gateway-1906-release-notes.md
+        - name: 1905
           href: data-box-gateway-1905-release-notes.md
         - name: Общедоступная версия
           href: data-box-gateway-release-notes.md
@@ -115,7 +117,9 @@
           href: data-box-edge-return-device.md
     - name: Заметки о выпуске
       items:
-        - name: "1905\_— текущая версия"
+        - name: 1906 (текущий)
+          href: data-box-gateway-1906-release-notes.md
+        - name: 1905
           href: data-box-gateway-1905-release-notes.md
         - name: Общедоступная версия
           href: data-box-gateway-release-notes.md

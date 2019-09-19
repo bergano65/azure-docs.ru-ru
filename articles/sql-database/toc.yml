@@ -164,7 +164,7 @@
           href: sql-database-reserved-capacity.md
         - name: Миграция с уровня служб "Премиум RS"
           href: sql-database-service-tiers-prs.md
-    - name: Вычисления и хранение
+    - name: Уровни службы
       items:
         - name: Обзор
           href: sql-database-service-tiers-general-purpose-business-critical.md
@@ -302,6 +302,8 @@
                   href: sql-database-vnet-service-endpoint-rule-overview.md
                 - name: Конечные точки виртуальной сети — PowerShell
                   href: sql-database-vnet-service-endpoint-rule-powershell.md
+            - name: Приватный канал
+              href: sql-database-private-endpoint-overview.md
         - name: Управление доступом
           items:
             - name: Управление доступом

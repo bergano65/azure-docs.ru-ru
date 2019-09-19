@@ -1,63 +1,85 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Terraform в Azure
+summary: Узнайте, как использовать Terraform для надежной подготовки виртуальных машин и другой инфраструктуры в Azure к работе.
 metadata:
   title: 'Документация по Terraform в Azure: руководства, примеры, справочные материалы и ресурсы'
-  description: 'Узнайте, как использовать Terraform для надежной подготовки виртуальных машин и другой инфраструктуры в Azure к работе.'
-  services: terraform
-  ms.service: azure
-  keywords: 'terraform, azure, devops, tutorials, samples, reference'
-  author: tomarchermsft
-  manager: jeconnoc
-  ms.author: tarcher
+  description: Узнайте, как использовать Terraform для надежной подготовки виртуальных машин и другой инфраструктуры в Azure к работе.
+  services: azure
+  ms.service: terraform
   ms.topic: landing-page
-  ms.date: 08/31/2018
-abstract:
-  description: 'Используйте Terraform для надежного управления версиями и создания инфраструктуры в Azure. Из наших руководств вы узнаете, как создавать ресурсы с помощью модулей Azure Terraform и обслуживать инфраструктуру с помощью кода.'
-sections:
-  - title: Быстрое начало работы
-    items:
-      - type: paragraph
-        text: Настройте и используйте Terraform для создания виртуальной машины Linux в Azure.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/azure_dev-9.svg'
-            text: Установка и настройка Terraform
-            href: 'https://docs.microsoft.com/azure/virtual-machines/linux/terraform-install-configure'
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/VirtualMachine.svg'
-            text: Создание виртуальной машины Linux
-            href: 'https://docs.microsoft.com/azure/virtual-machines/linux/terraform-create-complete-vm'
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: Описание способов создания вычислительной и сетевой инфраструктуры Azure из кода с помощью Terraform.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/terraform/terraform-create-k8s-cluster-with-tf-and-aks">Создание кластера Kubernetes с помощью AKS</a>
-          - html: <a href="/azure/terraform/terraform-create-k8s-cluster-with-aks-applicationgateway-ingress">Создание кластера Kubernetes с помощью AKS со шлюзом приложений в качестве контроллера входящего трафика</a>
-          - html: <a href="/azure/terraform/terraform-vm-msi">Создание виртуальной машины Terraform с поддержкой проверки подлинности MSI с помощью образа Azure Marketplace</a>.
-          - html: <a href="/azure/terraform/terraform-create-vm-cluster-module">Создание кластера виртуальной машины с балансировкой нагрузки с помощью модулей Azure Terraform</a>.
-          - html: <a href="/azure/terraform/terraform-create-vm-cluster-with-infrastructure">Создание кластера виртуальной машины с балансировкой нагрузки в Azure Cloud Shell</a>.
-          - html: <a href="/azure/terraform/terraform-create-vm-scaleset-network-disks-hcl">Настройка масштабируемого набора виртуальных машин с сетью и хранилищем</a>
-          - html: <a href="/azure/terraform/terraform-create-vm-scaleset-network-disks-using-packer-hcl">Подготовка масштабируемого набора виртуальных машин из пользовательского образа Packer</a>
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: Примеры шаблонов конфигурации для стандартных задач развертывания.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '<a href="https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples">GitHub</a>'
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Модули Azure Terraform
-            html: '<p><a href="https://registry.terraform.io/modules/Azure/database/azurerm">Azure RM для базы данных</a></p><p><a href="https://registry.terraform.io/modules/Azure/loadbalancer">Azure RM для подсистемы балансировки нагрузки</a></p><p><a href="https://registry.terraform.io/modules/Azure/computegroup">Группа вычислений Azure RM</a></p><p><a href="https://registry.terraform.io/modules/Azure/network">Сеть Azure RM</a></p><p><a href="https://registry.terraform.io/modules/Azure/compute">Вычисления Azure RM</a></p>'
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/12/2019
+  ms.openlocfilehash: 9195595a36fd5ff09afaf61169fb2bc1c3eb2533
+  ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71086498"
+landingContent:
+- title: Сведения о Terraform в Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о Terraform в Azure
+      url: terraform-overview.md
+  - linkListType: architecture
+    links:
+    - text: Поставщик Terraform Azure
+      url: https://aka.ms/terraform
+- title: Установка и настройка Terraform
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Установка и настройка Terraform
+      url: /azure/virtual-machines/linux/terraform-install-configure?/azure/terraform/toc.json&bc=/azure/bread/toc.json
+    - text: Создание конфигурации Terraform для Azure
+      url: terrafom-quickstart.md
+    - text: Установка расширения Visual Studio Code для Terraform
+      url: terraform-vscode-extension.md
+    - text: Создание базового шаблона Terraform с использованием Yeoman
+      url: terraform-vscode-module-generator.md
+    - text: Тестирование модулей Terraform с помощью Terratest
+      url: terratest-in-terraform-modules.md
+- title: Управление AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Создание кластера Kubernetes с помощью AKS
+      url: terraform-create-k8s-cluster-with-tf-and-aks.md
+    - text: Создание кластера Kubernetes с использованием Шлюза приложений
+      url: terraform-create-k8s-cluster-with-aks-applicationgateway-ingress.md
+- title: Управление инфраструктурой
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание виртуальной машины Linux
+      url: /azure/virtual-machines/linux/terraform-create-complete-vm?/azure/terraform/toc.json&bc=/azure/bread/toc.json
+  - linkListType: tutorial
+    links:
+    - text: Создание виртуальной машины Terraform с поддержкой MSI
+      url: terraform-vm-msi.md
+    - text: Создание кластера виртуальных машин с помощью модулей Terraform
+      url: terraform-create-vm-cluster-module.md
+    - text: Создание кластера виртуальных машин с помощью Terraform и HCL
+      url: terraform-create-vm-cluster-with-infrastructure.md
+    - text: Подготовка масштабируемого набора виртуальных машин с инфраструктурой
+      url: terraform-create-vm-scaleset-network-disks-hcl.md
+    - text: Подготовка масштабируемого набора виртуальных машин из пользовательского образа Packer
+      url: terraform-create-vm-scaleset-network-disks-using-packer-hcl.md
+- title: Управление сетями
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 1. Создание звездообразной топологии
+      url: terraform-hub-spoke-introduction.md
+    - text: 2. Создание локальной виртуальной сети
+      url: terraform-hub-spoke-on-prem.md
+    - text: 3. Создание центральной виртуальной сети
+      url: terraform-hub-spoke-hub-network.md
+    - text: 4. Создание сетевого устройства для центральной виртуальной сети
+      url: terraform-hub-spoke-hub-nva.md
+    - text: 5. Создание периферийной сети
+      url: terraform-hub-spoke-spoke-network.md
+    - text: 6. Проверка подключения в топологии сети
+      url: terraform-hub-spoke-validation.md
