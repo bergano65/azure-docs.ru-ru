@@ -4,22 +4,21 @@ description: Сведения о кэше Azure для Redis и о том, дл�
 services: cache
 documentationcenter: ''
 author: yegu-ms
-manager: jhubbard
+manager: martinekuan
 editor: ''
 ms.service: cache
 ms.workload: tbd
 ms.tgt_pltfrm: cache
-ms.devlang: na
 ms.topic: overview
 ms.date: 03/26/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: fd790d27c958bf982f95b98426c6ab4d94c5f17f
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 1f0c943bed473178dadb09cfb9d355821e5236e8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65412742"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066845"
 ---
 # <a name="azure-cache-for-redis-description"></a>Описание кэша Azure для Redis
 
@@ -72,7 +71,7 @@ ms.locfileid: "65412742"
 | [Импорт и экспорт](cache-how-to-import-export-data.md) |✔|-|-|
 | [Запланированные обновления](cache-administration.md#schedule-updates) |✔|✔|✔|
 | [Георепликация](cache-how-to-geo-replication.md) |✔|-|-|
-| [Reboot](cache-administration.md#reboot) |✔|✔|✔|
+| [Перезагрузка](cache-administration.md#reboot) |✔|✔|✔|
 
 ## <a name="next-steps"></a>Дополнительная информация
 

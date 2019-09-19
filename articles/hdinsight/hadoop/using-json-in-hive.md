@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: dd1c9f5b10583e886c0357ce64bdf9d8bdc6c4c8
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 629a7c98a7b46b470470445cc56a6f53d9e4f4b4
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883388"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077216"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -91,7 +91,7 @@ SELECT * FROM StudentsOneLine
 
 Вот результат выполнения инструкции **SELECT**:
 
-![Преобразование документа JSON в плоскую структуру](./media/using-json-in-hive/hdinsight-flatten-json.png)
+![Обработка документа JSON с помощью HDInsight](./media/using-json-in-hive/hdinsight-flatten-json.png)
 
 ## <a name="analyze-json-documents-in-hive"></a>Анализ документов JSON в Hive
 Hive предоставляет три различных механизма для выполнения запросов к документам JSON (вы также можете написать собственный):
@@ -115,7 +115,7 @@ FROM StudentsOneLine;
 
 Вот какие результаты дает выполнение этого запроса в окне консоли:
 
-![Пользовательская функция get_json_object](./media/using-json-in-hive/hdinsight-get-json-object.png)
+![Apache Hive получить объект UDF объекта JSON](./media/using-json-in-hive/hdinsight-get-json-object.png)
 
 У определяемой пользователем функции GET_JSON_OBJECT есть некоторые ограничения.
 
@@ -136,7 +136,7 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 
 Выходные данные этого сценария в консоли Hive:
 
-![Пользовательская функция json_tuple](./media/using-json-in-hive/hdinsight-json-tuple.png)
+![Apache Hive результатов запроса JSON](./media/using-json-in-hive/hdinsight-json-tuple.png)
 
 Определяемая пользователем функция JSON_TUPLE использует синтаксис [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) Hive, который позволяет JSON\_TUPLE создать виртуальную таблицу, применяя определяемую пользователем функцию к каждой строке исходной таблицы. Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Кроме того, **JSON_TUPLE** не может обрабатывать вложенные документы JSON.
 

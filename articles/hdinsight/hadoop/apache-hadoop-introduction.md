@@ -4,16 +4,17 @@ description: Общие сведения о HDInsight и стеке технол
 keywords: azure hadoop, hadoop azure, введение в hadoop, обзор hadoop, технологическая платформа hadoop, приступая к работе с hadoop, знакомство с hadoop, что такое кластер hadoop, кластер hadoop, для чего используется hadoop
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: overview
 ms.date: 08/15/2019
-ms.openlocfilehash: 16845e5891117cc01bef5fae28cf4b36c0508651
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 193b8f59a805de4303bfc38d397a821cc068dcc0
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899557"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088205"
 ---
 # <a name="what-is-apache-hadoop-in-azure-hdinsight"></a>Что такое Apache Hadoop в Azure HDInsight?
 
@@ -30,6 +31,10 @@ Apache Hadoop MapReduce — это программная платформа д�
 * **Mapper** (Модуль сопоставления) — принимает входные данные, анализирует их (обычно с помощью фильтрации и сортировки) и передает кортежи (пары "ключ — значение").
 
 * **Reducer** (Редуктор) — принимает кортежи, сформированные в модуле сопоставления, и выполняет операцию сводки, которая создает результат меньшего размера, объединяющий данные модуля сопоставления.
+
+На следующей диаграмме показан пример задания MapReduce, которое выполняет простую операцию подсчета слов:   
+
+ ![HDI.WordCountDiagram](./media/apache-hadoop-introduction/hdi-word-count-diagram.gif)
 
 Выходные данные этого задания представляют собой частоту использования каждого слова в тексте.
 
@@ -55,5 +60,3 @@ Apache Hadoop MapReduce — это программная платформа д�
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Создание кластера Apache Hadoop в HDInsight](apache-hadoop-linux-create-cluster-get-started-portal.md)
-
-[image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

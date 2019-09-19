@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 8b35d2441db654278f9d66f3cbb4e7a79d70e835
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 77ccfc1a67fabca7fde47edac9094c6a68191f0f
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128063"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090768"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
 
@@ -116,7 +116,7 @@ Batch processing began with mainframe computers and punch cards. Today it still 
 
 ### <a name="preliminaries"></a>Предварительные требования
 
-Для взаимодействия с учетной записью хранения приложение использует пакет [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) для создания объекта [BlockBlobService](/python/api/azure.storage.blob.blockblobservice.blockblobservice).
+Для взаимодействия с учетной записью хранения приложение использует пакет [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) для создания объекта [BlockBlobService](/python/api/azure-storage-blob/azure.storage.blob.blockblobservice.blockblobservice).
 
 ```python
 blob_client = azureblob.BlockBlobService(
@@ -124,7 +124,7 @@ blob_client = azureblob.BlockBlobService(
     account_key=config._STORAGE_ACCOUNT_KEY)
 ```
 
-Приложение использует ссылку `blob_client` для создания контейнера в учетной записи хранения и передачи в него файлов данных. Файлы в хранилище определяются как объекты пакетной службы [ResourceFile](/python/api/azure.batch.models.resourcefile), которые она может впоследствии скачать на вычислительные узлы.
+Приложение использует ссылку `blob_client` для создания контейнера в учетной записи хранения и передачи в него файлов данных. Файлы в хранилище определяются как объекты пакетной службы [ResourceFile](/python/api/azure-batch/azure.batch.models.resourcefile), которые она может впоследствии скачать на вычислительные узлы.
 
 ```python
 input_file_paths = [os.path.join(sys.path[0], 'taskdata0.txt'),
@@ -149,11 +149,11 @@ batch_client = batch.BatchServiceClient(
 
 ### <a name="create-a-pool-of-compute-nodes"></a>Создание пула вычислительных узлов
 
-Чтобы создать пул пакетной службы, приложение использует класс [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure.batch.models.imagereference) в образе Ubuntu Server 18.04 LTS, опубликованном в Azure Marketplace. Пакетная служба поддерживает широкий спектр образов Linux и Windows Server в Azure Marketplace, а также пользовательских образов виртуальной машины.
+Чтобы создать пул пакетной службы, приложение использует класс [PoolAddParameter](/python/api/azure-batch/azure.batch.models.pooladdparameter) для настройки количества узлов, размера виртуальной машины и конфигурации пула. Объект [VirtualMachineConfiguration](/python/api/azure-batch/azure.batch.models.virtualmachineconfiguration) указывает [ImageReference](/python/api/azure-batch/azure.batch.models.imagereference) в образе Ubuntu Server 18.04 LTS, опубликованном в Azure Marketplace. Пакетная служба поддерживает широкий спектр образов Linux и Windows Server в Azure Marketplace, а также пользовательских образов виртуальной машины.
 
 Количество узлов (`_POOL_NODE_COUNT`) и размер виртуальной машины (`_POOL_VM_SIZE`) являются определенными константами. В образце по умолчанию создается пул с 2 узлами размера *Standard_A1_v2*. Предлагаемый размер в этом кратком руководстве обеспечивает оптимальный баланс производительности и стоимости.
 
-Метод [pool.add](/python/api/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
+Метод [pool.add](/python/api/azure-batch/azure.batch.operations.pooloperations) отправляет пул в пакетную службу.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -174,7 +174,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-batch-job"></a>Создание пакетного задания
 
-Пакетное задание — это логическая группа из одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Это приложение использует класс [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure.batch.operations.joboperations) добавляет задание в указанную учетную запись пакетной службы. Изначально у задания нет задач.
+Пакетное задание — это логическая группа из одной или нескольких задач. Задание включает в себя параметры, общие для задач (например, приоритет и пул для запуска задач). Это приложение использует класс [JobAddParameter](/python/api/azure-batch/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure-batch/azure.batch.operations.joboperations) добавляет задание в указанную учетную запись пакетной службы. Изначально у задания нет задач.
 
 ```python
 job = batch.models.JobAddParameter(
@@ -185,9 +185,9 @@ batch_service_client.job.add(job)
 
 ### <a name="create-tasks"></a>Создание задач
 
-Это приложение создает список объектов задачи с помощью класса [TaskAddParameter](/python/api/azure.batch.models.taskaddparameter). Каждая задача обрабатывает входной объект `resource_files`, используя параметр `command_line`. В этом примере командная строка запускает команду оболочки Bash `cat`, чтобы отобразить текстовый файл. Эта команда является простым примером для демонстрационных целей. При использовании пакетной службы в командной строке задайте приложение или скрипт. В пакетной службе предусмотрен ряд способов для развертывания приложений и скриптов на вычислительных узлах.
+Это приложение создает список объектов задачи с помощью класса [TaskAddParameter](/python/api/azure-batch/azure.batch.models.taskaddparameter). Каждая задача обрабатывает входной объект `resource_files`, используя параметр `command_line`. В этом примере командная строка запускает команду оболочки Bash `cat`, чтобы отобразить текстовый файл. Эта команда является простым примером для демонстрационных целей. При использовании пакетной службы в командной строке задайте приложение или скрипт. В пакетной службе предусмотрен ряд способов для развертывания приложений и скриптов на вычислительных узлах.
 
-Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
+Затем приложение добавляет задачи к заданию с помощью метода [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations), который ставит их в очередь для запуска на вычислительных узлах. 
 
 ```python
 tasks = list()

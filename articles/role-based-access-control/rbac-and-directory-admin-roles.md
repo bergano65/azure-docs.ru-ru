@@ -15,12 +15,12 @@ ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: be37768a5cef38ae0dc49e12f1d83ba8005ab961
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: e9ce71f12d50aa414579e5fc7c2961156965a337
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194176"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037527"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -112,7 +112,7 @@ RBAC Azure — это система авторизации на основе [
 | Роли RBAC Azure | Роли администратора в Azure AD |
 | --- | --- |
 | Управление доступом к ресурсам Azure | Управление доступом к ресурсам Azure Active Directory |
-| Поддержка пользовательских ролей | Отсутствует возможность создавать собственные роли |
+| Поддержка пользовательских ролей | Поддержка пользовательских ролей |
 | Возможность указывать область действия на нескольких уровнях (группа управления, подписка, группа ресурсов, ресурс) | Область действия на уровне клиента |
 | Сведения о роли можно получить на портале Azure, в Azure CLI, Azure PowerShell, в шаблонах Azure Resource Manager и API REST | Сведения о роли можно получить на портале администрирования Azure, в Центре администрирования Microsoft 365, в Microsoft Graph и AzureAD PowerShell |
 

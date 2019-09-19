@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2010
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 4bea46e62f90a41b566781457a39718849ee0e15
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 02b9c439a932a4b35700871e68bdad7f03451110
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259239"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003507"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
 
@@ -27,7 +27,7 @@ ms.locfileid: "70259239"
 * включение [управляемого удостоверения](../active-directory/managed-service-identity/overview.md) для веб-приложения;
 * предоставление разрешений, необходимых веб-приложению для чтения данных из хранилища ключей.
 
-Прежде чем продолжить, убедитесь, что вы ознакомлены с [основными понятиями Key Vault](key-vault-whatis.md#basic-concepts).
+Прежде чем продолжить, убедитесь, что вы ознакомлены с [основными понятиями Key Vault](basic-concepts.md).
 
 > [!NOTE]
 > Key Vault — это центральный репозиторий для хранения секретов программным способом. Но чтобы воспользоваться возможностями хранилища ключей, приложения и пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. В соответствии с рекомендациями по безопасности первый секрет должен периодически меняться. 

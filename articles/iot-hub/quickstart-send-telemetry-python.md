@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/28/2019
-ms.openlocfilehash: c92b019e15c6a9ee5b2d38e240ae4f9891621f72
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: a08719d322f044bbf1ced8103af5e4e23ed948c9
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360192"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998490"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 
@@ -30,22 +30,6 @@ ms.locfileid: "68360192"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. Сейчас пакеты SDK Microsoft Azure IoT для Python поддерживают только конкретные версии Python для каждой платформы. Дополнительные сведения см. в [файле сведений пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
-
-В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Также убедитесь, что [Распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлен для вашей архитектуры (x86 или x64).
-
-Python, предназначенный для других платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
-
-Текущую версию Python на компьютере, на котором ведется разработка, можно проверить, выполнив одну из следующих команд:
-
-```python
-python - -version
-```
-
-```python
-python3 - -version
-```
 
 Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
@@ -100,7 +84,7 @@ az extension add --name azure-cli-iot-ext
 1. Установите необходимые библиотеки для приложения имитированного устройства, выполнив в окне терминала на локальном компьютере следующие команды:
 
     ```cmd/sh
-    pip install azure-iothub-device-client
+    pip install azure-iot-device
     ```
 
 1. Запустите приложение имитированного устройства, выполнив в окне терминала на локальном компьютере следующие команды:
@@ -112,13 +96,7 @@ az extension add --name azure-cli-iot-ext
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
     ![Запуск виртуального устройства](media/quickstart-send-telemetry-python/SimulatedDevice.png)
-    
-### <a name="to-avoid-the-import-iothubclient-error"></a>Предотвращение ошибки импорта iothub_client
-Текущая версия пакета SDK Интернета вещей Azure для Python является оболочкой [нашего пакета C SDK](https://github.com/azure/azure-iot-sdk-c). Он создается с помощью библиотеки [Boost](https://www.boost.org/). Из-за этого он предоставляется с некоторыми значительными ограничениями. Дополнительные сведения см. [здесь](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues)
 
-1. Убедитесь, что у вас установлена правильная версия [Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues). Имейте в виду, что только определенные версии подходят для этого примера. 
-2. Убедитесь, что у вас установлена необходимая версия [Распространяемого компонента Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) для среды выполнения C++. (Мы рекомендуем последнюю версию).
-3. Убедитесь, что вы установили клиент Центра Интернета вещей: `pip install azure-iothub-device-client`.
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
